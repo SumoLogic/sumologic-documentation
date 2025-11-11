@@ -61,15 +61,15 @@ The table below shows how many credits would be consumed for the same query over
 
 Your **Account Overview** page shows the credits your org has consumed for Infrequent searches. 
 
-![infrequent-usage.png](/img/manage/partitions-data-tiers/infrequent-usage.png)
+<img src={useBaseUrl('img/manage/partitions-data-tiers/infrequent-usage.png')} alt="Infrequent usage" style={{border: '1px solid gray'}} width="800" />
 
 In addition, when you enter an Infrequent query in a [Log Search](/docs/search), before you run it, you'll see an estimate of the amount of data that will be scanned for that query. 
 
-![estimated-scan.png](/img/manage/partitions-data-tiers/estimated-scan.png)
+<img src={useBaseUrl('img/manage/partitions-data-tiers/estimated-scan.png')} alt="Estimated scan" style={{border: '1px solid gray'}} width="800" />
 
-After you run an Infrequent query, you can see the volume of data that was actually scanned.  
+After you run an Infrequent query, you can see the volume of data that was actually scanned.
 
-![total-scan.png](/img/manage/partitions-data-tiers/total-scan.png)
+<img src={useBaseUrl('img/manage/partitions-data-tiers/total-scan.png')} alt="Total scan" style={{border: '1px solid gray'}} width="800" />
 
 ## How do I create partitions to reroute data to a different tier later? 
 

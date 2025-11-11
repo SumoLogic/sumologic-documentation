@@ -27,6 +27,14 @@ When you configure a network block, there is an option to suppress signals on th
 IP addresses in a network block for which signals are suppressed will not appear on the **Suppressed Entities** page in the Cloud SIEM UI. (You can’t manually unsuppress signals for an IP address that are suppressed due to its network block configuration.)
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage network blocks with the [`sumologic_cse_network_block`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_network_block) resource.
+
+<TerraformLink/>
+:::
+
 ## Best practices for network blocks
 
 As you configure network blocks, keep in mind the following considerations.

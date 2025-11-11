@@ -4,6 +4,8 @@ title: About Search Basics
 description: Sumo Logic search syntax is based on a funnel or "pipeline" concept and it uses logical and familiar operators letting you to create ad hoc queries quickly.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Our Search Syntax is based on a funnel or "pipeline" concept. The wide mouth of the funnel begins with all your current Sumo Logic data, and you narrow the funnel by entering keywords and operators separated by pipes (`|`). Each operator acts on the results from the previous operator so that you can progressively filter and pinpoint your search until you find exactly what you’re looking for.
 
 import Iframe from 'react-iframe';
@@ -47,7 +49,7 @@ Here's an example:
 
 This query means:
 
-![A diagram illustrating a Sumo Logic query. The query is '_sourcecategory=apache | parse "* - -" as src_ip | count by src_ip | sort_count'. The diagram breaks down the query into three parts: a keyword expression '_sourcecategory=apache' to specify the source category (in this case, a metadata field), parsing out the IP address into a field named 'src_ip' using an endpoint anchor 'parse "* - -" as src_ip', and counting and sorting the results 'count by src_ip | sort_count'.](/img/reuse/query-search/query-syntax-new.png)
+<img src={useBaseUrl('img/reuse/query-search/query-syntax-new.png')} alt="A diagram illustrating a Sumo Logic query. " style={{border: '1px solid gray'}} width="500" />
 
 As queries get longer and more complex, it is a best practice to format your queries by using a soft return before the pipes, such as:
 

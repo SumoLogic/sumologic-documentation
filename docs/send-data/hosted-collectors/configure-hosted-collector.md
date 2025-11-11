@@ -13,6 +13,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The maximum number of Collectors allowed per organization is 10,000.
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to add a hosted collector with the [`sumologic_collector`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/collector) resource.
+
+<TerraformLink/>
+:::
+
 ## Step 1: Configure Hosted Collector
 
 Steps to configure a Hosted Collector:

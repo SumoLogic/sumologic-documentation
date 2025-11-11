@@ -11,15 +11,132 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## What is Terraform?
 
-[Terraform](https://developer.hashicorp.com/terraform) is an "infrastructure as code" tool developed by Hashicorp. Terraform scripts are used to define both cloud and on-prem resources in human-readable configuration files. Using Terraform scripts makes it easier for system administrators to provision and manage infrastructure and system resources consistently and reliably. The Terraform community, including Sumo Logic, supports Terraform through providers and APIs allowing applications to install and manage different types of resources and services from different vendors in one workflow. See the [Terraform Sumo Logic provider](https://registry.terraform.io/namespaces/SumoLogic).
+[Terraform](https://developer.hashicorp.com/terraform) is an "infrastructure as code" tool developed by Hashicorp. Terraform scripts are used to define both cloud and on-prem resources in human-readable configuration files. Using Terraform scripts makes it easier for system administrators to provision and manage infrastructure and system resources consistently and reliably. The Terraform community, including Sumo Logic, supports Terraform through providers and APIs allowing applications to install and manage different types of resources and services from different vendors in one workflow. See the [Terraform Sumo Logic provider](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
 
-## Sumo Logic use cases
+## Sumo Logic Terraform resources
 
-You can use Terraform to manage all sorts of Sumo Logic resources. Here are some use cases:
-* [Manage monitors](https://www.sumologic.com/blog/terraform-sumo-logic)
-* [Manage collectors, users, and roles](https://www.sumologic.com/blog/terraform-provider-hosted)
-* [Deploy solutions (like AWS Observability)](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/)
-* [Manage Cloud SIEM rules](https://www.sumologic.com/guides/detections-as-code-setup)
+You can use Terraform resources to manage all sorts of Sumo Logic components. Following are some examples.
+<details>
+
+<summary>Resources</summary>
+
+* Accounts
+   * [Subdomains](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/subdomain)
+* [Apps](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/app)
+* Automation service
+   * [Playbooks](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/csoar_playbook)
+* Cloud SIEM
+   * [Automation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_automation)
+   * [Context actions](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_context_action)
+   * Entities
+      * [Custom entity types](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_entity_type)
+      * [Entity criticality](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_entity_criticality_config)
+      * [Entity groups](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_entity_entity_group_configuration)
+      * [Entity normalization](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_entity_normalization_configuration)
+      * [Inventory entity groups](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_inventory_entity_group_configuration)
+   * Insights
+      * [Configuration](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_configuration)
+      * [Custom insights](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_insight)
+      * [Resolution](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_resolution)
+      * [Status](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_status)
+   * [Log mapping](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_log_mapping)
+   * [Match lists](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_match_list)
+      * [Custom match list columns](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_match_list_column)
+   * [Network blocks](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_network_block)
+   * Rules
+      * [Aggregation rules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_aggregation_rule)
+      * [Chain rule](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_chain_rule)
+      * [First seen rules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_first_seen_rule)
+      * [Match rules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_match_rule)
+      * [Outlier rules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_outlier_rule)
+      * [Rule tuning expressions](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_rule_tuning_expression)
+      * [Threshold rules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_threshold_rule)
+   * [Tag schemas](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_tag_schema)
+* [Collectors](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/collector)
+   * [Installed collectors](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/installed_collector)
+   * [OpenTelemetry collectors](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/ot_collector)
+* [Connections](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/connection)
+* [Content](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content)
+   * [Content sharing](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content_permission)
+* [Dashboards](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/dashboard)
+* Data forwarding
+   * [Data forwarding destinations](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/data_forwarding_destination)
+   * [Data forwarding rules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/data_forwarding_rule)
+* [Fields](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/field)
+   * [Field extraction rules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/field_extraction_rule)
+* [Folders](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/folder)
+* [Hierarchies](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/hierarchy)
+* [Ingest budgets](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/ingest_budget_v2)
+* [Log searches](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/log_search)
+* [Lookup table](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/lookup_table)
+* Metrics
+   * [Metrics search](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/metrics_search)
+   * [Metrics search V2](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/metrics_search_v2)
+* [Monitors](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor)
+   * [Monitors folders](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor_folder)
+* [Muting schedules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/muting_schedule)
+* [Partitions](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/partition)
+* [Password policies](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/password_policy)
+* [Policies](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/policies)
+* [Roles](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/role)
+   * [Roles v2](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/role_v2)
+* [SAML configuration](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/saml_configuration)
+* [Scan budget](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/scan_budget)
+* [Scheduled views](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/scheduled_view)
+* [SLOs](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo)
+   * [SLO folders](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder)
+* Sources
+   * [AWS S3 source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/s3_source)
+   * [AWS S3 Archive source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/s3_archive_source)
+   * [AWS S3 Audit source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/s3_audit_source)
+   * [AWS inventory source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/aws_inventory_source)
+   * [AWS XRay source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/aws_xray_source)
+   * [Azure Event Hub log source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/azure_event_hub_log_source)
+   * [Azure metrics source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/azure_metrics_source)
+   * [Cloud-to-Cloud source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloud_to_cloud_source)
+   * [CloudFront source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudfront_source)
+   * [Cloud Syslog source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudsyslog_source)
+   * [CloudTrail source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudtrail_source)
+   * [CloudWatch source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudwatch_source)
+   * [ELB source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/elb_source)
+   * [GCP Metrics source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/gcp_metrics_source)
+   * [GCP source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/gcp_source)
+   * [HTTP source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/http_source)
+   * [Kinesis Log source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/kinesis_log_source)
+   * [Kinesis Metrics source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/kinesis_metrics_source)
+   * [Local file source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/local_file_source)
+   * [Local Windows Event Log source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/local_windows_event_source)
+   * [Metadata source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/metadata_source)
+   * [Rum Source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/rum_source)
+* [Source templates](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/source_template)
+* [Tokens](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/token)
+* [Users](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/user)
+
+</details>
+
+## Sumo Logic Terraform data sources
+
+You can use Terraform data sources to retrieve Sumo Logic data from your Terraform configuration. Following are some examples.
+
+<details>
+
+<summary>Data sources</summary>
+
+* [Admin recommended folders](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/admin_recommended_folder)
+* [Apps](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/apps)
+* [Caller identity](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/caller_identity)
+* [Collectors](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/collector)
+* [Cloud SIEM log mapping](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/cse_log_mapping_vendor_product)
+* [Folders](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/folder)
+* [HTTP sources](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/http_source)
+* [Partitions](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/partitions)
+   * [Partition details](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/partition)
+* [Personal folders](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/personal_folder)
+* [Roles](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/role)
+   * [Roles v2](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/role_v2)
+* [Users](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/user)
+
+</details>
 
 ## Prerequisites
 
@@ -93,7 +210,9 @@ Let's look at some examples:
 
 ### Terraform providers
 
-A *provider* is a Terraform module or plugin developed by a vendor that defines which vendor resources are available for Terraform to create and manage. Sumo Logic has an established Terraform provider plugin, as does AWS and other major cloud vendors. The Terraform script section defining the provider for resources defined by other parts of the script might look like this:
+A *provider* is a Terraform module or plugin developed by a vendor that defines which vendor resources are available for Terraform to create and manage. For information about the Sumo Logic provider, see the [Sumo Logic Provider documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
+
+Sumo Logic has an established Terraform provider plugin, as does AWS and other major cloud vendors. The Terraform script section defining the provider for resources defined by other parts of the script might look like this:
 
 ```
 provider "aws" {
@@ -119,7 +238,9 @@ terraform {
 
 ### Terraform resources
 
-A *resource* is an infrastructure element that can be defined and created from the available resources produced by the provider. A resource definition will look similar in form to the provider definition:
+A *resource* is an infrastructure element that can be defined and created from the available resources produced by the provider. For available resources, see the [Sumo Logic Provider documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
+
+A resource definition will look similar in form to the provider definition:
 
 ```
 resource "aws_s3_bucket" "training" {

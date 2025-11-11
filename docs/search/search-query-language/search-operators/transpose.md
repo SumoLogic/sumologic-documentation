@@ -4,6 +4,8 @@ title: transpose Search Operator
 sidebar_label: transpose
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Similar to a Pivot Table in Excel, the `transpose` operator allows you to take a list and turn it into a table in the Aggregates tab, as shown by the examples below. You can define what data makes the rows and columns.
 
 Without `transpose`, the following query renders a factual, but not useful table below:
@@ -14,7 +16,7 @@ _sourceCategory=Labs/Apache/Access
 | count by _timeslice, status_code
 ```
 
-![Table without transpose](/img/search/searchquerylanguage/search-operators/transpose/TableWithoutTranspose.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/transpose/TableWithoutTranspose.png')} alt="Table without transpose" style={{border: '1px solid gray'}} width="400>" />
 
 With `transpose`, you can use your query to define your rows as the `timeslice` and the columns as the status code:
 
@@ -25,7 +27,7 @@ _sourceCategory=Labs/Apache/Access
 | transpose row _timeslice column status_code
 ```
 
-![Table with transpose](/img/search/searchquerylanguage/search-operators/transpose/TableWithTranpose.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/transpose/TableWithTranpose.png')} alt="Table with transpose" style={{border: '1px solid gray'}} width="600" />
 
 To make this information present as a table, transpose dynamically creates columns for aggregate search results. This allows you to change the output of a query by turning search results into fields, so you can design queries without first knowing the output schema. In this way, transpose formats the data correctly for charts in Dashboard Panels. 
 
@@ -33,11 +35,11 @@ For example, the screenshots below represent the same data from the same time ra
 
 Without transpose, the data is represented according to timeslice, but not aggregated by status code:
 
-![Without transpose](/img/search/searchquerylanguage/search-operators/transpose/WithoutTranspose.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/transpose/WithoutTranspose.png')} alt="Without transpose" style={{border: '1px solid gray'}} width="800" />
 
 With transpose, the results display in an easy-to-read manner status codes by timeslice:
 
-![With transpose](/img/search/searchquerylanguage/search-operators/transpose/WithTranpose.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/transpose/WithTranpose.png')} alt="With transpose" style={{border: '1px solid gray'}} width="800" />
 
 ## Syntax
 
@@ -78,7 +80,7 @@ error | parse "module=*]" asmodule| timeslice 1m
 
 will produce results with each module represented with a distinct color, similar to:
 
-![Transpose_operator_errors_by_module](/img/reuse/query-search/Transpose_operator_errors_by_module.png)
+<img src={useBaseUrl('img/reuse/query-search/Transpose_operator_errors_by_module.png')} alt="Transpose_operator_errors_by_module" style={{border: '1px solid gray'}} width="600" />
 
 Try changing the Stacking setting (under Change Properties) to **Normal** to see how graphs are affected by this option. For more information, see [Chart Search Results](/docs/search/get-started-with-search/search-basics/chart-search-results).
 
@@ -96,7 +98,7 @@ _sourceCategory=service
 
 will produce a stacked graph similar to:
 
-![Successful Logins](/img/search/searchquerylanguage/search-operators/transpose/SuccessfulLogins.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/transpose/SuccessfulLogins.png')} alt="Successful Logins" style={{border: '1px solid gray'}} width="800" />
 
 #### View web server status codes
 
@@ -111,11 +113,11 @@ _sourceCategory=Apache/Access
 
 Results are initially returned in the **Aggregates** tab in the form that we want.
 
-![Webserver StatusCode](/img/search/searchquerylanguage/search-operators/transpose/WebserverStatusCode.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/transpose/WebserverStatusCode.png')} alt="Webserver status code" style={{border: '1px solid gray'}} width="600" />
 
 Then you can select the **Column** chart button, and under **Change Properties**, set the **Stacking** setting to **Normal** to create a stacked column chart.
 
-![Status Codes Stacked Graph](/img/search/searchquerylanguage/search-operators/transpose/Status-Code-stacked-graph.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/transpose/Status-Code-stacked-graph.png')} alt="Status codes stacked graph" style={{border: '1px solid gray'}} width="800" />
 
 For information on handling null fields, see [isNull](/docs/search/search-query-language/search-operators/isnull-isempty-isblank#isnullstring) operator.
 
