@@ -19,7 +19,16 @@ Our new conversational experience in Mobot (formerly known as Copilot) lets you 
 
 As we transition the feature name from *Copilot* to *Mobot*, some UI labels and screenshots may still show **Copilot**. Functionality is unchanged.
 
-## What's new in Beta
+<!-- What is Mobot? consists of query agent which does xxxx and knowledge agent which does xxx -->
+
+
+## Query Agent
+
+Select **Query Agent** to get help with Sumo Logic queries.
+
+<img src={useBaseUrl('img/search/mobot/mobot-logs-agent-button.png')} alt="Query Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
+
+### What's new in Beta
 
 * **Conversational flow**. Refine queries through natural, conversational follow-up questions without losing context. A sequence of related instructions that retains context and incrementally updates the query and output.
 * **Automatic source detection**. Have Mobot choose a data source automatically based on your question or enter one yourself.
@@ -30,11 +39,11 @@ As we transition the feature name from *Copilot* to *Mobot*, some UI labels and 
 * **Guided exploration**. Intent cards summarize your current goal, and suggestion cards offer refinements you can apply with a click.
 * **Integrated workflow**. A conversation pane shows your prompts and refinements, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
 
-## Typical workflow
+### Typical workflow
 
 The steps below outline a common conversational interaction pattern. You can apply the same approach to different logs, events, or dimensions.
 
-### Step 1: Ask your initial question  
+#### Step 1: Ask your initial question  
 
 Use natural language to ask what you're looking for. You can start broad when you set a goal, or more specific (i.e., specifying the data source and any related fields or values).
 
@@ -44,6 +53,7 @@ For example, enter a broad question: `Show me Bedrock errors`.
 
 An intent card appears in the conversation pane summarizing your goal. Mobot then surfaces suggestion cards with related refinements, which you can click. You'll also see an option to open your query in Log Search.
 
+#### Step 2: Narrow the scope  
 <img src={useBaseUrl('img/search/mobot/initial-question.png')} alt="Mobot conversational experience showing initial query" style={{border: '1px solid gray'}} width="700"/>
 
 ### Step 2: Narrow the scope and drill into causes
@@ -54,18 +64,40 @@ For example, clicking the suggestion `Show me trend of errors each minute` appli
 
 <img src={useBaseUrl('img/search/mobot/narrow-scope.png')} alt="Mobot conversational experience showing refinement to trend of errors each minute" style={{border: '1px solid gray'}} width="700"/>
 
+#### Step 3: Drill into causes
 As you go, Mobot presents new suggestions to help you pivot into related questions, such as analyzing trends of event reasons or identifying top namespaces. The intent card expands each time to include the new scope, and results show additional details.
 
 We'll refine further by clicking the suggestion `Show the count of error logs per minute, grouped by error code`.
 
 <img src={useBaseUrl('img/search/mobot/narrow-scope-filter.png')} alt="Mobot conversational experience showing the count of error logs per minute, grouped by error code" style={{border: '1px solid gray'}} width="700"/>
 
+<!--
+Next, type `Add error messages`. Mobot translates this into: `Add error messages to the breakdown of failed scheduling events by namespace`.
+
+<img src={useBaseUrl('img/search/mobot/drill-causes.png')} alt="Mobot conversational experience showing error messages for failed scheduling events" style={{border: '1px solid gray'}} width="700"/>
+-->
+
+#### Step 4: Request a trend over time
+
+If you type a time period (for example, `Show the trend over 24 hours`), the query applies a timeslice (for example, one-hour buckets) to group results over time.
 From here, you can continue refining or try other options like [switching the chart type](/docs/search/mobot/#chart-type), [opening the query in Log Search](/docs/search/mobot/#step-4-open-in-log-search), [adjusting the time range](/docs/search/mobot/#time-range), [editing the query logic](/docs/search/mobot/#edit-query-code), or [starting over with a new chat](/docs/search/mobot/#new-conversation).
 
 :::tip
 Ask Mobot to change units in your query. For example, `Convert GB to bytes`.
 :::
 
+<!--
+Finally, type: `Show the trend over 24 hours`. Mobot translates this into: `Show the trend of failed scheduling events by namespace with error messages over 24 hours`.
+<img src={useBaseUrl('img/search/mobot/trend-over-time.png')} alt="Mobot conversational experience showing trend over time" style={{border: '1px solid gray'}} width="700"/>
+
+where the results appear in a table view, you can change the visualization to a time-series chart (for example, line or area) to see the trend more clearly over time.
+-->
+
+#### Next steps
+
+As with legacy Mobot, you can adjust the [time range](/docs/search/mobot/#time-range), switch [chart types](/docs/search/mobot/#chart-type), [edit the query logic](/docs/search/mobot/#edit-query-code), [open in Log Search](/docs/search/mobot/#step-4-open-in-log-search), or start over with a [new chat](/docs/search/mobot/#new-conversation).
+
+### Best practices
 ## Best practices
 
 * **Talk to it like a conversation**. Layer refinements instead of rewriting the whole question.  
@@ -76,7 +108,7 @@ Ask Mobot to change units in your query. For example, `Convert GB to bytes`.
 * **Guide Mobot with feedback**. If the result isn't right, use natural language: `Don't do X, instead do Y`.
 * **Fix broken queries**. Paste a syntactically invalid query. Mobot will correct it.
 
-## FAQ
+### FAQ
 
 The questions below refer specifically to the conversational (Beta) experience. For general information about Mobot, see the [Mobot FAQ](/docs/search/mobot#faq).
 
@@ -113,6 +145,20 @@ Here are some common cases:
 * The conversational experience is available for log-based searches only. Metrics and Metric Searches are not supported in this Beta.
 * Mobot cannot currently refer to the output of a log search directly in subsequent queries. Each follow-up must be expressed in terms of query refinements rather than referencing previous results. This is an important limitation to be aware of when constructing multi-turn conversations.
 </details>
+
+## Knowledge Agent
+
+Select **Knowledge Agent** to get help using Sumo Logic.
+
+<img src={useBaseUrl('img/search/mobot/mobot-knowledge-agent-button.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
+
+Enter a question about Sumo Logic, such as *"How do I add a collector for AWS CloudTrail?"*, *"What are the API endpoints for Sumo Logic?"*, or anything else you need help with. The Knowledge agent returns an answer, including steps if needed.
+
+When you enter a question to the Knowledge Agent, it returns an answer using [Sumo Logic documentation](/docs/get-started). Click links in the response to see the help articles that served as the basis for the response.
+
+Knowledge Agent retains your conversation context for 24 hours from the time you ask your first question. After 24 hours, the session resets and prior context is no longer available. However, any new question will begin a new 24-hour session with its own preserved context. For example, if you ask a question and follow up with a related question within 24 hours, Mobot will still remember and continue the conversation seamlessly.
+
+
 
 ## Additional resources
 
