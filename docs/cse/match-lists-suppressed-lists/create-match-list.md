@@ -20,6 +20,14 @@ Here are some match lists in Cloud SIEM.
 
 Note that each match list has a **Target Column**, which you define when you create the list. The Target Column indicates what type of record fields should be compared to the match list, for example, hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are match lists Used?](#how-are-match-lists-used)
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage match lists with the [`match_list`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_match_list) and [`custom_match_list_column`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_match_list_column) resources.
+
+<TerraformLink/>
+:::
+
 ## Built-in rules refer to standard match list names
 
 Many of Cloud SIEM’s built-in rules assume the existence of one or more standard match lists. A standard match list is a list that you need to create and populate so that Cloud SIEM can leverage it. Cloud SIEM rules take advantage of about 20 standard match lists. One example of a standard Match list is the “vuln_scanners” list mentioned in the previous section. There are analogous match lists for other entity types, such as “business_ips”, “verified_domains”, and so on.

@@ -69,9 +69,9 @@ Create a hosted collector if not already configured and tag the `tenant_name` fi
 
 ### Configure metrics collection
 
-import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+import MetricsSource from '../../reuse/metrics-source.md';
 
-<MetricsSourceBeta/>
+<MetricsSource/>
 
 ### Configure logs collection
 
@@ -327,3 +327,9 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Troubleshooting
+
+### Metrics collection via Azure Metrics Source
+
+To troubleshoot metrics collection via Azure Metrics Source, follow the instructions in [Troubleshooting Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/#troubleshooting).

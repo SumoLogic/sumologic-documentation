@@ -11,6 +11,14 @@ The [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) p
 
 By default, the AWS Observability view supports the following services: AWS EC2, AWS API Gateway, AWS Lambda, AWS RDS, Amazon DynamoDB, and AWS Application ELB. The purpose of this document is to guide you towards adding any dashboards you may have built for additional services to the AWS Observability hierarchy.
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a hierarchy with the [`sumologic_hierarchy`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/hierarchy) resource.
+
+<TerraformLink/>
+:::
+
 ## Prerequisites
 
 Before you can add dashboards for a new service to the AWS Observability

@@ -3,12 +3,13 @@ id: infrequent-tier-monitors
 title: Monitors and Alert Response Page on Infrequent Tier Data (Beta)
 description: Learn how to monitor and view the details about the alert against the Infrequent data tier.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <head>
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Closed Beta</span></a></p>
 
 <!-- Originally added as a beta article with SUMO-215957. -->
 

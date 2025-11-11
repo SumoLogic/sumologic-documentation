@@ -7,10 +7,11 @@ description: Learn how to create playbooks in the Automation Service to run auto
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CartesianProduct from '../../../reuse/cartesian-product.md';
+import TerraformLink from '../../../reuse/terraform-link.md';
 
 ## View playbooks
 
-The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](#create-a-new-playbook), or [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-a-playbook-from-app-central).
+The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](#create-a-new-playbook), or [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-an-out-of-the-box-playbook-from-app-central).
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>The list of playbooks displays. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/> <img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" style={{border:'1px solid gray'}} width="700"/>
 1. Select a playbook to see the elements in the workflow.<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} style={{border:'1px solid gray'}} alt="Opened playbook" width="700"/>
@@ -18,7 +19,7 @@ The following procedure describes how to view playbooks already installed in you
 
 ## Create a new playbook
 
-Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-a-playbook-from-app-central) that does what you need. After you create a playbook, you can run it in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). 
+Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-an-out-of-the-box-playbook-from-app-central) that does what you need. After you create a playbook, you can run it in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). 
 
 :::tip
 The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/).
@@ -76,12 +77,12 @@ Before you can add action nodes to a playbook, you must [configure the connectio
 1. Give a **Node name** that identifies the action being taken.
 1. Select **Manual execution** if the node will require manual intervention to run. For example, an analyst may need to add information before executing the node.
 1. Select the [**Integration**](/docs/platform-services/automation-service/automation-service-integrations/) to supply the action for the node.
-1. Select the **Type** of action:
-   * **Containment**. Performs some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall.
-   * **Custom**. Performs an action defined in a custom action YAML file. For an example of a custom action created for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
-   * **Enrichment**. Enriches data with additional information, such as adding information about a known malicious IP address.
-   * **Notification**. Sends a notification, for example, an email or a post in a messaging service.
-   * **Scheduled**. Runs an action on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed.
+1. Select the **Type** of action (see [Action types](#action-types) for more information):
+   * **Containment**
+   * **Custom**
+   * **Enrichment**
+   * **Notification**
+   * **Scheduled**
    :::note
    The **Type** drop-down menu shows only the action types available in the selected integration.
    :::
@@ -168,9 +169,21 @@ When a user choice node is encountered, the execution will pause until a user se
 1. Select **Expires** if you want the user choice to expire after a set amount of time so that the playbook can proceed when no choice is made. If you do not select **Expires**, the playbook does not proceed until the user makes a choice. If you select **Expires**, fill out additional fields for the amount of time to pass before expiration, and the **Default answer** to automatically be chosen at the end of the expiration period.
 1. Click **Create**.
 
-Following is an example of a user choice node. Note the the node branches to the next node depending on the user's answer.
+#### Example user choice node
+
+Following is an example of a user choice node. Note the node branches to the next node depending on the user's answer. In this example, if the user selects **Yes**, then the IP is blocked, but if the user selects **No**, an email is sent to the SOC.
 
 <img src={useBaseUrl('img/cse/automations-example-user-choice-node.png')} style={{border:'1px solid gray'}} alt="Example user choice node" width="500"/>
+
+#### User choice nodes in out-of-the-box playbooks
+
+Here are just a few of the [out-of-the-box playbooks](/docs/platform-services/automation-service/playbooks-in-app-central/) that contain user choice nodes. Look at the user choice nodes in these playbooks to get an idea of how to structure them: 
+* 18 - DDoS
+* 21 - DLP Alert
+* 24 - DoS with Decision Tree
+* 59 - Outbound Network Investigation
+* 87 - Unauthorized Access w/ Privilege Escalation
+* 88 - User Account Investigation Active Directory
 
 ### Add a playbook node to a playbook
 
@@ -197,6 +210,109 @@ A filter node filters results from the preceding action based on the condition y
    <CartesianProduct/>
    :::
 1. Click **Create**.
+
+## Action types
+
+Every [automation integration](/docs/platform-services/automation-service/app-central/integrations/) contains different types of actions you can perform to help with incident remediation, such as sending notifications, adding additional information (enrichment), containment, and so on. Following are the different types of actions available in integrations:
+* [**Containment**](#containment). Performs some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall.
+* [**Custom**](#custom). Performs an action defined in a custom action YAML file.
+* [**Enrichment**](#enrichment). Enriches data with additional information, such as adding information about a known malicious IP address.
+* [**Notification**](#notification). Sends a notification, for example, an email or a post in a messaging service.
+* [**Scheduled**](#scheduled). Runs an action on a schedule once the playbook starts.
+
+Every action in an integration is assigned an action type. If you take a look at the [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/), you'll see each has a list of available actions with the type of action listed for each. For example, here are some of the actions in the Sumo Logic Cloud SIEM integration:
+* **Get Entity** *(Enrichment)* - Get Entity details.
+* **Add Network Block** *(Containment)* - Add an address into the Network Blocks.
+* **Add Comment To Insight** *(Notification)* - Add a comment to an existing Insight.
+* **Check Insight Status Schedule** *(Scheduled)* - Schedule action that periodically checks if the Insight is closed.
+
+To use one of these actions, start by adding an action node to a playbook, then select the integration, the action type, and the action. See the next section to learn how.
+
+### Select the action type
+
+When you [add an action node to a playbook](#add-an-action-node-to-a-playbook), you select the type of action to perform from the integration.
+
+1. Either [create a new playbook](#create-a-new-playbook), or edit an existing playbook.
+1. Hover your mouse over an existing node, such as the **Start** node, and click on the **+** button that appears.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
+1. The **Add node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>
+1. Select **Action**.
+1. In the **Integration** field, select the integration you want to use. In this example, we've selected the [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/) integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/sumo-logic-cloud-siem-integration-selected.png')} alt="Sumo Logic Cloud SIEM integration selected in the Add Node dialog" style={{border:'1px solid gray'}} width="400"/>
+1. Click the **Type** field to select the type of action you want to perform. The drop-down menu shows only the types available in the selected integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-types-on-cloud-siem-integration.png')} alt="Action types on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="400"/>
+1. Click the **Action** field to select the action to run in the playbook. Only actions of that type in the integration are listed:<br/><img src={useBaseUrl('img/platform-services/automation-service/enrichment-actions-on-cloud-siem.png')} alt="Enrichment actions on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="400"/>
+1. Proceed with the rest of the steps to [add an action node to a playbook](#add-an-action-node-to-a-playbook).
+
+### Containment
+
+Containment actions perform some sort of response or remediation action, such as:
+* Block IPs
+* Block email senders
+* Block URLs
+* Ban hash files
+* Reset passwords and send an email with new passwords
+* Delete attachments
+* Disconnect devices from the network
+
+Many integrations offer containment actions. Here are just a few:
+* [Active Directory V2](/docs/platform-services/automation-service/app-central/integrations/active-directory-v2/)
+* [AWS IAM](/docs/platform-services/automation-service/app-central/integrations/aws-iam/)
+* [Azure AD](/docs/platform-services/automation-service/app-central/integrations/azure-ad/)
+* [Cortex XDR](/docs/platform-services/automation-service/app-central/integrations/cortex-xdr/)
+* [CrowdStrike Falcon](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon/)
+* [Gmail](/docs/platform-services/automation-service/app-central/integrations/gmail/)
+* [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/)
+* [Okta](/docs/platform-services/automation-service/app-central/integrations/okta/)
+* [OneLogin](/docs/platform-services/automation-service/app-central/integrations/onelogin/)
+* [Slack](/docs/platform-services/automation-service/app-central/integrations/slack/)
+
+### Custom
+
+Custom actions perform an activity defined in a custom action YAML file. For an example of a custom action created for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
+
+A few [integrations](/docs/platform-services/automation-service/app-central/integrations/) also offer actions labelled as custom types:
+* [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp)
+* [Triage Tools](/docs/platform-services/automation-service/app-central/integrations/triage-tools/)
+
+### Enrichment
+
+Enrichment actions enrich data with additional information, such as adding information about a known malicious IP address.
+
+Many integrations offer enrichment actions. Here are just a few:
+* [Abnormal Security](/docs/platform-services/automation-service/app-central/integrations/abnormal-security/)
+* [Atlassian Jira V2](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/)
+* [AWS IAM](/docs/platform-services/automation-service/app-central/integrations/aws-iam/)
+* [Azure AD](/docs/platform-services/automation-service/app-central/integrations/azure-ad/)
+* [Cortex XDR](/docs/platform-services/automation-service/app-central/integrations/cortex-xdr/)
+* [Criminal IP](/docs/platform-services/automation-service/app-central/integrations/criminal-ip/)
+* [CrowdStrike Falcon](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon/)
+* [IP Quality Score](/docs/platform-services/automation-service/app-central/integrations/ip-quality-score/)
+* [Salesforce](/docs/platform-services/automation-service/app-central/integrations/salesforce/)
+* [SentinelOne](/docs/platform-services/automation-service/app-central/integrations/sentinelone/)
+* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
+* [VirusTotal](/docs/platform-services/automation-service/app-central/integrations/virustotal/)
+
+### Notification
+
+Notification actions send a notification, for example, an email or a post in a messaging service.
+
+Many integrations offer notification actions. Here are just a few:
+* [Basic Tools](/docs/platform-services/automation-service/app-central/integrations/basic-tools/)
+* [Gmail](/docs/platform-services/automation-service/app-central/integrations/gmail/)
+* [Slack](/docs/platform-services/automation-service/app-central/integrations/slack/)
+* [SMTP V3](/docs/platform-services/automation-service/app-central/integrations/smtp-v3/)
+* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
+
+### Scheduled
+
+Scheduled actions run on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed.
+
+Many integrations offer scheduled actions. Here are just a few:
+* [Atlassian Jira V2](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/)
+* [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/)
+* [SentinelOne](/docs/platform-services/automation-service/app-central/integrations/sentinelone/)
+* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
+* [Sumo Logic Notifications by Microsoft](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-microsoft/)
+* [Sumo Logic Notifications](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/)
+* [VirusTotal](/docs/platform-services/automation-service/app-central/integrations/virustotal/)
 
 ## Playbook versioning
 
@@ -253,13 +369,17 @@ When you publish a playbook:
 
 Select **Enable Autosave for all playbooks** to ensure that while editing a playbook, all changes will be automatically saved to the draft. For more information, see [Autosave](#autosave).
 
-## Import and export playbooks
+## Export and import playbooks
 
-With the mechanism to import and export playbooks, you can move a playbook, along with all its configurations, from one instance to another. The file should be in tar.gz format and adhere to naming conventions.
+With the mechanism to export and import playbooks, you can move a playbook, along with all its configurations, from one instance to another. You can also use the export function to manage playbooks using Terraform.
 
-1. Click on the Export icon located next to the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/export-playbook.png')} alt="Export Playbook" style={{border: '1px solid gray'}} width="500"/>
-1. Upon clicking, the tar.gz archive download will be initiated.
-1. At this point, you can open the archive, modify the configuration data, recreate a tar.gz archive, and upload it. To upload the file, click on the Import icon.<br/><img src={useBaseUrl('img/cloud-soar/import-playbook.png')} alt="Import Playbook" style={{border: '1px solid gray'}} width="700"/>
-1. Select the desired file and click Import. <br/><img src={useBaseUrl('img/cloud-soar/import-playbook-modal.png')} alt="Import Playbook modal" style={{border: '1px solid gray'}} width="300"/>
+1. Click on the **Export** icon located next to the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/export-playbook.png')} alt="Export Playbook" style={{border: '1px solid gray'}} width="500"/>
+1. Select one of the following:
+   * **Export All (ZIP Format)**. Exports a tar.gz archive file.
+       1. After export, you can open the archive, modify the configuration data, recreate a tar.gz archive, and upload it. To upload the file, click the **Import** icon.<br/><img src={useBaseUrl('img/cloud-soar/import-playbook.png')} alt="Import Playbook" style={{border: '1px solid gray'}} width="700"/>
+       1. Select the desired file and click **Import**. <br/><img src={useBaseUrl('img/cloud-soar/import-playbook-modal.png')} alt="Import Playbook modal" style={{border: '1px solid gray'}} width="300"/>
 
-It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
+       It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
+   * **Export as JSON**. Exports a JSON file that you can use to manage the playbook with Terraform using the [sumologic_csoar_playbook](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/csoar_playbook) resource. 
+        <TerraformLink/>
+

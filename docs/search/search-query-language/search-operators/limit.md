@@ -4,6 +4,8 @@ title: limit Search Operator
 sidebar_label: limit
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `limit` operator reduces the number of raw messages or aggregate results returned. If you simply query for a particular term, for example "error" without using an aggregation operator such as group by, limit will reduce the number of raw messages returned. If you first use group-by or other aggregation operator, the limit operator will reduce the number of grouped results instead.
 
 The limit operator is useful for creating lists of events for a Dashboard, which allows you to see at a glance, for example, the "Top 10" service operations, system operations, errors, or other system or user activities.
@@ -46,7 +48,7 @@ error *
 
 which would provide results similar to:
 
-![limit operator](/img/reuse/query-search/limit_operator_example1.png)
+<img src={useBaseUrl('img/reuse/query-search/limit_operator_example1.png')} alt="limit operator" style={{border: '1px solid gray'}} width="300" />
 
 **Top 10 Service Operations:**
 
@@ -65,6 +67,6 @@ _sourceCategory=OS/Windows Service Control Manager
 
 which can be displayed in a bar chart like this:
 
-![Limit](/img/search/searchquerylanguage/search-operators/Limit.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Limit.png')} alt="Limit" style={{border: '1px solid gray'}} width="800" />
 
 See [Sort](sort.md) operator for more information.

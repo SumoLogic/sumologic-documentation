@@ -4,6 +4,7 @@ title: Streaming Metrics Source
 description: Add a streaming metric source  to an installed collector to collect Graphite, Carbon 2.0, or Prometheus metrics.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can use Sumo’s streaming metrics source with an installed collector to collect metrics from any application that emits metrics over TCP or UDP in the Graphite, Carbon 2.0, or Prometheus plaintext protocols. The streaming metrics source is analogous to a Syslog server, but for receiving metrics rather than logs.
 
@@ -43,7 +44,7 @@ Perform these steps on each host from which you want to collect metrics:
 * Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics).
 :::
 
-    ![streaming-metrics-source.png](/img/send-data/streaming-metrics-source.png)
+    <img src={useBaseUrl('img/send-data/streaming-metrics-source.png')} alt="Steaming Metrics example" style={{border: '1px solid gray'}} width="700" />
 
 ## Specify the network interface for a streaming metrics source 
 

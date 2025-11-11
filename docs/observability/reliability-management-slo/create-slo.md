@@ -28,6 +28,14 @@ The following table lists the available options for an SLO:
 | **Metrics-based SLO** | Ratio and Threshold | Ratio Only   |
 | **Logs-based SLO**   | Ratio and Threshold | Ratio and Threshold |
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage SLOs with the [`sumologic_slo`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo) and [`sumologic_slo_folder`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder) resources.
+
+<TerraformLink/>
+:::
+
 ## Create an SLO (General)
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**.  
@@ -59,11 +67,11 @@ The following table lists the available options for an SLO:
   </tr>
   <tr>
    <td>For <strong>Ratio-based</strong> definition, define queries for the successful or unsuccessful events to calculate against total events:<ol><li>Specify Total Events query.</li>
-<li>Build a query using metrics and filters. See <a href="/docs/metrics/introduction">Overview of Metrics in Sumo</a>.</li>
+<li>Build a query using metrics and filters. See [Overview of Metrics in Sumo](/docs/metrics/introduction).</li>
 <li>Select the values to use from <strong>Number of data points </strong>or <strong>Metric value</strong>.</li>
 <li>Configure the Total Events, including a query and values, to use <strong>Number of data points</strong> or <strong>Metric value</strong>. You can copy and paste the previous query, removing filters to get the total.</li></ol></td>
    <td>For <strong>Threshold-based</strong> definitions, which calculate against success criteria:<ol><li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
-<li>Build a query using metrics and filters. See <a href="/docs/metrics/introduction">Overview of Metrics in Sumo</a> for more information.</li>
+<li>Build a query using metrics and filters. See [Overview of Metrics in Sumo](/docs/metrics/introduction) for more information.</li>
 <li>For <strong>Use values from</strong>, it always uses the Metric value.</li>
 <li>For <strong>Success Criteria</strong> for <strong>Avg</strong>, <strong>Min</strong>, <strong>Max</strong>, or <strong>Sum</strong> of the selected signal type (such as latency) which must be <strong>greater than</strong>, <strong>greater than or equal to</strong>, <strong>less than</strong>, or <strong>less than equal to</strong> an amount you enter (positive or negative number).</li></ol></td>
   </tr>
@@ -78,11 +86,11 @@ The following table lists the available options for an SLO:
   </tr>
   <tr>
    <td>For <strong>Ratio-based</strong> definitions, which calculate successful or unsuccessful events against total events:<ol><li>Specify Total Events query.</li>
-<li>Search logs selecting and entering a log query. See <a href="/docs/search/get-started-with-search/search-basics/about-search-basics">About Search Basics</a> for more information.</li>
+<li>Search logs selecting and entering a log query. See [About Search Basics](/docs/search/get-started-with-search/search-basics/about-search-basics) for more information.</li>
 <li>For <strong>Use values from</strong>, select the numeric value available for that query to pull data from.</li>
 <li>Then configure the <strong>Total Events</strong>, including a query and values. You can copy and paste the previous query, perhaps with filters removed to get the total.</li></ol></td>
    <td>For <strong>Threshold-based</strong> definitions, which calculate against success criteria:<ol><li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
-<li>Search logs selecting and entering a log query. See <a href="/docs/search/get-started-with-search/search-basics/about-search-basics">About Search Basics</a> for more information.</li>
+<li>Search logs selecting and entering a log query. See [About Search Basics](/docs/search/get-started-with-search/search-basics/about-search-basics) for more information.</li>
 <li>For <strong>Use values from</strong>, it always uses the Metric value.</li>
 <li>For <strong>Success Criteria</strong> for <strong>Avg</strong>, <strong>Min</strong>, <strong>Max</strong>, or <strong>Sum</strong> of the selected signal type (such as latency), which must be <strong>greater than</strong>, <strong>greater than or equal to</strong>, <strong>less than</strong>, or <strong>less than equal to</strong> an amount you enter (positive or negative number).</li></ol></td>
   </tr>

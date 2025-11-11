@@ -17,6 +17,14 @@ The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint to receive ev
 
 For information on how inventory data is used in Cloud SIEM, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an AWS inventory source with the [`sumologic_aws_inventory_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/aws_inventory_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Data collected
 
 | Polling Interval | Data |

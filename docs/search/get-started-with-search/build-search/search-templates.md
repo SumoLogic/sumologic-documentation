@@ -3,6 +3,8 @@ id: search-templates
 title: Search Templates
 description: Search templates narrow down your queries into a few parameters that other users can edit to find the data they need.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
 Search templates can help you simplify searches for your users by giving them a few easy input choices. You can have search templates  replace any text in a query, including fields, keywords, and arguments to operators. You can also determine what type of information is valid such as text, strings, and keywords.
@@ -34,7 +36,7 @@ Watch this micro lesson to learn how to use search template parameters.
 From any query you create, or an existing one you manage, you can create a search template and specify parameters.
 
 1. Open your query.
-1. Highlight the field, argument, or operator you want to replace and click **Create a parameter** or **alt+v** if you want to use the keyboard shortcut.  <br/>  ![template variable selection](/img/search/get-started-search/build-search/search-templates/template-variable-selection.png)
+1. Highlight the field, argument, or operator you want to replace and click **Create a parameter** or **alt+v** if you want to use the keyboard shortcut.  <br/><img src={useBaseUrl('img/search/get-started-search/build-search/search-templates/template-variable-selection.png')} alt="Template variable selection" style={{border: '1px solid gray'}} width="800" />
    :::note
    You can create a maximum of 10 parameters inside a search.
    :::
@@ -47,13 +49,13 @@ From any query you create, or an existing one you manage, you can create a searc
    | Keyword | Any Sumo Logic keyword. There are some performance benefits to using Sumo Logic keywords so this is a great option to choose if you can. |
 1. Optionally, you can set autocomplete values for your parameter by selecting **Set Values for Parameter**. Select a format:
     1. For text entries, enter each value on a separate line. Do not use commas to separate values as they will be marked invalid. If the string needs a comma, use quotes in the text entry, such as “abc,xyz”.
-    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you're using a Lookup make sure that you are using a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file because the system will reject any lookup file path that it cannot validate.<br/>  ![label-value-pairs.png](/img/search/get-started-search/build-search/search-templates/label-value-pairs.png)
+    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you're using a Lookup make sure that you are using a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file because the system will reject any lookup file path that it cannot validate.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/search-templates/label-value-pairs.png')} alt="Label value pairs" style={{border: '1px solid gray'}} width="500" />
         1. Select the appropriate values for the field, such as user ID. 
         1. Select values for the corresponding label, such as name. Both **Text** entries and **Label-value** pairs allow amaximum of 10,000 entries. A lookup file can have a maximum of 40,000 entries.
     1. For a lookup file, you must enter a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file that you have [saved](/docs/search/search-query-language/search-operators/save-classic). 
         1. Under **Select a format**, select **Lookup**.
         1. Enter in a valid lookup file or select a shared lookup file from the dropdown. 
-        1. Select values for the corresponding label, such as name. <br/>  ![autocomplete-values.png](/img/search/get-started-search/build-search/search-templates/autocomplete-values.png)
+        1. Select values for the corresponding label, such as name. <br/><img src={useBaseUrl('img/search/get-started-search/build-search/search-templates/autocomplete-values.png')} alt="Autocomplete values" style={{border: '1px solid gray'}} width="600" />
 1. Click **Save.**
 1. Share your search with any new users by clicking **Share** underneath your query window.
 1. Grant **Edit** access to the users and roles that should use this search template.
@@ -88,7 +90,7 @@ _sourceCategory=service "Successful login from UI"
 
 Next, specify the `user_name` parameter as a lookup that already has the association between our user names and our user IDs, in this case `/shared/angad/user_info_lookup`:
 
-1. Enter in a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file that you have [saved](/docs/search/search-query-language/search-operators/save-classic) with the save operator.  <br/>  ![lookup.png](/img/search/get-started-search/build-search/search-templates/lookup.png)
+1. Enter in a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file that you have [saved](/docs/search/search-query-language/search-operators/save-classic) with the save operator.  <br/><img src={useBaseUrl('img/search/get-started-search/build-search/search-templates/lookup.png')} alt="Lookup" style={{border: '1px solid gray'}} width="600" />
 1. Select the appropriate values for the field, such as user ID.
 1. Select values for the corresponding label, such as name.
 1. Click **Save**.
@@ -124,7 +126,7 @@ _sourceCategory=apache_error
 | count by _timeslice
 ```
 
-![SearchTemplates.png](/img/search/get-started-search/build-search/search-templates/searchtemplates.png)
+<img src={useBaseUrl('img/search/get-started-search/build-search/search-templates/searchtemplates.png')} alt="Search Templates" style={{border: '1px solid gray'}} width="500" />
 
 **Save**. You now have a parameter for your search that allows users to just pick the timeslice from a list of values you feel is appropriate for the query.
 

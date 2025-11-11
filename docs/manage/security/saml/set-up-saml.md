@@ -17,6 +17,14 @@ This page has information about provisioning Security Assertion Markup Language 
 
 In addition to basic SAML configuration, you can choose optional on-demand user creation (using SAML 2.0 assertions), and designate custom login and/or logout portals.
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a SAML configuration with the [`sumologic_saml_configuration`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/saml_configuration) resource.
+
+<TerraformLink/>
+:::
+
 ## SAML provisioning process
 
 The provisioning process works as follows:
