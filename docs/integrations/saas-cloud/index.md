@@ -221,8 +221,14 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/fastly')}><img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="40"/><h4>Fastly</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/fastly')}><img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="60"/><h4>Fastly</h4></a>
   <p>Control how and where you serve content, and view performance analytics.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/github-copilot')}><img src={useBaseUrl('img/send-data/github_copilot.png')} alt="Thumbnail icon" width="40"/><h4>GitHub Copilot</h4></a>
+  <p>Optimize Copilot adoption, improve developer productivity, and ensure secure, data-driven use of AI-assisted coding.</p>
   </div>
 </div>
 <div className="box smallbox card">

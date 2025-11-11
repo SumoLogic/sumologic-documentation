@@ -7,6 +7,7 @@ description: Learn how to create playbooks in the Automation Service to run auto
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CartesianProduct from '../../../reuse/cartesian-product.md';
+import TerraformLink from '../../../reuse/terraform-link.md';
 
 ## View playbooks
 
@@ -368,13 +369,17 @@ When you publish a playbook:
 
 Select **Enable Autosave for all playbooks** to ensure that while editing a playbook, all changes will be automatically saved to the draft. For more information, see [Autosave](#autosave).
 
-## Import and export playbooks
+## Export and import playbooks
 
-With the mechanism to import and export playbooks, you can move a playbook, along with all its configurations, from one instance to another. The file should be in tar.gz format and adhere to naming conventions.
+With the mechanism to export and import playbooks, you can move a playbook, along with all its configurations, from one instance to another. You can also use the export function to manage playbooks using Terraform.
 
-1. Click on the Export icon located next to the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/export-playbook.png')} alt="Export Playbook" style={{border: '1px solid gray'}} width="500"/>
-1. Upon clicking, the tar.gz archive download will be initiated.
-1. At this point, you can open the archive, modify the configuration data, recreate a tar.gz archive, and upload it. To upload the file, click on the Import icon.<br/><img src={useBaseUrl('img/cloud-soar/import-playbook.png')} alt="Import Playbook" style={{border: '1px solid gray'}} width="700"/>
-1. Select the desired file and click Import. <br/><img src={useBaseUrl('img/cloud-soar/import-playbook-modal.png')} alt="Import Playbook modal" style={{border: '1px solid gray'}} width="300"/>
+1. Click on the **Export** icon located next to the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/export-playbook.png')} alt="Export Playbook" style={{border: '1px solid gray'}} width="500"/>
+1. Select one of the following:
+   * **Export All (ZIP Format)**. Exports a tar.gz archive file.
+       1. After export, you can open the archive, modify the configuration data, recreate a tar.gz archive, and upload it. To upload the file, click the **Import** icon.<br/><img src={useBaseUrl('img/cloud-soar/import-playbook.png')} alt="Import Playbook" style={{border: '1px solid gray'}} width="700"/>
+       1. Select the desired file and click **Import**. <br/><img src={useBaseUrl('img/cloud-soar/import-playbook-modal.png')} alt="Import Playbook modal" style={{border: '1px solid gray'}} width="300"/>
 
-It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
+       It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
+   * **Export as JSON**. Exports a JSON file that you can use to manage the playbook with Terraform using the [sumologic_csoar_playbook](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/csoar_playbook) resource. 
+        <TerraformLink/>
+

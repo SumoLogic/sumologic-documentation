@@ -4,6 +4,8 @@ title: outlier Search Operator
 sidebar_label: outlier
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Given a series of time-stamped numerical values, using the `outlier` operator in a query can identify values in a sequence that seem unexpected, and would identify an alert or violation, for example, for a scheduled search.
 
 To do this, the Outlier operator tracks the moving average and standard deviation of a numerical field. An outlier is identified based on a specified *threshold* of standard deviations around the expected value. If a data point is outside the threshold, it is considered to be an outlier.
@@ -86,7 +88,7 @@ _sourceCategory=IIS/Access
 | outlier response_time window=5,threshold=3,consecutive=2,direction=+-
 ```
 
-![IIS](/img/search/searchquerylanguage/search-operators/IIS.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/IIS.png')} alt="IIS" style={{border: '1px solid gray'}} width="800" />
 
 The outlier values are represented by the pink triangles in the resulting chart.
 
@@ -104,7 +106,7 @@ _sourceCategory=Apache/Access
 | outlier status_code window=5,threshold=3,consecutive=1,direction=+-
 ```
 
-![Apache](/img/search/searchquerylanguage/search-operators/Apache-Access.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Apache-Access.png')} alt="Apache" style={{border: '1px solid gray'}} width="800" />
 
 The outlier values are represented by the pink triangles in the
 resulting chart.
@@ -122,7 +124,7 @@ _sourceCategory=Apache/Access
 
 This way, you can run outlier analysis separately for each value of `_sourceHost`, as shown.
 
-![Group by](/img/search/searchquerylanguage/search-operators/Group-by.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Group-by.png')} alt="Group b" style={{border: '1px solid gray'}} width="800" />
 
 This example will only produce an aggregation table, not a chart, but the indicator and violation fields will correctly reflect each `_sourceHost` processing.
 
@@ -158,7 +160,7 @@ You can display the raw results of a multidimensional time series in a table cha
 In the following table chart, a value of 1 in the `_count_violation` column indicates that the data point corresponding to that timeslice is
 an outlier.
 
-![Multidimensional](/img/search/searchquerylanguage/search-operators/Multidimensional.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Multidimensional.png')} alt="Multidimensional" style={{border: '1px solid gray'}} width="800" />
 
 ### Alerts Based on Multidimensional Outlier Results
 
@@ -184,7 +186,7 @@ Once you have run the query, you can click **Save As** to create a [Scheduled Se
 
 To visualize your results, on the Search page, you can create a column chart, then change the stacking property to normal to display alerts by unique **user_id** (the multidimensional aspect).
 
-![Alert](/img/search/searchquerylanguage/search-operators/Outlier-Alert.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Outlier-Alert.png')} alt="Alert" style={{border: '1px solid gray'}} width="800" />
 
 ### Chart Multidimensional Outlier Results
 
@@ -205,7 +207,7 @@ error (_sourceCategory=Apache* or _sourceCategory=IIS*)
 
 When you select a [line chart](/docs/dashboards/panels/line-charts), this example will display something like the following:
 
-![Outlier Distribution](/img/search/searchquerylanguage/search-operators/OutlierDistri.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/OutlierDistri.png')} alt="Outlier distribution" style={{border: '1px solid gray'}} width="800" />
 
 #### Example 2: Outlier Ranking
 
@@ -226,7 +228,7 @@ _sourceCategory=Apache*
 
 When you select a [line chart](/docs/dashboards/panels/line-charts), this example will display something like the following:
 
-![Outlier Ranking](/img/search/searchquerylanguage/search-operators/OutlierRanking.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/OutlierRanking.png')} alt="Outlier ranking" style={{border: '1px solid gray'}} width="800" />
 
 In the line chart, you can see which series is producing the most “deviating” outliers.
 

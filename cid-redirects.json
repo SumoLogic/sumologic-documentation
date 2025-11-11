@@ -379,7 +379,6 @@
   "/05Search/Library/About_AWS_S3_Sources": "/docs/send-data/hosted-collectors/amazon-aws/aws-sources",
   "/05Search/Library/Export-and-Import-Content-in-the-Library": "/docs/get-started/library",
   "/05Search/Library/Favorites": "/docs/get-started/library",
-  "/Search": "/docs/search",
   "/Search/Library/Library_Keyboard_Shortcuts": "/docs/get-started/keyboard-shortcuts",
   "/05Search/Library/Pinned-Searches": "/docs/search/get-started-with-search/search-page/pin-a-search",
   "/05Search/Library/Share-a-Saved-Search-from-the-Library": "/docs/get-started/library",
@@ -2413,7 +2412,7 @@
   "/cid/5148": "/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral",
   "/cid/5150": "/",
   "/cid/5154": "/docs/manage/fields",
-  "/cid/5157": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules",
+  "/cid/5157": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps",
   "/cid/5155": "/docs/manage/field-extractions",
   "/cid/5156": "/docs/send-data/collection/processing-rules",
   "/cid/5162": "/docs/manage/security/access-keys",
@@ -2950,7 +2949,7 @@
   "/cid/1108": "/docs/integrations/saas-cloud/trellix-mvision-epo",
   "/cid/1110": "/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity",
   "/docs/integrations/microsoft-azure/microsoft-defender-for-identity/": "/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity",
-  "/cid/1112": "/docs/integrations/saas-cloud/carbon-black-inventory/",  
+  "/cid/1112": "/docs/integrations/saas-cloud/carbon-black-inventory/",
   "/cid/1111": "/docs/integrations/microsoft-azure/azure-open-ai",
   "/cid/1114": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/varonis-source",
   "/cid/1115": "/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps",
@@ -2961,6 +2960,7 @@
   "/cid/1117": "/docs/integrations/saas-cloud/chatgpt-compliance",
   "/cid/1118": "/docs/integrations/saas-cloud/databricks-audit",
   "/cid/1121": "/docs/integrations/saas-cloud/varonis",
+  "/cid/1120": "/docs/integrations/saas-cloud/github-copilot",
   "/Cloud_SIEM_Enterprise": "/docs/cse",
   "/Cloud_SIEM_Enterprise/Administration": "/docs/cse/administration",
   "/Cloud_SIEM_Enterprise/Administration/Cloud_SIEM_Enterprise_Feature_Update_(2022)": "/docs/cse/administration",
@@ -4546,5 +4546,6 @@
   "/Search/Search-Query-Language/Parse-Operators": "/docs/search/search-query-language/parse-operators",
   "/docs/search/get-started-with-search-language/parsing-operators": "/docs/search/search-query-language/parse-operators",
   "/docs/get-started/training-certification-faq-new": "/docs/get-started/training-certification-faq",
-  "/docs/manage/scheduled-views/pausing-inactive-scheduled-views": "/docs/manage/scheduled-views/pause-disable-scheduled-views"
+  "/docs/manage/scheduled-views/pausing-inactive-scheduled-views": "/docs/manage/scheduled-views/pause-disable-scheduled-views",
+  "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps"
 }

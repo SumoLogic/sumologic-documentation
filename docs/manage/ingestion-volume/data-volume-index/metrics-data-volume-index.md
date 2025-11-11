@@ -4,6 +4,8 @@ title: Metrics Data Volume Index
 description: The Metrics Data Volume Index contains JSON formatted messages that contain parent objects for each source data point, and child objects that detail the data points for each parent.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Sumo Logic populates the Metrics Data Volume Index with a set of JSON-formatted messages every five minutes. The messages contain the volume of metric data points your account is ingesting. 
 
 You can query the index to:
@@ -65,7 +67,7 @@ _index=sumologic_volume _sourceCategory="sourcecategory_metrics_volume"
 
 It returns results like these:
 
-![metric-volume-source-category](/img/manage/ingestion-volume/metric-volume-source-category.png)
+<img src={useBaseUrl('img/manage/ingestion-volume/metric-volume-source-category.png')} alt="Metric volume source category" style={{border: '1px solid gray'}} width="500" />
 
 ### Metric volume by collector
 
@@ -80,7 +82,7 @@ _index=sumologic_volume  _sourceCategory="collector_metrics_volume"
 
 It returns results like these:
 
-![metric-volume-collector.png](/img/manage/ingestion-volume/metric-volume-collector.png)
+<img src={useBaseUrl('img/manage/ingestion-volume/metric-volume-collector.png')} alt="Metric volume collector" style={{border: '1px solid gray'}} width="500" />
 
 ### Metric volume for a specific collector
 

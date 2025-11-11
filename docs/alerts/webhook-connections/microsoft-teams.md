@@ -31,7 +31,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 This section demonstrates how to create a webhook connection from Sumo Logic to Microsoft Teams using Microsoft's Workflows.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
-1. Click **+ Add** and choose **Microsoft Teams** as the connection type.<br/> ![Microsoft Teams webhook connection tile.png](/img/connection-and-integration/ms-teams-webhook-connection-tile.png)
+1. Click **+ Add** and choose **Microsoft Teams** as the connection type.<br/><img src={useBaseUrl('img/connection-and-integration/ms-teams-webhook-connection-tile.png')} alt="Microsoft Teams webhook connection tile" style={{border: '1px solid gray'}} width="200" />
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. Paste the **URL** from Microsoft Teams into the **URL** field.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
