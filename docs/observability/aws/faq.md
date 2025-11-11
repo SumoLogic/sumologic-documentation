@@ -61,7 +61,7 @@ See [Add a New AWS Service to the AWS Observability View Hierarchy](/docs/obser
 
 ### Does AWS Observability require logs and metrics?
 
-For full functionality of the out-of-the-box dashboards, the solution requires CloudWatch logs and metrics, EC2 Host Metrics (via installed collectors), and CloudTrail logs. You may be sending real-time data from AWS, primarily used for logs. These features expand monitoring to provide advanced analytics for large-scale AWS operations from the same dataset.
+For full functionality of the out-of-the-box dashboards, the solution requires CloudWatch logs and metrics, EC2 Host Metrics (via installed collectors), CloudTrail logs and Access logs. You may be sending real-time data from AWS, primarily used for logs. These features expand monitoring to provide advanced analytics for large-scale AWS operations from the same dataset.
 
 ### Who can use the new features? 
 

@@ -11,6 +11,14 @@ The [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) p
 
 By default, the AWS Observability view supports the following services: AWS EC2, AWS API Gateway, AWS Lambda, AWS RDS, Amazon DynamoDB, and AWS Application ELB. The purpose of this document is to guide you towards adding any dashboards you may have built for additional services to the AWS Observability hierarchy.
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a hierarchy with the [`sumologic_hierarchy`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/hierarchy) resource.
+
+<TerraformLink/>
+:::
+
 ## Prerequisites
 
 Before you can add dashboards for a new service to the AWS Observability
@@ -70,7 +78,7 @@ steps below to update the existing hierarchy.
 
 Replace these variables with your own in the code samples in this section:
 - `ACCESS_ID` and `ACCESS_KEY`. Replace with your Sumo Logic access ID and access key.
-- `SUMOLOGIC_URL`. Replace with the [API Endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your deployment.
+- `SUMOLOGIC_URL`. Replace with the [API Endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your deployment.
 - `ID`. Replace with the hierarchy ID as present in the JSON output from Step 1 below.
 - `JSON_CONTENT_AFTER_UPDATE`. Replace with the JSON updated with new AWS service after Step 2 below.
 
@@ -182,7 +190,7 @@ Replace these variables with your own in the code samples in this section:
 
 Once you are done with the above steps, the AWS service will be added to the AWS Observability view hierarchy. To validate this:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then select **AWS Observability** from the dropdown menu in the upper left. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **AWS Observability**. You can also click the **Go To...** menu at the top of the screen and select **Observability**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **AWS Observability**. You can also click the **Go To...** menu at the top of the screen and select **Observability**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then select **AWS Observability** from the dropdown menu in the upper left. 
 1. You should be able to see the new service in the hierarchy represented by namespace/entity.
 
 <img src={useBaseUrl('img/observability/Validate_hierarchy.png')} alt="Validate hierarchy" style={{border: '1px solid gray'}} width="400" />

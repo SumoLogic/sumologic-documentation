@@ -25,7 +25,7 @@ You need the **Manage S3 data forwarding** role capability to create an AWS Ar
 :::
 
 1. Follow the instructions on Grant Access to an AWS Product to grant Sumo permission to send data to the destination S3 bucket.
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Data Archiving**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Data Archiving**. You can also click the **Go To...** menu at the top of the screen and select **Data Archiving**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Data Archiving**. You can also click the **Go To...** menu at the top of the screen and select **Data Archiving**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Data Archiving**. 
 1. Click **+** to add a new destination.
 1. Select **AWS Archive bucket** for **Destination Type**.  <br/><img src={useBaseUrl('img/archive/archive-destination.png')} alt="Create a New Destination dialog" style={{border: '1px solid gray'}} width="400"/>
 1. Configure the following:
@@ -60,7 +60,7 @@ To configure processing rules for Archive using the web application follow these
 You can use JSON to configure a processing rule, use the **Forward** filterType. See an example data forwarding rule.
 :::
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Search for the Source that you want to configure, and click the **Edit** link for the Source. The Source must be associated with an Installed Collector.
 1. Scroll down to the **Processing Rules** section and click the arrow to expand the section.
 1. Click **Add Rule**.
@@ -136,7 +136,7 @@ An AWS S3 Archive Source allows you to ingest your Archived data. Configure it 
 To use JSON to create an AWS S3 Archive Source reference our AWS Log Source parameters and use `AwsS3ArchiveBucket` as the value for `contentType`.
 :::
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector or one you have created for this purpose.
 1. Select **AWS S3 Archive**. <br/><img src={useBaseUrl('img/archive/archive-icon.png')} alt="Archive icon" width="100"/>
 1. Enter a name for the new Source. A description is optional.
@@ -154,8 +154,8 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
     :::note
     Fields specified on an AWS S3 Archive Source take precedence if the archived data has the same fields.
     :::
-    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 1. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step Grant Sumo Logic access to an AWS Product.
     * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role.   
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
@@ -170,10 +170,9 @@ You need the Manage or View Collectors role capability to manage or view Archiv
 
 The Archive page provides a table of all the existing [AWS S3 Archive Sources](#create-an-aws-s3-archivesource) in your account and ingestion jobs.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Archive page, in the main Sumo Logic menu select **Manage Data > Collection > Archive**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Archive page, in the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Archive page, in the top menu select **Configuration**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**.
- 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Archive page, in the main Sumo Logic menu select **Manage Data > Collection > Archive**.
 
 <img src={useBaseUrl('img/archive/archive-page.png')} alt="Archive page" width="800"/>
 
@@ -185,7 +184,7 @@ Click on a table row to view the Source details. This includes:
 * **Description**
 * **AWS S3 bucket**
 * All **Ingestion jobs** that are and have been created on the Source.
-    * Each ingestion job shows the name, time window, and volume of data processed by the job. Click the icon ![open in search icon.png](/img/archive/open-search-icon.png) to the right of the job name to start a Search against the data that was ingested by the job.
+    * Each ingestion job shows the name, time window, and volume of data processed by the job. Click the icon <img src={useBaseUrl('img/archive/open-search-icon.png')} alt="Open in search icon" width="30" /> to the right of the job name to start a Search against the data that was ingested by the job.
     * Hover your mouse over the information icon to view who created the job and when.<br/><img src={useBaseUrl('img/archive/archive-details-pane.png')} alt="Archive details pane" width="325"/>
 
 ## Create an ingestion job
@@ -196,7 +195,7 @@ A maximum of 2 concurrent jobs is supported.
 
 An ingestion job is a request to pull data from your S3 bucket. The job begins immediately and provides statistics on its progress. To ingest from your Archive you need an AWS S3 Archive Source configured to access your AWS S3 bucket with the archived data.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Archive**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Archive**. 
 1. On the **Archive** page search and select the AWS S3 Archive Source that has access to your archived data.
 1. Click **New Ingestion Job** and a window appears where you:
     1. Define a mandatory job name that is unique to your account.

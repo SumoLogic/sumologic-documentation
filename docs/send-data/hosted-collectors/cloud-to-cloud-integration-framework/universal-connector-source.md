@@ -40,7 +40,7 @@ If you are unable to configure the source to support your vendor API, you can ei
 
 When you create an Universal Connector Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Universal Connector**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -48,8 +48,8 @@ When you create an Universal Connector Source, you add it to a Hosted Collector.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Parser path**. If **Forward to SIEM** option is selected, provide a [parser path](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md).
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   - ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   - ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   - <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   - <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Configuration Sections**. Expand each section to learn more about the options available for configuration.
 <details>
   <summary>Authentication Configuration</summary>
@@ -125,7 +125,7 @@ Invalid examples:
 
 #### Request Headers
 
-Include any HTTP request headers required by the vendor API. The key names are static text, but the values can access our [template feature](#template-dynamic-values) to make them dynamic.
+Include any HTTP request headers required by the vendor API. The key names are static text, but the values can access our [variables feature](#dynamic-values-variables) to make them dynamic.
 
 | Example Header Key | Example Header Value         |
 | :----------------- | :--------------------------- |
@@ -135,7 +135,7 @@ Include any HTTP request headers required by the vendor API. The key names are s
 
 #### Request Parameters
 
-Include any URL query parameters required by the vendor API. The key names are static text, but the values can access our [template feature](#template-dynamic-values) to make them dynamic.
+Include any URL query parameters required by the vendor API. The key names are static text, but the values can access our [variables feature](#dynamic-values-variables) to make them dynamic.
 
 | Example Header Key | Example Header Value                           |
 | :----------------- | :--------------------------------------------- |
@@ -148,7 +148,7 @@ Examples URL encoded:
 
 #### Request Body
 
-This is optional and only used if the HTTP `POST` method is configured above. You can use this field to include any information in the HTTP request body. The data included in this field can access our [template feature](#template-dynamic-values).
+This is optional and only used if the HTTP `POST` method is configured above. You can use this field to include any information in the HTTP request body. The data included in this field can access our [dynamic values](#dynamic-values-variables).
 
   </div>
 </details>
@@ -159,9 +159,9 @@ This is optional and only used if the HTTP `POST` method is configured above. Yo
 
 #### Time Window
 
-The source will provide both a start and end timestamp for you to [dynamically](#template-dynamic-values) use in your HTTP request. The window will only move forward if no errors are raised when collecting logs from the vendor API for the current window.
+The source will provide both a start and end timestamp for you to [dynamically](#dynamic-values-variables) use in your HTTP request. The window will only move forward if no errors are raised when collecting logs from the vendor API for the current window.
 
-Use the [template feature](#template-dynamic-values) to include the window start and end timestamps within your HTTP request.
+Use the [dynamic values](#dynamic-values-variables) to include the window start and end timestamps within your HTTP request.
 
 The start time is inclusive and the end time is exclusive as that is the behavior of most APIs.
 
@@ -176,7 +176,7 @@ The start time is inclusive and the end time is exclusive as that is the behavio
 <details>
   <summary>HTTP Response Log Ingest Configuration</summary>
   <div>
-  Select the format of the data returned by the vendor and configure how the source should break down the response into into individual logs with the correct timestamp.
+  Select the format of the data returned by the vendor and configure how the source should break down the response into individual logs with the correct timestamp.
 
 #### JSON with JPath
 
@@ -330,7 +330,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | sourceType | String      | `"Universal Connector"`                              | Yes      | Type of source.                  |
 | config     | JSON Object | [Configuration object](#configuration-object) | Yes      | Source type specific values.     |
 
-### Configuration Object
+### Configuration object
 
 | Parameter                  | Type        | Required | Default           | Description                                                                                                                                                                                                                              | Example                                                                                                                                                                                                                                                   |
 | :------------------------- | :---------- | :------- | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -362,7 +362,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | progressWindowInitLookback | String      | Yes      | `"24h"`           | How far back the source should start collecting data when created. This setting has no affect after the initial creation.                                                                                                                | `"windowInitialLookback": "24h"`                                                                                                                                                                                                                          |
 | progressWindowMaxLookback  | String      | Yes      | `"31d"`           | How far the window is allowed to stagnate when encountering repetitive errors.                                                                                                                                                           | `"windowMaxLookback": "31d"`                                                                                                                                                                                                                              |
 | responseLogsType           | String      | Yes      | `"json"`          | How the source should ingest logs from the response.                                                                                                                                                                                     | `"json"`                                                                                                                                                                                                                                                  |
-| responseLogsJsonPaths      | JSON Object | Yes      | `null`            | The location of logs to ingest in the JSON response and how to handle event timestamps. See full documentation for details.                                                                                                              | `[{"logsPath": "$[*]", "logTimestampPath": "$.published", "logTimestampFormat": "2006-01-02T15:04:05.999Z"}]`                                                                                                                                             |
+| responseLogsJsonPaths      | JSON Object | Yes      | `null`            | The location of logs to ingest in the JSON response and how to handle event timestamps. See [full documentation](/docs/send-data/reference-information/time-reference) for details.                                                                                                              | `[{"logsPath": "$[*]", "logTimestampPath": "$.published", "logTimestampFormat": "2006-01-02T15:04:05.999Z", "logTimestampValueRegex": "Date\((.*)\)"}]`<br></br>**Note:** For regex, there should be at least one match group. If there is more than one match group, then only the first group will be considered.                                                                                                                                             |
 | paginationType             | String      | Yes      | `"LinkHeaders"`   | Pagination type `LinkHeaders`, `Offset`, or `None`                                                                                                                                                                                      | `"LinkHeaders"`, `"None"`                                                                                                                                                                                                                                 |
 | paginationLinkHeadersType  | String      | Yes      | `"headers"`       | Configures if the next page URL is included in the Link HTTP response header or in the response body.                                                                                                                                    | `"headers"`, `"body"`                                                                                                                                                                                                                                     |
 | paginationLinkHeadersJPath | String      | No       | `null`            | A JSON Path to the appropriate body property                                                                                                                                                                                            |
@@ -377,9 +377,9 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | clientRateLimitBurst       | Integer     | Yes      | `1000`            | The number of requests the source is allowed to burst.                                                                                                                                                                                   | `1000`                                                                                                                                                                                                                                                    |
 | pollingInterval            | String      | Yes      | `"5m"`            | Set how frequently to poll for new data. It must be between 5 minutes and 48 hours.                                                                                                                                                      | `"5m"`                                                                                                                                                                                                                                                    |
 
-## Template Dynamic Values
+## Dynamic values variables
 
-The source has the ability to template in dynamic text into the values of certain fields providing flexibility in crafting the HTTP requests sent to the vendor API.
+The source has the ability to use dynamic values, like the window start time, in the values of certain fields providing flexibility in crafting the HTTP requests sent to the vendor API.
 
 The following fields values are allowed to access dynamic text from the template functions described in this section:
 
@@ -387,7 +387,7 @@ The following fields values are allowed to access dynamic text from the template
 - HTTP Request Parameter Values
 - HTTP Request Body
 
-To start using the template with one of the supported config values listed above, you will need to enclose the template logic inside double curly braces `{{}}`. Any text outside these double curly braces will be treated as normal unmodified text.
+To start using the variables with one of the supported config values listed above, you will need to enclose the template logic inside double curly braces `{{}}`. Any text outside these double curly braces will be treated as normal unmodified text.
 
 Here are some syntax examples calling functions with and without arguments:
 
@@ -397,7 +397,7 @@ Here are some syntax examples calling functions with and without arguments:
 {{ .FunctionName "string argument 1" "string argument 2" }}
 ```
 
-**Available Template Functions**
+**Available variables**
 
 - [WindowStartUTC](#windowstartutc)
 - [WindowStartLocation](#windowstartlocation)
@@ -406,9 +406,9 @@ Here are some syntax examples calling functions with and without arguments:
 
 ### WindowStartUTC
 
-This function will template in the `start timestamp` of the source window when source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
+This variable will get the value in the `start timestamp` of the source window when the source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
 
-The syntax for this function requires a timestamp format as a single argument. See the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+The syntax for this function requires a timestamp format as a single argument. See the [Timestamp formatting](#timestamp-formatting) section for more information on how to format the timestamp.
 
 ```sh
 {{ .WindowStartUTC "<timestamp format>" }}
@@ -425,13 +425,13 @@ The syntax for this function requires a timestamp format as a single argument. S
 
 ### WindowStartLocation
 
-This function is the same as [WindowStartUTC](#windowstartutc) except it has an additional argument to specify the timezone location.
+This variable is the same as [WindowStartUTC](#windowstartutc) except it has an additional argument to specify the timezone location.
 
 :::sumo[Best Practice]
 We strongly recommend you always use `WindowStartUTC` instead of `WindowStartLocation`. Most vendors support and expect UTC timestamps when using their APIs.
 :::
 
-Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument and refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument and refer to the [Timestamp formatting](#timestamp-formatting) section for more information on how to format the timestamp.
 
 ```sh
 {{ .WindowStartLocation "<time zone location>" "<timestamp format>" }}
@@ -448,9 +448,9 @@ Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_t
 
 ### WindowEndUTC
 
-This function will template in the `end timestamp` of the source window when source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
+This variable will get the value in the `end timestamp` of the source window when the source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
 
-The syntax for this function requires a timestamp format as a single argument. Refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+The syntax for this variable requires a timestamp format as a single argument. Refer to the [Timestamp formatting](#timestamp-formatting) section for more information on how to format the timestamp.
 
 ```sh
 {{ .WindowEndUTC "<timestamp format>" }}
@@ -464,18 +464,20 @@ The syntax for this function requires a timestamp format as a single argument. R
 | `{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSSSSZ" }}`            | `2024-03-07T20:15:56.905571Z`       |
 | `{{ .WindowEndUTC "epoch" }}`                                  | `1709842556`                        |
 | `{{ .WindowEndUTC "epochMilli" }}`                             | `1709842556000`                     |
+| `{{ .WindowEndUTC "epochNanoInt" }}`                           | `173584347745451512`                |
+| `{{ .WindowEndUTC "epochNanoFloat" }}`                         | `1735843477.45451512`               |
 | `lessThan:{{ .WindowEndUTC "2006-01-02T15:04:05.999Z07:00" }}` | `lessThan:2024-03-07T20:15:56.905Z` |
-| `lessThan:{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSZ" }}`      | `lessThan:2024-03-07T20:15:56.905Z` |
+| `{"startTime":"{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSZ" }}"}`   | `{"startTime":"{{ .WindowEndUTC "2024-03-07T20:15:56.905Z" }}"` |
 
 ### WindowEndLocation
 
-This function is the same as [WindowEndUTC](#windowendutc) except it has an additional argument to specify the timezone location.
+This variable is the same as [WindowEndUTC](#windowendutc) except it has an additional argument to specify the timezone location.
 
 :::sumo[Best Practice]
 We strongly recommend you always use `WindowEndUTC` instead of `WindowEndLocation`. Most vendors support and expect UTC timestamps when using their APIs.
 :::
 
-Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument and refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument and refer to the [Timestamp formatting](#timestamp-formatting) section for more information on how to format the timestamp.
 
 ```sh
 {{ .WindowEndLocation "<time zone location>" "<timestamp format>" }}
@@ -490,7 +492,7 @@ Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_t
 | `lessThan:{{ .WindowEndLocation "Europe/Berlin" "2006-01-02T15:04:05.999Z07:00" }}` | `lessThan:2024-03-07T21:15:56.905+01:00` |
 | `lessThan:{{ .WindowEndLocation "Europe/Berlin" "yyyy-MM-ddTHH:mm:ss.SSSZ" }}`      | `lessThan:2024-03-07T21:15:56.905+01:00` |
 
-## Timestamp Formatting
+## Timestamp formatting
 
 The source uses the [Go programming language timestamp formatting](https://go.dev/src/time/format.go) and the Human-readable timestamp formatting. See the table below for references and examples.
 
@@ -498,7 +500,7 @@ The source uses the [Go programming language timestamp formatting](https://go.de
 We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO) as a quick way to locally test timestamp parsing with a format before configuring the source.
 :::
 
-### Format Reference
+### Format reference
 
 | Date Format                                 | Reference Value                                                       | Human Readable Referencce Value                                        |
 | :------------------------------------------ | :-------------------------------------------------------------------- | :--------------------------------------------------------------------- |
@@ -527,7 +529,7 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 | Timezone Offset with Colon                  | `-07:00`                                                              | `-HH:mm`                                                               |
 | Timezone Abbreviated Name                   | `MST`                                                                 | `zzz`                                                                  |
 
-### Format Examples
+### Format examples
 
 | Standard              | Timestamp in Log                 | Timestamp Format                      |
 | :-------------------- | :------------------------------- | :------------------------------------ |
@@ -537,6 +539,8 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 | RFC 3339 Nano Seconds | `2024-02-01T16:07:57.541468757Z` | `yyyy-MM-ddTHH:mm:ss.SSSSSSSSSZ`      |
 | Epoch                 | `1706803677`                     | `epoch`                               |
 | Epoch in Milliseconds | `1706803677000`                  | `epochMilli`                          |
+| Epoch NanoInt         | `173584347745451512`             | `epochNanoInt`                        |
+| Epoch NanoFloat       | `1735843477.454515`              | `epochNanoFloat`                      |
 
 ## FAQ
 

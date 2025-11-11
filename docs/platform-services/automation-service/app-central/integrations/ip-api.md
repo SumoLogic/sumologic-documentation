@@ -24,12 +24,21 @@ The integration with IP-API allows users to lookup any IP address. IP-API is IP 
 ## Configure IP-API in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your IP-API hostname, for example, `https://pro.ip-api.com'/`
 
-   * **Label**. The name of the resource.
-   * **Host**. 'https://pro.ip-api.com'/.
-   * **API Key**. The API Key copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ip-api-configuration.png')} style={{border:'1px solid gray'}} alt="IP-API configuration" width="400"/>
+* **API Key**. Enter the API Key you [copied earlier](#ip-api-configuration).
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ip-api-configuration.png')} style={{border:'1px solid gray'}} alt="IP-API configuration" width="400"/>
 
 For information about IP-API, see [IP-API documentation](https://ip-api.com/docs/).
 

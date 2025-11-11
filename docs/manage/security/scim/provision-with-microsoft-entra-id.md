@@ -68,16 +68,19 @@ Create roles that the users will have in Sumo Logic (for example, `Analyst` and 
 1. In the app select **Manage > Provisioning**.<br/><img src={useBaseUrl('img/security/provision-azure-provisioning.png')} alt="Connect your application" style={{border: '1px solid gray'}} width="600" />
 1. For **Provisioning Mode**, select **Automatic**.
 1. Enter **Admin Credentials**:
-   1. In **Tenant URL**, enter the [API endpoint for your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim/`.
+   1. In **Tenant URL**, enter the [API endpoint for your deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim/`.
    1. For **Secret Token**, use [Base64 encoding](https://www.base64encode.org/) to encode `<access ID>:<access key>` (see [Prerequisites](#prerequisites)). Enter the resulting value into the **Secret Token** field.
    1. Click **Test Connection**. If successful, a message like this appears: **Testing connection to `<app name>`. The supplied credentials are authorized to enable provisioning**.
 1. Set up mappings:
    1. Select **Mappings** and **Provision Microsoft Entra Users**.<br/><img src={useBaseUrl('img/security/provision-azure-mappings.png')} alt="Provision mappings" style={{border: '1px solid gray'}} width="600" />
+   1. Go to **Attribute Mapping**, select **Show advanced options**, and select **Edit attribute list for customappsso**.
+       1. For the **roles** attribute select **string** for the **Type**, and select the **Multi-Value?** checkbox to allow users to have multiple roles.<br/><img src={useBaseUrl('img/security/roles-advanced-options.png')} alt="Advanced options for the roles attribute" style={{border: '1px solid gray'}} width="600" />
+       1. Click **Save**.
    1. At the bottom of the **Attribute Mapping** dialog, select **Add New Mapping**.
    1. Fill out the **Edit Attribute** dialog:
       1. For **Mapping type** select **Expression**.
-      1. For **Expression** enter `AppRoleAssignments([appRoleAssignments])`.
-      1. For **Target attribute** select `roles[primary eq "True"].value`.
+      1. For **Expression** enter `AppRoleAssignmentsComplex([appRoleAssignments])`.
+      1. For **Target attribute** select `roles`.
       1. Click **OK**.<br/><img src={useBaseUrl('img/security/provision-azure-role-attribute.png')} alt="Edit attribute" style={{border: '1px solid gray'}} width="600" />
    1. On the **Attribute Mapping** dialog, delete all the attributes except:
       * userName
@@ -85,8 +88,8 @@ Create roles that the users will have in Sumo Logic (for example, `Analyst` and 
       * emails[type eq "work"].value
       * name.givenName
       * name.familyName
-      * roles[primary eq "True"].value
-   1. Click **Save**.<br/><img src={useBaseUrl('img/security/provision-azure-attribute-mappings.png')} alt="Attribute mappings" style={{border: '1px solid gray'}} width="600" />
+      * roles<br/><img src={useBaseUrl('img/security/provision-azure-attribute-mappings.png')} alt="Attribute mappings" style={{border: '1px solid gray'}} width="600" />
+   1. Click **Save**.
 1. Click the **Home > `<app name>` | Provisioning** link in the top left corner of the screen. This returns you to the **Provisioning** tab.
 1. Test provisioning:
    1. In the app, select **Manage > Provisioning**.
@@ -107,7 +110,7 @@ Users assigned to the app are provisioned into Sumo Logic.
    1. The tab should show provisioning status. Click **View Provisioning Logs** for details.
 1. Verify in Sumo Logic:
    1. Log in to the Sumo Logic instance that you linked to the provisioning app in Step 2 when you provided the Assertion Consumer URL and entity ID.
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. 
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. 
    1. Search for the users provisioned from Microsoft Entra ID. 
    1. You should see the users listed, and with the role given to them when you assigned them to the app in Microsoft Entra ID.
 

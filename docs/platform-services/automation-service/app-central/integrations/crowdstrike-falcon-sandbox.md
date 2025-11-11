@@ -28,8 +28,23 @@ Malware Analysis Tool providing threat intelligence.
 ## Configure CrowdStrike Falcon Sandbox in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter the URL of your CrowdStrike instance, for example, `https://your-host-falcon-sandbox.com`. The default value is `https://api.crowdstrike.com`
+
+* **API ID**. Enter an API key for the CrowdStrike Falcon Sandbox. 
+
+* **User Agent**. Enter a user agent for your instance of CrowdStrike Falcon Sandbox.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike/crowdstrike-falcon-sandbox-configuration.png')} style={{border:'1px solid gray'}} alt="CrowdStrike Falcon Sandbox configuration" width="400"/>
 

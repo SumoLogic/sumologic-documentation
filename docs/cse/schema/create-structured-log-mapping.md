@@ -11,6 +11,14 @@ This topic has instructions for creating a log mapping for structured messages u
 
 For more information about log mapping, and how it fits into the record creation process, see the [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline) topic. For a complete list of the standard log mappings, see [Mappings](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/mappings/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage log mapping with the [`log_mapping`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_log_mapping) resource.
+
+<TerraformLink/>
+:::
+
 ## About the log mapping process
 
 When you set up a log mapping, you supply the following information:  
@@ -21,7 +29,7 @@ When you set up a log mapping, you supply the following information:  
 
 ## Step 1: Choose mapping type and name the mapping
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. 
 1. Click **+ Add Log Mapping** in the upper right side of the **Log Mappings** tab.<br/><img src={useBaseUrl('img/cse/log-mappings.png')} alt="Log mappings page" style={{border: '1px solid gray'}} width="800"/>
 1. Click the **Structured Mapping** tile on the **Create a Mapping** page. <br/><img src={useBaseUrl('img/cse/select-mapping-type.png')} alt="Structured mapping" style={{border: '1px solid gray'}} width="500"/>
 1. On the **New Mapping** page, enter a name for the mapping.<br/><img src={useBaseUrl('img/cse/new-mapping-page.png')} alt="New mapping page" style={{border: '1px solid gray'}} width="700"/>

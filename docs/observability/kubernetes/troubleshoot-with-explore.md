@@ -23,19 +23,6 @@ import Iframe from 'react-iframe';
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/CEBN4lRp4SU?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 
@@ -65,7 +52,7 @@ In this troubleshooting scenario, we detect a problem with a cluster while nav
 
 To troubleshoot a problem with our cluster, we performed the following steps:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). We went to our **Home** dashboard and selected **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, we selected **Observability**, and then under **Infrastructure Monitoring**, we selected **Kubernetes**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, we selected **Observability**, and then under **Infrastructure Monitoring**, we selected **Kubernetes**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). We went to our **Home** dashboard and selected **Explore**. 
 1. In the upper-left corner of the screen, we selected **Kubernetes Service View**, then chose the cluster we wanted to explore, and selected the Dashboards **Kubernetes - Cluster Overview** option on the upper right menu bar.<br/> ![TSS_Cluster_Overview_dialog.png](/img/kubernetes/TSS_Cluster_Overview_dialog.png)<br/>
 The Dashboards view on the right displays panels that show the statuses of the clusters.
 1. In our scenario, we selected the **prod-loggen** namespace in the **Pods Running** panel and discovered 2 pods that were not functioning (shown in Red). <br/>![TSS_Cluster_Pods-Running_panel.png](/img/kubernetes/TSS_Cluster_Pods-Running_panel.png)

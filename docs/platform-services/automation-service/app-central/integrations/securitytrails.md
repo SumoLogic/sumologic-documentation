@@ -18,12 +18,23 @@ SecurityTrails is a total inventory that curates comprehensive domain and IP add
 ## Configure SecurityTrails in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
- 
-   * **Label**. The desired name for the resource.
-   * **URL**. The SecurityTrails API URL. Default: `https://api.securitytrails.com`.
-   * **API Key**. Your SecurityTrails API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/securitytrails-configuration.png')} style={{border:'1px solid gray'}} alt="SecurityTrails configuration" width="400"/>
+* <IntegrationLabel/>
+* **URL**. Enter your SecurityTrails [API URL](https://docs.securitytrails.com/docs/overview#accessing-the-securitytrails-rest-api). The default is `https://api.securitytrails.com`.
+
+* **API Key**. Enter your SecurityTrails [API key](https://docs.securitytrails.com/docs/authentication).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/securitytrails-configuration.png')} style={{border:'1px solid gray'}} alt="SecurityTrails configuration" width="400"/>
 
 For information about SecurityTrails, see [SecurityTrails documentation](https://docs.securitytrails.com/docs/overview).
 

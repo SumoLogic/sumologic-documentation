@@ -25,7 +25,7 @@ This page has instructions for collecting logs and metrics for the Amazon ECS ap
 
 ## Creating Fields in Field Schema 
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.<br/> [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
 1. Search for the following fields: `account`, `namespace`, `region` field. 
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields).
 
@@ -76,7 +76,7 @@ When you enable Container Insights, CloudWatch collects [additional metrics](ht
 In this step, you'll enable Container Insights and set up a collection to ingest those metrics.
 
 1. Enable Container Insights by referring to the AWS [docs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-ECS-cluster.html) by using cli or AWS console.
-2. If Cloudwatch source is selected for collecting metrics, update the source created in "Collect Metrics for Amazon ECS" section to include `ECS/ContainerInsights` in custom namespaces field; or <br/> <img src={useBaseUrl('img/integrations/amazon-aws/ecs1.png')} alt="ECS/ContainerInsights" />
+2. If Cloudwatch source is selected for collecting metrics, update the source created in "Collect Metrics for Amazon ECS" section to include `ECS/ContainerInsights` in custom namespaces field; or <br/> <img src={useBaseUrl('img/integrations/amazon-aws/ecs1.png')} alt="ECS/ContainerInsights" style={{border: '1px solid gray'}} width="600" />
 3. If Kinesis Firehose source is selected for collecting metrics, update the [Metrics Stream](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/#include-metrics-by-namespace) to include `ECS/ContainerInsights` in custom namespaces field.
 
 ### Collect ECS events using CloudTrail
@@ -86,7 +86,7 @@ To set up an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-a
 1. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html") in your AWS account. This will create an S3 bucket, if you so choose.
 2. Grant Sumo Logic access to the Amazon S3 bucket.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+4. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 5. Navigate to the hosted collector you configured above and select **Add > Add Source**.
 6. Select AWS CloudTrail source.
 7. **Name.** Enter a name to display the new Source.
@@ -96,7 +96,6 @@ To set up an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-a
 11. **Path Expression.** Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) 
 12. **Source Category.** Enter `aws/observability/cloudtrail/logs`.
 13. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the "account field".
-    ![account](https://lh3.googleusercontent.com/k8UTbrMidpw6fw0kJA8mw4Ln4a6-crE0QjWOcJ6tlsgBcFJ81pbym2My80-LGHnlW4A6Zn6Vh65bxf2ePb7PmP39QcGbRCwR_3VBmRxZz4XHHgWjFsJucnaLYcFCBq6crH14hOAzuSbOLzOJBPSEYtUuoIKRftRn5lQ7yVRMiGw5oQDgvOPRrZk60g)
 14. **AWS Access**. There are two options for AWS access: 
     - Role-based access. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).  For Role-based access enter the Role ARN that was provided by AWS after creating the role.
     - For Key access enter the Access Key ID and Secret Access Key. For more information, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in AWS help.
@@ -463,7 +462,7 @@ Use this dashboard to:
 - Monitor the memory and CPU utilization of your cluster.
 - View abnormal read-write activity and network incoming-outgoing bytes.
 
-![ECS Dashboard](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Overview.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Overview.png' alt="Amazon ECS - Cluster Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Cluster Performance Monitoring
 
@@ -474,7 +473,7 @@ Use this dashboard to:
 - Identify patterns and outliers over time.
 - Monitor the performance of your cluster and use linked dashboards to drill down further into the root cause. 
 
-![ECS Dashboard](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Performance-Monitoring.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Performance-Monitoring.png' alt="Amazon ECS - Cluster Performance Monitoring dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Cluster Resource Reservation
 
@@ -484,7 +483,7 @@ Use this dashboard to: 
 
 - Identify the right limits for CPU and memory reservations.
 
-![ECS Dashboard](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Resource-Reservation.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Resource-Reservation.png' alt="Amazon ECS - Cluster Resource Reservation dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Container Logs
 
@@ -495,7 +494,7 @@ Use this dashboard to:
 - View recent logs of your container.
 - Identify common errors and abnormal spikes in errors.
 
-![ECS Dashboard](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Container-Logs.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Container-Logs.png' alt="Amazon ECS - Container Logs** dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Container Overview
 
@@ -506,7 +505,7 @@ Use this dashboard to:
 - Track the container status and identify the container details like its task definition, image, account, etc.
 - Monitor CPU, memory,  disk, and network activity of your container. 
 
-![ECS Dashboard](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Container-Overview.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Container-Overview.png' alt="Amazon ECS - Container Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### EC2 LaunchType
 
@@ -517,7 +516,7 @@ Use this dashboard to:
 - Monitor CPU and memory utilization of clusters with EC2 launch type.
 - View the number of clusters and tasks with EC2 launch type.
 
-![ECS Dashboard](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-EC2-LaunchType.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-EC2-LaunchType.png' alt="Amazon ECS - EC2 LaunchType dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Service Overview
 
@@ -528,7 +527,7 @@ Use this dashboard to:
 - Monitor the number of running, desired, and pending tasks.
 - Identify services with abnormal CPU, network, memory, and disk activity.
 
-![ECS Dashboard](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Service-Overview.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Service-Overview.png' alt="Amazon ECS - Service Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Service Performance Monitoring
 
@@ -540,7 +539,7 @@ Use this dashboard to:
 - Track the running, pending, and desired tasks trend.
 - Monitor the performance of your services and use linked dashboards to drill down further into the root cause.
 
-![ECS Dashboard](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Service-Performance-Monitoring.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Service-Performance-Monitoring.png' alt="Amazon ECS - Service Performance Monitoring dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Tasks Definition Family Overview
 
@@ -551,7 +550,7 @@ Use this dashboard to:
 - View the number of tasks running with a single task definition family.
 - Monitor CPU and memory usage by task definition family.
 
-![ECS Dashboard](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Definition-Family-Overview.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Definition-Family-Overview.png' alt="Amazon ECS - Tasks Definition Family Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Tasks Overview
 
@@ -563,7 +562,7 @@ Use this dashboard to:
 - Track Network Errors and Dropped Packets
 - Monitor CPU, memory, disk, and network performance by task instances.
 
-![ECS Dashboard](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Overview.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Overview.png' alt="Amazon ECS - Tasks Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Tasks Definition Family Performance Monitoring
 
@@ -574,7 +573,7 @@ Use this dashboard to:
 - Identify patterns and outliers over time for each of the resource metrics like CPU, memory, network, and disk.
 - Monitor the performance of your tasks and use linked dashboards to drill down further into the root cause.
 
-![ECS Dashboard](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Definition-Family-Performance-Monitoring.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Definition-Family-Performance-Monitoring.png' alt="Amazon ECS - Tasks Definition Family Performance Monitoring dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Task Definition Family Resource Reservation
 
@@ -584,7 +583,7 @@ Use this dashboard to: 
 
 - Identify the right limits for CPU and memory reservations.
 
-![ECS Dashboard](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Task-Definition-Family-Resource-Reservation.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Task-Definition-Family-Resource-Reservation.png' alt="Amazon ECS - Task Definition Family Resource Reservation dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Fargate LaunchType
 
@@ -595,7 +594,7 @@ Use this dashboard to:
 - Monitor network activity of your clusters with Fargate launch type.
 - View the number of clusters and tasks with Fargate launch type.
 
-![ECS Dashboard](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Fargate-LaunchType.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Fargate-LaunchType.png' alt="Amazon ECS - Fargate LaunchType dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Audit Events 
 
@@ -607,4 +606,4 @@ Use this dashboard to:
 - Monitor container registration/deregistration events.
 - Identify location, IP address from where the request was made, and resource crud events over time.
 
-![ECS Dashboard](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Audit-Events.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Audit-Events.png' alt="Amazon ECS - Audit Events dashboard" style={{border: '1px solid gray'}} width="800" />

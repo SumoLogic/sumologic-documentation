@@ -5,7 +5,7 @@ sidebar_label: Terraform Configuration
 description: Learn how to set up the Software Development Optimization (SDO) Solution using a Terraform script.
 ---
 
-These instructions help you prepare and set up the Software Development Optimization (SDO) Solution using a Terraform script. 
+These instructions help you prepare and set up the Software Development Optimization (SDO) Solution using a Terraform script. For more information about how to use Terraform in your Sumo Logic environment, see [Use Terraform with Sumo Logic](/docs/api/about-apis/terraform-with-sumo-logic).
 
 The Terraform script performs the following actions:
 
@@ -240,7 +240,7 @@ After completing configuration, instrument your DevOps pipeline to specially ide
 
 ### Bitbucket for build and deploy
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Search for *Software Development Optimization* Collector.
 1. Under this Collector, click on **Show URL** for the source **Bitbucket Cloud.** Make a note of this **URL** and use this URL to configure the Bitbucket CI/CD Pipeline to collect deploy events:
  * **Deploy**: Follow the steps outlined in [this document](/docs/integrations/app-development/bitbucket#collecting-logs-for-bitbucket-app) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
@@ -248,7 +248,7 @@ After completing configuration, instrument your DevOps pipeline to specially ide
 ### Jenkins for build and deploy
 
 1. Install the latest Jenkins Plugin as described [here](/docs/integrations/app-development/jenkins#collecting-logs-and-metrics-for-jenkins)
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Search for *Software Development Optimization* Collector.
 1. Under this Collector, click on **Show URL** for the source **Jenkins.** Make a note of this **URL** and **Source Category,** you will use these to configure the Jenkins Plugin:
    * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin](/docs/integrations/app-development/jenkins#collecting-logs-and-metrics-for-jenkins), and optionally [Optional - Advance Configuration](/docs/integrations/app-development/jenkins#collecting-logs-and-metrics-for-jenkins) to configure the Jenkins Sumo Logic plugin.
@@ -295,8 +295,8 @@ Configure these parameters in **sumologic.auto.tfvars**.
 | :-- | :-- | :-- |
 | sumo_access_id | [Sumo Logic Access ID](/docs/manage/security/access-keys.md) | |
 | sumo_access_key | [Sumo Logic Access Key](/docs/manage/security/access-keys.md) |  |
-| deployment | [Sumo Logic Deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) | us1 |
-| sumo_api_endpoint | [Sumo Logic API Endpoint.](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) Make sure the trailing "/" is present. | https://api.sumologic.com/api/v1/ |
+| deployment | [Sumo Logic Deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) | us1 |
+| sumo_api_endpoint | [Sumo Logic API Endpoint.](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) Make sure the trailing "/" is present. | https://api.sumologic.com/api/v1/ |
 | app_installation_folder | The Sumo Logic apps will be installed in a folder under your personal folder in Sumo Logic. | Software Development Optimization |
 | install_jira_cloud | Install [Sumo Logic Application and webhooks for Jira Cloud](/docs/integrations/app-development/jira-cloud). Options: app, collection, fer, all, and none. | all |
 | install_jira_server | Install [Sumo Logic Application and webhooks for Jira Server](/docs/integrations/app-development/jira). Options: app, collection, fer, all, and none. | all |

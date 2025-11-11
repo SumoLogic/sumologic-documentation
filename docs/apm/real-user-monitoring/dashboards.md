@@ -35,7 +35,7 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 Once the RUM app has been installed, use the Real User Monitoring view to gain visibility into your web app's performance and end-user activity, such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then in the upper-left corner of the screen, select **Real User Monitoring** from the dropdown menu.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Real User Monitoring**, select **User Experience**. You can also click the **Go To...** menu at the top of the screen and select **User Experience**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Real User Monitoring**, select **User Experience**. You can also click the **Go To...** menu at the top of the screen and select **User Experience**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then in the upper-left corner of the screen, select **Real User Monitoring** from the dropdown menu.
 1. Select your desired dashboard from **Dashboard** dropdown menu in the header:<br/>![explore rum with red box.png](/img/rum/explore-rum-with-red-box.png)<br/> There are three dashboard types on the **Application**, **Service**, and **Environment** levels, and a single one on the **Action type** and **Action** levels.
 1. Set your desired filters. RUM data is organized on five levels:
    * **Application**. corresponds to the value of the application tag set in your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). This should correspond to your whole website defined by its business function, such as `the-coffee-bar-app`.
@@ -58,7 +58,7 @@ The **RUM Overview** dashboards (**Application**, **Service**, **Service with En
 
 Use these dashboards to:
 * Analyze load and paint timings for page document loads by application, service, or action.
-* View information about core web vitals, XHR processing times/errors, and log errors.
+* View information about [core web vitals, XHR processing times/errors, and log errors](/docs/apm/real-user-monitoring/metrics/#xhr-monitoring-metrics).
 * Understand what top browsers, operating systems, and geolocations are active with your website.
 
 You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts.
@@ -78,7 +78,7 @@ The **RUM - TopN - Application** and **RUM - TopN - Application Service** dashbo
 Use these dashboards to:
 * Find out top N browsers, operating systems, and geolocations by load or requests.
 * Understand the slowest and fastest browsers from a rendering perspective or geographical locations from a network perspective.
-* Understand XHR and log errors your users are experiencing.
+* Understand [XHR and log errors](/docs/apm/real-user-monitoring/metrics/#xhr-monitoring-metrics) your users are experiencing.
 * Find out which browsers and operating systems are in use by your users and where are they are geographically located.
 
 You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts. You can also define the top N number for all charts.
@@ -91,7 +91,7 @@ The **RUM Performance Analytics** dashboards for **Application**, **Service**, a
 
 Use these dashboards to:
 * Filter data for specific combinations of browser, operating system, and/or geolocation.
-* Understand XHR, load, timing metrics for the selected user cohort.
+* Understand [XHR, load, timing metrics](/docs/apm/real-user-monitoring/metrics/#xhr-monitoring-metrics) for the selected user cohort.
 * Compare your selected timings against data for a different time period by selecting the appropriate option in the compare_with dropdown.
 
 You can click on any data point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point. For cross-dimensional metrics, only the average statistic type is available.

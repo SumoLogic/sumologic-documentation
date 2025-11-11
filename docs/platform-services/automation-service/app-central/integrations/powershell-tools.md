@@ -179,14 +179,30 @@ Remarks:
 ## Configure PowerShell Tools in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Domain Name (PowerShell Window Host)**. Specify the domain nme ([hostname](https://learn.microsoft.com/en-us/powershell/scripting/developer/hosting/windows-powershell-host-quickstart?view=powershell-7.5)) for Window Server, for example, `192.168.1.10` or `my-computer.csoar.local`. 
 
-    * **Label**. The desired name for the resource.
-    * **Domain Name** (PowerShell Window Host). Specify Domain Name (Hostname) for Window Server e.g 192.168.1.10 or my-computer.csoar.local.
-    * **Username**. Username of your window host.
-    * **Password**. Password of your window host.
-    * **Hostname** (To Resolve in Docker). Hostname (To Resolve in Docker) e.g 10.0.0.24 test.local.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/powershell-tools-configuration.png')} style={{border:'1px solid gray'}} alt="Powershell Tools configuration" width="400"/>
+* **Username**. Enter the username of your Window host, either a Local or Domain user.
+
+* **Password**. Enter the password of your Window host.
+
+* **Authentication Method**. Select an [authentication method](https://learn.microsoft.com/en-us/windows/win32/winrm/authentication-for-remote-connections#default-authentication-settings):
+   * **Basic**
+   * **Kerberos**
+   * **Negotiate**
+
+* **Hostname (To Resolve in Docker)**. Enter the hostname, for example, `10.0.0.24 test.local`.
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/powershell-tools-configuration.png')} style={{border:'1px solid gray'}} alt="Powershell Tools configuration" width="400"/>
 
 For information about PowerShell, see [PowerShell documentation](https://learn.microsoft.com/en-us/powershell/).
 

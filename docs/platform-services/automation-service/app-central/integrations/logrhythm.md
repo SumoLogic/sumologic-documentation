@@ -25,8 +25,21 @@ Query and update events in LogRhythm SIEM.
 ## Configure LogRhythm in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your LogRhythm [hostname](https://docs.logrhythm.com/lrsiem/docs/search-for-hosts).
+
+* **API Key**. Enter your LogRhythm [API key](https://docs.logrhythm.com/lrapi/docs/alarm-api).
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/logrhythm-configuration.png')} style={{border:'1px solid gray'}} alt="LogRhythm configuration" width="400"/>
 

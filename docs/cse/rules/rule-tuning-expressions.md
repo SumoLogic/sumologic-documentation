@@ -38,6 +38,16 @@ Here’s what the example tuning expression looks like in the Cloud SIEM UI.
 
 <img src={useBaseUrl('img/cse/example-expression.png')} alt="Example expression" style={{border: '1px solid gray'}} width="700"/>
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage rule tuning expressions with the [`rule_tuning_expression`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_rule_tuning_expression) resource.
+
+<TerraformLink/>
+:::
+
+
+
 ## Writing a tuning expression
 
 Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and Cloud SIEM [rules language](/docs/cse/rules/cse-rules-syntax) functions. For more information, see [About rule expressions](/docs/cse/rules/about-cse-rules#about-rule-expressions).
@@ -58,24 +68,11 @@ Watch this micro lesson to learn how to create a rule tuning expression.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/3BUKLtJtPI8?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Create a tuning expression
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**. Then in the top menu select **Content > Rule Tuning**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**. Then in the top menu select **Content > Rule Tuning**. 
 1. On the **Rule Tuning** page, click **Add Rule Tuning Expression**.
 1. The **New Rule Tuning Expression** page appears.
     <br/><img src={useBaseUrl('img/cse/annotated-expression.png')} alt="Empty screen to create a rule tuning expression" style={{border: '1px solid gray'}} width="800"/>
@@ -116,4 +113,6 @@ When you test a [rule expression](/docs/cse/rules/about-cse-rules#about-rule-exp
 
 <img src={useBaseUrl('img/cse/tuning-checkbox.png')} alt="Test rule" style={{border: '1px solid gray'}} width="600"/>
 
- 
+## Additional resources
+
+Blog: [Rule tuning – supercharge Cloud SIEM for better alerts](https://www.sumologic.com/blog/rule-tuning-cloud-siem-alert-fatigue)

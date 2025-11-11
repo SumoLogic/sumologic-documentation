@@ -13,7 +13,7 @@ A map chart visualizes metric query results by geographic location.
 
 To use a map chart your query results must include dimensions that provide latitude and longitude. We assume the geolocation dimensions are named _latitude_ and _longitude_. If the dimensions have different names, you can identify the correct fields in the **Chart** tab.
 
-Map visualizations are supported in the Metrics Explorer and dashboard panel builder.
+Map visualizations are supported in the Metrics Search and dashboard panel builder.
 
 For a Map visualization, you can choose either **Cluster** or **Heatmap** as the **Chart Type**.
 

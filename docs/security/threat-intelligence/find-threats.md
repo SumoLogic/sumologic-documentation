@@ -2,7 +2,7 @@
 slug: /security/threat-intelligence/find-threats
 title: Find Threats with Log Queries
 sidebar_label: Find Threats with Log Queries
-description: Perform searches to find matches to data in threat intelligence indicators.
+description: Learn how to detect and investigate security threats using Sumo Logic threat intelligence tools and dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -27,13 +27,17 @@ _sourceCategory=cylance "IP Address"
 
 For more information, see [Threat Intel optimization](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) in the *Threat Intel Quick Analysis* article.
 
+:::note
+You can only use the `lookup` operator to search using the [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources). You cannot use the operator with other threat intelligence sources in your datastore.
+:::
+
 :::tip
-All the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis) app use threat intelligence sources to find threats. To see the queries, open a dashboard in the app, click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**. You can copy these queries and use them as templates for your own queries to find threats.
+All the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis) app use the Sumo Logic threat intelligence sources to find threats. To see the queries, open a dashboard in the app, click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**. You can copy these queries and use them as templates for your own queries to find threats.
 :::
 
 ## Use the threatip search operator
 
-To find threats using IP addresses, use the `threatip` search operator. This operator correlates data in the [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) based on IP addresses from your log data.
+To find threats using IP addresses, use the `threatip` search operator. This operator [uses `sumo://threat/cs` in log search queries](#use-the-lookup-search-operator) to correlate data in the `_sumo_global_feed_cs` threat intelligence source.
 
 For more information, see [threatip Search Operator](/docs/search/search-query-language/search-operators/threatip/).
 

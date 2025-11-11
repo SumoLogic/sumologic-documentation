@@ -27,8 +27,23 @@ Updated: April 4, 2024***
  ## Configure Druva in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your Druva API URL, for example, `https://apis.druva.com`
+
+* **Client ID**. Enter a [Druva client ID](https://help.druva.com/en/articles/8580838-create-and-manage-api-credentials).
+
+* **Secret Key**. Enter the secret for the client ID.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/druva-configuration.png')} style={{border:'1px solid gray'}} alt="Druva configuration" width="400"/>
 

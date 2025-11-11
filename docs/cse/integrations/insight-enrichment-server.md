@@ -10,8 +10,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cloud SIEM Insight Enrichment Server is a component that automatically enriches Cloud SIEM insights.  
 
-:::warning
-The Insight Enrichment Server is deprecated. Use the Automation Service instead for enrichments. See [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
+:::tip
+The Automation Service is a newer way to perform enrichment. For more information about how to use the Automation Service instead of the Cloud SIEM Insight Enrichment Server, see [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
 :::
 
 :::note
@@ -150,7 +150,7 @@ The following parameters control general server behaviors, as opposed to enrichm
 
 | Setting | Required? | Description |
 |:--|:--|:--|
-| `URL` | yes | The URL for your API endpoint. For more information, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). |
+| `URL` | yes | The URL for your API endpoint. For more information, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). |
 | `api_id` | yes | Enter your Sumo Logic Access ID. For more information, see [Access Keys](/docs/manage/security/access-keys). |
 | `api_key` | yes | Enter your Sumo Logic Access Key.|
 | `log_level` | no | Log level the server should use. The options are:<br/><br/>-`error`. Only display error messages.<br/>-`info`. Display informational messages. This is the recommended value.<br/>-`debug`. Displays debug (or trace) data. Recommended only when debugging.<br/><br/>Default: `info` |

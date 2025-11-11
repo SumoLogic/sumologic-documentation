@@ -26,13 +26,25 @@ Proofpoint Targeted Attack Protection (TAP) integration which protects against a
 ## Configure Proofpoint TAP in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Proofpoint TAP API URL. The default is `https://tap-api-v2.proofpoint.com`
 
-   * **Label**. Name of the resource
-   * **URL**. URL of Proofpoint TAP (default URL’ [https://tap-api-v2.proofpoint.com](https://tap-api-v2.proofpoint.com/)’ is already provided).
-   * Service Principal
-   * Secret Key<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/proofpoint-tap-configuration.png')} style={{border:'1px solid gray'}} alt="Proofpoint TAP configuration" width="400"/>
+* **Service Principal**. Enter your Proofpoint TAP service principal.
+
+* **Secret Key**. Enter the secret key for the service principal.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/proofpoint-tap-configuration.png')} style={{border:'1px solid gray'}} alt="Proofpoint TAP configuration" width="400"/>
 
 For information about Proofpoint, see the [Proofpoint website](https://www.proofpoint.com/us/resources/data-sheets/targeted-attack-protection).
 
