@@ -16,6 +16,14 @@ This topic has information about chain rules and how to create them in the Clo
 If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage chain rules with the [`sumologic_cse_chain_rule`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_chain_rule) resource.
+
+<TerraformLink/>
+:::
+
 ## About chain rules
 
 A chain rule is similar to a threshold rule. A threshold rule fires when one rule expression is matched at least a certain number times during a specified length of time. In a chain rule you configure two more rule expressions, and for each expression, the number of matches that are required for the rule to fire a signal. The interval you define within which the matches must occur applies to all of the rule expressions in the rule.
@@ -36,25 +44,13 @@ Watch this micro lesson to learn how to create a chain rule.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/58h2mVnw1oE?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
+
 
 ## Create a chain rule
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
-1. On the **Create a Rule** page, click **Create** in the **Chain** card. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
+1. On the **Create a Rule** page, click **Create** in the **Chain** card. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
 1. In the rules editor:
    1. **Name.** Enter a name for the rule. Signals fired by the rule will have this name.
    1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming records until you’ve tested it. <br/><img src={useBaseUrl('img/cse/chain.png')} alt="Chain rule" style={{border: '1px solid gray'}} width="600"/>

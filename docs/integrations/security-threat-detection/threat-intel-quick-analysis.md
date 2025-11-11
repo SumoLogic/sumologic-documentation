@@ -21,9 +21,9 @@ This app contains generic regex expressions and thus may not perform well at ver
 
 This section provides instructions on how to install the Threat Intel Quick Analysis app, and examples of each of dashboards. The preconfigured searches and dashboards provide easy-to-access visual insights into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
 ## Threat Intel optimization
 

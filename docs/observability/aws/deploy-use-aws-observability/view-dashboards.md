@@ -27,7 +27,7 @@ The AWS Observability Solution comprises an intuitive dashboard framework that m
 
 To to [AWS Observibility tab](/docs/observability/aws) in the home page or do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then click the **Explore By** arrow and select **AWS Observability** from the dropdown menu. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **AWS Observability**. You can also click the **Go To...** menu at the top of the screen and select **AWS Observability**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **AWS Observability**. You can also click the **Go To...** menu at the top of the screen and select **AWS Observability**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then click the **Explore By** arrow and select **AWS Observability** from the dropdown menu.  
 1. In the navigation panel, make a selection for the hierarchy to view. The contents of your selection appear below.
 
 ## Navigate the AWS Observability Hierarchy
@@ -86,7 +86,6 @@ Click a link for information on the individual app dashboards:
 * [Amazon ElastiCache Dashboards](../integrations/amazon-elasticache.md)
 * [Amazon ECS Dashboards](../integrations/amazon-ecs.md)
 * [AWS Network ELB Dashboards](../integrations/aws-network-load-balancer.md)
-* [Global Intelligence for AWS CloudTrail DevOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops)
 * [AWS Classic Load Balancer Dashboards](../integrations/aws-classic-load-balancer.md)
 * [Amazon SNS Dashboards](/docs/observability/aws/integrations/amazon-sns.md)
 * [Amazon SQS Dashboards](../integrations/amazon-sqs.md)

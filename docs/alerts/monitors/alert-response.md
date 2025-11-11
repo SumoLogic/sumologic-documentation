@@ -33,24 +33,11 @@ Learn how to use alert response.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/3FHomBuFyV8?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Setting up alert response
 
-Email alerts automatically get a button labeled **View Alert** that opens the alert on the alert page, shown in the below image.<br/> ![view alert from email.png](/img/alerts/monitors/view-alert-from-email.png)
+Email alerts automatically get a button labeled **View Alert** that opens the alert on the alert page, shown in the below image.<br/><img src={useBaseUrl('img/alerts/monitors/view-alert-from-email.png')} alt="View alert from email" style={{border: '1px solid gray'}} width="800" />
 
 If you use [Webhook connections](/docs/alerts/webhook-connections) offered by Sumo Logic for receiving notifications, you'll need to provide the [`alertResponseUrl` variable](/docs/alerts/monitors/alert-variables) in your notification payload of a monitor to receive a link that opens alert response. When your monitor is triggered, it will generate a URL and provide it in the alert notification payload, which you can use to open the alert response.
 
@@ -82,10 +69,10 @@ The following is an example Slack payload with the variable:
 The Alert List shows all alerts triggered by your monitors within the past 30 days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time. The list displays up to 1,000 alerts.
 
 To get to your Alert List:
-* From the [**New UI**](/docs/get-started/sumo-logic-ui/), select **Alerts > Alert List**.
+* From the [**New UI**](/docs/get-started/sumo-logic-ui/), select **Alerts**.
 * From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the bell icon in the top menu.
 
-To search alerts, use the search bar and filters.<br/>![search alert list.png](/img/alerts/monitors/search-alert-list.png)
+To search alerts, use the search bar and filters.<br/><img src={useBaseUrl('img/alerts/monitors/search-alert-list.png')} alt="Search alert list" style={{border: '1px solid gray'}} width="800" />
 
 To sort by category (for example, **Name**, **Severity**, **Status**), click on a column header.
 
@@ -99,23 +86,23 @@ To resolve an alert, click a row to select it, then click **Resolve**.
 
 ## Translating thresholds
 
-Threshold translating allows you to open the alert response page in the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) that helps you to easily view the threshold associated with an alert. This also helps you to understand how your monitor's thresholds are translating into metrics and compare the threshold values set in a monitor with the data displayed in the Metrics Explorer chart.
+Threshold translating allows you to open the alert response page in the [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer) that helps you to easily view the threshold associated with an alert. This also helps you to understand how your monitor's thresholds are translating into metrics and compare the threshold values set in a monitor with the data displayed in the Metrics Search chart.
 
-For example, when you open an alert response page in Metrics Explorer, you can see critical thresholds defined with some number. You can then see that this threshold is also applied and enabled in the Metrics Explorer view, with exactly the same number defined.<br/> <img src={useBaseUrl('img/alerts/arp-metrics-explorer.png')} alt="arp-metrics-explorer" width="800"/>
+For example, when you open an alert response page in Metrics Search, you can see critical thresholds defined with some number. You can then see that this threshold is also applied and enabled in the Metrics Search view, with exactly the same number defined.<br/> <img src={useBaseUrl('img/alerts/arp-metrics-explorer.png')} alt="arp-metrics-explorer" width="800"/>
 
-To view the alert response chart in Metrics Explorer, follow the steps below:
+To view the alert response chart in Metrics Search, follow the steps below:
 
 1. Navigate to your [Alert List](#alert-list) and select the alert for which you want to view the corresponding metrics and threshold values.
-1. Click the **View in Metrics Explorer** button for that alert. You can click on either of the two buttons, and they both function the same way.
-1. The Metrics Explorer view will open with the graph of the metric associated with the alert.
-1. In the **Threshold** section of the Metrics Explorer, you can see the same threshold values for the monitor associated with the alert.<br/> <img src={useBaseUrl('img/alerts/threshold-metrics-explorer-view.png')} alt="threshold-metrics-explorer" width="800"/>
+1. Click the **View in Metrics Search** button for that alert. You can click on either of the two buttons, and they both function the same way.
+1. The Metrics Search view will open with the graph of the metric associated with the alert.
+1. In the **Threshold** section of the Metrics Search, you can see the same threshold values for the monitor associated with the alert.<br/> <img src={useBaseUrl('img/alerts/threshold-metrics-explorer-view.png')} alt="threshold-metrics-explorer" width="800"/>
 1. The thresholds will be enabled and only the ones that are defined in the monitor will be displayed.
-   * If the alert has both critical and warning thresholds defined in the corresponding monitor, both thresholds will be displayed in the Metrics Explorer view.
-   * If the alert has only a critical threshold defined in the corresponding monitor, only the warning threshold will be displayed in the Metrics Explorer view.
-1. Use this feature to compare the threshold values set in a monitor with the data displayed in the Metrics Explorer graph and gain a better understanding of how your monitors are translating into metrics.
+   * If the alert has both critical and warning thresholds defined in the corresponding monitor, both thresholds will be displayed in the Metrics Search view.
+   * If the alert has only a critical threshold defined in the corresponding monitor, only the warning threshold will be displayed in the Metrics Search view.
+1. Use this feature to compare the threshold values set in a monitor with the data displayed in the Metrics Search graph and gain a better understanding of how your monitors are translating into metrics.
 
 :::note
-Note that the same threshold translating functionality supports to [Create Monitors from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-metrics-explorer) and [Opening a Monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
+Note that the same threshold translating functionality supports to [Create Monitors from the Metrics Search](/docs/alerts/monitors/create-monitor/#from-metrics-search) and [Opening a Monitor in the Metrics Search](/docs/alerts/monitors/settings/#view-in-metrics-search).
 :::
 
 ## Alert details
@@ -128,7 +115,7 @@ To view detailed information about an alert, go to your [Alert List](#alert-list
 * A history of previous occurrences of the alert.
 * Key details such as the trigger time and the condition that caused the alert.
 
-The following images and lists describe alert element on the page.<br/>![top of the alert response page.png](/img/alerts/monitors/top-alert-response-page.png)
+The following images and lists describe alert element on the page.<br/><img src={useBaseUrl('img/alerts/monitors/top-alert-response-page.png')} alt="Top of the alert response page" style={{border: '1px solid gray'}} width="800" />
 
 * **A**. Monitor name.
 * **B**. Copies the link to the opened alert page.
@@ -143,16 +130,16 @@ The following images and lists describe alert element on the page.<br/>![top of 
    :::note
    Sumo Logic automatically resolves alerts when the monitor's recovery condition is met. This behavior cannot be modified or disabled. While you could configure a recovery condition that prevents Sumo Logic from resolving a monitor, this is not recommended, as it may suppress unrelated alerts from being triggered.
    :::
-   ![alert page sep 23.png](/img/alerts/monitors/alert-page.png)
+   <img src={useBaseUrl('img/alerts/monitors/alert-page.png')} alt="Resolves the alert" style={{border: '1px solid gray'}} width="800" />
 * **K**. The red exclamation mark indicates the alert is still active and a white exclamation in the gray circle indicates it's resolved. <br/> <img src={useBaseUrl('img/alerts/monitors/k-label.png')} alt="labels" width="300"/>
   * **Related Alerts**. A panel with related alerts and the monitor History. It shows other alerts in the system that were triggered around the same time as this alert. This information is helpful to know what issues are happening in the system and whether the current problem is an isolated issue or a more systemic one. There are two types of relations that a related alert can have.<br/> <img src={useBaseUrl('img/alerts/monitors/related-alerts.png')} alt="related alerts" width="200"/>
     * **Time**. Shows all the alerts that were triggered 30 minutes before or after the given alert that doesn't have another association.
-    * **Entity**. Shows all the alerts that were triggered one hour before and after the given alert that happened on the same entity (node, pod, cluster, etc.). You can click the expand arrow ![expand arrow.png](/img/alerts/monitors/expand-arrow.png) to view the alert's trigger condition and the white arrow in the square ![open in new tab icon.png](/img/alerts/monitors/open-new-tab.png) to open the alert in its own alert page.
+    * **Entity**. Shows all the alerts that were triggered one hour before and after the given alert that happened on the same entity (node, pod, cluster, etc.). You can click the expand arrow <img src={useBaseUrl('img/alerts/monitors/expand-arrow.png')} alt="Expand arrow" width="30" /> to view the alert's trigger condition and the white arrow in the square <img src={useBaseUrl('img/alerts/monitors/open-new-tab.png')} alt="Open in new tab icon" width="30" /> to open the alert in its own alert page.
   * **Monitor History**. Shows the past 30 days of similar alerts that were triggered by the monitor (that generated the current alert). Monitor History can be helpful to determine how frequently an alert has fired in the past and if the alert is flaky. You can then quickly correlate whether the current problem is similar to a past one by comparing the information shared for the alert.
 * **L**. The query of the monitor.<br/><img src={useBaseUrl('img/alerts/monitors/l-m-n-labels.png')} alt="labels" width="800"/>
 * **M**. A chart that visualizes the trend of the metric that was tracked as part of the alert condition of the monitor. The visualization tracks the *before* and *during* trends of the metric.
 * **N**. A table with the raw data that triggered the alert.
-* **O**. The **Open in Copilot** button lets you troubleshoot alerts directly in [Copilot](/docs/search/copilot) while preserving alert context, making investigations seamless. This enables faster root cause analysis by allowing you to jump into Copilot instantly and perform context-aware troubleshooting while maintaining alert details.<br/><img src={useBaseUrl('img/alerts/open-in-copilot.png')} alt="open in copilot button on alert response page" width="400"/>
+* **O**. The **Open in Mobot** button lets you troubleshoot alerts directly in [Mobot](/docs/search/mobot) while preserving alert context, making investigations seamless. This enables faster root cause analysis by allowing you to jump into Mobot instantly and perform context-aware troubleshooting while maintaining alert details.<br/><img src={useBaseUrl('img/alerts/open-in-mobot.png')} alt="open in mobot button on alert response page" width="450"/>
 
 :::info Limitations
 * The alert visualization, labeled **M**, is only shown for alerts less than 30 days old. 
@@ -204,7 +191,7 @@ The **Log Fluctuations** context card, available for logs monitors, detects diff
 
 This card detects time series anomalies for entities related to the alert.
 
-Anomalies are grouped into [golden signals](https://sre.google/sre-book/monitoring-distributed-systems/). Anomalies are also presented on a timeline; the length of the anomaly represents its duration. <br/> ![anomalies .png](/img/alerts/monitors/anomalies.png)
+Anomalies are grouped into [golden signals](https://sre.google/sre-book/monitoring-distributed-systems/). Anomalies are also presented on a timeline; the length of the anomaly represents its duration. <br/><img src={useBaseUrl('img/alerts/monitors/anomalies.png')} alt="Anomalies" style={{border: '1px solid gray'}} width="800" />
 
 * **A**. Name and description of the context card.
 * **B**. Count of anomalies belonging to each golden signal type.
@@ -215,15 +202,15 @@ Anomalies are grouped into [golden signals](https://sre.google/sre-book/monitor
 Only anomalies with a start time around 30 minutes before or after the alert was created show up in the card.
 :::
 
-Hover over an EOI to view key information about the event.<br/> ![eoi-stats.png](/img/alerts/monitors/eoi-stats.png)
+Hover over an EOI to view key information about the event.<br/><img src={useBaseUrl('img/alerts/monitors/eoi-stats.png')} alt="EOI stats" style={{border: '1px solid gray'}} width="300" />
 
-Click on the EOI to open the **Summary View** and **Entity Inspector**.<br/> ![entity inspector.png](/img/alerts/monitors/entity-inspector.png)
+Click on the EOI to open the **Summary View** and **Entity Inspector**.<br/><img src={useBaseUrl('img/alerts/monitors/entity-inspector.png')} alt="Entity inspector" style={{border: '1px solid gray'}} width="400" />
 
 ### Benchmark
 
 Benchmarks refer to baselines computed from anonymized and aggregated telemetry data from Sumo Logic customers in domains such as AWS. If the telemetry values for your entity during an alert period are unusual compared to benchmarks, you may have an unusual configuration change or other backend issues. 
 
-For example, the card below shows that `ServiceUnavailable` error is happening 32 times more often in your AWS account compared with other Sumo Logic customer’s accounts. This AWS error pertains to AWS API calls that are failing at a higher rate than what is expected based on cross-customer baselines. This particular error implies an AWS incident affecting the particular AWS resource type and API. <br/> ![benchmark card.png](/img/alerts/monitors/benchmark.png)
+For example, the card below shows that `ServiceUnavailable` error is happening 32 times more often in your AWS account compared with other Sumo Logic customer’s accounts. This AWS error pertains to AWS API calls that are failing at a higher rate than what is expected based on cross-customer baselines. This particular error implies an AWS incident affecting the particular AWS resource type and API. <br/><img src={useBaseUrl('img/alerts/monitors/benchmark.png')} alt="Benchmark card" style={{border: '1px solid gray'}} width="800" />
 
 * **A**. Name and description of the context card.
 * **B**. Count of unusual Benchmarks by golden signal type.

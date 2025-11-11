@@ -15,8 +15,16 @@ import CseRule from '../../reuse/cse-rule-description-links.md';
 import Iframe from 'react-iframe';
 
 This topic has information about first seen rules and how to create them in the Cloud SIEM UI.
-:::tip
+:::info
 If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
+:::
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage first seen rules with the [`sumologic_cse_first_seen_rule`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_first_seen_rule) resource.
+
+<TerraformLink/>
 :::
 
 ## About first seen rules
@@ -44,26 +52,13 @@ Watch this micro lesson to learn more about first seen rules.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/ssfL_c3j_r8?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 ## Baselines for first seen rules
 
 A first seen rule is different from other Cloud SIEM rule types in that you don’t define the criteria for firing a signal. Instead, the rule expression in a first seen rule is simply a filter condition that defines what incoming records the rule will apply to. For each first seen rule, Cloud SIEM automatically creates a baseline model of normal behavior for a defined time period (by default for the last 90 days) evidenced by records that match the Rule Expression. The activity found during this period is considered normal behavior and will not be alerted on. 
 
-As soon as you save or update a first seen rule, the baseline is built using existing data collected. If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete. If the records gathered for a baseline exceed 50 million, the historical baseline capabilities become inefficient and it’s better to let the baseline gather data over time. You will be notified of this state in the UI, and can either let the baseline gather over the days set in the baseline, or edit the rule to filter more records or reduce the baseline period to keep it under 50 million records.
+As soon as you save or update a first seen rule (or disable and re-enable it), the full baseline is built using existing data collected. If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete. If the records gathered for a baseline exceed 50 million, the historical baseline capabilities become inefficient and it’s better to let the baseline gather data over time. You will be notified of this state in the UI, and can either let the baseline gather over the days set in the baseline, or edit the rule to filter more records or reduce the baseline period to keep it under 50 million records.
 
 Once the baseline is created, when an incoming record includes matching activity not seen during the baseline retention period, the rule creates a signal identifying the activity as *first seen*. The signal indicates that the activity is first seen:
  
@@ -87,7 +82,7 @@ The screenshot below shows a first seen rule in the Cloud SIEM rules editor. For
 
 ## Create a first seen rule
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
 1. On the **Create a Rule** page, click **Create** in the **First Seen** card.
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.
@@ -99,9 +94,9 @@ The settings in the **If Triggered** section determine what records the rule wil
 
 1.  **When a Record matching the expression**. Enter an expression that matches the records that you want to rule to apply to.
 1. Click **Test Rule Expression** to test it against existing records in Cloud SIEM. The **If Triggered** section expands, and Cloud SIEM searches for records that match the rule expression. If there are no matching records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
-1. Select **Add Tuning Expression** if you want to add a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions) to the rule.
+1. Select **Add Tuning Expression** if you want to add a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions) to the rule. (If you use **Test Rule Expression** on a rule that has one or more rule tuning expressions, you can test it without the tuning expressions, or with selected tuning expressions.)
     :::note
-    If you use **Test Rule Expression** on a rule that has one or more rule tuning expressions, you can test it without the tuning expressions, or with selected tuning expressions.
+    The [baseline for a first seen rule](#baselines-for-first-seen-rules) is recalculated if a rule tuning expression that applies to the selected rule is updated. However, the baseline is not recalculated if the rule tuning expression applies to all rules.
     :::
 1. **has a new value for the field(s)**. Select the record field that will be used to build the baseline.
 1. **after building a [global | per Entity] baseline** The settings in this section define the scope of the baseline that will be built.
@@ -164,3 +159,8 @@ With a per-entity baseline, and the default baseline retention period of the las
 :::tip
 If you are unsure whether to use a per-entity or a global baseline, consider your use case. If you’re inclined to select `user_username` in the **Has a new value for the field(s)** prompt, you’re better off creating a global baseline for that behavior. Alternatively, if you want to track a new value for a non-entity record field, a per-entity baseline is appropriate.
 :::
+
+## Additional resources
+
+* Blog: [From weeks to minutes: How Sumo Logic’s historic baselining supercharges UEBA](https://www.sumologic.com/blog/sumo-logic-historic-baselining)
+* Glossary: [User entity behavior analytics (UEBA)](https://www.sumologic.com/glossary/ueba)

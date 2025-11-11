@@ -7,17 +7,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.16  
-Updated: June 5, 2025***
+***Version: 1.19  
+Updated: Nov 10, 2025***
 
-The CrowdStrike Falcon integration allows you to pull and update Detections/Incidents, and search Incidents/Devices/Detections.
+The CrowdStrike Falcon integration allows you to pull and update Alerts/Incidents, and search Incidents/Devices/Alerts.
 
 ## Actions
 
 * **Alerts CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Alerts.
 * **Close CrowdStrike Incident** *(Containment)* - Close the state of the CrowdStrike Incident.
 * **Create Indicators** *(Containment)* - Create the Indicators.
-* **Detections CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Detections.
 * **Device Actions** *(Containment)* - Take various actions on the hosts in your environment.
 * **Get Browser History** *(Enrichment)* - Get user Browser history.
 * **Get Endpoint** *(Enrichment)* - Get details on one or more hosts by providing agent IDs.
@@ -27,12 +26,11 @@ The CrowdStrike Falcon integration allows you to pull and update Detections/Inci
 * **Get IDP Device Info** *(Enrichment)* - Retrieve detailed information about a devices from IDP. Requires IDP rights and relevant IDP-related API scopes.
 * **Incidents CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Incidents.
 * **List Endpoints** *(Enrichment)* - Search for hosts in your environment by platform, hostname, IP.
+* **Query Devices By Filter** *(Enrichment)* - Search for hosts in your environment by platform, hostname, IP, and other criteria.
 * **Retrieve Alert Details** *(Enrichment)* - Get details for a specific CrowdStrike Alert.
 * **Search into Alerts** *(Enrichment)* - Retrieves all Alerts IDs that match a given query.
-* **Search into Detections** *(Enrichment)* - Search for Detections that match a given query.
 * **Search into Incidents** *(Enrichment)* - Search for incidents by providing an FQL filter, sorting, and paging
   details.
-* **Update Detections** *(Containment)* - Modify the state or assignee of Detections.
 * **Update Alerts** *(Containment)* - Perform actions on Alerts identified by composite ID(s) in request.
 
 ## Category
@@ -56,13 +54,13 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 * **User (Client) Secret**. Enter the secret code for the API client, equivalent to a password. The secret is only visible to you at the time the API client is created. After that, it is not retrievable. If your client secret is ever lost, you can reset it to generate a new one.
 
-* **Filter Query (Detections Daemon)**. Enter the FQL-based filter to apply to the search for the detections daemon, for example, `max_severity:>10`
+* **Filter Query (Alerts Daemon)**. Enter the FQL-based filter to apply to the search for the Alerts daemon, for example, `max_severity:>10`
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike/crowdstrike-falcon-configuration.png')} style={{border:'1px solid gray'}} alt="CrowdStrike Falcon configuration" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike/crowdstrike-falcon-configuration1.png')} style={{border:'1px solid gray'}} alt="CrowdStrike Falcon configuration1" width="400"/>
 
 For information about CrowdStrike Falcon, see [CrowdStrike documentation](https://www.crowdstrike.com/en-us/resources/guides/?lang=1).
 
@@ -100,3 +98,16 @@ For information about CrowdStrike Falcon, see [CrowdStrike documentation](https:
   * Resolved timeout issues across all actions, including daemons and enrichment queries, for improved stability and performance.
 * June 5, 2025 (v1.16) - Added new actions
   * Retrieve Alert Details
+* July 4, 2025 (v1.17) - Added new action
+  * Query Devices By Filter
+* Sept 30, 2025 (v1.18) - CrowdStrike has deprecated Detections-based APIs, and these actions have now been replaced with Alerts-based actions to align with the latest API updates. Please migrate to the Alerts actions to ensure continued functionality.
+  * Deprecated Actions:
+    + Update Detections
+    + Search into Detections
+    + Detections CrowdStrike Falcon Daemon
+  * Replacement Actions:
+    + Update Alerts
+    + Search into Alerts
+    + Alerts CrowdStrike Falcon Daemon
+* Nov 10, 2025 (v1.19) - Updated Query Parameter
+    + Get User ID By Mail

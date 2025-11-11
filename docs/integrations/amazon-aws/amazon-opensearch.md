@@ -10,9 +10,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon OpenSearch Service is a managed service that makes it easy to deploy, operate, and scale OpenSearch clusters in the AWS Cloud. An OpenSearch Service domain is synonymous with an OpenSearch cluster. Domains are clusters with the settings, instance types, instance counts, and storage resources that you specify. 
 
-The Sumo Logic app for Amazon OpenSearch collects CloudWatch logs, CloudWatch metrics and CloudTrail logs, provides a unified logs and metrics app that provides insights into the operations and utilization of your OpenSearch service. The preconfigured dashboards help you monitor the key metrics by domain names and nodes, view the OpenSearch events for activities, and help you plan the capacity of your OpenSearch service.
+The Sumo Logic app for Amazon OpenSearch collects CloudWatch logs, CloudWatch metrics, and CloudTrail logs, providing a unified logs and metrics app that provides insights into the operations and utilization of your OpenSearch service. The preconfigured dashboards help you monitor the key metrics by domain names and nodes, view the OpenSearch events for activities, and help you plan the capacity of your OpenSearch service.
 
-## Log and Metrics types
+## Log and metrics types
 
 The Sumo Logic app for Amazon OpenSearch uses:
 
@@ -194,11 +194,11 @@ account=* region=* namespace=aws/es "\"eventsource\":\"es.amazonaws.com\""
 account=* region=* namespace=aws/es domainname=* !nodeid=* metric=WriteLatency statistic = average | avg by domainname 
 ```
 
-## Collect logs and metrics for the Amazon OpenSearch app
+## Collecting logs and metrics for the Amazon OpenSearch app
 
-This section has instructions for collecting logs and metrics for the Amazon OPenSearch Service app.
+This section has instructions for collecting logs and metrics for the Amazon OpenSearch Service app.
 
-### Collect CloudWatch Logs
+### Collecting CloudWatch logs
 
 To enable Amazon OpenSearch CloudWatch Logs, follow the steps mentioned in [AWS Documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createdomain-configure-slow-logs.html)
 
@@ -211,14 +211,14 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 - **AWS Kinesis Firehose for Logs**. Configure an [AWS Kinesis Firehose for Logs](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource) (Recommended); or
 - **Lambda Log Forwarder**. Configure a collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo Logic provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/) or configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function/).<br/>
 
-- While configuring the CloudWatch log source, following fields can be added in the source:
+- While configuring the CloudWatch log source, the following fields can be added to the source:
    - Add an **account** field and assign it a value which is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the **account** field.
    - Add a **region** field and assign it the value of the respective AWS region where the **OpenSearch** domain exists.
-   - Add an **accountId** field and assign it the value of the respective AWS account id which is being used.
+   - Add an **accountId** field and assign it the value of the respective AWS account ID that is being used.
 
    <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" />   
 
-### Collect CloudTrail Logs
+### Collecting CloudTrail logs
 
 1. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) to your Hosted Collector.  
    * **Name**. Enter a name to display for the new Source.  
@@ -229,14 +229,14 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
    * **Source Category**. Enter a source category. For example, enter `aws/observability/CloudTrail/logs`.  
    * **Fields**. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried using the account field.
    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources/).  
-   * **Log File Discovery > Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources/).  
+   * **Log File Discovery > Scan Interval**. Use the default of 5 minutes. Alternatively, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources/).  
    * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.  
    * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.  
    * **Timestamp Format**. Select **Automatically detect the format**.  
    * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.  
 2. Click **Save**.
 
-### Collect CloudWatch Metrics
+### Collecting CloudWatch metrics
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).  
 2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics/) or [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) (Recommended).  
@@ -244,13 +244,13 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 4. **Metadata**. Add an account field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. The account field allows you to query metrics.  
 5. Click **Save**.
 
-### Field in Field Schema
+### Configure field in Field Schema
 
-1. [Classic UI](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[New UI](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.  
+1. [New UI](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.  <br/>[Classic UI](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
 2. Search for the `domainname` field.  
 3. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
 
-### Field Extraction Rule(s)
+### Configure Field Extraction Rule(s)
 
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule/).
 
@@ -285,18 +285,18 @@ account=* region=* _sourceHost=/aws/OpenSearchService/*
 | fields namespace, domainname
 ```
 
-### Centralized AWS CloudTrail Log Collection
+### Collecting Centralized AWS CloudTrail logs
 
-In case, you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present or update it as required.
+In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present or update it as required.
 
 * **Rule Name**: AWS Accounts  
 * **Applied at**: Ingest Time  
 * **Scope (Specific Data)**: `_sourceCategory=aws/observability/cloudtrail/logs`  
-* **Parse Expression**: Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
+* **Parse Expression**: Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
 
 ```sql
 | json "recipientAccountId"
-// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
+// Manually map your AWS account ID with the AWS account alias you set up earlier for the individual child account
 | "" as account
 | if (recipientAccountId = "528560886094",  "dev", account) as account
 | if (recipientAccountId = "567680881046",  "prod", account) as account
@@ -310,6 +310,14 @@ Now that you have set up a collection for **Amazon OpenSearch**, install the Sum
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+* `account`: The friendly name or alias assigned to the AWS account.
+* `region`: The geographical region where the AWS resource is located (for example, us-east-1 or eu-west-2).
+* `accountid`: The unique 12-digit identifier for the AWS account where the resource is present.
+* `namespace`: The AWS service namespace that the resource or metric belongs to (for example, AWS/ES or AWS/OpenSearch).
+* `domainname`: A specific identifier for the OpenSearch domain within AWS OpenSearch Service.
 
 ## Viewing Amazon OpenSearch dashboards
 
@@ -370,7 +378,7 @@ The **Amazon OpenSearch - Error Logs - Garbage Collection** dashboard provides a
 Use this dashboard to:
 
 * Monitor the average garbage collection time, by overall and domain name, with a trend graph to track changes over time.  
-* Analyze average cleanup size and trends, to understand the efficiency of the garbage collection process across different domains.  
+* Analyze average cleanup size and trends to understand the efficiency of the garbage collection process across different domains.  
 * Compare garbage collection counts across different nodes and domains, helping to identify any imbalances or potential issues in specific parts of the cluster.  
 * Visualize JVM memory usage before and after garbage collection, providing insights into the effectiveness of memory management and potential memory leaks.
 
@@ -438,3 +446,32 @@ Use this dashboard to:
 * Ability to correlate cache metrics with overall system performance.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-OpenSearch/10.-Amazon-OpenSearch-Cache-Performance.png')} alt="Fields" />
+
+## Create monitors for Amazon OpenSearch app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon OpenSearch alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Amazon OpenSearch - Cluster Write Operations Blocked` | This alert is triggered when the cluster is actively blocking write requests. This is a severe state that means applications cannot write new data to the cluster. | Count > = 1 | Count < 1 |
+| `Amazon OpenSearch - High Indexing Latency` | This alert is triggered when the average indexing latency exceeds 1000ms, indicating a potential bottleneck in data ingestion pipelines. | Count > 1000 | Count < = 1000 |
+| `Amazon OpenSearch - High JVM Memory Pressure` | This alert is triggered when JVM Memory Pressure is consistently high, which can lead to long garbage collection pauses, slow performance, and potential out-of-memory errors. | Count > = 95 | Count < 95 |
+| `Amazon OpenSearch - Sustained High CPU Utilization` | This alert is triggered when CPU utilization is consistently high (>= 80%) for 15 minutes, indicating an overloaded cluster that may lead to performance degradation. | Count > = 80 | Count < 80 |
+| `Amazon OpenSearch - Unassigned Primary Shards Detected` | This alert is triggered when the cluster status is critical, indicating that at least one primary shard and its replicas are not allocated. This signifies a non-functional cluster and potential data loss. | Count > = 1 | Count < 1 |
+| `Amazon OpenSearch - Unassigned Replica Shards Detected` | This alert is triggered when all primary shards are active but one or more replica shards are not allocated to a node. This compromises high availability. | Count > = 1 | Count < 1 |
+
+## Upgrade/Downgrade the Amazon OpenSearch app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon OpenSearch app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -28,19 +28,6 @@ Watch the following micro lesson to learn about our AWS Observability solution.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/p_LaUPAer6I?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
--->
-
 :::
 
 #### AWS Observability Solution  
@@ -102,7 +89,6 @@ The following Sumo Logic [AWS Observability Solution apps](/docs/observability/a
 * [Amazon ECS Dashboards](/docs/observability/aws/integrations/amazon-ecs). The [Amazon Elastic Container Service](https://aws.amazon.com/ecs/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc&ecs-blogs.sort-by=item.additionalFields.createdDate&ecs-blogs.sort-order=desc) is a scalable, container management service that is used to manage containers in a cluster. With dashboards for Amazon ECS, you can monitor capacity and resource utilization of ECS components as well as quickly identify changes made to your clusters to help with troubleshooting.
 * [Amazon ElastiCache](/docs/observability/aws/integrations/amazon-elasticache). The [Amazon ElastiCache](https://aws.amazon.com/elasticache/) allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud.<br/>The Amazon ElastiCache dashboards provide visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues. Use the preconfigured dashboards for at-a-glance analysis of event status trends, locations, successes and failures, as well as system health and performance metrics. The dashboards also have additional performance insights for Redis clusters.
 * [AWS Network Load Balancer](/docs/observability/aws/integrations/aws-network-load-balancer). The [AWS Network Load Balancer](https://aws.amazon.com/elasticloadbalancing/network-load-balancer/) service is distributed in OSI Layer 4 (that is, network) traffic (for example, TCP, UDP, TLS) and can handle over a million requests per second.<br/>The AWS Network Load Balancer dashboards provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy and to quickly identify errors.
-* [Global Intelligence for AWS CloudTrail DevOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops). Helps you accelerate root cause analysis for incidents by providing error rate and configuration insights benchmarked from Sumo Logic’s AWS customers for nine AWS services: EC2, Lambda, Auto Scaling, S3, ELB, RDS, DynamoDB, ElastiCache, and Redshift. Benchmark dashboards are integrated with AWS Observability solution at the account and region level.
 * [AWS Observability Classic Load Balancer](/docs/observability/aws/integrations/aws-classic-load-balancer). The [AWS Observability Classic Load Balancer](/docs/observability/aws/integrations/aws-classic-load-balancer) is a unified logs and metrics app that provides visibility into the health of your [AWS Classic Load Balancer](https://aws.amazon.com/elasticloadbalancing/classic-load-balancer/). The preconfigured dashboards provide insights into latency, request and host status, threat intel, and HTTP backend codes by Availability Zones.
 * [Amazon SNS](/docs/observability/aws/integrations/amazon-sns). The [Amazon SNS](/docs/observability/aws/integrations/amazon-sns) app provides insight into the operations and utilization of your [Amazon SNS](https://aws.amazon.com/sns) service. The preconfigured dashboards help you monitor the key metrics by application, platform, region, and topic name, view the SNS events for activities, and help you plan the capacity of your SNS service.
 * [Amazon SQS](/docs/observability/aws/integrations/amazon-sqs). The [Amazon SQS](/docs/observability/aws/integrations/amazon-sqs) app provides insight into the operations and utilization of your [Amazon SQS](https://aws.amazon.com/sqs) service. The preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.

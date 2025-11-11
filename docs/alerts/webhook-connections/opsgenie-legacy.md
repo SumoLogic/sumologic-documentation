@@ -28,7 +28,7 @@ To add a Sumo Logic integration in Opsgenie, do the following:
 
 Your final configurations at Opsgenie should look like this:
 
-![Webhook_Intergration_Example2.png](/img/connection-and-integration/opsgenie-legacy.png)
+<img src={useBaseUrl('img/connection-and-integration/opsgenie-legacy.png')} alt="Webhook integration example" style={{border: '1px solid gray'}} width="800" />
 
 ## Configuration on Sumo Logic
 
@@ -47,7 +47,7 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
 
 To create a webhook:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. Click **+ Add** and choose **Webhook** as connection type.
 1. For the name, enter **Sumo Logic Opsgenie** and give an optional description to the connection.
 1. Paste the URL (used in [step 2](#configure-a-scheduled-search)) into the **URL** field.

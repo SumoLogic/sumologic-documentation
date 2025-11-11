@@ -10,6 +10,14 @@ This article outlines the process of creating a Scheduled Search, which is essen
 
 To run a Scheduled Search using receipt time, save the search with receipt time enabled.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage content such as scheduled searches with the [`sumologic_content`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content) resource.
+
+<TerraformLink/>
+:::
+
 ## Create a Scheduled Search
 
 This section describes how to create a Scheduled Search at the time you save a search. You can also edit a saved search later to add a schedule.
@@ -42,6 +50,10 @@ The [time range](../../search/get-started-with-search/search-basics/time-range-e
 
 :::important
 This setting is different than the Time Range option configured for the Saved Search. The first time range is only used when you run the Saved Search from the Library. This Time Range applies to your Scheduled Search.
+:::
+
+:::note
+The time range limitations below apply to both parent queries and subqueries in your scheduled search.
 :::
 
 Alternately, type a time range; for example, -15m to run the search against data generated in the past 15 minutes. A time range outside the maximum allowed range for a given frequency is not allowed and presents the message like this: `Invalid query. Max allowed time range for 15 minutes frequency is 1 day`.
