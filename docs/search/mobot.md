@@ -15,10 +15,6 @@ keywords:
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::note Name update
-We are renaming *Copilot* to *Mobot* across the product and docs. During this transition, some UI labels and screenshots may still show **Copilot**. Functionality is the same. We will update names and images as the rollout completes.
-:::
-
 Sumo Logic Mobot (formerly known as *Copilot*) is our AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
 
 With its intuitive interface, Mobot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-derived suggestions to refine your results for faster, more accurate resolutions. Overall, Mobot enhances incident resolution with expert level insights.
@@ -28,7 +24,7 @@ If you prefer not to use Mobot, you can opt out by contacting [Support](https://
 :::
 
 :::sumo Micro Lesson: Introduction to Mobot
-This short video introduces Mobot (formerly known as *Copilot*) and how it can help you with log search and analysis—perfect for getting a quick overview before diving in.
+This short video introduces Mobot and how it can help you with log search and analysis—perfect for getting a quick overview before diving in.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/o9uftxw012?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -54,6 +50,26 @@ Mobot accelerates incident response by combining prebuilt contextual insights wi
 * **Auto-visualize**. Mobot automatically generates charts from search results, which you can add directly to dashboards, reducing time and effort in data interpretation.
 * **Log compatibility**. Mobot supports structured logs, semi-structured logs (partial JSON), and unstructured logs (e.g., Palo Alto Firewall) when Field Extraction Rules (FERs) are applied. This ensures valuable insights across a variety of log formats.
 * **Enhanced query experience**. Auto-complete to streamline natural language queries.
+
+<!-- Intelliparse is still on hold - don't include that
+* **Multi-turn conversations**. Ask follow-up questions without repeating yourself.
+
+## Support for unstructured logs
+
+we support unstructured logs (raw, text-based logs that don't follow a structured format) without requiring Field Extraction Rules (FERs). This enhancement enables Mobot to analyze and derive insights from a broader range of log data using natural language, even if the logs aren't pre-parsed. If your logs are already visualized in dashboards, Mobot automatically parses them and delivers insights using natural language.
+
+This update builds on Mobot’s AI-assisted search capabilities and is available to all customers using the new Sumo Logic UI. 
+
+Mobot now supports unstructured logs, including raw text logs with no predefined fields or Field Extraction Rules (FERs). If these logs are already visualized in dashboards, Mobot automatically parses them and surfaces insights using natural language queries.
+
+This capability is powered by [Intelliparse mode (Beta)](/docs/search/get-started-with-search/build-search/intelliparse-beta), which infers structure from patterns already used in your dashboards. Behind the scenes, Mobot injects the `intelliparse` operator into queries to extract fields on the fly—no FER setup required.
+
+Here are some use cases:
+* Explore raw logs without defined fields
+* Triage errors and detect patterns
+* Investigate anomalies in security dashboards
+
+Mobot does not currently interpret all unstructured logs. It prioritizes those already visualized in dashboards to ensure the most relevant and accurate insights. Unlike structured logs, which contain clearly defined fields, unstructured logs require Mobot to infer structure at query time using AI and pattern recognition.  -->
 
 ## Security and compliance
 
@@ -83,7 +99,7 @@ Mobot is ideal for users of all skill levels:
 In this section, you'll learn the recommended workflow for using Mobot effectively, along with best practices to maximize its benefits.
 
 :::sumo Micro Lesson: Using Mobot
-See Mobot (formerly known as *Copilot*) in action with a hands-on walkthrough of the UI and prompt-based search.
+See Mobot in action with a hands-on walkthrough of the UI and prompt-based search.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/t67ovt9hqj?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -102,9 +118,9 @@ See Mobot (formerly known as *Copilot*) in action with a hands-on walkthrough of
 
 To start using Mobot:
 
-From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Copilot** (or **Mobot**) in the left nav.
+From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Mobot** in the left nav.
 
-From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the **Copilot** (or **Mobot**) tab.
+From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the **Mobot** tab.
 
 ### Step 2: Review and adjust the auto-selected source
 
@@ -350,6 +366,9 @@ Mobot is an AI assistant integrated into the Sumo Logic Log Analytics Platform. 
 <summary>Can I use Mobot to analyze unstructured logs?</summary>
 
 Yes, Mobot can extract relevant insights from unstructured logs, provided Field Extraction Rules (FERs) are applied. It also supports semi-structured logs (JSON + unstructured payloads).
+
+<!-- get clarification - can Mobot parse raw logs without FERs? -->
+
 </details>
 
 <details>
