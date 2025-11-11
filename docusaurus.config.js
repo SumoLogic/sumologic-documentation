@@ -461,25 +461,51 @@ module.exports = {
           {
             title: 'Help',
             items: [
-              { label: 'Contact support', href: 'https://support.sumologic.com/support/s' },
-              { label: 'Community forum', href: 'https://support.sumologic.com/support/s/topiccatalog' },
-              { label: 'Dojo Slack community', href: 'https://sumodojo.slack.com/' },
+              {
+                label: 'Contact support',
+                href: 'https://support.sumologic.com/support/s'
+              },
+              {
+                label: 'Community forum',
+                href: 'https://support.sumologic.com/support/s/topiccatalog' },
+              {
+                label: 'Dojo Slack community',
+                href: 'https://sumodojo.slack.com'
+              },
             ],
           },
           {
             title: 'Learn',
             items: [
-              { label: 'Training and certifications', href: 'https://www.sumologic.com/learn/training/' },
-              { label: 'Webinars and events', href: 'https://www.sumologic.com/events/' },
-              { label: 'Sumo Logic Blog', href: 'https://www.sumologic.com/blog' },
+              {
+                label: 'Training and certifications',
+                href: 'https://www.sumologic.com/learn/training'
+              },
+              {
+                label: 'Webinars and events',
+                href: 'https://www.sumologic.com/events'
+              },
+              {
+                label: 'Sumo Logic Blog',
+                href: 'https://www.sumologic.com/blog'
+              },
             ],
           },
           {
             title: 'More',
             items: [
-              { label: 'Contribute or give feedback', href: 'https://www.sumologic.com/help/docs/contributing' },
-              { label: 'Request a demo', href: 'https://www.sumologic.com/request-demo' },
-              { label: 'Status page', href: 'https://status.sumologic.com' },
+              {
+                label: 'Contribute or give feedback',
+                href: 'https://www.sumologic.com/help/docs/contributing'
+              },
+              {
+                label: 'Request a demo',
+                href: 'https://www.sumologic.com/request-demo'
+              },
+              {
+                label: 'Status page',
+                href: 'https://status.sumologic.com'
+              },
             ],
           },
         ],
