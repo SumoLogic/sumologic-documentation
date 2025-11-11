@@ -2,6 +2,7 @@
 id: mobot
 title: Sumo Logic Mobot
 sidebar_label: Mobot 🤖
+# Edit description to include QA and KA
 description: Streamline your log analysis with Sumo Logic Mobot, our AI-based assistant designed to simplify log analysis by allowing you to ask questions in plain English and providing search suggestions without the need to write log queries.
 keywords:
   - copilot
@@ -50,26 +51,25 @@ Mobot accelerates incident response by combining prebuilt contextual insights wi
 * **Auto-visualize**. Mobot automatically generates charts from search results, which you can add directly to dashboards, reducing time and effort in data interpretation.
 * **Log compatibility**. Mobot supports structured logs, semi-structured logs (partial JSON), and unstructured logs (e.g., Palo Alto Firewall) when Field Extraction Rules (FERs) are applied. This ensures valuable insights across a variety of log formats.
 * **Enhanced query experience**. Auto-complete to streamline natural language queries.
-
-<!-- Intelliparse is still on hold - don't include that
 * **Multi-turn conversations**. Ask follow-up questions without repeating yourself.
 
+<!-- is this still happening?
 ## Support for unstructured logs
 
-we support unstructured logs (raw, text-based logs that don't follow a structured format) without requiring Field Extraction Rules (FERs). This enhancement enables Mobot to analyze and derive insights from a broader range of log data using natural language, even if the logs aren't pre-parsed. If your logs are already visualized in dashboards, Mobot automatically parses them and delivers insights using natural language.
+**Mobot supports unstructured logs** (raw, text-based logs that don’t follow a structured format such as JSON) without requiring Field Extraction Rules (FERs). This means you can ask questions in plain English and get meaningful insights from nearly any log data. Using natural language and AI pattern recognition, Mobot analyzes and extracts insights even when logs aren’t pre-parsed.
 
-This update builds on Mobot’s AI-assisted search capabilities and is available to all customers using the new Sumo Logic UI. 
+If your unstructured logs are already visualized in dashboards, Mobot automatically infers structure from existing patterns, applies parsing logic on the fly, and delivers insights in natural language. No FER setup is required. At this stage, Mobot prioritizes unstructured logs already used in dashboards to improve the accuracy and relevance of insights, focusing on high-value data sources.
 
-Mobot now supports unstructured logs, including raw text logs with no predefined fields or Field Extraction Rules (FERs). If these logs are already visualized in dashboards, Mobot automatically parses them and surfaces insights using natural language queries.
+Mobot works best on structured (JSON) logs, and this extends its parsing and analysis capabilities to unstructured logs, offering broader coverage and improved usability for environments with custom or inconsistent log types. Although it doesn’t yet interpret all raw logs, expanded support beyond dashboards is actively in development.
 
-This capability is powered by [Intelliparse mode (Beta)](/docs/search/get-started-with-search/build-search/intelliparse-beta), which infers structure from patterns already used in your dashboards. Behind the scenes, Mobot injects the `intelliparse` operator into queries to extract fields on the fly—no FER setup required.
+Example use cases:
 
-Here are some use cases:
-* Explore raw logs without defined fields
-* Triage errors and detect patterns
-* Investigate anomalies in security dashboards
+* Explore and analyze raw logs without predefined fields.
+* Triage errors and detect recurring issues.
+* Identify anomalies or failed logins in security dashboards.
 
-Mobot does not currently interpret all unstructured logs. It prioritizes those already visualized in dashboards to ensure the most relevant and accurate insights. Unlike structured logs, which contain clearly defined fields, unstructured logs require Mobot to infer structure at query time using AI and pattern recognition.  -->
+Structured logs differ from unstructured logs in that they contain predefined fields, allowing Mobot to map queries directly. For unstructured logs, Mobot uses AI and pattern recognition to infer structure dynamically at query time, maintaining the same performance, reliability, and data protection standards as structured logs.
+ -->
 
 ## Security and compliance
 
@@ -354,6 +354,19 @@ To direct Mobot to search the Infrequent tier, for example, use:
 _dataTier=Infrequent
 ```
 
+## Knowledge Agent (beta)
+
+Select **Knowledge Agent** to get help using Sumo Logic.
+
+<img src={useBaseUrl('img/search/mobot/mobot-knowledge-agent-button.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
+
+Enter a question about Sumo Logic, such as *"How do I add a collector for AWS CloudTrail?"*, *"What are the API endpoints for Sumo Logic?"*, or anything else you need help with. The Knowledge agent returns an answer, including steps if needed.
+
+When you enter a question to the Knowledge Agent, it returns an answer using [Sumo Logic documentation](/docs/get-started). Click links in the response to see the help articles that served as the basis for the response.
+
+Knowledge Agent retains your conversation context for 24 hours from the time you ask your first question. After 24 hours, the session resets and prior context is no longer available. However, any new question will begin a new 24-hour session with its own preserved context. For example, if you ask a question and follow up with a related question within 24 hours, Mobot will still remember and continue the conversation seamlessly.
+
+
 ## FAQ
 
 <details>
@@ -446,6 +459,41 @@ If you prefer not to use Mobot, contact our [support team](https://support.sumol
 </details>
 
 
+<details>
+<summary>Is any user or org data sent outside our environment?</summary>
+
+No. All processing happens within your region's cluster. RAG context is scoped to dashboards in your own org—no cross-org data leakage.
+</details>
+
+<details>
+<summary>What's the impact on query latency?</summary>
+
+Typical end-to-end response time remains under 2 seconds for most queries. Very large result sets or percentile calculations over broad ranges may take up to 5 seconds. During Beta, full query generation may take 6 to 7 seconds, but Mobot streams the first token (intent interpretation) within 2 seconds.
+</details>
+
+<details>
+<summary>How do I debug a failed translation?</summary>
+
+If a translation fails, Mobot generates a contextual error message tailored to the situation. The message includes the generated query, explains why it failed, and suggests how to fix it (for example, `Try narrowing your time window` or `Simplify your filter expression`).
+
+Here are some common cases:
+
+* **No or delayed results**. Give Mobot a few seconds to process complex refinements.  
+* **Output too broad**. Add more context (for example, specify a client or namespace).  
+* **Unexpected numbers**. If results look off, be more explicit. For example, ask `show in milliseconds` or `convert to seconds` to adjust units, or say `show P90` / `switch back to P50 over 1 minute` to refine percentiles.  
+</details>
+
+<details>
+<summary>What are the current limitations?</summary>
+
+* For dashboard-aware translations via RAG, support is limited to the `sourceCategory` filter (selection in the source picker) at launch. Other expressions like `_index=` or `_sourceHost=` are not yet supported.  
+* RAG only considers dashboards that have been opened in the last 90 days when interpreting your query.
+* Very large or highly complex queries may time out or trigger structured fallback responses.
+* The conversational experience is available for log-based searches only. Metrics and Metric Searches are not supported in this Beta.
+* Mobot cannot currently refer to the output of a log search directly in subsequent queries. Each follow-up must be expressed in terms of query refinements rather than referencing previous results. This is an important limitation to be aware of when constructing multi-turn conversations.
+</details>
+
+
 ## Feedback
 
 We want your feedback! Let us know what you think by clicking the thumbs up or thumbs down icon and entering the context of your query.
@@ -456,11 +504,19 @@ You can also leave feedback on specific errors.
 
 <img src={useBaseUrl('img/search/mobot/feedback-error.png')} alt="Mobot feedback icons" style={{border: '1px solid gray'}} width="800" />
 
+
 ## Additional resources
 
-* Blogs:
+* [Search Query Language](/docs/search/search-query-language)
+* [Dashboards](/docs/dashboards)
+
+<!-- Training/videos-->
+
+* Blogs
    * [Sumo Logic Mo Copilot: AI assistant for faster incident response and simplified troubleshooting](https://www.sumologic.com/blog/mo-copilot-ai-assistant/)
    * [Designing Sumo Logic Mo Copilot for success](https://www.sumologic.com/blog/designing-mo-copilot-success/)
    * [Differentiating Sumo Logic Mo Copilot using Amazon Bedrock](https://www.sumologic.com/blog/copilot-amazon-bedrock/)
-* Brief: [Sumo Logic's Mo Copilot speeds up response](https://www.sumologic.com/brief/sumo-logics-mo-copilot-speeds-up-response/)
-* Webinar: [Revolutionizing Incident Management with AI: Meet Mo Copilot](https://www.sumologic.com/webinar/revolutionizing-incident-management-with-ai-meet-mo-copilot/)
+* Brief
+   * [Sumo Logic's Mo Copilot speeds up response](https://www.sumologic.com/brief/sumo-logics-mo-copilot-speeds-up-response/)
+* Webinar
+   * [Revolutionizing Incident Management with AI: Meet Mo Copilot](https://www.sumologic.com/webinar/revolutionizing-incident-management-with-ai-meet-mo-copilot/)
