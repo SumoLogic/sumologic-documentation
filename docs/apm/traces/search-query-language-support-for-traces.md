@@ -26,7 +26,7 @@ Searching span data is the same as running a log search. You just need to specif
 
 To search your tracing data do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. 
 1. On the Search page, enter the following in the text box: `_index=_trace_spans`. 
 1. Choose a time range up to seven days ago that you'd like to review.
 1. Click **Start** to run the search.
@@ -34,6 +34,8 @@ To search your tracing data do the following:
 ### Scope
 
 A Keyword Search Expression defines the scope of data for the query. You need to specify `_index=_trace_spans` in the scope to reference your trace data.
+
+Keyword searching is supported for tracing indexes across all fields, unlike other indexes where only the `_raw` field is searched.
 
 #### _any option
 

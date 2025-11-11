@@ -111,7 +111,7 @@ Namespace for AWS Application Load Balancer Service is AWS/ApplicationELB.
 
 ## Field in field schema
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
 1. Search for the `loadbalancer` field.
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
@@ -140,14 +140,16 @@ Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.ama
 ```
 
 ```sql title="Parse Expression"
-json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name", "requestParameters.type", "requestParameters.loadBalancerArn", "apiVersion" as event_source, region, accountid, loadbalancer, loadbalancertype, loadbalancerarn, api_version nodrop 
-|"" as namespace
+json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name", "requestParameters.type", "requestParameters.loadBalancerArn", "requestParameters.listenerArn", "apiVersion" as event_source, region, accountid, loadbalancer, loadbalancertype, loadbalancerarn, listenerarn, api_version nodrop
 | where event_source = "elasticloadbalancing.amazonaws.com" and api_version matches "2015-12-01" 
-| parse field=loadbalancerarn ":loadbalancer/*/*/*" as balancertype, loadbalancer, f1 nodrop
-| if(loadbalancertype matches "network", "aws/nlb", if(balancertype matches "net", "aws/nlb", namespace)) as namespace
-| if(loadbalancertype matches "application", "aws/applicationelb", if(balancertype matches "app", "aws/applicationelb", namespace)) as namespace
-| where namespace="aws/applicationelb" or isEmpty(namespace)
-| toLowerCase(loadbalancer) as loadbalancer  
+| "" as namespace 
+| parse field=loadbalancerarn ":loadbalancer/*/*/*" as balancertype1, loadbalancer1, f1 nodrop
+| parse field=listenerarn ":listener/*/*/*/*" as balancertype2, loadbalancer2, f1, f2 nodrop
+| if(loadbalancertype matches "network", "aws/networkelb", if(balancertype1 matches "net", "aws/networkelb", if(balancertype2 matches "net", "aws/networkelb", namespace))) as namespace 
+| if(loadbalancertype matches "application", "aws/applicationelb", if(balancertype1 matches "app", "aws/applicationelb", if(balancertype2 matches "app", "aws/applicationelb", namespace))) as namespace
+| where namespace="aws/applicationelb" or isEmpty(namespace) 
+| if (!isEmpty(loadbalancer), loadbalancer, if (!isEmpty(loadbalancer1), loadbalancer1, loadbalancer2)) as loadbalancer
+| toLowerCase(loadbalancer) as loadbalancer 
 | fields region, namespace, loadbalancer, accountid
 ```
 

@@ -89,12 +89,12 @@ Playbooks are central to SOAR automation. Inside playbooks, you can add nodes wi
 
 In this section, you’ll get to know the different parts of the Cloud SOAR UI. 
 
-1. Navigate to the SecOps page.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **SecOps & Dashboard**.<br/>If you have any tasks or alerts assigned to you, you’ll see them here in the **My Operations** panel.<br/><img src={useBaseUrl('img/cloud-soar/secops-page.png')} alt="SecOps page" style={{border: '1px solid gray'}} width="700" /> 
+1. Navigate to the SecOps page.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **SecOps & Dashboard**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**.<br/>If you have any tasks or alerts assigned to you, you’ll see them here in the **My Operations** panel.<br/><img src={useBaseUrl('img/cloud-soar/secops-page.png')} alt="SecOps page" style={{border: '1px solid gray'}} width="700" /> 
 1. Near the top left corner, above your user name, click **Dashboard**.<br/>This will take you to your main dashboard page for your organization. Here you’ll see an overview of current incidents as well as statistics for recent incidents. We’ll learn how to customize this area in a later section.<br/><img src={useBaseUrl('img/cloud-soar/dashboards-page.png')} alt="Dashboards page" style={{border: '1px solid gray'}} width="700" />
-1. Navigate to the **Incidents** page. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**, and then select **Incidents** at the top of the SecOps screen.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**.<br/>Here you’ll see a list of all incidents for your organization. You can filter by various categories and search terms. For example, if you click **Bookmarks** and then select **Mine** you’ll only see incidents that have been assigned to you. <br/><img src={useBaseUrl('img/cloud-soar/incidents-page.png')} alt="Incidents page" style={{border: '1px solid gray'}} width="800" />
-1. Navigate to the **Entities** page.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**, and then click the **Entities** button at the top of the screen.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > Entities**.<br/>Here you will see a list of all entities, such as IP addresses, host names, and other potential indicators of compromise. Entities are unique identifiers that can help you figure out who the potential threat actors are. Like the **Incidents** page, you can use filters and queries on the **Entities** page to sort through the entities in Cloud SOAR.<br/><img src={useBaseUrl('img/cloud-soar/entities-page.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800" />
-1. Visit the Support page.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click **Help** (question mark icon) in the upper right.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). Click **Help** (question mark icon) in the upper right.<br/>Here you’ll find links to documentation, information about APIs and integrations, and contact information if you need to reach out to the Sumo Logic support team. 
-1. View your profile.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click **Profile** (person icon) in the upper right corner.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). Click **Profile** (person icon) in the upper right corner.<br/>Here you’ll see details about your user profile, including the roles you’ve been assigned. 
+1. Navigate to the **Incidents** page. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**, and then select **Incidents** at the top of the SecOps screen.<br/>Here you’ll see a list of all incidents for your organization. You can filter by various categories and search terms. For example, if you click **Bookmarks** and then select **Mine** you’ll only see incidents that have been assigned to you. <br/><img src={useBaseUrl('img/cloud-soar/incidents-page.png')} alt="Incidents page" style={{border: '1px solid gray'}} width="800" />
+1. Navigate to the **Entities** page.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > Entities**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**, and then click the **Entities** button at the top of the screen.<br/>Here you will see a list of all entities, such as IP addresses, host names, and other potential indicators of compromise. Entities are unique identifiers that can help you figure out who the potential threat actors are. Like the **Incidents** page, you can use filters and queries on the **Entities** page to sort through the entities in Cloud SOAR.<br/><img src={useBaseUrl('img/cloud-soar/entities-page.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800" />
+1. Visit the Support page.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). Click **Help** (question mark icon) in the upper right.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click **Help** (question mark icon) in the upper right.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click **Profile** (person icon) in the upper right corner.<br/>Here you’ll find links to documentation, information about APIs and integrations, and contact information if you need to reach out to the Sumo Logic support team. 
+1. View your profile.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). Click **Profile** (person icon) in the upper right corner.<br/>Here you’ll see details about your user profile, including the roles you’ve been assigned. 
 
 ### Case management
 
@@ -162,7 +162,7 @@ The **Entities** page contains in-depth information about entities related to th
 
 In this section, you’ll investigate an incident, gather information, and decide what to do in [response](#respond-to-an-incident) to it.
 
-1. Navigate to the **Incidents** page.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**, and then select **Incidents** at the top of the SecOps screen.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**.
+1. Navigate to the **Incidents** page.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**, and then select **Incidents** at the top of the SecOps screen.
 2. Click the column configuration icon in the upper right.<br/><img src={useBaseUrl('img/cloud-soar/column-configuration-icon.png')} alt="Column configuration icon" style={{border: '1px solid gray'}} width="100" />
 1. Make sure **Short Description** is under the **Active** column. If it isn’t, click the **+** next to **Short Description** in the **Available** column. Do the same with the **Type** and **Category** fields. Then click **Apply**. You’ll now see a short description based on the [MITRE ATT&CK framework](https://attack.mitre.org/matrices/enterprise/) of each incident.
 1. Click any incident with a status of **Open**.
@@ -242,7 +242,7 @@ You can modify an existing playbook or build one from scratch by dragging and dr
 
 To respond to an incident you [investigated previously](#investigate-an-incident): 
 
-1. Navigate to the **Incidents** page. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**, and then select **Incidents** at the top of the SecOps screen.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**.
+1. Navigate to the **Incidents** page. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**, and then select **Incidents** at the top of the SecOps screen.
 1. Select the incident you want respond to.
 1. Click the **Operations** tab, then click **Playbooks**. 
 1. Click the **+** icon.<br/><img src={useBaseUrl('img/cloud-soar/add-playbook-example.png')} alt="Add a playbook to an incident" style={{border: '1px solid gray'}} width="700" />
@@ -271,7 +271,7 @@ In order to prepare for the next potential threat, you’ll need to set up alert
 
 In this section, you’ll create and customize a dashboard using widgets.
 
-1. Navigate to the Cloud SOAR SecOps page.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **SecOps & Dashboard**. 
+1. Navigate to the Cloud SOAR SecOps page.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **SecOps & Dashboard**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**.
 1. Near the top left corner, above your user name, click **Dashboard**.
 1. Click the **+** icon in the upper right to create a new dashboard.  
 1. Click on the default dashboard name (**Dashboard #**) and change the name.  Add a description if desired by clicking on the **No description available** field and adding some text.
@@ -308,7 +308,7 @@ There are several considerations when designing a dashboard or report. Here are 
 
 You can use Cloud SOAR to make downloadable reports, using the same information as in your dashboards.  Like dashboards, you can use existing widgets to customize the content and structure of your report. In this section, you’ll create and export a report in this way.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Report**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Cloud SOAR > Report**. You can also click the **Go To...** menu at the top of the screen and select **Report**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Cloud SOAR > Report**. You can also click the **Go To...** menu at the top of the screen and select **Report**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Report**. 
 1. In the report view, you'll have a blank page view and a sidebar on the right with the available widgets (similar to the dashboard edit view).<br/><img src={useBaseUrl('img/cloud-soar/example-report-dialog.png')} alt="Report dialog" style={{border: '1px solid gray'}} width="700" /> 
 1. Click on one or more of the available widgets to add them to the report. (You can create new widgets using the same process as in the previous section about [creating a dashboard](#create-a-dashboard)).
 1. Click **Save** when you've finished designing your report. 
@@ -353,9 +353,9 @@ Cloud SOAR administrators have privileged access to the Settings and Automation 
 
 The **General** settings page includes sections for **System**, **Incidents**, and **Instant Messaging**.  Administrators can set proxy settings and date/time formats in the **System** section.  The **Incidents** section can control incident processing settings and file extension whitelisting. You can also configure integrations like Slack under **Instant Messaging**. For more information, see [General](/docs/cloud-soar/settings/#general).
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access general settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access general settings, in the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access general settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access general settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**.
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-general-settings.png')} alt="General Settings" style={{border: '1px solid gray'}} width="800"/>
 
@@ -363,9 +363,9 @@ The **General** settings page includes sections for **System**, **Incidents**, a
 
 Basic user management and role-based access control (RBAC) is done through the main Sumo Logic interface; however, you can create user groups specific to Cloud SOAR through the **Groups** page. For more information, see [Groups](/docs/cloud-soar/settings/#groups).
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access groups settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **User Management > Groups**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access groups settings, in the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access groups settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access groups settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **User Management > Groups**.
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-groups.png')} alt="Groups dialog" style={{border: '1px solid gray'}} width="700"/>
 
@@ -373,9 +373,9 @@ Basic user management and role-based access control (RBAC) is done through the m
 
 The **Event Triggers** page contains a list of triggers where you can configure default email notifications whenever key events happen. For more information, see [Notifications](/docs/cloud-soar/settings/#notifications).
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access event triggers settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Notifications > Event Triggers**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access event triggers settings, in the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **Notifications**. You can also click the **Go To...** menu at the top of the screen and select **Notifications**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access event triggers settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Notifications**. You can also click the **Go To...** menu at the top of the screen and select **Notifications**.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access event triggers settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Notifications > Event Triggers**.
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-event-triggers.png')} alt="Events Triggers dialog" style={{border: '1px solid gray'}} width="700"/>
 
@@ -392,15 +392,15 @@ See:
 
 In addition to settings, Cloud SOAR administrators have privileged access to the Automation section of the platform. For more information, see [Cloud SOAR Automation](/docs/cloud-soar/automation/). 
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access Automation, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**.
-
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access Automation, in the main Sumo Logic menu select **Automation**.
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access Automation, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**.
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-automation-menu.png')} alt="Cloud SOAR Automation menu" style={{border: '1px solid gray'}} width="400"/>
 
 Within Automation, you’ll see subsections for:
 * [App Central](/docs/platform-services/automation-service/app-central/). A large out-of-the-box library of playbooks, integrations, and use cases for different threats to get you started with orchestrating and automating your SOC.
-* [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). Allows you to create new playbooks and edit, delete, and manage existing ones.
+* [Playbooks](/docs/platform-services/automation-service/playbooks/). Allows you to create new playbooks and edit, delete, and manage existing ones.
 * [Template](/docs/cloud-soar/automation/#incident-templates). Allows you to create new incident templates and edit, delete, and manage existing ones.
 * [Integrations](/docs/platform-services/automation-service/automation-service-integrations/). Lets you connect third party tools through APIs.
 * [Rules](/docs/cloud-soar/automation/#automation-rules). Lets you create new automation rules.
@@ -424,7 +424,7 @@ Fields can be used to apply advanced filters or add them as a new column in the 
 
 In this section, we’ll create a custom field to map data that’s ingested into Cloud SOAR. We'll create a standardized naming convention for source IP addresses to help organize our Cloud SOAR instance. For more information, see [Custom fields](/docs/cloud-soar/settings/#custom-fields).
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Configurations** select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.
 1. In the **Custom Fields** menu, select **Incidents**. 
 1. Click the **+** icon.
 1. Give the field a name that designates what it is for. For example, to create a field for IPs originating from entities, enter **Source IP**.
@@ -435,7 +435,7 @@ In this section, we’ll create a custom field to map data that’s ingested int
 
 To test the new field, we'll create a new incident manually. 
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**, and then select **Incidents** at the top of the SecOps screen.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**, and then select **Incidents** at the top of the SecOps screen.
 1. Click the **+** icon to create a new incident.
 1. Scroll down to the bottom to see your new field. Your field may appear in either the left or right column. It may be near the bottom or several rows up.
 1. Type a value in your new field. For example, if your new field is for a source IP, you could type in an IP address, such as **1.1.1.1**.
@@ -461,7 +461,7 @@ Work with the analysts on your team to customize reports, labels, and templates 
 
 In this section, we’ll create a custom incident label. This new label will make it easier to sort and respond to incidents.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Incident Labels**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Configurations** select **Incident Labels**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**. 
 1. Click the **+** icon to create a new incident label. 
 1. For **Name**, enter a name that designates what the incident is for. For example, to create a label for incidents originating in Cloud SIEM, you could enter **Cloud SIEM Alert**.
 1. Optionally, you can include a short **Description**.
@@ -475,9 +475,9 @@ Now you can use this incident label the next time you manually create an inciden
 
 Sometimes your system may record events that are unverified, or have a low confidence level such that you may want to triage them before reporting them as incidents.  The triage features of Cloud SOAR allow users to view these events and their details, as well as assign up to 100 custom fields for triage use, allowing maximum flexibility over a variety of event use cases. For more information, see [Triage](/docs/cloud-soar/incidents-triage/#triage).
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access the **Triage** screen, in the main Sumo Logic menu select **Cloud SOAR**. Then in the upper left of the **SecOps** screen click **Incidents > Triage**.
-
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Triage** screen, in the main Sumo Logic menu select **Cloud SOAR > Triage**.
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access the **Triage** screen, in the main Sumo Logic menu select **Cloud SOAR**. Then in the upper left of the **SecOps** screen click **Incidents > Triage**.
 
 Any recorded events that have not been converted to an incident will be displayed in a sortable table. Click on any column to sort by that field. By default, you will see two fields, **Status** and **Type**. 
 
@@ -520,10 +520,10 @@ As a Cloud SOAR administrator, you can explore App Central and install any integ
 
 Let's walk through how to install and configure useful integrations through App Central.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Automation** and then and click **App Central** in the left navigation bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Automation** and then and click **App Central** in the left navigation bar. 
 2. Click on the **Integrations** tab in the top tab row.<br/>The App Central integrations page shows a long list of installed and available integrations to augment Cloud SOAR functionality with both Sumo Logic and third-party vendor functionality.<br/><img src={useBaseUrl('img/cloud-soar/app-central-integrations-tab.png')} alt="App Central Integrations tab" style={{border: '1px solid gray'}} width="600"/>
 1. Choose a sample integration from the list and click on it. A popup window will appear showing the details of the integration, including version, description, and a list of actions that are supported in automations.
-1. Navigate to the **Integrations** view to show installed integrations.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.<br/>In this view, you can see the integrations that have already been installed and configured in the system.
+1. Navigate to the **Integrations** view to show installed integrations.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>In this view, you can see the integrations that have already been installed and configured in the system.
 1. Click an integration. The panel on the right will show the integration details, including available actions.  Many integrations after install will require appropriate configuration using "resources".
 1. Move the mouse cursor over the resource, then click the **Edit** (pencil) icon.<br/><img src={useBaseUrl('img/cloud-soar/example-integration-resource.png')} alt="Example integration resource" style={{border: '1px solid gray'}} width="600"/>
 1. You will see a dialog showing the configuration fields for this resource. <br/>When you create a resource or configure an existing one, you will need to enter the appropriate connection information such as the API web URL (for either Sumo Logic or a third-party service) and associated API keys. Many Sumo Logic integrations will require you to create an [access key](/docs/manage/security/access-keys/) and supply an associated access ID and access key to use in configuring integrations. Some third party integrations may require you to visit their website and sign up for an account in order to obtain the appropriate URL and/or credentials for their API.<br/><img src={useBaseUrl('img/cloud-soar/example-edit-resource.png')} alt="Example edit resource" style={{border: '1px solid gray'}} width="400"/>
@@ -531,7 +531,7 @@ Let's walk through how to install and configure useful integrations through App 
 
 #### Playbooks
 
-Once you’ve identified a potential security incident, you can respond to it in Cloud SOAR by executing a playbook. Playbooks are automated, or partially automated, workflows that act based on information from an incident. The playbook can enrich data, contain threats, notify teams, and other actions with custom APIs. These actions help automatically orchestrate many parts of the investigation, containment, eradication, and recovery processes. For more information, see [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/).
+Once you’ve identified a potential security incident, you can respond to it in Cloud SOAR by executing a playbook. Playbooks are automated, or partially automated, workflows that act based on information from an incident. The playbook can enrich data, contain threats, notify teams, and other actions with custom APIs. These actions help automatically orchestrate many parts of the investigation, containment, eradication, and recovery processes. For more information, see [Playbooks](/docs/platform-services/automation-service/playbooks/).
 
 Custom playbooks allow you to automate any task that uses a custom API. You can also use them to automate tasks that aren’t part of the hundreds of default playbooks included in Cloud SOAR.
 
@@ -570,7 +570,7 @@ Cloud SOAR allows us to create automations that will run whenever Cloud SIEM Ins
 
 Let’s create a playbook for use in Cloud SIEM.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. 
 1. To explore an existing playbook, click on it to open the playbook diagram in the right sidebar. Here, you can view the individual nodes and sequences, providing insight into the types of actions and structures you can create with custom playbooks. Playbooks can include multiple actions and branching conditions to handle different action sequences based on specific criteria. Click any playbook component to see detailed information about each node.
 1. Click the **+** icon near the top to create a new playbook.   
    1. Enter a name, for example, **Test Playbook**. You can optionally enter a description.  Select **Cloud SIEM** as the **Type** for the playbook.
@@ -634,7 +634,7 @@ Incident templates define which attributes will be automatically set each time a
 
 In this section, we’ll create a custom incident template. This template will automatically assign the playbook you created earlier to certain new incidents, and then automatically run it.  
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Incident templates** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Template**. You can also click the **Go To...** menu at the top of the screen and select **Template**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Template**. You can also click the **Go To...** menu at the top of the screen and select **Template**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Incident templates** in the left nav bar. 
 1. Near the top, click the **+** icon to create a new template.
 1. In the **Name** field, provide a name for the template. 
 1. In the **Category** field, enter a category (for example, **Test**). 
@@ -654,7 +654,7 @@ Automation rules can automatically pull information from sources. They can also 
 
 Let's create a custom automation rule. This rule will pull information from Cloud SIEM every 5 hours.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Rules**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. 
 1. Near the top, click the **+** icon to create a new rule.
 1. Enter a **Name** for the rule.
 1. For **Integration daemon**, select **Sumo Logic Insights Daemon Extended**.

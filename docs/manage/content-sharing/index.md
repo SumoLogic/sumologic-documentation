@@ -12,6 +12,14 @@ You can share apps, log searches, metric searches, dashboards, and folders with 
 
 <img src={useBaseUrl('img/content-sharing/ShareSearchPrime.png')} alt="Share dialog"  style={{border: '1px solid gray'}} width="700"/>
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage content sharing permissions with the [`sumologic_content_permission`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content_permission) resource.
+
+<TerraformLink/>
+:::
+
 ## Share from any location
 
 You can share content from the following locations:
@@ -33,10 +41,8 @@ To find content in the library that has been shared with you, click the clock i
 
 To share content from the left navigation bar or the library:
 
-1. Click the details icon ![details](/img/content-sharing/details.png) for the content you want to share.
-1. Select **Share** from the dropdown menu.
-
-    <img src={useBaseUrl('img/content-sharing/share-search.png')} alt="Share search" width="150"/>
+1. Click the details icon <img src={useBaseUrl('img/content-sharing/details.png')} alt="Details icon" style={{border: '1px solid gray'}} width="20" /> for the content you want to share.
+1. Select **Share** from the dropdown menu.<br/><img src={useBaseUrl('img/content-sharing/share-search.png')} alt="Share search" width="150"/>
 
     :::note
     * The **Share** option appears on the dropdown menu only if you have permissions to grant access. See [Available permission levels](#available-permission-levels).
@@ -89,19 +95,19 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/content-sharing/admin-mode"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>Admin Mode</h4></a>
+  <a href={useBaseUrl('docs/manage/content-sharing/admin-mode')}><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>Admin Mode</h4></a>
   <p>Learn how to control your content and add important items to the Admin Recommended folder.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/content-sharing/changing-alerts"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>Changing Other Alerts</h4></a>
+  <a href={useBaseUrl('docs/manage/content-sharing/changing-alerts')}><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>Changing Other Alerts</h4></a>
   <p>Learn how to modify or turn off alerts created by another user.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/content-sharing/content-sharing-faq"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>FAQ</h4></a>
+  <a href={useBaseUrl('docs/manage/content-sharing/content-sharing-faq')}><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>FAQ</h4></a>
   <p>Get to know the answers to basic questions around Content Sharing.</p>
   </div>
 </div>

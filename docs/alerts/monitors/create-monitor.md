@@ -13,13 +13,21 @@ Our alerts use machine learning to analyze historical data, establish baselines,
 
 Integrated playbooks automate incident response by gathering diagnostics, notifying teams, triggering recovery actions, and streamlining workflows to improve response times. You can link playbooks to monitors to automate tasks such as restarting services or scaling infrastructure, ensuring swift and efficient anomaly resolution.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage monitors with the [`sumologic_monitor`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) and [`sumologic_monitor_folder`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor_folder) resources.
+
+<TerraformLink/>
+:::
+
 ## Open the New Monitor window
 
 There are several ways to create a new monitor, depending on where you are in Sumo Logic.
 
 ### From Monitors
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
 1. Click **Add** > **New Monitor**, and the **New Monitor** dialog box will appear.
 
 <!-- These options are not appearing
@@ -47,8 +55,8 @@ Creating a monitor based on the threshold values defined in the Metrics page can
 To create a monitor from the [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/), follow the steps below:
 
 1. Open the **Metrics Search**:
-   * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). From Sumo Logic home, click **Metrics**.<br/><img src={useBaseUrl('img/alerts/monitors/home-metrics.png')} alt="Screenshot of the Sumo Logic home page with rectangle around the Metrics icon" style={{border: '1px solid gray'}} width="200"/>
    * [**New UI**](/docs/get-started/sumo-logic-ui). Click the **Go To...** menu at the top of the screen and select **Metrics Search**.
+   * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). From Sumo Logic home, click **Metrics**.<br/><img src={useBaseUrl('img/alerts/monitors/home-metrics.png')} alt="Screenshot of the Sumo Logic home page with rectangle around the Metrics icon" style={{border: '1px solid gray'}} width="200"/>
 1. On the **Metrics Search** page:
    1. Enter a metrics query.<br/><img src={useBaseUrl('img/alerts/query-metrics-explorer-view.png')} alt="Metrics explorer query" style={{border: '1px solid gray'}} width="800"/>
    1. In the **Thresholds** section, define the critical and warning thresholds for your metrics query.<br/><img src={useBaseUrl('img/alerts/thresholdonly-metrics-explorer-view.png')} alt="Screenshot of the Metrics Search in Sumo Logic, displaying a line chart for node memory utilization over time. The chart shows the memory utilization metric from 17:42:12 to 17:57:12 on 21/02/2023. The right side of the screen includes a thresholds panel with critical and warning thresholds set to 500000000 and 80, respectively. The 'Fill remaining area as green' option is toggled off." style={{border: '1px solid gray'}} width="800"/>
@@ -310,7 +318,7 @@ For example, when an alert is set to `greater than 10`, the recovery would be
 | `<threshold type>` | How you want the value compared. Select greater than, greater than or equal, less than or equal, or less than. |
 | `<threshold>` | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
 
-The Alert and recovery setting affects both the alert generation logic and the alert recovery logic. `Alert and recovery require a minimum of <count> data points for "at all times" evaluation windows`. This setting only works when you choose `at all times within` as the type of occurrence for the alert. <br/>![metrics alert datapoints.png](/img/alerts/monitors/minimum-datapoints.png)
+The Alert and recovery setting affects both the alert generation logic and the alert recovery logic. `Alert and recovery require a minimum of <count> data points for "at all times" evaluation windows`. This setting only works when you choose `at all times within` as the type of occurrence for the alert. <br/><img src={useBaseUrl('img/alerts/monitors/minimum-datapoints.png')} alt="Metrics alert datapoints" style={{border: '1px solid gray'}} width="800" />
 
 | Parameter | Description |
 |:--|:--|

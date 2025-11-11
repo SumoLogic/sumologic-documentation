@@ -33,7 +33,7 @@ To create service account credentials, follow the steps below:
 1. Navigate to the [Google Console service account](https://console.cloud.google.com/projectselector2/iam-admin/serviceaccounts?pli=1&supportedpurview=project) page.
 1. Log in with your credentials.
 1. Create a new project or select from the existing projects.<br/> <img src={useBaseUrl('img/send-data/workspace-setup1.png')} alt="workspace-setup1.png" width="600" />
-1. Enable **Admin SDK API** to have an administrator access. To locate this setting, you can search for **Admin SDK** in the search bar. Then select the **Enable** button.<br/> <img src={useBaseUrl('img/send-data/workspace-setup2.png')} alt="workspace-setup2.png" width="500" />
+1. Enable **Admin SDK API** to have an administrator access. To locate this setting, you can search for **Admin SDK** in the search bar. Then select the **Enable** button.<br/> <img src={useBaseUrl('img/send-data/workspace-setup2.png')} alt="workspace-setup2.png" width="400" />
 1. You will be redirected to the Admin dashboard page. Select the **Credentials** option from the left navigation. <br/> <img src={useBaseUrl('img/send-data/select-credentials.png')} alt="select-credentials.png" width="700" />
 1. Click the <img src={useBaseUrl('img/send-data/create-cred-button.png')} alt="create-cred-button.png" width="150" /> button at the menu bar of the Google Console page, and select Service account from the options that appear.<br/> <img src={useBaseUrl('img/send-data/create-credentials-service.png')} alt="create-credentials-service.png" width="600" />
 1. After entering the service account details, you may leave the **Optional** fields and continue to click **Done**. <br/> <img src={useBaseUrl('img/send-data/service-account-details.png')} alt="login-service-account-details.png" width="500" />
@@ -48,7 +48,7 @@ To add domain-wide delegation to your service account using the client ID or Key
 1. Navigate to the [Google Console service account](https://console.cloud.google.com/projectselector2/iam-admin/serviceaccounts?pli=1&supportedpurview=project) page.
 1. Select your service account.
 1. Go to **Advanced** settings section.
-1. Under **Domain-wide delegation**, find your service account's **Client ID**. Click ![Copy](/img/send-data/copy-button.png) to copy the client ID value to your clipboard.<br/><img src={useBaseUrl('img/send-data/domain-delegation.png')} alt="domain-delegation.png" width="600" />
+1. Under **Domain-wide delegation**, find your service account's **Client ID**. Click <img src={useBaseUrl('img/send-data/copy-button.png')} alt="Copy button" style={{border: '1px solid gray'}} width="30" /> to copy the client ID value to your clipboard.<br/><img src={useBaseUrl('img/send-data/domain-delegation.png')} alt="Domain-wide delegation" width="600" />
 1. If you have super administrator access to the relevant Google Workspace account, click **View Google Workspace Admin Console**, then sign in using a super administrator user account and continue following the steps in the section below.
  :::note
  If you do not have super administrator access to the relevant Google Workspace account, contact a super administrator for that account and send them your service account's Client ID and list of OAuth Scopes so they can complete the following steps in the Admin console.
@@ -84,7 +84,7 @@ When you create a Google User Inventory source, you add it to a Hosted Collector
 
 To configure a Google Workspace User Inventory source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Google Workspace: User Inventory**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.

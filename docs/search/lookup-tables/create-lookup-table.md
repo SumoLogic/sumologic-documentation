@@ -21,6 +21,14 @@ New Lookup Tables are available in all deployments except Sumo Logic's Montreal 
 You can also use the [Lookups API](https://api.sumologic.com/docs/#tag/lookupManagement) to create and manage Lookup Tables. 
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a lookup table with the [`sumologic_lookup_table`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/lookup_table) resource.
+
+<TerraformLink/>
+:::
+
 ## Introduction to Lookup Tables
 
 A Lookup Table is a table of data hosted on Sumo Logic that you can use to enrich the log data received by Sumo Logic. For example, in a Sumo Logic log search, you'd refer to a Lookup Table of user account data to map the user ID in an incoming log to a row in the Lookup Table, and return other attributes of that user, for instance, email address or phone number. The fields you look up appear as part of your search results. 

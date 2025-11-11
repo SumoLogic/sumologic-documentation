@@ -6,29 +6,17 @@ description: Dynamic Parsing (Auto Parse Mode) allows you to configure automatic
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<!-- When Intelliparse goes GA, add a note here and in that doc differentiating it from Auto Parse.
-Logs currently have two parsing modes:
-Manual mode:
-Nothing is automatically parsed
-Autoparse mode:
-Json blocks within logs are automatically parsed
-We’re adding a third mode:
-Intelliparse Mode:
-Json blocks within logs are automatically parsed
-Unstructured logs are parsed via pre-discovered parsers
--->
-
 Dynamic Parsing (Auto Parse Mode) allows automatic field extraction from your JSON log messages when you run a search. This allows you to view fields from JSON logs without having to manually specify parsing logic.
 
 ## How Dynamic Parsing works
 
 Dynamic Parsing extracts JSON fields when you run a query, at search time (run time). Dynamic Parsing for JSON can be thought of as a Run Time field extraction rule (FER). By default, your account is given one Run Time FER that encompasses all of your data.
 
-![Default Run Time FER.png](/img/search/get-started-search/build-search/dynamic-parsing/default-runtime-FER.png)
+<img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/default-runtime-FER.png')} alt="Default Run Time FER" style={{border: '1px solid gray'}} width="800" />
 
 With this FER defined, any search on JSON data will automatically parse out its JSON fields, which you can then use within your search query, exactly like any other field. You have an option on the Search Page that allows you to control Dynamic Parsing. Dynamic Parsing is activated when a search is run in **Auto Parse Mode**.
 
-<img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png')} alt="auto parse mode option.png" width="500"/>
+<img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png')} alt="auto parse mode option.png" style={{border: '1px solid gray'}} width="500"/>
 
 ## Key benefits
 
@@ -47,7 +35,7 @@ To use Dynamic Parsing
 1. Click the ⚙️ gear icon in the top-right corner.
 2. Toggle **Auto Parse Mode** on.
 
-<img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png')} alt="auto parse mode option.png" width="500"/>
+<img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png')} alt="Auto parse mode option" style={{border: '1px solid gray'}} width="500"/>
 
 ## Setting up Custom Run Time FERs (optional)
 
@@ -59,8 +47,8 @@ To optimize search performance you can manually set up Dynamic Parsing by defin
 
 Run Time FERs have a scope, exactly like an Ingest Time FER, that defines which searches are applicable to Dynamic Parsing **Auto Parse Mode**. For Dynamic Parsing to work your query needs to have a scope that is defined in a Run Time FER, otherwise **Auto Parse Mode** will not be applicable.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
-1. Click **+ Add** at top right of the table to create an FER.<br/>  ![Create Field extraction rule with dynamic parsing.png](/img/search/get-started-search/build-search/dynamic-parsing/create-FER-dynamic-parsing.png)
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**.
+1. Click **+ Add** at top right of the table to create an FER.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/create-FER-dynamic-parsing.png')} alt="Create Field extraction rule with dynamic parsing" style={{border: '1px solid gray'}} width="400" />
 1. Enter the following options:
    * **Rule Name**. Type a name that makes it easy to identify the rule.
    * **Applied At**. Select **Run Time**.
@@ -80,15 +68,15 @@ The [field browser](/docs/search/get-started-with-search/search-page/field-brows
 
 ### Field browser
 
-* A search input field allows you to search for fields by name.<br/>  <img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/field-browser-search-field.png')} alt="field-browser-search-field.png" width="500"/>
-* JSON structures are nested with expand and collapse options.<br/>  ![Field browser expand collapse JSON](/img/search/get-started-search/build-search/dynamic-parsing/field-browser-expand-collapse-JSON.png)
-* A copy button is available to the right of each field allowing you to easily copy a field name.<br/>  ![field browser copy field](/img/search/get-started-search/build-search/dynamic-parsing/field-browser-copy-field.png)
+* A search input field allows you to search for fields by name.<br/>  <img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/field-browser-search-field.png')} alt="field-browser-search-field.png" style={{border: '1px solid gray'}} width="500"/>
+* JSON structures are nested with expand and collapse options.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/field-browser-expand-collapse-JSON.png')} alt="Field browser expand collapse JSON" style={{border: '1px solid gray'}} width="300" />
+* A copy button is available to the right of each field allowing you to easily copy a field name.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/field-browser-copy-field.png')} alt="Field browser copy field" style={{border: '1px solid gray'}} width="500" />
 
 ### Search results table
 
-* You can copy field names from JSON structures. After selecting (click and highlight) a JSON key in your results, right click and select **Copy field name**. See [modifying a search from the messages tab](/docs/search/get-started-with-search/search-page/modify-search-from-messages-tab) for details on the other provided options. <br/>![JSON right click copy options.png](/img/search/get-started-search/build-search/dynamic-parsing/JSON-right-click-copy-options.png)
+* You can copy field names from JSON structures. After selecting (click and highlight) a JSON key in your results, right click and select **Copy field name**. See [modifying a search from the messages tab](/docs/search/get-started-with-search/search-page/modify-search-from-messages-tab) for details on the other provided options. <br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/JSON-right-click-copy-options.png')} alt="JSON right click copy options" style={{border: '1px solid gray'}} width="400" />
    * Copying a field name using this option will automatically format [field names that have special characters](/docs/search/get-started-with-search/search-basics/reference-field-special-characters). For example, the field name shown in the screenshot is **total time-series**, it would be automatically formatted to **%"total time-series"** to work properly in a search query.       
-* A copy button is available to the right of each column (field) name allowing you to easily copy a field name. <br/>  ![copy button messages table](/img/search/get-started-search/build-search/dynamic-parsing/copy-button-messages-table.png)
+* A copy button is available to the right of each column (field) name allowing you to easily copy a field name. <br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/copy-button-messages-table.png')} alt="Copy button messages table" style={{border: '1px solid gray'}} width="500" />
 
 ## Rules and behavior
 
@@ -108,7 +96,7 @@ The [field browser](/docs/search/get-started-with-search/search-page/field-brows
 
 ## Using Manual mode
 
-When **Auto Parse Mode** is disabled, you'll be in manual mode, meaning:
+When **Auto Parse Mode** is disabled, you'll be in manual parsing mode, meaning:
 * Fields won't be parsed automatically unless defined by an Ingest-Time FER.
 * You'll need to add parsing logic manually.
 * This mode is best suited for advanced users who want full control and optimized performance.

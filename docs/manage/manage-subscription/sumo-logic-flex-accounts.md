@@ -36,10 +36,6 @@ Free accounts give you access to most Sumo Logic features, with a credit allocat
 
 Trial accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day providing approximately 500GB of search data volume daily or 15TB of search volume, 20 users, and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion) will be applied to your log ingest.
 
-To access your [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) page:
-* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Account > Data Management**.
-* [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**.
-
 Trials are limited to 30 days. If you need to extend your trial period, contact our sales team to inquire about a Proof of Concept (PoC).
 
 ### Essentials
@@ -138,8 +134,8 @@ The following table provides a summary list of key features by Flex package acco
 | Sumo Logic Apps | &#10003; | &#10003; | &#10003; | &#10003; |
 | Support | &#10003; | &#10003; | &#10003; | &#10003; |
 | Traces | &#10003;<br/>Up to 1.5GB per day* | &#10003;<br/>Up to 5GB per day | &#10003;<br/>5GB per day| &#10003;<br/>Up to 5GB per day |
-| Usage Management - Advanced |  |  | | &#10003; |
-| Usage Management - Basic | &#10003; | &#10003; | | &#10003; |
+| Scan Budget |  |  | | &#10003; |
+| Organization Usage Limits | &#10003; | &#10003; | | &#10003; |
 | User and Role APIs | &#10003; | &#10003; | &#10003; | <br/>Up to 5GB per day |
 | War Room | |  | | &#10003; |
 
@@ -150,8 +146,8 @@ The following table provides a summary list of key features by Flex package acco
 The **Account Overview** tab provides a detailed view of your Sumo Logic account, including organization details, subscription type, contract periods, credit usage, live dashboards, and real-time alerts. Account owners can also reassign the Account Owner role from this page.
 
 To access the **Account Overview** tab:  
-* **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. Navigate to **Administration > Account > Account Overview**.  
 * **[New UI](/docs/get-started/sumo-logic-ui)**. Navigate to **Administration > Account > Account Overview**, or select **Account Overview** from the **Go To...** menu.
+* **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. Navigate to **Administration > Account > Account Overview**.  
 
 To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities/#data-management) capability.
 

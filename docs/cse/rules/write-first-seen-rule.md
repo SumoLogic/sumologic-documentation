@@ -15,8 +15,16 @@ import CseRule from '../../reuse/cse-rule-description-links.md';
 import Iframe from 'react-iframe';
 
 This topic has information about first seen rules and how to create them in the Cloud SIEM UI.
-:::tip
+:::info
 If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
+:::
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage first seen rules with the [`sumologic_cse_first_seen_rule`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_first_seen_rule) resource.
+
+<TerraformLink/>
 :::
 
 ## About first seen rules
@@ -74,7 +82,7 @@ The screenshot below shows a first seen rule in the Cloud SIEM rules editor. For
 
 ## Create a first seen rule
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
 1. On the **Create a Rule** page, click **Create** in the **First Seen** card.
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.

@@ -8,6 +8,14 @@ description: View, edit, delete, activate, and deactivate data forwarding destin
 Data forwarding is not currently supported for data assigned to the Infrequent Tier. 
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage data forwarding with the [`sumologic_data_forwarding_destination`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/data_forwarding_destination) and [`sumologic_data_forwarding_rule`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/data_forwarding_rule) resources.
+
+<TerraformLink/>
+:::
+
 ## View, edit, or delete a data forwarding destination
 
 The following actions are available on the **Data Forwarding** page. Hover over a destination in the table and select any of the following:
@@ -20,7 +28,7 @@ The following actions are available on the **Data Forwarding** page. Hover over 
 
 If you’d like to start or stop forwarding data, you can activate or deactivate the S3 bucket. 
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. 
 1. Hover over the destination and click the **Edit** icon.
 1. Select or deselect the **Active** checkbox.
 1. Click **Save**.

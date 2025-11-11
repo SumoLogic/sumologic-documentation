@@ -11,7 +11,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="icon" width="50"/>
 
-The Logs Data Forwarding Management API allows you to forward log data from a Partition or Scheduled View to an S3 bucket. For more information, see [Forwarding Data to S3](/docs/manage/data-forwarding/amazon-s3-bucket).
+The Logs Data Forwarding Management API allows you to forward log data from a Partition or Scheduled View to an S3 bucket. For more information, see [Forwarding Data to S3](/docs/manage/data-forwarding/forward-data-from-sumologic).
 
 ## Documentation
 
@@ -33,7 +33,7 @@ The Logs Data Forwarding Management API allows you to forward log data from a Pa
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Manage Partitions
     * Manage S3 Data Forwarding
     * Manage Scheduled Views
