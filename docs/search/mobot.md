@@ -50,9 +50,15 @@ Mobot accelerates incident response by combining prebuilt contextual insights wi
 * **Auto-visualize**. Mobot automatically generates charts from search results, which you can add directly to dashboards, reducing time and effort in data interpretation.
 * **Log compatibility**. Mobot supports structured logs, semi-structured logs (partial JSON), and unstructured logs (e.g., Palo Alto Firewall) when Field Extraction Rules (FERs) are applied. This ensures valuable insights across a variety of log formats.
 * **Enhanced query experience**. Auto-complete to streamline natural language queries.
+
+<!-- 
 * **Multi-turn conversations**. Ask follow-up questions without repeating yourself.
 
 ## Support for unstructured logs
+
+we support unstructured logs (raw, text-based logs that don't follow a structured format) without requiring Field Extraction Rules (FERs). This enhancement enables Mobot to analyze and derive insights from a broader range of log data using natural language, even if the logs aren't pre-parsed. If your logs are already visualized in dashboards, Mobot automatically parses them and delivers insights using natural language.
+
+This update builds on Mobot’s AI-assisted search capabilities and is available to all customers using the new Sumo Logic UI. 
 
 Mobot now supports unstructured logs, including raw text logs with no predefined fields or Field Extraction Rules (FERs). If these logs are already visualized in dashboards, Mobot automatically parses them and surfaces insights using natural language queries.
 
@@ -63,7 +69,7 @@ Here are some use cases:
 * Triage errors and detect patterns
 * Investigate anomalies in security dashboards
 
-Mobot does not currently interpret all unstructured logs. It prioritizes those already visualized in dashboards to ensure the most relevant and accurate insights. Unlike structured logs, which contain clearly defined fields, unstructured logs require Mobot to infer structure at query time using AI and pattern recognition.
+Mobot does not currently interpret all unstructured logs. It prioritizes those already visualized in dashboards to ensure the most relevant and accurate insights. Unlike structured logs, which contain clearly defined fields, unstructured logs require Mobot to infer structure at query time using AI and pattern recognition.  -->
 
 ## Security and compliance
 
@@ -438,6 +444,7 @@ Each major capability added to Mobot undergoes legal, compliance, and applicatio
 
 If you prefer not to use Mobot, contact our [support team](https://support.sumologic.com/support/s/). Your account will be updated accordingly.
 </details>
+
 
 ## Feedback
 
