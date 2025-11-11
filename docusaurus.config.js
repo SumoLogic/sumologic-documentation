@@ -469,8 +469,8 @@ module.exports = {
                 href: 'https://www.sumologic.com/events/',
               },
               {
-                label: 'Sumo Logic Blog',
-                href: 'https://www.sumologic.com/blog',
+                label: 'Request a Demo',
+                href: 'https://www.sumologic.com/request-demo',
               },
             ],
             title: 'Learn',
