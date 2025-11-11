@@ -2623,6 +2623,7 @@ integrations: [
           'integrations/saas-cloud/trellix-mvision-epo',
           'integrations/saas-cloud/trend-micro-vision-one',
           'integrations/saas-cloud/trust-login',
+          'integrations/saas-cloud/varonis',
           'integrations/saas-cloud/vectra',
           'integrations/saas-cloud/vmware-workspace-one',
           'integrations/saas-cloud/webex',
