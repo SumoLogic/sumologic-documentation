@@ -459,55 +459,28 @@ module.exports = {
         style: 'dark',
         links: [
           {
-            items: [
-              {
-                label: 'Training & Certifications',
-                href: 'https://www.sumologic.com/learn/training/',
-              },
-              {
-                label: 'Events & Webinars',
-                href: 'https://www.sumologic.com/events/',
-              },
-              {
-                label: 'Sumo Logic Blog',
-                href: 'https://www.sumologic.com/blog',
-              },
-            ],
-            title: 'Learn',
-          },
-          {
-            items: [
-              {
-                label: 'Contact Support',
-                href: 'https://support.sumologic.com/support/s',
-              },
-              {
-                label: 'Sumo Dojo Slack',
-                href: 'https://sumodojo.slack.com/',
-              },
-              {
-                label: 'Community',
-                href: 'https://support.sumologic.com/support/s/topiccatalog',
-              },
-            ],
             title: 'Help',
+            items: [
+              { label: 'Contact support', href: 'https://support.sumologic.com/support/s' },
+              { label: 'Community forum', href: 'https://support.sumologic.com/support/s/topiccatalog' },
+              { label: 'Dojo Slack community', href: 'https://sumodojo.slack.com/' },
+            ],
           },
           {
+            title: 'Learn',
             items: [
-              {
-                label: 'Contribute to Docs',
-                to: 'docs/contributing',
-              },
-              {
-                label: 'Submit Feedback',
-                href: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
-              },
-              {
-                label: 'Request Demo',
-                href: 'https://www.sumologic.com/request-demo',
-              },
+              { label: 'Training and certifications', href: 'https://www.sumologic.com/learn/training/' },
+              { label: 'Webinars and events', href: 'https://www.sumologic.com/events/' },
+              { label: 'Sumo Logic Blog', href: 'https://www.sumologic.com/blog' },
             ],
+          },
+          {
             title: 'More',
+            items: [
+              { label: 'Contribute or give feedback', href: 'https://www.sumologic.com/help/docs/contributing' },
+              { label: 'Request a demo', href: 'https://www.sumologic.com/request-demo' },
+              { label: 'Status page', href: 'https://status.sumologic.com' },
+            ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
