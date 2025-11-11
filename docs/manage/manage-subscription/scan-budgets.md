@@ -1,7 +1,7 @@
 ---
 id: scan-budgets
 title: Scan Budget
-description: Learn to set advanced query limits to define spending limits for queries. 
+description: Learn to set advanced query limits to define spending limits for queries.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -30,7 +30,7 @@ To create the query size limit using the **Advanced** configuration:
 1. Click **+ Create Scan Budget**.
 1. **Scope**. Include or exclude the users and roles for whom the scan budget should apply.
 1. **Capacity**. You can set either query level or time-phased budgets. You can also check the query size of the last 10 queries by clicking on the **Click here** button to help you determine the appropriate size limit.
-    - **Query level budgets**. Select **Query** from the **Budget Type** dropdown and enter the GB value based on your needs. Sumo Logic recommends setting a GB value per query based on the 95th percentile to stay within safe limits. 
+    - **Query level budgets**. Select **Query** from the **Budget Type** dropdown and enter the GB value based on your needs. Sumo Logic recommends setting a GB value per query based on the 95th percentile to stay within safe limits.
     - **Time-phased budgets**. Select **Daily**, **Weekly**, or **Monthly** from the **Budget Type** dropdown and enter the maximum amount of budget in GB. You can set a single shared budget for an entire group by selecting the **Capacity for the Group** option, whereas, you can set a budget for individual user in the selected scope by selecting the **Capacity per User** option.
     :::note
     - For **Daily** budgets, the capacity resets every day at midnight (00:00 PST).
@@ -42,8 +42,8 @@ To create the query size limit using the **Advanced** configuration:
     - **Only allow background query scans**. A warning message will be displayed if you run a query that exceeds the budget set. This will block the foreground searches but will not impact any background searches/automated queries.
     :::info
     Sumo Logic defines scan as two types:
-    - **Foreground interactive search**. Search page UI, Copilot, and Dashboards.
-    - **Background search**. API, Scheduled Search, Monitors, Scheduled Views, and SLO. 
+    - **Foreground interactive search**. Search page UI, Mobot, and Dashboards.
+    - **Background search**. API, Scheduled Search, Monitors, Scheduled Views, and SLO.
     :::
 1. **Details**. Enter the name for the scan budget.<br/><img src={useBaseUrl('/img/manage/account/create-scan-budget.png')} alt="create-scan-budget" style={{border:'1px solid gray'}} width="650"/>
 1. Click **Save** to create the scan budget.
@@ -75,7 +75,7 @@ To view the selected scan budget:
   - **Capacity (per user)**. Describes the budget set for individual user search.
   - **Action when capacity reached**. Describes the type of action sected to notify when the budget limit is reached.
   - **Reset every day/week/month at**. Displays the time phase when the budget can reset.
-  - **Created**. The user who created the scan budget. 
+  - **Created**. The user who created the scan budget.
   - **Modified**. The user that most recently modified the scan budget.
   - **Audit Logs**. Records the budget definition changes. Click on **View Details** to view the budget definition changes.
   - **System Audit**. Records the breaches and budget enforcement. Click on **View Details** to view the list of breaches.
@@ -84,7 +84,7 @@ To view the selected scan budget:
 
 ### Handling overlapping budgets
 
-When you configure multiple budgets for the same user, the scope with the largest capacity takes precedence. However, if the budgets are of same values (for example, Budget A and Budget B are of same value 10 GB) then the most restrictive budget takes precedence. 
+When you configure multiple budgets for the same user, the scope with the largest capacity takes precedence. However, if the budgets are of same values (for example, Budget A and Budget B are of same value 10 GB) then the most restrictive budget takes precedence.
 
 ### Exceeding the scan budget query limit
 
@@ -108,4 +108,3 @@ Each budget type (daily, weekly, monthly, or query) is treated independently, wi
 ### Usage attribution across multiple budget types
 
 As long as you are within the limits of each budget type, usage will be attributed independently to each budget type. If you exceed any one budget type, the action for that budget will be applied. But usage will still be reported to other budgets if they have available capacity. For example, if the daily limit and monthly limit is set to 100GB and 300GB respectively, and if you have used 50 GB of your daily limit, then this usage will be reported to both the daily and monthly budgets as long as they are within their capacity. The query budget only tracks the size in GB per query, so the user will still be within the query budget if the query size limit is not breached.
-

@@ -1,12 +1,12 @@
 ---
 id: organization-usage-limits
 title: Organization Usage Limits
-description: Learn to set query level budget to define spending limits for queries. 
+description: Learn to set query level budget to define spending limits for queries.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page provides information about the query budget usage limits, which allows you to define spending limits for queries to prevent unexpected charges. This will help you manage Sumo Logic credits, especially in pay-per-use scenarios, by setting budgets on scan data volume. 
+This page provides information about the query budget usage limits, which allows you to define spending limits for queries to prevent unexpected charges. This will help you manage Sumo Logic credits, especially in pay-per-use scenarios, by setting budgets on scan data volume.
 
 ## Ingestion - Throttling Limits
 
@@ -42,8 +42,8 @@ To manage the query size limit follow the below steps:
 
 :::info
 Sumo Logic defines scan as two types:
-  - **Foreground interactive search**. Search page UI, Copilot, and Dashboards.
-  - **Background search**. API, Scheduled Search, Monitor, Scheduled Views, and SLO. 
+  - **Foreground interactive search**. Search page UI, Mobot, and Dashboards.
+  - **Background search**. API, Scheduled Search, Monitor, Scheduled Views, and SLO.
 :::
 
 :::note

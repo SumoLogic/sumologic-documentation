@@ -63,17 +63,17 @@ will be parsed automatically in Intelliparse mode, extracting:
 * Queries using Intelliparse mode include a hidden intelliparse operator, injected automatically.
 :::
 
-## How Copilot uses Intelliparse mode
+## How Mobot uses Intelliparse mode
 
-Even if you don’t manually enable Intelliparse mode, you may encounter it when using [Sumo Logic Copilot](/docs/search/copilot).
+Even if you don’t manually enable Intelliparse mode, you may encounter it when using [Sumo Logic Mobot](/docs/search/mobot).
 
-Copilot uses Intelliparse mode in the background to:
+Mobot uses Intelliparse mode in the background to:
 * Automatically parse unstructured logs for natural language queries.
 * Discover field names and values for more accurate suggestions and translations.
 * Generate search queries that include the hidden `intelliparse` operator.
 
-This integration allows Copilot to work with raw, unstructured log data; no setup required on your part.
+This integration allows Mobot to work with raw, unstructured log data; no setup required on your part.
 
 :::tip
-Want to learn more about Intelliparse mode? [See how it works in Log Search](/docs/search/copilot/#support-for-unstructured-logs).
+Want to learn more about Intelliparse mode? [See how it works in Log Search](/docs/search/mobot/#support-for-unstructured-logs).
 :::
