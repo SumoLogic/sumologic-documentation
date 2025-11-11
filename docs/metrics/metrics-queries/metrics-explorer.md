@@ -9,6 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page describes the Metrics Search UI and how to use it.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a metrics search with the [`sumologic_metrics_search_v2`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/metrics_search_v2) resource.
+
+<TerraformLink/>
+:::
+
 ## About the UI
 
 The Metrics Search appears when you open a new metrics tab. The page

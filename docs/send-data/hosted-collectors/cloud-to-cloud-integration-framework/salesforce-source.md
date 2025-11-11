@@ -129,7 +129,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 After you configure your Source, you should check the status of the source in the Collectors page. In case the Source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
 
-![salesforce-troubleshooting](/img/send-data/salesforce-troubleshooting.jpg)
+<img src={useBaseUrl('img/send-data/salesforce-troubleshooting.jpg')} alt="<Salesforce Troubleshooting" style={{border: '1px solid gray'}} width="800" />
 
 The following section details how you can resolve various errors: 
 

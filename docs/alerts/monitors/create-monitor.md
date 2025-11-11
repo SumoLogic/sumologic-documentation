@@ -13,6 +13,14 @@ Our alerts use machine learning to analyze historical data, establish baselines,
 
 Integrated playbooks automate incident response by gathering diagnostics, notifying teams, triggering recovery actions, and streamlining workflows to improve response times. You can link playbooks to monitors to automate tasks such as restarting services or scaling infrastructure, ensuring swift and efficient anomaly resolution.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage monitors with the [`sumologic_monitor`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) and [`sumologic_monitor_folder`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor_folder) resources.
+
+<TerraformLink/>
+:::
+
 ## Open the New Monitor window
 
 There are several ways to create a new monitor, depending on where you are in Sumo Logic.
@@ -310,7 +318,7 @@ For example, when an alert is set to `greater than 10`, the recovery would be
 | `<threshold type>` | How you want the value compared. Select greater than, greater than or equal, less than or equal, or less than. |
 | `<threshold>` | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
 
-The Alert and recovery setting affects both the alert generation logic and the alert recovery logic. `Alert and recovery require a minimum of <count> data points for "at all times" evaluation windows`. This setting only works when you choose `at all times within` as the type of occurrence for the alert. <br/>![metrics alert datapoints.png](/img/alerts/monitors/minimum-datapoints.png)
+The Alert and recovery setting affects both the alert generation logic and the alert recovery logic. `Alert and recovery require a minimum of <count> data points for "at all times" evaluation windows`. This setting only works when you choose `at all times within` as the type of occurrence for the alert. <br/><img src={useBaseUrl('img/alerts/monitors/minimum-datapoints.png')} alt="Metrics alert datapoints" style={{border: '1px solid gray'}} width="800" />
 
 | Parameter | Description |
 |:--|:--|

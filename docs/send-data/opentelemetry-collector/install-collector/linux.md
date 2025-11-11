@@ -316,6 +316,10 @@ For Systemd service, the variables can be placed in `/etc/otelcol-sumo/env/proxy
 Service need to be restarted in order to apply the changes.
 :::
 
+:::note
+For running multiple collectors on the same host, you must configure each collector to use a unique credentials directory. To do this, set the `collector_credentials_directory` field in the Sumo Logic extension configuration to a different directory for each collector. This ensures that collectors do not share the same credentials. For more details, refer to the [Sumo Logic extension documentation](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.137.0/extension/sumologicextension).
+:::
+
 #### FIPS
 
 To install FIPS compliant binary, you should add `--fips` switch to installation command, so it will look like the following:

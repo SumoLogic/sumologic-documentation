@@ -5,6 +5,8 @@ sidebar_label: Global Intelligence for Nginx
 description: The Global Intelligence for Nginx app provides you with information regarding Golden Signals and Visitor Benchmarks for your company's Nginx servers, and compares them to all servers from all customers.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Availability
 
 This feature is available in the following account plans.
@@ -77,7 +79,7 @@ Use this dashboard to:
 * As noted [here](https://www.nginx.com/blog/testing-the-performance-of-nginx-and-nginx-plus-web-servers), Nginx request rate is affected by: (a) CPUs allocated (b) data transferred  and (c) use of HTTPs. Assess if your Nginx request rates are significantly lower for a given server compared to other Nginx. If so, consult the Nginx documentation to determine if adequate CPU resources are allocated. Next, check if differences in HTTP method mix (greater share of POST over GET) or (greater) GB per request might explain lower request rates. Error rate differences compared to the benchmark might imply application incidents (for server-side error codes) or user / client side issues (for 4XX errors). Diagnose these further by correlating with application incidents, GB per request differences or other factors. 
 * Use the trend line panels for request rate, GB per request and errors to understand if your Nginx errors have a temporal pattern that might help explain differences compared to benchmarks. 
 
-![golden signals.jpg](/img/global-intelligence/nginx-golden-signals.jpeg)
+<img src={useBaseUrl('img/global-intelligence/nginx-golden-signals.jpeg')} alt="GI Nginx - 01 Golden Signals dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### GI Nginx - 02 Visitor Benchmarks
 
@@ -91,7 +93,7 @@ Use this dashboard to:
 * Understand your mix of clients (desktop versus mobile, desktop OS versions, mobile OS versions) to diagnose unusual levels of certain error codes observed in **GI Nginx - 01 Golden Signals**. See [this](https://stackoverflow.com/questions/27828200/why-does-nginx-give-a-502-error-only-for-mobile-devices) example.
 * Diagnose deviations of your company compared to the benchmark by using the trend line panels for your company’s Nginx servers
 
-![nginx-benchmarks](/img/global-intelligence/nginx-benchmarks.jpeg)
+<img src={useBaseUrl('img/global-intelligence/nginx-benchmarks.jpeg')} alt="GI Nginx - 02 Visitor dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ## Upgrade/Downgrade the Global Intelligence for Nginx app (Optional)
 

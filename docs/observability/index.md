@@ -51,7 +51,7 @@ In this section, we'll introduce the following concepts:
     </div>
     <div className="box smallbox card">
       <div className="container">
-       <a href={useBaseUrl('docs.sensu.io/sensu-go/latest/')}><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Sensu</h4></a>
+       <a href="https://docs.sensu.io/sensu-go/latest/get-started"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Sensu</h4></a>
       <p>Gain insight into traditional server closets, containers, apps, and more.</p>
       </div>
     </div>

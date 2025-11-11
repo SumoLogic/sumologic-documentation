@@ -67,7 +67,7 @@ Self‑paced training is available in our [learning portal](#how-do-i-access-the
 
 Navigate to the course and click **Register**.
 
-![Steps showing how to register for a Sumo Logic course](/img/get-started/register.gif)
+<img src={useBaseUrl('img/get-started/register.gif')} alt="Steps showing how to register for a Sumo Logic course" style={{border: '1px solid gray'}} width="800" />
 
 ### How do I navigate inside a self‑paced course?
 
@@ -77,7 +77,7 @@ Navigate to the course and click **Register**.
 4. At the end of a section, click **Go to results**, then **Submit Results** and rate the section.
 5. Verify that a blue checkmark appears next to the completed section. Continue until all sections are complete.
 
-![Navigating sections and submitting results in a self-paced course](/img/get-started/exam-navigate.gif)
+<img src={useBaseUrl('img/get-started/exam-navigate.gif')} alt="Navigating sections and submitting results in a self-paced course" style={{border: '1px solid gray'}} width="800" />
 
 ### How do I complete a course?
 
