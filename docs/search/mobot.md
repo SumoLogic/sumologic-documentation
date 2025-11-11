@@ -18,13 +18,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic Mobot (formerly known as *Copilot*) is our AI-powered assistant that accelerates investigations and troubleshooting in logs by allowing you to ask questions in plain English and get contextual suggestions, helping first responders get to answers faster.
 
+Our new conversational experience in Mobot (formerly known as Copilot) lets you interact with queries the way you would with a chat assistant. You ask a question and can refine it with follow-ups, change units, and see the updated query and visualization without starting over. Mobot maintains your intent across turns, surfaces helpful suggestions, and makes it easy to explore related angles. This guide explains what's new in the UI and how the conversational flow works.
+
 With its intuitive interface, Mobot automatically generates log searches from natural language queries, helping you quickly investigate performance issues, anomalies, and security threats. It also guides you through investigations step-by-step with AI-derived suggestions to refine your results for faster, more accurate resolutions. Overall, Mobot enhances incident resolution with expert level insights.
+
+
+What is Mobot? consists of query agent which does xxxx and knowledge agent which does xxx
 
 :::info
 If you prefer not to use Mobot, you can opt out by contacting [Support](https://support.sumologic.com/support/s/).
 :::
 
-:::sumo Micro Lesson: Introduction to Mobot
+## Micro Lesson: Intro to Mobot
+
 This short video introduces Mobot and how it can help you with log search and analysis—perfect for getting a quick overview before diving in.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/o9uftxw012?web_component=true&seo=true&videoFoam=false"
@@ -38,8 +44,6 @@ This short video introduces Mobot and how it can help you with log search and an
   allowfullscreen
 />
 
-:::
-
 
 ## Key features
 
@@ -52,6 +56,15 @@ Mobot accelerates incident response by combining prebuilt contextual insights wi
 * **Log compatibility**. Mobot supports structured logs, semi-structured logs (partial JSON), and unstructured logs (e.g., Palo Alto Firewall) when Field Extraction Rules (FERs) are applied. This ensures valuable insights across a variety of log formats.
 * **Enhanced query experience**. Auto-complete to streamline natural language queries.
 * **Multi-turn conversations**. Ask follow-up questions without repeating yourself.
+
+* **Conversational flow**. Refine queries through natural, conversational follow-up questions without losing context. A sequence of related instructions that retains context and incrementally updates the query and output.
+* **Automatic source detection**. Have Mobot choose a data source automatically based on your question or enter one yourself.
+* **Improved accuracy**. Translations to Sumo Query Language are more reliable, especially for data sources with active dashboards.
+* **Clarifications when needed**. If your request is ambiguous, Mobot may ask a follow-up question to narrow intent.
+* **Smarter error handling**. Instead of generic errors, Mobot provides clearer messages and fallback suggestions for next steps.
+* **Dashboard-aware translations (via Retrieval-Augmented Generation, or RAG)**. Mobot leverages queries from dashboards opened in your org in the last 90 days to better understand intent.
+* **Guided exploration**. Intent cards summarize your current goal, and suggestion cards offer refinements you can apply with a click.
+* **Integrated workflow**. A conversation pane shows your prompts and refinements, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
 
 <!-- is this still happening?
 ## Support for unstructured logs
@@ -94,9 +107,11 @@ Mobot is ideal for users of all skill levels:
 * **Practitioners**. Speeds up workflows with auto-complete and context-aware suggestions for frequent tasks.
 * **Experts**. Provides IDE-style assistance for crafting complex queries efficiently.
 
-## How to use Mobot
+## Query Agent
 
-In this section, you'll learn the recommended workflow for using Mobot effectively, along with best practices to maximize its benefits.
+Select **Query Agent** to get help with Sumo Logic queries. In this section, you'll learn the recommended workflow for using Query Agent effectively, along with best practices to maximize its benefits.
+
+<img src={useBaseUrl('img/search/mobot/mobot-logs-agent-button.png')} alt="Query Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
 
 :::sumo Micro Lesson: Using Mobot
 See Mobot in action with a hands-on walkthrough of the UI and prompt-based search.
@@ -114,15 +129,35 @@ See Mobot in action with a hands-on walkthrough of the UI and prompt-based searc
 
 :::
 
-### Step 1: Open Mobot
+### Typical workflow
 
-To start using Mobot:
+The steps below outline a common conversational interaction pattern. You can apply the same approach to different logs, events, or dimensions.
 
+#### Step 1: Ask your initial question  
+
+Open Mobot:
 From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Mobot** in the left nav.
-
 From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the **Mobot** tab.
 
-### Step 2: Review and adjust the auto-selected source
+Use natural language to ask what you're looking for. You can start broad when you set a goal, or more specific (i.e., specifying the data source and any related fields or values).
+
+If you don't select a source, Mobot chooses one automatically based on your question. You can override it by typing the source name directly in your prompt (as demonstrated below) or by choosing it from the **Auto Source Selection** dropdown.
+
+For example, enter a broad question: `Show me Bedrock errors`.
+
+An intent card appears in the conversation pane summarizing your goal. Mobot then surfaces suggestion cards with related refinements, which you can click. You'll also see an option to open your query in Log Search.
+
+#### Step ?: Narrow the scope
+
+<img src={useBaseUrl('img/search/mobot/initial-question.png')} alt="Mobot conversational experience showing initial query" style={{border: '1px solid gray'}} width="700"/>
+
+After you click a follow-up suggestion or type a refinement, Mobot refreshes the results and updates the intent card and query to reflect the new focus. With each refinement, Mobot adjusts the query, applies the changes, and renders a visual chart.
+
+For example, clicking the suggestion `Show me trend of errors each minute` applies a timeslice to group the results over time.
+
+<img src={useBaseUrl('img/search/mobot/narrow-scope.png')} alt="Mobot conversational experience showing refinement to trend of errors each minute" style={{border: '1px solid gray'}} width="700"/>
+
+#### Step 2: Review and adjust the auto-selected source
 
 Mobot automatically selects a source category based on its assessment of user intent. Review the selection and adjust it if needed. You can also manually enter a source expression to define the scope of your exploration.  
 
@@ -130,9 +165,23 @@ For example, to explore AWS WAF logs, select the appropriate source. For indexes
 
 <img src={useBaseUrl('img/search/mobot/source-category.png')} alt="Mobot source category" style={{border: '1px solid gray'}} width="700" />
 
-### Step 3: Execute a query
+#### Step 3: Drill into causes
 
-#### Click a suggestion
+As you go, Mobot presents new suggestions to help you pivot into related questions, such as analyzing trends of event reasons or identifying top namespaces. The intent card expands each time to include the new scope, and results show additional details.
+
+We'll refine further by clicking the suggestion `Show the count of error logs per minute, grouped by error code`.
+
+<img src={useBaseUrl('img/search/mobot/narrow-scope-filter.png')} alt="Mobot conversational experience showing the count of error logs per minute, grouped by error code" style={{border: '1px solid gray'}} width="700"/>
+
+<!--
+Next, type `Add error messages`. Mobot translates this into: `Add error messages to the breakdown of failed scheduling events by namespace`.
+
+<img src={useBaseUrl('img/search/mobot/drill-causes.png')} alt="Mobot conversational experience showing error messages for failed scheduling events" style={{border: '1px solid gray'}} width="700"/>
+-->
+
+#### Step 3: Execute a query
+
+##### Click a suggestion
 
 Click on any of the prebuilt **Suggestions** prompts to launch your investigation. These AI-curated natural language insights are tailored to the specific source you've chosen.
 
@@ -142,7 +191,7 @@ In this example, we'll click `Count the number of log entries by the collector I
 
 You can pin a suggestion for easy access later. Just hover over a suggestion and click **Pin suggestion** (pin icon). The pinned suggestion will stay at the top of your **Suggestions** list within that conversation.
 
-#### Ask a question
+##### Ask a question
 
 In the **Ask Something...** field, you can manually enter a natural language prompt, similar to the prebuilt options under **Suggestions**. You can also use autocompletion—start typing a keyword to see relevant suggestions.<br/><img src={useBaseUrl('img/search/mobot/manual-entry.png')} alt="Entering a prompt in the Mobot Ask field" style={{border: '1px solid gray'}} width="600" />
 
@@ -150,7 +199,7 @@ To get the best results, focus your queries on a specific, well-defined problem.
 
 Whenever possible, break down complex questions into smaller, clear requirements. This helps Mobot generate more accurate and actionable responses.<br/><img src={useBaseUrl('img/search/mobot/periods-query-syntax.gif')} alt="Mobot time period" style={{border: '1px solid gray'}} width="700" />
 
-#### Tips and tricks
+##### Tips and tricks
 
 * **Start with a broad query**. Begin with a query like `Show me the most recent logs` to understand the structure and available fields in your logs.  
 * **Disambiguate field names**. If fields have similar names and cause confusion, explicitly specify the field (e.g., `<field_name>`) to improve accuracy.  
@@ -158,6 +207,31 @@ Whenever possible, break down complex questions into smaller, clear requirements
 * **Include time or variations to add `timeslice` as a dimension**. When timeslicing data, include the term `time` in your query. For example: `Count requests, every 1m, different code challenges and user used during login attempts by time`.
 * **Explore context-aware suggestions**. Use prompts like `Calculate 95th percentile latency` or `Visualize request volumes over time` to quickly surface key metrics.
 * **Detect malicious activity**. Try queries like `Count register requests by 503 status code, IP, and threat confidence` to uncover potential DDoS attacks.
+
+* **Talk to it like a conversation**. Layer refinements instead of rewriting the whole question.  
+* **Be specific**. Combine filters, units, and percentiles in clear language.
+* **Ask about data tied to dashboards**. Mobot works best when you reference data sources that already have dashboards built on them. Ask questions using dashboard panel names or descriptions, even if built on unstructured logs.
+* **Reuse queries from your conversation history**. Everything you ask is saved to your conversation history automatically. You can revisit, reuse, continue where you left off in prior conversations to compare or branch analyses.
+* **Modify existing queries**. Add/remove fields, add `where`, `sort`, `avg()` clauses, and more.
+* **Guide Mobot with feedback**. If the result isn't right, use natural language: `Don't do X, instead do Y`.
+* **Fix broken queries**. Paste a syntactically invalid query. Mobot will correct it.
+
+<!-- Next steps
+As with legacy Mobot, you can adjust the [time range](/docs/search/mobot/#time-range), switch [chart types](/docs/search/mobot/#chart-type), [edit the query logic](/docs/search/mobot/#edit-query-code), [open in Log Search](/docs/search/mobot/#step-4-open-in-log-search), or start over with a [new chat](/docs/search/mobot/#new-conversation).
+
+#### Step 4: Request a trend over time
+
+If you type a time period (for example, `Show the trend over 24 hours`), the query applies a timeslice (for example, one-hour buckets) to group results over time.
+
+:::tip
+Ask Mobot to change units in your query. For example, `Convert GB to bytes`.
+:::
+
+Finally, type: `Show the trend over 24 hours`. Mobot translates this into: `Show the trend of failed scheduling events by namespace with error messages over 24 hours`.
+<img src={useBaseUrl('img/search/mobot/trend-over-time.png')} alt="Mobot conversational experience showing trend over time" style={{border: '1px solid gray'}} width="700"/>
+
+where the results appear in a table view, you can change the visualization to a time-series chart (for example, line or area) to see the trend more clearly over time.
+-->
 
 Below are examples of how you can phrase queries if the autocompletions and contextual suggestions are not relevant to you:
 
@@ -193,14 +267,14 @@ Additional prompts can trigger more advanced activities (e.g., mapping network a
 * `Analyze risk and severity of network activity`
 * `Identify top application categories accessed`
 
-#### Time range
+##### Time range
 
 By default, Mobot searches run with a 15-minute time range. If your search returns no results, consider expanding the time range.
 
 1. Click the clock icon and select your desired time range from the dropdown.<br/><img src={useBaseUrl('img/search/mobot/time-period.png')} alt="Mobot time period" style={{border: '1px solid gray'}} width="400" />
 1. Click the search button.<br/><img src={useBaseUrl('img/search/mobot/search-button.png')} alt="Mobot search button" style={{border: '1px solid gray'}} width="250" />
 
-#### Chart type
+##### Chart type
 
 Mobot will automatically attempt to visualize your data. For example, a query like `Top ip by geo` will trigger a geo lookup and display the results on a map:
 
@@ -219,7 +293,7 @@ If required, select your preferred chart type, such as **Table**, **Bar**, **Col
 
 <img src={useBaseUrl('img/search/mobot/chart-types.png')} alt="Mobot chart types" style={{border: '1px solid gray'}} width="500" />
 
-#### Edit query code
+##### Edit query code
 
 You can manually edit your log search query code if needed.
 
@@ -230,7 +304,7 @@ You can manually edit your log search query code if needed.
 To save space, you can use the **Hide Log Query** icon to collapse the log query code.<br/><img src={useBaseUrl('img/search/mobot/show-hide-query.png')} alt="Mobot time period" style={{border: '1px solid gray'}} width="500" />
 :::
 
-#### Compatible Log Formats
+##### Compatible Log Formats
 
 Mobot querying is compatible with JSON logs, partial JSON logs, and unstructured logs with Field Extraction Rules. It cannot be used to query metrics or trace telemetry.
 
@@ -246,11 +320,11 @@ _sourceCategory=* "{" "}"
 
 If your log query contains a mix of JSON and non-JSON formatting (i.e., a log file is partially JSON), you can isolate the JSON portion by adding a left curly brace (`{`) to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/mobot/json.png')} alt="Mobot JSON formatting" style={{border: '1px solid gray'}} width="350" />
 
-#### Edit Title
+##### Edit Title
 
 Mobot automatically updates conversation titles based on your query. You can also set a custom title by clicking the "Edit Title" (pencil) icon. This helps keep investigations organized and easier to revisit.
 
-#### History
+##### History
 
 The conversation history feature saves all previous queries and suggestions, allowing you to backtrack and refine your investigation. For example, if a status code analysis yields inconclusive results, you can revisit earlier queries to explore other possibilities.
 
@@ -261,12 +335,12 @@ There are two ways to resume a conversation:
 * Click the "Resume Conversation" icon to pick up from the last query in a conversation.<br/><img src={useBaseUrl('img/search/mobot/resume-convo-history1.png')} alt="Mobot History" style={{border: '1px solid gray'}} width="600" />
 * Click on any row in a conversation history, then click the "Open in Mobot" icon to resume from a specific query in a conversation.<br/><img src={useBaseUrl('img/search/mobot/resume-convo-history2.png')} alt="Mobot History" style={{border: '1px solid gray'}} width="600" />
 
-#### New Conversation
+##### New Conversation
 
 To start a fresh exploration, click **New Conversation**. This clears your current session and allows you to begin with a clean slate.<br/><img src={useBaseUrl('img/search/mobot/new-conversation.png')} alt="Mobot new conversation" style={{border: '1px solid gray'}} width="700" />
 
 
-### Step 4: Open in Log Search
+#### Step 4: Open in Log Search
 
 You can open your query in [Log Search](/docs/search) to access Sumo Logic’s full search functionality. This allows you to continue investigating, refine your query, save the search, or take action as needed.
 
@@ -275,9 +349,9 @@ There are two ways to do this:
 * From your conversation, click the "Open in Log Search" icon.<br/><img src={useBaseUrl('img/search/mobot/open-in-log-search1.png')} alt="Mobot open in log search" style={{border: '1px solid gray'}} width="600" />
 * From your conversation history, hover over any row, then click the "Open in Log Search" icon.<br/><img src={useBaseUrl('img/search/mobot/open-in-log-search2.png')} alt="Open Mobot query in log search from History" style={{border: '1px solid gray'}} width="800" />
 
-## Example queries
+### Example queries
 
-### Logs for security
+#### Logs for security
 
 <!-- add micro lesson when published-->
 
@@ -297,7 +371,7 @@ The video demonstrates how to use Mobot to analyze AWS CloudTrail data, review A
         />
 
 
-### Cloud SIEM
+#### Cloud SIEM
 
 You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried about a signal in Cloud SIEM regarding malicious network activity. You want to investigate network records and be proactive. You are under pressure to complete your investigation quickly. While familiar with Sumo Logic, you do not write log queries every day and could use a little help. Fortunately, all your Cloud SIEM records are in Sumo Logic.
 
@@ -332,19 +406,19 @@ You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried abo
 
 To summarize, you conclude there is malicious activity originating from certain users who need to be investigated further.
 
-## Role Based Access Control
+### Role Based Access Control
 
 Role Based Access Control is not supported for contextual suggestions and autocompletions. It is possible for a user who is blocked by [log search RBAC](/docs/manage/users-roles/roles/construct-search-filter-for-role/) to view suggestions or completions for unpermitted source expressions. However, they will not be executed by the search.
 
-## Search behavior and data tier access
+### Search behavior and data tier access
 
 Mobot follows the same search behavior as standard log search and respects your account’s data configuration, whether you're on classic tiered pricing or Flex pricing.
 
-### Flex pricing
+#### Flex pricing
 
 For customers on [Flex pricing](/docs/manage/partitions/flex), all data is stored in a single intelligent layer and pricing is based on the volume of data scanned.
 
-### Tiered pricing (legacy)
+#### Tiered pricing (legacy)
 
 If you're on [classic tiered pricing](/docs/manage/partitions/data-tiers/searching-data-tiers/), Mobot by default searches across continuous data tiers only, unless otherwise specified.
 
