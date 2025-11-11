@@ -3929,8 +3929,6 @@
   "/APIs/03Search_Job_API": "/docs/api/search-job",
   "/Apps/01_Apps_in_Sumo_Logic/Custom_Data_Filters": "/docs/get-started/apps-integrations",
   "/Apps/02_Active_Directory_App": "/docs/integrations/microsoft-azure/active-directory-azure",
-  "/Apps/04_Amazon_S3_Audit_App": "/docs/send-data/hosted-collectors/amazon-aws/amazon-s3-audit-source",
-  "/Apps/05_Amazon_VPC_Flow_Logs_App": "/docs/integrations/amazon-aws/vpc-flow-logs",
   "/Apps/05_Amazon_VPC_Flow_Logs_App/Amazon_VPC_Flow_Logs_App_Dashboards": "/docs/integrations/amazon-aws/vpc-flow-logs",
   "/Apps/06_AWS_CloudTrail_App/": "/docs/integrations/amazon-aws/cloudtrail",
   "/Apps/06_AWS_CloudTrail_App/01_Collect_logs_for_the_AWS_CloudTrail_App": "/docs/integrations/amazon-aws/cloudtrail",
