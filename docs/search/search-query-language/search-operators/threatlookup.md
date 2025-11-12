@@ -29,16 +29,7 @@ Where:
 
    Specifying `singleIndicator` returns the most recent, highest confidence entry from your sources.  If there's a tie, the winning entry is whichever the backend storage returned first.
 * `source` is the [threat intelligence source](/docs/security/threat-intelligence/about-threat-intelligence/#threat-intelligence-sources) to search for the threat intelligence indicator. If `source` is not specified, all sources are searched.
-* `<indicator>` is the [field name](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md) containing an [indicator](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) to look up. At least one field name is required. `<optional_indicator>` is used to add more indicators to look up. Allowed in the `where` clause are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`. <br/>You can filter on the following indicator attributes:
-   * `actors`
-   * `confidence`
-   * `indicator`
-   * `killChain`
-   * `source`
-   * `threatType`
-   * `type`
-   * `validFrom`
-   * `validUntil`
+* `<indicator>` is the [field name](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md) containing an [indicator](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) to look up. At least one field name is required. `<optional_indicator>` is used to add more indicators to look up. 
 
 ### Response fields
 
