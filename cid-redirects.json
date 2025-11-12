@@ -4259,7 +4259,6 @@
   "/Send-Data/Data-Types/AWS-CloudTrail": "/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/",
   "/Send-Data/Data-Types/Host_Metrics": "/docs/send-data/installed-collectors/sources/host-metrics-source/",
   "/Send-Data/Sources/02Sources-for-Hosted-Collectors/AWS_Elastic_Load_Balancing_Source": "/docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source/",
-
   "/Send-Data/Installed-Collectors/04Install-a-Collector-on-Linux": "/docs/send-data/installed-collectors/linux/",
   "/Send-Data/Applications-and-Other-Data-Sources/Puppet": "/docs/integrations/app-development/puppet",
   "/Send-Data/Applications-and-Other-Data-Sources/Threat-Intel-Quick-Analysis": "/docs/integrations/security-threat-detection/threat-intel-quick-analysis",
