@@ -2420,7 +2420,7 @@
   "/cid/5148": "/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral",
   "/cid/5150": "/",
   "/cid/5154": "/docs/manage/fields",
-  "/cid/5157": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules",
+  "/cid/5157": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps",
   "/cid/5155": "/docs/manage/field-extractions",
   "/cid/5156": "/docs/send-data/collection/processing-rules",
   "/cid/5162": "/docs/manage/security/access-keys",
@@ -4611,5 +4611,6 @@
   "/Search/Search-Query-Language/Parse-Operators": "/docs/search/search-query-language/parse-operators",
   "/docs/search/get-started-with-search-language/parsing-operators": "/docs/search/search-query-language/parse-operators",
   "/docs/get-started/training-certification-faq-new": "/docs/get-started/training-certification-faq",
-  "/docs/manage/scheduled-views/pausing-inactive-scheduled-views": "/docs/manage/scheduled-views/pause-disable-scheduled-views"
+  "/docs/manage/scheduled-views/pausing-inactive-scheduled-views": "/docs/manage/scheduled-views/pause-disable-scheduled-views",
+  "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps"
 }
