@@ -21,26 +21,17 @@ You can also use the [`threatip`](/docs/search/search-query-language/search-oper
 ## Syntax
 
 ```
-threatlookup [singleIndicator] [source="<source_value>"] [include="<all|active|expired>"] <indicator> [,<optional_indicator>, …]
+threatlookup [singleIndicator] [source="<source_value>"] <indicator> [,<optional_indicator>, …]
 ```
 
 Where:
-* `singleIndicator` returns the single best matching indicator. (In the response, `num_match` indicates how many actual matches there are.) If `singleIndicator` is not specified, all matching indicators are returned. 
+* `singleIndicator` returns the single best matching threat intelligence entry. (In the response, `num_match` indicates how many actual matches there are.) If `singleIndicator` is not specified, all matching entries from your intelligence sources are returned. 
 
-   Specifying `singleIndicator` sorts the list of matching indicators using the following priority order, then returns the indicator at the top of the list:
-     1. Active indicators over expired indicators (if you use `include="all"`).
-     1. Higher confidence indicators.
-     1. More malicious indicators.
-     1. Most recently updated indicators.
-
-   If there's still a tie at this point, the system picks the indicator the back-end database returned first.
-
-* `source` is the source to search for the threat intelligence indicator. If `source` is not specified, all sources are searched.
-* `include` includes either all, only active, or only expired threat intelligence indicators. If `include` is not specified, only active matching indicators are returned.
-* `<indicator>` is the [indicator](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) to look up for a [field name](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required. `<optional_indicator>` is used to add more indicators to look up. Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`. <br/>You can filter on the following indicator attributes:
+   Specifying `singleIndicator` returns the most recent, highest confidence entry from your sources.  If there's a tie, the winning entry is whichever the backend storage returned first.
+* `source` is the [threat intelligence source](/docs/security/threat-intelligence/about-threat-intelligence/#threat-intelligence-sources) to search for the threat intelligence indicator. If `source` is not specified, all sources are searched.
+* `<indicator>` is the [field name](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md) containing an [indicator](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) to look up. At least one field name is required. `<optional_indicator>` is used to add more indicators to look up. Allowed in the `where` clause are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`. <br/>You can filter on the following indicator attributes:
    * `actors`
    * `confidence`
-   * `id`
    * `indicator`
    * `killChain`
    * `source`
@@ -68,44 +59,37 @@ Query responses return the following fields:
 
 ### Simple examples
 
-```
+```sql title="Matches for srcDevice_ip with confidence greater than 50"
 _index=sec_record*
 | threatlookup srcDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
 ```
-```
+```sql title="Single best match for srcDevice_ip with confidence greater than 50"
 _index=sec_record*
 | threatlookup singleIndicator srcDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
 ```
-```
+```sql title="Matches in mysource for srcDevice_ip with confidence greater than 50"
 _index=sec_record*
 | threatlookup source="mysource" srcDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
 ```
-```
+```sql title="Matches for dstDevice_ip and srcDevice_ip with confidence greater than 50"
 _index=sec_record*
 | threatlookup dstDevice_ip, srcDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
 ```
-```
+```sql title="Matches in mysource for dstDevice_ip and srcDevice_ip with confidence greater than 50"
 _index=sec_record*
 | threatlookup source="mysource" dstDevice_ip, srcDevice_ip
-| where _threatlookup.confidence > 50
-| timeslice 1h
-| count by _timeslice
-```
-```
-_index=sec_record*
-| threatlookup source="mysource" include="active" dstDevice_ip, srcDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
