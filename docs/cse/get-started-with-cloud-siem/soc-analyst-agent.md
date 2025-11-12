@@ -13,7 +13,7 @@ description: Learn how to use Sumo Logic's SOC Analyst Agent to perform investig
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic's SOC Analyst Agent is an agentic AI tool designed to improve the speed and accuracy of your Security Operation Center (SOC) team's threat investigations.
+Sumo Logic's SOC Analyst Agent is an agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations.
 
 The SOC Analyst Agent performs two distinct jobs that mirror an analyst’s daily responsibilities:
 * **Triage**. Delivers automated verdicts on insights using evidence-backed
