@@ -3948,7 +3948,6 @@
   "/Apps/AWS_Elastic_Load_Balancing_App": "/docs/integrations/amazon-aws/classic-load-balancer",
   "/Apps/MongoDB": "/docs/integrations/databases/mongodb-atlas/",
   "/Apps/Preview_Apps/Amazon_CloudWatch_-_ELB_Metrics": "/docs/integrations/amazon-aws/classic-load-balancer",
-  "/Apps/Preview_Apps/AWS_Lambda?utm_source=devops_blog&utm_medium=blog&utm_campaign=devops&utm_term=Azure": "/docs/integrations/amazon-aws/lambda",
   "/Apps/AWS_Config_App": "/docs/integrations/amazon-aws/config",
   "/Apps/02_Active_Directory_App": "/docs/integrations/microsoft-azure/active-directory-azure",
   "/Apps/05_Amazon_VPC_Flow_Logs_App/Amazon_VPC_Flow_Logs_App_Dashboards": "/docs/integrations/amazon-aws/vpc-flow-logs",
