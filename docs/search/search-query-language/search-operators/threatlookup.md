@@ -48,8 +48,6 @@ Query responses return the following fields:
 
 ## Examples
 
-### Simple examples
-
 ```sql title="Matches for srcDevice_ip with confidence greater than 50"
 _index=sec_record*
 | threatlookup srcDevice_ip
@@ -86,8 +84,6 @@ _index=sec_record*
 | count by _timeslice
 ```
 
-### Complex examples
-
 ```sql title="Client IP threat info"
 _sourceCategory=AWS/WAF {{client_ip}}
 | parse "\"httpMethod\":\"*\"," as httpMethod,"\"httpVersion\":\"*\"," as httpVersion,"\"uri\":\"*\"," as uri, "{\"clientIp\":\"*\",\"country\":\"*\"" as clientIp,country, "\"action\":\"*\"" as action, "\"matchingNonTerminatingRules\":[*]" as matchingNonTerminatingRules, "\"rateBasedRuleList\":[*]" as rateBasedRuleList, "\"ruleGroupList\":[*]" as ruleGroupList, "\"httpSourceId\":\"*\"" as httpSourceId, "\"httpSourceName\":\"*\"" as httpSourceName, "\"terminatingRuleType\":\"*\"" as terminatingRuleType, "\"terminatingRuleId\":\"*\"" as terminatingRuleId, "\"webaclId\":\"*\"" as webaclId nodrop
@@ -120,7 +116,7 @@ _sourceCategory=weblogs
 ```
 
 <!-- Per DOCS-643, add this after sumo://threat/cs is replaced by threatlookup":
-### Threatlookup queries in dashboards
+## Threatlookup queries in dashboards
 The `threatlookup` search operator is used for queries in some dashboards, including dashboards in the [Threat Intel Quick Analysis app](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/). These queries provide great examples of how to use the operator.
 To see `threatlookup` used in a query:
 1. Open the Threat Intel Quick Analysis app.
