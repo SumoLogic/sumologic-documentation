@@ -38,6 +38,7 @@ export const Home = () => {
       </Typography>
         {/* Header */}
         <Typography
+          component="div"
           bgcolor='#0045BE'
           color='#e3e3e3'
           fontFamily='Lab Grotesque'
