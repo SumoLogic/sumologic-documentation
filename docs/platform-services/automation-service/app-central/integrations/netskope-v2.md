@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/netskope-v2.png')} alt="netskope" width="100"/>
 
-***Version: 1.2  
-Updated: Nov 5, 2024***
+***Version: 1.3  
+Updated: Nov 12, 2025***
 
 Netskope provides unrivaled visibility and real-time data and threat protection when accessing cloud services, websites, and private apps from anywhere, on any device.
 
@@ -52,6 +52,7 @@ Follow the steps below to create a role with the required **Function scope** and
       - Audit Log(View)
    - Objects
       - URL List(Manage)
+<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/Netskope_Role_Configuration.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="700"/>     
 
 5. Click **Save**.
 
@@ -60,28 +61,19 @@ Follow the steps below to create a role with the required **Function scope** and
 #### 2. Create or Access a Service Account
 
 1. In the same section, click on the **Administrators** tab.  
-2. Select **Service Account**.  
+2. Select **Service Account**.
+3. Select the **Role** created in the last step.
+<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/Netskope_ServiceAccount_Creation.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="600"/>     
 
 ---
 
 #### 3. Copy the Service Account Token
 
 - Copy the generated **token**.  
-- This token will be used later in the **Netskope Data Connector** tile.
+<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/Netskope_API_Token.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="400"/>     
 
-> ⚠️ **Important:** Keep this token secure. Treat it like a password and do not share it publicly.
+> ⚠️ **Important:** Keep this token secure.
 
----
-
-#### 4. Use the Token in the Netskope Data Connector Tile
-
-- Open the **Netskope Data Connector** tile.  
-- Paste the **Service Account token** when prompted.  
-- Save your configuration.
-
-**Important** - The only opportunity to copy the token is immediately after you create it. The token is required in your API requests.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-3.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="400"/> 
-
-When finished, click **OK**. After being created, tokens can be managed by clicking the adjacent **...** icon for the token and selecting one of these options:  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-4.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="200"/> 
 
 ## Configure Netskope V2 in Automation Service and Cloud SOAR
 
@@ -109,7 +101,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-11.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="400"/>
    
-For information about Netskope V2, see [Netskope V2 documentation](https://docs.netskope.com/en/rest-api-v2-overview-312207/).
+For information about Netskope RBACv3, see [Netskope RBACv3 configuration](https://docs.netskope.com/en/netskope-rbac-v3-overview).
 
 ## Change Log
 
@@ -119,3 +111,5 @@ For information about Netskope V2, see [Netskope V2 documentation](https://docs.
 	+ Changed Daemon compatibility
 * November 5, 2024 (v1.2) - Added New action
     + URL List Deploy
+* November 12, 2025 (v1.3) - Doc updates
+    + Updated docs with RBACv3 configuration
