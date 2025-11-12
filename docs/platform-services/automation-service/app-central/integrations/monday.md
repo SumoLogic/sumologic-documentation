@@ -8,8 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/monday.png')} alt="
 crowdstrike-falcon" width="100"/>
 
-***Version: 1.0  
-Updated: Oct 6, 2025***
+***Version: 1.4  
+Updated: Nov 12, 2025***
 
 Streamline workflows across projects, CRM, IT, and development and gain clear visibility to make strategic decisions with confidence.
 
@@ -57,4 +57,7 @@ For information about Monday, see [Monday documentation](https://developer.monda
 
 ## Change Log
 
-* October 06, 2025 - First upload
+* Oct 06, 2025 - First upload
+* Oct 15, 2025 (v1.2) - Refactored the code
+* Nov 10, 2025 (v1.3) - Changed the GraphQL schema for one action to test
+* Nov 12, 2025 (v1.4) - Updated the integration and all actions as per supported GraphQL schema
