@@ -15,18 +15,38 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This feature is in Beta. For more information, contact your Sumo Logic account executive.
 :::
 
-Our new conversational experience in Mobot (formerly known as Copilot) lets you interact with queries the way you would with a chat assistant. You ask a question and can refine it with follow-ups, change units, and see the updated query and visualization without starting over. Mobot maintains your intent across turns, surfaces helpful suggestions, and makes it easy to explore related angles. This guide explains what's new in the UI and how the conversational flow works.
+Our new conversational experience in Mobot (formerly known as Copilot) lets you interact with log queries and the way you would with a chat assistant. You ask a question and can refine it with follow-ups, change units, and see the updated query and visualization without starting over. Mobot maintains your intent across turns, surfaces helpful suggestions, and makes it easy to explore related angles.
 
-As we transition the feature name from *Copilot* to *Mobot*, some UI labels and screenshots may still show **Copilot**. Functionality is unchanged.
+Mobot now consists of:
+* Query agent, which turns natural language into queries for structured/semi-structured logs to investigate and troubleshoot issues without writing syntax manually.
+* Knowledge agent, where you can ask "how-to" questions about Sumo Logic. Get answers from official docs for setup, troubleshooting, and best practices.
 
-<!-- What is Mobot? consists of query agent which does xxxx and knowledge agent which does xxx -->
-
+This guide explains what's new in the UI and how the conversational flow works.
 
 ## Query Agent
 
-Select **Query Agent** to get help with Sumo Logic queries.
+Select **Query Agent** to get help with Sumo Logic log search queries.
 
-<img src={useBaseUrl('img/search/mobot/mobot-logs-agent-button.png')} alt="Query Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/search/mobot/query-agent-select.png')} alt="Query Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
+
+
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/1gtkce8ayl?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Mobot and Query Agent: A Conceptual Overview"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 ### What's new in Beta
 
@@ -45,18 +65,20 @@ The steps below outline a common conversational interaction pattern. You can app
 
 #### Step 1: Ask your initial question  
 
-Use natural language to ask what you're looking for. You can start broad when you set a goal, or more specific (i.e., specifying the data source and any related fields or values).
+Use natural language to ask what you're looking for. You can start broad when you set a goal, or, for better results, include the name of the data source you're querying and any related fields or values.
 
 If you don't select a source, Mobot chooses one automatically based on your question. You can override it by typing the source name directly in your prompt (as demonstrated below) or by choosing it from the **Auto Source Selection** dropdown.
 
 For example, enter a broad question: `Show me Bedrock errors`.
 
-An intent card appears in the conversation pane summarizing your goal. Mobot then surfaces suggestion cards with related refinements, which you can click. You'll also see an option to open your query in Log Search.
+After this, an intent card appears in the conversation pane summarizing your goal. Mobot then surfaces suggestion cards with related refinements, which you can click. You'll also see an option to open your query in Log Search.
 
-#### Step 2: Narrow the scope  
-<img src={useBaseUrl('img/search/mobot/initial-question.png')} alt="Mobot conversational experience showing initial query" style={{border: '1px solid gray'}} width="700"/>
+<!-- replace
+We'll ask: `Show failed login attempts in the last 24 hours`.
+<img src={useBaseUrl('img/search/mobot/initial-question.png')} alt="Mobot conversational experience showing initial query for failed login attempts in the last 24 hours" style={{border: '1px solid gray'}} width="700"/>
+-->
 
-### Step 2: Narrow the scope and drill into causes
+#### Step 2: Narrow the scope
 
 After you click a follow-up suggestion or type a refinement, Mobot refreshes the results and updates the intent card and query to reflect the new focus. With each refinement, Mobot adjusts the query, applies the changes, and renders a visual chart.
 
@@ -65,9 +87,10 @@ For example, clicking the suggestion `Show me trend of errors each minute` appli
 <img src={useBaseUrl('img/search/mobot/narrow-scope.png')} alt="Mobot conversational experience showing refinement to trend of errors each minute" style={{border: '1px solid gray'}} width="700"/>
 
 #### Step 3: Drill into causes
+
 As you go, Mobot presents new suggestions to help you pivot into related questions, such as analyzing trends of event reasons or identifying top namespaces. The intent card expands each time to include the new scope, and results show additional details.
 
-We'll refine further by clicking the suggestion `Show the count of error logs per minute, grouped by error code`.
+You can refine further by clicking a suggestion like `Show the count of error logs per minute, grouped by error code`.
 
 <img src={useBaseUrl('img/search/mobot/narrow-scope-filter.png')} alt="Mobot conversational experience showing the count of error logs per minute, grouped by error code" style={{border: '1px solid gray'}} width="700"/>
 
@@ -80,25 +103,20 @@ Next, type `Add error messages`. Mobot translates this into: `Add error messages
 #### Step 4: Request a trend over time
 
 If you type a time period (for example, `Show the trend over 24 hours`), the query applies a timeslice (for example, one-hour buckets) to group results over time.
-From here, you can continue refining or try other options like [switching the chart type](/docs/search/mobot/#chart-type), [opening the query in Log Search](/docs/search/mobot/#step-4-open-in-log-search), [adjusting the time range](/docs/search/mobot/#time-range), [editing the query logic](/docs/search/mobot/#edit-query-code), or [starting over with a new chat](/docs/search/mobot/#new-conversation).
-
-:::tip
-Ask Mobot to change units in your query. For example, `Convert GB to bytes`.
-:::
 
 <!--
-Finally, type: `Show the trend over 24 hours`. Mobot translates this into: `Show the trend of failed scheduling events by namespace with error messages over 24 hours`.
-<img src={useBaseUrl('img/search/mobot/trend-over-time.png')} alt="Mobot conversational experience showing trend over time" style={{border: '1px solid gray'}} width="700"/>
-
 where the results appear in a table view, you can change the visualization to a time-series chart (for example, line or area) to see the trend more clearly over time.
 -->
 
 #### Next steps
 
-As with legacy Mobot, you can adjust the [time range](/docs/search/mobot/#time-range), switch [chart types](/docs/search/mobot/#chart-type), [edit the query logic](/docs/search/mobot/#edit-query-code), [open in Log Search](/docs/search/mobot/#step-4-open-in-log-search), or start over with a [new chat](/docs/search/mobot/#new-conversation).
+:::tip
+Ask Mobot to change units in your query. For example, `Convert GB to bytes`.
+:::
+
+From here, you can continue refining or try other options like [switching the chart type](/docs/search/mobot/#chart-type), [opening the query in Log Search](/docs/search/mobot/#step-4-open-in-log-search), [adjusting the time range](/docs/search/mobot/#time-range), [editing the query logic](/docs/search/mobot/#edit-query-code), or [starting over with a new chat](/docs/search/mobot/#new-conversation).
 
 ### Best practices
-## Best practices
 
 * **Talk to it like a conversation**. Layer refinements instead of rewriting the whole question.  
 * **Be specific**. Combine filters, units, and percentiles in clear language.
@@ -150,7 +168,7 @@ Here are some common cases:
 
 Select **Knowledge Agent** to get help using Sumo Logic.
 
-<img src={useBaseUrl('img/search/mobot/mobot-knowledge-agent-button.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/search/mobot/knowledge-agent-select.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
 
 Enter a question about Sumo Logic, such as *"How do I add a collector for AWS CloudTrail?"*, *"What are the API endpoints for Sumo Logic?"*, or anything else you need help with. The Knowledge agent returns an answer, including steps if needed.
 
@@ -158,6 +176,39 @@ When you enter a question to the Knowledge Agent, it returns an answer using [Su
 
 Knowledge Agent retains your conversation context for 24 hours from the time you ask your first question. After 24 hours, the session resets and prior context is no longer available. However, any new question will begin a new 24-hour session with its own preserved context. For example, if you ask a question and follow up with a related question within 24 hours, Mobot will still remember and continue the conversation seamlessly.
 
+### FAQ
+
+<details>
+<summary>Does Knowledge Agent use my data to train external models?</summary>
+
+Mobot and Knowledge Agent run on Amazon Bedrock, an approved and secure subprocesser that complies with Sumo Logic’s privacy, security, and data-handling standards.
+
+No customer data is ever used for model training. All processing happens within the secure boundaries of Sumo Logic’s architecture, maintaining the same high level of data protection customers already trust.
+
+</details>
+
+<details>
+<summary>Is my data safe when I use Knowledge Agent?</summary>
+
+Yes. Knowledge Agent only processes what you provide during your session, and this data remains inside Sumo Logic’s secure environment. Nothing is sent to external LLM providers for training or storage.
+
+</details>
+
+<details>
+<summary>How does Knowledge Agent ensure accuracy?</summary>
+
+Knowledge Agent pulls directly from Sumo Logic’s official product documentation. Responses are always grounded in our published help content, making them accurate, citable, and aligned with the latest platform behavior.
+
+No information is generated from unreliable external sources.
+
+</details>
+
+<details>
+<summary>Can Knowledge Agent answer questions outside Sumo Logic’s documentation?</summary>
+
+No. Knowledge Agent is intentionally scoped to use Sumo Logic’s internal documentation and resources only. This ensures answers remain trustworthy and consistent with product behavior.
+
+</details>
 
 
 ## Additional resources
