@@ -69,7 +69,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
 * **Server URL**. Enter the URL for API V2 REST API in the format `https://<tenant-name>.goskope.com`
 
-* **Tenant API Token**. Enter the [API token](https://docs.netskope.com/en/api-tokens-2/) you [copied earlier](#neskope-v2-configuration).
+* **Tenant API Token**. Enter the [API token](https://docs.netskope.com/en/api-tokens-2/) you [copied earlier](#netskope-role-and-service-account-setup).
 
 * **Event Type**. Select the [event type](https://docs.netskope.com/en/skope-it-query-language/#event-types) (additionally, if you need to, you can populate the query daemons):
    * **Application**
