@@ -51,13 +51,13 @@ You can search for fields in the Field Browser, a feature that is especially us
 
 In our example, we entered **ka** in the Search field and instantly received the following results.
 
-![FB_Field-Browser_Search.png](/img/search/get-started-search/search-page/FB-Field-Browser-Search.png)
+<img src={useBaseUrl('img/search/get-started-search/search-page/FB-Field-Browser-Search.png')} alt="FB Field Browser Search" style={{border: '1px solid gray'}} width="300" />
 
 ## Nested field groupings
 
 Nested fields, such as those seen in JSON and KV, are grouped together based on their innate structure that is easy to traverse. We have used a JSON nested structure in the following example.
 
-![FB_Nested-JSON-objects.png](/img/search/get-started-search/search-page/FB-Nested-JSON-objects.png)
+<img src={useBaseUrl('img/search/get-started-search/search-page/FB-Nested-JSON-objects.png')} alt="FB Nested JSON objects" style={{border: '1px solid gray'}} width="800" />
 
 ## Limitations
 
@@ -76,13 +76,13 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/get-started-with-search/search-page/field-browser/search-from-field-browser"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Search from the Field Browser</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/field-browser/search-from-field-browser')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Search from the Field Browser</h4></a>
   <p>Drilling down into a field from the Field Browser is seamless for non-aggregate queries.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Show and Hide Fields in the Field Browser</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Show and Hide Fields in the Field Browser</h4></a>
   <p>Change the fields that are displayed in search results by showing or hiding in the Field Browser.</p>
   </div>
 </div>

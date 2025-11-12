@@ -3,7 +3,7 @@ id: parse-predictable-patterns-using-an-anchor
 title: Parse Predictable Patterns Using an Anchor
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The parse operator (also called the parse anchor) parses strings according to specified start and stop anchors, and then labels them as fields for use in subsequent aggregation functions in the query such as sorting, grouping, or other functions.
 
@@ -37,33 +37,14 @@ You can use the parse anchor UI tool to highlight the message text to parse, id
 
 1. Run a search.
 1. In the search results, find a message with the text you want to parse.
-1. Highlight the text, right-click, and select **Parse the selected text**.  
+1. Highlight the text, right-click, and select **Parse the selected text**.<br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/parse-selected-text-UI-option.png')} alt="Screenshot of a log entry in Sumo Logic, showing a request with the details 'HttpRequest(HttpMethod(GET), http://10.4.87.223:8080/...' followed by a context menu with options including 'Copy Selected Text,' 'Parse Selected Text' (highlighted), and additional filtering options." style={{border: '1px solid gray'}} width="800" />
 
-    ![Screenshot of a log entry in Sumo Logic, showing a request with the details 'HttpRequest(HttpMethod(GET), http://10.4.87.223:8080/...' followed by a context menu with options including 'Copy Selected Text,' 'Parse Selected Text' (highlighted), and additional filtering options.](/img/search/searchquerylanguage/parse-operators/anchor/parse-selected-text-UI-option.png)  
-
-    The **Parse Text** dialog box opens and displays the text you highlighted.  
-
-    ![Screenshot of the 'Parse Text' dialog box in Sumo Logic. The dialog prompts the user to select the text to parse and shows the selected text: 'Request : HttpRequest(HttpMethod(GET), http://10.4.87.223:8080/,' in a text box. Below, there's a 'Fields' input box for entering field names separated by commas, and 'Cancel' and 'Submit' buttons at the bottom.](/img/search/searchquerylanguage/parse-operators/anchor/parse-text-window.png)  
-     
-1. Select the text for the first parsing field, and click **Click to extract this value**. The text you highlighted is replaced by an asterisk (\*).  
-
-    ![Screenshot of the 'Parse Text' dialog box in Sumo Logic. The dialog shows the text to parse: 'Request : HttpRequest(HttpMethod(GET), http://10.4.87.223:8080/,' with a tooltip over 'GET' stating 'Click to extract this value.' Below, there's a 'Fields' input box for entering field names separated by commas, and 'Cancel' and 'Submit' buttons at the bottom.](/img/search/searchquerylanguage/parse-operators/anchor/highlighted-term-in-parse-text-window.png)  
-     
-1. Enter a name (no spaces) for the parsing field in the **Fields** area.  
-
-    ![Screenshot of the 'Parse Text' dialog box in Sumo Logic. The dialog shows the text to parse: 'Request : HttpRequest(HttpMethod(GET), http://10.4.87.223:8080/.' In the 'Fields' input box, the word 'method' is entered. Below are 'Cancel' and 'Submit' buttons at the bottom.](/img/search/searchquerylanguage/parse-operators/anchor/parsing-field.png)  
-     
-1. If you want to parse additional fields, add a comma after the field name, and repeat the parsing action. The following screenshot shows three parsed fields: **method**, **ip**, and **port** (in that order). Notice that the three fields correspond to the three asterisks in the parse text.  
-
-    ![Screenshot of the 'Parse Text' dialog box in Sumo Logic. The dialog shows the text to parse: 'Request : HttpRequest(HttpMethod(), http://:*.' In the 'Fields' input box, the text 'method, ip, port' is entered. Below are 'Cancel' and 'Submit' buttons at the bottom.](/img/search/searchquerylanguage/parse-operators/anchor/three-parsing-fields.png)  
-     
-1. Click **Submit**. The query is updated with the parse operation you constructed.  
-
-    ![Screenshot of a query parsing the log entry with the command: parse "Request : HttpRequest(HttpMethod(*),http://*:*," as method,ip,port.](/img/search/searchquerylanguage/parse-operators/anchor/query-from-parse-UI-tool.png)  
-     
-1. Click **Start** to display the search results, which now show the parsed message.  
-
-    ![Screenshot of parsed log data in Sumo Logic. The columns 'ip,' 'method,' and 'port' display the values '10.4.2.147,' 'GET,' and '8080' respectively. The log message shows a detailed request with method GET to the IP 10.4.2.147 on port 8080.](/img/search/searchquerylanguage/parse-operators/anchor/parsed-results.png)
+    The **Parse Text** dialog box opens and displays the text you highlighted.<br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/parse-text-window.png')} alt="Screenshot of the 'Parse Text' dialog box in Sumo Logic" style={{border: '1px solid gray'}} width="600" />   
+1. Select the text for the first parsing field, and click **Click to extract this value**. The text you highlighted is replaced by an asterisk (\*). <br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/highlighted-term-in-parse-text-window.png')} alt="Screenshot of the 'Parse Text' dialog box in Sumo Logic" style={{border: '1px solid gray'}} width="600" />     
+1. Enter a name (no spaces) for the parsing field in the **Fields** area. <br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/parsing-field.png')} alt="Screenshot of the 'Parse Text' dialog box in Sumo Logic" style={{border: '1px solid gray'}} width="600" /> 
+1. If you want to parse additional fields, add a comma after the field name, and repeat the parsing action. The following screenshot shows three parsed fields: **method**, **ip**, and **port** (in that order). Notice that the three fields correspond to the three asterisks in the parse text.<br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/three-parsing-fields.png')} alt="n the 'Fields' input box, the text 'method, ip, port' is entered. " style={{border: '1px solid gray'}} width="600" />    
+1. Click **Submit**. The query is updated with the parse operation you constructed.<br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/query-from-parse-UI-tool.png')} alt="Screenshot of a query parsing the log entry with the commandas method,ip,port." style={{border: '1px solid gray'}} width="600" />  
+1. Click **Start** to display the search results, which now show the parsed message.<br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/parsed-results.png')} alt="Search results which now show the parsed message" style={{border: '1px solid gray'}} width="800" />
 
 ## Examples
 

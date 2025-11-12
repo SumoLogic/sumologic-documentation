@@ -4,6 +4,8 @@ title: matches Search Operator
 sidebar_label: matches
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `matches` operator can be used to match a string to a wildcard pattern or an RE2-compliant regex. The operator returns a boolean value; the operator can be used with the `where` or `if` operators.
 
 You can use `matches` in Dashboard Panels and in conjunction with other operators to build robust queries.
@@ -89,7 +91,7 @@ _sourceCategory=Apache/Access
 
 Produces aggregate results similar to the following, when you configure it to create a [stacked column chart](/docs/dashboards/panels/column-charts):
 
-![Bar chart comparing the number of users by operating system (Android, MacOS, Other, Windows, iPad, iPhone) and web browser (Other, Safari, Internet Explorer, Chrome, Firefox). Windows users predominantly use Internet Explorer, followed by Chrome and Firefox. Android and MacOS users mainly use Safari, while iPad users are evenly split between Safari and Other. iPhone users show a smaller user base with Safari usage.](/img/search/searchquerylanguage/search-operators/matches.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/matches.png')} alt="Bar chart comparing the number of users by operating system (Android, MacOS, Other, Windows, iPad, iPhone) and web browser (Other, Safari, Internet Explorer, Chrome, Firefox)" style={{border: '1px solid gray'}} width="800" />
 
 ### Viewing errors and warnings over time
 
@@ -111,7 +113,7 @@ _sourceCategory=OS/Windows (error or warning)
 
 Produces results similar to the following, when you configure it to be visualized as a [line chart](/docs/dashboards/panels/line-charts):
 
-![Line chart displaying the number of errors and warnings over time. Errors consistently range between 300 to 400 with slight fluctuations, while warnings remain relatively stable around 100. Both metrics show a sharp decline towards the end of the time period.](/img/search/searchquerylanguage/search-operators/Matches_Ex.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Matches_Ex.png')} alt="Line chart displaying the number of errors and warnings over time" style={{border: '1px solid gray'}} width="800" />
 
 ### Matching against parsed field values
 

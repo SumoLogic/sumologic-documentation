@@ -9,7 +9,7 @@ description: Data Deletion Rules APIs allow you to delete ingested data from Sum
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
@@ -39,6 +39,7 @@ Data Deletion Rules allow you to quickly and easily request the removal of inges
 
 <ApiRoles/>
 
-* Review Deletion Requests
-* Manage Deletion Requests
-* View Deletion Requests
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
+   * Review Deletion Requests
+   * Manage Deletion Requests
+   * View Deletion Requests

@@ -1,9 +1,11 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 By default, the collector will not send process metrics to Sumo Logic. This is because the number of processes running on a host can be very large, which would result in a significant increase in Data Points per Minute (DPM).
 
 Click the **Enable process metric collection** checkbox to collect [process-level metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/hostmetricsreceiver/internal/scraper/processscraper/documentation.md).
 - **Name of process**. Add the list of process names.
 - **Include/Exclude the above pattern**. Signifies if you want to exclude or include the metrics for the processes listed previously.
-- **Match type for process name**. Select if the process name given should be considered for a strict match with the host machine processes or if it should be considered as regex when matching.<br/><img src="/img/integrations/hosts-operating-systems/process-metric-collection.png" style={{border:'1px solid gray'}} alt="process-metric-collection" width="500" />
+- **Match type for process name**. Select if the process name given should be considered for a strict match with the host machine processes or if it should be considered as regex when matching.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/process-metric-collection.png')} style={{border:'1px solid gray'}} alt="process-metric-collection" width="500" />
 
 :::note
 

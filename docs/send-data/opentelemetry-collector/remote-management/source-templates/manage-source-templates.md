@@ -13,6 +13,14 @@ Source templates provide a powerful mechanism to simplify and standardize data c
 Source templates are not available for locally managed collectors.
 :::
 
+import TerraformLink from '../../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a source template with the [`sumologic_source_template`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/source_template) resource.
+
+<TerraformLink/>
+:::
+
 ## Benefits of source templates
 
 * **Efficiency**. Create a template once and apply it to multiple collectors.
@@ -32,7 +40,7 @@ Source templates are useful for managing data collection in scenarios like:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). Go to the main Sumo Logic menu and select **Data Management**, and under **Data Collection** select **Source Template**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Collection > Source Template**. 
 1. Click **Create Source Template** > **Add Source Template** and fill in the required details, such as name and configuration settings. When you're done, click **Next**.<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="local-file-apache" style={{border:'1px solid gray'}} width="500"/>
 1. On the **Link Collectors** page, you will have the option to link the collectors using the **Collector Name** or by adding **Collector Tags** to find the group of collectors.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="link-collectors" style={{border: '1px solid gray'}} width="800" />
-1. Navigate to **Preview Collector(s)** to view details about the compatibility of the collectors and the collectors that will be linked to the newly created source template. If we have mapped the collectors using both the **Collector Name** and **Collector Tags**, you will get separate preview sections for the collectors identified by collector name and collector tags.<br/> ![Screenshot showing the linked collectors preview](/img/send-data/preview-collectors1.png)<br/>![Screenshot showing the linked collectors preview](/img/send-data/preview-collectors2.png)
+1. Navigate to **Preview Collector(s)** to view details about the compatibility of the collectors and the collectors that will be linked to the newly created source template. If we have mapped the collectors using both the **Collector Name** and **Collector Tags**, you will get separate preview sections for the collectors identified by collector name and collector tags.<br/><img src={useBaseUrl('img/send-data/preview-collectors1.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800" /><br/><img src={useBaseUrl('img/send-data/preview-collectors2.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800" />
     :::note
     Incompatible version conflict will be found if your collectors cannot be linked to the source template due to version incompatibility or unsupported operating system. To move to the next step, make sure you update the collect version of the incompatible collector.<br/><img src={useBaseUrl('img/send-data/incompatible-collectors.png')} alt="incompatible-collectors" style={{border:'1px solid gray'}} width="700"/>
     :::

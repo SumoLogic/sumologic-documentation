@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
 <!-- Originally added as a beta article with SUMO-187085. -->
 
@@ -65,11 +65,11 @@ Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend 
 
 If the VPC is in the same [AWS region as your deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security), you do not need to set up VPC peering. Navigate to **Actions**, then select **Modify private DNS name**.
 
-![Endpoint](/img/integrations/amazon-aws/privatelink-endpoints.png)
+<img src={useBaseUrl('img/integrations/amazon-aws/privatelink-endpoints.png')} alt="Modify private DNS name" style={{border: '1px solid gray'}} width="800" />
 
 Check the box to enable private DNS names.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/privatelink-dns-checkbox.png')} alt="DnsCheckpoint" width="550"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/privatelink-dns-checkbox.png')} alt="Modify Private DNS Name" style={{border: '1px solid gray'}} width="600" />
 
 ### VPC Peering
 
@@ -77,5 +77,5 @@ If the VPC is not in the same [AWS region as your deployment](/docs/api/about
 
 1. Create the VPC peering connection between the region for the client-side VPC and the region where the Sumo Logic PrivateLink service is configured.
 2. Create a Route53 private hosted zone. Select the VPC peered in the region where our server-side region is located.
-3. With the created private hosted zone, add an **A** record. Select the peered VPC in region **us-west-2**, where the Sumo Logic server-side infrastructure is located.<br/> ![QuickRecord](/img/integrations/amazon-aws/privatelink-quickcreaterecord.png)
+3. With the created private hosted zone, add an **A** record. Select the peered VPC in region **us-west-2**, where the Sumo Logic server-side infrastructure is located.<br/><img src={useBaseUrl('img/integrations/amazon-aws/privatelink-quickcreaterecord.png')} alt="Quick create record" style={{border: '1px solid gray'}} width="800" />
 4. Add the other peered VPC in the other region into the Route53-hosted zone.

@@ -57,9 +57,6 @@ Check out this brief tutorial on how to submit a basic change to our docs.
 This will fork and submit changes to the Docs Team for review.
 </details>
 
-:::
-
-
 ## Edit a doc
 
 ### Step 1: Fork the Sumo Docs repository

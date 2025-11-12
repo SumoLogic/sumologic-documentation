@@ -19,6 +19,14 @@ To configure an Amazon CloudFront Source:
 1. Add the [AWS Source](amazon-cloudfront-source.md) for CloudFront. See below for detailed steps. 
 1. **Optional:** Install the Sumo Logic App for Amazon CloudFront.
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an Amazon CloudFront source with the [`sumologic_cloudfront_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudfront_source) resource.
+
+<TerraformLink/>
+:::
+
 ## AWS Source
 
 See [AWS Source](aws-sources.md) for full details on the AWS source, configuration and more.
