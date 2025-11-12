@@ -5,8 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/monday.png')} alt="
-crowdstrike-falcon" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/monday.png')} alt="Monday logo" width="100"/>
 
 ***Version: 1.4  
 Updated: Nov 12, 2025***
@@ -15,22 +14,22 @@ Streamline workflows across projects, CRM, IT, and development and gain clear vi
 
 ## Actions
 
-* **Add Teams To Board** *(Containment)* - The action allows you to add teams to a board via the API
-* **Add Users To Board** *(Containment)* - This action adds users to a board.
-* **Add Users To Team** *(Containment)* - The action allows you to add users to a team via the API.
-* **Create Board** *(Containment)* - The action allows you to create a new board via the API.
-* **Create Column** *(Containment)* - The action creates a new column on a board within the account via the API.
-* **Delete Board** *(Containment)* - The action allows you to delete a board via the API.
-* **Delete Column** *(Containment)* - The action deletes a single column from a board via the API.
-* **Delete Teams From Board** *(Containment)* - The action allows you to remove teams from a board via the API.
-* **Execute Queries** *(Enrichment)* - The action allows you to execute queries via the API.
+* **Add Teams To Board** *(Containment)* - Add teams to a board via the API
+* **Add Users To Board** *(Containment)* - Adds users to a board.
+* **Add Users To Team** *(Containment)* - Allows you to add users to a team via the API.
+* **Create Board** *(Containment)* - Create a new board via the API.
+* **Create Column** *(Containment)* - Creates a new column on a board within the account via the API.
+* **Delete Board** *(Containment)* - Delete a board via the API.
+* **Delete Column** *(Containment)* - Deletes a single column from a board via the API.
+* **Delete Teams From Board** *(Containment)* - Remove teams from a board via the API.
+* **Execute Queries** *(Enrichment)* - Execute queries via the API.
 * **Get Boards Fields** *(Enrichment)* - Get the Fields of Boards.
 * **Get Columns Values** *(Enrichment)* - Read column values on monday boards using the platform API.
 * **List Boards Fields** *(Enrichment)* - List the Fields of Boards.
 * **List Boards** *(Enrichment)* - List the Boards of the account.
 * **List Items** *(Enrichment)* - List the Items of a board.
-* **Remove User From Team** *(Containment)* - The action allows you to remove a user from a team via the API.
-* **Update Column Value** *(Containment)* - The action updates a column value on a board within the account via the API.
+* **Remove User From Team** *(Containment)* - Remove a user from a team via the API.
+* **Update Column Value** *(Containment)* - Updates a column value on a board within the account via the API.
 
 ## Configure Monday in Automation Service and Cloud SOAR
 
