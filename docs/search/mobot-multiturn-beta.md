@@ -42,6 +42,20 @@ Select **Query Agent** to get help with Sumo Logic log search queries.
 
 <img src={useBaseUrl('img/search/mobot/query-agent-select.png')} alt="Query Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
 
+Query Agent builds on the query translation foundation of the previous [Copilot experience](/docs/search/mobot), with significant improvements:
+
+* Core improvements:
+   * **Conversational flow**. Refine queries through natural follow-up questions without losing context. Each refinement builds on the last, so you can iterate toward the insight you need.
+   * **Improved accuracy**. Translations to Sumo Query Language are more reliable, especially for data sources with active dashboards.
+   * **Smarter error handling**. Instead of generic errors, Query Agent provides clear messages and actionable suggestions for next steps.
+* Advanced features:
+   * **Dashboard-aware translations via RAG**. Query Agent learns from dashboards opened in your org in the last 90 days to better interpret intent. This improves understanding of field names, data structure, and common queries, resulting in more accurate translations, especially for unstructured logs.
+   * **Automatic source detection**. Let Query Agent choose a data source based on your question, or enter one yourself for more control.
+   * **Clarifications when needed**. If your request is ambiguous, Query Agent asks follow-up questions to narrow intent rather than guessing.
+* Enhanced workflow:
+   * **Guided exploration**. Intent cards summarize your current goal, and suggestion cards offer refinements you can apply with a click.
+   * **Integrated interface**. A conversation pane shows your prompts and refinements, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
+
 import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
@@ -60,53 +74,78 @@ import Iframe from 'react-iframe';
 
 :::
 
-Query Agent builds on the query translation foundation of the previous Copilot experience, with significant improvements:
-
-Core improvements:
-- **Conversational flow**. Refine queries through natural follow-up questions without losing context. Each refinement builds on the last, so you can iterate toward the insight you need.
-- **Improved accuracy**. Translations to Sumo Query Language are more reliable, especially for data sources with active dashboards.
-- **Smarter error handling**. Instead of generic errors, Query Agent provides clear messages and actionable suggestions for next steps.
-
-Advanced features:
-- **Dashboard-aware translations via RAG**. Query Agent learns from dashboards opened in your org in the last 90 days to better interpret intent. This improves understanding of field names, data structure, and common queries, resulting in more accurate translations, especially for unstructured logs.
-- **Automatic source detection**. Let Query Agent choose a data source based on your question, or enter one yourself for more control.
-- **Clarifications when needed**. If your request is ambiguous, Query Agent asks follow-up questions to narrow intent rather than guessing.
-
-Enhanced workflow:
-- **Guided exploration**. Intent cards summarize your current goal, and suggestion cards offer refinements you can apply with a click.
-- **Integrated interface**. A conversation pane shows your prompts and refinements, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
-
-### Example workflow
+### Example workflow: Observability
 
 The steps below outline a typical conversational interaction pattern. You can apply the same approach to different logs, events, or dimensions. This type of investigation typically only takes a few minutes.
 
-#### Step 1: Ask your initial question  
+#### Ask your initial question  
 
 Use natural language to ask what you're looking for. For better results, include the name of the data source you're querying and any related fields or values. If you don't select a source, Query Agent chooses one automatically based on your question. You can override it by typing the source name directly or choosing from the **Auto Source Selection** dropdown.
 
 For example, if you enter a broad question like "Show me AWS CloudTrail errors", your query will translate to Sumo Logic query language (something like `(_source="AWS CloudTrail") "error"`) and an intent card appears in the conversation pane summarizing your goal. Query Agent then surfaces suggestion cards with related refinements you can click. You'll also see an option to open your query in Log Search.
 
-#### Step 2: Narrow the scope
+#### Narrow the scope
 
 After you click a follow-up suggestion or type a refinement, Query Agent refreshes the results and updates the intent card and query to reflect the new focus. With each refinement, Query Agent adjusts the query, applies the changes, and renders a visual chart.
 
 For example, clicking a suggestion like "Show me trend of errors each minute" would apply a timeslice to group the results over time.
 
-#### Step 3: Drill into causes
+#### Drill into causes
 
 As you go, Query Agent presents new suggestions to help you pivot into related questions, such as analyzing trends of event reasons or identifying top namespaces. The intent card expands each time to include the new scope, and results show additional details.
 
 For example, you could refine further by clicking a suggestion like "Show the count of error logs per minute, grouped by error code".
 
-#### Step 4: Request a trend over time
+#### Request a trend over time
 
 If you type a time period, Query Agent would apply a timeslice to group results over time. For example, if you type "Show the trend over 24 hours", results would be divided into 1-hour buckets.
 
 #### Next steps
 
-In just a few conversational turns, you went from a broad question to a detailed analysis showing error trends grouped by error code over time.
+In just a few conversational turns, we went from a broad question to a detailed analysis showing error trends grouped by error code over time.
 
 From here, you can continue refining or explore different angles like [switching the chart type](/docs/search/mobot/#chart-type), [opening the query in Log Search](/docs/search/mobot/#step-4-open-in-log-search), [adjusting the time range](/docs/search/mobot/#time-range), [editing the query logic](/docs/search/mobot/#edit-query-code), or [starting over with a new chat](/docs/search/mobot/#new-conversation).
+
+
+### Example workflow: Security investigation
+
+The steps below outline a typical conversational interaction pattern for investigating a security incident. You can apply the same approach to different security scenarios.
+
+#### Step 1: Ask your initial question  
+
+Use natural language to ask what you're looking for. For better results, include the name of the data source you're querying and any related fields or values. If you don't select a source, Query Agent chooses one automatically based on your question.
+
+For example, if you enter "Show me recent user-service logs", Query Agent selects the correct source category and returns recent events. An intent card appears in the conversation pane summarizing your goal. Query Agent then surfaces suggestion cards with related refinements you can click.
+
+#### Step 2: Identify patterns
+
+After you click a follow-up suggestion or type a refinement, Query Agent refreshes the results and updates the intent card and query to reflect the new focus. With each refinement, Query Agent adjusts the query, applies the changes, and renders a visual chart.
+
+For example, asking "What's the request volume by service?" would aggregate traffic by service. Query Agent might surface that user-service has 3× higher requests than baseline, while other services remain healthy—suggesting a traffic surge on one service.
+
+#### Step 3: Analyze geographic distribution
+
+As you go, Query Agent presents new suggestions to help you pivot into related questions. The intent card expands each time to include the new scope, and results show additional details.
+
+For example, asking "Where are these requests coming from?" would aggregate by geography. Query Agent might reveal that 80% of requests originate from France, with elevated activity from China, Netherlands, and India—a geographic clustering pattern consistent with coordinated attacks.
+
+#### Step 4: Examine error patterns and sources
+
+Query Agent maintains context from previous questions, so you can continue refining without repeating filters. For example, asking "What status codes are returned by the register API?" would show that over 85% of requests are failing with 503 errors. Following up with "Which IPs are behind these 503 errors?" reveals that two IPs account for over 97% of the failed traffic.
+
+#### Step 5: Validate with threat intelligence
+
+You can enrich findings by asking Query Agent to cross-reference with external data. For example, "Check these IPs against threat intel" would reveal if the source IPs are flagged as known malicious actors, confirming whether the incident is an attack or organic load.
+
+#### Next steps
+
+In just a few conversational turns, we went from an initial alert to confirming a DDoS attack with:
+* Identified affected services and APIs
+* Traced attack origin to specific geographic regions and IPs
+* Validated malicious actors using threat intelligence
+* Quantified impact on latency and error rates
+
+From here, you can continue refining or take action like blocking malicious IPs, [opening the query in Log Search](/docs/search/mobot/#step-4-open-in-log-search), [adjusting the time range](/docs/search/mobot/#time-range), [editing the query logic](/docs/search/mobot/#edit-query-code), or [starting over with a new chat](/docs/search/mobot/#new-conversation).
 
 ### Tips for better answers
 
@@ -169,10 +208,10 @@ Select **Knowledge Agent** to get help using Sumo Logic.
 Knowledge Agent is your in-platform assistant for learning how to use Sumo Logic. Ask questions about Sumo Logic and get clear answers sourced directly from our official documentation without leaving your workflow.
 
 **Example questions:**
-- "How do I add a collector for AWS CloudTrail?"
-- "What's the difference between a scheduled search and a real-time alert?"
-- "Why isn't my collector sending data?"
-- "What are the API endpoints for Sumo Logic?"
+* "How do I add a collector for AWS CloudTrail?"
+* "What's the difference between a scheduled search and a real-time alert?"
+* "Why isn't my collector sending data?"
+* "What are the API endpoints for Sumo Logic?"
 
 Knowledge Agent maintains conversation context for 24 hours, so you can ask follow-up questions naturally without starting over.
 
