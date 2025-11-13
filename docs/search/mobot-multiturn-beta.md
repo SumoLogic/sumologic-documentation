@@ -17,16 +17,10 @@ import TabItem from '@theme/TabItem';
 This feature is in Beta. For more information, contact your Sumo Logic account executive.
 :::
 
-Get instant answers and create log queries using natural language—no syntax required. Mobot connects you to two specialized agents: Query Agent helps you write and refine log searches, while Knowledge Agent answers how-to questions about Sumo Logic. Work faster, learn as you go, and troubleshoot without leaving your workflow.
+Mobot is your conversational interface for Sumo Logic, letting you interact with the platform the same way you would with a chat assistant. Create log queries using natural language and get instant, actionable answers without searching through documentation. Think of Mobot as your personal assistant. It connects you to two specialized agents that handle different tasks:
 
-## What is Mobot?
-
-Mobot is your conversational interface for Sumo Logic, letting you interact with the platform using natural language the same way you would with a chat assistant. Instead of memorizing syntax or searching through documentation, simply ask questions and get actionable results.
-
-How it works:
-* Mobot is the conversational interface you interact with—think of it as your personal assistant.
-* Query Agent is the specialist Mobot calls on to translate your questions into log search queries.
-* Knowledge Agent is the expert Mobot consults to answer how-to questions using official Sumo Logic documentation. Use it for setup guidance, troubleshooting steps, product concepts, and best practices.
+* **Query Agent** translates your natural-language questions into log search queries and helps you refine them step by step.
+* **Knowledge Agent** answers how-to questions about Sumo Logic using official documentation, including setup, troubleshooting, concepts, and best practices.
 
 Together, these agents help you troubleshoot faster, explore your data more intuitively, and learn the platform without friction.
 
@@ -172,41 +166,15 @@ Select **Knowledge Agent** to get help using Sumo Logic.
 
 <img src={useBaseUrl('img/search/mobot/knowledge-agent-select.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
 
-Knowledge Agent is your in-platform assistant for learning how to use Sumo Logic. Instead of searching through documentation or filing support tickets, simply ask questions and get clear, accurate answers sourced directly from official help docs without leaving your workflow.
+Knowledge Agent is your in-platform assistant for learning how to use Sumo Logic. Ask questions about Sumo Logic and get clear answers sourced directly from our official documentation without leaving your workflow.
 
-Enter a question about Sumo Logic, such as "How do I add a collector for AWS CloudTrail?", "What are the API endpoints for Sumo Logic?", or anything else you need help with. The Knowledge agent returns an answer, including any relevant steps and links to the help documentation that served as the basis for the response.
-
-Then ask follow-up questions. Knowledge Agent retains your conversation context for 24 hours from the time you ask your first question. After 24 hours, the session resets and prior context is no longer available. However, any new question will begin a new 24-hour session with its own preserved context. This means if you ask a question and follow up within 24 hours, Knowledge Agent remembers and continues the conversation seamlessly.
-
-Here are some example questions:
-
-<details>
-<summary>Setup and configuration</summary>
-- "How do I install a collector on Linux?"
-- "How do I configure SAML for single sign-on?"
-- "How do I set up log forwarding to an S3 bucket?"
-</details>
-
-<details>
-<summary>Learning concepts</summary>
-- "What's the difference between a metadata field and a parsed field?"
-- "How does data tiering work in Sumo Logic?"
-- "What are Field Extraction Rules?"
-</details>
-
-<details>
-<summary>Troubleshooting</summary>
+**Example questions:**
+- "How do I add a collector for AWS CloudTrail?"
+- "What's the difference between a scheduled search and a real-time alert?"
 - "Why isn't my collector sending data?"
-- "How do I fix authentication errors with AWS integration?"
-- "My dashboard panels aren't loading—what should I check?"
-</details>
+- "What are the API endpoints for Sumo Logic?"
 
-<details>
-<summary>Best practices</summary>
-- "What's the recommended way to structure log queries for performance?"
-- "How should I organize my folder structure?"
-- "What are best practices for dashboard design?"
-</details>
+Knowledge Agent maintains conversation context for 24 hours, so you can ask follow-up questions naturally without starting over.
 
 ### Tips for better answers
 
@@ -252,6 +220,6 @@ No. Knowledge Agent is intentionally scoped to use Sumo Logic's internal documen
 
 ## Additional resources
 
-* [Mobot (formerly *Copilot*)](/docs/search/mobot)
+* [Mobot](/docs/search/mobot)
 * [Search Query Language](/docs/search/search-query-language)
 * [Dashboards](/docs/dashboards)
