@@ -16,12 +16,12 @@ The Sumo Logic Amazon Bedrock AgentCore app dashboards offer insights into Cloud
 ## Log and metrics types
 
 The Amazon Bedrock AgentCore app uses the following logs and metrics:
-* [AgentCore Runtime Observability Data](https://docs.aws.amazon.com/bedrock/latest/userguide/agentcore-runtime-observability.html) - Runtime metrics, resource usage, spans, and application logs.
-* [AgentCore Memory Observability Data](https://docs.aws.amazon.com/bedrock/latest/userguide/agentcore-memory-observability.html) - Memory metrics, spans, and logs.
-* [AgentCore Gateway Observability Data](https://docs.aws.amazon.com/bedrock/latest/userguide/agentcore-gateway-observability.html) - Gateway metrics, logs, and spans.
-* [AgentCore Built-in Tools Observability Data](https://docs.aws.amazon.com/bedrock/latest/userguide/agentcore-builtin-tools-observability.html) - Code interpreter and browser tool metrics, logs, and spans.
-* [AgentCore Identity Observability Data](https://docs.aws.amazon.com/bedrock/latest/userguide/agentcore-identity-observability.html) - Identity service metrics, logs, and spans.
-* [Monitor Amazon Bedrock AgentCore API calls using CloudTrail](https://docs.aws.amazon.com/bedrock/latest/userguide/logging-using-cloudtrail.html).
+* [AgentCore Runtime Observability Data](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-runtime-metrics.html) - Runtime metrics, resource usage logs and application logs.
+* [AgentCore Memory Observability Data](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-memory-metrics.html) - Memory metrics and application logs.
+* [AgentCore Gateway Observability Data](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-gateway-metrics.html) - Gateway metrics and application logs.
+* [AgentCore Built-in Tools Observability Data](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-tool-metrics.html) - Code interpreter and browser tool metrics,  Code interpreter application and usage logs, and Browser usage logs.
+* [AgentCore Identity Observability Data](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-identity-metrics.html) - Identity service metrics.
+* [Monitor Amazon Bedrock AgentCore API calls using CloudTrail](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-cloudtrail.html).
 
 ### Sample CloudTrail log message
 
@@ -30,7 +30,7 @@ The Amazon Bedrock AgentCore app uses the following logs and metrics:
 
 ```json title="CloudTrail"
 {
-  "eventVersion": "1.10",
+  "eventVersion": "1.09",
   "userIdentity": {
     "type": "IAMUser",
     "principalId": "AIDAIHL7V6WZEXAMPLEVU",
@@ -41,20 +41,14 @@ The Amazon Bedrock AgentCore app uses the following logs and metrics:
   },
   "eventTime": "2024-10-01T11:52:37Z",
   "eventSource": "bedrock-agentcore.amazonaws.com",
-  "eventName": "CreateAgent",
+  "eventName": "CreateAgentRuntime",
   "awsRegion": "us-west-2",
   "sourceIPAddress": "203.0.113.42",
   "userAgent": "aws-cli/2.13.0 Python/3.11.4 Darwin/23.0.0 source/x86_64",
   "requestParameters": {
-    "agentName": "CustomerSupportAgent",
-    "agentResourceRoleArn": "arn:aws:iam::123456789012:role/BedrockAgentRole",
-    "foundationModel": "anthropic.claude-v2"
+    "agentRuntimeId": "CustomerSupportAgent"
   },
-  "responseElements": {
-    "agentId": "AGENT123",
-    "agentArn": "arn:aws:bedrock-agentcore:us-west-2:123456789012:agent/AGENT123",
-    "agentStatus": "CREATING"
-  },
+  "responseElements": null,
   "requestID": "0873fdcf-2c18-413a-9288-7e9bbbb8f29d",
   "eventID": "a8d388e2-3111-44bf-b78f-b0e263dc3d25",
   "readOnly": false,
@@ -92,10 +86,6 @@ The Amazon Bedrock AgentCore app uses the following logs and metrics:
     "agentId": "AGENT123",
     "sessionId": "session-12345",
     "inputText": "What is the weather in Seattle?"
-  },
-  "response_payload": {
-    "sessionId": "session-12345",
-    "completion": "The current weather in Seattle is partly cloudy."
   }
 }
 ```
@@ -113,10 +103,10 @@ The Amazon Bedrock AgentCore app uses the following logs and metrics:
   "actor_id": "user-456",
   "session_id": "session-789",
   "event_id": "event-012",
-  "requestId": "req-abc123",
-  "isError": false,
-  "log": "Extraction processing completed successfully",
-  "extracted_memories_count": 5
+  "body": {"requestId": "req-abc123",
+    "isError": false,
+    "log": "Extraction processing completed successfully"
+    }
 }
 ```
 </details>
@@ -143,34 +133,12 @@ The Amazon Bedrock AgentCore app uses the following logs and metrics:
 </details>
 
 <details>
-<summary>Usage Logs - Click to expand</summary>
+<summary>Built-in Tools Browser Application Logs - Click to expand</summary>
 
-```json title="CloudWatch Usage Logs"
-{
-  "event_timestamp": "2024-10-01T11:50:35.000Z",
-  "resource_arn": "arn:aws:bedrock-agentcore:us-west-2:123456789012:agent/AGENT123",
-  "service.name": "AgentCore.Runtime",
-  "cloud.provider": "aws",
-  "cloud.region": "us-west-2",
-  "account.id": "123456789012",
-  "region": "us-west-2",
-  "resource.id": "AGENT123",
-  "session.id": "session-12345",
-  "agent.name": "CustomerSupportAgent",
-  "elapsed_time_seconds": 5.234,
-  "agent.runtime.vcpu.hours.used": 0.000145,
-  "agent.runtime.memory.gb_hours.used": 0.000289
-}
-```
-</details>
-
-<details>
-<summary>Built-in Tools Application Logs - Click to expand</summary>
-
-```json title="CloudWatch Built-in Tools Application Logs"
+```json title="CloudWatch Built-in Tools Browser Application Logs"
 {
   "timestamp": "2024-10-01T12:30:15.456Z",
-  "resource_arn": "arn:aws:bedrock-agentcore:us-west-2:123456789012:codeinterpreter/CI123",
+  "resource_arn": "arn:aws:bedrock-agentcore:us-west-2:123456789012:code-interpreter/aws.codeinterpreter.v1",
   "event_timestamp": "2024-10-01T12:30:15.000Z",
   "account_id": "123456789012",
   "request_id": "b4628g7b-8g09-5hfh-05ee-be8451d9dgf6",
@@ -180,12 +148,60 @@ The Amazon Bedrock AgentCore app uses the following logs and metrics:
   "service_name": "AgentCore.CodeInterpreter",
   "operation": "InvokeCodeInterpreter",
   "request_payload": {
-    "code": "print('Hello, World!')",
-    "sessionId": "toolsession-67890"
+    "name": "executeCode",
+    "arguments": {"code": "print('Hello, World!')", "language": "python", "clearContext": false}
   },
   "response_payload": {
-    "output": "Hello, World!\n",
-    "executionStatus": "Success"
+    "content": [
+      {
+        "type": "text",
+        "text": "Hello, World!\n",
+        "data": null,
+        "mimeType": null,
+        "uri": null,
+        "name": null,
+        "description": null,
+        "size": null,
+        "resource": null
+      }
+    ],
+    "structuredContent": {
+      "taskId": null,
+      "taskStatus": null,
+      "stdout": "Hello, World!\n",
+      "stderr": "",
+      "exitCode": 0,
+      "executionTime": 0.054308414459228516
+    },
+    "isError": false
+  }
+}
+```
+</details>
+
+<details>
+<summary>Usage Logs - Click to expand</summary>
+
+```json title="CloudWatch Usage Logs"
+{
+  "resource_arn": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/AGENT123",
+  "event_timestamp": 1762768235743,
+  "resource": {
+    "cloud.provider": "aws",
+    "service.name": "AgentCore.Runtime",
+    "cloud.region": "us-east-1"
+  },
+  "attributes": {
+    "account.id": "956882708938",
+    "time_elapsed_seconds": 0.28,
+    "agent.name": "CustomerSupportAgent",
+    "region": "us-east-1",
+    "session.id": "session-12345",
+    "resource.id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/AGENT123/runtime-endpoint/DEFAULT"
+  },
+  "metrics": {
+    "agent.runtime.memory.gb_hours.used": 0.000275552058724,
+    "agent.runtime.vcpu.hours.used": 0.000001925
   }
 }
 ```
