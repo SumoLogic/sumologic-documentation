@@ -66,12 +66,14 @@ How you can search and use your ingested data varies by the Data Tier it resides
 | Logs to Metrics | &#10003; | &#10003; | &#10003; |
 | Data Forwarding | &#10003; | &#10003; | |
 | Live Tail | &#10003; | &#10003; | &#10003; |
-| Dashboards | &#10003; | | |
-| Monitors | &#10003; | | |
+| Dashboards | &#10003; | Activation required* | |
+| Monitors | &#10003; | Activation required* | |
 | Scheduled Searches | &#10003; | | |
 | Scheduled Views | &#10003; | | |
 | API Queries |  &#10003; | &#10003; | &#10003; |
 
+* - Feature activation is subjected to minimum volume and service plan requirements, confirmed at time of transaction.
+  
 ## Assigning data to a Data Tier
 
 You assign data to a Data Tier at the partition level. When you create a partition, you define a routing expression and select the target tier for the data that matches the routing expression. For instructions, see [Create a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).
