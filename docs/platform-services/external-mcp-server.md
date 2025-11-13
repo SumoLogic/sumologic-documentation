@@ -26,7 +26,9 @@ Connect your AI tools directly to Sumo Logic to create a unified ecosystem power
 
 The Sumo Logic MCP Server extends Dojo AI into an open, interoperable platform using the Model Context Protocol (MCP). Instead of building custom integrations or treating Sumo Logic as a separate data silo, the MCP Server makes your observability and security data directly accessible to your own copilots, proprietary models, and third-party AI systems.
 
-Our MCP Server integrates seamlessly with [Query Agent](/docs/search/query-agent), [Knowledge Agent](/docs/search/knowledge-agent), and [SOC Analyst Agent](/docs/security/cse/soc-analyst-agent), enabling your external AI tools to collaborate with these agents.
+<!--The Sumo Logic MCP Server makes Dojo AI the central hub of your AI ecosystem using the Model Context Protocol (MCP). Instead of building custom integrations or treating Sumo Logic as a separate data silo, you can connect your own copilots, proprietary models, and third-party AI systems directly to Sumo Logic's agents and data.-->
+
+Our MCP Server integrates seamlessly with [Query Agent](#), [Knowledge Agent](#), and [SOC Analyst Agent](#), enabling your external AI tools to collaborate with these agents.
 
 <details>
 <summary>What is Model Context Protocol?</summary>
@@ -49,8 +51,9 @@ Your external AI systems can query logs, analyze dashboards, and collaborate wit
 
 ## What you can do
 
-* **Bring your own AI**. Integrate proprietary models or third-party copilots with Sumo Logic's observability and security data without rebuilding your AI stack.
-* **Automate across your ecosystem**. Use Sumo Logic's telemetry as input for your AI-driven workflows, enabling smarter investigations and faster incident response.
+* **Bring the best AI for your stack**. Integrate proprietary models or third-party copilots with Sumo Logic's observability and security data while maintaining the scale, consistency, and security of a unified platform.
+* **Automate across your ecosystem**. Use Sumo Logic's telemetry as input for your AI-driven workflows, enabling smarter investigations and faster incident response. <!--emphasize HITL? **Accelerate workflows with AI assistance** Use Sumo Logic's telemetry as input for your AI-driven workflows, enabling faster investigations and response—with analysts staying in control of critical decisions. or.. **Accelerate investigations with AI assistance**  
+Use Sumo Logic's telemetry to power AI-driven workflows that surface insights faster—while keeping security and operations teams in control of analysis and response decisions.-->
 * **Work where you work**. Execute AI-powered queries from your IDE, collaboration tools, or custom applications—no need to switch contexts.
 * **Future-proof your strategy**. Add new AI technologies as they emerge while maintaining Sumo Logic's scale, security, and data governance.
 
@@ -68,7 +71,7 @@ Your external AI systems can query logs, analyze dashboards, and collaborate wit
 <TabItem value="SOC">
 
 * **Unified threat investigation**. Connect your security copilot to Sumo Logic so it can query threat data, correlate signals, and collaborate with the SOC Analyst Agent for faster triage and response.
-* **Automated playbook execution**. Integrate your SOAR platform to trigger Sumo Logic queries and analysis as part of incident response playbooks, combining internal and external context.
+* **Automated playbook execution**. Integrate your SOAR platform to trigger Sumo Logic queries and analysis as part of incident response playbooks, combining internal and external context.<!-- HITL? **AI-assisted playbook execution** Integrate your SOAR platform to trigger Sumo Logic queries and analysis as part of incident response playbooks. Your AI tools surface insights and recommendations while analysts maintain oversight of response actions.-->
 
 </TabItem>
 
@@ -136,7 +139,9 @@ The MCP Server is a separately licensed capability. Contact your account represe
 
 </details>
 
-### Learn More
+### Learn more
+
+*Bring your own AI to the Dojo*.
 
 - [Dojo AI Overview](#) _(link to Dojo AI page)_
 - [Query Agent](#) _(link to Query Agent doc)_
