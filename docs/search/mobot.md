@@ -66,7 +66,7 @@ Mobot accelerates incident response by combining prebuilt contextual insights wi
 * **Guided exploration**. Intent cards summarize your current goal, and suggestion cards offer refinements you can apply with a click.
 * **Integrated workflow**. A conversation pane shows your prompts and refinements, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
 
-<!-- is this still happening?
+<!-- Not yet released
 ## Support for unstructured logs
 
 **Mobot supports unstructured logs** (raw, text-based logs that don’t follow a structured format such as JSON) without requiring Field Extraction Rules (FERs). This means you can ask questions in plain English and get meaningful insights from nearly any log data. Using natural language and AI pattern recognition, Mobot analyzes and extracts insights even when logs aren’t pre-parsed.
