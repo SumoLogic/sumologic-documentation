@@ -155,6 +155,18 @@ If a user has an action marked as **Waiting Owner**, they must perform the steps
 
 <img src={useBaseUrl('img/cse/automations-complete-task.png')} style={{border:'1px solid gray'}} alt="Complete task" width="300"/>
 
+#### Task variables
+
+Task variables provide a useful way to track who is assigned to a task and other task data, and let you interact with the task information in subsequent playbook actions.
+
+Perform the following steps to use the variables in nodes that come after the task node in the playbook:
+1. Let's say you create a task node:<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example.png')} style={{border:'1px solid gray'}} alt="Example task node followed by an action node" width="500"/>
+1. Open a node that comes later in playbook than the task node. In our example, we'll select the node titled **Send email about task status**.
+1. In the **Edit Node** dialog, click either a gear icon <img src={useBaseUrl('img/platform-services/automation-service/gear-icon.png')} style={{border:'1px solid gray'}} alt="Gear icon" width="20"/> or a placeholder icon <img src={useBaseUrl('img/platform-services/automation-service/insert-placeholder-icon.png')} style={{border:'1px solid gray'}} alt="Insert placeholder icon" width="20"/>:<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example-edit-node.png')} style={{border:'1px solid gray'}} alt="Gear icon and insert placeholder icons highlighted on the Edit Note dialog" width="500"/>
+1. From the list of available values from previous actions, click the name of the task node. Then select the variable you want to use:<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example-node-values.png')} style={{border:'1px solid gray'}} alt="Task variables" width="500"/>
+1. Insert the variables as needed in your node. In the following **Send email about task status** node example, the task variables are used for the email subject and in the email body:<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example-variables.png')} style={{border:'1px solid gray'}} alt="Task variables in a node" width="500"/>
+1. Continue inserting the task variables as needed in nodes following the task node.
+
 ### Add a user choice node to a playbook
 
 When a user choice node is encountered, the execution will pause until a user selects an option. For example, after enrichment, a user could be asked whether to proceed with a containment action or to perform additional enrichment first. When a playbook is paused at a user choice node, the status of that playbook will say **Waiting user interaction**.
