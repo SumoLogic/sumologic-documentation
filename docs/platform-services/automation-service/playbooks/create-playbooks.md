@@ -175,6 +175,24 @@ Following is an example of a user choice node. Note the node branches to the nex
 
 <img src={useBaseUrl('img/cse/automations-example-user-choice-node.png')} style={{border:'1px solid gray'}} alt="Example user choice node" width="500"/>
 
+#### User choice responder variables
+
+User choice responder variables provide a useful way to track who responded to user choice options, and let you interact with the responders in subsequent playbook actions.
+
+Following are the available variables that identify the person who responded to a user choice:
+* `responder.id`. The user ID of the responder.
+* `responder.email`. The responder's email.
+* `responder.firstName`. The responder's first name.
+* `responder.lastName`. The responder's last name.
+
+Perform the following steps to use the user choice responder variables in nodes following user choice:
+1. Let's say you create a user choice node to either send an email to the responder, or assign the responder to an insight:<br/><img src={useBaseUrl('img/platform-services/automation-service/user-choice-variable-example-playbook.png')} style={{border:'1px solid gray'}} alt="Example user choice node for actor variables" width="400"/>
+1. Open a node following the user choice node. In our example, we'll select the **Send Email** node.
+1. In the **Edit Node** dialog, click either a gear icon <img src={useBaseUrl('img/platform-services/automation-service/gear-icon.png')} style={{border:'1px solid gray'}} alt="Gear icon" width="20"/> or a placeholder icon <img src={useBaseUrl('img/platform-services/automation-service/insert-placeholder-icon.png')} style={{border:'1px solid gray'}} alt="Insert placeholder icon" width="20"/>:<br/><img src={useBaseUrl('img/platform-services/automation-service/user-choice-variables-edit-node.png')} style={{border:'1px solid gray'}} alt="Gear icon and insert placeholder icons highlighted on the Edit Note dialog" width="500"/>
+1. From the list of available values from previous actions, click the name of the user choice node. Then select the responder variable you want to use:<br/><img src={useBaseUrl('img/platform-services/automation-service/user-choice-variables.png')} style={{border:'1px solid gray'}} alt="User choice responder variables" width="500"/>
+1. Insert the variables as needed in your node. In the following **Send Email** node example, the responder variables are used for the email's recipient and in the email body:<br/><img src={useBaseUrl('img/platform-services/automation-service/user-choice-variables-insert-placeholders.png')} style={{border:'1px solid gray'}} alt="User choice variables in a node" width="500"/>
+1. Continue inserting the variables as needed in nodes following the user choice.
+
 #### User choice nodes in out-of-the-box playbooks
 
 Here are just a few of the [out-of-the-box playbooks](/docs/platform-services/automation-service/playbooks-in-app-central/) that contain user choice nodes. Look at the user choice nodes in these playbooks to get an idea of how to structure them: 
