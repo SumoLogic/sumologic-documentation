@@ -14,8 +14,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `threatlookup` search operator allows you to search logs for matches in [threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/), providing security analytics to help you to detect threats in your environment.
 
+You can also use the [`threatip`](/docs/search/search-query-language/search-operators/threatip/) search operator to search threat intelligence data based on an IP address. 
+
 :::note
-You can also use the [`threatip`](/docs/search/search-query-language/search-operators/threatip/) search operator to search threat intelligence data based on IP addresses. 
+`threatlookup` has `nodrop` functionality by default, so you don't have to explicitly include the `nodrop` statement in your query. That means that when you use parsing operators (like `parse` or `parse regex`) with `threatlookup`, messages that do not fully match the parsing criteria are prevented from being discarded. (For example, messages returning `NULL` values or logs without IOC values are retained.) See [Parse nodrop option](/docs/search/search-query-language/parse-operators/parse-nodrop-option/) for more information about how `nodrop` works.
 :::
 
 ## Syntax
@@ -25,26 +27,29 @@ threatlookup [singleIndicator] [source="<source_value>"] <indicator> [,<optional
 ```
 
 Where:
-* `singleIndicator` returns the single best matching threat intelligence entry. (In the response, `num_match` indicates how many actual matches there are.) If `singleIndicator` is not specified, all matching entries from your intelligence sources are returned. 
+* `singleIndicator` returns the single best matching threat intelligence entry. (In the response, `num_matches` indicates how many actual matches there are.) If `singleIndicator` is not specified, all matching entries from your intelligence sources are returned. 
 
-   Specifying `singleIndicator` returns the most recent, highest confidence entry from your sources.  If there's a tie, the winning entry is whichever the backend storage returned first.
+   Specifying `singleIndicator` returns the most recent, highest confidence entry from your sources. If there's a tie, the winning entry is whichever the backend storage returned first.
 * `source` is the [threat intelligence source](/docs/security/threat-intelligence/about-threat-intelligence/#threat-intelligence-sources) to search for the threat intelligence indicator. If `source` is not specified, all sources are searched.
 * `<indicator>` is the [field name](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md) containing an [indicator](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) to look up. At least one field name is required. `<optional_indicator>` is used to add more indicators to look up. 
 
 ### Response fields
 
-Query responses return the following fields:
+Query responses return the following [normalized indicator](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) fields:
+* `actors`
 * `confidence`
 * `fields`
+* `id`
 * `imported`
 * `indicator`
-* `valid_from`
-* `valid_until`
+* `kill_chain`
+* `num_matches` (if `singleIndicator` is used)
 * `source`
 * `threat_type`
 * `type`
 * `updated`
-* `num_match` (if `singleIndicator` is used)
+* `valid_from`
+* `valid_until`
 
 ## Examples
 
