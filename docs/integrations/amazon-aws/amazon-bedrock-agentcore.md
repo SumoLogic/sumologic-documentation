@@ -7,7 +7,7 @@ description: Learn about the collection process for the Amazon Bedrock AgentCore
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-bedrock-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon-bedrock-agentcore-logo.png')} alt="Thumbnail icon" width="50"/>
 
 [Amazon Bedrock AgentCore](https://docs.aws.amazon.com/bedrock-agentcore) is a fully managed service that enables you to build and deploy AI agents with advanced capabilities. AgentCore provides runtime observability, memory management, gateway functionality, built-in tools, and identity services to help you monitor and optimize your AI agent deployments. It offers comprehensive metrics, logs, and traces for agent execution activity, resource utilization, error tracking, and performance monitoring.
 
@@ -133,9 +133,9 @@ The Amazon Bedrock AgentCore app uses the following logs and metrics:
 </details>
 
 <details>
-<summary>Built-in Tools Browser Application Logs - Click to expand</summary>
+<summary>Built-in Tools Code Interpreter Application Logs - Click to expand</summary>
 
-```json title="CloudWatch Built-in Tools Browser Application Logs"
+```json title="CloudWatch Built-in Tools Code Interpreter Application Logs"
 {
   "timestamp": "2024-10-01T12:30:15.456Z",
   "resource_arn": "arn:aws:bedrock-agentcore:us-west-2:123456789012:code-interpreter/aws.codeinterpreter.v1",
@@ -266,16 +266,6 @@ account=* region=* namespace=aws/bedrock/agentcore codeinterpreter
 | avg(session_duration) as avg_duration, max(session_duration) as max_duration, min(session_duration) as min_duration by toolid
 ```
 
-```sql title="Identity Token Fetch Success Rate (CloudWatch log based)"
-account=* region=* namespace=aws/bedrock/agentcore identity
-| json "resource_arn", "operation", "workload.identity.id", "error_type" as resource_arn, operation, workload_identity, error_type nodrop
-| parse field=resource_arn "arn:aws:bedrock-agentcore:*:*:workloadidentity/*" as region, accountid, identityid nodrop
-| where operation matches "GetWorkloadAccessToken*"
-| if (isEmpty(error_type), "Success", "Failure") as status
-| count by status, workload_identity
-| transpose row workload_identity column status
-```
-
 ## Collecting logs and metrics for the Amazon Bedrock AgentCore app
 
 ### Collecting CloudWatch metrics
@@ -308,17 +298,17 @@ Sumo Logic supports collecting metrics using two source types:
 
 ### Collecting Amazon Bedrock AgentCore CloudWatch logs
 
-To enable Amazon Bedrock AgentCore CloudWatch Logs, follow the steps mentioned in [AWS Documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/agentcore-observability.html).
+To enable Amazon Bedrock AgentCore CloudWatch Logs, follow the steps mentioned in [AWS Documentation](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html).
 
 :::note
 Ensure that when configuring CloudWatch Logs, the log group names follow these patterns:
-- Runtime logs: `/aws/vendedlogs/bedrock-agentcore/runtime/APPLICATION_LOGS/*`
-- Memory logs: `/aws/vendedlogs/bedrock-agentcore/memory/APPLICATION_LOGS/*`
-- Gateway logs: `/aws/vendedlogs/bedrock-agentcore/gateway/APPLICATION_LOGS/*`
-- Built-in Tools logs: `/aws/vendedlogs/bedrock-agentcore/tools/APPLICATION_LOGS/*`
-- Identity logs: `/aws/vendedlogs/bedrock-agentcore/identity/APPLICATION_LOGS/*`
-- Span data: `/aws/spans`
-- Usage logs: Custom log group with `USAGE_LOGS` type
+- Runtime Application logs: `/aws/vendedlogs/bedrock-agentcore/runtime/APPLICATION_LOGS/*`
+- Runtime Usage logs: `/aws/vendedlogs/bedrock-agentcore/runtime/USAGE_LOGS/*`
+- Memory Application logs: `/aws/vendedlogs/bedrock-agentcore/memory/APPLICATION_LOGS/*`
+- Gateway Application logs: `/aws/vendedlogs/bedrock-agentcore/gateway/APPLICATION_LOGS/*`
+- Built-in Tools Code Interpreter Application logs: `/aws/vendedlogs/bedrock-agentcore/code-interpreter*`
+- Built-in Tools Code Interpreter Usage logs: `/aws/vendedlogs/bedrock-agentcore/code-interpreter*`
+- Built-in Tools Browser Usage logs: `/aws/vendedlogs/bedrock-agentcore/browser*`
 :::
 
 Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. You can choose either of them to collect logs:
@@ -337,11 +327,12 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**.
 1. Search for the following fields:
-   - `agentid`
-   - `memoryid`
-   - `gatewayid`
-   - `toolid`
-   - `workloadidentityid`
+   - `region`
+   - `accountid`
+   - `namespace`
+   - `agentcore_resource_id`
+   - `agentcore_resource_type`
+
 1. If not present, create them. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
 ### Configure Field Extraction Rule(s)
@@ -351,22 +342,37 @@ Create Field Extraction Rules for Amazon Bedrock AgentCore logs. Learn how to cr
 #### CloudTrail Logs FER
 
 ```sql
-Rule Name: AwsObservabilityBedrockAgentCoreCloudTrailLogsFER
+Rule Name: AwsObservabilityBedrockAgentcoreCloudTrailLogsFER
 Applied at: Ingest Time
-Scope (Specific Data): account=* eventname eventsource "bedrock-agentcore.amazonaws.com"
+Scope (Specific Data): account=* eventSource "bedrock-agentcore.amazonaws.com"
 ```
 
 ```sql title="Parse Expression"
-| json "eventSource", "awsRegion", "recipientAccountId" as event_source, region, accountid nodrop
+| json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.resourceArn", "resources[0].ARN", "requestParameters.agentRuntimeId", "requestParameters.memoryId", "requestParameters.browserId", "requestParameters.codeInterpreterId", "requestParameters.gatewayIdentifier", "requestParameters.resourceArnBeingAuthorized", "responseElements.agentRuntime.agentRuntimeId", "responseElements.memory.memoryId", "responseElements.browser.browserId", "responseElements.codeInterpreter.codeInterpreterId", "responseElements.gateway.gatewayId", "requestParameters.resourceCredentialProviderName" as event_source, region, accountid, resourceArn_req, resourceArn_main, agentRuntimeId, memoryId, browserId, codeInterpreterId, gatewayIdentifier, resourcearnbeingauthorized_req, agentRuntimeId_res, memoryId_res, browserId_res, codeInterpreterId_res, gatewayId_res, identityId_req nodrop
 | where event_source matches "bedrock-agentcore.amazonaws.com"
-| "aws/bedrock/agentcore" as namespace
-| json "requestParameters.agentId", "responseElements.agentId" as req_agentid, res_agentid nodrop
-| json "requestParameters.memoryId", "responseElements.memoryId" as req_memoryid, res_memoryid nodrop
-| json "requestParameters.gatewayId", "responseElements.gatewayId" as req_gatewayid, res_gatewayid nodrop
-| if (!isBlank(req_agentid), req_agentid, res_agentid) as agentid
-| if (!isBlank(req_memoryid), req_memoryid, res_memoryid) as memoryid
-| if (!isBlank(req_gatewayid), req_gatewayid, res_gatewayid) as gatewayid
-| fields accountid, region, namespace, agentid, memoryid, gatewayid
+| "aws/bedrock-agentcore" as namespace
+| if(!isEmpty(resourceArn_main), resourceArn_main, if(!isEmpty(resourceArn_req), resourceArn_req, resourcearnbeingauthorized_req)) as resource_arn
+| parse field=resource_arn "arn:*:bedrock-agentcore:*:*:*/*" as agentcore_arn_part, agentcore_region, agentcore_accountid, type_from_arn, id_from_arn nodrop
+| parse field=resource_arn "arn%3A*%3Abedrock-agentcore%3A*%3A*%3A*%2F*" as agentcore_arn_part, agentcore_region, agentcore_accountid, type_from_arn, id_from_arn nodrop
+| if(!isEmpty(id_from_arn), id_from_arn,
+  if(!isEmpty(agentRuntimeId), agentRuntimeId,
+  if(!isEmpty(memoryId), memoryId,
+  if(!isEmpty(browserId), browserId,
+  if(!isEmpty(codeInterpreterId), codeInterpreterId,
+  if(!isEmpty(gatewayIdentifier), gatewayIdentifier,  if(!isEmpty(agentRuntimeId_res), agentRuntimeId_res,
+  if(!isEmpty(memoryId_res), memoryId_res,
+  if(!isEmpty(browserId_res), browserId_res,
+  if(!isEmpty(codeInterpreterId_res), codeInterpreterId_res,
+  if(!isEmpty(gatewayId_res), gatewayId_res,
+  if(!isEmpty(identityId_req), identityId_req, "")))))))))))) as agentcore_resource_id
+| if(!isEmpty(type_from_arn), type_from_arn,
+  if(!isEmpty(agentRuntimeId) or !isEmpty(agentRuntimeId_res), "runtime",
+  if(!isEmpty(memoryId) or !isEmpty(memoryId_res), "memory",
+  if(!isEmpty(browserId) or !isEmpty(browserId_res), "browser",
+  if(!isEmpty(codeInterpreterId) or !isEmpty(codeInterpreterId_res), "code-interpreter",
+  if(!isEmpty(gatewayIdentifier) or !isEmpty(gatewayId_res), "gateway", 
+if(!isEmpty(identityId_req), "identity", ""))))))) as agentcore_resource_type
+| fields accountid, region, namespace, resource, agentcore_resource_type, agentcore_resource_id
 ```
 
 #### CloudWatch Logs FER
@@ -374,19 +380,14 @@ Scope (Specific Data): account=* eventname eventsource "bedrock-agentcore.amazon
 ```sql
 Rule Name: AwsObservabilityBedrockAgentCoreCloudWatchLogsFER
 Applied at: Ingest Time
-Scope (Specific Data): account=* region=* (_sourceHost=/aws/vendedlogs/bedrock-agentcore/* OR _sourceHost=/aws/spans)
+Scope (Specific Data): account=* region=* _sourcehost=/aws/vendedlogs/bedrock-agentcore/* resource_arn
 ```
 
 ```sql title="Parse Expression"
-| if (isEmpty(namespace), "aws/bedrock/agentcore", namespace) as namespace
-| json "resource_arn", "operation", "session_id", "service_name" as resource_arn, operation, session_id, service_name nodrop
-| parse field=resource_arn "arn:aws:bedrock-agentcore:*:*:agent/*" as region_temp, accountid_temp, agentid nodrop
-| parse field=resource_arn "arn:aws:bedrock-agentcore:*:*:memory/*" as region_temp, accountid_temp, memoryid nodrop
-| parse field=resource_arn "arn:aws:bedrock-agentcore:*:*:gateway/*" as region_temp, accountid_temp, gatewayid nodrop
-| parse field=resource_arn "arn:aws:bedrock-agentcore:*:*:codeinterpreter/*" as region_temp, accountid_temp, toolid nodrop
-| parse field=resource_arn "arn:aws:bedrock-agentcore:*:*:browser/*" as region_temp, accountid_temp, toolid nodrop
-| parse field=resource_arn "arn:aws:bedrock-agentcore:*:*:workloadidentity/*" as region_temp, accountid_temp, workloadidentityid nodrop
-| fields namespace, agentid, memoryid, gatewayid, toolid, workloadidentityid, operation, session_id
+| json "resource_arn" as resource_arn 
+| "aws/bedrock-agentcore" as namespace
+| parse field=resource_arn "arn:*:bedrock-agentcore:*:*:*/*" as agentcore_arn_part, agentcore_region, agentcore_accountid, agentcore_resource_type, agentcore_resource_id
+| fields namespace, agentcore_resource_type, agentcore_resource_id
 ```
 
 ### Centralized AWS CloudTrail logs collection
@@ -450,11 +451,8 @@ As part of the app installation process, the following fields will be created by
 * `region`: The geographical region where the AWS resource is located (for example, us-east-1 or eu-west-2).
 * `accountid`: The unique 12-digit identifier for the AWS account where the resource is present.
 * `namespace`: The AWS service namespace that the resource or metric belongs to (for example, AWS/Bedrock-AgentCore).
-* `agentid`: A specific identifier for the Agent within AWS Bedrock AgentCore.
-* `memoryid`: A specific identifier for the Memory resource within AWS Bedrock AgentCore.
-* `gatewayid`: A specific identifier for the Gateway resource within AWS Bedrock AgentCore.
-* `toolid`: A specific identifier for the Built-in Tool resource within AWS Bedrock AgentCore.
-* `workloadidentityid`: A specific identifier for the Workload Identity resource within AWS Bedrock AgentCore.
+* `agentcore_resource_type`: A specific type of resource within AWS Bedrock AgentCore (for example, runtime, memory, gateway, browser, code-interpreter, or identity).
+* `agentcore_resource_id`: A specific identifier for resource within AWS Bedrock AgentCore.
 
 ## Viewing the Bedrock AgentCore dashboards
 
