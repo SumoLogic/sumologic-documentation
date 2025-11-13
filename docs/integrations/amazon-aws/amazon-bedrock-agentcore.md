@@ -209,61 +209,81 @@ The Amazon Bedrock AgentCore app uses the following logs and metrics:
 
 ### Sample queries
 
-```sql title="Runtime Invocations by Agent (CloudWatch log based)"
-account=* region=* namespace=aws/bedrock/agentcore
-| json "accountId", "region", "operation", "resource_arn", "session_id" as accountid, region, operation, resource_arn, session_id nodrop
-| parse field=resource_arn "arn:aws:bedrock-agentcore:*:*:agent/*" as region_temp, accountid_temp, agentid nodrop
-| where operation matches "InvokeAgentRuntime"
-| timeslice 1h
-| count by _timeslice, agentid
-| transpose row _timeslice column agentid
+```sql title="Successful Event Locations (CloudTrail log based)"
+account=* region=* namespace=aws/bedrock/agentcore "\"eventSource\":\"bedrock-agentcore.amazonaws.com\"" !errorCode
+| json "eventSource", "eventName", "eventType", "sourceIPAddress", "errorCode", "errorMessage" nodrop
+| json "userIdentity.type", "userIdentity.userName", "userIdentity.arn", "recipientAccountId", "awsRegion" as user_type, user_name, arn, accountid, region nodrop
+| where eventSource matches "bedrock-agentcore.amazonaws.com"
+| count as eventCount by sourceIPAddress
+| lookup latitude, longitude from geo://location on ip=sourceIPAddress
 ```
 
-```sql title="Top Error Types (CloudWatch log based)"
-account=* region=* namespace=aws/bedrock/agentcore error
-| json "accountId", "region", "operation", "error_type", "errorCode", "errorMessage" as accountid, region, operation, error_type, error_code, error_message nodrop
-| where !isEmpty(error_type) or !isEmpty(error_code) or !isEmpty(error_message)
-| if (!isBlank(error_type), error_type, if (!isBlank(error_code), error_code, "Unknown")) as error_category
-| count as errorCount by error_category, operation
-| sort by errorCount desc
+```sql title="Top 10 Error Messages (CloudTrail log based)"
+account=* region=* namespace=aws/bedrock/agentcore "\"eventSource\":\"bedrock-agentcore.amazonaws.com\"" errorCode
+| json "eventSource", "eventName", "eventType", "sourceIPAddress", "errorCode", "errorMessage" nodrop
+| json "userIdentity.type", "userIdentity.userName", "recipientAccountId", "awsRegion" as user_type, user_name, accountid, region nodrop
+| where eventSource matches "bedrock-agentcore.amazonaws.com"
+| count as eventCount by errorMessage
+| sort by eventCount, errorMessage asc
 | limit 10
 ```
 
-```sql title="Memory Operations Trend (CloudWatch log based)"
-account=* region=* namespace=aws/bedrock/agentcore
-| json "resource_arn", "operation", "memory_strategy_id", "namespace" as resource_arn, operation, memory_strategy_id, mem_namespace nodrop
-| parse field=resource_arn "arn:aws:bedrock-agentcore:*:*:memory/*" as region, accountid, memoryid nodrop
-| where operation matches "CreateEvent" or operation matches "GetEvent" or operation matches "RetrieveMemoryRecords"
-| timeslice 5m
-| count by _timeslice, operation
-| transpose row _timeslice column operation
+```sql title="Top 20 Non-ReadOnly Events (CloudTrail log based)"
+account=* region=* namespace=aws/bedrock/agentcore "\"eventSource\":\"bedrock-agentcore.amazonaws.com\""
+| json "eventSource", "eventName", "eventType", "readOnly", "recipientAccountId", "awsRegion" as event_source, event_name, event_type, read_only, accountid, region nodrop
+| where eventSource matches "bedrock-agentcore.amazonaws.com"
+| where !(eventName matches "Get*") and !(eventName matches "List*")
+| count as eventCount by eventName
+| sort by eventCount, eventName asc
+| limit 20
 ```
 
-```sql title="Gateway Tool Invocations (CloudWatch log based)"
-account=* region=* namespace=aws/bedrock/agentcore gateway
-| json "resource_arn", "body.requestBody", "body.log" as resource_arn, request_body, log_message nodrop
-| parse field=resource_arn "arn:aws:bedrock-agentcore:*:*:gateway/*" as region, accountid, gatewayid nodrop
-| parse field=request_body "method=tools/call, params={name=*, arguments=" as tool_name nodrop
-| where !isEmpty(tool_name)
-| count by gatewayid, tool_name
-| sort by _count desc
-```
-
-```sql title="Resource Usage by Agent (CloudWatch log based)"
-account=* region=* namespace=aws/bedrock/agentcore
-| json "resource_arn", "session.id", "agent.name", "agent.runtime.vcpu.hours.used", "agent.runtime.memory.gb_hours.used" as resource_arn, session_id, agent_name, vcpu_hours, memory_gb_hours nodrop
-| parse field=resource_arn "arn:aws:bedrock-agentcore:*:*:agent/*" as region, accountid, agentid nodrop
-| where !isEmpty(vcpu_hours) and !isEmpty(memory_gb_hours)
-| sum(vcpu_hours) as total_vcpu_hours, sum(memory_gb_hours) as total_memory_gb_hours by agentid, agent_name
+```sql title="Browser Tool CPU Usage (CloudWatch log based)"
+account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/bedrock-agentcore/browser* "browser.vcpu.hours.used"
+| json "metrics['browser.vcpu.hours.used']", "agentcore_resource_id" as vcpu_hours, resource_id nodrop
+| where !isBlank(vcpu_hours)
+| sum(vcpu_hours) as total_vcpu_hours by resource_id
 | sort by total_vcpu_hours desc
 ```
 
-```sql title="Code Interpreter Session Duration (CloudWatch log based)"
-account=* region=* namespace=aws/bedrock/agentcore codeinterpreter
-| json "resource_arn", "session_id", "operation", "session_duration_s" as resource_arn, session_id, operation, session_duration nodrop
-| parse field=resource_arn "arn:aws:bedrock-agentcore:*:*:codeinterpreter/*" as region, accountid, toolid nodrop
-| where operation matches "*CodeInterpreter*" and !isEmpty(session_duration)
-| avg(session_duration) as avg_duration, max(session_duration) as max_duration, min(session_duration) as min_duration by toolid
+```sql title="Code Interpreter Memory Usage (CloudWatch log based)"
+account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/bedrock-agentcore/code-interpreter* "codeInterpreter.memory.gb_hours.used"
+| json "metrics['codeInterpreter.memory.gb_hours.used']", "agentcore_resource_id" as memory_gb_hours, resource_id nodrop
+| where !isBlank(memory_gb_hours)
+| sum(memory_gb_hours) as total_memory_gb_hours by resource_id
+| sort by total_memory_gb_hours desc
+```
+
+```sql title="Gateway Request Success vs Errors (CloudWatch log based)"
+account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/bedrock-agentcore/gateway/APPLICATION_LOGS* body isError
+| json "body.isError" as is_error nodrop
+| if(is_error matches "true", "Error", "Success") as status
+| count by status
+```
+
+```sql title="Memory Extraction Success vs Errors (CloudWatch log based)"
+account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/bedrock-agentcore/memory/* "Extracted memories"
+| json "body.isError", "body.log", "namespace" as is_error, log_message, memory_namespace nodrop
+| where log_message matches "Extracted*memories"
+| if (is_error = "true", "Error", "Success") as status
+| count by status
+```
+
+```sql title="Runtime Top CPU-Intensive Sessions (CloudWatch log based)"
+account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/bedrock-agentcore/runtime/USAGE_LOGS* "agent.runtime.vcpu.hours.used"
+| json "metrics['agent.runtime.vcpu.hours.used']", "attributes['agent.name']", "attributes['session.id']" as vcpu_hours, agent_name, session_id nodrop
+| where !isBlank(session_id) and !isBlank(vcpu_hours)
+| sum(vcpu_hours) as total_vcpu_hours by session_id, agent_name
+| sort by total_vcpu_hours desc
+| limit 25
+```
+
+```sql title="Runtime Invocations (CloudWatch Metric)"
+account=* region=* namespace=aws/bedrock/agentcore metric=invocations operation=InvokeAgentRuntime statistic=sum | quantize using sum | sum
+```
+
+```sql title="Gateway Average Latency (CloudWatch Metric)"
+account=* region=* namespace=aws/bedrock/agentcore metric=latency operation=InvokeGateway statistic=average | quantize using avg | avg
 ```
 
 ## Collecting logs and metrics for the Amazon Bedrock AgentCore app
@@ -458,70 +478,149 @@ As part of the app installation process, the following fields will be created by
 
 We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
-### Overview
+### Runtime Logs
 
-[Placeholder for dashboard description]
-
-Use this dashboard to:
-* Monitor overall AgentCore service health across runtime, memory, gateway, tools, and identity components.
-* Track invocations, latency, and error rates across all AgentCore resources.
-* Monitor resource usage including CPU and memory consumption.
-* Identify trends in agent execution activity and session counts.
-
-### Runtime Observability
-
-[Placeholder for dashboard description]
+The **Amazon Bedrock AgentCore - Runtime Logs** dashboard provides detailed insights into agent runtime execution by analyzing CloudWatch APPLICATION_LOGS and USAGE_LOGS. It tracks agent invocations, session activities, error patterns, and performance metrics at the runtime level.
 
 Use this dashboard to:
-* Monitor agent runtime invocations and session metrics.
-* Track InvokeAgentRuntime operation latency and performance.
-* Analyze system errors, user errors, and throttling events.
-* Monitor resource usage (vCPU-Hours and GB-Hours) for agent runtimes.
-* Track agent endpoint-level metrics and session durations.
+* Monitor agent runtime invocations by session ID, agent ID, and operation type.
+* Track InvokeAgentRuntime operation counts and identify high-volume agents.
+* Analyze error patterns including system errors, user errors, and error messages.
+* Monitor session-level metrics including session count, duration, and activity trends.
+* Track agent endpoint invocations and identify top agents by usage.
+* Analyze error distribution by agent ID and session to troubleshoot runtime issues.
 
-### Memory Operations
+### Memory Logs
 
-[Placeholder for dashboard description]
-
-Use this dashboard to:
-* Monitor memory event creation, retrieval, and deletion operations.
-* Track memory record operations including retrieve and list activities.
-* Analyze memory extraction and consolidation processes.
-* Monitor memory-related errors and invocation counts.
-* Track namespace-specific memory operations.
-
-### Gateway Performance
-
-[Placeholder for dashboard description]
+The **Amazon Bedrock AgentCore - Memory Logs** dashboard provides detailed insights into memory operations by analyzing CloudWatch APPLICATION_LOGS. It tracks memory event creation, retrieval, consolidation, and extraction processes at the session and namespace level.
 
 Use this dashboard to:
-* Monitor gateway invocations across different protocols (MCP, Lambda, OpenAPI).
-* Track tool invocations and search operations.
-* Analyze gateway latency, duration, and target execution time.
-* Monitor throttles, system errors, and user errors.
-* Track gateway usage by target type and operation.
+* Monitor memory operations including CreateEvent, GetEvent, DeleteEvent, and RetrieveMemoryRecords.
+* Track memory extraction and consolidation activities by session ID and namespace.
+* Analyze memory-related errors and troubleshoot memory operation failures.
+* Monitor memory event trends over time and identify usage patterns.
+* Track namespace-specific memory operations and session-level memory activities.
+* Identify high-volume memory operations and potential optimization opportunities.
 
-### Built-in Tools Monitoring
+### Gateway Logs
 
-[Placeholder for dashboard description]
-
-Use this dashboard to:
-* Monitor Code Interpreter and Browser tool invocations.
-* Track tool session creation, duration, and expiration.
-* Analyze tool-specific errors and throttling events.
-* Monitor resource usage for code interpreter and browser sessions.
-* Track browser user takeover metrics and duration.
-
-### Identity and Access
-
-[Placeholder for dashboard description]
+The **Amazon Bedrock AgentCore - Gateway Logs** dashboard provides detailed insights into gateway operations by analyzing CloudWatch APPLICATION_LOGS. It tracks MCP (Model Context Protocol) operations, tool invocations, gateway errors, and search activities.
 
 Use this dashboard to:
-* Monitor workload identity token fetch operations.
-* Track OAuth2 and API key credential provider operations.
-* Analyze identity-related errors and throttling events.
+* Monitor gateway invocations by target type (MCP, Lambda, OpenAPI) and protocol.
+* Track tool invocations and analyze tool usage patterns across sessions.
+* Analyze gateway errors including connection failures, timeout errors, and MCP-specific issues.
+* Monitor MCP operations such as ListTools, CallTool, ListResources, and ReadResource.
+* Track search operations and gateway target execution patterns.
+* Identify problematic gateways, tools, or sessions with high error rates.
+
+### Built-in Tools - Browser
+
+The **Amazon Bedrock AgentCore - Built-in Tools - Browser** dashboard provides detailed insights into browser tool operations by analyzing CloudWatch USAGE_LOGS. It tracks browser session creation, user takeover events, session duration, and browser-specific errors.
+
+Use this dashboard to:
+* Monitor browser tool invocations and session creation patterns.
+* Track browser user takeover events including takeover duration and end time.
+* Analyze browser session metrics including session count, duration, and expiration.
+* Monitor browser-specific errors and troubleshoot browser tool issues.
+* Track browser session trends over time and identify high-usage sessions.
+* Monitor browser resource usage and session lifecycle events.
+
+### Built-in Tools - Code Interpreter
+
+The **Amazon Bedrock AgentCore - Built-in Tools - Code Interpreter** dashboard provides detailed insights into code interpreter operations by analyzing CloudWatch USAGE_LOGS and APPLICATION_LOGS. It tracks code execution events, session lifecycle, error patterns, and interpreter-specific operations.
+
+Use this dashboard to:
+* Monitor code interpreter invocations and session creation patterns.
+* Track code execution events including execution count, duration, and error rates.
+* Analyze code interpreter session metrics including session count, duration, and expiration.
+* Monitor code interpreter errors and troubleshoot code execution issues.
+* Track file operations including file upload, download, and deletion activities.
+* Monitor code interpreter usage trends and identify high-volume sessions.
+
+### CloudTrail Audit
+
+The **Amazon Bedrock AgentCore - CloudTrail Audit** dashboard provides comprehensive visibility into CloudTrail audit events for all AgentCore API operations. It tracks user activities, API calls, authentication events, and error patterns across agent, memory, gateway, and identity resources.
+
+Use this dashboard to:
+* Monitor CloudTrail events by status (success/failure) and track overall API call patterns.
+* Identify top error codes and error messages from AgentCore API operations.
+* Track users, IAM roles, and source IPs associated with AgentCore activities.
+* Analyze event trends by event type, event name, and resource operations.
+* Monitor disruptive events such as CreateAgent, DeleteAgent, UpdateMemory, and gateway configuration changes.
+* Investigate security and compliance concerns related to AgentCore resource access.
+
+### Runtime Metrics
+
+The **Amazon Bedrock AgentCore - Runtime Metrics** dashboard provides CloudWatch metrics for agent runtime performance, resource utilization, and operational health. It complements the Runtime Logs dashboard with quantitative metrics data.
+
+Use this dashboard to:
+* Monitor agent runtime invocation counts and track usage trends over time.
+* Track InvokeAgentRuntime operation latency and identify performance bottlenecks.
+* Analyze system errors, user errors, and throttling events at the runtime level.
+* Monitor resource usage metrics including vCPU-Hours and GB-Hours for agent runtimes.
+* Track agent endpoint-level metrics and compare performance across different agents.
+* Monitor session count trends and identify capacity planning needs.
+
+### Memory Metrics
+
+The **Amazon Bedrock AgentCore - Memory Metrics** dashboard provides CloudWatch metrics for memory service performance, operation counts, and error rates. It complements the Memory Logs dashboard with quantitative metrics data.
+
+Use this dashboard to:
+* Monitor memory operation invocation counts by operation type (CreateEvent, GetEvent, RetrieveMemoryRecords).
+* Track memory operation latency and identify performance issues.
+* Analyze memory-related system errors, user errors, and throttling events.
+* Monitor memory resource usage and identify high-volume memory operations.
+* Track memory invocation trends over time and compare across different memory resources.
+* Monitor memory event creation and retrieval rates for capacity planning.
+
+### Gateway Metrics
+
+The **Amazon Bedrock AgentCore - Gateway Metrics** dashboard provides CloudWatch metrics for gateway performance, latency, and operational health. It complements the Gateway Logs dashboard with quantitative metrics data.
+
+Use this dashboard to:
+* Monitor gateway invocation counts by target type and track usage trends.
+* Track gateway operation latency, duration, and target execution time.
+* Analyze gateway throttles, system errors, and user errors by target type.
+* Monitor tool invocation metrics and compare performance across different tools.
+* Track gateway duration trends and identify performance bottlenecks.
+* Monitor gateway usage by target type (MCP, Lambda, OpenAPI) for capacity planning.
+
+### Built-in Tools - Browser Metrics
+
+The **Amazon Bedrock AgentCore - Built-in Tools - Browser Metrics** dashboard provides CloudWatch metrics for browser tool performance and operational health. It complements the Browser Logs dashboard with quantitative metrics data.
+
+Use this dashboard to:
+* Monitor browser tool invocation counts and track usage trends over time.
+* Track browser operation latency and identify performance issues.
+* Analyze browser-related system errors, user errors, and throttling events.
+* Monitor browser session duration metrics and session count trends.
+* Track browser takeover events and user takeover duration metrics.
+* Monitor browser resource usage for capacity planning and optimization.
+
+### Built-in Tools - Code Interpreter Metrics
+
+The **Amazon Bedrock AgentCore - Built-in Tools - Code Interpreter Metrics** dashboard provides CloudWatch metrics for code interpreter performance and operational health. It complements the Code Interpreter Logs dashboard with quantitative metrics data.
+
+Use this dashboard to:
+* Monitor code interpreter invocation counts and track usage trends over time.
+* Track code execution latency and identify performance bottlenecks.
+* Analyze code interpreter-related system errors, user errors, and throttling events.
+* Monitor session duration metrics and session count trends for code interpreter.
+* Track code execution duration and identify long-running code executions.
+* Monitor code interpreter resource usage for capacity planning and optimization.
+
+### Identity Metrics
+
+The **Amazon Bedrock AgentCore - Identity Metrics** dashboard provides CloudWatch metrics for workload identity operations, credential provider activities, and token fetch operations. It tracks identity-related performance, errors, and usage patterns.
+
+Use this dashboard to:
+* Monitor workload identity token fetch operations and invocation counts.
+* Track OAuth2 and API key credential provider operation metrics.
+* Analyze identity-related system errors, user errors, and throttling events.
 * Monitor resource access token fetch success and failure rates.
-* Track identity operations by workload identity and credential provider.
+* Track identity operation latency and identify authentication performance issues.
+* Monitor identity operations by workload identity ID and credential provider for troubleshooting.
 
 ## Create monitors for Amazon Bedrock AgentCore app
 
@@ -532,17 +631,6 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 ### Amazon Bedrock AgentCore alerts
 
 [Placeholder for monitors]
-
-| Name | Description | Alert Condition | Recover Condition |
-|:--|:--|:--|:--|
-| `Amazon Bedrock AgentCore - High Runtime Invocation Latency` | This alert is triggered when the average agent runtime invocation latency exceeds a configurable threshold. High latency can impact user experience and agent responsiveness. | Count > 5000 | Count < = 5000 |
-| `Amazon Bedrock AgentCore - High System Error Rate` | This alert is triggered when the number of system errors in AgentCore operations exceeds a configurable threshold. This could indicate infrastructure or service issues. | Count > 10 | Count < = 10 |
-| `Amazon Bedrock AgentCore - Memory Operation Failures` | This alert is triggered when memory operations (CreateEvent, GetEvent, RetrieveMemoryRecords) are failing at a high rate. This could indicate issues with memory resource configuration or data. | Count > 5 | Count < = 5 |
-| `Amazon Bedrock AgentCore - Gateway High Throttle Rate` | This alert is triggered when the number of throttled gateway requests exceeds a configurable threshold. This could indicate quota limits being reached or request patterns that need optimization. | Count > 10 | Count < = 10 |
-| `Amazon Bedrock AgentCore - Tool Session Timeout` | This alert is triggered when built-in tool sessions (Code Interpreter or Browser) are timing out frequently without proper termination. This could indicate lifecycle hook issues. | Count > 3 | Count < = 3 |
-| `Amazon Bedrock AgentCore - Identity Token Fetch Failures` | This alert is triggered when workload identity or resource access token fetch operations are failing. This could indicate IAM policy issues or credential provider configuration problems. | Count > 5 | Count < = 5 |
-| `Amazon Bedrock AgentCore - High Resource Usage` | This alert is triggered when agent runtime resource consumption (vCPU or memory) exceeds expected thresholds. This could indicate resource-intensive operations or potential optimization opportunities. | Count > 100 | Count < = 100 |
-| `Amazon Bedrock AgentCore - Agent Session Count Spike` | This alert is triggered when there is a sudden spike in agent sessions, which could indicate unexpected load or potential issues. | Count > 1000 | Count < = 1000 |
 
 ## Upgrade/Downgrade the Amazon Bedrock AgentCore app (Optional)
 
