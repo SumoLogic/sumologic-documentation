@@ -23,7 +23,7 @@ This documentation will guide you through the installation process using the sof
     - **Windows**
       <img src={useBaseUrl('img/send-data/Chef-windows.png')} style={{border: '1px solid gray'}} alt="puppet.png" />
 8. Follow auto generated steps to install the collector using Chef.
-9. Once steps are completed, click **Done** to review collector on OpenTelemetry Collection page.
+9. Once steps are completed, click **Done** to review the collector on the OpenTelemetry Collection page.
 10. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
 
 If you choose to close this Source template creation screen, you can navigate back. [**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Source Template**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. 
