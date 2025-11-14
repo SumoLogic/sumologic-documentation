@@ -68,7 +68,7 @@ The Amazon Bedrock AgentCore app uses the following logs and metrics:
 ### Sample CloudWatch logs
 
 <details>
-<summary>Runtime Application Logs - Click to expand</summary>
+<summary>Runtime Application Logs</summary>
 
 ```json title="CloudWatch Runtime Application Logs"
 {
@@ -92,7 +92,7 @@ The Amazon Bedrock AgentCore app uses the following logs and metrics:
 </details>
 
 <details>
-<summary>Memory Application Logs - Click to expand</summary>
+<summary>Memory Application Logs</summary>
 
 ```json title="CloudWatch Memory Application Logs"
 {
@@ -112,7 +112,7 @@ The Amazon Bedrock AgentCore app uses the following logs and metrics:
 </details>
 
 <details>
-<summary>Gateway Application Logs - Click to expand</summary>
+<summary>Gateway Application Logs</summary>
 
 ```json title="CloudWatch Gateway Application Logs"
 {
@@ -133,7 +133,7 @@ The Amazon Bedrock AgentCore app uses the following logs and metrics:
 </details>
 
 <details>
-<summary>Built-in Tools Code Interpreter Application Logs - Click to expand</summary>
+<summary>Built-in Tools Code Interpreter Application Logs</summary>
 
 ```json title="CloudWatch Built-in Tools Code Interpreter Application Logs"
 {
@@ -180,7 +180,7 @@ The Amazon Bedrock AgentCore app uses the following logs and metrics:
 </details>
 
 <details>
-<summary>Usage Logs - Click to expand</summary>
+<summary>Usage Logs</summary>
 
 ```json title="CloudWatch Usage Logs"
 {
@@ -292,11 +292,12 @@ account=* region=* namespace=aws/bedrock/agentcore metric=latency operation=Invo
 
 Sumo Logic supports collecting metrics using two source types:
 
-* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended); or
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended) or
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
+When you configure the source:
 * Namespace for **Amazon Bedrock AgentCore** Service is **AWS/Bedrock-AgentCore**.
-   * ​​​**Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. Metrics can be queried via the "account field".
+* ​​​**Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. Metrics can be queried via the "account field".
 
 ### Collecting Amazon Bedrock AgentCore CloudTrail logs
 
@@ -318,7 +319,7 @@ Sumo Logic supports collecting metrics using two source types:
 
 ### Collecting Amazon Bedrock AgentCore CloudWatch logs
 
-To enable Amazon Bedrock AgentCore CloudWatch Logs, follow the steps mentioned in [AWS Documentation](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html).
+To enable Amazon Bedrock AgentCore CloudWatch Logs, follow the steps mentioned in [AWS documentation](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html).
 
 :::note
 Ensure that when configuring CloudWatch Logs, the log group names follow these patterns:
@@ -332,16 +333,15 @@ Ensure that when configuring CloudWatch Logs, the log group names follow these p
 :::
 
 Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. You can choose either of them to collect logs:
+- **AWS Kinesis Firehose for Logs**. Configure an [AWS Kinesis Firehose for Logs](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource) (recommended) or
+- **Lambda Log Forwarder**. Configure a collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo Logic provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/), or to configure collection without using CloudFormation see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function/).
 
-- **AWS Kinesis Firehose for Logs**. Configure an [AWS Kinesis Firehose for Logs](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource) (Recommended); or
-- **Lambda Log Forwarder**. Configure a collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo Logic provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/) or configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function/).
-
-- While configuring the CloudWatch log source, the following fields can be added to the source:
+While configuring the CloudWatch log source, the following fields can be added to the source:
    - Add an **account** field and assign it a value which is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the **account** field.
    - Add a **region** field and assign it the value of the respective AWS region where the **Bedrock AgentCore** exists.
    - Add an **accountId** field and assign it the value of the respective AWS account ID that is being used.
 
-   <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" />
+   <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" style={{border: '1px solid gray'}} width="400" /> 
 
 ### Configure fields in field schema
 
@@ -412,7 +412,7 @@ Scope (Specific Data): account=* region=* _sourcehost=/aws/vendedlogs/bedrock-ag
 
 ### Centralized AWS CloudTrail logs collection
 
-In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
+In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account friendly name/alias. Create it if not already present / update it as required.
 
 ```sql
 Rule Name: AWS Accounts
@@ -420,7 +420,7 @@ Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 ```
 
-**Parse Expression**:
+#### Parse expression
 
 Enter a parse expression to create an "account" field that maps to the alias you set for each sub-account. For example, if you used the `"dev"` alias for an AWS account with ID `"123456789012"` and the `"prod"` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
@@ -435,7 +435,7 @@ Enter a parse expression to create an "account" field that maps to the alias you
 
 ### Centralized CloudWatch logs collection
 
-In case you have a centralized collection of CloudWatch logs and are ingesting them from all accounts into a single Sumo Logic CloudWatch log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
+In case you have a centralized collection of CloudWatch logs and are ingesting them from all accounts into a single Sumo Logic CloudWatch log source, create the following Field Extraction Rule to map a proper AWS account friendly name/alias. Create it if not already present, or update it as required.
 
 ```sql
 Rule Name: AWS Accounts
@@ -443,7 +443,7 @@ Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudwatch/logs
 ```
 
-**Parse Expression**:
+#### Parse expression
 
 Enter a parse expression to create an "account" field that maps to the alias you set for each sub-account. For example, if you used the `"dev"` alias for an AWS account with ID `"123456789012"` and the `"prod"` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
