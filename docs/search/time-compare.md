@@ -77,7 +77,7 @@ Then, from the **Time Compare** button, select **Custom**, and set the **Cus
 
 From the results in the **Aggregates** tab, you can select the line chart icon, and display your results as:
 
-![compare example.png](/img/search/timecompare/compare-example.png)
+<img src={useBaseUrl('img/search/timecompare/compare-example.png')} alt="Compare example" style={{border: '1px solid gray'}} width="800" />
 
 For more compare operator examples, see [Examples](./time-compare.md).
 
@@ -134,7 +134,7 @@ The following query returns results from the present, along with results from ev
 
 Which can be displayed visually as:
 
-![compare multiple diagram](/img/reuse/query-search/compare_multiple_diagram.png)
+<img src={useBaseUrl('img/reuse/query-search/compare_multiple_diagram.png')} alt="Compare multiple diagram" style={{border: '1px solid gray'}} width="800" />
 
 The following query returns result from the present with results from the same day in the last 3 weeks. So if today is Monday, then this query will show a result for today and the last three Mondays.
 
@@ -158,7 +158,7 @@ The following query returns results from the present along with the average of t
 
 Which can be displayed visually as:
 
-![compare aggregate](/img/reuse/query-search/compare_aggregate_diagram.png)
+<img src={useBaseUrl('img/reuse/query-search/compare_aggregate_diagram.png')} alt="Compare aggregate" style={{border: '1px solid gray'}} width="800" />
 
 Other examples:
 
@@ -239,11 +239,11 @@ error
 
 The query returns results from both today and two days ago, with each day in its separate column. Today's results are represented by `_count`.
 
-![Count-2d.png](/img/search/timecompare/Count-2d.png)
+<img src={useBaseUrl('img/search/timecompare/Count-2d.png')} alt="Count 2d" style={{border: '1px solid gray'}} width="400" />
 
 Create a line chart to visualize the results.
 
-![count-2dLineChart.png](/img/search/timecompare/count-2dLineChart.png)
+<img src={useBaseUrl('img/search/timecompare/count-2dLineChart.png')} alt="Count 2d Lin Chart>" style={{border: '1px solid gray'}} width="800" />
 
 Using the multiple comparison feature, you can compare the number of logs against every ten minutes of the past hour:
 
@@ -256,11 +256,11 @@ _sourceHost = prod
 
 Each 10-minute period produces its own column in the output table:
 
-![tenminute.png](/img/search/timecompare/tenminute.png)
+<img src={useBaseUrl('img/search/timecompare/tenminute.png')} alt="Ten minute period" style={{border: '1px solid gray'}} width="800" />
 
 Create a line chart to visualize the results.  
 
-![TenMinuteLIneChart.png](/img/search/timecompare/TenMinuteLIneChart.png)
+<img src={useBaseUrl('img/search/timecompare/TenMinuteLIneChart.png')} alt="Ten Minute LIne Chart" style={{border: '1px solid gray'}} width="800" />
 
 Alternatively, you can compare against the average of all the ten minute periods:
 
@@ -271,11 +271,11 @@ _sourceHost = prod
 | compare timeshift 10m 5 avg
 ```
 
-![TenMinAvg.png](/img/search/timecompare/TenMinAvg.png)
+<img src={useBaseUrl('img/search/timecompare/TenMinAvg.png')} alt="Ten Min Avg" style={{border: '1px solid gray'}} width="400" />
 
 Create a line chart to visualize the results.  
 
-![TenMinAvgLineChart.png](/img/search/timecompare/TenMinAvgLineChart.png)
+<img src={useBaseUrl('img/search/timecompare/TenMinAvgLineChart.png')} alt="Ten Min Avg Line Chart" style={{border: '1px solid gray'}} width="800" />
 
 ### Compare categorical data parsed from logs
 
@@ -290,11 +290,11 @@ Use compare to analyze the change in delays on different `_sourceHosts` using pa
 
 This example computes the average delay per `_sourceHost`, and compares with results from 30 minutes ago.
 
-![DelayAvg.png](/img/search/timecompare/DelayAvg.png)
+<img src={useBaseUrl('img/search/timecompare/DelayAvg.png')} alt="Delay Avg" style={{border: '1px solid gray'}} width="500" />
 
 These results would create a line chart such as the following.
 
-![DelayLineChart.png](/img/search/timecompare/DelayLineChart.png)
+<img src={useBaseUrl('img/search/timecompare/DelayLineChart.png')} alt="Delay Line Chart" style={{border: '1px solid gray'}} width="800" />
 
 ### Compare after a Transpose operation
 
@@ -327,7 +327,7 @@ You can then use this query to build the scheduled search email alert.
 
 1. On the Search page, under the query box, click **Save As**.
 1. Click **Schedule this search**.
-1. For **Run frequency**, select the time period at which you want to schedule this search. For this alert, we have selected **Every 2 Hours**.<br/>  ![Save Item.png](/img/search/timecompare/Save-Item.png)
+1. For **Run frequency**, select the time period at which you want to schedule this search. For this alert, we have selected **Every 2 Hours**.<br/><img src={useBaseUrl('img/search/timecompare/Save-Item.png')} alt="Save Item" style={{border: '1px solid gray'}} width="400" />
 1. For **Send notification**, select **if the following condition is met**.
 1. For **Alert condition**, select **Greater than >,** and for **Number of results **enter **5**.
 1. For **Alert Type**, select **Email**.

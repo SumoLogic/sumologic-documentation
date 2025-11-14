@@ -98,9 +98,7 @@ The URL and supported payload are different based on the version of the PagerDut
      Do not update the `routing_key`, `event_action`, and `dedup_key` fields, otherwise recovery notifications will not be generated.
      :::
 1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
-1. Click **Save**.
-
-     ![PagerDuty default payload v2.png](/img/connection-and-integration/v2.png)
+1. Click **Save**.<br/><img src={useBaseUrl('img/connection-and-integration/v2.png')} alt="PagerDuty default payload v2" style={{border: '1px solid gray'}} width="700" />
 
 ### Events API v1
 
@@ -153,8 +151,6 @@ The URL and supported payload are different based on the version of the PagerDut
      :::note
      Do not update the `service_key`, `event_type`, and `incident_key` fields, otherwise recovery notifications will not be generated.
      :::
-1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
-
-     ![PagerDuty default payload.png](/img/connection-and-integration/PagerDuty-default-payload.png)
+1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).<br/><img src={useBaseUrl('img/connection-and-integration/PagerDuty-default-payload.png')} alt="PagerDuty default payload" style={{border: '1px solid gray'}} width="700" />
 
 1. Click **Save**.
