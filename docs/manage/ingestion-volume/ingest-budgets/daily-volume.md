@@ -79,7 +79,7 @@ Use the **Ingest Budgets** page to manage your ingest budgets.
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Ingest Budgets page, in the main Sumo Logic menu select **Manage Data > Collection > Ingest Budgets**.
 
-![metadata ingest budgetspage.png](/img/manage/ingestion-volume/metadata-ingest-budgets-page.png)
+<img src={useBaseUrl('img/manage/ingestion-volume/metadata-ingest-budgets-page.png')} alt="Metadata ingest budgets page" style={{border: '1px solid gray'}} width="800" />
 
 The page displays the following information:
 
@@ -94,7 +94,7 @@ At the top of the page, you can click **+ Add Budget** to [create a new ingest
 
 For the ingest budgets listed, select a row to view its details. A details pane appears to the right of the table.
 
-![v2 IB pane.png](/img/manage/ingestion-volume/ingest-budget-list.png)
+<img src={useBaseUrl('img/manage/ingestion-volume/ingest-budget-list.png')} alt="Ingest budgets pane" style={{border: '1px solid gray'}} width="400" />
 
 In the details pane you can do the following to the selected ingest
 budget:
@@ -143,13 +143,13 @@ You can manually reset a budget at any time to set its capacity utilization tra
 #### Edit ingest budget
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. 
-1. In the table find the ingest budget you want to edit and click the edit icon ![pencil edit icon.png](/img/manage/ingestion-volume/pencil-edit-icon.png) on the right of the row or click the row and then click the edit icon in the details panel.
+1. In the table find the ingest budget you want to edit and click the edit icon <img src={useBaseUrl('img/manage/ingestion-volume/pencil-edit-icon.png')} alt="Pencil edit icon" width="25" /> on the right of the row or click the row and then click the edit icon in the details panel.
 1. Make your changes and click **Update**.
 
 #### Delete ingest budget
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. 
-1. In the table find the ingest budget you want to delete and click the delete icon ![delete trash icon.png](/img/manage/ingestion-volume/delete-trash-icon.png) on the right of the row or click the row and then click the delete icon in the details panel.
+1. In the table find the ingest budget you want to delete and click the delete icon <img src={useBaseUrl('img/manage/ingestion-volume/delete-trash-icon.png')} alt="Delete trash icon" width="25" /> on the right of the row or click the row and then click the delete icon in the details panel.
 1. You will get a confirmation prompt, ensure that you are deleting the desired ingest budget and then click **Delete**.
 
 ### Budget assignment examples

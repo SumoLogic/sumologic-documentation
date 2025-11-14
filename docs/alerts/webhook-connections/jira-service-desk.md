@@ -22,7 +22,7 @@ To send webhook alerts to Jira Service Desk you need to include a Basic Authenti
    ```bash
    curl -v https://mysite.atlassian.net --user <me@example.com>:<my-api-token>
    ```
-1. Your response should look like the following image. You'll need the **Authorization** value when configuring the connection in Sumo Logic.<br/> ![Atlassian Basic Authentication.png](/img/connection-and-integration/Atlassian-Basic-Authentication.png)
+1. Your response should look like the following image. You'll need the **Authorization** value when configuring the connection in Sumo Logic.<br/><img src={useBaseUrl('img/connection-and-integration/Atlassian-Basic-Authentication.png')} alt="Atlassian Basic Authentication" style={{border: '1px solid gray'}} width="800" />
 
 ## Configuration in Sumo Logic
 
@@ -39,7 +39,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the **Connections** page click the **+** icon at the top-right of the table.
-1. Select the **Jira** option. In the **Create Jira Connection** dialog, fill out connection information.<br/> ![Jira webhook button.png](/img/connection-and-integration/Jira-webhook-button.png)
+1. Select the **Jira** option. In the **Create Jira Connection** dialog, fill out connection information.<br/><img src={useBaseUrl('img/connection-and-integration/Jira-webhook-button.png')} alt="Jira webhook button" style={{border: '1px solid gray'}} width="150" />
 1. Enter a **Name** for the Connection.  
 1. (Optional) Enter a **Description** for the Connection.
 1. Enter a **URL** from the Jira REST API to create issues. For example, to create an issue:

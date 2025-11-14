@@ -4,6 +4,7 @@ title: Influence the LogReduce Outcome
 description: You can influence the algorithm by editing a signature to make the results more general, or see more granular results by splitting a signature.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The algorithm used for the LogReduce&reg; operator uses fuzzy logic and soft matching to group messages with similar structures and common repeated text strings into **Signatures**, providing a quick investigative view, or snapshot, for the keywords or time range provided. LogReduce data is based on the data available to the algorithm during the time range of your search.
 
@@ -13,26 +14,20 @@ The following icons allow you to change the results of a LogReduce report:
 
 | Icon | Action |
 | :-- | :-- |
-| ![Promote .png](/img/search/logreduce/Promote.png) | Promote a signature to the top position of the **Signatures** tab. |
-| ![Demote.png](/img/search/logreduce/Demote.png) | Demote a signature to move it to the bottom of the last page of the **Signatures** tab. |
-| ![Split.png](/img/search/logreduce/Split.png) | Split a signature into multiple signature. |
-| ![Edit.png](/img/search/logreduce/Edit.png) | Edit the signature. |
-| ![Undo.png](/img/search/logreduce/Undo.png) | Undo the last action or step back through the history of changes. |
-| ![Redo.png](/img/search/logreduce/Redo.png) | Redo the last action. Repeat to redo the history of undos. |
+| <img src={useBaseUrl('img/search/logreduce/Promote.png')} alt="Promote" width="50" />| Promote a signature to the top position of the **Signatures** tab. |
+| <img src={useBaseUrl('img/search/logreduce/Demote.png')} alt="Demote" width="50" />| Demote a signature to move it to the bottom of the last page of the **Signatures** tab. |
+| <img src={useBaseUrl('img/search/logreduce/Split.png')} alt="Split" width="50" />| Split a signature into multiple signature. |
+| <img src={useBaseUrl('img/search/logreduce/Edit.png')} alt="Edit" width="50" />| Edit the signature. |
+| <img src={useBaseUrl('img/search/logreduce/Undo.png')} alt="Undo" width="50" />| Undo the last action or step back through the history of changes. |
+| <img src={useBaseUrl('img/search/logreduce/Redo.png')} alt="Redo" width="50" />| Redo the last action. Repeat to redo the history of undos. |
 
 ## Promoting or Demoting a LogReduce Signature
 
 Relevance is one factor in LogReduce, but it is a global factor. Members of your org can promote and demote signatures related to your Search. 
 
 To influence the relevance of signatures, select the **Signatures** tab and:
-
-* **Promote** a signature by clicking the Thumbs-Up icon for a signature to indicate to Sumo Logic that the data included in the signature is relevant to you. This feedback is taken into consideration when you run LogReduce the next time.   
-
-    ![LogReducePromote.png](/img/search/logreduce/LogReducePromote.png)
-
-* **Demote** a signature by clicking the Thumbs-Down icon for a signature to indicate that this signature is not relevant to you.  
-
-    ![LogReduceDemote.png](/img/search/logreduce/LogReduceDemote.png)
+* **Promote** a signature by clicking the Thumbs-Up icon for a signature to indicate to Sumo Logic that the data included in the signature is relevant to you. This feedback is taken into consideration when you run LogReduce the next time.<br/><img src={useBaseUrl('img/search/logreduce/LogReducePromote.png')} alt="LogReduce Promote" style={{border: '1px solid gray'}} width="800" />
+* **Demote** a signature by clicking the Thumbs-Down icon for a signature to indicate that this signature is not relevant to you.<br/><img src={useBaseUrl('img/search/logreduce/LogReduceDemote.png')} alt="LogReduce Demote" style={{border: '1px solid gray'}} width="800" />
 
 If no one in your account has ever promoted or demoted a signature the default [relevance score](understand-the-logreduce-relevance-column.md) calculated by Sumo Logic is displayed. If you have never promoted or demoted a signature but someone else in your account has, then you will see the global setting for this signature. If you have promoted or demoted a signature, then you will see your personally calculated relevance score.
 
@@ -50,10 +45,10 @@ After you split a signature, the position of the signatures may move (one may ev
 
 For example, in your Windows logs you've selected a signature to split. The Category shouldn't be generic; by splitting the signature you should get more specific results.
 
-![LogReduceSplit.png](/img/search/logreduce/LogReduceSplit.png)
+<img src={useBaseUrl('img/search/logreduce/LogReduceSplit.png')} alt="LogReduce Split" style={{border: '1px solid gray'}} width="800" />
 
 After splitting, you will see that each signature has specific data:
 
-![SplitResult.png](/img/search/logreduce/SplitResult.png)
+<img src={useBaseUrl('img/search/logreduce/SplitResult.png')} alt="Split Result" style={{border: '1px solid gray'}} width="800" />
 
  
