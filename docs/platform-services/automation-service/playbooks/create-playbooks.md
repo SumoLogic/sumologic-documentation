@@ -161,7 +161,7 @@ Task variables provide a useful way to track who is assigned to a task and other
 
 Perform the following steps to use the variables in nodes that come after the task node in the playbook:
 1. Let's say you create a task node:<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example.png')} style={{border:'1px solid gray'}} alt="Example task node followed by an action node" width="500"/>
-1. Open a node that comes later in playbook than the task node. In our example, we'll select the node titled **Send email about task status**.
+1. Open a node that comes later in the playbook than the task node. In our example, we'll select the node titled **Send email about task status**.
 1. In the **Edit Node** dialog, click either a gear icon <img src={useBaseUrl('img/platform-services/automation-service/gear-icon.png')} style={{border:'1px solid gray'}} alt="Gear icon" width="20"/> or a placeholder icon <img src={useBaseUrl('img/platform-services/automation-service/insert-placeholder-icon.png')} style={{border:'1px solid gray'}} alt="Insert placeholder icon" width="20"/>:<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example-edit-node.png')} style={{border:'1px solid gray'}} alt="Gear icon and insert placeholder icons highlighted on the Edit Note dialog" width="500"/>
 1. From the list of available values from previous actions, click the name of the task node. Then select the variable you want to use:<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example-node-values.png')} style={{border:'1px solid gray'}} alt="Task variables" width="500"/>
 1. Insert the variables as needed in your node. In the following **Send email about task status** node example, the task variables are used for the email subject and in the email body:<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example-variables.png')} style={{border:'1px solid gray'}} alt="Task variables in a node" width="500"/>
@@ -187,9 +187,9 @@ Following is an example of a user choice node. Note the node branches to the nex
 
 <img src={useBaseUrl('img/cse/automations-example-user-choice-node.png')} style={{border:'1px solid gray'}} alt="Example user choice node" width="500"/>
 
-#### User choice responder variables
+#### User choice variables
 
-User choice responder variables provide a useful way to track who responded to user choice options, and let you interact with the responders in subsequent playbook actions.
+User choice variables provide a useful way to track who responded to user choice options, and let you interact with the responders in subsequent playbook actions.
 
 Following are the available variables that identify the person who responded to a user choice:
 * `responder.id`. The user ID of the responder.
