@@ -1009,6 +1009,7 @@ module.exports = {
             'manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account',
           ],
         },
+        'manage/manage-subscription/collection-overview',
         'manage/manage-subscription/manage-billing-information',
         'manage/manage-subscription/organization-usage-limits',
         'manage/manage-subscription/scan-budgets',
