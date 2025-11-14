@@ -6,6 +6,9 @@ description: Learn about our legacy Cloud SOAR product offering.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CloudSoarEndOfSale from '../../reuse/cloud-soar-end-of-sale.md';
+
+<CloudSoarEndOfSale/>
 
 :::info
 The articles in this section only apply to organizations having a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`. For documentation for our latest Cloud SOAR SaaS version, see [Cloud SOAR](/docs/cloud-soar/).

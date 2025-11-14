@@ -5,6 +5,9 @@ sidebar_label: Menus
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CloudSoarEndOfSale from '../reuse/cloud-soar-end-of-sale.md';
+
+<CloudSoarEndOfSale/>
 
 This article describes the menus and navigation options for Cloud SOAR.
 
