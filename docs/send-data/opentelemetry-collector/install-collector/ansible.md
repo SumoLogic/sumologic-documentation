@@ -18,7 +18,7 @@ This documentation will guide you through the installation process using the sof
 6. Under **Download module in to your repository**, copy, paste, and run the command on the terminal to download the zip package.
 7. Follow the auto-generated steps to install the collector using Ansible.
    :::note
-   These steps are supported on both Linux and Windows Operating Systems.
+   These steps are supported on both Linux and Windows operating systems.
    :::
 8. Once steps are completed, click **Done** to review the collector on the OpenTelemetry Collection page.
 9. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
