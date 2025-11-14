@@ -7,7 +7,7 @@ description: Monitor all the collectors associated with the child orgs in single
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Collection Overview page provides a centralized view of all child org level collectors within your parent org. It enables all parent users to monitor collectors (Installed, Hosted, and OpenTelemetry) and sources across each child organization from a single interface. Additonally, this also helps you to identify and review collector health events, including stopped or inactive collectors.
+The Collection Overview page provides a centralized view of all child org level collectors within your parent org. It enables all parent users to monitor collectors (Installed, Hosted, and OpenTelemetry) and sources across each child organization from a single interface. Additionally, this also helps you to identify and review collector health events, including stopped or inactive collectors.
 
 To view collector details at child org level, perform the following steps:
 
