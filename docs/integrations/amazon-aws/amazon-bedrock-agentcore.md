@@ -478,6 +478,24 @@ As part of the app installation process, the following fields will be created by
 
 We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
+### Overview
+
+The **Amazon Bedrock AgentCore - Overview** dashboard provides a high-level overview of the entire Amazon Bedrock AgentCore environment, combining metrics and logs to provide comprehensive visibility across Runtime, Gateway, Memory, Code Interpreter, and Browser services. This dashboard serves as a central monitoring hub for all AgentCore operations.
+
+Use this dashboard to:
+* Monitor total invocations, errors, average latency, and active sessions across all AgentCore services.
+* Track resource usage including total CPU (vCPU-Hours) and memory (GB-Hours) consumption.
+* Analyze throttling events and system errors indicating service health issues.
+* View invocation trends by operation and identify usage patterns over time.
+* Examine error distribution by type (System Errors, User Errors, Throttles) and operation.
+* Monitor CPU and memory usage trends segmented by service (Runtime, Gateway, Memory, Tools).
+* Identify top 15 active resources by type and ID based on activity count.
+* Track Code Interpreter and Browser tool usage including resource consumption metrics.
+* Visualize invocations, errors, and throttles distribution by operation using pie charts.
+* Compare errors trend across different operations over time.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-AgentCore-Overview.png')} alt="Amazon Bedrock AgentCore dashboard" style={{border: '1px solid gray'}} />
+
 ### Runtime Logs
 
 The **Amazon Bedrock AgentCore - Runtime Logs** dashboard provides detailed insights into agent runtime execution by analyzing CloudWatch APPLICATION_LOGS and USAGE_LOGS. It tracks agent invocations, session activities, error patterns, and performance metrics at the runtime level.
@@ -490,6 +508,8 @@ Use this dashboard to:
 * Track agent endpoint invocations and identify top agents by usage.
 * Analyze error distribution by agent ID and session to troubleshoot runtime issues.
 
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-AgentCore-Runtime-Logs.png')} alt="Amazon Bedrock AgentCore dashboard" style={{border: '1px solid gray'}} />
+
 ### Memory Logs
 
 The **Amazon Bedrock AgentCore - Memory Logs** dashboard provides detailed insights into memory operations by analyzing CloudWatch APPLICATION_LOGS. It tracks memory event creation, retrieval, consolidation, and extraction processes at the session and namespace level.
@@ -501,6 +521,9 @@ Use this dashboard to:
 * Monitor memory event trends over time and identify usage patterns.
 * Track namespace-specific memory operations and session-level memory activities.
 * Identify high-volume memory operations and potential optimization opportunities.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-AgentCore-Memory-Logs.png')} alt="Amazon Bedrock AgentCore dashboard" style={{border: '1px solid gray'}} />
+
 
 ### Gateway Logs
 
@@ -630,7 +653,14 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Amazon Bedrock AgentCore alerts
 
-[Placeholder for monitors]
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Amazon Bedrock AgentCore - Throttling Events Detected` | This alert is triggered when throttling events across AgentCore operations exceed a threshold, indicating quota exhaustion or capacity constraints. Sustained throttling degrades user experience and signals need for capacity scaling. | Count > 20 | Count < = 20 |
+| `Amazon Bedrock AgentCore - Code Interpreter Execution Failures` | This alert is triggered when Code Interpreter invocation errors exceed a threshold. High error rates may indicate malicious code attempts, sandbox escape attempts, or critical runtime failures requiring immediate security investigation. | Count > 20 | Count < = 20 |
+| `Amazon Bedrock AgentCore - Gateway Request Failures` | This alert is triggered when Gateway errors exceed a threshold, preventing tool invocation and MCP protocol communication. Gateway failures block agents from accessing external tools and APIs, causing complete workflow breakage. | Count > 20 | Count < = 20 |
+| `Amazon Bedrock AgentCore - High System Errors` | This alert is triggered when system errors across AgentCore components exceed a threshold, indicating infrastructure failures or service degradation. System errors are non-user-caused and suggest platform instability requiring immediate investigation. | Count > 50 | Count < = 50 |
+| `Amazon Bedrock AgentCore - CloudTrail Suspicious Activity` | This alert is triggered when failed API calls and error patterns in CloudTrail exceed a threshold from the same source IP or user, indicating potential unauthorized access attempts or security issues. | Count > 10 | Count < = 10 |
+| `Amazon Bedrock AgentCore - High Average Operation Latency` | This alert is triggered when average latency across AgentCore operations exceeds a configurable threshold in milliseconds. High latency directly impacts user experience and can lead to timeouts and failed operations. | Count > 10000 | Count < = 10000 |
 
 ## Upgrade/Downgrade the Amazon Bedrock AgentCore app (Optional)
 
