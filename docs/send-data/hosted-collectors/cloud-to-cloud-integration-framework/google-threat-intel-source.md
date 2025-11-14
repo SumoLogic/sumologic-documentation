@@ -63,7 +63,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | apiKey | String | Yes | `null` | API key of your account. |  |
-| userSourceId | String | GoogleThreatIntelligence | `null` | The Sumo namespace in which the indicators will be stored. |  |
+| userSourceId | String | GoogleThreatIntelligence | `null` | The Sumo Logic namespace in which the indicators will be stored. |  |
 | pollingIntervalMin | Integer | Yes | 1 hour | Time interval (in mins) after which the source will check for new data. <br/>Default: 1 hour <br/>Minimum: 1 hour <br/>Maximum: 12 hours |  |
 
 ### JSON example
