@@ -537,9 +537,12 @@ Use this dashboard to:
 * Track search operations and gateway target execution patterns.
 * Identify problematic gateways, tools, or sessions with high error rates.
 
-### Built-in Tools - Browser
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-AgentCore-Gateway-Logs.png')} alt="Amazon Bedrock AgentCore dashboard" style={{border: '1px solid gray'}} />
 
-The **Amazon Bedrock AgentCore - Built-in Tools - Browser** dashboard provides detailed insights into browser tool operations by analyzing CloudWatch USAGE_LOGS. It tracks browser session creation, user takeover events, session duration, and browser-specific errors.
+
+### Built-in Tools - Browser Logs
+
+The **Amazon Bedrock AgentCore - Built-in Tools - Browser Logs** dashboard provides detailed insights into browser tool operations by analyzing CloudWatch USAGE_LOGS. It tracks browser session creation, user takeover events, session duration, and browser-specific errors.
 
 Use this dashboard to:
 * Monitor browser tool invocations and session creation patterns.
@@ -549,9 +552,11 @@ Use this dashboard to:
 * Track browser session trends over time and identify high-usage sessions.
 * Monitor browser resource usage and session lifecycle events.
 
-### Built-in Tools - Code Interpreter
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-AgentCore-Built-in-Tools-Browser-Logs.png')} alt="Amazon Bedrock AgentCore dashboard" style={{border: '1px solid gray'}} />
 
-The **Amazon Bedrock AgentCore - Built-in Tools - Code Interpreter** dashboard provides detailed insights into code interpreter operations by analyzing CloudWatch USAGE_LOGS and APPLICATION_LOGS. It tracks code execution events, session lifecycle, error patterns, and interpreter-specific operations.
+### Built-in Tools - Code Interpreter Logs
+
+The **Amazon Bedrock AgentCore - Built-in Tools - Code Interpreter Logs** dashboard provides detailed insights into code interpreter operations by analyzing CloudWatch USAGE_LOGS and APPLICATION_LOGS. It tracks code execution events, session lifecycle, error patterns, and interpreter-specific operations.
 
 Use this dashboard to:
 * Monitor code interpreter invocations and session creation patterns.
@@ -560,6 +565,8 @@ Use this dashboard to:
 * Monitor code interpreter errors and troubleshoot code execution issues.
 * Track file operations including file upload, download, and deletion activities.
 * Monitor code interpreter usage trends and identify high-volume sessions.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-AgentCore-Built-in-Tools-Code-Interpreter-Logs.png')} alt="Amazon Bedrock AgentCore dashboard" style={{border: '1px solid gray'}} />
 
 ### CloudTrail Audit
 
@@ -572,6 +579,8 @@ Use this dashboard to:
 * Analyze event trends by event type, event name, and resource operations.
 * Monitor disruptive events such as CreateAgent, DeleteAgent, UpdateMemory, and gateway configuration changes.
 * Investigate security and compliance concerns related to AgentCore resource access.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-Agentcore-Cloudtrail-Audit.png')} alt="Amazon Bedrock AgentCore dashboard" style={{border: '1px solid gray'}} />
 
 ### Runtime Metrics
 
