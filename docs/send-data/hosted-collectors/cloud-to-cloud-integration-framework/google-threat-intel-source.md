@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/Google-Threat-Intel.png')} alt="icon" width="50"/>
 
-The Sumo Logic source for Google Threat Intel enables you to ingest the indicator data from Google Threat Intelligence API and send it to Sumo as STIX threat indicators. This integration elevates the value of threat hunting by providing tailored risk profiles, including actors, campaigns, and malware families, to enable proactive threat tracking and mitigation.
+The Sumo Logic source for Google Threat Intel enables you to ingest the indicator data from the Google Threat Intelligence API and send it to Sumo Logic as STIX threat indicators. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).This integration elevates the value of threat hunting by providing tailored risk profiles, including actors, campaigns, and malware families, to enable proactive threat tracking and mitigation.
 
 ## Data collected
 
