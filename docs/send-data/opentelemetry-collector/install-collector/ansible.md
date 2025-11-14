@@ -20,7 +20,7 @@ This documentation will guide you through the installation process using the sof
    :::note
    These steps are supported on both Linux and Windows Operating Systems.
    :::
-8. Once steps are completed, click **Done** to review collector on OpenTelemetry Collection page.
+8. Once steps are completed, click **Done** to review the collector on the OpenTelemetry Collection page.
 9. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
 
 If you choose to close this Source template creation screen, you can navigate back. [**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Source Template**.   <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
