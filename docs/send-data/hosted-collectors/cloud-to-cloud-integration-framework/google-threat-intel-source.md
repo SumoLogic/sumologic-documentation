@@ -5,7 +5,7 @@ sidebar_label: Google Threat Intel
 tags:
   - cloud-to-cloud
   - google-threat-intel
-description: Learn how to collect Varonis Alerts with their detailed information and send them to Sumo Logic.
+description: Learn how to collect Google Threat Intel data and send it to Sumo Logic.
 ---
 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
