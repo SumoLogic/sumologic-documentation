@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Amazon Bedrock AgentCore](https://docs.aws.amazon.com/bedrock-agentcore) is a fully managed service that enables you to build and deploy AI agents with advanced capabilities. AgentCore provides runtime observability, memory management, gateway functionality, built-in tools, and identity services to help you monitor and optimize your AI agent deployments. It offers comprehensive metrics, logs, and traces for agent execution activity, resource utilization, error tracking, and performance monitoring.
 
-The Sumo Logic Amazon Bedrock AgentCore app dashboards offer insights into CloudWatch Logs and performance metrics for your Amazon Bedrock AgentCore service. These preconfigured dashboards enable you to monitor logs and the runtime performance metrics of your AgentCore agents, memory stores, gateways, built-in tools, and identity services.
+The Sumo Logic Amazon Bedrock AgentCore app dashboards offer insights into CloudWatch Logs and performance metrics for your Amazon Bedrock AgentCore service. These preconfigured dashboards enable you to monitor logs and the runtime performance metrics of your AgentCore agent runtimes, memory, gateways, built-in tools, and identity services.
 
 ## Log and metrics types
 
