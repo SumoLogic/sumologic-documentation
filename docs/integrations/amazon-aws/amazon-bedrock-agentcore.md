@@ -594,6 +594,8 @@ Use this dashboard to:
 * Track agent endpoint-level metrics and compare performance across different agents.
 * Monitor session count trends and identify capacity planning needs.
 
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-AgentCore-Runtime-Metrics.png')} alt="Amazon Bedrock AgentCore dashboard" style={{border: '1px solid gray'}} />
+
 ### Memory Metrics
 
 The **Amazon Bedrock AgentCore - Memory Metrics** dashboard provides CloudWatch metrics for memory service performance, operation counts, and error rates. It complements the Memory Logs dashboard with quantitative metrics data.
@@ -605,6 +607,8 @@ Use this dashboard to:
 * Monitor memory resource usage and identify high-volume memory operations.
 * Track memory invocation trends over time and compare across different memory resources.
 * Monitor memory event creation and retrieval rates for capacity planning.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-AgentCore-Memory-Metrics.png')} alt="Amazon Bedrock AgentCore dashboard" style={{border: '1px solid gray'}} />
 
 ### Gateway Metrics
 
@@ -618,6 +622,8 @@ Use this dashboard to:
 * Track gateway duration trends and identify performance bottlenecks.
 * Monitor gateway usage by target type (MCP, Lambda, OpenAPI) for capacity planning.
 
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-AgentCore-Gateway-Metrics.png')} alt="Amazon Bedrock AgentCore dashboard" style={{border: '1px solid gray'}} />
+
 ### Built-in Tools - Browser Metrics
 
 The **Amazon Bedrock AgentCore - Built-in Tools - Browser Metrics** dashboard provides CloudWatch metrics for browser tool performance and operational health. It complements the Browser Logs dashboard with quantitative metrics data.
@@ -629,6 +635,9 @@ Use this dashboard to:
 * Monitor browser session duration metrics and session count trends.
 * Track browser takeover events and user takeover duration metrics.
 * Monitor browser resource usage for capacity planning and optimization.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-AgentCore-Built-in-Tools-Browser-Metrics.png')} alt="Amazon Bedrock AgentCore dashboard" style={{border: '1px solid gray'}} />
+
 
 ### Built-in Tools - Code Interpreter Metrics
 
@@ -642,6 +651,8 @@ Use this dashboard to:
 * Track code execution duration and identify long-running code executions.
 * Monitor code interpreter resource usage for capacity planning and optimization.
 
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-AgentCore-Built-in-Tools-Code-Interpreter-Logs.png')} alt="Amazon Bedrock AgentCore dashboard" style={{border: '1px solid gray'}} />
+
 ### Identity Metrics
 
 The **Amazon Bedrock AgentCore - Identity Metrics** dashboard provides CloudWatch metrics for workload identity operations, credential provider activities, and token fetch operations. It tracks identity-related performance, errors, and usage patterns.
@@ -653,6 +664,8 @@ Use this dashboard to:
 * Monitor resource access token fetch success and failure rates.
 * Track identity operation latency and identify authentication performance issues.
 * Monitor identity operations by workload identity ID and credential provider for troubleshooting.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-AgentCore-Identity-Metrics.png')} alt="Amazon Bedrock AgentCore dashboard" style={{border: '1px solid gray'}} />
 
 ## Create monitors for Amazon Bedrock AgentCore app
 
