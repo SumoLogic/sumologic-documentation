@@ -673,16 +673,15 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Amazon Bedrock AgentCore alerts
+### Amazon Bedrock AgentCore Alerts
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Amazon Bedrock AgentCore - Throttling Events Detected` | This alert is triggered when throttling events across AgentCore operations exceed a threshold, indicating quota exhaustion or capacity constraints. Sustained throttling degrades user experience and signals need for capacity scaling. | Count > 20 | Count < = 20 |
-| `Amazon Bedrock AgentCore - Code Interpreter Execution Failures` | This alert is triggered when Code Interpreter invocation errors exceed a threshold. High error rates may indicate malicious code attempts, sandbox escape attempts, or critical runtime failures requiring immediate security investigation. | Count > 20 | Count < = 20 |
-| `Amazon Bedrock AgentCore - Gateway Request Failures` | This alert is triggered when Gateway errors exceed a threshold, preventing tool invocation and MCP protocol communication. Gateway failures block agents from accessing external tools and APIs, causing complete workflow breakage. | Count > 20 | Count < = 20 |
-| `Amazon Bedrock AgentCore - High System Errors` | This alert is triggered when system errors across AgentCore components exceed a threshold, indicating infrastructure failures or service degradation. System errors are non-user-caused and suggest platform instability requiring immediate investigation. | Count > 50 | Count < = 50 |
-| `Amazon Bedrock AgentCore - CloudTrail Suspicious Activity` | This alert is triggered when failed API calls and error patterns in CloudTrail exceed a threshold from the same source IP or user, indicating potential unauthorized access attempts or security issues. | Count > 10 | Count < = 10 |
-| `Amazon Bedrock AgentCore - High Average Operation Latency` | This alert is triggered when average latency across AgentCore operations exceeds a configurable threshold in milliseconds. High latency directly impacts user experience and can lead to timeouts and failed operations. | Count > 10000 | Count < = 10000 |
+| `Amazon Bedrock AgentCore - Code Interpreter Execution Failures` | Monitors Code Interpreter invocation errors that may indicate malicious code attempts, sandbox escape attempts, or critical runtime failures. High error rates suggest potential security threats or fundamental service instability requiring immediate security investigation. | Count > = 20 | Count < 20 |
+| `Amazon Bedrock AgentCore - Gateway Request Failures` | Monitors Gateway errors that prevent tool invocation and MCP protocol communication. Gateway failures block agents from accessing external tools and APIs, causing complete workflow breakage. This is a critical single point of failure for the platform. | Count > = 20 | Count < 20 |
+| `Amazon Bedrock AgentCore - High Average Operation Latency` | Monitors elevated latency across AgentCore operations indicating performance degradation. High latency directly impacts user experience and can lead to timeouts and failed operations requiring immediate capacity or performance optimization. | Count > 5000 | Count < = 5000 |
+| `Amazon Bedrock AgentCore - High System Errors` | Detects abnormally high system errors across AgentCore components indicating infrastructure failures or service degradation that directly impact operations. System errors are non-user-caused and suggest platform instability requiring immediate investigation. | Count > = 50 | Count < 50 |
+| `Amazon Bedrock AgentCore - Throttling Events Detected` | Detects throttling across AgentCore operations indicating quota exhaustion or capacity constraints. Sustained throttling degrades user experience and signals need for capacity scaling before complete service degradation. | Count > = 20 | Count < 20 |
 
 ## Upgrade/Downgrade the Amazon Bedrock AgentCore app (Optional)
 
