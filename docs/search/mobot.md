@@ -111,8 +111,6 @@ Mobot is ideal for users of all skill levels:
 
 Select **Query Agent** to get help with Sumo Logic queries. In this section, you'll learn the recommended workflow for using Query Agent effectively, along with best practices to maximize its benefits.
 
-<img src={useBaseUrl('img/search/mobot/mobot-logs-agent-button.png')} alt="Query Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
-
 :::sumo Micro Lesson: Using Mobot
 See Mobot in action with a hands-on walkthrough of the UI and prompt-based search.
 
@@ -431,8 +429,6 @@ _dataTier=Infrequent
 ## Knowledge Agent (beta)
 
 Select **Knowledge Agent** to get help using Sumo Logic.
-
-<img src={useBaseUrl('img/search/mobot/mobot-knowledge-agent-button.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
 
 Enter a question about Sumo Logic, such as *"How do I add a collector for AWS CloudTrail?"*, *"What are the API endpoints for Sumo Logic?"*, or anything else you need help with. The Knowledge agent returns an answer, including steps if needed.
 
