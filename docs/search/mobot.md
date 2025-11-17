@@ -30,7 +30,7 @@ Mobot automatically generates log searches from natural language prompts and hel
 It connects you to two specialized agents that handle different tasks:
 
 * **Query Agent** translates your natural-language questions into log search queries and helps you refine them step by step.
-* **Knowledge Agent** answers how-to questions about Sumo Logic - anything from setup, troubleshooting, best practices, and more - and get answers sourced from our official documentation.
+* **Knowledge Agent** answers how-to questions about Sumo Logic - anything from setup to troubleshooting, best practices, and more - and get answers sourced from our official documentation.
 
 Together, these agents help you troubleshoot faster, explore your data more intuitively, and learn the platform without friction.
 
@@ -38,29 +38,26 @@ Together, these agents help you troubleshoot faster, explore your data more intu
 
 * **Natural language queries**. Ask questions in plain English and get accurate Sumo Query Language translations.
 * **Contextual suggestions**. Get suggestions relevant to your troubleshooting and investigations context.
-* **Conversation history**. Save and resume troubleshooting or investigation sessions without losing context.
-* **Auto-visualize**. Mobot automatically generates charts from search results, which you can add directly to dashboards, reducing time and effort in data interpretation.
-* **Log compatibility**. Mobot supports structured logs, semi-structured logs (partial JSON), and unstructured logs (e.g., Palo Alto Firewall) when Field Extraction Rules (FERs) are applied. This ensures valuable insights across a variety of log formats.
-* **Enhanced query experience**. Auto-complete to streamline natural language queries.
-* **Multi-turn conversations**. Ask follow-up questions without repeating yourself.
-* **Conversational flow**. Refine queries through natural, conversational follow-up questions without losing context. A sequence of related instructions that retains context and incrementally updates the query and output.
-* **Automatic source detection**. Have Mobot choose a data source automatically based on your question or enter one yourself.
-* **Improved accuracy**. Translations to Sumo Query Language are more reliable, especially for data sources with active dashboards.
+* **Multi-turn conversations**. Ask follow-up questions without repeating yourself, with full conversation history and intent tracking.
+* **Auto-visualization**. Generate charts automatically from search results, which you can add directly to dashboards, reducing time and effort in data interpretation.
+* **Broad log compatibility**. Mobot supports structured logs, semi-structured logs (partial JSON), and unstructured logs (for example, Palo Alto Firewall) when Field Extraction Rules (FERs) are applied.
+* **Auto-complete queries**. Streamline query construction with auto-complete.
+* **Automatic source detection**. Let Mobot choose a data source automatically based on your question or specify one yourself.
 * **Clarifications when needed**. If your request is ambiguous, Mobot may ask a follow-up question to narrow intent.
-* **Smarter error handling**. Instead of generic errors, Mobot provides clearer messages and fallback suggestions for next steps.
-* **Dashboard-aware translations (via Retrieval-Augmented Generation, or RAG)**. Mobot leverages queries from dashboards opened in your org in the last 90 days to better understand intent.
-* **Guided exploration**. Intent cards summarize your current goal, and suggestion cards offer refinements you can apply with a click.
-* **Integrated workflow**. A conversation pane shows your prompts and refinements, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
+* **Smarter error handling**. Receive clearer messages and fallback suggestions instead of generic errors.
+* **Dashboard-aware translations (RAG)**. Mobot leverages queries from dashboards opened in your org in the last 90 days to better understand intent.
+* **Guided exploration**. Use Mobot's suggestions to refine your search with one click.
+* **Integrated workflow**. View your prompts and refinements in the conversation pane, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
 
 ### Who benefits from Mobot?
 
-Mobot is ideal for users of all skill levels:
+Mobot is ideal for users across your organization:
 
 * **On-call engineers**. Accelerate time to resolution by surfacing key troubleshooting insights.
 * **Security engineers**. Obtain security insights rapidly for faster security incident resolution.
-* **Early career professionals**. Simplifies troubleshooting with natural language queries, making incident resolution accessible to those unfamiliar with query syntax.
+* **Early career professionals**. Troubleshoot without needing to learn query syntax, making incident resolution more accessible.
 * **Practitioners**. Speeds up workflows with auto-complete and context-aware suggestions for frequent tasks.
-* **Experts**. Provides IDE-style assistance for crafting complex queries efficiently.
+* **Experts**. Get IDE-style assistance for crafting complex queries efficiently.
 
 ## Which agent should I use?
 
@@ -73,7 +70,6 @@ Not sure where to start? Use this guide:
 | **Output** | Executable queries with live results | Documentation-based answers with links |
 | **Best for** | Troubleshooting, investigating, analyzing trends | Onboarding, setup guidance, learning concepts |
 | **Example** | "Show me 500 errors from the API service in the last hour" | "How do I set up a CloudTrail collector?" |
-
 
 
 ## Query agent
