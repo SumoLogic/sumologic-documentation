@@ -155,6 +155,8 @@ If a user has an action marked as **Waiting Owner**, they must perform the steps
 
 <img src={useBaseUrl('img/cse/automations-complete-task.png')} style={{border:'1px solid gray'}} alt="Complete task" width="300"/>
 
+<!-- Oringanially added by DOCS-1251, but pulled out. Add after CSOAR-3993 and CSOAR-3967 are resolved:
+
 #### Task variables
 
 Task variables provide a useful way to track who is assigned to a task and other task data, and let you interact with the task information in subsequent playbook actions.
@@ -166,6 +168,7 @@ Perform the following steps to use the variables in nodes that come after the ta
 1. From the list of available values from previous actions, click the name of the task node. Then select the variable you want to use:<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example-node-values.png')} style={{border:'1px solid gray'}} alt="Task variables" width="500"/>
 1. Insert the variables as needed in your node. In the following **Send email about task status** node example, the task variables are used for the email subject and in the email body:<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example-variables.png')} style={{border:'1px solid gray'}} alt="Task variables in a node" width="500"/>
 1. Continue inserting the task variables as needed in nodes following the task node.
+-->
 
 ### Add a user choice node to a playbook
 
@@ -189,10 +192,12 @@ Following is an example of a user choice node. Note the node branches to the nex
 
 #### User choice variables
 
-User choice variables provide a useful way to track who responded to user choice options, and let you interact with the responders in subsequent playbook actions.
+User choice variables provide a powerful way to track who responded to a user choice option, and let you interact with the responder in subsequent playbook actions.
+
+Exposing the responder ID as a variable provides great benefits, such as letting subsequent nodes automatically reassign the originating incident to the responder, or allowing you to build a playbook that auto-assigns incidents based on the responder ID. The authorized responder can be a single individual, or anyone from a group of authorized users.
 
 Following are the available variables that identify the person who responded to a user choice:
-* `responder.id`. The user ID of the responder.
+* `responder.id`. The user ID of the responder. The ID is stored in hexadecimal format.
 * `responder.email`. The responder's email.
 * `responder.firstName`. The responder's first name.
 * `responder.lastName`. The responder's last name.

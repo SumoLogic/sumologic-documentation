@@ -10,11 +10,9 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-### New feature: Task and user choice variables
+### New feature: User choice variables
 
-Task and user choice variables let you retrieve task or user choice data in subsequent playbook actions in a playbook. They provide a useful way to track task assignments or who responded to a user choice option. 
+User choice variables let you retrieve user choice data in subsequent playbook actions in a playbook. They provide a useful way to track who responded to a user choice option. [Learn more](/docs/platform-services/automation-service/playbooks/create-playbooks/#user-choice-variables).
 
-Learn more:
-* [Task variables](/docs/platform-services/automation-service/playbooks/create-playbooks/#task-variables)<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example-node-values.png')} style={{border:'1px solid gray'}} alt="Task variables" width="500"/>
-* [User choice variables](/docs/platform-services/automation-service/playbooks/create-playbooks/#user-choice-variables)<br/><img src={useBaseUrl('img/platform-services/automation-service/user-choice-variables.png')} style={{border:'1px solid gray'}} alt="User choice responder variables" width="500"/>
+<img src={useBaseUrl('img/platform-services/automation-service/user-choice-variables.png')} style={{border:'1px solid gray'}} alt="User choice responder variables" width="500"/>
 
