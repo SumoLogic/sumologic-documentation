@@ -36,7 +36,7 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
       * **AI Verdict**. The AI system's qualitative assessment of the insight. Following are the available verdicts:
           * **Benign**. AI analysis determined that the insight is harmless and is not a candidate for elevation to SOC team investigation.
           * **Inconclusive**. AI analysis could not determine whether the insight needs to be investigated.
-          * **In Progress**. AI analysis is in process.
+          * **In Progress**. AI analysis is in progress.
           * **Malicious**. AI analysis determined that the insight is malicious, and warrants immediate investigation by your SOC team.
           * **Suspicious**. AI analysis determined that the insight is suspicious and warrants investigation by your SOC team. 
       * **Recommends security level of ___**. AI analysis recommends a new severity level be assigned to this insight. If you agree with the assessment, click **Accept**. The **Current Severity** field changes to the new value.
