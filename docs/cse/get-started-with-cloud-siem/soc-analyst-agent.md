@@ -54,7 +54,7 @@ In the insight list page, that the **AI Verdict** column shows the results of th
 
 Click in the **Filters** area near the top of the insights page and select **AI Verdict** to search for insights based on the verdict they are assigned (Benign, Inconclusive, In Progress, Malicious, Suspicious). See [Filtering insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#filtering-insights) for more information about filtering.
 
-## Investigate the insight in Mobot
+### Investigate the insight in Mobot
 
 1. From the insight's details page, click **Ask Mobot** to open the AI investigation in [Sumo Logic Mobot](/docs/search/mobot/).<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" /> 
 1. Details about the AI investigation appear in Mobot. The entire context of the AI investigation is brought into Mobot so you can quickly drill down for more information about the insight. For example, under each step in **Key Findings**, you can click the provided links to see more details.<br/><img src={useBaseUrl('img/cse/insight-agent-in-mobot.png')} alt="Mobot investigation" style={{border: '1px solid gray'}} width="600" />
