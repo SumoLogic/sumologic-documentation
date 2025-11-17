@@ -4481,7 +4481,7 @@
   "/docs/api/dashboard-data": "/docs/api/dashboard",
   "/docs/apm/traces/spans": "/docs/apm/spans",
   "/docs/apm/traces/services-list-map": "/docs/apm/services-list-map",
-  "/docs/cloud-security-analytics/introduction-to-cloud-security-analytics": "/docs/security/cloud-infrastructure-security/introduction",
+  "/docs/cloud-security-analytics/introduction-to-cloud-security-analytics": "/docs/security/additional-security-features/cloud-infrastructure-security/introduction",
   "/docs/cloud-security-analytics": "/docs/security/additional-security-features/cloud-infrastructure-security",
   "/docs/cloud-security-analytics/data-lake": "/docs/security/additional-security-features/data-lake",
   "/docs/cloud-security-analytics/audit-and-compliance": "/docs/security/additional-security-features/audit-and-compliance",
