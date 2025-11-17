@@ -90,3 +90,9 @@ The agent draws from normalized security data (`sec_record*` indexes and signals
 ### Can analysts provide feedback or correct AI verdicts?
 
 Yes. Analysts can override verdicts and flag feedback within the UI. These actions are logged and reviewed to refine model behavior over time as part of the Dojo AI learning loop.
+
+## Additional resources
+
+* Sumo Logic: [Dojo AI](https://www.sumologic.com/solutions/dojo-ai)
+* Blog: [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc)
+* Demo: [Mobot](https://www.sumologic.com/demo/mobot-walkthrough)
