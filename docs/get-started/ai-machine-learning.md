@@ -119,12 +119,15 @@ Our Global Intelligence Service apps provide security teams with valuable real-t
 
 ## Additional resources
 
-* [Understanding artificial intelligence for log analytics](https://www.sumologic.com/guides/machine-data-analytics)
-* [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai)
-* [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc)
-* [Sumo Logic brings agentic AI into the enterprise security stack with the launch of Dojo AI on Amazon Web Services](https://www.sumologic.com/newsroom/sumo-logic-brings-agentic-ai-into-enterprise-security-stack-with-launch-of-dojo-ai-on-amazon-web-services).
-* [What are the differences between artificial intelligence, machine learning, deep learning and generative AI?](https://www.sumologic.com/blog/machine-learning-deep-learning)
-* [DevSecOps in an AI world requires disruptive log economics](https://www.sumologic.com/blog/devsecops-ai-disruptive-log-economics)
-* [Generative AI: The latest example of systems of insight](https://www.sumologic.com/blog/generative-ai-latest-example-systems-of-insight)
-* [Harnessing the power of artificial intelligence in log analytics](https://www.sumologic.com/blog/power-ai-log-analytics/)
-* [Reduce alert noise, automate incident response and keep coding with AI-driven alerting](https://www.sumologic.com/blog/ai-driven-low-noise-alerts/)
+
+* Guide:
+   * [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai)
+   * [Understanding artificial intelligence for log analytics](https://www.sumologic.com/guides/machine-data-analytics)
+* Blogs:
+   * [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc)
+   * [What are the differences between artificial intelligence, machine learning, deep learning and generative AI?](https://www.sumologic.com/blog/machine-learning-deep-learning)
+   * [DevSecOps in an AI world requires disruptive log economics](https://www.sumologic.com/blog/devsecops-ai-disruptive-log-economics)
+   * [Generative AI: The latest example of systems of insight](https://www.sumologic.com/blog/generative-ai-latest-example-systems-of-insight)
+   * [Harnessing the power of artificial intelligence in log analytics](https://www.sumologic.com/blog/power-ai-log-analytics/)
+   * [Reduce alert noise, automate incident response and keep coding with AI-driven alerting](https://www.sumologic.com/blog/ai-driven-low-noise-alerts/)
+* News: [Dojo AI launch announcement](https://www.sumologic.com/newsroom/sumo-logic-brings-agentic-ai-into-enterprise-security-stack-with-launch-of-dojo-ai-on-amazon-web-services)
