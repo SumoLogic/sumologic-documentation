@@ -12,30 +12,26 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
-The `threatlookup` search operator allows you to search logs for matches in [threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/), providing security analytics to help you to detect threats in your environment.
+The `threatlookup` operator identifies suspicious indicators of compromise in your data which match your [threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) sources. Using this operator provides security analytics to help you to detect threats in your environment.
 
-You can also use the [`threatip`](/docs/search/search-query-language/search-operators/threatip/) search operator to search threat intelligence data based on an IP address. 
-
-:::note
-`threatlookup` has `nodrop` functionality by default, so you don't have to explicitly include the `nodrop` statement in your query. That means that when you use parsing operators (like `parse` or `parse regex`) with `threatlookup`, messages that do not fully match the parsing criteria are prevented from being discarded. (For example, messages returning `NULL` values or logs without IOC values are retained.) See [Parse nodrop option](/docs/search/search-query-language/parse-operators/parse-nodrop-option/) for more information about how `nodrop` works.
-:::
+This operator supersedes the more limited [`threatip`](/docs/search/search-query-language/search-operators/threatip/) search operator, allowing matches against multiple sources for multiple kinds of indicators.
 
 ## Syntax
 
 ```
-threatlookup [singleIndicator] [source="<source_value>"] <indicator> [,<optional_indicator>, …]
+threatlookup [singleIndicator] [source="<source_value>"] <indicator>
 ```
 
 Where:
-* `singleIndicator` returns the single best matching threat intelligence entry. (In the response, `num_matches` indicates how many actual matches there are.) If `singleIndicator` is not specified, all matching entries from your intelligence sources are returned. 
+* `singleIndicator` returns the single best matching threat intelligence entry. (In the response, `num_matches` indicates how many total matches across your sources there are.) If `singleIndicator` is not specified, all matching entries from your intelligence sources are returned in separate rows. 
 
-   Specifying `singleIndicator` returns the most recent, highest confidence entry from your sources. If there's a tie, the winning entry is whichever the backend storage returned first.
+   Note that `singleIndicator` returns the most recent, highest confidence entry from your sources. If there's a tie, the winning entry is whichever the backend storage returned first.
 * `source` is the [threat intelligence source](/docs/security/threat-intelligence/about-threat-intelligence/#threat-intelligence-sources) to search for the threat intelligence indicator. If `source` is not specified, all sources are searched.
-* `<indicator>` is the [field name](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md) containing an [indicator](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) to look up. At least one field name is required. `<optional_indicator>` is used to add more indicators to look up. 
+* `<indicator>` is the [field name](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md) containing an [indicator](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) to look up. At least one field name is required. 
 
 ### Response fields
 
-Query responses return the following [normalized indicator](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) fields:
+Query responses return the following [normalized indicator](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) fields, which will all be null if no matching record is found:
 * `actors`
 * `confidence`
 * `fields`
@@ -53,13 +49,6 @@ Query responses return the following [normalized indicator](/docs/security/threa
 
 ## Examples
 
-```sql title="Matches for srcDevice_ip with confidence greater than 50"
-_index=sec_record*
-| threatlookup srcDevice_ip
-| where _threatlookup.confidence > 50
-| timeslice 1h
-| count by _timeslice
-```
 ```sql title="Single best match for srcDevice_ip with confidence greater than 50"
 _index=sec_record*
 | threatlookup singleIndicator srcDevice_ip
@@ -67,57 +56,13 @@ _index=sec_record*
 | timeslice 1h
 | count by _timeslice
 ```
-```sql title="Matches in mysource for srcDevice_ip with confidence greater than 50"
+
+```sql title="Matches in a 'mysource' custom source for srcDevice_ip with confidence greater than 50"
 _index=sec_record*
 | threatlookup source="mysource" srcDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
-```
-```sql title="Matches for dstDevice_ip and srcDevice_ip with confidence greater than 50"
-_index=sec_record*
-| threatlookup dstDevice_ip, srcDevice_ip
-| where _threatlookup.confidence > 50
-| timeslice 1h
-| count by _timeslice
-```
-```sql title="Matches in mysource for dstDevice_ip and srcDevice_ip with confidence greater than 50"
-_index=sec_record*
-| threatlookup source="mysource" dstDevice_ip, srcDevice_ip
-| where _threatlookup.confidence > 50
-| timeslice 1h
-| count by _timeslice
-```
-
-```sql title="Client IP threat info"
-_sourceCategory=AWS/WAF {{client_ip}}
-| parse "\"httpMethod\":\"*\"," as httpMethod,"\"httpVersion\":\"*\"," as httpVersion,"\"uri\":\"*\"," as uri, "{\"clientIp\":\"*\",\"country\":\"*\"" as clientIp,country, "\"action\":\"*\"" as action, "\"matchingNonTerminatingRules\":[*]" as matchingNonTerminatingRules, "\"rateBasedRuleList\":[*]" as rateBasedRuleList, "\"ruleGroupList\":[*]" as ruleGroupList, "\"httpSourceId\":\"*\"" as httpSourceId, "\"httpSourceName\":\"*\"" as httpSourceName, "\"terminatingRuleType\":\"*\"" as terminatingRuleType, "\"terminatingRuleId\":\"*\"" as terminatingRuleId, "\"webaclId\":\"*\"" as webaclId nodrop
-| threatlookup singleIndicator clientip
-| where (_threatlookup.type="ipv4-addr" or _threatlookup.type="ipv6-addr") and !isNull(_threatlookup.confidence)
-```
-
-```sql title="All IP threat count"
-_sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynamodb.amazonaws.com\""
-| json "eventName", "awsRegion", "requestParameters.tableName", "sourceIPAddress", "userIdentity.userName" as event_name, Region, entity, ip_address, user
-| where Region matches "*" and tolowercase(entity) matches "*"
-| where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
-| count as ip_count by ip_address
-| threatlookup singleIndicator ip_address
-| where (_threatlookup.type="ipv4-addr" or _threatlookup.type="ipv6-addr") and !isNull(_threatlookup.confidence)
-| if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
-| sum (ip_count) as threat_count
-```
-
-```sql title="Use threatlookup in a subquery"
-_sourceCategory=weblogs
-[subquery:_sourceCategory="Labs/SecDemo/guardduty" "EC2 Instance" "communicating on an unusual server port 22"
-| json field=_raw "service.action.networkConnectionAction.remoteIpDetails" as remoteIpDetails
-| json field=_raw "service.action.networkConnectionAction.connectionDirection" as connectionDirection
-| where connectionDirection = "OUTBOUND"
-| json field=remoteipdetails "ipAddressV4" as src_ip
-| threatlookup singleIndicator threat| if (_threatlookup.confidence >= 85, "high", if (_threatlookup.confidence >= 50, "medium", if (_threatlookup.confidence >= 15, "low", if (_threatlookup.confidence >= 0, "unverified", "Unknown")))) as malicious_confidence
-| where malicious_confidence = "high"
-| compose src_ip]
 ```
 
 <!-- Per DOCS-643, add this after sumo://threat/cs is replaced by threatlookup":
