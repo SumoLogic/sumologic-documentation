@@ -12,7 +12,7 @@ hide_table_of_contents: true
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We’re introducing **Mobot**, Sumo Logic’s new conversational UI for log search, and updating the product name from *Copilot* to *Mobot*. [Learn more](/docs/search/mobot-multiturn-beta).
+We’re introducing **Mobot**, Sumo Logic’s new conversational UI for log search, and updating the product name from *Copilot* to *Mobot*. [Learn more](/docs/search/mobot).
 
 ### Conversational experience (Beta)
 
