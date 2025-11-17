@@ -914,9 +914,14 @@ The following Cloud SIEM rules refer to this match list:
 The following Cloud SIEM rules refer to this match list:
 * Domain Resolution in Non-Standard TLD
 * HTTP Request to Domain in Non-Standard TLD
+* Threat Intel - Destination IP Address (Low Confidence)
+* Threat Intel - Destination IP Address (Medium Confidence)
 * Threat Intel - Device IP Matched Threat Intel Domain Name
 * Threat Intel - Device IP Matched Threat Intel URL
+* Threat Intel - Inbound Traffic from Threat Feed IP (High Confidence)
+* Threat Intel - Inbound Traffic from Threat Feed IP (Medium Confidence)
 * Threat Intel Match - IP Address
+* Threat Intel - Successful Authentication from Threat Feed IP
 * Web Request to IP Address
 
 ### verified_uri_ips

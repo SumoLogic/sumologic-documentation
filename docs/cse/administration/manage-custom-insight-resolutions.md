@@ -20,6 +20,14 @@ When you close an insight, Cloud SIEM prompts you to select a resolution that in
 
 You can define custom *sub-resolutions* for any of the built-in resolutions. This enables you to create more granular resolutions that indicate more clearly why an insight was closed. For example, you might want to create a “Remediated” sub-resolution under “Resolved”.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage custom insight resolutions with the [`sumologic_cse_insights_resolution`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_resolution) resource.
+
+<TerraformLink/>
+:::
+
 ## Create a custom sub-resolution
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Workflow** select **Insight Resolutions**. You can also click the **Go To...** menu at the top of the screen and select **Insight Resolutions**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Workflow** select **Resolutions**. 

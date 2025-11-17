@@ -4,17 +4,19 @@ title: How to Use the Search Page
 description: Understand the basic components of the Search window and how they can help you investigate your issues.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 On the Search page, you can enter [simple or complex queries](../search-basics/about-search-basics.md) to search your entire Sumo Logic data repository. You can adjust the size of the search query editor for better visibility into long queries and reduce the size of the editor while examining larger results, making it easier to navigate through your data.
 
 You can also save and select searches from your [Library](/docs/get-started/library). After running a search, your results are displayed in either the **Messages** tab (for raw message data) or the **Aggregates** tab (for grouped results). See [how to navigate through search results](navigate-through-search-results.md).
 
 You can [run a saved search](../search-basics/save-search.md), [pause, or stop searches](../search-basics/pause-cancel-search.md), or [schedule a search to run periodically](../../../alerts/scheduled-searches/schedule-search.md) and notify you of the results.
 
-![search page feb 2022.png](/img/search/get-started-search/search-page/search-page.png)
+<img src={useBaseUrl('img/search/get-started-search/search-page/search-page.png')} alt="Search page" style={{border: '1px solid gray'}} width="800" />
 
 | Letter | Purpose |
 |:--|:--|
-| A | [Basic or Advanced mode](search-modes.md) search text box. Advanced mode searches are limited to a maximum of 15,000 characters in length.<br/><br/>Click the clock icon to see recent searches. Previously run searches are saved automatically for your reference. Instead of recreating your search, you can select it from the dropdown.<br/><br/>As you make changes, a message displays if you have not pressed enter to execute the query: ![query detected](/img/search/get-started-search/search-page/query-changes-detected.png) |
+| A | [Basic or Advanced mode](search-modes.md) search text box. Advanced mode searches are limited to a maximum of 15,000 characters in length.<br/><br/>Click the clock icon to see recent searches. Previously run searches are saved automatically for your reference. Instead of recreating your search, you can select it from the dropdown.<br/><br/>As you make changes, a message displays if you have not pressed enter to execute the query:<br/><img src={useBaseUrl('img/search/get-started-search/search-page/query-changes-detected.png')} alt="Query detected" style={{border: '1px solid gray'}} width="400" /> |
 | B | [Time range](../build-search/set-time-range.md) of the search. |
 | C | Start the search. |
 | D | Click the gear icon to open the Search Config menu that has the options to use the [receipt time](../build-search/use-receipt-time.md) and [Auto Parse Mode](../build-search/dynamic-parsing.md). |
@@ -36,7 +38,7 @@ You can [run a saved search](../search-basics/save-search.md), [pause, or stop
 
 In your search query, you'll see that we have separated out important terms in a search for you by color to help you identify them quickly.  
 
-![Query Sample Colors](/img/search/get-started-search/search-page/query-with-colors.png)
+<img src={useBaseUrl('img/search/get-started-search/search-page/query-with-colors.png')} alt="Query Sample Colors" style={{border: '1px solid gray'}} width="800" />
 
 | Color | Purpose |
 |:--|:--|
@@ -46,8 +48,6 @@ In your search query, you'll see that we have separated out important terms in a
 | Green | Specific numeric values |
 
 ## Guide contents
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this section, we'll introduce the following concepts:
 

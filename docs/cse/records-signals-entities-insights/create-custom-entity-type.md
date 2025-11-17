@@ -31,3 +31,11 @@ To create a custom entity type:
     :::
 5. **Fields**. Use the dropdown list to select the schema attribute or attributes you want to associate with the custom entity type.
 6. Click **Save**.
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage custom entity types with the [`sumologic_cse_custom_entity_type`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_entity_type) resource.
+
+<TerraformLink/>
+:::
