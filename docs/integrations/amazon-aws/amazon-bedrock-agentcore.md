@@ -392,7 +392,7 @@ Scope (Specific Data): account=* eventSource "bedrock-agentcore.amazonaws.com"
   if(!isEmpty(codeInterpreterId) or !isEmpty(codeInterpreterId_res), "code-interpreter",
   if(!isEmpty(gatewayIdentifier) or !isEmpty(gatewayId_res), "gateway", 
 if(!isEmpty(identityId_req), "identity", ""))))))) as agentcore_resource_type
-| fields accountid, region, namespace, resource, agentcore_resource_type, agentcore_resource_id
+| fields accountid, region, namespace, agentcore_resource_type, agentcore_resource_id
 ```
 
 #### CloudWatch Logs FER
