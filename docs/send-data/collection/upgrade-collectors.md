@@ -89,7 +89,7 @@ Failure can occur for any of the following reasons:
 * Permission errors blocked access for Sumo Logic.
 * Possible network failures occurred during the upgrade.
 
-If an upgrade repeatedly fails, contact [Sumo Logic Customer Support](https://support.sumologic.com/home). Alternatively, you can manually upgrade the collector.
+If an upgrade repeatedly fails, contact [Sumo Logic Customer Support](https://support.sumologic.com/support/s/). Alternatively, you can manually upgrade the collector.
 
 
 ## Upgrade Collectors using the Command Line
@@ -148,7 +148,7 @@ Although regressions and new bugs are rare in our Collectors, when they do occur
 * For file-based sources on the new Collector version, ensure the log files are rotating at the frequency you’d expect.
 * For all installed Collectors, observe that the CPU, memory, I/O, and disk space utilization for the Collector process are inline with expectations and past Collector versions.
 
-If you find abnormalities, contact [Sumo Logic Support](https://support.sumologic.com) to help investigate before you push the new Collector Version to full production status.
+If you find abnormalities, contact [Sumo Logic Support](https://support.sumologic.com/support/s/) to help investigate before you push the new Collector Version to full production status.
 
 ### Take a Methodical Approach to Collector Management
 
