@@ -1,6 +1,6 @@
 ---
 id: write-outlier-rule
-title: Write an Outlier rule
+title: Write an Outlier Rule
 sidebar_label: Outlier Rule
 description: Outlier rules allow you to generate a signal when behavior by an entity (such as a user) is encountered that qualifies as an outlier from expected behavior.
 keywords:

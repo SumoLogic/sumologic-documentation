@@ -1,6 +1,6 @@
 ---
 id: write-first-seen-rule
-title: Write a First Seen rule
+title: Write a First Seen Rule
 sidebar_label: First Seen Rule
 description: First seen rules allow you to generate a signal when behavior by an entity (user) is encountered that hasn't been seen before.
 keywords:
