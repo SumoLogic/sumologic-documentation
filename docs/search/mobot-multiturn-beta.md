@@ -201,7 +201,7 @@ Here are some common cases:
 
 ## Knowledge agent
 
-Select **Knowledge Agent** to get help using Sumo Logic. Knowledge Agent is your in-platform assistant for learning how to use Sumo Logic. Ask questions about Sumo Logic and get clear answers sourced directly from our official documentation without leaving your workflow.
+Select **Knowledge Agent** to get help using Sumo Logic.
 
 <img src={useBaseUrl('img/search/mobot/knowledge-agent-select.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
 
