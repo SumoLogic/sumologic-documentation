@@ -78,22 +78,6 @@ Select **Query Agent** to get help with Sumo Logic log search queries. In this s
 
 <img src={useBaseUrl('img/search/mobot/query-agent-select.png')} alt="Query Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
 
-Query Agent builds on the query translation foundation of the previous [Copilot experience](/docs/search/mobot), with significant improvements:
-
-* Core improvements:
-   * **Conversational flow**. Refine queries through natural follow-up questions without losing context. Each refinement builds on the last, so you can iterate toward the insight you need.
-   * **Improved accuracy**. Translations to Sumo Query Language are more reliable, especially for data sources with active dashboards.
-   * **Smarter error handling**. Instead of generic errors, Query Agent provides clear messages and actionable suggestions for next steps.
-* Advanced features:
-   * **Dashboard-aware translations via RAG**. Query Agent learns from dashboards opened in your org in the last 90 days to better interpret intent. This improves understanding of field names, data structure, and common queries, resulting in more accurate translations, especially for unstructured logs.
-   * **Automatic source detection**. Let Query Agent choose a data source based on your question, or enter one yourself for more control.
-   * **Clarifications when needed**. If your request is ambiguous, Query Agent asks follow-up questions to narrow intent rather than guessing.
-* Enhanced workflow:
-   * **Guided exploration**. Intent cards summarize your current goal, and suggestion cards offer refinements you can apply with a click.
-   * **Integrated interface**. A conversation pane shows your prompts and refinements, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
-
-### Micro lesson
-
 :::sumo Micro Lesson
 
 This short video introduces Query Agent and how it can help you with log search and analysis—perfect for getting a quick overview before diving in.
@@ -112,6 +96,21 @@ This short video introduces Query Agent and how it can help you with log search 
 
 :::
 
+<!-- Second query agent video to come -->
+
+Query Agent builds on the query translation foundation of the previous [Copilot experience](/docs/search/mobot), with significant improvements:
+
+* Core improvements:
+   * **Conversational flow**. Refine queries through natural follow-up questions without losing context. Each refinement builds on the last, so you can iterate toward the insight you need.
+   * **Improved accuracy**. Translations to Sumo Query Language are more reliable, especially for data sources with active dashboards.
+   * **Smarter error handling**. Instead of generic errors, Query Agent provides clear messages and actionable suggestions for next steps.
+* Advanced features:
+   * **Dashboard-aware translations via RAG**. Query Agent learns from dashboards opened in your org in the last 90 days to better interpret intent. This improves understanding of field names, data structure, and common queries, resulting in more accurate translations, especially for unstructured logs.
+   * **Automatic source detection**. Let Query Agent choose a data source based on your question, or enter one yourself for more control.
+   * **Clarifications when needed**. If your request is ambiguous, Query Agent asks follow-up questions to narrow intent rather than guessing.
+* Enhanced workflow:
+   * **Guided exploration**. Intent cards summarize your current goal, and suggestion cards offer refinements you can apply with a click.
+   * **Integrated interface**. A conversation pane shows your prompts and refinements, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
 
 ### Example workflow: Observability
 
@@ -491,7 +490,23 @@ If you're on a legacy [tiered pricing](/docs/manage/partitions/data-tiers/search
 
 Select **Knowledge Agent** to get help using Sumo Logic.
 
-<!-- Micro lesson to come -->
+:::sumo Micro Lesson
+
+Learn more about Knowledge Agent's key features and capabilities.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/r1bbknlk60?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Sumo Logic Dojo AI Knowledge Agent"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 <img src={useBaseUrl('img/search/mobot/knowledge-agent-select.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
 
