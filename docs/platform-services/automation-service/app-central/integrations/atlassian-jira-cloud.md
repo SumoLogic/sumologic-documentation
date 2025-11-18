@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira-v2.png')} alt="Atlassian logo" width="80"/>
 
-***Version: 1.0
-Updated: March 20 , 2025***
+***Version: 1.3  
+Updated: Nov 6, 2025***
 
 Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
 
@@ -31,6 +31,7 @@ This integration uses the [Jira REST API v3](https://developer.atlassian.com/clo
 * **List Users** *(Enrichment)* - Returns a list of all users.
 * **Search Into Issues** *(Enrichment)* - Search Jira Issues.
 * **Update Issue** (*Notification*) - Update the specified issue field with the specified value.
+* **Issues Jira Daemon** *(Daemon)* - Daemon to pull Jira issues.
 
 ## Atlassian Jira Cloud configuration
 
@@ -52,6 +53,7 @@ A revoked token no longer works and is permanently removed from your account. If
 1. Log in to https://id.atlassian.com/manage-profile/security/api-tokens.
 1. Select **Revoke** next to the API token that you want to revoke.
 1. To revoke all API tokens for your account, select **Revoke all API tokens**.
+
 
 ## Configure Atlassian Jira Cloud in Automation Service and Cloud SOAR
 
@@ -84,6 +86,22 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 For information about Atlassian Jira Cloud, see [Jira Cloud documentation](https://support.atlassian.com/jira-software-cloud/resources/). For the REST API v3, see the [REST API v3 documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/).
 
+### API base URLs to use
+
+Depending on the type of API token you created, use one of the following URL formats as the API Base URL in the integration configuration:
+
+* **For normal API token:**
+Use the standard Jira Cloud domain-based URL format:
+`https://<domain>.atlassian.net`
+
+* **For scoped API token:**
+Use the Atlassian API gateway format, which includes cloud ID:
+`https://api.atlassian.com/ex/jira/{cloudId}`
+
+* **How to find your cloud ID:**
+Using browser endpoint:
+`https://<domain>.atlassian.net/_edge/tenant_info`
+
 ## Category
 
 Ticketing System
@@ -91,3 +109,6 @@ Ticketing System
 ## Change Log
 
 * March 20, 2025 - First upload
+* Sept 10, 2025 (v1.1) - Added daemon action
+* Oct 15, 2025 (v1.2) - Added support of br tag in required actions
+* Nov 6, 2025 (v1.3) - Changed API endpoint in the resource connection file to prevent admin-level privileges. 

@@ -19,6 +19,13 @@ Before you can create automations in Cloud SIEM, you must first [configure role 
 
 The Automation Service is a subset of automation capabilities adapted from Cloud SOAR that is available to the entire Sumo Logic log analytics platform. For more information, see [Cloud SOAR Compared to the Automation Service](/docs/cloud-soar/compared-to-automation-service/).
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage Cloud SIEM automation with the [`sumologic_cse_automation`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_automation) resource.
+<TerraformLink/>
+:::
+
 ## Benefits
 
 * The Automation Service supports enrichment, notification, containment, user choice, and custom actions in Cloud SIEM. 
@@ -51,7 +58,7 @@ Before you can access the Automation Service from Cloud SIEM, you must first [co
      :::note
      You can also launch the Automation Service by selecting **Automation** from the main menu: <br/><img src={useBaseUrl('img/cse/automation-menu-in-nav-bar.png')} alt="Automation menu option in the nav bar" style={{border: '1px solid gray'}} width="200"/> <br/>If you also have Cloud SOAR installed, a **Cloud SOAR** option appears instead, since all automation services are provided by Cloud SOAR when it installed in conjunction with Cloud SIEM.
      :::
-1. Now that you are in the Automation Service, let's explore a little to see how playbooks run actions that are provided by integrations. Open a [playbook](/docs/platform-services/automation-service/automation-service-playbooks) to see the actions it runs. Click an action to view the integration resource that provides it. In the example below, notice that in the **Send Insight Slack Notification** playbook, the **Slack resource** provides the **Get User** action.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" style={{border: '1px solid gray'}} width="800"/>
+1. Now that you are in the Automation Service, let's explore a little to see how playbooks run actions that are provided by integrations. Open a [playbook](/docs/platform-services/automation-service/playbooks/) to see the actions it runs. Click an action to view the integration resource that provides it. In the example below, notice that in the **Send Insight Slack Notification** playbook, the **Slack resource** provides the **Get User** action.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" style={{border: '1px solid gray'}} width="800"/>
 1. Now that we know the resource that provides the action, let's look for the integration that contains that resource. In our case, we're looking for the integration with the Slack resource. Click [**Cloud SIEM > Integrations**](/docs/platform-services/automation-service/automation-service-integrations) in the left navigation bar.
 1. If we open the **Slack** integration, we see the **Get User** action used in the **Send Insight Slack Notification** playbook. Now you know how integrations provide actions that are run in playbooks. <br/><img src={useBaseUrl('img/cse/automations-resource-example.png')} alt="Resource example" style={{border: '1px solid gray'}} width="700"/>
 

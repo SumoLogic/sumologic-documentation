@@ -59,7 +59,7 @@ The following example shows how to add an enrichment to an insight using the “
    1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
    1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
-   1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
+   1. To [test the playbook](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-an-enrichment-playbook.png')} alt="Simple playbook for insight enrichment" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation in Cloud SIEM to run the playbook:
    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the main Sumo Logic menu select **Data Management**, and then under **Integrations** select **Automation**. 
@@ -131,7 +131,7 @@ The following example shows how to configure a notification that sends an email 
    1. Click and hold on the right semicircle of the new **Send Email** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
    1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
-   1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
+   1. To [test the playbook](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-a-notification-playbook.png')} alt="Playbook for notification" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation in Cloud SIEM to run the playbook:
    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Automation**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu of Cloud SIEM select **Configuration**, and then under **Integrations** select **Automation**. 
@@ -165,14 +165,14 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
 1. Create a new IP Quality Score integration:
     1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. 
     1. Click the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-integration-button.png')} alt="Add integration button" style={{border: '1px solid gray'}} width="300"/>
-    1. Download this file: <a href="/files/IP-Quality-Score-Test.yaml" target="_blank">IP-Quality-Score-Test.yaml</a>.
+    1. Download this file: <a href={useBaseUrl('files/IP-Quality-Score-Test.yaml')} target="_blank">IP-Quality-Score-Test.yaml</a>.
     1. In the **New Integration** dialog, click **Upload File**.
     1. Drag the file into the **Select File** box.
     1. Click **Upload**. An IP Quality Score integration is created.
     1. Open the new **IP Quality Score** integration.
     1. Hover your mouse over the **IP Quality Score** name and click the **Upload** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-upload-button.png')} alt="Upload button" style={{border: '1px solid gray'}} width="250"/>
     1. In the **Upload** dialog, select **Action** in the **Type** field and click **Next**.
-    1. Download this file: <a href="/files/IP-Reputation.yaml" target="_blank">IP-Reputation.yaml</a>.
+    1. Download this file: <a href={useBaseUrl('files/IP-Reputation.yaml')} target="_blank">IP-Reputation.yaml</a>.
     1. In the **Upload** dialog, click **Upload File**. 
     1. Drag the file into the **Select File** box.
     1. Click **Upload**. The **IP Reputation** action appears in the IP Quality Score integration.
@@ -235,7 +235,7 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
     1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
-    1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
+    1. To [test the playbook](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
     1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-insight-enrichment.png')} alt="Custom playbook for insight enrichment" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation in Cloud SIEM to run the playbook:
     1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Automation**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the main Sumo Logic menu select **Data Management**, and then under **Integrations** select **Automation**. 
@@ -358,7 +358,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
     1. Click and hold on the right semicircle of the new **Send Email** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
     1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
-    1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
+    1. To [test the playbook](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
     1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/automation-example-playbook-4.png')} alt="Complex playbook" style={{border: '1px solid gray'}} width="800"/> 
 1. Create an automation in Cloud SIEM to run the playbook:
    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Automation**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the main Sumo Logic menu select **Data Management**, and then under **Integrations** select **Automation**. 

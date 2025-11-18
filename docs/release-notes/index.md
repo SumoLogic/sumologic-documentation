@@ -16,10 +16,10 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
       <img src={useBaseUrl('img/icons/manage.png')} alt="icon" width="40" />
       <h4>Service</h4>
     </a>
-    <a href="https://help.sumologic.com/release-notes-service/rss.xml">
+    <a href="https://www.sumologic.com/help/release-notes-service/rss.xml">
       <img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS Feed" width="45" />
     </a>
-    <p>Get updates on features and bug fixes for alerts, apps, copilot, security, search, observability, and more.</p>
+    <p>Get updates on features and bug fixes for alerts, apps, mobot, security, search, observability, and more.</p>
   </div>
 </div>
 
@@ -29,7 +29,7 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
       <img src={useBaseUrl('img/icons/data-collection.png')} alt="icon" width="40" />
       <h4>Collector</h4>
     </a>
-    <a href="https://help.sumologic.com/release-notes-collector/rss.xml">
+    <a href="https://www.sumologic.com/help/release-notes-collector/rss.xml">
       <img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS Feed" width="45" />
     </a>
     <p>Check out bug fixes and new features for both our Installed Collector<sup><a href="#collector-footnote">1</a></sup> and OpenTelemetry Collector.</p>
@@ -42,7 +42,7 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
       <img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40" />
       <h4>Cloud SIEM</h4>
     </a>
-    <a href="https://help.sumologic.com/release-notes-cse/rss.xml">
+    <a href="https://www.sumologic.com/help/release-notes-cse/rss.xml">
       <img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS Feed" width="45" />
     </a>
     <p>Learn about new features, updated content (rules, log mappers, parsers), bug fixes, and announcements for Cloud SIEM.</p>
@@ -55,7 +55,7 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
       <img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="icon" width="40" />
       <h4>Cloud SOAR</h4>
     </a>
-    <a href="https://help.sumologic.com/release-notes-csoar/rss.xml">
+    <a href="https://www.sumologic.com/help/release-notes-csoar/rss.xml">
       <img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS Feed" width="45" />
     </a>
     <p>Find the latest Cloud SOAR features, application updates, bug fixes, and other important product announcements.</p>
@@ -68,7 +68,7 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
       <img src={useBaseUrl('img/icons/cloud/api2.png')} alt="icon" width="40" />
       <h4>Developer</h4>
     </a>
-    <a href="https://help.sumologic.com/release-notes-developer/rss.xml">
+    <a href="https://www.sumologic.com/help/release-notes-developer/rss.xml">
       <img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS Feed" width="45" />
     </a>
     <p>Stay informed on updates to our APIs, Collector Management API, and Live Tail CLI, including new developer features.</p>

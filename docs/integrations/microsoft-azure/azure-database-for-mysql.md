@@ -52,9 +52,9 @@ Create a hosted collector if not already configured and tag the `tenant_name` fi
 
 ### Configure metrics collection
 
-import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+import MetricsSource from '../../reuse/metrics-source.md';
 
-<MetricsSourceBeta/>
+<MetricsSource/>
 
 ### Configure logs collection
 
@@ -80,16 +80,15 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    - slow_query_log: set to *ON*
    - long_query_time: Set the number of seconds a query can run before it's considered "slow". The default is 10 seconds.
    - log_slow_admin_statements: set to *ON*
+   - log_queries_not_using_indexes: set to *ON*
 4. Enable slow query and error logs.<br/><img src={useBaseUrl('img/send-data/azure-database-for-mysql-error-logs.png')} alt="Azure flexible mysql error logs" style={{border: '1px solid gray'}} width="800" />
 5. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="500" /> 
 
-#### Activity Logs
+#### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). Skip this step if you are already collecting activity logs for a subscription.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions, ensure that you do not tag this source with the location tag.
-:::
+<ActivityLogs/>
 
 ### Collecting Error Logs
 Error logs cannot be emitted to Azure diagnostic logs directly. To access the error logs, navigate to **Server Logs > Error Logs**, download them, then [upload the logs](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs) to a Sumo Logic HTTP source endpoint. Note that the HTTP source created to receive the error logs needs to be tagged with the following [fields](/docs/manage/fields/#manage-fields) with appropriate values. These values can be copied from the appropriate resource for which logs are ingested through the Azure Event Hub Source for Logs: 
@@ -224,9 +223,9 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Troubleshooting
 
-### HTTP Logs and Metrics Source used by Azure Functions
+### Metrics collection via Azure Metrics Source
 
-To troubleshoot metrics collection, follow the instructions in *Collect Metrics from Azure Monitor* for [Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
+To troubleshoot metrics collection via Azure Metrics Source, follow the instructions in [Troubleshooting Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/#troubleshooting).
 
 ## Additional resources
 

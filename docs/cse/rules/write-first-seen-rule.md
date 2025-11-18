@@ -15,8 +15,16 @@ import CseRule from '../../reuse/cse-rule-description-links.md';
 import Iframe from 'react-iframe';
 
 This topic has information about first seen rules and how to create them in the Cloud SIEM UI.
-:::tip
+:::info
 If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
+:::
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage first seen rules with the [`sumologic_cse_first_seen_rule`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_first_seen_rule) resource.
+
+<TerraformLink/>
 :::
 
 ## About first seen rules

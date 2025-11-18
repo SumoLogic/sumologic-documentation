@@ -62,7 +62,7 @@ Use this dashboard to:
 The **Data Volume - Metrics** dashboard allows you to view your metrics ingested, identifies ingest outliers/spikes, and helps predict what ingestion is going to be.
 
 Use this dashboard to:
-* Determine the ingested DPM by various dimensions their
+* Determine the ingested DPM by various dimensions.
 * Examine trends over time.
 * Identify the spikes where current hour ingestion is above 50% from the last hour.
 * Identify ingestion outliers and forecast data ingestion, analyze the comparison of your current ingestion to your capacity, and review any overages. You must configure the “Metric_DPM_Ingest_Capacity”  variable that needs to be configured based on Account Subscription. If you have a Credit-based plan, please check with your account executive to determine these values for your account. Otherwise, see the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) page to see your Capacity Values.

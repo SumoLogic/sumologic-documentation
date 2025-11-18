@@ -13,10 +13,18 @@ Creating a partition enhances search performance by narrowing down the search s
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Partitions page, in the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
 
-A partition stores your data in an index separate from the rest of your account's data so you can [optimize searches](../../search/optimize-search-performance.md), [manage variable retention](manage-indexes-variable-retention.md), and specify certain [data to forward to S3](../data-forwarding/amazon-s3-bucket.md).
+A partition stores your data in an index separate from the rest of your account's data so you can [optimize searches](../../search/optimize-search-performance.md), [manage variable retention](manage-indexes-variable-retention.md), and specify certain [data to forward to S3 or GCS](../data-forwarding/forward-data-from-sumologic.md).
 
 :::note
 Data stored in a partition is not stored anywhere else. 
+:::
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a partition with the [`sumologic_partition`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/partition) resource.
+
+<TerraformLink/>
 :::
 
 ## About Partitions
@@ -61,25 +69,25 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/run-search-against-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Search a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/run-search-against-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Search a Partition</h4></a>
   <p>Learn how to run a search against data in a Partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/edit-data-forwarding-destinations-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Edit Data Forwarding Destinations for a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/edit-data-forwarding-destinations-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Edit Data Forwarding Destinations for a Partition</h4></a>
   <p>Learn how to specify Data Forwarding settings for a Partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/manage-indexes-variable-retention"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage Indexes with Variable Retention</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/manage-indexes-variable-retention')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage Indexes with Variable Retention</h4></a>
   <p>Learn how to create Index Partitions and Scheduled Views to store your data.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/decommission-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Decommission a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/decommission-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Decommission a Partition</h4></a>
   <p>Learn how to decommission a Partition to keep it from being started.</p>
   </div>
 </div>
