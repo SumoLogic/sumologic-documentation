@@ -38,8 +38,7 @@ jobs:
       WEBOPS_AWS_SG_NAME: ${{ secrets.WEBOPS_AWS_SG_NAME }}
       WEBOPS_JENKINS_PORT: ${{ secrets.WEBOPS_JENKINS_PORT }}
       WEBOPS_JENKINS_HOST: ${{ secrets.WEBOPS_JENKINS_HOST }}
-      WEBOPS_AWS_ACCESS_KEY: ${{ secrets.WEBOPS_AWS_ACCESS_KEY }}
-      WEBOPS_AWS_SECRET_KEY: ${{ secrets.WEBOPS_AWS_SECRET_KEY }}
+      WEBOPS_AWS_ROLE_JENKINS: ${{ secrets.WEBOPS_AWS_ROLE_JENKINS }}
       WEBOPS_WEBHOOK_TOKEN: ${{ secrets.WEBOPS_WEBHOOK_TOKEN }}
   notify-channel:
     needs: [build-site,deploy-to-pantheon,trigger-jenkins-pipeline]
