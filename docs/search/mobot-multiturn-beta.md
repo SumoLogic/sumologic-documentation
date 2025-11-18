@@ -201,11 +201,27 @@ Here are some common cases:
 
 ## Knowledge agent
 
-Select **Knowledge Agent** to get help using Sumo Logic.
+Select **Knowledge Agent** to get help using Sumo Logic. Knowledge Agent is your in-platform assistant for learning how to use Sumo Logic. Ask questions about Sumo Logic and get clear answers sourced directly from our official documentation without leaving your workflow.
 
 <img src={useBaseUrl('img/search/mobot/knowledge-agent-select.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
 
-Knowledge Agent is your in-platform assistant for learning how to use Sumo Logic. Ask questions about Sumo Logic and get clear answers sourced directly from our official documentation without leaving your workflow.
+:::sumo Micro Lesson
+
+Learn more about Knowledge Agent's key features and capabilities.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/r1bbknlk60?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Sumo Logic Dojo AI Knowledge Agent"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 **Example questions:**
 * "How do I add a collector for AWS CloudTrail?"
