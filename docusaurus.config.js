@@ -423,12 +423,12 @@ module.exports = {
           //  position: 'right',
           //  value: 'google_translate',
           // },
-          {
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'right',
-            className: 'header-trial',
-            alt: 'Sign up for a Sumo Logic free trial',
-          },
+          // {
+          //  to: 'https://www.sumologic.com/sign-up',
+          //  position: 'right',
+          //  className: 'header-trial',
+          //  alt: 'Sign up for a Sumo Logic free trial',
+          // },
         //{
           //className: 'header-github-link',
           //to: 'https://github.com/SumoLogic/sumologic-documentation',
