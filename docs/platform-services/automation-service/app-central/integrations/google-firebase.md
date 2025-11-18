@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
-***Version: 1.0
-Updated: Nov 15, 2025***
+***Version: 1.0  
+Updated: Nov 19, 2025***
 
 Google Firebase Authentication is a secure, scalable identity management service that enables user sign-up, sign-in, and access control across web and mobile applications.
 
@@ -20,7 +20,7 @@ Google Firebase Authentication is a secure, scalable identity management service
 * **Update User Attributes** (*Containment*) - Modify user details such as password, status, or settings.
 * **List Sign-in Methods** (*Enrichment*) - View authentication providers linked to a user.
 
-## Google Firebase Authentication configuration
+## Google Firebase Authentication Configuration
 
 Our Google Firebase integration support two types of authentication, Service Account and WIF (Workload Identity Federation). We recommend using WIF since it is more secure and easier to manage. For more information, see [Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation).
 
@@ -86,8 +86,8 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **Private Key Json**. Provide the content of the JSON file generated [above](#google-firebase-configuration). Open the file and copy-paste the whole content in the field.
-* **WIF Private Key Json**. Provide the content of the Workload Identity Federation JSON file generated [above](#google-firebase-configuration). Open the file and copy-paste the whole content in the field.
+* **Private Key Json**. Provide the content of the JSON file generated [above](#google-firebase-authentication-configuration). Open the file and copy-paste the whole content in the field.
+* **WIF Private Key Json**. Provide the content of the Workload Identity Federation JSON file generated [above](#google-firebase-authentication-configuration). Open the file and copy-paste the whole content in the field.
 * **scopes**. Default scope is already added as `https://www.googleapis.com/auth/identitytoolkit`, if not then add this scope.
 * **Project ID**. Provide the Google Firebase Project ID where the firebase actions will be performed.
 * <IntegrationEngine/>
@@ -99,4 +99,4 @@ For information about Google Firebase, see [Google Firebase documentation](https
 
 ## Change Log
 
-* November 15, 2025 (v1.0) - First upload
+* November 19, 2025 (v1.0) - First upload
