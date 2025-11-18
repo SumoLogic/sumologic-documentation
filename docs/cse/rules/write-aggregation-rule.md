@@ -7,12 +7,22 @@ description: Learn how to write an aggregation rule.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CseRule from '../../reuse/cse-rule-description-links.md';
+import CseDynamicSeverity from '../../reuse/cse-dynamic-severity.md';
 import Iframe from 'react-iframe';
 
 This topic has information about Cloud SIEM aggregation rules and how to write them.
 
-:::tip
+:::info
 If you are new to writing your own Cloud SIEM rules, see [Before You Write a Custom Rule](/docs/cse/rules/before-writing-custom-rule) for tips and techniques that are useful for getting started.
+:::
+
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage aggregation rules with the [`sumologic_cse_aggregation_rule`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_aggregation_rule) resource.
+
+<TerraformLink/>
 :::
 
 ## About aggregation rules
@@ -107,6 +117,7 @@ On the right side of the Rules Editor, in the **Then Create a Signal** section, 
    1. The severity area updates. 
    1. **severity of**. Use the pulldown to select a default severity value.
    1. **for the record field**. Use the down arrows to display a list of fields, and select one.  The dynamic severity will be based on the value of (or existence of) that field in the record that matched the rule expression.
+      <CseDynamicSeverity/>
    1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="Add More Mappings option" style={{border: '1px solid gray'}} width="450"/>
    1. **Click Add More Mappings**. (Optional) You can define additional mappings if desired. If you don’t, the severity value will be the value of the record field you selected above.
    1. The **if the value is** option appears.<br/><img src={useBaseUrl('img/cse/if-the-value-is.png')} alt="If the Value Is option" style={{border: '1px solid gray'}} width="450"/>

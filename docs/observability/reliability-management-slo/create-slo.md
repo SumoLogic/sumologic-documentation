@@ -28,6 +28,14 @@ The following table lists the available options for an SLO:
 | **Metrics-based SLO** | Ratio and Threshold | Ratio Only   |
 | **Logs-based SLO**   | Ratio and Threshold | Ratio and Threshold |
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage SLOs with the [`sumologic_slo`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo) and [`sumologic_slo_folder`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder) resources.
+
+<TerraformLink/>
+:::
+
 ## Create an SLO (General)
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**.  

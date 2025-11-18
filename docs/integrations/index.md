@@ -28,6 +28,14 @@ To check if an app is supported by your pricing plan, see [Apps and Sumo Logic A
 Learn the difference between our [Next-Gen Apps and Classic Apps](/docs/get-started/apps-integrations/#next-gen-apps).
 :::
 
+import TerraformLink from '../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide apps with the [`sumologic_app`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/app) resource.
+
+<TerraformLink/>
+:::
+
 :::sumo Micro Lesson
 Watch this tutorial to learn how to use our **App Catalog**.
 

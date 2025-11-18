@@ -19,6 +19,13 @@ Before you can create automations in Cloud SIEM, you must first [configure role 
 
 The Automation Service is a subset of automation capabilities adapted from Cloud SOAR that is available to the entire Sumo Logic log analytics platform. For more information, see [Cloud SOAR Compared to the Automation Service](/docs/cloud-soar/compared-to-automation-service/).
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage Cloud SIEM automation with the [`sumologic_cse_automation`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_automation) resource.
+<TerraformLink/>
+:::
+
 ## Benefits
 
 * The Automation Service supports enrichment, notification, containment, user choice, and custom actions in Cloud SIEM. 

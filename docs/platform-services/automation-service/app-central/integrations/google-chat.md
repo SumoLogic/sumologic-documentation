@@ -34,10 +34,11 @@ Our Google Chat integration support two types of authentication, Service Account
 ## Required AWS details from Sumo Logic
 
 To configure the Google Chat integration using WIF authentication, you need the following AWS details from Sumo Logic. These details are essential for setting up the Workload Identity Federation (WIF) credentials in Google Workspace:
-* Sumo Logic AWS account ID: `246946804217`
-* Sumo Logic AWS role: `stag-csoar-automation-gcpiam`
-* Sumo Logic AWS Lambda function: `stag-csoar-automation-gcpiam`
-* Full ARN: `arn:aws:sts::246946804217:assumed-role/stag-csoar-automation-gcpiam/stag-csoar-automation-gcpiam`
+* Deployment name is the unique name of your Sumo Logic [deployment](/docs/api/about-apis/getting-started/#documentation), for example, `dub`, `fra`, etc. 
+* Sumo Logic AWS account ID: `926226587429`
+* Sumo Logic AWS role: `<deployment_name>-csoar-automation-gcpiam`
+* Sumo Logic AWS Lambda function: `<deployment_name>-csoar-automation-gcpiam`
+* Full ARN: `arn:aws:sts::926226587429:assumed-role/<deployment_name>-csoar-automation-gcpiam/<deployment_name>-csoar-automation-gcpiam`
 
 
 ### Workload Identity Federation (WIF) authentication
@@ -46,7 +47,7 @@ To [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
 3. Go to the **API&Services**
-4. In the same page click on **ENABLED API AND SERVICES** and search for Google Chat and enable it.
+4. In the same page click on **ENABLED API AND SERVICES** and search for Google Chat, Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API and enable it all.
 5. Go to the **IAM & Admin** > **Service Accounts** page.
 6. Click **CREATE SERVICE ACCOUNT** [Service Account](https://cloud.google.com/iam/docs/service-accounts-create) is required to access the Google Chat API.
 7. While creating the service account, in **Permissions** add the role **Service Account Token Creator** and click on **DONE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-11.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
@@ -95,7 +96,8 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **Private Key Json**. Provide the content of the JSON file generated [above](#google-chat-configuration). Open the file and copy-paste the whole content in the field.
+* Provide the **Service Account Private Key Json** or **WIF Private Key Json** based on your configuration.
+* **scopes**. Default scope is already added as `https://www.googleapis.com/auth/chat.bot`, if not then add this scope.
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
