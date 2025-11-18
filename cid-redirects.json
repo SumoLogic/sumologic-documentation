@@ -2969,6 +2969,7 @@
   "/cid/1118": "/docs/integrations/saas-cloud/databricks-audit",
   "/cid/1121": "/docs/integrations/saas-cloud/varonis",
   "/cid/1120": "/docs/integrations/saas-cloud/github-copilot",
+  "/cid/1123": "/docs/integrations/amazon-aws/amazon-bedrock-agentcore",
   "/cid/11245": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source",
   "/Cloud_SIEM_Enterprise": "/docs/cse",
   "/Cloud_SIEM_Enterprise/Administration": "/docs/cse/administration",

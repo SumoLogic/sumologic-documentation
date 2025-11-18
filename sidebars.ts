@@ -2100,6 +2100,7 @@ integrations: [
         'integrations/amazon-aws/amazon-appstream2',
         'integrations/amazon-aws/amazon-athena',
         'integrations/amazon-aws/amazon-bedrock',
+        'integrations/amazon-aws/amazon-bedrock-agentcore',
         'integrations/amazon-aws/amazon-chime',
         'integrations/amazon-aws/amazon-chimesdk',
         'integrations/amazon-aws/cloudfront',
