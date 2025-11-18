@@ -33,9 +33,6 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  clientModules: [
-    require.resolve('./src/client-modules/trackTrialClick.js'),
-  ],
   future: {
     v4: true,
     experimental_faster: true,
@@ -274,17 +271,6 @@ module.exports = {
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
-    },
-    algolia: {
-      appId: '2SJPGMLW1Q',
-      apiKey: 'fb2f4e1fb40f962900631121cb365549',
-      indexName: 'crawler_sumodocs',
-      contextualSearch: false,
-      insights: true,
-      insightsConfig: {
-        useCookie: true, // alt to useCookie: true,
-      },
-      useCookie: true,  // alt to insightsConfig: {useCookie: true,},
     },
     prism: {
       theme: lightCodeTheme,
