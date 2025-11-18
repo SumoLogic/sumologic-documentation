@@ -33,9 +33,11 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  clientModules: [
-    require.resolve('./src/client-modules/trackTrialClick.js'),
-  ],
+  // Temporarily removes Start Free Trial button conversion event tracking.
+  // To reinstate this, uncomment below and restore trackTrialClick.js file
+  //  clientModules: [
+  //    require.resolve('./src/client-modules/trackTrialClick.js'),
+  //  ],
   future: {
     v4: true,
     experimental_faster: true,
