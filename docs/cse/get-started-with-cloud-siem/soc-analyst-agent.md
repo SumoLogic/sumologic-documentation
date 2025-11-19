@@ -13,8 +13,11 @@ description: Learn how to use Sumo Logic's SOC Analyst Agent to perform investig
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic's SOC Analyst Agent is an agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations.
+Sumo Logic's SOC Analyst Agent is an agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations. 
 
+The agent delivers automated verdicts on insights using evidence-backed reasoning to determine whether the insights are malicious, suspicious, or benign. It then provides a concise summary of threat incidents based on triggered signals in the insight. Finally, it presents key findings, including details found in the signals that fired for the insight. All of this results in quicker, more detailed analysis.
+
+<!-- For phase 2 beta 
 The SOC Analyst Agent performs two distinct jobs that mirror an analyst’s daily responsibilities:
 * **Triage**. Delivers automated verdicts on insights using evidence-backed reasoning to determine whether the insights are malicious, suspicious, or benign.
 * **Investigation**. Supports analysts with a hypothesis-driven approach to assess the scope, context, and likely impact of an event.
@@ -22,37 +25,47 @@ The SOC Analyst Agent performs two distinct jobs that mirror an analyst’s dail
 The SOC Analyst Agent provides the following functionality:
 * [AI Investigation tab in Cloud SIEM](#ai-investigation-tab)
 * [Insight investigation in Mobot](#investigate-the-insight-in-mobot)
+-->
+
+## Filter for AI verdicts
+
+The SOC Analyst Agent runs in the background against all insights that flow into Cloud SIEM. After analysis, it renders a verdict about whether the insight requires investigation.
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen. 
+1. In the insight list page, note that the **AI Verdict** column shows the results of the AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-verdict-column.png')} alt="Insight AI Verdict column" style={{border: '1px solid gray'}} width="800" />
+1. Click **Start typing here to create a filter** near the top of the insights page and select **AI Verdict** to search for insights based on the verdict they are assigned:
+   * **Benign**. AI analysis determined that the insight is harmless and is not a candidate for elevation to SOC team investigation.
+   * **Inconclusive**. AI analysis could not determine whether the insight needs to be investigated.
+   * **In Progress**. AI analysis is in progress.
+   * **Malicious**. AI analysis determined that the insight is malicious, and warrants immediate investigation by your SOC team.
+   * **Suspicious**. AI analysis determined that the insight is suspicious and warrants investigation by your SOC team. 
+1. Clicking anywhere on the row of an insight that has an AI verdict shows a side panel with results of the verdict. This allows you to browse quickly for insights needing more investigation:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-side-panel.png')} alt="Insight AI side panel" style={{border: '1px solid gray'}} width="800" />
+1. To investigate an insight further, click the insight's ID. Insights with an AI verdict display an **AI Investigation** tab in the insight details page. Use the information on this tab to dive deeper into the insight.
 
 ## AI Investigation tab
 
-The **AI Investigation** tab in the details page of a Cloud SIEM insight is an artificial intelligence-generated analysis of the insight.
+The **AI Investigation** tab in the details page of a Cloud SIEM insight is an artificial intelligence-generated analysis of the insight. Use the information on this tab to guide your investigation.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen.  
-1. On the insights list page, select an insight.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen. 
+1. On the insights list page, click an insight's ID.
 1. The **AI Investigation** tab shows results of AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-investigation-tab.png')} alt="Insight AI Investigation tab" style={{border: '1px solid gray'}} width="800" />
    1. **Severity Verdict**. Details about the insight's severity analysis:
       * **Current Severity**. The severity of the insight as set by the cumulative activity score for the insight. For more information, see [About insight severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process/#about-insight-severity).
       * **Global Confidence Score**. A level of confidence that the insight is actionable, predicted by Sumo Logic’s Global Intelligence machine learning model. See [What is a Global Confidence score?](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/#what-is-a-global-confidence-score).
-      * **AI Verdict**. The AI system's qualitative assessment of the insight. Following are the available verdicts:
-          * **Benign**. AI analysis determined that the insight is harmless and is not a candidate for elevation to SOC team investigation.
-          * **Inconclusive**. AI analysis could not determine whether the insight needs to be investigated.
-          * **In Progress**. AI analysis is in progress.
-          * **Malicious**. AI analysis determined that the insight is malicious, and warrants immediate investigation by your SOC team.
-          * **Suspicious**. AI analysis determined that the insight is suspicious and warrants investigation by your SOC team. 
+      * **AI Verdict**. The AI system's qualitative assessment of the insight.
       * **Recommends security level of ___**. AI analysis recommends a new severity level be assigned to this insight. If you agree with the assessment, click **Accept**. The **Current Severity** field changes to the new value.
    1. **What Happened**. A concise summary of threat incidents based on triggered signals in the insight. Content of this field is generated by Sumo Logic's Summary Agent, an agentic AI tool. The summary consolidates key details to facilitate quick understanding and response by security teams. The summary is generated when an insight is created, and is regenerated whenever the insight is modified, keeping it current with added or removed signals.
       :::tip
       Help us refine the tool by using the thumbs-up or thumbs-down buttons to provide feedback on the effectiveness of the summary presented. Clicking the thumbs-down button gives you the opportunity to provide additional feedback.
       ::: 
    1. **Key Findings**. The main points uncovered by AI analysis. Details about these findings can be found in the signals that fired for the insight.
+   
+   <!-- Phase 2 of the beta
    1. **Ask Mobot**. Click to send the AI analysis of the insight to [Sumo Logic Mobot](#investigate-the-insight-in-mobot) for further investigation.
+   -->
 
-### Filter for AI verdicts
 
-In the insight list page, that the **AI Verdict** column shows the results of the AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-verdict-column.png')} alt="Insight AI Verdict column" style={{border: '1px solid gray'}} width="800" />
-
-Click in the **Filters** area near the top of the insights page and select **AI Verdict** to search for insights based on the verdict they are assigned (Benign, Inconclusive, In Progress, Malicious, Suspicious). See [Filtering insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#filtering-insights) for more information about filtering.
-
+ <!-- Phase 2 of the beta
 ### Investigate the insight in Mobot
 
 1. From the insight's details page, click **Ask Mobot** to open the AI investigation in [Sumo Logic Mobot](/docs/search/mobot/).<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" /> 
@@ -64,12 +77,16 @@ Click in the **Filters** area near the top of the insights page and select **AI 
 ### Start a new investigation
 
 To clear the context and start a new investigation, click **New Conversation** in the upper-right corner of the screen. To start investigation on another insight, navigate back to Cloud SIEM, select another insight, and click **Ask Mobot**.
+-->
 
 ## FAQs
 
 ### What is the Sumo Logic SOC Analyst Agent?
 
-The SOC Analyst Agent is part of the [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#whats-new-dojo-ai-for-the-soc). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks like MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts an immediate sense of threat impact. When deeper analysis is required, the same agent supports hypothesis-based investigation to map relationships, connect entities, and summarize findings.
+The SOC Analyst Agent is part of the [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#whats-new-dojo-ai-for-the-soc). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks like MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts an immediate sense of threat impact. 
+<!-- Phase 2 of the beta
+When deeper analysis is required, the same agent supports hypothesis-based investigation to map relationships, connect entities, and summarize findings.
+-->
 
 ### What are the benefits of the agent?
 
