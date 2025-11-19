@@ -12,7 +12,7 @@ The Collection Overview page provides a centralized view of all child org level 
 To view collector details at the child org level, perform the following steps:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Organizations**, and then select **Collection Overview**. You can also click the **Go To...** menu at the top of the screen and select **Collection Overview**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Organizations > Collection Overview**. <br/><img src={useBaseUrl('img/manage/subscriptions/collection-overview.png')} alt="collection-overview" style={{border: '1px solid gray'}} width="800" />
-2. Navigate to **Collection** tab to view details of Installed and Hosted collectors or navigate to **OT Collection** tab view details of OpenTelemetry collectors associated with the child orgs.
+2. Navigate to the **Collection** tab to view details of Installed and Hosted collectors or navigate to the **OT Collection** tab view details of OpenTelemetry collectors associated with the child orgs.
     - **Collection**. Displays the total number of collectors and sources associated with the child orgs. Additionally, includes insights into the health events and stopped installed collectors for the respective child orgs level.
     - **OT Collection**. Displays the total number of collectors and source templates associated with the child orgs. Additionally, includes insights into the health events and stopped installed collectors for the respective child orgs level.
 
