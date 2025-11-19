@@ -418,6 +418,11 @@ module.exports = {
               },
             ],
           },
+          {
+            label: 'Search',
+            position: 'left',
+            to: 'https://cse.google.com/cse?cx=a3e0e7e6784fc43f2',
+          },
           // {
           //  type: 'html',
           //  position: 'right',
@@ -435,10 +440,6 @@ module.exports = {
           //position: 'right',
           //alt: 'Link to Sumo Logic Docs GitHub repository',
         //},
-          {
-            type: 'search',
-            position: 'right',
-          },
         ],
       },
       footer: {
