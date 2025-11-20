@@ -103,7 +103,7 @@ _index=sumologic_system_events "0000000007063B25"
 
 ## View Health Events
 
-The health events table allows you to easily view and investigate problems which occurs while injecting the data to Sumo Logic. On the health events table, you can search, filter, and sort incidents by key aspects like severity, resource name, event name, resource type, and opened since date.
+The health events table allows you to easily view and investigate problems which occur while injecting the data to Sumo Logic. On the health events table, you can search, filter, and sort incidents by key aspects like severity, resource name, event name, resource type, and opened since date.
 
 :::info
 It may take up to 15 minutes for a 90% usage breach for Lookup Tables, Partitions, Fields, or Field Extraction Rules (FERs) to reflect on the Health Events page after detection.
