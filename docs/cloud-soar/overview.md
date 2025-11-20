@@ -7,7 +7,7 @@ sidebar_label: Overview
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import StaticIpAddresses from '../reuse/static-ips-automation-service.md';
 
-Cloud SOAR fully automates triage, investigation, and remediation of threats for any security professional. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR).
+Cloud SOAR automates triage, investigation, and remediation of threats for security professionals. The open integrations framework allows you to connect to many third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR).
 
 ## Why Cloud SOAR?
 
