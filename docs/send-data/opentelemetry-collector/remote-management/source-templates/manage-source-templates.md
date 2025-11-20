@@ -159,3 +159,6 @@ You can edit your collector name with remote management by following the steps b
 1. In the right pane, scroll to the **Name** section and click **Edit**.<br/><img src={useBaseUrl('img/send-data/edit-otel-collector-name.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} />
 1. In the **Edit Collector Name** pop up, enter the new collector name and click **Proceed**.<br/><img src={useBaseUrl('img/send-data/enter-new-otel-collector-name.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="500" />
 1. Type **PROCEED** in the input field, and then click **Confirm** to apply the change.<br/><img src={useBaseUrl('img/send-data/click-confirm.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="500" />
+:::note
+Click **click here** to view the source templates affected by the collector name update.<br/><img src={useBaseUrl('img/send-data/affected-STs.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="500" />
+:::
