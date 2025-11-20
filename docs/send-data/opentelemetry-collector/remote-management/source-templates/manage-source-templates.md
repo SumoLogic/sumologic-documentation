@@ -150,3 +150,12 @@ If you try to add or update any collector tags using the API, the following vali
 1. Validates if the default tags are added or deleted.
 :::
 
+## Collector Name
+
+You can edit your collector name with remote management by following the steps below:
+
+1. Navigate to the **OpenTelemetry Collection** page.<br/><img src={useBaseUrl('img/send-data/oTel-collector-page.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} />
+1. Click on the desired collector where you need to change collector name.
+1. In the right pane, scroll to the **Name** section and click **Edit**.<br/><img src={useBaseUrl('img/send-data/edit-otel-collector-name.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} />
+1. In the **Edit Collector Name** pop up, enter the new collector name and click **Proceed**.<br/><img src={useBaseUrl('img/send-data/enter-new-otel-collector-name.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="500" />
+1. Type **PROCEED** in the input field, and then click **Confirm** to apply the change.<br/><img src={useBaseUrl('img/send-data/click-confirm.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="500" />
