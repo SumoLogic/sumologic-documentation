@@ -7,7 +7,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cloud-to-Cloud Integration Framework is a fully-managed collection system that collects logs and events directly from SaaS and Cloud platforms. This data often includes custom events and user data critical for operations monitoring, security, and compliance use cases. As a fully managed collection system, integrations running within the Cloud-to-Cloud Integration Framework provide a secure endpoint to receive event data in your account. Integration authentication, scheduling, and state tracking are all managed by the framework.
 
-
 ## Limitations
 
 * Each account is limited to 50 Cloud-to-Cloud Sources.
@@ -44,6 +43,14 @@ For the Federal environments, a different set of Static IPs is available for eac
 ## Integrations
 
 The topics below are the available integrations. In Sumo Logic these are called Sources. Check out the Sources we have available in beta.
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a cloud-to-cloud source with the [`sumologic_cloud_to_cloud_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloud_to_cloud_source) resource.
+
+<TerraformLink/>
+:::
 
 ## Versions
 
@@ -326,7 +333,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/github-copilot-source')}><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/github-copilot.png')} alt="Thumbnail icon" width="100"/><h4>Github Copilot</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/github-copilot-source')}><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/github.png')} alt="Thumbnail icon" width="100"/><h4>Github Copilot</h4></a>
   <p>Learn to collect the organization metrics and team metrics from GitHub Copilot platform.</p>
   </div>
 </div>
@@ -334,6 +341,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source')}><img src={useBaseUrl('img/send-data/google-bigquery-icon.png ')} alt="Gmail" width="70"/><h4>Google BigQuery</h4></a>
   <p>Learn how to collect data using the BigQuery API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source')}><img src={useBaseUrl('img/send-data/Google-Threat-Intel.png')} alt="Gmail" width="50"/><h4>Google Threat Intel</h4></a>
+  <p>Learn how to collect data using the Google Threat Intel API.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -440,7 +453,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source')}><img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="icon" width="50"/><h4>Miro</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source')}><img src={useBaseUrl('img/send-data/miro-logo.png')} alt="icon" width="50"/><h4>Miro</h4></a>
   <p>Ingests audit logs obtained from the Audit log API.</p>
   </div>
 </div>

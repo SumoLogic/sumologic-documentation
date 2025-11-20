@@ -21,6 +21,14 @@ The following diagram shows the flow of data with an AWS Kinesis Firehose for Lo
 For failed logs messages, AWS will send them into the backup S3 bucket. Sumo Logic will ingest those failed logs through S3, and not the firehose.
 :::
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an AWS Kinesis Firehose for Logs source with the [`sumologic_kinesis_log_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/kinesis_log_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Create an AWS Kinesis Firehose for Logs Source
 
 When you create an AWS Kinesis Firehose for Logs Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).

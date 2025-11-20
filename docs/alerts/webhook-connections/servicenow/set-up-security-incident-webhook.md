@@ -6,6 +6,8 @@ description: This page shows you how to set up a ServiceNow Incident Webhook con
 
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This page shows you how to set up a ServiceNow Security Incident Webhook connection and create scheduled searches for the connection.
 
 If you want to create **Events** or **ITSM Incidents** see [Set Up ServiceNow Connections](set-up-connections.md) for instructions.
@@ -57,7 +59,7 @@ To set up a ServiceNow Security Incident Webhook connection:
 
     For a complete list of fields that can be sent in the payload, see the [Webhook payload variables](#webhook-payload-variables) section that follows.
 
-    ![serviceNow webhook configuration.png](/img/connection-and-integration/serviceNow-webhook-configuration.png)
+    <img src={useBaseUrl('img/connection-and-integration/serviceNow-webhook-configuration.png')} alt="serviceNow webhook configuration" style={{border: '1px solid gray'}} width="500" />
 
 1. Click **Save**.
 1. After configuring the connection, continue with [Testing the connection](#testing-the-connection), then [create a scheduled search](/docs/alerts/webhook-connections/schedule-searches-webhook-connections) to send alerts to this connection.
