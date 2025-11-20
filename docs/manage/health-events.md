@@ -142,7 +142,7 @@ To view the number of health events associated with the Collector or Source, per
 
 ## Search health events
 
-Events are indexed and searchable in a separate partition named **sumologic_system_events** in the [System Event Index](/docs/manage/security/audit-indexes/system-event-index). To search all health events run a query against the internal partition named **sumologic_system_events**. For example,  
+Events are indexed and searchable in a separate partition named `sumologic_system_events` in the [System Event Index](/docs/manage/security/audit-indexes/system-event-index). To search all health events run a query against the internal partition named `sumologic_system_events`. For example,  
 
 ```sql
 _index=sumologic_system_events "Health-Change"
