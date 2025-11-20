@@ -132,6 +132,11 @@ export const Home = () => {
                   </Typography>
                   {[
                     {
+                      children: 'Start a free trial',
+                      description: 'Sign up for a Sumo Logic free trial',
+                      to: 'https://www.sumologic.com/sign-up',
+                    },
+                    {
                       children: '1. Set up collector and source',
                       description: 'Set up a Sumo Logic collector and source',
                       to: '/docs/get-started/quickstart#step-1-get-your-data-into-sumo',

@@ -33,9 +33,11 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  clientModules: [
-    require.resolve('./src/client-modules/trackTrialClick.js'),
-  ],
+  // Temporarily removes Start Free Trial button conversion event tracking.
+  // To reinstate this, uncomment below and restore trackTrialClick.js file
+  //  clientModules: [
+  //    require.resolve('./src/client-modules/trackTrialClick.js'),
+  //  ],
   future: {
     v4: true,
     experimental_faster: true,
@@ -437,12 +439,12 @@ module.exports = {
           //  position: 'right',
           //  value: 'google_translate',
           // },
-          {
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'right',
-            className: 'header-trial',
-            alt: 'Sign up for a Sumo Logic free trial',
-          },
+          // {
+          //  to: 'https://www.sumologic.com/sign-up',
+          //  position: 'right',
+          //  className: 'header-trial',
+          //  alt: 'Sign up for a Sumo Logic free trial',
+          // },
         //{
           //className: 'header-github-link',
           //to: 'https://github.com/SumoLogic/sumologic-documentation',
