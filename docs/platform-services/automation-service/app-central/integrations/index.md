@@ -18,7 +18,7 @@ All automation integrations require authentication to communicate between the ve
 
 ## Integrations
 
-Count of available integrations: 340
+Count of available integrations: 342
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

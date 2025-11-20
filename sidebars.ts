@@ -474,6 +474,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/github-copilot-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source',
@@ -785,7 +786,6 @@ module.exports = {
           items: [
             'send-data/collection/search-for-a-collector-or-source',
             'send-data/collection/start-stop-collector-using-scripts',
-            'send-data/collection/restart-collectors',
             'send-data/collection/edit-collector',
             'send-data/collection/edit-source',
             'send-data/collection/pause-resume-source',
@@ -2101,6 +2101,7 @@ integrations: [
         'integrations/amazon-aws/amazon-appstream2',
         'integrations/amazon-aws/amazon-athena',
         'integrations/amazon-aws/amazon-bedrock',
+        'integrations/amazon-aws/amazon-bedrock-agentcore',
         'integrations/amazon-aws/amazon-chime',
         'integrations/amazon-aws/amazon-chimesdk',
         'integrations/amazon-aws/cloudfront',
