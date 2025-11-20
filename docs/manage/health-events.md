@@ -4,6 +4,8 @@ title: Health Events
 description: Monitor the health of your Collectors and Sources.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Availability
 
 | Account Type | Account Level |
@@ -40,11 +42,11 @@ On the health events table, you can search, filter, and sort incidents by ke
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the health events table, in the main Sumo Logic menu select **Manage Data > Monitoring > Health Events**. 
 
-![health events table.png](/img/health-events/health-events-table.png)
+<img src={useBaseUrl('img/health-events/health-events-table.png')} alt="Health events table" style={{border: '1px solid gray'}} width="800" />
 
 Click on a row to view the details of a health event.
 
-![health event detail.png](/img/health-events/health-event-detail.png)
+<img src={useBaseUrl('img/health-events/health-event-detail.png')} alt="Health event detail" style={{border: '1px solid gray'}} width="400" />
 
 Click the **Create Scheduled Search** button on the details pane to get alerts for specific health events. The unique identifier of the resource, such as the Source or Collector, is used in the query. See [Schedule a Search](../alerts/scheduled-searches/schedule-search.md) for details.
 
@@ -57,8 +59,8 @@ Under the **More Actions** menu you can select:
 
 Events are categorized by two severity levels, warning and error. The severity column has color-coded error and warning events so you can quickly determine the severity of a given issue.
 
-* ![warning label.png](/img/health-events/warning-label.png) A warning indicates the Collector or Source has a configuration issue or is operating in a degraded state.
-* ![Error label.png](/img/health-events/Error-label.png) An error indicates the Collector or Source is unable to collect data as expected.
+* <img src={useBaseUrl('img/health-events/warning-label.png')} alt="Warning label" style={{border: '1px solid gray'}} width="75" /> A warning indicates the Collector or Source has a configuration issue or is operating in a degraded state.
+* <img src={useBaseUrl('img/health-events/Error-label.png')} alt="Error label" style={{border: '1px solid gray'}} width="50" /> An error indicates the Collector or Source is unable to collect data as expected.
 
 ### Common parameters
 
@@ -138,12 +140,7 @@ A **Health** column on the Collection page shows color-coded healthy, error, a
 
 The **status** column now shows the status of Sources manually paused by users.
 
-![Collection health column.png](/img/health-events/Collection-health-column.png)
+<img src={useBaseUrl('img/health-events/Collection-health-column.png')} alt="Collection health column" style={{border: '1px solid gray'}} width="800" />
 
-* Hover your mouse over a Collector or Source to view a tooltip that provides the number of health events detected on the Collector or Source.
-
-    ![health tooltip.png](/img/health-events/health_tooltip.png)
-
-* Click on the **Health** status in a row to view a pop-up displaying a list of related events.
-
-    ![object event details.png](/img/health-events/object_event_details.png)
+* Hover your mouse over a Collector or Source to view a tooltip that provides the number of health events detected on the Collector or Source.<br/><img src={useBaseUrl('img/health-events/health_tooltip.png')} alt="Health tooltip" style={{border: '1px solid gray'}} width="150" />
+* Click on the **Health** status in a row to view a pop-up displaying a list of related events.<br/><img src={useBaseUrl('img/health-events/object_event_details.png')} alt="Object event details" style={{border: '1px solid gray'}} width="500" />

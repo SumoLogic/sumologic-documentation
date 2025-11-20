@@ -4,6 +4,8 @@ title: Script Action
 description: A Script Action receives data uploads that are triggered by a scheduled search.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 :::note
 You'll need the [View Collectors role capability](/docs/manage/users-roles/roles/role-capabilities) to set a Script Action alert.
 :::
@@ -21,7 +23,7 @@ This fully-qualified path is passed as the first parameter to the script or prog
 The Collector executes the script as the user running the Collector process.
 :::
 
-![script_action_flow_diagram_white.png](/img/send-data/script_action_flow_diagram_white.png)
+<img src={useBaseUrl('img/send-data/script_action_flow_diagram_white.png')} alt="Script_action_flow_diagram_white" width="600" />
 
 ## Step 1. Enable Script Actions on the Collector
 
@@ -44,10 +46,7 @@ You can set up a Script Action using the Sumo web app, described in [Option A](#
 1. **Name.** Enter a name to display for the Script Action.
 1. **Description**. Optional.
 1. **Specify a timeout for your command**. You can optionally set a timeout for script execution. Setting a timeout ensures that a script is killed, making sure that resources aren't fully consumed. If you set a timeout, make sure to select a generous amount of time to make sure that the script has enough time to finish running.
-1. **Command.** Choose the type of command you're going to use.   
-
-    ![script-action-commands.png](/img/send-data/script-action-commands.png)
-
+1. **Command.** Choose the type of command you're going to use.<br/><img src={useBaseUrl('img/send-data/script-action-commands.png')} alt="Script-action-commands" style={{border: '1px solid gray'}} width="400" />
 1. **Script.** Enter the path to the script. Do not enter the contents of the script. (When the Collector executes the script, it will pass the full path to a file containing the search results that triggered the Script Action as the first and only parameter.)
 1. **Working Directory.** Specify a directory if you need your Script Action to execute in a different directory than the Collector installation directory.
 1. Click **Save**.
@@ -89,10 +88,7 @@ After the Script Action has been added to your Collector, you can create a sche
 The first time the Scheduled Search executes, output files will begin to be generated.
 
 1. Save a search. 
-1. Click **Schedule this search**. 
-
-    ![img](/img/send-data/sched-search.png)
-
+1. Click **Schedule this search**. <br/><img src={useBaseUrl('img/send-data/sched-search.png')} alt="Click Schedule this search" style={{border: '1px solid gray'}} width="500" />
 1. For all configuration options, see Schedule a Search. 
 1. **Alert Type**. Select **Script Action**.
 1. **Script Action**. Select the name of the Script Action (displayed with its Collector's name) from the menu.
@@ -126,7 +122,7 @@ This example shows how to set up a script and configure a Script Action.
 
 The Collector creates an `alerts` directory in its installation directory to store the results of the search, as in this example:
 
-![img](/img/send-data/script_action_example6.png)
+<img src={useBaseUrl('img/send-data/script_action_example6.png')} alt="Alerts directory" style={{border: '1px solid gray'}} width="600" />
 
 When the Collector gets the result of the Scheduled Search, it runs the script. The output of the script is collected by the Script Action, and you can run a query to get the results.
 
@@ -170,7 +166,7 @@ The Sumo Logic file is the result of a scheduled search written in JSON forma
 
 A maximum of 5MB or 1,000 messages are included in the file, except for real time non-aggregate queries which return up to 100 messages. Each message in the search results is marked with the Collector's metadata and a time stamp. At the end of each file you'll find information about the scheduled search:
 
-![Alert_Source_Sumo_MIB_no_total.png](/img/send-data/Alert_Source_Sumo_MIB_no_total.png)
+<img src={useBaseUrl('img/send-data/Alert_Source_Sumo_MIB_no_total.png')} alt="Search results file" style={{border: '1px solid gray'}} width="800" />
 
 * A - End time of scheduled search (Unix timestamp)
 * B - Beginning time of the scheduled search.

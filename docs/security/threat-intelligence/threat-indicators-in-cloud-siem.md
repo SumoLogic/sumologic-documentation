@@ -72,3 +72,22 @@ Following is the mapping of threat type fields in indicators to reputation label
 :::note
 If the mapping produces a threat indicator level of **Malicious**, but the confidence is less than 60, the entity's reputation will be set to **Suspicious** instead. If there are multiple reputation values for a given entity (potentially from threat intel and enrichment), Cloud SIEM will show the most severe indicator.
 :::
+
+## Add verified indicators to match lists
+
+To prevent entities that are verified as safe from resulting in signals being fired from threat intelligence indicators, add the verified entities to the appropriate [standard match lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists):
+* [`verified_applications`](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#verified_applications)
+* [`verified_domains`](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#verified_domains)
+* [`verified_hostnames`](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#verified_hostnames)
+* [`verified_ips`](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#verified_ips)
+* [`verified_uri_ips`](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#verified_uri_paths)
+
+For example, if you have a list of allowed IP addresses, add them to the [`verified_ips`](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#verified_ips) match list. Any rules whose expressions state to ignore IPs in that match list will not fire signals for those IPs when the rules run. Following are some of the standard Cloud SIEM threat intel rules whose expressions are configured to ignore IPs in the `verified_ips` match list:
+* `Threat Intel - Destination IP Address (Low Confidence)`
+* `Threat Intel - Destination IP Address (Medium Confidence)`
+* `Threat Intel - Device IP Matched Threat Intel Domain Name`
+* `Threat Intel - Device IP Matched Threat Intel URL`
+* `Threat Intel - Inbound Traffic from Threat Feed IP (High Confidence)`
+* `Threat Intel - Inbound Traffic from Threat Feed IP (Medium Confidence)`
+* `Threat Intel Match - IP Address`
+* `Threat Intel - Successful Authentication from Threat Feed IP`

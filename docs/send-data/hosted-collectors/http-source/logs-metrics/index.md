@@ -15,6 +15,14 @@ With an HTTP Logs and Metrics Source you can upload logs and metrics from data s
 
 When you set up an HTTP Logs and Metrics Source, a unique URL is assigned to that source. The generated URL is a long string of letters and numbers. You can generate a new URL at any time. For more information, see [Generating a new URL](../generate-new-url.md).
 
+import TerraformLink from '../../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an HTTP source with the [`sumologic_http_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/http_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Data payload considerations
 
 We recommend that the data payload of a POST request have a size, before compression, of 100KB to 1MB.
@@ -91,7 +99,7 @@ Below are the key benefits that you can obtain by sending compressed data:
 
 If you need to access the Source's URL again, click **Show URL**.
 
-![A screenshot of the Sumo Logic interface showing 'Apache Tomcat' collector details. It is hosted with a green status, source category 'Labs/Tomcat', 3 sources in the last hour, and no messages. Actions include 'Add Source', 'Edit', 'Delete', 'Regenerate URL', and 'Show URL' (highlighted in red).](/img/send-data/show-url.png)
+<img src={useBaseUrl('img/send-data/show-url.png')} alt="Show URL link" style={{border: '1px solid gray'}} width="800" />
 
 The Source's `url` can be viewed by sending a GET request to the Collector Management API for the Source's JSON configuration.
 
@@ -101,7 +109,7 @@ The HTTP Logs and Metrics Source isn't designed to support large numbers of c
 
 To increase throughput, batch multiple log messages in a single request to the Source. If any of those logs can contain multiline messages, like stack traces, activate **Enable Multiline Processing**. 
 
-![A screenshot of the Sumo Logic 'Enable Multiline Processing' settings. The options include 'Detect messages spanning multiple lines' (checked), 'Infer Boundaries - Detect message boundaries automatically' (selected), and 'Boundary Regex - Expression to match message boundary' with an example expression provided. There is a note indicating that 'Infer Boundaries may not be accurate for all log types'.](/img/send-data/multiline.png)
+<img src={useBaseUrl('img/send-data/multiline.png')} alt="Enable Multiline Processing" style={{border: '1px solid gray'}} width="600" />
 
 For basic multiline processing, select **Infer Boundaries**; if this leads to malformed messages, you can instead specify a regular expression to determine the multiline boundary.
 

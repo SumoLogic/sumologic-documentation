@@ -107,6 +107,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/chatgpt-compliance')}><img src={useBaseUrl('/img/send-data/chatgpt-compliance.png')} alt="icon" width="50"/><h4>ChatGPT Compliance</h4></a>
+  <p>Monitor how ChatGPT is used across your organization to ensure adherence to corporate governance and data protection standards.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/cisco-amp')}><img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="70"/><h4>Cisco AMP</h4></a>
   <p>Monitor and analyze the host activity status and file types implicated in cybersecurity incidents.</p>
   </div>
@@ -179,6 +185,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/databricks-audit')}><img src={useBaseUrl('img/collector/databricks-icon.png')} alt="icon" width="70"/><h4>Databricks Audit</h4></a>
+  <p>Analyze your organization's security practices to identify emerging threats and compliance risks.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/digital-guardian-arc')}><img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Thumbnail icon" width="40"/><h4>Digital Guardian ARC</h4></a>
   <p>Monitor, detect, and respond to critical events.</p>
   </div>
@@ -209,8 +221,14 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/fastly')}><img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="40"/><h4>Fastly</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/fastly')}><img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="60"/><h4>Fastly</h4></a>
   <p>Control how and where you serve content, and view performance analytics.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/github-copilot')}><img src={useBaseUrl('img/send-data/github_copilot.png')} alt="Thumbnail icon" width="40"/><h4>GitHub Copilot</h4></a>
+  <p>Optimize Copilot adoption, improve developer productivity, and ensure secure, data-driven use of AI-assisted coding.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -293,7 +311,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/miro')}><img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="icon" width="40"/><h4>Miro</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/miro')}><img src={useBaseUrl('img/send-data/miro-logo.png')} alt="icon" width="40"/><h4>Miro</h4></a>
   <p>Monitoring and investigate Miro potential security threats.</p>
   </div>
 </div>
@@ -433,6 +451,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/trust-login')}><img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="icon" width="100"/><h4>Trust Login</h4></a>
   <p>Analyze authentication events, user activities, and potential security threats.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/varonis')}><img src={useBaseUrl('img/integrations/misc/varonis-logo.png')} alt="icon" width="100"/><h4>Varonis</h4></a>
+  <p>Identify and evaluate security threats and behaviors across your Varonis platform.</p>
   </div>
 </div>
 <div className="box smallbox card">

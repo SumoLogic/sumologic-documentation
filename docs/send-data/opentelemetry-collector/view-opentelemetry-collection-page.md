@@ -22,7 +22,7 @@ To view details about an OpenTelemetry Collector:
     - **Last Modified**. Timestamp when the collector was last modified.
 1. Click on the desired collector.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-collector-details.png')} alt="opentelemetry-collection-details-page" style={{border:'1px solid gray'}} width="400"/>
     - **Basic Info**
-        - **Name**. Name of the OpenTelemetry Collector.
+        - **Name**. Name of the OpenTelemetry Collector. To edit the collector name, refer to the [Collector Name](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#collector-name).
         - **Collector Version**. The collector version with which the collector was created.
         - **Source Templates**. Displays the number of source templte 
         - **Health**. Displays the health status of the collector.

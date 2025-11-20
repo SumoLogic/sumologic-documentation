@@ -4,6 +4,8 @@ title: LogExplain
 description: Group by the keys of JSON or keyvalue logs.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The **LogExplain** operator allows you to compare sets of structured logs based on events you are interested in. Structured logs can be in JSON, CSV, key-value, or any structured format. Often logs relevant to troubleshooting and security insights are scattered among other logs that show the expected behavior and performance. These logs normally consist of different content, where it is helpful to see which values occur more often in events of interest versus normal operation logs. For example, events of interest often contain information relevant to persistent errors, excess load, and high latency.
 
 You will need to specify an event of interest as a conditional statement, this is called the Event Condition. You can specify a condition to compare against the event-of-interest condition, this is called the Against Condition. If no Against Condition is provided, LogExplain will generate the comparison data set based on the fields in your Event Condition.
@@ -125,7 +127,7 @@ _sourceCategory=*cloudtrail*
 
 Results show the relevance of each explanation:
 
-![CloudTrail example with LogExplain.png](/img/search/behavior-insights/cloudtrail-example-logexplain.png)
+<img src={useBaseUrl('img/search/behavior-insights/cloudtrail-example-logexplain.png')} alt="CloudTrail example with LogExplain" style={{border: '1px solid gray'}} width="800" />
 
 ### Windows Credentials
 
