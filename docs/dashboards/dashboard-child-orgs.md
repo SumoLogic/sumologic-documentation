@@ -39,8 +39,14 @@ You can customize a chart on a dashboard panel in a variety of ways. To include�
 
 ## Add a log query
 
-Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. A few important things to note are:
+Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. 
 
+There can be two possible errors while running the multi-child org queries:
+
+- **Partial success**. This occurs when you run a query across all child orgs, and while some child orgs successfully execute, one or more encounter failures. Despite the failures, dashboard with aggregate results from the successfully executed child orgs will be displayed. To resolve the failure, refer to the audit logs (`_index=sumologic_system_events`) for detailed information on the failure query.
+- **Error**. This occurs when you run a query across all child orgs, and all child orgs encounter failures with no child orgs returning the successful result. To resolve the failure, refer to the audit logs (`_index=sumologic_system_events`) for detailed information on the failure query.
+
+A few important things to note are:
 * Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list. 
 * By default, the query builder is set to **Logs**. 
 * Joining log queries in a separate query is not supported.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-log-query.png')} alt="Add log query" style={{border: '1px solid gray'}} width="800" />
@@ -54,7 +60,7 @@ Follow the below steps to change the default child org:
 
 ## Log Search page
 
-To create a Dashboard from the [Log Search page](/docs/search):
+To create a Dashboard from the [Log Search page](/docs/search/search-across-child-orgs/):
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Log Search** page.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs** > **Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.
 1. Click the <img src={useBaseUrl('img/search/get-started-search/search-page/child-org-select-button.png')} alt="child-org-select-button" style={{border: '1px solid gray'}} width="30"/> button to select the child org where you want to query. You can either select one child org or multiple child orgs. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/child-org-dropdown.png')} alt="child-org-dropdown" style={{border: '1px solid gray'}} width="800"/>
