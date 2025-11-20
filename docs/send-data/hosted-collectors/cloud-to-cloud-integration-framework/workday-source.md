@@ -39,22 +39,22 @@ By default, the collection starts from the current date and time, but this setti
 
 This section demonstrates how to configure the Workday portal to integrate with Sumo Logic’s collection scripts. Configuring the Workday portal involves the following steps:
 
-#### Step 1: Register the API Client
+#### Step 1: Register the API client
 
 1. To register the API client, access the **Register API Client** **for Integrations** task, and provide the following parameters:
     * **Client Name.** Sumo Logic Workday Collector
-    * **Non-Expiring Refresh Tokens.** Yes.
-    * **Scope.** System.
+    * **Non-Expiring Refresh Tokens.** Yes
+    * **Scope.** System
 2. Click **OK**.
 3. Copy the **Client Secret** and **Client ID** before you navigate away from the page and store it securely. If you lose the **Client Secret**, you can generate a new one using the **Generate New API Client Secret** task.
 4. Click **Done**.
 5. To generate a refresh token, access the **View API Clients** task and copy the below two parameters from the top of the page:
-    * **Workday REST API Endpoint.** The endpoint to use access to the resources in your Tenant.
-    * **Token Endpoint**. The endpoint used to exchange an authorization code for a token (if you configure authorization code grant).
-6. Go to the **API Clients for Integrations** tab, hover on the **“Sumo Logic Workday Collector API”** client, and click on the three-dot kebab action buttons.
-7. In the new pop up window, click **API Client** > Manage Refresh Token for Integrations.
+    * **Workday REST API Endpoint.** The endpoint to use for access to the resources in your tenant.
+    * **Token Endpoint**. The endpoint used to exchange an authorization code for a token (if you configure an authorization code grant).
+6. Go to the **API Clients for Integrations** tab, hover on the **“Sumo Logic Workday Collector API”** client, and click on the three-dot kebab action button.
+7. In the new pop up window, click **API Client > Manage Refresh Token for Integrations**.
 8. In the **Manage Refresh Token for Integrations** window, select **“SumoLogic_ISU”** in the **Workday Account** field and click **OK**.
-9. In the newly opened window, select **Generate New Refresh Token** checkbox and click **OK**.
+9. In the newly opened window, select the **Generate New Refresh Token** checkbox and click **OK**.
 10. Copy the value of the **Refresh Token** column from the opened window and click **Done**.
 
 #### Step 2: Enable your tenant to send data
@@ -82,8 +82,7 @@ For customers that do not make use of the Recruiting Functional Area, the standa
     * Browser Type
     * Device is Trusted
 6. Remove the text in the **Column Heading Override** column, for **Field > Session ID** and **Field > System Account**. After configuring all the fields you can verify all the fields using the [Excel](https://appdev-readme-resources.s3.amazonaws.com/Workday/Signons_and_Attempted_Signons_-_Copy.xlsx).
-7. If you're configuring the [Cloud-to-Cloud Collector Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source/), Go to the **Prompts** tab and look for the **Do Not Prompt at Runtime** column under the **Prompts Defaults** table. Make sure that checkboxes are disabled for the **From_Moment** and **To_Moment** rows.
-  <img src={useBaseUrl('img/integrations/saas-cloud/Workday-SignOn-Report-Prompts-Tab.png')} alt="workday custom sign-on report prompt tab" style={{border: '1px solid gray'}} />
+7. If you're configuring Workday Source, go to the **Prompts** tab and look for the **Do Not Prompt at Runtime** column under the **Prompts Defaults** table. Make sure that checkboxes are disabled for the **From_Moment** and **To_Moment** rows.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Workday-SignOn-Report-Prompts-Tab.png')} alt="workday custom sign-on report prompt tab" style={{border: '1px solid gray'}} />
 8. Go to the **Advanced** tab and click the **Enable As Web Service** checkbox under **Web Service Options**.
 9. Go to the **Share** tab, enable **Share with specific users and groups** option, add **SumoLogic_ISU** in the **Authorized Users** field, and click **OK**.
 10. Click **Done**. You can also test it by clicking the **Run** button.
@@ -93,7 +92,7 @@ For customers that do not make use of the Recruiting Functional Area, the standa
 
 ### Source configuration
 
-When you create a Citrix Cloud Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Citrix Cloud Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Workday Source, follow the steps below:
 
@@ -106,16 +105,16 @@ To configure a Workday Source, follow the steps below:
 7. **Fields** (Optional). Click the **+Add** field link to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a checkmark is shown when the field exists in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
-8. **Client ID**. Paste the Client ID copied from [Vendor configuration: Step 3](#step-3-register-the-api-client).
-9. **Client Secret**. Paste the Client Secret copied from [Vendor configuration: Step 3](#step-3-register-the-api-client).
-10. **Refresh Token URL**. Paste the Token endpoint copied from [Vendor configuration: Step 3](#step-3-register-the-api-client).
-11. **Refresh Token**. Paste the generated Refresh Token copied from [Vendor configuration: Step3](#step-3-register-the-api-client).
-12. **SignOn Report URL**. Paste the SignOn Report URL from the [Vendor configuration: Step 5](#step-5-create-a-custom-sign-on-report).
-13. **REST API URL**. Take the Workday Rest API endpoint copied in [Vendor configuration: Step 3](#step-3-register-the-api-client) and modify it to match the format `https://<host>/ccx/api/privacy/v1/<tenant>/activityLogging`. Provide the modified URL here.
+8. **Client ID**. Paste the Client ID copied from vendor configuration [Step 1](#step-1-register-the-api-client).
+9. **Client Secret**. Paste the Client Secret copied from [Step 1](#step-1-register-the-api-client).
+10. **Refresh Token URL**. Paste the Token endpoint copied from [Step 1](#step-1-register-the-api-client).
+11. **Refresh Token**. Paste the generated Refresh Token copied from [Step 1](#step-1-register-the-api-client).
+12. **SignOn Report URL**. Paste the SignOn Report URL from the vendor configuration [Step 3](#step-3-create-a-custom-sign-on-report).
+13. **REST API URL**. Take the Workday Rest API endpoint copied in [Step 1](#step-1-register-the-api-client) and modify it to match the format `https://<host>/ccx/api/privacy/v1/<tenant>/activityLogging`. Provide the modified URL here.
 14. **Collection Should begin** (Optional). Select the time range for how far back you want this source to start collecting data from Workday. This is set to **24 Hours ago** by default.
-  :::note
-  <CollBegin/>
-  :::
+    :::note
+      <CollBegin/>
+    :::
 15. **Polling Interval** (Optional). Select how often you want the Source to collect data from Workday. This is set to 10 minutes by default.
 16. When you are finished configuring the Source, click **Save**.
 
@@ -130,7 +129,7 @@ To configure a Workday Source, follow the steps below:
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
@@ -150,7 +149,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | clientSecret | String  | Yes | `null` | A client secret from the Workday API client. |  |
 | refreshTokenURL | String | Yes | `null` | The URL which will be used to fetch access token. |  |
 | refreshToken | String | Yes | `null` |  A non-expiring refresh token from the Workday API client. |  |
-| signOnReportURL | String | Yes | `null` | The URL which will be used to fetch. sign-on activity logs |  |
+| signOnReportURL | String | Yes | `null` | The URL which will be used to fetch sign-on activity logs. |  |
 | restApiURL  | String | Yes | `null` | The URL which will be used to fetch activity logs. |  |
 | backfillDays | Integer | No | 24 Hours ago(1) | How far back the integration should collect the data from the Workday. <br /> Options: Now(0) or 24 hours ago(1). |  |
 | pollingIntervalMinutes | Integer | No | 10 | How frequently the integration should poll to Workday. <br /> Options: 10m, 15m, 30m, 1h, 24h. |  |
@@ -182,54 +181,48 @@ The following section details how you can resolve various errors.
 - An invalid or expired refresh token is provided.
 - Existing token is deleted or a new one is generated hence making the existing one invalid.
 
-To resolve this:
-1. Generate a new refresh token and update the C2C configuration.
+To resolve this, generate a new refresh token and update the C2C configuration.
 
 #### Error 400 |  Bad Request: invalid_request
 - An invalid tenant name is provided in the token URL.
 
-To resolve this:
-1. Provide the correct "tenant name".
+To resolve this, provide the correct "tenant name".
 
 #### Error 401 | Unauthorized: invalid_client
 - Invalid client id or client secret is provided.
 - A new client secret is generated, making the existing one invalid.
-- The `OAuth 2.0 Clients Enabled` checkbox under the Edit Tenant Setup - Security task is disabled.
+- The **OAuth 2.0 Clients Enabled** checkbox under the **Edit Tenant Setup - Security** task is disabled.
 
 To resolve this:
 1. Provide the correct "client id" and "client secret".
-1. Enable the `The OAuth 2.0 Clients Enabled` checkbox. Refer to the [Workday App > OAuth 2.0 Clients Enabled](#step-4-enable-your-tenant-to-send-data) section.
+1. Enable the **The OAuth 2.0 Clients Enabled** checkbox. Refer to the **Workday App > OAuth 2.0 Clients Enabled** section described in [Step 2](#step-2-enable-your-tenant-to-send-data).
 
 #### Error 403 | Forbidden: permission denied
 - Token will be generated successfully in this case but Activity Logs API will return 403 forbidden error.
 - This is due to `System scope` is not provided to the API client.
 
-To resolve this:
-1. Enable the `System scope`. Refer to the [Workday App > API Client](#step-3-register-the-api-client) section.
+To resolve this, enable the `System scope`. Refer to the **Workday App > API Client** section described in [Step 1](#step-1-register-the-api-client).
 
 #### Error 404 |  Not Found: invalid_request
 - An invalid path parameter is provided in the token URL. For example, `/oauth/` instead of `/oauth2/`.
 
-To resolve this:
-1. Provide the correct "token URL".
+To resolve this, provide the correct "token URL".
 
 #### Error 404 |  Not Found: invalid_request
 - An invalid path parameter is provided in the Activity Logs URL. For example, `/v2` instead of `/v1`.
 
-To resolve this:
-1. Provide the correct "Activity Logs URL".
+To resolve this, provide the correct "Activity Logs URL".
 
 #### Error | 503: Service Unavailable
 - An invalid tenant name is provided in the Activity Logs URL.
 - An invalid hostname is provided in the token or Activity Logs URL. For example, `wd5-impl-services1.workday.com` instead of `wd2-impl-services1.workday.com`.
 
-To resolve this:
-1. Provide the correct "tenant name" and "hostname".
+To resolve this, provide the correct "tenant name" and "hostname".
 
 #### Error | received sign-on report log time outside time filter window. create a custom sign on report as per the setup instructions
 - Custom sign on report is not created as per the instructions
 
-To resolve this, [Create a Custom Sign on Report](#step-5-create-a-custom-sign-on-report) and configure the source accordingly.
+To resolve this, [create a custom sign on report](#step-3-create-a-custom-sign-on-report) and configure the source accordingly.
 
 ## FAQ
 
