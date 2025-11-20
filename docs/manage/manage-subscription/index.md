@@ -43,6 +43,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/manage/manage-subscription/collection-overview')}><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Collection Overview</h4></a>
+  <p>Learn how to monitor all the collectors associated with the child orgs in single interface.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/manage/manage-subscription/manage-billing-information')}><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Manage Billing Information</h4></a>
   <p>Learn how to manage billing for professional accounts.</p>
   </div>
