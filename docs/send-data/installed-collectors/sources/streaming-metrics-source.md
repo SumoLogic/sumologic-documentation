@@ -112,7 +112,7 @@ For example:
 metric=request_rate site=mydomain mtype=rate unit=Req/s host=web12 agent=statsdaemon1  234 1234567890
 ```
 
-Unlike Prometheus, Carbon 2.0 format doesn't enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic require a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Halth Events, see [About Health Events](/docs/manage/health-events)).
+Unlike Prometheus, Carbon 2.0 format doesn't enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic require a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Halth Events, see [Health Events](/docs/manage/health-events)).
 
 For example, the following metric will be correctly ingested to Sumo Logic:
 ```
