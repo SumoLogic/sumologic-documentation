@@ -98,7 +98,7 @@ For specific `eventType`, `resourceId`, `eventName`:
 ```sql
 _index=sumologic_system_events "0000000007063B25" 
 | json "eventType", "resourceIdentity.id","eventName" as eventType, resourceId, eventName
-| where eventType = "Health-Change" AND resourceId = "0000000007063B25" AND eventName='LookupsLimitApproaching'
+| where eventType = "Health-Change" AND resourceId = "0000000007063B25" AND eventName="LookupsLimitApproaching"
 ```
 
 ## View Health Events
