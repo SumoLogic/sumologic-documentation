@@ -19,7 +19,7 @@ Docs cover all product features and should be your first resource when you have 
 If you haven't found the answer to your question in our online help documentation:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Help > Support**. <br/> [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Help > Support**. 
-1. You'll be taken to Sumo Logic Support. Click **Submit a Request** to file a ticket.<br/>![Help - Support.png](/img/get-started/Help-Support.png)
+1. You'll be taken to Sumo Logic Support. Click **Submit a Request** to file a ticket.<br/><img src={useBaseUrl('img/get-started/Help-Support.png')} alt="Support page" style={{border: '1px solid gray'}} width="800" />
 
 On this site, you can log in with your account to access resources like Sumo Logic announcements, release notes, Knowledge Base articles, and more. You can also access the Sumo Logic Community in order to ask questions of fellow users.
 
@@ -41,7 +41,7 @@ You can also search for and request features, comment, and vote on issues that a
 
 See the [Sumo Logic Community](https://community.sumologic.com) for more information.
 
-![Help - Community2.png](/img/get-started/Help-Community.png)
+<img src={useBaseUrl('img/get-started/Help-Community.png')} alt="Community page" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Privacy Policy
@@ -74,8 +74,8 @@ The Service Status Indicator on the Help menu shows the severity of the outage.
 | Icon | Status |
 | :-- | :-- |
 | NONE | **None.** All systems operational. |
-| ![](/img/reuse/outage_critical.png) | **Critical.** Major system outage. |
-| ![](/img/reuse/outage_major.png) | **Major.** Partial system outage.  |
-| ![](/img/reuse/outage_minor.png) | **Minor.** Minor system outage. |
+| <img src={useBaseUrl('img/reuse/outage_critical.png')} alt="Critical icon" style={{border: '1px solid gray'}} width="25" />| **Critical.** Major system outage. |
+| <img src={useBaseUrl('img/reuse/outage_major.png')} alt="Major icon" style={{border: '1px solid gray'}} width="25" /> | **Major.** Partial system outage.  |
+| <img src={useBaseUrl('img/reuse/outage_minor.png')} alt="Minor icon" style={{border: '1px solid gray'}} width="25" /> | **Minor.** Minor system outage. |
 
 To determine which pod your account uses, look at the Sumo Logic URL. If you see `us2`, that means you're running on the US2 pod. If you see `eu` or `au`, you're on one of those pods.

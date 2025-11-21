@@ -15,6 +15,14 @@ Log data for Google Cloud Platform (GCP) services is collected and exposed thro
 Google no longer requires a pub/sub domain to be [verified](https://cloud.google.com/pubsub/docs/push). You no longer have to set up domain verification with your GCP Source endpoint.
 :::
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a Google Cloud Platform source with the [`sumologic_gcp_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/gcp_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Configure a Google Cloud Platform Source
 
 The Google Cloud Platform (GCP) Source receives log data from Google Pub/Sub.
@@ -28,7 +36,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Select an existing Hosted Collector upon which to add the Source. If you do not already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. Click **Add Source** next to the Hosted Collector and click **Google Cloud Platform**.
-1. Enter a **Name** to display for the Source. A **Description** is optional.<br/>  ![google_cloud_platform_2022.png](/img/send-data/google_cloud_platform.png)
+1. Enter a **Name** to display for the Source. A **Description** is optional.<br/><img src={useBaseUrl('img/send-data/google_cloud_platform.png')} alt="Google Cloud Platform 2022" style={{border: '1px solid gray'}} width="400" />
 1. **Source Host** (Optional). The Source Host value is tagged to each log and stored in a searchable metadata field called `_sourceHost`. Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 128 characters.
 1. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 1,024 characters.
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.

@@ -4,6 +4,8 @@ title: Kubernetes Fluentd plugin
 description: Information on using the Sumo Kubernetes Fluentd plugin to collect logs from Kubernetes.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 :::danger solution deprecated
 The configuration described on this page is deprecated. We recommend using our [comprehensive Kubernetes solution](/docs/observability/kubernetes) instead.  
 :::
@@ -21,7 +23,7 @@ The plugin runs as a Kubernetes DaemonSet; it runs an instance of the plugin on 
 This integration is supported by Sumo Logic, with the help of a community of open source developers. For support, add a request at https://github.com/SumoLogic/fluentd-kubernetes-sumologic/issues. This will allow the community to participate in support and further improvement of the integration. 
 :::
 
-![kubernetes2.png](/img/send-data/kubernetes2.png)
+<img src={useBaseUrl('img/send-data/kubernetes2.png')} alt="Kubernetes Fluentd diagram" style={{border: '1px solid gray'}} width="700" />
 
 ## Step 1: Create hosted collector and HTTP source in Sumo
 
@@ -306,7 +308,7 @@ _sourceCategory=some/app | json auto.
 
 ### Docker
 
-![docker.png](/img/send-data/docker.png)
+<img src={useBaseUrl('img/send-data/docker.png')} alt="Docker example" style={{border: '1px solid gray'}} width="800" />
 
 ### Kubelet
 
@@ -314,11 +316,11 @@ _sourceCategory=some/app | json auto.
 Kubelet logs are only collected If you're using systemd. Kubernetes no longer outputs the kubelet logs to a file.
 :::
 
-![kubelet.png](/img/send-data/kubelet.png)
+<img src={useBaseUrl('img/send-data/kubelet.png')} alt="Kubulet example" style={{border: '1px solid gray'}} width="800" />
 
 ### Containers
 
-![container.png](/img/send-data/container.png)
+<img src={useBaseUrl('img/send-data/container.png')} alt="Containers example" style={{border: '1px solid gray'}} width="800" />
 
 ## Taints and Tolerations
 

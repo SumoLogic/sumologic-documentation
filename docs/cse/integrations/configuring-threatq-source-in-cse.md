@@ -7,7 +7,7 @@ description: Learn how to set up a ThreatQ source.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<!-- For threat intel. Once we support cat with the threatlookup search operator, REPLACE THE CONTENTS OF THIS ARTICLE WITH THE FOLLOWING:
+<!-- Per DOCS-35, once we support cat with the threatlookup search operator, REPLACE THE CONTENTS OF THIS ARTICLE WITH THE FOLLOWING:
 
 ThreatQ is a threat intelligence platform that centrally manages and correlates external sources of threat intel information. If you have a ThreatQ subscription, you can leverage ThreatQ threat intel feeds. 
 

@@ -59,7 +59,8 @@ Sumo Logic provides the following out-of-the-box default sources of threat indic
 A Cloud SIEM administrator must first ingest the indicators before they can be used to uncover threats. Indicators can be ingested using:
 * **A collector**. See:
    * [CrowdStrike Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source)
-   * [Intel 471 Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source)
+   * [Google Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source/)
+   * [Intel471 Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source)
    * [Mandiant Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source)
    * [STIX/TAXII 1 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source)  
    * [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source)

@@ -4,6 +4,8 @@ title: avg Grouping Operator
 sidebar_label: avg
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The averaging function (`avg`) calculates the average value of the numerical field being evaluated within the time range analyzed.
 
 ## Syntax
@@ -32,7 +34,7 @@ An example snippet from a log would like this: `time taken: 21 ms,` where the va
 
 The average operator would calculate against all parsed values and return the average, which would be returned in the **Aggregates** tab as a number, such as 50.
 
-![avg results](/img/search/searchquerylanguage/group-aggregate-operators/avg-results.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/group-aggregate-operators/avg-results.png')} alt="Avg results" style={{border: '1px solid gray'}} width="200" />
 
 ### Use Aggregate in Query
 
