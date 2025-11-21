@@ -5,6 +5,8 @@ sidebar_label: Amazon ElastiCache
 description: The Sumo Logic Observability integration for Amazon ElastiCache provides visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Amazon ElastiCache allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud.
 
 The Amazon ElastiCache dashboards provide visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues. Use the preconfigured dashboards for at-a-glance analysis of event status trends, locations, successes and failures, as well as system health and performance metrics. The dashboards also have additional performance insights for Redis clusters.
@@ -103,7 +105,7 @@ Use this dashboard to:
 * CPU, memory or swap space on host and swap usage.
 * Monitor network traffic utilization and compare today’s trends of incoming and outgoing bytes and packets vs. yesterday
 
-![img](/img/observability/host-performance.png)
+<img src={useBaseUrl('img/observability/host-performance.png')} alt="Amazon ElastiCache - Host Performance Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 2. Amazon ElastiCache - Audit Event Overview
 
@@ -116,7 +118,7 @@ Use this dashboard to:
 * Quickly identify top error codes to diagnose any outages
 * Monitor trends around failed events to identify potential service disruptions that could warrant deeper investigation
 
-![img](/img/observability/audit-event.png)
+<img src={useBaseUrl('img/observability/audit-event.png')} alt="Amazon ElastiCache - Audit Event Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 3. Amazon ElastiCache - Redis Performance Overview
 
@@ -126,7 +128,7 @@ Use this dashboard to:
 
 * Quickly determine if your Redis database is performing as expected
 
-![img](/img/observability/redis-performance.png)
+<img src={useBaseUrl('img/observability/redis-performance.png')} alt="Amazon ElastiCache - Redis Performance Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 4. Amazon ElastiCache - Audit Event Details
 
@@ -137,7 +139,7 @@ Use this dashboard to:
 * Quickly determine changes made to your ElastiCache clusters while troubleshooting production outages
 * Determine if any nodes hosting your ElastiCache clusters were rebooted
 
-![img](/img/observability/audit-event-details.png)
+<img src={useBaseUrl('img/observability/audit-event-details.png')} alt="Amazon ElastiCache - Audit Event Details dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 1. Amazon ElastiCache - Host Performance Details
 
@@ -148,7 +150,7 @@ Use this dashboard to:
 * Get an at-a-glance view of the performance of all nodes within a given ElastiCache cluster
 * Determine if CPU, memory, swap memory or network resources need to be scaled up or down for a given cluster or service based on utilization trends
 
-![img](/img/observability/host-performance-details.png)
+<img src={useBaseUrl('img/observability/host-performance-details.png')} alt="Amazon ElastiCache - Host Performance Details dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 2. Amazon ElastiCache - Redis Performance Details
 
@@ -160,7 +162,7 @@ Use this dashboard to:
 * Review trends around defragmentation, replication lag and bytes replicated to determine optimizations
 * Quickly determine any authentication and authorization failures and grant or revoke privileges accordingly
 
-![img](/img/observability/redis-performance-details.png)
+<img src={useBaseUrl('img/observability/redis-performance-details.png')} alt="Amazon ElastiCache - Redis Performance Details dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 3. Amazon ElastiCache - Redis Command Latency
 
@@ -170,7 +172,7 @@ Use this dashboard to:
 
 * Optimize performance of your Redis clusters by monitoring latency observed across get/set operations. Latency can be high due to high CPU usage, swapping or removing cached items. Performance optimizations can therefore be made either via resource allocation or by optimizing on caching.
 
-![img](/img/observability/redis-command-latency.png)
+<img src={useBaseUrl('img/observability/redis-command-latency.png')} alt="Amazon ElastiCache - Redis Command Latency dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 4. Amazon ElastiCache - Redis Command Stats
 
@@ -185,4 +187,4 @@ Use this dashboard to:
 If high latency commands are not being processed frequently, you will want to look into monitoring and potentially allocating more CPU resources.
 :::
 
-![img](/img/observability/redis-command-stats.png)
+<img src={useBaseUrl('img/observability/redis-command-stats.png')} alt="Amazon ElastiCache - Redis Command Stats dashboard" style={{border: '1px solid gray'}} width="800" />
