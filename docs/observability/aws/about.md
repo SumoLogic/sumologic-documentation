@@ -48,7 +48,7 @@ Sumo Logic provides an AWS CloudFormation templates (CFN) and Terraform scripts 
 
 After you have [prepared](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy) and [deployed](/docs/observability/aws/deploy-use-aws-observability) the solution, you can [add and configure additional AWS services](/docs/observability/aws/other-configurations-tools/add-new-aws-service) as your infrastructure grows.
 
-![AWS_Observ_architecture.jpg](/img/observability/AWS_Observ_architecture.jpeg)
+<img src={useBaseUrl('img/observability/AWS_Observ_architecture.jpeg')} alt="AWS observability architecture" style={{border: '1px solid gray'}} width="800" />
 
 ### Data collection and dashboards
 

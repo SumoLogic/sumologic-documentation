@@ -5,6 +5,8 @@ sidebar_label: Metric Query Autocomplete
 description: The Metrics Search provides an autocomplete dropdown dialog that offers suggestions to make query writing easier.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer) provides an autocomplete dropdown dialog that offers suggestions to make query writing easier. Autocomplete is supported in both Basic and Advanced mode.
 
 ## Basic Mode autocomplete
@@ -16,7 +18,7 @@ three fields for building a query.
 * **Filter** — When you click the field, a list of Sumo Logic metadata fields, metric dimensions, and metatags is displayed. As you start to enter text, the items that match your entry appear.
 * **Add Operator** — When you click the field a list of operators is displayed. After you select an operator, you’re prompted to supply the appropriate options for that operator.   
 
-    ![basic-autocomplete.png](/img/metrics/basic-autocomplete.png)
+    <img src={useBaseUrl('img/metrics/basic-autocomplete.png')} alt="Basic autocomplete" style={{border: '1px solid gray'}} width="800" />
 
 ## Advanced Mode autocomplete
 
@@ -26,7 +28,7 @@ When you click in the query area, metric query autocomplete presents a list of S
 
 If you enter a partial value in the query area, autocomplete presents only those items that match the value.  
 
-![advanced-autocomplete.png](/img/metrics/advanced-autocomplete.png)
+<img src={useBaseUrl('img/metrics/advanced-autocomplete.png')} alt="Advanced autocomplete" style={{border: '1px solid gray'}} width="800" />
 
 ## About autocomplete retention
 

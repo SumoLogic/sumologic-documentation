@@ -5,6 +5,8 @@ sidebar_label: View AWS Dashboards
 description: Learn how to navigate your AWS Observability infrastructure, as well as provide links to the app dashboards.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Availability
 
 This feature is available in the following account plans.
@@ -38,19 +40,11 @@ To investigate services in your AWS environment, do the following:
 
 1. In the AWS Observability view, select an account to view a list of its regions.
 
-    The **AWS Account Overview** dashboard appears in the window on the right. The dashboard provides insights into the activities in the selected AWS account and gives you an at-a-glance view of the health and status of the AWS services in that account.
-
-    ![AWS-Account-Overview.png](/img/observability/AWS-Account-Overview.png)
-
+    The **AWS Account Overview** dashboard appears in the window on the right. The dashboard provides insights into the activities in the selected AWS account and gives you an at-a-glance view of the health and status of the AWS services in that account.<br/><img src={useBaseUrl('img/observability/AWS-Account-Overview.png')} alt="AWS account overview" style={{border: '1px solid gray'}} width="800" />
 1. Similarly, from the expanded account, select a region.  
 
-    The **AWS Region Overview** dashboard appears in the window on the right. The dashboard provides insights into the AWS account activities in that AWS region and gives you an at-a-glance view of the health and status of the AWS services in that account-region combination.  
-
-    ![AWS-Region-Overview.png](/img/observability/AWS-Region-Overview.png)
-
-1. From the expanded account and region combination, select a namespace or AWS service. The dashboard for the selected namespace appears in the window on the right. In our example, we selected the AWS EC2 Metrics namespace in the *us-east-1* region of the *prod* account.
-
-    ![AWS-EC2-Metrics-Overview.png](/img/observability/AWS-EC2-Metrics-Overview.png)
+    The **AWS Region Overview** dashboard appears in the window on the right. The dashboard provides insights into the AWS account activities in that AWS region and gives you an at-a-glance view of the health and status of the AWS services in that account-region combination.<br/><img src={useBaseUrl('img/observability/AWS-Region-Overview.png')} alt="AWS region overview" style={{border: '1px solid gray'}} width="800" />
+1. From the expanded account and region combination, select a namespace or AWS service. The dashboard for the selected namespace appears in the window on the right. In our example, we selected the AWS EC2 Metrics namespace in the *us-east-1* region of the *prod* account.<br/><img src={useBaseUrl('img/observability/AWS-EC2-Metrics-Overview.png')} alt="AWS EC2 metrics overview" style={{border: '1px solid gray'}} width="800" />
 
 ## Drill down for root cause analysis
 
@@ -58,7 +52,7 @@ From each level in the hierarchy, you can drill-down to individual entities by o
 
 Select the graph data point you are interested in. In the following screenshot, we selected 5xx Error Codes by Load Balancer in the honeycomb graph. A list of related content links for our failed pod appears in a panel on the right.
 
-![Drill_RCA.png](/img/observability/Drill_RCA.png)
+<img src={useBaseUrl('img/observability/Drill_RCA.png')} alt="Drill RCA" style={{border: '1px solid gray'}} width="800" />
 
 For details, see [Drill down to discover root causes](../../../dashboards/drill-down-to-discover-root-causes.md).
 
@@ -72,7 +66,7 @@ To view the app dashboards:
 
 1. Navigate to your Sumo Logic personal folder. 
 1. Click an app folder to list the dashboard pages.
-1. Click a page link to view the dashboard in the window on the right.   <br/>  ![App_folder.png](/img/observability/add-new-service.jpeg)
+1. Click a page link to view the dashboard in the window on the right.<br/><img src={useBaseUrl('img/observability/add-new-service.jpeg')} alt="App_ older" style={{border: '1px solid gray'}} width="800" />
 
 Click a link for information on the individual app dashboards:
 

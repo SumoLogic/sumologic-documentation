@@ -5,6 +5,8 @@ sidebar_label: Update Observability Stack
 description: Learn how to update the AWS Observability stack.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 You can update an existing observability stack using Terraform or an AWS CloudFormation template.
 
 ## Update with Terraform
@@ -36,13 +38,13 @@ Updating the Apps will create a backup of the old apps in a folder called as **�
 
 To update an existing stack to the latest version:
 
-1. Locate the **Main Stack** created using AWS CloudFormation template and Click **Update**. <br/>  ![Stack_Step1.png](/img/observability/Stack_Step1.png)
+1. Locate the **Main Stack** created using AWS CloudFormation template and Click **Update**. <br/><img src={useBaseUrl('img/observability/Stack_Step1.png')} alt="Stack step 1" style={{border: '1px solid gray'}} width="800" />
 1. Select **Replace Current Template**, paste the URL `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.13.0/sumologic_observability.master.template.yaml` in the Amazon S3 URL option, and then select **Next**.
     :::note
     If you would like to download or inspect this or other versions of this template, visit the [Change Log](changelog.md) page.
     :::
-    ![aws-create-stack.png](/img/observability/aws-create-stack.png)
+    <img src={useBaseUrl('img/observability/aws-create-stack.png')} alt="AWS create stack" style={{border: '1px solid gray'}} width="800" />
 1. Keep parameters that you selected before when you created the stack and click **Next**.
 1. Review all the changes listed on the **Change Set Review** and make sure you're comfortable with these changes.
-1. Select the capabilities and Click **Submit**.  <br/>  ![Stack_Step4.png](/img/observability/Stack_Step4.png)
+1. Select the capabilities and Click **Submit**.  <br/><img src={useBaseUrl('img/observability/Stack_Step4.png')} alt="Select the capabilities" style={{border: '1px solid gray'}} width="<insert-pixel-number>" />
 1. After the update is complete, the stacks that have been updated successfully will be set to a `UPDATE_COMPLETE` status.  

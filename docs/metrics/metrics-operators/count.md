@@ -4,6 +4,7 @@ title: count Metrics Operator
 sidebar_label: count
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Counts the total number of time series that match the query. If grouping is specified, it counts the total number for each group.
 
@@ -41,4 +42,4 @@ metric=4XXError | count by method
 
 In this query, we're searching for how many 4xx errors occurred by different methods, for example, GET, PUT, DELETE, and so on.
 
-![count-example.png](/img/metrics/count-example.png)
+<img src={useBaseUrl('img/metrics/count-example.png')} alt="count example" style={{border: '1px solid gray'}} width="800" />
