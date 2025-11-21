@@ -137,7 +137,7 @@ Email Gateway
 ## Change Log
 
 * September 10, 2025 - First upload
-* October 31, 2025 (v1.1) - Fixed issue in the **Download Mail As EML action**.
+* October 31, 2025 (v1.1) - Fixed issue in the **Download Mail As EML** action.
 * November 21, 2025 (v1.2)
-  + Fixed issue in the **Search Emails Extended action**.
-  + Converted **has_attachments** and **is_unread** from text fields to list fields with true/false options.
+  + Fixed issue in the **Search Emails Extended** action.
+  + Converted `has_attachments` and `is_unread` from text fields to list fields with true/false options.
