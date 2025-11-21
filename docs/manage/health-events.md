@@ -10,7 +10,7 @@ System Health Events are generated automatically when the system detects an issu
 
 These events provide visibility into the operational health of Collectors, Sources, and Ingest Budgets, enabling administrators to monitor performance and identify potential issues proactively. Health events also help in investigating common errors and warnings known to affect data collection and processing. 
 
-Additionally, a health event is triggered when any credit limit associated with Lookup Tables, Partitions, Fields, or FERs reaches or exceeds 90% of the allocated capacity, allowing timely action to prevent service disruption. This health event will auto-resolve when the usage falls back below the 90% threshold limit.
+Additionally, a health event is triggered when any limit associated with Lookup Tables, Partitions, Fields, or FERs reaches or exceeds 90% of the allocated capacity, allowing timely action to prevent service disruption. This health event will auto-resolve when the usage falls back below the 90% threshold limit.
 
 :::note
 Health events are sent from Installed Collectors of version `19.308-2` and later.
