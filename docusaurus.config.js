@@ -238,7 +238,11 @@ module.exports = {
         )
       },
     ],
-    ['configure-webpack'],
+    ['./plugins/custom-webpack-plugin', 
+      { 
+        name: 'custom-webpack-plugin',
+      },
+      ],
   ],
   themeConfig:
     ({
