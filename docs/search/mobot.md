@@ -96,8 +96,6 @@ This short video introduces Query Agent and how it can help you with log search 
 
 :::
 
-<!-- Second query agent video to come -->
-
 Query Agent builds on the query translation foundation of the previous [Copilot experience](/docs/search/mobot), with significant improvements:
 
 * Core improvements:
@@ -112,13 +110,29 @@ Query Agent builds on the query translation foundation of the previous [Copilot 
    * **Guided exploration**. Intent cards summarize your current goal, and suggestion cards offer refinements you can apply with a click.
    * **Integrated interface**. A conversation pane shows your prompts and refinements, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
 
+The examples below outline typical conversational interaction patterns. You can apply the same approach to different logs, events, or dimensions. This type of investigation typically only takes a few minutes.
+
 ### Example workflow: Observability
 
-The steps below outline a typical conversational interaction pattern. You can apply the same approach to different logs, events, or dimensions. This type of investigation typically only takes a few minutes.
+To open Mobot, click **Mobot** in the left nav.
 
-Open Mobot:
-From the [**New UI**](/docs/get-started/sumo-logic-ui), click **Mobot** in the left nav.
-From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), click the **Mobot** tab.
+:::sumo Micro Lesson
+
+In this video, you'll learn how to use Mobot helps you write log search queries.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/v4i1aufgz2?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Using Mobot with Query Agent"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 Use natural language to ask what you're looking for. You can start broad when you set a goal, or more specific (i.e., specifying the data source and any related fields or values).
 
