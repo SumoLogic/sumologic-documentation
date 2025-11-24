@@ -137,7 +137,7 @@ For example, you could refine further by clicking a suggestion like "Show the co
 
 In just a few conversational turns, you went from a broad question to a detailed analysis showing error trends grouped by error code over time.
 
-From here, you can continue refining or explore different angles like [switching the chart type](#chart-type), [opening the query in Log Search](#step-4-open-in-log-search), [adjusting the time range](#time-range), [editing the query logic](#edit-query-code), or [starting over with a new chat](#new-conversation).
+From here, you can continue refining or explore different angles like [switching the chart type](#chart-type), [opening the query in Log Search](#open-in-log-search), [adjusting the time range](#time-range), [editing the query logic](#edit-query-code), or [starting over with a new chat](#new-conversation).
 
 ### Example workflow: Security investigation
 
