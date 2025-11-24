@@ -198,7 +198,8 @@
     "husky": ">=6",
     "lint-staged": ">=10",
     "prettier": "^2.4.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "configure-webpack": "file:plugins/configure-webpack"
   },
   "browserslist": {
     "production": [

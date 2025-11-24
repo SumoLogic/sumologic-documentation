@@ -238,6 +238,7 @@ module.exports = {
         )
       },
     ],
+    ['configure-webpack'],
   ],
   themeConfig:
     ({
