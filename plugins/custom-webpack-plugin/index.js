@@ -16,6 +16,7 @@ module.exports = function (context, options) {
         optimization: {
            runtimeChunk: {
             name: () => `runtime.main`, // Custom runtime file name
+            // name: (entrypoint) => `runtime___${entrypoint.name}`,
             },
         },
         output: {
