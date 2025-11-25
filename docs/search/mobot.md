@@ -25,7 +25,7 @@ Mobot automatically generates log searches from natural language prompts and hel
 It connects you to two specialized agents that handle different tasks:
 
 * **Query Agent** translates your natural-language questions into log search queries and helps you refine them step by step.
-* **Knowledge Agent** answers how-to questions about Sumo Logic - anything from setup to troubleshooting, best practices, and more - sourced from our official documentation.
+* **Knowledge Agent** answers how-to questions about Sumo Logic—anything from setup to troubleshooting, best practices, and more—sourced from our official documentation.
 
 Together, these agents help you troubleshoot faster, explore your data more intuitively, and learn the platform without friction.
 
