@@ -251,7 +251,7 @@ Consider the example of an SQS dashboard:  
    * Add account, region, namespace in stack linking. <br/><img src={useBaseUrl('img/observability/Step5-1.png')} alt="Dashboard stack linking" style={{border: '1px solid gray'}} width="600" />
    * Go to AWS Observability view to look at the dashboard on namespace level. <br/><img src={useBaseUrl('img/observability/Step5-2.png')} alt="Dashboard on namespace level" style={{border: '1px solid gray'}} width="800" />
 1. Add dashboard at queuename level.
-   * Add account, region, namespace, and queuename in stack linking.<br/><img src={useBaseUrl('img/observability/Dasboard_Stack_Linking.png')} alt="Dasboard Stack Linking" style={{border: '1px solid gray'}} width="800" />
+   * Add account, region, namespace, and queuename in stack linking.<br/><img src={useBaseUrl('img/observability/Dasboard_Stack_Linking.png')} alt="Dashboard Stack Linking" style={{border: '1px solid gray'}} width="800" />
    * Go to AWS Observability view to look at the dashboard on queuename level. <br/><img src={useBaseUrl('img/observability/queuename_level.png')} alt="Dashboard on queuename level" style={{border: '1px solid gray'}} width="800" />
 
 ### Add Template Variables (Optional)
