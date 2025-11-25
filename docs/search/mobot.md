@@ -32,7 +32,7 @@ Together, these agents help you troubleshoot faster, explore your data more intu
 ### Key capabilities
 
 * **Auto-visualization**. Generate charts automatically from search results and add them directly to dashboards.
-* **Broad log compatibility**. Works with structured, semi-structured, and unstructured logs (like Palo Alto Firewall) when Field Extraction Rules are applied.
+* **Broad log compatibility**. Works with structured and semi-structured logs. To analyze unstructured logs (like Palo Alto Firewall), you'll need to apply Field Extraction Rules.
 * **Automatic source detection**. Let Mobot choose a data source based on your question, or specify one yourself.
 * **Clarifications when needed**. If your request is ambiguous, Mobot asks follow-up questions to narrow intent.
 * **Smarter error handling**. Get clear messages and actionable suggestions instead of generic errors.
@@ -92,7 +92,7 @@ To open Mobot, click **Mobot** in the left nav.
 
 :::sumo Micro Lesson
 
-In this video, you'll learn how to use Mobot helps you write log search queries.
+In this video, you'll learn how to turn natural language requests into queries, simplifying data exploration.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/v4i1aufgz2?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -211,14 +211,14 @@ The following rules are used to deduce chart type:
 
 #### Edit query code
 
-You can manually edit your log search query code if needed.
+Optionally, you can manually edit your log search query code.
 
-1. Click in the code editor field and edit your search.<br/><img src={useBaseUrl('img/search/mobot/code-editor.png')} alt="Mobot time period" style={{border: '1px solid gray'}} width="500" />
-   :::tip
-   New to Sumo Logic query language? [Learn more](/docs/search/search-query-language).
-   :::
-1. When you're done, press Enter or click the search button.
-1. (Optional) To save space, you can use the **Hide Log Query** icon to collapse the log query code.<br/><img src={useBaseUrl('img/search/mobot/show-hide-query.png')} alt="Mobot time period" style={{border: '1px solid gray'}} width="500" />
+:::tip
+New to Sumo Logic query language? [Learn more](/docs/search/search-query-language).
+:::
+
+1. Click in the code editor field and edit your query.<br/><img src={useBaseUrl('img/search/mobot/code-editor.png')} alt="Mobot time period" style={{border: '1px solid gray'}} width="500" />
+1. Click the search button.
 
 #### Open in Log Search
 
@@ -229,15 +229,15 @@ There are two ways to do this:
 * From your conversation, click **View results**.<br/><img src={useBaseUrl('img/search/mobot/open-in-log-search-view-results.png')} alt="Mobot option to open your query in Log Search" style={{border: '1px solid gray'}} width="700" />
 * From the query section, click the **Open in Log Search** icon.<br/><img src={useBaseUrl('img/search/mobot/open-in-log-search.png')} alt="Open in Log Search button in Mobot" style={{border: '1px solid gray'}} width="500" />
 
-#### Edit conversation title
-
-Query Agent automatically updates conversation titles based on your query. You can also set a custom title by clicking the "Edit Title" (pencil) icon. This helps keep investigations organized and easier to revisit.
-
 #### My Conversations
 
-The conversation history feature saves all previous queries and suggestions, allowing you to backtrack and refine your investigation. For example, if a status code analysis yields inconclusive results, you can revisit earlier queries to explore other possibilities. This functionality can also be useful when you're working on multiple incidents at the same time.
-
 To resume a conversation, go to the **My Conversations** list and click on the one you're looking for.
+
+This conversation history feature saves all previous queries and suggestions, allowing you to backtrack and refine your investigation. For example, if a status code analysis yields inconclusive results, you can revisit earlier queries to explore other possibilities. This functionality can also be useful when you're working on multiple incidents at the same time.
+
+#### Edit conversation title
+
+Query Agent automatically updates conversation titles based on your query. You can also set a custom title by hovering over your conversation in the **My Conversations** pane, then clicking the "Rename" pencil icon. This helps keep investigations organized and easier to revisit.
 
 #### New Conversation
 
@@ -250,8 +250,8 @@ To start a fresh exploration, click **New Conversation**. This clears your curre
 
 Get the most out of Query Agent by following these tips:
 
-* **Talk to it like a conversation**. Layer refinements instead of rewriting the whole question. For example, start with "Show me API errors" then follow up with "group by status code" and "show the last 6 hours."  
-* **Be specific**. Combine filters, units, and percentiles in clear language. Instead of "Show me errors," try "Show me 500 errors from the API service in the last hour." Query Agent performs better with explicit filters, time ranges, and field names.
+* **Talk to it like a conversation**. Layer refinements instead of rewriting the whole question. For example, start with "Show me API errors" and then follow up with "group by status code" and "show the last 6 hours".
+* **Be specific**. Combine filters, units, and percentiles in clear language. Instead of "Show me errors", try "Show me 500 errors from the API service, grouped by status code" Query Agent performs better with explicit filters, time ranges, and field names.
 * **Start with a broad query**. Begin with a query like "Show me the most recent logs" to understand the structure and available fields in your logs, then refine from there.
 * **Ask about data tied to dashboards**. Query Agent works best when you reference data sources that already have dashboards built on them. Try asking questions using dashboard panel names or descriptions, even if built on unstructured logs.
 * **Disambiguate field names**. If fields have similar names and cause confusion, explicitly specify the field (for example, `<field_name>`) to improve accuracy.
