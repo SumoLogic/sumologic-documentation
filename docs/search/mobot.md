@@ -58,17 +58,17 @@ Not sure where to start? Choose based on what you need:
 | **Input** | Data questions and analysis requests | How-to and configuration questions |
 | **Output** | Executable queries with live results | Documentation-based answers with links |
 | **Best for** | Troubleshooting, investigating, analyzing trends | Onboarding, setup guidance, learning concepts |
-| **Example** | "Show me 500 errors from the API service in the last hour" | "How do I set up a CloudTrail collector?" |
+| **Example** | "Show me 500 errors from the API service" | "How do I set up a CloudTrail collector?" |
 
-## Query agent
+## Query Agent
 
-Select **Query Agent** to get help with Sumo Logic log search queries. In this section, you'll learn how to use Query agent effectively, along with best practices to maximize its benefits.
+Select **Query Agent** to get help with Sumo Logic log search queries. In this section, you'll learn how to use Query Agent effectively, along with best practices to maximize its benefits.
 
-<img src={useBaseUrl('img/search/mobot/query-agent-select.png')} alt="Query agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="700" />
+<img src={useBaseUrl('img/search/mobot/query-agent-select.png')} alt="Query Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="700" />
 
 :::sumo Micro Lesson
 
-This short video introduces Query agent and how it can help you with log search and analysis—perfect for getting a quick overview before diving in.
+This short video introduces Query Agent and how it can help you with log search and analysis—perfect for getting a quick overview before diving in.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/1gtkce8ayl?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -84,7 +84,7 @@ This short video introduces Query agent and how it can help you with log search 
 
 :::
 
-Query agent builds on the query translation foundation of the previous *Copilot* experience with improved accuracy and a conversational workflow. Intent cards summarize your current goal, and suggested follow-up queries offer refinements you can apply with a click. The conversation pane shows your prompts and refinements, with queries rendered directly in the editor alongside live results.
+Query Agent builds on the query translation foundation of the previous *Copilot* experience with improved accuracy and a conversational workflow. Intent cards summarize your current goal, and suggested follow-up queries offer refinements you can apply with a click. The conversation pane shows your prompts and refinements, with queries rendered directly in the editor alongside live results.
 
 #### Getting started
 
@@ -117,19 +117,19 @@ This example shows a typical investigation workflow that takes just a few minute
 
 Use natural language to ask what you're looking for. For better results, include the name of the data source you're querying and any related fields or values.
 
-If you don't select a source, Query agent chooses one automatically based on your question. You can override it by typing the source name directly in your prompt or by choosing it from the **Auto Source Selection** dropdown.
+If you don't select a source, Query Agent chooses one automatically based on your question. You can override it by typing the source name directly in your prompt or by choosing it from the **Auto Source Selection** dropdown.
 
-For example, if you enter a broad question like "Show me AWS CloudTrail errors", your query will translate to Sumo Logic query language (something like `(_source="AWS CloudTrail") "error"`) and an intent card appears in the conversation pane summarizing your goal. Query agent then surfaces suggested follow-up queries with related refinements you can click. You'll also see an option to open your query in Log Search.
+For example, if you enter a broad question like "Show me AWS CloudTrail errors", your query will translate to Sumo Logic query language (something like `(_source="AWS CloudTrail") "error"`) and an intent card appears in the conversation pane summarizing your goal. Query Agent then surfaces suggested follow-up queries with related refinements you can click. You'll also see an option to open your query in Log Search.
 
 #### Narrow the scope
 
-After you click a follow-up suggestion or type a refinement, Query agent refreshes the results and updates the intent card and query to reflect the new focus. With each refinement, Query agent adjusts the query, applies the changes, and renders a visual chart.
+After you click a follow-up suggestion or type a refinement, Query Agent refreshes the results and updates the intent card and query to reflect the new focus. With each refinement, Query Agent adjusts the query, applies the changes, and renders a visual chart.
 
 For example, clicking a suggestion like "Show me trend of errors each minute" applies a timeslice to group the results over time.
 
 #### Drill into causes
 
-As you go, Query agent presents new suggestions to help you pivot into related questions, such as analyzing trends of event reasons or identifying top namespaces. The intent card expands each time to include the new scope, and results show additional details.
+As you go, Query Agent presents new suggestions to help you pivot into related questions, such as analyzing trends of event reasons or identifying top namespaces. The intent card expands each time to include the new scope, and results show additional details.
 
 For example, you could refine further by clicking a suggestion like "Show the count of error logs per minute, grouped by error code".
 
@@ -145,29 +145,29 @@ The steps below outline a typical conversational interaction pattern for investi
 
 #### Ask your initial question  
 
-Use natural language to ask what you're looking for. For better results, include the name of the data source you're querying and any related fields or values. If you don't select a source, Query agent chooses one automatically based on your question.
+Use natural language to ask what you're looking for. For better results, include the name of the data source you're querying and any related fields or values. If you don't select a source, Query Agent chooses one automatically based on your question.
 
-For example, if you enter "Show me recent user-service logs", Query agent selects the correct source category and returns recent events. An intent card appears in the conversation pane summarizing your goal. Query agent then surfaces suggested follow-up queries with related refinements you can click.
+For example, if you enter "Show me recent user-service logs", Query Agent selects the correct source category and returns recent events. An intent card appears in the conversation pane summarizing your goal. Query Agent then surfaces suggested follow-up queries with related refinements you can click.
 
 #### Identify patterns
 
-After you click a follow-up suggestion or type a refinement, Query agent refreshes the results and updates the intent card and query to reflect the new focus. With each refinement, Query agent adjusts the query, applies the changes, and renders a visual chart.
+After you click a follow-up suggestion or type a refinement, Query Agent refreshes the results and updates the intent card and query to reflect the new focus. With each refinement, Query Agent adjusts the query, applies the changes, and renders a visual chart.
 
-For example, asking "What's the request volume by service?" would aggregate traffic by service. Query agent might surface that user-service has 3× higher requests than baseline, while other services remain healthy—suggesting a traffic surge on one service.
+For example, asking "What's the request volume by service?" would aggregate traffic by service. Query Agent might surface that user-service has 3× higher requests than baseline, while other services remain healthy—suggesting a traffic surge on one service.
 
 #### Analyze geographic distribution
 
-As you go, Query agent presents new suggestions to help you pivot into related questions. The intent card expands each time to include the new scope, and results show additional details.
+As you go, Query Agent presents new suggestions to help you pivot into related questions. The intent card expands each time to include the new scope, and results show additional details.
 
-For example, asking "Where are these requests coming from?" aggregates by geography. Query agent might reveal that 80% of requests originate from France, with elevated activity from China, Netherlands, and India—a geographic clustering pattern consistent with coordinated attacks.
+For example, asking "Where are these requests coming from?" aggregates by geography. Query Agent might reveal that 80% of requests originate from France, with elevated activity from China, Netherlands, and India—a geographic clustering pattern consistent with coordinated attacks.
 
 #### Examine error patterns and sources
 
-Query agent maintains context from previous questions, so you can continue refining without repeating filters. For example, asking "What status codes are returned by the register API?" shows that over 85% of requests are failing with 503 errors. Following up with "Which IPs are behind these 503 errors?" reveals that two IPs account for over 97% of the failed traffic.
+Query Agent maintains context from previous questions, so you can continue refining without repeating filters. For example, asking "What status codes are returned by the register API?" shows that over 85% of requests are failing with 503 errors. Following up with "Which IPs are behind these 503 errors?" reveals that two IPs account for over 97% of the failed traffic.
 
 #### Validate with threat intelligence
 
-You can enrich findings by asking Query agent to cross-reference with external data. For example, "Check these IPs against threat intel" would reveal if the source IPs are flagged as known malicious actors, confirming whether the incident is an attack or organic load.
+You can enrich findings by asking Query Agent to cross-reference with external data. For example, "Check these IPs against threat intel" would reveal if the source IPs are flagged as known malicious actors, confirming whether the incident is an attack or organic load.
 
 #### Next steps
 
@@ -180,7 +180,7 @@ In just a few conversational turns, we went from an initial alert to confirming 
 
 From here, you can continue refining or take action like blocking malicious IPs, [opening the query in Log Search](#open-in-log-search), [adjusting the time range](#time-range), [editing the query logic](#edit-query-code), or [starting over with a new chat](#new-conversation).
 
-### Working with Query agent
+### Working with Query Agent
 
 #### Time range
 
@@ -248,10 +248,10 @@ To start a fresh exploration, click **New Conversation**. This clears your curre
 
 ### Tips for better answers
 
-Get the most out of Query agent by following these tips:
+Get the most out of Query Agent by following these tips:
 
 * **Talk to it like a conversation**. Layer refinements instead of rewriting the whole question. For example, start with "Show me API errors" then follow up with "group by status code" and "show the last 6 hours."  
-* **Be specific**. Combine filters, units, and percentiles in clear language. Instead of "show me errors," try "show me 500 errors from the API service in the last hour." Query Agent performs better with explicit filters, time ranges, and field names.
+* **Be specific**. Combine filters, units, and percentiles in clear language. Instead of "Show me errors," try "Show me 500 errors from the API service in the last hour." Query Agent performs better with explicit filters, time ranges, and field names.
 * **Start with a broad query**. Begin with a query like "Show me the most recent logs" to understand the structure and available fields in your logs, then refine from there.
 * **Ask about data tied to dashboards**. Query Agent works best when you reference data sources that already have dashboards built on them. Try asking questions using dashboard panel names or descriptions, even if built on unstructured logs.
 * **Disambiguate field names**. If fields have similar names and cause confusion, explicitly specify the field (for example, `<field_name>`) to improve accuracy.
@@ -326,7 +326,7 @@ To summarize, you conclude there is malicious activity originating from certain 
 
 #### Compatible log formats
 
-Query agent querying is compatible with JSON logs, partial JSON logs, and unstructured logs with Field Extraction Rules. It cannot be used to query metrics or trace telemetry.
+Query Agent querying is compatible with JSON logs, partial JSON logs, and unstructured logs with Field Extraction Rules. It cannot be used to query metrics or trace telemetry.
 
 To retrieve a list of `_sourceCategories` with JSON data, use the following query:
 
@@ -346,7 +346,7 @@ Role Based Access Control (RBAC) is not supported for contextual suggestions and
 
 #### Search behavior and data tier access
 
-Query agent follows the same search behavior as standard log search and respects your account’s data configuration, whether you're on Flex pricing or tiered pricing.
+Query Agent follows the same search behavior as standard log search and respects your account’s data configuration, whether you're on Flex pricing or tiered pricing.
 
 ##### Flex pricing
 
@@ -356,22 +356,22 @@ If you're on [Flex pricing](/docs/manage/partitions/flex), all data is stored in
 
 If you're on a [tiered pricing](/docs/manage/partitions/data-tiers/searching-data-tiers/) plan such as Continuous Tier, Frequent Tier, or Infrequent Tier:
 
-* Query agent searches across *continuous data tiers only*, unless otherwise specified.
+* Query Agent searches across *continuous data tiers only*, unless otherwise specified.
 * To query a specific tier, include the `_dataTier` field in your prompt. For example, to search the Infrequent tier:
    ```sql
    _dataTier=Infrequent
    ```
 
 
-## Knowledge agent
+## Knowledge Agent
 
 Select **Knowledge Agent** to get help using Sumo Logic.
 
-<img src={useBaseUrl('img/search/mobot/knowledge-agent-select.png')} alt="Knowledge agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="700" />
+<img src={useBaseUrl('img/search/mobot/knowledge-agent-select.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="700" />
 
 :::sumo Micro Lesson
 
-Learn more about Knowledge agent's key features and capabilities.
+Learn more about Knowledge Agent's key features and capabilities.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/r1bbknlk60?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -387,14 +387,14 @@ Learn more about Knowledge agent's key features and capabilities.
 
 :::
 
-Knowledge agent is your in-platform assistant for learning how to use Sumo Logic. Ask questions about Sumo Logic and get clear answers sourced directly from our official documentation without leaving your workflow. Here are some examples:
+Knowledge Agent is your in-platform assistant for learning how to use Sumo Logic. Ask questions about Sumo Logic and get clear answers sourced directly from our official documentation without leaving your workflow. Here are some examples:
 
 * "How do I add a collector for AWS CloudTrail?"
 * "What's the difference between a scheduled search and a real-time alert?"
 * "Why isn't my collector sending data?"
 * "What are the API endpoints for Sumo Logic?"
 
-Knowledge agent maintains conversation context for 24 hours, so you can ask follow-up questions naturally without starting over.
+Knowledge Agent maintains conversation context for 24 hours, so you can ask follow-up questions naturally without starting over.
 
 ### Tips for better answers
 
@@ -529,7 +529,7 @@ Typical end-to-end response time remains under 2 seconds for most queries. Very 
 <details>
 <summary>What are the current Query Agent limitations?</summary>
 
-* For dashboard-aware translations via RAG, support is limited to the `sourceCategory` filter (selection in the source picker) at launch. Other expressions like `_index=` or `_sourceHost=` are not yet supported.  
+* For dashboard-aware translations via RAG, Mobot's source expression must share at least one common key-value pair with your dashboard queries. For example, `_sourcecategory=abcd "error"` will match a dashboard query like `_sourcecategory=abcd | count`, but won't match `_source=abcd | count` because there's no shared key-value pair.
 * RAG only considers dashboards that have been opened in the last 90 days when interpreting your query.
 * Very large or highly complex queries may time out or trigger structured fallback responses.
 * The conversational experience is available for log-based searches only. Metrics and Metric Searches are not supported in this Beta.
@@ -582,7 +582,7 @@ No. Knowledge Agent is intentionally scoped to use Sumo Logic's internal documen
 
 We want your feedback! Let us know what you think by clicking the thumbs up icon to verify your query or the thumbs down icon to tell us how we can improve.
 
-<img src={useBaseUrl('img/search/mobot/feedback-thumbs.png')} alt="Mobot feedback icons in Query agent conversation" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/mobot/feedback-thumbs.png')} alt="Mobot feedback icons in Query Agent conversation" style={{border: '1px solid gray'}} width="800" />
 
 ## Opting out
 
@@ -592,4 +592,4 @@ To opt out of Mobot, contact our [Support team](https://support.sumologic.com/su
 
 * [Search Query Language](/docs/search/search-query-language)
 * [Dashboards](/docs/dashboards)
-* [Dojo AI overview](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, the collective system of Sumo Logic agents and assistants, including Mobot’s agents (Query agent and Knowledge agent), Cloud SIEM security agent, platform agents, and more coming soon.
+* [Dojo AI overview](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, the collective system of Sumo Logic agents and assistants, including Mobot’s agents (Query Agent and Knowledge Agent), Cloud SIEM security agent, platform agents, and more coming soon.
