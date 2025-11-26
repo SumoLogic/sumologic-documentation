@@ -4,6 +4,8 @@ title: Mobot (Beta)
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <head>
   <meta name="robots" content="noindex" />
@@ -15,95 +17,153 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This feature is in Beta. For more information, contact your Sumo Logic account executive.
 :::
 
-Our new conversational experience in Mobot (formerly known as Copilot) lets you interact with queries the way you would with a chat assistant. You ask a question and can refine it with follow-ups, change units, and see the updated query and visualization without starting over. Mobot maintains your intent across turns, surfaces helpful suggestions, and makes it easy to explore related angles. This guide explains what's new in the UI and how the conversational flow works.
+Mobot is your conversational interface for Sumo Logic, letting you interact with the platform the same way you would with a chat assistant. Create log queries using natural language and get instant, actionable answers without searching through documentation. Think of Mobot as your personal assistant. It connects you to two specialized agents that handle different tasks:
 
-As we transition the feature name from *Copilot* to *Mobot*, some UI labels and screenshots may still show **Copilot**. Functionality is unchanged.
+* **Query Agent** translates your natural-language questions into log search queries and helps you refine them step by step.
+* **Knowledge Agent** answers how-to questions about Sumo Logic using official documentation, including setup, troubleshooting, concepts, and best practices.
 
-## What's new in Beta
+Together, these agents help you troubleshoot faster, explore your data more intuitively, and learn the platform without friction.
 
-* **Conversational flow**. Refine queries through natural, conversational follow-up questions without losing context. A sequence of related instructions that retains context and incrementally updates the query and output.
-* **Automatic source detection**. Have Mobot choose a data source automatically based on your question or enter one yourself.
-* **Improved accuracy**. Translations to Sumo Query Language are more reliable, especially for data sources with active dashboards.
-* **Clarifications when needed**. If your request is ambiguous, Mobot may ask a follow-up question to narrow intent.
-* **Smarter error handling**. Instead of generic errors, Mobot provides clearer messages and fallback suggestions for next steps.
-* **Dashboard-aware translations (via Retrieval-Augmented Generation, or RAG)**. Mobot leverages queries from dashboards opened in your org in the last 90 days to better understand intent.
-* **Guided exploration**. Intent cards summarize your current goal, and suggestion cards offer refinements you can apply with a click.
-* **Integrated workflow**. A conversation pane shows your prompts and refinements, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
+## Which agent should I use?
 
-## Typical workflow
+Not sure where to start? Use this guide:
 
-The steps below outline a common conversational interaction pattern. You can apply the same approach to different logs, events, or dimensions.
+|  | Query Agent | Knowledge Agent |
+|:---------|:-------------|:-----------------|
+| **Purpose** | Create and refine log queries | Learn platform features |
+| **Input** | Data questions and analysis requests | How-to and configuration questions |
+| **Output** | Executable queries with live results | Documentation-based answers with links |
+| **Best for** | Troubleshooting, investigating, analyzing trends | Onboarding, setup guidance, learning concepts |
+| **Example** | "Show me 500 errors from the API service in the last hour" | "How do I set up a CloudTrail collector?" |
 
-### Step 1: Ask your initial question  
+## Query agent
 
-Use natural language to ask what you're looking for. You can start broad when you set a goal, or, for better results, include the name of the data source you're querying, and any related field names or values.
+Select **Query Agent** to get help with Sumo Logic log search queries.
 
-If you don't select a source, Mobot chooses one automatically based on your question. You can override it by typing the source name directly in your prompt, or by choosing it manually from the **Auto Source Selection** dropdown.
+<img src={useBaseUrl('img/search/mobot/query-agent-select.png')} alt="Query Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
 
-After this, an intent card appears in the conversation pane summarizing your goal. Mobot then surfaces suggestion cards with related refinements, which you can click. You'll also see an option to open your query in Log Search.
+Query Agent builds on the query translation foundation of the previous [Copilot experience](/docs/search/mobot), with significant improvements:
 
-<!-- replace
-We'll ask: `Show failed login attempts in the last 24 hours`.
-<img src={useBaseUrl('img/search/mobot/initial-question.png')} alt="Mobot conversational experience showing initial query for failed login attempts in the last 24 hours" style={{border: '1px solid gray'}} width="700"/>
--->
+* Core improvements:
+   * **Conversational flow**. Refine queries through natural follow-up questions without losing context. Each refinement builds on the last, so you can iterate toward the insight you need.
+   * **Improved accuracy**. Translations to Sumo Query Language are more reliable, especially for data sources with active dashboards.
+   * **Smarter error handling**. Instead of generic errors, Query Agent provides clear messages and actionable suggestions for next steps.
+* Advanced features:
+   * **Dashboard-aware translations via RAG**. Query Agent learns from dashboards opened in your org in the last 90 days to better interpret intent. This improves understanding of field names, data structure, and common queries, resulting in more accurate translations, especially for unstructured logs.
+   * **Automatic source detection**. Let Query Agent choose a data source based on your question, or enter one yourself for more control.
+   * **Clarifications when needed**. If your request is ambiguous, Query Agent asks follow-up questions to narrow intent rather than guessing.
+* Enhanced workflow:
+   * **Guided exploration**. Intent cards summarize your current goal, and suggestion cards offer refinements you can apply with a click.
+   * **Integrated interface**. A conversation pane shows your prompts and refinements, with queries rendered directly in the editor, live results, and the ability to branch or revisit past conversations.
 
-### Step 2: Narrow the scope  
+import Iframe from 'react-iframe';
 
-After clicking on a follow-up suggestion, Mobot refreshes the results and updates the intent card and query to reflect the new focus. With each subsequent refinement, Mobot adjusts the query, applies the refinements, and renders a visual chart.
+:::sumo Micro Lesson
 
+<Iframe url="https://fast.wistia.net/embed/iframe/1gtkce8ayl?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Mobot and Query Agent: A Conceptual Overview"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
-<!--
-The top reason in the table is `FailedScheduling`, so we'll select a follow-up suggestion, `Show failed scheduling events`.
-<img src={useBaseUrl('img/search/mobot/narrow-scope.png')} alt="Mobot conversational experience showing refinement to failed scheduling events" style={{border: '1px solid gray'}} width="700"/>
-Now, refine further by typing: `Break down failed scheduling events by namespace`.
-
-<img src={useBaseUrl('img/search/mobot/narrow-scope-filter.png')} alt="Mobot conversational experience showing failed scheduling events broken down by namespace" style={{border: '1px solid gray'}} width="700"/>
--->
-
-### Step 3: Drill into causes
-
-As you go, Mobot presents new suggestion cards to help you pivot into related questions, such as analyzing trends of event reasons or identifying top namespaces.
-
-You can also manually type a refinement (for example, `Add error messages`). The intent card expands to include the new scope and results now show new details.
-
-<!--
-Next, type `Add error messages`. Mobot translates this into: `Add error messages to the breakdown of failed scheduling events by namespace`.
-
-<img src={useBaseUrl('img/search/mobot/drill-causes.png')} alt="Mobot conversational experience showing error messages for failed scheduling events" style={{border: '1px solid gray'}} width="700"/>
--->
-
-### Step 4: Request a trend over time
-
-If you type a time period (for example, `Show the trend over 24 hours`), the query applies a timeslice (for example, one-hour buckets) to group results over time.
-
-:::tip
-Ask Mobot to change units in your query. For example, `Convert GB to bytes`.
 :::
 
-<!--
-Finally, type: `Show the trend over 24 hours`. Mobot translates this into: `Show the trend of failed scheduling events by namespace with error messages over 24 hours`.
-<img src={useBaseUrl('img/search/mobot/trend-over-time.png')} alt="Mobot conversational experience showing trend over time" style={{border: '1px solid gray'}} width="700"/>
+### Example workflow: Observability
 
-where the results appear in a table view, you can change the visualization to a time-series chart (for example, line or area) to see the trend more clearly over time.
--->
+The steps below outline a typical conversational interaction pattern. You can apply the same approach to different logs, events, or dimensions. This type of investigation typically only takes a few minutes.
 
-### Next steps
+#### Ask your initial question  
 
-As with legacy Mobot, you can adjust the [time range](/docs/search/mobot/#time-range), switch [chart types](/docs/search/mobot/#chart-type), [edit the query logic](/docs/search/mobot/#edit-query-code), [open in Log Search](/docs/search/mobot/#step-4-open-in-log-search), or start over with a [new chat](/docs/search/mobot/#new-conversation).
+Use natural language to ask what you're looking for. For better results, include the name of the data source you're querying and any related fields or values. If you don't select a source, Query Agent chooses one automatically based on your question. You can override it by typing the source name directly or choosing from the **Auto Source Selection** dropdown.
 
-## Best practices
+For example, if you enter a broad question like "Show me AWS CloudTrail errors", your query will translate to Sumo Logic query language (something like `(_source="AWS CloudTrail") "error"`) and an intent card appears in the conversation pane summarizing your goal. Query Agent then surfaces suggestion cards with related refinements you can click. You'll also see an option to open your query in Log Search.
 
-* **Talk to it like a conversation**. Layer refinements instead of rewriting the whole question.  
-* **Be specific**. Combine filters, units, and percentiles in clear language.
-* **Ask about data tied to dashboards**. Mobot works best when you reference data sources that already have dashboards built on them. Ask questions using dashboard panel names or descriptions, even if built on unstructured logs.
+#### Narrow the scope
+
+After you click a follow-up suggestion or type a refinement, Query Agent refreshes the results and updates the intent card and query to reflect the new focus. With each refinement, Query Agent adjusts the query, applies the changes, and renders a visual chart.
+
+For example, clicking a suggestion like "Show me trend of errors each minute" would apply a timeslice to group the results over time.
+
+#### Drill into causes
+
+As you go, Query Agent presents new suggestions to help you pivot into related questions, such as analyzing trends of event reasons or identifying top namespaces. The intent card expands each time to include the new scope, and results show additional details.
+
+For example, you could refine further by clicking a suggestion like "Show the count of error logs per minute, grouped by error code".
+
+#### Request a trend over time
+
+If you type a time period, Query Agent would apply a timeslice to group results over time. For example, if you type "Show the trend over 24 hours", results would be divided into 1-hour buckets.
+
+#### Next steps
+
+In just a few conversational turns, we went from a broad question to a detailed analysis showing error trends grouped by error code over time.
+
+From here, you can continue refining or explore different angles like [switching the chart type](/docs/search/mobot/#chart-type), [opening the query in Log Search](/docs/search/mobot/#step-4-open-in-log-search), [adjusting the time range](/docs/search/mobot/#time-range), [editing the query logic](/docs/search/mobot/#edit-query-code), or [starting over with a new chat](/docs/search/mobot/#new-conversation).
+
+
+### Example workflow: Security investigation
+
+The steps below outline a typical conversational interaction pattern for investigating a security incident. You can apply the same approach to different security scenarios.
+
+#### Step 1: Ask your initial question  
+
+Use natural language to ask what you're looking for. For better results, include the name of the data source you're querying and any related fields or values. If you don't select a source, Query Agent chooses one automatically based on your question.
+
+For example, if you enter "Show me recent user-service logs", Query Agent selects the correct source category and returns recent events. An intent card appears in the conversation pane summarizing your goal. Query Agent then surfaces suggestion cards with related refinements you can click.
+
+#### Step 2: Identify patterns
+
+After you click a follow-up suggestion or type a refinement, Query Agent refreshes the results and updates the intent card and query to reflect the new focus. With each refinement, Query Agent adjusts the query, applies the changes, and renders a visual chart.
+
+For example, asking "What's the request volume by service?" would aggregate traffic by service. Query Agent might surface that user-service has 3× higher requests than baseline, while other services remain healthy—suggesting a traffic surge on one service.
+
+#### Step 3: Analyze geographic distribution
+
+As you go, Query Agent presents new suggestions to help you pivot into related questions. The intent card expands each time to include the new scope, and results show additional details.
+
+For example, asking "Where are these requests coming from?" would aggregate by geography. Query Agent might reveal that 80% of requests originate from France, with elevated activity from China, Netherlands, and India—a geographic clustering pattern consistent with coordinated attacks.
+
+#### Step 4: Examine error patterns and sources
+
+Query Agent maintains context from previous questions, so you can continue refining without repeating filters. For example, asking "What status codes are returned by the register API?" would show that over 85% of requests are failing with 503 errors. Following up with "Which IPs are behind these 503 errors?" reveals that two IPs account for over 97% of the failed traffic.
+
+#### Step 5: Validate with threat intelligence
+
+You can enrich findings by asking Query Agent to cross-reference with external data. For example, "Check these IPs against threat intel" would reveal if the source IPs are flagged as known malicious actors, confirming whether the incident is an attack or organic load.
+
+#### Next steps
+
+In just a few conversational turns, we went from an initial alert to confirming a DDoS attack with:
+* Identified affected services and APIs
+* Traced attack origin to specific geographic regions and IPs
+* Validated malicious actors using threat intelligence
+* Quantified impact on latency and error rates
+
+From here, you can continue refining or take action like blocking malicious IPs, [opening the query in Log Search](/docs/search/mobot/#step-4-open-in-log-search), [adjusting the time range](/docs/search/mobot/#time-range), [editing the query logic](/docs/search/mobot/#edit-query-code), or [starting over with a new chat](/docs/search/mobot/#new-conversation).
+
+### Tips for better answers
+
+Get the most out of Query Agent by following these tips:
+
+* **Talk to it like a conversation**. Layer refinements instead of rewriting the whole question. For example, start with "Show me API errors" then follow up with "group by status code" and "show the last 6 hours."  
+* **Be specific**. Combine filters, units, and percentiles in clear language. Instead of "show me errors," try "show me 500 errors from the API service in the last hour." Query Agent performs better with explicit filters, time ranges, and field names.
+* **Ask about data tied to dashboards**. Query Agent works best when you reference data sources that already have dashboards built on them. Try asking questions using dashboard panel names or descriptions, even if built on unstructured logs.
+* **Change chart types**. When results appear in a table view, change the visualization to a time-series chart (for example, line or area) to see the trend more clearly over time.
+* **Change units in your query**. For example, "Convert GB to bytes".
 * **Reuse queries from your conversation history**. Everything you ask is saved to your conversation history automatically. You can revisit, reuse, continue where you left off in prior conversations to compare or branch analyses.
-* **Modify existing queries**. Add/remove fields, add `where`, `sort`, `avg()` clauses, etc.
-* **Guide Mobot with feedback**. If the result isn't right, use natural language: `Don't do X, instead do Y`.
-* **Fix broken queries**. Paste a syntactically invalid query. Mobot will correct it.
+* **Modify existing queries**. Add/remove fields, add `where`, `sort`, `avg()` clauses, and more.
+* **Guide Query Agent with feedback**. If the result isn't right, use natural language. For example, "Don't filter by namespace, instead group by error type" or "Use P90 instead of P50."
+* **Fix broken queries**. Paste a syntactically invalid query and Query Agent will correct it for you.
 
-## FAQ
+### FAQ
 
-The questions below refer specifically to the conversational (Beta) experience. For general information about Mobot, see the [Mobot FAQ](/docs/search/mobot#faq).
+The questions below refer specifically to the conversational (Beta) experience. For general information, see [Mobot FAQ](/docs/search/mobot#faq).
 
 <details>
 <summary>Is any user or org data sent outside our environment?</summary>
@@ -139,8 +199,84 @@ Here are some common cases:
 * Mobot cannot currently refer to the output of a log search directly in subsequent queries. Each follow-up must be expressed in terms of query refinements rather than referencing previous results. This is an important limitation to be aware of when constructing multi-turn conversations.
 </details>
 
+## Knowledge agent
+
+Select **Knowledge Agent** to get help using Sumo Logic.
+
+<img src={useBaseUrl('img/search/mobot/knowledge-agent-select.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="600" />
+
+Knowledge Agent is your in-platform assistant for learning how to use Sumo Logic. Ask questions about Sumo Logic and get clear answers sourced directly from our official documentation without leaving your workflow.
+
+:::sumo Micro Lesson
+
+Learn more about Knowledge Agent's key features and capabilities.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/r1bbknlk60?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Sumo Logic Dojo AI Knowledge Agent"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
+
+**Example questions:**
+* "How do I add a collector for AWS CloudTrail?"
+* "What's the difference between a scheduled search and a real-time alert?"
+* "Why isn't my collector sending data?"
+* "What are the API endpoints for Sumo Logic?"
+
+Knowledge Agent maintains conversation context for 24 hours, so you can ask follow-up questions naturally without starting over.
+
+### Tips for better answers
+
+* **Ask complete questions**. Instead of typing "Collectors", try "How do I install a collector on Windows?"
+* **Provide context for troubleshooting**. For example, "I'm getting a 403 error when setting up AWS integration—what could be wrong?"
+* **Follow up naturally**. If the initial answer is close but not quite right, ask follow-up questions like "What about for Azure instead of AWS?"
+* **Reference specific features**. Use proper names when you know them: "How do I use Field Extraction Rules?" works better than "How do I extract fields?"
+
+### FAQ
+
+<details>
+<summary>Does Knowledge Agent use my data to train external models?</summary>
+
+Mobot and Knowledge Agent run on Amazon Bedrock, an approved and secure subprocessor that complies with Sumo Logic's privacy, security, and data-handling standards.
+
+No customer data is ever used for model training. All processing happens within the secure boundaries of Sumo Logic's architecture, maintaining the same high level of data protection customers already trust.
+
+</details>
+
+<details>
+<summary>Is my data safe when I use Knowledge Agent?</summary>
+
+Yes. Knowledge Agent only processes what you provide during your session, and this data remains inside Sumo Logic's secure environment. Nothing is sent to external LLM providers for training or storage.
+
+</details>
+
+<details>
+<summary>How does Knowledge Agent ensure accuracy?</summary>
+
+Knowledge Agent pulls directly from Sumo Logic's official product documentation. Responses are always grounded in our published help content, making them accurate, citable, and aligned with the latest platform behavior.
+
+No information is generated from unreliable external sources.
+
+</details>
+
+<details>
+<summary>Can Knowledge Agent answer questions outside Sumo Logic's documentation?</summary>
+
+No. Knowledge Agent is intentionally scoped to use Sumo Logic's internal documentation and resources only. This ensures answers remain trustworthy and consistent with product behavior.
+
+</details>
+
+
 ## Additional resources
 
-* [Mobot (formerly known as *Copilot*)](/docs/search/mobot)
+* [Mobot](/docs/search/mobot)
 * [Search Query Language](/docs/search/search-query-language)
 * [Dashboards](/docs/dashboards)
