@@ -1,7 +1,7 @@
 ---
 id: zero-networks-segment
 title: Zero Networks Segment
-sidebar_label:  Zero Networks Segment
+sidebar_label: Zero Networks Segment
 description: The Zero Networks Segment app for Sumo Logic provides deep visibility into network activity and segmentation policies, helping security teams detect anomalies, assess risk, and validate zero‑trust enforcement to strengthen overall network security.
 ---
 
