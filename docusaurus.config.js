@@ -239,6 +239,7 @@ module.exports = {
       },
     ],
   ],
+  themes: ['docusaurus-theme-search-typesense'],
   themeConfig:
     ({
       docs: {
@@ -277,16 +278,18 @@ module.exports = {
       defaultMode: 'light',
       disableSwitch: false,
     },
-    algolia: {
-      appId: '2SJPGMLW1Q',
-      apiKey: 'fb2f4e1fb40f962900631121cb365549',
-      indexName: 'crawler_sumodocs',
-      contextualSearch: false,
-      insights: true,
-      insightsConfig: {
-        useCookie: true, // alt to useCookie: true,
+    typesense: {
+      typesenseCollectionName: 'sumo-docs_1764148676', // the collection name from the scraper output
+      typesenseServerConfig: {
+        nodes: [
+          {
+            host: 'localhost', // you'll change this for production
+            port: 8108,
+            protocol: 'http',
+          },
+        ],
+        apiKey: 'xyz', // use a search-only API key in production
       },
-      useCookie: true,  // alt to insightsConfig: {useCookie: true,},
     },
     prism: {
       theme: lightCodeTheme,
