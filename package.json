@@ -89,6 +89,7 @@
     "cssnano": "6.1.2",
     "csso": "5.0.5",
     "docusaurus-plugin-sass": "^0.2.1",
+    "docusaurus-theme-search-typesense": "^0.26.0",
     "docusaurus2-dotenv": "^1.4.0",
     "electron-to-chromium": "1.4.755",
     "eventsource-parser": "3.0.6",
