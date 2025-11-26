@@ -13,7 +13,7 @@ The Zero Networks Segment app provides unified visibility into network act
 
 The app surfaces key metrics such as top devices, active users, protocols, ports, and traffic types to reveal operational patterns and dependencies. Risk oriented insights highlight high-threat destinations, unsafe processes, and connection outcomes, helping teams quickly identify and contain potential exposures. Governance information tracks who created rules, when MFA was applied, and how enforcement sources contributed to changes.
 
-Together, these views deliver real time awareness of network usage and security posture, enabling organizations to validate segmentation policies, reduce attack surfaces, and sustain a trusted, well-monitored network environment.
+Together, these views deliver real-time awareness of network usage and security posture, enabling organizations to validate segmentation policies, reduce attack surfaces, and sustain a trusted, well-monitored network environment.
 
 :::info
 This app includes [built-in monitors](#zero-networks-segment-alerts). For details on creating custom monitors, refer to [Create monitors for Zero Networks Segment app](#create-monitors-for-the-zero-networks-segment-app).
