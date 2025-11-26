@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Zero Networks Segment app provides unified visibility into network activity, policy actions, and user behavior across your environment. By combining telemetry from connections, enforcement events, and configuration changes, it enables a clear understanding of how assets, users, and applications interact within a zero trust framework.
 
-The app surfaces key metrics such as top devices, active users, protocols, ports, and traffic types to reveal operational patterns and dependencies. Risk oriented insights highlight high-threat destinations, unsafe processes, and connection outcomes, helping teams quickly identify and contain potential exposures. Governance information tracks who created rules, when MFA was applied, and how enforcement sources contributed to changes.
+The app surfaces key metrics such as top devices, active users, protocols, ports, and traffic types to reveal operational patterns and dependencies. Risk-oriented insights highlight high-threat destinations, unsafe processes, and connection outcomes, helping teams quickly identify and contain potential exposures. Governance information tracks who created rules, when MFA was applied, and how enforcement sources contributed to changes.
 
 Together, these views deliver real-time awareness of network usage and security posture, enabling organizations to validate segmentation policies, reduce attack surfaces, and sustain a trusted, well-monitored network environment.
 
