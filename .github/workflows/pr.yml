@@ -34,6 +34,9 @@ jobs:
           key: ${{ runner.os }}-webpack-cache-${{ hashFiles('yarn.lock') }}
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+      - name: Clear the Docusaurus site
+        run: |
+          yarn clear
       - name: Build the Docusaurus site
         run: yarn build
       # --- Disallowed character checks for Pantheon ---
