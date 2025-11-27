@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this release, we've enhanced the security and stability of the Collector with added support for security patches.
 
-- Upgraded collector JRE to **Amazon Corretto Version 17.0.17.10.11**.
+- Upgraded collector JRE to **Amazon Corretto Version 17.0.17.10.1**.
 - Upgraded `com.tanuki:wrapper` to version 3.6.3.
 - Upgraded `org.bouncycastle:bc-fips` to version 1.0.2.6 to address known security vulnerabilities (CVE-2025-8885).
 - Known issues when upgrading to this version:
