@@ -4,6 +4,8 @@ title: num Search Operator
 sidebar_label: num
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `num` operator converts a field to a double value (64-bit IEEE 754 double-precision floating-point number), which is twice as accurate as a float value (32-bit IEEE 754 single-precision floating-point number). Using `num` in a query can be useful for sorting results by number instead of alphabetically, which is the default.
 
 
@@ -29,4 +31,4 @@ _sourceCategory=concierge completed execution
 
 This query produces results like this:
 
-![numoperator.png](/img/search/searchquerylanguage/search-operators/numoperator.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/numoperator.png')} alt="num operator" style={{border: '1px solid gray'}} width="800" />
