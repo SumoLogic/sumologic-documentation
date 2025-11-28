@@ -26,7 +26,7 @@ The data will be collected from Snowflake's database using the connection string
 
 :::info
 * Ensure you have the `ACCOUNTADMIN` role set as default to collect the Snowflake logs from its database.
-* There is an expected data latency of up to three hours when retrieving data from the Snowflake database. [Learn more](https://docs.snowflake.com/en/sql-reference/account-usage#data-latency).
+* There is an expected data latency of up to 3 hours when retrieving data from the Snowflake database. [Learn more](https://docs.snowflake.com/en/sql-reference/account-usage#data-latency).
 :::
 
 ## Setup
