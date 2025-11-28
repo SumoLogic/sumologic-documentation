@@ -542,6 +542,29 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 | Epoch NanoInt         | `173584347745451512`             | `epochNanoInt`                        |
 | Epoch NanoFloat       | `1735843477.454515`              | `epochNanoFloat`                      |
 
+## Troubleshoot
+
+<details>
+  <summary>Error getting partial logs, error preparing log, error getting timestamp data, timestamp path not in data, or error parsing response data</summary>
+  <div>
+    These errors are typically caused by an improper endpoint response format or incorrect log ingestion configuration. Ensure that your endpoint returns data in a valid JSON format and response field are as per the configuration.
+  </div>
+</details>
+
+<details>
+  <summary>oauth2: cannot parse json: invalid character</summary>
+  <div>
+    This error occurs due to an OAuth 2.0 authentication misconfiguration.  Reconfigure the source using valid OAuth 2.0 credentials and ensure that it aligns with the steps in the `Authentication Configuration` section.
+  </div>
+</details>
+
+<details>
+  <summary>Failed to validate the base request config or error preparing new request</summary>
+  <div>
+    These errors indicate that the endpoint configuration is not set up correctly.   Verify that your endpoint configuration follows the instructions in the `Request Configuration` section.
+  </div>
+</details>
+
 ## FAQ
 
 :::info
