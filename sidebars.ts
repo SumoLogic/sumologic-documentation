@@ -3200,6 +3200,9 @@ integrations: [
       collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'beta/index'},
+      items: [
+        'api/metrics-searches'
+      ],
     },
   ],
   // Platform services
