@@ -554,7 +554,7 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 <details>
   <summary>oauth2: cannot parse json: invalid character</summary>
   <div>
-    This error occurs due to an OAuth 2.0 authentication misconfiguration.  Reconfigure the source using valid OAuth 2.0 credentials and ensure that it aligns with the steps in the `Authentication Configuration` section.
+    This error occurs due to an OAuth 2.0 authentication misconfiguration. Reconfigure the source using valid OAuth 2.0 credentials and ensure that it aligns with the steps in the [Authentication Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
   </div>
 </details>
 
