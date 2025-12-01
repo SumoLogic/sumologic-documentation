@@ -12,7 +12,7 @@ In this release, we've enhanced the security and stability of the Collector with
 - Upgraded `com.tanuki:wrapper` to version 3.6.3.
 - Upgraded `org.bouncycastle:bc-fips` to version 1.0.2.6 to address known security vulnerabilities (CVE-2025-8885).
 - Known issues when upgrading to this version:
-  - **Collector running as non-root user**. Collector running as non-root user (run as mode) cannot be upgraded through the API/Web UI. It display an error message indicating that the upgrade is not possible. The upgrade must be performed manually on your machine. Follow the [steps to upgrade manually](/docs/send-data/collection/upgrade-collectors/#upgrade-collectors-using-the-command-line).
+  - **Collector running as non-root user**. Collector running as non-root user (run as mode) cannot be upgraded through the API/Web UI. It displays an error message indicating that the upgrade is not possible. The upgrade must be performed manually on your machine. Follow the [steps to upgrade manually](/docs/send-data/collection/upgrade-collectors/#upgrade-collectors-using-the-command-line).
   - **Collector running on Mac**. Collector running on a Mac operating system cannot be upgraded through the API/Web UI. The process will stop, and the collector will need to be restarted manually on your machine if upgraded using API or Web UI. Use the below code to manually restart.
     ```
     sudo ./collector start
