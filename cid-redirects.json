@@ -4598,5 +4598,6 @@
   "/docs/get-started/training-certification-faq-new": "/docs/get-started/training-certification-faq",
   "/docs/manage/scheduled-views/pausing-inactive-scheduled-views": "/docs/manage/scheduled-views/pause-disable-scheduled-views",
   "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps",
-  "/docs/search/mobot-multiturn-beta": "/docs/search/mobot"
+  "/docs/search/mobot-multiturn-beta": "/docs/search/mobot",
+  "/docs/manage/manage-subscription/beta-opt-in": "/docs/beta"
 }
