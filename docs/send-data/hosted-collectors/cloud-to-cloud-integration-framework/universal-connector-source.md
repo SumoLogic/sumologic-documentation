@@ -542,7 +542,7 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 | Epoch NanoInt         | `173584347745451512`             | `epochNanoInt`                        |
 | Epoch NanoFloat       | `1735843477.454515`              | `epochNanoFloat`                      |
 
-## Troubleshoot
+## Troubleshooting
 
 <details>
   <summary>Error getting partial logs, error preparing log, error getting timestamp data, timestamp path not in data, or error parsing response data</summary>
