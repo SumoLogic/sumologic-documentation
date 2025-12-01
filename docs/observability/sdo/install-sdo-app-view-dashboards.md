@@ -5,6 +5,8 @@ sidebar_label: Install SDO App and Dashboards
 description: Learn how to install the Sumo Logic SDO app and use pre-configured searches and dashboards that provide insights into your DevOps pipeline.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 If you've set up the Software Development Optimization (SDO) solution [using Terraform](/docs/observability/sdo/set-up-sdo/sdo-setup-with-terraform-script), you can skip the manual installation of SDO app.
 
 ## Installing the SDO app
@@ -60,7 +62,7 @@ Use this dashboard to:
 * Monitor trends for each metric to identify any unexpected peaks and lows.
 * Understand how the DORA metrics apply to each team, service, and application environment.
 
-![Software-Development-Optimization-DORA-Metrics-Overview.png](/img/sdo/Software-Development-Optimization-DORA-Metrics-Overview.png)
+<img src={useBaseUrl('img/sdo/Software-Development-Optimization-DORA-Metrics-Overview.png')} alt="SDO - DORA Metrics Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### SDO - Lead Time
 
@@ -72,7 +74,7 @@ Use this dashboard to:
 * Determine which service, team, repositories, or pipelines are affecting the overall lead time have.
 * Monitor deployment frequency trends and quickly identify any unexpected highs and lows.
 
-![Software-Development-Optimization-Lead-Time.png](/img/sdo/Software-Development-Optimization-Lead-Time.png)
+<img src={useBaseUrl('img/sdo/Software-Development-Optimization-Lead-Time.png')} alt="SDO - Lead Time dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### SDO - Deployment Frequency
 
@@ -85,7 +87,7 @@ Use this dashboard to:
 * Identify deploys by service, team, and deployment environments (production, test, staging, etc.) to determine areas of improvement.
 * Monitor deployment frequency trends and quickly identify any unexpected highs and lows.
 
-![Software-Development-Optimization-Deployment-Frequency.png](/img/sdo/Software-Development-Optimization-Deployment-Frequency.png)
+<img src={useBaseUrl('img/sdo/Software-Development-Optimization-Deployment-Frequency.png')} alt="SDO - Deployment Frequency dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### SDO - Change Failure Rate
 
@@ -97,7 +99,7 @@ Use this dashboard to:
 * Find top services that are impacted by critical incidents so you can allocate resources accordingly.
 * Monitor change failure rate trends and identify unexpected highs and lows
 
-![Software-Development-Optimization-Change-Failure-Rate.png](/img/sdo/Software-Development-Optimization-Change-Failure-Rate.png)
+<img src={useBaseUrl('img/sdo/Software-Development-Optimization-Change-Failure-Rate.png')} alt="SDO - Change Failure Rate dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### SDO - Time To Restore Service
 
@@ -109,7 +111,7 @@ Use this dashboard to:
 * Determine top services, that are impacted by critical incidents so you can allocate resources accordingly.
 * Monitor trends in the time to restore service values and identify unexpected highs and lows.
 
-![Software-Development-Optimization-Time-to-Restore-Service.png](/img/sdo/Software-Development-Optimization-Time-to-Restore-Service.png)
+<img src={useBaseUrl('img/sdo/Software-Development-Optimization-Time-to-Restore-Service.png')} alt="SDO - Time To Restore Service dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### SDO - Development & Delivery Times
 
@@ -119,7 +121,7 @@ The **Software Development Optimization - Development & Delivery Times** dashboa
 * **Review & Merge** is the time it takes for peers to review the code change, the developer to make any necessary changes, and to finally merge the code.
 * **Deployment** is the time it takes for merged code changes to be deployed to application environments.
 
-![lead-time.png](/img/sdo/lead-time.png)
+<img src={useBaseUrl('img/sdo/lead-time.png')} alt="SDO - Development and Delivery Times" style={{border: '1px solid gray'}} width="800" />
 
 The dashboard will not only show the rate of changes as it goes through the three phases of development and delivery, but also show the phases broken down by team, service, and environment.
 
@@ -156,7 +158,7 @@ For the Active Development and Review & Merge times to be accurate, the followin
 * New application development must be on feature branches and merged into a main branch.
 * Pull requests are created when the code change is ready for review, or for GitHub specifically, pull requests are marked as “Ready for Review”.
 
-![Software-Development-Optimization-Development-Delivery-Times.png](/img/sdo/Software-Development-Optimization-Development-Delivery-Times.png)
+<img src={useBaseUrl('img/sdo/Software-Development-Optimization-Development-Delivery-Times.png')} alt="SDO - Development & Delivery Times" style={{border: '1px solid gray'}} width="800" />
 
 ## CI/CD Pipeline Monitoring
 
@@ -171,7 +173,7 @@ Use this dashboard to:
 * Quickly identify the most critical and important events in each DevOps phase. 
 * Monitor trends across all phases and across multiple CI/CD pipelines and investigate any unexpected behavior.
 
-![Software-Development-Optimization-Pipeline-Overview.png](/img/sdo/Software-Development-Optimization-Pipeline-Overview.png)
+<img src={useBaseUrl('img/sdo/Software-Development-Optimization-Pipeline-Overview.png')} alt="SDO - Pipeline Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### SDO - Alerts 
 
@@ -184,7 +186,7 @@ Use this dashboard to:
 * Determine teams that are overloaded with production alerts.
 * Monitor trends to identify and drill-down into unexpected behavior.
 
-![Software-Development-Optimization-Alerts.png](/img/sdo/Software-Development-Optimization-Alerts.png)
+<img src={useBaseUrl('img/sdo/Software-Development-Optimization-Alerts.png')} alt="SDO - Alerts dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### SDO - Deployment
 
@@ -197,7 +199,7 @@ Use this dashboard to:
 * Identify which services and teams have the most deployment failures.
 * Monitor successful/failure deploy events across repositories, services, teams, and environments.
 
-![Software-Development-Optimization-Deployments.png](/img/sdo/Software-Development-Optimization-Deployments.png)
+<img src={useBaseUrl('img/sdo/Software-Development-Optimization-Deployments.png')} alt="SDO - Deployment dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### SDO - Builds
 
@@ -209,7 +211,7 @@ Use this dashboard to:
 * Monitor which teams, service, and repositories need more attention than other success/failure rate of builds and identify service, team, and repos.
 * Quickly identify code commits that led to failed builds.
 
-![Software-Development-Optimization-Builds.png](/img/sdo/Software-Development-Optimization-Builds.png)
+<img src={useBaseUrl('img/sdo/Software-Development-Optimization-Builds.png')} alt="SDO - Builds dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### SDO - Pipeline Stage Monitoring
 
@@ -222,7 +224,7 @@ Use this dashboard to:
 * Compare pipeline executions to identify which runs slower or faster than others. 
 * Identify the failed pipeline stages and steps.
 
-![Software-Development-Optimization-Pipeline-Stage-Monitoring.png](/img/sdo/Software-Development-Optimization-Pipeline-Stage-Monitoring.png)
+<img src={useBaseUrl('img/sdo/Software-Development-Optimization-Pipeline-Stage-Monitoring.png')} alt="SDO - Pipeline Stage Monitoring dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### SDO - Pull Requests 
 
@@ -234,7 +236,7 @@ Use this dashboard to:
 * Identify the individuals and repos that take the longest to close pull requests.
 * Analyze trends, and compare created/merged/declined pull requests to understand and optimize the velocity of your software delivery process.
 
-![Software-Development-Optimization-Pull-Requests.png](/img/sdo/Software-Development-Optimization-Pull-Requests.png)
+<img src={useBaseUrl('img/sdo/Software-Development-Optimization-Pull-Requests.png')} alt="SDO - Pull Requests" style={{border: '1px solid gray'}} width="800" />
 
 ### SDO - Issues
 
@@ -248,4 +250,4 @@ Use this dashboard to:
 * Get insights into blockers and issues that are taking the longest to resolve.
 * Monitor issue creation trends to identify any unexpected behavior.
 
-![Software-Development-Optimization-Issues.png](/img/sdo/Software-Development-Optimization-Issues.png)
+<img src={useBaseUrl('img/sdo/Software-Development-Optimization-Issues.png')} alt="SDO - Issues" style={{border: '1px solid gray'}} width="800" />
