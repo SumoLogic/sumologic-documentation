@@ -25,23 +25,33 @@ The Sumo Logic source for Google Threat Intel enables you to ingest the indicato
 
 ### Vendor configuration
 
-### Configure Google Threat Intelligence IOC Stream
-* To ship events to Sumo Logic, you need to configure an IOC stream in Google Threat Intelligence. The Sumo Logic integration exclusively uses the IOC stream to ingest threat intelligence data.  
-* The IOC Stream serves as a centralized hub for notifications from your active **Livehunt rules** and subscriptions to **threats** and **threat profiles**. This enables you to create a customized feed of Indicators of Compromise (IOCs) that can then be seamlessly shipped to Sumo Logic.  
-* **Set up your IOC Stream:**  
-  * Before integrating with Sumo Logic, you must have an active IOC stream. This stream can be configured to receive events from one or more of the following sources in GTI:  
-    * Threat Profiles  
-    * Threats  
-    * Hunting Rulesets  
-* It is required to have at least one of these sources configured to populate your IOC stream with data. For more detailed instructions on setting up your IOC stream, please refer to the [IOC Stream](https://gtidocs.virustotal.com/docs/ioc-stream-guide) and [IOC Stream Subscriptions Guides](https://gtidocs.virustotal.com/docs/sources-subscriptions).  
+#### Configure Google Threat Intelligence IOC Stream
+
+To ship events to Sumo Logic, you need to configure an IOC stream in Google Threat Intelligence. The Sumo Logic integration exclusively uses the IOC stream to ingest threat intelligence data.  
+
+The IOC Stream serves as a centralized hub for notifications from your active **Livehunt rules** and subscriptions to **threats** and **threat profiles**. This enables you to create a customized feed of Indicators of Compromise (IOCs) that can then be seamlessly shipped to Sumo Logic.
+
+**Set up your IOC Stream**
+Before integrating with Sumo Logic, ensure that you have an active IOC Stream. Your stream can be configured to receive events from one or more of the following GTI sources:
+* Threat Profiles
+* Threats
+* Hunting Rulesets  
+
+At least one of these sources must be enabled to populate the IOC Stream with data. For more detailed instructions on setting up your IOC stream, refer to the [IOC Stream](https://gtidocs.virustotal.com/docs/ioc-stream-guide) and [IOC Stream Subscriptions](https://gtidocs.virustotal.com/docs/sources-subscriptions) guides.  
 
 ### Obtain Google Threat Intelligence API Key
-* The Google Threat Intelligence source requires an API Key to interact with the Google Threat Intelligence service.  
-* **Note:** The IOC Stream is directly associated with the user account that configured it. You must use the API key of the user who set up the IOC stream. Using an API key from a different user will prevent Sumo Logic from fetching the correct data.  
-* **Follow these steps to obtain an API key:**  
-  * Log in to your Google Threat Intelligence account.  
-  * In the upper‑right corner, select **API key** from below your user name, or visit [https://www.virustotal.com/gui/my-apikey](https://www.virustotal.com/gui/my-apikey).  
-* Copy your API key from the Google Threat Intelligence API Key section and use it to set up the Sumo Logic source.
+
+The Google Threat Intelligence source requires an API Key to interact with the Google Threat Intelligence service.
+
+:::note
+The IOC Stream is directly associated with the user account that configured it. You must use the API key of the user who set up the IOC stream. Using an API key from a different user will prevent Sumo Logic from fetching the correct data.
+:::  
+
+Follow the steps below to obtain the API key:
+
+1. Log in to your Google Threat Intelligence account.
+2. Select **API key** under your user name, or visit [https://www.virustotal.com/gui/my-apikey](https://www.virustotal.com/gui/my-apikey).
+3. Copy your API key from the **Google Threat Intelligence API Key** section and use it to set up the Sumo Logic source.
 
 ### Source configuration
 
