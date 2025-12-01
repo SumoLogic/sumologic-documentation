@@ -103,16 +103,38 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | infraPollingInterval | Integer | No | 24 | This sets how often the Source checks for organization and network info (in hours). |  |
 
 ## Troubleshooting
-You may receive the follow error below if you enter an invalid Cisco Meraki organization ID in your configuration. Please follow the steps in the section [Gather Meraki Organization IDs](#gather-meraki-organization-ids) to ensure you are using an ID for a Meraki organization returned in that query.
+* You may receive the follow error below if you enter an invalid Cisco Meraki organization ID in your configuration. Please follow the steps in the section [Gather Meraki Organization IDs](#gather-meraki-organization-ids) to ensure you are using an ID for a Meraki organization returned in that query.
 
-```json
-{
-    "state": "Error",
-    "errorType": "THIRD-PARTY-CONFIG",
-    "errorCode": 400,
-    "errorInfo": "meraki '/api/v1/organizations/orgIdInput' not found using API key"
-}
-```
+  ```json
+  {
+      "state": "Error",
+      "errorType": "THIRD-PARTY-GENERIC",
+      "errorCode": 400,
+      "errorInfo": "meraki '/api/v1/organizations/orgIdInput' not found using API key"
+  }
+  ```
+
+* This error occurs when the Cisco Meraki API returns a 401 Unauthorized response with the message `Invalid API key`. It indicates that the API key configured in the Cisco Meraki Source is invalid, revoked, or does not have the required permissions. To resolve this issue, verify that you are using the correct and active API key generated from the [Cisco Meraki Dashboard](https://dashboard.meraki.com/) by navigating to *My Profile → API access → Generate new API key*.
+
+  ```json
+  {
+      "state": "Error",
+      "errorType": "THIRD-PARTY-GENERIC",
+      "errorCode": 401,
+      "errorInfo": "cisco meraki api response 401 Unauthorized: {\"errors\":[\"Invalid API key\"]}"
+  }
+  ```
+
+* This error occurs when the API call to Cisco Meraki fails because the Meraki organization or network associated with the API key does not have a valid license. API access is available only for actively licensed Meraki organizations, and the issue may occur if the organization’s license has expired or if the API key is associated with an unlicensed or trial organization. In this case, visit the [Cisco Meraki Dashboard](https://dashboard.meraki.com/) and check the license status under *Organization → Configure → License info*.
+
+  ```json
+  {
+      "state": "Error",
+      "errorType": "THIRD-PARTY-GENERIC",
+      "errorCode": 403,
+      "errorInfo": "cisco meraki api response 403 Forbidden: {\"errors\":[\"Meraki API services are available for licensed Meraki devices only. Please contact Meraki support. To renew your licenses, go to 'https://n136.meraki.com/o/s78Gsdic/manage/dashboard/license_info'\"]}"
+  }
+  ```
 
 ### Known Issues
 * The integration will return an error containing the text `context deadline exceeded (Client.Timeout or context cancellation while reading body)`. This error occurs when the integration is reading the HTTP body, but reaches our timeout which is currently set to 10 minutes. We have observed this behavior across multiple customers when the integration is fetching data from the [Get Network Wireless Air Marshal](https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-air-marshal) endpoint. Increasing the timeout does not appear to solve the issue as the network connection to this specific endpoint will occasionally never complete. Sumo Logic recommends customers contact Cisco Meraki support if they encounter this error.
