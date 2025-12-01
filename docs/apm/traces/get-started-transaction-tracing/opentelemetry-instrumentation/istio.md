@@ -5,6 +5,8 @@ sidebar_label: Istio
 description: Learn how to instrument OpenTelemetry Application code to collect Istio trace data generated from Envoy proxies.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 OpenTelemetry Collector gives you the ability to collect Istio trace data and forward it to Sumo Logic.
 
 [Istio](https://istio.io/latest/) is a popular service mesh technology using Envoy proxy technology that provides out-of-the-box tracing generation from its sidecars. Although its tracing capabilities cannot fully replace visibility that  you can obtain by collecting traces by instrumenting the application code directly, it can provide some additional details to delays introduced by sidecar proxies that will generate its own specific spans.
@@ -117,7 +119,7 @@ Every action requires restart of the pods involved in tracing.
 
     Example output:
 
-    ![istio1.png](/img/apm/traces/istio1.png)  
+    <img src={useBaseUrl('img/apm/traces/istio1.png')} alt="Istio" style={{border: '1px solid gray'}} width="400" />
 
     Check if correct values are set for `enableTracing` and `defaultConfig.tracing.EXPORTER_NAME.address`. If OpenCensus was configured, then Zipkin by default points to an Istio endpoint.
 
@@ -127,7 +129,7 @@ Every action requires restart of the pods involved in tracing.
     kubectl get namespace -L istio-injection
     ```
 
-    ![istio2.png](/img/apm/traces/istio2.png)  
+    <img src={useBaseUrl('img/apm/traces/istio2.png')} alt="Istio" style={{border: '1px solid gray'}} width="400" />
 
 1. Make sure the `namespace` in which the application is running `istio-injection` label is set as `enabled`. If label value is disabled or not set then run:  
 
@@ -143,4 +145,4 @@ Every action requires restart of the pods involved in tracing.
 
     Example output:  
 
-    ![istio3.png](/img/apm/traces/istio3.png)
+    <img src={useBaseUrl('img/apm/traces/istio3.png')} alt="Istio" style={{border: '1px solid gray'}} width="800" />
