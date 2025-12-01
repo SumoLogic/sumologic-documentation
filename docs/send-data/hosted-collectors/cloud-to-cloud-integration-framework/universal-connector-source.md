@@ -561,7 +561,7 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 <details>
   <summary>Failed to validate the base request config or error preparing new request</summary>
   <div>
-    These errors indicate that the endpoint configuration is not set up correctly.   Verify that your endpoint configuration follows the instructions in the `Request Configuration` section.
+    These errors indicate that the endpoint configuration is not set up correctly. Verify that your endpoint configuration follows the instructions in the [Request Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
   </div>
 </details>
 
