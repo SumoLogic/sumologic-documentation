@@ -43,7 +43,7 @@ Enter your aggregate [search query](/docs/search/search-query-language/group-agg
 
 There can be two possible errors while running the multi-child org queries:
 
-- **Partial success**. This occurs when you run a query across all child orgs, and while some child orgs successfully execute, one or more encounter failures. Despite the failures, dashboard with aggregate results from the successfully executed child orgs will be displayed. To resolve the failure, refer to the audit logs (`_index=sumologic_system_events`) for detailed information on the failure query.
+- **Partial success**. This occurs when you run a query across all child orgs, and while some child orgs successfully execute, one or more encounter failures. Despite the failures, the dashboard with aggregate results from the successfully executed child orgs will be displayed. To resolve the failure, refer to the audit logs ([`_index=sumologic_system_events`](/docs/manage/security/audit-indexes/system-event-index/)) for detailed information on the failure query.
 - **Error**. This occurs when you run a query across all child orgs, and all child orgs encounter failures with no child orgs returning the successful result. To resolve the failure, refer to the audit logs (`_index=sumologic_system_events`) for detailed information on the failure query.
 
 A few important things to note are:
