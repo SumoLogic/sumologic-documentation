@@ -29,7 +29,7 @@ To configure an HTTP Traces Source:
 
 ## View the endpoint URL
 
-If you need to access the Source's URL again, click **Show URL**.<br/>![show url traces.png](/img/apm/traces/show-url-traces.png)
+If you need to access the Source's URL again, click **Show URL**.<br/><img src={useBaseUrl('img/apm/traces/show-url-traces.png')} alt="Show URL traces" style={{border: '1px solid gray'}} width="800" />
 
 ## Send a test trace to Sumo
 
