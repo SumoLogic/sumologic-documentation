@@ -19,7 +19,7 @@ An upgrade requested through the web application uses HTTPS (port 443) to upgra
 
 When one or more collectors in your Sumo Logic account are eligible for an upgrade, you'll be notified through the collectors page of the Sumo Logic web application:
 
-![Upgrade collectors](/img/collector/upgrade-collectors-icon.png)
+<img src={useBaseUrl('img//collector/upgrade-collectors-icon.png')} alt="Upgrade collectors" style={{border: '1px solid gray'}} width="800" />
 
 :::important
 The user interface will show up to 50 Collectors at a time. After upgrading one or more Collectors you can close and reopen the 'Upgrade Collectors' window to display other upgradable Collectors. You may consider conducting upgrades with the [Collector Management API](/docs/api/collector-management/upgrade-downgrade-collectors).
@@ -73,7 +73,7 @@ To downgrade one or more collectors to an earlier build:
 
 The upgrade/downgrade process begins immediately after you click a build.
 
-![Downgrade collector](/img/collector/change-version.png)
+<img src={useBaseUrl('img/collector/change-version.png')} alt="Downgrade collector" style={{border: '1px solid gray'}} width="600" />
 
 ### Troubleshooting upgrade failures
 
@@ -81,7 +81,7 @@ If collector upgrade fails, the existing version will continue running on that
 
 Click **Retry** to start the process over.
 
-![Retry collector upgrade](/img/collector/upgrade-collectors-troubleshoot.png)
+<img src={useBaseUrl('img/collector/upgrade-collectors-troubleshoot.png')} alt="Retry collector upgrade" style={{border: '1px solid gray'}} width="600" />
 
 Failure can occur for any of the following reasons:
 
@@ -89,7 +89,7 @@ Failure can occur for any of the following reasons:
 * Permission errors blocked access for Sumo Logic.
 * Possible network failures occurred during the upgrade.
 
-If an upgrade repeatedly fails, contact [Sumo Logic Customer Support](https://support.sumologic.com/home). Alternatively, you can manually upgrade the collector.
+If an upgrade repeatedly fails, contact [Sumo Logic Customer Support](https://support.sumologic.com/support/s/). Alternatively, you can manually upgrade the collector.
 
 
 ## Upgrade Collectors using the Command Line
@@ -130,7 +130,7 @@ While we make every effort to keep backwards compatibility for collectors, many 
 
 When one or more of your Collectors are eligible for an upgrade, you'll be notified through the collectors page in our UI. Follow the [instructions](upgrade-collectors.md) to upgrade (or downgrade) as needed.
 
-![Upgrade collectors with search](/img/collector/upgrade-collectors-icon.png)
+<img src={useBaseUrl('img/collector/upgrade-collectors-icon.png')} alt="Upgrade collectors with search" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 If you are performing a manual upgrade, make sure that you backup your `/<sumo_home>/config` directory before you upgrade because it stores the current source information. If any issues occur during upgrade that leave the Collector unable to connect to the service, or result in missing sources, you can restore this directory and restart the Collector to address the problem.
@@ -148,7 +148,7 @@ Although regressions and new bugs are rare in our Collectors, when they do occur
 * For file-based sources on the new Collector version, ensure the log files are rotating at the frequency you’d expect.
 * For all installed Collectors, observe that the CPU, memory, I/O, and disk space utilization for the Collector process are inline with expectations and past Collector versions.
 
-If you find abnormalities, contact [Sumo Logic Support](https://support.sumologic.com) to help investigate before you push the new Collector Version to full production status.
+If you find abnormalities, contact [Sumo Logic Support](https://support.sumologic.com/support/s/) to help investigate before you push the new Collector Version to full production status.
 
 ### Take a Methodical Approach to Collector Management
 

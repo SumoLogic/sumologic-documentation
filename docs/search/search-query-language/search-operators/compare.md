@@ -4,6 +4,8 @@ title: compare Search Operator
 sidebar_label: compare
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `compare` operator can be used with the [**Time Compare**](/docs/search/time-compare) button in the Sumo interface, which automatically generates the appropriate syntax and adds it to your aggregate query. The following information can also be found documented in Time Compare.
 
 You can use `compare` to:
@@ -41,7 +43,7 @@ The following query returns data from the present, along with results from yeste
 
 This comparison can be displayed visually as:
 
-![compare single diagram](/img/reuse/query-search/compare_single_diagram.png)
+<img src={useBaseUrl('img/reuse/query-search/compare_single_diagram.png')} alt="Compare single diagram" style={{border: '1px solid gray'}} width="300" />
 
 In another example, this query returns data from the present along with results from last week.
 
@@ -65,7 +67,7 @@ The following query returns results from the present, along with results from ev
 
 Which can be displayed visually as:
 
-![compare multiple diagram](/img/reuse/query-search/compare_multiple_diagram.png)
+<img src={useBaseUrl('img/reuse/query-search/compare_multiple_diagram.png')} alt="Compare multiple diagram" style={{border: '1px solid gray'}} width="800" />
 
 The following query returns result from the present with results from the same day in the last 3 weeks. So if today is Monday, then this query will show a result for today and the last three Mondays.
 
@@ -89,7 +91,7 @@ The following query returns results from the present along with the average of t
 
 Which can be displayed visually as:
 
-![compare aggregate](/img/reuse/query-search/compare_aggregate_diagram.png)
+<img src={useBaseUrl('img/reuse/query-search/compare_aggregate_diagram.png')} alt="Compare aggregate" style={{border: '1px solid gray'}} width="600" />
 
 Other examples:
 
@@ -167,11 +169,11 @@ error
 
 The query returns results from both today and two days ago, with each day in its separate column. Today's results are represented by `_count`.
 
-![Count-2d.png](/img/search/timecompare/Count-2d.png)
+<img src={useBaseUrl('img/search/timecompare/Count-2d.png')} alt="Count 2d" style={{border: '1px solid gray'}} width="400" />
 
 Create a line chart to visualize the results.
 
-![count-2dLineChart.png](/img/search/timecompare/count-2dLineChart.png)
+<img src={useBaseUrl('img/search/timecompare/count-2dLineChart.png')} alt="Count 2d line chart" style={{border: '1px solid gray'}} width="800" />
 
 Using the multiple comparison feature, you can compare the number of logs against every ten minutes of the past hour:
 
@@ -184,11 +186,11 @@ _sourceHost = prod
 
 Each ten-minute period produces its own column in the output table:
 
-![tenminute.png](/img/search/timecompare/tenminute.png)
+<img src={useBaseUrl('img/search/timecompare/tenminute.png')} alt="Ten minute" style={{border: '1px solid gray'}} width="800" />
 
 Create a line chart to visualize the results.  
 
-![TenMinuteLIneChart.png](/img/search/timecompare/TenMinuteLIneChart.png)
+<img src={useBaseUrl('img/search/timecompare/TenMinuteLIneChart.png')} alt="Ten minute line chart" style={{border: '1px solid gray'}} width="800" />
 
 Alternatively, you can compare against the average of all the ten minute periods:
 
@@ -199,11 +201,11 @@ _sourceHost = prod
 | compare timeshift 10m 5 avg
 ```
 
-![TenMinAvg.png](/img/search/timecompare/TenMinAvg.png)
+<img src={useBaseUrl('img/search/timecompare/TenMinAvg.png')} alt="Ten min avg" style={{border: '1px solid gray'}} width="500" />
 
 Create a line chart to visualize the results.  
 
-![TenMinAvgLineChart.png](/img/search/timecompare/TenMinAvgLineChart.png)
+<img src={useBaseUrl('img/search/timecompare/TenMinAvgLineChart.png')} alt="Ten min avg line chart" style={{border: '1px solid gray'}} width="800" />
 
 ### Compare categorical data parsed from logs
 
@@ -218,11 +220,11 @@ Use compare to analyze the change in delays on different `_sourceHost`s using pa
 
 This example computes the average delay per `_sourceHost`, and compares with results from 30 minutes ago.
 
-![DelayAvg.png](/img/search/timecompare/DelayAvg.png)
+<img src={useBaseUrl('img/search/timecompare/DelayAvg.png')} alt="Delay avg" style={{border: '1px solid gray'}} width="500" />
 
 These results would create a line chart such as the following.
 
-![DelayLineChart.png](/img/search/timecompare/DelayLineChart.png)
+<img src={useBaseUrl('img/search/timecompare/DelayLineChart.png')} alt="Delay line chart" style={{border: '1px solid gray'}} width="800" />
 
 ### Compare after a Transpose operation
 

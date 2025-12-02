@@ -7,6 +7,7 @@ description: Learn how to create playbooks in the Automation Service to run auto
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CartesianProduct from '../../../reuse/cartesian-product.md';
+import TerraformLink from '../../../reuse/terraform-link.md';
 
 ## View playbooks
 
@@ -154,6 +155,21 @@ If a user has an action marked as **Waiting Owner**, they must perform the steps
 
 <img src={useBaseUrl('img/cse/automations-complete-task.png')} style={{border:'1px solid gray'}} alt="Complete task" width="300"/>
 
+<!-- Oringanially added by DOCS-1251, but pulled out. Add after CSOAR-3993 and CSOAR-3967 are resolved:
+
+#### Task variables
+
+Task variables provide a useful way to track who is assigned to a task and other task data, and let you interact with the task information in subsequent playbook actions.
+
+Perform the following steps to use the variables in nodes that come after the task node in the playbook:
+1. Let's say you create a task node:<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example.png')} style={{border:'1px solid gray'}} alt="Example task node followed by an action node" width="500"/>
+1. Open a node that comes later in the playbook than the task node. In our example, we'll select the node titled **Send email about task status**.
+1. In the **Edit Node** dialog, click either a gear icon <img src={useBaseUrl('img/platform-services/automation-service/gear-icon.png')} style={{border:'1px solid gray'}} alt="Gear icon" width="20"/> or a placeholder icon <img src={useBaseUrl('img/platform-services/automation-service/insert-placeholder-icon.png')} style={{border:'1px solid gray'}} alt="Insert placeholder icon" width="20"/>:<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example-edit-node.png')} style={{border:'1px solid gray'}} alt="Gear icon and insert placeholder icons highlighted on the Edit Note dialog" width="500"/>
+1. From the list of available values from previous actions, click the name of the task node. Then select the variable you want to use:<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example-node-values.png')} style={{border:'1px solid gray'}} alt="Task variables" width="500"/>
+1. Insert the variables as needed in your node. In the following **Send email about task status** node example, the task variables are used for the email subject and in the email body:<br/><img src={useBaseUrl('img/platform-services/automation-service/task-example-variables.png')} style={{border:'1px solid gray'}} alt="Task variables in a node" width="500"/>
+1. Continue inserting the task variables as needed in nodes following the task node.
+-->
+
 ### Add a user choice node to a playbook
 
 When a user choice node is encountered, the execution will pause until a user selects an option. For example, after enrichment, a user could be asked whether to proceed with a containment action or to perform additional enrichment first. When a playbook is paused at a user choice node, the status of that playbook will say **Waiting user interaction**.
@@ -173,6 +189,26 @@ When a user choice node is encountered, the execution will pause until a user se
 Following is an example of a user choice node. Note the node branches to the next node depending on the user's answer. In this example, if the user selects **Yes**, then the IP is blocked, but if the user selects **No**, an email is sent to the SOC.
 
 <img src={useBaseUrl('img/cse/automations-example-user-choice-node.png')} style={{border:'1px solid gray'}} alt="Example user choice node" width="500"/>
+
+#### User choice variables
+
+User choice variables provide a powerful way to track who responded to a user choice option, and let you interact with the responder in subsequent playbook actions.
+
+Exposing the responder ID as a variable provides great benefits, such as letting subsequent nodes automatically reassign the originating incident to the responder, or allowing you to build a playbook that auto-assigns incidents based on the responder ID. The authorized responder can be a single individual, or anyone from a group of authorized users.
+
+Following are the available variables that identify the person who responded to a user choice:
+* `responder.id`. The user ID of the responder. The ID is stored in hexadecimal format.
+* `responder.email`. The responder's email.
+* `responder.firstName`. The responder's first name.
+* `responder.lastName`. The responder's last name.
+
+Perform the following steps to use the user choice responder variables in nodes following user choice:
+1. Let's say you create a user choice node to either send an email to the responder, or assign the responder to an insight:<br/><img src={useBaseUrl('img/platform-services/automation-service/user-choice-variable-example-playbook.png')} style={{border:'1px solid gray'}} alt="Example user choice node for actor variables" width="400"/>
+1. Open a node following the user choice node. In our example, we'll select the **Send Email** node.
+1. In the **Edit Node** dialog, click either a gear icon <img src={useBaseUrl('img/platform-services/automation-service/gear-icon.png')} style={{border:'1px solid gray'}} alt="Gear icon" width="20"/> or a placeholder icon <img src={useBaseUrl('img/platform-services/automation-service/insert-placeholder-icon.png')} style={{border:'1px solid gray'}} alt="Insert placeholder icon" width="20"/>:<br/><img src={useBaseUrl('img/platform-services/automation-service/user-choice-variables-edit-node.png')} style={{border:'1px solid gray'}} alt="Gear icon and insert placeholder icons highlighted on the Edit Note dialog" width="500"/>
+1. From the list of available values from previous actions, click the name of the user choice node. Then select the responder variable you want to use:<br/><img src={useBaseUrl('img/platform-services/automation-service/user-choice-variables.png')} style={{border:'1px solid gray'}} alt="User choice responder variables" width="500"/>
+1. Insert the variables as needed in your node. In the following **Send Email** node example, the responder variables are used for the email's recipient and in the email body:<br/><img src={useBaseUrl('img/platform-services/automation-service/user-choice-variables-insert-placeholders.png')} style={{border:'1px solid gray'}} alt="User choice variables in a node" width="500"/>
+1. Continue inserting the variables as needed in nodes following the user choice.
 
 #### User choice nodes in out-of-the-box playbooks
 
@@ -368,13 +404,17 @@ When you publish a playbook:
 
 Select **Enable Autosave for all playbooks** to ensure that while editing a playbook, all changes will be automatically saved to the draft. For more information, see [Autosave](#autosave).
 
-## Import and export playbooks
+## Export and import playbooks
 
-With the mechanism to import and export playbooks, you can move a playbook, along with all its configurations, from one instance to another. The file should be in tar.gz format and adhere to naming conventions.
+With the mechanism to export and import playbooks, you can move a playbook, along with all its configurations, from one instance to another. You can also use the export function to manage playbooks using Terraform.
 
-1. Click on the Export icon located next to the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/export-playbook.png')} alt="Export Playbook" style={{border: '1px solid gray'}} width="500"/>
-1. Upon clicking, the tar.gz archive download will be initiated.
-1. At this point, you can open the archive, modify the configuration data, recreate a tar.gz archive, and upload it. To upload the file, click on the Import icon.<br/><img src={useBaseUrl('img/cloud-soar/import-playbook.png')} alt="Import Playbook" style={{border: '1px solid gray'}} width="700"/>
-1. Select the desired file and click Import. <br/><img src={useBaseUrl('img/cloud-soar/import-playbook-modal.png')} alt="Import Playbook modal" style={{border: '1px solid gray'}} width="300"/>
+1. Click on the **Export** icon located next to the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/export-playbook.png')} alt="Export Playbook" style={{border: '1px solid gray'}} width="500"/>
+1. Select one of the following:
+   * **Export All (ZIP Format)**. Exports a tar.gz archive file.
+       1. After export, you can open the archive, modify the configuration data, recreate a tar.gz archive, and upload it. To upload the file, click the **Import** icon.<br/><img src={useBaseUrl('img/cloud-soar/import-playbook.png')} alt="Import Playbook" style={{border: '1px solid gray'}} width="700"/>
+       1. Select the desired file and click **Import**. <br/><img src={useBaseUrl('img/cloud-soar/import-playbook-modal.png')} alt="Import Playbook modal" style={{border: '1px solid gray'}} width="300"/>
 
-It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
+       It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
+   * **Export as JSON**. Exports a JSON file that you can use to manage the playbook with Terraform using the [sumologic_csoar_playbook](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/csoar_playbook) resource. 
+        <TerraformLink/>
+

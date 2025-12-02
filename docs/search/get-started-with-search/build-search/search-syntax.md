@@ -4,6 +4,8 @@ title: Search Syntax Overview
 description: Understand the basic syntax used in Sumo Logic search queries to analyze log data efficiently and accurately.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Sumo Logic Search Language operates on your entire log repository, no matter how many different log sources you have—in real time. The search query language is intuitive and efficient, allowing you to search terabytes of data and see results in seconds.
 
 ## Rules
@@ -38,7 +40,7 @@ The pipe delimiter is used to separate the keyword expression and each subsequen
 
 **Example:**
 
-![query syntax](/img/reuse/query-search/query-syntax-new.png)
+<img src={useBaseUrl('img/reuse/query-search/query-syntax-new.png')} alt="Query syntax" style={{border: '1px solid gray'}} width="600" />
 
 ## User-Parsed Fields
 

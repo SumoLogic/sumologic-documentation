@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews.png')} alt="microsoft-ews" width="100"/>
 
-***Version: 1.0  
-Updated: Sep 10, 2025***
+***Version: 1.2  
+Updated: Nov 21, 2025***
 
 Perform actions on Microsoft EWS mailboxes and accounts using Graph API. 
 
@@ -72,70 +72,19 @@ The client secret, known also as an application password, is a string value of y
 
 1. Select your application in **App registrations** in the Azure portal.
 2. Select **API permissions > Add a permission**.
-3. Application permissions are for service- or daemon-type applications that need to access API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your API.
-4. Select **Add a permission**, and add the following permissions: <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews/microsoft-ews-5.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
+3. Add the following permissions: <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews/MS-ews-graph.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
 
-#### EWS API to be configured for these permissions
+#### API / Permissions
 
-Applications are authorized to call APIs when they are granted permissions by users or administrators as part of the consent process. The list of configured permissions should include all the permissions the application needs.
+| Permission            | Permission Type  | Description                          | Admin Consent Required |
+|:----------------------|:-----------------|:-------------------------------------|:-----------------------|
+| Mail.ReadWrite        | Application      | Read and write mail in all mailboxes | Yes |
+| MailboxSettings.Read  | Application      | Read all user mailbox settings       | Yes |
+| User.Read.All         | Application      | Read all user's full profiles         | Yes |
+| Mail.Read             | Application      | Read mail in all mailboxes           | Yes |
+| Mail.Send             | Application      | Send mail as any user                | Yes |
+| Contacts.Read         | Application      | Read contacts in all mailboxes       | Yes |
 
-**API / Permissions**
-
-Microsoft Graph (7)
-
-* Contacts.Read
-    + Type: Application
-    + Description: Read contacts in all mailboxes
-    + Admin: -
-* Mail.Read
-    + Type: Application
-    + Description: Read mail in all mailboxes
-    + Admin: Yes
-* Mail.ReadBasic
-    + Type: Delegated
-    + Description: Read user basic mail
-    + Admin: -
-* Mail.ReadBasic
-    + Type: Application
-    + Description: Read basic mail in all mailboxes
-    + Admin: Yes
-* Mail.ReadBasic.All
-    + Type: Application
-    + Description: Read basic mail in all mailboxes
-    + Admin: Yes
-* Mail.Send
-    + Type: Application
-    + Description: Send mail as any user
-    + Admin: Yes
-* MailboxItem.Read.All
-    + Type: Application
-    + Description: Read all the users' mailbox items
-    + Admin: Yes
-
-Office 365 Exchange Online (3)
-
-* Exchange.ManageAsApp
-    + Type: Application
-    + Description: Manage Exchange As Application
-    + Admin: Yes
-* full\_access\_as\_app
-    + Type: Application
-    + Description: Use Exchange Web Services with full access to all mailboxes
-    + Admin: Yes
-
-`full\_access\_as\_app` uses Exchange Web Services with full access to all mailboxes.
-
-Once API permission are added, then an administrator must consent to grant these permissions. [Learn more about permissions and consent](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent?WT.mc_id=Portal-Microsoft_AAD_RegisteredApps).
-
-### Assign the required roles in the Exchange Admin Center
-
-1. Sign in to the [Exchange Admin Center (EAC)](https://admin.exchange.microsoft.com/#/).
-2. In the EAC, navigate to **Roles**.
-3. Click **Admin Roles**.
-4. Search for the role **Discovery Management** and click on it.
-5. Click on the **Assign** tab.
-6. Click **+** and search for the user you want to assign the role to.
-7. Click **Save**.
 
 ## Configure Microsoft EWS in Automation Service and Cloud SOAR
 
@@ -188,3 +137,7 @@ Email Gateway
 ## Change Log
 
 * September 10, 2025 - First upload
+* October 31, 2025 (v1.1) - Fixed issue in the **Download Mail As EML** action.
+* November 21, 2025 (v1.2)
+  + Fixed issue in the **Search Emails Extended** action.
+  + Converted `has_attachments` and `is_unread` from text fields to list fields with true/false options.

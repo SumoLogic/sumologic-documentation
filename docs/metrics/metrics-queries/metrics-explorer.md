@@ -9,6 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page describes the Metrics Search UI and how to use it.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a metrics search with the [`sumologic_metrics_search_v2`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/metrics_search_v2) resource.
+
+<TerraformLink/>
+:::
+
 ## About the UI
 
 The Metrics Search appears when you open a new metrics tab. The page
@@ -57,7 +65,7 @@ If the query editor mode cannot be adjusted, it is changed to advanced mode so t
 
 1. Scroll through the list, or begin typing to dynamically narrow the list. Click the desired value. The **Filter** field now contains the key-value pair you selected. You can click a filter setting to edit it. You can preface a filter value with and exclamation point (!) to NOT the value.
 1. As desired, repeat the previous steps to add additional filters to the query. 
-1. When you are ready to run your query, click the run button: ![run-button.png](/img/metrics/run-button.png)
+1. When you are ready to run your query, click the run button: <img src={useBaseUrl('img/metrics/run-button.png')} alt="Run button" style={{border: '1px solid gray'}} width="50" />
 1. The metrics returned by your query appear in the **Time Series Table**.
 
     <img src={useBaseUrl('img/metrics/results-in-table.png')} alt="Metrics search results in time series table" style={{border: '1px solid gray'}} width="800" />
@@ -121,7 +129,7 @@ You can perform basic math operations (+, -, \*, /) on two or more metrics queri
 
 To join the queries, add a third query row, and then switch to advanced mode by choosing **Advanced Mode** from the three-dot kebab menu in that row.
 
-![advanced.png](/img/metrics/advanced.png)
+<img src={useBaseUrl('img/metrics/advanced.png')} alt="Advanced" style={{border: '1px solid gray'}} width="100" />
 
 In Advanced mode, enter:  
 
@@ -136,12 +144,12 @@ It returns the difference between the incoming rate and the outgoing rate. In th
 You can hide a query so that it is not visualized in the chart.
 
 1. Click the eye icon to the right of the query builder area in the row that contains the query you want to hide.
-1. The visualization for the query is hidden. The query label for a hidden query is faded out.<br/>![eye-icon.png](/img/metrics/eye-icon.png)
+1. The visualization for the query is hidden. The query label for a hidden query is faded out.<br/><img src={useBaseUrl('img/metrics/eye-icon.png')} alt="Eye icon" style={{border: '1px solid gray'}} width="100" />
 1. To make the query visible, click the eye icon again.
 
 ## Add a monitor to a metric query
 
-1. Select **Add Monitor** from the more options menu.<br/>![add-monitor.png](/img/metrics/add-monitor.png)
+1. Select **Add Monitor** from the more options menu.<br/><img src={useBaseUrl('img/metrics/add-monitor.png')} alt="Add monitor" style={{border: '1px solid gray'}} width="150" />
 1. Follow the instructions to add a Monitor.
 
 ## Convert query mode
@@ -156,7 +164,7 @@ between Basic and Advanced anytime.
 
 ## Duplicate a metric query
 
-1. Select **Duplicate Query** from the more options menu. <br/>![duplicate-query.png](/img/metrics/duplicate-query.png)
+1. Select **Duplicate Query** from the more options menu. <br/><img src={useBaseUrl('img/metrics/duplicate-query.png')} alt="Duplicate query" style={{border: '1px solid gray'}} width="150" />
 1. Your query will be copied to a new row in the query builder area.
 
 ## Tailoring charts
