@@ -95,7 +95,7 @@ Your estimates of ingest capacity required for each product variable are called 
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
 1. Click the row for the org you want to change the org name.
-1. In the right hand pane, click on **More Actions** dropdown and select **Change Organization Name**.<br/><img src={useBaseUrl('img/manage/subscriptions/Side_pane_Change_Orgs_Name.png')} alt="Side_pane_Change_Orgs_Name.png" style={{border: '1px solid gray'}} width="300"/>
+1. In the right-hand pane, click on **More Actions** dropdown and select **Change Organization Name**.<br/><img src={useBaseUrl('img/manage/subscriptions/Side_pane_Change_Orgs_Name.png')} alt="Side_pane_Change_Orgs_Name.png" style={{border: '1px solid gray'}} width="300"/>
 1. At the prompt, enter a new organization name in the text field.
 1. Click **Change.** <br/><img src={useBaseUrl('img/manage/subscriptions/Change_Child_Organization_Name_prompt.png')} alt="Change_Child_Organization_Name_prompt.png" style={{border: '1px solid gray'}} width="300"/>
 
