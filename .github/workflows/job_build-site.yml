@@ -31,6 +31,9 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Clean Docusaurus cache
         run: rm -rf .docusaurus build
+      - name: Clear the Docusaurus site
+        run: |
+          yarn clear
       - name: Build the Docusaurus site
         run: |
           yarn build
