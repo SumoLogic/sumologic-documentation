@@ -84,7 +84,7 @@ import Theme from '../reuse/dark-light-theme.md';
 
 Sumo Logic Cloud SOAR facilitates timely management of incident response with a rich library of customizable playbooks for different threats.
 
-This solution additionally provides capabilities to support incident responders during the process of assessment, investigation, and data collection to help uncover additional information and metrics analytics to see repetitive patterns when doing analysis. It facilitates documentation and knowledge transfer of information across the critical teams working on incident response and SOC operations team members.
+This solution additionally provides capabilities to support incident responders during the process of assessment, investigation, and data collection to help uncover additional information and metrics analytics. It facilitates documentation and knowledge transfer of information across the critical teams working on incident response and SOC operations team members.
 
 Cloud SOAR Automation and Orchestration features help organizations from all sectors of the industry to manage measure and orchestrate security operations tasks including incident qualification, triage and escalation, threat hunting, analysis, threat containment and
 remediation. The gathering of information from different data sources and correlating this information expedites the capabilities and augments human analyst available resources.
