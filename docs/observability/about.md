@@ -5,6 +5,8 @@ sidebar_label: About Observability
 description: The Sumo Logic Observability Solution focuses on finding the unconsidered issues and the unknown risks to your system.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Observability is the ability of the internal states of a system to be determined by its external outputs.
 
 For our purposes, Observability is the ability to observe an application from the outside and understand what is happening inside the application and its services. Observability helps ensure that the application is running reliably: the system is up and running (available), performant, and secure.  
@@ -39,7 +41,7 @@ Modern applications are increasingly complex, as they leverage distributed techn
 
 * **Troubleshoot** and uncover root cause(s) to guide recovery and ensure on-going application reliability. As in the case of the diagnosis step, the unknown unknowns might make it difficult to find the root cause.
 
-![image9.png](/img/observability/about-ob-architecture.png)
+<img src={useBaseUrl('img/observability/about-ob-architecture.png')} alt="Monitor, diagnose, and troubleshoot cycle diagram" style={{border: '1px solid gray'}} width="800" />
 
 Monitoring, diagnosing, and troubleshooting such issues is harder because there are no existing runbooks that can help resolve issues quickly. This problem is compounded by the fact that modern applications also emit astonishing amounts of machine data across the stack. 
 

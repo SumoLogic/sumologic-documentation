@@ -4,6 +4,7 @@ title: avg Metrics Operator
 sidebar_label: avg
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `avg` operator calculates the average of all matching time series. If grouping is specified, it calculates the average for each group.
 
@@ -22,8 +23,8 @@ This query returns the average value of the `RequestCount` metric across matchin
 ```sql
 Namespace=AWS/ApplicationELB metric=RequestCount Statistic=Sum AvailabilityZone=* Region=* TargetGroup=* | avg 
 ```  
- 
-![avg1.png](/img/metrics/avg1.png)
+
+<img src={useBaseUrl('img/metrics/avg1.png')} alt="avg operator" style={{border: '1px solid gray'}} width="800" />
 
 ### Average by one field
 

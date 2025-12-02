@@ -5,6 +5,8 @@ sidebar_label: Before You Deploy
 description: Learn prerequisites and guidelines for deploying the AWS Observability Solution to a single AWS account and region.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This page describes prerequisites and guidelines for deploying Sumo Logic’s AWS Observability Solution. 
 
 :::info
@@ -30,8 +32,7 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
   * View Monitors
   * Manage Entity Type Configs
   * Create access keys
-  * **Sumo Logic Access ID and Key**. When you deploy the solution, you’ll need to supply a Sumo Logic Access ID and Access Key, which enable you to use Sumo Logic APIs. Make sure you select default scope and have the role capabilities listed above before generating the Access ID and Key.
-  ![Default-Scope.png](/img/observability/Default-Scope.png)
+  * **Sumo Logic Access ID and Key**. When you deploy the solution, you’ll need to supply a Sumo Logic Access ID and Access Key, which enable you to use Sumo Logic APIs. Make sure you select default scope and have the role capabilities listed above before generating the Access ID and Key. <br/><img src={useBaseUrl('img/observability/Default-Scope.png')} alt="Default scope" style={{border: '1px solid gray'}} width="500" />
   :::note
   For the AWS Observability Solution, you must use the default scope when generating the Access ID and Key; custom scopes are not supported.
   :::
@@ -192,10 +193,10 @@ Before setting up the AWS Observability solution we recommend testing permission
 
 1. Invoke the AWS CloudFormation template at this [URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.13.0/permissionchecker/permissioncheck.template.yaml).
 1. Select the desired AWS region to test.
-1. Enter a Stack Name, Sumo Logic Deployment, and Sumo Logic Access ID and Access Key.<br/>  ![Testing_sumo_Permission_1.png](/img/observability/Testing_sumo_Permission_1.png)
+1. Enter a Stack Name, Sumo Logic Deployment, and Sumo Logic Access ID and Access Key.<br/><img src={useBaseUrl('img/observability/Testing_sumo_Permission_1.png')} alt="Stack details" style={{border: '1px solid gray'}} width="800" />
 1. Click **Create Stack.**
 1. Verify that the AWS CloudFormation template has executed successfully in a CREATE_COMPLETE status.
     * This indicates that you have all the right permissions on both the Sumo Logic and the AWS side to proceed with the installation of the solution. 
-    * All the resources (Sumo Logic and AWS) created by template are also deleted.<br/>  ![Testing_sumo_Permission_2.png](/img/observability/Testing_sumo_Permission_2.png)
+    * All the resources (Sumo Logic and AWS) created by template are also deleted.<br/><img src={useBaseUrl('img/observability/Testing_sumo_Permission_2.png')} alt="Testing Sumo Logic permissions" style={{border: '1px solid gray'}} width="800" />
 1. If the AWS CloudFormation template has not executed successfully, identify and fix any permission errors till the stack completes with a `CREATE_COMPLETE` status. 
 1. Once the AWS CloudFormation stack has executed successfully, delete the AWS CloudFormation Stack.
