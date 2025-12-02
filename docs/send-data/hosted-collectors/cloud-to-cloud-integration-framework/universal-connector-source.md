@@ -547,7 +547,7 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 <details>
   <summary>Error getting partial logs, error preparing log, error getting timestamp data, timestamp path not in data, or error parsing response data</summary>
   <div>
-    These errors are typically caused by an improper endpoint response format or incorrect log ingestion configuration. Ensure that your endpoint returns data in a valid JSON format and response field are as per the configuration.
+    These errors are typically caused by an improper endpoint response format or incorrect log ingestion configuration. Ensure that your endpoint returns data in a valid JSON format and response fields are as per the configuration.
   </div>
 </details>
 
