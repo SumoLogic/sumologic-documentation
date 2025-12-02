@@ -345,6 +345,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source')}><img src={useBaseUrl('img/send-data/Google-Threat-Intel.png')} alt="Gmail" width="50"/><h4>Google Threat Intel</h4></a>
+  <p>Learn how to collect data using the Google Threat Intel API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="180"/><h4>Google Workspace AlertCenter</h4></a>
   <p>Configure Google Workspace AlertCenter Cloud-to-Cloud connector.</p>
   </div>
