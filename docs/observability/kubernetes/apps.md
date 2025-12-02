@@ -5,6 +5,8 @@ sidebar_label: Install Kubernetes Apps
 description: Learn about the Sumo Logic Kubernetes apps.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Sumo Logic provides a selection of Kubernetes apps to monitor various different aspects of your Kubernetes platform and environment. The apps provide out-of-box dashboards and other content relevant for you to monitor your K8s environment.
 
 ## Kubernetes app
@@ -19,7 +21,7 @@ It can also work in conjunction with the Sumo Logic Apps for AKS Control Plane,
 
 The following dashboard is an example of one of the many pre-configured dashboards you can access with the app to view and analyze data from your Kubernetes environment.
 
-![K8s_Cluster_Overview.png](/img/kubernetes/K8s_Cluster_Overview.png)
+<img src={useBaseUrl('img/kubernetes/K8s_Cluster_Overview.png')} alt="Kubernetes cluster overview" style={{border: '1px solid gray'}} width="800" />
 
 ## Kubernetes Control Plane app
 
@@ -27,7 +29,7 @@ The [Sumo Logic Kubernetes Control Plane App](/docs/integrations/containers-orch
 
 The following dashboard is an example of one of the many pre-configured app dashboards you can access to view and analyze data from your Kubernetes environment.
 
-![K8s_CP_Controller_Manager.png](/img/kubernetes/K8s_CP_Controller_Manager.png)
+<img src={useBaseUrl('img/kubernetes/K8s_CP_Controller_Manager.png')} alt="Kubernetes - Controller Manager" style={{border: '1px solid gray'}} width="<insert-pixel-number>" />
 
 ## Amazon EKS - Control Plane app
 
@@ -35,7 +37,7 @@ The [Sumo Logic App for Amazon EKS - Control Plane](/docs/integrations/amazon-aw
 
 The following dashboard is an example of one of the many pre-configured app dashboards you can access to view and analyze data from your Kubernetes environment.
 
-![EKS_API_Server_Overview.png](/img/kubernetes/EKS_API_Server_Overview.png)
+<img src={useBaseUrl('img/kubernetes/EKS_API_Server_Overview.png')} alt="Amazon EKS - Control Plane app" style={{border: '1px solid gray'}} width="800" />
 
 ## Azure Kubernetes System (AKS) - Control Plane app
 
@@ -43,7 +45,7 @@ The [Sumo Logic App for Azure Kubernetes Service (AKS) - Control Plane](/docs/in
 
 The following dashboard is an example of one of the many pre-configured app dashboards you can access to view and analyze data from your Kubernetes environment.
 
-![AKS_Scheduler.png](/img/kubernetes/AKS_Scheduler.png)
+<img src={useBaseUrl('img/kubernetes/AKS_Scheduler.png')} alt="Azure Kubernetes System (AKS) - Control Plane app" style={{border: '1px solid gray'}} width="800" />
 
 ## Google Kubernetes Engine (GKE) - Control Plane app
 
@@ -51,5 +53,5 @@ The [Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane](/docs/in
 
 The following dashboard is an example of one of the many pre-configured app dashboards you can access to view and analyze data from your Kubernetes environment.
 
-![GKE_Node_Logs.png](/img/kubernetes/GKE_Node_Logs.png)
+<img src={useBaseUrl('img/kubernetes/GKE_Node_Logs.png')} alt="Google Kubernetes Engine (GKE) - Control Plane app" style={{border: '1px solid gray'}} width="800" />
 
