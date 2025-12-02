@@ -1619,7 +1619,7 @@
   "/cid/100000": "/docs/manage/deletion-requests",
   "/cid/100001": "/docs/search/get-started-with-search/build-search/search-templates",
   "/cid/100002": "/docs/search/mobot",
-  "/cid/100003": "/docs/search/mobot-multiturn-beta",
+  "/cid/100003": "/docs/search/mobot",
   "/cid/100004": "/docs/search/get-started-with-search/build-search/keyword-search-expressions",
   "/cid/100005": "/docs/get-started/sign-up",
   "/cid/100006": "/docs/get-started/library",
@@ -2972,6 +2972,7 @@
   "/cid/1120": "/docs/integrations/saas-cloud/github-copilot",
   "/cid/1123": "/docs/integrations/amazon-aws/amazon-bedrock-agentcore",
   "/cid/1122": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source",
+  "/cid/1124": "/docs/integrations/saas-cloud/zero-networks-segment/",
   "/Cloud_SIEM_Enterprise": "/docs/cse",
   "/Cloud_SIEM_Enterprise/Administration": "/docs/cse/administration",
   "/Cloud_SIEM_Enterprise/Administration/Cloud_SIEM_Enterprise_Feature_Update_(2022)": "/docs/cse/administration",
@@ -4597,5 +4598,6 @@
   "/docs/search/get-started-with-search-language/parsing-operators": "/docs/search/search-query-language/parse-operators",
   "/docs/get-started/training-certification-faq-new": "/docs/get-started/training-certification-faq",
   "/docs/manage/scheduled-views/pausing-inactive-scheduled-views": "/docs/manage/scheduled-views/pause-disable-scheduled-views",
-  "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps"
+  "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps",
+  "/docs/search/mobot-multiturn-beta": "/docs/search/mobot"
 }
