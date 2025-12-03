@@ -68,4 +68,7 @@ Queries are the core of Sumo Logic's data processing platform. With queries, you
 * Blogs: 
    * [Why your security analytics needs proactive threat hunting](https://www.sumologic.com/blog/why-proactive-threat-hunting-is-a-necessity/)
    * [Cloudy with a chance of breach: advanced threat hunting strategies for a hyperconnected and SaaSy world](https://www.sumologic.com/blog/threat-hunting-hybrid-cloud-environment/)
+   * [Why your DevSecOps team needs a log management solution](https://www.sumologic.com/blog/log-management-tool)
+   * [How log management protects your security stack](https://www.sumologic.com/blog/log-management-security)
+   * [Cloud security vs. traditional security](https://www.sumologic.com/blog/cloud-security-why-its-different)
 * Glossary: [Threat detection and response (TDR) - definition & overview](https://www.sumologic.com/glossary/threat-detection-response/)

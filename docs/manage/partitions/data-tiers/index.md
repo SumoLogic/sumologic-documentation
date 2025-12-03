@@ -56,22 +56,24 @@ How you can search and use your ingested data varies by the Data Tier it resides
 
 | Feature support | Continuous Tier | Frequent Tier | Infrequent Tier | 
 | :-- | :-- | :-- | :-- | 
-| Centralized, secure, multi-tenant cloud-native platform | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) | 
-| Data replication across availability zones, data encryption | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Interactive queries (UI) | ![check](/img/reuse/check.png)<br/>Partitions can be specified, but are optional. |![check](/img/reuse/check.png)<br/>Partition or `_dataTier` must be specified. |![check](/img/reuse/check.png)<br/>Partition or `_dataTier` must be specified. |
-| Support for Installed and Hosted Collectors | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| RBAC support | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Support for search operators | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Field Extraction Rules | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Logs to Metrics | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Data Forwarding | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |
-| Live Tail | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Dashboards | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |
-| Monitors | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |
-| Scheduled Searches | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |
-| Scheduled Views | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![check](/img/reuse/x.png) |
-| API Queries |  ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
+| Centralized, secure, multi-tenant cloud-native platform | &#10003; | &#10003; | &#10003; | 
+| Data replication across availability zones, data encryption | &#10003; | &#10003; | &#10003; |
+| Interactive queries (UI) | &#10003;<br/>Partitions can be specified, but are optional. | &#10003;<br/>Partition or `_dataTier` must be specified. | &#10003;<br/>Partition or `_dataTier` must be specified. |
+| Support for Installed and Hosted Collectors | &#10003; | &#10003; | &#10003; |
+| RBAC support | &#10003; | &#10003; | &#10003; |
+| Support for search operators | &#10003; | &#10003; | &#10003; |
+| Field Extraction Rules | &#10003; | &#10003; | &#10003; |
+| Logs to Metrics | &#10003; | &#10003; | &#10003; |
+| Data Forwarding | &#10003; | &#10003; | |
+| Live Tail | &#10003; | &#10003; | &#10003; |
+| Dashboards | &#10003; | Activation required<sup>*</sup> | |
+| Monitors | &#10003; | Activation required<sup>*</sup> | |
+| Scheduled Searches | &#10003; | | |
+| Scheduled Views | &#10003; | | |
+| API Queries |  &#10003; | &#10003; | &#10003; |
 
+<sup>*</sup> Feature activation is subject to minimum volume and service plan requirements, confirmed at time of transaction.
+  
 ## Assigning data to a Data Tier
 
 You assign data to a Data Tier at the partition level. When you create a partition, you define a routing expression and select the target tier for the data that matches the routing expression. For instructions, see [Create a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).
@@ -84,7 +86,7 @@ For information about searching data tiers, see [Searching Data Tiers](searchin
 
 This section describes the most common error messages for Data Tiers.
 
-* If you try to add a panel to a dashboard that uses data from the Frequent or Infrequent Tiers, you'll receive the following error message, because you can only use data from the Continuous Tier in a dashboard: `This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.`<br/>![create-panel.png](/img/manage/partitions-data-tiers/no-dashboard-support.png)    
+* If you try to add a panel to a dashboard that uses data from the Frequent or Infrequent Tiers, you'll receive the following error message, because you can only use data from the Continuous Tier in a dashboard: `This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.`<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/no-dashboard-support.png')} alt="Create panel>" style={{border: '1px solid gray'}} width="800" />
 * If you try to specify the scope of a Scheduled View or a Scheduled Search using a partition in the Frequent or Infrequent Data tiers, you'll receive this error message: `This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.`
 
 ## Guides
@@ -94,32 +96,26 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/data-tier/create-edit-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create and Edit a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/data-tiers/create-edit-partition/')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create and Edit a Partition</h4></a>
   <p>Learn how to create and edit a Partition in an Index.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/data-tier/view-partition-details"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>View Details About a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/data-tiers/view-partition-details/')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>View Details About a Partition</h4></a>
   <p>Learn how to view details about a Sumo Logic Partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/data-tiers"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers</h4></a>
-  <p>Get to know about Sumo Logic's Data Tiers feature.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/manage/partitions/data-tier/data-tiers-faqs">  <img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers FAQs</h4></a>
-  <p>Get answers on various FAQs about Data Tiers.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/manage/partitions/data-tier/searching-data-tiers"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Searching Data Tiers</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/data-tiers/searching-data-tiers/')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Searching Data Tiers</h4></a>
   <p>Learn how to search specific Data Tiers.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/manage/partitions/data-tiers/faq/')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers FAQs</h4></a>
+  <p>Get answers on various FAQs about Data Tiers.</p>
   </div>
 </div>
 </div>

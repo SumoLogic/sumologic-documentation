@@ -21,15 +21,23 @@ module.exports = {
   baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'throw',
+  onDuplicateRoutes: 'throw',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
   favicon: 'https://www.sumologic.com/favicon.ico',
   organizationName: 'sumologic', // Usually your GitHub org/user name.
   projectName: 'sumologic-documentation', // Usually your repo name.
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  clientModules: [
-    require.resolve('./src/client-modules/trackTrialClick.js'),
-  ],
+  // Temporarily removes Start Free Trial button conversion event tracking.
+  // To reinstate this, uncomment below and restore trackTrialClick.js file
+  //  clientModules: [
+  //    require.resolve('./src/client-modules/trackTrialClick.js'),
+  //  ],
   future: {
     v4: true,
     experimental_faster: true,
@@ -209,7 +217,7 @@ module.exports = {
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
           postsPerPage: 'ALL',
-          blogDescription: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
+          blogDescription: 'Stay up to date with the latest features, improvements, and fixes in the Sumo Logic Installed Collector by reviewing the official release notes.',
           showReadingTime: false,
           onUntruncatedBlogPosts: 'ignore',
           onInlineTags: 'ignore',
@@ -241,18 +249,21 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [
-      {
-        name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts',
-      },
-      {
-        name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586'
-      },
+      { name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts' },
+      { name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586' },
+      { name: 'description', content: 'Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.' },
+      { property: 'og:site_name', content: 'Sumo Logic Docs' },
+      { property: 'og:description', content: 'Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.' },
+      { property: 'og:image', content: 'https://www.sumologic.com/wp-content/uploads/meta-HomePage_1200x628-1.png' },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '628' },
+      { property: 'og:image:alt', content: 'Sumo Logic Docs' },
     ],
     announcementBar: {
-      id: 'blackhat',
-      content: 'Visit Sumo Logic at Black Hat USA in Las Vegas: August 6-7, 2025 | Mandalay Bay | Booth #5812 | <a target="_blank" rel="noopener noreferrer" href="https://www.sumologic.com/events/black-hat-book-meeting">Click here</a> to book a meeting with us!',
-      backgroundColor: '#b0eefe',
-      textColor: '#091E42',
+      id: 'domain',
+      content: '🚀 <a href="https://www.sumologic.com/events/aws-reinvent">Join us at AWS re:Invent 2025 in Las Vegas, Dec 1-5</a>! Stop by Booth #1329 to see Sumo Logic Dojo AI in action and connect with our experts.',
+      backgroundColor: '#e4b0d1',
+      textColor: '#000',
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
@@ -264,6 +275,7 @@ module.exports = {
     },
     colorMode: {
       defaultMode: 'light',
+      disableSwitch: false,
     },
     algolia: {
       appId: '2SJPGMLW1Q',
@@ -395,23 +407,8 @@ module.exports = {
             to: '/docs/release-notes',
           },
           {
-            type: 'search',
+            label: 'Support',
             position: 'left',
-          },
-          {
-            type: 'html',
-            position: 'right',
-            value: 'google_translate',
-          },
-          {
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'right',
-            className: 'header-trial',
-            alt: 'Sign up for a Sumo Logic free trial',
-          },
-          {
-            position: 'right',
-            className: 'support-menu-trigger',
             to: '#',
             type: 'dropdown',
             items: [
@@ -437,67 +434,83 @@ module.exports = {
               },
             ],
           },
-          {
-            className: 'header-github-link',
-            to: 'https://github.com/SumoLogic/sumologic-documentation',
-            position: 'right',
-            alt: 'Link to Sumo Logic Docs GitHub repository',
-          },
+          // {
+          //  type: 'html',
+          //  position: 'right',
+          //  value: 'google_translate',
+          // },
+          // {
+          //  to: 'https://www.sumologic.com/sign-up',
+          //  position: 'right',
+          //  className: 'header-trial',
+          //  alt: 'Sign up for a Sumo Logic free trial',
+          // },
+        //{
+          //className: 'header-github-link',
+          //to: 'https://github.com/SumoLogic/sumologic-documentation',
+          //position: 'right',
+          //alt: 'Link to Sumo Logic Docs GitHub repository',
+        //},
+        // The following is not even needed to render the search bar, since it is
+        // already done with the Algolia coding above.
+        //  {
+        //    type: 'search',
+        //    position: 'right',
+        //  },
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            items: [
-              {
-                label: 'Training & Certifications',
-                href: 'https://www.sumologic.com/learn/training/',
-              },
-              {
-                label: 'Events & Webinars',
-                href: 'https://www.sumologic.com/events/',
-              },
-              {
-                label: 'Request a Demo',
-                href: 'https://www.sumologic.com/request-demo',
-              },
-            ],
-            title: 'Learn',
-          },
-          {
-            items: [
-              {
-                label: 'Contact Support',
-                href: 'https://support.sumologic.com/support/s',
-              },
-              {
-                label: 'Sumo Dojo Slack',
-                href: 'https://sumodojo.slack.com/',
-              },
-              {
-                label: 'Community',
-                href: 'https://support.sumologic.com/support/s/topiccatalog',
-              },
-            ],
             title: 'Help',
-          },
-          {
             items: [
               {
-                label: 'Docs GitHub',
-                href: 'https://github.com/SumoLogic/sumologic-documentation',
+                label: 'Contact support',
+                href: 'https://support.sumologic.com/support/s'
               },
               {
-                label: 'Sumo Logic GitHub',
-                href: 'https://github.com/SumoLogic',
-              },
+                label: 'Community forum',
+                href: 'https://support.sumologic.com/support/s/topiccatalog' },
               {
-                label: 'Sumo Labs Projects',
-                href: 'https://github.com/SumoLogic-Labs',
+                label: 'Dojo Slack community',
+                href: 'https://sumodojo.slack.com'
               },
             ],
-            title: 'Open Source',
+          },
+          {
+            title: 'Learn',
+            items: [
+              {
+                label: 'Training and certifications',
+                href: 'https://www.sumologic.com/learn/training'
+              },
+              {
+                label: 'Webinars and events',
+                href: 'https://www.sumologic.com/events'
+              },
+              {
+                label: 'Sumo Logic Blog',
+                href: 'https://www.sumologic.com/blog'
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'Contribute or give feedback',
+                href: 'https://www.sumologic.com/help/docs/contributing'
+              },
+              {
+                label: 'Request a demo',
+                href: 'https://www.sumologic.com/request-demo'
+              },
+              {
+                label: 'Status page',
+                href: 'https://status.sumologic.com'
+              },
+            ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,

@@ -13,7 +13,7 @@ For example, you'd use the following query to create a simple Bar chart:
 (error OR fail*) AND exception | count by _sourceCategory | sort by _count
 ```
 
-which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/bar-charts/AggResult.png')} style={{border: '1px solid gray'}} alt="AggResult" width="300"/>
+which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/bar-charts/AggResult.png')} style={{border: '1px solid gray'}} alt="AggResult" width="500"/>
 
 ## Create a bar chart
 

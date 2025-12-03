@@ -4,6 +4,8 @@ title: urlencode Search Operator
 sidebar_label: urlencode
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `urlencode` operator encodes the URL into an ASCII character set. This is the standard format in which URLs can be sent over the internet.
 
 For example, if your URL looks like this:
@@ -40,4 +42,4 @@ _sourceCategory=pagerduty
 
 The query returns the field `url` encoded:
 
-![urlencode.png](/img/search/searchquerylanguage/search-operators/urlencode.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/urlencode.png')} alt="URL encode" style={{border: '1px solid gray'}} width="800" />

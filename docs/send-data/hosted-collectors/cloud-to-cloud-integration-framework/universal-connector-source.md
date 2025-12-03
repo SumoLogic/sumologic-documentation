@@ -40,7 +40,7 @@ If you are unable to configure the source to support your vendor API, you can ei
 
 When you create an Universal Connector Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Universal Connector**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -48,8 +48,8 @@ When you create an Universal Connector Source, you add it to a Hosted Collector.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Parser path**. If **Forward to SIEM** option is selected, provide a [parser path](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md).
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   - ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   - ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   - <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   - <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Configuration Sections**. Expand each section to learn more about the options available for configuration.
 <details>
   <summary>Authentication Configuration</summary>
@@ -362,7 +362,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | progressWindowInitLookback | String      | Yes      | `"24h"`           | How far back the source should start collecting data when created. This setting has no affect after the initial creation.                                                                                                                | `"windowInitialLookback": "24h"`                                                                                                                                                                                                                          |
 | progressWindowMaxLookback  | String      | Yes      | `"31d"`           | How far the window is allowed to stagnate when encountering repetitive errors.                                                                                                                                                           | `"windowMaxLookback": "31d"`                                                                                                                                                                                                                              |
 | responseLogsType           | String      | Yes      | `"json"`          | How the source should ingest logs from the response.                                                                                                                                                                                     | `"json"`                                                                                                                                                                                                                                                  |
-| responseLogsJsonPaths      | JSON Object | Yes      | `null`            | The location of logs to ingest in the JSON response and how to handle event timestamps. See full documentation for details.                                                                                                              | `[{"logsPath": "$[*]", "logTimestampPath": "$.published", "logTimestampFormat": "2006-01-02T15:04:05.999Z"}]`                                                                                                                                             |
+| responseLogsJsonPaths      | JSON Object | Yes      | `null`            | The location of logs to ingest in the JSON response and how to handle event timestamps. See [full documentation](/docs/send-data/reference-information/time-reference) for details.                                                                                                              | `[{"logsPath": "$[*]", "logTimestampPath": "$.published", "logTimestampFormat": "2006-01-02T15:04:05.999Z", "logTimestampValueRegex": "Date\((.*)\)"}]`<br></br>**Note:** For regex, there should be at least one match group. If there is more than one match group, then only the first group will be considered.                                                                                                                                             |
 | paginationType             | String      | Yes      | `"LinkHeaders"`   | Pagination type `LinkHeaders`, `Offset`, or `None`                                                                                                                                                                                      | `"LinkHeaders"`, `"None"`                                                                                                                                                                                                                                 |
 | paginationLinkHeadersType  | String      | Yes      | `"headers"`       | Configures if the next page URL is included in the Link HTTP response header or in the response body.                                                                                                                                    | `"headers"`, `"body"`                                                                                                                                                                                                                                     |
 | paginationLinkHeadersJPath | String      | No       | `null`            | A JSON Path to the appropriate body property                                                                                                                                                                                            |
@@ -541,6 +541,29 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 | Epoch in Milliseconds | `1706803677000`                  | `epochMilli`                          |
 | Epoch NanoInt         | `173584347745451512`             | `epochNanoInt`                        |
 | Epoch NanoFloat       | `1735843477.454515`              | `epochNanoFloat`                      |
+
+## Troubleshooting
+
+<details>
+  <summary>Error getting partial logs, error preparing log, error getting timestamp data, timestamp path not in data, or error parsing response data</summary>
+  <div>
+    These errors are typically caused by an improper endpoint response format or incorrect log ingestion configuration. Ensure that your endpoint returns data in a valid JSON format and response fields are as per the configuration.
+  </div>
+</details>
+
+<details>
+  <summary>oauth2: cannot parse json: invalid character</summary>
+  <div>
+    This error occurs due to an OAuth 2.0 authentication misconfiguration. Reconfigure the source using valid OAuth 2.0 credentials and ensure that it aligns with the steps in the [Authentication Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
+  </div>
+</details>
+
+<details>
+  <summary>Failed to validate the base request config or error preparing new request</summary>
+  <div>
+    These errors indicate that the endpoint configuration is not set up correctly. Verify that your endpoint configuration follows the instructions in the [Request Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
+  </div>
+</details>
 
 ## FAQ
 

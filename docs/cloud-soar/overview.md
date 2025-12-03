@@ -7,7 +7,7 @@ sidebar_label: Overview
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import StaticIpAddresses from '../reuse/static-ips-automation-service.md';
 
-Cloud SOAR fully automates triage, investigation, and remediation of threats for any security professional. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR).
+Cloud SOAR automates triage, investigation, and remediation of threats for security professionals. Its open integrations framework allows you to connect to many third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR).
 
 ## Why Cloud SOAR?
 
@@ -82,17 +82,12 @@ import Theme from '../reuse/dark-light-theme.md';
 
 ## Architecture
 
-Sumo Logic Cloud SOAR provides Security Operations and Automation Incident Response Platform to facilitate and expedite timely management of Incident Response with a rich library of customizable playbooks for different threats and use cases of incident response scenarios expediting and automating response time to incident response events.
+Sumo Logic Cloud SOAR facilitates timely management of incident response with a rich library of customizable playbooks for different threats.
 
-This solution additionally provides capabilities to support incident
-responders during the process of assessment, Investigation, data collection and correlation to help inference additional information and metrics analytics to see repetitive patterns when doing analysis. It facilitates documentation and knowledge transfer of information across the critical teams working on incident response and SOC operations team members.
+This solution additionally provides capabilities to support incident responders during the process of assessment, investigation, and data collection to help uncover additional information and metrics analytics. It facilitates documentation and knowledge transfer of information across the critical teams working on incident response and SOC operations team members.
 
-Cloud SOAR Automation and Orchestration features help organizations from all sectors of the industry to manage measure and orchestrate security
-operations tasks including incident qualification, triage and
-escalation, threat hunting, analysis, threat containment and
-remediation. The gathering of information from different data sources
-and correlating this information expedites the capabilities and augments
-human analyst available resources.
+Cloud SOAR automation and orchestration features help organizations from all sectors of the industry to manage measure and orchestrate security operations tasks including incident qualification, triage and escalation, threat hunting, analysis, threat containment and
+remediation. The gathering of information from different data sources and correlating this information expedites the capabilities and augments human analyst available resources.
 
 The Cloud SOAR tool offers standard management of Incident response events across different teams in the organization with the help of the R3 Rapid response playbook engine. R3 Playbooks are created using a Visual editor supporting granular, stateful and conditional workflows to orchestrate, automate and standardize best practices on a case by case incident response events activities like incident triage, stakeholder notification, data and context enrichment, remediation and threat containment.
 

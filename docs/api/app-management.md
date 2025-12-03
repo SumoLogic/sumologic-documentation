@@ -31,5 +31,5 @@ View and install Sumo Logic applications that deliver out-of-the-box dashboards,
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Manage Apps

@@ -9,6 +9,7 @@ import SumoLogicDocsLogo from '../../static/img/reuse/sumo-logic-docs.svg';
 import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
 import ErrorBoundary from '../components/ErrorBoundary';
+import GoogleTranslateNavbarItem from '../theme/NavbarItem/GoogleTranslateNavbarItem';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
@@ -16,11 +17,28 @@ export const Home = () => {
   return (
     <ErrorBoundary>
       <Layout
-        description='Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.'
+        description='Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.'
         title='Home'
       >
+      {/* H1 hidden, but visible to crawlers */}
+      <Typography
+        component='h1'
+        sx={{
+          position: 'absolute',
+          width: 1,
+          height: 1,
+          p: 0,
+          m: -1,
+          overflow: 'hidden',
+          clip: 'rect(0 0 0 0)',
+          border: 0,
+        }}
+      >
+        Sumo Logic Documentation
+      </Typography>
         {/* Header */}
         <Typography
+          component="div"
           bgcolor='#0045BE'
           color='#e3e3e3'
           fontFamily='Lab Grotesque'
@@ -45,6 +63,7 @@ export const Home = () => {
             }}
             width='100%'
           />
+        <GoogleTranslateNavbarItem/>
         </Typography>
 
         {/* Hero */}
@@ -112,6 +131,11 @@ export const Home = () => {
                     Get started quickly with our search, visualization, analytics, and security capabilities.
                   </Typography>
                   {[
+                    {
+                      children: 'Start a free trial',
+                      description: 'Sign up for a Sumo Logic free trial',
+                      to: 'https://www.sumologic.com/sign-up',
+                    },
                     {
                       children: '1. Set up collector and source',
                       description: 'Set up a Sumo Logic collector and source',

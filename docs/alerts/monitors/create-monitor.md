@@ -13,13 +13,21 @@ Our alerts use machine learning to analyze historical data, establish baselines,
 
 Integrated playbooks automate incident response by gathering diagnostics, notifying teams, triggering recovery actions, and streamlining workflows to improve response times. You can link playbooks to monitors to automate tasks such as restarting services or scaling infrastructure, ensuring swift and efficient anomaly resolution.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage monitors with the [`sumologic_monitor`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) and [`sumologic_monitor_folder`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor_folder) resources.
+
+<TerraformLink/>
+:::
+
 ## Open the New Monitor window
 
 There are several ways to create a new monitor, depending on where you are in Sumo Logic.
 
 ### From Monitors
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
 1. Click **Add** > **New Monitor**, and the **New Monitor** dialog box will appear.
 
 <!-- These options are not appearing
@@ -40,19 +48,19 @@ Click the kebab icon in the upper right corner, then **Create a Monitor**.
 
 -->
 
-### From Metrics Explorer
+### From Metrics Search
 
 Creating a monitor based on the threshold values defined in the Metrics page can save time and effort. By using the pre-filled monitor editor, you can quickly create a monitor with the same threshold values as defined in the Metrics page. This will ensure that the monitor is using the same criteria as the Metrics page, providing consistency in monitoring.
 
-To create a monitor from the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer/), follow the steps below:
+To create a monitor from the [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/), follow the steps below:
 
-1. Open the **Metrics Explorer**:
-   * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). From Sumo Logic home, click **Metrics**.<br/><img src={useBaseUrl('img/alerts/monitors/home-metrics.png')} alt="Screenshot of the Sumo Logic home page with rectangle around the Metrics icon" style={{border: '1px solid gray'}} width="200"/>
+1. Open the **Metrics Search**:
    * [**New UI**](/docs/get-started/sumo-logic-ui). Click the **Go To...** menu at the top of the screen and select **Metrics Search**.
-1. On the **Metrics Explorer** page:
+   * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). From Sumo Logic home, click **Metrics**.<br/><img src={useBaseUrl('img/alerts/monitors/home-metrics.png')} alt="Screenshot of the Sumo Logic home page with rectangle around the Metrics icon" style={{border: '1px solid gray'}} width="200"/>
+1. On the **Metrics Search** page:
    1. Enter a metrics query.<br/><img src={useBaseUrl('img/alerts/query-metrics-explorer-view.png')} alt="Metrics explorer query" style={{border: '1px solid gray'}} width="800"/>
-   1. In the **Thresholds** section, define the critical and warning thresholds for your metrics query.<br/><img src={useBaseUrl('img/alerts/thresholdonly-metrics-explorer-view.png')} alt="Screenshot of the Metrics Explorer in Sumo Logic, displaying a line chart for node memory utilization over time. The chart shows the memory utilization metric from 17:42:12 to 17:57:12 on 21/02/2023. The right side of the screen includes a thresholds panel with critical and warning thresholds set to 500000000 and 80, respectively. The 'Fill remaining area as green' option is toggled off." style={{border: '1px solid gray'}} width="800"/>
-1. Click the three-dot kebab icon button at the end of the query field and select **Create a Monitor**.<br/><img src={useBaseUrl('img/alerts/monitors/create-monitor.png')} alt="Screenshot of the Metrics Explorer in Sumo Logic, showing the dropdown menu accessed via the three vertical dots icon. The menu includes options for Basic Mode, Duplicate Query, Create a Monitor, and Create an SLO. The option 'Create a Monitor' is highlighted. Below the menu, the thresholds panel shows critical and warning thresholds set to 500000000 and 80, respectively, with the 'Fill remaining area as green' option toggled off." style={{border: '1px solid gray'}} width="400"/>
+   1. In the **Thresholds** section, define the critical and warning thresholds for your metrics query.<br/><img src={useBaseUrl('img/alerts/thresholdonly-metrics-explorer-view.png')} alt="Screenshot of the Metrics Search in Sumo Logic, displaying a line chart for node memory utilization over time. The chart shows the memory utilization metric from 17:42:12 to 17:57:12 on 21/02/2023. The right side of the screen includes a thresholds panel with critical and warning thresholds set to 500000000 and 80, respectively. The 'Fill remaining area as green' option is toggled off." style={{border: '1px solid gray'}} width="800"/>
+1. Click the three-dot kebab icon button at the end of the query field and select **Create a Monitor**.<br/><img src={useBaseUrl('img/alerts/monitors/create-monitor.png')} alt="Screenshot of the Metrics Search in Sumo Logic, showing the dropdown menu accessed via the three vertical dots icon. The menu includes options for Basic Mode, Duplicate Query, Create a Monitor, and Create an SLO. The option 'Create a Monitor' is highlighted. Below the menu, the thresholds panel shows critical and warning thresholds set to 500000000 and 80, respectively, with the 'Fill remaining area as green' option toggled off." style={{border: '1px solid gray'}} width="400"/>
 1. The **New Monitor** will open with prefilled data based on the threshold values you set in the previous steps.<br/><img src={useBaseUrl('img/alerts/monitors/new-monitor-window.png')} alt="Screenshot of the 'New Monitor' setup page in Sumo Logic, specifically focusing on the Trigger Conditions section. The Monitor Type is set to Metrics and Detection Method to Static. The query is set for node memory utilization for a specific collector. The Alert Grouping options include one alert per monitor or one alert per time series. The Trigger Type section shows critical alerts set to trigger when the result is greater than or equal to 500000000 within 15 minutes. The recovery settings are enabled to recover automatically when the result is less than 500000000 within a 15-minute window. Historical Trend is displayed below, with a dashed red line indicating the threshold." style={{border: '1px solid gray'}} width="600"/>
 1. In the **Trigger Type** section, enable the checkbox that corresponds to the threshold value that you want to use (Critical and/or Warning).
    * The threshold values will be the same as defined in the Metrics page for both Critical and Warning thresholds.
@@ -62,10 +70,10 @@ To create a monitor from the [Metrics Explorer](/docs/metrics/metrics-queries/me
 1. The same threshold will also be applied to the histogram chart.
 
 :::note
-The same threshold translating functionality supports [opening the Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds) and [opening a monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
+The same threshold translating functionality supports [opening the Alerts Response Page in the Metrics Search](/docs/alerts/monitors/alert-response/#translating-thresholds) and [opening a monitor in the Metrics Search](/docs/alerts/monitors/settings/#view-in-metrics-search).
 :::
 :::tip
-When you create a monitor and open the metrics search query in the Metrics Explorer, the signal gets a new value for the [`quantize`](/docs/metrics/metrics-operators/quantize/) operator based on the time range of the query. The default value for the `quantize` operator is `1m`. Because opening the query in Metrics Explorer may not match because of quantization differences, you may need to adjust the query to return the results you expect, especially when creating a monitor that uses the [anomaly detection method](#detection-method).<br/><img src={useBaseUrl('img/alerts/monitors/metrics-query-with-quantize.png')} alt="Metrics query with quantize" style={{border: '1px solid gray'}} width="600"/>
+When you create a monitor and open the metrics search query in the Metrics Search, the signal gets a new value for the [`quantize`](/docs/metrics/metrics-operators/quantize/) operator based on the time range of the query. The default value for the `quantize` operator is `1m`. Because opening the query in Metrics Search may not match because of quantization differences, you may need to adjust the query to return the results you expect, especially when creating a monitor that uses the [anomaly detection method](#detection-method).<br/><img src={useBaseUrl('img/alerts/monitors/metrics-query-with-quantize.png')} alt="Metrics query with quantize" style={{border: '1px solid gray'}} width="600"/>
 :::
 
 ## Step 1. Set trigger conditions
@@ -310,7 +318,7 @@ For example, when an alert is set to `greater than 10`, the recovery would be
 | `<threshold type>` | How you want the value compared. Select greater than, greater than or equal, less than or equal, or less than. |
 | `<threshold>` | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
 
-The Alert and recovery setting affects both the alert generation logic and the alert recovery logic. `Alert and recovery require a minimum of <count> data points for "at all times" evaluation windows`. This setting only works when you choose `at all times within` as the type of occurrence for the alert. <br/>![metrics alert datapoints.png](/img/alerts/monitors/minimum-datapoints.png)
+The Alert and recovery setting affects both the alert generation logic and the alert recovery logic. `Alert and recovery require a minimum of <count> data points for "at all times" evaluation windows`. This setting only works when you choose `at all times within` as the type of occurrence for the alert. <br/><img src={useBaseUrl('img/alerts/monitors/minimum-datapoints.png')} alt="Metrics alert datapoints" style={{border: '1px solid gray'}} width="800" />
 
 | Parameter | Description |
 |:--|:--|
