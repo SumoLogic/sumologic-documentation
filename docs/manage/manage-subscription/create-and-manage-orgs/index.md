@@ -112,7 +112,7 @@ Your estimates of ingest capacity required for each product variable are called 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
 1. Click the row for the org you want to change the org name.
 1. In the right-hand pane, click on **More Actions** dropdown and select **Change Subdomain Name**.<br/><img src={useBaseUrl('img/manage/subscriptions/Side_pane_Change_Org_Subdomain.png')} alt="Side_pane_Change_Org_Subdomain.png" style={{border: '1px solid gray'}} width="300"/>
-1. At the prompt, enter a new subdomain name. The name must be between 4 and 63 characters in length at least four characters in length, and can contain lower case letters, numbers, and dashes only.
+1. At the prompt, enter a new subdomain name. The name must be between 4 and 63 characters in length, and can contain lowercase letters, numbers, and dashes only.
 1. Click **Change Subdomain Name** to update the name. <br/><img src={useBaseUrl('img/manage/subscriptions/Change_Org_Subdomain_prompt.png')} alt="Change_Org_Subdomain.png" style={{border: '1px solid gray'}} width="300"/>
 
 ## Deactivate a child org
