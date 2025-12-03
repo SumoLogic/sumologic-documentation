@@ -113,7 +113,7 @@ Your estimates of ingest capacity required for each product variable are called 
 1. Click the row for the org you want to change the org name.
 1. In the right-hand pane, click on **More Actions** dropdown and select **Change Subdomain Name**.<br/><img src={useBaseUrl('img/manage/subscriptions/Side_pane_Change_Org_Subdomain.png')} alt="Side_pane_Change_Org_Subdomain.png" style={{border: '1px solid gray'}} width="300"/>
 1. At the prompt, enter a new subdomain name. The name must be between 4 and 63 characters in length, and can contain lowercase letters, numbers, and dashes only.
-1. Click **Change Subdomain Name** to update the name. <br/><img src={useBaseUrl('img/manage/subscriptions/Change_Org_Subdomain_prompt.png')} alt="Change_Org_Subdomain.png" style={{border: '1px solid gray'}} width="300"/>
+1. Click **Change Subdomain Name** to update the name. <br/><img src={useBaseUrl('img/manage/subscriptions/Change_Org_Subdomain_prompt.png')} alt="Change_Org_Subdomain.png" style={{border: '1px solid gray'}} width="500"/>
 
 ## Deactivate a child org
 
