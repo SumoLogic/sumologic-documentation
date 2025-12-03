@@ -22,7 +22,7 @@ If you want to explicitly allow the static IP addresses used for this Source o
 | Polling Interval | Data |
 | :--- | :--- |
 | 12 hours |  [Users](https://docs.microsoft.com/en-us/graph/api/user-list?view=graph-rest-1.0) |
-| 12 hours |  [Devices](https://docs.microsoft.com/en-us/graph/api/resources/azure-ad-overview?view=graph-rest-1.0) |
+| 12 hours |  [Devices](https://learn.microsoft.com/en-us/graph/api/device-list?view=graph-rest-1.0&tabs=http) |
 
 ## Setup
 
@@ -35,18 +35,12 @@ The user creating the service application does not need to be an administrator.�
 Use the following steps to create a service application:
 
 1. Sign in to the [Azure Active Directory Portal](https://aad.portal.azure.com/)
-1. Then select **Azure Active Directory** in the left menu.
-    ![Azure AD step 2.png](/img/send-data/Azure-AD-step-2.png)
-1. Then select **App Registrations**.<br/>
-    ![Azure AD step 3 red box.png](/img/send-data/Azure-AD-step-3-red-box.png)
-1. Then select **New Registration**. Go through the registration process, providing a name for the application. Selecting **Accounts in this organizational directory only** is sufficient.
-    ![Azure new registration in step 4.png](/img/send-data/Azure-new-registration-in-step-4.png)
-1. After the Application is registered (created), be sure to copy the **Application (client) ID** and the **Directory (tenant) ID**. These are used later as configuration parameters in Sumo Logic when creating the Microsoft Azure AD Inventory Source.
-    ![Azure created app in step 5.png](/img/send-data/Azure-created-app-in-step-5.png)
-1. Within the Application configuration page, select **Certificates and Secrets** to create an Application Client Secret Key.
-    ![Azure AD step 6.png](/img/send-data/Azure-AD-step-6.png)
-1. Copy the **Client Secret Value** (pictured below). It's needed later in Sumo Logic when creating the Microsoft Azure AD Inventory Source.
-    ![Azure AD step 7.png](/img/send-data/Azure-AD-step-7.png)
+1. Then select **Azure Active Directory** in the left menu.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-2.png')} alt="Select Azure Active Directory" style={{border: '1px solid gray'}} width="800" />
+1. Then select **App Registrations**.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-3-red-box.png')} alt="Select App Registrations" style={{border: '1px solid gray'}} width="300" />
+1. Then select **New Registration**. Go through the registration process, providing a name for the application. Selecting **Accounts in this organizational directory only** is sufficient.<br/><img src={useBaseUrl('img/send-data/Azure-new-registration-in-step-4.png')} alt="Select new registration" style={{border: '1px solid gray'}} width="800" />
+1. After the Application is registered (created), be sure to copy the **Application (client) ID** and the **Directory (tenant) ID**. These are used later as configuration parameters in Sumo Logic when creating the Microsoft Azure AD Inventory Source.<br/><img src={useBaseUrl('img/send-data/Azure-created-app-in-step-5.png')} alt="Copy IDs" style={{border: '1px solid gray'}} width="800" />
+1. Within the Application configuration page, select **Certificates and Secrets** to create an Application Client Secret Key.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-6.png')} alt="Cerfifications and secrets" style={{border: '1px solid gray'}} width="800" />
+1. Copy the **Client Secret Value** (pictured below). It's needed later in Sumo Logic when creating the Microsoft Azure AD Inventory Source.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-7.png')} alt="Client secret value" style={{border: '1px solid gray'}} width="800>" />
 1. Request the appropriate permissions for the application. Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**.
 
 From there, select (or search for) the following permissions under type **Application permissions**. An Administrator must approve (grant) these permissions before the integration will function.
@@ -64,7 +58,7 @@ You require additional permission to collect `signInActivityData` for User.
 
 Personal Microsoft accounts are not supported.
 
-![azure ad step 8.png](/img/send-data/azure-ad-step-8.png)
+<img src={useBaseUrl('img/send-data/azure-ad-step-8.png')} alt="Request API permissions" style={{border: '1px solid gray'}} width="800" />
 
 ### Source configuration
 

@@ -51,9 +51,9 @@ Follow the steps in [Sumo Logic Tomcat Logs](/docs/integrations/web-servers/apac
 
 ### Golden Signals
 
-[Golden signals](https://landing.google.com/sre/sre-book/chapters/preface/) of load, bottleneck, latency, errors and throughput help identify flow of causation between benchmark signals. In a nutshell, load spikes lead to either latency or error spikes; latency and error spikes lead to drop in throughput as shown in the figure below. The signals and contributing factors are organized based on Golden Signal analysis
+[Golden signals](https://landing.google.com/sre/sre-book/chapters/preface/) of load, bottleneck, latency, errors and throughput help identify flow of causation between benchmark signals. In a nutshell, load spikes lead to either latency or error spikes; latency and error spikes lead to drop in throughput as shown in the figure below. The signals and contributing factors are organized based on Golden Signal analysis.
 
-![screen](/img/global-intelligence/apache-tomcat-golden-signal.png)
+<img src={useBaseUrl('img/global-intelligence/apache-tomcat-golden-signal.png')} alt="<your image description>" style={{border: '1px solid gray'}} width="800" />
 
 ### Distance: Quantifying Similarity of Server Time Series to Benchmark
 
@@ -80,9 +80,9 @@ The **GI Apache Tomcat - 01 Load Signals and Contributing Factors** dashboard co
 
 Use this dashboard to:
 
-* analyze unusual load spikes and the reasons for them. Load on an Apache Tomcat server is measured by Requests per Second. Apache Tomcat [request rate](https://tomcat.apache.org/articles/performance.pdf) is affected by connection rate, requests per connection, data transferred (GB/request), BOT activity and HTTP verb mix. In addition [configuration factors](https://www.oreilly.com/library/view/tomcat-the-definitive/9780596101060/ch04.html) such as use of HTTPs and CPU/Memory allocation also affect Apache Tomcat request rate. Assess if your Apache Tomcat request rates are significantly lower for a given server compared to other Apache Tomcat servers. If so, consult these correlates to verify if any of these factors might be the cause. To do this, first consult the Distance measurement and then the difference between a given entity and the benchmark
+* analyze unusual load spikes and the reasons for them. Load on an Apache Tomcat server is measured by Requests per Second. Apache Tomcat [request rate](https://tomcat.apache.org/articles/performance.pdf) is affected by connection rate, requests per connection, data transferred (GB/request), BOT activity and HTTP verb mix. In addition [configuration factors](https://www.oreilly.com/library/view/tomcat-the-definitive/9780596101060/ch04.html) such as use of HTTPs and CPU/Memory allocation also affect Apache Tomcat request rate. Assess if your Apache Tomcat request rates are significantly lower for a given server compared to other Apache Tomcat servers. If so, consult these correlates to verify if any of these factors might be the cause. To do this, first consult the Distance measurement and then the difference between a given entity and the benchmark.
 
-![screen](/img/global-intelligence/GI-Tomcat-01-Load-Signals-and-Contributing-Factors.png)
+<img src={useBaseUrl('img/global-intelligence/GI-Tomcat-01-Load-Signals-and-Contributing-Factors.png')} alt="GI Apache Tomcat - 01 Load Signals and Contributing Factors" style={{border: '1px solid gray'}} width="800" />
 
 ### Throughput Signals and Contributing Factors
 
@@ -92,7 +92,7 @@ Use this dashboard to assess if your Apache Tomcat throughput is significantly l
 
 To do this, first consult the Distance measurement and then the difference between a given entity and the benchmark. Sudden increases in distance coupled with sudden increases compared to benchmark values indicate entities that are either the cause of an incident or are affected by upstream issues.
 
-![screen](/img/global-intelligence/GI-Tomcat-02-Throughput-Signals-and-Contributing-Factors.png)
+<img src={useBaseUrl('img/global-intelligence/GI-Tomcat-02-Throughput-Signals-and-Contributing-Factors.png')} alt="GI Apache Tomcat - 02 Throughput Signals and Contributing Factors" style={{border: '1px solid gray'}} width="800" />
 
 ### Errors and Contributing Factors
 
@@ -102,7 +102,7 @@ Use this dashboard to assess unusual increases in error rate and the reasons for
 
 To do this, first consult the Distance measurement and then the difference between a given entity and the benchmark. Sudden increases in distance coupled with sudden increases compared to benchmark values indicate entities that are either the cause of an incident or are affected by upstream issues.
 
-![screen](/img/global-intelligence/GI-Tomcat-03-Errors-and-Contributing-Factors.png)
+<img src={useBaseUrl('img/global-intelligence/GI-Tomcat-03-Errors-and-Contributing-Factors.png')} alt="GI Apache Tomcat - 03 Errors and Contributing Factors" style={{border: '1px solid gray'}} width="800" />
 
 ### Latency Signals and Contributing Factors
 
@@ -112,7 +112,7 @@ Use this dashboard to assess unusual latency increases and the reasons for them 
 
 To do this, first consult the Distance measurement and then the difference between a given entity and the benchmark. Sudden increases in distance coupled with sudden increases compared to benchmark values indicate entities that are either the cause of an incident or are affected by upstream issues.
 
-![screen](/img/global-intelligence/GI-Tomcat-04-Latency-Signals-and-Contributing-Factors.png)
+<img src={useBaseUrl('img/global-intelligence/GI-Tomcat-04-Latency-Signals-and-Contributing-Factors.png')} alt="GI Apache Tomcat - 04 Latency Signals and Contributing Factors" style={{border: '1px solid gray'}} width="800" />
 
 ## Upgrade/Downgrade the Global Intelligence for Apache Tomcat app (Optional)
 

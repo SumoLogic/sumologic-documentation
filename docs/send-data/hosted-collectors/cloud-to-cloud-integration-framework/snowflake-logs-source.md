@@ -25,7 +25,8 @@ The data will be collected from Snowflake's database using the connection string
 | 5 minutes | Custom Event Logs |
 
 :::info
-Ensure you have the `ACCOUNTADMIN` role set as default to collect the Snowflake logs from its database.
+* Ensure you have the `ACCOUNTADMIN` role set as default to collect the Snowflake logs from its database.
+* There is an expected data latency of up to 3 hours when retrieving data from the Snowflake database. [Learn more](https://docs.snowflake.com/en/sql-reference/account-usage#data-latency).
 :::
 
 ## Setup
@@ -37,6 +38,10 @@ The Snowflake Logs source requires you to provide the following data to setup th
 - **Account Identifier**. An account identifier uniquely identifies a Snowflake account within your organization, as well as throughout the global network of Snowflake-supported cloud platforms and cloud regions. For more information, see [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier).
 - **Username**. Snowflake account's login username. For example, `SUMOLOGIC`.
 - **Password**. Snowflake account's login password. For example, `yufncixxxxxxxxxp55hbdy7`.
+- **Programmatic Access Token**. Collect your Snowflake Programmatic Access Token following the instructions in the [Snowflake Documentation](https://docs.snowflake.com/en/user-guide/programmatic-access-tokens).
+  :::note
+  Starting November 2025, Snowflake will block single-factor authentication (password-only sign-ins) as part of their enhanced security protocols. Sumo Logic recommends that you update your integration to [Programmatic Access Tokens (PATs)](https://docs.snowflake.com/en/user-guide/programmatic-access-tokens) before 1st November 2025 to ensure continued access.
+  :::
 
 Once you have all the required values, set up the source configuration to collect your desired log types available in the configuration section.
 
@@ -53,9 +58,13 @@ To configure a Snowflake source:
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. **Snowflake Username**. Enter your Snowflake login [username](#vendor-configuration).
-1. **Snowflake Password**. Enter your Snowflake login [password](#vendor-configuration).
 1. **Snowflake Account Identifier**. Enter your Snowflake account [name](#vendor-configuration).
+1. **Authentication Configuration**. Sumo Logic provides two different ways to configure: **Basic** and **Programmatic Access Token**.
+    - **Basic**:
+      1. In **Snowflake Username**, enter your Snowflake login [username](#vendor-configuration).
+      1. In **Snowflake Password**, enter your Snowflake login [password](#vendor-configuration).
+    - **Programmatic Access Token**:
+      1. In **Snowflake Programmatic Access Token**, enter your Programmatic Access Token collected from the [Snowflake platform](#vendor-configuration).
 1. **Log Types**. Select the types of logs you want to collect data from:
     - **Collect Query History Logs**. For example, `SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY`.
     - **Collect Security Logs**. For example, `SNOWFLAKE.ACCOUNT_USAGE.LOGIN_HISTORY`, `SNOWFLAKE.ACCOUNT_USAGE.SESSIONS`, `SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_USERS`, `SNOWFLAKE.ACCOUNT_USAGE.DATA_TRANSFER_HISTORY`, and `SNOWFLAKE.ACCOUNT_USAGE.STAGES`.
@@ -87,6 +96,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | userName | String | Yes | `null` | Snowflake account login username. | `SUMOLOGIC` |
 | password | String | Yes | `null` | Snowflake account login password. | `yufncixxxxxxxxxp55hbdy7` |
+| patToken | String | Yes | `null` | Your Snowflake programmatic access token. | |
 | accountIdentifier | String | Yes | `null` | Snowflake account name. | `qabbxxr-hj65789` |
 | collectQueryHistory | Boolean | No | `false` | The boolean value to collect the query history tables. | `SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY` |
 | collectSecurity | Boolean | No | `false` | The boolean value to collect the security tables. | - `SNOWFLAKE.ACCOUNT_USAGE.LOGIN_HISTORY`<br/>- `SNOWFLAKE.ACCOUNT_USAGE.SESSIONS`<br/>- `SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_USERS`<br/>- `SNOWFLAKE.ACCOUNT_USAGE.DATA_TRANSFER_HISTORY`<br/>- `SNOWFLAKE.ACCOUNT_USAGE.STAGES` |

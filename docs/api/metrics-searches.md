@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
+<p> <a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a> </p>
 
 <img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/>
 
@@ -35,4 +35,4 @@ Use Metrics Search Management APIs to save metrics searches in your content libr
 
 <ApiRoles/>
 
-* Metrics (all role capabilities)
+* [Metrics](/docs/manage/users-roles/roles/role-capabilities/#metrics) (all role capabilities)

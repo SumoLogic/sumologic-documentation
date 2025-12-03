@@ -9,6 +9,27 @@ This section provides details on the available versions of the AWS Observability
 
 To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Selecting a stack template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for more information.
 
+## v2.13.0, 07-Oct-2025
+AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.13.0/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+
+New Features:
+* Added tag support for AWS resources created with Terraform based AWS Observability (AWSO) Solution.
+
+Updates:
+* Enhanced feature for installing apps in the Admin Recommended folder and share it
+* Integrated updated EC2, Lambda, and RDS apps with AWSO Solution.
+* Upgraded AWS provider version to support `>= 5.16.2, < 7.0.0`.
+* Updated Terraform minimum required version to 1.5.7.
+* Addressed CVEs identified in Python and Go modules.
+* Upgraded SAM app versions:
+   -  sumologic-app-utils → 2.0.21
+   - sumologic-s3-logging-auto-enable → 1.0.18
+
+Deprecation:
+* The Global Intelligence for AWS CloudTrail DevOps app is scheduled for deprecation in the near future and, as a result, has been removed from the AWS Observability Solution.
+
 ## v2.12.0, 01-Apr-2025
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.12.0/sumologic_observability.master.template.yaml`
 

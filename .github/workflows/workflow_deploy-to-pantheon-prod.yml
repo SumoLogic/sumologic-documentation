@@ -1,0 +1,51 @@
+name: Deploy to production
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - .github/**
+      - .clabot
+      - CONTRIBUTING.md
+      - README.md
+
+jobs:
+  build-site:
+    uses: ./.github/workflows/job_build-site.yml
+  deploy-to-pantheon:
+    needs: build-site
+    uses: ./.github/workflows/job_pantheon.yml
+    with:
+      PANTHEON_DESTINATION: dev
+      SITE_PATH: help/
+      PANTHEON_SITE_ID: ${{ vars.PANTHEON_SITE_ID }}
+    secrets:
+      PANTHEON_AUTH_PASSWORD: ${{ secrets.PANTHEON_AUTH_PASSWORD }}
+      PANTHEON_AUTH_USER: ${{ secrets.PANTHEON_AUTH_USER }}
+      PANTHEON_KNOWN_HOSTS: ${{ secrets.PANTHEON_KNOWN_HOSTS }}
+      PANTHEON_MACHINE_TOKEN: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+      PANTHEON_SSH_KEY: ${{ secrets.PANTHEON_SSH_KEY }}
+      PANTHEON_USER_EMAIL: ${{ secrets.PANTHEON_USER_EMAIL }}
+  trigger-jenkins-pipeline:
+    needs: deploy-to-pantheon
+    uses: ./.github/workflows/job_trigger-jenkins-pipeline.yml
+    secrets:
+      WEBOPS_AWS_REGION: ${{ secrets.WEBOPS_AWS_REGION }}
+      WEBOPS_AWS_SG_NAME: ${{ secrets.WEBOPS_AWS_SG_NAME }}
+      WEBOPS_JENKINS_PORT: ${{ secrets.WEBOPS_JENKINS_PORT }}
+      WEBOPS_JENKINS_HOST: ${{ secrets.WEBOPS_JENKINS_HOST }}
+      WEBOPS_AWS_ACCESS_KEY: ${{ secrets.WEBOPS_AWS_ACCESS_KEY }}
+      WEBOPS_AWS_SECRET_KEY: ${{ secrets.WEBOPS_AWS_SECRET_KEY }}
+      WEBOPS_WEBHOOK_TOKEN: ${{ secrets.WEBOPS_WEBHOOK_TOKEN }}
+  notify-channel:
+    needs: [build-site,deploy-to-pantheon,trigger-jenkins-pipeline]
+    if: ${{ failure() }}
+    uses: ./.github/workflows/job_slack-notification.yml
+    with:
+      SLACK_MESSAGE: ":red_circle: helpdocs workflow failed [<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|details>]"
+    secrets:
+      SLACK_URL: ${{ secrets.WEBOPS_SLACK_URL }}

@@ -44,7 +44,7 @@ The following fields of the schema are normalized.
 | `srcDevice_hostname` | hostname           |
 | `user_username`      | username           |
 
-When a username is normalized, the original, un-normalized name is placed in a `_raw` name attribute, for example,  `user_useraname_raw`. The normalized name is placed in the attribute field `user_username`. The rules engine allows the `_raw` username forms to be used in rule creation.
+When a username is normalized, the original, un-normalized name is placed in a `_raw` name attribute, for example,  `user_username_raw`. The normalized name is placed in the attribute field `user_username`. The rules engine allows the `_raw` username forms to be used in rule creation.
 
 If a name normalization configuration exists, the name attribute will be populated with the form `<username>:<friendly_domain>` where the `<friendly domain name>` portion is not populated for the normalized default domain.  When name normalization is enabled all name fields (not-raw) will be lowercase. For more information, see [Single domain example](#single-domain-example) and [Multiple domains example](#multiple-domains-example) below.
 
@@ -73,6 +73,13 @@ Following is an example configuration:
 
 If no name normalization is configured, the system will continue to operate as it does today.  If normalization is then enabled, any signals already created in the system will use the non-normalized form of the name.  Any new signals will use the normalized name.  This means there is potential for insights to be uncorrelated between the two different name forms for one insight window.  This is especially true as all usernames will now be lowercase.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage entity normalization with the [`sumologic_cse_entity_normalization_configuration`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_entity_normalization_configuration) resource.
+
+<TerraformLink/>
+:::
 
 ## Domain normalization
 

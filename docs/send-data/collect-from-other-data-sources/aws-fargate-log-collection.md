@@ -5,6 +5,8 @@ sidebar_label: AWS ECS Fargate
 description: This page describes how to collect application container logs from AWS ECS Fargate and EC2 using AWS Firelens.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This page describes how to collect application container logs from AWS ECS clusters launched with AWS Fargate using AWS FireLens. This method also works with ECS clusters with EC2 containers. However, the recommended method for collecting EC2 logs is to utilize the [Docker logging driver](docker-collection-methods.md).
  
 
@@ -17,7 +19,7 @@ This page describes how to collect application container logs from AWS ECS clust
 
 The following diagram illustrates the process for sending container logs from ECS containers running on AWS Fargate or EC2 to Sumo Logic using the FireLens log driver.
 
-![Fargate-EC2_collection_process1.png](/img/send-data/Fargate-EC2_collection_process1.png)
+<img src={useBaseUrl('img/send-data/Fargate-EC2_collection_process1.png')} alt="Fargate EC2 collection process" style={{border: '1px solid gray'}} width="800" />
 
 Firelens allows you to configure Fluentd or Fluent Bit output in your Fargate task definition. Fluent Bit is the recommended option because its resource utilization is significantly lower than Fluentd.
 
@@ -222,7 +224,7 @@ This task is optional. If you want to create a centralized Fluentd aggregator 
 
 The following diagram illustrates the centralized Fluentd collection process.
 
-![Fargate-EC2_collection_process2.png](/img/send-data/Fargate-EC2_collection_process2.png)
+<img src={useBaseUrl('img/send-data/Fargate-EC2_collection_process2.png')} alt="Fargate EC2 collection process continued" style={{border: '1px solid gray'}} width="800" />
 
 To create a centralized Fluentd aggregator, do the following:
 

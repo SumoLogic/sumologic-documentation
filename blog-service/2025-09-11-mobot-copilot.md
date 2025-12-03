@@ -1,6 +1,6 @@
 ---
 title: Copilot is Now Mobot - New Conversational Experience for Log Search (Beta)
-image: https://help.sumologic.com/img/sumo-square.png
+image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
   - mobot
   - copilot
@@ -12,7 +12,7 @@ hide_table_of_contents: true
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We’re introducing **Mobot**, Sumo Logic’s new conversational UI for log search, and updating the product name from *Copilot* to *Mobot*. [Learn more](/docs/search/mobot-multiturn-beta).
+We’re introducing **Mobot**, Sumo Logic’s new conversational UI for log search, and updating the product name from *Copilot* to *Mobot*. [Learn more](/docs/search/mobot).
 
 ### Conversational experience (Beta)
 

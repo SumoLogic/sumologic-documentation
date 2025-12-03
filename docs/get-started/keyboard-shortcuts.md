@@ -1,7 +1,6 @@
 ---
 id: keyboard-shortcuts
 title: Keyboard Shortcuts
-sidebar_label: Keyboard shortcuts
 description: Complete reference to Windows and macOS keyboard shortcuts for the Sumo Logic UI. Navigate Search, Metrics, Dashboards, and more without lifting your hands from the keyboard.
 ---
 
