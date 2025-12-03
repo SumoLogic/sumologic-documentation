@@ -64,7 +64,7 @@ When a signal is fired, if an entity doesn’t already exist in Cloud SIEM for t
 Entity names have a limit of 512 characters. If an entity's name value is 512 characters or longer, the system discards the log, and as a result, no signal is generated.
 :::
 
-## About the Entities list page
+## About the entities list page
 
 [**New UI**](/docs/get-started/sumo-logic-ui). To view entities, in the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
 
