@@ -26,7 +26,7 @@ Searching the Audit Event Index and System Event Index is the same as running a 
 
 To search for events:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. 
 1. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:
     ```sql
     (_index=sumologic_audit_events or _index=sumologic_system_events) _sourceCategory=oar*
@@ -56,12 +56,12 @@ The table below shows the `_sourceCategory` that is assigned to Audit Event Inde
 | Product Feature | _sourceCategory Value |
 |:--|:--|
 | [App Central packages](/docs/platform-services/automation-service/automation-service-app-central/)  | `oarAppCentralPackages`   |
-| [Automation action](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActions`  |
-| [Automation action configuration](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActionConfigurations` |
+| [Automation action](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActions`  |
+| [Automation action configuration](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActionConfigurations` |
 | [Integration](/docs/platform-services/automation-service/automation-service-integrations/)   | `oarIntegrations`  |
 | [Integration resource](/docs/platform-services/automation-service/integration-framework/)   | `oarIntegrationResources` |
-| [Playbook execution](/docs/platform-services/automation-service/automation-service-playbooks/)  | `oarPlaybookExecutions`   |
-| [Playbook revision](/docs/platform-services/automation-service/automation-service-playbooks/)  | `oarPlaybookRevisions`    |
+| [Playbook execution](/docs/platform-services/automation-service/playbooks/)  | `oarPlaybookExecutions`   |
+| [Playbook revision](/docs/platform-services/automation-service/playbooks/)  | `oarPlaybookRevisions`    |
 
 ### Audit events for Cloud SOAR only
 
@@ -111,8 +111,8 @@ The table below shows the `_sourceCategory` that is assigned to System Event Ind
 
 | Product Feature | _sourceCategory Value |
 |:--|:--|
-| [Automation action](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActions`  |
-| [Playbook execution](/docs/platform-services/automation-service/automation-service-playbooks/)  | `oarPlaybookExecutions`   |
+| [Automation action](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActions`  |
+| [Playbook execution](/docs/platform-services/automation-service/playbooks/)  | `oarPlaybookExecutions`   |
 
 
 ### System events for Cloud SOAR only

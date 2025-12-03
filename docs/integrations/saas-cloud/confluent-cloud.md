@@ -119,3 +119,15 @@ Use this dashboard to:
 * Correlate request counts with operation types to identify unusual spikes or drops in schema-related activities.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ConfluentCloud/Confluent-Cloud-Schema-Registry.png')} alt="Confluent Cloud - Schema Registry" style={{border: '1px solid gray'}} width="800" />
+
+## Upgrade/Downgrade the Confluent Cloud app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Confluent Cloud app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

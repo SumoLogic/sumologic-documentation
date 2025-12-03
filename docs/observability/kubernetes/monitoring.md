@@ -4,6 +4,8 @@ title: Monitoring Your K8s Environment
 description: Learn how to effectively monitor your Kubernetes environment according to the individual areas of the Kubernetes architecture.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This page provides insights for effectively monitoring your Kubernetes environment with Sumo Logic, and is organized according to the individual areas of the Kubernetes architecture.
 
 ## Navigating your Kubernetes environment
@@ -17,7 +19,7 @@ We currently provide four hierarchical Views of the Kubernetes system: Node, Dep
 * [Service](https://kubernetes.io/docs/concepts/services-networking/service/): Observe how your Kubernetes Service(s) interacts with your other services within and outside your cluster.
 * [Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces): Track environments with many users spread across multiple teams, or projects like dev, lab, and prod.
 
-![K8s_Views_overview.png](/img/kubernetes/K8s_Views_overview.png)
+<img src={useBaseUrl('img/kubernetes/K8s_Views_overview.png')} alt="Kubernetes views overview" style={{border: '1px solid gray'}} width="800" />
 
 These intuitive hierarchies can be accessed from the [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views).
 
@@ -32,17 +34,17 @@ Kubernetes views provide a visual representation of your Kubernetes stack.
 
 To navigate and analyze your Kubernetes environment, do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **Kubernetes**. You can also click the **Go To...** menu at the top of the screen and select **Kubernetes**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **Kubernetes**. You can also click the **Go To...** menu at the top of the screen and select **Kubernetes**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**.  
 1. In the upper-left corner of the screen, select the Kubernetes view you want from the dropdown menu.
-1. Click the arrow to the left of a content name to expand and view its contents.<br/> ![Explore_cluster_contents.png](/img/kubernetes/Explore_cluster_contents.png)
-1. Dead entities are shown faded:<br/> ![faded entityexplore.png](/img/kubernetes/faded-entity-explore.png)
-1. Drill down into the clusters to view the pods and containers. The data for your selection is displayed in the panels of the dashboard on the right.<br/> ![Explore_Drill-Down.png](/img/kubernetes/Explore_Drill-Down.png)
-1. Optional: Select another type of dashboard display from the dropdown menu at the top of the dashboard, and select another time interval.<br/>![Explore_Drill-Down_Dashboard_options.png](/img/kubernetes/Explore_Drill-Down_Dashboard_options.png)
+1. Click the arrow to the left of a content name to expand and view its contents.<br/><img src={useBaseUrl('img/kubernetes/Explore_cluster_contents.png')} alt="Explore cluster contents" style={{border: '1px solid gray'}} width="400" />
+1. Dead entities are shown faded:<br/><img src={useBaseUrl('img/kubernetes/faded-entity-explore.png')} alt="Dead entities" style={{border: '1px solid gray'}} width="300" />
+1. Drill down into the clusters to view the pods and containers. The data for your selection is displayed in the panels of the dashboard on the right.<br/><img src={useBaseUrl('img/kubernetes/Explore_Drill-Down.png')} alt="Explore drill-down" style={{border: '1px solid gray'}} width="800" />
+1. Optional: Select another type of dashboard display from the dropdown menu at the top of the dashboard, and select another time interval.<br/><img src={useBaseUrl('img/kubernetes/Explore_Drill-Down_Dashboard_options.png')} alt="Explore drill-down dashboard options" style={{border: '1px solid gray'}} width="800" />
 
 <!--
     The navigation panel appears on the left with a collapsed view of your Kubernetes stack.
 
-    ![Explore_Collapsed_view.png](/img/kubernetes/Explore_Collapsed_view.png)
+    <img src={useBaseUrl('img/kubernetes/Explore_Collapsed_view.png')} alt="Explore collapsed view" style={{border: '1px solid gray'}} width="800" />
 
     * If this is your first time using the view, the window at the right will be empty.
     * If you have already installed a Sumo Logic App for Kubernetes, a dashboard displaying data for the selected deployment appears on the right. For instructions on installing the Sumo Logic Kubernetes App, see the [Kubernetes Solution help pages](collection-setup.md). 
@@ -61,7 +63,7 @@ Sumo Logic provides relevant log searches and dashboards to consider investig
 
 To discover and view related content, select the graph data point you are interested in. In the following screenshot, we selected a cell in a honeycomb chart. A panel appears on the right of the window with details and a list of related content links.
 
-![details pane in Explore.png](/img/kubernetes/details-pane-Explore.png)
+<img src={useBaseUrl('img/kubernetes/details-pane-Explore.png')} alt="Details pane in Explore" style={{border: '1px solid gray'}} width="800" />
 
 #### Summary tab
 
@@ -83,26 +85,26 @@ For example, if you want you custom Kubernetes deployment dashboard to show up i
 * Deployment
 
 
-![infrastructure](/img/kubernetes/deploy1.png)
+<img src={useBaseUrl('img/kubernetes/deploy1.png')} alt="Cluster" style={{border: '1px solid gray'}} width="800" />
 
-![infrastructure](/img/kubernetes/deploy2.png)
+<br/><br/><img src={useBaseUrl('img/kubernetes/deploy2.png')} alt="Namespace" style={{border: '1px solid gray'}} width="800" />
 
 Once you have created the stack linking, your custom dashboard should appear in the list of dashboard associated with a specific entity view in explorer.
 
-![infrastructure](/img/kubernetes/deploy3.png)
+<img src={useBaseUrl('img/kubernetes/deploy3.png')} alt="Deployment" style={{border: '1px solid gray'}} width="800" />
 
 <!--
 ## Explore a Visual Kubernetes Hierarchy
 
 **Explore** is an intuitive navigational framework that provides a visual map of the hierarchy of your Kubernetes environment. It allows you to traverse the hierarchy and filter the display to focus on deployments, nodes, services, or namespaces. Explore accomplishes this by translating metadata fields into an easy to understand mental model so you can quickly check system states at various levels and proactively troubleshoot issues. 
 
-![K8s_Views_overview.png](/img/kubernetes/K8s_Views_overview.png)
+<img src={useBaseUrl('img/kubernetes/K8s_Views_overview.png')} alt="Kubernetes views overview" style={{border: '1px solid gray'}} width="800" />
 
 Health and performance data appears in the dashboard on the right for the view you are investigating: node, deployment, service, or namespace. The Sumo Logic Dashboard framework is unique in its ability to show logs and metrics in a seamless integration with the same dashboard.
 
 In the following example, we chose the Kubernetes Node View and selected the k8s-freno-2 cluster. We then selected the Kubernetes - Cluster Overview dashboard, for a high-level view of the health and performance of the cluster.
 
-![K8s_Dashboard_overview.png](/img/kubernetes/K8s_Dashboard_overview.png)
+<img src={useBaseUrl('img/kubernetes/K8s_Dashboard_overview.png')} alt="Kubernetes dashboard overview" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Kubernetes logs and metrics
@@ -122,7 +124,7 @@ Sumo Logic provides scraper utility that collects Prometheus formatted metrics f
 * Node exporter can be run to expose node metrics, such as CPU and memory utilization which can be used to monitor the health of your nodes.
 * Kube State add-on exposes cluster level state information.
 
-![Intro_Prometheus_Metrics.png](/img/kubernetes/Intro_Prometheus_Metrics.png)
+<img src={useBaseUrl('img/kubernetes/Intro_Prometheus_Metrics.png')} alt="Intro Prometheus metrics" style={{border: '1px solid gray'}} width="800" />
 
 -->
 
@@ -148,13 +150,13 @@ The following task shows you how to create a custom field for a collector. In 
 
 To add a custom field to a collector, do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
-1. Select the collector to which you want to add a custom key-value pair. In this example, we've selected the Falco collector.<br/> ![MM_Collection_Select_Collector.png](/img/kubernetes/MM_Collection_Select_Collector.png)<br/>
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. Select the collector to which you want to add a custom key-value pair. In this example, we've selected the Falco collector.<br/><img src={useBaseUrl('img/kubernetes/MM_Collection_Select_Collector.png')} alt="Select collector" style={{border: '1px solid gray'}} width="800" /><br/>
     The Edit Collector dialog appears.
-1. Click **Add Field**.<br/>  ![MM_Add-Field.png](/img/kubernetes/MM_Add-Field.png)
+1. Click **Add Field**.<br/><img src={useBaseUrl('img/kubernetes/MM_Add-Field.png')} alt="Add field" style={{border: '1px solid gray'}} width="600" />
 1. Enter a Field Name and Value in the respective text fields. In this example, we created a field for a **cluster** with the label **k8s.dev** and a pod with the name **pod_test** and label **k8s.test**. This allows you to easily search for log data for that cluster or pod.
-    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark appears when the field exists and is enabled in the Fields table schema.
-    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point appears when the field doesn't exist yet, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.<br/>  ![MM_Fields_Key-Value-Pairs.png](/img/kubernetes/MM_Fields_Key-Value-Pairs.png)
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark appears when the field exists and is enabled in the Fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point appears when the field doesn't exist yet, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.<br/><img src={useBaseUrl('img/kubernetes/MM_Fields_Key-Value-Pairs.png')} alt="Fields key-value pairs" style={{border: '1px solid gray'}} width="600" />
 1. Click **Save**.
 
 Now, any logs sent to this Collector will have these key-value pairs associated with it. With this association, you can search for `cluster=k8s.dev` or `pod_test=k8s.test` to return your logs.
@@ -165,13 +167,13 @@ In this section, you'll learn how to use metadata to search by components of t
 
 To use metadata to view Kubernetes components and display Kubernetes label results, do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  
-1. Indicate the metadata namespace. In this example, we entered `namespace=sumologic`.<br/>  ![MWT_namespace=sumologic.png](/img/kubernetes/MWT_namespace.png)
-1. Click **Start** to run the query, then under Hidden Fields on the Messages tab, click **namespace** to display the metadata for that Kubernetes component. Notice that the namespace field moves Hidden Fields to Display Fields.<br/>  ![MWT_namespace_Display_Fields.png](/img/kubernetes/MWT_namespace_Display_Fields.png)
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. 
+1. Indicate the metadata namespace. In this example, we entered `namespace=sumologic`.<br/><img src={useBaseUrl('img/kubernetes/MWT_namespace.png')} alt="namespace=sumologic" style={{border: '1px solid gray'}} width="800" />
+1. Click **Start** to run the query, then under Hidden Fields on the Messages tab, click **namespace** to display the metadata for that Kubernetes component. Notice that the namespace field moves Hidden Fields to Display Fields.<br/><img src={useBaseUrl('img/kubernetes/MWT_namespace_Display_Fields.png')} alt="Namespace display fields" style={{border: '1px solid gray'}} width="500" />
 1. To view metadata for a key-value pair, enter the key-value pair in the query text field. In our example, we wanted to view the metadata for the prometheus container and entered `container=prometheus`.
 1. Then we expanded the search range by changing the time interval from the last 15 minutes to the **Last 60 minutes**.
 1. To further investigate the container, we clicked **Logreduce**, which groups common log messages into signature groupings. 
-1. To examine the details of the smaller set of signatures that appear, under Select Count we selected. Oftentimes when troubleshooting a problem, our lesser quantity contains the root cause.<br/>  ![MWT_LogReduce_1.png](/img/kubernetes/MWT_LogReduce_1.png)<br/>
+1. To examine the details of the smaller set of signatures that appear, under Select Count we selected. Oftentimes when troubleshooting a problem, our lesser quantity contains the root cause.<br/><img src={useBaseUrl('img/kubernetes/MWT_LogReduce_1.png')} alt="Select Count" style={{border: '1px solid gray'}} width="800" /><br/>
     The warning `Endpoints ended with: too old resource version` may be something to investigate or just the indication of an ongoing upgrade.
 1. To view data for other Kubernetes components, we can enable them one by one by selecting the checkbox next to **namespace**, **cluster**, **container**, **pod**, **service**, and/or **Source Host**.
 
@@ -186,7 +188,7 @@ Metadata allows you to view your data in an intuitive mental model, as a visual
 
 The following image illustrates the Explore intuitive "mental model" concept. The side-by-side views show a traditional infrastructure-centric model for visualizing service events on the left, and the Explore intuitive mental model for visualizing the data for the same service events on the right.
 
-![Infrastructure vs service.png](/img/kubernetes/infrastructure-vs-service.png)
+<img src={useBaseUrl('img/kubernetes/infrastructure-vs-service.png')} alt="Infrastructure vs service" style={{border: '1px solid gray'}} width="800" />
 
 
 -->

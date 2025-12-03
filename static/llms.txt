@@ -1,0 +1,59 @@
+# Home | Sumo Logic Docs
+
+Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.
+
+## Getting Started
+
+- [Get Started](https://www.sumologic.com/help/docs/get-started/): A guide to help you begin using Sumo Logic, covering initial setup and configuration.
+- [1. Set up collector and source](https://www.sumologic.com/help/docs/get-started/quickstart/#step-1-get-your-data-into-sumo): Instructions on how to set up data collectors and sources for effective data ingestion.
+- [2. Explore your data insights](https://www.sumologic.com/help/docs/get-started/quickstart/#step-2-search-and-analyze-your-data): Learn how to analyze and visualize your data for actionable insights.
+- [3. Monitor and secure your environment](https://www.sumologic.com/help/docs/get-started/quickstart/#step-3-monitor-and-troubleshoot-your-environment): Best practices for monitoring and securing your applications and infrastructure.
+
+## Core Features
+
+### Data Management
+
+- [Log Search](https://www.sumologic.com/help/docs/search/): Detailed information on how to perform log searches within Sumo Logic for troubleshooting and analysis.
+- [Metrics](https://www.sumologic.com/help/docs/metrics): Overview of metrics collection and monitoring capabilities.
+- [Traces](https://www.sumologic.com/help/docs/apm/traces): Insights into tracing requests across distributed systems for performance monitoring.
+
+### Dashboards and Alerts
+
+- [Dashboards](https://www.sumologic.com/help/docs/dashboards/): Guide on creating and managing dashboards to visualize your data effectively.
+- [Alerts](https://www.sumologic.com/help/docs/alerts/): Instructions on setting up alerts to notify you of important events or anomalies in your data.
+
+### Security
+
+- [Security](https://www.sumologic.com/help/docs/security/): Information on security features and best practices within Sumo Logic.
+- [Cloud SIEM Schema](https://www.sumologic.com/help/docs/cse/schema/): Schema details for the Cloud SIEM feature, including data structure and usage.
+
+## Integrations and APIs
+
+- [Apps and Integrations](https://www.sumologic.com/help/docs/integrations/): A list of available applications and integrations that enhance Sumo Logic's functionality.
+- [API Docs](https://www.sumologic.com/help/docs/api/): Comprehensive documentation for using Sumo Logic's APIs.
+- [API Reference](https://api.sumologic.com/docs/): Detailed reference for API endpoints and their usage.
+
+## Advanced Features
+
+- [Kubernetes Observability](https://www.sumologic.com/help/docs/observability/kubernetes/): Insights into monitoring Kubernetes environments with Sumo Logic.
+- [Subqueries](https://www.sumologic.com/help/docs/search/subqueries/): Explanation of how to use subqueries for advanced data analysis.
+- [SAML](https://www.sumologic.com/help/docs/integrations/saml/): Information on integrating SAML for single sign-on capabilities.
+
+## Support and Community
+
+- [Contact Support](https://support.sumologic.com/support/s): How to reach Sumo Logic support for assistance.
+- [Request a Demo](https://www.sumologic.com/demos): Information on how to request a demonstration of Sumo Logic's features.
+- [Community](https://support.sumologic.com/support/s/topiccatalog): Join the Sumo Logic community for discussions, tips, and shared experiences.
+
+## Additional Resources
+
+- [Release Notes](https://www.sumologic.com/help/docs/release-notes/): Updates and changes in the latest versions of Sumo Logic.
+- [Submit Feedback](https://github.com/SumoLogic/sumologic-documentation/issues/new/choose): Provide feedback on your experience with Sumo Logic documentation.
+- [Contribute to Docs](https://www.sumologic.com/help/docs/contributing/): Guidelines for contributing to the Sumo Logic documentation.
+
+## Legal Information
+
+- [Privacy Statement](https://www.sumologic.com/privacy-statement): Details on how Sumo Logic handles user data and privacy.
+- [Terms of Use](https://www.sumologic.com/terms-conditions): The terms governing the use of Sumo Logic services.
+
+This structured summary provides a comprehensive overview of the Sumo Logic documentation, ensuring that all relevant links and descriptions are included for easy reference.

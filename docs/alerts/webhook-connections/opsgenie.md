@@ -28,7 +28,7 @@ To add a Sumo Logic integration in Opsgenie, do the following:
     :::
 1. Click **Save Integration**.
 
-Your configuration in Opsgenie should look something like the following:<br/> ![Webhook_Intergration_Example2.png](/img/connection-and-integration/opsgenie.png)
+Your configuration in Opsgenie should look something like the following:<br/><img src={useBaseUrl('img/connection-and-integration/opsgenie.png')} alt="Webhook integration example" style={{border: '1px solid gray'}} width="800" />
 
 ## Configuration in Sumo Logic
 
@@ -45,8 +45,8 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 
 This section demonstrates how to create a webhook connection from Sumo Logic to Opsgenie.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
-1. Click **+ Add** and choose **Opsgenie** as the connection type.<br/> ![Opsgenie webhook button.png](/img/connection-and-integration/opsgenie-webhook-button.png)
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
+1. Click **+ Add** and choose **Opsgenie** as the connection type.<br/><img src={useBaseUrl('img/connection-and-integration/opsgenie-webhook-button.png')} alt="Opsgenie webhook button" style={{border: '1px solid gray'}} width="150" />
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. Paste the **Integration Url** from Opsgenie into the **URL** field.
 1. (Optional) Enter an **Authorization Header**, which may include an authorization token.

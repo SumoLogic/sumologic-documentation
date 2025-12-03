@@ -4,6 +4,8 @@ title: Log and Tracing Data Volume Index
 description: The Data Volume Index is populated with a set of log messages that contain information on how much data (by bytes and messages count) your account is ingesting.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The data volume index is populated with a set of log messages every five minutes. The messages contain information on how much data (by bytes and messages count) your account is ingesting. Your data volume is calculated based on when your logs were received, in Sumo this timestamp is stored with the `_receiptTime` [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field. Each log message includes information based on one of the following index source categories.
 
 | Index Log Type | Index Source Category |
@@ -97,7 +99,7 @@ _index=sumologic_volume _sourceCategory = "sourcecategory_and_tier_volume"
 
 would produce results such as:
 
-![clipboard_e08593bedbf920dea82726b15964e56f6.png](/img/manage/ingestion-volume/volume-each-category.png)
+<img src={useBaseUrl('img/manage/ingestion-volume/volume-each-category.png')} alt="Volume for each category" style={{border: '1px solid gray'}} width="500" />
 
 **Volume for Each Collector by Tier**
 
@@ -147,7 +149,7 @@ The following query returns the message volume for each Source Host. The sourceh
 _index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as sourcehost, dataTier, bytes, count
-| where sourcehost="<<sourcejost_json>>" and dataTier="<<datatier_json>>"
+| where sourcehost="<<sourcehost_json>>" and dataTier="<<datatier_json>>"
 | bytes/1Gi as gbytes
 | sum(gbytes) as gbytes by sourcehost
 | fields gbytes
@@ -161,7 +163,7 @@ The following query returns the message volume for the Default Index. The data 
 _index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as sourcehost, dataTier, bytes, count
-| where sourcehost="<<sourcejost_json>>" and dataTier="<<datatier_json>>"
+| where sourcehost="<<sourcehost_json>>" and dataTier="<<datatier_json>>"
 | bytes/1Gi as gbytes
 | sum(gbytes) as gbytes by sourcehost
 | fields gbytes
@@ -223,7 +225,7 @@ _index=sumologic_volume _sourceCategory="sourcecategory_tracing_volume"
 
 This query produces results like these: 
 
-![tracing-volume-source-category](/img/manage/ingestion-volume/tracing-volume-source-category.png)
+<img src={useBaseUrl('img/manage/ingestion-volume/tracing-volume-source-category.png')} alt="Tracing volume source category" style={{border: '1px solid gray'}} width="400" />
 
 #### Tracing volume by collector
 
@@ -238,7 +240,7 @@ _index=sumologic_volume _sourceCategory="collector_tracing_volume"
 
 This query produces results like these:
 
-![image](/img/manage/ingestion-volume/tracing-volume-source-category.png)
+<img src={useBaseUrl('img/manage/ingestion-volume/tracing-volume-source-category.png')} alt="Tracing volume by collector" style={{border: '1px solid gray'}} width="400" />
 
 #### Tracing volume for a specific collector
 

@@ -27,6 +27,14 @@ When you configure a network block, there is an option to suppress signals on th
 IP addresses in a network block for which signals are suppressed will not appear on the **Suppressed Entities** page in the Cloud SIEM UI. (You can’t manually unsuppress signals for an IP address that are suppressed due to its network block configuration.)
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage network blocks with the [`sumologic_cse_network_block`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_network_block) resource.
+
+<TerraformLink/>
+:::
+
 ## Best practices for network blocks
 
 As you configure network blocks, keep in mind the following considerations.
@@ -50,7 +58,7 @@ When Cloud SIEM looks for the network block address `10.128.0.1`, it will ret
 
 Follow these instructions to create a network block using the Cloud SIEM UI. For information about creating multiple network blocks by file upload, see [Upload a CSV file of network blocks](#upload-a-csv-file-of-network-blocks).
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Network Blocks**.  <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Network Blocks**. You can also click the **Go To...** menu at the top of the screen and select **Network Blocks**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Network Blocks**. You can also click the **Go To...** menu at the top of the screen and select **Network Blocks**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Network Blocks**.  
 1. Click **Add Network Block**.
 1. On the **Add Network Block** popup:
     1. **Address Block**. Enter a CIDR block that identifies a contiguous range of IP addresses.
