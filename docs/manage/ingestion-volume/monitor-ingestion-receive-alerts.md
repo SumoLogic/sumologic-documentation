@@ -81,7 +81,7 @@ After completing the setup, schedule the search to run: 
 
 1. Schedule Query you created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the **Run frequency** to **Daily**.
-1. Enter **-32d** for the time range.<br/> ![time range monthly plan.png](/img/manage/ingestion-volume/daily-32d.png)
+1. Enter **-32d** for the time range.<br/><img src={useBaseUrl('img/manage/ingestion-volume/daily-32d.png')} alt="Time range monthly plan" style={{border: '1px solid gray'}} width="500" />
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
 
 
@@ -102,7 +102,7 @@ You must update the indicated field for the search to be successfully saved.
    ```
    The correct value is on the Account page.
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. 
- <br/>For example, the daily plan size in the following figure is 100.<br/> ![Account](/img/manage/ingestion-volume/account-overview.png)
+ <br/>For example, the daily plan size in the following figure is 100.<br/><img src={useBaseUrl('img/manage/ingestion-volume/account-overview.png')} alt="The daily plan size in this image is 100" style={{border: '1px solid gray'}} width="800" />
 
 #### Query
 
@@ -126,7 +126,7 @@ After completing the setup steps above, schedule the search to run, as follows.�
 
 1. Schedule the query you created in the previous step (**Query**). For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the **Run frequency** to **Daily**.
-1. Set time range value to **Last 24 Hours**.<br/> ![time range daily plan limit.png](/img/manage/ingestion-volume/daily-last-24.png)
+1. Set time range value to **Last 24 Hours**.<br/><img src={useBaseUrl('img/manage/ingestion-volume/daily-last-24.png')} alt="Time range daily plan limit" style={{border: '1px solid gray'}} width="500" />
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
 
 ## Usage spike alert
@@ -175,7 +175,7 @@ After completing the setup steps above, schedule the search to run, as follows.�
 
 1. Schedule the query you just created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the **Run frequency** to **Hourly**.
-1. Enter **-65m -5m** for the time range.<br/>  ![time range usage spike.png](/img/manage/ingestion-volume/hourly-65.png)
+1. Enter **-65m -5m** for the time range.<br/><img src={useBaseUrl('img/manage/ingestion-volume/hourly-65.png')} alt="Time range usage spike" style={{border: '1px solid gray'}} width="500" />
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
 
 
@@ -229,7 +229,7 @@ After completing the setup steps, you'll need to create a monitor. 
 
 1. Create a monitor corresponding to the query you've created above ([learn more](/docs/alerts/monitors/create-monitor)).
 1. Set the **Run frequency** to **Hourly**.
-1. Set a time range. The default is **Last 24 hours**. If you need to allow for more time because some collectors do not typically ingest data that often, specify a longer time range. For example, seven days.<br/>  ![Alert](/img/manage/ingestion-volume/AlertDataLoss.png)
+1. Set a time range. The default is **Last 24 hours**. If you need to allow for more time because some collectors do not typically ingest data that often, specify a longer time range. For example, seven days.<br/><img src={useBaseUrl('img/manage/ingestion-volume/AlertDataLoss.png')} alt="Alert" style={{border: '1px solid gray'}} width="500" />
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0**.
 1. (Optional) You can test your new alert in one of the following ways.
     * Limit the results to monitor just two collectors by adding this extra line to the end of the query:
@@ -266,5 +266,5 @@ After completing the setup steps above, schedule the search to run, as follows.�
 
 1. Schedule the query you just created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the **Run frequency** to **Every 15 Minutes**.
-1. Set the time range to the **Last 15 Minutes**.<br/> ![time range throttling alert.png](/img/manage/ingestion-volume/time-throttling.png)
+1. Set the time range to the **Last 15 Minutes**.<br/><img src={useBaseUrl('img/manage/ingestion-volume/time-throttling.png')} alt="Time range throttling alert" style={{border: '1px solid gray'}} width="500" />
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0**.

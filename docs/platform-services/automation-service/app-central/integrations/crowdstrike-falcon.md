@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.18  
-Updated: Sept 30, 2025***
+***Version: 1.19  
+Updated: Nov 10, 2025***
 
 The CrowdStrike Falcon integration allows you to pull and update Alerts/Incidents, and search Incidents/Devices/Alerts.
 
@@ -109,3 +109,5 @@ For information about CrowdStrike Falcon, see [CrowdStrike documentation](https:
     + Update Alerts
     + Search into Alerts
     + Alerts CrowdStrike Falcon Daemon
+* Nov 10, 2025 (v1.19) - Updated Query Parameter
+    + Get User ID By Mail

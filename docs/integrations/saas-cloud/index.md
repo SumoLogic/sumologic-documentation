@@ -221,8 +221,14 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/fastly')}><img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="40"/><h4>Fastly</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/fastly')}><img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="60"/><h4>Fastly</h4></a>
   <p>Control how and where you serve content, and view performance analytics.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/github-copilot')}><img src={useBaseUrl('img/send-data/github_copilot.png')} alt="Thumbnail icon" width="40"/><h4>GitHub Copilot</h4></a>
+  <p>Optimize Copilot adoption, improve developer productivity, and ensure secure, data-driven use of AI-assisted coding.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -449,6 +455,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/varonis')}><img src={useBaseUrl('img/integrations/misc/varonis-logo.png')} alt="icon" width="100"/><h4>Varonis</h4></a>
+  <p>Identify and evaluate security threats and behaviors across your Varonis platform.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/vectra')}><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/vectra.png')} alt="icon" width="100"/><h4>Vectra</h4></a>
   <p>Gain visibility into security threats detected across networks, cloud environments, and endpoints.</p>
   </div>
@@ -475,6 +487,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/zendesk')}><img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="icon" width="70"/><h4>Zendesk</h4></a>
   <p>Identify security threats by analyzing audit logs.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/zero-networks-segment/')}><img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Thumbnail icon" width="40"/><h4>Zero Networks Segment</h4></a>
+  <p>Gain deep visibility into network activity, assess risk, and validate zero‑trust segmentation controls.</p>
   </div>
 </div>
 <div className="box smallbox card">

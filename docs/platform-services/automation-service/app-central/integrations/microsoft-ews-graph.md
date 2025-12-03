@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews.png')} alt="microsoft-ews" width="100"/>
 
-***Version: 1.1  
-Updated: Oct 31, 2025***
+***Version: 1.2  
+Updated: Nov 21, 2025***
 
 Perform actions on Microsoft EWS mailboxes and accounts using Graph API. 
 
@@ -137,4 +137,7 @@ Email Gateway
 ## Change Log
 
 * September 10, 2025 - First upload
-* October 31, 2025 - Fixed issue in the **Download Mail As EML action**.
+* October 31, 2025 (v1.1) - Fixed issue in the **Download Mail As EML** action.
+* November 21, 2025 (v1.2)
+  + Fixed issue in the **Search Emails Extended** action.
+  + Converted `has_attachments` and `is_unread` from text fields to list fields with true/false options.
