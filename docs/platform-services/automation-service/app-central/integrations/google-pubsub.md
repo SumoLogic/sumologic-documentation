@@ -42,9 +42,9 @@ To [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
 3. Go to the **API&Services**
-4. In the same page click on **ENABLED API AND SERVICES** and search for Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API, Cloud Pub/Sub API and enable it all.
+4. In the same page click on **ENABLED API AND SERVICES** and search for Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API, Cloud Pub/Sub API, and enable it all.
 5. Go to the **IAM & Admin** > **Service Accounts** page.
-6. Click **CREATE SERVICE ACCOUNT** [Service Account](https://cloud.google.com/iam/docs/service-accounts-create) is required to access the Google PubSub.
+6. Click **CREATE SERVICE ACCOUNT**. [Service Account](https://cloud.google.com/iam/docs/service-accounts-create) is required to access the Google PubSub.
 7. While creating the service account, in **Permissions** add the role **Service Account Token Creator**, **Pub/Sub Viewer**, **Pub/Sub Admin**, **Pub/Sub Subscriber**, **Pub/Sub Publisher** and click on **DONE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-11.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
 8. Go to the **IAM & Admin** > **Workload Identity Federation** page. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-4.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
 9. Click **CREATE POOL**, provide the details, and click on **CONTINUE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-5.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
@@ -66,7 +66,7 @@ To [create service account credentials](https://developers.google.com/workspace/
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
 3. Go to the **API&Services** > **Credentials** page.
-4. In the same page click on **ENABLES API AND SERVICES** and search for Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API and enable it.
+4. In the same page click on **ENABLES API AND SERVICES** and search for Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API, and enable it.
 5. Click **CREATE CREDENTIALS** and select **Service Account**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-1.png')} style={{border:'1px solid gray'}} alt="google-drive" width="800"/>
 6. Enter a service account name to display in the Google Cloud console. The Google Cloud console generates a service account ID based on this name.
 7. (Optional) Enter a description of the service account.
@@ -87,8 +87,10 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **Authentication Type**. Select the authentication type: **Service Account Private Key Json** or **Workload Identity Federation Private Key json** and provide the selected type Json content.
-* **scopes**. Default scope is already added as `https://www.googleapis.com/auth/cloud-platform`, if not then add this scope.
+* **Authentication Type**. Select the authentication type **Service Account Private Key Json** or **Workload Identity Federation Private Key json** and provide the selected type JSON content.
+
+* **scopes**. Default scope is already added as `https://www.googleapis.com/auth/cloud-platform`. If not, then add this scope.
+
 * **Project ID**. Provide the Google Cloud Project ID where the IAM actions will be performed.
 * <IntegrationEngine/>
 * <IntegrationProxy/>
