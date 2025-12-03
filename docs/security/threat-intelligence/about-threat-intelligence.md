@@ -52,7 +52,7 @@ The sources on the **Threat Intelligence** tab include:
 
 Sumo Logic provides the following out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources:
 * **SumoLogic_ThreatIntel**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/).
-* **_sumo_global_feed_cs**. This is a source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/).
+* **_sumo_global_feed_cs**. This is a source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/). For more information, see [Sumo Logic Global Feed from CrowdStrike](/docs/security/threat-intelligence/sumologic-global-feed-for-crowdstrike/).
 
 ### Ingest threat intelligence indicators
 

@@ -1,7 +1,7 @@
 ---
 slug: /security/threat-intelligence/sumologic-global-feed-for-crowdstrike
-title: Sumo Logic Global Feed for CrowdStrike
-sidebar_label: Global Feed for CrowdStrike
+title: Sumo Logic Global Feed from CrowdStrike
+sidebar_label: Global Feed from CrowdStrike
 description: Learn about Sumo Logic's threat intelligence feed of CrowdStrike indicators.
 ---
 
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In partnership with CrowdStrike, Sumo Logic maintains the **_sumo_global_feed_cs** [threat intelligence source](/docs/security/threat-intelligence/about-threat-intelligence/#threat-intelligence-sources), an updated threat intelligence database that can be correlated with log data through queries. The Sumo Logic / CrowdStrike integration has two parts:
 * Sumo Logic maintains an up-to-date copy of CrowdStrike’s threat database.
-* Sumo Logic customers can use the CrowdStrike database in threat analysis queries over their logs (through a [`lookup` operator](/docs/search/search-query-language/search-operators/lookup/)). For example, the [Threat Intel Quick Analysis app](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) points to the **_sumo_global_feed_cs** source in its queries by using the [lookup search operator](/docs/security/threat-intelligence/find-threats/#use-the-lookup-search-operator). The app scans all Sumo Logic logs and parses (using regex) IP/Email/URL/Domain/File Name fields for comparison against the threat feed from CrowdStrike. Think of it as an Inner Join between parsed fields and the threat table.
+* Sumo Logic customers can use the CrowdStrike database in threat analysis queries over their logs (through a [`lookup` operator](/docs/search/search-query-language/search-operators/lookup/)). For example, the [Threat Intel Quick Analysis app](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) points to the **_sumo_global_feed_cs** source in its queries by [using the lookup search operator](/docs/security/threat-intelligence/find-threats/#use-the-lookup-search-operator). The app scans all Sumo Logic logs and parses (using regex) IP/Email/URL/Domain/File Name fields for comparison against the threat feed from CrowdStrike. Think of it as an Inner Join between parsed fields and the threat table.
 
 ## Indicators of Compromise (IOC)
 
@@ -64,7 +64,7 @@ IOCs and threats will often remain in the system because an IOC, such as an IP a
 
 About 20% of the indicators are unverified. These unverified threats may be real threats, but the CrowdStrike team has not been able to assign a confidence level to them, so they remain in the unverified state.
 
-Unverified is usually an IP address related to a known bad adversary (like Deep Panda) and it’s an IP that was used at some point in that campaign. As we all know, IPs are dynamic. While Deep Panda utilized IP 201.22.52.32 at some point, it doesn’t mean that IP should be marked as bad or a threat, so we label it unverified. It’s more informational than actionable. CrowdStrike is looking at better ways to vet those IPs, for now it’s unverified. CrowdStrike advises customers not to do anything with those IPs unless they’re seeing malicious activity from one of them. If the state is ever updated, CrowdStrike will change the “last updated” timestamp and the new state will appear. In the meantime, users should treat them as possible candidates for analysis.
+Unverified is usually an IP address related to a known bad adversary (like Deep Panda) and it’s an IP that was used at some point in that campaign. As we all know, IPs are dynamic. While Deep Panda utilized IP 201.22.52.32 at some point, it doesn’t mean that IP should be marked as bad or a threat, so we label it unverified. It’s more informational than actionable. CrowdStrike is looking at better ways to vet those IPs, for now it’s unverified. CrowdStrike advises you not to do anything with those IPs unless you're seeing malicious activity from one of them. If the state is ever updated, CrowdStrike will change the “last updated” timestamp and the new state will appear. In the meantime, you should treat them as possible candidates for analysis.
 
 CrowdStrike recommends that you start with the highest priority and work down the chain.
 
@@ -72,7 +72,7 @@ CrowdStrike recommends that you start with the highest priority and work down th
 
 Threats are grouped by actors, which are based on location. Some threats are tied to nation-state actors. For instance, “Panda” is the umbrella term for all nation-state activity tied to the People’s Republic of China. For more information, see [CrowdStrike documentation](https://www.crowdstrike.com/adversaries/).
 
-Non-nation-state-based threats are categorized by intention, not location; for instance, activist groups like the Syrian Electronic Army are categorized as “Jackal,” which expresses both intent and motivation. The following is the cryptonym system that CrowdStrike uses for threats categorization:
+Non-nation-state-based threats are categorized by intention, not location. For instance, activist groups like the Syrian Electronic Army are categorized as “Jackal,” which expresses both intent and motivation. The following is the cryptonym system that CrowdStrike uses for threats categorization:
 
 * **Nation-State-Based threats**
     * Panda = China
@@ -211,7 +211,7 @@ No, we do not allow an export of the threat Intel feeds as that is confidential 
 
 ### Is threat lookup real-time using Continuous Queries (CQs)?
 
-Yes. You can scan for malicious Indicators of Compromise (IOCs) in real time using our [lookup](/docs/search/search-query-language/search-operators/lookup-classic) operator.
+Yes. You can scan for malicious Indicators of Compromise (IOCs) in real time [using the lookup search operator](/docs/security/threat-intelligence/find-threats/#use-the-lookup-search-operator).
 
 ### Can I historically search my logs for threats?
 
@@ -221,7 +221,7 @@ Yes, you can search any log data that is still retained and searchable using the
 
 No. No results in your dashboards can mean that nothing has been identified by CrowdStrike as a threat, verified or unverified.
 
-It could be a case-sensitivity issue. In Sumo Logic, the equal sign (`=`) and the not equal to sign (`!=`) conditions are case-sensitive; when you use them with Sumo Logic operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/search-query-language/search-operators/tolowercase-touppercase/#using-tolowercaseor-touppercase-with-an-equating-condition).
+It could be a case-sensitivity issue. In Sumo Logic, the equal sign (`=`) and the not equal to sign (`!=`) conditions are case-sensitive. When you use them with Sumo Logic operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/search-query-language/search-operators/tolowercase-touppercase/#using-tolowercaseor-touppercase-with-an-equating-condition).
 
 ### I found an IOC in VirusTotal (or any other third-party threat feed), but why can’t I find that IOC in CrowdStrike using the Sumo Logic lookup?
 
@@ -262,4 +262,4 @@ The next step would be to look at the raw JSON field from the query. Fields such
 }
 ```
 
-With the malware family and other information, the user can search the internet for more as there is often data readily available on known threats. In addition, if the users would like more robust information, they can contact CrowdStrike directly and purchase individual reports or discuss upgrading to CrowdStrike Premium which includes more detailed reports.
+With the malware family and other information, you can search the internet for more as there is often data readily available on known threats. In addition, if you would like more robust information, you can contact CrowdStrike directly and purchase individual reports or discuss upgrading to CrowdStrike Premium which includes more detailed reports.
