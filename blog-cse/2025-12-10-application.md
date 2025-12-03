@@ -14,5 +14,5 @@ We're excited to announce a new look for list pages in Cloud SIEM. We've replace
 
 To learn more, see our list view documentation for:
 * [Insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#list-view)
-* [Entities](docs/cse/records-signals-entities-insights/view-manage-entities/#about-the-entities-list-page)
+* [Entities](/docs/cse/records-signals-entities-insights/view-manage-entities/#about-the-entities-list-page)
 * [Signals](/docs/cse/get-started-with-cloud-siem/intro-for-analysts/#dive-into-signals-and-entities)
