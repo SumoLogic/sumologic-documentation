@@ -44,7 +44,7 @@ You can push the following:
    * **Cloud SIEM Rules**. For more information about Cloud SIEM rules, refer to [Cloud SIEM Rules](/docs/cse/rules/).
    * **Cloud SIEM Rule Tuning**. For more information about Cloud SIEM rule tuning expressions, refer to [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/).
    * **Library**. For more information about Library items, refer to [Managing Your Sumo Logic Library](/docs/get-started/library).
-   * **Monitors**. For more informations about Monitors, refer to [Monitors](/docs/alerts/monitors/).
+   * **Monitors**. For more information about Monitors, refer to [Monitors](/docs/alerts/monitors/).
 1. Select individual items to be pushed, or all items.
 1. Click **Push to Orgs**.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-csiem.png')} alt="Push Selected Items button" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Push Selected Content** box, navigate to the **Destinations** section to select the organizations to push the selected items to. You can push to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2-csiem.png')} alt="Push Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
