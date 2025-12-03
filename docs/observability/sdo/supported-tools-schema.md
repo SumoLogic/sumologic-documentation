@@ -4,6 +4,8 @@ title: Supported Tools and Schema
 description: Learn which Tools and Schema are supported by Software Development Optimization Solution.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Software Development Optimization (SDO) Solution comes bundled with Terraform support for the following tools in each phase of the DevOps lifecycle. While tools not listed in the table below lack Terraform support for automated installation, virtually any DevOps tool can be configured to work with SDO through manual configuration by transforming the structure of data ingested by these tools — using Sumo Logic Field Extraction Rules (FERs) — to adhere to the schema defined below.
 
 | DevOps Phases             | Supported with Terraform                                          |
@@ -26,7 +28,7 @@ As discussed earlier, the abstraction of tools is achieved via a common event sc
 
 This model also enables you to integrate events from any of your tools, that may not be supported at present to the Software Development Optimization solution. 
 
-![SchemaTool.png](/img/sdo/SchemaTool.png)
+<img src={useBaseUrl('img/sdo/SchemaTool.png')} alt="Schema diagram" style={{border: '1px solid gray'}} width="800" />
 
 ## Schema Definition
 
@@ -172,7 +174,7 @@ parse regex "(?<event>\{\"event\":\"incident\..+?\}(?=,\{\"event\":\"incident\..
 
 The field extraction rule created is shown in the diagram below: 
 
-![pagerduty-v2-alerts.png](/img/sdo/pagerduty-v2-alerts.png)
+<img src={useBaseUrl('img/sdo/pagerduty-v2-alerts.png')} alt="PagerDuty alerts" style={{border: '1px solid gray'}} width="400" />
 
 
 Examples of mapping field extraction rules to the other out-of-the-box tools can be found in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
