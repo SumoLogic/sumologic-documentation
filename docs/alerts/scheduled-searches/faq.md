@@ -5,6 +5,8 @@ sidebar_label: FAQ
 description: You can edit or cancel a Scheduled Search at any time.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The following topics include frequently asked questions about scheduled
 searches and provide troubleshooting tips. 
 
@@ -51,7 +53,7 @@ To create a Scheduled Search:
     | fields collector, gbytes, collector_pct_of_todaysvolume, todays_volume, plan_size, todaysvolume_against_plan
     ```
 1. For the search **Time Range**, select **Today**.
-1. Click **Save As**. <br/>![DataUsageBreached.png](/img/alerts/DataUsageBreached.png)
+1. Click **Save As**. <br/><img src={useBaseUrl('img/alerts/DataUsageBreached.png')} alt="Data usage breached" style={{border: '1px solid gray'}} width="500" />
 1. In the **Save Search As** dialog, enter a name for this Scheduled Search, such as **90% Data Usage Limit Reached**.
 1. Set the **Run frequency** to **Every 4 hours**.
 1. Click **Schedule this search**. 
@@ -160,21 +162,21 @@ A maximum of 6000 Scheduled Searches are allowed per account.
 
 The following is an example of a temporary suspension email:
 
-![suspension email.png](/img/alerts/suspension-email.png)
+<img src={useBaseUrl('img/alerts/suspension-email.png')} alt="Suspension email" style={{border: '1px solid gray'}} width="700" />
 
 The [Audit Index](/docs/manage/security/audit-indexes/audit-index) stores events on your scheduled search events. The following is an example of a temporary suspension log:   
 
-![temp sus.png](/img/alerts/temp-sus.png)
+<img src={useBaseUrl('img/alerts/temp-sus.png')} alt="Temporary suspension" style={{border: '1px solid gray'}} width="800" />
 
 #### Permanent suspension
 
 The following is an example of a permanent suspension email:  
 
-![permanent sus.png](/img/alerts/permanentsus.png)
+<img src={useBaseUrl('img/alerts/permanentsus.png')} alt="Permanent suspension" style={{border: '1px solid gray'}} width="700" />
 
 The [Audit Index](/docs/manage/security/audit-indexes/audit-index) stores events on your scheduled search events. The following is an example of a permanent suspension log:
 
-![perm sus.png](/img/alerts/perm-sus.png)
+<img src={useBaseUrl('img/alerts/perm-sus.png')} alt="Permanent suspension" style={{border: '1px solid gray'}} width="800" />
 
 #### How long will the Scheduled Search be suspended?  
 
