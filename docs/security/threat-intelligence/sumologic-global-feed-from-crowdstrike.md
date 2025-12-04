@@ -1,8 +1,8 @@
 ---
-slug: /security/threat-intelligence/sumologic-global-feed-for-crowdstrike
+slug: /security/threat-intelligence/sumologic-global-feed-from-crowdstrike
 title: Sumo Logic Global Feed from CrowdStrike
 sidebar_label: Global Feed from CrowdStrike
-description: Learn about Sumo Logic's threat intelligence feed of CrowdStrike indicators.
+description: Learn about Sumo Logic's threat intelligence feed of indicators from CrowdStrike.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -237,7 +237,7 @@ The next step would be to look at the raw JSON field from the query. Fields such
  "type": "ip_address",
  "last_updated": 1476946769,
  "published_date": 1476946767,
- malicious_confidence": "unverified",
+ "malicious_confidence": "unverified",
  "reports": [],
  "actors": [],
  "malware_families": [ ],
