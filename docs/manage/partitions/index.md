@@ -75,6 +75,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/manage/partitions/estimate-scan-data')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Estimate Scan Data</h4></a>
+  <p> Learn about the estimate scan data for Data tier and Flex pricing.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/manage/partitions/edit-data-forwarding-destinations-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Edit Data Forwarding Destinations for a Partition</h4></a>
   <p>Learn how to specify Data Forwarding settings for a Partition.</p>
   </div>

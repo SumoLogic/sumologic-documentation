@@ -205,7 +205,7 @@ For example, if your monitor evaluates the last 1 hour, you can set a resolution
 | `<time range - trigger>` | The duration of time to evaluate. Values range from 2 Minutes to 24 Hours (or 7 Days, by request only). |
 | `<trigger - frequency>` | The frequency that the trigger is evaluated. |
 
-After setting the frequency evaluation, you can preview your [estimated scan data](/docs/manage/partitions/flex/estimate-scan-data) by clicking the **Show Estimated Scan** icon, as seen below.
+After setting the frequency evaluation, you can preview your [estimated scan data](/docs/manage/partitions/estimate-scan-data) by clicking the **Show Estimated Scan** icon, as seen below.
 
 <img src={useBaseUrl('img/alerts/monitors/show-estimated-scan.png')} alt="Estimated Scan Data icon" style={{border: '1px solid gray'}} width="700"/>
 
