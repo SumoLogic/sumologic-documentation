@@ -66,12 +66,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/partitions/flex/estimate-scan-data')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Estimate Scan Data</h4></a>
-  <p> Learn about the estimate scan data for Flex pricing.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/manage/partitions/flex/faq')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Flex FAQs</h4></a>
   <p> Answers to FAQ about Flex.</p>
   </div>
