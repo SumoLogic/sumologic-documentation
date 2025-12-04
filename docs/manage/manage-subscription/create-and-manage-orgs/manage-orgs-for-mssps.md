@@ -78,7 +78,7 @@ You can push the following:
    - Expected runtime for nearly 3000 async calls is 15 mins.
    - Make sure you keep the Child orgs per job less than or equal to 3 when you push more than 250 rules for a faster runtime.
    - Make sure you keep the rule or tuning expressions per job less than or equal to 500 for a faster runtime.
-- When pushing monitors, certain configurations will not be included. These include muting schedules, Sumo Logic Cloud SOAR connection, SLO linkages, Automation Service Playbooks, HipChat settings, and tags.
+- When pushing monitors, certain configurations will not be included. These include muting schedules, Sumo Logic Cloud SOAR connection, SLO linkages, Automation Service playbooks, HipChat settings, and tags.
 
 
 ## View history
