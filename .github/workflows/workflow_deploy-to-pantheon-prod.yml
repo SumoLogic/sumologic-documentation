@@ -2,6 +2,7 @@ name: Deploy to production
 
 permissions:
   contents: write
+  id-token: write
 
 on:
   push:
