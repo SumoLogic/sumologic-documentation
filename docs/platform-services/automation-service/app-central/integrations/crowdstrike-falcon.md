@@ -32,7 +32,7 @@ The CrowdStrike Falcon integration allows you to pull and update Alerts/Incident
 * **Search into Incidents** *(Enrichment)* - Search for incidents by providing an FQL filter, sorting, and paging
   details.
 * **Update Alerts** *(Containment)* - Perform actions on Alerts identified by composite ID(s) in request.
-* **On Demand Device Scan** *(Containment)* - Initiate a scan on Device by providing the Device ID. This action will only work for Windows hosts.
+* **On Demand Device Scan** *(Containment)* - Initiate a scan on device by providing the device ID. This action will only work for Windows hosts.
 
 ## Category
 
