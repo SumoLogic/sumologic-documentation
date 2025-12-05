@@ -434,6 +434,12 @@ module.exports = {
               },
             ],
           },
+        //{
+          //className: 'header-github-link',
+          //to: 'https://github.com/SumoLogic/sumologic-documentation',
+          //position: 'right',
+          //alt: 'Link to Sumo Logic Docs GitHub repository',
+        //},
           {
             type: 'search',
             position: 'left',
