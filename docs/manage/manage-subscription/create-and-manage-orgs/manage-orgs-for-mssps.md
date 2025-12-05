@@ -2,11 +2,11 @@
 id: manage-orgs-for-mssps
 title: Manage Organizations for MSSPs
 sidebar_label: Manage Orgs for MSSPs
-description: Learn how to manage organizational Cloud SIEM rules, rule tuning expressions, and organizational library content for Managed Security Service Providers (MSSPs).
+description: Learn how to manage organizational Cloud SIEM rules, rule tuning expressions, organizational library content, and monitors for Managed Security Service Providers (MSSPs).
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to manage Cloud SIEM rules, rule tuning expressions, and organizational library content for Managed Security Service Providers (MSSPs). MSSP administrators must ensure that the content of their child organizations is properly configured. MSSPs often consist of a parent organization with child organizations that use [Cloud SIEM](/docs/cse/).
+This article describes how to manage Cloud SIEM rules, rule tuning expressions, organizational library content, and monitors for Managed Security Service Providers (MSSPs). MSSP administrators must ensure that the content of their child organizations is properly configured. MSSPs often consist of a parent organization with child organizations that use [Cloud SIEM](/docs/cse/).
 
 ## Considerations
 
@@ -35,6 +35,7 @@ You can push the following:
 * Cloud SIEM [rules](/docs/cse/rules/)
 * Cloud SIEM [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/)
 * [Library](/docs/get-started/library)
+* [Monitors](/docs/alerts/monitors/)
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.
 1. Select the **Manage Content** tab.
@@ -43,6 +44,7 @@ You can push the following:
    * **Cloud SIEM Rules**. For more information about Cloud SIEM rules, refer to [Cloud SIEM Rules](/docs/cse/rules/).
    * **Cloud SIEM Rule Tuning**. For more information about Cloud SIEM rule tuning expressions, refer to [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/).
    * **Library**. For more information about Library items, refer to [Managing Your Sumo Logic Library](/docs/get-started/library).
+   * **Monitors**. For more information about Monitors, refer to [Monitors](/docs/alerts/monitors/).
 1. Select individual items to be pushed, or all items.
 1. Click **Push to Orgs**.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-csiem.png')} alt="Push Selected Items button" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Push Selected Content** box, navigate to the **Destinations** section to select the organizations to push the selected items to. You can push to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2-csiem.png')} alt="Push Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
@@ -58,6 +60,7 @@ You can push the following:
    :::note
    Both **Scheduled Searches Connection** and **Scheduled Reports** will be available only when you select a library *folder*.
    :::
+* **Monitor notifications**. Select **Include and Update Notifications** to copy the alert notification to the target organization. If the notification does not already exist, it will be created automatically. Select **Ignore Notifications** to exclude the alert notification, resulting in monitors being pushed without any active notifications.
 
 ### Limitations
 
@@ -75,6 +78,7 @@ You can push the following:
    - Expected runtime for nearly 3000 async calls is 15 mins.
    - Make sure you keep the Child orgs per job less than or equal to 3 when you push more than 250 rules for a faster runtime.
    - Make sure you keep the rule or tuning expressions per job less than or equal to 500 for a faster runtime.
+- When pushing monitors, certain configurations will not be included. These include muting schedules, Sumo Logic Cloud SOAR connection, SLO linkages, Automation Service playbooks, HipChat settings, and tags.
 
 
 ## View history
