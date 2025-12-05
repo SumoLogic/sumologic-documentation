@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="logo" width="150" />
 
-Snowflake is a leading cloud data platform known for its scalable, innovative data warehousing, and analytics solutions. It provides organizations with reliable and flexible tools to support data-driven decision-making. Snowflake enables seamless access to essential tables, allowing you to efficiently retrieve data, monitor key metrics, optimize data management processes, and enhance visibility and control over your Snowflake environment.
+Snowflake is a leading cloud data platform known for its scalable, innovative data warehousing and analytics solutions. It provides organizations with reliable and flexible tools to support data-driven decision-making. Snowflake enables seamless access to essential tables, allowing you to efficiently retrieve data, monitor key metrics, optimize data management processes, and enhance visibility and control over your Snowflake environment.
 
 ## Data collected
 
@@ -25,15 +25,20 @@ The data will be collected from Snowflake's database using the connection string
 | 5 minutes | Custom Event Logs |
 
 :::info
-* Ensure you have the `ACCOUNTADMIN` role set as default to collect the Snowflake logs from its database.
+* Ensure you have the Snowflake Custom role with the necessary permissions to collect the Snowflake logs from its database.
 * There is an expected data latency of up to 3 hours when retrieving data from the Snowflake database. [Learn more](https://docs.snowflake.com/en/sql-reference/account-usage#data-latency).
+* Permissions Required for Custom User Role:
+  * USAGE on the database(s) and schema(s) containing the logs/views you want to ingest.
+  * SELECT on the specific tables/views to be read.
+  * USAGE on the compute warehouse to be used for queries.
+  * USAGE on the integration object (if using external stages).
 :::
 
 ## Setup
 
 ### Vendor configuration
 
-The Snowflake Logs source requires you to provide the following data to setup the integration:
+The Snowflake Logs source requires you to provide the following data to set up the integration:
 
 - **Account Identifier**. An account identifier uniquely identifies a Snowflake account within your organization, as well as throughout the global network of Snowflake-supported cloud platforms and cloud regions. For more information, see [Account identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier).
 - **Username**. Snowflake account's login username. For example, `SUMOLOGIC`.
