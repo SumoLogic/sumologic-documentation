@@ -25,9 +25,9 @@ The data will be collected from Snowflake's database using the connection string
 | 5 minutes | Custom Event Logs |
 
 :::info
-* Ensure you have the Snowflake Custom role with the necessary permissions to collect the Snowflake logs from its database.
+* Ensure you have the Snowflake custom role with the necessary permissions to collect the Snowflake logs from its database.
 * There is an expected data latency of up to 3 hours when retrieving data from the Snowflake database. [Learn more](https://docs.snowflake.com/en/sql-reference/account-usage#data-latency).
-* Permissions Required for Custom User Role:
+* Permissions required for custom user role:
   * USAGE on the database(s) and schema(s) containing the logs/views you want to ingest.
   * SELECT on the specific tables/views to be read.
   * USAGE on the compute warehouse to be used for queries.
