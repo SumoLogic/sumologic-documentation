@@ -491,6 +491,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/zero-networks-segment/')}><img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Thumbnail icon" width="40"/><h4>Zero Networks Segment</h4></a>
+  <p>Gain deep visibility into network activity, assess risk, and validate zero‑trust segmentation controls.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/zimperium')}><img src={useBaseUrl('img/integrations/zimperium/zimperium-logo.png')} alt="icon" width="100"/><h4>Zimperium</h4></a>
   <p>Identify security threats and incidents on mobile devices.</p>
   </div>
