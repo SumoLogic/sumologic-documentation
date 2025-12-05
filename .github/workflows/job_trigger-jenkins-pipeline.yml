@@ -15,9 +15,7 @@ on:
         required: true
       WEBOPS_JENKINS_HOST:
         required: true
-      WEBOPS_AWS_ACCESS_KEY:
-        required: true
-      WEBOPS_AWS_SECRET_KEY:
+      WEBOPS_AWS_ROLE_JENKINS:
         required: true
       WEBOPS_WEBHOOK_TOKEN:
         required: true
@@ -25,16 +23,20 @@ on:
 jobs:
   trigger-jenkins-pipeline:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Get runner IP
         if: always()
         id: ip
         uses: haythem/public-ip@v1.3
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@00943011d9042930efac3dcd3a170e4273319bc8
+        with:
+          role-to-assume: ${{ secrets.WEBOPS_AWS_ROLE_JENKINS }}
+          aws-region: us-east-1
       - name: Add runner to AWS security group ingress
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.WEBOPS_AWS_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.WEBOPS_AWS_SECRET_KEY }}
-          AWS_DEFAULT_REGION: ${{ secrets.WEBOPS_AWS_REGION }}
         run: aws ec2 authorize-security-group-ingress --group-name ${{ secrets.WEBOPS_AWS_SG_NAME }} --protocol tcp --port ${{ secrets.WEBOPS_JENKINS_PORT }} --cidr ${{ steps.ip.outputs.ipv4 }}/32
       - name: Trigger Jenkins pipeline
         run: |
@@ -43,9 +45,5 @@ jobs:
             -X POST \
             ${{ secrets.WEBOPS_JENKINS_HOST }}:${{ secrets.WEBOPS_JENKINS_PORT || '80' }}/generic-webhook-trigger/invoke?token=${{ secrets.WEBOPS_WEBHOOK_TOKEN }}
       - name: Remove runner from AWS security group ingress
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.WEBOPS_AWS_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.WEBOPS_AWS_SECRET_KEY }}
-          AWS_DEFAULT_REGION: ${{ secrets.WEBOPS_AWS_REGION }}
         if: always()
         run: aws ec2 revoke-security-group-ingress --group-name ${{ secrets.WEBOPS_AWS_SG_NAME }} --protocol tcp --port ${{ secrets.WEBOPS_JENKINS_PORT }} --cidr ${{ steps.ip.outputs.ipv4 }}/32

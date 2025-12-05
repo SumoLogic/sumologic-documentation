@@ -1014,7 +1014,6 @@ module.exports = {
         'manage/manage-subscription/organization-usage-limits',
         'manage/manage-subscription/scan-budgets',
         'manage/manage-subscription/fedramp-capabilities',
-        'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
       ]
     },
@@ -2631,6 +2630,7 @@ integrations: [
           'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
           'integrations/saas-cloud/zendesk',
+          'integrations/saas-cloud/zero-networks-segment',
           'integrations/saas-cloud/zimperium',
           'integrations/saas-cloud/zoom',
         ],
@@ -3202,7 +3202,7 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'beta/index'},
       items: [
-        'manage/manage-subscription/beta-opt-in',
+        'api/metrics-searches'
       ],
     },
   ],
