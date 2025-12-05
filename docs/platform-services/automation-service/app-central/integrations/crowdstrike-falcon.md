@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.19  
-Updated: Nov 10, 2025***
+***Version: 1.20  
+Updated: Dec 05, 2025***
 
 The CrowdStrike Falcon integration allows you to pull and update Alerts/Incidents, and search Incidents/Devices/Alerts.
 
@@ -32,6 +32,7 @@ The CrowdStrike Falcon integration allows you to pull and update Alerts/Incident
 * **Search into Incidents** *(Enrichment)* - Search for incidents by providing an FQL filter, sorting, and paging
   details.
 * **Update Alerts** *(Containment)* - Perform actions on Alerts identified by composite ID(s) in request.
+* **On Demand Device Scan** *(Containment)* - Initiate a scan on Device by providing the Device ID. This action will only work for Windows hosts.
 
 ## Category
 
@@ -111,3 +112,5 @@ For information about CrowdStrike Falcon, see [CrowdStrike documentation](https:
     + Alerts CrowdStrike Falcon Daemon
 * Nov 10, 2025 (v1.19) - Updated Query Parameter
     + Get User ID By Mail
+* Dec 05, 2025 (v1.20) - Added new action
+    + On Demand Device Scan
