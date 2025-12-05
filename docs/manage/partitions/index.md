@@ -69,14 +69,26 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/partitions/run-search-against-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Search a Partition</h4></a>
-  <p>Learn how to run a search against data in a Partition.</p>
+  <a href={useBaseUrl('docs/manage/partitions/data-tiers')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tier</h4></a>
+  <p>Learn more about the Data Tier partitions.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/manage/partitions/flex')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Flex Pricing</h4></a>
+  <p>Learn more about the Flex pricing partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/partitions/estimate-scan-data')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Estimate Scan Data</h4></a>
   <p> Learn about the estimate scan data for Data tier and Flex pricing.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/manage/partitions/run-search-against-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Search a Partition</h4></a>
+  <p>Learn how to run a search against data in a Partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
