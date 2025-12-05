@@ -451,10 +451,12 @@ module.exports = {
           //position: 'right',
           //alt: 'Link to Sumo Logic Docs GitHub repository',
         //},
-          {
-            type: 'search',
-            position: 'right',
-          },
+        // The following is not even needed to render the search bar, since it is
+        // already done with the Algolia coding above.
+        //  {
+        //    type: 'search',
+        //    position: 'right',
+        //  },
         ],
       },
       footer: {

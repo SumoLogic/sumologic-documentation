@@ -284,7 +284,7 @@ In the DooD approach, you use the Docker daemon from the host system to interact
 
 This way, the main container will have access to the Docker socket and will, therefore, be able to start containers. The only difference is that instead of starting “child” containers, it will start “sibling” containers.
 
-![Mounting Docker socket](https://cdn.hashnode.com/res/hashnode/image/upload/v1693178230450/3b5e8d84-a6e6-40b9-acce-8b2f623e67be.png?auto=compress,format&format=webp)
+<img src={useBaseUrl('https://cdn.hashnode.com/res/hashnode/image/upload/v1693178230450/3b5e8d84-a6e6-40b9-acce-8b2f623e67be.png?auto=compress,format&format=webp)')} alt="Mounting Docker socket" style={{border: '1px solid gray'}} width="800" />
 
 It's useful to sharing pulled image with all bridges running on host machine.
 
