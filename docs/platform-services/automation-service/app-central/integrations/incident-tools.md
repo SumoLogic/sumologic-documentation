@@ -106,4 +106,4 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
     * Search Incidents
     * Update Entity
 * June 24, 2024 (v1.8) - The **Field ID** and **Field Value** fields are now optional in the **Update Incident Fields** action.
-* December 5, 2025 (v1.9) - Added closing_note in output field of Get Incident action.
+* December 5, 2025 (v1.9) - Added `closing_note` in output field of Get Incident action.
