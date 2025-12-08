@@ -3104,6 +3104,7 @@ integrations: [
         'security/threat-intelligence/threat-intelligence-indicators',
         'security/threat-intelligence/upload-formats',
         "security/threat-intelligence/threat-intelligence-mapping",
+        "security/threat-intelligence/sumologic-global-feed-from-crowdstrike",
       ],
     },
   ],
