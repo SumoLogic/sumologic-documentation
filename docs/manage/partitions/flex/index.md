@@ -21,6 +21,10 @@ Flex Pricing delivers a new financial model for log management in which you can 
   allowfullscreen
 />
 
+:::info
+To setup and configure the Flex app, refer to [Sumo Logic Flex](/docs/integrations/sumo-apps/flex/).
+:::
+
 ## Feature support
 
 | Feature support | Flex Pricing |
@@ -46,12 +50,6 @@ Flex Pricing delivers a new financial model for log management in which you can 
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper" >
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/integrations/sumo-apps/flex')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Setup and Configure Flex app</h4></a>
-  <p>Learn how to setup and configure the Flex app.</p>
-  </div>
-</div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/partitions/flex/create-edit-partition-flex')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create and Edit a Partition</h4></a>
