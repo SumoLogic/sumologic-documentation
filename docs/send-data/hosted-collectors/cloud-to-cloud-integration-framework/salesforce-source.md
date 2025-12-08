@@ -19,7 +19,8 @@ The Salesforce Source provides a secure endpoint to receive event data from the 
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 1 hour |  [Event data](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm) |
+| 60 minutes |  [Audit data](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm) |
+| 60 minutes |  [Event Log File data](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm) |
 
 ### Polling Interval and Salesforce API Rate Limits
 
@@ -76,6 +77,7 @@ To configure a Salesforce Source:
 1. **Client ID.** Enter the Consumer Key of the ConnectedApp. 
 1. **Client Secret.** Enter the Consumer Secret of the ConnectedApp. 
 1. **Build In Memory Lookup.** Keep this checked. This will resolve IDs to human-readable names.
+1. **API Collection.** Select the checkbox depending on the type of data that you wish to collect.
 1. **Collection Should begin.** Select the time range for how far back you want this source to start collecting data from Salesforce. Options available are: Now, 24 hours ago.
     :::note
     <CollBegin/>
@@ -112,6 +114,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | client_id | String | True |`null` | Type in Consumer Key of the Connected App. |  |
 | client_secret | String | True | `null` | Type in Consumer Secret of the Connected App. |  |
 | inmemory_lookup | Boolean | False | True | Set to true to enable inmemory lookup or to false to disable it.|  |
+| collectAuditData | Boolean | No | True | Set to true to collect the audit events data.|  |
+| collectEventLogFileData | Boolean | No | True | Set to true to collect the event log files data.|  |
 
 ### JSON example
 
