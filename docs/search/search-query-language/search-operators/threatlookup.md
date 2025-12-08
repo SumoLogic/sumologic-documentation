@@ -132,6 +132,8 @@ You cannot use the cat search operator with the `SumoLogic_ThreatIntel` source.
 :::
 -->
 
+<!-- Remove the following "Upcoming change" section at GA. -->
+
 ## Upcoming change
 
 The behavior of the `threatlookup` operator is changing in an upcoming release. Previously, rows without matches in threat intelligence sources were excluded from search results. With the new behavior, `threatlookup` will return one result row for each input indicator, even if there is no threat intel match. In such cases, the normalized threatlookup fields (for example, `_threatlookup.source`, `_threatlookup.confidence`, etc.) will be `null`.
