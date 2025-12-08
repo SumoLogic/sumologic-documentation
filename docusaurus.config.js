@@ -261,8 +261,8 @@ module.exports = {
     ],
     announcementBar: {
       id: 'domain',
-      content: '🚀 <a href="https://www.sumologic.com/events/aws-reinvent">Join us at AWS re:Invent 2025 in Las Vegas, Dec 1-5</a>! Stop by Booth #1329 to see Sumo Logic Dojo AI in action and connect with our experts.',
-      backgroundColor: '#e4b0d1',
+      content: '🎉️ <b>Introducing <a href="/docs/search/mobot">Mobot</a>🤖, your conversational interface for Sumo Logic. Search logs using natural language, troubleshoot faster, and get how-to guidance.</b>',
+      backgroundColor: '#000',
       textColor: '#000',
     },
     imageZoom: {
