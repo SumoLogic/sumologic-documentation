@@ -33,6 +33,15 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        'http-equiv': 'Cache-control',
+        content: 'no-cache',
+      },
+    },
+  ],
   // Temporarily removes Start Free Trial button conversion event tracking.
   // To reinstate this, uncomment below and restore trackTrialClick.js file
   //  clientModules: [
