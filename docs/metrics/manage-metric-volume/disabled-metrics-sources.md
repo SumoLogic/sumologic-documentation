@@ -5,6 +5,8 @@ sidebar_label: Disabled Metrics Sources
 description: Sumo Logic sometimes disables metrics Sources in response to excessive volume of time series.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 In some cases, Sumo Logic disables a metrics source or drops a metric dimension to limit the number of ingested time series. 
 
 This page has information about the process and how to resolve the problem.
@@ -100,8 +102,7 @@ For other dimensions that exceed the cardinality limit, Sumo generates a metric 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access **Metrics Transformation Rules**, go to the main Sumo Logic menu and select **Manage Data > Metrics > Metrics Transformation Rules**. 
 
 You can delete the metric transformation rule, but you can’t disable or modify it. 
-
-![transformation-rules.png](/img/metrics/transformation-rules.png)
+<img src={useBaseUrl('img/metrics/transformation-rules.png')} alt="Transformation-rules" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 If you have a use case that requires the dropped dimension, contact Sumo Logic support.

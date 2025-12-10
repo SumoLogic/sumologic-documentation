@@ -37,28 +37,11 @@ Watch this micro lesson to learn more about entities.
 
 ## About entities
 
-In Cloud SIEM, an entity is a unique actor that a signal fired upon. Cloud SIEM has a number of [built-in entity types](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md):
-
-* Command
-* Deployment
-* Domain
-* Email
-* File
-* Hash
-* Hostname
-* IP Address
-* MAC Address
-* Pod
-* Process
-* Replica Set
-* Resource
-* URL
-* User Agent
-* Username
-
-You can create custom entity types as well. For more information, see [Create a Custom Entity Type](/docs/cse/records-signals-entities-insights/create-custom-entity-type/).
+In Cloud SIEM, an entity is a unique actor that a signal fired upon, for example, IP address, hostname, or username.
 
 When a signal is fired, if an entity doesn’t already exist in Cloud SIEM for the item that the signal fired on, Cloud SIEM creates an entity for it. For more information about entities and signal and insight generation, see [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process).
+
+For a list of fields that Cloud SIEM considers entities and the entity types they map to, see [Schema: Entity Fields](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md) in the Cloud SIEM Content Catalog. To create custom entity types, see [Create a Custom Entity Type](/docs/cse/records-signals-entities-insights/create-custom-entity-type/).
 
 :::note
 Entity names have a limit of 512 characters. If an entity's name value is 512 characters or longer, the system discards the log, and as a result, no signal is generated.

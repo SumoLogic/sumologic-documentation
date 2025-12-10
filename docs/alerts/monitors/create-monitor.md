@@ -318,7 +318,7 @@ For example, when an alert is set to `greater than 10`, the recovery would be
 | `<threshold type>` | How you want the value compared. Select greater than, greater than or equal, less than or equal, or less than. |
 | `<threshold>` | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
 
-The Alert and recovery setting affects both the alert generation logic and the alert recovery logic. `Alert and recovery require a minimum of <count> data points for "at all times" evaluation windows`. This setting only works when you choose `at all times within` as the type of occurrence for the alert. <br/>![metrics alert datapoints.png](/img/alerts/monitors/minimum-datapoints.png)
+The Alert and recovery setting affects both the alert generation logic and the alert recovery logic. `Alert and recovery require a minimum of <count> data points for "at all times" evaluation windows`. This setting only works when you choose `at all times within` as the type of occurrence for the alert. <br/><img src={useBaseUrl('img/alerts/monitors/minimum-datapoints.png')} alt="Metrics alert datapoints" style={{border: '1px solid gray'}} width="800" />
 
 | Parameter | Description |
 |:--|:--|

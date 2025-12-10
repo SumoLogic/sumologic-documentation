@@ -4,6 +4,7 @@ title: Create a Field Extraction Rule
 description: Field Extraction Rules (FER) tell Sumo Logic which fields to parse out automatically.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 import FerLimit from '../../reuse/fer-limitations.md';
 
@@ -47,7 +48,7 @@ To create a Field Extraction Rule:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Field Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. 
 1. Click the **+ Add** button on the top right of the table.
-1. The **Add Field Extraction Rule** form will appear:<br/> ![Create Field extraction rule with dynamic parsing.png](/img/field-extraction-rules/create-fer.png)
+1. The **Add Field Extraction Rule** form will appear:<br/><img src={useBaseUrl('img/field-extraction-rules/create-fer.png')} alt="Create Field extraction rule with dynamic parsing" style={{border: '1px solid gray'}} width="400" />
 1. Enter the following options:
     * **Rule Name**. Type a name that makes it easy to identify the rule.
     * **Applied At**. There are two types available, Ingest Time and Run Time. The main differences are Run Time only supports JSON data and the time that Sumo parses the fields. The following is an overview of the differences:

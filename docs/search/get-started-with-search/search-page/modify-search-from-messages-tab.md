@@ -4,6 +4,8 @@ title: Modify a Search from the results table
 description: After running a search, you can modify subsequent searches by selecting text displayed in the Messages tab.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 When you run a search your results are provided in a **Messages** tab. If the search conducted an aggregation you'll also get an **Aggregates** tab. The options to modify your search will differ depending on the tab you're viewing.
 
 ## Messages tab
@@ -35,9 +37,9 @@ If you come across text that you'd like to [parse as a field](../../search-que
 
 To parse a field from message text:
 
-1. In the search results, select the text or string you'd like to parse, right click, and click **Parse selected text**.<br/>  ![parse selected text](/img/search/get-started-search/search-page/parse-selected-text.png)    
-1. In the **Parse Text** dialog box, select any text that you do not want to include in the parsed field. Then click **Extract this value**. For example, to parse just the client URL, select the unique client URL, then select **Click to extract this value.**<br/>![extract value](/img/search/get-started-search/search-page/extract-value.png)      
-1. Type a name for the **Field**. This name appears at the top of the parsed column. Field names can contain alphanumeric characters and underscores (`_`). The name must start and end with an alphabet character. Then click **Submit**.<br/>![parse text](/img/search/get-started-search/search-page/parse-text.png)
+1. In the search results, select the text or string you'd like to parse, right click, and click **Parse selected text**.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/parse-selected-text.png')} alt="Parse selected text" style={{border: '1px solid gray'}} width="800" />
+1. In the **Parse Text** dialog box, select any text that you do not want to include in the parsed field. Then click **Extract this value**. For example, to parse just the client URL, select the unique client URL, then select **Click to extract this value.**<br/><img src={useBaseUrl('img/search/get-started-search/search-page/extract-value.png')} alt="Extract value" style={{border: '1px solid gray'}} width="500" />
+1. Type a name for the **Field**. This name appears at the top of the parsed column. Field names can contain alphanumeric characters and underscores (`_`). The name must start and end with an alphabet character. Then click **Submit**.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/parse-text.png')} alt="Parse text" style={{border: '1px solid gray'}} width="500" />
    :::note
    If you do not enter a field name, you'll see an error in the **Search** tab.
    :::
