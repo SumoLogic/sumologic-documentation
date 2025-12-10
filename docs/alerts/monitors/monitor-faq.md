@@ -103,5 +103,5 @@ When you open or edit a monitor, even if it’s disabled, the system needs to ev
 ### How can I avoid unexpected scan charges for disabled monitors?
 
 - Limit opening or editing monitors unless necessary.
-- Avoid using preview or “View in Metrics Search” features if you want to minimize scans.
+- Avoid using preview or **View in Metrics Search** features if you want to minimize scans.
 - Copy the query into a separate environment (like Metrics Search directly) if you only need to inspect it without refreshing UI previews.
