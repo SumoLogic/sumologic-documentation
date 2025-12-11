@@ -85,6 +85,30 @@ Your estimates of ingest capacity required for each product variable are called 
 1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/manage/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
 1. To view the baseline, click **View Baseline**.<br/> <img src={useBaseUrl('img/manage/subscriptions/baselines_3.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/>
 
+## Change child organization name 
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
+1. Click the row for the org you want to change the org name.
+1. In the right-hand pane, click on **More Actions** dropdown and select **Change Organization Name**.<br/><img src={useBaseUrl('img/manage/subscriptions/Side_pane_Change_Orgs_Name.png')} alt="Side_pane_Change_Orgs_Name.png" style={{border: '1px solid gray'}} width="300"/>
+1. At the prompt, enter a new organization name in the text field.
+1. Click **Change.** <br/><img src={useBaseUrl('img/manage/subscriptions/Change_Child_Organization_Name_prompt.png')} alt="Change_Child_Organization_Name_prompt.png" style={{border: '1px solid gray'}} width="300"/>
+
+## Change account owner
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
+1. Click the row for the org you want to change the org name.
+1. In the right-hand pane, click on **More Actions** dropdown and select **Change Account Owner**.<br/><img src={useBaseUrl('img/manage/subscriptions/Side_pane_Change_Account_Owner.png')} alt="Side_pane_Change_Account_Owner.png" style={{border: '1px solid gray'}} width="300"/>
+1. At the prompt, enter a new account owner ID in the text field or select the new account owner ID from the dropdown.
+1. Click **Change.** <br/><img src={useBaseUrl('img/manage/subscriptions/Change_Child_Org_Account_Owner_prompt.png')} alt="Change_Child_Org_Account_Owner.png" style={{border: '1px solid gray'}} width="300"/>
+
+## Change org subdomain
+
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
+1. Click the row for the org you want to change the org name.
+1. In the right-hand pane, click on **More Actions** dropdown and select **Change Subdomain Name**.<br/><img src={useBaseUrl('img/manage/subscriptions/Side_pane_Change_Org_Subdomain.png')} alt="Side_pane_Change_Org_Subdomain.png" style={{border: '1px solid gray'}} width="300"/>
+1. At the prompt, enter a new subdomain name. The name must be between 4 and 63 characters in length, and can contain lowercase letters, numbers, and dashes only.
+1. Click **Change Subdomain Name** to update the name. <br/><img src={useBaseUrl('img/manage/subscriptions/Change_Org_Subdomain_prompt.png')} alt="Change_Org_Subdomain.png" style={{border: '1px solid gray'}} width="500"/>
+
 ## Deactivate a child org
 
 You can deactivate the child org when it is no longer needed. Before deactivating the child org, make sure you:
