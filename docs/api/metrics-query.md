@@ -42,17 +42,18 @@ A metric query consists of a metric, one or more filters, and optionally, one or
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                    |
-|:------------|:------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/metricsQuery  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/metricsQuery  |
-| DE         | https://api.de.sumologic.com/docs/#tag/metricsQuery  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/metricsQuery  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/metricsQuery |
-| JP         | https://api.jp.sumologic.com/docs/#tag/metricsQuery  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/metricsQuery  |
-| US1        | https://api.sumologic.com/docs/#tag/metricsQuery     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/metricsQuery |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/metricsQuery   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/metricsQuery   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/metricsQuery  |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/metricsQuery   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/metricsQuery   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/metricsQuery  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/metricsQuery   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/metricsQuery   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/metricsQuery      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/metricsQuery  |
 
 ## Required role capabilities
 

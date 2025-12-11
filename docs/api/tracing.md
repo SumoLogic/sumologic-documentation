@@ -23,17 +23,18 @@ Tracing APIs give you the ability to browse and execute queries for traces and s
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                              |
-|:------------|:------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/traces  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/traces  |
-| DE         | https://api.de.sumologic.com/docs/#tag/traces  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/traces  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/traces |
-| JP         | https://api.jp.sumologic.com/docs/#tag/traces  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/traces  |
-| US1        | https://api.sumologic.com/docs/#tag/traces     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/traces |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/traces   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/traces   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/traces   |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/traces   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/traces   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/traces  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/traces   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/traces   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/traces      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/traces  |
 
 ## Required role capabilities
 

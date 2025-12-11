@@ -19,17 +19,18 @@ Use Metrics Search Management APIs to save metrics searches in your content libr
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                        |
-|:------------|:----------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/metricsSearchesManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/metricsSearchesManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag/metricsSearchesManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/metricsSearchesManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/metricsSearchesManagement |
-| JP         | https://api.jp.sumologic.com/docs/#tag/metricsSearchesManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/metricsSearchesManagement  |
-| US1        | https://api.sumologic.com/docs/#tag/metricsSearchesManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/metricsSearchesManagement |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/metricsSearchesManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/metricsSearchesManagement   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/metricsSearchesManagement  |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/metricsSearchesManagement   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/metricsSearchesManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/metricsSearchesManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/metricsSearchesManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/metricsSearchesManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/metricsSearchesManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/metricsSearchesManagement  |
 
 ## Required role capabilities
 

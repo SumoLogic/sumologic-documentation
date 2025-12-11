@@ -17,17 +17,18 @@ The User Management API allows you to [manage user accounts](/docs/manage/users-
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                      |
-|:------------|:--------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/userManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/userManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag/userManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/userManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/userManagement |
-| JP         | https://api.jp.sumologic.com/docs/#tag/userManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/userManagement  |
-| US1        | https://api.sumologic.com/docs/#tag/userManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/userManagement |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/userManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/userManagement   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/userManagement  |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/userManagement   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/userManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/userManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/userManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/userManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/userManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/userManagement  |
 
 ## Required role capabilities
 

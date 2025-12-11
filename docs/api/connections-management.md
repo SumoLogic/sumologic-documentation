@@ -17,18 +17,18 @@ Connections Management APIs let you set up connections to send alerts to third-p
 
 <ApiIntro/>
 
-| Deployment | Documentation URL     |
-|:------------|:---------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/connectionManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/connectionManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag/connectionManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/connectionManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/connectionManagement |
-| JP         | https://api.jp.sumologic.com/docs/#tag/connectionManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/connectionManagement  |
-| US1        | https://api.sumologic.com/docs/#tag/connectionManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/connectionManagement |
-
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/connectionManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/connectionManagement   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/connectionManagement  |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/connectionManagement   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/connectionManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/connectionManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/connectionManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/connectionManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/connectionManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/connectionManagement  |
 
 ## Required role capabilities
 
