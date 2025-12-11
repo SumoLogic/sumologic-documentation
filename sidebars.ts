@@ -1009,11 +1009,11 @@ module.exports = {
             'manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account',
           ],
         },
+        'manage/manage-subscription/collection-overview',
         'manage/manage-subscription/manage-billing-information',
         'manage/manage-subscription/organization-usage-limits',
         'manage/manage-subscription/scan-budgets',
         'manage/manage-subscription/fedramp-capabilities',
-        'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
       ]
     },
@@ -2630,6 +2630,7 @@ integrations: [
           'integrations/saas-cloud/webex',
           'integrations/saas-cloud/workday',
           'integrations/saas-cloud/zendesk',
+          'integrations/saas-cloud/zero-networks-segment',
           'integrations/saas-cloud/zimperium',
           'integrations/saas-cloud/zoom',
         ],
@@ -3103,6 +3104,7 @@ integrations: [
         'security/threat-intelligence/threat-intelligence-indicators',
         'security/threat-intelligence/upload-formats',
         "security/threat-intelligence/threat-intelligence-mapping",
+        "security/threat-intelligence/sumologic-global-feed-from-crowdstrike",
       ],
     },
   ],
@@ -3201,7 +3203,7 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'beta/index'},
       items: [
-        'manage/manage-subscription/beta-opt-in',
+        'api/metrics-searches'
       ],
     },
   ],

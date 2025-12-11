@@ -33,6 +33,15 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        'http-equiv': 'Cache-control',
+        content: 'no-cache',
+      },
+    },
+  ],
   // Temporarily removes Start Free Trial button conversion event tracking.
   // To reinstate this, uncomment below and restore trackTrialClick.js file
   //  clientModules: [
@@ -261,8 +270,8 @@ module.exports = {
     ],
     announcementBar: {
       id: 'domain',
-      content: '🚀 <a href="https://www.sumologic.com/events/aws-reinvent">Join us at AWS re:Invent 2025 in Las Vegas, Dec 1-5</a>! Stop by Booth #1329 to see Sumo Logic Dojo AI in action and connect with our experts.',
-      backgroundColor: '#e4b0d1',
+      content: '🎉️ <b>Introducing <a href="/docs/search/mobot">Mobot</a>🤖, your conversational interface for Sumo Logic. Search logs using natural language, troubleshoot faster, and get how-to guidance.</b>',
+      backgroundColor: '#000',
       textColor: '#000',
     },
     imageZoom: {
@@ -282,6 +291,7 @@ module.exports = {
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
       contextualSearch: false,
+      searchPagePath: 'docs-search', // Default value is 'search'; renamed to 'docs-search' so it doesn't conflict with '/Search' redirect
       insights: true,
       insightsConfig: {
         useCookie: true, // alt to useCookie: true,
@@ -434,17 +444,6 @@ module.exports = {
               },
             ],
           },
-          // {
-          //  type: 'html',
-          //  position: 'right',
-          //  value: 'google_translate',
-          // },
-          // {
-          //  to: 'https://www.sumologic.com/sign-up',
-          //  position: 'right',
-          //  className: 'header-trial',
-          //  alt: 'Sign up for a Sumo Logic free trial',
-          // },
         //{
           //className: 'header-github-link',
           //to: 'https://github.com/SumoLogic/sumologic-documentation',
@@ -453,7 +452,7 @@ module.exports = {
         //},
           {
             type: 'search',
-            position: 'right',
+            position: 'left',
           },
         ],
       },
