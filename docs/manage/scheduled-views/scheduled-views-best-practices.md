@@ -11,8 +11,8 @@ A Scheduled View reduces aggregate data down to the bare minimum, so they conta
 These items are required in Scheduled View queries:
 
 * **Always use an [aggregate](/docs/search/search-query-language/group-aggregate-operators) operator**. This will allow you to avoid duplicating data.
-* **Always run an aggregation by a [timeslice](/docs/search/search-query-language/search-operators/timeslice) operator.** If you do not, [Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) will be used.
-
+* **Always run an aggregation with a [timeslice](/docs/search/search-query-language/search-operators/timeslice) operator.** If you do not specify one, [Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) will be used by default. Without timeslice or any other timestamp related field, Scheduled Views will not backfill the data. Instead it will begin populating data from the date the Scheduled View is created.
+  
 Also, keep the following things in mind when you're creating Scheduled View queries:
 
 * **Avoid using queries that are likely to change.** A key benefit of using Scheduled Views is that they can index historical data, allowing you to identify long-term trends. If a query changes, you may lose some of the historical perspective.
