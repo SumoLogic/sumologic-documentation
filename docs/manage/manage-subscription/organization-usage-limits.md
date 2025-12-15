@@ -42,7 +42,7 @@ To manage the query size limit follow the below steps:
 
 :::info
 Sumo Logic defines scan as two types:
-  - **Foreground interactive search**. Search page UI, Copilot, and Dashboards.
+  - **Foreground interactive search**. Search page UI, Mobot, and Dashboards.
   - **Background search**. API, Scheduled Search, Monitor, Scheduled Views, and SLO. 
 :::
 

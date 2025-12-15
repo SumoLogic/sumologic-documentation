@@ -86,13 +86,11 @@ Fields can be assigned to a Collector and Source using the **Fields** input ta
 
 1. Click **Save**.
 
-<img src={useBaseUrl('img/fields/edit-collector-fields-name.png')} alt="Edit collector fields name" style={{border: '1px solid gray'}} width="600" />
+  <img src={useBaseUrl('img/fields/edit-collector-fields-name.png')} alt="Edit collector fields name" style={{border: '1px solid gray'}} width="600" />
 
 In the above example, we have created a new field called `cluster` and set the value to `k8s.dev`. With this configuration, any logs sent to this Collector will now have this key-value pair associated with it.
 
-With this association, you can search for `cluster=k8s.dev` to return your logs.
-
-<img src={useBaseUrl('img/fields/collector-field-search-results.png')} alt="Collector field search results" style={{border: '1px solid gray'}} width="800" />
+With this association, you can search for `cluster=k8s.dev` to return your logs. <br/><img src={useBaseUrl('img/fields/collector-field-search-results.png')} alt="Collector field search results" style={{border: '1px solid gray'}} width="800" />
 
 ### Using Collector API
 
