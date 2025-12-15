@@ -362,6 +362,17 @@ html[data-theme='light'] {
   margin-right: -10px;
 }
 
+div[class*="announcementBar_"] {
+  background: linear-gradient(
+    to right,
+    #6e9ffb 0%,
+    #91b5fc 5%,
+    #bcd2fd 8%,
+    #e1eafe 50%,
+    #bcd2fd 80%
+  ) !important;
+}
+
 .header-trial::after {
     display: none !important;
     content: none !important;
