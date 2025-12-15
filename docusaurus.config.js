@@ -33,6 +33,15 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        'http-equiv': 'Cache-control',
+        content: 'no-cache',
+      },
+    },
+  ],
   // Temporarily removes Start Free Trial button conversion event tracking.
   // To reinstate this, uncomment below and restore trackTrialClick.js file
   //  clientModules: [
@@ -282,6 +291,7 @@ module.exports = {
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
       contextualSearch: false,
+      searchPagePath: 'docs-search', // Default value is 'search'; renamed to 'docs-search' so it doesn't conflict with '/Search' redirect
       insights: true,
       insightsConfig: {
         useCookie: true, // alt to useCookie: true,
@@ -434,29 +444,16 @@ module.exports = {
               },
             ],
           },
-          // {
-          //  type: 'html',
-          //  position: 'right',
-          //  value: 'google_translate',
-          // },
-          // {
-          //  to: 'https://www.sumologic.com/sign-up',
-          //  position: 'right',
-          //  className: 'header-trial',
-          //  alt: 'Sign up for a Sumo Logic free trial',
-          // },
         //{
           //className: 'header-github-link',
           //to: 'https://github.com/SumoLogic/sumologic-documentation',
           //position: 'right',
           //alt: 'Link to Sumo Logic Docs GitHub repository',
         //},
-        // The following is not even needed to render the search bar, since it is
-        // already done with the Algolia coding above.
-        //  {
-        //    type: 'search',
-        //    position: 'right',
-        //  },
+          {
+            type: 'search',
+            position: 'left',
+          },
         ],
       },
       footer: {
