@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="100"/>
 
-The Palo Alto Cortex XDR Source provides a secure endpoint to receive alerts from the [Get Alerts Incident Management API](https://docs.paloaltonetworks.com/cortex/cortex-xdr/cortex-xdr-api/cortex-xdr-apis/incident-management/get-alerts.html#idbad18e18-5c). It securely stores the required authentication, scheduling, and state tracking information.
+The Palo Alto Cortex XDR Source provides a secure endpoint to receive alerts from the [Get Alerts Incident Management API](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Cortex-XDR-API-Overview). It securely stores the required authentication, scheduling, and state tracking information.
 
 By using the Cortex XDR Source Integration, you can easily access and analyze data from multiple sources, enabling you to quickly identify and respond to potential threats. This Source offers you with a centralized view of security events, allowing you to correlate data from various sources and gain deeper insights into security incidents.
 
