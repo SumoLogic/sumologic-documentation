@@ -10,11 +10,11 @@ The **Dashboard** page allows you to view log data on the same dashboard in an i
 
 ## Create a dashboard
 
-There are two ways to create a dashboard, either by using the following method or by creating it directly from the [Log Search page](#log-search-page). Follow the steps below to create a dashboard under a selected child org:
+There are two ways to create a dashboard at child-org level, either by using the following method or by creating it directly from the [Log Search page](#log-search-page). Follow the steps below to create a dashboard under a selected child org:
 
 1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.
 1. Select the **Dashboard** text field at the top of the window and enter a unique name for your new dashboard.
-1. From the **Select Org** dropdown, select the child org under which you need to create the dashboard.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/select-org-for-dashboard.png')} alt="select-org-for-dashboard" style={{border: '1px solid gray'}} width="800" />
+1. From the **Select Org** dropdown, select the child org under which you need to create the dashboard. You can either select one child org or multiple child orgs.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/select-org-for-dashboard.png')} alt="select-org-for-dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ## Add a panel
 
@@ -24,24 +24,29 @@ To add a panel to a new dashboard, do the following:
 
 1. Select a panel type by clicking the corresponding icon. To learn more about panels, refer to [Dashboard types](/docs/dashboards/panels).<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="600" />
 1. You are prompted to [provide a query](#add-a-log-query).
-1. If you have selected the parent org while creating the dashboard, you will be able to select the child org under which the panel query needs to run.
+1. If you have selected the parent org while creating the dashboard, you will be able to select the child org under which the panel query needs to run. You can either select one child org or multiple child orgs.
     :::note
-    The autocomplete feature while writing the query will run with respect to the selected child org.
+    The autocomplete feature while writing the query will run with respect to the selected child org(s).
     :::
 1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
-1. Once the panel is added the the dashboard, the panel query will display the results based on the [default org set for the dashboard](#set-a-default-org).
+1. Once the panel is added to the dashboard, the panel query will display the results based on the [default org set for the dashboard](#set-a-default-org).
 
 You can customize a chart on a dashboard panel in a variety of ways. To include changing the chart type to analyze the data in another format. See [Modify a Chart](./panels/modify-chart.md) for details on all the available options.
 
 :::note
 - Currently, this capability is limited only to log data.
-- We only support selecting one child org to perform the log search.
 :::
 
 ## Add a log query
 
-Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. A few important things to note are:
+Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. 
 
+There can be two possible errors while running the multi-child org queries:
+
+- **Partial success**. This occurs when you run a query across all child orgs, and while some child orgs successfully execute, one or more encounter failures. Despite the failures, the dashboard with aggregate results from the successfully executed child orgs will be displayed. To resolve the failure, refer to the audit logs ([`_index=sumologic_system_events`](/docs/manage/security/audit-indexes/system-event-index/)) for detailed information on the failure query.
+- **Error**. This occurs when you run a query across all child orgs, and all child orgs encounter failures with no child orgs returning the successful result. To resolve the failure, refer to the audit logs (`_index=sumologic_system_events`) for detailed information on the failure query.
+
+A few important things to note are:
 * Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list. 
 * By default, the query builder is set to **Logs**. 
 * Joining log queries in a separate query is not supported.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-log-query.png')} alt="Add log query" style={{border: '1px solid gray'}} width="800" />
@@ -55,10 +60,10 @@ Follow the below steps to change the default child org:
 
 ## Log Search page
 
-To create a Dashboard from the [Log Search page](/docs/search):
+To create a Dashboard from the [Log Search page](/docs/search/search-across-child-orgs/):
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Log Search** page.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs** > **Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.
-1. Click the <img src={useBaseUrl('img/search/get-started-search/search-page/child-org-select-button.png')} alt="child-org-select-button" style={{border: '1px solid gray'}} width="30"/> button to select the child org where you want to query. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/child-org-dropdown.png')} alt="child-org-dropdown" style={{border: '1px solid gray'}} width="800"/>
+1. Click the <img src={useBaseUrl('img/search/get-started-search/search-page/child-org-select-button.png')} alt="child-org-select-button" style={{border: '1px solid gray'}} width="30"/> button to select the child org where you want to query. You can either select one child org or multiple child orgs. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/child-org-dropdown.png')} alt="child-org-dropdown" style={{border: '1px solid gray'}} width="800"/>
 1. Enter the required query and click the search button to obtain the search results.
 1. From the Log Search page click the **Add to Dashboard** button on the **Aggregates tab** after running your aggregate query.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-dashboard-new-logs.png')} alt="Add to dashboard new logs" style={{border: '1px solid gray'}} width="700" />
 1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you will have an option to select **Create New Dashboard** with your name. Select that option.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Enter-dashboard-new-name-logs.png')} alt="Enter dashboard new name logs" style={{border: '1px solid gray'}} width="400" />
