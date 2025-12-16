@@ -49,7 +49,7 @@ The **Region** is the region where your **KnowBe4** account is located. To know 
 
 #### API Token
 
-The **API security token** is used to authenticate with KnowBe4 APIs. To get the **API token**, follow the steps mentioned in the [KnowBe4 API Token](https://support.knowbe4.com/hc/en-us/articles/115016090908-Reporting-API-Overview#h_01HBDW9MRQ3XEWZCYK0S0T6MDC).
+The **API security token** is required to authenticate the KnowBe4 APIs. To get the **API token**, follow the steps mentioned in the [KnowBe4 Documentation](https://support.knowbe4.com/hc/en-us/articles/115016090908-Reporting-API-Overview#h_01HBDW9MRQ3XEWZCYK0S0T6MDC).
 
 ### Source configuration
 
