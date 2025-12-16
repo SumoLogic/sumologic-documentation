@@ -41,16 +41,16 @@ Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend 
 
 <div class="responsive-table">
 
-| Deployment | Collection endpoint | OpenTelemetry collector endpoint | AWS Region of Sumo PrivateLink endpoint service |
-|:-----------|:---------------------|:----------------------------------|:------------------------------------------------|
-| AU         | `collectors.au.sumologic.com` | `open-collectors.au.sumologic.com` | `ap-southeast-2` |
-| CA         | `collectors.ca.sumologic.com` | `open-collectors.ca.sumologic.com` | `ca-central-1` |
-| DE         | `collectors.de.sumologic.com` | `open-collectors.de.sumologic.com` | `eu-central-1` |
-| EU         | `collectors.eu.sumologic.com`<br/>`endpoint1.collection.eu.sumologic.com` | `open-collectors.eu.sumologic.com` | `eu-west-1` |
-| JP         | `collectors.jp.sumologic.com` | `open-collectors.jp.sumologic.com` | `ap-northeast-1` |
-| KR         | `collectors.kr.sumologic.com` | `open-collectors.kr.sumologic.com` | `ap-northeast-2` |
-| US1        | `collectors.sumologic.com`<br/>`endpoint1.collection.sumologic.com`<br/>`endpoint2.collection.sumologic.com`<br/>`endpoint3.collection.sumologic.com`<br/>`endpoint4.collection.sumologic.com`<br/>`endpoint5.collection.sumologic.com` | `open-collectors.sumologic.com` | `us-east-1` |
-| US2        | `collectors.us2.sumologic.com`<br/>`endpoint1.collection.us2.sumologic.com`<br/>`endpoint2.collection.us2.sumologic.com`<br/>`endpoint3.collection.us2.sumologic.com`<br/>`endpoint4.collection.us2.sumologic.com`<br/>`endpoint5.collection.us2.sumologic.com`<br/>`endpoint6.collection.us2.sumologic.com`<br/>`endpoint7.collection.us2.sumologic.com`<br/>`endpoint8.collection.us2.sumologic.com`<br/>`endpoint9.collection.us2.sumologic.com` | `open-collectors.us2.sumologic.com` | `us-west-2` |
+| Deployment | Collection endpoint | OpenTelemetry collector endpoint | OpenTelemetry collector endpoint                   | AWS Region of Sumo PrivateLink endpoint service |
+|:-----------|:---------------------|:----------------------------------|:---------------------------------------------------|:------------------------------------------------|
+| AU         | `collectors.au.sumologic.com` | `open-collectors.au.sumologic.com` | `opamp-collectors.au.sumologic.com`                | `ap-southeast-2`                                |
+| CA         | `collectors.ca.sumologic.com` | `open-collectors.ca.sumologic.com` | `opamp-collectors.ca.sumologic.com`                 | `ca-central-1`                                  |
+| DE         | `collectors.de.sumologic.com` | `open-collectors.de.sumologic.com` | `opamp-collectors.de.sumologic.com` |  `eu-central-1`                                 |
+| EU         | `collectors.eu.sumologic.com`<br/>`endpoint1.collection.eu.sumologic.com` | `opamp-collectors.eu.sumologic.com` | `open-collectors.eu.sumologic.com`                 | `eu-west-1`                                     |
+| JP         | `collectors.jp.sumologic.com` | `open-collectors.jp.sumologic.com` | `opamp-collectors.jp.sumologic.com`                 | `ap-northeast-1`                                |
+| KR         | `collectors.kr.sumologic.com` | `open-collectors.kr.sumologic.com` | `opamp-collectors.kr.sumologic.com`                 | `ap-northeast-2`                                |
+| US1        | `collectors.sumologic.com`<br/>`endpoint1.collection.sumologic.com`<br/>`endpoint2.collection.sumologic.com`<br/>`endpoint3.collection.sumologic.com`<br/>`endpoint4.collection.sumologic.com`<br/>`endpoint5.collection.sumologic.com` | `open-collectors.sumologic.com` | `opamp-collectors.sumologic.com`                    | `us-east-1`                                     |
+| US2        | `collectors.us2.sumologic.com`<br/>`endpoint1.collection.us2.sumologic.com`<br/>`endpoint2.collection.us2.sumologic.com`<br/>`endpoint3.collection.us2.sumologic.com`<br/>`endpoint4.collection.us2.sumologic.com`<br/>`endpoint5.collection.us2.sumologic.com`<br/>`endpoint6.collection.us2.sumologic.com`<br/>`endpoint7.collection.us2.sumologic.com`<br/>`endpoint8.collection.us2.sumologic.com`<br/>`endpoint9.collection.us2.sumologic.com` | `open-collectors.us2.sumologic.com` | `opamp-collectors.us2.sumologic.com`                | `us-west-2`                                     |
 
 </div>
 
