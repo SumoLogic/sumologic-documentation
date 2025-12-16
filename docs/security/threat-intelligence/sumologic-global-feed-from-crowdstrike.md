@@ -14,47 +14,40 @@ In partnership with CrowdStrike, Sumo Logic maintains the **_sumo_global_feed_cs
 ## Indicators of Compromise (IOC)
 
 The following [Indicators of Compromise](https://www.crowdstrike.com/en-us/cybersecurity-101/threat-intelligence/indicators-of-compromise-ioc/) types are available from CrowdStrike:
-* ip_address
+* binary_string
+* bitcoin_address
+* campaign_id
 * domain
-* url
+* ip_address
 * email_address
 * event_name
-* x509_subject
-* ip_address_block
-* x509_serial
-* binary_string
-* service_name
-* user_agent
-* bitcoin_address
-* file_path
-* registry
-* username
 * file_name
-* password
-* campaign_id
-* mutex_name
+* file_path
 * hash_md5
 * hash_sha1
 * hash_sha256
+* ip_address_block
+* mutex_name
+* password
+* registry
+* service_name
+* url
+* user_agent
+* username
+* x509_serial
+* x509_subject
 
 ### Samples for the different IOC types
 
-| IOC Type      | IOC                                                   |
-|---------------|-------------------------------------------------------|
-| SHA256        | `6c1bce76f4d2358656132b6b1d471571820688ccdbaca0d86d0ca082b9390536` |
-| SHA256        | `b101cd29e18a515753409ae86ce68a4cedbe0d640d385eb24b9bbb69cf8186ae` |
-| IP Address    | `84.112.91.96`                                          |
-| IP Address    | `158.69.196.112`                                        |
-| File          | `updater.exe`                                           |
-| File          | `0.exe`                                                 |
-| URL           | `http://tycahatit.ru/zapoy/gate.php` |
-| URL           | `http://ningwitjohnno.ru/zapoy/gate.php` |
-| Domain        | `9jdco01e.ru`                                           |
-| Domain        | `ningwitjohnno.ru`                                      |
-| Email         | `sherigerber@mail.ru`                                  |
-| Email         | `nosiwdcd5@outlook.com`                                 |
-| Hash MD5      | `9da2a54e98ddb9a0adb4ace3dda4d8e0`                      |
-| Hash MD5      | `832efb3fce4b1e16d610d5856f1401bb`                      |
+| IOC type | IOC |
+|:--|:--|
+| Domain | `9jdco01e.ru`|
+| Email | `sherigerber@mail.ru`|
+| File | `updater.exe`  |
+| Hash MD5 | `9da2a54e98ddb9a0adb4ace3dda4d8e0` |
+| IP Address | `84.112.91.96`                                          |
+| SHA256 | `6c1bce76f4d2358656132b6b1d471571820688ccdbaca0d86d0ca082b9390536`|
+| URL | `http://tycahatit.ru/zapoy/gate.php`|
 
 ### Expiration of IOCs and threats
 
@@ -192,7 +185,7 @@ Once an indicator has been marked with a malicious confidence level, it continue
 |:-------------------|:----------------------------------------|
 | **DomainType**    | - DomainType/ActorControlled: It is believed the malicious actor is still in control of this domain.<br/>- DomainType/DGA: Domain is the result of malware utilizing a domain generation algorithm.<br/>- DomainType/DynamicDNS: Domain is owned or used by a dynamic DNS service.<br/>- DomainType/DynamicDNS/Afraid: Domain is owned or used by the Afraid.org dynamic DNS service.<br/>- DomainType/DynamicDNS/DYN: Domain is owned or used by the DYN dynamic DNS service.<br/>- DomainType/DynamicDNS/Hostinger: Domain is owned or used by the Hostinger dynamic DNS service.<br/>- DomainType/DynamicDNS/noIP: Domain is owned or used by the NoIP dynamic DNS service.<br/>- DomainType/DynamicDNS/Oray: Domain is owned or used by the Oray dynamic DNS service.<br/>- DomainType/KnownGood: Domain itself (or the domain portion of a URL) is known to be legitimate, despite having been associated with malware or malicious activity.<br/>- DomainType/LegitimateCompromised: Domain does not typically pose a threat but has been compromised by a malicious actor and may be serving malicious content.<br/>- DomainType/PhishingDomain: Domain has been observed to be part of a phishing campaign.<br/>- DomainType/Sinkholed: Domain is being sinkholed, likely by a security research team. This indicates that, while traffic to the domain likely has a malicious source, the IP address to which it is resolving is controlled by a legitimate third party.<br/>- DomainType/StrategicWebCompromise: Indicates targeted activity, often compromising a legitimate domain used as a watering hole by targeted organizations.<br/>- DomainType/Unregistered: Domain is not currently registered with any registrars. |
 | **EmailAddressType** | - EmailAddressType/DomainRegistrant: Email address has been supplied in the registration information for known malicious domains.<br/>- EmailAddressType/SpearphishSender: Email address has been used to send spearphishing emails. |
-|                   | **IntelNews**: The Intel Flash Report ID an indicator is associated with (e.g., IntelNews/NEWS-060520151900).                                                                                                               |
+| **IntelNews**  | The Intel Flash Report ID an indicator is associated with (e.g., IntelNews/NEWS-060520151900).  |
 | **IPAddressType** | - IPAddressType/HtranDestinationNode: An IP address with this label is being used as a destination address with the HTran Proxy Tool.<br/>- IPAddressType/HtranProxy: An IP address with this label is being used as a relay or proxy node with the HTran Proxy Tool.<br/>- IPAddressType/LegitimateCompromised: It is suspected an IP address with this label is compromised by malicious actors.<br/>- IPAddressType/Parking: IP address is likely being used as a parking IP address.<br/>- IPAddressType/PopularSite: IP address could be utilized for a variety of purposes and may appear more frequently than other IPs.<br/>- IPAddressType/SharedWebHost: IP address may be hosting more than one website.<br/>- IPAddressType/Sinkhole: IP address is likely a sinkhole being operated by a security researcher or vendor.<br/>- IPAddressType/TorProxy: IP address is acting as a TOR (The Onion Router) proxy. |
 | **Status**        | - Status/ConfirmedActive: Indicator is likely to be currently supporting malicious activity.<br/>- Status/ConfirmedInactive: Indicator is no longer used for malicious purposes.                                            |
 | **Target**        | The activity associated with this indicator is known to target the indicated vertical sector:<br/>- Aerospace<br/>- Agricultural<br/>- Chemical<br/>- Defense<br/>- Dissident<br/>- Energy<br/>- Extractive<br/>- Financial<br/>- Government<br/>- Healthcare<br/>- Insurance<br/>- InternationalOrganizations<br/>- Legal<br/>- Manufacturing<br/>- Media<br/>- NGO<br/>- Pharmaceutical<br/>- Research<br/>- Retail<br/>- Shipping<br/>- Technology<br/>- Telecom<br/>- Transportation<br/>- Universities |
