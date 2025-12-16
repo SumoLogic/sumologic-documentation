@@ -69,7 +69,7 @@ To configure the KnowBe4 API Source:
 9. In **API Key (Phishing Tests)**, authenticate your account by entering your API key. You can access your API key or generate a new one from **Reporting API Management Console**. See [API Token](#api-token) section.
 10. The **Phishing Poll Interval** is set for 1 hour by default. You can adjust it based on your needs.
 11. Select the **Collect External Events** checkbox to fetch a list of all external events. By default, **Collect External Events** checkbox will not be selected.
-12. In **API Key (External Events)**, authenticate your account by entering your API key. You can access your API key or generate a new one from **User Event API Management Console**. See [API Token](#api-token) section.
+12. In **API Key (External Events)**, authenticate your account by entering your API key collected from KnowBe4 account. You can access your API key or generate a new one from **User Event API Management Console**. See [API Token](#api-token) section.
 13. When you are finished configuring the Source, click **Submit**.
 
 ## Metadata Field
