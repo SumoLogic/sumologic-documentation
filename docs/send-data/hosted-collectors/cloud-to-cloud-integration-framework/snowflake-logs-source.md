@@ -20,9 +20,9 @@ The data will be collected from Snowflake's database using the connection string
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 minutes | Query History Logs |
-| 5 minutes | Security Logs |
-| 5 minutes | Custom Event Logs |
+| 5 minutes | [Query History Logs](https://docs.snowflake.com/en/sql-reference/account-usage/query_history) |
+| 5 minutes | [Security Logs](https://docs.snowflake.com/en/sql-reference/account-usage) |
+| 5 minutes | [Custom Event Logs](https://docs.snowflake.com/en/developer-guide/logging-tracing/event-table-setting-up) |
 
 :::info
 * Ensure you have the Snowflake custom role with the necessary permissions to collect the Snowflake logs from its database.
@@ -71,11 +71,12 @@ To configure a Snowflake source:
     - **Programmatic Access Token**:
       1. In **Snowflake Programmatic Access Token**, enter your Programmatic Access Token collected from the [Snowflake platform](#vendor-configuration).
 1. **Log Types**. Select the types of logs you want to collect data from:
-    - **Collect Query History Logs**. For example, `SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY`.
-    - **Collect Security Logs**. For example, `SNOWFLAKE.ACCOUNT_USAGE.LOGIN_HISTORY`, `SNOWFLAKE.ACCOUNT_USAGE.SESSIONS`, `SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_USERS`, `SNOWFLAKE.ACCOUNT_USAGE.DATA_TRANSFER_HISTORY`, and `SNOWFLAKE.ACCOUNT_USAGE.STAGES`.
-    - **Collect Custom Event Logs (Format: DATABASE.SCHEMA.TABLE)**. Your custom event tables. For example, `DATABASE.SCHEMA.TABLE`.
+    - **Collect Query History Logs**. This configuration option will collect data from `SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY`.
+    - **Collect Security Logs**. This configuration option will collect data from `SNOWFLAKE.ACCOUNT_USAGE.LOGIN_HISTORY`, `SNOWFLAKE.ACCOUNT_USAGE.SESSIONS`, `SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_USERS`, `SNOWFLAKE.ACCOUNT_USAGE.DATA_TRANSFER_HISTORY`, and `SNOWFLAKE.ACCOUNT_USAGE.STAGES` tables.
+    - **Collect Custom Event Logs (Format: DATABASE.SCHEMA.TABLE)**. Your custom event tables. The custom event tables should have the table schema as mentioned [here](https://docs.snowflake.com/en/developer-guide/logging-tracing/event-table-columns#label-event-table-schema). For example, `SNOWFLAKE_LEARNING_DATABASE.MY_DATABASE_SCHEMA.MY_CUSTOM_EVENT_TABLE`.
         :::note
-        The Snowflake Custom Events feature does not support timestamps with time zones when storing generated data in custom tables. Consequently, data is stored according to the Snowflake account's current time zone. Changing the account's time zone after a source has been configured to collect custom events can lead to data duplication or loss. Therefore, it is recommended not to change the time zone setting once the source has been configured to collect custom events.
+        * The Snowflake Custom Events feature does not support timestamps with time zones when storing generated data in custom tables. Consequently, data is stored according to the Snowflake account's current time zone. Changing the account's time zone after a source has been configured to collect custom events can lead to data duplication or loss. Therefore, it is recommended not to change the time zone setting once the source has been configured to collect custom events.
+        * The custom event table should have a column with the name `TIMESTAMP`.
         :::
 1. **Polling Interval**. The polling interval is set for 5 minutes by default and can be configured to a maximum of 60 minutes. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
