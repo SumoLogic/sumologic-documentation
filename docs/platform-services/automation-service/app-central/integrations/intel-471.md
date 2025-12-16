@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.1  
 Updated: Jul 06, 2023***
 
-Intel 471provides comprehensive coverage of the criminal underground, SaaS platform which exposes locally sourced human-driven, automation-enabled insights to gain broad coverage and monitor the threats.
+Intel 471 provides comprehensive coverage of the criminal underground, SaaS platform which exposes locally sourced human-driven, automation-enabled insights to gain broad coverage and monitor the threats.
 
 ## Actions
 
@@ -47,7 +47,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
    
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/intel-471-configuration.png')} style={{border:'1px solid gray'}} alt="Intel 471 configuration" width="400"/>
 
-For information about Intel 471, see the [Intel 471 website](https://intel471.com/resources). The Intel471 documentation is not public and can only be accessed by partners or customers.
+For information about Intel 471, see the [Intel 471 website](https://intel471.com/resources). The Intel 471 documentation is not public and can only be accessed by partners or customers.
 
 ## Category
 

@@ -49,7 +49,7 @@ To create a macro, follow the steps below:
 
 ### Limitations
 
-- You can create a maximum of 50 macros.
+- You can create a maximum of 600 macros.
 - You can add a maximum of 5 arguments.
 - You are only allowed to use single expression.
 - You can only use the below listed argument validations:
