@@ -110,6 +110,10 @@ Yes. Analysts can override verdicts and flag feedback within the UI. These actio
 
 ## Additional resources
 
+* Demos: 
+   * [SOC Analyst Agent](https://www.sumologic.com/demo/soc-analyst-agent)
+   * [Mobot walkthrough](https://www.sumologic.com/demo/mobot-walkthrough)
+* Blogs: 
+   * [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc)
+   * [New agents in the Dojo: Expanded Sumo Logic Dojo AI](https://www.sumologic.com/blog/agents-dojo-ai-soc-analyst-mcp)
 * Sumo Logic: [Dojo AI](https://www.sumologic.com/solutions/dojo-ai)
-* Blog: [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc)
-* Demo: [Mobot](https://www.sumologic.com/demo/mobot-walkthrough)
