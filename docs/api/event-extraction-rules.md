@@ -5,6 +5,12 @@ sidebar_label: Event Extraction Rules
 description: Use Event Analytics Management APIs to configure Event Extraction Rules.
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
