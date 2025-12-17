@@ -9,16 +9,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::note
 * The Setup Wizard is now available in both the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/) and [**New UI**](/docs/get-started/sumo-logic-ui). We recommend using the [App Catalog](/docs/integrations/) to onboard your data.
-* The old Setup Wizard in the Classic UI has been deprecated, and the **Integrate with Sumo Logic** tile has been removed. If you are still using the older version and experience issues, please contact Sumo Logic Customer Support.
+* The old Setup Wizard in the Classic UI has been deprecated, and the **Integrate with Sumo Logic** tile has been removed. If you are still using the older version and experience issues, contact [Support](https://support.sumologic.com/support/s).
 :::
 
-The Setup Wizard lets you get data in your Sumo Logic account quickly. It guides you step-by-step based on the type of data you want to send. After data collection is running, the Setup Wizard installs a Sumo Logic App with pre-configured Dashboards that allow you to analyze your data. The Setup Wizard provides detailed instructions to help you with each step of the configuration.
+The Setup Wizard lets you get data into your Sumo Logic account quickly. It guides you step-by-step based on the type of data you want to send. After data collection is running, the Setup Wizard installs a Sumo Logic App with pre-configured Dashboards that allow you to analyze your data. The Setup Wizard provides detailed instructions to help you with each step of the configuration.
 
 Before you begin, [sign up](/docs/get-started/sign-up.md) for a Sumo Logic account and activate it.
 
 Follow the steps below to open the Setup Wizard:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu, select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. Click the **Setup Wizard** link on the Collection page.
 <img src={useBaseUrl('img/get-started/setup-wizard.png')} alt="Setup Wizard" style={{border: '1px solid gray'}} width="700" />
 
@@ -56,13 +56,13 @@ The following file types are **not** supported:
 
 ## Sumo Logic App Catalog
 
-Clicking the **Sumo Logic App Catalog** in the Setup Wizard will redirect you to the Sumo Logic App Catalog page where you can find several types of apps available in Sumo Logic.
+Clicking the **Sumo Logic App Catalog** in the Setup Wizard will redirect you to our App Catalog, where you can find several types of apps available in Sumo Logic.
 <img src={useBaseUrl('img/send-data/setup-wizard/app-catalog.png')} alt="Setup Wizard" style={{border: '1px solid gray'}} width="700" />
 
 ## Learn
 
-Clicking **Learn** in the Setup Wizard will redirect you to the **Learn** tab on the home screen, which is a built-in education and onboarding hub designed to help you quickly understand and use the Sumo Logic effectively.
-The Learn page will typically help you find the getting started guides for onboarding and initial setup, product documentation and micro lessons, and links to training courses, certifications, and community resources.
+Clicking **Learn** in the Setup Wizard will redirect you to the **Learn** tab on the home screen, which is a built-in education and onboarding hub designed to help you quickly understand and use Sumo Logic effectively.
+The Learn page will typically help you find the getting-started guides for onboarding and initial setup, product documentation, micro lessons, and links to training courses, certifications, and community resources.
 <img src={useBaseUrl('img/send-data/setup-wizard/learn-tab.png')} alt="Setup Wizard" style={{border: '1px solid gray'}} width="700" />
 
 ## Troubleshoot Setup Wizard issues
@@ -81,8 +81,8 @@ Otherwise, make sure to activate your account using the Sumo Logic activation em
 
 ### "We are unable to ingest the data from the source you specified."
 
-When using the **Upload Files** option from the Setup Wizard it creates a Hosted Collector with the name "File Uploads". If a Hosted Collector with the same name already exists the Setup Wizard will use the existing Collector.
+When using the **Upload Files** option from the Setup Wizard, it creates a Hosted Collector with the name "File Uploads". If a Hosted Collector with the same name already exists the Setup Wizard will use the existing Collector.
 
 **Upload Files** only works if no other Sources are running on the "File Uploads" Collector. The "File Uploads" Collector can only process one Source at a time.
 
-Do not add Sources to the "File Uploads" Collector, reserve it for the Setup Wizard.
+Do not add Sources to the "File Uploads" Collector; reserve it for the Setup Wizard.
