@@ -23,7 +23,7 @@ Google Identity Platform is a cloud-based authentication service that centralize
 
 ## Google Identity Platform Authentication Configuration
 
-Our Google Identity Platform integration support two types of authentication, Service Account and WIF (Workload Identity Federation). We recommend using WIF since it is more secure and easier to manage. For more information, see [Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation).
+Our Google Identity Platform integration supports two types of authentication, Service Account and WIF (Workload Identity Federation). We recommend using WIF since it is more secure and easier to manage. For more information, see [Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation).
 
 ## Required AWS details from Sumo Logic
 
@@ -40,8 +40,8 @@ To configure the Google Identity Platform integration using WIF authentication, 
 To [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-federation) in Google Workspace needed to configure the Google Identity Platform integration, follow these steps:
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
-3. Go to the **API&Services**
-4. In the same page click on **ENABLED API AND SERVICES** and search for Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API, Google Identity Platform API and enable it all.
+3. Go to the **API&Services**.
+4. In the same page click on **ENABLED API AND SERVICES** and search for Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API, Google Identity Platform API, and enable it all.
 5. Go to the **IAM & Admin** > **Service Accounts** page.
 6. Click **CREATE SERVICE ACCOUNT**. A [service account](https://cloud.google.com/iam/docs/service-accounts-create) is required to access the Google Identity Platform.
 7. While creating the service account, in **Permissions** add the role **Service Account Token Creator** and click on **DONE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-11.png')} style={{border:'1px solid gray'}} alt="google-chat" width="800"/>
@@ -88,8 +88,11 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 <IntegrationsAuth/>
 * <IntegrationLabel/>
 * **Private Key Json**. Provide the content of the JSON file generated [above](#google-identity-platform-authentication-configuration). Open the file and copy-paste the whole content in the field.
+
 * **WIF Private Key Json**. Provide the content of the Workload Identity Federation JSON file generated [above](#google-identity-platform-authentication-configuration). Open the file and copy-paste the whole content in the field.
+
 * **scopes**. Default scope is already added as `https://www.googleapis.com/auth/identitytoolkit`, if not then add this scope.
+
 * **Project ID**. Provide the Google Identity Platform Project ID where the identity platform actions will be performed.
 * <IntegrationEngine/>
 * <IntegrationProxy/>
