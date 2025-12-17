@@ -12,6 +12,6 @@ We're excited to announce that the Setup Wizard is now available in both the [**
 
 We are removing the **Integrate with Sumo Logic** tile, which offered only a limited subset of apps, and deprecating the old Setup Wizard in the Classic UI. To provide a clearer and more complete experience, you will now be directed to the Sumo Logic App Catalog, where all supported apps are available.
 
-If you are still using the older version and experience issues, please [raise a support ticket](https://support.sumologic.com/support/s/) or contact Sumo Logic Customer Support.
+If you are still using the older version and experience issues, contact [Support](https://support.sumologic.com/support/s).
 
 [Learn more](/docs/send-data/setup-wizard/).
