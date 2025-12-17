@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
 ***Version: 1.0  
-Updated: Dec 16, 2025***
+Updated: Dec 17, 2025***
 
 Google Identity Platform is a cloud-based authentication service that centralizes user identity management and sign-in flows for applications, offering extensibility and advanced controls suitable for enterprise environments.
 
@@ -100,4 +100,4 @@ For information about Google Identity Platform, see [Google identity platform do
 
 ## Change Log
 
-* December 16, 2025 (v1.0) - First upload
+* December 17, 2025 (v1.0) - First upload
