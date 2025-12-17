@@ -48,4 +48,10 @@ See the following articles to learn about Sumo Logic's threat intelligence capab
   <p>Learn about the mapping of threat intelligence schema from vendor sources to Sumo Logic schema.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/security/threat-intelligence/sumologic-global-feed-from-crowdstrike/')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Global Feed from CrowdStrike</h4></a>
+  <p>Learn about Sumo Logic's threat intelligence feed of indicators from CrowdStrike.</p>
+  </div>
+</div>
 </div>

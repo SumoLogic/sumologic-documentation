@@ -1014,7 +1014,6 @@ module.exports = {
         'manage/manage-subscription/organization-usage-limits',
         'manage/manage-subscription/scan-budgets',
         'manage/manage-subscription/fedramp-capabilities',
-        'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
       ]
     },
@@ -3105,6 +3104,7 @@ integrations: [
         'security/threat-intelligence/threat-intelligence-indicators',
         'security/threat-intelligence/upload-formats',
         "security/threat-intelligence/threat-intelligence-mapping",
+        "security/threat-intelligence/sumologic-global-feed-from-crowdstrike",
       ],
     },
   ],
@@ -3203,7 +3203,7 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'beta/index'},
       items: [
-        'manage/manage-subscription/beta-opt-in',
+        'api/metrics-searches'
       ],
     },
   ],
