@@ -42,9 +42,9 @@ You need the `Manage Event Extraction Rules` [role capability](/docs/manage/user
         1. **Log Message Field**. Select the field from the incoming log message that should be compared with the chosen event record field.
     1. **Rule Details**. Enter the rule name and rule description (optional) of your choice that makes you easy to identify the rule.
 
-## Search for User Data Events
+## Search for user data events
 
-Searching the User Data Events is the same as running a normal search against your ingested data. You specify the `_index` metadata field with `sumologic_userdata_events`.
+Searching the user data events is the same as running a normal search against your ingested data. You specify the `_index` metadata field with `sumologic_userdata_events`.
 
 For example, to search for system events:
 
