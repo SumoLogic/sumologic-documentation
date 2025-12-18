@@ -49,9 +49,9 @@ Searching the user data events is the same as running a normal search against yo
 For example, to search for system events:
 
 1. In the Search page, enter the following: `_index=sumologic_userdata_events`.
-  :::info
-  Make sure to enter the query exactly as shown. Changing any part of the query renders it ineffective.
-  :::
+     :::info
+     Make sure to enter the query exactly as shown. Changing any part of the query renders it ineffective.
+     :::
 1. Choose the time range for the events that you'd like to review.
 1. Click **Start** to run the search.
 
