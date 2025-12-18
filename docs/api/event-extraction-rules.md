@@ -17,7 +17,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/operations/rules.png')} alt="Thumbnail icon" width="50"/>
 
-The Event Analytics Management API allows you to configure event extraction rules from HTTP endpoints. For more information, refer to the [Event Extraction Rules](/docs/manage/event-extraction-rules).
+The Event Analytics Management API allows you to configure event extraction rules from HTTP endpoints. For more information, refer to [Event Extraction Rules](/docs/manage/event-extraction-rules).
 
 ## Documentation
 
