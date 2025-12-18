@@ -68,7 +68,7 @@ To edit the existing event extraction rule, follow the below steps:
 
 To duplicate the existing event extraction rule, follow the below steps:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Event Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Event Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Event Extraction Rules**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Event Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Event Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Event Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Event Extraction Rules**.
 1. Navigate to the respective event rule which you wish to duplicate.
 1. On the left pane, click **Duplicate** button.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/duplicate-event-extraction-rules.png')} alt="duplicate-event-extraction-rule" style={{border: '1px solid gray'}} width="400"/>
 1. In the event extraction rule editing pane, perform the required editing and click **Submit** to duplicate the changes.
