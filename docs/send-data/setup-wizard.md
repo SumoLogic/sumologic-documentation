@@ -56,7 +56,7 @@ The following file types are **not** supported:
 
 ## Sumo Logic App Catalog
 
-Clicking the **Sumo Logic App Catalog** in the Setup Wizard will redirect you to our App Catalog, where you can find several types of apps available in Sumo Logic.
+Clicking **Sumo Logic App Catalog** in the Setup Wizard will redirect you to our App Catalog, where you can find several types of apps available in Sumo Logic.
 <img src={useBaseUrl('img/send-data/setup-wizard/app-catalog.png')} alt="Setup Wizard" style={{border: '1px solid gray'}} width="700" />
 
 ## Learn
