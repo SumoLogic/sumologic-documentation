@@ -77,7 +77,7 @@ To duplicate the existing event extraction rule, follow the below steps:
 
 To delete the existing event extraction rule, follow the below steps:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Event Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Event Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Event Extraction Rules**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Event Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Event Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Event Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Event Extraction Rules**.
 1. Navigate to the respective event rule which you wish to edit.
 1. On the left pane, click **Delete** button.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/delete-event-extraction-rules.png')} alt="delete-event-extraction-rule" style={{border: '1px solid gray'}} width="400"/>
 1. In the **Delete [rule name] item** pop-up, click on **Delete**.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/delete-confirm-event-extraction-rule.png')} alt="delete-confirm-event-extraction-rule" style={{border: '1px solid gray'}} width="400"/>
