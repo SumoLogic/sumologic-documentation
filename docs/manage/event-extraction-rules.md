@@ -24,7 +24,7 @@ You can create an event extraction rule of your own from scratch by following th
 You need the `Manage Event Extraction Rules` [role capability](/docs/manage/users-roles/roles/role-capabilities/) to create an event extraction rule.
 :::
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Event Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Event Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Event Extraction Rules**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Event Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Event Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Event Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Event Extraction Rules**. 
 1. Click the **+ Add Event Extraction Rule** button on the top right of the table.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/event-extraction-rule.png')} alt="event-extraction-rule" style={{border: '1px solid gray'}} width="800"/>
 1. Enter the following options in the **Create New Event Extraction Rule** page:<br/><img src={useBaseUrl('img/manage/event-extraction-rule/create-event-extraction-rule.png')} alt="create-event-extraction-rule" style={{border: '1px solid gray'}} width="500"/>
     1. **Log Query**. Enter the log search query to filter the logs.
