@@ -21,6 +21,7 @@ Set of scripts to perform actions within Cloud SOAR.
 * **Convert Triage to Incident** *(Custom)* - Convert triage event to incident.
 * **Discard Triage Event** *(Custom)* - Discard triage event.
 * **Get Attachment Data** *(Enrichment)* - Retrieve base64 content of an attachment.
+* **Get Full Triage Event Details** *(Enrichment)* - Retrieve full details of a triage event.
 * **Grab or Reassign Triage Event** *(Custom)* - Grabs or reassign triage event.
 * **List Triage Attachments** *(Enrichment)* - Retrieve a list with triage attachments.
 * **List Triage Columns** *(Enrichment)* - Retrieve a list of columns to use in search.
@@ -29,7 +30,6 @@ Set of scripts to perform actions within Cloud SOAR.
 * **Query Triage Events** *(Enrichment)* - Query triage events by columns.
 * **Update Triage Field** *(Custom)* - Update/edit triage event field.
 * **Update Triage Fields** *(Custom)* - Update/edit multiple triage event fields.
-* **Get Full Triage Event Details** *(Enrichment)* - Retrieve full details of a triage event.
 
 ## Category
 
