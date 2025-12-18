@@ -32,7 +32,7 @@ You need the `Manage Event Extraction Rules` [role capability](/docs/manage/user
     1. **Event Configuration**:
         1. **Event Name**. A unique name for the event.
         1. **Event Description (optional)**. An optional text field to provide additional context about the event—such as its purpose, expected behavior, or when it should occur. Helps to understand the significance of the event.
-        1. **Event Source**. Specify from where the event originates from. This helps you to categorize and track events across different data sources.
+        1. **Event Source**. Specify where the event originates from. This helps you to categorize and track events across different data sources.
         1. **Event Priority**. You can select Low, Medium, or High depending on the importance of the event.
         1. **Event Type**. Defines the category of the event - Deployment, Feature Flag Change, Infrastructure Change, or Configuration Change. This helps you in filtering, grouping, and analyzing events based on their nature.
     1. **Timeline Preview**. This previews how event markers will display in the histogram timeline on the logs page when this rule is active. This marker also displays the event type, source, and priority details. 
