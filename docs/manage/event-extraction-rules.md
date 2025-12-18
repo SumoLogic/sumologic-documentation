@@ -40,7 +40,7 @@ You need the `Manage Event Extraction Rules` [role capability](/docs/manage/user
         1. **Event Record Field**. Choose the field from the event record that you want to compare against incoming log data.
         1. **Match Type**. **Exact Match** is selected by default. This option creates a marker when the value in the incoming log exactly matches the value specified in the event record field.
         1. **Log Message Field**. Select the field from the incoming log message that should be compared with the chosen event record field.
-    1. **Rule Details**. Enter the rule name and rule description (optional) of your choice that makes you easy to identify the rule.
+    1. **Rule Details**. Enter the rule name and rule description (optional) of your choice that makes it easy to identify the rule.
 
 ## Search for user data events
 
