@@ -28,7 +28,7 @@ You need the `Manage Event Extraction Rules` [role capability](/docs/manage/user
 1. Click the **+ Add Event Extraction Rule** button on the top right of the table.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/event-extraction-rule.png')} alt="event-extraction-rule" style={{border: '1px solid gray'}} width="800"/>
 1. Enter the following options in the **Create New Event Extraction Rule** page:<br/><img src={useBaseUrl('img/manage/event-extraction-rule/create-event-extraction-rule.png')} alt="create-event-extraction-rule" style={{border: '1px solid gray'}} width="500"/>
     1. **Log Query**. Enter the log search query to filter the logs.
-    1. **Preview**. Click **Preview Log Messages** button to preview the log messages for the query entered,
+    1. **Preview**. Click the **Preview Log Messages** button to preview the log messages for the query entered,
     1. **Event Configuration**:
         1. **Event Name**. An unique name for the event.
         1. **Event Description (optional)**. An optional text field to provide additional context about the event—such as its purpose, expected behavior, or when it should occur. Helps to understand the significance of the event.
