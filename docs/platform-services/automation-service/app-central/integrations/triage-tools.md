@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/triage-tools.png')} alt="urlscan.io" width="100"/>
 
-***Version: 1.1  
-Updated: Nov 07, 2023***
+***Version: 1.3  
+Updated: Dec 18, 2025***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -21,6 +21,7 @@ Set of scripts to perform actions within Cloud SOAR.
 * **Convert Triage to Incident** *(Custom)* - Convert triage event to incident.
 * **Discard Triage Event** *(Custom)* - Discard triage event.
 * **Get Attachment Data** *(Enrichment)* - Retrieve base64 content of an attachment.
+* **Get Full Triage Event Details** *(Enrichment)* - Retrieve full details of a triage event.
 * **Grab or Reassign Triage Event** *(Custom)* - Grabs or reassign triage event.
 * **List Triage Attachments** *(Enrichment)* - Retrieve a list with triage attachments.
 * **List Triage Columns** *(Enrichment)* - Retrieve a list of columns to use in search.
@@ -81,3 +82,5 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 		- Convert Triage To Incident renamed to Convert Triage to Incident
 		- Grab Or Reassign Triage Event renamed to Grab or Reassign Triage Event
 	+ Added new action: List Users
+* December 18, 2025 (v1.3)
+    + Added new action: Get Full Triage Event Details
