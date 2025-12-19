@@ -102,7 +102,7 @@ If a content push job is stopped or interrupted, you can review the progress and
 1. Click the search button. <img src={useBaseUrl('img/manage/subscriptions/search-button.png')} alt="Search button" width="75"/> <br/>The push history displays. The email of the individual who performed the push appears in the **user_email** column, and the pushed items appear in the **content** column. <br/><img src={useBaseUrl('img/manage/subscriptions/mssp-view-history-query-results.png')} alt="View history query results" style={{border: '1px solid gray'}} width="800"/>
 1. Investigate any push that failed and re-run the push if needed. 
 
-## View push in the audit log​
+## View push in the audit log
 
 You can view all content management push in the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) by using the following query:
 
