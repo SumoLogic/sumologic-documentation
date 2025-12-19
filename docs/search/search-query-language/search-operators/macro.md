@@ -120,7 +120,7 @@ To view any existing macro, follow the steps below:
 Macro recommendations are automatically generated based on the most frequently run queries within your organization. By converting these recommended queries into macros, you can streamline repetitive tasks and improve overall efficiency.
 
 :::note
-Users with the **View Macro** capability can only view macro recommendations. To accept (+ Add Macro) or reject a recommendation, you must have the **Manage Macro** capability.
+Users with the **View Macro** capability can only view macro recommendations. To accept (**+ Add Macro**) or reject a recommendation, you must have the **Manage Macro** capability.
 :::
 
 Follow the below steps to view the macro recommendations:
