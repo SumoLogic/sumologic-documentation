@@ -54,4 +54,10 @@ See the following articles to learn about Sumo Logic's threat intelligence capab
   <p>Learn about Sumo Logic's threat intelligence feed of indicators from CrowdStrike.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/security/threat-intelligence/sumologic-threat-intel-source/')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Sumo Logic Threat Intel Source</h4></a>
+  <p>Learn about Sumo Logic's threat intelligence feed of indicators.</p>
+  </div>
+</div>
 </div>
