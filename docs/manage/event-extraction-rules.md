@@ -98,3 +98,4 @@ To delete the existing event extraction rule, follow the below steps:
 - To restrict user access to extracted events, you can deny access to the `sumologic_userdata_events` index for specific roles. Ensure that you have the **[Usage Management](/docs/manage/users-roles/roles/role-capabilities/#user-management)** capability enabled, as it is required to configure index-level access restrictions.
 - An Event Extraction Rule can generate a maximum of 1,000 events per hour. If this limit is exceeded, the rule may be automatically disabled and a system event will be generated. You can view those by querying the `_index=sumologic_system_events` and `_sourcecategory=eventExtractionRule`. To re-enable the rule, review and refine the rule query to reduce the event volume.
 - Audit logs for all create, read, update, and delete (CRUD) actions performed on Event Extraction Rules are available in the `_index=sumologic_audit_events ` and `_sourcecategory=eventExtractionRule`.
+
