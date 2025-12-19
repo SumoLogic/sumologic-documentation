@@ -50,7 +50,7 @@ You can push the following:
 1. On the **Push Selected Content** box, navigate to the **Destinations** section to select the organizations to push the selected items to. You can push to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2-csiem.png')} alt="Push Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Push**. A **Pushing in progress** dialog is displayed. 
 1. (Optional) If required, follow the below steps to stop the push:
-   1. Clicking the **Stop Push** button on the dialog box. <br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-button.png')} alt="stop-push-button" style={{border: '1px solid gray'}} width="500"/>
+   1. Click the **Stop Push** button on the dialog box. <br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-button.png')} alt="stop-push-button" style={{border: '1px solid gray'}} width="500"/>
    1. Click **Stop Push** on the confirmation pop-up. To view the results table, refer to [View Results](#view-results).<br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-confirmation.png')} alt="stop-push-confirmation" style={{border: '1px solid gray'}} width="400"/>
 
 ### Tips
