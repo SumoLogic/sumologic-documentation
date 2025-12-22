@@ -77,12 +77,6 @@ Click the **Disable** button put the monitor in a disabled state so it will not
 
 <img src={useBaseUrl('img/alerts/monitors/disable-monitor.png')} alt="disable-monitor" style={{border: '1px solid gray'}} width="400"/>
 
-### Mute a monitor
-
-Click the **Mute** button mute the monitor. See also: [Muting Schedules](/docs/alerts/monitors/muting-schedules).
-
-<img src={useBaseUrl('img/alerts/monitors/mute-monitor.png')} alt="mute-monitor" style={{border: '1px solid gray'}} width="400"/>
-
 ### More Actions
 
 Click the **More Actions** menu to view more options, including:
