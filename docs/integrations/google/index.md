@@ -10,6 +10,12 @@ This guide has documentation for all of the apps that Sumo Logic provides for Go
 
 <div className="box-wrapper" >
   <div className="box smallbox card">
+    <div className="container">  
+    <a href={useBaseUrl('docs/integrations/google/app-engine')}><img src={useBaseUrl('img/integrations/google/appengine.png')} alt="Thumbnail icon" width="55"/><h4>Google App Engine</h4></a>
+    <p>A guide to the Sumo Logic app for Google App Engine.</p>
+    </div>
+  </div>
+  <div className="box smallbox card">
     <div className="container">
     <a href={useBaseUrl('docs/integrations/google/cloud-alloydb-for-postgresql')}><img src={useBaseUrl('img/integrations/google/GoogleCloudAlloyDBforPostgreSQL.png')} alt="Thumbnail icon" width="55"/><h4>Google Cloud AlloyDB for PostgreSQL</h4></a>
     <p>A guide to the Sumo Logic app for Google Cloud AlloyDB for PostgreSQL.</p>
@@ -34,6 +40,13 @@ This guide has documentation for all of the apps that Sumo Logic provides for Go
     <p>A guide to the Sumo Logic app for Google Cloud Armor.</p>
     </div>
   </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <img src={useBaseUrl('img/integrations/google/cloudaudit.png')} alt="Thumbnail icon" width="50"/>
+      <h4><a href={useBaseUrl('docs/integrations/google/cloud-audit')}>Google Cloud Audit</a></h4>
+      <p>A guide to the Sumo Logic app for Google Cloud Audit.</p>
+    </div>
+  </div>
   <div className="box smallbox card">
     <div className="container">
     <img src={useBaseUrl('img/integrations/google/GoogleAutoScaler.png')} alt="Thumbnail icon" width="55"/>
@@ -49,17 +62,22 @@ This guide has documentation for all of the apps that Sumo Logic provides for Go
     </div>
   </div>
   <div className="box smallbox card">
+    <div className="container">  
+    <a href={useBaseUrl('docs/integrations/google/bigquery')}><img src={useBaseUrl('img/integrations/google/bigquery.png')} alt="Thumbnail icon" width="50"/><h4>Google BigQuery</h4></a>
+    <p>A guide to the Sumo Logic app for Google BigQuery.</p>
+    </div>
+  </div>
+  <div className="box smallbox card">
     <div className="container">
     <img src={useBaseUrl('img/integrations/google/GoogleCloudBigQueryBIEngine.png')} alt="Thumbnail icon" width="55"/>
     <a href={useBaseUrl('docs/integrations/google/cloud-bigquery-bi-engine')}><h4>Google Cloud BigQuery BI Engine</h4></a>
     <p>A guide to the Sumo Logic app for Google Cloud BigQuery BI Engine.</p>
     </div>
-  </div>
-  <div className="box smallbox card">
-    <div className="container">
-    <img src={useBaseUrl('img/integrations/google/GoogleCloudBigtable.png')} alt="Thumbnail icon" width="55"/>
-    <a href={useBaseUrl('docs/integrations/google/cloud-bigtable')}><h4>Google Cloud Bigtable</h4></a>
-    <p>A guide to the Sumo Logic app for Google Cloud Bigtable.</p>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">      
+      <a href={useBaseUrl('docs/integrations/google/cloud-bigtable')}><img src={useBaseUrl('img/integrations/google/GoogleCloudBigtable.png')} alt="Thumbnail icon" width="50"/><h4>Google Cloud Bigtable</h4></a>
+      <p>A guide to the Sumo Logic app for Google Cloud Bigtable.</p>
     </div>
   </div>
   <div className="box smallbox card">
@@ -92,16 +110,16 @@ This guide has documentation for all of the apps that Sumo Logic provides for Go
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/google/GoogleCloudDataprocMetastore.png')} alt="Thumbnail icon" width="55"/>
-    <a href={useBaseUrl('docs/integrations/google/cloud-dataproc-metastore')}><h4>Google Cloud Dataproc Metastore</h4></a>
-    <p>A guide to the Sumo Logic app for Google Cloud Dataproc Metastore.</p>
+    <img src={useBaseUrl('img/integrations/google/GoogleCloudDataproc.png')} alt="Thumbnail icon" width="55"/>
+    <a href={useBaseUrl('docs/integrations/google/cloud-dataproc')}><h4>Google Cloud Dataproc</h4></a>
+    <p>A guide to the Sumo Logic app for Google Cloud Dataproc.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/google/GoogleCloudDataproc.png')} alt="Thumbnail icon" width="55"/>
-    <a href={useBaseUrl('docs/integrations/google/cloud-dataproc')}><h4>Google Cloud Dataproc</h4></a>
-    <p>A guide to the Sumo Logic app for Google Cloud Dataproc.</p>
+    <img src={useBaseUrl('img/integrations/google/GoogleCloudDataprocMetastore.png')} alt="Thumbnail icon" width="55"/>
+    <a href={useBaseUrl('docs/integrations/google/cloud-dataproc-metastore')}><h4>Google Cloud Dataproc Metastore</h4></a>
+    <p>A guide to the Sumo Logic app for Google Cloud Dataproc Metastore.</p>
     </div>
   </div>
   <div className="box smallbox card">
@@ -146,6 +164,13 @@ This guide has documentation for all of the apps that Sumo Logic provides for Go
     <p>A guide to the Sumo Logic app for Google Cloud Firestore.</p>
     </div>
   </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <img src={useBaseUrl('img/integrations/google/firewall.png')} alt="Thumbnail icon" width="60"/>
+      <h4><a href={useBaseUrl('docs/integrations/google/cloud-firewall')}>Google Cloud Firewall</a></h4>
+      <p>A guide to the Sumo Logic app for Google Cloud Firewall.</p>
+    </div>
+  </div>
   <div className="box smallbox card">
     <div className="container">
     <img src={useBaseUrl('img/integrations/google/GoogleCloudFleetEngine.png')} alt="Thumbnail icon" width="55"/>
@@ -153,11 +178,31 @@ This guide has documentation for all of the apps that Sumo Logic provides for Go
     <p>A guide to the Sumo Logic app for Google Cloud Fleet Engine.</p>
     </div>
   </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <a href={useBaseUrl('docs/integrations/google/cloud-functions')}><img src={useBaseUrl('img/integrations/google/functions.png')} alt="Thumbnail icon" width="50"/><h4>Google Cloud Functions</h4></a>
+      <p>A guide to the Sumo Logic app for Google Cloud Functions.</p>
+    </div>
+  </div>
+  <div className="box smallbox card">
+    <div className="container">
+      <img src={useBaseUrl('img/integrations/google/iam.png')} alt="Thumbnail icon" width="50"/>
+      <h4><a href={useBaseUrl('docs/integrations/google/cloud-iam')}>Google Cloud IAM</a></h4>
+      <p>A guide to the Sumo Logic app for Google Cloud IAM.</p>
+    </div>
+  </div>
   <div className="box smallbox card">
     <div className="container">
     <img src={useBaseUrl('img/integrations/google/GoogleCloudInterconnect.png')} alt="Thumbnail icon" width="55"/>
     <a href={useBaseUrl('docs/integrations/google/cloud-interconnect')}><h4>Google Cloud Interconnect</h4></a>
     <p>A guide to the Sumo Logic app for Google Cloud Interconnect.</p>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+      <img src={useBaseUrl('img/integrations/google/clb.png')} alt="Thumbnail icon" width="50"/>
+      <h4><a href={useBaseUrl('docs/integrations/google/cloud-load-balancing')}>Google Cloud Load Balancing</a></h4>
+      <p>A guide to the Sumo Logic app for Google Cloud Load Balancing.</p>
     </div>
   </div>
   <div className="box smallbox card">
@@ -254,58 +299,6 @@ This guide has documentation for all of the apps that Sumo Logic provides for Go
     <div className="container">
     <a href={useBaseUrl('docs/integrations/google/cloud-vpn')}><img src={useBaseUrl('img/integrations/google/GoogleCloudVPN.png')} alt="Thumbnail icon" width="55"/><h4>Google Cloud VPN</h4></a>
     <p>A guide to the Sumo Logic app for Google Cloud VPN.</p>
-    </div>
-  </div>
-  <div className="box smallbox card">
-    <div className="container">  
-    <a href={useBaseUrl('docs/integrations/google/app-engine')}><img src={useBaseUrl('img/integrations/google/appengine.png')} alt="Thumbnail icon" width="55"/><h4>Google App Engine</h4></a>
-    <p>A guide to the Sumo Logic app for Google App Engine.</p>
-    </div>
-  </div>
-  <div className="box smallbox card">
-    <div className="container">  
-    <a href={useBaseUrl('docs/integrations/google/bigquery')}><img src={useBaseUrl('img/integrations/google/bigquery.png')} alt="Thumbnail icon" width="50"/><h4>Google BigQuery</h4></a>
-    <p>A guide to the Sumo Logic app for Google BigQuery.</p>
-    </div>
-  </div>
-  <div className="box smallbox card">
-    <div className="container">
-      <img src={useBaseUrl('img/integrations/google/cloudaudit.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href={useBaseUrl('docs/integrations/google/cloud-audit')}>Google Cloud Audit</a></h4>
-      <p>A guide to the Sumo Logic app for Google Cloud Audit.</p>
-    </div>
-  </div>
-  <div className="box smallbox card">
-    <div className="container">
-      <img src={useBaseUrl('img/integrations/google/firewall.png')} alt="Thumbnail icon" width="60"/>
-      <h4><a href={useBaseUrl('docs/integrations/google/cloud-firewall')}>Google Cloud Firewall</a></h4>
-      <p>A guide to the Sumo Logic app for Google Cloud Firewall.</p>
-    </div>
-  </div>
-  <div className="box smallbox card">
-      <div className="container">      
-      <a href={useBaseUrl('docs/integrations/google/cloud-bigtable')}><img src={useBaseUrl('img/integrations/google/GoogleCloudBigtable.png')} alt="Thumbnail icon" width="50"/><h4>Google Cloud Bigtable</h4></a>
-      <p>A guide to the Sumo Logic app for Google Cloud Bigtable.</p>
-    </div>
-  </div>
-  <div className="box smallbox card">
-    <div className="container">
-      <a href={useBaseUrl('docs/integrations/google/cloud-functions')}><img src={useBaseUrl('img/integrations/google/functions.png')} alt="Thumbnail icon" width="50"/><h4>Google Cloud Functions</h4></a>
-      <p>A guide to the Sumo Logic app for Google Cloud Functions.</p>
-    </div>
-  </div>
-  <div className="box smallbox card">
-    <div className="container">
-      <img src={useBaseUrl('img/integrations/google/iam.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href={useBaseUrl('docs/integrations/google/cloud-iam')}>Google Cloud IAM</a></h4>
-      <p>A guide to the Sumo Logic app for Google Cloud IAM.</p>
-    </div>
-  </div>
-  <div className="box smallbox card">
-    <div className="container">
-      <img src={useBaseUrl('img/integrations/google/clb.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href={useBaseUrl('docs/integrations/google/cloud-load-balancing')}>Google Cloud Load Balancing</a></h4>
-      <p>A guide to the Sumo Logic app for Google Cloud Load Balancing.</p>
     </div>
   </div>
   <div className="box smallbox card">
