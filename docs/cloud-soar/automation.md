@@ -59,9 +59,11 @@ To monitor and run playbooks on [incidents](/docs/cloud-soar/incidents-triage/#i
 
 ### Add a playbook to an incident with the API
 
-To add a playbook to [incidents](/docs/cloud-soar/incidents-triage/#incidents) using the [Cloud SOAR API](/docs/api/cloud-soar/), use the [automation_execute_playbook_create](https://api.sumologic.com/docs/csoar/#operation/automation_execute_playbook_create) API. 
-* In the `playbook_id` field, enter the playbook ID.
-* In the `incident_id` field, enter the incident ID.
+You can attach playbooks to an incident with the API. This lets you automate incident workflows without having to use the UI, and enables integration with external systems. 
+
+To attach one or more playbooks to an [incident](/docs/cloud-soar/incidents-triage/#incidents), with an option to auto-run them after attachment, use the [incidents_runbook_create](https://api.sumologic.com/docs/csoar/#operation/incidents_runbook_create) API. To retrieve all playbooks attached to a specific incident, use the [incidents_runbook_retrieve](https://api.sumologic.com/docs/csoar/#operation/incidents_runbook_retrieve) API.
+
+For more information about how to use APIs, see [Cloud SOAR APIs](/docs/api/cloud-soar/).
 
 ## Incident templates
 
