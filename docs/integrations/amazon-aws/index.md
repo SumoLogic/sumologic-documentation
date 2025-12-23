@@ -214,13 +214,6 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <img src={useBaseUrl('img/integrations/amazon-aws/guardduty-benchmark.png')} alt="Thumbnail icon" width="50"/>
-        <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-guardduty')}>Global Intelligence for Amazon GuardDuty</a></h4>
-        <p>A guide to the Sumo Logic app for Global Intelligence for Amazon GuardDuty.</p>
-        </div>
-      </div>
-      <div className="box smallbox card">
-        <div className="container">
         <img src={useBaseUrl('img/integrations/amazon-aws/amazon-inspector.png')} alt="Thumbnail icon" width="50"/>
         <h4><a href={useBaseUrl('docs/integrations/amazon-aws/inspector')}>Amazon Inspector</a></h4>
         <p>A guide to the Sumo Logic app for Amazon Inspector.</p>
@@ -308,13 +301,6 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
           <img src={useBaseUrl('img/integrations/amazon-aws/vpcflowlogs.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href={useBaseUrl('docs/integrations/amazon-aws/vpc-flow-logs')}>Amazon VPC Flow Logs</a></h4>
           <p>A guide to the Sumo Logic app for Amazon VPC Flow Logs.</p>
-          </div>
-        </div>
-        <div className="box smallbox card">
-          <div className="container">
-          <img src={useBaseUrl('img/integrations/amazon-aws/pci-icon.png')} alt="Thumbnail icon" width="50"/>
-          <h4><a href={useBaseUrl('docs/integrations/amazon-aws/vpc-flow-logs-pci-compliance')}>Amazon VPC Flow Logs - PCI Compliance</a></h4>
-          <p>A guide to our PCI app for VPC Flow Logs.</p>
           </div>
         </div>
 <div className="box smallbox card">
@@ -564,6 +550,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/guardduty-benchmark.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-guardduty')}>Global Intelligence for Amazon GuardDuty</a></h4>
+  <p>A guide to the Sumo Logic app for Global Intelligence for Amazon GuardDuty.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Thumbnail icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops')}>Global Intelligence for AWS CloudTrail DevOps</a></h4>
   <p>A guide to the Global Intelligence for AWS CloudTrail DevOps app.</p>
@@ -574,6 +567,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
   <img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="Thumbnail icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops')}>Global Intelligence for AWS CloudTrail SecOps</a></h4>
   <p>A guide to the Global Intelligence for AWS CloudTrail SecOps app.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/pci-icon.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href={useBaseUrl('docs/integrations/amazon-aws/vpc-flow-logs-pci-compliance')}>PCI Compliance for Amazon VPC Flow Logs</a></h4>
+  <p>A guide to our PCI app for VPC Flow Logs.</p>
   </div>
 </div>
 <div className="box smallbox card">
