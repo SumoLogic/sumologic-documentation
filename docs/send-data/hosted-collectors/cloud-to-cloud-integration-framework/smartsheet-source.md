@@ -24,7 +24,9 @@ Smartsheet is used to collaborate on project timelines, documents, calendars, ta
 
 ### Vendor configuration
 
-To collect data from Smartsheet, you need a Smartsheet account with admin privileges that would allow the creation of an app via a developer account. See [steps in the Smartsheet documentation](https://smartsheet.redoc.ly/#section/OAuth-Walkthrough/First-Steps) to create a developer account in Smartsheet.
+To collect data from Smartsheet, you must have a Smartsheet account with **Admin** privileges, which allows you to create an app using a developer account. Refer to the [Smartsheet documentation](https://smartsheet.redoc.ly/#section/OAuth-Walkthrough/First-Steps) for the steps to create a developer account.
+
+To collect data from the `\events` endpoint, the Event Reporting **Premium add-on** is required. This add-on is available for **Enterprise and Advanced Work Management** plans, and you must have **System Admin** permissions. Refer to the [Smartsheet documentation](https://developers.smartsheet.com/api/smartsheet/openapi/events/list-events). You can also contact Smartsheet support to enable this permission for your account.
 
 ### Source configuration
 
