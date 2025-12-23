@@ -35,7 +35,7 @@ You need the `Manage Event Extraction Rules` [role capability](/docs/manage/user
         1. **Event Type**. Defines the category of the event - Deployment, Feature Flag Change, Infrastructure Change, or Configuration Change. This helps you in filtering, grouping, and analyzing events based on their nature.
     1. **Timeline Preview**. This previews how event markers will display in the histogram timeline on the logs page when this rule is active. This marker also displays the event type, source, and priority details. 
     1. **Advanced Settings (optional)**. Use this section if you want to compare values from parsed event fields with fields in incoming log messages. When the selected values match, the system displays a visual marker to highlight the match.
-        1. **Event Record Field**. Choose the field from the event record that you want to compare against incoming log data.
+        1. **Event Record Field**. Choose the field from the event record that you want to compare against incoming log data. Only extracted fields in query can be used for `eventFieldName` in correlation expression.
         1. **Match Type**. **Exact Match** is selected by default. This option creates a marker when the value in the incoming log exactly matches the value specified in the event record field.
         1. **Log Message Field**. Select the field from the incoming log message that should be compared with the chosen event record field.
     1. **Rule Details**. Enter the rule name and rule description (optional) of your choice that makes it easy to identify the rule.
@@ -58,7 +58,7 @@ For example, to search for system events:
 1. Click **Start** to run the search.
 
 :::note
-Add the `_eventExtractionRuleID` field to view the event ID against each log message.
+You can identify the source of event using `eventExtractionRuleID` field in the **sumologic_userdata_events** index.
 :::
 
 ## Edit a rule
@@ -96,6 +96,6 @@ To delete the existing event extraction rule, follow the below steps:
 ## Operational considerations
 
 - To restrict user access to extracted events, you can deny access to the `sumologic_userdata_events` index for specific roles. Ensure that you have the **[Usage Management](/docs/manage/users-roles/roles/role-capabilities/#user-management)** capability enabled, as it is required to configure index-level access restrictions.
-- An Event Extraction Rule can generate a maximum of 1,000 events per hour. If this limit is exceeded, the rule may be automatically disabled. To re-enable the rule, review and refine the rule query to reduce the event volume.
+- An Event Extraction Rule can generate a maximum of 1,000 events per hour. If this limit is exceeded, the rule may be automatically disabled and a system event will be generated. You can view those by querying the `_index=sumologic_system_events` and `_sourcecategory=eventExtractionRule`. To re-enable the rule, review and refine the rule query to reduce the event volume.
 - Audit logs for all create, read, update, and delete (CRUD) actions performed on Event Extraction Rules are available in the `_index=sumologic_audit_events ` and `_sourcecategory=eventExtractionRule`.
-- System-generated events can be viewed by querying the `_index=sumologic_system_events` and `_sourcecategory=eventExtractionRule`, allowing you to identify errors and take appropriate corrective actions.
+
