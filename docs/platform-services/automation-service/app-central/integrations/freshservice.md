@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/freshservice.png')} alt="freshservice" width="80"/>
 
-***Version: 1.6  
-Updated: Sept 11, 2024***
+***Version: 1.8  
+Updated: Dec 24, 2025***
 
 Freshservice is a cloud-based IT Help Desk and service management solution that enables organizations to simplify their IT operations. The solution offers features that include a ticketing system, self-service portal, and knowledge-base.
 
@@ -62,6 +62,9 @@ For information about Freshservice, see [Freshservice documentation](https://sup
 
 Ticketing System
 
+## Notes
+Providing an invalid or unauthorized Workspace ID may result in a 400 Bad Request error. Verify that the Workspace ID is correct and accessible to the API user.
+
 ## Change Log
 
 * April 4, 2022 - First upload
@@ -73,3 +76,4 @@ Ticketing System
 	+ Updated integration: (Updated the integration Fields with Environmental Variables)
 * July 11, 2023 (v1.5) - Removed leading/trailing spaces
 * Sept 11, 2024(v1.6) - Updated the Update Ticket action
+* Dec 24, 2025(v1.8) - Create and Update Ticket actions now support an optional Workspace ID and updating existing custom ticket fields.
