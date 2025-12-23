@@ -12,7 +12,7 @@ This guide has documentation Sumo apps for container management and orchestratio
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/integrations/containers-orchestration/opentelemetry')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="55"/><h4>OpenTelemtry</h4></a>
-  <p>A guide to OpenTelemetry apps for contaners and orchestration.</p>
+  <p>A guide to OpenTelemetry apps for containers and orchestration.</p>
   </div>
 </div>
   <div className="box smallbox card">
