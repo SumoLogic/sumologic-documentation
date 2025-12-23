@@ -1237,8 +1237,8 @@ module.exports = {
             },
             'alerts/webhook-connections/signl4',
             'alerts/webhook-connections/slack',
-            'alerts/webhook-connections/schedule-searches-webhook-connections',
             'alerts/webhook-connections/audit-index',
+            'alerts/webhook-connections/schedule-searches-webhook-connections',
           ]
         },
       ],
