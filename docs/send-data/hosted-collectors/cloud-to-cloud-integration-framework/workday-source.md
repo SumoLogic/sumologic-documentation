@@ -44,7 +44,7 @@ This section demonstrates how to configure the Workday portal to integrate with 
 1. To register the API client, access the **Register API Client** **for Integrations** task, and provide the following parameters:
     * **Client Name.** Sumo Logic Workday Collector
     * **Non-Expiring Refresh Tokens.** Yes
-    * **Scope.** System
+    * **Scope.** System, Integration, and Tenant Non-Configurable scopes are *required*.
 2. Click **OK**.
 3. Copy the **Client Secret** and **Client ID** before you navigate away from the page and store it securely. If you lose the **Client Secret**, you can generate a new one using the **Generate New API Client Secret** task.
 4. Click **Done**.
