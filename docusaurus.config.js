@@ -38,7 +38,7 @@ module.exports = {
       tagName: 'meta',
       attributes: {
         'http-equiv': 'Cache-control',
-        content: 'no-cache',
+        content: 'no-store',
       },
     },
   ],
