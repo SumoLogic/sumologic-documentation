@@ -48,7 +48,10 @@ You can push the following:
 1. Select individual items to be pushed, or all items.
 1. Click **Push to Orgs**.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-csiem.png')} alt="Push Selected Items button" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Push Selected Content** box, navigate to the **Destinations** section to select the organizations to push the selected items to. You can push to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2-csiem.png')} alt="Push Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
-1. Click **Push**. A **Pushing in progress** dialog is displayed.
+1. Click **Push**. A **Pushing in progress** dialog is displayed. 
+1. (Optional) If required, follow the below steps to stop the push:
+   1. Click the **Stop Push** button on the dialog box. <br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-button.png')} alt="stop-push-button" style={{border: '1px solid gray'}} width="500"/>
+   1. Click **Stop Push** on the confirmation pop-up. To view the results table, refer to [View Results](#view-results).<br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-confirmation.png')} alt="stop-push-confirmation" style={{border: '1px solid gray'}} width="400"/>
 
 ### Tips
 
@@ -80,6 +83,18 @@ You can push the following:
    - Make sure you keep the rule or tuning expressions per job less than or equal to 500 for a faster runtime.
 - When pushing monitors, certain configurations will not be included. These include muting schedules, Sumo Logic Cloud SOAR connection, SLO linkages, Automation Service playbooks, HipChat settings, and tags.
 
+## View results
+
+If a content push job is stopped or interrupted, you can review the progress and status of items that were processed before the interruption by accessing the results table. The results table provides visibility into successfully pushed items as well as those that failed or were stopped. Follow the steps below to view and manage the results of a stopped content push job:
+
+1. After the push is stopped, a warning banner appears at the top of the content search bar. Click **View Results** in the warning banner to open the **Content Push Job Results** page.
+   <br/><img src={useBaseUrl('img/manage/subscriptions/mssp-view-results.png')} alt="MSSPs View Results Button" style={{border: '1px solid gray'}} width="800"/>
+1. On the **Content Push Job Results** page, you can view the number of destination org details with the total number of items processed. You can also find the successful, failed, and stopped items.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-content-push-job-results.png')} alt="mssp-content-push-job-results" style={{border: '1px solid gray'}} width="800"/>
+   :::note
+   Select the **Show Warning Updates** checkbox to display the warning-related entries in the **Failed Updates** section.
+   :::
+1. To retry all unsuccessful updates, click **Retry All Updates**. This retries both failed and stopped items in a single action.
+1. To retry only specific items, click **Retry Failed/Stopped Updates** to reattempt pushing items that previously failed or were stopped.
 
 ## View history
 
@@ -87,7 +102,7 @@ You can push the following:
 1. Click the search button. <img src={useBaseUrl('img/manage/subscriptions/search-button.png')} alt="Search button" width="75"/> <br/>The push history displays. The email of the individual who performed the push appears in the **user_email** column, and the pushed items appear in the **content** column. <br/><img src={useBaseUrl('img/manage/subscriptions/mssp-view-history-query-results.png')} alt="View history query results" style={{border: '1px solid gray'}} width="800"/>
 1. Investigate any push that failed and re-run the push if needed. 
 
-## View push in the audit log​
+## View push in the audit log
 
 You can view all content management push in the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) by using the following query:
 
