@@ -21,12 +21,13 @@ You'll need the **Manage connections** [role capability](/docs/manage/users-ro
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
-1. On the Connections page click **Add**.
-1. Click **Datadog**.
-1. In the Create Connection dialog, enter the **Name** of the Connection.
-1. (Optional) Enter a **Description** for the Connection.
-1. Enter the **URL** for the endpoint.
-1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
+1. On the **Connections** page, click **+ Add**.
+1. For **Connection Type**, select **Datadog** from the dropdown.
+1. In the **Connection Settings** dialog, enter:
+    * **Name**. Enter a name for the Connection.
+    * (Optional) **Description**. Enter a Description for the Connection.
+    * **URL**. Enter the **URL** for the endpoint.
+    * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
 1. Under **Alert Payload**, enter a JSON object in the format required by Datadog. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
-1. To test the connection, click **Test Alert**. If successful, you'll see a `200 OK` response message.
-1. Click **Save**.
+1. Click **Test Alert** to test the connection. If the connection is made to your Datadog function successfully, you will see a `200 OK` response message.
+1. Click **Save**.
