@@ -13,7 +13,7 @@ You can send JSON payloads from Sumo Logic alerts as an HTTP POST request to c
 
 [Webhook connections](/docs/alerts/webhook-connections/set-up-webhook-connections) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
 
-## Prerequisite
+## Prerequisites
 
 To send webhook alerts to Jira Cloud you need to include a Basic Authentication Header with requests. This requires an API token, for reference on creating a token see [API tokens](https://confluence.atlassian.com/cloud/api-tokens-938839638.html) in Atlassian Cloud Support.
 
@@ -38,26 +38,27 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
-1. On the **Connections** page click the **+** icon at the top-right of the table.
-1. Select the **Jira** option. In the **Create Jira Connection** dialog, fill out connection information.<br/><img src={useBaseUrl('img/connection-and-integration/Jira-webhook-button.png')} alt="Jira webhook button" style={{border: '1px solid gray'}} width="150" />
-1. Enter a **Name** for the Connection.
-1. (Optional) Enter a **Description** for the Connection.
-1. Enter a **URL** from the Jira REST API to create issues. For example, to create an issue:
-   ```
-   https://<jira_cloud_instance>/rest/api/2/issue
-   ```
-   :::note
-   See the [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/#api-group-Issues) for details on acceptable request URLs.
-   :::
-1. Enter your **Authorization Header** from the prerequisite. It will be in the format: `Basic <random string>`
-1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-1. The following input fields are automatically updated in the JSON **Payload** and vice versa. Update them to meet your requirements. At a minimum, you'll need to enter a valid Project Key.
-   * **Issue Type**
-   * **Project Key**
-   * **Issue Summary**
-   * **Priority** (optional)
-   * **Issue Description**
-1. The following JSON is an example of the default **Alert Payload**, you can customize it as needed. For details on the variables you can use as parameters within your JSON object, see [Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections).
+1. On the **Connections** page, click **+ Add**.
+1. For **Connection Type**, select **Jira** from the dropdown.
+1. In the **Connection Settings** dialog, enter:
+   * **Name**. Enter a name for the Connection.
+   * (Optional) **Description**. Enter a Description for the Connection.
+   * **URL**. Enter a **URL** from the Jira REST API to create issues. For example, to create an issue:
+      ```
+      https://<jira_cloud_instance>/rest/api/2/issue
+      ```
+      :::note
+      See the [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/#api-group-Issues) for details on acceptable request URLs.
+      :::
+   * **Authorization Header**. Enter your **Authorization Header** from the [prerequisites](#prerequisites). For example, `Basic <random string>`.
+   * (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
+   * The following input fields are automatically updated in the JSON **Payload** and vice versa. Update them to meet your requirements. At a minimum, you'll need to enter a valid Project Key.
+      * **Issue Type**
+      * **Project Key**
+      * **Issue Summary**
+      * (optional) **Priority**
+      * **Issue Description**
+1. The following JSON is an example of the default **Alert Payload** which you can customize as required. For details on the variables you can use as parameters within your JSON object, see [Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections).
    ```
    {
    "fields": {
@@ -75,7 +76,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
       }
    }
    ```
-  Details on how to format your payload are available in the [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/#api-group-Issues).
+   Details on how to format your payload are available in the [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/#api-group-Issues).
 1. To test the connection, click **Test Alert**. If successful, you'll see a `200 OK` response message.  
 1. Click **Save**.
 
