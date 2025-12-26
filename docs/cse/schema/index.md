@@ -35,12 +35,6 @@ This guide has information about Cloud SIEM schemas. In this section, we'll intr
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/cse/schema/parsing-language-reference-guide')}><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Parsing Language Reference</h4></a>
-  <p>Parsing is the first step in the Cloud SIEM record processing pipeline.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/cse/schema/create-structured-log-mapping')}><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Log Mapping</h4></a>
   <p>Learn how to create a log mapping for structured messages.</p>
   </div>  
@@ -62,6 +56,18 @@ This guide has information about Cloud SIEM schemas. In this section, we'll intr
   <a href={useBaseUrl('docs/cse/schema/parser-editor')}><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Parser Editor</h4></a>
   <p>Learn how to use the Parser Editor to configure and test a custom parser.</p>
 </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/cse/schema/parsing-language-reference-guide')}><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Parsing Language Reference</h4></a>
+  <p>Parsing is the first step in the Cloud SIEM record processing pipeline.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/cse/schema/parsing-patterns')}><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Parsing Patterns</h4></a>
+  <p>Learn about predefined named regular expressions used in regex-based parsers.</p>
+  </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
