@@ -549,7 +549,7 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
     Errors related to partial log ingestion, log preparation, timestamp extraction, or response parsing
   </summary>
   <div>
-    <strong>Possible Resolution</strong>
+    <strong>Possible resolution</strong>
     <ul>
       <li>Ensure that the <code>HTTP Response Log Ingest Configuration</code> matches the API response structure.</li>
       <li>Verify that all configured fields exist in the API response.</li>
