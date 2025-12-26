@@ -545,6 +545,20 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 ## Troubleshooting
 
 <details>
+  <summary>
+    Errors related to partial log ingestion, log preparation, timestamp extraction, or response parsing
+  </summary>
+  <div>
+    <strong>Possible Resolution</strong>
+    <ul>
+      <li>Ensure that the <code>HTTP Response Log Ingest Configuration</code> matches the API response structure.</li>
+      <li>Verify that all configured fields exist in the API response.</li>
+      <li>Confirm that the API response is returned in valid JSON format.</li>
+    </ul>
+  </div>
+</details>
+
+<details>
   <summary>Error getting partial logs, error preparing log, error getting timestamp data, timestamp path not in data, or error parsing response data</summary>
   <div>
     These errors are typically caused by an improper endpoint response format or incorrect log ingestion configuration. Ensure that your endpoint returns data in a valid JSON format and response fields are as per the configuration.
