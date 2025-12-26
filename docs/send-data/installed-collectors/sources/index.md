@@ -107,4 +107,16 @@ In this section, we'll introduce the following concepts:
       <p>This Script Action passes the results of a scheduled search to a script or program that runs on a machine.</p>
       </div>
     </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/send-data/installed-collectors/sources/remote-file-source')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Remote File Source</h4></a>
+      <p>Collect file tail data from a remote system using SSH.</p>
+      </div>
+    </div>
+        <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/send-data/installed-collectors/sources/script-source')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Script Source</h4></a>
+      <p>Use a script to fetch from custom sources of data, such a database or a third-party monitoring app.</p>
+      </div>
+    </div>
 </div>

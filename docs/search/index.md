@@ -81,6 +81,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/search/search-across-child-orgs')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Search Across Child Orgs (MSSPs)</h4></a>
+  <p>Learn how to perform the search for the selected child org.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/search/optimize-search-performance')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Optimize Search Performance</h4></a>
   <p>Learn how to accelerate the search process to get query results in less time and improve productivity for forensic analysis and log management.</p>
   </div>

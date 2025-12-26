@@ -9,6 +9,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This guide has documentation Sumo apps for container management and orchestration tools.  
 
 <div className="box-wrapper" >
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/containers-orchestration/opentelemetry')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="55"/><h4>OpenTelemtry</h4></a>
+  <p>A guide to OpenTelemetry apps for containers and orchestration.</p>
+  </div>
+</div>
   <div className="box smallbox card">
     <div className="container">
     <img src={useBaseUrl('img/integrations/containers-orchestration/activemq.png')} alt="Thumbnail icon" width="45"/>

@@ -148,6 +148,12 @@ Watch this tutorial to learn how to use our **App Catalog**.
 </div>
 <div className="box smallbox card">
     <div className="container">
+    <a href={useBaseUrl('docs/integrations/webhooks/')}><img src={useBaseUrl('img/icons/cloud/scale-and-elastic.png')} alt="Thumbnail icon" width="50"/><h4>Webhooks</h4></a>
+    <p>Documentation for Sumo Logic webhook integrations.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+    <div className="container">
     <a href={useBaseUrl('docs/integrations/web-servers/')}><img src={useBaseUrl('img/icons/operations/server.png')} alt="Thumbnail icon" width="50"/><h4>Web Servers</h4></a>
     <p>A guide to Sumo Logic apps for web servers, such as Apache, Nginx, and Squid Proxy.</p>
   </div>

@@ -13,38 +13,14 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Download Collector from Static URL</h4></a>
-  <p>Static URLs provide download links to the most recent Collector versions.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/user-properties')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>user.properties</h4></a>
-  <p>Pass Collector parameters for some installation methods.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Test Collector Connectivity</h4></a>
   <p>Test access and connectivity from an installed Collector to the Sumo Logic service.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer/')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Collector CLI Parameters</h4></a>
-  <p>Parameters available when using the Collector's command line installer.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/collector-properties')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>collector.properties</h4></a>
-  <p>Define the waiting time between scans of the objects in your S3 bucket.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/collector-installation-error-messages/')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Collector Installation Error Messages</h4></a>
-  <p>Troubleshoot issues that arise during collector installation.</p>
+  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Download Collector from Static URL</h4></a>
+  <p>Static URLs provide download links to the most recent Collector versions.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -61,8 +37,32 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/advanced-ui-installer-settings')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Advanced UI Installer Settings</h4></a>
-  <p>Advanced settings for the UI installer.</p>
+  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/set-run-as-user-for-collector')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Set the <code>RUN_AS_USER</code> for a Collector</h4></a>
+  <p>Specify the user under whose account the Collector will run.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer/')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Collector CLI Parameters</h4></a>
+  <p>Parameters available when using the Collector's command line installer.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/user-properties')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>user.properties</h4></a>
+  <p>Pass Collector parameters for some installation methods.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/collector-installation-error-messages/')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Collector Installation Error Messages</h4></a>
+  <p>Troubleshoot issues that arise during collector installation.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/enhanced-file-system-security-installed-collectors')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Enhanced File System Security</h4></a>
+  <p>Protect the log cache and configuration files for Installed Collectors.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -73,14 +73,26 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Set Collector as Ephemeral</h4></a>
+  <p>Flag a Collector as ephemeral to delete it after being offline for 12 hours.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>sumo.conf for Legacy Collectors</h4></a>
   <p>Pass Collector config parameters during installation if the Debian or RPM option is used.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/set-run-as-user-for-collector')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Set the <code>RUN_AS_USER</code> for a Collector</h4></a>
-  <p>Specify the user under whose account the Collector will run.</p>
+  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/advanced-ui-installer-settings')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Advanced UI Installer Settings</h4></a>
+  <p>Advanced settings for the UI installer.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/collector-properties')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>collector.properties</h4></a>
+  <p>Define the waiting time between scans of the objects in your S3 bucket.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -93,18 +105,6 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/binary-package-install-a-collector')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Using the Binary Package</h4></a>
   <p>Install a Collector on macOS or Windows if you need to use a specific JRE version.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/enhanced-file-system-security-installed-collectors')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Enhanced File System Security</h4></a>
-  <p>Protect the log cache and configuration files for Installed Collectors.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Set Collector as Ephemeral</h4></a>
-  <p>Flag a Collector as ephemeral to delete it after being offline for 12 hours.</p>
   </div>
 </div>
 </div>

@@ -191,6 +191,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/datadog')}><img src='https://upload.wikimedia.org/wikipedia/en/7/7e/Datadog_logo.svg' alt="icon" width="50"/><h4>Datadog</h4></a>
+  <p>Use the Sumo Logic Integration for Datadog to start sending data from Datadog to your Sumo Logic account.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/digital-guardian-arc')}><img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Thumbnail icon" width="40"/><h4>Digital Guardian ARC</h4></a>
   <p>Monitor, detect, and respond to critical events.</p>
   </div>
@@ -293,12 +299,6 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/mimecast')}><img src={useBaseUrl('img/integrations/saas-cloud/mimecast-logo.png')} alt="icon" width="50"/><h4>Mimecast</h4></a>
-  <p>Monitor and analyze Mimecast email data to identify potential threats and improve email security posture.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/microsoft-graph-security-v1')}><img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="icon" width="60"/><h4>Microsoft Graph Security V1</h4></a>
   <p>Identify security threats by analyzing alert logs.</p>
   </div>
@@ -307,6 +307,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/microsoft-graph-security-v2')}><img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="icon" width="60"/><h4>Microsoft Graph Security V2</h4></a>
   <p>Identify security threats by analyzing alert logs.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/mimecast')}><img src={useBaseUrl('img/integrations/saas-cloud/mimecast-logo.png')} alt="icon" width="50"/><h4>Mimecast</h4></a>
+  <p>Monitor and analyze Mimecast email data to identify potential threats and improve email security posture.</p>
   </div>
 </div>
 <div className="box smallbox card">
