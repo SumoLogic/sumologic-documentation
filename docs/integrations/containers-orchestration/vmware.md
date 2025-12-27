@@ -162,7 +162,7 @@ Test running a Python script from the directory containing the Sumo Logic script
    * `-sC`. SSL cert for connection. Optional.
    * `-l`. Log File Prefix. Default: `vsphere_events_`. By default, the log file is created in the execution directory. Full log path and prefix can also be specified, for example: `-l C:\Users\user6\vsphere_events`, where `vsphere_events` is the log prefix. The log file is created with a prefix + current timestamp.
    * `-pE`. Is the password encrypted? Default False. Optional.
-   * `-pK`. Encryption Key for Password. Required if -pE is True.
+   * `-pK`. Encryption Key path for Password. Required if -pE is True.
 
    </details>
 
@@ -248,7 +248,7 @@ python3 $SCRIPT_PATH/esx_perf_metrics.py -s 192.168.124.29 -t sumologic_host -to
   * `-cf`. Configuration File. Required.
   * `-l`. Log File Prefix. Default: `vsphere_metrics_`. By default, the log file is created in the execution directory. Full log path and log prefix can also be specified, for example: `-l C:\Users\user6\vsphere_metrics`, where `vsphere_metrics` is the log prefix and is required. The log file is created with a prefix + current timestamp.
   * `-pE`. Is the password encrypted? Default: False. Optional.
-  * `-pK`. Encryption Key for Password. Required if `-pE` is True.
+  * `-pK`. Encryption Key path for Password. Required if `-pE` is True.
 
 </details>
 
@@ -306,11 +306,13 @@ b'xgb8NJ3ZYPJbzX6vWHySZbLd73bKWPsGMKoSnry7hL4='
 b'gAAAAABb6asvlRfxEj_ZQTKOyrqnGNMbfo_kpxrqv4DCO6TorS4FmKFzrepe0_xtiMT67ZT6OOf5bfrVZXNnUDFNlwPWrpFSfg=='
 ```
 
-**Modify the scripts** to include the encrypted password and the key:
+**Store the generate key in a file** with restrictive access based on your environment.
+
+**Modify the scripts** to include the encrypted password and the path to file with key created in previous step:
 
 ```py title="Example for Metrics"
 python3 esx_perf_metrics_6_5.py -u [username] \
--pK 'xgb8NJ3ZYPJbzX6vWHySZbLd73bKWPsGMKoSnry7hL4=' \
+-pK 'path_to_file_with_key' \
 -p 'gAAAAABb6asvlRfxEj_ZQTKOyrqnGNMbfo_kpxrqv4DCO6TorS4FmKFzrepe0_xtiMT67ZT6OOf5bfrVZXNnUDFNlwPWrpFSfg==' \
 -s 192.168.20.121 -t 127.0.0.1 \
 -to 2003 -cf sumo.json -pE True
@@ -318,7 +320,7 @@ python3 esx_perf_metrics_6_5.py -u [username] \
 
 ```py title="Example for Events"
 python3 events.py -s 192.168.20.121 -u [username] -f outfile \
--pK 'xgb8NJ3ZYPJbzX6vWHySZbLd73bKWPsGMKoSnry7hL4=' \
+-pK 'path_to_file_with_key' \
 -p 'gAAAAABb6asvlRfxEj_ZQTKOyrqnGNMbfo_kpxrqv4DCO6TorS4FmKFzrepe0_xtiMT67ZT6OOf5bfrVZXNnUDFNlwPWrpFSfg==' \
 -pE True
 ```
