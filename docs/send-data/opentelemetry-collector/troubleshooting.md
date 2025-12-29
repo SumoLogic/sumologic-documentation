@@ -322,9 +322,9 @@ sudo systemctl start otelcol-sumo
 <TabItem value="Windows">
   
 ```powershell
-net stop otelcol-sumo
+net stop OtelcolSumo
 Remove-Item "C:\ProgramData\Sumo Logic\OpenTelemetry Collector\data\credentials\*" -Force
-net start otelcol-sumo
+net start OtelcolSumo
 ```
 
 </TabItem>
