@@ -22,8 +22,8 @@ You can configure a webhook connection to allow you to send an alert from a sche
 1. On the **Connections** page, click **+ Add**.
 1. For **Connection Type**, select **Cloud SOAR** from the dropdown.
 1. In the **Connection Settings** dialog, enter:
-    * **Name**. Enter a name for the Connection.
-    * (Optional) **Description**. Enter a Description for the Connection.
+    * **Name**. Enter a name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
     * **URL**. The URL field displays your [Sumo Logic API endpoint](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) followed by `/csoar/v3/incidents/`. For example, `https://api.us2.sumologic.com/api/csoar/v3/incidents/`.
     * **Authorization Header**. Enter your basic authentication access information for the header. For example, `Basic <base64 encode <accessId>:<accessKey>>`. For more information, see [Basic Access (Base64 encoded)](/docs/api/about-apis/getting-started#basic-access-base64-encoded).
     * Select a template from the **Templates** dropdown.
