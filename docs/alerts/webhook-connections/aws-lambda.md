@@ -73,10 +73,10 @@ Configure the webhook connection to trigger the AWS Lambda function.
 1. On the **Connections** page, click **+ Add**.
 1. For **Connection Type**, select **AWS Lambda** from the dropdown.
 1. In the **Connection Settings** dialog, enter:
-    * **Name**. Enter a name for the Connection.
-    * (Optional) **Description**. Enter a Description for the Connection.
-    * **URL**. Enter the Invoke URL from the previous section.
-    * **Access Key ID** and **Secret Access Key**. Enter AWS Access key and Secret access key for the account with required IAM policy assigned created in previous section.
+    * **Name**. Enter a name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
+    * **URL**. Enter the invoke URL from the previous section.
+    * **Access Key ID** and **Secret Access Key**. Enter AWS access key and secret access key for the account with required IAM policy assigned created in the previous section.
     * **Region**. Select your region.
     * **Service Name**:
       * For Lambda Function URL, enter **lambda** as the service name.
