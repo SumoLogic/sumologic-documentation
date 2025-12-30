@@ -36,7 +36,7 @@ For more information on Events, refer to the [Streaming API Event Dictionary](ht
     "metadata": {
         "customerIDString": “xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
         "offset": 14947764,
-        "eventType": "DetectionSummaryEvent",
+        "eventType": "EppDetectionSummaryEvent",
         "eventCreationTime": 1536846439000,
         "version": "1.0"
     },
@@ -47,8 +47,8 @@ For more information on Events, refer to the [Streaming API Event Dictionary](ht
         "ParentProcessId": 38682494050,
         "ComputerName": "CS-SE-EZ64",
         "UserName": "demo",
-        "DetectName": "Process Terminated",
-        "DetectDescription": "Terminated a process related to the deletion of backups, which is often indicative of ransomware activity.",
+        "Name": "Process Terminated",
+        "Description": "Terminated a process related to the deletion of backups, which is often indicative of ransomware activity.",
         "Severity": 4,
         "SeverityName": "High",
         "FileName": "explorer.exe",
@@ -59,7 +59,7 @@ For more information on Events, refer to the [Streaming API Event Dictionary](ht
         "MachineDomain": "CS-SE-EZ64",
         "FalconHostLink": "<a href="https://falcon.crowdstrike.com/activity/detections/detail/ec86abd353824e96765ecbe18eb4f0b4/38655257584?_cid=xxxxxxxxxxxxxxxxxx">https://falcon.crowdstrike.com/activity...xxxxxxxxxxxxxx</a>",
         "SensorId": "ec86abd353824e96765ecbe18eb4f0b4",
-        "DetectId": "ldt:ec86abd353824e96765ecbe18eb4f0b4:38655257584",
+        "CompositeId": "ldt:ec86abd353824e96765ecbe18eb4f0b4:38655257584",
         "LocalIP": "xx.xx.xx.xx",
         "MACAddress": "xx-xx-xx-xx-xx",
         "Tactic": "Malware",
@@ -163,35 +163,38 @@ For more information on Events, refer to the [Streaming API Event Dictionary](ht
 This section provides query examples for each event type.
 
 ```sql title="Detection Event"
-_sourceCategory=*Crowdstrike*  DetectionSummaryEvent
-| json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime" as event_type, customer_id, event_time
-| formatDate(fromMillis(event_time), "MM/dd/yyyy HH:mm:ss:SSS") as event_time
-| where event_type="DetectionSummaryEvent"
-| json "event.Tactic","event.Technique", "event.Objective", "event.ComputerName", "event.UserName", "event.DetectId", "event.DetectDescription", "event.Severity", "event.SeverityName", "event.FileName", "event.FilePath", "event.CommandLine", "event.MD5String", "event.SHA1String", "event.MachineDomain" , "event.FalconHostLink", "event.IOCType", "event.IOCValue", "event.LocalIP", "event.MACAddress" as tactic, technique, objective, computer_name, user_name, detect_id, detect_desc, severity, severity_name, file_name, file_path, cmd_line, md5_string, sha1_string, machine_domain, falconHost_link, IOC_Ttype, IOC_value, local_ip, mac_address
-| timeslice 1d
-| count_distinct (detect_id) by _timeslice, severity_name
-| fillmissing timeslice(1d)
-| transpose row _timeslice column severity_name
+_sourceCategory={{Logsdatasource}}  eventType EppDetectionSummaryEvent event SeverityName
+| json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime", "event.Tactic","event.Technique", "event.Objective", "event.ComputerName", "event.UserName", "event.CompositeId", "event.Description", "event.Severity", "event.SeverityName", "event.FileName", "event.FilePath", "event.CommandLine", "event.MD5String", "event.SHA256String", "event.MachineDomain" , "event.FalconHostLink","event.LocalIP", "event.MACAddress", "event.ProcessEndTime" as event_type, customer_id, event_time, tactic, technique, objective, computer_name, user_name, composite_id, detect_desc, severity, severity_name, file_name, file_path, cmd_line, md5_string, sha256_string, machine_domain, falconHost_link, local_ip, mac_adderess, process_endTIme nodrop
+
+// global filters
+| where (isNull(tactic) or tactic matches "{{tactic}}") and (isNull(technique) or technique matches "{{technique}}") and (isNull(objective) or objective matches "{{objective}}") and (isNull(computer_name) or computer_name matches "{{computer_name}}") and (isNull(user_name) or user_name matches "{{user_name}}") and (isNull(customer_id) or customer_id matches "{{customer_id}}") and (isNull(machine_domain) or machine_domain matches "{{machine_domain}}") and (isNull(severity_name) or severity_name matches "{{severity_name}}")
+
+| where event_type matches "EppDetectionSummaryEvent"
+| count by severity_name
+| sort by _count, severity_name
 ```
 
 ```sql title="Authentication Event"
-_sourceCategory=*Crowdstrike*  AuthActivityAuditEvent (userAuthenticate or twoFactorAuthenticate)
-| json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime" as event_type, customer_id, event_time
-| formatDate(fromMillis(event_time), "MM/dd/yyyy HH:mm:ss:SSS") as event_time
-| json "event.UserId", "event.UserIp", "event.OperationName", "event.ServiceName", "event.Success", "event.UTCTimestamp" as src_user, user_ip, operation_name, service_name, success, operation_time
-| formatDate(fromMillis(operation_time), "MM/dd/yyyy HH:mm:ss:SSS") as operation_time
-| where success="true"
-| count by operation_time, operation_name, src_user, user_ip
+_sourceCategory={{Logsdatasource}} eventType AuthActivityAuditEvent event OperationName
+| json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime", "event.UserId", "event.UserIp", "event.OperationName", "event.ServiceName", "event.Success", "event.UTCTimestamp" as event_type, customer_id, event_time, src_user, user_ip, operation_name, service_name, success, operation_time nodrop
+
+//global filters
+| where src_user matches "{{src_user}}" and operation_name matches "{{operation_name}}" and success matches "{{success}}"
+
+| where event_type matches "AuthActivityAuditEvent"
+| count by operation_name 
+| sort by _count, operation_name
 ```
 
 ```sql title="Detection Status Update"
-_sourceCategory=*Crowdstrike*  UserActivityAuditEvent
-| json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime" as event_type, customer_id, event_time
-| formatDate(fromMillis(event_time), "MM/dd/yyyy HH:mm:ss:SSS") as event_time
-| where event_type="UserActivityAuditEvent"
-| json "event.OperationName",  "event.UserId", "event.UserIp", "event.ServiceName", "event.AuditKeyValues" as operation_name, user_id, src_user, service_name, audit_values
-| count by operation_name
-| sort by _count
+_sourceCategory={{Logsdatasource}} eventType UserActivityAuditEvent event OperationName quarantined_file_update
+| json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime", "event.OperationName",  "event.UserId", "event.UserIp", "event.ServiceName", "event.AuditKeyValues" as event_type, customer_id, event_time, operation_name, src_user, user_ip, service_name, audit_values nodrop
+
+// global filters
+| where src_user matches "{{src_user}}" and operation_name matches "{{operation_name}}" and event_type matches "{{event_type}}" and service_name matches "{{service_name}}" and customer_id matches "{{customer_id}}"
+
+| where event_type matches "UserActivityAuditEvent" and operation_name matches "quarantined_file_update"  
+| count
 ```
 
 ## Collection configuration and app installation
