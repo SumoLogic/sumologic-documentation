@@ -142,4 +142,4 @@ Email Gateway
   + Fixed issue in the **Search Emails Extended** action.
   + Converted `has_attachments` and `is_unread` from text fields to list fields with true/false options.
 * December 10, 2025 (v1.3) - Added a dynamic Mailbox override option to all actions, enabling multi-user execution without requiring resource updates.
-* December 30, 2025 (v1.4) - Removed the default values for the has_attachments and un_read fields in the Search Emails Extended action. The change allows users to search for emails without being forced to filter by attachment status or read/unread status.
+* December 30, 2025 (v1.4) - Removed the default values for the `has_attachments` and `un_read` fields in the **Search Emails Extended** action. The change allows users to search for emails without being forced to filter by attachment status or read/unread status.
