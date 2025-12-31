@@ -11,6 +11,8 @@ resource "sumologic_cloud_to_cloud_source" "salesforce_source" {
       "client_id":"3MVG9VeAQy5y3BQWhBnxmQyadGTCNr2zbO.TEep4g6Wik9ZEdlgREnNrGBs680cYVdTjw8SlWv2qVoNgYGddS",
       "user_token":"********",
       "inmemory_lookup":true,
+      "collectAuditData":true,
+      "collectEventLogFileData":true,
       "password":"********",
       "fields":{      
         "_siemForward":false

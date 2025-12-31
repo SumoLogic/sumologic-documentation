@@ -542,6 +542,43 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 | Epoch NanoInt         | `173584347745451512`             | `epochNanoInt`                        |
 | Epoch NanoFloat       | `1735843477.454515`              | `epochNanoFloat`                      |
 
+## Troubleshooting
+
+<details>
+  <summary>
+    Errors related to partial log ingestion, log preparation, timestamp extraction, or response parsing
+  </summary>
+  <div>
+    <strong>Possible resolution</strong>
+    <ul>
+      <li>Ensure that the <code>HTTP Response Log Ingest Configuration</code> matches the API response structure.</li>
+      <li>Verify that all configured fields exist in the API response.</li>
+      <li>Confirm that the API response is returned in valid JSON format.</li>
+    </ul>
+  </div>
+</details>
+
+<details>
+  <summary>Error getting partial logs, error preparing log, error getting timestamp data, timestamp path not in data, or error parsing response data</summary>
+  <div>
+    These errors are typically caused by an improper endpoint response format or incorrect log ingestion configuration. Ensure that your endpoint returns data in a valid JSON format and response fields are as per the configuration.
+  </div>
+</details>
+
+<details>
+  <summary>oauth2: cannot parse json: invalid character</summary>
+  <div>
+    This error occurs due to an OAuth 2.0 authentication misconfiguration. Reconfigure the source using valid OAuth 2.0 credentials and ensure that it aligns with the steps in the [Authentication Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
+  </div>
+</details>
+
+<details>
+  <summary>Failed to validate the base request config or error preparing new request</summary>
+  <div>
+    These errors indicate that the endpoint configuration is not set up correctly. Verify that your endpoint configuration follows the instructions in the [Request Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
+  </div>
+</details>
+
 ## FAQ
 
 :::info

@@ -19,7 +19,7 @@ The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [SIEM Logs](https://developer.services.mimecast.com/docs/threatssecurityeventsanddataforcg/1/routes/v1/siem/events/cg/get) |
+| 5 min |  [SIEM Logs](https://developer.services.mimecast.com/docs/threatssecurityeventsanddataforcg/1/routes/siem/v1/events/cg/get) |
 | 5 min |  [DLP Logs](https://developer.services.mimecast.com/docs/securityevents/1/routes/api/dlp/get-logs/post) |
 | 5 min |  [Audit Events](https://developer.services.mimecast.com/docs/auditevents/1/routes/api/audit/get-audit-events/post) |
 | 5 min |  [Hold Message List](https://developer.services.mimecast.com/docs/cloudgateway/1/routes/api/gateway/get-hold-message-list/post) |

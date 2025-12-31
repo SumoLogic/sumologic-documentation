@@ -131,3 +131,42 @@ cat sumo://threat-intel | formatDate(toLong(_threatlookup.valid_until), "yyyy-MM
 You cannot use the cat search operator with the `SumoLogic_ThreatIntel` source.
 :::
 -->
+
+<!-- Remove the following "Upcoming change" section at GA. -->
+
+## Upcoming change
+
+The behavior of the `threatlookup` operator is changing in an upcoming release. Previously, rows without matches in threat intelligence sources were excluded from search results. With the new behavior, `threatlookup` will return one result row for each input indicator, even if there is no threat intel match. In such cases, the normalized threatlookup fields (for example, `_threatlookup.source`, `_threatlookup.confidence`, etc.) will be `null`.
+
+### Impact
+
+If you have saved queries, dashboards, or other workflows relying on the current behavior, they may return additional rows after this change. This could require you to update your logic to explicitly exclude rows with no matches.
+
+### How to adapt
+
+To retain the previous filtering and exclude rows without threat intel matches, add an explicit non-match filtering check, for example:
+
+```
+_index=sec_record*
+| threatlookup singleIndicator srcDevice_ip
+| where _threatlookup.confidence > 50
+| where !isNull(_threatlookup.source)
+| timeslice 1h
+| count by _timeslice
+```
+
+If you do not add this check, one row will be returned for every input, regardless of matches.
+
+For example, given the log message:
+`198.51.100.7 - - [02/Dec/2025:08:40:01 +0000] "GET /admin/login.php HTTP/1.1" 404 250 "-" "Mozilla/5.0"`
+
+The previous query was:
+
+```
+* | parse regex "(?<client_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+| threatlookup singleIndicator client_ip
+```
+
+Before, no result is returned if `198.51.100.7` is not in your threat intel sources.
+
+After, one result row is returned, containing `_threatlookup.*` fields as `null`.
