@@ -62,8 +62,9 @@ For information about Freshservice, see [Freshservice documentation](https://sup
 
 Ticketing System
 
-## Notes
+:::note
 Providing an invalid or unauthorized Workspace ID may result in a 400 Bad Request error. Verify that the Workspace ID is correct and accessible to the API user.
+:::
 
 ## Change Log
 
@@ -76,4 +77,4 @@ Providing an invalid or unauthorized Workspace ID may result in a 400 Bad Reques
 	+ Updated integration: (Updated the integration Fields with Environmental Variables)
 * July 11, 2023 (v1.5) - Removed leading/trailing spaces
 * Sept 11, 2024(v1.6) - Updated the Update Ticket action
-* Dec 30, 2025 (v1.8) - Create and Update Ticket actions now support an optional Workspace ID and updating existing custom ticket fields.
+* Dec 30, 2025 (v1.8) - Create and Update Ticket actions now support an optional Workspace ID. Updated existing custom ticket fields.
