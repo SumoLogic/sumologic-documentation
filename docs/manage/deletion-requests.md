@@ -127,7 +127,7 @@ Deletion requests only apply to data already indexed, and not to future ingestio
 
 ### Deletion scope
 
-Deletion is restricted to [Partitions](/docs/manage/partitions/), Default view (`sumologic_default`), [Scheduled Views](/docs/manage/scheduled-views), [Scheduled Search](/docs/alerts/scheduled-searches/), and ad hoc views in Sumo Logic. Deletion is currently not supported for audit indexes, security indexes, and other view types. Sensitive data may still be present in these unsupported views.
+Deletion is restricted to [partitions](/docs/manage/partitions/), default view (`sumologic_default`), [Scheduled Views](/docs/manage/scheduled-views), [Scheduled Search](/docs/alerts/scheduled-searches/), and ad hoc views in Sumo Logic. Deletion is currently not supported for audit indexes, security indexes, and other view types. Sensitive data may still be present in these unsupported views.
 
 ### Supported operators
 
