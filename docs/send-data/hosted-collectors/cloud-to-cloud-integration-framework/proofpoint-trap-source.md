@@ -11,7 +11,7 @@ description: Learn how to collect Proofpoint TRAP message data and send it to Su
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="150"/>
 
 The Sumo Logic source for Proofpoint TRAP enables you to ingest message logs from the Proofpoint TRAP API and send them to Sumo Logic for analysis. This integration enhances email threat visibility by providing detailed insights into message disposition, threats detected, and policy actions, helping security teams identify, investigate, and respond to email-based attacks more effectively.
 
@@ -26,7 +26,7 @@ The Sumo Logic source for Proofpoint TRAP enables you to ingest message logs fro
 ### Vendor configuration
 
 :::note
-The Proofpoint TRAP API documentation is not public and accessible only with Support Community account. [Reference](https://proofpoint.my.site.com/community/s/article/Threat-Response-TRAP-How-to-Access-Threat-Response-Auto-Pull-TRAP-documentation)
+The Proofpoint TRAP API documentation is not public and is [accessible only with a Support Community account](https://proofpoint.my.site.com/community/s/article/Threat-Response-TRAP-How-to-Access-Threat-Response-Auto-Pull-TRAP-documentation).
 :::
 
 The Proofpoint TRAP source requires you to provide the Proofpoint TRAP Base URL, Authentication Base URL, Client ID, and Client Secret to configure the source.
