@@ -130,7 +130,8 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 <details>
   <summary>This request is throttled. Please try again after the value specified in the Retry-After header.</summary>
   <div>
-    This error occurs when the API request limit (throttling threshold) is exceeded and the source makes more API calls than the limit specified in the [Microsoft documentation](https://learn.microsoft.com/en-us/graph/throttling-limits#identity-and-access-reports-service-limits). In many cases, this happens when the same credentials are used concurrently by multiple vendors or integrations. Please verify that the credentials configured for the Sumo Logic source are not shared with other platforms making API calls. </div>
+    This error occurs when the API request limit (throttling threshold) is exceeded and the source makes more API calls than the limit specified in the [Microsoft documentation](https://learn.microsoft.com/en-us/graph/throttling-limits#identity-and-access-reports-service-limits). In many cases, this happens when the same credentials are used concurrently by multiple vendors or integrations. Please verify that the credentials configured for the Sumo Logic source are not shared with other platforms making API calls. 
+  </div>
 </details>
 
 ## FAQ
