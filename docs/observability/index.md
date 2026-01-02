@@ -27,7 +27,7 @@ In this section, we'll introduce the following concepts:
 </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href={useBaseUrl('docs/observability/monitoring')}><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Monitoring</h4></a>
+      <a href={useBaseUrl('docs/observability/monitoring')}><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Monitoring with the Observability Solution</h4></a>
       <p>Set alerts that notify you about system state changes.</p>
       </div>
     </div>
@@ -45,13 +45,37 @@ In this section, we'll introduce the following concepts:
     </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href={useBaseUrl('docs/observability/reliability-management-slo')}><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Reliability Management/SLOs</h4></a>
+      <a href={useBaseUrl('docs/observability/application-components')}><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Application Components Solution</h4></a>
+      <p>Easily monitor and troubleshoot potential issues with applications.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/observability/diagnose-issues')}><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Diagnose with the Observability Solution</h4></a>
+      <p>Diagnose service issues with the Sumo Logic Observability Solution.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/observability/troubleshoot')}><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Troubleshooting with Sumo Logic Observability</h4></a>
+      <p>Use Observability to troubleshoot and diagnose issues across a variety of environments.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/observability/reliability-management-slo')}><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Reliability Management (SLOs/SLIs)</h4></a>
       <p>Create Reliability Management dashboards, configure queries, set SLIs, and more.</p>
       </div>
     </div>
     <div className="box smallbox card">
       <div className="container">
-       <a href="https://docs.sensu.io/sensu-go/latest/get-started"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Sensu</h4></a>
+      <a href={useBaseUrl('docs/observability/work-from-home-vpn')}><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Work from Home VPN Solution</h4></a>
+      <p>Enable quick, safe, and reliable work-from-home monitoring with our Work from Home Solution.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+       <a href="https://docs.sensu.io/sensu-go/"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Sensu</h4></a>
       <p>Gain insight into traditional server closets, containers, apps, and more.</p>
       </div>
     </div>
