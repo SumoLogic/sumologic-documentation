@@ -11,6 +11,12 @@ Sumo Logic offers several alerting features. See the topics below for details on
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/alerts/difference-from-scheduled-searches')}><img src={useBaseUrl('img/icons/alerts.png')} alt="icon" width="40"/><h4>Monitors vs. Scheduled Searches</h4></a>
+  <p>Learn about the feature differences between Monitors and Scheduled Searches.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/alerts/monitors')}><img src={useBaseUrl('img/icons/alerts.png')} alt="icon" width="40"/><h4>Monitors</h4></a>
   <p>Configure alerting policies notify you about critical changes or issues affecting your production applications.</p>
   </div>
@@ -23,8 +29,8 @@ Sumo Logic offers several alerting features. See the topics below for details on
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/alerts/difference-from-scheduled-searches')}><img src={useBaseUrl('img/icons/alerts.png')} alt="icon" width="40"/><h4>Monitors vs. Scheduled Searches</h4></a>
-  <p>Learn about the feature differences between Monitors and Scheduled Searches.</p>
+  <a href={useBaseUrl('docs/alerts/webhook-connections')}><img src={useBaseUrl('img/icons/alerts.png')} alt="icon" width="40"/><h4>Webhook Connections</h4></a>
+  <p>Webhook connections send alerts to third-party applications.</p>
   </div>
 </div>
 </div>
