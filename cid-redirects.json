@@ -3413,6 +3413,7 @@
   "/Manage/Security/Create-an-Allowlist-for-IP-or-CIDR-Addresses": "/docs/manage/security/create-allowlist-ip-cidr-addresses",
   "/Manage/Security/Create-a-Whitelist-for-IP-or-CIDR-Addresses": "/docs/manage/security/create-allowlist-ip-cidr-addresses",
   "/Manage/Security/Data_Access_Level_for_Shared_Dashboards": "/docs/manage/security/data-access-level-shared-dashboards",
+  "/Manage/Security/Data_Deletion": "/docs/manage/deletion-requests",
   "/Manage/Security/Data_Encryption/Data_Encryption_at_Rest": "/docs/manage/partitions/data-tiers",
   "/Manage/Security/Enable-a-Support-Account": "/docs/manage/security/enable-support-account",
   "/Manage/Security/Enable_a_Support_Account": "/docs/manage/security/enable-support-account",
