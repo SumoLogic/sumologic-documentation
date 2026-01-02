@@ -141,6 +141,12 @@ import CisNote from '../../reuse/cis-note.md';
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/security-threat-detection/vmware-carbon-black')}><img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="50"/><h4>VMware Carbon Black</h4></a>
+  <p>A guide to the Sumo Logic app for VMware Carbon Black.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/security-threat-detection/zscaler-internet-access')}><img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="thumbnail icon" width="95"/><h4>Zscaler Internet Access</h4></a>
   <p>A guide to the Sumo Logic app for Zscaler Internet Access.</p>
   </div>
