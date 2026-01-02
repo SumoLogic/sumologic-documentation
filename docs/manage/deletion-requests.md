@@ -30,7 +30,7 @@ Key features:
 
 ## Prerequisites
 
-| Action | Required [Role Capability](/docs/manage/users-roles/roles/role-capabilities/#data-management) |
+| Action | Required [role capability](/docs/manage/users-roles/roles/role-capabilities/#data-management) |
 |:-------|:-------------------|
 | Create or manage deletion requests | **Manage Deletion Requests** |
 | View deletion requests only | **View Deletion Requests** or **Manage Deletion Requests** |
