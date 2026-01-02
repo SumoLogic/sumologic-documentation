@@ -74,7 +74,7 @@ Data cannot be recovered once deleted. Ensure you have appropriately backed up a
 
 ## Audit deletion events
 
-The Audit Event Index and System Event Index contain detailed JSON logs for deletion activities. To search for these events, use the metadata field `_sourceCategory=deletionRule`.
+The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) and [System Event Index](/docs/manage/security/audit-indexes/system-event-index/) contain detailed JSON logs for deletion activities. To search for these events, use the metadata field `_sourceCategory=deletionRule`.
 
 ```sql
 (_index=sumologic_*_events) AND _sourceCategory=deletionRule
