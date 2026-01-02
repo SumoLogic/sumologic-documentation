@@ -11,6 +11,12 @@ Sumo Logic provides apps for platforms and tools that support software developme
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/app-development/opentelemetry')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="55"/><h4>OpenTelemtry</h4></a>
+  <p>A guide to OpenTelemetry apps for app development.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/app-development/bitbucket')}><img src={useBaseUrl('img/integrations/app-development/bitbucket.png')} alt="Thumbnail icon" width="55"/><h4>Bitbucket</h4></a>
   <p>A guide to Sumo Logic apps for Bitbucket.</p>
   </div>
