@@ -49,4 +49,4 @@ Data Deletion Rules APIs let you request removal of ingested data from Sumo Logi
 
 ## Additional information
 
-* [Data Deletion Requests](/docs/api/data-deletion-rules)
+* [Deletion Requests](/docs/manage/deletion-requests/)
