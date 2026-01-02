@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.0  
 Updated: Jan 2, 2026***
 
-Censys helps organizations, individuals, and researchers find and monitor every server on the Internet to reduce exposure and improve security.
+Censys helps organizations, individuals, and researchers find and monitor every server on the internet to reduce exposure and improve security.
 
 ## Actions
 

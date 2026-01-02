@@ -35,8 +35,8 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 * **Expel API Token**. Enter the Expel API Token.
 
-* <IntegrationCertificate/>
 * <IntegrationTimeout/>
+* <IntegrationCertificate/>
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
