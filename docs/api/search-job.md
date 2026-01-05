@@ -35,10 +35,10 @@ The Search Job API is available to Enterprise accounts.
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Download Search Results
     * View Collectors
-* Security
+* [Security](/docs/manage/users-roles/roles/role-capabilities/#security)
     * Manage Access Keys
 
 

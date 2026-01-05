@@ -38,7 +38,7 @@ Before submitting an issue or pull request, we recommend reviewing the sections 
 
 To contribute to Sumo Docs, ensure you have the following tools installed:
 
-- [Node.js](https://nodejs.org/en/download/) version 18 or higher
+- [Node.js](https://nodejs.org/en/download/) version 20 or higher
 - [Yarn](https://yarnpkg.com/en/), installable via [Homebrew](https://brew.sh/) (`brew install yarn`)
 
 ## Installation
@@ -68,19 +68,13 @@ All contributions must follow our [Style Guide](https://www.sumologic.com/help/d
 
 Building the site locally ensures your changes are accurate and functional before submission.
 
-1. Serve and preview your content with hot reloads:
+Serve and preview your content with hot reloads:
    ```bash
    yarn start
    ```
    Any issues, such as broken links or images, will be listed. Fix them, rebuild, and verify your changes.
 
-2. Build the site and test locally:
-   ```bash
-   yarn build
-   ```
-   The static files will be generated in the `build` folder and served at `http://localhost:3000/`.
-
-To stop the local server or build process, press `Ctrl + C`. You can rebuild and restart as needed.
+To stop the local server process, press `Ctrl + C`. You can restart as needed.
 
 ## Publishing content
 

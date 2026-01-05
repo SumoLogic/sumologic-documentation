@@ -51,14 +51,15 @@ The sources on the **Threat Intelligence** tab include:
 ### Sumo Logic threat intelligence sources
 
 Sumo Logic provides the following out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources:
-* **SumoLogic_ThreatIntel**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/).
-* **_sumo_global_feed_cs**. This is a source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/).
+* **SumoLogic_ThreatIntel**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/). For more information, see [Sumo Logic Threat Intel Source](/docs/security/threat-intelligence/sumologic-threat-intel-source/).
+* **_sumo_global_feed_cs**. This is a source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/). For more information, see [Sumo Logic Global Feed from CrowdStrike](/docs/security/threat-intelligence/sumologic-global-feed-from-crowdstrike/).
 
 ### Ingest threat intelligence indicators
 
 A Cloud SIEM administrator must first ingest the indicators before they can be used to uncover threats. Indicators can be ingested using:
 * **A collector**. See:
    * [CrowdStrike Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source)
+   * [Google Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source/)
    * [Intel471 Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source)
    * [Mandiant Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source)
    * [STIX/TAXII 1 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source)  

@@ -94,7 +94,7 @@ You can use multiple variables, for example:
 {{sys.PATH}}-{{sys.YourEnvVar}}
 ```
 
-![img](/img/send-data/environment-variable-usage.png)
+<img src={useBaseUrl('img/send-data/environment-variable-usage.png')} alt="Multiple variables" style={{border: '1px solid gray'}} width="500" />
 
 :::tip
 The example above uses a hyphen (`-`) character to separate variable components. Separator characters are not required. Curly brackets and spaces are not allowed. Underscores and hyphens are recommended.

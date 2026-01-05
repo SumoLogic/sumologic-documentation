@@ -11,16 +11,16 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/active-directory-json')}>Active Directory JSON</a></h4>
-  <p>A guide to the Sumo Logic app for Active Directory JSON.</p>
+  <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/opentelemetry')}>OpenTelemetry</a></h4>
+  <p>A guide to the OpenTelemetry apps for Microsoft and Azure.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/active-directory-json')}>Active Directory (Legacy)</a></h4>
-  <p>A guide to the Sumo Logic app for Active Directory (Legacy).</p>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/active-directory-json')}>Active Directory JSON - Classic Collector</a></h4>
+  <p>A guide to the Sumo Logic app for Active Directory JSON.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -35,13 +35,6 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-analysis-services.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-analysis-services')}>Azure Analysis Services</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Analysis Services.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-audit.png')} alt="Thumbnail icon" width="60"/>
-  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/audit')}>Azure Audit</a></h4>
-  <p>A guide to the Sumo Logic app for Azure Audit.</p>
   </div>
 </div>
  <div className="box smallbox card">
@@ -77,6 +70,13 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-application-gateway.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-application-gateway')}>Azure Application Gateway</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Application Gateway.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-audit.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/audit')}>Azure Audit</a></h4>
+  <p>A guide to the Sumo Logic app for Azure Audit.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -123,16 +123,16 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-cosmos-db-for-postgresql.png')} alt="Thumbnail icon" width="60"/>
-  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-cosmos-db-for-postgresql')}>Azure Cosmos DB for PostgreSQL</a></h4>
-  <p>A guide to the Sumo Logic integration for Azure Cosmos DB for PostgreSQL.</p>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-cosmos-db.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-cosmos-db')}>Azure Cosmos DB</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Cosmos DB.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-cosmos-db.png')} alt="Thumbnail icon" width="60"/>
-  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-cosmos-db')}>Azure Cosmos DB</a></h4>
-  <p>A guide to the Sumo Logic integration for Azure Cosmos DB.</p>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-cosmos-db-for-postgresql.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-cosmos-db-for-postgresql')}>Azure Cosmos DB for PostgreSQL</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Cosmos DB for PostgreSQL.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -221,6 +221,13 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/k8s.png')} alt="Thumbnail iƒßcon" width="40"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/kubernetes')}>Azure Kubernetes Service</a></h4>
+  <p>A guide to the Sumo Logic app for Azure Kubernetes Service Control Plane.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-load-balancer.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-load-balancer')}>Azure Load Balancer</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Load Balancer.</p>
@@ -249,6 +256,13 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/network-watcher.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/network-watcher')}>Azure Network Watcher</a></h4>
+  <p>A guide to the Sumo Logic app for Azure Network Watcher.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-notification-hubs.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-notification-hubs')}>Azure Notification Hubs</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Notification Hubs.</p>
@@ -256,16 +270,16 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-public-ipAddress.png')} alt="Thumbnail icon" width="60"/>
-  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-public-ipAddress')}>Azure IP Addresses</a></h4>
-  <p>A guide to the Sumo Logic integration for Azure IP Addresses.</p>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-openai.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-open-ai')}>Azure OpenAI</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure OpenAI.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-openai.png')} alt="Thumbnail icon" width="60"/>
-  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-open-ai')}>Azure OpenAI</a></h4>
-  <p>A guide to the Sumo Logic integration for Azure OpenAI.</p>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-public-ipAddress.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-public-ipAddress')}>Azure Public IP Addresses</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure IP Addresses.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -290,6 +304,12 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps"><img src={useBaseUrl('img/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps.png')} alt="thumbnail icon" width="55"/><h4>Azure Security - Microsoft Defender for Cloud Apps</h4></a>
+  <p>Learn about the Sumo Logic collection process for the Azure Security - Microsoft Defender for Cloud Apps.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity')}><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="thumbnail icon" width="50"/><h4>Azure Security - Microsoft Defender for Identity</h4></a>
   <p>Learn about the Sumo Logic collection process for the Azure Security - Microsoft Defender for Identity</p>
   </div>
@@ -302,9 +322,29 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection"><img src={useBaseUrl('img/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection.png')} alt="thumbnail icon" width="55"/><h4>Azure Security - Microsoft Entra ID Protection</h4></a>
+  <p>Learn about the Sumo Logic collection process for the Azure Security - Microsoft Entra ID Protection.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-service-bus.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-service-bus')}>Azure Service Bus</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Service Bus.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-storage.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-storage')}>Azure Storage</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Storage.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/sql')}>Azure SQL</a></h4>
+  <p>A guide to the Sumo Logic app for Azure SQL.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -323,13 +363,6 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-storage.png')} alt="Thumbnail icon" width="60"/>
-  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-storage')}>Azure Storage</a></h4>
-  <p>A guide to the Sumo Logic integration for Azure Storage.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-stream-analytics.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-stream-analytics')}>Azure Stream Analytics</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Stream Analytics.</p>
@@ -344,53 +377,39 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-vm-icon.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-virtual-machine')}>Azure Virtual Macine</a></h4>
+  <p>Learn about the Sumo Logic collection process for the Azure Virtual Machine service.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-virtual-network.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-virtual-network')}>Azure Virtual Network</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Virtual Network.</p>
   </div>
 </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/k8s.png')} alt="Thumbnail icon" width="40"/>
-      <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/kubernetes')}>Azure Kubernetes Service Control Plane</a></h4>
-      <p>A guide to the Sumo Logic app for Azure Kubernetes Service Control Plane.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-identity.png')} alt="Thumbnail icon" width="40"/>
-      <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/microsoft-defender-for-endpoint')}>Microsoft Defender for Endpoint</a></h4>
-      <p>A guide to the Sumo Logic app for Microsoft Defender for Endpoint.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/network-watcher.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/network-watcher')}>Azure Network Watcher</a></h4>
-      <p>A guide to the Sumo Logic app for Azure Network Watcher.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/sql')}>Azure SQL</a></h4>
-      <p>A guide to the Sumo Logic app for Azure SQL.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/webapps.png')} alt="Thumbnail icon" width="55"/>
-      <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/web-apps')}>Azure Web Apps</a></h4>
-      <p>A guide to the Sumo Logic app for Azure Web Apps.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="Thumbnail icon" width="120"/>
-      <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/iis-7')}>IIS 7</a></h4>
-      <p>A guide to the Sumo Logic app for IIS 7.</p>
-      </div>
-    </div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/webapps.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/web-apps')}>Azure Web Apps</a></h4>
+  <p>A guide to the Sumo Logic app for Azure Web Apps.</p>
+  </div>
+</div>
+  <div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="Thumbnail icon" width="120"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/iis-7')}>IIS 7</a></h4>
+  <p>A guide to the Sumo Logic app for IIS 7.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-identity.png')} alt="Thumbnail icon" width="40"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/microsoft-defender-for-endpoint')}>Microsoft Defender for Endpoint</a></h4>
+  <p>A guide to the Sumo Logic app for Microsoft Defender for Endpoint.</p>
+  </div>
+</div>
     <div className="box smallbox card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-dynamics365-customer-insights.png')} alt="Thumbnail icon" width="50"/>
@@ -412,6 +431,13 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
       <p>A guide to the Sumo Logic app for Microsoft Office Audit 365.</p>
       </div>
     </div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-purview-data-loss-prevention.png')} alt="Thumbnail icon" width="150"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/microsoft-purview-data-loss-prevention')}>Microsoft Purview Data Loss Prevention</a></h4>
+  <p>Learn how to collect and analyze the alert data from the Azure security platform to the Sumo Logic platform.</p>
+  </div>
+</div>    
     <div className="box smallbox card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="Thumbnail icon" width="45"/>
