@@ -47,8 +47,8 @@ To create a webhook:
 1. On the **Connections** page, click **+ Add**.
 1. For **Connection Type**, select **Webhook** from the dropdown.
 1. In the **Connection Settings** dialog, enter:
-    * **Name**. Enter **Sumo Logic SIGNL4** as the name for the Connection.
-    * (Optional) **Description**. Enter a Description for the Connection.
+    * **Name**. Enter **Sumo Logic SIGNL4** as the name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
     * **URL**. Enter the SIGNL4 webhook URL (from the step above) into the **URL** field.
 1. Enter the following content in the **Alert Payload** field:
     ```json
