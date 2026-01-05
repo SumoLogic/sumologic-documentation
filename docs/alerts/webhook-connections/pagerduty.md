@@ -99,7 +99,7 @@ The URL and supported payload are different based on the version of the PagerDut
      :::note
      Do not update the `routing_key`, `event_action`, and `dedup_key` fields, otherwise recovery notifications will not be generated.
      :::
-    * For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
+    * For details on other variables that can be used as parameters within your JSON object, see [Configure Webhook payload variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables).
     <br/><img src={useBaseUrl('img/connection-and-integration/v2.png')} alt="PagerDuty default payload v2" style={{border: '1px solid gray'}} width="700" />
 1. Click **Test Alert** or **Test Recovery** to test the connection. If successful, you'll see a `200 OK` response message.
 1. Click **Save**.
