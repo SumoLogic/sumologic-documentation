@@ -34,8 +34,8 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
 1. On the **Connections** page, click **+ Add**.
 1. For **Connection Type**, select **Microsoft Teams** from the dropdown.
 1. In the **Connection Settings** dialog, enter:
-    * **Name**. Enter a name for the Connection.
-    * (Optional) **Description**. Enter a Description for the Connection.
+    * **Name**. Enter a name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
     * **URL**. Enter the URL from Microsoft Teams.
     * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
 1. (Optional) Customize the **Alert and Recovery Payloads** to include just the information you need.
