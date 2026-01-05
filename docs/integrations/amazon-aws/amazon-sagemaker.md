@@ -187,11 +187,12 @@ account=* region=* namespace=/aws/sagemaker/endpoints endpointname=* metric=CPUU
 
 Sumo Logic supports collecting metrics using two source types:
 
-* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended); or
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
-* Namespace for **Amazon Sagemaker** Service is **AWS/Sagemaker**.
-    * ​​​**Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. Metrics can be queried via the “account field”.
+The namespace for the **Amazon Sagemaker** Service is **AWS/Sagemaker**.
+
+For ​​​**Metadata** add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. Metrics can be queried via the “account field”.
 
 ### Collecting Amazon Sagemaker CloudTrail logs
 
@@ -221,7 +222,7 @@ Ensure that when configuring `CloudWatch Logs`, the log group name follows the p
 
 Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. You can choose either of them to collect logs:
 
-- **AWS Kinesis Firehose for Logs**. Configure an [AWS Kinesis Firehose for Logs](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource) (Recommended); or
+- **AWS Kinesis Firehose for Logs**. Configure an [AWS Kinesis Firehose for Logs](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource) (recommended); or
 - **Lambda Log Forwarder**. Configure a collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo Logic provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/) or configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function/).<br/>
 
 - While configuring the CloudWatch log source, the following fields can be added to the source:
@@ -229,7 +230,7 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
     - Add a **region** field and assign it the value of the respective AWS region where the **Sagemaker** exists.
     - Add an **accountId** field and assign it the value of the respective AWS account ID that is being used.
 
-  <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" />
+  <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure field in field schema
 
@@ -278,9 +279,9 @@ extract field=_sourceHost "/aws/sagemaker/(?<ns>[^/]*)" nodrop
 | fields namespace, endpointname
 ```
 
-### Collecting Centralized AWS CloudTrail logs
+### Collecting centralized AWS CloudTrail logs
 
-In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
+In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present and update it as required.
 
 ```sql
 Rule Name: AWS Accounts
@@ -288,7 +289,7 @@ Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 ```
 
-**Parse Expression**:
+**Parse expression**:
 
 Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the `“dev”` alias for an AWS account with ID `"956882123456"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
@@ -332,7 +333,7 @@ We highly recommend you view these dashboards in the [AWS Observability view](/d
 
 ### Overview
 
-The **Amazon Sagemaker - Overview** dashboard provides a high-level view of SageMaker usage and health across endpoints, jobs, and Feature Store. It tracks endpoint invocations, model errors, loaded models, CPU/GPU utilization for endpoints and training/transform/processing jobs, Feature Store latency and throttled requests, pipeline executions, and trends by endpoint/job - filterable by account and region.
+The **Amazon Sagemaker - Overview** dashboard provides a high-level view of SageMaker usage and health across endpoints, jobs, and Feature Store. It tracks endpoint invocations, model errors, loaded models, CPU/GPU utilization for endpoints and training/transform/processing jobs, Feature Store latency and throttled requests, pipeline executions, and trends by endpoint/job, filterable by account and region.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Overview.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
 
@@ -364,7 +365,7 @@ The **Amazon Sagemaker - Endpoints** dashboard provides operational visibility i
 
 The **Amazon Sagemaker - Endpoints Invocations** dashboard provides visibility into inference activity across your SageMaker endpoints. It tracks total invocations and invocations per instance, highlights 4XX/5XX and model errors, and measures overhead latency. Panels include per-endpoint breakdowns and time-series trends, filterable by account, region, and endpoint, to help monitor reliability and performance.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Endpoints-Invocations.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Endpoint-Invocations.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
 
 ### Feature Store
 
@@ -374,7 +375,7 @@ The **Amazon Sagemaker - Feature Store** dashboard provides visibility into Feat
 
 ### Pipeline
 
-The **Amazon Sagemaker - Pipeline** dashboard provides visibility into Model Building Pipelines execution health and performance. It tracks pipeline and step statuses (started, succeeded, failed, stopped), measures execution and step durations, and charts trends by pipeline and step\u2014filterable by account, region, pipeline, and step."
+The **Amazon Sagemaker - Pipeline** dashboard provides visibility into Model Building Pipelines execution health and performance. It tracks pipeline and step statuses (started, succeeded, failed, stopped), measures execution and step durations, and charts trends by pipeline and step, filterable by account, region, pipeline, and step.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Pipeline.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
 
