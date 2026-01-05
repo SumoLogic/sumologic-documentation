@@ -64,6 +64,21 @@ You can use the **Filters** area near the top of the page to narrow down the ins
 * Status
 * Tags
 
+### Bulk update insights
+
+You can select multiple insights and make changes to them all at once using either the [Cloud SIEM API](/docs/api/cloud-siem-enterprise/) or the UI.
+
+To bulk update insights in the UI:
+1. Open the insights [list view](#list-view).
+1. [Filter insights](#filtering-insights) to locate only the insights you want to act on.
+1. Use the checkboxes on the insights list view to select multiple insights. You can select a maximum of 5000 insights.
+1. Select the action you want to take on the insights:
+   * **Close Insights**. Give the insights a [closed resolution](/docs/cse/administration/manage-custom-insight-resolutions/#close-an-insight-using-a-custom-resolution).
+   * **Assign To**. Assign the insights to a Cloud SIEM user.
+   * **Change Status**. Change the insights' [status](/docs/cse/administration/manage-custom-insight-statuses/). <br/><img src={useBaseUrl('img/cse/bulk-select-insights.png')} alt="Bulk update insights" style={{border: '1px solid gray'}} width="500"/>
+1. Click **Confirm** on the confirmation dialog box.
+1. If you are updating a large number of insights, a progress bar will display until the job is finished. You cannot initiate another bulk update until the previous job finished. 
+
 ### View insights in child organizations
 
 If you manage a parent organization with child organizations that also use Cloud SIEM, you can see a list of all insights across multiple child organizations. This is useful if your company is a large enterprise with many organizations or is a Managed Security Service Provider (MSSP), and you'd like to see all insights across all areas in a single page.
