@@ -27,7 +27,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
     * (Optional) **Description**. Enter a description for the connection.
     * **URL**. Enter the URL for the endpoint. See [Slack API help](https://api.slack.com/incoming-webhooks) for more information.
     * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
-1. Under **Alert Payload**, which allows you to customize how the alert notification look in Slack, enter a JSON object in the format required by Slack. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
+1. Under **Alert Payload**, which allows you to customize how the alert notification look in Slack, enter a JSON object in the format required by Slack. For details on variables that can be used as parameters within your JSON object, see [Configure Webhook payload variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables). 
 1. Under **Recovery Payload**, which allows you to customize how the recovery notification look in Slack, enter a JSON object in the format required by Slack. 
 1. Click **Test Alert** or **Test Recovery** to test the connection. If successful, you'll see a `200 OK` response message.
 1. Click **Save**.
