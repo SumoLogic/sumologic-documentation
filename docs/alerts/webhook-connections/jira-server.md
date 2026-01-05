@@ -39,8 +39,8 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles/
 1. On the **Connections** page, click **+ Add**.
 1. For **Connection Type**, select **Jira** from the dropdown.
 1. In the **Connection Settings** dialog, enter:
-   * **Name**. Enter a name for the Connection.
-   * (Optional) **Description**. Enter a Description for the Connection.
+   * **Name**. Enter a name for the connection.
+   * (Optional) **Description**. Enter a description for the connection.
    * **URL**. Enter a **URL** from the Jira REST API to create issues. For example, to create an issue:
       ```
       https://<jira_cloud_instance>/rest/api/2/issue
