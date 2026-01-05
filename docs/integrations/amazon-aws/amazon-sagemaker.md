@@ -16,9 +16,9 @@ The Sumo Logic Amazon Sagemaker app dashboards offer insights into CloudTrail, C
 ## Log and metrics types
 
 The Amazon Sagemaker app uses the following logs and metrics:
-* [Monitor Amazon Sagemaker API calls using CloudTrail](https://docs.aws.amazon.com/sagemaker/latest/userguide/logging-using-cloudtrail.html).
-* [Monitor model invocation using CloudWatch Logs](https://docs.aws.amazon.com/sagemaker/latest/userguide/model-invocation-logging.html).
-* [Amazon Sagemaker runtime metrics](https://docs.aws.amazon.com/sagemaker/latest/userguide/monitoring.html#runtime-cloudwatch-metrics).
+* [Monitor Amazon Sagemaker API calls using CloudTrail](https://docs.aws.amazon.com/sagemaker/latest/dg/logging-using-cloudtrail.html).
+* [Monitor Endpoint invocation using CloudWatch Logs](https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html).
+* [Amazon Sagemaker runtime metrics](https://docs.aws.amazon.com/sagemaker/latest/dg/monitoring-cloudwatch.html).
 
 ### Sample CloudTrail log message
 
@@ -112,85 +112,73 @@ The Amazon Sagemaker app uses the following logs and metrics:
 ### Sample queries
 
 ```sql title="Successful Event Locations (CloudTrail log based)"
-account=* region=us-east-1 namespace=aws/sagemaker "\"eventSource\":\"sagemaker.amazonaws.com\"" !errorCode
+account=* region=* namespace=aws/sagemaker "\"eventSource\":\"sagemaker.amazonaws.com\"" !errorCode
 | json "eventSource", "eventName", "eventType", "sourceIPAddress", "errorCode", "errorMessage" nodrop
 | json "userIdentity.type", "userIdentity.userName", "userIdentity.arn", "recipientAccountId", "awsRegion" as user_type, user_name, arn, accountid, region nodrop
-| parse field=arn "arn:aws:sts::*:*/*" as f1, user_type, user_name nodrop
-| json "requestParameters.modelId", "responseElements.modelId" as reqModelid, resmodelId nodrop
-| if (!isBlank(reqModelid), reqModelid, resmodelId) as modelid
+| parse field=arn "arn:*:sts::*:*/*" as arn_part, f1, user_type, user_name nodrop
 | where eventSource matches "sagemaker.amazonaws.com"
-| where modelid matches "ai21.j2-mid-v1" or isBlank(modelid)
 | count as eventCount by sourceIPAddress
-| lookup latitude, longitude from geo://location on ip=sourceIPAddress
+| lookup latitude, longitude from geo://location on ip = sourceIPAddress
+| sum(eventCount) by latitude, longitude 
+| where !isnull(latitude)
 ```
 
 ```sql title="Top 10 Error Message (CloudTrail log based)"
-account=* region=us-east-1 namespace=aws/sagemaker "\"eventSource\":\"sagemaker.amazonaws.com\"" errorCode
+account=* region=* namespace=aws/sagemaker "\"eventSource\":\"sagemaker.amazonaws.com\"" errorCode
 | json "eventSource", "eventName", "eventType", "sourceIPAddress", "errorCode", "errorMessage" nodrop
 | json "userIdentity.type", "userIdentity.userName", "userIdentity.arn", "recipientAccountId", "awsRegion" as user_type, user_name, arn, accountid, region nodrop
-| parse field=arn "arn:aws:sts::*:*/*" as f1, user_type, user_name nodrop
-| json "requestParameters.modelId", "responseElements.modelId" as reqModelid, resmodelId nodrop
-| if (!isBlank(reqModelid), reqModelid, resmodelId) as modelid
+| parse field=arn "arn:*:sts::*:*/*" as arn_part, f1, user_type, user_name nodrop
 | where eventSource matches "sagemaker.amazonaws.com"
-| where modelid matches "ai21.j2-mid-v1" or isBlank(modelid)
-| count as eventCount by errorMessage
-| sort by eventCount, errorMessage asc
+| count as eventCount by sourceIPAddress
+| lookup latitude, longitude from geo://location on ip=sourceIPAddress
+| sum(eventCount) by latitude, longitude
+| where !isnull(latitude)
 ```
 
 ```sql title="Top 20 Non-ReadOnly Events (CloudTrail log based)"
-account=* region=us-east-1 namespace=aws/sagemaker "\"eventSource\":\"sagemaker.amazonaws.com\""
+account=* region=* namespace=aws/sagemaker "\"eventSource\":\"sagemaker.amazonaws.com\""
 | json "eventSource", "eventName", "eventType", "sourceIPAddress", "errorCode", "errorMessage" nodrop
 | json "userIdentity.type", "userIdentity.userName", "userIdentity.arn", "recipientAccountId", "awsRegion" as user_type, user_name, arn, accountid, region nodrop
-| parse field=arn "arn:aws:sts::*:*/*" as f1, user_type, user_name nodrop
-| json "requestParameters.modelId", "responseElements.modelId" as reqModelid, resmodelId nodrop
-| if (!isBlank(reqModelid), reqModelid, resmodelId) as modelid
+| parse field=arn "arn:*:sts::*:*/*" as arn_part, f1, user_type, user_name nodrop
 | where eventSource matches "sagemaker.amazonaws.com"
-| where modelid matches "ai21.j2-mid-v1" or isBlank(modelid)
 | where !(eventName matches "Get*") and !(eventName matches "List*")
-| count as eventCount by eventName 
-| sort by eventCount, eventName asc
+| count as freq by eventName 
+| sort by freq, eventName asc
 | limit 20
 ```
 
-```sql title="Event Details (CloudWatch log based)"
-account=* region=* namespace=aws/sagemaker
-| json "accountId", "region", "operation", "identity.arn", "modelId" as accountid, region, operation, arn, modelid nodrop
-| parse field=arn "arn:aws:*::*:user/*" as user_type, f1, user_name nodrop
-| parse field=arn "arn:aws:sts::*:*/*" as f1, user_type, user_name nodrop
-| where accountid matches "*" and operation matches "*" and user_name matches "*" and modelid matches "*"
-| count as events by accountid, region, operation, user_type, user_name, modelid
-| sort by events, accountid asc, region asc, operation asc, user_type asc, user_name asc, modelid asc
+```sql title="Access Log Status Code by Endpoints (CloudWatch log based)"
+account=* region=* namespace=/aws/sagemaker/endpoints ACCESS_LOG 
+| json field=_raw "message","logGroup" as message, logGroup nodrop
+| if (isBlank(message), _raw, message) as line
+| parse field=line "* [*] * ACCESS_LOG - /*:* \"* * *\" * *"
+    as ts, level, thread, client_ip, client_port, method, path, protocol, status, bytes nodrop
+| where !isBlank(status)                 
+| toint(status) as status
+| toint(bytes)  as bytes
+| fields ts, level, thread, client_ip, client_port, method, path, protocol, status, bytes, endpointname
+| where !isBlank(endpointname) and endpointname matches "*"
+| count by endpointname, status
+| sort by _count, endpointname, status asc
 ```
 
-```sql title="Operations Trend (CloudWatch log based)"
-account=* region=* namespace=aws/sagemaker
-| json "accountId", "region", "operation", "identity.arn", "modelId" as accountid, region, operation, arn, modelid nodrop
-| parse field=arn "arn:aws:*::*:user/*" as user_type, f1, user_name nodrop
-| parse field=arn "arn:aws:sts::*:*/*" as f1, user_type, user_name nodrop
-| where accountid matches "*" and operation matches "*" and user_name matches "*" and modelid matches "*"
-| timeslice 1h
-| count by _timeslice, operation
-| transpose row _timeslice column operation
+```sql title="Recent Logs Processing Jobs (CloudWatch log based)"
+account=* region=* namespace=/aws/sagemaker/processingjobs
+| json field=_raw "message" as message nodrop
+| if (isBlank(message), _raw, message) as message
+| parse field=logstream "*/*" as processingjobname, algo_name
+| where processingjobname matches "*" and algo_name matches "*"
+| formatDate(_messageTime, "MM/dd/yyyy HH:mm:ss") as time
+| count as Count by time, account, region, processingjobname, algo_name, message
+| sort by time
 ```
 
-```sql title="ModelId Trend (CloudWatch log based)"
-account=* region=* namespace=aws/sagemaker
-| json "accountId", "region", "operation", "identity.arn", "modelId" as accountid, region, operation, arn, modelid nodrop
-| parse field=arn "arn:aws:*::*:user/*" as user_type, f1, user_name nodrop
-| parse field=arn "arn:aws:sts::*:*/*" as f1, user_type, user_name nodrop
-| where accountid matches "*" and operation matches "*" and user_name matches "*" and modelid matches "*"
-| timeslice 1h
-| count by _timeslice, modelid
-| transpose row _timeslice column modelid
+```sql title="Feature Store Invocations (CloudWatch Metric)"
+account=* region=* namespace=aws/sagemaker featuregroupname=* operationname=* metric=Invocations statistic=sum | quantize using sum | sum 
 ```
 
-
-```sql title="Invocation Latency By Model (CloudWatch Metric)"
-account=* region=* namespace=aws/sagemaker modelid=* metric=InvocationLatency statistic=average | avg by modelid 
-```
-
-```sql title="Trend Invocations By Model (CloudWatch Metric)"
-account=* region=* namespace=aws/sagemaker modelid=* metric=Invocations statistic= sum | quantize using sum | sum by modelid
+```sql title="CPU Utilization by Endpoint (CloudWatch Metric)"
+account=* region=* namespace=/aws/sagemaker/endpoints endpointname=* metric=CPUUtilization statistic=average | avg by endpointname 
 ```
 
 ## Collecting logs and metrics for the Amazon Sagemaker app
@@ -225,13 +213,11 @@ Sumo Logic supports collecting metrics using two source types:
 
 ### Collecting Amazon Sagemaker CloudWatch logs
 
-To enable Amazon Sagemaker CloudWatch Logs, follow the steps mentioned in [AWS documentation](https://docs.aws.amazon.com/sagemaker/latest/userguide/model-invocation-logging.html)
+To enable Amazon Sagemaker CloudWatch Logs, follow the steps mentioned in [AWS documentation](https://docs.aws.amazon.com/whitepapers/latest/sagemaker-studio-admin-best-practices/logging-and-monitoring.html#logging-with-cloudwatch)
 
 :::note
 Ensure that when configuring `CloudWatch Logs`, the log group name follows the pattern `/aws/sagemaker/*`.
 :::
-
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Settings.png')} alt="Amazon Sagemaker Setting" style={{border: '1px solid gray'}} />
 
 Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. You can choose either of them to collect logs:
 
@@ -265,9 +251,9 @@ Scope (Specific Data): account=* eventname eventsource "sagemaker.amazonaws.com"
 json "eventSource", "awsRegion", "recipientAccountId" as event_source, region, accountid nodrop
 | where event_source matches "sagemaker.amazonaws.com"
 | "aws/sagemaker" as namespace
-| json "requestParameters.modelId", "responseElements.modelId" as reqModelid, resmodelId nodrop
-| if (!isBlank(reqModelid), reqModelid, resmodelId) as modelId
-| fields accountid, region, namespace, modelId
+| json "requestParameters.endpointname", "requestParameters.endpointconfigname" as endpointname, endpointconfigname nodrop
+| if (!isBlank(endpointname), endpointname, endpointconfigname) as endpoint
+| fields accountid, region, namespace, endpoint
 ```
 
 #### Create/Update Field Extraction Rule(s) for Sagemaker CloudWatch logs
@@ -280,11 +266,16 @@ account=* region=* _sourceHost=/aws/sagemaker/*
 ```
 
 ```sql title="Parse Expression"
-if (isEmpty(namespace),"unknown",namespace) as namespace
-| if (_sourceHost matches "/aws/sagemaker/*", "aws/sagemaker", namespace) as namespace
-| json "modelId" as modelId nodrop
-| tolowercase(modelId) as modelId
-| fields namespace, modelId
+extract field=_sourceHost "/aws/sagemaker/(?<ns>[^/]*)" nodrop
+| extract field=_sourceHost "/aws/sagemaker/[^/]+/(?<variant>[^/]*)" nodrop
+| concat("/aws/sagemaker/", ns) as fullns
+| if (_sourceHost matches "/aws/sagemaker/*", fullns, namespace) as namespace
+| if (_sourceHost matches "/aws/sagemaker", "aws/sagemaker", namespace) as namespace
+| if (_sourceHost matches "/aws/sagemaker/groundtruth/WorkerActivity", "aws/sagemaker/groundtruth/WorkerActivity", namespace) as namespace
+| tolowercase(namespace) as namespace
+| parse field=_sourceHost "/aws/sagemaker/Endpoints/*"         as endpointname        nodrop
+| tolowercase(endpointname)      as endpointname
+| fields namespace, endpointname
 ```
 
 ### Collecting Centralized AWS CloudTrail logs
@@ -325,7 +316,6 @@ As part of the app installation process, the following fields will be created by
 * `accountid`: The unique 12-digit identifier for the AWS account where the resource is present.
 * `namespace`: The AWS service namespace that the resource or metric belongs to (for example, AWS/EC2 or AWS/S3).
 * `endpointname`: A specific identifier for the endpoints within an AWS Sagemaker.
-* `endpointname`: A specific identifier for the endpoints within an AWS Sagemaker.
 * `transform_job` : A specific identifier for the transform jobs within an AWS Sagemaker.
 * `instance_id`: The unique identifier for an instance within the AWS Sagemaker service.
 * `training_job`: A specific identifier for the training jobs within an AWS Sagemaker.
@@ -342,18 +332,13 @@ We highly recommend you view these dashboards in the [AWS Observability view](/d
 
 ### Overview
 
-The **Amazon Sagemaker - Overview** dashboard provides an overall health of the Sagemaker service based on logs and metrics.
-
-Use this dashboard to:
-* Monitor locations of successful and failed Amazon Sagemaker user activity events.
-* Monitor all read-only and non-read-only events.
-* Monitor the most active users working on the Sagemaker infrastructure and various events invoked on the Sagemaker service.
+The **Amazon Sagemaker - Overview** dashboard provides a high-level view of SageMaker usage and health across endpoints, jobs, and Feature Store. It tracks endpoint invocations, model errors, loaded models, CPU/GPU utilization for endpoints and training/transform/processing jobs, Feature Store latency and throttled requests, pipeline executions, and trends by endpoint/job - filterable by account and region.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Overview.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
 
-### CloudTrail Audit Overview
+### CloudTrail Audit
 
-The **Amazon Sagemaker - CloudTrail Audit Overview** dashboard provides a record of actions taken by a user, role, or AWS service in Amazon Sagemaker. CloudTrail captures all API calls for Amazon Sagemaker as events.
+The **Amazon Sagemaker - CloudTrail Audit** dashboard provides a record of actions taken by a user, role, or an AWS service in Amazon sagemaker. CloudTrail captures all console actions and API/CLI calls for Amazon sagemaker as events.
 
 Use this dashboard to:
 * Monitor Amazon Sagemaker-related audit logs using CloudTrail Events.
@@ -361,29 +346,56 @@ Use this dashboard to:
 * Monitor all read-only and non-read-only events.
 * Monitor the most active users working on the Sagemaker infrastructure and various events invoked on the Sagemaker service.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-CloudTrail-Audit-Overview.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-CloudTrail-Audit.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
 
-### Model Invocation Log Analysis
+### Models
 
-The **Amazon Sagemaker - Model Invocation Log Analysis** dashboard provides insights into audit events of your invocation logs, model input data, and model output data for all invocations in your AWS account used in Amazon Sagemaker.
+The **Amazon Sagemaker - Models** dashboard provides visibility into model inference performance and readiness, tracking total invocations, model latency, cache hits, and maximum concurrent requests per model. It highlights model loading, downloading, and wait times with per-endpoint breakdowns, filterable by account, region, and endpoint to assess capacity and warm-up behavior.
 
-Use this dashboard to:
-* Monitor Amazon Sagemaker-related audit logs using CloudWatch Events.
-* Monitor operational events and the models being utilized.
-* Monitor the most active users working on the Sagemaker service.
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Models.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Model-Invocation-Log-Analysis.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+### Endpoints
 
-### Runtime Performance Monitoring
+The **Amazon Sagemaker - Endpoints** dashboard provides operational visibility into your inference endpoints, tracking CPU, GPU, GPU memory, memory, and disk utilization, along with loaded model counts (including multi-model endpoints). It also summarizes access logs by HTTP status and log level to highlight errors, with filters for account, region, and endpoint for targeted troubleshooting.
 
-The **Amazon Sagemaker - Runtime Performance Monitoring** dashboard provides statistical insights into runtime model invocation metrics.
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Endpoints.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
 
-Use this dashboard to:
-* Monitor all invocations-related metrics.
-* Monitor and track input and output tokens.
-* Monitor and track images in the output.
+### Endpoints Invocations
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Runtime-Performance-Monitoring.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+The **Amazon Sagemaker - Endpoints Invocations** dashboard provides visibility into inference activity across your SageMaker endpoints. It tracks total invocations and invocations per instance, highlights 4XX/5XX and model errors, and measures overhead latency. Panels include per-endpoint breakdowns and time-series trends, filterable by account, region, and endpoint, to help monitor reliability and performance.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Endpoints-Invocations.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+
+### Feature Store
+
+The **Amazon Sagemaker - Feature Store** dashboard provides visibility into Feature Store usage and reliability, tracking consumed read/write request units, invocations, throttled requests, and 4XX/5XX errors across feature groups and operations. It also surfaces operational latency with time-series and honeycomb breakdowns, filterable by account, region, feature group, and operation for targeted analysis.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Feature-Store.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+
+### Pipeline
+
+The **Amazon Sagemaker - Pipeline** dashboard provides visibility into Model Building Pipelines execution health and performance. It tracks pipeline and step statuses (started, succeeded, failed, stopped), measures execution and step durations, and charts trends by pipeline and step\u2014filterable by account, region, pipeline, and step."
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Pipeline.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+
+### Processing Jobs
+
+The **Amazon Sagemaker - Processing Jobs** dashboard provides operational visibility into processing jobs, tracking CPU, GPU, GPU memory, memory, and disk utilization by job and algorithm in time-series and honeycomb views. It also surfaces recent logs for selected jobs to aid troubleshooting, with filters for account, region, processing job, and algorithm.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Processing-Jobs.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+
+### Transform Jobs
+
+The **Amazon Sagemaker - Transform Jobs** dashboard provides operational visibility into batch transform workloads, tracking CPU, GPU, GPU memory, memory, and disk utilization by job and instance in time-series and honeycomb views. It also surfaces recent logs for selected jobs to aid troubleshooting, with filters for account, region, transform job, and instance.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Transform-Jobs.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+
+### Training Jobs
+
+The **Amazon Sagemaker - Training Jobs** dashboard provides operational visibility into training workloads, tracking CPU, GPU, GPU memory, memory, and disk utilization by job and algorithm. It offers time-series and honeycomb breakdowns plus a recent logs table for selected jobs, filterable by account, region, training job, and algorithm.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Training-Jobs.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+
 
 ## Create monitors for Amazon Sagemaker app
 
@@ -393,12 +405,15 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Amazon Sagemaker alerts
 
-| Name | Description | Alert Condition | Recover Condition |
-|:--|:--|:--|:--|
-| `Amazon Sagemaker - Delete Action Detected` | This alert is triggered when a Delete API call to the Amazon Sagemaker environment is detected. | Count > 0 | Count < = 0 |
-| `Amazon Sagemaker - High Model Invocation Latency` | This alert is triggered when the average time to receive a response from a Sagemaker model exceeds a configurable threshold in milliseconds. High latency can directly impact the user experience of your applications. | Count > 5000 | Count < = 5000 |
-| `Amazon Sagemaker - High Number of Access Denied Errors` | This alert is triggered when there is a spike in AccessDeniedException errors in CloudTrail for the Sagemaker service. This could indicate misconfigured IAM policies or a potential security threat. | Count > 5 | Count < = 5 |
-| `Amazon Sagemaker - Model Invocation Server Error Detection` | This alert is triggered when the number of server-side errors from model invocations increases more than a configurable value (Default 5). This can indicate issues with the service, your input data, or permissions. | Count > 5 | Count < = 5 |
+| Name                                                 | Description                                                                                            | Alert Condition | Recover Condition |
+|:-----------------------------------------------------|:-------------------------------------------------------------------------------------------------------|:----------------|:--|
+| `Amazon Sagemaker - Pipeline Duration`               | This alert is triggered when high pipeline duration is detected in Amazon Sagemaker.                   | Count > 300000  | Count < = 300000 |
+| `Amazon Sagemaker - Processing Jobs CPU Utilization` | This alert is triggered when high CPU Utilization is detected for Processing Jobs in Amazon Sagemaker. | Count > 80    | Count < = 80 |
+| `Amazon Sagemaker - Processing Jobs GPU Utilization` | This alert is triggered when high GPU Utilization is detected for Processing Jobs in Amazon Sagemaker. | Count > 80    | Count < = 80 |
+| `Amazon Sagemaker - Training Jobs CPU Utilization`   | This alert is triggered when high CPU Utilization is detected for Training Jobs in Amazon Sagemaker.   | Count > 80    | Count < = 80 |
+| `Amazon Sagemaker - Training Jobs GPU Utilization`   | This alert is triggered when high GPU Utilization is detected for Training Jobs in Amazon Sagemaker. | Count > 80    | Count < = 80 |
+| `Amazon Sagemaker - Transform Jobs CPU Utilization`  | This alert is triggered when high CPU Utilization is detected for Transform Jobs in Amazon Sagemaker. | Count > 80    | Count < = 80 |
+| `Amazon Sagemaker - Transform Jobs GPU Utilization`  | This alert is triggered when high GPU Utilization is detected for Transform Jobs in Amazon Sagemaker. | Count > 80    | Count < = 80 |
 
 ## Upgrade/Downgrade the Amazon Sagemaker app (Optional)
 
