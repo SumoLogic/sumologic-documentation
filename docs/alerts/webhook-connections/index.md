@@ -33,8 +33,38 @@ In this section, we'll introduce the following concepts and more:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="50"/>
+  <h4><a href={useBaseUrl('docs/alerts/webhook-connections/cloud-soar')}>Cloud SOAR</a></h4>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src='https://upload.wikimedia.org/wikipedia/en/7/7e/Datadog_logo.svg' alt="icon" width="50"/>
+  <h4><a href={useBaseUrl('docs/alerts/webhook-connections/datadog')}>Datadog</a></h4>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="40"/>
+  <h4><a href={useBaseUrl('docs/alerts/webhook-connections/jira-cloud')}>Jira Cloud</a></h4>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="40"/>
+  <h4><a href={useBaseUrl('docs/alerts/webhook-connections/jira-server')}>Jira Server</a></h4>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="40"/>
+  <h4><a href={useBaseUrl('docs/alerts/webhook-connections/jira-service-desk')}>Jira Service Desk</a></h4>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/connection-and-integration/azure-functions.png')} alt="Thumbnail icon" width="80"/>
-  <h4><a href={useBaseUrl('docs/alerts/webhook-connections/microsoft-azure-functions')}>Azure Functions</a></h4>
+  <h4><a href={useBaseUrl('docs/alerts/webhook-connections/microsoft-azure-functions')}>Microsoft Azure Functions</a></h4>
   </div>
 </div>
   <div className="box smallbox card">
@@ -45,8 +75,38 @@ In this section, we'll introduce the following concepts and more:
   </div>
   <div className="box smallbox card">
     <div className="container">
+    <img src='https://newrelic.com/themes/custom/erno/assets/mediakit/new_relic_logo_horizontal.png' alt="thumbnail icon" width="100"/>
+    <h4><a href={useBaseUrl('docs/alerts/webhook-connections/new-relic')}>New Relic</a></h4>
+    </div>
+  </div>
+  <div className="box smallbox card">
+    <div className="container">
+    <img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="Thumbnail icon" width="50"/>
+    <h4><a href={useBaseUrl('docs/alerts/webhook-connections/opsgenie-legacy')}>Opsgenie (Legacy)</a></h4>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+    <img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="Thumbnail icon" width="50"/>
+    <h4><a href={useBaseUrl('docs/alerts/webhook-connections/opsgenie')}>Opsgenie</a></h4>
+    </div>
+  </div>
+  <div className="box smallbox card">
+    <div className="container">
     <img src={useBaseUrl('img/integrations/saas-cloud/pagerduty.png')} alt="Thumbnail icon" width="50"/>
     <h4><a href={useBaseUrl('docs/alerts/webhook-connections/pagerduty')}>PagerDuty</a></h4>
+    </div>
+  </div>
+  <div className="box smallbox card">
+    <div className="container">
+    <img src='https://companieslogo.com/img/orig/NOW-6d5a01eb.png?t=1647966832' alt="icon" width="60"/>
+    <h4><a href={useBaseUrl('docs/alerts/webhook-connections/servicenow')}>ServiceNow</a></h4>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+    <img src={useBaseUrl('https://raw.githubusercontent.com/signl4/signl4-logo/main/signl4.png')} alt="Thumbnail icon" width="50"/>
+    <h4><a href={useBaseUrl('docs/alerts/webhook-connections/signl4')}>SIGNL4</a></h4>
     </div>
   </div>
   <div className="box smallbox card">
@@ -57,20 +117,14 @@ In this section, we'll introduce the following concepts and more:
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="Thumbnail icon" width="50"/>
-    <h4><a href={useBaseUrl('docs/alerts/webhook-connections/opsgenie')}>Opsgenie</a></h4>
+    <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Thumbnail icon" width="50"/>
+    <h4><a href={useBaseUrl('docs/alerts/webhook-connections/audit-index')}>Sumo Logic Audit Index</a></h4>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src='https://companieslogo.com/img/orig/NOW-6d5a01eb.png?t=1647966832' alt="icon" width="60"/>
-    <h4><a href={useBaseUrl('docs/alerts/webhook-connections/servicenow')}>ServiceNow</a></h4>
-    </div>
-  </div>
-  <div className="box smallbox card">
-    <div className="container">
-    <img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="60"/>
-    <h4><a href={useBaseUrl('docs/alerts/webhook-connections/jira-cloud')}>Jira</a></h4>
+    <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Thumbnail icon" width="50"/>
+    <h4><a href={useBaseUrl('docs/alerts/webhook-connections/schedule-searches-webhook-connections')}>Sumo Logic Scheduled Searches</a></h4>
     </div>
   </div>
 </div>
