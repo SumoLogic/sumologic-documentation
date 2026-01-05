@@ -34,8 +34,8 @@ To set up a ServiceNow Webhook connection:
 1. On the **Connections** page, click **+ Add**.
 1. For **Connection Type**, select **ServiceNow** from the dropdown.
 1. In the **Connection Settings** dialog, enter:
-   * **Name**. Enter a name for the Connection.
-   * (Optional) **Description**. Enter a Description for the Connection.
+   * **Name**. Enter a name for the connection.
+   * (Optional) **Description**. Enter a description for the connection.
    * **URL**. Enter one of the following based on whether you want to create **Events** or **Incidents**: 
       * To create ServiceNow ITSM **Incidents**, enter the **URL** for the ServiceNow Incident endpoint. 
       ```
