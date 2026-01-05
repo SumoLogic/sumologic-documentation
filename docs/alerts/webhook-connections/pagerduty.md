@@ -110,8 +110,8 @@ The URL and supported payload are different based on the version of the PagerDut
 1. On the **Connections** page, click **+ Add**.
 1. For **Connection Type**, select **PagerDuty** from the dropdown.
 1. In the **Connection Settings** dialog, enter:
-    * **Name**. Enter a name for the Connection.
-    * (Optional) **Description**. Enter a Description for the Connection.
+    * **Name**. Enter a name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
     * **URL**. Enter `https://events.pagerduty.com/generic/2010-04-15/create_event.json` as the URL for the endpoint
     * (Optional) **Authorization Header**. Enter an authorization header, which may include an authorization token.
     * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
