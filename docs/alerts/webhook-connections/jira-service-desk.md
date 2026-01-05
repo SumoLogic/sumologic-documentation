@@ -52,7 +52,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
       :::
    * **Authorization Header**. Enter your **Authorization Header** from the [prerequisites](#prerequisites). For example, `Basic <random string>`.
    * (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-   * The following input fields are automatically updated in the JSON **Payload** and vice versa. Update them to meet your requirements. At a minimum, you'll need to enter a valid Project Key.
+   * The following input fields are automatically updated in the JSON **Payload** and vice versa. Update them to meet your requirements. At a minimum, you'll need to enter a valid project key.
       * **Issue Type**
       * **Project Key**
       * **Issue Summary**
