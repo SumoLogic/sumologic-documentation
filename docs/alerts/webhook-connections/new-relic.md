@@ -23,8 +23,8 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 1. On the **Connections** page, click **+ Add**.
 1. For **Connection Type**, select **New Relic** from the dropdown.
 1. In the **Connection Settings** dialog, enter:
-    * **Name**. Enter a name for the Connection.
-    * (Optional) **Description**. Enter a Description for the Connection.
+    * **Name**. Enter a name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
     * **URL**. Enter the **URL** for the endpoint. See [Create an API Key for New Relic Webhook](#create-an-api-keyfor-new-relic-webhook).
         ```
         https://insights-collector.newrelic.com/v1/accounts/ACCOUNT_ID/events
