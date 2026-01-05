@@ -23,9 +23,9 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 1. On the **Connections** page, click **+ Add**.
 1. For **Connection Type**, select **Slack** from the dropdown.
 1. In the **Connection Settings** dialog, enter:
-    * **Name**. Enter a name for the Connection.
-    * (Optional) **Description**. Enter a Description for the Connection.
-    * **URL**. Enter the URL for the endpoint. See [Slack API Help](https://api.slack.com/incoming-webhooks) for more information.
+    * **Name**. Enter a name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
+    * **URL**. Enter the URL for the endpoint. See [Slack API help](https://api.slack.com/incoming-webhooks) for more information.
     * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
 1. Under **Alert Payload**, which allows you to customize how the alert notification look in Slack, enter a JSON object in the format required by Slack. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
 1. Under **Recovery Payload**, which allows you to customize how the recovery notification look in Slack, enter a JSON object in the format required by Slack. 
