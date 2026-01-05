@@ -1,12 +1,18 @@
 ---
 id: proofpoint-trap-source
-title: Proofpoint TRAP Source
+title: Proofpoint TRAP Source (Beta)
 sidebar_label: Proofpoint TRAP
 tags:
   - cloud-to-cloud
   - proofpoint-trap
 description: Learn how to collect Proofpoint TRAP message data and send it to Sumo Logic.
 ---
+
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';

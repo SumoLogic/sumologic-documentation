@@ -1,6 +1,6 @@
 ---
 id: proofpoint-tap-source
-title: Proofpoint TAP Source (Beta)
+title: Proofpoint TAP Source
 sidebar_label: Proofpoint TAP
 tags:
     - proofpoint-tap
@@ -8,12 +8,6 @@ description: The Proofpoint TAP Source provides a secure endpoint to receive da
 ---
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
 <img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/>
 
