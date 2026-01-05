@@ -33,16 +33,16 @@ Check out our [DevOps Glossary](https://www.sumologic.com/glossary).
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/observability/sdo/jenkins-plugin-build-deploy-events')}><img src={useBaseUrl('img/icons/sdo.png')} alt="icon" width="45"/><h4>Jenkins Plugin</h4></a>
-  <p>Learn how to send build and deploy events to Sumo Logic from Jenkins Pipeline.</p>
+  <a href={useBaseUrl('docs/observability/sdo/supported-tools-schema')}><img src={useBaseUrl('img/icons/sdo.png')} alt="icon" width="45"/><h4>Supported Tools and Schema</h4></a>
+  <p>Learn which Tools and Schema are supported by Software Development Optimization Solution.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/observability/sdo/supported-tools-schema')}><img src={useBaseUrl('img/icons/sdo.png')} alt="icon" width="45"/><h4>Supported Tools and Schema</h4></a>
-  <p>Learn which Tools and Schema are supported by Software Development Optimization Solution.</p>
+  <a href={useBaseUrl('docs/observability/sdo/jenkins-plugin-build-deploy-events')}><img src={useBaseUrl('img/icons/sdo.png')} alt="icon" width="45"/><h4>Jenkins Plugin</h4></a>
+  <p>Learn how to send build and deploy events to Sumo Logic from Jenkins Pipeline.</p>
   </div>
-  </div>
+</div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/observability/sdo/integrate-tools-with-sdo')}><img src={useBaseUrl('img/icons/sdo.png')} alt="icon" width="45"/><h4>Integrate Other DevOps Tools with SDO (Optional)</h4></a>
