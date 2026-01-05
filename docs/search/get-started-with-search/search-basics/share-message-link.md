@@ -1,7 +1,7 @@
 ---
 id: share-message-link
 title: Share a Message Link to a Search
-description: Share a message link to search query results. Copy and paste the a message link to share a search on table.
+description: Share a message link to search query results. Copy and paste the message link to share a search.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
