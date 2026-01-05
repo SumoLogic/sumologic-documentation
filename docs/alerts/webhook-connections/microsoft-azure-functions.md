@@ -40,8 +40,8 @@ Configure the Webhook connection to trigger the Azure function:
 1. On the **Connections** page, click **+ Add**.
 1. For **Connection Type**, select **Azure Functions** from the dropdown.
 1. In the **Connection Settings** dialog, enter:
-    * **Name**. Enter a name for the Connection.
-    * (Optional) **Description**. Enter a Description for the Connection.
+    * **Name**. Enter a name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
     * **URL**. Enter the function URL for the endpoint from the previous section.
     * (Optional) **Authorization Header**. Enter an authorization header, which may include an authorization token.
     * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
