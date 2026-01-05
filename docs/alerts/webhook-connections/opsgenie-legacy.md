@@ -58,7 +58,7 @@ To create a webhook:
     * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
 1. Enter the following content in the **Alert Payload** field:
     :::note
-    Opsgenie uses the priority value in the Payload field to define the priority of alerts. For this reason, you should change the priority to match your needs.
+    Opsgenie uses the priority value in the payload field to define the priority of alerts. For this reason, you should change the priority to match your needs.
     :::
     ```json
     {
