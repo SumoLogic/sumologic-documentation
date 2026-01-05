@@ -113,21 +113,24 @@ If you see an error when starting a new lesson, try these steps:
 
 Use the Training Lab environment to get hands‑on practice with course exercises. This environment is curated and set up to work along with our training curriculum.
 
+During instructor-led and on-demand courses, you may be asked to access a Sumo Logic training lab environment. This environment is separate from your production Sumo Logic account and is provided specifically for hands-on learning.
+
 ### How do I access the training lab environment?
 
-1. Choose a number between 001 and 999. Use this number across your labs.
-2. Open a second browser (for example, Firefox if you are reading this in Chrome) so you can stay logged in to both your regular Sumo Logic account and the training lab at the same time.
-3. In the second browser window, go to [https://service.sumologic.com](https://service.sumologic.com).
-4. Enter the credentials posted at the top of the **Become a Sumo Expert** page in the learning portal.
-5. You will know you have access when hovering over the user profile in the upper-right corner shows **Sumo Logic Training**.
-6. Save your training username for use during training.
+Training lab credentials are available via self-service directly from the learning portal.
 
-### Where can I find the training lab credentials?
+1. Open a second browser (for example, Firefox if you are reading this in Chrome) so you can stay logged in to both your regular Sumo Logic account and the training lab at the same time.
+2. Go to the [learning portal](#how-do-i-access-the-learning-portal) and click **Become a Sumo Expert**.<br/><img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Training lab credentials" style={{border: '1px solid gray'}} width="600" />
+3. Click **Request Training Analyst Login** (if you're an admin, this will say **Request Training Admin Login**).
+3. The system will automatically assign you an available analyst account in the format `training+analyst###@sumologic.com` (where ### is between 001-999).
+4. Your credentials will be displayed on screen and sent to your email address.
+5. In the second browser window, go to [service.sumologic.com](https://service.sumologic.com) and log in with your assigned credentials.
+6. You will know you have access when hovering over the user profile in the upper-right corner shows **Sumo Logic Training**.
+7. Save your training username for use during training.
 
-Credentials change monthly. Go to the [learning portal](#how-do-i-access-the-learning-portal) > **Become a Sumo Expert**.
-
-<img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Training lab credentials" style={{border: '1px solid gray'}} width="600" />
-
+:::note
+Training lab credentials are valid for **30 days**. If yours expire, follow the same steps above to create a new set.
+:::
 
 ## Certifications
 
