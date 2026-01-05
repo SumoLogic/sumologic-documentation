@@ -58,7 +58,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
       * **Issue Summary**
       * (optional) **Priority**
       * **Issue Description**
-1. The following JSON is an example of the default **Alert Payload**, which you can customize. For details on the variables you can use as parameters within your JSON object, see [Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections).
+1. The following JSON is an example of the default **Alert Payload**, which you can customize. For details on the variables you can use as parameters within your JSON object, see [Configure Webhook payload variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables).
    ```json
    {
    "fields": {
