@@ -41,8 +41,8 @@ To set up a webhook connection:
 1. On the **Connections** page, click **+ Add**.
 1. For **Connection Type**, select **Webhook** from the dropdown.
 1. In the **Connection Settings** dialog, enter:
-    * **Name**. Enter a name for the Connection.
-    * (Optional) **Description**. Enter a Description for the Connection.
+    * **Name**. Enter a name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
     * **URL**. Enter the **URL** for the endpoint. This is generated from the remote system’s API.
         :::important
         HTTPS URLs can use any port without restriction, while HTTP URLs are limited to only port 80.
