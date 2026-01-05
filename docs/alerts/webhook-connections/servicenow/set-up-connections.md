@@ -87,8 +87,8 @@ The first step for integrating ServiceNow with Sumo Logic is to configure one 
 1. On the **Connections** page, click **+ Add**.
 1. For **Connection Type**, select **ServiceNow (Legacy)** from the dropdown.
 1. In the **Connection Settings** dialog, enter:
-   * **Name**. Enter a name for the Connection.
-   * (Optional) **Description**. Enter a Description for the Connection.
+   * **Name**. Enter a name for the connection.
+   * (Optional) **Description**. Enter a description for the connection.
    * **URL**. Copy your organization's ServiceNow URL, which can be found at the top of any ServiceNow web page, then paste it in the URL text box. After pasting the URL, type **/api/now/table/em_event** to enable data to be uploaded from Sumo Logic to ServiceNow.
    * Enter the **Username** and **Password** used to log in to **ServiceNow**.
 1. Click **Save**. The connection displays.
