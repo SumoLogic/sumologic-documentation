@@ -225,7 +225,7 @@ Sumo Logic supports collecting metrics using two source types:
 
 ### Collecting Amazon Sagemaker CloudWatch logs
 
-To enable Amazon Sagemaker CloudWatch Logs, follow the steps mentioned in [AWS Documentation](https://docs.aws.amazon.com/sagemaker/latest/userguide/model-invocation-logging.html)
+To enable Amazon Sagemaker CloudWatch Logs, follow the steps mentioned in [AWS documentation](https://docs.aws.amazon.com/sagemaker/latest/userguide/model-invocation-logging.html)
 
 :::note
 Ensure that when configuring `CloudWatch Logs`, the log group name follows the pattern `/aws/sagemaker/*`.
