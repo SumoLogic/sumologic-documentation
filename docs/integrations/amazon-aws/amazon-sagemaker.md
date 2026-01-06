@@ -317,15 +317,6 @@ As part of the app installation process, the following fields will be created by
 * `accountid`: The unique 12-digit identifier for the AWS account where the resource is present.
 * `namespace`: The AWS service namespace that the resource or metric belongs to (for example, AWS/EC2 or AWS/S3).
 * `endpointname`: A specific identifier for the endpoints within an AWS Sagemaker.
-* `transform_job` : A specific identifier for the transform jobs within an AWS Sagemaker.
-* `instance_id`: The unique identifier for an instance within the AWS Sagemaker service.
-* `training_job`: A specific identifier for the training jobs within an AWS Sagemaker.
-* `algo_name` : The name of the algorithm used in the AWS Sagemaker service.
-* `Processing_job`: A specific identifier for the processing jobs within an AWS Sagemaker.
-* `pipelinename`: A specific identifier for the pipelines within an AWS Sagemaker.
-* `stepname` : A specific identifier for the steps within an AWS Sagemaker pipeline.
-* `OperationName`: The name of the operation performed within the AWS Sagemaker service feature store.
-* `featuregroupname` : The name of the feature group within the AWS Sagemaker service feature store.
 
 ## Viewing the Sagemaker dashboards
 
