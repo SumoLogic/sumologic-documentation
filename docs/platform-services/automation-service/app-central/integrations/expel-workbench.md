@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/expel-workbench.png')} alt="expel workbench" width="100"/>
 
-***Version: 1.0  
-Updated: Jan 2, 2026***
+***Version: 1.1  
+Updated: Jan 6, 2026***
 
 Expel allows security analysts to follow investigations in real time, see every action taken, and communicate seamlessly with the Expel team.
 
@@ -47,3 +47,4 @@ For information about Expel Workbench, see [Expel Workbench documentation](https
 ## Change Log
 
 * January 2, 2026 - First upload
+* January 6, 2026 (v1.1) - Updated the decscription.
