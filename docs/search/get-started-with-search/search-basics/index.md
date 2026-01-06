@@ -89,6 +89,12 @@ In this section, we'll introduce the following concepts:
       <p>Learn how to share a link to search query results via email or IM.</p>
       </div>
     </div>
+        <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/search/get-started-with-search/search-basics/share-message-link')}><img src={useBaseUrl('img/icons/operations/advanced-search.png')} alt="icon" width="40"/><h4>Share a Message Link to a Search</h4></a>
+      <p>Share a message link to search query results. Copy and paste the message link to share a search.</p>
+      </div>
+    </div>
     <div className="box smallbox card">
       <div className="container">
       <a href={useBaseUrl('docs/search/get-started-with-search/search-basics/time-range-expressions')}><img src={useBaseUrl('img/icons/operations/advanced-search.png')} alt="icon" width="40"/><h4>Time Range Expressions</h4></a>

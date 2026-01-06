@@ -37,14 +37,14 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4><a href={useBaseUrl('docs/search/get-started-with-search/build-search')}>Build Searches</a></h4>
-  <p>Details on building a search - best practices, syntax, time range, and efficient searches.</p>
+  <img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4><a href={useBaseUrl('docs/search/get-started-with-search/search-page')}>Using the Search Page</a></h4>
+  <p>Understand the basic components of the Search window and how they can help you investigate your issues.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4><a href={useBaseUrl('docs/search/get-started-with-search/search-page')}>Using the Search Page</a></h4>
-  <p>Understand the basic components of the Search window and how they can help you investigate your issues.</p>
+  <img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4><a href={useBaseUrl('docs/search/get-started-with-search/build-search')}>Build Searches</a></h4>
+  <p>Details on building a search - best practices, syntax, time range, and efficient searches.</p>
   </div>
 </div>
 <div className="box smallbox card">
