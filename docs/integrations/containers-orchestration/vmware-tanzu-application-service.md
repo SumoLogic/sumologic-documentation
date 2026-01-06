@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/vmware-tanzu.png')} alt="VMware Tanzu Application Service" width="40" />
 
-The Sumo Logic Nozzle for [VMware Tanzu Firehose](https://techdocs.broadcom.com/us/en/vmware-tanzu/platform/tile-developer-guide/3-0/tile-dev-tanzu/nozzle.html) allows operations teams and app owners to monitor and troubleshoot the VMware Tanzu platform and apps in real time, without having to install a Sumo Logic agent in their Cloud Foundry environment.
+The Sumo Logic Nozzle for [VMware Tanzu Firehose](https://techdocs.broadcom.com/us/en/vmware-tanzu/platform/tile-developer-guide/3-2/tile-dev-tanzu/nozzle.html) allows operations teams and app owners to monitor and troubleshoot the VMware Tanzu platform and apps in real time, without having to install a Sumo Logic agent in their Cloud Foundry environment.
 
 The nozzle filters out messages per your tile configuration and securely sends those logs and metrics to an HTTP API in the Sumo Logic SaaS service. The tile allows you to configure batching intervals, toggle verbose logging mode, and add metadata to your logs and metrics.
 
