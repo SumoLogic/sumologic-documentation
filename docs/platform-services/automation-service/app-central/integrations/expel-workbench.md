@@ -47,4 +47,4 @@ For information about Expel Workbench, see [Expel Workbench documentation](https
 ## Change Log
 
 * January 2, 2026 - First upload
-* January 6, 2026 (v1.1) - Updated the decscription.
+* January 6, 2026 (v1.1) - Updated the description.

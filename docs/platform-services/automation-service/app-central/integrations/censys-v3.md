@@ -46,4 +46,4 @@ For information about Censys V3, see [Censys documentation](https://docs.censys.
 ## Change Log
 
 * January 2, 2026 - First upload
-* January 6, 2026 (v1.1) - Updated the decscription.
+* January 6, 2026 (v1.1) - Updated the description.
