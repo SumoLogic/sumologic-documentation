@@ -90,9 +90,9 @@ Cloud SOAR automation and orchestration features help organizations from all sec
 
 The Cloud SOAR tool offers standard management of Incident response events across different teams in the organization with the help of the R3 Rapid response playbook engine. R3 Playbooks are created using a Visual editor supporting granular, stateful and conditional workflows to orchestrate, automate and standardize best practices on a case by case incident response events activities like incident triage, stakeholder notification, data and context enrichment, remediation and threat containment.
 
-Cloud SOAR has been designed with Interoperability for Cybersecurity Industry standards regulatory frameworks to be able to receive data from a wide assortment of cybersecurity industry vendors to enrich the available data gathered and correlated to offer better forensic analytics. Just to name a few of our quickly growing list of supported vendors: Palo Alto Networks, Cisco ThreatGrid and Umbrella, IBM Qradar, Splunk, McAfee, Encase Forensics.
+Cloud SOAR has been designed with interoperability for cybersecurity industry standards regulatory frameworks to be able to receive data from a wide assortment of cybersecurity industry vendors to enrich the available data gathered and correlated to offer better forensic analytics. Just to name a few of our quickly growing list of supported vendors: Palo Alto Networks, Cisco ThreatGrid and Umbrella, IBM Qradar, Splunk, McAfee, Encase Forensics.
 
-Cloud SOAR design and architecture follows Cybersecurity Industry standards and regulatory frameworks, and adheres to best Industry practices to meet best cybersecurity practices followed by ISO, GDPR, OASIS, NIST, Sec Regulations, and more.
+Cloud SOAR design and architecture follows cybersecurity Industry standards and regulatory frameworks, and adheres to best Industry practices to meet best cybersecurity practices followed by ISO, GDPR, OASIS, NIST, Sec Regulations, and more.
 
 Cloud SOAR provides static egress for Cloud executions. IP addresses can be entered into the allowlist. For a list of Cloud SOAR addresses by region, contact [Support](https://support.sumologic.com/support/s/).
 
