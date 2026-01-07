@@ -41,11 +41,11 @@ You can use Sumo's metric rules editor to tag metrics with key-value pairs deri
 
 The Graphite format doesn't have a notion of named tags. Since Sumo Logic requires each metric to have a valid metric name, for Graphite metrics, the metric name must be inferred. To accomplish that, for every Graphite metric sent to our backend, Sumo Logic adds an additional `metric` tag, whose value is equal to the last segment of a dot-separated `metric_path`.
 
-For example, for below graphite metric sent to Sumo Logic:
+For example, for the below Graphite metric sent to Sumo Logic:
 ```
 cluster-1.node-1.cpu-1.cpu-idle  73.12 1112470620
 ```
-the inferred metric name will be `metric=cpu-idle` and such a key-value pair will be added
+the inferred metric name will be `metric=cpu-idle` and such a key-value pair will be added.
 
 ## Carbon 2.0
 
@@ -63,7 +63,7 @@ There are two spaces between `intrinsic_tags` and `meta_tags`. If a tag is liste
 
 Where:
 
-* `intrinsic_tags` is one or more space-separated key-value pairs that uniquely identify what is being measured and are metric identifiers. Intrinsic tags are also referred to as dimensions. If you have two data points sent with same set of dimension values then they will be values in the same metric time series.
+* `intrinsic_tags` is one or more space-separated key-value pairs that uniquely identify what is being measured and are metric identifiers. Intrinsic tags are also referred to as dimensions. If you have two data points sent with the same set of dimension values then they will be values in the same metric time series.
 
   :::note
   `intrinsic_tags` must be followed by two spaces.
@@ -135,8 +135,7 @@ See the table below for descriptions of the components of a Prometheus metric 
 | `metric_name` | Specifies the general feature of a system that is measured. For example: `http_requests_total` |
 | `metric_description` | An arbitrary description or category for the metric. For example: `requests` |
 | `metric_type` | the type of the metric, one of `counter`, `gauge`, `histogram`, `summary`, or `untyped`.
-| `labels` | Zero or more space-separated key-value pairs that identify a particular dimensional instantiation of the metric, for example: `http_requests_total{method="post",code="200"} 1027 1395066363000`<br/>
-`http_requests_total{method="post",code="400"}    3 1395066363000` |
+| `labels` | Zero or more space-separated key-value pairs that identify a particular dimensional instantiation of the metric, for example: `http_requests_total{method="post",code="200"} 1027 1395066363000`<br/>`http_requests_total{method="post",code="400"}    3 1395066363000` |
 | `value` | Value of the metric. |
 | `timestamp` | The time the metric was collected, in int64 format.  |
 
