@@ -66,7 +66,7 @@ This method lines up the pipes and makes your query much easier to read.
 ## Limitations
 
 - Searches can be long and complex, but they are limited to a maximum of 15,000 characters.
-- A limit of 100 active concurrent search jobs applies to your organization.
+- A maximum of 250 active concurrent search jobs is allowed per organization.
 
 ## See also
 
