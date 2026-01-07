@@ -32,7 +32,7 @@ To set up a ServiceNow Webhook connection:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the **Connections** page, click **+ Add**.
-1. For **Connection Type**, select **ServiceNow** from the dropdown.
+1. For **Connection Type**, select **ServiceNow** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/serviceNow-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. In the **Connection Settings** dialog, enter:
    * **Name**. Enter a name for the connection.
    * (Optional) **Description**. Enter a description for the connection.
@@ -53,6 +53,7 @@ To set up a ServiceNow Webhook connection:
       * See how to set an [Authorization Header](/docs/alerts/webhook-connections/set-up-webhook-connections).
    * Set the **Type** to **Events** or **Incidents** based on what you want to create. This needs to align with the **URL** you provided.
    * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
+      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-serviceNow.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. For **Alert Payload**, which allows you to customize how the alert notification look in ServiceNow, enter a JSON object that defines the structure of what you want to send to ServiceNow. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](/docs/alerts/webhook-connections/set-up-webhook-connections). 
 1. For **Recovery Payload**, which allows you to customize how the recovery notification look in ServiceNow, enter a JSON object that defines the structure of what you want to send to ServiceNow. 
 1. Click **Save**.
@@ -85,12 +86,13 @@ The first step for integrating ServiceNow with Sumo Logic is to configure one 
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the **Connections** page, click **+ Add**.
-1. For **Connection Type**, select **ServiceNow (Legacy)** from the dropdown.
+1. For **Connection Type**, select **ServiceNow (Legacy)** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/serviceNow-legacy-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. In the **Connection Settings** dialog, enter:
    * **Name**. Enter a name for the connection.
    * (Optional) **Description**. Enter a description for the connection.
    * **URL**. Copy your organization's ServiceNow URL, which can be found at the top of any ServiceNow web page, then paste it in the URL text box. After pasting the URL, type **/api/now/table/em_event** to enable data to be uploaded from Sumo Logic to ServiceNow.
    * Enter the **Username** and **Password** used to log in to **ServiceNow**.
+      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-serviceNow-legacy.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. Click **Save**. The connection displays.
 
 ## Edit connections

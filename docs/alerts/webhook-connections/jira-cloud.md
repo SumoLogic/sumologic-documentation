@@ -39,7 +39,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the **Connections** page, click **+ Add**.
-1. For **Connection Type**, select **Jira** from the dropdown.
+1. For **Connection Type**, select **Jira** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/jira-cloud-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. In the **Connection Settings** dialog, enter:
    * **Name**. Enter a name for the connection.
    * (Optional) **Description**. Enter a description for the connection.
@@ -58,6 +58,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
       * **Issue Summary**
       * (optional) **Priority**
       * **Issue Description**
+      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-jira-cloud.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. The following JSON is an example of the default **Alert Payload** which you can customize as required. For details on the variables you can use as parameters within your JSON object, see [Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections).
    ```
    {

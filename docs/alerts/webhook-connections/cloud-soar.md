@@ -20,7 +20,7 @@ You can configure a webhook connection to allow you to send an alert from a sche
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the **Connections** page, click **+ Add**.
-1. For **Connection Type**, select **Cloud SOAR** from the dropdown.
+1. For **Connection Type**, select **Cloud SOAR** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/cloud-soar-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. In the **Connection Settings** dialog, enter:
     * **Name**. Enter a name for the connection.
     * (Optional) **Description**. Enter a description for the connection.
@@ -28,6 +28,7 @@ You can configure a webhook connection to allow you to send an alert from a sche
     * **Authorization Header**. Enter your basic authentication access information for the header. For example, `Basic <base64 encode <accessId>:<accessKey>>`. For more information, see [Basic Access (Base64 encoded)](/docs/api/about-apis/getting-started#basic-access-base64-encoded).
     * Select a template from the **Templates** dropdown.
       The **Templates** dropdown shows a list of all incident templates by name configured in your Cloud SOAR environment.
+      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-cloud-soar.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. Under **Alert and Recovery Payloads**, the default payload synchronizes with the selected template, and the **Alert Payload** field shows the associated `template_id` field automatically defined in the default payload.
 A `template_id` is required in the payload in order to configure the connection:
 

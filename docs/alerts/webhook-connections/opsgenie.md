@@ -47,7 +47,7 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the **Connections** page, click **+ Add**.
-1. For **Connection Type**, select **Opsgenie** from the dropdown.
+1. For **Connection Type**, select **Opsgenie** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/opsgenie-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. In the **Connection Settings** dialog, enter:
     * **Name**. Enter a name for the connection.
     * (Optional) **Description**. Enter a description for the connection.
@@ -55,6 +55,7 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
     * (Optional) **Authorization Header**. Enter an authorization header, which may include an authorization token.
     * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
     * (Optional) **Priority**. Opsgenie uses the **Priority** value to define the priority of alerts. Edits to the **Priority** value are automatically updated in the JSON payload and vice versa.
+        <img src={useBaseUrl('img/connection-and-integration/create-new-connection-opsgenie.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. The following JSON is the default **Alert Payload**, you can customize it as needed. For details on variables you can use as parameters within your JSON object, see [Configure Webhook payload variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables).
     ```json
     {

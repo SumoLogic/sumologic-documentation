@@ -41,13 +41,14 @@ The URL and supported payload are different based on the version of the PagerDut
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the **Connections** page, click **+ Add**.
-1. For **Connection Type**, select **PagerDuty** from the dropdown.
+1. For **Connection Type**, select **PagerDuty** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/pagerDuty-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. In the **Connection Settings** dialog, enter:
     * **Name**. Enter a name for the connection.
     * (Optional) **Description**. Enter a description for the connection.
     * **URL**. Enter `https://events.pagerduty.com/v2/enqueue` as the URL for the endpoint
     * (Optional) **Authorization Header**. Enter an authorization header, which may include an authorization token.
     * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
+      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-pagerDuty.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. The default **Alert Payload** will not work with Event API V2. Change it to the following:
    ```json
    {
@@ -108,13 +109,14 @@ The URL and supported payload are different based on the version of the PagerDut
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the **Connections** page, click **+ Add**.
-1. For **Connection Type**, select **PagerDuty** from the dropdown.
+1. For **Connection Type**, select **PagerDuty** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/pagerDuty-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. In the **Connection Settings** dialog, enter:
     * **Name**. Enter a name for the connection.
     * (Optional) **Description**. Enter a description for the connection.
     * **URL**. Enter `https://events.pagerduty.com/generic/2010-04-15/create_event.json` as the URL for the endpoint
     * (Optional) **Authorization Header**. Enter an authorization header, which may include an authorization token.
     * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
+      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-pagerDuty.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. In the **Alert Payload**:
    * Where it says `SERVICE KEY`, paste in the **integration key** you previously copied from PagerDuty.
    * Where it says `description`, specify the description you want sent to PagerDuty.

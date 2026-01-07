@@ -39,7 +39,7 @@ To set up a webhook connection:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the **Connections** page, click **+ Add**.
-1. For **Connection Type**, select **Webhook** from the dropdown.
+1. For **Connection Type**, select **Webhook** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/webhook-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. In the **Connection Settings** dialog, enter:
     * **Name**. Enter a name for the connection.
     * (Optional) **Description**. Enter a description for the connection.

@@ -49,13 +49,14 @@ To create a webhook:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the **Connections** page, click **+ Add**.
-1. For **Connection Type**, select **Webhook** from the dropdown.
+1. For **Connection Type**, select **Webhook** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/webhook-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. In the **Connection Settings** dialog, enter:
     * **Name**. Enter **Sumo Logic Opsgenie** as the name for the connection.
     * (Optional) **Description**. Enter a description for the connection.
     * **URL**. Enter the URL (used in [step 2](#configure-a-scheduled-search)) into the **URL** field.
     * (Optional) **Authorization Header**. Enter an authorization header, which may include an authorization token.
     * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
+      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-opsgenie-legacy.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. Enter the following content in the **Alert Payload** field:
     :::note
     Opsgenie uses the priority value in the payload field to define the priority of alerts. For this reason, you should change the priority to match your needs.
