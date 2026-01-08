@@ -130,7 +130,7 @@ Both Analyst and Admin accounts are available for any learner to request. Choose
 #### How to request credentials
 
 1. Open a second browser (for example, Firefox if you are reading this in Chrome) so you can stay logged in to both your regular Sumo Logic account and the training lab at the same time.
-2. Go to your [learning portal](#how-do-i-access-the-learning-portal) and click **Become a Sumo Expert**.<br/><img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Training lab credentials" style={{border: '1px solid gray'}} width="600" />
+2. Go to your [learning portal](#how-do-i-access-the-learning-portal) and click **Become a Sumo Logic Expert**.<br/><img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Training lab credentials" style={{border: '1px solid gray'}} width="600" />
 3. Click **Request Training Analyst Login** or **Request Training Admin Login** based on your course requirements.
 4. Review the summary confirmation that appears and accept to proceed.
 5. The system will automatically assign you an available account:
