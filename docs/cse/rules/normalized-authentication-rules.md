@@ -2,29 +2,29 @@
 id: normalized-authentication-rules
 title: Normalized Authentication Rules
 sidebar_label: Normalized Authentication Rules
-description: CSE's Normalized Authentication Rules detect activities that compromise accounts using authentication logs from any data source that CSE parsers and mappings support.
+description: Cloud SIEM's normalized authentication rules detect activities that compromise accounts using authentication logs from any data source that Cloud SIEM parsers and mappings support.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-*Normalized Authentication Rules* detect activities that compromise accounts using authentication logs from any data source that CSE parsers and mappings support. New authentication data sources can immediately take advantage of this rule logic without the need to customize for the
+*Normalized authentication rules* detect activities that compromise accounts using authentication logs from any data source that Cloud SIEM parsers and mappings support. New authentication data sources can immediately take advantage of this rule logic without the need to customize for the
 specific product or vendor.  
 
 ## Requirements and prerequisites
 
-Out of the box, the Normalized Authentication Rules support a variety of data sources, ranging from cloud-based authentication services like AWS
+Out of the box, the normalized authentication rules support a variety of data sources, ranging from cloud-based authentication services like AWS
 CloudTrail, VPN authentication services like Cisco ASA, and OS-based authentication like that provided by Windows and Linux. 
 
 For the rules to support a particular product or service, the log mapping for that service must map several fields correctly.
 
-You can check whether a given data source is already supported by reviewing its log mapping in CSE. If it is, you’re good to go. If a mapping already exists for the data source, you can update it as described in this topic. If the data source doesn’t already have a mapping, you can create one.
+You can check whether a given data source is already supported by reviewing its log mapping in Cloud SIEM. If it is, you’re good to go. If a mapping already exists for the data source, you can update it as described in this topic. If the data source doesn’t already have a mapping, you can create one.
 
 The mapping requirements are:
 
 | Output field | Mapping requirement |
 |:--|:--|
-| `objectType` | This field is populated as a result of the value selected for the Record Type in the log mapping. It must be set to *Authentication*. |
-| `normalizedAction` | Set to *logon* or *domainLogon* depending on the nature of the authentication attempt, as described in Normalized Authentication Rules, below. |
+| `objectType` | This field is populated as a result of the value selected for the record Type in the log mapping. It must be set to *Authentication*. |
+| `normalizedAction` | Set to *logon* or *domainLogon* depending on the nature of the authentication attempt, as described in [Normalized authentication rules](#normalized-authentication-rules), below. |
 | `success` | Set to *true* if the logon was successful, or *false* if it was not.  |
 | `mfa` | If the log message contains a field that indicates multi-factor authentication usage, set `mfa` to *true* if MFA is used or *false* if not. |
 | `user_username ` | `user_username` must be mapped to the input field that contains the user identity. If an alternative input field also contains the user identity, that field should be mapped as an alternate input field. |
@@ -36,7 +36,7 @@ This log mapping for the AWS CloudTrail ConsoleSignIn event meets the requiremen
 
 <img src={useBaseUrl('img/cse/auth-rule-mapping-1.png')} alt="Authentication rule mapping" width="600"/>
 
-## Normalized Authentication Rules
+## Normalized authentication rules
 
 * Authentication Without MFA - Detects a successful login where the account did NOT use multi-factor authentication (MFA) to gain access. We strongly recommend that you require MFA to protect accounts in the event that credentials are stolen. If you don’t require MFA for a data source, we recommend you disable this rule, or that you use a [Rule Tuning Expression](/docs/cse/rules/rule-tuning-expressions) to exclude the data source so that messages from it won’t be processed by this rule. 
 * Brute Force Attempt - Detects multiple failed login attempts for the same username over a 24 hour timeframe. This is designed to catch both slow and quick brute force type attacks. The threshold and time frame can be adjusted based on your environment. This rule only monitors events with a `normalizedAction` of *logon*.
@@ -49,7 +49,7 @@ This log mapping for the AWS CloudTrail ConsoleSignIn event meets the requiremen
 
 ## About logon and domainLogon
 
-There are two `normalizedAction` values that relate to user logins: *domainLogon* and *logon*. This enables CSE to distinguish between Windows authentication events that represent access to a domain resource (*domainLogon*) and events that represent a user accessing a specific machine (*logon*). Currently, only Windows domain (meaning an Active Directory authentication setup regardless of client OS) authentication events will have a ` normalizedAction` value of *domainLogon*.
+There are two `normalizedAction` values that relate to user logins: *domainLogon* and *logon*. This enables Cloud SIEM to distinguish between Windows authentication events that represent access to a domain resource (*domainLogon*) and events that represent a user accessing a specific machine (*logon*). Currently, only Windows domain (meaning an Active Directory authentication setup regardless of client OS) authentication events will have a ` normalizedAction` value of *domainLogon*.
 
 This is done for several reasons:
 
@@ -57,7 +57,7 @@ This is done for several reasons:
 * To differentiate between instances where a user account’s credentials are definitively being used to log into a machine, such as a Windows interactive logon as reported in event code 4624, from instances where credentials are being checked for access to the domain, such as a Kerberos TGT request as reported in event code 4768.
 * To allow for different thresholds to be applied to domain access checks as these events tend to be more voluminous and difficult to attribute to a specific action. For example, a 4768 could be generated when Username1 logs in by typing credentials in on a keyboard or when another user accesses the same host using RDP with the credentials for Username1, but there would be no way of reliably determining which scenario occurred based on the 4768 log alone.
 
-CSE determines which value of of `normalizedAction` is appropriate for a given log message, using this logic:
+Cloud SIEM determines which value of of `normalizedAction` is appropriate for a given log message, using this logic:
 
 * Windows Event Codes 4768 and 4771 are statically assigned the value *domainLogon.*
 * Windows Event Code 4776 is statically assigned the value *logon* but logic is included in several of the normalized authentication rules to differentiate between an NTLM authentication to a domain controller and to a local account on a machine

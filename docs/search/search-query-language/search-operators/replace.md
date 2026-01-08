@@ -4,6 +4,8 @@ title: replace Search Operator
 sidebar_label: replace
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `replace` operator allows you to replace all instances of a specified string with another string. You can specify the string to replace with a matching regex or literal text. You might use it to find all instances of a name and change it to a new name or to replace punctuation in a field with different punctuation. This operator is useful anytime you need to rename something.
 
 
@@ -25,6 +27,7 @@ replace(<sourceString>, /<regex>/, <replaceString>) as <field>
 * Regex must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax).
 * The string is case sensitive.
 * When using multiple replace operators on the same field you must use the same alias, see an [example below](#use-the-replace-operator-on-multiple-strings-within-one-field).
+* Ensure that the output message length is less than 100k.
 
 ### Regex usage
 
@@ -51,7 +54,7 @@ If the `<replaceString>` needs to include the dollar sign (`$`), it needs to be 
 
 ### Replace unique IDs in URLs with a regex
 
-If you have a URL and would like to see the number of times it was visited, but don't want to aggregate with unique IDs, you can replace the IDs with an empty string. Take the following URL, where in this example it belongs to a field named `url`:
+If you have a URL and would like to see the number of times it was visited, but do not want to aggregate with unique IDs, you can replace the IDs with an empty string. Take the following URL, where in this example it belongs to a field named `url`:
 
 `http://somewebsite.com/flight/12345678/certification`
 
@@ -98,7 +101,7 @@ error
 
 which provides results like:
 
-![replace](/img/reuse/query-search/replace_operator_example.png)
+<img src={useBaseUrl('img/reuse/query-search/replace_operator_example.png')} alt="Replace" style={{border: '1px solid gray'}} width="600" />
 
 ### Remove underscores from a field to make it human readable
 
@@ -143,7 +146,7 @@ For example, in multiple strings, to replace all number 5's with number 7's, and
 The same field name, `field` in the above example, needs to be passed to subsequent replace operations. You can change the field name (alias) in the last replace operation.
 :::
 
-In this example, we set the initial event_id to match the event_code, and then do the replace operation on the event_id. This way, the event_id is always set with the match, and then the replaced value is passed back into the field with any subsequent operations that don't match.
+In this example, we set the initial event_id to match the event_code, and then do the replace operation on the event_id. This way, the event_id is always set with the match, and then the replaced value is passed back into the field with any subsequent operations that do not match.
 
 ```sql
 _sourceName=Application

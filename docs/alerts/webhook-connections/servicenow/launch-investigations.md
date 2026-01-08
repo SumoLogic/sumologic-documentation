@@ -2,10 +2,10 @@
 id: launch-investigations
 title: Launch ServiceNow Investigations
 sidebar_label: Launch Investigations
-description: You can launch ad-hoc investigations directly from search results in Sumo Logic.
+description: You can launch ad hoc investigations directly from search results in Sumo Logic.
 ---
 
-You can launch ad-hoc investigations directly from search results in Sumo Logic. You can also use ServiceNow to click over to Sumo Logic to start an investigation.
+You can launch ad hoc investigations directly from search results in Sumo Logic. You can also use ServiceNow to click over to Sumo Logic to start an investigation.
 
 After selecting the text you'd like to use to launch the ServiceNow investigation, you can choose the Connection and the event type the text represents (Alert, Incident, or Change Request).
 

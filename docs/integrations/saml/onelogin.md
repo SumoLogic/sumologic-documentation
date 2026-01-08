@@ -2,133 +2,128 @@
 id: onelogin
 title: OneLogin
 sidebar_label: OneLogin
-description: The Sumo Logic App for OneLogin provides real-time visibility and analysis of OneLogin user activity through event data, such as user logins, administrative operations, and provisioning.
+description: The Sumo Logic app for OneLogin provides real-time visibility and analysis of OneLogin user activity through event data, such as user logins, administrative operations, and provisioning.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saml/onelogin.png')} alt="Thumbnail icon" width="50"/>
 
-OneLogin is an Identity Management provider that supplies a comprehensive set of enterprise-grade identity and access management solutions, including single sign-on (SSO), user provisioning, and multi-factor authentication. The Sumo Logic App for OneLogin provides real-time visibility and analysis of OneLogin user activity through event data, such as user logins, administrative operations, and provisioning.
+OneLogin is an Identity Management provider that supplies a comprehensive set of enterprise-grade identity and access management solutions, including single sign-on (SSO), user provisioning, and multi-factor authentication (MFA). The Sumo Logic app for OneLogin provides real-time visibility and analysis of OneLogin user activity through event data, such as user logins, administrative operations, and provisioning.
 
+The app provides insights into account activity and user behavior, including total and invited users, inactive or never-logged-in accounts, user status, failed login attempts, lockouts, and password reset needs, helping administrators monitor user lifecycles and maintain security.
 
-## Prerequisites
-
-:::note
-To use this feature, you'll need to enable access to your OneLogin logs and ingest them into Sumo Logic.
+:::info
+This app includes [built-in monitors](#onelogin-alerts). For details on creating custom monitors, refer to [Create monitors for OneLogin app](#create-monitors-for-onelogin-app).
 :::
 
-Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-account.md) at any time.
+## Setting up the collection
 
-* **OneLogin Enterprise** or **Unlimited **plan subscription.
-* **Configure an Event Broadcaster**
-   * Add a Sumo Logic [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) to your Sumo Logic Org.
-   * Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for your OneLogin data. Make sure to set the **Source Category** when configuring the OneLogin source. For example, onelogin.
-   * From OneLogin, configure a broadcaster that points to this endpoint using the instructions in the [OneLogin documentation](https://onelogin.service-now.com/support?id=kb_article&sys_id=43f95543db109700d5505eea4b961959). You must use SIEM (NDJSON) format. Use the Sumo Logic HTTP Source URL as the Listener URL, and custom header is not needed.
+### Prerequisites
+- Enable access to your OneLogin logs and ingest them into Sumo Logic.
+- You must have access to **OneLogin Enterprise** or **Unlimited** plan subscription to set up OneLogin event broadcaster for events.
 
+Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to ensure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account) at any time.
 
-## Log Types and Sample Log Message
+### Configure an event broadcaster for event logs
 
-The Sumo Logic App for OneLogin uses event logs in NDJSON format. Each event is a single-line JSON, containing information such as:
+1. Add a Sumo Logic [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) to your Sumo Logic Org.
+1. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for your OneLogin data. Ensure to set the **Source Category** when configuring the OneLogin source. For example, `onelogin`.
+1. From the OneLogin platform, configure a broadcaster that points to this endpoint. For instructions, refer to the  [OneLogin documentation](https://onelogin.service-now.com/support?id=kb_article&sys_id=43f95543db109700d5505eea4b961959). 
+   - Use the Sumo Logic HTTP Source URL as the Listener URL, and a custom header is not required.
+:::info
+Ensure you use the SIEM (NDJSON) format.
+:::
 
-```json
+### Configure the C2C source for users' logs
+
+Use the [Cloud-to-Cloud Integration for OneLogin](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source/) to create the source and use the same source category while installing the app.
+
+## Log types
+
+The Sumo Logic app for OneLogin uses the following logs:
+- Event logs in NDJSON format.
+- Sumo Logic’s [OneLogin Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source/) to collect [Users' Logs](https://developers.onelogin.com/api-docs/2/users/user-resource) from OneLogin platform.
+
+## Sample log messages
+
+```json title="Users Log"
 {
-	"event":{
-		"create":{
-			"_id":"443ce874-7704-54d2-b12f-b6e4a72ec6ef"
-		},
-		"entity":null,
-		"role_id":null,
-		"client_id":null,
-		"trusted_idp_name":null,
-		"notes":null,
-		"app_name":null,
-		"service_directory_id":null,
-		"actor_system":"",
-		"login_name":null,
-		"assuming_acting_user_id":null,
-		"mapping_name":null,
-		"directory_sync_run_id":null,
-		"api_credential_name":null,
-		"directory_id":null,
-		"certificate_id":null,
-		"group_id":null,
-		"role_name":null,
-		"imported_user_name":null,
-		"resolved_at":null,
-		"mapping_id":null,
-		"authentication_factor_type":null,
-		"user_field_name":null,
-		"proxy_ip":null,
-		"certificate_name":null,
-		"task_name":null,
-		"adc_id":null,
-		"uuid":"443ce874-7704-54d2-b12f-b6e4a72ec6ef",
-		"note_title":null,
-		"event_timestamp":"2017-03-21 00:09:27+0000",
-		"actor_user_name":"Peyton Newton",
-		"proxy_agent_id":null,
-		"otp_device_name":null,
-		"actor_user_id":11826257,
-		"trusted_idp_id":null,
-		"imported_user_id":null,
-		"policy_type":null,
-		"user_id":11826257,
-		"resource_type_id":null,
-		"login_id":null,
-		"solved":null,
-		"policy_id":null,
-		"policy_name":null,
-		"otp_device_id":null,
-		"radius_config_name":null,
-		"app_id":null,
-		"user_name":"Peyton Newton",
-		"account_id":22348,
-		"resolved_by_user_id":null,
-		"radius_config_id":null,
-		"error_description":null,
-		"note_id":null,
-		"param":null,
-		"event_type_id":11,
-		"proxy_agent_name":null,
-		"privilege_id":null,
-		"user_field_id":null,
-		"authentication_factor_description":null,
-		"ipaddr":"137.219.197.240",
-		"custom_message":null,
-		"directory_name":null,
-		"object_id":null,
-		"group_name":null,
-		"resolution":null,
-		"privilege_name":null,
-		"authentication_factor_id":null,
-		"adc_name":null
-	}
+    "status": 4,
+    "username": null,
+    "distinguished_name": null,
+    "external_id": null,
+    "group_id": null,
+    "samaccountname": null,
+    "updated_at": "2025-08-28T14:14:35.237Z",
+    "invalid_login_attempts": 0,
+    "activated_at": "2025-08-28T14:14:35.237Z",
+    "created_at": "2025-08-28T14:14:35.237Z",
+    "directory_id": null,
+    "member_of": null,
+    "lastname": "patel",
+    "invitation_sent_at": "2025-08-28T14:14:35.237Z",
+    "phone": null,
+    "email": "RaminBenjamin@xyz.com",
+    "firstname": "shivani",
+    "id": 252998076,
+    "locked_until": null,
+    "state": 1,
+    "last_login": "2025-08-28T14:14:35.237Z",
+    "password_changed_at": "2025-08-28T14:14:35.237Z"
 }
 ```
 
-## Sample Query
+## Sample queries
 
+```sql title="Users by State"
+_sourceCategory="Labs/OneLogin"
+| json "id", "state", "invitation_sent_at", "activated_at", "status", "last_login", "invalid_login_attempts", "password_changed_at", "email", "username", "locked_until", "firstname", "lastname", "group_id", "updated_at", "created_at", "member_of" as id, state, invitation_sent_at, activated_at, status, last_login, invalid_login_attempts, password_changed_at, email, user_name, locked_until, first_name, last_name, group_id, updated_at, created_at, member_of nodrop
 
-```sql title="Name - Events by User"
-_sourceCategory=onelogin
-| json "event.event_type_id", "event.app_name","event.ipaddr", "event.user_name", "event.actor_user_name" as event_id, app_name, src_ip, user_name, actor_user_name  
-| where event_id in ("10","11")
-| count by user_name
-| sort by _count
+| if (state = 0, "Unapproved", if (state = 1, "Approved", if (state = 2, "Rejected", if (state = 3, "Unlicensed", "Other")))) as state
+| if (status = 0, "Unactivated", if (status = 1, "Active", if (status = 2, "Suspended", if (status = 3, "Locked", if (status = 4, "Password expired", if (status = 5, "Awaiting password reset", if (status = 7, "Password pending", if (status = 8, "Security questions required", "Other")))))))) as status
+
+| first(state) as state, first(status) as status by id, user_name
+| where state matches "{{state}}"
+| where status matches "{{status}}"
+| where user_name matches "{{user_name}}"
+
+| count by state, id 
+| count by state
+| sort by _count, state
 ```
 
+## Installing the OneLogin app
 
-## Installing the OneLogin App
+To install the app, do the following:
+:::note
+    Next-Gen App: To install or update the app, you must be an account administrator or a user with Manage Apps, Manage Monitors, Manage Fields, Manage Metric Rules, and Manage Collectors capabilities depending upon the different content types part of the app.
+:::
+1. Select **App Catalog**.
+1. In the 🔎 **Search Apps** field, run a search for your desired app, then select it.
+1. Click **Install App**.
+    :::note
+    Sometimes this button says **Add Integration**.
+    :::
+1. Click **Next** in the **Setup Data** section.
+1. In the **Configure App** section of your respective app, complete the following field.
+	1. Enter values for two data sources: 
+		- **Event logs data source**
+		- **User logs data source**
+    1. **Field Name**. If you already have collectors and sources set up, select the configured metadata field name (for example, `_sourcecategory`) or specify other custom metadata (for example, `_collector`) along with its metadata **Field Value**.
+1. Click **Next**. You will be redirected to the **Preview & Done** section.
 
-Now that you have set up collection for OneLogin, install the Sumo Logic App for OneLogin to use the preconfigured searches and dashboards that provide insight into your data.
+**Post-installation**
 
-{@import ../../reuse/apps/app-install.md}
+Once your app is installed, it will appear in your **Installed Apps** folder, and dashboard panels will start to fill automatically.
 
-## Viewing OneLogin Dashboards
+Each panel slowly fills with data matching the time range query received since the panel was created. Results will not immediately be available but will be updated with full graphs and charts over time.
 
-The Sumo Logic App for OneLogin helps you monitor the overall health of your OneLogin deployment. Dashboards keep an eye on errors being generated by back-end applications as well as errors generated from ELB instances. The OneLogin App offers three dashboards to help you track OneLogin events.
+## Viewing OneLogin dashboards
 
+import FilterDashboards from '../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
 
 ### Overview
 
@@ -138,7 +133,7 @@ The Sumo Logic App for OneLogin helps you monitor the overall health of your One
 
 **Logins by Country.** See the count of number of logins by country name displayed in a table to get an idea of your visitor traffic by country in the last 24 hours.
 
-**Event Outlier Over Time. **See the events that fall outside the normal range for the last 24 hours.
+**Event Outlier Over Time.** See the events that fall outside the normal range for the last 24 hours.
 
 **Failed Login Outlier.** See any logins over the last 24 hours that fall outside the specified failed login threshold.
 
@@ -148,12 +143,11 @@ The Sumo Logic App for OneLogin helps you monitor the overall health of your One
 
 <img src={useBaseUrl('img/integrations/saml/OneLoginOverview.png')} alt="OneLogin" />
 
-
 ### App Monitoring
 
 **Event Distribution by App.** See the percentage of events by application in the last 24 hours as a pie chart to identify the event distribution by apps having the most events recently.
 
-**Event Distribution by Event ID. **See the percentage of each user action by Event ID for the last 24 hours as a pie chart to identify the apps having the most activity recently.
+**Event Distribution by Event ID.** See the percentage of each user action by Event ID for the last 24 hours as a pie chart to identify the apps having the most activity recently.
 
 **Logins by App.** See the percentage of logins by application in the last 24 hours as a pie chart to identify the apps having the most events recently.
 
@@ -164,20 +158,59 @@ The Sumo Logic App for OneLogin helps you monitor the overall health of your One
 <img src={useBaseUrl('img/integrations/saml/OneLoginAppMonitoring.png')} alt="OneLogin" />
 
 ### Security
+
 **User Activity.** View the count of user activities by username as a bar chart for the last 24 hours as a bar chart to quickly identify unusual user activity.
 
 **Password Changes.** See the count of password changes by username as a bar chart for the last 24 hours to quickly identify any unusually high numbers of password changes by a particular user.
 
 **Logins by Country.** View the count of the logins by country in the last 24 hours to identify any unusual activity by country.
 
-**Users Created in Apps. **See the number of users created in applications in the last 24 hours as a column chart. You can filter by app name to track the count of a particular app.
+**Users Created in Apps.** See the number of users created in applications in the last 24 hours as a column chart. You can filter by app name to track the count of a particular app.
 
-**Assumed Users. **View the details such as the timestamp, destination user, notes, source user, and count for the event when one user acted as another user in the last 24 hours.
+**Assumed Users.** View the details such as the timestamp, destination user, notes, source user, and count for the event when one user acted as another user in the last 24 hours.
 
 **Failed Logins.** See the number of login failures by username in the last 24 hours on a bar chart to identify any unusual activity. You can filter by username as needed.
 
 **Successful Logins.** See the number of successful logins by username in the last 24 hours to identify any unusual activity. You can filter by username as needed.
 
-**User Modifications. **See user modifications by timestamp, destination user, source user, notes, and error description for the last 24 hours displayed in  table. You can filter by time, user name, source user, or error description as needed to track unusual behavior.
+**User Modifications.** See user modifications by timestamp, destination user, source user, notes, and error description for the last 24 hours displayed in  table. You can filter by time, user name, source user, or error description as needed to track unusual behavior.
 
 <img src={useBaseUrl('img/integrations/saml/OneLoginSecurity.png')} alt="OneLogin" />
+
+### User Inventory
+
+The **OneLogin - User Inventory** dashboard offers a centralized view of user account lifecycle and activity within the OneLogin environment:
+* **Centralized user overview**. Provides a single view of user account lifecycle and activity within the OneLogin environment.
+* **Account provisioning metrics**. Tracks total users, invited users, never-logged-in accounts, pending approvals, and rejections.
+* **Risk detection**. Highlights issues like repeated failed logins, locked or inactive accounts, and password problems.
+* **Usage trends**. Visualizes user status and login activity to reveal patterns in user behavior.
+* **Security monitoring**. Includes detailed tables on lockouts, recent invites, and accounts with unchanged passwords.
+* **Governance and compliance support**. Helps ensure strong user management practices, risk awareness, and regulatory compliance.
+
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OneLogin/OneLogin+-+User+Inventory.png' alt="OneLogin - User Inventory dashboard" />
+
+## Create monitors for OneLogin app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### OneLogin alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `OneLogin - Account Lockout` | This alert is triggered when a user account has been locked due to multiple failed login attempts. | Critical | Count > 0 |
+| `OneLogin - Password Expired & Reset Pending` | This alert is triggered when user accounts are found with expired passwords or are pending a password reset. | Critical | Count > 0 |
+| `OneLogin - User Rejected` | This alert is triggered when a user account has been rejected, indicating denied access during onboarding or approval. | Critical | Count > 0 |
+
+## Upgrade/Downgrade the OneLogin app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the OneLogin app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

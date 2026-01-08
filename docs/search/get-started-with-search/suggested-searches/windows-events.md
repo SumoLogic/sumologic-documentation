@@ -65,7 +65,7 @@ This events indicates that a new service was installed in the system. Any new se
 ```sql
 _sourceCategory=OS/Windows (4946 OR 4947 OR 4948)
 | parse using public/windows/2008
-| where event_id="4946","4947","4948"
+| where event_id in ("4946","4947","4948")
 ```
 
 ## Logon/Logoff Events

@@ -2,7 +2,7 @@
 id: iis-10-opentelemetry
 title: IIS 10 - OpenTelemetry Collector
 sidebar_label: IIS 10 - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for IIS 10.
+description: Learn about the Sumo Logic OpenTelemetry app for IIS 10.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,9 +11,11 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="thumbnail icon" width="130"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The [Internet Information Services](https://learn.microsoft.com/en-gb/iis/get-started/introduction-to-iis/introduction-to-iis-architecture) (IIS) 10 app is a logs app that helps you monitor your IIS web servers' availability. Preconfigured dashboards provide insight into application pools, ASP.NET applications, requests, latency, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources.
+The [Internet Information Services](https://learn.microsoft.com/en-gb/iis/get-started/introduction-to-iis/introduction-to-iis-architecture) (IIS) 10 app is a logs and metrics app designed to monitor the availability and performance of your IIS web servers. Preconfigured dashboards and searches provide insight into application pools, ASP.NET applications, requests, latency, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources.
 
 IIS logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+
+IIS metrics are sent to Sumo Logic through OpenTelemetry through [windowsperfcountersreceiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowsperfcountersreceiver). This receiver captures the configured system, application, or custom performance counter data from the Windows registry using the [PDH interface](https://docs.microsoft.com/en-us/windows/win32/perfctrs/using-the-pdh-functions-to-consume-counter-data). It is based on the [Telegraf Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/win_perf_counters).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Schematics.png' alt="Schematics" />
 
@@ -21,9 +23,11 @@ IIS logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https:/
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of IIS App install if not already present.
 
-- `webengine.cluster.name`. User configured.Enter a name to uniquely identify your IIS web server cluster. This web server cluster name will be shown in the Sumo Logic dashboards.
-- `webengine.system`. Has fixed value of **iis**
 - `sumo.datasource`. Has fixed value of **iis**.
+- `deployment.environment`. User configured. This is the deployment environment where the IIS cluster resides. For example: `dev`, `prod`, or `qa`.
+- `webengine.cluster.name`. User configured. Enter a name to uniquely identify your IIS web server cluster. This web server cluster name will be shown in the Sumo Logic dashboards.
+- `webengine.system`. Has fixed value of **iis**.
+- `webengine.node.name`. Holds the value of the Fully Qualified Domain Name (FQDN) of the machine from which the OpenTelemetry collector is collecting logs and metrics.
 
 ## Prerequisites
 
@@ -51,20 +55,36 @@ Within the folder, you will find subfolders for each site configured with IIS. T
 
 For information on HTTP Error Logs configuration and various HTTP Error Log fields, see [this link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
 
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
+
 ## Enable logging on your IIS Server
 
 Perform the following task, if logging on your IIS Server is not already enabled. To enable logging on your IIS Server, do the following:
 
 1. Open IIS Manager.
 1. Select the site or server in the Connections pane, then double-click Logging.
-  :::note
-  Enhanced logging is only available for site-level logging. If you select the server in the Connections pane, then the Custom Fields section of the W3C Logging Fields dialog is disabled.
-  :::
+   :::note
+   Enhanced logging is only available for site-level logging. If you select the server in the Connections pane, then the Custom Fields section of the W3C Logging Fields dialog is disabled.
+   :::
 1. In the Format field under Log File, select W3C and then click Select Fields. IIS App works on default fields selection.
 1. Select following fields, if not already selected. Sumo Logic expects these fields in IIS logs for the IIS App to work by default:
-  ```sh
-  date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
-  ```
+   ```sh
+   date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+   ```
 
 For more information about IIS log format and log configuration refer to this [link](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-85/enhanced-logging-for-iis85).
 
@@ -72,43 +92,129 @@ Once the logs are configured to be written into a local file follow the below st
 
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
 In this step, you will configure the yaml required for IIS Collection.
 
-Path of the different log file configured to capture IIS logs is needed to be given here (see [Prerequisites](#prerequisites)).
+The path of the log file configured to capture IIS logs is needed to be given here, refer to [Prerequisites](#prerequisites).
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+Metrics for IIS app are collected through windows perf counters. You can specify the **Collection Interval** to specify at what interval should the metrics be scrapped. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. 
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-YAML.png' alt="YAML" />
+Click on the **Download YAML File** button to get the yaml file.
 
-### Step 3: Send logs to Sumo
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+### Step 3: Send logs to Sumo Logic
 
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2. Restart the collector using: 
-  ```sh
-  Restart-Service -Name OtelcolSumo
-  ```
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+<LogsIntro/>
 
-## Sample Log Messages
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Windows"
+  values={[
+    {label: 'Windows', value: 'Windows'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
+  ]}>
+
+<TabItem value="Windows">
+
+  1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+  2. Restart the collector using: 
+    ```sh
+    Restart-Service -Name OtelcolSumo
+    ```
+
+</TabItem>
+
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
+</Tabs>
+
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
+
+:::note
+A warning message will be printed if any one of the specified performance counters cannot be loaded on startup. The application will not fail fast with this warning. It is expected that some performance counters may not exist on some systems due to different OS configuration.
+:::
+
+## Sample log messages
 
 ```sql title="Sample Log Message - Non-Kubernetes environments"
 2023-01-13 10:56:55 10.0.0.111 GET / ProgramID=236 443 - 207.235.176.5 Mozilla/5.0+(compatible;+Nimbostratus-Bot/v1.3.2;+http://cloudsystemnetworks.com) http://www.google.com/url?sa=t&rct=j&q=anomaly%20detection&source=web&cd=4 304 11 1236 70
 ```
 
-## Sample Queries
+## Sample metrics
+```
+{
+    "queryId": "A",
+    "_source": "iis/windowsperfcounters",
+    "_metricId": "UHWuWs-fdl2-SSVRh6Yfww",
+    "webengine.node.name": "EC2AMAZ-ENUFFVK",
+    "_sourceName": "iis",
+    "host.group": "anemawiniis",
+    "os.type": "windows",
+    "webengine.cluster": "test",
+    "sumo.datasource": "iis",
+    "instance": "*",
+    "_sourceCategory": "OTC Metric Input",
+    "deployment.environment": "anemawiniis",
+    "_contentType": "win_password",
+    "host.name": "EC2AMAZ-ENUFFVK",
+    "metric": "win.aspnet.Request.Execution.Time",
+    "_collectorId": "00005AF310C7F19E",
+    "_sourceId": "0000000000000000",
+    "webengine.system": "iis",
+    "_sourceHost": "EC2AMAZ-ENUFFVK",
+    "_collector": "EC2AMAZ-ENUFFVK",
+    "max": 0,
+    "min": 0,
+    "avg": 0,
+    "sum": 0,
+    "latest": 0,
+    "count": 1
+}
+```
+
+## Sample log query
 
 This sample Query is from the **IIS - Overview** > **Visitor Location** panel.
 
@@ -116,65 +222,63 @@ This sample Query is from the **IIS - Overview** > **Visitor Location** panel.
 " %\"sumo.datasource\"=iis %\"webengine.cluster.name\"=* | json \"log\" as _rawlog nodrop \n| if (isEmpty(_rawlog), _raw, _rawlog) as iis_log_message\n| parse regex field=iis_log_message \"(?<server_ip>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}) (?<method>\\S+?) (?<cs_uri_stem>\\S+?) (?<cs_uri_query>\\S+?) (?<s_port>\\S+?) (?<cs_username>\\S+?) (?<c_ip>\\S+?) (?<cs_User_Agent>\\S+?) (?<cs_referer>\\S+?) (?<sc_status>\\S+?) (?<sc_substatus>\\S+?) (?<sc_win32_status>\\S+?) (?<time_taken>\\S+?)$\"\n| count by c_ip\n| lookup latitude, longitude, country_name from geo://location on ip=c_ip\n| where !isNull(latitude)"
 ```
 
-## Viewing IIS Dashboards
+## Sample metric query
 
-### IIS - Overview
+```sql title="Running Application pool"
+sumo.datasource=iis  deployment.environment=* webengine.cluster.name=* webengine.node.name=* instance=*  metric=win.app.pool.was.Current.Application.Pool.State  | filter latest = 3 | count
+```
 
-The **IIS - Overview** Dashboard provides a high-level view of the integrity of your Microsoft Internet Information Services (IIS) infrastructure. Dashboard panels display visual graphs and detailed information on IIS versions, platforms, and log formats. Panels also show visitor geographic locations, top app requests. OS platforms, response status, response times, and client and server errors.
+## Viewing IIS dashboards
+
+### Overview
+
+The **IIS - Overview** dashboard provides a high-level view of the performance and integrity of your Microsoft Internet Information Services (IIS) infrastructure. Dashboard panels display visual graphs and detailed information on IIS versions, platforms, and log formats. Panels also show visitor geographic locations, top app requests. OS platforms, response status, response times, and client and server errors.
+
+Use this dashboard to:
+* Get a high-level overview of sites, requests, connect, cache, data received and sent, queue, application pool, client location, client platforms, error and threats identified.
+* Drill Down to specific use cases by clicking on specific panels of interest.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Overview.png' alt="Overview" />
 
-### IIS - Performance Snapshot
+### HTTP Error
 
-The **IIS - Performance Snapshot** Dashboard provides detailed information on your IIS infrastructure integrity and performance. Dashboard panels show details on Web Service uptime, active connections, requests, user activity, and total bytes transferred. Panels also provide HTTP Service Request Queues details, such as arrivals, queue size, cache hit rate, and rejection rate.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Performance-Snapshot.png' alt="Performance Snapshot" />
-
-### IIS - Performance Trends
-
-The **IIS - Performance Trends** Dashboard provides details on ISS infrastructure trends for requests, active connections, bytes received and sent, files received and sent, queue size, arrival rate, and cache hit rate.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Performance-Trends.png' alt="Performance Trends" />
-
-### IIS - HTTP Error
-
-The **IIS - HTTP Error** Dashboard provides detailed information on IIS error logging in HTTP. Dashboard panels show details on error events, top client and server IP addresses, top protocol versions and protocol status. Panels also show information on top reason phrases and verbs associated with HTTP errors, as well as top request details by reason.
+The **IIS - HTTP Error** dashboard provides detailed information on IIS error logging in HTTP. Dashboard panels show details on error events, top client and server IP addresses, top protocol versions and protocol status. Panels also show information on top reason phrases and verbs associated with HTTP errors, as well as top request details by reason.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-HTTP-Error.png' alt="HTTP Error" />
 
-### IIS - Latency
+### Latency
 
-The **IIS - Latency** provides visual graphs and detailed information for the integrity of performance throughout your IIS infrastructure. Dashboard panels show response time averages, cumulative percentiles, histograms, and outliers. Panels also show details for traffic distribution, slowest pages, slowest GET and POST requests, and average redirection time.
+The **IIS - Latency** dashboard provides visual graphs and detailed information for the integrity of performance throughout your IIS infrastructure. Dashboard panels show response time averages, cumulative percentiles, histograms, and outliers. Panels also show details for traffic distribution, slowest pages, slowest GET and POST requests, and average redirection time.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Latency.png' alt="Latency" />
 
-### IIS - Web Server Operations
+### Web Server Operations
 
-The **IIS - Web Server Operations** Dashboard provides visual graphs and detailed information on server operation errors in your IIS infrastructure. Dashboard panels show server errors by the server, server errors over time, server error outliers, and redirections by the server. Panels also show client errors by the server, client error outliers, top URLs with 404 errors, and response codes over time.
+The **IIS - Web Server Operations** dashboard provides visual graphs and detailed information on server operation errors in your IIS infrastructure. Dashboard panels show server errors by the server, server errors over time, server error outliers, and redirections by the server. Panels also show client errors by the server, client error outliers, top URLs with 404 errors, and response codes over time.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Web-Server-Operations.png' alt="Web Server Operations" />
 
-### The IIS - Requests Stats
+### Requests Stats
 
-The **IIS - Requests Stats** Dashboard provides visual graphs and statistics for requests made throughout your IIS infrastructure. Dashboard panels show the number of requests, request methods, request outliers, and requests by server. Panels also show details on GET, PUT, POST, and DELETE requests, as well as requests time, compare and unique visitors outlier.
+The **IIS - Requests Stats** dashboard provides visual graphs and statistics for requests made throughout your IIS infrastructure. Dashboard panels show the number of requests, request methods, request outliers, and requests by server. Panels also show details on GET, PUT, POST, and DELETE requests, as well as requests time, compare and unique visitors outlier.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Requests-Stats.png' alt="Requests Stats" />
 
-### IIS - Threat Analysis
+### Threat Analysis
 
-The **IIS - Threat Analysis** Dashboard provides high-level views of threats throughout your IIS network. Dashboard panels display visual graphs and detailed information on Threats by Client IP, Threats by Referrer, and Threats by URL.
+The **IIS - Threat Analysis** dashboard provides high-level views of threats throughout your IIS network. Dashboard panels display visual graphs and detailed information on Threats by Client IP, Threats by Referrer, and Threats by URL.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Threat-Analysis.png' alt="RThreat Analysis" />
 
-### IIS - Visitor Access Types
+### Visitor Access Types
 
 The **IIS  - Visitor Access Types** Dashboard provides insights into visitor platform types, browsers, and operating systems, as well as the most popular mobile devices, PC and Mac versions used.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Visitor-Access-Types.png' alt="Visitor Access Types" />
 
-### IIS - Visitor Locations
+### Visitor Locations
 
-The **IIS - Visitor Locations** Dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by  US region over time.
+The **IIS - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by  US region over time.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Visitor-Locations.png' alt="Visitor Locations" />
 
@@ -183,3 +287,54 @@ The **IIS - Visitor Locations** Dashboard provides a high-level view of Nginx vi
 The **IIS - Visitor Traffic Insight** Dashboard provides detailed information on the top documents accessed, top referrers, top search terms from popular search engines, and the media types served.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Visitor-Traffic-Insights.png' alt="Visitor Traffic Insights" />
+
+### Application Pool
+
+The **IIS - Application Pool** dashboard provides a high-level view of Application Pool State, Information and Worker Process Metrics.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Application-Pool.png' alt="IIS-Application-Pool" />
+
+### ASP.NET
+
+The **IIS - ASP.NET** dashboard provides a high-level view of the ASP.NET global performance counters. This dashboard helps you to analyse the state server sessions, monitor applications performance, and understand the request execution and wait time.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-ASP.NET.png' alt="IIS-ASP.NET" />
+
+### ASP.NET Applications
+
+The **IIS - ASP.NET Applications** dashboard provides a high-level view of the ASP.NET application performance counters. This dashboard helps you to monitor compilations, errors, cache, requests executing, requests in application queue, pipeline instance count, and output cache.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-ASP.NET-Applications.png' alt="IIS-ASP.NET-Applications" />
+
+### Cache Performance
+
+The **IIS - Cache Performance** dashboard provides a high-level view of the the Web Service Cache Counters object includes cache counters specific to the World Wide Web Publishing Service. This dashboard helps you to monitor the output cache, cache memory, file cache, and URI cache.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Cache-Performance.png' alt="IIS-Cache-Performance" />
+
+### Web Service
+
+The **IIS - Web Service** dashboard provides a high-level view of the Web Service object includes counters specific to the World Wide Web Publishing Service. This dashboard helps you to monitor the total site, connections, site uptime, method, and miscellaneous.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Web-Service.png' alt="IIS-Web-Service" />
+
+## Create monitors for IIS app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### IIS alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `IIS - Access from Highly Malicious Sources` | This alert is triggered when an IIS server is accessed from highly malicious IP addresses. | Count `>` 0 | Count `<=` 0 |
+| `IIS - ASP.NET Application Errors` | This alert is triggered when an error is detected in the ASP.NET applications running on an IIS server. | Count `>` 0 | Count `<=` 0 |
+| `IIS - Blocked Async IO Requests` | This alert is triggered when blocked async I/O requests are detected on an IIS server. | Count `>` 0 | Count `<=` 0 |
+| `IIS - Error Events` | This alert is triggered when an error is detected in the IIS logs. | Count `>` 0 | Count `<=` 0 |
+| `IIS - High ASP.NET Current Requests` | This alert is triggered when the current ASP.NET request count exceeds the given value (Default 500). | Count `>` 500 | Count `<=` 500 |
+| `IIS - High Client (HTTP 4xx) Error Rate (Copy)` | This alert is triggered when more than 5% of HTTP requests result in a 4xx response code. | Count `>` 0 | Count `<=` 0 |
+| `IIS - High Current Connections` | This alert is triggered when the current connections exceed the given value (Default 1000), indicating potential capacity issues. | Count `>` 1000 | Count `<=` 1000 |
+| `IIS - High Server (HTTP 5xx) Error Rate` | This alert is triggered when more than 5% of HTTP requests result in a 5xx response code. | Count `>` 0 | Count `<=` 0 |
+| `IIS - No Worker Processes` | This alert is triggered when the worker process count drops to zero, indicating potential application pool issues. | Count `<` 1 | Count `>=` 1 |
+| `IIS - Slow Response Time` | This alert is triggered when the response time for a given IIS server exceeds one second. | Count `>` 0 | Count `<=` 0 |

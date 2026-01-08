@@ -4,23 +4,24 @@ title: first, last Grouping Operators
 sidebar_label: first, last
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `first` and `last` operators return the first or last result relative to the sort order. By default, searches return results in descending chronological order (most recent descending to oldest).
 
 For example, the following image shows a few results in the default sort order. The `#` column starts at one, and the `Time` values start with the most recent.
 
-![new_to_old_default_result_order.png](/img/search/searchquerylanguage/group-aggregate-operators/new_to_old_default_result_order.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/group-aggregate-operators/new_to_old_default_result_order.png')} alt="New to old default result order" style={{border: '1px solid gray'}} width="200" />
 
 * The `first` result is indicated with the `#` value of 1. This `first` result has the most recent `Time`.
 * The `last` result is indicated with the `#` value of 5. This `last` result has the oldest `Time`.
 
 :::tip
-Using the [sort](/docs/search/search-query-language/search-operators/sort) operator allows you to change the default sort order.
+Using the [`sort`](/docs/search/search-query-language/search-operators/sort) operator allows you to change the default sort order.
 :::
 
 #### Limitations
 
-First and last are not supported in Live Dashboards or any continuous query. Instead, use the `withtime` operator, see [`most_recent` and `least_recent`](/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent).
+First and last are not supported in auto refresh dashboards or any continuous query. Instead, use the `withtime` operator, see [`most_recent` and `least_recent`](/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent).
 
 ## first
 
@@ -36,7 +37,7 @@ first(<field>) [as <field>] [by <field>]
 
 ### Rules
 
-* The default field created is named **`_first`**
+* The default field created is named `_first`
 
 ### Example
 
@@ -44,8 +45,7 @@ first(<field>) [as <field>] [by <field>]
 ... | first(error_message) group by hostname
 ```
 
-Note that when you find the first occurrence of more than one field, you must create an alias using the [as
-operator](/docs/search/search-query-language/search-operators/as) to rename the _first fields. See this example:
+Note that when you find the first occurrence of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the `_first` fields. See this example:
 
 ```sql
 _sourceCategory=Apache/Access

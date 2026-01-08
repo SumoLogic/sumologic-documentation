@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/inspector-classic.png')} alt="Thumbnail icon" width="50"/>
 
-:::caution Newer version available
+:::warning Newer version available
 You're viewing legacy documentation. For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see [Amazon Inspector](/docs/integrations/amazon-aws/inspector.md).
 :::
 
@@ -19,7 +19,7 @@ The App uses a Lambda function to collect assessment run events (notifications) 
 For more information on Amazon Inspector notifications, see:
 [Amazon Inspector Classic assessment templates and assessment runs](http://docs.aws.amazon.com/inspector/latest/userguide/inspector_assessments.html).
 
-## Sample Log
+## Sample log
 
 ```json title="Amazon Inspector CreateResourceGroup action"
 {
@@ -69,7 +69,7 @@ For more information on Amazon Inspector notifications, see:
 }
 ```
 
-## Collecting Data for the Amazon Inspector Classic App
+## Collecting data for the Amazon Inspector Classic app
 
 For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see Amazon Inspector.
 
@@ -99,8 +99,8 @@ Details are provided in the following sections.
 
 1. Log in to the Amazon Console.
 2. Click Services. In the dropdown go to **Application Integration > Simple Notification Service** (SNS).
-3. On the **SNS Dashboard**, select  **Topics **on the left side.
-4. A new window opens, select **Create** **topic **button.
+3. On the **SNS Dashboard**, select  **Topics** on the left side.
+4. A new window opens, select **Create topic** button.
 5. In the new window, enter the following details:
     * **Name**: Enter a topic name.
     * **Access Policy:** Select Advance.
@@ -131,7 +131,7 @@ Details are provided in the following sections.
 
 1. In the Amazon Console, click Services. In the opened dropdown, go to **Security, Identity & Compliance > Inspector**.
 2. Select assessment templates on the left side.
-3. A new window opens, select **each **assessment template you want to monitor.
+3. A new window opens, select *each* assessment template you want to monitor.
 4. Expand each row and find the section called **SNS topics**.
 5. Click the **Edit** icon and select the SNS topic you created in the previous section.
 6. Click **Save**.
@@ -140,12 +140,12 @@ Details are provided in the following sections.
 #### Step 5: Create a Role
 
 1. In the Amazon Console, click Services. In the opened dropdown, go to **Security, Identity & Compliance > IAM**.
-2. Select **Roles **on the left side. A new window open, click the **Create role** button.
-3. Select **Lambda **and then click **Next: Permissions** button.
+2. Select **Roles** on the left side. A new window open, click the **Create role** button.
+3. Select **Lambda** and then click **Next: Permissions** button.
 4. In the **Attach permissions policy** section, search and select **AWSLambdaBasicExecutionRole** and **AmazonInspectorReadOnlyAccess** policies.
 5. Select **Next: Tags** button.
 6. Select **Next: Review** button.
-7. In the **Review** section, Enter the role name **Lambda-Inspector **and click the **Create role** button.
+7. In the **Review** section, Enter the role name **Lambda-Inspector** and click the **Create role** button.
 
 #### Step 6: Create a Lambda Function
 
@@ -164,37 +164,26 @@ Details are provided in the following sections.
 8. Go to [https://raw.githubusercontent.com/SumoLogic/sumologic-aws-lambda/main/inspector/python/inspector.py](https://raw.githubusercontent.com/SumoLogic/sumologic-aws-lambda/main/inspector/python/inspector.py) and copy-paste the code in the editor.
 9. Edit the code to enter the URL of the Sumo Logic endpoint ( line 14) that will receive data from the HTTP Source.
 10. Click **Save** at the top.
-11. Scroll down and go to **Edit basic settings **and configure the rest of the settings as follows:
+11. Scroll down and go to **Edit basic settings** and configure the rest of the settings as follows:
     * **Handler:** lambda_function.sumo_inspector_handler
     * **Memory (MB):** 128
     * **Timeout:** 10 minutes
 12. Click **Save**.
 
 
-## Installing the Amazon Inspector Classic App
+## Installing the Amazon Inspector Classic app
 
 Now that you have set up collection for Amazon Inspector, install the Sumo Logic App for Amazon Inspector to use the pre-configured Searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-To install the app:
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+<AppInstall2/>
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+## Viewing Inspector Classic dashboards
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-## Viewing Inspector Classic Dashboards
+<ViewDashboards/>
 
 ### Overview
 
@@ -210,25 +199,37 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **Finding Severity by Template.** Displays the severity of findings by template in a bar chart for the last seven days.
 
-**Trend of Findings by RulesPackage. **Shows the trend of findings by RulesPackage in a trend line chart on a timeline for the last seven days.
+**Trend of Findings by RulesPackage.** Shows the trend of findings by RulesPackage in a trend line chart on a timeline for the last seven days.
 
-**Last Run by Template. **Shows the last run by template in a table chart, including details on the template, lastrun, lastevent, and timestamp for the last seven days.
+**Last Run by Template.** Shows the last run by template in a table chart, including details on the template, lastrun, lastevent, and timestamp for the last seven days.
 
-**Trend of Findings by Template. **Shows the trend of findings by template in a trend line chart on a timeline for the last seven days.
+**Trend of Findings by Template.** Shows the trend of findings by template in a trend line chart on a timeline for the last seven days.
 
 
 ### Findings
 
 <img src={useBaseUrl('img/integrations/amazon-aws/amazon_inspector_findings.png')} alt="amazon_inspector_findings" />
 
-**Finding Severity Over Time. **Shows the finding severity over time in a stacked column chart on a timeline for the last seven days.
+**Finding Severity Over Time.** Shows the finding severity over time in a stacked column chart on a timeline for the last seven days.
 
-**Outlier Indicator of Non-Information Findings. **Displays the indicator of non-informational findings in an outlier chart for the last seven days.
+**Outlier Indicator of Non-Information Findings.** Displays the indicator of non-informational findings in an outlier chart for the last seven days.
 
 **Templates Not Run in a Day.** Provides information on templates that have not been run in a day in a table chart, including details on the template, last event, and last event date for the last seven days.
 
 **Finding Details.** Displays complete finding details in a table chart, including information on the finding title, description, create date, template, run, and finding severity for the last seven days.
 
-**Finding Severity by Template and Run. **Shows the details of finding severity by template and run in a table chart including information on the template, run, create date, and medium or informational severity for the last seven days.
+**Finding Severity by Template and Run.** Shows the details of finding severity by template and run in a table chart including information on the template, run, create date, and medium or informational severity for the last seven days.
 
 **Persistent Findings.** Displays persistent findings in a table chart, including details on the finding title, template, finding severity, and number of runs for the last seven days.
+
+## Upgrade/Downgrade the Amazon Inspector Classic app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Inspector Classic app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

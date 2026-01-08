@@ -1,0 +1,27 @@
+{
+    "api.version":"v1",
+    "source":{
+      "schemaRef":{
+        "type":"Crowdstrike FDR"
+      },
+      "config":{
+        "automaticDateParsing":true,
+        "name":"FDR test",
+        "forceTimeZone":false,
+        "description":"Example config",
+        "secretAccessKey":"********",
+        "SqsQueueURL":"https://sqs.us-west-1.amazonaws.com/***/***",
+        "multilineEnabled":false,
+        "accessKeyId":"********",
+        "category":"Sumo/FDR",
+        "timestampFormatAutoDetection":false,
+        "s3Region":"us-west-1",
+        "startTime": 0,
+        "useAutolineMatching":true
+      },
+      "state":{
+        "state":"Collecting"
+      },
+      "sourceType":"Universal"
+    }
+  }

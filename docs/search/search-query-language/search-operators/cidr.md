@@ -4,7 +4,7 @@ title: cidr Search Operator
 sidebar_label: CIDR
 ---
 
-Sumo Logic's three CIDR operators work with CIDR (Classless Inter-Domain Routing, sometimes pronounced "cider") notation to narrow the analysis of IPv4 networks to specific subnets. CIDR notations specify the routing prefix of IP addresses.
+Sumo Logic's three CIDR operators work with CIDR (Classless Inter-Domain Routing, sometimes pronounced "cider") notation to narrow the analysis of IPv4 networks to specific subnets. CIDR notations specify the routing prefix of IP addresses. Input data will be trimmed, making these operators more flexible, which allows you to set your expectations accordingly.
 
 Using the CIDR operators, you can determine the amount of traffic between network segments, review events from hosts within a specified network segment, or even use a not operator to find addresses that didn't originate from a particular network segment. CIDR operators can be used to compare the network segment of two IPv4 addresses, or just identify the network segment involved in particular messages.
 
@@ -79,11 +79,11 @@ You may find the [isValidIP](/docs/search/search-query-language/search-operators
 
 ### Examples
 
-To review events from a specific network segment:
+#### Review events from a specific network segment
 
 1. Search for the events. For example, let's say we'd like to review firewall logs:
     ```
-    (denied OR rejected AND _sourcecategory=firewall | ...
+    (denied OR rejected AND _sourceCategory=firewall | ...
     ```
 1. Parse the IP addresses. For example:   
     ```sql
@@ -98,11 +98,11 @@ To review events from a specific network segment:
     ... | count by ip_address
     ```
 
-To review events not from a specific network segment:
+#### Review events not from a specific network segment
 
 1. Search for the events. For example, let's say we'd like to review firewall logs:  
    ```
-   (denied OR rejected AND _sourcecategory=firewall | ...
+   (denied OR rejected AND _sourceCategory=firewall | ...
    ```
 1. Parse the IP addresses. For example:   
     ```sql

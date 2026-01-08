@@ -1,45 +1,30 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import React from 'react';
 import clsx from 'clsx';
+import { useThemeConfig } from '@docusaurus/theme-common';
+import GoogleTranslateNavbarItem from './GoogleTranslateNavbarItem';
 
-import type {Props} from '@theme/NavbarItem/HtmlNavbarItem';
+function HtmlNavbarItem({ position, value, className }) {
+  const themeConfig = useThemeConfig();
+  const isRight = position === 'right';
+  const isLeft = position === 'left';
+  const classNames = clsx(
+    'navbar__item',
+    {
+      'navbar__item--right': isRight,
+      'navbar__item--left': isLeft,
+    },
+    className
+  );
 
-(function () {
-  if (typeof window !== "undefined") {
-  window.googleTranslateElementInit = function () {
-        new google.translate.TranslateElement(
-            {pageLanguage: 'en'},
-            'google_translate_element'
-        );
-  }
-}}
-)
-
-();
-
-export default function HtmlNavbarItem({
-  value,
-  className,
-  mobile = false,
-  isDropdownItem = false,
-}: Props): JSX.Element {
-  const Comp = isDropdownItem ? 'li' : 'div';
   return (
-    <Comp
-      className={clsx(
-        {
-          navbar__item: !mobile && !isDropdownItem,
-          'menu__list-item': mobile,
-        },
-        className,
+    <div className={classNames}>
+      {value === 'google_translate' ? (
+        <GoogleTranslateNavbarItem />
+      ) : (
+        <div dangerouslySetInnerHTML={{ __html: value }} />
       )}
-      dangerouslySetInnerHTML={{__html: value}}
-    />
+    </div>
   );
 }
+
+export default HtmlNavbarItem;

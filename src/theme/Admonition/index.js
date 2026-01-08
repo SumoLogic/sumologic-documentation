@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import {ThemeClassNames} from '@docusaurus/theme-common';
 import Translate from '@docusaurus/Translate';
 import styles from './styles.module.css';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 function NoteIcon() {
   return (
     <svg viewBox="0 0 14 16">
@@ -43,7 +44,7 @@ function InfoIcon() {
     </svg>
   );
 }
-function CautionIcon() {
+function WarningIcon() {
   return (
     <svg viewBox="0 0 16 16">
       <path
@@ -55,7 +56,7 @@ function CautionIcon() {
 }
 function SumoIcon() {
   return (
-    <img src="/img/sumo-square.png" width="25"/>
+    <img src={useBaseUrl('img/reuse/sumo-square.png')} width="25"/> 
   )
 }
 // eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style
@@ -115,14 +116,14 @@ const AdmonitionConfigs = {
       </Translate>
     ),
   },
-  caution: {
+  warning: {
     infimaClassName: 'warning',
-    iconComponent: CautionIcon,
+    iconComponent: WarningIcon,
     label: (
       <Translate
-        id="theme.admonition.caution"
-        description="The default label used for the Caution admonition (:::caution)">
-        caution
+        id="theme.admonition.warning"
+        description="The default label used for the Warning admonition (:::warning)">
+        warning
       </Translate>
     ),
   },
@@ -132,7 +133,6 @@ const aliases = {
   secondary: 'note',
   important: 'info',
   success: 'tip',
-  warning: 'danger',
 };
 function getAdmonitionConfig(unsafeType) {
   const type = aliases[unsafeType] ?? unsafeType;

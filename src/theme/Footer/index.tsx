@@ -13,8 +13,11 @@ import {
   FontAwesomeIcon,
 } from '@fortawesome/react-fontawesome';
 import {
-  faTwitter,
+  faXTwitter,
   faYoutube,
+  faLinkedinIn,
+  faGithub,
+  faSquareFacebook,
 } from '@fortawesome/free-brands-svg-icons';
 import { Stack } from '@mui/system';
 import {
@@ -135,11 +138,11 @@ export const Footer = () => {
         >
           {[
             {
-              alt: 'Sumo Logic YouTube',
+              alt: 'Sumo Logic GitHub',
               color: '#e3e3e3',
-              href: 'https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw',
-              'aria-label': 'Sumo Logic YouTube',
-              icon: 'faYoutube', 'aria-hidden': "true",
+              href: 'https://github.com/SumoLogic',
+              'aria-label': 'Sumo Logic GitHub',
+              icon: faGithub,
               size: 'lg',
               sx: {
                 cursor: 'pointer',
@@ -149,11 +152,53 @@ export const Footer = () => {
               }
             },
             {
-              alt: 'Sumo Logic Twitter',
+              alt: 'Sumo Logic YouTube',
               color: '#e3e3e3',
-              href: 'https://twitter.com/SumoLogic',
-              'aria-label': 'Sumo Logic Twitter',
-              icon: 'faTwitter', 'aria-hidden': "true",
+              href: 'https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw',
+              'aria-label': 'Sumo Logic YouTube',
+              icon: faYoutube,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
+            },
+            {
+              alt: 'Sumo Logic LinkedIn',
+              color: '#e3e3e3',
+              href: 'https://www.linkedin.com/company/sumo-logic',
+              'aria-label': 'Sumo Logic LinkedIn',
+              icon: faLinkedinIn,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
+            },
+            {
+              alt: 'Sumo Logic X (formerly Twitter)',
+              color: '#e3e3e3',
+              href: 'https://x.com/SumoLogic',
+              'aria-label': 'Sumo Logic X (formerly Twitter)',
+              icon: faXTwitter,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
+            },
+            {
+              alt: 'Sumo Logic Facebook',
+              color: '#e3e3e3',
+              href: 'https://www.facebook.com/Sumo.Logic',
+              'aria-label': 'Sumo Logic Facebook',
+              icon: faSquareFacebook,
               size: 'lg',
               sx: {
                 cursor: 'pointer',
@@ -164,7 +209,7 @@ export const Footer = () => {
             },
           ].map(({ alt, href, ...other }) => (
             <Tooltip key={href} title={alt}>
-              <Link rel='noreferrer noopener'>
+              <Link href={href} rel='noreferrer noopener'>
                 <Box
                   component={FontAwesomeIcon}
                   {...other}
@@ -186,17 +231,25 @@ export const Footer = () => {
         >
           {[
             {
+              label: 'Status',
+              href: 'https://status.sumologic.com',
+            },
+            {
               label: 'Legal',
-              href: 'https://www.sumologic.com/legal/',
+              href: 'https://www.sumologic.com/legal',
             },
             {
               label: 'Privacy Statement',
-              href: 'https://www.sumologic.com/privacy-statement/',
+              href: 'https://www.sumologic.com/privacy-statement',
             },
             {
               label: 'Terms of Use',
-              href: 'https://www.sumologic.com/terms-conditions/',
-            }].map(({ href, label }) => (
+              href: 'https://www.sumologic.com/terms-conditions',
+            },
+            {
+              label: 'CA Privacy Notice',
+              href: 'https://www.sumologic.com/legal/privacy-statement#ca_notice',
+            },].map(({ href, label }) => (
               <Fragment key={href}>
                 <Link
                   color='#6c7993'

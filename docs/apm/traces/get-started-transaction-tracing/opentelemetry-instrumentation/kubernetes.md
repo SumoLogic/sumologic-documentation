@@ -10,15 +10,18 @@ Setting up Tracing instrumentation for Java, Python, NodeJS, and .NET applicatio
 
 To enable the OpenTelemetry-Operator for the [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection#sumologic-kubernetes-collection), you have to set `opentelemetry-operator.enabled=true`.
 
-The OpenTelemetry Operator needs to know how to instrument containers. For this purpose, the `Instrumentation` resource must be created in the namespace where you want to use auto-instrumentation. Setting `opentelemetry-operator.createDefaultInstrumentation` to `true` and `opentelemetry-operator.instrumentationNamespaces` will help with that.
+The OpenTelemetry Operator needs to know how to instrument containers. For this purpose, the `Instrumentation` resource must be created in the namespace where you want to use auto-instrumentation. Setting `instrumentation.createDefaultInstrumentation` to `true` and `instrumentation.instrumentationNamespaces` will help with that.
 
-The value of the flag `opentelemetry-operator.instrumentationNamespaces` is backslash comma-separated namespaces list, for example: `opentelemetry-operator.instrumentationNamespaces="ns1\,ns2\,ns3"`.
+The value of the flag `instrumentation.instrumentationNamespaces` is backslash comma-separated namespaces list. For example: `instrumentation.instrumentationNamespaces="ns1\,ns2\,ns3"`.
 
 1. Update dependencies:
+
  ```bash
  $ helm dependency update
  ```
+
 2. Installation/upgrade enabling operator and setting namespaces to watch. You can find more details about installing an OT collector in Kubernetes environments [here](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments).
+
  ```bash
  $ helm upgrade --install collection sumologic/sumologic \
  --namespace sumologic \
@@ -28,12 +31,15 @@ The value of the flag `opentelemetry-operator.instrumentationNamespaces` is back
  --set sumologic.clusterName="<MY_CLUSTER_NAME>" \
  --set sumologic.traces.enabled=true \
  --set opentelemetry-operator.enabled=true \
- --set opentelemetry-operator.createDefaultInstrumentation=true \
- --set opentelemetry-operator.instrumentationNamespaces="ns1\,ns2"
+ --set instrumentation.createDefaultInstrumentation=true \
+ --set instrumentation.instrumentationNamespaces="ns1\,ns2"
  ```
 
 During the installation process, **OpenTelemetry Instrumentation** custom resources with all settings are deployed in the provided namespaces.
 
+:::note
+Updating the Sumo Logic Kubernetes Collection to a version newer than [4.8.0](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v4.8.0) may cause issues with chart installation if there is a customized configuration of the OpenTelemetry Operator. Refer to the required changes in the [parameters](https://github.com/SumoLogic/sumologic-kubernetes-collection/pull/3733/).
+:::
 
 ## Auto-instrumentation injection
 
@@ -117,8 +123,6 @@ spec:
        - image: my-image
 ```
 
-
-
 ### Java auto-instrumentation for Deployment with multiple containers
 
 ```yaml
@@ -150,28 +154,32 @@ spec:
 To have meaningful or intuitive data to search, you need to make some changes to the default configuration. You can make these customizations through additional environment variables in container definitions.
 
 Environment variables:
-* `OTEL_SERVICE_NAME` - if this parameter is not set, the default service name assumes the name of Deployment, Statefulset, or other PodSpec object name. This ensures their names represent some business logic, such as `FinanceServiceCall`. This will appear as a tracing service name in Sumo Logic. If you'd like to manually set a service name, add `OTEL_SERVICE_NAME` in env variables section of container configuration. For example:  
- ```yaml
- spec:
-  containers:
-   - image: my-image
-     env:
-      - name: OTEL_SERVICE_NAME
-        value: FinanceServiceCall
- ```
-* `OTEL_RESOURCE_ATTRIBUTES` - if this parameter is not set, the default application name assumes the name of Namespace. This will appear as a tracing application name in Sumo Logic. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels)). If you'd like to manually set the application name, add `OTEL_RESOURCE_ATTRIBUTES` `application=name` in the environment variables section of container configuration. You can add additional attributes here as comma-separated key=value pairs (i.e., `application=my-app,key=value`):
- ```yaml
- spec:
-  containers:
-   - image: my-image
-     env:
-      - name: OTEL_RESOURCE_ATTRIBUTES
-        value: application=my-app,key=value
- ```
-* Other parameters:
-    * **OTEL_PROPAGATORS.** If not provided, the operator sets the default value `tracecontext,baggage`. Some additional context propagators can be enabled (b3 - common for service meshes, xray - used by AWS services).
-    * **OTEL_TRACES_SAMPLER.** Default value: `always_on`. For details, see other sampling possibilities [here](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/sdk.md#Sampling).
 
+* `OTEL_SERVICE_NAME` - if this parameter is not set, the default service name assumes the name of Deployment, Statefulset, or other PodSpec object name. This ensures their names represent some business logic, such as `FinanceServiceCall`. This will appear as a tracing service name in Sumo Logic. If you'd like to manually set a service name, add `OTEL_SERVICE_NAME` in env variables section of container configuration. For example:  
+
+  ```yaml
+  spec:
+    containers:
+    - image: my-image
+      env:
+        - name: OTEL_SERVICE_NAME
+          value: FinanceServiceCall
+  ```
+
+* `OTEL_RESOURCE_ATTRIBUTES` - if this parameter is not set, the default application name assumes the name of Namespace. This will appear as a tracing application name in Sumo Logic. If you'd like to manually set the application name, add  `OTEL_RESOURCE_ATTRIBUTES` `application=name` in the environment variables section of container configuration. You can add additional attributes here as comma separated key=value pairs (i.e., `application=my-app,key=value`):
+
+  ```yaml
+  spec:
+    containers:
+    - image: my-image
+      env:
+        - name: OTEL_RESOURCE_ATTRIBUTES
+          value: application=my-app,key=value
+  ```
+
+* Other parameters:
+  * **OTEL_PROPAGATORS.** If not provided, the operator sets the default value `tracecontext,baggage`. Some additional context propagators can be enabled (b3 - common for service meshes, xray - used by AWS services).
+  * **OTEL_TRACES_SAMPLER.** Default value: `always_on`. For details, see other sampling possibilities [here](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/sdk.md#Sampling).
 
 ## Custom OpenTelemetry Operator Instrumentation resource
 
@@ -179,6 +187,7 @@ You might want to create a custom `Instrumentation` resource. For more info, see
 In the case of defining an endpoint to export telemetry data from instrumented application, follow the pattern `RELEASE_NAME-CHART_NAME-otelagent.RELEASE_NAMESPACE` (e.g., `collection-sumologic-otelagent.sumologic`).
 
 Make sure supported auto-instrumentation images are used:
+
 * `dotnet` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.4.0-beta.1
 * `java` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:1.16.0
 * `nodejs` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.27.0

@@ -4,12 +4,9 @@ title: Apache Tomcat Access Logs
 description: Parse the common fields in your Apache Tomcat Access Logs using the FER template.
 ---
 
-
-
 **Log Type**: Apache Tomcat Access
 
-**Template Description**: Parsing the common fields in your Apache
-Tomcat Access log.
+**Template Description**: Parsing the common fields in your Apache Tomcat Access log.
 
 **Sample Log**:
 
@@ -20,7 +17,7 @@ Tomcat Access log.
 **Parsing Rule**:
 
 ```sql
-parse regex "(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}? )"
+| parse regex "(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}? )"
 | parse regex "\"(?<method>\D{1,7}? )"
 | parse regex "\"\D{1,7} (?<url>\S{1,2048}? )"
 | parse regex "\" (?<status>\d{3}? )"
@@ -32,9 +29,9 @@ parse regex "(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}? )"
 
 | Field | Description | Example |
 |:--|:--|:--|
-| ip         | The Client IP                                        | 250.67.103.48   |
-| method     | Request method                                       | POST            |
-| url        | Resource requested by the client                     | /blog/index.php |
-| status     | Status code that the server sends back to the client | 200             |
-| time_taken | Time taken to process the request                    | 3280            |
-| bytes_sent | Bytes sent count                                     | 4               |
+| ip         | The client IP address.                               | `250.67.103.48` |
+| method     | HTTP request method.                                 | POST            |
+| url        | Resource requested by the client.                    | `/blog/index.php`|
+| status     | HTTP response status code.                           | 200             |
+| time_taken | Time taken to process the request.                   | 3280            |
+| bytes_sent | Count of bytes sent.                                 | 4               |

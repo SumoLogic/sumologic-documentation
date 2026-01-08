@@ -1,0 +1,23 @@
+{
+	"api.version":"v1",
+	"source":{
+		"config":{
+			"name":"STIX TAXII 1 Client for Unit 42",
+			"description":"Collects indicators from Unit 42 and stores them in Sumo Logic",
+            "userSourceID": "My Important Indicators",
+            "discoveryURL": "https://stix2.unit42.org/taxii/",
+			"useBasicAuth": true,
+            "http_user": "user@acme.com",
+            "http_password": "****************************",
+			"collectionNames": [
+				"collection1",
+				"collection2"
+			  ],
+			"pollingInterval": "1h"
+		},
+		"schemaRef":{
+			"type":"TAXII 1 Client"
+		},
+		"sourceType":"Security"
+	}
+}

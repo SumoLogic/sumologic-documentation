@@ -1,0 +1,47 @@
+[
+    {
+      "sql": "select SCHEMA_NAME, EXECUTION_STATUS, ERROR_MESSAGE, QUERY_TYPE, WAREHOUSE_NAME, DATABASE_NAME, WAREHOUSE_SIZE, USER_NAME, SUM(BYTES_SCANNED), SUM(EXECUTION_TIME), SUM(TOTAL_ELAPSED_TIME) from QUERY_HISTORY where start_time >= DATEADD(MINUTE, -10, GETDATE()) group by 1, 2, 3, 4, 5, 6, 7, 8;",
+      "pollingInterval": "10m",
+      "metrics": [
+        {
+          "name": "snowflake_query_bytes_scanned_sum",
+          "value": "SUM(BYTES_SCANNED)",
+          "labels": [
+            "SCHEMA_NAME",
+            "EXECUTION_STATUS",
+            "QUERY_TYPE",
+            "WAREHOUSE_NAME",
+            "DATABASE_NAME",
+            "WAREHOUSE_SIZE",
+            "USER_NAME"
+          ]
+        },
+        {
+          "name": "snowflake_query_execution_time_sum",
+          "value": "SUM(EXECUTION_TIME)",
+          "labels": [
+            "SCHEMA_NAME",
+            "EXECUTION_STATUS",
+            "QUERY_TYPE",
+            "WAREHOUSE_NAME",
+            "DATABASE_NAME",
+            "WAREHOUSE_SIZE",
+            "USER_NAME"
+          ]
+        },
+        {
+          "name": "snowflake_total_elapsed_time_sum",
+          "value": "SUM(TOTAL_ELAPSED_TIME)",
+          "labels": [
+            "SCHEMA_NAME",
+            "EXECUTION_STATUS",
+            "QUERY_TYPE",
+            "WAREHOUSE_NAME",
+            "DATABASE_NAME",
+            "WAREHOUSE_SIZE",
+            "USER_NAME"
+          ]
+        }
+      ]
+    }
+  ]

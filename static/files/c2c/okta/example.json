@@ -1,0 +1,22 @@
+{
+    "api.version":"v1",
+    "source":{
+      "schemaRef":{
+        "type":"Okta"
+      },
+      "config":{
+        "name":"Okta",
+        "description":"East field",
+        "domain":"mydomain.okta.com",
+        "users":true,
+        "collectAll":true,
+        "apiKey":"********",
+        "fields":{
+          "_siemForward":false
+        },
+        "category":"eastTeamF",
+        "pollingInterval":300
+      },
+      "sourceType":"Universal"
+    }
+  }

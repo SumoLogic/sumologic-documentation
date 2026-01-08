@@ -1,0 +1,18 @@
+{
+	"api.version":"v1",
+	"source":{
+		"config":{
+			"name":"STIX TAXII 2 Client for Palo Alto",
+			"description":"Collects indicators from Unit 42 and stores them in Sumo Logic",
+            "ti_user_source_id": "Palo Alto Intel",
+            "ti_version": "2.0",
+            "ti_discovery_url": "https://stix2.unit42.org/taxii/",
+            "http_user": "user@acme.com",
+            "http_password": "****************************"
+		},
+		"schemaRef":{
+			"type":"TAXII 2 Client"
+		},
+		"sourceType":"Security"
+	}
+}

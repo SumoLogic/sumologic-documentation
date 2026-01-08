@@ -5,6 +5,8 @@ sidebar_label: Disabled Metrics Sources
 description: Sumo Logic sometimes disables metrics Sources in response to excessive volume of time series.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 In some cases, Sumo Logic disables a metrics source or drops a metric dimension to limit the number of ingested time series. 
 
 This page has information about the process and how to resolve the problem.
@@ -24,30 +26,30 @@ The storage is based on the metrics retention period, which you can control usi
 
 ### Warning is issued when you approach the global limits
 
-When you approach one of these limits, Sumo Logic generates a Health Event and writes a message with level “warning” to the Audit Event Index.
+When you approach one of these limits, Sumo Logic generates a health event and writes a message with level “warning” to the [system event index](/docs/manage/security/audit-indexes/system-event-index/). Enter a query to `_index=sumologic_system_events` to see events in the system event index.
 
-The Health Event and audit message are generated when your metric ingestion reaches these levels:
+The health event and audit message are generated when your metric ingestion reaches these levels:
 
 * 35M unique timeseries per week, for metrics with long term retention
 * 70M unique timeseries per week, for metrics with short term retention
 
-The Health Event is named `MetricsHighCardinalityDetected`. 
+The health event is named [`HighCardinalityMetricsDetected`](https://service.sumologic.com/audit/docs/#operation/getHighCardinalityMetricsDetected). 
 
-The message written to the Audit Event Log is:
+Following is an example of the message written to the system event index:
 
 ```json
-{"status":"UnHealthy","details":{"retention":"long","trackerId":"MetricsHighCardinalityDetected","error":"Detected high cardinality of metrics time series","description":"Approaching the limit for total number of unique time series allowed. In case of exceeding the limit some of your metrics sources would be temporary disabled."},"eventType":"Health-Change","severityLevel":"Warning","accountId":"0000000000000475","eventId":"0687c55e-0b77-44a4-9a6f-6d6d5e588244","eventName":"MetricsHighCardinalityDetected","eventTime":"2020-06-18T14:45:48.252Z","eventFormatVersion":"1.0 beta","subsystem":"Metrics","resourceIdentity":{"id":"0000000000000475","name":"stagData","type":"Organisation"}}
+{"status":"UnHealthy","details":{"retention":"long","trackerId":"HighCardinalityMetricsDetected","error":"Detected high cardinality in metrics time series","description":"Approaching the limit for total number of unique time series allowed. In case of exceeding the limit some of your metrics sources would be temporary disabled."},"eventType":"Health-Change","severityLevel":"Warning","accountId":"0000000000000475","eventId":"0687c55e-0b77-44a4-9a6f-6d6d5e588244","eventName":"HighCardinalityMetricsDetected","eventTime":"2020-06-18T14:45:48.252Z","eventFormatVersion":"1.0 beta","subsystem":"Metrics","resourceIdentity":{"id":"0000000000000475","name":"stagData","type":"Organisation"}}
 ```
 
 ### Sources are disabled when you reach the global limits
 
 When you reach the global limits, Sumo Logic starts disabling your metric sources, starting with the one that is ingesting metrics with the highest cardinality, and continues disabled metric sources in that order, until your metric ingestion is reduced to a volume that is lower than the limit.
 
-For each source it disabled, Sumo Logic generates a Health Event and writes a message with level “error” to the Audit Event Index.
+For each source it disabled, Sumo Logic generates a health event and writes a message with level “error” to the [system event index](/docs/manage/security/audit-indexes/system-event-index/). Enter a query to `_index=sumologic_system_events` to see events in the system event index.
 
-The Health Event is named `SourceDisabled`. 
+The health event is named [`SourceDisabled`](https://service.sumologic.com/audit/docs/#operation/getSourceDisabled). 
 
-The message written to the Audit Event Log is:
+Following is an example of the message written to the system event index:
 
 ```json
 {"status":"UnHealthy","details":{"trackerId":"SourceDisabled","error":"Metrics source temporarily disabled","description":"This metrics source has sent too many unique time series and has been temporarily disabled. The data sent while this source is disabled cannot be recovered."},"eventType":"Health-Change","severityLevel":"Error","accountId":"0000000000000475","eventId":"4b1e4710-bef6-4ebe-926b-57e6b4743e9a","eventName":"SourceDisabled ","eventTime":"2020-06-18T15:00:20.776Z","eventFormatVersion":"1.0 beta","subsystem":"Metrics","resourceIdentity":{"collectorId":"000000000627859B","collectorName":"stag-cass-metrics-aa-2","id":"000000000644FB28","name":"HostMetrics","type":"Source"}}
@@ -93,21 +95,24 @@ This limit does not apply to the Kubernetes dimensions, Docker dimensions, or th
 * `label.com.docker.swarm.task.id`
 * `label.com.docker.swarm.task.name`
 
-For other dimensions that exceed the cardinality limit Sumo generates a metric transformation rule to exclude the dimension. The rule appears in the UI at **Manage Data > Metrics > Metric Transformation Rules**:
+For other dimensions that exceed the cardinality limit, Sumo generates a metric transformation rule to exclude the dimension. The rule appears in the UI in **Metrics Transformation Rules**.
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access **Metrics Transformation Rules**, in the main Sumo Logic menu select **Data Management** and then under **Metrics** select **Metrics Transformation Rules**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Transformation Rules**. 
+ 
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access **Metrics Transformation Rules**, go to the main Sumo Logic menu and select **Manage Data > Metrics > Metrics Transformation Rules**. 
 
 You can delete the metric transformation rule, but you can’t disable or modify it. 
-
-![transformation-rules.png](/img/metrics/transformation-rules.png)
+<img src={useBaseUrl('img/metrics/transformation-rules.png')} alt="Transformation-rules" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 If you have a use case that requires the dropped dimension, contact Sumo Logic support.
 :::
 
-When a dimension is dropped, Sumo Logic generates a Health Event and writes a message with level “error” to the Audit Event Index.
+When a dimension is dropped, Sumo Logic generates a health event and writes a message with level “error” to the [system event index](/docs/manage/security/audit-indexes/system-event-index/). Enter a query to `_index=sumologic_system_events` to see events in the system event index.
 
-The Health Event is named `HighCardinalityDimensionDropped`.
+The health event is named [`HighCardinalityDimensionDropped`](https://service.sumologic.com/audit/docs/#operation/getHighCardinalityDimensionDropped).
 
-The message written to the Audit Event Index is:
+Following is an example of the message written to the system event index:
 
 ```json
 {"status":"UnHealthy","details":{"dimension":"monitoridentifier","trackerId":"HighCardinalityDimensionDropped","error":"Dropped highly cardinal metrics dimension","description":"This metrics source has sent metrics with too many unique values of one dimension. Therefore said dimension will be dropped from metrics coming from this source."},"eventType":"Health-Change","severityLevel":"Error","accountId":"0000000000000131","eventId":"7354fe41-bd6e-46e2-802b-bc6b42a97406","eventName":"HighCardinalityDimensionDropped","eventTime":"2020-06-18T15:49:57.803Z","eventFormatVersion":"1.0 beta","subsystem":"Metrics","resourceIdentity":{"collectorId":"00000000064C90BE","collectorName":"nite-alert-1","id":"000000000689D385","name":"carbon2udp","type":"Source"}}

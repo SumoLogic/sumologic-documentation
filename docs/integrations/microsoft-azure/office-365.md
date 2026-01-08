@@ -7,15 +7,15 @@ description: The Sumo Logic App for Microsoft Office 365 ingests Microsoft Offic
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/365.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/365.png')} alt="thumbnail icon" width="50"/>
 
 The Microsoft Office 365 App ingests Microsoft Office 365 Audit logs for Azure Active Directory, Exchange, and SharePoint. Preconfigured Dashboards allow you to monitor and analyze your complete Office 365 system for administrator and user activity.
 
-## Log Types
+## Log types
 
 For information on Microsoft APIs and message types, see Microsoft Office 365 Audit Source.
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {  
@@ -75,7 +75,7 @@ For information on Microsoft APIs and message types, see Microsoft Office 365 Au
   }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="SharePoint Operations"
 _sourceCategory=O365* CreationTime Workload ("\"Workload\":\"SharePoint\"" or "\"Workload\":\"OneDrive\"")
@@ -95,59 +95,44 @@ _sourceCategory=O365* Workload Operation "ResultStatus" fail*
 | transpose row _timeslice column workload
 ```
 
-## Collecting Logs for the Office 365 App
+## Collecting logs for the Office 365 App
 
 This section provides instructions for configuring log collection for the Microsoft Office 365 App, as well as providing sample log messages and queries.
 
 To collect logs for the Microsoft Office 365 App, do the following:
 
 1. One [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. One [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/ms-office-audit-source.md) for each content type you want to collect logs for. For example:
+2. One [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source.md) for each content type you want to collect logs for. For example:
     * Office 365 Azure AD logs
     * Office 365 Exchange logs
     * Office 365 SharePoint logs
     * Office 365 General logs
     * Office 365 Data Loss Prevention (DLP) event logs
 
-For complete details, see [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/ms-office-audit-source.md).
+For complete details, see [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source.md).
 
 We recommend the following Source Category naming convention:
-* **Azure AD:** O365/Azure
-* **Exchange: **O365/Exchange
-* **SharePoint: **O365/SharePoint
-* **General:** O365/SharePoint
-* **DLP**: O365/DLP
+
+* **Azure AD.** O365/Azure
+* **Exchange.** O365/Exchange
+* **SharePoint.** O365/SharePoint
+* **General.** O365/General
+* **DLP.** O365/DLP
 
 
-## Installing the Microsoft Office 365 App
+## Installing the Microsoft Office 365 app
 
 Now that you have configured Office 365, install the Sumo Logic App for Microsoft Office 365 to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-To install the app:
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**
+<AppInstall2/>
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter `_sourceCategory=O365/*`
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+## Viewing Microsoft Office 365 dashboards
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-To see your data in the panels of Office 365 - SharePoint - Shared Content Non-Domain Activities dashboard, open the queries of each panel.
-
-Add your domain in all the queries in the highlighted section as shown below. Click **Update Dashboard** to save the queries. You will now see your data in the Panels.
-
-
-## Viewing Office 365 Dashboards
-
-The Sumo Logic App for Microsoft Office 365 provides insights for Azure Active Directory, Exchange, and SharePoint. The pre-configured dashboards allow you to monitor the failures, successes, and other operations in Office 365 system.
-
+<ViewDashboards/>
 
 ### Overview
 
@@ -155,15 +140,15 @@ Shows details of Office 365 successful and failed activities, and SharePoint, Ex
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365Overview.png')} alt="Microsoft Office 365 dashboards" />
 
-**Successful Activity by Workload. **Compare your overall Office 365 workload activity by service as an area chart on a timeline for the last 24 hours.
+**Successful Activity by Workload.** Compare your overall Office 365 workload activity by service as an area chart on a timeline for the last 24 hours.
 
-**Failed Activity by Workload. **See any failed activity by Office 365 workload as a column chart on a timeline for the last three days.
+**Failed Activity by Workload.** See any failed activity by Office 365 workload as a column chart on a timeline for the last three days.
 
-**SharePoint Operations. **See the number of all SharePoint operations by name  as a line chart for the last 24 hours.
+**SharePoint Operations.** See the number of all SharePoint operations by name  as a line chart for the last 24 hours.
 
-**Exchange Operations. **See the Exchange operations activity by name and count on a stacked bar chart for the last 24 hours.
+**Exchange Operations.** See the Exchange operations activity by name and count on a stacked bar chart for the last 24 hours.
 
-**Azure AD Operations Trends. **See the Azure AD operations activity by action and count as a stacked column chart on a timeline for the last 24 hours.
+**Azure AD Operations Trends.** See the Azure AD operations activity by action and count as a stacked column chart on a timeline for the last 24 hours.
 
 
 ### General
@@ -380,7 +365,7 @@ Shows details of non-domain users' accesses, uploads, downloads, and views.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-SharePoint-SharedContentNon-DomainsActivities.png')} alt="Microsoft Office 365 dashboards" />
 
-To see your data in this dashboard, open the queries of each panel and add your domain in the queries as mentioned [here](#Installing-the-Microsoft-Office-365-App).
+To see your data in this dashboard, open the queries of each panel and add your domain in the queries as mentioned [here](#installing-the-microsoft-office-365-app).
 
 
 **Top 10 Users Sharing Outside Domain**. See the top 10 users sharing content outside the domain in a table chart including details on user ID and frequency for the last seven days.
@@ -445,3 +430,15 @@ To use the following searches, you will need to edit the search query to add the
 **Demo - LogReduce on Suspicious IP**. Performs a LogReduce operation on a suspicious IP address that you specify.
 
 **Demo - Outlier**. Performs an outlier operation on an IP address that you specify.
+
+## Upgrading the Microsoft Office 365 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Office 365 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

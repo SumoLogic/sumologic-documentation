@@ -8,7 +8,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="50"/>
 
-This page provides an overview of the Sumo Logic **Collection** page UI, where you can manage all of your Collectors and Sources. To access the Collection page, go to **Manage Data** > **Collection** > **Collection**. <br/>![Collection page June 2021.png](/img/collector/collection-page.png)
+This page provides an overview of the Sumo Logic **Collection** page UI, where you can manage all of your Collectors and Sources. 
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Collection page, In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Collection page, in the main Sumo Logic menu select **Manage Data > Collection > Collection**. 
+
+<img src={useBaseUrl('img/collector/collection-page.png')} alt="Collection page" style={{border: '1px solid gray'}} width="800" />
 
 ## Prerequisites
 
@@ -46,7 +52,7 @@ You'll need the Manage or View Collectors [role capability](/docs/manage/users-r
 
 * **Name**. Displays the name of the Collector, and any Sources that are configured under it. It also displays the type of Source (HTTP, Local File, Local Windows Event Log, etc.)
   * **Open in Search**. Hover over the Name of the Collector or Source and click the Open in Search icon to start a search in the Search page.
-  * **Tooltip**. Hover over a Collector or Source name to display an informational tool tip. The Collector's version is provided in the tooltip.      <br/>![Collector version in tooltip.png](/img/collector/collector-version-in-tooltip.png)
+  * **Tooltip**. Hover over a Collector or Source name to display an informational tool tip. The Collector's version is provided in the tooltip.      <br/><img src={useBaseUrl('img/collector/collector-version-in-tooltip.png')} alt="Collector version in tooltip" style={{border: '1px solid gray'}} width="300" />
 * **Health**. Shows color-coded healthy, error, and warning states for Collectors and Sources so you can quickly determine the [health of your Collectors and Sources](/docs/manage/health-events.md).
   If an Installed Collector appears offline try [restarting the service](pause-resume-source.md) and [testing connectivity](/docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors).
 * **Type**. Displays whether the Collector is an Installed or Hosted Collector.
@@ -61,71 +67,64 @@ You'll need the Manage or View Collectors [role capability](/docs/manage/users-r
 
 In this section, we'll introduce the following concepts:
 
-<div className="box-wrapper" markdown="1">
-<div className="box smallbox1 card">
+<div className="box-wrapper">
+<div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/collection/search-for-a-collector-or-source"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Search for a Collector or Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/collection/search-for-a-collector-or-source')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Search for a Collector or Source</h4></a>
   <p>Search for a collector or source on the manage collection page.</p>
   </div>
 </div>
-<div className="box smallbox2 card">
+<div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/collection/start-stop-collector-using-scripts"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Start or Stop a Collector using Scripts
-</h4></a>
+  <a href={useBaseUrl('docs/send-data/collection/start-stop-collector-using-scripts')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Start or Stop a Collector using Scripts</h4></a>
   <p>Start/stop a collector and check collector status.</p>
   </div>
 </div>
-<div className="box smallbox3 card">
+<div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/collection/restart-collectors"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Restart a Collector</h4></a>
-  <p>Restart a collector from the collection page.</p>
-  </div>
-</div>
-<div className="box smallbox4 card">
-  <div className="container">
-  <a href="/docs/send-data/collection/edit-collector"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Edit a Collector</h4></a>
+  <a href={useBaseUrl('docs/send-data/collection/edit-collector')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Edit a Collector</h4></a>
   <p>Edit collector characteristics.</p>
   </div>
 </div>
-<div className="box smallbox5 card">
+<div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/collection/edit-source"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Edit a Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/collection/edit-source')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Edit a Source</h4></a>
   <p>Edit source characteristics.</p>
   </div>
 </div>
-<div className="box smallbox6 card">
+<div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/collection/pause-resume-source"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Pause and Resume a Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/collection/pause-resume-source')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Pause and Resume a Source</h4></a>
   <p>Pause sources from sending data to Sumo Logic.</p>
   </div>
 </div>
-    <div className="box smallbox7 card">
+    <div className="box smallbox card">
       <div className="container">
-      <a href="/docs/send-data/collection/delete-collector-or-source"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Delete a Collector or Source</h4></a>
+      <a href={useBaseUrl('docs/send-data/collection/delete-collector-or-source')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Delete a Collector or Source</h4></a>
       <p>Delete a collector or source.</p>
       </div>
     </div>
-    <div className="box smallbox8 card">
+    <div className="box smallbox card">
       <div className="container">
-      <a href="/docs/send-data/collection/set-collector-cpu-usage-target"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Set a Collector CPU Usage Target</h4></a>
+      <a href={useBaseUrl('docs/send-data/collection/set-collector-cpu-usage-target')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Set a Collector CPU Usage Target</h4></a>
       <p>Limit the amount of CPU processing a collector uses.</p>
       </div>
     </div>
-    <div className="box smallbox9 card">
+    <div className="box smallbox card">
       <div className="container">
-      <a href="/docs/send-data/collection//upgrade-collectors"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Upgrade a Collector</h4></a>
+      <a href={useBaseUrl('docs/send-data/collection/upgrade-collectors')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Upgrade a Collector</h4></a>
       <p>Deploy an upgrade to one or more collectors.</p>
       </div>
     </div>
-    <div className="box smallbox10 card">
+    <div className="box smallbox card">
       <div className="container">
-      <a href="/docs/send-data/collection/collector-logs"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Collector Logs</h4></a>
+      <a href={useBaseUrl('docs/send-data/collection/collector-logs')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Collector Logs</h4></a>
       <p>Use log events to troubleshoot collection issues.</p>
       </div>
     </div>
-    <div className="box smallbox11 card">
+    <div className="box smallbox card">
       <div className="container">
-      <a href="/docs/send-data/collection/processing-rules"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Processing Rules</h4></a>
+      <a href={useBaseUrl('docs/send-data/collection/processing-rules')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Processing Rules</h4></a>
       <p>Processing rules can help filter and forward data.</p>
       </div>
     </div>

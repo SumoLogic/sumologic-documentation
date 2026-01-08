@@ -1,110 +1,116 @@
 ---
 id: c2c-source  #example: druva-source
-title: XYZ Source #example: Druva Source
-sidebar_label: XYZ #example: Druva
+title: C2C Source #example: Druva Source
+image: 'https://app_icons.s3.amazonaws.com/dropbox.svg' #replace with your app logo
+sidebar_label: C2C Template #example: Druva
+tags:
+  - cloud-to-cloud
+  - c2c-source  #example: Druva
 description: Description goes here. #example: Learn how to configure the Druva Cloud-to-Cloud Source in your Sumo Logic environment.
 ---
 
+import CodeBlock from '@theme/CodeBlock';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <head>
   <meta name="robots" content="noindex" />
 </head>
 
-<!--
-<img src={useBaseUrl('path-to-your-icon.png')} alt="Thumbnail icon" width="45"/>
+`<img src={useBaseUrl('path-to-your-icon.png')} alt="Thumbnail icon" width="45"/>`
 
-The {{source name}} collects {{data/event types}} from {{source of origin}}. {{What the app does}}.
+\Introduction\
 
-Example: The Microsoft Graph Security API Source provides a secure endpoint to consume alerts from the Microsoft Graph Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each affected device.-->
+<!-- RULE: Always start with "The Sumo Logic source for [vendor]" in both the description (frontmatter) and the intro paragraph. This ensures brand clarity since the UI shows only the vendor name. The exact wording after that can be adapted. This example shows a common structure, but you may rephrase to fit the use case. -->
 
+The Sumo Logic source for [vendor] enables you to [collect/ingest/stream/etc.] [data type] from [vendor] into Sumo Logic. This integration helps you [business value/security/observability outcome], providing visibility into [specific activities, events, or metrics]. With this data in Sumo Logic, you can [detect/respond/optimize/etc.] [key use cases].
 
-## Prerequisites
+\Depending on the availability in the Fed, add the below note.\
 
-<!-- NOTE: This section doesn't apply to all sources; use only where needed
+:::note
+This source is **not** yet available in the [Fed deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
 
-Example: You'll need a Dropbox App Key, App Secret, and Access Code to provide to Sumo Logic. To generate these credentials, ....
--->
+## Data collected
 
-## States
+\Add all the data sources and respective polling interval information.\
 
-Sumo Logic Cloud-to-Cloud (C2C) Sources inform you, in real time, about Source health, start-up progress, and errors requiring user action (such as connection failures).
+| Polling Interval | Data |
+| :--- | :--- |
+| `{{Polling time in minutes}}` | `{{Data sources}}` |
 
-C2C Sources go through the following states when created:
+Example:
+| Polling Interval | Data |
+| ;--- | :--- |
+| 5 min |  [Team Events](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events)
 
-1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
-1. **Started**. A collection task is created on the Hosted Collector.
-1. **Initialized**. The task configuration is complete in Sumo Logic.
-1. **Authenticated**. The Source successfully authenticated with Microsoft.
-1. **Collecting**. The Source is actively collecting data from Microsoft.
+## Setup
 
-If a Source encounters an issue during any of the above states, it is placed in an **Error** state. When you delete a Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
+### Vendor configuration
 
-### Health Events
+#### Prerequisites
 
-To view Health Events and Status for your Source, go to **Manage** > **Collection**> **Collection**. Under the Health column, you can click an **Error** status to open the  Health Events and investigate issues that may have occurred during collection.
+\NOTE: This section doesn't apply to all sources; use only where needed.\
 
-![hover-c2c-error.png](/img/send-data/hover-c2c-error.png)
+Example: You'll need a Dropbox App Key, App Secret, and Access Code to provide to Sumo Logic. To generate these credentials, ...
 
-After you click on **Error**, you should see a **Health Events** popup modal containing all detected errors and warnings. Next, click the three-dot icon > **View Details** to open a Health Events panel with details on each detected issue.
+\Insert steps to configure the Source in the Vendor UI.\
 
-## Setup and configuration
+Example: [Vendor configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#vendor-configuration)
 
+### Source configuration
 
-### Configure on {{source}}
+\Insert steps to configure the Source in the Sumo Logic UI.\
 
-<!--
+Example: [Source configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#source-configuration)
 
-NOTE: This section doesn't apply to all sources; only where needed. When it is needed, user must configure on source's website before configuring source in Sumo. For example, they may need to collect API key from customer platform for authorization and use it when configuring source in Sumo.
+## Metadata fields
 
-Insert steps to configure on source's website
+\Insert metadata fields in the Sumo Logic UI. Update the below table accordingly.\
 
-Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source/#set-up-a-service-application
--->
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `{{field}}` | `{{value}}` | `{{Description}}` |
 
+## JSON schema
 
-### Configure {{source}} on Sumo Logic
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for more details. 
 
-<!--
-Insert steps to configure the Source in the Sumo Logic UI
-
-Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source/#create-amicrosoft-graph-identity-protection-source
--->
-
-### Error Types
-
-When Sumo Logic detects an issue, it is tracked by Health Events. The following table shows the possible error types, the reason for the error, whether the source attempts to retry, and the event log name in the Health Event Index.
-
-| Type | Reason | Retries | Retry Behavior | Health Event Name |
+| Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs. | Yes | The Source will retry indefinitely. | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry indefinitely. | FirstPartyGenericError |
+| schemaRef | JSON Object  | `{"type":"/*c2c-name*/"}` | Yes | Define the specific schema type. |
+| sourceType | String | `"Universal"` | Yes | Type of source. |
+| config | JSON Object | [Configuration parameters](#config-object) | Yes | Source type specific values. |
 
-### Restarting your Source
+### Config Object
 
-<!--
-Paste this line: {@import ../../reuse/restart-c2c-source.md}
--->
+\Add information about the configuration parameters. Update the below table accordingly.\
 
-## JSON Source configuration
-
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [Using JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
-
-| Parameter | Type | Required | Description | Access |
-|:--|:--|:--|:--|:--|
-| {{`Parameter`}} | {{Type}} | {{Yes/No}} | {{Description}} |   |
-
-### JSON config parameters
-
-The following table shows the JSON **config** parameters for a {{source name}}.
-
-| Parameter | Type | Required | Default | Description | Access |
+| Parameter | Type | Required | Default | Description | Example |
 |:--|:--|:--|:--|:--|:--|
-| {{`Parameter`}} | {{Type}}  | {{Yes/No}} |  | {{Description}} |  |
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"`
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| `{{Parameter}}` | `{{Type}}` | `{{Yes/No}}` | `null` | `{{Description}}` |  `{{Example}}` |
 
-### JSON config example
+### JSON example
 
-```json
-insert JSON config example
-```
+\Create and add the JSON config in the dropbox and import it here.\
+
+<CodeBlock language="json">component-name</CodeBlock>
+
+### Terraform example
+
+\Create and add the Terraform config in the dropbox and import it here.\
+
+<CodeBlock language="json">component-name}</CodeBlock>
+
+## Troubleshooting
+
+\This section doesn't apply to all sources; use only where needed\
+
+## FAQ
+
+:::info
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
+:::

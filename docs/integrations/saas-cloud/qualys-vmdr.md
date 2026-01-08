@@ -2,7 +2,7 @@
 id: qualys-vmdr
 title: Qualys VMDR
 sidebar_label: Qualys VMDR
-description: The Sumo Logic App for Qualys VMDR provides vulnerability summary across your IT infrastructure.
+description: The Sumo Logic app for Qualys VMDR provides vulnerability summary across your IT infrastructure.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,12 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Qualys VMDR app is a new Sumo Logic app based on the [Qualys VMDR Cloud-to-Cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source/), which tracks errors, reports its health, and start-up progress. It provides a cloud security, compliance, and vulnerability management solutions across your IT infrastructure.
 
-## Log Types
+## Log types
 
-The Sumo logic App for Qualys VMDR uses vulnerability data from [Vulnerability API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf) and asset data from [Asset API](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf).
+The Sumo logic app for Qualys VMDR uses vulnerability data from [Vulnerability API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf) and asset data from [Asset API](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf).
 
-
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -42,8 +41,7 @@ The Sumo logic App for Qualys VMDR uses vulnerability data from [Vulnerability A
 }
 ```
 
-
-### Sample Queries
+### Sample queries
 
 ```sql
 source=Qualys
@@ -81,18 +79,53 @@ source=Qualys
 | order by %"Total" desc
 ```
 
-## Set up Collection
+## Collection configuration and app installation
 
-This section provides instructions for setting up [Cloud-to-Cloud-Integration for Qualys VMDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source.md) to create the source and use the same source category while installing the app.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
+<CollectionConfiguration/>
 
-## Installing the Qualys VMDR App​
+:::important
+Use the [Cloud-to-Cloud Integration for Qualys VMDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Qualys VMDR app is properly integrated and configured to collect and analyze your Qualys VMDR data.
+:::
 
-This section provides instructions for installing the Qualys VMDR Sumo Logic App.
+### Create a new collector and install the app
 
-{@import ../../reuse/apps/app-install.md}
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-## Viewing Qualys VMDR Dashboard
+<AppCollectionOPtion1/>
 
-**Qualys VMDR - Overview dashboard** This dashboard gives you visibility into low, medium, high, and critical vulnerabilities by hosts in your network. Use the dashboard to slice and dice data by vulnerability severity, IPs, and hosts.
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing Qualys VMDR dashboard
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+### Overview
+
+The **Qualys VMDR - Overview dashboard** provides visibility into low, medium, high, and critical vulnerabilities by hosts in your network. Use the dashboard to slice and dice data by vulnerability severity, IPs, and hosts.
 <img src={useBaseUrl('img/integrations/saas-cloud/qualys-vmdr-overview.png')} alt="Qyalys VMDR Overview" width="900"/>
+
+## Upgrade/Downgrade the Qualys VMDR app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Qualys VMDR app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

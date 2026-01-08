@@ -7,207 +7,301 @@ description: The AWS API Gateway ULM app provides insights into API calls, inclu
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-[Amazon API Gateway](https://aws.amazon.com/api-gateway/) service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
+[Amazon API Gateway](https://aws.amazon.com/api-gateway/) service allows you to create RESTful APIs, HTTP APIs, and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 
-The Sumo Logic AWS API Gateway  ULM app provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
+The Sumo Logic AWS API Gateway app provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
+## Log and metrics types 
 
-## Log and Metric Types 
+The AWS API Gateway app uses the following logs and metrics:
 
-The AWS API Gateway ULM app uses the following logs and metrics:
+* Amazon API Gateway metrics:
+  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-metrics.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+* [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+* Amazon API Gateway access logs:
+  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging-variables.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
 
-* [Amazon API Gateway metrics](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html)
-* [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events)
+### Sample log messages
 
-### Sample CloudTrail Log Message
-
-```json
+```json title="Sample CloudTrail Log Message"
 {
-	"eventVersion":"1.05",
-	"userIdentity":{
-		"type":"IAMUser",
-		"principalId":"A12445W32RZN24HABCD12",
-		"arn":"arn:aws:iam::123408221234:user/bob",
-		"accountId":"123408221234",
-		"accessKeyId":"ASIAZ123456Y3IMWK7X5",
-		"userName":"bob",
-		"sessionContext":{
-			"sessionIssuer":{
+   "eventVersion":"1.05",
+   "userIdentity":{
+      "type":"IAMUser",
+      "principalId":"A12445W32RZN24HABCD12",
+      "arn":"arn:aws:iam::123408221234:user/bob",
+      "accountId":"123408221234",
+      "accessKeyId":"ASIAZ123456Y3IMWK7X5",
+      "userName":"bob",
+      "sessionContext":{
+         "sessionIssuer":{
 
-			},
-			"webIdFederationData":{
+         },
+         "webIdFederationData":{
 
-			},
-			"attributes":{
-				"mfaAuthenticated":"true",
-				"creationDate":"2020-02-17T08:08:01Z"
-			}
-		},
-		"invokedBy":"signin.amazonaws.com"
-	},
-	"eventTime":"2020-02-17T08:08:01Z",
-	"eventSource":"apigateway.amazonaws.com",
-	"eventName":"GetRestApi",
-	"awsRegion":"us-east-1",
-	"sourceIPAddress":"149.236.17.11",
-	"userAgent":"signin.amazonaws.com",
-	"requestParameters":{
-		"restApiId":"w1234nsgjxf",
-		"template":false
-	},
-	"responseElements":null,
-	"requestID":"1234169e-e70a-44a1-a691-3cd3f857092a",
-	"eventID":"051572b0-83ef-49a3-82f6-bbef1ac8c488",
-	"readOnly":true,
-	"eventType":"AwsApiCall",
-	"recipientAccountId":"123408221234"
+         },
+         "attributes":{
+            "mfaAuthenticated":"true",
+            "creationDate":"2020-02-17T08:08:01Z"
+         }
+      },
+      "invokedBy":"signin.amazonaws.com"
+   },
+   "eventTime":"2020-02-17T08:08:01Z",
+   "eventSource":"apigateway.amazonaws.com",
+   "eventName":"GetRestApi",
+   "awsRegion":"us-east-1",
+   "sourceIPAddress":"149.236.17.11",
+   "userAgent":"signin.amazonaws.com",
+   "requestParameters":{
+      "restApiId":"w1234nsgjxf",
+      "template":false
+   },
+   "responseElements":null,
+   "requestID":"1234169e-e70a-44a1-a691-3cd3f857092a",
+   "eventID":"051572b0-83ef-49a3-82f6-bbef1ac8c488",
+   "readOnly":true,
+   "eventType":"AwsApiCall",
+   "recipientAccountId":"123408221234"
 }
 ```
 
-### Sample Query (Metric based)
-
-Average Latency by API Name:
-
-```sql
-_sourceCategory=Labs/AWS/APIGateway/Metric Namespace=aws/apigateway metric=Latency statistic=Average
-account=* region=* entity=* | avg by region, entity
+```json title="Sample Access Log Message"
+{
+  "requestId": "bf04adbf-eacc-4601-8c14-94605f242e1a",
+  "extendedRequestId": "Sca3bFUQgi0EYeA=",
+  "identitySourceIp": "103.108.207.58",
+  "identityCaller": "-",
+  "identityUser": "-",
+  "requestTime": "01/Feb/2024:06:47:49 +0000",
+  "status": "500",
+  "authorizerProperty": "-",
+  "routeKey": "-",
+  "apiId": "9iljix61i7",
+  "authorizeError": "-",
+  "authorizeLatency": "-",
+  "authorizeStatus": "-",
+  "authorizerError": "-",
+  "authorizerIntegrationStatus": "-",
+  "authorizerIntegrationLatency": "-",
+  "authorizerLatency": "-",
+  "authorizerPrincipalId": "-",
+  "authorizerRequestId": "-",
+  "authorizerStatus": "-",
+  "authenticateError": "-",
+  "authenticateLatency": "-",
+  "authenticateStatus": "-",
+  "connectedAt": "-",
+  "connectionId": "-",
+  "domainName": "9iljix61i7.execute-api.eu-north-1.amazonaws.com",
+  "errorMessage": "Internal server error",
+  "errorResponseType": "DEFAULT_5XX",
+  "errorValidationErrorString": "-",
+  "eventType": "-",
+  "identityAccountId": "-",
+  "identityCognitoAuthenticationProvider": "-",
+  "identityCognitoAuthenticationType": "-",
+  "identityCognitoIdentityId": "-",
+  "identityCognitoIdentityPoolId": "-",
+  "identityPrincipalOrgId": "-",
+  "identityUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+  "identityUserArn": "-",
+  "identityApiKey": "-",
+  "identityApiKeyId": "-",
+  "integrationError": "Execution failed due to configuration error: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target",
+  "integrationIntegrationStatus": "-",
+  "integrationLatency": "258",
+  "integrationRequestId": "-",
+  "integrationStatus": "-",
+  "contextIntegrationLatency": "258",
+  "requestTimeEpoch": "1706770069673",
+  "stage": "test",
+  "messageId": "-",
+  "wafError": "-",
+  "wafLatency": "10",
+  "wafStatus": "200"
+}
 ```
 
-### Sample Query (CloudTrail Log based)
+### Sample queries
 
-```sql
-_sourceCategory=Labs/AWS/CloudTrail/APIGateway "apigateway.amazonaws.com" Namespace={{namespace}}
-| json "awsRegion", "eventSource", "eventName" nodrop
-| json "requestParameters.basePath" as basePath nodrop
-| json "requestParameters.domainName" as domainName nodrop
-| json "responseElements.name" as ApiName nodrop // CreateRestApi, ImportRestApi, UpdateRestApi provides ApiName
-| json "recipientAccountId" as accountId2 nodrop | json "userIdentity.accountId" as accountId1 nodrop
+```sql title="Average Latency by API Name (Metric-based)"
+Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* apiname=* | avg by apiname, namespace, region, account
+```
+
+```sql title="Top Error Codes (CloudTrail Log-based)"
+"\"eventSource\":\"apigateway.amazonaws.com\"" errorCode account=dev Namespace=aws/apigateway region=us-east-1
+| json "eventName", "eventSource", "awsRegion", "userAgent", "recipientAccountId", "userIdentity", "requestParameters", "responseElements", "sourceIPAddress", "errorCode", "errorMessage", "requestID" as event_name, event_source, Region, user_agent, accountId1, userIdentity, requestParameters, responseElements, src_ip, errorCode, errorMessage, requestID nodrop
+| where event_source = "apigateway.amazonaws.com" and !isEmpty(errorCode)
+| json field=userIdentity "accountId", "arn", "userName", "type" as accountId2, arn, username, type nodrop | parse field=arn ":assumed-role/*" as user nodrop | parse field=arn "arn:aws:iam::*:*" as accountId, user nodrop
+| json field=requestParameters "basePath", "domainName" as basePath, domainName nodrop | json field=responseElements "name" as ApiName nodrop // CreateRestApi, CreateApiKey, CreateUsagePlan, CreateUsagePlanKey, CreateUsagePlanKey, ImportApi, ImportRestApi, UpdateRestApi, UpdateUsagePlan provides ApiName
+| where (tolowercase(ApiName) matches tolowercase("*")) or isBlank(apiname)
+| if (isEmpty(errorCode), "Success", "Failure") as eventStatus
 | if (!isEmpty(accountId1), accountId1, accountId2) as accountId
-| where eventSource = "apigateway.amazonaws.com"
-| where account matches "{{account}}" and awsRegion matches "{{region}}" and Namespace matches "{{namespace}}"
-| count by eventName
-| sort by _count, eventName asc
+| if (isEmpty(userName), user, userName) as user
+| count as eventCount by errorCode
+| top 10 errorCode by eventCount, errorCode asc
 ```
 
-## Collect Metrics for AWS API Gateway  
+```sql title="Distribution by User Agent (Access Log-based)"
+account=dev region=us-east-1 namespace=aws/apigateway apiname=* apiid stage domainname requestId identityUserAgent
+| json "requestId", "apiId", "authorizerError", "errorMessage", "errorResponseType", "status", "integrationLatency", "domainName", "identitySourceIp", "identityUserAgent", "stage", "integrationStatus" as requestId, apiId, authorizerError, errorMessage, errorResponseType, status, integrationLatency, domainName, identitySourceIp, identityUserAgent, stage, integrationStatus
+| json "wafLatency", "responseLatency", "responseLength", "path", "httpMethod", "protocol" as wafLatency, responseLatency, responseLength, path, httpMethod, protocol nodrop
+| parse field=domainName "*.execute-api.*.amazonaws.com" as  apiid, region
+| where account matches "dev" and region matches "us-east-1" and apiid matches "*" and apiname matches "*"
+| where !(identityUserAgent=="-")
+| count as Frequency by identityUserAgent
+| sort by Frequency, identityUserAgent asc
+```
 
-1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics).
-   * **Name**. Enter a name to display for the new Source.
-   * **Description**. Enter an optional description.
-   * **Regions**. Select your Amazon Regions for DynamoDB.
-   * **Namespaces**. Select AWS/DynamoDB.
-   * **Source** **Category**. Enter dynamodb_metrics.
-   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
-   * **Scan Interval**. Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
-3. Click **Save**.
+## Viewing AWS API Gateway dashboards
 
+We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of our AWS Observability solution.
 
-## Collect AWS API Gateway Events using CloudTrail
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
-1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source).
-   * **Name**. Enter a name to display for the new Source.
-   * **Description**. Enter an optional description.
-   * **S3 Region**. Select the Amazon Region for your DynamoDB S3 bucket.
-   * **Bucket Name**. Enter the exact name of your DynamoDB S3 bucket.
-   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-   * **Source Category**. Enter `dynamodb_event`.
-   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
-   * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-   * **Enable Timestamp Parsing**. Select the check box.
-   * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-   * **Timestamp Format.** Select Automatically detect the format.
-   * **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
-2. Click **Save**.
-
-
-## AWS API Gateway Dashboards
-
-This page provides examples and descriptions for each of the AWS Observability API Gateway pre-configured dashboards.
-
-The [Amazon API Gateway](https://aws.amazon.com/api-gateway/) service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
-
-The Sumo Logic AWS Observability API Gateway dashboards provide insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization, and access control, throttling, monitoring, and API version management.
-
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
+<FilterDashboards/>
 
 ### Overview
 
-**AWS API Gateway - Overview** dashboard provides insights into API Gateway performance throughout your infrastructure, including API calls, latency, client and server-side errors, API cache hits, and back-end cache misses.
+The **AWS API Gateway - Overview** dashboards provide insights into API Gateway performance throughout your infrastructure, including API calls, latency, client and server-side errors, connect and message count, data processed, API cache hits, and back-end cache misses.
 
-:::note
-To collect CacheHitCount and CacheMissCount metrics, the API cache should be enabled. Follow the steps below to check if your API cache is enabled:
+There are three overview dashboards: **AWS API Gateway - Overview (REST API)**, **AWS API Gateway - Overview (HTTP API)**, and **AWS API Gateway - Overview (WebSocket API)**.
 
-* On **AWS console**, Go to **API Gateway Service** and select Specific API > **Stages**.
-* Select the Specific **Stage** and go to the **Settings** tab.
-* The API should have the "**Enable API Cache**" checkbox enabled to enable API caching and to collect the CacheHitCount and CacheMissCount metrics.
-:::
-
-Use this dashboard to:
+Use these dashboards to:
 
 * Get a high-level overview of your API Gateway infrastructure.
 * Compare API requests made today, yesterday, and last week to identify any abnormal deviations in load.
 * Get quick statistics on the number of requests and frequently used APIs.
 * Monitor the number of client-side and server-side errors processed by API Gateway instances.
 * Monitor relative, backend, and overall API responsiveness.
-* Monitor API cache hits and misses by API Gateway across your infrastructure to optimize cache capacities and achieve the desired performance. 
+* Monitor API cache hits and misses by API Gateway across your infrastructure to optimize cache capacities and achieve desired performance.
 
-![1. AWS API Gateway - Overview.png](/img/observability/api-gateway-overview.png)
+#### AWS API Gateway - Overview (REST API)
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/1.-AWS-API-Gateway-Overview-REST-API.png' alt="Overview (REST API)" />
+
+#### AWS API Gateway - Overview (HTTP API)
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/2.-AWS-API-Gateway-Overview-HTTP-API.png' alt="Overview (HTTP API)" />
+
+#### AWS API Gateway - Overview (WebSocket API)
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/3.-AWS-API-Gateway-Overview-WebSocket-API.png' alt="Overview (WebSocket API)" />
+
+### Access Logs
+
+Access logs contains information about who has accessed your API and how the caller accessed the API. 
+To populate the dashboards, you must explicitly [enable access logs](/docs/integrations/amazon-aws/api-gateway/#collect-access-logs-for-aws-api-gateway).
+
+#### AWS API Gateway - Access Logs - Overview
+
+The **AWS API Gateway - Access Logs - Overview** dashboard provides insights on Request's latency, Request trend, Distribution of requests by Method, Stage, and Protocol, Client's location, Request status code trend, and slowest requests.
+
+Use this dashboard to:
+
+* Monitor Latency across your infrastructure for all kind of APIs.
+* Monitor total API call, average response size, and length and request trend.
+* Monitor API requests trend by stage, HTTP method, user agent and protocol.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/4.-AWS-API-Gateway-Access-Logs-Overview.png' alt="Access Logs - Overview" />
+
+#### AWS API Gateway - Access logs - Errors
+
+The **AWS API Gateway - Access logs - Errors** dashboard provides insights on statistics of the top 20 failed requests, error messages trends, client's location, errors by response type, recent authorizer errors, missing authentication token errors, and WAF errors.
+
+Use this dashboard to:
+
+* Monitor all the failed requests, error messages, and their trends.
+* Monitor failed requests with their distribution by response type and client IP.
+* Monitor recent authorizer and missing authentication token errors.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/5.-AWS-API-Gateway-Access-Logs-Errors.png' alt="Access logs - Errors" />
 
 ### Audit Events
 
-**AWS API Gateway - Audit Events** dashboard provides detailed audit insights into API Gateway events by various dimensions including event names, trends, regions, user agents, and recipient account IDs.
+The **AWS API Gateway - Audit Events** dashboard provides detailed audit insights into API Gateway events by various dimensions including event names, trends, regions, user agents, and recipient account IDs.
 
-Use this dashboard to:
+Use these dashboards to:
 
-* Monitor all API Gateway related audit logs available via CloudTrail events.
-* Monitor incoming user activity locations for both successful and failed events to ensure the activity matches expectations.
-* Monitor successful and failed API Gateway events, users, and user agents / fail activities and failure reasons. 
-* Monitor requests coming in from known malicious IP addresses detected via Sumo Logic Threat Intel.
+* Monitor all API Gateway-related audit logs available via CloudTrail events.
+* Monitor incoming user activity locations for both successful and failed events to ensure the activity matches with expectations.
+* Monitor successful and failed API Gateway events, users and user agents / fail activities, and failure reasons.
+* Monitor requests coming in from known malicious IP addresses detected via [Sumo Logic Threat Intel](/docs/integrations/security-threat-detection/threat-intel-quick-analysis).
 
-![2. AWS API Gateway - Audit Events.png](/img/observability/api-gateway-audit-events.png)
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/6.-AWS-API-Gateway-Audit-Events.png' alt="Audit Events" />
 
-### Latency, Cache
+### Latency and Cache
 
-**AWS API Gateway - Latency, Cache** dashboard provides insights into API Gateway performance including API requests, latency, API cache hits, and back-end cache misses.
+The **AWS API Gateway - Latency, Cache** dashboards provide insights into API Gateway performance including API requests, latency, integration latency, and its statistics, API cache hits, and back-end cache misses.
 
-Use this dashboard to:
+Cache related panels will populate for apis which have [cache enabled](/docs/integrations/amazon-aws/api-gateway/#enable-cache-metrics).
 
-* Monitor the overall responsiveness of API calls (latency), comparing times (in milliseconds) between receiving a request from and returning a response to a client. 
+There are two dashboards related to latency and cache: **AWS API Gateway - Latency, Cache (REST API)** and **AWS API Gateway - Latency (HTTP and WebSocket API)**.
+
+Use these dashboards to:
+
+* Monitor the overall responsiveness of API calls (latency), comparing times (in milliseconds) between receiving a request from and returning a response to a client.
 * Monitor the responsiveness of the backend (integration latency), comparing times (in milliseconds) between API Gateway relay requests to and receiving a response back from the backend.
-* Monitor API cache hits and misses to optimize cache capacities across your infrastructure and achieve the desired performance.
-* Compare API requests made today, yesterday, and last week identify any abnormal deviations.
+* Monitor API cache hits and misses to optimize cache capacities across your infrastructure and achieve desired performance.
+* Compare API requests made today, yesterday, and last week to identify any abnormal deviations.
 
-![1. AWS API Gateway - Latency, Cache.png](/img/observability/api-gateway-latency-cache.png)
+#### AWS API Gateway - Latency, Cache (REST API)
 
-### 4xx and 5xx Errors
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/1.-AWS-API-Gateway-Latency-Cache-REST-API.png' alt="Latency, Cache (REST API)" />
 
-**AWS API Gateway - 4xx and 5xx Errors** dashboard provides insights
-into API Gateway HTTP 4xx and 5xx code errors throughout your
-infrastructure, including API requests, client-side errors, and
-server-side errors.
+#### AWS API Gateway - Latency (HTTP and WebSocket API)
 
-Use this dashboard to:
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/2.-AWS-API-Gateway-Latency-HTTP-and-WebSocket-API.png' alt="Latency (HTTP and WebSocket API)" />
+
+### Errors
+
+The **AWS API Gateway - Errors** dashboards provide insights into API Gateway HTTP 4xx and 5xx code errors throughout your infrastructure, including API requests, client errors, integration errors, execution errors, client-side errors, and server-side errors.
+
+There are two dashboards related to errors: **AWS API Gateway - Errors (REST API)** and **AWS API Gateway - Errors (HTTP and WebSocket API)**.
+
+Use these dashboards to:
 
 * Monitor the total number of client-side errors based on API name and region across your infrastructure.
 * Monitor the total number of server-side errors based on API name and region across your infrastructure.
+* Monitor the total number of client, integration and execution errors based on API name and region across your infrastructure.
 * Compare API requests made today, yesterday, and last week to identify any abnormal deviations.
 
-![2. AWS API Gateway - 4XX and 5XX Errors.png](/img/observability/api-gateway-errors.png)
+#### AWS API Gateway - Errors (REST API)
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/3.-AWS-API-Gateway-Errors-REST-API.png' alt="Errors (REST API)" />
+
+#### AWS API Gateway - Errors (HTTP and WebSocket API)
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/4.-AWS-API-Gateway-Errors-HTTP-and-WebSocket-API.png' alt="Errors (HTTP and WebSocket API)" />
 
 ### Enhanced Monitoring
 
-**AWS API Gateway - Enhanced Monitoring** dashboard provides detailed insights into API Gateway performance throughout your infrastructure, including the number and types of API calls, API resources, cache hits and misses, latency averages, and errors by HTTP method. 
+The **AWS API Gateway - Enhanced Monitoring** dashboards provide detailed insights into API Gateway performance throughout your infrastructure, including the number and types of API calls, API resources, cache hits, and misses, latency averages, data processed, and errors by HTTP method, resource and stage.
 
-:::note
-For your API Gateway instance to send enhanced metrics, you must have explicitly enabled detailed CloudWatch metrics. You can do this in the AWS management console under a Stage settings tab by selecting Enable CloudWatch Metrics. Alternatively, you can call the update-stage AWS CLI command to update the `metricsEnabled` property to True.
-:::
+To populate the dashboards, you must explicitly [enable detailed CloudWatch metrics](/docs/integrations/amazon-aws/api-gateway/#enable-enhanced-metrics).
 
-Use this dashboard to:
+There are three dashboards related to enhanced monitoring: **AWS API Gateway - Enhanced Monitoring (REST API)**, **AWS API Gateway - Enhanced Monitoring (HTTP API)**, and **AWS API Gateway - Enhanced Monitoring (WebSocket API)**.
 
-* Monitor API Gateways across your infrastructure using enhanced metrics. 
-* Monitor API requests trend by resource, HTTP method, and deployment stage. 
-* Monitor API cache hits and misses to optimize cache capacities to achieve the desired performance.
-* Monitor the overall responsiveness of API calls and the backend origin servers.
-* Monitor the total number of client-side and server-side errors based on HTTP methods.
+Use these dashboards to:
 
-![3. AWS API Gateway - Enhanced Monitoring.png](/img/observability/api-gateway-monitoring.png)
+* Monitor API Gateways across your infrastructure using enhanced metrics.
+* Monitor API requests trend by resource, HTTP method, and deployment stage.
+* Monitor API cache hits and misses to optimize cache capacities to achieve desired performance.
+* Monitor the overall responsiveness of API calls and the backend origin servers
+* Monitor the total number of client-side and server-side errors based on HTTP methods
+
+#### AWS API Gateway - Enhanced Monitoring (REST API)
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/5.-AWS-API-Gateway-Enhanced-Monitoring-REST-API.png' alt="Enhanced Monitoring (REST API)" />
+
+#### AWS API Gateway - Enhanced Monitoring (HTTP API)
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/6.-AWS-API-Gateway-Enhanced-Monitoring-HTTP-API.png' alt="Enhanced Monitoring (HTTP API)" />
+
+#### AWS API Gateway - Enhanced Monitoring (WebSocket API)
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/7.-AWS-API-Gateway-Enhanced-Monitoring-WebSocket-API.png' alt="Enhanced Monitoring (WebSocket API)" />

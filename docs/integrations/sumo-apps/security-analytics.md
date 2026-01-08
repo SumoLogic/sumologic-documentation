@@ -13,7 +13,7 @@ The Sumo Logic App for Security Analytics provides Dashboards that allow you to 
 
 ## Prerequisites
 
-* **For Sumo Logic Enterprise Security and Enterprise Suite accounts only.** For more information, see [Requesting Sumo Logic Enterprise Apps](/docs/integrations/sumo-apps#Requesting-Sumo-Logic-Enterprise-Apps).
+* **For Sumo Logic Enterprise Security and Enterprise Suite accounts only.** For more information, see [Apps for Sumo Logic](/docs/integrations/sumo-apps).
 
 
 ## Security Analytics App Dashboards
@@ -25,9 +25,9 @@ This data is collected from your Collectors and Sources for instant analysis of 
 
 <img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics_SecurityOperations_Dashboard.png')} alt="test" />
 
-**Network Incidents.** Displays the number of incidents detected over the last 24 hours in a single value chart. Click the chart to drill down to the **Network Overview Dashboard **for more information.
+**Network Incidents.** Displays the number of incidents detected over the last 24 hours in a single value chart. Click the chart to drill down to the **Network Overview Dashboard** for more information.
 
-**Vulnerability.** Provides the incident count by severity High or Critical for the past 24 hours in a single value chart. Click the chart to drill down to the **Vulnerabilities on Endpoints **Dashboard for more information.
+**Vulnerability.** Provides the incident count by severity High or Critical for the past 24 hours in a single value chart. Click the chart to drill down to the **Vulnerabilities on Endpoints** Dashboard for more information.
 
 **System Incidents.** Shows the number of system incidents over the last 24 hours in a single value chart. Click the chart to drill down to the **System and Change** Dashboard for more information.
 
@@ -145,7 +145,7 @@ This data is collected from your Collectors and Sources for instant analysis of 
 
 ## Using the Sumo Logic App for Security Analytics
 
-This App is available for Sumo Logic Enterprise accounts only, and requires a paid Professional Services contract to install and configure. You may upgrade your account at any time. If you'd like more information on this App, please request it by clicking the [Request](/docs/integrations/sumo-apps/Security-Analytics#Using-the-Sumo-Logic-App-for-Security-Analytics) button in the Apps section of the Library, or contact your Sumo Logic sales representative at sales@sumologic.com.
+This App is available for Sumo Logic Enterprise accounts only, and requires a paid Professional Services contract to install and configure. You may upgrade your account at any time. If you'd like more information on this App, please request it by clicking the [Request](/docs/integrations/sumo-apps/security-analytics/#using-the-sumo-logic-app-for-security-analytics) button in the Apps section of the Library, or contact your Sumo Logic sales representative at sales@sumologic.com.
 
 
 The Sumo Logic app for Security Analytics provides Dashboards that allow you to easily see and manage your system's status, including a security operations overview, network, system and change, user monitoring, and vulnerabilities on endpoints. This data is collected from your Collectors and Sources, and Sumo Logic Anomaly Detection is applied to it, for instant analysis of any events.
@@ -159,7 +159,7 @@ In the Security Analytics App, on the Network Status Dashboard, the Incident Cou
 
 **To see incident details in the Messages tab:**
 
-1. Click the **Incidents for Review Panel **to open the query in the Search page.
+1. Click the **Incidents for Review Panel** to open the query in the Search page.
 2. Click the **Messages** tab.
 3. More details for the incident are included in the Message field.
 
@@ -170,103 +170,58 @@ The following table provides a list of security use cases, incidents covered, an
 
 <table>
   <tr>
-   <td><strong>Security Analytics Use Case</strong>
-   </td>
-   <td><strong>Security Incidents</strong>
-   </td>
-   <td><strong>Relevant Devices and Sources</strong>
-   </td>
+   <td><strong>Security Analytics Use Case</strong></td>
+   <td><strong>Security Incidents</strong>   </td>
+   <td><strong>Relevant Devices and Sources</strong>   </td>
   </tr>
   <tr>
-   <td>User Monitoring
-   </td>
-   <td>
-<ul>
-<li>Login Failures followed by success from the same username</li>
-<li>High amount of login failures for the same username
-</li>
-</ul>
-   </td>
-   <td>Windows 2008 servers, Active Directory, Linux, Google Apps, Novell Access Manager, RSA
-   </td>
+   <td>User Monitoring   </td>
+   <td><ul><li>Login Failures followed by success from the same username</li>
+<li>High amount of login failures for the same username</li></ul>   </td>
+   <td>Windows 2008 servers, Active Directory, Linux, Google Apps, Novell Access Manager, RSA </td>
   </tr>
   <tr>
-   <td>User Monitoring
-   </td>
-   <td>
-<ul>
-<li>Group Created</li>
+   <td>User Monitoring </td>
+   <td><ul><li>Group Created</li>
 <li>Group Deleted</li>
-<li>Group Membership changed</li>
-</ul>
-   </td>
-   <td>Windows, Active Directory, Google Apps
-   </td>
+<li>Group Membership changed</li></ul> </td>
+   <td>Windows, Active Directory, Google Apps </td>
   </tr>
   <tr>
-   <td>User Monitoring
-   </td>
-   <td>
-<ul>
-<li>User Created on Domain or Application</li>
+   <td>User Monitoring   </td>
+   <td><ul><li>User Created on Domain or Application</li>
 <li>User Created on Local Server</li>
 <li>User Deleted</li>
-<li>User Modified
-</li>
-</ul>
-   </td>
-   <td>Windows, Active Directory, Google Apps, Linux
-   </td>
+<li>User Modified</li></ul></td>
+   <td>Windows, Active Directory, Google Apps, Linux   </td>
   </tr>
   <tr>
-   <td>Systems and Changes
-   </td>
-   <td>
-<ul>
-<li>Configuration Changes</li>
-<li>OS Update</li>
-</ul>
-   </td>
+   <td>Systems and Changes   </td>
+   <td><ul><li>Configuration Changes</li>
+<li>OS Update</li></ul></td>
    <td>Windows, Active Directory, Linux</td>
   </tr>
   <tr>
-   <td>Network Overview
-   </td>
-   <td>
-<ul>
-<li>Excessive firewall denies/accepts</li>
+   <td>Network Overview   </td>
+   <td><ul><li>Excessive firewall denies/accepts</li>
 <li>Single local source scanning multiple destinations on well known database</li>
 <li>FTP ports</li>
 <li>Email ports</li>
-<li>SSH and Web Server ports</li>
-</ul>
-   </td>
-   <td>Checkpoint
-   </td>
+<li>SSH and Web Server ports</li></ul>   </td>
+   <td>Checkpoint   </td>
   </tr>
   <tr>
-   <td>Vulnerabilities on Endpoints
-   </td>
-   <td>
-<ul>
-<li>Multiple vulnerabilities detected</li>
+   <td>Vulnerabilities on Endpoints   </td>
+   <td><ul><li>Multiple vulnerabilities detected</li>
 <li>Same vulnerability detected on multiple hosts</li>
-<li>Vulnerability found</li>
-</ul>
-   </td>
-   <td>Qualys
-   </td>
+<li>Vulnerability found</li></ul>   </td>
+   <td>Qualys   </td>
   </tr>
   <tr>
    <td>Vulnerabilities on Endpoints</td>
-   <td>
-<ul>
-<li>Same virus detected on multiple hosts</li>
-<li>Virus found</li>
-</ul>
-   </td>
-   <td> Forefront
-   </td>
+   <td><ul><li>Same virus detected on multiple hosts</li>
+<li>Virus found</li></ul>   </td>
+   <td> Forefront   </td>
   </tr>
 </table>
 
@@ -278,14 +233,11 @@ This table maps incident messages to the preconfigured Security Analytics App se
 
 <table>
   <tr>
-   <td><strong>Incident Message Value</strong>
-   </td>
-   <td><strong>Incident Search</strong>
-   </td>
+   <td><strong>Incident Message Value</strong>   </td>
+   <td><strong>Incident Search</strong>   </td>
   </tr>
   <tr>
-   <td>Brute Force Login
-   </td>
+   <td>Brute Force Login   </td>
    <td>SA - Incident - Brute Force Login Attempt</td>
   </tr>
   <tr>
@@ -293,15 +245,12 @@ This table maps incident messages to the preconfigured Security Analytics App se
    <td>SA - Incident - Excessive Firewall Denies</td>
   </tr>
   <tr>
-   <td>High number of malware IDS alerts
-   </td>
+   <td>High number of malware IDS alerts   </td>
    <td>SA - Incident - High Number of Malware IDS Alerts</td>
   </tr>
   <tr>
-   <td>Large number of denied connections
-   </td>
-   <td>SA - Incident - High Volume of Denied Connections
-   </td>
+   <td>Large number of denied connections   </td>
+   <td>SA - Incident - High Volume of Denied Connections   </td>
   </tr>
   <tr>
    <td>Increased failed remote logins</td>
@@ -324,10 +273,8 @@ This table maps incident messages to the preconfigured Security Analytics App se
    <td>SA - Incident - Potential Web Application Attack</td>
   </tr>
   <tr>
-   <td>Potential successful brute force login
-   </td>
-   <td>SA - Incident - Successful Login after Multiple Failed Logins
-   </td>
+   <td>Potential successful brute force login </td>
+   <td>SA - Incident - Successful Login after Multiple Failed Logins </td>
   </tr>
   <tr>
    <td>Suspicious SSL Traffic Hike from ...</td>

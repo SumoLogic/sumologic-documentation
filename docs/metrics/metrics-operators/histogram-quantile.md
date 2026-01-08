@@ -17,11 +17,11 @@ histogram_quantile(quantile)
 ## Examples
 
 ```sql
-histogram_quantile(.99)
+* | histogram_quantile(.99)
 ```
 
 ```sql
-histogram_quantile(.5)
+* | histogram_quantile(.5)
 ```
 
 The following PromQL query to measure the 99th quantile of the `apiserver_request_latencies` histogram:

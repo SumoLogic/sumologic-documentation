@@ -1,0 +1,21 @@
+{
+    "api.version":"v1",
+    "source":{
+      "schemaRef":{
+        "type":"Symantec Web Security Service"
+      },
+      "config":{
+        "name":"Symantec WSS",
+        "apiUsername":"********",
+        "fields":{
+          "_siemForward":false
+        },
+        "category":"c2c/sym",
+        "apiPassword":"********"
+      },
+      "state":{
+        "state":"Collecting"
+      },
+      "sourceType":"Universal"
+    }
+  }

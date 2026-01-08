@@ -16,7 +16,7 @@ Updates are divided using semantic versioning. The syntax of version numbers ar
 where
 
 * `MAJOR` is not backward compatible and requires new configuration input from you, either in Sumo Logic or the service you're collecting from. * Requires manual upgrade through the web interface or API. * Sumo Logic provides upgrade instructions.
-* `MINOR` is backward compatible, it may be user-facing such as a new optional or default configuration value, however, you don't have to make the change, it's automatically upgraded.
+* `MINOR` is backward compatible, it may be user-facing such as a new optional or default configuration value, however, you do not have to make the change, it's automatically upgraded.
 * `PATCH` is backward compatible, is usually bug fixes or security updates, and is automatically upgraded.
 
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
@@ -25,19 +25,19 @@ Additional labels for pre-release and build metadata are available as extensions
 
 There is an **Upgrade Sources** link on the Collection page that shows a table of major upgrades available.
 
-![upgrade collectors button.png](/img/send-data/upgrade-collectors-button.png)
+<img src={useBaseUrl('img/send-data/upgrade-collectors-button.png')} alt="Upgrade collectors button" style={{border: '1px solid gray'}} width="800" />
 
 A table with Sources available to upgrade is displayed when you click **Upgrade Sources** on the Collection page.
 
-![versions table.png](/img/send-data/versions-table.png)
+<img src={useBaseUrl('img/send-data/versions-table.png')} alt="Sources available" style={{border: '1px solid gray'}} width="800" />
 
 Since these are major versions they do require you to take some action. You can hover and select the upgrade icon to open the Source in edit mode and provide the required information for the upgrade.
 
-![upgrade button.png](/img/send-data/upgrade-button.png)
+<img src={useBaseUrl('img/send-data/upgrade-button.png')} alt="Upgrade button" style={{border: '1px solid gray'}} width="400" />
 
 The Source will show the required upgrade instructions at the top of the panel. The following screenshot shows that the Source requires you to fill out a new field called **format**.
 
-![major version upgrade requirements.png](/img/send-data/major-version-upgrade-requirements.png)
+<img src={useBaseUrl('img/send-data/major-version-upgrade-requirements.png')} alt="Major version upgrade requirements" style={{border: '1px solid gray'}} width="400" />
 
 Once you complete the upgrade instructions you can select the **Upgrade** button to initiate the version upgrade.
 
@@ -45,7 +45,7 @@ Once you complete the upgrade instructions you can select the **Upgrade** butt
 
 You can use the Source PUT endpoint from the Collector Management API to upgrade your Source.
 
-Cloud-to-Cloud Source JSON needs to assign `version` to `latest` in `schemaRef` block. If you don't, it will only update any other configuration changes.
+Cloud-to-Cloud Source JSON needs to assign `version` to `latest` in `schemaRef` block. If you do not, it will only update any other configuration changes.
 
 For example,
 

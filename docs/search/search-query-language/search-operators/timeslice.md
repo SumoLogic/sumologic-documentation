@@ -4,6 +4,9 @@ title: timeslice Search Operator
 sidebar_label: timeslice
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import AlertsTimeslice from '../../../reuse/alerts-timeslice.md';
+
 The `timeslice` operator aggregates data by time period, so you can create bucketed results based on a fixed interval (for example, five-minute buckets). Timeslice also supports creating a fixed-target number of buckets, for example, 150 buckets over the last 60 minutes.
 
 There are two primary use cases for this operator:
@@ -40,8 +43,8 @@ To group data by (M) month you can use the formatDate operator to format _timesl
 * The timeslice operator is commonly used in conjunction with the transpose operator. After you’ve timesliced the data into buckets, the transpose operator allows you to plot aggregated data in a time series.
 * The timeslice operator must be used with an aggregating operator such as **count by** or **group by**.
 * The number of buckets in your query is a target or maximum, not necessarily the exact number of buckets that will be returned. For example, if your query specifies 150 buckets, Sumo Logic will find a reasonable clock-aligned resolution to return approximately 150 buckets in the query results.
-* If you use timeslice with the compare or outlier operators, **don't** alias timeslice. They expect _timeslice.
-* If no time period or bucket is specified it defaults to the time range of the Search.
+* If you use timeslice with the compare or outlier operators, **do not** alias timeslice. They expect `_timeslice`.
+* If no time period or bucket is specified, it defaults to the time range of the Search.
 
 ## Examples
 
@@ -55,7 +58,7 @@ Successful logins per hour.
 | count by _timeslice
 ```
 
-![Aggregates.png](/img/search/searchquerylanguage/search-operators/Timeslice-Aggregates.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Timeslice-Aggregates.png')} alt="Aggregates" style={{border: '1px solid gray'}} width="400" />
 
 ### Known Issue
 
@@ -65,24 +68,25 @@ For example, in Australia, DST goes into effect on October 2nd for Spring. For t
 
 In another example, if you had a 4h timeslice, you would usually see results at 12 a.m., 4 a.m., 8 a.m., 12 p.m., etc. But when the DST happens, the result after 12 a.m. could be either 3 a.m. or 5 a.m., depending on Fall or Spring.
 
-{@import ../../../reuse/alerts-timeslice.md}
+#### How does a timeslice affect a monitor?
 
+<AlertsTimeslice/>
 
 ### Basic examples
 
-**Timeslice 5m**   
+`timeslice 5m`
 
-Fixed-size buckets at 5 minutes. The output field is **default _timeslice**.
+Fixed-size buckets at 5 minutes. The output field is the default `_timeslice`.
 
-**Timeslice 2h as 2hrs** 
+`timeslice 2h as 2hrs` 
 
 Fixed-size buckets that are 2 hours long. The output field name is aliased to **2hrs**.
 
-**Timeslice 150 buckets**   
+`timeslice 150 buckets`   
 
 Bucketing to 150 buckets over the search results.
 
-**Timeslice 1m as `my_time_bucket_field_name`**   
+`timeslice 1m as my_time_bucket_field_name`   
 
 Fixed-size buckets of 1 minute each. The output field name is aliased to **`my_time_bucket_field_name`**.
 
@@ -121,7 +125,7 @@ _sourceCategory=Apache/Access
 This query produces these results in the Aggregates tab, which you can
 display as a column chart.
 
-![Timeslice](/img/search/searchquerylanguage/search-operators/timeslice_ex1.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/timeslice_ex1.png')} alt="Timeslice" style={{border: '1px solid gray'}} width="800" />
 
 **Example 2:** All computer access to Sumo Logic over time.
 
@@ -135,7 +139,7 @@ _sourceCategory=*IIS*
 
 This query produces these results in the Aggregates tab, which you can display as a stacked column chart:
 
-![Timeslice Example](/img/search/searchquerylanguage/search-operators/TimeSliceEx2.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/TimeSliceEx2.png')} alt="Timeslice example" style={{border: '1px solid gray'}} width="800" />
 
 **Example 3:** Monitoring non-normal status codes (400s and 500s) on Apache servers.
 
@@ -150,4 +154,4 @@ _sourceCategory=Apache/Access
 
 This query produces these results in the Aggregates tab, which you can display as an area chart:
 
-![Timeslice example](/img/search/searchquerylanguage/search-operators/Timeslice-Ex3.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Timeslice-Ex3.png')} alt="Timeslice example" style={{border: '1px solid gray'}} width="800" />

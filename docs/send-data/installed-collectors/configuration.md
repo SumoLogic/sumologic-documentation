@@ -1,38 +1,51 @@
 ---
 id: configuration
-title: Installed Collector Configuration
-description: Learn how to install and configure Collectors to gather data to send to Sumo Logic, and read about deployment options and volume limitations.
+title: Configure an Installed Collector
+description: Learn how to install and configure an Installed Collector to gather data to send to Sumo Logic, and read about deployment options and volume limitations.
 ---
 
-An *Installed Collector* is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service.
+import Iframe from 'react-iframe';
 
-As the name implies, an Installed Collector is installed in your environment, as opposed to a Hosted Collector, which resides on the Sumo service. After installing a Collector, you add Sources, to which the Collector connects to obtain data to send to the Sumo service. 
+An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo Logic service.
 
-A Sumo Source is an object configured for a specific Collector that sends data to Sumo Logic. There are a number of Source types that work with Installed Collectors. For a list of all Sources supported by Installed Collectors, see [Sources for Installed Collectors](/docs/send-data/installed-collectors/sources).
+As the name implies, an Installed Collector is installed in your environment, as opposed to a Hosted Collector, which resides on the Sumo Logic service. After installing a Collector, you add Sources, to which the Collector connects to obtain data to send to the Sumo Logic service. 
 
-See [how to choose a collector](/docs/send-data/choose-collector-source) for guidance on when to use a single or multiple Installed Collectors.
+A Sumo Logic Source is an object configured for a specific Collector that sends data to Sumo Logic. There are a number of Source types that work with Installed Collectors. For a list of all Sources supported by Installed Collectors, see [Sources for Installed Collectors](/docs/send-data/installed-collectors/sources).
+
+See [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source) for guidance on when to use a single or multiple Installed Collectors.
 
 :::note
 The maximum number of Collectors allowed per organization is 10,000.
 :::
 
-<Iframe url="https://www.youtube.com/embed/QxGCrxbJ1Vs"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+import TerraformLink from '../../reuse/terraform-link.md';
 
-import Iframe from 'react-iframe';
+:::tip
+You can use Terraform to provide an install collector with the [`sumologic_collector`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/installed_collector) resource.
+
+<TerraformLink/>
+:::
+
+:::sumo Micro Lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/22427pvuhh?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Installed Collector Overview Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 ## CPU usage guidelines
 
-:::tip system requirements
-For details on supported operating systems and hardware restrictions, see [Installed Collector requirements](/docs/get-started/system-requirements/#installed-collector-requirements).
+:::info system requirements
+For details on supported operating systems and hardware restrictions, see [Installed Collector Requirements](/docs/get-started/system-requirements/#installed-collector-requirements).
 :::
 
 An Installed Collector will use all CPU processing resources available on a machine to collect your data. We have benchmarked CPU performance based on the number of [Local File Sources](/docs/send-data/installed-collectors/sources/local-file-source) running on an Installed Collector and the size of log messages ingested. The default allocated memory of 128 MB of Java heap space was used.
@@ -61,7 +74,7 @@ The columns are the Average CPU and Average Message Size.
 
 ### Number of Sources
 
-Generally, as the number of Sources increases, the number of threads also increases. The Collector will use three threads per available CPU by default, you can [increase the max threads](/docs/send-data/collector-faq#increase-max-threads-collector) if needed.
+Generally, as the number of Sources increases, the number of threads also increases. The Collector will use three threads per available CPU by default, you can [increase the max threads](/docs/send-data/collector-faq#increase-max-threads-for-collector) if needed.
 
 **1,000 events per second with 1 KB message size:**
 
@@ -93,8 +106,7 @@ Generally, as the number of Sources increases, the number of threads also increa
 
 ## About Collector and Source installation and configuration
 
-This section is an overview of the multiple methods Sumo provides for
-installing and configuring Collectors and Sources.
+This section is an overview of the multiple methods Sumo Logic provides for installing and configuring Collectors and Sources.
 
 ### Collector installation and configuration
 
@@ -106,13 +118,16 @@ Sumo provides multiple methods for installing a Collector:
 * Binary package, for Linux. The binary package can also be used on MacOS.
 
 For details on Collector installation, see [Install a Collector on Linux](linux.md), [Install a Collector on MacOS](macos.md), and [Install a Collector on Windows](windows.md).
- 
 
 After a Collector is up and running, you can change some Installed Collector configuration settings by editing `user.properties` and restarting the collector. For more information, see [user.properties parameters](collector-installation-reference/user-properties.md).
 
 A few Installed Collector behaviors, such as caching, are configured in the `collector.properties` file in the Collector’s `config` directory.  
 
 You can update the configuration of an Installed Collector using the Collector Management API. For more information, see Collector API Methods and Examples.
+
+:::note
+Any collector that has been inactive for 12 months or longer will be automatically deleted. To reuse the same collector, you need to uninstall any remaining services and perform a fresh installation.
+:::
 
 ### Source configuration
 
@@ -122,9 +137,9 @@ Each Source is tagged with its own metadata, as described in [Metadata Naming C
 
 When you configure Sources that read from log files, you specify a path expression that defines what files to scan. You can optionally configure a denylist of files to exclude from collection.  
 
-You can create Sources using the Sumo web app at any time after Collector installation. For source-specific instructions, see the topics below [Sources for Installed Collectors](/docs/send-data/installed-collectors/sources).
+You can create Sources using the Sumo Logic web app at any time after Collector installation. For source-specific instructions, see the topics below [Sources for Installed Collectors](/docs/send-data/installed-collectors/sources).
 
-Alternatively, you can define Sources for an Installed Collector in a UTF-8 encoded JSON file, in which case you must provide the file when starting the Collector for the first time. For more information, see [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). Note that if you provide the Sources configuration in a JSON file, you can no longer manage the Sources through the Sumo web app or the Collector Management API.
+Alternatively, you can define Sources for an Installed Collector in a UTF-8 encoded JSON file, in which case you must provide the file when starting the Collector for the first time. For more information, see [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). Note that if you provide the Sources configuration in a JSON file, you can no longer manage the Sources through the Sumo Logic web app or the Collector Management API.
 
 ## Installed Collectors and Sources in action
 
@@ -132,9 +147,9 @@ This section is an overview of how Installed Collectors and their Sources operat
 
 ### Installed Collector startup
 
-When you start up an Installed Collector for the first time it registers with Sumo and creates any Sources that you have defined in a UTF-8 encoded JSON source configuration file.
+When you start up an Installed Collector for the first time it registers with Sumo Logic and creates any Sources that you have defined in a UTF-8 encoded JSON source configuration file.
 
-When the collector tries to register with Sumo it first sends the request to the US1 deployment. If your organization is in another deployment Sumo will redirect the Collector to your deployment URL based on the authentication credential's deployment. You can define the deployment URL in the Collector's [user.properties](collector-installation-reference/user-properties.md) file with the `url` parameter.
+When the collector tries to register with Sumo Logic it first sends the request to the US1 deployment. If your organization is in another deployment Sumo Logic will redirect the Collector to your deployment URL based on the authentication credential's deployment. You can define the deployment URL in the Collector's [user.properties](collector-installation-reference/user-properties.md) file with the `url` parameter.
 
 ### Sources scan source data
 
@@ -142,13 +157,13 @@ Sources scan their target directory or data structure periodically. A Local File
 
 For support purposes, an Installed Collector automatically collects its version, uptime, OS version, OS architecture, Java version, and JVM instance ID. Installed Collectors running on AWS also collect instance type, instance ID, and instance region.
 
-### How an Installed Collector sends data to the Sumo service
+### How an Installed Collector sends data to the Sumo Logic service
 
-An Installed Collector starts sending data to the Sumo service as soon as it is available from the Sources configured on the Collector. Before sending the data, a Collector compresses (by a factor of 10x) and encrypts the data. A Collector sends data to the Sumo service over HTTPS.
+An Installed Collector starts sending data to the Sumo Logic service as soon as it is available from the Sources configured on the Collector. Before sending the data, a Collector compresses (by a factor of 10x) and encrypts the data. A Collector sends data to the Sumo Logic service over HTTPS.
 
 #### Fingerprint
 
-To keep track of what it has already sent to the Sumo service, the Collector tracks a file by its fingerprint (the first 2048 bytes of the file) and by a read pointer that indicates the last line read by the Collector. This fingerprint is then compared to a list of known fingerprints from that Source. If the fingerprint does not match one in the known list we start reading that file's content from the beginning and send it to Sumo. If a matching fingerprint is found in the list we start reading from the last known byte mark of that file. The Collector updates this information approximately every second. A file's fingerprint is retained for some period of time after file deletion, otherwise it is removed.
+To keep track of what it has already sent to the Sumo Logic service, the Collector tracks a file by its fingerprint (the first 2048 bytes of the file) and by a read pointer that indicates the last line read by the Collector. This fingerprint is then compared to a list of known fingerprints from that Source. If the fingerprint does not match one in the known list we start reading that file's content from the beginning and send it to Sumo Logic. If a matching fingerprint is found in the list we start reading from the last known byte mark of that file. The Collector updates this information approximately every second. A file's fingerprint is retained for some period of time after file deletion, otherwise it is removed.
 
 An issue that could arise is seeing duplicated log messages for a log file that is written to very slowly. When a file is slowly written and the first messages in the file are not larger than 2kb the fingerprint for the Source file can be overwritten with each log line, up to the point those first lines add up to 2kb.
 
@@ -162,24 +177,24 @@ To resolve these issues, you can adjust the fingerprint size to match your needs
 
 ### Throttling, caching, and flushing
 
-Ordinarily, a Collector sends data to the Sumo service as fast as its connection allows. Under some circumstances, the Sumo service may instruct a Collector to throttle itself or slow the rate at which it is sending data to the service. 
+Ordinarily, a Collector sends data to the Sumo Logic service as fast as its connection allows. Under some circumstances, the Sumo Logic service may instruct a Collector to throttle itself or slow the rate at which it is sending data to the service. 
 
-To determine whether throttling is required, Sumo measures the amount of data already committed to uploading against the number of previous requests and available resources (quota) in an account. In other words, Sumo Logic compares the current ingestion with the rate of ingest using a per minute rate that can be derived from the contracted daily GB/day rate.
+To determine whether throttling is required, Sumo Logic measures the amount of data already committed to uploading against the number of previous requests and available resources (quota) in an account. In other words, Sumo Logic compares the current ingestion with the rate of ingest using a per minute rate that can be derived from the contracted daily GB/day rate.
 
-The Sumo service tells the Collector it can speed up when throttling is no longer necessary.
+The Sumo Logic service tells the Collector it can speed up when throttling is no longer necessary.
 
 For more information, see Manage Ingestion. 
 
 #### Caching
 
-Installed Collectors cache outbound data when throttled or paused or if the connection to the Sumo service is lost. Data is cached first in memory and then on disk. By default, a Collector supports caching the following amounts:
+Installed Collectors cache outbound data when throttled or paused or if the connection to the Sumo Logic service is lost. Data is cached first in memory and then on disk. By default, a Collector supports caching the following amounts:
 
 Up to 4GB total disk space, including:
 
 * Up to 3GB for log data
 * Up to 1GB for metric data
 
-You can raise or lower the disk limits for Collector caching. For more information, see [Configure Limits for Collector Caching](/docs/send-data/collector-faq#configure-limits-collector-caching).
+You can raise or lower the disk limits for Collector caching. For more information, see [Configure Limits for Collector Caching](/docs/send-data/collector-faq/#configure-limits-for-collector-caching).
 
 #### Flushing mode
 
@@ -189,7 +204,7 @@ A Collector enters flushing mode when less than 10% of free disk space remains o
 
 ## Collector monitoring and logging
 
-An Installed Collector sends a heartbeat to the Sumo service every 15 seconds. If the Sumo service does not receive a heartbeat for 30 minutes, it considers the Collector to be offline, and shows its health status as red in the **Collection** page of the Sumo web app. The heartbeat is linked to the [`alive` parameter](/docs/send-data/use-json-configure-sources)in the JSON object. If an Installed Collector
+An Installed Collector sends a heartbeat to the Sumo Logic service every 15 seconds. If the Sumo Logic service does not receive a heartbeat for 30 minutes, it considers the Collector to be offline, and shows its health status as red in the **Collection** page of the Sumo Logic web app. The heartbeat is linked to the [`alive` parameter](/docs/send-data/use-json-configure-sources)in the JSON object. If an Installed Collector
 appears offline try restarting the service and [testing connectivity](collector-installation-reference/test-connectivity-sumo-collectors.md).
 
 The Collector uses the log4j2 framework. You can tailor log rotation behavior for `collector.log` by editing the `log4j2.xml` file in the collector’s `/config` directory. For more information, see Log Rotation Settings.

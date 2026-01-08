@@ -4,7 +4,7 @@ title: Docker Sources
 description: Configure a Docker Logs or Docker Stats Source.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Docker is a lightweight open platform that provides a way to package applications in containers for a software development environment.
 
@@ -19,6 +19,7 @@ You can add the following types of Docker Sources to an Installed Collector on L
 
 :::note
 There are alternative methods for collecting Docker logs and metrics. See [Docker Collection Methods](../../collect-from-other-data-sources/docker-collection-methods.md) for more information.
+:::
 
 ## Notes regarding Docker Sources
 
@@ -30,12 +31,9 @@ There are alternative methods for collecting Docker logs and metrics. See [Dock
 
 ## Add a Docker Logs Source
 
-1. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
-1. Select **Docker Logs**. The Docker Logs page appears.
-
-    ![docker logs source.png](/img/send-data/docker-logs-source.png)
-
+1. Select **Docker Logs**. The Docker Logs page appears.<br/><img src={useBaseUrl('img/send-data/docker-logs-source.png')} alt="Docker logs source" style={{border: '1px solid gray'}} width="600" />
 1. Configure the source fields:
 
    * **Name**. (Required).
@@ -66,8 +64,8 @@ There are alternative methods for collecting Docker logs and metrics. See [Dock
    * **Source Category**. Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **`web_apps`** tags all the logs from this Source in the sourceCategory field, so running a search on **`_sourceCategory=web_apps`** would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). If desired, you can use Docker variables to construct the Source Category value. For more information, see [Configure sourceCategory and sourceHost using variables.](#configure-sourcecategory-and-sourcehost-using-variables)
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 1. Configure the Advanced options.
 
@@ -84,16 +82,13 @@ There are alternative methods for collecting Docker logs and metrics. See [Dock
 
 ## Add a Docker Stats Source
 
-1. In Sumo select **Manage Data** > **Collection** > **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 1. Select **Docker Stats.** The following Docker Stats page appears. There are two possible content types available, select **Metrics** to collect data as metrics, or select **Logs** (JSON) to collect data as JSON logs.
-
-:::note
-To collect metrics for the Docker ULM App, select **Metrics** as the Content Type.
-:::
-
-![docker-stats.png](/img/send-data/docker-stats.png)
-
+   :::note
+   To collect metrics for the Docker ULM App, select **Metrics** as the Content Type.
+   :::
+   <img src={useBaseUrl('img/send-data/docker-stats.png')} alt="Docker stats" style={{border: '1px solid gray'}} width="600" />
 1. Configure the source fields:
 
    * **Name.** (Required)

@@ -19,13 +19,11 @@ You can use either the [AWS Command Line Interface](https://aws.amazon.com/cli/)
 
 Both methods require a YAML file with the template. You can create a file with the provided [YAML template](#yaml-template-to-create-topic-and-sns-subscription) or download the template from the Sumo interface. When creating the Source click **Create URL** and a **Generate event-based polling template** button becomes available.
 
-![generate cloudformation template event subscription.png](/img/send-data/generate-cloudformation-template-event-subscription.png)
+<img src={useBaseUrl('img/send-data/generate-cloudformation-template-event-subscription.png')} alt="Generate cloudformation template event subscription" style={{border: '1px solid gray'}} width="500" />
 
 ## Create a Stack on the AWS CloudFormation console
 
-1. Visit **Services > [Cloudformation](https://console.aws.amazon.com/cloudformation/home) > Create Stack > Upload a template to Amazon S3** and upload the file with the CloudFormation template and click **Next**. See [Selecting a Stack Template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for details.
-
-    ![upload template when creating cloudformation stack.png](/img/send-data/upload-template-when-creating-cloudformation-stack.png)
+1. Visit **Services > [Cloudformation](https://console.aws.amazon.com/cloudformation/home) > Create Stack > Upload a template to Amazon S3** and upload the file with the CloudFormation template and click **Next**. See [Selecting a Stack Template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for details.<br/><img src={useBaseUrl('img/send-data/upload-template-when-creating-cloudformation-stack.png')} alt="Upload template when creating cloudformation stack" style={{border: '1px solid gray'}} width="800" />
 
     :::note
     Make sure that the AWS region is the same as the S3 bucket when uploading the template.
@@ -36,12 +34,12 @@ Both methods require a YAML file with the template. You can create a file with t
     :::note
     If you downloaded and used the template from the Sumo interface AWS will not prompt you for **Parameters**.
     :::
-
-    ![specify details.png](/img/send-data/specify-details.png)
+    
+    <img src={useBaseUrl('img/send-data/specify-details.png')} alt="Specify details" style={{border: '1px solid gray'}} width="800" />
 
 1. Options can remain the default, click **Next** again. Review for mistakes then click **Create**.
 
-1. Go to **Services > [S3](https://s3.console.aws.amazon.com/s3/buckets/)** and select the bucket to which you want to attach the notifications. Navigate to **Properties > Events > Add Notification**. Enter a **Name** for the event notification. In the **Events** section select, **All object create events**. In the **Send to** section (notification destination) select **SNS Topic**. An **SNS** section becomes available, select the name of the topic that AWS created in step 5 from the dropdown. The name format is `SumoSNSTopic\<AWS::StackNam\>`. Click **Save**.
+1. Go to **Services > [S3](https://s3.console.aws.amazon.com/s3/buckets/)** and select the bucket to which you want to attach the notifications. Navigate to **Properties > Events > Add Notification**. Enter a **Name** for the event notification. In the **Events** section select, **All object create events**. In the **Send to** section (notification destination) select **SNS Topic**. An **SNS** section becomes available, select the name of the topic that AWS created in step 5 from the dropdown. The name format is `SumoSNSTopic-<AWS::StackName>`. Click **Save**.
 
 ## Use AWS Command Line Interface (CLI)
 
@@ -116,9 +114,9 @@ Resources:
 
 You can grant Sumo Logic access to your AWS Product with an IAM Role using CloudFormation. You can use the [AWS Command Line Interface](https://aws.amazon.com/cli/) (CLI) or [create a stack on the AWS CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html).
 
-1. Both methods require a YAML file with the CloudFormation template. You can create a file with the provided [YAML template](#yaml-template-to-set-up-an-iam-role) or download a generated template from the Sumo interface when creating your Source by clicking the **Generate role-based access template** button. The button will only become available after you input the bucket name.
+Both methods require a YAML file with the CloudFormation template. You can create a file with the provided [YAML template](#yaml-template-toset-up-an-iam-role) or download a generated template from the Sumo interface when creating your Source by clicking the **Generate role-based access template** button. The button will only become available after you input the bucket name.
 
-![iam role generate cloudformation](/img/send-data/iam-role-generate-cloudformation-template-in-UI.png)
+<img src={useBaseUrl('img/send-data/iam-role-generate-cloudformation-template-in-UI.png')} alt="IA< role generate CloudFormation" style={{border: '1px solid gray'}} width="500" />
 
 ## Use AWS Command Line Interface (CLI)
 
@@ -138,12 +136,8 @@ You can grant Sumo Logic access to your AWS Product with an IAM Role using Clo
 
 ## Create a Stack on the AWS CloudFormation console
 
-1. Visit **Services > [Cloudformation](https://console.aws.amazon.com/cloudformation/home ) > Create Stack > Upload a template to Amazon S3** and upload the file with the CloudFormation template and click **Next**. See [Selecting a Stack Template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for details.
-
-    ![upload template when creating cloudformation stack.png](/img/send-data/upload-template-when-creating-cloudformation-stack.png)
-
-1. Specify Details. Provide an appropriate **Stack Name**. Then click **Next**. See [Specifying Stack Name and Parameters](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-parameters.html) for details.
- ![specify details no params.png](/img/send-data/specify-details-no-params.png)
+1. Visit **Services > [Cloudformation](https://console.aws.amazon.com/cloudformation/home ) > Create Stack > Upload a template to Amazon S3** and upload the file with the CloudFormation template and click **Next**. See [Selecting a Stack Template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for details.<br/><img src={useBaseUrl('img/send-data/upload-template-when-creating-cloudformation-stack.png')} alt="Upload template when creating CloudFormation stack" style={{border: '1px solid gray'}} width="800" />
+1. Specify Details. Provide an appropriate **Stack Name**. Then click **Next**. See [Specifying Stack Name and Parameters](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-parameters.html) for details.<br/><img src={useBaseUrl('img/send-data/specify-details-no-params.png')} alt="Specify details no params" style={{border: '1px solid gray'}} width="800" />
 
 1. Options can remain default, click **Next** again. Review and check the box, “I acknowledge that AWS CloudFormation might create IAM resources.” and then click **Create**.
 

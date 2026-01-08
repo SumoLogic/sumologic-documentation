@@ -39,7 +39,7 @@ The URL and supported payload are different based on the version of the PagerDut
 
 ### Events API V2
 
-1. Go to **Manage Data** > **Monitoring** > **Connections**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the Connections page click **Add**.
 1. Click **PagerDuty**.
 1. In the Create Connection dialog, enter the name of the Connection.
@@ -47,67 +47,63 @@ The URL and supported payload are different based on the version of the PagerDut
 1. Enter the **URL** for the endpoint: `https://events.pagerduty.com/v2/enqueue`
 1. The optional input fields **Authorization Header** and **Custom Headers** do not do anything and are ignored.
 1. The default **Alert Payload** will not work with Event API V2. Change it to the following:
-  ```json
-  {
-    "routing_key": "SERVICE KEY",
-    "event_action": "trigger",
-    "description": "{{TriggerType}} Alert:{{AlertName}}",
-    "client": "Sumo Logic",
-    "client_url": "{{AlertResponseURL}}",
-    "payload": {
-    	"summary": "{{TriggerType}} Alert:{{Name}}",
-        "source": "Monitor :{{Name}}",
-        "severity": "critical",
-        "custom_details": {
-          "alertURL": "{{AlertResponseURL}}",
-          "triggerCondition": "{{TriggerCondition}}",
-          "triggerValue": "{{TriggerValue}}",
-          "triggerTime": "{{TriggerTime}}",
-          "triggerTimeRange": "{{TriggerTimeRange}}",
-          "query" : "{{Query}}",
-          "queryURL" : "{{QueryURL}}",
-          "results": "{{ResultsJSON}}"
-        }
-     }
-  }
-  ```
+   ```json
+   {
+     "routing_key": "SERVICE KEY",
+     "event_action": "trigger",
+     "client": "Sumo Logic",
+     "client_url": "{{AlertResponseURL}}",
+     "payload": {
+     	"summary": "{{TriggerType}} Alert:{{Name}}",
+         "source": "Monitor :{{Name}}",
+         "severity": "critical",
+         "custom_details": {
+           "alertURL": "{{AlertResponseURL}}",
+           "triggerCondition": "{{TriggerCondition}}",
+           "triggerValue": "{{TriggerValue}}",
+           "triggerTime": "{{TriggerTime}}",
+           "triggerTimeRange": "{{TriggerTimeRange}}",
+           "query" : "{{Query}}",
+           "queryURL" : "{{QueryURL}}",
+           "results": "{{ResultsJSON}}"
+         }
+      }
+   }
+   ```
     * In the **Payload**, where it says `SERVICE KEY`, paste in the **integration key** you previously copied from PagerDuty.
     * In the **Payload** for the `description`, specify the description you want sent to PagerDuty. The above payload has specified to use the name of the alert.
     * In the **Payload** for `severity`, the allowed values (`critical`, `warning`, `error`, and `info`) are case sensitive; PagerDuty expects them to be lowercase. Do not use the `{{TriggerType}}` variable here because that will display values that are capitalized (i.e., `Critical`) and some of the `{{TriggerType}}` values are not allowed by PagerDuty (e.g., `MissingData`).
     * You can also update the `details` section, if you want to customize the PagerDuty alert notification.
 1. The default **Recovery Payload** will not work with Event API V2. Change it to the following:
-  ```json
-	{
-	  "routing_key": "{{RoutingKey}}",
-	  "event_action": "resolve",
-	  "dedup_key": "{{DedupKey}}",
-	  "payload": {
-	  	"summary": "Monitor {{Name}} has recovered at {{TriggerTime}}",
-		"severity":"{{PayloadSeverity}}",
-		"source":"{{PayloadSource}}",
-		"custom_details": {
-			"name": "{{Name}}",
-			"time": "{{TriggerTimeRange}}",
-			"triggerCondition": "{{TriggerCondition}}",
-			"query": "{{Query}}"
-		      }
-	     }
-	}
-
-  ```
+    ```json
+  	{
+  	  "routing_key": "{{RoutingKey}}",
+  	  "event_action": "resolve",
+	    "dedup_key": "{{DedupKey}}",
+	    "payload": {
+  	  	"summary": "Monitor {{Name}} has recovered at {{TriggerTime}}",
+	  	"severity":"{{PayloadSeverity}}",
+	  	"source":"{{PayloadSource}}",
+  		"custom_details": {
+	  		"name": "{{Name}}",
+		  	"time": "{{TriggerTimeRange}}",
+			  "triggerCondition": "{{TriggerCondition}}",
+	  		"query": "{{Query}}"
+		        }
+	       }
+  	}
+    ```
    * You can update the `custom_details` section, if you want to customize the PagerDuty recovery notification.
      :::note
      Do not update the `routing_key`, `event_action`, and `dedup_key` fields, otherwise recovery notifications will not be generated.
      :::
 1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
-1. Click **Save**.
-
-     ![PagerDuty default payload v2.png](/img/connection-and-integration/v2.png)
+1. Click **Save**.<br/><img src={useBaseUrl('img/connection-and-integration/v2.png')} alt="PagerDuty default payload v2" style={{border: '1px solid gray'}} width="700" />
 
 ### Events API v1
 
-1. Go to **Manage Data > Alerts > Connections**.
-1. On the Connections page, click **Add**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
+1. On the Connections page, click **+**.
 1. Click **PagerDuty**.
 1. In the Create Connection dialog, enter the name of the Connection.
 1. (Optional) Enter a **Description** for the Connection.
@@ -152,11 +148,9 @@ The URL and supported payload are different based on the version of the PagerDut
 	      }
     }
     ```
-  :::note
-  Do not update the `service_key`, `event_type`, and `incident_key` fields, otherwise recovery notifications will not be generated.
-  :::
-1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
-
-     ![PagerDuty default payload.png](/img/connection-and-integration/PagerDuty-default-payload.png)
+     :::note
+     Do not update the `service_key`, `event_type`, and `incident_key` fields, otherwise recovery notifications will not be generated.
+     :::
+1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).<br/><img src={useBaseUrl('img/connection-and-integration/PagerDuty-default-payload.png')} alt="PagerDuty default payload" style={{border: '1px solid gray'}} width="700" />
 
 1. Click **Save**.

@@ -4,6 +4,7 @@ title: Preconfigure a Machine to Collect Remote Windows Performance Monitoring L
 description: You can configure a system for remote access by a Remote Windows Performance Monitoring Log Source.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Use the instructions in this topic to preconfigure a machine to work
 with the Remote Windows Performance Monitor Log source.
@@ -23,29 +24,20 @@ are some prerequisite tasks you must perform:
 
 Create a domain user, who belongs to the local administrator group on the target machine.
 
-![img](/img/send-data/ad-users.png)
+<img src={useBaseUrl('img/send-data/ad-users.png')} alt="Create domain user" style={{border: '1px solid gray'}} width="700" />
 
 ## Set up Windows Firewall on the Target Machine
 
 1. Open up the Windows firewall from the Control Panel.
-1. On the left panel, click **Allow a program or feature through Windows Firewall**, check **Windows Management Instrumentation**, and save your change.   
-
-    ![img](/img/send-data/wmi_firewall.png)
+1. On the left panel, click **Allow a program or feature through Windows Firewall**, check **Windows Management Instrumentation**, and save your change.<br/><img src={useBaseUrl('img/send-data/wmi_firewall.png')} alt="*Windows Management Instrumentation" style={{border: '1px solid gray'}} width="700" />
 
 ## Configure to allow RPC traffic
 
 1. Go to **Firewall > Advanced settings > Inbound Rules > New Rule**, on the popup window.  
-1. Choose **Custom**.  
-
-    ![img](/img/send-data/rule_custom.png)
-
+1. Choose **Custom**.  <br/><img src={useBaseUrl('img/send-data/rule_custom.png')} alt="Select Custom" style={{border: '1px solid gray'}} width="600" />
 1. Click **Next**, then choose All Programs.  
-1. Then select **Protocol and Ports**:
-
-    ![img](/img/send-data/ports_rule.png)
-
+1. Then select **Protocol and Ports**: <br/><img src={useBaseUrl('img/send-data/ports_rule.png')} alt="Protocol and ports" style={{border: '1px solid gray'}} width="500" />
 1. Select the Windows Protocol and ports. Use: 
-
    * **Protocol Type:** TCP
    * **Local Port:** RPC Dynamic Ports
 
@@ -56,49 +48,24 @@ Create a domain user, who belongs to the local administrator group on the target
    * TCP Port 445 (Windows shares)
    * UDP 137
    * UDP 138
-
-1. Click **Next**, then enter the IP restrictions (optional, but more secure). The local address should be the network address the Collector will connect to. The remote address should be the IP address the collect will use to talk to this Windows system. In the following screenshot, it's set to Any IP address.
-
-    ![img](/img/send-data/new_rule.png)
-
-1. Click **Next**, then Select **Allow the connection**.
-
-    ![img](/img/send-data/allow_connection.png)
-
-1. Click **Next**, then select the **Domain**.
-
-    ![img](/img/send-data/aws_firewall.png) 
-
-    :::note
-    For Amazon users, Windows AMIs not in a domain should tick "Public". AWS AMIs consider their LAN interfaces to be on a public network by default. 
-    :::
-
- 1. Give the rule a name, for example, "Allow Sumo Logic Collector IN".
+1. Click **Next**, then enter the IP restrictions (optional, but more secure). The local address should be the network address the Collector will connect to. The remote address should be the IP address the collect will use to talk to this Windows system. In the following screenshot, it's set to Any IP address. <br/><img src={useBaseUrl('img/send-data/new_rule.png')} alt="Enter the IP restrictions " style={{border: '1px solid gray'}} width="500" />
+1. Click **Next**, then Select **Allow the connection**. <br/><img src={useBaseUrl('img/send-data/allow_connection.png')} alt="Select Allow the connection" style={{border: '1px solid gray'}} width="500" />
+1. Click **Next**, then select the **Domain**. <br/><img src={useBaseUrl('img/send-data/aws_firewall.png')} alt="Select the domain" style={{border: '1px solid gray'}} width="500" /> 
+     :::note
+     For Amazon users, Windows AMIs not in a domain should tick "Public". AWS AMIs consider their LAN interfaces to be on a public network by default. 
+     :::
+1. Give the rule a name, for example, "Allow Sumo Logic Collector IN".
 
 ## Grant Admin full control to Registry Key
 
 1. Launch **regedit.exe** as Administrator.  
 1. Find the following registry key: `HKEY_CLASSES_ROOT\CLSID{76A64158-CB41-11D1-8B02-00600806D9B6}`  
-1. Right-click and select **Permissions**.
-
-    ![img](/img/send-data/reg_perms.png)
-
-1. Click **Advanced**.
-
-    ![img](/img/send-data/reg_perms_adv.png)
-
+1. Right-click and select **Permissions**.<br/><img src={useBaseUrl('img/send-data/reg_perms.png')} alt="Select permissions" style={{border: '1px solid gray'}} width="500" />
+1. Click **Advanced**.<br/><img src={useBaseUrl('img/send-data/reg_perms_adv.png')} alt="Click Advanced" style={{border: '1px solid gray'}} width="400" />
 1. Click the **Owner** tab, and set the new owner as Administrators (group). 
-
-1. Click **Apply**. By default, windows sets the owner to Trustednstaller, which doesn't work. We switch it to be owned by the Administrators group, which your user is a "MemberOf".
-
-    ![img](/img/send-data/reg_perms_admin.png)
-
-1. Click **OK**. You will be returned to the main permissions page and set the new owner, Administrators, to have full control of this object:
-
-    ![img](/img/send-data/reg_perms_full.png)
-
+1. Click **Apply**. By default, windows sets the owner to Trustednstaller, which doesn't work. We switch it to be owned by the Administrators group, which your user is a "MemberOf".<br/><img src={useBaseUrl('img/send-data/reg_perms_admin.png')} alt="Click Apply" style={{border: '1px solid gray'}} width="600" />
+1. Click **OK**. You will be returned to the main permissions page and set the new owner, Administrators, to have full control of this object:<br/><img src={useBaseUrl('img/send-data/reg_perms_full.png')} alt="Click OK" style={{border: '1px solid gray'}} width="400" />
 1. Click **OK**.
-
 1. Repeat steps 3-9 for the following registry key (if it exists):
 
     `HKLM\Software\Classes\Wow6432Node\CLSID\{76A64158-CB41-11D1-8B02-00600806D9B6}`

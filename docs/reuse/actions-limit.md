@@ -1,0 +1,1 @@
+The number of actions that can be run per hour is limited to prevent abuse of system resources or runaway processes. For more information, see [Actions limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit).

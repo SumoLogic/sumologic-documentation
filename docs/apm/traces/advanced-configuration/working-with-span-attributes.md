@@ -4,6 +4,8 @@ title: Working with Span Attributes
 description: Learn how to modify the attributes of your spans.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 You can add, delete, hash, or modify span attributes (metadata tags) on Collectors or directly in your application code. This helps you enhance diagnostic details included in your data, remove redundant information to cut the cost, or mask sensitive information before they leave your site.
 
 ## Attach logs to spans
@@ -19,7 +21,7 @@ You can collect logs with traces attached to them by [inserting `spanid` and `t
 
 and they are displayed in the **Span logs** tab in [Details Pane](/docs/apm/traces/view-and-investigate-traces) after clicking on the span.
 
-![span logs in details pane.png](/img/traces/span-logs-in-details-pane.png)
+<img src={useBaseUrl('img/apm/span-logs-in-details-pane.png')} alt="Span logs in details pane" style={{border: '1px solid gray'}} width="400" />
 
 ## Working with attributes on OpenTelemetry collector
 

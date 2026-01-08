@@ -1,0 +1,21 @@
+{
+    "api.version":"v1",
+    "source":{
+      "state":{
+      "config":{
+        "name":"webtx-test",
+        "subscriptionPath":"projects/webtx-test",
+        "startFromBeginning":false,
+        "fields":{
+          "_siemForward":false
+        },
+        "category":"webtx",
+        "credentialsJson":"********"
+      },
+      "schemaRef":{
+        "type":"Netskope WebTx"
+      },
+      "sourceType":"Universal"
+    }
+    }
+  }

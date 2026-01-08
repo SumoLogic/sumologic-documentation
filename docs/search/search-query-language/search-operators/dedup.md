@@ -4,6 +4,8 @@ title: dedup Search Operator
 sidebar_label: dedup
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `dedup` operator removes duplicate results. You have the option to remove consecutively and by specific fields. This allows you to filter your results to identify the most recent or last few events based on an identical combination of results.
 
 For example, to find the most recent value of services you'd use the following operation: `| dedup 1 by service`.
@@ -13,9 +15,9 @@ For example, to find the most recent value of services you'd use the following o
 The `dedup` operator is supported for the following features:
 
 * [Log Search](/docs/search)
-* [Dashboards (New)](/docs/dashboards/about.md)
 * [Dashboards](/docs/dashboards), including live mode
 * [Scheduled Searches](/docs/alerts/scheduled-searches/schedule-search.md)
+* [Monitors](/docs/alerts/monitors/)
 
 ## Syntax
 
@@ -23,11 +25,28 @@ The `dedup` operator is supported for the following features:
 dedup [consecutive] [<int>] [by <field>[, <field2>, ...]]
 ```
 
-| Parameter | Description | Example |
-|:-- |:-- |:-- |
-| consecutive | Removes duplicate combinations of values that are in succession. | Remove only consecutive duplicate events. Keep non-consecutive duplicate events. In this example, duplicates must have the same combination of values as the source and host fields for them to be removed. Non-consecutive events with the same combination of source and host fields will be retained.<br/>`... | dedup consecutive by source, host` |
-| int | Specifies the number of most recent events to return. | For search results that have the same source value, keep the first three that occur and remove all subsequent search results.<br/>`... | dedup 3 by source` |
-| field | A comma-separated list of field names to remove duplicate values from. If no fields are specified, the query is run against _raw, the full raw log message.<br/>For example, `| dedup` is the same as `| dedup` by _raw. | Remove duplicate search results based on _sourceCategory.<br/>`... | dedup by _sourceCategory` |
+<table>
+  <tr>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Description</strong></td>
+   <td><strong>Example</strong></td>
+  </tr>
+  <tr>
+   <td>consecutive</td>
+   <td>removes duplicate combinations of values that are in succession.</td>
+   <td>Remove only consecutive duplicate events. Keep non-consecutive duplicate events. In this example, duplicates must have the same combination of values as the source and host fields for them to be removed. Non-consecutive events with the same combination of source and host fields will be retained.<br/><code>... | dedup consecutive by source, host</code></td>
+  </tr>
+  <tr>
+   <td>int</td>
+   <td>specifies the number of most recent events to return.</td>
+   <td>For search results that have the same source value, keep the first three that occur and remove all subsequent search results.<br/><code>... | dedup 3 by source</code></td>
+  </tr>
+  <tr>
+   <td>field</td>
+   <td>A comma-separated list of field names to remove duplicate values from. If no fields are specified, the query is run against <code>_raw</code>, the full raw log message.<br/>For example, <code>| dedup</code> is the same as  <code>| dedup by _raw</code>.</td>
+   <td>Remove duplicate search results based on _sourceCategory.<br/><code>... | dedup by _sourceCategory</code></td>
+  </tr>
+</table>
 
 ## Rules
 
@@ -65,7 +84,7 @@ The following examples use this sample data.
 
 Returns the most recent record for each country:
 
-![deup by country](/img/search/searchquerylanguage/search-operators/dedup-by-country.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/dedup-by-country.png')} alt="Dedup by country" style={{border: '1px solid gray'}} width="600" />
 
 ### Keep the first 3 duplicate results
 
@@ -77,7 +96,7 @@ For search results that have the same country value, keep the first three that o
 
 Returns the following results:
 
-![deup by 3](/img/search/searchquerylanguage/search-operators/dedup-last-3.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/dedup-last-3.png')} alt="Dedup by 3" style={{border: '1px solid gray'}} width="600" />
 
 ### Keep results with same combination of values in multiple fields
 
@@ -89,7 +108,7 @@ For search results that have the same country AND continent values, keep the fir
 
 Returns the following results:
 
-![deup by 3](/img/search/searchquerylanguage/search-operators/dedup-by-two-fields.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/dedup-by-two-fields.png')} alt="Dedup by two fields" style={{border: '1px solid gray'}} width="600" />
 
 ### Remove only consecutive duplicate events
 
@@ -101,4 +120,4 @@ Remove only consecutive duplicate events. Keep non-consecutive duplicate events.
 
 Returns the following results:
 
-![deup by 3](/img/search/searchquerylanguage/search-operators/dedup-consecutively-two-fields.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/dedup-consecutively-two-fields.png')} alt="Dedup consecutively two fields" style={{border: '1px solid gray'}} width="600" />

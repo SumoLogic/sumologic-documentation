@@ -11,10 +11,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Auth0 is a cloud-based, extensible identity provider for applications. The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs, and provides insight into security and operational issues.
 
-For more information, see [Export Logs to Sumo Logic](https://auth0.com/docs/extensions/sumologic).
+For more information, see [Use Auth0 App for Sumo Logic](https://auth0.com/docs/customize/log-streams/sumo-logic-dashboard) in Auth0 documentation.
 
-
-## Collecting Logs for Auth0
+## Collecting logs for Auth0
 This procedure explains how to collect error logs from Auth0.
 
 Sumo Logic collects the following log types:
@@ -30,42 +29,41 @@ Sumo Logic collects the following log types:
 * Rate limiting events
 * Other operational events and errors
 
-For more information about Auth0 logs, see [https://auth0.com/docs/api/managemen.../Logs/get_logs](https://auth0.com/docs/api/management/v2#!/Logs/get_logs)
+For more information about Auth0 logs, see [Search Log Events](https://auth0.com/docs/api/management/v2#!/Logs/get_logs) in Auth0 documentation.
 
 
 ### Prerequisites
 
-Use the Auth0 Management Portal to configure the extension. For more information, see [https://auth0.com/docs/extensions/sumologic](https://auth0.com/docs/extensions/sumologic).
+Use the Auth0 Management Portal to configure the extension. For more information, see [Sumo Logic](https://marketplace.auth0.com/integrations/sumo-logic-log-streaming) in Auth0 documentation.
 
+### Configure a collector
 
-### Configure a Collector
-
-Use the in-product [setup wizard](/docs/send-data/setup-wizard) in the Sumo Logic UI to configure a **Custom App**.
-
+Configure a hosted collector. Follow the directions in [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector/).
 
 ### Configure a Source
 
-Source type is [HTTP](/docs/send-data/hosted-collectors/http-source/logs-metrics).
+Configure a source on the collector. Follow the directions in [Configure an HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 
-* **Name**: Required
-* **Category**:
-* **Timestamp Parsing Settings**:
-  * **Enable Timestamp Parsing**: True
-  * **Timezone**: Logs are sent in UTC by default and can be automatically detected
-  * **Timestamp Format**: Select **Specify a format** and use the following, \
-Format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z' \
-`Timestamp locator: `"date":"(.*?)\","`
-* **Multi-line Parsing Settings**:
-  * **Detect Messages Spanning Multiple Lines**: True
-  * **Multi Line Boundary**: Infer Boundaries
-
+Fill out the following:
+* **Name**
+* **Source Category**
+* Select **Forward to SIEM** if you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM. If you select **Forward to SIEM**, also click the **+Add** link and add a field whose name is `_parser` with value */Parsers/System/Auth0/Auth0*.
+* **Timestamp Parsing**
+  * Select **Extract timestamp information from log file entries**.
+  * **Default Timezone**. Select the default time zone to use. Logs are sent in UTC by default and can be automatically detected.
+  * **Timestamp Format**. Select **Specify a format**. Click **Add Timestamp Format** and enter the following:
+     * **Format**: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'` 
+     * **Timestamp locator**: `"date":"(.*?)\","`
+* **Message Processing**
+   * Select **Multiline Processing**.
+   * For **Infer Message Boundaries**  select **Detect Automatically**.
 
 ### Use Field Extraction Rules
 
 Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_id"`
 
 
-## Sample Log Messages
+## Sample log messages
 
 ```json title="Example 1"
 {
@@ -108,7 +106,7 @@ Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_
 
 
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Logins by Client per Day"
 _collector="productionappauth0Logs_Collector"
@@ -141,7 +139,9 @@ _collector="productionappauth0Logs_Collector"
 
 Now that you have set up collection for Auth0, install the Sumo Logic App for Auth0 to use the preconfigured searches and dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Auth0 Dashboards
 
@@ -157,7 +157,7 @@ Now that you have set up collection for Auth0, install the Sumo Logic App for Au
 
 **Top 10 Source IPs by Failed Login.** Displays a table chart with a list of ten source IP addresses causing the most failed logins, including IP and count, for the last 24 hours.
 
-**Top 10 User Agents. **Displays the top ten most popular user agents in a pie chart from all connections for the last seven days.
+**Top 10 User Agents.** Displays the top ten most popular user agents in a pie chart from all connections for the last seven days.
 
 **Top 10 Operating Systems.** Shows the top ten most popular operating systems based on user agent in a pie chart for the last seven days.
 
@@ -173,10 +173,10 @@ Now that you have set up collection for Auth0, install the Sumo Logic App for Au
 
 **Connection Types per Hour.** Provides a line chart on a timeline of the connection types used for the past seven days.
 
-**Client Version Usage. **Displays a line chart on a timeline of the Auth0 library version being used by all clients for the past seven days. This is useful to detect outdated clients, as well as to track upgrades.
+**Client Version Usage.** Displays a line chart on a timeline of the Auth0 library version being used by all clients for the past seven days. This is useful to detect outdated clients, as well as to track upgrades.
 
 **Top 10 Clients.** Shows a table chart that lists the ten most popular clients, including client name and count for the past 24 hours.
 
-**Top 10 Recent Errors. **Provides a table chart with a list of the ten most frequent errors, including details on client name, connection, description and count for the last 24 hours. This is useful for discovering and troubleshooting operational issues.
+**Top 10 Recent Errors.** Provides a table chart with a list of the ten most frequent errors, including details on client name, connection, description and count for the last 24 hours. This is useful for discovering and troubleshooting operational issues.
 
 <img src={useBaseUrl('img/integrations/saml/auth0-app-overview-dashboard-mapbox.png')} alt="Auth0 app-overview-dashboard-mapbox" />

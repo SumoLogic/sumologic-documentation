@@ -30,7 +30,7 @@ description: Parse the common fields in your Akamai Cloud Monitor log using the 
       "reqPath":"/jobs",
       "respCT":"",
       "respLen":"",
-      "bytes":"",
+      "bytes":"3278",
       "UA":"Chrome/35.0.1916.114",
       "fwdHost":""
    },
@@ -52,7 +52,7 @@ description: Parse the common fields in your Akamai Cloud Monitor log using the 
       "downloadTime":"19",
       "netOriginLatency":"00",
       "originName":"down",
-      "originIP":"",
+      "originIP":"65.07.36.537",
       "originInitIP":"10.10.10.10",
       "originRetry":"0",
       "lastMileRTT":"46",
@@ -60,7 +60,7 @@ description: Parse the common fields in your Akamai Cloud Monitor log using the 
       "firstByte":"1",
       "lastByte":"1",
       "asnum":"4812",
-      "edgeIP":""
+      "edgeIP":"65.07.36.537"
    },
    "geo":{  
       "country":"us",
@@ -79,18 +79,18 @@ description: Parse the common fields in your Akamai Cloud Monitor log using the 
 **Parsing Rule:**
 
 ```sql
-parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin
+| parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin
 | parse "\"bytes\":\"*\"" as bytes, "\"edgeIP\":\"*\"" as edgeip, "\"country\":\"*\"" as country, "\"cookie\":\"*\"" as cookie
 ```
 
 **Resulting Fields:**
 
 | Field | Description | Example |
-|:-----------|:-----------------|:--------------|
-| method    |   | GET |
-| status    |   | 200 |
-| origin    |   |   |
-| bytes     |   |   |
-| edgeip    |   |   |
-| country   |   | us           |
-| cookie    |   | 898051433939 |
+|:-|:-|:-|
+| method    | HTTP request method. | GET |
+| status    | HTTP response status code.  | 200 |
+| origin    | Host of the request.  | example.com  |
+| bytes     | Size of the response in bytes.  | 3267  |
+| edgeip    | IP address of the edge server.  |  `65.07.36.537`  |
+| country   | Base country of the request.  | us           |
+| cookie    | Cookies sent with the request.  | `898051433939` |

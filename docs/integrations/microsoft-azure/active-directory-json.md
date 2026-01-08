@@ -13,7 +13,7 @@ The Sumo Logic app for Active Directory JSON (2012+) helps you monitor your Wind
 
 We recommend using the Active Directory JSON App in combination with the Windows JSON App.
 
-## Log Types
+## Log types
 
 Standard Windows event channels include:
 * Security
@@ -22,7 +22,7 @@ Standard Windows event channels include:
 
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {
@@ -64,7 +64,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 ```
 
 
-### Sample Query
+### Sample queries
 
 The sample query is from **Successes Vs Failures** panel from [Active Directory Service Failures](#service-failures) dashboard.
 
@@ -78,7 +78,7 @@ _sourceCategory=Labs/windows-jsonformat
 | transpose row _timeslice column status
 ```
 
-## Collecting Logs
+## Collecting logs
 
 This section provides instructions on configuring log collection for the Active Directory JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
 
@@ -89,22 +89,23 @@ To configure a collector and source, do the following:
 1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
   * **Event Format.** Select Collect using JSON format.
-
-Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
+	* **Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
   * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown.
 **Complete Message** will ingest the entire event content along with metadata.
 
 For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/local-windows-event-log-source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/remote-windows-event-log-source).
 
-## Installing the Active Directory JSON App
+## Installing the Active Directory JSON app​
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Viewing Active Directory JSON Dashboards
+<AppInstall2/>
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+## Viewing Active Directory JSON dashboards​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Service Activity
 
@@ -129,3 +130,15 @@ Use this dashboard to:
 * Track IP addresses associated with failed activities.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Active-Directory-Service-Failures.png')} alt="Active Directory JSON dashboards" />
+
+## Upgrade/Downgrade the Active Directory JSON app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Active Directory JSON app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

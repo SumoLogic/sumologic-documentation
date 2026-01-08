@@ -3,12 +3,13 @@ id: parse-keyvalue-formatted-logs
 title: Parse Keyvalue Formatted Logs
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Typically, log files contain information that follow a key-value pair structure. The keyvalue operator allows you to get values from a log message by specifying the key paired with each value.
 
 For example, a log could contain the following keys (highlighted):
 
-![key value](/img/reuse/query-search/Keyvalue_highlight.png)
+<img src={useBaseUrl('img/reuse/query-search/Keyvalue_highlight.png')} alt="Key value" style={{border: '1px solid gray'}} width="800" />
 
 From that log message, you can use the **keyvalue** operator to get the values for one or more keys. For example, if you'd like to see information just about the "remote_ip" value, running this query:
 
@@ -16,7 +17,7 @@ From that log message, you can use the **keyvalue** operator to get the values
 
 would produce these results:
 
-![results](/img/reuse/query-search/Keyvalue_results.png)
+<img src={useBaseUrl('img/reuse/query-search/Keyvalue_results.png')} alt="Results" style={{border: '1px solid gray'}} width="800" />
 
 The keyvalue operator can also be used in two explicit modes:
 
@@ -37,7 +38,7 @@ For example, you'd extract the keys "module" and "thread" and their values from 
 
 to produce these results:
 
-![](/img/reuse/query-search/keyvalue_infer_example_results.png)
+<img src={useBaseUrl('img/reuse/query-search/keyvalue_infer_example_results.png')} alt="Inference mode" style={{border: '1px solid gray'}} width="500" />
 
 ## Regular Expression mode syntax
 
@@ -139,4 +140,4 @@ one delimiter to use when extracting.
     * | keyvalue field=<field> regex "<regex>" [keys]
     ```
 
-* **nodrop** forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)
+* **nodrop** forces results to also include messages that do not match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)

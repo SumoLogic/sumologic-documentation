@@ -4,14 +4,20 @@ title: sort Search Operator
 sidebar_label: sort
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `sort` operator orders aggregated search results. The default sort order is descending. Then you can use the top or limit operators to reduce the number of sorted results returned.
 
-Order is also synonymous with sort. You can use them interchangeably in your queries.
+The `order` operator is synonymous with the `sort` operator. You can use them interchangeably in your queries.
 
 ## Syntax
 
 ```sql
 sort by <field> (displays results as descending, by default)
+```
+
+```sql
+order by <field> (displays results as descending, by default)
 ```
 
 ```sql
@@ -51,6 +57,11 @@ status AND down | extract "user=(?<user>.*?):" | count (*) group by user | sort 
 ... | count user | sort by _count asc
 ```
 
+```sql
+| parse "GET * " as url | count by url | order by _count
+| order by _count asc
+```
+
 ### Top 10 pages by page hits
 
 This example counts page hits by sourceHost, sorts them by page hits, and limits the results to the top 10.
@@ -64,6 +75,6 @@ _sourceCategory=Labs/Apache/Access
 
 which provides results like:
 
-![sort](/img/reuse/query-search/sort_operator_example.png)
+<img src={useBaseUrl('img/reuse/query-search/sort_operator_example.png')} alt="Sort" style={{border: '1px solid gray'}} width="300" />
 
 For more information, see [Top](top.md) operator or [Limit](limit.md) operator.

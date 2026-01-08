@@ -12,11 +12,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for AWS Cost Explorer lets you visualize, understand, and manage your AWS costs and usage over time.
 
-## Log Types
+## Log types
 
 The **AWS Cost Explorer** App uses the JSON formatted logs collected using **AWS Cost Explorer** source.
 
-### Sample Log
+### Sample log messages
 
 ```json
 {
@@ -34,7 +34,7 @@ The **AWS Cost Explorer** App uses the JSON formatted logs collected using **AWS
 }
 ```
 
-### Sample Query
+### Sample queries
 
 The following query sample was taken from the **Cost by Region** panel on the **AWS Cost Explorer - Account** dashboard.
 
@@ -51,11 +51,13 @@ account={{account}} region CostUsd CostType StartDate EndDate MetricType Granula
 
 ## Create a AWS Cost Explorer Collector Source
 
-When you create an AWS Cost Explorer collector Source, you add it to an existing Sumo Logic hosted collector. Before creating the Source, you'll need to add a Field-in-Field Schema, Field Extraction Rules, and [identify or create the hosted collector you want to use](/docs/send-data/hosted-collectors#Create-a-Hosted-Collector).
+When you create an AWS Cost Explorer collector Source, you add it to an existing Sumo Logic hosted collector. Before creating the Source, you'll need to add a Field-in-Field Schema, Field Extraction Rules, and [identify or create the hosted collector you want to use](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 ## Field-in-Field Schema
 
-Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the **account** and **linkedaccount** field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
+1. Search for the **account** and **linkedaccount** field.
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
 ## Field Extraction Rules
 Create a Field Extraction Rule (FER) for AWS Cost Explorer Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
@@ -68,29 +70,24 @@ Create a Field Extraction Rule (FER) for AWS Cost Explorer Logs. Learn how to cr
   ```
 * **Parse Expression:** Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “securityprod” alias for an AWS account with ID "123456789" and the “infraprod” alias for an AWS account with ID "987654321", your parse expression would look like:
   ```sql
-  json "LinkedAccount"
+  | json "LinkedAccount"
   | if (LinkedAccount = "123456789",  "securityprod", LinkedAccount ) as LinkedAccount
   | if (LinkedAccount = "987654321",  "infraprod", LinkedAccount ) as LinkedAccount
   ```
 
 ## Configure an AWS Cost Explorer Source
 
-{@import ../../reuse/aws-cost-explorer.md}
+import AwsCost from '../../reuse/aws-cost-explorer.md';
+
+<AwsCost/>
 
 ## Installing the AWS Cost Explorer App
 
 Now that you have set up a collection for AWS Cost Explorer, install the Sumo Logic App to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-1. Locate and install the app you need from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click Preview Dashboards.
-2. From the App Catalog, search for AWS Cost Explorer and select the app.
-3. To install the app, click Add to Library and complete the following fields.
-   * App Name. You can retain the existing name, or enter a name of your choice for the app. 
-   * Advanced. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
-4. Click Add to Library.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Once an app is installed, it will appear in your Personal folder, or another folder that you've specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 ## Viewing AWS Cost Explorer Dashboards
 

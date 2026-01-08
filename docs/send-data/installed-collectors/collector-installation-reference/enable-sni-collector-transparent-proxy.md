@@ -18,19 +18,16 @@ javax.net.ssl.SSLHandshakeException: Remote host closed connection during handsh
 ## Enable SNI
 
 1. Stop the Sumo Logic Collector service.
-
    * On Windows: `net stop sumo-collector`
    * On Linux: `sudo ./collector stop`
-
 1. Modify the **user.properties** file in the **config** subdirectory of the Sumo Logic collector installation directory.
-
+    :::note
+    Verify the `wrapper.java.additional` property in the **Java Additional Parameters** section in `config/wrapper.conf` file. If there is an existing property, make sure you use the next property. For example, if `wrapper.java.additional.2` is available then use `wrapper.java.additional.3`.
+    :::
     * On Windows, add the following line and save. `wrapper.java.additional.2=-Djsse.enableSNIExtension=true`
     * On Linux, add the following line and save. `wrapper.java.additional.3=-Djsse.enableSNIExtension=true`      
-
 1. Save the file.
-
 1. Start the Sumo Logic Collector service.
-
     * On Windows: `net start sumo-collector`
     * On Linux: `sudo ./collector start`
 

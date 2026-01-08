@@ -28,13 +28,12 @@ Example **known_hosts** file format:
 ## Enable Remote Host Key Verification
 
 1. Stop the Sumo Logic Collector service.
-
     * On Windows: `net stop sumo-collector`
     * On Linux: `sudo ./collector stop`
+    
+1. Add the following line to the **config/collector.properties** file in the Collector installation directory and save the file. Replace the placeholder `<pathto>` with the actual path to your known_hosts file.
 
-1. Add the following line to the **config/collector.properties** file in the Collector installation directory and save the file. Replace the placeholder \<patht\>` with the actual path to your known_hosts file.
-
-    `ssh.host.verify.file = \<patht\>/known_hosts`
+    `ssh.host.verify.file = /<pathto>/known_hosts`
 
 1. Start the Sumo Logic Collector service:
 

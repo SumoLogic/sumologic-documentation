@@ -6,6 +6,8 @@ description: Tracing APIs give you the ability to browse and execute queries for
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
+import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/traces.png')} alt="Thumbnail icon" width="40"/>
 
@@ -17,13 +19,35 @@ See also: [Span Analytics APIs](/docs/api/span-analytics) and [Service Map APIs]
 Tracing APIs give you the ability to browse and execute queries for traces and span analytics, and request a service map of your application environment.
 :::
 
-{@import ../reuse/api-intro.md}
+## Documentation
+
+<ApiIntro/>
+
+| Deployment | Documentation URL                              |
+|:------------|:------------------------------------------------|
+| AU         | https://api.au.sumologic.com/docs/#tag/traces  |
+| CA         | https://api.ca.sumologic.com/docs/#tag/traces  |
+| DE         | https://api.de.sumologic.com/docs/#tag/traces  |
+| EU         | https://api.eu.sumologic.com/docs/#tag/traces  |
+| FED        | https://api.fed.sumologic.com/docs/#tag/traces |
+| JP         | https://api.jp.sumologic.com/docs/#tag/traces  |
+| KR         | https://api.kr.sumologic.com/docs/#tag/traces  |
+| US1        | https://api.sumologic.com/docs/#tag/traces     |
+| US2        | https://api.us2.sumologic.com/docs/#tag/traces |
+
+## Required role capabilities
+
+<ApiRoles/>
+
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
+    * Download Search Results
+    * View Collectors
 
 ## Endpoints for API access  
 
 Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
 
-See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
+See [Sumo Logic Endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
 
 An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
 
@@ -33,31 +57,16 @@ While the trace search query is running you need to request the query status bas
 
 ## Errors  
 
-{@import ../reuse/api-errors.md}
+import ApiErrors from '../reuse/api-errors.md';
+
+<ApiErrors/>
 
 ## Rate limit throttling  
 
-{@import ../reuse/api-rate-limit.md}
+import RateLimit from '../reuse/api-rate-limit.md';
+
+<RateLimit/>
 
 A limit of 10 active concurrent trace search requests applies to your organization. Bear in mind that a single API request can consist of multiple queries and each query is treated as a separate trace search.
 
 Once you reach the limit of 10 concurrent active searches, attempting an additional search will result in a status code of _429 Too Many Requests_ telling you that you are over the allowed concurrent search requests limit.
-
-
-## Documentation
-
-Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/getting-started#which-endpoint-should-i-should-use) if you are unsure.
-
-Select the documentation link for your deployment:
-
-| Deployment | Documentation URL                              |
-|:------------|:------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/traces  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/traces  |
-| DE         | https://api.de.sumologic.com/docs/#tag/traces  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/traces  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/traces |
-| IN         | https://api.in.sumologic.com/docs/#tag/traces  |
-| JP         | https://api.jp.sumologic.com/docs/#tag/traces  |
-| US1        | https://api.sumologic.com/docs/#tag/traces     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/traces |

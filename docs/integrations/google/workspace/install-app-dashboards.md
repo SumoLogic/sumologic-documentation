@@ -1,6 +1,6 @@
 ---
 id: install-app-dashboards
-title: Google Workspace App and Dashboards
+title: Google Workspace app and Dashboards
 sidebar_label: App Installation and Dashboards
 description: Instructions for installing the Google Workspace app and information about each of the dashboards.
 ---
@@ -9,40 +9,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
 
-This page demonstrates how to install the Google Workspace App and enable documents shared outside your organization. This page also provides descriptions, use cases, and examples for each of the Google Workspace App dashboards.
+This page demonstrates how to install the Google Workspace app and enable documents shared outside your organization. This page also provides descriptions, use cases, and examples for each of the Google Workspace app dashboards.
 
+## Installing the Google Workspace app
 
-## Installing the Google Workspace App
+import AppInstall2 from '../../../reuse/apps/app-install-v2.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+<AppInstall2/>
 
-To install the app, do the following:
+## Viewing Google Workspace dashboards​
 
-1. From the **App Catalog**, search for and select the **Google Workspace** app.
-2. Click **Add to Library** and complete the following fields:
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * Select either of the following options for the **Google Workspace App Audit Log source:**
-      * **Source Category,** and select the Source Category from the list.
-      * **Enter a Custom Data Filter,** and enter a custom source category beginning with an underscore. Example: (_sourceCategory=google_app*).
-   * If you have not already, and do not intend to collect Google Workspace Alert Center logs, leave the Source Category in the Google Workspace App Alert Center Log source as blank. Otherwise, select one of the following options for the **Google** **Workspace App Alert Center Log source:**
-     * **Source Category,** and select the Source Category from the list.
-     * **Enter a Custom Data Filter,** and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=workspace_alerts`).<br/><img src={useBaseUrl('img/integrations/google/google-workspace-app.png')} alt="Google Workspace app" />
-3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+import ViewDashboards from '../../../reuse/apps/view-dashboards.md';
 
-Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library) for information on working with the library in the new UI.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-### Enable the Documents Shared Outside of Organization panel
-
-To see your data in the **Documents Shared Outside of Organization** panel of the **Google Workspace - Drive** dashboard, open the panel query.
-
-Add your domain in the query in the highlighted section shown below. Click **Update Dashboard** to save the query. Now, you can see your data in the panel.
-
-<img src={useBaseUrl('img/integrations/google/GSuite_Install_Share-Outside-Org.png')} alt="Google Workspace app" />
-
-## Viewing the Google Workspace Dashboards
+<ViewDashboards/>
 
 ### Filters   
 
@@ -102,7 +81,7 @@ Use this dashboard to:
 
 ### Login
 
-The** Google Workspace - Login Dashboard** provides high-level graphs and detailed information for Google Workspace apps login data. Login information includes geographic locations, logins by state, successful logins, login failures by the user, IP address, and type; login failure outliers, login activity trends, and logins from multiple IP addresses.
+The **Google Workspace - Login Dashboard** provides high-level graphs and detailed information for Google Workspace apps login data. Login information includes geographic locations, logins by state, successful logins, login failures by the user, IP address, and type; login failure outliers, login activity trends, and logins from multiple IP addresses.
 
 Use this dashboard to:
 * Identify abnormal spikes in login failures.
@@ -114,7 +93,7 @@ Use this dashboard to:
 
 ### Alert Center - Overview Dashboard
 
-The** Google Workspace - Alert Center - Overview Dashboard** provides a high-level view of Google Workspace alert data by source and type, suspicious IP and email addresses, compromised devices and credentials, recent alerts, and alert trends over time.
+The **Google Workspace - Alert Center - Overview Dashboard** provides a high-level view of Google Workspace alert data by source and type, suspicious IP and email addresses, compromised devices and credentials, recent alerts, and alert trends over time.
 
 Use this dashboard to:
 * Determine potential threats.
@@ -127,7 +106,7 @@ Use this dashboard to:
 
 ### Alert Center - Investigations
 
-The** Google Workspace - Alert Center - Investigations  Dashboard** provides easily accessible analytics on compromised credentials, including Google Workspace activity of users with compromised credentials. This dashboard also provides data on Google Workspace activity from compromised devices.
+The **Google Workspace - Alert Center - Investigations Dashboard** provides easily accessible analytics on compromised credentials, including Google Workspace activity of users with compromised credentials. This dashboard also provides data on Google Workspace activity from compromised devices.
 
 Use this dashboard to:
 * Track credential breaches and compromised devices.
@@ -139,7 +118,7 @@ Use this dashboard to:
 
 ### Alert Center - Google Identity
 
-The** Google Workspace - Alert Center - Google Identity dashboard** provides detailed information on suspicious logins and suspended users. This dashboard also provides information on the number and location of suspicious logins and suspended users.
+The **Google Workspace - Alert Center - Google Identity dashboard** provides detailed information on suspicious logins and suspended users. This dashboard also provides information on the number and location of suspicious logins and suspended users.
 
 Use this dashboard to:
 * Monitor suspicious activity and its locations.
@@ -150,7 +129,7 @@ Use this dashboard to:
 
 ### Alert Center - Gmail Phishing
 
-The** Google Workspace - Alert Center - Gmail Phishing dashboard** provides detailed information on phishing attacks and spam activity on Google Workspace applications. This dashboard also provides information on the affected users and the top attackers responsible for the attacks.
+The **Google Workspace - Alert Center - Gmail Phishing dashboard** provides detailed information on phishing attacks and spam activity on Google Workspace applications. This dashboard also provides information on the affected users and the top attackers responsible for the attacks.
 
 Use this dashboard to:
 * Monitor users affected by phishing attacks.
@@ -161,7 +140,7 @@ Use this dashboard to:
 
 ### Alert Center - Other Alerts
 
-The** Google Workspace - Other Alerts Dashboard** provides a high-level view paired with detailed information on Google Workspace operations for security and privacy issues, potential government-backed attacks, recent customer takeout initiated alerts, and  Mobile device management-based alerts.
+The **Google Workspace - Other Alerts Dashboard** provides a high-level view paired with detailed information on Google Workspace operations for security and privacy issues, potential government-backed attacks, recent customer takeout initiated alerts, and  Mobile device management-based alerts.
 
 Use this dashboard to:
 * Identify compromised devices and monitor suspicious activity.
@@ -170,3 +149,15 @@ Use this dashboard to:
 * Monitor security and privacy issues affecting your organization's Google Workspace services.
 
 <img src={useBaseUrl('img/integrations/google/Google-Workspace-Alert-Center-Other-Alerts.png')} alt="Google Workspace dashboards" />
+
+## Upgrade/Downgrade the Google Workspace app (Optional)
+
+import AppUpdate from '../../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Workspace app (Optional)
+
+import AppUninstall from '../../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -13,13 +13,13 @@ Gmail Trace Logs is a new Sumo Logic app based on the Gmail BigQuery Cloud-to-Cl
 
 The Sumo Logic App for Gmail Trace Logs helps monitor spam messages, malware, dropped messages and rejected messages. It allows you to view messages with objectionable content, messages detected by your **Security Sandbox**, and messages flagged by the Walled Garden Rule.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Gmail Trace Logs uses [Gmail Logs via BigQuery](https://support.google.com/a/topic/7233311?hl=en&ref_topic=2683886).
 
 For details, see the [Schema for Gmail logs in BigQuery](https://support.google.com/a/answer/7230050?hl=en&ref_topic=7233311).
 
-### Sample Logs
+### Sample log messages
 
 ```json
 {
@@ -123,7 +123,7 @@ For details, see the [Schema for Gmail logs in BigQuery](https://support.google.
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Gmail messages classifications"
 _sourceCategory=Labs/GmailTraceLogs
@@ -135,29 +135,57 @@ _sourceCategory=Labs/GmailTraceLogs
 | count by message_set_type
 | sort by _count
 ```
+## Collection configuration and app installation
 
-## Collecting Logs for Gmail Trace Logs app
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-This section provides instructions for setting up [Cloud-to-Cloud-Integration for Gmail Trace Logs App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source.md) to create the source and use the same source category while installing the app.
+<CollectionConfiguration/>
 
-## Installing the Gmail Trace Logs app
+:::important
+Use the [Cloud-to-Cloud Integration for Gmail Trace Logs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Gmail Trace Logs app is properly integrated and configured to collect and analyze your Gmail Trace Logs data.
+:::
 
-{@import ../../reuse/apps/app-install.md}
+### Create a new collector and install the app
 
-## Viewing Gmail Trace Logs Dashboards
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-**All dashboard have a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+<AppCollectionOPtion1/>
 
-You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
+### Use an existing collector and install the app
 
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-### Security Overview Dashboard
+<AppCollectionOPtion2/>
 
-**Gmail Trace Logs - Security Overview**. This dashboard lets you monitor spam messages, malware threats, dropped messages, and rejected messages.
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+## Viewing the Gmail Trace Logs dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+### Security Overview
+
+The **Gmail Trace Logs - Security Overview** dashboard lets you monitor spam messages, malware threats, dropped messages, and rejected messages.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/tracelogsapp-overview.png')} alt="Gmail Trace Logs Overview" width="900"/>
 
-**CrowdStrike Analysis**. To protect your organisation from threats, the app also scans the SHA256 hash of Gmail attachments with CrowdStrike's threat detection service.
+The **CrowdStrike Analysis**. To protect your organisation from threats, the app also scans the SHA256 hash of Gmail attachments with CrowdStrike's threat detection service.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/crowdstrike-analysis.png')} alt="Crowdstrike Analysis" width="900"/>
+
+## Upgrading the Microsoft Teams app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Teams app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+

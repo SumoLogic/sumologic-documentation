@@ -4,7 +4,9 @@ title: isReservedIP Search Operator
 sidebar_label: isReservedIP
 ---
 
-The `isReservedIP` operator checks if an IPv4 address is reserved as defined by <a href="https://tools.ietf.org/html/rfc5735">RFC 5735</a> and returns a boolean.
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+The `isReservedIP` operator checks if an IPv4 address is reserved as defined by [RFC 5735](https://tools.ietf.org/html/rfc5735) and returns a boolean.
 
 ## Syntax
 
@@ -21,8 +23,8 @@ isReservedIP(<IPv4_string_field>) [as <field>]
 * Invalid IPv4 addresses are dropped from the results.
 
 The following warning is shown when results are dropped or an IPv6 address is detected:  
-    
-![isprivateip operator warning for dropped invalid ip addresses.png](/img/search/searchquerylanguage/search-operators/isprivateip-dropped-warning.png)
+
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/isprivateip-dropped-warning.png')} alt="isprivateip operator warning for dropped invalid ip addresses" style={{border: '1px solid gray'}} width="200" />
 
 ## Examples
 

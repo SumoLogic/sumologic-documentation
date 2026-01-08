@@ -1,23 +1,23 @@
 ---
 id: redshift-ulm
 title: Amazon Redshift ULM
-description: The Sumo Logic App for Amazon Redshift ULM helps you monitor activity in Amazon Redshift.
+description: The Sumo Logic app for Amazon Redshift ULM helps you monitor activity in Amazon Redshift.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/redshift.png')} alt="Thumbnail icon" width="50"/>
 
-Amazon Redshift is Amazon’s data warehousing service. The Sumo Logic App for Amazon Redshift ULM helps you monitor activity in Amazon Redshift. The app is a unified logs and metrics application with preconfigured dashboards provide insight into database connections, SQL command and statement execution, database user account events, CloudTrail events, and resource utilization by node and cluster.
+Amazon Redshift is Amazon’s data warehousing service. The Sumo Logic app for Amazon Redshift ULM helps you monitor activity in Amazon Redshift. The app is a unified logs and metrics application with preconfigured dashboards provide insight into database connections, SQL command and statement execution, database user account events, CloudTrail events, and resource utilization by node and cluster.
 
-## Log Types
+## Log types
 
 The Amazon Redshift app uses the following log types:
 * Amazon Redshift Audit Logs
 * Amazon CloudTrail Event Logs
 * Amazon Redshift Metrics
 
-### Sample Log Messages   
+### Sample log messages   
 
 ```json title="Amazon Redshift Connection Audit Log Sample"
 dir="ltr">authenticated |Mon, 21 May 2018 01:38:01:601|::ffff:127.0.0.1 |32828 |15523|dev |rdsdb |password
@@ -32,7 +32,8 @@ dir="ltr">authenticated |Mon, 21 May 2018 01:38:01:601|::ffff:127.0.0.1 |32828 |
 '2018-05-21T06:20:09Z UTC [ db=dev user=himanshu pid=64458 userid=35 xid=5143208 ]' LOG: drop user testuser3
 ```
 
-<details><summary><strong>Click to expand</strong>. Amazon CloudTrail Redshift Log Sample.</summary>
+<details>
+<summary><strong>Click to expand</strong>. Amazon CloudTrail Redshift Log Sample.</summary>
 
 ```json title="Amazon CloudTrail Redshift Log Sample"
 {
@@ -160,7 +161,7 @@ dir="ltr">authenticated |Mon, 21 May 2018 01:38:01:601|::ffff:127.0.0.1 |32828 |
 
 </details>
 
-### Sample Query
+### Sample queries
 
 ```sql title="Top Users"
 dir="ltr">_sourceCategory=*/AWS/Redshift/Audit LOG
@@ -173,9 +174,9 @@ dir="ltr">_sourceCategory=*/AWS/Redshift/Audit LOG
 ```
 
 
-## Collecting Logs and Metrics for the Amazon Redshift ULM App
+## Collecting logs and metrics for the Amazon Redshift ULM app
 
-This section has instruction for setting up collection of logs and metrics for the Amazon Redshift ULM App.
+This section has instruction for setting up collection of logs and metrics for the Amazon Redshift ULM app.
 
 ### Step 1. Plan source categories
 
@@ -206,14 +207,14 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
    * **Description**. Enter an optional description.
    * **S3 Region**. Select the Amazon Region for your Redshift Audit Log S3 bucket.
    * **Bucket Name**. Enter the exact name of your Redshift Audit Log S3 bucket.
-   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expressio
+   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
    * **Source Category**. AWS/Redshift/Audit
    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-   * **Enable Timestamp Parsing**. Select the checkbox.
-   * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-   * **Timestamp Format**. Select Automatically detect the format.
-   * **Enable Multiline Processing**. Select the checkbox, and select **Infer Boundaries**.
+   * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+   * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+   * **Timestamp Format.** Select **Automatically detect the format**.
+   * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 2. Click **Save**.
 
 
@@ -249,17 +250,17 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
     7. **Scan Interval**. Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
 3. Click **Save**.
 
+## Installing the Amazon Redshift ULM app
 
-## Installing the Amazon Redshift ULM App
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-Now that you have configured log and metric collection, install the Sumo Logic App for Amazon Redshift to take advantage of the pre-configured searches and dashboards.
+<AppInstall2/>
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Amazon Redshift ULM dashboards​
 
-## Viewing Amazon Redshift Dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-This section describes each of the dashboards in the Sumo Logic App for Amazon Redshift.
-
+<ViewDashboards/>
 
 ### Overview
 
@@ -398,7 +399,7 @@ See information about database user account events, including database user data
 
 **Create User Events**. Shows an aggregation table with user creation events in the last 24 hours, along with time, command, database name, username, port id, x id, sql statement, and a count of events.
 
-**Drop User Events. **Shows an aggregation table with drop user events in the last 24 hours, along with time, command, database name, username, port id, x id, sql statement, and a count of events.
+**Drop User Events.** Shows an aggregation table with drop user events in the last 24 hours, along with time, command, database name, username, port id, x id, sql statement, and a count of events.
 
 **Alter User Events**. Shows an aggregation table with alter user events in the last 24 hours, along with time, command, database name, username, port id, x id, sql statement, and a count of events.
 
@@ -496,3 +497,15 @@ See node-level resource utilization metrics, including CPU; disk; network; and r
 **Commit Queue Length**. Shows trends in commit queue length by NodeID on a line chart for the last three hours.
 
 **WLM Queue Length**. Shows trends in WLM queue length by NodeID on a line chart for the last three hours.
+
+## Upgrade/Downgrade the Amazon Redshift ULM app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon Redshift ULM app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

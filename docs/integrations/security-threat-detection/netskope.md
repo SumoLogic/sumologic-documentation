@@ -2,33 +2,27 @@
 id: netskope
 title: Netskope
 sidebar_label: Netskope
-description: The Netskope App created by Sumo Logic provides visibility into security posture for your applications, as well as allowing you to determine the overall usage of software and SaaS applications in your environment.
+description: The Netskope app created by Sumo Logic provides visibility into security posture for your applications, as well as allowing you to determine the overall usage of software and SaaS applications in your environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/>
 
-The Netskope App provides visibility into the security posture of your applications and helps you determine the overall usage of software and SaaS applications.
+The Netskope app provides visibility into the security posture of your applications and helps you determine the overall usage of software and SaaS applications.
 
 Netskope is a Cloud Access Security Broker (CASB) hosted in the cloud. The Netskope product is primarily used for enforcing security policies for cloud-based resources, such as Box and Microsoft Office 365. Customers purchase a CASB to address cloud service risks, enforce security policies, and comply with regulations, even when cloud services are beyond their perimeter and out of their direct control.
 
+## Log types
 
-## Log Types
-
-The Netskope App provides a collector source for pulling all the events and alerts from Netskope in real-time via API calls and ingests them into the Sumo Logic platform through our Hosted collector.
+The Netskope app provides a collector source for pulling all the events and alerts from Netskope in real-time via API calls and ingests them into the Sumo Logic platform through our Hosted collector.
 
 For more information on Netskope, refer to the Netskope [documentation](https://www.netskope.com/platform/how-it-works).
 
+### Sample log message
 
-## Collect Logs for Netskope
-
-To collect logs from the Netskope platform, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app. You can view the Netskope legacy collection method [here](/docs/integrations/security-threat-detection/netskope-legacy-collection/).
-
-
-### Sample Log message
-
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -78,14 +72,13 @@ To collect logs from the Netskope platform, use the [new Cloud to Cloud Integrat
            "os": "Windows 8",
            "browser": "Internet Explorer",
            "appcategory": "Webmail"
-       }
-   ]
 }
+
 ```
 
 </details>
 
-### Sample Query  
+### Sample queries
 
 The following query sample was is from the Total Sessions panel of the Application Overview Dashboard.
 
@@ -101,36 +94,48 @@ to_user, app_session_id  nodrop
 | count
 ```
 
+## Collection configuration and app installation
 
-## Installing the Netskope App
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-This section demonstrates how to install the Netskope App, and provides examples and descriptions for each of the dashboards. The Netskope App has the following components:
+<CollectionConfiguration/>
 
-* **Application Usage:** Insights into application usage; specifically by devices, users, users and traffic patterns.
-* **Security Alerts:** Visibility into Netskope security alerts and violations and the ability to identify effects of a breach.  
+:::important
+Use the [Cloud-to-Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Netskope app is properly integrated and configured to collect and analyze your Netskope data.
+:::
 
-{@import ../../reuse/apps/app-install.md}
+### Create a new collector and install the app
 
-## Viewing Netskope Dashboards
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing the Netskope dashboards
 
 The Netskope dashboards are grouped by their component in the following two category folders:
 
 * Application Usage
 * Security Alerts
 
-### Dashboard filters
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
+<ViewDashboards/>
 
 ### Application Overview
 
-**Netskope - Application Overview Dashboard** provides a high-level view of user activity, user geographic location by source IP, total sessions, applications used, distribution and activity of applications, and application trends over time.
+The **Netskope - Application Overview** dashboard provides a high-level view of user activity, user geographic location by source IP, total sessions, applications used, distribution and activity of applications, and application trends over time.
 
 Use this dashboard to:
 * Monitor number of users, sessions, and sites using the applications, and find out the popular apps by user and app category.
@@ -138,10 +143,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Application_Overview.png')} alt="netskope dashboards" />
 
-
 ### Application Users
 
-**Netskope - Application Users Dashboard** provides a high-level view of application events, total sessions, user activity and geographic location by source IP and destination IP. This dashboard also shows visual breakdowns of distributions by operating system, browser, device, and user activity.
+The **Netskope - Application Users** dashboard provides a high-level view of application events, total sessions, user activity and geographic location by source IP and destination IP. This dashboard also shows visual breakdowns of distributions by operating system, browser, device, and user activity.
 
 Use this dashboard to:
 * Monitor recent user activities, track user locations, and find out the top users affected by alerts.
@@ -149,10 +153,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Application_Users.png')} alt="netskope dashboards" />
 
-
 ### Application Details
 
-**Netskope - Application Details Dashboard** provides a high-level view of data for unique applications used, as well as top applications by alerts, bytes, and average page duration. This dashboard also provides a visual breakdown of applications by category, devices by user access, and network usage over time.
+The **Netskope - Application Details** dashboard provides a high-level view of data for unique applications used, as well as top applications by alerts, bytes, and average page duration. This dashboard also provides a visual breakdown of applications by category, devices by user access, and network usage over time.
 
 Use this dashboard to:
 * Monitor the top applications generating alerts.
@@ -160,10 +163,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Application_Detail.png')} alt="netskope dashboards" />
 
-
 ### Alert Overview
 
-**Netskope - Alert Overview Dashboard** provides a high-level view of your alert data by type, geographic location of source IPs, total and top alerts, alerts by user, recent alerts, and alert trends over time.
+The **Netskope - Alert Overview** dashboard provides a high-level view of your alert data by type, geographic location of source IPs, total and top alerts, alerts by user, recent alerts, and alert trends over time.
 
 Use this dashboard to:
 * Track users affected by alerts.
@@ -171,10 +173,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Alert_Overview.png')} alt="netskope dashboards" />
 
-
 ### Alert Details
 
-**Netskope - Alert Details Dashboard** provides a visual presentation of alert analytics, including the geographic locations of suspicious source and destination IPs, a time compare of alters, alert outlier trends over time, alerts by application, and recent alerts with a poor cloud confidence level.
+The **Netskope - Alert Details** dashboard provides a visual presentation of alert analytics, including the geographic locations of suspicious source and destination IPs, a time compare of alters, alert outlier trends over time, alerts by application, and recent alerts with a poor cloud confidence level.
 
 Use this dashboard to:
 * Compare alerts over time and anomalies in alert rates.
@@ -182,10 +183,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Alert_Details.png')} alt="netskope dashboards" />
 
-
 ### Data Loss Prevention
 
-**Netskope - Data Loss Prevention Dashboard** provides a high-level view of data loss prevention (DLP) analytics, including incidents by policy over time, incidents by severity and application, incidents by operating system (OS) and browser. This dashboard also shows data on DLP rules, top profiles, incident count, and users affected.
+The **Netskope - Data Loss Prevention** dashboard provides a high-level view of data loss prevention (DLP) analytics, including incidents by policy over time, incidents by severity and application, incidents by operating system (OS) and browser. This dashboard also shows data on DLP rules, top profiles, incident count, and users affected.
 
 Use this dashboard to:
 
@@ -195,10 +195,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Data_Loss_Prevention.png')} alt="netskope dashboards" />
 
-
 ### Compromised Credentials
 
-**Netskope - Compromised Credentials Dashboard** provides easily accessible analytics on compromised credentials, including the number of users with compromised credentials, a breach count and top breaches, and source info. This dashboard also provides data on recent compromised credentials, apps used by users after a credentials breach, and user activities after a credentials breach.
+The **Netskope - Compromised Credentials** dashboard provides easily accessible analytics on compromised credentials, including the number of users with compromised credentials, a breach count and top breaches, and source info. This dashboard also provides data on recent compromised credentials, apps used by users after a credentials breach, and user activities after a credentials breach.
 
 Use this dashboard to:
 * Track credential breaches along with their source.
@@ -207,10 +206,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Compromised_Credentials.png')} alt="netskope dashboards" />
 
-
 ### Malware
 
-**Netskope - Malware Dashboard** provides a high-level view of total malwares detected, total apps and users affected, total files infected, top source IPs and malware types, and the top users affected. This dashboard also provides data malware incidents by app and severity, affected file types, apps used on infected machines, and the user activity on infected machines.
+The **Netskope - Malware** dashboard provides a high-level view of total malwares detected, total apps and users affected, total files infected, top source IPs and malware types, and the top users affected. This dashboard also provides data malware incidents by app and severity, affected file types, apps used on infected machines, and the user activity on infected machines.
 
 Use this dashboard to:
 * Determine applications and users affected by malware.
@@ -218,13 +216,24 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Malware.png')} alt="netskope dashboards" />
 
-
 ### Anomalies
 
-**Netskope - Anomalies Dashboard** provides an at-a-glance view of anomalies on your environment, including the number of anomalies, users affected, anomalies over time, anomalies by app, alert name, and risk level. It also includes data on top users by anomaly risk level and recent anomalies by high risk level.
+The **Netskope - Anomalies** dashboard provides an at-a-glance view of anomalies on your environment, including the number of anomalies, users affected, anomalies over time, anomalies by app, alert name, and risk level. It also includes data on top users by anomaly risk level and recent anomalies by high risk level.
 
 Use this dashboard to:
 * Monitor anomalies in users activities.
 * Track anomalies with high risk levels.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Anomalies.png')} alt="netskope dashboards" />
+
+## Upgrade/Downgrade the Netskope app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Netskope app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -5,6 +5,8 @@ sidebar_label: Search Query Language support
 description: Use our extensive Search Query Language to gain valuable insight into your traces.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 You can use our [Search Query Language](/docs/search/search-query-language) in a log search to query raw spans from tracing data for the same period as the default partition.
 
 Tracing data retention in `_trace_spans` index is the same as default log index retention.
@@ -22,11 +24,11 @@ Tracing data retention in `_trace_spans` index is the same as default log index
 
 ## Search span data
 
-Searching span data is the same as running a log search. You just need to specify the `_index` metadata field with the value `_trace_spans` in the [keyword search expression](/build-search/Keyword-Search-Expression (also called the scope) of your query.
+Searching span data is the same as running a log search. You just need to specify the `_index` metadata field with the value `_trace_spans` in the [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions) (also called the scope) of your query.
 
 To search your tracing data do the following:
 
-1. Click the **+ New** button in the tab bar and select **Log Search**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. 
 1. On the Search page, enter the following in the text box: `_index=_trace_spans`. 
 1. Choose a time range up to seven days ago that you'd like to review.
 1. Click **Start** to run the search.
@@ -35,11 +37,13 @@ To search your tracing data do the following:
 
 A Keyword Search Expression defines the scope of data for the query. You need to specify `_index=_trace_spans` in the scope to reference your trace data.
 
+Keyword searching is supported for tracing indexes across all fields, unlike other indexes where only the `_raw` field is searched.
+
 #### _any option
 
 In scenarios where users are not familiar with the schema and would like to search across all the fields, `_any` modifier provides a means to search for a specified value from all of the Ingest Time Fields in your data. For example, to search for data with any field that has a value of success you would put `_any=success` in the scope of your query.
 
-Syntax: `_any<value>`
+Syntax: `_any=<value>`
 
 The `_any` option is not supported outside of the scope of a query. This is supported for the Security and Tracing tiers.
 
@@ -49,7 +53,7 @@ You can parse your spans in the same way you parse log data. This includes any v
 
 ### View Your Search Results
 
-When viewing your search results you can add any parsed fields to display by selecting them from the Field Browser on the left, or by using the fields operator in your query. The following image shows a query using the `fields` operator to display `operation`, `service`, `spanid`, `statuscode`, and `traceid`. The Field Browser can also set the fields to display.<br/> ![spans search with fields highlighted.png](/img/traces/spans-search-with-fields-highlighted.png)
+When viewing your search results you can add any parsed fields to display by selecting them from the Field Browser on the left, or by using the fields operator in your query. The following image shows a query using the `fields` operator to display `operation`, `service`, `spanid`, `statuscode`, and `traceid`. The Field Browser can also set the fields to display.<br/><img src={useBaseUrl('img/apm/spans-search-with-fields-highlighted.png')} alt="Spans search with fields highlighted" style={{border: '1px solid gray'}} width="800" />
 
 ### Monitors and Scheduled Searches
 You can also set Monitors and Scheduled Searches for Traces.
@@ -103,14 +107,14 @@ _index=_trace_spans
 | fields operation, service, spanid, statuscode, traceid
 ```
 
-![spans basic example with where operations.png](/img/traces/spans-basic-example-with-where-operations.png)
+<img src={useBaseUrl('img/apm/spans-basic-example-with-where-operations.png')} alt="spans basic example with where operations" style={{border: '1px solid gray'}} width="<insert-pixel-number>" />
 
 #### Break them down by HTTP code status
 
 To find out more details about the errors found in the example above you
 can look in the **tags** field and view the `http.status_code` field.
 
-![img](/img/traces/http-code-status.png)
+<img src={useBaseUrl('img/apm/traces/http-code-status.png')} alt="HTTP code status" style={{border: '1px solid gray'}} width="500" />
 
 To extract this tag as a new field and filter it to show only codes below 500 (4xx essentially) you could run the following query:
 
@@ -122,7 +126,7 @@ _index=_trace_spans
 | where code < 500
 ```
 
-![spans with where operation example.png](/img/traces/spans-with-where-operation-example.png)
+<img src={useBaseUrl('img/apm/spans-with-where-operation-example.png')} alt="Spans with where operation exampl" style={{border: '1px solid gray'}} width="800" />
 
 ### View errors by status over time
 
@@ -143,4 +147,4 @@ _index=_trace_spans
 
 The column chart displayed in the following screenshot has normal stacking selected.
 
-![new index spans over time example.png](/img/traces/new-index-spans-over-time-example.png)
+<img src={useBaseUrl('img/apm/traces/new-index-spans-over-time-example.png')} alt="New index spans over time example" style={{border: '1px solid gray'}} width="800" />

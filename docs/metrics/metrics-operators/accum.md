@@ -4,6 +4,7 @@ title: accum Metrics Operator
 sidebar_label: accum
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `accum` operator creates a series of running totals for each metric time series. The running total in each series starts from the value of the first data point in the series, then iteratively adds up successive
 values.
@@ -31,5 +32,5 @@ In the metric chart below, the green time series is the result of using
 
 The orange time series shows the results without the `accum` operator.
 
-![accum.png](/img/metrics/accum.png)  
+<img src={useBaseUrl('img/metrics/accum.png')} alt="accum operator" style={{border: '1px solid gray'}} width="800" />
  

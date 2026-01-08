@@ -2,13 +2,19 @@
 id: choose-collector-source
 title: Choosing a Sumo Logic Collector and Source
 sidebar_label: Choose a Collector and Source
-description: Design a Sumo Logic deployment that's right for your organization.
+description: Choose the right data source type in Sumo Logic for collecting logs, metrics, or traces using OpenTelemetry Collectors, Installed Collectors, and Hosted Collectors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
 To send your data to Sumo Logic, you have a few options. We have two types of installed agents and offer a collector fully hosted by us.
+
+:::info
+You cannot delete the individual log lines once they are ingested and stored in the service. Hosted services are designed to protect logs from being changed because they are supposed to be immutable. However, data sets for a specific time range within a data partition can be deleted. If you need surgical removal of log lines from view, you can use the keyword searches as [Role Filters](/docs/manage/users-roles/roles/construct-search-filter-for-role/).
+
+An administrator can set up a role filter, but other administrators in the your environment with the appropriate rights can reverse it. Alternatively, the Sumo Logic engineering team can implement a role filter that is invisible and unchangeable by any users, including admins.
+:::
 
 ## Sumo Logic Collectors
 
@@ -30,7 +36,7 @@ It's supported on Linux, macOS, Windows, and Kubernetes environments and can use
 * HTTP with OTLP formats
 * And more than 60 ways to collector logs, metrics and traces.
 
-For full details on limitations, what's supported, and what's different see our [comparison documentation](https://help.sumologic.com/docs/send-data/choose-collector-source/#when-to-choose-installed-collector-vs-opentelemetry-collector).
+For full details on limitations, what's supported, and what's different see our [comparison documentation](/docs/send-data/choose-collector-source/#when-to-choose-installed-collector-vs-opentelemetry-collector).
 
 ### Installed Collectors (Installed Agent)
 
@@ -63,6 +69,23 @@ The Installed Collector and OpenTelemetry Collector are two popular collectors u
 **Installed Collector**. The Installed Collector is a standalone agent that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports a wide range of sources, including Local File, Syslog, Host/Process Metrics, Streaming Metrics, Transaction Tracing, and many more. It also provides support for remote management and configuration, Ingest Budgets, Collector Management API, and CPU targets.
 
 **OpenTelemetry Collector**. The OpenTelemetry Collector is a single-agent management solution that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports sources such as Local File, Syslog, Host/Process Metrics, Streaming Metrics, and Transaction Tracing. However, it does not provide support for remote management or configuration, Ingest Budgets, Collector Management API, or CPU targets.
+
+:::sumo Micro Lesson
+Watch this micro lesson to learn why OpenTelemetry collector should be your first choice.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/g078z3y6ux?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Benefits of choosing OpenTelemetry collector over Installed collector"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 #### When to Choose Installed Collector vs. OpenTelemetry Collector
 
@@ -110,14 +133,14 @@ The following table shows the comparison between the Installed Collector and Ope
           <li>Local File</li>
           <li>Syslog</li>
           <li>Host/Process Metrics</li>
-          <li>OTLP(OpenTelemtry Protocol) Receiver</li> 
+          <li>OTLP(OpenTelemtry Protocol) Receiver</li>
           <li>Transaction Tracing</li>
           <li>Windows Log Event Receiver</li>
           <li>Windows Performance Counters Receiver</li>
-          <li>Docker Stats / Logs</li> 
+          <li>Docker Stats / Logs</li>
           <li>Kafka</li>
-          <li>MongoDB</li> 
-          <li>Journald</li> 
+          <li>MongoDB</li>
+          <li>Journald</li>
           <li>Kubernetes</li>
           <li>And more than 60 additional way to collect logs, metrics and traces</li>
         </ul>
@@ -134,12 +157,11 @@ The following table shows the comparison between the Installed Collector and Ope
   </tbody>
 </table>
 
-
 ### Hosted Collectors
 
 **Hosted Collectors** reside in the Cloud allowing for seamless collection from Amazon Web Services, Google, Microsoft, and many other Cloud services.
 
-Unlike Installed Collectors, [Hosted Collectors](/docs/send-data/hosted-collectors/) don't require installation or activation, nor do Hosted Collectors have physical requirements since they're hosted by Sumo Logic in AWS.
+Unlike Installed Collectors, [Hosted Collectors](/docs/send-data/hosted-collectors/) do not require installation or activation, nor do Hosted Collectors have physical requirements since they're hosted by Sumo Logic in AWS.
 
 Because there are no performance issues to consider, you can configure as many Sources as you'd like, up to 1,000, for a single Hosted Collector. Consider setting up more than one Hosted Collector if you'd like to tag different data types with different metadata.
 
@@ -156,23 +178,27 @@ If you have additional questions, a [Sumo Logic sales representative](https://w
 
 Depending on the method you'd like to collect logs, and the types of logs you'd like to collect, Sumo Logic has two types of Collectors you can choose from. Learn how to choose your collector that's right for your environment through our video, "Choosing Your Collector Type".
 
-<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+:::sumo Micro Lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/iac5fqlnk4?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Choosing Your Collector Type Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 The following table shows the major differences between them.
 
 | Installed Collector | Hosted Collector |
 |:--|:--|
 | <ul><li>Installed on a system within your deployment locally or remotely.</li><li>Sources collect data available in your deployment.</li><li>Easy to troubleshoot based on Collector logs.</li><li>Supports using Local Configuration File Management so you can use JSON files to configure Sources.</li></ul> | <ul><li>Hosted by Sumo Logic. Agentless: no software to install or activate on a system in your deployment.</li><li>Hosts Sources to collect seamlessly from AWS, Google, and Microsoft products.</li><li>Can receive logs and metrics uploaded via a URL.</li></ul> |
-
 
 
 ## Sumo Logic Sources
@@ -190,16 +216,21 @@ When registering a Collector, you also have the option of [configuring the Coll
 The maximum number of Sources allowed on a Collector is 1,000.
 :::
 
-<Iframe url="https://www.youtube.com/embed/CfWXz6UkpIc"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+:::sumo Micro Lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/tzmrnrx0cf?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Adding a Source Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 ### Allowlisting Sources that collect from AWS 
 

@@ -4,11 +4,9 @@ title: AWS CloudTrail Logs
 description: Parse the common fields in your AWS CloudTrail Logs using the FER template.
 ---
 
-
 **Log Type**: AWS CloudTrail
 
-**Template Description**: Parsing the common fields in your AWS
-CloudTrail log.
+**Template Description**: Parsing the common fields in your AWS CloudTrail log.
 
 **Sample Log**:
 
@@ -56,10 +54,10 @@ parse "eventSource\":\"*\"" as event_source
 
 | Field | Description | Example |
 |:--|:--|:--|
-| event_source | The service that the request was made to | IAM |
-| source_ipaddress | The IP address that the request was made from | 34.87.4.6 |
-| event_name | The requested action, which is one of the actions in the API for that service | GetAccountPasswordPolicy |
-| aws_Region | The AWS region that the request was made to | us-west-2 |
-| user | The friendly name of the identity that made the call | bsmith |
+| event_source | The service that the request was made for. | IAM |
+| source_ipaddress | The IP address from which the request was made. | `34.87.4.6` |
+| event_name | Describes the requested action, which is one of the actions in the API for the respective service. | GetAccountPasswordPolicy |
+| aws_Region | The AWS region that the request was made for. | us-west-2 |
+| user | The friendly name of the identity that made the call. | bsmith |
 
  

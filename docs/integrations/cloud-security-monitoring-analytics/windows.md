@@ -9,15 +9,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Thumbnail icon" width="85"/>
 
-The Cloud Security Monitoring & Analytics for Windows App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
+The Cloud Security Monitoring & Analytics for Windows app offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
-This section provides instructions for configuring log collection for the Windows - Cloud Security Monitoring and Analytics App.
+This section provides instructions for configuring log collection for the Windows - Cloud Security Monitoring and Analytics app.
 
-## Log Types
+## Log types
 
-The Windows - Cloud Security Monitoring and Analytics App uses Windows Security Event and System Event logs. It does not work with third-party logs.
+The Windows - Cloud Security Monitoring and Analytics app uses Windows Security Event and System Event logs. It does not work with third-party logs.
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {
@@ -57,7 +57,7 @@ The Windows - Cloud Security Monitoring and Analytics App uses Windows Security 
 }
 ```
 
-### Sample Query
+### Sample queries
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
@@ -69,7 +69,7 @@ _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit
 | count by msg_summary | sort by _count, msg_summary asc
 ```
 
-## Collecting Logs for Windows Cloud Security Monitoring and Analytics
+## Collecting logs for Windows Cloud Security Monitoring and Analytics
 
 ### Configure a Collector and a Source
 
@@ -85,101 +85,106 @@ To configure a collector and source, do the following:
 For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/local-windows-event-log-source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/remote-windows-event-log-source).
 
 
-## Installing the Windows Cloud Security App
+## Installing the Windows Cloud Security app
 
-This section provides instructions for installing the Cloud Security Monitoring & Analytics for Windows App, along with examples of each of the App dashboards. The Cloud Security Monitoring & Analytics for Windows App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-Now that you have set up collection, install the Cloud Security Monitoring & Analytics for Windows App to use the pre-configured searches and dashboards that provide insight into your data.  
+<AppInstall2/>
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Windows Cloud Security dashboards​
 
-## Viewing Windows Security Dashboards
+import FilterDashboards from '../../reuse/filter-dashboards.md';
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+<FilterDashboards/>
 
+### Inventory
 
-### Security Monitoring - Inventory
-
-**Windows - Security Monitoring - Inventory**: Utilize this dashboard to quickly assess system inventory and recent system reboots/restarts in order to understand device activity within your environment.
+The **Windows - Security Monitoring - Inventory** dashboard helps you to quickly assess system inventory and recent system reboots/restarts in order to understand device activity within your environment.
 
 **Use case:** System inventory and system boots are leading indicators of potential security threats to be aware of, and that may require further attention.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Monitoring-Inventory.png')} alt="Windows cloud Security Analytics dashboards" />
 
+### Critical Events
 
-### Security Monitoring - Critical Events
-
-**Windows - Security Monitoring - Critical Events**: When audit logs are tampered, services are stopped, and ingestion delays go above ten seconds, these are all good indicators that there are action items to be taken to resolve issues within your Windows machines.
+The **Windows - Security Monitoring - Critical Events** dashboard helps you when the audit logs are tampered, services are stopped, and ingestion delays go above ten seconds, these are all good indicators that there are action items to be taken to resolve issues within your Windows machines.
 
 **Use case:** Evaluating unexpected critical events within Windows infrastructure allows for teams to stay on top of any necessary remedial steps.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Monitoring-Critical-Events.png')} alt="Windows cloud Security Analytics dashboards" />
 
+### Windows Updates
 
-### Security Analytics - Windows Updates
-
-**Windows - Security Analytics - Windows Updates**: Rich visualizations indicate the ongoing flow of Windows updates within your organization, so that engineering teams are made aware of red flags or update schedules that require updating.
+The **Windows - Security Analytics - Windows Updates** dashboard provides rich visualizations to indicate the ongoing flow of Windows updates within your organization, so that engineering teams are made aware of red flags or update schedules that require updating.
 
 **Use case:** Assess overall trend lines via the dashboard, and dive into specific events and event types to understand specific update failures.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-Windows-Updates.png')} alt="Windows cloud Security Analytics dashboards" />
 
-### Security Analytics - Windows Firewall
+### Windows Firewall
 
-**Windows - Security Analytics - Windows Firewall**: This dashboard allows you to view Windows Firewall activity including Firewall Service Events, MPSSVC Rule Level Policy Changes, and Filtering Platform Policy Changes.
+The **Windows - Security Analytics - Windows Firewall** dashboard allows you to view Windows Firewall activity including Firewall Service Events, MPSSVC Rule Level Policy Changes, and Filtering Platform Policy Changes.
 
 **Use case:** Filter by EventID or specific device to analyze traffic patterns within your Windows environments
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-Windows-Firewall.png')} alt="Windows cloud Security Analytics dashboards" />
 
-### Security Analytics - Windows Defender
+### Windows Defender
 
-**Windows - Security Analytics - Windows Defender**: The Windows Defender app is designed to offer visibility into Defender Service Events and Defender Threat Events at the Computer and Trend level.
+The **Windows - Security Analytics - Windows Defender** dashboard is designed to offer visibility into Defender Service Events and Defender Threat Events at the Computer and Trend level.
 
 **Use case:** Understand cross-sections of service events and threat events, filtered down by specific devices to stay ahead of changing attack surfaces.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-Windows-Defender.png')} alt="Windows cloud Security Analytics dashboards" />
 
+### User Group Updates
 
-### Security Analytics - User Group Updates
-**Windows - Security Analytics - User Group Updates**: User Group Updates are generally a good litmus test for a summarized trend of how successfully Windows groups are being updated and on a correct cadence depending on policy requirements.
+The **Windows - Security Analytics - User Group Updates** dashboard provides User Group Updates that are generally a good litmus test for a summarized trend of how successfully Windows groups are being updated and on a correct cadence depending on policy requirements.
 
 **Use case:** Aligning group update schedules to existing policies within your organization, and informing future policy changes as well based on triangulation against security events tied to update changes.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-User-Group-Updates.png')} alt="Windows cloud Security Analytics dashboards" />
 
+### User Authentication
 
-### Security Analytics - User Authentication
-**Windows - Security Analytics - User Authentication**: This dashboard points to snapshots of trends for successful logins as well as unsuccessful logins.
+The **Windows - Security Analytics - User Authentication** dashboard points to snapshots of trends for successful logins as well as unsuccessful logins.
 
 **Use case:** Unsuccessful logins in particular will indicate potential threats including brute-force attempts.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-User-Authentication.png')} alt="Windows cloud Security Analytics dashboards" />
 
+### User Account Changes
 
-### Security Analytics - User Account Changes
-**Windows - Security Analytics - User Account Changes**: The User Account Changes dashboard shows user accounts created, deleted, locked out, as well as password changes for a given account.
+The **Windows - Security Analytics - User Account Changes** dashboard shows user accounts created, deleted, locked out, as well as password changes for a given account.
 
 **Use case:** Begin with the summarized visuals in the left columns, and navigate to the right column details to understand specific computers and subjects involved in the given activity.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-User-Account-Changes.png')} alt="Windows cloud Security Analytics dashboards" />
 
+### TLS Certificates and Secure Channels
 
-### Security Analytics - TLS Certificates and Secure Channels
-
-**Windows - Security Analytics - TLS Certificates and Secure Channels**: This dashboard indicates TLS Certificate and Secure Channel activity and associated computers, trends, and latest events.
+The **Windows - Security Analytics - TLS Certificates and Secure Channels** dashboard indicates TLS Certificate and Secure Channel activity and associated computers, trends, and latest events.
 
 **Use case:** By mapping changes in certificates and associated trends, teams can identify areas of improvement for current TLS Certificate deployments.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-TLS-Certificates-and-Secure-Channels.png')} alt="Windows cloud Security Analytics dashboards" />
 
+### Default Accounts Usage
 
-### Security Analytics - Default Accounts Usage
-
-**Windows - Security Analytics - Default Accounts Usage**: This dashboard allows you to filter Default Accounts Usage by EventID, Computer, SubjectUserName, and TargetUserName.
+The **Windows - Security Analytics - Default Accounts Usage** dashboard allows you to filter Default Accounts Usage by EventID, Computer, SubjectUserName, and TargetUserName.
 
 **Use case:** Honeycomb visuals also point to potential hotspots, or in other words specific computers that may require further attention relative to typical expected behavior within your organization.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-Default-Accounts-Usage.png')} alt="Windows cloud Security Analytics dashboards" />
+
+## Upgrade/Downgrade the Windows Cloud Security app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Windows Cloud Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

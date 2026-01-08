@@ -4,6 +4,8 @@ title: fields Search Operator
 sidebar_label: fields
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `fields` operator allows you to specify which fields to display and their order in the results of a query. Use a fields operator to reduce the "clutter" of a search output that contains fields that aren't completely relevant to your query.
 
 There are two fields operator modes:
@@ -14,7 +16,7 @@ There are two fields operator modes:
 To specify the [order of returned fields](#ordering-fields) you must use the fields operator last, at the end of your query.
 
 :::note
-Fields are not returned in the specified order in Search Job API and Webhook results.
+Fields are not returned in the specified order in [Search Job API](/docs/api/search-job/) and Webhook results.
 :::
 
 ## Allowlist
@@ -30,7 +32,7 @@ _sourceCategory=Apache/Access
 
 The search results would look like this:  
 
-![Fields](/img/search/searchquerylanguage/search-operators/Fields.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Fields.png')} alt="Allowlist mode" style={{border: '1px solid gray'}} width="800" />
 
 Allowlist queries allow all system internal fields (fields prefixed with an underscore "_") to pass.
 
@@ -72,7 +74,7 @@ _sourceCategory=Apache/Access
 
 The search results would look like this:
 
-![Fields_nonaggregate](/img/search/searchquerylanguage/search-operators/Fields_nonaggr.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Fields_nonaggr.png')} alt="Non-aggregate query results" style={{border: '1px solid gray'}} width="800" />
 
 While the same query with an added *count by* statement to make it an aggregate query:
 
@@ -86,7 +88,7 @@ _sourceCategory=Apache/Access
 
 This would provide the following results:
 
-![](/img/reuse/query-search/fields_operator_aggregate.png)
+<img src={useBaseUrl('img/reuse/query-search/fields_operator_aggregate.png')} alt="Aggregate query results" style={{border: '1px solid gray'}} width="200" />
 
 ## Use a Field Name that Contains Spaces or Special Characters
 

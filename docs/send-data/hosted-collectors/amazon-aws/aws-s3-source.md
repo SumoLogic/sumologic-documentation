@@ -6,6 +6,7 @@ description: Add an Amazon S3 Source to upload messages to Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="40"/>
 
@@ -15,14 +16,22 @@ One Amazon S3 Source can collect data from a single S3 bucket. However, you c
 
 For information on S3 performance optimization, see [Request Rate and Performance Considerations](http://docs.aws.amazon.com/AmazonS3/latest/dev/request-rate-perf-considerations.html). 
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an S3 source with the [`sumologic_s3_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/s3_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Compressed data
 
 An S3 Source can collect either plain text or gzip-compressed text. Zip files are not supported.
 
 Data is treated as plain text by default, but gzip decompression will be used if both of the following conditions apply:
 
-1. The target file has a .gz or .gzip extension, or no file extension.
-1. The target file's initial bytes match the gzip file format.
+* The target file has a .gz or .gzip extension, or no file extension.
+* The target file's initial bytes match the gzip file format.
 
 :::important
 Files are transferred in their compressed form and decompressed when ingested. Data volume is calculated by the size of your data decompressed.
@@ -42,6 +51,13 @@ When you create an Amazon Source, you add it to a Hosted Collector. Before creat
 ## Rules
 
 * If you're editing the `Collection should begin` date on a Source the new date must be after the current `Collection should begin` date.
+
+ :::note
+
+ <CollBegin/>
+
+ :::
+
 * Sumo Logic supports log files (S3 objects) that do NOT change after they are uploaded to S3. Support is not provided if your logging approach relies on updating files stored in an S3 bucket. S3 does not have a concept of updating existing files, you can only overwrite an existing file. When this overwrite happens, S3 considers it as a new file object, or a new version of the file, and that file object gets its own unique version ID.
 
     Sumo Logic scans an S3 bucket based on the path expression supplied, or receives an SNS notification when a new file object is created. As part of this, we receive a file name (key) and the object's ID. It's compared against a list of file objects already ingested. If a matching file ID is not found the contents of the file are ingested in full.
@@ -55,50 +71,36 @@ When you create an Amazon Source, you add it to a Hosted Collector. Before creat
 
 Cisco Umbrella offers logging to a Cisco-managed S3 bucket. Collection from these buckets has the following limitations:
 
-* AWS versioned APIs are not supported. The **Use AWS versioned APIs** setting on the Source must be disabled.
-* S3 Event Notifications Integration is not supported.
+* AWS versioned APIs are not supported. The **Use AWS versioned APIs** setting on the Source must be disabled.
+* S3 Event Notifications Integration is not supported, so you cannot use an SNS subscription endpoint.
 * Access must be provided with an Access ID and Key. Role-based access is not supported.
 * Use a prefix in the path expression so it doesn't point to the root directory.
+* Ensure that your path expression ends in `/*`. Otherwise, you will get a ListBucket error. For example:
+  * Bucket Name: `cisco-managed-us-east-1`
+  * Path Expression: `987654321_12e34c..../*`
 
 ## S3 Event Notifications Integration
 
 Sumo’s S3 integration combines scan-based discovery and event based discovery into a unified integration that gives you the ability to maintain a low-latency integration for new content and provide assurances that no data was missed or dropped. When you enable event based notifications S3 will automatically publish new files to Amazon Simple Notification Service (SNS) topics which Sumo Logic can be subscribed. This notifies Sumo Logic immediately when new files are added to your S3 bucket so we can collect them. For more information about SNS, see the [Amazon SNS product](https://aws.amazon.com/sns/) detail page.
 
-![Cloud_AWS_icon.png](/img/send-data/Cloud_AWS_icon.png)
+<img src={useBaseUrl('img/send-data/Cloud_AWS_icon.png')} alt="Diagram of AWS and Sumo Logic integration for S3 object notifications" width="600" />
 
 Enabling event based notifications is an S3 bucket-level operation that subscribes to an SNS topic. An SNS topic is an access point that Sumo Logic can dynamically subscribe to in order to receive event notifications. When creating a Source that collects from an S3 bucket Sumo assigns an endpoint URL to the Source. The URL is for you to use in the AWS subscription to the SNS topic so AWS notifies Sumo when there are new files. See [Configuring Amazon S3 Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) for more information.
 
 You can adjust the configuration of when and how AWS handles communication attempts with Sumo Logic. See [Setting Amazon SNS Delivery Retry Policies](https://docs.aws.amazon.com/sns/latest/dg/DeliveryPolicies.html) for details.
 
-<Iframe url="https://www.youtube.com/embed/2vtjPfHQK1Q"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe';
-
 ## Create an Amazon S3 Source
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
 1. Select **Amazon S3**.
 1. Enter a name for the new Source. A description is optional.
 1. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account. Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](collection-aws-govcloud.md) for details.
-1. **Use AWS versioned APIs**? Select **Yes** to collect from buckets where versioning is enabled. This uses the list-object-versions and get-object-version Amazon S3 APIs. Selecting **Yes** requires your credentials to have **ListObjectVersions** and **GetObjectVersion** permissions.
-
-    ![versioned apis options.png](/img/send-data/versioned-apis-options.png)
-
-1. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example:
-
-    ![img](/img/send-data/S3_Bucket.png)
-
+1. **Use AWS versioned APIs**? Select **Yes** to collect from buckets where versioning is enabled. This uses the list-bucket-versions and get-object-version Amazon S3 APIs. Selecting **Yes** requires your credentials to have **ListBucketVersions** and **GetObjectVersion** permissions.<br/><img src={useBaseUrl('img/send-data/versioned-apis-options.png')} alt="Radio button selection for using AWS versioned APIs" style={{border: '1px solid gray'}} width="500" />
+1. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example:<br/><img src={useBaseUrl('img/send-data/S3_Bucket.png')} alt="List of buckets and objects in AWS S3" style={{border: '1px solid gray'}} width="800" />
 1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a multiple wildcard. Do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details.
+
+   Following is an example of a managed S3 bucket's name and path expression entered in the dialog. Together they comprise an S3 bucket data path. For more information, see [S3 Bucket Data Path](https://docs.umbrella.com/deployment-umbrella/docs/cisco-managed-s3-bucket#s3-bucket-data-path) in the Cisco documentation. <br/><img src={useBaseUrl('img/send-data/bucket-name-and-path-expression.png')} alt="Input fields for Bucket Name and Path Expression in Sumo Logic." style={{border: '1px solid gray'}} width="600" />
 1. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
 
    * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”.
@@ -108,18 +110,23 @@ import Iframe from 'react-iframe';
     If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
     :::
 
+    :::note
+    <CollBegin/>
+    :::
+
 1. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.)
 1.  **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+     :::note
+     If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM: 
+     * Click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM. 
+     * Also add another field named `_parser` with value for the AWS parser you want to use for the forwarded data. For example, if you want to use the data for AWS Application Load Balancer enter `/Parsers/System/AWS/AWS ALB`, for AWS Network Firewall enter `/Parsers/System/AWS/AWS Network Firewall`, or for AWS VPC Flow enter `/Parsers/System/AWS/AWS VPC Flow`.
+     :::
 
 1. For **AWS** **Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md). If you're collecting from a Cisco Umbrella bucket you must use **Key access**.
 
-   * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role. 
-
-        ![Role based access input roleARN.png](/img/send-data/Role-based-access-input-roleARN.png)
-
+   * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role. <br/><img src={useBaseUrl('img/send-data/Role-based-access-input-roleARN.png')} alt="AWS Access method selection screen with role-based access" style={{border: '1px solid gray'}} width="500" />
    * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 
 1. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
@@ -135,7 +142,7 @@ import Iframe from 'react-iframe';
 
         To set up the subscription you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click on **Create URL** and use the provided endpoint URL when creating your subscription in step C.     
 
-    ![SNS create URL button.png](/img/send-data/SNS-create-URL-button.png)
+    <img src={useBaseUrl('img/send-data/SNS-create-URL-button.png')} alt="Log File Discovery settings with Create URL button highlighted" style={{border: '1px solid gray'}} width="500" />
 
 ### Set up SNS in AWS (Highly Recommended)
 
@@ -177,7 +184,7 @@ The following steps use the Amazon SNS Console. You may instead use AWS CloudFo
 
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
 
-     * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be     determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+     * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be     determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
      * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference for more information.
 
    * **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:
@@ -190,17 +197,15 @@ The following steps use the Amazon SNS Console. You may instead use AWS CloudFo
 
 ### SNS with one bucket and multiple Sources
 
-    :::important
-    S3 Event Notifications do not allow you to have overlapping suffixes in two rules if the prefixes are overlapping for the same event type.
-
-    In this scenario, you will likely need to have a single Event Notification for the suffix that sends to an SNS Topic, and then have multiple SNS Subscriptions to the same Topic. This will allow you to have parallel data streams for the same Event Notifications (i.e., one that points to a Sumo Endpoint, and one that points elsewhere).
-    :::
+:::important
+S3 Event Notifications do not allow you to have overlapping suffixes in two rules if the prefixes are overlapping for the same event type. In this scenario, you will likely need to have a single Event Notification for the suffix that sends to an SNS Topic, and then have multiple SNS Subscriptions to the same Topic. This will allow you to have parallel data streams for the same Event Notifications (i.e., one that points to a Sumo Endpoint, and one that points elsewhere).
+:::
 
 When collecting from one Amazon S3 bucket with multiple Sumo Sources, you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo would collect your objects multiple times.
 
 Each topic needs a separate filter (prefix/suffix) so that collection does not overlap. For example, the following image shows a bucket configured with two notifications that have filters (prefix/suffix) set to notify Sumo separately about new objects in different folders.
 
-![S3 bucket two notifications for SNS.png](/img/send-data/S3-bucket-two-notifications-for-SNS.png)
+<img src={useBaseUrl('img/send-data/S3-bucket-two-notifications-for-SNS.png')} alt="Events filter settings for SNS notifications in AWS S3" style={{border: '1px solid gray'}} width="400" />
 
 ### Update Source to use S3 Event Notifications
 
@@ -208,7 +213,7 @@ Each topic needs a separate filter (prefix/suffix) so that collection does not o
 There is a [community supported script](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo-Logic-Tools/Event_Based_S3_Automation) available that configures event based object discovery on existing AWS Sources.
 :::
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 13.C when creating your subscription.
 1. Complete steps 13.B through 13.E for [configuring SNS Notifications](#set-up-sns-in-aws-highly-recommended).
 
@@ -216,7 +221,7 @@ There is a [community supported script](https://github.com/SumoLogic/sumologic-
 
 In the web interface under **Log File Discovery** it shows a red exclamation mark with "Sumo Logic has not received a validation request from AWS".  
 
-![SNS error](/img/send-data/SNS-red-tick-mark.png)
+<img src={useBaseUrl('img/send-data/SNS-red-tick-mark.png')} alt="SNS error" style={{border: '1px solid gray'}} width="300" />
 
 Steps to troubleshoot:
 
@@ -226,7 +231,7 @@ Steps to troubleshoot:
 
 In the web interface under **Log File Discovery** it shows a green check with "Sumo Logic has received an AWS validation request at this endpoint." but you still have high latencies.  
 
-![SNS green tick mark](/img/send-data/sns-green-tick.png)
+<img src={useBaseUrl('img/send-data/sns-green-tick.png')} alt="NS green tick mark" style={{border: '1px solid gray'}} width="400" />
 
 The green check confirms that the endpoint was used correctly, but it does not mean Sumo is receiving notifications successfully.
 

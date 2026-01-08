@@ -4,7 +4,7 @@ title: base64Decode Search Operator
 sidebar_label: base64Decode
 ---
 
-The `base64Decode` operator takes a base64 string and converts it to an ASCII string. Input must be a valid base64 string. Invalid input is returned unaltered.
+The `base64Decode` operator takes a base64 string and converts it to ASCII or non-ASCII string. Input must be a valid base64 string. Invalid input is returned unaltered.
 
 ## Syntax
 
@@ -36,3 +36,11 @@ The following example returns `V` with a value of `http://codec.apache.org/comm
 The following example returns `V` with a value of `This is a test string`:
 
 `| base64Decode("VABoAGkAcwAgAGkAcwAgAGEAIAB0AGUAcwB0ACAAcwB0AHIAaQBuAGcA", "UTF-16LE") as V`
+
+The Base64Decode function supports decoding non-ASCII characters in addition to ASCII. The following example returns `V` with a value of `ありがと ございます`:
+
+`| base64Decode("44GC44KK44GM44GoIOOBlOOBluOBhOOBvuOBmQ==") as V`
+
+:::note
+Make sure that the decoding format you are using matches the one you used for encoding.
+:::

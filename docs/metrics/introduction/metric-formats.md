@@ -34,7 +34,7 @@ In the metric above: 
 * The timestamp for the instant that the metric was measured is 1460061337.
 
 :::tip
-You can use Sumo's metric rules editor to tag metrics with key-value pairs derived from a Graphite metric’s `metric_path`. Then, you can use those key-value pairs in metric queries. For more information, see [About Metric Rules](/docs/metrics/metric-rules-editor#about-metric-rules).
+You can use Sumo's metric rules editor to tag metrics with key-value pairs derived from a Graphite metric’s `metric_path`. Then, you can use those key-value pairs in metric queries. For more information, see [About Metric Rules](/docs/metrics/metric-rules-editor#about-metrics-rules).
 :::
 
 ### Inferred metric name
@@ -97,7 +97,7 @@ cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  97.29 1460061337
 
 ### Mandatory metric name
 
-Unlike Prometheus, Carbon 2.0 format doesn't enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic requires a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo Logic and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Halth Events, see [About Health Events](docs/manage/health-events#health-events)).
+Unlike Prometheus, Carbon 2.0 format doesn't enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic requires a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo Logic and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Health Events, see [Health Events](/docs/manage/health-events)).
 
 For example, the following metric will be correctly ingested to Sumo Logic:
 ```

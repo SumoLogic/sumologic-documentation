@@ -1,43 +1,41 @@
 ---
 id: cloudtrail-pci-compliance
 title: PCI Compliance For AWS CloudTrail
-description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for AWS CloudTrail App offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
+description: The Sumo Logic app for Payment Card Industry (PCI) Compliance for AWS CloudTrail app offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
 
-The Sumo Logic App for Payment Card Industry (PCI) Compliance for AWS CloudTrail App offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. The PCI Compliance for AWS CloudTrail App covers PCI requirements 02, 07, 08 and 10.
+The Sumo Logic app for Payment Card Industry (PCI) Compliance for AWS CloudTrail app offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. The PCI Compliance for AWS CloudTrail app covers PCI requirements 02, 07, 08 and 10.
 
 
+## Collecting logs for the PCI Compliance for AWS CloudTrail app
 
-## Collecting Logs for the PCI Compliance for AWS CloudTrail App
-
-This section provides instructions for collecting logs for the the PCI Compliance for AWS CloudTrail App.
+This section provides instructions for collecting logs for the the PCI Compliance for AWS CloudTrail app.
 
 To configure an AWS CloudTrail Source, do the following:
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
 2. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) in your AWS account.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source) to Sumo Logic.
-5. Install the Sumo Logic App for [PCI Compliance for AWS CloudTrail](#installing-the-pci-compliance-for-aws-cloudtrail-app).
+5. Install the Sumo Logic app for [PCI Compliance for AWS CloudTrail](#installing-the-pci-compliance-for-aws-cloudtrail-app).
 
 
-## Installing the PCI Compliance for AWS CloudTrail App
+## Installing the PCI Compliance for AWS CloudTrail app
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for AWS CloudTrail to use the preconfigured searches and [dashboards](#viewing-pci-compliance-for-aws-cloudtrail-dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic app for PCI Compliance for AWS CloudTrail to use the preconfigured searches and [dashboards](#viewing-pci-compliance-for-aws-cloudtrail-dashboards) that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstallV2/>
 
 ## Viewing PCI Compliance for AWS CloudTrail Dashboards
 
-The Sumo Logic PCI Compliance for AWS CloudTrail App provides dashboards and sample queries that you can modify for your specific compliance needs.
-* Access Monitoring
-* Login Activity
-* Account and System Monitoring
-* Privileged Activity
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
+<ViewDashboards/>
 
 ### PCI Req 01 - Access Monitoring
 
@@ -102,7 +100,7 @@ See the successful and failed configuration changes, policy changes, and securit
 * **Successful Configuration Changes.** Aggregation table of the successful configuration changes over the last 24 hours.
 
 #### Failed Configuration Changes
-* **Failed Configuration Changes. **Pie chart of the failed configuration changes over the last 24 hours.
+* **Failed Configuration Changes.** Pie chart of the failed configuration changes over the last 24 hours.
 * **Failed Configuration Changes.** Aggregation table of the failed configuration changes over the last 24 hours.
 
 #### Security Groups
@@ -110,7 +108,7 @@ See the successful and failed configuration changes, policy changes, and securit
 * **Deleted Security Groups.** Aggregation table of security groups created in the last 24 hours.
 * **Operation Failure - Authorize, Revoke Security Groups Ingress, Egress Rules**. See the details of failed events - authorize security group ingress, authorize security group egress, revoke security group ingress, and revoke security group egress, in the last 24 hours, including the event time, event name, user, group ID, account ID, error code, error message, and source IP address.
 * **Operation Success - Authorize, Revoke Security Groups Ingress, Egress Rules**. See the details of successful events - authorize security group ingress, authorize security group egress, revoke security group ingress, and revoke security group egress, in the last 24 hours, including the event time, event name, user, group ID, account ID, AWS region, and source IP address.
-* **Security Group Activity Over Time. **Histogram of security group activity over the last 24 hours time sliced by hour.
+* **Security Group Activity Over Time.** Histogram of security group activity over the last 24 hours time sliced by hour.
 
 #### Policy Operations
 * **Failed Policy Changes**. See the details of failed policy changes, in the last 24 hours, including the event time, event name, event source, policy name, user, account ID, AWS region, source IP address, error code, and error message.

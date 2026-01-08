@@ -4,10 +4,12 @@ title: ipv4ToNumber Search Operator
 sidebar_label: ipv4ToNumber
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `ipv4ToNumber` operator allows you to convert an Internet Protocol version 4 (IPv4) IP address from the octet dot-decimal format to a decimal format. This decimal format makes it easier to compare one IP address to another, rather than relying on IP masking.
 
 :::tip
-The [CIDR operator](cidr.md) allows you to leverage CIDR (Classless Inter-Domain Routing) notation to narrow the analysis of IPv4 networks to specific subnets.
+The [CIDR operator](cidr.md) allows you to leverage _Classless Inter-Domain Routing_ (CIDR) notation to narrow the analysis of IPv4 networks to specific subnets.
 :::
 
 ## Syntax
@@ -35,7 +37,7 @@ _sourceCategory=service remote_ip
 
 would produce results like:
 
-![ipv4](/img/reuse/query-search/ipv4ToNumber.png)
+<img src={useBaseUrl('img/reuse/query-search/ipv4ToNumber.png')} alt="ipv4" style={{border: '1px solid gray'}} width="400" />
 
 ### Detect the IP range for a single user
 
@@ -54,4 +56,4 @@ _sourceCategory=service remote_ip
 
 would produce results like:
 
-![ipv4ToNumber](/img/search/searchquerylanguage/search-operators/ipv4ToNumber.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/ipv4ToNumber.png')} alt="ipv4ToNumber" style={{border: '1px solid gray'}} width="400" />

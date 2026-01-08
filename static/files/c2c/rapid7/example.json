@@ -1,0 +1,17 @@
+{
+    "api.version": "v1",
+    "source": {
+      "config": {
+        "name": "Rapid7",
+        "description": "Test Source",
+        "category": "source_category",
+        "env": "dev",
+        "region": "us",
+        "apiKey": "215c96c6-19a6-48e9-955f-253593xxxxxx"
+      },
+      "schemaRef": {
+        "type": "Rapid7"
+      },
+      "sourceType": "Universal"
+    }
+  }

@@ -39,7 +39,7 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 | [Docker](https://github.com/SumoLogic/sumologic-collector-docker) | This repository offers several variants of Docker images to run the Sumo Logic Collector. When images are run, the Collector automatically registers with the Sumo Logic service and create sources based on a sumo-sources.json file. The Collector is configured ephemeral. |
 | [FluentD](https://github.com/SumoLogic/fluentd-output-sumologic) | This plugin sends logs or metrics to Sumo Logic via an HTTP endpoint.  |
 | [JavaScript Logging SDK](https://github.com/SumoLogic/js-sumo-logger) | The JavaScript Logging SDK library enables you to send custom log messages to an HTTP Source without installing a Collector on your server. |
-| [Jenkins](https://github.com/SumoLogic/sumologic-jenkins-plugin) | A Sumo Logic Jenkins plugin. |
+| [Jenkins](https://github.com/jenkinsci/sumologic-publisher-plugin) | A Sumo Logic Jenkins plugin. |
 | [Kinesis](https://github.com/SumoLogic/sumologic-kinesis-connector) | The Kinesis-Sumologic Connector is a Java connector that acts as a pipeline between an Amazon Kinesis stream and a  Sumo Logic Collector. Data is fetched from the Kinesis Stream, transformed into a POJO, and then sent to the Sumologic Collection as JSON. For complete details, see Sumo Logic App for Amazon VPC Flow Logs using Kinesis. |
 | [Logback appender](https://github.com/SumoLogic/sumologic-logback-appender) | This solution is a Logback appender that sends straight to Sumo Logic. |
 | [Logstash](https://github.com/SumoLogic/logstash-output-sumologic) | This solution is a Logstash Sumo Logic output plugin.  |
@@ -56,7 +56,7 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 |:-- |:--|
 | [CollectD](https://github.com/SumoLogic/sumologic-collectd-plugin) | This plugin sends metrics to Sumo Logic via an HTTP endpoint.  |
 | [Prometheus](https://github.com/SumoLogic/sumologic-prometheus-scraper) | The Prometheus Scraper provides a configurable mechanism to send Prometheus formatted metrics to Sumo Logic.  |
-| [StatsD](/docs/send-data/collect-from-other-data-sources/Collect-StatsD-Metrics) | See [Collect StatsD Metrics](collect-statsd-metrics.md) for information. |
+| [StatsD](/docs/send-data/collect-from-other-data-sources/collect-statsd-metrics) | See [Collect StatsD Metrics](collect-statsd-metrics.md) for information. |
 
 ## Tracing Integration Libraries
 

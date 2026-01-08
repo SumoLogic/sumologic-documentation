@@ -1,0 +1,16 @@
+{
+    "api.version": "v1",
+    "source": {
+        "schemaRef": {
+            "type": "LastPass"
+        },
+        "config": {
+            "name": "lastpass",
+            "cid": "*****",
+            "apiSecret": "***********",
+            "timeZone": "UTC",
+            "pollingInterval": 5
+        },
+        "sourceType": "Universal"
+    }
+}

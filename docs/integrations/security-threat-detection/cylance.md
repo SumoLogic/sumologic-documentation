@@ -14,7 +14,7 @@ The Cylance App enables you to analyze Cylance security events by type, status, 
 Cylance applies artificial intelligence, algorithmic science, and machine learning to cyber security, and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the threat events data from Cylance and other data sources, you can reduce your security risk and improve your overall security posture.
 
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Cylance uses the supports the following event and log types:
 * Device (Device Mgmt - Register, Remove, Updates, SystemSecurity)
@@ -29,7 +29,7 @@ The Sumo Logic App for Cylance uses the supports the following event and log typ
 For details on the format and definitions, refer to [Cylance](https://www.cylance.com/) documentation.
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 850 <44>1 2019-02-27T04:57:20.4390000Z sysloghost CylancePROTECT - - - Event Type:
@@ -43,9 +43,7 @@ Threat Classification: Trusted - Local, Device Id: 81-89cec180584-1fede63f-46041
 Policy Name: Allowed Anywhere Internally
 ```
 
-
-
-### Sample Query
+### Sample queries
 
 The following query is from the **Event Name Trend** panel of the **Cylance - AuditLog Dashboard**.
 
@@ -68,7 +66,7 @@ _sourceCategory=*cylance* "Event Type:" AuditLog
 | transpose row _timeslice column event_name
 ```
 
-## Collecting Logs for the Cylance App
+## Collecting logs for the Cylance app
 
 This procedure demonstrates how to collect logs from Cylance into Sumo Logic. Cylance applies artificial intelligence, algorithmic science, and machine learning to cyber security, and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the threat events data from Cylance and other data sources, you can reduce your security risk and improve your overall security posture.
 
@@ -82,11 +80,11 @@ To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a H
 
 ### Step 2: Configure a Source
 
-1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#configure-a-cloudsyslogsource). and configure the following Source fields:
     1. **Name**. (Required) A name is required. Description is optional.
     2. **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources.
 Example: **prod/web/apache/access**.
-For details see [Best Practices](/docs/send-data/best-practices).
+For details, see [Best Practices](/docs/send-data/best-practices).
 2. In the Advanced section, specify the following configurations:
     3. **Enable Timestamp Parsing**. True
     4. **Time Zone**. Logs are in UTC by default
@@ -101,11 +99,9 @@ Copy and paste the **token** in a secure location. You will need this when you c
 Before your can configure Sumo Logic to ingest logs, you must set up remote log streaming on Cylance. For instructions, refer to the following documentation:
 
 1. In Cylance, go to **Settings > Application**.
-
-2. In the **Integrations **section, activate the **Syslog/SIEM** check box.  
+2. In the **Integrations** section, activate the **Syslog/SIEM** check box.  
 3. Under **Event Types**, activate the checkboxes for all events.  
-4. For **SIEM,** select **Sumo Logic** as the destination.
-
+4. For **SIEM**, select **Sumo Logic** as the destination.
 5. For **Protocol,** select TCP.
 6. Activate the check box **TLS/SSL**.
 7. Enter your **IP/Domain**.
@@ -198,27 +194,21 @@ _sourceCategory=*cylance* "Event Type:" AppControl
 SHA256: *" as event_name, device_name, ip_address, action, action_type, filepath, sha nodrop
 ```
 
+## Installing the Cylance app
 
-## Installing the Cylance App
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-This section demonstrates how to install the Cylance App, as well as providing examples of each of the dashboards. The App preconfigured searches and dashboards provide easy-to-access analytic visualizations of your data.
+<AppInstall2/>
 
-Now that you have set up log collection for Cylance, you can install the Cylance App.
+## Viewing Cylance dashboards
 
-{@import ../../reuse/apps/app-install.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-## Viewing Cylance Dashboards
-
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
+<ViewDashboards/>
 
 ### Overview
 
-The **Cylance - Overview Dashboard** a high-level view of threat incidents experienced on your network. The dashboard panels provide at-a-glance graphs with details and analytics on exploit control violation types, zones, threat classifications, devices, threat file types, event types and trends, event outliers, and event time compare trends.
+The **Cylance - Overview** dashboard povides a high-level view of threat incidents experienced on your network. The dashboard panels provide at-a-glance graphs with details and analytics on exploit control violation types, zones, threat classifications, devices, threat file types, event types and trends, event outliers, and event time compare trends.
 
 Use this dashboard to:
 * Analyze summaries of each prevention component, such as script control, memory exploit protection, device control, application control, AI based threat classification, and user actions performed from Cylance Web Console.
@@ -228,7 +218,7 @@ Use this dashboard to:
 
 ### Threat
 
-The **Cylance - Threat Dashboard** provides a high-level view of the threats experienced on your network. Dashboard panels display graphs and detailed information with the number of events, top event names, status, file types, unique threats, severity, hosts with the most threats, threat origination, classification, and blocked threats.
+The **Cylance - Threat** dashboard provides a high-level view of the threats experienced on your network. Dashboard panels display graphs and detailed information with the number of events, top event names, status, file types, unique threats, severity, hosts with the most threats, threat origination, classification, and blocked threats.
 
 Use this dashboard to:
 * Determine hosts (IP Address, device names) and zones affected by various threats identified and handled in the system.
@@ -239,7 +229,7 @@ Use this dashboard to:
 
 ### Threat Classification
 
-The **Cylance - Threat Classification Dashboard** provides an insightful view of the types of threats experienced on your network. Dashboard panels are a mixture of graphs and detailed information on events, event names, threat class, subclass trends, safe files, malware files, and an event breakdown.
+The **Cylance - Threat Classification** dashboard provides an insightful view of the types of threats experienced on your network. Dashboard panels are a mixture of graphs and detailed information on events, event names, threat class, subclass trends, safe files, malware files, and an event breakdown.
 
 Use this dashboard to:
 * Determine how threats in your organization are analyzed and classified by Cylance Research Team.
@@ -251,7 +241,7 @@ Use this dashboard to:
 
 ### Memory Exploit Attempts
 
-The **Cylance - Memory Exploit Attempts Dashboard** provides a high-level view of threats on your network that attempt to exploit memory. Dashboard panels show detailed information on events, violations, blocked and terminated processes, policies, users, hosts, actions, and event trends by action.
+The **Cylance - Memory Exploit Attempts** dashboard provides a high-level view of threats on your network that attempt to exploit memory. Dashboard panels show detailed information on events, violations, blocked and terminated processes, policies, users, hosts, actions, and event trends by action.
 
 Whenever the agent detects certain hard-coded behaviors considered to be indicative of a compromise, an event is communicated to the service before the hooked API function is allowed to complete. The service then responds with an action for the agent to take, such as:
 
@@ -270,7 +260,7 @@ Use this dashboard to:
 
 ### Device
 
-The **Cylance - Device Dashboard** provides insights into the devices on your network that receive in threats. Dashboard panels provide information on unique device names, IP addresses, MAC addresses, users, hosts, operating systems, event names, and event trends.
+The **Cylance - Device** dashboard provides insights into the devices on your network that receive in threats. Dashboard panels provide information on unique device names, IP addresses, MAC addresses, users, hosts, operating systems, event names, and event trends.
 
 Use this dashboard to:
 * Analyze devices under protection by Cylance agent.
@@ -283,7 +273,7 @@ Use this dashboard to:
 
 ### Device Control
 
-The **Cylance - Device Control Dashboard** provides insights into external devices involved in threats on your network. Dashboard panels provide graphs and detailed information on events, hosts, unique external devices, event and action trends, and device control event details.
+The **Cylance - Device Control** dashboard provides insights into external devices involved in threats on your network. Dashboard panels provide graphs and detailed information on events, hosts, unique external devices, event and action trends, and device control event details.
 
 Use this dashboard to:
 * Monitor external devices (like USB mass storage device) connected to your environment.
@@ -299,7 +289,7 @@ You can set an exception for a Vendor ID. Use a Product ID and Serial Number for
 
 ### Script Control
 
-The **Cylance - Script Control Dashboard** provides insights regarding scripts on your network. Dashboard panels provide graphs and detailed information on events, devices, interpreters, users, zones, hosts, files, and event trends.
+The **Cylance - Script Control** dashboard provides insights regarding scripts on your network. Dashboard panels provide graphs and detailed information on events, devices, interpreters, users, zones, hosts, files, and event trends.
 
 Script control injects into a script interpreter (responsible for the execution of scripts). By injecting into the interpreter, the agent is able to detect the script and script path before the script is executed.
 
@@ -316,10 +306,22 @@ Use this dashboard to:
 
 ### AuditLog
 
-The **Cylance - AuditLog Dashboard** has easy to access information about audit logs for your network. Dashboard panels provide high-level graphs and detailed information showing the number of events, event names and trends, users and user geographic locations, source IPs, and a list of recent events.
+The **Cylance - AuditLog** dashboard has easy to access information about audit logs for your network. Dashboard panels provide high-level graphs and detailed information showing the number of events, event names and trends, users and user geographic locations, source IPs, and a list of recent events.
 
 Use this dashboard to:
 * Monitor user activity performed from Cylance Web Console.
 * Monitor users overriding, updating policies manually using Cylance Web Console.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Cylance-AuditLog.png')} alt="Cylance dashboards" />
+
+## Upgrade/Downgrade the Cylance app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Cylance app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

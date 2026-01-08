@@ -1,0 +1,19 @@
+{
+    "api.version": "v1",
+    "source": {
+        "config": {
+            "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZABC",
+            "accessToken": "ABCDEFGH",
+            "description": "ABCDEFGHIJKLMNOPQRSTUV",
+            "category": "ABCDEFGHIJKLMNOPQRSTUVWX",
+            "dataCollection": [
+                "cases",
+	        "threats"
+            ]
+        },
+        "schemaRef": {
+            "type": "Abnormal Security"
+        },
+        "sourceType": "Security"
+    }
+}

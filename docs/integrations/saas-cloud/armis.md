@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Armis offers enhanced visibility into both alerts and device data, making it easier to monitor and manage your device security. The app features dashboards that analyze alerts by severity, status, and type, providing a clear picture of the trend of alerts over time. Additionally, the app allows you to monitor devices by risk level, type, and category, and provides a table view of the latest devices with key information to keep your IT infrastructure secure.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Armis gathers log information from the following two sources.
 
@@ -55,13 +55,11 @@ The Sumo Logic App for Armis gathers log information from the following two sour
 | `site` | String | The site of the device. |
 
 
-### Sample Log Messages
+### Sample log messages
 
 This section contains log messages for both Alerts and Device sources. It helps in monitoring activity and resolving issues.
 
-**Sample Alerts Log Messages**
-
-```json
+```json title="Sample Alerts Log Messages"
 {
  "data": {
    "count": 10,
@@ -93,9 +91,7 @@ This section contains log messages for both Alerts and Device sources. It helps 
 }
 ```
 
-**Sample Device Log Messages**
-
-```json
+```json title="Sample Device Log Messages"
 {
    "data": {
      "count": 83,
@@ -164,7 +160,7 @@ This section contains log messages for both Alerts and Device sources. It helps 
  }
 ```
 
-### Sample Queries
+### Sample queries
 
 This section contains the sample queries of both the `Alerts` and `Device`.
 
@@ -187,28 +183,57 @@ _sourceCategory=ArmisDashboards id
 | count_distinct(id)
 ```
 
-## Collecting Logs for Armis API
+## Collection configuration and app installation
 
-This section explains how to collect logs from Armis API and ingest them into Sumo Logic. Refer to the [Armis API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source/) to create the source and use the same source category while installing the app.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Armis App
+<CollectionConfiguration/>
 
-{@import ../../reuse/apps/app-install.md}
+:::important
+Use the [Cloud-to-Cloud Integration for Armis](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Armis app is properly integrated and configured to collect and analyze your Armis data.
+:::
 
-## Viewing the Armis Dashboards​
+### Create a new collector and install the app
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
+<AppCollectionOPtion1/>
 
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+### Use an existing collector and install the app
 
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-### Alerts Overview Dashboard
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing the Armis dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+### Alerts Overview
 
 **Armis - Alerts Overview** dashboard. The dashboard provides a comprehensive analysis of alerts, by categorizing them based on their severity, status, type, and presenting a trend of alerts over a specified period of time.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Armis-Alerts-Overview.png')} alt="Armis-Alerts-Overview.png" width="600"/>
 
 
-### Device Overview Dashboard
+### Device Overview
 
 **Armis - Device Overview** dashboard. The dashboard provides a table view of last-seen devices with key information to protect your IT infrastructure and offers visibility into devices based on risk levels, types, and categories.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Armis-Device-Overview.png')} alt="Armis-Alerts-Overview.png" width="600"/>
+
+## Upgrade/Downgrade the Armis app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Armis app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

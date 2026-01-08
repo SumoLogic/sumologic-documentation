@@ -7,7 +7,7 @@ description: The following searches were built for use with the Microsoft IIS Pa
 
 These suggested searches cover some of the most common scenarios for monitoring Security, Audit, and Performance issues on a Linux server. You can enter these queries into the Search box as a starting baseline, and then customize the queries for your system.
 
-These are written assuming the messages are parsed by our out-of-the-box IIS W3C access log parser (i.e. parse using public/iis).
+These are written assuming the messages are parsed by our out-of-the-box IIS W3C access log parser (for example, parse using public/iis).
 
 ## HTTP Status Code Summary Over Time
 
@@ -32,7 +32,12 @@ Returns the top 100 URLs that refer to a resource (that does not exist on the we
 
 * Suggested Time Range: -1d
 
-`_sourceCategory=*IIS* "404" | parse using public/iis | where sc_status matches "404" | count_frequent cs_uri_stem | limit 100`
+```sql
+_sourceCategory=*IIS* "404"
+| parse using public/iis
+| where sc_status matches "404" 
+| count_frequent cs_uri_stem | limit 100
+```
 
 ## Traffic Volume Served Per Day
 

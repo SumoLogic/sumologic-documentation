@@ -5,10 +5,12 @@ sidebar_label: Share a Metric Query
 description: Share a saved or unsaved metric query.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 There are two ways you can share a metric query with other Sumo users:
 
 * You can share a saved metric query with one or more roles, users, or a combination of roles and individual users. When you share a saved metric query, you can set the sharing permission level to View, Edit, or Manage, and also apply advanced sharing options.
-* You can also share an unsaved metric query. After you run a metric query you can obtain a URL for the chart and send it to other users so that they can view the chart. Anyone in your org with access to the URL can view the chart. When you share an unsaved metric query in this fashion, you can't grant Edit or Manage permissions, or any of the advanced options available when sharing a saved query. 
+* You can also share an unsaved metric query. After you run a metric query you can obtain a URL for the chart and send it to other users so that they can view the chart. Anyone in your org with access to the URL can view the chart. When you share an unsaved metric query in this fashion, you cannot grant Edit or Manage permissions, or any of the advanced options available when sharing a saved query. 
 
 ## Share a saved metric query
 
@@ -18,14 +20,8 @@ Logic Library. 
 ### Share a metric query from the query tab
 
 1. If you have not already saved the query, save it by clicking the save icon. 
-1. Click the sharing icon.  
-
-    ![sharing-icon.png](/img/metrics/sharing-icon.png)
-
-1. The sharing popup appears.  
-
-    ![sharing-popup.png](/img/metrics/sharing-popup.png)
-
+1. Click the sharing icon. <br/><img src={useBaseUrl('img/metrics/sharing-icon.png')} alt="Sharing icon" style={{border: '1px solid gray'}} width="800" />
+1. The sharing popup appears. <br/><img src={useBaseUrl('img/metrics/sharing-popup.png')} alt="Sharing popup" style={{border: '1px solid gray'}} width="800" />
 1. **Users and Roles**. Enter the user names and/or roles to receive access. For example, if you want all share the query with all users that have the Analyst role, enter Analyst.
 1. **Access**. Choose the level of access to grant: **View**, **Edit**, or **Manage**.
 1. **Advanced Access** (Optional).You can further refine access to the dashboard by setting a permission level. For details on these options, see [Available Permission Levels](#available-permission-levels).
@@ -62,14 +58,11 @@ After you run a metric query you can obtain a URL for the chart and send it to o
 1. On the **Share Metrics Search** popup:
     1. Select a time range option:
         * Leave **Use absolute time range** checked to share the search with the current start and end time.
-        * Uncheck **Use absolute time range** to share the search with the currently selected relative search expression, "Last 60 minutes" in the example chart.  
-
-            ![share-metric-search.png](/img/metrics/share-metric-search.png)
-
+        * Uncheck **Use absolute time range** to share the search with the currently selected relative search expression, "Last 60 minutes" in the example chart.<br/><img src={useBaseUrl('img/metrics/share-metric-search.png')} alt="Share metric search" style={{border: '1px solid gray'}} width="600" />
     1. Click **Copy** to copy the URL. 
 1. Send the the URL to the users with whom you want to share the metric
     chart.
 
 When a user opens the URL in a browser, Sumo will prompt the user to log on. If you shared the chart with **Use** **absolute time range** selected, the chart will show data for the actual time range shown when you shared the cart, as shown below. Otherwise, the shared chart will show a relative search expression. In our example query, that would be "Last 60 minutes".
 
-![as-shared-absolute.png](/img/metrics/as-shared-absolute.png)
+<img src={useBaseUrl('img/metrics/as-shared-absolute.png')} alt="As shared absolute" style={{border: '1px solid gray'}} width="<insert-pixel-number>" />

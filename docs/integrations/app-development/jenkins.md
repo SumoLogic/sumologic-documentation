@@ -2,7 +2,7 @@
 id: jenkins
 title: Jenkins
 sidebar_label: Jenkins
-description: The Sumo Logic App for Jenkins helps you monitor build successes, failures, and performance, ensuring that you know—before committing code to the repository—whether the code will work.
+description: The Sumo Logic app for Jenkins helps you monitor build successes, failures, and performance, ensuring that you know—before committing code to the repository—whether the code will work.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,28 +11,25 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Jenkins](https://jenkins.io/) is an open source automation server that provides a simple way to set up a continuous integration or delivery environment for building and testing software. The Sumo Logic App for Jenkins helps you monitor your build processes and Jenkins master and server health via pre-configured dashboards.
 
-The Jenkins App allows you to monitor multiple Jenkins master nodes from a single-pane of glass. The app supports freestyle and pipeline jobs as well as pipeline, maven  and multi-branch pipeline projects.
+The Jenkins App allows you to monitor multiple Jenkins master nodes from a single pane of glass. The app supports freestyle and pipeline jobs as well as pipeline, Maven, and multi-branch pipeline projects.
+The Sumo Logic Jenkins plugin is compatible with Jenkins version 2.426.3 and above. For more information, refer to the [Sumo Logic Jenkins Plugin WIKI](https://plugins.jenkins.io/sumologic-publisher) page.
 
-Sumo Logic Jenkins plugin is compatible with Jenkins version 2.361.1. For more information refer [Sumo Logic Jenkins Plugin WIKI](https://plugins.jenkins.io/sumologic-publisher) page.
+## Log and metric types
 
+All logs are JSON-based, with the exception of job console logs. Graphite format metrics are generated.
 
+The Jenkins app uses the following log types:
+* **Audit Logs**. Log events related to user authentication, Jenkins system, job configuration changes, and Jenkins job run events.
+* **Metric Data**. Log events related to the metric information of the Jenkins Master.
+* **Periodic Logs**. Log events related to Jenkins nodes, master shutdown events, jobs in progress, and in the queue.
+* **SCM Log**. Log events related to Source Control Management systems, like the GitHub repository.
+* **Job Status Logs**. Log events related to Jenkins jobs, test results, and pipeline stages.
+* **Job Console Logs**. Log events related to job console logs.
 
-## Log and Metric Types
+### Sample log messages
 
-All logs are JSON based, with the exception of job console logs. Graphite format metrics are generated.
-
-The Jenkins App uses the following Log Types:
-* Audit Logs - Log events related to user authentication, Jenkins system and job configuration changes and Jenkins job run events.
-* Metric Data - Log events related to metric information of Jenkins Master.
-* Periodic Logs - Log events related to Jenkins nodes, master shutdown events, jobs in progress and in queue.
-* SCM Log - Log events related to Source Control Management systems like the github repository.
-* Job Status Logs - Log events related to Jenkins jobs, test results and pipeline stages.
-* Job Console Logs - Log events related to job console logs.
-
-
-### Sample Log Messages
-
-<details><summary><strong>Click to expand.</strong> See sample log messages for log types, such as Authentication, Configuration Change, Shutdown, and Job Status.</summary>
+<details>
+<summary><strong>Click to expand.</strong> See sample log messages for log types, such as Authentication, Configuration Change, Shutdown, and Job Status.</summary>
 
 ```json title="Authentication"
 {
@@ -59,7 +56,6 @@ The Jenkins App uses the following Log Types:
   "eventTime": "2019-06-05 15:17:28,237 +00:00"
 }
 ```
-
 
 ```json title="Shutdown"
 {
@@ -265,9 +261,9 @@ The Jenkins App uses the following Log Types:
 
 </details>
 
-### Sample Query
+### Sample queries
 
-This sample Query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
+This sample query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
 
 ```sql
 _sourceCategory=Labs/Jenkins/Sourabh/Logs In_Progress
@@ -284,11 +280,10 @@ _sourceCategory=Labs/Jenkins/Sourabh/Logs In_Progress
 | fields Job_Name, Job_URL, Job_Label, Node_Name, Job_Start_Time, Job_Run_Duration, Job_Number
 ```
 
-## Collecting Logs and Metrics for Jenkins
+## Collecting logs and metrics for Jenkins
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Jenkins.
-
-Sumo Logic Jenkins plugin is compatible with Jenkins version 2.60.1 and above. For more information refer [Sumo Logic Jenkins Plugin WIKI](https://plugins.jenkins.io/sumologic-publisher) page.
+The Sumo Logic Jenkins plugin is compatible with Jenkins version 2.426.3 and above. For more information, refer to the [Sumo Logic Jenkins Plugin WIKI](https://plugins.jenkins.io/sumologic-publisher) page.
 
 
 ### Step 1: Configure a Collector
@@ -299,7 +294,7 @@ To create a new Sumo Logic hosted collector, perform the steps in the [Configure
 
 To create a new HTTP logs and metric source:
 
-1. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions.](/docs/send-data/hosted-collectors/http-source/logs-metrics)
+1. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 2. Make a note of **HTTP Source URL** and **Source Category**, as you will need them later in the configuration process.
 
 ### Step 3: Install the Jenkins Plugin
@@ -307,11 +302,12 @@ To create a new HTTP logs and metric source:
 You must have Admin privileges to perform any of the following installation procedures. This section walks you through the ways in which you can install the Jenkins plugin.
 
 :::note
-Beginning with Jenkins 2.357 (released on June 28, 2022) and the forthcoming 2.361.1 LTS release, Jenkins requires Java 11 or newer. The latest Sumo Logic Jenkins plugin works with Jenkins versions greater than 2.261.1 and Java 11. 
-To install the plugin with Java 8 and older version of Jenkins, use the old release [(2.2.1)](https://repo.jenkins-ci.org/artifactory/releases/org/jenkins-ci/plugins/sumologic-publisher/2.2.1/sumologic-publisher-2.2.1.hpi) of Sumo Logic plugin.
+Sumo Logic's latest Jenkins plugin is certified against Java 21 with Jenkins versions 2.516.2. It requires Jenkins to run on Java 11, 17, or 21 and a minimum Jenkins version of 2.426.3.
+To install the plugin with Java 8 and older versions of Jenkins, use the old release [(2.2.1)](https://repo.jenkins-ci.org/artifactory/releases/org/jenkins-ci/plugins/sumologic-publisher/2.2.1/sumologic-publisher-2.2.1.hpi) of the Sumo Logic plugin.
 :::
 
-<details><summary><strong>Updating the Jenkins plugin</strong>: use this method if the Jenkins plugin is already installed on your system and you want to update the version.</summary>
+<details>
+<summary><strong>Updating the Jenkins plugin</strong>: use this method if the Jenkins plugin is already installed on your system and you want to update the version.</summary>
 
 This section shows you how to update the version of the Jenkins plugin you have running on your system.
 
@@ -322,11 +318,12 @@ This section shows you how to update the version of the Jenkins plugin you have 
 
 </details>
 
-<details><summary><strong>Installing with the sumologic publisher</strong>: use this method if you're using the sumologic publisher for the first time.</summary>
+<details>
+<summary><strong>Installing with the Sumo Logic publisher</strong>: use this method if you're using the Sumo Logic publisher for the first time.</summary>
 
-This section shows you how to install the Jenkins plugin, if this is your first time using sumologic publisher.
+This section shows you how to install the Jenkins plugin if this is your first time using Sumo Logic Publisher.
 
-To perform a first time installation, do the following:
+To perform a first-time installation, do the following:
 1. In the Jenkins console, go to **Manage Jenkins** > **Manage Plugins**.
 1. Click the **Available** tab.
 1. Search for "**Sumologic Publisher**".
@@ -335,7 +332,8 @@ To perform a first time installation, do the following:
 
 </details>
 
-<details><summary><strong>Manually installing the Jenkins plugin</strong>: use this method if there's a restriction on installing the plugin directly through the Jenkins plugin update center.</summary>
+<details>
+<summary><strong>Manually installing the Jenkins plugin</strong>: use this method if there's a restriction on installing the plugin directly through the Jenkins plugin update center.</summary>
 
 This section shows you how to manually install the Jenkins plugin.
 
@@ -346,7 +344,7 @@ This section shows you how to manually install the Jenkins plugin.
 5. Select **Restart Jenkins when installation is complete and no jobs are running**. You may need to restart Jenkins for the plugin to appear.
 
 :::note
-The plugin is available on Jenkins plugin center. Ignore the version mentioned in the Jenkins Plugin update center.
+The plugin is available on the Jenkins plugin center. Ignore the version mentioned in the Jenkins Plugin update center.
 :::
 
 </details>
@@ -361,44 +359,44 @@ To configure the Jenkins Plugin, do the following:
 2. Search for the **Sumo Logic Jenkins** **Plugin**.
 3. In the Sumo Logic Jenkins Plugin dialog,  specify the following:
    * **SumoLogic Portal Name** - This is the domain name of the hosted collector. For example, `service.sumologic.com` or `service.us2.sumologic.com`.
-   * **Metric Data Prefix**: Enter the name of the Jenkins Master on which plugin is installed.
+   * **Metric Data Prefix**: Enter the name of the Jenkins Master on which the plugin is installed.
    * **HTTP Source URL**: HTTP Source URL from step 2. The HTTP source URL will look something like this: `https://sumologic_url/receiver/v1/http/SECRET_STRING`.
    * **Source Category**: This is the Source Category you defined for the source.
-   * **Keep Old Configuration for Jobs**: Enable this option to send old configuration for jobs.
+   * **Keep Old Configuration for Jobs**: Enable this option to send the old configuration for jobs.
 4. Specify the types of data you want to send to Sumo Logic:
    * **Metric Data** - Sends metric information.
-   * **Audit Logs** - Sends audit information like login, logouts, login failures, configuration changes to jobs and the Jenkins servers.
-   * **Periodic Logs** - Sends periodic information like node information, master information, shutdown events, Jenkins system logs.
+   * **Audit Logs** - Sends audit information like login, logouts, login failures, configuration changes to jobs, and the Jenkins servers.
+   * **Periodic Logs** - Sends periodic information like node information, master information, shutdown events, and Jenkins system logs.
    * **SCM logs** - Send Source Control Management logs related to builds.
 5. Specify the following:
    * **Job Status Information**: Select to send status for all jobs
    * **Console Logs Information**: Select to send console logs for all jobs
-6. Jenkins plugin can be configured with an HTTP proxy. Once this is configured all the logs which are being sent from the Jenkins plugin will go through the proxy before getting ingested in sumo logic. Following are the parameters which are introduced to support the same:
+6. The Jenkins plugin can be configured with an HTTP proxy. Once this is configured, all the logs that are being sent from the Jenkins plugin will go through the proxy before being ingested in Sumo Logic. The following are the parameters that are introduced to support the same:
    * **Enable Proxy Setting (checkbox):** Check to Enable proxy setting
-   * **Proxy Host:** User to input the proxy server host-name here.
-   * **Proxy port: **Specify the port of the proxy server.
+   * **Proxy Host:** User to input the proxy server hostname here.
+   * **Proxy port:** Specify the port of the proxy server.
    * **Enable Proxy Authentication(checkbox):** Check to enable Authentication for the proxy. This can be used if the proxy is configured with authentication.
-   * **Username: **Username to be used for the proxy Authentication.
+   * **Username:** Username to be used for the proxy Authentication.
    * **Password**: Password to be used for proxy authentication.
 7. Click **Apply**, and then click **Save**.
 
 
 ### Step 5: Optional - Advanced Configuration
 
-This section provides instructions for configuring Sumo Logic Jenkins Plugin for specific projects using Jenkins **configuration as code**. For more information, see [configuration as code](https://jenkins.io/projects/jcasc/).
+This section provides instructions for configuring the Sumo Logic Jenkins Plugin for specific projects using Jenkins **configuration as code**. For more information, see [configuration as code](https://jenkins.io/projects/jcasc/).
 
-To configure Sumo Logic Jenkins Plugin for specific projects using configuration as code, do the following:
+To configure the Sumo Logic Jenkins Plugin for specific projects using configuration as code, do the following:
 
 1. The plugin can be configured using **configuration as code** provided by Jenkins as detailed [in this document](https://jenkins.io/projects/jcasc/).
 2. In case of specific jobs, do the following:
    * For freestyle and maven Projects, go to **Job Configuration** and in the Post-build Actions, select **Sumo Logic Build Logger.**
    * For Pipeline projects, do the following:
-      1. In the pipeline configuration, for normal script make the following as the top level.
+      1. In the pipeline configuration, for a normal script, make the following as the top level.
       ```
       SumoPipelineLogCollection {
       // your script
       ```
-      2. Then, in the pipeline configuration, for declarative pipeline script update the option.
+      2. Then, in the pipeline configuration, for the declarative pipeline script, update the option.
        ```js
        options {
          SumoPipelineLogCollection()
@@ -407,148 +405,151 @@ To configure Sumo Logic Jenkins Plugin for specific projects using configuration
 3. Click **Apply**, and then click **Save**.
 
 
+## Installing the Jenkins app
 
-## Installing the Jenkins App
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-This section provides instructions for installing the Sumo Logic App for Jenkins, as well as examples and descriptions for each of the app dashboards.
+<AppInstall2/>
 
-Now that you have set up collection for Jenkins you can install the Sumo Logic App for Jenkins, and use its pre-configured searches and dashboards.
+## Viewing Jenkins dashboards​
 
-{@import ../../reuse/apps/app-install.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-## Viewing Jenkins Dashboards
+<ViewDashboards/>
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
-
-
-### Overview Dashboard
+### Overview
 
 The **Jenkins - Overview** dashboard shows relationships between jobs and executors (worker nodes) on a Jenkins master. This dashboard provides insights into job run durations, status, physical memory, disk memory, and unused machines.
 
 Use this dashboard to:
 * Correlate job builds with Jenkins executors (worker nodes), physical memory utilization, disk space utilization, console logs, the number of executors used by jobs, and the number of unused (free) worker nodes.
 * Identify worker nodes not used by Jenkins master jobs to understand worker node usage.
-* Analyze job health by filtering data for a specific job to identify the console log errors, system errors, number of executors used, disk space utilization, physical memory utilization.
+* Analyze job health by filtering data for a specific job to identify the console log errors, system errors, number of executors used, disk space utilization, and physical memory utilization.
 * Identify Jenkins master shutdown events.
-* Analyze the jobs in the queue with job queue duration, reason, job URL.
+* Analyze the jobs in the queue with job queue duration, reason, and job URL.
 * Generate alerts based on shutdown events, job run duration, physical memory utilization, disk space utilization, and more.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-Overview.png')} alt="jenkins" />
 
-### System Monitoring Dashboards
+### System Monitoring
 
-System Monitoring Dashboards provide information on system activities related to master node metrics, job metrics, worker nodes, and audit activities. System Monitoring dashboards help you to monitor changes related to the Jenkins configuration, job configuration, the health of the Jenkins master, performance of the job queue and run duration, as well as the health of all worker nodes available to the Jenkins master node.
+The **Jenkins - System Monitoring** dashboards provide information on system activities related to master node metrics, job metrics, worker nodes, and audit activities. System Monitoring dashboards help you to monitor changes related to the Jenkins configuration, job configuration, the health of the Jenkins master, performance of the job queue, and run duration, as well as the health of all worker nodes available to the Jenkins master node.
 
-#### Audit Dashboard
+#### Audit
 
 The **Jenkins - Audit** dashboard provides insight into user events, including configuration changes, authentication events, and job activities.
 
 Use this dashboard to:
 
-* Ensure only authorized users are accessing the Jenkins System and are modifying Jenkins system and job configurations
-* Keep track of the job configuration changes
-* Compare old and new Jenkins system and job configuration settings
-* View trends for Jenkins job start and finish events
+* Ensure only authorized users are accessing the Jenkins System and are modifying the Jenkins system and job configurations.
+* Keep track of the job configuration changes.
+* Compare old and new Jenkins system and job configuration settings.
+* View trends for Jenkins job start and finish events.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-Audit.png')} alt="jenkins" />
 
-#### Master Health Dashboard
+#### Master Health
 
 The **Jenkins - Master Health** dashboard provides insight into the health of Jenkins master nodes with information on shutdown events, Jenkins system logs, and metrics events such as CPU, memory, job duration,  threads, and executors.
 
-Executors are similar to threads that run jobs, so they are indicators of the load placed on Jenkins. If the executors are full, it means there are a lot of jobs running on the system and more executors may be needed to balance the load.
+Executors are similar to threads that run jobs, so they are indicators of the load placed on Jenkins. If the executors are full, it means there are a lot of jobs running on the system, and more executors may be needed to balance the load.
 
 Use this dashboard to:
-* Monitor shutdown events for Jenkins master nodes
-* Monitor Jenkins system sogs to determine the root cause of system issues
-* Monitor Jenkins master CPU usage and memory usage to allocate additional resources if needed
-* Monitor free executors and busy executors on Jenkins master
+* Monitor shutdown events for Jenkins master nodes.
+* Monitor Jenkins system logs to determine the root cause of system issues.
+* Monitor Jenkins master CPU usage and memory usage to allocate additional resources if needed.
+* Monitor free executors and busy executors on the Jenkins master.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-MasterHealth.png')} alt="jenkins" />
 
-
-#### Job Health Dashboard
+#### Job Health
 
 The **Jenkins - Job Health** dashboard provides insight into the health of Jenkins jobs across various master nodes with information on job counts, job run duration, queue information, and garbage collection metrics.
 
 Use this dashboard to:
 
-* Monitor jobs in the queue, blocked and pending jobs to make sure your continuous integrations are running as expected
-* Monitor garbage collection statistics  on the Jenkins master to understand how to improve performance and allocate additional resources if necessary
+* Monitor jobs in the queue, blocked, and pending jobs to make sure your continuous integrations are running as expected.
+* Monitor garbage collection statistics  on the Jenkins master to understand how to improve performance and allocate additional resources if necessary.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-JobHealth.png')} alt="jenkins" />
 
-
-#### Node Health Dashboard
+#### Node Health
 
 The **Jenkins - Node Health** dashboard provides insights into the health of all Jenkins master and worker nodes, with information on node details, recent builds, resource consumption, and node events.
 
 Use this dashboard to:
-* Monitor the health of all Jenkins nodes to understand and resolve potential bottlenecks
-* Monitor  node resource utilization and resize if necessary
-* Monitor removed nodes and node offline and launch failure events to ensure intended operations are being performed
+* Monitor the health of all Jenkins nodes to understand and resolve potential bottlenecks.
+* Monitor  node resource utilization and resize if necessary.
+* Monitor removed nodes and node offline and launch failure events to ensure intended operations are being performed.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-NodeHealth.png')} alt="jenkins" />
 
-
-### Job Monitoring Dashboards
+### Job Monitoring
 
 Job Monitoring Dashboards provide information on job activities like job run duration, job status, test results, pipeline stages, and console Logs. Job monitoring dashboards help you monitor job duration, status, failed jobs, and test cases. You can determine stack trace failures, failed stages details, source control management details, job configuration changes, and stage-wise console logs.
 
-
-#### Job Overview Dashboard
+#### Job Overview
 
 The **Jenkins - Job Overview** dashboard provides a high-level view of the job and builds status, trends, comparisons, and results.
 
 Use this dashboard to:
 * Monitor the total number of builds, successful and failed builds.
-* Monitor recent builds and view detailed information in  the Jenkins console
-* Monitor  job duration trends to understand how to improve the execution of various stages in the pipeline
-* Monitor  jobs in progress, and in queue to determine how the pipelines are performing and make adjustments to the build process if needed
-* Identify the slowest failed builds
-* View trends for job results and use that information to identify source code components and teams that need the most improvements
+* Monitor recent builds and view detailed information in  the Jenkins console.
+* Monitor job duration trends to understand how to improve the execution of various stages in the pipeline.
+* Monitor jobs in progress, and in queue to determine how the pipelines are performing and make adjustments to the build process if needed.
+* Identify the slowest failed builds.
+* View trends for job results and use that information to identify source code components and teams that need the most improvement.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-JobOverview.png')} alt="jenkins" />
 
-
-#### Job Information Dashboard
+#### Job Information
 
 The **Jenkins - Job Information** dashboard provides detailed information about a specific job. Panels show information on job URLs, duration trends, execution results, test case trends, slowest stages for pipeline jobs, console logs, and common errors.
 
 Use this dashboard to:
-* Monitor the total number of builds, successful builds, duration and failed builds for the job in question to understand how to best improve its execution going forward
-*  Drilldown to Jenkins build information as needed
-* Investigate common errors using console logs
-* Investigate common stage failures
-* Monitor recent configuration changes and commits to identify potential causes of failure
+* Monitor the total number of builds, successful builds, duration, and failed builds for the job in question to understand how to best improve its execution going forward.
+* Drill down to Jenkins build information as needed.
+* Investigate common errors using console logs.
+* Investigate common stage failures.
+* Monitor recent configuration changes and commits to identify potential causes of failure.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-JobInformation.png')} alt="jenkins" />
 
 
-#### Build Information Dashboard
+#### Build Information
 
-The **Jenkins - Build Information** dashboard provides detailed information about a specific build. Panels show information on build parameters, source control management, commit details, test cases, pipeline stages, console logs, and configuration changes prior to a build.
+The **Jenkins - Build Information** dashboard provides detailed information about a specific build. Panels show information on build parameters, source control management, commit details, test cases, pipeline stages, console logs, and configuration changes before a build.
 
 Use this dashboard to:
 * Monitor parameters used for the build and source control management, such as GitHub Repository, to understand recent commits that have been added to the build.
 * Investigate possible causes for build failure using configuration change before build details, test case failure, commit changes, pipeline stage failure, and console logs.
-* Investigate the cause for failed test cases by analyzing stack traces.
-* Investigate configuration changes before the build by comparing the old configuration and current configurations.
+* Investigate the cause of failed test cases by analyzing stack traces.
+* Investigate configuration changes before the build by comparing the old configuration and the current configuration.
 * Identify command failure for pipeline jobs using stage and stack trace information.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-BuildInformation.png')} alt="jenkins" />
 
 
-#### Pipeline Stage Monitoring Dashboard
+#### Pipeline Stage Monitoring
 
-The **Jenkins - Pipeline Stage Monitoring** dashboard provides insights into pipeline performances.
+The **Jenkins - Pipeline Stage Monitoring** dashboard provides insights into pipeline performance.
 
 Use this dashboard to:
 * Identify which pipelines are taking the longest to complete.
-* Drilldown to slowest stages and steps within each pipeline.
+* Drill down to the slowest stages and steps within each pipeline.
 * Compare pipeline executions to identify which runs are slower or faster than others.
 * Identify the failed pipeline stages and steps.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins_Pipeline_Stage_Monitoring.png')} alt="jenkins" />
+
+## Upgrade/Downgrade the Jenkins app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Jenkins app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

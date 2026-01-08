@@ -1,0 +1,17 @@
+{
+  "name": "Cybersixgill TAXII",
+  "authType": "Basic",
+  "basicUsername": "--- USER ACCOUNT HERE ---",
+  "basicPassword": "--- USER PASSWORD HERE ---",
+  "ti_version": "2.1",
+  "ti_root_source": "2",
+  "ti_root_urls": [
+    {
+      "ti_root_url": "https://api.cybersixgill.com/taxii/"
+    }
+  ],
+  "collection_id": ["102"],
+  "ti_user_source_id": "Cybersixgill",
+  "enable_limit": false,
+  "polling_interval": "1h"
+}

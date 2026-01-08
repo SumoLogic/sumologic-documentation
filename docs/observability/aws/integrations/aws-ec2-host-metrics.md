@@ -2,13 +2,13 @@
 id: aws-ec2-host-metrics
 title: AWS EC2 Host Metrics
 sidebar_label: AWS EC2 Host Metrics
-description: The Sumo Logic App for AWS EC2 Host Metrics allows you to collect local host metrics and display them using predefined search queries and dashboards.
+description: The Sumo Logic app for AWS EC2 Host Metrics allows you to collect local host metrics and display them using predefined search queries and dashboards.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-[Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/) is a web service that provides secure, resizable compute capacity in the cloud, enabling you to complete control of your computing resources. The Sumo Logic app for AWS EC2 (Host metrics) collects local host metrics and displays them using predefined search queries and dashboards. App dashboards provide a visual analysis of local host metrics for CPU, disk, memory, network, and TCP.
+[Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/) is a web service that provides secure, resizable compute capacity in the cloud, enabling you to complete control of your computing resources. The Sumo Logic app for AWS EC2 (Host metrics) collects local host metrics and displays them using predefined search queries and dashboards. app dashboards provide a visual analysis of local host metrics for CPU, disk, memory, network, and TCP.
 
-## Metrics Types 
+## Metrics types 
 
 Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source/#collected-metrics).
 
@@ -18,7 +18,7 @@ Host metrics are gathered by the open-source [SIGAR library](https://github.com/
 * [Networking Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#networking-metrics)
 * [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#disk-metrics)
 
-### Time Intervals
+### Time intervals
 
 The time interval determines how frequently the source is scanned for metrics data. Sumo Logic supports pre-specified time intervals (10 seconds, 15 seconds, 30 seconds, 1 minute, and 5 minutes).
 
@@ -26,27 +26,23 @@ You can also specify a time interval in JSON by using the interval parameter, as
 
 The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or longer granularity. Specifying a shorter interval will increase the message volume and could cause your deployment to incur additional charges.
 
-### AWS Metadata
+### AWS metadata
 
 Collectors running on Host Metrics (EC2) instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source/).
 
-### Sample Query 
+### Sample queries 
 
 ```sql title="CPU utilization (Host metric based)"
-metric=CPU_Sys _sourcecategory=Labs/AWS/Host/Metrics _sourceHost=* _collector=* _source = * account=* region=* instancetype=* namespace=hostmetrics instanceid=* | avg
+metric=CPU_Sys _sourceCategory=Labs/AWS/Host/Metrics _sourceHost=* _collector=* _source = * account=* region=* instancetype=* namespace=hostmetrics instanceid=* | avg
 ```
 
-## Viewing AWS EC2 Host Metrics Dashboards
+## Viewing AWS EC2 Host Metrics dashboards
 
-This page provides examples and descriptions for each of the AWS Observability Host EC2 metrics pre-configured dashboards.
+We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
-[Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/) is a web service that provides secure, resizable compute capacity in the cloud, enabling you to complete control of your computing resources.
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
-The Sumo Logic **AWS Observability EC2 metrics dashboards** collect local host metrics and displays them using dashboards to aid troubleshooting issues and optimize resource allocation and costs. App dashboards provide a visual analysis of local host metrics for CPU, disk, memory, network, and TCP traffic.
-
-:::note
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
-:::
+<FilterDashboards/>
 
 ### 1.2. AWS EC2 Overview (Host OS metrics)
 

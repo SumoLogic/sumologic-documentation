@@ -3,7 +3,7 @@ id: parse-predictable-patterns-using-an-anchor
 title: Parse Predictable Patterns Using an Anchor
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The parse operator (also called the parse anchor) parses strings according to specified start and stop anchors, and then labels them as fields for use in subsequent aggregation functions in the query such as sorting, grouping, or other functions.
 
@@ -17,7 +17,7 @@ This topic describes how to use the parse anchor UI tool to add parsing to a que
 
 ## Options
 
-* The `nodrop` option forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md). 
+* The `nodrop` option forces results to also include messages that do not match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md). 
 * The `field=fieldname` option allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md). 
 
 ## Rules
@@ -37,33 +37,14 @@ You can use the parse anchor UI tool to highlight the message text to parse, id
 
 1. Run a search.
 1. In the search results, find a message with the text you want to parse.
-1. Highlight the text, right-click, and select **Parse the selected text**.  
+1. Highlight the text, right-click, and select **Parse the selected text**.<br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/parse-selected-text-UI-option.png')} alt="Screenshot of a log entry in Sumo Logic, showing a request with the details 'HttpRequest(HttpMethod(GET), http://10.4.87.223:8080/...' followed by a context menu with options including 'Copy Selected Text,' 'Parse Selected Text' (highlighted), and additional filtering options." style={{border: '1px solid gray'}} width="800" />
 
-    ![parse selected text UI option.png](/img/search/searchquerylanguage/parse-operators/anchor/parse-selected-text-UI-option.png)  
-
-    The **Parse Text** dialog box opens and displays the text you highlighted.  
-
-    ![parse text window.png](/img/search/searchquerylanguage/parse-operators/anchor/parse-text-window.png)  
-     
-1. Select the text for the first parsing field, and click **Click to extract this value**. The text you highlighted is replaced by an asterisk (\*).  
-
-    ![highlighted term in parse text window.png](/img/search/searchquerylanguage/parse-operators/anchor/highlighted-term-in-parse-text-window.png)  
-     
-1. Enter a name (no spaces) for the parsing field in the **Fields** area.  
-
-    ![parsing field.png](/img/search/searchquerylanguage/parse-operators/anchor/parsing-field.png)  
-     
-1. If you want to parse additional fields, add a comma after the field name, and repeat the parsing action. The following screenshot shows three parsed fields: **method**, **ip**, and **port** (in that order). Notice that the three fields correspond to the three asterisks in the parse text.  
-
-    ![three parsing fields.png](/img/search/searchquerylanguage/parse-operators/anchor/three-parsing-fields.png)  
-     
-1. Click **Submit**. The query is updated with the parse operation you constructed.  
-
-    ![query from parse UI tool.png](/img/search/searchquerylanguage/parse-operators/anchor/query-from-parse-UI-tool.png)  
-     
-1. Click **Start** to display the search results, which now show the parsed message.  
-
-    ![parsed results.png](/img/search/searchquerylanguage/parse-operators/anchor/parsed-results.png)
+    The **Parse Text** dialog box opens and displays the text you highlighted.<br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/parse-text-window.png')} alt="Screenshot of the 'Parse Text' dialog box in Sumo Logic" style={{border: '1px solid gray'}} width="600" />   
+1. Select the text for the first parsing field, and click **Click to extract this value**. The text you highlighted is replaced by an asterisk (\*). <br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/highlighted-term-in-parse-text-window.png')} alt="Screenshot of the 'Parse Text' dialog box in Sumo Logic" style={{border: '1px solid gray'}} width="600" />     
+1. Enter a name (no spaces) for the parsing field in the **Fields** area. <br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/parsing-field.png')} alt="Screenshot of the 'Parse Text' dialog box in Sumo Logic" style={{border: '1px solid gray'}} width="600" /> 
+1. If you want to parse additional fields, add a comma after the field name, and repeat the parsing action. The following screenshot shows three parsed fields: **method**, **ip**, and **port** (in that order). Notice that the three fields correspond to the three asterisks in the parse text.<br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/three-parsing-fields.png')} alt="n the 'Fields' input box, the text 'method, ip, port' is entered. " style={{border: '1px solid gray'}} width="600" />    
+1. Click **Submit**. The query is updated with the parse operation you constructed.<br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/query-from-parse-UI-tool.png')} alt="Screenshot of a query parsing the log entry with the commandas method,ip,port." style={{border: '1px solid gray'}} width="600" />  
+1. Click **Start** to display the search results, which now show the parsed message.<br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/parsed-results.png')} alt="Search results which now show the parsed message" style={{border: '1px solid gray'}} width="800" />
 
 ## Examples
 
@@ -103,7 +84,7 @@ For example, this query will allow you to parse the phrase "Class ID", including
 
 Special characters in field names are not permitted with Regex parsing. You must rename the field after parsing.
 
-Example: `extract "\[Classification:(\<class_i\>.*)\]" | class_id as %"Class ID"`
+Example: `extract "\[Classification:(?<class_id>.*)\]" | class_id as %"Class ID"`
 
 ### Use Line Breaks as an Anchor
 

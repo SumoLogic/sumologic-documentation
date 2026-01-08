@@ -1,0 +1,15 @@
+{
+    "api.version": "v1",
+    "source": {
+      "config": {
+        "name": "zero-networks-segment",
+        "apiKey": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyzxxxxxxxxxxxx",
+        "collectNetworkActivities": true,
+        "networkActivityFilter": "[{\"id\":\"state\",\"includeValues\":[\"4\"]}]"
+      },
+      "schemaRef": {
+        "type": "Zero Networks Segment"
+      },
+      "sourceType": "Universal"
+    }
+  }

@@ -8,42 +8,46 @@ description: Learn how to use the Sumo Logic Real User Monitoring (RUM) Dashboar
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
-## RUM App
+## Installing the RUM App (Optional)
 
-Once Sumo Logic detects data coming from user browsers, the RUM app will be installed automatically for all users of your organization. **No action is required**.
+Once Sumo Logic detects data coming from user browsers, the RUM app will be installed automatically for all users of your organization. **No action is required**.
 
-The data will populate in your organization's **Sumo Logic RUM - default** dashboards, located inside of your **Admin Recommended** folder. Do not modify or delete content in this folder, as it's maintained and updated automatically.
+The data will populate in your organization's **Sumo Logic RUM - default** dashboards, located inside of your **Installed Apps** folder. Do not modify or delete content in this folder, as it is maintained by Sumo Logic.
 
-<details><summary>If your RUM app is removed accidentally, here's how to install it manually (<strong>click to expand</strong>).</summary>
+If your RUM app is removed accidentally, you'll need to install it manually
 
-1. Go to the **App Catalog**, then search for and select the **Real User Monitoring** app. 
-1. Click **Add to Library**.
-1. Provide an **App Name**. You can retain the existing name or enter a name of your choice for the app.
-1. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
-1. Click **Add to Library**.
-1. Once the app is installed, it will appear in your **Personal** folder or the folder you specified. From here, you can share it with your organization.
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
-</details>
+## Upgrade/Downgrade the RUM App (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the RUM App (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 
-## Using Explore View
+## Using Real User Monitoring view
 
-Once the RUM app has been installed, use our [Explore view](/docs/dashboards/explore-view.md) to gain visibility into your web app's performance and end-user activity, such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
+Once the RUM app has been installed, use the Real User Monitoring view to gain visibility into your web app's performance and end-user activity, such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
 
-1. Go to **+New** > **Explore**.
-1. Under **Explore By**, **click Real User Monitoring**.
-1. Select your desired dashboard from **Dashboard** dropdown menu in the header:<br/>![explore rum with red box.png](/img/rum/explore-rum-with-red-box.png)<br/> There are three dashboard types on the **Application**, **Service**, and **Environment** levels, and a single one on the **Action type** and **Action** levels.
-1. Set your desired filters. **Explore** organizes RUM data on five levels:
-   * **Application**: corresponds to the value of the application tag set in your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). This should correspond to your whole website defined by its business function, such as `the-coffee-bar-app`.
-   * **Service**: corresponds to the name of the service in your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). The value should correspond to the JavaScript code executed in your browser, such as `coffee-bar-frontend`. You can have multiple services for each application.
-   * **deployment.environment**: corresponds to your development environment. To enable this, add the `deployment.environment` tag and desired value (like `us-west-1`, `prod`, `dev`) to your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). Supports up to 10 **deployment.environment** values.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Real User Monitoring**, select **User Experience**. You can also click the **Go To...** menu at the top of the screen and select **User Experience**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then in the upper-left corner of the screen, select **Real User Monitoring** from the dropdown menu.
+1. Select your desired dashboard from **Dashboard** dropdown menu in the header:<br/><img src={useBaseUrl('img/rum/explore-rum-with-red-box.png')} alt="Explore RUM with red box" style={{border: '1px solid gray'}} width="800" /><br/> There are three dashboard types on the **Application**, **Service**, and **Environment** levels, and a single one on the **Action type** and **Action** levels.
+1. Set your desired filters. RUM data is organized on five levels:
+   * **Application**. corresponds to the value of the application tag set in your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). This should correspond to your whole website defined by its business function, such as `the-coffee-bar-app`.
+   * **Service**. corresponds to the name of the service in your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). The value should correspond to the JavaScript code executed in your browser, such as `coffee-bar-frontend`. You can have multiple services for each application.
+   * **deployment.environment**. corresponds to your development environment. To enable this, add the `deployment.environment` tag and desired value (like `us-west-1`, `prod`, `dev`) to your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). Supports up to 10 **deployment.environment** values.
    * **Action Type**: can be one of:
-     * **document loads**: representing loading of actual documents and their resources into the browser
-     * **XHR actions**: representing any interaction with a page like click or submit that executes AJAX requests in the background to communicate with the backend, or
-     * **route changes**: single-page-app specific way to navigate to a new page/view without having to load a new document.
-   * **Action Name**: automatically generated from URLs. No configuration is required. The specifics of it will depend on action type. Action names can contain asterisks (`*`) to replace automatically-detected dynamic parts of the URL. If you have action names that overlap, the action name with an asterisk contains data for page loads NOT contained in more specific action names. For example, `http://www.site.com/path/page.htm` does not contain actions from `http://www.site.com/path/*`.
+     * **document loads**. Representing loading of actual documents and their resources into the browser
+     * **XHR actions**. Representing any interaction with a page like click or submit that executes AJAX requests in the background to communicate with the backend, or
+     * **route changes**. Single-page-app specific way to navigate to a new page/view without having to load a new document.
+   * **Action Name**. Automatically generated from URLs. No configuration is required. The specifics of it will depend on action type. Action names can contain asterisks (`*`) to replace automatically-detected dynamic parts of the URL. If you have action names that overlap, the action name with an asterisk contains data for page loads NOT contained in more specific action names. For example, `http://www.site.com/path/page.htm` does not contain actions from `http://www.site.com/path/*`.
 
-Example:<br/><img src={useBaseUrl('img/rum/explore-view-rum.png')} alt="Real User Monitoring" />
+Example:<br/><img src={useBaseUrl('img/rum/explore-view-rum.png')} alt="Real User Monitoring Load Action Dashboard" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Navigating RUM Dashboards
@@ -54,18 +58,18 @@ The **RUM Overview** dashboards (**Application**, **Service**, **Service with En
 
 Use these dashboards to:
 * Analyze load and paint timings for page document loads by application, service, or action.
-* View information about core web vitals, XHR processing times/errors, and log errors.
+* View information about [core web vitals, XHR processing times/errors, and log errors](/docs/apm/real-user-monitoring/metrics/#xhr-monitoring-metrics).
 * Understand what top browsers, operating systems, and geolocations are active with your website.
 
 You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts.
 
 You can also click on any data-point on the charts to open a details panel and view the **Infrastructure** tab to drill down to traces representing user transactions from the selected time point.
 
-Overview dashboards on all Explore levels have a panel showing geographical user activity for the selected entity. Geographic dashboards measure user activity as dot size and performance as a color.
+Overview dashboards on all view levels have a panel showing geographical user activity for the selected entity. Geographic dashboards measure user activity as dot size and performance as a color.
 
-![RUM Overview](/img/rum/RUM-Overview.png)
+<img src={useBaseUrl('img/rum/RUM-Overview.png')} alt="RUM Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
-![RUM-Overview-Application-Service](/img/rum/RUM-Overview-Application-Service.png)
+<img src={useBaseUrl('img/rum/RUM-Overview-Application-Service.png')} alt="RUM Overview Application and RUM Overview Service dashboards" style={{border: '1px solid gray'}} width="800" />
 
 ### RUM TopN Application/Service
 
@@ -74,12 +78,12 @@ The **RUM - TopN - Application** and **RUM - TopN - Application Service** dashbo
 Use these dashboards to:
 * Find out top N browsers, operating systems, and geolocations by load or requests.
 * Understand the slowest and fastest browsers from a rendering perspective or geographical locations from a network perspective.
-* Understand XHR and log errors your users are experiencing.
+* Understand [XHR and log errors](/docs/apm/real-user-monitoring/metrics/#xhr-monitoring-metrics) your users are experiencing.
 * Find out which browsers and operating systems are in use by your users and where are they are geographically located.
 
 You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts. You can also define the top N number for all charts.
 
-![img](/img/rum/RUM-TopN-Application.png)
+<img src={useBaseUrl('img/rum/RUM-TopN-Application.png')} alt="RUM TopN Application and RUM TopN Service dashboards" style={{border: '1px solid gray'}} width="800" />
 
 ### RUM Performance Analytics Application/Service
 
@@ -87,12 +91,12 @@ The **RUM Performance Analytics** dashboards for **Application**, **Service**, a
 
 Use these dashboards to:
 * Filter data for specific combinations of browser, operating system, and/or geolocation.
-* Understand XHR, load, timing metrics for the selected user cohort.
+* Understand [XHR, load, timing metrics](/docs/apm/real-user-monitoring/metrics/#xhr-monitoring-metrics) for the selected user cohort.
 * Compare your selected timings against data for a different time period by selecting the appropriate option in the compare_with dropdown.
 
 You can click on any data point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point. For cross-dimensional metrics, only the average statistic type is available.
 
-![img](/img/rum/RUM-Performance-Analytics-Application.png)
+<img src={useBaseUrl('img/rum/RUM-Performance-Analytics-Application.png')} alt="RUM Performance Analytics Application dashboard" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Collecting Browser Errors
@@ -109,7 +113,7 @@ Browser error logs, although collected via RUM script, contribute to your log Co
 
 Data in the index is query-able using normal log search query. Here’s a sample query and results:
 
-<img src={useBaseUrl('img/rum/logerrors1.png')} alt="Real User Monitoring" />
+<img src={useBaseUrl('img/rum/logerrors1.png')} alt="Sumo Logic log search displaying error logs filtered by the operation 'click on Pay'" style={{border: '1px solid gray'}} width="800" />
 
 The following fields are available to better aggregate and filter your results:
 * Application
@@ -122,14 +126,14 @@ The following fields are available to better aggregate and filter your results:
 * User agent
 * Span and Trace ids
 
-Because errors don't always have to be connected with user actions, it is ok to leave some of these fields empty.
+Because errors do not always have to be connected with user actions, it is ok to leave some of these fields empty.
 
 In addition to that, we also aggregate that information in form of log-query based panels and display on various dashboards:
 
-<img src={useBaseUrl('img/rum/logerrors2.png')} alt="Real User Monitoring" />
+<img src={useBaseUrl('img/rum/logerrors2.png')} alt="Real User Monitoring log errors per second graphic" style={{border: '1px solid gray'}} width="800" />
 
-<img src={useBaseUrl('img/rum/logerrors-xhr.png')} alt="Real User Monitoring" />
+<img src={useBaseUrl('img/rum/logerrors-xhr.png')} alt="Real User Monitoring log errors XHR per second graphic" style={{border: '1px solid gray'}} width="800" />
 
-<img src={useBaseUrl('img/rum/logerrors-by-browser.png')} alt="Real User Monitoring" />
+<img src={useBaseUrl('img/rum/logerrors-by-browser.png')} alt="Real User Monitoring log errors by browser, operating system, and geolocations graphic" style={{border: '1px solid gray'}} width="800" />
 
 Logs collection is enabled by default. You can disable by setting `collectErrors=false` in your RUM script options.

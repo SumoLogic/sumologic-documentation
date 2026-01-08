@@ -1,0 +1,20 @@
+{
+    "api.version":"v1",
+    "source":{
+      "schemaRef":{
+        "type":"Cisco AMP"
+      },
+      "config":{
+        "name":"Cisco",
+        "description":"East field",
+        "clientId":"********",
+        "apiKey":"********",
+        "fields":{
+          "_siemForward":false
+        },
+        "category":"eastTeamF",
+        "pollingInterval":300
+      },
+      "sourceType":"Universal"
+    }
+  }

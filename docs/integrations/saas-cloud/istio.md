@@ -20,7 +20,7 @@ This app supports Istio versions 1.8.x and 1.9.x+.
 * Access logs - Refer to [this page](https://istio.io/latest/docs/tasks/observability/logs/access-log/#default-access-log-format) for Istio Access log format.
 * Istio Metrics - Refer to [this page](https://istio.io/latest/docs/concepts/observability/#service-level-metrics) for detailed Istio Metrics
 
-### Sample Query
+### Sample queries
 
 Query Sample from Dashboard "Istio - Logs" > Panel "Non 200 Response Codes":
 
@@ -34,7 +34,7 @@ namespace=istio-system cluster={{cluster}}
 | transpose row _timeslice column response_code
 ```
 
-## Collecting Logs and Metrics for the Istio App
+## Collecting logs and metrics for the Istio App
 
 This section provides instructions for collecting logs and metrics for the Sumo App for Istio. Logs and metrics are collected with the [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection).
 If you've not yet set up Kubernetes Collection, visit our [Kubernetes](/docs/observability/kubernetes) and [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart) docs to learn how to install.
@@ -51,156 +51,156 @@ Metrics Collection:
 
 1. If you did install using the [Sumo Logic Kubernetes Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection), update the Helm Chart values file with the following config:
 
-```yml
-kube-prometheus-stack:
-  prometheus:
-    prometheusSpec:
-      additionalScrapeConfigs:
-        ...
-        - job_name: 'istiod'
-          kubernetes_sd_configs:
-          - role: endpoints
-            namespaces:
-              names:
-              - istio-system
-          relabel_configs:
-          - source_labels: [__meta_kubernetes_service_name, __meta_kubernetes_endpoint_port_name]
-            action: keep
-            regex: istiod;http-monitoring
-        - job_name: 'envoy-stats'
-          metrics_path: /stats/prometheus
-          kubernetes_sd_configs:
-          - role: pod
-          relabel_configs:
-          - source_labels: [__meta_kubernetes_pod_container_port_name]
-            action: keep
-            regex: '.*-envoy-prom'
-```
+   ```yml
+   kube-prometheus-stack:
+     prometheus:
+       prometheusSpec:
+         additionalScrapeConfigs:
+           ...
+           - job_name: 'istiod'
+             kubernetes_sd_configs:
+             - role: endpoints
+               namespaces:
+                 names:
+                 - istio-system
+             relabel_configs:
+             - source_labels: [__meta_kubernetes_service_name, __meta_kubernetes_endpoint_port_name]
+               action: keep
+               regex: istiod;http-monitoring
+           - job_name: 'envoy-stats'
+             metrics_path: /stats/prometheus
+             kubernetes_sd_configs:
+             - role: pod
+             relabel_configs:
+             - source_labels: [__meta_kubernetes_pod_container_port_name]
+               action: keep
+               regex: '.*-envoy-prom'
+   ```
 
-You can read more about the above scrape configs [here](https://istio.io/latest/docs/ops/integrations/prometheus/#option-2-customized-scraping-configurations)
+   You can read more about the above scrape configs [here](https://istio.io/latest/docs/ops/integrations/prometheus/#option-2-customized-scraping-configurations)
 
 1. Add following configuration to **additionalRemoteWrite**. These remote write configs make sure only metrics used by Sumo Logic Istio App are forwarded to Sumo Logic by Sumo Logic Kubernetes Helm Chart.
 
-```yml
-kube-prometheus-stack:
-  prometheus:
-    prometheusSpec:
-      additionalRemoteWrite:
-        ...
-        - url: http://$(METADATA_METRICS_SVC).$(NAMESPACE).svc.cluster.local:9888/prometheus.metrics.istio
-          remoteTimeout: 5s
-          writeRelabelConfigs:
-            - action: keep
-              regex: (?:galley_validation_(passed|failed|config_updates|config_update_error))
-              sourceLabels: [__name__]
-        - url: http://$(METADATA_METRICS_SVC).$(NAMESPACE).svc.cluster.local:9888/prometheus.metrics.istio
-          remoteTimeout: 5s
-          writeRelabelConfigs:
-            - action: keep
-              regex: (?:istio_(response_(bytes_sum|bytes_bucket)|requests_total|request_(duration_milliseconds_sum|duration_milliseconds_bucket|bytes_sum|bytes_bucket)|build|agent_(process_virtual_memory_bytes|process_max_fds|pilot_xds_pushes|pilot_xds_expired_nonce|pilot_xds|pilot_virt_services|pilot_proxy_queue_time_sum|pilot_endpoint_not_ready|num_outgoing_requests|num_failed_outgoing_requests|go_threads|go_memstats_heap_inuse_bytes|go_memstats_heap_alloc_bytes|go_memstats_gc_cpu_fraction|go_memstats_alloc_bytes_total|go_memstats_alloc_bytes|go_gc_duration_seconds)))
-              sourceLabels: [__name__]
+   ```yml
+   kube-prometheus-stack:
+     prometheus:
+       prometheusSpec:
+         additionalRemoteWrite:
+           ...
+           - url: http://$(METADATA_METRICS_SVC).$(NAMESPACE).svc.cluster.local:9888/prometheus.metrics.istio
+             remoteTimeout: 5s
+             writeRelabelConfigs:
+               - action: keep
+                 regex: (?:galley_validation_(passed|failed|config_updates|config_update_error))
+                 sourceLabels: [__name__]
+           - url: http://$(METADATA_METRICS_SVC).$(NAMESPACE).svc.cluster.local:9888/prometheus.metrics.istio
+             remoteTimeout: 5s
+             writeRelabelConfigs:
+               - action: keep
+                 regex: (?:istio_(response_(bytes_sum|bytes_bucket)|requests_total|request_(duration_milliseconds_sum|duration_milliseconds_bucket|bytes_sum|bytes_bucket)|build|agent_(process_virtual_memory_bytes|process_max_fds|pilot_xds_pushes|pilot_xds_expired_nonce|pilot_xds|pilot_virt_services|pilot_proxy_queue_time_sum|pilot_endpoint_not_ready|num_outgoing_requests|num_failed_outgoing_requests|go_threads|go_memstats_heap_inuse_bytes|go_memstats_heap_alloc_bytes|go_memstats_gc_cpu_fraction|go_memstats_alloc_bytes_total|go_memstats_alloc_bytes|go_gc_duration_seconds)))
+                 sourceLabels: [__name__]
 
-```
+   ```
 
 1. Upgrade the sumo logic helm chart by running the following:
 
-```bash
-helm upgrade --install <my-release-name> sumologic/sumologic -f sumologic-istio.yaml
-```
+   ```bash
+   helm upgrade --install <my-release-name> sumologic/sumologic -f sumologic-istio.yaml
+   ```
 
 #### Validation Steps
 
 1. Do port forward via your terminal (`my-release` is my release I used while setting up [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection):
 
-```bash
-kubectl port-forward prometheus-my-release-kube-prometheus-prometheus-0 9090
-```
+   ```bash
+   kubectl port-forward prometheus-my-release-kube-prometheus-prometheus-0 9090
+   ```
 
 1. Open [http://127.0.0.1:9090/config](http://127.0.0.1:9090/config) in a web browser and make sure the following remotewrite configs are present:
 
-```yml
-- url: http://my-release-sumologic-remote-write-proxy.sumologic.svc.cluster.local:9888/prometheus.metrics.istio
-  remote_timeout: 5s
-  write_relabel_configs:
-  - source_labels: [__name__]
-    separator: ;
-    regex: (?:galley_validation_(passed|failed|config_updates|config_update_error))
-    replacement: $1
-    action: keep
-  queue_config:
-    capacity: 2500
-    max_shards: 200
-    min_shards: 1
-    max_samples_per_send: 500
-    batch_send_deadline: 5s
-    min_backoff: 30ms
-    max_backoff: 100ms
-- url: http://my-release-sumologic-remote-write-proxy.sumologic.svc.cluster.local:9888/prometheus.metrics.istio
-  remote_timeout: 5s
-  write_relabel_configs:
-  - source_labels: [__name__]
-    separator: ;
-    regex: (?:istio_(response_(bytes_sum|bytes_bucket)|requests_total|request_(duration_milliseconds_sum|duration_milliseconds_bucket|bytes_sum|bytes_bucket)|build|agent_(process_virtual_memory_bytes|process_max_fds|pilot_xds_pushes|pilot_xds_expired_nonce|pilot_xds|pilot_virt_services|pilot_proxy_queue_time_sum|pilot_endpoint_not_ready|num_outgoing_requests|num_failed_outgoing_requests|go_threads|go_memstats_heap_inuse_bytes|go_memstats_heap_alloc_bytes|go_memstats_gc_cpu_fraction|go_memstats_alloc_bytes_total|go_memstats_alloc_bytes|go_gc_duration_seconds)))
-    replacement: $1
-    action: keep
-  queue_config:
-    capacity: 2500
-    max_shards: 200
-    min_shards: 1
-    max_samples_per_send: 500
-    batch_send_deadline: 5s
-    min_backoff: 30ms
-    max_backoff: 100ms
-```
+   ```yml
+   - url: http://my-release-sumologic-remote-write-proxy.sumologic.svc.cluster.local:9888/prometheus.metrics.istio
+     remote_timeout: 5s
+     write_relabel_configs:
+     - source_labels: [__name__]
+       separator: ;
+       regex: (?:galley_validation_(passed|failed|config_updates|config_update_error))
+       replacement: $1
+       action: keep
+     queue_config:
+       capacity: 2500
+       max_shards: 200
+       min_shards: 1
+       max_samples_per_send: 500
+       batch_send_deadline: 5s
+       min_backoff: 30ms
+       max_backoff: 100ms
+   - url: http://my-release-sumologic-remote-write-proxy.sumologic.svc.cluster.local:9888/prometheus.metrics.istio
+     remote_timeout: 5s
+     write_relabel_configs:
+     - source_labels: [__name__]
+       separator: ;
+       regex: (?:istio_(response_(bytes_sum|bytes_bucket)|requests_total|request_(duration_milliseconds_sum|duration_milliseconds_bucket|bytes_sum|bytes_bucket)|build|agent_(process_virtual_memory_bytes|process_max_fds|pilot_xds_pushes|pilot_xds_expired_nonce|pilot_xds|pilot_virt_services|pilot_proxy_queue_time_sum|pilot_endpoint_not_ready|num_outgoing_requests|num_failed_outgoing_requests|go_threads|go_memstats_heap_inuse_bytes|go_memstats_heap_alloc_bytes|go_memstats_gc_cpu_fraction|go_memstats_alloc_bytes_total|go_memstats_alloc_bytes|go_gc_duration_seconds)))
+       replacement: $1
+       action: keep
+     queue_config:
+       capacity: 2500
+       max_shards: 200
+       min_shards: 1
+       max_samples_per_send: 500
+       batch_send_deadline: 5s
+       min_backoff: 30ms
+       max_backoff: 100ms
+   ```
 
-Above remotewrite configs make sure only metrics used by Sumo Logic Istio App are forwarded to Sumo Logic by Sumo Helm Chart.
+   Above remotewrite configs make sure only metrics used by Sumo Logic Istio App are forwarded to Sumo Logic by Sumo Helm Chart.
 
 1. Open [http://127.0.0.1:9090/config](http://127.0.0.1:9090/config) in a web browser and make sure the following scrape configs are present:
 
-```yml
-- job_name: istiod
-  honor_timestamps: true
-  scrape_interval: 30s
-  scrape_timeout: 10s
-  metrics_path: /metrics
-  scheme: http
-  follow_redirects: true
-  enable_http2: true
-  relabel_configs:
-  - source_labels: [__meta_kubernetes_service_name, __meta_kubernetes_endpoint_port_name]
-    separator: ;
-    regex: istiod;http-monitoring
-    replacement: $1
-    action: keep
-  kubernetes_sd_configs:
-  - role: endpoints
-    kubeconfig_file: ""
-    follow_redirects: true
-    enable_http2: true
-    namespaces:
-      own_namespace: false
-      names:
-      - istio-system
-- job_name: envoy-stats
-  honor_timestamps: true
-  scrape_interval: 30s
-  scrape_timeout: 10s
-  metrics_path: /stats/prometheus
-  scheme: http
-  follow_redirects: true
-  enable_http2: true
-  relabel_configs:
-  - source_labels: [__meta_kubernetes_pod_container_port_name]
-    separator: ;
-    regex: .*-envoy-prom
-    replacement: $1
-    action: keep
-  kubernetes_sd_configs:
-  - role: pod
-    kubeconfig_file: ""
-    follow_redirects: true
-    enable_http2: true
-```
+   ```yml
+   - job_name: istiod
+     honor_timestamps: true
+     scrape_interval: 30s
+     scrape_timeout: 10s
+     metrics_path: /metrics
+     scheme: http
+     follow_redirects: true
+     enable_http2: true
+     relabel_configs:
+     - source_labels: [__meta_kubernetes_service_name, __meta_kubernetes_endpoint_port_name]
+       separator: ;
+       regex: istiod;http-monitoring
+       replacement: $1
+       action: keep
+     kubernetes_sd_configs:
+     - role: endpoints
+       kubeconfig_file: ""
+       follow_redirects: true
+       enable_http2: true
+       namespaces:
+         own_namespace: false
+         names:
+         - istio-system
+   - job_name: envoy-stats
+     honor_timestamps: true
+     scrape_interval: 30s
+     scrape_timeout: 10s
+     metrics_path: /stats/prometheus
+     scheme: http
+     follow_redirects: true
+     enable_http2: true
+     relabel_configs:
+     - source_labels: [__meta_kubernetes_pod_container_port_name]
+       separator: ;
+       regex: .*-envoy-prom
+       replacement: $1
+       action: keep
+     kubernetes_sd_configs:
+     - role: pod
+       kubeconfig_file: ""
+       follow_redirects: true
+       enable_http2: true
+   ```
 
 ## Installing the Istio App
 
@@ -208,7 +208,9 @@ This section provides instructions for installing the Istio App, as well as desc
 
 Now that you have set up metric and log collection for Istio, install the Sumo Logic App for Istio and access the pre-configured dashboards that provide visibility into your Istio environment.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Istio Dashboards
 

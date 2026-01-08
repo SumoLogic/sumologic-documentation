@@ -1,0 +1,18 @@
+{
+    "api.version":"v1",
+    "source":{
+      "config":{
+        "access_code":"********",
+        "name":"dropbox",
+        "app_secret":"********",
+        "app_key":"abcdefg1234567",
+        "fields":{
+          "_siemForward":false
+        }
+      },
+      "schemaRef":{
+        "type":"Dropbox"
+      },
+      "sourceType":"Universal"
+    }
+  }

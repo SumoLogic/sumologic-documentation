@@ -4,12 +4,13 @@ title: Log Sensor Troubleshooting
 description: Learn how to collect Log Sensor status and data to support troubleshooting efforts.
 ---
 
+:::warning end-of-life
+The Cloud SIEM Log Sensor has reached end of life and is no longer supported. Please migrate to a Sumo Logic Hosted Collector or Installed Collector. For more information, see the [end of life notice](https://app.getbeamer.com/cloudsiementerprise/en/end-of-life-notice-_-cloud-siem-enterprise-sensors). 
+:::
 
-The CSE Log Sensor has reached end of life and is no longer supported. Please migrate to a Sumo Logic Hosted Collector or Installed Collector. For more information, see the [end of life notice](https://app.getbeamer.com/cloudsiementerprise/en/end-of-life-notice-_-cloud-siem-enterprise-sensors). 
+The Cloud SIEM Log Sensor collects log data and sends it to the legacy Cloud SIEM server. (The Log Sensor does not send log data to the Sumo Logic platform. Sumo Logic collectors serve that purpose.)
 
-The CSE Log Sensor collects log data and sends it to the legacy CSE server. (The Log Sensor does not send log data to the Sumo Logic platform. Sumo Logic collectors serve that purpose.)
-
-If your organization uses the Log Sensor, This section provides instructions for gathering troubleshooting information CSE support may request if you have problems with the sensor.
+If your organization uses the Log Sensor, This section provides instructions for gathering troubleshooting information Cloud SIEM support may request if you have problems with the sensor.
 
 ## Restart sensor
 
@@ -50,15 +51,15 @@ This command tails the sensor’s log file, assuming that it is located in its d
 `$ tail -f /opt/trident/log-sensor/logs/trident-sensor.log`  
  
 
-## View logs sent by the sensor to CSE 
+## View logs sent by the sensor to Cloud SIEM 
 
-This command tails the sensor’s `output.log` file which contains logs that the sensor has sent to the CSE server.
+This command tails the sensor’s `output.log` file which contains logs that the sensor has sent to the Cloud SIEM server.
 
 `$ tail -f /opt/trident/log-sensor/output/log/output.log`
 
-## View count of logs sent by the sensor to CSE 
+## View count of logs sent by the sensor to Cloud SIEM 
 
-This command returns a count of the logs sent by the sensor to the CSE server.
+This command returns a count of the logs sent by the sensor to the Cloud SIEM server.
 
 `$ ls -lh /opt/trident/log-sensor/output/log/`
 

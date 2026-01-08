@@ -1,0 +1,21 @@
+{
+    "api.version": "v1",
+    "source": {
+        "schemaRef": {
+            "type": "Microsoft Azure AD Inventory"
+        },
+        "config": {
+            "name": "Azure AD Inventory",
+            "tenant_id": "TenantID",
+            "supported_apis": ["Devices", "Users"],
+            "secret_key": "********",
+            "application_id": "ApplicationID",
+            "userSignInActivity": false,
+            "userGroupDetails": false,
+            "fields": {
+                "_siemForward": false
+            }
+        },
+        "sourceType": "Universal"
+    }
+}

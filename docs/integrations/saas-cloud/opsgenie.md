@@ -15,7 +15,7 @@ Opsgenie is an incident management platform for operating services that are on 2
 
 For more information, see the [Opsgenie Alerts and Alert Fields](https://docs.opsgenie.com/docs/alerts-and-alert-fields) documentation.
 
-## Log Types
+## Log types
 
 Sumo Logic - Opsgenie integration supports the following Alert types:
 * Create
@@ -28,12 +28,12 @@ Sumo Logic - Opsgenie integration supports the following Alert types:
 * Close
 
 
-### Sample Log Message
+### Sample log messages
 
 Different Alert types used by Opsgenie, with sample payloads, are defined here: [https://docs.opsgenie.com/docs/sample-alert-action-data](https://docs.opsgenie.com/docs/sample-alert-action-data)
 
 
-### Sample Query
+### Sample queries
 
 The following query sample is taken from the **Alerts by Priority Over Time** panel on the **Opsgenie - Alerts Breakdown Dashboard**:
 
@@ -50,7 +50,7 @@ description, message, action, team, priority, source, tags, recipients nodrop
 ```
 
 
-## Collecting Logs for Opsgenie
+## Collecting logs for Opsgenie
 
 The Sumo Logic Opsgenie App is designed to effectively monitor Opsgenie alerts, team performances, detect any outliers, and track the team's Mean time to repair (MTTR) incidents. With Sumo Logic dashboards you can easily identify:
 
@@ -86,15 +86,15 @@ To configure log collection for the Opsgenie App, do the following:
 
 ## Installing the Opsgenie App
 
-This section provides instructions for installing the Opsgenie App, as well as examples of each of the app dashboards.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-{@import ../../reuse/apps/app-install.md}
+<AppInstall2/>
 
 ## Viewing OpsGenie Dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

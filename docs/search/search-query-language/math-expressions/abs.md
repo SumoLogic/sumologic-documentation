@@ -4,8 +4,6 @@ title: abs Function
 sidebar_label: abs
 ---
 
-
-
 The absolute function calculates the absolute value of x.
 
 ## Syntax
@@ -16,10 +14,10 @@ abs(<x>) as <field>
 
 ## Rules
 
-The function can't be nested.
+The function cannot be nested.
 
 ## Example
 
 ```sql
-abs(-1.5) as v // v = 1.5
+* | abs(-1.5) as v
 ```

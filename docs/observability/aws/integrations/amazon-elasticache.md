@@ -5,21 +5,23 @@ sidebar_label: Amazon ElastiCache
 description: The Sumo Logic Observability integration for Amazon ElastiCache provides visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Amazon ElastiCache allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud.
 
 The Amazon ElastiCache dashboards provide visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues. Use the preconfigured dashboards for at-a-glance analysis of event status trends, locations, successes and failures, as well as system health and performance metrics. The dashboards also have additional performance insights for Redis clusters.
 
-## Log and Metric Types
+## Log and metrics types
 
 The Amazon ElastiCache app uses the following logs and metrics:
 
 * [Amazon ElastiCache Host Level metrics](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.HostLevel.html)
 * [Amazon ElastiCache Redis metrics](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.Redis.html)
-* [CloudTrail Amazon ElastiCache Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events)
+* [CloudTrail Amazon ElastiCache Data Event](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/logging-using-cloudtrail.html)
 
-### Sample CloudTrail Log Message
+### Sample log messages
 
-```json
+```json title="CloudTrail"
 {
 	"eventVersion":"1.05",
 	"userIdentity":{
@@ -56,19 +58,17 @@ The Amazon ElastiCache app uses the following logs and metrics:
 }
 ```
 
-### Sample Query (Metric based)
+### Sample queries
 
 Cache Hit Rate:
 
-```sql
+```sql title="Metric"
 account=dev region=us-east-1 namespace=aws/elasticache metric=CacheHitRate statistic=Average CacheClusterId=* CacheNodeId=* | avg by account, region, namespace, CacheClusterId, CacheNodeId
-```
-
-### Sample Query (CloudTrail Log based)  
+``` 
 
 Top 10 ReplicationGroupId's:
 
-```sql
+```sql title="CloudTrail log-based"
 account=dev region=us-east-1 namespace=aws/elasticache "\"eventSource\":\"elasticache.amazonaws.com\"" replicationGroupId
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message nodrop
 | where event_source = "elasticache.amazonaws.com"
@@ -89,11 +89,11 @@ account=dev region=us-east-1 namespace=aws/elasticache "\"eventSource\":\"elasti
 
 ```
 
-## Amazon ElastiCache Dashboards
+## Amazon ElastiCache dashboards
 
-Amazon ElastiCache allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud. 
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
-The Amazon ElastiCache dashboards provide visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues. Use the preconfigured dashboards for at-a-glance analysis of event status trends, locations, successes and failures, as well as system health and performance metrics. The dashboards also have additional performance insights for Redis clusters.
+<FilterDashboards/>
 
 ### 1. Amazon ElastiCache - Host Performance Overview
 
@@ -105,7 +105,7 @@ Use this dashboard to:
 * CPU, memory or swap space on host and swap usage.
 * Monitor network traffic utilization and compare today’s trends of incoming and outgoing bytes and packets vs. yesterday
 
-![img](/img/observability/host-performance.png)
+<img src={useBaseUrl('img/observability/host-performance.png')} alt="Amazon ElastiCache - Host Performance Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 2. Amazon ElastiCache - Audit Event Overview
 
@@ -118,7 +118,7 @@ Use this dashboard to:
 * Quickly identify top error codes to diagnose any outages
 * Monitor trends around failed events to identify potential service disruptions that could warrant deeper investigation
 
-![img](/img/observability/audit-event.png)
+<img src={useBaseUrl('img/observability/audit-event.png')} alt="Amazon ElastiCache - Audit Event Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 3. Amazon ElastiCache - Redis Performance Overview
 
@@ -128,7 +128,7 @@ Use this dashboard to:
 
 * Quickly determine if your Redis database is performing as expected
 
-![img](/img/observability/redis-performance.png)
+<img src={useBaseUrl('img/observability/redis-performance.png')} alt="Amazon ElastiCache - Redis Performance Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 4. Amazon ElastiCache - Audit Event Details
 
@@ -139,7 +139,7 @@ Use this dashboard to:
 * Quickly determine changes made to your ElastiCache clusters while troubleshooting production outages
 * Determine if any nodes hosting your ElastiCache clusters were rebooted
 
-![img](/img/observability/audit-event-details.png)
+<img src={useBaseUrl('img/observability/audit-event-details.png')} alt="Amazon ElastiCache - Audit Event Details dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 1. Amazon ElastiCache - Host Performance Details
 
@@ -150,7 +150,7 @@ Use this dashboard to:
 * Get an at-a-glance view of the performance of all nodes within a given ElastiCache cluster
 * Determine if CPU, memory, swap memory or network resources need to be scaled up or down for a given cluster or service based on utilization trends
 
-![img](/img/observability/host-performance-details.png)
+<img src={useBaseUrl('img/observability/host-performance-details.png')} alt="Amazon ElastiCache - Host Performance Details dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 2. Amazon ElastiCache - Redis Performance Details
 
@@ -162,7 +162,7 @@ Use this dashboard to:
 * Review trends around defragmentation, replication lag and bytes replicated to determine optimizations
 * Quickly determine any authentication and authorization failures and grant or revoke privileges accordingly
 
-![img](/img/observability/redis-performance-details.png)
+<img src={useBaseUrl('img/observability/redis-performance-details.png')} alt="Amazon ElastiCache - Redis Performance Details dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 3. Amazon ElastiCache - Redis Command Latency
 
@@ -172,7 +172,7 @@ Use this dashboard to:
 
 * Optimize performance of your Redis clusters by monitoring latency observed across get/set operations. Latency can be high due to high CPU usage, swapping or removing cached items. Performance optimizations can therefore be made either via resource allocation or by optimizing on caching.
 
-![img](/img/observability/redis-command-latency.png)
+<img src={useBaseUrl('img/observability/redis-command-latency.png')} alt="Amazon ElastiCache - Redis Command Latency dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 4. Amazon ElastiCache - Redis Command Stats
 
@@ -187,4 +187,4 @@ Use this dashboard to:
 If high latency commands are not being processed frequently, you will want to look into monitoring and potentially allocating more CPU resources.
 :::
 
-![img](/img/observability/redis-command-stats.png)
+<img src={useBaseUrl('img/observability/redis-command-stats.png')} alt="Amazon ElastiCache - Redis Command Stats dashboard" style={{border: '1px solid gray'}} width="800" />

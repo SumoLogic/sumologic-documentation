@@ -5,10 +5,9 @@ description: This page lists the Kubernetes metrics that are collected when you 
 ---
 
 This page lists the Kubernetes metrics that are collected when you deploy the collection solution described in
-[sumologic-kubernetes-collection deployment guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
+[sumologic-kubernetes-collection deployment guide](/docs/send-data/kubernetes/install-helm-chart).
 
-Information about filtering and relabeling metrics, and how to send custom Prometheus metrics to Sumo Logic can be found in
-[Collecting Application Metrics guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-application-metrics.md).
+Information about filtering and relabeling metrics, and how to send custom Prometheus metrics to Sumo Logic, can be found in [Collecting Application Metrics](/docs/send-data/kubernetes/collecting-metrics).
 
 ## Kube state metrics (kube-state-metrics)
 
@@ -222,6 +221,7 @@ The table lists the metric name, source, and if it is forwarded.
 * node_vmstat_pgpgin
 * node_vmstat_pgpgout
 * node_memory_MemFree_bytes
+* node_memory_MemAvailable_bytes
 * node_memory_Cached_bytes
 * node_memory_Buffers_bytes
 * node_memory_MemTotal_bytes
@@ -248,120 +248,3 @@ To view metrics, open your browser to:
 
 Where `SUMOLOGIC_HELM_CHART_NAMESPACE` is the namespace where the Sumo Logic Kubernetes Collection Helm Chart is installed and
 `SUMOLOGIC_HELM_CHART_RELEASE_NAME` is the the release name of the Sumo Logic Kubernetes Collection Helm Chart in your cluster.
-
-## Metrics created by Prometheus rules (default-metrics)
-
-These metrics are produced by Prometheus rules at ingest time — they are not available on an exporter, Prometheus creates them during scrape activities. Rules-created metrics are sent with the remote write API.
-
-You can collect metrics created by Prometheus Operator rules in managed Kubernetes environments, such as GKE, EKS, or AKS, or in a Kubernetes deployment you manage yourself.
-
-These metrics can be found under the **default-metrics** source in Sumo Logic.
-
-### Metrics to collect
-
-* :kube_pod_info_node_count:
-* :node_cpu_saturation_load1:
-* :node_cpu_utilisation:avg1m
-* :node_disk_saturation:avg_irate
-* :node_disk_utilisation:avg_irate
-* :node_memory_swap_io_bytes:sum_rate
-* :node_memory_utilisation:
-* :node_net_saturation:sum_irate
-* :node_net_utilisation:sum_irate
-* cluster_quantile:apiserver_request_duration_seconds:histogram_quantile
-* cluster_quantile:scheduler_binding_duration_seconds:histogram_quantile
-* cluster_quantile:scheduler_e2e_scheduling_duration_seconds:histogram_quantile
-* cluster_quantile:scheduler_scheduling_algorithm_duration_seconds:histogram_quantile
-* instance:node_filesystem_usage:sum
-* instance:node_network_receive_bytes:rate:sum
-* node:cluster_cpu_utilisation:ratio
-* node:cluster_memory_utilisation:ratio
-* node:node_cpu_saturation_load1:
-* node:node_cpu_utilisation:avg1m
-* node:node_disk_saturation:avg_irate
-* node:node_disk_utilisation:avg_irate
-* node:node_filesystem_avail:
-* node:node_filesystem_usage:
-* node:node_inodes_free:
-* node:node_inodes_total:
-* node:node_memory_bytes_total:sum
-* node:node_memory_swap_io_bytes:sum_rate
-* node:node_memory_utilisation:
-* node:node_memory_utilisation:ratio
-* node:node_memory_utilisation_2:
-* node:node_net_saturation:sum_irate
-* node:node_net_utilisation:sum_irate
-* node:node_num_cpu:sum
-* node_namespace_pod:kube_pod_info:
-
-For more information about above metrics please see [this](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/scraped-metrics.md#aggregations) documentation.
-
-## Collection Health Related Metrics (default-metrics)
-
-These metrics are used to monitor the health of the collectors used to send telemetry data to Sumo Logic.
-
-These metrics can be found under the **default-metrics** source in Sumo Logic, in addition to the [Metrics created by Prometheus rules](/docs/metrics/kubernetes-metrics/#metrics-created-by-prometheus-rules).
-
-### Metrics to collect
-
-* fluentbit_input_bytes_total
-* fluentbit_input_files_closed_total
-* fluentbit_input_files_opened_total
-* fluentbit_input_files_rotated_total
-* fluentbit_input_records_total
-* fluentbit_output_errors_total
-* fluentbit_output_proc_bytes_total
-* fluentbit_output_proc_records_total
-* fluentbit_output_retries_failed_total
-* fluentbit_output_retries_total
-* fluentd_output_status_buffer_available_space_ratio
-* fluentd_output_status_buffer_queue_length
-* fluentd_output_status_buffer_stage_byte_size
-* fluentd_output_status_buffer_stage_length
-* fluentd_output_status_buffer_total_bytes
-* fluentd_output_status_emit_count
-* fluentd_output_status_emit_records
-* fluentd_output_status_flush_time_count
-* fluentd_output_status_num_errors
-* fluentd_output_status_queue_byte_size
-* fluentd_output_status_retry_count
-* fluentd_output_status_retry_wait
-* fluentd_output_status_rollback_count
-* fluentd_output_status_slow_flush_count
-* fluentd_output_status_write_count
-* otelcol_otelsvc_k8s_other_added
-* otelcol_otelsvc_k8s_other_updated
-* otelcol_otelsvc_k8s_pod_added
-* otelcol_otelsvc_k8s_pod_deleted
-* otelcol_otelsvc_k8s_pod_updated
-* otelcol_process_cpu_seconds
-* otelcol_process_runtime_heap_alloc_bytes
-* otelcol_process_runtime_total_alloc_bytes
-* otelcol_process_runtime_total_sys_memory_bytes
-* otelcol_queue_length
-* otelcol_spans_dropped
-* otelcol_trace_batches_dropped
-* prometheus_remote_storage_dropped_samples_total
-* prometheus_remote_storage_enqueue_retries_total
-* prometheus_remote_storage_failed_samples_total
-* prometheus_remote_storage_highest_timestamp_in_seconds
-* prometheus_remote_storage_pending_samples
-* prometheus_remote_storage_queue_highest_sent_timestamp_seconds
-* prometheus_remote_storage_retried_samples_total
-* prometheus_remote_storage_samples_in_total
-* prometheus_remote_storage_sent_batch_duration_seconds_bucket
-* prometheus_remote_storage_sent_batch_duration_seconds_count
-* prometheus_remote_storage_sent_batch_duration_seconds_sum
-* prometheus_remote_storage_shard_capacity
-* prometheus_remote_storage_shards
-* prometheus_remote_storage_shards_desired
-* prometheus_remote_storage_shards_max
-* prometheus_remote_storage_shards_min
-* prometheus_remote_storage_string_interner_zero_reference_releases_total
-* prometheus_remote_storage_succeeded_samples_total
-
-## up metrics (default-metrics)
-
-Prometheus generates a metric called up that indicates whether a scrape was successful. A  value of “1” is scrape indicates success, “0” failure. The `up` metric is useful for debugging and alerting for targets that are down or having issues. Each target should produce an up metric on every scrape.
-
-These metrics can be found under the **default-metrics** source in Sumo Logic.

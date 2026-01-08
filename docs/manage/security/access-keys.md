@@ -1,130 +1,190 @@
 ---
 id: access-keys
 title: Access Keys
-description: Access keys allow you to securely register new Collectors or access Sumo Logic APIs.
+description: Access keys allow you to securely register new collectors or access Sumo Logic APIs.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-In Sumo Logic, you must use an access key to:
-
-* **Register new Collectors.** When you install a Collector, in addition to having a role that grants you the **Manage Collectors** capability, you must supply an access key. You can use a different access key for each Collector, or use the same access key for multiple Collectors. The only time a Collector uses the access key is at installation, so if a key is deleted after a Collector has been set up, the Collector isn't affected.
-* **Use Sumo Logic APIs.** You must supply an access key to use the Sumo Logic APIs. See [API Authentication](/docs/api/getting-started#authentication) for details.
-
-You can create and manage your own access keys on the **Preferences** page in the Sumo web app. If your role grants you the **Manage Access Keys** capability, you can manage access keys created by other Sumo users on the **Administration** > **Security** > **Access Keys** page.
-
 import Iframe from 'react-iframe';
 
+In Sumo Logic, you'll need an access key to:
+
+* **Register new Collectors**. When you install a collector, in addition to having a role that grants you the **Manage Collectors** capability, you must supply an access key. You can use a different access key for each collector, or use the same access key for multiple collectors. The only time a collector uses the access key is at installation, so if a key is deleted after a collector has been set up, the collector isn't affected.
+* **Use Sumo Logic APIs**. You must supply an access key to use the Sumo Logic APIs. See [API Authentication](/docs/api/about-apis/getting-started#authentication) for details.
+* **Run scripts or automation**. Create access keys to provide authentication for scripts or automation.
+
 :::sumo Micro Lesson
+Watch this micro lesson to learn about access keys.
 
-Managing Access Keys (how to).
+<Iframe url="https://fast.wistia.net/embed/iframe/5334f8q4os?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Managing Access Keys (Conceptual)"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+:::
 
-<Iframe url="https://www.youtube.com/embed/1UY7vQiJwQ4?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+:::sumo Micro Lesson
+Watch this micro lesson to learn how to create access keys.
 
+<Iframe url="https://fast.wistia.net/embed/iframe/01escgcbfa?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Managing Access Keys (How To)"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 :::
 
 
-## Create your access key
 
-### From the Preferences page
+## Prerequisites
 
-If you have the [**Create Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities#security), you can use the **Preferences** page to create access keys.
+* You'll need the [**Create Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities#security) to create an access key.
+* You'll need the [**Manage Access Keys** capability](/docs/manage/users-roles/roles/role-capabilities#security) to manage access keys created by other users in your org.
+* Access keys use the permissions of the user running the key. The user utilizing an access key must have the [role capabilities](/docs/manage/users-roles/roles/role-capabilities) needed to execute the tasks the access key is needed for. 
 
-To create your own access keys:
+## Create an access key
 
-1. In Sumo Logic, click your name in the left-nav and open the **Preferences** page.
-1. In the **My Access Keys** section, click **+ Add Access Key**.<img src={useBaseUrl('/img/security/access-key-preferences-page-2.png')} alt="Add Access Key" width="800"/>
-1. The **Create a Sumo Logic Access Key** window appears.
-<img src={useBaseUrl('/img/security/create-access-key.png')} alt="Create an Access Key" width="600"/>
-1. Enter a name for the access key in the **Name** field. If you don’t want to create an allowlist of domains from which the access key can be used to access Sumo APIs, go to step 7 below.
-1. (Optional) In this step, you can define one or more domains that may use the access key to access Sumo APIs.
-  :::note
-  Enter a domain in the **Allowlisted CORS Domains** field and click **Add**. Enter the domains in the [Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) format described in Mozilla help. The URL pattern must include the HTTPS protocol and a domain name, a port is optional.
-  :::
-  <img src={useBaseUrl('/img/security/create-access-key-2.png')} alt="Add a domain for an access key" width="600"/>
-1. The window updates, and displays the domain you added.Repeat steps 5 and 6 to add additional domains to the allowlist.
-1. Click **Create Key** to generate the key. 
-1. The window displays the generated Access ID and Access Key. Copy both before clicking **Done**. After you press **Done**, you will not be able to recover the Access ID and Access Key.
-<img src={useBaseUrl('/img/security/generated-access-key.png')} alt="Access key successfully created" width="600"/>
+### From the Personal Access Keys tab
 
-### CORS support
+A *personal access key* is a key that you can create to manage access for personal use. 
 
-Sumo supports cross-origin resource sharing (CORS), a mechanism that uses additional HTTP headers to tell a browser to let a web application running at one origin (domain) have permission to access selected resources from a server at a different origin. 
+:::tip
+If you are an administrator who needs to create an access key for system use (such as for API scripts, third party integrations, or infrastructure as code), we recommend you create the access key on a [service account](#from-a-service-account). 
+:::
 
-When you create an access key, you can optionally define an allowlist of domains that may access Sumo APIs using that access key. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select your username, and then under **Preferences** select **Personal Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Personal Access Keys**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences > Personal Access Keys**.
+1. On the **Personal Access Keys** tab, click **+ Add Access Key**.<br/><img src={useBaseUrl('/img/security/access-key-preferences-page.png')} alt="Personal Access Keys tab" style={{border: '1px solid gray'}} width="800"/><br/>The **Add New Access Key** window appears.<br/><img src={useBaseUrl('/img/security/create-access-key.png')} alt="Add New Access Key screen" style={{border: '1px solid gray'}} width="500"/>
+1. **Name**. Enter a name for your access key.  
+1. **Allowed CORS Domains (optional)**. Create an allowlist of domains from which the access key can be used to access Sumo Logic APIs. For more information, see [CORS support](#cors-support). 
+    :::note
+    Enter the domains in the [Origin format](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) described in Mozilla help. The URL pattern must include the HTTPS protocol and a domain name. A port is optional.
+    :::
+1. **Scopes**. For additional security, you can select scopes to give the key only the permissions you specify.
+   :::note
+   The user who will be utilizing the access key needs to have all the same [role capabilities](/docs/manage/users-roles/roles/role-capabilities) as the scopes on the access key. Otherwise, once the user views the access key details, the scopes will be displayed as red in the UI red with a message that the user does not have rights for those scopes.
+   :::
+   Select the scopes for the key:
+    * **Default**. The key has all permissions.
+    * **Custom**. The key has only the specified permissions. <br/><img src={useBaseUrl('/img/security/access-key-scopes.png')} alt="Access key scopes" style={{border: '1px solid gray'}} width="400"/><br/>Select the **View** and **Manage** permissions that you want the access key to have using the available categories.<br/><img src={useBaseUrl('/img/security/custom-scopes-detail.png')} alt="Custom scopes detail" style={{border: '1px solid gray'}} width="550"/>
+1. Click **Save** to generate the key. 
+1. **IMPORTANT**. Copy both the generated Access ID and Access Key before clicking **Done**. *This is the only time you will be able to copy the ID and key*.<br/><img src={useBaseUrl('/img/security/generated-access-key.png')} alt="Access key successfully created message in Sumo Logic for creating an access key, showing the Access ID and Access Key with options to copy them, and a Done button." style={{border: '1px solid gray'}} width="600"/>
+   :::warning
+   After you click **Done**, you will not be able to recover this Access ID and Access Key.
+   :::
 
-Whether Sumo accepts or rejects an API request depends on whether it contains an ORIGIN header and the entries in the allowlist. 
+All personal access keys created in the organization are displayed in the **Access Keys** tab, described next. 
 
-Sumo rejects:
+### From the Access Keys tab
+
+The **Access Keys** tab shows all access keys in the system. It provides a central place for administrators to manage access keys.
+
+Administrators can create access keys under **Access Keys** as an alternative to doing it [from the Personal Access Keys tab](#from-the-personal-access-keys-tab) or [from a service account](#from-a-service-account).
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Access Keys**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Access Keys**. 
+1. At the top right of the table, click **+ Add Access Key**. <br/><img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Sumo Logic interface showing a list of access keys with options to add a new access key, search access keys, and statuses of existing keys." style={{border: '1px solid gray'}} width="700"/>
+1. Follow the steps in [From the Personal Access Keys tab](#from-the-personal-access-keys-tab) section above, starting with step 3.
+
+### From a Service Account
+
+Administrators can create access keys on a service account for use in scripts or automation. For more information, see [Service Accounts](/docs/manage/security/service-accounts).
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Service Accounts**. You can also click the **Go To...** menu at the top of the screen and select **Service Accounts**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service Accounts**. 
+1. Select a service account.
+1. Click **Add Access Key**.<br/><img src={useBaseUrl('/img/security/service-account-details.png')} alt="Add Access Key button on service account details pane" style={{border: '1px solid gray'}} width="300"/>
+1. Follow the steps in [From the Personal Access Keys tab](#from-the-personal-access-keys-tab) section above, starting with step 3.
+
+#### CORS support
+
+Sumo Logic supports cross-origin resource sharing (CORS), a mechanism that uses additional HTTP headers to tell a browser to let a web application running at one origin (domain) have permission to access selected resources from a server at a different origin. When you create an access key, you can optionally define an allowlist of domains that may access Sumo Logic APIs using that access key. 
+
+Whether Sumo Logic accepts or rejects an API request depends on whether it contains an ORIGIN header and the entries in the allowlist. Sumo Logic rejects:
 
 * Requests with an ORIGIN header but the allowlist is empty.
-* Requests with an ORIGIN header that don't match any entry in the allowlist.
+* Requests with an ORIGIN header that do not match any entry in the allowlist.
 
-When Sumo rejects a request, it issues an httpErrorCode 403 error. The error key is "forbidden" and the error message is: `The request origin is not allowlisted to use this access key`.
+When Sumo Logic rejects a request, it issues an httpErrorCode 403 error. The error key is "forbidden" and the error message is: `The request origin is not allowlisted to use this access key`.
 
-Sumo accepts:
+Sumo Logic accepts:
 
 * Requests without an ORIGIN header. 
 * Requests with an ORIGIN header that matches an entry in the allowlist.
 * All OPTIONS requests.
 
-When Sumo accepts a request, the response includes the ORIGIN header in
+When Sumo Logic accepts a request, the response includes the ORIGIN header in
 an Access-Control-Allow-Origin header.
 
+## Edit, activate/deactivate, rotate, or delete access keys
 
+### Personal access keys
 
-## Edit, deactivate, or delete an access key
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select your username, and then under **Preferences** select **Personal Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Personal Access Keys**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences > Personal Access Keys**. 
+1. Hover your mouse over an access key and click the three-dot icon to reveal the modification options:<br/><img src={useBaseUrl('/img/security/my-access-keys1.png')} alt="Personal Access Keys tab displaying a list of access keys with options to activate/deactivate, edit, rotate, or delete them." style={{border: '1px solid gray'}} width="800"/>
+   * **Edit**. Opens up a window where you can modify the allowlist for your access key.
+   * **Activate/Deactivate**. Depending on the current status of your access key, you'll see either an **Activate** or **Deactivate** option. If you deactivate an access key, Sumo Logic will retain the key credentials, but render the key useless. By default, Sumo Logic will deactivate an access key if it has gone unused for more than 30 days, though the [access keys deactivation policy](#access-keys-deactivation-policy) can be updated by a Sumo Logic administrator. You can reactivate a key at any time to begin using it again.
+     :::note
+     After an access key is deactivated, there can be a brief period of time during which a previous successful authentication remains cached and a subsequent API request using the deactivated key will succeed. This could occur if the access key was used to authenticate within 15 minutes prior to the key being deactivated.
+     :::
+   * **Rotate**. Refresh an access key with a new Access ID and Access Key. Copy the new ID and key and use them in all the places where the previous access key was used. (The old key is still usable for 5 minutes after rotation.) Rotate access keys in accordance with your company's rules. By default, access keys are set to never expire after creation or rotation, though the [access keys expiration policy](#access-keys-expiration-policy) can be updated by a Sumo Logic administrator. An access key's expiration date appears in the **Expires At** column.
+   * **Delete**. Permanently removes the access key. The key will no longer be usable for API calls. However, deleting a key used to register a collector does not affect the collector, since the only time a collector uses the access key is at installation.
 
-You can use the **Preferences** page to edit, activate, deactivate, and delete your access keys. 
+### Organization access keys
 
-When you mouse over an access key on the **Preferences** page, several controls appear. 
-<img src={useBaseUrl('/img/security/my-access-keys1.png')} alt="My Access Keys" width="800"/>
+If you have the [**Manage Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities#security), you can edit, deactivate, and delete any access keys created by other users in your organization.
 
-* **Edit**. The pencil icon opens up an **Edit Access Key** window where you can modify the allowlist for the access key.
-* **Deactivate/Reactivate**. Depending on the current status of the key, there will be either a **Deactivate** or **Reactivate** link. If you deactivate an access key, Sumo Logic retains the key credentials but renders the key useless. By default, Sumo Logic will deactivate an Access Key if it has gone unused for more than 30 days, though the [Access Keys Deactivation policy](#access-keys-deactivation-policy) can be updated by a Sumo Logic administrator. You can reactivate a key at any time to begin using it again.
-  :::note
-  After an access key is deactivated, there can be a brief period of time during which a previous successful authentication remains cached and a subsequent API request using the deactivated key will succeed. This could occur if the access key was used to authenticate within 15 minutes prior to the key being deactivated.
-  :::
-* **Delete**. Use the trash can icon to permanently remove the access key. The key will no longer be usable for API calls. However, deleting a key used to register a Collector does not affect the Collector, as the only time a Collector uses the access key is at installation.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Access Keys**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Access Keys**. 
+1. Hover your mouse over an access key and click the three-dot kebab icon. This reveals the same modification options that appear on the **Personal Access Key** page, [as described above](#edit-activatedeactivate-rotate-or-delete-access-keys).
 
-### Access Keys Deactivation policy
+### Access keys deactivation policy
 
-To enhance the security of your account, Sumo Logic will by default automatically deactivate any Access Keys that haven’t been used for over 30 days. Deactivating Access Keys that have gone unused ensures that forgotten keys cannot be later used to access your account. 
+To enhance the security of your account, Sumo Logic will by default automatically deactivate access keys that haven’t been used for 30 days or more. As an extra security measure, deactivating an access key that has gone unused will ensure that forgotten keys cannot be used later to access your account.
 
-An administrator can adjust the limit to the number of days an Access Key can go unused before being automatically deactivated. To configure this option, you must be a Sumo Logic Administrator or have the **Manage organization settings** role capability. 
+An administrator can adjust the limit to the number of days an Access Key can go unused before being automatically deactivated. To configure this option, you must be a Sumo Logic Administrator or have the **Manage organization settings** role capability.
 
-To configure the Access Keys Deactivation policy:
-1. Go to **Administration > Security > Policies**.
-2. Locate the **Access Keys Deactivation** policy setting. 
-3. Select a value in the **No. of Days** field.<br/><img src={useBaseUrl('img/security/access-keys-deactivation.png')} alt="Access Keys Deactivation" width="600"/>
+To configure the access keys deactivation policy:
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
+1. Under the **Access Keys Deactivation** section, select a value in the **No. of Days** field.<br/><img src={useBaseUrl('img/security/access-keys-deactivation.png')} alt="Access Keys Deactivation settings in Sumo Logic, allowing automatic deactivation of unused or unmodified API access keys after a specified number of days." style={{border: '1px solid gray'}} width="600"/>
 
+    :::note
+    This section is visible to Administrators only.
+    :::
 
-## Manage all users’ access keys on Access Keys page
+### Access keys expiration policy
 
-If you have the [**Manage Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities#security), you can manage access keys created by other Sumo Logic users in your organization: you can edit, deactivate, and delete any access key. You can use the **Access Keys** page to create and edit your own access keys. 
+By default, access keys are set to never expire. However, an administrator can use the **Access Keys Expiration** policy to set access keys to expire after a set period. Automatically expiring keys ensures they don't remain in use past your company's access key rotation rules. 
 
-### Generate an access key 
+An access key's expiration date appears in the **Expires At** column on the **Access Keys** tab. You can sort by this column to see when you must rotate keys. To rotate a key, hover your mouse over an access key, click the three-dot kebab icon, and select **Rotate**. (The old key is still usable for 5 minutes after rotation.) Rotating an access key resets its expiration date according to the number of days in the policy. 
 
-1. Go to **Administration** > **Security** > **Access Keys**.
-<img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Add Access Key" width="800"/>
-1. At the top right of the table, click **+ Add Access Key**.
-1. Follow the steps to create your own access keys [from the Preferences page](#from-the-preferences-page) above, starting with step 3.
+An administrator can adjust the time period before access keys expire. To configure this option, you must be a Sumo Logic Administrator or have the **Manage organization settings** role capability.
 
-### Edit, deactivate, or delete an access key
+To configure the access keys expiration policy:
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
+1. Under the **Access Keys Expiration** section, select a value in the **Expiration** field. <br/><img src={useBaseUrl('img/security/access-key-expiration-policy.png')} alt="Access keys expiration settings in Sumo Logic, allowing automatic expiration of API access keys after a specified number of days." style={{border: '1px solid gray'}} width="600"/>
 
-The **Security** > **Access Keys** page lists all access keys in your account. 
+    :::note
+    This section is visible to Administrators only.
+    :::
 
-When you mouse over an access key, a three-dot more options menu appears, with three options.
-<img src={useBaseUrl('img/security/access-key-three-dot.png')} alt="Edit access key" width="800"/>
+    :::warning
+    When you change the policy, all access keys inherit the new policy, and the expiration date for all access keys is reset. For example, if you change the policy to 90 days, then the expiration date is reset on all access keys to 90 days from the date the policy was changed.
+    :::
 
-* **Edit**. Opens up an **Edit Access Key** window where you can modify the allowlist for the access key.
-* **Deactivate/Reactivate**. Depending on the current status of the key, there will be either a **Deactivate** or **Reactivate** option. If you deactivate an access key, Sumo retains the key credentials but renders the key useless. You can reactivate a key at any time to begin using it again. 
-* **Delete**. Use the trash can icon to permanently remove the access key. The key will no longer be usable for API calls. However, deleting a key used to register a Collector has no effect on the Collector, as the only time a Collector uses the access key is at installation.
+## Audit logging for access key activity
+
+Access key events are recorded in the Audit Event Index. To search for for access key events, run this query:
+
+```
+_index=sumologic_audit_events _sourceCategory=accessKeys
+```
+
+For more information about audit logging, see [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/).
+

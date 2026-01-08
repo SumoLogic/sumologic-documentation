@@ -5,6 +5,8 @@ sidebar_label: Introduction to Metrics
 description: Sumo Logic Metrics is an effective tool for monitoring, troubleshooting, and identifying the root causes of problems.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Metrics are an effective tool for monitoring, troubleshooting, and identifying the root causes of problems. This page is a high-level overview of metrics in Sumo Logic and the terminology we use to talk about metrics.
 
 
@@ -86,9 +88,14 @@ For more information, see [About Metrics Rules](/docs/metrics/metric-rules-edito
 
 ## Metrics queries
 
-To query metrics in Sumo, you open the Metrics Explorer by clicking **+ New**, and selecting **Metrics**. In the screenshot below, the Metrics Explorer show the results of two queries.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access Metrics Search, in the main Sumo Logic menu select **Metrics > Metrics Search**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Search**. 
 
-![two-queries.png](/img/metrics/two-queries.png)
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access Metrics Search, go to the **Home** screen and select **Metrics**. 
+
+In the screenshot below, the Metrics Search shows the results of two queries.
+
+<img src={useBaseUrl('img/metrics/pre-join.png')} alt="Before joining queries" style={{border: '1px solid gray'}} width="800" />
+
 
 ### What’s in a metric query?
 
@@ -96,11 +103,11 @@ A metric query consists of a metric, one or more filters and optionally, one or
 
 #### Metric
 
-When you create a metric query in the Metrics Explorer, the first thing you do is select a metric. When you click in the **Metrics** field, a list of metrics appears. 
+When you [create a metric query](/docs/metrics/metrics-queries/metrics-explorer/#create-a-metric-query) in the Metrics Search, the first thing you do is select a metric. When you click in the **Metrics** field, a list of metrics appears. 
 
 #### Filters  
 
-Filters, sometimes referred to as selectors, narrow the scope of your query. If you don't include one or more filters in a metric query or apply an aggregation operator, it's possible that the query will return too many results to display.  A filter can be one or more key-value pairs, or a keyword string, or a combination of key-value pairs and keywords. When you click in the **Filters** field, a list of metadata fields appears, for example, `_sourceCategory`, `_collector`, `availabilityzone`, and so on. After you select a metadata field, a list of values appear. Here are two examples of filters:
+Filters, sometimes referred to as selectors, narrow the scope of your query. If you do not include one or more filters in a metric query or apply an aggregation operator, it's possible that the query will return too many results to display.  A filter can be one or more key-value pairs, or a keyword string, or a combination of key-value pairs and keywords. When you click in the **Filters** field, a list of metadata fields appears, for example, `_sourceCategory`, `_collector`, `availabilityzone`, and so on. After you select a metadata field, a list of values appear. Here are two examples of filters:
 
 * `cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu-idle`
 * `_sourceCategory=hostmetrics`
@@ -113,11 +120,11 @@ For more information, see [Metrics Operators](/docs/metrics/metrics-operators).
 
 ## Creating a query
 
-For instructions on how to create a metric query, see [Metrics Explorer](../metrics-queries/metrics-explorer.md). 
+For instructions on how to create a metric query, see [Metrics Search](../metrics-queries/metrics-explorer.md#create-a-metric-query). 
 
 ### Metricmonitors
 
-You can configure a metric monitor for a metric query so that Sumo will send an alert notification, when the query results match the rules that you define for the monitor. There are two notification types: email and WebHook. 
+You can configure a metric monitor for a metric query so that Sumo will send an alert notification, when the query results match the rules that you define for the monitor. There are two notification types: email and webhook. 
 
 You can set up several types of monitors: Critical, Warning, and Missing Data. Critical and Warning result in value-based alerts—they are triggered when a metric in a time series varies from a threshold for a specified period of time.  A Missing Data monitor triggers an alert when no data is received for a specified period of time.  
 

@@ -26,7 +26,7 @@ _sourceCategory=safend
 **Extraction Rule:**
 
 ```sql
-parse regex "Action: (?<action>[^,]*)" nodrop
+| parse regex "Action: (?<action>[^,]*)" nodrop
 | parse " * [" as host nodrop | parse "] *:" as alert_type nodrop
 | parse "User: *," as user nodrop
 | parse "Computer: *," as computer nodrop

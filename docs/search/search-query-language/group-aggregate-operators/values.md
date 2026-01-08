@@ -4,6 +4,7 @@ title: values Grouping Operator
 sidebar_label: values
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `values` operator provides all the distinct values of a field. This allows you to quickly identify and understand all the values a field has in your data. Additionally, you have the option to group by other fields of interest.
 
@@ -24,7 +25,8 @@ The response field separates each value with a new line character and places
 
 This is an example of a response field with IP addresses:
 
-![values operator response field example.png](/img/search/searchquerylanguage/group-aggregate-operators/values-operator-response-field-example.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/group-aggregate-operators/values-operator-response-field-example.png')} alt="Example of a response field with IP addresses" style={{border: '1px solid gray'}} width="150
+" />
 
 ### Limitation
 

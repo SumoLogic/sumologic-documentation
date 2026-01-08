@@ -4,7 +4,9 @@ title: tourl Search Operator
 sidebar_label: tourl
 ---
 
-The `tourl` operator provides you the ability to assign a short name that describes the URL. It is similar to creating a href for the URL with a short name. URLs are generally long and they don't tell you what information is displayed when the URL is opened. A common benefit of using this operator is to provide a description of a URL to display in dashboards.
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+The `tourl` operator provides you the ability to assign a short name that describes the URL. It is similar to creating a href for the URL with a short name. URLs are generally long and they do not tell you what information is displayed when the URL is opened. A common benefit of using this operator is to provide a description of a URL to display in dashboards.
 
 
 ## Syntax
@@ -26,10 +28,11 @@ Where:
 
 ## Rules
 
-* If you choose to specify one optional parameter, you must specify both the optional parameters - prefix and suffix. You should provide an empty string ("") if you don't have a value for one.
+* If you choose to specify one optional parameter, you must specify both the optional parameters - prefix and suffix. You should provide an empty string (`""`) if you do not have a value for one.
 * Only fully-formed URLs (for example, `https://google.com`) are supported as values for `url_column_name`.
 * For the link to be clickable your query needs to aggregate by the returned field.
 * You can only specify a single URL. `tourl` does not support merging multiple outputs into a single field.
+* If you have double-quotes in `url_column_name`, replace them with the ASCII code `%22` (for example, `tourl("https://google.com?foo=%22bar%22","bar")`).
 
 #### Tabs
 
@@ -37,9 +40,9 @@ When your URL points to another Sumo Logic feature from your account, such as a 
 
 Right-click the link to view the tab-options menu:
 
-![tab menu.png](/img/search/searchquerylanguage/search-operators/tourl-tab-menu.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/tourl-tab-menu.png')} alt="Tab menu" style={{border: '1px solid gray'}} width="300" />
 
-If you don't see the menu it is not a supported link.
+If you do not see the menu, it is not a supported link.
 
 * The URL must be from the same host.
 * The menu isn't available in full-screen mode. 
@@ -48,7 +51,7 @@ If you don't see the menu it is not a supported link.
 
 #### Providing a static name as short name
 
-If you’re sharing the Akamai Denials by Host search query in a dashboard with others, you can use the tourl operator to add a href to the URL in the dashboard. You’ll run this query to generate the short name:
+If you’re sharing the Akamai Denials by Host search query in a dashboard with others, you can use the `tourl` operator to add a href to the URL in the dashboard. You’ll run this query to generate the short name:
 
 ```sql
 | tourl("https://www.sumologic.net/ui/#section/search/H10KMVHzntXo9PrFAumuFemdU27f2iqU7bA3U7Lq", "Akamai Denials by Host") as AkamaiQuery
@@ -57,7 +60,7 @@ If you’re sharing the Akamai Denials by Host search query in a dashboard with 
 
 When you add this to a dashboard, you’ll see the short name. When you click the link, it will open the Akamai denials by host search query.
 
-![AkamaiSearchQuery.png](/img/search/searchquerylanguage/search-operators/tourl-AkamaiSearchQuery.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/tourl-AkamaiSearchQuery.png')} alt="Akamai search query" style={{border: '1px solid gray'}} width="600>" />
 
 #### Using a column for short name, and a prefix
 
@@ -73,12 +76,12 @@ _index=sumologic_audit class=scheduled_search action=FINISH status=FAILURE
 | count by urlfailed
 ```
 
-Notice the query uses the value `"Scheduled search failed at: "` as the value for the prefix optional parameter, and an empty string ("") for the suffix parameter.
+Notice the query uses the value `"Scheduled search failed at: "` as the value for the prefix optional parameter, and an empty string (`""`) for the suffix parameter.
 
 The query result will be:
 
-![tourlResult.png](/img/search/searchquerylanguage/search-operators/tourlResult.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/tourlResult.png')} alt="tourl result" style={{border: '1px solid gray'}} width="600" />
 
 When you add the result to a dashboard, you’ll see the short name. When you click the link, it will take you to the scheduled search query.
 
-![toUrlDashboard.png](/img/search/searchquerylanguage/search-operators/toUrlDashboard.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/toUrlDashboard.png')} alt="toUrl dashboard" style={{border: '1px solid gray'}} width="800" />

@@ -15,5 +15,5 @@ asin(<x>) as <field>
 ## Example
 
 ```sql
-asin(1) as v // v = 1.5707963267948966
+* | asin(1) as v
 ```

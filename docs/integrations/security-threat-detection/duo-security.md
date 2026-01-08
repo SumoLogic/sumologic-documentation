@@ -7,41 +7,61 @@ description: The Sumo Logic App for Duo Security helps you monitor your Duo acco
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="thumbnail icon" width="55"/>
 
 Duo provides two-factor authentication, endpoint remediation, and secure single sign-on tools. The Sumo Logic App for Duo Security helps you monitor your Duo account’s [authentication logs](https://duo.com/docs/adminapi#authentication-logs), [administrator logs](https://duo.com/docs/adminapi#administrator-logs), and [telephony logs](https://duo.com/docs/adminapi#telephony-logs). The dashboards provide insight into failed and successful authentications, events breakdown by applications, factors, and users, geo-location of events, admin activities, outliers, threat analysis of authentication, and administrator events.
 
-## Log Types
+## Log types
 
-The Duo Security App uses following logs. See [Duo documentation](https://duo.com/docs/adminapi#logs) for details of the log schema.
+The Duo Security App uses following logs. Refer to the [Duo documentation](https://duo.com/docs/adminapi#logs) for details of the log schema.
 
 When you generate the Duo credentials, you should do it for the Admin API application.
 
-* Authentication Logs
-* Administrator Logs
-* Telephony Logs
+* Authentication logs
+* Administrator logs
+* Telephony logs
 
-## Collecting Logs for the Duo Security App
+## Collection configuration and app installation
 
-To collect logs from the Duo Security App, use the new [Cloud to Cloud Integration for Duo Security App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source) to create the source and use the same source category while installing the app.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
+<CollectionConfiguration/>
 
-## Installing the Duo Security App and View the Dashboards
+:::important
+Use the [Cloud-to-Cloud Integration for Duo Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Duo Security app is properly integrated and configured to collect and analyze your Duo Security data.
+:::
 
-This section provides instructions on how to install the Duo Security App, as well as an example of each of the App dashboards. The App dashboards provide insight into failed and successful authentications, administrator events, and outlier events.
+### Create a new collector and install the app
 
-The Duo Security App helps you monitor your Duo account’s [authentication](https://duo.com/docs/adminapi#authentication-logs), [administrator](https://duo.com/docs/adminapi#administrator-logs), and [telephony logs](https://duo.com/docs/adminapi#telephony-logs).
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-{@import ../../reuse/apps/app-install.md}
+<AppCollectionOPtion1/>
 
-## Viewing the Duo Security Dashboards
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing Duo Security dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+The Duo Security app helps you monitor your Duo account’s [authentication](https://duo.com/docs/adminapi#authentication-logs), [administrator](https://duo.com/docs/adminapi#administrator-logs), and [telephony logs](https://duo.com/docs/adminapi#telephony-logs).
 
 ### Overview
 
 Overview of Duo Events including events breakdown by type, geographic location, one-day time comparison of events, and admin activity.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/duo-overview.png')} alt="Duo Security dashboards" />
-
 
 ### Administrator Events
 
@@ -52,10 +72,10 @@ Geographic location of admin events, one-day time comparison of events, login er
 ### Success Authentications
 
 Geographic location of successful authentication events, one-day time comparison of events, breakdown of events by Application, Factor, Users, Country, State, and City.
+
 <img src={useBaseUrl('img/integrations/security-threat-detection/duo-success-authentication.png')} alt="Duo Security dashboards" />
 
 ### Failed Authentications
-
 
 Geographic location of failed authentication events, one-day time comparison of failed events, breakdown of events by Application, Factor, Users, Country, State, and City.
 
@@ -66,3 +86,15 @@ Geographic location of failed authentication events, one-day time comparison of 
 Outliers and threat analysis of Duo events.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/duo-outliers-threat.png')} alt="Duo Security dashboards" />
+
+## Upgrade/Downgrade the Duo app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Duo app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

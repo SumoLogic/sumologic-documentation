@@ -11,6 +11,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic app for Azure Network Watcher leverages Network Security Group (NSG) flow logs to provide real-time visibility and analysis of your Azure Network. This App provides preconfigured Dashboards that allow you to monitor inbound traffic, outliers in traffic flow, and denied traffic flows.
 
+:::info
+On September 30, 2027, Azure Network Watcher will retire Network Security Group (NSG) flow logs. Starting June 30, 2025, you will no longer be able to create new NSG flow logs. To avoid service disruptions, [migrate your existing NSG flow logs configuration to Virtual Network Flow Logs](https://learn.microsoft.com/en-gb/azure/network-watcher/nsg-flow-logs-migrate). After migration, configure [collection for Virtual Network Flow logs](/docs/integrations/microsoft-azure/azure-virtual-network.md#setup) and install the new Sumo Logic app for [Azure Virtual Network](/docs/integrations/microsoft-azure/azure-virtual-network).
+:::
+
 ## Log types
 
 The Sumo Logic App for Azure Network Watcher uses Network Security Group (NSG) flow logs. NSG flow logs provide ingress and egress IP traffic flow with the following information:
@@ -20,7 +24,7 @@ The Sumo Logic App for Azure Network Watcher uses Network Security Group (NSG) f
 * 5-tuple information with respect to flow (Source/Destination IP and Port, Protocol)
 * Allowed/Denied traffic flow.
 
-### Sample log message
+### Sample log messages
 
 ```json
     {  
@@ -41,7 +45,7 @@ The Sumo Logic App for Azure Network Watcher uses Network Security Group (NSG) f
     }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Denied Traffic Flow by Source Location"
 _sourceCategory="security/flowlogs"
@@ -63,7 +67,7 @@ _sourceCategory="security/flowlogs"
 | sort _count
 ```
 
-## Collecting Logs for the Azure Network Watcher app
+## Collecting logs for the Azure Network Watcher app
 
 This document provides instructions for configuring the collection of NSG Flow Logs for the Azure Network Watcher App.
 
@@ -93,7 +97,7 @@ To configure an Azure storage account, do the following:
    * Select **Blobs** under **Blob Service**.
       * Select **+ Container**,
       * Enter the Name
-      * Select** Private** for the Public Access Level.
+      * Select **Private** for the Public Access Level.
       * Click **OK**.
 
 Make a note of the container name. You will need to supply it later.
@@ -108,62 +112,38 @@ This section demonstrates how to configure an HTTP source to receive logs from t
 
 To configure an HTTP source for Azure, do the following:
 1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the URL for the source, you will need it in the next step. I
-3. In **Advanced Options for Logs**, under **Timestamp Format**, click Specify a format and enter the following:
-* Specify Format as epoch
-* Specify Timestamp locator as `\"time\": (.*),`
+2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the URL for the source, you will need it in the next step.
+3. In **Advanced Options for Logs**, under **Timestamp Format**, click **Specify a format** and enter the following:
+   * Specify Format as epoch
+   * Specify Timestamp locator as `\"time\": (.*),`
 
 ### Step 3: Configure Azure Resources using ARM template
 
-In this step, you use a Sumo Logic provided Azure Resource Manager (ARM) template to create an Event Hub, three Azure functions, Service Bus Queue, and a Storage Account.
-
-1. Download the [blobreaderdeploy.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/BlockBlobReader/src/blobreaderdeploy.json) ARM template.
-This template uses Consumption Plan which does not support VNet integration. For VNet integration, you can use [blobreaderdeploywithPremiumPlan.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/BlockBlobReader/src/blobreaderdeploywithPremiumPlan.json) which uses Elastic Premium plan.
-1. Click **Create a Resource**, search for **Template deployment** in the Azure Portal, and then click **Create.**
-1. On the Custom deployment blade, click **Build your own template in the editor**.
-1. Copy the contents of the template and paste it into the editor window.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/edit-template.png')} alt="edit-template" />
-1. Click **Save**.
-1. On the Custom deployment blade, do the following:
-    1. Create a new Resource Group (recommended) or select an existing one.
-    2. Choose Location.
-    3. Set the values of the following parameters:
-        * SumoEndpointURL: URL for the HTTP source you configured in [Step 2](#step-2-configure-an-http-source) above.
-        * StorageAccountName: Name of the storage account where  you are storing logs from Azure Service, that you configured in [Step 1](#step-1-configure-azure-storage-account) above.
-        * StorageAccountResourceGroupName: Name of the resource group of the storage account you configured in [Step 1](#step-1-configure-azure-storage-account) above.
-        * StorageAccountRegion: Name of the region of the storage account you configured in [Step 1](#step-1-configure-azure-storage-account) above.
-        * Filter Prefix (Optional): If you want to filter logs from a specific container, enter the following, replacing the variable with your container name: `/blobServices/default/containers/<container_name>/`
-    :::note
-    Resource group names should not consist of an underscore.
-    :::
-1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deployment" width="400" />
-1. Verify the deployment was successful by looking at **Notifications** at top right corner of Azure Portal.
-1. (Optional) In the same window, click** Go to resource group** to verify the all resources were successfully created, such as shown in the following example:
-1. Go to **Storage accounts** and search for **sumobrlogs**, then select `sumobrlogs<random-string>`.
-1. In the **Data Storage** menu, do the following:
-    1. Click **Tables**.
-    2. Click **+ Table**.
-    3. For Name, enter **FileOffsetMap**.
-1. Click **OK**.
+To deploy the ARM template-based Blob Storage collection, refer to step 3 of [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs#step-3-configure-azure-resources-using-arm-template).
 
 ### Step 4: Enable NSG flow logs via the Azure Portal
 
 In this step, you enable NSG flow logs with the Azure portal.
 
-* Follow the steps detailed in the [Microsoft Azure Network Watcher documentation](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal#enable-nsg-flow-log) to enable the flow logs to point to the storage account you configured in [Configure Azure Storage Account](#Configure_Azure_Storage_Account) section.
+* Follow the steps detailed in the [Microsoft Azure Network Watcher documentation](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal#enable-nsg-flow-log) to enable the flow logs to point to the storage account you configured in the [Configure Azure Storage Account](#step-1-configure-azure-storage-account) section.
 
 ### Troubleshooting
 
-If logs don't start flowing into Sumo Logic after you perform the configuration above, see [Troubleshoot Azure Blob Storage Log Collection](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-azure-blob-storage-log-collection.md).
+If logs do not start flowing into Sumo Logic after you perform the configuration above, see [Troubleshoot Azure Blob Storage Log Collection](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-log-collection).
 
 ## Installing the Azure Network Watcher app
 
 Now that you have configured Azure Network Watcher, install the Sumo Logic app for Azure Network Watcher to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Azure Network Watcher dashboards
 
-All dashboards include filters that you can use in Interactive Mode for further analysis of your data.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -206,3 +186,15 @@ The **Network Watcher - Denied Traffic Flow** dashboard drills down on denied tr
 **Top 10 Denied Destination IP, Port.** Displays a table of destination IP addresses and ports with denied traffic flow.
 
 **Denied Traffic per Hour -  Outlier.** Using Sumo Logic machine learning [Outlier](/docs/search/search-query-language/search-operators/outlier) operator, shows any unexpected sequence in denied traffic.
+
+## Upgrade/Downgrade the Azure Network Watcher app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Network Watcher app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

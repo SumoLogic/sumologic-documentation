@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/>
 
-The Sumo Logic app for Proofpoint Targeted Attack Protection App (TAP) provides comprehensive visibility and analysis of messages and clicks of malicious URLs. Proofpoint TAP is a cybersecurity solution offered by Proofpoint, a leading cybersecurity company. By leveraging advanced technologies and threat intelligence, Proofpoint TAP helps organizations detect and mitigate sophisticated threats, reducing the risk of successful cyberattacks.
+The Sumo Logic app for Proofpoint Targeted Attack Protection (TAP) app provides comprehensive visibility and analysis of messages and clicks of malicious URLs. Proofpoint TAP is a cybersecurity solution offered by Proofpoint, a leading cybersecurity company. By leveraging advanced technologies and threat intelligence, Proofpoint TAP helps organizations detect and mitigate sophisticated threats, reducing the risk of successful cyberattacks.
 
 Key features of the Proofpoint TAP app include:
 
@@ -25,7 +25,10 @@ This app uses [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to
 
 ## Sample log messages
 
-```json title="Sample Message Event"
+<details>
+<summary>Sample Message Event</summary>
+
+```json
  {
   "GUID": "qop94nlsUdvm1BsHU_8jdPXWYH0ZCndT",
   "QID": "3qk94m8jy1-1",
@@ -105,7 +108,12 @@ This app uses [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to
   "xmailer": null
 }
 ```
-```json title="Sample Clicks Log"
+</details>
+
+<details>
+<summary>Sample Clicks Log</summary>
+
+```json
 {
   "GUID": "6Qpm37_BE3mFckkZEAZtUSrA8t9FyQSm",
   "campaignID": "3qsaakgeb2-1",
@@ -126,8 +134,9 @@ This app uses [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to
   "threatUrl": "https://threatinsight.proofpoint.com/e659ac2e/threat/email/bb56ef875eca495366175"
 }
 ```
+</details>
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Sample Message Events Query (Number of Messages)"
 _sourceCategory="milan_proofpoint_tap" ("MESSAGE_BLOCKED" OR "MESSAGE_DELIVERED")
@@ -155,23 +164,39 @@ _sourceCategory="milan_proofpoint_tap" ("CLICK_PERMITTED" or "CLICK_BLOCKED")
 | count_distinct(id)
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud to Cloud Integration Proofpoint TAP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) for the Proofpoint TAP app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Proofpoint TAP source category, which you will need to use when installing the app. By following these steps, you can ensure that your Proofpoint TAP app is properly integrated and configured to collect and analyze your Proofpoint TAP data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Proofpoint TAP app
+<CollectionConfiguration/>
 
-This section provides instructions on how to install the Proofpoint TAP app, as well as examples of each of the dashboards. The app pre-configured searches and dashboards provide easy-to-access visual insights into your data.
+:::important
+Use the [Cloud-to-Cloud Integration for Proofpoint TAP](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Proofpoint TAP app is properly integrated and configured to collect and analyze your Proofpoint TAP data.
+:::
 
-{@import ../../reuse/apps/app-install.md}
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Proofpoint TAP dashboards
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following dashboards. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<ViewDashboards/>
 
 ### Messages Overview
 
@@ -180,3 +205,15 @@ The **Proofpoint TAP - Messages Overview** dashboard provides real-time analysis
 ### Clicks Overview
 
 The **Proofpoint TAP - Clicks Overview** dashboard offers real-time analysis of malicious URLs, providing insights into the trends of the click events. It presents the distribution of threats based on their categories and statuses. Furthermore, the dashboard displays the geographic locations of malicious URL clicks originating from high-risk countries and details about the top senders and receivers of the malicious URLs. Additionally, the dashboard offers a summary of recent click events, delivering a concise overview of the malicious URL click activity and highlighting any significant events that may require attention.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-TAP-Clicks-Overview.png')} alt="Proofpoint-TAP-Clicks-Overview"/>
+
+## Upgrade/Downgrade the Proofpoint TAP app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Proofpoint TAP app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
