@@ -73,12 +73,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/manage-subscription/beta-opt-in')}><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Beta Participation Opt-In</h4></a>
-  <p>Learn how to opt in for Sumo Logic pre-release programs.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/manage/manage-subscription/close-cancel-sumo-account')}><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Close or Cancel a Sumo Logic Account</h4></a>
   <p>Learn how to delete your org from Sumo Logic when on a Free or Trial account.</p>
   </div>
