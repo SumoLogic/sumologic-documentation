@@ -326,7 +326,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `CrowdStrike Falcon Endpoint Protection - Failed Authentication Events from Embargoed Geo Locations` | This alert is triggered when event authentication fail and it is originating from sanctioned or embargoed regions are detected. This alert helps maintain adherence to legal and regulatory standards. | Critical | Count > 0 |
 | `CrowdStrike Falcon Endpoint Protection - High Severity Alerts` | This alert is triggered when client-side protection detects an event with high severity. It indicates a high-impact threat that requires immediate investigation and remediation to prevent potential exploitation or data compromise. | Critical | Count > 3 |
 | `CrowdStrike Falcon Endpoint Protection - Multiple Failed Authentications from Specific User` | This alert is triggered when client-side protection detects more than three failed authentication from single user in  short period of time. | Critical | Count > 0 |
-| `CrowdStrike Falcon Endpoint Protection - Multiple High Severity Detections from Single Host` | This alert is triggered when client-side protection detects more than 3 high or critical severity from single host in short period of time. | Critical | Count > 0 |
+| `CrowdStrike Falcon Endpoint Protection - Multiple High Severity Detections from Single Host` | This alert is triggered when client-side protection detects more than three high or critical severity from single host in short period of time. | Critical | Count > 0 |
 
 ## Upgrade/Downgrade the CrowdStrike Falcon Endpoint Protection app (Optional)
 
