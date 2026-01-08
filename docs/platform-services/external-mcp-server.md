@@ -1,12 +1,16 @@
 ---
 id: external-mcp-server
-title: Sumo Logic MCP Server (Beta)
+title: Sumo Logic MCP Server (Closed Beta)
 description: Connect your AI tools to Sumo Logic via MCP. Query logs, manage insights, and investigate security incidents from Slack, IDEs, and custom applications.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+<head>
+  <meta name="robots" content="noindex" />
+</head>
 
 <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
@@ -16,32 +20,22 @@ This feature is in closed beta. For more information, contact your Sumo Logic ac
 
 **Bring your own AI to the Dojo**. Connect your AI tools directly to Sumo Logic to create a unified ecosystem powered by your observability and security data.
 
-The Sumo Logic MCP Server makes Dojo AI the central hub of your AI ecosystem using the Model Context Protocol (MCP). Instead of building custom integrations or treating Sumo Logic as a separate data silo, you can connect your own copilots, proprietary models, and third-party AI systems directly to Sumo Logic's capabilities.
+The Sumo Logic MCP Server makes Dojo AI the central hub of your AI ecosystem using the Model Context Protocol. Instead of building custom integrations or treating Sumo Logic as a separate data silo, you can connect your own copilots, proprietary models, and third-party AI systems directly to Sumo Logic's capabilities.
 
-Our MCP Server integrates seamlessly with [Query Agent](#) and [Knowledge Agent](#), enabling your external AI tools to collaborate with these agents. As new agents become available (such as the upcoming SOC Analyst Agent), they will also integrate with the MCP Server.
-
-<details>
-<summary>What is Model Context Protocol?</summary>
-
-Model Context Protocol (MCP) is an open standard that defines how AI models, agents, and tools share context and communicate with one another. It provides a consistent framework for connecting LLMs, copilots, and specialized agents.
-
-By implementing MCP, Sumo Logic enables your AI ecosystem to exchange data, context, and instructions with Dojo AI in real time, without complex custom integrations or workarounds.
-</details>
+Our MCP Server integrates seamlessly with our Mobot [Query Agent](/docs/search/mobot/#query-agent) and [Knowledge Agent](/docs/search/mobot/#knowledge-agent), enabling your external AI tools to collaborate with these agents.
 
 ## How it works
 
 The MCP Server provides a standardized interface between Sumo Logic and your AI tools:
 
-1. **Connect your AI tools** using the MCP standard.
+1. **Connect your AI tools** using the [MCP standard](https://modelcontextprotocol.io/).
 1. **Query with natural language** to analyze data using Sumo Logic's capabilities.
-1. **Execute prompts across environments**—IDEs, collaboration tools, or custom applications.
+1. **Execute prompts across environments**. IDEs, collaboration tools, or custom applications.
 1. **Leverage Dojo AI agents** alongside your own models for unified analysis and response.
 
-Your external AI systems can query logs, manage insights, analyze dashboards, and update records—all through a single, consistent protocol.
+Your external AI systems can query logs, manage insights, analyze dashboards, and update records through a single, consistent protocol.
 
 ## Prerequisites
-
-The Sumo Logic MCP Server is a fully managed gateway that integrates securely with Sumo Logic platform APIs and Dojo AI agents. To connect your AI tools to this gateway, you'll deploy orchestrator agents in your environment.
 
 ### Architecture
 
@@ -49,21 +43,31 @@ The Sumo Logic MCP Server is a fully managed gateway that integrates securely wi
 * **You deploy** orchestrator agents that connect to the gateway.
 * **Powered by** Amazon Bedrock AgentCore.
 
-For example, to enable MCP in Slack, you would deploy an orchestrator agent on AWS AgentCore runtime. This agent communicates with Sumo Logic's MCP Server gateway via standard MCP protocol, which then securely accesses Sumo Logic APIs and Dojo AI agents.
+For example, to enable MCP in Slack, you deploy an orchestrator agent on AWS AgentCore runtime. This agent communicates with Sumo Logic's MCP Server gateway via standard MCP protocol, which then securely accesses Sumo Logic APIs and Dojo AI agents.
+
+### Authentication
+
+Customers authenticate using OAuth2 client credentials flow:
+
+1. Generate credentials via the Sumo Logic OAuth server.
+1. Use credentials to generate an access token.
+1. Configure your MCP client with the token.
+
+This follows standard OAuth client credentials flow used by other MCP servers.
 
 ### Setup requirements
 
-* MCP-compatible client application (Slack bot, IDE assistant, or custom application).
+* MCP-compatible client application (VS Code, Slack bot, IDE assistant, or custom application).
 * Orchestrator agent deployment platform (such as AWS AgentCore runtime).
-* Sumo Logic credentials for authentication.
+* OAuth2 credentials from Sumo Logic.
 
-Detailed configuration guides will be available as the feature becomes more widely available.
+Configuration steps vary by tool. Refer to your specific tool's documentation for MCP setup instructions. Initial beta support begins with VS Code.
 
 ## What you can do
 
-* **Bring the best AI for your stack**. Integrate proprietary models or third-party copilots with Sumo Logic's observability and security data while maintaining the scale, consistency, and security of a unified platform.
-* **Accelerate workflows with AI assistance**. Use Sumo Logic's telemetry as input for your AI-driven workflows, enabling faster investigations and response with analysts staying in control of critical decisions.
-* **Work where you work**. Execute AI-powered queries from your IDE, collaboration tools like Slack, or custom applications without needing to switch contexts.
+* **Bring the best AI for your stack**. Integrate proprietary models or third-party copilots with Sumo Logic's observability and security data.
+* **Accelerate workflows with AI assistance**. Use Sumo Logic's telemetry as input for your AI-driven workflows with analysts staying in control of critical decisions.
+* **Work where you work**. Execute AI-powered queries from your IDE or collaboration tools without switching contexts.
 * **Future-proof your strategy**. Add new AI technologies as they emerge while maintaining Sumo Logic's scale, security, and data governance.
 
 ## Example use cases
@@ -74,7 +78,6 @@ Detailed configuration guides will be available as the feature becomes more wide
   values={[
     {value: 'Slack', label: 'Slack investigation'},
     {value: 'IDE', label: 'IDE integration'},
-    {value: 'SOC', label: 'Security operations'},
     {value: 'Custom', label: 'Custom workflows'},
   ]}>
 
@@ -82,17 +85,9 @@ Detailed configuration guides will be available as the feature becomes more wide
 
 ### Investigate security incidents without leaving Slack
 
-When your team receives a Cloud SIEM alert in Slack, your AI assistant can:
+When your team receives a Cloud SIEM alert in Slack, your AI assistant can retrieve triage details, search related entities, query raw logs, update insight status, and add investigation notes. All of this happens conversationally in your Slack channel, with multi-tool calls handled automatically.
 
-* Retrieve triage details and severity assessments generated by SOC Analyst Agent.
-* Search related entities (user accounts, IP addresses, system assets, attack chain context).
-* Query raw logs to find if other users experienced similar activity.
-* Update insight status (from new to in progress to closed).
-* Add investigation notes and comments for team visibility.
-
-All of this happens conversationally in your Slack channel, with multi-tool calls handled automatically behind the scenes.
-
-**Example workflow:**
+**Example:**
 
 ```
 User: @bot what are the triage details? update the status to in progress
@@ -101,11 +96,6 @@ Bot: I've retrieved the triage information and updated the status to In Progress
 
 Verdict: MALICIOUS - Confirmed threat
 Severity: CRITICAL
-
-Key Evidence:
-1. Phishing Email with Fake AWS Console URL
-2. Credential Harvesting - User dan.kent credentials stolen
-3. Post-Compromise Activity - AWS IAM user used for enumeration
 ...
 ```
 
@@ -113,96 +103,91 @@ Key Evidence:
 
 <TabItem value="IDE">
 
-* **Query logs from your development environment**. Connect GitHub Copilot or your IDE's AI assistant to Sumo Logic so you can troubleshoot production issues without leaving your code editor. Ask questions in natural language and get query results informed by Sumo Logic's analytics.
-* **Debug with full context**. When investigating errors or performance issues, your IDE can pull relevant logs, traces, and metrics from Sumo Logic directly into your development workflow.
-
-</TabItem>
-
-<TabItem value="SOC">
-
-* **Unified threat investigation**. Connect your security copilot to Sumo Logic so it can query threat data, correlate signals, and access insights from SOC Analyst Agent for faster triage and response.
-* **AI-assisted playbook execution**. Integrate your SOAR platform to trigger Sumo Logic queries and analysis as part of incident response playbooks. Your AI tools surface insights and recommendations while analysts maintain oversight of response actions.
+* **Query logs from your development environment**. Connect your IDE's AI assistant to Sumo Logic to troubleshoot production issues without leaving your code editor.
+* **Debug with full context**. Pull relevant logs, traces, and metrics from Sumo Logic directly into your development workflow.
 
 </TabItem>
 
 <TabItem value="Custom">
 
-* **Proprietary model integration**. Use your custom-trained models alongside Sumo Logic's agents, combining specialized domain knowledge with Sumo Logic's log analytics and security insights.
-* **Cross-platform orchestration**. Build workflows that span multiple AI tools and data sources, with Sumo Logic as the central hub for observability and security context.
+* **Proprietary model integration**. Use your custom-trained models alongside Sumo Logic's agents, combining specialized domain knowledge with Sumo Logic's analytics.
+* **Cross-platform orchestration**. Build workflows that span multiple AI tools and data sources, with Sumo Logic as the central hub.
 
 </TabItem>
 </Tabs>
 
-## Available MCP tools
+## Available capabilities
 
-The MCP Server provides access to Sumo Logic capabilities through the following tool categories:
+The MCP Server provides access to Sumo Logic through these tool categories:
 
-### Alerts management
-
-* Get a specific alert or folder by ID
-* Search for alerts or folders with filters (status, severity, monitor, etc.)
-* Retrieve alert history for a time range
-* Find alerts related to a given alert
-* Resolve an alert by moving it to resolved state
-
-### Dashboard management
-
-* Create a new dashboard
-* Get a dashboard by ID
-* List all dashboards under Personal folder or viewable folders
-* Update an existing dashboard
-* Delete a dashboard
-
-### SIEM & Insights
-
-* Get insights with filtering (up to 10,000 results)
-* Get all insights without limit
-* Get a specific insight by ID
-* Get comments on an insight
-* Get insight history/changes
-* Get entities involved in an insight
-* Get triage information for an insight
-* Update insight status (new/inprogress/closed)
-* Assign an insight to a user
-* Add a new comment to an insight
-* Get AI-generated summary of a security insight
-
-### Log search
-
-* Search Sumo Logic logs with query syntax
-
-### User management
-
-* List all users in the organization with pagination
-
-### Utility tools
-
-* Parse time strings to epoch timestamps or get current time
-* Search for relevant tools given a context
+* **Alerts management**. Search, retrieve, and resolve alerts.
+* **Dashboard management**. Create, retrieve, update, and delete dashboards.
+* **SIEM & Insights**. Get insights, triage information, entities, and AI-generated summaries. Update status and add comments.
+* **Log search**. Search Sumo Logic logs with query syntax.
+* **User management**. List users in the organization.
+* **Utility tools**. Parse time strings and search for relevant tools based on context.
 
 All tools respect your Sumo Logic permission controls and access policies.
 
-## When to use External MCP (and when not to)
+<details>
+<summary>View complete tool list</summary>
 
-Use External MCP for:
+### Alerts Management
+* `target_alerts__alertsReadById` - Get an alert or folder from the alerts library
+* `target_alerts__alertsSearch` - Search for alerts or folders in the alerts library
+* `target_alerts__getHistory` - Retrieve alert history for a time range
+* `target_alerts__getRelatedAlerts` - Retrieve alerts related to a given alert
+* `target_alerts__resolve` - Resolve an alert by moving it to resolved state
 
-* **Conversational investigations**. Interactive queries and analysis through chat interfaces like Slack or IDE assistants.
-* **Multi-step workflows**. Combining multiple operations (query, update, comment) in a single natural language request.
-* **Real-time collaboration**. Getting AI-powered insights during team discussions in collaboration tools.
+### Dashboard Management
+* `target_dashboard__createDashboard` - Create a new dashboard
+* `target_dashboard__deleteDashboard` - Delete a dashboard by identifier
+* `target_dashboard__getDashboard` - Get a dashboard by identifier
+* `target_dashboard__listDashboards` - List all viewable dashboards
+* `target_dashboard__updateDashboard` - Update an existing dashboard
+
+### Insights/SIEM
+* `target_siem__GetInsights` - Get insights with pagination up to 10,000 results
+* `target_siem__GetAllInsights` - Get all insights without limit
+* `target_siem__GetInsight` - Get a specific insight by ID
+* `target_siem__GetInsightComments` - Get comments on an insight
+* `target_siem__GetInsightHistory` - Get an insight's history
+* `target_siem__GetInsightRelatedEntities` - Get entities involved in an insight
+* `target_siem__GetInsightTriage` - Get triage information for an insight
+* `target_siem__UpdateInsightAssignee` - Update who an insight is assigned to
+* `target_siem__UpdateInsightStatus` - Update the status of an insight
+* `target_insight_add_comment__AddInsightCommentTool` - Add a comment to an insight
+* `target_insight_summary__GetInsightSummary` - Generate a summary of a security insight
+
+### User Management
+* `target_users__listUsers` - Get a list of all users in the organization
+
+### Log Search
+* `sumo_logic_log_search` - Search Sumo Logic logs using query syntax
+
+### Utility Tools
+* `target_time_tool__Time_Tool` - Parse time strings to epoch timestamps and get current timestamp
+* `x_aws_bedrock_agentcore_search` - Get a filtered subset of tools based on context
+
+</details>
+
+## When to use MCP
+
+**Use MCP for:**
+
+* **Conversational investigations**. Interactive queries and analysis through chat interfaces.
+* **Multi-step workflows**. Combining multiple operations in a single natural language request.
 * **Agent-to-agent communication**. Connecting your AI assistants with Sumo Logic's Dojo AI agents.
 
-External MCP is designed for conversational, agent-level interaction where AI tools need to query Sumo Logic intelligently. For raw data access, our standard APIs are more efficient and cost-effective.
+**Do NOT use MCP for:**
 
-Do NOT use External MCP for:
+* **Bulk data extraction**. Use the [Search Job API](/docs/api/search-job) instead.
+* **Model training**. Use the [Search Job API](/docs/api/search-job) to pull data (note: 100,000 record limit per job).
+* **High-volume automated queries**. MCP has significant token consumption costs.
 
-* **Bulk data extraction**. Use the [Search Job API](/docs/api/search-job) instead for retrieving large volumes of data.
-* **Model training**. Use the [Search Job API](/docs/api/search-job) to pull data for training your own models (note: 100,000 record limit per job).
-* **High-volume automated queries**. MCP has significant token consumption costs that make it impractical for bulk operations.
-
+MCP is designed for conversational, agent-level interaction. For raw data access, our standard APIs are more efficient and cost-effective.
 
 ## Security and data governance
-
-Our MCP Server maintains Sumo Logic's strict security and compliance standards:
 
 * **Permissioned access**. All integrations occur through secure, controlled interfaces.
 * **Data sovereignty**. Your data never leaves your control.
@@ -210,82 +195,49 @@ Our MCP Server maintains Sumo Logic's strict security and compliance standards:
 * **Audit trails**. All MCP interactions are logged for compliance and security review.
 * **Multi-tenant isolation**. The MCP Server acts as a gateway with tenant-level security controls.
 
-The MCP Server acts as a secure bridge, letting you extend your AI ecosystem without compromising visibility, control, or compliance.
-
 ## FAQ
 
 <details>
 <summary>Which AI tools can connect via MCP?</summary>
 
-Any AI tool, copilot, or application that implements the Model Context Protocol standard can connect to the Sumo Logic MCP Server. Examples include:
+Any AI tool that implements the Model Context Protocol standard. Initial beta support includes VS Code. Examples of compatible tools include IDEs, collaboration platforms like Slack, and custom agents built on MCP-compatible frameworks like AWS AgentCore.
 
-* **IDEs**: GitHub Copilot, VS Code extensions, JetBrains AI assistants.
-* **Collaboration platforms**: Slack bots, Microsoft Teams integrations.
-* **Custom agents**: Your own copilots and AI systems built on MCP-compatible frameworks like AWS AgentCore.
-
-The MCP standard is still emerging, so compatibility may vary depending on your specific tools.
+Configuration steps vary by tool. Refer to your tool's documentation for specific MCP setup instructions.
 
 </details>
 
 <details>
 <summary>Does this work with existing Dojo AI agents?</summary>
 
-Yes. The MCP Server is designed to work alongside your existing Dojo AI agents like Query Agent and Knowledge Agent. External AI tools connected via MCP can collaborate with these agents, creating a unified ecosystem where different models and capabilities work together.
-
-As new agents become available (such as SOC Analyst Agent), they will also integrate with the MCP Server, enabling your external tools to leverage their capabilities through natural language requests.
+Yes. The MCP Server works alongside Query Agent and Knowledge Agent. As new agents become available (such as SOC Analyst Agent), they will also integrate with the MCP Server.
 
 </details>
 
 <details>
 <summary>Can MCP handle multiple operations in a single request?</summary>
 
-Yes. The MCP Server supports multi-tool calls, meaning your AI assistant can perform multiple operations in response to a single natural language request. For example, asking "what are the triage details and update the status to in progress" can retrieve information and update records in one interaction.
-
-</details>
-
-<details>
-<summary>What operations can I perform through MCP?</summary>
-
-The MCP Server supports both read operations (queries, retrievals, searches) and write operations (updates, creates, deletes). You can query logs, retrieve insights, search for related entities, update statuses, add comments, manage dashboards, and more—all through natural language interactions with your AI tools.
-
-See [Available MCP tools](#available-mcp-tools) for a complete list of capabilities.
+Yes. The MCP Server supports multi-tool calls. For example, asking "what are the triage details and update the status to in progress" can retrieve information and update records in one interaction.
 
 </details>
 
 <details>
 <summary>How does this affect my Sumo Logic usage?</summary>
 
-The MCP Server is a separately licensed capability. Contact your account representative or Support for information about pricing.
+The MCP Server is a separately licensed capability. Contact your account representative for pricing information.
 
 :::note
-MCP operations involve significant token consumption. For bulk data retrieval or model training use cases, the [Search Job API](/docs/api/search-job) is a more cost-effective option.
+MCP operations involve significant token consumption. For bulk data retrieval or model training, the [Search Job API](/docs/api/search-job) is more cost-effective.
 :::
-
-</details>
-
-<details>
-<summary>Can I use MCP to train models on my Sumo Logic data?</summary>
-
-No. MCP is designed for agent-level interaction, not bulk data extraction.
-
-If you need to train models on data stored in Sumo Logic, use the [Search Job API](/docs/api/search-job) to programmatically retrieve your data. Note that Search Job API has a 100,000 record limit per job.
 
 </details>
 
 <details>
 <summary>Where does my agent run?</summary>
 
-Currently, agents connected via MCP are hosted in your own environment, not within Sumo Logic's infrastructure. This gives you control over your AI models and processing while enabling them to query Sumo Logic data through the MCP Server.
+Agents connected via MCP are hosted in your own environment, not within Sumo Logic's infrastructure. This gives you control over your AI models and processing.
 
 </details>
 
 ## Additional information
 
-*Dojo AI power, directly in Slack—and everywhere else you work*.
-
 * [Dojo AI overview](#)
-* [Query Agent](#)
-* [Knowledge Agent](#)
-* [Search API](#) _(for bulk data retrieval)_
-* [Search Job API](/docs/api/search-job) _(for model training data)_
-* [Model Context Protocol specification](https://modelcontextprotocol.io/)
