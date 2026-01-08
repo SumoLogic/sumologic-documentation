@@ -15,7 +15,7 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/installed-collectors/configuration')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>Install and Configure a Collector</h4></a>
+  <a href={useBaseUrl('docs/send-data/installed-collectors/configuration')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>Configure an Installed Collector</h4></a>
   <p>Install and configure a collector to gather and send data to Sumo Logic.</p>
   </div>
 </div>
