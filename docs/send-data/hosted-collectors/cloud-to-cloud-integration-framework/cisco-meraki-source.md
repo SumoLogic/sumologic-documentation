@@ -83,7 +83,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
-### Configuration Object
+### Configuration object
 
 | Parameter | Type | Required | Default | Description | Example |
 |:--|:--|:--|:--|:--|:--|
@@ -103,18 +103,42 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | infraPollingInterval | Integer | No | 24 | This sets how often the Source checks for organization and network info (in hours). |  |
 
 ## Troubleshooting
-You may receive the follow error below if you enter an invalid Cisco Meraki organization ID in your configuration. Please follow the steps in the section [Gather Meraki Organization IDs](#gather-meraki-organization-ids) to ensure you are using an ID for a Meraki organization returned in that query.
 
-```json
-{
-    "state": "Error",
-    "errorType": "THIRD-PARTY-CONFIG",
-    "errorCode": 400,
-    "errorInfo": "meraki '/api/v1/organizations/orgIdInput' not found using API key"
-}
-```
+* You may receive the following error if you enter an invalid Cisco Meraki organization ID in your configuration. Please follow the steps in the section [Gather Meraki Organization IDs](#gather-meraki-organization-ids) to ensure you are using an ID for a Meraki organization returned in that query.
 
-### Known Issues
+  ```json
+  {
+      "state": "Error",
+      "errorType": "THIRD-PARTY-GENERIC",
+      "errorCode": 400,
+      "errorInfo": "meraki '/api/v1/organizations/orgIdInput' not found using API key"
+  }
+  ```
+
+* The following error occurs when the Cisco Meraki API returns a 401 Unauthorized response with the message `Invalid API key`. It indicates that the API key configured in the Cisco Meraki Source is invalid, revoked, or does not have the required permissions. To resolve this issue, verify that you are using the correct and active API key generated from the [Cisco Meraki Dashboard](https://dashboard.meraki.com/) by navigating to **My Profile → API access → Generate new API key**.
+
+  ```json
+  {
+      "state": "Error",
+      "errorType": "THIRD-PARTY-GENERIC",
+      "errorCode": 401,
+      "errorInfo": "cisco meraki api response 401 Unauthorized: {\"errors\":[\"Invalid API key\"]}"
+  }
+  ```
+
+* The following error occurs when the API call to Cisco Meraki fails because the Meraki organization or network associated with the API key does not have a valid license. API access is available only for actively licensed Meraki organizations, and the issue may occur if the organization’s license has expired or if the API key is associated with an unlicensed or trial organization. In this case, visit the [Cisco Meraki Dashboard](https://dashboard.meraki.com/) and check the license status under **Organization → Configure → License info**.
+
+  ```json
+  {
+      "state": "Error",
+      "errorType": "THIRD-PARTY-GENERIC",
+      "errorCode": 403,
+      "errorInfo": "cisco meraki api response 403 Forbidden: {\"errors\":[\"Meraki API services are available for licensed Meraki devices only. Please contact Meraki support. To renew your licenses, go to 'https://n136.meraki.com/o/s78Gsdic/manage/dashboard/license_info'\"]}"
+  }
+  ```
+
+### Known issues
+
 * The integration will return an error containing the text `context deadline exceeded (Client.Timeout or context cancellation while reading body)`. This error occurs when the integration is reading the HTTP body, but reaches our timeout which is currently set to 10 minutes. We have observed this behavior across multiple customers when the integration is fetching data from the [Get Network Wireless Air Marshal](https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-air-marshal) endpoint. Increasing the timeout does not appear to solve the issue as the network connection to this specific endpoint will occasionally never complete. Sumo Logic recommends customers contact Cisco Meraki support if they encounter this error.
 * Pagination has a rare occurrence to potentially return a small number duplicate logs. This issue has been reported to Cisco.
 * The Cisco Meraki API has a [rate limit](https://developer.cisco.com/meraki/api-latest/#!rate-limit) of 10 API calls every second. The source can have a collection delay if your Meraki organization has thousands of networks with many product types. The Cisco Meraki API for collecting network events requires one API call per network, per product type. There are a total of 6 product types. The API also requires one API call per network for collecting wireless Air Marshal events. This means 2,000 networks can be around 14,000 API calls (2000*6+2000) to retrieve network events, assuming no pagination is needed. At the rate limit of 10 API calls per second, the quickest we could make API calls is around 24 mins. Occasionally, the Cisco Meraki API can take 1 to 2 seconds to respond, which adds to the time. To solve this issue, Cisco would need to raise the API rate limit or provide an API endpoint for collecting [network events](https://developer.cisco.com/meraki/api-v1/#!get-network-events) and [wireless Air Marshal](https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-air-marshal) events, without the requirement to iterate over each network and product type individually.

@@ -13,4 +13,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 We’re excited to announce a new default source for Sumo Logic Threat Intelligence incorporating Indicators of Compromise (IoC) from Intel 471.
 
-For more information, [see our release note](/release-notes-service/2025/04/08/security/) in the *Service* release notes section.
+For more information, [see our release note](/release-notes-service/2025/12/31/#april-08-2025-security) in the *Service* release notes section.

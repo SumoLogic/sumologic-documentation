@@ -11,7 +11,9 @@ resource "sumologic_cloud_to_cloud_source" "microsoft-graph-azure-ad-reporting-s
       "fields":{
         "_siemForward":false
       },
-      "application_id":"5a03f2a8-4de9-4243-9d27-32c8f3921466"
+      "application_id":"5a03f2a8-4de9-4243-9d27-32c8f3921466",
+      "azure_gov_l4": false,
+      "apiRetentionDays": 30
   })
 }
 resource "sumologic_collector" "collector" {

@@ -82,12 +82,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/collection/restart-collectors')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Restart a Collector</h4></a>
-  <p>Restart a collector from the collection page.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/send-data/collection/edit-collector')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Edit a Collector</h4></a>
   <p>Edit collector characteristics.</p>
   </div>
