@@ -59,7 +59,7 @@ Self‑paced training is available in our [learning portal](#how-do-i-access-the
 
 ### What content is available for self‑paced learning?
 
-* **Learning Paths** for General, Observability, and Security ([Learning Hub](#how-do-i-access-the-learning-portal) > **Become a Sumo Expert**).
+* **Learning Paths** for General, Observability, and Security ([Learning Hub](#how-do-i-access-the-learning-portal) > **Become a Sumo Logic Expert**).
 * **Micro Lessons** ([Learning Hub](#how-do-i-access-the-learning-portal) > **Learn a New Skill**).
 * **Recorded Live Training** sessions with lab guides and slides ([Learning Hub](#how-do-i-access-the-learning-portal) > **Recorded Live Training**).
 
