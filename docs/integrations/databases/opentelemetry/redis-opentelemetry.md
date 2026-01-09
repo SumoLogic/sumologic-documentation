@@ -253,7 +253,6 @@ Use this dashboard to review String Commands, Key Commands, Hash Commands, Sets 
 
 The **Redis - Performance and Capacity** dashboard provides an at-a-glance view of the Redis Performance metrics and resource limits.
 
-
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-Performance-and-Capacity.png' alt="Redis Performance and Capacity" />
 
 ## Create monitors for Redis app
