@@ -83,6 +83,15 @@ To edit a source template:
 1. If required, update the collectors on the **Link Collectors** page.
 1. Click **Next** to complete editing the source template.
 
+## Edit a linked collector
+
+Follow the steps below to edit a linked collector form the source template:
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). Go to the main Sumo Logic menu and select **Data Management**, and under **Data Collection** select **Source Template**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
+1. Select the source template you want to use to edit the linked collector, and select **Edit Link Collector** from the **More options** dropdown. Or, click the kebab menu against the selected source template and click **Edit Link Collector** from the dropdown.<br/><img src={useBaseUrl('img/send-data/otel-edit-link-collector.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
+1. Change the required configuration in the **Link Collectors** page, and click **Next**.
+1. Click **Done** to complete editing the linked collector.
+
 ## Upgrade a source template
 
 You cannot upgrade a source template if there are any incompatible collector versions Make sure you update those collectors first.
