@@ -251,7 +251,9 @@ Use this dashboard to review String Commands, Key Commands, Hash Commands, Sets 
 
 ### Performance and Capacity
 
-The **Redis - Performance and Capacity** dashboard provides an at-a-glance view of the Redis Performance metrics and resource limits.
+The Redis – Performance and Capacity dashboard provides at-a-glance view of key Redis performance metrics and resource limits. 
+
+This dashboard offers detailed insights into command latency analysis, execution time tracking, memory consumption patterns, and capacity limits, enabling teams to monitor performance, optimize resource usage, and proactively prevent capacity-related issues.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-Performance-and-Capacity.png' alt="Redis Performance and Capacity" />
 
