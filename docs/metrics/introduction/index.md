@@ -39,7 +39,7 @@ Raw data points are individual data points. We sometimes refer to the raw data p
 
 While the baseline table contains raw data, rollup tables contain *aggregated* metric values. Sumo Logic has two sets of rollup tables: one with the metric values for each time series aggregated by minute and one by hour. Sumo Logic performs five types of aggregation on raw data points: avg, max, min, count, and sum. (The average value of the data points, the maximum value of the data points, the minimum value, the number of data points, and the sum of all the values.)
 
-The process of calculating aggregated values for the individual data points in a time bucket is called *quantization*. The quantization process is described in [Metrics Quantization](metric-quantization.md).
+The process of calculating aggregated values for the individual data points in a time bucket is called *quantization*. The quantization process is described in [Metrics Quantization](/docs/metrics/introduction/metric-quantization/).
 
 ## Metrics formats
 
@@ -55,17 +55,17 @@ Currently available metric sources are:
 
 * [HTTP Logs and Metrics source.](/docs/send-data/hosted-collectors/http-source/logs-metrics) You can use an HTTP source on a hosted collector to collect Graphite, Carbon 2.0, and Prometheus metrics from environments where it is impractical to deploy an installed collector.
 
-* [Host Metrics source.](/docs/send-data/installed-collectors/sources/host-metrics-source.md) You can use a host metrics source on an installed collector to collect CPU, memory, TCP, networking, and disk metrics on Linux and Windows machines.
+* [Host Metrics source.](/docs/send-data/installed-collectors/sources/host-metrics-source) You can use a host metrics source on an installed collector to collect CPU, memory, TCP, networking, and disk metrics on Linux and Windows machines.
 
-* [Amazon CloudWatch Source for Metrics.](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) You can use a CloudWatch source on a hosted collector to collect metrics for a variety of AWS resources.  
+* [Amazon CloudWatch Source for Metrics.](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) You can use a CloudWatch source on a hosted collector to collect metrics for a variety of AWS resources.  
 
 * [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source). You can use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from Amazon Kinesis Data Firehose.
 
 * [Streaming Metrics Source.](/docs/send-data/installed-collectors/sources/streaming-metrics-source/) You can use Sumo Logic’s streaming metrics source with an installed collector to collect metrics over TCP or UDP in Graphite, Carbon 2.0, or Prometheus format.
 
-* [AWS Metadata (Tag) Source for Metrics.](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source.md) This is a special type of source, in that it doesn’t collect metrics, but instead collects tags from EC2 instances running on AWS. Sumo Logic applies the collected tags to metrics ingested by two Sumo Logic source types: the streaming metric source and the host metrics source. Tagging metrics with the EC2 tags allows you to query metrics using EC2 tags.
+* [AWS Metadata (Tag) Source for Metrics.](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source) This is a special type of source, in that it doesn’t collect metrics, but instead collects tags from EC2 instances running on AWS. Sumo Logic applies the collected tags to metrics ingested by two Sumo Logic source types: the streaming metric source and the host metrics source. Tagging metrics with the EC2 tags allows you to query metrics using EC2 tags.
 
-* [Docker Stats source.](/docs/send-data/installed-collectors/sources/docker-sources.md) You can use the Docker Stats source on an installed collector to collect Docker container metrics, such as CPU usage, memory usage, network IO, and disk IO.
+* [Docker Stats source.](/docs/send-data/installed-collectors/sources/docker-sources) You can use the Docker Stats source on an installed collector to collect Docker container metrics, such as CPU usage, memory usage, network IO, and disk IO.
 
 ## Metrics rules editor
 
@@ -132,7 +132,7 @@ For more information, see [Monitors](/docs/alerts/monitors).
 
 ## Metrics throttling
 
-With Sumo Logic metrics, an account has Data Points per Minute (DPM) limit, which is shown on the **Account Page**. To allow for spikes in metrics ingestion, Sumo Logic applies a multiplier to your DPM limit to allow you send metrics at a higher rate, referred as your *DPM burst limit*, before Sumo Logic starts to throttle your sources. The multiplier depends on your daily DPM account limit. When you exceed your DPM burst limit, Sumo Logic throttles your metric sources—your ingestion will be slowed down until the rate of ingestion returns is within the allowable contracted limits. For more information, see [Metric Throttling](../manage-metric-volume/metric-throttling.md).
+With Sumo Logic metrics, an account has Data Points per Minute (DPM) limit, which is shown on the **Account Page**. To allow for spikes in metrics ingestion, Sumo Logic applies a multiplier to your DPM limit to allow you send metrics at a higher rate, referred as your *DPM burst limit*, before Sumo Logic starts to throttle your sources. The multiplier depends on your daily DPM account limit. When you exceed your DPM burst limit, Sumo Logic throttles your metric sources—your ingestion will be slowed down until the rate of ingestion returns is within the allowable contracted limits. For more information, see [Metric Throttling](/docs/metrics/manage-metric-volume/metric-throttling/).
 
 ## Metrics ingest data volume index
 

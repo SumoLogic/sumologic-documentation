@@ -51,7 +51,7 @@ Sumo Logic quantizes metrics upon ingestion and at query time.
 
 ### Quantization at ingestion
 
-Upon ingestion, Sumo Logic quantizes raw metric data points to one hour resolutions for all rollup types: `avg`, `min`, `max`, `sum`, `count`, and `rate`. This data is stored in one hour rollup tables in Sumo Logic. The raw data is stored in a table referred to as the baseline table. For information about retention times, see [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage.md).
+Upon ingestion, Sumo Logic quantizes raw metric data points to one hour resolutions for all rollup types: `avg`, `min`, `max`, `sum`, `count`, and `rate`. This data is stored in one hour rollup tables in Sumo Logic. The raw data is stored in a table referred to as the baseline table. For information about retention times, see [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage).
 
 ### Automatic quantization at query time
 
@@ -98,7 +98,7 @@ The table below shows how Sumo Logic selects a quantization interval based on qu
 
 ### Explicit quantization at query time  
 
-When you run a metric query, you can optionally use the [quantize metrics operator](/docs/metrics/metrics-operators/quantize.md) to specify a quantization interval, rollup type, or both.
+When you run a metric query, you can optionally use the [quantize metrics operator](/docs/metrics/metrics-operators/quantize) to specify a quantization interval, rollup type, or both.
 
 When you run a query with the `quantize` operator, the way that Sumo Logic quantizes your metric data points depends on the rollup type you specify, if any, in the `quantize` clause of your query. Rollup types include `avg`, `min`, `max`, `sum`, and `count`.
 
