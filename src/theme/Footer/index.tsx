@@ -207,6 +207,20 @@ export const Footer = () => {
                 },
               }
             },
+            {
+              alt: 'Sumo Logic Reddit',
+              color: '#e3e3e3',
+              href: 'https://www.reddit.com/r/sumologic',
+              'aria-label': 'Sumo Logic Reddit',
+              icon: faReddit,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
+            },
           ].map(({ alt, href, ...other }) => (
             <Tooltip key={href} title={alt}>
               <Link href={href} rel='noreferrer noopener'>
