@@ -18,7 +18,7 @@ import {
   faLinkedinIn,
   faGithub,
   faSquareFacebook,
-  faRedditAlien
+  faRedditAlien,
 } from '@fortawesome/free-brands-svg-icons';
 import { Stack } from '@mui/system';
 import {
