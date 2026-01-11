@@ -129,7 +129,7 @@ html[data-theme='dark'] {
   .tabs__item--active {
     color: #fff;
   }
-  /* Updated border-radius from 0px to 12px for rounded corners */
+  /* Index page 'smallbox' cards/tiles */
   article .card {
     background-color: rgb(53, 120, 229, .10);
     border-color: rgba(187, 199, 218, 0.10);
@@ -138,7 +138,7 @@ html[data-theme='dark'] {
       font-size: 1.1rem !important;
     }
   }
-  /* Added subtle shadow on hover that works in dark mode */
+  /* Index page 'smallbox' cards/tiles */
   article .card:hover {
     border-color: var(--ifm-pagination-nav-color-hover);
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.6);
@@ -188,7 +188,7 @@ html[data-theme='light'] {
   .toggle {
     background-color: #c3e9ff;
   }
-  /* Updated border-radius from 0px to 12px for rounded corners */
+  /* Index page 'smallbox' cards/tiles */
   article .card {
     border-radius: 12px;
     border-color: rgba(118, 156, 218, 0.2);
@@ -1023,9 +1023,9 @@ html[data-theme='dark'] .node polygon {
   min-width: 65px; /* Can adjust based on layout needs */
 }
 
-// Hub pages
+// Hub/Index pages
 
-/* Reduced column-gap from 50px to 24px to bring tiles closer together horizontally */
+/* Index page 'smallbox' cards/tiles */
 .box-wrapper {
   display: flex;
   margin: 0px -12px;
@@ -1163,7 +1163,7 @@ html[data-theme='dark'] .node polygon {
   font-size: .9rem;
 }
 
-/* Reduced vertical padding to make tiles less tall */
+/* Vertical padding */
 .smallbox.card .container {
   padding-top: 12px;
   padding-bottom: 12px;
@@ -1179,7 +1179,7 @@ html[data-theme='dark'] .node polygon {
   text-decoration: none;
 }
 
-/* Create an invisible overlay that covers the entire card, making it fully clickable */
+/* Invisible overlay that covers the entire card, making it fully clickable */
 .smallbox.card a::after {
   content: '';
   position: absolute;
