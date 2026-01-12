@@ -5,6 +5,10 @@ sidebar_label: Changelog
 description: Changelog for Windows source template for OpenTelemetry.
 ---
 
+## [9.1.0] - 2026-01-19
+### Added
+- Default _parser tagging for logs forwarded to siem
+
 ## [9.0.0] - 2025-11-07
 ### Added
 - Validation for regular expression
