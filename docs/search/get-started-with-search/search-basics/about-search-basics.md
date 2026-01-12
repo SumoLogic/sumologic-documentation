@@ -61,9 +61,10 @@ _sourceCategory=apache
 
 This method lines up the pipes and makes your query much easier to read.
 
-:::note
-Searches can be long and complex, but they are limited to a maximum of 15,000 characters.
-:::
+## Limitations
+
+- Searches can be long and complex, but they are limited to a maximum of 15,000 characters.
+- A maximum of 250 active concurrent search jobs is allowed per organization.
 
 ## Default data scope
 

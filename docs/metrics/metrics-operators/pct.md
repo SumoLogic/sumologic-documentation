@@ -5,7 +5,7 @@ sidebar_label: pct
 ---
 
 
-The pct operator calculates, at each timestamp, the nth percentile of values of the input series for each time interval. If grouping is specified, it calculates the specified percentile for each group.
+The `pct` operator calculates, at each timestamp, the nth percentile of values of the input series for each time interval. If grouping is specified, it calculates the specified percentile for each group.
 
 ## Syntax
 
