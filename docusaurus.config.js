@@ -38,7 +38,7 @@ module.exports = {
       tagName: 'meta',
       attributes: {
         'http-equiv': 'Cache-control',
-        content: 'no-store',
+        content: 'no-store, max-age=0',
       },
     },
   ],
@@ -133,15 +133,6 @@ module.exports = {
     ['@docusaurus/plugin-google-gtag',
       {
         trackingID: ['G-CVH19TBVSL', 'G-9FTQ9KJJBY'],
-      },
-    ],
-    ['@docusaurus/plugin-content-docs',
-      {
-        id: 'community',
-        path: './community',
-        routeBasePath: 'hackathon',
-        sidebarPath: require.resolve('./sidebarsCommunity.js'),
-        breadcrumbs: false,
       },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -494,7 +485,7 @@ module.exports = {
                 href: 'https://www.sumologic.com/events'
               },
               {
-                label: 'Sumo Logic Blog',
+                label: 'Sumo Logic blog',
                 href: 'https://www.sumologic.com/blog'
               },
             ],
@@ -503,8 +494,8 @@ module.exports = {
             title: 'More',
             items: [
               {
-                label: 'Contribute or give feedback',
-                href: 'https://www.sumologic.com/help/docs/contributing'
+                label: 'Start Free Trial',
+                href: 'https://www.sumologic.com/sign-up'
               },
               {
                 label: 'Request a demo',

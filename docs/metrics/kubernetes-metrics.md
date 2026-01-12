@@ -5,9 +5,9 @@ description: This page lists the Kubernetes metrics that are collected when you 
 ---
 
 This page lists the Kubernetes metrics that are collected when you deploy the collection solution described in
-[sumologic-kubernetes-collection deployment guide](/docs/send-data/kubernetes/install-helm-chart).
+[Sumo Logic Kubernetes Helm Chart Installation](/docs/send-data/kubernetes/install-helm-chart).
 
-Information about filtering and relabeling metrics, and how to send custom Prometheus metrics to Sumo Logic, can be found in [Collecting Application Metrics](/docs/send-data/kubernetes/collecting-metrics).
+Information about filtering and relabeling metrics, and how to send custom Prometheus metrics to Sumo Logic, can be found in [Collecting Metrics](/docs/send-data/kubernetes/collecting-metrics).
 
 ## Kube state metrics (kube-state-metrics)
 
@@ -20,7 +20,7 @@ You can use kube-state-metrics in managed Kubernetes environments, such as GKE, 
 ### kube-state-metrics metrics to collect
 
 This section lists recommended metrics to collect. For information about all kube-state-metrics, and metric descriptions,
-see [kube-state-metrics docs](https://github.com/kubernetes/kube-state-metrics/tree/release-2.6/docs)
+see [kube-state-metrics docs](https://github.com/kubernetes/kube-state-metrics/tree/release-2.6/docs).
 
 * kube_daemonset_status_current_number_scheduled
 * kube_daemonset_status_desired_number_scheduled
