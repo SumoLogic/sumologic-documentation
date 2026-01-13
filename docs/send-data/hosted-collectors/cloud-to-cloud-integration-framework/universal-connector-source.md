@@ -266,12 +266,12 @@ The source follows the [JSON Path standard defined here](https://www.ietf.org/ar
 ]
 ```
 
-| Setting          | Value                           |
+| Setting          | Value        |
 | :--| :-- |
-| Logs JPath       | `$[*]`                          |
-| Timestamp JPath  | `$.ts`                          |
+| Logs JPath       | `$[*]`       |
+| Timestamp JPath  | `$.ts`       |
 | Timestamp Format | `epochMilli` |
-| Time Value Regex | `Date(.*)` |
+| Time Value Regex | `Date(.*)`   |
 
   </div>
 </details>
