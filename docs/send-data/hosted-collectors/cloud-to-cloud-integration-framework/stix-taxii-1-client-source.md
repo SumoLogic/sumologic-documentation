@@ -15,6 +15,10 @@ The STIX/TAXII 1 Client source supports collecting threat intelligence indicator
 
 [STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients.
 
+import ThreatIntelC2C from '../../../reuse/threat-intel-c2c.md';
+
+<ThreatIntelC2C/>
+
 :::sumo Best Practice
 This source only supports STIX/TAXII 1.x. Sumo Logic recommends using our [STIX/TAXII 2.x source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source/) instead as it is the current version of STIX/TAXII.
 :::

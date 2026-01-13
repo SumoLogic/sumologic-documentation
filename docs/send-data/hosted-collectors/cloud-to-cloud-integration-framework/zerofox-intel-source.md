@@ -16,6 +16,10 @@ ZeroFox is a cybersecurity firm specializing in providing cyber threat intellige
 
 The ZeroFox source collects threat indicators using the [ZeroFox CTI API](https://api.zerofox.com/cti/docs/) and sends them to Sumo Logic as normalized threat indicators for analysis. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
 
+import ThreatIntelC2C from '../../../reuse/threat-intel-c2c.md';
+
+<ThreatIntelC2C/>
+
 ## Data collected
 
 | Polling Interval | API Endpoint              |

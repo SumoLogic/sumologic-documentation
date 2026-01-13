@@ -14,6 +14,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 CrowdStrike is the leader in next-generation endpoint protection, threat intelligence, and response services. CrowdStrike’s core technology, the Falcon platform, stops breaches by preventing and responding to all types of attacks — both malware and malware-free. The CrowdStrike Threat Intel integration ingests the indicator data from CrowdStrike Combined API and sends it to Sumo Logic as normalized threat indicator information. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
 
+import ThreatIntelC2C from '../../../reuse/threat-intel-c2c.md';
+
+<ThreatIntelC2C/>
+
 :::important
 The CrowdStrike API documentation is not public and can only be accessed by partners or customers.
 :::

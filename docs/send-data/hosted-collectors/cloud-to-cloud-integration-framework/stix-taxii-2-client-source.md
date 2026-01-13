@@ -17,6 +17,10 @@ The legacy STIX/TAXII 1.x versions are not supported with this source. Use [STIX
 
 [STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients.
 
+import ThreatIntelC2C from '../../../reuse/threat-intel-c2c.md';
+
+<ThreatIntelC2C/>
+
 ## Data collected
 
 This source collects threat intelligence indicators from a vendor's STIX/TAXII 2.x endpoints. This means the specific endpoints we collect data from are the endpoints defined in the [TAXII standard](https://oasis-open.github.io/cti-documentation/taxii/intro). Vendor APIs must follow the standard. The source will collect all indicators from the TAXII server when it runs for the first time and it will check for updates once an hour. This one-hour polling interval can be adjusted in the source configuration.

@@ -16,6 +16,10 @@ The Intel 471 Threat Intel source collects threat intelligence indicators using
 
 Intel 471 is a cybersecurity firm specializing in providing cyber threat intelligence services. Their focus is primarily on delivering information about threats originating from the criminal underground, including malware, malicious actors, and their tactics, techniques, and procedures (TTPs). Intel 471 provides these insights to help organizations protect themselves against cyber threats. Their intelligence-gathering efforts often involve monitoring and analyzing underground marketplaces, forums, and other communication channels used by cyber criminals.
 
+import ThreatIntelC2C from '../../../reuse/threat-intel-c2c.md';
+
+<ThreatIntelC2C/>
+
 ## Data collected
 
 | Polling Interval | Data |

@@ -16,6 +16,10 @@ The Mandiant Threat Intel source ingests threat intelligence indicators using th
 
 Mandiant is a recognized leader in dynamic cyber defense, threat intelligence, and incident response services. By scaling decades of frontline experience, Mandiant helps organizations to be confident in their readiness to defend against and respond to cyber threats. Mandiant is part of Google Cloud.
 
+import ThreatIntelC2C from '../../../reuse/threat-intel-c2c.md';
+
+<ThreatIntelC2C/>
+
 ## Data collected
 
 | Polling Interval | Data |
