@@ -88,9 +88,7 @@ Investigate security incidents without leaving Slack:
 * **Add investigation notes** to maintain audit context.
 * **Execute multi-tool actions conversationally** within a single Slack thread.
 
-For example:
-
-```
+```txt title="Slack Example 1"
 User: @bot what are the triage details? update the status to in progress
 
 Bot: I've retrieved the triage information and updated the status to In Progress.
@@ -98,6 +96,24 @@ Bot: I've retrieved the triage information and updated the status to In Progress
 Verdict: MALICIOUS - Confirmed threat
 Severity: CRITICAL
 ...
+```
+
+```txt title="Slack Example 2"
+User: @bot what is the recommended next step for INSIGHT-5678?
+
+Bot: Based on my analysis of INSIGHT-5678, here's the recommended next step:
+
+This is a CRITICAL SEVERITY incident involving confirmed malicious phishing attack...
+
+Immediate Recommended Actions:
+1. Incident Response - URGENT
+   • Immediately disable/reset credentials for <username>
+   • Revoke all active AWS sessions...
+
+[continues with structured response]
+
+Next Immediate Step:
+🚨 ASSIGN TO SENIOR ANALYST AND BEGIN CREDENTIAL RESET NOW
 ```
 
 </TabItem>
@@ -111,6 +127,14 @@ Troubleshoot production issues directly from your development environment:
 * **Debug with full context** by pulling logs, traces, and metrics into your workflow.
 * **Correlate application behavior** with observability data in real time.
 
+```txt title="VSCode Example 1"
+<!-- tk -->
+```
+
+```txt title="VSCode Example 2"
+<!-- tk -->
+```
+
 </TabItem>
 
 <TabItem value="Custom">
@@ -121,6 +145,15 @@ Build custom AI workflows powered by Sumo Logic:
 * **Orchestrate cross-platform workflows** spanning multiple AI tools and data sources.
 * **Combine domain knowledge with observability data** for richer analysis.
 * **Use Sumo Logic as a central capability provider** in your AI ecosystem.
+
+```txt title="? Example 1"
+<!-- tk -->
+```
+
+```txt title="? Example 2"
+<!-- tk -->
+```
+
 
 </TabItem>
 </Tabs>
