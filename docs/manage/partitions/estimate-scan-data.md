@@ -2,7 +2,7 @@
 id: estimate-scan-data
 title: Estimate Scan Data
 sidebar_label: Estimate Scan Data
-description: Learn about the estimate scan data for Data tier and Flex pricing modals.
+description: Learn about the estimate scan data for Data tier and Flex pricing models.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

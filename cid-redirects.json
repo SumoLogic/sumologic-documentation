@@ -4615,6 +4615,6 @@
   "/docs/manage/scheduled-views/pausing-inactive-scheduled-views": "/docs/manage/scheduled-views/pause-disable-scheduled-views",
   "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps",
   "/docs/search/mobot-multiturn-beta": "/docs/search/mobot",
-  "/docs/manage/partitions/flex/estimate-scan-data" : "/docs/manage/partitions/estimate-scan-data"
+  "/docs/manage/partitions/flex/estimate-scan-data" : "/docs/manage/partitions/estimate-scan-data",
   "/docs/manage/manage-subscription/beta-opt-in": "/docs/beta"
 }
