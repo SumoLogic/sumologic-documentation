@@ -79,4 +79,10 @@ This section contains the following topics:
   <p>Learn how to set up user accounts and roles, Actions, Network Blocks, custom Insight status and sub-resolutions, and more.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/cse/troubleshoot')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Troubleshoot</h4></a>
+  <p>Learn how to troubleshoot problems with Cloud SIEM.</p>
+  </div>
+</div>
 </div>

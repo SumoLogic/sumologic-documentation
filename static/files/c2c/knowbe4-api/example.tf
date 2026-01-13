@@ -8,11 +8,11 @@ resource "sumologic_cloud_to_cloud_source" "knowbe4-api-source" {
  	 	"description": "Test Source",
   		"category": "source_category",
   		"region": "US",
-  		"apiKey": "************",
-		"dataTypes": [
-    		         "phishingTests"
-  		],
-		"phishingPollInterval": 1
+  		"collectPhishingTests": true,
+        "collectExternalEvents": true,
+        "apiKeyPhishing": "************",
+        "phishingPollInterval": 24,
+        "apiKeyEvent": "************"
   })
 }
 resource "sumologic_collector" "collector" {

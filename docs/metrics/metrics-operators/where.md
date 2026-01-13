@@ -21,7 +21,7 @@ Where:
   _value > 3
   ```
 
-  For more examples, see [Filtering data points](#filtering-data-points)
+  For more examples, see [Filtering data points](#filtering-data-points).
 
 * `[REDUCER BOOLEAN EXPRESSION]` evaluates the value returned from applying an aggregation function to a given time series. For example:
 

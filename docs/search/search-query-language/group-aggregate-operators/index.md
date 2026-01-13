@@ -11,6 +11,12 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/search/search-query-language/group-aggregate-operators/overview')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="35"/><h4>Overview</h4></a>
+  <p>Learn how aggregating (group-by) functions evaluate messages and place them into groups.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/search/search-query-language/group-aggregate-operators/avg')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="35"/><h4>avg</h4></a>
   <p>Calculates the avg value of a numerical field being evaluated.</p>
   </div>
