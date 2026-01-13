@@ -76,6 +76,13 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/partitions/flex')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Flex Pricing</h4></a>
+  <p>Learn more about the Flex pricing partition.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/manage/partitions/estimate-scan-data')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Estimate Scan Data</h4></a>
+  <p> Learn about the estimate scan data for Data tier and Flex pricing.</p>
   <p>Learn about Sumo Logic Flex Pricing.</p>
   </div>
 </div>

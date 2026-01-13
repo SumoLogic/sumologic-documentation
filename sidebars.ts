@@ -906,10 +906,10 @@ module.exports = {
           items: [
             'manage/partitions/flex/create-edit-partition-flex',
             'manage/partitions/flex/view-partition-details-flex',
-            'manage/partitions/flex/estimate-scan-data',
             'manage/partitions/flex/faq',
           ]
         },
+        'manage/partitions/estimate-scan-data',
         'manage/partitions/run-search-against-partition',
         'manage/partitions/edit-data-forwarding-destinations-partition',
         'manage/partitions/manage-indexes-variable-retention',
