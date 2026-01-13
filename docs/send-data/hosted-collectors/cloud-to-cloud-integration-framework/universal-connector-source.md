@@ -267,7 +267,7 @@ The source follows the [JSON Path standard defined here](https://www.ietf.org/ar
 ```
 
 | Setting          | Value                           |
-| :--------------- | :------------------------------ |
+| :--| :-- |
 | Logs JPath       | `$[*]`                          |
 | Timestamp JPath  | `$.ts`                          |
 | Timestamp Format | `epochMilli` |
