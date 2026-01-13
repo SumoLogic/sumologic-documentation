@@ -190,7 +190,7 @@ The source follows the [JSON Path standard defined here](https://www.ietf.org/ar
 
 **Timestamp Format**. Provide the timestamp format the logs use in the Go programming language format. [See our time formatting section for more details](#timestamp-formatting).
 
-**Time Value Regex**. Provide a regular expression to extract the timestamp value from the log entry when the timestamp is embedded within a more complex string format. The regex must contain at least one capture group, and if multiple capture groups are present, only the first group will be used. Ensure the regex is valid otherwise, source encounter `failed to validate data processor configs` error. This field is optional and only needed when the timestamp requires extraction from a wrapper format.
+**Time Value Regex (Optional)**. Use this field only when the timestamp requires extraction from a wrapper format. Provide a regular expression that extracts the timestamp value from a log entry when the timestamp is embedded within a complex string format. This expression must include at least one capture group. If multiple capture groups are defined, only the first capture group will be used. Ensure the regular expression is valid, as invalid expressions will cause the source to return a `failed to validate data processor configs` error.
 
 **JSON with JPath Examples**
 
