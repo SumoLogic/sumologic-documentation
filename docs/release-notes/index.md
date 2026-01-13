@@ -3,11 +3,12 @@ slug: /release-notes
 title: Sumo Logic Release Notes
 description: Here you'll find a chronological list of the newest Sumo Logic features and bug fixes.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Explore the individual release notes pages to see what's new.
 
-## Release Notes by Product
+## Release Notes by product
 
 <div className="box-wrapper">
 <div className="box smallbox card">
@@ -57,23 +58,32 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
 </div>
 </div>
 
-<br/>
-
+<small>
 <sup>1</sup> To access new Installed Collector features, upgrade using:
 * [Static URLs](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url)
 * [Sumo Logic](/docs/send-data/collection/upgrade-collectors)
 * [Command Line](/docs/send-data/collection/upgrade-collectors)
 * [Collector Management API](/docs/api/collector-management/upgrade-downgrade-collectors)
+</small>
 
 
-## Subscribe via RSS
+## Stay connected
 
-Get automatic updates delivered to your RSS reader:
+### Subscribe via RSS
 
-* <img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="30" style={{verticalAlign: 'middle', marginRight: '8px'}} />[Service Release Notes](https://www.sumologic.com/help/release-notes-service/rss.xml)
-* <img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="30" style={{verticalAlign: 'middle', marginRight: '8px'}} />[Collector Release Notes](https://www.sumologic.com/help/release-notes-collector/rss.xml)
-* <img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="30" style={{verticalAlign: 'middle', marginRight: '8px'}} />[Cloud SIEM Release Notes](https://www.sumologic.com/help/release-notes-cse/rss.xml)
-* <img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="30" style={{verticalAlign: 'middle', marginRight: '8px'}} />[Cloud SOAR Release Notes](https://www.sumologic.com/help/release-notes-csoar/rss.xml)
-* <img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="30" style={{verticalAlign: 'middle', marginRight: '8px'}} />[Developer Release Notes](https://www.sumologic.com/help/release-notes-developer/rss.xml)
+Get release notes updates delivered to your RSS reader:
 
-<br/>
+* [<img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="32" style={{verticalAlign: 'text-bottom', marginRight: '10px'}} />Service Release Notes](https://www.sumologic.com/help/release-notes-service/rss.xml)
+* [<img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="32" style={{verticalAlign: 'text-bottom', marginRight: '10px'}} />Collector Release Notes](https://www.sumologic.com/help/release-notes-collector/rss.xml)
+* [<img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="32" style={{verticalAlign: 'text-bottom', marginRight: '10px'}} />Cloud SIEM Release Notes](https://www.sumologic.com/help/release-notes-cse/rss.xml)
+* [<img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="32" style={{verticalAlign: 'text-bottom', marginRight: '10px'}} />Cloud SOAR Release Notes](https://www.sumologic.com/help/release-notes-csoar/rss.xml)
+* [<img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="32" style={{verticalAlign: 'text-bottom', marginRight: '10px'}} />Developer Release Notes](https://www.sumologic.com/help/release-notes-developer/rss.xml)
+
+### Follow us on socials
+
+Follow Sumo Logic social media for company news and updates:
+
+<a href="https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw" style={{marginRight: '12px'}}><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" width="32" height="32" alt="YouTube"/></a>
+<a href="https://www.linkedin.com/company/sumo-logic" style={{marginRight: '12px'}}><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" width="32" height="32" alt="LinkedIn"/></a>
+<a href="https://x.com/SumoLogic" style={{marginRight: '12px'}}><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/X_icon.svg" width="32" height="32" alt="X"/></a>
+<a href="https://www.facebook.com/Sumo.Logic"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" width="32" height="32" alt="Facebook"/></a>
