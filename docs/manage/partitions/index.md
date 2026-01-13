@@ -69,8 +69,8 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/partitions/data-tiers')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tier</h4></a>
-  <p>Learn more about the Data Tier partitions.</p>
+  <a href={useBaseUrl('docs/manage/partitions/data-tiers')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers</h4></a>
+  <p>Data Tiers provide the ability to allocate data to different storage tiers based on frequency of access - Continuous, Frequent, and Infrequent.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -83,6 +83,7 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href={useBaseUrl('docs/manage/partitions/estimate-scan-data')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Estimate Scan Data</h4></a>
   <p> Learn about the estimate scan data for Data tier and Flex pricing.</p>
+  <p>Learn about Sumo Logic Flex Pricing.</p>
   </div>
 </div>
 <div className="box smallbox card">

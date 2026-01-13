@@ -33,6 +33,12 @@ Sumo Logic tracing supports the OpenTelemetry standard as well as other legacy o
   <p>Learn how to leverage OpenTelemetry standards and start collecting Traces.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/http-traces-source')}><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="40"/><h4>Configure an HTTP Traces Source</h4></a>
+  <p>An HTTP Traces Source is an endpoint for receiving traces.</p>
+  </div>
+</div>
 </div>
 
 <br/>

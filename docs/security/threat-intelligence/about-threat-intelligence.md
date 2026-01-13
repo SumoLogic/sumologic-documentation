@@ -51,8 +51,8 @@ The sources on the **Threat Intelligence** tab include:
 ### Sumo Logic threat intelligence sources
 
 Sumo Logic provides the following out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources:
-* **SumoLogic_ThreatIntel**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/).
-* **_sumo_global_feed_cs**. This is a source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/).
+* **SumoLogic_ThreatIntel**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/). For more information, see [Sumo Logic Threat Intel Source](/docs/security/threat-intelligence/sumologic-threat-intel-source/).
+* **_sumo_global_feed_cs**. This is a source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/). For more information, see [Sumo Logic Global Feed from CrowdStrike](/docs/security/threat-intelligence/sumologic-global-feed-from-crowdstrike/).
 
 ### Ingest threat intelligence indicators
 
@@ -95,6 +95,10 @@ Add the following capabilities:
        * **Manage Threat Intel Data Store**
 
 You do not need to be assigned these role capabilities to [find threats with log queries](/docs/security/threat-intelligence/find-threats/).
+
+### Allowlist Sumo Logic static IP addresses
+
+Set firewall rules to allowlist the Sumo Logic IPs listed in [Static IP addresses](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/#static-ip-addresses). This allows threat indicators in your Sumo Logic threat intelligence data store to be used without being blocked on your network.
 
 ## Typical workflow
 

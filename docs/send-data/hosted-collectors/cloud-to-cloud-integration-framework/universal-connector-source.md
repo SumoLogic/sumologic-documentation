@@ -190,6 +190,8 @@ The source follows the [JSON Path standard defined here](https://www.ietf.org/ar
 
 **Timestamp Format**. Provide the timestamp format the logs use in the Go programming language format. [See our time formatting section for more details](#timestamp-formatting).
 
+**Time Value Regex (Optional)**. Use this field only when the timestamp requires extraction from a wrapper format. Provide a regular expression that extracts the timestamp value from a log entry when the timestamp is embedded within a complex string format. This expression must include at least one capture group. If multiple capture groups are defined, only the first capture group will be used. Ensure the regular expression is valid, as invalid expressions will cause the source to return a `failed to validate data processor configs` error.
+
 **JSON with JPath Examples**
 
 ```json title="Vendor API JSON Response Example"
@@ -246,6 +248,30 @@ The source follows the [JSON Path standard defined here](https://www.ietf.org/ar
 | Logs JPath       | `$[*]`                          |
 | Timestamp JPath  | `$.ts`                          |
 | Timestamp Format | `2006-01-02T15:04:05.999Z07:00` |
+
+```json title="Vendor API JSON Response with Wrapper date time"
+[
+  {
+    "id": 45345,
+    "ts": "Date(1741354875093)",
+    "type": "security",
+    "msg": "some security event details"
+  },
+  {
+    "id": 45346,
+    "ts": "Date(1741354975093)",
+    "type": "security",
+    "msg": "some other security event details"
+  }
+]
+```
+
+| Setting          | Value        |
+| :--| :-- |
+| Logs JPath       | `$[*]`       |
+| Timestamp JPath  | `$.ts`       |
+| Timestamp Format | `epochMilli` |
+| Time Value Regex | `Date(.*)`   |
 
   </div>
 </details>
@@ -541,6 +567,43 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 | Epoch in Milliseconds | `1706803677000`                  | `epochMilli`                          |
 | Epoch NanoInt         | `173584347745451512`             | `epochNanoInt`                        |
 | Epoch NanoFloat       | `1735843477.454515`              | `epochNanoFloat`                      |
+
+## Troubleshooting
+
+<details>
+  <summary>
+    Errors related to partial log ingestion, log preparation, timestamp extraction, or response parsing
+  </summary>
+  <div>
+    <strong>Possible resolution</strong>
+    <ul>
+      <li>Ensure that the <code>HTTP Response Log Ingest Configuration</code> matches the API response structure.</li>
+      <li>Verify that all configured fields exist in the API response.</li>
+      <li>Confirm that the API response is returned in valid JSON format.</li>
+    </ul>
+  </div>
+</details>
+
+<details>
+  <summary>Error getting partial logs, error preparing log, error getting timestamp data, timestamp path not in data, or error parsing response data</summary>
+  <div>
+    These errors are typically caused by an improper endpoint response format or incorrect log ingestion configuration. Ensure that your endpoint returns data in a valid JSON format and response fields are as per the configuration.
+  </div>
+</details>
+
+<details>
+  <summary>oauth2: cannot parse json: invalid character</summary>
+  <div>
+    This error occurs due to an OAuth 2.0 authentication misconfiguration. Reconfigure the source using valid OAuth 2.0 credentials and ensure that it aligns with the steps in the [Authentication Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
+  </div>
+</details>
+
+<details>
+  <summary>Failed to validate the base request config or error preparing new request</summary>
+  <div>
+    These errors indicate that the endpoint configuration is not set up correctly. Verify that your endpoint configuration follows the instructions in the [Request Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
+  </div>
+</details>
 
 ## FAQ
 

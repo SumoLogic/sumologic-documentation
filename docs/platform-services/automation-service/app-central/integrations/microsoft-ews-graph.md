@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews.png')} alt="microsoft-ews" width="100"/>
 
-***Version: 1.2  
-Updated: Nov 21, 2025***
+***Version: 1.4  
+Updated: Dec 30, 2025***
 
 Perform actions on Microsoft EWS mailboxes and accounts using Graph API. 
 
@@ -141,3 +141,5 @@ Email Gateway
 * November 21, 2025 (v1.2)
   + Fixed issue in the **Search Emails Extended** action.
   + Converted `has_attachments` and `is_unread` from text fields to list fields with true/false options.
+* December 10, 2025 (v1.3) - Added a dynamic Mailbox override option to all actions, enabling multi-user execution without requiring resource updates.
+* December 30, 2025 (v1.4) - Removed the default values for the `has_attachments` and `un_read` fields in the **Search Emails Extended** action. The change allows users to search for emails without being forced to filter by attachment status or read/unread status.

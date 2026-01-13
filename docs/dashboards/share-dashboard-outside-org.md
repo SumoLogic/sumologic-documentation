@@ -1,7 +1,7 @@
 ---
 id: share-dashboard-outside-org
-title: Share a dashboard outside your organization
-sidebar_label: Share a dashboard outside your org
+title: Share a Dashboard Outside Your Organization
+sidebar_label: Share a Dashboard Outside Your Organization
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

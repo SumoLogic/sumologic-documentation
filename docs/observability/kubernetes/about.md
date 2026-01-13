@@ -16,7 +16,7 @@ With the Sumo Logic Kubernetes Solution, you can monitor and troubleshoot contai
 * Troubleshoot issues with advanced analytics to successfully reach a root cause.
 * Optimize performance and ensure the security of your apps and environment as a whole.
 
-![K8s_Solution_Ingest_Ease-of-Use.png](/img/kubernetes/K8s_Solution_Ingest_Ease-of-Use.png)
+<img src={useBaseUrl('img/kubernetes/K8s_Solution_Ingest_Ease-of-Use.png')} alt="Sumo Logic for Kubernetes diagram" style={{border: '1px solid gray'}} width="800" />
 
 <details>
 <summary>What is Kubernetes?</summary>
@@ -34,7 +34,7 @@ The Sumo Logic Kubernetes Solution provides observability into all the critical 
 
 The critical areas for monitoring in Kubernetes include the control plane, individual nodes, and pods. The following graphic provides a high-level view of the Kubernetes cluster architecture.
 
-![Intro_K8s_architecture.png](/img/kubernetes/Intro_K8s_architecture.png)
+<img src={useBaseUrl('img/kubernetes/Intro_K8s_architecture.png')} alt="Intro to Kubernetes architecture" style={{border: '1px solid gray'}} width="600>" />
 
 ### Control Plane
 The Kubernetes control plane manages how Kubernetes communicates with your cluster. The various parts of the control plane work together in managing the health and performance of a cluster. The control plane consists of the API server, etcd, controller manager, and scheduler. Each part of the control plane has specific areas that should be monitored for the optimum health and performance of your cluster.
@@ -80,7 +80,7 @@ A node is a worker machine in a Kubernetes cluster that serves as a delivery veh
 
 Each node is managed by the cluster and contains the services necessary to run pods. Node services include kubelet and kube-proxy.
 
-![Intro_Nodes-and-Pods.png](/img/kubernetes/Intro_Nodes-and-Pods.png)
+<img src={useBaseUrl('img/kubernetes/Intro_Nodes-and-Pods.png')} alt="Inroduction to nodes and pods" style={{border: '1px solid gray'}} width="600" />
 
 #### Kubelet
 
