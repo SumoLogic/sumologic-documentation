@@ -266,6 +266,7 @@ Get the most out of Query Agent by following these tips:
 #### Specifying time ranges
 
 Query Agent understands relative rolling window time expressions. Use "last X" or "past X" with time units for rolling time windows:
+
 * "within the last 60 minutes"
 * "in the last 6 months"
 * "over the last 7 days"
