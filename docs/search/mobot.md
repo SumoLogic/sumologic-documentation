@@ -1,7 +1,7 @@
 ---
 id: mobot
 title: Sumo Logic Mobot
-sidebar_label: Mobot 🤖
+sidebar_label: Mobot ✨
 # Edit description to include QA and KA
 description: Accelerate troubleshooting with Mobot, Sumo Logic's AI-powered assistant. Ask questions in plain English to generate log queries (Query Agent) or get help learning the platform (Knowledge Agent).
 keywords:
@@ -265,32 +265,13 @@ Get the most out of Query Agent by following these tips:
 
 #### Specifying time ranges
 
-Query Agent understands a variety of natural language time expressions. Here are the most effective ways to specify time ranges:
-
-* **Relative rolling windows** (most common). Use "last X" or "past X" with time units for rolling time windows:
-  * "within the last 60 minutes"
-  * "in the last 6 months"
-  * "over the last 7 days"
-  * "in the last 24 hours"
-  * "last 48 hours", "last 90 days", "last 12 months"
-  * "last week", "last month", "last night" (as rolling ranges)
-* **Comparative windows**. Compare two aligned time periods to analyze changes:
-  * "compare last 1 hour to previous week's 1 hour same timeframe"
-  * "compare to previous day and same day last week"
-  * "compare with last year for same dates"
-* **Absolute calendar dates**. Specify exact date ranges when needed:
-  * "from 20th Nov to 27th Nov"
-  * "on 28th November 2025"
-  * "1 November to 30"
-* **Natural calendar anchors**. Reference calendar-based time periods:
-  * "around 10:50pm last night"
-  * "Retrieve last login timestamp today"
-  * "since last night"
-  * "today", "yesterday"
-* **Advanced time patterns**.
-  * *Exclusion windows:* "3 months ago to last month, excluding the current month"
-  * *Time-of-day constraints:* * "last 30 days, only 6am to 10am"
-  * *Time-field-specific constraints:* "_receipttime within last 30 minutes", "_searchabletime for the last hour"
+Query Agent understands relative rolling window time expressions. Use "last X" or "past X" with time units for rolling time windows:
+* "within the last 60 minutes"
+* "in the last 6 months"
+* "over the last 7 days"
+* "in the last 24 hours"
+* "last 48 hours", "last 90 days", "last 12 months"
+* "last week", "last month", "last night" (as rolling ranges)
 
 
 ### Example queries
