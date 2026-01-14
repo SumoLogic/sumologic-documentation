@@ -92,7 +92,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-5" width="400"/>
 
-For information about Atlassian Jira, see [Jira documentation]( https://confluence.atlassian.com/jira). For the REST API v2, see the [REST API v2 documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/).
+For information about Atlassian Jira, see [Jira documentation](https://confluence.atlassian.com/jira). For the REST API v2, see the [REST API v2 documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/).
 
 ## Category
 

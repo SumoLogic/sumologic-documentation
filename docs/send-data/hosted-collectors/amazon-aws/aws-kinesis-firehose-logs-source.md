@@ -15,10 +15,18 @@ Amazon Kinesis Data Firehose is an AWS service that can reliably load streaming 
 
 The following diagram shows the flow of data with an AWS Kinesis Firehose for Logs Source:
 
-![A diagram showing the flow of logs from AWS CloudWatch to Sumo Logic via Kinesis Firehose. Logs go from AWS CloudWatch to Kinesis Firehose, then to Sumo Logic's AWS Kinesis Firehose for Logs source, with undelivered logs stored in AWS S3. The left side is labeled 'Customer AWS Account' and the right side 'Customer Sumo Org'.](/img/send-data/kinesis-architecture.png)
+<img src={useBaseUrl('img/send-data/kinesis-architecture.png')} alt="A diagram showing the flow of logs from AWS CloudWatch to Sumo Logic via Kinesis Firehose" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 For failed logs messages, AWS will send them into the backup S3 bucket. Sumo Logic will ingest those failed logs through S3, and not the firehose.
+:::
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an AWS Kinesis Firehose for Logs source with the [`sumologic_kinesis_log_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/kinesis_log_source) resource.
+
+<TerraformLink/>
 :::
 
 ## Create an AWS Kinesis Firehose for Logs Source
@@ -27,19 +35,13 @@ When you create an AWS Kinesis Firehose for Logs Source, you add it to a Hosted
 
 To create an AWS Kinesis Firehose for Logs Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
-1. Select **AWS Kinesis Firehose for Logs Source**.   
+1. Select **AWS Kinesis Firehose for Logs Source**. <br/><img src={useBaseUrl('img/send-data/AWS-Kinesis-Firehost-for-Logs-Icon.png')} alt="AWS Kinesis Firehose for Logs Source icon" style={{border: '1px solid gray'}} width="100" />
 
-    ![Screenshot of AWS Kinesis Firehose for Logs Source icon](/img/send-data/AWS-Kinesis-Firehost-for-Logs-Icon.png)
+1. Enter a **Name** for the Source. A description is optional.<br/><img src={useBaseUrl('img/send-data/AWS-Kinesis-logs-source.png')} alt="AWS Kinesis logs source options" style={{border: '1px solid gray'}} width="600" />
 
-1. Enter a **Name** for the Source. A description is optional.
-
-    ![Screenshot of AWS Kinesis logs source options, including Name, Description, Source Category, and more.](/img/send-data/AWS-Kinesis-logs-source.png)
-
-1. (Optional) The **Enable S3 Replay** option allows you to collect any logs that were deemed undelivered by Kinesis.
-
-    ![S3 replay enabled in Kinesis Logs Source options](/img/send-data/s3-replay-enabled-on-Kinesis-Logs-Source.png)  
+1. (Optional) The **Enable S3 Replay** option allows you to collect any logs that were deemed undelivered by Kinesis.<br/><img src={useBaseUrl('img//send-data/s3-replay-enabled-on-Kinesis-Logs-Source.png')} alt="S3 replay enabled in Kinesis Logs Source options" style={{border: '1px solid gray'}} width="500" />  
 
     Kinesis puts undelivered logs into a backup directory within your S3 bucket with the path `http-endpoint-failed/yyyy/MM/dd/00/` (`00` indicates UTC time zone). This is useful when you need to meet compliance requirements.
 
@@ -56,15 +58,15 @@ To create an AWS Kinesis Firehose for Logs Source:
 1. **SIEM Processing**. Check the checkbox to forward your data to Cloud SIEM.    
 
 1.  **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.         
+     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.         
 
 1. Set any of the following options under **Advanced**. Advanced options do *not* apply to uploaded metrics.
 
     **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
 
    * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo completely disregard any time zone information present in logs by forcing a time zone. Whichever option you choose, it's important to set the proper time zone. If the time zone of logs cannot be determined, Sumo assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-   * **Timestamp Format.** By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference for more information.
+   * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, to manually specify a timestamp format for a source, contact Sumo Logic support.
 
     **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. Use this option if you're working with multiline messages (for example, log4J messages or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log).
 
@@ -74,9 +76,7 @@ To create an AWS Kinesis Firehose for Logs Source:
 
 1. **Processing Rules for Logs.** Configure desired filters—such as include, exclude, hash, or mask—as described in Create a Processing Rule. Processing rules are applied to log data, but not to metric data. Note that while the Sumo service will receive your data, data ingestion will be performed in accordance with the regular expressions you specify in processing rules.    
 1. When you are finished configuring the Source, click **Save**.    
-1. Copy the provided URL for the Source. You'll provide this to AWS in the next section.
-
-    ![img](/img/send-data/http-source-address.png)
+1. Copy the provided URL for the Source. You'll provide this to AWS in the next section.<br/><img src={useBaseUrl('img/send-data/http-source-address.png')} alt="HTTP Source Address dialog" style={{border: '1px solid gray'}} width="400" />
 
 ## Set up CloudWatch to stream logs to Kinesis Data Firehose
 
@@ -92,7 +92,7 @@ You can use the AWS console or our CloudFormation Template.
 
 ### CloudFormation Template
 
-Download <a href="/files/KinesisFirehoseCWLogs.template.yaml" target="_blank">KinesisFirehoseCWLogs.template.yaml</a>, our CloudFormation template, and upload it when [creating a stack on the AWS CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html).
+Download <a href={useBaseUrl('files/KinesisFirehoseCWLogs.template.yaml')} target="_blank">KinesisFirehoseCWLogs.template.yaml</a>, our CloudFormation template, and upload it when [creating a stack on the AWS CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html).
 
 When you [Specify a stack name and parameters](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-parameters.html) on the AWS CloudFormation console you'll provide the following:
 

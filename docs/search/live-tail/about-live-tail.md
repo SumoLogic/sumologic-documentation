@@ -4,6 +4,7 @@ title: About Live Tail
 description: Sumo Logic Live Tail allows you to see a real-time live feed of log events for development and troubleshooting.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Use Live Tail to see a real-time feed of log events associated with a Source or Collector. These live feeds can help you with development and troubleshooting.
 
@@ -27,7 +28,7 @@ Roles-Based Access Control permissions apply to all Live Tail queries.
 
 The following image shows a Live Tail session for `_sourceCategory=Apache/Access`:
 
-![live tail](/img/search/livetail/About-Live-Tail/LiveTail.png)
+<img src={useBaseUrl('img/search/livetail/About-Live-Tail/LiveTail.png')} alt="Live tail" style={{border: '1px solid gray'}} width="800" />
 
 Live Tail features include [multiple](multiple-live-tails.md) Live Tail sessions, opening your Live Tail session in a [new "pop-out" window](multiple-live-tails.md), [highlighting](live-tail-highlighting.md) up to eight keywords in order to make searching easier, and changing the [preferences](live-tail-preferences.md) of your Live Tail display, including line spacing, message text size, and message color. 
 
@@ -59,7 +60,7 @@ You can start a Live Tail session in several ways.
 
 ### New Live Tail page
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Live Tail**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Live Tail**. You can also click the **Go To...** menu at the top of the screen and select **Live Tail**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Live Tail**. You can also click the **Go To...** menu at the top of the screen and select **Live Tail**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Live Tail**. 
 1. The **Live Tail** page opens, and the Live Tail session starts. At the prompt, enter the name of the `_sourceCategory`, `_sourceHost`, `_sourceName`, `_source`, or `_collector` of the log you want to tail, along with any filters. Use the syntax `_sourceCategory=name`. For more information, see [Filter Live Tail](filter-live-tail.md).
 1. Click **Run** or press **Enter**.
 
@@ -68,10 +69,7 @@ The **Run** button changes to **Running**, and log messages fill the screen.
 ### On the Search page
 
 1. On the **Search** page, in the search box, enter a valid query for a Source Category, Source Host, Source Name, Source, or Collector with filters, if desired. (Live Tail will take everything before the first pipe, but search operators are not supported.)
-1. Click the three-dot kebab icon and click **Live Tail** from the provided options.    
-
-    ![live tail option png](/img/search/livetail/About-Live-Tail/live-tail-option.png)
-
+1. Click the three-dot kebab icon and click **Live Tail** from the provided options.<br/><img src={useBaseUrl('img/search/livetail/About-Live-Tail/live-tail-option.png')} alt="Live Tail option" style={{border: '1px solid gray'}} width="300" />
 1. The **Live Tail** page opens, and the Live Tail session starts.
 
 ### Keyboard shortcut

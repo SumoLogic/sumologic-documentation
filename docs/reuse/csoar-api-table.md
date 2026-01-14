@@ -1,4 +1,4 @@
-| Deployment | Documentation URL                                         |
+| Deployment | API documentation URL                                         |
 |:-----------|:----------------------------------------------------------|
 | AU         | https://api.au.sumologic.com/docs/csoar/  |
 | CA         | https://api.ca.sumologic.com/docs/csoar/  |

@@ -29,10 +29,8 @@ For Azure Cosmos DB, you can collect the following logs and metrics:
 
 * **Resource logs**. To learn more about the different resource log category types and schemas collected for Azure Cosmos DB, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-reference#resource-logs).
 
-* **Platform Metrics for Azure Cosmos DB**. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-reference#metrics). These metrics are available in the following namespaces:
-   * `Microsoft.DocumentDB/applicationGateways`
-   * `Microsoft.DocumentDB/cassandraClusters`
-   * `Microsoft.DocumentDB/mongoClusters`
+* **Platform Metrics for Azure Cosmos DB**. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-reference#metrics). These metrics are available within the namespace `Microsoft.DocumentDB/DatabaseAccounts`
+
 * **Activity logs**. Provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
 
 ## Setup
@@ -46,11 +44,15 @@ You must explicitly enable diagnostic settings for each Azure Cosmos DB account 
 
 When you configure the Event Hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/CosmosDB/Logs`, `Azure/CosmosDB/Metrics`.
 
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+
 ### Configure metrics collection
 
-import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+import MetricsSource from '../../reuse/metrics-source.md';
 
-<MetricsSourceBeta/>
+<MetricsSource/>
 
 ### Configure logs collection
 
@@ -66,11 +68,9 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 #### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). If you are already collecting activity logs for a subscription, do not perform this step.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
-:::
+<ActivityLogs/>
 
 ##### Enabling Microsoft Defender for Cloud
 
@@ -249,6 +249,6 @@ These alerts are metrics-based and will work for all Cosmos DB's.
 
 ## Troubleshooting
 
-### HTTP Logs and Metrics Source used by Azure Functions
+### Metrics collection via Azure Metrics Source
 
-To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
+To troubleshoot metrics collection via Azure Metrics Source, follow the instructions in [Troubleshooting Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/#troubleshooting).

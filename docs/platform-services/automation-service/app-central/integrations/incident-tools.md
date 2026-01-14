@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/incident-tools.png')} alt="incident-tools" width="100"/>
 
-***Version: 1.8  
-Updated: June 24, 2024***
+***Version: 1.9  
+Updated: Dec 5, 2025***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -47,10 +47,6 @@ Set of scripts to perform actions within Cloud SOAR.
 * **Update Incident Field** (*Custom*) - Update an incident field.
 * **Update Incident Fields** (*Custom*) - Update multiple incident fields.
 * **Update Incident Phase** (*Custom*) Update the incident phase.
-
-## Category
-
-Supervised Active Intelligence Automation
 
 ## Configure Incident Tools in Cloud SOAR
 
@@ -110,3 +106,4 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
     * Search Incidents
     * Update Entity
 * June 24, 2024 (v1.8) - The **Field ID** and **Field Value** fields are now optional in the **Update Incident Fields** action.
+* December 5, 2025 (v1.9) - Added `closing_note` in output field of Get Incident action.

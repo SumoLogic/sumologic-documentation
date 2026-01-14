@@ -58,7 +58,7 @@ However, this dimension has certain limitations, including:
 
 As a result, it is not possible to access both histogram and non-histogram data in a single query.
 
-Currently, the only metric types that generate histograms in Sumo Logic are APM and RUM metrics used in [Application Service APM/Tracing Dashboards](/docs/apm/traces/tracing-dashboards/) and [RUM Dashboards](/docs/apm/real-user-monitoring/dashboards/). Specifically, these are metrics of the `_contenttype=metricfromtrace` and `_contenttype=rummetricfromtrace` types.
+Currently, the only metric types that generate histograms in Sumo Logic are APM and RUM metrics used in [Application Service APM/Tracing dashboards](/docs/apm/traces/tracing-dashboards/) and [Real User Monitoring dashboards](/docs/apm/real-user-monitoring/dashboards/). Specifically, these are metrics of the `_contenttype=metricfromtrace` and `_contenttype=rummetricfromtrace` types.
 
 ## Calculating percentiles
 
@@ -67,7 +67,7 @@ Percentiles are an important metric used in analyzing data, and histograms are p
 To calculate a percentile for each histogram individually, use `pct` quantization by including `quantize using pct(50)` in your query.
 This will calculate the 50th percentile for each histogram, taking all existing dimensions into account.
 
-**Method of Calculating Percentiles in Histogram**
+### Methods for calculating percentiles in histograms
 
 To calculate percentiles for the histograms, you can use three different methods: calculating percentiles individually for each histogram, grouping histograms by a specific parameter, and aggregating histograms.
 
@@ -75,9 +75,9 @@ To calculate percentiles for the histograms, you can use three different methods
 * [GroupBy](#percentiles-grouped-by-a-specific-dimension)
 * [Aggregated](#aggregated-percentile-for-all-histograms)
 
-Consider you have the following four dataset with histograms, each associated with a specific browser type, a countryCode, and raw measurements to calculate the percentiles in histograms.
+Consider you have the following four datasets with histograms, each associated with a specific browser type, a country code, and raw measurements to calculate the percentiles in histograms.
 
-| metric | 	browser	| countryCode	| value (raw measurements used to create the histogram) |
+| metric | 	browser	| country code	| value (raw measurements used to create the histogram) |
 | :------ | :--------- | :--------    | :------------|
 | browser_cls_histogram |	Chrome 109	| POL	 | 1000, 2000, 3000 |
 | browser_cls_histogram	 | Safari 16 |	POL	| 500, 3100 |
@@ -90,7 +90,7 @@ To calculate the 50th percentile for each histogram individually, use `pct_50` q
 
 **Example 1**. Consider a histogram `browser_cls_histogram` for Chrome 109 in Poland with raw measurements of 1000, 2000, 3000.
 
-| metric                | browser    | countryCode | value             |
+| metric                | browser    | country code | value             |
 | :--------------------- | :---------- | :----------- | :----------------- |
 | browser_cls_histogram | Chrome 109 | POL         |  1000, 2000, 3000 |
 
@@ -100,15 +100,15 @@ To calculate the 50th percentile for this histogram, you can run the following q
 
 The query uses the `browser_cls_histogram` metric and specifies that it is an `exponential_histogram` type. The `quantize` using `pct(50)` part of the query specifies that the 50th percentile should be calculated for each histogram.
 
-**Output**. The result will be.
+**Output**. The result will be as follows:
 
-| metric                | countryCode | pct_50.0 |
+| metric                | country code | pct_50.0 |
 | :--------------------- | :------------| :-------- |
 | browser_cls_histogram | POL         | 2000± 5% |
 
 **Example 2**. Consider a `browser_cls_histogram` histogram for Safari 16 in the USA with raw measurements of 500 and 3100.
 
-| metric                | browser   | countryCode | value     |
+| metric                | browser   | country code | value     |
 | :-------------------- | :-------- | :---------- | :-------- |
 | browser_cls_histogram | Safari 16 | POL         | 500, 3100 |
 
@@ -116,44 +116,44 @@ To calculate the 50th percentile for this histogram, you can use the following q
 
 `metric=browser_cls_histogram metric.type=exponential_histogram metric=browser_cls_histogram | quantize using pct(50)`
 
-**Output**. The result will be.
+**Output**. The result will be as follows:
 
-| metric                | browser   | countryCode | value     |
+| metric                | browser   | country code | value     |
 | :-------------------- | :-------- | :---------- | --------- |
 | browser_cls_histogram | Safari 16 | POL         | 1800 ± 5% |
 
 ### Percentiles grouped by a specific dimension
 
-Grouping histograms based on a specific attribute, such as browser type or countryCode, allows for percentile calculations to be made for each group, enabling comparisons between groups and identification of patterns in the data. To calculate percentiles for data grouped by a specific dimension, use `histogram` quantization in the selector part of the query.
+Grouping histograms based on a specific attribute, such as browser type or country code, allows for percentile calculations to be made for each group, enabling comparisons between groups and identification of patterns in the data. To calculate percentiles for data grouped by a specific dimension, use `histogram` quantization in the selector part of the query.
 
-**Example**. For the same 4 data sets of histograms, calculate percentiles for for data that is grouped by a specific dimension returned by the selector part of the query using `histogram` quantization.
+**Example**. For the same 4 data sets of histograms, calculate percentiles for data that is grouped by a specific dimension returned by the selector part of the query using `histogram` quantization.
 
 To calculate the 50th percentile for all histograms grouped by country code, you can use the following query:
 
 `metric.type=exponential_histogram metric=browser_cls_histogram | pct(50) by countryCode`
 
-The query uses the `browser_cls_histogram` metric and specifies that it is an `exponential_histogram` type. The `pct(50)` by `countryCode` part of the query specifies that the 50th percentile should be calculated for each histogram grouped by countryCode.
+The query uses the `browser_cls_histogram` metric and specifies that it is an `exponential_histogram` type. The `pct(50)` by `countryCode` part of the query specifies that the 50th percentile should be calculated for each histogram grouped by country code.
 
-**Output**. The result will be. It will return 50th percentile latencies for each country.
+**Output**. The result will be as follows. It will return 50th percentile latencies for each country.
 
-| metric   | countryCode | pct_50.0  |
+| metric   | country code | pct_50.0  |
 | :------- | :---------- | :-------- |
 | pct_50.0 | POL         | 2000 ± 5% |
 | pct_50.0 | USA         | 750 ± 5%  |
 
 ### Aggregated percentile for all histograms
 
-Collapsing all the histograms with the same parameters (such as browser type and countryCode) into a single histogram, with the raw measurements values from each individual histogram combined together. This allows for calculating the percentile across all the data, rather than for each individual histogram separately.
+An aggregated percentile is determined by collapsing all the histograms with the same parameters (such as browser type and country code) into a single histogram, with the raw measurements values from each individual histogram combined together. This allows for calculating the percentile across all the data, rather than for each individual histogram separately.
 
 **Example**. For the same 4 data sets of histograms, calculate the percentiles for all histograms returned by the selector part of the query using `histogram` quantization.
 
-To calculate the 50th percentile (p50) for the `browser_cls_histogram` metric, aggregated by browser and countryCode. You can use the following query.
+To calculate the 50th percentile (p50) for the `browser_cls_histogram` metric, aggregated by browser and country code. You can use the following query.
 
 `metric.type=exponential_histogram metric=browser_cls_histogram | pct(50)`
 
 The query uses the `browser_cls_histogram` metric and specifies that it is an `exponential_histogram` type. The `pct(50)` part of the query specifies that the 50th percentile should be calculated for all histograms.
 
-**Output**. The result will be. It shows the calculated value of the aggregated 50th percentile with a 5% margin of error for all histograms.
+**Output**. The result will be as follows. It shows the calculated value of the aggregated 50th percentile with a 5% margin of error for all histograms.
 
 | metric   | value    |
 | :------- | :------- |

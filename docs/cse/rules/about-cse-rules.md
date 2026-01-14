@@ -9,10 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe'; 
 
 A Cloud SIEM rule is logic that fires based on information in incoming records. When a rule fires, it creates a signal.
-
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view rules, in the top menu select **Content > Rules**. 
-
-[**New UI**](/docs/get-started/sumo-logic-ui). To view rules, in the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
  
 :::tip
 For a complete list of out-of-the-box rules, see [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
@@ -35,6 +31,44 @@ Watch this micro lesson to learn more about rules.
 />
 
 :::
+
+## Rules list view
+
+[**New UI**](/docs/get-started/sumo-logic-ui). To view rules, in the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view rules, in the top menu select **Content > Rules**. 
+
+<img src={useBaseUrl('img/cse/rules-list-page.png')} alt="Rules list page" style={{border: '1px solid gray'}} width="800" />
+
+| Letter | Description |
+|:--|:--|
+| a | **Rules count**. The total number of rules in the list. |
+| b | **Filters**. Filter the list of rules by different parameters, such as name, type, severity, and so on. |
+| c | **Sort**. Sort rules by name, enabled, severity, created, updated, or signal count updated the past 7 days or 24 hours.  |
+| d | **Updated**. When the rule was last updated. |
+| e | **Status - Type**. The [rule status](/docs/cse/rules/rules-status/) and [rule type](/docs/cse/rules/about-cse-rules/#rule-types).  |
+| f | **Severity**. The rule's severity, an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). |
+| g | **Signals Fired**. The number of signals that the rule fired in the last 24 hours as well as 7 days. |
+| h | **Export as JSON**. Export the rule information as a JSON file. |
+| i | **Tags**. Metadata [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/) that add context for the rule. Click a tag to see rules with that tag. |
+
+## Rules details view
+
+When you click a rule on the **Rules** page, a details page for the rule appears.
+
+<img src={useBaseUrl('img/cse/rule-details.png')} alt="Rules details page" style={{border: '1px solid gray'}} width="800" />
+
+| Letter | Description |
+|:--|:--|
+| a | **Rule ID**. The ID for the rule. |
+| b | **Rule name**. The name of the rule. |
+| c | **Dates**. When the rule was created, updated, and fired its most recent signal.  |
+| d | [**Status**](/docs/cse/rules/rules-status/), [**Rule Type**](/docs/cse/rules/about-cse-rules/#rule-types), **Severity**, and number of [**Tuning Expressions**](#about-tuning-expressions).  |
+| e | **Signal Suppression**. When [signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/) occurred. Click a square on the calendar to see the number of signals suppressed on that day. |
+| f | **Rule Editor**. Click in fields to edit the rule. For information about the fields, see articles for the [rule types](#rule-types). |
+| g | **Prototype Rule**. Select the checkbox to [save the rule a prototype](/docs/cse/rules/write-chain-rule/#save-as-prototype).  |
+| h | **History**. Change events for the rule, including who made the change and the type of change event. |
+| i | **Insights**. The [insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) that resulted from the rule's firing.  |
 
 ## About rule expressions
 
@@ -177,4 +211,5 @@ Threat Intelligence sources are used at the time of record ingestion. When a rec
 * Blogs: 
    * [Secure your CI/CD pipelines from supply chain attacks with Sumo Logic’s Cloud SIEM rules](https://www.sumologic.com/blog/secure-azure-devops-github-supply-chain-attacks/)
    * [Rule tuning – supercharge Cloud SIEM for better alerts](https://www.sumologic.com/blog/rule-tuning-cloud-siem-alert-fatigue/)
+   * [Build a detection-as-code pipeline: Your guide to managing Sumo Logic Cloud SIEM rules in GitHub](https://www.sumologic.com/guides/detections-as-code-setup)
 * Cloud SIEM Content Catalog: [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md)

@@ -13,7 +13,6 @@ The Sumo Logic App for Acquia provides visibility into the key components of the
 
 Sumo Logic provides instant visibility across the critical components of the Acquia Platform, helping organizations become more proactive in their site monitoring as well as reducing the mean time to identify and resolve issues.
 
-
 ## Log types
 
 Sumo Logic analyzes the following required Acquia data for more efficient monitoring:
@@ -150,15 +149,15 @@ This section walks you through the process of creating a new Sumo Logic hosted c
 
 To create a new Sumo Logic hosted collector, do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 2. Click **Add Collector**.
 3. Click **Hosted Collector**.
 4. Provide a **Name** for the Collector.
 5. A **description** is optional.
 6. **Category**. Enter any string to tag the logs collected from this Collector. This Source Category value is stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices).
 7. Click the **+Add Field** link in the **Fields** section to define the [fields](/docs/manage/fields) you want to associate, each field needs a key and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 8. **Assign to a Budget** allows you to assign an [ingest budget](/docs/manage/ingestion-volume/ingest-budgets) to the Collector. The dropdown displays your ingest budgets in the following format:
   ```
   <budget name> (<field value>) (<allocated capacity>)
@@ -190,10 +189,15 @@ Be sure to copy and paste your **token** in a secure location. You'll need this 
 
 **Sumo Logic SSL certificate**
 
-In the procedure below, you'll configure a Cloud Syslog Source. This will generate a Sumo Logic token and the endpoint hostname. Then you'll set up TLS by downloading a cert to your server. Download the DigiCert certificate from one of the following locations:
-* [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt)
-* [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.pem](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.pem)
+In the procedure below, you'll configure a Cloud Syslog Source. This will generate a Sumo Logic token and the endpoint hostname. Then you'll set up TLS by downloading a cert to your server. 
 
+1. Download the AWS Certificate Manager (ACM) certificate from the following location: https://www.amazontrust.com/repository/AmazonRootCA1.cer
+1. Run the following commands:
+    ```bash
+    wget -O acm_ca.der https://www.amazontrust.com/repository/AmazonRootCA1.cer
+    openssl x509 -inform der -in acm_ca.der -out acm_ca.crt
+    ```
+1. You'll upload the downloaded cert to the Acquia app when you configure Acquia log forwarding. See [Step 3: Configure logging for Acquia](#step-3-configure-logging-for-acquia).
 
 ### Configuring a cloud syslog source
 
@@ -204,14 +208,14 @@ Include the token as the [Structured ID](https://tools.ietf.org/html/rfc5424#sec
 The token is deleted if you delete the source. To change a token, use the **Regenerate Token** option as described in the following procedure.
 
 To configure a cloud syslog source, do the following:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 2. On the **Collection** page, click **Add Source** next to a Hosted Collector. See [Set up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for information on adding Hosted Collectors.
 3. Select **Cloud Syslog**.
 4. Enter a **Name** to display for this source in Sumo. Description is optional.
 5. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from this source. (Category metadata is stored in a searchable field called `_sourceCategory`).
 6. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 7. Set any of the following under **Advanced**:
    * **Enable Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns the UTC time zone; if the rest of your logs are from another time zone your search results will be affected.

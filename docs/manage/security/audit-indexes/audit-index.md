@@ -26,7 +26,7 @@ All users can access the data contained within the audit index, but only adminis
 
 ## Enable the audit index
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
 1. Next to **Sumo Logic Auditing**, select the **Enable** check box.
 
 :::important
@@ -143,8 +143,9 @@ A scheduled search can be set up to send an alert when throttling occurs. See�
 
 Throttling events reported include:
 
-* **LogIngest**. Log data sent to Sumo Logic has been temporarily throttled.
-* **MetricIngest**. Metric data sent to Sumo Logic has been temporarily throttled.
+* **Log Ingest**. Log data sent to Sumo Logic has been temporarily throttled.
+* **Metric Ingest**. Metric data sent to Sumo Logic has been temporarily throttled.
+* **Traces Ingest**. Traces data sent to Sumo Logic has been temporarily throttled.
 
 Throttling events are reported in the Audit Index if the following criteria are met:
 

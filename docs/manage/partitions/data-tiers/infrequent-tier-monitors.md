@@ -3,12 +3,15 @@ id: infrequent-tier-monitors
 title: Monitors and Alert Response Page on Infrequent Tier Data (Beta)
 description: Learn how to monitor and view the details about the alert against the Infrequent data tier.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <head>
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Closed Beta</span></a></p>
+
+<!-- Originally added as a beta article with SUMO-215957. -->
 
 Previously, monitors and alert response page (ARP) were only supported in Sumo Logic’s Continuous data tier. Now, you can set robust and configurable alerting policies that enable you to get notified about critical changes and view granular details about an individual alert that include data from the Infrequent Tier.
 

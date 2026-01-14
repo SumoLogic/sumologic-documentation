@@ -34,6 +34,6 @@ The [Health Events](/docs/manage/health-events) Management API allows you to vie
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Manage Collectors
     * View Collectors

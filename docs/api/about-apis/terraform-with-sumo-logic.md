@@ -1,0 +1,368 @@
+---
+id: terraform-with-sumo-logic
+title: Use Terraform with Sumo Logic
+sidebar_label: Terraform with Sumo Logic
+description: Learn how to use Terraform with Sumo Logic.
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/api/terraform-icon.png')} alt="Thumbnail icon" width="50"/>
+
+## What is Terraform?
+
+[Terraform](https://developer.hashicorp.com/terraform) is an "infrastructure as code" tool developed by Hashicorp. Terraform scripts are used to define both cloud and on-prem resources in human-readable configuration files. Using Terraform scripts makes it easier for system administrators to provision and manage infrastructure and system resources consistently and reliably. The Terraform community, including Sumo Logic, supports Terraform through providers and APIs allowing applications to install and manage different types of resources and services from different vendors in one workflow. See the [Terraform Sumo Logic provider](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
+
+## Sumo Logic Terraform resources
+
+You can use Terraform resources to manage all sorts of Sumo Logic components. Following are some examples.
+<details>
+
+<summary>Resources</summary>
+
+* Accounts
+   * [Subdomains](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/subdomain)
+* [Apps](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/app)
+* Automation service
+   * [Playbooks](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/csoar_playbook)
+* Cloud SIEM
+   * [Automation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_automation)
+   * [Context actions](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_context_action)
+   * Entities
+      * [Custom entity types](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_entity_type)
+      * [Entity criticality](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_entity_criticality_config)
+      * [Entity groups](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_entity_entity_group_configuration)
+      * [Entity normalization](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_entity_normalization_configuration)
+      * [Inventory entity groups](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_inventory_entity_group_configuration)
+   * Insights
+      * [Configuration](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_configuration)
+      * [Custom insights](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_insight)
+      * [Resolution](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_resolution)
+      * [Status](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_status)
+   * [Log mapping](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_log_mapping)
+   * [Match lists](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_match_list)
+      * [Custom match list columns](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_match_list_column)
+   * [Network blocks](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_network_block)
+   * Rules
+      * [Aggregation rules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_aggregation_rule)
+      * [Chain rule](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_chain_rule)
+      * [First seen rules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_first_seen_rule)
+      * [Match rules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_match_rule)
+      * [Outlier rules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_outlier_rule)
+      * [Rule tuning expressions](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_rule_tuning_expression)
+      * [Threshold rules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_threshold_rule)
+   * [Tag schemas](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_tag_schema)
+* [Collectors](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/collector)
+   * [Installed collectors](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/installed_collector)
+   * [OpenTelemetry collectors](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/ot_collector)
+* [Connections](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/connection)
+* [Content](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content)
+   * [Content sharing](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content_permission)
+* [Dashboards](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/dashboard)
+* Data forwarding
+   * [Data forwarding destinations](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/data_forwarding_destination)
+   * [Data forwarding rules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/data_forwarding_rule)
+* [Fields](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/field)
+   * [Field extraction rules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/field_extraction_rule)
+* [Folders](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/folder)
+* [Hierarchies](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/hierarchy)
+* [Ingest budgets](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/ingest_budget_v2)
+* [Log searches](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/log_search)
+* [Lookup table](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/lookup_table)
+* Metrics
+   * [Metrics search](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/metrics_search)
+   * [Metrics search V2](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/metrics_search_v2)
+* [Monitors](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor)
+   * [Monitors folders](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor_folder)
+* [Muting schedules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/muting_schedule)
+* [Partitions](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/partition)
+* [Password policies](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/password_policy)
+* [Policies](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/policies)
+* [Roles](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/role)
+   * [Roles v2](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/role_v2)
+* [SAML configuration](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/saml_configuration)
+* [Scan budget](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/scan_budget)
+* [Scheduled views](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/scheduled_view)
+* [SLOs](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo)
+   * [SLO folders](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder)
+* Sources
+   * [AWS S3 source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/s3_source)
+   * [AWS S3 Archive source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/s3_archive_source)
+   * [AWS S3 Audit source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/s3_audit_source)
+   * [AWS inventory source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/aws_inventory_source)
+   * [AWS XRay source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/aws_xray_source)
+   * [Azure Event Hub log source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/azure_event_hub_log_source)
+   * [Azure metrics source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/azure_metrics_source)
+   * [Cloud-to-Cloud source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloud_to_cloud_source)
+   * [CloudFront source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudfront_source)
+   * [Cloud Syslog source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudsyslog_source)
+   * [CloudTrail source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudtrail_source)
+   * [CloudWatch source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudwatch_source)
+   * [ELB source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/elb_source)
+   * [GCP Metrics source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/gcp_metrics_source)
+   * [GCP source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/gcp_source)
+   * [HTTP source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/http_source)
+   * [Kinesis Log source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/kinesis_log_source)
+   * [Kinesis Metrics source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/kinesis_metrics_source)
+   * [Local file source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/local_file_source)
+   * [Local Windows Event Log source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/local_windows_event_source)
+   * [Metadata source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/metadata_source)
+   * [Rum Source](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/rum_source)
+* [Source templates](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/source_template)
+* [Tokens](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/token)
+* [Users](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/user)
+
+</details>
+
+## Sumo Logic Terraform data sources
+
+You can use Terraform data sources to retrieve Sumo Logic data from your Terraform configuration. Following are some examples.
+
+<details>
+
+<summary>Data sources</summary>
+
+* [Admin recommended folders](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/admin_recommended_folder)
+* [Apps](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/apps)
+* [Caller identity](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/caller_identity)
+* [Collectors](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/collector)
+* [Cloud SIEM log mapping](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/cse_log_mapping_vendor_product)
+* [Folders](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/folder)
+* [HTTP sources](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/http_source)
+* [Partitions](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/partitions)
+   * [Partition details](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/partition)
+* [Personal folders](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/personal_folder)
+* [Roles](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/role)
+   * [Roles v2](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/role_v2)
+* [Users](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/user)
+
+</details>
+
+## Prerequisites
+
+To use Terraform with Sumo Logic, you need the following:
+* A Sumo Logic [account](/docs/get-started/sign-up/)
+* A Sumo Logic [access key](/docs/manage/security/access-keys/)
+* [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) 
+
+## Using Sumo Logic's AWS Terraform template
+
+To illustrate how to use Terraform with Sumo Logic, we'll walk you through [how to deploy the Sumo Logic AWS Observability Solution with a Terraform template](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/). Sumo Logic has already established a Terraform template containing the basic script items needed to setup an AWS installation with the proper AWS and Sumo Logic resources and components.
+
+To use this solution template, you should already have:
+* A Sumo Logic account.
+* An AWS account.
+* A [Sumo Logic access ID and access key](/docs/manage/security/access-keys/).
+
+Perform the following steps to use the template:
+
+1. The solution template files can be found [here](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform), in the Sumo Logic solution templates Github repository. To implement this solution, copy or clone the files in the repository to your server or local machine. For instance, from the command line, you can use the following command to clone the repository:<br/>`git clone https://github.com/SumoLogic/sumologic-solution-templates`
+1. In preparation, you will want to complete the following steps on your server or local machine:
+     1. [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) (version 1.6 or later).
+     1. [Install Python](https://www.python.org/downloads/) (version 3.11 or later).
+     1. [Install the latest version of the "jq" JSON parser](https://github.com/jqlang/jq/wiki/Installation), necessary to run the `.sh` batch files in the template.
+     1. [Install the Sumo Logic Python SDK](https://pypi.org/project/sumologic-sdk/).
+     1. [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+1. Next, navigate to the `sumologic-solution-templates` folder where you cloned the repository, and go to the `aws-observability-terraform` subdirectory. Set this directory to be the Terraform working directory by executing the following command: `terraform init`
+1. Using the solution template starts with [the main.auto.tfvars file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.auto.tfvars) which contains variable settings for your Sumo Logic organization, access ID and key, and other configuration information that will be referenced by the other template files. Open this file and fill in each field with the requested information.<br/><img src={useBaseUrl('img/api/tfvars-file.png')} alt="tfvars file" style={{border: '1px solid gray'}} width="800" /><br/>Check the [Sumo Logic API endpoints](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if you need help finding the proper deployment value to use.
+1. As part of the AWS Observability solution, we'll want to create and use the proper fields and FERs in Sumo Logic (see [here](/docs/observability/aws/deploy-use-aws-observability/resources/) for more details). Make sure you are in the `aws-observability-terraform` sub-directory, and run the following CLI commands (with the appropriate information included):
+     ```
+     export SUMOLOGIC_ENV="YOUR_SUMOLOGIC_DEPLOYMENT"
+     export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
+     export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
+     ```
+1. Then run the `fields.sh` script with the following command: `sh fields.sh`
+1. Next, let's look at the [providers.tf file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf), which connects Terraform to the Sumo Logic and AWS provider plugins.<br/><img src={useBaseUrl('img/api/providers-tf-file.png')} alt="providers.tf file" style={{border: '1px solid gray'}} width="800" /> <br/>The Sumo Logic provider is already configured, as we can simply reference the environment and access key settings from the `tfvars` file configured earlier. For the AWS provider, change the region setting (if needed). Then, uncomment the `profile` and `alias` fields (lines 16 and 20, by deleting the `#`) and fill in the values using your AWS profile name (from the AWS CLI) and a custom alias to identify this provider.
+     :::note
+     This installation is assuming you are using a single AWS account in a single region. If you need to configure multiple AWS accounts and/or multiple regions, see [Option 2: Deploy to Multiple Regions within an AWS account](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#option-2-deploy-to-multiple-regions-within-an-aws-account) for additional information on configuring the `providers.tf` file.
+     :::
+1. Lastly, let's look at the [main.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.tf) file.<br/><img src={useBaseUrl('img/api/main-tf-file.png')} alt="main.tf file" style={{border: '1px solid gray'}} width="800" /> <br/>The top `sumo-module` section can usually be left alone unless there are [settings that need to be overridden](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#appendix) for your install.<br/><br/>The bottom `collection-module` section is given as a template, but you will usually want to comment out this section (add `#` in front of every line) and create your own module definition using the AWS alias(es) defined in the `provider.tf` file earlier.<br/><br/>An example:
+     ```
+     module "<ALIAS>" {
+     source = "./source-module"
+     providers = { aws = aws.<ALIAS> }
+     
+     aws_account_alias = <var.aws_account_alias OR "account alias">
+     sumologic_organization_id = var.sumologic_organization_id
+     access_id    = var.sumologic_access_id
+     access_key   = var.sumologic_access_key
+     environment  = var.sumologic_environment
+     }
+     ```
+     Substitute in the appropriate aliases for the ALIAS fields above. Note that if you are deploying for multiple regions and/or multiple AWS accounts, you'll need one new module section for each region defined in `provider.tf`. (See [more examples](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#step-4-configure-providers-in-the-maintf-file) for multi-region and multi-account circumstances)
+1. We're finished. Let's deploy.
+     <br/>Once the above files are configured, you can run Terraform against your scripts by executing the following CLI commands in sequence:
+     ```
+     terraform validate
+     terraform plan
+     terraform apply
+     ```
+     Terraform will report back during these processes if there are any issues with the text of the terraform files that needs troubleshooting.
+
+## Understanding the Terraform format
+
+Terraform scripts are text files, typically with a `.tf` extension, that use names and values in a hierarchal format, defined by curly braces `{ }`. Terraform scripts can be edited with any text editor, and although they are intended to be run automatically by a computer system, the script elements are generally human-readable and not difficult to parse and understand. 
+
+Let's look at some examples:
+* [Terraform providers](#terraform-providers)
+* [Terraform resources](#terraform-resources)
+* [Terraform state files](#terraform-state-files)
+
+### Terraform providers
+
+A *provider* is a Terraform module or plugin developed by a vendor that defines which vendor resources are available for Terraform to create and manage. For information about the Sumo Logic provider, see the [Sumo Logic Provider documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
+
+Sumo Logic has an established Terraform provider plugin, as does AWS and other major cloud vendors. The Terraform script section defining the provider for resources defined by other parts of the script might look like this:
+
+```
+provider "aws" {
+ profile = "default"
+ region = "us-west-2"
+}
+```
+
+This script represents the general Terraform syntax: a keyword defining the block section (`provider` in this case), the name of the provider (`aws`) and a series of one or more name/value pairs (or named sub-blocks) one per line with a equal sign, demarcated by curly braces.
+
+Terraform scripts can define a block at the beginning of a script that outlines which providers are required for a particular script to function. For instance, to require the Sumo Logic provider (and set the necessary version), you can use the following:
+
+```
+terraform {
+ required_providers {
+ sumologic = {
+ source = "sumologic/sumologic"
+ version = ">= 0.13"
+ }
+ }
+}
+```
+
+### Terraform resources
+
+A *resource* is an infrastructure element that can be defined and created from the available resources produced by the provider. For available resources, see the [Sumo Logic Provider documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
+
+A resource definition will look similar in form to the provider definition:
+
+```
+resource "aws_s3_bucket" "training" {
+ bucket = "sumo-training-2025"
+ acl = "private"
+}
+```
+
+Resources will have a resource type (defined by the provider, `aws_s3_bucket` in this case), our name for the resource in Terraform (`training`), then a block of name/value pairs or sub-blocks, with available property values defined by the provider for that resource. You will need to check the documentation for each individual provider to see the resource types and configuration values available to reference in Terraform scripts.
+
+Resource definitions can refer to other resources using a variable "dot" syntax. For instance, here's an associated website configuration resource that is tied to our AWS S3 bucket from the previous example:
+
+```
+resource "aws_s3_bucket_website_configuration" "training" {
+ bucket = aws_s3_bucket.training.bucket
+ index_document {
+ suffix = "index.html"
+ }
+}
+```
+
+Note that instead of needing to repeat the same bucket name, we can reference the bucket name from the earlier resource by using `<resource type>.<resource name>.bucket`. In this way the system knows to check and use the defined name from the previous resource each time (and we only have to edit it in one place if the bucket name changes).
+
+Note also that it's okay to use the same name for multiple resources (`training` in this case) if the resource types are different. However, make sure you have different unique names for each instance of the same provider resource type.
+
+Here's another sample script that defines an example of the `sumologic_role` resource:
+
+```
+terraform {
+ required_providers {
+ sumologic = {
+ source = "sumologic/sumologic"
+ }
+ }
+ required_version = ">= 0.13"
+}
+
+resource "sumologic_role" "cseAnalyst" {
+ name = "CSE Analyst"
+ description = "This role is used for Analysts in Cloud SIEM Enterprise"
+ capabilities = [
+ "cseManageRules", "cseViewCustomInsightStatuses", "cseCommentOnInsights", "cseManageInsightAssignee", "viewCse", "cseViewEntityCriticality", "cseViewEnrichments", "cseViewTagSchemas", "cseViewMatchLists", "cseManageCustomInsightStatuses", "cseManageEntityCriticality", "cseManageInsightTags","cseCreateInsights", "cseViewEntityConfiguration", "cseViewEntityGroups", "cseViewCustomEntityType", "cseManageInsightStatus", "cseManageMatchLists", "cseViewThreatIntelligence", "cseViewCustomInsights", "cseViewFileAnalysis", "cseViewMappings", "cseViewSuppressedEntities", "cseManageFavoriteFields","viewCollectors","cseViewNetworkBlocks", "cseInvokeInsights","cseViewRules","cseViewAutomations","cseViewEntity"
+ ]
+}
+```
+
+A data resource is a special kind of resource, defined by a `data` block. A data resource can read from another given resource to calculate and export values in a new named data structure. For instance, the sample script below uses data resources to enable policies in the Sumo Logic environment through a separate HTTP client resource that connects to the Sumo Logic API:
+
+```
+terraform {
+ required_providers {
+ sumologic = {
+ source = "sumologic/sumologic"
+ version = ">= 0.13"
+ }
+ http-client = {
+ source = "dmachard/http-client"
+ version = "0.0.3"
+ }
+ }
+}
+
+variable "sumologic_access_id" {
+ type = string
+}
+
+variable "sumologic_access_key" {
+ type = string
+}
+
+variable "sumologic_deployment" {
+ type = string
+}
+
+provider "sumologic" {
+ access_id = var.sumologic_access_id
+ access_key = var.sumologic_access_key
+ environment = var.sumologic_deployment
+}
+
+data "httpclient_request" "enable_audit_policy" {
+ provider = http-client
+ username = "${var.sumologic_access_id}"
+ password = "${var.sumologic_access_key}"
+ url = "${var.sumologic_deployment}v1/policies/audit" 
+ request_method = "PUT"
+ request_headers = {
+ Content-Type: "application/json",
+ }
+ request_body = jsonencode({
+ "enabled": true
+ })
+}
+
+data "httpclient_request" "enable_searchaudit_policy" {
+ provider = http-client
+ username = "${var.sumologic_access_id}"
+ password = "${var.sumologic_access_key}"
+ url = "${var.sumologic_deployment}v1/policies/searchAudit" 
+ request_method = "PUT"
+ request_headers = {
+ Content-Type: "application/json",
+ }
+ request_body = jsonencode({
+ "enabled": true
+ })
+}
+```
+
+### Terraform state files
+
+After running Terraform, there is another file type you should be aware of. A *state file* is a configuration file generated by a Terraform installation that stores the current state of your managed infrastructure and configuration. This state is typically stored in a local file in your terraform working directory named `terraform.tfstate`.
+
+The state file is used by Terraform to track the current infrastructure state in order to properly process updates or deletes. The state file should be kept safe and secure (since it may contain sensitive data such as access keys and secrets) and is not meant to be edited directly, even though it is a simple human-readable JSON text file. An example state file might look like the screenshot below:
+
+<img src={useBaseUrl('img/api/terraform-state-file.png')} alt="Terraform state file" style={{border: '1px solid gray'}} width="600" /> 
+
+## Additional resources
+
+* Blogs:
+      * [How to Use the New Sumo Logic Terraform Provider for Hosted Collectors](https://www.sumologic.com/blog/terraform-provider-hosted)
+      * [Terraform and Sumo Logic – Build Monitoring into your Cloud Infrastructure](https://www.sumologic.com/blog/terraform-sumo-logic)
+      * [Build a detection-as-code pipeline: Your guide to managing Sumo Logic Cloud SIEM rules in GitHub](https://www.sumologic.com/guides/detections-as-code-setup)
+* Terraform resource: [Sumo Logic Provider](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs)
+* GitHub: [terraform-provider-sumologic](https://github.com/SumoLogic/terraform-provider-sumologic)

@@ -15,7 +15,7 @@ This topic has information about the **Entities** page in Cloud SIEM UI, which l
 
 The **Entities** page is useful for monitoring entities that are close to having an insight created. On the **Entities > Details** page, you can view signals and insights for an entity, and, as desired, manually create an insight from signals associated with the entity.
 
-You can also update the [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/), [suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/) state, and [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) assigned to entities, as described below in the [Update multiple entities](#update-multiple-entities) section below. 
+You can also update the [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/), [suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/) state, and [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) assigned to entities, as described below in the [Update multiple entities](#update-multiple-entities) section. 
 
 :::sumo Micro Lesson
 
@@ -37,47 +37,35 @@ Watch this micro lesson to learn more about entities.
 
 ## About entities
 
-In Cloud SIEM, an entity is a unique actor that a signal fired upon. Cloud SIEM has a number of built-in entity types:
-
-* Command
-* Domain
-* Email
-* File
-* Hash
-* Hostname
-* IP Address
-* MAC Address
-* Process
-* URL
-* User Agent
-* Username
-
-You can create custom entity types as well. For more information, see [Create a Custom Entity Type](/docs/cse/records-signals-entities-insights/create-custom-entity-type/).
+In Cloud SIEM, an entity is a unique actor that a signal fired upon, for example, IP address, hostname, or username.
 
 When a signal is fired, if an entity doesn’t already exist in Cloud SIEM for the item that the signal fired on, Cloud SIEM creates an entity for it. For more information about entities and signal and insight generation, see [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process).
 
-## About the Entities list page
+For a list of fields that Cloud SIEM considers entities and the entity types they map to, see [Schema: Entity Fields](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md) in the Cloud SIEM Content Catalog. To create custom entity types, see [Create a Custom Entity Type](/docs/cse/records-signals-entities-insights/create-custom-entity-type/).
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view entities, click **Entities** at the top of the screen. 
+:::note
+Entity names have a limit of 512 characters. If an entity's name value is 512 characters or longer, the system discards the log, and as a result, no signal is generated.
+:::
+
+## About the entities list page
 
 [**New UI**](/docs/get-started/sumo-logic-ui). To view entities, in the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
 
-<img src={useBaseUrl('img/cse/entities-page-2.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view entities, click **Entities** at the top of the screen. 
 
+<img src={useBaseUrl('img/cse/entities-page-2.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
 
 | Letter | Description |
 |:--|:--|
-| a | This area shows the total number of unique entities in Cloud SIEM. |
-| b | In the **Filters** area, you can filter the list of entities by activity score, hostname, IP address, username, tags, type, and suppressed. |
-| c | In this area you can sort entities by activity score, name, or type.  |
-| d | The Import Metadata option allows you to upload a .csv file of updates to entity tags, suppression state, and criticality, as described in [Update multiple entities](#update-multiple-entities). |
-| e | Shows the entity type and its value.  |
-| f | If an entity has the **Suppressed** indicator, that means that signals will not be fired on the entity. |
-| g | The **Criticality** column shows whether a [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) has been assigned to the entity. A criticality adjusts the severity of signals for specific entities based on some risk factor or other consideration. If a criticality hasn't been assigned to an entity, the column contains "default". |
-| h | The current activity score for the entity, which by default is the sum of the severities of the signals that have fired on the entity over the previous two weeks. For more information, see [Understanding entity activity scores](/docs/cse/get-started-with-cloud-siem/insight-generation-process#understanding-entity-activity-scores), in the *Insight Generation Process* topic. |
-| i | The total amount of signal severity for the entity. |
-
-If you see a link below the entity value, it’s a [tag](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/). You can click it to filter entities by that tag. 
+| a | **Filters**. Filter the list of entities by values such as signal severity total, activity score, criticality, indicator, sensor zone, suppressed, tags, type, and value. |
+| b | **Import Metadata**. Upload a .csv file of updates to entity tags, suppression state, and criticality, as described in [Update multiple entities](#update-multiple-entities). |
+| c | **Checkboxes**. Select checkboxes to [update multiple entities](#update-multiple-entities). 
+| d | **Entity**. Displays the entity name. |
+| e | **Entity Type**. Shows the entity type and its value.  |
+| f | **Activity Score**. The current activity score for the entity, which by default is the sum of the severities of the signals that have fired on the entity over the previous two weeks. For more information, see [Understanding entity activity scores](/docs/cse/get-started-with-cloud-siem/insight-generation-process#understanding-entity-activity-scores), in the *Insight Generation Process* topic. |
+| g | **Signal Severity Total**. The total amount of signal severity for the entity. |
+| h | **Suppressed Lists**. If an entity is on a suppressed list, that means that signals will not be fired on the entity. |
+| i | **Criticality**. Shows whether a [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) has been assigned to the entity. A criticality adjusts the severity of signals for specific entities based on some risk factor or other consideration. If a criticality hasn't been assigned to an entity, the column contains "default". | 
 
 ## About the entities details page
 
@@ -105,7 +93,7 @@ the entity appears.
 | o | **Timeline**. A timeline appears for the entity's activity over a three-day period. For more information, see [About the Entity Timeline tab](#about-the-entity-timeline-tab).|
 | p | **Related Entities**. Entities related to the current entity. |
 | q | **Automations**. [Automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) that have been run on the entity. |
-| r | **Create Insight**. You can use this option to create an insight on the entity, as described below in [Create an insight](#create-an-insight), below. |
+| r | **Create Insight**. You can use this option to create an insight on the entity, as described below in [Create an insight](#create-an-insight). |
 | s | The **Current State** section lists signals that were generated for the entity during the current [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) that are not already part of an insight. (The detection window is the period over which Cloud SIEM evaluates signals, which is 14 days, by default. The detection window is configured on the **Custom Insights** page in the Cloud SIEM UI.) |
 
 Below the **Current State** section there may be a **Prior Activity** section. This section lists signals that were generated for the entity prior to the current detection window, and all insights for the entity. 
@@ -140,39 +128,35 @@ or criticality for one or more entities.
 
 ### Update entities from the UI
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  
-1. Note that there is a checkbox at the left end of each entity row, and one above the entities list. <br/><img src={useBaseUrl('img/cse/entities-page.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
-1. Click the top checkbox to select all of the entities on the page, or click the checkbox next to each entity you want to update. 
-1. Note that once you select an entity, three options appear at the top of the entities list. <br/><img src={useBaseUrl('img/cse/update-options.png')} alt="Update options" style={{border: '1px solid gray'}} width="800"/> 
-<br/>See the instructions for each option below:
-   * [Update Tags](#update-tags)
-   * [Update Suppression](#update-suppression)
-   * [Update Criticality](#update-criticality)
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. 
+1. Note that there is a checkbox at the left of each entity row, and one above the entities list. Click the top checkbox to select all of the entities on the page, or click the checkbox next to each entity you want to update. 
+1. Note that once you select checkboxes for multiple entities, a box slides out showing three options above the list of selected entities. See the instructions for each option below:
+   * [Change Tags](#change-tags)
+   * [Change Suppression](#change-suppression)
+   * [Change Criticality](#change-criticality)<br/><img src={useBaseUrl('img/cse/update-options.png')} alt="Update options" style={{border: '1px solid gray'}} width="800"/>
 
-#### Update Tags
+#### Change tags
 
-1. After selecting the entities you want to update, click **Update Tags**. 
-2. Click the down arrow to display the options: <br/><img src={useBaseUrl('img/cse/tag-options.png')} alt="Tag options" style={{border: '1px solid gray'}} width="400"/>
+1. After selecting the entities you want to update, click **Change Tags**. 
+1. Click the down arrow to display the options: <br/><img src={useBaseUrl('img/cse/tag-options.png')} alt="Tag options" style={{border: '1px solid gray'}} width="400"/>
    * **Add.** Select this option to add one or more tags to the entity, without affecting any tags already assigned to the entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select  multiple tags to add.
    * **Remove**. Select his option to remove one or more tags from the entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select multiple tags to remove. If a selected entity doesn't have the specified tags, no change will be made to the entity. 
    * **Replace**. Select this option to remove all of the tags currently assigned to the entity and add one or more specified tags. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. 
     :::important
     When you use the **Replace** option, be sure to specify new tags. If you do not, the existing tags will still be removed.
     :::
-3. As you select tags, they’ll appear in the update popup. <br/><img src={useBaseUrl('img/cse/tags-to-add.png')} alt="Add tags to entities" style={{border: '1px solid gray'}} width="400"/>
-4. When you are done selecting tags, click **Update Entity Tags**.
+1. As you select tags, they’ll appear in the update popup. <br/><img src={useBaseUrl('img/cse/tags-to-add.png')} alt="Add tags to entities" style={{border: '1px solid gray'}} width="400"/>
+1. When you are done selecting tags, click **Confirm**.
 
-#### Update Suppression
+#### Change suppression
 
-1. After selecting the entities you want to update, click **Update Suppression**. 
-2. The **Update Suppression** popup appears, with the suppression toggle set to **Not Suppressed**. <br/><img src={useBaseUrl('img/cse/before-suppression.png')} alt="Update suppression" style={{border: '1px solid gray'}} width="400"/>
-3. If you want to unsuppress the selected entities, click **Update Entity Suppression**. Otherwise, if you want to suppress the entity, toggle the slider to **Suppressed**, supply a comment if desired, and then click **Update Entity Suppression**. 
+1. After selecting the entities you want to update, click **Change Suppression**. A popup appears, with the suppression toggle set to **Don't Suppress**. <br/><img src={useBaseUrl('img/cse/before-suppression.png')} alt="Update suppression" style={{border: '1px solid gray'}} width="400"/>
+1. If you want to suppress the entities, toggle the slider to **Suppress**, supply a comment if desired, and then click **Confirm**. 
 
-#### Update Criticality
+#### Change criticality
 
-1. After selecting the entities you want to update, click **Update Criticality**. 
-2. The **Update Criticality** popup appears. <br/><img src={useBaseUrl('img/cse/update-criticalities.png')} alt="Update criticalities" style={{border: '1px solid gray'}} width="400"/>
-3. If you want to assign default criticality to the selected entities, click **Update Entity Criticality**. Otherwise, use the down arrow to view defined Criticalities, select one, and then click **Update Entity Criticality**.
+1. After selecting the entities you want to update, click **Change Criticality**. The **Change Criticality** popup appears. <br/><img src={useBaseUrl('img/cse/update-criticalities.png')} alt="Update criticalities" style={{border: '1px solid gray'}} width="400"/>
+1. If you want to assign default criticality to the selected entities, click **Confirm**. Otherwise, use the down arrow to view defined criticalities, select one, and then click **Confirm**.
 
 ### Import entity updates from a CSV file
 
@@ -204,8 +188,8 @@ Note that:
 
 | Column | Description |
 |:--|:--|
-| `id` | **This field is required for Format 1.**<br/>To form the id field value, concatenate the entity `type` and the value of the entity, separated by a dash character (-) where the entity `type` is one of the following:<br/>`_ip`<br/>`_hostname`<br/>`_username`<br/>`_mac`<br/>`_process`<br/>`_command`<br/>`_hash`<br/>`_domain`<br/>`_useragent`<br/>`_email`<br/>`_url`<br/>`_file`<br/>`<CustomEntityTypeId>`<br/><br/>The `id` for an IP address would look like:<br/><br/>`_ip-1.2.3.4` <br/><br/>You can optionally specify an entity’s sensor zone as a part of the `id` column, in this format:<br/><br/> `_<entity_type>-<sensor_zone>-<entity_value>`  <br/><br/>For example: <br/><br/> `_ip-zone1-172.18.20.3`|
-| `type` | **This field is required for Format 2.**<br/>Identifies the type of entity, one of:<br/>`_ip`<br/>`_hostname`<br/>`_username`<br/>`_mac`<br/>`_process`<br/>`_command`<br/>`_hash`<br/>`_domain`<br/>`_useragent`<br/>`_email`<br/>`_url`<br/>`_file`<br/>`<CustomEntityTypeId>` |
+| `id` | **This field is required for Format 1.**<br/>To form the id field value, concatenate the entity `type` and the value of the entity, separated by a dash character (-) where the entity `type` is one of the following:<br/>`_command`<br/>`_deployment`<br/>`_domain`<br/>`_email`<br/>`_file`<br/>`_hash`<br/>`_hostname`<br/>`_ip`<br/>`_mac`<br/>`_pod`<br/>`_process`<br/>`_replicaset`<br/>`_resource`<br/>`_useragent`<br/>`_username`<br/>`_url`<br/>`<CustomEntityTypeId>`<br/><br/>The `id` for an IP address would look like:<br/><br/>`_ip-1.2.3.4` <br/><br/>You can optionally specify an entity’s sensor zone as a part of the `id` column, in this format:<br/><br/> `_<entity_type>-<sensor_zone>-<entity_value>`  <br/><br/>For example: <br/><br/> `_ip-zone1-172.18.20.3`|
+| `type` | **This field is required for Format 2.**<br/>Identifies the type of entity, one of:<br/>`_command`<br/>`_deployment`<br/>`_domain`<br/>`_email`<br/>`_file`<br/>`_hash`<br/>`_hostname`<br/>`_ip`<br/>`_mac`<br/>`_pod`<br/>`_process`<br/>`_replicaset`<br/>`_resource`<br/>`_useragent`<br/>`_username`<br/>`_url`<br/>`<CustomEntityTypeId>` |
 | `value` | **This field is required for Format 2.**<br/>The value of the entity, for example, for an IP address:<br/>`1.2.3.4` |
 | `sensor_zone` | Identifies the sensor zone for the entity. <br/><br/>Don’t include this column if you are specifying entity sensor zones in the `id` column, as described above. |
 | `suppressed` | When *true*, Cloud SIEM suppresses the entity. |

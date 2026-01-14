@@ -125,3 +125,7 @@ Following is the suggested workflow to use the Insight Trainer dashboard:
 1. Adjust rule severities if needed.
 
 We suggest adjusting rule severities to the recommended levels only after you have written rule tuning expressions and seen how they result in lowering false positives. The algorithm adjusts its recommendations continuously. So if at first you do not see your false positives change much, wait a few days, and you will notice new recommendations.  
+
+## Additional resources
+
+Blog: [Fine-tuning Cloud SIEM detections through machine learning](https://www.sumologic.com/blog/tuning-cloud-siem-machine-learning)

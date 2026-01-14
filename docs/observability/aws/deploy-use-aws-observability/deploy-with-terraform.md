@@ -5,7 +5,7 @@ sidebar_label: Deploy with Terraform
 description: Learn how to deploy AWS Observability Solution using Terraform.
 ---
 
-These instructions help you deploy our AWS Observability Solution using a Terraform script. 
+These instructions help you deploy our AWS Observability Solution using a Terraform script. For more information about how to use Terraform in your Sumo Logic environment, see [Use Terraform with Sumo Logic](/docs/api/about-apis/terraform-with-sumo-logic).
 
 To set up the AWS Observability solution using Terraform, complete the following steps described in this documentation.
 
@@ -30,6 +30,11 @@ If you've previously set up our AWS Observability Solution with CloudFormation a
 </details>
 
 :::
+
+:::note
+The Global Intelligence for AWS CloudTrail DevOps app is planned for deprecation in the near future and has therefore been removed from the AWS Observability Solution. With this removal, the app will no longer be backed up or maintained during future solution upgrades.
+:::
+
 
 For this setup, complete the following:
 
@@ -66,7 +71,7 @@ Before you run the Terraform script, perform the following actions on a server m
 
 1. Install [Terraform](https://www.terraform.io/) version [1.6.0](https://releases.hashicorp.com/terraform/) or later. To check the installed Terraform version, run the following command:
     ```bash
-    $ terraform --version
+    terraform --version
     ```
 1. Install the latest version of [curl](https://curl.haxx.se/download.html). To check the installed curl version, run the following command:
     ```bash
@@ -86,18 +91,18 @@ Before you run the Terraform script, perform the following actions on a server m
 
 1. Clone the repository https://github.com/SumoLogic/sumologic-solution-templates:
     ```bash
-    $ git clone https://github.com/SumoLogic/sumologic-solution-templates
+    git clone https://github.com/SumoLogic/sumologic-solution-templates
     ```
 1. Initialize the Terraform working directory by navigating to the directory [sumologic-solution-templates/aws-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) and running:
     ```bash
-    $ terraform init
+    terraform init
     ```
     This will install the required Terraform providers, including [Null](https://www.terraform.io/docs/providers/null/index.html), [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs), [Time Provider](https://registry.terraform.io/providers/hashicorp/time/latest/docs), [Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs).
     :::note
     Note that templates located at [sumologic-solution-templates/aws-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) directory contain references to files from the [sumologic-solution-templates/aws-observability] (https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability) directory.
     :::
 1. Configure the following mandatory parameters in the **main.auto.tfvars** file.
-   * `sumologic_environment`: This input specifies the Sumo Logic deployment that you want to use. Refer to the [Sumo Logic Deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) guide for a list of available deployments. Possible values include `au`, `ca`, `de`, `eu`, `jp`, `us2`, `fed`, `kr`, or `us1`.
+   * `sumologic_environment`: This input specifies the Sumo Logic deployment that you want to use. Refer to the [Sumo Logic Deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) guide for a list of available deployments. Possible values include `au`, `ca`, `de`, `eu`, `jp`, `us2`, `fed`, `kr`, or `us1`.
    * `sumologic_access_id`: This input specifies the Sumo Logic access ID that you want to use. For more information on how to obtain an access ID, refer to the [Access Keys](/docs/manage/security/access-keys) documentation.
    * `sumologic_access_key`: [Sumo Logic Access Key](/docs/manage/security/access-keys) is used for Sumo Logic API calls.
    * `sumologic_organization_id`: [Sumo Logic Organization ID](../../../get-started/account-settings-preferences.md) You can find your org on the Preferences page in the Sumo Logic UI. For more information, see [Preferences Page](../../../get-started/account-settings-preferences.md). Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.
@@ -115,7 +120,7 @@ Before you run the Terraform script, perform the following actions on a server m
     Provide your Sumo Logic deployment for the SUMOLOGIC_ENV variable. For example: au, ca, de, eu, jp, us2, fed, kr, or us1. For more information on Sumo Logic deployments, see *Sumo Logic Endpoints and Firewall Security*. 
    * Run fields.sh using this command:
       ```bash
-      $ sh fields.sh
+      sh fields.sh
       ```
 
 :::important
@@ -406,6 +411,7 @@ Configure providers for collection using the Terraform source-module.
     #  access_id                 = var.sumologic_access_id
     #  access_key                = var.sumologic_access_key
     #  environment               = var.sumologic_environment  
+    #  aws_resource_tags         = var.aws_resource_tags
     #}
     ```
 
@@ -440,6 +446,7 @@ Configure providers for collection using the Terraform source-module.
     access_id    = var.sumologic_access_id
     access_key   = var.sumologic_access_key
     environment  = var.sumologic_environment
+    aws_resource_tags  = var.aws_resource_tags
 
     }
     ```
@@ -462,6 +469,7 @@ module "production-us-east-1" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 }
 
 module "production-us-east-2" {
@@ -472,7 +480,8 @@ module "production-us-east-2" {
   sumologic_organization_id = var.sumologic_organization_id
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
-  environment  = var.sumologic_environment  
+  environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags  
 
 # Use the same collector created for the first region of the production account.
   sumologic_existing_collector_details = {
@@ -502,6 +511,7 @@ module "production-us-east-1" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 }
 
 module "production-us-east-2" {
@@ -513,6 +523,7 @@ module "production-us-east-2" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 
 # Use the same collector created for the first region of the production account.
   sumologic_existing_collector_details = {
@@ -530,6 +541,7 @@ module "development-us-west-1" {
   access_id    = var.sumologic_access_id
   access_key   = var.sumologic_access_key
   environment  = var.sumologic_environment
+  aws_resource_tags  = var.aws_resource_tags
 }
 ```
 
@@ -548,9 +560,9 @@ Before you run these commands, make sure you have configured your AWS profiles o
 :::
 
 ```terminal
-$ terraform validate
-$ terraform plan
-$ terraform apply
+terraform validate
+terraform plan
+terraform apply
 ```
 
 ## Uninstalling the Solution
@@ -558,7 +570,7 @@ $ terraform apply
 To uninstall the AWS Observability solution deployed using Terraform, navigate to the directory **sumologic-solution-templates/aws-observability-terraform** and execute the command:
 
 ```terminal
-$ terraform destroy
+terraform destroy
 ```
 
 This will destroy all [resources](resources.md) and configuration previously set up.
@@ -592,6 +604,7 @@ module "collection-module" {
  access_id    = var.sumologic_access_id
  access_key   = var.sumologic_access_key
  environment  = var.sumologic_environment
+ aws_resource_tags  = var.aws_resource_tags
 }
 ```
 
@@ -623,8 +636,15 @@ module "collection-module" {
    }
    fields = {}
  }
+ aws_resource_tags = {
+   env = "prod"
+   author = "sumologic"
+ }
 }
 ```
+:::note
+`aws_resource_tags` is a map of tags that will be applied to all AWS resources provisioned through the AWS Observability Solution, except for SAM nested sources, which are not tagged.
+:::
 
 **Override Example 2: Override the auto_enable_access_logs parameter**
 
@@ -639,6 +659,7 @@ module "collection-module" {
  access_key   = var.sumologic_access_key
  environment  = var.sumologic_environment
  auto_enable_access_logs = None
+ aws_resource_tags  = var.aws_resource_tags
 }
 ```
 
@@ -849,7 +870,7 @@ elb_source_details = {
 
 #### auto_enable_access_logs
 
-Enable Application Load Balancer (ALB)  Access logging.
+Enable Application Load Balancer (ALB) Access logging.
 
 You have the following options:
 
@@ -871,6 +892,10 @@ Example JSON for newly created ALB resources only.
 ```json
 auto_enable_access_logs = "New"
 ```
+
+ :::note
+ CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
+ :::
 
 #### elb_log_source_url
 
@@ -999,6 +1024,11 @@ Example JSON for newly created ALB resources only.
 ```
 auto_enable_classic_lb_access_logs = "New"
 ```
+
+ :::note
+ CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
+ :::
+
 
 #### classic_lb_log_source_url
 
@@ -1256,6 +1286,10 @@ Subscribe log groups to Sumo Logic Lambda Forwarder. You have the following opti
 auto_enable_logs_subscription="New"
 ```
 
+ :::note
+ CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail.
+ :::
+
 ### auto_enable_logs_subscription_options
 
 * `filter`. Enter regex for matching logGroups for AWS Lambda only. The regex will check the name. See [Configuring Parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination/#configuringparameters).
@@ -1467,8 +1501,8 @@ module "sumo-module" {
 
 The following table provides a list of all source parameters and their default values. See the [sumologic-solution-templates/aws-observability-terraform/app-module/main.auto.tfvars](http://sumologic-solution-templates/aws-observability-terraform/app-module/main.auto.tfvars) file for complete code.
 
-| Parameter | Description                                                                                                                                                                                                                                                                        | Default |
-|:--|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--|
+| Parameter | Description | Default |
+|:--|:--|:--|
 | `access_id` | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.	                                                                                                                           | Ignore if already configured in **main.auto.tfvars** file. |
 | `access_key` | Sumo Logic Access Key. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.                                                                                                                           | Ignore if already configured in main.auto.tfvars file.
 | `environment` | Enter au, ca, de, eu, jp, us2, fed, kr, or us1. See Sumo Logic Endpoints and Firewall Security for information. Ignore this setting if you entered it in Source Parameters.                                                                                                        | Ignore if already configured in main.auto.tfvars file. |
@@ -1549,11 +1583,11 @@ Run `terraform destroy` again.
 `"errors":[{"code":"hierarchy:duplicate","message":"hierarchy named 'AWS Observability' already exist"}]`
 #### Solution
 Delete existing hierarchy and a create new one:<br/>
-1. Get Hierarchy-id list of existing hierarchies and keep it noted. Learn [more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint. <br/>
+1. Get Hierarchy-id list of existing hierarchies and keep it noted. Learn [more](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint. <br/>
    ```sql
    curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
    ```
-1. Delete the existing Hierarchy. Learn [more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint.<br/>
+1. Delete the existing Hierarchy. Learn [more](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint.<br/>
    ```sql
    curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X DELETE https://<apiendpoint>/api/v1/entities/hierarchies/<hierarchyid>`
    ```
@@ -1581,6 +1615,23 @@ Invalid IAM role OR AccessDenied
 
 - Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-activatedeactivate-rotate-or-delete-access-keys) for access keys activation. 
 - Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues.
+
+
+### Subscription filters are not applied to newly created log groups
+### Message
+```
+This error can occur when cloudtrail is not enabled for EventBridge to capture `CreateLogGroup` events   
+```
+#### Solution
+CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail.
+
+### Access logs are not enabled for the Load Balancer
+### Message
+```
+This error can occur when cloudtrail is not enabled for EventBridge to capture `CreateLoadBalancer` events
+```
+#### Solution
+CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
 
 ### Argument named *managed_apps* is not expected
 #### Error Message

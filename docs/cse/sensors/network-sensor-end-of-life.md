@@ -10,6 +10,8 @@ description: Cloud SIEM Network Sensor has reached its end-of-life and will no l
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<!-- Article added by DOCS-527. -->
+
 At Sumo Logic, we pride ourselves on being a leading SaaS log analytics company that helps make the digital world faster, more reliable, and more secure by unifying insights to ignite action through the power of logs.
 
 We’re always looking at ways to innovate, drive more value, and provide a seamless experience for our customers. In this vein we are discontinuing our on-premise network sensor feature for Sumo Logic Cloud SIEM. This end-of-life notification for Sumo Logic's network sensor means the feature will no longer receive support or updates based on the timelines listed below. We believe this to be the best course of action to keep our development focus on delivering world class detection and response capabilities.

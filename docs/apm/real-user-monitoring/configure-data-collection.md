@@ -33,11 +33,19 @@ To utilize XHR and navigation/route changes, and errors collection, you must use
 
 For full end-to-end visibility, we recommended supplementing your RUM browser auto-instrumentation with the appropriate [back-end tracing instrumentation](/docs/apm/traces/get-started-transaction-tracing).
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a RUM source with the [`sumologic_rum_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/rum_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Step 1: Create a RUM HTTP Traces Source
 
 To configure a RUM HTTP Traces source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.   
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. If you've not yet created a Hosted Collector, [follow these steps](/docs/send-data/hosted-collectors/configure-hosted-collector) to do so.
 1. On the **Collection** page, click **Add Source** next to a Hosted Collector. <br/><img src={useBaseUrl('img/reuse/add-source.png')} alt="add source" style={{border: '1px solid gray'}} width="500"/>
 1. Select **RUM HTTP Traces**. <br/><img src={useBaseUrl('img/rum/rum-icon.png')} alt="Real User Monitoring HTTP Traces app icon" style={{border: '1px solid gray'}} width="100"/>
@@ -94,7 +102,7 @@ This can be also replaced with an internal OpenTelemetry collector if you wish t
 Use the copied script in your page head inside the `<head>` `</head>` tags. The script sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp) protocol. 
 
 :::tip
-You can view and copy a script anytime by clicking **Show script** for the source.<br/> ![show-script.png](/img/rum/show-script.png)
+You can view and copy a script anytime by clicking **Show script** for the source.<br/><img src={useBaseUrl('img/rum/show-script.png')} alt="Show script" style={{border: '1px solid gray'}} width="200" />
 :::
 
 The following are base script examples, populated when you create and configure a source in the above instructions.
