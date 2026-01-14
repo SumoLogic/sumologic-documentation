@@ -289,7 +289,7 @@ Query Agent understands a variety of natural language time expressions. Here are
   * "today", "yesterday"
 * **Advanced time patterns**.
   * *Exclusion windows:* "3 months ago to last month, excluding the current month"
-  * *Time-of-day constraints:* * "last 30 days, only 6am to 10am"
+  * *Time-of-day constraints:* "last 30 days, only 6am to 10am"
   * *Time-field-specific constraints:* "_receipttime within last 30 minutes", "_searchabletime for the last hour"
 
 
