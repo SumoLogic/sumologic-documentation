@@ -4601,7 +4601,7 @@
   "/docs/integrations/amazon-aws/elastic-load-balancing": "/docs/integrations/amazon-aws/classic-load-balancer",
   "/docs/integrations/microsoft-azure/microsoft-defender-for-cloud": "/docs/integrations/microsoft-azure/azure-security-defender-for-cloud",
   "/docs/integrations/azure": "/docs/integrations/microsoft-azure",
-  "/docs/integrations/sumo-apps/security-analytics": "/docs/integrations/sumo-apps"
+  "/docs/integrations/sumo-apps/security-analytics": "/docs/integrations/sumo-apps",
   "/docs/integrations/microsoft-azure/microsoft-defender-for-office-365": "/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps",
   "/docs/integrations/azure": "/docs/integrations/microsoft-azure",
   "/docs/search/copilot": "/docs/search/mobot",
