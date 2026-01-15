@@ -56,14 +56,14 @@ module.exports = {
     //  'contributing/translations',
         {
           type: 'category',
-          label: 'Templates',
+          label: 'Docs Templates',
           collapsible: true,
           collapsed: true,
           items: [
+            'contributing/templates/app-template-v2',
+            'contributing/templates/c2c-source',
             'contributing/templates/generic-doc',
             'contributing/templates/partner-app-doc',
-            'contributing/templates/c2c-source',
-            'contributing/templates/app-template-v2',
           ]
         }
       ],
@@ -914,6 +914,7 @@ module.exports = {
         'manage/partitions/edit-data-forwarding-destinations-partition',
         'manage/partitions/manage-indexes-variable-retention',
         'manage/partitions/decommission-partition',
+        'manage/partitions/faq',
       ]
     },
     {
