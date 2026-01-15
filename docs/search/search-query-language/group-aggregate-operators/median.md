@@ -4,6 +4,8 @@ title: median Grouping Operator
 sidebar_label: median
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 In order to calculate the median value for a particular field, you can utilize the [`pct` (percentile) operator](/docs/search/search-query-language/group-aggregate-operators/pct-percentile) with a percentile argument of 50.
 
 ## Syntax
@@ -34,4 +36,4 @@ To calculate the median value of a field called `"Len: *"` as seconds, and then 
 
 Which would return results similar to:
 
-![Median.png](/img/search/searchquerylanguage/group-aggregate-operators/median.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/group-aggregate-operators/median.png')} alt="Median" style={{border: '1px solid gray'}} width="200" />

@@ -162,15 +162,13 @@ If you do not see data in Sumo Logic, review our [troubleshooting guide](/docs/s
 
 We provide an array of Partner Apps designed specifically for Kubernetes. The following CI/CD Partner Apps are initially available.
 
-![K8s_PartnerApps_CI-CD.png](/img/kubernetes/K8s_PartnerApps_CI-CD.png)
-
+<img src={useBaseUrl('img/kubernetes/K8s_PartnerApps_CI-CD.png')} alt="Kubernetes Partner Apps" style={{border: '1px solid gray'}} width="800" />
 
 ### Sumo Logic Security Partner Apps
 
 We also provide a selection of security-focused Partner Apps with specialized detection and investigation features.
 
-![K8s_PartnerApps_Security.png](/img/kubernetes/K8s_PartnerApps_Security.png)
-
+<img src={useBaseUrl('img/kubernetes/K8s_PartnerApps_Security.png')} alt="Sumo Logic Security Partner Apps" style={{border: '1px solid gray'}} width="800" />
 
 ### Get Certified
 

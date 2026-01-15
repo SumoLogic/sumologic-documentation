@@ -37,8 +37,8 @@ Watch this micro lesson to learn about Sumo Logic's threat intelligence features
 ## Threat intelligence sources
 
 In Sumo Logic, threat intelligence indicators are supplied by sources listed on the **Threat Intelligence** tab. 
-* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access the **Threat Intelligence** tab, in the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. 
-* [**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Threat Intelligence** tab, in the top menu select **Configuration**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
+* [**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Threat Intelligence** tab, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. 
+* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access the **Threat Intelligence** tab, in the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. <br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
 
 Cloud SIEM analysts can use all sources shown in the **Threat Intelligence** tab to find threats (see [Find Threats with Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/)). In addition, all Sumo Logic users can run queries against the indicators in the Sumo Logic threat intelligence sources to uncover threats (see [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/)).
 
@@ -51,14 +51,15 @@ The sources on the **Threat Intelligence** tab include:
 ### Sumo Logic threat intelligence sources
 
 Sumo Logic provides the following out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources:
-* **SumoLogic_ThreatIntel**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/).
-* **_sumo_global_feed_cs**. This is a source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/).
+* **SumoLogic_ThreatIntel**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/). For more information, see [Sumo Logic Threat Intel Source](/docs/security/threat-intelligence/sumologic-threat-intel-source/).
+* **_sumo_global_feed_cs**. This is a source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/). For more information, see [Sumo Logic Global Feed from CrowdStrike](/docs/security/threat-intelligence/sumologic-global-feed-from-crowdstrike/).
 
 ### Ingest threat intelligence indicators
 
 A Cloud SIEM administrator must first ingest the indicators before they can be used to uncover threats. Indicators can be ingested using:
 * **A collector**. See:
    * [CrowdStrike Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source)
+   * [Google Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source/)
    * [Intel471 Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source)
    * [Mandiant Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source)
    * [STIX/TAXII 1 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source)  
@@ -85,7 +86,7 @@ After threat indicator sources are ingested, they appear on the **Threat Intelli
 
 To view and manage threat intelligence indicators on the [Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab), a Cloud SIEM administrator must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#threat-intel). 
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Administration > Users and Roles**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Administration > Users and Roles**. 
 1. Click the **Roles** tab.
 1. Click **Add Role** to create a new role. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 Add the following capabilities:
@@ -94,6 +95,10 @@ Add the following capabilities:
        * **Manage Threat Intel Data Store**
 
 You do not need to be assigned these role capabilities to [find threats with log queries](/docs/security/threat-intelligence/find-threats/).
+
+### Allowlist Sumo Logic static IP addresses
+
+Set firewall rules to allowlist the Sumo Logic IPs listed in [Static IP addresses](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/#static-ip-addresses). This allows threat indicators in your Sumo Logic threat intelligence data store to be used without being blocked on your network.
 
 ## Typical workflow
 
@@ -113,3 +118,7 @@ Use a search like the following:
 _index=sumologic_audit_events _sourceCategory=threatIntelligence
 ```
 
+## Additional resources
+
+* Blog: [Threat intelligence feeds: essential arsenal in cybersecurity](https://www.sumologic.com/blog/threat-intelligence-feeds-cybersecurity)
+* Glossary: [Threat intelligence](https://www.sumologic.com/glossary/threat-intelligence)

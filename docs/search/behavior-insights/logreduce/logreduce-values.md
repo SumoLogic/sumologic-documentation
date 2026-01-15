@@ -4,7 +4,7 @@ title: LogReduce Values
 description: Group by the values of specific keys in JSON logs.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The **LogReduce Values** operator allows you to quickly explore structured logs by known keys. Structured logs can be in JSON, CSV, key-value, or any structured format. Unlike the [LogReduce Keys operator](/docs/search/behavior-insights/logreduce/logreduce-keys), you need to specify the keys you want to explore. The values of each specified key are parsed and aggregated for you to explore.
 
@@ -42,7 +42,7 @@ There are two methods you have to use the details option:
 
 * Click on the `_count` field value from the LogReduce Values search results.  
 
-    ![details option by link.png](/img/search/behavior-insights/details-option-by-link.png)  
+    <img src={useBaseUrl('img/search/behavior-insights/details-option-by-link.png')} alt="Details option by link" style={{border: '1px solid gray'}} width="400" />
 
     A new search is created with the necessary identifiers from your initial LogReduce Values search. The search contains all of the raw logs from the selected data cluster.  
      
@@ -142,7 +142,7 @@ _sourceCategory=*cloudtrail* *AccessDenied*
 
 Results show each unique signature:
 
-![CloudTrail example LogReduce Values.png](/img/search/behavior-insights/CloudTrail-example-LogReduce-Values.png)
+<img src={useBaseUrl('img/search/behavior-insights/CloudTrail-example-LogReduce-Values.png')} alt="CloudTrail example LogReduce Values" style={{border: '1px solid gray'}} width="800" />
 
 Next, use [LogExplain](../logexplain.md) to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that do not contain these errors.
 

@@ -22,20 +22,28 @@ As indicated [here](/docs/apm/traces/quickstart/#prerequisites), the following p
 
 To configure an OTLP/HTTP Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **OTLP/HTTP**. <br/> <img src={useBaseUrl('img/send-data/OTLP-HTTP-source-icon.png')} alt="OTLP:HTTP source icon" width="100"/>
-1. Enter a **Name** for the Source. A description is optional. <br/> ![OTLP:HTTP basic configuration settings.png](/img/send-data/OTLP-HTTP-basic-configuration-settings.png)
+1. Enter a **Name** for the Source. A description is optional. <br/><img src={useBaseUrl('img/send-data/OTLP-HTTP-basic-configuration-settings.png')} alt="OTLP:HTTP basic configuration settings" style={{border: '1px solid gray'}} width="400" />
 1. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields that allow you to organize your data.
 1. **Fields**. Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-1. Set any of the following under **Advanced Options for Logs**: <br/> ![OTLP advanced options part 1.png](/img/send-data/OTLP-advanced-options-part-1.png)
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+1. Set any of the following under **Advanced Options for Logs**: <br/><img src={useBaseUrl('img/send-data/OTLP-advanced-options-part-1.png')} alt="OTLP advanced options part 1" style={{border: '1px solid gray'}} width="400" />
    * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference for more information.
-1. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the OTLP/HTTP Source. <br/>  ![OTLP processing rules.png](/img/send-data/OTLP-processing-rules.png)
+1. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the OTLP/HTTP Source. <br/><img src={useBaseUrl('img/send-data/OTLP-processing-rules.png')} alt="OTLP processing rules" style={{border: '1px solid gray'}} width="400" />
 1. When you are finished configuring the Source, click **Save**.
+
+<!-- Per DOCS-1142. Add the following once we support OTLP:
+1. In the **HTTP Source Address** dialog box, select one of the following to copy the URL where the source data will be stored:
+   * **Presigned URL**. Select to copy a presigned URL with embedded authentication.<br/><img src={useBaseUrl('img/send-data/http-source-address-otlp.png')} alt="HTTP Source Address with presigned URL" style={{border: '1px solid gray'}} width="600"/>
+   * **Auth Header**. Select to copy the URL, as well as a separate authorization header that contains an authentication token. This option provides greater security than a presigned URL because placing the authentication token in the authorization header of a request prevents the token from being exposed in the URL.<br/><img src={useBaseUrl('img/send-data/http-source-address-otlp-auth.png')} alt="HTTP Source Address with authorization header" style={{border: '1px solid gray'}} width="600"/>
+1. Copy the URL (and header if applicable) and keep in a safe place. You will use the URL in the next step: [Using the OTLP/HTTP Source](#using-the-otlphttp-source).
+1. Click **Done**.
+-->
 
 :::note
 * Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to OTLP Endpoint have appropriate timestamps.
@@ -46,13 +54,14 @@ To configure an OTLP/HTTP Source:
 
 If you need to access the Source's URL again, click **Show URL**.
 
-![img](/img/send-data/show-url-traces.png)
+<img src={useBaseUrl('img/send-data/show-url-traces.png')} alt="Show URL link" style={{border: '1px solid gray'}} width="700" />
 
 ## Using the OTLP/HTTP Source
 
 ### Data differentiation
 
 When you set up an OTLP/HTTP Source, a unique URL is assigned to the Source. The exporter automatically appends the specific signal type when sending the data, as described by [OpenTelemetry Protocol Exporter specification](https://github.com/open-telemetry/opentelemetry-specification/blob/v1.10.0/specification/protocol/exporter.md).
+
 The following table shows the URL format based on data types.
 
 | Data Type | URL Format                |
@@ -64,7 +73,12 @@ The following table shows the URL format based on data types.
 
 ### OTLP/HTTP Exporter
 
-To use the URL, include the url in otlphttp exporter of OpenTelemetry Collector and refer it in the pipelines, as needed. The exporter will automatically attach the signal type suffix:
+To use the URL, include the URL in otlphttp exporter of OpenTelemetry Collector and refer it in the pipelines, as needed. The exporter will automatically attach the signal type suffix:
+
+<!-- Per DOCS-1142. Add the following after the line "endpoint: <source_url>" once we support OTLP:
+    headers:
+      Authorization: "x-sumo-token: [TokenString]"
+-->
 
 ```
 exporters:
@@ -86,9 +100,20 @@ service:
       exporters: [otlphttp]
 ```
 
+<!-- Per DOCS-1142. Add the following after we support OTLP:
+:::note
+In the above example, the authorization header value is obtained when you select **Auth Header** when you [Create an OTLP/HTTP Source](#create-an-otlphttpsource), or when you [regenerate the URL](/docs/send-data/hosted-collectors/http-source/generate-new-url/).
+:::
+-->
+
 ### Alternative
 
-It is also possible to optionally configure per-signal URL, e.g.
+It is also possible to optionally configure per-signal URL, for example:
+
+<!-- Per DOCS-1142. Add the following after the line "logs_endpoint: <source_url>/v1/logs" once we support OTLP:
+    headers:
+      Authorization: "x-sumo-token: [TokenString]"
+-->
 
 ```
 exporters:

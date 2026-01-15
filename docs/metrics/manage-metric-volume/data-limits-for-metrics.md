@@ -5,21 +5,21 @@ sidebar_label: Data Limits for Metrics
 description: It is important to understand the volume of metrics that you are ingesting into Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This page describes the limits Sumo Logic enforces on the metrics you ingest into Sumo Logic, including data volume limits and metadata-related limits.
 
 :::note
-For information on metrics retention, see [Metric Ingestion and Storage](metric-ingestion-and-storage.md).
+For information on metrics retention, see [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage/).
 :::
 
 It is important to understand the volume of metrics that you are ingesting into Sumo Logic.
 
 For billing and reporting purposes, data volume for metrics is measured in Data Points per Minute (DPM). When the DPM limit is exceeded, data is cached on the host and the Source is throttled. To check your current account usage relative to your available DPM limit, see the **Account Overview** tab.  
 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Account Overview** tab, in the main Sumo Logic menu select **Administration** and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
+
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access the **Account Overview** tab, in the main Sumo Logic menu select **Administration > Account**. 
-
-
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Account Overview** tab, in the top menu select **Administration** and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
- 
 
 The calculation of DPM varies according to the type of metric Source.
 
@@ -27,7 +27,7 @@ The examples in this topic assume a one-minute scan interval, but shorter scan 
 
 ## Limits for host metrics sources
 
-For host metrics, DPM depends on the number of hosts, the number of unique data points, and the scan interval. See Collected Metrics for a list of the specific host metrics that you can collect.
+For host metrics, DPM depends on the number of hosts, the number of unique data points, and the scan interval. See [Collected Metrics](/docs/send-data/installed-collectors/sources/host-metrics-source/#collected-metrics) for a list of the specific host metrics that you can collect.
 
 * **Disk metrics.** Approximately 10 metrics are collected for each Source disk on each host.  
 
@@ -65,14 +65,13 @@ Streaming metric sources are custom, as are the number of collected metrics. Cus
 
 ### Limits on number of unique time series
 
-In some cases, Sumo Logic disables a metrics source to limit the number of ingested time series. Sumo disables a metric source that has received too many unique time series. For more information, see [Disabled Metric Sources](disabled-metrics-sources.md).
+In some cases, Sumo Logic disables a metrics source to limit the number of ingested time series. Sumo disables a metric source that has received too many unique time series. For more information, see [Disabled Metrics Sources](/docs/metrics/manage-metric-volume/disabled-metrics-sources/).
 
 ### Metrics metadata limits
 
-This section describes the limits Sumo Logic enforces on the metadata tags attached to ingested metrics. These limits apply to both metric dimensions and metatags. We use the term dimension to refer to metadata that uniquely identifies what the metric measures. We use the term metatag to refer to additional, but not identifying, information about what the metric measures. Metatags provide context about a metric, and are useful in querying your metrics. 
+This section describes the limits Sumo Logic enforces on the metadata tags attached to ingested metrics. These limits apply to both metric dimensions and metatags. We use the term *dimension* to refer to metadata that uniquely identifies what the metric measures. We use the term *metatag* to refer to additional, but not identifying, information about what the metric measures. Metatags provide context about a metric, and are useful in querying your metrics. 
 
-Except where noted, the metadata that Sumo Logic requires or adds to metrics, listed below, do not count towards the limits described below: 
-
+Except where noted, the following metadata that Sumo Logic requires or adds to metrics do not count towards the limits described below: 
 * `metric`
 * `_rawName`
 * `_collector`
@@ -98,18 +97,18 @@ The name (key) of a metadata item, whether a dimension or metatag, is limited to
 
 #### Tag value length 
 
-The value of a metadata item, whether it is a dimension, metatag, or metadata required or added by Sumo Logic, is limited to 400 characters with one exception: the  `_rawName` tag in Graphite metrics is limited to 1000 characters. Metadata whose value exceeds this limit will be removed from the metric. If the removed tag is `_rawName `(in Graphite metrics) or `metric`, the whole metric will be ignored.
+The value of a metadata item, whether it is a dimension, metatag, or metadata required or added by Sumo Logic, is limited to 400 characters with one exception: the  `_rawName` tag in Graphite metrics is limited to 1000 characters. Metadata whose value exceeds this limit will be removed from the metric. If the removed tag is `_rawName` (in Graphite metrics) or `metric`, the whole metric will be ignored.
 
 #### Audit logging 
 
-When one of the limits described above is exceeded, Sumo Logic creates a `MetricsMetadataLimitsExceeded` Health Event for the associated Metric Source and writes an error or warning message to the Audit Event Index.
+When one of the limits described above is exceeded, Sumo Logic creates a [`MetricsMetadataLimitsExceeded`](https://service.sumologic.com/audit/docs/#operation/getMetricsMetadataLimitsExceeded) Health Event for the associated Metric Source and writes an error or warning message to the [System Event Index](/docs/manage/security/audit-indexes/system-event-index/).
 
-Here is an example of a Health Event for a Metrics Source that sent offending metrics:
+Here is an example of a [Health Event](/docs/manage/health-events) for a Metrics Source that sent offending metrics:
 
-![metadata-health-event.png](/img/metrics/metadata-health-event.png)
+<img src={useBaseUrl('/img/metrics/metadata-health-event.png')} alt="MetricsMetadataLimitsExceeded health event error" style={{border: '1px solid gray'}} width="400" />
 
-Here is an example of an Audit Event Index message generated when
-metrics sent to Sumo Logic exceed the metadata value limit.
+Here is an example of a System Event Index message generated when
+metrics sent to Sumo Logic exceed the metadata value limit:
 
 ```json
 {"status":"UnHealthy","details":{"trackerId":"MetricsMetadataLimitsExceeded","error":"Value length limit exceeded by some metrics sent from this source","description":"Detected metrics with metadata containing values exceeding the length limit. Key-value pairs with values longer than the limit are dropped or the metric is not ingested."},"eventType":"Health-Change","severityLevel":"Error","accountId":"0000000000000131","eventId":"30e37c7e-f7b3-4cf3-8c41-de34ff4f1991","eventName":"MetricsMetadataLimitsExceeded","eventTime":"2021-03-29T13:26:16.665Z","eventFormatVersion":"1.0 beta","subsystem":"Metrics","resourceIdentity":{"collectorId":"00000000066661A2","collectorName":"cl-nitedata-tracing","id":"0000000006B18879","name":"(default-metrics)","type":"Source"}}

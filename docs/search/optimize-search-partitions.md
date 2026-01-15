@@ -4,15 +4,17 @@ title: Optimize Your Search with Partitions
 sidebar_label: Optimize Search with Partitions
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## What is a Partition?
 
-A partition stores your data in an index separate from the rest of your account's data so you can optimize searches, [manage variable retention](/docs/manage/partitions/manage-indexes-variable-retention), and specify certain [data to forward to S3](/docs/manage/data-forwarding/amazon-s3-bucket).
+A partition stores your data in an index separate from the rest of your account's data so you can optimize searches, [manage variable retention](/docs/manage/partitions/manage-indexes-variable-retention), and specify certain [data to forward to S3 or GCS](/docs/manage/data-forwarding/forward-data-from-sumologic).
 
 Partitions route your data to an index becoming a separate subset of data in your account. Creating smaller and separate subsets of data is central to search optimization. When you run a search against an index, results are returned more quickly and efficiently because the search runs against a smaller data set.
 
 This example shows a customer that created three additional Partitions to separate data by environment.
 
-![data-by-environment](/img/search/optimize/data-by-environment.png)
+<img src={useBaseUrl('img/search/optimize/data-by-environment.png')} alt="Data by environment" width="500" />
 
 Consider the following queries:
 
@@ -80,10 +82,10 @@ As an Admin, you create Partitions by specifying their routing expression. We re
 
 The following example shows the routing expression for the three custom Partitions:  
 
-![routing-expression.png](/img/search/optimize/routing-expression.png)
+<img src={useBaseUrl('img/search/optimize/routing-expression.png')} alt="Routing expression" width="700" />
 
 Here are simple steps to [create a Partition](/docs/manage/partitions/data-tiers/create-edit-partition/) named Dev:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. 
 1. Click **Add Partition**.
 1. In the **Name** field, enter `Dev`.
 1. In the **Routing Expression** field enter `_sourceCategory=Dev`.
@@ -94,8 +96,7 @@ Here are simple steps to [create a Partition](/docs/manage/partitions/data-tiers
 
 Once created, Partitions can be used by anyone in your account, helping you reduce the scope of your searches and improve the performance for all users. Query 2 above takes advantage of our newly created Partition to scan only 40% of the data. As noted above, Query 3 is also a good option, because Query Rewriting will produce the same results as Query 1. This might eliminate the need to edit all your queries once your Partitions are in place.
 
-![reduce scope](/img/search/optimize/reduce-scope.png)
-
+<img src={useBaseUrl('img/search/optimize/reduce-scope.png')} alt="Reduce scope" width="600" />
 
 ## Best Practices when using Partitions
 

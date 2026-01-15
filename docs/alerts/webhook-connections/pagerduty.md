@@ -39,7 +39,7 @@ The URL and supported payload are different based on the version of the PagerDut
 
 ### Events API V2
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the Connections page click **Add**.
 1. Click **PagerDuty**.
 1. In the Create Connection dialog, enter the name of the Connection.
@@ -98,13 +98,11 @@ The URL and supported payload are different based on the version of the PagerDut
      Do not update the `routing_key`, `event_action`, and `dedup_key` fields, otherwise recovery notifications will not be generated.
      :::
 1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
-1. Click **Save**.
-
-     ![PagerDuty default payload v2.png](/img/connection-and-integration/v2.png)
+1. Click **Save**.<br/><img src={useBaseUrl('img/connection-and-integration/v2.png')} alt="PagerDuty default payload v2" style={{border: '1px solid gray'}} width="700" />
 
 ### Events API v1
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the Connections page, click **+**.
 1. Click **PagerDuty**.
 1. In the Create Connection dialog, enter the name of the Connection.
@@ -153,8 +151,6 @@ The URL and supported payload are different based on the version of the PagerDut
      :::note
      Do not update the `service_key`, `event_type`, and `incident_key` fields, otherwise recovery notifications will not be generated.
      :::
-1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
-
-     ![PagerDuty default payload.png](/img/connection-and-integration/PagerDuty-default-payload.png)
+1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).<br/><img src={useBaseUrl('img/connection-and-integration/PagerDuty-default-payload.png')} alt="PagerDuty default payload" style={{border: '1px solid gray'}} width="700" />
 
 1. Click **Save**.

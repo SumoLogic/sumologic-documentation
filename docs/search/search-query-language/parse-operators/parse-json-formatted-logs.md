@@ -1,7 +1,7 @@
 ---
 id: parse-json-formatted-logs
 title: Parse JSON Formatted Logs
-description: The JSON operator allows you to extract values from JSON logs with most JSONPath expressions.
+description: Use parse operators in Sumo Logic to extract fields from JSON-formatted logs, enabling precise filtering and enhanced log search performance.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -99,7 +99,7 @@ _index=audit_events
 
 produces results like:
 
-![Screenshot of a Sumo Logic search result showing a table with extracted JSON fields including a single key accountId displayed in the results](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-single-key.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-single-key.png')} alt="Extracting a single top-level field" style={{border: '1px solid gray'}} width="700" />
 
 ## Extracting multiple fields
 
@@ -113,7 +113,7 @@ _index=audit_events
 
 produces these results:
 
-![Screenshot of a Sumo Logic search result showing a table with multiple extracted JSON fields, such as accountId and eventName, displayed in the results](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-multiple-keys-displayed-in-results.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-multiple-keys-displayed-in-results.png')} alt="Table with multiple extracted JSON fields" style={{border: '1px solid gray'}} width="800" />
 
 In addition, you can assign names to fields that differ from their original key names. To use `aID` instead of `accountId` and `eName` instead of `eventName`, you'd use the `as` option like this:
 
@@ -123,7 +123,7 @@ _index=sumologic_audit_events | json "accountId", "eventName" as aID, eName | fi
 
 which gives you these results:
 
-![Screenshot of a Sumo Logic search result demonstrating the renaming of JSON keys where accountId is shown as aID and eventName as eName](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-rename-key-names.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-rename-key-names.png')} alt="Screenshot of a Sumo Logic search result demonstrating the renaming of JSON keys where accountId is shown as aID and eventName as eName" style={{border: '1px solid gray'}} width="800" />
 
 ## Extracting a nested key
 
@@ -149,7 +149,7 @@ It returns a list of the values in the array: `["2014-03-10T23:...", ""2014-03-1
 
 like this:
 
-![Screenshot of a Sumo Logic search result displaying JSON data with baseline intervals](/img/reuse/query-search/json_results_baselineIntervals.png)
+<img src={useBaseUrl('img/reuse/query-search/json_results_baselineIntervals.png')} alt="Screenshot of a Sumo Logic search result displaying JSON data with baseline intervals" style={{border: '1px solid gray'}} width="300" />
 
 To refer to one specific entry in the array, provide the array's index: 
 
@@ -166,7 +166,7 @@ _sourceCategory=O365* | json "Actor[0].Type" as Actortype0 | json "Actor[1].Type
 
 The result of the query would look like this: 
 
-![Screenshot of a Sumo Logic search result displaying parsed JSON data from an HTTP input](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/ArrayElements.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/ArrayElements.png')} alt="Screenshot of a Sumo Logic search result displaying parsed JSON data from an HTTP input" style={{border: '1px solid gray'}} width="800" />
 
 ## Using the nodrop option
 
@@ -180,14 +180,14 @@ By default, the JSON operator optimizes results by dropping messages that do not
 
 You can use wildcard (\*) to access the array elements in a JSON. For example, you can access Actor Type from an O365 JSON message using wildcard.
 
-![A table displays columns for Time, jsonobject, and baselineintervals. The jsonobject column contains a JSON string with the "baselineintervals" key, listing various time intervals. The baselineintervals column shows the same time intervals extracted and formatted for easier readability.](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-wildcard-example.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-wildcard-example.png')} alt="A table displays columns for Time, jsonobject, and baselineintervals" style={{border: '1px solid gray'}} width="500" />
 
 `_sourceCategory=O365*
 | json "Actor[*].Type" as Actortype`
 
 The result of the query would look like this:
 
-![A table lists logs with columns for Time, actortype0, actortype1, Source Name, and Message. The Message column contains detailed JSON data, including fields such as CreationTime, Id, Operation, OrganizationId, RecordType, ResultStatus, UserKey, and Actor. The JSON object displays a record of a failed user update operation in Azure Active Directory, including user details and actor context.](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/wildcard-example-results.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/wildcard-example-results.png')} alt="A table lists logs with columns for Time, actortype0, actortype1, Source Name, and Message." style={{border: '1px solid gray'}} width="500" />
 
 Next, if required, you can use the array elements to perform additional operations. For example, you can find the max of Type for a CreationTime and Id using this query:
 
@@ -201,7 +201,7 @@ _sourceCategory=O365*
 
 The result would look like this:
 
-![Results for a query for Type for a CreationTime and Id](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/MaxOutput.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/MaxOutput.png')} alt="Results for a query for Type for a CreationTime and ID" style={{border: '1px solid gray'}} width="500" />
 
 ## JSON auto option
 
@@ -382,10 +382,7 @@ With the **extractarrays** option, **json auto** yields these field-value pa
 Sumo Logic can generate the parse expression for a specific JSON key for you. The option is available when viewing your JSON logs in the **Messages** tab of your Search.
 
 1. Right-click the key you want to parse and a menu will appear.
-1. Click **Parse selected key**.  
-
-    ![Screenshot of the Sumo Logic UI demonstrating the right-click context menu to parse a selected JSON key, with an example key _BOOT_ID being added to the query](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/ui-parse-selected-key-option.png)
-
+1. Click **Parse selected key**.<br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/ui-parse-selected-key-option.png')} alt="Screenshot of the Sumo Logic UI demonstrating the right-click context menu to parse a selected JSON key, with an example key _BOOT_ID being added to the query" style={{border: '1px solid gray'}} width="400" />
 1. In the query text box, where ever your cursor was last placed, a new  parse JSON operation is added that will parse the selected key. For example, `| json field=_raw "_BOOT_ID"`.
 
 ## Search warning
@@ -394,7 +391,7 @@ Sumo Logic can generate the parse expression for a specific JSON key for you. Th
 
 By default the JSON operator optimizes results by dropping messages that do not have the fields or keys specified in your query or if the JSON is invalid. When a message is dropped the user interface provides a warning message: 
 
-![unable to parse json warning message.png](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/unable-to-parse-json-warning-message.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/unable-to-parse-json-warning-message.png')} alt="Unable to parse json warning message" style={{border: '1px solid gray'}} width="200" />
 
 This is only a warning message to inform you that at least one log returned in the scope of the query did not have a specified key. 
 
