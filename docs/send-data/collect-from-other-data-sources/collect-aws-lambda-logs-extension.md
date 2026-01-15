@@ -26,7 +26,7 @@ Sumo Logic supports all Lambda runtimes that support extensions. For a complete 
 
 Follow the steps below, to use the new extension to collect your Lambda logs.
 
-## AWS Lambda Managed Instaces Support
+## AWS Lambda Managed Instances Support
 Sumologic Lambda Extension from arn version 12 has started supporting [Lambda Managed instances](https://docs.aws.amazon.com/lambda/latest/dg/lambda-managed-instances.html). No additional steps are required. The same extension can be used with the same steps as below to work with managed instance.
 
 ## Step 1: Add a Hosted Collector and HTTP Source
