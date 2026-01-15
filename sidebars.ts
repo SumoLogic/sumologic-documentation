@@ -914,6 +914,7 @@ module.exports = {
         'manage/partitions/edit-data-forwarding-destinations-partition',
         'manage/partitions/manage-indexes-variable-retention',
         'manage/partitions/decommission-partition',
+        'manage/partitions/faq',
       ]
     },
     {
