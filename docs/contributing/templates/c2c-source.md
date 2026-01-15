@@ -4,7 +4,7 @@ title: Cloud-to-Cloud Source Template
 description: Use this template to create a Cloud-to-Cloud source doc (/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/...).
 ---
 
-Use this template to create a [Cloud-to-Cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework) doc. Copy and paste this into your new .md file.  Refer to the [Style Guide](/docs/contributing/style-guide) if needed.
+Use this template to create a [Cloud-to-Cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework) doc. Copy and paste this into your new .md file. Refer to the [Style Guide](/docs/contributing/style-guide) if needed.
 
 ```md
 
