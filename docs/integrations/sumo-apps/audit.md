@@ -22,11 +22,6 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 <AppInstallNoDataSourceV2/>
 
-## Create monitors for the Sumo Logic Audit app
-
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
-
-<CreateMonitors/>
 
 ## Viewing Sumo Logic Audit dashboards
 
@@ -237,6 +232,23 @@ See information on scheduled searches that have been triggered, along with detai
 **Non-200 Status Codes by Name**. Details for non-200 status code results for Webhooks with saved search names and their respective counts.
 
 **Count of Status Codes for Webhooks**. A listing of status codes for Webhooks and their respective counts.
+
+## Create monitors for the Sumo Logic Audit app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Audit App Alerts
+
+| Name                                                   | Description                                                                                                | Alert Condition | Recover Condition |
+|:-------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|:----------------|:------------------|
+| `Log Ingest Throttling`                                | This alert is triggered when logs are throttled for 15 min window.                                         | Count >= 1      | Count < 1         |
+| `Metric Ingest Throttling`                             | This alert is triggered when metrics are throttled for 15 min window.                                      | Count >= 1      | Count < 1         |
+| `Monitor Deleted Alert`                                | This alert is triggered whenever a monitor is deleted.                                                     | Count >= 1      | Count < 1         |
+| `High number of password modification or resets Alert` | This alert is triggered when multiple password resets or modifications are detected in a small time frame. | Count > 5       | Count < = 5       |
+| `High 4XX and 5XX Errors`                              | This alert is triggered when high 4XX/5XX errors are detected.                                             | Count > 20      | Count < = 20      |
+
 
 ## Upgrade/Downgrade the Sumo Logic Audit app (Optional)
 
