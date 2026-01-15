@@ -66,9 +66,10 @@ You can use the **Filters** area near the top of the page to narrow down the ins
 
 ### Bulk update insights
 
-You can select multiple insights and make changes to them all at once using either the [Cloud SIEM API](/docs/api/cloud-siem-enterprise/) or the UI.
+You can select multiple insights and make changes to them all at once using either the UI or API.
 
-To bulk update insights in the UI:
+#### Bulk update insights in the UI
+
 1. Open the insights [list view](#list-view).
 1. [Filter insights](#filtering-insights) to locate only the insights you want to act on.
 1. Use the checkboxes on the insights list view to select multiple insights. You can select a maximum of 5000 insights.
@@ -78,6 +79,13 @@ To bulk update insights in the UI:
    * **Change Status**. Change the insights' [status](/docs/cse/administration/manage-custom-insight-statuses/). <br/><img src={useBaseUrl('img/cse/bulk-select-insights.png')} alt="Bulk update insights" style={{border: '1px solid gray'}} width="500"/>
 1. Click **Confirm** on the confirmation dialog box.
 1. If you are updating a large number of insights, a progress bar will display until the job is finished. You cannot initiate another bulk update until the previous job finished. 
+
+#### Bulk update insights with the API
+
+Use the following [Cloud SIEM APIs](/docs/api/cloud-siem-enterprise/) to bulk update insights:
+* `/sec/api/insights/bulk-updates`
+* `/sec/api/insights/bulk-updates/{id}/status`
+* `/sec/api/insights/bulk-updates/{job_id}/csv`
 
 ### View insights in child organizations
 

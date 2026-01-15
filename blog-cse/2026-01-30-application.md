@@ -10,4 +10,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Bulk update insights
 
-We're happy to announce that you can use the API or UI to update multiple insights at a time, including closing, reassigning, or giving them a new status. Acting on multiple insights at once speeds up your insight resolution. [Learn more](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#bulk-update-insights).
+We're happy to announce that you can use the UI or API to update multiple insights at a time, including closing, reassigning, or giving them a new status. Acting on multiple insights at once speeds up your insight resolution. [Learn more](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#bulk-update-insights).
