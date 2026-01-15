@@ -33,15 +33,6 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  headTags: [
-    {
-      tagName: 'meta',
-      attributes: {
-        'http-equiv': 'Cache-control',
-        content: 'no-store, max-age=0',
-      },
-    },
-  ],
   // Temporarily removes Start Free Trial button conversion event tracking.
   // To reinstate this, uncomment below and restore trackTrialClick.js file
   //  clientModules: [
@@ -231,6 +222,21 @@ module.exports = {
           },
         },
     ],
+    function removeHashPlugin() {
+      return {
+        name: 'remove-hash-plugin',
+        configureWebpack(config, isServer) {
+          if (isServer) return {};
+
+          return {
+            output: {
+              filename: '[name].js',
+              chunkFilename: '[name].js',
+            },
+          };
+        },
+      };
+    },
     ['@docusaurus/plugin-client-redirects',
       {
         redirects: Object.entries(cidRedirects).map(
