@@ -305,3 +305,68 @@ public.ecr.aws/u5z5f8z6/sumologic/csoar-automation-bridge:latest
 Privileged containers are special containers with elevated privileges and direct access to the host system. Unlike their non-privileged counterparts, which are isolated and restricted in their capabilities, privileged containers can perform tasks requiring higher-level access. They achieve this by interacting with the host kernel and accessing sensitive resources, including hardware devices and network interfaces.
 
 One key difference between privileged and non-privileged containers is the level of isolation. Non-privileged containers are meticulously sandboxed and have limited access to the host system, thus providing an extra layer of security. Contrarily, privileged containers operate with fewer restrictions, enabling them to execute advanced operations beyond the reach of non-privileged containers.
+
+### Troubleshooting
+The first step to troubleshooting any bridge related issue is to access the bridge logs.
+1. Bridge is running as a Docker container
+   * List all bridge containers
+      ```bash
+      docker ps -a | grep "automation-bridge*"
+      ```
+   * Extract container ID of the bridge in contention and check logs for any error 
+      ```bash
+      docker logs CONTAINER_NAME_OR_ID | grep -i "error"
+      ```
+2. Bridge is running as a systemd service (deb/rpm package)
+   * Please check the logs for all bridge workers around the time the failing actions were triggered using journalctl with --since flag. <br />
+      For example:
+      ```bash
+      journalctl -u 'automation-bridge-worker@*.service' --since "30 minutes ago" | grep -i "error"
+      ```
+   * Alternatively, you can restart the bridge and follow the live logs while running the action:
+      ```bash
+      systemctl restart automation-bridge
+      journalctl -u automation-bridge-worker@1.service -b -f
+      ```
+   This will show logs in real time for worker 1; you can repeat for other workers if needed (@2.service, @3.service, @4.service and so on)
+
+`In both the setup, please check SOAR UI, as well, to see if the action reports any errors or timeout details.`
+#### Common Issues
+**Bridge starts and shutsdown immediately**
+   * Installation Token Name does not respect the requirements mentioned in [Get installation token](#get-installation-token). Check the logs for Error Code `401` <br /><img src={useBaseUrl('img/cloud-soar/bridge-errors/incorrect-bridge-token-prefix-error.png')} style={{border:'1px solid gray'}} alt="Incorrect Installation Token Prefix Screenshot" width="800"/><br />
+     
+      #### Resolution: 
+      Create a new token or update the existing token to meet the required format.  
+      Ensure the token **prefix starts with**:
+      `csoar-bridge-token-`
+
+
+   * Installation Token has hit its limit and is now emitting 429 status code on starting a bridge. Check the logs for error code `429`. <br /><img src={useBaseUrl('img/cloud-soar/bridge-errors/rate-limit-hit-on-token.png')} style={{border:'1px solid gray'}} alt="Rate Limit Hit on Token Screenshot" width="800"/><br />
+
+      #### Resolution:
+      * Start the bridge using a new installation token
+
+**Bridge runs for sometime and then goes offline**
+   * This issue commonly arises when the installation token exceeds its permitted API call quota.
+When the limit is breached, the bridge responds with HTTP `429 (Too Many Requests)` status codes. The bridge logs generally include messages similar to the example below:
+       ```text
+       time="2026-01-14T08:53:04Z" level=error msg="Error sending request keepAlive" 
+       error="all retries failed for https://<SOAR_URL>/api/auth-gateway/csoar/bridge/keepAlive/⁠ with response: 
+       &{Status:429 Too Many Requests StatusCode:429 Proto:HTTP/2.0 ProtoMajor:2 ProtoMinor:0 
+       Header:map[Cache-Control:[no-cache, no-store, max-age=0, must-revalidate] Content-Length:[139] Content-Type:[application/json] Date:[Wed, 14 Jan 2026 08:52:59 GMT] Expires:[0] Pragma:[no-cache] 
+       Strict-Transport-Security:[max-age=15552000] X-Content-Type-Options:[nosniff] 
+       X-Frame-Options:[DENY] X-Xss-Protection:[0]] Body:0x400012db40 ContentLength:139 TransferEncoding:[] Close:false Uncompressed:false Trailer:map[] Request:0x4000184c80 TLS:0x4000020480}\n" 
+       fields.time="2026-01-14 08:53:04.575220959 +0000 UTC m=+3891.784975522"
+       ```
+       You can also look for the frequency of retries. If the frequency is high, that will explain the bridge going offline 
+       ```text
+       time="2026-01-14T08:53:09Z" level=error msg="retrying due to <nil> in 500ms\n" apiRoute="https://vpepd3-api.ephemeral.in/api/auth-gateway/csoar/bridge/keepAlive/" attempt=1 delay=500ms
+       ```
+
+      #### Resolution
+     1. Ensure that the bridge is running the latest available version. <br />
+For bridge versions **v3.2.2 and later**, this issue is expected to **self-resolve** over time. Offline bridges will automatically reconnect once the system stabilizes. <br />
+`The recovery duration depends on the number of bridges sharing the same token.`
+     2. For a **quick but temporary workaround** consider one of the following options -
+         1. Start a new bridge using a fresh installation token.
+         2. If multiple bridges are operating with the same token, stop a subset of them and monitor the health of the remaining bridges until stability is restored.
