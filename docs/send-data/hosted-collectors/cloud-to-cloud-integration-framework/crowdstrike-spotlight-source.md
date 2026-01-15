@@ -140,6 +140,10 @@ We recently observed an increasing number of unexpected 500 errors from CrowdStr
 
 This issue is from CrowdStrike platform. If you come across this error, please contact CrowdStrike Spotlight support with trace id included in the error response.
 
+### Limitation
+
+- This source supports a maximum of approximately 17700 vulnerabilityIDs. Exceeding this vulnerabilityIDs limit may cause the source to return a `FIRST-PARTY-GENERIC` error type.
+
 ## FAQ
 
 :::info
