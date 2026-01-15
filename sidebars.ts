@@ -906,14 +906,15 @@ module.exports = {
           items: [
             'manage/partitions/flex/create-edit-partition-flex',
             'manage/partitions/flex/view-partition-details-flex',
-            'manage/partitions/flex/estimate-scan-data',
             'manage/partitions/flex/faq',
           ]
         },
+        'manage/partitions/estimate-scan-data',
         'manage/partitions/run-search-against-partition',
         'manage/partitions/edit-data-forwarding-destinations-partition',
         'manage/partitions/manage-indexes-variable-retention',
         'manage/partitions/decommission-partition',
+        'manage/partitions/faq',
       ]
     },
     {
@@ -3074,22 +3075,6 @@ integrations: [
         'cloud-soar/menus',
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
-        {
-          type: 'category',
-          label: 'Legacy Cloud SOAR',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'cloud-soar/legacy/index'},
-          items: [
-            'cloud-soar/legacy/legacy-cloud-soar-architecture',
-            'cloud-soar/legacy/legacy-cloud-soar-global-functions-menu',
-            'cloud-soar/legacy/legacy-cloud-soar-main-menu',
-            'cloud-soar/legacy/legacy-cloud-soar-incidents-and-triage',
-            'cloud-soar/legacy/legacy-cloud-soar-automation',
-            'cloud-soar/legacy/legacy-cloud-soar-mssp',
-            'cloud-soar/legacy/legacy-cloud-soar-apis',
-        ],
-      },
       ],
     },
     {
