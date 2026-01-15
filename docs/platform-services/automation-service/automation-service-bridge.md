@@ -360,7 +360,7 @@ When the limit is breached, the bridge responds with HTTP `429 (Too Many Request
        ```
        You can also look for the frequency of retries. If the frequency is high, that will explain the bridge going offline 
        ```text
-       time="2026-01-14T08:53:09Z" level=error msg="retrying due to <nil> in 500ms\n" apiRoute="https://vpepd3-api.ephemeral.in/api/auth-gateway/csoar/bridge/keepAlive/" attempt=1 delay=500ms
+       time="2026-01-14T08:53:09Z" level=error msg="retrying due to <nil> in 500ms\n" apiRoute="https://<SOAR-URL>/api/auth-gateway/csoar/bridge/keepAlive/" attempt=1 delay=500ms
        ```
 
       #### Resolution
