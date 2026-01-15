@@ -190,7 +190,13 @@ Sumo Logic supports collecting metrics using two source types:
 * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
-The namespace for the **Amazon Sagemaker** Service is **AWS/Sagemaker**.
+The namespaces for the **Amazon Sagemaker** Service is
+- `AWS/Sagemaker`
+- `/aws/sagemaker/endpoints`
+- `aws/sagemaker/modelbuildingpipeline`
+- `/aws/sagemaker/processingjobs`
+- `/aws/sagemaker/trainingjobs`
+- `/aws/sagemaker/TransformJobs`
 
 For ​​​**Metadata** add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. Metrics can be queried via the “account field”.
 
@@ -235,8 +241,11 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 ### Configure field in field schema
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**.
-1. Search for the `modelId` field.
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
+1. Search for the following fields:
+    - `region`
+    - `accountid`
+    - `namespace`
+    - `endpointname`
 
 ### Configure Field Extraction Rule(s)
 
