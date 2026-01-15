@@ -56,14 +56,14 @@ module.exports = {
     //  'contributing/translations',
         {
           type: 'category',
-          label: 'Templates',
+          label: 'Docs Templates',
           collapsible: true,
           collapsed: true,
           items: [
+            'contributing/templates/app-template-v2',
+            'contributing/templates/c2c-source',
             'contributing/templates/generic-doc',
             'contributing/templates/partner-app-doc',
-            'contributing/templates/c2c-source',
-            'contributing/templates/app-template-v2',
           ]
         }
       ],
