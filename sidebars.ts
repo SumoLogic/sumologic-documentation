@@ -1152,6 +1152,7 @@ module.exports = {
        link: {type: 'doc', id: 'manage/data-archiving/index'},
        items: [
          'manage/data-archiving/archive',
+         'manage/data-archiving/archive-otel',
        ]
      },
    ],

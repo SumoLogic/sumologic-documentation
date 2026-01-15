@@ -1,112 +1,137 @@
 ---
-id: archive
-title: Archive Log Data to S3 using Installed Collectors
+id: archive-otel
+title: Archive Log Data to S3 using OpenTelemetry Collectors
 description: Send data to an Archive that you can ingest from later.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Archive allows you to forward log data from Installed Collectors to AWS S3 buckets to collect at a later time. If you have logs that you do not need to search immediately you can archive them for later use. You can ingest from your Archive on-demand with five-minute granularity.
+This document describes how to archive log data to Amazon S3 using OpenTelemetry Collectors. Archiving allows you to store log data cost-effectively in S3 and ingest it later on demand, while retaining full enrichment and searchability when the data is re-ingested.
 
 :::important
 Do not change the name and location of the archived files in your S3 bucket, otherwise ingesting them later will not work properly.
 :::
 
-To archive your data you need a Processing Rule configured to send to an AWS Archive Destination. First, [create an AWS Archive Destination](#create-an-aws-archive-destination), then [create Archive processing rules](#create-a-processing-rule) to start archiving. Any data that matches the filter expression of an Archive processing rule is not sent to Sumo Logic, instead, it is sent to your AWS Archive Destination.
+## Overview
 
-:::note
-Every archived log message is tagged with the metadata Fields specified by the Collector and Source.
-:::
+With the OpenTelemetry-based approach, log data is sent to S3 using an OpenTelemetry Collector pipeline:
 
-## Create an AWS Archive Destination
+**Sources** > **OpenTelemetry Collector** > **awss3exporter** > **Amazon S3**
 
-:::note
-You need the **Manage S3 data forwarding** role capability to create an AWS Archive Destination.
-:::
+For S3 archiving, we use:
+- The `awss3exporter` component to upload data to S3.
+- The `sumo_ic marshaller`, which formats the archived files so they are compatible with Sumo Logic’s ingestion process.
 
-1. Follow the instructions on Grant Access to an AWS Product to grant Sumo permission to send data to the destination S3 bucket.
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Data Archiving**. You can also click the **Go To...** menu at the top of the screen and select **Data Archiving**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Data Archiving**. 
-1. Click **+** to add a new destination.
-1. Select **AWS Archive bucket** for **Destination Type**.  <br/><img src={useBaseUrl('img/archive/archive-destination.png')} alt="Create a New Destination dialog" style={{border: '1px solid gray'}} width="400"/>
-1. Configure the following:
-   * **Destination Name**. Enter a name to identify the destination.
-   * **Bucket Name**. Enter the exact name of the S3 bucket.
-    :::note
-    You can create only one destination with a particular bucket name.  If you try to create a new destination with the bucket name of an existing destination, the new destination replaces the old one.
-    :::
-   * **Description**. You can provide a meaningful description of the connection.
-   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in step 1, [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
-      * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
-      * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
-      * For **AWS EC2 Credentials** instance profile credentials on an EC2 instance where an installed collector will be used to archive log data to S3, see https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-roles.html.
-   * **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.
-1. Click **Save**.
+### Why use OpenTelemetry Collector for archiving logs to S3
 
-If Sumo Logic is able to verify the S3 credentials, the destination will be added to the list of destinations and you can start archiving to the destination via processing rules.
+Compared to legacy Installed Collector-based archiving, the OpenTelemetry approach provides:
+- Full control over metadata enrichment
+- Flexible and transparent configuration through YAML
+- Better alignment with modern observability pipelines
+- Easier integration across hybrid and cloud-native environments
+- A future-proof architecture aligned with OpenTelemetry standards
 
-## Create a Processing Rule
+## Required metadata for archived logs
 
-A new processing rule type named **Archive messages that match** allows you to archive log data at the Source level on Installed Collectors.
+For archived logs to be enriched and ingested correctly later, three resource attributes must be present on every log record. These are configured using the OpenTelemetry resource processor:
 
-:::note
-An Archive processing rule acts like an exclude filter, functioning as a denylist filter where the matching data is not sent to Sumo Logic, and instead sends the excluded data to your AWS Archive bucket.
-:::
+| Resource Attribute | Description | Maximum length |
+|:--|:--|:--|
+| `_sourceCategory` | This field is open and free to use to logically group data. | 1024 characters |
+| `_sourceHost` | This field is ideally the hostname of the machine where logs originate, but can be any meaningful value. | 128 characters |
+| `_sourceName` | This field is the source name such as a filename from which ingestion is happening or the type of logs (for example, dockerlogs, apachelogs). |  |
 
-Archive and forwarding rules are processed after all other processing rule types. When there are archive and forwarding rules they are processed in the order that they are specified in the UI, top to bottom.
-
-To configure processing rules for Archive using the web application follow these steps:
-
-:::note
-You can use JSON to configure a processing rule, use the **Forward** filterType. See an example data forwarding rule.
-:::
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
-1. Search for the Source that you want to configure, and click the **Edit** link for the Source. The Source must be associated with an Installed Collector.
-1. Scroll down to the **Processing Rules** section and click the arrow to expand the section.
-1. Click **Add Rule**.
-1. Type a **Name** for this rule. (Names have a maximum of 32 characters.)
-1. For **Filter**, type a regular expression that defines the messages you want to filter. The rule must match the whole message. For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with `(?s)` such as: `(?s).*matching text(?s).*` Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax)
-1. Select **Archive messages that match** as the rule type. This option is visible only if you have defined at least one [**AWS Archive bucket** destination](#create-an-aws-archive-destination), as described in the previous section. 
-1. Select the Destination from the dropdown menu.  <br/><img src={useBaseUrl('img/archive/archive-rule.png')} alt="Archive rule" width="450"/>
-1. (Optional) Enter a **Prefix** that matches the location to store data in the S3 bucket. The prefix has the following requirements:
-   * It can not start with a forward slash `/`.
-   * It needs to end with a forward slash `/`.
-   * Supports up to a maximum of 64 characters.
-   * The following are supported characters:
-     * Alphanumeric characters: 0-9, a-z, A-Z
-     * Special characters: - _ . * ' ( )
-10. Click **Apply**. The new rule is listed along with any other previously defined processing rules.
-11. Click **Save** to save the rules you defined and start archiving data that matches the rule.
+These attributes can be set statically in configuration, or populated dynamically using a custom resource processor (advanced use case). However, dynamic extraction requires advanced implementation and is not generally recommended unless you have strong OpenTelemetry expertise.
 
 ## Archive format
 
-Forwarded Archive files are prepended with a filename prefix based on the receipt time of your data with the following format:
+:::important
+Only the `v2` archive format is supported when using OpenTelemetry Collector. The legacy `v1` format is deprecated for OpenTelemetry Collector and must not be used.
+:::
+
+Archived files use the format:
+
+`<deployment>/<collectorID>/<bladeID>`
+
+These three identifiers are used to populate `_sourceCategory`, `_sourceHost`, and `_sourceName` during ingestion as described in the [attributes section](#required-metadata-for-archived-logs).
+
+The identifier values do not need to be real IDs. Dummy values are allowed and ingestion will still work correctly. However, providing meaningful values is strongly recommended to help users differentiate log sources during ingestion. For example, if you archive Docker logs, Apache logs, and PostgreSQL logs into the same bucket, the filename alone generated by the `sumo_ic` marshaller does not indicate the source type. Using different `collectorID` and `bladeID` values allows you to differentiate log types during ingestion using path patterns.
+
+:::note
+In many environments, the `collectorID` can be a dummy value. The `bladeID` (source template ID) is particularly more useful for identifying log types.
+:::
+
+Below is a sample OpenTelemetry Collector configuration that archives logs from files into S3 using the supported Sumo Logic archive format.
 
 ```
-dt=<date>/hour=<hour>/minute=<minute>/<deploymentName>/<collectorId>/<sourceId>/v1/<fileName>.txt.gzip
+receivers:
+  filelog/myapps:
+    include: ["/home/ec2-user/docker/validation/s3archive/logs/*.log"]
+    start_at: beginning
+
+processors:
+  resource/add_sumo_fields:
+    attributes:
+      - key: _sourceCategory
+        value: "testlogs"
+        action: insert
+      - key: _sourceHost
+        value: "my-host.example.com"  # replace or dynamically set below
+        action: insert
+      - key: _sourceName
+        value: "myapp"        # replace with a logical source name
+        action: insert
+
+  batch:
+    timeout: 600s
+    send_batch_size: 8192
+
+exporters:
+  awss3/my-sumo-archive:
+    marshaler: "sumo_ic"
+
+    s3uploader:
+      region: "eu-north-1"
+      s3_bucket: "s3-archive-test"
+      s3_prefix: "v2/"
+      s3_partition_format: 'dt=%Y%m%d/hour=%H/minute=%M/stag/0000000007EB64D7/000000002DFFBCA8'
+      s3_partition_timezone: 'UTC'
+      compression: gzip
+
+service:
+  pipelines:
+    logs:
+      receivers: [filelog/myapps]
+      processors: [resource/add_sumo_fields, batch]
+      exporters: [awss3/my-sumo-archive]
 ```
 
-Collector version 19.361-3+ provides the ability to archive files with five-minute granularity. The format changes with the addition `v2` and the removal of `v1`.
+## Ingestion filtering using path patterns
+
+When configuring an AWS S3 Archive Source on a Hosted Collector, specify a file path pattern to control what gets ingested.
+
+For example, to ingest only Docker logs:
 
 ```
-v2/dt=<date>/hour=<hour>/minute=<minute>/<deploymentName>/<collectorId>/<sourceId>/<fileName>.txt.gzip
+v2/*/<DockerSourceTemplateID>/*
 ```
 
-Example format of an Archived log message:
-
-```
-{"_id":"763a9b55-d545-4564-8f4f-92fe9db9acea","date":"2019-11-15T13:26:41.293Z","sourceName":"/Users/sumo/Downloads/Logs/ingest.log","sourceHost":"sumo","sourceCategory":"logfile","message":"a log line"}
-```
+If differentiation is not required, you can use dummy 16-digit hexadecimal values for both `collectorID` and `bladeID`, and ingestion will still work with correct metadata enrichment.
 
 ## Batching
 
-By default, the Collector will complete writing logs to an archive file once the uncompressed size of the file reaches 5 GB in size. You can configure the buffer size with the following [collector.properties](/docs/send-data/installed-collectors/collector-installation-reference/collector-properties.md) parameter.
+The size and time window of archived files is controlled using the OpenTelemetry batch processor. For example, a batching timeout of 15 minutes produces one S3 file approximately every 15 minutes.
 
-### collector.properties buffer parameter
+If the ingestion job window does not exactly align with the batching boundaries, the Hosted Collector behaves conservatively and may ingest slightly more data rather than risk data loss. This ensures no data loss around interval boundaries.
 
-| Parameter | Description | Data Type | Default |
-|:--|:--|:--|:--|
-| buffer.max.disk.bytes | The maximum size in bytes of the on-disk buffer per archive destination.<br/>When the maximum is reached the oldest modified file(s) are deleted. | Integer | 5368709120 |
+Example:
+
+| Archive File Creation Window | ngestion Job Window | Ingested File Window |
+|:--|:--|:--|
+| hour1/minute07 | hour1/minute05 to hour1/minute30 | hour0/minute52 |
+| hour1/minute22 | hour1/minute05 to hour1/minute30 | hour1/minute07 |
+| hour1/minute37 | hour1/minute05 to hour1/minute30 | hour1/minute22 |
+| hour1/minute52 | hour1/minute05 to hour1/minute30 | hour1/minute37 |
 
 ## Ingest data from Archive
 
@@ -144,7 +169,7 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
 1. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS.
 1. For **Path Expression**, enter the wildcard pattern that matches the Archive files you'd like to collect. The pattern:
     * can use one wildcard (\*).
-    * can specify a [prefix](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys) so only certain files from your bucket are ingested. For example, if your filename is `prefix/dt=<date>/hour=<hour>/minute=<minute>/<collectorId>/<sourceId>/v1/<fileName>.txt.gzip`, you could use `prefix*` to only ingest from those matching files.
+    * can specify a [prefix](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys) so only certain files from your bucket are ingested. For example, if your filename is `prefix/dt=<date>/hour=<hour>/minute=<minute>/<collectorId>/<sourceId>/v2/<fileName>.txt.gzip`, you could use `prefix*` to only ingest from those matching files.
     * can **NOT** use a leading forward slash.
     * can **NOT** have the S3 bucket name.
 1. For **Source Category**, enter any string to tag to the
