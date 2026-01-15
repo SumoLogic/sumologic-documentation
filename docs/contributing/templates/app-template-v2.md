@@ -78,18 +78,6 @@ Use this dashboard to:
 
 -->
 
-## Upgrade/Downgrade the `{{vendor name}}` app (optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the `{{vendor name}}` app (optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
-
 ## Create monitors for the `{{vendor name}}` app
 
 \This section doesn't apply to all apps; use only where needed.\
@@ -104,4 +92,23 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 These alerts are metrics-based and will work for `{{vendor name}}`.
 
+<!-- example:
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `Privileged vault and group access control changes` | This alert is fired when there are changes to privileged vault and group access control. | Critical | Count > 0 | 
+
+-->
+
+## Upgrade/Downgrade the `{{vendor name}}` app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the `{{vendor name}}` app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 ```
