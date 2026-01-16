@@ -168,13 +168,11 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
 1. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 1. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS.
 1. For **Path Expression**, enter the wildcard pattern that matches the Archive files you'd like to collect. The pattern:
-    * can use one wildcard (\*).
-    * can specify a [prefix](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys) so only certain files from your bucket are ingested. For example, if your filename is `prefix/dt=<date>/hour=<hour>/minute=<minute>/<collectorId>/<sourceId>/v2/<fileName>.txt.gzip`, you could use `prefix*` to only ingest from those matching files.
-    * can **NOT** use a leading forward slash.
-    * can **NOT** have the S3 bucket name.
-1. For **Source Category**, enter any string to tag to the
-    data collected from this Source. Category metadata is stored in a
-    searchable field called _sourceCategory.
+    * Can use one wildcard (\*).
+    * Can specify a [prefix](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys) so only certain files from your bucket are ingested. For example, if your filename is `prefix/dt=<date>/hour=<hour>/minute=<minute>/<collectorId>/<sourceId>/v2/<fileName>.txt.gzip`, you could use `prefix*` to only ingest from those matching files.
+    * Cannot use a leading forward slash.
+    * Cannot have the S3 bucket name.
+1. For **Source Category**, enter any string to tag to the data collected from this Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Fields**. Click the **+Add Field** link to add custom metadata Fields. Define the fields you want to associate, each field needs a name (key) and value.
     :::note
     Fields specified on an AWS S3 Archive Source take precedence if the archived data has the same fields.
