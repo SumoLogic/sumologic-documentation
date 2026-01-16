@@ -110,5 +110,11 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to decommission a Partition to keep it from being started.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/partitions/faq"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Partitions FAQs</h4></a>
+  <p>Answers to frequently asked questions about Sumo Logic Partitions.</p>
+  </div>
+</div>
 </div>
 
