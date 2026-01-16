@@ -1,7 +1,7 @@
 ---
 id: mobot
 title: Sumo Logic Mobot
-sidebar_label: Mobot 🤖
+sidebar_label: Mobot ✨
 # Edit description to include QA and KA
 description: Accelerate troubleshooting with Mobot, Sumo Logic's AI-powered assistant. Ask questions in plain English to generate log queries (Query Agent) or get help learning the platform (Knowledge Agent).
 keywords:
@@ -263,6 +263,17 @@ Get the most out of Query Agent by following these tips:
 * **Guide Query Agent with feedback**. If the result isn't right, use natural language. For example, "Don't filter by namespace, instead group by error type" or "Use P90 instead of P50."
 * **Fix broken queries**. Paste a syntactically invalid query and Query Agent will correct it for you.
 
+#### Specifying time ranges
+
+Query Agent understands relative rolling window time expressions. Use "last X" or "past X" with time units for rolling time windows:
+
+* "within the last 60 minutes"
+* "in the last 6 months"
+* "over the last 7 days"
+* "in the last 24 hours"
+* "last 48 hours", "last 90 days", "last 12 months"
+* "last week", "last month", "last night" (as rolling ranges)
+
 
 ### Example queries
 
@@ -311,7 +322,7 @@ You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried abo
    <img src={useBaseUrl('img/search/mobot/cloud-siem-1.png')} alt="Mobot tab" style={{border: '1px solid gray'}} width="500" />
 1. As soon as you do that, you can look at the suggested follow-up queries, which are curated based on their relevance to this Cloud SIEM source. In this example, we'll pick a suggested query to compare results to the last hour: `Count logs by action. Sort the results. versus the previous 1h`<br/>
    Notice the system translated the suggestion to a log query and rendered results as a bar graph with no user input. <br/><img src={useBaseUrl('img/search/mobot/cloud-siem-2.png')} alt="Mobot tab" style={{border: '1px solid gray'}} width="800" />
-1. Switching to table view, you notice "Malicious” in the search results. So, you add in `Filter results by action contains Malicious` to the query: `Count logs by action. Sort the results. Filter results by action contains Malicious.`<br/>
+1. Switching to table view, you notice "Malicious" in the search results. So, you add in `Filter results by action contains Malicious` to the query: `Count logs by action. Sort the results. Filter results by action contains Malicious.`<br/>
    <img src={useBaseUrl('img/search/mobot/cloud-siem-3.png')} alt="Mobot tab" style={{border: '1px solid gray'}} width="800" />
    :::note
    If `Malicious` doesn't work, try `Malicious*`. Sumo Logic is case sensitive.
