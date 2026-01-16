@@ -207,7 +207,7 @@ Click on a table row to view the Source details. This includes:
 * **Description**
 * **AWS S3 bucket**
 * All **Ingestion jobs** that are and have been created on the Source.
-    * Each ingestion job shows the name, time window, and volume of data processed by the job. Click the icon <img src={useBaseUrl('img/archive/open-search-icon.png')} alt="Open in search icon" width="30" /> to the right of the job name to start a Search against the data that was ingested by the job.
+    * Each ingestion job shows the name, time window, and volume of data processed by the job. Click the icon <img src={useBaseUrl('img/archive/open-search-icon.png')} alt="Open in search icon" width="30" /> to the right of the job name to start a search against the data that was ingested by the job.
     * Hover your mouse over the information icon to view who created the job and when.<br/><img src={useBaseUrl('img/archive/archive-details-pane.png')} alt="Archive details pane" width="325"/>
 
 ## Create an ingestion job
