@@ -126,7 +126,7 @@ If the ingestion job window does not exactly align with the batching boundaries,
 
 Example:
 
-| Archive File Creation Window | ngestion Job Window | Ingested File Window |
+| Archive file creation window | Ingestion job window | Ingested file window |
 |:--|:--|:--|
 | hour1/minute07 | hour1/minute05 to hour1/minute30 | hour0/minute52 |
 | hour1/minute22 | hour1/minute05 to hour1/minute30 | hour1/minute07 |
