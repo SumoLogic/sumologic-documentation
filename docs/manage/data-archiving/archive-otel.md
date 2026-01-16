@@ -140,7 +140,7 @@ You can ingest a specific time range of data from your Archive at any time wit
 ### Rules
 
 * A maximum of 2 concurrent ingestion jobs is supported. If more jobs are needed contact your Sumo Logic account representative.
-* An ingestion job has a maximum time range of 12 hours. If a longer time range is needed contact your Sumo Logic account representative.
+* An ingestion job has a maximum time range of 12 hours. If a longer time range is needed, contact your Sumo Logic account representative.
 * Filenames or object key names must be in either of the following formats:
     * Sumo Logic [Archive format](#archive-format)
     * `prefix/dt=YYYYMMDD/hour=HH/fileName.json.gz`
