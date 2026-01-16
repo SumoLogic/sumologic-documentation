@@ -188,7 +188,7 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
 ## Archive page
 
 :::important
-You need the Manage or View Collectors role capability to manage or view Archive.
+You need the Manage Collectors or View Collectors [role capability](/docs/manage/users-roles/roles/role-capabilities/) to manage or view an archive.
 :::
 
 The Archive page provides a table of all the existing [AWS S3 Archive Sources](#create-an-aws-s3-archivesource) in your account and ingestion jobs.
