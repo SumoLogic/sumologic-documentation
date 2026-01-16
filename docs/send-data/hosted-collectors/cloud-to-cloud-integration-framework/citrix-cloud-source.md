@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon" width="80"/>
 
-The Citrix Cloud source collects the system, operation, and session logs using the Citrix Cloud API and Citrix DaaS REST API to Sumo Logic. Citrix Cloud is a workspace management platform for IT administrators to design, deliver, and manage virtual desktops and applications, and other services, such as file sharing, on any device.
+The Citrix Cloud source collects the system, operation, session, and service logs using the Citrix Cloud API and Citrix DaaS REST API to Sumo Logic. Citrix Cloud is a workspace management platform for IT administrators to design, deliver, and manage virtual desktops and applications, and other services, such as file sharing, on any device.
 
 ## Data collected
 
@@ -21,8 +21,9 @@ The Citrix Cloud source collects the system, operation, and session logs using t
 | 5 min |  [System Log](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords) |
 | 5 min |  [Item usage](https://developer.1password.com/docs/events-api/reference/#post-apiv1itemusages) |
 | 5 min |  [Config Operation Log](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetOperations) |
-| 5 min | [Low-Level Operation Log](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetLowLevelOperations) |
+| 5 min |  [Low-Level Operation Log](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetLowLevelOperations) |
 | 5 min |  [Session Log](https://developer.cloud.com/citrixworkspace/citrix-daas/accessing-monitor-service-data-in-citrix-cloud/docs/overview) |
+| 5 min |  [Monitor Service Logs](https://developer-docs.citrix.com/en-us/monitor-service-odata-api/overview#/supported-api-gateway-endpoints) |
 
 ## Setup
 
@@ -33,10 +34,10 @@ The Citrix Cloud source collects the system, operation, and session logs using t
 - The System logs are obtained using the [Citrix Cloud API](https://developer.cloud.com/citrix-cloud/citrix-cloud-api-overview/docs/get-started-with-citrix-cloud-apis).
    - To collect System logs from the Citrix Cloud platform, you must have an authorized Citrix Cloud account.
    - Citrix Cloud APIs use an OAuth 2.0 authorization token to make authorized API calls.
-- The Operation and Session logs are obtained using the [Citrix DaaS REST API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/docs/overview).
+- The Operation, Session, and Service logs are obtained using the [Citrix DaaS REST API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/docs/overview).
    - To collect these logs, one needs to have a Citrix Cloud account with the DaaS Service enabled. Make sure this by signing in to the Citrix Cloud platform and checking the home page. Look for the presence of the DaaS service in the **My Services** section. If it is not listed, then you need to purchase this service to collect the Operation and Session Logs. <br/> <img src={useBaseUrl('img/send-data/daas-service-enabled.png')} alt="daas-service-enabled" width="800" style={{border: '1px solid gray'}} />
 
-In this configuration, you will set up the Citrix Cloud source account and configure it to be authorized and authenticated to use system logs and alerts from Citrix Cloud API.
+In this configuration, you will set up the Citrix Cloud source account and configure it to be authorized and authenticated to use system logs and alerts from the Citrix Cloud API.
 To obtain the Citrix Cloud auth token, you will need the following parameters:
 
 #### Base URL
@@ -55,7 +56,7 @@ The **Base URL** is the URL where your **Citrix Cloud** account is located. To g
 
 #### API client
 
-The **API security token** is used to authenticate with Citrix Cloud API. After successfully creating the API client, you will get the **Client Id**, **Client Secret**, and **Customer Id**.
+The **API security token** is used to authenticate with the Citrix Cloud API. After successfully creating the API client, you will get the **Client Id**, **Client Secret**, and **Customer Id**.
 To get the **Citrix Cloud API token**, follow the steps below:
 1. From the Citrix Cloud Console, navigate to the <img src={useBaseUrl('img/send-data/navigation-button.png')} alt="<navigation-button.png>" width="30" /> menu icon.
 1. Select the **Identity and Access Management** option from the menu.<br/><img src={useBaseUrl('img/send-data/access-management.png')} alt="<access-management.png>" width="650" />
@@ -84,7 +85,7 @@ To configure the Citrix Cloud API:
 1. **Customer ID**. Enter the Customer ID you generated and secured from the [API Client](#api-client) section in step 6.
 1. **Client ID**. Enter the Client ID you generated and secured from the [API Client](#api-client) section in step 5.
 1. **Client Secret**. Authenticate your account by entering your Secret API key. Enter the **Secret** key you have generated and secured from [API Client](#api-client) section in step 5.
-1. **Supported APIs to Collect**. Select any or all of the data sources such as System Logs, Operation Logs, Monitor Data Session Logs. By default, the **System Logs** data source will be selected.
+1. **Supported APIs to Collect**. Select any or all of the data sources, such as System Logs, Operation Logs, Monitor Data Session Logs, and Monitor Service Logs. By default, the **System Logs** data source will be selected.
 1. When you are finished configuring the Source, click **Save**.
 
 ## Metadata fields
@@ -92,7 +93,7 @@ To configure the Citrix Cloud API:
 If the integration is configured with the SIEM forward option, set the Metadata field `_siemparser` to `/Parsers/System/Citrix/Citrix Cloud C2C`.
 
 :::note
-Session logs are not supported with the SIEM forward option.
+Session and Service logs are not supported with the SIEM forward option.
 :::
 
 ## JSON schema
@@ -117,7 +118,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | customerID | String | Yes | `null`| Customer ID of the environment. |  |
 | clientID | String | Yes | `null`| Client ID for the API client. |  |
 | clientSecret | String | Yes | `null`| Client Secret for the API client. |  |
-| supportedAPI | Array | Yes | | Select any of the given data sources or all the data sources, such as System Logs, Operation Logs, Monitor Data Session Logs. |  |
+| supportedAPI | Array | Yes | | Select any of the given data sources or all the data sources, such as System Logs, Operation Logs, Monitor Data Session Logs, and Monitor Service Logs. |  |
 
 ### JSON example
 
