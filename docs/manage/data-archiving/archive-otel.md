@@ -1,7 +1,7 @@
 ---
 id: archive-otel
 title: Archive Log Data to S3 using OpenTelemetry Collectors
-description: Send data to an Archive that you can ingest from later.
+description: Learn how to archive log data to Amazon S3 using OpenTelemetry Collectors and ingest it on demand.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
