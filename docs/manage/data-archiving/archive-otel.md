@@ -6,7 +6,7 @@ description: Learn how to archive log data to Amazon S3 using OpenTelemetry Coll
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This document describes how to archive log data to Amazon S3 using OpenTelemetry Collectors. Archiving allows you to store log data cost-effectively in S3 and ingest it later on demand, while retaining full enrichment and searchability when the data is re-ingested.
+This article describes how to archive log data to Amazon S3 using OpenTelemetry Collectors. Archiving allows you to store log data cost-effectively in S3 and ingest it later on demand, while retaining full enrichment and searchability when the data is re-ingested.
 
 :::important
 Do not change the name and location of the archived files in your S3 bucket, otherwise ingesting them later will not work properly.
