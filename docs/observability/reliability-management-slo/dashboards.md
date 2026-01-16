@@ -69,7 +69,7 @@ You can launch a Log Search session directly from an SLO dashboard panel, giving
 1. Hover over the panel > Click the kebab icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" style={{border: '1px solid gray'}} width="150"/>
 
 :::tip
-Once opened in **Log Search**, you can click on **Add to dashboard** button to add SLO dashboard panels to your own custom dashboards.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" style={{border: '1px solid gray'}} width="200"/>
+Once opened in **Log Search**, you can click **Add to Dashboard** to add SLO dashboard panels to your own custom dashboards.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" style={{border: '1px solid gray'}} width="200"/>
 :::
 
 
