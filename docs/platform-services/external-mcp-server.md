@@ -86,6 +86,7 @@ Investigate security incidents without leaving Slack:
 * **Query raw logs** for deeper investigation.
 * **Update insight status** directly from Slack.
 * **Add investigation notes** to maintain audit context.
+* **Get AI-powered incident response guidance** with structured recommendations for investigation, containment, and escalation.
 * **Execute multi-tool actions conversationally** within a single Slack thread.
 
 ```txt title="Slack Example 1"
@@ -243,7 +244,18 @@ Do NOT use MCP for:
 * Model training. Use the [Search Job API](/docs/api/search-job).
 * High-volume automated queries.
 
-MCP interactions incur token-based LLM processing costs, which can be significant for high-volume workloads. MCP is designed for conversational, agent-level interaction. For raw data access, standard APIs remain more efficient and cost-effective.
+### Understanding MCP cost dynamics
+
+MCP endpoints are cost-amplifying by design. A single conversational request can trigger multiple agent steps, tool calls, retries, and retrieval operations. Valid requests that appear reasonable can generate significantly higher costs than anticipated, particularly when:
+
+* Queries trigger broad semantic searches with high retrieval limits.
+* Requests induce multi-step reasoning or planning workflows.
+* Tool calls fail and trigger automatic retries.
+* Workflows continue executing after client disconnect.
+
+MCP is designed for conversational, agent-level interaction where cost per request is understood and monitored. For raw data access or high-volume operations, standard APIs remain more efficient and cost-effective.
+
+For detailed guidance on securing MCP against cost-based attacks, see our blog post: [Token Torching: How I'd burn your AI budget (so you can fix it)](https://www.sumologic.com/blog/token-torching-ai-attack).
 
 ## Security and data governance
 
@@ -252,6 +264,30 @@ MCP interactions incur token-based LLM processing costs, which can be significan
 * **No model training**. Customer data is never used to train AI models.
 * **Audit trails**. All MCP interactions are logged for compliance and security review.
 * **Multi-tenant isolation**. Tenant-level security controls are enforced at the gateway.
+
+## Monitoring and cost controls
+
+Implement these controls to prevent unintended or malicious cost escalation.
+
+### What to monitor
+
+Track these metrics per request, per identity, and per tool:
+
+* Cost per request (not just request volume).
+* Tool calls per request.
+* Agent step count.
+* Retry frequency.
+* Retrieval scope (top-k values, cross-namespace queries).
+* Endpoints ranked by cost, not just traffic.
+
+### Recommended controls
+
+* **Hard budgets**. Set per-request, per-identity, per-tool, and per-tenant spending limits.
+* **Validation gates**. Implement authentication, input validation, size limits, and retrieval caps before LLM processing begins.
+* **Progressive trust**. Start with restricted capabilities for new or untrusted identities. Expand access based on usage patterns.
+* **Per-tool quotas**. Limit or disable expensive tools for untrusted traffic.
+* **Kill switches**. Maintain the ability to disable high-cost tools or operations within seconds.
+* **Disconnect handling**. Ensure workflows terminate when clients disconnect to prevent billing for abandoned requests.
 
 ## FAQ
 
@@ -294,9 +330,19 @@ Agents connected via MCP run in your own environment, not within Sumo Logic infr
 
 </details>
 
+<details>
+<summary>How do I protect against cost-based attacks?</summary>
+
+MCP endpoints can be exploited to generate excessive costs through valid but expensive requests. Implement cost monitoring, set hard budgets per request and identity, apply validation before expensive operations, and ensure workflows terminate when clients disconnect.
+
+For comprehensive guidance, see our blog post: [Token Torching: How I'd burn your AI budget (so you can fix it)](https://www.sumologic.com/blog/token-torching-ai-attack).
+
+</details>
+
 ## Additional information
 
 * [Dojo AI overview](#)
 * [Cloud SIEM](/docs/cse)
 * [Search Job API](/docs/api/search-job)
 * [Model Context Protocol specification](https://modelcontextprotocol.io/)
+* [Token Torching: How I'd burn your AI budget (so you can fix it)](https://www.sumologic.com/blog/token-torching-ai-attack)
