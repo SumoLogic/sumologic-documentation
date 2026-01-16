@@ -3136,6 +3136,7 @@ integrations: [
           ],
         },
         'api/connections-management',
+        'api/data-deletion-rules',
         'api/content-management',
         'api/content-permissions',
         'api/dashboard',
