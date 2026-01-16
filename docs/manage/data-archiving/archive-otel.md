@@ -231,7 +231,7 @@ An ingestion job will have one of the following statuses:
 
 * **Pending**. The job is queued before scanning has started.
 * **Scanning**. The job is actively scanning for objects from your S3 bucket. Your objects could be ingesting in parallel.
-* **Ingesting* The job has completed scanning for objects and is still ingesting your objects.
+* **Ingesting**. The job has completed scanning for objects and is still ingesting your objects.
 * **Failed**. The job has failed to complete. Partial data may have been ingested and is searchable.
 * **Succeeded** The job completed ingesting and your data is searchable.
 
