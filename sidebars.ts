@@ -1154,6 +1154,7 @@ module.exports = {
          'manage/data-archiving/archive',
        ]
      },
+     'manage/deletion-requests',
    ],
   },
 ],
