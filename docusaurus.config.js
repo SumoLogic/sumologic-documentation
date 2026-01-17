@@ -222,21 +222,6 @@ module.exports = {
           },
         },
     ],
-    function removeHashPlugin() {
-      return {
-        name: 'remove-hash-plugin',
-        configureWebpack(config, isServer) {
-          if (isServer) return {};
-
-          return {
-            output: {
-              filename: '[name].js',
-              chunkFilename: '[name].js',
-            },
-          };
-        },
-      };
-    },
     ['@docusaurus/plugin-client-redirects',
       {
         redirects: Object.entries(cidRedirects).map(
