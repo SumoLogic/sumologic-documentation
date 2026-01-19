@@ -323,50 +323,41 @@ The first step to troubleshooting any bridge related issue is to access the brid
       ```bash
       journalctl -u 'automation-bridge-worker@*.service' --since "30 minutes ago" | grep -i "error"
       ```
-   * Alternatively, you can restart the bridge and follow the live logs while running the action:
-      ```bash
-      systemctl restart automation-bridge
-      journalctl -u automation-bridge-worker@1.service -b -f
-      ```
-   This will show logs in real time for worker 1; you can repeat for other workers if needed (@2.service, @3.service, @4.service and so on)
 
 `In both the setup, please check SOAR UI, as well, to see if the action reports any errors or timeout details.`
 #### Common Issues
 **Bridge starts and shutsdown immediately**
-   * Installation Token Name does not respect the requirements mentioned in [Get installation token](#get-installation-token). Check the logs for Error Code `401` <br /><img src={useBaseUrl('img/cloud-soar/bridge-errors/incorrect-bridge-token-prefix-error.png')} style={{border:'1px solid gray'}} alt="Incorrect Installation Token Prefix Screenshot" width="800"/><br />
-     
+   * Installation Token Name does not respect the requirements mentioned in [Get installation token](#get-installation-token). 
+   Check the logs and you should see logs lines similar to:
+      ```text
+      time="2026-01-19T12:29:23Z" level=error msg="Error response from request getBridgeConf" error=401 fields.time="2026-01-19 12:29:23.933671925 +0000 UTC m=+2.250123502"
+      time="2026-01-19T12:29:23Z" level=error msg="Error getting initial conf from cloud" error="Error getting configuration at startup: 401" fields.time="2026-01-19 12:29:23.933849675 +0000 UTC m=+2.250301252" workerIdentifier=worker@95138086f341
+      ```
       #### Resolution: 
       Create a new token or update the existing token to meet the required format.  
       Ensure the token **prefix starts with**:
       `csoar-bridge-token-`
 
 
-   * Installation Token has hit its limit and is now emitting 429 status code on starting a bridge. Check the logs for error code `429`. <br /><img src={useBaseUrl('img/cloud-soar/bridge-errors/rate-limit-hit-on-token.png')} style={{border:'1px solid gray'}} alt="Rate Limit Hit on Token Screenshot" width="800"/><br />
-
+   * Installation Token has hit its limit and is now emitting 429 status code on starting a bridge. Check the logs and you should see log lines similar to
+      ```text
+      time="2026-01-19T12:34:10Z" level=error msg="Error response from request getBridgeConf" error=429 fields.time="2026-01-19 12:34:10.887085335 +0000 UTC m=+1.143383376"
+      time="2026-01-19T12:34:10Z" level=error msg="Error getting initial conf from cloud" error="Error getting configuration at startup: 429" fields.time="2026-01-19 12:34:10.887275793 +0000 UTC m=+1.143573835" workerIdentifier=worker@7b5d7449c289
+      ```
       #### Resolution:
       * Start the bridge using a new installation token
 
 **Bridge runs for sometime and then goes offline**
    * This issue commonly arises when the installation token exceeds its permitted API call quota.
 When the limit is breached, the bridge responds with HTTP `429 (Too Many Requests)` status codes. The bridge logs generally include messages similar to the example below:
-       ```text
+      ```text
        time="2026-01-14T08:53:04Z" level=error msg="Error sending request keepAlive" 
        error="all retries failed for https://<SOAR_URL>/api/auth-gateway/csoar/bridge/keepAlive/⁠ with response: 
-       &{Status:429 Too Many Requests StatusCode:429 Proto:HTTP/2.0 ProtoMajor:2 ProtoMinor:0 
-       Header:map[Cache-Control:[no-cache, no-store, max-age=0, must-revalidate] Content-Length:[139] Content-Type:[application/json] Date:[Wed, 14 Jan 2026 08:52:59 GMT] Expires:[0] Pragma:[no-cache] 
-       Strict-Transport-Security:[max-age=15552000] X-Content-Type-Options:[nosniff] 
-       X-Frame-Options:[DENY] X-Xss-Protection:[0]] Body:0x400012db40 ContentLength:139 TransferEncoding:[] Close:false Uncompressed:false Trailer:map[] Request:0x4000184c80 TLS:0x4000020480}\n" 
-       fields.time="2026-01-14 08:53:04.575220959 +0000 UTC m=+3891.784975522"
-       ```
-       You can also look for the frequency of retries. If the frequency is high, that will explain the bridge going offline 
-       ```text
-       time="2026-01-14T08:53:09Z" level=error msg="retrying due to <nil> in 500ms\n" apiRoute="https://<SOAR-URL>/api/auth-gateway/csoar/bridge/keepAlive/" attempt=1 delay=500ms
-       ```
-
+       &{Status:429 Too Many Requests StatusCode:429 Proto:HTTP/2.0 ProtoMajor:2 ProtoMinor:0
+      ```
       #### Resolution
-     1. Ensure that the bridge is running the latest available version. <br />
-For bridge versions **v3.2.2 and later**, this issue is expected to **self-resolve** over time. Offline bridges will automatically reconnect once the system stabilizes. <br />
-`The recovery duration depends on the number of bridges sharing the same token.`
-     2. For a **quick but temporary workaround** consider one of the following options -
-         1. Start a new bridge using a fresh installation token.
-         2. If multiple bridges are operating with the same token, stop a subset of them and monitor the health of the remaining bridges until stability is restored.
+      1. Ensure that the bridge is running the latest available version. <br />
+      For bridge versions **v3.2.2 and later**, this issue is expected to **self-resolve** over time. 
+      Offline bridges automatically reconnect and update their status to **Online**, which can be monitored in the CSOAR bridge UI. <br />
+      `The recovery duration depends on the number of bridges sharing the same token.`
+      2. When multiple bridges are operating with the same token and self-healing is slow, **a quick workaround** is to stop a subset of the bridges and monitor the health of the remaining bridges until stability is restored.
