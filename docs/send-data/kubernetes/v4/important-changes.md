@@ -138,5 +138,4 @@ sumologic:
 ```
 Please notice the older configuration used `exporter` in table entry whereas the new configuration uses `exporters`.
 
-With the new configuration, all the exporters with similar statements can be grouped under the same table entry.
-Internally, sumologic helm chart will convert this configuration into Routing connector configurations.
+With the new configuration, all the exporters with similar statements can be grouped under the same table entry. Internally, Sumo Logic Helm Chart will convert this configuration into Routing connector configurations.
