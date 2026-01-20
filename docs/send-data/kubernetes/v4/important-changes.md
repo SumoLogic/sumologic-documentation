@@ -105,7 +105,7 @@ kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-
 
 This Helm Chart automatically creates the necessary Collector and Sources in Sumo. Up until this point, these were generic HTTP sources accepting data in different formats. As Sumo now has native support for the OTLP protocol used by OpenTelemetry, we've decided to switch to using these new sources by default. This is a completely transparent change **unless** you use the `_sourceName` or `_source` fields in your Sumo queries.
 
-### Use Routing connector from release 4.19 onwards (Breaking Change)
+### Use Routing connector from release 4.19 onwards (breaking change)
 
 Starting from release 4.19, the Routing connector is used by default. This connector is a replacement for the existing routing processor. Routing processor has been deprecated and removed from the `otel-collector-contrib`. If your Kubernetes config is still referring to those configurations, you need to update it to use the Routing connector.
 
