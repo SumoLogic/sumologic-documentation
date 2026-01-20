@@ -105,3 +105,41 @@ kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-
 
 This Helm Chart automatically creates the necessary Collector and Sources in Sumo. Up until this point, these were generic HTTP sources accepting data in different formats. As Sumo now has native support for the OTLP protocol used by OpenTelemetry, we've decided to switch to using these new sources by default. This is a completely transparent change **unless** you use the `_sourceName` or `_source` fields in your Sumo queries.
 
+### Use Routing connector from release 4.19 onwards (Breaking Change)
+
+Starting from release 4.19, the Routing connector is used by default. This connector is a replacement for the existing routing processor.
+Routing processor has been deprecated and removed from the otel-collector-contrib and if your k8s config is still referring to those 
+configurations, you will need to update it to use the Routing connector.
+
+#### How to upgrade?
+
+Routing configurations are defined under sumologic.logs.otelcol.routing.table config key.
+Earlier, routing configurations were defined as the following keys:
+1. sumologic.logs.otelcol.routing.table.exporter
+2. sumologic.logs.otelcol.routing.table.statement
+
+```shell
+Older Config:
+sumologic:
+  logs:
+    otelcol:
+      routing:
+        table:
+          - exporter: <exporter1-name>
+            statement: <routing-statement>
+          - exporter: <exporter2-name>
+            statement: <routing-statement>
+
+New Config:
+sumologic:
+  logs:
+    otelcol:
+     routing:
+       table:
+         - exporters: [<exporter1-name>, <exporter2-name>]
+           statement: <routing-statement>
+```
+Please notice the older configuration used `exporter` in table entry whereas the new configuration uses `exporters`.
+
+With the new configuration, all the exporters with similar statements can be grouped under the same table entry.
+Internally, sumologic helm chart will convert this configuration into Routing connector configurations.
