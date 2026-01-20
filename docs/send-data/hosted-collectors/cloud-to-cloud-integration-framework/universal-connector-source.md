@@ -625,7 +625,7 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 </details>
 
 :::note
-This source supports up to **512 MB** of memory by default in single API response. For further requirements please contact the **Sumo Logic Support**.
+By default, this source supports up to *512 MB* of memory in a single API response. For higher limits or additional requirements, contact Sumo Logic Support.
 :::
 
 ## Additional resources
