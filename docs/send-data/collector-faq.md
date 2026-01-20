@@ -462,7 +462,7 @@ See details on the supported [Timestamps, Time Zones, Time Ranges, and Date For
 - **Searchable Time** refers to the additional processing time required to make logs available for searching after they are received by the Sumo Logic system. This processing includes enrichment, indexing, and storage, all of which contribute to the overall Searchable Time. See [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time/) for more details. See [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time) for details.
 
 :::note
-If Enable Timestamp Parsing is not selected for your Source, Sumo Logic automatically sets the message time to be equivalent to the receipt time or searchable time.
+If Enable Timestamp Parsing is not selected for your Source, Sumo Logic automatically sets the message time to be equivalent to the receipt time.
 :::
 
 #### Time zone configuration
