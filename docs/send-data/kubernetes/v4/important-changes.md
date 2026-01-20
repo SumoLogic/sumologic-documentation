@@ -107,7 +107,7 @@ This Helm Chart automatically creates the necessary Collector and Sources in Sum
 
 ### Use Routing connector from release 4.19 onwards (breaking change)
 
-Starting from release 4.19, the Routing connector is used by default. This connector is a replacement for the existing routing processor. Routing processor has been deprecated and removed from the `otel-collector-contrib`. If your Kubernetes config is still referring to those configurations, you'll need to update it to use the Routing connector.
+Starting from release 4.19, the Routing connector is used by default. This connector is a replacement for the existing routing processor. Routing processor has been deprecated and removed from the `otel-collector-contrib`. If your Kubernetes config is still referring to those configurations, you need to update it to use the Routing connector.
 
 #### How to upgrade
 
