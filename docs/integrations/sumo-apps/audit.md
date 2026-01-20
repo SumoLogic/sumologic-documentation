@@ -243,8 +243,8 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name                                                   | Description                                                                                                | Alert Condition | Recover Condition |
 |:-------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|:----------------|:------------------|
-| `Log Ingest Throttling`                                | This alert is triggered when logs are throttled for 15 min window.                                         | Count >= 1      | Count < 1         |
-| `Metric Ingest Throttling`                             | This alert is triggered when metrics are throttled for 15 min window.                                      | Count >= 1      | Count < 1         |
+| `Log Ingest Throttling`                                | This alert is triggered when logs are throttled for a 15 minute window.                                         | Count >= 1      | Count < 1         |
+| `Metric Ingest Throttling`                             | This alert is triggered when metrics are throttled for a 15 minute window.                                      | Count >= 1      | Count < 1         |
 | `Monitor Deleted Alert`                                | This alert is triggered whenever a monitor is deleted.                                                     | Count >= 1      | Count < 1         |
 | `High number of password modification or resets Alert` | This alert is triggered when multiple password resets or modifications are detected in a small time frame. | Count > 5       | Count < = 5       |
 | `High 4XX and 5XX Errors`                              | This alert is triggered when high 4XX/5XX errors are detected.                                             | Count > 20      | Count < = 20      |
