@@ -1398,6 +1398,7 @@ module.exports = {
             'search/get-started-with-search/build-search/search-templates',
             'search/get-started-with-search/build-search/set-time-range',
             'search/get-started-with-search/build-search/use-receipt-time',
+            'search/get-started-with-search/build-search/use-searchable-time',
             'search/get-started-with-search/build-search/use-url-to-run-search',
           ],
         },

@@ -1,23 +1,17 @@
 ---
 id: use-searchable-time
-title: Use Searchable Time (Beta)
-sidebar_label: Use Searchable Time (Beta)
+title: Use Searchable Time
+sidebar_label: Use Searchable Time
 description: You can display search results in the order when the logs become available for search.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
-
 <!-- Originally added as a beta article with DOCS-785. -->
 
 **Searchable Time** refers to the additional processing time required to make logs available for search after they are received by the Sumo Logic system. This processing includes enrichment, indexing, and storage, all of which contribute to the overall Searchable Time.
 
-Previously, it was recommended to use receipt time instead of message time to avoid issues with missing duplicate data. However, this often led to inconsistent error messages due to variable ingestion latency and non-linear receipt time indexing. **Searchable Time** resolves this issue by marking the time only when the data is truly searchable. This ensures running queries with non-overlapping but exhaustive time ranges will prevent any gaps or duplication in the data.
+This resolves the inconsistent error messages due to variable ingestion latency and non-linear receipt time indexing issues by marking the time only when the data is truly searchable. This ensures running queries with non-overlapping but exhaustive time ranges will prevent any gaps or duplication in the data.
 
 :::info
 Currently, **Searchable Time** is only available for the Log Search UI page, Schedule Searches, Saved Searches, Dashboards, and Search Job API queries.
@@ -41,7 +35,7 @@ Follow the below steps to run a scheduled search by Searchable Time:
 1. Enter your query in the search text box and click **Save As..**.
 1. In the **Save Item** pop-up, select **Searchable Time** from the timestamp dropdown.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-scheduled-search.png')} alt="searchable-time-scheduled-search" style={{border:'1px solid gray'}} width="500" />
 
-### Run a search using Searchable Time in dashboard
+### Create a dashboard using Searchable Time 
 
 :::note
 **Searchbale Time** will not be available for *Metrics* or *Spans* query.
