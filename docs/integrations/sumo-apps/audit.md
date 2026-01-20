@@ -239,7 +239,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Audit App Alerts
+### Audit app alerts
 
 | Name                                                   | Description                                                                                                | Alert Condition | Recover Condition |
 |:-------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|:----------------|:------------------|
