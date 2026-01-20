@@ -36,10 +36,12 @@ The critical areas for monitoring in Kubernetes include the control plane, indiv
 
 <img src={useBaseUrl('img/kubernetes/Intro_K8s_architecture.png')} alt="Intro to Kubernetes architecture" style={{border: '1px solid gray'}} width="600>" />
 
-### Control Plane
+### Control plane
+
 The Kubernetes control plane manages how Kubernetes communicates with your cluster. The various parts of the control plane work together in managing the health and performance of a cluster. The control plane consists of the API server, etcd, controller manager, and scheduler. Each part of the control plane has specific areas that should be monitored for the optimum health and performance of your cluster.
 
 #### API Server - kube-apiserver
+
 The API server is the front door to Kubernetes. Any changes you make in the environment are communicated through the API server. The API server uses all your resources to commit the changes inside the cluster. For the kube-apiserver, you should monitor the following:
 * API server latency
 * Requests per minute (RPM)
@@ -47,12 +49,12 @@ The API server is the front door to Kubernetes. Any changes you make in the envi
 
 #### etcd
 
-The etcd of the control plane is a value store that Kubernetes uses this for storing all of the desired states for the cluster. Changes in the cluster are compared to the desired state to determine the necessary response. For etcd, you should monitor the following:
+The etcd of the control plane is a value store that Kubernetes uses for storing all of the desired states for the cluster. Changes in the cluster are compared to the desired state to determine the necessary response. For etcd, you should monitor the following:
 * Leader changes
-* Quorum - if quorum is lost, etcd falls into a read-only state and you cannot make changes to the API or get new state coming back from your cluster
-* Disk space - if you lose your backup for etcd you may lose all the state for the entire cluster
+* Quorum - if quorum is lost, etcd falls into a read-only state and you cannot make changes to the API or get new state coming back from your cluster.
+* Disk space - if you lose your backup for etcd you may lose all the state for the entire cluster.
 
-#### Controller Manager
+#### Controller manager
 
 The controller manager is responsible for continually coalescing the running state of the cluster versus the desired state. The controller manager monitors all changes made to the API server to see if the changes are in alignment with the desired state of the cluster, and is in constant contact with the cloud provider. The controller manager checks to see if all nodes are running and that there are enough pods; continually iterating to make sure the cluster maintains the desired state. For the controller manager, you should monitor:
 
