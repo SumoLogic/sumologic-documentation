@@ -111,10 +111,9 @@ Starting from release 4.19, the Routing connector is used by default. This conne
 
 #### How to upgrade?
 
-Routing configurations are defined under sumologic.logs.otelcol.routing.table config key.
-Earlier, routing configurations were defined as the following keys:
-1. sumologic.logs.otelcol.routing.table.exporter
-2. sumologic.logs.otelcol.routing.table.statement
+Routing configurations are defined under the `sumologic.logs.otelcol.routing.table` config key. Earlier, routing configurations were defined as the following keys:
+* `sumologic.logs.otelcol.routing.table.exporter`
+* `sumologic.logs.otelcol.routing.table.statement`
 
 ```shell
 Older Config:
