@@ -107,28 +107,75 @@ This Helm Chart automatically creates the necessary Collector and Sources in Sum
 
 ### Use Routing connector from release 4.19 onwards (breaking change)
 
-Starting from release 4.19, the Routing connector is used by default. This connector is a replacement for the existing routing processor. Routing processor has been deprecated and removed from the `otel-collector-contrib`. If your Kubernetes config is still referring to those configurations, you need to update it to use the Routing connector.
+Starting from release 4.19, the Routing connector is used by default. This connector is a replacement for the existing routing processor. Routing processor has been deprecated and removed from the `otel-collector-contrib`. If your Kubernetes config is still referring to those configurations, you'll need to update it to use the Routing connector.
 
-#### How to upgrade?
+#### How to upgrade
 
-Routing configurations are defined under the `sumologic.logs.otelcol.routing.table` config key. Earlier, routing configurations were defined as the following keys:
-* `sumologic.logs.otelcol.routing.table.exporter`
-* `sumologic.logs.otelcol.routing.table.statement`
-Older configuration:
-```shell
+With the new configuration:
+
+* The table entry key `exporter` has changed to `exporters` (plural).
+* Multiple exporters with the same routing statement can now be grouped in a single table entry.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Newer configuration"
+  values={[
+    {label: 'Newer configuration', value: 'Newer configuration'},
+    {label: 'Older configuration', value: 'Older configuration'},
+  ]}>
+
+<TabItem value="Newer configuration">
+
+Newer configuration (4.19+).
+
+```yaml
 sumologic:
   logs:
     otelcol:
       routing:
         table:
-          - exporter: <exporter1-name>
-            statement: <routing-statement>
-          - exporter: <exporter2-name>
-            statement: <routing-statement>
-       table:
-         - exporters: [<exporter1-name>, <exporter2-name>]
-           statement: <routing-statement>
+          - exporters: [exporter1-name]
+            statement:
+          - exporters: [exporter2-name]
+            statement:
 ```
-Please notice the older configuration used `exporter` in table entry whereas the new configuration uses `exporters`.
 
-With the new configuration, all the exporters with similar statements can be grouped under the same table entry. Internally, Sumo Logic Helm Chart will convert this configuration into Routing connector configurations.
+And here's the newer configuration (4.19+) with grouping. Recommended when exporters share the same statement.
+
+```yaml
+sumologic:
+  logs:
+    otelcol:
+      routing:
+        table:
+          - exporters: [exporter1-name, exporter2-name]
+            statement:
+```
+
+</TabItem>
+<TabItem value="Older configuration">
+
+Old configuration (before 4.19).
+
+```yaml
+sumologic:
+  logs:
+    otelcol:
+      routing:
+        table:
+          - exporter: exporter1-name
+            statement:
+          - exporter: exporter2-name
+            statement:
+```
+
+</TabItem>
+</Tabs>
+
+
+Routing configurations are still defined under `sumologic.logs.otelcol.routing.table`.
+
+Internally, Sumo Logic Helm Chart will convert this configuration into Routing connector configurations.
