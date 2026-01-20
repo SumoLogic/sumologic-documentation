@@ -624,6 +624,10 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
   <div>If you leave the time parsing configuration blank, it will cause the source to use current time for the collected logs. Be sure to configure the HTTP response log ingestion configuration section to ensure time parsing is correctly handled. The source will enter an error health status if time parsing is configured and is unsuccessful.</div>
 </details>
 
+:::note
+This source supports up to **512 MB** of memory by default in single API response. For further requirements please contact the **Sumo Logic Support**.
+:::
+
 ## Additional resources
 
 * Blog: [Break down barriers to log collection with Sumo Logic’s Universal Connector](https://www.sumologic.com/blog/universal-connector/)
