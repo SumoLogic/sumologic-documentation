@@ -15,4 +15,4 @@ Obtain the token to use in an auth header when you configure an HTTP source or r
 * [Configure an HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source)
 * [Create an OTLP/HTTP Source](/docs/send-data/hosted-collectors/http-source/otlp/#create-an-otlphttpsource)
 * [Generate a New URL for an HTTP Source](/docs/send-data/hosted-collectors/http-source/generate-new-url/)
-* [Terraform sumologic_token resource](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/token). This resource has an `encoded_token_and_url` attribute for the encoded token for collector registration.
+* Terraform [sumologic_token](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/token) resource. This resource has an `encoded_token_and_url` attribute for the encoded token for collector registration.
