@@ -13,6 +13,7 @@ resource "sumologic_cloud_to_cloud_source" "salesforce_source" {
       "inmemory_lookup":true,
       "collectAuditData":true,
       "collectEventLogFileData":true,
+      "fullEventLogFileMonitoring":true,
       "password":"********",
       "fields":{      
         "_siemForward":false
