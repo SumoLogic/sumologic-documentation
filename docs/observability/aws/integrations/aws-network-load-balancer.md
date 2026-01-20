@@ -13,9 +13,7 @@ The AWS Network Load Balancer dashboards provide insights to ensure that your ne
 
 ## Metrics types
 
-The AWS Network Load Balancer app uses the following logs and metrics:
-
-* [AWS Network Load Balancer metrics](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-cloudwatch-metrics.html)
+The AWS Network Load Balancer app uses [AWS Network Load Balancer metrics](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-cloudwatch-metrics.html).
 
 ### Sample queries  
 
