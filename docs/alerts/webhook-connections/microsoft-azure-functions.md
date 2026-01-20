@@ -5,6 +5,8 @@ sidebar_label: Microsoft Azure Functions
 description: You can trigger an Azure Function directly from a Sumo Logic alert by configuring a webhook connection.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 You can trigger an Azure Function directly from a Sumo Logic alert by configuring a webhook connection. Once you set up the webhook connection, you can use it in a [Scheduled Search](schedule-searches-webhook-connections.md). Currently, Azure functions are not supported in [Monitors](/docs/alerts/monitors).
 
 For example, you can create a scheduled search that triggers an Azure function when an administrator changes a user’s permissions. This function can then update a database to document the changes for audit purposes.
@@ -37,15 +39,16 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 Configure the Webhook connection to trigger the Azure function:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
-1. On the **Connections** page click **Add**.
-1. Select **Azure Functions**.
-1. In the **Create Connection** dialog, configure:
-    * **Name.** Enter the name of the connection.
-    * (Optional) **Description**, enter a description for the connection.
-    * **URL.** Enter the function URL for the endpoint from the previous section.
-    * (Optional) **Authorization Header,** enter an authorization header, which may include an authorization token.
-    * (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-    * **Alert Payload**. Enter a JSON object in the format required. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
-    * In the **Recovery Payload** section, you can customize your recovery notification.
-1. To test the connection, click **Test Alert or Test Recovery**. If successful, you'll see a `200 OK` response message.
-1. Click **Save**.
+1. On the **Connections** page, click **+ Add**.
+1. For **Connection Type**, select **Azure Functions** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/azure-functions-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+1. In the **Connection Settings** dialog, enter:
+    * **Name**. Enter a name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
+    * **URL**. Enter the function URL for the endpoint from the previous section.
+    * (Optional) **Authorization Header**. Enter an authorization header, which may include an authorization token.
+    * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
+      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-azure-functions.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+1. Under **Alert Payload**, enter a JSON object in the format required. For details on variables that can be used as parameters within your JSON object, see [Configure Webhook payload variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables).
+1. Under **Recovery Payload**, you can customize your recovery notification.
+1. Click **Test Alert** or **Test Recovery** to test the connection. If successful, you'll see a `200 OK` response message.
+1. Click **Save**.
