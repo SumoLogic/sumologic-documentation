@@ -447,7 +447,7 @@ Use the following tips for working with historical data:
 
 ## Troubleshooting time discrepancies
 
-In most scenarios, the message time, receipt time, and searchable time of a log message in Sumo Logic should be almost the same, within a minute of each other. However, network latency, random (not continuous) spikes in data volume, and service disruptions can cause delays, leading to a discrepancy between message time, receipt time, and searchable time. Large discrepancies can lead to incorrect events being displayed, and may even cause search performance issues. On some occasions, it can also prevent Dashboards from populating with data.
+In most scenarios, the message time, receipt time, and searchable time of a log message in Sumo Logic should be almost the same, within a minute of each other. However, network latency, random (not continuous) spikes in data volume, and service disruptions can cause delays, leading to a discrepancy between message time, receipt time, and searchable time. Large discrepancies can lead to incorrect events being displayed, and may even cause search performance issues. On some occasions, it can also prevent dashboards from populating with data.
 
 This page explains the elements that can be involved in time discrepancies and offers solutions for troubleshooting your problem.
 
