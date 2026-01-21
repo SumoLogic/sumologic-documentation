@@ -570,7 +570,7 @@ Make sure that you're viewing Running Collectors or All Collectors in the S
 
 Collected data should be searchable within a couple of minutes. You can run a search based on when Sumo Logic received your data by running a search by Receipt Time or run a search based on when the log data is ready for search after they are received by the Sumo Logic system by Searchable Time. Try specifying the Collector with the metadata field `_collector` and the Collector name, like `_collector=<name>`.
 
-If your user account is not an administrator check your Role assignment for any search filters that may be restricting access to the data.
+If your user account is not an administrator check your role assignment for any search filters that may be restricting access to the data.
 
 #### Verify that your Collectors are running
 
