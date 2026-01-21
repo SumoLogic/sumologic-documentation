@@ -459,7 +459,7 @@ See details on the supported [Timestamps, Time Zones, Time Ranges, and Date For
 
 * **Message time** represents the time of your log events. This is parsed from your logs by the Collector. When adding a Source to a Collector, most users choose to automatically detect timestamps in their logs and parse them by selecting **Extract timestamp information from log file entries** in the Source configuration settings.
 * **Receipt time** is the timestamp the log message was received by the Collector. See [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) for details.
-* **Searchable Time** refers to the additional processing time required to make logs available for searching after they are received by the Sumo Logic system. This processing includes enrichment, indexing, and storage, all of which contribute to the overall Searchable Time. See [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time/) for more details.
+* **Searchable Time** refers to the additional processing time required to make logs available for searching after they are received by the Sumo Logic system. This processing includes enrichment, indexing, and storage, all of which contribute to the overall searchable time. See [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time/) for more details.
 
 :::note
 If Enable Timestamp Parsing is not selected for your Source, Sumo Logic automatically sets the message time to be equivalent to the receipt time.
