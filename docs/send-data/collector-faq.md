@@ -503,7 +503,7 @@ In this scenario, there is no time zone in the sample message at all. However, t
 
 #### Troubleshooting a misconfigured time zone
 
-If you are experiencing apparent delays during ingest (receiving data), select the "Use Receipt Time" check box under the time picker. This will present data in the order in which it was received by Sumo Logic, as well as display the timestamp that has been detected/applied.
+If you are experiencing apparent delays during ingest (receiving data), select the **Use Receipt Time** check box under the time picker. This will present data in the order in which it was received by Sumo Logic, as well as display the timestamp that has been detected/applied.
 
 <img src={useBaseUrl('img/send-data/UseReceiptTime_chekcbox.png')} alt="Use receipt time checkbox" style={{border: '1px solid gray'}} width="800" />
 
