@@ -21,16 +21,16 @@ Currently, **Searchable Time** is only available for the Log Search UI page, Sch
 
 ### Run a search using Searchable Time
 
-Follow the below steps to run a search by Searchable Time:
+Follow the below steps to run a search by searchable time:
 
 1. Enter your query in the search text box.
 1. Choose the time range for the query.
-1. Click the gear icon to open the **Search Config** menu and toggle **Searchable Time** on.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-option.png')} alt="searchable-time-option" style={{border:'1px solid gray'}} width="500" />     
+1. Click the gear icon to open the **Search Config** menu and select **Searchable Time** timestamp option.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-option.png')} alt="searchable-time-option" style={{border:'1px solid gray'}} width="500" />     
 1. Review the search results for wide discrepancies between message time, receipt time, and searchable time.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-results-messages-tab.png')} alt="searchable-time-results-messages-tab" style={{border:'1px solid gray'}} width="800" />
 
 ### Run a scheduled search using Searchable Time
 
-Follow the below steps to run a scheduled search by Searchable Time:
+Follow the below steps to run a scheduled search by searchable time:
 
 1. Enter your query in the search text box and click **Save As..**.
 1. In the **Save Item** pop-up, select **Searchable Time** from the timestamp dropdown.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-scheduled-search.png')} alt="searchable-time-scheduled-search" style={{border:'1px solid gray'}} width="500" />
@@ -41,7 +41,7 @@ Follow the below steps to run a scheduled search by Searchable Time:
 **Searchbale Time** will not be available for *Metrics* or *Spans* query.
 :::
 
-Follow the below steps to run a search using the Searchable Time in the dashboard:
+Follow the below steps to run a search using the searchable time in the dashboard:
 
 1.  [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. 
 1. Select a panel type by clicking the corresponding icon.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="600" />
@@ -53,7 +53,7 @@ Follow the below steps to run a search using the Searchable Time in the dashboar
 
 ### Run a search by Searchable Time using Search Job API
 
-To create a search, refer to the [Search Job API Documentation](/docs/api/search-job/#create-a-search-job). Below mentioned parameter has been updated due to addition of Searchable time feature:
+To create a search, refer to the [Search Job API Documentation](/docs/api/search-job/#create-a-search-job). Below mentioned parameter has been updated due to addition of searchable time feature:
  
 | Parameter | Type | Required | Description |
 | :-- | :-- | :-- | :-- | 
@@ -65,7 +65,7 @@ If both `runByReceiptTime` and `intervalTimeType` parameters are present then th
 
 ### Create a dashboard with Searchable Time
 
-To create a dashboard, refer to the [Search Job API Documentation](/docs/api/dashboard/). Below mentioned parameter has been updated due to addition of Searchable time feature:
+To create a dashboard, refer to the [Search Job API Documentation](/docs/api/dashboard/). Below mentioned parameter has been updated due to addition of searchable time feature:
 
 | Parameter | Type | Required | Description |
 | :-- | :-- | :-- | :-- | 
