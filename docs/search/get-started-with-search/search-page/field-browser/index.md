@@ -22,7 +22,7 @@ In addition to the fields found in your logs, the Field Browser shows **Time**, 
   :::info
   The **Receipt Time** field will only be displayed in the field browser when it is included as field in the query or when the **Use the Receipt Time** option for time interval type is toggled on.
   :::
-- **Searchable Time** refers to the additional processing time required to make logs available for searching after they are received by the Sumo Logic system. This processing includes enrichment, indexing, and storage, all of which contribute to the overall Searchable Time. See [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time/) for more details.
+- **Searchable Time** refers to the additional processing time required to make logs available for searching after they are received by the Sumo Logic system. This processing includes enrichment, indexing, and storage, all of which contribute to the overall searchable time. See [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time/) for more details.
   :::note
   The **Searchable Time** field will only be displayed in the field browser.
   :::
