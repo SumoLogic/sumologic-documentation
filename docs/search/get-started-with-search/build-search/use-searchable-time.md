@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <!-- Originally added as a beta article with DOCS-785. -->
 
-**Searchable Time** refers to the additional processing time required to make logs available for search after they are received by the Sumo Logic system. This processing includes enrichment, indexing, and storage, all of which contribute to the overall Searchable Time.
+**Searchable Time** refers to the additional processing time required to make logs available for search after they are received by the Sumo Logic system. This processing includes enrichment, indexing, and storage, all of which contribute to the overall searchable time.
 
 This resolves the inconsistent error messages due to variable ingestion latency and non-linear receipt time indexing issues by marking the time only when the data is truly searchable. This ensures running queries with non-overlapping but exhaustive time ranges will prevent any gaps or duplication in the data.
 
