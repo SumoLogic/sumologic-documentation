@@ -14,27 +14,50 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 For Azure SQL Managed Instance, you can collect the following logs and metrics:
 
-* **Resource Usage Statistics**. To learn more about the different [log category types](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?tabs=azure-portal&view=azuresql#instances-in-azure-sql-managed-instance) and [schemas](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?tabs=azure-portal&view=azuresql#resource-usage-stats-for-managed-instances) collected for Azure SQL Managed Instances, refer to the Azure documentation.
-* **Audit Logs**. These logs include database events and Microsoft Support operations for your instances. To learn more about the log schema, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/audit-log-format?view=azuresql#subheading-1).
+* Resource usage statistics
+* DevOps operations audit logs
+* SQL security audit event
+
+Azure SQL Managed Instance metrics are available in the [Microsoft.Sql/managedInstances](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/monitoring-sql-managed-instance-azure-monitor-reference?view=azuresql#supported-metrics-for-microsoftsqlmanagedinstances) namespace. For more details on Azure SQL Managed Instance logs and metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/monitoring-sql-managed-instance-azure-monitor-reference?view=azuresql).
 
 ## Setup
 
-Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
+Azure service sends monitoring data to Azure Monitor, which can then [stream data to an Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
 
-* Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+* Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Eventhubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+* Activity logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Eventhubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/). We recommend you create a separate source for activity logs. If you are already collecting these logs, you can skip this step.
+* Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
-You must explicitly enable diagnostic settings for each Azure SQL Managed Instance you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
+You must explicitly enable diagnostic settings for each Azure SQL Managed Instance that you want to monitor. You can forward logs to the same Eventhub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/SQLManagedInstance/Logs`.
+When you configure the Eventhubs source or Azure metrics source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/SQLManagedInstance/Logs`, `Azure/SQLManagedInstance/ActivityLogs`, and `Azure/SQLManagedInstance/Metrics`.
+
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+
+### Configure metrics collection
+
+import MetricsSource from '../../reuse/metrics-source.md';
+
+<MetricsSource/>
 
 ### Configure logs collection
 
-In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
+#### Diagnostic logs
 
-1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform below steps for each Azure SQL Managed Instance that you want to monitor.
-   * Choose `Stream to an event hub` as the destination.
-   * Select `allLogs`.
-   * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-3. Enable the Server audit by following instructions after Step 7 as specified in [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/auditing-configure?view=azuresql#set-up-auditing-for-your-server-to-event-hubs-or-azure-monitor-logs).
+In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Eventhub.
+
+1. To set up the Azure Eventhubs source in Sumo Logic, refer to [Azure Eventhubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+1. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform below steps for each Azure SQL Managed Instance that you want to monitor.
+    * Choose `Stream to an Eventhub` as the destination.
+    * Select `allLogs`.
+    * Use the Eventhub namespace and Eventhub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Managed-SQL-Configure-Diagnostic-Logs.png')} alt="Azure SQL Managed Instance Tag Location" style={{border: '1px solid gray'}} width="800" />
+1. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure SQL Managed Instance Tag Location" style={{border: '1px solid gray'}} width="400" />
+
+#### Activity logs (optional)
+
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
+
+<ActivityLogs/>
 
