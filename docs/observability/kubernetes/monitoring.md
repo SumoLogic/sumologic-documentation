@@ -70,11 +70,11 @@ To discover and view related content, select the graph data point you are inte
 Select links from the **Summary** tab, to go directly to:
 
 * [Linked dashboards](/docs/dashboards/panels/modify-chart#link-dashboards)
-* Recommended dashboards - Currently, only dashboards from the Kubernetes App are supported.
+* Recommended dashboards - Currently, only dashboards from the Kubernetes app are supported.
 
 ### Custom dashboards
 
-You can make your own custom dashboards to show up in the view by using the stack linking capability within Dashboards.
+You can make your own custom dashboards to show up in the view by using the stack linking capability within dashboards.
 
 In order to link a dashboard to an existing Kubernetes hierarchy, your entity key in Stack Linking must be the same as the explored entity on the view.
 
@@ -100,7 +100,7 @@ Once you have created the stack linking, your custom dashboard should appear in 
 
 <img src={useBaseUrl('img/kubernetes/K8s_Views_overview.png')} alt="Kubernetes views overview" style={{border: '1px solid gray'}} width="800" />
 
-Health and performance data appears in the dashboard on the right for the view you are investigating: node, deployment, service, or namespace. The Sumo Logic Dashboard framework is unique in its ability to show logs and metrics in a seamless integration with the same dashboard.
+Health and performance data appears in the dashboard on the right for the view you are investigating: node, deployment, service, or namespace. The Sumo Logic dashboard framework is unique in its ability to show logs and metrics in a seamless integration with the same dashboard.
 
 In the following example, we chose the Kubernetes Node View and selected the k8s-freno-2 cluster. We then selected the Kubernetes - Cluster Overview dashboard, for a high-level view of the health and performance of the cluster.
 
@@ -146,7 +146,7 @@ You can add custom fields to collectors for more intuitive searches, partitio
 Custom metadata is usually set up by your administrator. Check with your site administrator before adding a custom key-value pair to a collector.
 :::
 
-The following task shows you how to create a custom field for a collector. In this process, you assign a custom key-value pair in the field to tag the metadata. In this example, we create two fields with a key-value pairs - one for a cluster and one for a pod. 
+The following task shows you how to create a custom field for a collector. In this process, you assign a custom key-value pair in the field to tag the metadata. In this example, we create two fields with a key-value pairs, one for a cluster and one for a pod. 
 
 To add a custom field to a collector, do the following:
 
@@ -154,9 +154,9 @@ To add a custom field to a collector, do the following:
 1. Select the collector to which you want to add a custom key-value pair. In this example, we've selected the Falco collector.<br/><img src={useBaseUrl('img/kubernetes/MM_Collection_Select_Collector.png')} alt="Select collector" style={{border: '1px solid gray'}} width="800" /><br/>
     The Edit Collector dialog appears.
 1. Click **Add Field**.<br/><img src={useBaseUrl('img/kubernetes/MM_Add-Field.png')} alt="Add field" style={{border: '1px solid gray'}} width="600" />
-1. Enter a Field Name and Value in the respective text fields. In this example, we created a field for a **cluster** with the label **k8s.dev** and a pod with the name **pod_test** and label **k8s.test**. This allows you to easily search for log data for that cluster or pod.
-    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark appears when the field exists and is enabled in the Fields table schema.
-    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point appears when the field doesn't exist yet, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.<br/><img src={useBaseUrl('img/kubernetes/MM_Fields_Key-Value-Pairs.png')} alt="Fields key-value pairs" style={{border: '1px solid gray'}} width="600" />
+1. Enter a field name and value in the respective text fields. In this example, we created a field for a **cluster** with the label **k8s.dev** and a pod with the name **pod_test** and label **k8s.test**. This allows you to easily search for log data for that cluster or pod.
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark appears when the field exists and is enabled in the fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point appears when the field doesn't exist yet, or is disabled, in the fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the fields table schema is provided. If a field is sent to Sumo that does not exist in the fields schema or is disabled it is ignored, known as dropped.<br/><img src={useBaseUrl('img/kubernetes/MM_Fields_Key-Value-Pairs.png')} alt="Fields key-value pairs" style={{border: '1px solid gray'}} width="600" />
 1. Click **Save**.
 
 Now, any logs sent to this Collector will have these key-value pairs associated with it. With this association, you can search for `cluster=k8s.dev` or `pod_test=k8s.test` to return your logs.
@@ -169,11 +169,11 @@ To use metadata to view Kubernetes components and display Kubernetes label resul
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. 
 1. Indicate the metadata namespace. In this example, we entered `namespace=sumologic`.<br/><img src={useBaseUrl('img/kubernetes/MWT_namespace.png')} alt="namespace=sumologic" style={{border: '1px solid gray'}} width="800" />
-1. Click **Start** to run the query, then under Hidden Fields on the Messages tab, click **namespace** to display the metadata for that Kubernetes component. Notice that the namespace field moves Hidden Fields to Display Fields.<br/><img src={useBaseUrl('img/kubernetes/MWT_namespace_Display_Fields.png')} alt="Namespace display fields" style={{border: '1px solid gray'}} width="500" />
+1. Click **Start** to run the query, then under **Hidden Fields** on the **Messages** tab, click **namespace** to display the metadata for that Kubernetes component. Notice that the namespace field moves **Hidden Fields** to **Display Fields**.<br/><img src={useBaseUrl('img/kubernetes/MWT_namespace_Display_Fields.png')} alt="Namespace display fields" style={{border: '1px solid gray'}} width="500" />
 1. To view metadata for a key-value pair, enter the key-value pair in the query text field. In our example, we wanted to view the metadata for the prometheus container and entered `container=prometheus`.
 1. Then we expanded the search range by changing the time interval from the last 15 minutes to the **Last 60 minutes**.
 1. To further investigate the container, we clicked **Logreduce**, which groups common log messages into signature groupings. 
-1. To examine the details of the smaller set of signatures that appear, under Select Count we selected. Oftentimes when troubleshooting a problem, our lesser quantity contains the root cause.<br/><img src={useBaseUrl('img/kubernetes/MWT_LogReduce_1.png')} alt="Select Count" style={{border: '1px solid gray'}} width="800" /><br/>
+1. To examine the details of the smaller set of signatures that appear, under **Select Count** we selected. Oftentimes when troubleshooting a problem, our lesser quantity contains the root cause.<br/><img src={useBaseUrl('img/kubernetes/MWT_LogReduce_1.png')} alt="Select Count" style={{border: '1px solid gray'}} width="800" /><br/>
     The warning `Endpoints ended with: too old resource version` may be something to investigate or just the indication of an ongoing upgrade.
 1. To view data for other Kubernetes components, we can enable them one by one by selecting the checkbox next to **namespace**, **cluster**, **container**, **pod**, **service**, and/or **Source Host**.
 
