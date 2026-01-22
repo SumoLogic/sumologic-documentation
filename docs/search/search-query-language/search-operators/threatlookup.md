@@ -134,17 +134,24 @@ You cannot use the cat search operator with the `SumoLogic_ThreatIntel` source.
 
 <!-- Remove the following "Upcoming change" section at GA. -->
 
-## Upcoming change
+## Returned results
 
-The behavior of the `threatlookup` operator is changing in an upcoming release. Previously, rows without matches in threat intelligence sources were excluded from search results. With the new behavior, `threatlookup` will return one result row for each input indicator, even if there is no threat intel match. In such cases, the normalized threatlookup fields (for example, `_threatlookup.source`, `_threatlookup.confidence`, etc.) will be `null`.
+The `threatlookup` operator returns one result row for each input indicator, even if there is no threat intel match. In such cases, the normalized threatlookup fields (for example, `_threatlookup.source`, `_threatlookup.confidence`, etc.) will be `null`.
 
-### Impact
+For example, let's say you have this log message:
+<br/>`198.51.100.7 - - [02/Dec/2025:08:40:01 +0000] "GET /admin/login.php HTTP/1.1" 404 250 "-" "Mozilla/5.0"`
 
-If you have saved queries, dashboards, or other workflows relying on the current behavior, they may return additional rows after this change. This could require you to update your logic to explicitly exclude rows with no matches.
+When you run this query:
+```
+| parse regex "(?<client_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+| threatlookup singleIndicator client_ip
+```
 
-### How to adapt
+One result row would be returned, containing `_threatlookup.*` fields as null if `198.51.100.7` is not in your threat intel sources. Otherwise, `threatlookup` fields would get enriched accordingly.
 
-To retain the previous filtering and exclude rows without threat intel matches, add an explicit non-match filtering check, for example:
+### Exclude rows without threat intel matches
+
+If you want to exclude rows without threat intel matches, add an explicit non-match filtering check, for example:
 
 ```
 _index=sec_record*
@@ -155,18 +162,6 @@ _index=sec_record*
 | count by _timeslice
 ```
 
-If you do not add this check, one row will be returned for every input, regardless of matches.
 
-For example, given the log message:
-`198.51.100.7 - - [02/Dec/2025:08:40:01 +0000] "GET /admin/login.php HTTP/1.1" 404 250 "-" "Mozilla/5.0"`
 
-The previous query was:
 
-```
-* | parse regex "(?<client_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
-| threatlookup singleIndicator client_ip
-```
-
-Before, no result is returned if `198.51.100.7` is not in your threat intel sources.
-
-After, one result row is returned, containing `_threatlookup.*` fields as `null`.
