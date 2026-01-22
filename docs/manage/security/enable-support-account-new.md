@@ -37,7 +37,7 @@ To enable support account access to your organization for specific Sumo Logic su
 
 #### Who can access my account?
 
-When a support user requests access, he or she is asked for the explicit reason why access is required. Additionally, you can control the amount of time the agent can access your account to ensure it is limited to the shortest amount of time necessary to complete the investigation.
+When a support user requests access, they are asked for the explicit reason why access is required. Additionally, you can control the amount of time the agent can access your account to ensure it is limited to the shortest amount of time necessary to complete the investigation.
 
 #### Do I need to create a special user account? 
 
