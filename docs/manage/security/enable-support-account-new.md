@@ -35,10 +35,18 @@ To enable support account access to your organization for specific Sumo Logic su
 
 ## FAQ
 
-#### Who can access my account?
+### Who can access my account?
 
 When a support user requests access, they are asked for the explicit reason why access is required. Additionally, you can control the amount of time the support user can access your account to ensure it is limited to the shortest amount of time necessary to complete the investigation.
 
-#### Do I need to create a special user account? 
+### Do I need to create a special user account? 
 
 No, the Sumo Logic support user is automatically added to your organization's account. If you accidentally delete the user, you can just disable, then re-enable the **Enable Support Account Access** checkbox, and the Sumo Logic support user will be recreated. However, any content created or shared from the previous iteration of the Sumo Logic support user will be deleted.
+
+### How do I find out who enables or disables support account access?
+
+Support account access events are recorded in the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index). To find these events, run the following query:
+
+```text
+_index=sumologic_audit_events _sourceCategory=supportAccount
+```
