@@ -345,9 +345,10 @@ The first step to troubleshooting any bridge related issue is to access the brid
       time="2026-01-19T12:34:10Z" level=error msg="Error getting initial conf from cloud" error="Error getting configuration at startup: 429" fields.time="2026-01-19 12:34:10.887275793 +0000 UTC m=+1.143573835" workerIdentifier=worker@7b5d7449c289
       ```
       #### Resolution:
-      * Start the bridge using a new installation token
+      * Consider upgrading bridge to version v3.2.2 and later.  
+      * Start the bridge using a new installation token.
 
-**Bridge runs for sometime and then goes offline**
+**Bridge runs for a while and then goes offline**
    * This issue commonly arises when the installation token exceeds its permitted API call quota.
 When the limit is breached, the bridge responds with HTTP `429 (Too Many Requests)` status codes. The bridge logs generally include messages similar to the example below:
       ```text
@@ -357,7 +358,7 @@ When the limit is breached, the bridge responds with HTTP `429 (Too Many Request
       ```
       #### Resolution
       1. Ensure that the bridge is running the latest available version. <br />
-      For bridge versions **v3.2.2 and later**, this issue is expected to **self-resolve** over time. 
-      Offline bridges automatically reconnect and update their status to **Online**, which can be monitored in the CSOAR bridge UI. <br />
+      For bridge versions v3.2.2 and later, this issue should go away on its own after a while. The bridge will automatically try again after some time and will reconnect once the rate limits are cleared,
+      which can be monitored in the CSOAR bridge UI. <br />
       `The recovery duration depends on the number of bridges sharing the same token.`
       2. When multiple bridges are operating with the same token and self-healing is slow, **a quick workaround** is to stop a subset of the bridges and monitor the health of the remaining bridges until stability is restored.
