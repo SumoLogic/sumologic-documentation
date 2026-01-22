@@ -41,4 +41,4 @@ When a support user requests access, they are asked for the explicit reason why 
 
 #### Do I need to create a special user account? 
 
-No, the Sumo Logic support user is automatically added to your organization's account. If you accidentally delete the user, you can just disable, then re-enable the **Support Account Access** checkbox, and the Sumo Logic support user will be recreated. However, any content created or shared from the previous iteration of the Sumo Logic support user will be deleted.
+No, the Sumo Logic support user is automatically added to your organization's account. If you accidentally delete the user, you can just disable, then re-enable the ** Enable  Support Account Access** checkbox, and the Sumo Logic support user will be recreated. However, any content created or shared from the previous iteration of the Sumo Logic support user will be deleted.
