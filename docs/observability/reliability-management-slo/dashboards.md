@@ -7,21 +7,21 @@ description: Learn how to view and configure reliability management (SLO) dashbo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Pre-built SLO Dashboards
+## Pre-built SLO dashboards
 
 Each SLO comes with a pre-built dashboard that provides an active view into the health and status of your SLO, including the current SLI, the remaining error budget, an error budget burndown chart as well as historical performance of your SLO.
 
-<br/><img src={useBaseUrl('img/observability/slo-dashboard-alert.png')} alt="Reliability Management SLO SLI" />
+<br/><img src={useBaseUrl('img/observability/slo-dashboard-alert.png')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="800" />
 
 <br/>
 
 SLO dashboards are also the first point of investigation once you get alerted via [SLO monitors](/docs/observability/reliability-management-slo/alerts/#create-an-slo-monitor). Click **View SLO Dashboard** from the alert notifications to begin investigating the alerts on your SLOs.
 
-<br/><img src={useBaseUrl('img/observability/slo-email-alert-click.png')} alt="Reliability Management SLO SLI" width="350"/>
+<br/><img src={useBaseUrl('img/observability/slo-email-alert-click.png')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="350"/>
 
-### Dashboard Panels
+### Dashboard panels
 
-Each SLO dashboard contains the following information:<br/><img src={useBaseUrl('img/observability/slo-dash-annotated.png')} alt="Reliability Management SLO SLI" />
+Each SLO dashboard contains the following information:<br/><img src={useBaseUrl('img/observability/slo-dash-annotated.png')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="800" />
 
 <table>
   <tr>
@@ -51,31 +51,31 @@ Each SLO dashboard contains the following information:<br/><img src={useBaseUrl(
 </table>
 
 
-### Setting SLO Data Granularity
+### Setting SLO data granularity
 
-#### Time Ranges
+#### Time ranges
 
-To modify the time range, select and drag across dates to zoom in further. This can be useful if you want to zoom in for granular details, especially for charts with larger compliance periods.<br/><img src={useBaseUrl('img/observability/2022-08-02_14-29-19.gif')} alt="Reliability Management SLO SLI" />
+To modify the time range, select and drag across dates to zoom in further. This can be useful if you want to zoom in for granular details, especially for charts with larger compliance periods.<br/><img src={useBaseUrl('img/observability/2022-08-02_14-29-19.gif')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="800" />
 
-#### Compliance Period
+#### Compliance period
 
-You can also filter by compliance period to view your past activity and plan ahead.<br/><img src={useBaseUrl('img/observability/compliance-period-filter.png')} alt="Reliability Management SLO SLI" />
+You can also filter by compliance period to view your past activity and plan ahead.<br/><img src={useBaseUrl('img/observability/compliance-period-filter.png')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="600" />
 
-#### Open in Log Search
+#### Open in log search
 
 You can launch a Log Search session directly from an SLO dashboard panel, giving you the ability to drill down into further granular details.
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > SLOs**. 
 1. Double-click on any SLO line item.
-1. Hover over the panel > Click the kebab icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" width="150"/>
+1. Hover over the panel > Click the kebab icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" style={{border: '1px solid gray'}} width="150"/>
 
 :::tip
-Once opened in **Log Search**, you can click on **Add to Dashboard** button to add SLO dashboard panels to your own custom dashboards.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" width="200"/>
+Once opened in **Log Search**, you can click **Add to Dashboard** to add SLO dashboard panels to your own custom dashboards.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" style={{border: '1px solid gray'}} width="200"/>
 :::
 
 
-## Custom SLO Dashboards
+## Custom SLO dashboards
 
-### SLO Output Data as Log Messages
+### SLO output data as log messages
 
 Sumo Logic continuously computes data for your SLOs behind the scenes. This data, which powers your SLO dashboards, is also made available as log messages, and can be used to build custom dashboards. You can execute the following query to access your SLO data in logs:
 
@@ -101,7 +101,7 @@ It has the following schema:
 These log messages may be delayed by up to an hour, as the system ensures consistency to account for ingest delay of source telemetry.
 :::
 
-### SLO Lookup Table
+### SLO lookup table
 
 The SLO lookup table is a fully managed [lookup table](/docs/search/lookup-tables/create-lookup-table/#introduction-to-lookup-tables), that contains the latest definitions of all your SLOs. It can be use to enrich the data in your `sumologic_slo_output` view to build custom dashboards.
 
@@ -114,13 +114,13 @@ To join the results of your SLO precomputed data from `_view=sumologic_slo_outpu
   | lookup * from sumo://content/slos on sloId, sloVersion
   ```
 
-### Custom Dashboard Examples
+### Custom dashboard examples
 
-#### Error Budget Remaining for all SLOs
+#### Error budget remaining for all SLOs
 
 Say you want a high-level overview into the health of your SLOs. A honeycomb visualization on the error budget remaining percentage is a nice way to achieve that.
 
-<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" width="450"/>
+<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" style={{border: '1px solid gray'}} width="450"/>
 
 You can use the following query to construct the above:
 
@@ -158,4 +158,4 @@ CAT sumo://content/slos
 | where !(tags = "{}")
 ```
 
-<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="slo-tags-query.png" />
+<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="slo-tags-query.png" style={{border: '1px solid gray'}} width="800" />

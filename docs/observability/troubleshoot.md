@@ -13,13 +13,13 @@ Now that you have identified the issue and isolated the cause to a specific serv
 
 <img src={useBaseUrl('img/observability/root-cause-wheel.png')} alt="Root cause wheel" style={{border: '1px solid gray'}} width="600" />
 
-## Find Interesting Patterns in your Log Data 
+## Find interesting patterns in your log data 
 
 You can also leverage [Behavior Insights](/docs/search/behavior-insights) to understand interesting log signature patterns in your data, like connection timeouts, errors, or exceptions. This will help you uncover the needle in a haystack, so you can get to the root cause quickly, without having to go through tons of data manually.  
 
 <img src={useBaseUrl('img/observability/behavior-insights-example.png')} alt="Behavior insights example" style={{border: '1px solid gray'}} width="800" />
 
-## Ad Hoc Searching to get to the root cause
+## Ad hoc searching to get to the root cause
 
 You can use [Log Search](/docs/search/get-started-with-search/search-page) to do ad hoc searches on your data to quickly validate or debunk hypotheses and narrow down your investigation scope. You can also do rich analytics on unstructured data to uncover patterns that will help you find interesting insights that help you find the root cause. 
 
