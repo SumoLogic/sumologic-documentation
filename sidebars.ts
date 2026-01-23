@@ -101,6 +101,7 @@ module.exports = {
                 'send-data/opentelemetry-collector/install-collector/ansible',
                 'send-data/opentelemetry-collector/install-collector/puppet',
                 'send-data/opentelemetry-collector/install-collector/chef',
+                'send-data/opentelemetry-collector/install-collector/upgrade-opentelemetry-collector',
               ]
             },
             {
