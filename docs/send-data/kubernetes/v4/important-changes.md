@@ -129,21 +129,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="Newer configuration">
 
-Newer configuration (4.19+).
-
-```yaml
-sumologic:
-  logs:
-    otelcol:
-      routing:
-        table:
-          - exporters: [exporter1-name]
-            statement:
-          - exporters: [exporter2-name]
-            statement:
-```
-
-And here's the newer configuration (4.19+) with grouping. Recommended when exporters share the same statement.
+Newer configuration (4.19+) with grouping, which we recommend when exporters share the same statement.
 
 ```yaml
 sumologic:
