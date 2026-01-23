@@ -41,7 +41,7 @@ To further pinpoint the problem with our cluster, we investigate the namespace 
 
 ## Step 3: Drill down into a pod
 
-Once we've determined which pod is having problems, we can drill down into the pod for more granular data. For example, we can select the Details icon for a panel to view that data in a search, or review the actual logs in the Log Stream panel.
+Once we've determined which pod is having problems, we can drill down into the pod for more granular data. For example, we can select the details icon for a panel to view that data in a search, or review the actual logs in the Log Stream panel.
 
 <img src={useBaseUrl('img/kubernetes/Explore_TS_Pod_drill-down.png')} alt="Explore TS Pod drill-down" style={{border: '1px solid gray'}} width="800" />
 
