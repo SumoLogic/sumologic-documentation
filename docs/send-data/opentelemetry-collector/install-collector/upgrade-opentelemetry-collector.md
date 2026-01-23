@@ -6,10 +6,6 @@ sidebar_label: Upgrade OpenTelemetry Collector
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/ansible-logo.png')} alt="ansible" width="40"/>
-
-## Upgrade the Sumo Logic OpenTelemetry collector
-
 To ensure you have the latest features, security patches, and performance improvements, it's recommended to keep your Sumo Logic OpenTelemetry Collector up to date.
 
 Below are the commands and steps to upgrade the collector depending on your operating system.
@@ -43,7 +39,7 @@ $path="${env:TEMP}\install.ps1"
 . $path -InstallationToken "<TOKEN>"
 ```
 **Important Points**:
-- Windows installations require an installation token. Replace <TOKEN> with your valid Sumo Logic installation token.
+- Windows installations require an installation token. Replace `<TOKEN>` with your valid Sumo Logic installation token.
 - The script automatically downloads and installs (or upgrades) the latest version of the collector.
 - Ensure PowerShell is being run with administrative privileges.
 
