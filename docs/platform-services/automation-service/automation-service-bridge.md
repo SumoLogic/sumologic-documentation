@@ -305,3 +305,71 @@ public.ecr.aws/u5z5f8z6/sumologic/csoar-automation-bridge:latest
 Privileged containers are special containers with elevated privileges and direct access to the host system. Unlike their non-privileged counterparts, which are isolated and restricted in their capabilities, privileged containers can perform tasks requiring higher-level access. They achieve this by interacting with the host kernel and accessing sensitive resources, including hardware devices and network interfaces.
 
 One key difference between privileged and non-privileged containers is the level of isolation. Non-privileged containers are meticulously sandboxed and have limited access to the host system, thus providing an extra layer of security. Contrarily, privileged containers operate with fewer restrictions, enabling them to execute advanced operations beyond the reach of non-privileged containers.
+
+## Troubleshooting
+
+The first step to troubleshooting any bridge-related issue is to access the bridge logs.
+
+* If the bridge is running as a Docker container:
+   1. List all bridge containers:
+      ```bash
+      docker ps -a | grep "automation-bridge*"
+      ```
+   1. Extract container ID of the bridge in contention and check logs for any error: 
+      ```bash
+      docker logs CONTAINER_NAME_OR_ID | grep -i "error"
+      ```
+
+* If the bridge is running as a systemd service (deb/rpm package), check the logs for all bridge workers around the time the failing actions were triggered using `journalctl` with the `--since` flag.
+
+   For example:
+      ```bash
+      journalctl -u 'automation-bridge-worker@*.service' --since "30 minutes ago" | grep -i "error"
+      ```
+
+In both the setups, check the **Bridge** tab in the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui) as well, to see if the action reports any errors or timeout details.
+
+### Common issues
+
+   * #### Bridge starts and shutsdown immediately
+
+      * #### Installation token name does not respect the requirements mentioned in [Get installation token](#get-installation-token).
+
+         Check the logs and you should see logs lines similar to:
+         ```text
+         time="2026-01-19T12:29:23Z" level=error msg="Error response from request getBridgeConf" error=401 fields.time="2026-01-19 12:29:23.933671925 +0000 UTC m=+2.250123502"
+         time="2026-01-19T12:29:23Z" level=error msg="Error getting initial conf from cloud" error="Error getting configuration at startup: 401" fields.time="2026-01-19 12:29:23.933849675 +0000 UTC m=+2.250301252" workerIdentifier=worker@95138086f341
+         ```
+      
+        ##### Resolution: 
+
+           * Create a new token or update the existing token to meet the required format. Ensure the token prefix starts with: `csoar-bridge-token-`
+
+      * #### Installation token has hit its limit and is now emitting 429 status code on starting a bridge
+
+        Check the logs and you should see log lines similar to:
+        ```text
+        time="2026-01-19T12:34:10Z" level=error msg="Error response from request getBridgeConf" error=429 fields.time="2026-01-19 12:34:10.887085335 +0000 UTC m=+1.143383376"
+        time="2026-01-19T12:34:10Z" level=error msg="Error getting initial conf from cloud" error="Error getting configuration at startup: 429" fields.time="2026-01-19 12:34:10.887275793 +0000 UTC m=+1.143573835" workerIdentifier=worker@7b5d7449c289
+        ```
+
+        ##### Resolution:
+
+           * Consider upgrading bridge to version v3.2.2 and later.  
+           * Start the bridge using a new installation token.
+
+   * #### Bridge runs for a while and then goes offline
+
+      This issue commonly arises when the installation token exceeds its permitted API call quota.
+
+        When the limit is breached, the bridge responds with HTTP `429 (Too Many Requests)` status codes. The bridge logs generally include messages similar to the example below:
+        ```text
+        time="2026-01-14T08:53:04Z" level=error msg="Error sending request keepAlive" 
+        error="all retries failed for https://<SOAR_URL>/api/auth-gateway/csoar/bridge/keepAlive/⁠ with response: 
+        &{Status:429 Too Many Requests StatusCode:429 Proto:HTTP/2.0 ProtoMajor:2 ProtoMinor:0
+        ```
+
+          ##### Resolution:
+           * Ensure that the bridge is running the latest available version. 
+           * For bridge versions v3.2.2 and later, this issue should go away on its own after a while. The bridge will automatically try again after some time and will reconnect once the rate limits are cleared, which can be monitored in the **Bridge** tab of the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui). The recovery duration depends on the number of bridges sharing the same token. 
+           * When multiple bridges are operating with the same token and self-healing is slow, a quick workaround is to stop a subset of the bridges and monitor the health of the remaining bridges until stability is restored.
