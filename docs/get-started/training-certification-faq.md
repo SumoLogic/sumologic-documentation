@@ -7,8 +7,9 @@ description: Find answers to frequently asked questions about Sumo Logic trainin
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-<img src="/img/get-started/sumo-logic-academy-lightmode.png" alt="Sumo Logic Academy" className="light-mode-only" width="150" />
-<img src="/img/get-started/sumo-logic-academy-darkmode.png" alt="Sumo Logic Academy" className="dark-mode-only" width="150" />
+<img src={useBaseUrl('img/get-started/sumo-logic-academy-lightmode.png')} alt="Sumo Logic Academy" className="light-mode-only" width="150" />
+
+<img src={useBaseUrl('img/get-started/sumo-logic-academy-darkmode.png')} alt="Sumo Logic Academy" className="dark-mode-only" width="150" />
 
 <br/><br/>
 
