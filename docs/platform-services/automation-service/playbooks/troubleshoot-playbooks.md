@@ -120,10 +120,10 @@ When playbooks run, you can view the outcome for either a single playbook or for
 1. Select **View Executions**. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-view-executions.png')} alt="View Executions menu option" style={{border:'1px solid gray'}} width="800"/>
 1. The executions of the playbook are displayed.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-all.png')} alt="View a playbook's executions" style={{border:'1px solid gray'}} width="800"/>
       :::tip
-      Notice that the playbook's ID appears in the search bar at the top of the screen. Viewing executions of a playbook is one way to find the ID for the playbook.
+      Notice that the playbook's ID appears in the search bar at the top of the screen. Viewing executions of a playbook is one way to find the ID for a playbook.
       :::
 1. To see information about a specific execution:
-   1. Click the entry. Information about the execution displays.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-details.png')} alt="Playbook execution details" style={{border: '1px solid gray'}} width="800"/>
+   1. Click an entry. Information about the execution displays.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-details.png')} alt="Playbook execution details" style={{border: '1px solid gray'}} width="800"/>
    1. To view the information in a separate tab, click **View Execution Details**.
 
 ### View executions of all playbooks
