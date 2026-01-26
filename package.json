@@ -6,7 +6,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "docusaurus clear && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -199,6 +199,9 @@
     "lint-staged": ">=10",
     "prettier": "^2.4.1",
     "typescript": "^5.2.2"
+  },
+  "resolutions": {
+    "baseline-browser-mapping": "^2.9.15"
   },
   "browserslist": {
     "production": [

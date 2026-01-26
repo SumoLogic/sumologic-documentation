@@ -33,20 +33,15 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  headTags: [
+  scripts: [
     {
-      tagName: 'meta',
-      attributes: {
-        'http-equiv': 'Cache-control',
-        content: 'no-store, max-age=0',
-      },
+      src: 'https://www.clarity.ms/tag/v65u3toztl?ref=bwt',
+      async: true,
     },
   ],
-  // Temporarily removes Start Free Trial button conversion event tracking.
-  // To reinstate this, uncomment below and restore trackTrialClick.js file
-  //  clientModules: [
-  //    require.resolve('./src/client-modules/trackTrialClick.js'),
-  //  ],
+  clientModules: [
+    require.resolve('./src/client-modules/trackTrialClick.js'),
+  ],
   future: {
     v4: true,
     experimental_faster: true,
