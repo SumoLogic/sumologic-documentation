@@ -33,12 +33,6 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  scripts: [
-    {
-      src: 'https://www.clarity.ms/tag/v65u3toztl?ref=bwt',
-      async: true,
-    },
-  ],
   clientModules: [
     require.resolve('./src/client-modules/trackTrialClick.js'),
   ],
