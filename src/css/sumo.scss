@@ -257,6 +257,14 @@ html[data-theme='light'] {
 }
 
 
+[data-theme='light'] .dark-mode-only {
+  display: none;
+}
+
+[data-theme='dark'] .light-mode-only {
+  display: none;
+}
+
 /* General styling for the Support dropdown button */
 .support-menu-trigger {
   display: flex;
