@@ -33,6 +33,7 @@ module.exports = {
         'get-started/apps-integrations',
         'get-started/library',
         'get-started/system-requirements',
+        'get-started/sumo-logic-limits',
         'get-started/ai-machine-learning',
         'get-started/keyboard-shortcuts',
         'get-started/help',
