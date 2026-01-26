@@ -360,7 +360,7 @@ In both the setups, check the **Bridge** tab in the [Automation Service UI](/doc
 
    * #### Bridge runs for a while and then goes offline
 
-      * This issue commonly arises when the installation token exceeds its permitted API call quota.
+      This issue commonly arises when the installation token exceeds its permitted API call quota.
 
         When the limit is breached, the bridge responds with HTTP `429 (Too Many Requests)` status codes. The bridge logs generally include messages similar to the example below:
         ```text
