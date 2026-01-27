@@ -41,6 +41,7 @@ To configure Smartsheet Source:
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+1. (Optional) In **Base URL**, paste the endpoint base URL as per your region and environment. Default is `https://api.smartsheet.com/2.0`.
 1. In **Application (client) ID**, paste in the Client ID from the vendor's setup "Create a Developer Account and Register an App" steps.
 1. In **Client Secret**, paste in the Client Secret from the vendor's setup "Create a Developer Account and Register an App" steps.
 1. In **Oauth 2.0 Authorization Code**, paste in the Authorization Code from the vendor's setup "Create a Developer Account and Register an App" steps.
