@@ -92,7 +92,7 @@ The Cloud SOAR tool offers standard management of incident response events acros
 
 Cloud SOAR has been designed with interoperability for cybersecurity industry standards regulatory frameworks to be able to receive data from a wide assortment of cybersecurity industry vendors to enrich the available data gathered and correlated to offer better forensic analytics. Just to name a few of our quickly growing list of supported vendors: Palo Alto Networks, Cisco ThreatGrid and Umbrella, IBM Qradar, Splunk, McAfee, Encase Forensics.
 
-Cloud SOAR design and architecture follows cybersecurity Industry standards and regulatory frameworks, and adheres to best Industry practices to meet best cybersecurity practices followed by ISO, GDPR, OASIS, NIST, Sec Regulations, and more.
+Cloud SOAR design and architecture follows cybersecurity industry standards and regulatory frameworks, and adheres to best industry practices to meet best cybersecurity standards followed by ISO, GDPR, OASIS, NIST, Sec Regulations, and more.
 
 Cloud SOAR provides static egress for Cloud executions. IP addresses can be entered into the allowlist. For a list of Cloud SOAR addresses by region, contact [Support](https://support.sumologic.com/support/s/).
 
