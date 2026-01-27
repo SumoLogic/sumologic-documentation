@@ -27,7 +27,7 @@ You need the `Manage Event Extraction Rules` [role capability](/docs/manage/user
 1. Enter the following options in the **Create New Event Extraction Rule** page:<br/><img src={useBaseUrl('img/manage/event-extraction-rule/create-event-extraction-rule.png')} alt="create-event-extraction-rule" style={{border: '1px solid gray'}} width="500"/>
     1. **Log Query**. Enter the log search query for the event to filter the logs. 
         :::note
-          - You can optimize queries by limiting log volume, parsing and extracting only required fields, and using the fields operator to return only the data needed for event correlation and visualization.
+          - To optimize query performance, limit log volume, parse and extract only the necessary fields, and use the `fields` operator in [denylist mode](/docs/search/search-query-language/search-operators/fields/#denylist) to exclude unnecessary fields and return only what’s required for event correlation and visualization.".
           - This log query applies the same validation rules as those used for [Scheduled Views](/docs/manage/scheduled-views).
         :::
     1. **Preview**. Click the **Preview Log Messages** button to preview the log messages for the query entered,
