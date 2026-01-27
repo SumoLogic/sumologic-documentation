@@ -67,6 +67,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | app_client_id | String | Yes | `null` | The Smartsheet app client ID to collect from Smartsheet platform. |  |
 | client_secret | String | Yes | `null` | The Smartsheet app client secret to collect from Smartsheet platform. |  |
+| base_url | String | No | `https://api.smartsheet.com/2.0` | Base URL of the Smartsheet endpoint. |  |
 | authorization_code | String | Yes | `null` | The Smartsheet app client OAuth2 authorization code to collect from Smartsheet platform. |  |
 | polling_interval | Integer | Yes | 10 | How frequently the integration should poll to Smartsheet. |  |
 
