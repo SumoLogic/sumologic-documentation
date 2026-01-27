@@ -233,6 +233,7 @@ export const Footer = () => {
             </Tooltip>
           ))}
         </Stack>
+// Insert here
         <Stack
           alignItems='center'
           direction={{
