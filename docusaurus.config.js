@@ -36,6 +36,12 @@ module.exports = {
   clientModules: [
     require.resolve('./src/client-modules/trackTrialClick.js'),
   ],
+  scripts: [
+    {
+      src: 'https://www.clarity.ms/tag/v65u3toztl',
+      async: true,
+    },
+  ],
   future: {
     v4: true,
     experimental_faster: true,
