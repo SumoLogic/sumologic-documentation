@@ -25,7 +25,11 @@ You need the `Manage Event Extraction Rules` [role capability](/docs/manage/user
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Event Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Event Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Event Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Event Extraction Rules**. 
 1. Click the **+ Add Event Extraction Rule** button on the top right of the table.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/event-extraction-rule.png')} alt="event-extraction-rule" style={{border: '1px solid gray'}} width="800"/>
 1. Enter the following options in the **Create New Event Extraction Rule** page:<br/><img src={useBaseUrl('img/manage/event-extraction-rule/create-event-extraction-rule.png')} alt="create-event-extraction-rule" style={{border: '1px solid gray'}} width="500"/>
-    1. **Log Query**. Enter the log search query for the event to filter the logs. Optimize queries by limiting log volume, parsing and extracting only required fields, and using the fields operator to return only the data needed for event correlation and visualization.
+    1. **Log Query**. Enter the log search query for the event to filter the logs. 
+        :::note
+          - You can optimize queries by limiting log volume, parsing and extracting only required fields, and using the fields operator to return only the data needed for event correlation and visualization.
+          - This log query applies the same validation rules as those used for [Scheduled Views](/docs/manage/scheduled-views).
+        :::
     1. **Preview**. Click the **Preview Log Messages** button to preview the log messages for the query entered,
     1. **Event Configuration**:
         1. **Event Name**. A unique name for the event.
@@ -35,6 +39,9 @@ You need the `Manage Event Extraction Rules` [role capability](/docs/manage/user
         1. **Event Type**. Defines the category of the event - Deployment, Feature Flag Change, Infrastructure Change, or Configuration Change. This helps you in filtering, grouping, and analyzing events based on their nature.
     1. **Timeline Preview**. This previews how event markers will display in the histogram timeline on the logs page when this rule is active. This marker also displays the event type, source, and priority details. 
     1. **Advanced Settings (optional)**. Use this section if you want to compare values from parsed event fields with fields in incoming log messages. When the selected values match, the system displays a visual marker to highlight the match.
+      :::note
+        Use **Advanced Settings** if you need precise or strict match requirements. If not configured, Sumo Logic uses a best-effort approach to identify related events.
+      :::
         1. **Event Record Field**. Choose the field from the event record that you want to compare against incoming log data. Only extracted fields in query can be used for `eventFieldName` in correlation expression.
         1. **Match Type**. **Exact Match** is selected by default. This option creates a marker when the value in the incoming log exactly matches the value specified in the event record field.
         1. **Log Message Field**. Select the field from the incoming log message that should be compared with the chosen event record field.
