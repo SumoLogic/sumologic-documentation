@@ -56,8 +56,8 @@ The Enterprise Search Audit - User Insights dashboard provides a high-level view
 
 Use this dashboard to:
 
-* Monitor top users by search count, data scanned and retrieved across the account.
-* View the distribution of query time range.
+* Monitor top users by search count, data scanned, and retrieved across the account.
+* View the distribution of the query time range.
 * Identify top users for each query type in every tier.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-User-Insights.png')} alt="Enterprise Search Audit - User Insights" />
@@ -93,7 +93,7 @@ The Enterprise Search Audit - Failures KPIs and Breakdowns dashboard highlights 
 
 Use this dashboard to:
 
-* Track failure rate over time segmented by query type (Interactive Search, Interactive Dashboard, Monitors, Scheduled Searches).
+* Track failure rate over time, segmented by query type (Interactive Search, Interactive Dashboard, Monitors, Scheduled Searches).
 * Identify users and query types with the highest failure rates and volumes to target outreach and fixes.
 * Surface the slowest queries by p95 (and average) execution time to prioritize performance tuning.
 * Find the most expensive queries by data scanned (GB) and run count to reduce compute cost.
@@ -110,12 +110,12 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Enterprise Search Audit app alerts
 
-| Name                                                                                                                                              | Description                                                                                    | Alert Condition | Recover Condition |
-|:--------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------|:----------------|:------------------|
-| `Enterprise Search Audit - Data Retrieved Bytes Threshold`                                                                                        | This alert is triggered when data retrieved bytes goes over the set threshold value set in GB. | Count = 1       | Count < = 1       |
-| `Enterprise Search Audit - Elevated Search Rate Failure`                                                                                          | This alert is triggered when search rate failure is higher than the set alert value.           | Count > = 5     | Count < 5         |
-| `Enterprise Search Audit - Query Runtime Too High`                                                                                                | This alert is triggered when query runtime is higher than the set alert value.                 | Count > = 180   | Count < 180       |
-| `Enterprise Search Audit - Scanned Bytes Threshold`                                                                                               | This alert is triggered when query scanned bytes goes over the set threshold value.            | Count > 500     | Count < = 500     |
+| Name | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Enterprise Search Audit - Data Retrieved Bytes Threshold` | This alert is triggered when data retrieved bytes goes over the set threshold value set in GB. | Count = 1 | Count < = 1 
+| `Enterprise Search Audit - Elevated Search Rate Failure` | This alert is triggered when search rate failure is higher than the set alert value. | Count > = 5 | Count < 5 |
+| `Enterprise Search Audit - Query Runtime Too High` | This alert is triggered when query runtime is higher than the set alert value. | Count > = 180 | Count < 180 |
+| `Enterprise Search Audit - Scanned Bytes Threshold` | This alert is triggered when query scanned bytes goes over the set threshold value. | Count > 500 | Count < = 500 |
 
 
 ## Upgrade/Downgrade the Enterprise Search Audit app (Optional)
