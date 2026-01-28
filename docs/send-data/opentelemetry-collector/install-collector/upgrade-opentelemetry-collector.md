@@ -76,12 +76,7 @@ For Linux systems, FIPS packages use the otelcol-sumo-fips package name instead 
 Run the following command to upgrade to the latest FIPS-compliant version:
 
 ```
-Set-ExecutionPolicy RemoteSigned -Scope Process -Force
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
-$uri = "https://download-otel.sumologic.com/latest/download/install.ps1"
-$path="${env:TEMP}\install.ps1"
-(New-Object System.Net.WebClient).DownloadFile($uri, $path)
-. $path -InstallationToken "<TOKEN>" -Fips $True
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>" -Fips $True
 ```
 
 Important points:
