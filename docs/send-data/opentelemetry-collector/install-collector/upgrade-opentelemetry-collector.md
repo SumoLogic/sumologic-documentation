@@ -101,7 +101,7 @@ After upgrading, it's important to restart the collector process to apply any ch
 `sudo systemctl restart otelcol-sumo`
 
 :::note
-systems using different process managers, use the appropriate service restart command.
+Systems using different process managers use the appropriate service restart command.
 :::
 
 ## Step 3. Verify the version upgrade
