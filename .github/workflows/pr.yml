@@ -28,7 +28,7 @@ jobs:
           node-version: '22.x'
           cache: 'yarn'
       - name: Docusaurus Webpack cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: node_modules/.cache
           key: ${{ runner.os }}-webpack-cache-${{ hashFiles('yarn.lock') }}
