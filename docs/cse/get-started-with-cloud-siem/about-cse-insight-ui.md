@@ -87,6 +87,7 @@ From the HUD screen, list view, or board view, click an insight's name to see it
 1. **Enrichments**. Click this tab to view any enrichments that have been added to the insight, including the output of the [insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
 1. **Automations**. Click to view [automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) on the insight.
 1. **Comments.** Displays any comments that have been made on the insight, and a field for adding a comment.
+1. **Signals**. The [signal visualization area](#signal-visualization-area) displays the signals attached to the insight.
 
 ### Insight details pane
 
@@ -116,7 +117,7 @@ At the top of the insight details page, you’ll see a signal timeline that visu
 
 <img src={useBaseUrl('img/cse/top-bit.png')} alt="Signal visualization" style={{border: '1px solid gray'}} width="800"/>
 
-1. **Signals**. The signals link allows you to switch back to the signals view from the Enrichments view, described below. 
+1. **Signals**. The Signals tab displays information about when the signals fired.
 1. **Signal timeline**. The timeline shows how spread apart each signal in the insight is. You can use the timeline to visualize how long these events are spread over and how often the signals fire. 
 1. **Timeline controls**. The arrows on the far left and right sides allow you to toggle between each signal to show the details on each. You can also click a specific signal on the timeline to jump to those details. 
 1. **Legend**. Key to the symbols used to represent the signals:
@@ -134,7 +135,7 @@ At the top of the insight details page, you’ll see a signal timeline that visu
 
 Below the signal timeline, you’ll see a list of signals. By default, only attached signals are displayed.  
 
-<img src={useBaseUrl('img/cse/signal-list-area.png')} alt="Signal list area" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/cse/signal-list-area.png')} alt="Signal list area" style={{border: '1px solid gray'}} width="700"/>
 
 1. **Remove** button. Removes multiple signals selected with the checkbox. You cannot select all signals for removal. If you do, the **Remove** button is disabled and this message appears when you hover over it with your mouse: **Bulk removal of signals is disabled as a minimum of 1 signal must be attached to the insight. Deselect 1 or more signals to enable bulk removal.**
 1. **Checkbox**. Click to select multiple signals for removal. 
