@@ -35,7 +35,7 @@ Your external AI systems can query logs, manage insights, analyze dashboards, an
 
 * **Bring the best AI for your stack**. Integrate proprietary models or third-party copilots with Sumo Logic observability and security data.
 * **Accelerate workflows with AI assistance**. Use Sumo Logic telemetry as input for automated and analyst-driven workflows, with humans remaining in control of critical decisions.
-* **Work where you work**. Execute AI-powered queries from your IDE or collaboration tools without switching contexts.
+* **Work in your preferred environment**. Execute AI-powered queries from your IDE or collaboration tools without switching contexts.
 * **Future-proof your strategy**. Adopt new AI technologies as they emerge while maintaining Sumo Logic scale, security, and governance.
 
 ## Prerequisites
@@ -48,11 +48,21 @@ Your external AI systems can query logs, manage insights, analyze dashboards, an
 
 Configuration steps vary by tool. Refer to your specific tool's documentation for MCP setup instructions.
 
+<!-- Add example (e.g., VS Code or Slack) showing:
+Where to get OAuth credentials
+How to configure the MCP client
+How to verify the connection works-->
+
 ### Authentication
 
 Authenticate using the OAuth2 client credentials flow:
 
 1. Generate credentials via the Sumo Logic OAuth server.
+<!--
+Where in the UI to do this
+What scopes/permissions to request
+What the credential format looks like
+How to handle token refresh-->
 1. Use the credentials to generate an access token.
 1. Configure your MCP client with the token.
 
@@ -65,6 +75,8 @@ This follows the standard OAuth2 client credentials flow used by other MCP serve
 * Powered by Amazon Bedrock AgentCore.
 
 For example, to enable MCP in Slack, you deploy an orchestrator agent on the AWS AgentCore runtime. This agent communicates with Sumo Logic's MCP Server gateway via the standard MCP protocol, which then securely accesses Sumo Logic APIs and Dojo AI agents.
+
+<!-- Add visual diagram showing: Your [customer's] AI tools → Orchestrator Agent → MCP Server Gateway → Sumo Logic APIs/Dojo AI-->
 
 ## Example use cases
 
@@ -232,6 +244,12 @@ Tool identifiers are subject to change during the beta period.
 | `target_time_tool___Time_Tool`   | Parse time strings into epoch timestamps and retrieve the current timestamp. |
 | `x_amz_bedrock_agentcore_search` | Retrieve a filtered subset of available tools based on execution context.    |
 
+<!-- why do Tool name prefixes differ?
+target_alerts___
+sumo_logic_log_search
+x_amz_bedrock_agentcore_search  -->
+
+
 ## When to use MCP
 
 Use MCP for:
@@ -268,6 +286,8 @@ For detailed guidance on securing MCP against cost-based attacks, see our blog p
 ## Monitoring and cost controls
 
 Implement these controls to prevent unintended or malicious cost escalation.
+
+<!-- Default rate limits (if any)/Recommended quota values/ If Sumo Logic enforces any limits server-side -->
 
 ### What to monitor
 
@@ -338,6 +358,11 @@ MCP endpoints can be exploited to generate excessive costs through valid but exp
 For comprehensive guidance, see our blog post: [Token Torching: How I'd burn your AI budget (so you can fix it)](https://www.sumologic.com/blog/token-torching-ai-attack).
 
 </details>
+
+<!--## Troubleshooting
+Common error responses from the MCP Server
+How to handle authentication failures
+Retry strategies-->
 
 ## Additional information
 
