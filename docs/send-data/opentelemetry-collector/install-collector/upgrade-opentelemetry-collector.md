@@ -40,7 +40,7 @@ $path="${env:TEMP}\install.ps1"
 (New-Object System.Net.WebClient).DownloadFile($uri, $path)
 . $path -InstallationToken "<TOKEN>"
 ```
-**Important Points**:
+Important points:
 - Windows installations require an installation token. Replace `<TOKEN>` with your valid Sumo Logic installation token.
 - The script automatically downloads and installs (or upgrades) the latest version of the collector.
 - Ensure PowerShell is being run with administrative privileges.
