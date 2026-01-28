@@ -93,6 +93,10 @@ If no results are returned even for longer time ranges, it means you do not have
 
 ## Installing the Infrequent Data Tier app
 
+### Prerequisite
+
+Enable the `_view = sumologic_search_usage_per_query` index prior installation. See [Data Tiers](/docs/manage/partitions/data-tiers/) for instructions.
+
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>
