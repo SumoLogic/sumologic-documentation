@@ -1,6 +1,6 @@
 ---
 id: archive
-title: Archive Log Data to S3
+title: Archive Log Data to S3 using Installed Collectors
 description: Send data to an Archive that you can ingest from later.
 ---
 
