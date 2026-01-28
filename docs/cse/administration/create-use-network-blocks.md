@@ -21,7 +21,7 @@ In addition to labeling a network block, you can optionally mark a network block
 There is another way that IP addresses get marked as “Internal”. Cloud SIEM automatically marks RFC 1918 IP addresses, which aren’t routable on the Internet, as “Internal”.
 :::
 
-When you configure a network block, there is an option to suppress signals on the IP addresses within the block.
+When you configure a network block, there is an option to suppress signals on the IP addresses within the block. When signals are suppressed due to a network block, only signals with the primary entity as an IP address within the block are suppressed.
 
 :::note
 IP addresses in a network block for which signals are suppressed will not appear on the **Suppressed Entities** page in the Cloud SIEM UI. (You can’t manually unsuppress signals for an IP address that are suppressed due to its network block configuration.)

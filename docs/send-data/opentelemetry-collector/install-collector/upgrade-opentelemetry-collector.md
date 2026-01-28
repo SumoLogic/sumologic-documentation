@@ -33,14 +33,9 @@ For Debian-based systems, the command first updates the package lists quietly, t
 Run the following command to upgrade to the latest version:
 
 ```
-Set-ExecutionPolicy RemoteSigned -Scope Process -Force
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
-$uri = "https://download-otel.sumologic.com/latest/download/install.ps1"
-$path="${env:TEMP}\install.ps1"
-(New-Object System.Net.WebClient).DownloadFile($uri, $path)
-. $path -InstallationToken "<TOKEN>"
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force;[System.Net.ServicePointManager]::SecurityProtocol =[System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>"
 ```
-**Important Points**:
+Important points:
 - Windows installations require an installation token. Replace `<TOKEN>` with your valid Sumo Logic installation token.
 - The script automatically downloads and installs (or upgrades) the latest version of the collector.
 - Ensure PowerShell is being run with administrative privileges.
@@ -76,15 +71,10 @@ For Linux systems, FIPS packages use the otelcol-sumo-fips package name instead 
 Run the following command to upgrade to the latest FIPS-compliant version:
 
 ```
-Set-ExecutionPolicy RemoteSigned -Scope Process -Force
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
-$uri = "https://download-otel.sumologic.com/latest/download/install.ps1"
-$path="${env:TEMP}\install.ps1"
-(New-Object System.Net.WebClient).DownloadFile($uri, $path)
-. $path -InstallationToken "<TOKEN>" -Fips $True
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>" -Fips $True
 ```
 
-**Important Points**:
+Important points:
 
 - Add the `-Fips $True` parameter to install/upgrade the FIPS-compliant binary.
 - FIPS binaries only work on Windows systems with FIPS mode enabled.
@@ -114,7 +104,7 @@ You can also verify the collector's running state:
 
 `sudo systemctl status otelcol-sumo`
 
-**Additional Recommendations**:
+### Additional recommendations:
 - Always review release notes before upgrading to understand new features, bug fixes, or breaking changes.
 - Consider testing upgrades in a staging environment before applying to production.
-- Keep a backup of your configuration files (/etc/otelcol-sumo/config.yaml) before performing upgrades.
+- Keep a backup of your configuration files (`/etc/otelcol-sumo/config.yaml`) before performing upgrades.
