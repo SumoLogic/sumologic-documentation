@@ -19,7 +19,7 @@ With the OpenTelemetry-based approach, log data is sent to S3 using an OpenTelem
 **Sources** > **OpenTelemetry Collector** > **awss3exporter** > **Amazon S3**
 
 For S3 archiving, we use:
-- The `awss3exporter` component to upload data to S3.
+- The `[awss3exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/awss3exporter)` component to upload data to S3.
 - The `sumo_ic marshaller`, which formats the archived files so they are compatible with Sumo Logic’s ingestion process.
 
 ### Why use OpenTelemetry Collector for archiving logs to S3
