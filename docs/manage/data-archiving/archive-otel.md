@@ -46,7 +46,7 @@ These attributes can be set statically in configuration, or populated dynamicall
 ## Archive format
 
 :::important
-Only the `v2` archive format is supported when using OpenTelemetry Collector. The legacy `v1` format is deprecated for OpenTelemetry Collector and must not be used.
+Only the `v2` archive format is supported when using OpenTelemetry Collector. The legacy `v1` format is deprecated for OpenTelemetry Collector and must not be used. [Learn more](/docs/manage/data-archiving/archive/#archive-format)
 :::
 
 Archived files use the format:
