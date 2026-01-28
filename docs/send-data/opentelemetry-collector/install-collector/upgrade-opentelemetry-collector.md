@@ -84,7 +84,7 @@ $path="${env:TEMP}\install.ps1"
 . $path -InstallationToken "<TOKEN>" -Fips $True
 ```
 
-**Important Points**:
+Important points:
 
 - Add the `-Fips $True` parameter to install/upgrade the FIPS-compliant binary.
 - FIPS binaries only work on Windows systems with FIPS mode enabled.
