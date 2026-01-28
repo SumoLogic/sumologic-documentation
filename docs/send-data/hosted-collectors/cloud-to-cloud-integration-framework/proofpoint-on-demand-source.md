@@ -24,7 +24,7 @@ The Proofpoint PoD API is not public; you'll need to request details on the API
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min | [Log Service data](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-API-Reference/Get-Alerts) |
+| 5 min | Log Service data |
 
 ## Setup
 
