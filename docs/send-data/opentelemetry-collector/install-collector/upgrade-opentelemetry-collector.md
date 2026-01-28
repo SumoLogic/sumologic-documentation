@@ -33,12 +33,7 @@ For Debian-based systems, the command first updates the package lists quietly, t
 Run the following command to upgrade to the latest version:
 
 ```
-Set-ExecutionPolicy RemoteSigned -Scope Process -Force
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
-$uri = "https://download-otel.sumologic.com/latest/download/install.ps1"
-$path="${env:TEMP}\install.ps1"
-(New-Object System.Net.WebClient).DownloadFile($uri, $path)
-. $path -InstallationToken "<TOKEN>"
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force;[System.Net.ServicePointManager]::SecurityProtocol =[System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>"
 ```
 Important points:
 - Windows installations require an installation token. Replace `<TOKEN>` with your valid Sumo Logic installation token.
