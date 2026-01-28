@@ -27,6 +27,11 @@ jobs:
         with:
           node-version: '22.x'
           cache: 'yarn'
+      - name: Docusaurus Webpack cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules/.cache
+          key: ${{ runner.os }}-webpack-cache-${{ hashFiles('yarn.lock') }}
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Clear the Docusaurus site
