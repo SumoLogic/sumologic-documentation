@@ -84,7 +84,7 @@ From the HUD screen, list view, or board view, click an insight's name to see it
 1. **Left pane**. [Insight details pane](#insight-details-pane) showing a summary, the entity that caused the insight to be generated, and additional information.
 1. **Signals**. The [signal visualization area](#signal-visualization-area).
 1. **Entities**. Click to view [entities](#about-the-entities-tab-graph-view) on the signal.
-1. **Enrichments**. Click this tab to view any enrichments that have been added to the insight, including the output of the [insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
+1. **Enrichments**. Click this tab to view any enrichments that have been added to the insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
 1. **Automations**. Click to view [automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) on the insight.
 1. **Comments.** Displays any comments that have been made on the insight, and a field for adding a comment.
 1. **Signals**. The [signal visualization area](#signal-visualization-area) displays the signals attached to the insight.
