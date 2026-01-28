@@ -1154,6 +1154,7 @@ module.exports = {
        link: {type: 'doc', id: 'manage/data-archiving/index'},
        items: [
          'manage/data-archiving/archive',
+         'manage/data-archiving/archive-otel',
        ]
      },
    ],
@@ -2485,11 +2486,8 @@ integrations: [
         link: {type: 'doc', id: 'integrations/global-intelligence/index'},
         items: [
           'integrations/amazon-aws/global-intelligence-guardduty',
-          'integrations/global-intelligence/apache',
-          'integrations/global-intelligence/apache-tomcat',
           'integrations/amazon-aws/global-intelligence-cloudtrail-devops',
           'integrations/amazon-aws/global-intelligence-cloudtrail-secops',
-          'integrations/global-intelligence/nginx',
           'cse/records-signals-entities-insights/global-intelligence-security-insights',
         ],
       },

@@ -16,7 +16,7 @@ Dynamic Parsing extracts JSON fields when you run a query, at search time (run
 
 With this FER defined, any search on JSON data will automatically parse out its JSON fields, which you can then use within your search query, exactly like any other field. You have an option on the Search Page that allows you to control Dynamic Parsing. Dynamic Parsing is activated when a search is run in **Auto Parse Mode**.
 
-<img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png')} alt="auto parse mode option.png" style={{border: '1px solid gray'}} width="500"/>
+<img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png')} alt="auto parse mode option.png" style={{border: '1px solid gray'}} width="300"/>
 
 ## Key benefits
 
@@ -35,7 +35,7 @@ To use Dynamic Parsing
 1. Click the ⚙️ gear icon in the top-right corner.
 2. Toggle **Auto Parse Mode** on.
 
-<img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png')} alt="Auto parse mode option" style={{border: '1px solid gray'}} width="500"/>
+<img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png')} alt="Auto parse mode option" style={{border: '1px solid gray'}} width="300"/>
 
 ## Setting up Custom Run Time FERs (optional)
 
