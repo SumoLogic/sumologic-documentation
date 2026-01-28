@@ -114,7 +114,7 @@ You can also verify the collector's running state:
 
 `sudo systemctl status otelcol-sumo`
 
-**Additional Recommendations**:
+### Additional recommendations:
 - Always review release notes before upgrading to understand new features, bug fixes, or breaking changes.
 - Consider testing upgrades in a staging environment before applying to production.
 - Keep a backup of your configuration files (/etc/otelcol-sumo/config.yaml) before performing upgrades.
