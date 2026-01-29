@@ -20,7 +20,7 @@ The Sumo Logic Audit app uses Sumo Logic audit index events to present informati
 
 ### Prerequisite
 
-Enable the Audit index (`sumologic_audit`) prior installation. See [Enable the audit index](/docs/manage/security/audit-indexes/audit-index/#enable-the-audit-index) for instructions.
+Enable the Audit Index (`sumologic_audit`) prior to installation. See [Enable the audit index](/docs/manage/security/audit-indexes/audit-index/#enable-the-audit-index) for instructions.
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
