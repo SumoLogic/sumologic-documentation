@@ -2843,6 +2843,7 @@ integrations: [
             'cse/get-started-with-cloud-siem/insight-generation-process',
             'cse/get-started-with-cloud-siem/about-cse-insight-ui',
             'cse/get-started-with-cloud-siem/insight-summary',
+            'cse/get-started-with-cloud-siem/soc-analyst-agent',
             'cse/get-started-with-cloud-siem/cloud-siem-content-catalog',
             'cse/get-started-with-cloud-siem/onboarding-checklist-cse',
           ],
