@@ -103,6 +103,11 @@ jobs:
           WATCH_COMMIT=$(git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" rev-parse --verify HEAD)
           git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" push origin
           terminus workflow:wait --max 600 --commit $WATCH_COMMIT -- ${{ inputs.PANTHEON_SITE_ID }}.${{ env.PANTHEON_ENV }}
+      - name: Clear Pantheon cache
+        run: |
+          echo "Clearing Pantheon edge cache for ${{ inputs.PANTHEON_SITE_ID }}.${{ env.PANTHEON_ENV }}..."
+          terminus env:clear-cache ${{ inputs.PANTHEON_SITE_ID }}.${{ env.PANTHEON_ENV }}
+          echo "Cache cleared successfully"
       - name: Terminus logout
         if: always()
         run: |
