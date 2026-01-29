@@ -29,4 +29,4 @@ When you select the **Ask Mobot** button on the new **AI Investigation** tab in 
 
 <img src={useBaseUrl('img/cse/insight-agent-in-mobot.png')} alt="Mobot Investigation Agent" style={{border: '1px solid gray'}} width="600" />
 
-[Learn more](docs/cse/get-started-with-cloud-siem/soc-analyst-agent/).
+[Learn more](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/).
