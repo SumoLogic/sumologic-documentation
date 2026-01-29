@@ -12,7 +12,7 @@ This topic has information about suppressed lists and how to create them.
 
 Cloud SIEM supports several types of [signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression): suppression of redundant signals, suppression of signals on particular entities, suppression of signals on blocks of IP addresses, and finally the suppressed lists feature, which enables you to suppress signals that contain a particular indicator value in any of the signals’ records.  
 
-You can create suppressed lists from the Cloud SIEM UI or using the Cloud SIEM API. A suppressed list can contain a set of indicators—IPs, hostnames, or any other type that you can use in a match list—and then any signal that has a record containing a listed indicator will be suppressed. 
+You can create suppressed lists from the Cloud SIEM UI or using the Cloud SIEM API. A suppressed list can contain a set of indicators—IPs (CIDR blocks), hostnames, or any other type that you can use in a match list—and then any signal that has a record containing a listed indicator will be suppressed. 
 
 Here are some sample suppressed lists:
 
