@@ -27,6 +27,11 @@ jobs:
         with:
           node-version: '22.x'
           cache: 'yarn'
+      - name: Docusaurus Webpack cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules/.cache
+          key: ${{ runner.os }}-webpack-cache-${{ hashFiles('yarn.lock') }}
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Clear the Docusaurus site
@@ -120,9 +125,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: codespell-project/actions-codespell@master
-        name: Check spelling
+      - name: Check spelling
+        uses: codespell-project/actions-codespell@v2
         with:
+          path: docs
           skip: "*.svg,*.js,*.map,*.css,*.scss"
           ignore_words_list: "aks,atleast,cros,ddress,delink,fiel,ist,nd,ot,pullrequest,ser,shttp,wast,fo,seldomly,delt,cruzer,plack,secur,te,nginx,Nginx,notin"
-          path: docs
