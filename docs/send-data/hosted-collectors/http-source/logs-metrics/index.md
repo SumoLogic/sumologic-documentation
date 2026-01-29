@@ -59,6 +59,10 @@ To configure an HTTP Logs and Metrics Source:
 1. Copy the URL (and header if applicable) and keep in a safe place. You will use the URL in the next step: [Upload data to the HTTP Logs and Metrics Source](#upload-data-to-the-httplogs-and-metrics-source).
 1. Click **Done**.
 
+import TokenBasedAuth from '../../../../reuse/token-based-auth-http-sources.md';
+
+<TokenBasedAuth/>
+
 :::note
 * Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to HTTP Endpoint have appropriate timestamps.
 * Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics).
