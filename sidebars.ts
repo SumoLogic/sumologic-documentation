@@ -146,6 +146,16 @@ module.exports = {
                     },
                     {
                       type: 'category',
+                      label: 'CustomYaml',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/customyaml/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/customyaml/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
                       label: 'Docker',
                       collapsible: true,
                       collapsed: true,
