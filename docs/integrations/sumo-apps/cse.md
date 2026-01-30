@@ -66,6 +66,10 @@ Note that the Audit Event Index contains logs for a variety of Sumo Logic subsys
 
 ## Install the Enterprise Audit - Cloud SIEM app
 
+### Prerequisite
+
+Requires multiple indexes to be enabled, including `sec_record_failure`, `sec_record*`, `sumologic_audit_events`, and `sumologic_system_events`, prior to installation.
+
 ### Install and configure Cloud SIEM
 
 The Enterprise Audit - Cloud SIEM app provides data on your Cloud SIEM installation. Therefore, before you can install the app, you must install and configure Cloud SIEM. See [Onboarding Checklist for Cloud SIEM Administrators](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/) for an overview.
