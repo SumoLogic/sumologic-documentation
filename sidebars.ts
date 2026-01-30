@@ -146,7 +146,7 @@ module.exports = {
                     },
                     {
                       type: 'category',
-                      label: 'CustomYaml',
+                      label: 'Custom YAML',
                       collapsible: true,
                       collapsed: true,
                       link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/customyaml/index'},

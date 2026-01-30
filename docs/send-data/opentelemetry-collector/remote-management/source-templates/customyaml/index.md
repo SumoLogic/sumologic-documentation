@@ -1,8 +1,8 @@
 ---
 slug: /send-data/opentelemetry-collector/remote-management/source-templates/customyaml
 title: Custom YAML Source Template
-sidebar_label: custom YAML
-description: Learn about the Sumo Logic custom YAML source template for OpenTelemetry.
+sidebar_label: Custom YAML
+description: Learn about the Sumo Logic Custom YAML source template for OpenTelemetry.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
 
-The custom YAML source template lets you create and manage source templates through a streamlined YAML editor, offering a flexible and efficient way to define how data is collected and ingested into Sumo Logic. It generates an OpenTelemetry configuration from a provided YAML file and pushes it to a remotely managed OpenTelemetry collector (abbreviated as otelcol). This enables you to directly manage collector configurations in YAML format and seamlessly ingest OpenTelemetry data into Sumo Logic.
+The Custom YAML source template lets you create and manage source templates through a streamlined YAML editor, offering a flexible and efficient way to define how data is collected and ingested into Sumo Logic. It generates an OpenTelemetry configuration from a provided YAML file and pushes it to a remotely managed OpenTelemetry collector (abbreviated as otelcol). This enables you to directly manage collector configurations in YAML format and seamlessly ingest OpenTelemetry data into Sumo Logic.
 
 :::note
 This source template works with sumo remotely managed OpenTelemetry collector version >= 0.136.0
@@ -19,8 +19,8 @@ This source template works with sumo remotely managed OpenTelemetry collector ve
 
 ## Use cases
 
-- You can ingest data and remotely manage ingestion for services that do not have a supported source template by using the custom YAML editor to supply your own OpenTelemetry YAML configurations. To learn about the available components supported by Sumo Logic, see [Sumo Logic OpenTelemetry Collector Components](https://github.com/SumoLogic/sumologic-otel-collector?tab=readme-ov-file#components).
-- You can easily copy and paste an existing source template YAML to create a similar configuration, or use the custom YAML dropdown to automatically override and customize the configuration.
+- You can ingest data and remotely manage ingestion for services that do not have a supported source template by using the Custom YAML editor to supply your own OpenTelemetry YAML configurations. To learn about the available components supported by Sumo Logic, see [Sumo Logic OpenTelemetry Collector Components](https://github.com/SumoLogic/sumologic-otel-collector?tab=readme-ov-file#components).
+- You can easily copy and paste an existing source template YAML to create a similar configuration, or use the Custom YAML dropdown to automatically override and customize the configuration.
 
 ## Configuring the source template
 
@@ -45,7 +45,7 @@ To revisit this screen later: From the [**Classic UI**](/docs/get-started/sumo-l
 
 ### Step 2: Configure the source template
 
-Follow the steps below to configure the custom YAML source template required for data collection:
+Follow the steps below to configure the Custom YAML source template required for data collection:
 
 1. Enter the **Name** of the source template.
 1. (Optional) Enter the **Description** for the source template.
