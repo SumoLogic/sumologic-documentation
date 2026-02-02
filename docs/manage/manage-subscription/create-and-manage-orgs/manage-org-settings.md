@@ -128,7 +128,7 @@ But if you are user with only **View Organizations** capability you can see the 
 
 ### Manage access to child org
 
-Follow the below steps to manage access to the child org:
+Follow the steps below to manage access to the child org:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
 1. Click the child org for which you want to restrict the access.
