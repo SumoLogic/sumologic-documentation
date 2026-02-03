@@ -72,14 +72,14 @@ You can select multiple insights and make changes to them all at once using eith
 
 1. Open the insights [list view](#list-view).
 1. [Filter insights](#filtering-insights) to locate only the insights you want to act on.
-1. Use the checkboxes on the insights list view to select multiple insights. You can select a maximum of 5000 insights.
+1. Use the checkboxes on the insights list view to select multiple insights. You can select a maximum of 5000 insights in one action.
 1. Select the action you want to take on the insights:
    * **Close Insights**. Give the insights a [closed resolution](/docs/cse/administration/manage-custom-insight-resolutions/#close-an-insight-using-a-custom-resolution).
    * **Assign To**. Assign the insights to a Cloud SIEM user.
    * **Change Status**. Change the insights' [status](/docs/cse/administration/manage-custom-insight-statuses/). 
    * **Comment**. Add a comment on the selected insights.<br/><img src={useBaseUrl('img/cse/bulk-select-insights.png')} alt="Bulk update insights" style={{border: '1px solid gray'}} width="600"/>
 1. Click **Confirm** on the confirmation dialog box.
-1. If you are updating a large number of insights, a progress bar will display until the job is finished. You cannot initiate another bulk update until the previous job finishes. 
+1. If you are updating a large number of insights, you cannot initiate another bulk update until the previous job finishes. A banner shows progress of the update. After the update completes, the banner displays for 24 hours so you can track recently-performed bulk updates.  
 
 #### Bulk update insights with the API
 
