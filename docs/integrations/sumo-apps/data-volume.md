@@ -13,6 +13,10 @@ The Data Volume App provides you with a summary and detailed views of your accou
 
 ## Installing the Data Volume app
 
+### Prerequisite
+
+Enable the Data Volume Index (`sumologic_volume`) prior to installation. See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) for instructions.
+
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>

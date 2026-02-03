@@ -38,16 +38,17 @@ The first step in integrating webhooks with Sumo Logic is to configure one or mo
 To set up a webhook connection:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
-1. On the **Connections** page click the **+** button on the top right of the table.
-1. Click **Webhook**.
-1. In the **Create Connection** dialog, enter the **Name** of the connection.
-1. (Optional) Enter a **Description** for the connection.
-1. Enter the **URL** for the endpoint. This is generated from the remote system’s API.
-    :::important
-    HTTPS URLs can use any port without restriction, while HTTP URLs are limited to only port 80.
-    :::
-1. (Optional) If the third-party system requires an **Authorization Header**, enter it here. For more information, see [Example Authorization Header](#example-authorization-header) below.
-1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
+1. On the **Connections** page, click **+ Add**.
+1. For **Connection Type**, select **Webhook** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/webhook-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+1. In the **Connection Settings** dialog, enter:
+    * **Name**. Enter a name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
+    * **URL**. Enter the **URL** for the endpoint. This is generated from the remote system’s API.
+        :::important
+        HTTPS URLs can use any port without restriction, while HTTP URLs are limited to only port 80.
+        :::
+    * (Optional) If the third-party system requires an **Authorization Header**, enter it here. For more information, see [Example Authorization Header](#example-authorization-header) below.
+    * (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. (Optional) Under **Alert Payload**, which allows you to customize how the alert notification will look, enter a JSON object in the format required by the target endpoint. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](#configure-webhook-payload-variables), below. <br/><img src={useBaseUrl('img/connection-and-integration/alert-payload.png')} alt="recovery payload" width="600" />
     :::note
     Variables are escaped according to the JSON standard, meaning that they can be used in application JSON. 
