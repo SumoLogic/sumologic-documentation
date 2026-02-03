@@ -77,7 +77,7 @@ For information about integrating Amazon Inspector with Security Hub, see [Integ
 You can collect the Amazon Inspector logs using the following methods:
 
 - [Method 1: Inspector > EventBridge > Sumo Logic via HTTP](#method-1-inspector--eventbridge--sumo-logic-via-http-preferred)
-- [Method 2: Inspector > Lambda Function > Sumo Logic via HTTP](#method-2-inspector--eventbridge--sumo-logic-via-http-alternative)
+- [Method 2: Inspector > Lambda Function > Sumo Logic via HTTP](#method-2-inspector--lambda-function--sumo-logic-via-http-alternative)
 - [Method 3: Inspector > Lambda Function > Amazon S3 > Sumo Logic via S3 Source](#method-3-inspector--lambda-function--amazon-s3--sumo-logic-via-s3-source-alternative)
 
 For efficiency and seamless integration, Method 1 using AWS EventBridge is preferred, as it leverages native AWS services to reduce resource overhead and simplify the process.
