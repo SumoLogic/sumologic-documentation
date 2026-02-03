@@ -15,6 +15,10 @@ Before you can use the Enterprise Search Audit App, an administrator must first 
 
 ## Installing the Enterprise Search Audit app
 
+### Prerequisite
+
+Enable the Search Audit Index (`_view = sumologic_search_usage_per_query`) prior to installation. See [Enable the Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#enable-the-search-audit-index) for instructions.
+
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>

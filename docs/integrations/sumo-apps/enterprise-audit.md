@@ -36,6 +36,10 @@ Audit data is not backfilled to any time before Enterprise Audit was installed. 
 
 ## Installing Enterprise Audit apps
 
+### Prerequisite
+
+Enable the Audit Event Index (`sumologic_audit_events`) prior to installation. See [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) for instructions.
+
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>
