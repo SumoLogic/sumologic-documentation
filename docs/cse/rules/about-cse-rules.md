@@ -40,17 +40,16 @@ Watch this micro lesson to learn more about rules.
 
 <img src={useBaseUrl('img/cse/rules-list-page.png')} alt="Rules list page" style={{border: '1px solid gray'}} width="800" />
 
-| Letter | Description |
-|:--|:--|
-| a | **Rules count**. The total number of rules in the list. |
-| b | **Filters**. Filter the list of rules by different parameters, such as name, type, severity, and so on. |
-| c | **Sort**. Sort rules by name, enabled, severity, created, updated, or signal count updated the past 7 days or 24 hours.  |
-| d | **Updated**. When the rule was last updated. |
-| e | **Status - Type**. The [rule status](/docs/cse/rules/rules-status/) and [rule type](/docs/cse/rules/about-cse-rules/#rule-types).  |
-| f | **Severity**. The rule's severity, an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). |
-| g | **Signals Fired**. The number of signals that the rule fired in the last 24 hours as well as 7 days. |
-| h | **Export as JSON**. Export the rule information as a JSON file. |
-| i | **Tags**. Metadata [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/) that add context for the rule. Click a tag to see rules with that tag. |
+1. **Filter**. Filter the list of rules by different parameters, such as name, type, severity, and so on.
+1. **+ Add Rule**. Select the [rule type](#rule-types) to add.
+1. **Import**. Import a rule manually.
+1. **Status**. Whether the rule is enabled.
+1. **Name**. The rule's name.
+1. **Rule Status**. The [rule status](/docs/cse/rules/rules-status/).
+1. **Rule Type**. The [rule type](/docs/cse/rules/about-cse-rules/#rule-types).
+1. **Severity**. The rule's severity, an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest).
+1. **Signals Fired (24 h)**. The number of signals that the rule fired in the last 24 hours.
+1. **Signals Fired (7 d)**. The number of signals that the rule fired in the last 7 days.
 
 ## Rules details view
 
