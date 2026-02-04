@@ -2769,6 +2769,7 @@ integrations: [
             items: [
               'integrations/web-servers/opentelemetry/apache-opentelemetry',
               'integrations/web-servers/opentelemetry/apache-tomcat-opentelemetry',
+              'integrations/web-servers/opentelemetry/apache-hadoop-opentelemetry',
               'integrations/web-servers/opentelemetry/haproxy-opentelemetry',
               'integrations/web-servers/opentelemetry/iis-10-opentelemetry',
               'integrations/web-servers/opentelemetry/nginx-opentelemetry',
