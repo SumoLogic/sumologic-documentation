@@ -56,14 +56,14 @@ module.exports = {
     //  'contributing/translations',
         {
           type: 'category',
-          label: 'Templates',
+          label: 'Docs Templates',
           collapsible: true,
           collapsed: true,
           items: [
+            'contributing/templates/app-template-v2',
+            'contributing/templates/c2c-source',
             'contributing/templates/generic-doc',
             'contributing/templates/partner-app-doc',
-            'contributing/templates/c2c-source',
-            'contributing/templates/app-template-v2',
           ]
         }
       ],
@@ -101,6 +101,7 @@ module.exports = {
                 'send-data/opentelemetry-collector/install-collector/ansible',
                 'send-data/opentelemetry-collector/install-collector/puppet',
                 'send-data/opentelemetry-collector/install-collector/chef',
+                'send-data/opentelemetry-collector/install-collector/upgrade-opentelemetry-collector',
               ]
             },
             {
@@ -141,6 +142,16 @@ module.exports = {
                       link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/apache/index'},
                       items:[
                         'send-data/opentelemetry-collector/remote-management/source-templates/apache/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Custom YAML',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/customyaml/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/customyaml/changelog',
                       ]
                     },
                     {
@@ -914,6 +925,7 @@ module.exports = {
         'manage/partitions/edit-data-forwarding-destinations-partition',
         'manage/partitions/manage-indexes-variable-retention',
         'manage/partitions/decommission-partition',
+        'manage/partitions/faq',
       ]
     },
     {
@@ -1152,6 +1164,7 @@ module.exports = {
        link: {type: 'doc', id: 'manage/data-archiving/index'},
        items: [
          'manage/data-archiving/archive',
+         'manage/data-archiving/archive-otel',
        ]
      },
    ],
@@ -2483,11 +2496,8 @@ integrations: [
         link: {type: 'doc', id: 'integrations/global-intelligence/index'},
         items: [
           'integrations/amazon-aws/global-intelligence-guardduty',
-          'integrations/global-intelligence/apache',
-          'integrations/global-intelligence/apache-tomcat',
           'integrations/amazon-aws/global-intelligence-cloudtrail-devops',
           'integrations/amazon-aws/global-intelligence-cloudtrail-secops',
-          'integrations/global-intelligence/nginx',
           'cse/records-signals-entities-insights/global-intelligence-security-insights',
         ],
       },
@@ -3073,22 +3083,6 @@ integrations: [
         'cloud-soar/menus',
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
-        {
-          type: 'category',
-          label: 'Legacy Cloud SOAR',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'cloud-soar/legacy/index'},
-          items: [
-            'cloud-soar/legacy/legacy-cloud-soar-architecture',
-            'cloud-soar/legacy/legacy-cloud-soar-global-functions-menu',
-            'cloud-soar/legacy/legacy-cloud-soar-main-menu',
-            'cloud-soar/legacy/legacy-cloud-soar-incidents-and-triage',
-            'cloud-soar/legacy/legacy-cloud-soar-automation',
-            'cloud-soar/legacy/legacy-cloud-soar-mssp',
-            'cloud-soar/legacy/legacy-cloud-soar-apis',
-        ],
-      },
       ],
     },
     {
