@@ -31,8 +31,6 @@ This file provides guidance for AI systems and language models on how to discove
 
 ## Machine-friendly access
 
-- A raw markdown mirror of documentation content may be available under /help/llm/.
-  Example: https://www.sumologic.com/help/llm/docs/
 
 ## Recommended entry points
 
