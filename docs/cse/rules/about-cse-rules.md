@@ -42,7 +42,7 @@ Watch this micro lesson to learn more about rules.
 
 1. **Filter**. Filter the list of rules by different parameters, such as name, type, severity, and so on.
 1. **+ Add Rule**. Select the [rule type](#rule-types) to add.
-1. **Import**. Import a rule manually.
+1. **Import**. [Import a rule](#import-a-rule).
 1. **Status**. Whether the rule is enabled.
 1. **Name**. The rule's name.
 1. **Rule Status**. The [rule status](/docs/cse/rules/rules-status/).
@@ -139,6 +139,28 @@ Some of the key metadata fields are defined below.
 | `metadata_vendor` | string | The name of the company responsible for the data source. Note the name of the product is in the "product" field. |
 | `metadata_product` | string | The specific product name of the data source. Note the name of the company who created the product is the "vendor" field. |
 | `metadata_deviceEventId` | string | Event type given by the vendor for the log. |
+
+## Export and import a rule
+
+Sometimes you may need to export a rule from one instance of Cloud SIEM and import it to another. You can export and import it as a JSON file. 
+
+:::tip
+If you maintain a multi-org implementation of Sumo Logic and you need to push Cloud SIEM rules from a parent organization to child organization to ensure rule consistency across the orgs, use the **Manage Content** tab. See [Manage Orgs for MSSPs](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps/).
+:::
+
+### Export a rule
+
+1. Access the [rules list view](/docs/cse/rules/about-cse-rules/#rules-list-view).
+1. Select a rule.
+1. Click the three-dot kebab icon to the right of the rule name and select **Export** from the menu.<img src={useBaseUrl('img/cse/rule-export-menu.png')} alt="Rule export menu" style={{border: '1px solid gray'}} width="600" />
+1. The rule is downloaded as a JSON file. Copy the file and move it to a directory where it can be imported.
+
+### Import a rule
+
+1. Export a Cloud SIEM rule as described in the preceding section.
+1. Access the [rules list view](/docs/cse/rules/about-cse-rules/#rules-list-view).
+1. Click the **Import** button. 
+1. Select the JSON file of the previously exported rule.<img src={useBaseUrl('img/cse/rule-import-button.png')} alt="Rule import button" style={{border: '1px solid gray'}} width="600" /> 
 
 ## Rules and other content
 
