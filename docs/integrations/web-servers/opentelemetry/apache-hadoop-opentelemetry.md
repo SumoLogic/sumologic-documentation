@@ -9,14 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/hadoop.png')} alt="Thumbnail icon" width="150"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/web-servers/hadoop.png')} alt="Thumbnail icon" width="175"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="35"/>
 
-The [Hadoop](https://hadoop.apache.org/docs/stable/) app is a unified logs and metrics app designed to help you monitor the health, performance, availability, and resource utilization of Hadoop clusters. It provides preconfigured dashboards and searches that offer deep visibility into HDFS and YARN components for real-time and historical analysis.
+The Sumo Logic app for [Apache Hadoop](https://hadoop.apache.org/docs/stable/) provides logs and metrics to help you monitor the health, performance, availability, and resource utilization of Hadoop clusters. It provides preconfigured dashboards and searches that offer deep visibility into HDFS and YARN components for real-time and historical analysis.
 The app delivers end-to-end observability across NameNode, DataNode, and ResourceManager services, enabling faster troubleshooting, capacity planning, and operational stability.
 
 Hadoop logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) and metrics are sent through the [JMX](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver) receiver with the `target_system` set as [`Hadoop`](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/hadoop.md).
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Apache-Hadoop-Schematics.png' alt="Schematics" />
+<img src={useBaseUrl('img/integrations/web-servers/apache-hadoop-schematics.png')} alt="Schematics" width="800"/>
 
 ## Hadoop log types
 
@@ -30,7 +30,7 @@ This app includes [built-in monitors](#apache-hadoop-alerts). For details on cre
 
 ## Fields Create in Sumo Logic for Hadoop
 
-Following are the [Fields](/docs/manage/fields/) which will be created as part of Hadoop App installation if not already present.
+Following are the [Fields](/docs/manage/fields/) which will be created as part of Hadoop app installation if not already present.
 
 - **`sumo.datasource`**. Has fixed value of **hadoop**.
 - **`bigdata.cluster.name`**. User configured. Enter a name to identify the Hadoop cluster. This cluster name will be shown in the Sumo Logic dashboards.
@@ -47,7 +47,13 @@ JMX receiver collects Hadoop metrics (NameNode metrics) from Hadoop cluster as p
 
   2. Set the JMX port by setting it as part of `HDFS_NAMENODE_OPTS` for Hadoop startup. Usually it is set in the `$HADOOP_HOME/etc/hadoop/hadoop-env.sh` file.
       ```bash
-      export HDFS_NAMENODE_OPTS="$HDFS_NAMENODE_OPTS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8004 -Dcom.sun.management.jmxremote.rmi.port=8004 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost"
+      export HDFS_NAMENODE_OPTS="$HDFS_NAMENODE_OPTS \
+      -Dcom.sun.management.jmxremote \
+      -Dcom.sun.management.jmxremote.port=8004 \
+      -Dcom.sun.management.jmxremote.rmi.port=8004 \
+      -Dcom.sun.management.jmxremote.authenticate=false \
+      -Dcom.sun.management.jmxremote.ssl=false \
+      -Djava.rmi.server.hostname=localhost"      
       ```
 
 #### For log collection
@@ -303,7 +309,7 @@ Use this dashboard to:
 
 ### Apache Hadoop - ResourceManager Log Analysis
 
-The **Apache Hadoop – ResourceManager Log Analysis** provides visibility into ResourceManager startup, configuration, and internal service readiness. 
+The **Apache Hadoop – ResourceManager Log Analysis** provides visibility into ResourceManager startup, configuration, and internal service readiness.
 
 Use this dashboard to:
 - Monitor YARN ResourceManager operational health, including startups, state changes, and internal service readiness events.
@@ -314,7 +320,7 @@ Use this dashboard to:
 
 ### Apache Hadoop - NameNode Metrics
 
-The **Apache Hadoop – NameNode Metrics** provides a consolidated view of HDFS capacity, usage, and limits across NameNodes and clusters. 
+The **Apache Hadoop – NameNode Metrics** provides a consolidated view of HDFS capacity, usage, and limits across NameNodes and clusters.
 
 Use this dashboard to:
 
