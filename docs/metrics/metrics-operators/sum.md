@@ -5,7 +5,7 @@ sidebar_label: sum
 ---
 
 
-The sum operator calculates the sum of the metrics values that match the query. If grouping is specified, it calculates the sum for each group.
+The `sum` operator calculates the sum of the metrics values that match the query. If grouping is specified, it calculates the sum for each group.
 
 ## Syntax
 

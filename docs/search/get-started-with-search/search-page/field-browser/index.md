@@ -68,6 +68,7 @@ The Field Browser is limited for aggregate queries in the following ways:
 * Field counts—If messages returned are less than or equal to 2500 messages, then an exact calculation is shown. If more than 2500 messages are returned, an approximation is shown.
 * The **Approximate Count** displays the count of the field values for the field. This does not display complete field values count for that field but it's just to calculate average, minimum, maximum, and standard deviation values from the first 100,000 raw messages. The field values will be skipped if the 100,000 raw messages limit is exceeded.
 * The system limits the number of fields extracted for display in the field browser. Use the [`fields` Operator](/docs/search/search-query-language/search-operators/fields) to control which exact fields are retrieved.
+* The field browser displays the count of the fields as well as the distribution of values of each field. These calculations are done for the first 200 fields that are parsed by a run-time FER and 100 dynamic parsed extracted field.
   
 ## Guide contents
 

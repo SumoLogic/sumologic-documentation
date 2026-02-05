@@ -17,7 +17,7 @@ This feature is available in the following account plans.
 
 This page shows you how to intuitively navigate through your AWS environment and [monitoring dashboards](/docs/dashboards/explore-view/) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
 
-You can also easily navigate to all features and functions of the AWS Observability solution in one place. Refer to the [AWS Observability Hub](/docs/observability/aws) page to learn more about the centralized page to access the AWS Observability solution.
+You can also easily navigate to all features and functions of the AWS Observability solution in one place. Refer to the [AWS Observability Solution](/docs/observability/aws) page to learn more about the centralized page to access the AWS Observability solution.
 
 ## Working with the AWS Observability View
 
@@ -27,7 +27,7 @@ The AWS Observability Solution comprises an intuitive dashboard framework that m
 
 [Monitoring dashboards](/docs/dashboards/explore-view/) provide an intuitive visual representation of your environment.
 
-To to [AWS Observibility tab](/docs/observability/aws) in the home page or do the following:
+Go to the [AWS Observibility Solution](/docs/observability/aws) tab in the home page or do the following:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **AWS Observability**. You can also click the **Go To...** menu at the top of the screen and select **AWS Observability**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then click the **Explore By** arrow and select **AWS Observability** from the dropdown menu.  
 1. In the navigation panel, make a selection for the hierarchy to view. The contents of your selection appear below.
@@ -54,13 +54,13 @@ Select the graph data point you are interested in. In the following screenshot, 
 
 <img src={useBaseUrl('img/observability/Drill_RCA.png')} alt="Drill RCA" style={{border: '1px solid gray'}} width="800" />
 
-For details, see [Drill down to discover root causes](../../../dashboards/drill-down-to-discover-root-causes.md).
+For details, see [Drill Down to Discover Root Causes](/docs/dashboards/drill-down-to-discover-root-causes/).
 
 ## Viewing AWS Observability Solution Dashboards
 
 All of the apps are installed in a folder named **Sumo Logic AWS Observability Apps** that is located in your personal folder.
 
-To add a new dashboard to your hierarchy, refer to the instructions in the [Add new Service documentation](/docs/observability/aws/other-configurations-tools/add-new-aws-service.md).
+To add a new dashboard to your hierarchy, refer to the instructions in [Add a New AWS Service to the AWS Observability View Hierarchy](/docs/observability/aws/other-configurations-tools/add-new-aws-service).
 
 To view the app dashboards:
 
@@ -70,20 +70,20 @@ To view the app dashboards:
 
 Click a link for information on the individual app dashboards:
 
-* [AWS API Gateway Dashboards](../integrations/aws-api-gateway.md)
-* [AWS Application Load Balancer Dashboards](../integrations/aws-application-load-balancer.md)
-* [AWS DynamoDB Dashboards](../integrations/aws-dynamodb.md)
-* [AWS EC2 Host Metrics Dashboards](../integrations/aws-ec2-host-metrics.md)
-* [AWS EC2 Metrics Dashboards](../integrations/aws-ec2-metrics.md)
-* [AWS Lambda Dashboards](../integrations/aws-lambda.md)
-* [Amazon RDS Dashboards](../integrations/amazon-rds.md)
-* [Amazon ElastiCache Dashboards](../integrations/amazon-elasticache.md)
-* [Amazon ECS Dashboards](../integrations/amazon-ecs.md)
-* [AWS Network ELB Dashboards](../integrations/aws-network-load-balancer.md)
-* [AWS Classic Load Balancer Dashboards](../integrations/aws-classic-load-balancer.md)
-* [Amazon SNS Dashboards](/docs/observability/aws/integrations/amazon-sns.md)
-* [Amazon SQS Dashboards](../integrations/amazon-sqs.md)
+* [AWS API Gateway](/docs/observability/aws/integrations/aws-api-gateway)
+* [AWS Application Load Balancer](/docs/observability/aws/integrations/aws-application-load-balancer)
+* [AWS DynamoDB](/docs/observability/aws/integrations/aws-dynamodb)
+* [AWS EC2 Host Metrics](/docs/observability/aws/integrations/aws-ec2-host-metrics)
+* [AWS EC2 Metrics](/docs/observability/aws/integrations/aws-ec2-metrics)
+* [AWS Lambda](/docs/observability/aws/integrations/aws-lambda)
+* [Amazon RDS](/docs/observability/aws/integrations/amazon-rds)
+* [Amazon ElastiCache](/docs/observability/aws/integrations/amazon-elasticache)
+* [Amazon ECS](/docs/observability/aws/integrations/amazon-ecs)
+* [AWS Network ELB](/docs/observability/aws/integrations/aws-network-load-balancer)
+* [AWS Classic Load Balancer](/docs/observability/aws/integrations/aws-classic-load-balancer)
+* [Amazon SNS](/docs/observability/aws/integrations/amazon-sns)
+* [Amazon SQS](/docs/observability/aws/integrations/amazon-sqs)
 
 ## More Information
 
-* [Explore Monitoring Dashboards](/docs/dashboards/explore-view.md)
+* [Explore Monitoring Dashboards](/docs/dashboards/explore-view)

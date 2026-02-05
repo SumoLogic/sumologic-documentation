@@ -20,20 +20,6 @@ Our Global Intelligence Service apps provide security teams with valuable real-t
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/web-servers/gi-apache1.png')} alt="icon" width="65"/>
-  <h4><a href={useBaseUrl('docs/integrations/global-intelligence/apache')}>Global Intelligence for Apache</a></h4>
-  <p>A guide to the Sumo Logic app for GI for Apache.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/web-servers/gi-apache.png')} alt="icon" width="65"/>
-  <h4><a href={useBaseUrl('docs/integrations/global-intelligence/apache-tomcat')}>Global Intelligence for Apache Tomcat</a></h4>
-  <p>A guide to the Sumo Logic app for GI for Apache Tomcat.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Thumbnail icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops')}>Global Intelligence for AWS CloudTrail DevOps</a></h4>
   <p>A guide to the Sumo Logic app for GI for AWS CloudTrail DevOps.</p>
@@ -45,13 +31,6 @@ Our Global Intelligence Service apps provide security teams with valuable real-t
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops')}>Global Intelligence for AWS CloudTrail SecOps</a></h4>
   <p>A guide to the Sumo Logic app for GI for AWS CloudTrail SecOps.</p>
   </div>
-</div>
-<div className="box smallbox card">
-    <div className="container">
-    <img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Thumbnail icon" width="150"/>
-    <h4><a href={useBaseUrl('docs/integrations/global-intelligence/nginx')}>Global Intelligence for Nginx</a></h4>
-    <p>A guide to the Sumo Logic app for GI for Nginx.</p>
-    </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
