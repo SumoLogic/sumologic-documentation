@@ -373,14 +373,14 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Enterprise Audit - Collector and Data Forwarding Management App alerts
 
-| Name                                                                                                                                                                                                  | Description                                                                                | Alert Condition | Recover Condition |
-|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------|:----------------|:------------------|
-| `Enterprise Audit - Collector Deleted or Deregistered`                                                                                                                                                | This alert is triggered when a collector is deleted or deregistered.                       | Count >= 1      | Count < 1         |
-| `Enterprise Audit - Collector Source Synchronization Failures`                                                                                                                                        | This alert is triggered when collector source synchronization failures are detected.       | Count > 2       | Count < = 2       |
-| `Enterprise Audit - Collector Upgrade Failed`                                                                                                                                                         | This alert is triggered when collector upgrade failure is detected.                        | Count >= 1      | Count < 1         |
-| `Enterprise Audit - Data Forwarding Destination Deleted Alert`                                                                                                                                        | This alert is triggered when one or more data forwarding destination is deleted.           | Count > 0       | Count < = 0       |
-| `Enterprise Audit - Data Forwarding Index Deactivation Alert`                                                                                                                                         | This alert is triggered when data forwarding index deactivation is detected.               | Count > 0       | Count < = 0       |
-| `Enterprise Audit - Data Forwarding S3 Unencrypted Destination Created`                                                                                                                               | This alert is triggered when a unencrypted data forwarding destination is created for S3.  | Count > = 1     | Count < 1         |
+| Name  | Description  | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Enterprise Audit - Collector Deleted or Deregistered`  | This alert is triggered when a collector is deleted or deregistered.   | Count >= 1  | Count < 1   |
+| `Enterprise Audit - Collector Source Synchronization Failures`  | This alert is triggered when collector source synchronization failures are detected. | Count > 2   | Count < = 2   |
+| `Enterprise Audit - Collector Upgrade Failed`  | This alert is triggered when collector upgrade failure is detected. | Count >= 1  | Count < 1 |
+| `Enterprise Audit - Data Forwarding Destination Deleted Alert`   | This alert is triggered when one or more data forwarding destination is deleted.  | Count > 0   | Count < = 0  |
+| `Enterprise Audit - Data Forwarding Index Deactivation Alert`  | This alert is triggered when data forwarding index deactivation is detected. | Count > 0   | Count < = 0   |
+| `Enterprise Audit - Data Forwarding S3 Unencrypted Destination Created`  | This alert is triggered when a unencrypted data forwarding destination is created for S3.  | Count > = 1  | Count < 1  |
 
 
 ## Upgrade/Downgrade the Enterprise Audit apps (Optional)
