@@ -5,15 +5,15 @@ sidebar_label: AWS Network Load Balancer
 description: The Sumo Logic Observability integration for AWS Network Load Balancer provides insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy and to quickly identify errors.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The AWS Network Load Balancer service is distributed in OSI Layer 4 (i.e., network) traffic (e.g., TCP, UDP, TLS) and can handle over a million requests per second. 
 
 The AWS Network Load Balancer dashboards provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy and to quickly identify errors.
 
 ## Metrics types
 
-The AWS Network Load Balancer app uses the following logs and metrics:
-
-* [AWS Network Load Balancer metrics](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-cloudwatch-metrics.html)
+The AWS Network Load Balancer app uses [AWS Network Load Balancer metrics](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-cloudwatch-metrics.html).
 
 ### Sample queries  
 
@@ -37,9 +37,9 @@ Use this dashboard to: 
 * Identify load balancers with the most number of unhealthy hosts.
 * Monitor trends around active connections, bytes processed, and reset packets to ensure load balancers are operating as expected.
 
-![img](/img/observability/networklboverview.png)
+<img src={useBaseUrl('img/observability/networklboverview.png')} alt="AWS Network Load Balancer - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### 1. Amazon Network Load Balancer - Active and New Flows
+### 1. AWS Network Load Balancer - Active and New Flows
 
 The **AWS Network Load Balancer - Active and New Flows** dashboard provides detailed insights for new flows, and active flows for TCP, TLS, and UDP traffic.
 
@@ -47,7 +47,7 @@ Use this dashboard to:
 
 * Monitor trends around active and new flows (connections) to make sure they line up with expectations and then use that information to scale up/scale down backend hosts. 
 
-![img](/img/observability/networklb1.png)
+<img src={useBaseUrl('img/observability/networklb1.png')} alt="AWS Network Load Balancer - Active and New Flows dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 2. AWS Network Load Balancer - Host Health Status
 
@@ -58,7 +58,7 @@ Use this dashboard to:
 * Get a quick overview of the number of healthy and unhealthy hosts.
 * Monitor trends around the number of unhealthy hosts to spot potential service disruptions that could warrant deeper investigation.
 
-![img](/img/observability/networklb2.png)
+<img src={useBaseUrl('img/observability/networklb2.png')} alt="AWS Network Load Balancer - Host Health Status dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 3. AWS Network Load Balancer - Errors
 
@@ -69,7 +69,7 @@ Use this dashboard to:
 * Monitor TLS handshake errors during negotiation between a client and a TLS listener, which could happen if clients are sending an incorrect cipher or are using incorrect protocols not matching the one specified in the security policy. It’s recommended to use the most recent AWS CLI client version.
 * Monitor TLS handshake errors during negotiation between a TLS listener and a target. Possible causes for this error include a mismatch of ciphers or protocols.
 
-![img](/img/observability/networklb3.png)
+<img src={useBaseUrl('img/observability/networklb3.png')} alt="AWS Network Load Balancer - Errors dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 4. AWS Network Load Balancer - Reset (RST) Packets
 
@@ -79,7 +79,7 @@ Use this dashboard to:
 
 * To monitor the number of RST packets. A high number of reset packets could indicate connections are getting dropped and could mean a disruption in service. 
 
-![img](/img/observability/networklb4.png)
+<img src={useBaseUrl('img/observability/networklb4.png')} alt="AWS Network Load Balancer - Reset (RST) Packets dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 5. AWS Network Load Balancer - Processed Bytes
 
@@ -89,7 +89,7 @@ Use this dashboard to:
 
 * Monitor trends around processed bytes to make sure they line up with expectations and then use that information to scale up or scale down backend hosts.
 
-![img](/img/observability/networklb5.png)
+<img src={useBaseUrl('img/observability/networklb5.png')} alt="AWS Network Load Balancer - Processed Bytes dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 6. AWS Network Load Balancer - Consumed LCUs
 
@@ -103,4 +103,4 @@ Use this dashboard to:
 
 * Optimize load balancer costs by monitoring trends around the number of load balancer capacity units (LCU) used by network protocol. 
 
-![img](/img/observability/networklb6.png)
+<img src={useBaseUrl('img/observability/networklb6.png')} alt="AWS Network Load Balancer - Consumed LCUs dashboard" style={{border: '1px solid gray'}} width="800" />

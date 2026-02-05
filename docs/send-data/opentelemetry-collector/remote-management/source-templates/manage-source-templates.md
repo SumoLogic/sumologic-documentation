@@ -13,6 +13,14 @@ Source templates provide a powerful mechanism to simplify and standardize data c
 Source templates are not available for locally managed collectors.
 :::
 
+import TerraformLink from '../../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a source template with the [`sumologic_source_template`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/source_template) resource.
+
+<TerraformLink/>
+:::
+
 ## Benefits of source templates
 
 * **Efficiency**. Create a template once and apply it to multiple collectors.
@@ -32,7 +40,8 @@ Source templates are useful for managing data collection in scenarios like:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). Go to the main Sumo Logic menu and select **Data Management**, and under **Data Collection** select **Source Template**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Collection > Source Template**. 
 1. Click **Create Source Template** > **Add Source Template** and fill in the required details, such as name and configuration settings. When you're done, click **Next**.<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="local-file-apache" style={{border:'1px solid gray'}} width="500"/>
 1. On the **Link Collectors** page, you will have the option to link the collectors using the **Collector Name** or by adding **Collector Tags** to find the group of collectors.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="link-collectors" style={{border: '1px solid gray'}} width="800" />
-1. Navigate to **Preview Collector(s)** to view details about the compatibility of the collectors and the collectors that will be linked to the newly created source template. If we have mapped the collectors using both the **Collector Name** and **Collector Tags**, you will get separate preview sections for the collectors identified by collector name and collector tags.<br/><img src={useBaseUrl('img/send-data/preview-collectors1.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800" /><br/><img src={useBaseUrl('img/send-data/preview-collectors2.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800" />
+1. Navigate to **Preview Collector(s**) to view collector compatibility details and see which collectors will be linked to the newly created source template.
+If collectors are mapped using both **Collector Name** and **Collector Tags**, separate preview sections will be shown for each mapping type.<br/><img src={useBaseUrl('img/send-data/preview-collectors1.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800" /><br/><img src={useBaseUrl('img/send-data/preview-collectors2.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800" />
     :::note
     Incompatible version conflict will be found if your collectors cannot be linked to the source template due to version incompatibility or unsupported operating system. To move to the next step, make sure you update the collect version of the incompatible collector.<br/><img src={useBaseUrl('img/send-data/incompatible-collectors.png')} alt="incompatible-collectors" style={{border:'1px solid gray'}} width="700"/>
     :::
@@ -74,6 +83,17 @@ To edit a source template:
 1. Change the required configuration in the source template configuration page, and click **Next**.
 1. If required, update the collectors on the **Link Collectors** page.
 1. Click **Next** to complete editing the source template.
+
+## Edit a linked collector
+
+Follow the steps below to edit a linked collector from the source template:
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). Go to the main Sumo Logic menu and select **Data Management**, and under **Data Collection** select **Source Template**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
+1. Select the source template to edit the existing linked collectors or link a new one if none exist, and then select **Edit Link Collector** from the **More options** dropdown. Or, click the kebab menu against the selected source template and click **Edit Link Collector** from the dropdown.<br/><img src={useBaseUrl('img/send-data/otel-edit-link-collector.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
+   - **Edit the existing collector links**. Update the required configuration in the **Link Collectors** page, and click **Next**.
+   - **Add collector links if none exist**. On the **Link Collectors** page, add the required **Collector** and **Collector tags**. 
+   - Navigate to **Preview Collector(s)** section to view and verify the collector compatibility details, and then click **Next**. For more details, refer to *Step4** in [Create a new source template](#create-a-new-source-template).
+1. Click **Done** to complete editing the linked collector.
 
 ## Upgrade a source template
 
@@ -142,3 +162,15 @@ If you try to add or update any collector tags using the API, the following vali
 1. Validates if the default tags are added or deleted.
 :::
 
+## Collector Name
+
+You can edit your collector name with remote management by following the steps below:
+
+1. Navigate to the **OpenTelemetry Collection** page.<br/><img src={useBaseUrl('img/send-data/oTel-collector-page.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} />
+1. Select the collector for which you want to update the name.
+1. In the right pane, scroll to the **Name** section and click **Edit**.<br/><img src={useBaseUrl('img/send-data/edit-otel-collector-name.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} />
+1. In the **Edit Collector Name** pop up, enter the new collector name and click **Proceed**.<br/><img src={useBaseUrl('img/send-data/enter-new-otel-collector-name.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="500" />
+1. Type **PROCEED** in the input field, and then click **Confirm** to apply the change.<br/><img src={useBaseUrl('img/send-data/click-confirm.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="500" />
+:::note
+Click **click here** to view the source templates affected by the collector name update.<br/><img src={useBaseUrl('img/send-data/affected-STs.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="500" />
+:::

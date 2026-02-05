@@ -39,7 +39,7 @@ For example: `username,IPAddress,region`
 
 1. Go to your **Library**.
 1. Mouse over the lookup table you want to view, and select **Edit** from the three-dot kebab menu.
-1. The edit page for the lookup table appears. <br/>  ![edit-lookup-table.png](/img/search/lookup-tables/edit-lookup-table.png)
+1. The edit page for the lookup table appears. <br/><img src={useBaseUrl('img/search/lookup-tables/edit-lookup-table.png')} alt="Edit lookup table" style={{border: '1px solid gray'}} width="800" />
 1. Click **Merge Data**.
 1. The **Merge Lookup Data** popup appears.<br/> <img src={useBaseUrl('img/search/lookup-tables/merge-lookup-data.png')} alt="Merge Lookup Data popup" width="350"/>
 1. Click **Upload**.
@@ -60,7 +60,7 @@ For a field that is configured to be boolean, make sure that the field value is 
 
 1. Go to your **Library**.
 1. Mouse over the lookup table you want to view, and select **Edit** from the three-dot kebab menu.
-1. The edit page for the lookup table appears. <br/>  ![edit-lookup-table.png](/img/search/lookup-tables/edit-lookup-table.png)
+1. The edit page for the lookup table appears. <br/><img src={useBaseUrl('img/search/lookup-tables/edit-lookup-table.png')} alt="Edit lookup table" style={{border: '1px solid gray'}} width="800" />
 1. Click **Replace Data**.
 1. The **Replace All Lookup Data** popup appears. <br/><img src={useBaseUrl('img/search/lookup-tables/replace-all-lookup-data.png')} alt="replace-all-lookup-data.png" width="350"/>
 1. Click **Upload**.
@@ -75,7 +75,7 @@ Follow the steps below to delete all of the contents of a lookup table:
 
 1. Go to your **Library**.
 1. Mouse over the lookup table you want to delete, and select **Edit** from the three-dot kebab menu.
-1. The edit page for the lookup table appears.  <br/>  ![edit-lookup-table.png](/img/search/lookup-tables/edit-lookup-table.png)
+1. The edit page for the lookup table appears.  <br/><img src={useBaseUrl('img/search/lookup-tables/edit-lookup-table.png')} alt="Edit lookup table" style={{border: '1px solid gray'}} width="800" />
 1. Click **Delete Data.**
 1. You are prompted to confirm that you want to delete the contents of the lookup file. <br/><img src={useBaseUrl('img/search/lookup-tables/delete-lookup-data.png')} alt="delete-lookup-data.png" width="350"/>
 1. Enter `Delete`, and click **Delete**.

@@ -91,23 +91,17 @@ In this section, we'll introduce the following concepts:
 </div>
     <div className="box smallbox card">
     <div className="container">
-    <a href={useBaseUrl('docs/manage/security/search-audit-index')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Search Audit Index</h4></a>
-    <p>Learn how to enable event logs on search usage and activities for your account.</p>
+    <a href={useBaseUrl('docs/manage/security/scim')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>SCIM Provisioning</h4></a>
+    <p>Learn how to provision users in Sumo Logic using SCIM.</p>
   </div>
 </div>
-    <div className="box smallbox card">
-    <div className="container">
-    <a href={useBaseUrl('docs/manage/security/log-search-audit-index')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Log Search Audit Index</h4></a>
-    <p>Learn how to query the Search Audit Index for search usage and activities for your account.</p>
-  </div>
-</div>
-    <div className="box smallbox card">
+<div className="box smallbox card">
     <div className="container">
     <a href={useBaseUrl('docs/manage/security/set-password-policy')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Set the Password Policy</h4></a>
     <p>Learn how to set the account password policy for any user in your organization.</p>
   </div>
 </div>
-    <div className="box smallbox card">
+<div className="box smallbox card">
     <div className="container">
     <a href={useBaseUrl('docs/manage/security/set-limit-user-concurrent-sessions')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Set a Limit for User Concurrent Sessions</h4></a>
     <p>Learn how to limit the number of open concurrent sessions by a user.</p>

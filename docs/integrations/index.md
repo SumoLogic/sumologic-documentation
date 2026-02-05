@@ -28,6 +28,14 @@ To check if an app is supported by your pricing plan, see [Apps and Sumo Logic A
 Learn the difference between our [Next-Gen Apps and Classic Apps](/docs/get-started/apps-integrations/#next-gen-apps).
 :::
 
+import TerraformLink from '../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide apps with the [`sumologic_app`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/app) resource.
+
+<TerraformLink/>
+:::
+
 :::sumo Micro Lesson
 Watch this tutorial to learn how to use our **App Catalog**.
 
@@ -136,6 +144,12 @@ Watch this tutorial to learn how to use our **App Catalog**.
   <div className="container">
   <a href={useBaseUrl('docs/integrations/sumo-apps/')}><img src={useBaseUrl('img/integrations/sumo-apps/sumoapps.png')} alt="Thumbnail icon" width="60"/><h4>Sumo Logic Apps</h4></a>
   <p>Use these apps to monitor your Sumo Logic org activities and data volume.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+    <div className="container">
+    <a href={useBaseUrl('docs/integrations/webhooks/')}><img src={useBaseUrl('img/icons/cloud/scale-and-elastic.png')} alt="Thumbnail icon" width="50"/><h4>Webhooks</h4></a>
+    <p>Documentation for Sumo Logic webhook integrations.</p>
   </div>
 </div>
 <div className="box smallbox card">

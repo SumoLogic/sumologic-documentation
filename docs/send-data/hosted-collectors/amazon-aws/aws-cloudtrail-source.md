@@ -32,6 +32,13 @@ You need to know where your CloudTrail log files are stored so you can provide 
 
 :::
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an AWS CloudTrail source with the [`sumologic_cloudtrail_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudtrail_source) resource.
+
+<TerraformLink/>
+:::
 
 ### Configure an AWS CloudTrail Source
 

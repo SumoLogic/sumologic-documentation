@@ -13,6 +13,12 @@ If you're looking for an app for Microsoft Windows, see [Microsoft and Azure](/d
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/hosts-operating-systems/opentelemetry')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="55"/><h4>OpenTelemtry</h4></a>
+  <p>A guide to OpenTelemetry apps for hosts and operating systems.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/hosts-operating-systems/HostMetrics.png')} alt="Thumbnail icon" width="55"/>
   <h4><a href={useBaseUrl('docs/integrations/hosts-operating-systems/host-metrics')}>Host Metrics</a></h4>
   <p>A guide to the Sumo Logic app for Host Metrics.</p>

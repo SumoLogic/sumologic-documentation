@@ -51,13 +51,13 @@ You can search for fields in the Field Browser, a feature that is especially us
 
 In our example, we entered **ka** in the Search field and instantly received the following results.
 
-![FB_Field-Browser_Search.png](/img/search/get-started-search/search-page/FB-Field-Browser-Search.png)
+<img src={useBaseUrl('img/search/get-started-search/search-page/FB-Field-Browser-Search.png')} alt="FB Field Browser Search" style={{border: '1px solid gray'}} width="300" />
 
 ## Nested field groupings
 
 Nested fields, such as those seen in JSON and KV, are grouped together based on their innate structure that is easy to traverse. We have used a JSON nested structure in the following example.
 
-![FB_Nested-JSON-objects.png](/img/search/get-started-search/search-page/FB-Nested-JSON-objects.png)
+<img src={useBaseUrl('img/search/get-started-search/search-page/FB-Nested-JSON-objects.png')} alt="FB Nested JSON objects" style={{border: '1px solid gray'}} width="800" />
 
 ## Limitations
 
@@ -68,6 +68,7 @@ The Field Browser is limited for aggregate queries in the following ways:
 * Field counts—If messages returned are less than or equal to 2500 messages, then an exact calculation is shown. If more than 2500 messages are returned, an approximation is shown.
 * The **Approximate Count** displays the count of the field values for the field. This does not display complete field values count for that field but it's just to calculate average, minimum, maximum, and standard deviation values from the first 100,000 raw messages. The field values will be skipped if the 100,000 raw messages limit is exceeded.
 * The system limits the number of fields extracted for display in the field browser. Use the [`fields` Operator](/docs/search/search-query-language/search-operators/fields) to control which exact fields are retrieved.
+* The field browser displays the count of the fields as well as the distribution of values of each field. These calculations are done for the first 200 fields that are parsed by a run-time FER and 100 dynamic parsed extracted field.
   
 ## Guide contents
 

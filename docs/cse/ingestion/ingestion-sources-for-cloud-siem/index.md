@@ -88,6 +88,12 @@ For all available methods to ingest data into Cloud SIEM, see [Recommended metho
   <p>Configure a syslog source to ingest Fortigate Firewall log messages to be parsed by Cloud SIEM.</p>
   </div>
  </div>
+  <div className="box smallbox card">
+   <div className="container">
+   <a href={useBaseUrl('docs/cse/ingestion/ingestion-sources-for-cloud-siem/google-workspace-apps-audit')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="G Suite Alert Center icon" width="200"/><h4>Google Workspace Apps Audit</h4></a>
+   <p>Collect Google Workspace log messages to be parsed by Cloud SIEM's system parser.</p>
+   </div>
+  </div>
  <div className="box smallbox card">
    <div className="container">
    <a href={useBaseUrl('docs/cse/ingestion/ingestion-sources-for-cloud-siem/g-suite-alert-center')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="G Suite Alert Center icon" width="200"/><h4>G Suite Alert Center</h4></a>

@@ -11,6 +11,14 @@ This topic has instructions for creating a log mapping for structured messages u
 
 For more information about log mapping, and how it fits into the record creation process, see the [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline) topic. For a complete list of the standard log mappings, see [Mappings](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/mappings/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage log mapping with the [`log_mapping`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_log_mapping) resource.
+
+<TerraformLink/>
+:::
+
 ## About the log mapping process
 
 When you set up a log mapping, you supply the following information:  
