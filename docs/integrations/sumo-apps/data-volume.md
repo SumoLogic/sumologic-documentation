@@ -115,13 +115,13 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Data Volume app alerts
 
-| Name                                                | Description                                                                                                                                                                                                                   | Alert Condition | Recover Condition |
-|:----------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------|:------------------|
-| `Data Volume - Daily plan limit alert`              | This alert is generated when yesterday's daily account log ingest is greater than given threshold.                                                                                                                            | Count > 100     | Count < = 100     |
-| `Data Volume - Daily plan limit alert by collector` | This alert is generated when yesterday's daily account log ingest for any specific collector is greater than given threshold.                                                                                                 | Count > 5       | Count < = 5       |
-| `Data Volume - Data not sent alert`                 | This alert is generated when a collector has not sent any data for more than 60 minutes(configurable) i.e the set threshold.                                                                                                  | Count > 60      | Count < = 60      |
-| `Data Volume - Monthly plan limit alert`            | This alert is generated when total log ingest for the current billing period reaches 85% or more (configurable). Before enabling, edit the query to set daily_gb_limit (GB/day) and billing_start/billing_end (day-of-month). | Count > 85      | Count < = 85      |
-| `Data Volume - Usage spike alert`                   | This alert is generated when a source category’s current hour ingest (GB) exceeds its highest hourly volume from the last 4 weeks by set threshold % value.                                                                   | Count > 50      | Count < = 50      |
+| Name  | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Data Volume - Daily plan limit alert` | This alert is generated when the daily account log ingest for the previous day is greater than the defined threshold.  | Count > 100     | Count < = 100     |
+| `Data Volume - Daily plan limit alert by collector` | This alert is triggered if the account log ingestion for any collector on the previous day exceeds the configured threshold.  | Count > 5   | Count < = 5 |
+| `Data Volume - Data not sent alert`   | This alert is triggered when a collector has not sent any data for longer than the configured threshold (60 minutes by default). | Count > 60      | Count < = 60      |
+| `Data Volume - Monthly plan limit alert`   | This alert is generated when total log ingest for the current billing period reaches 85% or more (configurable). Ensure the query is updated with `daily_gb_limit` (GB/day) and `billing_start / billing_end` (day of month) before enabling. | Count > 85      | Count < = 85      |
+| `Data Volume - Usage spike alert`  | This alert is generated when the current hour’s ingestion (GB) for a source category exceeds its highest hourly volume from the past four weeks by the set threshold percentage value.” | Count > 50      | Count < = 50      |
 
 ## Upgrade/Downgrade the Data Volume app (Optional)
 
