@@ -114,12 +114,12 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Enterprise Search Audit app alerts
 
-| Name | Alert Condition | Recover Condition |
-|:--|:--|:--|:--|
-| `Enterprise Search Audit - Data Retrieved Bytes Threshold` | This alert is triggered when data retrieved bytes goes over the set threshold value set in GB. | Count = 1 | Count < = 1 
-| `Enterprise Search Audit - Elevated Search Rate Failure` | This alert is triggered when search rate failure is higher than the set alert value. | Count > = 5 | Count < 5 |
-| `Enterprise Search Audit - Query Runtime Too High` | This alert is triggered when query runtime is higher than the set alert value. | Count > = 180 | Count < 180 |
-| `Enterprise Search Audit - Scanned Bytes Threshold` | This alert is triggered when query scanned bytes goes over the set threshold value. | Count > 500 | Count < = 500 |
+| Name                                                       | Description                                                                                    | Alert Condition | Recover Condition |
+|:-----------------------------------------------------------|:-----------------------------------------------------------------------------------------------|:----------------|:------------------|
+| `Enterprise Search Audit - Data Retrieved Bytes Threshold` | This alert is triggered when data retrieved bytes goes over the set threshold value set in GB. | Count > 1       | Count < = 1       |
+| `Enterprise Search Audit - Elevated Search Rate Failure`   | This alert is triggered when search rate failure is higher than the set alert value.           | Count > = 5     | Count < 5         |
+| `Enterprise Search Audit - Query Runtime Too High`         | This alert is triggered when query runtime is higher than the set alert value.                 | Count > = 180   | Count < 180       |
+| `Enterprise Search Audit - Scanned Bytes Threshold`        | This alert is triggered when query scanned bytes goes over the set threshold value.            | Count > 500     | Count < = 500     |
 
 
 ## Upgrade/Downgrade the Enterprise Search Audit app (Optional)
