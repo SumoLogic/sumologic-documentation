@@ -36,6 +36,7 @@ module.exports = {
   headTags: [
     {
       tagName: 'script',
+      attributes: {},
       innerHTML: `
         (function (w, s, d, r, e, n) {
           (w[s] = w[s] || {
