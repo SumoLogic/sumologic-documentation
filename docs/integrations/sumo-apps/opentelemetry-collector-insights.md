@@ -200,7 +200,7 @@ After installation, verify that:
 
 ## Remote collector management via source templates
 
-You can now configure and manage OpenTelemetry collectors remotely for the following apps using source templates:
+You can now remotely configure and manage OpenTelemetry Collectors for the following applications using source templates. This capability eliminates manual setup and provides a unified experience across both local and remote collector workflows.
 - [Apache](/docs/send-data/opentelemetry-collector/remote-management/source-templates/apache/)
 - [Docker](/docs/send-data/opentelemetry-collector/remote-management/source-templates/docker/)
 - [ElasticSearch](/docs/send-data/opentelemetry-collector/remote-management/source-templates/elasticsearch/)
