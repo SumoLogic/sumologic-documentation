@@ -226,7 +226,7 @@ To download the YAML file, follow the steps below:
 
 ### Step 1: Set up OpenTelemetry collector
 
-You must first set up a remotely managed collector on your system. For more information, see [Step 1: Set up collector](#step-1-set-up-collector).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/install-otel-collector.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
+To get started, set up a remotely managed collector on your system by following the.instructions in [Step 1: Set up collector](#step-1-set-up-collector).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/install-otel-collector.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
 
 For the apps listed above, the installation commands now include a `--remotely-managed` flag. When this flag is used, a remotely managed collector is installed automatically instead of a locally managed one. If you prefer to use a locally managed collector, simply remove the flag from the installation command.
 
