@@ -214,14 +214,8 @@ You can now remotely configure and manage OpenTelemetry Collectors for the follo
 - [Redis](/docs/send-data/opentelemetry-collector/remote-management/source-templates/redis/)
 - [Windows](/docs/send-data/opentelemetry-collector/remote-management/source-templates/windows/)
 
-
 :::note
-If you want to configure your source locally, you can do so by downloading the YAML file.
-
-To download the YAML file, follow the steps below:
-1. [**New UI**](/docs/get-started/sumo-logic-ui). Go to the main Sumo Logic menu and select **Data Management**, and under **Data Collection** select **Source Template**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
-1. Select a source template to download its YAML file.
-1. Copy the YAML configuration to manage it locally.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/copy-yaml.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="400"/>
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](#configure-opentelemetry-collectors-locally).
 :::
 
 ### Step 1: Set up OpenTelemetry collector
@@ -239,6 +233,15 @@ Configure the source template for the above mentioned apps to ingest logs or met
 Link the remotely managed OpenTelemetry collector by name or tags to associate it with the configured source template. If you already provided tags in [Step 1](#step-1-set-up-opentelemetry-collector), they will be automatically populated at this stage.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/link-collectors.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
 
 Once the source template is created, you can [edit](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#edit-a-source-template) it anytime as needed.
+
+### Configure OpenTelemetry collectors locally
+
+You can configure your source locally by downloading the YAML file.
+
+To download the YAML file, follow the steps below:
+1. [**New UI**](/docs/get-started/sumo-logic-ui). Go to the main Sumo Logic menu and select **Data Management**, and under **Data Collection** select **Source Template**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
+1. Select the source template whose YAML configuration you want to download. If the required source template is not available, create a new one by clicking **+ Add Source**.
+1. In the right pane, under **Source Configuration**, click **Copy** or **Download YAML File** to download and manage the configuration locally.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/copy-yaml.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="400"/>
 
 ## Sample log messages
 
