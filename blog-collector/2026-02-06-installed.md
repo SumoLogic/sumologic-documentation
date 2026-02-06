@@ -11,7 +11,7 @@ In this release, we've enhanced the security and stability of the Collector with
 #### Security fix
 
 - Upgraded collector JRE to **Amazon Corretto Version 17.0.18.8.1**.
-- Upgraded AWS S3 SDK from Java version 1.x to Java version 2.x.
+- Upgraded the `software.amazon.awssdk:s3` to version **2.31.44.**
 
 #### Bug fix
 
