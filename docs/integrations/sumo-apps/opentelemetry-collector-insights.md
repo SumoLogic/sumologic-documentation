@@ -232,7 +232,7 @@ For the apps listed above, the installation commands now include a `--remotely-m
 
 ### Step 2: Configure app integration
 
-Configure the source template for the corresponding apps to ingest logs or metrics, or both. [Learn more](/docs/send-data/opentelemetry-collector/remote-management/source-templates/).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/configure-app.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}}width="700"/>
+Configure the source template for the above mentioned apps to ingest logs or metrics, or both. [Learn more](/docs/send-data/opentelemetry-collector/remote-management/source-templates/).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/configure-app.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
 
 ### Step 3: Link Collectors
 
