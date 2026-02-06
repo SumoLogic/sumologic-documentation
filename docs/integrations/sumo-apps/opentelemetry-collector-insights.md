@@ -214,7 +214,6 @@ You can now remotely configure and manage OpenTelemetry Collectors for the follo
 - [Redis](/docs/send-data/opentelemetry-collector/remote-management/source-templates/redis/)
 - [Windows](/docs/send-data/opentelemetry-collector/remote-management/source-templates/windows/)
 
-This eliminates manual setup and provides you with a unified experience for both local and remote collector workflows.
 
 :::note
 If you want to configure your source locally, you can do so by downloading the YAML file.
