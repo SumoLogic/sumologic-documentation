@@ -1,24 +1,24 @@
 ---
 id: amazon-sagemaker
-title: Amazon Sagemaker
-sidebar_label: Amazon Sagemaker
-description: Learn about the collection process for the Amazon Sagemaker service.
+title: Amazon SageMaker
+sidebar_label: Amazon SageMaker
+description: Learn about the collection process for the Amazon SageMaker service.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/amazon-sagemaker-logo.png')} alt="Thumbnail icon" width="50"/>
 
-The Sumo Logic Amazon Sagemaker app dashboards offer insights into CloudTrail, CloudWatch Logs, and performance metrics for your Amazon Sagemaker service. These preconfigured dashboards enable you to monitor logs and the runtime performance metrics of your Amazon Sagemaker.
+The Sumo Logic Amazon SageMaker app dashboards offer insights into CloudTrail, CloudWatch Logs, and performance metrics for your Amazon SageMaker service. These preconfigured dashboards enable you to monitor logs and the runtime performance metrics of your Amazon SageMaker.
 
-[Amazon Sagemaker Service](https://aws.amazon.com/sagemaker/) Amazon SageMaker AI is a fully managed machine learning (ML) service. With SageMaker AI, data scientists and developers can quickly and confidently build, train, and deploy ML models into a production-ready hosted environment. It provides a UI experience for running ML workflows that makes SageMaker AI ML tools available across multiple integrated development environments (IDEs).
+[Amazon SageMaker Service](https://aws.amazon.com/sagemaker/) Amazon SageMaker AI is a fully managed machine learning (ML) service. With SageMaker AI, data scientists and developers can quickly and confidently build, train, and deploy ML models into a production-ready hosted environment. It provides a UI experience for running ML workflows that makes SageMaker AI ML tools available across multiple integrated development environments (IDEs).
 
 ## Log and metrics types
 
-The Amazon Sagemaker app uses the following logs and metrics:
-* [Monitor Amazon Sagemaker API calls using CloudTrail](https://docs.aws.amazon.com/sagemaker/latest/dg/logging-using-cloudtrail.html).
+The Amazon SageMaker app uses the following logs and metrics:
+* [Monitor Amazon SageMaker API calls using CloudTrail](https://docs.aws.amazon.com/sagemaker/latest/dg/logging-using-cloudtrail.html).
 * [Monitor Endpoint invocation using CloudWatch Logs](https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html).
-* [Amazon Sagemaker runtime metrics](https://docs.aws.amazon.com/sagemaker/latest/dg/monitoring-cloudwatch.html).
+* [Amazon SageMaker runtime metrics](https://docs.aws.amazon.com/sagemaker/latest/dg/monitoring-cloudwatch.html).
 
 ### Sample CloudTrail log message
 
@@ -181,7 +181,7 @@ account=* region=* namespace=aws/sagemaker featuregroupname=* operationname=* me
 account=* region=* namespace=/aws/sagemaker/endpoints endpointname=* metric=CPUUtilization statistic=average | avg by endpointname 
 ```
 
-## Collecting logs and metrics for the Amazon Sagemaker app
+## Collecting logs and metrics for the Amazon SageMaker app
 
 ### Collecting CloudWatch metrics
 
@@ -190,7 +190,7 @@ Sumo Logic supports collecting metrics using two source types:
 * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
-The namespaces for the **Amazon Sagemaker** Service is
+The namespaces for the **Amazon SageMaker** Service is
 - `AWS/Sagemaker`
 - `/aws/sagemaker/endpoints`
 - `aws/sagemaker/modelbuildingpipeline`
@@ -200,13 +200,13 @@ The namespaces for the **Amazon Sagemaker** Service is
 
 For ​​​**Metadata** add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. Metrics can be queried via the “account field”.
 
-### Collecting Amazon Sagemaker CloudTrail logs
+### Collecting Amazon SageMaker CloudTrail logs
 
 1. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to your Hosted Collector.
     * **Name**. Enter a name to display the new Source.
     * **Description**. Enter an optional description.
-    * **S3 Region**. Select the Amazon Region for your **Amazon Sagemaker** S3 bucket.
-    * **Bucket Name**. Enter the exact name of your **Amazon Sagemaker** S3 bucket.
+    * **S3 Region**. Select the Amazon Region for your **Amazon SageMaker** S3 bucket.
+    * **Bucket Name**. Enter the exact name of your **Amazon SageMaker** S3 bucket.
     * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions)). The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter `aws/observability/cloudtrail/logs`.
     * **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
@@ -218,9 +218,9 @@ For ​​​**Metadata** add an **account** field to the source and assign it a
     * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 2. Click **Save**.
 
-### Collecting Amazon Sagemaker CloudWatch logs
+### Collecting Amazon SageMaker CloudWatch logs
 
-To enable Amazon Sagemaker CloudWatch Logs, follow the steps mentioned in [AWS documentation](https://docs.aws.amazon.com/whitepapers/latest/sagemaker-studio-admin-best-practices/logging-and-monitoring.html#logging-with-cloudwatch)
+To enable Amazon SageMaker CloudWatch Logs, follow the steps mentioned in [AWS documentation](https://docs.aws.amazon.com/whitepapers/latest/sagemaker-studio-admin-best-practices/logging-and-monitoring.html#logging-with-cloudwatch)
 
 :::note
 Ensure that when configuring `CloudWatch Logs`, the log group name follows the pattern `/aws/sagemaker/*`.
@@ -233,7 +233,7 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 - While configuring the CloudWatch log source, the following fields can be added to the source:
     - Add an **account** field and assign it a value which is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the **account** field.
-    - Add a **region** field and assign it the value of the respective AWS region where the **Sagemaker** exists.
+    - Add a **region** field and assign it the value of the respective AWS region where the **SageMaker** exists.
     - Add an **accountId** field and assign it the value of the respective AWS account ID that is being used.
 
   <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" style={{border: '1px solid gray'}} width="500" />
@@ -266,7 +266,7 @@ json "eventSource", "awsRegion", "recipientAccountId" as event_source, region, a
 | fields accountid, region, namespace, endpoint
 ```
 
-#### Create/Update Field Extraction Rule(s) for Sagemaker CloudWatch logs
+#### Create/Update Field Extraction Rule(s) for SageMaker CloudWatch logs
 
 ```sql
 Rule Name: AwsObservabilitySagemakerCloudWatchLogsFER
@@ -311,9 +311,9 @@ Enter a parse expression to create an “account” field that maps to the alias
 | fields account
 ```
 
-## Installing the Sagemaker app
+## Installing the SageMaker app
 
-Now that you have set up a collection for **Amazon Sagemaker**, install the Sumo Logic app to use the pre-configured [dashboards](#viewing-the-sagemaker-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for **Amazon SageMaker**, install the Sumo Logic app to use the pre-configured [dashboards](#viewing-the-sagemaker-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
@@ -325,104 +325,104 @@ As part of the app installation process, the following fields will be created by
 * `region`: The geographical region where the AWS resource is located (for example, us-east-1 or eu-west-2).
 * `accountid`: The unique 12-digit identifier for the AWS account where the resource is present.
 * `namespace`: The AWS service namespace that the resource or metric belongs to (for example, AWS/EC2 or AWS/S3).
-* `endpointname`: A specific identifier for the endpoints within an AWS Sagemaker.
+* `endpointname`: A specific identifier for the endpoints within an AWS SageMaker.
 
-## Viewing the Sagemaker dashboards
+## Viewing the SageMaker dashboards
 
 We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
 ### Overview
 
-The **Amazon Sagemaker - Overview** dashboard provides a high-level view of SageMaker usage and health across endpoints, jobs, and Feature Store. It tracks endpoint invocations, model errors, loaded models, CPU/GPU utilization for endpoints and training/transform/processing jobs, Feature Store latency and throttled requests, pipeline executions, and trends by endpoint/job, filterable by account and region.
+The **Amazon SageMaker - Overview** dashboard provides a high-level view of SageMaker usage and health across endpoints, jobs, and Feature Store. It tracks endpoint invocations, model errors, loaded models, CPU/GPU utilization for endpoints and training/transform/processing jobs, Feature Store latency and throttled requests, pipeline executions, and trends by endpoint/job, filterable by account and region.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Overview.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
 
 ### CloudTrail Audit
 
-The **Amazon Sagemaker - CloudTrail Audit** dashboard provides a record of actions taken by a user, role, or an AWS service in Amazon sagemaker. CloudTrail captures all console actions and API/CLI calls for Amazon sagemaker as events.
+The **Amazon SageMaker - CloudTrail Audit** dashboard provides a record of actions taken by a user, role, or an AWS service in Amazon SageMaker. CloudTrail captures all console actions and API/CLI calls for Amazon SageMaker as events.
 
 Use this dashboard to:
-* Monitor Amazon Sagemaker-related audit logs using CloudTrail Events.
-* Monitor locations of successful and failed Amazon Sagemaker user activity events.
+* Monitor Amazon SageMaker-related audit logs using CloudTrail Events.
+* Monitor locations of successful and failed Amazon SageMaker user activity events.
 * Monitor all read-only and non-read-only events.
-* Monitor the most active users working on the Sagemaker infrastructure and various events invoked on the Sagemaker service.
+* Monitor the most active users working on the SageMaker infrastructure and various events invoked on the SageMaker service.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-CloudTrail-Audit.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-CloudTrail-Audit.png')} alt="Amazon SageMaker dashboard" style={{border: '1px solid gray'}} />
 
 ### Models
 
-The **Amazon Sagemaker - Models** dashboard provides visibility into model inference performance and readiness, tracking total invocations, model latency, cache hits, and maximum concurrent requests per model. It highlights model loading, downloading, and wait times with per-endpoint breakdowns, filterable by account, region, and endpoint to assess capacity and warm-up behavior.
+The **Amazon SageMaker - Models** dashboard provides visibility into model inference performance and readiness, tracking total invocations, model latency, cache hits, and maximum concurrent requests per model. It highlights model loading, downloading, and wait times with per-endpoint breakdowns, filterable by account, region, and endpoint to assess capacity and warm-up behavior.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Models.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Models.png')} alt="Amazon SageMaker dashboard" style={{border: '1px solid gray'}} />
 
 ### Endpoints
 
-The **Amazon Sagemaker - Endpoints** dashboard provides operational visibility into your inference endpoints, tracking CPU, GPU, GPU memory, memory, and disk utilization, along with loaded model counts (including multi-model endpoints). It also summarizes access logs by HTTP status and log level to highlight errors, with filters for account, region, and endpoint for targeted troubleshooting.
+The **Amazon SageMaker - Endpoints** dashboard provides operational visibility into your inference endpoints, tracking CPU, GPU, GPU memory, memory, and disk utilization, along with loaded model counts (including multi-model endpoints). It also summarizes access logs by HTTP status and log level to highlight errors, with filters for account, region, and endpoint for targeted troubleshooting.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Endpoints.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Endpoints.png')} alt="Amazon SageMaker dashboard" style={{border: '1px solid gray'}} />
 
 ### Endpoints Invocations
 
-The **Amazon Sagemaker - Endpoints Invocations** dashboard provides visibility into inference activity across your SageMaker endpoints. It tracks total invocations and invocations per instance, highlights 4XX/5XX and model errors, and measures overhead latency. Panels include per-endpoint breakdowns and time-series trends, filterable by account, region, and endpoint, to help monitor reliability and performance.
+The **Amazon SageMaker - Endpoints Invocations** dashboard provides visibility into inference activity across your SageMaker endpoints. It tracks total invocations and invocations per instance, highlights 4XX/5XX and model errors, and measures overhead latency. Panels include per-endpoint breakdowns and time-series trends, filterable by account, region, and endpoint, to help monitor reliability and performance.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Endpoint-Invocations.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Endpoint-Invocations.png')} alt="Amazon SageMaker dashboard" style={{border: '1px solid gray'}} />
 
 ### Feature Store
 
-The **Amazon Sagemaker - Feature Store** dashboard provides visibility into Feature Store usage and reliability, tracking consumed read/write request units, invocations, throttled requests, and 4XX/5XX errors across feature groups and operations. It also surfaces operational latency with time-series and honeycomb breakdowns, filterable by account, region, feature group, and operation for targeted analysis.
+The **Amazon SageMaker - Feature Store** dashboard provides visibility into Feature Store usage and reliability, tracking consumed read/write request units, invocations, throttled requests, and 4XX/5XX errors across feature groups and operations. It also surfaces operational latency with time-series and honeycomb breakdowns, filterable by account, region, feature group, and operation for targeted analysis.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Feature-Store.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Feature-Store.png')} alt="Amazon SageMaker dashboard" style={{border: '1px solid gray'}} />
 
 ### Pipeline
 
-The **Amazon Sagemaker - Pipeline** dashboard provides visibility into Model Building Pipelines execution health and performance. It tracks pipeline and step statuses (started, succeeded, failed, stopped), measures execution and step durations, and charts trends by pipeline and step, filterable by account, region, pipeline, and step.
+The **Amazon SageMaker - Pipeline** dashboard provides visibility into Model Building Pipelines execution health and performance. It tracks pipeline and step statuses (started, succeeded, failed, stopped), measures execution and step durations, and charts trends by pipeline and step, filterable by account, region, pipeline, and step.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Pipeline.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Pipeline.png')} alt="Amazon SageMaker dashboard" style={{border: '1px solid gray'}} />
 
 ### Processing Jobs
 
-The **Amazon Sagemaker - Processing Jobs** dashboard provides operational visibility into processing jobs, tracking CPU, GPU, GPU memory, memory, and disk utilization by job and algorithm in time-series and honeycomb views. It also surfaces recent logs for selected jobs to aid troubleshooting, with filters for account, region, processing job, and algorithm.
+The **Amazon SageMaker - Processing Jobs** dashboard provides operational visibility into processing jobs, tracking CPU, GPU, GPU memory, memory, and disk utilization by job and algorithm in time-series and honeycomb views. It also surfaces recent logs for selected jobs to aid troubleshooting, with filters for account, region, processing job, and algorithm.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Processing-Jobs.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Processing-Jobs.png')} alt="Amazon SageMaker dashboard" style={{border: '1px solid gray'}} />
 
 ### Transform Jobs
 
-The **Amazon Sagemaker - Transform Jobs** dashboard provides operational visibility into batch transform workloads, tracking CPU, GPU, GPU memory, memory, and disk utilization by job and instance in time-series and honeycomb views. It also surfaces recent logs for selected jobs to aid troubleshooting, with filters for account, region, transform job, and instance.
+The **Amazon SageMaker - Transform Jobs** dashboard provides operational visibility into batch transform workloads, tracking CPU, GPU, GPU memory, memory, and disk utilization by job and instance in time-series and honeycomb views. It also surfaces recent logs for selected jobs to aid troubleshooting, with filters for account, region, transform job, and instance.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Transform-Jobs.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Transform-Jobs.png')} alt="Amazon SageMaker dashboard" style={{border: '1px solid gray'}} />
 
 ### Training Jobs
 
-The **Amazon Sagemaker - Training Jobs** dashboard provides operational visibility into training workloads, tracking CPU, GPU, GPU memory, memory, and disk utilization by job and algorithm. It offers time-series and honeycomb breakdowns plus a recent logs table for selected jobs, filterable by account, region, training job, and algorithm.
+The **Amazon SageMaker - Training Jobs** dashboard provides operational visibility into training workloads, tracking CPU, GPU, GPU memory, memory, and disk utilization by job and algorithm. It offers time-series and honeycomb breakdowns plus a recent logs table for selected jobs, filterable by account, region, training job, and algorithm.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Training-Jobs.png')} alt="Amazon Sagemaker dashboard" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Sagemaker-Training-Jobs.png')} alt="Amazon SageMaker dashboard" style={{border: '1px solid gray'}} />
 
 
-## Create monitors for Amazon Sagemaker app
+## Create monitors for Amazon SageMaker app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Amazon Sagemaker alerts
+### Amazon SageMaker alerts
 
 | Name                                                 | Description                                                                                            | Alert Condition | Recover Condition |
 |:-----------------------------------------------------|:-------------------------------------------------------------------------------------------------------|:----------------|:--|
-| `Amazon Sagemaker - Pipeline Duration`               | This alert is triggered when high pipeline duration is detected in Amazon Sagemaker.                   | Count > 300000  | Count < = 300000 |
-| `Amazon Sagemaker - Processing Jobs CPU Utilization` | This alert is triggered when high CPU Utilization is detected for Processing Jobs in Amazon Sagemaker. | Count > 80    | Count < = 80 |
-| `Amazon Sagemaker - Processing Jobs GPU Utilization` | This alert is triggered when high GPU Utilization is detected for Processing Jobs in Amazon Sagemaker. | Count > 80    | Count < = 80 |
-| `Amazon Sagemaker - Training Jobs CPU Utilization`   | This alert is triggered when high CPU Utilization is detected for Training Jobs in Amazon Sagemaker.   | Count > 80    | Count < = 80 |
-| `Amazon Sagemaker - Training Jobs GPU Utilization`   | This alert is triggered when high GPU Utilization is detected for Training Jobs in Amazon Sagemaker. | Count > 80    | Count < = 80 |
-| `Amazon Sagemaker - Transform Jobs CPU Utilization`  | This alert is triggered when high CPU Utilization is detected for Transform Jobs in Amazon Sagemaker. | Count > 80    | Count < = 80 |
-| `Amazon Sagemaker - Transform Jobs GPU Utilization`  | This alert is triggered when high GPU Utilization is detected for Transform Jobs in Amazon Sagemaker. | Count > 80    | Count < = 80 |
+| `Amazon Sagemaker - Pipeline Duration`               | This alert is triggered when a high pipeline duration is detected in Amazon SageMaker.                   | Count > 300000  | Count < = 300000 |
+| `Amazon Sagemaker - Processing Jobs CPU Utilization` | This alert is triggered when high CPU Utilization is detected for Processing Jobs in Amazon SageMaker. | Count > 80    | Count < = 80 |
+| `Amazon Sagemaker - Processing Jobs GPU Utilization` | This alert is triggered when high GPU Utilization is detected for Processing Jobs in Amazon SageMaker. | Count > 80    | Count < = 80 |
+| `Amazon Sagemaker - Training Jobs CPU Utilization`   | This alert is triggered when high CPU Utilization is detected for Training Jobs in Amazon SageMaker.   | Count > 80    | Count < = 80 |
+| `Amazon Sagemaker - Training Jobs GPU Utilization`   | This alert is triggered when high GPU Utilization is detected for Training Jobs in Amazon SageMaker. | Count > 80    | Count < = 80 |
+| `Amazon Sagemaker - Transform Jobs CPU Utilization`  | This alert is triggered when high CPU Utilization is detected for Transform Jobs in Amazon SageMaker. | Count > 80    | Count < = 80 |
+| `Amazon Sagemaker - Transform Jobs GPU Utilization`  | This alert is triggered when high GPU Utilization is detected for Transform Jobs in Amazon SageMaker. | Count > 80    | Count < = 80 |
 
-## Upgrade/Downgrade the Amazon Sagemaker app (Optional)
+## Upgrade/Downgrade the Amazon SageMaker app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Amazon Sagemaker app (Optional)
+## Uninstalling the Amazon SageMaker app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
