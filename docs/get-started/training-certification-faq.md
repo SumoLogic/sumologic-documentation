@@ -218,7 +218,7 @@ If you cannot access your Sumo Logic environment from your personal machine, use
    1. Select the **Learn** tab in the UI.
    1. Click on **Learning Portal - Start Here!** to register via SSO for. You may be prompted to validate your login via email.
    1. Click on **Exam Registration**. This will enroll you into Kryterion Webassessor through SSO.<br/><img src={useBaseUrl('img/get-started/learn-tab.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="600" />
-   1. Once logged in to Webassessor, click **Edit Profile** at the top. Copy your username into a note for later use. Note that this will be a string of alphanumeric characters.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-registgration.png')} alt="Webassessor" style={{border: '1px solid gray'}} width="600" />
+   1. Once logged in to Webassessor, click **Edit Profile** at the top. Copy your username into a note for later use. Note that this will be a string of alphanumeric characters.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-registration.png')} alt="Webassessor" style={{border: '1px solid gray'}} width="600" />
    1. Click **Log Out**, then on the next screen, **Log In**.
    1. Now click **Forgot Password**.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-forgot-password.png')} alt="Webassessor forgot password" style={{border: '1px solid gray'}} width="600" />
    1. Paste your username (not your email address) and click **Submit**.
