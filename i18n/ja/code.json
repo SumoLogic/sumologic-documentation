@@ -259,10 +259,6 @@
     "message": "検索",
     "description": "The ARIA label for search page input"
   },
-  "theme.SearchPage.algoliaLabel": {
-    "message": "Algoliaで検索",
-    "description": "The ARIA label for Algolia mention"
-  },
   "theme.SearchPage.noResultsText": {
     "message": "検索結果が見つかりませんでした",
     "description": "The paragraph for empty search result"

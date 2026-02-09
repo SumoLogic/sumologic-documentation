@@ -266,18 +266,6 @@ module.exports = {
       defaultMode: 'light',
       disableSwitch: false,
     },
-    algolia: {
-      appId: '2SJPGMLW1Q',
-      apiKey: 'fb2f4e1fb40f962900631121cb365549',
-      indexName: 'crawler_sumodocs',
-      contextualSearch: false,
-      searchPagePath: 'docs-search', // Default value is 'search'; renamed to 'docs-search' so it doesn't conflict with '/Search' redirect
-      insights: true,
-      insightsConfig: {
-        useCookie: true, // alt to useCookie: true,
-      },
-      useCookie: true,  // alt to insightsConfig: {useCookie: true,},
-    },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
@@ -424,16 +412,18 @@ module.exports = {
               },
             ],
           },
-        //{
-          //className: 'header-github-link',
-          //to: 'https://github.com/SumoLogic/sumologic-documentation',
-          //position: 'right',
-          //alt: 'Link to Sumo Logic Docs GitHub repository',
-        //},
           {
-            type: 'search',
+            label: 'Search',
             position: 'left',
+            to: 'https://www.sumologic.com/help/docs-search/',
+            icon: 'search',
           },
+        //{
+        //className: 'header-github-link',
+        //to: 'https://github.com/SumoLogic/sumologic-documentation',
+        //position: 'right',
+        //alt: 'Link to Sumo Logic Docs GitHub repository',
+        //},
         ],
       },
       footer: {
