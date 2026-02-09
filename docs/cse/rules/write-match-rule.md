@@ -79,7 +79,7 @@ Watch this micro lesson to learn how to create a match rule.
 1. **On Entity**. Select the entity field—for example, an IP address, MAC address, hostname, and so on—in the record that the resulting signal should be associated with. (In Cloud SIEM, an insight is a set of signals with the same entity field.) Select a value from the pull-down list. 
 1. **using the name**. Define the name for signals fired by the rule. You can enter text, and include record fields from the custom token list. Including record field values in the signal name can make it more meaningful.
     :::note
-    * When you're configuring a Threshold and Chain rule, you do not supply a signal name; a signal fired by those rule types has the same name as the rule that fired it.
+    * When you're configuring a threshold or chain rule, you do not supply a signal name; a signal fired by those rule types has the same name as the rule that fired it.
     * For extracted fields, you can specify a token for an extracted field using the format `{{fields[<field_name>]}}`.
     :::
 1. **with the summary**. Enter a brief summary describing what causes the rule to create a signal.
@@ -87,7 +87,7 @@ Watch this micro lesson to learn how to create a match rule.
    :::note
    <CseRule/>
    :::
-1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity:
+1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify severity:
    * **Constant**. Every signal that the rule fires will have the same severity,
    * **Dynamic**. Severity is based on the value of a field in the record.
 1. **Configure constant severity**. Choose **Constant**, and select a severity level. Then, proceed to Step 8. <br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="Match rule dialog" style={{border: '1px solid gray'}} width="250"/>
@@ -108,7 +108,7 @@ Watch this micro lesson to learn how to create a match rule.
       * **not in the record**. Will match when the attribute is found in the record. For example, if the selected field is `broirc_value`, and that field is not present in a record, the rule will match. If `broirc_value` exists but is null or empty, the rule will not match.
    1. You can define additional conditions, as desired. To define an additional condition, repeat the steps above, starting with **Add More Mappings**.
    :::note
-   The conditions you define will be processed in the order you define them. Once a match occurs, processing stops–remaining conditions are ignored.
+   The conditions you define will be processed in the order you define them. Once a match occurs, processing stops and remaining conditions are ignored.
    :::
 1. **with tags**. If desired, you can add metadata tags to your rule. Tags are useful for adding context to items like rules, insights, signals, entities. You can also search for and filter items by tag. Tags you set here will be automatically set on any signals created from this rule, and inherited by any insights generated from those signals.
 

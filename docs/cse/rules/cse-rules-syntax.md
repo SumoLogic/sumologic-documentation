@@ -389,7 +389,7 @@ where:
 * `list_name` is the name of a Match List or a threat intel list
 
 :::note
-When you reference a threat intel  list using array_contains, you must substitute underscores for spaces in the threat intel list name.
+When you reference a threat intel  list using `array_contains`, you must substitute underscores for spaces in the threat intel list name.
 :::  
 
 **Syntax for matching to a keyword tag**
@@ -400,7 +400,7 @@ The syntax for checking to see if the the `fieldsTag` field contains a particula
 
 where:
 
-* `field `is the name of a record field
+* `field` is the name of a record field
 * `keyword-tag` is a keyword tag
 
 **Syntax for matching to a schema key tag**
@@ -649,7 +649,7 @@ When an entity is processed by a rule using the `hasThreatMatch` function and is
 Parameters:
 * **`<fields>`**. A list of comma-separated [field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
 * **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `>=`, `!=`. <br/>You can filter on the following indicator attributes:
-   * `confidence` Confidence that the data represents a valid threat, where 100 is highest.  Malicious confidence scores from different sources are normalized and mapped to a 0-100 numerical value.
+   * `confidence`. Confidence that the data represents a valid threat, where 100 is highest.  Malicious confidence scores from different sources are normalized and mapped to a 0-100 numerical value.
    * `indicator`. Value of the indicator, such as an IP address, file name, email address, etc. 
    * `source`. The source in the Sumo Logic datastore displayed in the **Threat Intelligence** tab.
    * `threat_type`. The threat type of the indicator (for example, `anomalous-activity`, `anonymization`, `benign`, `compromised`, `malicious-activity`, `attribution`, `unknown`).
@@ -944,8 +944,7 @@ to `size` in the Cloud SIEM rules syntax.
 
 ### json
 
-Extracts values from JSON logs with selected JSONPath expressions. See
-Supported JSONPath syntax elements below.
+Extracts values from JSON logs with selected JSONPath expressions.
 
 You can use the `json` operator allows to extract:
 
@@ -973,26 +972,18 @@ attribute.
 **Syntax notes**
 
 * In Sumo Logic core platform, you can use the `json` operator without specifying a field to parse, in which case the operation is performed against the `_raw` field.
-
-:::note
-Currently, to use the `json` operator in Cloud SIEM you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in Cloud SIEM.
-:::
-
+    :::note
+    Currently, to use the `json` operator in Cloud SIEM you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in Cloud SIEM.
+    :::
 * As part of the ingestion process, the `fields` field in Cloud SIEM is mapped to the `_raw` field in Sumo Logic core platform.  For easy copy/paste functionality, Cloud SIEM accepts `_raw` as an alias to `fields`.
 * The pipe character before the first `json` clause is optional.
 * You can use multiple `json` clauses in a query.
 * You can use only one `where` clause per query.
 * Cloud SIEM doesn’t support all of the `json` operator syntax options that Sumo Logic core platform does, but you can do things like:
-
-  * `| json field=fields "foo.bar['baz']" as nestedKey`
-  * `| json field=fields "foo[0]" as indexKey`
-  * `| json field=fields "foo[*]" as asteriskKey`
-
-        Works for arrays, not maps.
-
-  * `| json field=fields "['foo.bar']" as topLevelKey`
-
-        This is a top-level key named \`foo.bar\`.
+    * `| json field=fields "foo.bar['baz']" as nestedKey`
+    * `| json field=fields "foo[0]" as indexKey`
+    * `| json field=fields "foo[*]" as asteriskKey`. Works for arrays, not maps.
+    * `| json field=fields "['foo.bar']" as topLevelKey`. This is a top-level key named \`foo.bar\`.
 
 **Examples**
 
@@ -1022,13 +1013,8 @@ Returns the number of characters in a string. If the string is null, it returns 
 
 **Examples**
 
-* The following expression returns "10":
-
-   `length("sumo logic")`
-
-* The following expression returns "0":
-
-   `length(null)`
+* The following expression returns "10": `length("sumo logic")`
+* The following expression returns "0": `length(null)`
 
 ### like
 
@@ -1356,7 +1342,7 @@ The following expression returns "90 (asin(1) is pi / 2)":
 
 Casts string data to the double data type.
 
-**Syntax **
+**Syntax**
 
 `toDouble(<field>)`
 
@@ -1382,7 +1368,7 @@ rules syntax.
 
 Casts string data to the long data type.
 
-**Syntax **
+**Syntax**
 
 `toLong(<field>)`
 
@@ -1443,7 +1429,7 @@ URL string.
 
 **Example**
 
-The following expression returns "http://yourmainserver-city55555.org/...iWS7o3KLdfg90&":
+The following expression returns `http://yourmainserver-city55555.org/...iWS7o3KLdfg90&`:
 
 `urldecode("http%3A%2F%2Fyourmainserver-city55555.org%2Ffunctions%2Fmain.php%3Fgk%3DGk45MgHJhEYx8bPYvGfiWS7o3KLdfg90%26")`
 
@@ -1457,7 +1443,7 @@ Encodes the URL into an ASCII character set.
 
 **Example**
 
-The following expression returns "http%3A%2F%2Fyourmainserver-city55555.org%2Ffunctions%2Fmain.php%3Fgk%3DGk45MgHJhEYx8bPYvGfiWS7o3KLdfg90%26"
+The following expression returns `http%3A%2F%2Fyourmainserver-city55555.org%2Ffunctions%2Fmain.php%3Fgk%3DGk45MgHJhEYx8bPYvGfiWS7o3KLdfg90%26`
 
 `urlencode("http://yourmainserver-city55555.org/...iWS7o3KLdfg90&")`
 
