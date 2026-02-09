@@ -19,7 +19,7 @@ An upgrade requested through the web application uses HTTPS (port 443) to upgra
 
 When one or more collectors in your Sumo Logic account are eligible for an upgrade, you'll be notified through the collectors page of the Sumo Logic web application:
 
-<img src={useBaseUrl('img//collector/upgrade-collectors-icon.png')} alt="Upgrade collectors" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/collector/upgrade-collectors-icon.png')} alt="Upgrade collectors" style={{border: '1px solid gray'}} width="800" />
 
 :::important
 The user interface will show up to 50 Collectors at a time. After upgrading one or more Collectors you can close and reopen the 'Upgrade Collectors' window to display other upgradable Collectors. You may consider conducting upgrades with the [Collector Management API](/docs/api/collector-management/upgrade-downgrade-collectors).
@@ -35,11 +35,11 @@ The upgrade may automatically be done in increments. In this case, you may exper
 
 To install an upgrade on one or more collectors:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. Click the **Upgrade Collectors** link.
 1. Determine your collector's JRE version and then choose one of the following:
   - **If your collector is already on the latest JRE version**:
-    
+
     For collectors running on the latest JRE version, you have two ways to proceed with the upgrade:
     - **Upgrade individual collectors**. Click **Upgrade** next to the name of a collector to install the upgrade just on that specific collector. This option can be used if a policy prevents you from upgrading every collector at the same time of day, or if you cannot deploy the upgrade all at once. Any collectors you choose not to upgrade will remain available in the upgrade dialog box so you can install the upgrade at a later time.
     - **Upgrade all collectors at once**. If you can safely upgrade all collectors, click **Upgrade All.**
@@ -49,12 +49,12 @@ To install an upgrade on one or more collectors:
       <img src={useBaseUrl('/img/send-data/upgrade-collectors.png')} alt="icon" />
 
   - **If your collector is on the deprecated JRE version**:
-  
+
     This section lists all collectors currently using a deprecated JRE version. To proceed with upgrading these collectors, you must first update their JRE to the latest version. Once that is done, you'll be able to upgrade the collectors themselves.
     JRE upgrade options:
     - **Upgrade individual collectors**. Click **Upgrade** next to the collector's name to update its JRE to the latest version.
     - **Upgrade all collectors at once**. If you can safely upgrade all collectors, click **Upgrade All.**
-    
+
     After the JRE is upgraded, the collectors will automatically move to the list of collectors running the latest JRE. From there, you can proceed to upgrade the collector itself.
 
 The upgrade process begins immediately after you click **Upgrade** or **Upgrade All**; the file is automatically downloaded and installed. You'll be notified when the upgrade has completed successfully.
@@ -66,7 +66,7 @@ Collectors that are offline or that have already been upgraded aren't eligible 
 You can choose to downgrade a Collector or Collectors to an earlier version for testing or other purpose. 
 
 To downgrade one or more collectors to an earlier build:
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. Click the **Edit** link on the right of an installed collector.
 1. Click the **Change Version** beside the current version.
 1. Select the version to install. 

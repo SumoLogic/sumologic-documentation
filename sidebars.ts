@@ -1410,6 +1410,7 @@ module.exports = {
             'search/get-started-with-search/build-search/search-templates',
             'search/get-started-with-search/build-search/set-time-range',
             'search/get-started-with-search/build-search/use-receipt-time',
+            'search/get-started-with-search/build-search/use-searchable-time',
             'search/get-started-with-search/build-search/use-url-to-run-search',
           ],
         },
@@ -2708,7 +2709,6 @@ integrations: [
           'integrations/sumo-apps/kickstart-data',
           'integrations/sumo-apps/log-analysis-quickstart',
           'integrations/sumo-apps/opentelemetry-collector-insights',
-          'integrations/sumo-apps/security-analytics',
         ],
       },
       {
