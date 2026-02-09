@@ -230,9 +230,8 @@ Configure the source template for the above mentioned apps to ingest logs or met
 
 ### Step 3: Link Collectors
 
-Link the remotely managed OpenTelemetry collector by name or tags to associate it with the configured source template. If you already provided tags in [Step 1](#step-1-set-up-opentelemetry-collector), they will be automatically populated at this stage.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/link-collectors.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
-
-Once the source template is created, you can [edit](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#edit-a-source-template) it anytime as needed.
+1. Link the remotely managed OpenTelemetry collector by name or tags to associate it with the configured source template. If you already provided tags in [Step 1](#step-1-set-up-opentelemetry-collector), they will be automatically populated at this stage.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/link-collectors.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
+2. Once the source template is created, you can [edit](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#edit-a-source-template) it anytime as needed.
 
 ### Configure OpenTelemetry collectors locally
 
