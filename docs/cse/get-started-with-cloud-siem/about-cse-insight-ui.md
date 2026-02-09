@@ -68,11 +68,15 @@ You can use the **Filters** area near the top of the page to narrow down the ins
 
 You can select multiple insights and make changes to them all at once using either the UI or API.
 
+:::note
+You can select a maximum of 5000 insights in one action, and your organization can have up to five active requests in progress at once.
+:::
+
 #### Bulk update insights in the UI
 
 1. Open the insights [list view](#list-view).
 1. [Filter insights](#filtering-insights) to locate only the insights you want to act on.
-1. Use the checkboxes on the insights list view to select multiple insights. You can select a maximum of 5000 insights in one action.
+1. Use the checkboxes on the insights list view to select multiple insights. 
 1. Select the action you want to take on the insights:
    * **Close Insights**. Give the insights a [closed resolution](/docs/cse/administration/manage-custom-insight-resolutions/#close-an-insight-using-a-custom-resolution).
    * **Assign To**. Assign the insights to a Cloud SIEM user.
