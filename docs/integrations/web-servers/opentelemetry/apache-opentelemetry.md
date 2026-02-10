@@ -116,8 +116,6 @@ import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configurat
 
 <DataConfiguration/>
 
-If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
-
 ## Sample log messages
 
 ```sh title="Access Logs"
