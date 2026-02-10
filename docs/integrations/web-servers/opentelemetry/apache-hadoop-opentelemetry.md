@@ -33,6 +33,7 @@ This app includes [built-in monitors](#apache-hadoop-alerts). For details on cre
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Hadoop App installation if not already present.
 
 - **`sumo.datasource`**. Has fixed value of **hadoop**.
+- **`bigdata.system`**. Has a fixed value of **hadoop**.
 - **`bigdata.cluster.name`**. User configured. Enter a name to identify the Hadoop cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - **`bigdata.node.name`**. Has the value of the host name of the machine which is being monitored.
 - **`deployment.environment`**. User configured. This is the deployment environment where the Memcache cluster resides. For example, dev, prod, or qa.
@@ -45,10 +46,18 @@ JMX receiver collects Hadoop metrics (NameNode metrics) from Hadoop cluster as p
 
   1. Follow the instructions in [JMX - OpenTelemetry's prerequisites section](/docs/integrations/app-development/opentelemetry/jmx-opentelemetry/#prerequisites) to download the [JMX Metric Gatherer](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/README.md). This gatherer is used by the [JMX Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
 
-  2. Set the JMX port by setting it as part of `HDFS_NAMENODE_OPTS` for Hadoop startup. Usually it is set in the `$HADOOP_HOME/etc/hadoop/hadoop-env.sh` file.
-      ```bash
+  2. Set the JMX port by setting it as part of `HDFS_NAMENODE_OPTS` for Hadoop startup. Usually it is set in the `$HADOOP_HOME/etc/hadoop/hadoop-env.sh` file. <br/>
+     ##### Without Authentication 
+     ```bash
       export HDFS_NAMENODE_OPTS="$HDFS_NAMENODE_OPTS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8004 -Dcom.sun.management.jmxremote.rmi.port=8004 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost"
-      ```
+     ```
+     ##### With Auth 
+     ```bash
+     export HDFS_NAMENODE_OPTS="$HDFS_NAMENODE_OPTS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8004 -Dcom.sun.management.jmxremote.rmi.port=8004 -Dcom.sun.management.jmxremote.authenticate=true -Dcom.sun.management.jmxremote.password.file=/etc/hadoop/jmx/jmxremote.password -Dcom.sun.management.jmxremote.access.file=/etc/hadoop/jmx/jmxremote.access -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost"
+     ```
+     :::note
+     **JMX Port Configuration** The JVM option `-Dcom.sun.management.jmxremote.port=8004` specifies the TCP port on which the Hadoop daemon exposes JMX metrics.
+     :::
 
 #### For log collection
 
@@ -199,7 +208,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 ## Sample log queries
 
 ```sql
-_source="hadoop/filelog"
+sumo.datasource=hadoop deployment.environment=* bigdata.cluster.name=* bigdata.node.name=*
 | json "message" nodrop
 | if (_raw matches "{*", message, _raw) as message
 | where contains(message, "Added node")
@@ -299,7 +308,7 @@ Use this dashboard to:
 * Detect **critical YARN failures and cluster instability**, including node loss, heartbeat timeouts, node removals, and scheduling disablement.
 * Monitor **ResourceManager shutdowns, security-related warnings, and high-severity error events** to quickly identify issues impacting YARN availability and reliability.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-ResourceManager-Errors-Log-Analysis.png' alt="ResourceManager Failures Log Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-ResourceManager-Errors-or-Failures-Log-Analysis.png' alt="ResourceManager Failures Log Analysis" />
 
 ### Apache Hadoop - ResourceManager Log Analysis
 
