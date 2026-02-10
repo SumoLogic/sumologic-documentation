@@ -10,6 +10,8 @@ This article outlines the process of creating a Scheduled Search, which is essen
 
 To run a Scheduled Search using receipt time, save the search with receipt time enabled.
 
+To run a Scheduled Search using searchable time, save the search with searchable time enabled.
+
 import TerraformLink from '../../reuse/terraform-link.md';
 
 :::tip
