@@ -259,12 +259,12 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 These alerts are metric based and will work for all Azure Firewalls.
 
-| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
-|:--|:--|:--|:--|
-| `Azure Firewall - Health State` | This alert is triggered when the average Firewall health state is less than 90% and triggers warning when average Firewall health state is less than 80%. | Critical: `< 90`<br/>Warning: `< 80` | Critical: `>= 90`<br/>Warning: `>= 80` |
-| `Azure Firewall - SNAT Port Utilization (%)` | This alert is triggered when the average SNAT port utilization is greater than 80% and triggers warning if SNAT port utilization is greater than 70%. | Critical: `> 80`<br/>Warning: `> 70` | Critical: `<= 80`<br/>Warning: `<= 70` |
-| `Azure Firewall - Average Latency Probe (Milliseconds)` | This alert is triggered when the average Latency Probe is greater than 10 milliseconds and triggers warning when average Latency Probe is greater than 5 milliseconds. | Critical: `> 10`<br/>Warning: `> 5` | Critical: `<= 10`<br/>Warning: `<= 5` |
-| `Azure Firewall - Network Rule Hit Count` | This alert is triggered when the total Network rules hit count is greater than 500 and triggers warning when Network rules hit count is greater than 300. | Critical: `> 500`<br/>Warning: `> 300` | Critical: `<= 500`<br/>Warning: `<= 300` |
+| Alert Name | Alert Description and Conditions                                                                                                                                       | Alert Condition                             | Recover Condition                             |
+|:--|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------|:----------------------------------------------|
+| `Azure Firewall - Health State` | This alert is triggered when the average Firewall health state is less than 80% and triggers warning when average Firewall health state is less than 90%.              | Critical: `< 80`<br/>Warning: `< 90`        | Critical: `>= 80`<br/>Warning: `>= 90`        |
+| `Azure Firewall - SNAT Port Utilization (%)` | This alert is triggered when the average SNAT port utilization is greater than 80% and triggers warning if SNAT port utilization is greater than 70%.                  | Critical: `> 80`<br/>Warning: `> 70`        | Critical: `<= 80`<br/>Warning: `<= 70`        |
+| `Azure Firewall - Average Latency Probe (Milliseconds)` | This alert is triggered when the average Latency Probe is greater than 10 milliseconds and triggers warning when average Latency Probe is greater than 5 milliseconds. | Critical: `> 10`<br/>Warning: `> 5`         | Critical: `<= 10`<br/>Warning: `<= 5`         |
+| `Azure Firewall - Network Rule Hit Count` | This alert is triggered when the total Network rules hit count is greater than 500 and triggers warning when Network rules hit count is greater than 300.              | Critical: `> 500`<br/>Warning: `> 300`      | Critical: `<= 500`<br/>Warning: `<= 300`      |
 | `Azure Firewall - Average Throughput (bits per second)` | This alert is triggered when the average Throughput is greater than 100000 bits/second and triggers warning when average Throughput is greater than 50000 bits/second. | Critical: `> 100000`<br/>Warning: `> 50000` | Critical: `<= 100000`<br/>Warning: `<= 50000` |
 
 ## Upgrade/Downgrade the Azure Firewall app (Optional)
