@@ -211,7 +211,7 @@ Sumo Logic Academy uses [Kryterion Webassessor](https://www.kryterion.com/blog/t
 
 For customers whose access to their Sumo Logic organization is also restricted to approved company machines, a standalone login process is required to log in to Kryterion Webassessor to attend the exam via a personal machine. You should simply follow the normal process to access Kryterion through the in-product **Learn** tab.
 
-If you cannot access your Sumo Logic environment from your personal machine, use the following process to enroll you into Webassessor through our standard single sign-on (SSO) procedure, and set a password on your account so that you can login from a different machine without needing to access Sumo Logic first:
+If you cannot access your Sumo Logic environment from your personal machine, use the following process to enroll you into Webassessor through our standard single sign-on (SSO) procedure, and set a password on your account so that you can log in from a different machine without needing to access Sumo Logic first:
 
 1. Log in from your work machine:
    1. Sign in to Sumo Logic as normal.
