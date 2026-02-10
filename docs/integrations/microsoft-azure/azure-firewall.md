@@ -20,15 +20,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 For Azure Firewall, you can collect the following logs and metrics:
 
-* **Azure Firewall Application Rule Log**. Contains all application rule log data for each Azure Firewall.
-* **Azure Firewall Network Rule Log**. Contains all network rule log data for each Azure Firewall.
-* **Azure Firewall DNS Proxy Log**. Contains all DNS Proxy events log data for each Azure Firewall.
-* **Azure Firewall Threat Intelligence Log**. Contains all Threat Intelligence events for each Azure Firewall.
-* **Azure Firewall IDPS Signature Log**. Contains all Intrusion Detection and Prevention System signature events.
-* **Azure Firewall NAT Rule Log**. Contains all DNAT (Destination Network Address Translation) events log data.
-* **Azure Firewall Fat Flow Log**. Contains all high-bandwidth flow (Fat Flow) events.
-* **Azure Firewall Flow Trace Log**. Contains flow information, flags, and the time period when the flows were recorded.
-* **Azure Firewall FQDN Resolution Failure Log**. Contains all FQDN Resolution requests that resulted in failure.
+* **Azure Firewall Application Rule**. Contains all Application rule log data. Each match between data plane and Application rule creates a log entry with the data plane packet and the matched rule's attributes.
+* **Azure Firewall Network Rule Aggregation (Policy Analytics)**. Contains aggregated Application rule log data for Policy Analytics.
+* **Azure Firewall DNS Flow Trace Log**. Contains all the DNS proxy data between the client, firewall, and DNS server.
+* **Azure Firewall DNS query**. Contains all DNS Proxy events log data.
+* **Azure Firewall Fat Flow Log**. This query returns the top flows across Azure Firewall instances. Log contains flow information, date transmission rate (in Megabits per second units) and the time period when the flows were recorded. Please follow the documentation to enable Top flow logging and details on how it is recorded.
+* **Azure Firewall Flow Trace Log**. Flow logs across Azure Firewall instances. Log contains flow information, flags and the time period when the flows were recorded. Please follow the documentation to enable flow trace logging and details on how it is recorded.
+* **Azure Firewall FQDN Resolution Failure**. Contains all internal Firewall FQDN resolution requests that resulted in failure.
+* **Azure Firewall IDPS Signature**. Contains all data plane packets that were matched with one or more IDPS signatures.
+* **Azure Firewall Nat Rule**. Contains all DNAT (Destination Network Address Translation) events log data. Each match between data plane and DNAT rule creates a log entry with the data plane packet and the matched rule's attributes.
+* **Azure Firewall Nat Rule Aggregation (Policy Analytics)**. Azure Firewall Nat Rule Aggregation (Policy Analytics).
+* **Azure Firewall Network Rule**. Contains all Network Rule log data. Each match between data plane and network rule creates a log entry with the data plane packet and the matched rule's attributes.
+* **Azure Firewall Application Rule Aggregation (Policy Analytics)**. Contains aggregated Network rule log data for Policy Analytics.
+* **Azure Firewall Threat Intelligence**. Contains all Threat Intelligence events.
 
 For more information on supported metrics and logs schema, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/firewall/monitor-firewall-reference).
 
@@ -64,16 +68,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 2. To create the diagnostic settings in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure Firewall that you want to monitor.
    1. Choose **Stream to an event hub** as the destination.
-   1. Select the log categories you want to collect:
-      * `AzureFirewallApplicationRule`
-      * `AzureFirewallNetworkRule`
-      * `AzureFirewallDnsProxy`
-      * `AZFWThreatIntel`
-      * `AZFWIdpsSignature`
-      * `AZFWNatRule`
-      * `AZFWFatFlow`
-      * `AZFWFlowTrace`
-      * `AZFWFqdnResolveFailure`
+   1. Select the log categories you want to collect
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
    <img src={useBaseUrl('img/send-data/azure-firewall-diagnostic-settings.png')} alt="Azure Firewall diagnostic settings" style={{border: '1px solid gray'}} width="800" />
 3. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Firewall Tag Location" style={{border: '1px solid gray'}} width="500" />
@@ -112,151 +107,145 @@ import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
 ### Overview
 
-The **Azure Firewall - Overview** dashboard provides a high-level summary of firewall health, performance, and security posture. Key metrics include Firewall Health by Status (%), SNAT Port Utilization (%), Average Latency (ms), Total Threat Intel Matches, Total IDPS Alerts, Network Rule Actions Distribution, Total Application Rule Hit Count, Total Network Rule Hit Count, Average Throughput, Average Observed Capacity Units, and Total Data Processed.
+The **Azure Firewall - Overview** dashboard provides a high-level summary of firewall health, performance, and security posture.
+
+Use this dashboard to:
+
+- Monitor firewall health status, SNAT port utilization, and average latency to ensure optimal performance.
+- Track threat intelligence matches, IDPS alerts, and network rule actions for security posture assessment.
+- Analyze throughput, capacity units, data processed, and rule hit counts for capacity planning and optimization.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-Overview.png')} alt="Azure Firewall Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Administrative Operations
 
-The **Azure Firewall - Administrative Operations** dashboard provides visibility into Azure Resource Manager operations performed on the firewall resource. Key metrics include Top 10 Operations That Caused Most Errors, Recent Delete Operations, Distribution by Operation Type (Read, Write, and Delete), Distribution by Operations, Users/Applications by Operation Type, Distribution by Status, and Recent Write Operations for change tracking and audit compliance.
+The **Azure Firewall - Administrative Operations** dashboard provides visibility into Azure Resource Manager operations performed on the firewall resource.
 
 Use this dashboard to:
 
-- Identify top users performing administrative operations.
-- View the top 10 operations that caused the most errors.
-- View recent read, write, and delete operations.
+- Monitor the distribution of operation types (Read, Write, Delete) and their success rates to ensure proper functioning of your firewall.
+- Identify potential issues by analysing the top 10 operations causing errors and correlating them with specific users or applications.
+- Track recent write and delete operations to maintain an audit trail of configuration changes made to your firewall resource.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-Administrative-Operations.png')} alt="Azure Firewall Administrative Operations" style={{border: '1px solid gray'}} width="800" />
 
 ### Application Rules
 
-The **Azure Firewall - Application Rules** dashboard provides visibility into application layer traffic filtering and web content control. Key metrics include Actions Distribution, Protocol Distribution, Deny Reasons, Top 10 Source IPs, TLS Inspection Status, Web Categories, and Application Rule Details for comprehensive FQDN-based traffic analysis.
+The **Azure Firewall - Application Rules** dashboard provides visibility into application layer (L7) traffic filtering and web content control.
 
 Use this dashboard to:
 
-- Monitor application rule hits and actions (Allow/Deny).
-- Identify top source IPs making application requests.
-- Analyze TLS inspection status and web category distribution.
+- Monitor application rule actions (Allow/Deny) and protocol distribution to understand traffic patterns.
+- Identify denied requests by location and analyse deny reasons for troubleshooting connectivity issues.
+- Track top source IPs, TLS inspection status, and web categories for comprehensive FQDN-based traffic analysis.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-Application-Rules.png')} alt="Azure Firewall Application Rules" style={{border: '1px solid gray'}} width="800" />
 
 ### Network Rules
 
-The **Azure Firewall - Network Rules** dashboard provides detailed insights into network layer traffic filtering. Key metrics include Network Rule Actions Distribution, Top 10 Denied Source IPs, Top 10 Denied Destination IPs, Top 10 Denied Reasons, Critical Port Access Attempts, Protocol Distribution, Top Rules Triggered, Top Denied Sources, and Requests by Location.
+The **Azure Firewall - Network Rules** dashboard provides detailed insights into network layer (L4) traffic filtering.
 
 Use this dashboard to:
 
-- Monitor network rule hits and blocked traffic.
-- Identify top denied source and destination IPs.
-- Detect critical port access attempts.
+- Monitor network rule actions distribution and protocol distribution to understand traffic patterns.
+- Identify top denied source/destination IPs and analyze deny reasons to troubleshoot connectivity issues.
+- Track critical port access attempts and top rules triggered for security monitoring and rule optimization.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-Network-Rules.png')} alt="Azure Firewall Network Rules" style={{border: '1px solid gray'}} width="800" />
 
 ### NAT Rules
 
-The **Azure Firewall - NAT Rules** dashboard provides insights into Destination NAT (DNAT) translations for inbound traffic routing. Key metrics include NAT by Protocol, NAT Translations Over Time, Top 10 Source IPs Using NAT, NAT Rule Details, and Top NAT Rules for monitoring inbound connectivity patterns.
+The **Azure Firewall - NAT Rules** dashboard provides insights into Destination NAT (DNAT) translations for inbound traffic routing.
 
 Use this dashboard to:
 
-- Monitor DNAT translations for inbound traffic.
-- Identify top source IPs using NAT rules.
-- Analyze NAT rule usage patterns.
+- Monitor NAT translations by protocol and track NAT activity over time to understand inbound connectivity patterns.
+- Identify top source IPs using NAT and analyze NAT rule details for traffic routing optimisation.
+- Track critical port access attempts and visualize source/destination locations for security monitoring.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-NAT-Rules.png')} alt="Azure Firewall NAT Rules" style={{border: '1px solid gray'}} width="800" />
 
 ### Threat Intelligence
 
-The **Azure Firewall - Threat Intelligence** dashboard provides visibility into malicious traffic detected by Microsoft's threat intelligence feed. Key metrics include Threat Actions Distribution, Threats by Protocol, TLS Inspected vs Non-Inspected traffic, Top 10 Threat Source IPs, Top 10 Threat Destination IPs, Top Threat Descriptions, and detailed Threat Intel event logs.
+The **Azure Firewall - Threat Intelligence** dashboard provides visibility into malicious traffic detected by Microsoft's threat intelligence feed.
 
 Use this dashboard to:
 
-- Monitor threats detected by threat intelligence.
-- Identify malicious source and destination IPs.
-- Analyze threat descriptions and take appropriate action.
+- Monitor threat actions distribution and protocol-based threats to assess security posture.
+- Identify top threat source/destination IPs and threat FQDNs to investigate security incidents.
+- Analyze TLS inspection status and threat descriptions for detailed security analysis and incident response.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-Threat-Intelligence.png')} alt="Azure Firewall Threat Intelligence" style={{border: '1px solid gray'}} width="800" />
 
 ### IDPS
 
-The **Azure Firewall - IDPS** (Intrusion Detection and Prevention System) dashboard provides comprehensive monitoring of signature-based threat detection. Key metrics include IDPS Events Distribution by Severity, IDPS Actions Distribution (Alert/Deny), Top IDPS Categories, Top 10 Signature IDs, Top 10 Attack Sources, Top 10 Attack Destinations, Top 20 Attacked Ports, and High Severity Alerts (Severity 1-2) for critical security monitoring.
+The **Azure Firewall - IDPS** (Intrusion Detection and Prevention System) dashboard provides comprehensive monitoring of signature-based threat detection.
 
 Use this dashboard to:
 
-- Monitor intrusion detection and prevention events.
-- Identify attack sources and destinations.
-- Analyze high severity security alerts.
+- Monitor IDPS events distribution by severity and actions (Alert/Deny) to assess security posture.
+- Identify top attack sources, destinations, and signature IDs to investigate security incidents.
+- Analyze high severity alerts (Severity 1-2) and top IDPS categories for critical security monitoring and incident response.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-IDPS.png')} alt="Azure Firewall IDPS" style={{border: '1px solid gray'}} width="800" />
 
 ### DNS Analysis
 
-The **Azure Firewall - DNS Analysis** dashboard provides insights into DNS proxy activity and resolution patterns. Key metrics include DNS Response Codes, DNS Response by Protocol (TCP/UDP), Top 20 Queried Domains, Top 20 Failed DNS Queries, and DNS Queries Over Time for monitoring DNS traffic patterns and identifying potential issues.
+The **Azure Firewall - DNS Analysis** dashboard provides insights into DNS proxy activity and resolution patterns.
 
 Use this dashboard to:
 
-- Monitor DNS proxy activity and resolution patterns.
-- Identify frequently queried domains.
-- Troubleshoot failed DNS queries.
+- Monitor DNS response codes and protocol distribution (TCP/UDP) to ensure proper DNS resolution.
+- Identify top queried domains and failed DNS queries to troubleshoot connectivity issues.
+- Analyze DNS queries over time and average request duration to detect anomalies and performance issues.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-DNS-Analysis.png')} alt="Azure Firewall DNS Analysis" style={{border: '1px solid gray'}} width="800" />
 
 ### FQDN Failures
 
-The **Azure Firewall - FQDN Failures** dashboard provides detailed analysis of FQDN resolution failures affecting application rule processing. Key metrics include DNS Servers Used, Top 10 Failed FQDNs, Failure Reasons, Failures by Rule, FQDN Failures Over Time, and detailed FQDN Failure logs for troubleshooting connectivity issues.
+The **Azure Firewall - FQDN Failures** dashboard provides detailed analysis of FQDN resolution failures affecting application rule processing.
 
 Use this dashboard to:
 
-- Monitor FQDN resolution failures.
-- Identify problematic FQDNs and failure reasons.
-- Troubleshoot connectivity issues related to DNS resolution.
+- Monitor DNS servers used and identify top failed FQDNs to troubleshoot resolution issues.
+- Analyze failure reasons and correlate failures by rule to identify misconfigured application rules.
+- Track FQDN failures over time to detect patterns and resolve connectivity issues.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-FQDN-Failures.png')} alt="Azure Firewall FQDN Failures" style={{border: '1px solid gray'}} width="800" />
 
 ### Fat Flow Analysis
 
-The **Azure Firewall - Fat Flow Analysis** dashboard provides visibility into high-bandwidth connections that may impact firewall performance. Key metrics include Total Fat Flows Detected, Average Flow Rate (Megabits/Second), Maximum Flow Rate (Megabits/Second), Fat Flows Rate Over Time, Protocol Distribution, Top 10 Fat Flow Sources with Highest Average, and Top 10 Fat Flow Destinations with Highest Average.
+The **Azure Firewall - Fat Flow Analysis** dashboard provides visibility into high-bandwidth connections that may impact firewall performance.
 
 Use this dashboard to:
 
-- Monitor high-bandwidth connections.
-- Identify sources and destinations of fat flows.
-- Analyze flow rate trends over time.
+- Monitor total fat flows detected and track average/maximum flow rates to identify bandwidth-intensive connections.
+- Analyze fat flow trends over time and protocol distribution to understand traffic patterns.
+- Identify top fat flow sources and destinations with highest average rates to optimize network performance.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-Fat-Flow-Analysis.png')} alt="Azure Firewall Fat Flow Analysis" style={{border: '1px solid gray'}} width="800" />
 
 ### Flow Trace
 
-The **Azure Firewall - Flow Trace** dashboard provides detailed packet-level visibility for advanced troubleshooting and security analysis. Key metrics include TCP Flag Distribution, Top Sources by TCP Flag, INVALID TCP Flags (Protocol Violations), Total Flow Trace Events, Action Distribution, Action Reason Analysis, Top Destinations by TCP Flag, Potential Port Scan Detection, DNS Flow Trace Events including Message Type Distribution, Protocol Distribution, Top 10 DNS Query Sources, Top 10 Queried Domains, DNS Status Distribution, and Client vs Forwarder Activity.
+The **Azure Firewall - Flow Trace** dashboard provides detailed packet-level visibility for advanced troubleshooting and security analysis.
 
 Use this dashboard to:
 
-- Perform advanced troubleshooting with packet-level visibility.
-- Detect potential port scans and protocol violations.
-- Analyze DNS flow trace events.
+- Monitor TCP flag distribution and identify protocol violations (invalid TCP flags) for security analysis.
+- Analyze action distribution and reasons to understand firewall decisions and troubleshoot issues.
+- Detect potential port scans and track DNS flow trace events including query sources, domains, and status distribution.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-Flow-Trace.png')} alt="Azure Firewall Flow Trace" style={{border: '1px solid gray'}} width="800" />
 
-### Policy Analytics
-
-The **Azure Firewall - Policy Analytics** dashboard provides insights into firewall policy effectiveness and rule optimization opportunities. Key metrics include TLS Inspection Status, Web Categories, Top Rules by Hits for Network Rules, Application Rules, and NAT Rules, along with Top Sources for each rule type to identify optimization opportunities and policy tuning recommendations.
-
-Use this dashboard to:
-
-- Analyze firewall policy effectiveness.
-- Identify rule optimization opportunities.
-- Monitor top rules by hits for each rule type.
-
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-Policy-Analytics.png')} alt="Azure Firewall Policy Analytics" style={{border: '1px solid gray'}} width="800" />
-
 ### Audit Policy
 
-The **Azure Firewall - Audit Policy** dashboard provides details about Azure Policy compliance status for firewall resources. Key metrics include Total Success Policy Events, Total Failed Policy Events, Failed Policy Event details, and policy compliance trends for governance and regulatory compliance monitoring.
+The **Azure Firewall - Audit Policy** dashboard provides details about Azure Policy compliance status for firewall resources.
 
 Use this dashboard to:
 
-- Monitor policy events with warnings and errors.
-- View recent failed policy events.
-- Track policy compliance trends.
+- Monitor total success and failed policy events to ensure governance compliance.
+- Analyse failed policy event details to identify and remediate non-compliant configurations.
+- Track policy compliance trends for regulatory compliance monitoring and audit reporting.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-Audit-Policy.png')} alt="Azure Firewall Audit Policy" style={{border: '1px solid gray'}} width="800" />
 
@@ -270,13 +259,13 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 These alerts are metric based and will work for all Azure Firewalls.
 
-| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition        |
-|:--|:--|:--|:-------------------------|
-| `Azure Firewall - Health Status` | This alert is triggered when Firewall Health is less than 100%. | percentage < 100 | percentage > = 100       |
-| `Azure Firewall - SNAT Port Utilization` | This alert is triggered when SNAT Port Utilization exceeds 80%. | percentage > 80 | percentage < = 80        |
-| `Azure Firewall - Throughput` | This alert is triggered when firewall throughput exceeds threshold. | throughput > threshold | throughput < = threshold |
-| `Azure Firewall - Threat Intelligence Hits` | This alert is triggered when Threat Intelligence matches are detected. | count > 0 | count = 0                |
-| `Azure Firewall - IDPS High Severity Alerts` | This alert is triggered when high severity (1-2) IDPS alerts are detected. | count > 0 | count = 0                |
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Firewall - Health State` | This alert is triggered when the average Firewall health state is less than 90% and triggers warning when average Firewall health state is less than 80%. | Critical: `< 90`<br/>Warning: `< 80` | Critical: `>= 90`<br/>Warning: `>= 80` |
+| `Azure Firewall - SNAT Port Utilization (%)` | This alert is triggered when the average SNAT port utilization is greater than 80% and triggers warning if SNAT port utilization is greater than 70%. | Critical: `> 80`<br/>Warning: `> 70` | Critical: `<= 80`<br/>Warning: `<= 70` |
+| `Azure Firewall - Average Latency Probe (Milliseconds)` | This alert is triggered when the average Latency Probe is greater than 10 milliseconds and triggers warning when average Latency Probe is greater than 5 milliseconds. | Critical: `> 10`<br/>Warning: `> 5` | Critical: `<= 10`<br/>Warning: `<= 5` |
+| `Azure Firewall - Network Rule Hit Count` | This alert is triggered when the total Network rules hit count is greater than 500 and triggers warning when Network rules hit count is greater than 300. | Critical: `> 500`<br/>Warning: `> 300` | Critical: `<= 500`<br/>Warning: `<= 300` |
+| `Azure Firewall - Average Throughput (bits per second)` | This alert is triggered when the average Throughput is greater than 100000 bits/second and triggers warning when average Throughput is greater than 50000 bits/second. | Critical: `> 100000`<br/>Warning: `> 50000` | Critical: `<= 100000`<br/>Warning: `<= 50000` |
 
 ## Upgrade/Downgrade the Azure Firewall app (Optional)
 
@@ -296,18 +285,7 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 To troubleshoot metrics collection via Azure Metrics Source, follow the instructions in [Troubleshooting Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/#troubleshooting).
 
-### Logs not appearing in Sumo Logic
-
-If logs are not appearing in Sumo Logic:
-
-1. Verify that the diagnostic settings are correctly configured in the Azure portal.
-2. Check that the Event Hub is receiving data.
-3. Verify that the Azure Event Hubs source in Sumo Logic is correctly configured with the right Event Hub namespace and name.
-4. Check the source health in Sumo Logic for any errors.
-
 ## Additional resources
 
-- [Azure Firewall Documentation](https://learn.microsoft.com/en-us/azure/firewall/)
-- [Azure Firewall Logs and Metrics](https://learn.microsoft.com/en-us/azure/firewall/monitor-firewall-reference)
 - Blog: [Azure monitoring and troubleshooting](https://www.sumologic.com/blog/azure-services-monitoring)
 - Glossary: [Microsoft Azure](https://www.sumologic.com/glossary/microsoft-azure)
