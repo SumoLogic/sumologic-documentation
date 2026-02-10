@@ -64,4 +64,4 @@ If the query's scope does not include any partitions, the partition selection pr
 
 ### Are all the data scanned in the selected partitions?
 
-No data outside the specified timerange and intervalType (Message Time or Receipt Time) is scanned for the query.
+No data outside the specified time range and interval type (message time, receipt time, or searchable time) is scanned for the query.
