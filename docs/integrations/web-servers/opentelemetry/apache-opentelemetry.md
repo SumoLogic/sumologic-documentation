@@ -85,9 +85,9 @@ Follow these steps to set up and deploy the source template to a remotely manage
 
 ### Step 1: Set up remotely managed OpenTelemetry collector
 
-import CollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
-<CollectorInstallation/>
+<OtelCollectorInstallation/>
 
 ### Step 2: Configure the source template
 
@@ -104,7 +104,7 @@ import TimestampParsing from '../../../reuse/apps/opentelemetry/timestamp-parsin
 
 <TimestampParsing/>
 
-**Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
+**Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](/docs/send-data/opentelemetry-collector/remote-management/processing-rules).
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
