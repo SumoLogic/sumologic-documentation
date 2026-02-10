@@ -186,6 +186,13 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
+ <img src={useBaseUrl('img/integrations/microsoft-azure/azure-firewall.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-event-hubs')}>Azure Firewall</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Firewall.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-front-door.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-front-door')}>Azure Front Door</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Front Door.</p>
