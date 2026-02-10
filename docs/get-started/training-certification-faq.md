@@ -223,7 +223,7 @@ If you cannot access your Sumo Logic environment from your personal machine, use
    1. Now click **Forgot Password**.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-forgot-password.png')} alt="Webassessor forgot password" style={{border: '1px solid gray'}} width="600" />
    1. Paste your username (not your email address) and click **Submit**.
    1. An email with a password reset link will be sent to your inbox. Click the link in the email and set a password. Note the password for future use.
-You can now login to your Webassessor account using both single sign on (SSO) and from the Webassessor login page.
+You can now log in to your Webassessor account using both single sign on (SSO) and from the Webassessor login page.
 1. Log in from your personal machine:
    1. Access the Kryterion Webassessor standalone login page.
    1. Log in using your username (not your email address) and password set in the previous section.
