@@ -1,6 +1,6 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-In this step, we'll remotely install the OpenTelemetry collector and add a uniquely identifiable tag to these collectors.
+In this step, we'll install remotely managed OpenTelemetry collector and add a uniquely identifiable tag to these collectors.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, Select **App Catalog**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **App Catalog**.
 1. In the 🔎 Search Apps field, run a search for your desired OpenTelemetry app, then select it. For example, Apache - OpenTelemetry.

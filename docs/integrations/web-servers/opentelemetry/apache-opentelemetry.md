@@ -81,7 +81,7 @@ Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
 
 ## Collection configuration and app installation
 
-Follow these steps to set up and deploy the source template to a remotely managed OpenTelemetry collector.
+Follow these steps to set up and deploy the source template to collect data in SumoLogic from a remotely managed OpenTelemetry collector.
 
 ### Step 1: Set up remotely managed OpenTelemetry collector
 
