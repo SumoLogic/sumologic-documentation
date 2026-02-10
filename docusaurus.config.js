@@ -451,6 +451,7 @@ module.exports = {
             position: 'left',
             to: 'https://www.sumologic.com/help/docs-search/',
             icon: 'search',
+            target: '_self',
           },
         //{
         //className: 'header-github-link',
