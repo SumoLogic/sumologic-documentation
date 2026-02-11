@@ -97,7 +97,7 @@ Filters and operators (for example, `where`, `filter`, `parse`) progressively re
 - Filter conditions are not overly restrictive.
 - Correct field names and parsed fields are used in comparisons and filter conditions.
 - Parsing rules execute successfully and produce the fields referenced later in the query.
-- Aggregation or transformation operators (such as `stats`, `timeslice`, or `top`) are not applied to an already filtered-out dataset.
+- Aggregation or transformation operators (such as `timeslice`, or `top`) are not applied to an already filtered-out dataset.
 
 ### Access permission issues (role-based search filters)
 
