@@ -7,7 +7,7 @@ keywords:
  - azure network security
  - azure firewall monitoring
  - azure firewall logs
-description: This document outlines what is Azure Firewall, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
+description: This document outlines what Azure Firewall is, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -20,17 +20,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 For Azure Firewall, you can collect the following logs and metrics:
 
-* **Azure Firewall Application Rule**. Contains all application rule log data. Each match between data plane and application rule creates a log entry with the data plane packet and the matched rule's attributes.
+* **Azure Firewall Application Rule**. Contains all application rule log data. Each match between the data plane and the application rule creates a log entry with the data plane packet and the matched rule's attributes.
 * **Azure Firewall Network Rule Aggregation (Policy Analytics)**. Contains aggregated application rule log data for Policy Analytics.
 * **Azure Firewall DNS Flow Trace Log**. Contains all the DNS proxy data between the client, firewall, and DNS server.
 * **Azure Firewall DNS query**. Contains all DNS proxy events log data.
-* **Azure Firewall Fat Flow Log**. This query returns the top flows across Azure Firewall instances. Log contains flow information, date transmission rate (in megabits per second units) and the time period when the flows were recorded. Please follow the documentation to enable Top flow logging and details on how it is recorded.
-* **Azure Firewall Flow Trace Log**. Flow logs across Azure Firewall instances. Log contains flow information, flags and the time period when the flows were recorded. Please follow the documentation to enable flow trace logging and details on how it is recorded.
+* **Azure Firewall Fat Flow Log**. This query returns the top flows across Azure Firewall instances. Log contains flow information, date transmission rate (in megabits per second units), and the time period when the flows were recorded. Please follow the documentation to enable Top flow logging and details on how it is recorded.
+* **Azure Firewall Flow Trace Log**. Flow logs across Azure Firewall instances. Log contains flow information, flags, and the time period when the flows were recorded. Please follow the documentation to enable flow trace logging and details on how it is recorded.
 * **Azure Firewall FQDN Resolution Failure**. Contains all internal Firewall FQDN resolution requests that resulted in failure.
 * **Azure Firewall IDPS Signature**. Contains all data plane packets that were matched with one or more IDPS signatures.
-* **Azure Firewall Nat Rule**. Contains all DNAT (Destination Network Address Translation) events log data. Each match between data plane and DNAT rule creates a log entry with the data plane packet and the matched rule's attributes.
+* **Azure Firewall Nat Rule**. Contains all DNAT (Destination Network Address Translation) events log data. Each match between the data plane and the DNAT rule creates a log entry with the data plane packet and the matched rule's attributes.
 * **Azure Firewall Nat Rule Aggregation (Policy Analytics)**. Azure Firewall Nat Rule Aggregation (Policy Analytics).
-* **Azure Firewall Network Rule**. Contains all Network Rule log data. Each match between data plane and network rule creates a log entry with the data plane packet and the matched rule's attributes.
+* **Azure Firewall Network Rule**. Contains all Network Rule log data. Each match between the data plane and network rule creates a log entry with the data plane packet and the matched rule's attributes.
 * **Azure Firewall Application Rule Aggregation (Policy Analytics)**. Contains aggregated network rule log data for Policy Analytics.
 * **Azure Firewall Threat Intelligence**. Contains all Threat Intelligence events.
 * **Azure Firewall Metrics**. These metrics are available in [Microsoft.Network/azureFirewalls](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-azurefirewalls-metrics) namespace.
@@ -44,7 +44,7 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 * Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
-You must explicitly enable diagnostic settings for each Azure Firewall you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
+You must explicitly enable diagnostic settings for each Azure Firewall you want to monitor. You can forward logs to the same event hub, provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/Firewall/Logs` and `Azure/Firewall/Metrics`.
 
@@ -64,13 +64,14 @@ import MetricsSource from '../../reuse/metrics-source.md';
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
-1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-2. To create the diagnostic settings in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform the steps below for each Azure Firewall that you want to monitor.
+1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+2. To create the diagnostic settings in the Azure portal, refer to [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics).
+3. Follow the steps below for each Azure Firewall that you want to monitor.
    1. Choose **Stream to an event hub** as the destination.
    1. Select the log categories you want to collect
    1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
    <img src={useBaseUrl('img/send-data/azure-firewall-diagnostic-settings.png')} alt="Azure Firewall diagnostic settings" style={{border: '1px solid gray'}} width="800" />
-3. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Firewall Tag Location" style={{border: '1px solid gray'}} width="500" />
+4. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Firewall Tag Location" style={{border: '1px solid gray'}} width="500" />
 
 #### Activity logs (optional)
 
@@ -95,7 +96,7 @@ As part of the app installation process, the following fields will be created by
 - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
 - `resource_type`. Azure resource type (for example, azureFirewalls).
 - `resource_name`. The name of the resource (for example, firewall name).
-- `service_type`. Type of the service that can be accessed with a Azure resource.
+- `service_type`. The type of service that can be accessed with an Azure resource.
 - `service_name`. Services that can be accessed with an Azure resource.
 
 ## Viewing the Azure Firewall dashboards
@@ -135,7 +136,7 @@ The **Azure Firewall - Application Rules** dashboard provides visibility into ap
 Use this dashboard to:
 
 - Monitor application rule actions (Allow/Deny) and protocol distribution to understand traffic patterns.
-- Identify denied requests by location and analyse deny reasons for troubleshooting connectivity issues.
+- Identify denied requests by location and analyse reasons for troubleshooting connectivity issues.
 - Track top source IPs, TLS inspection status, and web categories for comprehensive FQDN-based traffic analysis.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-Application-Rules.png')} alt="Azure Firewall Application Rules" style={{border: '1px solid gray'}} width="800" />
@@ -184,7 +185,7 @@ Use this dashboard to:
 
 - Monitor IDPS events distribution by severity and actions (Alert/Deny) to assess security posture.
 - Identify top attack sources, destinations, and signature IDs to investigate security incidents.
-- Analyze high severity alerts (Severity 1-2) and top IDPS categories for critical security monitoring and incident response.
+- Analyze high-severity alerts (Severity 1-2) and top IDPS categories for critical security monitoring and incident response.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-IDPS.png')} alt="Azure Firewall IDPS" style={{border: '1px solid gray'}} width="800" />
 
@@ -220,7 +221,7 @@ Use this dashboard to:
 
 - Monitor total fat flows detected and track average/maximum flow rates to identify bandwidth-intensive connections.
 - Analyze fat flow trends over time and protocol distribution to understand traffic patterns.
-- Identify top fat flow sources and destinations with highest average rates to optimize network performance.
+- Identify top fat flow sources and destinations with the highest average rates to optimize network performance.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-Fat-Flow-Analysis.png')} alt="Azure Firewall Fat Flow Analysis" style={{border: '1px solid gray'}} width="800" />
 
@@ -232,7 +233,7 @@ Use this dashboard to:
 
 - Monitor TCP flag distribution and identify protocol violations (invalid TCP flags) for security analysis.
 - Analyze action distribution and reasons to understand firewall decisions and troubleshoot issues.
-- Detect potential port scans and track DNS flow trace events including query sources, domains, and status distribution.
+- Detect potential port scans and track DNS flow trace events, including query sources, domains, and status distribution.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AzureFirewall/Azure-Firewall-Flow-Trace.png')} alt="Azure Firewall Flow Trace" style={{border: '1px solid gray'}} width="800" />
 
@@ -256,15 +257,15 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Azure Firewall alerts
 
-These alerts are metric based and will work for all Azure Firewalls.
+These alerts are metric-based and will work for all Azure Firewalls.
 
 | Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Azure Firewall - Health State` | This alert is triggered when the average Firewall health state is less than 80% and triggers warning when average Firewall health state is less than 90%. | Critical: `< 80`<br/>Warning: `< 90` | Critical: `>= 80`<br/>Warning: `>= 90` |
-| `Azure Firewall - SNAT Port Utilization (%)` | This alert is triggered when the average SNAT port utilization is greater than 80% and triggers warning if SNAT port utilization is greater than 70%. | Critical: `> 80`<br/>Warning: `> 70` | Critical: `<= 80`<br/>Warning: `<= 70` |
-| `Azure Firewall - Average Latency Probe (Milliseconds)` | This alert is triggered when the average Latency Probe is greater than 10 milliseconds and triggers warning when average Latency Probe is greater than 5 milliseconds. | Critical: `> 10`<br/>Warning: `> 5` | Critical: `<= 10`<br/>Warning: `<= 5` |
-| `Azure Firewall - Network Rule Hit Count` | This alert is triggered when the total Network rules hit count is greater than 500 and triggers warning when Network rules hit count is greater than 300. | Critical: `> 500`<br/>Warning: `> 300` | Critical: `<= 500`<br/>Warning: `<= 300` |
-| `Azure Firewall - Average Throughput (bits per second)` | This alert is triggered when the average Throughput is greater than 100000 bits/second and triggers warning when average Throughput is greater than 50000 bits/second. | Critical: `> 100000`<br/>Warning: `> 50000` | Critical: `<= 100000`<br/>Warning: `<= 50000` |
+| `Azure Firewall - Health State` | This alert is triggered when the average Firewall health state is less than 80% and triggers a warning when the average Firewall health state is less than 90%. | Critical: `< 80`<br/>Warning: `< 90` | Critical: `>= 80`<br/>Warning: `>= 90` |
+| `Azure Firewall - SNAT Port Utilization (%)` | This alert is triggered when the average SNAT port utilization is greater than 80% and triggers a warning if SNAT port utilization is greater than 70%. | Critical: `> 80`<br/>Warning: `> 70` | Critical: `<= 80`<br/>Warning: `<= 70` |
+| `Azure Firewall - Average Latency Probe (Milliseconds)` | This alert is triggered when the average Latency Probe is greater than 10 milliseconds and triggers a warning when the average Latency Probe is greater than 5 milliseconds. | Critical: `> 10`<br/>Warning: `> 5` | Critical: `<= 10`<br/>Warning: `<= 5` |
+| `Azure Firewall - Network Rule Hit Count` | This alert is triggered when the total Network rules hit count is greater than 500, and triggersa  warning when the Network rules hit count is greater than 300. | Critical: `> 500`<br/>Warning: `> 300` | Critical: `<= 500`<br/>Warning: `<= 300` |
+| `Azure Firewall - Average Throughput (bits per second)` | This alert is triggered when the average Throughput is greater than 100000 bits/second and triggers a warning when the average Throughput is greater than 50000 bits/second. | Critical: `> 100000`<br/>Warning: `> 50000` | Critical: `<= 100000`<br/>Warning: `<= 50000` |
 
 ## Upgrade/Downgrade the Azure Firewall app (Optional)
 
