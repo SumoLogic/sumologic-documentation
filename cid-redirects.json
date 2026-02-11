@@ -2542,6 +2542,7 @@
   "/cid/5314": "/docs/manage/security/saml",
   "/cid/5315": "/docs/search/search-query-language/search-operators/save-classic",
   "/cid/5316": "/docs/search/optimize-search-partitions",
+  "/cid/5317": "/docs/search/faq/#why-does-log-search-return-no-results",
   "/cid/5318": "/docs/dashboards/panels/single-value-charts",
   "/cid/5320": "/docs/alerts/scheduled-searches/save-to-index",
   "/cid/5321": "/docs/alerts/webhook-connections/servicenow/set-up-searches",
