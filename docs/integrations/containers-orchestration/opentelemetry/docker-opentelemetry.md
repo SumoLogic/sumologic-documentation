@@ -49,7 +49,7 @@ To collect the Docker container event logs, the following command needs to be ex
 ```
 docker events -f 'type=container' --format '{{json .}}' > <PATH_TO_JSON> & disown
 ```
-Path to this JSON file will be required in the [next step](#step-2-configure-integration), where events are sent to Sumo Logic through a filelog receiver and seen as part of the **Docker - Overview** dashboard. Also, you can add additional parameters to this command to send events for specific containers. [Learn more](https://docs.docker.com/engine/reference/commandline/events/).
+Path to this JSON file will be required in the [next step](#step-2-configure-the-source-template), where events are sent to Sumo Logic through a filelog receiver and seen as part of the **Docker - Overview** dashboard. Also, you can add additional parameters to this command to send events for specific containers. [Learn more](https://docs.docker.com/engine/reference/commandline/events/).
 
 ## Collection configuration and app installation
 
