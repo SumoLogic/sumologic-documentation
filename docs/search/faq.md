@@ -101,7 +101,7 @@ Filters and operators (for example, `where`, `filter`, `parse`, `stats`) progres
 
 ### Access permission issues (role-based search filters)
 
-Role-based access controls can also result in empty search results as they limit which log data is allowed for you to view. Each user role may include search filters that automatically restrict which log sources can be queried. If your role does not permit access to the requested sources, those logs are excluded from the search results. To avoid this issue, make sure you satiety the below conditions:
+[Role-based access controls](/docs/manage/users-roles/roles/role-based-access-control/) can also result in empty search results as they limit which log data is allowed for you to view. Each user role may include search filters that automatically restrict which log sources can be queried. If your role does not permit access to the requested sources, those logs are excluded from the search results. To avoid this issue, make sure you satisfy the below conditions:
 
 - Your role allows access to the required `_sourceCategory`, `_collector`, or `_sourceHost` values.
 - The query targets log sources within your permitted scope.
