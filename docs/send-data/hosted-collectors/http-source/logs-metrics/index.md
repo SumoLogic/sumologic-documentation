@@ -53,15 +53,15 @@ To configure an HTTP Logs and Metrics Source:
        * **One Message Per Request.** Select this option if you'll be sending a single message with each HTTP request. For more information, see [Multiline options in HTTP sources](#multiline-options-in-http-sources). 
 1. **Processing Rules.** Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule. Processing rules are applied to log data, but not to metric data.
 1. When you are finished configuring the Source, click **Save**.
-1. When the URL associated with the source is displayed, copy the URL so you can use it to upload data.<br/><img src={useBaseUrl('img/send-data/http-source-address.png')} alt="HTTP Source Address dialog " style={{border: '1px solid gray'}} width="500" />
-
-<!-- Per DOCS-1266, replace the preceding step with the following: 
 1. In the **HTTP Source Address** dialog box, select one of the following to copy the URL where the source data will be stored:
    * **Presigned URL**. Select to copy a presigned URL with embedded authentication.<br/><img src={useBaseUrl('img/send-data/http-source-address-new.png')} alt="HTTP Source Address with presigned URL" style={{border: '1px solid gray'}} width="600"/>
    * **Auth Header**. Select to copy the URL, as well as a separate authorization header that contains an authentication token. This option provides greater security than a presigned URL because placing the authentication token in the authorization header of a request prevents the token from being exposed in the URL.<br/><img src={useBaseUrl('img/send-data/http-source-address-and-auth-header.png')} alt="HTTP Source Address with authorization header" style={{border: '1px solid gray'}} width="600"/>
 1. Copy the URL (and header if applicable) and keep in a safe place. You will use the URL in the next step: [Upload data to the HTTP Logs and Metrics Source](#upload-data-to-the-httplogs-and-metrics-source).
 1. Click **Done**.
--->
+
+import TokenBasedAuth from '../../../../reuse/token-based-auth-http-sources.md';
+
+<TokenBasedAuth/>
 
 :::note
 * Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to HTTP Endpoint have appropriate timestamps.

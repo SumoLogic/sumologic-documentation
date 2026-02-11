@@ -24,7 +24,7 @@ The saved search will also include any charts you have created in the **Aggrega
 1. **Description**. (Optional). Enter a description for the search. 
 1. **Query**. You can edit your query if desired.
 1. **Time Range**. Choose a time range that will be the default range when you run the saved search.
-1.  **Search By**. Select whether you want to save the search using message or receipt time. For more information, see [Use Receipt Time](../build-search/use-receipt-time.md).
+1. **Search By**. Select whether you want to save the search using message, [receipt time](../build-search/use-receipt-time.md), or [searchable time](../build-search/use-searchable-time.md).
 1. **Search Mode**. Select Manual or Auto Parse Mode. For more information, see [Dynamic Parsing](../build-search/dynamic-parsing.md).
 1. **Location to save to.** Select a folder location for the saved search.
 1. Click **Save** to save the search without scheduling.  If you want to schedule the search and optionally configure an alert, click **Schedule this search** and follow the instructions on [Schedule a Search](../../../alerts/scheduled-searches/schedule-search.md). 
