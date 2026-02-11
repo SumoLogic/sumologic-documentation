@@ -53,9 +53,9 @@ Path to this JSON file will be required in the [next step](#step-2-configure-int
 
 ## Collection configuration and app installation
 
-Follow these steps to set up and deploy the source template to collect data in SumoLogic from a remotely managed OpenTelemetry collector.
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-### Step 1: Set up Collector
+### Step 1: Set up remotely managed OpenTelemetry collector
 
 import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
@@ -65,13 +65,19 @@ import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-co
 If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
 :::
 
-### Step 2: Configure integration
+### Step 2: Configure the source template
 
 import DockerConfigureSourceTemplate from '../../../reuse/send-data/docker-configure-source-template.md';
 
 <DockerConfigureSourceTemplate/>
 
-### Step 3: Send logs to Sumo
+import TimestampParsing from '../../../reuse/apps/opentelemetry/timestamp-parsing.md';
+
+<TimestampParsing/>
+
+**Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](/docs/send-data/opentelemetry-collector/remote-management/processing-rules).
+
+### Step 3: Push the source template to the desired remotely managed collectors
 
 import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 

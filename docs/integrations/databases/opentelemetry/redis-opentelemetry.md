@@ -65,112 +65,35 @@ import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prer
 
 ## Collection configuration and app installation
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-<ConfigAppInstall/>
+### Step 1: Set up remotely managed OpenTelemetry collector
 
-### Step 1: Set up Collector
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
-
-<SetupColl/>
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
-
-### Step 2: Configure integration
-
-OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) YAML file with all the details concerning the data that needs to be collected. For example, it specifies the location of a log file that is read and sent to the Sumo Logic platform.
-
-In this step, you will configure the YAML file required for Redis Collection.
-
-Below are the inputs required:
-
-- **`endpoint (no default)`**. The hostname and port of the Redis instance, separated by a colon. (For example: `localhost:6379`.)
-- **Redis logs Path**. Enter the path to the log file for your Redis instance.
-
-The log file path configured to capture redis logs must be given here. The files are typically located in `/var/log/redis/redis-server.log`. If you are using a customized path, check the [`redis.conf`](https://download.redis.io/redis-stable/redis.conf) file for this information.
-
-You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the YAML file.
-
-Click on the **Download YAML File** button to get the YAML file.
-
-import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
-
-<EnvVar/>
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-YAML.png' style={{border:'1px solid gray'}} alt="Configuration" />
+<OtelCollectorInstallation/>
 
 :::note
-  Each Redis replica requires an independent Sumo Logic OpenTelemetry collector to be installed for effective logs and metrics monitoring.
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
 :::
 
-### Step 3: Send logs to Sumo Logic
+### Step 2: Configure the source template
 
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+import RedisConfigureSourceTemplate from '../../../reuse/send-data/redis-configure-source-template.md';
 
-<LogsIntro/>
+<RedisConfigureSourceTemplate/>
 
-<Tabs
-  className="unique-tabs"
-  defaultValue="Linux"
-  values={[
-    {label: 'Linux', value: 'Linux'},
-    {label: 'macOS', value: 'macOS'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
+import TimestampParsing from '../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 
-<TabItem value="Linux">
+<TimestampParsing/>
 
-1. Copy the YAML at `/etc/otelcol-sumo/conf.d/` folder in the Redis instance that needs to be monitored.
-2. Move the env file in the following directory:
-   ```sh
-    /etc/otelcol-sumo/env/
-   ```
-3. Restart the otelcol-sumo process using:
-   ```sh
-   sudo systemctl restart otelcol-sumo
-   ```
+**Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](/docs/send-data/opentelemetry-collector/remote-management/processing-rules).
 
-</TabItem>
-<TabItem value="macOS">
+### Step 3: Push the source template to the desired remotely managed collectors
 
-1. Copy the YAML at `/etc/otelcol-sumo/conf.d/` folder in the Redis instance that needs to be monitored.
-2. Restart the otelcol-sumo process using:
-   ```sh
-   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --conf "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-   ```
+import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 
-</TabItem>
-<TabItem value="Chef">
-
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
-
-</TabItem>
-</Tabs>
-
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+<DataConfiguration/>
 
 ## Sample log messages
 
