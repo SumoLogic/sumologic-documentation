@@ -92,7 +92,7 @@ Source expression is the part of the query which comes before the first pipe (|)
 
 ### Query filters and operator issues
 
-Filters and operators (for example, `where`, `filter`, `parse`, `stats`) progressively refine the dataset returned by the source expression. Each filter or operator keeps only the records that meet its specified condition. If none of the records satisfy a condition at any stage of the query pipeline, the dataset becomes empty and the search returns no results. To avoid this issue, make sure you satiety the below conditions:
+Filters and operators (for example, `where`, `filter`, `parse`, `stats`) progressively refine the dataset returned by the source expression. Each filter or operator keeps only the records that meet its specified condition. If none of the records satisfy a condition at any stage of the query pipeline, the dataset becomes empty and the search returns no results. To avoid this issue, make sure you satisfy the below conditions:
 
 - Filter conditions are not overly restrictive.
 - Correct field names and parsed fields are used in comparisons and filter conditions.
