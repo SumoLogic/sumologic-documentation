@@ -2387,7 +2387,7 @@ integrations: [
       },
       {
         type: 'category',
-        label: 'BigData',
+        label: 'Big Data',
         collapsible: true,
         collapsed: true,
         link: {type: 'doc', id: 'integrations/bigdata/index'},

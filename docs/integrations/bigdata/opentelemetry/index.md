@@ -1,7 +1,7 @@
 ---
 slug: /integrations/bigdata/opentelemetry
 title: OpenTelemetry
-description: Integrate with Sumo Logic using our OpenTelemetry apps for BigData, enabling streamlined observability and monitoring.
+description: Integrate with Sumo Logic using our OpenTelemetry apps for Big Data, enabling streamlined observability and monitoring.
 ---
 
 This guide has documentation for Sumo Logic OpenTelemetry apps.
