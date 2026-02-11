@@ -9,14 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/hadoop.png')} alt="Thumbnail icon" width="150"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/web-servers/hadoop.png')} alt="Thumbnail icon" width="175"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="35"/>
 
-The [Hadoop](https://hadoop.apache.org/docs/stable/) app is a unified logs and metrics app designed to help you monitor the health, performance, availability, and resource utilization of Hadoop clusters. It provides preconfigured dashboards and searches that offer deep visibility into HDFS and YARN components for real-time and historical analysis.
+The Sumo Logic app for [Apache Hadoop](https://hadoop.apache.org/docs/stable/) provides logs and metrics to help you monitor the health, performance, availability, and resource utilization of Hadoop clusters. It provides preconfigured dashboards and searches that offer deep visibility into HDFS and YARN components for real-time and historical analysis.
 The app delivers end-to-end observability across NameNode, DataNode, and ResourceManager services, enabling faster troubleshooting, capacity planning, and operational stability.
 
 Hadoop logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) and metrics are sent through the [JMX](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver) receiver with the `target_system` set as [`Hadoop`](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/hadoop.md).
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Apache-Hadoop-Schematics.png' alt="Schematics" />
+<img src={useBaseUrl('img/integrations/web-servers/apache-hadoop-schematics.png')} alt="Schematics" width="800"/>
 
 ## Hadoop log types
 
@@ -28,12 +28,11 @@ The Hadoop logs are generated in files as configured in the configuration file `
 This app includes [built-in monitors](#apache-hadoop-alerts). For details on creating custom monitors, refer to the [Create monitors for Hadoop app](#create-monitors-for-apache-hadoop-app).
 :::
 
-## Fields Create in Sumo Logic for Hadoop
+## Fields created in Sumo Logic for Hadoop
 
-Following are the [Fields](/docs/manage/fields/) which will be created as part of Hadoop App installation if not already present.
+Following are the [Fields](/docs/manage/fields/) which will be created as part of Hadoop app installation if not already present.
 
 - **`sumo.datasource`**. Has fixed value of **hadoop**.
-- **`bigdata.system`**. Has a fixed value of **hadoop**.
 - **`bigdata.cluster.name`**. User configured. Enter a name to identify the Hadoop cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - **`bigdata.node.name`**. Has the value of the host name of the machine which is being monitored.
 - **`deployment.environment`**. User configured. This is the deployment environment where the Memcache cluster resides. For example, dev, prod, or qa.
@@ -46,18 +45,16 @@ JMX receiver collects Hadoop metrics (NameNode metrics) from Hadoop cluster as p
 
   1. Follow the instructions in [JMX - OpenTelemetry's prerequisites section](/docs/integrations/app-development/opentelemetry/jmx-opentelemetry/#prerequisites) to download the [JMX Metric Gatherer](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/README.md). This gatherer is used by the [JMX Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
 
-  2. Set the JMX port by setting it as part of `HDFS_NAMENODE_OPTS` for Hadoop startup. Usually it is set in the `$HADOOP_HOME/etc/hadoop/hadoop-env.sh` file. <br/>
-     ##### Without Authentication 
-     ```bash
-      export HDFS_NAMENODE_OPTS="$HDFS_NAMENODE_OPTS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8004 -Dcom.sun.management.jmxremote.rmi.port=8004 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost"
-     ```
-     ##### With Auth 
-     ```bash
-     export HDFS_NAMENODE_OPTS="$HDFS_NAMENODE_OPTS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8004 -Dcom.sun.management.jmxremote.rmi.port=8004 -Dcom.sun.management.jmxremote.authenticate=true -Dcom.sun.management.jmxremote.password.file=/etc/hadoop/jmx/jmxremote.password -Dcom.sun.management.jmxremote.access.file=/etc/hadoop/jmx/jmxremote.access -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost"
-     ```
-     :::note
-     **JMX Port Configuration** The JVM option `-Dcom.sun.management.jmxremote.port=8004` specifies the TCP port on which the Hadoop daemon exposes JMX metrics.
-     :::
+  2. Set the JMX port by setting it as part of `HDFS_NAMENODE_OPTS` for Hadoop startup. Usually it is set in the `$HADOOP_HOME/etc/hadoop/hadoop-env.sh` file.
+      ```bash
+      export HDFS_NAMENODE_OPTS="$HDFS_NAMENODE_OPTS \
+      -Dcom.sun.management.jmxremote \
+      -Dcom.sun.management.jmxremote.port=8004 \
+      -Dcom.sun.management.jmxremote.rmi.port=8004 \
+      -Dcom.sun.management.jmxremote.authenticate=false \
+      -Dcom.sun.management.jmxremote.ssl=false \
+      -Djava.rmi.server.hostname=localhost"      
+      ```
 
 #### For log collection
 
@@ -109,13 +106,13 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 ### Step 2: Configure integration
 
-In this step, you will configure the YAML required for Hadoop Collection.
+In this step, you will configure the YAML required for Hadoop collection.
 
-The path of the log file configured to capture Hadoop logs is needed to be given here.
+Below are the inputs required for configuration:
 
-The files are typically located in `/usr/local/hadoop/logs/*`. If you're using a customized path, check the conf file for this information.
-
-For metrics, you're required to provide the JMX endpoint along with the `collection_interval` (default is 1 minute).
+- The path of the log file configured to capture Hadoop logs is needed to be given here.
+- The files are typically located in `/usr/local/hadoop/logs/*`. If you're using a customized path, check the conf file for this information.
+- For metrics, you're required to provide the JMX endpoint along with the `collection_interval` (default is 1 minute).
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click the **Download YAML File** button to get the YAML file.
 
@@ -208,7 +205,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 ## Sample log queries
 
 ```sql
-sumo.datasource=hadoop deployment.environment=* bigdata.cluster.name=* bigdata.node.name=*
+_source="hadoop/filelog"
 | json "message" nodrop
 | if (_raw matches "{*", message, _raw) as message
 | where contains(message, "Added node")
@@ -308,11 +305,11 @@ Use this dashboard to:
 * Detect **critical YARN failures and cluster instability**, including node loss, heartbeat timeouts, node removals, and scheduling disablement.
 * Monitor **ResourceManager shutdowns, security-related warnings, and high-severity error events** to quickly identify issues impacting YARN availability and reliability.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-ResourceManager-Errors-or-Failures-Log-Analysis.png' alt="ResourceManager Failures Log Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-ResourceManager-Errors-Log-Analysis.png' alt="ResourceManager Failures Log Analysis" />
 
 ### Apache Hadoop - ResourceManager Log Analysis
 
-The **Apache Hadoop – ResourceManager Log Analysis** provides visibility into ResourceManager startup, configuration, and internal service readiness. 
+The **Apache Hadoop – ResourceManager Log Analysis** provides visibility into ResourceManager startup, configuration, and internal service readiness.
 
 Use this dashboard to:
 - Monitor YARN ResourceManager operational health, including startups, state changes, and internal service readiness events.
@@ -323,7 +320,7 @@ Use this dashboard to:
 
 ### Apache Hadoop - NameNode Metrics
 
-The **Apache Hadoop – NameNode Metrics** provides a consolidated view of HDFS capacity, usage, and limits across NameNodes and clusters. 
+The **Apache Hadoop – NameNode Metrics** provides a consolidated view of HDFS capacity, usage, and limits across NameNodes and clusters.
 
 Use this dashboard to:
 
@@ -341,11 +338,11 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 ### Apache Hadoop alerts
 
-| Name                                                        | Description                                                                                                                    | Alert Condition | Recover Condition |
-|:------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------|:----------------|:------------------|
-| `Hadoop - HDFS Capacity Utilisation High`                   | This alert gets triggered when HDFS capacity utilisation exceeds the defined threshold, indicating risk of storage exhaustion. | Count > 95 %    | Count < = 95      |
-| `Hadoop - HDFS Corrupt Blocks Detected`                     | This alert gets triggered when one or more HDFS blocks are corrupt.                                                            | Count > 0       | Count < = 0       |
-| `Hadoop - HDFS Missing Blocks Detected`                     | This alert gets triggered when HDFS reports missing blocks, indicating potential data loss.                                    | Count > 0       | Count < = 0       |
-| `Hadoop - HDFS Volume Failures Detected`                    | This alert gets triggered when HDFS reports volume failures, indicating disk or filesystem issues on DataNodes.                | Count > 0       | Count < = 0       |
-| `Hadoop - HDFS NameNode Down`                               | This alert gets triggered when HDFS does not detect an active NameNode, impacting filesystem availability.                     | Count < = 0     | Count > 0         |
-| `Hadoop - HDFS DataNodes Down`                              | This alert gets triggered when the number of active HDFS DataNodes drops below the expected threshold.                         | Count < = 0     | Count > 0         |
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Hadoop - HDFS Capacity Utilisation High` | This alert gets triggered when HDFS capacity utilisation exceeds the defined threshold, indicating risk of storage exhaustion. | Count > 95 % | Count < = 95 |
+| `Hadoop - HDFS Corrupt Blocks Detected` | This alert gets triggered when one or more HDFS blocks are corrupt. | Count > 0 | Count < = 0 |
+| `Hadoop - HDFS Missing Blocks Detected` | This alert gets triggered when HDFS reports missing blocks, indicating potential data loss. | Count > 0 | Count < = 0 |
+| `Hadoop - HDFS Volume Failures Detected` | This alert gets triggered when HDFS reports volume failures, indicating disk or filesystem issues on DataNodes. | Count > 0 | Count < = 0 |
+| `Hadoop - HDFS NameNode Down` | This alert gets triggered when HDFS does not detect an active NameNode, impacting filesystem availability. | Count < = 0 | Count > 0 |
+| `Hadoop - HDFS DataNodes Down` | This alert gets triggered when the number of active HDFS DataNodes drops below the expected threshold. | Count < = 0 | Count > 0 |
