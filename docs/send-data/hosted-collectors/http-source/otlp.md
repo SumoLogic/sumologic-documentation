@@ -36,14 +36,11 @@ To configure an OTLP/HTTP Source:
    * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference for more information.
 1. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the OTLP/HTTP Source. <br/><img src={useBaseUrl('img/send-data/OTLP-processing-rules.png')} alt="OTLP processing rules" style={{border: '1px solid gray'}} width="400" />
 1. When you are finished configuring the Source, click **Save**.
-
-<!-- Per DOCS-1142. Add the following once we support OTLP:
 1. In the **HTTP Source Address** dialog box, select one of the following to copy the URL where the source data will be stored:
    * **Presigned URL**. Select to copy a presigned URL with embedded authentication.<br/><img src={useBaseUrl('img/send-data/http-source-address-otlp.png')} alt="HTTP Source Address with presigned URL" style={{border: '1px solid gray'}} width="600"/>
    * **Auth Header**. Select to copy the URL, as well as a separate authorization header that contains an authentication token. This option provides greater security than a presigned URL because placing the authentication token in the authorization header of a request prevents the token from being exposed in the URL.<br/><img src={useBaseUrl('img/send-data/http-source-address-otlp-auth.png')} alt="HTTP Source Address with authorization header" style={{border: '1px solid gray'}} width="600"/>
 1. Copy the URL (and header if applicable) and keep in a safe place. You will use the URL in the next step: [Using the OTLP/HTTP Source](#using-the-otlphttp-source).
 1. Click **Done**.
--->
 
 :::note
 * Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to OTLP Endpoint have appropriate timestamps.
@@ -75,15 +72,12 @@ The following table shows the URL format based on data types.
 
 To use the URL, include the URL in otlphttp exporter of OpenTelemetry Collector and refer it in the pipelines, as needed. The exporter will automatically attach the signal type suffix:
 
-<!-- Per DOCS-1142. Add the following after the line "endpoint: <source_url>" once we support OTLP:
-    headers:
-      Authorization: "x-sumo-token: [TokenString]"
--->
-
 ```
 exporters:
   otlphttp:
     endpoint: <source_url>
+    headers:
+      Authorization: "x-sumo-token: [TokenString]"
 
 ...
 
@@ -100,20 +94,13 @@ service:
       exporters: [otlphttp]
 ```
 
-<!-- Per DOCS-1142. Add the following after we support OTLP:
 :::note
 In the above example, the authorization header value is obtained when you select **Auth Header** when you [Create an OTLP/HTTP Source](#create-an-otlphttpsource), or when you [regenerate the URL](/docs/send-data/hosted-collectors/http-source/generate-new-url/).
 :::
--->
 
 ### Alternative
 
 It is also possible to optionally configure per-signal URL, for example:
-
-<!-- Per DOCS-1142. Add the following after the line "logs_endpoint: <source_url>/v1/logs" once we support OTLP:
-    headers:
-      Authorization: "x-sumo-token: [TokenString]"
--->
 
 ```
 exporters:
@@ -121,6 +108,8 @@ exporters:
     traces_endpoint: <source_url>/v1/traces
     metrics_endpoint: <source_url>/v1/metrics
     logs_endpoint: <source_url>/v1/logs
+    headers:
+      Authorization: "x-sumo-token: [TokenString]"
 
 ...
 
