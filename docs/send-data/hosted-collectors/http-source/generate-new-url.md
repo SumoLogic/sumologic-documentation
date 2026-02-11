@@ -6,22 +6,6 @@ sidebar_label: Regenerate URL
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can generate a new URL for an HTTP Source at any time. Generating a new URL completely invalidates the old URL.
-
-To generate a new URL:
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
-1. On the **Manage Collection** page, click **Regenerate URL** next to the HTTP source.<br/><img src={useBaseUrl('img/send-data/regenerate-url.png')} alt="Regenerate URL link" style={{border: '1px solid gray'}} width="800" />
-1. In the **HTTP Source Address** dialog box, click **Generate**.<br/> <img src={useBaseUrl('img/send-data/generate-new-url.png')} alt="http_source_dialog_generate.png" width="350"/>
-1. When asked to confirm the generation, click **OK**.
-1. In the **HTTP Source Address** dialog box, the new URL is displayed. Copy and paste the URL, then click **OK**.<br/> <img src={useBaseUrl('img/send-data/http_source_dialog_with_button.png')} alt="http_source_dialog_generate.png" width="350"/>
-
-:::note
-If you see a 401 (failed to authenticate) error message right after generating a new URL, wait a few minutes, then try the new URL again.
-:::
-
-<!-- Per DCOS-1266, for GA replace the contents of this article with the following:
-
 You can generate a new URL for an HTTP Source at any time. Generating a new URL completely invalidates the old URL. 
 
 Sumo Logic offers secure token-based authentication for the HTTPS Logs and Metrics Source. This capability allows you to authenticate using a unique token in the request header, maintaining the existing HTTPS endpoint behavior while adding token validation per source. Obtain the token to use in an auth header when you configure an HTTP source or regenerate the URL.
@@ -41,5 +25,3 @@ To generate a new URL:
 :::note
 If you see a 401 (failed to authenticate) error message right after generating a new URL, wait a few minutes, then try the new URL again.
 :::
-
--->
