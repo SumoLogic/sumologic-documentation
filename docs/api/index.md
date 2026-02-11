@@ -76,6 +76,11 @@ Use the Sumo Logic Application Programming Interfaces (APIs) to interact with ou
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/api/data-deletion-rules')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="Thumbnail icon" width="50"/><h4>Data Deletion Rules</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/api/dynamic-parsing')}><img src={useBaseUrl('img/icons/operations/parsing-data.png')} alt="Thumbnail icon" width="50"/><h4>Dynamic Parsing</h4></a>
   </div>
 </div>
