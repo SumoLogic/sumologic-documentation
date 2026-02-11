@@ -83,7 +83,7 @@ The error message `Search did not produce any results` appears when the search q
 
 ### Source expression issues
 
-Source expression is the part of query which comes before the first pipe (|), that defines which logs are searched in the first place. A wrong source expression returns no results because the scope does not match any ingested logs, the search engine has no data to process, or the query returns an empty result set even before filters or operators are applied. To avoid this issue, make sure you satiety the below conditions:
+Source expression is the part of the query which comes before the first pipe (|), that defines which logs are searched in the first place. A wrong source expression returns no results because the scope does not match any ingested logs, the search engine has no data to process, or the query returns an empty result set even before filters or operators are applied. To avoid this issue, make sure you satisfy the following conditions:
 
 - Metadata field values (for example, `_sourceCategory`, `_sourceHost`, `_collector`) are correct and not misspelled.
 - The specified log source or category exists.
