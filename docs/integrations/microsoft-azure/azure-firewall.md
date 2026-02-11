@@ -20,23 +20,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 For Azure Firewall, you can collect the following logs and metrics:
 
-* **Azure Firewall Application Rule**. Contains all Application rule log data. Each match between data plane and Application rule creates a log entry with the data plane packet and the matched rule's attributes.
-* **Azure Firewall Network Rule Aggregation (Policy Analytics)**. Contains aggregated Application rule log data for Policy Analytics.
+* **Azure Firewall Application Rule**. Contains all application rule log data. Each match between data plane and application rule creates a log entry with the data plane packet and the matched rule's attributes.
+* **Azure Firewall Network Rule Aggregation (Policy Analytics)**. Contains aggregated application rule log data for Policy Analytics.
 * **Azure Firewall DNS Flow Trace Log**. Contains all the DNS proxy data between the client, firewall, and DNS server.
-* **Azure Firewall DNS query**. Contains all DNS Proxy events log data.
-* **Azure Firewall Fat Flow Log**. This query returns the top flows across Azure Firewall instances. Log contains flow information, date transmission rate (in Megabits per second units) and the time period when the flows were recorded. Please follow the documentation to enable Top flow logging and details on how it is recorded.
+* **Azure Firewall DNS query**. Contains all DNS proxy events log data.
+* **Azure Firewall Fat Flow Log**. This query returns the top flows across Azure Firewall instances. Log contains flow information, date transmission rate (in megabits per second units) and the time period when the flows were recorded. Please follow the documentation to enable Top flow logging and details on how it is recorded.
 * **Azure Firewall Flow Trace Log**. Flow logs across Azure Firewall instances. Log contains flow information, flags and the time period when the flows were recorded. Please follow the documentation to enable flow trace logging and details on how it is recorded.
 * **Azure Firewall FQDN Resolution Failure**. Contains all internal Firewall FQDN resolution requests that resulted in failure.
 * **Azure Firewall IDPS Signature**. Contains all data plane packets that were matched with one or more IDPS signatures.
 * **Azure Firewall Nat Rule**. Contains all DNAT (Destination Network Address Translation) events log data. Each match between data plane and DNAT rule creates a log entry with the data plane packet and the matched rule's attributes.
 * **Azure Firewall Nat Rule Aggregation (Policy Analytics)**. Azure Firewall Nat Rule Aggregation (Policy Analytics).
 * **Azure Firewall Network Rule**. Contains all Network Rule log data. Each match between data plane and network rule creates a log entry with the data plane packet and the matched rule's attributes.
-* **Azure Firewall Application Rule Aggregation (Policy Analytics)**. Contains aggregated Network rule log data for Policy Analytics.
+* **Azure Firewall Application Rule Aggregation (Policy Analytics)**. Contains aggregated network rule log data for Policy Analytics.
 * **Azure Firewall Threat Intelligence**. Contains all Threat Intelligence events.
+* **Azure Firewall Metrics**. These metrics are available in [Microsoft.Network/azureFirewalls](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-azurefirewalls-metrics) namespace.
 
 For more information on supported metrics and logs schema, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/firewall/monitor-firewall-reference).
-
-* **Azure Firewall Metrics**. These metrics are available in [Microsoft.Network/azureFirewalls](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-azurefirewalls-metrics) namespace.
 
 ## Setup
 
@@ -90,7 +89,7 @@ import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 As part of the app installation process, the following fields will be created by default:
 
 - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-- `location`. The region to which the resource name belongs to.
+- `location`. The region to which the resource name belongs.
 - `subscription_id`. ID associated with a subscription where the resource is present.
 - `resource_group`. The resource group name where the Azure resource is present.
 - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
