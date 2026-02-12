@@ -146,7 +146,7 @@ The following table shows the comparison between the Installed Collector and Ope
       </td>
       <td style={{verticalAlign: 'top'}}>
         <ul>
-          <li>Unify collection to Single software for logs, metrics and traces </li>
+          <li>Unify collection to Single software for logs, metrics, and traces </li>
           <li>Scale issues with FluentD on Kubernetes Collection</li>
           <li>Custom data filtering and transform capabilities</li>
           <li>Using Chef, Puppet, Ansible to manage collectors</li>
