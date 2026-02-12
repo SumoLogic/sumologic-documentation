@@ -30,12 +30,12 @@ Learn how to view the Flex app dashboards.
     
 ## Log types
 
-- [Log and Tracing Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/)
-- [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/)
+- [Log and Tracing Flex Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/)
+- [Metrics Flex Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/)
 - [Log Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#log-search-audit-index-message-fields)
 
 :::info
-By default, [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#log-search-audit-index-message-fields) are enabled to collect data for the Flex app.
+By default, [Flex Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#log-search-audit-index-message-fields) are enabled to collect data for the Flex app.
 :::
 
 ### Log samples
@@ -180,13 +180,13 @@ _index=sumologic_volume
 | gbytes / duration_in_day as %"GB/Day"
 | fields %"GB/Day"
 ```
-For more examples, refer to [Log and Tracing Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/).
+For more examples, refer to [Log and Tracing Flex Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Metrics Flex Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/).
 
 ## Installing the Flex app
 
 ### Prerequisite
 
-Enable both the Data Volume Index (`sumologic_volume`) and the Search Audit Index (`_view = sumologic_search_usage_per_query`) prior to installation. See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/) and [Enable the Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#enable-the-search-audit-index) for instructions.
+Enable both the Flex Index (`sumologic_volume`) and the Search Audit Index (`_view = sumologic_search_usage_per_query`) prior to installation. See [Flex Index](/docs/manage/ingestion-volume/data-volume-index/) and [Enable the Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#enable-the-search-audit-index) for instructions.
 
 Flex app will be pre-installed for all the Flex users. 
 
@@ -236,7 +236,7 @@ The **Flex - Log Spikes** dashboard helps to review details of your data ingeste
 
 ### Logs
 
-The **Flex - Logs** dashboard helps you see your log ingest volume between default and non-default indexes along with the predicted growth. This dashboard also provides details about the data volume scan and predicted growth for scan volume.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Logs.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" />
+The **Flex - Logs** dashboard helps you see your log ingest volume between default and non-default indexes along with the predicted growth. This dashboard also provides details about the Flex scan and predicted growth for scan volume.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Logs.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" />
 
 ### Metrics
 
@@ -245,6 +245,22 @@ The **Flex - Metrics** dashboard helps you review metrics details of your data i
 ### Tracing
 
 The **Flex - Tracing** dashboard helps to review Tracing details of your data ingest and to identify areas of high-volume ingest.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Tracing.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" />
+
+## Create monitors for the Sumo Logic Flex app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Flex app alerts
+
+| Name  | Description                                                                                                                                             | Alert Condition | Recover Condition |
+|:--|:--------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------|:------------------|
+| `Flex - Collector Ingestion Spike Detection` | This alert is generated when the delta of collector log ingest for the previous day and today is greater than the defined threshold percentage.         | Count > 100     | Count < = 100     |
+| `Flex - Daily Credit Budget Exhaustion Alert` | This alert triggers when the total daily credit consumption crosses the set threshold limit to prevent budget depletion and unexpected cost overruns.   | Count > 75      | Count < = 75      |
+| `Flex - Daily Data Ingestion Capacity Exceeded Alert`   | This alert is triggered when daily data ingestion value exceeds the set the threshold value.                                                            | Count > 75      | Count < = 75      |
+| `Flex - Data Scan Volume Threshold Breach`   | This alert is generated when the daily average scan volume goes above the set threshold value.                                                          | Count > 100     | Count < = 100     |
+| `Flex - Expensive Query Detection Alert`  | This alert is triggered when consumed credits for any specific query cross the set threshold value.                                                     | Count > 5       | Count < = 5       |
 
 ## Upgrade/Downgrade the Flex app (Optional)
 
