@@ -26,7 +26,8 @@ We're delighted to announce [Automation Bridge](/docs/platform-services/automati
 
 #### Playbooks
 
-Implemented a confirmation prompt when terminating a playbook on the incidents and Automation Services pages to prevent accidental terminations.
+* Added a [**Playbook Executions**](/release-notes-csoar/2026/01/30/applicaiton-update/#new-feature-playbook-executions) page that lets you monitor the outcome of playbook runs.
+* Implemented a confirmation prompt when terminating a playbook on the incidents and Automation Services pages to prevent accidental terminations.
 
 #### Integrations
 
