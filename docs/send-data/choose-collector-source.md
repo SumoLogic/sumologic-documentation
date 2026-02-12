@@ -149,7 +149,7 @@ The following table shows the comparison between the Installed Collector and Ope
           <li>Unify collection to Single software for logs, metrics, and traces </li>
           <li>Scale issues with FluentD on Kubernetes Collection</li>
           <li>Custom data filtering and transform capabilities</li>
-          <li>Using Chef, Puppet, Ansible to manage collectors</li>
+          <li>Using Chef, Puppet, or Ansible to manage collectors</li>
           <li>Remote management for collection configuration</li>
           <li>Ingest Budgets</li>
           <li>Collector Management API (CRUD operations)</li>
