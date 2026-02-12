@@ -300,7 +300,7 @@ Before you create custom rules from scratch, there are some best practices you'l
 In this section, we'll write a rule that looks for three unique Windows event IDs related to failed logins within an hour.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
-1. Click **Create**.
+1. Click **+ Add Rule**.
 1. On the **Threshold** tile click **Create**.
 1. Give your rule a name. 
 1. Configure **If Triggered**.
@@ -329,8 +329,8 @@ In this section, we'll write a rule that looks for three unique Windows event ID
 
 In this section, we'll write a chain rule that looks for 1 successful login after 10 failed login attempts from the same IP address within 5 minutes.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.
-1. Click **Create**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
+1. Click **+ Add Rule**.
 1. On the **Chain** tile click **Create**.
 1. Give your rule a name.
 1. Configure **If Triggered**.
