@@ -62,11 +62,11 @@ Follow these steps to set up and deploy the source template to collect data in S
 
 import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
-<OtelCollectorInstallation/>
-
 :::note
 If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
 :::
+
+<OtelCollectorInstallation/>
 
 ### Step 2: Configure the source template
 

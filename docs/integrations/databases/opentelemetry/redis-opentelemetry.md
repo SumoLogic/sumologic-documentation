@@ -71,11 +71,11 @@ Follow these steps to set up and deploy the source template to collect data in S
 
 import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
-<OtelCollectorInstallation/>
-
 :::note
 If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
 :::
+
+<OtelCollectorInstallation/>
 
 ### Step 2: Configure the source template
 
@@ -87,7 +87,9 @@ import TimestampParsing from '../../../reuse/apps/opentelemetry/timestamp-parsin
 
 <TimestampParsing/>
 
-**Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](/docs/send-data/opentelemetry-collector/remote-management/processing-rules).
+import ProcessingRules from '../../../reuse/opentelemetry/processing-rules.md';
+
+<ProcessingRules/>
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
