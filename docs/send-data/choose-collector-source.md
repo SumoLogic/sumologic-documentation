@@ -154,7 +154,6 @@ The following table shows the comparison between the Installed Collector and Ope
           <li>Ingest Budgets</li>
           <li>Collector Management API (CRUD operations)</li>
           <li>Package manager support (yum, apt-get) for installation and upgrades</li>
-          <li>Note: Remote upgrades are not supported</li>
         </ul>
       </td>
     </tr>
