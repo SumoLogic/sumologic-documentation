@@ -82,15 +82,16 @@ You can select a maximum of 5000 insights in one action, and your organization c
    * **Assign To**. Assign the insights to a Cloud SIEM user.
    * **Change Status**. Change the insights' [status](/docs/cse/administration/manage-custom-insight-statuses/). 
    * **Comment**. Add a comment on the selected insights.<br/><img src={useBaseUrl('img/cse/bulk-select-insights.png')} alt="Bulk update insights" style={{border: '1px solid gray'}} width="600"/>
-1. Click **Confirm** on the confirmation dialog box.
-1. If you are updating a large number of insights, you cannot initiate another bulk update until the previous job finishes. A banner shows progress of the update. After the update completes, the banner displays for 24 hours so you can track recently-performed bulk updates.  
+1. Click **Confirm** on the confirmation dialog box. The update runs, and a banner shows progress of the update. After the update completes, the banner displays for 24 hours so you can track recently-performed bulk updates. 
+1. If you are running multiple bulk updates, keep in mind you cannot have more than five active requests in progress at one time. You will not be able to start another bulk update until there are fewer than five running.
 
 #### Bulk update insights with the API
 
 Use the following [Cloud SIEM APIs](/docs/api/cloud-siem-enterprise/) to bulk update insights:
-* `/sec/api/insights/bulk-updates`
-* `/sec/api/insights/bulk-updates/{id}/status`
-* `/sec/api/insights/bulk-updates/{job_id}/csv`
+* [Create a bulk update job for insights](https://api.sumologic.com/docs/sec/#operation/CreateInsightBulkUpdate). Submit a bulk update job to update multiple insights based on a filter query.
+* [Get bulk update jobs](https://api.sumologic.com/docs/sec/#operation/GetInsightBulkUpdates). List bulk update jobs for the current user.
+* [Get bulk update job status](https://api.sumologic.com/docs/sec/#operation/GetInsightBulkUpdateStatus). Get the current status and details of a bulk update job.
+* [Get bulk update job results](https://api.sumologic.com/docs/sec/#operation/GetInsightBulkUpdateResult). Download the results of a bulk update job with each item's status and any associated errors.
 
 ### View insights in child organizations
 
