@@ -1,4 +1,4 @@
-In this step, you will configure the yaml required for PostgreSQL collection. Below are the inputs required for configuration:
+In this step, you will configure the YAML required for PostgreSQL collection. Below are the inputs required for configuration:
 
 - **Name**. Name of the source template.
 - **Description**. Description for the source template.
