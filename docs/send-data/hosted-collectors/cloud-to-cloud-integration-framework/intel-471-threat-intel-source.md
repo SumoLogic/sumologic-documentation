@@ -1,20 +1,20 @@
 ---
 id: intel471-threat-intel-source
-title: Intel471 Threat Intel Source
-sidebar_label: Intel471 Threat Intel
+title: Intel 471 Threat Intel Source
+sidebar_label: Intel 471 Threat Intel
 tags:
   - cloud-to-cloud
   - intel471-threat-intel
-description: This integration collects threat indicators using the Intel471 API and sends them to Sumo Logic for analysis.
+description: This integration collects threat indicators using the Intel 471 API and sends them to Sumo Logic for analysis.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/intel471-threat-intel.png')} alt="intel471-threat-intel.png" width="100" />
 
-The Intel471 Threat Intel source collects threat intelligence indicators using the [Intel471 Stream API](https://titan.intel471.com/api/docs-openapi/#tag/Indicators/paths/~1indicators~1stream/get) and sends them to Sumo Logic as normalized threat indicators for analysis. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
+The Intel 471 Threat Intel source collects threat intelligence indicators using the [Intel 471 Stream API](https://titan.intel471.com/api/docs-openapi/#tag/Indicators/paths/~1indicators~1stream/get) and sends them to Sumo Logic as normalized threat indicators for analysis. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
 
-Intel471 is a cybersecurity firm specializing in providing cyber threat intelligence services. Their focus is primarily on delivering information about threats originating from the criminal underground, including malware, malicious actors, and their tactics, techniques, and procedures (TTPs). Intel471 provides these insights to help organizations protect themselves against cyber threats. Their intelligence-gathering efforts often involve monitoring and analyzing underground marketplaces, forums, and other communication channels used by cyber criminals.
+Intel 471 is a cybersecurity firm specializing in providing cyber threat intelligence services. Their focus is primarily on delivering information about threats originating from the criminal underground, including malware, malicious actors, and their tactics, techniques, and procedures (TTPs). Intel 471 provides these insights to help organizations protect themselves against cyber threats. Their intelligence-gathering efforts often involve monitoring and analyzing underground marketplaces, forums, and other communication channels used by cyber criminals.
 
 ## Data collected
 
@@ -27,16 +27,16 @@ Intel471 is a cybersecurity firm specializing in providing cyber threat intellig
 ### Vendor configuration
 
 :::info
-The Intel471 documentation is not public and can only be accessed by partners or customers.
+The Intel 471 documentation is not public and can only be accessed by partners or customers.
 :::
 
-The Intel471 Threat Intel source requires you to provide the **Username** and **API Key** found in the API section in the [Intel471 portal](https://titan.intel471.com/api/docs-openapi/#section/Authentication).
+The Intel 471 Threat Intel source requires you to provide the **Username** and **API Key** found in the API section in the [Intel 471 portal](https://titan.intel471.com/api/docs-openapi/#section/Authentication).
 
 ### Source configuration
 
-When you create an Intel471 Threat Intel source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create an Intel 471 Threat Intel source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure an Intel471 Threat Intel source:
+To configure an Intel 471 Threat Intel source:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
@@ -47,7 +47,7 @@ To configure an Intel471 Threat Intel source:
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**. 
 1. **Username**. Enter your login ID or email address.
-1. **API Key**. Enter the API key of the user account collected from the [Intel471 Threat Intel platform](#vendor-configuration).
+1. **API Key**. Enter the API key of the user account collected from the [Intel 471 Threat Intel platform](#vendor-configuration).
 1. **Sumo Logic Threat Intel Source ID**. Enter the name you want to use for the Intel 471 source that will be created in the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab in Sumo Logic. The Intel 471 threat intelligence indicators will be stored in this source. Do not use spaces in the name.
 1. **Polling Interval**. The polling interval is set for one hour by default. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).

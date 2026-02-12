@@ -192,7 +192,7 @@ Use this dashboard to:
 
 ### 6. AWS Lambda - Threat Intel
 
-**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via Sumo Logic’s Threat Intel feature. Panels show detailed information on malicious IPs and the malicious confidence of each threat. 
+**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via [Sumo Logic threat intelligence](/docs/security/threat-intelligence/). Panels show detailed information on malicious IPs and the malicious confidence of each threat. 
 
 Use this dashboard to:
 
