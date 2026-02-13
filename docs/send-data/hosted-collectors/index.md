@@ -44,7 +44,7 @@ The maximum number of Collectors allowed per organization is 10,000.
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/configure-hosted-collector')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>Configure a Hosted Collector</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/configure-hosted-collector')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>Configure a Hosted Collector and Source</h4></a>
   <p>Set up Hosted Collectors so you can move data to Sumo Logic.</p>
   </div>
 </div>
@@ -56,23 +56,17 @@ The maximum number of Collectors allowed per organization is 10,000.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/google-source')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="190"/><h4>Google Sources</h4></a>
-  <p>Collect data from your Google Cloud Platform and other products.</p>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework')}><img src={useBaseUrl('img/icons/cloud/cloud-systems.png')} alt="Thumbnail icon" width="40"/><h4>Cloud-to-Cloud Integration Framework Sources</h4></a>
+  <p>Collect logs and events directly from SaaS and Cloud platforms.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework')}><img src={useBaseUrl('img/icons/cloud/cloud-systems.png')} alt="Thumbnail icon" width="40"/><h4>C2C Integration Sources</h4></a>
-  <p>Collect logs and events directly from SaaS and Cloud platforms.</p>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/google-source')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="125"/><h4>Google Sources</h4></a>
+  <p>Collect data from your Google Cloud Platform and other products.</p>
   </div>
 </div>
-  <div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/http-source')}><img src={useBaseUrl('img/send-data/http-logs-metrics.png')} alt="Thumbnail icon" width="45"/><h4>HTTP Sources</h4></a>
-  <p>Upload logs, metrics, traces, and more to an HTTP Source.</p>
-  </div>
-</div>
-  <div className="box smallbox card">
+<div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/microsoft-source')}><img src={useBaseUrl('img/send-data/microsoft.png')} alt="Thumbnail icon" width="40"/><h4>Microsoft Sources</h4></a>
   <p>Collect data from your Microsoft platform and other products.</p>
@@ -82,6 +76,12 @@ The maximum number of Collectors allowed per organization is 10,000.
   <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-syslog-source')}><img src={useBaseUrl('img/send-data/cloud-syslog.png')} alt="thumbnail icon" width="60"/><h4>Cloud Syslog Sources</h4></a>
   <p>Configure a cloud syslog source to send data to Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/http-source')}><img src={useBaseUrl('img/send-data/http-logs-metrics.png')} alt="Thumbnail icon" width="45"/><h4>Configure HTTP Source for Logs, Metrics, Traces, OTLP</h4></a>
+  <p>Upload logs, metrics, traces, and more to an HTTP Source.</p>
   </div>
 </div>
 <div className="box smallbox card">

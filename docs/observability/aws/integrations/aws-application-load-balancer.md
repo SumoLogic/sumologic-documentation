@@ -7,7 +7,7 @@ description: Gain visibility into the health of the Application Load Balancer an
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The [AWS application Load Balancer](https://aws.amazon.com/elasticloadbalancing/) functions at the application layer receive requests, evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group. 
+The [AWS application Load Balancer](https://aws.amazon.com/elasticloadbalancing/) functions at the application layer to receive requests, evaluate the listener rules in priority order to determine which rule to apply, and then select a target from the target group. 
 
 The Sumo Logic app for AWS Observability Application Load Balancer is a unified logs and metrics (ULM) app that gives you visibility into the health of your Application Load Balancer and target groups. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group.
 
@@ -15,7 +15,7 @@ The Sumo Logic app for AWS Observability Application Load Balancer is a unified
 
 The AWS Application Load Balancer ULM App uses the following log and metric types:
 
-* Metrics included in the AWS/ApplicationELB namespace. For more details, see this [*AWS Services help*](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html#load-balancer-metrics-alb) page. 
+* Metrics included in the AWS/ApplicationELB namespace. For more details, see [this](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html#load-balancer-metrics-alb) AWS services help page. 
 * The [Application Load Balancer Access](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) Log introduces two new fields in addition to the fields contained in Classic ELB Access log:
   * **Type.** This is the type of request or connection (HTTP, HTTPS, H2, ws, wss)
   * **Target_group_arn**. This is the Amazon Resource Name (ARN) of the target group
@@ -145,7 +145,7 @@ Use this dashboard to:
 
 The **AWS Application Load Balancer - Threat Intel** dashboard provides
 insights into incoming requests from malicious sources determined via
-Sumo Logic’s Threat Intel feature. Panels show detailed information on
+[Sumo Logic threat intelligence](/docs/security/threat-intelligence/). Panels show detailed information on
 malicious IPs and the malicious confidence of each threat. 
 
 Use this dashboard to:

@@ -21,6 +21,11 @@ In this section, we'll show you how to set up source templates for the following
       <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/source-templates/apache')}><img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Thumbnail icon" width="60"/><h4>Apache</h4></a><p>Learn how to configure our OTel Apache source template.</p>
     </div>
   </div>
+  <div className="box smallbox card">
+    <div className="container">
+      <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/source-templates/customyaml')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Custom YAML</h4></a><p>Learn how to create and modify OTel remote management source templates using the Custom YAML editor.</p>
+    </div>
+  </div>
     <div className="box smallbox card">
     <div className="container">
       <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/source-templates/docker')}><img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Thumbnail icon" width="110"/><h4>Docker</h4></a><p>Learn how to configure our OTel Docker source template.</p>
@@ -86,15 +91,14 @@ In this section, we'll show you how to set up source templates for the following
       <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/source-templates/windows')}><img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="30"/><h4>Windows</h4></a><p>Learn how to configure our OTel Windows source template.</p>
     </div>
   </div>
-
   <div className="box smallbox card">
     <div className="container">
-      <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/source-templates/otrm-time-reference')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><h4>Timestamps, Time Zones, and Date Formats</h4></a><p>Learn how Sumo Logic manages timestamps, time zones, and dates.</p>
+      <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/source-templates/st-with-secrets')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><h4>Setting Environment Variables with Secret Values for Source Templates</h4></a><p>Learn about the steps for setting environment variable with secret value.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-      <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/source-templates/st-with-secrets')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><h4>Setting Environment Variables with Secret Values for Source Templates</h4></a><p>Learn about the steps for setting environment variable with secret value.</p>
+      <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/source-templates/otrm-time-reference')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><h4>Timestamps, Time Zones, and Date Formats</h4></a><p>Learn how Sumo Logic manages timestamps, time zones, and dates.</p>
     </div>
   </div>
 </div>
