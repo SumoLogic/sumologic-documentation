@@ -26,7 +26,7 @@ Any inventory source–or any log source, for that matter–can be used to popul
 
 In this step, you create the lookup table schema.
 
-As an example, assume that you are creating a table that will be used to normalize usernames in email format (`jdoe@acme.com`) to an login name format (john.doe), to be populated by data from Active Directory.  
+As an example, assume that you are creating a table that will be used to normalize usernames in email format (`jdoe@acme.com`) to a login name format (john.doe), to be populated by data from Active Directory.  
 
 In this case we create a table with two fields: `mail` (email address) and `samaccountname` (login name).   
 
