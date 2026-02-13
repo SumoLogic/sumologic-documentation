@@ -137,7 +137,7 @@ On an insight, if you select **Actions** > **Entity Automation > Run Automations
 <img src={useBaseUrl('img/cse/automations-entity-menu.png')} alt="Entity automation menu" style={{border: '1px solid gray'}} width="400"/>
 
 1. Select one or more of the entities listed or select **Select All Entities**. The selected entities don’t have to be the same type.
-1. Click **Next**. A list displays of all entity automations that are enabled, configured to be run manually, and configured for at least one of the entity types you selected on the previous screen.
+1. Click **Next**. A list displays all entity automations that are enabled, configured to be run manually, and configured for at least one of the entity types you selected on the previous screen.
 1. Select the automations you wish to run and click **Run Automation**. The system will automatically run the appropriate automations for the appropriate entity types.<br/><img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity automation menu with selections" style={{border: '1px solid gray'}} width="400"/>
 
 ## View results of an automation
