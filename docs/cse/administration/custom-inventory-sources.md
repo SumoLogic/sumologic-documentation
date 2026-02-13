@@ -224,7 +224,7 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 ```
 
 :::note
-`_collector` and `_sourceCategory` and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields to scope your search.
+`_collector` and `_sourceCategory` specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields to scope your search.
 :::
 
 ### Webhook payload for User entity
