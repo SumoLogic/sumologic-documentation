@@ -16,7 +16,7 @@ To run a log search by Receipt Time:
 
 1. Enter your query in the search text box.
 1. Choose the Time Range for the query.
-1. Click the gear icon to open the **Search Config** menu and toggle on **Use Receipt Time**.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/receipt-time-option.png')} alt="receipt time option.png" style={{border: '1px solid gray'}} width="450"/>
+1. Click the gear icon to open the **Search Config** menu and select **Receipt Time**.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/receipt-time-option.png')} alt="receipt time option.png" style={{border: '1px solid gray'}} width="450"/>
 1. Review the search results for wide discrepancies between message timestamp and receipt time to pinpoint Sources with incorrect timestamps:<br/><img src={useBaseUrl('img/search/get-started-search/build-search/receipt-time-results-messages-tab.png')} alt="receipt time results in messages tab.png" width="700"/>
 
 ## Resolving timestamp/receipt time issues
