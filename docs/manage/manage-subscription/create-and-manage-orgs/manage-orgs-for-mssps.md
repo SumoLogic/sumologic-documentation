@@ -36,6 +36,7 @@ You can push the following:
 * Cloud SIEM [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/)
 * [Library](/docs/get-started/library)
 * [Monitors](/docs/alerts/monitors/)
+* [Source Template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/)
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.
 1. Select the **Manage Content** tab.
@@ -45,6 +46,7 @@ You can push the following:
    * **Cloud SIEM Rule Tuning**. For more information about Cloud SIEM rule tuning expressions, refer to [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/).
    * **Library**. For more information about Library items, refer to [Managing Your Sumo Logic Library](/docs/get-started/library).
    * **Monitors**. For more information about Monitors, refer to [Monitors](/docs/alerts/monitors/).
+   * **Source Template**. For more information about source templates, refer to [OpenTelemetry Remote Management Source Templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates/).
 1. Select individual items to be pushed, or all items.
 1. Click **Push to Orgs**.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-csiem.png')} alt="Push Selected Items button" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Push Selected Content** box, navigate to the **Destinations** section to select the organizations to push the selected items to. You can push to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2-csiem.png')} alt="Push Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
@@ -64,6 +66,7 @@ You can push the following:
    Both **Scheduled Searches Connection** and **Scheduled Reports** will be available only when you select a library *folder*.
    :::
 * **Monitor notifications**. Select **Include and Update Notifications** to copy the alert notification to the target organization. If the notification does not already exist, it will be created automatically. Select **Ignore Notifications** to exclude the alert notification, resulting in monitors being pushed without any active notifications.
+* **Source Templates**. Select **Skip the Push** to avoid pushing the source template with same name in the target organization. Select **Overwrite Source Template** to overwrite source template with same name in the target organization.
 
 ### Limitations
 
@@ -82,6 +85,10 @@ You can push the following:
    - Make sure you keep the Child orgs per job less than or equal to 3 when you push more than 250 rules for a faster runtime.
    - Make sure you keep the rule or tuning expressions per job less than or equal to 500 for a faster runtime.
 - When pushing monitors, certain configurations will not be included. These include muting schedules, Sumo Logic Cloud SOAR connection, SLO linkages, Automation Service playbooks, HipChat settings, and tags.
+- Before pushing a source template, ensure that:
+   - A collector is configured on each machine to forward data to Amazon S3.
+   - The required credentials are configured locally in the collector environment.
+   - The required tags are configured so that the pushed source template maps to the correct collectors in the destination organization(s).
 
 ## View results
 
