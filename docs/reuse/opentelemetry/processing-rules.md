@@ -1,0 +1,1 @@
+**Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](/docs/send-data/opentelemetry-collector/remote-management/processing-rules).
