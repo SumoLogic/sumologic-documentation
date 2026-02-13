@@ -28,7 +28,7 @@ The Hadoop logs are generated in files as configured in the configuration file `
 This app includes [built-in monitors](#apache-hadoop-alerts). For details on creating custom monitors, refer to the [Create monitors for Hadoop app](#create-monitors-for-apache-hadoop-app).
 :::
 
-## Fields Create in Sumo Logic for Hadoop
+## Fields created in Sumo Logic for Hadoop
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Hadoop app installation if not already present.
 
@@ -106,13 +106,13 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 ### Step 2: Configure integration
 
-In this step, you will configure the YAML required for Hadoop Collection.
+In this step, you will configure the YAML required for Hadoop collection.
 
-The path of the log file configured to capture Hadoop logs is needed to be given here.
+Below are the inputs required for configuration:
 
-The files are typically located in `/usr/local/hadoop/logs/*`. If you're using a customized path, check the conf file for this information.
-
-For metrics, you're required to provide the JMX endpoint along with the `collection_interval` (default is 1 minute).
+- The path of the log file configured to capture Hadoop logs is needed to be given here.
+- The files are typically located in `/usr/local/hadoop/logs/*`. If you're using a customized path, check the conf file for this information.
+- For metrics, you're required to provide the JMX endpoint along with the `collection_interval` (default is 1 minute).
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click the **Download YAML File** button to get the YAML file.
 
@@ -338,11 +338,11 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 ### Apache Hadoop alerts
 
-| Name                                                        | Description                                                                                                                    | Alert Condition | Recover Condition |
-|:------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------|:----------------|:------------------|
-| `Hadoop - HDFS Capacity Utilisation High`                   | This alert gets triggered when HDFS capacity utilisation exceeds the defined threshold, indicating risk of storage exhaustion. | Count > 95 %    | Count < = 95      |
-| `Hadoop - HDFS Corrupt Blocks Detected`                     | This alert gets triggered when one or more HDFS blocks are corrupt.                                                            | Count > 0       | Count < = 0       |
-| `Hadoop - HDFS Missing Blocks Detected`                     | This alert gets triggered when HDFS reports missing blocks, indicating potential data loss.                                    | Count > 0       | Count < = 0       |
-| `Hadoop - HDFS Volume Failures Detected`                    | This alert gets triggered when HDFS reports volume failures, indicating disk or filesystem issues on DataNodes.                | Count > 0       | Count < = 0       |
-| `Hadoop - HDFS NameNode Down`                               | This alert gets triggered when HDFS does not detect an active NameNode, impacting filesystem availability.                     | Count < = 0     | Count > 0         |
-| `Hadoop - HDFS DataNodes Down`                              | This alert gets triggered when the number of active HDFS DataNodes drops below the expected threshold.                         | Count < = 0     | Count > 0         |
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Hadoop - HDFS Capacity Utilisation High` | This alert gets triggered when HDFS capacity utilisation exceeds the defined threshold, indicating risk of storage exhaustion. | Count > 95 % | Count < = 95 |
+| `Hadoop - HDFS Corrupt Blocks Detected` | This alert gets triggered when one or more HDFS blocks are corrupt. | Count > 0 | Count < = 0 |
+| `Hadoop - HDFS Missing Blocks Detected` | This alert gets triggered when HDFS reports missing blocks, indicating potential data loss. | Count > 0 | Count < = 0 |
+| `Hadoop - HDFS Volume Failures Detected` | This alert gets triggered when HDFS reports volume failures, indicating disk or filesystem issues on DataNodes. | Count > 0 | Count < = 0 |
+| `Hadoop - HDFS NameNode Down` | This alert gets triggered when HDFS does not detect an active NameNode, impacting filesystem availability. | Count < = 0 | Count > 0 |
+| `Hadoop - HDFS DataNodes Down` | This alert gets triggered when the number of active HDFS DataNodes drops below the expected threshold. | Count < = 0 | Count > 0 |
