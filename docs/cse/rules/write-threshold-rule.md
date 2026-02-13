@@ -46,6 +46,7 @@ Watch this micro lesson to learn how to create a threshold rule.
 ## Create a threshold rule
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
+1. Click **+ Add Rule**.
 1. On the **Create a Rule** page, click **Create** in the **Threshold** card. 
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.
