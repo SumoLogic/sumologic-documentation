@@ -2,22 +2,25 @@
 id: data-deletion-rules
 title: Data Deletion Rules APIs
 sidebar_label: Data Deletion Rules
+keywords:
+  - data deletion
+  - delete data
 description: Data Deletion Rules APIs allow you to delete ingested data from Sumo Logic.
 ---
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+
 <img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="50"/>
 
-Data Deletion Rules allow you to quickly and easily request the removal of ingested data from Sumo Logic. This helps you with removal of inadvertently ingested sensitive data.
+Data Deletion Rules APIs let you request removal of ingested data from Sumo Logic, helping you quickly address inadvertently ingested sensitive data.
 
 ## Documentation
 
@@ -39,6 +42,11 @@ Data Deletion Rules allow you to quickly and easily request the removal of inges
 
 <ApiRoles/>
 
-* Review Deletion Requests
-* Manage Deletion Requests
-* View Deletion Requests
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
+   * Review Deletion Requests
+   * Manage Deletion Requests
+   * View Deletion Requests
+
+## Additional information
+
+* [Deletion Requests](/docs/manage/deletion-requests/)

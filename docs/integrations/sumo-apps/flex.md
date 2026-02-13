@@ -184,6 +184,10 @@ For more examples, refer to [Log and Tracing Data Volume Index](/docs/manage/ing
 
 ## Installing the Flex app
 
+### Prerequisite
+
+Enable both the Data Volume Index (`sumologic_volume`) and the Search Audit Index (`_view = sumologic_search_usage_per_query`) prior to installation. See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/) and [Enable the Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#enable-the-search-audit-index) for instructions.
+
 Flex app will be pre-installed for all the Flex users. 
 
 1. Navigate to **App Catalog > Installed Apps** to find the installed Flex app. 

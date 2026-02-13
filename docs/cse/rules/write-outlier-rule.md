@@ -1,6 +1,6 @@
 ---
 id: write-outlier-rule
-title: Write an Outlier rule
+title: Write an Outlier Rule
 sidebar_label: Outlier Rule
 description: Outlier rules allow you to generate a signal when behavior by an entity (such as a user) is encountered that qualifies as an outlier from expected behavior.
 keywords:
@@ -16,8 +16,16 @@ import Iframe from 'react-iframe';
 
 This topic has information about outlier rules and how to create them in the Cloud SIEM UI.
 
-:::tip
+:::info
 If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
+:::
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage outlier rules with the [`sumologic_cse_outlier_rule`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_outlier_rule) resource.
+
+<TerraformLink/>
 :::
 
 ## About outlier rules
@@ -53,13 +61,15 @@ Watch this micro lesson to learn more about outlier rules.
 
 When you create the rule, you can set the amount of time Cloud SIEM analyzes data to create a baseline model of behavior, with the default period being for the last 90 days. You can set the rule to build data hourly or daily, depending on how frequently you believe events of interest will occur, and how much data you want to gather. In the rule, you set the model sensitivity threshold to calculate outlier activity based on the number of standard deviations from the mean (z‑score). 
 
-As soon as you save or update an outlier rule (or disable and re-enable it), the full baseline is built using existing data collected. So if your baseline retention period is for the last 90 days (the default), the system uses data from the last 90 days to build the baseline. If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete. If the records gathered for a baseline exceed 50 million, the historical baseline capabilities become inefficient and it’s better to let the baseline gather data over time. You will be notified of this state in the UI, and can either let the baseline gather over the days set in the baseline, or edit the rule to filter more records or reduce the baseline period to keep it under 50 million records.
+As soon as you save or update an outlier rule (or disable and re-enable it), the full baseline is built using existing data collected. So if your baseline retention period is for the last 90 days (the default), the system uses data from the last 90 days to build the baseline. A minimum of 7 days of baseline information needs to be available in order for a rule to be active and generating signals. (That is, the first relevant event or data point must be at least 7 days old before the baseline is considered complete). If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete. 
 
 Once the baseline is created, Cloud SIEM tracks aggregates of count, sum, min, max, and averages of record values, and creates a signal when deviations from the mean occurs. For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, Cloud SIEM builds a baseline model of counts of authentication failures that are associated with a user over time, and creates a signal when outlier behavior is detected:
 
-<img src={useBaseUrl('img/cse/outlier-signal-example.png')} alt="Outlier signal example" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/cse/outlier-signal-example.png')} alt="Outlier signal example" style={{border: '1px solid gray'}} width="800"/>
 
 After your rule starts generating signals, evaluate them to determine if they truly represent outliers of concern, and adjust the rule settings as needed. For example, if too many signals are being generated, the baseline model is too sensitive, and you need to set the model sensitivity threshold higher on the rule; if too few signals are generated, set the threshold lower. Among other things, also evaluate if the signals from outliers are generating enough insights. To [generate an insight](/docs/cse/get-started-with-cloud-siem/insight-generation-process/), by default the combined severity scores of signals need to exceed 12, or a custom insight can be used. Change the severity level in the outlier rule or create a custom insight to trigger insights based on this rule for investigation.
+
+If the records gathered for a baseline exceed 50 million, the historical baseline capabilities to generate a baseline via a query become inefficient and it’s better to let the baseline gather data over time. You will be notified of this state in the UI, and can either let the baseline gather over the days set in the baseline, or edit the rule to filter more records or reduce the baseline period to keep it under 50 million records.
 
 :::tip
 Sumo Logic ensures that rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and outlier rules are no exception.
@@ -79,6 +89,7 @@ The screenshot below shows an outlier rule in the Cloud SIEM rules editor. For a
 ## Create an outlier rule
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
+1. Click **+ Add Rule**.
 1. On the **Create a Rule** page, click **Create** in the **Outlier** card.
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.

@@ -27,8 +27,12 @@ _sourceCategory=cylance "IP Address"
 
 For more information, see [Threat Intel optimization](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) in the *Threat Intel Quick Analysis* article.
 
+:::note
+You can only use the `lookup` operator to search using the [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources). You cannot use the operator with other threat intelligence sources in your datastore.
+:::
+
 :::tip
-All the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis) app use threat intelligence sources to find threats. To see the queries, open a dashboard in the app, click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**. You can copy these queries and use them as templates for your own queries to find threats.
+All the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis) app use the Sumo Logic threat intelligence sources to find threats. To see the queries, open a dashboard in the app, click the three-dot kebab in the upper-right corner of the dashboard panel, and select **Open in Log Search**. You can copy these queries and use them as templates for your own queries to find threats.
 :::
 
 ## Use the threatip search operator
@@ -38,6 +42,7 @@ To find threats using IP addresses, use the `threatip` search operator. This ope
 For more information, see [threatip Search Operator](/docs/search/search-query-language/search-operators/threatip/).
 
 <!-- Add per DOCS-815:
+
 ## threatlookup operator
 
 You can use the `threatlookup` search operator to find matches to indicators in any source in the Sumo Logic [threat intelligence](/docs/security/threat-intelligence/) datastore. 
@@ -53,8 +58,9 @@ _index=sec_record*
 ```
 
 For syntax and examples, see [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/).
+
 -->
 
-<!-- Add this back once we have support for the cat search operator:
+<!-- Per DOCS-35, add this back once we have support for the cat search operator:
 You can also [run threatlookup with the cat search operator](/docs/search/search-query-language/search-operators/threatlookup/#run-threatlookup-with-the-cat-search-operator) to search the entire store of threat intelligence indicators.
 -->

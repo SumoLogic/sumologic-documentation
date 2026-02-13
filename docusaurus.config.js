@@ -33,6 +33,40 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML: `
+        (function (w, s, d, r, e, n) {
+          (w[s] = w[s] || {
+            readyListeners: [],
+            onReady: function (e) {
+              w[s].readyListeners.push(e);
+            },
+          }),
+          ((e = d.createElement('script')).async = 1),
+          (e.src = r),
+          (n = d.getElementsByTagName('script')[0]).parentNode.insertBefore(e, n);
+        })(
+          window,
+          'sumoLogicOpenTelemetryRum',
+          document,
+          'https://rum.sumologic.com/sumologic-rum.js'
+        );
+        window.sumoLogicOpenTelemetryRum.onReady(function () {
+          window.sumoLogicOpenTelemetryRum.initialize({
+            collectionSourceUrl: 'https://rum-collectors.us1.sumologic.com/receiver/v1/rum/ZaVnC4dhaV2cNyrqUT5YDFvpALqf3WjXkE5oomYkp_Kpvd8PbxGEQsMpkGX5YtUj1YHkvAO6UU1vGUXSx2Nh2EIEps-Vd8TrD340CoUjZuAxRBuKzg7E_w==',
+            serviceName: 'docs-site-live',
+            deploymentEnvironment: 'live',
+            applicationName: 'docs-site',
+            samplingProbability: 1,
+            collectErrors: true,
+          });
+        });
+      `,
+    },
+  ],
   clientModules: [
     require.resolve('./src/client-modules/trackTrialClick.js'),
   ],
@@ -122,15 +156,6 @@ module.exports = {
     ['@docusaurus/plugin-google-gtag',
       {
         trackingID: ['G-CVH19TBVSL', 'G-9FTQ9KJJBY'],
-      },
-    ],
-    ['@docusaurus/plugin-content-docs',
-      {
-        id: 'community',
-        path: './community',
-        routeBasePath: 'hackathon',
-        sidebarPath: require.resolve('./sidebarsCommunity.js'),
-        breadcrumbs: false,
       },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -257,6 +282,12 @@ module.exports = {
       { property: 'og:image:height', content: '628' },
       { property: 'og:image:alt', content: 'Sumo Logic Docs' },
     ],
+    announcementBar: {
+      id: 'domain',
+      content: '🎉️ <b>Introducing <a href="/docs/search/mobot">Mobot</a>🤖, your conversational interface for Sumo Logic. Search logs using natural language, troubleshoot faster, and get how-to guidance.</b>',
+      backgroundColor: '#000',
+      textColor: '#000',
+    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -267,12 +298,14 @@ module.exports = {
     },
     colorMode: {
       defaultMode: 'light',
+      disableSwitch: false,
     },
     algolia: {
       appId: '2SJPGMLW1Q',
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
       contextualSearch: false,
+      searchPagePath: 'docs-search', // Default value is 'search'; renamed to 'docs-search' so it doesn't conflict with '/Search' redirect
       insights: true,
       insightsConfig: {
         useCookie: true, // alt to useCookie: true,
@@ -398,23 +431,8 @@ module.exports = {
             to: '/docs/release-notes',
           },
           {
-            type: 'search',
+            label: 'Support',
             position: 'left',
-          },
-          {
-            type: 'html',
-            position: 'right',
-            value: 'google_translate',
-          },
-          {
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'right',
-            className: 'header-trial',
-            alt: 'Sign up for a Sumo Logic free trial',
-          },
-          {
-            position: 'right',
-            className: 'support-menu-trigger',
             to: '#',
             type: 'dropdown',
             items: [
@@ -440,11 +458,15 @@ module.exports = {
               },
             ],
           },
+        //{
+          //className: 'header-github-link',
+          //to: 'https://github.com/SumoLogic/sumologic-documentation',
+          //position: 'right',
+          //alt: 'Link to Sumo Logic Docs GitHub repository',
+        //},
           {
-            className: 'header-github-link',
-            to: 'https://github.com/SumoLogic/sumologic-documentation',
-            position: 'right',
-            alt: 'Link to Sumo Logic Docs GitHub repository',
+            type: 'search',
+            position: 'left',
           },
         ],
       },
@@ -452,55 +474,54 @@ module.exports = {
         style: 'dark',
         links: [
           {
-            items: [
-              {
-                label: 'Training & Certifications',
-                href: 'https://www.sumologic.com/learn/training/',
-              },
-              {
-                label: 'Events & Webinars',
-                href: 'https://www.sumologic.com/events/',
-              },
-              {
-                label: 'Request a Demo',
-                href: 'https://www.sumologic.com/request-demo',
-              },
-            ],
-            title: 'Learn',
-          },
-          {
-            items: [
-              {
-                label: 'Contact Support',
-                href: 'https://support.sumologic.com/support/s',
-              },
-              {
-                label: 'Sumo Dojo Slack',
-                href: 'https://sumodojo.slack.com/',
-              },
-              {
-                label: 'Community',
-                href: 'https://support.sumologic.com/support/s/topiccatalog',
-              },
-            ],
             title: 'Help',
-          },
-          {
             items: [
               {
-                label: 'Docs GitHub',
-                href: 'https://github.com/SumoLogic/sumologic-documentation',
+                label: 'Contact support',
+                href: 'https://support.sumologic.com/support/s'
               },
               {
-                label: 'Sumo Logic GitHub',
-                href: 'https://github.com/SumoLogic',
-              },
+                label: 'Community forum',
+                href: 'https://support.sumologic.com/support/s/topiccatalog' },
               {
-                label: 'Sumo Labs Projects',
-                href: 'https://github.com/SumoLogic-Labs',
+                label: 'Dojo Slack community',
+                href: 'https://sumodojo.slack.com'
               },
             ],
-            title: 'Open Source',
+          },
+          {
+            title: 'Learn',
+            items: [
+              {
+                label: 'Training and certifications',
+                href: 'https://www.sumologic.com/learn/training'
+              },
+              {
+                label: 'Webinars and events',
+                href: 'https://www.sumologic.com/events'
+              },
+              {
+                label: 'Sumo Logic blog',
+                href: 'https://www.sumologic.com/blog'
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'Start Free Trial',
+                href: 'https://www.sumologic.com/sign-up'
+              },
+              {
+                label: 'Request a demo',
+                href: 'https://www.sumologic.com/request-demo'
+              },
+              {
+                label: 'Status page',
+                href: 'https://status.sumologic.com'
+              },
+            ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,

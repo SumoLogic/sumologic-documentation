@@ -35,10 +35,10 @@ The Search Job API is available to Enterprise accounts.
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Download Search Results
     * View Collectors
-* Security
+* [Security](/docs/manage/users-roles/roles/role-capabilities/#security)
     * Manage Access Keys
 
 
@@ -777,19 +777,25 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
    <td>byReceiptTime</td>
    <td>Boolean</td>
    <td>No </td>
-   <td>Define as <code>true</code> to run the search using<a href="/docs/search/get-started-with-search/build-search/use-receipt-time"> receipt time</a>. By default, searches do not run by receipt time. </td>
+   <td>Define as <code>true</code> to run the search using [receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time). By default, searches do not run by receipt time. </td>
+  </tr>
+    <tr>
+   <td>bySearchableTime</td>
+   <td>Boolean</td>
+   <td>No </td>
+   <td>Define as <code>true</code> to run the search using [searchable time](/docs/search/get-started-with-search/build-search/use-searchable-time). By default, searches do not run by searchable time. </td>
   </tr>
   <tr>
    <td>autoParsingMode </td>
    <td>String </td>
    <td>No</td>
-   <td>This enables <a href="/docs/search/get-started-with-search/build-search/dynamic-parsing">dynamic parsing</a>. Values are: <br/><br/><code>AutoParse</code> - Sumo Logic will perform field extraction on JSON log messages when you run a search.<br/><br/><code>Manual</code> - (Default value) Sumo Logic will not autoparse JSON logs at search time. <br/><br/><strong>Note</strong> Previously, the supported values for this parameter were <code>performance</code>, <code>intelligent</code>, and <code>verbose</code>. These values still function, but are deprecated. Sumo Logic recommends the use of the new supported values: <code>AutoParse</code> and <code>Manual</code>. </td>
+   <td>This enables [dynamic parsing](/docs/search/get-started-with-search/build-search/dynamic-parsing). Values are: <br/><br/><code>AutoParse</code> - Sumo Logic will perform field extraction on JSON log messages when you run a search.<br/><br/><code>Manual</code> - (Default value) Sumo Logic will not autoparse JSON logs at search time. <br/><br/><strong>Note</strong> Previously, the supported values for this parameter were <code>performance</code>, <code>intelligent</code>, and <code>verbose</code>. These values still function, but are deprecated. Sumo Logic recommends the use of the new supported values: <code>AutoParse</code> and <code>Manual</code>. </td>
   </tr>
    <tr>
    <td>requiresRawMessages</td>
    <td>Boolean</td>
    <td>No </td>
-   <td>Set as <code>false</code> to slightly improve the performance of aggregate queries as raw messages will not be generated. By default, the parameter value is set to <code>true</code>. </td>
+   <td>By default, the parameter value is set to <code>false</code> to improve the performance of aggregate queries as raw messages will not be generated. </td>
   </tr>
 </table>
 

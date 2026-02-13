@@ -7,11 +7,13 @@ description: Get to know the Sumo Logic platform user interface.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+:::note 
+This page describes the Classic UI. For the most streamlined navigation and the newest user experience, switch to the [New UI](/docs/get-started/sumo-logic-ui).
+:::
+
 This page provides an overview of the Sumo Logic Classic UI, designed to help you navigate and utilize its features effectively.
 
 <img src={useBaseUrl('img/get-started/overview-classic-ui.png')} alt="Overview screenshot of the Classic UI" style={{border: '1px solid gray'}} width="800" />
-
-The Classic UI will be retired in 2025 and will no longer receive updates. The exact date will be communicated closer to the transition. For the latest features, performance improvements, and future innovations, switch to the [New UI](/docs/get-started/sumo-logic-ui) as soon as possible.
 
 ## Switching between the Classic and New UI
 
@@ -35,14 +37,14 @@ The left nav bar provides easy access to libraries, personal collections of das
 The top of the left nav bar is where you can search for content and users and easily switch browsing modes. 
 
 * Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
-* Switching browsing modes—Click the three-dot kebab icon and make a selection from the dropdown menu.<br/> ![TUI_Search_Details.png](/img/get-started/ui/TUI_Search_Details.png)
+* Switching browsing modes—Click the three-dot kebab icon and make a selection from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/ui/TUI_Search_Details.png')} alt="Search details" style={{border: '1px solid gray'}} width="800" />
 
 ### Hide and show the left nav bar
 
 You can easily hide the left nav bar to enlarge the working area. Then, just as easily show it again.
 
-* To hide the left nav bar, click the **Arrow** in the top right corner.<br/>![TUI_NavBar_Hide.png](/img/get-started/ui/TUI_NavBar_Hide.png)
-* To show a hidden left nav bar, click the **Menu** icon.<br/>![TUI_NavBar_Show.png](/img/get-started/ui/TUI_NavBar_Show.png)
+* To hide the left nav bar, click the **Arrow** in the top right corner.<br/><img src={useBaseUrl('img/get-started/ui/TUI_NavBar_Hide.png')} alt="Arrow in nav bar" style={{border: '1px solid gray'}} width="800" />
+* To show a hidden left nav bar, click the **Menu** icon.<br/><img src={useBaseUrl('img/get-started/ui/TUI_NavBar_Show.png')} alt="Menu icon" style={{border: '1px solid gray'}} width="800" />
 
 ### Access Apps, Admin features, and Help
 
@@ -71,8 +73,8 @@ You can customize tabs by renaming them, then close them when they are no longe
 
 To rename or close a tab, do the following:
 
-1. To rename a tab, double-click the name field, enter the new name, and press **Return**.<br/>  ![WTS_UI_Tab-rename.png](/img/get-started/ui/WTS_UI_Tab-rename.png)
-1. To close a tab, hover the cursor over the tab and click the X icon on the right.<br/>![WTS_UI_Tab-delete.png](/img/get-started/ui/WTS_UI_Tab-delete.png)
+1. To rename a tab, double-click the name field, enter the new name, and press **Return**.<br/><img src={useBaseUrl('img/get-started/ui/WTS_UI_Tab-rename.png')} alt="Rename tab" style={{border: '1px solid gray'}} width="800" />
+1. To close a tab, hover the cursor over the tab and click the X icon on the right.<br/><img src={useBaseUrl('img/get-started/ui/WTS_UI_Tab-delete.png')} alt="Close tab" style={{border: '1px solid gray'}} width="800" />
 
 ### Customize your environment with tab options
 
@@ -126,7 +128,7 @@ This section shows you how to get started working with logs and metrics. The li
 To launch a search, metrics visualization, or live tail session, do the following:
 
 1. Go to the Sumo Logic **Home** page.
-1. Click one of the following Home page icons:<br/><img src={useBaseUrl('img/get-started/ui/home-icons.png')} alt="home-icons.png" width="600"/>
+1. Click one of the following Home page icons:<br/><img src={useBaseUrl('img/get-started/ui/home-icons.png')} alt="home-icons.png" style={{border: '1px solid gray'}}  width="600"/>
    * [Log Search](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
    * [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
    * [Traces](/docs/apm/traces/). Monitor user activity, span analytics, service maps, and transaction traces between microservices.
@@ -155,7 +157,7 @@ You can create a list of favorite dashboards and searches that appear in the le
 To view Favorites and add to the list, do the following:
 
 1. To view a list of current Favorites, click the **Star** icon at the top of the left nav bar. A list of Favorites is shown below.<br/><img src={useBaseUrl('/img/get-started/ui/WTS_UI_View_list-of-Favorites.png')} alt="Favorites" style={{border: '1px solid gray'}} width="300" />
-1. To add a dashboard to the Favorites list, open the dashboard, select the three-dot kebab icon at the top right of the menu bar, and select **Favorite** from the dropdown list. <br/>  ![WTS_UI_Add-dashboard-to-Favorites.png](/img/get-started/ui/WTS_UI_Add-dashboard-to-Favorites.png)
+1. To add a dashboard to the Favorites list, open the dashboard, select the three-dot kebab icon at the top right of the menu bar, and select **Favorite** from the dropdown list. <br/><img src={useBaseUrl('img/get-started/ui/WTS_UI_Add-dashboard-to-Favorites.png')} alt="Add dashboard to favorites list" style={{border: '1px solid gray'}} width="800" />
 1. To add a search to the Favorites list, do the following:
    1. [Save the search](/docs/search/get-started-with-search/search-basics/save-search) (if not already saved) by clicking **Save As**, then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
    1. Click **Save**.
@@ -191,8 +193,8 @@ To pin a search, do the following:
 
 1. Open a Search page.
 1. Enter a query in the search box and click **Start**.
-1. Click the three-dot kebab icon and click **Pin** from the provided options.<br/><img src={useBaseUrl('img/get-started/ui/pin-search.png')} alt="pin-search.png" width="200"/>
-1. A message appears telling you the location of your pinned search in the Library. The Pinned Search takes the name of the Search tab by default.<br/>  ![pinmessage.png](/img/get-started/ui/pinmessage.png)
+1. Click the three-dot kebab icon and click **Pin** from the provided options.<br/><img src={useBaseUrl('img/get-started/ui/pin-search.png')} alt="pin-search.png" style={{border: '1px solid gray'}} width="200"/>
+1. A message appears telling you the location of your pinned search in the Library. The Pinned Search takes the name of the Search tab by default.<br/><img src={useBaseUrl('img/get-started/ui/pinmessage.png')} alt="Location of pinned search" style={{border: '1px solid gray'}} width="500" />
 1. To change the name of a Pinned Search, double-click the Search tab and enter a new name in the name field.
 
 For information on how to manage pinned searches, see [Pin a Search](/docs/search/get-started-with-search/search-page/pin-a-search).
@@ -204,7 +206,7 @@ You can manage your personal account settings from the **Preferences** page. T
 To manage your personal Sumo Logic account preferences, do the following:
 
 1. At the very bottom of the Left Nav Bar, click your Account Name.
-1. In the pop-up dialog, select **Preferences**.<br/>  ![WTS_Preferences_LeftNav-option.png](/img/get-started/ui/WTS_Preferences_LeftNav-option.png)
+1. In the pop-up dialog, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/ui/WTS_Preferences_LeftNav-option.png')} alt="Preferences selected in list" style={{border: '1px solid gray'}} width="300" />
 1. In the Preferences page that appears on the right, you can modify settings in the following areas:
     * **My Profile**: username and password
     * **My Security Settings**: enable and disable 2-step verification
@@ -260,6 +262,4 @@ To administer Sumo Logic accounts, users, and security, do the following:
 
 Now that you're familiar with the layout and features in the Sumo Logic user interface (UI), you're ready to ramp up your Sumo Logic skills with [self-paced training](https://www.sumologic.com/self-paced-training/).
 
-You do not have to stop there either. You can take the next step and become Sumo Logic Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page, click the **Learn** tab, and click **Get Certified**. See [Certification FAQs](/docs/get-started/training-certification-faq) for more information.
-
-<img src={useBaseUrl('img/get-started/certifications.png')} alt="Certifications" style={{border: '1px solid gray'}} width="500" />
+You do not have to stop there either. You can take the next step and become Sumo Logic Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page, click the **Learn** tab. See [Certification FAQs](/docs/get-started/training-certification-faq) for more information.

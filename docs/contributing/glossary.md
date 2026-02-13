@@ -279,6 +279,8 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Search Autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete)**. See Autocomplete.
 
+**[Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time)**. You can display search results in the order in which logs become available for search after being received by the Sumo Logic system.
+
 **[Search Templates](/docs/search/get-started-with-search/build-search/search-templates)**. Search templates simplify searches for users by providing easy to select input choices. You can have search templates replace any text in a query, including fields, keywords, and arguments to operators.
 
 **[Service Allowlist Settings](/docs/manage/security/create-allowlist-ip-cidr-addresses)**. Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations.

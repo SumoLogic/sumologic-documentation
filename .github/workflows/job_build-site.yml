@@ -1,0 +1,45 @@
+name: Build helpdocs site
+
+permissions:
+  contents: read
+
+on:
+  workflow_call:
+
+jobs:
+  build-helpdocs-site:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://www.sumologic.com/
+    env:
+      CI: true
+      NODE_ENV: production
+      NODE_OPTIONS: "--max-old-space-size=8192 --max-http-header-size=8192"
+      HOSTNAME: https://www.sumologic.com
+      BASE_URL: /help/
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Clean Docusaurus cache
+        run: rm -rf .docusaurus build
+      - name: Clear the Docusaurus site
+        run: |
+          yarn clear
+      - name: Build the Docusaurus site
+        run: |
+          yarn build
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        id: artifact-upload-step
+        with:
+          name: build-output
+          path: ./build/

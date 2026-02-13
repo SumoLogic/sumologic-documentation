@@ -40,17 +40,16 @@ Watch this micro lesson to learn more about rules.
 
 <img src={useBaseUrl('img/cse/rules-list-page.png')} alt="Rules list page" style={{border: '1px solid gray'}} width="800" />
 
-| Letter | Description |
-|:--|:--|
-| a | **Rules count**. The total number of rules in the list. |
-| b | **Filters**. Filter the list of rules by different parameters, such as name, type, severity, and so on. |
-| c | **Sort**. Sort rules by name, enabled, severity, created, updated, or signal count updated the past 7 days or 24 hours.  |
-| d | **Updated**. When the rule was last updated. |
-| e | **Status - Type**. The [rule status](/docs/cse/rules/rules-status/) and [rule type](/docs/cse/rules/about-cse-rules/#rule-types).  |
-| f | **Severity**. The rule's severity, an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). |
-| g | **Signals Fired**. The number of signals that the rule fired in the last 24 hours as well as 7 days. |
-| h | **Export as JSON**. Export the rule information as a JSON file. |
-| i | **Tags**. Metadata [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/) that add context for the rule. Click a tag to see rules with that tag. |
+1. **Filter**. Filter the list of rules by different parameters, such as name, type, severity, and so on.
+1. **+ Add Rule**. Select the [rule type](#rule-types) to add.
+1. **Import**. [Import a rule](#import-a-rule).
+1. **Status**. Whether the rule is enabled.
+1. **Name**. The rule's name.
+1. **Rule Status**. The [rule status](/docs/cse/rules/rules-status/).
+1. **Rule Type**. The [rule type](/docs/cse/rules/about-cse-rules/#rule-types).
+1. **Severity**. The rule's severity, an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest).
+1. **Signals Fired (24 h)**. The number of signals that the rule fired in the last 24 hours.
+1. **Signals Fired (7 d)**. The number of signals that the rule fired in the last 7 days.
 
 ## Rules details view
 
@@ -141,6 +140,28 @@ Some of the key metadata fields are defined below.
 | `metadata_product` | string | The specific product name of the data source. Note the name of the company who created the product is the "vendor" field. |
 | `metadata_deviceEventId` | string | Event type given by the vendor for the log. |
 
+## Export and import a rule
+
+Sometimes you may need to export a rule from one instance of Cloud SIEM and import it to another. You can export and import it as a JSON file. 
+
+:::tip
+If you maintain a multi-org implementation of Sumo Logic and you need to push Cloud SIEM rules from a parent organization to child organization to ensure rule consistency across the orgs, use the **Manage Content** tab. See [Manage Orgs for MSSPs](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps/).
+:::
+
+### Export a rule
+
+1. Access the [rules list view](/docs/cse/rules/about-cse-rules/#rules-list-view).
+1. Select a rule.
+1. Click the three-dot kebab icon to the right of the rule name and select **Export** from the menu.<img src={useBaseUrl('img/cse/rule-export-menu.png')} alt="Rule export menu" style={{border: '1px solid gray'}} width="600" />
+1. The rule is downloaded as a JSON file. Copy the file and move it to a directory where it can be imported.
+
+### Import a rule
+
+1. Export a Cloud SIEM rule as described in the preceding section.
+1. Access the [rules list view](/docs/cse/rules/about-cse-rules/#rules-list-view).
+1. Click the **Import** button. 
+1. Select the JSON file of the previously exported rule.<img src={useBaseUrl('img/cse/rule-import-button.png')} alt="Rule import button" style={{border: '1px solid gray'}} width="600" /> 
+
 ## Rules and other content
 
 This section describes two key Cloud SIEM features that enable you to write richer rules that can look up information about the entities that are actors in a record. For example, you could compare a domain in a record to a list of allowed listed domains. Or you could compare an IP address to a list of IP addresses known to be indicators of compromise.  
@@ -211,4 +232,5 @@ Threat Intelligence sources are used at the time of record ingestion. When a rec
 * Blogs: 
    * [Secure your CI/CD pipelines from supply chain attacks with Sumo Logic’s Cloud SIEM rules](https://www.sumologic.com/blog/secure-azure-devops-github-supply-chain-attacks/)
    * [Rule tuning – supercharge Cloud SIEM for better alerts](https://www.sumologic.com/blog/rule-tuning-cloud-siem-alert-fatigue/)
+   * [Build a detection-as-code pipeline: Your guide to managing Sumo Logic Cloud SIEM rules in GitHub](https://www.sumologic.com/guides/detections-as-code-setup)
 * Cloud SIEM Content Catalog: [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md)

@@ -17,6 +17,14 @@ Just as you can use criticality to increase severity, you can use it to decrease
 
 If the formula you specify results in a number that isn’t whole, the value is rounded down to the nearest integer.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage entity criticality with the [`sumologic_cse_entity_criticality_config`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_entity_criticality_config) resource.
+
+<TerraformLink/>
+:::
+
 ## About criticality and insight generation
 
 The maximum severity that can be assigned to a Cloud SIEM rule is 10, so normally, signal severity is also limited to 10. Note however that Cloud SIEM doesn’t impose a maximum value on the severity that results from a criticality, although the minimum value will always be 0. 

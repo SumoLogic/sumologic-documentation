@@ -38,18 +38,12 @@ The user creating the service application does not need to be an administrator.�
 Use the following steps to create a service application:
 
 1. Log in to the [Azure Active Directory Portal](https://aad.portal.azure.com/).
-1. Then select **Azure Active Directory** in the left menu.
-    ![Azure AD step 2.png](/img/send-data/Azure-AD-step-2.png)
-1. Then select **App Registrations**.<br/>
-    ![Azure AD step 3 red box.png](/img/send-data/Azure-AD-step-3-red-box.png)
-1. Then select **New Registration**. Go through the registration process, providing a name for the application. Selecting **Accounts in this organizational directory only** is sufficient.
-    ![Azure new registration in step 4.png](/img/send-data/Azure-new-registration-in-step-4.png)
-1. After the Application is registered (created), be sure to copy the **Application (client) ID** and the **Directory (tenant) ID**. These are used later as configuration parameters in Sumo Logic when creating the Microsoft Graph Azure AD Reporting Source.
-    ![Azure created app in step 5.png](/img/send-data/Azure-created-app-in-step-5.png)
-1. Within the Application configuration page, select **Certificates and Secrets** to create an Application Client Secret Key.
-    ![Azure AD step 6.png](/img/send-data/Azure-AD-step-6.png)
-1. Copy the **Client Secret Value** (pictured below). It's needed later in Sumo Logic when creating the Microsoft Graph Azure AD Reporting Source.
-    ![Azure AD step 7.png](/img/send-data/Azure-AD-step-7.png)
+1. Then select **Azure Active Directory** in the left menu.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-2.png')} alt="Select Azure Active Directory" style={{border: '1px solid gray'}} width="800" />
+1. Then select **App Registrations**.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-3-red-box.png')} alt="Select App Registrations" style={{border: '1px solid gray'}} width="300" />
+1. Then select **New Registration**. Go through the registration process, providing a name for the application. Selecting **Accounts in this organizational directory only** is sufficient.<br/><img src={useBaseUrl('img/send-data/Azure-new-registration-in-step-4.png')} alt="Select new registration" style={{border: '1px solid gray'}} width="800" />
+1. After the Application is registered (created), be sure to copy the **Application (client) ID** and the **Directory (tenant) ID**. These are used later as configuration parameters in Sumo Logic when creating the Microsoft Graph Azure AD Reporting Source.<br/><img src={useBaseUrl('img/send-data/Azure-created-app-in-step-5.png')} alt="Copy IDs" style={{border: '1px solid gray'}} width="800" />
+1. Within the Application configuration page, select **Certificates and Secrets** to create an Application Client Secret Key.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-6.png')} alt="Certificates and Secrets" style={{border: '1px solid gray'}} width="800" />
+1. Copy the **Client Secret Value** (pictured below). It's needed later in Sumo Logic when creating the Microsoft Graph Azure AD Reporting Source.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-7.png')} alt="Client Secret Value" style={{border: '1px solid gray'}} width="800" />
 1. Request the appropriate permissions for the application. Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**. From there select (or search for) the following permissions. An Administrator must approve (grant) these permissions before the integration will function.
 
 | **API**         | **Account Type**                       | **Permissions**                                                           |
@@ -63,7 +57,8 @@ Use the following steps to create a service application:
 | Provisioning    | Delegated (work or school account)     | AuditLog.Read.All and Directory.Read.All                                  |
 | Provisioning    | Delegated (personal Microsoft account) | Not supported.                                                            |
 | Provisioning    | Application                            | AuditLog.Read.All                                                         |
-![azure ad step 8.png](/img/send-data/azure-ad-step-8.png)
+
+<img src={useBaseUrl('img/send-data/azure-ad-step-8.png')} alt="Request API permissions" style={{border: '1px solid gray'}} width="800" />
 
 ### Source configuration
 
@@ -116,6 +111,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | secret_key | String | Yes | `null` | Provide the Application Client Secret Value you created in Azure. |  |
 | application_id | String | Yes | `null` | Provide the Application (client) ID you got after you registered (created) the Azure Application. |  |
 | supported_apis | Array of strings | Yes |`null`  | Define one or more of the available APIs to collect: `Directory Audit`, `Sign-in`, and `Provisioning`. For example, for both you'd use: `["Directory Audit","Signin"]` |  |
+| azure_gov_l4 | Boolean | No | `false`  | Set to true if you are using Azure Government L4 environment. |  |
+| apiRetentionDays| Integer | No | `30` | Set the retention period (in days). The maximum supported value is **30 days**. If a higher value is configured, it will automatically be adjusted to 30 days, as API data retention is limited to 30 days ([reference](https://learn.microsoft.com/en-us/answers/questions/37734/sign-in-logs-older-than-the-30-day-limit)). |
 
 ### JSON example
 
@@ -128,6 +125,14 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 ```sh reference
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/microsoft-graph-azure-ad-reporting/example.tf
 ```
+## Troubleshooting
+
+<details>
+  <summary>This request is throttled. Please try again after the value specified in the Retry-After header.</summary>
+  <div>
+    This error occurs when the API request limit (throttling threshold) is exceeded and the source makes more API calls than the limit specified in the [Microsoft documentation](https://learn.microsoft.com/en-us/graph/throttling-limits#identity-and-access-reports-service-limits). In many cases, this happens when the same credentials are used concurrently by multiple vendors or integrations. Please verify that the credentials configured for the Sumo Logic source are not shared with other platforms making API calls. 
+  </div>
+</details>
 
 ## FAQ
 

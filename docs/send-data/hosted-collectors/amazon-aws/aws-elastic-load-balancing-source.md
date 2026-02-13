@@ -19,6 +19,14 @@ To configure an AWS ELB Source:
 1. Add the [AWS Source](aws-sources.md) for ELB.
 1. **Optional:** Install the Sumo Logic App for AWS Elastic Load Balancing.
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an AWS Elastic Load Balancing source with the [`sumologic_elb_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/elb_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Enable ELB logging in AWS
 
 By default, ELB logging is not enabled in your organization's AWS account. You can find additional assistance for enabling logging in [AWS Documentation](http://aws.amazon.com/documentation/elastic-load-balancing/).

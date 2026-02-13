@@ -41,5 +41,5 @@ Watch this micro lesson to learn more about Sumo Logic's Dojo AI Summary Agent.
     * No customer data or personally identifiable information (PII) is used to train models.
     * Processing is limited to schemas and sample fields, and is reviewed for compliance.
     * The AI is powered by Amazon Bedrock, with rolling expiration for temporary query history.
-* **Can insight summaries be accessed by the API?**<br/>Yes. The summaries are included in output when you run the [insight APIs](https://api.sumologic.com/docs/sec/#operation/GetInsight) in the [Cloud SIEM APIs](https://help.sumologic.com/docs/api/cloud-siem-enterprise/).
+* **Can insight summaries be accessed by the API?**<br/>Yes. The summaries are included in output when you run the [insight APIs](https://api.sumologic.com/docs/sec/#operation/GetInsight) in the [Cloud SIEM APIs](/docs/api/cloud-siem-enterprise/).
 * **Is there an additional cost?**<br/>No. The insight summary is included as part of Cloud SIEM at no extra licensing fee.

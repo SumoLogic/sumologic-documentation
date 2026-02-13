@@ -1,6 +1,6 @@
 ---
 id: write-first-seen-rule
-title: Write a First Seen rule
+title: Write a First Seen Rule
 sidebar_label: First Seen Rule
 description: First seen rules allow you to generate a signal when behavior by an entity (user) is encountered that hasn't been seen before.
 keywords:
@@ -15,8 +15,16 @@ import CseRule from '../../reuse/cse-rule-description-links.md';
 import Iframe from 'react-iframe';
 
 This topic has information about first seen rules and how to create them in the Cloud SIEM UI.
-:::tip
+:::info
 If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
+:::
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage first seen rules with the [`sumologic_cse_first_seen_rule`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_first_seen_rule) resource.
+
+<TerraformLink/>
 :::
 
 ## About first seen rules
@@ -48,15 +56,17 @@ Watch this micro lesson to learn more about first seen rules.
 
 ## Baselines for first seen rules
 
-A first seen rule is different from other Cloud SIEM rule types in that you don’t define the criteria for firing a signal. Instead, the rule expression in a first seen rule is simply a filter condition that defines what incoming records the rule will apply to. For each first seen rule, Cloud SIEM automatically creates a baseline model of normal behavior for a defined time period (by default for the last 90 days) evidenced by records that match the Rule Expression. The activity found during this period is considered normal behavior and will not be alerted on. 
+A first seen rule is different from other Cloud SIEM rule types in that you don’t define the criteria for firing a signal. Instead, the rule expression in a first seen rule is simply a filter condition that defines what incoming records the rule will apply to. For each first seen rule, Cloud SIEM automatically creates a baseline model of normal behavior for a defined time period (by default using data from the last 90 days) evidenced by records that match the Rule Expression. The activity found during this period is considered normal behavior and will not be alerted on. 
 
-As soon as you save or update a first seen rule (or disable and re-enable it), the full baseline is built using existing data collected. If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete. If the records gathered for a baseline exceed 50 million, the historical baseline capabilities become inefficient and it’s better to let the baseline gather data over time. You will be notified of this state in the UI, and can either let the baseline gather over the days set in the baseline, or edit the rule to filter more records or reduce the baseline period to keep it under 50 million records.
+As soon as you save or update a first seen rule (or disable and re-enable it), the full baseline is built using existing data collected. A minimum of 7 days of baseline information needs to be available in order for a rule to be active and generating signals. (That is, events relevant to the baseline must be at least 7 days old before the baseline is considered complete.) If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete. 
 
 Once the baseline is created, when an incoming record includes matching activity not seen during the baseline retention period, the rule creates a signal identifying the activity as *first seen*. The signal indicates that the activity is first seen:
  
-<img src={useBaseUrl('img/cse/first-seen-signal-example.png')} alt="First seen signal example" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/cse/first-seen-signal-example.png')} alt="First seen signal example" style={{border: '1px solid gray'}} width="800"/>
 
-For example, for the “First time a user logged in from a new geographic location” use case, Cloud SIEM will build a baseline model of all the geolocations from where a logon event is seen for the entity (user). Once the baseline is created, Cloud SIEM will create a signal for every new geolocation detected and incrementally add to the baseline.
+For example, for the “First time a user logged in from a new geographic location” use case, Cloud SIEM will build a baseline model of all the geolocations from where a logon event is seen for the entity (user). Because a minimum of 7 days of baseline information needs to be available, activities within 7 days of the first recorded login to a new location will not generate signals, but the first login to a new location on the 8th day will generate a signal. Once the baseline is created, Cloud SIEM will create a signal for every new geolocation detected and incrementally add to the baseline.
+
+If the records gathered for a baseline exceed 50 million, the historical baseline capabilities to generate a baseline through a query become inefficient and it’s better to let the baseline gather data over time. You will be notified of this state in the UI, and can either let the baseline gather over the days set in the baseline, or edit the rule to filter more records or reduce the baseline period to keep it under 50 million records.
 
 :::tip
 Sumo Logic ensures that rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and first seen rules are no exception.
@@ -75,6 +85,7 @@ The screenshot below shows a first seen rule in the Cloud SIEM rules editor. For
 ## Create a first seen rule
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
+1. Click **+ Add Rule**.
 1. On the **Create a Rule** page, click **Create** in the **First Seen** card.
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.
@@ -141,12 +152,11 @@ with **has a new value for the field(s)** set to `srcDeviceIP_countryName`
 
 ### With a global baseline
 
-With a global baseline, and the default baseline retention period of the last 90 days, the rule creates a baseline of all geolocations that users logged in from for the last 90 days. If a new geolocation is detected, a signal will be created. Then, if a new hire (that wasn’t part of the 90 day baseline) logs in from any geolocation, a signal
-will be created. As a global baseline, the 90 day baseline is shared across all entities.
+With a global baseline, and the default baseline retention period of the last 90 days, using the previous example the rule creates a baseline of all geolocations that users logged in from using data from the last 90 days. Once the first event of a new geolocation is detected, the 7-day minimum learning period begins. On the 8th day, a signal will be created. Then, if a new hire (that wasn’t part of the 90 day baseline) logs in from any geolocation, a signal will be created. As a global baseline, the 90 day baseline retention period is shared across all entities.
 
 ### With per-entity baselines
 
-With a per-entity baseline, and the default baseline retention period of the last 90 days, the rule creates a baseline of all geolocations on a per-entity basis for the last 90 days. It will generate a signal when a new geolocation is not part of a user’s historic baseline. On a new hire’s first login, a baseline for the last 90 days will begin rebuilding. If that user logs on from a new geolocation, the rule will create a signal.
+With a per-entity baseline, and the default baseline retention period of the last 90 days, using the previous example the rule creates a baseline of all geolocations on a per-entity basis using data from the last 90 days. It will generate a signal after the minimum learning period of 7 days when a new geolocation is not part of a user’s historic baseline. On a new hire’s first login, a baseline for the last 90 days will begin rebuilding. If that user logs on from a new geolocation, the rule will create a signal.
 
 :::tip
 If you are unsure whether to use a per-entity or a global baseline, consider your use case. If you’re inclined to select `user_username` in the **Has a new value for the field(s)** prompt, you’re better off creating a global baseline for that behavior. Alternatively, if you want to track a new value for a non-entity record field, a per-entity baseline is appropriate.
