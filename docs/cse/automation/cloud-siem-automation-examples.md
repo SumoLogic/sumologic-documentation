@@ -92,7 +92,7 @@ The following example shows how to configure a notification that sends an email 
    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. 
    1. Select **Sumo Logic**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" style={{border: '1px solid gray'}} width="600"/>
-   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
    1. [Create an access key](/docs/manage/security/access-keys#create-an-access-key) and copy the resulting access ID and access key.
    1. Enter the **Access ID** and the **Access Key**.
    1. Select your **Time Zone**.
@@ -283,7 +283,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
    1. Click **Integrations** in the navigation menu.
    1. Select **Sumo Logic**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" style={{border: '1px solid gray'}} width="600"/>
-   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
    1. [Create an access key](/docs/manage/security/access-keys#create-an-access-key) and copy the resulting access ID and access key.
    1. Enter the **Access ID** and the **Access Key**.
    1. Select your **Time Zone**.

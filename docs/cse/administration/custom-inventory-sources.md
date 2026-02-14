@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic explains how you can extract inventory data from logs in Sumo Logic and send it to Cloud SIEM. If you want to leverage inventory data from a system or service that isn’t supported by a Sumo Logic Source inventory source, you can follow the instructions in this topic. This procedure assumes that you already ingest log data that contains inventory data.
 
-Cloud SIEM uses _inventory data_—information about hosts and users in your environment—to provide context to signals. Inventory data can also be used in entity groups to set attributes on entities (users, hosts, and so on); those attributes can be later used in detection rule definitions, to adjust the severity of signals (using criticality), and for further context in signals.
+Cloud SIEM uses *inventory data* (information about hosts and users in your environment) to provide context to signals. Inventory data can also be used in entity groups to set attributes on entities (users, hosts, and so on). Those attributes can be later used in detection rule definitions, to adjust the severity of signals (using criticality), and for further context in signals.
 
 Sumo Logic provides a number of Sources you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. For more information, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
 
@@ -34,7 +34,7 @@ This approach uses Scheduled Searches, which are limited to 100 unique rows of d
 In this step, you configure an HTTP Source that will receive the inventory data from the Webhook you’ll set up later in this procedure. You can add the source to an existing Hosted Collector or configure a new collector.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
-2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. In the row for the Hosted Collector, click **Add Source**. <br/><img src={useBaseUrl('img/cse/add-source-link.png')} alt="Add Source link on the Collection tab" style={{border: '1px solid gray'}} width="800" />
 4. Click **HTTP Logs & Metrics.**  <br/><img src={useBaseUrl('img/cse/select-source.png')} alt="TTP Logs & Metrics tile on the Collection tag" style={{border: '1px solid gray'}} width="800" />
 5. The source configuration page appears. <br/><img src={useBaseUrl('img/cse/http-source.png')} alt="Source configuration page" style={{border: '1px solid gray'}} width="800" />
@@ -223,9 +223,9 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 | count by os_version, hostname, ip, mac, username,email, role
 ```
 
-**Notes**
-
-* `_collector` and `_sourceCategory` and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields to scope your search.
+:::note
+`_collector` and `_sourceCategory` specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields to scope your search.
+:::
 
 ### Webhook payload for User entity
 
@@ -262,9 +262,8 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 }
 ```
 
-
-**Notes**
-
+:::note
 * The `source` key is an arbitrary string that identifies the source of the inventory data.
 * The `customInventory` key identifies the payload as custom inventory data. You must include this in your webhook payload.
 * The `type` key specifies what type of inventory data the webhook sends. Set the value to _user_ or _computer_. You must include this in your webhook payload.
+:::
