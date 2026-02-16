@@ -18,13 +18,8 @@ To do so, [ingest threat intelligence indicators](/docs/security/threat-intellig
 Threat Intelligence sources are used at the time of record ingestion. When a record is ingested, Cloud SIEM determines whether any of the fields in the record exist in any of your Threat Intelligence sources. When a record contains a value that matches an entry in one or more Threat Intelligence sources, the `hasThreatMatch` Cloud SIEM rules function searches incoming records in Cloud SIEM for matches to threat intelligence indicators. For more information, see [Find Threats with Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
 -->
 
-This topic has information about configuring a ThreatQ source in Cloud SIEM.
 
-ThreatQ is a threat intelligence platform that centrally manages and correlates external sources of threat intel information. 
-
-If you have a ThreatQ subscription, Cloud SIEM’s ThreatQ integration allows you to leverage ThreatQ threat intel feeds. 
-
-To do so, you simply configure a ThreatQ source in Cloud SIEM. You supply the information Cloud SIEM needs to connect to ThreatQ and fetch feed updates on a periodic basis.
+ThreatQ is a threat intelligence platform that centrally manages and correlates external sources of threat intel information. If you have a ThreatQ subscription, Cloud SIEM’s ThreatQ integration allows you to leverage ThreatQ threat intel feeds. To do so, you simply configure a ThreatQ source in Cloud SIEM. You supply the information Cloud SIEM needs to connect to ThreatQ and fetch feed updates on a periodic basis.
 
 ## Configure a ThreatQ source
 

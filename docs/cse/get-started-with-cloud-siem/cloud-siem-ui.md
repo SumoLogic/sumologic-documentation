@@ -48,7 +48,7 @@ Use the **Cloud SIEM** sidebar menu to access:
     * [**Match List**](/docs/cse/match-lists-suppressed-lists/create-match-list/). Manage match lists, lists of important indicators and identifiers that you want to be addressed by rules.
     * [**File Analysis**](/docs/cse/rules/import-yara-rules/). Manage sources for YARA rules.
     * [**Custom Insights**](/docs/cse/records-signals-entities-insights/configure-custom-insight/). Manage custom insights, methods to generate insights on some basis other than entity Activity Scores.
-    * [**Network Blocks**](/docs/cse/administration/create-use-network-blocks/). Manage network blocks, groups of IP addresses that you can use in rules
+    * [**Network Blocks**](/docs/cse/administration/create-use-network-blocks/). Manage network blocks, groups of IP addresses that you can use in rules.
     * [**Suppressed Lists**](/docs/cse/match-lists-suppressed-lists/suppressed-lists/). Manage suppressed lists, lists of indicators that can suppress signal generation.
     * [**MITRE ATT&CK Coverage**](/docs/cse/administration/mitre-coverage/). View the MITRE ATT&CK Threat Coverage Explorer, a screen that shows the MITRE ATT&CK adversary tactics, techniques, and procedures that are covered by rules in your system.
 * **Cloud SIEM Integrations**
@@ -80,7 +80,7 @@ Use the top menu to access:
 
 #### Go To... menu
 
-The **Go To...** menu allows you to launch Sumo Logic features, including for Cloud SIEM. To access this menu, click <img src={useBaseUrl('img/get-started/go-to-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="50"/> on the [top menu](#top-menu-1). <br/><img src={useBaseUrl('img/get-started/go-to-menu.png')} alt="Go To menu bar" style={{border: '1px solid gray'}} width="500"/>
+The **Go To...** menu allows you to launch Sumo Logic features, including for Cloud SIEM. To access this menu, click <img src={useBaseUrl('img/get-started/go-to-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="50"/> on the top menu. <br/><img src={useBaseUrl('img/get-started/go-to-menu.png')} alt="Go To menu bar" style={{border: '1px solid gray'}} width="500"/>
 
 Use the **Go To...** menu to access these Cloud SIEM features:
 * [**Actions**](/docs/cse/administration/create-cse-actions/). Create actions to issue a notification to another service when certain events occur in Cloud SIEM.
@@ -132,7 +132,7 @@ Use the top menu to access:
 
 #### Content menu
 
-The **Content** menu allows you to create elements to customize Cloud SIEM. To access the menu, click **Content** on the [top menu](#top-menu). <br/><img src={useBaseUrl('img/cse/cloud-siem-content-menu.png')} alt="Content menu" style={{border: '1px solid gray'}} width="300"/>
+The **Content** menu allows you to create elements to customize Cloud SIEM. To access the menu, click **Content** on the top menu. <br/><img src={useBaseUrl('img/cse/cloud-siem-content-menu.png')} alt="Content menu" style={{border: '1px solid gray'}} width="300"/>
 
 Use the **Content** menu to access:
 * [**Rules**](/docs/cse/rules/). Manage rules, sets of logic that create signals based on information in incoming records.
@@ -147,7 +147,7 @@ Use the **Content** menu to access:
 
 #### Configuration menu
 
-The **Configuration** menu allows you to configure Cloud SIEM. To access this menu, click <img src={useBaseUrl('img/cse/cloud-siem-configuration-menu-icon.png')} alt="Configuration menu icon" style={{border: '1px solid gray'}} width="30"/> on the [top menu](#top-menu).<br/><img src={useBaseUrl('img/cse/cloud-siem-configuration-menu.png')} alt="Configuration menu" style={{border: '1px solid gray'}} width="500"/>
+The **Configuration** menu allows you to configure Cloud SIEM. To access this menu, click <img src={useBaseUrl('img/cse/cloud-siem-configuration-menu-icon.png')} alt="Configuration menu icon" style={{border: '1px solid gray'}} width="30"/> on the top menu.<br/><img src={useBaseUrl('img/cse/cloud-siem-configuration-menu.png')} alt="Configuration menu" style={{border: '1px solid gray'}} width="500"/>
 
 Use the **Configuration** menu to access:
 * **Incoming Data**
