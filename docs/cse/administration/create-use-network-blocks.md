@@ -49,8 +49,8 @@ Keep the labels you assign to network blocks short and sweet. Don’t include th
 
 In the case that the two or more network blocks overlap, Cloud SIEM uses the smallest, most-specific block that matches the IP address that's being looked up. For example, given these two network blocks:
 
-* `10.0.0.0/8` with Label "EC2 Internal"
-* `10.128.0.0/24` with Label "WebServer IPs"
+* `10.0.0.0/8` with label "EC2 Internal"
+* `10.128.0.0/24` with label "WebServer IPs"
 
 When Cloud SIEM looks for the network block address `10.128.0.1`, it will return the more-specific block, "WebServer IPs".
 
@@ -63,7 +63,7 @@ Follow these instructions to create a network block using the Cloud SIEM UI. For
 1. On the **Add Network Block** popup:
     1. **Address Block**. Enter a CIDR block that identifies a contiguous range of IP addresses.
     1. **Label**. Enter a meaningful name for the network block.
-    1. **Internal**. Leave the toggle switched to the right (green) if you want to mark IP addresses that match the network block as Internal. This allows you to filter on the IP addresses in rule expressions, as described below in [Using enrichment fields](#using-enrichment-fields), below.
+    1. **Internal**. Leave the toggle switched to the right (green) if you want to mark IP addresses that match the network block as internal. This allows you to filter on the IP addresses in rule expressions, as described below in [Using enrichment fields](#using-enrichment-fields), below.
     1. **Suppress Signals**. Leave the toggle switched to the left (red) if you do not want to suppress signals on IP addresses in the network block. Otherwise, switch the toggle to the right (green).
     1. Click **Save**. <br/><img src={useBaseUrl('img/cse/create-network-block.png')} alt="Create network block" style={{border: '1px solid gray'}} width="400"/>
 
@@ -96,9 +96,9 @@ address_block
 
 ## Network blocks and enrichment fields
 
-The Label you assign to a network block is stored in an enrichment field that Cloud SIEM adds to each record that contains an IP address in that block. Similarly, an enrichment field is added to each record that contains an IP address in a network block that is marked Internal. 
+The label you assign to a network block is stored in an enrichment field that Cloud SIEM adds to each record that contains an IP address in that block. Similarly, an enrichment field is added to each record that contains an IP address in a network block that is marked internal. 
 
-In the table below, the left column contains schema fields that contain IP addresses. The middle column contains the enrichment fields that are added to records based on network block configuration. The enrichment fields in the middle column, which end in `_location`, are populated with the Label from a network block. Those in the rightmost column, which end in `_isInternal`, are populated with “yes”, indicating that the IP address is in a network block marked Internal. 
+In the table below, the left column contains schema fields that contain IP addresses. The middle column contains the enrichment fields that are added to records based on network block configuration. The enrichment fields in the middle column, which end in `_location`, are populated with the label from a network block. Those in the rightmost column, which end in `_isInternal`, are populated with “yes”, indicating that the IP address is in a network block marked internal. 
 
 | IP address field | _location enrichment field | _isInternal enrichment field |
 |:--|:--|:--|
@@ -114,7 +114,7 @@ In the table below, the left column contains schema fields that contain IP addre
 
 The screenshot below shows a record that contains several network block-related enrichment fields. Note that:
 
-* `dstDevice_ip_isInternal` and `srcDevice_ip_isInternal` indicate that the `dstDevice_ip` and `srcDevice_ip` are both in network blocks that are marked Internal.
+* `dstDevice_ip_isInternal` and `srcDevice_ip_isInternal` indicate that the `dstDevice_ip` and `srcDevice_ip` are both in network blocks that are marked internal.
 * `srcDevice_ip_location` indicates that `srcDevice_ip` is in the “test_internal” network block.
 
 <img src={useBaseUrl('img/cse/record.png')} alt="Example enrichment fields" style={{border: '1px solid gray'}} width="600"/>

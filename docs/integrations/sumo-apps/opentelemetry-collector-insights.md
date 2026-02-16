@@ -29,7 +29,6 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 
 ### For OTLP endpoint configuration
 
-
 Before configuring the OTEL Collector integration, you need to create an OTLP source in your Sumo Logic hosted collector. The OTLP source will provide the endpoint URL that the OTEL Collector will use to send telemetry data. Learn more at [Creating a Sumo Logic OTLP Source](/docs/send-data/hosted-collectors/http-source/otlp/).
 
 ### For metrics collection
@@ -198,6 +197,50 @@ After installation, verify that:
 3. Data is being successfully sent to both the logs (`/v1/logs`) and metrics (`/v1/metrics`) endpoints.
 4. Resource attributes are properly applied to the telemetry data.
 5. Internal metrics are accessible at `http://localhost:8888/metrics`.
+
+## Remote collector management via source templates
+
+You can now remotely configure and manage OpenTelemetry Collectors for the following applications using source templates. This capability eliminates manual setup and provides a unified experience across both local and remote collector workflows.
+- [Apache](/docs/send-data/opentelemetry-collector/remote-management/source-templates/apache/)
+- [Docker](/docs/send-data/opentelemetry-collector/remote-management/source-templates/docker/)
+- [ElasticSearch](/docs/send-data/opentelemetry-collector/remote-management/source-templates/elasticsearch/)
+- [Kafka](/docs/send-data/opentelemetry-collector/remote-management/source-templates/kafka/)
+- [Linux](/docs/send-data/opentelemetry-collector/remote-management/source-templates/linux/)
+- [Mac](/docs/send-data/opentelemetry-collector/remote-management/source-templates/mac/)
+- [MySql](/docs/send-data/opentelemetry-collector/remote-management/source-templates/mysql/)
+- [Nginx](/docs/send-data/opentelemetry-collector/remote-management/source-templates/nginx/)
+- [PostgreSql](/docs/send-data/opentelemetry-collector/remote-management/source-templates/postgresql/)
+- [RabbitMQ](/docs/send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq/)
+- [Redis](/docs/send-data/opentelemetry-collector/remote-management/source-templates/redis/)
+- [Windows](/docs/send-data/opentelemetry-collector/remote-management/source-templates/windows/)
+
+:::note
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](#configure-opentelemetry-collectors-locally).
+:::
+
+### Step 1: Set up OpenTelemetry collector
+
+To get started, set up a remotely managed collector on your system by following the.instructions in [Step 1: Set up collector](#step-1-set-up-collector).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/install-otel-collector.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
+
+For the apps listed above, the installation commands now include a `--remotely-managed` flag. When this flag is used, a remotely managed collector is installed automatically instead of a locally managed one. If you prefer to use a locally managed collector, simply remove the flag from the installation command.
+
+### Step 2: Configure app integration
+
+Configure the source template for the above mentioned apps to ingest logs or metrics, or both. [Learn more](/docs/send-data/opentelemetry-collector/remote-management/source-templates/).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/configure-app.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
+
+### Step 3: Link Collectors
+
+1. Link the remotely managed OpenTelemetry collector by name or tags to associate it with the configured source template. If you already provided tags in [Step 1](#step-1-set-up-opentelemetry-collector), they will be automatically populated at this stage.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/link-collectors.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
+2. Once the source template is created, you can [edit](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#edit-a-source-template) it anytime as needed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/st-created-successfully.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
+
+### Configure OpenTelemetry collectors locally
+
+You can configure your source locally by downloading the YAML file.
+
+To download the YAML file, follow the steps below:
+1. [**New UI**](/docs/get-started/sumo-logic-ui). Go to the main Sumo Logic menu and select **Data Management**, and under **Data Collection** select **Source Template**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
+1. Select the source template whose YAML configuration you want to download. If the required source template is not available, create a new one by clicking **+ Add Source**.
+1. In the right pane, under **Source Configuration**, click **Copy** or **Download YAML File** to download and manage the configuration locally.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/copy-yaml.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="400"/>
 
 ## Sample log messages
 

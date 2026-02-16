@@ -65,7 +65,7 @@ As soon as you save or update an outlier rule (or disable and re-enable it), the
 
 Once the baseline is created, Cloud SIEM tracks aggregates of count, sum, min, max, and averages of record values, and creates a signal when deviations from the mean occurs. For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, Cloud SIEM builds a baseline model of counts of authentication failures that are associated with a user over time, and creates a signal when outlier behavior is detected:
 
-<img src={useBaseUrl('img/cse/outlier-signal-example.png')} alt="Outlier signal example" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/cse/outlier-signal-example.png')} alt="Outlier signal example" style={{border: '1px solid gray'}} width="800"/>
 
 After your rule starts generating signals, evaluate them to determine if they truly represent outliers of concern, and adjust the rule settings as needed. For example, if too many signals are being generated, the baseline model is too sensitive, and you need to set the model sensitivity threshold higher on the rule; if too few signals are generated, set the threshold lower. Among other things, also evaluate if the signals from outliers are generating enough insights. To [generate an insight](/docs/cse/get-started-with-cloud-siem/insight-generation-process/), by default the combined severity scores of signals need to exceed 12, or a custom insight can be used. Change the severity level in the outlier rule or create a custom insight to trigger insights based on this rule for investigation.
 
@@ -89,6 +89,7 @@ The screenshot below shows an outlier rule in the Cloud SIEM rules editor. For a
 ## Create an outlier rule
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
+1. Click **+ Add Rule**.
 1. On the **Create a Rule** page, click **Create** in the **Outlier** card.
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.
@@ -96,7 +97,7 @@ The screenshot below shows an outlier rule in the Cloud SIEM rules editor. For a
 
 ### Configure "If Triggered" settings
 
-The settings in the **If Triggered** section are divided into two subsections, one for providing Baseline configuration, and the other for outlier model configuration.
+The settings in the **If Triggered** section are divided into two subsections, one for providing baseline configuration, and the other for outlier model configuration.
 
 **Baseline Configuration**
 1. **For the records matching the expression**. Enter an expression that matches the records that you want to rule to apply to.

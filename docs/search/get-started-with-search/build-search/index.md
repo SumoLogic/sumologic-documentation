@@ -55,6 +55,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/search/get-started-with-search/build-search/use-searchable-time')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Use Searchbale Time</h4></a>
+  <p>Learn how to display search results in the order when the logs become available for search.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/search/get-started-with-search/build-search/use-url-to-run-search')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Use a URL to Run a Search</h4></a>
   <p>Learn how to create a custom URL to launch a log search in Sumo Logic.</p>
   </div>
