@@ -59,7 +59,7 @@ Self‑paced training is available in our [learning portal](#how-do-i-access-the
 
 ### What content is available for self‑paced learning?
 
-* **Learning Paths** for General, Observability, and Security ([Learning Hub](#how-do-i-access-the-learning-portal) > **Become a Sumo Expert**).
+* **Learning Paths** for General, Observability, and Security ([Learning Hub](#how-do-i-access-the-learning-portal) > **Become a Sumo Logic Expert**).
 * **Micro Lessons** ([Learning Hub](#how-do-i-access-the-learning-portal) > **Learn a New Skill**).
 * **Recorded Live Training** sessions with lab guides and slides ([Learning Hub](#how-do-i-access-the-learning-portal) > **Recorded Live Training**).
 
@@ -113,21 +113,40 @@ If you see an error when starting a new lesson, try these steps:
 
 Use the Training Lab environment to get hands‑on practice with course exercises. This environment is curated and set up to work along with our training curriculum.
 
+During instructor-led and on-demand courses, you may be asked to access a Sumo Logic training lab environment. This environment is separate from your production Sumo Logic account and is provided specifically for hands-on learning.
+
+:::info
+Training lab accounts are for working through hands-on lab guides using built-in data only. To trial Sumo Logic with your own data, set up a separate [trial](https://www.sumologic.com/sign-up/) or paid account.
+:::
+
 ### How do I access the training lab environment?
 
-1. Choose a number between 001 and 999. Use this number across your labs.
-2. Open a second browser (for example, Firefox if you are reading this in Chrome) so you can stay logged in to both your regular Sumo Logic account and the training lab at the same time.
-3. In the second browser window, go to [https://service.sumologic.com](https://service.sumologic.com).
-4. Enter the credentials posted at the top of the **Become a Sumo Expert** page in the learning portal.
-5. You will know you have access when hovering over the user profile in the upper-right corner shows **Sumo Logic Training**.
-6. Save your training username for use during training.
+Training lab credentials are available via self-service directly from your learning portal.
 
-### Where can I find the training lab credentials?
+#### Choose your credential type
 
-Credentials change monthly. Go to the [learning portal](#how-do-i-access-the-learning-portal) > **Become a Sumo Expert**.
+Both Analyst and Admin accounts are available for any learner to request. Choose the credentials you need based on the requirements or instructions in your course. In most cases, this is Analyst, but certain courses (like Administration) need admin-level privileges.
 
-<img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Training lab credentials" style={{border: '1px solid gray'}} width="600" />
+#### How to request credentials
 
+1. Open a second browser (for example, Firefox if you are reading this in Chrome) so you can stay logged in to both your regular Sumo Logic account and the training lab at the same time.
+2. Go to your [learning portal](#how-do-i-access-the-learning-portal) and click **Become a Sumo Logic Expert**.<br/><img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Training lab credentials" style={{border: '1px solid gray'}} width="600" />
+3. Click **Request Training Analyst Login** or **Request Training Admin Login** based on your course requirements.
+4. Review the summary confirmation that appears and accept to proceed.
+5. The system will automatically assign you an available account:
+   * **Analyst accounts**. `training+analyst###@sumologic.com` (where ### is between 001-999).
+   * **Admin accounts**. `training+admin###@sumologic.com` (where ### is between 001-999).
+6. Your credentials will be displayed on screen and sent to your email address.
+7. In the second browser window, go to [service.sumologic.com](https://service.sumologic.com) and log in with your assigned credentials.
+8. You will know you have access when hovering over the user profile in the upper-right corner shows **Sumo Logic Training**.
+9. Save your training username for use during training.
+
+:::note
+* Do not share your credentials with others.
+* Training lab credentials expire at the end of each month.
+* A new set of credentials needs to be generated after the first of each month.
+* Any account-specific data you add will be wiped when credentials expire.
+:::
 
 ## Certifications
 
