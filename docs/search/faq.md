@@ -23,7 +23,7 @@ In this query, the `sessionize` operator uses three parse expressions:
 All the fields extracted are also available as additional fields in the UI and can be used for further analysis.
 
 
-## Why does keyword search no results?
+## Why does keyword search return no results?
 
 Sometimes a keyword search returns no results, even though the keyword used exists in messages. To understand why this happens, it is helpful to understand how Sumo Logic indexes the contents of uploaded log messages.
 
