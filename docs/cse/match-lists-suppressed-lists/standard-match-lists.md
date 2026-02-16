@@ -16,7 +16,7 @@ This topic has information about how you can identify specific entities or indic
 
 ## Schema tag keys for entities
 
-The keys and values described below are controlled by Sumo Logic. If you want to request additional tags or tag values, contact your Sumo Logic Customer Success Manager. You can also tag entities with custom tags–if you do that, you’ll need to update your custom rules or add rule tuning expression to out-of-the-box rules to reference your custom tags.
+The keys and values described below are controlled by Sumo Logic. If you want to request additional tags or tag values, contact your Sumo Logic Customer Success Manager. You can also tag entities with custom tags. If you do that, you’ll need to update your custom rules or add rule tuning expression to out-of-the-box rules to reference your custom tags.
 
 ### _deviceGroup
 
