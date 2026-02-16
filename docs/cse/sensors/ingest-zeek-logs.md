@@ -12,19 +12,19 @@ This topic has instructions for ingesting Zeek logs into Cloud SIEM. 
 
 Cloud SIEM uses [Zeek](https://zeek.org/) (formerly known as Bro) for network visibility. Zeek is an open source network analysis framework that organizes packets into flows, decodes common protocols, performs file extraction, SSL certificate validation, OS fingerprinting and more. Zeek can be extended through plugins for additional detection capabilities.
 
-## Supported collection method: Sumo Logic Source
+## Supported collection method: Sumo Logic source
 
-If you already have a Zeek deployment, you can collect logs using a Sumo Logic Collector and Source.
+If you already have a Zeek deployment, you can collect logs using a Sumo Logic collector and source.
 
 :::note
 This method requires that your Zeek logs are in JSON format. 
 :::
 
-### Configure a Sumo Logic Source
+### Configure a Sumo Logic source
 
-In this step, you configure a Sumo Logic Source on an Sumo Logic Installed Collector. Choose the appropriate Source type based on:
-* If you already have a method of forwarding Zeek logs in JSON format in Syslog format to a collector in your environment, you can use a Syslog Source to ingest the logs.
-* If you’re not set up to use Syslog, and have Zeek log files stored on a filesystem, you can use a Local File Source to ingest the logs.
+In this step, you configure a Sumo Logic source on an Sumo Logic installed collector. Choose the appropriate source type based on:
+* If you already have a method of forwarding Zeek logs in JSON format in Syslog format to a collector in your environment, you can use a Syslog source to ingest the logs.
+* If you’re not set up to use Syslog, and have Zeek log files stored on a filesystem, you can use a local file source to ingest the logs.
 
 After configuring the appropriate source, use one of the methods described in [Enable parsing and mapping of Zeek logs](#enable-parsing-and-mapping-of-zeek-logs) to provide information Cloud SIEM requires to parse and map Zeek logs.
 
@@ -39,14 +39,14 @@ So, how to determine whether a Zeek log is a `conn`, `http`, `ftp`, or some othe
 
 ### Use Corelight
 
-With this method, you use Corelight’s [json-streaming-logs](https://github.com/corelight/json-streaming-logs), a Bro script package that creates JSON formatted logs, and adds an extension field, named _path that identifies the Zeek log type to each Zeek log. Then, you map that field to **Event ID** in a Sumo Logic ingest mapping.
+With this method, you use Corelight’s [json-streaming-logs](https://github.com/corelight/json-streaming-logs), a Bro script package that creates JSON formatted logs, and adds an extension field, named `_path` that identifies the Zeek log type to each Zeek log. Then, you map that field to **Event ID** in a Sumo Logic ingest mapping.
 
 After installing the `json-streaming-logs` package, follow these instructions to set up the Sumo Logic mapping.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Integrations** select **Sumo Logic**. 
 1. On the **Ingest Mappings** tab, click **+ Add Ingest Mapping**.<br/><img src={useBaseUrl('img/cse/ingest-mappings.png')} alt="Ingest mappings" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Add Ingest Mapping** tab:
-   1. **Source Category**. Enter the Source Category value you assigned to the Source you configured above in [Configure a Sumo Logic Source](#configure-a-sumo-logic-source).
+   1. **Source Category**. Enter the source category value you assigned to the source you configured above in [Configure a Sumo Logic source](#configure-a-sumo-logic-source).
    1. **Format**. Choose **Bro/Zeek JSON**.
    1. **Event ID**. Enter `{_path}`.
    1. **Enabled**. Use the slider to enable the mapping if you’re ready to receive Zeek logs.
@@ -108,10 +108,10 @@ Perform these steps for each of the FERs.
 ## Unsupported collection method: Network Sensor
 
 :::warning End-of-Life
-This section describes using the Cloud SIEM Network Sensor. [Network Sensor has reached its end of life](/docs/cse/sensors/network-sensor-end-of-life/). Instead, use Zeek. For more information, see [Supported collection method: Sumo Logic Source](#supported-collection-method-sumo-logic-source) above. 
+This section describes using the Cloud SIEM Network Sensor. [Network Sensor has reached its end of life](/docs/cse/sensors/network-sensor-end-of-life/). Instead, use Zeek. For more information, see [Supported collection method: Sumo Logic source](#supported-collection-method-sumo-logic-source) above. 
 :::
 
-You can use Cloud SIEM’s Network Sensor to collect Zeek logs and upload them to an HTTP Source on a Sumo Logic Hosted Collector. This method ensures that supported Bro policies are enabled and that the supported Bro output format is configured. It also results in the creation of Cloud SIEM records from the raw Zeek log messages. For instructions, see [Network Sensor Deployment Guide](/docs/cse/sensors/network-sensor-deployment-guide). 
+You can use Cloud SIEM’s Network Sensor to collect Zeek logs and upload them to an HTTP source on a Sumo Logic hosted collector. This method ensures that supported Bro policies are enabled and that the supported Bro output format is configured. It also results in the creation of Cloud SIEM records from the raw Zeek log messages. For instructions, see [Network Sensor Deployment Guide](/docs/cse/sensors/network-sensor-deployment-guide). 
 
 The Network Sensor extracts files observed over cleartext protocols that match selected MIME types. You can configure what types will be extracted using the [extracted_file_types](/docs/cse/sensors/network-sensor-deployment-guide) property in the Network Sensor’s configuration file, `trident-sensor.cfg`. By default the sensor will upload password-protected zip files and the following types of executables:
 
@@ -120,7 +120,7 @@ The Network Sensor extracts files observed over cleartext protocols that match s
 * `application/x-msdos-program`
 
 :::note
-YARA [file analysis](/docs/cse/rules/import-yara-rules) is supported only for files extracted by the Network Sensor. If you use your own Zeek deployment and ingest logs using a Sumo Logic Source you can't also upload extracted files. 
+YARA [file analysis](/docs/cse/rules/import-yara-rules) is supported only for files extracted by the Network Sensor. If you use your own Zeek deployment and ingest logs using a Sumo Logic source you can't also upload extracted files. 
 :::
 
 ### Filtering Zeek logs

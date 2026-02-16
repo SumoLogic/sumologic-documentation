@@ -137,8 +137,8 @@ On an insight, if you select **Actions** > **Entity Automation > Run Automations
 <img src={useBaseUrl('img/cse/automations-entity-menu.png')} alt="Entity automation menu" style={{border: '1px solid gray'}} width="400"/>
 
 1. Select one or more of the entities listed or select **Select All Entities**. The selected entities don’t have to be the same type.
-1. Click **Next**. A list displays of all entity automations that are enabled, configured to be run manually, and configured for at least one of the entity types you selected on the previous screen.
-1. Select the automations you wish to run and click **Run Automation**. The system will automatically run the appropriate automations for the appropriate entity Types.<br/><img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity automation menu with selections" style={{border: '1px solid gray'}} width="400"/>
+1. Click **Next**. A list displays all entity automations that are enabled, configured to be run manually, and configured for at least one of the entity types you selected on the previous screen.
+1. Select the automations you wish to run and click **Run Automation**. The system will automatically run the appropriate automations for the appropriate entity types.<br/><img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity automation menu with selections" style={{border: '1px solid gray'}} width="400"/>
 
 ## View results of an automation
 
@@ -199,15 +199,15 @@ Migrating to the Automation Service has many benefits over using legacy actions 
 ### Use installed playbooks
 
 Though you can create your own playbooks, the Automation Service provides the following playbooks with functionality that replaces legacy actions and enrichments:
-* **Insight Full Enrichment**. Enriches the whole insight with Recorded Future. It enriches both the primary and all the involved entities by sorting them based on their entity type. The playbook alerts you if a risky entity is detected, and also adds tags to the insight for easier identification.
-* **Entity Full Enrichment**. Determines the entity type and uses the appropriate Recorded Future technology to enrich.
-* **Enrich Entity with PowerShell Carbon Black**. Executes the PowerShell script to enrich with Carbon Black, adds the enrichment to the entity, and sends an email if a risky score is detected.
-* **Enrich Entity with PowerShell CrowdStrike**. Executes the PowerShell script to enrich with CrowdStrike, and adds the enrichment to the entity.
-* **Enrich Entity with PowerShell GreyNoise**. Executes the PowerShell script to enrich with GreyNoise, and adds the enrichment to the entity.
-* **Enrich Entity with PowerShell SentinelOne**: Executes the PowerShell script to enrich with SentinelOne, and adds the enrichment to the entity.
-* **Enrich Entity with PowerShell nslookup**. Performs nslookup in the local host where PowerShell is running, and adds the enrichment to the entity.
-* **Enrich Entity with PowerShell Whois**. Performs whois in the local host where PowerShell is running, and adds the enrichment to the entity.
-* **Enrich Entity with PowerShell User Query**: Performs a query on user in the local host where PowerShell is running, and adds the enrichment to the entity.
+* [**531 - Example Insight full Enrichment**](/docs/platform-services/automation-service/playbooks-in-app-central/#531---example-insight-full-enrichment). Enriches the whole insight with Recorded Future. It enriches both the primary and all the involved entities by sorting them based on their entity type. The playbook alerts you if a risky entity is detected, and also adds tags to the insight for easier identification.
+* [**532 - Example Entity full Enrichment**](/docs/platform-services/automation-service/playbooks-in-app-central/#532---example-entity-full-enrichment). Determines the entity type and uses the appropriate Recorded Future technology to enrich.
+* [**508 - Enrich Entity with PowerShell GreyNoise**](/docs/platform-services/automation-service/playbooks-in-app-central/#508---enrich-entity-with-powershell-greynoise). Executes the PowerShell script to enrich with GreyNoise, and adds the enrichment to the entity.
+* [**509 - Enrich Entity with PowerShell SentinelOne**](/docs/platform-services/automation-service/playbooks-in-app-central/#509---enrich-entity-with-powershell-sentinelone): Executes the PowerShell script to enrich with SentinelOne, and adds the enrichment to the entity.
+* [**510 - Enrich Entity with PowerShell User Query**](/docs/platform-services/automation-service/playbooks-in-app-central/#510---enrich-entity-with-powershell-user-query): Performs a query on user in the local host where PowerShell is running, and adds the enrichment to the entity.
+* [**511 - Enrich Entity with PowerShell CrowdStrike**](/docs/platform-services/automation-service/playbooks-in-app-central/#511---enrich-entity-with-powershell-crowdstrike). Executes the PowerShell script to enrich with CrowdStrike, and adds the enrichment to the entity.
+* [**512 - Enrich Entity with PowerShell CarbonBlack**](/docs/platform-services/automation-service/playbooks-in-app-central/#512---enrich-entity-with-powershell-carbonblack). Executes the PowerShell script to enrich with Carbon Black, adds the enrichment to the entity, and sends an email if a risky score is detected.
+* [**513 - Enrich Entity with PowerShell Whois**](/docs/platform-services/automation-service/playbooks-in-app-central/#513---enrich-entity-with-powershell-whois). Performs whois in the local host where PowerShell is running, and adds the enrichment to the entity.
+* [**514 - Enrich Entity with PowerShell nslookup**](/docs/platform-services/automation-service/playbooks-in-app-central/#514---enrich-entity-with-powershell-nslookup). Performs nslookup in the local host where PowerShell is running, and adds the enrichment to the entity.
 
 ### Replace legacy actions and enrichments
 
@@ -221,13 +221,13 @@ In place of the following legacy actions, use the corresponding actions from [in
 
 Legacy action | Description | Corresponding action <br/>in the Automation Service | Additional instructions |
 | :-- | :-- | :-- | :-- |
-| AWS Simple Notification Service | Pushes insight JSON to the AWS Simple Notification Service. | The **Send Message** action in the **AWS Simple Notification Service** integration. | NA|
-| Email | Sends email with insight details to a list of recipients. The email includes the MITRE tactic and insight link. | The **Send Email** action in the **Basic Tools** integration). | NA |
-| HTTP POST v2 | Allows you to send a full insight in JSON format to any HTTP URL. | The **HTTP POST** action in the **HTTP Tools** integration. | NA |
-| Microsoft Teams | Sends a message to a Teams channel using a webhook URL. | The **Send Teams Message** action in the **Microsoft Teams** integration.| Create a node with the **Send Teams Message** action and configure it with the message content and the channel name to which the message must be sent. |
-| PagerDuty | Sends a  notification to PagerDuty.| The **Create New Incident** action in the **PagerDuty** integration. | NA |
-| Recorded Future | Performs IP, URL, and hash reputation, and pushes the enrichment in the insight. | The **IP Reputation**, **URL Reputation**, and **File Reputation** actions in the **Recorded Future OIF** integration. | 1. Create a node with the reputation action needed. You can add a condition node before the action to automatically determine the reputation action based on the entity type. <br/>2. Create another node with the **Add Insight Enrichment** action from the **CSE Tools** integration, and configure it to use as enrichment the `output.raw` from the previous node. |
-| Slack | Sends a message to a Slack channel. | The **Send Message** action in the **Slack** integration. | Create a node with the **Send Message** action and configure the node with the channel name to which the message must be sent. |
+| AWS Simple Notification Service | Pushes insight JSON to the AWS Simple Notification Service. | The **Send Message** action in the [AWS Simple Notification Service](/docs/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/) integration. | NA|
+| Email | Sends email with insight details to a list of recipients. The email includes the MITRE tactic and insight link. | The **Send Email** action in the [Basic Tools](/docs/platform-services/automation-service/app-central/integrations/basic-tools/) integration). | NA |
+| HTTP POST v2 | Allows you to send a full insight in JSON format to any HTTP URL. | The **HTTP POST** action in the [HTTP Tools](/docs/platform-services/automation-service/app-central/integrations/http-tools/) integration. | NA |
+| Microsoft Teams | Sends a message to a Teams channel using a webhook URL. | The **Send Teams Message** action in the [Microsoft Teams](/docs/platform-services/automation-service/app-central/integrations/microsoft-teams/) integration.| Create a node with the **Send Teams Message** action and configure it with the message content and the channel name to which the message must be sent. |
+| PagerDuty | Sends a  notification to PagerDuty.| The **Create New Incident** action in the [PagerDuty](/docs/platform-services/automation-service/app-central/integrations/pagerduty/) integration. | NA |
+| Recorded Future | Performs IP, URL, and hash reputation, and pushes the enrichment in the insight. | The **IP Reputation**, **URL Reputation**, and **File Reputation** actions in the [Recorded Future](/docs/platform-services/automation-service/app-central/integrations/recorded-future/) integration. | 1. Create a node with the reputation action needed. You can add a condition node before the action to automatically determine the reputation action based on the entity type. <br/>2. Create another node with the **Add Insight Enrichment** action from the **CSE Tools** integration, and configure it to use as enrichment the `output.raw` from the previous node. |
+| Slack | Sends a message to a Slack channel. | The **Send Message** action in the [Slack](/docs/platform-services/automation-service/app-central/integrations/slack/) integration. | Create a node with the **Send Message** action and configure the node with the channel name to which the message must be sent. |
 
 #### Legacy enrichments
 
@@ -235,11 +235,11 @@ In place of the following legacy enrichments, use the corresponding actions from
 
 | Legacy enrichment | PowerShell alternative in the Automation Service | Python alternative in the Automation Service |
 | :-- | :-- | :-- |
-| [Carbon Black](/docs/cse/integrations/insight-enrichment-server/#carbonblack-enrichment)  | Use the **VMwareCarbon Black IP Enrichment** action from the **PowerShell Tools** integration. | Use the **Get Devices** action from the **VMware Carbon Black Cloud Platform** integration. |
-| [CrowdStrike](/docs/cse/integrations/insight-enrichment-server/#crowdstrike-enrichment) | Use the **Crowd Strike Falcon Enrichment** action from the **PowerShell Tools** integration. | Use the **List Endpoints** action from the **CrowdStrike Falcon** integration. |
-| [GreyNoise](/docs/cse/integrations/insight-enrichment-server/#greynoise-enrichment) | Use the **GreyNoise Enrichmen**t action from the **PowerShell Tools** integration. | Use the **Context IP Lookup** action from the **GreyNoise** integration. |
-| nslookup | Use the **DNS Lookup** action from the **PowerShell Tools** integration. | NA |
-| Query user | Use the **Query User** action from the **PowerShell Tools** integration. | NA |
-| [SentinelOne](/docs/cse/integrations/insight-enrichment-server/#sentinelone-enrichment) | Use the **SentinelOne Enrichment** action from **PowerShell Tools** integration. | Use the **List Agents** action from the **SentinelOne** integration. |
-| whois | Use the **Whois** action from the **PowerShell Tools** integration. | NA |
-| Custom scripts | Use the **Execute Commands** action from the **PowerShell Tools** integration to execute any command inside your PowerShell Windows host, including custom scripts. | NA |
+| [Carbon Black](/docs/cse/integrations/insight-enrichment-server/#carbonblack-enrichment)  | Use the **VMwareCarbon Black IP Enrichment** action from the [PowerShell Tools](/docs/platform-services/automation-service/app-central/integrations/powershell-tools/) integration. | Use the **Get Devices** action from the [VMware Carbon Black Cloud Platform](/docs/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/) integration. |
+| [CrowdStrike](/docs/cse/integrations/insight-enrichment-server/#crowdstrike-enrichment) | Use the **Crowd Strike Falcon Enrichment** action from the [PowerShell Tools](/docs/platform-services/automation-service/app-central/integrations/powershell-tools/) integration. | Use the **List Endpoints** action from the [CrowdStrike Falcon](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon/) integration. |
+| [GreyNoise](/docs/cse/integrations/insight-enrichment-server/#greynoise-enrichment) | Use the **GreyNoise Enrichment** action from the [PowerShell Tools](/docs/platform-services/automation-service/app-central/integrations/powershell-tools/) integration. | Use the **Context IP Lookup** action from the [GreyNoise](/docs/platform-services/automation-service/app-central/integrations/greynoise/) integration. |
+| nslookup | Use the **DNS Lookup** action from the [PowerShell Tools](/docs/platform-services/automation-service/app-central/integrations/powershell-tools/) integration. | NA |
+| Query user | Use the **Query User** action from the [PowerShell Tools](/docs/platform-services/automation-service/app-central/integrations/powershell-tools/) integration. | NA |
+| [SentinelOne](/docs/cse/integrations/insight-enrichment-server/#sentinelone-enrichment) | Use the **SentinelOne Enrichment** action from [PowerShell Tools](/docs/platform-services/automation-service/app-central/integrations/powershell-tools/) integration. | Use the **List Agents** action from the [SentinelOne](/docs/platform-services/automation-service/app-central/integrations/sentinelone/) integration. |
+| whois | Use the **Whois** action from the [PowerShell Tools](/docs/platform-services/automation-service/app-central/integrations/powershell-tools/) integration. | NA |
+| Custom scripts | Use the **Execute Commands** action from the [PowerShell Tools](/docs/platform-services/automation-service/app-central/integrations/powershell-tools/) integration to execute any command inside your PowerShell Windows host, including custom scripts. | NA |
