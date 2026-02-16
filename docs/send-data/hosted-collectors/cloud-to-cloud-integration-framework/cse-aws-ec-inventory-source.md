@@ -127,22 +127,18 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ## Troubleshooting
 
-<details>
-  <summary>
-    Source displays (`regionName (status: 401/403)`) in Sumo UI
-  </summary>
-  <div>
-    <strong>Possible cause</strong>
-    <p>If you see a region name with status 401 or 403, it means that the region is not enabled in your AWS account or you don't have the necessary permissions for that region</p>
-    <strong>Possible resolution</strong>
-    <ul>
-      <li>Enable the region in your AWS account.</li>
-      <li>Verify your IAM permissions are correctly configured for the regions you want to access.</li>
-      <li>Remove the region from the <strong>limitToRegions</strong> source configuration if you don't need to collect data from it.</li>
-    </ul>
-  </div>
-</details>
+### Source displays (`regionName (status: 401/403)`) in the Sumo Logic UI
+#### Cause
 
+If you see a region name with status code 401 or 403, it means that the region is not enabled in your AWS account or you don't have the necessary permissions for that region.
+
+#### Solution
+
+To resolve the above error, make sure you perform the below actions:
+
+- Enable the region in your AWS account.
+- Verify that your IAM permissions are correctly configured for the regions you want to access.
+- Remove the region from the **limitToRegions** source configuration if you don't need to collect data from it.
 
 ## FAQ
 
