@@ -313,7 +313,7 @@ And then, you can see throughput in the Sumo Logic Mock logs:
 Where `1707732583 Metrics:       1522 Logs:         44; 0.000075 MB/s Spans:          17;` means the following:
 
 - It sums up ingestion for one minute up to `1707732583` (`2024-02-12T10:09:43`)
-- there were `1522` metrics data points, which means `1522 DPM`
+- There were `1522` metrics data points, which means `1522 DPM`
 - There were `44` logs (`0.000075 MB/s`)
 - There were `17` spans
 
