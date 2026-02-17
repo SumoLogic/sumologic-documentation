@@ -181,7 +181,7 @@ If you see the following error in Prometheus logs:
 ts=2023-01-30T16:39:27.436Z caller=dedupe.go:112 component=remote level=error remote_name=2b2fa9 url=http://sumologic-sumologic-remote-write-proxy.sumologic.svc.cluster.local:9888/prometheus.metrics msg="non-recoverable error" count=194 exemplarCount=0 err="server returned HTTP status 404 Not Found: 404 page not found"
 ```
 
-you'll need to change the following configurations:
+You would be required to change the following configurations:
 
 - `kube-prometheus-stack.prometheus.prometheusSpec.remoteWrite`
 - `kube-prometheus-stack.prometheus.prometheusSpec.additionalRemoteWrite`
