@@ -49,7 +49,7 @@ For Kubernetes services, you can use the following way:
 
 ## Check the Prometheus UI
 
-First run the following command to expose the Prometheus UI:
+To check the Prometheus UI, first run the following command to expose the UI:
 
 ```sh
 $ kubectl -n "${NAMESPACE}" get pod -l app.kubernetes.io/name=prometheus
