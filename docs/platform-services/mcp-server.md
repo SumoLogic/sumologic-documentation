@@ -97,7 +97,7 @@ To create a service account through the API:
 UI support for this step is not yet available. You'll need to use the API with an [Access Key](/docs/manage/security/access-keys/).
 :::
 
-Create an OAuth client under your service account. Note the `clientId` and `clientSecret` from the response — these are your MCP credentials.
+Create an OAuth client under your service account. Note the `clientId` and `clientSecret` from the response. These are your OAuth client credentials, which you will use to generate an access token in the next step.
 
 ```bash
 curl -u "<accessId>:<accessKey>" \
