@@ -26,7 +26,7 @@ kubectl logs -n <NAMESPACE> -l app=kube-prometheus-stack-operator
 
 ## Pod stuck in `ContainerCreating` state
 
-If you are seeing a pod stuck in the `ContainerCreating` state and seeing logs like this:
+If you are seeing a pod stuck in the `ContainerCreating` state and seeing logs as mentioned below. It means you have an unhealthy node and killing the node should resolve this issue.
 
 ```sh
 Warning  FailedCreatePodSandBox  29s   kubelet, ip-172-20-87-45.us-west-1.compute.internal  Failed create pod sandbox: rpc error: code = DeadlineExceeded desc = context deadline exceeded
