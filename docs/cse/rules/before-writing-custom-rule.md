@@ -20,7 +20,7 @@ By tuning and using a built-in rule, you avoid the effort of writing a rule, and
 The following topics provide information that’s relevant to the process of writing a custom rule:
 
 * [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline). This topic describes how Cloud SIEM creates records for incoming messages. It provides facts about how message fields are mapped to Cloud SIEM schema attributes; about the attributes Cloud SIEM adds to records to enrich and provide context about IP address, URLs, and domains; “list” features, like Match Lists and Suppress Lists that allow you to include or exclude records based on identifiers found in records; how to leverage threat intel data and more.
-* [Schema Attributes](/docs/cse/schema/schema-attributes). This topic defines the record attributes you can reference in rules.
+* [Cloud SIEM Schema Attributes](/docs/cse/schema/schema-attributes). This topic defines the record attributes you can reference in rules.
 * [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax). This topic describes rules language functions and syntax, which you’ll use in writing rule expressions.
 * [Searching for Cloud SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo). This topic explains how to search Cloud SIEM records in the Sumo Logic platform. Typically, you’ll build and refine your rule expressions in Sumo Logic. Once you’re happy with the results, you’ll copy the query into the rule expression field in the rules editor.
 
@@ -36,7 +36,7 @@ Review the standard [rule types](/docs/cse/rules/about-cse-rules#rule-types) to 
 
 Before you write a rule, you’ll want to verify what attributes are available in the records created from the target data source. You can do this by reviewing the log mapping for the data source.  
 
-Let’s say you’re going to write a rule that fires every time a successful Windows login occurs from a user account that doesn’t match your standard account naming convention. You know, maybe because you’ve checked Microsoft documentation, that the Windows event that records successful logins is Security Log Event ID 4624. So, you’ll take a look at the Cloud SIEM log mapping for that event, assuming there is one.
+Let’s say you’re going to write a rule that fires every time a successful Windows login occurs from a user account that doesn’t match your standard account naming convention. You’ve checked Microsoft documentation and found that the Windows event that records successful logins is Security Log Event ID 4624. So, you’ll take a look at the Cloud SIEM log mapping for that event, assuming there is one.
 
 To find and review a log mapping:
 

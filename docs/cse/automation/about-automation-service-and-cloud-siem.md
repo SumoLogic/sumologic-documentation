@@ -39,7 +39,7 @@ You can use Terraform to manage Cloud SIEM automation with the [`sumologic_cse_a
   1. Invites certain people to the Slack channel.
 
 :::note
-* Cloud SIEM automation is intended to replace the legacy [Cloud SIEM Actions](/docs/cse/administration/create-cse-actions) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/). All of the actions and integrations provided with those capabilities are included in the Automation Service (though some may require “on-premise” deployment through the [bridge](/docs/platform-services/automation-service/automation-service-bridge)). Those capabilities will be deprecated later in 2023. See [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
+* Cloud SIEM automation is intended to replace the legacy [Cloud SIEM Actions](/docs/cse/administration/create-cse-actions) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/). All of the actions and integrations provided with those capabilities are included in the Automation Service (though some may require “on-premise” deployment through the [bridge](/docs/platform-services/automation-service/automation-service-bridge)). Those capabilities will be deprecated later. See [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
 * Actions can run directly from the Sumo Logic cloud or from other environments via a [bridge](/docs/platform-services/automation-service/automation-service-bridge/). For security and performance reasons, only certified integrations and actions can run directly from the Sumo Logic cloud environment.
 * The Automation Service is not available in FedRAMP environments at this time.
 :::
@@ -83,7 +83,7 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 
 ## Support and compliance
 
-### API and Terraform support
+### API support
 
 The [Cloud SIEM API](/docs/cse/administration/cse-apis/) supports automations. Endpoints include:
 * `GET /automations`. Get the list of automations
@@ -93,11 +93,13 @@ The [Cloud SIEM API](/docs/cse/administration/cse-apis/) supports automations. E
 * `GET /automations/{id}`. Get a specific automation
 * `PUT /automations/{id}`. Update a specific automation
 
-The Sumo Logic Terraform provider also supports automation, but does not support the ability to create or modify integrations, playbooks, or actions. For more information about Terraform, see the [Sumo Logic Terraform](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs) documentation.
-
 :::note
 The Automation Service uses the [Cloud SOAR API](/docs/api/cloud-soar/). 
 :::
+
+### Terraform support
+
+The Sumo Logic Terraform provider supports Cloud SIEM automation with the [sumologic_cse_automation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_automation) resource. For more information about Terraform, see [Use Terraform with Sumo Logic](/docs/api/about-apis/terraform-with-sumo-logic/).
 
 ### Data retention
 
