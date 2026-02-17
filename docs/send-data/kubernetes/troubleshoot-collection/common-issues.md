@@ -186,7 +186,7 @@ You would be required to change the following configurations:
 - `kube-prometheus-stack.prometheus.prometheusSpec.remoteWrite`
 - `kube-prometheus-stack.prometheus.prometheusSpec.additionalRemoteWrite`
 
-so `url` starts with `http://$(METADATA_METRICS_SVC).$(NAMESPACE).svc.cluster.local.:9888`.
+So `url` starts with `http://$(METADATA_METRICS_SVC).$(NAMESPACE).svc.cluster.local.:9888`.
 
 See the following example:
 
