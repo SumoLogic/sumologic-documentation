@@ -77,12 +77,6 @@ Limits are set on how often a rule fires so that the system is not overloaded. F
 
 | Type | Limit |
 | :-- | :-- |
-| Signals per hour | 100K |
-| Signals per 24 hours | 1M |
-
-<!-- For DOCS-72 - Rule limits
-| Type | Limit |
-| :-- | :-- |
 | Total allowed custom rules of each [rule type](/docs/cse/rules/about-cse-rules/#rule-types) | 100 - Tier 1 <br/>200 - Tier 2<br/>500 - Tier 3 |
 | Signals per hour | 50K- Tier 1<br/>100K - Tier 2<br/>150K - Tier 3 |
 | Signals per 24 hours | 1M Tier 1<br/>2M - Tier 2<br/>3M - Tier 3 |
@@ -97,8 +91,6 @@ Limits are set on how often a rule fires so that the system is not overloaded. F
 :::note
 Rule limits can be higher if you are in a higher tenant tier level. If you have questions about what your tenant tier level is, contact your Sumo Logic account representative or [contact Sumo Logic Support](https://support.sumologic.com/support/s/).
 :::
-
--->
 
 ## Query for rule status changes
 
