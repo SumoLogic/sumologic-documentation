@@ -8,7 +8,7 @@ Here's how to troubleshoot common Kubernetes collection issues such as missing m
 
 ## Missing metrics - cannot see cluster in Explore
 
-If you are not seeing metrics coming in to Sumo or/and your cluster is not showing up in [Explore](/docs/observability/kubernetes/monitoring#open-kubernetes-views) it is most likely due to the fact that Prometheus pod is not running.
+If you are not seeing metrics coming in to Sumo Logic or/and your cluster is not showing up in the [Explore](/docs/observability/kubernetes/monitoring#open-kubernetes-views) it is most likely due to the fact that Prometheus pod is not running.
 
 You can verify that by using the following command:
 
