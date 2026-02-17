@@ -277,7 +277,7 @@ kubectl delete crd/opampbridges.opentelemetry.io
 
 ## Using Sumo Logic Mock
 
-Sumo Logic Mock is debugging tool, which helps to see what exactly is being sent from the Sumo Logic Collection to Sumo Logic. It may help with finding if there are any missing metrics, logs, traces, or parts of them like labels or metadata.
+Sumo Logic Mock is a debugging tool, which helps to see what exactly is being sent from the Sumo Logic Collection to Sumo Logic. It may help with finding if there are any missing metrics, logs, traces, or parts of them like labels or metadata.
 
 :::note
 Sumo Logic Mock is treated as an experimental tool and it may significantly change between every release.
