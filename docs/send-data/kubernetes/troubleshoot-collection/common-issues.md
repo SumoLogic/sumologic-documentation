@@ -263,7 +263,7 @@ Run the following command to confirm that the finalizer has been removed:
 kubectl get opentelemetrycollectors.opentelemetry.io -o yaml > my-resource.yaml
 ```
 
-If the patch command doesn't work, please edit the CRD to remove the finalizer
+If the patch command doesn't work, edit the CRD to remove the finalizer:
 
 ```shell
 kubectl edit crd opentelemetrycollectors.opentelemetry.io
