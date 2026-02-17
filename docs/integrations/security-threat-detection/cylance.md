@@ -314,7 +314,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Cylance-AuditLog.png')} alt="Cylance dashboards" />
 
-## Upgrading the Cylance app (Optional)
+## Upgrade/Downgrade the Cylance app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

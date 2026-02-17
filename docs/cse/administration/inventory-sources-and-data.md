@@ -2,39 +2,35 @@
 id: inventory-sources-and-data
 title: Inventory Sources and Data
 sidebar_label: Inventory Sources and Data
-description: Inventory data is information about computers and users in your environment that Cloud SIEM uses to provide context to Entities in the Cloud SIEM UI.
+description: Inventory data is information about computers and users in your environment that Cloud SIEM uses to provide context to entities in the Cloud SIEM UI.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about _inventory sources_ and the _inventory data_ they collect.
 
-Inventory data is information about computers and users in your environment that Cloud SIEM uses to provide context to Entities in the Cloud SIEM UI. For example, when an analyst is investigating a user or system, it might be beneficial to know the department or manager to which they belong.
+Inventory data is information about computers and users in your environment that Cloud SIEM uses to provide context to entities in the Cloud SIEM UI. For example, when an analyst is investigating a user or system, it might be beneficial to know the department or manager to which they belong.
 
-In addition to providing context to Cloud SIEM Insights and Entities, inventory data can be leveraged in other beneficial ways. For example, you can save computer and user information to a lookup table and use the data for search time enrichment. For more information, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table)
+In addition to providing context to Cloud SIEM insights and entities, inventory data can be leveraged in other beneficial ways. For example, you can save computer and user information to a lookup table and use the data for search time enrichment. For more information, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table).
 
 ## Inventory data in the Cloud SIEM UI
 
 The screenshots in this section show how Cloud SIEM presents inventory data in the UI.
 
-This screenshot shows inventory data for a user for a user on the **Insight Details** page. When you mouse over the **Entity** value a popup appears, and displays any inventory that is available for the Entity.
+This screenshot shows inventory data for a user on the **Insight Details** page. When you mouse over the **Entity** value a popup appears, and displays any inventory that is available for the entity:<br/><img src={useBaseUrl('img/cse/entity-data-popup.png')} alt="Example inventory data on an insight" style={{border: '1px solid gray'}} width="400" />
 
-<img src={useBaseUrl('img/cse/entity-data-popup.png')} alt="Example inventory data on an insight" style={{border: '1px solid gray'}} width="400" />
-
-This screenshot shows the **Entity Details** page; inventory data is displayed for a user.
-
-<img src={useBaseUrl('img/cse/entity-inventory.png')} alt="Example inventory data on an entity" style={{border: '1px solid gray'}} width="400"/>
+This screenshot shows the **Entity Details** page; inventory data is displayed for a user:<br/><img src={useBaseUrl('img/cse/entity-inventory.png')} alt="Example inventory data on an entity" style={{border: '1px solid gray'}} width="400"/>
 
 ## About inventory data sources
 
-Sumo Logic provides a number of [Sources](/docs/send-data/choose-collector-source) you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. Each inventory source is listed in the [Inventory Source Mappings](#inventory-source-mappings) section below. The mapping table for each source shows the inventory attributes that are populated and the associated data source field or fields for each.
+Sumo Logic provides a number of [sources](/docs/send-data/choose-collector-source) you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. Each inventory source is listed in the [Inventory source mappings](#inventory-source-mappings) section below. The mapping table for each source shows the inventory attributes that are populated and the associated data source field or fields for each.
 
 Some of the inventory sources are strictly for collecting inventory data—such sources usually include “Inventory” in the source name, for example, the **Microsoft Azure AD Inventory Source**. A few of the sources that collect inventory data also collect event data. For example, the **Sailpoint Source** collects inventory data about users and also collects events from the SalePoint Search API.
 
 Some inventory sources provide user inventory information, some provide computer inventory information, and some provide both. The table below lists currently available inventory sources.
 
 :::note
-The AWS Inventory Source collects the inventory of AWS resources in your AWS account, but is usable only by the Root Cause Explorer. See [AWS Inventory Source](/docs/observability/root-cause-explorer/#aws-inventory-source).
+The AWS Inventory source collects the inventory of AWS resources in your AWS account.
 :::
 
 | Inventory source | Type of source | Inventory data collected |
@@ -56,24 +52,32 @@ The AWS Inventory Source collects the inventory of AWS resources in your AWS acc
 
 ## Best practices for collecting inventory data
 
-Sumo Logic Sources that collect inventory data generally have a configuration setting that controls the frequency of collection. For example, the Windows Active Directory Inventory Source has a **Fetch Interval** option. Similarly, the Carbon Black Inventory Source has a **Polling Interval** option. These frequency options are typically set to a sensible value, between 10 to 24 hours. We recommend a frequency of 24 hours. Do not change the frequency to more often than 10 hours—if you do, you will end up collecting a lot of redundant data.
+Sumo Logic sources that collect inventory data generally have a configuration setting that controls the frequency of collection. For example, the Windows Active Directory Inventory Source has a **Fetch Interval** option. Similarly, the Carbon Black Inventory Source has a **Polling Interval** option. These frequency options are typically set to a sensible value, between 10 to 24 hours. We recommend a frequency of 24 hours. Do not change the frequency to more often than 10 hours—if you do, you will end up collecting a lot of redundant data.
 
 ## Searching inventory data
 
-You can search the inventory data collected by inventory sources in a log search tab in Sumo Logic. You can scope your search using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata), for example, by specifying the source category assigned to the inventory source:
+You can search the inventory data collected by inventory sources in a log search tab in Sumo Logic. To find all inventory data, use a search like this:
+
+```
+_siemDataType=Inventory
+```
+
+You can scope your search using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata), for example, by specifying the source category assigned to the inventory source:
 
 ```
 _sourceCategory=AD_inventory
 ```
 
-You can use run a broader search using `_siemDataType=Inventory`
+:::tip
+Inventory logs do not appear in `_index=_sec_record*` partitions. You cannot search for them in those indexes like you can other types of Cloud SIEM data. See [Searching for Cloud SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/#partitions-with-cloud-siem-data).
+:::
 
 ## Inventory source mappings  
 There are two types of normalized inventory objects, Computers and Users. Some sources only support one type of object, others both. For each inventory source mapped into the normalized inventory object, the original data is stored in the `rawRecord` attribute.
 
 ### Armis API Integration Source - Computer
 
-| Inventory Attribute | Data Source Field | Note |
+| Inventory Attribute | Data source field | Note |
 | :-- | :-- | :-- |
 | uniqueId | "armis-" + id | A globally unique ID that distinguishes this object from inventory from all other sources |
 | deviceUniqueId | id | A per-source unique ID |
@@ -85,7 +89,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 ### Carbon Black Inventory Source - Computer
 
-| Inventory Attribute | Data Source Field | Note |
+| Inventory Attribute | Data source field | Note |
 | :-- | :-- | :-- |
 | uniqueID | “carbonblack” + ID | A globally unique ID that distinguishes this object from inventory from all other sources |  
 | hostname | name | Falls back to ip (see below) if name is not defined |  
@@ -97,7 +101,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 ### CrowdStrike FDR - Computer
 
-| Inventory Attribute | Data Source Field | Note |  
+| Inventory Attribute | Data source field | Note |  
 | :-- | :-- | :-- |
 | uniqueId | "crowdstrike-" + id | A globally unique ID that distinguishes this object from inventory from all other sources |
 | deviceUniqueId | device_id | A per-source unique ID |
@@ -113,7 +117,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 ### Cloud SIEM AWS (EC2) Inventory Source - Computer
 
-| Inventory Attribute | Data Source Field | Note |  
+| Inventory Attribute | Data source field | Note |  
 | :-- | :-- | :-- |
 | uniqueID | Account Id + Instance ID | A globally unique ID that distinguishes this object from inventory from all other sources |
 | ip | PublicIpAddress  | If PublicIpAddress is not defined it will fall back to PrivateIpAddress |
@@ -124,7 +128,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 ### Cylance Source - Computer
 
-|  Inventory Attribute | Data Source Field | Note |
+|  Inventory Attribute | Data source field | Note |
 | :-- | :-- | :-- |
 | uniqueID | “cylance” + host_name | A globally unique ID that distinguishes this object from inventory from all other sources. <br/> Falls back to ip_address if hostname is not defined |  
 | hostname | host_name |   |  
@@ -134,7 +138,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 ### Google Workspace Inventory Source - User
 
-| Inventory Attribute | Data Source Field | Note |  
+| Inventory Attribute | Data source field | Note |  
 | :-- | :-- | :-- |
 | uniqueID | “google-workspace” + ID | A globally unique ID that distinguishes this object from inventory from all other sources |
 | userId | ID | A per-source unique ID |   
@@ -148,7 +152,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 #### Computer inventory data mapping  
 
-| Inventory Attribute | Data Source Field | Note |
+| Inventory Attribute | Data source field | Note |
 | :-- | :-- | :-- |
 | uniqueID | “AzureAD” + deviceID | A globally unique ID that distinguishes this object from inventory from all other sources |
 | hostname | displayName |   |  
@@ -162,7 +166,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 #### User inventory data mapping
 
-| Inventory Attribute | Data Source Field | Note |
+| Inventory Attribute | Data source field | Note |
 | :-- | :-- | :-- |
 | uniqueID | “AzureAD” + ID | A globally unique ID that distinguishes this object from inventory from all other sources |  
 | userId | ID | A per-source unique ID |  |
@@ -176,7 +180,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 ### Okta Source - User
 
-| Inventory Attribute | Data Source Field | Note |
+| Inventory Attribute | Data source field | Note |
 | :-- | :-- | :-- |
  uniqueID | “okta” + ID | A globally unique ID that distinguishes this object from inventory from all other sources |  
  username | profile.login |   |  
@@ -187,7 +191,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 ### QualSys - Computer
 
-| Inventory Attribute | Data Source Field | Note |
+| Inventory Attribute | Data source field | Note |
 | :-- | :-- | :-- |
 | uniqueId | "qualys-" + id | A globally unique ID that distinguishes this object from inventory from all other sources |
 | deviceUniqueId | assetUUID | A per-source unique ID |
@@ -203,7 +207,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 ### Rapid7 - Computer
 
-| Inventory Attribute | Data Source Field | Note |
+| Inventory Attribute | Data source field | Note |
 | :-- | :-- | :-- |
 | uniqueId | "rapid7-" + id | A globally unique ID that distinguishes this object from inventory from all other sources |
 | deviceUniqueId | id | A per-source unique ID |
@@ -215,7 +219,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 ### Sailpoint Source - User
 
-| Inventory Attribute | Data Source Field | Note |  
+| Inventory Attribute | Data source field | Note |  
 | :-- | :-- | :-- |
 | uniqueID | “sailpoint” + ID | A globally unique ID that distinguishes this object from inventory from all other sources |
 | username | email |   |   
@@ -225,7 +229,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 ### SentinelOne - Computer
 
-| Inventory Attribute | Data Source Field | Note |  
+| Inventory Attribute | Data source field | Note |  
 | :-- | :-- | :-- |
 | uniqueId | `sentinelOne-{id}` | A globally unique ID that distinguishes this object from inventory from all other sources | 
 | groups | groupId |  |
@@ -241,7 +245,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 ### Tenable Source - Computer  
 
-| Inventory Attribute | Data Source Field | Note |  
+| Inventory Attribute | Data source field | Note |  
 | :-- | :-- | :-- |
 | uniqueID | “tenable” + id | A globally unique ID that distinguishes this object from inventory from all other sources |
 | computername | hostnames.1 |   |  
@@ -257,7 +261,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 #### Computer inventory data mapping
 
-| Inventory Attribute | Data Source Field | Note |  
+| Inventory Attribute | Data source field | Note |  
 | :-- | :-- | :-- |
 | uniqueID | objectGUID | A globally unique ID that distinguishes this object from inventory from all other sources |
 | computername | cn |   |  
@@ -270,7 +274,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 #### User inventory data mapping
 
-| Inventory Attribute | Data Source Field | Note |   
+| Inventory Attribute | Data source field | Note |   
 | :-- | :-- | :-- |
 | uniqueID | objectSid | A globally unique ID that distinguishes this object from inventory from all other sources |  
 | userId | objectSid | A per-source unique ID |

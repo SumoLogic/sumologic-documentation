@@ -5,6 +5,8 @@ sidebar_label: About Observability
 description: The Sumo Logic Observability Solution focuses on finding the unconsidered issues and the unknown risks to your system.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Observability is the ability of the internal states of a system to be determined by its external outputs.
 
 For our purposes, Observability is the ability to observe an application from the outside and understand what is happening inside the application and its services. Observability helps ensure that the application is running reliably: the system is up and running (available), performant, and secure.  
@@ -13,18 +15,19 @@ import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
 
-About Observability and how it's different from monitoring. The video also explains how Sumo Logic's Observability Solution helps in all the stages of the incident remediation process to ensure the production apps are functioning reliably.
+This video explains Observability and how it's different from monitoring. It also explains how Sumo Logic's Observability Solution helps in all the stages of the incident remediation process to ensure the production apps are functioning reliably.
 
-<Iframe url="https://www.youtube.com/embed/FJG1zesNJs0?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+<Iframe url="https://fast.wistia.net/embed/iframe/go7gwjrmkl?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Introduction to Observability Solution Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
 :::
 
@@ -38,7 +41,7 @@ Modern applications are increasingly complex, as they leverage distributed techn
 
 * **Troubleshoot** and uncover root cause(s) to guide recovery and ensure on-going application reliability. As in the case of the diagnosis step, the unknown unknowns might make it difficult to find the root cause.
 
-![image9.png](/img/observability/about-ob-architecture.png)
+<img src={useBaseUrl('img/observability/about-ob-architecture.png')} alt="Monitor, diagnose, and troubleshoot cycle diagram" style={{border: '1px solid gray'}} width="800" />
 
 Monitoring, diagnosing, and troubleshooting such issues is harder because there are no existing runbooks that can help resolve issues quickly. This problem is compounded by the fact that modern applications also emit astonishing amounts of machine data across the stack. 
 
@@ -59,5 +62,5 @@ The solution understands how the different datasets and services are connected, 
 The solution also offers features and capabilities that support each step of the troubleshooting process.
 
 * **Monitor** your systems effectively with new and improved alerting and dashboarding capabilities. The Observability Solution includes rich pre-built content that you can leverage to quickly start monitoring specific services. 
-* **Diagnose** issues quickly using features like the Entity Explorer, trace analytics, and the  Metrics Explorer.  
-* **Troubleshoot** issues and find root causes through Behavior insights, Root Cause Explorer, and log search.
+* **Diagnose** issues quickly using features like the Entity Explorer, trace analytics, and the  Metrics Search.  
+* **Troubleshoot** issues and find root causes through behavior insights and log search.

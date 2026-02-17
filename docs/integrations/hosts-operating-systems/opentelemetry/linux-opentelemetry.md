@@ -19,6 +19,10 @@ We use the Sumo Logic Distribution for OpenTelemetry Collector to collect Linux 
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#linux-alerts). For details on creating custom monitors, refer to [Create monitors for Linux app](#create-monitors-for-linux-app).
+:::
+
 ## Fields Created in Sumo Logic for Linux
 
 Following are the [fields](/docs/manage/fields) that will be created as part of Linux app install if not already present. 
@@ -29,6 +33,7 @@ Following are the [fields](/docs/manage/fields) that will be created as part of 
 - **`host.name`**. This is tagged through the `resourcedetection` processor. It holds the value of the host name where the OTel collector is installed.
 
 ## Prereqisites
+
 This app is based on the following log files from the Ubuntu Linux machine.
 
 - auth.log
@@ -56,108 +61,29 @@ import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prer
 You can skip this section if you have already set up the logs collection through [Linux PCI](/docs/integrations/pci-compliance/opentelemetry/linux-opentelemetry) or [Linux - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-<ConfigAppInstall/>
+### Step 1: Set up remotely managed OpenTelemetry collector
 
-### Step 1: Set up Collector
-
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
-
-<SetupColl/>
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
-
-### Step 2: Configure integration
-
-In this step, you will configure the yaml file required for Linux Collection. The app requires path for system log file, based on your Linux version used.
-
-#### Required Logs for Ubuntu
-
-The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with Ubuntu:
-
-- `auth.log`
-- `syslog`
-- `daemon.log`
-- `dpkg.log`
-- `kern.log`
-
-#### Required Logs for CentOS, Amazon Linux, and Red Hat
-
-The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with CentOS, Amazon Linux, and most Red Hat forks:
-
-- `audit/audit.log`
-- `secure`
-- `Messages`
-- `yum.log`
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
 :::note
-By default, the path for Linux log files required for all the distros are pre-populated in the UI. Not all of the files might be available on your Linux distribution. Optionally, you can remove unwanted file paths from the list. OpenTelemetry collection will still work properly even if not all of the files are present on your system. If in doubt, you can leave the default file paths values.
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
 :::
 
-#### Enable process metric collection (Optional)
+<OtelCollectorInstallation/>
 
-import ProcMetrics from '../../../reuse/apps/opentelemetry/process-metric-collection.md';
+### Step 2: Configure the source template
 
-<ProcMetrics/>
+import LinuxConfigureSourceTemplate from '../../../reuse/send-data/linux-configure-source-template.md';
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Linux-YAML.png')} alt="Linux-YAML" style={{border:'1px solid gray'}} width="800"/>
+<LinuxConfigureSourceTemplate/>
 
-### Step 3: Send logs and metrics to Sumo Logic
+### Step 3: Push the source template to the desired remotely managed collectors
 
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 
-<LogsIntro/>
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Linux"
-  values={[
-    {label: 'Linux', value: 'Linux'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
-
-<TabItem value="Linux">
-
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Artifactory instance that needs to be monitored.
-2. Restart the collector using:
-  ```sh
-  sudo systemctl restart otelcol-sumo
-  ```
-
-</TabItem>
-
-<TabItem value="Chef">
-
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
-
-</TabItem>
-
-</Tabs>
-
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+<DataConfiguration/>
 
 ## Sample log messages
 
@@ -165,7 +91,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 Dec 13 04:44:00 <1> [zypper++] Summary.cc(readPool):133 I_TsU(27372)Mesa-libGL1-8.0.4-20.4.1.i586(@System)
 ```
 
-## Sample Metrics
+## Sample metrics
 
 ```json
 {
@@ -201,7 +127,7 @@ Dec 13 04:44:00 <1> [zypper++] Summary.cc(readPool):133 I_TsU(27372)Mesa-libGL1-
 
 ### Log query
 
-Logs query from the **Total Event Distribution** panel.
+This is a sample log query from the **Total Event Distribution** panel.
 
 ```sql
 %"sumo.datasource"=linux   
@@ -212,13 +138,17 @@ Logs query from the **Total Event Distribution** panel.
 
 ### Metrics query
 
-Metrics query from the **CPU Utilization Over Time** panel.
+This is a metrics query from the **CPU Utilization Over Time** panel.
 
 ```sql
 sumo.datasource=linux host.name=* metric=system.cpu.utilization state=(user OR system OR wait OR steal OR softirq OR interrupt OR nice) | sum by host.name | outlier
 ```
 
-## Linux app dashboards
+## Viewing Linux dashboards
+
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Linux - Overview
 
@@ -275,15 +205,11 @@ Use this dashboard to:
 
 ### Host Metrics - TCP
 
-The **Host Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections.
-
-Use this dashboard to:
-
-- Identify abnormal spikes in inbound, outbound, open, or established connections.
+The **Host Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections. Use this dashboard to identify abnormal spikes in inbound, outbound, open, or established connections.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-TCP.png' alt="Host Metrics - TCP" />
 
-### The Process Metrics - Overview
+### Process Metrics - Overview
 
 The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors,  CPU usage, memory usage, disk read/write operations and thread count.
 
@@ -305,13 +231,11 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Process-Metrics-Details.png' alt="Process Metrics - Details" />
 
-
 ### Linux - Event Sources
 
 The **Linux - Event Sources** dashboard provides information about system events, including their distribution across hosts, event counts per host by hour, and even counts by host and service.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Event-Sources.png' alt="Linux - Event Sources" />
-
 
 ### Linux - Login Status
 
@@ -324,3 +248,17 @@ The **Linux - Login Status** dashboard provides information about logins to Linu
 The **Linux - Security Status** dashboard provides information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Security-Status.png' alt="Linux - Security Status" />
+
+## Create monitors for Linux app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Linux alerts
+
+| Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Linux - High CPU Utilization Alert` | This alert gets triggered when CPU utilization exceeds threshold. | Count > 80 | Count < = 80 |
+| `Linux - High FileSystem Utilization Alert` | This alert gets triggered when filesystem utilization exceeds threshold. | Count > 80 | Count < = 80 |
+| `Linux - High Memory Utilization Alert` | This alert gets triggered when memory utilization exceeds threshold. | Count > 80 | Count < = 80 |

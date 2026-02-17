@@ -19,6 +19,28 @@ Search malicious indicators using Threat Crowd intelligence feeds.
 * **Search Antivirus** (*Enrichment*) - Search antivirus definitions.
 * **Search File** (*Enrichment*) - Search indicators for a specific file hash.
 
+## Configure Threat Crowd in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Threat Crowd URL.
+
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/threat-crowd-configuration.png')} style={{border:'1px solid gray'}} alt="Threat Crowd configuration" width="400"/>
+
+For information about Threat Crowd, see the [Threat Crowd website](http://ci-www.threatcrowd.org/).
+
 ## Change Log
 
 * September 17, 2019 - First upload

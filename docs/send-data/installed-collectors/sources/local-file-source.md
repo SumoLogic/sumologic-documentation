@@ -20,6 +20,14 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
 
 For details on the limitations of Installed Collectors and how they work see About Installed Collectors.
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a local file source with the [`sumologic_local_file_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/local_file_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Supported encoding for local file sources
 
 Local File Sources can collect logs that use the following encoding:
@@ -41,16 +49,10 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
 ## Configure a Local File Source
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
-1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose **Add Source** from the pop-up menu.
-
-    ![img](/img/send-data/add-source.png)    
-1. Select **Local File** for the Source type.
-
-    ![local file source icon.png](/img/send-data/local-file-source-icon.png) 
-1. Set the following choices:
-
-    ![local file source.png](/img/send-data/local-file-source.png)
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose **Add Source** from the pop-up menu.<br/><img src={useBaseUrl('img/send-data/add-source.png')} alt="Add source button" style={{border: '1px solid gray'}} width="800" />
+1. Select **Local File** for the Source type.<br/><img src={useBaseUrl('img/send-data/local-file-source-icon.png')} alt="Local file source icon" style={{border: '1px solid gray'}} width="100" />
+1. Set the following choices:<br/><img src={useBaseUrl('img/send-data/local-file-source.png')} alt="Local file source" style={{border: '1px solid gray'}} width="600" />
 
    * **Name**. Type the name you'd like to display for the new Source. Description is optional.
 
@@ -60,8 +62,8 @@ When the Sumo collector accesses a log file to read its content, the collector o
     You can have up to 32 nested symbolic links within a path expression.
     :::
 
-   * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. This setting applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set this to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the **collection should begin** timestamp.
-
+   * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. For example, let's say that you have a file with a modified time of `2025-01-16 16:18:18`, and the log lines within that file contain message timestamps ranging from `2025-01-11` to `2025-01-16`. Now, if **Collection should begin** is set to `2025-01-16`, the entire file will be collected including all the messages with timestamps prior to `2025-01-16`. This is because the **Collection should begin** is based solely on the file's modified time and not the individual message timestamps within the file.
+     
     :::note
     Processing rules could be used to filter logs as needed. This is done in step 6 of this document.
     :::
@@ -87,10 +89,11 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 1. Set any of the following options under **Advanced**:
+<img src={useBaseUrl('/img/send-data/advanced-options-local-file-source.png')} alt="Advanced options for log" style={{border: '1px solid gray'}} width="600"/>
 
    * **Denylist.** Enter the path for files to exclude from the Source collection. Wildcard syntax is allowed when specifying unwanted files. For example, if you are collecting` /var/log/*.log` but don’t want to collect `unwanted*.log`, then specify `/var/log/unwanted*.log`. You can also exclude subdirectories, for example, if you are collecting` /var/log/**/*.log` but do not want to collect anything from `/var/log/unwanted `directory, specify `/var/log/unwanted`. You do not need to denylist compressed files that end with the file extensions tar, bz2, gz, z, zip, jar, war, 7z, rar, exe, dll, xz, or /var/log/(lastlog\|btmp\|wtmp) binary files. Sumo Logic, automatically excludes these compressed file extensions when collecting data.  tar.gz files are supported
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.

@@ -41,7 +41,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
 ### Configure Sumo Logic SAML
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. 
 1. Click **+ Add Configuration** to create a new configuration. <br/><img src={useBaseUrl('img/security/add-config-icon.png')} alt="Add Configuration button on the Configuration List page" style={{border: '1px solid gray'}} width="600" />
 1. The **Add Configuration** page appears. <br/><img src={useBaseUrl('img/security/saml-configuration-page.png')} alt="Add Configuration page" style={{border: '1px solid gray'}} width="600" />
 1. **Configuration Name.** Google Apps Auth (or, you can enter any name you like).
@@ -49,7 +49,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 1. **Issuer.** Enter the **Entity ID** from the **Google IdP Information** dialog.
 1. **X.509 Certificate.** Open the certificate file that you downloaded from the **Google IdP Information** dialog in a text editor. Copy and paste the contents into this field.
 1. **Attribute Mapping**. Select **Use SAML attribute** and type the email attribute name in the text box. 
-1. **SP Initiated Login Configuration**. (Optional) This step has instructions for setting up SP-initiated login. When SP initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page. SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
+1. **SP Initiated Login Configuration**. (Optional) This step has instructions for setting up SP-initiated login. When SP initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page. SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings) section of the *Manage Organization* topic.
    1. **Authn Request URL.** Enter the **SSO URL** from the **Google IdP Information** dialog.
    1. **Disable Requested Authn Context**. (Optional) If you check this option, Sumo will not include the RequestedAuthnContext element of the SAML AuthnRequests it sends to your Idp. This option is useful if your IdP does not support the RequestedAuthnContext element.
    1. **Sign Authn Request.** (Optional) If you select this option, Sumo will send signed Authn requests to your IdP. When you click this option, a Sumo-provided X-509 certificate is displayed. You can configure your IDP with this certificate, to verify the signature of the Authn requests sent by Sumo. 
@@ -66,7 +66,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
 1. Go back to the **Google Auth Configuration – Provider Details** dialog, and enter the following information: <br/><img src={useBaseUrl('img/security/ga_saml_service_provider.png')} alt="Service Provider Details page" style={{border: '1px solid gray'}} width="600" />
     * **ACS URL.** This is the **Assertion Consumer** from Sumo Logic
-    * **Entity ID.** Enter your Sumo Logic [Service Endpoint URL](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security): <br/>`https://service.<deployment>.sumologic.com`
+    * **Entity ID.** Enter your Sumo Logic [Service Endpoint URL](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security): <br/>`https://service.<deployment>.sumologic.com`
     * **Name ID.** Basic Information – Primary Email
     * **Name ID Format.** EMAIL
 1. Click **Next**.

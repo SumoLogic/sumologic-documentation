@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/incident-tools.png')} alt="incident-tools" width="100"/>
 
-***Version: 1.8  
-Updated: June 24, 2024***
+***Version: 1.9  
+Updated: Dec 5, 2025***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -48,9 +48,29 @@ Set of scripts to perform actions within Cloud SOAR.
 * **Update Incident Fields** (*Custom*) - Update multiple incident fields.
 * **Update Incident Phase** (*Custom*) Update the incident phase.
 
-## Category
+## Configure Incident Tools in Cloud SOAR
 
-Supervised Active Intelligence Automation
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/incident-tools-configuration.png')} style={{border:'1px solid gray'}} alt="Incident Tools configuration" width="400"/>
 
 ## Change Log
 
@@ -86,3 +106,4 @@ Supervised Active Intelligence Automation
     * Search Incidents
     * Update Entity
 * June 24, 2024 (v1.8) - The **Field ID** and **Field Value** fields are now optional in the **Update Incident Fields** action.
+* December 5, 2025 (v1.9) - Added `closing_note` in output field of Get Incident action.

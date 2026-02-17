@@ -155,9 +155,9 @@ See information about Window event messages that contain a keyword that indicate
 
 **Error Keyword - Outlier**. See timeslices where the count of problem keywords exceeds the moving average by a statistically significant amount, three standard deviations over the last 24 hours.
 
-**Error Keyword - LogReduce**. See a LogReduce analysis of event messages that contain problem keywords. (Sumo's LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. For more information, see, [Detect Patterns with LogReduce](/docs/search/logreduce/detect-patterns-with-logreduce)).
+**Error Keyword - LogReduce**. See a LogReduce analysis of event messages that contain problem keywords. (Sumo's LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. For more information, see, [Detect Patterns with LogReduce](/docs/search/behavior-insights/logreduce/detect-patterns-with-logreduce)).
 
-## Upgrading the Windows Legacy app (Optional)
+## Upgrade/Downgrade the Windows Legacy app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

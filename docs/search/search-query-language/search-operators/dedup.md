@@ -4,6 +4,8 @@ title: dedup Search Operator
 sidebar_label: dedup
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `dedup` operator removes duplicate results. You have the option to remove consecutively and by specific fields. This allows you to filter your results to identify the most recent or last few events based on an identical combination of results.
 
 For example, to find the most recent value of services you'd use the following operation: `| dedup 1 by service`.
@@ -15,6 +17,7 @@ The `dedup` operator is supported for the following features:
 * [Log Search](/docs/search)
 * [Dashboards](/docs/dashboards), including live mode
 * [Scheduled Searches](/docs/alerts/scheduled-searches/schedule-search.md)
+* [Monitors](/docs/alerts/monitors/)
 
 ## Syntax
 
@@ -81,7 +84,7 @@ The following examples use this sample data.
 
 Returns the most recent record for each country:
 
-![deup by country](/img/search/searchquerylanguage/search-operators/dedup-by-country.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/dedup-by-country.png')} alt="Dedup by country" style={{border: '1px solid gray'}} width="600" />
 
 ### Keep the first 3 duplicate results
 
@@ -93,7 +96,7 @@ For search results that have the same country value, keep the first three that o
 
 Returns the following results:
 
-![deup by 3](/img/search/searchquerylanguage/search-operators/dedup-last-3.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/dedup-last-3.png')} alt="Dedup by 3" style={{border: '1px solid gray'}} width="600" />
 
 ### Keep results with same combination of values in multiple fields
 
@@ -105,7 +108,7 @@ For search results that have the same country AND continent values, keep the fir
 
 Returns the following results:
 
-![deup by 3](/img/search/searchquerylanguage/search-operators/dedup-by-two-fields.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/dedup-by-two-fields.png')} alt="Dedup by two fields" style={{border: '1px solid gray'}} width="600" />
 
 ### Remove only consecutive duplicate events
 
@@ -117,4 +120,4 @@ Remove only consecutive duplicate events. Keep non-consecutive duplicate events.
 
 Returns the following results:
 
-![deup by 3](/img/search/searchquerylanguage/search-operators/dedup-consecutively-two-fields.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/dedup-consecutively-two-fields.png')} alt="Dedup consecutively two fields" style={{border: '1px solid gray'}} width="600" />

@@ -5,9 +5,61 @@ sidebar_label: Changelog
 description: This section provides details on the available versions of the AWS Observability CloudFormation template.
 ---
 
-This section provides details on the available versions of the AWS Observability Terraform script and CloudFormation template. The details also include all the AWS and Sumo Logic resources that will be updated and resolved bugs when upgrading the existing version of the Terraform script or CloudFormation template to the latest version.
+This section provides details on the available versions of the AWS Observability Terraform script and CloudFormation template. The details also include all the AWS and Sumo Logic resources that will be updated and resolved bugs when upgrading the existing version of the Terraform script or CloudFormation template to the latest version. For more information about how to use Terraform in your Sumo Logic environment, see [Use Terraform with Sumo Logic](/docs/api/about-apis/terraform-with-sumo-logic).
 
-To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Selecting a stack template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for more information.
+To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Create a stack from the CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html) for more information.
+
+## v2.13.0, 07-Oct-2025
+AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.13.0/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+
+New Features:
+* Added tag support for AWS resources created with Terraform based AWS Observability (AWSO) Solution.
+
+Updates:
+* Enhanced feature for installing apps in the Admin Recommended folder and share it
+* Integrated updated EC2, Lambda, and RDS apps with AWSO Solution.
+* Upgraded AWS provider version to support `>= 5.16.2, < 7.0.0`.
+* Updated Terraform minimum required version to 1.5.7.
+* Addressed CVEs identified in Python and Go modules.
+* Upgraded SAM app versions:
+   -  sumologic-app-utils → 2.0.21
+   - sumologic-s3-logging-auto-enable → 1.0.18
+
+Deprecation:
+* The Global Intelligence for AWS CloudTrail DevOps app is scheduled for deprecation in the near future and, as a result, has been removed from the AWS Observability Solution.
+
+## v2.12.0, 01-Apr-2025
+AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.12.0/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+
+Updates:
+* Updated the SAM Lambda runtime from Node.js v20.x to v22.x.
+* Updated the Lambda runtime to Node.js v22.x in the CloudFormation template for `AWS CloudWatch Logs with Dead Letter Queue Support`.
+* Updated the SecurityHub SAM Lambda runtime from Python v3.11 to v3.13.
+* Updated Lambda runtime to Python v3.13 in the CloudFormation template for `Kinesis Metric Collection`
+* Discontinued support for Mumbai deployment.
+* Updated 9 apps and 4 monitors to accommodate new threat intel feed: AWS Application Load Balancer, AWS API Gateway, AWS Classic Load Balancer, AWS DynamoDB, AWS EC2, AWS Lambda, Amazon RDS, Amazon SNS, Amazon SQS.
+
+## v2.11.0, 24-Jan-2025
+AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.11.0/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+
+New Feature:
+* Amazon RDS app - Added support to analyze and monitor RDS Oracle CloudWatch and CloudTrail logs.
+* Amazon Load Balancer apps - Added support to analyze and monitor Cloudtrail audit event logs for Application Load Balancer, Classic Load Balancer, and Network Load Balancer.
+* Added out of the box monitors for RDS Oracle DB, Application Load Balancer, Classic Load Balancer, and Network Load Balancer. Solution now supports 78 out-of-box monitors.
+* Added support to collect custom metrics namespaces.
+* Added support to subscribe cloudWatch log groups based on AWS tags to Sumo Logic.
+* Added support to filter AWS CloudWatch metrics based on AWS tags.
+
+Updates:
+* Updated cloudformation helper function with Lambda Runtime to python v3.13.
+* Updated SAM Lambda runtime to python v3.13 with latest library updates.
+* Updated Telemetry Lambda Runtime to python v3.13 with latest library updates.
 
 ## v2.10.0, 4-Sept-2024
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.10.0/sumologic_observability.master.template.yaml`
@@ -17,6 +69,7 @@ AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates
 Updates:
 
 * All python Lambda runtimes have been updated to version 3.12 along with the required libraries.
+* AWS Observability solution now supports Sumo Logic Korea deployment.
 
 ## v2.9.0, 02-Aug-2024
 

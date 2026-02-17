@@ -177,7 +177,7 @@ The **Windows - Security Analytics - Default Accounts Usage** dashboard allows y
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-Default-Accounts-Usage.png')} alt="Windows cloud Security Analytics dashboards" />
 
-## Upgrading the Windows Cloud Security app (Optional)
+## Upgrade/Downgrade the Windows Cloud Security app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

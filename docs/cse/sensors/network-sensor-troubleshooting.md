@@ -5,8 +5,13 @@ description: Learn how to troubleshoot problems with the Cloud SIEM Network Sens
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import SensorEOL from '../../reuse/cloud-siem-network-sensor-eol.md';
 
-The Cloud SIEM Network Sensor is a flexible network security monitor that monitors IP networks and collects flow and protocol session data, building audit records of network communications. As with all network sensors, performance is a key consideration for proper operation and comprehensive data collection. The installation of the Cloud SIEM network sensor configures the sensor with reasonable defaults for many environments. For other environments, such as high throughput deployments, Sumo Logic advises the use of a supported 3rd party Bro/Zeek sensor offering or a custom Zeek cluster deployment.
+:::warning end-of-life
+<SensorEOL/>
+:::
+
+The Cloud SIEM Network Sensor is a flexible network security monitor that monitors IP networks and collects flow and protocol session data, building audit records of network communications. As with all Network Sensors, performance is a key consideration for proper operation and comprehensive data collection. The installation of the Cloud SIEM Network Sensor configures the sensor with reasonable defaults for many environments. For other environments, such as high throughput deployments, Sumo Logic advises the use of a supported 3rd party Bro/Zeek sensor offering or a custom Zeek cluster deployment.
 
 ## General Troubleshooting
 
@@ -40,7 +45,7 @@ A number of statistics named with “errors” are available. All of them ideall
 
 ### PF_RING
 
-PF_RING enables accelerated network packet capture under Linux and is included in the default Cloud SIEM network sensor installation.
+PF_RING enables accelerated network packet capture under Linux and is included in the default Cloud SIEM Network Sensor installation.
 
 PF_RING configuration information is available in `/proc/net/pf_ring/info`. Information on interfaces may be found in `/proc/net/pf_ring/dev/<interface>/info`.
 
@@ -54,15 +59,15 @@ It can be helpful to verify that Bro is linked against the PF_RING enabled libpc
 $(ldd /opt/trident/sensor/bro/bin/zeek | awk '{print $3}' | grep libpcap) >/dev/null && echo "PF_RING enabled"
 ```
 
-### Network Sensor stops capturing traffic
+### Network sensor stops capturing traffic
 
-Zeek can get into a state where it runs out of memory and stops processing traffic but does not crash. This has been observed on RHEL 7.9. To automatically restart the sensor when consecutive status reports with low Records per second is observed use [no_data_restart_threshold](/docs/cse/sensors/network-sensor-deployment-guide#no_data_restart_threshold) (recommended value 3), and [no_data_cutoff](/docs/cse/sensors/network-sensor-deployment-guide#no_data_cutoff) to tune the record threshold if needed.
+Zeek can get into a state where it runs out of memory and stops processing traffic but does not crash. This has been observed on RHEL 7.9. To automatically restart the sensor when consecutive status reports with low records per second is observed use [no_data_restart_threshold](/docs/cse/sensors/network-sensor-deployment-guide#no_data_restart_threshold) (recommended value 3), and [no_data_cutoff](/docs/cse/sensors/network-sensor-deployment-guide#no_data_cutoff) to tune the record threshold if needed.
 
 ## Monitoring Capture Performance
 
-Security monitoring can be complex. Network data capture is a system with many layers, and degradation or faults at one layer can affect the whole. Performance starts at the initial traffic acquisition source (i.e. TAPs, SPANs/port mirrors) and ends with the monitoring software itself (Bro/Zeek). Along the way a number of hardware and software components are involved, such as cabling, capture network interface cards, CPU, memory, drivers, OS kernel, memory buffers, and numerous settings. Some work fine as defaults and others must be tuned correctly. All components must be monitored and validated for proper operation. This document provides an overview of how to properly configure and monitor some of the important components in a network sensor deployment.
+Security monitoring can be complex. Network data capture is a system with many layers, and degradation or faults at one layer can affect the whole. Performance starts at the initial traffic acquisition source (i.e. TAPs, SPANs/port mirrors) and ends with the monitoring software itself (Bro/Zeek). Along the way a number of hardware and software components are involved, such as cabling, capture network interface cards, CPU, memory, drivers, OS kernel, memory buffers, and numerous settings. Some work fine as defaults and others must be tuned correctly. All components must be monitored and validated for proper operation. This document provides an overview of how to properly configure and monitor some of the important components in a Network Sensor deployment.
 
-Sumo Logic recommends that network sensor admins monitor and collect performance statistics from deployed sensors. Doing so can help with tracking and spotting faults when they occur and help plan for adequate system resources. 
+Sumo Logic recommends that Network Sensor admins monitor and collect performance statistics from deployed sensors. Doing so can help with tracking and spotting faults when they occur and help plan for adequate system resources. 
 
 In the examples below, we use `eno1` as the example interface name. Substitute the proper interface name(s) on your sensor as needed.
 
@@ -101,7 +106,7 @@ Having verified performance of the data delivery path, the next focus area is Br
 
 ## CaptureLoss
 
-An important metric Zeek log that is collected from the Cloud SIEM network sensor is the notice `CaptureLoss::Too_Much_Loss`. Zeek internally tracks loss rates by observing when streams arrive with gaps indicating missing segments in the stream. Because this metric relates directly to traffic monitored by Zeek, it may either indicate packet loss in Zeek itself, or a loss condition happening elsewhere upstream from Zeek (anywhere along the line). This notice is logged on a periodic basis when a configured threshold is exceeded and is the topic of a key FAQ. https://www.zeek.org/documentation/faq.html#how-can-i-reduce-the-amount-of-captureloss-or-dropped-packets-notice It is possible to analyze occurrences of CaptureLoss notices in Cloud SIEM using the following query in an Sumo Logic log search tab.
+An important metric Zeek log that is collected from the Cloud SIEM Network Sensor is the notice `CaptureLoss::Too_Much_Loss`. Zeek internally tracks loss rates by observing when streams arrive with gaps indicating missing segments in the stream. Because this metric relates directly to traffic monitored by Zeek, it may either indicate packet loss in Zeek itself, or a loss condition happening elsewhere upstream from Zeek (anywhere along the line). This notice is logged on a periodic basis when a configured threshold is exceeded and is the topic of a key FAQ. https://www.zeek.org/documentation/faq.html#how-can-i-reduce-the-amount-of-captureloss-or-dropped-packets-notice It is possible to analyze occurrences of CaptureLoss notices in Cloud SIEM using the following query in an Sumo Logic log search tab.
 
 `_sourceCategory = "cse/network/notice" | where note = "CaptureLoss::Too_Much_Loss"`
 

@@ -21,6 +21,30 @@ Utilize the Cisco AMP Threat Grid to retrieve information about incident element
 * **Detonate Report** (*Enrichment*) - Get the report generated during the detonation of the file, specified by File Hash.
 * **Detonate URL** (*Enrichment*) - Detonate remote file from a specified URL.
 
+## Configure Cisco Threat Grid in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the Cisco Threat Grid URL, for example, `https://panacea.threatgrid.com`
+
+* **API Key**. Enter the Cisco Threat Grid API key.
+
+* **Detonate timeout in minutes**. Set the maximum amount of time the integration will wait for a server's response before terminating the connection. Enter the connection timeout time in minutes (for example, `3`).
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-threat-grid-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Threat Grid configuration" width="400"/>
+
+For information about Cisco Secure Malware Analytics (formerly Threat Grid), see [Cisco Secure Malware Analytics (Threat Grid) documentation](https://www.cisco.com/c/en/us/support/security/amp-threat-grid-appliances/series.html).
+
 ## Change Log
 
 * February 5, 2020 - First upload

@@ -3,6 +3,8 @@ id: transactionize-operator
 title: Transactionize Operator
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The _Transactionize_ operator groups log messages that match on any fields you specify. The groups created from the specified fields become the **transactions**.
 
 Unlike other "group by" operators, where the logs in a group must match on all defined fields, `transactionize` just needs one field to match in order to assign logs to the same group.
@@ -59,9 +61,7 @@ Syntax section. For example, 
     To address this situation, try one or more of these options:
     * Reduce the [time range](/docs/search/get-started-with-search/build-search/set-time-range) of your search to reduce the scope.
     * Reduce the scope of your search by using parameters (such as `maxlogs`, `maxspan`, or `endswith`) that are listed above in the [Parameters](#parameters) section.
-    * Run a second `transactionize` operator immediately after your first one. This will take the potentially ungrouped messages of your first `transactionize` search and group them correctly.  
-         
-* Transactionize is not supported in [Real Time scheduled searches](../../../alerts/scheduled-searches/create-real-time-alert.md).
+    * Run a second `transactionize` operator immediately after your first one. This will take the potentially ungrouped messages of your first `transactionize` search and group them correctly.
 
 ## Example
 
@@ -91,7 +91,7 @@ To group the logs that belong to the same request, we can use [parse nodrop](/do
 
 For example:
 
-![transactionalize.png](/img/search/searchquerylanguage/transaction-analytics/transactionalize.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/transaction-analytics/transactionalize.png')} alt="Transactionalize" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 To see an example of using the `transactionize` operator with merge, see [`merge` operator](merge-operator.md). 

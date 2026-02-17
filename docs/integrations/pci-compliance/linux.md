@@ -77,7 +77,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/PCI-Compliance-For-Linux-PCI-Req-10-Privileged-Activity.png')} alt="PCI Compliance for Linux dashboards" />
 
-## Upgrading the PCI Compliance for Linux app (Optional)
+## Upgrade/Downgrade the PCI Compliance for Linux app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

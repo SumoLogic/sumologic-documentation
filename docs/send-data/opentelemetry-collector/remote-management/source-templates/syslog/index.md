@@ -5,25 +5,20 @@ sidebar_label: Syslog
 description: Learn about the Sumo Logic Syslog source template for OpenTelemetry.
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('img/icons/operations/server.png')} alt="OTel thumbnail icon" width="30"/>
 
 The Syslog source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, the agent will start listening on the configured port for syslogs and send them to Sumo Logic.
 
-## Fields creation in Sumo Logic for Syslog
+## Fields created by the source template
 
-If not already present, the following [Fields](/docs/manage/fields/) are created as part of source template creation.
+When you create a source template, the following [fields](/docs/manage/fields/) are automatically added (if they don’t already exist):
 
-- **`sumo.datasource`**. Fixed value of **localfile**.
+<!-- localfile? -->
+- **`sumo.datasource`**. Fixed value of **syslog**.
 - **`deployment.environment`**. This is a user-configured field set at the time of collector installation. It identifies the environment where the host resides, such as `dev`, `prod`, or `qa`.
 - **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). This identifies the group of hosts.
 - **`host.name`**. This is tagged through the resourcedetection processor. It holds the value of the host name where the OTel collector is installed.
@@ -31,9 +26,9 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 ## Prerequisite
 Ensure that the syslogs conform to the [RFC 5424](https://datatracker.ietf.org/doc/html/rfc5424) protocol. Since we use the OpenTelemetry [syslog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/syslogreceiver) with this protocol, this will ensure proper parsing of the syslog metadata when ingested into Sumo Logic.
 
-## Source template configuration
+## Configuring the Syslog source template
 
-You can follow the below steps to set a remotely managed OpenTelemetry collector and push the source template to it.
+Follow these steps to set up and deploy the source template to a remotely managed OpenTelemetry collector.
 
 ### Step 1: Set up remotely managed OpenTelemetry collector
 

@@ -5,6 +5,8 @@ sidebar_label: AWS DynamoDB
 description: The Sumo app for AWS Observability DynamoDB is a unified logs and metrics (ULM) app that provides operational insights into DynamoDB instances across your infrastructure.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 [AWS DynamoDB](https://aws.amazon.com/dynamodb/) is a fast and flexible NoSQL database service that provides consistent, single-digit millisecond latency at any scale. 
 
 The Sumo Logic app for AWS Observability DynamoDB is a unified logs and metrics (ULM) app that provides operational insights into DynamoDB instances across your infrastructure. Preconfigured app dashboards allow you to monitor key metrics, view the throttle events, errors, latency and help you plan the capacity of DynamoDB instances in your environment.
@@ -61,13 +63,27 @@ _sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynam
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
 | count as ip_count by ip_address
 | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
-| json field=raw "labels[*].name" as label_name
+| json field=raw "labels[*].name" as label_name nodrop
 | replace(label_name, "\\/","->") as label_name
 | replace(label_name, "\""," ") as label_name
 | where  type="ip_address" and !isNull(malicious_confidence)
 | if (isEmpty(actor), "Unassigned", actor) as Actor
 | sum (ip_count) as threat_count
 ```
+
+<!-- Per DOCS-643, replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
+```sql title="All IP Threat Count"
+_sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynamodb.amazonaws.com\""
+| json "eventName", "awsRegion", "requestParameters.tableName", "sourceIPAddress", "userIdentity.userName" as event_name, Region, entity, ip_address, user
+| where Region matches "*" and tolowercase(entity) matches "*"
+| where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
+| count as ip_count by ip_address
+| threatlookup singleIndicator ip_address
+| where (_threatlookup.type="ipv4-addr" or _threatlookup.type="ipv6-addr") and !isNull(_threatlookup.confidence)
+| if (isEmpty(_threatlookup.actors), "Unassigned", _threatlookup.actors) as Actor
+| sum (ip_count) as threat_count
+```
+-->
 
 ## Viewing AWS DynamoDB dashboards
 
@@ -86,7 +102,7 @@ Use this dashboard to:
 * Monitor average read and write capacity percentages for DynamoDB instances. 
 * Quickly identify system errors, user errors, transaction conflicts, and conditional check fail requests for DynamoDB Monitor overall resource utilization of your DynamoDB instances.
 
-![1. AWS DynamoDB - Overview .png](/img/observability/dynamo-overview.png)
+<img src={useBaseUrl('img/observability/dynamo-overview.png')} alt="AWS DynamoDB - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 1. AWS DynamoDB - Capacity Planning
 
@@ -98,7 +114,7 @@ Use this dashboard to:
 * Monitor AWS account level maximum allocations across read and write capacities.
 * Monitor resource utilization using trend panels for read and write capacity, throttled read and write requests, as well as read and write throttle events for DynamoDB throughout your infrastructure.
 
-* ![1. AWS DynamoDB - Capacity Planning.png](/img/observability/dynamo1.png)
+<img src={useBaseUrl('img/observability/dynamo1.png')} alt="AWS DynamoDB - Capacity Planning" style={{border: '1px solid gray'}} width="800" />
 
 ### 2. AWS DynamoDB - Latency and Errors
 
@@ -110,7 +126,7 @@ Use this dashboard to:
 * Quickly identify the number of conditional checks fail, and transaction conflicts for DynamoDB.
 * Monitor resource utilization using trend panels for latencies and errors for DynamoDB. 
 
-![2. AWS DynamoDB - Latency and Errors.png](/img/observability/dynamo2.png)
+<img src={useBaseUrl('img/observability/dynamo2.png')} alt="AWS DynamoDB - Latency and Errors" style={{border: '1px solid gray'}} width="800" />
 
 ### 3. AWS DynamoDB - Events
 
@@ -122,7 +138,7 @@ Use this dashboard to:
 * Monitor different types of table events, such as create, update, and describe tables.
 * Quickly identify the top DynamoDB related errors.
 
-![3. AWS DynamoDB - Events .png](/img/observability/dynamo3.png)
+<img src={useBaseUrl('img/observability/dynamo3.png')} alt="AWS DynamoDB - Events" style={{border: '1px solid gray'}} width="800" />
 
 ### 4. AWS DynamoDB - Threat Intel
 
@@ -130,6 +146,6 @@ The **AWS DynamoDB - Threat Intel** dashboard provides insights across your infr
 
 Use this dashboard to:
 
-* Identify malicious IPs performing operations on DynamoDB tables across using Sumo Logic Threat Intel.
+* Identify malicious IPs performing operations on DynamoDB tables across using [Sumo Logic threat intelligence](/docs/security/threat-intelligence/).
 
-![4. AWS DynamoDB - Threat Intel .png](/img/observability/dynamo4.png)
+<img src={useBaseUrl('img/observability/dynamo4.png')} alt="AWS DynamoDB - Threat Intel" style={{border: '1px solid gray'}} width="800" />

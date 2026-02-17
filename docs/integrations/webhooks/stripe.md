@@ -132,7 +132,7 @@ The **Stripe - Customers and Billing** offers valuable insights and statistical 
 
 <img src={useBaseUrl('img/integrations/webhooks/Stripe-Customers_and_Billing.png')} style={{border: '1px solid black'}} alt="Stripe-Customers_and_Billing"/>
 
-## Upgrading the Stripe app (Optional)
+## Upgrade/Downgrade the Stripe app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

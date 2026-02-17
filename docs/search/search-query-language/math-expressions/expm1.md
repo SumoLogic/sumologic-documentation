@@ -15,5 +15,5 @@ expm1(<x>) as <field>
 ## Example
 
 ```sql
-expm1(0.1) as v // v = 0.10517091807564763
+* | expm1(0.1) as v
 ```

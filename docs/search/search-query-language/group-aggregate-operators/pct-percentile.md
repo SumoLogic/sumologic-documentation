@@ -36,7 +36,7 @@ The input to the operator is a percentile. For example:
 ## Examples
 
 ```sql
-| parse "filesize=*" as filesize
+| parse "filesize=*:" as filesize
 | pct(filesize, 75, 95) by _sourceHost
 ```
 

@@ -10,18 +10,18 @@ Perhaps the most convenient way to start capturing telemetry from Java (or, gene
 import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
-Tutorial: Auto-instrumentation of a Java app by OpenTelemetry for K8s Environment.
 
-<Iframe url="https://www.youtube.com/embed/P_74rhI1M30?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+<Iframe url="https://fast.wistia.net/embed/iframe/p46o4kivj4?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: Auto-instrumentation of a Java app by OpenTelemetry for K8s Environment Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
 :::
 

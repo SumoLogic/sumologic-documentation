@@ -42,88 +42,29 @@ Standard Windows event channels include:
 You can skip this section if you have already set up the logs collection through [Windows](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry), [Windows - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry), or [Active Directory](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-<ConfigAppInstall/>
+### Step 1: Set up remotely managed OpenTelemetry collector
 
-### Step 1: Set up Collector
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
 :::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
 :::
 
-To create a new Collector:
-1. Select the **Add a new Collector** option.
-2. Select the platform where you want to install the Sumo Logic OpenTelemetry Collector.
+<OtelCollectorInstallation/>
 
-This will generate a command that you can execute in the machine environment you need to monitor. Once executed, it will install the Sumo Logic OpenTelemetry Collector.
+### Step 2: Configure the source template
 
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-Collector.png" style={{border:'1px solid gray'}} alt="collector"/>
+import WindowsConfigureSourceTemplate from '../../../reuse/send-data/windows-configure-source-template.md';
 
-### Step 2: Configure integration
+<WindowsConfigureSourceTemplate/>
 
-In this step, you will configure the yaml file required for Windows event logs collection.
+### Step 3: Push the source template to the desired remotely managed collectors
 
-Any custom fields can be tagged along with the data in this step.
+import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 
-Once the details are filled in, click on the **Download YAML File** button to get the yaml file.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
-
-### Step 3: Send logs to Sumo Logic
-
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
-
-<LogsIntro/>
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Windows"
-  values={[
-    {label: 'Windows', value: 'Windows'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
-
-<TabItem value="Windows">
-
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2. Restart the collector using:
-  ```sh
-  Restart-Service -Name OtelcolSumo
-  ```
-
-</TabItem>
-
-<TabItem value="Chef">
-
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
-
-</TabItem>
-</Tabs>
-
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+<DataConfiguration/>
 
 ## Sample queries
 
@@ -264,3 +205,19 @@ Track user activities such as password changes, password resets, excessive faile
 Track your Windows Update activities.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/Windows-PCI-Req-06-Windows-Updates-Activity.png' alt="Windows - PCI Req 06 - Windows Updates Activity" />
+
+## Create monitors for PCI Compliance For Windows JSON app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### PCI Compliance For Windows JSON alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Windows PCI - Critical Policy Changes` | This alert is triggered when modifications to security policies or audit policies are detected, indicating potential changes to the system's security posture. It supports PCI DSS Requirements `10.2.2` (track changes to system-level objects) and `10.2.5.b` (track use of identification and authentication mechanisms). | Count >= 1 | Count < 1 |
+| `Windows PCI - Excessive Failed Login Attempts` | This alert is triggered when there are multiple authentication failures detected across Windows environments. These are monitored across different authentication mechanisms like local Windows authentication, Kerberos, and network logons. It correlates failure patterns with specific error codes to identify potential security threats such as password guessing, account enumeration, or attempts to access disabled accounts. This helps security teams differentiate between benign issues and malicious activities. | Count >= 5 | Count < 5 |
+| `Windows PCI - Failed Windows Updates` | This alert is triggered when Windows update failures are detected, which could leave systems vulnerable to known exploits. It aligns with PCI DSS Requirement `6.2.0` for installing critical security patches within one month of release. | Count > = 3 | Count < 3 |
+| `Windows PCI - Security Audit Log Tampering` | This alert is triggered when attempt is detected to clear or tamper with Windows security audit logs, indicating potential attempts to hide malicious activities. It supports PCI DSS Requirements `10.2.0` (implement automated audit trails) and `10.3.0` (record audit trail entries). | Count > = 1 | Count < 1 |
+| `Windows PCI - User Account State Change` | This alert is triggered when critical user account state changes are detected, including account creation, deletion, enablement, and disablement. This supports PCI DSS Requirement 8.1.3 for immediately revoking access for terminated users. | Count > = 1 | Count < 1 |

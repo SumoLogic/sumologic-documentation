@@ -15,9 +15,9 @@ ceil(<x>) as <field>
 ## Example
 
 ```sql
-ceil(1.5) as v // v = 2
+* | ceil(1.5) as v
 ```
 
 ```sql
-ceil(-1.5) as v // v = -1
+ * | ceil(-1.5) as v
 ```

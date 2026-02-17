@@ -11,7 +11,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/operations/distributed-operations.png')} alt="Thumbnail icon" width="50"/>
 
-The Span Analytics API allows you to browse spans collected in the system. You can execute queries to find individual spans matching provided search criteria as well as run aggregated span queries and retrieve their results. For more information, see [Spans](/docs/apm/traces/spans).
+The Span Analytics API allows you to browse spans collected in the system. You can execute queries to find individual spans matching provided search criteria as well as run aggregated span queries and retrieve their results. For more information, see [Spans](/docs/apm/spans).
 
 :::tip Other Tracing APIs
 See also: [Service Map APIs](/docs/api/service-map) and [Traces APIs](/docs/api/tracing).
@@ -21,7 +21,7 @@ Tracing APIs give you the ability to browse and execute queries for traces and s
 
 ## Documentation   
 
-Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/getting-started#which-endpoint-should-i-should-use) if you are unsure.
+Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/about-apis/getting-started#which-endpoint-should-i-should-use) if you are unsure.
 
 Select the documentation link for your deployment:
 
@@ -32,27 +32,24 @@ Select the documentation link for your deployment:
 | DE         | https://api.de.sumologic.com/docs/#tag/spanAnalytics  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/spanAnalytics  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/spanAnalytics |
-| IN         | https://api.in.sumologic.com/docs/#tag/spanAnalytics  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/spanAnalytics  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/spanAnalytics  |
 | US1        | https://api.sumologic.com/docs/#tag/spanAnalytics     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/spanAnalytics |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Download Search Results
     * View Collectors
-
--->
 
 ## Endpoints for API access  
 
 Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
 
-See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
+See [Sumo Logic Endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
 
 An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
 

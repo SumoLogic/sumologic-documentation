@@ -16,28 +16,12 @@ The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR 
 
 ## Documentation
 
-:::info
-If your instance URL is a subdomain of `soar.sumologic.com`, refer to [Inline API documentation](#inline-api-documentation) below.
-:::
-
 <ApiIntro/>
 
 <CloudSoarApi/>
 
-### Inline API documentation
-
-For organizations having Cloud SOAR available at URLs matching the pattern `*.soar.sumologic.com`,  the API documentation is available through your Cloud SOAR instance at the following URL:
-
-```
-https://<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_documentation_v3
-```
-
-For more information, see [Legacy Cloud SOAR APIs](/docs/cloud-soar/legacy/legacy-cloud-soar-apis/).
-
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
-* Cloud SOAR (all role capabilities)
-
--->
+* [Cloud SOAR](/docs/manage/users-roles/roles/role-capabilities/#cloud-soar) (all role capabilities)

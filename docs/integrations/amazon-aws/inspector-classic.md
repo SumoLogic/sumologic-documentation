@@ -222,7 +222,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Persistent Findings.** Displays persistent findings in a table chart, including details on the finding title, template, finding severity, and number of runs for the last seven days.
 
-## Upgrading the Amazon Inspector Classic app (Optional)
+## Upgrade/Downgrade the Amazon Inspector Classic app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -224,7 +224,7 @@ The **Squadcast - Incidents** offers valuable statistics and insights regarding 
 
 <img src={useBaseUrl('img/integrations/webhooks/Squadcast-Incidents.png')} style={{border: '1px solid black'}} alt="Squadcast-Incidents"/>
 
-## Upgrading the Squadcast app (Optional)
+## Upgrade/Downgrade the Squadcast app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

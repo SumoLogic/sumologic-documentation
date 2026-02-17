@@ -24,6 +24,30 @@ Duo puts your organization on the fast-track to zero trust by securing the moder
 
 Follow this [link](https://duo.com/docs/adminapi) for configuration purposes:<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/duo/duo-1.png')} style={{border:'1px solid gray'}} alt="downdetector" width="700"/>
 
+## Configure Duo in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API Hostname**. Enter your Duo [API hostname](https://duo.com/docs/adminapi#api-details).
+
+* **Integration Key**. Enter a Duo [integration key](https://duo.com/docs/adminapi#first-steps).
+
+* **Secret Key**. Enter the secret for the integration key.
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/duo-configuration.png')} style={{border:'1px solid gray'}} alt="Duo configuration" width="400"/>
+
+For information about Duo, see [Duo documentation](https://duo.com/docs).
+
 ## Change Log
 
 * February 16, 2021 - First upload

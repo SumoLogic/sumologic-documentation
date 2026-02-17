@@ -5,7 +5,6 @@ sidebar_label: Docker
 description: Learn about methods for collecting logs and metrics from Docker.
 ---
 
-
 This page describes and compares alternative methods for collecting Docker logs and metrics. You can employ these methods in self-managed Docker environments or with managed Docker services like ECS and Swarm.
 
 :::important
@@ -18,9 +17,9 @@ The following table summarizes what you can collect with each collection method.
 
 | Collection Methods | Logs | Metrics |
 |:--|:--|:--|
-| Docker Logging Driver	 | ![check](/img/reuse/check.png) |  |
-| Installed Collector on Docker Host<br/>(with Docker Log source and Docker Stats source)| ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Collector as a Container<br/>(with Docker Log source and Docker Stats source)	 | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Docker Logging Driver	 | &#10003; |  |
+| Installed Collector on Docker Host<br/>(with Docker Log source and Docker Stats source)| &#10003; | &#10003; |
+| Collector as a Container<br/>(with Docker Log source and Docker Stats source)	 | &#10003; | &#10003; |
 
 ## Docker collection options
 
@@ -56,7 +55,7 @@ You can bake the Collector into an image, install it manually, or use automat
         * Host Metrics (Sumo's [Host Metrics source](/docs/send-data/installed-collectors/sources/host-metrics-source.md) is required.)
     * Logs are cached locally, so if a source is throttled by Sumo, you won’t drop data.  
     * You can bake Installed Collectors into AMIs to allow for consistent deployments across all your hosts.
-    * Configurable metadata. You can use variables available from Docker and the Docker host to configure the sourceCategory and sourceHost for a Docker log source or a Docker stats. For more information, see Configure sourceCategory and sourceHost using variables.
+    * Configurable metadata. You can use variables available from Docker and the Docker host to configure the `_sourceCategory` and `sourceHost` for a Docker log source or a Docker stats. For more information, see Configure `_sourceCategory` and `sourceHost` using variables.
 * **Cons**
     * Maintaining AMIs can be tricky if the process is not automated, so this might be a disadvantage, depending on your situation and resources. 
     * It’s not as easy to set up this method to monitor selected containers on a host, as opposed to all containers. You might need to configure multiple sources to achieve this goal.
@@ -70,7 +69,7 @@ Logic collector.
     * No need to bake into any AMIs. Can be fully automated depending on your automation tooling around Docker.
     * The Collector will cache the files in the container, so if a Source is throttled by Sumo, you won’t drop data. Ensure that you have ample space, or use persistent storage.
     * Easy to upgrade: it’s a container, just deploy a new one!
-    * Configurable metadata. You can use variables available from Docker and the Docker host to configure the sourceCategory and sourceHost for a Docker log source or a Docker stats. For more information, see Configure sourceCategory and sourceHost using variables.
+    * Configurable metadata. You can use variables available from Docker and the Docker host to configure the `_sourceCategory` and `sourceHost` for a Docker log source or a Docker stats. For more information, see Configure `_sourceCategory` and `sourceHost` using variables.
 * **Cons**
     * With this method, you cannot collect host metrics from the Docker host. The Collector must be installed on the Docker host to get the host metrics. You can still collect container logs, container metrics and host logs.
     * It’s not as easy to set up this method to monitor selected containers on a host, as opposed to all containers. You might need to configure multiple sources to achieve this goal.
@@ -85,10 +84,10 @@ The Docker Logging Driver is supported with Docker Version 18.03.0-ce or higher 
 
 | Platform | Installed Collector On Docker Host  | Collector As Container | Docker Logging Driver |
 |:--|:--|:--|:--|
-| Docker<br/>(not managed service) | ![check](/img/reuse/check.png) |   ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
-| ECS | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
-| Docker Swarm | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
-| Rancher<br/>(non-Kubernetes) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
+| Docker<br/>(not managed service) | &#10003; |   &#10003; | &#10003; |
+| ECS | &#10003; |  &#10003; | &#10003; |
+| Docker Swarm | &#10003; |  &#10003; | &#10003; |
+| Rancher<br/>(non-Kubernetes) | &#10003; |  &#10003; | &#10003; |
 
 ### Sumo Logic apps for Docker
 

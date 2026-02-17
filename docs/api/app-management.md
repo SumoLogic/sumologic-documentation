@@ -1,15 +1,13 @@
 ---
 id: app-management
 title: App Management APIs
-sidebar_label: Apps (Beta)
+sidebar_label: Apps
 description: Use HTTP endpoints to view and install Sumo Logic applications that deliver out-of-the-box dashboards, saved searches, and field extraction for popular data sources.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
-
-<p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
 
 View and install Sumo Logic applications that deliver out-of-the-box dashboards, saved searches, and field extraction for popular data sources. For more information, see [Sumo Logic Apps](/docs/integrations).
 
@@ -24,17 +22,14 @@ View and install Sumo Logic applications that deliver out-of-the-box dashboards,
 | DE         | https://api.de.sumologic.com/docs/#tag/appManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/appManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/appManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/appManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/appManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/appManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/appManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/appManagement |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Manage Apps
-
--->

@@ -5,20 +5,17 @@ sidebar_label: Azure Metrics Source
 description: Learn how to collect Azure metrics.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/azure-metrics/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/azure-metrics/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-<img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
-
 Azure Metrics Source is used to collect all available metrics from Azure Monitor into Sumo Logic. To obtain a complete list of metrics that are collected using this source, refer to the [Azure Documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/metrics-index#supported-metrics-and-log-categories-by-resource-type).
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an Azure Metrics source with the [`sumologic_azure_metrics_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/azure_metrics_source) resource.
+
+<TerraformLink/>
+:::
 
 ## Setup
 
@@ -29,10 +26,10 @@ The Azure Metrics Source requires you to provide **Tenant Id**, **Client Id**
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Navigate to Sumo Logic's [Custom Deployment wizard](https://portal.azure.com/#create/Microsoft.Template/uri/CustomDeploymentBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSumoLogic%2Fsumologic-azure-serverless%2Fmain%2FAzureMetrics%2FRoleAssignmentSubscriptions.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2FSumoLogic%2Fsumologic-azure-serverless%2Fmain%2FAzureMetrics%2FCreateUIDefSubscriptions.json).
 1. In the **Custom Deployment** page, under **Basics** tab, select the **Subscription**, **Resource Group**, and **Region** in which to deploy the Application, then click **Next**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/basics.png')} alt="basics" style={{border:'1px solid gray'}} width="500"/>
-1. Under the **App Registration** tab:<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/app-registration.png')} alt="app-registration" style={{border:'1px solid gray'}} width="500"/> 
+1. Under the **App Registration** tab:<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/app-registration.png')} alt="app-registration" style={{border:'1px solid gray'}} width="500"/>
     1. Select service principal type as **Create new** to create a new app.
-    1. Click **Change selection** to enter the name and select **Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)** as supported account types. Click **Register** to register the application.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/register.png')} alt="register" style={{border:'1px solid gray'}} width="400"/> 
-1. In the re-directed **Certificates & secrets** page, under **Client secrets** tab, click **+ New client secret**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/new-client-secret.png')} alt="new-client-secret" style={{border:'1px solid gray'}} width="600"/> 
+    1. Click **Change selection** to enter the name and select **Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)** as supported account types. Click **Register** to register the application.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/register.png')} alt="register" style={{border:'1px solid gray'}} width="400"/>
+1. In the re-directed **Certificates & secrets** page, under **Client secrets** tab, click **+ New client secret**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/new-client-secret.png')} alt="new-client-secret" style={{border:'1px solid gray'}} width="600"/>
         1. **Description**. Enter the description of your choice.
         1. **Expires**. From the dropdown, select the expiry time period to the secret value.
         1. Copy and save the **Value**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/client-secrets.png')} alt="client-secrets" style={{border:'1px solid gray'}} width="600"/>   
@@ -40,21 +37,24 @@ The Azure Metrics Source requires you to provide **Tenant Id**, **Client Id**
 1. Close the **Overviews** page to go back to the **Custom Deployment** page.
 1. Enter the copied **Value** in the **Client secret** section, then click **Next**. <br/><img src={useBaseUrl('img/send-data/azure-metrics-source/add-client-secret.png')} alt="add-client-secret" style={{border:'1px solid gray'}} width="500"/>  
 1. Under **Subscription** tab, select the subscriptions from which you would like to collect metrics, then click **Next**. <br/><img src={useBaseUrl('img/send-data/azure-metrics-source/subscriptions.png')} alt="subscriptions" style={{border:'1px solid gray'}} width="500"/>  
-1. Click **Review + Create**. On the **Review + Create** tab review the details and click **Create**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/create.png')} alt="create" style={{border:'1px solid gray'}} width="500"/> 
+1. Click **Review + Create**. On the **Review + Create** tab review the details and click **Create**.<br/><img src={useBaseUrl('img/send-data/azure-metrics-source/create.png')} alt="create" style={{border:'1px solid gray'}} width="500"/>
 
 ### Source configuration
 
 When you create a Azure Metrics source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the Azure Metrics Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the collectors page, click **Add Source** next to a Hosted Collector.
+     :::note
+     Make sure the hosted collector is tagged with tenant_name field for the out of the box Azure apps to work. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+     :::
 1. Search for and select **Azure Metrics** icon.
 1. Enter a **Name** to display for the source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Tenant Id**. Enter the Tenant Id collected from [Azure platform](#vendor-configuration).
 1. **Client Id**. Enter the Client Id collected from [Azure platform](#vendor-configuration).
 1. **Client Secret**. Enter the Client Secret collected from [Azure platform](#vendor-configuration).
@@ -62,11 +62,11 @@ To configure the Azure Metrics Source:
 1. **Environment**. Select the environment from the dropdown from which you would like to collect metrics.
 1. **Azure Regions**. Select **All Regions**, if you want to collect metrics from all regions. Or, click **Select Regions** to select the region of your choice from the dropdown to collect metrics.
 1. **Azure Namespaces**. Select **All Namespaces**, if you want to collect metrics with all namespaces. Or, click **Select Namespaces** to select the namespaces of your choice from the dropdown to collect metrics.
-1. **Tags Filter**. Select any tag filter from the dropdown to enforce it with the each namespace. This helps you to further fine-tune from which resources you would like to collect metrics.
-1. **Scan Interval**.  This option sets how often the source is scanned. Setting a shorter frequency increases message volume, and can cause your deployment to incur additional charges. The minimum acceptable scan interval is 1 minute.
-1. **Processing Rules for Metrics (Optional)**. Configure any desired filters, such as allowlist and denylist, as described in [Metrics Include and Exclude Rules](/docs/send-data/collection/processing-rules/metrics-include-and-exclude-rules).
+1. **Tags Filter**. Select any tag filter from the dropdown to enforce it with the each namespace. This helps you to further fine-tune from which resources you would like to collect metrics. It only supports resource tags which are custom user-configured key-value pairs on the azure resource. This approach allows for dynamic discovery, so for example if the resources are ephemeral or if any new resources are created in the same namespace, region and namespace are tagged with same key-value pairs as configured in the source, so their metrics can be collected automatically.
+1. **Scan Interval**.  This option sets how often the source is scanned. By default, the scan interval is set to 1 minute. Setting a shorter frequency increases message volume, and can cause your deployment to incur additional charges. The minimum acceptable scan interval is 1 minute.
+1. **Processing Rules for Metrics (Optional)**. Configure any desired filters, such as allowlist and denylist, as described in [Metrics Include and Exclude Rules](/docs/send-data/collection/processing-rules/metrics-include-and-exclude-rules).<br/><img src={useBaseUrl('/img/send-data/filtersprocessingrules.png')} alt="Processing rules for metrics" style={{border: '1px solid gray'}} width="600" />
 
-## JSON configuration
+## JSON schema
 
 ### Configuration Object
 
@@ -83,10 +83,90 @@ To configure the Azure Metrics Source:
 | tenantId | String | Yes | `null` | Enter the tenant Id collected from the Azure platform. | |
 | clientId | String | Yes | `null` | Enter the client Id collected from the Azure platform.| |
 | clientSecret | String | Yes | `null` | Enter the client secret collected from the Azure platform.| |
-| scanInterval | Integer | No | 1 minute | How frequently the integration should collect the metrics data from Azure. <br /> **Options**: 1m or 5m. |  |
+| scanInterval | Integer | No | 1 minute | How frequently the integration should collect the metrics data from Azure. <br/> **Options**: 1m or 5m. |  |
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/azure-metrics/example.json
+```
 
-<a href="/files/c2c/azure-metrics/example.json" target="_blank">Download example</a>
+## Troubleshooting
+
+### Unable to authenticate to Azure
+
+During Source creation, if you encounter errors such as `Unable to get subscriptions. Please check credentials.` or `Unable to authenticate to Azure`. 
+
+To rectify this ensure you verify your credentials are valid in the Azure portal by following the below steps:
+
+1. Sign in to the Azure portal.
+1. Navigate to app registrations and locate the app that was created during the **Deploy to Azure** process.
+1. Go to **Certificates & Secrets**.
+1. Ensure that a valid **Client Secret** exists. If no secret is present or the existing one has expired, create a new Client Secret.
+1. Retry the Source creation process using the updated credentials.
+
+### Subscriptions not present in the View Subscriptions list
+
+If the **View Subscriptions** list does not include expected Azure subscriptions, you can verify that the credentials have sufficient permission to read from the expected subscription. Another possible cause could be a propagation delay. After creating a new app or client secret, Azure may take up to 10 minutes to reflect the changes across its services. Wait a few minutes and refresh the list.
+
+Follow the steps below to verify and assign proper permissions:
+1. In the Azure portal, navigate to **Subscriptions**.
+1. Select the target subscription.
+1. Go to **Access Control (IAM)** > **Role assignments**.
+1. Confirm that the App created during the **Deploy to Azure** step is listed.
+1. Ensure it is assigned the **Monitoring Reader** role.
+
+### Missing metrics in Sumo Logic
+
+Azure Monitor displays all metrics, even those without data, but Sumo Logic only collects metrics with actual datapoints.
+If you know that certain metrics in Azure contain actual data (non-empty values) and you expected those metrics to appear in Sumo Logic, but they are missing, it’s recommended to reach out to Sumo Logic Support to resolve the issue.
+
+### API throttling by Microsoft
+
+If API requests to Azure are being throttled, resulting in failed or delayed metric ingestion, review and follow the guidance in the [Best Practices](#best-practices) section for reducing the frequency and volume of API calls.
+If you continue to experience throttling, reach out to Sumo Logic Support for assistance.
+
+## Best practices
+
+The Sumo Logic Azure Metrics Source uses the Azure Monitor API to retrieve metrics from your Azure environment. Following the best practices below will help reduce the number of API requests, avoid hitting Microsoft’s API throttling limits, and ensure efficient and reliable metric collection.
+
+### Limit one source per subscription
+
+Microsoft enforces API throttling for each subscription. Since each Sumo Logic Azure Metrics Source sends independent requests to the Azure Monitor API, Sumo Logic strongly recommends you to use only one Azure Metrics Source per Azure subscription.
+
+:::note
+A single Sumo Logic Source can collect metrics from multiple Azure subscriptions without issue. However, avoid assigning more than one Source to collect from the same subscription, as this may lead to throttling.
+:::
+
+### Increase the scan interval to reduce API load
+
+The scan interval determines how often the Azure Metrics Source queries the Azure Monitor API. Adjusting this interval can significantly impact API usage:
+- Shorter scan intervals (for example, 1 minute) result in more frequent API calls.
+- Longer scan intervals reduce the request rate, helping to avoid throttling—especially in environments with a high number of resources.
+
+#### Recommended scan interval guidelines
+
+| Scan Interval | Maximum Resources per Subscription | Maximum VMs per Subscription for Virtual Machine Guest metrics |
+|:--|:--|:--|
+| 1 minute | 20,000 (3,000 for users on Azure Sovereign Cloud) | 600 (80 for users on Azure Sovereign Cloud) |
+| 5 minutes | 100,000 (15,000 for users on Azure Sovereign Cloud)| 3,000 (400 for users on Azure Sovereign Cloud) |
+
+By default, the scan interval is set to 1 minute. For a larger number of resources, increase the scan interval further using the Sumo Logic Source Management API.
+
+:::note
+Increasing the scan interval does not reduce metric granularity. The frequency of data collection changes, but the resolution of data points remains unaffected.
+:::
+
+### Estimate API request rate per subscription
+
+The API request rate for the Azure Metrics Source depends on the scan interval and the number of resources in a subscription. Since Microsoft enforces API throttling per subscription, you can estimate the rate of requests made per subscription using the following formula:
+
+`(CEILING((T / 50) / N) * N * (180 / S)) + (V * (144 / S))`
+
+Where,
+T = Total number of non-VM resources  
+V = Total number of VMs (only for users collecting Virtual Machine Guest metrics)  
+N = Number of distinct namespaces with active resources  
+S = Scan Interval (in minutes)
+
+Understanding this rate helps you proactively configure your Sources to stay within Microsoft’s service limits and avoid interruptions due to throttling.

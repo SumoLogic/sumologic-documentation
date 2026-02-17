@@ -233,7 +233,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-Events.png')} alt="Cisco Meraki dashboards" />
 
-## Upgrading the Cisco Meraki app (Optional)
+## Upgrade/Downgrade the Cisco Meraki app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

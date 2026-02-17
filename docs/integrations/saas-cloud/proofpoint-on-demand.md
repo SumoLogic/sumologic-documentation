@@ -22,7 +22,10 @@ This app uses Proofpoint on Demand source to collect the data from Proofpoint on
 
 ## Sample log messages
 
-```json title="Message log"
+<details>
+<summary>Message log</summary>
+
+```json
  {
  "final_module": "access",
  "msg": {
@@ -129,6 +132,8 @@ This app uses Proofpoint on Demand source to collect the data from Proofpoint on
  }
 }
 ```
+</details>
+
 ## Sample queries
 
 ```sql title="Unique Inbound Domains"
@@ -146,15 +151,33 @@ _sourceCategory="pod_src"
 | count_distinct(inbound_domain)
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud-to-Cloud Integration Proofpoint on Demand Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source) for the Proofpoint on Demand app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Proofpoint on Demand Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Proofpoint on Demand app is properly integrated and configured to collect and analyze your Proofpoint on Demand data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Proofpoint on Demand app​
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Proofpoint on Demand](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Proofpoint on Demand app is properly integrated and configured to collect and analyze your Proofpoint on Demand data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Proofpoint on Demand dashboards​​
 
@@ -170,7 +193,7 @@ The **Proofpoint on Demand - Message Monitoring** dashboard offers valuable insi
 
 The **Proofpoint on Demand - Security Overview** dashboard is designed to monitor email communications for compliance with both internal policies and external regulations, such as DLP and DMARC. It includes widgets for geo-location tracking of messages from high-risk countries, a summary of policy results for DMARC, DLP, Anti-Spam and Anti-Virus, and messages in the quarantine folder by category. In addition, the dashboard includes a TLS message trend chart that displays the ratio of encrypted to unencrypted messages, along with insights into the unencrypted sender and receiver domains. Overall, the Security Overview dashboard helps organizations maintain compliance with relevant regulations and policies while also providing valuable insights to improve their email security posture.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-on-Demand-Security-Overview.png')} alt="Proofpoint-on-Demand-Security-Overview" width="750"/>
 
-## Upgrading the Proofpoint on Demand app (Optional)
+## Upgrade/Downgrade the Proofpoint on Demand app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -10,33 +10,32 @@ keywords:
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 A reliable end user experience is the key goal for observability. In complex systems, apps, service, and infrastructure can fail in unpredictable ways, resulting in a storm of potentially meaningless alerts. Reliability, as formalized in Service Level Objectives (SLOs), helps developers focusing on monitoring and troubleshooting user experience by measuring what matters to end users.
 
 This guide provides an overview of Sumo Logic Reliability Management using Service-Level Objectives (SLO). This feature helps site reliability engineers (SREs) and product teams define and monitor SLOs through alerts and dashboards.
 
-import Iframe from 'react-iframe';
-
 :::sumo Micro Lesson
-Reliability Management Using SLOs.
 
-<Iframe url="https://www.youtube.com/embed/jCGqfqEDXto?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+<Iframe url="https://fast.wistia.net/embed/iframe/3rztup8x53?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Reliability Management Using SLOs Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
 :::
 
 
 ## Prerequisites
 
-To work with SLOs, you need the following Sumo Logic capabilities: View SLOs (`viewSlos`) and Manage SLOs (`manageSlos permissions`).
+To work with SLOs, you need the following Sumo Logic [role capabilities](/docs/manage/users-roles/roles/role-capabilities/): View SLOs (`viewSlos`) and Manage SLOs (`manageSlos permissions`).
 
 
 ## Terminology
@@ -69,20 +68,20 @@ Reliability is essentially the uptime of systems and services. This includes the
   </tr>
 </table>
 
-As an example, let's say an eCommerce app considers its checkout service transactions to be successful (good) when completed in less than 500ms. A successful five-minute (5m) time window may be one in which the p99 of latency is less than 500ms.
+As an example, let's say an ecommerce app considers its checkout service transactions to be successful (good) when completed in less than 500ms. A successful five-minute (5m) time window may be one in which the p99 of latency is less than 500ms.
 
 The _SLI_ can be defined as the percentage of successful 5m windows in a _compliance period_ of 30 days (30d) or equal to 99.9% for any month. The number of unsuccessful (bad) transactions we allow as an _error budget_ is 0.1% of these 5m windows in 30d.
 
-The following chart shows our calculations and an example 5m window for the month of January where a number of requests were unsuccessful due to a completions that averaged greater than 600ms:
+The following chart shows our calculations and an example 5m window for the month of January where a number of requests were unsuccessful due to completions that were greater than 500ms:
 
-<img src={useBaseUrl('img/observability/slo-checkout-example.png')} alt="Reliability Management SLO SLI" />
+<img src={useBaseUrl('img/observability/slo-checkout-example.png')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="800" />
 
 With these calculations, we can configure an SLO, add a monitor, and start managing this and other services with ease. This is just one example. You can develop many different SLOs based on evaluation types (windows-based and request-based), ratios and thresholds for calculations, and error budgets for rolling or calendar compliance periods.
 
 SLOs include all historical data. For example, when you create an SLO with a monthly range part-way into a month, collected historical data to the beginning of that month is also evaluated and displayed.
 
 
-### SLO Evaluation Types
+### SLO evaluation types
 
 SLOs can be calculated and tracked using windows-based or request-based data.
 
@@ -90,7 +89,7 @@ SLOs can be calculated and tracked using windows-based or request-based data.
 * **Request-based SLOs**. Track the percentage of good requests within a compliance period. Request-based SLOs can exhaust the error budget very quickly if you have severe incidents. However, they smooth over SLIs that are unpredictable by focussing SLOs on a longer time range than a windows-based SLO.
 
 
-### Golden Signal Types
+### Golden signal types
 
 SLIs can be defined by signals such as latency, load, error, bottleneck, throughput, and availability. See the [Google SRE Handbook](https://sre.google/sre-book/preface/) for more information.
 
@@ -120,26 +119,24 @@ Throughput is the amount of processing time by a service or system. Depending on
 Availability indicates if a service is working and handling valid requests. Other systems, services, and even virtual storage all have potential metrics to track with SLIs. The other option gives you the ability to include different SLOs based on your specific business needs.
 
 
-## Data Retention
+## Data retention
 
 SLO data is retained for 800 days. It is retained separately, regardless of underlying logs/metrics retention. You can access this data via [SLO dashboards](/docs/observability/reliability-management-slo/dashboards/) or your [logs](/docs/observability/reliability-management-slo/create-slo/#create-an-slo-from-log-search-page).
 
 
 ## Accessing SLOs
 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access SLOs, in the main Sumo Logic menu select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.
+
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access SLOs, in the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**.
-
-
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access SLOs, in the main Sumo Logic menu select **Alerts > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.
- 
 
 In the SLO screen, you can view, search, and add SLOs. Use folders to collect, package, and manage SLOs with ease, moving SLOs as needed.
 
 To locate an SLO, use the search that returns a list of SLOs based on the name and description.
 
-<img src={useBaseUrl('img/observability/slo1.png')} alt="Reliability Management SLO SLI" />
+<img src={useBaseUrl('img/observability/slo1.png')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="800" />
 
-To open the dashboard, locate and select an SLO. The details pane gives you a preview and an option to **Open SLO Dashboard**. See [SLO Dashboards and Notifications](/docs/observability/reliability-management-slo/dashboards) for more information.
+To open the dashboard, locate and select an SLO. The details pane gives you a preview and an option to **Open SLO Dashboard**. See [SLO Dashboards](/docs/observability/reliability-management-slo/dashboards) for more information.
 
 
 ### Previewing SLOs
@@ -154,19 +151,19 @@ The **SLO Details** tab provides a quick view of the SLO ID, description, config
 
 The **Monitors** tab provides a list of associated monitors for the SLO. Expand entries to review the status, condition, and configured triggers. Click the open icon (<img src={useBaseUrl('img/observability/open-monitor.png')} alt="Reliability Management SLO SLI" width="20" /> ) to open and edit the monitor.
 
-<img src={useBaseUrl('img/observability/slo-preview.gif')} alt="Reliability Management SLO SLI" />
+<img src={useBaseUrl('img/observability/slo-preview.gif')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="800" />
 
 
-### Query Recommendations
+### Query recommendations
 
 The heart of an SLO is the queries used for the SLI query types, including metrics and logs.
 
-#### General Information
+#### General information
 
-For general information on querying metrics and logs, see [Overview of Metrics in Sumo](/docs/metrics/introduction) and [About Search Basics](/docs/search/get-started-with-search/search-basics/about-search-basics).
+For general information on querying metrics and logs, see [Introduction to Metrics](/docs/metrics/introduction) and [About Search Basics](/docs/search/get-started-with-search/search-basics/about-search-basics).
 
 A preview runs the query in real-time to help test and refine results, with a time range to see broader results as needed.
 
-#### Aggregation Queries
+#### Aggregation queries
 
 You cannot use aggregate log queries to define your SLO because such queries summarize data and lose the concept of time. Aggregation occurs through the SLO backend and is not required in the query, for example, `avg(latency) < 500 ms` or `"successful event must have latency below 50ms"`.

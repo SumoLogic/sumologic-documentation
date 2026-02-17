@@ -325,7 +325,7 @@ The supported filters are:
 * `_source`
 * `_collector`
 
-## Upgrading the Host Metrics app (Optional)
+## Upgrade/Downgrade the Host Metrics app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

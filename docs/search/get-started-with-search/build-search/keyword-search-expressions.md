@@ -143,7 +143,7 @@ It is '\u001F', U+001F UNIT SEPARATOR
 
  For example, in the following query, there are multiple space characters present in `"VM Periodic" and "Task Thread"`, but normalization returns the same result as a single space whitespace character.
  ```sql
- sourceCategory=stream_thread_dumps "VM Periodic_____Task Thread"
+ _sourceCategory=stream_thread_dumps "VM Periodic_____Task Thread"
  ```
 
  :::note
@@ -154,7 +154,7 @@ It is '\u001F', U+001F UNIT SEPARATOR
 
  For example, in the the following query there is a tab character present in `"VM Periodic" and "Task Thread"`, but normalization returns the same result as a single space whitespace character.
  ```sql
- sourceCategory=stream_thread_dumps "VM Periodic_Task Thread"
+ _sourceCategory=stream_thread_dumps "VM Periodic_Task Thread"
  ```
 
  :::note
@@ -165,7 +165,7 @@ It is '\u001F', U+001F UNIT SEPARATOR
 
  For example, in the following query, there is a new line after the string `Task`, but normalization returns the same result as a single space whitespace character. This shows that a query string with a single space can match a log line that has a new line character.
  ```sql
- sourceCategory=stream_thread_dumps "VM Periodic Task\nThread"
+ _sourceCategory=stream_thread_dumps "VM Periodic Task\nThread"
  ```
 
  :::note
@@ -176,7 +176,7 @@ It is '\u001F', U+001F UNIT SEPARATOR
 
   For example, in the the following query, there is a new line and tab character after the string `Task`, but normalization returns the same result as a single space whitespace character. This shows that a query string with a single space can match a log line that has a new line and a tab whitespace character.
   ```sql
-  sourceCategory=stream_thread_dumps "VM Periodic Task\n\tThread"
+  _sourceCategory=stream_thread_dumps "VM Periodic Task\n\tThread"
   ```
   :::note
   The character `\n\t` is used to describe the new line + tab whitespace characters.
@@ -184,5 +184,5 @@ It is '\u001F', U+001F UNIT SEPARATOR
 
 All of the above queries containing various whitespace characters will accept a single space whitespace character by default and return the desired results. See the query below.
 ```sql
-sourceCategory=stream_thread_dumps "VM Periodic Task Thread"
+_sourceCategory=stream_thread_dumps "VM Periodic Task Thread"
 ```

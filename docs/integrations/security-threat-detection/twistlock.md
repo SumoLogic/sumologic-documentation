@@ -126,7 +126,7 @@ Use this dashboard to:
 * Understand which CVEs have fixes available and use that information to triage and remediate vulnerabilities.
 * Monitor trends for vulnerabilities and compliance issues detected.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Twistlock-overview.png')} alt="Twistlock Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-overview.png')} alt="Twistlock Dashboard" />
 
 ### Scans
 
@@ -285,7 +285,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-runtime.png')} alt="Twistlock Dashboard" />
 
 
-## Upgrading the Twistlock/Twistlock Classic app (Optional)
+## Upgrade/Downgrade the Twistlock/Twistlock Classic app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

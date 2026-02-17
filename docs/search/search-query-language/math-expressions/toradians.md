@@ -15,5 +15,5 @@ toRadians(<x>) as <field>
 ## Example
 
 ```sql
-toRadians(180) as v // v = pi
+* | toRadians(180) as v
 ```

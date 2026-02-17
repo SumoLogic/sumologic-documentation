@@ -318,3 +318,23 @@ The **IIS - Web Service** dashboard provides a high-level view of the Web Servic
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Web-Service.png' alt="IIS-Web-Service" />
 
+## Create monitors for IIS app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### IIS alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `IIS - Access from Highly Malicious Sources` | This alert is triggered when an IIS server is accessed from highly malicious IP addresses. | Count `>` 0 | Count `<=` 0 |
+| `IIS - ASP.NET Application Errors` | This alert is triggered when an error is detected in the ASP.NET applications running on an IIS server. | Count `>` 0 | Count `<=` 0 |
+| `IIS - Blocked Async IO Requests` | This alert is triggered when blocked async I/O requests are detected on an IIS server. | Count `>` 0 | Count `<=` 0 |
+| `IIS - Error Events` | This alert is triggered when an error is detected in the IIS logs. | Count `>` 0 | Count `<=` 0 |
+| `IIS - High ASP.NET Current Requests` | This alert is triggered when the current ASP.NET request count exceeds the given value (Default 500). | Count `>` 500 | Count `<=` 500 |
+| `IIS - High Client (HTTP 4xx) Error Rate (Copy)` | This alert is triggered when more than 5% of HTTP requests result in a 4xx response code. | Count `>` 0 | Count `<=` 0 |
+| `IIS - High Current Connections` | This alert is triggered when the current connections exceed the given value (Default 1000), indicating potential capacity issues. | Count `>` 1000 | Count `<=` 1000 |
+| `IIS - High Server (HTTP 5xx) Error Rate` | This alert is triggered when more than 5% of HTTP requests result in a 5xx response code. | Count `>` 0 | Count `<=` 0 |
+| `IIS - No Worker Processes` | This alert is triggered when the worker process count drops to zero, indicating potential application pool issues. | Count `<` 1 | Count `>=` 1 |
+| `IIS - Slow Response Time` | This alert is triggered when the response time for a given IIS server exceeds one second. | Count `>` 0 | Count `<=` 0 |

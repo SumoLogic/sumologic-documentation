@@ -2,7 +2,7 @@
 id: windows
 title: Install OpenTelemetry Collector on Windows
 sidebar_label: Windows
-description: Learn how to install the Sumo Logic OpenTelemetry Collector on Windows.
+description: Install the OpenTelemetry Collector on Windows to collect metrics and logs for end-to-end observability in Sumo Logic environments.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -32,14 +32,18 @@ You can install our OpenTelemetry Collector using either of the following method
 
 ### UI Installation
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. 
 1. On the OpenTelemetry Collection page, click **Add Collector**.
-1. On the left panel, select **Windows** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows.png')} alt="widows-terminal" style={{border: '1px solid gray'}} width="900"/>
+1. On the left panel, select **Windows** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-windows.png')} alt="windows-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
-1. (Optional) Select the **Auto Configure Host and Process metrics data collection** checkbox to collect host and process metrics.
+1. Select the **Time Zone**. By default, the timezone is set to `(UTC) Etc/UTC`.
+1. (Optional) In the **Collector Settings**, select the **Ephemeral** checkbox to auto-delete your collector after 12 hours and select the **Locally Manage Collector** checkbox if you want to configure, maintain, and monitor the collector locally.
 1. Copy the command.
-1. Open PowerShell and execute the command in the PowerShell where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-6.png')} alt="windows-ui-installation-6.png" width="900" />
+1. Open PowerShell and execute the command in the PowerShell where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-install-command.png')} alt="windows-ui-installation-6.png" width="900" />
 1. Wait for the installation process to complete, then click **Next** to proceed.
+1. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
+
+If you choose to close this Source template creation screen, you can navigate back. [**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Source Template**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**. 
 
 ### Install Script
 
@@ -54,7 +58,7 @@ Get your [installation token](/docs/manage/security/installation-tokens) if you 
 Run the following command in the same PowerShell window, replacing `<TOKEN>` with your token from previous step:
 
 ```sh
-Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>" -Tags @{"host.group" = "default"; "deployment.environment" = "default"}
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>" -Tags @{"host.group" = "default"; "deployment.environment" = "default"}
 ```
 
 The script is going to perform the following operations:
@@ -142,6 +146,10 @@ NO_PROXY=sumologic.com
 
 :::info
 Restart `Sumo Logic OpenTelemetry Collector` (`OtelcolSumo`) service to apply the changes.
+:::
+
+:::note
+For running multiple collectors on the same host, you must configure each collector to use a unique credentials directory. To do this, set the `collector_credentials_directory` field in the Sumo Logic extension configuration to a different directory for each collector. This ensures that collectors do not share the same credentials. For more details, refer to the [Sumo Logic extension documentation](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.137.0/extension/sumologicextension).
 :::
 
 #### FIPS

@@ -120,7 +120,7 @@ The **Akamai DataStream - Video Streaming** dashboard displays details related t
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Video-Streaming.png')} alt="Akamai-DataStream-Video-Streaming"/>
 
-## Upgrading the Akamai DataStream app (Optional)
+## Upgrade/Downgrade the Akamai DataStream app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

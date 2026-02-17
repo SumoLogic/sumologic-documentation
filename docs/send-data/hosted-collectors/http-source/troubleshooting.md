@@ -54,7 +54,7 @@ To resolve the problem, report the problem to Heroku support, and provide the qu
 
 ## Ingest Budgets
 
-When an Ingest Budget instructs a Hosted Collector to stop collecting data HTTP Sources will drop data requests and still return a 200 response.
+ When an Ingest Budget instructs a Hosted Collector to stop collecting data, HTTP Sources will drop data requests and still return a `200` response.
 
 ## Missing or unsupported Content-Type header
 

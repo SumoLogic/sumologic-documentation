@@ -10,12 +10,12 @@ import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-This guide will walk you through setting up the [Sumo Logic Kubernetes solution](https://github.com/SumoLogic/sumologic-kubernetes-collection) in a few easy steps. This will:
+This guide will walk you through setting up the [Sumo Logic Kubernetes solution](https://github.com/SumoLogic/sumologic-kubernetes-collection) in a few steps. This will:
 
-* Install the [Sumo Logic Kubernetes Helm Chart](/docs/send-data/kubernetes) in your Kubernetes environment
-* Set up data collection for your Kubernetes environment (orchestration, infrastructure, and app data)
-* Install the relevant app dashboards to view data from your Kubernetes environment and share them with others in your org
-* Install the necessary alert monitors to get alerted of any issues
+* Install the [Sumo Logic Kubernetes Helm Chart](/docs/send-data/kubernetes) in your Kubernetes environment.
+* Set up data collection for your Kubernetes environment (orchestration, infrastructure, and app data).
+* Install the relevant app dashboards to view data from your Kubernetes environment and share them with others in your org.
+* Install the necessary alert monitors to get alerted of any issues.
 
 :::tip
 As an alternative to this quickstart, you can use our in-product onboarding to accomplish the same tasks in single setup workflow. Go to **App Catalog** > **Kubernetes** > **Begin Integration**.
@@ -23,22 +23,19 @@ As an alternative to this quickstart, you can use our in-product onboarding to a
 <img src={useBaseUrl('img/observability/k8s-onboarding.png')} alt="k8s-onboarding" />
 :::
 
-
 :::sumo Micro lesson
 
-Video: Quick Onboarding with Kubernetes.
-
-<Iframe url="https://www.youtube.com/embed/lLRtK1FaTgM?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
+<Iframe url="https://fast.wistia.net/embed/iframe/8yo13sfpl2?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="MicroLesson - Quick Onboarding with Kubernetes Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
 :::
 
@@ -90,22 +87,22 @@ values={[
 <TabItem value="helm">
 
 1. If this is your first time installing our helm chart, add the [Sumo Logic Helm repo](https://sumologic.github.io/sumologic-kubernetes-collection/):
-  ```shell
-  helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collection
-  helm repo update
-  ```
+   ```shell
+   helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collection
+   helm repo update
+   ```
 1. Get your [Sumo Logic Access ID and Access Key](/docs/manage/security/access-keys) and run the following command:
-  ```shell
-  helm upgrade --install my-release sumologic/sumologic \
-  --namespace=my-namespace \
-  --create-namespace \
-  --set sumologic.accessId=SUMO_ACCESS_ID \
-  --set sumologic.accessKey=SUMO_ACCESS_KEY \
-  --set sumologic.clusterName=Kubernetes_cluster \
-  --set sumologic.collectorName=kubernetes \
-  # To opt out of out-of-box alerts, omit the below line
-  --set "sumologic.setup.monitors.notificationEmails={EMAIL ADDRESS}"
-  ```
+    ```shell
+    helm upgrade --install my-release sumologic/sumologic \
+    --namespace=my-namespace \
+    --create-namespace \
+    --set sumologic.accessId=SUMO_ACCESS_ID \
+    --set sumologic.accessKey=SUMO_ACCESS_KEY \
+    --set sumologic.clusterName=Kubernetes_cluster \
+    --set sumologic.collectorName=kubernetes \
+    # To opt out of out-of-box alerts, omit the below line
+    --set "sumologic.setup.monitors.notificationEmails={EMAIL ADDRESS}"
+    ```
 
 :::tip Helm Values File
 
@@ -116,66 +113,64 @@ If you're adding additional configuration, we recommend using the [helm values f
 <TabItem value="yaml">
 
 1. Get your [Sumo Logic Access ID and Access Key](/docs/manage/security/access-keys) and run the following command to generate the YAML:
-  ```shell
-  kubectl run tools \
-  -i --quiet --rm \
-  --restart=Never \
-  --image sumologic/kubernetes-tools:2.9.0 -- \
-  template \
-  --name-template 'collection' \
-  --set sumologic.accessId='SUMO_ACCESS_ID' \
-  --set sumologic.accessKey='SUMO_ACCESS_KEY' \
-  --set sumologic.collectorName=kubernetes-2022-06-25T20:21:06.131Z \
-  # To opt out of out-of-box alerts, omit the below line
-  --set "sumologic.setup.monitors.notificationEmails={EMAIL ADDRESS}"
-  | tee sumologic.yaml
-  ```
+   ```shell
+   kubectl run tools \
+   -i --quiet --rm \
+   --restart=Never \
+   --image sumologic/kubernetes-tools:2.9.0 -- \
+   template \
+   --name-template 'collection' \
+   --set sumologic.accessId='SUMO_ACCESS_ID' \
+   --set sumologic.accessKey='SUMO_ACCESS_KEY' \
+   --set sumologic.collectorName=kubernetes-2022-06-25T20:21:06.131Z \
+   # To opt out of out-of-box alerts, omit the below line
+   --set "sumologic.setup.monitors.notificationEmails={EMAIL ADDRESS}"
+   | tee sumologic.yaml
+   ```
 1. Install the required CRDs and apply the generated YAML:
-  ```shell
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_probes.yaml \
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml \
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_prometheuses.yaml \
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml \
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml \
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml \
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_thanosrulers.yaml \
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagerconfigs.yaml \
-  kubectl apply -f sumologic.yaml
-  ```
+   ```shell
+   kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_probes.yaml \
+   kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml \
+   kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_prometheuses.yaml \
+   kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml \
+   kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml \
+   kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml \
+   kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_thanosrulers.yaml \
+   kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagerconfigs.yaml \
+   kubectl apply -f sumologic.yaml
+   ```
 
 </TabItem>
 </Tabs>
 
 ## Next Steps
 
-To get started, open a new [Kubernetes view](/docs/dashboards/explore-view/#kubernetes-views) and view your Kubernetes App Dashboards.
+To get started, open a new [Kubernetes view](/docs/dashboards/explore-view/#kubernetes-views) and view your Kubernetes appd dashboards.
 
 If you're looking to monitor specific aspects of Kubernetes control plane provided by different cloud vendors (such as GKE, AKS, EKS), you'll need to install those [Sumo Logic Kubernetes Apps](/docs/observability/kubernetes/apps).
 
 If you do not see data in Sumo Logic, review our [troubleshooting guide](/docs/send-data/kubernetes/troubleshoot-collection).
 
-## Additional Resources
+## Additional resources
 
-* [Full List of Configuration Options](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy/helm/sumologic#configuration)
+* [Full List of configuration options](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy/helm/sumologic#configuration)
 * [Share a Dashboard](/docs/dashboards/share-dashboard-new.md)
-* [Linking multiple dashboards](/docs/dashboards/link-dashboards.md)
+* [Linking Multiple Dashboards](/docs/dashboards/link-dashboards.md)
 
 
-### Kubernetes Partner Apps
+### Kubernetes partner apps
 
-We provide an array of Partner Apps designed specifically for Kubernetes. The following CI/CD Partner Apps are initially available.
+We provide an array of partner apps designed specifically for Kubernetes. The following CI/CD partner apps are initially available.
 
-![K8s_PartnerApps_CI-CD.png](/img/kubernetes/K8s_PartnerApps_CI-CD.png)
+<img src={useBaseUrl('img/kubernetes/K8s_PartnerApps_CI-CD.png')} alt="Kubernetes partner apps" style={{border: '1px solid gray'}} width="800" />
 
+### Sumo Logic security partner apps
 
-### Sumo Logic Security Partner Apps
+We also provide a selection of security-focused partner apps with specialized detection and investigation features.
 
-We also provide a selection of security-focused Partner Apps with specialized detection and investigation features.
+<img src={useBaseUrl('img/kubernetes/K8s_PartnerApps_Security.png')} alt="Sumo Logic Security partner apps" style={{border: '1px solid gray'}} width="800" />
 
-![K8s_PartnerApps_Security.png](/img/kubernetes/K8s_PartnerApps_Security.png)
-
-
-### Get Certified
+### Get certified
 
 Make the most of our Kubernetes Observability offerings by enrolling in our free training, where you'll learn more about using OpenTelemetry collectors, tracing agents, and our Reliability Management features. The Sumo Kubernetes Analyst Certification is a hands-on class that shows you how to expand your knowledge of Kubernetes by solving common use cases.
 

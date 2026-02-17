@@ -3,6 +3,8 @@ id: subqueries
 title: Subqueries
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Subqueries allow you to filter and evaluate conditions for a query when you may not be sure of the exact filter or condition criteria, and you can write a short query to set them for you.
 
 Subqueries use one query to pass results back to another query to narrow down or evaluate the set of messages that are searched in that query. Sometimes this offers a faster approach than a [`join`](/docs/search/search-query-language/search-operators/join), where you'd have to unite large sets of data and then search through the results to form a conclusion. If you can do some processing to narrow down the scope of data, you can form a subquery.
@@ -15,7 +17,7 @@ In a subquery, the parent query contains the main body of the query while the c
 * **Parent query**. Depends on the input from a child query or queries to finish its execution.
 
 :::note Limitations
-Subqueries are not supported in auto refresh dashboards, real-time Scheduled Searches, Field Extraction Rules, and Scheduled Views.
+Subqueries are not supported in auto refresh dashboards, Field Extraction Rules, and Scheduled Views.
 :::
 
 ## Syntax
@@ -148,7 +150,6 @@ The results only contain the values from the key-value pairs, the keys (field n
     * In Scheduled Views
     * Inside FERs
     * Auto Refresh Dashboards
-    * Real Time Scheduled Searches
 
 ## Example subquery 
 
@@ -172,7 +173,7 @@ _sourceCategory=reinvent/travel/checkout 243.63.233.30
 
 With a subquery, we can pass the IP address that is highlighted from a child query to this parent query as a keyword in its search expression.
 
-![clipboard_e5a557c6cd8e8097e79c1598416032d8a.png](/img/search/sub-queries/step1.png)
+<img src={useBaseUrl('img/search/sub-queries/step1.png')} alt="Subquery example" style={{border: '1px solid gray'}} width="800" />
 
 ### Step 2: Create a child query
 
@@ -186,7 +187,7 @@ _sourceCategory=reinvent/travel/nginx
 
 The result of this query has the IP address (243.63.233.30) we want to pass to the parent query.
 
-![clipboard_ef2185c81c2d257a45fd46a6f5b9c178c.png](/img/search/sub-queries/step2.png)
+<img src={useBaseUrl('img/search/sub-queries/step2.png')} alt="Child subquery example" style={{border: '1px solid gray'}} width="800" />
 
 ### Step 3: Create a subquery
 
@@ -217,7 +218,7 @@ _sourceCategory=reinvent/travel/checkout
 
 Since we only want to pass the IP address back as a keyword we specified the `src_ip` field and the `keywords` argument with `compose`.
 
-![clipboard_e7da7cf36d758ecbd8383b8f6ff641261.png](/img/search/sub-queries/keywords.png)
+<img src={useBaseUrl('img/search/sub-queries/keywords.png')} alt="Keyword example" style={{border: '1px solid gray'}} width="800" />
 
 #### Without keywords
 
@@ -258,7 +259,7 @@ _sourceCategory=reinvent/travel/checkout
 | count by funcname
 ```
 
-![clipboard_e80b31772b236645f5e6ae1417b9c7653.png](/img/search/sub-queries/where.png)
+<img src={useBaseUrl('img/search/sub-queries/where.png')} alt="Where subquery example" style={{border: '1px solid gray'}} width="800" />
 
 #### If
 
@@ -376,7 +377,7 @@ _sourceCategory=search "error while retrying to deploy index"
 
 ### Check Malicious Activity with Subquery
 
-The following search allows a security analyst how to track logs related to a malicious IP address that was flagged by Amazon GuardDuty and also by a CrowdStrike Threat feed. The subquery is returning the field `src_ip` with the IP addresses deemed as threats to the parent query, note that the keywords option was not used so the parent query will expect a field src_ip to exist. The results will include logs from the weblogs sourceCategory that have a `src_ip` value that was deemed a threat from the subquery.
+The following search allows a security analyst to track logs related to a malicious IP address that was flagged by Amazon GuardDuty and also by a [threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) feed. The subquery is returning the field `src_ip` with the IP addresses deemed as threats to the parent query, note that the keywords option was not used so the parent query will expect a field src_ip to exist. The results will include logs from the weblogs sourceCategory that have a `src_ip` value that was deemed a threat from the subquery.
 
 ```sql
 _sourceCategory=weblogs
@@ -389,6 +390,19 @@ _sourceCategory=weblogs
 | where threatlevel = "high"
 | compose src_ip]
 ```
+<!-- Per DOCS-643, replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
+```sql
+_sourceCategory=weblogs
+[subquery:_sourceCategory="Labs/SecDemo/guardduty" "EC2 Instance" "communicating on an unusual server port 22"
+| json field=_raw "service.action.networkConnectionAction.remoteIpDetails" as remoteIpDetails
+| json field=_raw "service.action.networkConnectionAction.connectionDirection" as connectionDirection
+| where connectionDirection = "OUTBOUND"
+| json field=remoteipdetails "ipAddressV4" as src_ip
+| threatlookup singleIndicator threat| if (_threatlookup.confidence >= 85, "high", if (_threatlookup.confidence >= 50, "medium", if (_threatlookup.confidence >= 15, "low", if (_threatlookup.confidence >= 0, "unverified", "Unknown")))) as malicious_confidence
+| where malicious_confidence = "high"
+| compose src_ip]
+```
+-->
 
 ### Reference data from child query using save and lookup
 
@@ -435,12 +449,12 @@ These concepts are covered in [How to Build a Search](/docs/search/get-started-w
 
 * Your queries will perform better if you have the child query in the search expression (before the first pipe, `|`), rather than having it in the filter clause. The below examples highlight this point. In the first, we use subquery before the first pipe and it executes in 17 seconds:  
 
-    ![17seconds.png](/img/search/sub-queries/17seconds.png)  
+    <img src={useBaseUrl('img/search/sub-queries/17seconds.png')} alt="17 seconds example" style={{border: '1px solid gray'}} width="800" />
 
     `compare` that to where subquery is used in the where clause and you
     can see it takes 29 seconds to execute:  
 
-    ![29Seconds.png](/img/search/sub-queries/29Seconds.png)
+    <img src={useBaseUrl('img/search/sub-queries/29Seconds.png')} alt="29 seconds example" style={{border: '1px solid gray'}} width="800" />
 
 * If the child query is used to build the filter clause, try having the filter clause close to the search expression (rather than having it further down in the query to improve performance. Your query should be more like the one on the right.
 
@@ -465,7 +479,7 @@ These concepts are covered in [How to Build a Search](/docs/search/get-started-w
 
 * Run the child query in a separate tab first. Append the compose operator at the end of that query to check the results that are returned. When you are happy with the query, copy it into your main subquery. This pre-testing reduces the chances of creating queries that generate incorrect results. The screenshot shows how you can build your child query in a separate tab using compose operator.
 
-    ![GuardDuty.png](/img/search/sub-queries/GuardDuty.png)
+    <img src={useBaseUrl('img/search/sub-queries/GuardDuty.png')} alt="GuardDuty example" style={{border: '1px solid gray'}} width="800" />
 
 * If the subquery is generating too many records, try reducing the time range of the query.
 * If the subquery returns more than 10000 results or exceeds the 100MB memory limit, you will receive the following error message:  

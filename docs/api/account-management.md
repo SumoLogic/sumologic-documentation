@@ -11,7 +11,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/manage.png')} alt="icon" width="50"/>
 
-The Account Management API allows you to manage the custom subdomain for the URL used to access your Sumo Logic account. For more information, see [Manage Organization](/docs/manage/manage-subscription/manage-org-settings#change-account-subdomain).
+The Account Management API allows you to manage the custom subdomain for the URL used to access your Sumo Logic account. For more information, see [Manage Organization](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings#change-account-subdomain).
 
 ## Documentation
 
@@ -25,17 +25,17 @@ The Account Management API allows you to manage the custom subdomain for the URL
 | DE         | https://api.de.sumologic.com/docs/#tag/accountManagement  |
 | EU         | https://api.eu.sumologic.com/docs/#tag/accountManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/accountManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/accountManagement  |
 | JP         | https://api.jp.sumologic.com/docs/#tag/accountManagement  |
 | KR         | https://api.kr.sumologic.com/docs/#tag/accountManagement  |
 | US1        | https://api.sumologic.com/docs/#tag/accountManagement     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/accountManagement |
 
-
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * View Account Overview
-
--->
+ 
+:::note
+You do not require any capabilities to get overview of account status (/v1/account/status).
+:::

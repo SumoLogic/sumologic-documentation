@@ -1,0 +1,24 @@
+{
+	"api.version": "v1",
+	"source": {
+		"config": {
+                	"name": "Sumologic Collection",
+                    "deployment": "https://api.sumologic.com/api/",
+                    "accessId": "sug2Ihtaa1g6xk",
+                    "accessKey": "00xxxxxx-xxxx-xxx2-9316-7xx42xxx1x41",
+                    "collectorType": [
+                                        "installed",
+                                        "dead",
+                                        "hosted",
+                                        "alive"
+                                    ],
+                    "collectSources": true,
+                    "pollingIntervalCollectorHour": "12",
+                    "pollingIntervalSourceMin": "5"
+
+},
+		            "schemaRef": {
+            		            "type": "Sumo Collection"
+        	                     },
+        	        "sourceType": "Universal"
+}}

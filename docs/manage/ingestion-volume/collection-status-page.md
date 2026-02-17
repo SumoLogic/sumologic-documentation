@@ -4,18 +4,21 @@ title: Collection Status Page
 description: Provides a visual snapshot of the message history for your deployment, and a message volume histogram for each Collector.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Status page provides a message volume history for your account, as well as a message volume histogram for each Collector, giving you immediate visual feedback about traffic spikes or collection issues. To see statistics for any bar in the histogram, hover your mouse pointer over the area of interest.
 
 When you first install a Collector it is common to configure Sources to collect some historical data, rather than from the moment of installation. In this case, the status page shows a spike in message volume and then levels out as collection reaches a steady state. For example, a local log file can contain millions of log messages. When the Collector is initialized, it quickly gathers all those logs and sends them to Sumo Logic resulting in a traffic spike. After the initial collection, the Collector continues to tail the file, reading from the end of the file as new entries are created, and sends a smaller number of new log messages.
 
-![Status tab](/img/manage/ingestion-volume/collection-status.png)
+<img src={useBaseUrl('img/manage/ingestion-volume/collection-status.png')} alt="Status tab" style={{border: '1px solid gray'}} width="800" />
 
 * **A.** Select to show all, running, or stopped Collectors.  
 * **B.** Select how many columns of Collectors are displayed.  
 * **C.** Select the time range of data volume to view.
 
-To view the Status page, go to **Manage Data** > **Collection** > **Status**.
+[**New UI**](/docs/get-started/sumo-logic-ui). To view the status page, In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Status**. You can also click the **Go To...** menu at the top of the screen and select **Status**.
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view the status page, in the main Sumo Logic menu select **Manage Data > Collection > Status**. 
 
 ## Change the scale or timeframe for a Collector
 

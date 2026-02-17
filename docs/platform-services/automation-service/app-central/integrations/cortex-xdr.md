@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cortex-xdr.png')} alt="cortex-xdr" width="100"/>
 
-***Version: 1.4  
-Updated: Mar 4, 2024***
+***Version: 1.5  
+Updated: Oct 15, 2024***
 
 Query data and utilize actions in Palo Alto Networks Cortex XDR.
 
@@ -35,6 +35,31 @@ Query data and utilize actions in Palo Alto Networks Cortex XDR.
 
 XDR
 
+## Configure Cortex XDR in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Cortex XDR API URL**. Enter your Cortex XDR API URL, for example, `https://api-test-dev.xdr.us.paloaltonetworks.com/public_api/v1/`
+
+* **API Key**. Enter your [Cortex API key](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Get-Started-with-Cortex-XDR-APIs).
+
+* **API Key ID**. Enter key ID associated with the API key.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cortex/cortex-configuration.png')} style={{border:'1px solid gray'}} alt="Cortex XDR configuration" width="400"/>
+
+For information about Cortex XDR, see [Cortex XDR documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Get-Started-with-Cortex-XDR-APIs).
+
 ## Change Log
 
 * July 20, 2021 - First upload
@@ -45,3 +70,4 @@ XDR
     + Alerts Cortex XDR Daemon: refactored
 * July 11, 2023 (v1.3) - Removed leading/trailing spaces
 * March 4, 2024 (v1.4) - Updated code for compatibility with Python 3.12
+* October 15, 2024 (v1.5) - Fixed the timeout error.

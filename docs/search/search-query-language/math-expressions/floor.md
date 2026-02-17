@@ -17,9 +17,9 @@ floor(<x>) as <field>
 ## Example
 
 ```sql
-floor(1.5) as v // v = 1
+* | floor(1.5) as v
 ```
 
 ```sql
-floor(-1.5) as v // v = -2
+* | floor(-1.5) as v
 ```

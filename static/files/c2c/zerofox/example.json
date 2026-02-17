@@ -1,0 +1,16 @@
+{
+	"api.version": "v1",
+	"source": {
+		"config": {
+			"name": "Zerofox",
+			"username": "my-user",
+			"apiKey": "xxxxxxxx",
+			"userSourceId": "ZeroFox Intel",
+			"pollingIntervalHour": "1h"
+		},
+		"schemaRef": {
+			"type": "ZeroFox Threat Intel"
+		},
+		"sourceType": "Universal"
+	}
+}

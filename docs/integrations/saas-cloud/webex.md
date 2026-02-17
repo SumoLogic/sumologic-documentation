@@ -78,17 +78,33 @@ _sourceCategory="cisco_webex"
 | count
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up the Webex Cloud-to-Cloud Integration for the Webex app, follow the instructions provided [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source/). These instructions will guide you through the process of creating a source using the Webex Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Webex app is properly integrated and configured to collect and analyze your Webex data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Webex app
+<CollectionConfiguration/>
 
-This section has instructions for installing the Webex app for Sumo Logic and descriptions of each of the dashboards.
+:::important
+Use the [Cloud-to-Cloud Integration for Webex](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Webex app is properly integrated and configured to collect and analyze your Webex data.
+:::
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+### Create a new collector and install the app
 
-<AppInstall2/>
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Webex dashboards​
 
@@ -104,7 +120,7 @@ The **Webex - Overview** dashboard provides a holistic view of all critical acti
 
 The **Webex - Security Events** dashboard in Sumo Logic offers a detailed view of security-related activities within the Webex environment. It tracks changes in Multi-Factor Authentication (MFA) status, remote access events, login activities, and authorization events over time. The dashboard includes sections for recent login and authorization code events, recent deactivated and reactivated users, and activities on allow and deny lists. Additionally, it provides insights into external admin additions and accounts assigned to external users. This dashboard provides information about potential security issues and helps in proactive incident management. <br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Webex/Webex-Security-Events.png' alt="Webex-Security-Events" />
 
-## Upgrading the Webex app (Optional)
+## Upgrade/Downgrade the Webex app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

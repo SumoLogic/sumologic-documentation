@@ -27,7 +27,7 @@ The Sumo Logic app for Azure SQL app uses the following log types:
 * SQL Security Audit
 * Activity Logs
 
-For details on Azure SQL logs and metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?view=azuresql&tabs=azure-portal#metrics-and-logs-available).
+**Azure SQL Metrics** are available in [Microsoft.Sql/servers/databases](https://learn.microsoft.com/en-us/azure/azure-sql/database/monitoring-sql-database-azure-monitor-reference?view=azuresql#supported-metrics-for-microsoftsqlserversdatabases), [Microsoft.Sql/servers/elasticpools](https://learn.microsoft.com/en-us/azure/azure-sql/database/monitoring-sql-database-azure-monitor-reference?view=azuresql#supported-metrics-for-microsoftsqlserverselasticpools), [Microsoft.Sql/managedInstances](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/monitoring-sql-managed-instance-azure-monitor-reference?view=azuresql#supported-metrics-for-microsoftsqlmanagedinstances) namespaces. For more details on Azure SQL logs and metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?view=azuresql&tabs=azure-portal#metrics-and-logs-available).
 
 
 ### Sample log messages
@@ -57,21 +57,21 @@ For details on Azure SQL logs and metrics, refer to the [Azure documentation](ht
 
 ```json title="Database Wait Statistics Event"
 {
-	"LogicalServerName":"npande-test-db-server",
-	"SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a"",""ResourceGroup"":""npandeTestDBResGrp"",""time"":""2018-07-09T05":"13":34.520Z",""resourceId"":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a"/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB",
-	"category":"DatabaseWaitStatistics",
-	"operationName":"DatabaseWaitStatistcsEvent",
-	"properties":{
-		"ElasticPoolName":"",
-		"DatabaseName":"npandeTestDB",
-		"start_utc_date":"2018-07-09T05:13:34.520Z",
-		"end_utc_date":"2018-07-09T05:18:36.050Z",
-		"wait_type":"WRITELOG",
-		"delta_max_wait_time_ms":0,
-		"delta_signal_wait_time_ms":0,
-		"delta_wait_time_ms":12,
-		"delta_waiting_tasks_count":2
-	}
+  "LogicalServerName":"npande-test-db-server",
+  "SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a"",""ResourceGroup"":""npandeTestDBResGrp"",""time"":""2018-07-09T05":"13":34.520Z",""resourceId"":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a"/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB",
+  "category":"DatabaseWaitStatistics",
+  "operationName":"DatabaseWaitStatistcsEvent",
+  "properties":{
+    "ElasticPoolName":"",
+    "DatabaseName":"npandeTestDB",
+    "start_utc_date":"2018-07-09T05:13:34.520Z",
+    "end_utc_date":"2018-07-09T05:18:36.050Z",
+    "wait_type":"WRITELOG",
+    "delta_max_wait_time_ms":0,
+    "delta_signal_wait_time_ms":0,
+    "delta_wait_time_ms":12,
+    "delta_waiting_tasks_count":2
+  }
 }
 ```
 
@@ -92,108 +92,23 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 * Activity Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/). It is recommended to create a separate source for activity logs. If you are already collecting these logs, you can skip this step.
-* Metrics collection using our [HTTP Logs and Metrics source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/) via Azure Functions deployed using the ARM template.
+* Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
 You must explicitly enable diagnostic settings for each Azure SQL database that you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/SQL/Logs`, `Azure/SQL/ActivityLogs`, and `Azure/SQL/Metrics`.
 
-### Configure field in field schema
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
-2. Search for following fields:
-   - `tenant_name`. This field is tagged at the collector level and you can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-   - `location`. The region to which the resource name belongs to.
-   - `subscription_id`. Id associated with a subscription where resource is present.
-   - `resource_group`. The resource group name where the Azure resource is present.
-   - `provider_name`. Azure resource provider name (for example, Microsoft.SQL).
-   - `resource_type`. Azure resource type (for example, SERVERS).
-   - `resource_name`. The name of the resource (for example, Azure SQL Server name).
-   - `service_type`. Type of the service that can be accessed from with a azure resource (for example, DATABASES).
-   - `service_name`. Services that can be accessed from within an Azure resource (for example, Azure SQL database name in Azure SQL Server).
+###  Configure collector
 
-3. Create the fields if it is not present. Refer to [create and manage fields](/docs/manage/fields/#manage-fields).
-
-### Configure Field Extraction Rules
-
-Create a Field Extraction Rule (FER) by following the instructions [here](/docs/manage/field-extractions/create-field-extraction-rule/). If the FER already exists with same name, then skip this step.
-
-* **Azure Location Extraction FER**
-
-   ```sql
-   Rule Name: AzureLocationExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
-
-   ```sql title="Parse Expression"
-   json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
-   | replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
-   | if (!isBlank(resourceLocation), resourceLocation, location) as location
-   | if (!isBlank(service_region), service_region, location) as location
-   | if (isBlank(location), "global", location) as location
-   | fields location
-   ```
-
-* **Resource ID Extraction FER**
-
-   ```sql
-   Rule Name: AzureResourceIdExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
-
-   ```sql title="Parse Expression"
-   json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
-   | if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
-   | toUpperCase(resourceId) as resourceId
-   | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
-   | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
-   | parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
-   | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
-   | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
-   | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
-   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
-   ```
-### Configure metric rules
-
-  * **Azure Observability Metadata Extraction Service Level**
-
-      If this rule already exists, there's no need to create it again.
-
-      ```sql
-      Rule Name: AzureObservabilityMetadataExtractionServiceLevel
-      ```
-
-      ```sql title="Metric match expression"
-      resourceId=/SUBSCRIPTIONS/*/RESOURCEGROUPS/*/PROVIDERS/*/*/*/*/* tenant_name=*
-      ```
-      | Fields extracted | Metric rule    |
-      |:------------------|:----------------|
-      | subscription_id  | $resourceId._1 |
-      | resource_group   | $resourceId._2 |
-      | provider_name    | $resourceId._3 |
-      | resource_type    | $resourceId._4 |
-      | resource_name    | $resourceId._5 |
-      | service_type     | $resourceId._6 |
-      | service_name     | $resourceId._7 |
-
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 
 ### Configure metrics collection
 
-In this section, you will configure a pipeline to send metrics from Azure Monitor to an Event Hub, then to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic.
+import MetricsSource from '../../reuse/metrics-source.md';
 
-1. Create hosted collector and tag `tenant_name` field.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Storage Tag Tenant Name" style={{border: '1px solid gray'}} width="800" />
-1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
-1. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-1. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure SQL database that you want to monitor.
-   * Choose `Stream to an event hub` as destination.
-   * Select all the metric types under `Metrics` section.
-   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
-
-   ![diagnosticsetting.png](/img/send-data/azuresqldatabasediagnosticsetting.png)
+<MetricsSource/>
 
 ### Configure logs collection
-
 
 #### Diagnostic logs
 
@@ -201,24 +116,25 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 1. To set up the Azure Event Hubs source in Sumo Logic, refer to the [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics). Perform below steps for each Azure SQL database that you want to monitor.
-   * Choose `Stream to an event hub` as the destination.
-   * Select all the log types except `SQL Security Audit Event`.
-   * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+    * Choose `Stream to an event hub` as the destination.
+    * Select all the log types except `SQL Security Audit Event`.
+    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Configure-Diagnostic-Logs.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="800" />
+1. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Database for MySql Tag Location" style={{border: '1px solid gray'}} width="400" />
 
-   <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Configure-Diagnostic-Logs.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="800" />
-
-1. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Storage Tag Location" style={{border: '1px solid gray'}} width="400" />
+:::note
+Auto Tuning logs will be collected when Auto Tuning feature is enabled in Azure SQL. Click [here](https://learn.microsoft.com/en-us/azure/azure-sql/database/automatic-tuning-enable?view=azuresql) to learn more on how to enable this feature.
+:::
 
 #### Enable SQL Security Audit logs
 In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
 1. To enable the Audit logs in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/auditing-setup?view=azuresql#configure-auditing-for-your-server). Perform below steps for each Azure SQL database that you want to monitor.
-   * Choose `Event Hub` as the destination. Refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/auditing-setup?view=azuresql#audit-to-event-hubs-destination).
-   * Use the same Event hub namespace and Event hub name as configured in `Diagnostic logs` in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Configure-Auditing.png')} alt="Configure Auditing" style={{border: '1px solid gray'}} width="800" />
+    * Choose `Event Hub` as the destination. Refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/auditing-setup?view=azuresql#audit-to-event-hubs-destination).
+    * Use the same Event hub namespace and Event hub name as configured in `Diagnostic logs` in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Configure-Auditing.png')} alt="Configure Auditing" style={{border: '1px solid gray'}} width="800" />
 1. By default, auditing is enabled only for the below action groups. Refer to [Azure help](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/sql-server-audit-action-groups-and-actions) for more details on supported action groups and actions.
-   * "SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP"
-   * "FAILED_DATABASE_AUTHENTICATION_GROUP"
-   * "BATCH_COMPLETED_GROUP"
+    * "SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP"
+    * "FAILED_DATABASE_AUTHENTICATION_GROUP"
+    * "BATCH_COMPLETED_GROUP"
 
 Follow the below command to update the audit policy with new actions using Azure CLI. If you want to use any other mechanism, refer to the [Microsoft documentation](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification?view=sql-server-ver16).
 ).
@@ -233,14 +149,11 @@ By default, all the tuning options are not enabled, you can enable them at the s
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-SQL-Automated-Tuning.png')} alt="Configure Automated Tuning" style={{border: '1px solid gray'}} width="800" />
 
-#### Activity Logs
+#### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). If you are already collecting activity logs for a subscription, do not perform this step.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
-:::
-
+<ActivityLogs/>
 
 ##### Enabling Microsoft Defender for Cloud
 For Security events, make sure you enable [Microsoft Defender for Cloud](https://learn.microsoft.com/en-us/azure/azure-sql/database/azure-defender-for-sql?view=azuresql#enable-microsoft-defender-for-sql). If you have an existing settings, click **Edit Settings**.
@@ -253,15 +166,27 @@ In **Defender Plans** settings page turn on the **Databases** status under **Clo
 
 This section provides instructions on how to install the Azure SQL app, and shows examples of each of the preconfigured dashboards you can use to analyze your data.
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstall2/>
+<AppInstallIndexV2/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+- `location`. The region the resource name belongs to.
+- `subscription_id`. ID associated with a subscription where the resource is present.
+- `resource_group`. The resource group name where the Azure resource is present.
+- `provider_name`. Azure resource provider name (for example, Microsoft.Network).
+- `resource_type`. Azure resource type (for example, storage accounts).
+- `resource_name`. The name of the resource (for example, storage account name).
+- `service_type`. Type of the service that can be accessed with an Azure resource.
+- `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
 ## Viewing the Azure SQL dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
-<ViewDashboards/>
+<ViewDashboardsIndex/>
 
 ### Overview
 
@@ -460,7 +385,7 @@ For more information about the statistics presented on the QueryStoreWaitStats d
 
 **Wait Category Trend.** A stacked column chart that shows the count of wait events by category per timeslice over the last 24 hours.
 
-**Total Wait Time for Query by Wait Category**. A stacked column chart that shows, for each query, the length of time a query spent waiting in each Wait Category over the last 24 hours.  
+**Total Wait Time for Query by Wait Category**. A stacked column chart that shows, for each query, the length of time a query spent waiting in each Wait Category over the last 24 hours.
 
 **Wait Details**. The table displays wait statistics as encountered by queries on a given database, residing on a given logical server in the last 24 hours.
 
@@ -495,7 +420,7 @@ For more information about the data presented on the Timeouts dashboard, see [Ti
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Timeouts.png')} alt="Timeouts" />
 
-**Timeouts**. The count of timeouts over the last 7 days.  
+**Timeouts**. The count of timeouts over the last 7 days.
 
 **Top 10 Error States**. A table that lists the top 10 errors states that have occurred over the last 7 days and the count of errors in each state.
 
@@ -508,8 +433,8 @@ For more information about the data presented on the Timeouts dashboard, see [Ti
 The **Azure SQL - Health** dashboard provides information of any service health incidents or resource health events associated with SQL database service or resource in your azure account.
 
 Use this dashboard to:
-    * View recent resource and service health incidents.
-    * View distribution of service and resource health by incident type.
+* View recent resource and service health incidents.
+* View distribution of service and resource health by incident type.
 
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Health.png')} alt="Azure SQL health dashboard" style={{border: '1px solid gray'}} width="800" />
@@ -519,11 +444,11 @@ Use this dashboard to:
 The **Azure SQL - Policy and Recommendations** dashboard provides information of all effect action operations performed by Azure Policy and recommendations events from Azure Advisor.
 
 Use this dashboard to:
-    * Monitor policy events with warnings and errors.
-    * View recent failed policy events.
-    * View total recommendation events.
-    * Identify High Impact recommendations.
-    * View recent recommendation events and navigate to the affected resource.
+* Monitor policy events with warnings and errors.
+* View recent failed policy events.
+* View total recommendation events.
+* Identify High Impact recommendations.
+* View recent recommendation events and navigate to the affected resource.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Policy-and-Recommendations.png')} alt="Azure SQL - Policy and Recommendations dashboard" style={{border: '1px solid gray'}} width="800" />
 
@@ -533,9 +458,9 @@ Use this dashboard to:
 The **Azure SQL - Administrative Operations** dashboard provides details on read/write/delete specific changes, different operations used, top 10 operations that caused most errors, and users performing admin operations.
 
 Use this dashboard to:
-    * Identify top users performing administrative operations.
-    * View Top 10 operations that caused the most errors.
-    * View recent read, write, and delete operations.
+* Identify top users performing administrative operations.
+* View Top 10 operations that caused the most errors.
+* View recent read, write, and delete operations.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Administrative-Operations.png')} alt="Azure SQL Administrative Operations dashboard" style={{border: '1px solid gray'}} width="800" />
 
@@ -544,9 +469,9 @@ Use this dashboard to:
 The **Azure SQL - SQL Security Audit** dashboard provides audit information on server level events and database level events including DML and DDL statements executed.
 
 Use this dashboard to:
-    * Identify failed login and their geo locations.
-    * View recent DDL, DML, DQL, and TCL statements.
-    * Track who (host name, service principal, ip address) and what (object, database, server) information associated with any database operation.
+* Identify failed login and their geo locations.
+* View recent DDL, DML, DQL, and TCL statements.
+* Track who (host name, service principal, ip address) and what (object, database, server) information associated with any database operation.
 
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-SQL-Security-Audit.png')} alt="Azure SQL Security Audit dashboard" style={{border: '1px solid gray'}} width="800" />
@@ -556,13 +481,13 @@ Use this dashboard to:
 The **Azure SQL - Automatic Tuning** dashboard provides information about automatic tuning recommendations for a database.
 
 Use this dashboard to:
-    * View recent changes in tuning configuration.
-    * View create index recommendations.
-    * View drop index recommendations.
+* View recent changes in tuning configuration.
+* View create index recommendations.
+* View drop index recommendations.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-SQL/Azure-SQL-Automatic-Tuning.png')} alt="Azure SQL Automated Tuning dashboard" style={{border: '1px solid gray'}} width="800" />
 
-## Upgrading the Azure SQL app (Optional)
+## Upgrade/Downgrade the Azure SQL app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
@@ -573,3 +498,32 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Create monitors for Azure SQL
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure SQL alerts
+
+These alerts are metrics-based and will work for Azure SQL.
+
+| Alert Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure SQL - Availability` | This monitor triggers alerts when Availability drops below 100% in Azure SQL. | Count < 100 | Count >= 100 |
+| `Azure SQL - Data space used percent` | This monitor triggers alerts when High Data space used percent is detected in Azure SQL. | Count > 80 | Count =< 80 |
+| `Azure SQL - Deadlocks` | This monitor triggers alerts when deadlock is detected in Azure SQL. | Count > 1 | Count =< 1 |
+| `Azure SQL - Failed Connections` | This monitor triggers alerts when Failed Connections are detected in Azure SQL. | Count > 1 | Count =< 1 |
+| `Azure SQL - High Cpu Usage` | This monitor triggers alerts when high CPU usage is detected in Azure SQL. | Count >= 90 | Count < 90 |
+| `Azure SQL - High SQL instance CPU Usage` | This monitor triggers alerts when High Instance CPU usage is detected in Azure SQL. | Count >= 90 | Count < 90 |
+| `Azure SQL - Data IO percentage` | This monitor triggers alerts when High Data IO percentage is detected in Azure SQL. | Count > 90 | Count =< 90 |
+| `Azure SQL - DTU Percentage` | This monitor triggers alerts when High average DTU consumption percentage is detected in Azure SQL. | Count > 80 | Count =< 80 |
+| `Azure SQL - Tempdb Percent Log Used` | This monitor triggers alerts when High Tempdb Percent Log Usage is detected in Azure SQL. | Count > 60 | Count =< 60 |
+| `Azure SQL - High Worker Usage` | This monitor triggers alerts when High Worker Usage is detected in Azure SQL. | Count > 60 | Count =< 60 |
+
+## Troubleshooting
+
+### Metrics collection via Azure Metrics Source
+
+To troubleshoot metrics collection via Azure Metrics Source, follow the instructions in [Troubleshooting Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/#troubleshooting).

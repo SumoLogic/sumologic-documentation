@@ -10,14 +10,13 @@ You can visualize your Traces data through filtered trace lists and icicle chart
 
 ## Traces page
 
- [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Traces, go to the **Home** screen and select **Traces**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
 
- [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
-
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Traces, go to the **Home** screen and select **Traces**.
 
 Here, you can run a Trace query, view your **Trace Duration Breakdown Chart**, and explore your **Traces matching queries** table.
 
-![trace-page.png](/img/apm/traces/trace-page.png)
+<img src={useBaseUrl('img/apm/traces/trace-page.png')} alt="Trace page" style={{border: '1px solid gray'}} width="800" />
 
 ### Trace queries
 
@@ -40,15 +39,15 @@ As well as any other metadata standard or custom we may find in spans. All metad
 
 #### Write a Trace query
 
-To write a Trace query, click on the **Choose filters** input line. You can select the desired filter type and value from the dropdown menu or manually type them. Multiple filters are allowed in a query row, `AND` is implicit.<br/>![filters.png](/img/apm/traces/trace-filters.png)
+To write a Trace query, click on the **Choose filters** input line. You can select the desired filter type and value from the dropdown menu or manually type them. Multiple filters are allowed in a query row, `AND` is implicit.<br/><img src={useBaseUrl('img/apm/traces/trace-filters.png')} alt="Filters" style={{border: '1px solid gray'}} width="800" />
 
-You can add more queries by clicking the **+** icon on the right of the query row.<br/>![Add trace query.png](/img/apm/traces/Add-trace-query.png)
+You can add more queries by clicking the **+** icon on the right of the query row.<br/><img src={useBaseUrl('img/apm/traces/Add-trace-query.png')} alt="Add trace query" style={{border: '1px solid gray'}} width="200" />
 
-Each query is labeled with a letter. In the following screenshot, the first query on the top row is labeled **#A** and the second query is labeled **#B**.<br/>![trace-queries.png](/img/apm/traces/trace-queries.png)
+Each query is labeled with a letter. In the following screenshot, the first query on the top row is labeled **#A** and the second query is labeled **#B**.<br/><img src={useBaseUrl('img/apm/traces/trace-queries.png')} alt="Trace queries" style={{border: '1px solid gray'}} width="800" />
 
 #### Visibility
 
-Use the eye icon to toggle the visibility of results from a query. When hidden, the traces returned from the query in the row are not displayed in your results.<br/>![trace-hide-show.png](/img/apm/traces/trace-hide-show.png)
+Use the eye icon to toggle the visibility of results from a query. When hidden, the traces returned from the query in the row are not displayed in your results.<br/><img src={useBaseUrl('img/apm/traces/trace-hide-show.png')} alt="Trace hide show" style={{border: '1px solid gray'}} width="800" />
 
 #### Set Time Range
 
@@ -60,7 +59,7 @@ Queries above 7 days may be slower to load.
 
 #### Refresh results
 
-The results are not automatically updated. If you want to refresh traces, click the refresh button on the top right corner of the page.<br/>![Refresh.png](/img/apm/traces/Refresh.png)
+The results are not automatically updated. If you want to refresh traces, click the refresh button on the top right corner of the page.<br/><img src={useBaseUrl('img/apm/traces/Refresh.png')} alt="Refresh" style={{border: '1px solid gray'}} width="600" />
 
 ### Trace Query Visualizations
 
@@ -127,7 +126,7 @@ To view the Trace Query Visualization charts:
 
 You can add Trace Duration Breakdown Chart as a dashboard panel to a new or existing dashboard. From a new dashboard:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**.  
 1. Click the **Traces** panel type.
 1. Add the required trace query filters representing similar traces of the same transaction.
 1. Under **Visual Settings** > **Chart type**, select **Trace Query Visualizations**.
@@ -143,22 +142,22 @@ In the **Traces matching queries** table, Traces are displayed in the following
 | Started At | `07/27/2020 09:01:04.533` | When the trace started. |
 | Duration | `12.582 ms` | The amount of time the trace spans.  |
 | Number of spans | `35` | A trace consists of spans. This number tells you how many spans are in the trace. |
-| Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![img](/img/apm/traces/span-hover-view.png) |
+| Duration Breakdown | <img src={useBaseUrl('img/apm/traces/breakdown.png')} alt="Breakdown" style={{border: '1px solid gray'}} width="300" /> | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Duration breakdown legend" style={{border: '1px solid gray'}} width="300" /> |
 | Number of errors | `0` | The number of errors in the trace. |
-| Status | `200` | The HTTP status code of the trace. A menu is available in this column when hovering on a row. The menu has an option to **Show similar traces**.<br/>![img](/img/apm/traces/similar-traces-menu.png) |
+| Status | `200` | The HTTP status code of the trace. A menu is available in this column when hovering on a row. The menu has an option to **Show similar traces**.<br/><img src={useBaseUrl('img/apm/traces/similar-traces-menu.png')} alt="Show similar traces" style={{border: '1px solid gray'}} width="200" /> |
 
 :::note
 Changes to your View are preserved when switching between other tabs.
 :::
 
-Next, open Trace View by clicking on any row.<br/> ![traces-table-row.png](/img/apm/traces/traces-table-row.png)
+Next, open Trace View by clicking on any row.<br/><img src={useBaseUrl('img/apm/traces/traces-table-row.png')} alt="Traces table row" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Trace View
 
 Trace View shows the time flow of a single trace by its spans, and displays the relationships between the spans across your transaction.
 
-![trace-view.png](/img/apm/traces/trace-view.png)
+<img src={useBaseUrl('img/apm/traces/trace-view.png')} alt="Trace view" style={{border: '1px solid gray'}} width="800" />
 
  With log drilldowns and infrastructure metrics, Trace View helps you:
 * Investigate the lifetime of your transactions
@@ -167,11 +166,11 @@ Trace View shows the time flow of a single trace by its spans, and displays the 
 * Visualize all of your different services, each represented in a different color
 
 Navigation tips:
-* Zoom in and out on spans using your mouse to drag and pan, or use the buttons in the bottom left, where you can also reset the view.<br/> <img src={useBaseUrl('img/apm/traces/trace-zooms.png')} alt="trace-zooms.png" width="100"/>
+* Zoom in and out on spans using your mouse to drag and pan, or use the buttons in the bottom left, where you can also reset the view.<br/> <img src={useBaseUrl('img/apm/traces/trace-zooms.png')} alt="Trace zooms" style={{border: '1px solid gray'}} width="100"/>
 * Use the **Filters** bar to filter by values of metadata tags in spans.
-* Use the **Error Spans Only** toggle to hide or show error spans and the **Hide all services** button to hide services.<br/> <img src={useBaseUrl('img/apm/traces/toggle-and-button-hide.png')} alt="toggle-and-button-hide.png" width="300"/>
-* Hover over a span segment to view the parent span information and relationship, including the service, operation, relative start in milliseconds, and duration in milliseconds. <br/> ![trace-view-details.png](/img/apm/traces/trace-view-details2.png) ![trace-view-details.png](/img/apm/traces/trace-view-details.png)
-* Hide services that are of less interest by clicking on a segment underneath the **Critical path contribution by service** label. This section displays the sequence of service span segments that contribute to the total trace execution time. Each colored segment summarizes all span fragments from a single service, where there was no child span activity. <br/>![critical path on trace view.png](/img/apm/traces/critical-path-on-trace-view.png)
+* Use the **Error Spans Only** toggle to hide or show error spans and the **Hide all services** button to hide services.<br/> <img src={useBaseUrl('img/apm/traces/toggle-and-button-hide.png')} alt="Toggle and button hide" style={{border: '1px solid gray'}} width="300"/>
+* Hover over a span segment to view the parent span information and relationship, including the service, operation, relative start in milliseconds, and duration in milliseconds. <br/><img src={useBaseUrl('img/apm/traces/trace-view-details2.png')} alt="Trace view details" style={{border: '1px solid gray'}} style={{border: '1px solid gray'}} width="800" /> <br/><img src={useBaseUrl('img/apm/traces/trace-view-details.png')} alt="Trace view details" style={{border: '1px solid gray'}} width="600" />
+* Hide services that are of less interest by clicking on a segment underneath the **Critical path contribution by service** label. This section displays the sequence of service span segments that contribute to the total trace execution time. Each colored segment summarizes all span fragments from a single service, where there was no child span activity. <br/><img src={useBaseUrl('img/apm/traces/critical-path-on-trace-view.png')} alt="Critical path on trace view" style={{border: '1px solid gray'}} width="800" />
 
 Click on a span segment to open the details side panel, which contains the following tabs.
 
@@ -191,13 +190,13 @@ If no logs are produced for this spanID, results may come back empty. [Learn how
 
 You can change the color of a **Service** by clicking the colored box and selecting a defined swatch or custom color.
 
-<img src={useBaseUrl('img/apm/traces/service-color-traces-span.png')} alt="service color traces span.png" width="400"/>
+<img src={useBaseUrl('img/apm/traces/service-color-traces-span.png')} alt="Service color traces span" style={{border: '1px solid gray'}} width="400"/>
 
 ### Metadata
 
 Lists all of the related service entities involved in the span, including a complete set of span's tags. You can click on the clipboard icon to copy the value to your computer's clipboard.
 
-<img src={useBaseUrl('img/apm/traces/trace-details-metadata.png')} alt="trace-details-metadata.png" width="300"/>
+<img src={useBaseUrl('img/apm/traces/trace-details-metadata.png')} alt="Tace details metadata" style={{border: '1px solid gray'}} width="300"/>
 
 The Metadata includes a [Span Event](#span-events) section.
 
@@ -205,10 +204,9 @@ The Metadata includes a [Span Event](#span-events) section.
 
 Span Events describe and contextualize the work being done under a span by tracing and displaying that data in Trace Views. Events are optional time-stamped strings, which are made up of timestamp, name, and (optional) key-value pair attributes.
 
-![span-event-select.png](/img/apm/traces/span-event-select.png)
+<img src={useBaseUrl('img/apm/span-event-select.png')} alt="Span event select" style={{border: '1px solid gray'}} width="800" />
 
-You can also get to the **Metadata** tab > **Span Events** section by selecting a span event marker ![span-event-marker.png](/img/apm/traces/span-event-marker.png) in the timeline or a span with an event. <br/>
-![span-event-markers.gif](/img/apm/traces/span-event-markers.gif)
+You can also get to the **Metadata** tab > **Span Events** section by selecting a span event marker <img src={useBaseUrl('img/apm/span-event-marker.png')} alt="Span event marker" width="20" /> in the timeline or a span with an event. <br/><img src={useBaseUrl('img/apm/span-event-markers.gif')} alt="Span event markers" style={{border: '1px solid gray'}} width="500" />
 
 Span Event data includes:
 
@@ -224,9 +222,9 @@ Each event tracks a marker in the span timeline showing the start, end, and amou
 
 If additional information is available that may be too large for the tab view area, such as a metric attributes and error message, the **Details** link displays. Click to review this information.
 
-![span-event-more1.png](/img/apm/traces/span-event-more1.png)
+<img src={useBaseUrl('img/apm/span-event-more1.png')} alt="Span event more information" style={{border: '1px solid gray'}} width="300" />
 
-![span-event-more2.png](/img/apm/traces/span-event-more2.png)
+<img src={useBaseUrl('img/apm/span-event-more2.png')} alt="Span event additional information" style={{border: '1px solid gray'}} width="700" />
 
 
 You can also manually create Span Events, such as this [example from Ruby](https://opentelemetry.io/docs/instrumentation/ruby/events/). 
@@ -236,22 +234,22 @@ You can also manually create Span Events, such as this [example from Ruby](http
 
 Tracing focuses on the parent-child relationship between spans, which are described by a span ID, a parent span ID, and a Trace ID. You can establish more casual relationships between Traces using Span Links.
 
-**Span Links**, listed under the Metadata tab, give spans context. Links can point to spans inside a trace or across different traces. For example, with links you can represent batch operations, where a span is initiated by multiple initiating spans, each representing one item being processed in the batch. The links give you the relationship between the originating and the following trace. You can copy the span ID by selecting the Clipboard icon next to the span link.<br/> ![links.png](/img/apm/traces/links.png)
+**Span Links**, listed under the Metadata tab, give spans context. Links can point to spans inside a trace or across different traces. For example, with links you can represent batch operations, where a span is initiated by multiple initiating spans, each representing one item being processed in the batch. The links give you the relationship between the originating and the following trace. You can copy the span ID by selecting the Clipboard icon next to the span link.<br/><img src={useBaseUrl('img/apm/traces/links.png')} alt="Linkds" style={{border: '1px solid gray'}} width="800" />
 
 Span Links are added by tracing instrumentation at the client side and are automatically shown when detected in data. For details on configuring Span Links, see the [OpenTelemetry specification](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/overview.md#links-between-spans).
 
-You can select the Traces icon to view all other traces that link to this span ID, and it will take you to the Trace View with the `linkedSpanId` as a filter criteria.<br/> ![links.png](/img/apm/traces/links2.png)
+You can select the Traces icon to view all other traces that link to this span ID, and it will take you to the Trace View with the `linkedSpanId` as a filter criteria.<br/><img src={useBaseUrl('img/apm/traces/links2.png')} alt="Links" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Entities
 
 The **Entities** tab provides an overview of a span's supporting infrastructure health with the ability to contextually drill down to logs and metrics. Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, and Host domains are supported.
 
-<img src={useBaseUrl('img/dashboards/drill-root-causes/entities-tab.png')} alt="entities-tab.png" width="450"/>
+<img src={useBaseUrl('img/dashboards/drill-root-causes/entities-tab.png')} alt="Entities tab" style={{border: '1px solid gray'}} width="450"/>
 
 #### Time selector
 
-Use the time selector to set if data is related to the **Now** moment of time or the moment of time around the data point you clicked on. <br/><img src={useBaseUrl('img/dashboards/drill-root-causes/entities-time-selector.png')} alt="entities-time-selector.png" width="450"/>
+Use the time selector to set if data is related to the **Now** moment of time or the moment of time around the data point you clicked on. <br/><img src={useBaseUrl('img/dashboards/drill-root-causes/entities-time-selector.png')} alt="Entities time selector" style={{border: '1px solid gray'}} width="450"/>
 
 If the **Datapoint** is the same as **Now**, the selector will not allow you to select **Now**.
 
@@ -261,12 +259,12 @@ If the **Datapoint** is the same as **Now**, the selector will not allow yo
 Alerts are only visible when the [Time Selector](../../dashboards/drill-down-to-discover-root-causes.md#time-selector) is set to **Now.**
 :::
 
-Monitors track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.<br/>![monitor types.png](/img/dashboards/drill-root-causes/monitor-types.png)
+Monitors track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.<br/><img src={useBaseUrl('img/dashboards/drill-root-causes/monitor-types.png')} alt="Monitor status" style={{border: '1px solid gray'}} width="150" />
 
 Next to the Entity, you will see any of the following icons indicating the type of Monitor alert that has triggered. Click the **Triggered monitors** row to view the related Monitors. You can click on them to view the Monitor on the [Monitors](/docs/alerts/monitors) page.
 
-<img src={useBaseUrl('img/dashboards/drill-root-causes/triggered-monitors.png')} alt="triggered-monitors.png" width="300"/>
+<img src={useBaseUrl('img/dashboards/drill-root-causes/triggered-monitors.png')} alt="triggered-monitors.png" style={{border: '1px solid gray'}} width="300"/>
 
 #### Troubleshoot links
 
-This tab also displays troubleshooting links for related Entities and Environments. To investigate, click the **Open In** button, then select an icon to launch another feature against the entity or environment. An icon is not available if it is not a valid launch.<br/><img src={useBaseUrl('img/dashboards/drill-root-causes/infrastructure-tab-with-RCE-link.png')} alt="infrastructure tab with RCE link.png" width="350"/>
+This tab also displays troubleshooting links for related Entities and Environments. To investigate, click the **Open In** button, then select an icon to launch another feature against the entity or environment. An icon is not available if it is not a valid launch.<br/><img src={useBaseUrl('img/dashboards/drill-root-causes/infrastructure-tab-with-RCE-link.png')} alt="infrastructure tab with RCE link.png" style={{border: '1px solid gray'}} width="350"/>

@@ -38,6 +38,31 @@ Interact with Okta users, groups, and system logging information.
 * **Update Network Zone** _(Containment)_ - Updates a network zone.
 * **Update User** _(Containment)_ - Updates a user’s account.
 
+## Configure Okta in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Domain**. Enter your [Okta domain](https://developer.okta.com/docs/guides/find-your-domain/main/).
+
+* **Token**. Enter an [Okta token](https://support.okta.com/help/s/article/How-to-create-an-API-token?language=en_US).
+
+* **API Version**. Enter your [Okta API version](https://developer.okta.com/docs/api/#api-versions).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/okta-configuration.png')} style={{border:'1px solid gray'}} alt="Okta configuration" width="400"/>
+
+For information about Okta, see [Okta documentation](https://help.okta.com/en-us/content/index.htm).
+
 ## Change Log
 
 * March 20, 2020 - First upload

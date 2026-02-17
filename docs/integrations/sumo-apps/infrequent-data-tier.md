@@ -80,6 +80,10 @@ Infrequent Data Tiers enable you to ingest log or machine data for a minimal cos
 
 [Infrequent Data Tiers](/docs/manage/partitions/data-tiers) allow you to effectively analyze high volumes of log data that is accessed on a minimal basis. In this data tier, you pay for the amount of data scanned in each search. This on-demand payment model allows you to minimize costs by only paying the data accessed.
 
+The Search Audit Index must be enabled by an administrator. To enable the Search Audit Index:
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
+1. Under **Sumo Logic Auditing**, select **Enable Search Audit Record**. <br/><img src={useBaseUrl('img/security/Search_Audit_Index_Enabled.png')} alt="Enable Search Audit Index Record checkbox" style={{border: '1px solid gray'}} width="600" />
+
 You can verify if you already have the Search Audit Index enabled by querying:
 ```sql
 _index=sumologic_search_usage_per_query
@@ -88,6 +92,10 @@ _index=sumologic_search_usage_per_query
 If no results are returned even for longer time ranges, it means you do not have Search Audit index enabled.
 
 ## Installing the Infrequent Data Tier app
+
+### Prerequisite
+
+Enable the `_view = sumologic_search_usage_per_query` index prior to installation. See [Data Tiers](/docs/manage/partitions/data-tiers/) for instructions.
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
@@ -146,7 +154,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/sumo-apps/IDT_Credits_Consumed.png')} alt="IDT_Credits_Consumed" />
 
-## Upgrading the Infrequent Data Tier app (Optional)
+## Upgrade/Downgrade the Infrequent Data Tier app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

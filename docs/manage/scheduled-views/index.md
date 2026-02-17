@@ -11,6 +11,7 @@ Scheduled Views speed the search process for small and historical subsets of you
 * Scheduled View queries run once per minute.
 * Queries that run against Scheduled Views return search results much faster because the data is pre-aggregated before the query is run. 
 * Creating a Scheduled View for a query can vastly reduce the amount of data scanned at search time.
+* Scheduled view maintenance (that is, data ingested to scheduled view) query runs in the context of the user that has created the scheduled view. If the user who created the scheduled view doesn't have access to the underlying data, because of Role-Based Access Control (RBAC) or role filter restrictions, the scheduled view will not reflect that data.
 * Scheduled View once created cannot be edited/updated.
 * Scheduled Views can include historical data from as far back as the beginning of your retention period (say, 60 days or 90 days). Because historical data is included, Scheduled Views can help uncover long-term trends.
 * You can use Scheduled Views in Scheduled Searches, Dashboards, and ad hoc searches. Your Dashboards can include a large quantity of data without sacrificing performance. 
@@ -40,37 +41,37 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/scheduled-views/add-scheduled-view"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Add a Scheduled View</h4></a>
+  <a href={useBaseUrl('docs/manage/scheduled-views/add-scheduled-view')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Add a Scheduled View</h4></a>
   <p>Learn how to add a Scheduled View.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/scheduled-views/pause-disable-scheduled-views"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Pause or Disable Scheduled Views</h4></a>
+  <a href={useBaseUrl('docs/manage/scheduled-views/pause-disable-scheduled-views')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Pause or Disable Scheduled Views</h4></a>
   <p>Learn how to pause view stops new data from being Indexed.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/scheduled-views/run-search-against-scheduled-view"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Run a Search Against a Scheduled View</h4></a>
+  <a href={useBaseUrl('docs/manage/scheduled-views/run-search-against-scheduled-view')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Run a Search Against a Scheduled View</h4></a>
   <p>Learn how to run a search against Indexed data in a Scheduled View.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/scheduled-views/scheduled-view-lag-time"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="50"/><h4>Scheduled View Lag Time</h4></a>
+  <a href={useBaseUrl('docs/manage/scheduled-views/scheduled-view-lag-time')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="50"/><h4>Scheduled View Lag Time</h4></a>
   <p>Learn how to view data that's not up to date in the Scheduled View.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/scheduled-views/scheduled-views-best-practices"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="50"/><h4>Scheduled Views Best Practices and Examples</h4></a>
+  <a href={useBaseUrl('docs/manage/scheduled-views/scheduled-views-best-practices')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="50"/><h4>Scheduled Views Best Practices and Examples</h4></a>
   <p>Get to know some tips for setting up Scheduled View queries.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/scheduled-views/view-list-scheduled-views"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="50"/><h4>View Information About Scheduled Views</h4></a>
+  <a href={useBaseUrl('docs/manage/scheduled-views/view-list-scheduled-views')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="50"/><h4>View Information About Scheduled Views</h4></a>
   <p>Learn how to view a list of Scheduled Views configured for your org.</p>
   </div>
 </div>

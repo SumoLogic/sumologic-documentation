@@ -103,7 +103,7 @@ Zscaler uses Cloud Nanolog Streaming Service (NSS), which allows direct cloud-to
 To send logs to Sumo Logic using Cloud NSS, add a feed in ZIA using the following steps:
 
 1. Log into your ZIA system.
-1. Go to **Administration** > **Nanolog Streaming Service** > **Cloud NSS Feeds**.
+1. Go to **Administration > Nanolog Streaming Service > Cloud NSS Feeds**.
    :::note enable Cloud NSS
    Cloud NSS is disabled by default in ZIA. If you do not see Cloud NSS Feeds option in your ZIA environment, create a support request with Zscaler support.
    :::
@@ -247,7 +247,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Threats.png')} alt="zscaler internet access Dashboard" />
 
-## Upgrading the Zscaler Internet Access app (Optional)
+## Upgrade/Downgrade the Zscaler Internet Access app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

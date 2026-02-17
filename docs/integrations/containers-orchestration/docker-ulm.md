@@ -50,7 +50,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 
 ### Add a Docker logs source
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Logs**. The Docker Logs page appears.
 4. Configure the source fields:
@@ -76,8 +76,8 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
    * **Source Host**. Enter the hostname or IP address of the source host. If not specified, it’s assumed that the host is the machine where Docker is running. The hostname can be a maximum of 128 characters. If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure `sourceCategory` and `sourceHost` using variables](#configure-sourcecategory-and-sourcehost-using-variables).
    * **Source Category**. Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field, so running a search on **`_sourceCategory=web_apps`** would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions) and our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices). If desired, you can use Docker variables to construct the Source Category value. For more information, see [Configure `sourceCategory` and `sourceHost` using variables](#configure-sourcecategory-and-sourcehost-using-variables).
    * **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value.
-      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 5. Configure the Advanced options.
    * **Enable Timestamp Parsing**. This option is checked by default and **required**.
    * **Time Zone**. Default is “Use time zone from log file”.
@@ -91,7 +91,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 
 ### Add a Docker Stats Source
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Stats.** The following Docker Stats page appears. There are two possible content types available, select **Metrics** to collect data as metrics, or select **Logs** (JSON) to collect data as JSON logs. To collect metrics for the Docker ULM app, select **Metrics** as the Content Type.
 4. Configure the source fields:
@@ -126,7 +126,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 There will be no **Network** metrics if you use the `host` network mode for the container.
 :::
 
-<table><small>
+<table>
   <tr>
    <td><strong>Metrics Name</strong></td>
    <td><strong>Unit</strong></td>
@@ -451,7 +451,7 @@ There will be no **Network** metrics if you use the `host` network mode for the 
    <td>current </td>
    <td>Count </td>
    <td>Number of PIDs (Not available on Windows) </td>
-  </tr></small>
+  </tr>
 </table>
 
 
@@ -491,38 +491,11 @@ The table below defines the types of variables you can use.
 
 Docker engine event log data doesn't support the tagging with metadata.
 
-<table><small>
-  <tr>
-   <td><strong>Namespace/VAR_TYPE</strong> </td>
-   <td><strong>Description</strong> </td>
-   <td><strong>VAR_NAME</strong>   </td>
-  </tr>
-  <tr>
-   <td><code>container</code> </td>
-   <td>Container metadata fields provided by Docker for use in the <code>--log-opt</code> tag option.
-<br/>These are automatically added to data points.
-<br/>For more information, see <a href="https://docs.docker.com/engine/admin/logging/log_tags/">Log tags for logging driver</a> in Docker help.</td>
-   <td><code>ID</code> The first 12 characters of the container ID.
-<br/><code>FullID</code> The full container ID.
-<br/><code>Name</code> The container name.
-<br/><code>ImageID</code> The first 12 characters of the container’s image ID.
-<br/><code>ImageFullID</code> The container’s full image ID.
-<br/><code>ImageName</code> The name of the image used by the container. </td>
-  </tr>
-  <tr>
-   <td><code>label</code> </td>
-   <td>User-defined labels, supplied with the  <code>--label flag</code> when starting a Docker container.
-<br/>This is automatically added to data points. </td>
-   <td>The name of the variable.
-<br/>Dot characters (<code>.</code>) are not supported. </td>
-  </tr>
-  <tr>
-   <td><code>env</code>   </td>
-   <td>User-defined container environment variables that are set with <code>--env|-e</code> flags when starting a container. </td>
-   <td>The name of the variable.
-<br/>Dot characters (<code>.</code>) are not supported. </td>
-  </tr></small>
-</table>
+| Namespace/VAR_TYPE | Description                                       | VAR_NAME     |
+|:--------------------|:------------------------------|:------------|
+| `container`        | Container metadata fields provided by Docker for use in the `--log-opt` tag option.<br/>These are automatically added to data points.<br/>For more information, see [Log tags for logging driver](https://docs.docker.com/engine/admin/logging/log_tags/) in Docker help. | `ID`: The first 12 characters of the container ID.<br/>`FullID`: The full container ID.<br/>`Name`: The container name.<br/>`ImageID`: The first 12 characters of the container’s image ID.<br/>`ImageFullID`: The container’s full image ID.<br/>`ImageName`: The name of the image used by the container. |
+| `label`            | User-defined labels, supplied with the `--label` flag when starting a Docker container.<br/>This is automatically added to data points.       | The name of the variable.<br/>Dot characters (`.`) are not supported.                   |
+| `env`       | User-defined container environment variables that are set with `--env\|-e` flags when starting a container.       | The name of the variable.<br/>Dot characters (`.`) are not supported.        |
 
 
 For example:
@@ -658,7 +631,7 @@ See information about network usage over the last three hours.
 
 **Count of Tx Error Packets**. A line chart that shows the count of error packets transmitted per timeslice by each container over the last three hours.   
 
-## Upgrading the Docker ULM app (Optional)
+## Upgrade/Downgrade the Docker ULM app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

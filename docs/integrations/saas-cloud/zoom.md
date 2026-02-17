@@ -179,7 +179,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Webinars.png')} alt="Zoom dashboards" />
 
-## Upgrading the Zoom app (Optional)
+## Upgrade/Downgrade the Zoom app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

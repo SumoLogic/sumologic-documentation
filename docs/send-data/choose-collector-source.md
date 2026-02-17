@@ -2,7 +2,7 @@
 id: choose-collector-source
 title: Choosing a Sumo Logic Collector and Source
 sidebar_label: Choose a Collector and Source
-description: Design a Sumo Logic deployment that's right for your organization.
+description: Choose the right data source type in Sumo Logic for collecting logs, metrics, or traces using OpenTelemetry Collectors, Installed Collectors, and Hosted Collectors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -68,7 +68,24 @@ The Installed Collector and OpenTelemetry Collector are two popular collectors u
 
 **Installed Collector**. The Installed Collector is a standalone agent that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports a wide range of sources, including Local File, Syslog, Host/Process Metrics, Streaming Metrics, Transaction Tracing, and many more. It also provides support for remote management and configuration, Ingest Budgets, Collector Management API, and CPU targets.
 
-**OpenTelemetry Collector**. The OpenTelemetry Collector is a single-agent management solution that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports sources such as Local File, Syslog, Host/Process Metrics, Streaming Metrics, and Transaction Tracing. However, it does not provide support for remote management or configuration, Ingest Budgets, Collector Management API, or CPU targets.
+**OpenTelemetry Collector**. The OpenTelemetry Collector is a single-agent management solution that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports sources such as Local File, Syslog, Host/Process Metrics, Streaming Metrics, and Transaction Tracing. It provides support for Ingest Budgets, Collector Management API, and remote management. However, it does not provide support for remote upgrades or CPU targets. Instead, upgrades are managed through package managers (yum, apt-get).
+
+:::sumo Micro Lesson
+Watch this micro lesson to learn why OpenTelemetry collector should be your first choice.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/g078z3y6ux?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Benefits of choosing OpenTelemetry collector over Installed collector"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 #### When to Choose Installed Collector vs. OpenTelemetry Collector
 
@@ -102,9 +119,8 @@ The following table shows the comparison between the Installed Collector and Ope
       </td>
       <td style={{verticalAlign: 'top'}}>
         <ul>
-          <li>Remote management for collection configuration</li>
-          <li>Ingest Budgets</li>
-          <li>Collector Management API (CRUD operations)</li>
+          <li>Remote upgrades</li>
+          <li>CPU targets</li>
         </ul>
       </td>
     </tr>
@@ -130,16 +146,19 @@ The following table shows the comparison between the Installed Collector and Ope
       </td>
       <td style={{verticalAlign: 'top'}}>
         <ul>
-          <li>Unify collection to Single software for logs, metrics and traces </li>
+          <li>Unify collection to Single software for logs, metrics, and traces </li>
           <li>Scale issues with FluentD on Kubernetes Collection</li>
           <li>Custom data filtering and transform capabilities</li>
-          <li>Using Chef, Puppet, Ansible to manage collectors</li>
+          <li>Using Chef, Puppet, or Ansible to manage collectors</li>
+          <li>Remote management for collection configuration</li>
+          <li>Ingest Budgets</li>
+          <li>Collector Management API (CRUD operations)</li>
+          <li>Package manager support (yum, apt-get) for installation and upgrades</li>
         </ul>
       </td>
     </tr>
   </tbody>
 </table>
-
 
 ### Hosted Collectors
 
@@ -162,23 +181,27 @@ If you have additional questions, a [Sumo Logic sales representative](https://w
 
 Depending on the method you'd like to collect logs, and the types of logs you'd like to collect, Sumo Logic has two types of Collectors you can choose from. Learn how to choose your collector that's right for your environment through our video, "Choosing Your Collector Type".
 
-<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+:::sumo Micro Lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/iac5fqlnk4?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Choosing Your Collector Type Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 The following table shows the major differences between them.
 
 | Installed Collector | Hosted Collector |
 |:--|:--|
 | <ul><li>Installed on a system within your deployment locally or remotely.</li><li>Sources collect data available in your deployment.</li><li>Easy to troubleshoot based on Collector logs.</li><li>Supports using Local Configuration File Management so you can use JSON files to configure Sources.</li></ul> | <ul><li>Hosted by Sumo Logic. Agentless: no software to install or activate on a system in your deployment.</li><li>Hosts Sources to collect seamlessly from AWS, Google, and Microsoft products.</li><li>Can receive logs and metrics uploaded via a URL.</li></ul> |
-
 
 
 ## Sumo Logic Sources
@@ -196,16 +219,21 @@ When registering a Collector, you also have the option of [configuring the Coll
 The maximum number of Sources allowed on a Collector is 1,000.
 :::
 
-<Iframe url="https://www.youtube.com/embed/CfWXz6UkpIc"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+:::sumo Micro Lesson
+
+<Iframe url="https://fast.wistia.net/embed/iframe/tzmrnrx0cf?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Adding a Source Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 ### Allowlisting Sources that collect from AWS 
 

@@ -11,25 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Data Volume App provides you with a summary and detailed views of your account's data usage volume by data type, tier, category, collector, source name, and hosts via predefined searches and dashboards.
 
-Before you can install and use the Data Volume app, an administrator must first enable the feature. For more information, see [Enable the Data Volume Index](#enable-the-data-volume-index) below.
-
-The Data Volume Index gathers volume data as soon as it is enabled. It will not gather data from legacy versions or backfill data.
-
-
-## Enable the Data Volume Index
-
-The Data Volume Index must be enabled by an administrator.
-
-To enable the Data Volume Index:
-
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Data Management**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**. 
-1. Under **Data Volume**, select **Enable**.
-
-<img src={useBaseUrl('img/manage/ingestion-volume/data_volume_check_box.png')} alt="Enable Data Volume Index" style={{border: '1px solid gray'}} width="800"/>
-
-A message confirms that the feature is enabled.
-
 ## Installing the Data Volume app
+
+### Prerequisite
+
+Enable the Data Volume Index (`sumologic_volume`) prior to installation. See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) for instructions.
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
@@ -59,7 +45,7 @@ Use this dashboard to:
 * Determine the log ingest volume and trends in GB across various tiers.
 * Identify spikes where current hour ingestion is above 50% from the last hour. Identify outliers and forecast your data ingestion.
 * Determine the log data for default index and top non-default indexes.
-* Compare current ingestion to capacity and review any overages. You must configure the “Daily_Log_Ingest_Capacity” variable based on your Account Subscription. If you have  Credit based plan, please check with your account executive to determine these values for your account. Otherwise, see the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-page) page to get your capacity values.
+* Compare current ingestion to capacity and review any overages. You must configure the “Daily_Log_Ingest_Capacity” variable based on your Account Subscription. If you have  Credit based plan, please check with your account executive to determine these values for your account. Otherwise, see the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) page to get your capacity values.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Logs.png')} alt="Data volume dashboards" />
 
@@ -80,12 +66,12 @@ Use this dashboard to:
 The **Data Volume - Metrics** dashboard allows you to view your metrics ingested, identifies ingest outliers/spikes, and helps predict what ingestion is going to be.
 
 Use this dashboard to:
-* Determine the ingested DPM by various dimensions their
+* Determine the ingested DPM by various dimensions.
 * Examine trends over time.
 * Identify the spikes where current hour ingestion is above 50% from the last hour.
-* Identify ingestion outliers and forecast data ingestion, analyze the comparison of your current ingestion to your capacity, and review any overages. You must configure the “Metric_DPM_Ingest_Capacity”  variable that needs to be configured based on Account Subscription. If you have a Credit-based plan, please check with your account executive to determine these values for your account. Otherwise, see the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-page) page to see your Capacity Values.
+* Identify ingestion outliers and forecast data ingestion, analyze the comparison of your current ingestion to your capacity, and review any overages. You must configure the “Metric_DPM_Ingest_Capacity”  variable that needs to be configured based on Account Subscription. If you have a Credit-based plan, please check with your account executive to determine these values for your account. Otherwise, see the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) page to see your Capacity Values.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Metrics.png')} alt="Data volume dashboards" />
+<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Metrics.png')} alt="Data volume dashboards" style={{border: '1px solid gray'}}  />
 
 ### Log Spikes
 
@@ -103,7 +89,7 @@ Use this dashboard to:
 The **Data Volume - Capacity Utilization** dashboard provides views of subscribed, actual, and percentage capacity utilization for logs and metrics.
 
 Use this dashboard to:
-* Identify the log and metrics ingestion capacity of your subscription. You must configure the "Daily_Log_Ingest_Capacity" and “Metric_DPM_Ingest_Capacity” variables based on your plan with Sumo Logic. If you have a Credit-based plan, please check with your account executive to determine these values for your account. Otherwise, see the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-page) page to view the log ingest capacity value and metric DPM ingest capacity value.
+* Identify the log and metrics ingestion capacity of your subscription. You must configure the "Daily_Log_Ingest_Capacity" and “Metric_DPM_Ingest_Capacity” variables based on your plan with Sumo Logic. If you have a Credit-based plan, please check with your account executive to determine these values for your account. Otherwise, see the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) page to view the log ingest capacity value and metric DPM ingest capacity value.
 * Identify the average ingestion and subscribed ingestion capacity by percentage for logs and metrics.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Capacity-Utilization.png')} alt="Data volume dashboards" />
@@ -121,7 +107,23 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Tracing.png')} alt="Data volume dashboards" />
 
-## Upgrading the Data Volume app (Optional)
+## Create monitors for the Sumo Logic Data Volume app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Data Volume app alerts
+
+| Name  | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Data Volume - Daily plan limit alert` | This alert is generated when the daily account log ingest for the previous day is greater than the defined threshold.  | Count > 100     | Count < = 100     |
+| `Data Volume - Daily plan limit alert by collector` | This alert is triggered if the account log ingestion for any collector on the previous day exceeds the configured threshold.  | Count > 5   | Count < = 5 |
+| `Data Volume - Data not sent alert`   | This alert is triggered when a collector has not sent any data for longer than the configured threshold (60 minutes by default). | Count > 60      | Count < = 60      |
+| `Data Volume - Monthly plan limit alert`   | This alert is generated when total log ingest for the current billing period reaches 85% or more (configurable). Ensure the query is updated with `daily_gb_limit` (GB/day) and `billing_start / billing_end` (day of month) before enabling. | Count > 85      | Count < = 85      |
+| `Data Volume - Usage spike alert`  | This alert is generated when the current hour’s ingestion (GB) for a source category exceeds its highest hourly volume from the past four weeks by the set threshold percentage value. | Count > 50      | Count < = 50      |
+
+## Upgrade/Downgrade the Data Volume app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

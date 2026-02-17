@@ -35,7 +35,7 @@ _sourceCategory=Labs/VMWare6.5/Metrics hostname=thisveryhost metric=cpu_ready
 The chart in this section shows metric query results with the `fillmissing` operator with the `empty` option. Note that empty time slices are not filled with a derived data point. 
 
 ```sql
-_sourcecategory=labs/aws/host/metrics metric=CPU_Idle 
+_sourceCategory=labs/aws/host/metrics metric=CPU_Idle 
 | avg by _sourcename 
 | fillmissing empty
 ```

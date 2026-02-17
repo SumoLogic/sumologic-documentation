@@ -6,6 +6,8 @@ sidebar_label: lookupContains
 
 Use the `lookupContains` operator to determine whether a key exists in a lookup table. It will return a boolean value.
 
+For information about lookup tables, see [Lookup Tables](/docs/search/lookup-tables/).
+
 ## Syntax
 
 The syntax for `lookupContains` in varies depending on whether you use the operator within a `where` expression, or before it.

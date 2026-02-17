@@ -31,6 +31,29 @@ Connect with Tenable.io to execute scans, get scan results and perform administr
 * **Target Info** (*Enrichment*) - Get basic information on a target.
 * **Target Vulnerabilities** (*Enrichment*) - Get vulnerability information for a target.
 
+## Configure Tenable.io in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Access Key**. Enter your Tenable [access key](https://docs.tenable.com/vulnerability-management/Content/Settings/my-account/GenerateAPIKey.htm).
+
+* **Secret Key**. Enter the secret for the access key.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/tenable-io-configuration.png')} style={{border:'1px solid gray'}} alt="Tenable.io configuration" width="400"/>
+
+For information about Tenable Vulnerability Management (formerly Tenable.io), see [Tenable Vulnerability Management documentation](https://docs.tenable.com/vulnerability-management.htm).
+
 ## Change Log
 
 * November 21, 2018 - First upload

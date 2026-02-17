@@ -18,18 +18,28 @@ The Snyk is a platform allowing you to scan, prioritize, and fix security vulner
 * **List Projects** (*Enrichment*) - List all projects for an organization.
 * **List Latest Issues** (*Enrichment*) - Get list of latest issues.
 
-## Snyk in Automation Service and Cloud SOAR
+## Configure Snyk in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/snyk/snyk-3.png')} style={{border:'1px solid gray'}} alt="snyk" width="400"/>
-1. Populate all the required fields (\*)
-   * **API URL**. Default is `https://api.snyk.io/`.
-   * **Token**. Insert the Token.
-1. Click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/snyk/snyk-4.png')} style={{border:'1px solid gray'}} alt="snyk" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/snyk/snyk-5.png')} style={{border:'1px solid gray'}} alt="snyk" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/snyk/snyk-6.png')} style={{border:'1px solid gray'}} alt="snyk" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/snyk/snyk-7.png')} style={{border:'1px solid gray'}} alt="snyk" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your [Snyk API URL](https://docs.snyk.io/snyk-api/v1-api#api-urls). The default is `https://api.snyk.io/`.
+
+* **Token**. Insert your [Snyk API token](https://docs.snyk.io/snyk-api/authentication-for-api#how-to-obtain-your-personal-token).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/snyk-configuration.png')} style={{border:'1px solid gray'}} alt="Snyk configuration" width="400"/>
+
+For information about Snyk, see [Snyk documentation](https://docs.snyk.io/).
 
 ## Note
 

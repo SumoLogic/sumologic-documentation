@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) is a managed database service, optimized to run in the cloud. The RDS Amazon Web Service (AWS) simplifies the setup, operation, and scaling of relational database instances for use in applications throughout your infrastructure.
 
-The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s) including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards helps you monitor database errors, slow queries, audit sql queries and generic activities. PostgreSQL logs dashboard help you to monitor database errors, slow queries, database security, and query execution timings. MSSQL Logs dashboards helps you monitor error logs and basic infrastructure details.
+The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s) including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards helps you monitor database errors, slow queries, audit sql queries and generic activities. PostgreSQL logs dashboard help you to monitor database errors, slow queries, database security, and query execution timings. MSSQL Logs dashboards helps you monitor error logs and basic infrastructure details. Oracle CloudTrail and CloudWatch Logs dashboards provide monitoring for error logs and essential infrastructure details.
 
 ## Log and metrics types  
 
@@ -21,6 +21,7 @@ The Amazon RDS app uses the following logs and metrics:
 * [Publishing RDS CloudWatch Logs, RDS Database logs for Aurora MySQL, RDS MySQL, MariaDB](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQLDB.PublishtoCloudWatchLogs.html).
 * [Publishing RDS CloudWatch logs, RDS Database logs for Aurora PostgreSQL, and RDS PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.PostgreSQL.html#USER_LogAccess.Concepts.PostgreSQL.PublishtoCloudWatchLogs)
 * [Publishing RDS CloudWatch logs, RDS Database logs for RDS MSSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.SQLServer.html#USER_LogAccess.SQLServer.PublishtoCloudWatchLogs)
+* [Publishing RDS CloudWatch logs, RDS Database logs for RDS Oracle](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.Oracle.html#USER_LogAccess.Oracle.PublishtoCloudWatchLogs)
 ### Sample CloudTrail log message
 
 <details>
@@ -271,6 +272,35 @@ account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds/*Error 
 | sort by _timeslice
 ```
 
+```sql title="Engine and Its DB Instance (Oracle CloudTrail log based)"
+account=* region=* namespace=aws/rds "\"eventSource\":\"rds.amazonaws.com\"" !errorCode
+| json "eventTime", "eventName", "eventSource", "awsRegion", "userAgent", "recipientAccountId", "userIdentity", "requestParameters", "responseElements", "errorCode", "errorMessage",  "requestID", "sourceIPAddress" as eventTime, event_name, event_source, Region, user_agent, accountId1, userIdentity, requestParameters, responseElements, error_code, error_message, requestID, src_ip nodrop
+| where event_source = "rds.amazonaws.com"
+| json "requestParameters.engine", "responseElements.engine" as engine1, engine2 nodrop
+| if (!isEmpty(engine1), engine1, engine2) as engine
+| where !isEmpty(engine) and engine contains "oracle"
+| json field=userIdentity "accountId", "arn", "userName", "type" as accountId, arn, username, type nodrop
+| parse field=arn ":assumed-role/*" as user nodrop | parse field=arn "arn:aws:iam::*:*" as accountId, user nodrop
+| json field=requestParameters "dBInstanceIdentifier", "resourceName", "dBClusterIdentifier" as dBInstanceIdentifier1, resourceName, dBClusterIdentifier1 nodrop
+| json field=responseElements "dBInstanceIdentifier" as dBInstanceIdentifier3 nodrop
+| parse field=resourceName "arn:aws:rds:*:db:*" as f1, dBInstanceIdentifier2 nodrop 
+| if (resourceName matches "arn:aws:rds:*:db:*", dBInstanceIdentifier2, if (!isEmpty(dBInstanceIdentifier1), dBInstanceIdentifier1, dBInstanceIdentifier3) ) as dBInstanceIdentifier
+| where !isEmpty(dBInstanceIdentifier)
+| count as freq by engine, dBInstanceIdentifier
+| sort by dBInstanceIdentifier, engine asc
+| fields -freq
+```
+
+
+```sql title="ORA Messages Over Time (Oracle CloudWatch log based)"
+account=* region=* namespace=aws/rds dbidentifier=*  _sourceHost=/aws/rds/*alert ORA-*
+| json "message" nodrop | if (_raw matches "{*", message, _raw) as message 
+| parse regex field=message "(?<oraerr>ORA-\d{5}): (?<oramsg>.*)" multi
+| timeslice 1s
+| count as eventCount by oraerr, _timeslice
+| transpose row _timeslice column oraerr
+```
+
 ## Viewing the RDS dashboards  
 
 import FilterDashboards from '../../../reuse/filter-dashboards.md';
@@ -298,9 +328,9 @@ Use this dashboard to:
 * Monitor Amazon RDS-related audit logs using CloudTrail Events.
 * Monitor locations of successful and failed Amazon RDS user activity events.
 * Monitor most active users working on RDS infrastructure, database engines used in the infrastructure, and various events invoked on RDS clusters,
-* Monitor requests from malicious IP addresses using Sumo Logic’s Threat Intel.
+* Monitor requests from malicious IP addresses using [Sumo Logic threat intelligence](/docs/security/threat-intelligence/).
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-CloudTrail-Audit-Events.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-CloudTrail-Audit-Events.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 3. Amazon RDS - Non-Describe CloudTrail Audit Events
 
@@ -312,7 +342,7 @@ Use this dashboard to:
 * Monitor and track snapshot-related events performed on RDS instances.
 * Monitor and track changes to security groups associated with your RDS infrastructure.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Non-Describe-CloudTrail-Audit-Events.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Non-Describe-CloudTrail-Audit-Events.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 01. Amazon RDS - Overview By Database Instance
 
@@ -322,7 +352,7 @@ Use this dashboard to:
 * Quickly identify performance or resource utilization issues in your RDS clusters.
 * Monitor resource utilization with trend panels for CPU usage, available memory, network receive and transmit throughput, read and write IOPS, available free storage and database connections across your Amazon RDS clusters and database instances.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview-By-Database-Instance.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview-By-Database-Instance.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 02. Amazon RDS - Performance Insights   
 
@@ -333,7 +363,7 @@ Use this dashboard to:
 * Identify when the CPU is overloaded, so you can throttle connections to the instance, tune SQL queries with a high CPU load, or consider a larger instance class to remedy the situation.
 * Identify high and consistent instances of any wait state (Non-CPU Load)  that indicate potential bottlenecks or resource contention issues that need to be resolved, which can be an issue even when the load doesn't exceed maximum CPU.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Performance-Insights.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Performance-Insights.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 03. Amazon RDS - Aurora Generic
 
@@ -346,7 +376,7 @@ Use this dashboard to:
 * Monitor the amount of storage used to ensure monitor costs.
 * Monitor the percentage of requests that are served by the buffer cache to identify potential performance optimizations.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-Generic.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-Generic.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 04. Amazon RDS - Aurora MySQL
 
@@ -359,7 +389,7 @@ Use this dashboard to:
 * Monitor replica lag between Aurora DB clusters that are replicating across different AWS Regions.
 * Monitor the number of login failures to the database, for security monitoring.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 05. Amazon RDS - Aurora MySQL Global Database and BackTrack Activity
 
@@ -373,7 +403,7 @@ Use this dashboard to:
 * Monitor the amount of redo log data that is transferred from the master AWS region to secondary AWS regions.
 * Monitor the number of write I/O operations replicated from the primary AWS region to the cluster volume in a secondary AWS region in an Aurora Global Database. The billing calculations for the primary AWS region in a global database use AuroraGlobalDBReplicatedWriteIO to account for cross-region replication within the global database.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL-Global-Database-and-Backtrack-Activity.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL-Global-Database-and-Backtrack-Activity.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 06. Amazon RDS - MySQL Logs - Overview
 
@@ -385,7 +415,7 @@ Use this dashboard to:
 * Get the number of failed and successful DB connections.
 * Get a quick breakdown of the protocol used for database connections.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Overview.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Overview.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 07. Amazon RDS - MySQL Logs - Error Logs Analysis
 
@@ -398,7 +428,7 @@ Use this dashboard to:
 * Monitor database instances starting up and being ready for connection events.
 * Monitor MySQL RDS Cluster replication events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Error-Logs-Analysis.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Error-Logs-Analysis.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 08. Amazon RDS - MySQL Logs - Slow Query Analysis
 
@@ -412,7 +442,7 @@ Use this dashboard to:
 * Check if **SQL SELECT** type queries can be shifted to read replicas for better performance.
 * Monitor trends of slow queries and compare them with history to check if something different is happening or might have happened to decide the next step.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Slow-Query-Analysis.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Slow-Query-Analysis.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 09. Amazon RDS - MySQL Logs - Audit Logs Analysis
 
@@ -427,7 +457,7 @@ Use this dashboard to:
 * Identify typical user management activities being performed.
 * Quickly identify objects which are dropped.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Audit-Log-Analysis.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Audit-Log-Analysis.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 10. Amazon RDS - MySQL Logs - Audit Log SQL Statements
 
@@ -437,7 +467,7 @@ Use this dashboard to:
 * Identify the top SQL statements and commands being executed along with trends.
 * Get details on various SQL statements/commands (DML, DDL, DCL, TCL) being executed.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Audit-Log-SQL-Statements.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Audit-Log-SQL-Statements.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 11. Amazon RDS - MySQL Logs - General Log Analysis
 
@@ -449,7 +479,7 @@ Use this dashboard to:
 * Monitor why certain things are failing by checking what exactly client sent to the server to execute.
 * Monitor the type of SQL statements/queries (DML, DDL, DCL, TCL, and others) being sent by the client to execute.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-General-Log-Analysis.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-General-Log-Analysis.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 12. Amazon RDS - PostgreSQL Logs - Overview
 
@@ -461,7 +491,7 @@ Use this dashboard to:
 * Obtain user activity and query execution by database.
 * Obtain slow queries count and distribution based on user, command type, and host.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Overview.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Overview.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 13. Amazon RDS - PostgreSQL Logs - Errors
 
@@ -473,7 +503,7 @@ Use this dashboard to:
 * Obtain recent and top fatal and error events.
 * Obtain recent queries running into error with error message.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Errors.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Errors.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 14. Amazon RDS - PostgreSQL Logs - Slow Query Overview
 
@@ -486,7 +516,7 @@ Use this dashboard to:
 * Obtain unique slow queries along with execution time, analysing minimum, maximum, average, and many more.
 * Obtain time comparison between number of slow queries and their execution time over 1 day or 1 week.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Slow-Query-Overview.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Slow-Query-Overview.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 15. Amazon RDS - PostgreSQL Logs - Slow Query Details
 
@@ -497,7 +527,7 @@ Use this dashboard to:
 * Obtain the frequently fired slow queries.
 * Monitor the recent DML, DDL, and TCL statement which lead to slow queries.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Slow-Query-Details.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Slow-Query-Details.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 16. Amazon RDS - PostgreSQL Logs - Security
 
@@ -509,7 +539,7 @@ Use this dashboard to:
 * Monitor database shut down and system up events.
 * Identify default user's authentication and generic activities.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Security.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Security.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 17. Amazon RDS - PostgreSQL Logs - Query Execution Time
 
@@ -519,7 +549,7 @@ Use this dashboard to:
 * Obtain number of queries executed and average query execution time by database.
 * Monitor time comparison for number of queries executed and query execution time.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Query-Execution-Time.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Query-Execution-Time.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 18. Amazon RDS - MSSQL Logs - Error Logs - Logon Analysis
 
@@ -529,7 +559,7 @@ Use this dashboard to:
 * Identify the authentication failures along with reason for user and client location that are used to connect.
 * Detect logon errors, including error codes, severity levels, and states.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Logon Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Logon Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 19. Amazon RDS - MSSQL Logs - Error Logs - Infrastructure Overview
 
@@ -541,4 +571,37 @@ Use this dashboard to:
 * Monitors `DBCC CHECKDB` checks.
 * Track recent terminations of SQL Server instances and monitor the creation of new databases.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Infrastructure-Overview.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Infrastructure-Overview.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
+
+
+### 20. Oracle Logs - Alert Logs Analysis
+
+The **Amazon RDS - Oracle Logs - Alert Logs Analysis** dashboard provides details on Oracle errors, including counts of various error types, ORA messages, Oracle instance states, and other data derived from the Oracle Alert log.
+
+Use this dashboard to:
+* Monitor Amazon Oracle RDS errors through CloudWatch Events.
+* Monitor ORA and TNS message events.
+* Monitor log switch activities, archival errors, tablespace extension issues, failures, warnings, and errors occurring on the Oracle RDS instance.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Oracle-Logs-Alert-Logs-Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
+
+### 21. Oracle Logs - Audit Logs Analysis
+
+The **Amazon RDS - Oracle Logs - Audit Logs Analysis** dashboard provides details on syslog audit trail, including successful and failed activities, and top usage by client, database user, and privileges used.
+
+Use this dashboard to:
+* Monitor successful and failed Amazon Oracle RDS events.
+* Monitor top usage by client, database user, and privileges on Oracle RDS instance.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Oracle-Logs-Audit-Logs-Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
+
+
+### 22. Oracle Logs - Listener Troubleshooting
+
+The **Amazon RDS - Oracle Logs - Listener Troubleshooting** dashboard provides insights into Oracle listener process activity, including database connections by host and application, connection failures, command execution statuses and trends, and additional data from the Oracle Listener log.
+
+Use this dashboard to:
+* Monitor listener process activity on Oracle RDS instance.
+* Monitor database connections by host and application, track connection failures, analyze command execution statuses and trends, and gather insights from the Oracle Listener log.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Oracle-Logs-Listener-Troubleshooting.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />

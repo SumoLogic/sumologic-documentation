@@ -59,15 +59,33 @@ _sourceCategory=CBCloud WATCHLIST
 | count
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud-to-Cloud Integration Carbon Black Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source) for the Carbon Black Cloud app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Carbon Black Cloud source category, which you will need to use when installing the app. By following these steps, you can ensure that your Carbon Black Cloud app is properly integrated and configured to collect and analyze your Carbon Black Cloud data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Carbon Black Cloud app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Carbon Black Cloud](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Carbon Black Cloud app is properly integrated and configured to collect and analyze your Carbon Black Cloud data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Carbon Black Cloud dashboards​
 
@@ -191,7 +209,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Enterprise-EDR-IOCs.png')} alt="Carbon_Black_Cloud dashboards" />
 
-## Upgrading the Carbon Black Cloud app (Optional)
+## Upgrade/Downgrade the Carbon Black Cloud app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

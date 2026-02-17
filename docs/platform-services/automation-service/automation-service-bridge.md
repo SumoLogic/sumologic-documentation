@@ -9,13 +9,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can only run custom actions or integrations outside of the Sumo Logic cloud in an "on-premise" environment. For on-premise environments, you need to install a bridge as described below.
 
+## Version
+
+The current version of the Automation Bridge is 3.3.0.
+
+:::warning
+Versions 2.1.1 and earlier are obsolete, no longer supported, and no longer visible in the UI. Customers must upgrade to a supported version to ensure proper functionality and continued support.
+:::
+
 ## Requirements
 
 ### Hardware requirements
 
 * OS:
-   * Ubuntu (18.04/20.04)
-   * CentOS 7
+   * Ubuntu 18.04, 20.04, or 24.04
+   * CentOS 7 or 8
    * RedHat 8
 * RAM: 8GB
 * CPU: 4 Core
@@ -80,7 +88,11 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 
 ## Get installation token
 
-Login to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with name prefix `csoar-bridge-token`.
+Sign in to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with name prefix `csoar-bridge-token`.
+
+:::info
+You must prefix your installation token with `csoar-bridge-token` in order for the Automation Bridge to connect to your CloudSOAR instance.
+:::
 
 <img src={useBaseUrl('img/cse/automations-bridge-installation-token.png')} alt="Installation token" style={{border:'1px solid gray'}} width="800"/>
 
@@ -88,7 +100,7 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 ### Ubuntu
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  <!-- There is no option to install a bridge in the new UI. -->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  <!-- There is no option to install a bridge in the new UI. --><br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right. 
 1. In the **Automation Bridge Manual** box, click **UBUNTU**.
 1. Click **Download** to download the `automation-bridge-X.X.deb` file.
 1. Copy the file to the bridge virtual machine.
@@ -99,7 +111,7 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 ### CentOS/RedHat
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).. In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  <!-- There is no option to install a bridge in the new UI. -->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  <!-- There is no option to install a bridge in the new UI. --><br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).. In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right. 
 1. In the **Automation Bridge Manual** box, click **CENTOS/REDHAT**.
 1. Click **Download** to download the `automation-bridge-X.X.rpm` file.
 1. Copy the file to the bridge virtual machine.
@@ -112,9 +124,9 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 1. Verify that the prefix name of the generated token respects the requirements (see [Get installation token](#get-installation-token)).
 1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters:
-   * `1SOAR_URL1`
-   * `1SOAR_TOKEN1`
-1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
+   * `SOAR_URL`
+   * `SOAR_TOKEN`
+1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
 
 And you can set this optional parameter (do not include spaces and must be less than 20 characters): `ALIAS`
 
@@ -127,9 +139,7 @@ An example of a configuration file would be:
   "ALIAS":"YOUR_ALIAS_NO_SPACES_LESS_THAN_20_CHARACTERS"
 }
 ```
-To create a Hosted Sumo Logic Collector, see [Hosted Collectors](/docs/send-data/hosted-collectors/). To add an HTTPS Source to a Hosted Collector, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/).
-
-By adding this endpoint to `SIEM_URL`, this will enable the automation bridge logs to be forwarded to Sumo Logic Log Analytics.
+To create a Hosted Sumo Logic Collector, see [Hosted Collectors](/docs/send-data/hosted-collectors/). To add an HTTPS Source to a Hosted Collector, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/). By adding this endpoint to `SIEM_URL`, this will enable the automation bridge logs to be forwarded to Sumo Logic Log Analytics.
 
 ### Bridge ALIAS
 
@@ -247,8 +257,8 @@ The automation bridge needs to be able to communicate with the Docker API to wor
 
 |Environment Variable |Description |Default   |
 |:------------------------------------|:---------------|:----------|
-|`API_URL_HERE` | To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the API Endpoint column. For example: `https://api.eu.sumologic.com/api/` | |
-|`SOAR_TOKEN_HERE` | Log in to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with the name prefix `csoar-bridge-token`. | |
+|`API_URL_HERE` | To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the API Endpoint column. For example: `https://api.eu.sumologic.com/api/` | |
+|`SOAR_TOKEN_HERE` | Sign in to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with the name prefix `csoar-bridge-token`. | |
 |`SIEM_URL_HERE` | The HTTPS Source endpoint URL from a Hosted Sumo Logic Collector. | NONE |
 |`BRIDGE_ALIAS_HERE` | Provide the alias name. With bridge ALIAS, it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited, it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the bridge that has the same ALIAS. | NONE |
 
@@ -276,7 +286,7 @@ In the DooD approach, you use the Docker daemon from the host system to interact
 
 This way, the main container will have access to the Docker socket and will, therefore, be able to start containers. The only difference is that instead of starting “child” containers, it will start “sibling” containers.
 
-![Mounting Docker socket](https://cdn.hashnode.com/res/hashnode/image/upload/v1693178230450/3b5e8d84-a6e6-40b9-acce-8b2f623e67be.png?auto=compress,format&format=webp)
+<img src={useBaseUrl('https://cdn.hashnode.com/res/hashnode/image/upload/v1693178230450/3b5e8d84-a6e6-40b9-acce-8b2f623e67be.png?auto=compress,format&format=webp)')} alt="Mounting Docker socket" style={{border: '1px solid gray'}} width="800" />
 
 It's useful to sharing pulled image with all bridges running on host machine.
 
@@ -297,3 +307,71 @@ public.ecr.aws/u5z5f8z6/sumologic/csoar-automation-bridge:latest
 Privileged containers are special containers with elevated privileges and direct access to the host system. Unlike their non-privileged counterparts, which are isolated and restricted in their capabilities, privileged containers can perform tasks requiring higher-level access. They achieve this by interacting with the host kernel and accessing sensitive resources, including hardware devices and network interfaces.
 
 One key difference between privileged and non-privileged containers is the level of isolation. Non-privileged containers are meticulously sandboxed and have limited access to the host system, thus providing an extra layer of security. Contrarily, privileged containers operate with fewer restrictions, enabling them to execute advanced operations beyond the reach of non-privileged containers.
+
+## Troubleshooting
+
+The first step to troubleshooting any bridge-related issue is to access the bridge logs.
+
+* If the bridge is running as a Docker container:
+   1. List all bridge containers:
+      ```bash
+      docker ps -a | grep "automation-bridge*"
+      ```
+   1. Extract container ID of the bridge in contention and check logs for any error: 
+      ```bash
+      docker logs CONTAINER_NAME_OR_ID | grep -i "error"
+      ```
+
+* If the bridge is running as a systemd service (deb/rpm package), check the logs for all bridge workers around the time the failing actions were triggered using `journalctl` with the `--since` flag.
+
+   For example:
+      ```bash
+      journalctl -u 'automation-bridge-worker@*.service' --since "30 minutes ago" | grep -i "error"
+      ```
+
+In both the setups, check the **Bridge** tab in the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui) as well, to see if the action reports any errors or timeout details.
+
+### Common issues
+
+   * #### Bridge starts and shutsdown immediately
+
+      * #### Installation token name does not respect the requirements mentioned in [Get installation token](#get-installation-token).
+
+         Check the logs and you should see logs lines similar to:
+         ```text
+         time="2026-01-19T12:29:23Z" level=error msg="Error response from request getBridgeConf" error=401 fields.time="2026-01-19 12:29:23.933671925 +0000 UTC m=+2.250123502"
+         time="2026-01-19T12:29:23Z" level=error msg="Error getting initial conf from cloud" error="Error getting configuration at startup: 401" fields.time="2026-01-19 12:29:23.933849675 +0000 UTC m=+2.250301252" workerIdentifier=worker@95138086f341
+         ```
+      
+        ##### Resolution: 
+
+           * Create a new token or update the existing token to meet the required format. Ensure the token prefix starts with: `csoar-bridge-token-`
+
+      * #### Installation token has hit its limit and is now emitting 429 status code on starting a bridge
+
+        Check the logs and you should see log lines similar to:
+        ```text
+        time="2026-01-19T12:34:10Z" level=error msg="Error response from request getBridgeConf" error=429 fields.time="2026-01-19 12:34:10.887085335 +0000 UTC m=+1.143383376"
+        time="2026-01-19T12:34:10Z" level=error msg="Error getting initial conf from cloud" error="Error getting configuration at startup: 429" fields.time="2026-01-19 12:34:10.887275793 +0000 UTC m=+1.143573835" workerIdentifier=worker@7b5d7449c289
+        ```
+
+        ##### Resolution:
+
+           * Consider upgrading bridge to version v3.2.2 and later.  
+           * Start the bridge using a new installation token.
+
+   * #### Bridge runs for a while and then goes offline
+
+      This issue commonly arises when the installation token exceeds its permitted API call quota.
+
+        When the limit is breached, the bridge responds with HTTP `429 (Too Many Requests)` status codes. The bridge logs generally include messages similar to the example below:
+        ```text
+        time="2026-01-14T08:53:04Z" level=error msg="Error sending request keepAlive" 
+        error="all retries failed for https://<SOAR_URL>/api/auth-gateway/csoar/bridge/keepAlive/⁠ with response: 
+        &{Status:429 Too Many Requests StatusCode:429 Proto:HTTP/2.0 ProtoMajor:2 ProtoMinor:0
+        ```
+
+          ##### Resolution:
+           * Ensure that the bridge is running the latest available version. 
+           * For bridge versions v3.2.2 and later, this issue should go away on its own after a while. The bridge will automatically try again after some time and will reconnect once the rate limits are cleared, which can be monitored in the **Bridge** tab of the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui). The recovery duration depends on the number of bridges sharing the same token. 
+           * When multiple bridges are operating with the same token and self-healing is slow, a quick workaround is to stop a subset of the bridges and monitor the health of the remaining bridges until stability is restored.

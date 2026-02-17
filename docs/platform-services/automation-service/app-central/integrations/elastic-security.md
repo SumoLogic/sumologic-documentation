@@ -39,6 +39,34 @@ Elastic Security equips analysts to prevent, detect, and respond to threats. The
 * **Fetch Detections Elastic Security** *(Daemon)* - Daemon to pull Elastic Security Detections.
 * **Get Signals Alerts Detections Elastic Security** *(Daemon)* - Daemon to pull Signal Alerts.
 
+## Configure Elastic Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your Elastic Security [hostname](https://www.elastic.co/docs/solutions/security/explore/hosts-page).
+
+* **Port**. Enter the [port](https://www.elastic.co/docs/reference/elasticsearch/configuration-reference/networking-settings) on which Elasticsearch is listening for HTTP traffic. The port is by default 9200.
+
+* **Username**. Enter the username of an Elastic admin user authorized to provide authentication for the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationCertificate/>
+* **Container ID for Daemon**. Enter the [container ID](https://www.elastic.co/docs/reference/ecs/ecs-container#field-container-id).
+
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/elastic-security-configuration.png')} style={{border:'1px solid gray'}} alt="Elastic Security configuration" width="400"/>
+
+For information about Elastic Security, see [Elastic Security documentation](https://www.elastic.co/docs/solutions/security).
+
 ## Change Log
 
 * April 9, 2021 - First upload

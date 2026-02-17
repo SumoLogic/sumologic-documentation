@@ -19,10 +19,6 @@ The Netskope app provides a collector source for pulling all the events and aler
 
 For more information on Netskope, refer to the Netskope [documentation](https://www.netskope.com/platform/how-it-works).
 
-## Collect logs for Netskope
-
-To collect logs from the Netskope platform, use the [new Cloud-to-Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app. You can view the Netskope legacy collection method [here](/docs/integrations/security-threat-detection/netskope-legacy-collection/).
-
 ### Sample log message
 
 <details>
@@ -76,9 +72,8 @@ To collect logs from the Netskope platform, use the [new Cloud-to-Cloud Integrat
            "os": "Windows 8",
            "browser": "Internet Explorer",
            "appcategory": "Webmail"
-       }
-   ]
 }
+
 ```
 
 </details>
@@ -99,18 +94,35 @@ to_user, app_session_id  nodrop
 | count
 ```
 
-## Installing the Netskope app
+## Collection configuration and app installation
 
-This section demonstrates how to install the Netskope app, and provides examples and descriptions for each of the dashboards. The Netskope app has the following components:
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-* **Application Usage**. Insights into application usage; specifically by devices, users, users and traffic patterns.
-* **Security Alerts**. Visibility into Netskope security alerts and violations and the ability to identify effects of a breach.  
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Netskope app is properly integrated and configured to collect and analyze your Netskope data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
 
-## Viewing Netskope dashboards
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing the Netskope dashboards
 
 The Netskope dashboards are grouped by their component in the following two category folders:
 
@@ -214,7 +226,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Anomalies.png')} alt="netskope dashboards" />
 
-## Upgrading the Netskope app (Optional)
+## Upgrade/Downgrade the Netskope app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

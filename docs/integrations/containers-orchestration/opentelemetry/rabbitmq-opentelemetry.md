@@ -15,6 +15,10 @@ RabbitMQ logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#rabbitmq-alerts). For details on creating custom monitors, refer to the [Create monitors for RabbitMQ app](#create-monitors-for-rabbitmq-app).
+:::
+
 ## Fields creation in Sumo Logic for RabbitMQ
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of RabbitMQ App install if not already present.
@@ -75,116 +79,37 @@ Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
 
 ## Collection configuration and app installation
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-<ConfigAppInstall/>
+### Step 1: Set up remotely managed OpenTelemetry collector
 
-### Step 1: Set up Collector
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+:::note
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
+:::
 
-<SetupColl/>
+<OtelCollectorInstallation/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
+### Step 2: Configure the source template
 
-### Step 2: Configure integration
+import RabbitmqConfigureSourceTemplate from '../../../reuse/send-data/rabbitmq-configure-source-template.md';
 
-OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) yaml file with all the details concerning the data that needs to be collected. For example, it specifies the location of a log file that is read and sent to the Sumo Logic platform.
+<RabbitmqConfigureSourceTemplate/>
 
-In this step, you will configure the yaml file required for RabbitMQ collection.
+import TimestampParsing from '../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 
-Below are the inputs required:
+<TimestampParsing/>
 
-- **`endpoint (no default)`**. The hostname and port of the RabbitMQ instance, separated by a colon. (For example: `localhost:15672`.)
-- **RabbitMQ logs Path**. Enter the path to the log file for your RabbitMQ instance.
-- **username**. Enter the RabbitMQ username.
-- **password**. Enter the RabbitMQ password.
+import ProcessingRules from '../../../reuse/opentelemetry/processing-rules.md';
 
-The log file path configured to capture RabbitMQ logs must be given here. The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`. If you are using a customized path, check the [`rabbitmq.conf`](https://www.rabbitmq.com/logging.html) file for this information.
+<ProcessingRules/>
 
-You can add any custom fields which you want to tag along with the data ingested in sumo. Click on the **Download YAML File** button to get the yaml file.
+### Step 3: Push the source template to the desired remotely managed collectors
 
-For Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
+import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
-
-### Step 3: Send logs to Sumo Logic
-
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
-
-<LogsIntro/>
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Linux"
-  values={[
-    {label: 'Linux', value: 'Linux'},
-    {label: 'Windows', value: 'Windows'},
-    {label: 'macOS', value: 'macOS'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
-
-<TabItem value="Linux">
-
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the RabbitMQ instance which needs to be monitored.
-2. Move the `env` file to the following directory:
-  ```sh
-  /etc/otelcol-sumo/env/
-  ```
-3. Restart the collector using:
-  ```sh
-  sudo systemctl restart otelcol-sumo
-  ```
-
-</TabItem>
-<TabItem value="Windows">
-
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2. Restart the collector using:
-  ```sh
-  Restart-Service -Name OtelcolSumo
-  ```
-
-</TabItem>
-<TabItem value="macOS">
-
-1. Copy the yaml file to /etc/otelcol-sumo/conf.d/ folder in the RabbitMq instance which needs to be monitored.
-2. Restart the otelcol-sumo process using the below command 
-  ```sh
-  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml" 
-  ```
-
-</TabItem>
-<TabItem value="Chef">
-
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
-
-</TabItem>
-</Tabs>
-
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+<DataConfiguration/>
 
 ## Sample log messages
 
@@ -230,3 +155,20 @@ The **RabbitMQ - Logs** dashboard gives you an at-a-glance view of error message
 The **RabbitMQ - Metrics** dashboard gives you an at-a-glance view of your RabbitMQ deployment across brokers, queue, exchange, consumer, and messages.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Metrics.png' alt="RabbitMQ Metrics dashboards" />
+
+## Create monitors for RabbitMQ app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### RabbitMQ alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `RabbitMQ - High Consumer Count` | This alert is triggered when consumers are higher than given value (Default 10000) in a queue. | Count `>=` 10000 | Count `<` 10000 |
+| `RabbitMQ - High Message Queue Size` | This alert is triggered when the number of messages in a queue exceeds a given threshold (Default 10000), indicating potential consumer issues or message processing bottlenecks. | Count `>=` 10000 | Count `<` 10000 |
+| `RabbitMQ - High Messages Count` | This alert is triggered when messages are higher than given value (Default 10000) in a queue. | Count `>=` 10000 | Count `<` 10000 |
+| `RabbitMQ - High Unacknowledged Messages` | This alert is triggered when there are too many unacknowledged messages (Default 5000), suggesting consumer processing issues. | Count `>=` 5000 | Count `<` 5000 |
+| `RabbitMQ - Node Down` | This alert is triggered when a node in the RabbitMQ cluster is down. | Count `>=` 1 | Count `<` 1 |
+| `RabbitMQ - Zero Consumers Alert` | This alert is triggered when a queue has no consumers, indicating potential service issues. | Count `<=` 0 | Count `>` 0 |

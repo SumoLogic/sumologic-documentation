@@ -1,7 +1,7 @@
 ---
 id: set-up-saml
 title: Set Up SAML for Single Sign-On
-description: Enable Single Sign-On (SSO) for user access to Sumo Logic.
+description: Follow the steps to configure SAML-based single sign-on (SSO) in Sumo Logic for secure, centralized user authentication.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,6 +16,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This page has information about provisioning Security Assertion Markup Language (SAML) 2.0 to enable Single Sign-On (SSO) for user access to Sumo Logic.
 
 In addition to basic SAML configuration, you can choose optional on-demand user creation (using SAML 2.0 assertions), and designate custom login and/or logout portals.
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a SAML configuration with the [`sumologic_saml_configuration`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/saml_configuration) resource.
+
+<TerraformLink/>
+:::
 
 ## SAML provisioning process
 
@@ -36,15 +44,15 @@ The provisioning process works as follows:
 
 This section has key information about SAML in Sumo.
 
-## Access keys are not controlled by SAML
+### Access keys are not controlled by SAML
 
 This means that if a user has been turned off on the SSO side, their access keys would still be valid. For this reason, administrators should audit users regularly and disable access keys when necessary.
 
-## SAML does not provide a deprovisioning mechanism 
+### SAML does not provide a deprovisioning mechanism 
 
-This means that if a user is deleted or disabled in the SSO database, it will not be reflected in Sumo Logic. However, these users would no longer be able to login to Sumo Logic via SSO. Administrators can delete these users from the **Administration > Users and Roles > Users** page in Sumo Logic. For information about what happens when a user is deleted, and transferring a deleted user's content to another user, see [Delete a User](../../users-roles/users/delete-user.md).
+This means that if a user is deleted or disabled in the SSO database, it will not be reflected in Sumo Logic. However, these users would no longer be able to sign in to Sumo Logic via SSO. Administrators can delete these users from the **Administration > Users and Roles > Users** page in Sumo Logic. For information about what happens when a user is deleted, and transferring a deleted user's content to another user, see [Delete a User](../../users-roles/users/delete-user.md).
 
-## Only one certificate for each SAML configuration is currently supported
+### Only one certificate for each SAML configuration is currently supported
 
 Only one token-signing ADFS X.509 for each SAML configuration is currently supported. When you need to do a certificate refresh on the ADFS server, you must update the Sumo certificate afterwards.
 
@@ -60,7 +68,7 @@ Before provisioning SAML, make sure you have the following:
 
 Follow these steps to configure IdP-initiated login. After this procedure, you can enable optional SAML functionality, including SP-initiated login and on-demand provisioning, as described in [Optional Configurations](set-up-saml.md).
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. 
 1. Select an existing configuration, or click the plus (**+**) icon to create a new configuration. <br/><img src={useBaseUrl('img/security/saml-config-list.png')} alt="Plus button on the Configuration List page" style={{border: '1px solid gray'}} width="600" />
 1. The **Add Configuration** page appears.<br/><img src={useBaseUrl('img/security/saml-add-configuration.png')} alt="Add Configuration page" style={{border: '1px solid gray'}} width="600" />
 1. **Configuration Name**. Enter a name to identify the SSO policy (or another name used internally to describe the policy).
@@ -91,7 +99,7 @@ This section has instructions for configuring several optional SAML features.
 ### Configure SP initiated Login 
 
 :::tip
-SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
+SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings) section of the *Manage Organization* topic.
 :::
 
 This section has instructions for setting up SP initiated login. When SP initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page.
@@ -159,7 +167,7 @@ Click the **Download Metadata XML** button while you [review a SAML configuratio
 
 ### Download metadata XML with the API
 
-You can get the metadata XML for a SAML configuration using the [getSamlMetadata](https://api.sumologic.com/docs/#operation/getSamlMetadata) API in the [SAML Configuration](https://api.sumologic.com/docs/#tag/samlConfigurationManagement) resource. Run the API from your API endpoint. To find your API endpoint, see [API Authentication, Endpoints, and Security](/docs/api/getting-started/).
+You can get the metadata XML for a SAML configuration using the [getSamlMetadata](https://api.sumologic.com/docs/#operation/getSamlMetadata) API in the [SAML Configuration](https://api.sumologic.com/docs/#tag/samlConfigurationManagement) resource. Run the API from your API endpoint. To find your API endpoint, see [API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started/).
 
 If you need to give your identity provider a URL that contains the metadata XML for a SAML configuration, run the [getIdentityProviders](https://api.sumologic.com/docs/#operation/getIdentityProviders) API. This will give you a list of all SAML configurations in your organization and includes the metadata URL for each  configuration. In the response from the API, look for `metadataURL` entries. For example:
 `"metadataUrl": "https://api.sumologic.com/api/v1/saml/identityProviders/00000000361130F7/metadata"`

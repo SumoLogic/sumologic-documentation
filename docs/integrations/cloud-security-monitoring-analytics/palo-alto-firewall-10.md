@@ -52,7 +52,7 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 
 To configure a hosted collector with a Cloud Syslog source, do the following:
 
-1. Log in to Sumo Logic and [create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. Sign in to Sumo Logic and [create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Create a [Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source) on the hosted collector, specifying the following:
    * Enter a Source Name.
    * Provide a Source Category: **NW/PAN/V10**
@@ -94,7 +94,7 @@ To create a server profile specifying  the log destination, do the following:
 
 To configure syslog forwarding for traffic and threat logs, follow the steps to [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/10-1/pan-os-admin/monitoring/configure-log-forwarding) as described in the Palo Networks documentation.
 
-As of March 24, 2022, some Palo Alto Network systems have experienced troubles with validating the Sumo Logic certificate due to their OCSP checking logic. Please contact Palo Alto’s support for  a workaround, and if needed, contact Sumo Logic’s support for the related Palo Alto Case number.
+As of March 24, 2022, some Palo Alto Network systems have experienced troubles with validating the Sumo Logic certificate due to their OCSP checking logic. If you encounter this problem, try disabling OCSP checking logic in the firewall. If you continue to have issues, contact Palo Alto’s support, and if needed, contact Sumo Logic’s support for the related Palo Alto case number.
 
 
 ### Step 4. Verify logs in Palo Alto Networks
@@ -103,7 +103,7 @@ In this step, you view logs using the Palo Alto Network Web interface to confirm
 
 To verify the logs in Palo Alto Networks, do the following:
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
-2. Once the setup is done, log in to Sumo Logic.
+2. Once the setup is done, sign in to Sumo Logic.
 3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source), such as: `_sourceCategory = NW/PAN/V10`.
 
 
@@ -169,7 +169,7 @@ The **Security Monitoring - TRAFFIC Log Overview** dashboard helps you to monito
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-TRAFFIC-Log-Overview.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
-## Upgrading the PAN Firewall 10 Security app (Optional)
+## Upgrade/Downgrade the PAN Firewall 10 Security app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

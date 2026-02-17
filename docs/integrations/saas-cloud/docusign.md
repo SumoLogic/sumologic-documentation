@@ -159,11 +159,33 @@ _sourceCategory="docusign_src"
 | transpose row _timeslice column severity as low, medium, high
 ```
 
-## Installing the DocuSign app
+## Collection configuration and app installation
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-<AppInstall2/>
+<CollectionConfiguration/>
+
+:::important
+Use the [Cloud-to-Cloud Integration for DocuSign](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your DocuSign app is properly integrated and configured to collect and analyze your DocuSign data.
+:::
+
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing DocuSign dashboards
 
@@ -185,7 +207,7 @@ The **DocuSign - Alerts** dashboard keeps track of when some bulk action is perf
 
 The **DocuSign - Users** dashboard gives you detailed information regarding the operations performed by the users of the organizations. It gives you the geo-locations of all the user logins and login activity from high-risk locations. Also, it gives visibility into user login activity and distribution of sources of user activity. Furthermore, it summarizes the critical updates in settings, roles, and permissions.<br/><img src={useBaseUrl('img/integrations/saas-cloud/docusign-users.png')} alt="docusign-users.png" width="900"/>
 
-## Upgrading the DocuSign app (Optional)
+## Upgrade/Downgrade the DocuSign app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

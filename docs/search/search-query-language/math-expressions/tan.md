@@ -17,5 +17,5 @@ tan(<x>) as <field>
 ## Example
 
 ```sql
-tan(1) as v // v = 1.5574077246549023
+* | tan(1) as v
 ```

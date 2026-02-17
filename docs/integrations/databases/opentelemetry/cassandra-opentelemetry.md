@@ -2,7 +2,7 @@
 id: cassandra-opentelemetry
 title: Cassandra - OpenTelemetry Collector
 sidebar_label: Cassandra - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Cassandra.
+description: Learn about the Sumo Logic OpenTelemetry app for Cassandra.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -15,9 +15,13 @@ The [Cassandra](https://cassandra.apache.org/_/cassandra-basics.html) app is a l
 
 Cassandra logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) and cassandra metrics are sent to Sumo Logic using [JMX opentelemetry receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver) with the `target_system` set as [`cassandra`](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/cassandra.md).
 
-The app supports Logs from the open-source version of Cassandra. The App is tested on the 4.0.0 version of Cassandra.
+The app supports logs from the open-source version of Cassandra. The app is tested on the 4.0.0 version of Cassandra.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Schematics.png' alt="Schematics" />
+
+:::info
+This app includes [built-in monitors](#cassandra-alerts). For details on creating custom monitors, refer to the [Create monitors for Cassandra app](#create-monitors-for-cassandra-app).
+:::
 
 ## Fields creation in Sumo Logic for Cassandra
 
@@ -36,7 +40,6 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 JMX receiver collects Cassandra metrics from Cassandra server as part of the OpenTelemetry Collector (OTC).
 
   1. Follow the instructions in [JMX - OpenTelemetry's prerequisites section](/docs/integrations/app-development/opentelemetry/jmx-opentelemetry/#prerequisites) to download the [JMX Metric Gatherer](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/README.md). This gatherer is used by the [JMX Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
-
   2. Set the JMX port as part of `JAVA_OPTS` for Tomcat startup. Usually, it is set in the `/etc/systemd/system/cassandra.service` or `C:\Program Files\apache-tomcat\bin\tomcat.bat` file.
 
       ```json
@@ -44,9 +47,10 @@ JMX receiver collects Cassandra metrics from Cassandra server as part of the Ope
       ```
 
 #### For log collection
-Cassandra has three main logs: system.log, debug.log, and gc.log which hold general logging messages, debugging logging messages, and java garbage collection logs respectively.
 
-These logs by default live in `${CASSANDRA_HOME}/logs`, but most Linux distributions relocate logs to `/var/log/cassandra`. Operators can tune this location as well as what levels are logged using the provided logback.xml file. For more details on Cassandra logs, see[ this](https://cassandra.apache.org/doc/latest/troubleshooting/reading_logs.html) link.
+Cassandra has three main logs: `system.log`, `debug.log`, and `gc.log`, which hold general logging messages, debugging logging messages, and java garbage collection logs respectively.
+
+These logs by default live in `${CASSANDRA_HOME}/logs`, but most Linux distributions relocate logs to `/var/log/cassandra`. Operators can tune this location as well as what levels are logged using the provided logback.xml file. For more details on Cassandra logs, see [this](https://cassandra.apache.org/doc/latest/troubleshooting/reading_logs.html).
 
 import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
 
@@ -76,9 +80,13 @@ Below are the inputs required:
 
 You can add any custom fields which you want to be tagged with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
+import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
+
+<EnvVarOpt/>
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs to Sumo
+### Step 3: Send logs to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
@@ -133,7 +141,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample log messages
+## Sample log message
 
 ```sql
   INFO [ScheduledTasks:1] 2023-01-08 09:18:47,347 StatusLogger.java:101 - system.schema_aggregates
@@ -176,7 +184,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 }
 ```
 
-## Sample log queries 
+## Sample log query 
 
 Following is a query from the Cassandra app's **Cassandra - Overview** dashboard Nodes Up panel:
 
@@ -191,6 +199,7 @@ Following is a query from the Cassandra app's **Cassandra - Overview** dashboard
 ```
 
 ## Sample metrics query
+
 Following is the query from Cassandra App's overview Dashboard's Number of Requests Panel:
 
 ```sql
@@ -205,20 +214,15 @@ The **Cassandra - Overview** dashboard provides an at-a-glance view of Cassandra
 
 Use this dashboard to:
 
-- Identify number of nodes which are up and down
-- Gain insights into Memory - Init, used, Max and committed
-- Gain insights into the error and warning logs by thread and Node activity
+- Identify number of nodes which are up and down.
+- Gain insights into Memory - Init, used, Max, and committed.
+- Gain insights into the error and warning logs by thread and Node activity.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Overview.png' alt="Collector" />
 
 ### Cache Stats
 
-The **Cassandra - Cache Stats** dashboard provides insight into the database cache status, schedule, and items.
-
-Use this dashboard to:
-
-- Monitor Cache performance.
-- Identify Cache usage statistics.
+The **Cassandra - Cache Stats** dashboard provides insight into the database cache status, schedule, and items. Use this dashboard to monitor cache performance and identify cache usage statistics.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Cache-Stats.png' alt="Cache Stats" />
 
@@ -246,32 +250,26 @@ Use this dashboard to:
 
 ### Memtable
 
-The **Cassandra - Memtable** dashboard provides insights into memtable statistics.
-
-Use this dashboard to:
-
-- Review flush activity and memtable status.
+The **Cassandra - Memtable** dashboard provides insights into memtable statistics. Use this dashboard to review flush activity and memtable status.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Memtable.png' alt="Memtable" />
 
 ### Resource Usage
 
-The **Cassandra - Resource Usage** dashboard provides details of resource utilization across Cassandra clusters.
-
-Use this dashboard to:
-
-- Identify resource utilization. This can help you to determine whether resources are over-allocated or under-allocated.
+The **Cassandra - Resource Usage** dashboard provides details of resource utilization across Cassandra clusters. Use this dashboard to identify resource utilization. This can help you to determine whether resources are over-allocated or under-allocated.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Resource-Usage-Logs.png' alt="Resource Usage" />
 
 ### Compaction
 
 The **Cassandra - Compactions** dashboard provides insight into the completed and pending compaction tasks.
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Compaction.png' alt="Compaction" />
 
 ### Requests
 
 The **Cassandra - Requests** dashboard provides insight into the number of request served, number of error request, and their distribution by status and operation. Also you can monitor the read and write latency of the cluster instance using this dashboard.
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Requests.png' alt="Requests" />
 
 ### Storage
@@ -279,3 +277,23 @@ The **Cassandra - Requests** dashboard provides insight into the number of reque
 The **Cassandra - Storage** dashboard provides insight into the current value of total hints of your Cassandra cluster along with storage managed by the cluster.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Storage.png' alt="Storage" />
+
+## Create monitors for Cassandra app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Cassandra alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Cassandra - Compaction Task Pending` | This alert is triggered when there are more than 15 pending Compaction tasks. | Count > = 15 | Count < 15 |
+| `Cassandra - High Hints Backlog` | This alert is triggered when the number of in-progress hints exceeds the given value for 5 minutes. | Count > = 5000 | Count < 5000 |
+| `Cassandra - High Memory Usage` | This alert is triggered when memory used exceeds 85% of committed memory for more than 10 minutes. | Count  > = 1 | Count < 1 |
+| `Cassandra - Node Down Alert` | This alert is triggered when a Cassandra node status changes to DOWN for more than 5 minutes. | Count > = 1 | Count < 1 |
+| `Cassandra - Operation Error Rate High` | This alert is triggered when the error rate of operations exceeds given value (Default 5%) for 5 minutes. | Count > 5 | Count < = 5 |
+| `Cassandra - Range Query Latency High (99th Percentile)` | This alert is triggered when the 99th percentile of range query latency exceeds the given value (Default 2 seconds) for 5 minutes. | Count > = 2000000 | Count < 2000000 |
+| `Cassandra - Read Latency High (99th Percentile)` | This alert is triggered when the 99th percentile of read latency exceeds given value (Default 500ms) for 5 minutes. | Count > = 500000 | Count < 500000 |
+| `Cassandra - Storage Growth Rate Abnormal` | This alert is triggered when the storage growth rate exceeds given value (Default 25MB/minute) for 5 minutes. | Count > = 26214400 | Count < 26214400 |
+| `Cassandra - Write Latency High (99th Percentile)` | This alert is triggered when the 99th percentile of write latency exceeds given value (Default 200ms) for 5 minutes. | Count > = 200000 | Count < 200000 |

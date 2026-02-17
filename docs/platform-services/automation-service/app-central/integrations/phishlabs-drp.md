@@ -21,18 +21,30 @@ Digital Risk Protection from PhishLabs protects your organization's critical dig
 * **List Case Types** *(Enrichment)* - Retrieve collection of available case types.
 * **Create Case** *(Containment)* - Submit a new case.
 
-## PhishLabs DRP in Automation Service and Cloud SOAR
+## Configure PhishLabs DRP in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-drp/phishlabs-drp-3.png')} style={{border:'1px solid gray'}} alt="phishlabs-drp" width="400"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
-   * **Label**. The desired name for the resource.
-   * **URL**. Your PhishLabs DRP URL.
-   * **Username**. Your PhishLabs DRP username you copied earlier from PhishLabs DRP.
-   * **Password**. Your PhishLabs DRP password you copied earlier from PhishLabs DRP.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-drp/phishlabs-drp-4.png')} style={{border:'1px solid gray'}} alt="phishlabs-drp" width="400"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-drp/phishlabs-drp-5.png')} style={{border:'1px solid gray'}} alt="phishlabs-drp" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-drp/phishlabs-drp-6.png')} style={{border:'1px solid gray'}} alt="phishlabs-drp" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-drp/phishlabs-drp-7.png')} style={{border:'1px solid gray'}} alt="phishlabs-drp" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your PhishLabs DRP URL.
+
+* **Username**. Enter the username of a PhishLabs DRP admin user authorized to authenticate the integration. 
+
+* **Password**. Enter the password of the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/phishlabs-drp-configuration.png')} style={{border:'1px solid gray'}} alt="PhishLabs DRP configuration" width="400"/>
+
+For information about PhishLabs, see the [PhishLabs website](https://www.phishlabs.com/).
 
 ## Change Log
 

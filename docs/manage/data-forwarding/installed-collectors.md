@@ -29,7 +29,7 @@ You need the [Manage Collectors role capability](../users-roles/roles/role-capa
 
 To set up a data forwarding destination:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Data Archiving**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Data Archiving**. You can also click the **Go To...** menu at the top of the screen and select **Data Archiving**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Data Archiving**. You can also click the **Go To...** menu at the top of the screen and select **Data Archiving**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Data Archiving**. 
 1. Click **+ Destination** to add a new destination.
 1. Select one of these options for **Destination Type**. 
    * Hitachi
@@ -77,6 +77,10 @@ Follow the instructions for the destination type you chose.
 </TabItem>
 <TabItem value="archive">
 
+:::note
+Data forwarding to S3 Archive locations will forward log data from Installed Collectors to AWS S3 buckets to collect at a later time. Data **will not** be forked to both Sumo Logic and AWS S3. In that case, you will want to send the data to Sumo Logic first and then configure [Forwarding Data from Sumo Logic to S3](/docs/manage/data-forwarding/forward-data-from-sumologic/).
+:::
+
 * **Bucket Name**. Enter the exact name of the S3 bucket.You can create only one destination with a particular bucket name. If you try to create a new destination with the bucket name of an existing destination, the new destination replaces the old one.
 *  **Description**. (Optional)
 * **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.
@@ -101,7 +105,7 @@ There are several methods you can use to configure processing rules: 
 
 **To configure processing rules for data forwarding using the web application**
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Search for the source that you want to configure, and click the **Edit** link for the source. The source must be associated with an Installed Collector.
 1. Scroll down to the **Processing Rules** section and click the arrow to expand the section.
 1. Click **Add Rule**.

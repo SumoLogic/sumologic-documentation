@@ -133,7 +133,7 @@ The **Mailgun - Failed, Complained Events** dashboard offers a holistic view of 
 
 <img src={useBaseUrl('img/integrations/webhooks/mailgun_failedComplainedEvents.png')} style={{border: '1px solid black'}} alt="Mailgun - Failed, Complained Events"/>
 
-## Upgrading the iLeMailgunrt app (Optional)
+## Upgrade/Downgrade the iLeMailgunrt app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

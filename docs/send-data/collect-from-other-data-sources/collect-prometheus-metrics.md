@@ -8,6 +8,10 @@ description: You can collect Prometheus metrics in Kubernetes or outside of Kube
 
 You can collect Prometheus metrics in Kubernetes or outside of Kubernetes using Telegraf to collect and a plugin to send data to Sumo Logic. This guide walks through the plugins and options to set up your collection.
 
+:::tip
+If you're using the Sumo Logic OpenTelemetry Collector, you can collect Prometheus metrics using the built-in `prometheus` receiver instead of Telegraf. See [Collect Metrics - Prometheus](/docs/send-data/opentelemetry-collector/data-source-configurations/collect-metrics#prometheus) for configuration details.
+:::
+
 ## Collecting Prometheus Metrics in Kubernetes
 
 Use the [Prometheus Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/prometheus)
@@ -223,3 +227,9 @@ dimensions = ""
 ```
 
 **Custom dimensions.** Set a comma-separated key=value list of dimensions to apply to every metric. These dimensions allow you to query metrics a more granular level.
+
+## Additional resources
+
+* Blogs:
+   * [Why Prometheus isn’t enough to monitor complex environments](https://www.sumologic.com/blog/prometheus-monitoring/)
+   * [Monitoring with Prometheus vs Grafana: understanding the difference](https://www.sumologic.com/blog/prometheus-vs-grafana/)

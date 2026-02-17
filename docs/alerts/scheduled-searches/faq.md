@@ -5,6 +5,8 @@ sidebar_label: FAQ
 description: You can edit or cancel a Scheduled Search at any time.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The following topics include frequently asked questions about scheduled
 searches and provide troubleshooting tips. 
 
@@ -51,7 +53,7 @@ To create a Scheduled Search:
     | fields collector, gbytes, collector_pct_of_todaysvolume, todays_volume, plan_size, todaysvolume_against_plan
     ```
 1. For the search **Time Range**, select **Today**.
-1. Click **Save As**. <br/>![DataUsageBreached.png](/img/alerts/DataUsageBreached.png)
+1. Click **Save As**. <br/><img src={useBaseUrl('img/alerts/DataUsageBreached.png')} alt="Data usage breached" style={{border: '1px solid gray'}} width="500" />
 1. In the **Save Search As** dialog, enter a name for this Scheduled Search, such as **90% Data Usage Limit Reached**.
 1. Set the **Run frequency** to **Every 4 hours**.
 1. Click **Schedule this search**. 
@@ -128,27 +130,6 @@ Additional consideration for performance tests:
 * If the data you are testing against is not reflective of the actual volume you’ll be scanning on a recurring basis, then the test itself should be considered invalid. Similarly, avoid scheduling searches preemptively. Wait until you get a good sample size and make sure your live streaming is completely set up.
 * If there are plans to add more data to your account in the near future, keep that in mind in your testing and include a buffer to make sure that your increased data volume won’t cause your scheduled search to time out.
 
-
-## How do I set a real-time alert with more than 1,000 results?
-
-Scheduled Search alert condition thresholds are based on the number of rows returned in your search results. It does not consider any values that may be present within a column of those rows.
-
-If your query does not perform any aggregations the Scheduled Search threshold will apply to the number of raw messages returned with a query, as seen under the **Messages** tab of the search. If a query contains an aggregate operation - for example, `count`, `sum`, `min`, `max` - the Scheduled Search threshold will be applied to the number of aggregate rows returned by the query, as seen within the **Aggregate** tab of the results.
-
-When performing an aggregation as part of a query, and wanting to alert when a specific aggregate value meets a threshold, the threshold for that field value will need to be included as part of the query itself. This can typically be done by providing a [`where`](/docs/search/search-query-language/search-operators/where) condition after the aggregation within the query. For example:
-
-```sql
-_sourceCategory=aws/prod
-| json "message","logStream","logGroup"
-| parse field=message "* * * * * * * * * * * * * *" as version,accountID,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status
-| timeslice 1m
-| where action="REJECT"
-| count as drops by _timeslice
-| where drops > 1000
-```
-
-This will ensure results are only returned when the field value meets the threshold provided within the query. The threshold set within the Scheduled Search would then be set to alert based on the resulting number of rows that met the threshold set within the query. For example: `Greater than\> 0`
-
  
 ## Why have I received a "Scheduled Search Email Quota Reached" notification?
 
@@ -181,21 +162,21 @@ A maximum of 6000 Scheduled Searches are allowed per account.
 
 The following is an example of a temporary suspension email:
 
-![suspension email.png](/img/alerts/suspension-email.png)
+<img src={useBaseUrl('img/alerts/suspension-email.png')} alt="Suspension email" style={{border: '1px solid gray'}} width="700" />
 
 The [Audit Index](/docs/manage/security/audit-indexes/audit-index) stores events on your scheduled search events. The following is an example of a temporary suspension log:   
 
-![temp sus.png](/img/alerts/temp-sus.png)
+<img src={useBaseUrl('img/alerts/temp-sus.png')} alt="Temporary suspension" style={{border: '1px solid gray'}} width="800" />
 
 #### Permanent suspension
 
 The following is an example of a permanent suspension email:  
 
-![permanent sus.png](/img/alerts/permanentsus.png)
+<img src={useBaseUrl('img/alerts/permanentsus.png')} alt="Permanent suspension" style={{border: '1px solid gray'}} width="700" />
 
 The [Audit Index](/docs/manage/security/audit-indexes/audit-index) stores events on your scheduled search events. The following is an example of a permanent suspension log:
 
-![perm sus.png](/img/alerts/perm-sus.png)
+<img src={useBaseUrl('img/alerts/perm-sus.png')} alt="Permanent suspension" style={{border: '1px solid gray'}} width="800" />
 
 #### How long will the Scheduled Search be suspended?  
 

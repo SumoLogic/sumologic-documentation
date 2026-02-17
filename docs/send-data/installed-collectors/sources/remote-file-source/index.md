@@ -5,8 +5,9 @@ description: You can collect file tail data from a remote system using SSH.
 ---
 
 import CollBegin from '../../../../reuse/collection-should-begin-note.md';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Log files collected using a Remote File Source must be encoded in UTF-8 or ASCII. If you are editing a Source, metadata changes are reflected going forward. Metadata for previously collected log data will not be retroactively changed.
+If you are editing a Source, metadata changes are reflected going forward. Metadata for previously collected log data will not be retroactively changed.
 
 Sumo Logic scans remote directories every 30 seconds.
 
@@ -17,14 +18,10 @@ To collect remote Windows logs using CIFS/SMB, see CIFS/SMB, see [Prerequisite
 To configure a Remote File Source:
 
 1. First see [Prerequisites for Windows Remote File Collection](prerequisites-windows-remote-file-collection.md).
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Find the name of the installed Collector here you'd like to add a Source. Click **Add** and then choose **Add Source** from the pop-up menu.
-1. Select **Remote File** for the Source type.   
-
-    ![Remote File Source icon.png](/img/send-data/Remote-File-Source-icon.png) 
-
+1. Select **Remote File** for the Source type.<br/><img src={useBaseUrl('img/send-data/Remote-File-Source-icon.png')} alt="Remote File Source icon" style={{border: '1px solid gray'}} width="100" />
 1. Set the following:
-
    * **Name.** Type the name you'd like to display for the new Source. **Description** is optional. Source name metadata is stored in a searchable field called `_sourceCategory`.
    * **Host.** Enter the hostname or the IP address of the remote machine (the hostname entered must be the system hostname or IP address and cannot be changed). The hostname is stored in a searchable field called `_sourceHost`. The hostname can be a maximum of 128 characters. You can define a Source Host value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below.
    * **Port.** If your SSH server is listening on a nonstandard port, type the port number.
@@ -39,20 +36,15 @@ To configure a Remote File Source:
 
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 1. Choose the type of Credentials used for this Source:
 
    * Username and Password. Enter valid user credentials for the remote machine.
-   * Local SSH Config. Enter the username and the absolute path, including file name, to the PEM SSH key file located on the Collector host. Enter a password if required.
-
-    ![remote file source credential input.png](/img/send-data/remote-file-source-credential-input.png)
-
+   * Local SSH Config. Enter the username and the absolute path, including file name, to the PEM SSH key file located on the Collector host. Enter a password if required.<br/><img src={useBaseUrl('img/send-data/remote-file-source-credential-input.png')} alt="Remote file source credential input" style={{border: '1px solid gray'}} width="500" />
 1. Set any of the following under **Advanced.**
-
-    ![Local File UI June 2021.png](/img/send-data/Local-File-UI.png)
-
+<img src={useBaseUrl('/img/send-data/advanced-options-remote-file-source.png')} alt="Advanced options for log" style={{border: '1px solid gray'}} width="600" />
     * **Denylist.** Optional. Add any files to be excluded by including one or more path expressions separated by commas. Note that this field takes a maximum of 10240 characters.
     * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
       * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
@@ -92,7 +84,7 @@ You can use multiple variables, for example:
 {{sys.PATH}}-{{sys.YourEnvVar}}
 ```
 
-![img](/img/send-data/environment-variable-usage.png)
+<img src={useBaseUrl('img/send-data/environment-variable-usage.png')} alt="Multiple variables" style={{border: '1px solid gray'}} width="500" />
 
 :::tip
 The example above uses a hyphen - character to separate variable components. Separator characters are not required. Curly brackets and spaces are not allowed. Underscores and hyphens are recommended.

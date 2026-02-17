@@ -16,5 +16,5 @@ tanh(<x>) as <field>
 ## Example
 
 ```sql
-tanh(1) as v // v = 0.76159
+t* | anh(1) as v
 ```

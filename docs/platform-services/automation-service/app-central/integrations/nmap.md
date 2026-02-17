@@ -19,18 +19,28 @@ Nmap is a free and open-source network scanner. Nmap is used to discover hosts a
 * **Get Scan Report** (*Enrichment*) - Get scan report.
 * **List Credits** (*Enrichment*) - Get API calls report for current member.
 
-## Nmap in Automation Service and Cloud SOAR
+## Configure Nmap in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/nmap/nmap-3.png')} style={{border:'1px solid gray'}} alt="nmap" width="400"/>
-1. Populate all the required fields (\*).
-   * **URL**. Your URL default ('https://api.nmap.online'/).
-   * **Api Key**. Insert the API Key.
-1. Click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/nmap/nmap-4.png')} style={{border:'1px solid gray'}} alt="nmap" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/nmap/nmap-5.png')} style={{border:'1px solid gray'}} alt="nmap" width="300"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/nmap/nmap-6.png')} style={{border:'1px solid gray'}} alt="nmap" width="300"/>
-1. You should receive a successful notification in the bottom right corner. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/nmap/nmap-7.png')} style={{border:'1px solid gray'}} alt="nmap" width="300"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your Nmap API URL. The default value is `https://api.nmap.online`
+
+* **Api Key**. Enter your Nmap API Key.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/nmap-configuration.png')} style={{border:'1px solid gray'}} alt="Nmap configuration" width="400"/>
+
+For information about Nmap, see [Nmap documentation](https://nmap.org/book/man.html).
 
 ## Change Log
 

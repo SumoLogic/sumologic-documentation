@@ -47,7 +47,7 @@ Read the "Limitations section" on [Set Up SAML for Single Sign-On](set-up-saml.
 
 This section has instructions for configuring SAML in Sumo Logic.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. 
 1. Click **+ Add Configuration** to create a new configuration. <br/><img src={useBaseUrl('img/security/config-list.png')} alt="Add Configuration button on the Configuration List page" style={{border: '1px solid gray'}} width="800" />     
 1. The **Add Configuration** page appears.<br/><img src={useBaseUrl('img/security/add-config-onelogin.png')} alt="Add Configuration page" style={{border: '1px solid gray'}} width="500" /> 
 1. **Configuration Name**. Enter a name to identify the SSO policy (or another name used internally to describe the policy).
@@ -78,7 +78,7 @@ features.
 ### Configure SP-initiated login
 
 :::tip
-SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
+SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings) section of the *Manage Organization* topic.
 :::
 
 This configuration enables a Sumo user to initiate login from Sumo Logic. Sumo redirects the user to OneLogin with a SAML AuthnRequest with the  information that OneLogin needs to authenticate the user. OneLogin replies to Sumo with a SAML Assertion (SAMLResponse). 

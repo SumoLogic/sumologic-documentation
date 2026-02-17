@@ -184,3 +184,17 @@ The **Varnish - Visitor Traffic Insight** dashboard provides detailed informatio
 The **Varnish - Web Server Operations** dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by server, and the top URIs responsible for 404 responses.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Web-Server-Operations.png' alt="Web Server Operations" />
+
+## Create monitors for Varnish app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Varnish alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Varnish - Access from Highly Malicious Sources` | This alert is triggered when Varnish is accessed from highly malicious IP addresses. | Count `>` 0 | Count `<=` 0 |
+| `Varnish - High 4XX Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | Count `>` 5 | Count `<=` 5 |
+| `Varnish - High 5XX Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 5xx. | Count `>` 5 | Count `<=` 5 |

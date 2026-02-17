@@ -116,7 +116,7 @@ On systems without systemd, the logs are available in the console output of the 
 On Windows, the logs are available in event viewer, or they can be listed using PowerShell:
 
 ```powershell
-Get-EventLog -LogName Application -Newest 100 -Source OtelcolSumo | Select-Object -Property ReplacementStrings
+Get-EventLog -LogName Application -Newest 100 -Source OtelcolSumo |  Select-Object @{Name='TimeGenerated'; Expression={($_.TimeGenerated).ToString("yyyy-MM-dd HH:mm:ss")}}, ReplacementStrings |  Format-Table -Wrap
 ```
 
 </TabItem>
@@ -235,7 +235,7 @@ To work around this, you need to delete the existing collector registration and 
 1. Delete the local collector registration file in `~/.sumologic-otel-collector/` and wait for 10 minutes for the collector to get offline.
 1. Remove the collector in Sumo Logic UI.
    1. Sign in to Sumo Logic platform.
-   1. Navigate to **Manage Data** > **Collection** > **OpenTelemetry Collection**.
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
    1. Find your collector.
 
 After that, the collector will register on the next run.
@@ -282,3 +282,61 @@ The other problem is that it is not currently possible for Filelog receiver to s
 There is currently no workaround for this.
 
 [filelogreceiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.71.0/receiver/filelogreceiver/README.md
+
+### Collector name not updating after configuration change for locally managed collectors
+
+Starting from **Sumo Logic OpenTelemetry Collector version `0.137.0-sumo-0`**, changing the `extensions.sumologic.collector.name` property in the configuration file **does not automatically update** the locally managed collector name upon restart.
+
+#### Cause
+The collector retains the previous name from the local credentials file and does not regenerate it unless the credentials are removed.
+
+#### Resolution
+To apply the new collector name after modifying the configuration:
+
+1. **Stop** the collector.
+2. **Delete all files in the local credentials directory** (path differs by OS).
+3. **Start** the collector again.
+
+
+#### Example commands
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Linux"
+  values={[
+    {label: 'Linux', value: 'Linux'},
+    {label: 'Windows', value: 'Windows'},
+    {label: 'macOS', value: 'macOS'}
+  ]}>
+
+<TabItem value="Linux">
+  
+```bash
+sudo systemctl stop otelcol-sumo
+sudo rm /var/lib/otelcol-sumo/credentials/*
+sudo systemctl start otelcol-sumo
+```
+
+</TabItem>
+
+<TabItem value="Windows">
+  
+```powershell
+net stop otelcol-sumo
+Remove-Item "C:\ProgramData\Sumo Logic\OpenTelemetry Collector\data\credentials\*" -Force
+net start otelcol-sumo
+```
+
+</TabItem>
+
+<TabItem value="macOS">
+  
+```bash
+sudo launchctl unload /Library/LaunchDaemons/com.sumologic.otelcol-sumo.plist
+sudo rm /var/lib/otelcol-sumo/credentials/*
+sudo launchctl load /Library/LaunchDaemons/com.sumologic.otelcol-sumo.plist
+```
+
+</TabItem>
+
+</Tabs>

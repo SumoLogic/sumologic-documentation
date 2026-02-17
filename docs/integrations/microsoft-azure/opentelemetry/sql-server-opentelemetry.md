@@ -2,7 +2,7 @@
 id: sql-server-opentelemetry
 title: Microsoft SQL Server - OpenTelemetry Collector
 sidebar_label: Microsoft SQL Server - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry app for Microsoft SQL Server for Windows.
+description: Learn about the Sumo Logic OpenTelemetry app for Microsoft SQL Server.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
@@ -10,23 +10,24 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-:::note
-The information provided in this page will only support the Sumo Logic OpenTelemetry app for Microsoft SQL Server for Windows.
-:::
 The SQL Server app is a unifies logs and metrics app to help you monitor the availability, performance, health, and resource utilization of your Microsoft SQL Server database clusters. Preconfigured dashboards provide insight into cluster status, performance, operations as well as backup and restore operations along with Performance metrics and metrics for transaction and transaction logs.
 
 This app has been tested with following SQL Server versions:
 
-- Microsoft SQL Server 2016
+- `Microsoft SQL Server 2022`
 
-The diagram below illustrates the components of the SQL Server collection for each database server. OpenTelemetry collector runs on the same host as SQL Server, and uses the [SQL Server receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/sqlserverreceiver) to obtain SQL Server metrics. This receiver grabs metrics about a Microsoft SQL Server instance using the Windows Performance Counters. Because of this, it is a Windows only receiver. Thus metrics for SQL Server can be collected only if its in a windows machine.
+The diagram below illustrates the components of the SQL Server collection for each database server. OpenTelemetry collector runs on the same host as SQL Server, and uses the [SQL Server receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/sqlserverreceiver) to obtain SQL Server metrics. This receiver grabs metrics about a Microsoft SQL Server instance using the Windows Performance Counters (Windows only) and by connecting to SQL Server using the credentials (Windows and Linux both)
 SQL Server logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Schematics.png' alt="Redis Logs dashboards"/>
 
+:::info
+This app includes [built-in monitors](#microsoft-sql-server-alerts). For details on creating custom monitors, refer to [Create monitors for Microsoft SQL Server app](#create-monitors-for-microsoft-sql-server-app).
+:::
+
 ## Fields creation in Sumo Logic for SQL Server
 
-Following are the [Fields](/docs/manage/fields/) which will be created as part of SQL Server App install if not already present.
+Following are the [Fields](/docs/manage/fields/) which will be created as part of SQL Server app installation, if not already present.
 * `db.cluster.name`. User configured. Enter a name to identify this SQL Server cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * `db.system`. Has a fixed value of **sqlserver**.
 * `deployment.environment`. User configured. This is the deployment environment where the SQL Server cluster resides. For example dev, prod, or qa.
@@ -36,15 +37,27 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ### For metrics collection
 
-The [SQL server receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/sqlserverreceiver/README.md) for OpenTelemetry grabs metrics about a Microsoft SQL Server instance using the Windows Performance Counters.
+The [SQL server receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/sqlserverreceiver/README.md) for OpenTelemetry grabs metrics about a Microsoft SQL Server instance using different methods:
+
+**Windows:**
+- Uses Windows Performance Counters for collecting system-level metrics
+- Connects directly to SQL Server using credentials for database-specific metrics
+
+**Linux:**  
+- Connects to SQL Server using credentials (Windows Authentication is not available on Linux)
+- Requires SQL Server authentication
 
 ### For logs collection
 
 Make sure logging is turned on in SQL Server. Follow [this documentation](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/scm-services-configure-sql-server-error-logs?view=sql-server-ver15) to enable it.
 
-The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in: `C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`.
+The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in:
 
-The ERRORLOG is typically in UTF-16LE encoding, however, be sure to verify the file encoding used in your SQL Server configuration.
+**Windows:** `C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
+
+**Linux:** `/var/opt/mssql/log/errorlog*` (default path for SQL Server on Linux)
+
+The ERRORLOG is typically in UTF-16LE encoding on Windows and Linux both. Be sure to verify the file encoding used in your SQL Server configuration.
 
 **ACL Support**
 
@@ -62,6 +75,12 @@ $fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileS
 # Apply new rule
 $NewAcl.SetAccessRule($fileSystemAccessRule)
 Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
+
+For Linux systems, ensure the OpenTelemetry collector process has read access to the log files:
+```bash
+# Grant read access to the collector user (adjust paths as needed)
+sudo chmod +r /var/opt/mssql/log/errorlog*
 ```
 
 ## Collection configuration and app installation
@@ -82,13 +101,31 @@ This will generate a command you can execute on the machine that you need to mon
 
 ### Step 2: Configure integration
 
-1. The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in:
-`C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
-2. To collect from a SQL Server with a named instance, both **Computer Name** and **Instance Name** are required. Toggle the `Enable metric collection for SQL Server with a named instance.` button. For a default SQL Server setup, these settings are optional.
-    * **Computer Name**. The computer name identifies the SQL Server name or IP address of the computer being monitored.
-    * **Instance Name**. The instance name identifies the specific SQL Server instance being monitored.
-3. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic.
-4. Click on the **Download YAML File** button to get the yaml file.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
+1. **Log File Path Configuration**: 
+   - **Windows**: The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in: `C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
+   - **Linux**: For SQL Server on Linux, logs are typically located at: `/var/opt/mssql/log/errorlog*`
+
+2. **SQL Server Connection Configuration**: To collect metrics, you'll need to provide connection details:
+   - **Server Address**: The hostname or IP address of your SQL Server instance (default: 0.0.0.0)
+   - **Port**: The port number for SQL Server connection (default: 1433)  
+   - **Username**: SQL Server authentication username
+   - **Password**: SQL Server authentication password
+
+3. **Monitoring a Named SQL Server Instance (Windows Only)**
+
+    To collect metrics from a specific named instance of SQL Server on a **Windows** host, enable the `Enable metric collection for SQL Server with a named instance` option. For a default SQL Server setup, these settings are optional.
+
+    * **Computer Name**: The computer name identifies the SQL Server name or IP address of the computer being monitored. This is the network name of the machine hosting SQL Server.
+    * **Instance Name**: The instance name identifies the specific SQL Server instance being monitored. This is required when SQL Server is installed as a named instance (e.g., SQLEXPRESS, INSTANCE01) rather than the default instance.
+
+    ---
+    :::note
+    Monitoring metrics for named instance is not supported in linux.
+    :::
+
+4. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic.
+
+5. Click on the **Download YAML File** button to get the yaml file.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
 
@@ -101,6 +138,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
   defaultValue="Windows"
   values={[
     {label: 'Windows', value: 'Windows'},
+    {label: 'Linux', value: 'Linux'},
     {label: 'Chef', value: 'Chef'},
     {label: 'Ansible', value: 'Ansible'},
     {label: 'Puppet', value: 'Puppet'},
@@ -112,6 +150,16 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 2. Restart the collector using:
     ```sh
     Restart-Service -Name OtelcolSumo
+    ```
+
+</TabItem>
+
+<TabItem value="Linux">
+
+1. Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the machine which needs to be monitored.
+2. Restart the collector using:
+    ```sh
+    sudo systemctl restart otelcol-sumo
     ```
 
 </TabItem>
@@ -150,7 +198,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 ```
 2023-01-09 13:23:31.276 Logon Login succeeded for user 'NT SERVICE\SQLSERVERAGENT'. Connection made using Windows authentication. [CLIENT: ]
 ```
-## Sample Metrics
+## Sample metrics
 
 ```json
 {
@@ -183,7 +231,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample queries
 
-Following is the query from **Error and warning count** panel from the **SQL Server App - Overview** dashboard:
+This is a sample log query from the **Error and warning count** panel in the **SQL Server App - Overview** dashboard.
 
 ```sql
  %"db.cluster.name"=* %"deployment.environment"=*  %"sumo.datasource"=sqlserver ("Error:" or "Warning:") | json "log" as _rawlog nodrop
@@ -192,15 +240,17 @@ Following is the query from **Error and warning count** panel from the **SQL Ser
 | count by LogType
 ```
 
-## Sample Metrics Query
-
-The following query is from the **SQL Server - Performance Counters** dashboard > **Page Buffer hit ratio %** panel:
+This is a sample metrics query from the **Page Buffer hit ratio %** panel in the **SQL Server - Performance Counters** dashboard.
 
 ```sql
 sumo.datasource=sqlserver deployment.environment=* db.cluster.name=* metric=sqlserver.page.buffer_cache.hit_ratio
 ```
 
 ## Viewing Microsoft SQL Server dashboards
+
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+- You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+- You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
 ### Overview
 
@@ -225,13 +275,7 @@ Use this dashboard to:
 
 ### Backup Restore Mirroring
 
-The **SQL Server - Backup Restore Mirroring** dashboard provides information about:
-
-- Transaction log backup events
-- Database backup events
-- Restore activities
-- Backup failures and reasons
-- Mirroring errors
+The **SQL Server - Backup Restore Mirroring** dashboard provides information about the Transaction log backup events, Database backup events, Restore activities, Backup failures and reasons, and Mirroring errors.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Backup-Restore-Mirroring.png' />
 
@@ -256,13 +300,47 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Transaction-And-Transaction-Logs.png' alt="Operations" />
 
-### Performance Counters
+### Performance
 
-The **SQL Server - Performance Counters** dashboard shows performance counters related to database activities, SQL statistics, and buffer cache.
+The **SQL Server - Performance** dashboard provides a deep dive into the internal workings of the SQL Server query engine. It helps DBAs and developers identify inefficient queries, contention issues, and opportunities for optimization.
 
-Use this dashboard to:
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Performance.png' alt="Performance" />
 
-- Get info for page buffer hit % and page split rate.
-- Insight into lock waits rate, page read and write rate along with patch request rate and SQL compilation, and recompilation per sec.
+### I/O
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Performance-Counters.png' alt="Performance-Counters" />
+The **SQL Server - I/O** dashboard shows the performance of the underlying disk subsystem as it relates to SQL Server database files. It helps answer questions like, "Is slow disk performance the cause of my application slowdown?" and "Which specific files are the hottest or slowest?"
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-I-O.png' alt="Performance" />
+
+### Replication
+
+The **SQL Server - Replication** dashboard provide dedicated visibility into the health, throughput, and latency of SQL Server's high-availability and disaster recovery (HA/DR) features, such as Availability Groups.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Replication.png' alt="Performance" />
+
+### Windows Host Performance
+
+The **SQL Server - Windows Host Performance** dashboard isolates metrics that are only available via Windows Performance Counters. It provides deeper insights into Windows-specific memory management and transaction log behavior. The key use case is to provide continuity for Windows DBAs familiar with these classic counters.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Windows-Host-Performance.png' alt="Performance" />
+
+## Create monitors for Microsoft SQL Server app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Microsoft SQL Server alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `SQL Server - AppDomain` | This alert is triggered when we detect AppDomain related issues in your SQL Server instance. | Count > = 1 | Count < 1 |
+| `SQL Server - Backup Fail` | This alert is triggered when we detect that the SQL Server backup failed. | Count > = 1 | Count < 1 |
+| `SQL Server - Buffer Cache Hit Ratio` | This alert is triggered when the Buffer Cache Hit Ratio drops below 95%, indicating significant memory pressure and a potential for slow performance due to increased disk reads. | Count < 95 | Count > = 95 |
+| `SQL Server - Deadlock` | This alert is triggered when we detect deadlocks in a SQL Server instance. | Count > 5 | Count < = 5 |
+| `SQL Server - Instance Down` | This alert is triggered when we detect that the SQL Server instance is down for 5 minutes. | Count > 0 | Count < = 0 |
+| `SQL Server - Insufficient Space` | This alert is triggered when SQL Server instance could not allocate a new page for database because of insufficient disk space in filegroup. | Count > 0 | Count < = 0 |
+| `SQL Server - Login Fail` | This alert is triggered when we detect that the user cannot login to SQL Server. | Count > = 1 | Count < 1 |
+| `SQL Server - Mirroring Error` | This alert is triggered when we detect that the SQL Server mirroring has error. | Count > = 1 | Count < 1 |
+| `SQL Server - Non Operational Database` | This alert is triggered if any database enters a 'suspect' or 'offline' state, indicating it is unavailable. | Count > 0 | Count < = 0 |
+| `SQL Server - Processes Blocked` | This alert is triggered when blocked processes are detected in SQL Server. | Count > 0 | Count < = 0 |

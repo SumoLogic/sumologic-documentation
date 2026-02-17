@@ -10,6 +10,16 @@ This article outlines the process of creating a Scheduled Search, which is essen
 
 To run a Scheduled Search using receipt time, save the search with receipt time enabled.
 
+To run a Scheduled Search using searchable time, save the search with searchable time enabled.
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage content such as scheduled searches with the [`sumologic_content`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content) resource.
+
+<TerraformLink/>
+:::
+
 ## Create a Scheduled Search
 
 This section describes how to create a Scheduled Search at the time you save a search. You can also edit a saved search later to add a schedule.
@@ -44,6 +54,10 @@ The [time range](../../search/get-started-with-search/search-basics/time-range-e
 This setting is different than the Time Range option configured for the Saved Search. The first time range is only used when you run the Saved Search from the Library. This Time Range applies to your Scheduled Search.
 :::
 
+:::note
+The time range limitations below apply to both parent queries and subqueries in your scheduled search.
+:::
+
 Alternately, type a time range; for example, -15m to run the search against data generated in the past 15 minutes. A time range outside the maximum allowed range for a given frequency is not allowed and presents the message like this: `Invalid query. Max allowed time range for 15 minutes frequency is 1 day`.
 
 The maximum allowed time range for different Scheduled Search frequencies is as below:
@@ -74,7 +88,7 @@ Under **Send Notification**, select the condition for when you want an alert to 
 
 * **Every time a search is complete**. Select this option if you want an email with search results every time the search is run (depending on the frequency, you could get an email every 15 minutes, every hour, or once a day).
 * **If the following condition is met**. Select this option if you'd like to set up a Scheduled Search that alerts you to specific events.
-   * **Number of results.** Depending on the search, set a condition to receive an email by the number of results. If your saved search returns log messages, then the alert will use the number of messages you specify. If your query produces aggregate results, the alert will use the number of rows or aggregates (or groups) and will not trigger on the number of raw results. For more control of your query, you can build in a threshold (for example `| where _count\> 30`) into the Search itself and set the alerts condition here to Greater than 0. That way the query will generate results if the expected condition is met. See this [FAQ](/docs/alerts/scheduled-searches/faq/#how-do-i-set-a-real-time-alert-with-more-than-1000-results) for an example.
+   * **Number of results.** Depending on the search, set a condition to receive an email by the number of results. If your saved search returns log messages, then the alert will use the number of messages you specify. If your query produces aggregate results, the alert will use the number of rows or aggregates (or groups) and will not trigger on the number of raw results. For more control of your query, you can build in a threshold (for example `| where _count\> 30`) into the Search itself and set the alerts condition here to Greater than 0. That way the query will generate results if the expected condition is met.
       * **Equal to.** Choose if there is an exact number of records in a search result at which you want to be notified.
       * **Greater than.** Choose if you want to be notified only if the search results include greater than the number of messages or groups you set in the text box.
       * **Greater than or equal to.** Choose if you want to be notified only if the search results include greater than or equal to that number of messages or groups you set in the text box. For example, to ensure you're notified only when the specific query conditions are met, set the **Number of results** condition to greater than 0.
