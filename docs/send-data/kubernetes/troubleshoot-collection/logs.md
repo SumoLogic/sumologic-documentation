@@ -38,7 +38,7 @@ Stream the logs to `stdout`:
 kubectl logs POD_NAME -f
 ```
 
-Or write the current logs to a file:
+Or, write the current logs to a file:
 
 ```sh
 kubectl logs POD_NAME > pod_name.log
