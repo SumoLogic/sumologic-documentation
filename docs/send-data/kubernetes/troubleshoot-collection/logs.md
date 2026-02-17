@@ -30,7 +30,7 @@ Run:
 kubectl get pods
 ```
 
-to get a list of running pods. If any of them are not in the `Status: running` state, something is wrong. To get the logs for that pod, you can either:
+To get the logs for that pod, you can either:
 
 Stream the logs to `stdout`:
 
