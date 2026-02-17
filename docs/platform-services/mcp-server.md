@@ -88,7 +88,11 @@ To create a service account through the API:
       curl -u "<accessId>:<accessKey>" \
         https://api.sumologic.com/api/v1/serviceAccounts \
         -H 'Content-Type: application/json' \
-        -d '{"name": "MCP Service Account", "email": "<email>@example.com",  "roleIds": ["<roleId>"]}'
+        -d '{
+              "name": "MCP Service Account",
+              "email": "<email>@example.com",
+              "roleIds": ["<roleId>"]
+            }'
       ```
 
 ### Step 2: Create an OAuth client
@@ -114,7 +118,7 @@ curl -u "<accessId>:<accessKey>" \
 <details>
 <summary>Click to see an example</summary>
 
-```
+```bash
 curl -u "<accessId>:<accessKey>" \
   https://api.sumologic.com/api/v1/oauth/clients \
   -H 'Content-Type: application/json' \
@@ -123,7 +127,7 @@ curl -u "<accessId>:<accessKey>" \
     "runAsId": "0000000000000234",
     "grantTypes": ["client_credentials"],
     "scopes": ["viewUsersAndRoles", "manageUsersAndRoles"]
-    }'
+  }'
 ```
 
 </details>
@@ -152,7 +156,7 @@ curl -X POST https://service.sumologic.com/oauth2/token \
 <details>
 <summary>Click to see an example</summary>
 
-```
+```bash
 curl -X POST https://service.sumologic.com/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -u "clientId:clientSecret" \
@@ -181,7 +185,7 @@ The access token can be used in two ways: to call Sumo Logic APIs directly, and 
 
 #### Call a Sumo Logic API directly
 
-```sh
+```bash
 curl -H "Authorization: Bearer <access-token>" \
   https://service.sumologic.com/api/v1/users
 ```
@@ -190,7 +194,7 @@ curl -H "Authorization: Bearer <access-token>" \
 
 Set the access token in your MCP client configuration as an Authorization header:
 
-```sh
+```bash
 Authorization: Bearer <access-token>
 ```
 
