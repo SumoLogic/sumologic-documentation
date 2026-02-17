@@ -125,7 +125,7 @@ If all information are correct, refer to the following sections to continue inve
 
 ## Print metrics on stdout for OTLP source
 
-In order to print metrics and their labels on stdout, the following configuration has to be applied:
+Apply the following configuration to print metrics and their labels on stdout:
 
 ```yaml
 otellogs:
