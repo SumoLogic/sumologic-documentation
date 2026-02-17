@@ -590,7 +590,7 @@ Use this dashboard to:
 * Gather insights into read operations, cache statistics, Tombstone, and SSTTables summary.
 * Review thread pool and memtable usage for read operations.
 
-<img src={useBaseUrl('img/integrations/databases/Cassandra-Read-Path.png')} alt="Cassandra dashboards" />
+<img src={useBaseUrl('img/integrations/databases/Cassandra-Read-Path.jpg')} alt="Cassandra dashboards" />
 
 ### Resource Usage
 

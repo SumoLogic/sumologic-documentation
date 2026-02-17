@@ -7,7 +7,7 @@ description: Cloud Infrastructure Security for AWS provides visibility into your
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="Cloud Infrastructure Security for AWS logo" width="70"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.jpg')} alt="Cloud Infrastructure Security for AWS logo" width="70"/>
 
 The Cloud Infrastructure Security for AWS app provides a unified view of risks, misconfigurations, and active threats in your AWS infrastructure spanning multiple AWS accounts and regions. The solution leverages native AWS tools and telemetry to accelerate cloud security outcomes.
 
@@ -593,19 +593,19 @@ The Active Threats dashboards show data on threats that require attention. Revie
 
 The **Active Threats: AWS APIs** dashboard shows threats identified from AWS APIs by correlating it with threat intelligence data. It shows threats count and trend, and threats by resource, actor, events, and geo location.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-apis.png')} alt="Active Threats: AWS APIs dashboard" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-apis.jpg')} alt="Active Threats: AWS APIs dashboard" style={{border: '1px solid gray'}} width="600"/>
 
 #### Active Threats: AWS Resources
 
 The **Active Threats: AWS Resources** dashboard shows threats identified in AWS resources such as EC2 and IAMUser as reported by Amazon GuardDuty. It shows findings by resource, trend, resource type, category, and country. This dashboard has an **Action Plan** panel so you can access suggested resources that need attention through the AWS console.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-resources.png')} alt="Active Threats: AWS APIs dashboard" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-resources.jpg')} alt="Active Threats: AWS APIs dashboard" style={{border: '1px solid gray'}} width="600"/>
 
 #### Active Threats: AWS Storage 
 
 The  **Active Threats: AWS Storage** dashboard provides threat counts related to AWS S3 buckets. It shows threats count and trend, and threats by resource, actor, and geo location.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-storage.png')} alt="Active Threats: AWS Storage dashboard" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-storage.jpg')} alt="Active Threats: AWS Storage dashboard" style={{border: '1px solid gray'}} width="600"/>
 
 ### Cloud SIEM Insights Overview
 

@@ -364,7 +364,7 @@ Use this dashboard to:
 * Review summaries of the state of the components of the VMware infrastructure.
 * Assess infrastructure issues at a glance with the dashboard panels.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Overview.png')} alt="VMware dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Overview.jpg')} alt="VMware dashboards" />
 
 
 ### vCenter Errors - Analysis

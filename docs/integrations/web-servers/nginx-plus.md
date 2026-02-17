@@ -286,7 +286,7 @@ Use this dashboard to:
 * Gain insights into your Nginx health using Critical Errors and Status of Nginx Server.
 * Get insights into Active and dropped connections.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Overview.png')} alt="Nginx-Plus-Overview" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Overview.jpg')} alt="Nginx-Plus-Overview" />
 
 ### Error Logs Analysis
 
@@ -297,7 +297,7 @@ Use this dashboard to:
 * Track and view client geographic locations generating errors.
 * Track critical alerts and emergency error alerts.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Error-Logs-Analysis.png')} alt="Nginx-Plus-Error-Logs-Analysis" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Error-Logs-Analysis.jpg')} alt="Nginx-Plus-Error-Logs-Analysis" />
 
 ### Logs Timeline Analysis
 
@@ -398,7 +398,7 @@ Use this dashboard to:
 * Gain information about Location HTTP zones traffic: received and sent; speed, requires/responses amount, discarded traffic.
 * Gain information about Location HTTP zones error responses: percentage of responses by the server, percentage of each type of error responses.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-HTTP-Location-Zones.png')} alt="tk" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-HTTP-Location-Zones.jpg')} alt="tk" />
 
 
 ### HTTP Server Zones
@@ -410,7 +410,7 @@ Use this dashboard to:
 * Gain information about Server HTTP zones traffic: received and sent; speed, requires/responses amount, discarded traffic.
 * Gain information about Server HTTP zones error responses: percentage of responses by server, percentage of each type of error response.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-HTTP-Server-Zones.png')} alt="tk" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-HTTP-Server-Zones.jpg')} alt="tk" />
 
 
 ### HTTP Upstreams
@@ -424,7 +424,7 @@ Use this dashboard to:
 * Gain information about HTTP upstream error responses: percentage of responses by the server, percentage of each type of error response.
 * Gain information about HTTP upstream health monitoring.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-HTTP-Upstreams.png')} alt="tk" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-HTTP-Upstreams.jpg')} alt="tk" />
 
 
 ### Resolvers
@@ -449,7 +449,7 @@ Use this dashboard to:
 * Gain information about TCP and UDP upstream error responses: percentage of responses by the server, percentage of each type of error response.
 * Gain information about TCP and UDP upstream health monitoring.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-TCP-UDP-Upstreams.png')} alt="tk" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-TCP-UDP-Upstreams.jpg')} alt="tk" />
 
 
 ### TCP/UDP Zones

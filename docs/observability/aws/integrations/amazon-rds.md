@@ -376,7 +376,7 @@ Use this dashboard to:
 * Monitor the amount of storage used to ensure monitor costs.
 * Monitor the percentage of requests that are served by the buffer cache to identify potential performance optimizations.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-Generic.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-Generic.jpg')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 04. Amazon RDS - Aurora MySQL
 
@@ -457,7 +457,7 @@ Use this dashboard to:
 * Identify typical user management activities being performed.
 * Quickly identify objects which are dropped.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Audit-Log-Analysis.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Audit-Log-Analysis.jpg')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 10. Amazon RDS - MySQL Logs - Audit Log SQL Statements
 

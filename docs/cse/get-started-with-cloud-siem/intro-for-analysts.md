@@ -47,7 +47,7 @@ Before you can start investigating threats, you need data. As a data analyst, th
 
 Your company collects and ingests millions of log messages into Sumo Logic. Typically, you can use these messages right away in many Sumo Logic apps. To use them in Cloud SIEM, however, your admin must enable data forwarding. Your admin may also need to create log mappings, field extraction rules, or complete other preprocessing steps to extract the right data.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-data-collection.png')} alt="Sumo Logic data pipeline" width="500"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-data-collection.jpg')} alt="Sumo Logic data pipeline" width="500"/>
 
 As a data analyst, you should periodically examine the data that's being ingested into Sumo Logic and Cloud SIEM. After you've been using Cloud SIEM for a while, you may want to fine-tune it to fit your organization's needs. If you discover that you're ingesting too much or too little data to do threat hunting, you can work with your admin to find that balance.
 
@@ -61,7 +61,7 @@ So, what's the balance between too much and too little data? It depends. Work wi
 
 Before Cloud SIEM can generate security insights, your log messages must go through a little processing first. First, Cloud SIEM processes the messages into records. Each record contains the information from a message, which is parsed into key-value pairs, mapped to a Cloud SIEM schema, and enriched with other data.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-messages-to-records.png')} alt="Messages generate records" width="500"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-messages-to-records.jpg')} alt="Messages generate records" width="500"/>
 
 Let's follow a simple log message down this pipeline:
 ```

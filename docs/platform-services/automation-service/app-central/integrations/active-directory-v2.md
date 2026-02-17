@@ -63,11 +63,11 @@ If an existing Windows Server is not available, follow these steps to set up a n
 1. Install Active Directory Domain Services (AD DS).
    1. In **Server Manager**, select **Add roles and features**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-add-roles-and-features.png')} style={{border:'1px solid gray'}} alt="Add roles and features" width="600"/>
    1. Choose **Role-based or feature-based installation**.
-   1. Select the **Active Directory Domain Services** (AD DS) role.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-add-roles.png')} style={{border:'1px solid gray'}} alt="Add roles" width="600"/>
+   1. Select the **Active Directory Domain Services** (AD DS) role.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-add-roles.jpg')} style={{border:'1px solid gray'}} alt="Add roles" width="600"/>
    1. Proceed with the installation and wait for it to complete.
 1. Promote the server to a domain controller.
    1. After installation, navigate to **Server Manager > AD DS**.
-   1. Click on **Promote this server to a domain controller**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-promote-server.png')} style={{border:'1px solid gray'}} alt="Promote server" width="600"/>
+   1. Click on **Promote this server to a domain controller**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-promote-server.jpg')} style={{border:'1px solid gray'}} alt="Promote server" width="600"/>
    1. Choose **Add a new forest** and provide a root domain name (for example, `csoar.com`).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-root-domain-name.png')} style={{border:'1px solid gray'}} alt="Root domain name" width="600"/>
    1. Configure **Domain Controller Options**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-domain-controller-options.png')} style={{border:'1px solid gray'}} alt="Domain controller options" width="600"/>
    1. Set a **Directory Services Restore Mode (DSRM) password**.

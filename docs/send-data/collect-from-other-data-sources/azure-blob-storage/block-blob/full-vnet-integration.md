@@ -16,7 +16,7 @@ If you prefer to restrict access and keep your storage account behind a firewall
        :::note
        Only the Storage service endpoint associated with the functions and storage accounts is needed for the subnet.
        :::
-       <img src={useBaseUrl('/img/send-data/blockblob/block-blob-vnet-creation.png')} alt="Virtual Network creation with storage service endpoint" width="800" />
+       <img src={useBaseUrl('/img/send-data/blockblob/block-blob-vnet-creation.jpg')} alt="Virtual Network creation with storage service endpoint" width="800" />
    * Subnet. For example, `brsubnet`.
    * Network Security Group (NSG). For example, `brnsg`.
        :::note
@@ -25,7 +25,7 @@ If you prefer to restrict access and keep your storage account behind a firewall
        <img src={useBaseUrl('/img/send-data/blockblob/block-blob-NSG-rules.png')} alt="NSG rules configuration" width="800" />
 3. Enable the Virtual Network integration on each function app by navigating to **Function App** > **Networking** > **Outbound Traffic Configuration**.  
    <img src={useBaseUrl('/img/send-data/blockblob/block-blob-task-consumer-with-vnet-integration-outbound.png')} alt="TaskConsumer VNet integration outbound configuration" width="800" />
-   <img src={useBaseUrl('/img/send-data/blockblob/block-blob-vnet-in-task-consumer.png')} alt="VNet integration in TaskConsumer" width="800" />
+   <img src={useBaseUrl('/img/send-data/blockblob/block-blob-vnet-in-task-consumer.jpg')} alt="VNet integration in TaskConsumer" width="800" />
 4. Follow the steps below to restrict access to the Storage Account storing NSG flow logs, so that only certain networks can access it:
    1. Navigate to **Storage Account** > **Networking** > **Firewalls and virtual networks**.
    2. Choose the selected networks.
@@ -37,7 +37,7 @@ If you prefer to restrict access and keep your storage account behind a firewall
 5. Follow the steps below to restrict access to the ARM-created storage account, so that only certain networks can access it:
    1. Navigate to **Storage Account** > **Networking**.
    2. Choose the selected networks and allow access from your subnet.   
-       <img src={useBaseUrl('/img/send-data/blockblob/block-blob-arm-template-sa-networking.png')} alt="ARM template storage account networking configuration" width="800" />
+       <img src={useBaseUrl('/img/send-data/blockblob/block-blob-arm-template-sa-networking.jpg')} alt="ARM template storage account networking configuration" width="800" />
 6. Configure the inbound restrictions on all three Azure Functions:
    1. Navigate to **Function App** > **Networking** > **Inbound Traffic Configuration** > **Access Restrictions**.
    2. Allow only the subnet you created in Step 2.
@@ -53,7 +53,7 @@ If you prefer to restrict access and keep your storage account behind a firewall
    1. Navigate to **Service** > **Networking**.
    2. Set access to **Selected networks**, and select the previously created subnet in step 1.
    3. Set **Allow trusted Microsoft services to bypass this firewall** to **Yes**.
-       <img src={useBaseUrl('/img/send-data/blockblob/block-blob-event-hub-networking.png')} alt="Event Hub networking configuration" width="800" />
+       <img src={useBaseUrl('/img/send-data/blockblob/block-blob-event-hub-networking.jpg')} alt="Event Hub networking configuration" width="800" />
 9. Secure the Event Grid with managed identity to allow Event Grid to publish to Event Hub:
    1. Enable **System assigned** identity on the Event Grid Topic.
        <img src={useBaseUrl('/img/send-data/blockblob/block-blob-system-assigned-identity-topic.png')} alt="System-assigned identity for topic" width="800" />

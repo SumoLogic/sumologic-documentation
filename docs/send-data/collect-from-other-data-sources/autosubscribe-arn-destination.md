@@ -29,7 +29,7 @@ To deploy LogGroup Lambda Connector, do the following:
 1. In the Serverless Application Repository, search for **sumologic**.
 1. Select **Show apps that create custom IAM roles or resource policies** check box.
 1. Click the **sumologic-loggroup-connector**,link, and then click **Deploy**.
-1. In the **AWS Lambda > Functions > Application Settings** panel, configure the parameters as described in [configuring parameters](#configuringparameters) section below. <br/><img src={useBaseUrl('img/send-data/Auto-Subscribe_AWS_ARN_Destination-ApplicationSettings.png')} alt="Deploy log group detector" style={{border: '1px solid gray'}} width="800" />
+1. In the **AWS Lambda > Functions > Application Settings** panel, configure the parameters as described in [configuring parameters](#configuringparameters) section below. <br/><img src={useBaseUrl('img/send-data/Auto-Subscribe_AWS_ARN_Destination-ApplicationSettings.jpg')} alt="Deploy log group detector" style={{border: '1px solid gray'}} width="800" />
 1. Click the checkbox to acknowledge that the template creates IAM resources.
 1. Scroll to the bottom of the window and click **Deploy**. After a few minutes, **CREATE_COMPLETE** should appear in the status column corresponding to all resources in the Resources section.
 1. [Test the Lambda function](#testing-the-lambda-function).

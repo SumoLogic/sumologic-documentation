@@ -127,7 +127,7 @@ The **Security Analytics - Communication via Critical Ports** dashboard provides
 
 Additionally at the top of the dashboard are two table containing analytics on known and unknown applications connections using the ports listed above.
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Analytics-Communication-via-Critical-Ports.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Analytics-Communication-via-Critical-Ports.jpg')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 ### Security Analytics - Outbound Traffic and Potential Exfiltration Activity
 
@@ -151,7 +151,7 @@ The **Security Monitoring - THREAT Log by Category** dashboard provides analytic
 
 **Use case:** You can use this dashboard to review THREAT events in summary or broken down by category: Command-and-control, Phishing, Malware, Proxy Anonymizers, Newly Registered Domains, Cryptocurrency, Questionable,  and High-Risk.
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-THREAT-Log-by-Category.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-THREAT-Log-by-Category.jpg')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 ### Security Monitoring - THREAT Logs by Severity
 
@@ -159,7 +159,7 @@ The **Security Monitoring - THREAT Logs by Severity** dashboard provides analyti
 
 **Use case:** You can use this dashboard to review THREAT events broken down by severity, allowing you to focus on the critical events first but also providing events of lesser severity for additional triage and investigation if necessary.
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-THREAT-Log-by-Severity.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-THREAT-Log-by-Severity.jpg')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 ### Security Monitoring - TRAFFIC Log Overview
 

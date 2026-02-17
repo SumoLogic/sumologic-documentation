@@ -348,7 +348,7 @@ Use this dashboard to:
 * Understand the garbage collection time. If the time keeps on increasing, you may have more CPU usage.
 * Understand the amount of memory cleared by garbage collectors across memory pools and its impact on the Heap memory.
 
-<img src={useBaseUrl('img/integrations/app-development/JMX_GarbageCollector.png')} alt="jmx dashboard" />
+<img src={useBaseUrl('img/integrations/app-development/JMX_GarbageCollector.jpg')} alt="jmx dashboard" />
 
 
 
@@ -372,7 +372,7 @@ Use this dashboard to:
 * Gain insights into garbage collection impact on different memory pools.
 * Understand Peak usage and collection usage of different memory pools.
 
-<img src={useBaseUrl('img/integrations/app-development/JMX_MemoryPool.png')} alt="jmx dashboard" />
+<img src={useBaseUrl('img/integrations/app-development/JMX_MemoryPool.jpg')} alt="jmx dashboard" />
 
 ### Class Loading and Compilation
 

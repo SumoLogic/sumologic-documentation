@@ -297,7 +297,7 @@ Use this dashboard to:
 * Monitor abnormal spikes in read/write rates.
 * Compare disk throughput across storage devices of a host.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Disk.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Disk.jpg')} alt="Host Metrics dashboards" />
 
 
 ### Memory
@@ -308,7 +308,7 @@ Use this dashboard to:
 * Examine memory distribution (free, buffered-cache, used, total) for a given host.
 * Monitor abnormal spikes in memory and swap utilization.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Memory.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Memory.jpg')} alt="Host Metrics dashboards" />
 
 
 ### Network
@@ -320,7 +320,7 @@ Use this dashboard to:
 * Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
 * Use dashboard filters to compare throughput across the interface of a host.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Network.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Network.jpg')} alt="Host Metrics dashboards" />
 
 
 ### TCP
@@ -329,7 +329,7 @@ The **Host Metrics - TCP** dashboard provides detailed information around inboun
 Use this dashboard to:
 * Identify abnormal spikes in inbound, outbound, open, or established connections.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-TCP.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-TCP.jpg')} alt="Host Metrics dashboards" />
 
 
 ### Process Metrics - Overview
@@ -352,7 +352,7 @@ Use this dashboard to:
 * Identify anomalies in CPU usage, memory usage,  major/minor page faults and reads/writes over time.
 * Troubleshoot memory leaks using the resident set memory trend chart.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Details.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Details.jpg')} alt="Host Metrics dashboards" />
 
 
 ### Process Metrics - Trends

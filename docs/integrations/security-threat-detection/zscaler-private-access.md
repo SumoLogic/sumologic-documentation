@@ -149,7 +149,7 @@ Use this dashboard to:
 * Gain insights into ZPA connector health.
 * Identify and manage connectors erroring out or having resource constraints.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Connectors.png')} alt="zscaler private access Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Connectors.jpg')} alt="zscaler private access Dashboard" />
 
 ### Performance
 
@@ -179,7 +179,7 @@ Use this dashboard to:
 * Gain insights into User connections and Access.
 * Manage Policy and Timeout blocks.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Users.png')} alt="zscaler private access Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Users.jpg')} alt="zscaler private access Dashboard" />
 
 ## Upgrade/Downgrade the Zscaler Private Access app (optional)
 

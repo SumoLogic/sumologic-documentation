@@ -112,7 +112,7 @@ Use this dashboard to:
 * Monitor and visualize the costs and usage associated with your top cost-accruing AWS regions across different AWS accounts with detailed breakdown on all AWS accounts / regions
 * Gain a better understanding of your cost trends.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cost-Explorer-Region.png')} alt="cost explorer dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cost-Explorer-Region.jpg')} alt="cost explorer dashboard" />
 
 
 ### Services

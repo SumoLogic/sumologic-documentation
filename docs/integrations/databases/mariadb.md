@@ -414,7 +414,7 @@ The **MariaDB - Overview** dashboard gives you an at-a-glance view of the state 
 Use this dashboard to:
 * Quickly identify the state of a given database cluster
 
-<img src={useBaseUrl('img/integrations/databases/MariaDB-Overview.png')} alt="mariadb dashboards" />
+<img src={useBaseUrl('img/integrations/databases/MariaDB-Overview.jpg')} alt="mariadb dashboards" />
 
 ### Error Logs
 
@@ -472,7 +472,7 @@ Use this dashboard to:
 * Monitor query execution trends to ensure they match up with expectations.
 * Dashboard filters allow you to narrow a search for a specific database cluster.
 
-<img src={useBaseUrl('img/integrations/databases/MariaDB-Performance-and-Resource-Metrics.png')} alt="mariadb dashboards" />
+<img src={useBaseUrl('img/integrations/databases/MariaDB-Performance-and-Resource-Metrics.jpg')} alt="mariadb dashboards" />
 
 ### Performance Schema Metrics
 
@@ -483,7 +483,7 @@ Use this dashboard to:
 * Monitor statements running without use of index columns.
 * Monitor statistics such as Table and Index waits and read and write lock waits to optimize the performance of your database.
 
-<img src={useBaseUrl('img/integrations/databases/MariaDB-Performance-Schema-Metrics.png')} alt="mariadb dashboards" />
+<img src={useBaseUrl('img/integrations/databases/MariaDB-Performance-Schema-Metrics.jpg')} alt="mariadb dashboards" />
 
 
 ### Replication Metrics

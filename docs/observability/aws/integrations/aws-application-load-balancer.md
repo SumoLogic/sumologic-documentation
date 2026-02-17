@@ -62,7 +62,7 @@ Use this dashboard to:
 * Monitor trends for load balancers errors, 4xx, and 5xx errors, as well as healthy and unhealthy hosts.
 * Monitor the current state across all load balancers via active connections, new connections, target connection errors, and rejected connections. 
 
-<img src={useBaseUrl('img/observability/alb1.png')} alt="AWS Application Load Balancer - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/observability/alb1.jpg')} alt="AWS Application Load Balancer - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 1. AWS Application Load Balancer - Response  Analysis
 

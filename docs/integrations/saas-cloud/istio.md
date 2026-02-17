@@ -246,7 +246,7 @@ Use this dashboard to:
 * Monitor requests and responses for individual workloads.
 * Analyze inbound and outbound services for workloads.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Istio-Workload.png')} alt="Istio dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Istio-Workload.jpg')} alt="Istio dashboards" />
 
 
 ### Galley

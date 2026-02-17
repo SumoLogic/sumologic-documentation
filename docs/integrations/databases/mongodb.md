@@ -396,7 +396,7 @@ Use this dashboard to:
 * Gain insights into Replication and Sharding operations.
 * Verify Page Faults generated to determine the root cause of the problems.
 
-<img src={useBaseUrl('img/integrations/databases/MongoDB-Overview.png')} alt="MongoDB dashboards" />
+<img src={useBaseUrl('img/integrations/databases/MongoDB-Overview.jpg')} alt="MongoDB dashboards" />
 
 ### Resource
 

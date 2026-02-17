@@ -217,7 +217,7 @@ The **Cloud SIEM - Record Analysis - Record Overview** dashboard provides an ove
 
 The **Cloud SIEM - Record Parsing and Analysis** dashboard provides analysis on records parsing.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/cloud-siem-record-parsing-and-analysis-dashboard.png')} alt="Cloud SIEM - Record Parsing and Analysis dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/sumo-apps/cloud-siem-record-parsing-and-analysis-dashboard.jpg')} alt="Cloud SIEM - Record Parsing and Analysis dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Cloud SIEM - Rule Overview
 
@@ -235,7 +235,7 @@ The **Cloud SIEM - Rules and Mapping Changes** dashboard is useful for monitorin
 
 The **Cloud SIEM - Security Operations Overview** dashboard explores Cloud SIEM insights using Sumo Logic audit events.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/cloud-siem-security-operations-overview-dashboard.png')} alt="Cloud SIEM - Security Operations Overview dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/sumo-apps/cloud-siem-security-operations-overview-dashboard.jpg')} alt="Cloud SIEM - Security Operations Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Cloud SIEM - Signal Analysis
 
@@ -301,7 +301,7 @@ The **Cloud SIEM - User Telemetry** dashboard shows breakdowns of Cloud SIEM use
 
 The **Signal Analysis - Suppression** dashboard shows an overview and some detailed tabular views for reflected Cloud SIEM signal events, specifically mapping, parsers, and suppression.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/cloud-siem-signal-analysis-suppression.png')} alt="Signal Analysis - Suppression dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/sumo-apps/cloud-siem-signal-analysis-suppression.jpg')} alt="Signal Analysis - Suppression dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ## Upgrade/Downgrade the Enterprise Audit - Cloud SIEM app (Optional)
 

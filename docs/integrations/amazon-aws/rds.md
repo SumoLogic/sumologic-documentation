@@ -604,7 +604,7 @@ Use this dashboard to:
 * Monitor the amount of storage used to ensure monitoring costs.
 * Monitor the percentage of requests that are served by the buffer cache to identify potential performance optimizations.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-Generic.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-Generic.jpg')} alt="Amazon RDS dashboard" />
 
 ### Aurora MySQL
 
@@ -685,7 +685,7 @@ Use this dashboard to:
 * Identify typical user management activities being performed.
 * Quickly identify objects that are dropped.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Audit-Log-Analysis.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Audit-Log-Analysis.jpg')} alt="Amazon RDS dashboard" />
 
 ### MySQL Logs - Audit Log SQL Statements
 
@@ -879,7 +879,7 @@ Use this dashboard to:
 * Analyze transaction behavior and connection health.
 * Optimize performance and ensure reliable proxy-to-database interactions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Target-Performance.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Target-Performance.jpg')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
 
 ### Proxy - TargetRole Performance
 
@@ -890,7 +890,7 @@ Use this dashboard to:
 * Analyze transaction behavior and connection health.
 * Optimize performance and ensure reliable proxy-to-database interactions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Target-Role-Performance.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Target-Role-Performance.jpg')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
 
 ### Proxy - Audit
 

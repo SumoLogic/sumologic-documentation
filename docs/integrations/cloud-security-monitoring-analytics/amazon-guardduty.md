@@ -33,7 +33,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 See the overview of GuardDuty threats broken down by severity. Filters are available to limit the dashboard panels to specific account IDs, regions, and resource types.
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-GuardDuty-Overview-Security-Monitoring.png')} alt="Amazon GuardDuty dashboards" />
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-GuardDuty-Overview-Security-Monitoring.jpg')} alt="Amazon GuardDuty dashboards" />
 
 
 ### Findings Summary

@@ -148,7 +148,7 @@ Use this dashboard to:
 * Identify the Failed and Successful deployments in chronological order. You can use filters to drill down to a more detailed view.
 
 
-<img src={useBaseUrl('img/integrations/app-development/Gitlab-Deployments.png')} alt="GitLab" />
+<img src={useBaseUrl('img/integrations/app-development/Gitlab-Deployments.jpg')} alt="GitLab" />
 
 
 
@@ -161,7 +161,7 @@ Use this dashboard to:
 * Identify the Failed and Successful deployments in chronological order. You can use filters to drill down to a more detailed view.
 * Get statistics of build duration by Repository, Project, Build Name, and Stage Name.
 
-<img src={useBaseUrl('img/integrations/app-development/Gitlab-Builds.png')} alt="GitLab" />
+<img src={useBaseUrl('img/integrations/app-development/Gitlab-Builds.jpg')} alt="GitLab" />
 
 
 
@@ -176,7 +176,7 @@ Use this dashboard to:
 * Identify the Failed and Successful pipeline jobs in chronological order. You can use filters to drill down to a more detailed view.
 
 
-<img src={useBaseUrl('img/integrations/app-development/Gitlab-Pipeline.png')} alt="GitLab" />
+<img src={useBaseUrl('img/integrations/app-development/Gitlab-Pipeline.jpg')} alt="GitLab" />
 
 
 
@@ -192,7 +192,7 @@ Use this dashboard to:
 * Identify the Open, Reopened, Unassigned, and Closed merge requests in chronological order. You can use filters to drill down to a more detailed view.
 
 
-<img src={useBaseUrl('img/integrations/app-development/Gitlab-Merge-Requests.png')} alt="GitLab" />
+<img src={useBaseUrl('img/integrations/app-development/Gitlab-Merge-Requests.jpg')} alt="GitLab" />
 
 
 
@@ -204,4 +204,4 @@ Use this dashboard to:
 * Get insight into the total number of commits by branch, project, repository, and user.
 * Identify the Modified, Added, and Removed files by commit id in chronological order. You can use filters to drill down to a more detailed view.
 
-<img src={useBaseUrl('img/integrations/app-development/Gitlab-Commits.png')} alt="GitLab" />
+<img src={useBaseUrl('img/integrations/app-development/Gitlab-Commits.jpg')} alt="GitLab" />

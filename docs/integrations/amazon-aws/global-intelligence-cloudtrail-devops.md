@@ -224,7 +224,7 @@ Use this dashboard to:
 * Troubleshoot application errors.
 * Request greater API request limits through AWS Support if you feel your application is consistently being throttled at a greater rate than other customers.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-DevOps-My-Companys-Throttling-Errors.png')} alt="GI CloudTrail DevOps dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-DevOps-My-Companys-Throttling-Errors.jpg')} alt="GI CloudTrail DevOps dashboard" />
 
 
 ### 03. My Company’s Account Quota Errors
@@ -412,14 +412,14 @@ Use this dashboard to:
 * Understand common configurations for AWS services by categorical, numerical, and boolean values.
 * ​​​​​​​Optimize your configuration based on settings common across customers.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-DevOps-Configuration-Benchmarks.png')} alt="GI CloudTrail DevOps dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-DevOps-Configuration-Benchmarks.jpg')} alt="GI CloudTrail DevOps dashboard" />
 
 
 ### 06. Action Plan Dashboard
 
 The **GI CloudTrail DevOps - 06. Action Plan** dashboard identifies users and services that contribute to AWS errors and potential instability of your applications. Change the awsRegion and recipientAccountID to view results by region and account. Only the Top 3 rows are shown based on error count.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-DevOps-Action-Plan.png')} alt="GI CloudTrail DevOps dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-DevOps-Action-Plan.jpg')} alt="GI CloudTrail DevOps dashboard" />
 
 Use this dashboard to:
 * Identify and remediate users or services that are experiencing errors and potentially causing incidents for your applications.

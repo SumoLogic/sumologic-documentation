@@ -399,7 +399,7 @@ Use this dashboard to:
 * Monitor Broker added/started and shutdown events in your cluster.
 * Quickly determine patterns across all logs in a given RabbitMQ cluster.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/RabbitMQ-Logs.png')} alt="RabbitMQ dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/RabbitMQ-Logs.jpg')} alt="RabbitMQ dashboards" />
 
 
 ## Create monitors for RabbitMQ app

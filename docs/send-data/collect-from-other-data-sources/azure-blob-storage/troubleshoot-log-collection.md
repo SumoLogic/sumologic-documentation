@@ -93,11 +93,11 @@ Go to Service Bus Service from the Azure portal and click on `SUMOBRTaskQueueNam
 ## Verify Azure Function is not getting Failed
 
 1. Go to Function App.
-1. Go to Application Insights.<br/><img src={useBaseUrl('img/send-data/app-insights.png')} alt="App insights" style={{border: '1px solid gray'}} width="800" />
+1. Go to Application Insights.<br/><img src={useBaseUrl('img/send-data/app-insights.jpg')} alt="App insights" style={{border: '1px solid gray'}} width="800" />
 1. Go to Failures section.<br/><img src={useBaseUrl('img/send-data/failures.png')} alt="Failures" style={{border: '1px solid gray'}} width="800" />
 1. Click on the Function Name under Operation Name
 1. In the top 3 exception types, click on the count it will open a sample exception.
-1. Click on any exception it will open an end to end transaction details page where you can click on View all telemetry to view all the logs for that execution.<br/><img src={useBaseUrl('img/send-data/end-transaction.png')} alt="End transaction" style={{border: '1px solid gray'}} width="800" />
+1. Click on any exception it will open an end to end transaction details page where you can click on View all telemetry to view all the logs for that execution.<br/><img src={useBaseUrl('img/send-data/end-transaction.jpg')} alt="End transaction" style={{border: '1px solid gray'}} width="800" />
 
 ## Verify with Live Tail
 

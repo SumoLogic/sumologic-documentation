@@ -431,7 +431,7 @@ Use this dashboard to:
 * Monitor database size and disk usage.  
 * Identify top 5 and least 5 frequently scanned indexes.
 
-<img src={useBaseUrl('img/integrations/databases/PostgreSQL-DatabaseMetrics.png')} alt="PostgreSQL dashboards" />
+<img src={useBaseUrl('img/integrations/databases/PostgreSQL-DatabaseMetrics.jpg')} alt="PostgreSQL dashboards" />
 
 ### Relation and Schema Metrics
 
@@ -442,7 +442,7 @@ Use this dashboard to:
 * Monitor sequential scans and index scans and determine if executed queries are accessing them.
 * Monitor the size of tables, and query operations which will determine the performance of your queries.
 
-<img src={useBaseUrl('img/integrations/databases/PostgreSQL-Relational.png')} alt="PostgreSQL dashboards" />
+<img src={useBaseUrl('img/integrations/databases/PostgreSQL-Relational.jpg')} alt="PostgreSQL dashboards" />
 
 Query performance can degrade with growth in size of table, database and/or indexes. This means that you either need to scale up the database instance, [partition your data](https://www.postgresql.org/docs/current/static/ddl-partitioning.html), or redesign your indexes. Unusual growth in disk space can also mean there are problems with [VACUUMs](https://www.postgresql.org/docs/9.1/static/sql-vacuum.html) .
 
@@ -457,7 +457,7 @@ Use this dashboard to:
 * Monitor incoming connections, failed authorization requests, and outliers in the number of queries executed outlier.
 * Identify known malicious IPs that are accessing your databases and use firewall access control lists to prevent them from sending you traffic going forward.
 
-<img src={useBaseUrl('img/integrations/databases/PostgreSQL-Security.png')} alt="PostgreSQL dashboards" />
+<img src={useBaseUrl('img/integrations/databases/PostgreSQL-Security.jpg')} alt="PostgreSQL dashboards" />
 
 ### Error Logs
 

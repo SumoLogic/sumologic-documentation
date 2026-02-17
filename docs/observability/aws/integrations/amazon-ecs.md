@@ -330,7 +330,7 @@ Use this dashboard to:
 * Monitor locations from which changes are being made locations. 
 * Examine details and trends for created, updated and deleted ECS resources.
 
-<img src={useBaseUrl('img/observability/ecs2.jpeg')} alt="Amazon ECS - Audit Events dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/observability/ecs2.jpg')} alt="Amazon ECS - Audit Events dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Resource Utilization
 

@@ -141,7 +141,7 @@ The **Cato Networks - Events** dashboard provides a detailed summary of the even
 
 ### Threat Analysis
 
-The **Cato Networks - Threat Analysis** dashboard provides a comprehensive overview of threat-related information, enabling you to understand and address potential risks effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Threat-Analysis.png')} alt="Cato-Networks-Threat-Analysis" />
+The **Cato Networks - Threat Analysis** dashboard provides a comprehensive overview of threat-related information, enabling you to understand and address potential risks effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Threat-Analysis.jpg')} alt="Cato-Networks-Threat-Analysis" />
 - **Total Threat Events**. Displays the total number of threat events, giving you an overall understanding of the threat landscape.
 - **Threats Frequency**. The threats frequency widget highlights the frequency of threats, allowing you to identify patterns and trends.
 - **Threats by Type**. The threat by types widget categorizes threats and provides insights into the specific types of threats encountered.

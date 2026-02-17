@@ -264,7 +264,7 @@ Shows the details of accesses by different applications, the location of logins,
 
 **Outlier in Failed Application Access by User**. See the outlier in the failed accesses in the last three days by user ID and count statistics displayed in a table.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-ApplicationAccess.png')} alt="Okta-AdministrativeActions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-ApplicationAccess.jpg')} alt="Okta-AdministrativeActions" />
 
 ### Failed Login Activity
 

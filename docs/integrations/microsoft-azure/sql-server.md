@@ -468,7 +468,7 @@ Use this dashboard to:
 * Get insights into database activities such as errors/sec, lock timeouts/sec, and wait/sec, deadlocks/sec, and write transactions/sec.
 * Monitor important SQL statistics such as login/sec, logout/sec, sql compilations/sec, processes blocked and batch requests/sec.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Performance-Counters.png')} alt="Performance Counters" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Performance-Counters.jpg')} alt="Performance Counters" />
 
 
 ### Replication

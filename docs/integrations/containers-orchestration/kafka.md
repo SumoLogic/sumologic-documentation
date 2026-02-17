@@ -396,7 +396,7 @@ Use this dashboard to monitor the following key metrics:
     * Under Min ISR Partitions Count -The Under Min ISR Partitions metric displays the number of partitions, where the number of In-Sync Replicas (ISR) is less than the minimum number of in-sync replicas specified. The two most common causes of under-min ISR partitions are that one or more brokers are unresponsive, or the cluster is experiencing performance issues and one or more brokers are falling behind.
 * The expected value for this rate is normally zero.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Replication.png')} alt="Kafka dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Replication.jpg')} alt="Kafka dashboards" />
 
 
 ### Kafka - Zookeeper
@@ -411,7 +411,7 @@ Use this dashboard to monitor key Zookeeper metrics such as:
     2. Check for garbage collection issues and tune your JVMs accordingly.
 * Connection Rate.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Zookeeper.png')} alt="Kafka dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Zookeeper.jpg')} alt="Kafka dashboards" />
 
 ### Kafka - Broker
 
@@ -423,7 +423,7 @@ Use this dashboard to:
 * Monitor producer and fetch request rates.
 * Monitor Log flush rate to determine the rate at which log data is written to disk
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker.png')} alt="Kafka dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker.jpg')} alt="Kafka dashboards" />
 
 
 ### Kafka - Failures and Delayed Operations
@@ -440,7 +440,7 @@ Use this dashboard to:
     * Fetch Purgatory Size - The Fetch Purgatory Size metric shows the number of fetch requests currently waiting in purgatory. Fetch requests are added to purgatory if there is not enough data to fulfil the request (determined by fetch.min.bytes in the consumer configuration) and the requests wait in purgatory until the time specified by fetch.wait.max.ms is reached, or enough data becomes available.
     * Produce Purgatory Size - The Produce Purgatory Size metric shows the number of produce requests currently waiting in purgatory. Produce requests are added to purgatory if request.required.acks is set to -1 or all, and the requests wait in purgatory until the partition leader receives an acknowledgement from all its followers. If the purgatory size metric keeps growing, some partition replicas may be overloaded. If this is the case, you can choose to increase the capacity of your cluster, or decrease the amount of produce requests being generated.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Failures-Delayed-Operations.png')} alt="Kafka dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Failures-Delayed-Operations.jpg')} alt="Kafka dashboards" />
 
 
 ### Kafka - Request-Response Times
@@ -465,7 +465,7 @@ Use this dashboard to:
 * Monitor Broker added/started and shutdown events in your cluster.
 * Quickly determine patterns across all logs in a given Kafka cluster.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Logs.png')} alt="Kafka dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Logs.jpg')} alt="Kafka dashboards" />
 
 ### Kafka Broker - Performance Overview
 
@@ -486,7 +486,7 @@ The **Kafka Broker - CPU** dashboard shows information about the CPU utilization
 Use this dashboard to:
 * Get insights into the process and user CPU load of Kafka brokers. High CPU utilization can make Kafka flaky and can cause read/write timeouts.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-CPU.png')} alt="Kafka dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-CPU.jpg')} alt="Kafka dashboards" />
 
 ### Kafka Broker - Memory
 
@@ -521,7 +521,7 @@ Use this dashboard to:
 * Understand the amount of time spent in garbage collection. If this time keeps increasing, your Kafka brokers may have more CPU usage.
 * Understand the amount of memory cleared by garbage collectors across memory pools and their impact on the Heap memory.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Garbage-Collection.png')} alt="Kafka dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Garbage-Collection.jpg')} alt="Kafka dashboards" />
 
 
 ### Kafka Broker - Threads
@@ -573,7 +573,7 @@ Use this dashboard to:
 * Monitor the In Sync replica (ISR) Shrink rate. ISR shrinks occur when an in-sync broker goes down, as it decreases the number of in-sync replicas available for each partition replica on that broker.
 * Monitor In Sync replica (ISR) Expand rate. ISR expansions occur when a broker comes online, such as when recovering from a failure or adding a new node. This increases the number of in-sync replicas available for each partition on that broker.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Topic-Details.png')} alt="Kafka dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Topic-Details.jpg')} alt="Kafka dashboards" />
 
 
 ## Create monitors for Kafka app

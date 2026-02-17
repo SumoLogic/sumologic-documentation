@@ -81,7 +81,7 @@ Use this dashboard to:
 * Identify ingest outliers
 * Determine the spikes for top sources compared with the previous day
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Log-Spikes.png')} alt="Data volume dashboards" />
+<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Log-Spikes.jpg')} alt="Data volume dashboards" />
 
 
 ### Capacity Utilization
@@ -105,7 +105,7 @@ Use this dashboard to:
 * Identify the outliers (and forecast your data ingestion).
 * Identify the top 5 source categories, source hosts, sources, and collectors by span count and billed bytes.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Tracing.png')} alt="Data volume dashboards" />
+<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Tracing.jpg')} alt="Data volume dashboards" />
 
 ## Create monitors for the Sumo Logic Data Volume app
 

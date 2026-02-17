@@ -32,7 +32,7 @@ import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
 See the overview of Security Hub findings broken down by severity. Filters are available to limit the dashboard panels to specific account IDs, finding IDs, finding types, normalized severity, and title.
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-Security-Hub-Security-Monitoring-Overview.png')} alt="AWS Security Hub dashboards" />
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-Security-Hub-Security-Monitoring-Overview.jpg')} alt="AWS Security Hub dashboards" />
 
 
 #### Findings Summary
@@ -59,7 +59,7 @@ All panels for Critical, High, Medium, and Low Severity findings are the same. T
 
 See the overview of Security Hub findings broken down by compliance status. Filters are available to limit the dashboard panels to specific account IDs, finding IDs, finding types, normalized severity, title, and compliance status.
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-Security-Hub-Security-Analytics-Compliance.png')} alt="AWS Security Hub dashboards" />
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-Security-Hub-Security-Analytics-Compliance.jpg')} alt="AWS Security Hub dashboards" />
 
 
 #### Findings Summary

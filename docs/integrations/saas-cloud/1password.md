@@ -211,7 +211,7 @@ The **1Password - Overview** provides an overview of 1Password events including 
 
 The **1Password - Successful Sign-ins** dashboard provides geographic location of successful sign-in events, one-day time comparison of events, breakdown of events by Category, Type, Users, Country, State, and City.
 
-<img src={useBaseUrl('img/integrations/1password/1Password-Successful-Sign-ins.png')} alt="1Password-Successful-Sign-ins" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Successful-Sign-ins.jpg')} alt="1Password-Successful-Sign-ins" />
 
 ### Failed Sign-ins
 
@@ -223,13 +223,13 @@ The **1Password - Failed Sign-ins** dashboard provides geographic location of fa
 
 The **1Password - Threat Intel** dashboard provides high-level views of threats throughout your 1Password Service. Dashboard panels display visual graphs and detailed information on Threats by the client, target user, source app, platform, threats by actors, and threats by malicious confidence.
 
-<img src={useBaseUrl('img/integrations/1password/1Password-Threat-Intel.png')} alt="1Password-Threat-Intel" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Threat-Intel.jpg')} alt="1Password-Threat-Intel" />
 
 ### Item Usage
 
 The **1Password - Item Usage** dashboard shows information about items in shared vaults that have been modified, accessed, or used. This dashboard provides you geo-locations of clients who accessed items in the shared vault, it also provides threat intel analysis of client IPs to secure your vault access.
 
-<img src={useBaseUrl('img/integrations/1password/1Password-Item-Usage.png')} alt="1Password-Item-Usage" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Item-Usage.jpg')} alt="1Password-Item-Usage" />
 
 ### Audit Security
 

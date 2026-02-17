@@ -367,7 +367,7 @@ If you have already AWS CloudTrail logs flowing into Sumo Logic, you can skip th
 
 The following illustration is a graphical representation of the process for collecting logs from AWS CloudTrail and delivering them to Sumo Logic.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Collection_Process_Overview.png')} alt="Collection_Process_Overview" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Collection_Process_Overview.jpg')} alt="Collection_Process_Overview" />
 
 
 ### Configuring Log Collection
@@ -401,7 +401,7 @@ Use this dashboard to understand how your company compares to peers with respect
 
 **GI CloudTrail - 02 Tactics and Techniques: My Company v. Peers** dashboard uses ATT&CK to organize tactics implied by AWS CloudTrail events that appear in your infrastructure and shows the comparison to other AWS customers in your peer group. MITRE ATT&CK is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations.  
 
-<img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-02-Tactics.png')} alt="GI CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-02-Tactics.jpg')} alt="GI CloudTrail" />
 
 Use this dashboard to:
 
@@ -440,7 +440,7 @@ Use this dashboard to:
 
 **GI CloudTrail - 04 Action Plan** dashboard identifies the affected resources for every notable event. This data then enables you to create a proactive action plan for your environment.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-04-Action-Plan.png')} alt="GI CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-04-Action-Plan.jpg')} alt="GI CloudTrail" />
 
 Use this dashboard to:
 

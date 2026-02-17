@@ -283,7 +283,7 @@ The **Heroku - Application** dashboard demonstrates the use cases for Heroku app
 
 * **log_drain**. Denotes the drain identifier Heroku attaches with the `_sourceName` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-application.png')} style={{border: '1px solid gray'}} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-application.jpg')} style={{border: '1px solid gray'}} alt="Heroku dashboards" />
 
 
 - **Total App Builds**. Shows the count of total application builds in Heroku.
@@ -347,7 +347,7 @@ The **Heroku - Application Errors** dashboard demonstrates the use cases for Her
 
 * **log_drain**. Denotes the drain identifier Heroku attaches with the `_sourceName` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-application-errors.png')} style={{border: '1px solid gray'}} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-application-errors.jpg')} style={{border: '1px solid gray'}} alt="Heroku dashboards" />
 
 - **Total App Errors**. Shows the count of total Heroku application errors.
 - **App Release Errors**. Shows the count of total Heroku application errors that occurred during application releases.

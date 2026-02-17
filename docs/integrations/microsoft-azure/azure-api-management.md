@@ -69,7 +69,7 @@ For Security events, make sure you enable [Microsoft Defender for Cloud](https:/
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Microsoft-Cloud-Defender-Edit-Settings.png')} alt="Edit Settings" style={{border: '1px solid gray'}} width="800" />
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-api-management-services.png')} alt="Cloud Defender Plans" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-api-management-services.jpg')} alt="Cloud Defender Plans" style={{border: '1px solid gray'}} width="800" />
 
 ## Installing the Azure API Management app
 

@@ -153,7 +153,7 @@ From the Sumo Logic Home page, click the **Learn** tab to access:
 - Getting Started tutorials
 - Sumo docs, support, community, and training
 
-<img src={useBaseUrl('img/get-started/Welcome_learn.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/get-started/Welcome_learn.jpg')} alt="Learn tab" style={{border: '1px solid gray'}} width="800" />
 
 Don't just learn it - master it! Get recognized as a Sumo Logic expert by completing the courses in the [Sumo Logic Certification Program](/docs/get-started/training-certification-faq/#what-certifications-does-sumo-logic-offer). We’re happy to help you get certified right from the product.
 

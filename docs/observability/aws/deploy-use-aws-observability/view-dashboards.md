@@ -40,11 +40,11 @@ To investigate services in your AWS environment, do the following:
 
 1. In the AWS Observability view, select an account to view a list of its regions.
 
-    The **AWS Account Overview** dashboard appears in the window on the right. The dashboard provides insights into the activities in the selected AWS account and gives you an at-a-glance view of the health and status of the AWS services in that account.<br/><img src={useBaseUrl('img/observability/AWS-Account-Overview.png')} alt="AWS account overview" style={{border: '1px solid gray'}} width="800" />
+    The **AWS Account Overview** dashboard appears in the window on the right. The dashboard provides insights into the activities in the selected AWS account and gives you an at-a-glance view of the health and status of the AWS services in that account.<br/><img src={useBaseUrl('img/observability/AWS-Account-Overview.jpg')} alt="AWS account overview" style={{border: '1px solid gray'}} width="800" />
 1. Similarly, from the expanded account, select a region.  
 
-    The **AWS Region Overview** dashboard appears in the window on the right. The dashboard provides insights into the AWS account activities in that AWS region and gives you an at-a-glance view of the health and status of the AWS services in that account-region combination.<br/><img src={useBaseUrl('img/observability/AWS-Region-Overview.png')} alt="AWS region overview" style={{border: '1px solid gray'}} width="800" />
-1. From the expanded account and region combination, select a namespace or AWS service. The dashboard for the selected namespace appears in the window on the right. In our example, we selected the AWS EC2 Metrics namespace in the *us-east-1* region of the *prod* account.<br/><img src={useBaseUrl('img/observability/AWS-EC2-Metrics-Overview.png')} alt="AWS EC2 metrics overview" style={{border: '1px solid gray'}} width="800" />
+    The **AWS Region Overview** dashboard appears in the window on the right. The dashboard provides insights into the AWS account activities in that AWS region and gives you an at-a-glance view of the health and status of the AWS services in that account-region combination.<br/><img src={useBaseUrl('img/observability/AWS-Region-Overview.jpg')} alt="AWS region overview" style={{border: '1px solid gray'}} width="800" />
+1. From the expanded account and region combination, select a namespace or AWS service. The dashboard for the selected namespace appears in the window on the right. In our example, we selected the AWS EC2 Metrics namespace in the *us-east-1* region of the *prod* account.<br/><img src={useBaseUrl('img/observability/AWS-EC2-Metrics-Overview.jpg')} alt="AWS EC2 metrics overview" style={{border: '1px solid gray'}} width="800" />
 
 ## Drill down for root cause analysis
 

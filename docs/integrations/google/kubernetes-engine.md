@@ -314,7 +314,7 @@ Use the dashboard to:
 * Verify Error Messages and Events by Severity.
 * Get an overview of Scaling on the cluster.
 
-<img src={useBaseUrl('img/integrations/google/GKE-Cluster-Logs.png')} alt="Google GKE dashboards" />
+<img src={useBaseUrl('img/integrations/google/GKE-Cluster-Logs.jpg')} alt="Google GKE dashboards" />
 
 ### Node Logs
 
@@ -326,7 +326,7 @@ Use the dashboard to:
 * Resources created/killed on the nodes.
 * Review Scheduling details by nodes.
 
-<img src={useBaseUrl('img/integrations/google/GKE-Node-Logs.png')} alt="Google GKE dashboards" />
+<img src={useBaseUrl('img/integrations/google/GKE-Node-Logs.jpg')} alt="Google GKE dashboards" />
 
 ### Pod Logs
 
@@ -339,7 +339,7 @@ Use the dashboard to:
 * Review Scheduling details by pods.
 * Understand Container Image Events.
 
-<img src={useBaseUrl('img/integrations/google/GKE-Pod-Logs.png')} alt="Google GKE dashboards" />
+<img src={useBaseUrl('img/integrations/google/GKE-Pod-Logs.jpg')} alt="Google GKE dashboards" />
 
 ### Controller Manager
 

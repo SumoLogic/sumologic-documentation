@@ -434,7 +434,7 @@ Use this dashboard to:
 * Identify clients causing the most errors.
 * Monitor trends in error logs and identify outliers.
 
-<img src={useBaseUrl('img/integrations/web-servers/Apache-Error-Log-Analysis.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Error-Log-Analysis.jpg')} alt="test" />
 
 ### Trends
 
@@ -508,7 +508,7 @@ The **Apache - Request State Analysis** dashboard shows trends around the state 
 Use this dashboard to:
 * Monitor the state of requests being handled by worker threads over time and take remedial actions to optimize your web servers if needed.
 
-<img src={useBaseUrl('img/integrations/web-servers/Apache-Request-State-Analysis.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Request-State-Analysis.jpg')} alt="test" />
 
 
 ### Server Resource Utilization
@@ -519,7 +519,7 @@ Use this dashboard to:
 * Monitor CPU utilization and load on your Apache web servers.
 * Monitor the number of workers and idle threads.
 
-<img src={useBaseUrl('img/integrations/web-servers/Apache-Server-Resource-Utilization.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Server-Resource-Utilization.jpg')} alt="test" />
 
 
 ### Server Status
@@ -530,7 +530,7 @@ Use this dashboard to:
 * Monitor server uptime.
 * Monitor web server performance.
 
-<img src={useBaseUrl('img/integrations/web-servers/Apache-Server-Status.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Server-Status.jpg')} alt="test" />
 
 ## Create monitors for Apache app
 

@@ -196,7 +196,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Zscaler - Overview** dashboard provides general information of the Zscaler Web Gateway logs, including Panels that drill-down into the other Zscaler Dashboards. The Overview Dashboard gives a good starting point for detecting anomalies in blocked traffic and geographic hotspots for allowed and blocked traffic.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Overview.png')} alt="zscaler internet access Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Overview.jpg')} alt="zscaler internet access Dashboard" />
 
 ### Behavior  
 

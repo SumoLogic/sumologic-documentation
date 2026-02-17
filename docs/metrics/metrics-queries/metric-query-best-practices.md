@@ -164,11 +164,11 @@ The correct query is to max each series and then sum them:
 cluster=prod metric=kube_pod_status_phase  
 | quantize to 1m using max drop last | sum
 ```
-<img src={useBaseUrl('img/metrics/metrics-count-pods-correct.png')} alt="Correct query for pod count" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/metrics/metrics-count-pods-correct.jpg')} alt="Correct query for pod count" style={{border: '1px solid gray'}} width="800" />
 
 The wrong approach is to average the rollup and count of metric series:
 
-<img src={useBaseUrl('img/metrics/metrics-count-pods-wrong.png')} alt="Wrong query for pod count" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/metrics/metrics-count-pods-wrong.jpg')} alt="Wrong query for pod count" style={{border: '1px solid gray'}} width="800" />
 
 ### Changing statistic type on a chart changes results
 
@@ -210,7 +210,7 @@ In the following example, we use the comment tag `//` to view the metric query t
 container="istio-proxy" node="ip-10-42-169-62.us-west-2.compute.internal" metric=container_memory_working_set_bytes cluster=prod namespace=prod-otel001 
 | quantize 1m  // | avg by container, pod | sum by pod 
 ```
-<img src={useBaseUrl('img/metrics/time-series-example.png')} alt="Time series example" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/metrics/time-series-example.jpg')} alt="Time series example" style={{border: '1px solid gray'}} width="800" />
 
 Notice the following:
 * The `container`, `namespace`, and `pod` labels for the metric from Kubernetes (`https://kubernetes.io/docs/reference/instrumentation/metrics/`).
@@ -430,7 +430,7 @@ Following is an incorrect way to query for pod restarts. It uses `sum` over time
 Metrics are billed in data points per minute (DPM), typically at a rate of 3 credits per 1000 DPM averaged over each 24 hour period. `DPM = metrics * entities * total cardinality` of all tag names/values, so sending more metric/tag combinations increases cost. 
 
 We have three tools in Sumo Logic to track DPM usage and drill down into drivers of high metric cardinality:
-* The account page shows metric consumption per day over time:<br/><img src={useBaseUrl('img/metrics/metric-query-dpm-1.png')} alt="Account page showing data points per minute" style={{border: '1px solid gray'}} width="800" />
+* The account page shows metric consumption per day over time:<br/><img src={useBaseUrl('img/metrics/metric-query-dpm-1.jpg')} alt="Account page showing data points per minute" style={{border: '1px solid gray'}} width="800" />
 * The **Metrics** dashboard in the [Data Volume app](/docs/integrations/sumo-apps/data-volume/) can track high DPM consumption per metadata fields such as `collector`, `source`, and `sourcecategory`:<br/><img src={useBaseUrl('img/metrics/metric-query-dpm-2.png')} alt="Choosing the Metrics dashboard" style={{border: '1px solid gray'}} width="600" /><br/><img src={useBaseUrl('img/metrics/metric-query-dpm-2a.png')} alt="Metrics dashboard showing DPM per metadata field" style={{border: '1px solid gray'}} width="800" />
 * [Metrics Data Ingestion](/docs/metrics/metrics-dpm/) is a filterable admin UI to show detailed DPM and cardinality per metric name or tag. Advanced users can make custom log searches versus the underlying audit indexes for this source.<br/><img src={useBaseUrl('img/metrics/metric-query-dpm-3.png')} alt="Ingestion per metric" style={{border: '1px solid gray'}} width="600" /><br/><img src={useBaseUrl('img/metrics/metric-query-dpm-3a.png')} alt="Ingest per dimension" style={{border: '1px solid gray'}} width="450" />
 

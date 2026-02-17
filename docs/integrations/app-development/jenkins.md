@@ -500,7 +500,7 @@ Use this dashboard to:
 * Identify the slowest failed builds.
 * View trends for job results and use that information to identify source code components and teams that need the most improvement.
 
-<img src={useBaseUrl('img/integrations/app-development/Jenkins-JobOverview.png')} alt="jenkins" />
+<img src={useBaseUrl('img/integrations/app-development/Jenkins-JobOverview.jpg')} alt="jenkins" />
 
 #### Job Information
 
@@ -527,7 +527,7 @@ Use this dashboard to:
 * Investigate configuration changes before the build by comparing the old configuration and the current configuration.
 * Identify command failure for pipeline jobs using stage and stack trace information.
 
-<img src={useBaseUrl('img/integrations/app-development/Jenkins-BuildInformation.png')} alt="jenkins" />
+<img src={useBaseUrl('img/integrations/app-development/Jenkins-BuildInformation.jpg')} alt="jenkins" />
 
 
 #### Pipeline Stage Monitoring

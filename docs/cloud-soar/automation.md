@@ -185,7 +185,7 @@ Before you can use the Slack integration in Cloud SOAR, you need to create a Sla
 
 After you create a Slack app, you must add the appropriate permissions for use with Cloud SOAR.
 
-1. Click **Permissions**, or from the left nav bar, click **OAuth & Permissions**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-permissions.png')} alt="Slack OAuth and Permissions" width="600"/>
+1. Click **Permissions**, or from the left nav bar, click **OAuth & Permissions**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-permissions.jpg')} alt="Slack OAuth and Permissions" width="600"/>
 1. Scroll down to the **Scopes** section.<br/>You must add permissions for the Bot Token. Bot tokens let your app act independently.
 1. Click **Add an OAuth Scope** under **Bot Token Scopes**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-delivery2.png')} alt="Add an OAuth Scope in Slack" style={{border: '1px solid gray'}} width="500"/>
 1. Enter the following permissions.

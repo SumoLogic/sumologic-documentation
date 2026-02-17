@@ -172,7 +172,7 @@ Use this dashboard to:
 * Monitor trends for load balancers errors, 4xx and 5xx errors, as well as healthy and unhealthy hosts.
 * Monitor the current state across all load balancers via active connections, new connections, backend connection errors, and rejected connections.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Overview.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Overview.jpg')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Response Analysis
@@ -194,7 +194,7 @@ Use this dashboard to:
 * Monitor trends of all response codes for your backend servers by LoadBalancer and availability zones.
 * Correlate response code trends across load balancer access logs and CloudWatch metrics to determine the root cause for failures.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Backend-Response-Analysis.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Backend-Response-Analysis.jpg')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
 
 ### Latency Overview
 

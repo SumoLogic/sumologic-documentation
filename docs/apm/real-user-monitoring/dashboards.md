@@ -67,7 +67,7 @@ You can also click on any data-point on the charts to open a details panel and v
 
 Overview dashboards on all view levels have a panel showing geographical user activity for the selected entity. Geographic dashboards measure user activity as dot size and performance as a color.
 
-<img src={useBaseUrl('img/rum/RUM-Overview.png')} alt="RUM Overview dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/rum/RUM-Overview.jpg')} alt="RUM Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 <img src={useBaseUrl('img/rum/RUM-Overview-Application-Service.png')} alt="RUM Overview Application and RUM Overview Service dashboards" style={{border: '1px solid gray'}} width="800" />
 
@@ -96,7 +96,7 @@ Use these dashboards to:
 
 You can click on any data point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point. For cross-dimensional metrics, only the average statistic type is available.
 
-<img src={useBaseUrl('img/rum/RUM-Performance-Analytics-Application.png')} alt="RUM Performance Analytics Application dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/rum/RUM-Performance-Analytics-Application.jpg')} alt="RUM Performance Analytics Application dashboard" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Collecting Browser Errors

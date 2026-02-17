@@ -64,7 +64,7 @@ In this step, you use a Sumo Logic-provided Azure Resource Manager (ARM) templat
 1. Download the [appendblobreaderdeploy.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/AppendBlobReader/src/appendblobreaderdeploy.json) ARM template.
 1. Click **Create a Resource**, search for **Template deployment** in the Azure Portal, and then click **Create.**
 1. On the Custom deployment blade, click **Build your own template in the editor**.
-1. Copy the contents of the template and paste it into the editor window.<br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-arm.png')} alt="edit-template" style={{border: '1px solid gray'}} width="800"/>
+1. Copy the contents of the template and paste it into the editor window.<br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-arm.jpg')} alt="edit-template" style={{border: '1px solid gray'}} width="800"/>
 1. Click **Save**.
 1. On the Custom deployment blade, do the following:
    1. Create a new Resource Group (recommended) or select an existing one.

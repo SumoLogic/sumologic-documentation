@@ -212,7 +212,7 @@ Use this dashboard to:
 * Get insight into the state and resource usage of cluster components and use this information to fine-tune your Kubernetes cluster.  
 * Get quick insights into the state of the related entities.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Cluster.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Cluster.jpg')} alt="K8s dashboards" />
 
 
 ### Cluster Overview
@@ -233,7 +233,7 @@ Use this dashboard to:
 * Get insight  into how resources are being used across nodes and fine-tune node configurations accordingly.
 * Investigate potential issues with nodes.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Node.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Node.jpg')} alt="K8s dashboards" />
 
 ### Node Overview   
 
@@ -255,7 +255,7 @@ Use this dashboard to:
 * Get insight into the components of a namespace and how resources are being used across namespaces and fine-tune configurations accordingly.  
 * Investigate potential issues.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Namespace.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Namespace.jpg')} alt="K8s dashboards" />
 
 
 ### Pod
@@ -267,7 +267,7 @@ Use this dashboard to:
 * Get insight into the components of a pod and how resources are being used across namespaces and fine-tune configurations accordingly.  
 * Investigate potential issues.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Pod.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Pod.jpg')} alt="K8s dashboards" />
 
 
 ### Container
@@ -280,7 +280,7 @@ Use this dashboard to:
 * Determine if containers are stuck in CrashLoopBackOff, Terminated or Waiting states and make necessary adjustments.  
 * Investigate containers that are over-utilizing resources.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Container.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Container.jpg')} alt="K8s dashboards" />
 
 
 ### Daemonsets Overview
@@ -345,7 +345,7 @@ Use this dashboard to:
 * Identify whether the required replica level has been achieved or not.  
 * View logs and errors and investigate potential issues.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Deployment.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Deployment.jpg')} alt="K8s dashboards" />
 
 
 ### Security Overview
@@ -386,7 +386,7 @@ Use this dashboard to:
 * Identify components by Services.  
 * Determine any errors and warnings by Services.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Service.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Service.jpg')} alt="K8s dashboards" />
 
 
 ### Hygiene Check

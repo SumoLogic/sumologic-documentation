@@ -441,7 +441,7 @@ Use this dashboard to:
 * Monitor and track input and output tokens.
 * Monitor and track images in the output.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-Runtime-Performance-Monitoring.png')} alt="Amazon Bedrock dashboard" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Bedrock-Runtime-Performance-Monitoring.jpg')} alt="Amazon Bedrock dashboard" style={{border: '1px solid gray'}} />
 
 ## Create monitors for Amazon Bedrock app
 

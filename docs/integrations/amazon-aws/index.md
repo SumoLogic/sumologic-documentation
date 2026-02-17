@@ -543,7 +543,7 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.jpg')} alt="Thumbnail icon" width="50"/>
   <h4><a href={useBaseUrl('docs/security/additional-security-features/cloud-infrastructure-security/cloud-infrastructure-security-for-aws')}>Cloud Infrastructure Security for AWS</a></h4>
   <p>A guide to our Cloud Infrastructure Security for AWS app.</p>
   </div>    

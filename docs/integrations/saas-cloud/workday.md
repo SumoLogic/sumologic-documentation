@@ -125,7 +125,7 @@ Use this dashboard to:
 * Monitor recent user activities from untrusted devices and users with multiple failed login attempt to determine the extent of a potential breach.
 * Quickly identify if users are logging in from expected locations and using supported devices.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Workday-Overview.png')} alt="workday dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Workday-Overview.jpg')} alt="workday dashboards" />
 
 ### Login Activity
 
@@ -137,7 +137,7 @@ Use this dashboard to:
 * Get insight into trends around login events to determine the times of day your Workday instance is being used the most.
 * Quickly identify if there are an unusually high number of failed logins.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Workday-Login-Activity.png')} alt="workday dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Workday-Login-Activity.jpg')} alt="workday dashboards" />
 
 ### User Activity
 
@@ -147,7 +147,7 @@ Use this dashboard to:
 * Monitor if Workday tasks executed by users are according to expectations.
 * Get insights into CRUD(Create/Read/Update/Delete) and download activity Quickly identify if login and user activity are originating from known malicious IP addresses.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Workday-User-Activity.png')} alt="workday dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Workday-User-Activity.jpg')} alt="workday dashboards" />
 
 ### System User Activity
 

@@ -134,7 +134,7 @@ Use this dashboard to:
 * Gain insights into your Nginx health using Critical Errors and Status of Nginx Server.
 * Get insights into Active and dropped connections.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Overview.png')} alt="Nginx Plus Ingress" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Overview.jpg')} alt="Nginx Plus Ingress" />
 
 
 ### Error Logs Analysis
@@ -146,7 +146,7 @@ Use this dashboard to:
 * To track and view client geographic locations generating errors.
 * Track critical alerts and emergency error alerts.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Error-Logs-Analysis.png')} alt="Nginx Plus Ingress" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Error-Logs-Analysis.jpg')} alt="Nginx Plus Ingress" />
 
 ### Logs Timeline Analysis
 
@@ -239,7 +239,7 @@ Use this dashboard to:
 * Gain information about Location HTTP zones traffic: received and sent; speed, requires/responses amount, discarded traffic.
 * Gain information about Location HTTP zones error responses: percentage of responses by the server, percentage of each type of error response.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-HTTP-Location-Zones.png')} alt="Nginx Plus Ingress" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-HTTP-Location-Zones.jpg')} alt="Nginx Plus Ingress" />
 
 ### HTTP Server Zones
 
@@ -249,7 +249,7 @@ Use this dashboard to:
 * Gain information about Server HTTP zones traffic: received and sent; speed, requires/responses amount, discarded traffic.
 * Gain information about Server HTTP zones error responses: percentage of responses by the server, percentage of each type of error response.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-HTTP-Server-Zones.png')} alt="Nginx Plus Ingress" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-HTTP-Server-Zones.jpg')} alt="Nginx Plus Ingress" />
 
 ### HTTP Upstreams
 
@@ -261,7 +261,7 @@ Use this dashboard to:
 * Gain information about HTTP upstream error responses: percentage of responses by the server, percentage of each type of error response.
 * Gain information about HTTP upstream health monitoring.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-HTTP-Upstreams.png')} alt="Nginx Plus Ingress" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-HTTP-Upstreams.jpg')} alt="Nginx Plus Ingress" />
 
 ### Resolvers
 
@@ -271,7 +271,7 @@ Use this dashboard to:
 * Gain information about the total number of zones, responses, and request speed.
 * Gain information about error responses by each type of error.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Resolvers.png')} alt="Nginx Plus Ingress" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Resolvers.jpg')} alt="Nginx Plus Ingress" />
 
 
 ### Nginx Plus Ingress- TCP/UDP Upstreams
@@ -284,7 +284,7 @@ Use this dashboard to:
 * Gain information about TCP and UDP upstream error responses: percentage of responses by the server, percentage of each type of error response.
 * Gain information about TCP and UDP upstream health monitoring.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-TCP-UDP-Upstreams.png')} alt="Nginx Plus Ingress" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-TCP-UDP-Upstreams.jpg')} alt="Nginx Plus Ingress" />
 
 ### TCP/UDP Zones
 

@@ -186,7 +186,7 @@ Use this dashboard to:
 * Monitor the success/failure rate of builds and identify relevant individuals, repos, and branches.
 * Identify code commits that led to failed builds.
 
-<img src={useBaseUrl('img/integrations/app-development/Bitbucket_Builds.png')} alt="bitbucket" />
+<img src={useBaseUrl('img/integrations/app-development/Bitbucket_Builds.jpg')} alt="bitbucket" />
 
 ### Issues
 

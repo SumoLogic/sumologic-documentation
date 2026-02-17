@@ -100,7 +100,7 @@ Use this dashboard to:
 * Monitor successful and error events with error code in detail.
 * Get details of active topic names and users of both successful and error events.
 
-<img src={useBaseUrl('img/observability/Amazon-SNS-Audit-Events.png')} alt="Amazon-SNS-Overview.png" />
+<img src={useBaseUrl('img/observability/Amazon-SNS-Audit-Events.jpg')} alt="Amazon-SNS-Overview.png" />
 
 
 ### Amazon SNS - Messages, Notifications  

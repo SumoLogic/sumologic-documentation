@@ -170,7 +170,7 @@ The **Palo Alto 9 - Security Monitoring - THREAT Log by Category** dashboard pro
 
 **Use case:** You can use this dashboard to review THREAT events in summary or broken down by category: Command-and-control, Phishing, Malware, Proxy Anonymizers, Newly Registered Domains, Cryptocurrency, Questionable, and High-Risk.
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-Security-Monitoring-THREAT-Log-by-Category.png')} alt="Palo Alto 9 Security Dashboards" />
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-Security-Monitoring-THREAT-Log-by-Category.jpg')} alt="Palo Alto 9 Security Dashboards" />
 
 
 ### Security Monitoring - THREAT Logs by Severity
@@ -179,7 +179,7 @@ The **Palo Alto 9 - Security Monitoring - THREAT Logs by Severity** dashboard pr
 
 **Use case:** You can use this dashboard to review THREAT events broken down by severity, allowing you to focus on the critical events first but also providing events of lesser severity for additional triage and investigation if necessary.
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-Security-Monitoring-THREAT-Log-by-Severity.png')} alt="Palo Alto 9 Security Dashboards" />
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-Security-Monitoring-THREAT-Log-by-Severity.jpg')} alt="Palo Alto 9 Security Dashboards" />
 
 ### Security Monitoring - TRAFFIC Log Overview
 

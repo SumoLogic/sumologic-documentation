@@ -377,7 +377,7 @@ Use this dashboard to:
 * Get insights into information about the total amount of operations in buckets per second;  the number of delete misses operations, get operations, set operations, update operations in buckets per second.
 * Get insights into information about the number of bytes read, bytes written over time.
 
-<img src={useBaseUrl('img/integrations/databases/Couchbase-Bucket-I-O.png')} alt="Cassandra dashboards" />
+<img src={useBaseUrl('img/integrations/databases/Couchbase-Bucket-I-O.jpg')} alt="Cassandra dashboards" />
 
 ### Cluster Resources
 
@@ -388,7 +388,7 @@ Use this dashboard to:
 * Gain insights into the used resources of Couchbase clusters such as the Disk usage, the Swap space usage, the Memory available.
 * Gain insights into the rate requests, rate of streaming requests on the management port.
 
-<img src={useBaseUrl('img/integrations/databases/Couchbase-Cluster-Resources.png')} alt="Cassandra dashboards" />
+<img src={useBaseUrl('img/integrations/databases/Couchbase-Cluster-Resources.jpg')} alt="Cassandra dashboards" />
 
 ### DCP Queues
 
@@ -406,7 +406,7 @@ The **Couchbase - Disk Queues** dashboard provides an insight into the DCP queue
 Use this dashboard to:
 * Gain insights into the operations of disk queues. This helps you identify performance about read/write of your clusters.
 
-<img src={useBaseUrl('img/integrations/databases/Couchbase-Disk-Queues.png')} alt="Cassandra dashboards" />
+<img src={useBaseUrl('img/integrations/databases/Couchbase-Disk-Queues.jpg')} alt="Cassandra dashboards" />
 
 ### vBucket
 

@@ -178,7 +178,7 @@ Use this dashboard to:
 * Monitor average read and write capacity percentages for DynamoDB instances
 * Quickly identify system errors, user errors, transaction conflicts, and conditional check fail requests for DynamoDB Monitor overall resource utilization of your DynamoDB instances
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Overview.png')} alt="Amazon DynamoDB" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Overview.jpg')} alt="Amazon DynamoDB" />
 
 
 ### Capacity Planning
@@ -190,7 +190,7 @@ Use this dashboard to:
 * Monitor AWS account level maximum allocations across reading and writing capacities.
 * Monitor resource utilization using trend panels for reading and write capacity, throttled read and write requests, as well as read and write throttle events for DynamoDB throughout your infrastructure.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Capacity-Planning.png')} alt="Amazon DynamoDB" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Capacity-Planning.jpg')} alt="Amazon DynamoDB" />
 
 ### Latency and Errors
 
@@ -201,7 +201,7 @@ Use this dashboard to:
 * Quickly identify the number of conditional checks that fail, and transaction conflicts for DynamoDB
 * Monitor resource utilization using trend panels for latencies and errors for DynamoDB
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Latency-and-Errors.png')} alt="Amazon DynamoDB" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Latency-and-Errors.jpg')} alt="Amazon DynamoDB" />
 
 ### Events
 

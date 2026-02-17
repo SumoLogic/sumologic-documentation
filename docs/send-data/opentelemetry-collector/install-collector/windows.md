@@ -39,7 +39,7 @@ You can install our OpenTelemetry Collector using either of the following method
 1. Select the **Time Zone**. By default, the timezone is set to `(UTC) Etc/UTC`.
 1. (Optional) In the **Collector Settings**, select the **Ephemeral** checkbox to auto-delete your collector after 12 hours and select the **Locally Manage Collector** checkbox if you want to configure, maintain, and monitor the collector locally.
 1. Copy the command.
-1. Open PowerShell and execute the command in the PowerShell where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-install-command.png')} alt="windows-ui-installation-6.png" width="900" />
+1. Open PowerShell and execute the command in the PowerShell where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-install-command.jpg')} alt="windows-ui-installation-6.png" width="900" />
 1. Wait for the installation process to complete, then click **Next** to proceed.
 1. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
 
