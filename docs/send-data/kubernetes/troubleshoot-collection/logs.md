@@ -44,7 +44,7 @@ Or write the current logs to a file:
 kubectl logs POD_NAME > pod_name.log
 ```
 
-To get a snapshot of the current state of the pod, you can run
+Run the following command to get a snapshot of the current state of the pod:
 
 ```sh
 kubectl describe pods POD_NAME
