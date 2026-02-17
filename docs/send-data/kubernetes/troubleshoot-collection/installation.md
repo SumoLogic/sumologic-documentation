@@ -55,7 +55,7 @@ kubectl logs POD_NAME -f
 
 ### Error: collector with name 'sumologic' does not exist
 
-If you get:
+If you get the below mentioned error you can safely ignore it, and the installation should complete successfully. The installation process creates new [HTTP endpoints](/docs/send-data/hosted-collectors/http-source) in your Sumo Logic account, that are used to send data to Sumo Logic. This error occurs if the endpoints had already been created by an earlier run of the installation process.
 
 ```sh
 Error: collector with name 'sumologic' does not exist
