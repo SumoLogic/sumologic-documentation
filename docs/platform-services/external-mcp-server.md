@@ -44,29 +44,138 @@ Your external AI systems can query logs, manage insights, analyze dashboards, an
 
 * MCP-compatible client application (VS Code, Cursor, Slack, Microsoft Teams, or a custom application).
 * Orchestrator agent deployment platform (such as AWS AgentCore runtime).
-* OAuth2 credentials from Sumo Logic.
+* OAuth2 credentials from Sumo Logic (see [Authentication](#authentication) below).
 
 Configuration steps vary by tool. Refer to your specific tool's documentation for MCP setup instructions.
 
-<!-- Add example (e.g., VS Code or Slack) showing:
-Where to get OAuth credentials
-How to configure the MCP client
-How to verify the connection works-->
-
 ### Authentication
 
-Authenticate using the OAuth2 client credentials flow:
+The MCP Server uses the OAuth2 client credentials flow. You'll need to complete a one-time setup in Sumo Logic before configuring your MCP client.
 
-1. Generate credentials via the Sumo Logic OAuth server.
-<!--
-Where in the UI to do this
-What scopes/permissions to request
-What the credential format looks like
-How to handle token refresh-->
-1. Use the credentials to generate an access token.
-1. Configure your MCP client with the token.
+<img src={useBaseUrl('img/platform-services/mcp/oauth-flow-diagram.png')} alt="OAuth 2.0 client credentials flow diagram showing an application authenticating with the Authorization Server using a Client ID and Secret, receiving an Access Token, then using that token to request resources from the Resource Server." width="600"/>
 
-This follows the standard OAuth2 client credentials flow used by other MCP servers and enterprise APIs.
+#### Step 1: Create a service account
+
+Service accounts are required to create OAuth clients. You can create one through the UI or the API.
+
+To create a service account through the UI, see [Service Accounts](/docs/manage/security/service-accounts/).
+
+To create a service account through the API:  
+
+1. Click the profile icon and navigate to your **Personal Access Keys**.<br/><img src={useBaseUrl('img/platform-services/mcp/access-key-nav.png')} alt="Sumo Logic home page showing the user menu open with Personal Access Keys selected." width="450"/>
+    :::note
+    If you already have a service account, you can use the API to list existing service accounts and retrieve the ID.
+    :::
+1. Click **+ Add Access Key**, create a new Access Key. Note down both the Access ID and Access Key before closing the confirmation dialog, as they won't be shown again.<br/><img src={useBaseUrl('img/platform-services/mcp/access-key-create.png')} alt="Add New Access Key panel in Sumo Logic showing the Name field, optional CORS domains, and Scopes set to Default." width="800"/><br/><img src={useBaseUrl('img/platform-services/mcp/access-key-success.png')} alt="Success dialog showing the Access ID and Access Key values to copy before closing." width="800"/>
+1. Use the Access ID and Access Key to call the API:
+   1. List available roles to find the role ID you want to assign.
+      ```bash
+      curl -u "<accessId>:<accessKey>" \
+        https://api.sumologic.com/api/v1/roles
+      ```
+   1. Create the service account. Replace `api.sumologic.com` above with your [deployment endpoint](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). Note the returned "id" for the next step).
+      ```bash
+      curl -u "<accessId>:<accessKey>" \
+        https://api.sumologic.com/api/v1/serviceAccounts \
+        -H 'Content-Type: application/json' \
+        -d '{"name": "MCP Service Account", "email": "<email>@example.com",  "roleIds": ["<roleId>"]}'
+      ```
+
+#### Step 2: Create an OAuth client
+
+:::note
+UI support for this step is not yet available. You'll need to use the API with an [Access Key](/docs/manage/security/access-keys/).
+:::
+
+Create an OAuth client under your service account. Note the `clientId` and `clientSecret` from the response — these are your MCP credentials.
+
+```bash
+curl -u "<accessId>:<accessKey>" \
+  https://api.sumologic.com/api/v1/oauth/clients \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "My MCP Client",
+    "runAsId": "<serviceAccountId>",
+    "grantTypes": ["client_credentials"],
+    "scopes": ["<scope1>", "<scope2>"]
+  }'
+```
+
+<details>
+<summary>Click to see an example</summary>
+
+```
+curl -u "<accessId>:<accessKey>" \
+  https://api.sumologic.com/api/v1/oauth/clients \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "My OAuth Client",
+    "runAsId": "0000000000000234",
+    "grantTypes": ["client_credentials"],
+    "scopes": ["viewUsersAndRoles", "manageUsersAndRoles"]
+    }'
+```
+
+</details>
+
+To see the full list of available scopes:
+
+```bash
+curl -u "<accessId>:<accessKey>" \
+  https://api.sumologic.com/api/v1/oauth/scopes
+```
+
+The `scopes` you request must fall within the permissions of the associated service account (effective scopes). Only scopes present in the `effectiveScopes` field of the client can be successfully used to request tokens.
+
+#### Step 3: Generate an access token
+
+Use your `clientId` and `clientSecret` to request an access token from the OAuth token endpoint. Replace `service.sumologic.com` with your [deployment's service endpoint](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+
+```bash
+curl -X POST https://service.sumologic.com/oauth2/token \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -u "<clientId>:<clientSecret>" \
+  -d "grant_type=client_credentials" \
+  -d "scope=<scope1> <scope2>"
+```
+
+<details>
+<summary>Click to see an example</summary>
+
+```
+curl -X POST https://service.sumologic.com/oauth2/token \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -u "clientId:clientSecret" \
+  -d "grant_type=client_credentials" \
+  -d "scope=viewUsersAndRoles"
+```
+
+This example shows getting an Access Token with only the `viewUsersAndRoles` scope. Additional scopes can be requested provided the client has more `effectiveScopes`. Additional scopes should be separated by a space in the `scope` parameter.
+
+</details>
+
+To discover the token endpoint programmatically, query the Authorization Server Metadata:
+
+```bash
+curl https://service.sumologic.com/.well-known/oauth-authorization-server
+```
+
+The response includes `token_endpoint` and other supported OAuth parameters.
+
+#### Step 4: Configure your MCP client
+
+Pass the access token as a Bearer token in your MCP client configuration:
+
+```
+curl -H "Authorization: Bearer <access-token-from-previous-step>" \
+  https://service.sumologic.com/api/v1/users
+```
+
+Refer to your specific MCP client documentation for where to set this header.
+
+:::note
+Access tokens expire. Your MCP client or orchestrator agent is responsible for detecting token expiration and repeating Step 3 to obtain a new token.
+:::
 
 ### Architecture
 
@@ -76,7 +185,7 @@ This follows the standard OAuth2 client credentials flow used by other MCP serve
 
 For example, to enable MCP in Slack, you deploy an orchestrator agent on the AWS AgentCore runtime. This agent communicates with Sumo Logic's MCP Server gateway via the standard MCP protocol, which then securely accesses Sumo Logic APIs and Dojo AI agents.
 
-<!-- Add visual diagram showing: Your [customer's] AI tools → Orchestrator Agent → MCP Server Gateway → Sumo Logic APIs/Dojo AI-->
+<img src={useBaseUrl('img/platform-services/mcp/mcp-architecture-diagram.svg')} alt="MCP architecture diagram" width="800"/>
 
 ## Example use cases
 
@@ -126,7 +235,7 @@ Immediate Recommended Actions:
 [continues with structured response]
 
 Next Immediate Step:
-🚨 ASSIGN TO SENIOR ANALYST AND BEGIN CREDENTIAL RESET NOW
+ASSIGN TO SENIOR ANALYST AND BEGIN CREDENTIAL RESET NOW
 ```
 
 </TabItem>
@@ -366,7 +475,7 @@ Retry strategies-->
 
 ## Additional information
 
-* [Dojo AI overview](#)
+* [Dojo AI overview](https://www.sumologic.com/solutions/dojo-ai)
 * [Cloud SIEM](/docs/cse)
 * [Search Job API](/docs/api/search-job)
 * [Model Context Protocol specification](https://modelcontextprotocol.io/)
