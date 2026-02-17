@@ -24,7 +24,7 @@ If it is, there will be `budget.exceeded` messages from Sumo Logic in OpenTeleme
 
 ### Check if collection pods are in a healthy state
 
-Run:
+Run the below mentioned command to get a list of running pods. If any of them are not in the `Status: running` state, something is wrong.
 
 ```sh
 kubectl get pods
