@@ -8,13 +8,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+<head>
+ <meta name="robots" content="noindex" />
+</head>
+
 <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
 :::info
 This feature is in closed beta. For more information, contact your Sumo Logic account executive.
 :::
 
-**Bring your own AI to the Dojo**. Connect your AI tools directly to Sumo Logic to create a unified ecosystem powered by your observability and security data.
+[Bring your own AI to the Dojo](https://www.sumologic.com/solutions/dojo-ai). Connect your AI tools directly to Sumo Logic to create a unified ecosystem powered by your observability and security data.
 
 The Sumo Logic MCP Server enables Dojo AI to act as a core capability provider within your broader AI ecosystem using the Model Context Protocol (MCP). Instead of maintaining custom integrations or treating Sumo Logic as a separate data silo, you can connect your own copilots, proprietary models, and third-party AI systems directly to Sumo Logic's capabilities.
 
@@ -31,16 +35,22 @@ The MCP Server provides a standardized interface between Sumo Logic and your AI 
 
 Your external AI systems can query logs, manage insights, analyze dashboards, and update records through a single, consistent protocol.
 
-## What you can do
-
 * **Bring the best AI for your stack**. Integrate proprietary models or third-party copilots with Sumo Logic observability and security data.
 * **Accelerate workflows with AI assistance**. Use Sumo Logic telemetry as input for automated and analyst-driven workflows, with humans remaining in control of critical decisions.
 * **Work in your preferred environment**. Execute AI-powered queries from your IDE or collaboration tools without switching contexts.
 * **Future-proof your strategy**. Adopt new AI technologies as they emerge while maintaining Sumo Logic scale, security, and governance.
 
-## Prerequisites
+## Architecture
 
-### Setup requirements
+* Sumo Logic provides the MCP Server gateway (fully managed).
+* You deploy orchestrator agents (your MCP-compatible AI runtimes) that connect to the gateway.
+* Powered by Amazon Bedrock AgentCore.
+
+For example, to enable MCP in Slack, you deploy an orchestrator agent on the AWS AgentCore runtime. This agent communicates with Sumo Logic's MCP Server gateway via the standard MCP protocol, which then securely accesses Sumo Logic APIs and Dojo AI agents.
+
+<img src={useBaseUrl('img/platform-services/mcp/mcp-architecture-diagram.svg')} alt="MCP architecture diagram" width="800"/>
+
+## Prerequisites
 
 * MCP-compatible client application (VS Code, Cursor, Slack, Microsoft Teams, or a custom application).
 * Orchestrator agent deployment platform (such as AWS AgentCore runtime).
@@ -48,19 +58,19 @@ Your external AI systems can query logs, manage insights, analyze dashboards, an
 
 Configuration steps vary by tool. Refer to your specific tool's documentation for MCP setup instructions.
 
-### Authentication
+## Authentication
 
 The MCP Server uses the OAuth2 client credentials flow. You'll need to complete a one-time setup in Sumo Logic before configuring your MCP client.
 
 <img src={useBaseUrl('img/platform-services/mcp/oauth-flow-diagram.png')} alt="OAuth 2.0 client credentials flow diagram showing an application authenticating with the Authorization Server using a Client ID and Secret, receiving an Access Token, then using that token to request resources from the Resource Server." width="600"/>
 
-#### Step 1: Create a service account
+### Step 1: Create a service account
 
 Service accounts are required to create OAuth clients. You can create one through the UI or the API.
 
 To create a service account through the UI, see [Service Accounts](/docs/manage/security/service-accounts/).
 
-To create a service account through the API:  
+To create a service account through the API:
 
 1. Click the profile icon and navigate to your **Personal Access Keys**.<br/><img src={useBaseUrl('img/platform-services/mcp/access-key-nav.png')} alt="Sumo Logic home page showing the user menu open with Personal Access Keys selected." width="450"/>
     :::note
@@ -81,7 +91,7 @@ To create a service account through the API:
         -d '{"name": "MCP Service Account", "email": "<email>@example.com",  "roleIds": ["<roleId>"]}'
       ```
 
-#### Step 2: Create an OAuth client
+### Step 2: Create an OAuth client
 
 :::note
 UI support for this step is not yet available. You'll need to use the API with an [Access Key](/docs/manage/security/access-keys/).
@@ -127,7 +137,7 @@ curl -u "<accessId>:<accessKey>" \
 
 The `scopes` you request must fall within the permissions of the associated service account (effective scopes). Only scopes present in the `effectiveScopes` field of the client can be successfully used to request tokens.
 
-#### Step 3: Generate an access token
+### Step 3: Generate an access token
 
 Use your `clientId` and `clientSecret` to request an access token from the OAuth token endpoint. Replace `service.sumologic.com` with your [deployment's service endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
@@ -162,7 +172,7 @@ curl https://service.sumologic.com/.well-known/oauth-authorization-server
 
 The response includes `token_endpoint` and other supported OAuth parameters.
 
-#### Step 4: Configure your MCP client
+### Step 4: Configure your MCP client
 
 Pass the access token as a Bearer token in your MCP client configuration:
 
@@ -176,16 +186,6 @@ Refer to your specific MCP client documentation for where to set this header.
 :::note
 Access tokens expire. Your MCP client or orchestrator agent is responsible for detecting token expiration and repeating Step 3 to obtain a new token.
 :::
-
-### Architecture
-
-* Sumo Logic provides the MCP Server gateway (fully managed).
-* You deploy orchestrator agents (your MCP-compatible AI runtimes) that connect to the gateway.
-* Powered by Amazon Bedrock AgentCore.
-
-For example, to enable MCP in Slack, you deploy an orchestrator agent on the AWS AgentCore runtime. This agent communicates with Sumo Logic's MCP Server gateway via the standard MCP protocol, which then securely accesses Sumo Logic APIs and Dojo AI agents.
-
-<img src={useBaseUrl('img/platform-services/mcp/mcp-architecture-diagram.svg')} alt="MCP architecture diagram" width="800"/>
 
 ## Example use cases
 
@@ -276,7 +276,6 @@ Build custom AI workflows powered by Sumo Logic:
 <!-- tk -->
 ```
 
-
 </TabItem>
 </Tabs>
 
@@ -345,7 +344,6 @@ Tool identifiers are subject to change during the beta period.
 | :---  | :-------- |
 | `sumo_logic_log_search` | Search Sumo Logic logs using Sumo query syntax. |
 
-
 ### Utility tools
 
 | Tool    | Description   |
@@ -358,8 +356,9 @@ target_alerts___
 sumo_logic_log_search
 x_amz_bedrock_agentcore_search  -->
 
+## Usage guidance and cost controls
 
-## When to use MCP
+### When to use MCP
 
 Use MCP for:
 * Conversational investigations.
@@ -371,7 +370,7 @@ Do NOT use MCP for:
 * Model training. Use the [Search Job API](/docs/api/search-job).
 * High-volume automated queries.
 
-### Understanding MCP cost dynamics
+### Cost dynamics
 
 MCP endpoints are cost-amplifying by design. A single conversational request can trigger multiple agent steps, tool calls, retries, and retrieval operations. Valid requests that appear reasonable can generate significantly higher costs than anticipated, particularly when:
 
@@ -383,20 +382,6 @@ MCP endpoints are cost-amplifying by design. A single conversational request can
 MCP is designed for conversational, agent-level interaction where cost per request is understood and monitored. For raw data access or high-volume operations, standard APIs remain more efficient and cost-effective.
 
 For detailed guidance on securing MCP against cost-based attacks, see our blog post: [Token Torching: How I'd burn your AI budget (so you can fix it)](https://www.sumologic.com/blog/token-torching-ai-attack).
-
-## Security and data governance
-
-* **Permissioned access**. All integrations occur through secure, controlled interfaces.
-* **Customer control**. You retain full control over how your data is accessed and used by connected AI tools.
-* **No model training**. Customer data is never used to train AI models.
-* **Audit trails**. All MCP interactions are logged for compliance and security review.
-* **Multi-tenant isolation**. Tenant-level security controls are enforced at the gateway.
-
-## Monitoring and cost controls
-
-Implement these controls to prevent unintended or malicious cost escalation.
-
-<!-- Default rate limits (if any)/Recommended quota values/ If Sumo Logic enforces any limits server-side -->
 
 ### What to monitor
 
@@ -418,21 +403,15 @@ Track these metrics per request, per identity, and per tool:
 * **Kill switches**. Maintain the ability to disable high-cost tools or operations within seconds.
 * **Disconnect handling**. Ensure workflows terminate when clients disconnect to prevent billing for abandoned requests.
 
+## Security and data governance
+
+* **Permissioned access**. All integrations occur through secure, controlled interfaces.
+* **Customer control**. You retain full control over how your data is accessed and used by connected AI tools.
+* **No model training**. Customer data is never used to train AI models.
+* **Audit trails**. All MCP interactions are logged for compliance and security review.
+* **Multi-tenant isolation**. Tenant-level security controls are enforced at the gateway.
+
 ## FAQ
-
-<details>
-<summary>Which AI tools can connect via MCP?</summary>
-
-Any AI tool that implements the Model Context Protocol standard. Beta support includes VS Code, Cursor, Slack, and Microsoft Teams. Additional compatible tools include custom agents built on MCP-compatible frameworks such as AWS AgentCore.
-
-</details>
-
-<details>
-<summary>Does this work with existing Dojo AI agents?</summary>
-
-Yes. The MCP Server works alongside Query Agent and Knowledge Agent. Future Dojo AI agents will also integrate with the MCP Server.
-
-</details>
 
 <details>
 <summary>Can MCP handle multiple operations in a single request?</summary>
@@ -459,24 +438,7 @@ Agents connected via MCP run in your own environment, not within Sumo Logic infr
 
 </details>
 
-<details>
-<summary>How do I protect against cost-based attacks?</summary>
-
-MCP endpoints can be exploited to generate excessive costs through valid but expensive requests. Implement cost monitoring, set hard budgets per request and identity, apply validation before expensive operations, and ensure workflows terminate when clients disconnect.
-
-For comprehensive guidance, see our blog post: [Token Torching: How I'd burn your AI budget (so you can fix it)](https://www.sumologic.com/blog/token-torching-ai-attack).
-
-</details>
-
 <!--## Troubleshooting
 Common error responses from the MCP Server
 How to handle authentication failures
 Retry strategies-->
-
-## Additional information
-
-* [Dojo AI overview](https://www.sumologic.com/solutions/dojo-ai)
-* [Cloud SIEM](/docs/cse)
-* [Search Job API](/docs/api/search-job)
-* [Model Context Protocol specification](https://modelcontextprotocol.io/)
-* [Token Torching: How I'd burn your AI budget (so you can fix it)](https://www.sumologic.com/blog/token-torching-ai-attack)
