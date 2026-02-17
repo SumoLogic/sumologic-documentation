@@ -62,7 +62,7 @@ Where `collection` is the `helm` release name.
 
 ### OpenTelemetry Logs Collector is being CPU throttled
 
-If OpenTelemetry Logs Collector is being throttled, you should increase CPU request to higher value, for example:
+If OpenTelemetry logs collector is being throttled, you should increase CPU request to higher value, for example:
 
 ```yaml
 otellogs:
