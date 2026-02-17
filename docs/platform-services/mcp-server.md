@@ -62,22 +62,28 @@ Configuration steps vary by tool. Refer to your specific tool's documentation fo
 
 The MCP Server uses the OAuth2 client credentials flow. You'll need to complete a one-time setup in Sumo Logic before configuring your MCP client.
 
-<img src={useBaseUrl('img/platform-services/mcp/oauth-flow-diagram.png')} alt="OAuth 2.0 client credentials flow diagram showing an application authenticating with the Authorization Server using a Client ID and Secret, receiving an Access Token, then using that token to request resources from the Resource Server." width="600"/>
+<img src={useBaseUrl('img/platform-services/mcp/oauth-flow-diagram.png')} alt="OAuth 2.0 client credentials flow diagram showing an application authenticating with the Authorization Server using a Client ID and Secret, receiving an access token, then using that token to request resources from the Resource Server." width="600"/>
 
 ### Step 1: Create a service account
 
-Service accounts are required to create OAuth clients. You can create one through the UI or the API.
+Service accounts are required to create OAuth clients.
 
-To create a service account through the UI, see [Service Accounts](/docs/manage/security/service-accounts/).
+* If you already have a service account, you can use our API to list existing service accounts and retrieve the ID.
+  ```bash
+  curl -u "<accessId>:<accessKey>" \
+    https://api.sumologic.com/api/v1/serviceAccounts
+  ```
+* If you don't have one, follow the steps below to create a new one.
 
-To create a service account through the API:
+#### Via UI
 
-1. Click the profile icon and navigate to your **Personal Access Keys**.<br/><img src={useBaseUrl('img/platform-services/mcp/access-key-nav.png')} alt="Sumo Logic home page showing the user menu open with Personal Access Keys selected." width="450"/>
-    :::note
-    If you already have a service account, you can use the API to list existing service accounts and retrieve the ID.
-    :::
-1. Click **+ Add Access Key**, create a new Access Key. Note down both the Access ID and Access Key before closing the confirmation dialog, as they won't be shown again.<br/><img src={useBaseUrl('img/platform-services/mcp/access-key-create.png')} alt="Add New Access Key panel in Sumo Logic showing the Name field, optional CORS domains, and Scopes set to Default." width="800"/><br/><img src={useBaseUrl('img/platform-services/mcp/access-key-success.png')} alt="Success dialog showing the Access ID and Access Key values to copy before closing." width="800"/>
-1. Use the Access ID and Access Key to call the API:
+1. Obtain your access key and access ID or [follow these steps to create a new pair](/docs/manage/security/access-keys/#create-an-access-key).
+1. Follow the steps under [Service Accounts](/docs/manage/security/service-accounts/) to create a service account.
+
+#### Via API
+
+1. Obtain your access key and access ID or [follow these steps to create a new pair](/docs/manage/security/access-keys/#create-an-access-key).
+1. Use your access ID and access key to call the API:
    1. List available roles to find the role ID you want to assign.
       ```bash
       curl -u "<accessId>:<accessKey>" \
@@ -139,7 +145,7 @@ curl -u "<accessId>:<accessKey>" \
   https://api.sumologic.com/api/v1/oauth/scopes
 ```
 
-The `scopes` you request must fall within the permissions of the associated service account (effective scopes). Only scopes present in the `effectiveScopes` field of the client can be successfully used to request tokens.
+Requested `scopes` must be included in the service account’s effective scopes. Only scopes listed in the client’s `effectiveScopes` field can be used to obtain access tokens.
 
 ### Step 3: Generate an access token
 
@@ -164,7 +170,7 @@ curl -X POST https://service.sumologic.com/oauth2/token \
   -d "scope=viewUsersAndRoles"
 ```
 
-This example shows getting an Access Token with only the `viewUsersAndRoles` scope. Additional scopes can be requested provided the client has more `effectiveScopes`. Additional scopes should be separated by a space in the `scope` parameter.
+This example requests an access token with the `viewUsersAndRoles` scope. You can request multiple scopes by separating them with spaces in the `scope` parameter, as long as they are included in the client’s `effectiveScopes`.
 
 </details>
 
@@ -201,7 +207,7 @@ Authorization: Bearer <access-token>
 Refer to your specific MCP client documentation for where to configure this header.
 
 :::note
-Access tokens expire. Your MCP client or orchestrator agent is responsible for detecting token expiration and repeating Step 3 to obtain a new token.
+Access tokens expire. Your MCP client or orchestrator agent is responsible for detecting token expiration and [generating a new one](#step-3-generate-an-access-token).
 :::
 
 ## Example use cases
