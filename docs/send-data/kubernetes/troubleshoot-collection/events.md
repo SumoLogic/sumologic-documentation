@@ -10,7 +10,7 @@ Here's how to troubleshoot issues that prevent Kubernetes events from being coll
 
 You can print events on stdout of events collector pod, and validate if they are correct.
 
-In order to print them on stdout, two steps are required:
+In order to print them on stdout, follow the steps below:
 
 1. Disable ingesting logs from events collector. This is required to prevent logs ingest spike.
    - Add the following configuration to `user-values.yaml`:
