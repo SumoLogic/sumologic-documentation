@@ -1,5 +1,5 @@
 ---
-id: external-mcp-server
+id: mcp-server
 title: Sumo Logic MCP Server (Beta)
 description: Connect your AI tools to Sumo Logic via MCP. Query logs, manage insights, and investigate security incidents from Slack, IDEs, and custom applications.
 ---
@@ -20,7 +20,7 @@ This feature is in closed beta. For more information, contact your Sumo Logic ac
 
 [Bring your own AI to the Dojo](https://www.sumologic.com/solutions/dojo-ai). Connect your AI tools directly to Sumo Logic to create a unified ecosystem powered by your observability and security data.
 
-The Sumo Logic MCP Server enables Dojo AI to act as a core capability provider within your broader AI ecosystem using the Model Context Protocol (MCP). Instead of maintaining custom integrations or treating Sumo Logic as a separate data silo, you can connect your own copilots, proprietary models, and third-party AI systems directly to Sumo Logic's capabilities.
+The Sumo Logic MCP Server enables Dojo AI to act as a core capability provider within your broader AI ecosystem using the Model Context Protocol (MCP). Instead of building custom integrations or treating Sumo Logic as a separate data silo, you can connect your own copilots, proprietary models, and third-party AI systems directly to Sumo Logic's capabilities.
 
 Our MCP Server integrates with [Query Agent](/docs/search/mobot/#query-agent) and [Knowledge Agent](/docs/search/mobot/#knowledge-agent), enabling your external AI tools to collaborate with Sumo Logic's native agents in a single conversational workflow.
 
@@ -29,8 +29,8 @@ Our MCP Server integrates with [Query Agent](/docs/search/mobot/#query-agent) an
 The MCP Server provides a standardized interface between Sumo Logic and your AI tools:
 
 1. Connect your AI tools using the MCP standard.
-1. Query with natural language to analyze data using Sumo Logic capabilities.
-1. Execute prompts across environments, including IDEs, collaboration tools, and custom applications.
+1. Submit natural language queries to analyze data using Sumo Logic capabilities.
+1. Execute prompts across environments such as IDEs, collaboration tools, and custom applications.
 1. Leverage Dojo AI agents alongside your own models for unified analysis and response.
 
 Your external AI systems can query logs, manage insights, analyze dashboards, and update records through a single, consistent protocol.
@@ -44,7 +44,7 @@ Your external AI systems can query logs, manage insights, analyze dashboards, an
 
 * Sumo Logic provides the MCP Server gateway (fully managed).
 * You deploy orchestrator agents (your MCP-compatible AI runtimes) that connect to the gateway.
-* Powered by Amazon Bedrock AgentCore.
+* The MCP Server integrates with Amazon Bedrock AgentCore for orchestrator agent deployment.
 
 For example, to enable MCP in Slack, you deploy an orchestrator agent on the AWS AgentCore runtime. This agent communicates with Sumo Logic's MCP Server gateway via the standard MCP protocol, which then securely accesses Sumo Logic APIs and Dojo AI agents.
 
@@ -83,7 +83,7 @@ To create a service account through the API:
       curl -u "<accessId>:<accessKey>" \
         https://api.sumologic.com/api/v1/roles
       ```
-   1. Create the service account. Replace `api.sumologic.com` above with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). Note the returned "id" for the next step).
+   1. Create the service account. Replace `api.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). Note the returned "id" for the next step.
       ```bash
       curl -u "<accessId>:<accessKey>" \
         https://api.sumologic.com/api/v1/serviceAccounts \
@@ -172,22 +172,37 @@ curl https://service.sumologic.com/.well-known/oauth-authorization-server
 
 The response includes `token_endpoint` and other supported OAuth parameters.
 
+
 ### Step 4: Configure your MCP client
 
-Pass the access token as a Bearer token in your MCP client configuration:
+Use the access token as a Bearer token to authorize requests.
 
-```
-curl -H "Authorization: Bearer <access-token-from-previous-step>" \
+The access token can be used in two ways: to call Sumo Logic APIs directly, and to authorize requests from your MCP client to the MCP Server.
+
+#### Call a Sumo Logic API directly
+
+```sh
+curl -H "Authorization: Bearer <access-token>" \
   https://service.sumologic.com/api/v1/users
 ```
 
-Refer to your specific MCP client documentation for where to set this header.
+#### Configure an MCP client
+
+Set the access token in your MCP client configuration as an Authorization header:
+
+```sh
+Authorization: Bearer <access-token>
+```
+
+Refer to your specific MCP client documentation for where to configure this header.
 
 :::note
 Access tokens expire. Your MCP client or orchestrator agent is responsible for detecting token expiration and repeating Step 3 to obtain a new token.
 :::
 
 ## Example use cases
+
+The following examples illustrate common MCP workflows.
 
 <Tabs
   className="unique-tabs"
@@ -365,7 +380,7 @@ Use MCP for:
 * Multi-step workflows.
 * Agent-to-agent communication.
 
-Do NOT use MCP for:
+Do not use MCP for:
 * Bulk data extraction. Use the [Search Job API](/docs/api/search-job).
 * Model training. Use the [Search Job API](/docs/api/search-job).
 * High-volume automated queries.
