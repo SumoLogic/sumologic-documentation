@@ -18,7 +18,7 @@ Then, in your browser, go to `http://localhost:8080/metrics`. You should see Pro
 
 ## Check the `/metrics` endpoint for Kubernetes services
 
-For kubernetes services, you can use the following way:
+For Kubernetes services, you can use the following way:
 
 1. Create `sumologic-debug` pod.
    ```yml
