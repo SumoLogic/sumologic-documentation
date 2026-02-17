@@ -269,7 +269,7 @@ If the patch command doesn't work, edit the CRD to remove the finalizer:
 kubectl edit crd opentelemetrycollectors.opentelemetry.io
 ```
 
-Finally, delete the CRD
+Finally, delete the CRD:
 
 ```shell
 kubectl delete crd/opampbridges.opentelemetry.io
