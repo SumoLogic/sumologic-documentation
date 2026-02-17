@@ -94,7 +94,7 @@ kubectl logs POD_NAME -f
 
 If you see `Error: values don't meet the specifications of the schema(s) in the following chart(s): opentelemetry-operator...` from the logs, it means that your configuration for `opentelemetry-operator` keys in values.yaml file is not correct.
 
-To fix this issue, please see the changes listed below:
+To fix this issue, perform the required changes as listed below:
 
 ### Moved
 
