@@ -1,5 +1,5 @@
 ---
-slug: /send-data/kubernetes/troubleshooting-collection
+slug: /send-data/kubernetes/troubleshoot-collection
 title: Troubleshooting Kubernetes Collection
 sidebar_label: Troubleshooting Kubernetes Collection
 description: If you encounter issues collecting Kubernetes logs or metrics using the Sumo Logic OpenTelemetry Collector, this section helps you diagnose and resolve common problems.
