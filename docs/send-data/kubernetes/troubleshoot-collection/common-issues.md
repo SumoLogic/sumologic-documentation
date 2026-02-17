@@ -251,7 +251,7 @@ kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-
 
 ## Hung/Stuck OpenTelemetryCollector K8s CRD
 
-To patch and delete CustomResourceDefinitions in Kubernetes
+Run the following command to patch and delete CustomResourceDefinitions in Kubernetes:
 
 ```shell
 kubectl patch crd/opentelemetrycollectors.opentelemetry.io -p '{"metadata":{"finalizers":[]}}' --type=merge
