@@ -62,7 +62,6 @@ Error: collector with name 'sumologic' does not exist
 sumologic_http_source.default_metrics_source: Importing from ID
 ```
 
-...you can safely ignore it, and the installation should complete successfully. The installation process creates new [HTTP endpoints](/docs/send-data/hosted-collectors/http-source) in your Sumo Logic account, that are used to send data to Sumo. This error occurs if the endpoints had already been created by an earlier run of the installation process.
 
 ### Secret 'sumologic::sumologic' exists, abort
 
