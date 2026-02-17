@@ -73,7 +73,7 @@ To create a service account through the API:
       curl -u "<accessId>:<accessKey>" \
         https://api.sumologic.com/api/v1/roles
       ```
-   1. Create the service account. Replace `api.sumologic.com` above with your [deployment endpoint](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). Note the returned "id" for the next step).
+   1. Create the service account. Replace `api.sumologic.com` above with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). Note the returned "id" for the next step).
       ```bash
       curl -u "<accessId>:<accessKey>" \
         https://api.sumologic.com/api/v1/serviceAccounts \
@@ -129,7 +129,7 @@ The `scopes` you request must fall within the permissions of the associated serv
 
 #### Step 3: Generate an access token
 
-Use your `clientId` and `clientSecret` to request an access token from the OAuth token endpoint. Replace `service.sumologic.com` with your [deployment's service endpoint](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+Use your `clientId` and `clientSecret` to request an access token from the OAuth token endpoint. Replace `service.sumologic.com` with your [deployment's service endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 ```bash
 curl -X POST https://service.sumologic.com/oauth2/token \
