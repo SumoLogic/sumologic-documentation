@@ -9,12 +9,6 @@ description: Learn how to independently and efficiently control or remove your s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
-
 <!-- Originally added as a beta article with DOCS-149. -->
 
 Deletion requests allow you to quickly remove ingested data from Sumo Logic. This is particularly useful for addressing inadvertently ingested sensitive data.
@@ -35,6 +29,11 @@ Key features:
 | Create or manage deletion requests | **Manage Deletion Requests** |
 | View deletion requests only | **View Deletion Requests** or **Manage Deletion Requests** |
 | Approve or reject requests | **Review Deletion Requests** (automatically includes Manage and View) |
+
+:::note
+- *Only* the account owner can enable data deletion from the **Policies** page, with all enablement actions captured in the audit log.
+- You can configure the number of approvers for each data deletion request.
+:::
 
 ## Create a deletion request
 
