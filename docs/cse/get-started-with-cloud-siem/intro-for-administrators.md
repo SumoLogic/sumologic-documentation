@@ -147,7 +147,7 @@ In this section, we'll send a simple JSON log message to the HTTP source we crea
 * If you don't see any records, try:
     * increasing the timestamp range to the last 60 minutes or the last 3 hours.
     * making sure the metadata source category you searched in the **Filters** bar matches the one you created earlier.
-    * searching for the log in Sumo Logic with this query: `_index=sec_record_* metadata_sourceCategory=<source-category>` Replace `source-category` with the source category you created. 
+    * searching for the log in Sumo Logic with this query: `_index=sec_record_* metadata_sourceCategory=<source-category>`. Replace `source-category` with the source category you created. 
 * If you still don't see your custom JSON record after these troubleshooting steps, try sending another log message from your terminal window. Make sure the command completes without any errors.
 
 ### Logs into records
@@ -248,7 +248,7 @@ Although the log message and method of ingestion was identical, the log message 
 * If you don't see any records, try: 
     * increasing the timestamp range to the last 60 minutes or the last 3 hours.
     * making sure the metadata source category you searched in the **Filters** bar matches the one you created in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
-    * searching for the log in Sumo Logic with this query: `_index=sec_record_* metadata_sourceCategory=<source-category>` Replace `<source-category>` with the source category you created earlier. 
+    * searching for the log in Sumo Logic with this query: `_index=sec_record_* metadata_sourceCategory=<source-category>`. Replace `<source-category>` with the source category you created earlier. 
 * If you still don't see your custom JSON record after these troubleshooting steps, try sending another log message from your terminal window. Make sure the command completes without any errors. 
 * If your new record failed too (you see two failed records), either your log or ingest mapping weren't configured correctly. Review those configurations and try again.
 
@@ -300,7 +300,7 @@ Before you create custom rules from scratch, there are some best practices you'l
 In this section, we'll write a rule that looks for three unique Windows event IDs related to failed logins within an hour.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
-1. Click **Create**.
+1. Click **+ Add Rule**.
 1. On the **Threshold** tile click **Create**.
 1. Give your rule a name. 
 1. Configure **If Triggered**.
@@ -329,8 +329,8 @@ In this section, we'll write a rule that looks for three unique Windows event ID
 
 In this section, we'll write a chain rule that looks for 1 successful login after 10 failed login attempts from the same IP address within 5 minutes.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.
-1. Click **Create**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
+1. Click **+ Add Rule**.
 1. On the **Chain** tile click **Create**.
 1. Give your rule a name.
 1. Configure **If Triggered**.

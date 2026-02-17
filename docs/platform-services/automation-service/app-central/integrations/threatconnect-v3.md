@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/threatconnect.png')} alt="threatminer" width="100"/>
 
-***Version: 1.0  
-Updated: October 17, 2025***
+***Version: 1.1  
+Updated: February 11, 2026***
 
 Utilize ThreatConnect intelligence data during incident investigations using V3 APIs.
 
@@ -46,3 +46,6 @@ For information about ThreatConnect, see [ThreatConnect documentation](https://d
 ## Change Log
 
 * October 17, 2025 - First upload
+* February 11, 2026
+  + Improved API error handling.
+  + Updated Search Intelligence handling to avoid errors on empty or missing results.
