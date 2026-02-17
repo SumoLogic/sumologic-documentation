@@ -104,7 +104,7 @@ Delete the pod forcefully by adding `--force --grace-period=0` to the `kubectl d
 
 ## Rancher
 
-If you are running the out of the box rancher monitoring setup, you cannot run our Prometheus operator alongside it. The Rancher Prometheus Operator setup will actually kill and permanently terminate our Prometheus Operator instance and will prevent the metrics system from coming up. If you have the Rancher prometheus operator setup running, they will have to use the UI to disable it before they can install our collection process.
+If you are running the out of the box rancher monitoring setup, you cannot run our Prometheus operator alongside it. The Rancher Prometheus operator setup will actually kill and permanently terminate our Prometheus operator instance and will prevent the metrics system from coming up. If you have the Rancher Prometheus operator setup running, they will have to use the UI to disable it before they can install our collection process.
 
 ## Incorrect CRDs
 
