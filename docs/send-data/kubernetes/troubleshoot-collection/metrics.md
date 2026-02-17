@@ -159,7 +159,6 @@ This configuration is prepared for OTLP source, as it doesn't use routing proces
 ## Check Prometheus Remote Storage
 
 We rely on the Prometheus [Remote Storage](https://prometheus.io/docs/prometheus/latest/storage/) integration to send metrics from Prometheus to the metadata enrichment service.
-Prometheus to the metadata enrichment service.
 
 You [check Prometheus logs](/docs/send-data/kubernetes/troubleshoot-collection/logs#prometheus-logs) to verify there are no errors during remote write.
 
