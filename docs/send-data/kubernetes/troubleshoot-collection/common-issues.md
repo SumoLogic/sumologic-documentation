@@ -257,7 +257,7 @@ Run the following command to patch and delete CustomResourceDefinitions in Kuber
 kubectl patch crd/opentelemetrycollectors.opentelemetry.io -p '{"metadata":{"finalizers":[]}}' --type=merge
 ```
 
-Confirm that the finalizer has been removed
+Run the following command to confirm that the finalizer has been removed:
 
 ```shell
 kubectl get opentelemetrycollectors.opentelemetry.io -o yaml > my-resource.yaml
