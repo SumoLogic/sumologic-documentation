@@ -20,7 +20,7 @@ The following limits and constraints apply to trace data ingested by Sumo Logic:
 | Span arrival window | 24 hours | Sumo Logic does not accept spans older than 24 hours. Spans with timestamps outside this window are dropped. |
 | Maximum time between first and last span in a trace | 24 hours | All spans within a single trace must fall within a 24-hour window. The time difference between the earliest and latest span in a trace cannot exceed 24 hours. |
 | Maximum metadata per trace | 64 MB | Total size of all metadata across all spans in a trace. |
-| Maximum unique tag names per trace | 1,024 | Tags beyond this limit are not indexed. |
+| Maximum unique tag names per trace | 1,024 | Defines the maximum limit of indexed distinct tag keys. Tags beyond this limit are not indexed. |
 | Maximum unique tag names per org | 10,000 per retention period | Organization-wide limit on unique tag names. |
 | Tag name length | 64 characters | Tags with names longer than 64 characters are not indexed. |
 | Tag value length | 4,096 characters | Tags with values over 4,096 characters are not indexed. |
