@@ -8,7 +8,7 @@ The following `kubectl` commands assume you are in the correct namespace `sumolo
 
 To run a single command in the `sumologic` namespace, pass in the flag `-n sumologic`.
 
-To set your namespace context more permanently, you can run
+To set your namespace context more permanently, you can run the following command:
 
 ```sh
 kubectl config set-context $(kubectl config current-context) --namespace=sumologic
