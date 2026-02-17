@@ -636,7 +636,22 @@ module.exports = {
                 'send-data/kubernetes/collecting-metrics',
                 'send-data/kubernetes/collecting-events',
                 'send-data/kubernetes/security-best-practices',
-                'send-data/kubernetes/troubleshoot-collection',
+                {
+                  type: 'category',
+                  label: 'Troubleshoot Collection',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'send-data/kubernetes/troubleshooting-collection/index'},
+                  items: [
+                    'send-data/kubernetes/troubleshooting-collection/installation',
+                    'send-data/kubernetes/troubleshooting-collection/namespace-configuration',
+                    'send-data/kubernetes/troubleshooting-collection/logs',
+                    'send-data/kubernetes/troubleshooting-collection/metrics',
+                    'send-data/kubernetes/troubleshooting-collection/events',
+                    'send-data/kubernetes/troubleshooting-collection/spans-traces',
+                    'send-data/kubernetes/troubleshooting-collection/common-issues',
+                  ],
+                },
               ],
             },
             {
