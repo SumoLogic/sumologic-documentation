@@ -577,7 +577,7 @@ Let’s create a playbook for use in Cloud SIEM.
 1. Switch to edit mode by clicking on the **Edit** (pencil) icon in the bottom toolbar.
 1. Before we start adding actions to our playbook, we’ll want to set up the initial configuration of the playbook so we get the proper inputs from the Cloud SIEM insight.  
    1. Mouse over the Start node, and click on the Edit (pencil) icon.  
-   1. In the Edit Node popup, select **Insight** from the playbook input parameters dropdown. Choosing **Insight** will automatically populate the popup view with a number of input parameters that will be added to the playbook from the corresponding insight.
+   1. In the Edit Node popup, select **Insight** from the playbook input parameters dropdown. Choosing **Insight** will automatically populate the popup with input parameters that will be added to the playbook from the corresponding insight.
    1. Click **Update** to save and close the input parameters.
 1. Add an action node:
    1. Click the **+** button on the Start node.
