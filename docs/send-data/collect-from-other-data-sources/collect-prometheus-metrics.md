@@ -230,6 +230,6 @@ dimensions = ""
 
 ## Additional resources
 
-* Blogs:
+* Blogs: 
    * [Why Prometheus isn’t enough to monitor complex environments](https://www.sumologic.com/blog/prometheus-monitoring/)
    * [Monitoring with Prometheus vs Grafana: understanding the difference](https://www.sumologic.com/blog/prometheus-vs-grafana/)
