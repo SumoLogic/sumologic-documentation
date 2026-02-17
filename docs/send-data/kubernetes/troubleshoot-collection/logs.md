@@ -16,7 +16,7 @@ If it is, there will be messages like `HTTP ERROR 429 You have temporarily excee
 
 Check if an [ingest budget](/docs/manage/ingestion-volume/ingest-budgets) limit is hit.
 
-If it is, there will be `budget.exceeded` messages from Sumo in OpenTelemetry Collector logs, similar to the following:
+If it is, there will be `budget.exceeded` messages from Sumo Logic in OpenTelemetry Collector logs, similar to the following:
 
 ```console
 2022-04-12 13:47:17 +0000 [warn]: #0 There was an issue sending data: id: KMZJI-FCDPN-4KHKD, code: budget.exceeded, status: 200, message: Message(s) in the request dropped due to exceeded budget.
