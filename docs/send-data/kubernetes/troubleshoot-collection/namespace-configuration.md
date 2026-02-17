@@ -5,7 +5,6 @@ description: Troubleshoot common namespace configuration issues that can prevent
 ---
 
 The following `kubectl` commands assume you are in the correct namespace `sumologic`. By default, these commands will use the namespace `default`.
-`default`.
 
 To run a single command in the `sumologic` namespace, pass in the flag `-n sumologic`.
 
