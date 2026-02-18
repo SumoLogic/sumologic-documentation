@@ -6,9 +6,9 @@ description: Learn more about AWS Observability resources created and modified a
 ---
 
 
-The CloudFormation template creates a number of resources at deployment in AWS and Sumo Logic. You will use the template when setting up the solution. See [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy) for prerequisites and instructions to configure.
+The CloudFormation template (CFN) creates a number of resources at deployment, in AWS, and in Sumo Logic. You will use the template when setting up the solution. See [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy) for prerequisites and instructions to configure.
 
-For more information on the solution and features, see [About Sumo Logic AWS Observability](/docs/observability/aws/about).
+* For more information on the solution and features, see [About AWS Observability](/docs/observability/aws/about).
 
 
 ## Resources created in AWS
@@ -101,7 +101,7 @@ IAM Role</td>
   </tr>
 </table>
 
-\* For failed logs only.
+* For failed logs only.
 
 If you are using an existing bucket to collect AWS ELB logs, the Amazon S3 bucket policy for this bucket will be updated to include the policy below, if in case the policy does not already exist:
 
@@ -330,4 +330,4 @@ queuename</td>
 
 To improve the solution performance the configurations below are done by CloudFormation template.
 
-Sumo Logic hosted collector is created for each AWS Account.
+* Sumo Logic hosted collector is created for each AWS Account.

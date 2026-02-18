@@ -16,11 +16,14 @@ For more information on AWS Control Tower, see [AWS Control Tower](https://aws.a
 
 The AWS Observability solution can be used with Control Tower-managed accounts to: 
 
-* **Quickly identify and resolve issues in and across multiple accounts and services**. Enable teams to seamlessly navigate and search logs and metrics data from across their AWS accounts, regions, and services. Unified service and account visibility greatly speeds troubleshooting and minimizes downtime to improve overall system availability.
-* **Eliminate data silos**. Unify logs and metrics data across AWS accounts and services to eliminate data silos and make it easier for teams to quickly identify root causes. 
-* **Accelerate time-to-value**. Streamline setup and pre-built dashboards for instant insights into AWS accounts and services, enabling visibility into the most important data out-of-the-box.  
+* Quickly identify and resolve issues in and across multiple accounts and services.
+    * Enable teams to seamlessly navigate and search logs and metrics data from across their AWS accounts, regions, and services. Unified service and account visibility greatly speeds troubleshooting and minimizes downtime to improve overall system availability.
+* Eliminate data silos
+    * Unified logs and metrics data across AWS accounts and services eliminates data silos and makes it easier for teams to quickly identify root causes. 
+* Accelerate time-to-value
+    * Streamlined setup and pre-built dashboards provide instant insights into AWS accounts and services enabling visibility into the most important data out of the box.  
 
-For more information on the AWS Observability solution, see [About Sumo Logic AWS Observability](/docs/observability/aws/about/).
+For more information on the AWS Observability solution, see [About AWS Observability](/docs/observability/aws/deploy-use-aws-observability).
 
 ## Prerequisites
 
@@ -28,9 +31,9 @@ To integrate the AWS Observability solution with Control Tower, you collect Clou
 
 We recommend you familiarize yourself with the AWS Observability Solution. For more information, see:
 
-* [About Sumo Logic AWS Observability](/docs/observability/aws/about.md)
+* [About AWS Observability](/docs/observability/aws/about.md)
 * [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability)
-* [View the AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/view-dashboards/)
+* [View the AWS Observability Dashboards](../deploy-use-aws-observability/view-dashboards.md)
 
  :::note
  CloudTrail must be enabled for EventBridge to capture `CreateManagedAccount`, `UpdateManagedAccount` events, since these events are recorded and delivered through CloudTrail.
@@ -38,7 +41,7 @@ We recommend you familiarize yourself with the AWS Observability Solution. For m
 
 ## Integrate AWS Control Tower-managed accounts with the AWS Observability solution
 
-Integrating with AWS Control Tower takes several steps: 
+Integrating with AWS Control Tower is a two-step process: 
 
 * [Step 1](#step-1-set-up-collection-from-aws-accounts-and-install-apps): Set up collection for non-CloudTrail logs and all metrics by creating a CloudFormation stack in individual AWS accounts managed by Control Tower. In this step, you also install the apps in the Sumo Logic Observability app. 
 * [Step 2](#step-2-collect-from-the-log-archive-account): Set up collection of AWS CloudTrail logs that are aggregated from all Control Tower-managed accounts in a centralized log archive account.
@@ -51,7 +54,7 @@ Integrating with AWS Control Tower takes several steps: 
 In this step, you configure the collection of logs and metrics for all AWS accounts managed by Control Tower, and install the apps in the solution. To do so, follow these steps for each AWS account that is managed by AWS Control Tower.
 
 1. Log in to the AWS Management Console as the AWS account user.
-1. Follow steps 1 through 10 of the instructions in [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/) to configure the AWS Observability CloudFormation template.
+1. Follow steps 1 through 10 of the instructions in the [Deploy AWS Observability](/docs/observability/aws/deploy-use-aws-observability) to configure the AWS Observability CloudFormation template.
 1. In the **Sumo Logic AWS CloudTrail Source Details** section of the template, select **No** for **Create Sumo Logic CloudTrail Logs Source** and keep the default values for all other options. <br/><img src={useBaseUrl('img/observability/integrate-tower1.png')} alt="Create Sumo Logic CloudTrail Logs Source " style={{border: '1px solid gray'}} width="800" />
 
 ## Step 2: Collect from the Log Archive account
@@ -61,7 +64,7 @@ In the instructions below, we assume the Log Archive AWS account is being used o
 :::
 
 1. Log in to the AWS Management Console as the Log Archive AWS account user.
-1. Follow steps 1 through 10 of the instructions in the [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/) to configure the AWS Observability CloudFormation template.
+1. steps 1 through 10 of the instructions in the [Deploy AWS Observability](/docs/observability/aws/deploy-use-aws-observability) to configure the AWS Observability CloudFormation template.
 1. In the **Sumo Logic Access Configuration** section of the template, fill in as required by the template.
 1. In the **AWS Resources Tag Configuration** section of the template, select **None** for **Auto Enable Tagging** and enter `logarchive` as the account alias.
 1. In the **Sumo Logic AWS Observability Apps Configuration** section of the template, select **No** for “Install AWS Observability Apps”, as they were installed in [Step 1](#step-1-set-up-collection-from-aws-accounts-and-install-apps), above.<br/><img src={useBaseUrl('img/observability/integrate-tower2.png')} alt="Install AWS Observability Apps" style={{border: '1px solid gray'}} width="800" />
@@ -119,4 +122,4 @@ You must have a role that grants you the Manage Field Extractions capability to 
 
 ## Step 4: View the AWS Observability dashboards
 
-Now you can start monitoring your AWS services in AWS Control Tower managed accounts. For information about the solution dashboards, see [View AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/view-dashboards/).
+Now you can start monitoring your AWS services in AWS Control Tower managed accounts. For information about the solution dashboards, see [View the AWS Observability Dashboards](../deploy-use-aws-observability/view-dashboards.md).

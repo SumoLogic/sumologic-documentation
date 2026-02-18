@@ -1,7 +1,7 @@
 ---
 id: centralized-aws-cloudtrail-log-collection
 title: Centralized AWS CloudTrail Log Collection
-sidebar_label: Centralized AWS CloudTrail Log Collection.
+sidebar_label: Centralized AWS CloudTrail Log Collection
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -14,7 +14,7 @@ To do so:
 1. Use StackSets to deploy the solution in multiple accounts. While doing so, answer the questions as follows:
    1. Install AWS Observability Apps as No. <br/><img src={useBaseUrl('img/observability/cloudtrail1.png')} alt="Observability apps and alerts" style={{border: '1px solid gray'}} width="800" />
    1. Create Sumo Logic CloudTrail Logs Source as ‘No’.<br/> <img src={useBaseUrl('img/observability/Multiaccount_4.png')} alt="AWS CloudTrail source" style={{border: '1px solid gray'}} width="800" />
-1. Set up FERs in Sumo Logic for CloudTrail logs to associate AWS account-ids present in the logs with AWS account aliases. Log in to the Sumo Logic web UI with a *supported browser*, as an administrator that has the [Manage Field Extractions role capability](/docs/manage/users-roles/roles/role-capabilities/#data-management) and follow the instructions in [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/) using the following values:
+1. Set up FERs in Sumo Logic for CloudTrail logs to associate AWS account-ids present in the logs with AWS account aliases: <br/>Log in to the Sumo Logic web UI with a *supported browser*, as an administrator that has the [Manage Field Extractions role capability](/docs/manage/users-roles/roles/role-capabilities/#data-management) and follow the instructions in [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/) using the following values:
    * **Rule Name**: AWS Accounts
    * **Applied At**: Ingest Time
    * **Scope**: Specific Data

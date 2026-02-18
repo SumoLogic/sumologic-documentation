@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Software Development Optimization (SDO) Solution comes bundled with Terraform support for the following tools in each phase of the DevOps lifecycle. While tools not listed in the table below lack Terraform support for automated installation, virtually any DevOps tool can be configured to work with SDO through manual configuration by transforming the structure of data ingested by these tools — using Sumo Logic Field Extraction Rules (FERs) — to adhere to the schema defined below.
 
-| DevOps phases             | Supported with Terraform                                          |
+| DevOps Phases             | Supported with Terraform                                          |
 |:---------------------------|:-----------------------------------------------------------|
 | Planning Phase            | Jira Cloud, Jira Server                                   |
 | Dev/Code                  | GitHub, Bitbucket, GitLab                                 |
@@ -22,7 +22,7 @@ The apps and dashboards that are part of this solution are organized into:
 * Tool specific dashboards that are based on the logs from individual DevOps tools to monitor the operations and security of individual tools.
 * Dashboards that are based on an abstracted schema to monitor DORA metrics and the stages of your CI/CD pipelines across various phases. This is done so that you don’t have to change individual dashboard queries when you replace your tools, as well as to accommodate application development teams that have their own tool sets.
 
-##  Schema overview
+##  Schema Overview
 
 As discussed earlier, the abstraction of tools is achieved via a common event schema model, where events from DevOps tools are mapped to fields via Sumo Logic [Field Extraction Rules (FERs)](/docs/manage/field-extractions). 
 
@@ -30,7 +30,7 @@ This model also enables you to integrate events from any of your tools, that may
 
 <img src={useBaseUrl('img/sdo/SchemaTool.png')} alt="Schema diagram" style={{border: '1px solid gray'}} width="800" />
 
-## Schema definition
+## Schema Definition
 
 The tables below show the schema for various events from DevOps pipeline. These fields are required by Software Development Optimization Solutions dashboards and queries. 
 
@@ -142,7 +142,7 @@ datetime_epoch	This field is used to indicate the date and time in UTC epoch mil
 
 The table below shows how Issue events are represented in the schema.
 
-| Field | Explanation | Required/optional |
+| Field | Explanation | Required/Optional |
 | :-- | :-- | :-- |
 | link | This field is used to provide a URL pointer to the issue event. | Required |
 | issue_key | This field represents an issue ID or key | Required |
@@ -159,7 +159,7 @@ The table below shows how Issue events are represented in the schema.
 
 ## Examples
 
-The mapping of events from tool sets to this event schema is achieved via Sumo Logic [FERs](/docs/manage/field-extractions/create-field-extraction-rule.md). For example, for [PagerDuty V2 Incidents](https://developer.pagerduty.com/docs/webhooks/v2-overview/), we map the incident payload to the alert event schema using the following parse expression:
+The mapping of events from tool sets to this event schema is achieved via Sumo Logic [FERs](/docs/manage/field-extractions/create-field-extraction-rule.md). For Example, For [PagerDuty V2 Incidents](https://developer.pagerduty.com/docs/webhooks/v2-overview/), we map the incident payload to the alert event schema using the following **Parse Expression.**
 
 ```
 parse regex "(?<event>\{\"event\":\"incident\..+?\}(?=,\{\"event\":\"incident\..+|\]\}$))"

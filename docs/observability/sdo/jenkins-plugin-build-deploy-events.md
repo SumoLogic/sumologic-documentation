@@ -7,9 +7,11 @@ description: Learn how to send build and deploy events to Sumo Logic from Jenkin
 
 ## Prerequisites
 
-Use the latest [Sumo Logic Jenkins plugin](https://plugins.jenkins.io/sumologic-publisher/#documentation) version of the plugin. You will be using the [SumoUpload](https://github.com/jenkinsci/sumologic-publisher-plugin#sumoupload) function to send an event to Sumo Logic from your DevOps pipeline.
+Use the latest [Sumo Logic Jenkins Plugin](https://plugins.jenkins.io/sumologic-publisher/#documentation)
+version of the plugin. You will be using [SumoUpload](https://github.com/jenkinsci/sumologic-publisher-plugin#sumoupload)
+function to send an event to Sumo Logic from your DevOps pipeline.
 
-As an example, upload a key-value map as JSON to Sumo Logic:
+As an example: Upload a Key-Value map as JSON to Sumo Logic.
 
 ```json
 "script"{
@@ -20,13 +22,13 @@ As an example, upload a key-value map as JSON to Sumo Logic:
 }"SumoUpload(keyValueMap":"deploy_event)"
 ```
 
-## Add a hook in your DevOps pipeline to send deploy and build events to Sumo Logic
+## Add a hook in your DevOps Pipeline to send Deploy and Build Events to Sumo Logic
 
-A Jenkins pipeline needs to be configured and instrumented to send deploy and build events from your DevOps pipeline to Sumo Logic.
+A Jenkins pipeline needs to be configured and instrumented to send Deploy and Build events from your DevOps pipeline to Sumo Logic.
 
-This section explains how you can configure your pipeline to send deploy and build events to Sumo Logic. These events will be correlated with other events such as "pull request merge" to calculate lead time.  
+This section explains how you can configure your pipeline to send Deploy and Build Events to Sumo Logic. These Events will be correlated with other Events such as Pull Request Merge to calculate Lead Time.  
 
-Data schema of deploy and build events can be described by the following fields:
+Data Schema of Deploy and Build Events can be described by the following fields:
 
 | Field | Explanation | Required/Optional |
 |:--|:--|:--|
@@ -70,7 +72,7 @@ commit_id | Required to tie GitHub data to Jenkins data. This is typically set a
       SumoUpload(keyValueMap: deliveryEvent)
     }
     ```
-1. Next, call the wrapper function from your pipeline in [Post Always script](https://www.jenkins.io/doc/book/pipeline/syntax/#post) after deploy and build stages.
+1. Next, call the wrapper function from your pipeline in [Post Always script](https://www.jenkins.io/doc/book/pipeline/syntax/#post) after Deploy and Build Stages.
   ```json title="For Deploy Event"
   post{
     changed{
@@ -124,11 +126,11 @@ commit_id | Required to tie GitHub data to Jenkins data. This is typically set a
   }
   ```
 
-## Sample payload
+## Sample Payload
 
-Once you configure your DevOps pipeline to send build and deploy events to Sumo Logic. The payload of events will look something like this:
+Once you configure your DevOps pipeline to send Build and Deploy Events to Sumo Logic. The payload of events will look something like this:
 
-### Build event
+### build Event
 
 ```json
 {
@@ -149,7 +151,7 @@ Once you configure your DevOps pipeline to send build and deploy events to Sumo 
 }
 ```
 
-### Deploy event
+### deploy Event
 
 ```json
 {
@@ -172,9 +174,9 @@ Once you configure your DevOps pipeline to send build and deploy events to Sumo 
 
 ## Example
 
-This is a very basic Jenkins pipeline code which sends a deploy event to Sumo Logic using the Sumo Logic Jenkins plugin.
+This is a very basic Jenkins pipeline code which sends a deploy event to Sumo Logic using Sumo Logic Jenkins Plugin.
 
-In this example, we'll create a map `deploy_event` with a key-value pair of all fields (as explained in the above table), and using `SumoUpload()` to send that map to Sumo Logic as a JSON payload.
+In this example, we'll create a map `deploy_event` with a key-value pair of all fields (as explained in the above table), and using `SumoUpload()` to send that map to Sumo Logic as a json payload.
 
 ```
 pipeline {
