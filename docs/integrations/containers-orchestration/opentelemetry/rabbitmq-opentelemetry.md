@@ -79,118 +79,37 @@ Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
 
 ## Collection configuration and app installation
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-<ConfigAppInstall/>
+### Step 1: Set up remotely managed OpenTelemetry collector
 
-### Step 1: Set up Collector
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+:::note
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
+:::
 
-<SetupColl/>
+<OtelCollectorInstallation/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
+### Step 2: Configure the source template
 
-### Step 2: Configure integration
+import RabbitmqConfigureSourceTemplate from '../../../reuse/send-data/rabbitmq-configure-source-template.md';
 
-OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) yaml file with all the details concerning the data that needs to be collected. For example, it specifies the location of a log file that is read and sent to the Sumo Logic platform.
+<RabbitmqConfigureSourceTemplate/>
 
-In this step, you will configure the yaml file required for RabbitMQ collection.
+import TimestampParsing from '../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 
-Below are the inputs required:
+<TimestampParsing/>
 
-- **`endpoint (no default)`**. The hostname and port of the RabbitMQ instance, separated by a colon. (For example: `localhost:15672`.)
-- **RabbitMQ logs Path**. Enter the path to the log file for your RabbitMQ instance.
-- **username**. Enter the RabbitMQ username.
-- **password**. Enter the RabbitMQ password.
+import ProcessingRules from '../../../reuse/opentelemetry/processing-rules.md';
 
-The log file path configured to capture RabbitMQ logs must be given here. The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`. If you are using a customized path, check the [`rabbitmq.conf`](https://www.rabbitmq.com/logging.html) file for this information.
+<ProcessingRules/>
 
-You can add any custom fields which you want to tag along with the data ingested in sumo. Click on the **Download YAML File** button to get the yaml file.
+### Step 3: Push the source template to the desired remotely managed collectors
 
-import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
+import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 
-<EnvVar/>
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
-
-### Step 3: Send logs to Sumo Logic
-
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
-
-<LogsIntro/>
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Linux"
-  values={[
-    {label: 'Linux', value: 'Linux'},
-    {label: 'Windows', value: 'Windows'},
-    {label: 'macOS', value: 'macOS'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
-
-<TabItem value="Linux">
-
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the RabbitMQ instance which needs to be monitored.
-2. Move the `env` file to the following directory:
-  ```sh
-  /etc/otelcol-sumo/env/
-  ```
-3. Restart the collector using:
-  ```sh
-  sudo systemctl restart otelcol-sumo
-  ```
-
-</TabItem>
-<TabItem value="Windows">
-
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2. Restart the collector using:
-  ```sh
-  Restart-Service -Name OtelcolSumo
-  ```
-
-</TabItem>
-<TabItem value="macOS">
-
-1. Copy the yaml file to /etc/otelcol-sumo/conf.d/ folder in the RabbitMq instance which needs to be monitored.
-2. Restart the otelcol-sumo process using the below command 
-  ```sh
-  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml" 
-  ```
-
-</TabItem>
-<TabItem value="Chef">
-
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
-
-</TabItem>
-</Tabs>
-
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+<DataConfiguration/>
 
 ## Sample log messages
 

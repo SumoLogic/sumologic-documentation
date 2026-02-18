@@ -40,17 +40,16 @@ Watch this micro lesson to learn more about rules.
 
 <img src={useBaseUrl('img/cse/rules-list-page.png')} alt="Rules list page" style={{border: '1px solid gray'}} width="800" />
 
-| Letter | Description |
-|:--|:--|
-| a | **Rules count**. The total number of rules in the list. |
-| b | **Filters**. Filter the list of rules by different parameters, such as name, type, severity, and so on. |
-| c | **Sort**. Sort rules by name, enabled, severity, created, updated, or signal count updated the past 7 days or 24 hours.  |
-| d | **Updated**. When the rule was last updated. |
-| e | **Status - Type**. The [rule status](/docs/cse/rules/rules-status/) and [rule type](/docs/cse/rules/about-cse-rules/#rule-types).  |
-| f | **Severity**. The rule's severity, an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). |
-| g | **Signals Fired**. The number of signals that the rule fired in the last 24 hours as well as 7 days. |
-| h | **Export as JSON**. Export the rule information as a JSON file. |
-| i | **Tags**. Metadata [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/) that add context for the rule. Click a tag to see rules with that tag. |
+1. **Filter**. Filter the list of rules by different parameters, such as name, type, severity, and so on.
+1. **+ Add Rule**. Select the [rule type](#rule-types) to add.
+1. **Import**. [Import a rule](#import-a-rule).
+1. **Status**. Whether the rule is enabled.
+1. **Name**. The rule's name.
+1. **Rule Status**. The [rule status](/docs/cse/rules/rules-status/).
+1. **Rule Type**. The [rule type](/docs/cse/rules/about-cse-rules/#rule-types).
+1. **Severity**. The rule's severity, an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest).
+1. **Signals Fired (24 h)**. The number of signals that the rule fired in the last 24 hours.
+1. **Signals Fired (7 d)**. The number of signals that the rule fired in the last 7 days.
 
 ## Rules details view
 
@@ -102,7 +101,7 @@ The tuning expression is AND’d with the rule expression—the rule will only g
 
 Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when Cloud SIEM updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
 
-You create tuning expressions on the **Rule Tuning** page. When you create a tuning expression, you have the option of applying to all of your rules, or to selected rules. Or, you can apply tuning expressions when you create a rule. You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules. For more information, see [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions).
+You create tuning expressions on the **Rule Tuning** page. When you create a tuning expression, you have the option of applying to all of your rules, or to selected rules. Or, you can apply tuning expressions when you create a rule. You can also create a tuning expression without immediately assigning it to any rules. For more information, see [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions).
 
 ## "On Entity" configuration
 
@@ -118,11 +117,11 @@ When an incoming record meets a rule's conditions, a signal is generated for ea
 
 There are several kinds of rules. Each supports a different sort of firing behavior. (For a complete list of out-of-the-box rules, see [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).)
 
-* **Match rule**. Fires when an incoming record matches the rule expression. A match rule is stateless: it looks at a single record, and it either fires or it doesn’t. The expression in the previous section is an example of a match rule expression. If a record matches the expression, the rule fires. For more information about match rules, see [Write a Match Rule](/docs/cse/rules/write-match-rule).
-* **Chain rule**. You can use a chain rule to look for two or more types of events, and to fire, based on the frequency of each over a time window. For example, when a user has more than 10 failed login attempts and one successful login attempt in a one hour window. Like a threshold rule, a chain rule is stateful and counts multiple records. The difference is that a chain rule applies multiple expressions to a record. For more information about chain rules, see [Write a Chain Rule](/docs/cse/rules/write-chain-rule).
-* **Aggregation rule**. Fires when up to three aggregation conditions are met within a specified period of time. For example, when a large variety of different AWS CloudTrail event IDs from the same `device_ip` are observed within a 30 minute period. For more information about aggregation rules, see [Write an Aggregation Rule](/docs/cse/rules/write-aggregation-rule).
-* **Threshold rule**. Fires when the rule expression is matched at least a certain number times during a specified length of time. For example, if there are five or more failed login attempts for the same IP address within one hour. A threshold rule is stateful, a condition must be satisfied by multiple records over a period of time. For more information about threshold rules, see [Write a Threshold Rule](/docs/cse/rules/write-threshold-rule).
-* **First seen rule**. Fires when behavior by an entity is encountered that hasn't been seen before. For example, the first time when a user logs in from a new location, or when a new admin account is created. For more information about first seen rules, see [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule).
+* **Match rule**. Fires a signal when an incoming record matches the rule expression. A match rule is stateless: it looks at a single record, and it either fires or it doesn’t. The expression in the previous section is an example of a match rule expression. For more information about match rules, see [Write a Match Rule](/docs/cse/rules/write-match-rule).
+* **Chain rule**. You can use a chain rule to look for two or more types of events, and to fire a signal based on the frequency of each over a time window. For example, you can configure it to fire when a user has more than 10 failed login attempts and one successful login attempt in a one hour window. Like a threshold rule, a chain rule is stateful and counts multiple records. The difference is that a chain rule applies multiple expressions to a record. For more information about chain rules, see [Write a Chain Rule](/docs/cse/rules/write-chain-rule).
+* **Aggregation rule**. Fires a signal when up to three aggregation conditions are met within a specified period of time. For example, you can configure it to fire when a large variety of different AWS CloudTrail event IDs from the same `device_ip` are observed within a 30 minute period. For more information about aggregation rules, see [Write an Aggregation Rule](/docs/cse/rules/write-aggregation-rule).
+* **Threshold rule**. Fires a signal when the rule expression is matched at least a certain number times during a specified length of time. For example, you can configure it to fire if there are five or more failed login attempts for the same IP address within one hour. A threshold rule is stateful. A condition must be satisfied by multiple records over a period of time. For more information about threshold rules, see [Write a Threshold Rule](/docs/cse/rules/write-threshold-rule).
+* **First seen rule**. Fires a signal when behavior by an entity is encountered that hasn't been seen before. For example, you can configure it to fire the first time when a user logs in from a new location, or when a new admin account is created. For more information about first seen rules, see [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule).
 * **Outlier rule**. Fires when behavior by an entity is encountered that deviates from its baseline activity. For each outlier rule, Cloud SIEM automatically creates a baseline model of normal behavior. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a signal. For more information about outlier rules, see [Write an Outlier Rule](/docs/cse/rules/write-outlier-rule).
 
 ## Product identification metadata fields
@@ -136,10 +135,32 @@ metadata_vendor = 'Trend Micro' and metadata_product = 'Deep Security'  and meta
 Some of the key metadata fields are defined below.
 
 | Metadata field  | Type | Description |
-|:--|:--|
+|:--|:--|:--|
 | `metadata_vendor` | string | The name of the company responsible for the data source. Note the name of the product is in the "product" field. |
 | `metadata_product` | string | The specific product name of the data source. Note the name of the company who created the product is the "vendor" field. |
 | `metadata_deviceEventId` | string | Event type given by the vendor for the log. |
+
+## Export and import a rule
+
+Sometimes you may need to export a rule from one instance of Cloud SIEM and import it to another. You can export and import it as a JSON file. 
+
+:::tip
+If you maintain a multi-org implementation of Sumo Logic and you need to push Cloud SIEM rules from a parent organization to child organization to ensure rule consistency across the orgs, use the **Manage Content** tab. See [Manage Orgs for MSSPs](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps/).
+:::
+
+### Export a rule
+
+1. Access the [rules list view](/docs/cse/rules/about-cse-rules/#rules-list-view).
+1. Select a rule.
+1. Click the three-dot kebab icon to the right of the rule name and select **Export** from the menu.<img src={useBaseUrl('img/cse/rule-export-menu.png')} alt="Rule export menu" style={{border: '1px solid gray'}} width="600" />
+1. The rule is downloaded as a JSON file. Copy the file and move it to a directory where it can be imported.
+
+### Import a rule
+
+1. Export a Cloud SIEM rule as described in the preceding section.
+1. Access the [rules list view](/docs/cse/rules/about-cse-rules/#rules-list-view).
+1. Click the **Import** button. 
+1. Select the JSON file of the previously exported rule.<img src={useBaseUrl('img/cse/rule-import-button.png')} alt="Rule import button" style={{border: '1px solid gray'}} width="600" /> 
 
 ## Rules and other content
 
@@ -164,7 +185,7 @@ You can take advantage of match lists in rules, but match lists actually come in
 When a record contains a value that *exactly* matches one or more match lists (partial matches are not supported), two fields in the record get populated:
 
 * `listMatches.` Cloud SIEM adds the names of the match lists that the record matched, and the column values of those lists. For example, if an IP address in a record matches the `SourceIP` address in the “vuln_scanners” match list, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`    
-* `matchedItems`. Cloud SIEM adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” match list contained an entry “5.6.7.8”, and the record’s `SourceIp `is also “5.6.7.8”, the assuming the `SourceIP` address in the “vuln_scanners” match list, the `matchedItems` field would like like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
+* `matchedItems`. Cloud SIEM adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” match list contained an entry “5.6.7.8”, and the record’s `SourceIp` is also “5.6.7.8”, the assuming the `SourceIP` address in the “vuln_scanners” match list, the `matchedItems` field would like like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
 
 Because the information about list matches gets persisted within records, you can reference it downstream in both rules and search. 
 
@@ -200,11 +221,11 @@ This example below checks a record for a field named `listMatches` that contains
 ...AND NOT (array_contains(listMatches, 'vuln_scanners') OR array_contains(listMatches, 'business_ips'))
 ```
 
-### Threat Intelligence
+### Threat intelligence
 
-Threat Intelligence sources contain values that, when encountered in a record, are clear indicators of compromise. To create a new source of Threat Intelligence, see [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators).
+Threat intelligence sources contain values that, when encountered in a record, are clear indicators of compromise. To create a new source of threat intelligence, see [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators).
 
-Threat Intelligence sources are used at the time of record ingestion. When a record is ingested, Cloud SIEM determines whether any of the fields in the record exist in any of your Threat Intelligence sources. When a record contains a value that matches an entry in one or more Threat Intelligence sources, the `hasThreatMatch` Cloud SIEM rules function searches incoming records in Cloud SIEM for matches to threat intelligence indicators. For more information, see [Find Threats with Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
+Threat intelligence sources are used at the time of record ingestion. When a record is ingested, Cloud SIEM determines whether any of the fields in the record exist in any of your threat intelligence sources. When a record contains a value that matches an entry in one or more threat intelligence sources, the `hasThreatMatch` Cloud SIEM rules function searches incoming records in Cloud SIEM for matches to threat intelligence indicators. For more information, see [Find Threats with Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
 
 ## Additional resources
 
