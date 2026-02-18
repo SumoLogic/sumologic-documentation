@@ -286,7 +286,7 @@ Use this dashboard to:
 
 ### Apache Hadoop - DataNode Log Analysis
 
-The **Apache Hadoop – DataNode Log Analysis** dashboard provides visibility into HDFS DataNode health, performance, and client activity. It monitors block health scans, write performance, operation latency trends, and log level distribution. The dashboard also includes source/destination analysis and threat intelligence insights to help detect anomalies and potential security risks.
+The **Apache Hadoop – DataNode Log Analysis** dashboard provides visibility into HDFS DataNode health, performance, and client activity. It monitors block health scans, write performance, operational latency trends, and log-level distribution. The dashboard also includes source/destination analysis and threat intelligence insights to help detect anomalies and potential security risks.
 
 Use this dashboard to:
 
