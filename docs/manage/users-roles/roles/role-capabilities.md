@@ -181,6 +181,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Create Trial Organizations | Create trial organizations (Service Providers only). | `createTrialOrganizations` |
 | Upgrade Trial Organizations | Upgrade trial organizations (Service Providers only). | `upgradeTrialOrganizations` |
 | Deactivate Organizations | Deactivate trial organizations (Service Providers only). | `deactivateOrganizations` |
+| Manage Organizations | Create, edit, and delete organizations. | `manageOrganizations` |
 
 ## Cloud SOAR
 
