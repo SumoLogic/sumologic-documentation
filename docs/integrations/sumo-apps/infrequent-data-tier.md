@@ -154,6 +154,23 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/sumo-apps/IDT_Credits_Consumed.png')} alt="IDT_Credits_Consumed" />
 
+## Create monitors for the Sumo Logic Infrequent Data Tier app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Infrequent Data Tier app alerts
+
+| Name                                                                            | Description                                                                                                                                                                     | Alert Condition | Recover Condition |
+|:--------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------|:------------------|
+| `Infrequent Data Tier - Caller Module Scan Dominance`                           | This alert is triggered if the total scanned data bytes exceed the configured threshold value in GB for any caller module(API, Scheduled Search, Scheduled Views, Interactive). | Count > 1       | Count < = 1       |
+| `Infrequent Data Tier - Daily Consumption Spike`                                | This alert is triggered when consumption spike is detected and the daily credit consumption is higher than the set alert value.                                                 | Count > = 5     | Count < 5         |
+| `Infrequent Data Tier - Expensive Query Detection`                              | This alert is triggered when query runtime is higher than the set alert value.                                                                                                  | Count > 0       | Count < = 0       |
+| `Infrequent Data Tier - High Data Scan from Cancelled or Timed-Out Queries`     | This alert is triggered when query result in a non-successful status resulting in wasted credits are detected.                                                                  | Count > 0       | Count < = 0       |
+| `Infrequent Data Tier - Per-User Infrequent Data Scan Over-Consumption`         | This alert is triggered when single user scans with abnormally large cumulative volume are detected.                                                                            | Count > 0       | Count < = 0       |
+
+
 ## Upgrade/Downgrade the Infrequent Data Tier app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
