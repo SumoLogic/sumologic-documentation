@@ -286,13 +286,15 @@ Use this dashboard to:
 
 ### Apache Hadoop - DataNode Log Analysis
 
-The **Apache Hadoop – DataNode Log Analysis** dashboard provides insights into DataNode health and performance, including block health scan trends, block report transmissions, and finalize commands.
+The **Apache Hadoop – DataNode Log Analysis** dashboard provides visibility into HDFS DataNode health, performance, and client activity. It monitors block health scans, write performance, operation latency trends, and log level distribution. The dashboard also includes source/destination analysis and threat intelligence insights to help detect anomalies and potential security risks.
 
 Use this dashboard to:
 
-* Monitor **DataNode block health and integrity**, including block health scan trends and scan activity.
-* Track **DataNode operational events**, such as block report transmissions, finalize commands, and block receive rates.
-* Analyze **HDFS client write performance** to identify throughput issues and DataNode-related bottlenecks.
+* Monitor **DataNode block health and integrity**, including block health scan trends, scan results, and block-level inconsistencies.
+* Track **DataNode operational events**, such as block report transmissions, finalize commands, blocks received rate, and log level distribution trends for proactive health monitoring.
+* Analyze **HDFS client performance**, including write performance metrics, average operation latency (current and trend), and client activity patterns.
+* Visualize **client write source and destination locations** to understand traffic flow across DataNodes.
+* Detect potential security risks by identifying **highly malicious source and destination IPs** from HDFS client trace logs.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-DataNode-Log-Analysis.png' alt="DataNode Log Analysis" />
 
