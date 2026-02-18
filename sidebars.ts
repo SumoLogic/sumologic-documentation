@@ -2253,6 +2253,7 @@ integrations: [
          'integrations/microsoft-azure/azure-database-for-postgresql',
          'integrations/microsoft-azure/azure-event-grid',
          'integrations/microsoft-azure/azure-event-hubs',
+         'integrations/microsoft-azure/azure-firewall',
          'integrations/microsoft-azure/azure-front-door',
          'integrations/microsoft-azure/azure-functions',
          'integrations/microsoft-azure/azure-hdinsight',
