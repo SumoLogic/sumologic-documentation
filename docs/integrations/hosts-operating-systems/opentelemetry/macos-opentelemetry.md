@@ -36,88 +36,29 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 
 ## Collection configuration and app installation
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-<ConfigAppInstall/>
+### Step 1: Set up remotely managed OpenTelemetry collector
 
-### Step 1: Set up Collector
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+:::note
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
+:::
 
-<SetupColl/>
+<OtelCollectorInstallation/>
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-install-ui.png')} alt="macos-terminal" style={{border: '1px solid gray'}} width="900"/>
+### Step 2: Configure the source template
 
-### Step 2: Configure integration
+import MacConfigureSourceTemplate from '../../../reuse/send-data/mac-configure-source-template.md';
 
-In this step, you will configure the yaml required for macOS Collection.
+<MacConfigureSourceTemplate/>
 
-(Optional) You can add a custom tag, if desired. (There are no parameters required for the macOS app to install.)
+### Step 3: Push the source template to the desired remotely managed collectors
 
-#### Enable process metric collection (Optional)
+import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 
-import ProcMetrics from '../../../reuse/apps/opentelemetry/process-metric-collection.md';
-
-<ProcMetrics/>
-
-Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Mac-YAML.png')} alt="Mac-YAML" style={{border:'1px solid gray'}} width="800"/>
-
-### Step 3: Send metrics to Sumo Logic
-
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
-
-<LogsIntro/>
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="macOS"
-  values={[
-    {label: 'macOS', value: 'macOS'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
-
-<TabItem value="macOS">
-
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the macOS instance which needs to be monitored.
-2. Restart the otelcol-sumo process using the below command 
-
-	```sh
-	 otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-	```
-
-</TabItem>
-
-<TabItem value="Chef">
-
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
-
-</TabItem>
-
-</Tabs>
-
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+<DataConfiguration/>
 
 ## Sample metrics
 

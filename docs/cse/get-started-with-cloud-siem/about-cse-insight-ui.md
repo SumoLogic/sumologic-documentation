@@ -147,8 +147,8 @@ At the top of the insight details page, you’ll see a signal timeline that visu
 1. **Legend**. Key to the symbols used to represent the signals:
    * **Rule**. Signals that were triggered by other rules.
    * **Anomaly**. Signals that were triggered by User and Entity Behavior Analytics (UEBA) rules.
-   * **Threat intelligence**. Signals that were fired by Threat Intel rules.
-   * **File Analysis**. Signals that were triggered by [Yara file analysis rules](/docs/cse/rules/import-yara-rules).
+   * **Threat intelligence**. Signals that were fired by threat intel rules.
+   * **File Analysis**. Signals that were triggered by [YARA file analysis rules](/docs/cse/rules/import-yara-rules).
 1. **Show Related**. Click this link to show related signals in addition to attached signals. If you click the **Show Related** checkbox, the page updates and also displays any related signals or related insights.
     * A *related signal* is a signal that isn’t part of the current insight (it’s not attached), but fired on the same entity as the current insight’s attached signals within 7 days of the current insight’s attached signals. 
     * A *related insight* is an insight that a related signal is attached to.
@@ -174,7 +174,7 @@ The **Entities** tab displays a list of one or more _related entities_. This vie
 
 An insight is focused on a primary entity. For example, the username or IP address that's found in each of the insight's signals. Related entities expand the analyst’s view to include additional entities that could be relevant to the insight because they are either listed in the records that belong to signals in that insight or Cloud SIEM has determined that they are the same entity as one included in the insight. For example, Cloud SIEM has determined that an IP address may have been associated with a specific hostname at the time the relevant signal was generated.
 
-The **Entities** tab includes two views, the **list** view and the **graph** view. Both views start with the same list of Related entities. However, the **graph** view can show additional entity relationships extending "outside" of the insight. 
+The **Entities** tab includes two views, the **list** view and the **graph** view. Both views start with the same list of related entities. However, the **graph** view can show additional entity relationships extending "outside" of the insight. 
 
 #### About the Entities tab list view
 
@@ -191,7 +191,7 @@ Other entities could be included due to _detected entity relationships_. For eac
 Involved entities are connected to the primary entity with dashed lines. Entities whose relationships are detected are labeled "**May also be**", indented, and connected with solid lines.
 
 :::note
-It's possible for a related entity to both be involved and detected. In that case, it typically be displayed as detected unless it is in a number of the insight's signals.
+It's possible for a related entity to both be involved and detected. In that case, it typically will be displayed as detected unless it is in a number of the insight's signals.
 :::
 
 How does Cloud SIEM detect entity relationships outside of the insight? Within the time range of the insight, described above, Cloud SIEM searches for related [entities in the following normalized record fields](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md):
