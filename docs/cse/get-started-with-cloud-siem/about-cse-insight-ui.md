@@ -64,6 +64,36 @@ You can use the **Filters** area near the top of the page to narrow down the ins
 * Status
 * Tags
 
+### Bulk update insights
+
+You can select multiple insights and make changes to them all at once using either the UI or API.
+
+:::note
+You can select a maximum of 5000 insights in one action, and your organization can have up to five active requests in progress at once.
+:::
+
+#### Bulk update insights in the UI
+
+1. Open the insights [list view](#list-view).
+1. [Filter insights](#filtering-insights) to locate only the insights you want to act on.
+1. Use the checkboxes on the insights list view to select multiple insights, or you can click the check box at the top of the list to select all listed insights:<br/><img src={useBaseUrl('img/cse/select-all-insights.png')} alt="Select all insights" style={{border: '1px solid gray'}} width="200"/>
+   <br/>If you click the check box to select all insights, you can then select up to 5000 of the listed insights:<br/><img src={useBaseUrl('img/cse/select-up-to-5000-insights.png')} alt="Select up to 5000 insights" style={{border: '1px solid gray'}} width="800"/>
+1. Choose the action you want to take on the selected insights:
+   * **Close Insights**. Give the insights a [closed resolution](/docs/cse/administration/manage-custom-insight-resolutions/#close-an-insight-using-a-custom-resolution).
+   * **Assign To**. Assign the insights to a Cloud SIEM user.
+   * **Change Status**. Change the insights' [status](/docs/cse/administration/manage-custom-insight-statuses/). 
+   * **Comment**. Add a comment on the selected insights.<br/><img src={useBaseUrl('img/cse/bulk-select-insights.png')} alt="Bulk update insights" style={{border: '1px solid gray'}} width="800"/>
+1. Click **Confirm** on the confirmation dialog box. The update runs, and a banner shows progress of the update. After the update completes, the banner displays for 24 hours so you can track recently-performed bulk updates. 
+1. If you are running multiple bulk updates, keep in mind you cannot have more than five active requests in progress at one time. You will not be able to start another bulk update until there are fewer than five running.
+
+#### Bulk update insights with the API
+
+Use the following [Cloud SIEM APIs](/docs/api/cloud-siem-enterprise/) to bulk update insights:
+* [Create a bulk update job for insights](https://api.sumologic.com/docs/sec/#operation/CreateInsightBulkUpdate). Submit a bulk update job to update multiple insights based on a filter query.
+* [Get bulk update jobs](https://api.sumologic.com/docs/sec/#operation/GetInsightBulkUpdates). List bulk update jobs for the current user.
+* [Get bulk update job status](https://api.sumologic.com/docs/sec/#operation/GetInsightBulkUpdateStatus). Get the current status and details of a bulk update job.
+* [Get bulk update job results](https://api.sumologic.com/docs/sec/#operation/GetInsightBulkUpdateResult). Download the results of a bulk update job with each item's status and any associated errors.
+
 ### View insights in child organizations
 
 If you manage a parent organization with child organizations that also use Cloud SIEM, you can see a list of all insights across multiple child organizations. This is useful if your company is a large enterprise with many organizations or is a Managed Security Service Provider (MSSP), and you'd like to see all insights across all areas in a single page.
