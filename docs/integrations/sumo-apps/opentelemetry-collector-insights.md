@@ -208,7 +208,7 @@ You can now remotely configure and manage OpenTelemetry Collectors for the follo
 - [Linux](/docs/send-data/opentelemetry-collector/remote-management/source-templates/linux/)
 - [Mac](/docs/send-data/opentelemetry-collector/remote-management/source-templates/mac/)
 - [MySql](/docs/send-data/opentelemetry-collector/remote-management/source-templates/mysql/)
-- [Nginix](/docs/send-data/opentelemetry-collector/remote-management/source-templates/nginx/)
+- [Nginx](/docs/send-data/opentelemetry-collector/remote-management/source-templates/nginx/)
 - [PostgreSql](/docs/send-data/opentelemetry-collector/remote-management/source-templates/postgresql/)
 - [RabbitMQ](/docs/send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq/)
 - [Redis](/docs/send-data/opentelemetry-collector/remote-management/source-templates/redis/)
