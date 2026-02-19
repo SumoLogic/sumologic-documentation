@@ -41,8 +41,13 @@ jobs:
       WEBOPS_JENKINS_HOST: ${{ secrets.WEBOPS_JENKINS_HOST }}
       WEBOPS_AWS_ROLE_JENKINS: ${{ secrets.WEBOPS_AWS_ROLE_JENKINS }}
       WEBOPS_WEBHOOK_TOKEN: ${{ secrets.WEBOPS_WEBHOOK_TOKEN }}
+  verify-production:
+    needs: trigger-jenkins-pipeline
+    uses: ./.github/workflows/job_verify-production.yml
+    with:
+      GIT_SHA: ${{ github.sha }}
   notify-channel:
-    needs: [build-site,deploy-to-pantheon,trigger-jenkins-pipeline]
+    needs: [build-site,deploy-to-pantheon,trigger-jenkins-pipeline,verify-production]
     if: ${{ failure() }}
     uses: ./.github/workflows/job_slack-notification.yml
     with:
