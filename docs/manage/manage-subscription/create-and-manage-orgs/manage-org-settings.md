@@ -122,20 +122,20 @@ You must be the account owner of the Sumo Logic account to change the account su
 
 This section has instructions for managing and viewing the access for the selected child org.
 
-By default, if you are a user with **Manage Organizations** capability you will be able to see all the child orgs in your parent org and you can configure the users to view and SSO into child organizations. This helps you to define access on a per-child-org basis and precisely control over the sign in process.
+By default, if you are a user with **Manage Organizations** capability you will be able to see all the child orgs in your parent org and you can configure the users with roles to SSO into child organizations. This helps you to define access on a per-child-org basis and precisely control over the sign in process.
 
 But if you are user with only **View Organizations** capability you can see the child orgs with the default access and the child orgs that are assigned to you.
 
 ### Manage access to child org
 
-Follow the below steps to manage access to the child org:
+Follow the steps below to manage access to the child org:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
 1. Click the child org for which you want to restrict the access.
 1. In the right hand pane, click on **More Actions** dropdown and select **Manage Access**.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-manage-access-button.png')} alt="Child Org Manage Access Button" style={{border: '1px solid gray'}} width="400"/>
-1. On prompt, select any of the following:
-     - **All Users with View Organization Capability**. By default, users with **View Organization** capability can view the child orgs. 
-     - **Only Selected Users**. Select this option if you want to restrict your child org to a selected number of users. On selecting this option, you will be prompted to select the list of users on the parent org for whom you need to provide the access.<br/><img src={useBaseUrl('img/manage/subscriptions/select-users-prompt.png')} alt="Select Users Prompt" style={{border: '1px solid gray'}} width="400"/>
+1. When prompted, select the users and assign their respective roles for the selected child organization. This allows parent-organization administrators to manage default role assignments for users who access child organizations through SSO. Administrators can either assign a single role to all users or assign roles individually:
+     - When access control is set to **All Users with View Organization Capability**, administrators can assign a custom role that applies to all users accessing the child organization.
+     - When access control is set to **Only Selected Users**, administrators can assign specific roles to individual users for each child organization. <br/><img src={useBaseUrl('img/manage/subscriptions/select-users-prompt.png')} alt="Select Users Prompt" style={{border: '1px solid gray'}} width="400"/>
 
 ### View access to child org
 
@@ -144,8 +144,8 @@ Follow the below steps to view the child orgs access details:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
 1. Click the child org for which you want to view the access details.
 1. Scroll down in the right pane to the **Access Control** section. You can see one among the following:
-     - **All users with view organization capability**. This will be displayed if the selected child org is configured with view for all users.
-     - **[X] users have access to this organization**. This will be displayed if the selected child org is configured only for selected number of users. **X** indicates the total number of users who have access to the selected child org. Click on this number to get a full list of users with access.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-access-control.png')} alt="Child Org Access Control" style={{border: '1px solid gray'}} width="400"/>
+     - **All users in the organization have Administrator access**. This will be displayed if the selected child org is configured with custom role for all users.
+     - **[X] users has specified role**. This will be displayed if the selected child org is configured only for selected number of users. **X** indicates the total number of users who have access to the selected child org with specified role. Click on this number to get a full list of users with access.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-access-control.png')} alt="Child Org Access Control" style={{border: '1px solid gray'}} width="400"/>
 
 ## SSO for child organizations
 
