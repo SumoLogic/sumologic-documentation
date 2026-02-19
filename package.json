@@ -38,6 +38,7 @@
     "@docusaurus/core": "^3.9.2",
     "@docusaurus/cssnano-preset": "^3.9.2",
     "@docusaurus/faster": "^3.9.2",
+    "@docusaurus/mdx-loader": "^3.9.2",
     "@docusaurus/plugin-client-redirects": "^3.9.2",
     "@docusaurus/plugin-content-blog": "^3.9.2",
     "@docusaurus/plugin-css-cascade-layers": "^3.9.2",
