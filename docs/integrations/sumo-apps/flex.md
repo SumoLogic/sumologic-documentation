@@ -180,7 +180,7 @@ _index=sumologic_volume
 | gbytes / duration_in_day as %"GB/Day"
 | fields %"GB/Day"
 ```
-For more examples, refer to [Log and Tracing Flex Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Metrics Flex Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/).
+For more examples, refer to [Log and Tracing Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/).
 
 ## Installing the Flex app
 
