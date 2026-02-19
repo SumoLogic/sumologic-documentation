@@ -16,7 +16,7 @@ IPv4 addresses use a variable number of bits to describe the network. The first
 
 The standard "dotted quad" notation for IPv4 addresses can be difficult to compare if the number of bits assigned to the network is not 16 or 24. The CIDR operators are designed to help.
 
-For general information about Classless Inter-Domain Routing, see this [online article](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).
+For general information about Classless Inter-Domain Routing, see this [online article](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).
 
 ## getCIDRPrefix
 

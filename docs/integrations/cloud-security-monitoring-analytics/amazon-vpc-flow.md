@@ -13,7 +13,7 @@ The Amazon VPC (Virtual Private Cloud) Flow - Cloud Security Monitoring and Anal
 
 The Amazon VPC Flow Logs show the IP network traffic of your VPC, allowing you to troubleshoot traffic and security issues. The Amazon VPC Flow Logs App leverages this data to provide real-time visibility and analysis of your environment. It consists of predefined searches and Dashboards.
 
-See [Amazon VPC Flow Logs](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html) more information.
+See [Amazon VPC Flow Logs](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html) more information.
 
 The VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. You can use either of the below methods to collect Amazon VPC Flow Logs.
 
@@ -156,7 +156,7 @@ This section has instructions for collecting Amazon VPC Flow Logs using an Amazo
 ### Step 2: Configure Amazon S3 Source  
 
 1. [Grant Access to an Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
-2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
+2. [Enable logging using the AWS Management Console](https://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
 3. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 4. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) for the S3 Source to Sumo Logic. When you configure the S3 source:
     1. In the **Advanced Options for Logs** section, uncheck the **Detect messages spanning multiple lines** option.

@@ -15,7 +15,7 @@ The Sankey chart works with the [`transaction`](/docs/search/search-query-langu
 
 After creating a Flow Diagram, you can hover over any line in the diagram to see additional details between the two states, including loop backs. Additionally, you can click a line to run a drill down search on just that data.
 
-Sankey diagrams are named after Irish Captain Matthew Sankey, an engineer who used this type of diagram in 1898 to show the energy efficiency of a steam engine. (Source: [sankey-diagrams.com](http://www.sankey-diagrams.com/who-is-this-sankey-guy/).)
+Sankey diagrams are named after Irish Captain Matthew Sankey, an engineer who used this type of diagram in 1898 to show the energy efficiency of a steam engine. (Source: [sankey-diagrams.com](https://www.sankey-diagrams.com/who-is-this-sankey-guy/).)
 
 ## Creating Flow Diagrams
 

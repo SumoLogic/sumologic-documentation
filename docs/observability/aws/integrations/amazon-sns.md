@@ -13,8 +13,8 @@ The Sumo Logic app for Amazon SNS collects CloudTrail logs and CloudWatch metric
 
 The app uses SNS logs and metrics:
 
-* [SNS CloudWatch Metrics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html)
-* [SNS operations using AWS CloudTrail](http://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html)
+* [SNS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html)
+* [SNS operations using AWS CloudTrail](https://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html)
 
 
 ### Sample log messages
