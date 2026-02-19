@@ -251,7 +251,7 @@ For example, use the query: `_sourceCategory=security_evident SubscribeURL`
 
 Enable Raw Message Delivery for the topic.
 
-For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html](http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html).
+For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html](https://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html).
 
 1. Select the AWS Topic.
 2. Click **Other subscription actions**.

@@ -14,7 +14,7 @@ The Amazon S3 Audit Source, also called Server Access Logging, tracks and collec
 To configure an Amazon S3 Audit Source:
 
 1. [Grant Sumo Logic access](grant-access-aws-product.md) to an Amazon S3 bucket.
-1. [Enable logging in AWS](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html) using the Amazon Console.
+1. [Enable logging in AWS](https://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html) using the Amazon Console.
 1. Confirm that logs are being delivered to the Amazon S3 bucket.
 1. Add an [AWS Source](aws-sources.md) for the S3 Audit Source to Sumo Logic. See below for detailed steps.
 1. **Optional:** Install the Sumo Logic App for S3 Audit.

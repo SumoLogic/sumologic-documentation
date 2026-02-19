@@ -82,7 +82,7 @@ Failures could be related to the Scheduled Search query. Check the following:
 
 Failures can be seen across many Scheduled Searches due to back-end infrastructure issues at Sumo Logic. In this case, wait until Sumo Logic service is restored and test your query for normal performance.
 
-* Check http://status.sumologic.com for outages impacting multiple customers and specific functionalities.
+* Check https://status.sumologic.com for outages impacting multiple customers and specific functionalities.
 * Sumo Logic reports Scheduled Search failures in the [Audit Index](/docs/manage/security/audit-indexes/audit-index). Determine if many Scheduled Search failures occurred at the same time of your failure. In this case, the Sumo Logic operations team is alerted to infrastructure issues and will address them promptly. 
 
 ### Other issues

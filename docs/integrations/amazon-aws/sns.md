@@ -15,8 +15,8 @@ The Sumo Logic app for Amazon SNS collects CloudTrail logs and CloudWatch metric
 ## Log and Metrics types
 
 The Sumo Logic app for Amazon SNS uses:
-* SNS CloudWatch Metrics. For details, see [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html). 
-* SNS operations using AWS CloudTrail. For details, see [here](http://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html). 
+* SNS CloudWatch Metrics. For details, see [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html). 
+* SNS operations using AWS CloudTrail. For details, see [here](https://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html). 
 
 ### Sample log messages
 
@@ -95,7 +95,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
       * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter a source category. For example, enter `aws/observability/CloudTrail/logs`.
     * **Fields**. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried using the **account** field. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Fields.png')} alt="Fields" />
-    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
+    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
     * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
     * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
     * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
