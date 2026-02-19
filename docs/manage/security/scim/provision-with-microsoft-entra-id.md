@@ -1,8 +1,8 @@
 ---
-id: provision-with-microsoft-entra-id 
+id: provision-with-microsoft-entra-id
 title: Provision with Microsoft Entra ID
 sidebar_label: Provision with Microsoft Entra ID
-description: Learn how to provision users in Sumo Logic with Microsoft Entra ID (formerly Azure Active Directory). 
+description: Learn how to provision users in Sumo Logic with Microsoft Entra ID (formerly Azure Active Directory).
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -21,7 +21,7 @@ When you create the access key, copy its access ID and access key values. You wi
 
 ### Step 1: Create the app
 
-1. Log in to [Microsoft Azure](http://portal.azure.com/) as an administrator.
+1. Log in to [Microsoft Azure](https://portal.azure.com/) as an administrator.
 1. Navigate to Microsoft Entra ID. (You can use the search bar to locate it.)
 1. Navigate to **Manage > Enterprise Applications**.
 1. Click **New application**.<br/><img src={useBaseUrl('img/security/provision-azure-new-app.png')} alt="Create new application" style={{border: '1px solid gray'}} width="800" />
@@ -31,7 +31,7 @@ When you create the access key, copy its access ID and access key values. You wi
 
 ### Step 2: Set up single sign-on
 
-Follow the directions in [Configure Sumo as an Enterprise App in Azure AD](/docs/manage/security/saml/integrate-sumo-with-azure-ad/#configure-saml-in-sumo-logic) beginning with the step where you select **Set up single sign on**. 
+Follow the directions in [Configure Sumo as an Enterprise App in Azure AD](/docs/manage/security/saml/integrate-sumo-with-azure-ad/#configure-saml-in-sumo-logic) beginning with the step where you select **Set up single sign on**.
 
 <img src={useBaseUrl('img/security/provision-azure-set-up-sso.png')} alt="Set up single sign on" style={{border: '1px solid gray'}} width="600" />
 
@@ -55,7 +55,7 @@ Create roles that the users will have in Sumo Logic (for example, `Analyst` and 
 
 ### Step 4: Assign users to the app
 
-1. In the app, select **Manage > Users and groups**. 
+1. In the app, select **Manage > Users and groups**.
 1. Select **Add user/group**.<br/><img src={useBaseUrl('img/security/provision-azure-add-users.png')} alt="Add users" style={{border: '1px solid gray'}} width="600" />
 1. Under **Users**, click **None Selected**.<br/><img src={useBaseUrl('img/security/provision-azure-add-assignment.png')} alt="Add Assignment" style={{border: '1px solid gray'}} width="400" />
 1. From the list of available users, select users to add to the app and click **Select**.
@@ -97,21 +97,21 @@ Create roles that the users will have in Sumo Logic (for example, `Analyst` and 
    1. Click **Save**.<br/><img src={useBaseUrl('img/security/provision-azure-provisioning-status.png')} alt="Provisioning status" style={{border: '1px solid gray'}} width="600" />
    1. Select **Overview**.
    1. Select **Provision on demand**.<br/><img src={useBaseUrl('img/security/provision-azure-provision-on-demand.png')} alt="Provision on demand" style={{border: '1px solid gray'}} width="600" />
-   1. Users assigned the app will be provisioned into Sumo Logic. 
+   1. Users assigned the app will be provisioned into Sumo Logic.
 
 As long as the app's provisioning status is on, the app runs auto provisioning every 40 minutes.
 
 ### Step 6: Verify provisioning
 
-Users assigned to the app are provisioned into Sumo Logic. 
+Users assigned to the app are provisioned into Sumo Logic.
 
 1. Verify in Microsoft Entra ID:
    1. In the app, select **Provisioning** and then select the **Monitoring** tab.
    1. The tab should show provisioning status. Click **View Provisioning Logs** for details.
 1. Verify in Sumo Logic:
    1. Log in to the Sumo Logic instance that you linked to the provisioning app in Step 2 when you provided the Assertion Consumer URL and entity ID.
-   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. 
-   1. Search for the users provisioned from Microsoft Entra ID. 
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**.
+   1. Search for the users provisioned from Microsoft Entra ID.
    1. You should see the users listed, and with the role given to them when you assigned them to the app in Microsoft Entra ID.
 
 ## Syncing between Microsoft Entra ID and Sumo Logic

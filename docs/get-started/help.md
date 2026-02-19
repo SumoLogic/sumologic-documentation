@@ -59,7 +59,7 @@ See [Keyboard Shortcuts](/docs/get-started/keyboard-shortcuts).
 
 ## Service Status
 
-To view the status of the Sumo Logic service, find information on any outages, and see Scheduled Maintenance for your deployment, go to **Help** > **Service Status**. Alternatively, you can go directly to [status.sumologic.com](http://status.sumologic.com).
+To view the status of the Sumo Logic service, find information on any outages, and see Scheduled Maintenance for your deployment, go to **Help** > **Service Status**. Alternatively, you can go directly to [status.sumologic.com](https://status.sumologic.com).
 
 If there has been an outage on your [deployment](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) (or pod), the Service Status Indicator displays:
 

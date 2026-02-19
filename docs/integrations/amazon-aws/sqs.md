@@ -118,7 +118,7 @@ Sumo Logic supports collecting metrics using two source types:
     :::
     * **Source Category**. Enter aws/observability/CloudTrail/logs.
     * **Fields**. Add an account field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/Fields.png' alt="Account Fields" style={{border: '1px solid gray'}} width="400" />
-    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
+    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
     * **Log File Interval > Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
     * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
     * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
