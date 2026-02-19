@@ -242,6 +242,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <img src={useBaseUrl('img/integrations/amazon-aws/amazon-sagemaker-logo.png')} alt="Thumbnail icon" width="50"/>
+        <h4><a href={useBaseUrl('docs/integrations/amazon-aws/amazon-sagemaker')}>Amazon SageMaker</a></h4>
+        <p>Get insights into CloudTrail, CloudWatch Logs, and performance metrics for your Amazon SageMaker service.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <img src={useBaseUrl('img/integrations/amazon-aws/rds.png')} alt="Thumbnail icon" width="50"/>
         <h4><a href={useBaseUrl('docs/integrations/amazon-aws/rds')}>Amazon RDS</a></h4>
         <p>A guide to the Sumo Logic app for Amazon RDS.</p>

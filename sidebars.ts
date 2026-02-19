@@ -2159,6 +2159,7 @@ integrations: [
         'integrations/amazon-aws/inspector-classic',
         'integrations/amazon-aws/kinesis-streams',
         'integrations/amazon-aws/amazon-opensearch',
+        'integrations/amazon-aws/amazon-sagemaker',
         'integrations/amazon-aws/rds',
         'integrations/amazon-aws/redshift-ulm',
         'integrations/amazon-aws/route-53-resolver-security',
