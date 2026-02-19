@@ -1953,7 +1953,7 @@
     chalk "^4.1.2"
     tslib "^2.6.0"
 
-"@docusaurus/mdx-loader@3.9.2", "@docusaurus/mdx-loader@^3.9.2":
+"@docusaurus/mdx-loader@3.9.2":
   version "3.9.2"
   resolved "https://registry.yarnpkg.com/@docusaurus/mdx-loader/-/mdx-loader-3.9.2.tgz#78d238de6c6203fa811cc2a7e90b9b79e111408c"
   integrity sha512-wiYoGwF9gdd6rev62xDU8AAM8JuLI/hlwOtCzMmYcspEkzecKrP8J8X+KpYnTlACBUUtXNJpSoCwFWJhLRevzQ==
