@@ -36,7 +36,7 @@ Migration will fail if a source template with the same name as your IC source al
 
 `Pre-existing Source Template already exists`
 
-**Best Practices**
+**Best practices**
 
 - Ensure no Source Template exists with the same name before migration.
 - Rename or delete the existing template if needed.
@@ -45,7 +45,7 @@ Migration will fail if a source template with the same name as your IC source al
 
 If you attempt to migrate the same Installed Collector (IC) source more than once, the migration will fail because the initial migration has already created a Source Template with that name, and the migration process cannot update or overwrite an existing template.
 
-**Best Practices**
+**Best practices**
 
 Delete or rename the previously created source template and rerun the migration.
 
@@ -53,7 +53,7 @@ Delete or rename the previously created source template and rerun the migration.
 
 Updating an IC source after migration is not supported.
 
-**Best Practices**
+**Best practices**
 
 1. Create an IC file source named source1.
 1. Migrate it to a Source Template named source1.
@@ -66,7 +66,7 @@ Complete all IC source configuration updates before migration and do not re-run 
 
 This happens because OTEL supports only a single timestamp format, while IC sources support multiple timestamp formats as fallbacks. During migration, only the first (primary) timestamp format is carried over, and any additional fallback formats are not migrated.
 
-**Best Practices**
+**Best practices**
 
 * Review timestamp configurations before migrating.
 * Ensure the primary format matches your most common log pattern.
@@ -83,7 +83,7 @@ With OpenTelemetry, timestamp parsing cannot be disabled. The collector always a
 
 Timezone behavior may change after migration because OpenTelemetry relies only on the timezone information present in the log itself. If a log does not explicitly include a timezone, any fallback timezone that was configured in the Installed Collector is ignored during migration, which can lead to different timestamp interpretation.
 
-**Best Practices**
+**Best practices**
 
 To avoid unexpected timestamp shifts after migration, ensure that your log messages always include explicit timezone information in the timestamp. While IC sources can fall back to a configured timezone when none is detected, OTEL sources rely entirely on the timezone present in the log itself. Before migrating, review your log formats and update them, if necessary, to include timezone details so that OTEL can consistently parse timestamps as expected.
 
@@ -116,7 +116,7 @@ OTEL source templates include default attributes with host information as shown 
 - The OTEL collector automatically fetches the host details from the agent and populates as `_sourceHost`.
 - No explicit migration of Source Host is needed .
 
-**Best Practices**
+**Best practices**
 
 After migration, confirm that `_sourceHost` is correctly populated in your ingested data.
 
