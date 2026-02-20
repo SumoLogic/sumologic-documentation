@@ -1,7 +1,7 @@
 ---
 slug: /manage/partitions
 title: Partitions
-description: Partitions speed the search process by allowing an Admin to filter a subset of the log messages in an index.
+description: Partitions speed the search process by allowing an admin to filter a subset of the log messages in an index.
 ---
 
 import Iframe from 'react-iframe';

@@ -1,7 +1,7 @@
 ---
 slug: /manage
 title: Manage Account
-description: Manage user accounts, Collectors and Sources, security, SEO, and other administrative details.
+description: Manage user accounts, collectors and sources, security, SEO, and other administrative details.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/icons/manage.png')} alt="icon" width="50"/>
 
 :::tip
-See [Collection](/docs/send-data/collection) to learn about Collectors, Sources, and processing rules.
+See [Collection](/docs/send-data/collection) to learn about collectors, sources, and processing rules.
 :::
 
 This topic describes features and options that give you administration over accounts, roles, collectors, content sharing, field extraction rules, and much more.
@@ -30,7 +30,7 @@ This topic describes features and options that give you administration over acco
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/partitions')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Partitions</h4></a>
-  <p>Accelerate the search process by allowing Admins to filter a subset of the log messages in an index.</p>
+  <p>Accelerate the search process by allowing admins to filter a subset of the log messages in an index.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -42,7 +42,7 @@ This topic describes features and options that give you administration over acco
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/health-events')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Health Events</h4></a>
-  <p>Monitor the health of your Collectors and Sources.</p>
+  <p>Monitor the health of your collectors and sources.</p>
   </div>
 </div>
 <div className="box smallbox card">
