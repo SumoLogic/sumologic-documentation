@@ -87,10 +87,6 @@ import RateLimit from '../reuse/api-rate-limit.md';
 
 A limit of 200 active concurrent search jobs applies to your organization.
 
-When searching the [Frequent Tier](/docs/manage/partitions/data-tiers), a rate limit of 20 concurrent search jobs applies to your organization.
-
-When searching the [Flex data](/docs/manage/partitions/flex), a rate limit of 200 concurrent search jobs applies to your organization.
-
 Once you reach the limit of 200 active searches, attempting an additional search will return a status code of `429 Too Many Requests`, indicating that you've exceeded the permitted search job limit.
 
 This limit applies only to Search Job API searches, and does not take into account searches run from the Sumo UI, scheduled searches, or dashboard panel searches that are running at the same time. If the search job is not kept alive by API requests every 20-30 seconds, it is canceled.
