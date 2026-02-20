@@ -38,7 +38,7 @@ You can use Terraform to provide a field with the [`sumologic_field`](https://re
 
 ## About metrics sources, fields, and metadata
 
-Sumo Logic metrics sources also support tagging with fields defined in your fields schema or other metadata that hasn’t been added to your schema. Here’s how it works:
+Sumo Logic metrics sources also support tagging with fields defined in your fields schema or other metadata that hasn’t been added to your schema.
 
 When creating or updating the configuration of an HTTP source or a collector that has an HTTP source, you assign it a field on the configuration page. If the field doesn’t exist in the schema, you are prompted whether or not you want to **Automatically activate all fields on save**. If you select that option, the field will be added to the  schema and be applied to the logs collected by the collector, and to metrics and logs collected by the HTTP source. If you do not select **Automatically activate all fields on save**, the field will not be saved to your fields schema, and the field will be applied only to the metrics collected by the HTTP source.
 
@@ -116,9 +116,9 @@ The following JSON is an example configuration of a Hosted collector with the fi
 }
 ```
 
-### Using Local Configuration
+### Using local configuration
 
-Installed collectors can use JSON files to configure their sources when using [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). Use the `fields` parameter in your JSON configuration to define fields on a source.
+Installed collectors can use JSON files to configure their sources when using [local configuration file management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). Use the `fields` parameter in your JSON configuration to define fields on a source.
 
 | Parameter | Type | Required? | Description | Access |
 |:--|:--|:--|:--|:--|
@@ -175,7 +175,7 @@ Your fields need to be in a comma separated list of key-value pairs. For example
 curl -v -X POST -H 'X-Sumo-Fields:environment=dev,cluster=k8s' -T /file.txt <HTTP endpoint>
 ```
 
-#### Extended HTTP Metadata Collection
+#### Extended HTTP metadata collection
 
 When creating or editing your HTTP source that will receive log data add the field `_convertHeadersToFields` with a value of `true`. This field needs to be added to your fields schema to work.
 
@@ -203,9 +203,9 @@ Tags are returned in your search results and can be referenced in queries. For i
 
 Fields can be used in the following ways:
 
-* Log [Search page](/docs/search). Use the key-value pair as a keyword search expression (before the first pipe, \| ).
+* [Log Search ](/docs/search). Use the key-value pair as a keyword search expression (before the first pipe, \| ).
 * [Role Based Access Control](/docs/manage/users-roles/roles) (RBAC). Fields can be used in role search filters to control access to data.
-* [Partitions](/docs/manage/partitions), [Scheduled Views](/docs/manage/scheduled-views), and [Field Extraction Rules](/docs/manage/field-extractions). Fields can be used in the scope of Partitions, Scheduled Views, and Field Extraction Rules.
+* [Partitions](/docs/manage/partitions), [Scheduled Views](/docs/manage/scheduled-views), and [Field Extraction Rules](/docs/manage/field-extractions). Fields can be used in the scope of partitions, Scheduled Views, and Field Extraction Rules.
 
 :::note
 Fields cannot be used with [Live Tail](/docs/search/live-tail).
@@ -237,21 +237,18 @@ The Fields page displays the following information: 
 * **Field Name** is the name of the field, known as the key in the key-value pair.
 * **Data Type** shows the data type of the field.
 * **Field Extraction Rules** shows the number of Field Extraction Rules that reference the field.
-* **Role Based Access** **Control** shows the number of Roles using a search filter that references the field.
-* **Partitions** shows the number of Partitions that reference the field.
+* **Role Based Access** **Control** shows the number of roles using a search filter that references the field.
+* **Partitions** shows the number of partitions that reference the field.
 * **Collectors** shows the number of collectors that reference the field. (Available when viewing custom fields.)
 * **Sources** shows the number of sources that reference the field. (Available when viewing custom fields.)
 * **Fields Capacity** (bottom of table) shows how many fields your account is using, out of the total available for use.
 
 On the Fields page you can:
-
 * Click **+ Add** to add fields.
-* Search fields * The dropdown next to the add button lets you toggle between the following:
-
-  * **Existing -** **Built-in Fields**. These are [metadata fields created by Sumo Logic](../search/get-started-with-search/search-basics/built-in-metadata.md) and cannot be modified.
-  * **Existing - Custom Fields**. These fields were either created by FERs or users.
-  * **Dropped Fields**. These fields are being dropped due to not existing in the fields table.
-
+* Search fields. The dropdown next to the add button lets you toggle between the following:
+   * **Existing -** **Built-in Fields**. These are [metadata fields created by Sumo Logic](../search/get-started-with-search/search-basics/built-in-metadata.md) and cannot be modified.
+   * **Existing - Custom Fields**. These fields were either created by FERs or users.
+   * **Dropped Fields**. These fields are being dropped due to not existing in the fields table.
 * Disable fields
 * Delete fields 
 

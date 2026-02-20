@@ -61,17 +61,17 @@ To create a Field Extraction Rule:
         * Rule limit - none
         * Time - During a search when using **Auto Parse Mode** from [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md).
    * **Scope**. Select either **All Data** or **Specific Data**. When specifying data the options for the scope differ depending on when the rule is applied.
-     * For an **Ingest Time** rule, type a [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md) that points to the subset of logs you'd like to parse. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the Scope to run a search against the rule. Custom metadata fields are not supported here, they have not been indexed to your data yet at this point in collection.
-     * For a **Run Time** rule, define the scope of your JSON data. You can define your JSON data source as a [Partition](/docs/manage/partitions) Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the Scope to run a search against the rule. You cannot use keywords like “info” or “error” in your scope.
+     * For an **Ingest Time** rule, type a [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md) that points to the subset of logs you'd like to parse. Think of the scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the scope to run a search against the rule. Custom metadata fields are not supported here, they have not been indexed to your data yet at this point in collection.
+     * For a **Run Time** rule, define the scope of your JSON data. You can define your JSON data source as a [partition](/docs/manage/partitions) Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) that describes your JSON data. Think of the scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the scope to run a search against the rule. You cannot use keywords like “info” or “error” in your scope.
 
     :::note
-    Always set up JSON auto extraction (Run Time field extraction) on a specific Partition name (recommended) or a particular Source. Failing to do so might cause the auto parsing logic to run on data sources where it is not applicable and will add additional overhead that might deteriorate the performance of your queries.
+    Always set up JSON auto extraction (Run Time field extraction) on a specific partition name (recommended) or a particular Source. Failing to do so might cause the auto parsing logic to run on data sources where it is not applicable and will add additional overhead that might deteriorate the performance of your queries.
     :::
 
     :::sumo Best Practices
-    If you are not using Partitions we recommend using [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields like `_sourceCategory`, `_sourceHost` or `_collector` to define the scope.
+    If you are not using partitions we recommend using [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields like `_sourceCategory`, `_sourceHost` or `_collector` to define the scope.
 
-    We recommend creating a separate Partition for your JSON dataset and use that Partition as the scope for run time field extraction. For example, let's say you have AWS CloudTrail logs, and they are stored in `_view=cloudtrail` Partition in Sumo. You can create a Run Time FER with the scope `_view=cloudtrail`. Creating a separate Partition and using it as scope for a run time field extraction ensures that auto parsing logic only applies to necessary Partitions.
+    We recommend creating a separate partition for your JSON dataset and use that partition as the scope for run time field extraction. For example, let's say you have AWS CloudTrail logs, and they are stored in `_view=cloudtrail` partition in Sumo. You can create a Run Time FER with the scope `_view=cloudtrail`. Creating a separate partition and using it as scope for a run time field extraction ensures that auto parsing logic only applies to necessary partitions.
     :::
 
    * **Parsed template** (Optional for Ingest Time rules).
@@ -111,7 +111,7 @@ parse "user=\"*\" action=\"*\" sessionId=\"*\"" as user, action, sessionid
 | action | Action performed by the user | Delete |
 | sessionId | Session ID for user action | 145623 |
 
-## Best practices for designing Rules
+## Best practices for designing rules
 
 **Include the most accurate keywords to identify the subset of data from which you want to extract data.** Lock down the scope as tightly as possible to make sure it's extracting just the data you want, nothing more. Using a broader scope means that Sumo Logic will inspect more data for the fields you'd like to parse, which may mean that fields are extracted when you do not actually need them.
 
@@ -123,7 +123,7 @@ parse "user=\"*\" action=\"*\" sessionId=\"*\"" as user, action, sessionid
 
 **Test the scope before creating the rule.** Make sure that you can extract fields from all messages you need to be returned in search results. Test them by running a potential rule as a search.
 
-**Make sure all fields appear in the Scope you define.** When Field Extraction is applied to data, all fields must be present to have any fields indexed; even if one field isn't found in a message, that message is dropped from the results. In other words, it's all or nothing. For multiple sets of fields that are somewhat independent, make two rules.
+**Make sure all fields appear in the scope you define.** When Field Extraction is applied to data, all fields must be present to have any fields indexed; even if one field isn't found in a message, that message is dropped from the results. In other words, it's all or nothing. For multiple sets of fields that are somewhat independent, make two rules.
 
 **Reuse field names in multiple FERs if scope is distinct and separate and not matching same messages.** To save space and allow for more FERs within your 200 field limit, you can reuse the field names as long as they are used in non-overlapping FERs. 
 
