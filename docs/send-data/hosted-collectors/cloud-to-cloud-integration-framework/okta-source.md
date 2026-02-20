@@ -105,3 +105,15 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 ## Limitation
 
 During a polling interval, an Okta Source will make a request for every 1,000 logs available. The Okta API uses paging and only 1,000 logs are returned at a time.
+
+## Install Okta app
+
+Once you understand how and where Okta data is collected, you can visualize and analyze that data by [installing the Sumo Logic Okta app](/docs/integrations/saml/okta).
+
+Installing the Sumo Logic Okta app helps you quickly gain visibility into identity and access activity through built-in dashboards. It enables you to:
+- Monitor administrative actions performed in Okta
+- Track failed and successful login attempts
+- Analyze user activity across applications accessed through Okta
+- Gain visibility into application usage and access patterns
+- Review user events and authentication behavior
+- Monitor Multi-Factor Authentication (MFA) activity through preconfigured dashboards
