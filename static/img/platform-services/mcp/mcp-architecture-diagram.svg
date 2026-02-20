@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5A67D8"/>
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="340" fill="#F7F8FC" rx="8"/>
+
+  <!-- Customer environment boundary -->
+  <rect x="20" y="50" width="430" height="270" rx="8" fill="none" stroke="#CBD5E0" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="35" y="74" font-size="11" fill="#718096" font-weight="600" letter-spacing="0.5">YOUR ENVIRONMENT</text>
+
+  <!-- Sumo Logic boundary -->
+  <rect x="500" y="50" width="380" height="270" rx="8" fill="none" stroke="#CBD5E0" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="515" y="74" font-size="11" fill="#718096" font-weight="600" letter-spacing="0.5">SUMO LOGIC</text>
+
+  <!-- AI Tools column -->
+  <!-- VS Code -->
+  <rect x="40" y="95" width="155" height="44" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="118" y="122" text-anchor="middle" font-size="13" fill="#2D3748" font-weight="500">VS Code / Cursor</text>
+
+  <!-- Slack / Teams -->
+  <rect x="40" y="155" width="155" height="44" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="118" y="182" text-anchor="middle" font-size="13" fill="#2D3748" font-weight="500">Slack / Teams</text>
+
+  <!-- Custom Apps -->
+  <rect x="40" y="215" width="155" height="44" rx="6" fill="#fff" stroke="#E2E8F0" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="118" y="242" text-anchor="middle" font-size="13" fill="#2D3748" font-weight="500">Custom AI Apps</text>
+
+  <!-- Column label -->
+  <text x="118" y="292" text-anchor="middle" font-size="11" fill="#A0AEC0" font-weight="600">AI TOOLS</text>
+
+  <!-- Orchestrator Agent -->
+  <rect x="265" y="140" width="165" height="74" rx="8" fill="#EBF4FF" stroke="#5A67D8" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="348" y="172" text-anchor="middle" font-size="14" fill="#2D3748" font-weight="600">Orchestrator</text>
+  <text x="348" y="192" text-anchor="middle" font-size="14" fill="#2D3748" font-weight="600">Agent</text>
+
+  <!-- Column label -->
+  <text x="348" y="292" text-anchor="middle" font-size="11" fill="#A0AEC0" font-weight="600">MCP CLIENT</text>
+
+  <!-- MCP Server Gateway -->
+  <rect x="530" y="115" width="165" height="54" rx="8" fill="#E9D8FD" stroke="#805AD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="613" y="138" text-anchor="middle" font-size="14" fill="#2D3748" font-weight="600">MCP Server</text>
+  <text x="613" y="157" text-anchor="middle" font-size="14" fill="#2D3748" font-weight="600">Gateway</text>
+
+  <!-- Sumo Logic APIs -->
+  <rect x="530" y="195" width="165" height="44" rx="8" fill="#C6F6D5" stroke="#38A169" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="613" y="222" text-anchor="middle" font-size="14" fill="#2D3748" font-weight="600">Sumo Logic APIs</text>
+
+  <!-- Dojo AI Agents -->
+  <rect x="530" y="260" width="165" height="44" rx="8" fill="#C6F6D5" stroke="#38A169" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="613" y="287" text-anchor="middle" font-size="14" fill="#2D3748" font-weight="600">Dojo AI Agents</text>
+
+  <!-- Arrows: AI tools → Orchestrator -->
+  <line x1="195" y1="117" x2="260" y2="160" stroke="#5A67D8" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <line x1="195" y1="177" x2="260" y2="177" stroke="#5A67D8" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <line x1="195" y1="237" x2="260" y2="194" stroke="#5A67D8" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow: Orchestrator → MCP Gateway -->
+  <line x1="430" y1="164" x2="525" y2="145" stroke="#5A67D8" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Protocol label on arrow -->
+  <rect x="448" y="137" width="60" height="18" rx="4" fill="#EBF4FF"/>
+  <text x="478" y="150" text-anchor="middle" font-size="10" fill="#5A67D8" font-weight="600">MCP</text>
+
+  <!-- Arrow: MCP Gateway → Sumo APIs -->
+  <line x1="613" y1="169" x2="613" y2="190" stroke="#805AD5" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow: MCP Gateway → Dojo AI -->
+  <line x1="613" y1="239" x2="613" y2="255" stroke="#805AD5" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <!-- Powered by label -->
+  <text x="348" y="232" text-anchor="middle" font-size="10" fill="#A0AEC0" font-style="italic">Powered by AWS AgentCore</text>
+
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-size="16" fill="#2D3748" font-weight="700">MCP Server Architecture</text>
+</svg>
