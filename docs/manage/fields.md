@@ -7,9 +7,9 @@ description: Manage fields in Sumo Logic to control how log data is parsed and o
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. Fields may be referred to as Log Metadata Fields.
+Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. Fields may be referred to as *log metadata fields*.
 
-In addition to defining fields through [Field Extraction Rules](/docs/manage/field-extractions), you can define fields on data sent to Sumo by manually defining them on Sources and Collectors, as well as dynamically through HTTP headers and tags from Amazon EC2.
+In addition to defining fields through [Field Extraction Rules](/docs/manage/field-extractions), you can define fields on data sent to Sumo Logic by manually defining them on sources and collectors, as well as dynamically through HTTP headers and tags from Amazon EC2.
 
 The order of precedence for field assignment from highest to lowest is:
 
@@ -20,13 +20,13 @@ The order of precedence for field assignment from highest to lowest is:
 1. Source
 1. Collector
 
-So, if you have a field defined at the Collector or Source level, and you create a FER against the same source of data with the same field name, the FER will win the field assignment.
+So, if you have a field defined at the collector or source level, and you create a FER against the same source of data with the same field name, the FER will win the field assignment.
 
-Any fields you want assigned to log data need to exist in a Fields schema. Each account has its own Fields schema that is available to manage in the Sumo web interface. When a field is defined and enabled in the Fields schema it is assigned to the appropriate log data as configured. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+Any fields you want assigned to log data need to exist in a fields schema. Each account has its own fields schema that is available to manage in the Sumo Logic web interface. When a field is defined and enabled in the fields schema it is assigned to the appropriate log data as configured. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
-Fields specified in field extraction rules are automatically added and enabled in your Fields schema.
+Fields specified in field extraction rules are automatically added and enabled in your fields schema.
 
-Field management is important to ensure search performance is maintained and you continue to have meaningful fields assigned to your data. You can manage fields defined through any of these methods at any time, to include deleting unneeded fields, see [manage fields](#manage-fields) for details.
+Field management is important to ensure search performance is maintained and you continue to have meaningful fields assigned to your data. You can manage fields defined through any of these methods at any time, to include deleting unneeded fields, see [Manage fields](#manage-fields) for details.
 
 import TerraformLink from '../reuse/terraform-link.md';
 
@@ -38,11 +38,11 @@ You can use Terraform to provide a field with the [`sumologic_field`](https://re
 
 ## About metrics sources, fields, and metadata
 
-Sumo Logic metrics sources also support tagging with fields defined in your Fields schema or other metadata that hasn’t been added to your schema. Here’s how it works:
+Sumo Logic metrics sources also support tagging with fields defined in your fields schema or other metadata that hasn’t been added to your schema. Here’s how it works:
 
-When creating or updating the configuration of an HTTP Source or a Collector that has an HTTP source, you assign it a field on the configuration page. If the field doesn’t exist in the schema, you are prompted whether or not you want to **Automatically activate all fields on save**. If you select that option, the field will be added to the  schema and be applied to the logs collected by the Collector, and to metrics and logs collected by the HTTP Source. If you do not select **Automatically activate all fields on save**, the field will not be saved to your Fields schema, and the field will be applied only to the metrics collected by the HTTP Source.
+When creating or updating the configuration of an HTTP source or a collector that has an HTTP source, you assign it a field on the configuration page. If the field doesn’t exist in the schema, you are prompted whether or not you want to **Automatically activate all fields on save**. If you select that option, the field will be added to the  schema and be applied to the logs collected by the collector, and to metrics and logs collected by the HTTP source. If you do not select **Automatically activate all fields on save**, the field will not be saved to your fields schema, and the field will be applied only to the metrics collected by the HTTP source.
 
-When creating or updating the configuration of a Streaming Metrics Source, a Host Metrics Source, or a Docker Source, you can assign it metadata on the source configuration page. Metadata fields you assign in this fashion to these metrics sources do not need to exist in your Fields schema and will not be added to the schema.
+When creating or updating the configuration of a Streaming Metrics source, a Host Metrics source, or a Docker source, you can assign it metadata on the source configuration page. Metadata fields you assign in this fashion to these metrics sources do not need to exist in your fields schema and will not be added to the schema.
 
 ## Limitations
 
@@ -52,55 +52,55 @@ When creating or updating the configuration of a Streaming Metrics Source, a Hos
     :::
   <img src={useBaseUrl('/img/fields/fields-capacity.png')} alt="fields-capacity" style={{border:'1px solid gray'}} height= "50" width="700"/>
 * It can take up to 10 minutes for fields to start being assigned to your data.
-* A Collector can have up to 10 fields.
-* A Source can have up to 10 fields.
+* A collector can have up to 10 fields.
+* A source can have up to 10 fields.
 * An HTTP request is limited to 30 fields.
 * A field name (key) is limited to a maximum length of 255 characters.
 * A value is limited to a maximum length of 200 characters.
 * Fields cannot be used with [Live Tail](/docs/search/live-tail).
 
-## Collector and Source fields
+## Collector and source fields
 
-Fields can be assigned to a Collector and Source using the **Fields** input table in the Sumo user interface when creating or editing a Collector or Source.
+Fields can be assigned to a collector and source using the **Fields** input table in the Sumo Logic user interface when creating or editing a collector or source.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.  
-1. Create or find and select the Collector or Source you want to assign fields to.
+1. Create or find and select the collector or source you want to assign fields to.
 1. Click the **+Add Field** link in the **Fields** section. Define the fields you want to associate, each field needs a name (key) and value.
 
-    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 1. **Automatically activate all fields on save**. 
 
     If you click **Automatically activate all fields on save**:
 
-    * The field will be saved to your Fields schema.
-    * The field will be applied to logs collected by the Collector or Source.
-    * If you are adding the field to an HTTP Source, or to a Collector that has an HTTP Source, the field will be applied to the metrics collected by the source.
+    * The field will be saved to your fields schema.
+    * The field will be applied to logs collected by the collector or source.
+    * If you are adding the field to an HTTP source, or to a collector that has an HTTP source, the field will be applied to the metrics collected by the source.
 
     If you do not click **Automatically activate all fields on save**:
 
-    * The field will be *not* be saved to your Fields schema
-    * The field will be applied to logs collected by the Collector or Source, but because the field won’t be added to your Fields schema, it will be dropped by Sumo Logic when logs with that field are ingested.
-    * If you are adding the field to an HTTP Source, or to a Collector that has an HTTP Source, the field will be applied to the metrics collected by the source.
+    * The field will be *not* be saved to your fields schema
+    * The field will be applied to logs collected by the collector or source, but because the field won’t be added to your fields schema, it will be dropped by Sumo Logic when logs with that field are ingested.
+    * If you are adding the field to an HTTP source, or to a collector that has an HTTP source, the field will be applied to the metrics collected by the source.
 
 1. Click **Save**.
 
   <img src={useBaseUrl('img/fields/edit-collector-fields-name.png')} alt="Edit collector fields name" style={{border: '1px solid gray'}} width="600" />
 
-In the above example, we have created a new field called `cluster` and set the value to `k8s.dev`. With this configuration, any logs sent to this Collector will now have this key-value pair associated with it.
+In the above example, we have created a new field called `cluster` and set the value to `k8s.dev`. With this configuration, any logs sent to this collector will now have this key-value pair associated with it.
 
 With this association, you can search for `cluster=k8s.dev` to return your logs. <br/><img src={useBaseUrl('img/fields/collector-field-search-results.png')} alt="Collector field search results" style={{border: '1px solid gray'}} width="800" />
 
-### Using Collector API
+### Using collector API
 
-Use the `fields` parameter with the [Collector API](/docs/api/collector-management) to define fields on a Collector or Source.
+Use the `fields` parameter with the [Collector API](/docs/api/collector-management) to define fields on a collector or source.
 
 | Parameter | Type | Required? | Description | Access |
 |:--|:--|:--|:--|:--|
-| fields | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. | Modifiable |
+| fields | JSON Object | No | JSON map of key-value fields (metadata) to apply to the collector or source. | Modifiable |
 
-The following JSON is an example configuration of a Hosted Collector with the fields parameter:
+The following JSON is an example configuration of a Hosted collector with the fields parameter:
 
 ```json
 {
@@ -118,13 +118,13 @@ The following JSON is an example configuration of a Hosted Collector with the fi
 
 ### Using Local Configuration
 
-Installed Collectors can use JSON files to configure their Sources when using [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). Use the `fields` parameter in your JSON configuration to define fields on a Source.
+Installed collectors can use JSON files to configure their sources when using [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). Use the `fields` parameter in your JSON configuration to define fields on a source.
 
 | Parameter | Type | Required? | Description | Access |
 |:--|:--|:--|:--|:--|
-| fields | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. | Modifiable |
+| fields | JSON Object | No | JSON map of key-value fields (metadata) to apply to the collector or source. | Modifiable |
 
-The following JSON is an example configuration of a Local File Source with the fields parameter:
+The following JSON is an example configuration of a Local File source with the fields parameter:
 
 ```json
 {
@@ -153,19 +153,19 @@ The following JSON is an example configuration of a Local File Source with the f
 }
 ```
 
-### HTTP Source fields
+### HTTP source fields
 
-When uploading log data with HTTP Sources you can pass fields in two
+When uploading log data with HTTP sources you can pass fields in two
 ways,
 
 * with the [X-Sumo-Fields HTTP header](#x-sumo-fields-http-header).
-* enabling [Extended HTTP Metadata Collection](#extended-http-metadata-collection) on your Source.
+* enabling [Extended HTTP Metadata Collection](#extended-http-metadata-collection) on your source.
 
 You can use both methods together. If there is a name collision between a given header and a value passed in X-Sumo-Fields, X-Sumo-Fields takes precedence.
 
-Any fields passed with your data need to exist in your Fields schema defined in Sumo. Any fields not defined in Sumo that are passed through a header are dropped. See how to define fields in the [manage fields](#manage-fields) section.
+Any fields passed with your data need to exist in your fields schema defined in Sumo Logic. Any fields not defined in Sumo Logic that are passed through a header are dropped. See how to define fields in the [Manage fields](#manage-fields) section.
 
-See [how to upload logs to an HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
+See [how to upload logs to an HTTP source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 #### X-Sumo-Fields HTTP header
 
@@ -177,11 +177,11 @@ curl -v -X POST -H 'X-Sumo-Fields:environment=dev,cluster=k8s' -T /file.txt <HTT
 
 #### Extended HTTP Metadata Collection
 
-When creating or editing your HTTP Source that will receive log data add the field `_convertHeadersToFields` with a value of `true`. This field needs to be added to your Fields schema to work.
+When creating or editing your HTTP source that will receive log data add the field `_convertHeadersToFields` with a value of `true`. This field needs to be added to your fields schema to work.
 
 <img src={useBaseUrl('img/fields/convertHeadersToFields.png')} alt="Convert headers to fields" style={{border: '1px solid gray'}} width="500" />
 
-With this field set on your Source, headers are processed as metadata fields. For example, a cURL command posting data with custom fields would look like:
+With this field set on your source, headers are processed as metadata fields. For example, a cURL command posting data with custom fields would look like:
 
 ```bash
 curl -v -X POST -H 'environment: dev' -H 'cluster: k8s' -T /file.txt <HTTP endpoint>
@@ -193,9 +193,9 @@ The following headers are reserved and can not be used: X-Sumo-Category, X-Sum
 
 ### Tags from EC2
 
-Create a Sumo Logic [AWS Metadata Source](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source.md) to collect custom tags from EC2 instances running on AWS. An Installed Collector automatically pulls [AWS instance identity documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-identity-documents.html) (IMDSv2) from instances to get their accountID, availabilityZone, instanceId, instanceType, and region.
+Create a Sumo Logic [AWS Metadata source](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source.md) to collect custom tags from EC2 instances running on AWS. An Installed collector automatically pulls [AWS instance identity documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-identity-documents.html) (IMDSv2) from instances to get their accountID, availabilityZone, instanceId, instanceType, and region.
 
-Logs ingested by Installed Collectors on EC2 instances will be tagged as long as the tag, including instance information tags, exists in the organization's Fields schema. See how to define fields in the [manage fields](#manage-fields) section. EC2 resource tags take precedence over EC2 instance information. Only one AWS Metadata Source is required to collect tags from multiple hosts.
+Logs ingested by Installed collectors on EC2 instances will be tagged as long as the tag, including instance information tags, exists in the organization's fields schema. See how to define fields in the [Manage fields](#manage-fields) section. EC2 resource tags take precedence over EC2 instance information. Only one AWS Metadata source is required to collect tags from multiple hosts.
 
 Tags are returned in your search results and can be referenced in queries. For information about assigning tags to EC2 instances, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in AWS help. 
 
@@ -239,8 +239,8 @@ The Fields page displays the following information: 
 * **Field Extraction Rules** shows the number of Field Extraction Rules that reference the field.
 * **Role Based Access** **Control** shows the number of Roles using a search filter that references the field.
 * **Partitions** shows the number of Partitions that reference the field.
-* **Collectors** shows the number of Collectors that reference the field. (Available when viewing custom fields.)
-* **Sources** shows the number of Sources that reference the field. (Available when viewing custom fields.)
+* **Collectors** shows the number of collectors that reference the field. (Available when viewing custom fields.)
+* **Sources** shows the number of sources that reference the field. (Available when viewing custom fields.)
 * **Fields Capacity** (bottom of table) shows how many fields your account is using, out of the total available for use.
 
 On the Fields page you can:
@@ -263,7 +263,7 @@ For the fields listed, select a row to view its details. A details pane appears 
 
 #### Add field
 
-Adding a field will define it in the Fields schema allowing it to be assigned as metadata to your logs.
+Adding a field will define it in the fields schema allowing it to be assigned as metadata to your logs.
 
 1. Click the **+ Add** button on the top right of the table. A panel named **Add Field** appears to the right of the fields table.
 1. Input a field name and click **Save**.
