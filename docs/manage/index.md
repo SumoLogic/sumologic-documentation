@@ -47,6 +47,12 @@ This topic describes features and options that give you administration over acco
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/manage/macro')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Macros</h4></a>
+  <p>Learn how to create and manage macros to accelerate the search process.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/manage/users-roles')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Users and Roles</h4></a>
   <p>Learn how to manage users and roles in Sumo Logic.</p>
   </div>
