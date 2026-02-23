@@ -25,5 +25,5 @@ To build a query with Metrics Browser:
 1. Click the **Search** button <img src={useBaseUrl('img/metrics/search-button.png')} alt="Search button" style={{border: '1px solid gray'}} width="50" />, or press Enter. The results of the query are displayed. You can now work with your query as you normally would, like continuing to add filters or operators and selecting different panel settings.<br/><img src={useBaseUrl('img/metrics/metrics-browser-query-results.png')} alt="Filter filled in" style={{border: '1px solid gray'}} width="800" />
 
 :::warning
-For a single metrics query row, Sumo Logic limits the number of input time series to 1000 for non-aggregate queries. As a result, some selected metrics may be excluded. For more information, see [Too many time series](/docs/metrics/metrics-queries/metric-query-error-messages/#too-many-time-series). 
+For a single metrics query row, Sumo Logic limits the number of input time series for non-aggregate queries. As a result, some selected metrics may be excluded. For more information, see [Too many time series](/docs/metrics/metrics-queries/metric-query-error-messages/#too-many-time-series). 
 :::
