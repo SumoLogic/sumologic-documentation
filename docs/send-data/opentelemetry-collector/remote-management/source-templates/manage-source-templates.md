@@ -174,3 +174,46 @@ You can edit your collector name with remote management by following the steps b
 :::note
 Click **click here** to view the source templates affected by the collector name update.<br/><img src={useBaseUrl('img/send-data/affected-STs.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="500" />
 :::
+
+## Find source templates using filters
+
+Filters help you quickly narrow down source templates based on criteria such as **Type**, **Status**, **Created By**, and **Collector Tags**, so you can efficiently locate the most relevant source templates without manually browsing through the entire catalog, saving time and effort.<br/><img src={useBaseUrl('img/send-data/add-a-filter-source-template.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} />
+
+### Type
+
+Follow the steps below to filter source templates based on their type:
+
+1. On the **Source Template** page, click the **Click to add a filter** bar and then select **Type**.<br/><img src={useBaseUrl('img/send-data/source-template-type-filter.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="400" />
+1. Select one or more source template type from the following options:
+   - APACHE
+   - CustomYaml
+   - Windows
+1. Click **Apply**.
+
+### Status
+
+Follow the steps below to filter source templates based on their status:
+
+1. On the **Source Template** page, click the **Click to add a filter** bar and then select **Status**.<br/><img src={useBaseUrl('img/send-data/source-template-status-filter.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="400" />
+1. Select one or more status from the following options:
+   - Enabled
+   - Disabled
+   - Upgrade Available
+1. Click **Apply**.
+
+### Created By
+
+Follow the steps below to filter source templates based on the template creator:
+
+1. On the **Source Template** page, click the **Click to add a filter** bar and then select **Created By**.<br/><img src={useBaseUrl('img/send-data/source-template-created-by-filter.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="400" />
+1. Select one or more creator.
+1. Click **Apply**.
+
+### Collector Tag
+
+Follow the steps below to filter source templates based on the collector tags:
+
+1. On the **Source Template** page, click the **Click to add a filter** bar.
+1. Under **Collector Tag**, select the required collector tag.<br/><img src={useBaseUrl('img/send-data/source-template-collector-tag-filter.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="400" />
+1. Select the value assigned to the collector tag.<br/><img src={useBaseUrl('img/send-data/source-template-collector-tag-value-filter.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="400" />
+1. Click **Apply**.

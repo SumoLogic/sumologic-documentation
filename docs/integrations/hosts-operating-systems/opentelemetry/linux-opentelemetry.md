@@ -61,108 +61,29 @@ import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prer
 You can skip this section if you have already set up the logs collection through [Linux PCI](/docs/integrations/pci-compliance/opentelemetry/linux-opentelemetry) or [Linux - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-<ConfigAppInstall/>
+### Step 1: Set up remotely managed OpenTelemetry collector
 
-### Step 1: Set up Collector
-
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
-
-<SetupColl/>
-
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-install-ui.png')} alt="linux-terminal" style={{border: '1px solid gray'}} width="900"/>
-
-### Step 2: Configure integration
-
-In this step, you will configure the yaml file required for Linux Collection. The app requires path for system log file, based on your Linux version used.
-
-#### Required Logs for Ubuntu
-
-The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with Ubuntu:
-
-- `auth.log`
-- `syslog`
-- `daemon.log`
-- `dpkg.log`
-- `kern.log`
-
-#### Required Logs for CentOS, Amazon Linux, and Red Hat
-
-The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with CentOS, Amazon Linux, and most Red Hat forks:
-
-- `audit/audit.log`
-- `secure`
-- `Messages`
-- `yum.log`
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
 :::note
-By default, the path for Linux log files required for all the distros are pre-populated in the UI. Not all of the files might be available on your Linux distribution. Optionally, you can remove unwanted file paths from the list. OpenTelemetry collection will still work properly even if not all of the files are present on your system. If in doubt, you can leave the default file paths values.
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
 :::
 
-#### Enable process metric collection (Optional)
+<OtelCollectorInstallation/>
 
-import ProcMetrics from '../../../reuse/apps/opentelemetry/process-metric-collection.md';
+### Step 2: Configure the source template
 
-<ProcMetrics/>
+import LinuxConfigureSourceTemplate from '../../../reuse/send-data/linux-configure-source-template.md';
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Linux-YAML.png')} alt="Linux-YAML" style={{border:'1px solid gray'}} width="800"/>
+<LinuxConfigureSourceTemplate/>
 
-### Step 3: Send logs and metrics to Sumo Logic
+### Step 3: Push the source template to the desired remotely managed collectors
 
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 
-<LogsIntro/>
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Linux"
-  values={[
-    {label: 'Linux', value: 'Linux'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
-
-<TabItem value="Linux">
-
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Artifactory instance that needs to be monitored.
-2. Restart the collector using:
-  ```sh
-  sudo systemctl restart otelcol-sumo
-  ```
-
-</TabItem>
-
-<TabItem value="Chef">
-
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
-
-</TabItem>
-
-</Tabs>
-
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+<DataConfiguration/>
 
 ## Sample log messages
 

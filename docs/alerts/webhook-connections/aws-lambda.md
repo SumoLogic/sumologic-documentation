@@ -70,19 +70,20 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 Configure the webhook connection to trigger the AWS Lambda function.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
-1. On the **Connections** page, click **Add**.
-1. Click **AWS Lambda**.
-1. In the **Create Connection** dialog, enter:
-    * **Name.** Enter a name for the Connection.
-    * **Description.** Optional: Enter a Description for the Connection.
-    * **URL.** Enter the Invoke URL from the previous section.
-    * **Access Key ID** and **Secret Access Key.** Enter AWS Access key and Secret access key for the account with required IAM policy assigned created in previous section.
-    * **Region.** Select your region.
-    * **Service Name.**
+1. On the **Connections** page, click **+ Add**.
+1. For **Connection Type**, select **AWS Lambda** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/aws-lambda-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+1. In the **Connection Settings** dialog, enter:
+    * **Name**. Enter a name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
+    * **URL**. Enter the invoke URL from the previous section.
+    * **Access Key ID** and **Secret Access Key**. Enter AWS access key and secret access key for the account with required IAM policy assigned created in the previous section.
+    * **Region**. Select your region.
+    * **Service Name**:
       * For Lambda Function URL, enter **lambda** as the service name.
       * For API Gateway, enter **execute-api** as the service name.
-    * (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-    * **Alert Payload.** Under Alert Payload, which allows you to customize the alert notification, enter a JSON object accepted by your Lambda function. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
-    * **Recovery Payload.** Under Recovery Payload, which allows you to customize the recovery notification, enter a JSON object accepted by your Lambda function. 
-1. Click **Test Alert or Test Recovery**. If the connection is made to your Lambda function successfully, you will see a `200 OK` response message.
+    * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
+        <img src={useBaseUrl('img/connection-and-integration/create-new-connection-aws-lambda.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+1. **Alert Payload**. Under Alert Payload, which allows you to customize the alert notification, enter a JSON object accepted by your Lambda function. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
+1. **Recovery Payload.** Under Recovery Payload, which allows you to customize the recovery notification, enter a JSON object accepted by your Lambda function. 
+1. Click **Test Alert** or **Test Recovery** to test the connection. If the connection is made to your Lambda function successfully, you will see a `200 OK` response message.
 1. Click **Save**.

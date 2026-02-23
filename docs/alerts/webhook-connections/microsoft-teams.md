@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
 
-## Prerequisite
+## Prerequisites
 
 See how to [create an incoming webhook](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook) in Microsoft's documentation. Make sure that you **copy and save the URL** from Microsoft, you'll need to provide it to Sumo Logic in the **URL** input field when you create the Microsoft Teams Connection.
 
@@ -31,11 +31,15 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 This section demonstrates how to create a webhook connection from Sumo Logic to Microsoft Teams using Microsoft's Workflows.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
-1. Click **+ Add** and choose **Microsoft Teams** as the connection type.<br/><img src={useBaseUrl('img/connection-and-integration/ms-teams-webhook-connection-tile.png')} alt="Microsoft Teams webhook connection tile" style={{border: '1px solid gray'}} width="200" />
-1. Enter a **Name** and give an optional **Description** to the connection.
-1. Paste the **URL** from Microsoft Teams into the **URL** field.
-1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-1. (Optional) Customize the alert and resolution payloads to include just the information you need.
+1. On the **Connections** page, click **+ Add**.
+1. For **Connection Type**, select **Microsoft Teams** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/microsoft-teams-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+1. In the **Connection Settings** dialog, enter:
+    * **Name**. Enter a name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
+    * **URL**. Enter the URL from Microsoft Teams.
+    * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
+      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-microsoft-teams.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+1. (Optional) Customize the **Alert and Recovery Payloads** to include just the information you need.
    One helpful tool to preview changes is [Microsoft's Adaptive Card Designer](https://adaptivecards.io/designer/). The best way to use the tool is to copy the contents of the `"content"` field (including the enclosing curly braces) from the below default payload and work from there.
 1. The following JSON is the default **Alert Payload**, which you can customize as needed.  For details on variables you can use as parameters within your JSON object, see [Configure Webhook payload variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables).
     ```json
@@ -219,9 +223,8 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
       ]
     }
     ```
-1. To test the connection, click **Test Alert or Test Recovery**. If the message is sent to Teams successfully, you'll see a `202` response message. Check Teams to ensure the message appears as expected.
+1. Click **Test Alert** or **Test Recovery** to test the connection. If successful, you'll see a `200 OK` response message.
 1. Click **Save**.
-
 
 ## Create a Microsoft Teams Connection using Connectors
 

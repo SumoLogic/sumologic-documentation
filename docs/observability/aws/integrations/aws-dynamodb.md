@@ -146,6 +146,6 @@ The **AWS DynamoDB - Threat Intel** dashboard provides insights across your infr
 
 Use this dashboard to:
 
-* Identify malicious IPs performing operations on DynamoDB tables across using Sumo Logic Threat Intel.
+* Identify malicious IPs performing operations on DynamoDB tables across using [Sumo Logic threat intelligence](/docs/security/threat-intelligence/).
 
 <img src={useBaseUrl('img/observability/dynamo4.png')} alt="AWS DynamoDB - Threat Intel" style={{border: '1px solid gray'}} width="800" />

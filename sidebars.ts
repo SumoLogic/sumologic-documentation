@@ -101,6 +101,7 @@ module.exports = {
                 'send-data/opentelemetry-collector/install-collector/ansible',
                 'send-data/opentelemetry-collector/install-collector/puppet',
                 'send-data/opentelemetry-collector/install-collector/chef',
+                'send-data/opentelemetry-collector/install-collector/upgrade-opentelemetry-collector',
               ]
             },
             {
@@ -141,6 +142,16 @@ module.exports = {
                       link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/apache/index'},
                       items:[
                         'send-data/opentelemetry-collector/remote-management/source-templates/apache/changelog',
+                      ]
+                    },
+                    {
+                      type: 'category',
+                      label: 'Custom YAML',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/source-templates/customyaml/index'},
+                      items:[
+                        'send-data/opentelemetry-collector/remote-management/source-templates/customyaml/changelog',
                       ]
                     },
                     {
@@ -625,7 +636,22 @@ module.exports = {
                 'send-data/kubernetes/collecting-metrics',
                 'send-data/kubernetes/collecting-events',
                 'send-data/kubernetes/security-best-practices',
-                'send-data/kubernetes/troubleshoot-collection',
+                {
+                  type: 'category',
+                  label: 'Troubleshoot Collection',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'send-data/kubernetes/troubleshoot-collection/index'},
+                  items: [
+                    'send-data/kubernetes/troubleshoot-collection/installation',
+                    'send-data/kubernetes/troubleshoot-collection/namespace-configuration',
+                    'send-data/kubernetes/troubleshoot-collection/logs',
+                    'send-data/kubernetes/troubleshoot-collection/metrics',
+                    'send-data/kubernetes/troubleshoot-collection/events',
+                    'send-data/kubernetes/troubleshoot-collection/spans-traces',
+                    'send-data/kubernetes/troubleshoot-collection/common-issues',
+                  ],
+                },
               ],
             },
             {
@@ -1153,6 +1179,7 @@ module.exports = {
        link: {type: 'doc', id: 'manage/data-archiving/index'},
        items: [
          'manage/data-archiving/archive',
+         'manage/data-archiving/archive-otel',
        ]
      },
      'manage/deletion-requests',
@@ -1399,6 +1426,7 @@ module.exports = {
             'search/get-started-with-search/build-search/search-templates',
             'search/get-started-with-search/build-search/set-time-range',
             'search/get-started-with-search/build-search/use-receipt-time',
+            'search/get-started-with-search/build-search/use-searchable-time',
             'search/get-started-with-search/build-search/use-url-to-run-search',
           ],
         },
@@ -2485,11 +2513,8 @@ integrations: [
         link: {type: 'doc', id: 'integrations/global-intelligence/index'},
         items: [
           'integrations/amazon-aws/global-intelligence-guardduty',
-          'integrations/global-intelligence/apache',
-          'integrations/global-intelligence/apache-tomcat',
           'integrations/amazon-aws/global-intelligence-cloudtrail-devops',
           'integrations/amazon-aws/global-intelligence-cloudtrail-secops',
-          'integrations/global-intelligence/nginx',
           'cse/records-signals-entities-insights/global-intelligence-security-insights',
         ],
       },
@@ -2700,7 +2725,6 @@ integrations: [
           'integrations/sumo-apps/kickstart-data',
           'integrations/sumo-apps/log-analysis-quickstart',
           'integrations/sumo-apps/opentelemetry-collector-insights',
-          'integrations/sumo-apps/security-analytics',
         ],
       },
       {

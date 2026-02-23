@@ -14,8 +14,8 @@ Amazon Kinesis is a platform for streaming data on AWS. It makes it easy to load
 For more information on Amazon Kinesis - Streams, see [here](https://aws.amazon.com/kinesis/).
 
 The app uses Kinesis logs and metrics for:
-* Kinesis CloudWatch Metrics. For details, see [here](http://docs.aws.amazon.com/streams/latest/dev/monitoring-with-cloudwatch.html).
-* Kinesis operations using AWS CloudTrail. For details, see [here](http://docs.aws.amazon.com/streams/latest/dev/logging-using-cloudtrail.html).
+* Kinesis CloudWatch Metrics. For details, see [here](https://docs.aws.amazon.com/streams/latest/dev/monitoring-with-cloudwatch.html).
+* Kinesis operations using AWS CloudTrail. For details, see [here](https://docs.aws.amazon.com/streams/latest/dev/logging-using-cloudtrail.html).
 
 
 ### Sample log messages
@@ -75,7 +75,7 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
     * **Regions**. Select your Amazon Regions for Kinesis.
     * **Namespaces**. Select AWS/Kinesis.
     * **Source** **Category**. Enter a source category. For example, kinesis_metrics.
-    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
+    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
     * **Scan Interval**. Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
 3. Click **Save**.
 
@@ -89,7 +89,7 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
     * **Bucket Name**. Enter the exact name of your Kinesis S3 bucket.
     * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter a source category. For example, kinesis_event.
-    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
+    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
     * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
     * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
     * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.

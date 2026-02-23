@@ -197,7 +197,7 @@ Create a Sumo Logic [AWS Metadata Source](/docs/send-data/hosted-collectors/ama
 
 Logs ingested by Installed Collectors on EC2 instances will be tagged as long as the tag, including instance information tags, exists in the organization's Fields schema. See how to define fields in the [manage fields](#manage-fields) section. EC2 resource tags take precedence over EC2 instance information. Only one AWS Metadata Source is required to collect tags from multiple hosts.
 
-Tags are returned in your search results and can be referenced in queries. For information about assigning tags to EC2 instances, see [Tagging Your Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in AWS help. 
+Tags are returned in your search results and can be referenced in queries. For information about assigning tags to EC2 instances, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in AWS help. 
 
 ### Using fields
 

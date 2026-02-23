@@ -61,7 +61,7 @@ These tools can help you detect previously hidden threats.
 Queries are the core of Sumo Logic's data processing platform. With queries, you can display information in tables, visualize data in dashboards, and create automated alerts. Explore the following features to learn how to leverage queries for security analysis:
 * **Lookup tables**. Create lookup tables to enrich the log data received by Sumo Logic. See [Create a Lookup Table](/docs/search/lookup-tables/create-lookup-table/).
 * **Dashboards**. Dashboards to display a number of useful metrics in easy-to-read form to allow administrators to see system status at a glance. You can quickly set up custom dashboards from scratch. See [Create a Dashboard](/docs/dashboards/create-dashboard-new/).
-* **Alerts**. Automated alerts notify important personnel when there may be a potential threat. Again, Sumo Logic's analytics platform makes it simple. You can learn how to set up an alert in just a few minutes. See [Create a Monitor](/docs/alerts/monitors/create-monitor/).
+* **Alerts**. Automated alerts notify important personnel when there may be a potential threat. Again, Sumo Logic's analytics platform makes it simple. You can learn how to set up an alert in just a few minutes. See [Create a New Monitor](/docs/alerts/monitors/create-monitor/).
 
 ## Additional resources
 

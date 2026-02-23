@@ -68,7 +68,7 @@ The Installed Collector and OpenTelemetry Collector are two popular collectors u
 
 **Installed Collector**. The Installed Collector is a standalone agent that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports a wide range of sources, including Local File, Syslog, Host/Process Metrics, Streaming Metrics, Transaction Tracing, and many more. It also provides support for remote management and configuration, Ingest Budgets, Collector Management API, and CPU targets.
 
-**OpenTelemetry Collector**. The OpenTelemetry Collector is a single-agent management solution that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports sources such as Local File, Syslog, Host/Process Metrics, Streaming Metrics, and Transaction Tracing. However, it does not provide support for remote management or configuration, Ingest Budgets, Collector Management API, or CPU targets.
+**OpenTelemetry Collector**. The OpenTelemetry Collector is a single-agent management solution that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports sources such as Local File, Syslog, Host/Process Metrics, Streaming Metrics, and Transaction Tracing. It provides support for Ingest Budgets, Collector Management API, and remote management. However, it does not provide support for remote upgrades or CPU targets. Instead, upgrades are managed through package managers (yum, apt-get).
 
 :::sumo Micro Lesson
 Watch this micro lesson to learn why OpenTelemetry collector should be your first choice.
@@ -119,9 +119,8 @@ The following table shows the comparison between the Installed Collector and Ope
       </td>
       <td style={{verticalAlign: 'top'}}>
         <ul>
-          <li>Remote management for collection configuration</li>
-          <li>Ingest Budgets</li>
-          <li>Collector Management API (CRUD operations)</li>
+          <li>Remote upgrades</li>
+          <li>CPU targets</li>
         </ul>
       </td>
     </tr>
@@ -147,10 +146,14 @@ The following table shows the comparison between the Installed Collector and Ope
       </td>
       <td style={{verticalAlign: 'top'}}>
         <ul>
-          <li>Unify collection to Single software for logs, metrics and traces </li>
+          <li>Unify collection to Single software for logs, metrics, and traces </li>
           <li>Scale issues with FluentD on Kubernetes Collection</li>
           <li>Custom data filtering and transform capabilities</li>
-          <li>Using Chef, Puppet, Ansible to manage collectors</li>
+          <li>Using Chef, Puppet, or Ansible to manage collectors</li>
+          <li>Remote management for collection configuration</li>
+          <li>Ingest Budgets</li>
+          <li>Collector Management API (CRUD operations)</li>
+          <li>Package manager support (yum, apt-get) for installation and upgrades</li>
         </ul>
       </td>
     </tr>
