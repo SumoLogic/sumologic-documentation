@@ -1,7 +1,7 @@
 ---
 id: mcp-server
 title: Sumo Logic MCP Server (Beta)
-description: Connect your AI tools to Sumo Logic via MCP. Query logs, manage insights, and investigate security incidents from Slack, IDEs, and custom applications.
+description: Connect your AI tools to Sumo Logic via MCP. Query logs, manage insights, and investigate security incidents from Slack, IDEs, and Terminal.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -18,45 +18,22 @@ import TabItem from '@theme/TabItem';
 This feature is in closed beta. For more information, contact your Sumo Logic account executive.
 :::
 
-[Bring your own AI to the Dojo](https://www.sumologic.com/solutions/dojo-ai). Connect your AI tools directly to Sumo Logic to create a unified ecosystem powered by your observability and security data.
+The Sumo Logic MCP Server lets you use Sumo Logic tools for alerts, insights, dashboards, log searches and users in natural language in VSCode and Terminal.
 
-The Sumo Logic MCP Server enables Dojo AI to act as a core capability provider within your broader AI ecosystem using the Model Context Protocol (MCP). Instead of building custom integrations or treating Sumo Logic as a separate data silo, you can connect your own copilots, proprietary models, and third-party AI systems directly to Sumo Logic's capabilities.
-
-Our MCP Server integrates with [Query Agent](/docs/search/mobot/#query-agent) and [Knowledge Agent](/docs/search/mobot/#knowledge-agent), enabling your external AI tools to collaborate with Sumo Logic's native agents in a single conversational workflow.
-
-## How it works
-
-The MCP Server provides a standardized interface between Sumo Logic and your AI tools:
-
-1. Connect your AI tools using the MCP standard.
-1. Submit natural language queries to analyze data using Sumo Logic capabilities.
-1. Execute prompts across environments such as IDEs, collaboration tools, and custom applications.
-1. Leverage Dojo AI agents alongside your own models for unified analysis and response.
-
-Your external AI systems can query logs, manage insights, analyze dashboards, and update records through a single, consistent protocol.
-
-* **Bring the best AI for your stack**. Integrate proprietary models or third-party copilots with Sumo Logic observability and security data.
-* **Accelerate workflows with AI assistance**. Use Sumo Logic telemetry as input for automated and analyst-driven workflows, with humans remaining in control of critical decisions.
-* **Work in your preferred environment**. Execute AI-powered queries from your IDE or collaboration tools without switching contexts.
-* **Future-proof your strategy**. Adopt new AI technologies as they emerge while maintaining Sumo Logic scale, security, and governance.
-
-## Architecture
-
-* Sumo Logic provides the MCP Server gateway (fully managed).
-* You deploy orchestrator agents (your MCP-compatible AI runtimes) that connect to the gateway.
-* The MCP Server integrates with Amazon Bedrock AgentCore for orchestrator agent deployment.
-
-For example, to enable MCP in Slack, you deploy an orchestrator agent on the AWS AgentCore runtime. This agent communicates with Sumo Logic's MCP Server gateway via the standard MCP protocol, which then securely accesses Sumo Logic APIs and Dojo AI agents.
-
-<img src={useBaseUrl('img/platform-services/mcp/mcp-architecture-diagram.svg')} alt="MCP architecture diagram" width="800"/>
+It enables external copilots and proprietary models to securely query logs, investigate SIEM insights, manage alerts and dashboards, and work with existing Dojo AI agents using natural language from IDEs and chat platforms.
 
 ## Prerequisites
 
-* MCP-compatible client application (VS Code, Cursor, Slack, Microsoft Teams, or a custom application).
-* Orchestrator agent deployment platform (such as AWS AgentCore runtime).
+* Sumo Logic access ID and access key.
+* MCP-compatible client application (VSCode or Terminal with Claude Code). These are the only supported clients in closed beta.
+* Sumo Logic MCP Server URL (provided by your Sumo Logic account team).
 * OAuth2 credentials from Sumo Logic (see [Authentication](#authentication) below).
 
 Configuration steps vary by tool. Refer to your specific tool's documentation for MCP setup instructions.
+
+## Architecture
+
+Sumo Logic provides a Remote MCP Server at a specified URL.
 
 ## Authentication
 
@@ -68,43 +45,47 @@ The MCP Server uses the OAuth2 client credentials flow. You'll need to complete 
 
 Service accounts are required to create OAuth clients.
 
-* If you already have a service account, you can use our API to list existing service accounts and retrieve the ID.
-  ```bash
-  curl -u "<accessId>:<accessKey>" \
-    https://api.sumologic.com/api/v1/serviceAccounts
-  ```
-* If you don't have one, follow the steps below to create a new one.
+#### Prerequisites
 
-#### Via UI
+Obtain your access ID and access key, or [follow these steps to create a new pair](/docs/manage/security/access-keys/#create-an-access-key).
 
-1. Obtain your access key and access ID or [follow these steps to create a new pair](/docs/manage/security/access-keys/#create-an-access-key).
-1. Follow the steps under [Service Accounts](/docs/manage/security/service-accounts/) to create a service account.
+#### Check for existing service accounts
 
-#### Via API
+If you already have a service account, you can retrieve its ID:
+```bash
+curl -u "<accessId>:<accessKey>" \
+  https://api.sumologic.com/api/v1/serviceAccounts
+```
 
-1. Obtain your access key and access ID or [follow these steps to create a new pair](/docs/manage/security/access-keys/#create-an-access-key).
-1. Use your access ID and access key to call the API:
-   1. List available roles to find the role ID you want to assign.
-      ```bash
-      curl -u "<accessId>:<accessKey>" \
-        https://api.sumologic.com/api/v1/roles
-      ```
-   1. Create the service account. Replace `api.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). Note the returned "id" for the next step.
-      ```bash
-      curl -u "<accessId>:<accessKey>" \
-        https://api.sumologic.com/api/v1/serviceAccounts \
-        -H 'Content-Type: application/json' \
-        -d '{
-              "name": "MCP Service Account",
-              "email": "<email>@example.com",
-              "roleIds": ["<roleId>"]
-            }'
-      ```
+If you see an existing service account you want to use, note its `id` and skip to [Step 2](#step-2-create-an-oauth-client).
+
+#### Create a new service account (UI)
+
+Follow the steps under [Service Accounts](/docs/manage/security/service-accounts/) to create a service account.
+
+#### Create a new service account (API)
+
+1. List available roles to find the role ID you want to assign.
+    ```bash
+    curl -u "<accessId>:<accessKey>" \
+      https://api.sumologic.com/api/v1/roles
+    ```
+1. Create the service account. Replace `api.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). Note the returned "id" for the next step.
+    ```bash
+    curl -u "<accessId>:<accessKey>" \
+      https://api.sumologic.com/api/v1/serviceAccounts \
+      -H 'Content-Type: application/json' \
+      -d '{
+            "name": "MCP Service Account",
+            "email": "<email>@example.com",
+            "roleIds": ["<roleId>"]
+          }'
+    ```
 
 ### Step 2: Create an OAuth client
 
 :::note
-UI support for this step is not yet available. You'll need to use the API with an [Access Key](/docs/manage/security/access-keys/).
+UI support for this step is not yet available. You'll need to use the API with an [access key](/docs/manage/security/access-keys/).
 :::
 
 Create an OAuth client under your service account. Note the `clientId` and `clientSecret` from the response. These are your OAuth client credentials, which you will use to generate an access token in the next step.
@@ -216,26 +197,43 @@ The following examples illustrate common MCP workflows.
 
 <Tabs
   className="unique-tabs"
-  defaultValue="Slack"
+  defaultValue="VSCode"
   values={[
-    {value: 'Slack', label: 'Slack investigation'},
-    {value: 'IDE', label: 'IDE integration'},
-    {value: 'Custom', label: 'Custom workflows'},
+    {value: 'VSCode', label: 'VSCode investigation'},
+    {value: 'Terminal + Claude Code', label: 'Terminal + Claude Code investigation'},
   ]}>
 
-<TabItem value="Slack">
+<TabItem value="VSCode">
 
-Investigate security incidents without leaving Slack:
+Troubleshoot production issues directly from your development environment:
+
+* **Query logs** using VSCode or your IDE's AI assistant.
+* **Investigate issues without context switching** from your code editor.
+* **Debug with full context** by pulling logs, traces, and metrics into your workflow.
+* **Correlate application behavior** with observability data in real time.
+
+```txt title="VSCode Example 1"
+<!-- tk -->
+```
+
+```txt title="VSCode Example 2"
+<!-- tk -->
+```
+
+</TabItem>
+
+<TabItem value="Terminal + Claude Code">
+
+Investigate security incidents without leaving your Terminal + Claude Code workflow:
 
 * **Retrieve triage details** for Cloud SIEM alerts.
 * **Search related entities** involved in the incident.
 * **Query raw logs** for deeper investigation.
-* **Update insight status** directly from Slack.
+* **Update insight status** directly from Terminal + Claude Code.
 * **Add investigation notes** to maintain audit context.
 * **Get AI-powered incident response guidance** with structured recommendations for investigation, containment, and escalation.
-* **Execute multi-tool actions conversationally** within a single Slack thread.
 
-```txt title="Slack Example 1"
+```txt title="Claude Code Example 1"
 User: @bot what are the triage details? update the status to in progress
 
 Bot: I've retrieved the triage information and updated the status to In Progress.
@@ -245,7 +243,7 @@ Severity: CRITICAL
 ...
 ```
 
-```txt title="Slack Example 2"
+```txt title="Claude Code Example 2"
 User: @bot what is the recommended next step for INSIGHT-5678?
 
 Bot: Based on my analysis of INSIGHT-5678, here's the recommended next step:
@@ -261,44 +259,6 @@ Immediate Recommended Actions:
 
 Next Immediate Step:
 ASSIGN TO SENIOR ANALYST AND BEGIN CREDENTIAL RESET NOW
-```
-
-</TabItem>
-
-<TabItem value="IDE">
-
-Troubleshoot production issues directly from your development environment:
-
-* **Query logs from your IDE** using VS Code, Cursor, or your IDE's AI assistant.
-* **Investigate issues without context switching** from your code editor.
-* **Debug with full context** by pulling logs, traces, and metrics into your workflow.
-* **Correlate application behavior** with observability data in real time.
-
-```txt title="VSCode Example 1"
-<!-- tk -->
-```
-
-```txt title="VSCode Example 2"
-<!-- tk -->
-```
-
-</TabItem>
-
-<TabItem value="Custom">
-
-Build custom AI workflows powered by Sumo Logic:
-
-* **Integrate proprietary models** alongside Sumo Logic agents.
-* **Orchestrate cross-platform workflows** spanning multiple AI tools and data sources.
-* **Combine domain knowledge with observability data** for richer analysis.
-* **Use Sumo Logic as a central capability provider** in your AI ecosystem.
-
-```txt title="? Example 1"
-<!-- tk -->
-```
-
-```txt title="? Example 2"
-<!-- tk -->
 ```
 
 </TabItem>
@@ -448,7 +408,7 @@ Yes. MCP supports multi-tool calls within a single conversational interaction.
 <details>
 <summary>How does this affect my Sumo Logic usage?</summary>
 
-The MCP Server is a separately licensed capability. Contact your account representative for pricing information.
+This capability in closed beta requires an AI Addendum. Contact your account representative for pricing information.
 
 :::note
 For bulk data retrieval or model training, the [Search Job API](/docs/api/search-job) remains the preferred option.
@@ -463,7 +423,9 @@ Agents connected via MCP run in your own environment, not within Sumo Logic infr
 
 </details>
 
-<!--## Troubleshooting
-Common error responses from the MCP Server
-How to handle authentication failures
-Retry strategies-->
+<!--
+## Troubleshooting
+* Common error responses from the MCP Server
+* How to handle authentication failures
+* Retry strategies
+-->
