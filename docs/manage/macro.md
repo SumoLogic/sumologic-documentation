@@ -1,22 +1,20 @@
 ---
 id: macro
-title: macro Operator (Beta)
-sidebar_label: macro
+title: Macros
+sidebar_label: Macros
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
+Macros allow you to reference a predefined set of query language syntax across multiple queries. This enables reuse of commonly used logic, improves consistency, and reduces duplication. Macros can optionally accept arguments. When arguments are provided, the macro evaluates them dynamically and applies the resulting logic within the query.
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+To use macro in your log query, reference it with backticks (`) as shown below:
 
-<!-- Originally added as a beta article with DOCS-545. -->
+```
+`<macro name>`
+```
 
-The `macro` operator provides a means for you to reference set of query language syntax using a macro keyword across multiple queries. Additionally, if required you can include arguments and performs its respective evaluation of the arguments to this operator.
+Macros can also be nested to enable reuse of complex queries:
 
-
-To use the `macro` operator, reference it in your query with backticks (``). Macros can also be nested, enabling complex query reuse:
 * **Nested Macros**. A macro referenced inside another macro.
 * **Inner Macro**. A macro used within the context of another macro query.
 * **Outer Macro**. The macro that references an inner macro.
@@ -25,12 +23,6 @@ To use the `macro` operator, reference it in your query with backticks (``). Mac
 - Only **Administrators** and **Users** with access to **Query Reference** can run queries using macros.
 - Only users with **Manage Macro** capability can create macros.
 :::
-
-## Syntax
-
-```
-`<macro name>`
-```
 
 ## Add a macro
 
@@ -80,7 +72,7 @@ _sourceCategory=error | timeslice 5m
 | count by _timeslice
 ```
 
-Now, by creating a macro for the `timeslice` field, the query using the macro operator can be simplified as follows:
+Now, by creating a macro for the `timeslice` field, the query using this macro can be simplified as follows:
 
 ```
 _sourceCategory=error | `timeslice_macro`
@@ -97,13 +89,13 @@ _sourceCategory=error | timeslice 5m
 
 To create a macro that allows you to enter a value of your choice, we use arguments during the macro creation process. You may choose to include validation conditions within these arguments. If validation conditions are present, make sure to specify the correct data type for `<arg1_value>` to achieve the desired results.
 
-The following is a simplified version of the query that uses the macro operator with arguments. Replace `<arg1_value>` with the value of your choice.
+The following is a simplified version of the query that uses the macro with arguments. Replace `<arg1_value>` with the value of your choice.
 
 ```
 _sourceCategory=error | `timeslice_macro(<arg1_value>)`
 ```
 
-## View and use the macro operator
+## View and use the macro
 
 To view any existing macro, follow the steps below:
 
@@ -115,22 +107,7 @@ To view any existing macro, follow the steps below:
     You can hover over the pasted macro to view and verify the macro name, definition, and usage details before use.
     :::
 
-## Macro recommendations
-
-Macro recommendations are automatically generated based on the most frequently run queries within your organization. By converting these recommended queries into macros, you can streamline repetitive tasks and improve overall efficiency.
-
-:::note
-Users with the **View Macro** capability can only view macro recommendations. To accept (**+ Add Macro**) or reject a recommendation, you must have the **Manage Macro** capability.
-:::
-
-Follow the below steps to view the macro recommendations:
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Data Management**, and then under **Logs**, select **Macros**. You can also click the **Go To...** menu at the top of the screen and select **Macros**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data** > **Logs** > **Macros**. 
-1. Click on the <img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-recommendations-button.png')} alt="macro-recommendations-button"  width="30" /> button to open the **Macro Recommendation** page. This page displays recommendations based on most frequently run queries in your org. <br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-recommendations.png')} alt="macro-recommendations" style={{border: '1px solid gray'}} width="500" />
-    1. Click **Reject** to remove a macro recommendation from the list.
-    1. Click **+ Add Macro** to accept the macro recommendation. You will be redirected to **Create Macro** page, where you can follow the instruction in the [Add a macro](#add-a-macro) section to complete the macro creation process.
-
-## Edit a macro operator
+## Edit a macro
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Data Management**, and then under **Logs**, select **Macros**. You can also click the **Go To...** menu at the top of the screen and select **Macros**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data** > **Logs** > **Macros**. 
 1. On the **Macros** page, click on any of the macros that you want to edit.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/view-macro-logs-page.png')} alt="macro-logs-page" style={{border: '1px solid gray'}} width="800" />
@@ -138,7 +115,7 @@ Follow the below steps to view the macro recommendations:
 1. In the **Edit [macroname] macro** pop-up, click on **Continue**. You can also check where your macros have been used to avoid broken queries by clicking on **check queries that reference this macro**. <br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-edit-pop-up.png')} alt="macro-delete-pop-up" style={{border: '1px solid gray'}} width="400" />
 1. In the macro editing pane, perform the required editing and click **Submit**.
 
-## Delete a macro operator
+## Delete a macro
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Data Management**, and then under **Logs**, select **Macros**. You can also click the **Go To...** menu at the top of the screen and select **Macros**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data** > **Logs** > **Macros**. 
 1. On the **Macros** page, click on any of the macros that you want to delete.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/view-macro-logs-page.png')} alt="macro-logs-page" style={{border: '1px solid gray'}} width="800" />

@@ -959,6 +959,7 @@ module.exports = {
       ]
     },
     'manage/health-events',
+    'manage/macro',
     {
       type: 'category',
       label: 'Users and Roles',
@@ -1504,7 +1505,6 @@ module.exports = {
             'search/search-query-language/search-operators/lookup-classic',
             'search/search-query-language/search-operators/lookupcontains',
             'search/search-query-language/search-operators/luhn',
-            //'search/search-query-language/search-operators/macro',
             'search/search-query-language/search-operators/manually-cast-data-string-number',
             'search/search-query-language/search-operators/matches',
             'search/search-query-language/search-operators/now',
