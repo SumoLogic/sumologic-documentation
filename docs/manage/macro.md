@@ -6,6 +6,7 @@ sidebar_label: Macros
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Macros allow you to reference a predefined set of query language syntax across multiple queries. This enables reuse of commonly used logic, improves consistency, and reduces duplication. Macros can optionally accept arguments. When arguments are provided, the macro evaluates them dynamically and applies the resulting logic within the query.
+
 To use macro in your log query, reference it with backticks (`) as shown below:
 
 ```
