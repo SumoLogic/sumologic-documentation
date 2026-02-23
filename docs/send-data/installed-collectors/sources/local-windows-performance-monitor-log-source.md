@@ -12,12 +12,12 @@ Set up a Local Windows Performance Monitor Log Source to collect performance dat
 Local Windows Performance Monitor Log Sources can only be configured on systems running Windows Server 2012 and later.
 :::
 
-Windows Performance Monitor Sources use the WMI Query Language (WQL) to collect data at a frequency you choose. To learn more, see [Querying with WQL](http://msdn.microsoft.com/en-us/library/windows/desktop/aa392902(v=vs.85).aspx) at
+Windows Performance Monitor Sources use the WMI Query Language (WQL) to collect data at a frequency you choose. To learn more, see <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa392902(v=vs.85).aspx">Querying with WQL</a> at
 MSDN.
 
 To configure a Local Windows Performance Monitor Log Source:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. Find the name of the installed Collector to which you’d like to add a Source. Click **Add** and then choose **Add Source** from the menu. 
 1. Click **Windows Performance**. 
 1. Choose **Local** for the Type of **Windows Performance Source**. 
