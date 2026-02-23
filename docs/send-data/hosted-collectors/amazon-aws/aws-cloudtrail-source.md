@@ -42,7 +42,7 @@ You can use Terraform to provide an AWS CloudTrail source with the [`sumologic_c
 
 ### Configure an AWS CloudTrail Source
 
-1. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html) in your AWS account. This will create an S3 bucket for you if you so choose.
+1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html) in your AWS account. This will create an S3 bucket for you if you so choose.
 1. [Grant Sumo Logic access](grant-access-aws-product.md) to an Amazon S3 bucket created or used above.
 1. Confirm that logs are being delivered to the Amazon S3 bucket.
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
@@ -57,7 +57,7 @@ You can use Terraform to provide an AWS CloudTrail source with the [`sumologic_c
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
 1. **AWS Access**. For AWS Access you have two Access Method options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. Note that Sumo Logic access to AWS (instructions are provided above in step 1)  is a prerequisite for role-based access
     * **Role-based access**. Enter the Role ARN that was provided by AWS after creating the role. <br/><img src={useBaseUrl('img/cse/role-arn.png')} alt="Role ARN" style={{border: '1px solid gray'}} width="600" />
-    * **Key access**. Enter the Access Key ID and Secret Access Key. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
+    * **Key access**. Enter the Access Key ID and Secret Access Key. See [AWS Access Key ID](https://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 1. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
 10. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
 11. **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.

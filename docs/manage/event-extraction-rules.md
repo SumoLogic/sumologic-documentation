@@ -29,6 +29,7 @@ You need the `Manage Event Extraction Rules` [role capability](/docs/manage/user
         :::note
           - To optimize query performance, limit log volume, parse and extract only the necessary fields, and use the `fields` operator in [denylist mode](/docs/search/search-query-language/search-operators/fields/#denylist) to exclude unnecessary fields and return only what’s required for event correlation and visualization.".
           - This log query applies the same validation rules as those used for [Scheduled Views](/docs/manage/scheduled-views).
+          - By default, this log query runs using the **Message Time** timestamp with a 15-minute time range in **Manual** parse mode.
         :::
     1. **Preview**. Click the **Preview Log Messages** button to preview the log messages for the query entered,
     1. **Event Configuration**:

@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Payment Card Industry (PCI) Compliance for Amazon VPC Flow Logs App offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. The PCI Compliance for Amazon VPC Flow Logs App covers PCI requirements 01, 02, and 04.
 
-For more information on Amazon VPC Flow Logs, see [here](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html).
+For more information on Amazon VPC Flow Logs, see [here](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html).
 
 
 ## Collect Logs for the PCI Compliance for Amazon VPC Flow Logs App

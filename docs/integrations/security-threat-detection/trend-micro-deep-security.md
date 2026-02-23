@@ -19,7 +19,7 @@ There are two types of Deep Security events:
 * System Events
 * Security Events
 
-For complete details on configuring your Deep Security system for use with Sumo Logic, see the White Paper, [“Deep Security Integration with Sumo Logic”](http://www.trendmicro.com/aws/wp-content/uploads/2016/06/Deep-Security-Sumo-Logic-Integration-Guide-FV1.62.pdf).
+For complete details on configuring your Deep Security system for use with Sumo Logic, see the White Paper, [“Deep Security Integration with Sumo Logic”](https://www.trendmicro.com/aws/wp-content/uploads/2016/06/Deep-Security-Sumo-Logic-Integration-Guide-FV1.62.pdf).
 
 
 ## Collect on-premises logs for the Trend Micro Deep Security app
@@ -39,7 +39,7 @@ When you configure the Syslog Sources, for Protocol, select UDP.
 
 ### Configure Deep Security System Event Log Forwarding
 
-For complete details on configuring your Deep Security system for use with Sumo Logic, see the White Paper, “[Deep Security Integration with Sumo Logic](http://www.trendmicro.com/aws/wp-content/uploads/2016/06/Deep-Security-Sumo-Logic-Integration-Guide-FV1.62.pdf)”.
+For complete details on configuring your Deep Security system for use with Sumo Logic, see the White Paper, “[Deep Security Integration with Sumo Logic](https://www.trendmicro.com/aws/wp-content/uploads/2016/06/Deep-Security-Sumo-Logic-Integration-Guide-FV1.62.pdf)”.
 
 
 To forward Deep Security system events to Sumo Logic, do the following:

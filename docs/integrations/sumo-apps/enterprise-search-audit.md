@@ -60,8 +60,8 @@ The Enterprise Search Audit - User Insights dashboard provides a high-level view
 
 Use this dashboard to:
 
-* Monitor top users by search count, data scanned and retrieved across the account.
-* View the distribution of query time range.
+* Monitor top users by search count, data scanned, and retrieved across the account.
+* View the distribution of the query time range.
 * Identify top users for each query type in every tier.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-User-Insights.png')} alt="Enterprise Search Audit - User Insights" />
@@ -89,6 +89,38 @@ To identify queries that span large time periods and are likely to be performanc
 * Identify the searches that do not apply any optimization techniques and could benefit from optimization.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Queries-Characteristics-and-Opportunities-to-Improve.png')} alt="Enterprise Search Audit - Queries Characteristics and Opportunities to Improve" />
+
+
+### Enterprise Search Audit - Failures KPIs and breakdowns
+
+The Enterprise Search Audit - Failures KPIs and Breakdowns dashboard highlights search reliability using the Search Audit view. It shows failure rate over time and by query type/user, and surfaces top failing, slow, and high-cost queries and content to speed up troubleshooting.
+
+Use this dashboard to:
+
+* Track failure rate over time, segmented by query type (Interactive Search, Interactive Dashboard, Monitors, Scheduled Searches).
+* Identify users and query types with the highest failure rates and volumes to target outreach and fixes.
+* Surface the slowest queries by p95 (and average) execution time to prioritize performance tuning.
+* Find the most expensive queries by data scanned (GB) and run count to reduce compute cost.
+* Highlight content (content_name) with the most failures to focus remediation on problematic saved searches, dashboards, or monitors.
+* Prioritize remediation by combining failure, latency, and cost signals to address the highest-impact issues first.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Failures-KPIs-And-Breakdowns.png')} alt="Enterprise Search Audit - Failures KPIs and breakdowns" />
+
+## Create monitors for the Sumo Logic Enterprise Search Audit app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Enterprise Search Audit app alerts
+
+| Name  | Description   | Alert Condition | Recover Condition |
+|:--|:--|:--|:---|
+| `Enterprise Search Audit - Data Retrieved Bytes Threshold` | This alert is triggered if the total retrieved data bytes exceed the configured threshold value in GB. | Count > 1       | Count < = 1       |
+| `Enterprise Search Audit - Elevated Search Rate Failure`   | This alert is triggered when search rate failure is higher than the set alert value.           | Count > = 5     | Count < 5         |
+| `Enterprise Search Audit - Query Runtime Too High`         | This alert is triggered when query runtime is higher than the set alert value.                 | Count > = 180   | Count < 180       |
+| `Enterprise Search Audit - Scanned Bytes Threshold`        | This alert is triggered when query scanned bytes goes over the set threshold value.            | Count > 500     | Count < = 500     |
+
 
 ## Upgrade/Downgrade the Enterprise Search Audit app (Optional)
 

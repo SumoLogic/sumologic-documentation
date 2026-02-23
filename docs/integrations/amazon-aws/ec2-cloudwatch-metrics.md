@@ -144,7 +144,7 @@ To configure a CloudTrail Source, perform these steps:
    :::
 5. **Source Category**. Enter `aws/observability/cloud trail/logs`.
 6. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried through the **account** field. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/Fields.png')} alt="Fields" />
-7. **Access Key ID and Secret Access Key**. Enter your [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
+7. **Access Key ID and Secret Access Key**. Enter your [Access Key ID and Secret Access Key](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
 8. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
 9. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
 10. **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
@@ -154,7 +154,7 @@ To configure a CloudTrail Source, perform these steps:
 
 ### Field in Field Schema
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**.
 1. Search for the “**instanceid**” field.
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 

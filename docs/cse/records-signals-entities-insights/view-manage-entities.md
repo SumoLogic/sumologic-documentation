@@ -100,9 +100,9 @@ Below the **Current State** section there may be a **Prior Activity** section. T
 
 ## About the Entity Timeline tab
 
-The **Entity Timeline** tab provides visibility into entity inventory data, entity relationships, records, signals, and insights over a default three-day time period. This view gives information about what else the entity doing before, during, and after signals and insights involving the entity were generated.
+The **Entity Timeline** tab provides visibility into entity inventory data, entity relationships, records, signals, and insights over a default three-day time period. This view gives information about what else the entity was doing before, during, and after signals and insights involving the entity were generated.
 
-The right side of the tab organizes records by record type and vendor, with a record count. For example, the screenshot below indicates that there were two email records from Microsoft Office 365 at 4:41:02 AM. The orange icon to the left of the record summary indicates that the record aggregation contains a signal. The indented item below the record summary is a link to the signal.
+The right side of the tab organizes records by record type and vendor, with a record count. For example, the screenshot below indicates that there were two email records from Microsoft Office 365. The orange icon to the left of the record summary indicates that the record aggregation contains a signal. The indented item below the record summary is a link to the signal.
 
 Similarly, a red icon indicates that the record set contains an insight, and the link below the summary is a link to the insight.
 
@@ -194,7 +194,7 @@ Note that:
 | `sensor_zone` | Identifies the sensor zone for the entity. <br/><br/>Don’t include this column if you are specifying entity sensor zones in the `id` column, as described above. |
 | `suppressed` | When *true*, Cloud SIEM suppresses the entity. |
 | `criticality` | Assigns a criticality to the entity. (An entity’s criticality is a setting that adjusts the severity of signals that fire on the entity, based on a risk factor or other consideration.) You can only specify a criticality that has already been configured in Cloud SIEM. Allowable values:<br/>`default`<br/>`<CustomCriticality>` |
-| `tags` | The tags to assign to the target. This column can’t be present if the file contains a tags_to_add or tags_to_remove column.<br/>Specify a schema key tag as `key:value`.<br/>To assign multiple tags, enclose them in double quotes. For example:<br/>`"<tag>,<tag>,<tag>"` or `"<key>:<value>,<key>:<value>"` |
+| `tags` | The tags to assign to the target. This column can’t be present if the file contains a `tags_to_add` or `tags_to_remove` column.<br/>Specify a schema key tag as `key:value`.<br/>To assign multiple tags, enclose them in double quotes. For example:<br/>`"<tag>,<tag>,<tag>"` or `"<key>:<value>,<key>:<value>"` |
 | `tags_to_add` | The tag to assign to the target entity. This column can’t be present if the file contains a tags column.<br/>Specify a schema key tag as `key:value`. |
 | `tags_to_remove` | The tag to remove from the target entity. This column can’t be present if the file contains a tags column.<br/>Specify a schema key tag as `key:value`. |
 
