@@ -337,6 +337,7 @@ module.exports = {
                 'send-data/installed-collectors/sources/local-windows-event-log-source',
                 'send-data/installed-collectors/sources/windows-event-source-custom-channels',
                 'send-data/installed-collectors/sources/local-windows-performance-monitor-log-source',
+                'send-data/installed-collectors/sources/convert-ic-local-file-source-to-otel-st',
                 'send-data/installed-collectors/sources/streaming-metrics-source',
                 'send-data/installed-collectors/sources/syslog-source',
                 'send-data/installed-collectors/sources/define-boundary-regex-multiline-messages',
@@ -636,7 +637,22 @@ module.exports = {
                 'send-data/kubernetes/collecting-metrics',
                 'send-data/kubernetes/collecting-events',
                 'send-data/kubernetes/security-best-practices',
-                'send-data/kubernetes/troubleshoot-collection',
+                {
+                  type: 'category',
+                  label: 'Troubleshoot Collection',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'send-data/kubernetes/troubleshoot-collection/index'},
+                  items: [
+                    'send-data/kubernetes/troubleshoot-collection/installation',
+                    'send-data/kubernetes/troubleshoot-collection/namespace-configuration',
+                    'send-data/kubernetes/troubleshoot-collection/logs',
+                    'send-data/kubernetes/troubleshoot-collection/metrics',
+                    'send-data/kubernetes/troubleshoot-collection/events',
+                    'send-data/kubernetes/troubleshoot-collection/spans-traces',
+                    'send-data/kubernetes/troubleshoot-collection/common-issues',
+                  ],
+                },
               ],
             },
             {
@@ -944,6 +960,7 @@ module.exports = {
       ]
     },
     'manage/health-events',
+    'manage/macro',
     {
       type: 'category',
       label: 'Users and Roles',
@@ -1489,7 +1506,6 @@ module.exports = {
             'search/search-query-language/search-operators/lookup-classic',
             'search/search-query-language/search-operators/lookupcontains',
             'search/search-query-language/search-operators/luhn',
-            //'search/search-query-language/search-operators/macro',
             'search/search-query-language/search-operators/manually-cast-data-string-number',
             'search/search-query-language/search-operators/matches',
             'search/search-query-language/search-operators/now',

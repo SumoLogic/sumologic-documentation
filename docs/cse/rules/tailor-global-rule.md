@@ -7,7 +7,7 @@ description: You can override selected fields in all Cloud SIEM rule types. Afte
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has instructions for tailoring global (built-in) rules in Cloud SIEM. 
+This topic has instructions for tailoring [global (built-in) rules in Cloud SIEM](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md). 
 
 You can override selected rule fields in all Cloud SIEM rule types: match, threshold, chain and aggregation. After you have overridden a field, you can revert to the original field value.
 

@@ -41,5 +41,5 @@ You can run the following query against the downloaded file in Sumo Logic to det
 After configuring the firewall, Collector, and Sources, confirm that the Collector and Sources are working by verifying that you can receive a given type of message (such as syslog messages) at the specified location.
 
 For more information, see:
-* [AWS documentation: Service endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html)
+* [AWS documentation: Service endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html)
 * [Sumo Logic Privacy Statement](https://www.sumologic.com/privacy-statement/)

@@ -17,7 +17,7 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 
 The Sumo Logic app for Salesforce uses Salesforce Event Log Files. The number of log types you receive depends on the Event Monitoring Edition that you sign up for.  
 
-For details, see the Salesforce [Event Monitoring Quick Start Guide](http://www.salesforcehacker.com/2015/03/event-monitoring-quick-start-guide.html).
+For details, see the Salesforce [Event Monitoring Quick Start Guide](https://www.salesforcehacker.com/2015/03/event-monitoring-quick-start-guide.html).
 
 For the complete list of available events and fields, see [Event Monitoring Event Types](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_eventlogfile_supportedeventtypes.htm).
 

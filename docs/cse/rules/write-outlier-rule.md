@@ -97,7 +97,7 @@ The screenshot below shows an outlier rule in the Cloud SIEM rules editor. For a
 
 ### Configure "If Triggered" settings
 
-The settings in the **If Triggered** section are divided into two subsections, one for providing Baseline configuration, and the other for outlier model configuration.
+The settings in the **If Triggered** section are divided into two subsections, one for providing baseline configuration, and the other for outlier model configuration.
 
 **Baseline Configuration**
 1. **For the records matching the expression**. Enter an expression that matches the records that you want to rule to apply to.
