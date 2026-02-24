@@ -176,7 +176,11 @@ This action is dangerous and could result in data loss.
 :::
 
 :::sumo Best Practice
-Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
+Highlight Sumo-specific info, best practices, links, and other information from Sumo specialists. You can change the title based on the content.
+:::
+
+:::training
+Links to training courses, certification info, and micro lessons.
 :::
 
 ```
@@ -205,7 +209,11 @@ This action is dangerous and could result in data loss.
 :::
 
 :::sumo Best Practice
-Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
+Highlight Sumo-specific info, best practices, links, and other information from Sumo specialists. You can change the title based on the content.
+:::
+
+:::training
+Links to training courses, certification info, and micro lessons.
 :::
 
 </TabItem>
