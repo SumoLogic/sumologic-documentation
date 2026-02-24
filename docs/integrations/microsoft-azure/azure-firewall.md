@@ -30,7 +30,7 @@ For Azure Firewall, you can collect the following logs and metrics:
 * **Azure Firewall Network Rule Aggregation (Policy Analytics)**. Contains aggregated application rule log data for Policy Analytics.
 * **Azure Firewall DNS Flow Trace Log**. Contains all the DNS proxy data between the client, firewall, and DNS server.
 * **Azure Firewall DNS query**. Contains all DNS proxy events log data.
-* **Azure Firewall Fat Flow Log**. This query returns the top flows across Azure Firewall instances. Log contains flow information, date transmission rate (in megabits per second units), and the time period when the flows were recorded. Please follow the documentation to enable Top flow logging and details on how it is recorded.
+* **Azure Firewall Fat Flow Log**. This query returns the top flows across Azure Firewall instances. Log contains flow information, date transmission rate (in megabits per second units), and the time period when the flows were recorded. Follow the documentation to enable Top Flow logging and details on how it is recorded.
 * **Azure Firewall Flow Trace Log**. Flow logs across Azure Firewall instances. Log contains flow information, flags, and the time period when the flows were recorded. Please follow the documentation to enable flow trace logging and details on how it is recorded.
 * **Azure Firewall FQDN Resolution Failure**. Contains all internal Firewall FQDN resolution requests that resulted in failure.
 * **Azure Firewall IDPS Signature**. Contains all data plane packets that were matched with one or more IDPS signatures.
