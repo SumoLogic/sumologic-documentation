@@ -337,6 +337,7 @@ module.exports = {
                 'send-data/installed-collectors/sources/local-windows-event-log-source',
                 'send-data/installed-collectors/sources/windows-event-source-custom-channels',
                 'send-data/installed-collectors/sources/local-windows-performance-monitor-log-source',
+                'send-data/installed-collectors/sources/convert-ic-local-file-source-to-otel-st',
                 'send-data/installed-collectors/sources/streaming-metrics-source',
                 'send-data/installed-collectors/sources/syslog-source',
                 'send-data/installed-collectors/sources/define-boundary-regex-multiline-messages',
@@ -959,6 +960,7 @@ module.exports = {
       ]
     },
     'manage/health-events',
+    'manage/macro',
     {
       type: 'category',
       label: 'Users and Roles',
@@ -1504,7 +1506,6 @@ module.exports = {
             'search/search-query-language/search-operators/lookup-classic',
             'search/search-query-language/search-operators/lookupcontains',
             'search/search-query-language/search-operators/luhn',
-            //'search/search-query-language/search-operators/macro',
             'search/search-query-language/search-operators/manually-cast-data-string-number',
             'search/search-query-language/search-operators/matches',
             'search/search-query-language/search-operators/now',
