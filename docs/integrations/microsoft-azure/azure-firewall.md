@@ -1,7 +1,6 @@
 ---
 id: azure-firewall
-title: Azure Firewall (Beta)
-sidebar_label: Azure Firewall (Beta)
+title: Azure Firewall
 keywords: 
  - azure firewall
  - firewall in azure
