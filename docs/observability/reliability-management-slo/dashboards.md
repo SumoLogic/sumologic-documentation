@@ -55,7 +55,7 @@ Each SLO dashboard contains the following information:<br/><img src={useBaseUrl(
 
 #### Time ranges
 
-To modify the time range, select and drag across dates to zoom in further. This can be useful if you want to zoom in for granular details, especially for charts with larger compliance periods.<br/><img src={useBaseUrl('img/observability/2022-08-02_14-29-19.gif')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="800" />
+To modify the time range, select and drag across dates to zoom in further. This can be useful if you want to zoom in for granular details, especially for charts with larger compliance periods.
 
 #### Compliance period
 
@@ -64,7 +64,7 @@ You can also filter by compliance period to view your past activity and plan ahe
 #### Open in log search
 
 You can launch a Log Search session directly from an SLO dashboard panel, giving you the ability to drill down into further granular details.
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > SLOs**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > SLOs**.
 1. Double-click on any SLO line item.
 1. Hover over the panel > Click the kebab icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" style={{border: '1px solid gray'}} width="150"/>
 
