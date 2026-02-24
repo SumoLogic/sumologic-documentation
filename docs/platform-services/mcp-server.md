@@ -1,7 +1,7 @@
 ---
 id: mcp-server
 title: Sumo Logic MCP Server (Beta)
-description: Connect your AI tools to Sumo Logic via MCP. Query logs, manage insights, and investigate security incidents from Slack, IDEs, and Terminal.
+description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents from VS Code or Terminal with Claude Code.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -18,14 +18,14 @@ import TabItem from '@theme/TabItem';
 This feature is in closed beta. For more information, contact your Sumo Logic account executive.
 :::
 
-The Sumo Logic MCP Server lets you use Sumo Logic tools for alerts, insights, dashboards, log searches and users in natural language in VSCode and Terminal.
+The Sumo Logic MCP Server lets you use Sumo Logic tools for alerts, insights, dashboards, log searches and users in natural language in VS Code and Terminal.
 
 It enables external copilots and proprietary models to securely query logs, investigate SIEM insights, manage alerts and dashboards, and work with existing Dojo AI agents using natural language from IDEs and chat platforms.
 
 ## Prerequisites
 
 * Sumo Logic access ID and access key.
-* MCP-compatible client application (VSCode or Terminal with Claude Code). These are the only supported clients in closed beta.
+* MCP-compatible client application (VS Code or Terminal with Claude Code). These are the only supported clients in closed beta.
 * Sumo Logic MCP Server URL (provided by your Sumo Logic account team).
 * OAuth2 credentials from Sumo Logic (see [Authentication](#authentication) below).
 
@@ -197,26 +197,26 @@ The following examples illustrate common MCP workflows.
 
 <Tabs
   className="unique-tabs"
-  defaultValue="VSCode"
+  defaultValue="VS Code"
   values={[
-    {value: 'VSCode', label: 'VSCode investigation'},
+    {value: 'VS Code', label: 'VS Code investigation'},
     {value: 'Terminal + Claude Code', label: 'Terminal + Claude Code investigation'},
   ]}>
 
-<TabItem value="VSCode">
+<TabItem value="VS Code">
 
 Troubleshoot production issues directly from your development environment:
 
-* **Query logs** using VSCode or your IDE's AI assistant.
+* **Query logs** using VS Code or your IDE's AI assistant.
 * **Investigate issues without context switching** from your code editor.
 * **Debug with full context** by pulling logs, traces, and metrics into your workflow.
 * **Correlate application behavior** with observability data in real time.
 
-```txt title="VSCode Example 1"
+```txt title="VS Code Example 1"
 <!-- tk -->
 ```
 
-```txt title="VSCode Example 2"
+```txt title="VS Code Example 2"
 <!-- tk -->
 ```
 
