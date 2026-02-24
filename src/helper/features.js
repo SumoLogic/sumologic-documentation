@@ -120,7 +120,7 @@ export const features3 = [
       message: 'Threat Intelligence',
       description: 'Title for Threat Intelligence',
     }),
-    imageUrl: 'img/icons/security/cloud-siem.png', // TODO: confirm icon path
+    imageUrl: 'img/icons/security/cloud-siem.png',
     description: (<Translate
       id='landing.feature.threat-intel.desc'
       description='Threat Intelligence description'>
