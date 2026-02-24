@@ -2987,7 +2987,6 @@
   "/cid/1124": "/docs/integrations/saas-cloud/zero-networks-segment/",
   "/cid/1125": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-trap-source",
   "/cid/1128": "/docs/send-data/opentelemetry-collector/install-collector/upgrade-opentelemetry-collector",
-  "/cid/1140": "/docs/integrations/microsoft-azure/azure-firewall",
   "/cid/1138": "/docs/send-data/installed-collectors/sources/convert-ic-local-file-source-to-otel-st",
   "/Cloud_SIEM_Enterprise": "/docs/cse",
   "/Cloud_SIEM_Enterprise/Administration": "/docs/cse/administration",
