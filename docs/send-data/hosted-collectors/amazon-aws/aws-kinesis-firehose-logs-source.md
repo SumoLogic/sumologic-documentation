@@ -35,13 +35,13 @@ When you create an AWS Kinesis Firehose for Logs Source, you add it to a Hosted
 
 To create an AWS Kinesis Firehose for Logs Source:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **AWS Kinesis Firehose for Logs Source**. <br/><img src={useBaseUrl('img/send-data/AWS-Kinesis-Firehost-for-Logs-Icon.png')} alt="AWS Kinesis Firehose for Logs Source icon" style={{border: '1px solid gray'}} width="100" />
 
 1. Enter a **Name** for the Source. A description is optional.<br/><img src={useBaseUrl('img/send-data/AWS-Kinesis-logs-source.png')} alt="AWS Kinesis logs source options" style={{border: '1px solid gray'}} width="600" />
 
-1. (Optional) The **Enable S3 Replay** option allows you to collect any logs that were deemed undelivered by Kinesis.<br/><img src={useBaseUrl('img//send-data/s3-replay-enabled-on-Kinesis-Logs-Source.png')} alt="S3 replay enabled in Kinesis Logs Source options" style={{border: '1px solid gray'}} width="500" />  
+1. (Optional) The **Enable S3 Replay** option allows you to collect any logs that were deemed undelivered by Kinesis.<br/><img src={useBaseUrl('img/send-data/s3-replay-enabled-on-Kinesis-Logs-Source.png')} alt="S3 replay enabled in Kinesis Logs Source options" style={{border: '1px solid gray'}} width="500" />  
 
     Kinesis puts undelivered logs into a backup directory within your S3 bucket with the path `http-endpoint-failed/yyyy/MM/dd/00/` (`00` indicates UTC time zone). This is useful when you need to meet compliance requirements.
 

@@ -225,7 +225,7 @@ and the associated hosted collector can be deleted in the Sumo Logic UI.
 
 ## Troubleshooting Installation
 
-See the [Troubleshooting document](/docs/send-data/kubernetes/troubleshoot-collection#troubleshooting-installation).
+See the [Troubleshooting document](/docs/send-data/kubernetes/troubleshoot-collection/installation).
 
 ## Installing in OpenShift platform
 

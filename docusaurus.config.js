@@ -33,6 +33,40 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML: `
+        (function (w, s, d, r, e, n) {
+          (w[s] = w[s] || {
+            readyListeners: [],
+            onReady: function (e) {
+              w[s].readyListeners.push(e);
+            },
+          }),
+          ((e = d.createElement('script')).async = 1),
+          (e.src = r),
+          (n = d.getElementsByTagName('script')[0]).parentNode.insertBefore(e, n);
+        })(
+          window,
+          'sumoLogicOpenTelemetryRum',
+          document,
+          'https://rum.sumologic.com/sumologic-rum.js'
+        );
+        window.sumoLogicOpenTelemetryRum.onReady(function () {
+          window.sumoLogicOpenTelemetryRum.initialize({
+            collectionSourceUrl: 'https://rum-collectors.us1.sumologic.com/receiver/v1/rum/ZaVnC4dhaV2cNyrqUT5YDFvpALqf3WjXkE5oomYkp_Kpvd8PbxGEQsMpkGX5YtUj1YHkvAO6UU1vGUXSx2Nh2EIEps-Vd8TrD340CoUjZuAxRBuKzg7E_w==',
+            serviceName: 'docs-site-live',
+            deploymentEnvironment: 'live',
+            applicationName: 'docs-site',
+            samplingProbability: 1,
+            collectErrors: true,
+          });
+        });
+      `,
+    },
+  ],
   clientModules: [
     require.resolve('./src/client-modules/trackTrialClick.js'),
   ],

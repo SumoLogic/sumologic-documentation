@@ -39,10 +39,13 @@ To modify general settings click the **General** icon in the menu bar.<br/><im
 
 To save your settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC_Update_Dashboard.png" width="300"/>
 
-### Logs Settings
+### Logs settings
 
-You have the option to use the [receipt time](../../search/get-started-with-search/build-search/use-receipt-time.md)or the default message time.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/dashboard-new-time-settings.png')} style={{border: '1px solid gray'}} alt="dashboard new time settings" width="300"/>
-<br/>You can toggle [Auto Parse Mode](../../search/get-started-with-search/build-search/dynamic-parsing.md).<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/dashboard-new-auto-parse.png')} style={{border: '1px solid gray'}} alt="dashboard new auto parse" width="300"/>
+You have the option to use the [receipt time](../../search/get-started-with-search/build-search/use-receipt-time.md), [searchable time](../../search/get-started-with-search/build-search/use-searchable-time.md), or the default message time.
+
+You can select parsing mode between manual and [Auto Parse Mode](../../search/get-started-with-search/build-search/dynamic-parsing.md).
+
+<img src={useBaseUrl('/img/dashboards/panels/modify-chart/dashboard-new-time-settings.png')} style={{border: '1px solid gray'}} alt="dashboard new time settings" width="400"/>
 
 ### Link dashboards
 

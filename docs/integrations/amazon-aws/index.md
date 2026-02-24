@@ -397,7 +397,7 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 <div className="box smallbox card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/aws-codebuild-logo.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href={useBaseUrl('docs/integrations/amazon-aws/aws-codebuildg')}>AWS CodeBuild</a></h4>
+  <h4><a href={useBaseUrl('docs/integrations/amazon-aws/aws-codebuild')}>AWS CodeBuild</a></h4>
   <p>Learn about the collection process for the AWS CodeBuild service.</p>
   </div>
 </div>

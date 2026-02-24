@@ -42,26 +42,9 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for Mac Collection. Below are the inputs required for configuration:
+import MacConfigureSourceTemplate from '../../../../../reuse/send-data/mac-configure-source-template.md';
 
-- **Name**. Name of the source template.
-- **Description**. Description for the source template.
-
-#### Logs collection
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, sumo tags `_sourceCategory` with the value otel/mac.
-- **Logs**. The following fields are pre-populated with default paths for common log files that are used in different Mac distributions. Not all paths might be relevant for your operating system. Modify the list of files as required or leave the default values.
-
-#### Metrics collection
-- **Metrics**. Select the metric scrappers you want to enable. By default, metric collection for memory, load, file system, network and paging are enabled and process metric collection is disabled.
-
-##### Enable process metric collection (Optional)
-
-import ProcMetrics from '../../../../../reuse/apps/opentelemetry/process-metric-collection.md';
-
-<ProcMetrics/>
-
-- **Scan Interval**. The frequency at which the source is scanned.
-- **Processing Rules**. You can add processing rules for logs/metrics collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
+<MacConfigureSourceTemplate/>
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
