@@ -196,7 +196,7 @@ Sumo Logic supports collecting metrics using two source types:
 * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
-The namespaces for the **Amazon SageMaker** Service is
+The namespaces for the **Amazon SageMaker** Service are:
 - `AWS/Sagemaker`
 - `/aws/sagemaker/endpoints`
 - `aws/sagemaker/modelbuildingpipeline`
