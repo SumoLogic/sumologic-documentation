@@ -17,6 +17,7 @@ Sumo Logic security solutions support the entire spectrum of security use cases,
 
 Following are features available with our security solutions. If you have any questions on availability or a free trial, you can reach out to your Sumo Logic account team.
 
+
 | Feature | Logs for Security | Cloud SIEM | Cloud SOAR |
 | :-- | :-- | :-- | :-- |
 | Log collection | &#10003; | &#10003; | &#10003; |
