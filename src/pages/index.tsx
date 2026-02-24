@@ -237,8 +237,12 @@ export const Home = () => {
                 value={tab}
               >
                 {[
-                  'Observability | Application and Infrastructure Monitoring',
-                  'Security | Alert Triage, Threat Detection, and Incident Response',
+                  'Log Search',
+                  'AI and Automation',
+                  'Security',
+                  'Observability',
+                  'Alerts, Dashboards, and Apps',
+                  'APM and Tracing',
                 ].map((label, index) => (
                   <Tab
                     key={label}
