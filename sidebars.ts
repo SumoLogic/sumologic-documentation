@@ -337,6 +337,7 @@ module.exports = {
                 'send-data/installed-collectors/sources/local-windows-event-log-source',
                 'send-data/installed-collectors/sources/windows-event-source-custom-channels',
                 'send-data/installed-collectors/sources/local-windows-performance-monitor-log-source',
+                'send-data/installed-collectors/sources/convert-ic-local-file-source-to-otel-st',
                 'send-data/installed-collectors/sources/streaming-metrics-source',
                 'send-data/installed-collectors/sources/syslog-source',
                 'send-data/installed-collectors/sources/define-boundary-regex-multiline-messages',
