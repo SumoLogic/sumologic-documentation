@@ -4,7 +4,13 @@ title: fields Search Operator
 sidebar_label: fields
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `fields` operator allows you to specify which fields to display and their order in the results of a query. Use a fields operator to reduce the "clutter" of a search output that contains fields that aren't completely relevant to your query.
+
+:::info
+Using the `fields` operator includes both the specified fields and the default fields (from built-in sources and FERs). However, when `fields =` is used, only the specified fields are included in the query results. Make sure to use the `_messagetime` and `_messagecount` for `fields =` operator to function.
+:::
 
 There are two fields operator modes:
 
@@ -30,7 +36,7 @@ _sourceCategory=Apache/Access
 
 The search results would look like this:  
 
-![A screenshot of a Sumo Logic table showing log entries with columns for time, method, status_code, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM.SSS -0700'. The log messages include HTTP request details. The host is 52.5.127.200, and the category is Apache/Access. The red box highlights the columns 'method' and 'status_code' which display the HTTP methods (e.g., GET) and their corresponding status codes (e.g., 200, 304).](/img/search/searchquerylanguage/search-operators/Fields.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Fields.png')} alt="Allowlist mode" style={{border: '1px solid gray'}} width="800" />
 
 Allowlist queries allow all system internal fields (fields prefixed with an underscore "_") to pass.
 
@@ -72,7 +78,7 @@ _sourceCategory=Apache/Access
 
 The search results would look like this:
 
-![A screenshot of a Sumo Logic table showing log entries with columns for time, method, status_code, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM.SSS -0700'. The log messages include HTTP request details. The host is 52.5.127.200, and the category is Apache/Access. The red box highlights the column headers for 'Time', 'method', 'status_code', and 'Message'.](/img/search/searchquerylanguage/search-operators/Fields_nonaggr.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Fields_nonaggr.png')} alt="Non-aggregate query results" style={{border: '1px solid gray'}} width="800" />
 
 While the same query with an added *count by* statement to make it an aggregate query:
 
@@ -86,7 +92,7 @@ _sourceCategory=Apache/Access
 
 This would provide the following results:
 
-![A screenshot of a Sumo Logic table showing HTTP status codes and methods. The table has columns for status_code and method. The entries show various status codes (304, 503, 403, 200, 404, 500, 302, 401) all associated with the GET method.](/img/reuse/query-search/fields_operator_aggregate.png)
+<img src={useBaseUrl('img/reuse/query-search/fields_operator_aggregate.png')} alt="Aggregate query results" style={{border: '1px solid gray'}} width="200" />
 
 ## Use a Field Name that Contains Spaces or Special Characters
 

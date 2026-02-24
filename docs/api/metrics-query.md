@@ -58,4 +58,4 @@ A metric query consists of a metric, one or more filters, and optionally, one or
 
 <ApiRoles/>
 
-* Metrics (all role capabilities)
+* [Metrics](/docs/manage/users-roles/roles/role-capabilities/#metrics) (all role capabilities)

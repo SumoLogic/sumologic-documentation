@@ -177,25 +177,47 @@ When using the Microsoft EWS Daemon action within an automation rule, note that 
 ## Configure Microsoft EWS Daemon in Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 <IntegrationsAuth/>
 
-Use the information you set up in [Microsoft EWS configuration](#microsoft-ews-configuration) above:
+:::note
+Use the information you set up in [Microsoft EWS configuration](#microsoft-ews-configuration) above.
+:::
+
+* <IntegrationLabel/>
 * **Host**. Enter the host name of the EWS instance, for example, `outlook.office365.com`.
+
 * **Authentication Method**. Select the [EWS authentication](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/authentication-and-ews-in-exchange) method:
     * **Basic**
     * **NTLM**
     * **OAuth 2.0**
+
 * **Username**. Enter the Microsoft EWS username.
+
 * **Password**. Enter the Microsoft EWS password.
+
 * **Primary SMTP Address**. Enter the [primary SMTP address](https://learn.microsoft.com/en-us/exchange/client-developer/web-service-reference/primarysmtpaddress) for the user.
+
 * **Tenant ID**. Enter the  [tenant ID](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) for authentication.
+
 * **Client ID**. Enter the client ID for authentication.
+
 * **Client Secret**. Enter the client secret for authentication.
-* **Cloud SOAR API URL**. Enter the URL for your Cloud SOAR API, for example, `https://api.sumologic.com`. Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
-* **Access ID**. Enter the access ID from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
-* **Access Key**. Enter the access key associated with the Sumo Logic access ID entered above.
-* **Automation Engine**. Select whether to use [Cloud or Bridge execution](/docs/platform-services/automation-service/automation-service-integrations/#cloud-or-bridge-execution).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-ews-daemon-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft EWS Daemon configuration" width="400"/>
 

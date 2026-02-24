@@ -5,6 +5,8 @@ sidebar_label: Amazon ECS
 description: With Sumo Logic dashboards for Amazon ECS, you can monitor capacity and resource utilization of ECS components as well as quickly identify changes made to your clusters to help with troubleshooting.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Amazon Elastic Container Service is a scalable, container management service that is used to manage containers in a cluster. With dashboards for Amazon ECS, you can monitor capacity and resource utilization of ECS components as well as quickly identify changes made to your clusters to help with troubleshooting.
 
 ## Log and metrics types
@@ -314,9 +316,9 @@ Use this dashboard to: 
 
 *  Quickly determine resource utilization across all your ECS clusters and services so as to provision more capacity or optimize on cost. 
 * Identify individual clusters or services that are close to available capacity or a
-* Get an at-a-glance-view of how much CPU, memory and GPU resources are reserved by running tasks in your EC2-ECS cluster.  
+* Get an at-a-glance-view of how much CPU, memory and GPU resources are reserved by running tasks in your EC2-ECS cluster.
 
-![img](/img/observability/ecs1.jpeg)
+<img src={useBaseUrl('img/observability/ecs1.jpeg')} alt="Amazon ECS - Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Audit Events
 
@@ -328,7 +330,7 @@ Use this dashboard to:
 * Monitor locations from which changes are being made locations. 
 * Examine details and trends for created, updated and deleted ECS resources.
 
-![img](/img/observability/ecs2.jpeg)
+<img src={useBaseUrl('img/observability/ecs2.jpeg')} alt="Amazon ECS - Audit Events dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Resource Utilization
 
@@ -341,7 +343,7 @@ Use this dashboard to:
 
 * To determine if CPU or memory resources need to be scaled up or down for a given cluster or service based on utilization trends.
 
-![img](/img/observability/ecs3.jpeg)
+<img src={useBaseUrl('img/observability/ecs3.jpeg')} alt="Amazon ECS - Resource Utilization dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Resource Reservation
 
@@ -354,4 +356,4 @@ Use this dashboard to:
 
 * To determine if CPU, GPU, or memory resources need to be scaled up or down monitor trends around CPU and memory reservation units for a given cluster.
 
-![img](/img/observability/ecs4.jpeg)
+<img src={useBaseUrl('img/observability/ecs4.jpeg')} alt="Amazon ECS - Resource Reservation dashboard" style={{border: '1px solid gray'}} width="800" />

@@ -33,6 +33,6 @@ The [Access Keys](/docs/manage/security/access-keys) Management API allows you t
 
 <ApiRoles/>
 
-* Security
+* [Security](/docs/manage/users-roles/roles/role-capabilities/#security)
     * Create Access Keys
     * Manage Access Keys

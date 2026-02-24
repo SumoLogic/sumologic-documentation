@@ -4,12 +4,13 @@ title: first, last Grouping Operators
 sidebar_label: first, last
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `first` and `last` operators return the first or last result relative to the sort order. By default, searches return results in descending chronological order (most recent descending to oldest).
 
 For example, the following image shows a few results in the default sort order. The `#` column starts at one, and the `Time` values start with the most recent.
 
-![new_to_old_default_result_order.png](/img/search/searchquerylanguage/group-aggregate-operators/new_to_old_default_result_order.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/group-aggregate-operators/new_to_old_default_result_order.png')} alt="New to old default result order" style={{border: '1px solid gray'}} width="200" />
 
 * The `first` result is indicated with the `#` value of 1. This `first` result has the most recent `Time`.
 * The `last` result is indicated with the `#` value of 5. This `last` result has the oldest `Time`.

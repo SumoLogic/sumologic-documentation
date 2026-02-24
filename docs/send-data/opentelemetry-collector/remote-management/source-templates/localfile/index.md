@@ -55,9 +55,13 @@ In this step, you will configure the yaml required for Local File collection. Be
 - **Collection should begin from**. Defines where will the collection of the logs start from. Possible values are "End of File" and "Beginning of File".
 - **Detect messages spanning multiple lines**. You can enable this option when dealing with logs which span over multiple lines. On enabling this option you will need to specify **Boundary regex location** where you can specify if the expression defines end or start of the log line and **Expression to match message boundary** where you will define the expression.
 
-import OtelLogAdvanceOption from '../../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
+:::note
+Property `fingerprint_size` (the number of bytes with which to identify a file) is set to 2KB. Details about this property can be found [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver#configuration).
+:::
 
-<OtelLogAdvanceOption/>
+import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
+
+<TimestampParsing/>
 
 **Processing Rules**. You can add processing rules for logs collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 

@@ -94,7 +94,7 @@ Creating a new topic also creates a new S3 bucket.
 2. On the page labeled "AWS Config is requesting permissions to read your resources’ configuration," click **Allow**. This authorizes AWS Config to read the configuration of your resources for the purpose of delivery via Amazon SNS.
 3. **Optional:** Expand the **View Details** section to configure the IAM Role and Policy that AWS Config will use.
 
-For more information on SNS, see [http://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html](http://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html).
+For more information on SNS, see [http://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html](https://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html).
 
 
 ### Configure a Collector
@@ -139,7 +139,7 @@ Parse the message for the JSON field **SubscribeURL** and copy it to your clipbo
 2. Under **Amazon SNS**, under **Actions**, select **Confirm a subscription**.
 3. Paste the SubscribeURL into the **Subscription confirmation URL** field, and click **Confirm subscription**.
 
-For more information about SNS notifications, see the [Amazon documentation](http://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html).
+For more information about SNS notifications, see the [Amazon documentation](https://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html).
 
 
 #### Optional: Create a Partition for AWS Config Logs
@@ -154,16 +154,19 @@ To create a partition, follow the instructions to [Create a Partition](/docs/man
 
 Now that you have configured AWS Config, install the Sumo Logic App for AWS Config to take advantage of the pre-configured searches and dashboards to analyze your AWS Config data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
 ## Viewing AWS Config Dashboards
 
-This section describes the dashboards provided by the AWS Config app. For general information about dashboards, see [About Dashboards](/docs/dashboards/about).
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-The AWS Config app is an older application, implemented when Sumo dashboards could not be toggled back and forth between Live and Interactive mode. For this reason, the app provides two versions of the AWS Config Overview dashboard, one that runs in Live mode, and one that runs in Interactive mode.
+<ViewDashboards/>
 
+:::info
+The AWS Config app is an older application, implemented when Sumo Logic dashboards could not be toggled back and forth between Live and Interactive mode. For this reason, the app provides two versions of the AWS Config Overview dashboard, one that runs in Live mode, and one that runs in Interactive mode.
+:::
 
 ### AWS Config Overview
 

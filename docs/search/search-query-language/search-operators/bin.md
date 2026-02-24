@@ -4,6 +4,8 @@ title: bin Search Operator
 sidebar_label: bin
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `bin` operator assigns output results to user defined bins. A bin is configured to hold a range of values that can be used for sorting results in a histogram and further aggregation. It is a quick and effective way to visualize the distribution of data.
 
 ## Syntax
@@ -45,7 +47,7 @@ _sourceCategory=stream error
 | sort by _bin_lower
 ```
 
-![bin operator charted.png](/img/search/searchquerylanguage/search-operators/bin-operator-charted.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/bin-operator-charted.png')} alt="Bin operator charted" style={{border: '1px solid gray'}} width="800" />
 
 ### Latency distribution
 
@@ -68,4 +70,4 @@ _sourceCategory=analytics
 | sort by _bin_upper
 ```
 
-![example bin.png](/img/search/searchquerylanguage/search-operators/example-bin.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/example-bin.png')} alt="Example bin" style={{border: '1px solid gray'}} width="800" />

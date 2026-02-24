@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/freshservice.png')} alt="freshservice" width="80"/>
 
-***Version: 1.6  
-Updated: Sept 11, 2024***
+***Version: 1.8  
+Updated: Dec 30, 2025***
 
 Freshservice is a cloud-based IT Help Desk and service management solution that enables organizations to simplify their IT operations. The solution offers features that include a ticketing system, self-service portal, and knowledge-base.
 
@@ -38,8 +38,21 @@ Freshservice is a cloud-based IT Help Desk and service management solution that 
 ## Configure Freshservice in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your Freshservice API URL, for example, `https://your-domain.freshservice.com`
+
+* **API Key**. Enter the Freshservice [API key](https://support.freshservice.com/support/solutions/articles/50000000306-where-do-i-find-my-api-key-) you [copied earlier](#freshservice-configuration).
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/freshservice-configuration.png')} style={{border:'1px solid gray'}} alt="Freshservice configuration" width="400"/> 
 
@@ -48,6 +61,10 @@ For information about Freshservice, see [Freshservice documentation](https://sup
 ## Category
 
 Ticketing System
+
+:::note
+Providing an invalid or unauthorized Workspace ID may result in a 400 Bad Request error. Verify that the Workspace ID is correct and accessible to the API user.
+:::
 
 ## Change Log
 
@@ -60,3 +77,4 @@ Ticketing System
 	+ Updated integration: (Updated the integration Fields with Environmental Variables)
 * July 11, 2023 (v1.5) - Removed leading/trailing spaces
 * Sept 11, 2024(v1.6) - Updated the Update Ticket action
+* Dec 30, 2025 (v1.8) - Create and Update Ticket actions now support an optional Workspace ID. Updated existing custom ticket fields.

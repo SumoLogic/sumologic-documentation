@@ -23,6 +23,10 @@ The timestamp is the part of a log message that marks the time that an event occ
 
 When configuring a Source, you can choose to use the default timestamp parsing settings, or you can specify a custom format for us to parse timestamps in your log messages. The **Enable Timestamp Parsing** option is selected by default. If it's deselected, no timestamp information is parsed at all. Instead, we stamp logs with the time at which the messages are processed.
 
+:::note Using OpenTelemetry Remote Management (OTRM)?
+This page covers timestamp parsing for standard Sumo Logic sources. If you're using OTRM source templates, refer to [Timestamps, time zones, time ranges, and date formats for OTRM](/docs/send-data/opentelemetry-collector/remote-management/source-templates/otrm-time-reference) instead.
+:::
+
 ### Timestamp considerations
 
 By default, we can automatically detect timestamps in your log messages. Automatic detection identifies timestamps in common formats and prefers timestamps that appear early in the message.

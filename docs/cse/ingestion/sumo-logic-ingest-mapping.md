@@ -30,20 +30,6 @@ Watch this micro lesson to learn more about ingest mapping for Cloud SIEM:
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/luPl_IB9b8A?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
-
 Watch this micro lesson to learn about forwarding ingested data to Cloud SIEM:
 
 <Iframe url="https://fast.wistia.net/embed/iframe/krg64dumyv?web_component=true&seo=true&videoFoam=false"
@@ -57,19 +43,6 @@ Watch this micro lesson to learn about forwarding ingested data to Cloud SIEM:
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/XCcu-YU9B5U?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 
 :::
 
@@ -103,7 +76,7 @@ When you fill out the **Add Ingest Mapping** page, for most of the supported mes
 
 For these formats, Cloud SIEM uses the values you configure for **Product**, **Vendor**, and **Event ID** (in addition to **Format**) to select the appropriate Cloud SIEM mapper to process the messages. To verify the correct values, you can go to the **Log Mapping Details** page for the mapper in the Cloud SIEM UI. To do so:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**.  
 1. The **Log Mappings** tab displays a list of mappers.<br/><img src={useBaseUrl('img/cse/log-mappings-page.png')} alt="Log Mappings page" width="800"/>
 1. In the **Filters** area, you can filter the list of log mappings by
     typing in a keyword, or by selecting a field to filter by.<br/><img src={useBaseUrl('img/cse/log-mapping-filters.png')} alt="Log Mappings filters" style={{border: '1px solid gray'}} width="400"/>
@@ -134,7 +107,7 @@ This table in this section is a quick reference to supplying values for each su
 
 In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the source category assigned to your source or collector you configured. The mapping tells Cloud SIEM the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Integrations** select **Sumo Logic**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  
 1. On the **Ingest Mappings** tab, click **+ Add Ingest Mapping**.
 1. On the **Add Ingest Mapping** popup:
     1. **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector. 

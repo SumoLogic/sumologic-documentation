@@ -46,14 +46,25 @@ This integration enables seamless interaction with TheHive platform, allowing ca
 ## Configure TheHive in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API Key**. Enter an [API key](https://docs.strangebee.com/cortex/api/api-guide/#authentication) used to authenticate API requests to TheHive.
 
-* **API Key**. A unique token used to authenticate API requests to TheHive.
-* **Server URL**. The base URL (hostname or IP address) of your TheHive server.
-* **Port**. (Optional) The port number on which TheHive is accessible.
-* **Organization Name**. (Optional) The name of the organization context in multi-tenant deployments of TheHive.
-* **Automation Engine**. Select **Cloud execution** for this certified integration. Select a bridge option only for a custom integration. See [Cloud or Bridge execution](/docs/platform-services/automation-service/automation-service-integrations/#cloud-or-bridge-execution).
+* **Server URL**. Enter the [base URL](https://docs.strangebee.com/thehive/configuration/service/#listen-address-port) (hostname or IP address) of your TheHive server.
+
+* **Port**. (Optional) Enter the [port number](https://docs.strangebee.com/thehive/configuration/service/#listen-address-port) on which TheHive is accessible.
+
+* **Organization Name**. (Optional) Enter the name of the [organization](https://docs.strangebee.com/thehive/administration/organizations/about-organizations/) context in multi-tenant deployments of TheHive.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/thehive-configuration.png')} style={{border:'1px solid gray'}} alt="TheHive configuration" width="400"/>
 

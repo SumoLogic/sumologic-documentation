@@ -33,5 +33,5 @@ The Password Policy Management API allows you to manage the [password policy](/d
 
 <ApiRoles/>
 
-* Security
+* [Security](/docs/manage/users-roles/roles/role-capabilities/#security)
     * Manage Password Policy

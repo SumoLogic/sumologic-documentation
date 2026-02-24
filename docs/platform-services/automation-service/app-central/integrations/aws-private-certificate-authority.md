@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.0  
-Updated: Mar 8, 2024***
+***Version: 1.1  
+Updated: July 29, 2025***
 
 AWS Private CA enables creation of private certificate authority (CA) hierarchies, including root and subordinate CAs, without the investment and maintenance costs of operating an on-premises CA. Your private CAs can issue end-entity X.509 certificates useful in scenarios including:
 
@@ -29,17 +29,46 @@ AWS Private CA enables creation of private certificate authority (CA) hierarchie
 ## Configure AWS Private Certificate Authority in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-configuration.md';
+import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import AWSIAMRole from '../../../../reuse/automation-service/aws/iam-role.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
+* <IntegrationLabel/>
+* <AWSAccesskey/>
+* <AWSSecret/>
+* <AWSIAMRole/>
+* **Session Token**. Enter the session token if you are using [temporary credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html).
+* <AWSRegions/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-private-certificate-authority-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Private Certificate Authority configuration" width="400"/>
 
-import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+For information about AWS Private Certificate Authority, see [AWS Private Certificate Authority documentation](https://docs.aws.amazon.com/privateca/).
 
 <IntegrationsAuthAWS/>
 
-For information about AWS Private Certificate Authority, see [AWS Private Certificate Authority documentation](https://docs.aws.amazon.com/privateca/).
+### AWS IAM role-based access
+
+## Limitations
+
+Local [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) is not supported in this version.
+
+<IAMConfiguration/>
 
 ## Change Log
  
 * March 8, 2024 - First upload
+* July 29, 2025 (v1.1) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
+

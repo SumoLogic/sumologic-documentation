@@ -28,11 +28,23 @@ Updated: Jul 18, 2023***
 ## Configure Material Security in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the Material Security URL.
 
-   * **API URL**. Enter your URL.
-   * **API Token**. Insert your token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/material-security-configuration.png')} style={{border:'1px solid gray'}} alt="Material Security configuration" width="400"/>
+* **API Token**. Enter your Material Security token.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/material-security-configuration.png')} style={{border:'1px solid gray'}} alt="Material Security configuration" width="400"/>
 
 For information about Material Security, see the [Material Security website](https://material.security/).
 

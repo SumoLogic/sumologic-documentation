@@ -23,13 +23,25 @@ Wittra is hardware and software provider with patented solutions for business in
 ## Configure Wittra in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your [Wittra URL](https://docs.wittra.io/#/howto-integrations-and-api?id=use-the-api-key), for example, `https://api.wittra.se/`.
 
-   * **Label**. The desired name for the resource.
-   * **URL**. Your Wittra URL.
-   * **API Key**. Your Wittra API Key you copied earlier from Wittra.
-   * **Organization ID**. Your Organization ID you copied earlier from Wittra.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/wittra-configuration.png')} style={{border:'1px solid gray'}} alt="Wittra configuration" width="400"/>
+* **API Key**. Enter the [Wittra API key](https://docs.wittra.io/#/howto-integrations-and-api?id=set-up-api-key).
+
+* **Organization ID**. Enter your Wittra [organization ID](https://docs.wittra.io/#/howto-console?id=create-a-project).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/wittra-configuration.png')} style={{border:'1px solid gray'}} alt="Wittra configuration" width="400"/>
 
 For information about Wittra, see [Wittra documentation](https://docs.wittra.io/#/).
 

@@ -25,14 +25,14 @@ See also: [RUM Traces Source](/docs/apm/real-user-monitoring/configure-data-coll
 
 To configure an HTTP Traces Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Select **HTTP Traces**.<br/>  ![source](/img/send-data/http-traces-icon.png)
-1. Enter a Name for the Source. A description is optional.<br/>  ![source](/img/send-data/traces-source-no-fields.png)
+1. Select **HTTP Traces**.<br/><img src={useBaseUrl('img/send-data/http-traces-icon.png')} alt="Select HTTP Traces" style={{border: '1px solid gray'}} width="100" />
+1. Enter a Name for the Source. A description is optional.<br/><img src={useBaseUrl('img/send-data/traces-source-no-fields.png')} alt="Enter a Name for the Source" style={{border: '1px solid gray'}} width="600" />
 1. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields that allow you to organize your data.
 1. When you are finished configuring the Source, click **Save**.
 
 ## View the endpoint URL
 If you need to access the Source's URL again, click **Show URL**.
 
-![source](/img/send-data/traces-source-no-fields.png)
+<img src={useBaseUrl('img/send-data/show-url-traces.png')} alt="Show URL link" style={{border: '1px solid gray'}} width="700" />

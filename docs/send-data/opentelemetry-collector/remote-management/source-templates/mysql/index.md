@@ -77,20 +77,13 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for MySQL collection. Below are the inputs required for configuration:
+import MysqlConfigureSourceTemplate from '../../../../../reuse/send-data/mysql-configure-source-template.md';
 
-- **Name**. Name of the source template.
-- **Description**. Description for the source template.	
-- **Error log path**. Location where the SQL Errors are logged. Please refer to your my.cnf file.
-- **Slow Transaction log file path (optional)**. Location where the Slow SQL transactions are logged. Please refer to your my.cnf file.
-- **Endpoint**. The URL of the MySQL endpoint (default: `localhost:3306`).
-- **Username**. Enter the MySQL username.
-- **Password Environment Variable Name**. Enter the MySQL password environment variable name.
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, Sumo Logic tags `_sourceCategory` with the value otel/mysql user needs to provide the value for `db.cluster.name`.
+<MysqlConfigureSourceTemplate/>
 
-import OtelLogAdvanceOption from '../../../../../reuse/apps/opentelemetry/logs-advance-option-otel.md';
+import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 
-<OtelLogAdvanceOption/>
+<TimestampParsing/>
 
 **Processing Rules**. You can add **processing rules** for logs/metrics collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
 

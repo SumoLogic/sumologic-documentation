@@ -19,7 +19,8 @@ The Salesforce Source provides a secure endpoint to receive event data from the 
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 1 hour |  [Event data](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm) |
+| 60 minutes |  [Audit data](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm) |
+| 60 minutes |  [Event Log File data](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm) |
 
 ### Polling Interval and Salesforce API Rate Limits
 
@@ -63,19 +64,20 @@ When you create a Salesforce Source, you add it to a Hosted Collector. Before 
 
 To configure a Salesforce Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a HostedCollector.
 1. Select **Salesforce**.
 1. Enter a **Name** for the Source in the Sumo Logic console. The description is optional.
 1. For **Source Category (Optional)**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **SignOn URL.** Enter your Sign on URL. For example, `https://<MyDomainName>.my.salesforce.com/services/oauth2/token`.
 1. **Client ID.** Enter the Consumer Key of the ConnectedApp. 
 1. **Client Secret.** Enter the Consumer Secret of the ConnectedApp. 
 1. **Build In Memory Lookup.** Keep this checked. This will resolve IDs to human-readable names.
+1. **API Collection.** Select the checkbox depending on the type of data that you wish to collect.
 1. **Collection Should begin.** Select the time range for how far back you want this source to start collecting data from Salesforce. Options available are: Now, 24 hours ago.
     :::note
     <CollBegin/>
@@ -112,6 +114,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | client_id | String | True |`null` | Type in Consumer Key of the Connected App. |  |
 | client_secret | String | True | `null` | Type in Consumer Secret of the Connected App. |  |
 | inmemory_lookup | Boolean | False | True | Set to true to enable inmemory lookup or to false to disable it.|  |
+| collectAuditData | Boolean | No | True | Set to true to collect the audit events data.|  |
+| collectEventLogFileData | Boolean | No | True | Set to true to collect the event log files data.|  |
 
 ### JSON example
 
@@ -129,7 +133,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 After you configure your Source, you should check the status of the source in the Collectors page. In case the Source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
 
-![salesforce-troubleshooting](/img/send-data/salesforce-troubleshooting.jpg)
+<img src={useBaseUrl('img/send-data/salesforce-troubleshooting.jpg')} alt="<Salesforce Troubleshooting" style={{border: '1px solid gray'}} width="800" />
 
 The following section details how you can resolve various errors: 
 

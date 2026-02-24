@@ -2,7 +2,7 @@
 id: field-expressions
 title: Field Expressions
 sidebar_label: Field Expressions
-description: Overview of the expressions that create user-defined numeric, boolean, or string fields.
+description: Understand how to write field expressions in search queries to calculate, transform, and filter log data.
 ---
 
 The Sumo Logic Query Language can be used to create fields based on calculated expressions, such as:

@@ -33,4 +33,4 @@ The Dashboard Management APIs allow you to create, retrieve, update, and delete 
 
 <ApiRoles/>
 
-* Dashboards (all capabilities)
+* [Dashboards](/docs/manage/users-roles/roles/role-capabilities/#dashboards) (all capabilities)

@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Threat Intel for AWS App correlates Sumo Logic [threat intelligence](/docs/security/threat-intelligence/) data with your AWS log data, allowing for real-time security analytics to help detect threats in your environment and protect against cyber-attacks. The Threat Intel for AWS App scans your AWS CloudTrail, AWS ELB and AWS VPC Flow logs for threats based on IP address.
 
-The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professions accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
+The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
 
 
 ## Collect Logs for the Threat Intel for AWS App
@@ -33,18 +33,17 @@ VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each met
 
 ## Installing the Threat Intel for AWS App
 
-The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professions accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
+The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
 
 Now that you have set up collection, install the Sumo Logic App for Threat Intel for AWS to use the preconfigured searches and [Dashboards](/docs/integrations/amazon-aws/threat-intel#viewing-threat-intel-dashboards) that provide insight into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
-## Viewing Threat Intel Dashboards
+## Viewing Threat Intel dashboards
 
 All Dashboards include filters that you can use in Interactive Mode for further analysis of your Threat Intel data.
-
 
 ### Overview
 

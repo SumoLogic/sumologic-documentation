@@ -19,8 +19,21 @@ Shodan is a search engine for Internet-connected devices. Web search engines, su
 ## Configure Shodan in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your [Shodan API URL](https://developer.shodan.io/api), for example, `https://api.shodan.io`.
+
+* **API Key**. Enter your [Shodan API key](https://developer.shodan.io/api/requirements).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/shodan-configuration.png')} style={{border:'1px solid gray'}} alt="Shodan configuration" width="400"/>
 

@@ -28,7 +28,7 @@ See details on how [Scheduled Searches are different](/docs/alerts/difference-fr
 
 ## Limitations
 
-* [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
+* [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) and [Searchable Time](../../search/get-started-with-search/build-search/use-searchable-time.md) is not supported.
 * Monitors only support the [Continuous data tier](/docs/manage/partitions/data-tiers).
 * An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
@@ -73,7 +73,7 @@ The Monitors page allows you to view, create, and manage Monitors. You can creat
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access monitors, in the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
 
-[**New UI**](/docs/get-started/sumo-logic-ui). To access monitors, in the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
+[**New UI**](/docs/get-started/sumo-logic-ui). To access monitors, in the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. 
 
 ![monitors page](/img/alerts/monitors/monitors-page.png)
 

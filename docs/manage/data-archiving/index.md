@@ -20,11 +20,20 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
   <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/manage/data-archiving/archive">
+      <a href={useBaseUrl('docs/manage/data-archiving/archive')}>
         <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="45" />
-        <h4>Archive Log Data to S3</h4>
+        <h4>Archive Log Data to S3 using Installed Collectors</h4>
       </a>
-      <p>Learn to archive data to S3 for future ingestion and retrieval.</p>
+      <p>Learn to archive data to S3 using Installed Collectors for future ingestion and retrieval.</p>
+    </div>
+  </div>
+  <div className="box smallbox card">
+    <div className="container">
+      <a href={useBaseUrl('docs/manage/data-archiving/archive-otel/')}>
+        <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="45" />
+        <h4>Archive Log Data to S3 using OpenTelemetry Collectors</h4>
+      </a>
+      <p>Learn to archive data to S3 using OpenTelemetry Collectors for future ingestion and retrieval.</p>
     </div>
   </div>
 </div>

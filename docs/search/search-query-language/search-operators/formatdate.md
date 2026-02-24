@@ -4,6 +4,8 @@ title: formatDate Search Operator
 sidebar_label: formatDate
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `formatDate` operator allows you to format dates in log files as a string in the format you require, such as U.S. date formatting, European formatting, and timestamps. 
 
 :::note
@@ -42,7 +44,7 @@ Use the following query to return results for the current date using the date fo
 
 This creates the today column, and returns the following results.
 
-![A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM:SS.SSS -0700'.](/img/search/searchquerylanguage/search-operators/FormatDate.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/FormatDate.png')} alt="A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM:SS.SSS -0700'" style={{border: '1px solid gray'}} width="600" />
 
 ### European date format dd-MM-yyyy
 
@@ -54,7 +56,7 @@ Use the following query to create a **today** column, and return the results u
 
 This returns the following results:
 
-![A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'dd-MM-yyyy HH:MM.SSS -0700'.](/img/search/searchquerylanguage/search-operators/EuropeanDateFormat.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/EuropeanDateFormat.png')} alt="A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'dd-MM-yyyy HH:MM.SSS -0700'" style={{border: '1px solid gray'}} width="600" />
 
 ### US date format with a timestamp
 
@@ -66,7 +68,7 @@ This example creates a **today** column and uses the US date format with a tim
 
 Which returns results like:
 
-![A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM:SS.SSS -0700'.](/img/search/searchquerylanguage/search-operators/DateTimestamp.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/DateTimestamp.png')} alt="A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM:SS.SSS -0700'" style={{border: '1px solid gray'}} width="600" />
 
 ### Find messages with incorrect timestamps
 
@@ -81,7 +83,7 @@ This query allows you to find messages with incorrect timestamps.
 
 This query produces results like this:
 
-![A screenshot of a Sumo Logic log query results table with columns for time, delay, delayinminutes, messagedate, receiptdate, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM.SSS -0700'.](/img/search/searchquerylanguage/search-operators/IncorrectTimestamp.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/IncorrectTimestamp.png')} alt="A screenshot of a Sumo Logic log query results table with columns for time, delay, delayinminutes, messagedate, receiptdate, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM.SSS -0700'" style={{border: '1px solid gray'}} width="800" />
 
 ### Determine age of log messages
 
@@ -97,7 +99,7 @@ This query lets you determine the age of your log messages.
 
 Which produces results like this:
 
-![A screenshot of a Sumo Logic log query results table with columns for time, currenttime, messageage, messageageinminutes, messagedate, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM.SSS -0700'.](/img/search/searchquerylanguage/search-operators/MessageAge.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/MessageAge.png')} alt="A screenshot of a Sumo Logic log query results table with columns for time, currenttime, messageage, messageageinminutes, messagedate, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM.SSS -0700'" style={{border: '1px solid gray'}} width="800" />
 
 ### Messages by Day of the Week
 

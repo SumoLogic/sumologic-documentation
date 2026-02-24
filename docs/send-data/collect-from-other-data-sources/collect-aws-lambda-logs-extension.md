@@ -5,9 +5,11 @@ sidebar_label: AWS Lambda Extension
 description: Learn to collect the AWS Lambda logs through an extension.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 [AWS Lambda Extensions](https://aws.amazon.com/blogs/compute/introducing-aws-lambda-extensions-in-preview/) enable us to more easily integrate into the AWS Lambda execution environment to control and participate in the AWS Lambda lifecycle and the AWS Lambda Telemetry API enables us to collect AWS Lambda logs, metrics, and spans. Sumo Logic, therefore, has developed a new open-source AWS Lambda extension that is a lightweight process that runs within the same execution environment as your Lambda functions and uses the Lambda Telemetry API to send platform, function, and extension logs along with metrics and spans to Sumo Logic. Sumo Logic's Lambda Extension works with AWS Lambda functions that are built for both x86_64 and ARM 64 (Graviton2) architectures.
 
-![LambdaExtension.png](/img/send-data/LambdaExtension.png)
+<img src={useBaseUrl('img/send-data/LambdaExtension.png')} alt="Lambda extension" style={{border: '1px solid gray'}} width="800" />
 
 To learn more please see the following links:
 
@@ -50,7 +52,7 @@ For AWS Lambda functions created using Zip files, blueprint or serverless applic
 
 To add the Sumo Logic Lambda Extension to your AWS Lambda function, please follow the steps below:
 
-1. In the AWS Management Console, navigate to the definition of your Lambda function, Select **Layers** and click **Add a Layer**. <br/> ![Add_Layer.png](/img/send-data/Add_Layer.png)
+1. In the AWS Management Console, navigate to the definition of your Lambda function, Select **Layers** and click **Add a Layer**. <br/><img src={useBaseUrl('img/send-data/Add_Layer.png')} alt="Add layer" style={{border: '1px solid gray'}} width="800" />
 
 1. Select **Specify an ARN**.
 
@@ -63,7 +65,7 @@ To add the Sumo Logic Lambda Extension to your AWS Lambda function, please follo
      * **AWS_REGION.** Replace with the AWS Region of your Lambda function
      * **VERSION.** The latest version of the Sumo Logic Extension.
 
-    ![x86_64.png](/img/send-data/x86_64.png)
+    <img src={useBaseUrl('img/send-data/x86_64.png')} alt="x86_64 architecture" style={{border: '1px solid gray'}} width="800" />
 
    * For **arm64 architecture,** enter the following ARN:
 
@@ -74,7 +76,7 @@ To add the Sumo Logic Lambda Extension to your AWS Lambda function, please follo
      * **AWS_REGION.** Replace with the AWS Region of your Lambda function
      * **VERSION.** The latest version of the Sumo Logic Extension.
 
-    ![arm64.png](/img/send-data/arm64.png)
+    <img src={useBaseUrl('img/send-data/arm64.png')} alt="arm64" style={{border: '1px solid gray'}} width="800" />
 
 ### AWS Lambda Functions Created Container Images
 
@@ -97,18 +99,28 @@ To package the Sumo Logic Lambda Extension with the AWS Lambda function created 
      ```
 
 1. In your AWS Lambda container image Dockerfile, add the command below.
-
+   ##### Create the target directory for extensions
    ```bash
-   ADD <Location-where-you-downloaded-the-tar-file>/sumologic-extension-<architecture>.tar.gz /opt/
+   RUN mkdir -p /opt/extensions
    ```
-
-1. Validate if the extension is added to the directory and execute the below command.
+   ##### Create the target directory for extensions
+   ```bash
+   ADD <Location-where-you-downloaded-the-tar-file>/sumologic-extension-<architecture>.tar.gz /opt/extensions
+   ```
+   ##### Clean up any hidden files from the extracted content 
+   ```bash
+   RUN find /opt/extensions -type f -name ".*" -delete
+   ```
+   :::note
+   Any file placed under /opt/extensions is treated as an executable. Hidden files (such as ._filename) or non-binary files in this directory may also be executed, potentially causing unexpected behavior.
+   :::
+1. Validate if the extension is added to the directory and execute the command below.
 
    ```bash
    docker run -it --entrypoint sh <ImageName>:<ImageTag>
    ```
 
-1. Execute the command `ls -R /opt/` to see the directory structure. It should look as per the screenshot below. <br/> ![Container_Images.png](/img/send-data/Container_Images.png)
+1. Execute the command `ls -R /opt/` to see the directory structure. It should look as per the screenshot below. <br/><img src={useBaseUrl('img/send-data/Container_Images.png')} alt="Container images" style={{border: '1px solid gray'}} width="600" />
 
 1. Deploy your AWS Lambda function using the container images.
 
@@ -140,42 +152,37 @@ Add the following environment variables to your Lambda function:
 
 ### Using KMS to secure the SUMO_HTTP_ENDPOINT
 1. Follow the **Security in transit**
-" section in AWS [docs](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars-encryption.html) to encrypt the `SUMO_HTTP_ENDPOINT` environment variable. You can use **Symmetric** `Key type` with **Encrypt and decrypt** `Key usage`.
-![KMSKeycreationstep1.png](/img/send-data/KMSKeycreationstep1.png)
-1. Make sure to add Lambda's role as **Key Users** to allow your lambda function to use the key.
-![AddLambdaRolestep2.png](/img/send-data/AddLambdaRolestep2.png)
-1. In **Edit environment variables** section, add `KMS_KEY_ID` environment variable with value as KMS key ARN of the "Customer managed key" created earlier, you can obtain it from the [AWS console](https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html). Also encrypt the `SUMO_HTTP_ENDPOINT` using the same KMS key by clicking **Encrypt** button. It will replace the endpoint with the base64 encoded string.
-![AddLambdaEnvironmentVariableStep3.png](/img/send-data/AddLambdaEnvironmentVariableStep3.png)
+" section in AWS [docs](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars-encryption.html) to encrypt the `SUMO_HTTP_ENDPOINT` environment variable. You can use **Symmetric** `Key type` with **Encrypt and decrypt** `Key usage`. <br/><img src={useBaseUrl('img/send-data/KMSKeycreationstep1.png')} alt="KMS key creation" style={{border: '1px solid gray'}} width="800" />
+1. Make sure to add Lambda's role as **Key Users** to allow your lambda function to use the key.<br/><img src={useBaseUrl('img/send-data/AddLambdaRolestep2.png')} alt="Add Lambda role" style={{border: '1px solid gray'}} width="800" />
+1. In **Edit environment variables** section, add `KMS_KEY_ID` environment variable with value as KMS key ARN of the "Customer managed key" created earlier, you can obtain it from the [AWS console](https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html). Also encrypt the `SUMO_HTTP_ENDPOINT` using the same KMS key by clicking **Encrypt** button. It will replace the endpoint with the base64 encoded string.<br/><img src={useBaseUrl('img/send-data/AddLambdaEnvironmentVariableStep3.png')} alt="Add Lambda environment variable" style={{border: '1px solid gray'}} width="800" />
 
 
 1. Once you have set your parameters, execute your AWS Lambda function, and validate that the logs are coming into Sumo Logic.
 1. If you have enabled failover, do the following:
 
-   * Add the following inline policy to the IAM role associated with your lambda function.
+   * Add the following inline policy to the IAM role associated with your lambda function. <br/><img src={useBaseUrl('img/send-data/Inline_Policy.png')} alt="Inline policy" style={{border: '1px solid gray'}} width="800" />
 
-    ![Inline_Policy.png](/img/send-data/Inline_Policy.png)
-
-    ```
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Sid": "VisualEditor0",
-                "Effect": "Allow",
-                "Action": "s3:PutObject",
-                "Resource": "arn:aws:s3:::<AWS S3 Bucket Name>/*"
-            }
-        ]
-    }
-    ```
+       ```
+       {
+           "Version": "2012-10-17",
+           "Statement": [
+               {
+                   "Sid": "VisualEditor0",
+                   "Effect": "Allow",
+                   "Action": "s3:PutObject",
+                   "Resource": "arn:aws:s3:::<AWS S3 Bucket Name>/*"
+               }
+          ]
+       }
+       ```
 
    * Configure a [Sumo Logic Amazon S3](../hosted-collectors/amazon-aws/aws-s3-source.md) source with the same source category as that of the HTTP Source created in Step 1 to read from this bucket.
 
-    :::note
-    Logs from the Sumo Logic Lambda extension are stored and compressed in the following prefix path     `sumologic-extension/<aws-region>/<Function>/<Version>/<Year>/<Month>/<Day>/<Hour>/<Min>/<UUID>.gz`
-    :::
+       :::note
+       Logs from the Sumo Logic Lambda extension are stored and compressed in the following prefix path     `sumologic-extension/<aws-region>/<Function>/<Version>/<Year>/<Month>/<Day>/<Hour>/<Min>/<UUID>.gz`
+       :::
 
-    ![Sumo_AWS_source.png](/img/send-data/Sumo_AWS_source.png)
+        <img src={useBaseUrl('img/send-data/Sumo_AWS_source.png')} alt="Sumo Logic AWS source" style={{border: '1px solid gray'}} width="800" />
 
 ## Step 4 (Optional): Disable logging to CloudWatch logs
 

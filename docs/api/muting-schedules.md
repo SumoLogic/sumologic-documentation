@@ -33,4 +33,4 @@ The Muting Schedules Management API allows you to pause alert notifications from
 
 <ApiRoles/>
 
-* Alerting (all role capabilities)
+* [Alerting](/docs/manage/users-roles/roles/role-capabilities/#alerting) (all role capabilities)

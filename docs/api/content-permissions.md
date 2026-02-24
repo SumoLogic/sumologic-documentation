@@ -33,9 +33,9 @@ The Content Permissions API allows you to share your folders, searches, and dash
 
 <ApiRoles/>
 
-* Dashboards (all)
-* Data Management
+* [Dashboards](/docs/manage/users-roles/roles/role-capabilities/#dashboards) (all)
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Manage Content
-* Security
+* [Security](/docs/manage/users-roles/roles/role-capabilities/#security)
     * Change Data Access Level
     * Manage Share Dashboards Outside of Organization

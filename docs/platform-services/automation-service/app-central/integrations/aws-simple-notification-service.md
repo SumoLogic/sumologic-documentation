@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.2  
-Updated: Jun 15, 2023***
+***Version: 1.3  
+Updated: August 19, 2025***
 
 Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients.
 
@@ -24,19 +24,53 @@ Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notif
 ## Configure Amazon Simple Notification Service in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
+import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import AWSIAMRole from '../../../../reuse/automation-service/aws/iam-role.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-configuration.md';
 
 <IntegrationsAuth/>
 
-   * **Label**. Name of the resource for AWS SNS.
-   * **Access key ID**. Enter your AWS Access Key.
-   * **Secret Access key**. Enter your AWS Secret Access Key. For information about access key ID and secret access key, see [AWS documentation](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys).
-   * **AWS Region**. Enter the AWS region for the SNS topic.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/aws-simple-notification-service-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Simple Notification Service configuration" width="400"/>
+* <IntegrationLabel/>
+* <AWSAccesskey/>
+* <AWSSecret/>
+* <AWSIAMRole/>
+* <AWSRegions/>
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws/aws-simple-notification-service-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Simple Notification Service configuration" width="400"/>
 
-import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+For information about Amazon Simple Notification Service, see [Amazon Simple Notification Service documentation](https://docs.aws.amazon.com/sns/).
 
 <IntegrationsAuthAWS/>
 
-For information about Amazon Simple Notification Service, see [Amazon Simple Notification Service documentation](https://docs.aws.amazon.com/sns/).
+### AWS IAM role-based access
+
+<IAMConfiguration/>
+
+## Limitations
+
+Local [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) is not supported in this version.
+
+## Required Permissions
+```
+  sns:Publish
+  sns:ListSubscriptions
+  sns:ListTopics
+  sns:GetSubscriptionAttributes
+  sns:GetTopicAttributes
+  sns:ListSMSSandboxPhoneNumbers
+```
 
 ## External Libraries
 
@@ -48,3 +82,4 @@ For information about Amazon Simple Notification Service, see [Amazon Simple Not
 * March 3, 2023 (v1.1)
 	+ Updated integration Fields Label
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
+* August 19, 2025 (v1.3) - Added IAM Role Support - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.

@@ -33,6 +33,6 @@ The [Scheduled View](/docs/manage/scheduled-views) Management API allows you to 
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Manage Scheduled Views
     * View Scheduled Views

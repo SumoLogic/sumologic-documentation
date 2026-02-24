@@ -36,6 +36,7 @@ Variables must be enclosed by double curly brackets (`{{ }}`). Unresolved variab
 | `{{TriggerTimeEnd}}` | The end time of the time range that triggered the monitor in Unix format. For example, `1626190592042`. | &#9989;| &#9989;|
 | `{{SourceURL}}` | The URL to the configuration or status page of the monitor in Sumo Logic. | &#9989;| &#10060; |
 | `{{AlertResponseUrl}}` | When your monitor is triggered, it will generate a URL and provide it as the value of this variable where you can use it to open alert response. | &#9989;| &#10060; |
+| `{{AlertResponseId}}` | The unique identifier of the triggered alert. | &#9989;| &#10060; |
 | `{{AlertName}}` | Name of the alert that will be displayed on the alert page.  | &#9989;| &#9989;|
 | `{{Playbook}}` | Allows you to access the [playbook content](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional) configured as part of your initial monitor setup. | &#9989;| &#9989;|
 

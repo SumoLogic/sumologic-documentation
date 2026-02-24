@@ -4,13 +4,15 @@ title: sessionize Search Operator
 sidebar_label: sessionize
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `sessionize` operator allows you to use an extracted value from one log message (generated from one system) to find correlating values in log messages from other systems. After you run `sessionize`, these related events are displayed on the same page. The thread of logs woven together is called a _session_.
 
 Depending on your use case, you'd also use the [join](join.md) operator, which may be more appropriate and easier to use.
 
 For example, let's say we have the value of a userRequestId, which entered a distributed system; the request goes through systems named Service, Stream, and Config:
 
-![sessionize layout](/img/reuse/query-search/Sessionize_layout.png)
+<img src={useBaseUrl('img/reuse/query-search/Sessionize_layout.png')} alt="Sessionize layout" width="600>" />
 
 Each system generated log messages, so we know that at some point a failure occurred. We know the userRequestID value from the log files from the Service machine, and we know the serviceSessionId, streamRequestId, and configSessionId. Using **sessionize**, we can weave together these disparate logs to identify where the failure occurred.
 
@@ -56,4 +58,4 @@ _sourceCategory=OS/Windows
 
 Here's an example of the results from this query:
 
-![sessionize.png](/img/search/searchquerylanguage/search-operators/sessionize.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/sessionize.png')} alt="Sessionize" style={{border: '1px solid gray'}} width="800" />

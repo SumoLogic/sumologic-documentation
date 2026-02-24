@@ -23,7 +23,7 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [Dataminr Pulse](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/DataminrPulse)
 * [Doppel Vision](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/DoppelVision)
 * [Endace](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Endace)
-* [Gigamon HAWK](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_HAWK)
+* [Gigamon Application Metadata Intelligence](https://github.com/Mrudula-Oruganti-Gigamon/sumologic-public-partner-apps/tree/master/Gigamon)
 * [Jamf Protect](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/JamfProtect)
 * [Keeper Security](https://docs.keeper.io/en/v/enterprise-guide/event-reporting/sumo-logic)
 * [LambdaTest](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest)
@@ -37,6 +37,6 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [StackRox](https://cdn.stackrox.io/integrations/sumologic-stackrox-app.pdf)
 * [Tessian](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian)
 * [Votiro](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Votiro)
-* <a href="/files/zerofox-integrations.pdf" target="_blank">ZeroFox</a> ([blog](https://www.zerofox.com/blog/sumo-logic-and-zerofox-join-forces-to-protect-your-public-attack-surface/))
+* <a href={useBaseUrl('files/zerofox-integrations.pdf')} target="_blank">ZeroFox</a> ([blog](https://www.zerofox.com/blog/sumo-logic-and-zerofox-join-forces-to-protect-your-public-attack-surface/))
 
 For any questions on these applications, contact our partners.

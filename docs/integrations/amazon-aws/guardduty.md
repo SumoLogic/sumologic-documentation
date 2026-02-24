@@ -176,18 +176,60 @@ _sourceCategory=aws/guardduty
 
 </details>
 
-## Collecting logs for the Amazon GuardDuty App
+## Collecting logs for the Amazon GuardDuty app
 
-This section has instructions for collecting logs for the Amazon GuardDuty App.
+You can collect the Amazon GuardDuty logs using the following methods and send them to Sumo Logic via an HTTP endpoint: 
 
-1. Amazon GuardDuty sends notifications based on CloudWatch events when new findings, or new occurrences of existing findings, are generated.
-2. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo CloudWatchEventFunction Lambda function.
-3. The Lambda function sends the events to an HTTP source on a Sumo hosted collector.
+- [Method 1: GuardDuty > EventBridge > Sumo Logic via HTTP](#method-1-guardduty--eventbridge--sumo-logic-via-http-preferred)
+- [Method 2: GuardDuty > Lambda Function > Sumo Logic via HTTP](#method-2-guardduty--lambda-function--sumo-logic-via-http-alternative)
+
+For efficiency and seamless integration, Method 1 using AWS EventBridge is preferred, as it leverages native AWS services to reduce resource overhead and simplify the process.
+
+### Method 1: GuardDuty > EventBridge > Sumo Logic via HTTP (Preferred)
+
+This method leverages AWS EventBridge to streamline the logging process by sending data directly to Sumo Logic via an HTTP endpoint. By eliminating intermediary services such as Lambda, it offers a more straightforward and cost-effective solution.
+
+#### Step 1: Create an HTTP source in Sumo Logic
+
+To create an HTTP source in Sumo Logic, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+
+#### Step 2: Configure EventBridge API destination
+
+Follow the steps below to configure the EventBridge API destination:
+1. Sign in to your [Amazon EventBridge Console](https://aws.amazon.com/eventbridge/).
+1. In the navigation bar, click **API destinations**.
+1. Click **Create destination**.
+1. Enter a name for the API Destination.
+1. Provide the HTTP Source URL from Sumo Logic.
+1. Click **Create a new connection** to create a connection for the API destination.
+  1. Provide a connection name.
+  1. Keep the API Type as **Public**.
+  1. Select **Basic (Username/Password)** in the **Authorization type**.
+  1. Add any value of your choice for **Username** and **Password**.
+
+#### Step 3: Create the EventBridge rule
+
+Follow the steps below to create the EventBridge rule:
+1. Sign in to your [Amazon EventBridge Console](https://aws.amazon.com/eventbridge/).
+1. In the navigation bar, click **Rules**.
+1. Set the event source to **AWS services** and then select **Security Hub** as the AWS service.
+1. Select **All Events** in Event Type.
+1. Under **Select targets**, choose **EventBridge API destination**.
+1. Select the API Destination created in Step 2.
+1. Select **Create a new role for this specific resource** in the **Execution role**.
+1. Click **Create** to activate the rule.
+
+### Method 2: GuardDuty > Lambda Function > Sumo Logic via HTTP (Alternative)
+
+This method uses an AWS Lambda function to process, store, and forward logs to Sumo Logic via an HTTP endpoint. While it offers a robust solution, it introduces additional AWS resources, such as Lambda, which can increase both cost and complexity.
+
+- Amazon GuardDuty sends notifications based on CloudWatch events when new findings, or new occurrences of existing findings, are generated.
+- A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo `CloudWatchEventFunction` Lambda function.
+- The Lambda function sends the events to an HTTP source on a Sumo Logic hosted collector.
 
 This configuration is defined in a [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html) published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). You do not need to manually create the necessary AWS resources. You simply deploy the configuration, as described in Step 2 below.
 
-
-### Step 1: Configure an HTTP source
+#### Step 1: Configure an HTTP source
 
 1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. In Sumo Logic, configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). When you configure the source:
@@ -198,8 +240,7 @@ This configuration is defined in a [AWS Serverless Application Model (SAM) speci
 
 When you configure the HTTP Source, make a note of the HTTP Source Address URL. You will need it in the next step.  
 
-
-### Step 2: Deploy Sumo GuardDuty events processor
+#### Step 2: Deploy Sumo Logic GuardDuty events processor
 
 In this step, you deploy the events processor. This will create the AWS resources described in [Collection overview](#collecting-logs-for-the-amazon-guardduty-app).
 
@@ -225,18 +266,21 @@ In this step, you deploy the events processor. This will create the AWS resource
 
 Now that you have set up collection for Amazon GuardDuty, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
-## Viewing Amazon GuardDuty Dashboards
+## Viewing Amazon GuardDuty dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
 See the overview of GuardDuty threats including the severity, threat purpose, resource type, threat name, account ID, and region.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS_GuardDuty-Overview2.png')} alt="Amazon GuardDuty dashboards" />
-
 
 **GuardDuty Threat Map**. See the count of threats on a world map in the last 24 hours.
 
@@ -254,14 +298,11 @@ See the overview of GuardDuty threats including the severity, threat purpose, re
 
 **Severity and ResourceType**. See the count of severity levels in the last 24 hours by resource type on a bar chart.
 
-
 ### CloudTrail Details
-
 
 See the details of GuardDuty CloudTrail threats including the count, title, the trend, and action type.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/CloudTrailDetails.png')} alt="Amazon GuardDuty dashboards" />
-
 
 **CloudTrail Threats.** See the count of CloudTrail threats in the last 24 hours.
 
@@ -273,9 +314,7 @@ See the details of GuardDuty CloudTrail threats including the count, title, the 
 
 **CloudTrail Threats by Title, ActionType**. See the details of CloudTrail threats in the last 24 hours including the account ID, region, title, accesskey ID, principal ID,  action type, severity, and count, displayed in a table.
 
-
 ### Details
-
 
 See the GuardDuty threat details including the count, account-region trend, threat purpose, severity, resource type, and security group.
 
@@ -294,7 +333,6 @@ See the GuardDuty threat details including the count, account-region trend, thre
 **Severity by LocalPort**. See the count of severity by local port in the last 24 hours on a bar chart.
 
 **Threats by SecurityGroup**. See the count and percentage of threats in the last 24 hours by security group on a pie chart.
-
 
 ### VPCs, Subnets, Security Group Details
 

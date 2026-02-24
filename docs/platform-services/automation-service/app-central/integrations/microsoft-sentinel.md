@@ -63,16 +63,41 @@ This documentation outlines the Microsoft Sentinel integration, providing detail
 ## Configure Microsoft Sentinel in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Tenant**. Enter the [tenant ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application#application-id-client-id) of the AAD directory in which you created the application.
 
-* Tenant
-* Client ID
-* Client Secret
-* Subscription ID
-* Workspace Name
-* Resource Group
-* Automation Engine<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-sentinel/ms-sentinel.png')} style={{border:'1px solid gray'}} alt="Edit Resource for AWS WAF" width="400"/>
+* **Client ID**. Enter your Microsoft 365 Defender [application ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application#application-id-client-id).
+
+* **Client Secret**. Enter your application (client) secret.
+
+* **Subscription ID**. Enter your [subscription ID](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id). The subscription ID is a GUID that uniquely identifies your subscription to use Azure services.
+
+* **Workspace Name**. Enter your [workspace ID](https://learn.microsoft.com/en-us/answers/questions/1154380/where-is-azure-is-the-primary-key-and-workspace-id).
+
+* **Resource Group**. Enter the [resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) name where the Azure resource is present.
+
+* **API Root**. Enter the [API root](https://management.azure.com) URL. The default value is `https://management.azure.com`.
+
+* **Login Endpoint**. Enter the login endpoint URL. The default value is `https://login.microsoftonline.com`
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-sentinel/ms-sentinel.png')} style={{border:'1px solid gray'}} alt="Edit Resource for AWS WAF" width="400"/>
 
 
 For information about Microsoft Sentinel, see [Microsoft Sentinel documentation](https://learn.microsoft.com/en-us/azure/sentinel/).

@@ -43,19 +43,6 @@ Check out this brief tutorial on how to submit a basic change to our docs.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/2ONgNj8pNLY?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 <details>
@@ -69,9 +56,6 @@ Check out this brief tutorial on how to submit a basic change to our docs.
 
 This will fork and submit changes to the Docs Team for review.
 </details>
-
-:::
-
 
 ## Edit a doc
 

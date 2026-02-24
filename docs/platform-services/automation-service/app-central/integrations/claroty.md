@@ -22,8 +22,23 @@ Query Claroty CTD, an OT scanner and monitoring system. Claroty CTD provides fun
 ## Configure Claroty in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the URL for your Claroty instance.
+
+* **Username**. Enter the username of a Claroty admin user authorized to provide authentication for the integration.
+
+* **Password**. Enter the password for the Claroty admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/claroty/claroty-configuration.png')} style={{border:'1px solid gray'}} alt="Claroty configuration" width="400"/>
 

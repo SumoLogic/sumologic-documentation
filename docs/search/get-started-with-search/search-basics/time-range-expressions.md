@@ -4,6 +4,8 @@ title: Time Range Expressions
 description: When you are building a search query, you have the option to add a time range expression in the time range field.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 When you are building a search query, you have the option to add a time range expression in the time range field.
 
 The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.
@@ -14,7 +16,7 @@ Preset values are available to choose from, with **Last 15 Minutes** as the de
 
 Search time ranges use either the default timezone set in your web browser, or the [Default Timezone](../../../get-started/account-settings-preferences.md) setting on the **Preferences** page, if you have set it.
 
-![time-range-expressions.png](/img/search/get-started-search/search-basics/time-range-expressions.png)
+<img src={useBaseUrl('img/search/get-started-search/search-basics/time-range-expressions.png')} alt="Time range expressions" style={{border: '1px solid gray'}} width="300" />
 
 ## Relative time range expressions
 

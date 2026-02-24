@@ -33,5 +33,5 @@ The [SAML Configuration](/docs/manage/security/saml/set-up-saml) Management API 
 
 <ApiRoles/>
 
-* Security
+* [Security](/docs/manage/users-roles/roles/role-capabilities/#security)
     * Manage SAML

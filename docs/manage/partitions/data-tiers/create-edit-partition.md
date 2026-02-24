@@ -25,10 +25,10 @@ If you have a Sumo Logic Enterprise Suite account, you can take advantage of th
 
 ## Create a Partition
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
 1. Click **+ Add Partition**.
 1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/create-new-partition.png')} alt="create-new-partition.png" width="300"/>
-1. **Name**. Enter a name for the Partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores (`_`). However, a Partition name cannot start with `sumologic_` or an underscore `_`.
+1. **Name**. Enter a name for the Partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores (`_`) and hyphens (`-`). However, a Partition name cannot start with `sumologic_`, an underscore `_`, or a hyphen (`-`).
 1. **Data Tier**. (Enterprise Suite accounts only) Click the radio button for the tier where you want the Partition to reside.
 1. **Routing Expression**. Enter a [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the Partition, using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) or [custom metadata fields](/docs/manage/fields). If you have an Enterprise Suite account, and are going to assign the Partition to the Infrequent Tier, see the information in the [Assigning Data to a Data Tier](/docs/manage/partitions/data-tiers#assigning-data-to-a-data-tier) section of the [Data Tiers](/docs/manage/partitions/data-tiers/) page.
     :::note
@@ -85,7 +85,7 @@ Before changing the routing expression for a partition, consider the impact of t
 
 ### How to edit a partition
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
 1. To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
   :::note 
   You can see the suggestions only if there are two or more responses for the same column or section. 

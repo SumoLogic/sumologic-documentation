@@ -37,13 +37,25 @@ Because *gpt-3.5-turbo* performs at a similar capability to *text-davinci-003* b
 ## Configure OpenAI ChatGPT in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your OpenAI ChatGPT API URL, for example, `https://api.openai.com/`
 
-   * **Label**. The name of the resource.
-   * **API URL**. `https://api.openai.com/`.
-   * **API Key**. Your OpenAI API Key.
-   * Disclaimer: Kindly review and acknowledge the disclaimer provided in the integration resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/openai-chatgpt-configuration.png')} style={{border:'1px solid gray'}} alt="OpenAI ChatGPT configuration" width="400"/>
+* **API Key**. Enter the OpenAI [API key](https://platform.openai.com/docs/api-reference/admin-api-keys) you [obtained earlier](#openai-chatgpt-configuration).
+
+* **Disclaimer**. Review and acknowledge the disclaimer.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/openai-chatgpt-configuration.png')} style={{border:'1px solid gray'}} alt="OpenAI ChatGPT configuration" width="400"/>
 
 For information about OpenAI, see [OpenAI documentation](https://platform.openai.com/docs/api-reference/introduction).
 

@@ -5,10 +5,10 @@ sidebar_label: quantize
 ---
 
 
-You can use the `quantize` operator to control the Sumo’s quantization behavior, which is described in detail in [Metric Quantization](../introduction/metric-quantization.md).
-You can specify:
+You can use the `quantize` operator to control the Sumo’s quantization behavior, which is described in detail in [Metrics Quantization](/docs/metrics/introduction/metric-quantization/).
 
-* The size of the time buckets across which Sumo aggregates your metrics. If you do not specify a quantization interval, Sumo determines an optimum size for time buckets, as described in [Automatic quantization at query time](../introduction/metric-quantization.md).  
+You can specify:
+* The size of the time buckets across which Sumo aggregates your metrics. If you do not specify a quantization interval, Sumo determines an optimum size for time buckets, as described in [Automatic quantization at query time](/docs/metrics/introduction/metric-quantization/#automatic-quantization-at-query-time).  
 * The rollup type that Sumo uses to aggregate the individual data points in a time bucket, which can be one of `avg`, `min`, `max`, `sum`, `count`, or `rate`. If you do not specify a rollup type in the `quantize` clause of your query, for each time bucket, Sumo presents the average of the data points in that bucket.  
 
 ## Syntax
@@ -29,7 +29,7 @@ To apply the quantization directly to the selector, `quantize` has to follow the
 :::
 
 :::note
-In the Metrics Explorer, you must [switch to Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer) to enter the `drop last` option.
+In the Metrics Search, you must [switch to advanced mode](/docs/metrics/metrics-queries/metrics-explorer/#switch-betweenbasic-and-advancedmode) to enter the `drop last` option.
 :::
 
 ## Examples 
@@ -60,7 +60,7 @@ metric=CPU_User cluster=kafka | quantize to 10m using max drop last
 
 ### Omit time bucket size
 
-In this example we omit the `to INTERVAL` part of the query and let Sumo determine appropriate quantization interval according to [How Sumo chooses rollup table and quantization interval](../introduction/metric-quantization.md#how-sumo-chooses-rollup-table-and-quantization-interval). `max` rollup type will be used to aggregate the metrics in each time bucket.
+In this example we omit the `to INTERVAL` part of the query and let Sumo determine appropriate quantization interval according to [How Sumo chooses rollup table and quantization interval](/docs/metrics/introduction/metric-quantization/#quantization-at-ingestion). `max` rollup type will be used to aggregate the metrics in each time bucket.
 
 ```sql
 metric=CPU_User cluster=kafka | quantize using max

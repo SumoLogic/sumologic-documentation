@@ -53,18 +53,31 @@ Follow these steps to [create a Server-to-Server OAuth app](https://developers.z
 ## Configure Zoom in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **OAuth Token URL**. Enter the the Zoom OAuth Token URL. The default is `https://zoom.us/`.
+
+* **API URL**. Enter the Zoom API URL. The default is `https://api.zoom.us/`.
+
+* **Client ID**. Enter the Zoom client ID for the application you [created earlier](#zoom-configuration).
+
+* **Client Secret**. Enter the Zoom client secret for the application you [created earlier](#zoom-configuration).
+
+* **Account ID**. Enter the account ID for the application you [created earlier](#zoom-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/zoom-configuration.png')} style={{border:'1px solid gray'}} alt="Zoom configuration" width="400"/>
 
 For information about Zoom, see [Zoom documentation](https://developers.zoom.us/docs/).
-
-   * **Label**. The resource name.
-   * **OAuth Token URL**. The default OAuth Token url is 'https://zoom.us/'.
-   * **API URL**. The default API url is 'https://api.zoom.us/'.
-   * **Client ID**. Your Client ID for your application listed on 'https://marketplace.zoom.us/user/build'.
-   * **Client Secret**. Your Client Secret for your application listed on 'https://marketplace.zoom.us/user/build'.
-   * **Account ID**. Your Account ID for your application listed on 'https://marketplace.zoom.us/user/build'.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/zoom-configuration.png')} style={{border:'1px solid gray'}} alt="Zoom configuration" width="400"/>
-
 
 ## Category
 

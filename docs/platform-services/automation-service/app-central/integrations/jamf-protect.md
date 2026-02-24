@@ -24,19 +24,34 @@ Updated: Jun 15, 2023***
 
 1. Log in to Jamf Protect.
 2. Click on Administrative on the left menu.
-3. Create API Client and click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf-protect/jamf-protect-1.png')} style={{border:'1px solid gray'}} alt="jamf-protect" width="800"/>
-4. Copy API Client Password.
-5. Copy Client ID in API Client Configuration
+3. Select [Create API Client](https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Jamf_Protect_API.html) and click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf-protect/jamf-protect-1.png')} style={{border:'1px solid gray'}} alt="jamf-protect" width="800"/>
+4. Copy the API Client Password.
+5. Copy the Client ID in API Client Configuration
 
 ## Configure Jamf Protect in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Jamf Protect [API URL](https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Jamf_Protect_API.html), for example, `https://your-tenant.protect.jamfcloud.com`
 
-   * **API URL**. 'https://your-tenant.protect.jamfcloud.com'.
-   * **Client ID**. Insert copied Client ID.
-   * **Password**. Insert copied Password.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/jamf-protect-configuration.png')} style={{border:'1px solid gray'}} alt="Jamf Protect configuration" width="400"/>
+* **Client ID**. Insert the Jamf Protect [Client ID](https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Jamf_Protect_API.html) that you [copied earlier](#jamf-protect-configuration).
+
+* **Password**. Insert the password you [copied earlier](#jamf-protect-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/jamf-protect-configuration.png')} style={{border:'1px solid gray'}} alt="Jamf Protect configuration" width="400"/>
 
 For information about Jamf Protect, see [Jamf Protect documentation](https://www.jamf.com/resources/product-documentation/jamf-protect-administrators-guide/).
 

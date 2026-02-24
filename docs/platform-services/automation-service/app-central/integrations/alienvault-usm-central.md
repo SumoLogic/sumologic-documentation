@@ -21,8 +21,24 @@ Search events, alarms, and update labels in AlienVault USM Central.
 ## Configure AlienVault USM Central in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+
+* <IntegrationLabel/>
+* **Server URL**. Enter your AlienVault USM Central URL, for example, `https://example.alienvault.cloud/`
+
+* **Username**. Enter the username of the AlienVault USM Central admin user authorized to provide authentication for the integration.
+
+* **Password**. Enter the username's password.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/alienvault/alienvault-usm-central-configuration.png')} style={{border:'1px solid gray'}} alt="Alienvault USM Central configuration" width="400"/>
 

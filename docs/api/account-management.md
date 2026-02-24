@@ -33,5 +33,9 @@ The Account Management API allows you to manage the custom subdomain for the URL
 ## Required role capabilities
 
 <ApiRoles/>
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * View Account Overview
+ 
+:::note
+You do not require any capabilities to get overview of account status (/v1/account/status).
+:::

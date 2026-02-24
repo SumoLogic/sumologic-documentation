@@ -43,7 +43,7 @@ Download the `DLQLambdaCloudFormation.json` CloudFormation template [here](https
 
 Before you upload the CloudFormation template, there are some optional configuration steps.
 
-If you want to use the CloudFormation Template as is, proceed to [Create a stack on the AWS CloudFormation console](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs).
+If you want to use the CloudFormation Template as is, proceed to [Create a stack on the AWS CloudFormation console](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-4-create-a-stack-on-the-aws-cloudformation-console).
 
 ### Configure environment variables for Lambda functions (Optional)
 
@@ -164,10 +164,10 @@ If you do not want the `SumoCWSpilloverAlarm` alarm to be created, remove the de
 
 1. Sign in to the [AWS Management Console](https://s3.console.aws.amazon.com).
 1. In the **Management Tools** menu, select **CloudFormation**.
-1. Create a new stack by clicking **Create Stack**, then select **With new resources (standard)**.<br/>  ![CF_animated.gif](/img/send-data/CF_animated.gif)
+1. Create a new stack by clicking **Create Stack**, then select **With new resources (standard)**.<br/><img src={useBaseUrl('img/send-data/CF_animated.gif')} alt="Create a new stack" style={{border: '1px solid gray'}} width="600" />
 1. On the **Specify Template** window, do one of the following:
-   * If you have downloaded and optionally modified the CloudFormation template, choose to **Upload a template file**, upload the `DLQLambdaCloudFormation.json` file, and then click **Next**.<br/>  ![Create_Stack_dialog.png](/img/send-data/Create_Stack_dialog.png)
-   * Otherwise, if you did not modify the CloudFormation template, select **Specify an Amazon S3 template URL** and enter: `https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormation.json`<br/>  ![Create_Stack_dialog_2.png](/img/send-data/Create_Stack_dialog_2.png)
+   * If you have downloaded and optionally modified the CloudFormation template, choose to **Upload a template file**, upload the `DLQLambdaCloudFormation.json` file, and then click **Next**.<br/><img src={useBaseUrl('img/send-data/Create_Stack_dialog.png')} alt="Upload a template file" style={{border: '1px solid gray'}} width="500" />
+   * Otherwise, if you did not modify the CloudFormation template, select **Specify an Amazon S3 template URL** and enter: `https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormation.json`<br/><img src={useBaseUrl('img/send-data/Create_Stack_dialog_2.png')} alt="Specify an Amazon S3 URL" style={{border: '1px solid gray'}} width="500" />
 1. Select **Next** and the **Specify Stack Details** window appears. Enter the following:
    * **Stack Name**.
    * **EmailID** (Optional) Used for alerts.
@@ -179,7 +179,7 @@ If you do not want the `SumoCWSpilloverAlarm` alarm to be created, remove the de
     LogStreamPrefix field does not accept special characters (`[|\\{}()[\]^$+*?.-]`). For example, you can use the comma-separated list like test-name, test-logs as the LogStream name prefixes.
     :::
     * **NumOfWorkers.** (Optional) Increase this value to speed up dead letter queue (DLQ) processing.
-    * **SumoEndPointURL** (Required). Enter the HTTP Source Address URL from [Add a Hosted Collector and HTTP Source](#step-1-add-a-hosted-collector-and-http-source).<br/>  ![Specify_Stack_Details.png](/img/send-data/Specify_Stack_Details.png)
+    * **SumoEndPointURL** (Required). Enter the HTTP Source Address URL from [Add a Hosted Collector and HTTP Source](#step-1-add-a-hosted-collector-and-http-source).<br/><img src={useBaseUrl('img/send-data/Specify_Stack_Details.png')} alt="Specify stack details" style={{border: '1px solid gray'}} width="700" />
 1. Click **Next**. The **Configure Stack Options** screen will appear. You can optionally add AWS tags to tag the resources created by this CloudFormation stack. Click **Next** to get to the final **Review** window.
 1. In the **Review** window, click the checkbox acknowledging that you understand the the template creates IAM resources, and click **Create**.
 
@@ -205,7 +205,7 @@ If alarm resources in [Step 3](#remove-alarm-resources-optional) is not removed,
 
 Sign in to the email account whose address you provided when performing the configuration described in [Create a stack on the AWS CloudFormation console](#step-4-create-a-stack-on-the-aws-cloudformation-console) above. Look for an email with subject `AWS Notification - Subscription Confirmation`, like the example shown below.
 
-![aws-notification.png](/img/send-data/aws-notification.png)  
+<img src={useBaseUrl('img/send-data/aws-notification.png')} alt="AWS notification" style={{border: '1px solid gray'}} width="800" />
 
 To validate the email address, click **Confirm subscription** in the email.
 

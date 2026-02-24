@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
 
-Once the feature is enabled, the IP address or [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) of each user in an account must be added to the allowlist in order to log in to Sumo Logic UI or make any requests via the Sumo Logic APIs. The allowlist does not cover the Collector IP (Server IP) to connect to Sumo Logic.
+Once the feature is enabled, the IP address or [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) of each user in an account must be added to the allowlist in order to log in to Sumo Logic UI or make any requests via the Sumo Logic APIs. The allowlist does not cover the Collector IP (Server IP) to connect to Sumo Logic.
 
 You can also share dashboards with users connecting from IP addresses or CIDRs in this allowlist. That way they can see the dashboard without logging in, but the dashboard remains private to your allowlist. The public cannot see it.
 
@@ -20,7 +20,7 @@ The IP is generally your host IP address. But if your request is coming through 
 
 ## Enable allowlist for login and APIs
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service AllowList Settings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service AllowList Settings**. 
 1. Under **Service Allowlist Settings**, select the **Enable Login / API Allowlist** check box. <br/><img src={useBaseUrl('img/security/service-allow-list-1.png')} alt="Enable Login / API Allowlist check box in Service Allowlist settings" style={{border: '1px solid gray'}} width="400" />
 1. Copy and paste your entry into the **IP Address or CIDR** text box, a **Description** is optional, then click **Add**.
 1. Type additional IP and/or CIDR addresses in the text box, and click **Add**. Repeat this step until you've added all the addresses you'd like to add to the allowlist.
@@ -28,7 +28,7 @@ The IP is generally your host IP address. But if your request is coming through 
 
 ## Enable dashboard allowlist
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service AllowList Settings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service AllowList Settings**. 
 1. Under **Service Allowlist Settings**, select the **Enable Dashboard Allowlist** check box. <br/><img src={useBaseUrl('img/security/service-allow-list-2.png')} alt="Enable Dashboard Allowlist** check box in Service Allowlist settings" style={{border: '1px solid gray'}} width="400" />
 1. Copy and paste your IP address in the **IP Address or CIDR** text box, a **Description** is optional, then click **Add**.
 1. Type additional IP and/or CIDR addresses in the text box, and click **Add**. Repeat this step until you've added all the addresses you'd like to allowlist.
@@ -36,7 +36,7 @@ vClick **Save**.
 
 ### Disable allowlist settings
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service AllowList Settings**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Service AllowList Settings**. 
 1. Under **Service Allowlist Settings**, deselect **Enable Login / API Allowlist** or **Enable Dashboard Allowlist** or both options.
 1. Click **Save**. You will be prompted to confirm that you want to disable your allowlist settings.
 1. Click **OK**.

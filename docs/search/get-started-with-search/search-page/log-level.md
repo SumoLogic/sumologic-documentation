@@ -30,19 +30,6 @@ Watch the following micro lesson to learn about log level detection.
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/cAQYiVs-PXY?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
--->
-
 :::
 
 <details>

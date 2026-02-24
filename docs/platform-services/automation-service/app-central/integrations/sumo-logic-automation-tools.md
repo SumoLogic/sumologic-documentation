@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-notifications.png')} alt="sumo-logic-notifications" width="100"/>
 
-***Version: 0.1  
-Updated: Nov 11, 2024***
+***Version: 1.3  
+Updated: Nov 14, 2025***
 
 Sumo Logic Automation Tools simplifies Cloud SOAR playbooks with data processing and automation.
 
@@ -19,6 +19,7 @@ Sumo Logic Automation Tools simplifies Cloud SOAR playbooks with data processing
 * **Build JSON Object** (*Custom*) - Provide the action with JSON key placeholder or string to build a new JSON object with the specified key/values. See [Build JSON Object example](#build-json-object).
 * **Build Signal Output** (*Custom*) - Converts the Sumo Logic SIEM Signal JSON object to HTML or plain text with line breaks. See [Build Signal Output example](#build-signal-output).
 * **Scaled Decimal to Percentage** (*Custom*) - Converts a scaled decimal values between 0 and 1 into a percentage. See [Scaled Decimal to Percentage](#scaled-decimal-to-percentage).
+* **Convert Time** (*custom*) - Converts timestamps to the selected timezone.
 
 ## Actions usage
 
@@ -404,7 +405,7 @@ INPUT = "1"
 ```
 ```css
 OUTPUT = {
-  "cs_val": "100%"
+  "cs_val": "100"
 }
 ```
 
@@ -413,7 +414,7 @@ INPUT = "0.1"
 ```
 ```css
 OUTPUT = {
-  "cs_val": "10%"
+  "cs_val": "10"
 }
 ```
 
@@ -422,7 +423,7 @@ INPUT = "0.01"
 ```
 ```css
 OUTPUT = {
-  "cs_val": "1%"
+  "cs_val": "1"
 }
 ```
 
@@ -431,16 +432,49 @@ INPUT = ".5"
 ```
 ```css
 OUTPUT = {
-  "cs_val": "50%"
+  "cs_val": "50"
 }
 ```
 
+### Convert Time
+
+```css
+INPUT_TIME = "2025-10-30T06:33:10.815000+00:00"
+INPUT_TIMEZONE = "Asia/Singapore"
+```
+```css
+OUTPUT = {
+  "input_time": "2025-10-30T06:33:10.815000+00:00",
+  "target_timezone": "Asia/Singapore",
+  "converted_time": "30/10/2025 02:33:10 PM",
+  "converted_time_iso": "2025-10-30T14:33:10+0800"
+}
+```
 
 ## Configure Sumo Logic Automation Tools in Automation Service and Cloud SOAR
 
-No configuration is needed. Sumo Logic Automation Tools executes without additional authentication.
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+
+* <IntegrationLabel/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+:::note
+No authentication configuration is needed. Sumo Logic Automation Tools executes without additional authentication.
+:::
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumologic-automation-tools.png')} style={{border:'1px solid gray'}} alt="Sumo Logic Automation Tools configuration" width="400"/>
 
 ## Change log
 
 * Nov 11, 2024 - Beta version released.
-* May 23, 2024 - Introduced the new "Scaled Decimal to Percentage" action, which converts a scaled decimal value into a percentage.
+* May 23, 2025 - Introduced the new "Scaled Decimal to Percentage" action, which converts a scaled decimal value into a percentage.
+* June 20, 2025 - Removed `%` sign from the output.
+* Nov 14, 2025 (v1.3) - Added "Convert Time" action to convert timestamps to the selected timezone.

@@ -17,13 +17,13 @@ This app includes [built-in monitors](#trend-micro-vision-one-monitors). For det
 
 ## Log types
 
-This app uses Sumo Logic’s Trend Micro Vision One Source to collect [alert logs](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source/) from the Trend Micro platform.
+This app uses Sumo Logic’s Trend Micro Vision One Source to collect [alert logs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source/) from the Trend Micro platform.
 
 ## Sample log message
 
 <details>
 <summary>Alert Log</summary>
-    
+
 ```json
 {
     "schemaVersion": "1.15",
@@ -193,7 +193,7 @@ This app uses Sumo Logic’s Trend Micro Vision One Source to collect [alert log
 }
 ```
 </details>
-    
+
 ## Sample queries
 
 ```sql title="Total Alerts"

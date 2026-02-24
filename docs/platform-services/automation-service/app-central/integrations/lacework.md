@@ -26,8 +26,25 @@ Lacework provides end-to-end cloud security automation for AWS, Azure, and GCP w
 ## Configure Lacework in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Lacework URL, for example, `https://YourLacework.lacework.net`
+
+* **Access Key ID**. Enter your Lacework [API key ID](https://docs.fortinet.com/document/lacework-forticnapp/latest/administration-guide/155000/api-keys).
+
+* **Secret Key**. Enter the secret for the API key.
+
+* **Token Expiration Time (s)**. Enter the token expiration time in seconds. The maximum is 86400 seconds (24 hours).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/lacework-configuration.png')} style={{border:'1px solid gray'}} alt="Lacework configuration" width="400"/>
 

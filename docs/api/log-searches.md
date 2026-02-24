@@ -35,6 +35,6 @@ Whether you're running ad hoc searches during a forensic investigation or runnin
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Download Search Results
     * View Collectors

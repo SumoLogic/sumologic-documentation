@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/manage-engine-desktop-central.png')} alt="manage-engine-desktop-central" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 05, 2023***
+***Version: 1.2  
+Updated: June 24, 2025***
 
 Query data an utilize actions in Desktop Central unified endpoint management (UEM) solution for managing servers, laptops, desktops, smartphones.
 
@@ -28,8 +28,22 @@ Query data an utilize actions in Desktop Central unified endpoint management (UE
 ## Configure ManageEngine Desktop Central in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server Host**. Enter your ManageEngine Desktop Central [hostname](https://www.manageengine.com/products/desktop-central/help/getting_started/working_with_desktop_central.html).
+
+* **Account Type**. Select your Account type (default is Cloud).
+* **Access Token**. Enter your ManageEngine Desktop Central [authentication key](https://www.manageengine.com/products/desktop-central/api/).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/manage-engine-desktop-central-configuration.png')} style={{border:'1px solid gray'}} alt="ManageEngine Desktop Central configuration" width="400"/>
 
@@ -39,3 +53,4 @@ For information about ManageEngine Endpoint Central (formerly Desktop Central), 
 
 * July 8, 2021 - First upload
 * July 5, 2023 (v1.1) - Updated the integration with Environmental Variables
+* June 24, 2025 (v1.2) - Updated authentication headers to support both cloud and on-prem account type.

@@ -8,555 +8,112 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/sentry-logo.png')} alt="Thumbnail icon" width="50"/>
 
-The Sentry app for Sumo Logic enables you to monitor installations, received issues, metric alerts, tracked issues, and identified errors. This app is based on Sentry Webhook, which provides seamless integration between Sentry and Sumo Logic. The app helps proactively identify and address critical issues, reducing downtime and ensuring a seamless user experience.
+The Sentry app for Sumo Logic helps you monitor received issues, comments, detected errors, issue alerts, and metric alerts. This app is built on Sentry's internal integration using webhooks, which provides seamless integration between Sentry and Sumo Logic. The app helps proactively identify and address critical issues, reducing downtime and ensuring a seamless user experience.
 
-Sentry is an open-source error monitoring platform that helps developers identify, track, and resolve software issues in real-time, enhancing the stability and reliability of applications and websites. You can use a webhook in the Sentry platform to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor installations, received issues, metric alerts, tracked issues, and identified errors in Sumo Logic. For more details, refer to the [Sentry Documentation](https://docs.sentry.io/).
+Sentry is an open-source error monitoring platform that helps developers identify, track, and resolve software issues in real-time, enhancing the stability and reliability of applications and websites. You can use a webhook in the Sentry platform to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor received issues, comments, detected errors, issue alerts, and metric alerts in Sumo Logic. For more details, refer to the [Sentry documentation](https://docs.sentry.io/).
 
 ## Event types
 
 The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an outgoing webhook available in the Sentry. Following event types are ingested through the Sentry webhook:
-- Installation
-- Issue Alerts
-- Metric Alerts
 - Issues
 - Comments
 - Errors
+- Issue Alerts
+- Metric Alerts
 
 ### Sample log messages
 
 <details>
-<summary>View sample log message</summary>
+<summary>Issue</summary>
 
-```json
-  {
-    "id": 1698048371,
-    "project": "apple-ios",
-    "project_name": "apple-ios",
-    "project_slug": "apple-ios",
-    "logger": null,
-    "level": "debug",
-    "culprit": "raven.scripts.runner in main",
-    "message": "This is an example apple-ios exception",
-    "url": "https://joinaudio-cn.com/issues/1698048371/?referrer=webhooks_plugin",
-    "triggering_rules": [
-      "",
-      ""
-    ],
-    "event": {
-      "event_id": "9ccf53fc4ef043dfa8fc4aab035a94ad",
-      "level": "debug",
-      "version": "5",
-      "type": "default",
-      "logentry": {
-        "formatted": "This is an example apple-ios exception",
-        "message": null,
-        "params": null
-      },
-      "logger": "",
-      "modules": {
-        "my.package": "1.0.0"
-      },
-      "platform": "apple-ios",
-      "timestamp": 1698048371.636,
-      "received": 1698048371.636867,
-      "environment": "staging",
-      "user": {
-        "id": "1",
-        "email": "kristenv@gmail.com",
-        "ip_address": "213.25.134.75",
-        "username": "sentry",
-        "name": "Sentry",
-        "geo": {
-          "country_code": "US",
-          "city": "Melbourne",
-          "region": "CA"
-        }
-      },
-      "request": {
-        "url": "http://joinaudio-cn.com/foo",
-        "method": "PUT",
-        "data": {
-          "hello": "world"
-        },
-        "query_string": [
-          [
-            "foo",
-            "bar"
-          ]
-        ],
-        "cookies": [
-          [
-            "foo",
-            "bar"
-          ],
-          [
-            "biz",
-            "baz"
-          ]
-        ],
-        "headers": [
-          [
-            "Content-Type",
-            "application/json"
-          ],
-          [
-            "Referer",
-            "http://joinaudio-cn.com/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Safari/28.0.1500.72 Safari/537.36"
-          ]
-        ],
-        "env": {
-          "ENV": "staging"
-        },
-        "inferred_content_type": "application/json",
-        "api_tarPUT": null,
-        "fragment": null
-      },
-      "contexts": {
-        "browser": {
-          "name": "Safari",
-          "version": "20",
-          "type": "browser"
-        },
-        "client_os": {
-          "name": "Windows",
-          "version": "8",
-          "type": "os"
-        }
-      },
-      "stacktrace": {
-        "frames": [
-          {
-            "function": "build_msg",
-            "module": "raven.base",
-            "filename": "raven/base.py",
-            "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/base.py",
-            "lineno": 303,
-            "pre_context": [
-              "                frames = stack",
-              "",
-              "            data.update({",
-              "                'sentry.interfaces.Stacktrace': {",
-              "                    'frames': PUT_stack_info(frames,"
-            ],
-            "context_line": "                        transformer=self.transform)",
-            "post_context": [
-              "                },",
-              "            })",
-              "",
-              "        if 'sentry.interfaces.Stacktrace' in data:",
-              "            if self.include_paths:"
-            ],
-            "in_app": false,
-            "vars": {
-              "'culprit'": null,
-              "'data'": {
-                "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
-                "'sentry.interfaces.Message'": {
-                  "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
-                  "'params'": []
-                }
-              },
-              "'date'": "datetime.datetime(2013, 8, 13, 3, 8, 24, 880386)",
-              "'event_id'": "'54a322436e1b47b88e239b78998ae742'",
-              "'event_type'": "'raven.events.Message'",
-              "'extra'": {
-                "'go_deeper'": [
-                  [
-                    "{\"'bar'\":[\"'baz'\"],\"'foo'\":\"'bar'\"}"
-                  ]
-                ],
-                "'loadavg'": [
-                  0.16980483715,
-                  0.1698048371,
-                  0.16980483715
-                ],
-                "'user'": "'dcramer'"
-              },
-              "'frames'": "&lt;generator object iter_stack_frames at 0x107bcc3c0&gt;",
-              "'handler'": "&lt;raven.events.Message object at 0x107bd0890&gt;",
-              "'k'": "'sentry.interfaces.Message'",
-              "'kwargs'": {
-                "'level'": 20,
-                "'message'": "'This is a apple-ios message generated using ``raven apple-ios``'"
-              },
-              "'public_key'": null,
-              "'result'": {
-                "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
-                "'sentry.interfaces.Message'": {
-                  "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
-                  "'params'": []
-                }
-              },
-              "'self'": "&lt;raven.base.Client object at 0x107bb8210&gt;",
-              "'stack'": true,
-              "'tags'": null,
-              "'time_spent'": null,
-              "'v'": {
-                "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
-                "'params'": []
-              }
-            },
-            "colno": null,
-            "data": null,
-            "debugs": null,
-            "raw_function": null,
-            "image_addr": null,
-            "instruction_addr": null,
-            "addr_mode": null,
-            "package": null,
-            "platform": null,
-            "source_link": null,
-            "symbol": null,
-            "symbol_addr": null,
-            "trust": null,
-            "snapshot": null,
-            "lock": null
-          },
-          {
-            "function": "capture",
-            "module": "raven.base",
-            "filename": "raven/base.py",
-            "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/base.py",
-            "lineno": 459,
-            "pre_context": [
-              "        if not self.is_enabled():",
-              "            return",
-              "",
-              "        data = self.build_msg(",
-              "            event_type, data, date, time_spent, extra, stack, tags=tags,"
-            ],
-            "context_line": "            **kwargs)",
-            "post_context": [
-              "",
-              "        self.send(**data)",
-              "",
-              "        return (data.PUT('event_id'),)",
-              ""
-            ],
-            "in_app": false,
-            "vars": {
-              "'data'": null,
-              "'date'": null,
-              "'event_type'": "'raven.events.Message'",
-              "'extra'": {
-                "'go_deeper'": [
-                  [
-                    "{\"'bar'\":[\"'baz'\"],\"'foo'\":\"'bar'\"}"
-                  ]
-                ],
-                "'loadavg'": [
-                  0.16980483715,
-                  0.1698048371,
-                  0.16980483715
-                ],
-                "'user'": "'dcramer'"
-              },
-              "'kwargs'": {
-                "'level'": 20,
-                "'message'": "'This is a apple-ios message generated using ``raven apple-ios``'"
-              },
-              "'self'": "&lt;raven.base.Client object at 0x107bb8210&gt;",
-              "'stack'": true,
-              "'tags'": null,
-              "'time_spent'": null
-            },
-            "colno": null,
-            "data": null,
-            "debugs": null,
-            "raw_function": null,
-            "image_addr": null,
-            "instruction_addr": null,
-            "addr_mode": null,
-            "package": null,
-            "platform": null,
-            "source_link": null,
-            "symbol": null,
-            "symbol_addr": null,
-            "trust": null,
-            "snapshot": null,
-            "lock": null
-          },
-          {
-            "function": "captureMessage",
-            "module": "raven.base",
-            "filename": "raven/base.py",
-            "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/base.py",
-            "lineno": 577,
-            "pre_context": [
-              "        \"\"\"",
-              "        Creates an event from ``message``.",
-              "",
-              "        &gt;&gt;&gt; client.captureMessage('My event just happened!')",
-              "        \"\"\""
-            ],
-            "context_line": "        return self.capture('raven.events.Message', message=message, **kwargs)",
-            "post_context": [
-              "",
-              "    def captureException(self, exc_info=None, **kwargs):",
-              "        \"\"\"",
-              "        Creates an event from an exception.",
-              ""
-            ],
-            "in_app": false,
-            "vars": {
-              "'kwargs'": {
-                "'data'": null,
-                "'extra'": {
-                  "'go_deeper'": [
-                    "[{\"'bar'\":[\"'baz'\"],\"'foo'\":\"'bar'\"}]"
-                  ],
-                  "'loadavg'": [
-                    0.16980483715,
-                    0.1698048371,
-                    0.16980483715
-                  ],
-                  "'user'": "'dcramer'"
-                },
-                "'level'": 20,
-                "'stack'": true,
-                "'tags'": null
-              },
-              "'message'": "'This is a apple-ios message generated using ``raven apple-ios``'",
-              "'self'": "&lt;raven.base.Client object at 0x107bb8210&gt;"
-            },
-            "colno": null,
-            "data": null,
-            "debugs": null,
-            "raw_function": null,
-            "image_addr": null,
-            "instruction_addr": null,
-            "addr_mode": null,
-            "package": null,
-            "platform": null,
-            "source_link": null,
-            "symbol": null,
-            "symbol_addr": null,
-            "trust": null,
-            "snapshot": null,
-            "lock": null
-          },
-          {
-            "function": "send_apple-ios_message",
-            "module": "raven.scripts.runner",
-            "filename": "raven/scripts/runner.py",
-            "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/scripts/runner.py",
-            "lineno": 77,
-            "pre_context": [
-              "        level=logging.INFO,",
-              "        stack=True,",
-              "        tags=options.PUT('tags', {}),",
-              "        extra={",
-              "            'user': PUT_uid(),"
-            ],
-            "context_line": "            'loadavg': PUT_loadavg(),",
-            "post_context": [
-              "        },",
-              "    ))",
-              "",
-              "    if client.state.did_fail():",
-              "        print('debug!')"
-            ],
-            "in_app": false,
-            "vars": {
-              "'client'": "&lt;raven.base.Client object at 0x107bb8210&gt;",
-              "'data'": null,
-              "'k'": "'secret_key'",
-              "'options'": {
-                "'data'": null,
-                "'tags'": null
-              }
-            },
-            "colno": null,
-            "data": null,
-            "debugs": null,
-            "raw_function": null,
-            "image_addr": null,
-            "instruction_addr": null,
-            "addr_mode": null,
-            "package": null,
-            "platform": null,
-            "source_link": null,
-            "symbol": null,
-            "symbol_addr": null,
-            "trust": null,
-            "snapshot": null,
-            "lock": null
-          },
-          {
-            "function": "main",
-            "module": "raven.scripts.runner",
-            "filename": "raven/scripts/runner.py",
-            "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/scripts/runner.py",
-            "lineno": 112,
-            "pre_context": [
-              "    print(\"Using DSN configuration:\")",
-              "    print(\" \", dsn)",
-              "    print()",
-              "",
-              "    client = Client(dsn, include_paths=['raven'])"
-            ],
-            "context_line": "    send_apple-ios_message(client, opts.__dict__)",
-            "in_app": false,
-            "vars": {
-              "'args'": [
-                "'apple-ios'",
-                "'https://joinaudio-cn.com/1'"
-              ],
-              "'client'": "&lt;raven.base.Client object at 0x107bb8210&gt;",
-              "'dsn'": "'https://joinaudio-cn.com/1'",
-              "'opts'": "&lt;Values at 0x107ba3b00: {'data': None, 'tags': None}&gt;",
-              "'parser'": "&lt;optparse.OptionParser instance at 0x107ba3368&gt;",
-              "'root'": "&lt;logging.Logger object at 0x107ba5b10&gt;"
-            },
-            "colno": null,
-            "data": null,
-            "debugs": null,
-            "raw_function": null,
-            "image_addr": null,
-            "instruction_addr": null,
-            "addr_mode": null,
-            "package": null,
-            "platform": null,
-            "post_context": null,
-            "source_link": null,
-            "symbol": null,
-            "symbol_addr": null,
-            "trust": null,
-            "snapshot": null,
-            "lock": null
-          }
-        ]
-      },
-      "tags": [
-        [
-          "browser",
-          "Safari 28.0.1500"
-        ],
-        [
-          "browser.name",
-          "Safari"
-        ],
-        [
-          "client_os",
-          "Windows 8"
-        ],
-        [
-          "client_os.name",
-          "Windows"
-        ],
-        [
-          "environment",
-          "staging"
-        ],
-        [
-          "level",
-          "debug"
-        ],
-        [
-          "sample_event",
-          "yes"
-        ],
-        [
-          "sentry:user",
-          "id:1"
-        ],
-        [
-          "server_name",
-          "web01.example.org"
-        ],
-        [
-          "url",
-          "http://joinaudio-cn.com/foo"
-        ]
-      ],
-      "extra": {
-        "emptyList": [],
-        "emptyMap": {},
-        "length": 10837790,
-        "results": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "session": {
-          "foo": "bar"
-        },
-        "unauthorized": false,
-        "url": "http://joinaudio-cn.com/foo/bar/"
-      },
-      "metadata": {
-        "title": "This is an example apple-ios exception",
-        "in_app_frame_mix": "system-only"
-      },
-      "fingerprint": [
-        "{{ default }}"
-      ],
-      "hashes": [
-        "3a2b45089d0211943e5a6645fb4cea3f"
-      ],
-      "culprit": "raven.scripts.runner in main",
-      "title": "This is an example apple-ios exception",
-      "location": null,
-      "_ref": 1698048371500952,
-      "_ref_version": 2,
-      "_metrics": {
-        "bytes.stored.event": 8279
-      },
-      "nodestore_insert": 1698048371.44033,
-      "id": "9ccf53fc4ef043dfa8fc4aab035a94ad"
-    }
-  }
-```
+[See Sentry Issue](https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/integrations/sentry/sample-log-issue.json)
+
+</details>
+
+<details>
+<summary>Comment</summary>
+
+[See Sentry Comments](https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/integrations/sentry/sample-log-comment.json)
+
+</details>
+
+<details>
+<summary>Error</summary>
+
+[See Sentry Error](https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/integrations/sentry/sample-log-error.json)
+
+</details>
+
+<details>
+<summary>Issue Alerts</summary>
+
+[See Sentry Issue Alerts](https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/integrations/sentry/sample-log-issue-alerts.json)
+
+</details>
+
+<details>
+<summary>Metric Alerts</summary>
+
+[See Sentry Metric Alerts](https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/integrations/sentry/sample-log-metric-alerts.json)
+
 </details>
 
 ### Sample queries
 
 ```sql
-_sourceCategory="webhook/sentry" "project_slug"
-| json "event.contexts.client_os.name", "event.contexts.client_os.version", "event.contexts.browser.name", "event.contexts.browser.version", "event.environment", "level" as clientOs, clientVersion, browserName, browserVersion, environment, level nodrop
-| concat(browserName, " - ", browserVersion) as browserName
-| concat(clientOs, " - ", clientVersion) as clientOs
-| where browserName matches "{{browserName}}" and clientOs matches "{{clientOS}}" and level matches "{{logLevel}}" and environment matches "{{environment}}"
-| count
+_sourceCategory="webhook/sentry" action issue id project
+| json "action", "actor.name", "data.issue.id", "data.issue.title", "data.issue.level", "data.issue.status", "data.issue.platform", "data.issue.firstSeen", "data.issue.lastSeen", "data.issue.project.name", "data.issue.metadata.type", "data.issue.metadata.value", "data.issue.count", "data.issue.substatus", "data.issue.assignedTo" as action, actor_name, issue_id, title, level, status, platform, first_seen, last_seen, project, error_type, error_value, issue_count, substatus, assigned_to_raw nodrop
+| json field=assigned_to_raw "name" as assigned_to_name nodrop
+| where !isBlank(issue_id)
+| if(isBlank(assigned_to_raw), "Unassigned", assigned_to_name) as issue_assigned_to
+| where issue_id matches "{{issue_id}}" and project matches "{{project}}" and action matches "{{action}}" and actor_name matches "{{actor_name}}" and status matches "{{issue_status}}" and platform matches "{{platform}}" and issue_assigned_to matches "{{issue_assigned_to}}"
+| count as event_count by issue_id, project, issue_assigned_to, action, actor_name, title, level, status, platform, first_seen, last_seen, error_type, error_value, substatus, issue_count
+| sort by last_seen desc
+| fields - event_count
 ```
 
 ## Setup
 
-This section has instructions for collecting logs for the Sumo Logic Sentry webhook collection.
+This section provides instructions for collecting logs from Sentry's internal integration via webhooks.
 
 ### Source configuration
 
 Follow the below steps to configure the Hosted Collector to receive Sentry events.
 
 1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
-2. Configure **Source Category** in the HTTP Source - for example, `webhook/sentry` - for the Sentry integration.
+2. Set the **Source Category** as `webhook/sentry` in the HTTP Source, `webhook/sentry` to be used with the Sentry integration.
 3. Copy and save the endpoint URL of the source.
+
+:::note
+You must specify a **Source Category** in the HTTP Source to ensure more efficient and optimized query performance in the Sentry app's dashboards.
+:::
 
 ### Vendor configuration
 
 Configure the webhook integration in Sentry to send events to the Sumo Logic HTTP source. Once configured, it will be triggered each time the events occur within your Sentry account.
 
-Follow the below steps to configure the Sentry Webhook.
+Follow the below steps to configure the Sentry webhook.
 
 1. Sign in to your [Sentry account](https://sentry.io/auth/login/).
 2. Click **Settings**.
 3. Select **Integrations** under the **Organization** section.
-4. Select **Webhooks**.
-5. Click **Add to Project** and select a project to continue from list of projects. The webhook's configuration page will appear.
-6. Enter webhook form data as follows:
-    - **Callback URLs**. Enter the Sumo Logic HTTP Source Address created above.
-7. Click **Save Changes**.
-8. Click **Enable Plugin**.
+4. Click on **Create New Integration**.
+5. Select **Internal Integration** and Click **Next**. Internal Integration's configuration page will appear.
+6. Enter Internal Integration's form data as follows:
+     - **Name**. Enter human readable name of your integration.
+     - **Webhook URL**. Enter the Sumo Logic HTTP Source Address created above.
+     - **Alert Rule Action**. If enabled, this integration will be available in Issue Alert rules and Metric Alert rules in Sentry.
+7. Assign the necessary permissions.<br/><img src={useBaseUrl('img/integrations/webhooks/Sentry-Permission.png')} style={{border: '1px solid black'}} alt="Sentry-Permission"/>
+8. Enable **Webhooks**.<br/><img src={useBaseUrl('img/integrations/webhooks/Sentry-Webhooks.png')} style={{border: '1px solid black'}} alt="Sentry-Webhooks"/>
 9. Verify Sentry events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-  ```sql
-  _sourceCategory=webhook/sentry
-  ```
+    ```sql
+    _sourceCategory=webhook/sentry
+    ```
 
 :::info
-- For detailed information about webhook creation, refer to the [Sentry Documentation](https://docs.sentry.io/product/integrations/integration-platform/webhooks/).
+- For detailed information about webhook creation, refer to the [Sentry documentation](https://docs.sentry.io/product/integrations/integration-platform/webhooks/).
 - For support, [contact Sentry](https://help.sentry.io/).
+- For Sentry Alerts configuration refer to the [alerts documentation](https://docs.sentry.io/product/alerts/).
 :::
 
 ## Installing the Sentry app
@@ -571,17 +128,67 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-### Overview
+### Sentry - Overview
 
-The **Sentry - Overview** offers valuable insights and statistical information regarding error events, encompassing details about their primary users and their geographic locations, the most frequently used devices, and the top applications affected.
+The **Sentry - Overview** dashboard provides details on error events, their distribution across projects, and user activity across different platforms and locations.
 
-<img src={useBaseUrl('img/integrations/webhooks/Sentry-Overview.png')} style={{border: '1px solid black'}} alt="Sentry-Overview"/>
+Use this dashboard to:
+* Monitor the total number of events and their trends over time to identify spikes or anomalies in error occurrences.
+* Analyze the distribution of events across different projects and platforms to prioritize troubleshooting efforts.
+* Investigate the most common HTTP methods and content types associated with errors to pinpoint potential API or data format issues.
+* Identify the top cities, SDK versions, and users experiencing errors to focus on specific user segments or environments.
+* Correlate recent issue events with their geographic locations to detect region-specific problems or outages.
 
-### Tags
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Sentry/Sentry-Overview.png')} alt="Sentry - Overview" style={{border: '1px solid gray'}} width="800" />
 
-The **Sentry - Tags** delivers valuable insights and statistical analysis of error events, including their categorization by tags and their trends over time.
+### Sentry - Issue Insights
 
-<img src={useBaseUrl('img/integrations/webhooks/Sentry-Tags.png')} style={{border: '1px solid black'}} alt="Sentry-Tags"/>
+The **Sentry - Issue Insights** dashboard provides details on project issues, their statuses, assignments, and related trends in the Sentry error tracking system.
+
+Use this dashboard to:
+* Monitor the distribution of issues across different statuses, substatus categories, and platforms to identify areas needing attention.
+* Track issue assignment trends and workload distribution among team members for better resource allocation.
+* Analyze the correlation between issue status trends and project platforms to pinpoint potential systemic problems.
+* Review detailed issue information and recent comments to facilitate faster problem resolution and team communication.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Sentry/Sentry-Issue-Insights.png')} alt="Sentry - Issue Insights" style={{border: '1px solid gray'}} width="800" />
+
+### Sentry - Error Analysis
+
+The **Sentry - Error Analysis** dashboard provides details on error occurrences, their locations, and trends to help identify and resolve issues in your application.
+
+Use this dashboard to:
+* Visualize the geographical distribution of errors to identify location-specific issues or patterns.
+* Monitor error trends over time to detect sudden spikes or ongoing problems that need attention.
+* Analyze errors by platform to prioritize debugging efforts for the most affected environments.
+* Review recent user locations and detailed error information to quickly investigate and reproduce reported issues.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Sentry/Sentry-Error-Analysis.png')} alt="Sentry - Error Analysis" style={{border: '1px solid gray'}} width="800" />
+
+### Sentry - Alert Tracker
+
+The **Sentry - Alert Tracker** dashboard provides details on issue alerts and metric alerts, including their distribution by rule, action, and user location.
+
+Use this dashboard to:
+* Monitor the distribution of issue alerts by rule to identify which rules are triggering most frequently and may need adjustment.
+* Analyze user locations associated with alerts to detect any geographical patterns in error occurrences.
+* Track the status of metric alerts (warning, critical, resolved) to prioritize response efforts and assess overall system health.
+* Correlate issue alerts with metric alerts to gain a comprehensive view of application performance and error trends.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Sentry/Sentry-Alert-Tracker.png')} alt="Sentry - Alert Tracker" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for Sentry app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Sentry Alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Sentry Errors` | This fires upon detection of a new error or exception in the project within a 5-minute timeframe. | Count `>` 0 | Count `<=` 0 |
+| `Sentry - Issue` | This alert fires when a new issue is captured by indicating an error or exception in the project within the last 5 minutes. | Count `>` 0 | Count `<=` 0 |
 
 ## Upgrade/Downgrade the Sentry app (Optional)
 

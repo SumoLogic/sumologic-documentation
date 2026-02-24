@@ -24,19 +24,6 @@ many ways, such as the user interface when managing Collection, and can be refer
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/HNsXN5RoPwo"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
-
 :::
 
 #### Built-in metadata fields

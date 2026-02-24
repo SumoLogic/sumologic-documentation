@@ -35,11 +35,25 @@ F5 AWAF protects apps with behavioural analytics, proactive bot defence, and app
 ## Configure F5 AWAF in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
-  
-   * **Host**. IP where F5 AWAF is installed. 
-   * **Username and Password** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/f5-awaf-configuration.png')} style={{border:'1px solid gray'}} alt="F5 AWAF configuration" width="400"/>
+* <IntegrationLabel/>
+* **Host**. Enter the IP address where F5 AWAF is installed. 
+
+* **Username**. Enter the username of an F5 AWAF admin user authorized to provide authentication for the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/f5-awaf-configuration.png')} style={{border:'1px solid gray'}} alt="F5 AWAF configuration" width="400"/>
 
 For information about F5 AWAF, see [F5 AWAF documentation](https://docs.cloud.f5.com/docs-v2/web-app-and-api-protection/how-to/app-security/application-firewall).
 

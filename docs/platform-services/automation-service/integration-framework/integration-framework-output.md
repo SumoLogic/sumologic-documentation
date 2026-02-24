@@ -7,6 +7,8 @@ description: Learn how to work with output from the integration framework.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+This article describes the format of integration output. To edit the output of an integration, see [Edit output of an action](/docs/platform-services/automation-service/automation-service-integrations/#edit-output-of-an-action).
+
 ## About integration output
 
 Integrations primarily use JSON to pass data between actions and other internal components. There is no requirement that integrations return JSON results; integrations will execute regardless of the data or data type they return. However, in order to pass data returned from an action to a future action in a runbook or to other internal components, the output from an integration action must be returned in JSON, and the JSON fields must be defined in the output:path attributes of the action definition file. In other words, if the action output is not returned in JSON, it will not be able to be used in any other areas.

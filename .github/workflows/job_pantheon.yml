@@ -1,0 +1,110 @@
+name: Deploy to Pantheon
+
+permissions:
+  contents: write
+
+on:
+  workflow_call:
+    inputs:
+      SITE_PATH:
+        description: Destination filepath, must include trailing slash and no leading slash (default is empty string, or the / site root)
+        default: ''
+        type: string
+      PANTHEON_SITE_ID:
+        description: Human-readable site ID
+        type: string
+        required: true
+      PANTHEON_STAGING_ENV_NAME:
+        type: string
+        default: "env-${{ github.sha }}"
+        description: Name of the staging environment (11-char max)
+      PANTHEON_DESTINATION:
+        description: Target Pantheon environment, either 'dev' or 'staging'
+        required: true
+        type: string
+    secrets:
+      PANTHEON_SSH_KEY:
+        required: true
+      PANTHEON_KNOWN_HOSTS:
+        required: true
+      PANTHEON_USER_EMAIL:
+        required: true
+      PANTHEON_AUTH_USER:
+        required: true
+      PANTHEON_AUTH_PASSWORD:
+        required: true
+      PANTHEON_MACHINE_TOKEN:
+        required: true
+
+jobs:
+  deploy-to-pantheon:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.PANTHEON_SSH_KEY }}
+          config: |
+            Host *.drush.in
+               StrictHostKeyChecking no
+          known_hosts: ${{ secrets.PANTHEON_KNOWN_HOSTS }}
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+      - name: Install Terminus
+        run: |
+          sudo apt update
+          sudo apt install -y curl php-common php-cli php-xml php-mbstring php-curl git jq
+          php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+          php -r "if (hash_file('sha384', 'composer-setup.php') === file_get_contents('https://composer.github.io/installer.sig')) { echo 'Installer verified'.PHP_EOL; } else { echo 'Installer corrupt'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+          php composer-setup.php
+          php -r "unlink('composer-setup.php');"
+          mv composer.phar /usr/local/bin/composer
+          curl -L https://github.com/pantheon-systems/terminus/releases/download/4.0.3/terminus.phar --output terminus
+          chmod +x terminus
+          mv terminus /usr/local/bin/terminus
+          terminus self:update
+          git config -l | grep 'http\..*\.extraheader' | cut -d= -f1 | xargs -L1 git config --unset-all
+          git config --global user.email "${{ secrets.PANTHEON_USER_EMAIL }}"
+          git config --global user.name "GitHub workflow"
+          echo "PANTHEON_BRANCH=master" >> $GITHUB_ENV
+          echo "PANTHEON_ENV=dev" >> $GITHUB_ENV
+      - name: Retrieve build artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: build-output
+          path: ./build
+      - name: Terminus login
+        run: terminus auth:login --machine-token ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+      - name: Staging environment setup
+        if: inputs.PANTHEON_DESTINATION == 'staging'
+        run: |
+          STAGING_NAME="${{ inputs.PANTHEON_STAGING_ENV_NAME }}"
+          NORMLIZED_STAGING_ENV_NAME="${STAGING_NAME:0:11}"
+          DEV_SITE_EXISTS="$(terminus env:list "${{ inputs.PANTHEON_SITE_ID }}" --format=list | grep "$NORMLIZED_STAGING_ENV_NAME" | wc -l | xargs)"
+          if [ "$DEV_SITE_EXISTS" -eq "0" ]; then
+            terminus multidev:create --no-interaction --no-ansi ${{ inputs.PANTHEON_SITE_ID }}.dev "$NORMLIZED_STAGING_ENV_NAME"
+            terminus lock:enable ${{ inputs.PANTHEON_SITE_ID }}.$NORMLIZED_STAGING_ENV_NAME -- "${{ secrets.PANTHEON_AUTH_USER }}" "${{ secrets.PANTHEON_AUTH_PASSWORD }}"
+          fi
+          terminus connection:set "${{ inputs.PANTHEON_SITE_ID }}.$NORMLIZED_STAGING_ENV_NAME" git
+          echo "PANTHEON_ENV=helpdocs" >> $GITHUB_ENV
+          echo "PANTHEON_BRANCH=$NORMLIZED_STAGING_ENV_NAME" >> $GITHUB_ENV
+      - name: Commit build and deploy to Pantheon repo
+        run: |
+          terminus local:clone --yes --branch="${{ env.PANTHEON_BRANCH }}" ${{ inputs.PANTHEON_SITE_ID }}
+          rsync --archive ./build/ "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}/${{ inputs.SITE_PATH }}"
+          chmod -R 755 $HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}/${{ inputs.SITE_PATH }}
+          git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" add .
+          git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" commit -m "Added content from ${{ github.repository }} at ${{ github.sha }}"
+          WATCH_COMMIT=$(git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" rev-parse --verify HEAD)
+          git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" push origin
+          terminus workflow:wait --max 600 --commit $WATCH_COMMIT -- ${{ inputs.PANTHEON_SITE_ID }}.${{ env.PANTHEON_ENV }}
+      - name: Terminus logout
+        if: always()
+        run: |
+          rm -rf $HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}/${{ inputs.SITE_PATH }}
+          terminus auth:logout

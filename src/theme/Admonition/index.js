@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import {ThemeClassNames} from '@docusaurus/theme-common';
 import Translate from '@docusaurus/Translate';
 import styles from './styles.module.css';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 function NoteIcon() {
   return (
     <svg viewBox="0 0 14 16">
@@ -55,7 +56,7 @@ function WarningIcon() {
 }
 function SumoIcon() {
   return (
-    <img src="/img/sumo-square.png" width="25"/>
+    <img src={useBaseUrl('img/reuse/sumo-square.png')} width="25"/> 
   )
 }
 // eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style

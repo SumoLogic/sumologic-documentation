@@ -26,11 +26,23 @@ To obtain your Token follow the steps described in the [Cribl Documentation](htt
 ## Configure Cribl in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL API**. Enter your [Cribl API URL](https://docs.cribl.io/api/#base-urls).
 
-   * **URL API**
-   * **Token**. The obtain token from the API Reference.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/cribl-configuration.png')} style={{border:'1px solid gray'}} alt="Cribl configuration" width="400"/>
+* **Token**. Enter a [Cribl API token](https://docs.cribl.io/api/#authenticate-api).
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/cribl-configuration.png')} style={{border:'1px solid gray'}} alt="Cribl configuration" width="400"/>
 
 For information about Cribl, see [Cribl documentation](https://docs.cribl.io/).
 

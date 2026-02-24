@@ -34,6 +34,6 @@ Connections Management APIs let you set up connections to send alerts to third-p
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * View Connections
     * Manage Connections

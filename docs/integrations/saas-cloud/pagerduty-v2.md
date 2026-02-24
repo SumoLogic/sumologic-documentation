@@ -51,7 +51,7 @@ A **Hosted Collector** is not installed on a local system in your deployment. In
 An **HTTP Source** is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 
 To configure Hosted Collector and HTTP Source, do the following:
-1. Log in to Sumo Logic.
+1. Sign in to Sumo Logic.
 2. Follow the instructions for configuring a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. Follow the instructions for configuring an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 

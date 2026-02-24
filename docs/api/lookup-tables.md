@@ -33,7 +33,7 @@ The Lookup Management API allows you to manage [Lookup Tables](/docs/search/look
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Download Search Results
     * Manage Content
     * View Collectors

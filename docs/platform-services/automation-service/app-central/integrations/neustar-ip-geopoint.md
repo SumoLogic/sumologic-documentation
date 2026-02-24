@@ -18,12 +18,25 @@ IP GeoPoint to gain independent, real-time insights into each website or network
 ## Configure Neustar IP GeoPoint in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API Key**. Enter a Neustar IP GeoPoint API key.
+
+* **Secret Key**. Enter the secret corresponding to the API key.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/neustar-configuration.png')} style={{border:'1px solid gray'}} alt="Neustar configuration" width="400"/>
 
-For information about Neustar, see [Neustar documentation](https://www.home.neustar/).
+For information about Neustar, see the [Neustar website](https://www.home.neustar/).
 
 ## Change Log
 

@@ -26,18 +26,6 @@ Watch this micro lesson to learn more about the Enterprise Audit - Cloud SIEM ap
   allowfullscreen
 />
 
-<!-- old
-<Iframe url="https://www.youtube.com/embed/nYX0prIzDGk?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 :::
 
 ## Log types
@@ -77,6 +65,10 @@ Insight event logging written to either of the partitions above is assigned the 
 Note that the Audit Event Index contains logs for a variety of Sumo Logic subsystems, so when searching either partition for insights, include the source category in your search scope. For more information, see [Cloud SIEM Audit Logging](/docs/cse/administration/cse-audit-logging/).
 
 ## Install the Enterprise Audit - Cloud SIEM app
+
+### Prerequisite
+
+Requires multiple indexes to be enabled, including `sec_record_failure`, `sec_record*`, `sumologic_audit_events`, and `sumologic_system_events`, prior to installation.
 
 ### Install and configure Cloud SIEM
 

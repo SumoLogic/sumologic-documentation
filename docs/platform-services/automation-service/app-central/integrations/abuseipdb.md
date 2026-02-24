@@ -32,12 +32,24 @@ Enrich IP addresses with reputation information gathered from AbuseIPDB.
 ## Configure AbuseIPDB in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
-   * **Label**. Enter a name for the resource.
-   * **API URL**. Enter `https://api.abuseipdb.com`
-   * **API Key**. Enter the API key you copied earlier. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuseipdf/abuseipdf-1.png')} style={{border:'1px solid gray'}} alt="any.run-3" width="400"/>
+* <IntegrationLabel/>
+* **API URL**. Enter `https://api.abuseipdb.com`
+
+* **API Key**. Enter the [API key](https://www.abuseipdb.com/api.html) you copied [above](#create-an-api-key). 
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuseipdf/abuseipdf-1.png')} style={{border:'1px solid gray'}} alt="any.run-3" width="400"/>
 
 For information about AbuseIPDB, see [AbuseIPDB documentation](https://www.abuseipdb.com/api.html).
 
