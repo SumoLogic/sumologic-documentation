@@ -246,3 +246,12 @@ export const features6 = [
     link: 'docs/global-intelligence',
   },
 ];
+
+export const features = [
+  features1,
+  features2,
+  features3,
+  features4,
+  features5,
+  features6,
+];
