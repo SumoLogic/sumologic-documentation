@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic Amazon SageMaker app dashboards offer insights into CloudTrail, CloudWatch Logs, and performance metrics for your Amazon SageMaker service. These preconfigured dashboards enable you to monitor logs and the runtime performance metrics of your Amazon SageMaker.
 
-[Amazon SageMaker Service](https://aws.amazon.com/sagemaker/) Amazon SageMaker AI is a fully managed machine learning (ML) service. With SageMaker AI, data scientists and developers can quickly and confidently build, train, and deploy ML models into a production-ready hosted environment. It provides a UI experience for running ML workflows that makes SageMaker AI ML tools available across multiple integrated development environments (IDEs).
+[Amazon SageMaker Service](https://aws.amazon.com/sagemaker/) AI is a fully managed machine learning (ML) service. With SageMaker AI, data scientists and developers can quickly and confidently build, train, and deploy ML models into a production-ready hosted environment. It provides a UI experience for running ML workflows that makes SageMaker AI ML tools available across multiple integrated development environments (IDEs).
 
 ## Log and metrics types
 
