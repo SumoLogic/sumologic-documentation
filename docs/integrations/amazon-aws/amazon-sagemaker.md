@@ -226,7 +226,7 @@ For ​​​**Metadata** add an **account** field to the source and assign it a
 
 ### Collecting Amazon SageMaker CloudWatch logs
 
-To enable Amazon SageMaker CloudWatch Logs, follow the steps mentioned in [AWS documentation](https://docs.aws.amazon.com/whitepapers/latest/sagemaker-studio-admin-best-practices/logging-and-monitoring.html#logging-with-cloudwatch)
+To enable Amazon SageMaker CloudWatch Logs, follow the steps in [AWS documentation](https://docs.aws.amazon.com/whitepapers/latest/sagemaker-studio-admin-best-practices/logging-and-monitoring.html#logging-with-cloudwatch).
 
 :::note
 Ensure that when configuring `CloudWatch Logs`, the log group name follows the pattern `/aws/sagemaker/*`.
