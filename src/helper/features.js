@@ -280,3 +280,6 @@ export const features = [
   features5, // Alerts, Dashboards, and Apps
   features6, // APM and Tracing
 ];
+
+
+// Security first, drop APM, "and" -- >ampersand, move Platfom Service to Security, change AI/Automation to Dojo AI
