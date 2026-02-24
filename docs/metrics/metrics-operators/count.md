@@ -26,7 +26,7 @@ metric=size | count
 
 ### Count of time series for a metric by IP address
 
-This query returns the number of time series for the size metric by src_ip. 
+This query returns the number of time series for the size metric by `src_ip`. 
 
 ```sql
 metric=size | count by src_ip

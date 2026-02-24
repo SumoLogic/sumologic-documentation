@@ -9,8 +9,10 @@ When you save a search, you can add a schedule to run it at a regularly schedule
 
 To run the scheduled search using receipt time save the search with receipt time enabled.
 
+To run the scheduled search using searchable time save the search with searchable time enabled.
+
 :::note
-Scheduled searches with a **Real Time** run frequency do not support the **Use Receipt Time** option.
+Scheduled searches with a **Real Time** run frequency do not support the **Use Receipt Time** and **Use Searchable Time** option.
 :::
 
 ## Schedule a search

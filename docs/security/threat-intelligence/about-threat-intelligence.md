@@ -96,6 +96,10 @@ Add the following capabilities:
 
 You do not need to be assigned these role capabilities to [find threats with log queries](/docs/security/threat-intelligence/find-threats/).
 
+### Allowlist Sumo Logic static IP addresses
+
+Set firewall rules to allowlist the Sumo Logic IPs listed in [Static IP addresses](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/#static-ip-addresses). This allows threat indicators in your Sumo Logic threat intelligence data store to be used without being blocked on your network.
+
 ## Typical workflow
 
 Here is the typical workflow to set up and use threat intelligence indicators:

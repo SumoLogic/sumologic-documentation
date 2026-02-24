@@ -190,6 +190,8 @@ The source follows the [JSON Path standard defined here](https://www.ietf.org/ar
 
 **Timestamp Format**. Provide the timestamp format the logs use in the Go programming language format. [See our time formatting section for more details](#timestamp-formatting).
 
+**Time Value Regex (Optional)**. Use this field only when the timestamp requires extraction from a wrapper format. Provide a regular expression that extracts the timestamp value from a log entry when the timestamp is embedded within a complex string format. This expression must include at least one capture group. If multiple capture groups are defined, only the first capture group will be used. Ensure the regular expression is valid, as invalid expressions will cause the source to return a `failed to validate data processor configs` error.
+
 **JSON with JPath Examples**
 
 ```json title="Vendor API JSON Response Example"
@@ -246,6 +248,30 @@ The source follows the [JSON Path standard defined here](https://www.ietf.org/ar
 | Logs JPath       | `$[*]`                          |
 | Timestamp JPath  | `$.ts`                          |
 | Timestamp Format | `2006-01-02T15:04:05.999Z07:00` |
+
+```json title="Vendor API JSON Response with Wrapper date time"
+[
+  {
+    "id": 45345,
+    "ts": "Date(1741354875093)",
+    "type": "security",
+    "msg": "some security event details"
+  },
+  {
+    "id": 45346,
+    "ts": "Date(1741354975093)",
+    "type": "security",
+    "msg": "some other security event details"
+  }
+]
+```
+
+| Setting          | Value        |
+| :--| :-- |
+| Logs JPath       | `$[*]`       |
+| Timestamp JPath  | `$.ts`       |
+| Timestamp Format | `epochMilli` |
+| Time Value Regex | `Date(.*)`   |
 
   </div>
 </details>
@@ -597,6 +623,10 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
   <summary>What timestamp is used for the data?</summary>
   <div>If you leave the time parsing configuration blank, it will cause the source to use current time for the collected logs. Be sure to configure the HTTP response log ingestion configuration section to ensure time parsing is correctly handled. The source will enter an error health status if time parsing is configured and is unsuccessful.</div>
 </details>
+
+:::note
+By default, this source supports up to *512 MB* of memory in a single API response. For higher limits or additional requirements, contact Sumo Logic Support.
+:::
 
 ## Additional resources
 

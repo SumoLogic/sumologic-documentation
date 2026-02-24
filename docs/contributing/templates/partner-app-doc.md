@@ -1,15 +1,21 @@
 ---
 id: partner-app-doc
 title: Partner App Template
-sidebar_label: Partner App Template
-description: Using the Sumo Logic Partner App Template.
+description: Use this template to create a Sumo Logic Partner app doc (/docs/integrations/partner-ecosystem-apps).
+---
+
+Use this template to create a [Sumo Logic Partner app](/docs/integrations/partner-ecosystem-apps) doc. Copy and paste this into your new .md file. Refer to the [Style Guide](/docs/contributing/style-guide) if needed.
+
+
+```md
+
+---
+id: vendor-name
+title: Vendor Name
+description: Short description.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-:::tip
-Copy this file and edit it for your App integration.
-:::
 
 <head>
   <meta name="robots" content="noindex"/>
@@ -55,7 +61,7 @@ The `{AppName}` App uses...
 \<add your query here\>
 ```
 
-## Prerequisites (Optional)
+## Prerequisites (optional)
 
 \Any steps like permissions or roles that the user should have for configuring the collection steps.\
 
@@ -109,3 +115,5 @@ Use this dashboard to:
 ## Support
 
 This application has been developed and is supported by `{app-owner-name}`. In case of any technical queries, contact support at `support contact`.
+
+```

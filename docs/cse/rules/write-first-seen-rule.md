@@ -62,7 +62,7 @@ As soon as you save or update a first seen rule (or disable and re-enable it), t
 
 Once the baseline is created, when an incoming record includes matching activity not seen during the baseline retention period, the rule creates a signal identifying the activity as *first seen*. The signal indicates that the activity is first seen:
  
-<img src={useBaseUrl('img/cse/first-seen-signal-example.png')} alt="First seen signal example" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/cse/first-seen-signal-example.png')} alt="First seen signal example" style={{border: '1px solid gray'}} width="800"/>
 
 For example, for the “First time a user logged in from a new geographic location” use case, Cloud SIEM will build a baseline model of all the geolocations from where a logon event is seen for the entity (user). Because a minimum of 7 days of baseline information needs to be available, activities within 7 days of the first recorded login to a new location will not generate signals, but the first login to a new location on the 8th day will generate a signal. Once the baseline is created, Cloud SIEM will create a signal for every new geolocation detected and incrementally add to the baseline.
 
@@ -85,6 +85,7 @@ The screenshot below shows a first seen rule in the Cloud SIEM rules editor. For
 ## Create a first seen rule
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
+1. Click **+ Add Rule**.
 1. On the **Create a Rule** page, click **Create** in the **First Seen** card.
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.

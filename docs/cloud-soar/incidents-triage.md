@@ -245,29 +245,33 @@ Opening an incident from any section of Cloud SOAR will display the incident det
 
 <img src={useBaseUrl('img/cloud-soar/incident-details.png')} alt="Incident details page" style={{border: '1px solid gray'}} width="800"/>
 
-The incident VIP section displays high-level details about a specific incident. You can also take actions such as add additional investigators or close the incident from this section. To view all available actions, click the vertical ellipsis to the left of the cogwheel. You can change the owner of the incident, change the folder where the incident is housed, export the incident details via PDF, DOC, or custom report], and clone or permanently delete the incident. To customize the details displayed in the incident VIP section, click the cogwheel <img src={useBaseUrl('img/cloud-soar/cogwheel-icon.png')} alt="Cogwheel icon" width="25"/> at the top right of the section. A new screen will be presented which will allow for adding and deleting of incident detail fields. To add a new field, you will click on the **+** sign next to the field to be added. Once all the desired fields are added, they can easily be rearranged in the desired order by dragging and dropping into place. To remove a field, simply click the **x** next to the field to be removed. Once all the details have been added and are in place, click **Apply**.
+### Incident VIP section
 
-<img src={useBaseUrl('img/cloud-soar/incident-vip-section.png')} alt="Incident VIP section" style={{border: '1px solid gray'}} width="200"/>
+The incident VIP section displays high-level details about a specific incident. You can also take actions such as add additional investigators or close the incident from this section. Perform the following to explore incident details:
+1. To view all available actions, click the vertical ellipsis to the left of the cogwheel. You can change the owner of the incident, change the folder where the incident is housed, export the incident details via PDF, DOC, or custom report, and clone or permanently delete the incident. 
+1. To customize the details displayed in the incident VIP section, click the cogwheel <img src={useBaseUrl('img/cloud-soar/cogwheel-icon.png')} alt="Cogwheel icon" width="25"/> at the top right of the section. A new screen will be presented which will allow for adding and deleting of incident detail fields. 
+1. To add a new field, you will click on the **+** sign next to the field to be added. Once all the desired fields are added, they can easily be rearranged in the desired order by dragging and dropping into place. 
+1. To remove a field, simply click the **x** next to the field to be removed. Once all the details have been added and are in place, click **Apply**.<br/><img src={useBaseUrl('img/cloud-soar/incident-vip-section.png')} alt="Incident VIP section" style={{border: '1px solid gray'}} width="200"/>
 
-The incident properties section in the center contains all the important information that makes up the incident, such as executed playbooks and incident tasks. This information is divided into four different sections: **Overview**, **Operations**, **Entities**, and **Documentation**.
+### Incident properties section
 
-<img src={useBaseUrl('img/cloud-soar/incident-properties.png')} alt="Incident properties" style={{border: '1px solid gray'}} width="700"/>
+The incident properties section in the center contains all the important information that makes up the incident, such as executed playbooks and incident tasks. This information is divided into four different sections: **Overview**, **Operations**, **Entities**, and **Documentation**.<br/><img src={useBaseUrl('img/cloud-soar/incident-properties.png')} alt="Incident properties" style={{border: '1px solid gray'}} width="700"/>
 
-### Overview tab
+#### Overview tab
 
 The incident **Overview** tab contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be configured in [custom fields](/docs/cloud-soar/settings/#custom-fields).
 
-### Operations tab
+#### Operations tab
 
 The **Operations** tab contains all the investigative information for a specific incident and is broken out into the following sections: **War Room**, **Playbook**, **Tasks**, and **Notes**.
 
-#### War Room
+##### War Room
 
 All the information related to the ongoing incident is  visible in one place in the **War Room** section. You can quickly view and check all the steps of the analysis, done either manually or by the automation, any entities related to the incident, results of actions performed, and notes added during the incident's investigation. Information can be filtered out for the different categories, and you can add new notes by clicking the **+** button.
 
 <img src={useBaseUrl('img/cloud-soar/war_room.png')} alt="War room" style={{border: '1px solid gray'}} width="700"/>
 
-#### Playbooks
+##### Playbooks
 
 Any playbook that has been applied to an incident can be found under the **Playbooks** section. You can quickly view and make any necessary adjustments to the incident's playbooks, as well as add any additional playbooks that may be required during an incident's investigation. For more information, see [Run playbooks in Cloud SOAR](/docs/cloud-soar/automation/#run-playbooks-in-cloud-soar).
 
@@ -283,7 +287,7 @@ To explore the playbooks:
 1. To view the details of the result, click the magnifying glass icon at the bottom of the action details, and the action result window will display. You can use the search bar at the top of the table to search the results.<br/><img src={useBaseUrl('img/cloud-soar/action-result.png')} alt="Action result" style={{border: '1px solid gray'}} width="500"/>
 1. Because some integrations return large data sets, the table view is designed to show only a select set of attributes. For more detailed information, you can switch to the action's JSON results screen by clicking the **JSON Details** icon <img src={useBaseUrl('img/cloud-soar/json-details-icon.png')} alt="JSON Details icon" style={{border: '1px solid gray'}} width="25"/> next to the action's search bar. The JSON results view displays the full results of the executed action.  <br/><img src={useBaseUrl('img/cloud-soar/action-result-json-details.png')} alt="Action result JSON details" style={{border: '1px solid gray'}} width="500"/>
 
-#### Tasks
+##### Tasks
 
 The **Tasks** section allows incident managers to assign and track tasks which must be completed during an investigation. You can add tasks manually here, or add them from playbooks.
 
@@ -299,7 +303,7 @@ To explore tasks:
 1. Selecting a task will open the incident where the task was created. This will allow you to review the details of the task and access any automated playbooks and notes from the incident investigation. Once the incident data has been reviewed, investigators can choose to approve, approve and close, or decline a task by clicking the thumbs up, thumbs
 down or check mark buttons next to the task's title. <br/><img src={useBaseUrl('img/cloud-soar/tasks-screen_approve-decline-buttons.png')} alt="Task buttons" style={{border: '1px solid gray'}} width="800"/>
 
-#### Notes
+##### Notes
 
 The **Notes** section contains all notes either automatically created during a playbook's execution or manually created during the incident's investigation. You can export notes and search for results depending on the operational need.
 
@@ -312,7 +316,7 @@ To explore notes:
 1. When you close an incident, the system will prompt you for a note describing the reason. <br/><img src={useBaseUrl('img/cloud-soar/close-incident.png')} alt="Close Incident button" width="800"/>
 1. In the **Closing Note** field, enter a note explaining the reason for incident closure and click **Apply**. <br/><img src={useBaseUrl('img/cloud-soar/close-incident-note.png')} alt="Closing note dialog" width="800"/>
 
-### Entities tab
+#### Entities tab
 
 The **Entities** tab shows the entities associated with the incident. Entities are unique actors encountered in incoming messages, such as a user, IP address, or host.
 
@@ -320,7 +324,7 @@ To see entities for all incidents, open the **Entities** page. For more informat
 
 <img src={useBaseUrl('img/cloud-soar/entities-panel.png')} alt="Entities tab" width="700"/>
 
-### Documentation tab
+#### Documentation tab
 
 The **Documentation** tab provides investigators with an area to document all steps taken during an incident's investigation.
 

@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Our AWS Observability Solution provides a framework to simplify monitoring and troubleshooting of your AWS cloud infrastructure. Utilize the Sumo Logic observability app dashboards to quickly isolate and resolve issues.
 
-You can access our AWS Observability solution by a centralized page by clicking on the **Home** button and selecting the **AWS Observability** tab from the top menu bar. This page is designed to provide easy navigation to all features and functions of the AWS Observability solution in one place. From the hub, you can navigate to the dashboards, monitors (for alerting), and pre-baked log searches for troubleshooting that come with the AWS Observability solution.
+You can access our AWS Observability solution from a centralized page by clicking on the **Home** button and selecting the **AWS Observability** tab from the top menu bar. This page is designed to provide easy navigation to all features and functions of the AWS Observability solution in one place. From the hub, you can navigate to the dashboards, monitors (for alerting), and pre-baked log searches for troubleshooting that come with the AWS Observability solution.
 
 The hub has the following pages:
 

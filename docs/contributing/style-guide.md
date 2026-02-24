@@ -309,8 +309,8 @@ When the feature goes GA, remove the beta label and remove a description of the 
 
 ## Capitalization
 
-* Title case (initial cap) all doc titles. Example: `Global Intelligence for Apache Tomcat App`
-* Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case. Example: `Throughput signals and contributing factors`
+* Title case all doc titles. Example: `Cloud SOAR Incident Management and Triage`.
+* Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case. Example: `Throughput signals and contributing factors`.
 
 
 ## Code (inline)

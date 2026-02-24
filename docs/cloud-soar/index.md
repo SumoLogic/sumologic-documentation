@@ -7,10 +7,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic's security orchestration, automation, and response (SOAR) solution streamlines incident response workflows.
 
-:::info
-If your Cloud SOAR instance URL matches the pattern `*.soar.sumologic.com`, this means you're using the legacy version. Refer to the [Legacy Cloud SOAR](/docs/cloud-soar/legacy/) section.
-:::
-
 This section contains the following topics:
 
 <div className="box-wrapper" >
@@ -53,12 +49,6 @@ This section contains the following topics:
   <div className="container">
   <a href={useBaseUrl('docs/cloud-soar/automation')}><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="Shield and gear icon" width="40"/><h4>Automation</h4></a>
   <p>Configuration tools for Cloud SOAR automation and orchestration features.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/cloud-soar/legacy')}><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="Shield and gear icon" width="40"/><h4>Legacy Cloud SOAR</h4></a>
-  <p>Learn about our legacy Cloud SOAR product offering.</p>
   </div>
 </div>
 </div>
