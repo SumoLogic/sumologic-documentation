@@ -1,4 +1,4 @@
----
+<!-- ---
 slug: /integrations/bigdata/opentelemetry
 title: OpenTelemetry
 description: Integrate with Sumo Logic using our OpenTelemetry apps for Big Data, enabling streamlined observability and monitoring.
@@ -10,3 +10,4 @@ import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
+-->

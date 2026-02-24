@@ -1,3 +1,4 @@
+<!--
 ---
 slug: /integrations/bigdata
 title: Big Data
@@ -16,3 +17,4 @@ This guide provides documentation for Sumo Logic apps designed for Big Data tech
   </div>
 </div>
 </div>
+-->

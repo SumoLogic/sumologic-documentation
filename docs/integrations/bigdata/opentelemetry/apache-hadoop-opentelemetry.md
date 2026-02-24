@@ -5,6 +5,12 @@ sidebar_label: Apache Hadoop - OTel Collector
 description: Learn about the Sumo Logic OpenTelemetry app for Apache Hadoop.
 ---
 
+<head>
+ <meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
