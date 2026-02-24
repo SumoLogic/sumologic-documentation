@@ -17,7 +17,7 @@ For example, you'd use `predict` to take your current disk space capacity number
 The `predict` operator supports two predictive models:
 
 * Auto-regressive. Uses an advanced auto-regressive (AR) algorithm to learn patterns in the data. It automatically detects the cyclical patterns in the data and uses the cycles in its prediction.   
-* Linear regression. Uses existing data over the query time range as a training set to generate a [linear model](http://en.wikipedia.org/wiki/Linear_regression), and then extrapolates future values using this model.
+* Linear regression. Uses existing data over the query time range as a training set to generate a [linear model](https://en.wikipedia.org/wiki/Linear_regression), and then extrapolates future values using this model.
 
 :::note
 If a missing data point is encountered in the generated time series, Sumo uses a zero value and issues a warning to alert you. If you'd like to use customized values, you can do so with the [fillmissing](fillmissing.md) operator.   
