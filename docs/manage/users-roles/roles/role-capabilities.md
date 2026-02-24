@@ -155,13 +155,12 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | View Threat Intel Data Store | View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. | `viewThreatIntelDataStore` |
 | Manage Threat Intel Data Store | Create, edit, and delete threat intel sources. | `manageThreatIntelDataStore` |
 
-<!-- beta feature
 ## Macros
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| Manage Macros | Manage [macros](/docs/search/search-query-language/search-operators/macro/). | ? |
--->
+| Manage Macros | Manage [macros](/docs/manage/macro/). |  |
+
 
 <!-- beta feature
 ## Data Masking
@@ -181,6 +180,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Create Trial Organizations | Create trial organizations (Service Providers only). | `createTrialOrganizations` |
 | Upgrade Trial Organizations | Upgrade trial organizations (Service Providers only). | `upgradeTrialOrganizations` |
 | Deactivate Organizations | Deactivate trial organizations (Service Providers only). | `deactivateOrganizations` |
+| Manage Organizations | Create, edit, and delete organizations. | `manageOrganizations` |
 
 ## Cloud SOAR
 

@@ -50,7 +50,7 @@ Watch this micro lesson to learn how to create access keys.
 
 * You'll need the [**Create Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities#security) to create an access key.
 * You'll need the [**Manage Access Keys** capability](/docs/manage/users-roles/roles/role-capabilities#security) to manage access keys created by other users in your org.
-* Access keys use the permissions of the user running the key. The user utilizing an access key must have the [role capabilities](/docs/manage/users-roles/roles/role-capabilities) needed to execute the tasks the access key is needed for. 
+* Access keys use the permissions of the user running the key. The user utilizing an access key must have the [role capabilities](/docs/manage/users-roles/roles/role-capabilities) needed to execute the tasks the access key is needed for.
 
 ## Create an access key
 
@@ -62,21 +62,22 @@ A *personal access key* is a key that you can create to manage access for person
 If you are an administrator who needs to create an access key for system use (such as for API scripts, third party integrations, or infrastructure as code), we recommend you create the access key on a [service account](#from-a-service-account). 
 :::
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select your username, and then under **Preferences** select **Personal Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Personal Access Keys**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences > Personal Access Keys**.
-1. On the **Personal Access Keys** tab, click **+ Add Access Key**.<br/><img src={useBaseUrl('/img/security/access-key-preferences-page.png')} alt="Personal Access Keys tab" style={{border: '1px solid gray'}} width="800"/><br/>The **Add New Access Key** window appears.<br/><img src={useBaseUrl('/img/security/create-access-key.png')} alt="Add New Access Key screen" style={{border: '1px solid gray'}} width="500"/>
-1. **Name**. Enter a name for your access key.  
-1. **Allowed CORS Domains (optional)**. Create an allowlist of domains from which the access key can be used to access Sumo Logic APIs. For more information, see [CORS support](#cors-support). 
-    :::note
-    Enter the domains in the [Origin format](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) described in Mozilla help. The URL pattern must include the HTTPS protocol and a domain name. A port is optional.
-    :::
-1. **Scopes**. For additional security, you can select scopes to give the key only the permissions you specify.
-   :::note
-   The user who will be utilizing the access key needs to have all the same [role capabilities](/docs/manage/users-roles/roles/role-capabilities) as the scopes on the access key. Otherwise, once the user views the access key details, the scopes will be displayed as red in the UI red with a message that the user does not have rights for those scopes.
-   :::
-   Select the scopes for the key:
-    * **Default**. The key has all permissions.
-    * **Custom**. The key has only the specified permissions. <br/><img src={useBaseUrl('/img/security/access-key-scopes.png')} alt="Access key scopes" style={{border: '1px solid gray'}} width="400"/><br/>Select the **View** and **Manage** permissions that you want the access key to have using the available categories.<br/><img src={useBaseUrl('/img/security/custom-scopes-detail.png')} alt="Custom scopes detail" style={{border: '1px solid gray'}} width="550"/>
-1. Click **Save** to generate the key. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select your username, and then select **Personal Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Personal Access Keys**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Personal Access Keys**.<br/><img src={useBaseUrl('/img/security/access-key-nav.png')} alt="Sumo Logic home page showing the user menu open with Personal Access Keys selected." style={{border: '1px solid gray'}} width="500"/>
+1. On the **Personal Access Keys** tab, click **+ Add Access Key**.<br/><img src={useBaseUrl('/img/security/access-key-preferences-page.png')} alt="Personal Access Keys tab" style={{border: '1px solid gray'}} width="800"/>
+1. The **Add New Access Key** window appears.<br/><img src={useBaseUrl('/img/security/create-access-key.png')} alt="Add New Access Key panel in Sumo Logic showing the Name field, optional CORS domains, and Scopes set to Default." style={{border: '1px solid gray'}} width="800"/>
+   1. **Name**. Enter a name for your access key.
+   1. **Allowed CORS Domains (optional)**. Create an allowlist of domains from which the access key can be used to access Sumo Logic APIs. For more information, see [CORS support](#cors-support). 
+      :::note
+      Enter the domains in the [Origin format](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) described in Mozilla help. The URL pattern must include the HTTPS protocol and a domain name. A port is optional.
+      :::
+   1. **Scopes**. For additional security, you can select scopes to give the key only the permissions you specify.
+      :::note
+      The user who will be utilizing the access key needs to have all the same [role capabilities](/docs/manage/users-roles/roles/role-capabilities) as the scopes on the access key. Otherwise, once the user views the access key details, the scopes will be displayed as red in the UI red with a message that the user does not have rights for those scopes.
+      :::
+      Select the scopes for the key:
+       * **Default**. The key has all permissions.
+       * **Custom**. The key has only the specified permissions. <br/><img src={useBaseUrl('/img/security/access-key-scopes.png')} alt="Access key scopes" style={{border: '1px solid gray'}} width="400"/><br/>Select the **View** and **Manage** permissions that you want the access key to have using the available categories.<br/><img src={useBaseUrl('/img/security/custom-scopes-detail.png')} alt="Custom scopes detail" style={{border: '1px solid gray'}} width="550"/>
+   1. Click **Save** to generate the key.
 1. **IMPORTANT**. Copy both the generated Access ID and Access Key before clicking **Done**. *This is the only time you will be able to copy the ID and key*.<br/><img src={useBaseUrl('/img/security/generated-access-key.png')} alt="Access key successfully created message in Sumo Logic for creating an access key, showing the Access ID and Access Key with options to copy them, and a Done button." style={{border: '1px solid gray'}} width="600"/>
    :::warning
    After you click **Done**, you will not be able to recover this Access ID and Access Key.
@@ -187,4 +188,3 @@ _index=sumologic_audit_events _sourceCategory=accessKeys
 ```
 
 For more information about audit logging, see [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/).
-

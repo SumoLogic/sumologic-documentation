@@ -14,7 +14,7 @@ Amazon Simple Storage Service (Amazon S3) provides a web services interface that
 
 One Amazon S3 Source can collect data from a single S3 bucket. However, you can configure multiple S3 Sources to collect from one S3 bucket. For example, you could use one S3 Source to collect one particular data type, and then configure another S3 Source to collect another data type.
 
-For information on S3 performance optimization, see [Request Rate and Performance Considerations](http://docs.aws.amazon.com/AmazonS3/latest/dev/request-rate-perf-considerations.html). 
+For information on S3 performance optimization, see [Request Rate and Performance Considerations](https://docs.aws.amazon.com/AmazonS3/latest/dev/request-rate-perf-considerations.html). 
 
 import TerraformLink from '../../../reuse/terraform-link.md';
 
@@ -40,7 +40,7 @@ Files are transferred in their compressed form and decompressed when ingested. 
 ## Configure an Amazon S3 Source
 
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/) to an Amazon S3 bucket.
-1. [Enable logging in AWS](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html) using the Amazon Console.
+1. [Enable logging in AWS](https://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html) using the Amazon Console.
 1. Confirm that logs are being delivered to the Amazon S3 bucket.
 1. Add an Amazon S3 Source to collect objects from your Amazon S3 bucket. See below for details.
 
@@ -127,7 +127,7 @@ You can adjust the configuration of when and how AWS handles communication attem
 1. For **AWS** **Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md). If you're collecting from a Cisco Umbrella bucket you must use **Key access**.
 
    * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role. <br/><img src={useBaseUrl('img/send-data/Role-based-access-input-roleARN.png')} alt="AWS Access method selection screen with role-based access" style={{border: '1px solid gray'}} width="500" />
-   * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
+   * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](https://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 
 1. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
 
