@@ -240,6 +240,7 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         <p>Learn about the collection process for the Amazon OpenSearch Service.</p>
         </div>
       </div>
+      <!--
       <div className="box smallbox card">
         <div className="container">
         <img src={useBaseUrl('img/integrations/amazon-aws/amazon-sagemaker-logo.png')} alt="Thumbnail icon" width="50"/>
@@ -247,6 +248,7 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         <p>Get insights into CloudTrail, CloudWatch Logs, and performance metrics for your Amazon SageMaker service.</p>
         </div>
       </div>
+      -->
       <div className="box smallbox card">
         <div className="container">
         <img src={useBaseUrl('img/integrations/amazon-aws/rds.png')} alt="Thumbnail icon" width="50"/>

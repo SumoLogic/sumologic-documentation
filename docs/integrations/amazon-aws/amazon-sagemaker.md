@@ -5,6 +5,12 @@ sidebar_label: Amazon SageMaker
 description: Learn about the collection process for the Amazon SageMaker service.
 ---
 
+<head>
+ <meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/amazon-sagemaker-logo.png')} alt="Thumbnail icon" width="50"/>
