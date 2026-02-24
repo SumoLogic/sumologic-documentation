@@ -23,7 +23,7 @@ Follow the steps below to convert Installed Collector Local File Sources to Open
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Find the Installed Collector Local File Source which you'd like to convert to OpenTelemetry Source Template.
-1. Click **Create ST**.<br/><img src={useBaseUrl('img/send-data/migrate-IC-local-file-source.png')} alt="Add source button" style={{border: '1px solid gray'}} />
+1. Click **Create ST**.<br/><img src={useBaseUrl('img/send-data/convert-IC-local-file-source.png')} alt="Add source button" style={{border: '1px solid gray'}} />
 1. You’ll be redirected to the OpenTelemetry local file source template configuration page, where you can configure the local file source template for a remotely managed OpenTelemetry Collector. [Learn more](/docs/send-data/opentelemetry-collector/remote-management/source-templates/localfile/#step-1-set-up-remotely-managed-opentelemetry-collector).<br/><img src={useBaseUrl('img/send-data/configure-local-file-source.png')} alt="Add source button" style={{border: '1px solid gray'}} />
 
 ## Limitations and behaviors
