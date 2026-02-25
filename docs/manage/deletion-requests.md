@@ -31,8 +31,13 @@ Key features:
 | Approve or reject requests | **Review Deletion Requests** (automatically includes Manage and View) |
 
 :::note
-- *Only* the account owner can enable data deletion from the **Policies** page, with all enablement actions captured in the audit log.
-- You can configure the number of approvers for each data deletion request.
+*Only* the account owner can enable data deletion from the **Policies** page, with all enablement actions captured in the audit log. To enable the the log search data deletion, follow the below steps:
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Administration > Security > Policies**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Administration**, and then under **Account Security Settings**, select **Policies**.
+1. Select the **Enable Log Search Data Deletion** checkbox to allow users with the appropriate role capabilities to manage data deletion requests.<br/><img src={useBaseUrl('img/search/get-started-search/enable-deletion-request.png')} alt="enable deletion request" style={{border: '1px solid gray'}} width="400"/>
+:::
+
+:::info
+You can configure the number of approvers for each data deletion request.
 :::
 
 ## Create a deletion request
