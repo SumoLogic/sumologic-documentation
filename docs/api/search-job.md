@@ -50,7 +50,7 @@ See [Sumo Logic Endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpo
 
 An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
 
-## Session Timeout
+## Session timeout
 
 While the search job is running you need to request the job status based on the search job ID. The API keeps the search job alive by either polling for status every 20 to 30 seconds or gathering results. If the search job is not kept alive by API requests, it is canceled. When a search job is canceled for inactivity, you will get a 404 status.
 
@@ -65,7 +65,7 @@ So, a 404 status is generated in these two situations:
 
 You can start requesting results asynchronously while the job is running and page through partial results while the job is in progress.
 
-## Search Job Result Limits
+## Search job result limits
 
 | Data Tier | Non-aggregate Search |
 | :- | :- |
@@ -79,23 +79,19 @@ Flex Licensing model can return up to 100K messages per search.
 
 If you need more results, you'll need to break up your search into several searches that span smaller blocks of the time range needed.
 
-## Rate limit throttling  
+## Rate limit throttling
+
+In general, API processing has the following limits:
 
 import RateLimit from '../reuse/api-rate-limit.md';
 
 <RateLimit/>
 
-A limit of 200 active concurrent search jobs applies to your organization.
-
-When searching the [Frequent Tier](/docs/manage/partitions/data-tiers), a rate limit of 20 concurrent search jobs applies to your organization.
-
-When searching the [Flex data](/docs/manage/partitions/flex), a rate limit of 200 concurrent search jobs applies to your organization.
-
-Once you reach the limit of 200 active searches, attempting an additional search will return a status code of `429 Too Many Requests`, indicating that you've exceeded the permitted search job limit.
+Search Job APIs have additional limits. A limit of 200 active concurrent search jobs applies to your organization. (When searching the [Frequent Tier](/docs/manage/partitions/data-tiers), a rate limit of 20 concurrent search jobs applies to your organization.) Once you reach the limit of 200 active searches, attempting an additional search will return a status code of `429 Too Many Requests`, indicating that you've exceeded the permitted search job limit. 
 
 This limit applies only to Search Job API searches, and does not take into account searches run from the Sumo UI, scheduled searches, or dashboard panel searches that are running at the same time. If the search job is not kept alive by API requests every 20-30 seconds, it is canceled.
 
-You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Manual deletion of searches helps maintain a low count of active searches, of reaching the Search Job API throttling limit. See [Deleting a search job](#delete-a-search-job) for details.
+You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Manual deletion of searches helps maintain a low count of active searches and helps keep you from reaching the Search Job API throttling limit. See [Deleting a search job](#delete-a-search-job) for details.
 
 ## Process flow
 
