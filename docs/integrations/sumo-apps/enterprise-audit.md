@@ -405,7 +405,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Activities from Embargoed Geo Location` | This alert triggers when an activity is detected from a location identified as high-risk. This helps you to monitor activity from unusual or restricted geographic locations, enhancing your ability to identify suspicious activity. | Count > 0 | Count < = 0 |
+| `Enterprise Audit - User and Role Management - Activities from Embargoed Geo Location` | This alert triggers when an activity is detected from a location identified as high-risk. This helps you to monitor activity from unusual or restricted geographic locations, enhancing your ability to identify suspicious activity. | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the Enterprise Audit apps (Optional)
 
