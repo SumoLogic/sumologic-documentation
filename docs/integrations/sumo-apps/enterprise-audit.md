@@ -228,6 +228,12 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/sumo-apps/EA_Field_Extraction_Rule_Activities.png')} alt="test" />
 
+#### Monitor Activities
+
+The **Enterprise Audit - Monitor Activities** dashboard provides detailed information on configured notification and monitor lifecycle activities. The dashboard includes Monitors with Configured Notifications, Monitor Activities Over Time, Monitor Notifications by Connection Type, Geo Locations of Events, Recent Update Activities, Recent Monitor Creation Activities, Recent Monitor Deletion Activities, and Monitor Enable/Disable Activities. You can view more granular data using pre-populated filters for Event Type, Admin Mode, Connection Type, and Monitor Status.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Monitor_Activities.png')} alt="test" />
+
 
 ### Enterprise Audit - User and Role Management App
 
@@ -382,6 +388,24 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `Enterprise Audit - Data Forwarding Index Deactivation Alert`  | This alert is triggered when data forwarding index deactivation is detected. | Count > 0   | Count < = 0   |
 | `Enterprise Audit - Data Forwarding S3 Unencrypted Destination Created`  | This alert is triggered when a unencrypted data forwarding destination is created for S3.  | Count > = 1  | Count < 1  |
 
+### Enterprise Audit - Content Management alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Enterprise Audit - Content Management - Content Made Visible to Public` | Generate alerts when content is made publicly visible, helping ensure proper access control and compliance with security policies. | Count > 0 | Count < = 0 |
+| `Enterprise Audit - Content Management - Content Public Accessed` | Generate alerts when publicly shared content is accessed, providing visibility into external usage and potential security exposure. | Count > 0 | Count < = 0 |
+
+### Enterprise Audit - Security Management alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Enterprise Audit - Security Management - Events from Embargoed Geo Locations` | Monitors and highlights events located in sanctioned or embargoed regions to maintain adherence to legal and regulatory standards. | Count > 0 | Count < = 0 |
+
+### Enterprise Audit - User and Role Management alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Enterprise Audit - User and Role Management - Activities from Embargoed Geo Location` | This alert triggers when an activity is detected from a location identified as high-risk. This helps you to monitor activity from unusual or restricted geographic locations, enhancing your ability to identify suspicious activity. | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the Enterprise Audit apps (Optional)
 
