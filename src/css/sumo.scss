@@ -826,6 +826,7 @@ html[data-theme='light'] .theme-admonition-training {
   padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
   --ifm-alert-color: var(--ifm-font-color-base);
   --ifm-alert-foreground-color: #7000a2;
+  color: var(--ifm-font-color-base);
   .admonition-icon {
     --ifm-alert-foreground-color: #7000a2 !important;
   }
