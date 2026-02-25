@@ -392,7 +392,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Enterprise Audit - Content Management - Content made Visible to Public` | Generate alerts when content is made publicly visible, helping ensure proper access control and compliance with security policies. | Count > 0 | Count < = 0 |
+| `Enterprise Audit - Content Management - Content Made Visible to Public` | Generate alerts when content is made publicly visible, helping ensure proper access control and compliance with security policies. | Count > 0 | Count < = 0 |
 | `Enterprise Audit - Content Management - Content Public Accessed` | Generate alerts when publicly shared content is accessed, providing visibility into external usage and potential security exposure. | Count > 0 | Count < = 0 |
 
 ### Enterprise Audit - Security Management alerts
