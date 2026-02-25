@@ -596,7 +596,7 @@ To update the app, do the following:
 Your upgraded app will be installed in the **Installed Apps** folder and dashboard panels will start to fill automatically.
 
 :::note
-See our [Release Notes changelog](/release-notes) for new updates in the app.
+See our [Release Notes changelog](/docs/release-notes) for new updates in the app.
 :::
 
 To revert the app to a previous version, do the following:
