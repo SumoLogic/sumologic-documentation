@@ -146,3 +146,8 @@ The "**Unauthorized request - Account is not provisioned**" error occurs when Mi
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## App installation
+
+The Microsoft Graph Security API source in Sumo Logic serves as a single, unified entry point for ingesting Microsoft security signals and installing multiple security apps, helping you understand each app based on their security monitoring needs.
+
