@@ -230,7 +230,7 @@ Use this dashboard to:
 
 #### Monitor Activities
 
-The **Enterprise Audit - Monitor Activities** provides detailed information on configured notification and monitor lifecycle activities. The dashboard includes Monitors with Configured Notifications, Monitor Activities Over Time, Monitor Notifications by Connection Type, Geo Locations of Events, Recent Update Activities, Recent Monitor Creation Activities, Recent Monitor Deletion Activities, and Monitor Enable/Disable Activities. You can view more granular data using pre-populated filters for Event Type, Admin Mode, Connection Type, and Monitor Status.
+The **Enterprise Audit - Monitor Activities** dashboard provides detailed information on configured notification and monitor lifecycle activities. The dashboard includes Monitors with Configured Notifications, Monitor Activities Over Time, Monitor Notifications by Connection Type, Geo Locations of Events, Recent Update Activities, Recent Monitor Creation Activities, Recent Monitor Deletion Activities, and Monitor Enable/Disable Activities. You can view more granular data using pre-populated filters for Event Type, Admin Mode, Connection Type, and Monitor Status.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/EA_Monitor_Activities.png')} alt="test" />
 
