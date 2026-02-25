@@ -401,13 +401,13 @@ With the information provided by this dashboard, security teams can effectively 
 
 <img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Analysis.png')} alt="SentinelOne-Threat-Analysis.png" width="600"/>
 
-## Viewing monitors for SentinelOne app
+## Create monitors for SentinelOne app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### SentinelOne monitors
+### SentinelOne alerts
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
