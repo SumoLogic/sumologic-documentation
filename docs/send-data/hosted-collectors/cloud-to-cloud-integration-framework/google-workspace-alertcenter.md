@@ -110,3 +110,14 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## App installation
+
+Once you understand how and where Google Workspace AlertCenter data is collected, you can visualize and analyze that data by installing the Sumo Logic app for [Google Workspace](/docs/integrations/google/workspace/install-app-dashboards/).
+
+Installing the Google Workspace app enables you to:
+- Monitor admin and user activities across all Google Workspace applications from one place.
+- Analyze Google Drive usage and login activity for better usage and access visibility.
+- Gain full visibility into Alert Center alerts to investigate and correlate security events.
+- Detect and monitor potential threats across Workspace apps with unified dashboards.
+- Simplify security monitoring and compliance with prebuilt, comprehensive dashboards.

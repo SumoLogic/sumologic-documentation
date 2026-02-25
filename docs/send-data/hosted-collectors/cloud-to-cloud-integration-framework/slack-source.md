@@ -159,3 +159,14 @@ Each page adds to the overall number of API calls needed and adds time due to th
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## App installation
+
+Once you understand how and where Slack data is collected, you can visualize and analyze that data by installing the Sumo Logic app for [Slack](/docs/integrations/saas-cloud/slack/).
+
+Installing the Slack app enables you to:
+- Monitor Slack user, channel, and access activity across supported workspace plans.
+- Analyze public channel activity to understand collaboration trends and usage.
+- Track workspace access logs for security and auditing purposes.
+- Gain centralized visibility into Slack operations through prebuilt analytics.
+- Support security monitoring and compliance for team collaboration environments.

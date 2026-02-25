@@ -149,3 +149,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## App installation
+
+Once you understand how and where Cisco Meraki data is collected, you can visualize and analyze that data by installing the Sumo Logic app for [Cisco Meraki](/docs/integrations/saas-cloud/cisco-meraki-c2c/).
+
+Installing the Cisco Meraki app enables you to:
+- Gain real-time visibility into network events and admin activities from Cisco Meraki.
+- Detect potential network issues and security events early for faster investigation.
+- Monitor and optimize network performance with actionable insights.
+- Enhance security posture by identifying suspicious or risky activities.
+- Respond proactively to threats and reduce operational downtime.
+- Support efficient network administration and maintain a reliable, secure infrastructure.

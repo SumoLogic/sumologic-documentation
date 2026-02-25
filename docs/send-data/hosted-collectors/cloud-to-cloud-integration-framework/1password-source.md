@@ -118,3 +118,16 @@ To resolve these errors:
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## App installation
+
+Once you understand how and where 1Password data is collected, you can visualize and analyze that data by installing the Sumo Logic app for [1Password](/docs/integrations/saas-cloud/1password/).
+
+Installing the 1Password app enables you to:
+- Centralize visibility into 1Password sign-in and item usage activity.
+- Monitor authentication success and failures to spot suspicious access.
+- Analyze events by user, app, type, and geo-location for faster investigation.
+- Detect outliers and sign-in threats indicating risky behavior.
+- Track critical security and audit changes (accounts, emails, groups, roles).
+- Highlight high-risk locations through geographic activity insights.
+- Secure shared vaults with actionable access and threat intelligence.
