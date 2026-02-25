@@ -319,7 +319,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `Enterprise Audit - Cloud SIEM - Detection SLA Violation` | Time to detect threats exceeds acceptable window (>24 hours) | Count > 0 | Count < = 0 |
 | `Enterprise Audit - Cloud SIEM - Impossible Travel Detection` | User accessing from geographically impossible locations | Count > 0 | Count < = 0 |
 | `Enterprise Audit - Cloud SIEM - Privileged Account Activity Spike` | Detect anomalous admin/privileged account usage | Count > 0 | Count < = 0 |
-| `Enterprise Audit - Cloud SIEM - Remediation SLA Breach` | Critical incidents resolved beyond the outside expected SLA (>4 hours) | Count > 0 | Count < = 0 |
+| `Enterprise Audit - Cloud SIEM - Remediation SLA Breach` | Critical incidents resolved beyond the expected SLA (>4 hours) | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the Enterprise Audit - Cloud SIEM app (Optional)
 
