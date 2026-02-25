@@ -212,7 +212,7 @@ Geo-location data highlights alerts emerging from embargoed locations, allowing 
 
 In addition, the dashboard ranks the most frequently attacked devices and countries linked to suspicious or malicious IP activity, offering clarity on which assets and locations are most at risk. This intelligence supports more targeted defenses and timely intervention.
 
-By combining trend analysis, threat origins, and user risk insights, the Security dashboard equips analysts to recognize patterns, respond to emerging threats proactively, and bolster the organization’s overall security posture against complex endpoint attacks.<br/><img src={useBaseUrl('/img/integrations/microsoft-azure/Azure-Security-Microsoft-Defender-for-Endpoint-Security.png')} alt="Azure-Security-Microsoft-Defender-fo-Endpoint-Security" />
+By combining trend analysis, threat origins, and user risk insights, the Security dashboard equips analysts to recognize patterns, respond to emerging threats proactively, and bolster the organization’s overall security posture against complex endpoint attacks.<br/><img src={useBaseUrl('/img/integrations/microsoft-azure/Azure-Security-Microsoft-Defender-for-Endpoint-Security.png')} alt="Azure-Security-Microsoft-Defender-for-Endpoint-Security" />
 
 ## Create monitors for Azure Security - Microsoft Defender for Endpoint app
 

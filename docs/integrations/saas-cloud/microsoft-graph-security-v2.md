@@ -235,7 +235,7 @@ The **Microsoft Graph Security - Alerts Security Overview** dashboard allows you
 
 The top 10 countries with malicious or suspicious IP addresses help to identify and mitigate potential threats originating from countries with a history of suspicious or malicious IP activity. The top 10 user accounts with compromised role highlights user accounts with compromised roles, necessitating immediate investigation, and remediation to protect sensitive data and system integrity. The top 10 attacked device gives an overview of the most targeted devices.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Security-Overview-v2.png')} alt="Microsoft-Graph-Security-Alerts-Overview" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Security-Overview-v2.png')} alt="Microsoft-Graph-Security-Alerts-Security-Overview" />
 
 ## Create monitors for Microsoft Graph Security app
 
