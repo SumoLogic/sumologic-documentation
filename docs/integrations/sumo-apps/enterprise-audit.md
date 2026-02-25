@@ -401,7 +401,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 |:--|:--|:--|:--|
 | `Enterprise Audit - Security Management : Events from Embargoed Geo Locations` | Monitors and highlights events located in sanctioned or embargoed regions to maintain adherence to legal and regulatory standards. | Count > 0 | Count < = 0 |
 
-### Enterprise Audit - User and Role Managements alerts
+### Enterprise Audit - User and Role Management alerts
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
