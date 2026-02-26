@@ -30,7 +30,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Manage Connections | Manage the [connections](/docs/alerts/webhook-connections/) that allow you to send alerts to other tools. | `manageConnections` |
 | View Connections | View [connections](/docs/alerts/webhook-connections/) on the **Connections** page. | `viewConnections` |
 | View Views | [View Scheduled Views](/docs/manage/scheduled-views). | `viewScheduledViews` |
-| Manage Views | View, create, edit, and delete Scheduled Views. Note that if you grant a role the Manage Scheduled Views capability, users with that role will also have View Scheduled Views capability. | `manageScheduledViews` |
+| Manage Views | View, create, edit, and delete Scheduled Views. Note that if you grant a role the Manage Views capability, users with that role will also have View Views capability. | `manageScheduledViews` |
 | View Partitions | View [partitions](/docs/manage/partitions). | `viewPartitions` |
 | Manage Partitions | View, create, edit, and delete partitions. Note that if you grant a role the Manage Partitions capability, users with that role will also have View Partitions and Manage S3 Data Forwarding capabilities. | `managePartitions` |
 | View Account Overview| View the Account Overview page. | `viewAccountOverview` |
@@ -119,9 +119,9 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| View Monitors |If folder perms are enabled, view folders & monitors you have access to. | `viewMonitorsV2` |
-| Manage Monitors | Create folders & monitors, grant perms, and (with folder perms) full CRUD on folders you control. | `manageMonitorsV2` |
-|Admin Monitors |With folder perms, full CRUD & grant on all folders & monitors. | `adminMonitorsV2` |
+| View Monitors |If folder perms are enabled, view folders and monitors you have access to. | `viewMonitorsV2` |
+| Manage Monitors | Create folders and monitors, grant perms, and (with folder perms) full CRUD on folders you control. | `manageMonitorsV2` |
+|Admin Monitors |With folder perms, full CRUD and grant on all folders and monitors. | `adminMonitorsV2` |
 | View Alerts | View alerts on the [Alert page](/docs/alerts/monitors/alert-response). | `viewAlerts` |
 | View Muting Schedules | View [Muting Schedules](/docs/alerts/monitors/muting-schedules). | `viewMutingSchedules` |
 | Manage Muting Schedules | Create, edit, and delete Muting Schedules. | `manageMutingSchedules` |
@@ -138,8 +138,8 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| View Usage Management | View [usage management](/docs/manage/manage-subscription/scan-budgets/). | `viewUsageManagement` |
-| Manage Usage Management | Manage usage management. | `manageBudgets` |
+| View Usage Management | View [scan budget](/docs/manage/manage-subscription/scan-budgets/). | `viewUsageManagement` |
+| Manage Usage Management | Manage scan budget. | `manageBudgets` |
 
 ## Reliability Management
 
@@ -186,10 +186,6 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 ## Cloud SOAR
 
 [Cloud SOAR](/docs/cloud-soar/) capabilities appear in the roles UI only if Cloud SOAR has been enabled for your account.
-
-:::info
-This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`, see [Legacy Cloud SOAR](#legacy-cloud-soar).
-:::
 
 | Capability category | Capability | Description| <ApiCreateRole/> |
 | :-- | :-- | :-- |:--|
@@ -243,14 +239,6 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 |Dashboard|Access All|Access all dashboards.|`cloudSoarDashboardAll`|
 |Widgets|Use All|Use all widgets.|`cloudSoarWidgetsAll`|
 
-### Legacy Cloud SOAR
-
-| Capability | Description | 
-| :-- | :-- | 
-| View Cloud SOAR|Show “Cloud SOAR” link in nav (legacy URL). | 
-| Settings General| Configure legacy settings. | 
-| Configure|Update legacy configuration. | 
-
 ## Cloud SIEM
 
 [Cloud SIEM](/docs/cse/) features only show if enabled.
@@ -263,13 +251,13 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 
 | Capability| Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-|Comment on Insights|Add comments to [Insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui).|`cseCommentOnInsights`|
-|Create Insights|Create new Insights.|`cseCreateInsights`|
-|Delete Insights|Delete existing Insights.|`cseDeleteInsights`|
-|Invoke Insights Actions|Run an [Action](/docs/cse/administration/create-cse-actions) on an Insight.|`cseInvokeInsights`|
-|Manage Insight Assignee|Change who’s assigned to an Insight.|`cseManageInsightAssignee`|
-|Manage Insight Signals|Add/remove Signals on an Insight.|`cseManageInsightSignals`|
-|Manage Insight Status|Change an Insight’s status.|`cseManageInsightStatus`|
+|Comment on Insights|Add comments to [insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui).|`cseCommentOnInsights`|
+|Create Insights|Create new insights.|`cseCreateInsights`|
+|Delete Insights|Delete existing insights.|`cseDeleteInsights`|
+|Invoke Insights Actions|Run an [action](/docs/cse/administration/create-cse-actions) on an insight.|`cseInvokeInsights`|
+|Manage Insight Assignee|Change who’s assigned to an insight.|`cseManageInsightAssignee`|
+|Manage Insight Signals|Add/remove signals on an insight.|`cseManageInsightSignals`|
+|Manage Insight Status|Change an insight’s status.|`cseManageInsightStatus`|
 |Manage Insight Tags|Add/delete [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules).|`cseManageInsightTags`|
 
 ### Content
@@ -280,11 +268,11 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 |Manage Rules|Create, edit, delete rules.|`cseManageRules`|
 |View Threat Intelligence|View [threat intel sources](/docs/cse/administration/create-custom-threat-intel-source).|`cseViewThreatIntelligence`|
 |Manage Threat Intelligence|Create, edit, delete threat intel sources.|`cseManageThreatIntelligence`|
-|View Match Lists|View [Match Lists](/docs/cse/match-lists-suppressed-lists/create-match-list).|`cseViewMatchLists`|
-|Manage Match Lists|Create, edit, delete Match Lists.|`cseManageMatchLists`|
+|View Match Lists|View [match lists](/docs/cse/match-lists-suppressed-lists/create-match-list).|`cseViewMatchLists`|
+|Manage Match Lists|Create, edit, delete match lists.|`cseManageMatchLists`|
 |View File Analysis|View [YARA rules](/docs/cse/rules/import-yara-rules).|`cseViewFileAnalysis`|
 |Manage File Analysis|Create, edit, delete YARA rules.|`cseManageFileAnalysis`|
-|View Custom Insights|View [custom Insights](/docs/cse/records-signals-entities-insights/configure-custom-insight).|`cseViewCustomInsights`|
+|View Custom Insights|View [custom insights](/docs/cse/records-signals-entities-insights/configure-custom-insight).|`cseViewCustomInsights`|
 |Manage Custom Insights|Create, edit, delete custom insights.|`cseManageCustomInsights`|
 |View Network Blocks|View [network blocks](/docs/cse/administration/create-use-network-blocks).|`cseViewNetworkBlocks`|
 |Manage Network Blocks|Create, edit, delete network blocks.|`cseManageNetworkBlocks`|
@@ -299,24 +287,24 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 |Manage Mappings|Create, edit, delete mappings.|`cseManageMappings`|
 |View Workflow|View detection settings, statuses, resolutions, tag schemas.| `cseViewCustomInsightStatuses` |
 |Manage Workflow|Create, edit, delete detection settings, statuses, resolutions, tag schemas.| `cseManageCustomInsightStatuses` |
-|View Context Actions|View [Context Actions](/docs/cse/administration/create-cse-context-actions).|`cseViewContextActions`|
-|Manage Context Actions|Create, edit, delete Context Actions.|`cseManageContextActions`|
-|View Actions|View [Actions](/docs/cse/administration/create-cse-actions).|`cseViewActions`|
-|Manage Actions|Create, edit, delete Actions.|`cseManageActions`|
+|View Context Actions|View [context actions](/docs/cse/administration/create-cse-context-actions).|`cseViewContextActions`|
+|Manage Context Actions|Create, edit, delete context actions.|`cseManageContextActions`|
+|View Actions|View [actions](/docs/cse/administration/create-cse-actions).|`cseViewActions`|
+|Manage Actions|Create, edit, delete actions.|`cseManageActions`|
 |View Enrichments|View [enrichments](/docs/cse/integrations/enrichments-and-indicators).|`cseViewEnrichments`|
 |Manage Enrichments|Upload enrichment data via API.|`cseManageEnrichments`|
 |View Custom Entity Types|View [custom entity types](/docs/cse/records-signals-entities-insights/create-custom-entity-type).|`cseViewCustomEntityType`|
 |Manage Custom Entity Types|Create, edit, delete custom entity types.|`cseManageCustomEntityType`|
-|View Entity|View [Entities](/docs/cse/records-signals-entities-insights/view-manage-entities).|`cseViewEntity`|
+|View Entity|View [entities](/docs/cse/records-signals-entities-insights/view-manage-entities).|`cseViewEntity`|
 |Manage Entity|Create, edit, delete entities.|`cseManageEntity`|
-|View Entity Normalization|View Domain Normalization settings.|`cseViewEntityConfiguration`|
-|Manage Entity Normalization|Update Domain Normalization settings.|`cseManageEntityConfiguration`|
-|View Entity Criticality|View [Entity Criticalities](/docs/cse/records-signals-entities-insights/entity-criticality).|`cseViewEntityCriticality`|
+|View Entity Normalization|View domain normalization settings.|`cseViewEntityConfiguration`|
+|Manage Entity Normalization|Update domain normalization settings.|`cseManageEntityConfiguration`|
+|View Entity Criticality|View [entity criticalities](/docs/cse/records-signals-entities-insights/entity-criticality).|`cseViewEntityCriticality`|
 |Manage Entity Criticality|Create, edit, delete entity criticalities.|`cseManageEntityCriticality`|
 |View Tag Schemas|View [tag schemas](/docs/cse/administration/create-a-custom-tag-schema).|`cseViewTagSchemas`|
 |Manage Tag Schemas|Create, edit, delete tag schemas.|`cseManageTagSchemas`|
-|Manage Favorite Fields|Add/remove favorite fields in Records UI.|`cseManageFavoriteFields`|
-|View Entity Groups|View [Entity Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group).|`cseViewEntityGroups`|
+|Manage Favorite Fields|Add/remove favorite fields in records UI.|`cseManageFavoriteFields`|
+|View Entity Groups|View [entity groups](/docs/cse/records-signals-entities-insights/create-an-entity-group).|`cseViewEntityGroups`|
 |Manage Entity Groups|Create, edit, delete entity groups.|`cseManageEntityGroups`|
 |View Automations|View [automations](/docs/cse/automation/automations-in-cloud-siem/).|`cseViewAutomations`|
 |Manage Automations|Create, edit, delete automations.|`cseManageAutomations`|
