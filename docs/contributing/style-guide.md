@@ -176,7 +176,7 @@ This action is dangerous and could result in data loss.
 :::
 
 :::sumo Best Practice
-Highlight Sumo-specific info, best practices, links, and other information from Sumo specialists. You can change the title based on the content.
+Highlight Sumo Logic-specific info, best practices, links, and other information from Sumo Logic subject matter experts. You can change the title based on the content.
 :::
 
 :::training
