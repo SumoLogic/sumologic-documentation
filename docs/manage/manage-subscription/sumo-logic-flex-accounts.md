@@ -34,7 +34,7 @@ Free accounts give you access to most Sumo Logic features, with a credit allocat
 
 <!-- are these numbers still accurate? -->
 
-Trial accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day providing approximately 500GB of search data volume daily or 15TB of search volume, 20 users, and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion) will be applied to your log ingest.
+Trial accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day providing approximately 500GB of search data volume daily or 15TB of search volume, 20 users, and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion/#log-throttling) will be applied to your log ingest.
 
 Trials are limited to 30 days. If you need to extend your trial period, contact our sales team to inquire about a Proof of Concept (PoC).
 
@@ -192,7 +192,7 @@ This panel provides analytics to monitor and compare usage against contract capa
    * **Tracing Ingest**. Credits used for tracing.  
    * **Cloud SIEM Ingest**. Credits used for logs in Cloud SIEM.  
    * **Metrics Ingest**. Credits used for metrics.  
-   * **Promotional Categories**. See [Promotional Credits](#promotional-credits).  
+   * **Promotional Categories**. See [Promotional credits](#promotional-credits).  
 * **Usage % Change**. Highlights changes in usage over selected time intervals.  
 * Track credit consumption against the plan’s baseline usage.  
 * Drill into specific time intervals (day, week, or month) for granular insights.  
@@ -200,13 +200,13 @@ This panel provides analytics to monitor and compare usage against contract capa
 * Hover over charts for detailed information.  
 * Download usage reports or credit usage data as CSV files.  
 
-#### Promotional Credits  
+#### Promotional credits  
 
-There are times when Sumo Logic promotes services and consumables through the provision of Promotional Credits. Promotional Credits are non-transferrable and auto-expire at the end of the promotion period. In other words, if the Promotional Credits are not used within the promotion period, they do not carry over. They are of a "use it or lose it" nature. Promotional Credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional Credit consumption is calculated separately from the credits you paid for in your contract period. Promotional Credits are utilized as the priority credit for the specified credit variable.
+There are times when Sumo Logic promotes services and consumables through the provision of promotional credits. Promotional credits are non-transferrable and auto-expire at the end of the promotion period. In other words, if the promotional credits are not used within the promotion period, they do not carry over. They are of a "use it or lose it" nature. Promotional credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional credit consumption is calculated separately from the credits you paid for in your contract period. Promotional credits are utilized as the priority credit for the specified credit variable.
 
-For example: If you have 10,000 Promotional Credits for "Metrics" in a 100,000-credit contract, the first 10,000 credits for Metrics will use Promotional Credits before switching to paid credits.  
+For example: If you have 10,000 promotional credits for "Metrics" in a 100,000-credit contract, the first 10,000 credits for Metrics will use promotional credits before switching to paid credits.  
 
-To filter and focus on Promotional Credits:  
+To filter and focus on promotional credits:  
 * Deselect all other usage categories.  
 * Refine further by deselecting specific credit types (e.g., Continuous Ingest, Storage).  
 
