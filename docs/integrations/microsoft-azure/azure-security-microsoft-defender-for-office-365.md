@@ -110,21 +110,26 @@ The Azure Security – Microsoft Defender for Office 365 app uses SumoLogic’s 
 ### Sample queries
 
 ```sql title="Recent Alerts"
-_sourceCategory=Labs/AzureSecurityMicrosoftDefenderFor365 
-|json"id","status","severity","category","title","description","classification","determination","serviceSource","detectionSource","alertWebUrl" ,"comments[*]","evidence[*]"as  alert_id,status,severity,category,title,description,classification,determination,service_source,detection_source,alert_url,comments,evidence_info nodrop
+_sourceCategory=Labs/AzureSecurityMicrosoftDefenderFor365 microsoftDefenderForOffice365
+| json "id", "status", "severity", "category", "title", "description", "classification", "determination", "serviceSource", "alertWebUrl" as alert_id, status, severity, category, title, description, classification, determination, service_source, alert_url nodrop
+| where toLowerCase(service_source) matches "microsoftdefenderforoffice365"
 
-| where toLowerCase(service_source) = "microsoftdefenderforoffice365"
+// global filters
+| where if ("{{severity}}" = "*", true, severity matches "{{severity}}")
+| where if ("{{status}}" = "*", true, status matches "{{status}}")
+| where if ("{{classification}}" = "*", true, classification matches "{{classification}}")
 
 // panel specific
-| if(isNull(category),"-",category) as category
-| if(isNull(classification),"-",classification) as classification
-| if(isNull(determination),"-",determination) as determination
-| count by _messageTime,status,severity,category,title,description,classification,determination,alert_url,alert_id
+| if (isNull(category), "-", category) as category
+| if (isNull(classification), "-", classification) as classification
+| if (isNull(determination), "-", determination) as determination
+
 | formatDate(toLong(_messageTime), "dd-MM-yyyy HH:mm:ss") as time
-| tourl (alert_url,alert_id) as alert_id
-| fields time,alert_id,title,description,status,severity,category,classification,determination
-| fields -_messageTime    
+| tourl (alert_url, alert_id) as alert_id
+| count by time, alert_id, title, description, status, severity, category, classification, determination 
+| count as count by time, alert_id, title, description, status, severity, category, classification, determination 
 | sort by time
+| fields - count
 | limit 100
 ```
 
@@ -171,13 +176,27 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Azure Security - Microsoft Defender for Office 365 - Overview** dashboard offers a high-level summary of security alerts detected by Microsoft Defender for Office 365. It showcases key metrics such as total alert volume, geographic distribution, and breakdowns by status, detection source, determination, and classification. Security analysts can quickly spot top alert categories like phishing and malware, identify affected users, and monitor the most active analysts involved in investigations. The dashboard also features a top action plan and recent alerts panel to help prioritize response efforts and investigate high-risk activities such as anomalous sign-ins, suspicious tokens, and potential account compromises.
 
-<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+Security+-+Microsoft+Defender+for+Office+365/Azure+Security+-+Microsoft+Defender+for+Office+365+-+Overview.png' alt="Azure Security - Microsoft Defender for Office 365 - Overview" />
+<br/><img src={useBaseUrl('/img/integrations/microsoft-azure/Microsoft-Defender-for-Office-365-Overview.png')} alt="Azure Security - Microsoft Defender for Office 365 - Overview" />
 
 ### Security
 
 The **Azure Security - Microsoft Defender for Office 365 - Security** dashboard focuses on high-severity alerts and threats associated with risky IP addresses, suspicious geographies, and compromised accounts. It provides visibility into alerts by severity over time, helping analysts detect spikes in high-priority incidents. The dashboard also highlights countries with malicious IP verdicts, top user accounts with compromised roles, and top attacked devices along with their risk posture and health status. This view enables teams to quickly pinpoint the most critical threats targeting their Office 365 environment and take immediate mitigation steps.
 
-<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+Security+-+Microsoft+Defender+for+Office+365/Azure+Security+-+Microsoft+Defender+for+Office+365+-+Security.png' alt="Azure Security - Microsoft Defender for Office 365 - Security" />
+<br/><img src={useBaseUrl('/img/integrations/microsoft-azure/Microsoft-Defender-for-Office-365-Security.png')} alt="Azure Security - Microsoft Defender for Office 365 - Security" />
+
+## Create monitors for Azure Security - Microsoft Defender for Office 365 app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure Security - Microsoft Defender for Office 365 alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `Microsoft Defender for Office 365 - Alerts Detected from Embargoed Locations` | This alert is triggered when activity is detected from a location flagged as high-risk, enabling you to monitor access attempts from unusual or restricted geographic regions. It enhances your ability to spot suspicious behaviour and potential threats originating from locations outside your organisation’s typical operating areas. | Critical | Count > 0 | 
+| `Microsoft Defender for Office 365 - High Severity Alerts` | This alert is triggered when a high-severity threat is detected, allowing you to promptly monitor and respond to potentially harmful events that may compromise endpoint security. It ensures critical incidents are prioritised for swift investigation and mitigation. | Critical | Count > 0|
+| `Microsoft Defender for Office 365 - Embargoed Device` | This alert is triggered when a single device generates multiple alerts, indicating potentially malicious behaviour. It helps you identify high-risk devices, monitor suspicious activity more effectively, and take swift action to prevent further compromise. | Critical | Count > 5 |
 
 ## Upgrade/Downgrade the Azure Security - Microsoft Defender for Office 365 app (Optional)
 
