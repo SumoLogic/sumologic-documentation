@@ -237,12 +237,11 @@ export const Home = () => {
                 value={tab}
               >
                 {[
-                  'Log Search',
-                  'AI and Automation',
                   'Security',
+                  'Log Search',
+                  'Dojo AI',
                   'Observability',
-                  'Alerts, Dashboards, and Apps',
-                  'APM and Tracing',
+                  'Alerts, Apps, Dashboards',
                 ].map((label, index) => (
                   <Tab
                     key={label}

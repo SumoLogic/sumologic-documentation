@@ -1,8 +1,70 @@
 import React from 'react';
 import Translate, { translate } from '@docusaurus/Translate';
 
-// Tab 1: Log Search
+
+// Tab 1: Security
 export const features1 = [
+  {
+    title: translate({
+      id: 'landing.feature.cse.title',
+      message: 'Cloud SIEM',
+      description: 'Title for CSE',
+    }),
+    imageUrl: 'img/icons/security/cloud-siem.png',
+    description: (<Translate
+      id='landing.feature.cse.desc'
+      description='CSE description'>
+      Detect threats faster and gain insight into security events.
+    </Translate>),
+    link: 'docs/cse',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.soar.title',
+      message: 'Cloud SOAR',
+      description: 'Title for SOAR',
+    }),
+    imageUrl: 'img/icons/security/soar-2-color-icon.png',
+    description: (<Translate
+      id='landing.feature.soar.desc'
+      description='SOAR description'>
+      Modernize and automate your SOC for faster response times.
+    </Translate>),
+    link: 'docs/cloud-soar',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.threat-intel.title',
+      message: 'Threat Intelligence',
+      description: 'Title for Threat Intelligence',
+    }),
+    imageUrl: 'img/icons/security/cloud-siem.png',
+    description: (<Translate
+      id='landing.feature.threat-intel.desc'
+      description='Threat Intelligence description'>
+      Enrich your security operations with curated threat intelligence data.
+    </Translate>),
+    link: 'docs/security/threat-intelligence',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.platform-services.title',
+      message: 'Platform Services',
+      description: 'Title for Platform Services',
+    }),
+    imageUrl: 'img/icons/security/siem-challenges.png',
+    description: (<Translate
+      id='landing.feature.platform-services.desc'
+      description='Platform Services description'>
+      Core platform capabilities powering search, automation, and data management across Sumo Logic.
+    </Translate>),
+    link: 'docs/platform-services',
+  },
+];
+
+
+// Tab 2: Log Search
+export const features2 = [
   {
     title: translate({
       id: 'landing.feature.searches-logs.title',
@@ -48,8 +110,8 @@ export const features1 = [
 ];
 
 
-// Tab 2: AI and Automation
-export const features2 = [
+// Tab 3: Dojo AI
+export const features3 = [
   {
     title: translate({
       id: 'landing.feature.mobot.title',
@@ -64,72 +126,10 @@ export const features2 = [
     </Translate>),
     link: 'docs/search/mobot',
   },
-  {
-    title: translate({
-      id: 'landing.feature.platform-services.title',
-      message: 'Platform Services',
-      description: 'Title for Platform Services',
-    }),
-    imageUrl: 'img/icons/operations/human-to-machine.png',
-    description: (<Translate
-      id='landing.feature.platform-services.desc'
-      description='Platform Services description'>
-      Core platform capabilities powering search, automation, and data management across Sumo Logic.
-    </Translate>),
-    link: 'docs/platform-services',
-  },
 ];
 
 // After it goes GA: docs/cse/get-started-with-cloud-siem/soc-analyst-agent
 // After it goes GA: mcp-server
-
-
-// Tab 3: Security
-export const features3 = [
-  {
-    title: translate({
-      id: 'landing.feature.cse.title',
-      message: 'Cloud SIEM',
-      description: 'Title for CSE',
-    }),
-    imageUrl: 'img/icons/security/cloud-siem.png',
-    description: (<Translate
-      id='landing.feature.cse.desc'
-      description='CSE description'>
-      Detect threats faster and gain insight into security events.
-    </Translate>),
-    link: 'docs/cse',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.soar.title',
-      message: 'Cloud SOAR',
-      description: 'Title for SOAR',
-    }),
-    imageUrl: 'img/icons/security/soar-2-color-icon.png',
-    description: (<Translate
-      id='landing.feature.soar.desc'
-      description='SOAR description'>
-      Modernize and automate your SOC for faster response times.
-    </Translate>),
-    link: 'docs/cloud-soar',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.threat-intel.title',
-      message: 'Threat Intelligence',
-      description: 'Title for Threat Intelligence',
-    }),
-    imageUrl: 'img/icons/security/cloud-siem.png',
-    description: (<Translate
-      id='landing.feature.threat-intel.desc'
-      description='Threat Intelligence description'>
-      Enrich your security operations with curated threat intelligence data.
-    </Translate>),
-    link: 'docs/security/threat-intelligence',
-  },
-];
-
 
 // Tab 4: Observability
 export const features4 = [
@@ -197,7 +197,7 @@ export const features5 = [
   {
     title: translate({
       id: 'landing.feature.integrations.title',
-      message: 'Apps and Integrations',
+      message: 'Apps & Integrations',
       description: 'Title for Apps',
     }),
     imageUrl: 'img/icons/integrations.png',
@@ -211,7 +211,7 @@ export const features5 = [
   {
     title: translate({
       id: 'landing.feature.dashboards.title',
-      message: 'Dashboards and Visuals',
+      message: 'Dashboards & Visuals',
       description: 'Title for dashboards',
     }),
     imageUrl: 'img/icons/dashboards.png',
@@ -225,61 +225,10 @@ export const features5 = [
 ];
 
 
-// Tab 6: APM and Tracing
-export const features6 = [
-  {
-    title: translate({
-      id: 'landing.feature.traces.title',
-      message: 'Traces',
-      description: 'Title for Traces',
-    }),
-    imageUrl: 'img/icons/apm.png',
-    description: (<Translate
-      id='landing.feature.traces.desc'
-      description='Traces description'>
-      Observe apps and microservices at the level of individual requests to pinpoint issues.
-    </Translate>),
-    link: 'docs/apm/traces',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.apm.title',
-      message: 'App Performance Monitoring',
-      description: 'Title for APM',
-    }),
-    imageUrl: 'img/icons/apm.png',
-    description: (<Translate
-      id='landing.feature.apm.desc'
-      description='APM description'>
-      Monitor and analyze infrastructure health and app performance metrics.
-    </Translate>),
-    link: 'docs/apm',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.rum.title',
-      message: 'Real User Monitoring',
-      description: 'Title for RUM',
-    }),
-    imageUrl: 'img/icons/business/customer-retention.png',
-    description: (<Translate
-      id='landing.feature.rum.desc'
-      description='RUM description'>
-      Gain visibility into how users interact with your web apps.
-    </Translate>),
-    link: 'docs/apm/real-user-monitoring',
-  },
-];
-
-
 export const features = [
-  features1, // Log Search
-  features2, // AI and Automation
-  features3, // Security
+  features1, // Security
+  features2, // Log Search
+  features3, // Dojo AI
   features4, // Observability
   features5, // Alerts, Dashboards, and Apps
-  features6, // APM and Tracing
 ];
-
-
-// Security first, drop APM, "and" -- >ampersand, move Platfom Service to Security, change AI/Automation to Dojo AI
