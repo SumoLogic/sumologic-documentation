@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian.png')} alt="criminal-ip" width="90"/>
 
-***Version: 1.3
-Updated: July 1, 2025***
+***Version: 1.4  
+Updated: January 30, 2026***
 
 OpsGenie, a service powered by Atlassian in the cloud, provides operational teams with robust alert management capabilities. It ensures efficient tracking of notifications triggered by various monitoring systems. The primary goal is to guarantee that alerts reach the appropriate team members and that issues are resolved swiftly. This service has been successfully incorporated and rigorously vetted in combination with OpsGenie's platform.
 
@@ -106,3 +106,4 @@ For information about Atlassian OpsGenie, see [OpsGenie documentation](https://s
 * Sep 16, 2024 - Update the Action:
     + Create Incident - Fixed the bug that caused the action not to add responders to the incident.
 * July 1, 2025 - Fixed an issue related to timeout.
+* January 30, 2026 - Added a retry mechanism to the Create Alert action.
