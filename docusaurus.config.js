@@ -104,6 +104,7 @@ module.exports = {
               'tip',
               'warning',
               'important',
+              'training',
             ],
           },
         },
