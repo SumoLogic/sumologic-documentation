@@ -4663,5 +4663,6 @@
   "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps-csiem-rules": "/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps",
   "/docs/search/mobot-multiturn-beta": "/docs/search/mobot",
   "/docs/manage/partitions/flex/estimate-scan-data" : "/docs/manage/partitions/estimate-scan-data",
-  "/docs/manage/manage-subscription/beta-opt-in": "/docs/beta"
+  "/docs/manage/manage-subscription/beta-opt-in": "/docs/beta",
+  "/docs/search/search-query-language/search-operators/macro": "/docs/manage/macro"
 }
