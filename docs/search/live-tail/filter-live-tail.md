@@ -29,6 +29,10 @@ Wildcards are supported in keywords and at the beginning and end of metadata fi
 
 The **Run** button changes to **Running**, the new query runs, and the screen automatically scrolls with the results.
 
+:::note
+Ensure that you use appropriate keywords for effective Live Tail usage, and ensure your query does not exceed the limitations described in [About Live Tail](/docs/search/live-tail/about-live-tail/#limitations).
+:::
+
 ## Examples
 
 In this example, we have started a Live Tail on the Source Host nite-index-1.

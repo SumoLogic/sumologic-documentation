@@ -20,7 +20,7 @@ stddev(<numerical_field>) [as <field>] [by <field>]
 
 ## Example
 
-You can use the query below to view the standard deviation of time delay, along with the average of time delay, max delay, and the min delay for a Source. You can use this query to troubleshoot large message time and receipt time discrepancies.
+You can use the query below to view the standard deviation of time delay, along with the average of time delay, max delay, and the min delay for a Source. You can use this query to troubleshoot large message time, receipt time, and searchable time discrepancies.
 
 ```sql
 _source=CollectD

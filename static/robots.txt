@@ -13,4 +13,7 @@ Disallow: /ja/docs/
 Disallow: /cid-redirects.json/
 Disallow: /files/
 
+# Sumo Logic Help Center
+# AI/LLM crawlers are welcome - see /llms.txt for guidance
+
 Sitemap: https://www.sumologic.com/help/sitemap.xml

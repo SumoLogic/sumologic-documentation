@@ -2,16 +2,16 @@
 id: infrequent-data-tier
 title: Sumo Logic Infrequent Data Tier App
 sidebar_label: Infrequent Data Tier
-description: The Infrequent Data Tier App provides visibility into the usage and costs associated with data stored in an Infrequent Data Tier with its intuitive pre-configured dashboards and searches.
+description: The Infrequent Data Tier App provides visibility into usage and costs for data stored in the Infrequent Data Tier through intuitive, preconfigured dashboards and searches.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="75"/>
 
-The Infrequent Data Tier app provides visibility into the On-demand Search usage and costs associated with Infrequent Data Tier by providing intuitive pre-configured dashboard and searches. Infrequent Data Tiers are an economical, fully managed log analytics solution for high volume, infrequently accessed data. With Infrequent Data Tiers, organizations have a solution that can aggregate, store and analyze verbose sources such as App Debug, CDN, Load Balancer, and other infrequently accessed logs at a dramatically lower price point.
+The Sumo Logic app for the Infrequent Data Tier provides visibility into on-demand search usage and associated costs through intuitive, preconfigured dashboards and searches. Infrequent Data Tiers offer an economical, fully managed log analytics solution for high-volume data that is accessed infrequently. This enables you to aggregate, store, and analyze verbose log sources, such as application debug logs, CDN logs, load balancer logs, and other infrequently accessed logs at a significantly lower cost.
 
-With growing adoption of modern application stacks that leverage micro-services and distributed architectures, organizations are generating more and more machine data. A large part of this data is not required for every day mission-critical operations. However, organizations still need to retain and analyze this data, as it can provide value across multiple groups within a digital enterprise. A cost efficient solution that manages infrequently used data is currently lacking in the market place, forcing customers to either not retain the data or build home-grown solutions that are difficult to maintain, secure, and don’t provide easy access to insights when enterprise needs it.
+With growing adoption of modern application stacks that leverage micro-services and distributed architectures, organizations are generating more and more machine data. A large part of this data is not required for everyday mission-critical operations. However, organizations still need to retain and analyze this data, as it can provide value across multiple groups within a digital enterprise. A cost-efficient solution that manages infrequently used data is currently lacking in the marketplace, forcing customers to either not retain the data or build home-grown solutions that are difficult to maintain, secure, and don’t provide easy access to insights when the enterprise needs it.
 
 ## Log types
 
@@ -35,7 +35,7 @@ The Search Audit Index for Infrequent Data Tier App has the following fields:
 * session_id
 * status_me
 
-You can start using the index by using following query:
+You can start using the index by using the following query:
 
 ```sql
 _index=sumologic_search_usage_per_query \
@@ -76,12 +76,13 @@ Sumo Logic Infrequent Data Tier App is only available for Enterprise Suite custo
 
 ## Collecting Data for the Infrequent Data Tier App
 
-Infrequent Data Tiers enable you to ingest log or machine data for a minimal cost per GB. Your data is then securely stored by Sumo Logic and is instantly available on-demand for interactive analysis without any additional preparation, re-ingestion, or rehydration. This service is ideal when you need to quickly and/or periodically investigate issues, troubleshoot code, configuration problems, or address customer support cases which can rely on searching high volumes of data for insights. This allows you to only pay for the specific data sets that you analyze at a given time.
+Infrequent Data Tiers enable you to ingest log or machine data at a minimal cost per GB. Your data is securely stored by Sumo Logic and remains instantly available for on-demand, interactive analysis, without requiring any additional preparation, re-ingestion, or rehydration. This makes it ideal for quick and periodic investigations such as troubleshooting issues, analyzing code or configuration problems, and resolving customer support cases that require searching large volumes of data.
 
-[Infrequent Data Tiers](/docs/manage/partitions/data-tiers) allow you to effectively analyze high volumes of log data that is accessed on a minimal basis. In this data tier, you pay for the amount of data scanned in each search. This on-demand payment model allows you to minimize costs by only paying the data accessed.
+With [Infrequent Data Tiers](/docs/manage/partitions/data-tiers), you only pay for the amount of data scanned during each search. This on-demand pricing model enables cost-effective analysis of high-volume data that is accessed infrequently, ensuring you pay only for the specific datasets you analyze.
 
 The Search Audit Index must be enabled by an administrator. To enable the Search Audit Index:
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
 1. Under **Sumo Logic Auditing**, select **Enable Search Audit Record**. <br/><img src={useBaseUrl('img/security/Search_Audit_Index_Enabled.png')} alt="Enable Search Audit Index Record checkbox" style={{border: '1px solid gray'}} width="600" />
 
 You can verify if you already have the Search Audit Index enabled by querying:
@@ -89,13 +90,13 @@ You can verify if you already have the Search Audit Index enabled by querying:
 _index=sumologic_search_usage_per_query
 ```
 
-If no results are returned even for longer time ranges, it means you do not have Search Audit index enabled.
+If no results are returned even for longer time ranges, it means that the Search Audit index is disabled.
 
 ## Installing the Infrequent Data Tier app
 
 ### Prerequisite
 
-Enable the `_view = sumologic_search_usage_per_query` index prior to installation. See [Data Tiers](/docs/manage/partitions/data-tiers/) for instructions.
+Enable the `_view = sumologic_search_usage_per_query` index before installation. See [Data Tiers](/docs/manage/partitions/data-tiers/) for instructions.
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
@@ -115,7 +116,7 @@ Use this dashboard to:
 
 * Monitor data scan information per day.
 * Analyze monthly comparisons of scanned data.
-* Understand data scanned by caller module, query type, and query status.
+* Understand data scanned by the caller module, query type, and query status.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/IDT_Data_Scanned_Overview.png')} alt="test" />
 
@@ -153,6 +154,23 @@ Use this dashboard to:
 * Identify the most expensive queries on the Infrequent Tier.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/IDT_Credits_Consumed.png')} alt="IDT_Credits_Consumed" />
+
+## Create monitors for the Sumo Logic Infrequent Data Tier app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Infrequent Data Tier app alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Infrequent Data Tier - Caller Module Scan Dominance` | This alert is triggered if the total scanned data bytes exceed the configured threshold in GB for any caller module(API, Scheduled Search, Scheduled Views, Interactive). | Count > 1 | Count < = 1 |
+| `Infrequent Data Tier - Daily Consumption Spike` | This alert is triggered when a consumption spike is detected, and daily credit usage exceeds the configured alert threshold. | Count > = 5 | Count < 5 |
+| `Infrequent Data Tier - Expensive Query Detection` | This alert is triggered when the query runtime exceeds the set alert value. | Count > 0 | Count < = 0 |
+| `Infrequent Data Tier - High Data Scan from Cancelled or Timed-Out Queries` | This alert is triggered when a query returns a non-successful status, indicating potential wasted credit. | Count > 0 | Count < = 0 |
+| `Infrequent Data Tier - Per-User Infrequent Data Scan Over-Consumption` | This alert is triggered when unusually high cumulative scan volume is detected for a single user. | Count > 0 | Count < = 0 |
+
 
 ## Upgrade/Downgrade the Infrequent Data Tier app (Optional)
 

@@ -779,6 +779,12 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
    <td>No </td>
    <td>Define as <code>true</code> to run the search using [receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time). By default, searches do not run by receipt time. </td>
   </tr>
+    <tr>
+   <td>bySearchableTime</td>
+   <td>Boolean</td>
+   <td>No </td>
+   <td>Define as <code>true</code> to run the search using [searchable time](/docs/search/get-started-with-search/build-search/use-searchable-time). By default, searches do not run by searchable time. </td>
+  </tr>
   <tr>
    <td>autoParsingMode </td>
    <td>String </td>

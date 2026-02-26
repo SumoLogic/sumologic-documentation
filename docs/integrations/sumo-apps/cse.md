@@ -303,6 +303,24 @@ The **Signal Analysis - Suppression** dashboard shows an overview and some detai
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-siem-signal-analysis-suppression.png')} alt="Signal Analysis - Suppression dashboard" style={{border: '1px solid gray'}} width="800" />
 
+## Create monitors for Enterprise Audit - Cloud SIEM App
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Enterprise Audit - Cloud SIEM Alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Enterprise Audit - Cloud SIEM - Brute Force Attack` | Detect failed authentication attempts, indicating a credential attack. | Count > 3 | Count < = 3 |
+| `Enterprise Audit - Cloud SIEM - Critical Active Malware Detection` | Alert when malware/threat is detected on the endpoint, email, or network with critical severity | Count > 0 | Count < = 0 |
+| `Enterprise Audit - Cloud SIEM - Critical Insight Alert` | Alert when any critical severity insight is created requiring immediate investigation | Count > 0 | Count < = 0 |
+| `Enterprise Audit - Cloud SIEM - Detection SLA Violation` | Time to detect threats exceeds acceptable window (>24 hours) | Count > 0 | Count < = 0 |
+| `Enterprise Audit - Cloud SIEM - Impossible Travel Detection` | User accessing from geographically impossible locations | Count > 0 | Count < = 0 |
+| `Enterprise Audit - Cloud SIEM - Privileged Account Activity Spike` | Detect anomalous admin/privileged account usage | Count > 0 | Count < = 0 |
+| `Enterprise Audit - Cloud SIEM - Remediation SLA Breach` | Critical incidents resolved beyond the expected SLA (>4 hours) | Count > 0 | Count < = 0 |
+
 ## Upgrade/Downgrade the Enterprise Audit - Cloud SIEM app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';

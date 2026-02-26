@@ -71,7 +71,7 @@ Use this dashboard to:
 * Identify the spikes where current hour ingestion is above 50% from the last hour.
 * Identify ingestion outliers and forecast data ingestion, analyze the comparison of your current ingestion to your capacity, and review any overages. You must configure the “Metric_DPM_Ingest_Capacity”  variable that needs to be configured based on Account Subscription. If you have a Credit-based plan, please check with your account executive to determine these values for your account. Otherwise, see the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) page to see your Capacity Values.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Metrics.png')} alt="Data volume dashboards" />
+<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Metrics.png')} alt="Data volume dashboards" style={{border: '1px solid gray'}}  />
 
 ### Log Spikes
 
@@ -106,6 +106,22 @@ Use this dashboard to:
 * Identify the top 5 source categories, source hosts, sources, and collectors by span count and billed bytes.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Tracing.png')} alt="Data volume dashboards" />
+
+## Create monitors for the Sumo Logic Data Volume app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Data Volume app alerts
+
+| Name  | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Data Volume - Daily plan limit alert` | This alert is generated when the daily account log ingest for the previous day is greater than the defined threshold.  | Count > 100     | Count < = 100     |
+| `Data Volume - Daily plan limit alert by collector` | This alert is triggered if the account log ingestion for any collector on the previous day exceeds the configured threshold.  | Count > 5   | Count < = 5 |
+| `Data Volume - Data not sent alert`   | This alert is triggered when a collector has not sent any data for longer than the configured threshold (60 minutes by default). | Count > 60      | Count < = 60      |
+| `Data Volume - Monthly plan limit alert`   | This alert is generated when total log ingest for the current billing period reaches 85% or more (configurable). Ensure the query is updated with `daily_gb_limit` (GB/day) and `billing_start / billing_end` (day of month) before enabling. | Count > 85      | Count < = 85      |
+| `Data Volume - Usage spike alert`  | This alert is generated when the current hour’s ingestion (GB) for a source category exceeds its highest hourly volume from the past four weeks by the set threshold percentage value. | Count > 50      | Count < = 50      |
 
 ## Upgrade/Downgrade the Data Volume app (Optional)
 

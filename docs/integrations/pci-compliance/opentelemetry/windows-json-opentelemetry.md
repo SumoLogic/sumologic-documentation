@@ -42,88 +42,29 @@ Standard Windows event channels include:
 You can skip this section if you have already set up the logs collection through [Windows](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry), [Windows - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry), or [Active Directory](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-<ConfigAppInstall/>
+### Step 1: Set up remotely managed OpenTelemetry collector
 
-### Step 1: Set up Collector
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
 :::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
 :::
 
-To create a new Collector:
-1. Select the **Add a new Collector** option.
-2. Select the platform where you want to install the Sumo Logic OpenTelemetry Collector.
+<OtelCollectorInstallation/>
 
-This will generate a command that you can execute in the machine environment you need to monitor. Once executed, it will install the Sumo Logic OpenTelemetry Collector.
+### Step 2: Configure the source template
 
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-Collector.png" style={{border:'1px solid gray'}} alt="collector"/>
+import WindowsConfigureSourceTemplate from '../../../reuse/send-data/windows-configure-source-template.md';
 
-### Step 2: Configure integration
+<WindowsConfigureSourceTemplate/>
 
-In this step, you will configure the yaml file required for Windows event logs collection.
+### Step 3: Push the source template to the desired remotely managed collectors
 
-Any custom fields can be tagged along with the data in this step.
+import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 
-Once the details are filled in, click on the **Download YAML File** button to get the yaml file.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
-
-### Step 3: Send logs to Sumo Logic
-
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
-
-<LogsIntro/>
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Windows"
-  values={[
-    {label: 'Windows', value: 'Windows'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
-
-<TabItem value="Windows">
-
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2. Restart the collector using:
-  ```sh
-  Restart-Service -Name OtelcolSumo
-  ```
-
-</TabItem>
-
-<TabItem value="Chef">
-
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
-
-</TabItem>
-</Tabs>
-
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+<DataConfiguration/>
 
 ## Sample queries
 
