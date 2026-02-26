@@ -36,7 +36,7 @@ The Sumo Logic App for GitHub ingests GitHub events via a webhook. Sumo Logic in
 * Team_add
 
 :::note
-To fetch events such as Issues, Pull, Pull_request, and Push, use either an [organization webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-an-organization-webhook) or a [repository webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-a-repository-webhook) in GitHub.
+To fetch events such as **Issues**, **Pull**, **Pull_request**, and **Push**, use either an [organization webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-an-organization-webhook) or a [repository webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-a-repository-webhook) in GitHub.
 :::
 
 For the GitHub Advanced Security dashboards Sumo Logic App for GitHub uses these types events, but not limited to:
