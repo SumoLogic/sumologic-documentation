@@ -121,7 +121,7 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## App installation
 
-Once you understand how and where 1Password data is collected, you can visualize and analyze that data by installing the Sumo Logic app for [1Password](/docs/integrations/saas-cloud/1password/).
+Once you understand how and where 1Password data is collected, you can visualize and analyze it by installing the Sumo Logic app for [1Password](/docs/integrations/saas-cloud/1password/).
 
 Installing the 1Password app enables you to:
 - Centralize visibility into 1Password sign-in and item usage activity.
