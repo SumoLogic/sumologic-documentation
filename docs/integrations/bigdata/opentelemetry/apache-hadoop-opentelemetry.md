@@ -313,7 +313,7 @@ Use this dashboard to:
 * Detect **critical YARN failures and cluster instability**, including node loss, heartbeat timeouts, node removals, and scheduling disablement.
 * Monitor **ResourceManager shutdowns, security-related warnings, and high-severity error events** to quickly identify issues impacting YARN availability and reliability.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-ResourceManager-Errors-Log-Analysis.png' alt="ResourceManager Failures Log Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-ResourceManager-Errors-or-Failures-Log-Analysis.png' alt="ResourceManager Failures Log Analysis" />
 
 ### Apache Hadoop - ResourceManager Log Analysis
 
