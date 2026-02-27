@@ -1,6 +1,6 @@
 ---
 id: mcp-server
-title: Sumo Logic MCP Server (Beta)
+title: Sumo Logic MCP Server (Public Preview)
 description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents from VS Code or Terminal with Claude Code.
 ---
 
@@ -12,10 +12,8 @@ import TabItem from '@theme/TabItem';
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
-
 :::info
-This feature is in closed beta. For more information, contact your Sumo Logic account executive.
+This feature is in public preview. For more information, contact your Sumo Logic account executive.
 :::
 
 The Sumo Logic MCP Server lets you use Sumo Logic tools for alerts, insights, dashboards, log searches and users in natural language in VS Code and Terminal.
@@ -53,7 +51,7 @@ Obtain your access ID and access key, or [follow these steps to create a new pai
 
 If you already have a service account, you can retrieve its ID:
 ```bash
-curl -u "<accessId>:<accessKey>" \
+curl -u "<your-access-id>:<your-access-key>" \
   https://api.sumologic.com/api/v1/serviceAccounts
 ```
 
@@ -61,18 +59,18 @@ If you see an existing service account you want to use, note its `id` and skip t
 
 #### Create a new service account (UI)
 
-Follow the steps under [Service Accounts](/docs/manage/security/service-accounts/) to create a service account.
+Follow the steps under [Service Accounts](/docs/manage/security/service-accounts/).
 
 #### Create a new service account (API)
 
-1. List available roles to find the role ID you want to assign.
+1. Get a list of available roles to find the role ID(s) you want to assign.
     ```bash
-    curl -u "<accessId>:<accessKey>" \
+    curl -u "<your-access-id>:<your-access-key>" \
       https://api.sumologic.com/api/v1/roles
     ```
-1. Create the service account. Replace `api.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). Note the returned "id" for the next step.
+1. Create the service account. Replace `api.sumologic.com` with your [regional deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
     ```bash
-    curl -u "<accessId>:<accessKey>" \
+    curl -u "<your-access-id>:<your-access-key>" \
       https://api.sumologic.com/api/v1/serviceAccounts \
       -H 'Content-Type: application/json' \
       -d '{
@@ -81,17 +79,25 @@ Follow the steps under [Service Accounts](/docs/manage/security/service-accounts
             "roleIds": ["<roleId>"]
           }'
     ```
+1. Note the returned `"id"` in the response for the next step.
+
 
 ### Step 2: Create an OAuth client
 
+In this step, you'll create an OAuth client under your service account.
+
 :::note
-UI support for this step is not yet available. You'll need to use the API with an [access key](/docs/manage/security/access-keys/).
+UI support for this step is not yet available. You'll need to use our API.
 :::
 
-Create an OAuth client under your service account. Note the `clientId` and `clientSecret` from the response. These are your OAuth client credentials, which you will use to generate an access token in the next step.
-
+1. Decide which `scopes` (Sumo Logic role capabilities) you'd like to apply to your OAuth client. The `scopes` you request must already be included in your service account’s `effectiveScopes` field. To get a list of available scopes:
+   ```bash
+   curl -u "<your-access-id>:<your-access-key>" \
+     https://api.sumologic.com/api/v1/oauth/scopes
+   ```
+1. Run the following, where `"scopes"` are the Sumo Logic role capabilities you'd like to apply to your OAuth client. The `scopes` you request must already be included in your service account’s `effectiveScopes` field.
 ```bash
-curl -u "<accessId>:<accessKey>" \
+curl -u "<your-access-id>:<your-access-key>" \
   https://api.sumologic.com/api/v1/oauth/clients \
   -H 'Content-Type: application/json' \
   -d '{
@@ -101,12 +107,13 @@ curl -u "<accessId>:<accessKey>" \
     "scopes": ["<scope1>", "<scope2>"]
   }'
 ```
+1. Note the `clientId` and `clientSecret` from the response. These are your OAuth client credentials, which you will use to generate an access token in the next step.
 
 <details>
 <summary>Click to see an example</summary>
 
 ```bash
-curl -u "<accessId>:<accessKey>" \
+curl -u "<your-access-id>:<your-access-key>" \
   https://api.sumologic.com/api/v1/oauth/clients \
   -H 'Content-Type: application/json' \
   -d '{
@@ -119,15 +126,6 @@ curl -u "<accessId>:<accessKey>" \
 
 </details>
 
-To see the full list of available scopes:
-
-```bash
-curl -u "<accessId>:<accessKey>" \
-  https://api.sumologic.com/api/v1/oauth/scopes
-```
-
-Requested `scopes` must be included in the service account’s effective scopes. Only scopes listed in the client’s `effectiveScopes` field can be used to obtain access tokens.
-
 ### Step 3: Generate an access token
 
 Use your `clientId` and `clientSecret` to request an access token from the OAuth token endpoint. Replace `service.sumologic.com` with your [deployment's service endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
@@ -135,25 +133,13 @@ Use your `clientId` and `clientSecret` to request an access token from the OAuth
 ```bash
 curl -X POST https://service.sumologic.com/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
-  -u "<clientId>:<clientSecret>" \
-  -d "grant_type=client_credentials" \
-  -d "scope=<scope1> <scope2>"
+  -u "<your-client-id>:<your-client-secret>" \
+  -d "grant_type=client_credentials"
 ```
 
-<details>
-<summary>Click to see an example</summary>
-
-```bash
-curl -X POST https://service.sumologic.com/oauth2/token \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -u "clientId:clientSecret" \
-  -d "grant_type=client_credentials" \
-  -d "scope=viewUsersAndRoles"
-```
-
-This example requests an access token with the `viewUsersAndRoles` scope. You can request multiple scopes by separating them with spaces in the `scope` parameter, as long as they are included in the client’s `effectiveScopes`.
-
-</details>
+:::note
+Access tokens expire in 30 minutes. Your MCP client or orchestrator agent is responsible for detecting token expiration and [generating a new one](#step-3-generate-an-access-token).
+:::
 
 To discover the token endpoint programmatically, query the Authorization Server Metadata:
 
@@ -163,117 +149,109 @@ curl https://service.sumologic.com/.well-known/oauth-authorization-server
 
 The response includes `token_endpoint` and other supported OAuth parameters.
 
-
+<!-- Do not publish until we have a public MCP URL
 ### Step 4: Configure your MCP client
 
-Use the access token as a Bearer token to authorize requests.
+Provide the Sumo Logic MCP Server URL to your MCP client: tk.
 
-The access token can be used in two ways: to call Sumo Logic APIs directly, and to authorize requests from your MCP client to the MCP Server.
-
-#### Call a Sumo Logic API directly
-
+1. Provide your [access token](#step-3-generate-an-access-token) as a Bearer token to authorize requests. There are two ways to do this:
+   * Option A: Call a Sumo Logic API directly. For example:
 ```bash
 curl -H "Authorization: Bearer <access-token>" \
   https://service.sumologic.com/api/v1/users
 ```
+   * Option B: Set it persistently across your session. Add it your MCP client configuration as an Authorization header (`Authorization: Bearer <access-token>`). Refer to your specific MCP client documentation for where to configure it.
+--->
 
-#### Configure an MCP client
+## Configure in Claude Code via Terminal
 
-Set the access token in your MCP client configuration as an Authorization header:
+1. In a regular Terminal window (not in Claude Code), set your access token as a Bearer token to authorize requests.
+   ```bash
+   claude mcp add --transport http sumo-logic https://prod-bedrockagentcore-gd5o7c6bi7.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp \
+     --header "Authorization: Bearer <your-access-token>"
+   ```  
+1. Launch Claude Code via Terminal.
+   ```bash
+   cd /path/to/your/project
+   claude
+   ```
+1. Verify the Sumo Logic MCP server connection with `/mcp`.
+1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
 
-```bash
-Authorization: Bearer <access-token>
-```
-
-Refer to your specific MCP client documentation for where to configure this header.
-
-:::note
-Access tokens expire. Your MCP client or orchestrator agent is responsible for detecting token expiration and [generating a new one](#step-3-generate-an-access-token).
+:::warning access token expiration
+If the connection drops, [generate a new token](#step-3-generate-an-access-token) and re-run the `claude mcp add` command in Step 1 with the updated token.
 :::
 
-## Example use cases
+## Configure in VS Code via GitHub Copilot chat
 
-The following examples illustrate common MCP workflows.
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="VS Code"
-  values={[
-    {value: 'VS Code', label: 'VS Code investigation'},
-    {value: 'Terminal + Claude Code', label: 'Terminal + Claude Code investigation'},
-  ]}>
-
-<TabItem value="VS Code">
-
-Troubleshoot production issues directly from your development environment:
-
-* **Query logs** using VS Code or your IDE's AI assistant.
-* **Investigate issues without context switching** from your code editor.
-* **Debug with full context** by pulling logs, traces, and metrics into your workflow.
-* **Correlate application behavior** with observability data in real time.
-
-```txt title="VS Code Example 1"
-<!-- tk -->
+1. Open VS Code and install the GitHub Copilot chat extension, if you don't have it.
+1. Click in the VS Code command palette and run a search for **> MCP: Open User Configuration**.
+1. Add the following configuration to the **mcp.json** file. If you've previously configured other MCP servers here, this should be an additive process (i.e., do not delete existing MCP servers that you still intend to use).
+```json
+{
+	"servers":  {
+		"Sumo Logic MCP Server": {
+			"type": "http",
+			"url": "https://prod-bedrockagentcore-gd5o7c6bi7.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp",
+			"headers": {
+				"Authorization": "Bearer ${input:oauthToken}"
+			},
+			"gallery": "https://sanyaku.github.io/sumologic-mcp-gateway",
+			"version": "Original"
+		}
+	},
+	"inputs": [
+		{
+			"id": "oauthToken",
+			"type": "promptString",
+			"description": "Enter your Oauth token for Sumo Logic MCP Server",
+			"password": true
+		}
+	]
+}
 ```
+1. In the **mcp.json** file, click the **Start** button just above `"Sumo Logic MCP Server": {`. You'll be prompted in the command palette for an OAuth token. Enter your [access token](#step-3-generate-an-access-token) there.
+1. Confirm that the server shows as **Running**.
+1. Open GitHub Copilot chat and ensure it's set to **Agent** mode.
+1. You should now be connected to the Sumo Logic MCP Server. Verify by asking `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
 
-```txt title="VS Code Example 2"
-<!-- tk -->
-```
+:::warning access token expiration
+When your access token expires, you'll see a **Dynamic Client Registration not supported** popup asking for an OAuth client ID. Do not provide this. Instead:
 
-</TabItem>
+1. On the **Dynamic Client Registration not supported** popup, click **Cancel**.
+1. In your command palette, you'll be asked again for an OAuth client ID. Do not provide this. Tap **Escape** on your keyboard.
+1. [Generate a new access token](#step-3-generate-an-access-token).
+1. Reopen your **mcp.json** file.
+1. Hover your mouse over the redacted access token until the **Edit | Clear | Clear All** options appear, then click **Edit**.
+1. Enter your new access token in the command palette and then restart the Sumo Logic MCP Server from your **mcp.json** file.
+:::
 
-<TabItem value="Terminal + Claude Code">
+## Example prompts
 
-Investigate security incidents without leaving your Terminal + Claude Code workflow:
+### Org user directory
 
-* **Retrieve triage details** for Cloud SIEM alerts.
-* **Search related entities** involved in the incident.
-* **Query raw logs** for deeper investigation.
-* **Update insight status** directly from Terminal + Claude Code.
-* **Add investigation notes** to maintain audit context.
-* **Get AI-powered incident response guidance** with structured recommendations for investigation, containment, and escalation.
+`List the users in my org and format as an ASCII table.`
 
-```txt title="Claude Code Example 1"
-User: @bot what are the triage details? update the status to in progress
+### Log Search and visualization
 
-Bot: I've retrieved the triage information and updated the status to In Progress.
+`Run a log search for the last 5 minutes across all of my data that counts the data by 1-minute buckets and plots the result as a line graph.`
 
-Verdict: MALICIOUS - Confirmed threat
-Severity: CRITICAL
-...
-```
+### Dashboard creation
 
-```txt title="Claude Code Example 2"
-User: @bot what is the recommended next step for INSIGHT-5678?
+`Create a new dashboard called "System Overview" that uses the previous query to power a dashboard panel called "Total Log Count Per Minute". `
 
-Bot: Based on my analysis of INSIGHT-5678, here's the recommended next step:
+`Add a second panel called "Error Logs Count Per Minute" that is a similar query but only has logs in it that contain the keyword "error" in them.`
 
-This is a CRITICAL SEVERITY incident involving confirmed malicious phishing attack...
 
-Immediate Recommended Actions:
-1. Incident Response - URGENT
-   • Immediately disable/reset credentials for <username>
-   • Revoke all active AWS sessions...
-
-[continues with structured response]
-
-Next Immediate Step:
-ASSIGN TO SENIOR ANALYST AND BEGIN CREDENTIAL RESET NOW
-```
-
-</TabItem>
-</Tabs>
-
-## Available capabilities
+## Available MCP tools
 
 The MCP Server provides access to Sumo Logic through these tool categories:
-
 * **Alerts management**. Search, retrieve, and resolve alerts.
 * **Dashboard management**. Create, retrieve, update, and delete dashboards.
-* **SIEM & Insights**. Get insights, triage information, entities, and AI-generated summaries. Update status and add comments.
-* **Log search**. Search Sumo Logic logs using query syntax.
+* **Cloud SIEM Insights**. Get insights, triage information, entities, and status updates.
+* **Log search**. Create and manage search jobs, retrieve paginated messages and records.
 * **User management**. List users in the organization.
-* **Utility tools**. Parse time strings and discover relevant tools based on context.
+* **Utility tools**. Discover relevant tools based on context.
 
 All tools respect your Sumo Logic permission controls and access policies.
 
@@ -285,61 +263,57 @@ Tool identifiers are subject to change during the beta period.
 
 | Tool    | Description         |
 | :---- | :------------- |
-| `target_alerts___alertsReadById`   | Retrieve a specific alert or alert folder from the alerts library by ID.             |
-| `target_alerts___alertsSearch`     | Search for alerts or alert folders in the alerts library using filters and keywords. |
-| `target_alerts___getHistory`       | Retrieve alert execution and state history for a specified time range. |
-| `target_alerts___getRelatedAlerts` | Retrieve alerts that are related to a given alert.  |
-| `target_alerts___resolve`          | Resolve an alert by moving it to the resolved state.|
+| `alertsReadById`   | Get an alert or folder by ID. |
+| `alertsSearch`     | Search alerts/folders. |
+| `getHistory`       | Get alert history for a time range. |
+| `getRelatedAlerts` | Get alerts related to a given alert. |
+| `resolve`          | Resolve an alert. |
 
 ### Dashboard management
 
 | Tool      | Description           |
 | :------ | :------------------ |
-| `target_dashboard___createDashboard` | Create a new dashboard in Sumo Logic.  |
-| `target_dashboard___deleteDashboard` | Delete a dashboard by its identifier.  |
-| `target_dashboard___getDashboard`    | Retrieve a dashboard by its identifier.|
-| `target_dashboard___listDashboards`  | List all dashboards that the user has permission to view. |
-| `target_dashboard___updateDashboard` | Update an existing dashboard configuration. |
+| `createDashboard` | Create a new dashboard. |
+| `deleteDashboard` | Delete a dashboard by ID. |
+| `getDashboard`    | Get a dashboard by ID. |
+| `listDashboards`  | List all dashboards. |
+| `updateDashboard` | Update a dashboard by ID. |
 
-### Insights / SIEM
+### Cloud SIEM Insights
 
 | Tool        |  Description     |
 | :---  | :---  |
-| `target_siem___GetInsights`       | Retrieve insights with pagination support (up to 10,000 results). |
-| `target_siem___GetAllInsights`    | Retrieve all insights without pagination limits.    |
-| `target_siem___GetInsight`        | Retrieve a specific insight by ID.             |
-| `target_siem___GetInsightComments`| Retrieve all comments associated with an insight.   |
-| `target_siem___GetInsightHistory` | Retrieve the historical activity for an insight.    |
-| `target_siem___GetInsightRelatedEntities`            | Retrieve entities involved in an insight.      |
-| `target_siem___GetInsightTriage`  | Retrieve triage information for an insight.    |
-| `target_siem___UpdateInsightAssignee`  |  Update the user assigned to an insight.        |
-| `target_siem___UpdateInsightStatus`    |  Update the status of an insight. |
-| `target_insight_add_comment___AddInsightCommentTool` | Add a comment to an insight.     |
-| `target_insight_summary___GetInsightSummary`         | Generate an AI-powered summary of a security insight.             |
+| `GetInsights`               | Get Insights with filtering/pagination. |
+| `GetAllInsights`            | Get all Insights (paginated via token). |
+| `GetInsight`                | Get a single Insight by ID. |
+| `GetInsightComments`        | Get comments on an Insight. |
+| `GetInsightHistory`         | Get history of an Insight. |
+| `GetInsightRelatedEntities` | Get involved entities for an Insight. |
+| `GetInsightTriage`          | Get triage info for an Insight. |
+| `UpdateInsightAssignee`     | Update the assignee of an Insight. |
+| `UpdateInsightStatus`       | Update the status of an Insight. |
 
 ### User management
 
 | Tool |  Description   |
 | :----------------- | :--------- |
-| `target_users___listUsers` | Retrieve a list of all users in the organization. |
+| `listUsers` | List all users in the organization. |
 
 ### Log search
 
 | Tool            | Description |
 | :---  | :-------- |
-| `sumo_logic_log_search` | Search Sumo Logic logs using Sumo query syntax. |
+| `createSearchJob`               | Create a new search job. |
+| `getSearchJobStatus`            | Get the status of a search job. |
+| `getSearchJobPaginatedMessages` | Get paginated messages from a search job. |
+| `getSearchJobPaginatedRecords`  | Get paginated aggregated records from a search job. |
+| `deleteSearchJob`               | Delete a search job. |
 
 ### Utility tools
 
 | Tool    | Description   |
 | :------ | :------------------- |
-| `target_time_tool___Time_Tool`   | Parse time strings into epoch timestamps and retrieve the current timestamp. |
-| `x_amz_bedrock_agentcore_search` | Retrieve a filtered subset of available tools based on execution context.    |
-
-<!-- why do Tool name prefixes differ?
-target_alerts___
-sumo_logic_log_search
-x_amz_bedrock_agentcore_search  -->
+| `x_amz_bedrock_agentcore_search` | Search/filter the available tools by context. |
 
 ## Usage guidance and cost controls
 
@@ -352,7 +326,7 @@ Use MCP for:
 
 Do not use MCP for:
 * Bulk data extraction. Use the [Search Job API](/docs/api/search-job).
-* Model training. Use the [Search Job API](/docs/api/search-job).
+* Model training.
 * High-volume automated queries.
 
 ### Cost dynamics
@@ -422,10 +396,3 @@ For bulk data retrieval or model training, the [Search Job API](/docs/api/search
 Agents connected via MCP run in your own environment, not within Sumo Logic infrastructure.
 
 </details>
-
-<!--
-## Troubleshooting
-* Common error responses from the MCP Server
-* How to handle authentication failures
-* Retry strategies
--->
