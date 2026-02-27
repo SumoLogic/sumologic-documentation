@@ -72,6 +72,24 @@ You can select multiple insights and make changes to them all at once using eith
 You can select a maximum of 5000 insights in one action, and your organization can have up to five active requests in progress at once.
 :::
 
+:::sumo Micro Lesson
+
+Watch this micro lesson to learn about bulk updating insights.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/zqzw9krbcs?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Cloud SIEM Bulk Insight Management"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
+
 #### Bulk update insights in the UI
 
 1. Open the insights [list view](#list-view).
