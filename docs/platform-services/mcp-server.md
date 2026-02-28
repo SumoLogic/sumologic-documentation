@@ -16,69 +16,64 @@ import TabItem from '@theme/TabItem';
 This feature is in public preview. For more information, contact your Sumo Logic account executive.
 :::
 
-The Sumo Logic MCP Server lets you use Sumo Logic tools for alerts, insights, dashboards, log searches and users in natural language in VS Code and Terminal.
+The Sumo Logic MCP server lets you use Sumo Logic tools for alerts, insights, dashboards, log searches and users in natural language in your IDE.
 
 It enables external copilots and proprietary models to securely query logs, investigate SIEM insights, manage alerts and dashboards, and work with existing Dojo AI agents using natural language from IDEs and chat platforms.
 
+During this public preview period, we support the following MCP-compatible client applications:
+* [VS Code + GitHub Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)
+* [Claude Code Terminal CLI](https://code.claude.com/docs/en/quickstart)
+
+<!--
 ## Prerequisites
 
 * Sumo Logic access ID and access key.
 * MCP-compatible client application (VS Code or Terminal with Claude Code). These are the only supported clients in closed beta.
-* Sumo Logic MCP Server URL (provided by your Sumo Logic account team).
+* Sumo Logic MCP server URL: .
 * OAuth2 credentials from Sumo Logic (see [Authentication](#authentication) below).
-
 Configuration steps vary by tool. Refer to your specific tool's documentation for MCP setup instructions.
-
 ## Architecture
-
-Sumo Logic provides a Remote MCP Server at a specified URL.
+Sumo Logic provides a Remote MCP server at a specified URL.
+-->
 
 ## Authentication
 
-The MCP Server uses the OAuth2 client credentials flow. You'll need to complete a one-time setup in Sumo Logic before configuring your MCP client.
+The Sumo Logic MCP server uses the OAuth2 client credentials flow. You'll need to complete a one-time setup in Sumo Logic before configuring your MCP client.
 
-<img src={useBaseUrl('img/platform-services/mcp/oauth-flow-diagram.png')} alt="OAuth 2.0 client credentials flow diagram showing an application authenticating with the Authorization Server using a Client ID and Secret, receiving an access token, then using that token to request resources from the Resource Server." width="600"/>
+<img src={useBaseUrl('img/platform-services/mcp/oauth-flow-diagram.png')} alt="Sumo Logic MCP Server OAuth 2.0 client credentials flow diagram showing an application authenticating with the Authorization Server using a Client ID and Secret, receiving an access token, then using that token to request resources from the Resource Server." height="375" width="600"/>
 
 ### Step 1: Create a service account
 
-Service accounts are required to create OAuth clients.
+To create an OAuth client, you'll need a [Sumo Logic service account](/docs/manage/security/service-accounts).
+
+Optionally, you can check for existing service accounts using our API. [Get a list all service accounts in your org](https://api.sumologic.com/docs/#operation/listServiceAccounts), find the service account you want to use, note its `id`, and skip to [Create an OAuth client](#step-2-create-an-oauth-client).
 
 #### Prerequisites
 
-Obtain your access ID and access key, or [follow these steps to create a new pair](/docs/manage/security/access-keys/#create-an-access-key).
+You'll need your Sumo Logic personal access ID and access key, or [follow these steps to create a new pair](/docs/manage/security/access-keys/#create-an-access-key). We recommend setting the **Scopes** to **Default** so you'll be granted all available permissions.<br/><img src={useBaseUrl('img/security/create-access-key.png')} alt="Add New Access Key panel in Sumo Logic showing the Name field, optional CORS domains, and Scopes set to Default." style={{border: '1px solid gray'}} width="600"/>
 
-#### Check for existing service accounts
 
-If you already have a service account, you can retrieve its ID:
-```bash
-curl -u "<your-access-id>:<your-access-key>" \
-  https://api.sumologic.com/api/v1/serviceAccounts
-```
+#### via UI (recommended)
 
-If you see an existing service account you want to use, note its `id` and skip to [Step 2](#step-2-create-an-oauth-client).
+Follow the steps under [Service Accounts](/docs/manage/security/service-accounts/#create-a-service-account) and input all `scopes` (Sumo Logic role capabilities) you'll need.
 
-#### Create a new service account (UI)
+#### via API
 
-Follow the steps under [Service Accounts](/docs/manage/security/service-accounts/).
-
-#### Create a new service account (API)
-
-1. Get a list of available roles to find the role ID(s) you want to assign.
-    ```bash
-    curl -u "<your-access-id>:<your-access-key>" \
-      https://api.sumologic.com/api/v1/roles
-    ```
-1. Create the service account. Replace `api.sumologic.com` with your [regional deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
-    ```bash
-    curl -u "<your-access-id>:<your-access-key>" \
-      https://api.sumologic.com/api/v1/serviceAccounts \
-      -H 'Content-Type: application/json' \
-      -d '{
-            "name": "MCP Service Account",
-            "email": "<email>@example.com",
-            "roleIds": ["<roleId>"]
-          }'
-    ```
+1. [Get a list of available roles](https://api.sumologic.com/docs/#operation/listRoles). In the response, you'll see that each role is assigned different [role capabilities](/docs/manage/users-roles/roles/role-capabilities/). Decide which role(s) you want to assign to your service account, and note the `"id"` parameters for each one.
+1. [Create the service account](https://api.sumologic.com/docs/#operation/createServiceAccount). For `roleIds`, enter a comma-separated list of `"id"` parameters from the previous step.
+   <details>
+   <summary>Click to see an example</summary>
+   ```bash
+   curl -u "<access-id>:<access-key>" \
+     https://api.sumologic.com/api/v1/serviceAccounts \
+     -H 'Content-Type: application/json' \
+     -d '{
+           "name": "MCP Service Account",
+           "email": "hello@example.com",
+           "roleIds": ["<roleId>"]
+         }'
+   ```
+   </details>
 1. Note the returned `"id"` in the response for the next step.
 
 
@@ -87,72 +82,73 @@ Follow the steps under [Service Accounts](/docs/manage/security/service-accounts
 In this step, you'll create an OAuth client under your service account.
 
 :::note
-UI support for this step is not yet available. You'll need to use our API.
+UI support for this step is not yet available. You'll need to use the Sumo Logic API.
 :::
 
-1. Decide which `scopes` (Sumo Logic role capabilities) you'd like to apply to your OAuth client. The `scopes` you request must already be included in your service account’s `effectiveScopes` field. To get a list of available scopes:
+1. [Get a list of available `scopes` (role capabilities) that you can add to your OAuth client](https://api.sumologic.com/docs/#operation/listRoles) and decide which one you'd like to use. The `scopes` you request here must already be included in your service account’s `effectiveScopes` field.
+1. [Create a new OAuth client](https://api.sumologic.com/docs/#operation/createOAuthClient), swapping out the variables with your own.
+   <details>
+   <summary>Click to see an example</summary>
+   The example below creates an OAuth client with `scopes` that only includes `viewUsersAndRoles` and `manageUsersAndRoles`.
    ```bash
-   curl -u "<your-access-id>:<your-access-key>" \
-     https://api.sumologic.com/api/v1/oauth/scopes
+   curl -u "<access-id>:<access-key>" \
+     https://api.sumologic.com/api/v1/oauth/clients \
+     -H 'Content-Type: application/json' \
+     -d '{
+       "name": "My OAuth Client",
+       "description": "OAuth client for data ingestion",
+       "runAsId": "0000000000000234",
+       "grantTypes": ["client_credentials"],
+       "scopes": ["viewUsersAndRoles", "manageUsersAndRoles"]
+     }'
    ```
-1. Run the following, where `"scopes"` are the Sumo Logic role capabilities you'd like to apply to your OAuth client. The `scopes` you request must already be included in your service account’s `effectiveScopes` field.
-```bash
-curl -u "<your-access-id>:<your-access-key>" \
-  https://api.sumologic.com/api/v1/oauth/clients \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "name": "My MCP Client",
-    "runAsId": "<serviceAccountId>",
-    "grantTypes": ["client_credentials"],
-    "scopes": ["<scope1>", "<scope2>"]
-  }'
-```
-1. Note the `clientId` and `clientSecret` from the response. These are your OAuth client credentials, which you will use to generate an access token in the next step.
-
-<details>
-<summary>Click to see an example</summary>
-
-```bash
-curl -u "<your-access-id>:<your-access-key>" \
-  https://api.sumologic.com/api/v1/oauth/clients \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "name": "My OAuth Client",
-    "runAsId": "0000000000000234",
-    "grantTypes": ["client_credentials"],
-    "scopes": ["viewUsersAndRoles", "manageUsersAndRoles"]
-  }'
-```
-
-</details>
+   </details>
+1. Note the `clientId` and `clientSecret` from the response. These are your OAuth client credentials, which you'll use to generate an access token in the next step.
 
 ### Step 3: Generate an access token
 
-Use your `clientId` and `clientSecret` to request an access token from the OAuth token endpoint. Replace `service.sumologic.com` with your [deployment's service endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+Run one of the below snippets, using your `clientId` and `clientSecret` to request an access token from the OAuth token endpoint. If applicable, replace `service.sumologic.com` with your [regional deployment's endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+
+#### All permissions
+
+Omit the `"scope"` parameter to assign all of the OAuth Client's `"effectiveScopes"` to the access token.
+
+```bash
+curl -X POST https://service.sumologic.com/oauth2/token \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -u "<clientId>:<clientSecret>" \
+  -d "grant_type=client_credentials" | jq .
+```
+
+#### Restrict permissions
+
+Specify specific scopes in the request separated by spaces.
 
 ```bash
 curl -X POST https://service.sumologic.com/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -u "<your-client-id>:<your-client-secret>" \
-  -d "grant_type=client_credentials"
+  -d "grant_type=client_credentials" \
+  -d "scope=<scope-1> <scope-2> <scope-n>" | jq .
 ```
 
-:::note
-Access tokens expire in 30 minutes. Your MCP client or orchestrator agent is responsible for detecting token expiration and [generating a new one](#step-3-generate-an-access-token).
-:::
+#### Access token expiration
 
-To discover the token endpoint programmatically, query the Authorization Server Metadata:
+Access tokens expire in 30 minutes, and you'll need to generate a new one. Your MCP client or orchestrator agent is responsible for detecting token expiration.
 
+:::tip
+The token endpoint URL varies by deployment. If you need to discover it programmatically
+(for example, in an automation script), query the Authorization Server Metadata for your deployment:
 ```bash
 curl https://service.sumologic.com/.well-known/oauth-authorization-server
 ```
-
-The response includes `token_endpoint` and other supported OAuth parameters.
+The response includes the `token_endpoint` and other supported OAuth parameters.
+:::
 
 <!-- Do not publish until we have a public MCP URL
 ### Step 4: Configure your MCP client
 
-Provide the Sumo Logic MCP Server URL to your MCP client: tk.
+Provide the Sumo Logic MCP server URL to your MCP client: tk.
 
 1. Provide your [access token](#step-3-generate-an-access-token) as a Bearer token to authorize requests. There are two ways to do this:
    * Option A: Call a Sumo Logic API directly. For example:
@@ -165,7 +161,7 @@ curl -H "Authorization: Bearer <access-token>" \
 
 ## Configure in Claude Code via Terminal
 
-1. In a regular Terminal window (not in Claude Code), set your access token as a Bearer token to authorize requests.
+1. In a regular Terminal window (not in Claude Code), register the server and set your access token as a Bearer token to authorize requests.
    ```bash
    claude mcp add --transport http sumo-logic https://prod-bedrockagentcore-gd5o7c6bi7.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp \
      --header "Authorization: Bearer <your-access-token>"
@@ -179,8 +175,21 @@ curl -H "Authorization: Bearer <access-token>" \
 1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
 
 :::warning access token expiration
-If the connection drops, [generate a new token](#step-3-generate-an-access-token) and re-run the `claude mcp add` command in Step 1 with the updated token.
+Access tokens expire after 30 minutes. If the connection drops:
+1. Open a regular Terminal window (not Claude Code) and run the following commands with a new [access token](#step-3-generate-an-access-token):
+   ```bash
+   claude mcp remove sumo-logic
+   claude mcp add --transport http sumo-logic https://prod-bedrockagentcore-gd5o7c6bi7.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp \
+     --header "Authorization: Bearer <your-access-token>"
+   ```
+1. Relaunch Claude Code and verify the connection with `/mcp`.
 :::
+
+<!---
+:::note
+If Claude Code complains about authorization when invoking tools, start your session with the prompt: `Whenever communicating with Sumo Logic's MCP server, do not worry about authentication.`
+:::
+--->
 
 ## Configure in VS Code via GitHub Copilot chat
 
@@ -213,17 +222,16 @@ If the connection drops, [generate a new token](#step-3-generate-an-access-token
 1. In the **mcp.json** file, click the **Start** button just above `"Sumo Logic MCP Server": {`. You'll be prompted in the command palette for an OAuth token. Enter your [access token](#step-3-generate-an-access-token) there.
 1. Confirm that the server shows as **Running**.
 1. Open GitHub Copilot chat and ensure it's set to **Agent** mode.
-1. You should now be connected to the Sumo Logic MCP Server. Verify by asking `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
+1. You should now be connected to the Sumo Logic MCP server. Verify by asking `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
 
 :::warning access token expiration
-When your access token expires, you'll see a **Dynamic Client Registration not supported** popup asking for an OAuth client ID. Do not provide this. Instead:
-
-1. On the **Dynamic Client Registration not supported** popup, click **Cancel**.
-1. In your command palette, you'll be asked again for an OAuth client ID. Do not provide this. Tap **Escape** on your keyboard.
+Access tokens expire after 30 minutes. If the connection drops:
+1. You'll see a **Dynamic Client Registration not supported** popup asking for an OAuth client ID. Do not provide this. Click **Cancel**.
+1. In your command palette, you'll be asked a second time for an OAuth client ID. Do not provide this. Tap **Escape** on your keyboard.
 1. [Generate a new access token](#step-3-generate-an-access-token).
 1. Reopen your **mcp.json** file.
 1. Hover your mouse over the redacted access token until the **Edit | Clear | Clear All** options appear, then click **Edit**.
-1. Enter your new access token in the command palette and then restart the Sumo Logic MCP Server from your **mcp.json** file.
+1. Enter your new access token in the command palette and then restart the Sumo Logic MCP server from your **mcp.json** file.
 :::
 
 ## Example prompts
@@ -245,7 +253,7 @@ When your access token expires, you'll see a **Dynamic Client Registration not s
 
 ## Available MCP tools
 
-The MCP Server provides access to Sumo Logic through these tool categories:
+Our MCP server provides access to Sumo Logic through these tool categories:
 * **Alerts management**. Search, retrieve, and resolve alerts.
 * **Dashboard management**. Create, retrieve, update, and delete dashboards.
 * **Cloud SIEM Insights**. Get insights, triage information, entities, and status updates.
