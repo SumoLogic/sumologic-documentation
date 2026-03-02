@@ -68,6 +68,11 @@ To configure a Cloud SIEM AWS EC2 Inventory Source:
     - **Role Based Access**. AWS Role ARN is required for Role based Access. Use the information provided on the source page to configure the role.<br/><img src={useBaseUrl('/img/send-data/role-based.png')} alt="role-based" style={{border: '1px solid gray'}} width="400"/>
     - **Key Access**. Enter the IAM user access key ID and secret key you want to use to authenticate collection requests.<br/><img src={useBaseUrl('/img/send-data/key-based.png')} alt="key-based" style={{border: '1px solid gray'}} width="400"/>
 1. **Regions**. Provide a list of AWS regions to query EC2 instances, such as `us-east-2`. Make sure that the selected region is enabled in your AWS account.
+   :::note Supported AWS Regions
+   `eu-north-1`, `eu-central-1`, `eu-central-2`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `ap-south-1`, `ap-northeast-1`, `ap-northeast-2`, `ap-southeast-1`, `ap-southeast-2`, `sa-east-1`, `ca-central-1`, `us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`.
+   :::
+
+
 1. (Optional) The **Polling Interval** is set for 600 minutes by default, you can adjust it based on your needs.
 1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule/).
 1. When you are finished configuring the Source, click **Save**.
