@@ -4,6 +4,8 @@ title: LogCompare
 description: LogCompare allows you to easily compare log data from different time periods to detect major changes or anomalies.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 LogCompare allows you to easily compare log data from different time periods to detect major changes or anomalies. LogCompare runs a delta analysis that helps you troubleshoot and discover root causes.
 
 For example, you could determine what was different right before a failure compared to the previous day or previous week. Or, you could easily check if a new release introduced a new issue by reviewing the difference in log streams across time.
@@ -40,7 +42,7 @@ LogCompare is an operator available in log searches. You can manually add it to
 
 First, run a non-aggregate search, then the **LogCompare** button in the **Messages** tab can be quickly pressed to run the baseline (historical) query 24 hours in the past. However, you can easily change the baseline query time range by clicking the dropdown arrow to the right of the button.
 
-![LogCompare button](/img/search/logcompare/logcompare-button.png)
+<img src={useBaseUrl('img/search/logcompare/logcompare-button.png')} alt="LogCompare button" style={{border: '1px solid gray'}} width="800" />
 
 Once clicked, a new search is opened with the `logcompare` operator and the specified `timeshift` added to your query, for example:
 
@@ -50,17 +52,17 @@ Once clicked, a new search is opened with the `logcompare` operator and the spec
 
 A new tab labeled **Signatures** is provided with the compared results.
 
-![Signatures tab](/img/search/logcompare/signatures-tab.png)
+<img src={useBaseUrl('img/search/logcompare/signatures-tab.png')} alt="Signatures tab" style={{border: '1px solid gray'}} width="400" />
 
 #### Custom option
 
 Click the dropdown arrow next to the **LogCompare** button and select **Custom**.
 
-![custom LogCompare](/img/search/logcompare/custom-logcompare.png)
+<img src={useBaseUrl('img/search/logcompare/custom-logcompare.png')} alt="<custom LogCompare" style={{border: '1px solid gray'}} width="150" />
 
 In the **Custom LogCompare** dialog, you can specify the target and baseline query independently, including their time ranges.
 
-![LogCompare custom](/img/search/logcompare/logcompare-custom.png)
+<img src={useBaseUrl('img/search/logcompare/logcompare-custom.png')} alt="LogCompare custom" style={{border: '1px solid gray'}} width="600" />
 
 * **Baseline Query** is your historical query.
 * **Time Shift** is the Time Shift of the Baseline Query, and it controls when the Baseline Query runs. If the Time Shift is -2d, that means that it will run for the exact Time Range duration (1 minute, in this query), but two days in the past.
@@ -166,14 +168,13 @@ error | logcompare timeshift -1d
 
 After running a query with LogCompare your results are displayed in the **Signatures** tab of the Search page. You will have a table with **Count**, **Score**, **Actions**, and **Signature** columns.
 
-![Signatures tab columns](/img/search/logcompare/signatures-tab-columns.png)
-
+<img src={useBaseUrl('img/search/logcompare/signatures-tab-columns.png')} alt="Signatures tab columns" style={{border: '1px solid gray'}} width="500" />
 
 ### Count
 
 **Count** is the number of raw logs that were clustered into the signature from the target query.
 
-![signature count](/img/search/logcompare/signature-count.png)
+<img src={useBaseUrl('img/search/logcompare/signature-count.png')} alt="Signature count" style={{border: '1px solid gray'}} width="800" />
 
 The **count** column shows the following:
 
@@ -185,11 +186,11 @@ You will see that some clusters are **new** and some are **gone** especially i
 
 New signatures have their column highlighted:
 
-![new-signature](/img/search/logcompare/new-signature.png)
+<img src={useBaseUrl('img/search/logcompare/new-signature.png')} alt="New signature" style={{border: '1px solid gray'}} width="500" />
 
 Gone signatures look like the following:
 
-![gone-signature](/img/search/logcompare/gone-signature.png)
+<img src={useBaseUrl('img/search/logcompare/gone-signature.png')} alt="Gone signature" style={{border: '1px solid gray'}} width="500" />
 
 The following table illustrates the way **Count** results are calculated. For example, if the baseline query returns signatures A, B, C, and D while the target includes A, B, D, and E signatures, your results would look like the following:
 
@@ -209,7 +210,7 @@ Using the **details** option launches a new query adding a unique signature ID
 
 After running a LogCompare search, from the **Signatures** tab, you can view logs grouped together in a signature. To see the raw log data from signatures click the blue underlined number in the **Count** column. A new log search is opened with the details option set against the selected signature.
 
-![details option](/img/search/logcompare/details-option.png)
+<img src={useBaseUrl('img/search/logcompare/details-option.png')} alt="Details option" style={{border: '1px solid gray'}} width="800" />
 
 Details option syntax:
 
@@ -222,7 +223,7 @@ The **Score** column is calculated based on the significance of the change in 
 
 The value is calculated using a symmetric version of [Kullback-Leibler divergence score](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence).
 
-![signature score](/img/search/logcompare/signature-score.png)
+<img src={useBaseUrl('img/search/logcompare/signature-score.png')} alt="Signature score" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Actions
@@ -233,10 +234,10 @@ The following table explains the icons in the **Actions** column.
 
 | Icon | Action |
 |:---|:---|
-| ![promote](/img/search/logcompare/promote.png) | Promote a signature if the data included in the signature is relevant. Once promoted the thumbs-up icon turns blue. |
-| ![demote](/img/search/logcompare/demote.png) | Demote a signature if it's not relevant. Once demoted the thumbs-down icon turns blue. |
-| ![split](/img/search/logcompare/split.png) | Split a signature into multiple signatures to see more granular results. You'll notice that fewer wildcard asterisks will appear. Instead, specific values are included in the signatures. After splitting, the newly split signatures are highlighted. |
-| ![edit](/img/search/logcompare/edit.png) | Edit the signature. After editing, the signature is highlighted. |
+| <img src={useBaseUrl('img/search/logcompare/promote.png')} alt="promote" style={{border: '1px solid gray'}} width="50" /> | Promote a signature if the data included in the signature is relevant. Once promoted the thumbs-up icon turns blue. |
+| <img src={useBaseUrl('img/search/logcompare/demote.png')} alt="demote" style={{border: '1px solid gray'}} width="50" />| Demote a signature if it's not relevant. Once demoted the thumbs-down icon turns blue. |
+| <img src={useBaseUrl('img/search/logcompare/split.png')} alt="split" style={{border: '1px solid gray'}} width="50" />| Split a signature into multiple signatures to see more granular results. You'll notice that fewer wildcard asterisks will appear. Instead, specific values are included in the signatures. After splitting, the newly split signatures are highlighted. |
+| <img src={useBaseUrl('img/search/logcompare/edit.png')} alt="edit" style={{border: '1px solid gray'}} width="50" />| Edit the signature. After editing, the signature is highlighted. |
 
 ### Signature 
 
@@ -276,4 +277,4 @@ When selecting the time range of your search, keep in mind:
 
 By default, LogCompare email notifications provide details on the **Score**, **Count**, and **Signature**, as shown in the following email example. This is not configurable.
 
-![Email alert](/img/search/logcompare/logcompare-email-alert.png)  
+<img src={useBaseUrl('img/search/logcompare/logcompare-email-alert.png')} alt="Email alert" style={{border: '1px solid gray'}} width="700" />

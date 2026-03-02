@@ -13,6 +13,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The maximum number of Collectors allowed per organization is 10,000.
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to add a hosted collector with the [`sumologic_collector`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/collector) resource.
+
+<TerraformLink/>
+:::
+
 ## Step 1: Configure Hosted Collector
 
 Steps to configure a Hosted Collector:
@@ -27,8 +35,8 @@ Steps to configure a Hosted Collector:
     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **Assign to a Budget** allows you to assign an ingest budget to the Collector. The dropdown displays your ingest budgets in the following format: `<budget name> (<field value>) (<allocated capacity>)`
 1. **Time Zone**. Set the default time zone when it is not extracted from the log timestamp. Time zone settings on Sources override a Collector time zone setting.
-1. Review your input and when finished click **Save**.<br/> ![Screenshot of the 'Add Hosted Collector' dialog box in Sumo Logic. The form includes fields for 'Name' (with 'Sumo' entered), 'Description,' 'Category,' and 'Fields' with an option to '+Add Field.' Additional options include 'Assign to a Budget,' set to 'Not Assigned,' and 'Time Zone,' set to '(UTC) Etc/UTC.' At the bottom are 'Cancel' and 'Save' buttons.](/img/send-data/add-hosted-collector.png)
-1. After the Collector has been set up, it appears on the Collection page as a Hosted Collector. <br/> ![Screenshot showing a portion of the Sumo Logic interface. It displays the label '--00CH' with a 'Hosted' badge next to it, indicating a hosted status with a green checkmark.](/img/send-data/Collector-types-hosted.png)
+1. Review your input and when finished click **Save**.<br/><img src={useBaseUrl('img/send-data/add-hosted-collector.png')} alt="Add Hosted Collector dialog" style={{border: '1px solid gray'}} width="600" />
+1. After the Collector has been set up, it appears on the Collection page as a Hosted Collector. <br/><img src={useBaseUrl('img/send-data/Collector-types-hosted.png')} alt="Hosted status with a green checkmark" style={{border: '1px solid gray'}} width="400" />
 
 ## Step 2: Configure a Source
 

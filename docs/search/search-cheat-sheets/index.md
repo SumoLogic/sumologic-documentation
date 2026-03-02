@@ -23,16 +23,15 @@ Use cheat sheets as a quick reference guide or get up to speed quickly with our 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/search/search-cheat-sheets/log-operators')}><img src={useBaseUrl('img/icons/general/bookmark.png')} alt="icon" width="35"/><h4>Log Operators</h4></a>
-  <p>Learn about all available parsers, aggregators, search operators, and mathematical expressions.</p>
-  </div>
- </div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/search/search-cheat-sheets/iis-search-examples')}><img src={useBaseUrl('img/icons/general/bookmark.png')} alt="icon" width="35"/><h4>IIS Search Query examples</h4></a>
   <p>View examples of useful IIS search queries for various use cases.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/search/search-cheat-sheets/log-operators')}><img src={useBaseUrl('img/icons/general/bookmark.png')} alt="icon" width="35"/><h4>Log Operators</h4></a>
+  <p>Learn about all available parsers, aggregators, search operators, and mathematical expressions.</p>
+  </div>
+ </div>
 </div>
-<br/>
 

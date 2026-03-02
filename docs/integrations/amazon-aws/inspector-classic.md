@@ -17,7 +17,7 @@ Amazon Inspector allows you to monitor your AWS resources for potential security
 The App uses a Lambda function to collect assessment run events (notifications) directly from the Amazon Inspector service, which then retrieves further details via the Inspector API, and finally sends them over to a Sumo Logic HTTP Source endpoint.
 
 For more information on Amazon Inspector notifications, see:
-[Amazon Inspector Classic assessment templates and assessment runs](http://docs.aws.amazon.com/inspector/latest/userguide/inspector_assessments.html).
+[Amazon Inspector Classic assessment templates and assessment runs](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_assessments.html).
 
 ## Sample log
 

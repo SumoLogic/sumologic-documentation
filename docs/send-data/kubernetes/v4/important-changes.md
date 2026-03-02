@@ -17,12 +17,12 @@ Prometheus 3.0 includes several breaking changes. Learn more about those changes
 
 Use Helm chart [v4.14.0](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v4.14.0) or later to ensure compatibility with Prometheus 3.0 scrapers. Note that Prometheus 3.0 is not the default in Helm chart version 4.
 
-### Kubernetes Attributes Processor support (v4.13)
+### Kubernetes Attributes Processor support (alpha)
 
 The [Kubernetes Attributes Processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/k8sattributesprocessor/README.md) is now supported for logs and metrics metadata enrichment. This processor is disabled by default. To enable this processor for logs, set `metadata.logs.useSumoK8sProcessor` to `false`. To enable this processor for metrics, set `metadata.metrics.useSumoK8sProcessor` to `false`.
 
 :::note
-The Service name is part of the metadata enrichment with this processor in v4.15.0. Refer to the [OpenTelemetry service name calculation documentation](https://opentelemetry.io/docs/specs/semconv/non-normative/k8s-attributes/#how-servicename-should-be-calculated) to understand how the service name is calculated.
+The service name is part of the metadata enrichment with this processor in v4.15.0. Refer to the [OpenTelemetry service name calculation documentation](https://opentelemetry.io/docs/specs/semconv/non-normative/k8s-attributes/#how-servicename-should-be-calculated) to understand how the service name is calculated.
 :::
 
 ### Remove Fluent Bit and Fluentd
@@ -105,3 +105,63 @@ kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-
 
 This Helm Chart automatically creates the necessary Collector and Sources in Sumo. Up until this point, these were generic HTTP sources accepting data in different formats. As Sumo now has native support for the OTLP protocol used by OpenTelemetry, we've decided to switch to using these new sources by default. This is a completely transparent change **unless** you use the `_sourceName` or `_source` fields in your Sumo queries.
 
+### Use Routing connector from release 4.19 onwards (breaking change)
+
+Starting from release 4.19, the Routing connector is used by default. This connector is a replacement for the existing routing processor. Routing processor has been deprecated and removed from the `otel-collector-contrib`. If your Kubernetes config is still referring to those configurations, you need to update it to use the Routing connector.
+
+#### How to upgrade
+
+With the new configuration:
+
+* The table entry key `exporter` has changed to `exporters` (plural).
+* Multiple exporters with the same routing statement can now be grouped in a single table entry.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Newer configuration"
+  values={[
+    {label: 'Newer configuration', value: 'Newer configuration'},
+    {label: 'Older configuration', value: 'Older configuration'},
+  ]}>
+
+<TabItem value="Newer configuration">
+
+Newer configuration (4.19+) with grouping, which we recommend when exporters share the same statement.
+
+```yaml
+sumologic:
+  logs:
+    otelcol:
+      routing:
+        table:
+          - exporters: [exporter1-name, exporter2-name]
+            statement:
+```
+
+</TabItem>
+<TabItem value="Older configuration">
+
+Old configuration (before 4.19).
+
+```yaml
+sumologic:
+  logs:
+    otelcol:
+      routing:
+        table:
+          - exporter: exporter1-name
+            statement:
+          - exporter: exporter2-name
+            statement:
+```
+
+</TabItem>
+</Tabs>
+
+
+Routing configurations are still defined under `sumologic.logs.otelcol.routing.table`.
+
+Internally, Sumo Logic Helm Chart will convert this configuration into Routing connector configurations.

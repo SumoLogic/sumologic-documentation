@@ -4,6 +4,8 @@ title: isNull, isEmpty, isBlank Search Operators
 sidebar_label: isNull, isEmpty, isBlank
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 * The `isNull` operator checks a string and returns a boolean value: true if the string is null, or false if the string is not null.
 * The `isEmpty` operator checks if a string contains no characters and is only whitespace.
 * The `isBlank` operator checks if a string contains no characters, is only whitespace, and is null.
@@ -71,7 +73,7 @@ Running a query like:
 
 uses the `isNull` operator to check the field value of `country_code` and if it returns `true`, has the [`if` operator](/docs/search/search-query-language/search-operators/if) replace the value with the string `unknown`:
 
-![Screenshot of Sumo Logic log search results with columns for time, country code, remote IP, and message](/img/search/searchquerylanguage/search-operators/isNull.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/isNull.png')} alt="Screenshot of Sumo Logic log search results with columns for time, country code, remote IP, and message" style={{border: '1px solid gray'}} width="500" />
 
 ### Use the where operator to check for null values
 

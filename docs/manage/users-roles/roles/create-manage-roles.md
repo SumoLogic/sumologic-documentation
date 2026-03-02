@@ -7,7 +7,15 @@ description: You can create custom roles for your users.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import RoleStacking from '../../../reuse/role-stacking-tip.md';
 
-This section has instructions for creating and managing Sumo Logic roles. The roles you assign to a user control what Sumo Logic capabilities are available to the user and what log data the user can access. This functionality is referred to as role-based access control.  
+This section has instructions for creating and managing Sumo Logic roles. The roles you assign to a user control what Sumo Logic capabilities are available to the user and what log data the user can access. This functionality is referred to as role-based access control.
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage roles with the [`sumologic_role_v2`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/role_v2) resource.
+
+<TerraformLink/>
+::: 
 
 ## Built-in Administrator and Analyst roles
 

@@ -176,7 +176,11 @@ This action is dangerous and could result in data loss.
 :::
 
 :::sumo Best Practice
-Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
+Highlight Sumo Logic-specific info, best practices, links, and other information from Sumo Logic subject matter experts. You can change the title based on the content.
+:::
+
+:::training
+Links to training courses, certification info, and micro lessons.
 :::
 
 ```
@@ -205,7 +209,11 @@ This action is dangerous and could result in data loss.
 :::
 
 :::sumo Best Practice
-Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
+Highlight Sumo Logic-specific info, best practices, links, and other information from Sumo Logic subject matter experts. You can change the title based on the content.
+:::
+
+:::training
+Links to training courses, certification info, and micro lessons.
 :::
 
 </TabItem>
@@ -309,8 +317,8 @@ When the feature goes GA, remove the beta label and remove a description of the 
 
 ## Capitalization
 
-* Title case (initial cap) all doc titles. Example: `Global Intelligence for Apache Tomcat App`
-* Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case. Example: `Throughput signals and contributing factors`
+* Title case all doc titles. Example: `Cloud SOAR Incident Management and Triage`.
+* Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case. Example: `Throughput signals and contributing factors`.
 
 
 ## Code (inline)
@@ -724,7 +732,8 @@ You can use a link to a file embedding the entire file, or embed a range of code
 
 1. Save your image to the `/static/img` folder. This folder structure mirrors the doc section folders.
    * When updating existing images (like if there's a Sumo UI change), do not add a new version; always replace existing images. Image files take up a lot of room and can slow build times.
-   * File format be .png or .gif.
+   * File format be PNG. Avoid using animated GIFs, as they're generally not accessible; instead, use static images, provide text descriptions, or ensure animations stop within 5 seconds.
+   * Max file size 2MB.
 1. Add the import line to the top of your doc, underneath the [front matter header](#metadata-frontmatter), if it's not already there.
    ```
    import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -894,7 +903,7 @@ Always start with `1.`. Markdown automatically numbers sequentially when buildin
    1. Ordered sub-list.
 1. And another item.
 
-  More content for this entry. And a screenshot:<br/> ![span hover](/img/apm/span-hover-view.png)
+  More content for this entry. And a screenshot:<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Span hover" style={{border: '1px solid gray'}} width="400" />
 
 ```
 </TabItem>
@@ -906,7 +915,7 @@ Always start with `1.`. Markdown automatically numbers sequentially when buildin
 1. Actual numbers do not matter, just that it is a number.
    1. Ordered sub-list.
 1. And another item.
-   * More content for this entry. And a screenshot:<br/> ![span hover](/img/apm/span-hover-view.png)
+   * More content for this entry. And a screenshot:<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Span hover" style={{border: '1px solid gray'}} width="400" />
 
 </TabItem>
 </Tabs>
@@ -1271,10 +1280,6 @@ In the UI, avoid periods for single sentences on their own. Whenever there are t
 
 Our release notes (also known as changelog) are posted to the both the docs site and corresponding RSS feed. Check out the categories [here](/docs/release-notes). Keep your them concise and add links to documentation. If there are updated UI elements, add an image or gif.
 
-### Text only
-
-To add a text-only release note:
-
 1. In the appropriate blog folder ([blog-collector](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-collector), [blog-cse](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-cse), [blog-csoar](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-csoar), [blog-developer](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-developer), [blog-service](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-service)), add a new file that follows the format of the other posts in that folder. For example, for blog-service release notes, the format is `YYYY-MM-DD-<product/feature>`. For Cloud SIEM and SOAR, the format is `YYYY-MM-DD-application-update` or `YYYY-MM-DD-content-update`.<br/><img src={useBaseUrl('img/contributing/release-notes-dropdown-menu.png')} alt="Release notes menu" style={{border: '1px solid gray'}} width="200"/>
 1. Add the following frontmatter, swapping out these example values with your own. Because there's no `image`, we'll use the Sumo Logic logo in its place.
     ```markdown
@@ -1294,28 +1299,9 @@ To add a text-only release note:
     * `hide-table-of-contents`. Hide the TOC on the page, keeping the notes clean and wide on the page.
 1. Document the release notes. Add links, bullets, and images as needed.
 
-#### Long release notes
+### Long release notes
 
 For lengthy release notes, we recommend introducing the notes and adding a truncate line (`<!--truncate-->`), followed by the full set of release notes.
-
-### Text and images
-
-To add release notes with images:
-
-1. In the blog folder, create a new folder with the following name format: `YYYY-MM-DD-product`.
-1. In the new folder, create a markdown file named `index.md`.
-1. Add your release notes with frontmatter:
-    ```markdown
-    ---
-    title: New XYZ Feature
-    hide_table_of_contents: true
-    keywords:
-      - alerts
-    image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
-    ---
-    ```
-1. Save the image to this folder and add them to the markdown file: `![alt text](image-name.png)`.
-
 
 ## Reusing content
 
@@ -1386,7 +1372,7 @@ Tables use plain markdown with one header, default left-aligned columns, and mul
 | Started At | 07/27/2020 09:01:04.533 | When the trace started. |
 | Duration | 12.582 ms | The amount of time the trace spans.  |
 | Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
-| Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![span hover](/img/apm/traces/span-hover-view.png) |
+| Duration Breakdown | <img src={useBaseUrl('img/apm/traces/breakdown.png')} alt="Breakdown" style={{border: '1px solid gray'}} width="200" /> | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Span hover" style={{border: '1px solid gray'}} width="300" /> |
 | Number of errors | 0 | The number of errors in the trace. |
 | Status | 200 | The HTTP status code of the trace. |
 ```
@@ -1421,7 +1407,7 @@ Markdown | Less | Pretty
 | Started At | 07/27/2020 09:01:04.533 | When the trace started. |
 | Duration | 12.582 ms | The amount of time the trace spans.  |
 | Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
-| Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![span hover](/img/apm/span-hover-view.png) |
+| Duration Breakdown | <img src={useBaseUrl('img/apm/traces/breakdown.png')} alt="Breakdown" style={{border: '1px solid gray'}} width="200" /> | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Span hover" style={{border: '1px solid gray'}} width="300" /> |
 | Number of errors | 0 | The number of errors in the trace. |
 | Status | 200 | The HTTP status code of the trace. |
 

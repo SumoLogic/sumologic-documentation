@@ -11,7 +11,7 @@ This topic has instructions for how to create custom entity types in Cloud SIEM.
 
 In Cloud SIEM, *entities* are fundamental to the insight generation process. When a Cloud SIEM rule fires, it generates a signal for each “on-entity” attribute configured for the rule. Cloud SIEM correlates signals by entity to create insights. This process is described in the [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) topic.
 
-Cloud SIEM has a number of built-in [entity types](/docs/cse/records-signals-entities-insights/view-manage-entities#about-entities), for example, IP Address, Hostname, and Username.
+Cloud SIEM has a number of built-in entity types, for example, IP address, hostname, and username. For a list of fields that Cloud SIEM considers entities and the entity types they map to, see [Schema: Entity Fields](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md) in the Cloud SIEM Content Catalog. 
 
 When you create a rule, in the signal configuration section, the rules editor prompts you to select an “on-entity” attribute from a list of all of the Cloud SIEM schema attributes that hold entities. What if you want to correlate signals by something other than an item that is one of Cloud SIEM standard entity types? That’s what custom entity types are for.
 
@@ -31,3 +31,11 @@ To create a custom entity type:
     :::
 5. **Fields**. Use the dropdown list to select the schema attribute or attributes you want to associate with the custom entity type.
 6. Click **Save**.
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage custom entity types with the [`sumologic_cse_custom_entity_type`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_entity_type) resource.
+
+<TerraformLink/>
+:::

@@ -4,6 +4,8 @@ title: Scheduled Views Best Practices and Examples
 description: A Scheduled View is a query that runs on a schedule. This topic has some tips for setting up Scheduled View queries.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 A Scheduled View reduces aggregate data down to the bare minimum, so they contain only the results that you need to generate your data. Queries that run against Scheduled Views return search results much faster because the data is pre-aggregated before the query is run. Scheduled Views process queries once per minute.
 
 These items are required in Scheduled View queries:
@@ -202,7 +204,7 @@ _sourceCategory=prod/web/iis | timeslice 1m | count by _timeslice
 
 which would produce results like:
 
-![lightweight](/img/scheduled-views/scheduled_view_lightweight.png)
+<img src={useBaseUrl('img/scheduled-views/scheduled_view_lightweight.png')} alt="Lightweight Scheduled View query" width="400" />
 
 Compared to this Scheduled View query, which is more robust, but five times heavier with one additional column:
 
@@ -212,7 +214,7 @@ _sourceCategory=prod/web/iis | timeslice 1m | count by _timeslice, status_code
 
 This would produce results like:
 
-![robust](/img/scheduled-views/scheduled_view_robust.png)
+<img src={useBaseUrl('img/scheduled-views/scheduled_view_robust.png')} alt="Robus Scheduled View query" style={{border: '1px solid gray'}} width="500" />
 
 Now you can use **sum** on your records, because the counts are broken out. For example, use the sum operator to aggregate the aggregation in the following query:
 

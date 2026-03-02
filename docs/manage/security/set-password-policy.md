@@ -10,6 +10,14 @@ Account admins with the Manage Password Policy capability can set the account's 
 
 For details on password policies and Multi-account Access, see [Multi-Account Access](../users-roles/users/multi-account-access.md). 
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to set the password policy with the [`sumologic_password_policy`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/password_policy) resource.
+
+<TerraformLink/>
+:::
+
 ## Changing the password policy
 
 Admins with Manage Password Policy capability can make changes at any time for users in their organization. The updated settings are applied to each user's account the next time he or she changes their password.

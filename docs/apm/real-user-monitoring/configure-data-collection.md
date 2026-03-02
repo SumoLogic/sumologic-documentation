@@ -33,6 +33,14 @@ To utilize XHR and navigation/route changes, and errors collection, you must use
 
 For full end-to-end visibility, we recommended supplementing your RUM browser auto-instrumentation with the appropriate [back-end tracing instrumentation](/docs/apm/traces/get-started-transaction-tracing).
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a RUM source with the [`sumologic_rum_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/rum_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Step 1: Create a RUM HTTP Traces Source
 
 To configure a RUM HTTP Traces source:
@@ -94,7 +102,7 @@ This can be also replaced with an internal OpenTelemetry collector if you wish t
 Use the copied script in your page head inside the `<head>` `</head>` tags. The script sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp) protocol. 
 
 :::tip
-You can view and copy a script anytime by clicking **Show script** for the source.<br/> ![show-script.png](/img/rum/show-script.png)
+You can view and copy a script anytime by clicking **Show script** for the source.<br/><img src={useBaseUrl('img/rum/show-script.png')} alt="Show script" style={{border: '1px solid gray'}} width="200" />
 :::
 
 The following are base script examples, populated when you create and configure a source in the above instructions.

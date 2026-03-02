@@ -18,6 +18,14 @@ To manage users and roles, you must have the administrator role or your role mus
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Roles page, in the main Sumo Logic menu select **Administration > Users and Roles > Roles**. 
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage roles with the [`sumologic_role_v2`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/role_v2) resource.
+
+<TerraformLink/>
+:::
+
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper">

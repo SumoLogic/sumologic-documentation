@@ -26,7 +26,7 @@ The following images show Sumo Logic's Cloud SIEM home page.
 * C. **Radar**. Visualizes the last 24 hours of security activity. Dark blue lines represent records, light blue bars represent signals, and red triangles represent insights.
 * D. **Recent Activity**. Displays a feed of the latest insights that have been generated.
 
-Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations. Cloud SIEM automatically normalizes, enriches, and correlates all your data across multiple data sources into actionable security insights. Because it's designed for larger data volumes, most organizations need to ingest a large amount of data each day for insights to surface in Cloud SIEM. For smaller organizations, [additional security features](/docs/security/additional-security-features/) may be a better fit for your data ingest volume. 
+Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations. Cloud SIEM automatically normalizes, enriches, and correlates all your data across multiple data sources into actionable security insights. Because it's designed for larger data volumes, most organizations need to ingest a large amount of data each day for insights to surface in Cloud SIEM. For smaller organizations, [Logs for Security](/docs/security/additional-security-features/) may be a better fit for your data ingest volume. 
 
 ### Getting your data into Cloud SIEM
 
@@ -218,7 +218,7 @@ In this section, you'll be investigating an insight for your organization that w
    * What order did the events happen in?
    * What hypotheses do you have about how and why the event happened?
    * What other information can you find by exploring this insight?
-1. Scroll to the bottom of the left navigation pane of the insight. Write a short summary of your answers from from the previous step in the **Comments** section. Here is a summary that we could have written for our example: 
+1. Write a short summary of your answers from from the previous step in the insight's **Comments**. Here is a summary that we could have written for our example: 
     "*First, a known phishing link was received in a user's email. A few minutes later, a malicious file was allowed. It seems the user clicked a phishing link and downloaded the file. Then, threat intelligence detected a ZIP file with a known malicious file hash, coming from a domain that has also been recognized as suspicious by external threat monitoring services. Follow-up activity accessing the AWS APIs and Lambda service was detected, the first time that this user has been recorded using those services.  This unusual activity also triggered Amazon's GuardDuty service, recognizing unusual network activity.  All of these individual signals were correlated together into this insight. Given the likelihood of active malware in the network, the user's machine and credentials should be locked down immediately. Further investigation is needed to determine the total impact of the malicious file.*"
 
 ### Dive into signals and entities
@@ -283,7 +283,7 @@ In addition to the context actions available in the Cloud SIEM UI, there are man
 
 In Cloud SIEM, there are several different actions you can take on each insight. You can comment on the insight, or close it or assign a status to it. When you close an insight, Cloud SIEM uses the resolution information to reduce false positives and duplicates further. Assigning a status to the insight lets you keep working on it, and keep track of your progress. 
 
-You can also assign the insight to yourself or to a colleague, and use the **Actions** button to alert colleagues, create JIRA tickets, send Slack messages, execute playbooks, or use other APIs. This **Actions** button is customizable, but can only be configured by admins. If you need a custom Action, ask your Admin or Sumo account rep for help creating one.
+You can also assign the insight to yourself or to a colleague, and use the **Actions** button to alert colleagues, create JIRA tickets, send Slack messages, execute playbooks, or use other APIs. This **Actions** button is customizable, but can only be configured by admins. If you need a custom Action, ask your Admin or Sumo Logic account rep for help creating one.
 
 ## Tune your environment
 

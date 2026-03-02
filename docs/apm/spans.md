@@ -19,7 +19,7 @@ To access span analytics:
 
 A new **Spans** page opens. Data is displayed once you run a query.
 
-![Spans page](/img/apm/spans-page.png)
+<img src={useBaseUrl('img/apm/spans-page.png')} alt="Spans page" style={{border: '1px solid gray'}} width="800" />
 
 From here, you can filter and aggregate by any standard or custom span attribute (tag) and create charts to visualize results. If you find something interesting, you can quickly explore your raw span records in the **Messages** tab.
 
@@ -54,11 +54,11 @@ This micro lesson provides an overview of Span Analytics, and describes the term
 
 You can build a spans query using the provided input fields. By default, you'll see an input for **Filters** and **Visualize**.
 
-![blank spans query](/img/apm/spans-query-blank.png)
+<img src={useBaseUrl('img/apm/spans-query-blank.png')} alt="Blank spans query" style={{border: '1px solid gray'}} width="800" />
 
 Once you click the text area of an input field, you'll get a dropdown menu that provides the available options detected from your data. You can manually type into these input fields or select from the dropdown of available options.
 
-![dropdown for spans filter](/img/apm/dropdown-for-spans-filter.png)
+<img src={useBaseUrl('img/apm/dropdown-for-spans-filter.png')} alt="Dropdown for spans filter" style={{border: '1px solid gray'}} width="400" />
 
 ### Filters
 
@@ -90,7 +90,7 @@ If you define **Visualize**, an option to set **Group By** appears, allowing 
 
 If you define **Group By**, you'll see another option to set a **Limit** value. This allows you to reduce the number of results by an order.
 
-![spans query](/img/apm/spans-query.png)
+<img src={useBaseUrl('img/apm/spans-query.png')} alt="Spans query" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 When you run a query using **Visualize** and/or **Group By**, the results tab automatically switches to **Aggregates**.
@@ -106,11 +106,11 @@ You set the time range of the query at the top right of the Spans page, above th
 
 Once you have defined your spans query, with filters and aggregation if desired, click the search button to run the search. It looks like the following:  
 
-![spans search button](/img/apm/spans-search-button.png)
+<img src={useBaseUrl('img/apm/spans-search-button.png')} alt="Spans search button" style={{border: '1px solid gray'}} width="100" />
 
 You can pause or stop your search by clicking the appropriate icons below the search button.  
 
-![pause or stop spans query](/img/apm/pause-or-stop-spans-query.png)
+<img src={useBaseUrl('img/apm/pause-or-stop-spans-query.png')} alt="Pause or stop spans quer" style={{border: '1px solid gray'}} width="100" />
 
 ## Search results
 
@@ -120,10 +120,10 @@ You can pause or stop your search by clicking the appropriate icons below the se
 
 The **Messages** table shows your raw span data. You can click on any row to open a right-side Details pane (similar to the one in [Trace View](/docs/apm/traces/view-and-investigate-traces)) showing span details and options to navigate to other parts of the system from there.
 
-![messages results](/img/apm/spans-messages-results.png)
+<img src={useBaseUrl('img/apm/spans-messages-results.png')} alt="Messages results" style={{border: '1px solid gray'}} width="800" />
 
 * To move a column left or right, hold click and drag it to a different location in the table.
-* To adjust column width, click and drag the vertical line in between the columns.<br/> ![resize column](/img/search/get-started-search/search-page/resize-column.png)
+* To adjust column width, click and drag the vertical line in between the columns.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/resize-column.png')} alt="Resize column" style={{border: '1px solid gray'}} width="200" />
 * To reset column width to the default size, double-click the vertical line to the right of a column name.
 
 #### Facets
@@ -132,20 +132,20 @@ The **Facets** panel provides a list of all the metadata fields returned from yo
 
 The content of the Facets panel is affected by your current active filters and time range, but shows any found metadata tag (span attribute) with its top 10 values, including any custom tags you may [add to your data](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/custom-tags-configuration). By default, the fields used in the query are shown in the Messages table.
 
-![Facets expanded](/img/apm/facets-expanded.png)
+<img src={useBaseUrl('img/apm/facets-expanded.png')} alt="Facets expanded" style={{border: '1px solid gray'}} width="300" />
 
 * You can adjust which fields are displayed in the raw span messages table by checking or unchecking the box next to the field in the Facets panel.
 * Use the search field to easily find the metadata from your data. This applies the filter to both tag names and their values.
 * The number of values found for each is displayed for your reference.
 * Add and remove fields from your query by hovering over a field and clicking.  
 
-![facets add to query](/img/apm/facets-add-to-query.png)
+<img src={useBaseUrl('img/apm/facets-add-to-query.png')} alt="Facets add to query" style={{border: '1px solid gray'}} width="300" />
 
 ### Aggregates tab
 
 The **Aggregates** tab shows your data charted. See Panels from Dashboard for details on the settings. However, note that not all settings will be available on the Spans page. The interface will only show you available settings.
 
-![spans-aggregates-visualize](/img/apm/spans-aggregates-visualize.png)
+<img src={useBaseUrl('img/apm/spans-aggregates-visualize.png')} alt="<your image description>" style={{border: '1px solid gray'}} width="<insert-pixel-number>" />
 
 #### Add to Dashboard
 
@@ -153,15 +153,15 @@ You can add to a dashboard as long as your total dashboard-originated `_trace_sp
 
 To add your aggregated span data to a dashboard:
 
-1. Click the three-dot kebab menu icon and select **Add to Dashboard**.<br/>  ![add-to-dashboard-spans](/img/apm/spans-add-to-dashboard.png)
-1. In the **Add Panel to Dashboard** window, provide a **Panel Title** and enter an existing **Dashboard** name or add to a newly created a new one, as seen in this screenshot.<br/> ![span-dashboard](/img/apm/span-dashboard.png)
+1. Click the three-dot kebab menu icon and select **Add to Dashboard**.<br/><img src={useBaseUrl('img/apm/spans-add-to-dashboard.png')} alt="Add to dashboard spans" style={{border: '1px solid gray'}} width="400" />
+1. In the **Add Panel to Dashboard** window, provide a **Panel Title** and enter an existing **Dashboard** name or add to a newly created a new one, as seen in this screenshot.<br/><img src={useBaseUrl('img/apm/span-dashboard.png')} alt="Span dashboard" style={{border: '1px solid gray'}} width="800" />
 1. When you're done assigning the panel to a dashboard, click **Add**.
 
 #### Open in Search
 
 To further enhance your query, you can use the [Search Query Language](/docs/apm/traces/search-query-language-support-for-traces) for more advanced use cases by opening a Search of your spans. Click the three-dot kebab menu icon and select **Open in Search**.  
 
-![span-open-in-search](/img/apm/span-open-in-search.png)
+<img src={useBaseUrl('img/apm/span-open-in-search.png')} alt="Span open in search" style={{border: '1px solid gray'}} width="400" />
 
 ### Examples
 
@@ -171,7 +171,7 @@ To compare the performance of different release versions defined by a custom tag
 
 Use the **filters** or **facets** features to find the appropriate service in the dropdown and select it. Next, select to visualize duration’s 95th percentile and pick a group by time. For example, 1-minute granularity and the `assemblyVersion` custom tag that carries version information. That’s it!
 
-![service percentile by time](/img/apm/service-percentile-by-time.png)
+<img src={useBaseUrl('img/apm/service-percentile-by-time.png')} alt="Service percentile by time" style={{border: '1px solid gray'}} width="800" />
 
 You can customize your chart by picking different visualization types and colors.
 
@@ -181,7 +181,7 @@ Next, let’s see how to find the distribution of different HTTP errors among ou
 
 Here is the simple query we used to visualize that data:
 
-![status codes spans example](/img/apm/spans-status-codes-example.png)
+<img src={useBaseUrl('img/apm/spans-status-codes-example.png')} alt="Status codes spans example" style={{border: '1px solid gray'}} width="800" />
 
 It’s now easier than ever to drill down into the information you care about. Note that our query only includes spans with codes from 4xx and 5xx ranges and visualizes the count of such spans, broken down by two dimensions, service and status code. Easy!
 

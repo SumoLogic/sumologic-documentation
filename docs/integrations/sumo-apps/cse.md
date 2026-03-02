@@ -66,6 +66,10 @@ Note that the Audit Event Index contains logs for a variety of Sumo Logic subsys
 
 ## Install the Enterprise Audit - Cloud SIEM app
 
+### Prerequisite
+
+Requires multiple indexes to be enabled, including `sec_record_failure`, `sec_record*`, `sumologic_audit_events`, and `sumologic_system_events`, prior to installation.
+
 ### Install and configure Cloud SIEM
 
 The Enterprise Audit - Cloud SIEM app provides data on your Cloud SIEM installation. Therefore, before you can install the app, you must install and configure Cloud SIEM. See [Onboarding Checklist for Cloud SIEM Administrators](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/) for an overview.
@@ -298,6 +302,24 @@ The **Cloud SIEM - User Telemetry** dashboard shows breakdowns of Cloud SIEM use
 The **Signal Analysis - Suppression** dashboard shows an overview and some detailed tabular views for reflected Cloud SIEM signal events, specifically mapping, parsers, and suppression.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-siem-signal-analysis-suppression.png')} alt="Signal Analysis - Suppression dashboard" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for Enterprise Audit - Cloud SIEM App
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Enterprise Audit - Cloud SIEM Alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Enterprise Audit - Cloud SIEM - Brute Force Attack` | Detect failed authentication attempts, indicating a credential attack. | Count > 3 | Count < = 3 |
+| `Enterprise Audit - Cloud SIEM - Critical Active Malware Detection` | Alert when malware/threat is detected on the endpoint, email, or network with critical severity | Count > 0 | Count < = 0 |
+| `Enterprise Audit - Cloud SIEM - Critical Insight Alert` | Alert when any critical severity insight is created requiring immediate investigation | Count > 0 | Count < = 0 |
+| `Enterprise Audit - Cloud SIEM - Detection SLA Violation` | Time to detect threats exceeds acceptable window (>24 hours) | Count > 0 | Count < = 0 |
+| `Enterprise Audit - Cloud SIEM - Impossible Travel Detection` | User accessing from geographically impossible locations | Count > 0 | Count < = 0 |
+| `Enterprise Audit - Cloud SIEM - Privileged Account Activity Spike` | Detect anomalous admin/privileged account usage | Count > 0 | Count < = 0 |
+| `Enterprise Audit - Cloud SIEM - Remediation SLA Breach` | Critical incidents resolved beyond the expected SLA (>4 hours) | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the Enterprise Audit - Cloud SIEM app (Optional)
 

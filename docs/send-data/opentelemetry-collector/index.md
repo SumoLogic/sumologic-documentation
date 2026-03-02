@@ -13,6 +13,14 @@ What makes the Sumo Logic OTel Collector unique is its flexibility and scalabili
 
 Once the data is collected, the Sumo Logic platform provides powerful analytics capabilities, enabling users to gain insights into their applications and systems, troubleshoot issues, and optimize their operations. With its user-friendly interface and powerful features, the Sumo Logic OTel Collector is an ideal choice for organizations looking to gain a deeper understanding of their distributed systems and improve their overall performance and reliability.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an OpenTelemetry collector with the [`sumologic_OT_Collector`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/ot_collector) resource.
+
+<TerraformLink/>
+:::
+
 :::sumo Micro Lesson
 Watch this micro lesson to learn more about the benefits of using OenTelemetry collector.
 

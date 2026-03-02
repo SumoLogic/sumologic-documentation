@@ -66,12 +66,14 @@ How you can search and use your ingested data varies by the Data Tier it resides
 | Logs to Metrics | &#10003; | &#10003; | &#10003; |
 | Data Forwarding | &#10003; | &#10003; | |
 | Live Tail | &#10003; | &#10003; | &#10003; |
-| Dashboards | &#10003; | | |
-| Monitors | &#10003; | | |
-| Scheduled Searches | &#10003; | | |
+| Dashboards | &#10003; |  | Activation required<sup>*</sup> |
+| Monitors | &#10003; | |  |
+| Scheduled Searches | &#10003; | | Activation required<sup>*</sup> |
 | Scheduled Views | &#10003; | | |
 | API Queries |  &#10003; | &#10003; | &#10003; |
 
+<sup>*</sup> Feature activation is subject to minimum volume and service plan requirements, confirmed at time of transaction.
+  
 ## Assigning data to a Data Tier
 
 You assign data to a Data Tier at the partition level. When you create a partition, you define a routing expression and select the target tier for the data that matches the routing expression. For instructions, see [Create a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).
@@ -84,7 +86,7 @@ For information about searching data tiers, see [Searching Data Tiers](searchin
 
 This section describes the most common error messages for Data Tiers.
 
-* If you try to add a panel to a dashboard that uses data from the Frequent or Infrequent Tiers, you'll receive the following error message, because you can only use data from the Continuous Tier in a dashboard: `This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.`<br/>![create-panel.png](/img/manage/partitions-data-tiers/no-dashboard-support.png)    
+* If you try to add a panel to a dashboard that uses data from the Frequent or Infrequent Tiers, you'll receive the following error message, because you can only use data from the Continuous Tier in a dashboard: `This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.`<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/no-dashboard-support.png')} alt="Create panel>" style={{border: '1px solid gray'}} width="800" />
 * If you try to specify the scope of a Scheduled View or a Scheduled Search using a partition in the Frequent or Infrequent Data tiers, you'll receive this error message: `This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.`
 
 ## Guides

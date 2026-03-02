@@ -166,6 +166,11 @@ Use the Sumo Logic Application Programming Interfaces (APIs) to interact with ou
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/api/parsers-library-management')}><img src={useBaseUrl('img/icons/operations/parsing-data.png')} alt="Thumbnail icon" width="50"/><h4>Parsers Library</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/api/partition-management')}><img src={useBaseUrl('img/icons/operations/data-overage.png')} alt="Thumbnail icon" width="50"/><h4>Partitions</h4></a>
   </div>
 </div>
@@ -206,6 +211,11 @@ Use the Sumo Logic Application Programming Interfaces (APIs) to interact with ou
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/api/schema-base-management')}><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Thumbnail icon" width="50"/><h4>Schema Base</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/api/scim-user')}><img src={useBaseUrl('img/icons/general/session.png')} alt="Thumbnail icon" width="50"/><h4>SCIM User</h4></a>
   </div>
 </div>
@@ -236,6 +246,11 @@ Use the Sumo Logic Application Programming Interfaces (APIs) to interact with ou
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/api/source-template-management')}><img src={useBaseUrl('img/icons/operations/topology-explorer.png')} alt="Thumbnail icon" width="50"/><h4>Source Template</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/api/span-analytics')}><img src={useBaseUrl('img/icons/operations/distributed-operations.png')} alt="Thumbnail icon" width="50"/><h4>Span Analytics</h4></a>
   </div>
 </div>
@@ -262,5 +277,5 @@ Use the Sumo Logic Application Programming Interfaces (APIs) to interact with ou
 </div>
 
 :::sumo Get Help
-To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Dojo](http://slack.sumologic.com/).
+To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Dojo](https://sumodojo.slack.com).
 :::

@@ -55,9 +55,9 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * **API Secret Key**. Enter the API secret to the API I that you [copied earlier](#vmware-carbon-black-cloud-enterprise-edr-configuration).
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
-* **Cloud SOAR URL**. Enter your [Cloud SOAR URL (for legacy installations)](/docs/cloud-soar/legacy/legacy-cloud-soar-apis/#base-path-for-api-requests).
+* **Cloud SOAR URL**. Enter your Cloud SOAR URL (for legacy installations).
 
-* **Cloud SOAR JWT Token**. Enter a [Cloud SOAR JWT token (for legacy installations)](/docs/cloud-soar/legacy/legacy-cloud-soar-apis/#generate-an-api-token).
+* **Cloud SOAR JWT Token**. Enter a Cloud SOAR JWT token (for legacy installations).
 * <IntegrationEngine/>
 * <IntegrationProxy/>
    

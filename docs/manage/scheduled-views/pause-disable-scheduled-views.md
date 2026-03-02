@@ -12,7 +12,11 @@ This page outlines the procedures for pausing a scheduled view, manually or auto
 
 By default, all scheduled views are enabled with the AutoPause feature. This mechanism automatically flags scheduled views that have not been queried or referred for *90* consecutive days for potential pausing. This helps with optimizing the system performance and resource usage. 
 
-Scheduled View owners and all active account administrators will receive an in-app warning and email notifications with the list of Scheduled Views that are flagged for inactivity. These notifications are sent 21 days and 7 days prior to the scheduled pause. If no action is taken, the Scheduled Views will be automatically paused on the 90th day with a final notification. 
+Scheduled View creators/owners and all active account administrators will receive an in-app warning and email notifications with the list of Scheduled Views that are flagged for inactivity. These notifications are sent 21 days and 7 days prior to the scheduled pause. If no action is taken, the Scheduled Views will be automatically paused on the 90th day with a final notification. 
+
+| In-app notification | Details section notification |
+| :-- | :-- |
+| <img src={useBaseUrl('/img/scheduled-views/in-app-notification.png')} alt="in-app-notification" style={{border:'1px solid gray'}} width="400"/> | <img src={useBaseUrl('/img/scheduled-views/notification-details-page.png')} alt="notification-details-page.png" style={{border:'1px solid gray'}} width="400"/> |
 
 ### Disable the AutoPause
 

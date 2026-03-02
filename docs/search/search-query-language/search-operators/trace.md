@@ -4,6 +4,8 @@ title: trace Search Operator
 sidebar_label: trace
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `trace` operator acts as a highly sophisticated filter to connect the dots across different log messages. You can use any identifying value with a trace operator, such as a user ID, IP address, or session ID, to retrieve a comprehensive set of activity associated to that original ID.
 
 Trace operators require the following:
@@ -21,7 +23,7 @@ trace "<regex>" "<starting_value>"
 
 Let's say that your product uses a variety of session IDs to track requests as they flow through your system. Different components use a series of four-digit hexadecimal IDs to process a customer order, as shown here:
 
-![trace_graphic 4.png](/img/search/searchquerylanguage/search-operators/trace_graphic.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/trace_graphic.png')} alt="Trace graphic 4" width="800" />
 
 Imagine that an error happened at some point in the process, generating an error including "PROCESSING FAILED: webID=7F92. Starting from this information, we can use a trace operator in our query to following the chain of activity:
 
@@ -50,7 +52,7 @@ We want to trace all Windows logins moving forward (+), starting from John's wor
 * "EventIdentifier 4624" "\nLogon Type:\t\t\t10" OR "\nLogon Type:\t\t\t2"| trace + "(?:Computer|Workstation )Name(?: = \"|:\\t)?(.+?)(?:\"|\s)" "JohnWorkstation.example.com" | extract "ComputerName = \"(?<dest_host>.+?)\"" | extract "Workstation Name:\\t(?<src_host>.+?)\s" | extract "New Logon:[\s\S]+?Account Name:\\t\\t(?<login_user>.*?)\s"
 ```
 
-![trace_forward_example](/img/reuse/query-search/trace_forward_example.png)
+<img src={useBaseUrl('img/reuse/query-search/trace_forward_example.png')} alt="Trace forward example" style={{border: '1px solid gray'}} width="800" />
 
 Trace tells us that from John's Workstation there was a login event to WIN1.example.com, from which there was a login to WIN2.example.com and then to WIN3.example.com within the same time frame. While we may not know if these login events were from the same person, it helps to determine potentially affected hosts (especially since generic usernames were used as well as an Administrator).
 
@@ -62,6 +64,6 @@ We want to build a chain of events going backwards in time (-) from a compromise
 * "EventIdentifier = 4624" "\nLogon Type:\t\t\t10" OR "\nLogon Type:\t\t\t3"| trace - "(?:Computer|Workstation )Name(?: = \"|:\\t)?(.+?)(?:\"|\s)" "WIN3.example.com" | extract "ComputerName = \"(?<dest_host>.+?)\"" | extract "Workstation Name:\\t(?<src host>.+?)\s" | extract "New Logon:[\s\S]+?Account Name:\\t\\t(?<login_user>.*?)\s"
 ```
 
-![trace_backwards_example](/img/reuse/query-search/trace_backwards_example.png)
+<img src={useBaseUrl('img/reuse/query-search/trace_backwards_example.png')} alt="Trace backwards example" style={{border: '1px solid gray'}} width="800" />
 
 From these results, we can see that for WIN3.example.com there was a login event from WIN2.example.com from which there was another login event from WIN1.example.com. WIN1.example.com was logged into by John from his workstation, allowing us to identify the attacker.

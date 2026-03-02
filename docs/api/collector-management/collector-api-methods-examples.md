@@ -389,6 +389,35 @@ curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collect
 
 </details>
 
+### Get Collectors Overview
+
+<details>
+<summary><span className="api get">GET</span><code>/collectors/overview</code></summary>
+<p/>
+
+Get a list of Installed, Hosted, and OpenTelemetry collectors associated with your child orgs.
+
+#### Example 
+
+This example gets the list of Installed and Hosted collector count, offline or inactive collectors, and health check details associated with your child orgs.
+
+```bash title="Request"
+curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/overview
+```
+
+```json title="Response"
+{
+    "installedCollectorsCount": 1533,
+    "installedSourcesCount": 46936,
+    "hostedCollectorsCount": 151,
+    "hostedSourcesCount": 320,
+    "offlineCollectorsCount": 770,
+    "errors": 3845,
+    "warnings": 0
+}
+```
+</details>
+
 ## POST methods
 
 ### Create Hosted Collector

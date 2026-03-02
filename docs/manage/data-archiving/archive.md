@@ -1,6 +1,6 @@
 ---
 id: archive
-title: Archive Log Data to S3
+title: Archive Log Data to S3 using Installed Collectors
 description: Send data to an Archive that you can ingest from later.
 ---
 
@@ -37,7 +37,7 @@ You need the **Manage S3 data forwarding** role capability to create an AWS Ar
    * **Description**. You can provide a meaningful description of the connection.
    * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in step 1, [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
       * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
-      * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
+      * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](https://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
       * For **AWS EC2 Credentials** instance profile credentials on an EC2 instance where an installed collector will be used to archive log data to S3, see https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-roles.html.
    * **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 1. Click **Save**.
@@ -158,7 +158,7 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 1. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step Grant Sumo Logic access to an AWS Product.
     * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role.   
-    * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
+    * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](https://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 1. Create any Processing Rules you'd like for the AWS Source.
 1. When you are finished configuring the Source, click **Save**.
 
@@ -184,7 +184,7 @@ Click on a table row to view the Source details. This includes:
 * **Description**
 * **AWS S3 bucket**
 * All **Ingestion jobs** that are and have been created on the Source.
-    * Each ingestion job shows the name, time window, and volume of data processed by the job. Click the icon ![open in search icon.png](/img/archive/open-search-icon.png) to the right of the job name to start a Search against the data that was ingested by the job.
+    * Each ingestion job shows the name, time window, and volume of data processed by the job. Click the icon <img src={useBaseUrl('img/archive/open-search-icon.png')} alt="Open in search icon" width="30" /> to the right of the job name to start a Search against the data that was ingested by the job.
     * Hover your mouse over the information icon to view who created the job and when.<br/><img src={useBaseUrl('img/archive/archive-details-pane.png')} alt="Archive details pane" width="325"/>
 
 ## Create an ingestion job

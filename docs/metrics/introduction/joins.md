@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can join metrics queries to combine, compare, and perform operations on the results of multiple queries.
 
-By using the [`along`](docs/metrics/metrics-operators/along.md) statement in joins, you can control what results are joined, based on the value of one or more result fields.  
+By using the [`along`](/docs/metrics/metrics-operators/along) statement in joins, you can control what results are joined, based on the value of one or more result fields.  
 
 ## Syntax
 

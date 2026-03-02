@@ -102,7 +102,7 @@ In this step, you use a Sumo Logic-provided Azure Resource Manager (ARM) templat
     Resource group names should not consist of an underscore.
     :::
 1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deploymente" width="400"/>
-1. Verify that the deployment was successful by looking at **Notifications** at the top right corner of the Azure Portal.<br/> ![notification-success.png](/img/send-data/notification-success.png)
+1. Verify that the deployment was successful by looking at **Notifications** at the top right corner of the Azure Portal.<br/><img src={useBaseUrl('img/send-data/notification-success.png')} alt="Notification success" style={{border: '1px solid gray'}} width="400" />
 1. (Optional) In the same window, click **Go to resource group** to verify that all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/Azure_Blob_all-resources.png')} alt="Azure_Blob_all-resources" style={{border:"1px solid gray"}} width="800"/>
 
 <details>
@@ -141,14 +141,8 @@ This section provides instructions on authorizing the App Service to list the St
 
 To authorize the App Service to list the Storage Account key, do the following:
 
-1. Go to **Storage Account** and click **Access Control(IAM)**.
-
-    ![AzureBlob_AccessControl_IAM.png](/img/send-data/AzureBlob_AccessControl_IAM.png)
-
-1. Click the **Add** **+** at the top of the page.
-
-    ![AzureBlob_IAM_Add.png](/img/send-data/AzureBlob_IAM_Add.png)
-
+1. Go to **Storage Account** and click **Access Control(IAM)**.<br/><img src={useBaseUrl('img/send-data/AzureBlob_AccessControl_IAM.png')} alt="Azure Blob access control IAM" style={{border: '1px solid gray'}} width="400" />
+1. Click the **Add** **+** at the top of the page.<br/><img src={useBaseUrl('img/send-data/AzureBlob_IAM_Add.png')} alt="Azure Blob IAM add" style={{border: '1px solid gray'}} width="800" />
 1. Select **Add role assignment** from dropdown.
 1. In the **Add role assignment** window, go to **Role** tab and choose **Storage Blob Data Reader**. Click **Next**. <br/><img src={useBaseUrl('/img/send-data/storage-blob-data-reader.png')} alt="storage-blob-data-reader" width="800"/>
 1. In **Members** tab, select **Managed Identity**.
@@ -168,10 +162,7 @@ To create an event grid subscription, do the following:
 
 1. Go to the storage account which needs to be monitored additionally. Go under Events blade in left pane.
 
-1. At the top of the **Event subscriptions** tab, click **+Event Subscription** to create new event subscription.
-
-    ![AzureBlob_EventSubscriptionsPage.png](/img/send-data/AzureBlob_EventSubscriptionsPage.png)
-
+1. At the top of the **Event subscriptions** tab, click **+Event Subscription** to create new event subscription.<br/><img src={useBaseUrl('img/send-data/AzureBlob_EventSubscriptionsPage.png')} alt="Azure Bob Event Subscription" style={{border: '1px solid gray'}} width="600" />
 1. Specify the following values for **Event Subscription Details**:
 
    * **Name:** Fill the event subscription name.
@@ -190,9 +181,7 @@ To create an event grid subscription, do the following:
    * **Endpoint Type**. Select **Event Hubs** from the dropdown.
    * **Endpoint.**  Click on **Configure an endpoint.**
 
-    The Select Event Hub dialog appears.
-
-    ![AzureBlob_SelectEventHub-EventGrid.png](/img/send-data/AzureBlob_SelectEventHub-EventGrid.png)
+    The Select Event Hub dialog appears.<br/><img src={useBaseUrl('img/send-data/AzureBlob_SelectEventHub-EventGrid.png')} alt="Azure Blob Select Event Hub" style={{border: '1px solid gray'}} width="400" />
 
 1. Specify the following Select Event Hub parameters, then click **Confirm Selection.**
 
@@ -203,9 +192,7 @@ To create an event grid subscription, do the following:
 1. Specify the following Filters tab options(Optional):
 
    * Check Enable subject filtering.
-   * To filter events by container name, enter the following in the **Subject Begins With** field, replacing `<container_name>` with the name of the container from where you want to export logs. `/blobServices/default/containers/<container_name>/`
-
-   ![img](/img/send-data/AzureBlob_FiltersDialog.png)
+   * To filter events by container name, enter the following in the **Subject Begins With** field, replacing `<container_name>` with the name of the container from where you want to export logs. `/blobServices/default/containers/<container_name>/`<br/><img src={useBaseUrl('img/send-data/AzureBlob_FiltersDialog.png')} alt="Create Event Subscription" style={{border: '1px solid gray'}} width="800" />
 
 1. Click **Create**.
 
@@ -219,30 +206,19 @@ This assumes that your storage account access is not public and is enabled for s
 1. Perform below steps for both BlobTaskConsumer and [DLQTaskConsumer](https://portal.azure.com/#blade/WebsitesExtension/FunctionMenuBlade/resourceId/%2Fsubscriptions%2Fc088dc46-d692-42ad-a4b6-9a542d28ad2a%2FresourceGroups%2Fleast%2Fproviders%2FMicrosoft.Web%2Fsites%2FSUMOBRDLQProcessorekbxzlepnhs4g%2Ffunctions%2FDLQTaskConsumer) function apps.
 
    1. Go to **Function App > Settings > Networking**.
-   1. Under Outbound traffic, click on Vnet Integration.
+   1. Under Outbound traffic, click on Vnet Integration.<br/><img src={useBaseUrl('img/send-data/azureblob-outbound.png')} alt="Azure Blob outbound" style={{border: '1px solid gray'}} width="800" />
 
-    ![azureblob-outbound](/img/send-data/azureblob-outbound.png)
+   1. Add the Vnet and subnet created in Step 1.<br/><img src={useBaseUrl('img/send-data/azureblob-vnet.png')} alt="Azure Blob Vnet" style={{border: '1px solid gray'}} width="<insert-pixel-number>" />
 
-   1. Add the Vnet and subnet created in Step 1.
+1. Go to your storage account from where you want to collect logs from. Go to Networking and add the same Vnet and subnet.<br/><img src={useBaseUrl('img/send-data/azureblob-storageacct.png')} alt="Azure Bl/ob storage account" style={{border: '1px solid gray'}} width="800" />
 
-    ![azureblob-vnet](/img/send-data/azureblob-vnet.png)
-
-1. Go to your storage account from where you want to collect logs from. Go to Networking and add the same Vnet and subnet.
-
-    ![azureblob-storageacct](/img/send-data/azureblob-storageacct.png)
-
-1. Verify by going to the subnet. You should see Subnet delegation and service endpoints as shown in the screenshot below.
-
-    ![azureblob-subnet](/img/send-data/azureblob-subnet.png)
+1. Verify by going to the subnet. You should see Subnet delegation and service endpoints as shown in the screenshot below.<br/><img src={useBaseUrl('img/send-data/azureblob-subnet.png')} alt="<Azure Blob subnet" style={{border: '1px solid gray'}} width="800" />
 
 ## Upgrading Azure Functions
 
-1. Go to the resource group where ARM template was deployed and go to each of the function apps.
-    ![azurefunctionapp-list](/img/send-data/azure_functionapp.png)
-1. Go to `Deployment -> Deployment Center` and click on `Sync`.
-    ![azurefunctionapp-sync](/img/send-data/azure_upgrade_sync.png)
-1. Go to `Logs` tab and check the `Status` column, it should show `Success`.
-    ![azurefunctionapp-status](/img/send-data/azure_upgrade_status.png)
+1. Go to the resource group where ARM template was deployed and go to each of the function apps.<br/><img src={useBaseUrl('img/send-data/azure_functionapp.png')} alt="Azure function app list" style={{border: '1px solid gray'}} width="800" />
+1. Go to `Deployment -> Deployment Center` and click on `Sync`.<br/><img src={useBaseUrl('img/send-data/azure_upgrade_sync.png')} alt="Azure function app sync" style={{border: '1px solid gray'}} width="800" />
+1. Go to `Logs` tab and check the `Status` column, it should show `Success`.<br/><img src={useBaseUrl('img/send-data/azure_upgrade_status.png')} alt="Azure function app status" style={{border: '1px solid gray'}} width="800" />
 
 ## Collection testing performance numbers
 

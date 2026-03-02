@@ -4,6 +4,8 @@ title: Geo Lookup (Map) Search Operator
 sidebar_label: Geo Lookup (Map)
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Sumo Logic can match a [parsed](/docs/search/search-query-language/parse-operators) IPv4 or IPv6 address to its geographical location on a map. To create the map the lookup operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
 
 Any IP addresses that do not have a location, such as internal addresses, will return null values.
@@ -76,26 +78,18 @@ Using logs that match the example log format, running a query like this:
 
 would produce the following results:
 
-![geo lookup world map.png](/img/search/searchquerylanguage/search-operators/geo-lookup-world-map.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/geo-lookup-world-map.png')} alt="Geo lookup world map" style={{border: '1px solid gray'}} width="800" />
 
 ### View map of Geo Lookup results
 
 Enter a query that parses the IP field from your logs, a **lookup** operator to match IP addresses to a lookup table, and then the geolocation fields you’d like to use to chart each IP address.
 
-1. By default, results display as a table:  
-
-    ![geo lookup results fields.png](/img/search/searchquerylanguage/search-operators/geo-lookup-results-fields.png)
-
-1. Click the **Map** icon in the **Aggregates** tab. The map displays:  
-
-    ![map icon location.png](/img/search/searchquerylanguage/search-operators/map-icon-location.png)
-
+1. By default, results display as a table:<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/geo-lookup-results-fields.png')} alt="Geo lookup results fields" style={{border: '1px solid gray'}} width="800" />
+1. Click the **Map** icon in the **Aggregates** tab. The map displays:<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/map-icon-location.png')} alt="Map icon location" style={{border: '1px solid gray'}} width="800" />
 1. Do any of the following:
 
     * Use the zoom slider to zoom in or out on an area of the map. Alternately, click and drag to zoom in or see different areas of a map.
-    * Click any marker on the map to see more detail about where IPs originate in a specific area:  
-
-        ![click map marker with zoomed results.png](/img/search/searchquerylanguage/search-operators/click-map-marker-with-zoomed-results.png)
+    * Click any marker on the map to see more detail about where IPs originate in a specific area:<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/click-map-marker-with-zoomed-results.png')} alt="Click map marker with zoomed results" style={{border: '1px solid gray'}} width="800" />
 
 1. (Optional) Click **Add to Dashboard** to create a new Dashboard or add the map to an existing Dashboard. After adding a map to a Dashboard you will still be able to zoom in and drill down on the data.
 
@@ -113,4 +107,4 @@ For example, running a query like:
 
 returns results similar to:
 
-![isNull.png](/img/search/searchquerylanguage/search-operators/isNull.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/isNull.png')} alt="isNull" style={{border: '1px solid gray'}} width="600" />

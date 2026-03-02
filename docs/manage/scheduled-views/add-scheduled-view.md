@@ -9,6 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 To create a Scheduled View you must be an admin or have the Manage Scheduled Views [role capability](../users-roles/users/multi-account-access.md).
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a scheduled view with the [`sumologic_scheduled_view`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/scheduled_view) resource.
+
+<TerraformLink/>
+:::
+
 For Scheduled View query requirements, see [Scheduled Views Best Practices and Examples](scheduled-views-best-practices.md). 
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <br/><img src={useBaseUrl('/img/scheduled-views/scheduled-view-page.png')} alt="scheduled-view-page" style={{border:'1px solid gray'}} width="800"/>

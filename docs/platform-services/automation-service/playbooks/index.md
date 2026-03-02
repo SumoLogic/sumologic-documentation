@@ -16,6 +16,14 @@ To run a playbook, add it to an automation. You can run playbooks in [monitors](
 <ActionsLimit/>
 :::
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage playbooks with the [`sumologic_csoar_playbook`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/csoar_playbook) resource.
+
+<TerraformLink/>
+:::
+
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">

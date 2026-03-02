@@ -7,12 +7,22 @@ description: Learn how to write an aggregation rule.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CseRule from '../../reuse/cse-rule-description-links.md';
+import CseDynamicSeverity from '../../reuse/cse-dynamic-severity.md';
 import Iframe from 'react-iframe';
 
 This topic has information about Cloud SIEM aggregation rules and how to write them.
 
-:::tip
+:::info
 If you are new to writing your own Cloud SIEM rules, see [Before You Write a Custom Rule](/docs/cse/rules/before-writing-custom-rule) for tips and techniques that are useful for getting started.
+:::
+
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage aggregation rules with the [`sumologic_cse_aggregation_rule`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_aggregation_rule) resource.
+
+<TerraformLink/>
 :::
 
 ## About aggregation rules
@@ -59,6 +69,7 @@ Watch this micro lesson to learn how to create an aggregation rule.
 ## Create an aggregation rule
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
+1. Click **+ Add Rule**.
 1. On the **Create a Rule** page, click **Create** in the **Aggregation** card.
 1. In the rules editor:
    1. **Name**. At the top of the Rules Editor, enter a name for the rule. Signals fired by the rule will have the same name as the rule.
@@ -101,12 +112,13 @@ On the right side of the Rules Editor, in the **Then Create a Signal** section, 
 1. **and a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity:
    * **Constant**. Every signal that the rule fires will have the same severity,
    * **Dynamic**. Severity is based on the value of a field in the record.
-1. **Configure constant severity**. Choose **Constant**, and select a severity level. Then, proceed to Step 7. <br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="Constant severity portion of the dialog" style={{border: '1px solid gray'}} width="325"/>
+1. **Configure constant severity**. Choose **Constant**, and select a severity level.<br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="Constant severity portion of the dialog" style={{border: '1px solid gray'}} width="325"/>
 1. **Configure dynamic severity**.
    1. Choose **Dynamic**.
    1. The severity area updates. 
    1. **severity of**. Use the pulldown to select a default severity value.
    1. **for the record field**. Use the down arrows to display a list of fields, and select one.  The dynamic severity will be based on the value of (or existence of) that field in the record that matched the rule expression.
+      <CseDynamicSeverity/>
    1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="Add More Mappings option" style={{border: '1px solid gray'}} width="450"/>
    1. **Click Add More Mappings**. (Optional) You can define additional mappings if desired. If you don’t, the severity value will be the value of the record field you selected above.
    1. The **if the value is** option appears.<br/><img src={useBaseUrl('img/cse/if-the-value-is.png')} alt="If the Value Is option" style={{border: '1px solid gray'}} width="450"/>
@@ -118,13 +130,13 @@ On the right side of the Rules Editor, in the **Then Create a Signal** section, 
       * **not in the record**. Will match when the attribute is found in the record. For example, if the selected field is `broirc_value`, and that field is not present in a record, the rule will match. If `broirc_value` exists but is null or empty, the rule will not match.
    1. You can define additional conditions, as desired. To define an additional conditions, repeat the steps above, starting with **Add More Mappings**.
    :::note
-   The conditions you define will be processed in the order you define them. Once a match occurs, processing stops–remaining conditions are ignored.
+   The conditions you define will be processed in the order you define them. Once a match occurs, processing stops and remaining conditions are ignored.
    :::
-1. **with tags**. If desired, you can add metadata tags to your rule. Tags are useful for adding context to items like Rules, insights, signals, entities. You can also search for and filter items by tag. Tags you set here will be automatically set on any signals created from this rule, and inherited by any insights generated from those signals.
+1. **with tags**. If desired, you can add metadata tags to your rule. Tags are useful for adding context to items like rules, insights, signals, entities. You can also search for and filter items by tag. Tags you set here will be automatically set on any signals created from this rule, and inherited by any insights generated from those signals.
 
 ## Save as prototype 
 
-If you are not sure that your rule is ready for prime time, you can save it as a prototype. A prototype rule generates signals, but those signals won't contribute to insights. (Signals generated by a prototype rule do not increment the rule's **On Entity** entity's Activity Score.) Running the rule as a prototype for a while allows you to determine whether the rule is too noisy and fires too many signals.
+If you are not sure that your rule is ready for use in production, you can save it as a prototype. A prototype rule generates signals, but those signals won't contribute to insights. (Signals generated by a prototype rule do not increment the rule's **On Entity** entity's Activity Score.) Running the rule as a prototype for a while allows you to determine whether the rule is too noisy and fires too many signals.
 
 To make the rule a prototype, click the box next to **Save this rule as a prototype**. When you are satisfied with the rule's behavior you can uncheck the box.
 

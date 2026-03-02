@@ -18,6 +18,7 @@ import {
   faLinkedinIn,
   faGithub,
   faSquareFacebook,
+  faRedditAlien,
 } from '@fortawesome/free-brands-svg-icons';
 import { Stack } from '@mui/system';
 import {
@@ -199,6 +200,20 @@ export const Footer = () => {
               href: 'https://www.facebook.com/Sumo.Logic',
               'aria-label': 'Sumo Logic Facebook',
               icon: faSquareFacebook,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
+            },
+            {
+              alt: 'Sumo Logic Reddit',
+              color: '#e3e3e3',
+              href: 'https://www.reddit.com/r/sumologic',
+              'aria-label': 'Sumo Logic Reddit',
+              icon: faRedditAlien,
               size: 'lg',
               sx: {
                 cursor: 'pointer',

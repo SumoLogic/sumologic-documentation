@@ -5,12 +5,14 @@ sidebar_label: Disabled Metrics Sources
 description: Sumo Logic sometimes disables metrics Sources in response to excessive volume of time series.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 In some cases, Sumo Logic disables a metrics source or drops a metric dimension to limit the number of ingested time series. 
 
 This page has information about the process and how to resolve the problem.
 
 :::note
-Sumo Logic also disables a logs-to-metrics rule that generates too many time series, as described in "Metric volume limits and rule disabling" on the [Logs-to-Metrics](../logs-to-metrics.md) page.
+Sumo Logic also disables a logs-to-metrics rule that generates too many time series, as described in "Metric volume limits and rule disabling" on the [Logs-to-Metrics](/docs/metrics/logs-to-metrics/) page.
 :::
 
 ## Global metric ingestion limit
@@ -20,7 +22,7 @@ Sumo Logic imposes a global limit across all of the  metric sources in your acc
 * 50M unique timeseries per week, for metrics with long term retention
 * 100M unique timeseries per week, for metrics with short term retention
 
-The storage is based on the metrics retention period, which you can control using [Metrics Transformation Rules](../metrics-transformation-rules.md).
+The storage is based on the metrics retention period, which you can control using [Metrics Transformation Rules](/docs/metrics/metrics-transformation-rules/).
 
 ### Warning is issued when you approach the global limits
 
@@ -100,8 +102,7 @@ For other dimensions that exceed the cardinality limit, Sumo generates a metric 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access **Metrics Transformation Rules**, go to the main Sumo Logic menu and select **Manage Data > Metrics > Metrics Transformation Rules**. 
 
 You can delete the metric transformation rule, but you can’t disable or modify it. 
-
-![transformation-rules.png](/img/metrics/transformation-rules.png)
+<img src={useBaseUrl('img/metrics/transformation-rules.png')} alt="Transformation-rules" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 If you have a use case that requires the dropped dimension, contact Sumo Logic support.

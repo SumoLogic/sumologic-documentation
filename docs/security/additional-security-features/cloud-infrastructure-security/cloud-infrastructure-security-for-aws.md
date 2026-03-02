@@ -310,7 +310,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
 1. Click **Create Stack.**
 1. Verify that the AWS CloudFormation template has executed successfully in a `CREATE_COMPLETE` status.
     * This indicates that you have all the right permissions on both the Sumo Logic and the AWS side to proceed with the installation of the solution. 
-    * All the resources (Sumo Logic and AWS) created by template are also deleted.<br/>  ![Testing_sumo_Permission_2.png](/img/observability/Testing_sumo_Permission_2.png)
+    * All the resources (Sumo Logic and AWS) created by template are also deleted.<br/><img src={useBaseUrl('img/observability/Testing_sumo_Permission_2.png')} alt="Testing Sumo Logic permissions" style={{border: '1px solid gray'}} width="800" />
 1. If the AWS CloudFormation template has not executed successfully, identify and fix any permission errors until the stack completes with a `CREATE_COMPLETE` status. 
 1. Once the AWS CloudFormation stack has executed successfully, delete the AWS CloudFormation Stack.
 

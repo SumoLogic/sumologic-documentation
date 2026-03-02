@@ -36,6 +36,10 @@ Audit data is not backfilled to any time before Enterprise Audit was installed. 
 
 ## Installing Enterprise Audit apps
 
+### Prerequisite
+
+Enable the Audit Event Index (`sumologic_audit_events`) prior to installation. See [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) for instructions.
+
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>
@@ -48,7 +52,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Enterprise Audit - Collector and Data Forwarding Management app
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Collector_Data_Forwarding_icon.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Collector_Data_Forwarding_icon.png')} alt="EA_Collector_Data_Forwarding_icon" />
 
 The **Enterprise Audit - Collector and Data Forwarding Management App** dashboards present information on Collector, Sources activities, and data forwarding trends by destination types. This app has the following two dashboard categories:
 * Collector Management
@@ -66,7 +70,7 @@ Use this dashboard to:
 * Get the number of ephemeral collectors that were created and deleted, as well as the number of requested collector upgrades and clobber collectors that were deleted.
 * Navigate to a dashboard and view more detailed information by clicking a panel.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Collector_Management_Overview.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Collector_Management_Overview.png')} alt="EA_Collector_Management_Overview" />
 
 
 #### Collector Activities
@@ -78,7 +82,7 @@ Use this dashboard to:
 * Review the activities of top users and by a one-day time comparison.
 * Analyze data for recent activities, collector upgrades, deleted clobber collectors, and all collector activities.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Collector_Activities.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Collector_Activities.png')} alt="EA_Collector_Activities" />
 
 
 #### Collector Sources Activities
@@ -90,7 +94,7 @@ Use this dashboard to:
 * Review one-day time shift comparisons, active users, source type distribution, and the top collectors where sources were added.
 * Analyze data for sources recently added to a collector using local configuration management, and sources activities for all collectors.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Collector_Sources_Activities.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Collector_Sources_Activities.png')} alt="EA_Collector_Sources_Activities" />
 
 
 #### Data Forwarding Management Overview
@@ -103,7 +107,7 @@ Use this dashboard to:
 * Get a high-level view of active and inactive Amazon S3 indexes and encrypted Amazon S3 indexes.
 * Get an overview of the distribution of data source types and format type for data forwarding.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Data_Forwarding_Management_Overview.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Data_Forwarding_Management_Overview.png')} alt="EA_Data_Forwarding_Management_Overview" />
 
 
 #### Data Forwarding Destination Activities
@@ -116,7 +120,7 @@ Use this dashboard to:
 * Get an at-a-glance overview of user activity and one-day time shift comparisons.
 * Review data for all recent destination activities.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Data_Forwarding_Destination_Activities.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Data_Forwarding_Destination_Activities.png')} alt="EA_Data_Forwarding_Destination_Activities" />
 
 
 #### Data Forwarding Index Activities
@@ -129,12 +133,12 @@ Use this dashboard to:
 * Get an at-a-glance view of user activity, one-day time shift comparisons, and the number of data forwarding index that have been disabled.
 * Review data on all recent activities.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Data_Forwarding_Index_Activities.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Data_Forwarding_Index_Activities.png')} alt="EA_Data_Forwarding_Index_Activities" />
 
 
 ### Enterprise Audit - Content Management App
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Content_Management_icon.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Content_Management_icon.png')} alt="EA_Content_Management_icon" />
 
 The **Enterprise Audit - Content Management App** dashboards provide information on content activities, such as content that is created, updated, deleted, imported, exported, copied, moved, publicly accessed, made visible to the public, and application installed.
 
@@ -151,7 +155,7 @@ Use this dashboard to:
 * Review the data for top users and those who are admins.
 * Review data for recent content on which permission is added and removed.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Content_Management_Overview.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Content_Management_Overview.png')} alt="EA_Content_Management_Overview" />
 
 
 #### Created, Deleted, Exported, Imported Content
@@ -166,7 +170,7 @@ Use the dashboard to:
 * Review data on recent activities and 7 Day trends.
 * Filter for more granular data on users, IPs, content type, and name.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Created_Deleted_Exported_Imported_Content.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Created_Deleted_Exported_Imported_Content.png')} alt="EA_Created_Deleted_Exported_Imported_Content" />
 
 
 #### Updated, Moved, Copied Content
@@ -181,7 +185,7 @@ Use the dashboard to:
 * Review 7 Days trend for all the activities.
 * Recent activities which can be filtered based on User, User Ip, content Name.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Updated_Moved_Copied_Content.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Updated_Moved_Copied_Content.png')} alt="EA_Updated_Moved_Copied_Content" />
 
 
 #### Permission Updated, Synchronized Content
@@ -194,7 +198,7 @@ Use this dashboard to:
 * Review the 7 Days Trend for added and deleted permissions, and synchronized content.
 * Analyze recent activities for synchronized content and updated permissions.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Permission_Updated_Synchronized.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Permission_Updated_Synchronized.png')} alt="EA_Permission_Updated_Synchronized" />
 
 
 #### Publicly Accessed, Application Installed
@@ -208,7 +212,7 @@ Use this dashboard to:
 * Review the trend of events for all activities.
 * Analyze one-day time shift comparisons.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Publicly_Accessed_Application_Installed.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Publicly_Accessed_Application_Installed.png')} alt="EA_Publicly_Accessed_Application_Installed" />
 
 
 #### Field Extraction Rule Activities
@@ -222,12 +226,18 @@ Use this dashboard to:
 * Review field extraction rule trends.
 * Analyze data on recent field extraction rule events.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Field_Extraction_Rule_Activities.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Field_Extraction_Rule_Activities.png')} alt="EA_Field_Extraction_Rule_Activities" />
+
+#### Monitor Activities
+
+The **Enterprise Audit - Monitor Activities** dashboard provides detailed information on configured notification and monitor lifecycle activities. The dashboard includes Monitors with Configured Notifications, Monitor Activities Over Time, Monitor Notifications by Connection Type, Geo Locations of Events, Recent Update Activities, Recent Monitor Creation Activities, Recent Monitor Deletion Activities, and Monitor Enable/Disable Activities. You can view more granular data using pre-populated filters for Event Type, Admin Mode, Connection Type, and Monitor Status.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Monitor_Activities.png')} alt="EA_Monitor_Activities" />
 
 
 ### Enterprise Audit - User and Role Management App
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_User_Role_Management_icon.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_User_Role_Management_icon.png')} alt="EA_User_Role_Management_icon" />
 
 Enterprise Audit - User and Role Management App dashboards provide visibility on user activities such as creating, deleting, and modifying user roles, email account, and password changes. You can also review various user session data.
 
@@ -242,7 +252,7 @@ Use this dashboard to:
 * Review top users by activity and top users across all activities.
 * Click a panel to view more granular data.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_User_Role_Management_Overview.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_User_Role_Management_Overview.png')} alt="EA_User_Role_Management_Overview" />
 
 
 #### User Activities
@@ -253,7 +263,7 @@ Use this dashboard to:
 * Review activity trends and the geographic locations where activities are performed.
 * Review user activities, such as top admins, recent activities performed by admins, and one-day time comparisons.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_User_Activities.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_User_Activities.png')} alt="EA_User_Activities" />
 
 
 #### Role Activities
@@ -265,7 +275,7 @@ Use this dashboard to:
 * Review activity trends and the geographic locations where activities are performed.
 * Get an overview of the top capabilities added to roles, top admins performing activities, system defined roles, user defined roles, and recent role activities performed by admins.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Role_Activities.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Role_Activities.png')} alt="EA_Role_Activities" />
 
 
 #### User Session Activities
@@ -277,7 +287,7 @@ Use this dashboard to:
 * Review the number of logged in users, logged out users, locked out users, timed out users, and the geographic location where the activities were performed.
 * Get an overview of the authentication source for login comparison, one-day time shift comparisons, recent activities, and all activities.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_User_Session_Activities.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_User_Session_Activities.png')} alt="EA_User_Session_Activities" />
 
 
 #### User (Email, Password) Activities
@@ -289,7 +299,7 @@ Use this dashboard to:
 * Review trends for password and email changes, as well as the top admins performing password resets.
 * Get an overview of the recent password resets and email changes, and the geographic locations where all email and password activities were performed.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_User_Email_Password_Activities.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_User_Email_Password_Activities.png')} alt="EA_User_Email_Password_Activities" />
 
 
 #### User Role Relationship Activities
@@ -301,12 +311,12 @@ Use this dashboard to:
 * Review the top users added to and removed from roles, and top roles added to and removed from users.
 * Get a high-level view of the active admins, recent role and user modifications, as well as the geographic locations where all user role relationship activities were performed.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_User_Role_Relationship_Activities.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_User_Role_Relationship_Activities.png')} alt="EA_User_Role_Relationship_Activities" />
 
 
 ### Enterprise Audit - Security Management App
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Security_Management_icon.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Security_Management_icon.png')} alt="EA_Security_Management_icon" />
 
 The **Enterprise Audit - Security Management App** dashboard provide visibility into security posture, such as Access Key Activities, SAML Activities, Password Policy, Multi-Factor Authorization (MFA), and Service AllowList activities within your Sumo Logic Environment.
 
@@ -322,7 +332,7 @@ Use this dashboard to:
 * Review security activity trends and a breakdown of active users by events.
 * See a tabulation of the number of Users who enabled and disabled Multi factor Authorization.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Security_Management_Overview.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Security_Management_Overview.png')} alt="EA_Security_Management_Overview" />
 
 
 #### Password Policy, MFA, Service AllowList Activities
@@ -335,7 +345,7 @@ Use this dashboard to:
 * Review recent activities related to password policy updates, allowlist permission activities, allowlist user activities, and admin activities.
 * Review the lists of recent users who enabled and disabled MFA.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Password_Policy_MFA_Service_AllowList.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Password_Policy_MFA_Service_AllowList.png')} alt="EA_Password_Policy_MFA_Service_AllowList" />
 
 
 #### Access Key Activities
@@ -347,7 +357,7 @@ Use this dashboard to:
 * Review access key trends and the geographic locations where the activities were performed.
 * Get an overview of user activity, active and inactive access keys, and one-day time comparisons.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Access_Key_Activities.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Access_Key_Activities.png')} alt="EA_Access_Key_Activities" />
 
 
 #### SAML Activities
@@ -359,7 +369,43 @@ Use this dashboard to:
 * Get an overview of the geographic locations from where SAML activities are performed.
 * Review admin activities and one-day time shift comparisons.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_SAML_Activities.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_SAML_Activities.png')} alt="EA_SAML_Activities" />
+
+## Create monitors for the Sumo Logic Enterprise Audit app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Enterprise Audit - Collector and Data Forwarding Management App alerts
+
+| Name  | Description  | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Enterprise Audit - Collector Deleted or Deregistered`  | This alert is triggered when a collector is deleted or deregistered.   | Count >= 1  | Count < 1   |
+| `Enterprise Audit - Collector Source Synchronization Failures`  | This alert is triggered when collector source synchronization failures are detected. | Count > 2   | Count < = 2   |
+| `Enterprise Audit - Collector Upgrade Failed`  | This alert is triggered when collector upgrade failure is detected. | Count >= 1  | Count < 1 |
+| `Enterprise Audit - Data Forwarding Destination Deleted Alert`   | This alert is triggered when one or more data forwarding destination is deleted.  | Count > 0   | Count < = 0  |
+| `Enterprise Audit - Data Forwarding Index Deactivation Alert`  | This alert is triggered when data forwarding index deactivation is detected. | Count > 0   | Count < = 0   |
+| `Enterprise Audit - Data Forwarding S3 Unencrypted Destination Created`  | This alert is triggered when a unencrypted data forwarding destination is created for S3.  | Count > = 1  | Count < 1  |
+
+### Enterprise Audit - Content Management alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Enterprise Audit - Content Management - Content Made Visible to Public` | Generate alerts when content is made publicly visible, helping ensure proper access control and compliance with security policies. | Count > 0 | Count < = 0 |
+| `Enterprise Audit - Content Management - Content Public Accessed` | Generate alerts when publicly shared content is accessed, providing visibility into external usage and potential security exposure. | Count > 0 | Count < = 0 |
+
+### Enterprise Audit - Security Management alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Enterprise Audit - Security Management - Events from Embargoed Geo Locations` | Monitors and highlights events located in sanctioned or embargoed regions to maintain adherence to legal and regulatory standards. | Count > 0 | Count < = 0 |
+
+### Enterprise Audit - User and Role Management alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Enterprise Audit - User and Role Management - Activities from Embargoed Geo Location` | This alert triggers when an activity is detected from a location identified as high-risk. This helps you to monitor activity from unusual or restricted geographic locations, enhancing your ability to identify suspicious activity. | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the Enterprise Audit apps (Optional)
 

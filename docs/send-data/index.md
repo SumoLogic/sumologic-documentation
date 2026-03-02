@@ -21,7 +21,19 @@ Learn how to send data to Sumo Logic and get started with our observability and 
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/opentelemetry-collector')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Data collection icon" width="40"/><h4>Sumo Logic Distro for OpenTelemetry</h4></a>
+  <a href={useBaseUrl('docs/send-data/choose-collector-source')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Choosing a Sumo Logic Collector and Source</h4></a>
+  <p>Choose the right data source type in Sumo Logic for collecting logs, metrics, or traces using OpenTelemetry Collectors, Installed Collectors, and Hosted Collectors.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/setup-wizard')}><img src={useBaseUrl('img/icons/get-started.png')} alt="Get started icon" width="40"/><h4>Sumo Logic Setup Wizard</h4></a>
+  <p>Use the Setup Wizard to quickly get started sending data to Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/opentelemetry-collector')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Data collection icon" width="40"/><h4>Sumo Logic OpenTelemetry Collector</h4></a>
   <p>Our OpenTelemetry Distribution is a single unified agent to send Logs, Metrics, Traces, and more.</p>
   </div>
 </div>
@@ -39,37 +51,43 @@ Learn how to send data to Sumo Logic and get started with our observability and 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/kubernetes')}><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="Data collection icon" width="40"/><h4>Kubernetes</h4></a>
+  <a href={useBaseUrl('docs/send-data/kubernetes')}><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="Data collection icon" width="40"/><h4>Kubernetes Helm Chart</h4></a>
   <p>Learn how to collect Kubernetes logs, metrics, and events.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/collect-from-other-data-sources')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Other Data Sources</h4></a>
-  <p>Collect logs and metrics from a variety of other data sources.</p>
+  <a href={useBaseUrl('docs/send-data/use-json-configure-sources')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Use JSON to Configure Sources</h4></a>
+  <p>Learn how to configure Installed and Hosted Collectors sources using JSON files.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/use-json-configure-sources/json-parameters-hosted-sources')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>JSON Configuration</h4></a>
-  <p>Learn how to configure Installed and Hosted Collectors sources using JSON files.</p>
+  <a href={useBaseUrl('docs/send-data/collect-from-other-data-sources')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Collect from Other Data Sources</h4></a>
+  <p>Collect logs and metrics from a variety of other data sources.</p>
   </div>
 </div>
   <div className="box smallbox card">
     <div className="container">
-    <a href={useBaseUrl('docs/send-data/reference-information/time-reference')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Time Reference</h4></a>
-    <p>Learn about supported timestamps, date formatting, and more. </p>
+    <a href={useBaseUrl('docs/send-data/reference-information')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Reference Information for Sources</h4></a>
+    <p>Reference information for sources for installed and hosted collectors.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <a href={useBaseUrl('docs/send-data/reference-information/use-wildcards-paths')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Wildcards in Paths</h4></a>
-    <p>Use wildcards in Source paths to collect all files of a certain type.</p>
+    <a href={useBaseUrl('docs/send-data/data-enrichment')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Data Enrichment</h4></a>
+    <p>Learn about data enrichment, the process of adding meaningful information to your data to enhance its value and usability.</p>
+    </div>
+  </div>
+    <div className="box smallbox card">
+    <div className="container">
+    <a href={useBaseUrl('docs/send-data/best-practices')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Best Practices for Data Collection</h4></a>
+    <p>Best practices for creating a naming convention for good Source Category values and choosing the right installed data collector for your environment.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <a href={useBaseUrl('docs/send-data/collector-faq')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Troubleshooting</h4></a>
+    <a href={useBaseUrl('docs/send-data/collector-faq')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Collector Troubleshooting and FAQ</h4></a>
     <p>Troubleshooting Sumo Logic data collection.</p>
     </div>
   </div>

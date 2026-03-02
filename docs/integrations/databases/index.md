@@ -11,6 +11,12 @@ This guide has documentation for Sumo apps for database servers.
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/databases/opentelemetry')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="55"/><h4>OpenTelemtry</h4></a>
+  <p>A guide to OpenTelemetry apps for database servers.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/databases/cassandra')}><img src={useBaseUrl('img/integrations/databases/cassandra.png')} alt="Thumbnail icon" width="75"/><h4>Cassandra</h4></a>
   <p>Monitor the availability, performance, health, and resource utilization of your Cassandra clusters.</p>
   </div>
@@ -55,6 +61,12 @@ This guide has documentation for Sumo apps for database servers.
       <div className="container">
       <a href={useBaseUrl('docs/integrations/databases/mysql')}><img src={useBaseUrl('img/integrations/databases/mysql.png')} alt="Thumbnail icon" width="75"/><h4>MySQL</h4></a>
       <p>Gain insight into the health of your MySQL servers, replication status, and errors.</p>
+      </div>
+    </div>
+        <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/integrations/databases/oracle')}><img src={useBaseUrl('img/integrations/databases/oracle.png')} alt="Thumbnail icon" width="75"/><h4>Oracle</h4></a>
+      <p>Gain insight into the health and activity of your Oracle database. </p>
       </div>
     </div>
     <div className="box smallbox card">

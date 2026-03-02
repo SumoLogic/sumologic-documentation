@@ -37,7 +37,7 @@ Free accounts do not support [Data Management](/docs/manage/users-roles/roles/ro
 
 ### Trial
 
-Trial accounts allow full access all Sumo Logic features to test how Sumo Logic will fit within your organization before you buy. It includes:
+Trial accounts allow full access to all Sumo Logic features to test how Sumo Logic will fit within your organization before you buy. It includes:
 - **Daily Credit Allocation**: Supports a daily data volume limit of 1 GB per day.
 - **Retention**: 30 days for all data.
 - **Users**: Up to 20 users.
@@ -46,11 +46,7 @@ Trials are limited to 30 days. If you use up the credits allocated for the trial
 
 ### Essentials
 
-Essentials accounts scale to meet your growing needs for user licenses, data retention, and volume options. The Essentials plan includes options tailored to various needs:
-
-* **Troubleshoot**. Foundational log analysis and troubleshooting.
-* **Collaborate**. Advanced team collaboration features.
-* **Orchestrate**. Designed for organizations requiring robust workflows and automation.
+Essentials Plan is a paid, credits-based subscription intended for small to mid-sized teams requiring essential log analytics and monitoring capabilities. The plan uses a flexible credit model, where usage such as data ingestion, storage, and queries consumes credits from a purchased pool. Essentials provides higher usage limits, extended data retention, and broader feature access compared to Free and Trial plans, while remaining a self-service option suitable for foundational observability and troubleshooting needs. You can self-serve upgrade to Essentials and pick a billing cycle that fits your needs.
 
 For details on upgrading to an Essentials plan or higher, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-account/upgrade-credits-account). Essentials accounts can be upgraded to Enterprise accounts anytime.
 

@@ -18,6 +18,14 @@ See [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collecto
 The maximum number of Collectors allowed per organization is 10,000.
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an install collector with the [`sumologic_collector`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/installed_collector) resource.
+
+<TerraformLink/>
+:::
+
 :::sumo Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/22427pvuhh?web_component=true&seo=true&videoFoam=false"

@@ -74,8 +74,6 @@ Do either of the following:
 * To make changes to the search query before you run it again, click the saved search title link, next to **Saved Search**. This will open the query in the Sumo Logic search page. 
 * To see all the results of the search, under **Message Distribution**, click the **View results in Sumo Logic** link in the email. Or under **Aggregation**, click "**here**". Sumo Logic will recreate the search exactly matching the query and time parameters of the original scheduled search.
 
-![Search from email](/img/alerts/search_from_email_new.png)
-
 :::note
 If you're a new user and someone has forwarded you an alert email, the links to the search will not work until you've completed your setup process.
 :::
@@ -104,7 +102,7 @@ The Scheduled Search Email Alert template includes the following details:
 * **Aggregation.** Displays the first 25 messages of the search results, and includes the complete number of results. Click "**here**" in the email to view the full results in Sumo Logic. 
 * **Results as CSV attachment.** If you have selected to receive your scheduled search results as a CSV file, it will be attached to the email. The maximum CSV file size allowed is 5MB or 1,000 results. 
 
-![Search from email](/img/alerts/search_from_email_new.png)
+<img src={useBaseUrl('img/alerts/search_from_email_new.png')} alt="Search from email" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 Rarely, there may be circumstances that prevent the histogram from loading fast enough to be included with the email before it is sent. In that case, you will receive an email with all pertinent information, just without the graph.

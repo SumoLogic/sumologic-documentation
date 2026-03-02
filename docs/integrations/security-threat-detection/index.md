@@ -15,7 +15,7 @@ import CisNote from '../../reuse/cis-note.md';
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/security-threat-detection/akamai-security-events')}><img src={useBaseUrl('img/integrations/security-threat-detection/Akamai_logo.png')} alt="icon" width="90"/><h4>Akamai Security Events</h4></a>
+  <a href={useBaseUrl('docs/integrations/security-threat-detection/akamai-security-events')}><img src={useBaseUrl('img/integrations/security-threat-detection/akamai_logo.png')} alt="icon" width="90"/><h4>Akamai Security Events</h4></a>
   <p>A guide to the Sumo Logic app for Akamai Security Events.</p>
   </div>
 </div>
@@ -137,6 +137,12 @@ import CisNote from '../../reuse/cis-note.md';
   <div className="container">
   <a href={useBaseUrl('docs/integrations/security-threat-detection/twistlock')}><img src={useBaseUrl('img/integrations/security-threat-detection/twistlock.png')} alt="thumbnail icon" width="150"/><h4>Twistlock</h4></a>
   <p>A guide to the Sumo Logic app for Twistlock.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/security-threat-detection/vmware-carbon-black')}><img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="50"/><h4>VMware Carbon Black</h4></a>
+  <p>A guide to the Sumo Logic app for VMware Carbon Black.</p>
   </div>
 </div>
 <div className="box smallbox card">

@@ -4,6 +4,7 @@ title: timeslice Search Operator
 sidebar_label: timeslice
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import AlertsTimeslice from '../../../reuse/alerts-timeslice.md';
 
 The `timeslice` operator aggregates data by time period, so you can create bucketed results based on a fixed interval (for example, five-minute buckets). Timeslice also supports creating a fixed-target number of buckets, for example, 150 buckets over the last 60 minutes.
@@ -57,7 +58,7 @@ Successful logins per hour.
 | count by _timeslice
 ```
 
-![Aggregates.png](/img/search/searchquerylanguage/search-operators/Timeslice-Aggregates.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Timeslice-Aggregates.png')} alt="Aggregates" style={{border: '1px solid gray'}} width="400" />
 
 ### Known Issue
 
@@ -124,7 +125,7 @@ _sourceCategory=Apache/Access
 This query produces these results in the Aggregates tab, which you can
 display as a column chart.
 
-![Timeslice](/img/search/searchquerylanguage/search-operators/timeslice_ex1.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/timeslice_ex1.png')} alt="Timeslice" style={{border: '1px solid gray'}} width="800" />
 
 **Example 2:** All computer access to Sumo Logic over time.
 
@@ -138,7 +139,7 @@ _sourceCategory=*IIS*
 
 This query produces these results in the Aggregates tab, which you can display as a stacked column chart:
 
-![Timeslice Example](/img/search/searchquerylanguage/search-operators/TimeSliceEx2.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/TimeSliceEx2.png')} alt="Timeslice example" style={{border: '1px solid gray'}} width="800" />
 
 **Example 3:** Monitoring non-normal status codes (400s and 500s) on Apache servers.
 
@@ -153,4 +154,4 @@ _sourceCategory=Apache/Access
 
 This query produces these results in the Aggregates tab, which you can display as an area chart:
 
-![Timeslice example](/img/search/searchquerylanguage/search-operators/Timeslice-Ex3.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Timeslice-Ex3.png')} alt="Timeslice example" style={{border: '1px solid gray'}} width="800" />

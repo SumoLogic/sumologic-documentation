@@ -20,7 +20,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/alerts/monitors/create-monitor')}><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Create a Monitor</h4></a>
+  <a href={useBaseUrl('docs/alerts/monitors/create-monitor')}><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Create a New Monitor</h4></a>
   <p>Learn how to create a monitor.</p>
   </div>
 </div>
