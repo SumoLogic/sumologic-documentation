@@ -79,6 +79,12 @@ To configure a Microsoft Graph Security API Source:
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Microsoft Graph Security API source, you can install relevant Sumo Logic Azure security apps to visualize and analyze the collected data through prebuilt dashboards. 
+
+Depending on your security monitoring needs, you can choose from several apps such as [Microsoft Defender for Endpoint](/docs/integrations/microsoft-azure/microsoft-defender-for-endpoint), [Microsoft Defender for Identity](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity/), [Microsoft Defender for Office 365](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-office-365), [Microsoft Defender for Cloud Apps](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps), [Microsoft Entra ID Protection](/docs/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection), or [Microsoft Graph Security](/docs/integrations/saas-cloud/microsoft-graph-security-v2).
+:::
+
 #### Base URL
 
 Internally, the source will use the following base URL depending on the respective cloud region:
@@ -147,13 +153,6 @@ The "**Unauthorized request - Account is not provisioned**" error occurs when Mi
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
 
-## App installation
 
-The Microsoft Graph Security API source in Sumo Logic serves as a single, unified entry point for ingesting Microsoft security signals and installing multiple security apps, helping you understand each app based on their security monitoring needs.
 
-- **Azure Security - Microsoft Defender for Cloud Apps**. Installing the Sumo Logic app for Microsoft Defender for Cloud Apps enables centralized cloud app security monitoring, proactive threat detection, user activity visibility, and faster incident response to protect Azure-based resources. [Learn more](docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps).
-- **Azure Security - Microsoft Defender for Endpoint**. Installing the Sumo Logic app for Microsoft Defender for Endpoint centralizes endpoint alerts and threat intelligence to accelerate detection, investigation, and response to advanced cyber threats across devices. [Learn more](/docs/integrations/microsoft-azure/microsoft-defender-for-endpoint)
-- **Azure Security - Microsoft Defender for Identity**. Installing the Sumo Logic app for Microsoft Defender for Identity centralizes identity threat alerts and analytics to enable faster detection, investigation, and response to high-risk or malicious activity. [Learn more](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity/).
-- **Azure Security - Microsoft Defender for Office 365**. Installing the Sumo Logic app for Microsoft Defender for Office 365 provides centralized visibility into Microsoft 365 threats, enabling faster detection and response to phishing, malware, suspicious sign-ins, and high-severity security incidents. [Learn more](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-office-365).
-- **Azure Security - Microsoft Entra ID Protection**. Installing the Sumo Logic app for Microsoft Entra ID Protection enables proactive detection and investigation of identity risks with interactive dashboards for faster response and stronger protection of Azure user accounts and credentials. [Learn more](/docs/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection).
-- **Microsoft Graph Security V2**. Installing the Sumo Logic app for Microsoft Graph Security V2 centralizes and analyzes Microsoft security alerts to proactively detect ransomware, monitor endpoint threats, and strengthen overall organizational security posture. [Learn more](/docs/integrations/saas-cloud/microsoft-graph-security-v2).
+
