@@ -65,6 +65,10 @@ To configure a SentinelOne Mgmt API Source:
 1. **Supported APIs to collect**. Select one or more of the available APIs: **activities**, **agents**, and **threats**.
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the SentinelOne Mgmt API  source, consider installing the Sumo Logic app for [SentinelOne](/docs/integrations/saas-cloud/sentinelone/) to visualize and analyze the collected data using prebuilt dashboards.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
@@ -118,14 +122,3 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
-
-## App installation
-
-Once you understand how and where SentinelOne Mgmt API data is collected, you can visualize and analyze that data by installing the Sumo Logic app for [SentinelOne](/docs/integrations/saas-cloud/sentinelone/).
-
-Installing the SentinelOne app enables you to:
-- Ingest SentinelOne endpoint data in real time from agents into Sumo Logic for centralized analysis.
-- Gain clear visibility into endpoint security posture, including threats, endpoint activity, and system health from SentinelOne.
-- Detect and investigate suspicious behavior faster to respond quickly to security incidents.
-- Use prebuilt, customizable dashboards to visualize threats and key security metrics at a glance.
-- Monitor and prioritize what matters most by tailoring dashboards to your organization’s security needs.

@@ -67,6 +67,10 @@ To configure a CrowdStrike Source:
     :::
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the CrowdStrike source, consider installing the Sumo Logic app for [CrowdStrike Falcon Endpoint Protection](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection/) to visualize and analyze the collected data using prebuilt dashboards.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
@@ -115,14 +119,3 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
-
-## App installation
-
-Once you understand how and where CrowdStrike data is collected, you can visualize and analyze that data by installing the Sumo Logic app for [CrowdStrike Falcon Endpoint Protection](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection/).
-
-Installing the CrowdStrike Falcon Endpoint Protection app enables you to:
-- Provides visibility into your endpoint security posture using data from the CrowdStrike Falcon Endpoint Protection platform.
-- Helps analyze indicators of compromise (IOCs) by affected users, tactics, techniques, and objectives.
-- Identifies hosts across your network with the highest malware detections.
-- Includes prebuilt dashboards to detect threats and security incidents.
-- Enables drill-down investigations for faster threat analysis and response.

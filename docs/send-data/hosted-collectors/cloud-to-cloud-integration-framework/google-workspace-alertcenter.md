@@ -67,6 +67,10 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
 1. **Processing Rules for Logs**. (Optional) Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Google Workspace AlertCenter source, consider installing the Sumo Logic app for [Google Workspace](/docs/integrations/google/workspace/install-app-dashboards/) to gain dashboards and insights into the collected data.
+:::
+
 ## Metadata
 
 If the Source is configured with the **SIEM forward** option, then the metadata field `_siemparser` will be set to */Parsers/System/Google/GSuite Alert Center*.
@@ -110,14 +114,3 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
-
-## App installation
-
-Once you understand how and where Google Workspace AlertCenter data is collected, you can visualize and analyze that data by installing the Sumo Logic app for [Google Workspace](/docs/integrations/google/workspace/install-app-dashboards/).
-
-Installing the Google Workspace app enables you to:
-- Monitor admin and user activities across all Google Workspace applications from one place.
-- Analyze Google Drive usage and login activity for better usage and access visibility.
-- Gain full visibility into Alert Center alerts to investigate and correlate security events.
-- Detect and monitor potential threats across Workspace apps with unified dashboards.
-- Simplify security monitoring and compliance with prebuilt, comprehensive dashboards.

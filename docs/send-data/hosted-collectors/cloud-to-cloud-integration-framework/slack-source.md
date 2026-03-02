@@ -127,6 +127,11 @@ To configure a Slack Source:
 1. **API Auth Bearer Token**. Enter the Slack App access token from the previous steps.
 1. **Slack API Collection**. Select the Slack collection API you want to collect logs from (Web or Audit).
 1. **Polling Interval in Minutes**. Enter the frequency in minutes for collecting the data. Default is 5 mins.
+1. When you are finished configuring the Source, click **Submit**.
+
+:::info
+After configuring the Slack source, consider installing the Sumo Logic app for [Slack](/docs/integrations/saas-cloud/slack/) to visualize and analyze the collected data using prebuilt dashboards.
+:::
 
 ### JSON example
 
@@ -159,14 +164,3 @@ Each page adds to the overall number of API calls needed and adds time due to th
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
-
-## App installation
-
-Once you understand how and where Slack data is collected, you can visualize and analyze that data by installing the Sumo Logic app for [Slack](/docs/integrations/saas-cloud/slack/).
-
-Installing the Slack app enables you to:
-- Monitor Slack user, channel, and access activity across supported workspace plans.
-- Analyze public channel activity to understand collaboration trends and usage.
-- Track workspace access logs for security and auditing purposes.
-- Gain centralized visibility into Slack operations through prebuilt analytics.
-- Support security monitoring and compliance for team collaboration environments.

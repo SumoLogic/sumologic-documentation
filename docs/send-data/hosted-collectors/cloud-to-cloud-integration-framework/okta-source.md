@@ -51,6 +51,10 @@ To configure an Okta Source:
 1. (Optional) In **Processing Rules for Logs**, configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Okta source, consider installing the Sumo Logic app for [Okta](/docs/integrations/saml/okta) to visualize and analyze the collected data using prebuilt dashboards.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
@@ -95,7 +99,6 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/okta/example.tf
 ```
 
-
 ## FAQ
 
 :::info
@@ -105,15 +108,3 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 ## Limitation
 
 During a polling interval, an Okta Source will make a request for every 1,000 logs available. The Okta API uses paging and only 1,000 logs are returned at a time.
-
-## App installation
-
-Once you understand how and where Okta data is collected, you can visualize and analyze that data by installing the Sumo Logic app for [Okta](/docs/integrations/saml/okta).
-
-Installing the Okta app enables you to:
-- Monitor administrative actions performed in Okta.
-- Track failed and successful login attempts.
-- Analyze user activity across applications accessed through Okta.
-- Gain visibility into application usage and access patterns.
-- Review user events and authentication behavior.
-- Monitor Multi-Factor Authentication (MFA) activity through preconfigured dashboards.

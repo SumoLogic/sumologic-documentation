@@ -89,6 +89,10 @@ To configure a Microsoft Azure AD Inventory Source:
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Microsoft Azure AD Inventory source, consider installing the Sumo Logic app for [Microsoft Azure AD Inventory](/docs/integrations/saas-cloud/microsoft-azure-ad-inventory/) to visualize and analyze the collected data using prebuilt dashboards.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
@@ -139,14 +143,3 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
-
-## App installation
-
-Once you understand how and where Microsoft Azure AD Inventory data is collected, you can visualize and analyze that data by installing the Sumo Logic app for [Microsoft Azure AD Inventory](/docs/integrations/saas-cloud/microsoft-azure-ad-inventory/).
-
-Installing the Microsoft Azure AD Inventory app enables you to:
-- Monitor user sign-in activity to detect unauthorized or risky access.
-- Track user demographics and behavior for better identity governance.
-- Gain visibility into device inventory and device management.
-- Identify non-compliant or unmanaged devices proactively.
-- Support threat detection, compliance, and continuous security oversight across your Azure AD environment.

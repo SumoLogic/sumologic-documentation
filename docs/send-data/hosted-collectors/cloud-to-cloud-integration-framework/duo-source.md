@@ -57,6 +57,10 @@ To configure a Duo Source:
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Duo source, consider installing the Sumo Logic app for [Duo Security](/docs/integrations/security-threat-detection/duo-security/) to visualize and analyze the collected data using prebuilt dashboards.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
@@ -108,15 +112,3 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
-
-## App installation
-
-Once you understand how and where Duo data is collected, you can visualize and analyze that data by installing the Sumo Logic app for [Duo Security](/docs/integrations/security-threat-detection/duo-security/).
-
-Installing the Duo Security app enables you to:
-- Gain centralized visibility into authentication, admin, and telephony logs from Duo Security.
-- Monitor successful and failed authentications to quickly spot suspicious access attempts.
-- Analyze events by application, user, authentication factor, and geo-location for faster investigations.
-- Track administrator activities to maintain security and compliance.
-- Detect outliers and potential authentication threats through built-in threat analysis.
-- Strengthen overall identity and access security posture with actionable insights.
