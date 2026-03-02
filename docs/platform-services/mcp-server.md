@@ -108,7 +108,7 @@ UI support for this step is not yet available. You'll need to use the Sumo Logic
    This prevents privilege escalation. If the service account's roles are restricted in the future, the OAuth client's effective permissions are automatically reduced as well. If a requested scope is not included in the service account's roles, it will be silently excluded from the OAuth client's effective permissions.
 
    </details>
-1. [Create a new OAuth client](https://api.sumologic.com/docs/#operation/createOAuthClient) using the `scopes` from the previous step. `"runAsId"` will be the `"id"` of the [service account you just created](#step-1-create-a-service-account). In the response, note the `clientId` and `clientSecret`. These are your OAuth client credentials, which you'll use to generate an access token in the next step.
+1. [Create a new OAuth client](https://api.sumologic.com/docs/#operation/createOAuthClient) using the `"scopes"` from the previous step. `"runAsId"` will be the `"id"` of the [service account you just created](#step-1-create-a-service-account). In the response, note the `"clientId"` and `"clientSecret"`. These are your OAuth client credentials, which you'll use to generate an access token in the next step.
    <Tabs
      className="unique-tabs"
      defaultValue="request"
@@ -157,9 +157,9 @@ UI support for this step is not yet available. You'll need to use the Sumo Logic
    </TabItem>
    </Tabs>
 
-### Step 3: Get an access token
+### Step 3: Generate an access token
 
-In this step, you'll request an OAuth access token from the token endpoint using your client credentials (`clientId` and `clientSecret`) from the previous step. If applicable, replace `service.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+In this step, you'll request an OAuth access token from the token endpoint using your client credentials (`"clientId'` and `"clientSecret"`) from the previous step. If applicable, replace `service.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 #### Option A: All permissions
 
@@ -184,56 +184,13 @@ curl -X POST https://service.sumologic.com/oauth2/token \
   -d "scope=<scope-1> <scope-2> <scope-n>"
 ```
 
-### Token expiration and reconnection
+#### Token expiration and reconnection
 
 Access tokens expire after 30 minutes. Your MCP client must refresh the token automatically or prompt you to generate a new one. See the client-specific sections below for refresh steps.
 
-The token endpoint URL varies by deployment. If you need to discover it programmatically
-(for example, in an automation script), query the Authorization Server Metadata for your [deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). The response includes the `token_endpoint` and other supported OAuth parameters.
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="request"
-  values={[
-    {label: 'Example request', value: 'request'},
-    {label: 'Example response', value: 'response'},
-  ]}>
-
-<TabItem value="request">
-
-```bash
-curl https://service.sumologic.com/.well-known/oauth-authorization-server
-```
-
-</TabItem>
-<TabItem value="response">
-
-```json
-{
-  "issuer": "https://service.sumologic.com",
-  "authorization_endpoint": "https://service.sumologic.com/oauth2/authorize",
-  "token_endpoint": "https://service.sumologic.com/oauth2/token",
-  "token_endpoint_auth_methods_supported": [
-    "client_secret_basic",
-    "client_secret_post"
-  ],
-  "jwks_uri": "https://service.sumologic.com/oauth2/jwks",
-  "response_types_supported": [
-    "code"
-  ],
-  "grant_types_supported": [
-    "authorization_code",
-    "client_credentials",
-    "refresh_token"
-  ],
-  "code_challenge_methods_supported": [
-    "S256"
-  ]
-}
-```
-
-</TabItem>
-</Tabs>
+:::tip
+The token endpoint URL varies by [deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). To discover it programmatically (for example, in an automation script), query the Authorization Server Metadata for your deployment using `curl https://service.sumologic.com/.well-known/oauth-authorization-server`. The response includes the `token_endpoint` and other supported OAuth parameters.
+:::
 
 <!-- Do not publish until we have a public MCP URL
 ### Step 4: Configure your MCP client
@@ -263,7 +220,7 @@ curl -H "Authorization: Bearer <access-token>" \
    cd /path/to/your/project
    claude
    ```
-1. Verify the Sumo Logic MCP server connection with `/mcp`.
+1. In Claude Code, verify the Sumo Logic MCP server connection with `/mcp`.<br/><img src={useBaseUrl('img/platform-services/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
 
 ### Reconnecting
@@ -328,50 +285,21 @@ If Claude Code repeatedly asks about authentication when invoking MCP tools, you
 
 Access tokens expire in 30 minutes and may also expire after quitting and restarting VS Code. When this occurs:
 1. You'll see a **Dynamic Client Registration not supported** popup asking for an OAuth client ID. Do NOT provide this. Click **Cancel**.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-dynamic-reg-popup.png')} alt="Dynamic Client Registration not supported popup asking for an OAuth client ID with Cancel button highlighted" width="500"/>
-1. You'll be prompted again for an OAuth client ID in your command palette. Do NOT provide this. Tap **Escape** on your keyboard.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-esc-clientid.png')} alt="VS Code command palette search with MCP: Open User Configuration highlighted" width="600"/>
+1. You'll be prompted again for an OAuth client ID in your command palette. Tap **Escape** on your keyboard.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-esc-clientid.png')} alt="VS Code command palette search with MCP: Open User Configuration highlighted" width="600"/>
 1. [Generate a new access token](#step-3-generate-an-access-token).
 1. Reopen your **mcp.json** file.
 1. Hover your mouse over the redacted access token until the **Edit | Clear | Clear All** options appear, then click **Edit**.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-oauth-edit.png')} alt="edit VS Code OAuth access token" width="600"/>
 1. Enter your new access token in the command palette and then restart the Sumo Logic MCP server.
 
-## Example prompts
-
-### Org user directory
-
-`List the users in my org and format as an ASCII table`
-
-`Show users who have never logged in`
-
-`Delete those users`
-
-### Log Search and visualization
-
-`Run a log search for the last 5 minutes across all of my data that counts the data by 1-minute buckets and plots the result as a line graph`
-
-### Dashboard creation
-
-`Create a new dashboard called "System Overview" that uses the previous query to power a dashboard panel called "Total Log Count Per Minute"`
-
-`Add a second panel called "Error Logs Count Per Minute" that is a similar query but only has logs in it that contain the keyword "error" in them`
-
-### Cloud SIEM
-
-`Show triage details for INSIGHT-1234`
-
-`Show recommended next steps for INSIGHT-1234`
-
-`Update INSIGHT-1234 status to In Progress`
-
-
 ## Available MCP tools
 
 Our MCP server provides access to Sumo Logic through these tool categories:
+* **Utility tools**. Discover relevant tools based on context.
 * **Alerts management**. Search, retrieve, and resolve alerts.
 * **Dashboard management**. Create, retrieve, update, and delete dashboards.
 * **Cloud SIEM Insights**. Get insights, triage information, entities, and status updates.
 * **Log search**. Create and manage search jobs, retrieve paginated messages and records.
 * **User management**. List users in the organization.
-* **Utility tools**. Discover relevant tools based on context.
 
 All tools respect your Sumo Logic permission controls and access policies.
 
@@ -379,76 +307,102 @@ All tools respect your Sumo Logic permission controls and access policies.
 Tool identifiers are subject to change during the beta period.
 :::
 
+### Utility tools
+
+| Tool | Description |
+| :--- | :---------- |
+| `x_amz_bedrock_agentcore_search` | Search/filter the available tools by context. |
+
 ### Alerts management
 
-| Tool    | Description         |
-| :---- | :------------- |
+| Tool | Description |
+| :--- | :---------- |
 | `alertsReadById`   | Get an alert or folder by ID. |
-| `alertsSearch`     | Search alerts/folders. |
-| `getHistory`       | Get alert history for a time range. |
-| `getRelatedAlerts` | Get alerts related to a given alert. |
+| `alertsSearch`     | Search alerts by status, severity, monitor name, mute status, and more. |
+| `getHistory`       | Get alert history for a monitor over a time range. |
+| `getRelatedAlerts` | Get alerts related to a given alert by time proximity or shared entity. |
 | `resolve`          | Resolve an alert. |
 
 #### Sample prompts
 
+`Show me all active alerts from the last 24 hours`
+`Get the history for alert ID <id>`
+`Find alerts related to <id>`
+`Resolve alert <id>`
+
 ### Dashboard management
 
-| Tool      | Description           |
-| :------ | :------------------ |
+| Tool | Description |
+| :--- | :---------- |
 | `createDashboard` | Create a new dashboard. |
 | `deleteDashboard` | Delete a dashboard by ID. |
 | `getDashboard`    | Get a dashboard by ID. |
 | `listDashboards`  | List all dashboards. |
 | `updateDashboard` | Update a dashboard by ID. |
 
-
 #### Sample prompts
+
+`Create a new dashboard called "System Overview" that uses the previous query to power a dashboard panel called "Total Log Count Per Minute"`
+`Add a second panel called "Error Logs Count Per Minute" that is a similar query but only has logs in it that contain the keyword "error" in them`
 
 ### Cloud SIEM Insights
 
-| Tool        |  Description     |
-| :---  | :---  |
-| `GetInsights`               | Get Insights with filtering/pagination. |
+| Tool | Description |
+| :--- | :---------- |
 | `GetAllInsights`            | Get all Insights (paginated via token). |
-| `GetInsight`                | Get a single Insight by ID. |
+| `GetInsight`                | Get a single Insight by ID, including signals, artifacts, and entity details. |
 | `GetInsightComments`        | Get comments on an Insight. |
 | `GetInsightHistory`         | Get history of an Insight. |
 | `GetInsightRelatedEntities` | Get involved entities for an Insight. |
 | `GetInsightTriage`          | Get triage info for an Insight. |
+| `GetInsights`               | Get Insights with filtering by severity, status, assignee, entity, confidence, tags, and more. |
 | `UpdateInsightAssignee`     | Update the assignee of an Insight. |
 | `UpdateInsightStatus`       | Update the status of an Insight. |
 
+#### Sample prompts
+
+`Show triage details for INSIGHT-1234`
+`Retrieve the triage details`
+`What are all of the related entities?`
+`Add a comment to this insight: "This warrants deeper investigation"`
+`Show recommended next steps for INSIGHT-1234`
+`Update INSIGHT-1234 status to In Progress`
+
+#### Sample investigation workflow
+
+1. `Find all open Critical Insights`
+2. `Drill into signals and entities for INSIGHT-1234`
+3. `Check related alerts for INSIGHT-1234`
+4. `Run a log search to investigate the source IP from that insight`
+5. `Update INSIGHT-1234 status to In Progress and assign to me`
+
+### Log search
+
+| Tool | Description |
+| :--- | :---------- |
+| `createSearchJob`               | Create a search job with a custom query and time range. |
+| `deleteSearchJob`               | Delete a search job. |
+| `getSearchJobPaginatedMessages` | Get paginated raw messages from a search job. |
+| `getSearchJobPaginatedRecords`  | Get paginated aggregated records from a search job. |
+| `getSearchJobStatus`            | Get the status of a search job. |
 
 #### Sample prompts
 
+`Run a log search for the last 5 minutes across all of my data that counts the data by 1-minute buckets and plots the result as a line graph`
+`Run a 2-day search on _sourcecategory=*proofpoint*, count by recipient and senderip`
+
 ### User management
 
-| Tool |  Description   |
-| :----------------- | :--------- |
+| Tool | Description |
+| :--- | :---------- |
 | `listUsers` | List all users in the organization. |
 
 #### Sample prompts
 
-### Log search
-
-| Tool            | Description |
-| :---  | :-------- |
-| `createSearchJob`               | Create a new search job. |
-| `getSearchJobStatus`            | Get the status of a search job. |
-| `getSearchJobPaginatedMessages` | Get paginated messages from a search job. |
-| `getSearchJobPaginatedRecords`  | Get paginated aggregated records from a search job. |
-| `deleteSearchJob`               | Delete a search job. |
-
-
-#### Sample prompts
-
-### Utility tools
-
-| Tool    | Description   |
-| :------ | :------------------- |
-| `x_amz_bedrock_agentcore_search` | Search/filter the available tools by context. |
-
-
+`List the users in my org and format as an ASCII table`
+`Show users who have never logged in`
+`Delete those users`
+`List all users and their roles`
 
 ## Usage guidance and cost controls
 
