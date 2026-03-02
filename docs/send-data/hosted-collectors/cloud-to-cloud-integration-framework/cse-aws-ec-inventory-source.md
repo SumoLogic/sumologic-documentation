@@ -98,7 +98,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| limitToRegions | String array | Yes | | Provide a list of AWS regions to query EC2 instances, such as `us-east-2`. Use `["all"]` to support all regions. Make sure that the selected region is enabled in your AWS account. | modifiable |
+| limitToRegions | String array | Yes | | Provide a list of AWS regions to query EC2 instances, such as `us-east-2`. Use `["all"]` to collect data from all regions supported by source. Supported regions mentioned in Note section. Make sure that the selected region is enabled in your AWS account. | modifiable |
 | authentication.type | String | Yes | `null` | AWS Role Based Authentication | Select how Sumo Logic should access your AWS account. |  |
 | authentication.roleARN | String | Yes | `null` | Provide the IAM Role ARN you want to use to authenticate collection requests. |  |
 | authentication.awsId | String | Yes |`null` | Provide the IAM User access key ID you want to use to authenticate collection requests. |  |
@@ -124,6 +124,14 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 ```sh reference
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cse-aws-ec-inventory/example2.tf
 ```
+## Notes
+
+<details>
+<summary>Supported AWS Regions </summary>
+
+`eu-north-1`, `eu-central-1`, `eu-central-2`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `ap-south-1`, `ap-northeast-1`, `ap-northeast-2`, `ap-southeast-1`, `ap-southeast-2`, `sa-east-1`, `ca-central-1`, `us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`
+
+</details>
 
 ## Troubleshooting
 
