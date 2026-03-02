@@ -34,7 +34,7 @@ Follow the directions in [Configure a SAML app in OneLogin](/docs/manage/securit
 
 <img src={useBaseUrl('img/security/provision-onelogin-sso-tab.png')} alt="SSO tab" style={{border: '1px solid gray'}} width="700" />
 
-When you follow these instructions, on the **Configuration** tab you'll add the **SAML Audience URL** and **SAML Consumer URL**. Obtain these values from the assertion consumer URL and entity ID on the [SAML configuration](/docs/manage/security/saml/integrate-onelogin/#configure-saml-in-sumo) of the Sumo Logic tenant where you will provision users. <br/><img src={useBaseUrl('img/security/provision-onelogin-sumologic-saml-settings.png')} alt="ACS and entity ID from Sumo Logic" style={{border: '1px solid gray'}} width="800" />
+When you follow these instructions, on the **Configuration** tab you'll add the **SAML Audience URL** and **SAML Consumer URL**. Obtain these values from the assertion consumer URL and entity ID on the [SAML configuration](/docs/manage/security/saml/integrate-onelogin/#configure-saml-in-sumo-logic) of the Sumo Logic tenant where you will provision users. <br/><img src={useBaseUrl('img/security/provision-onelogin-sumologic-saml-settings.png')} alt="ACS and entity ID from Sumo Logic" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 Also on the **Configuration** tab, for **SCIM Base URL** enter the [API endpoint for your deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the [SCIM User Management APIs](/docs/api/scim-user/) using the format `<api-endpoint>/v1/scim/`. For example, `https://api.sumologic.com/api/v1/scim/`. You will perform additional configuration of the app later.
