@@ -15,6 +15,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The [Netskope WebTx API](https://docs.netskope.com/en/transaction-event-fields.html) integration ingests Web Transaction logs from Netskope Event Stream.
 
+:::info
+Netskope will be deprecating the endpoint currently used to collect WebTx data. As an alternative, users should configure Netskope [Log Streaming](https://docs.netskope.com/en/log-streaming) to send CSV logs to an Amazon S3 bucket. The data can then be collected into Sumo Logic using the Sumo Logic [AWS S3 Source](https://www.sumologic.com/help/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/) (Collector).
+
+Please ensure that your data collection method is updated before the endpoint is deprecated to avoid any disruption.
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
