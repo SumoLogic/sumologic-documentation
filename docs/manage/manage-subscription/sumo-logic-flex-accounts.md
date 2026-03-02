@@ -62,28 +62,27 @@ The following table provides a summary list of key features by Flex package acco
 |:------- | :--- | :---- | :------------- | :------------- |
 | Advanced Span Analytics |  | &#10003; | | &#10003; |
 | Anomaly Alerting |  | &#10003; | | &#10003; |
-| Alerting Integrations (Slack, PagerDuty, ServiceNow, etc.) | &#10003; | &#10003; | | &#10003; |
-| Alert Response | &#10003; | &#10003; | | &#10003; |
+| Alerting Integrations (Slack, PagerDuty, ServiceNow, etc.) | &#10003; | &#10003; | &#10003; | &#10003; |
+| Alert Response | &#10003; | &#10003; | &#10003; | &#10003; |
 | Anomaly Detection |  | &#10003; | | &#10003; |
 | Anomaly Rules |  | | | &#10003; |
-| APM and Distributed Tracing |  | &#10003; | | &#10003; |
-| Application Observability | &#10003; | &#10003; | | &#10003; |
+| APM and Distributed Tracing |  | &#10003; | &#10003; | &#10003; |
+| Application Observability | &#10003; | &#10003; | &#10003; | &#10003; |
 | Audit Index | &#10003; | &#10003; | &#10003; | &#10003; |
 | Automated Log-level Detection |  | | | &#10003; |
-| Automated Playbooks | &#10003; | &#10003; | | &#10003; |
+| Automated Playbooks | &#10003; | &#10003; | &#10003; | &#10003; |
 | Automated Remediation |  | &#10003; | | &#10003; |
-| Automation Service (playbooks for Insight enrichment, notifications, and containment actions) | &#10003; | &#10003; | | &#10003; |
+| Automation Service (playbooks for Insight enrichment, notifications, and containment actions) | &#10003; | &#10003; | &#10003; | &#10003; |
 | AWS CloudTrail and Amazon Guard Duty Threat Benchmarking | | &#10003; | | &#10003; |
 | Case Manager | |  | | &#10003; |
 | Cloud Infrastructure Security |  | &#10003; | | &#10003; |
-| Cloud Log Management | &#10003; | &#10003; | | &#10003; |
+| Cloud Log Management | &#10003; | &#10003; | &#10003; | &#10003; |
 | Cloud SIEM |  |  | | Activation required* |
 | Cloud Security Posture Monitoring |  | &#10003; | | &#10003; |
 | Cloud SOAR |  |  | | Activation required* |
 | Collector Management API | &#10003; | &#10003; | &#10003; | &#10003; |
 | Compliance and Audit Logging |  | &#10003; | | &#10003; |
-| Threat Intelligence |  | &#10003; | | &#10003; |
-| Customizable Dashboards | &#10003; | &#10003; | | &#10003; |
+| Customizable Dashboards | &#10003; | &#10003; | &#10003; | &#10003; |
 | Data Forwarding | | &#10003; | &#10003; | &#10003; |
 | Data Volume Index | | &#10003; | &#10003; | &#10003; |
 | Enterprise Audit and Logging Dashboards |  | &#10003; | | &#10003; |
@@ -93,13 +92,13 @@ The following table provides a summary list of key features by Flex package acco
 | Field Extraction | &#10003; | &#10003; | &#10003; | &#10003; |
 | Geo IP Lookups | | &#10003; | | &#10003; |
 | Global Intelligence Service apps |  |  | | &#10003; |
-| Historical and Live Streaming Dashboards | &#10003; | &#10003; | | &#10003; |
+| Historical and Live Streaming Dashboards | &#10003; | &#10003; | &#10003; | &#10003; |
 | Ingest Budgets |  | &#10003; | | &#10003; |
 | Insight Global Confidence Scores |  |  | | &#10003; |
 | Insight Rules Engine (including 900+ out-of-the-box rules) |  |  | | &#10003; |
 | Insight Trainer |  |  | | &#10003; |
-| Kubernetes Observability | &#10003; | &#10003; | |&#10003; |
-| Live Tail for Streaming Logs | &#10003; | &#10003; | | &#10003; |
+| Kubernetes Observability | &#10003; | &#10003; | &#10003; | &#10003; |
+| Live Tail for Streaming Logs | &#10003; | &#10003; | &#10003; | &#10003; |
 | LogReduce©, LogCompare, and LogExplain | &#10003; | &#10003; | &#10003; | &#10003; |
 | Log Data Continuous Volume | &#10003; | &#10003; | &#10003; |  |
 | Log Data Frequent Tier Volume | | &#10003; | &#10003; |  |
@@ -107,7 +106,7 @@ The following table provides a summary list of key features by Flex package acco
 | Log Search and Visualizations | &#10003; | &#10003; | | &#10003; |
 | Log Search API |  |  | | &#10003; |
 | Lookup Tables |  | &#10003; | &#10003; | &#10003; |
-| Management APIs | &#10003; | &#10003; | | &#10003; |
+| Management APIs | &#10003; | &#10003; | &#10003; | &#10003; |
 | Metrics | &#10003; | &#10003; | &#10003; | &#10003; |
 | Metrics based SLOs |  | | |&#10003; |
 | Metrics data retention | &#10003; | &#10003; | &#10003; | &#10003; |
@@ -115,13 +114,13 @@ The following table provides a summary list of key features by Flex package acco
 | Metrics volume | &#10003; | &#10003; | &#10003; | &#10003; |
 | MITRE ATT&CK Coverage Explorer |  | | | &#10003; |
 | Monitors | &#10003; | &#10003; | &#10003; | &#10003; |
-| Multi-Cloud Observability (AWS, Azure GCP) | &#10003; | &#10003; | |&#10003; |
-| OTel Data Onboarding | &#10003; | &#10003; | |&#10003; |
+| Multi-Cloud Observability (AWS, Azure GCP) | &#10003; | &#10003; | &#10003; | &#10003; |
+| OTel Data Onboarding | &#10003; | &#10003; | &#10003; | &#10003; |
 | OTel for K8s Logs and Events |  |  | |&#10003; |
 | Partitions | &#10003; | &#10003; | &#10003; | &#10003; |
 | PCI Compliance Apps and Dashboards for Audit Readiness | | &#10003; | | &#10003; |
 | Playbooks (including complete Sumo Logic playbook catalog) |  |  | | &#10003; |
-| Predictive Analytics and Outlier Detection | &#10003; | &#10003; | | &#10003; |
+| Predictive Analytics and Outlier Detection | &#10003; | &#10003; | &#10003; | &#10003; |
 | Progressive Automation |  |  | | &#10003; |
 | Real User Monitoring (RUM) |  | &#10003; | &#10003; |&#10003; |
 | Reliability Management (SLIs/SLOs) |  | | |&#10003; |
@@ -130,12 +129,13 @@ The following table provides a summary list of key features by Flex package acco
 | Scheduled Views | &#10003; | &#10003; | &#10003; | &#10003; |
 | Service Maps |  | &#10003; | |&#10003; |
 | Single sign-on (SSO) with SAML | &#10003; | &#10003; | &#10003; | &#10003; |
-| Software Development Optimization | &#10003; | &#10003; | | &#10003; |
+| Software Development Optimization | &#10003; | &#10003; | &#10003; | &#10003; |
 | Sumo Logic Apps | &#10003; | &#10003; | &#10003; | &#10003; |
 | Support | &#10003; | &#10003; | &#10003; | &#10003; |
+| Threat Intelligence |  | &#10003; | &#10003; | &#10003; |
 | Traces | &#10003;<br/>Up to 1.5GB per day* | &#10003;<br/>Up to 5GB per day | &#10003;<br/>5GB per day| &#10003;<br/>Up to 5GB per day |
 | Scan Budget |  |  | | &#10003; |
-| Organization Usage Limits | &#10003; | &#10003; | | &#10003; |
+| Organization Usage Limits | &#10003; | &#10003; | &#10003; | &#10003; |
 | User and Role APIs | &#10003; | &#10003; | &#10003; | <br/>Up to 5GB per day |
 | War Room | |  | | &#10003; |
 
