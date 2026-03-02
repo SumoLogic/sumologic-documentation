@@ -69,10 +69,8 @@ To configure a Cloud SIEM AWS EC2 Inventory Source:
     - **Key Access**. Enter the IAM user access key ID and secret key you want to use to authenticate collection requests.<br/><img src={useBaseUrl('/img/send-data/key-based.png')} alt="key-based" style={{border: '1px solid gray'}} width="400"/>
 1. **Regions**. Provide a list of AWS regions to query EC2 instances, such as `us-east-2`. Make sure that the selected region is enabled in your AWS account.
    :::note Supported AWS Regions
-   `eu-north-1`, `eu-central-1`, `eu-central-2`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `ap-south-1`, `ap-northeast-1`, `ap-northeast-2`, `ap-southeast-1`, `ap-southeast-2`, `sa-east-1`, `ca-central-1`, `us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`.
+   `eu-north-1`, `eu-central-1`, `eu-central-2`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `ap-south-1`, `ap-northeast-1`, `ap-northeast-2`, `ap-southeast-1`, `ap-southeast-2`, `sa-east-1`, `ca-central-1`, `us-east-1`, `us-east-2`, `us-west-1`, and `us-west-2`.
    :::
-
-
 1. (Optional) The **Polling Interval** is set for 600 minutes by default, you can adjust it based on your needs.
 1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule/).
 1. When you are finished configuring the Source, click **Save**.
@@ -103,7 +101,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| limitToRegions | String array | Yes | | Provide a list of AWS regions to query EC2 instances, such as `us-east-2`. Use `["all"]` to collect data from all regions supported by source. Supported regions mentioned in Note section. Make sure that the selected region is enabled in your AWS account. | modifiable |
+| limitToRegions | String array | Yes | | Provide a list of AWS regions to query EC2 instances, such as `us-east-2`. Use `["all"]` to collect data from all regions supported by source, as mentioned in [Step 9 of source configuration](#source-configuration). Make sure that the selected region is enabled in your AWS account. | modifiable |
 | authentication.type | String | Yes | `null` | AWS Role Based Authentication | Select how Sumo Logic should access your AWS account. |  |
 | authentication.roleARN | String | Yes | `null` | Provide the IAM Role ARN you want to use to authenticate collection requests. |  |
 | authentication.awsId | String | Yes |`null` | Provide the IAM User access key ID you want to use to authenticate collection requests. |  |
@@ -129,18 +127,11 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 ```sh reference
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cse-aws-ec-inventory/example2.tf
 ```
-## Notes
-
-<details>
-<summary>Supported AWS Regions </summary>
-
-`eu-north-1`, `eu-central-1`, `eu-central-2`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `ap-south-1`, `ap-northeast-1`, `ap-northeast-2`, `ap-southeast-1`, `ap-southeast-2`, `sa-east-1`, `ca-central-1`, `us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`
-
-</details>
 
 ## Troubleshooting
 
-### Source displays (`regionName (status: 401/403)`) in the Sumo Logic UI
+### Source displays regionName (status: 401/403) in the Sumo Logic UI
+
 #### Cause
 
 If you see a region name with status code 401 or 403, it means that the region is not enabled in your AWS account or you don't have the necessary permissions for that region.
