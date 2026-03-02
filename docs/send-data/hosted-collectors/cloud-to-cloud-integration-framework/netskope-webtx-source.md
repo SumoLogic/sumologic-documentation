@@ -18,7 +18,7 @@ The [Netskope WebTx API](https://docs.netskope.com/en/transaction-event-fields.h
 :::info
 Netskope will be deprecating the endpoint that is currently used to collect WebTx data. As an alternative, you can configure Netskope [Log Streaming](https://docs.netskope.com/en/log-streaming) to send the comma-separated values (CSV) logs to an Amazon S3 bucket. The data can then be collected into Sumo Logic using the Sumo Logic [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/).
 
-Please ensure that your data collection method is updated before the endpoint is deprecated to avoid any disruption.
+Ensure that your data collection method is updated before the endpoint is deprecated to avoid any disruption.
 :::
 
 ## Data collected
