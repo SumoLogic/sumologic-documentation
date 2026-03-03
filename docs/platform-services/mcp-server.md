@@ -274,7 +274,7 @@ If Claude Code repeatedly asks about authentication when invoking MCP tools, you
      ]
    }
    ```
-   If you've previously configured other MCP servers here, this should be an additive process (i.e., do not delete existing ones you still intend to use).
+   If you've previously configured other MCP servers here, this should be an additive process (that is, do not delete existing ones you still intend to use).
 1. In the **mcp.json** file, click the **Start** button just above `"Sumo Logic MCP server": {`.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-mcp-start.png')} alt="VS Code Start button in mcp.json configuration file" width="600"/>
 1. You'll be prompted in the command palette for an OAuth access token. Enter your [access token](#step-3-generate-an-access-token) there.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-oauth-input.png')} alt="prompt in command palette for OAuth access token" width="600"/>
 1. Confirm that the server shows as **Running**.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-running.png')} alt="prompt in command palette for OAuth access token" width="600"/>
