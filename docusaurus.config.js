@@ -109,7 +109,6 @@ module.exports = {
           },
           exclude: [
             '**/reuse/**',
-            '**/tags/**',
             '**/ja/**',
           ],
         },
