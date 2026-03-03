@@ -119,12 +119,12 @@ module.exports = {
           changefreq: 'daily',
           ignorePatterns: [
             '/docs/reuse/**',
-            '/tags/**',
             '/docs/beta/**',
             '/ja/**',
             '/files/**',
             '/release-notes-*/archive/**',
             '/release-notes-*/2021/**',
+            '/tags/**'
             ],
           ],
           filename: 'sitemap.xml',
