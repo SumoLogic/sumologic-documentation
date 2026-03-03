@@ -109,9 +109,10 @@ module.exports = {
           },
           exclude: [
             '**/reuse/**',
-            '**/beta/**',
             '**/tags/**',
             '**/ja/**',
+            '**/release-notes-*/2025/**',
+            '!**/help/release-notes-service/2025/12/31/**',
           ],
         },
         sitemap: {
@@ -125,7 +126,6 @@ module.exports = {
             '/release-notes-*/archive/**',
             '/release-notes-*/2021/**',
             '/tags/**'
-            ],
           ],
           filename: 'sitemap.xml',
         },
