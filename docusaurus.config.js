@@ -109,7 +109,6 @@ module.exports = {
           },
           exclude: [
             '**/reuse/**',
-            '**/beta/**',
             '**/tags/**',
             '**/ja/**',
           ],
@@ -119,13 +118,11 @@ module.exports = {
           changefreq: 'daily',
           ignorePatterns: [
             '/docs/reuse/**',
-            '/docs/beta/**',
             '/tags/**',
             '/ja/**',
             '/files/**',
             '/release-notes-*/archive/**',
             '/release-notes-*/2021/**',
-            ],
           ],
           filename: 'sitemap.xml',
         },
