@@ -42,7 +42,7 @@ Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend 
 <div class="responsive-table">
 
 | Deployment | Collection endpoint | OpenTelemetry collector endpoint | OpenTelemetry remote management endpoint | AWS Region of Sumo PrivateLink endpoint service |
-|:-----------|:---------------------         |:---------------------------------- |:------------------------------------------------| |:------------------------------------------------|
+|:--|:--   |:-- |:-- |:---|
 | AU         | `collectors.au.sumologic.com` | `open-collectors.au.sumologic.com` | `opamp-collectors.au.sumologic.com` | `ap-southeast-2` |
 | CA         | `collectors.ca.sumologic.com` | `open-collectors.ca.sumologic.com` | `opamp-collectors.ca.sumologic.com` | `ca-central-1` |
 | CH         | `collectors.ch.sumologic.com` | `open-collectors.ch.sumologic.com` | `opamp-collectors.ch.sumologic.com` | `eu-central-2` |
