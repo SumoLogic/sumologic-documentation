@@ -1,7 +1,7 @@
 ---
 id: mcp-server
 title: Sumo Logic MCP Server (Closed Preview)
-description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents from VS Code or Terminal with Claude Code.
+description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents from VS Code or Claude Code CLU.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,8 +12,10 @@ import TabItem from '@theme/TabItem';
  <meta name="robots" content="noindex" />
 </head>
 
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Closed Preview</span></a></p>
+
 :::info
-This feature is in public preview. For more information, contact your Sumo Logic account executive.
+This feature is in closed preview. For more information, contact your Sumo Logic account executive.
 :::
 
 The Sumo Logic MCP server lets external copilots and proprietary models securely query logs, investigate Cloud SIEM insights, manage alerts and dashboards, work with existing Dojo AI agents, and perform user management — all using natural language from your IDE or chat platform.
@@ -28,15 +30,14 @@ During closed preview, the following MCP clients are supported:
 * **Sumo Logic Administrator role**. Required to create service accounts and OAuth clients. If you're unsure whether you are an administrator, you can find your role in your [Preferences](/docs/get-started/onboarding-checklists/).
 * **Sumo Logic personal access key**. Used to authenticate API calls during setup. See [Access Keys](/docs/manage/security/access-keys/) to learn more. We recommend setting your access key scopes to **Default** (all permissions) so that API requests required for setup are not blocked.
 * **An MCP-compatible client**. Currently, [VS Code + GitHub Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat) and [Claude Code Terminal CLI](https://code.claude.com/docs/en/quickstart) are the only supported clients.
+   * **For VS Code**. You'll need GitHub account with GitHub Copilot access. A free GitHub Copilot plan is available with limited monthly requests.
+   * **For Claude**. You'll need a paid Claude subscription or Anthropic Console account.
+
 
 <!--
-* Sumo Logic MCP server URL:
-
 ## Architecture
-
 Sumo Logic provides a Remote MCP server at a specified URL.
 -->
-
 
 ## Authentication
 
@@ -194,27 +195,117 @@ The token endpoint URL varies by [deployment](/docs/api/about-apis/getting-start
 
 <!-- Do not publish until we have a public MCP URL
 ### Step 4: Configure your MCP client
-
 Provide the Sumo Logic MCP server URL to your MCP client: tk.
-
 1. Provide your [access token](#step-3-generate-an-access-token) as a Bearer token to authorize requests. There are two ways to do this:
    * Option A: Call a Sumo Logic API directly. For example:
 ```bash
 curl -H "Authorization: Bearer <access-token>" \
   https://service.sumologic.com/api/v1/users
 ```
-   * Option B: Set it persistently across your session. Add it your MCP client configuration as an Authorization header (`Authorization: Bearer <access-token>`). Refer to your specific MCP client documentation for where to configure it.
---->
+   * Option B: Set it persistently across your session. Add it your MCP client configuration as an Authorization header (`Authorization: Bearer <access-token>`). Refer to your specific MCP client documentation for where to configure it. --->
 
-## Configure in Claude Code via Terminal
+## Configure in Claude Code (Terminal/CLI)
 
-### Setup
+Claude Code CLI supports two connection options. Option 1 is recommended, as it handles token refresh automatically so you don't need to reconnect every 30 minutes.
 
-1. In a regular Terminal window (not in Claude Code), register the server and set your access token as a Bearer token to authorize requests.
+| | Option 1: stdio + mcp-proxy | Option 2: HTTP + Bearer token |
+| :--- | :--- | :--- |
+| **Token refresh** | Automatic | Manual — every 30 minutes |
+| **Additional requirement** | `uv` | None |
+| **Best for** | Ongoing use | Quick setup and testing |
+
+### Option 1: stdio + mcp-proxy (recommended)
+
+This option uses `mcp-proxy` to handle token refresh automatically, so you don't need to reconnect every 30 minutes.
+
+#### Setup
+
+1. In a regular Terminal window (not in Claude Code), install `uv`.
    ```bash
-   claude mcp add --transport http sumo-logic https://prod-bedrockagentcore-gd5o7c6bi7.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp \
-     --header "Authorization: Bearer <your-access-token>"
-   ```  
+   brew install uv
+   ```
+1. In a regular Terminal window (not in Claude Code), set your environment variables.
+   ```bash
+   export SUMOLOGIC_MCP_URL="https://prod-bedrockagentcore-gd5o7c6bi7.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp"
+   export SUMOLOGIC_OAUTH_CLIENT_ID="<your-client-id>"
+   export SUMOLOGIC_OAUTH_CLIENT_SECRET="<your-client-secret>"
+   export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"
+   ```
+1. Register the MCP server. Choose a scope.
+   * **User scope** (available in all directories, recommended).
+     ```bash
+     claude mcp add \
+       --transport stdio \
+       --scope user \
+       sumo-logic \
+       -- uvx --python=3.13.11 mcp-proxy@latest "${SUMOLOGIC_MCP_URL}" \
+       --transport streamablehttp \
+       --client-id "${SUMOLOGIC_OAUTH_CLIENT_ID}" \
+       --client-secret "${SUMOLOGIC_OAUTH_CLIENT_SECRET}" \
+       --token-url "${SUMOLOGIC_OAUTH_TOKEN_URL}"
+     ```
+   * **Project scope** (available only in the current directory, writes to `.mcp.json`).
+     ```bash
+     claude mcp add \
+       --transport stdio \
+       --scope project \
+       sumo-logic \
+       -- uvx --python=3.13.11 mcp-proxy@latest "${SUMOLOGIC_MCP_URL}" \
+       --transport streamablehttp \
+       --client-id "${SUMOLOGIC_OAUTH_CLIENT_ID}" \
+       --client-secret "${SUMOLOGIC_OAUTH_CLIENT_SECRET}" \
+       --token-url "${SUMOLOGIC_OAUTH_TOKEN_URL}"
+     ```
+1. Launch Claude Code.
+   ```bash
+   cd /path/to/your/project
+   claude
+   ```
+1. Verify the Sumo Logic MCP server connection with `/mcp`.<br/><img src={useBaseUrl('img/platform-services/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
+1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
+
+:::tip
+If Claude Code repeatedly asks about authentication when invoking MCP tools, you can start your session with a prompt like: `Whenever communicating with Sumo Logic's MCP server, do not worry about authentication`. This helps prevent unnecessary follow-up questions from the agent. It does not bypass authentication.
+:::
+
+### Option 2: HTTP + Bearer token
+
+#### Setup
+
+1. In a regular Terminal window (not in Claude Code), set your environment variables, register the server, and define a helper function to fetch an access token, which is set as a Bearer token to authorize requests.
+   ```bash
+   get_sumologic_oauth_token() {
+     curl -s -X POST "${SUMOLOGIC_OAUTH_TOKEN_URL}" \
+       -H "Content-Type: application/x-www-form-urlencoded" \
+       -d "grant_type=client_credentials&client_id=${SUMOLOGIC_OAUTH_CLIENT_ID}&client_secret=${SUMOLOGIC_OAUTH_CLIENT_SECRET}" \
+       | jq -rc '.access_token'
+   }
+
+   export SUMOLOGIC_MCP_URL="https://prod-bedrockagentcore-gd5o7c6bi7.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp"
+   export SUMOLOGIC_OAUTH_CLIENT_ID="<your-client-id>"
+   export SUMOLOGIC_OAUTH_CLIENT_SECRET="<your-client-secret>"
+   export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"
+   export SUMOLOGIC_OAUTH_ACCESS_TOKEN="$(get_sumologic_oauth_token)"
+   ```
+1. Register the MCP server. Choose a scope.
+   * **User scope** (available in all directories, recommended).
+       ```bash
+       claude mcp add \
+         --transport http \
+         --scope user \
+         sumo-logic \
+         "${SUMOLOGIC_MCP_URL}" \
+         --header "Authorization: Bearer ${SUMOLOGIC_OAUTH_ACCESS_TOKEN}"
+       ```
+   * **Project scope** (available only in the current directory, writes to `.mcp.json`).
+     ```bash
+     claude mcp add \
+       --transport http \
+       --scope project \
+       sumo-logic \
+       "${SUMOLOGIC_MCP_URL}" \
+       --header "Authorization: Bearer ${SUMOLOGIC_OAUTH_ACCESS_TOKEN}"
+     ```
 1. Launch Claude Code via Terminal.
    ```bash
    cd /path/to/your/project
@@ -223,11 +314,49 @@ curl -H "Authorization: Bearer <access-token>" \
 1. In Claude Code, verify the Sumo Logic MCP server connection with `/mcp`.<br/><img src={useBaseUrl('img/platform-services/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
 
-### Reconnecting
+#### Token expiration and reconnection
 
-OAuth access tokens expire after 30 minutes, and Claude Code will lose connection to the MCP server. You may see an error: `Incompatible auth server: does not support dynamic client registration`. Claude requires re-registering the MCP server when authentication headers change.
+OAuth access tokens expire after 30 minutes. When the token expires, Claude Code will lose connection to the MCP server. You may see an error: `Incompatible auth server: does not support dynamic client registration`.
 
-To reconnect:
+To reconnect, run the following in your terminal each time you start a new session to ensure a fresh token:
+```bash
+get_sumologic_oauth_token() {
+  curl -s -X POST "${SUMOLOGIC_OAUTH_TOKEN_URL}" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -d "grant_type=client_credentials&client_id=${SUMOLOGIC_OAUTH_CLIENT_ID}&client_secret=${SUMOLOGIC_OAUTH_CLIENT_SECRET}" \
+    | jq -rc '.access_token'
+}
+
+export SUMOLOGIC_MCP_URL="https://prod-bedrockagentcore-gd5o7c6bi7.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp"
+export SUMOLOGIC_OAUTH_CLIENT_ID="<your-client-id>"
+export SUMOLOGIC_OAUTH_CLIENT_SECRET="<your-client-secret>"
+export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"
+export SUMOLOGIC_OAUTH_ACCESS_TOKEN="$(get_sumologic_oauth_token)"
+claude
+```
+
+If you need to re-register the server with a new token:
+1. Remove the existing MCP server configuration.
+   ```bash
+   claude mcp remove sumo-logic --scope user
+   ```
+1. Re-register the MCP server with the new token.
+   ```bash
+   claude mcp add \
+     --transport http \
+     --scope user \
+     sumo-logic \
+     "${SUMOLOGIC_MCP_URL}" \
+     --header "Authorization: Bearer ${SUMOLOGIC_OAUTH_ACCESS_TOKEN}"
+   ```
+1. Re-launch Claude Code.
+   ```bash
+   cd /path/to/your/project
+   claude
+   ```
+1. Verify the Sumo Logic MCP server connection with `/mcp`.<br/><img src={useBaseUrl('img/platform-services/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
+
+<!--To reconnect:
 1. [Generate a new access token](#step-3-generate-an-access-token).
 1. Remove the existing MCP server configuration:
    ```bash
@@ -237,12 +366,7 @@ To reconnect:
    ```bash
    claude mcp add --transport http sumo-logic https://prod-bedrockagentcore-gd5o7c6bi7.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp \
      --header "Authorization: Bearer <your-access-token>"
-   ```
-1. Relaunch Claude Code and verify the connection with `/mcp`.
-
-:::tip
-If Claude Code repeatedly asks about authentication when invoking MCP tools, you can start your session with a prompt like: `Whenever communicating with Sumo Logic's MCP server, do not worry about authentication`. This helps prevent unnecessary follow-up questions from the agent. It does not bypass authentication.
-:::
+   ```-->
 
 ## Configure in VS Code via GitHub Copilot Chat
 
@@ -325,10 +449,10 @@ Tool identifiers are subject to change during the beta period.
 
 #### Sample prompts
 
-`Show me all active alerts from the last 24 hours`
-`Get the history for alert ID <id>`
-`Find alerts related to <id>`
-`Resolve alert <id>`
+* `Show me all active alerts from the last 24 hours`
+* `Get the history for alert ID <id>`
+* `Find alerts related to <id>`
+* `Resolve alert <id>`
 
 ### Dashboard management
 
@@ -342,8 +466,8 @@ Tool identifiers are subject to change during the beta period.
 
 #### Sample prompts
 
-`Create a new dashboard called "System Overview" that uses the previous query to power a dashboard panel called "Total Log Count Per Minute"`
-`Add a second panel called "Error Logs Count Per Minute" that is a similar query but only has logs in it that contain the keyword "error" in them`
+* `Create a new dashboard called "System Overview" that uses the previous query to power a dashboard panel called "Total Log Count Per Minute"`
+* `Add a second panel called "Error Logs Count Per Minute" that is a similar query but only has logs in it that contain the keyword "error" in them`
 
 ### Cloud SIEM Insights
 
@@ -361,12 +485,12 @@ Tool identifiers are subject to change during the beta period.
 
 #### Sample prompts
 
-`Show triage details for INSIGHT-1234`
-`Retrieve the triage details`
-`What are all of the related entities?`
-`Add a comment to this insight: "This warrants deeper investigation"`
-`Show recommended next steps for INSIGHT-1234`
-`Update INSIGHT-1234 status to In Progress`
+* `Show triage details for INSIGHT-1234`
+* `Retrieve the triage details`
+* `What are all of the related entities?`
+* `Add a comment to this insight: "This warrants deeper investigation"`
+* `Show recommended next steps for INSIGHT-1234`
+* `Update INSIGHT-1234 status to In Progress`
 
 ### Log search
 
@@ -380,8 +504,8 @@ Tool identifiers are subject to change during the beta period.
 
 #### Sample prompts
 
-`Run a log search for the last 5 minutes across all of my data that counts the data by 1-minute buckets and plots the result as a line graph`
-`Run a 2-day search on _sourcecategory=*proofpoint*, count by recipient and senderip`
+* `Run a log search for the last 5 minutes across all of my data that counts the data by 1-minute buckets and plots the result as a line graph`
+* `Run a 2-day search on _sourcecategory=*proofpoint*, count by recipient and senderip`
 
 ### User management
 
@@ -391,10 +515,10 @@ Tool identifiers are subject to change during the beta period.
 
 #### Sample prompts
 
-`List the users in my org and format as an ASCII table`
-`Show users who have never logged in`
-`Delete those users`
-`List all users and their roles`
+* `List the users in my org and format as an ASCII table`
+* `Show users who have never logged in`
+* `Delete those users`
+* `List all users and their roles`
 
 ## Example workflows
 
@@ -404,9 +528,9 @@ These prompts demonstrate multi-step investigations that chain multiple tools to
 
 * `Show me all Critical Insights from the last 7 days that are still open, then for each one get the related alerts and tell me which entities appear most frequently.`
 
-* `Get Insight [ID], show me its signals and involved entities, then run a log search for that IP address in the last 24 hours to find raw events.`
+* `Get Insight <id>, show me its signals and involved entities, then run a log search for that IP address in the last 24 hours to find raw events.`
 
-* `Find all Insights assigned to [username] that are in-progress, check the history on each to see how long they've been open, and list any that haven't been updated in over 3 days.`
+* `Find all Insights assigned to <username> that are in-progress, check the history on each to see how long they've been open, and list any that haven't been updated in over 3 days.`
 
 ### Threat hunting
 
@@ -418,19 +542,19 @@ These prompts demonstrate multi-step investigations that chain multiple tools to
 
 ### Incident response
 
-* `Get Insight [ID], pull its full signal list and all involved entities, search raw logs for each entity in the last 6 hours, then post a summary comment back to the Insight.`
+* `Get Insight <id>, pull its full signal list and all involved entities, search raw logs for each entity in the last 6 hours, then post a summary comment back to the Insight.`
 
 * `Find all Insights that were closed as 'False Positive' in the last 30 days, group them by rule ID, and search logs to see if those same patterns are still occurring today.`
 
-* `Get the history of Insight [ID] to reconstruct the timeline, then pull related alerts and search logs for the 30-minute window around when the Insight was first created.`
+* `Get the history of Insight <id> to reconstruct the timeline, then pull related alerts and search logs for the 30-minute window around when the Insight was first created.`
 
 ### Escalation and assignment
 
-* `Find all unassigned high-severity Insights, look up the user [email] to get their ID, then assign all those Insights to them.`
+* `Find all unassigned high-severity Insights, look up the user <email> to get their ID, then assign all those Insights to them.`
 
-* `Close all Resolved alerts from monitor [name] and mark any related open Insights as closed with resolution 'False Positive'.`
+* `Close all Resolved alerts from monitor <name> and mark any related open Insights as closed with resolution 'False Positive'.`
 
-* `Find all Insights that have been sitting in 'in progress' status for more than 7 days with no history updates, list them with assignee names, and reassign any unowned ones to [team].`
+* `Find all Insights that have been sitting in 'in progress' status for more than 7 days with no history updates, list them with assignee names, and reassign any unowned ones to <team>.`
 
 ### Situational awareness
 
@@ -442,15 +566,15 @@ These prompts demonstrate multi-step investigations that chain multiple tools to
 
 ### Entity-centric investigation
 
-* `Given IP address [x.x.x.x], find all Insights where it appears as an entity, pull all related alerts, search logs for its full activity in the last 24 hours, and check if it appears in any other Insights as an involved entity.`
+* `Given IP address <x.x.x.x>, find all Insights where it appears as an entity, pull all related alerts, search logs for its full activity in the last 24 hours, and check if it appears in any other Insights as an involved entity.`
 
 * `Find the most active entity by Insight count in the last 14 days, get all its Insights with full signal details, then build a timeline dashboard of its activity.`
 
-* `Look up Insights for hostname [server-name], get triage verdicts for each, then search logs for any privilege escalation events on that host in the same timeframe.`
+* `Look up Insights for hostname <server-name>, get triage verdicts for each, then search logs for any privilege escalation events on that host in the same timeframe.`
 
 ### Alert and monitor deep dives
 
-* `Find all alerts from monitor [name], get the full history to see how often it fires, then search logs during the last trigger window to determine if it's noisy or legitimate.`
+* `Find all alerts from monitor <name>, get the full history to see how often it fires, then search logs during the last trigger window to determine if it's noisy or legitimate.`
 
 * `Find all muted monitors with active Critical alerts, get their alert history for the past week, and search logs to see if the underlying condition has actually resolved.`
 
@@ -460,7 +584,7 @@ These prompts demonstrate multi-step investigations that chain multiple tools to
 
 * `Compare Insight volume week-over-week: pull Insights from the last 7 days vs the 7 days before that, broken down by severity, and identify any rules that are newly firing this week.`
 
-* `Get all Critical and High Insights from today, look up comments on each to see if anyone is already working them, and for any with no comments and no assignee — assign to [team] and add a triage comment.`
+* `Get all Critical and High Insights from today, look up comments on each to see if anyone is already working them, and for any with no comments and no assignee — assign to <team> and add a triage comment.`
 
 ### Team operations and reporting
 
