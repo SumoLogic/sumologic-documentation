@@ -57,6 +57,10 @@ To configure a Duo Source:
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Duo source, consider installing the Sumo Logic app for [Duo Security](/docs/integrations/security-threat-detection/duo-security/) to visualize and analyze the collected data using prebuilt dashboards.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
