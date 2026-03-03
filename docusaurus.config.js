@@ -111,8 +111,6 @@ module.exports = {
             '**/reuse/**',
             '**/tags/**',
             '**/ja/**',
-            '**/release-notes-*/2025/**',
-            '!**/help/release-notes-service/2025/12/31/**',
           ],
         },
         sitemap: {
