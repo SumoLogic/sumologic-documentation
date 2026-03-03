@@ -269,8 +269,6 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 |Manage Threat Intelligence|Create, edit, delete threat intel sources.|`cseManageThreatIntelligence`|
 |View Match Lists|View [match lists](/docs/cse/match-lists-suppressed-lists/create-match-list).|`cseViewMatchLists`|
 |Manage Match Lists|Create, edit, delete match lists.|`cseManageMatchLists`|
-|View File Analysis|View [YARA rules](/docs/cse/rules/import-yara-rules).|`cseViewFileAnalysis`|
-|Manage File Analysis|Create, edit, delete YARA rules.|`cseManageFileAnalysis`|
 |View Custom Insights|View [custom insights](/docs/cse/records-signals-entities-insights/configure-custom-insight).|`cseViewCustomInsights`|
 |Manage Custom Insights|Create, edit, delete custom insights.|`cseManageCustomInsights`|
 |View Network Blocks|View [network blocks](/docs/cse/administration/create-use-network-blocks).|`cseViewNetworkBlocks`|
