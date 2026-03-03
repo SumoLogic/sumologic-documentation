@@ -119,8 +119,8 @@ module.exports = {
           changefreq: 'daily',
           ignorePatterns: [
             '/docs/reuse/**',
-            '/docs/beta/**',
             '/tags/**',
+            '/docs/beta/**',
             '/ja/**',
             '/files/**',
             '/release-notes-*/archive/**',
