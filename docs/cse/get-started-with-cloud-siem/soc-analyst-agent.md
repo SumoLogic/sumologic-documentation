@@ -107,3 +107,4 @@ Yes. Analysts can override verdicts and flag feedback within the UI. These actio
    * [SOC Analyst Agent](https://www.sumologic.com/demo/soc-analyst-agent)
    * [Mobot walkthrough](https://www.sumologic.com/demo/mobot-walkthrough)
 * Sumo Logic website: [Dojo AI](https://www.sumologic.com/solutions/dojo-ai)
+* AWS article:[ Accelerating security analytics using Amazon Nova with Sumo Logic](https://aws.amazon.com/solutions/case-studies/sumo-logic-nova-case-study/)
