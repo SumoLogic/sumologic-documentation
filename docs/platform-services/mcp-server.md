@@ -1,6 +1,6 @@
 ---
 id: mcp-server
-title: Sumo Logic MCP Server (Public Preview)
+title: Sumo Logic MCP Server (Closed Preview)
 description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents from VS Code or Terminal with Claude Code.
 ---
 
@@ -16,11 +16,11 @@ import TabItem from '@theme/TabItem';
 This feature is in public preview. For more information, contact your Sumo Logic account executive.
 :::
 
-The Sumo Logic MCP server lets external copilots and proprietary models securely query logs, investigate SIEM insights, manage alerts and dashboards, work with existing Dojo AI agents, and perform user management — all using natural language from your IDE or chat platform.
+The Sumo Logic MCP server lets external copilots and proprietary models securely query logs, investigate Cloud SIEM insights, manage alerts and dashboards, work with existing Dojo AI agents, and perform user management — all using natural language from your IDE or chat platform.
 
-During public preview, the following MCP clients are supported:
+During closed preview, the following MCP clients are supported:
 * [VS Code + GitHub Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)
-* [Claude Code Terminal CLI](https://code.claude.com/docs/en/quickstart)
+* [Claude Code CLI](https://code.claude.com/docs/en/quickstart)
 
 
 ## Prerequisites
@@ -402,77 +402,77 @@ These prompts demonstrate multi-step investigations that chain multiple tools to
 
 ### Triage and investigation
 
-`Show me all Critical Insights from the last 7 days that are still open, then for each one get the related alerts and tell me which entities appear most frequently.`
+* `Show me all Critical Insights from the last 7 days that are still open, then for each one get the related alerts and tell me which entities appear most frequently.`
 
-`Get Insight [ID], show me its signals and involved entities, then run a log search for that IP address in the last 24 hours to find raw events.`
+* `Get Insight [ID], show me its signals and involved entities, then run a log search for that IP address in the last 24 hours to find raw events.`
 
-`Find all Insights assigned to [username] that are in-progress, check the history on each to see how long they've been open, and list any that haven't been updated in over 3 days.`
+* `Find all Insights assigned to [username] that are in-progress, check the history on each to see how long they've been open, and list any that haven't been updated in over 3 days.`
 
 ### Threat hunting
 
-`Search logs for any outbound connections to port 4444 in the last 48 hours, extract the source hostnames, then check if any of those hostnames appear as entities in open Insights.`
+* `Search logs for any outbound connections to port 4444 in the last 48 hours, extract the source hostnames, then check if any of those hostnames appear as entities in open Insights.`
 
-`Find all Insights tagged 'ransomware' or 'lateral-movement' from the past 30 days, get the signals for each, and run a log search aggregating activity by user account involved.`
+* `Find all Insights tagged 'ransomware' or 'lateral-movement' from the past 30 days, get the signals for each, and run a log search aggregating activity by user account involved.`
 
-`Look up all Insights where entity type is 'username' and the value contains 'svc-' (service accounts), then search logs for those accounts' authentication events in the last week.`
+* `Look up all Insights where entity type is 'username' and the value contains 'svc-' (service accounts), then search logs for those accounts' authentication events in the last week.`
 
 ### Incident response
 
-`Get Insight [ID], pull its full signal list and all involved entities, search raw logs for each entity in the last 6 hours, then post a summary comment back to the Insight.`
+* `Get Insight [ID], pull its full signal list and all involved entities, search raw logs for each entity in the last 6 hours, then post a summary comment back to the Insight.`
 
-`Find all Insights that were closed as 'False Positive' in the last 30 days, group them by rule ID, and search logs to see if those same patterns are still occurring today.`
+* `Find all Insights that were closed as 'False Positive' in the last 30 days, group them by rule ID, and search logs to see if those same patterns are still occurring today.`
 
-`Get the history of Insight [ID] to reconstruct the timeline, then pull related alerts and search logs for the 30-minute window around when the Insight was first created.`
+* `Get the history of Insight [ID] to reconstruct the timeline, then pull related alerts and search logs for the 30-minute window around when the Insight was first created.`
 
 ### Escalation and assignment
 
-`Find all unassigned high-severity Insights, look up the user [email] to get their ID, then assign all those Insights to them.`
+* `Find all unassigned high-severity Insights, look up the user [email] to get their ID, then assign all those Insights to them.`
 
-`Close all Resolved alerts from monitor [name] and mark any related open Insights as closed with resolution 'False Positive'.`
+* `Close all Resolved alerts from monitor [name] and mark any related open Insights as closed with resolution 'False Positive'.`
 
-`Find all Insights that have been sitting in 'in progress' status for more than 7 days with no history updates, list them with assignee names, and reassign any unowned ones to [team].`
+* `Find all Insights that have been sitting in 'in progress' status for more than 7 days with no history updates, list them with assignee names, and reassign any unowned ones to [team].`
 
 ### Situational awareness
 
-`List all Triggered Critical alerts right now, find related alerts for each, then search logs for the top affected source IP to see what it's been doing.`
+* `List all Triggered Critical alerts right now, find related alerts for each, then search logs for the top affected source IP to see what it's been doing.`
 
-`Summarize all Insights created in the last 24 hours: how many per severity, which entities are involved, and who they're assigned to.`
+* `Summarize all Insights created in the last 24 hours: how many per severity, which entities are involved, and who they're assigned to.`
 
-`Show me all Triggered alerts that have related alerts fired within 30 minutes of them, then check if any of those correlated alert clusters have spawned an Insight.`
+* `Show me all Triggered alerts that have related alerts fired within 30 minutes of them, then check if any of those correlated alert clusters have spawned an Insight.`
 
 ### Entity-centric investigation
 
-`Given IP address [x.x.x.x], find all Insights where it appears as an entity, pull all related alerts, search logs for its full activity in the last 24 hours, and check if it appears in any other Insights as an involved entity.`
+* `Given IP address [x.x.x.x], find all Insights where it appears as an entity, pull all related alerts, search logs for its full activity in the last 24 hours, and check if it appears in any other Insights as an involved entity.`
 
-`Find the most active entity by Insight count in the last 14 days, get all its Insights with full signal details, then build a timeline dashboard of its activity.`
+* `Find the most active entity by Insight count in the last 14 days, get all its Insights with full signal details, then build a timeline dashboard of its activity.`
 
-`Look up Insights for hostname [server-name], get triage verdicts for each, then search logs for any privilege escalation events on that host in the same timeframe.`
+* `Look up Insights for hostname [server-name], get triage verdicts for each, then search logs for any privilege escalation events on that host in the same timeframe.`
 
 ### Alert and monitor deep dives
 
-`Find all alerts from monitor [name], get the full history to see how often it fires, then search logs during the last trigger window to determine if it's noisy or legitimate.`
+* `Find all alerts from monitor [name], get the full history to see how often it fires, then search logs during the last trigger window to determine if it's noisy or legitimate.`
 
-`Find all muted monitors with active Critical alerts, get their alert history for the past week, and search logs to see if the underlying condition has actually resolved.`
+* `Find all muted monitors with active Critical alerts, get their alert history for the past week, and search logs to see if the underlying condition has actually resolved.`
 
 ### Cross-tool correlation
 
-`Find all alerts that fired in the last hour, check if any of them are related to existing open Insights, and for those that aren't — search logs to determine if a new Insight should be escalated manually.`
+* `Find all alerts that fired in the last hour, check if any of them are related to existing open Insights, and for those that aren't — search logs to determine if a new Insight should be escalated manually.`
 
-`Compare Insight volume week-over-week: pull Insights from the last 7 days vs the 7 days before that, broken down by severity, and identify any rules that are newly firing this week.`
+* `Compare Insight volume week-over-week: pull Insights from the last 7 days vs the 7 days before that, broken down by severity, and identify any rules that are newly firing this week.`
 
-`Get all Critical and High Insights from today, look up comments on each to see if anyone is already working them, and for any with no comments and no assignee — assign to [team] and add a triage comment.`
+* `Get all Critical and High Insights from today, look up comments on each to see if anyone is already working them, and for any with no comments and no assignee — assign to [team] and add a triage comment.`
 
 ### Team operations and reporting
 
-`List all users on the security team, then for each one show how many open Insights are assigned to them and what their oldest unresolved Insight is.`
+* `List all users on the security team, then for each one show how many open Insights are assigned to them and what their oldest unresolved Insight is.`
 
-`Generate a weekly report: count Insights by severity and status, show the top 5 most triggered monitors from alerts, and list the 3 most common entity types involved in new Insights.`
+* `Generate a weekly report: count Insights by severity and status, show the top 5 most triggered monitors from alerts, and list the 3 most common entity types involved in new Insights.`
 
 ### Dashboard and data
 
-`Search for the top 10 source IPs generating authentication errors in the last hour, then create a dashboard panel showing those results.`
+* `Search for the top 10 source IPs generating authentication errors in the last hour, then create a dashboard panel showing those results.`
 
-`Get the current SIEM overview dashboard, add a new panel for open Critical Insights count, and save it.`
+* `Get the current SIEM overview dashboard, add a new panel for open Critical Insights count, and save it.`
 
 ## Usage guidance and cost controls
 
