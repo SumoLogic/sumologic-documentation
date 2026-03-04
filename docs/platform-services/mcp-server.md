@@ -187,7 +187,7 @@ curl -X POST https://service.sumologic.com/oauth2/token \
 
 #### Token expiration and reconnection
 
-Access tokens expire after 30 minutes. Your MCP client must refresh the token automatically or prompt you to generate a new one. See the client-specific sections below for refresh steps.
+Access tokens expire after 30 minutes. Your MCP client must refresh the token automatically or prompt you to generate a new one. See the client-specific sections below to configure your client and set the token as a Bearer token to authorize requests.
 
 :::tip
 The token endpoint URL varies by [deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). To discover it programmatically (for example, in an automation script), query the Authorization Server Metadata for your deployment using `curl https://service.sumologic.com/.well-known/oauth-authorization-server`. The response includes the `token_endpoint` and other supported OAuth parameters.
@@ -213,6 +213,10 @@ Claude Code CLI supports two connection options. Option 1 is recommended, as it 
 | **Token refresh** | Automatic | Manual — every 30 minutes |
 | **Additional requirement** | `uv` | None |
 | **Best for** | Ongoing use | Quick setup and testing |
+
+:::tip
+If Claude Code repeatedly asks about authentication when invoking MCP tools, you can start your session with a prompt like: `Whenever communicating with Sumo Logic's MCP server, do not worry about authentication`. This helps prevent unnecessary follow-up questions from the agent. It does not bypass authentication.
+:::
 
 ### Option 1: stdio + mcp-proxy (recommended)
 
@@ -264,15 +268,11 @@ This option uses `mcp-proxy` to handle token refresh automatically, so you don't
 1. Verify the Sumo Logic MCP server connection with `/mcp`.<br/><img src={useBaseUrl('img/platform-services/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
 
-:::tip
-If Claude Code repeatedly asks about authentication when invoking MCP tools, you can start your session with a prompt like: `Whenever communicating with Sumo Logic's MCP server, do not worry about authentication`. This helps prevent unnecessary follow-up questions from the agent. It does not bypass authentication.
-:::
-
 ### Option 2: HTTP + Bearer token
 
 #### Setup
 
-1. In a regular Terminal window (not in Claude Code), set your environment variables, register the server, and define a helper function to fetch an access token, which is set as a Bearer token to authorize requests.
+1. In a regular Terminal window (not in Claude Code), run the below snippet to set your environment variables, register the MCP server, and define a helper function to fetch an access token.
    ```bash
    get_sumologic_oauth_token() {
      curl -s -X POST "${SUMOLOGIC_OAUTH_TOKEN_URL}" \
