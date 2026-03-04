@@ -9,6 +9,8 @@ import Iframe from 'react-iframe';
 
 Flex Pricing delivers a new financial model for log management in which you can centralize, store, and analyze all application, infrastructure, and security data in one place. This drives collaboration and velocity while delivering a reliable and secure digital experience. 
 
+:::training Micro Lesson
+
 <Iframe url="https://fast.wistia.net/embed/iframe/0sudpuhk83?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
@@ -20,6 +22,8 @@ Flex Pricing delivers a new financial model for log management in which you can 
   allow="autoplay; fullscreen"
   allowfullscreen
 />
+
+:::
 
 :::info
 To set up and configure the Flex app, refer to [Flex](/docs/integrations/sumo-apps/flex/).
