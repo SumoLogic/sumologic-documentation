@@ -107,12 +107,21 @@ module.exports = {
               'training',
             ],
           },
+          exclude: [
+            '**/reuse/**',
+            '**/ja/**',
+          ],
         },
         sitemap: {
           lastmod: 'date',
           changefreq: 'daily',
           ignorePatterns: [
             '/docs/reuse/**',
+            '/docs/beta/**',
+            '/ja/**',
+            '/files/**',
+            '/release-notes-*/archive/**',
+            '/release-notes-*/2021/**',
             '/tags/**'
           ],
           filename: 'sitemap.xml',
