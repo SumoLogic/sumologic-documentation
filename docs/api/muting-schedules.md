@@ -17,17 +17,19 @@ The Muting Schedules Management API allows you to pause alert notifications from
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                      |
-|:-----------|:-------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement |
-| JP         | https://api.jp.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
-| US1        | https://api.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
+
 
 ## Required role capabilities
 
