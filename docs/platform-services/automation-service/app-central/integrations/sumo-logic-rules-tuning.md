@@ -10,8 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.0  
 Updated: Mar 4, 2026***
 
-
-Rule tuning expressions are a powerful feature, allowing users to extend a rule’s match expression by appending additional match logic. This enables extending rules without having to duplicate an existing rule for customization, also missing out on possible future improvements from the Sumo Logic Threat Labs team; this feature is a key tool in customizing Sumo Logic’s OOTB rules to individual organizations.
+[Rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/) are a powerful feature, allowing users to extend a Cloud SIEM rule’s match expression by appending additional match logic. This enables extending rules without having to duplicate an existing rule for customization and missing out on possible future improvements from the Sumo Logic Threat Labs team. This feature is a key tool in customizing Sumo Logic’s OOTB rules to individual organizations.
 
 ## Actions
 
