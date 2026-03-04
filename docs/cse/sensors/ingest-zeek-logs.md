@@ -119,10 +119,6 @@ The Network Sensor extracts files observed over cleartext protocols that match s
 * `application/x-msdownload`
 * `application/x-msdos-program`
 
-:::note
-YARA [file analysis](/docs/cse/rules/import-yara-rules) is supported only for files extracted by the Network Sensor. If you use your own Zeek deployment and ingest logs using a Sumo Logic source you can't also upload extracted files. 
-:::
-
 ### Filtering Zeek logs
 
 This section describes two methods you can use to filter the logs that the Network Sensor sends to Cloud SIEM.
