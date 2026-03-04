@@ -126,6 +126,22 @@ export const features3 = [
     </Translate>),
     link: 'docs/search/mobot',
   },
+  {
+    title: translate({
+      id: 'landing.feature.dojo-ai.title',
+      message: 'Dojo AI Platform',
+      description: 'Title for Dojo AI platform overview',
+    }),
+    imageUrl: 'img/icons/operations/human-to-machine.png',
+    description: (
+      <Translate
+        id='landing.feature.dojo-ai.desc'
+        description='Dojo AI platform teaser description'>
+        Explore our evolving AI capabilities built to accelerate investigation, automate workflows, and surface insights across your observability and security data.
+      </Translate>
+    ),
+    link: 'https://www.sumologic.com/solutions/dojo-ai',
+  },
 ];
 
 // After it goes GA: docs/cse/get-started-with-cloud-siem/soc-analyst-agent
