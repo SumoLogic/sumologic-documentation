@@ -34,6 +34,57 @@ module.exports = {
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
   headTags: [
+    // Intellimize
+    {
+      tagName: 'style',
+      attributes: {},
+      innerHTML:
+        '.anti-flicker, .anti-flicker * { visibility: hidden !important; opacity: 0 !important; }',
+    },
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML:
+        "(function(e,t,p){var n=document.documentElement,s={p:[],r:[]},u={p:s.p,r:s.r,push:function(e){s.p.push(e)},ready:function(e){s.r.push(e)}};e.intellimize=u,n.className+=' '+p,setTimeout(function(){n.className=n.className.replace(RegExp(' ?'+p),'')},t)})(window, 4000, 'anti-flicker');",
+    },
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML: `(function() {
+        var s = document.createElement('script');
+        s.src = 'https://cdn.intellimize.co/snippet/117845498.js';
+        s.async = true;
+        s.onerror = function() {
+          document.documentElement.className =
+            document.documentElement.className.replace(RegExp(' ?anti-flicker'), '');
+        };
+        document.head.appendChild(s);
+      })();`,
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://api.intellimize.co',
+        crossorigin: 'anonymous'
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://117845498.intellimizeio.com'
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://log.intellimize.co',
+        crossorigin: 'anonymous'
+      },
+    },
+    // Sumo Logic RUM
     {
       tagName: 'script',
       attributes: {},
