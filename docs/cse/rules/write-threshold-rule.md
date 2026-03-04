@@ -25,7 +25,7 @@ You can use Terraform to manage threshold rules with the [`sumologic_cse_thresho
 
 A threshold rule fires when its rule expression is matched at least a certain number of times during a specified length of time. For example, if there are five or more failed login attempts for the same IP address within one hour. 
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Watch this micro lesson to learn how to create a threshold rule.
 
