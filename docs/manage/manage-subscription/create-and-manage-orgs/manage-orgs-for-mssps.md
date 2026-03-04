@@ -36,7 +36,7 @@ You can push the following:
 * Cloud SIEM [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/)
 * [Library](/docs/get-started/library)
 * [Monitors](/docs/alerts/monitors/)
-* [Source Template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/)
+* [Source templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates/)
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.
 1. Select the **Manage Content** tab.
@@ -53,7 +53,7 @@ You can push the following:
 1. Click **Push**. A **Pushing in progress** dialog is displayed. 
 1. (Optional) If required, follow the below steps to stop the push:
    1. Click the **Stop Push** button on the dialog box. <br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-button.png')} alt="stop-push-button" style={{border: '1px solid gray'}} width="500"/>
-   1. Click **Stop Push** on the confirmation pop-up. To view the results table, refer to [View Results](#view-results).<br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-confirmation.png')} alt="stop-push-confirmation" style={{border: '1px solid gray'}} width="400"/>
+   1. Click **Stop Push** on the confirmation pop-up. To view the results table, refer to [View results](#view-results).<br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-confirmation.png')} alt="stop-push-confirmation" style={{border: '1px solid gray'}} width="400"/>
 
 ### Tips
 
