@@ -18,7 +18,7 @@ Certification exams are paid and live‑proctored through our assessment partner
 * [**Sumo Logic Partner Training**](https://partnertraining.sumologic.com), dedicated technical training for Sumo Logic partners. To sign up, you'll need an access code, which you can obtain from your account manager.
 * [**Sumo Logic Certified**](#certifications), our certification program for Sumo Logic Academy, allowing you to certify via proctored exam and receive a digital credential reflecting your new, proven skillset.
 
-:::sumo micro lesson
+:::training Micro Lesson
 
 In this video, we'll walk through learning and certification offerings to help you maximize your investment in the Sumo Logic platform.
 
@@ -150,7 +150,7 @@ Both Analyst and Admin accounts are available for any learner to request. Choose
 
 ## Certifications
 
-:::sumo micro lesson
+:::training Micro Lesson
 
 Sumo Logic Academy certifications use proctored, skills-based exams with digital badges issued through Credly. We recommend six months of hands-on experience before registering.
 
