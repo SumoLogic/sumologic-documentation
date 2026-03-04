@@ -55,7 +55,6 @@ export const Home = () => {
           <Box
             component={SumoLogicDocsLogo}
             alt="Sumo Logic Docs logo"
-            role="<img>"
             aria-hidden="true"
             height={{
               md: 36,
@@ -71,7 +70,6 @@ export const Home = () => {
           sx={{
             bgcolor: 'white',
             backgroundImage: `url(${bgImage})`,
-            alt: 'hero image',
             backgroundPosition: {
               md: 'top',
               xs: 'left center',
@@ -197,10 +195,8 @@ export const Home = () => {
           </Container>
         </Stack>
 
-        {/* Main */}
+        {/* Product Guides */}
         <Container maxWidth='xl'>
-
-          {/* Product Guides */}
           <Stack
             alignItems='center'
             pb={5}
@@ -211,11 +207,7 @@ export const Home = () => {
               component='h2'
               fontFamily='Lab Grotesque'
               fontWeight={900}
-              mb={{
-                md: 'inherit',
-                sm: 4,
-                xs: 4,
-              }}
+              mb={4}
               textAlign='center'
               variant='h4'
             >
@@ -237,46 +229,20 @@ export const Home = () => {
                 onChange={(_, newTab) => setTab(newTab)}
                 sx={{
                   '& .MuiTabs-flexContainer': {
-                    flexWrap: {
-                      sm: 'wrap',
-                      xs: 'wrap',
-                    },
-                    justifyContent: {
-                      sm: 'center',
-                      xs: 'center',
-                    }
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
                   },
                 }}
-                TabIndicatorProps={{
-                  sx: {
-                    display: {
-                      sm: 'none',
-                      xs: 'none',
-                    },
-                  },
-                }}
+                TabIndicatorProps={{ sx: { display: 'none' } }}
                 value={tab}
               >
                 {[
-                  {
-                    label: 'Data Types',
-                  },
-                  {
-                    label: 'Infrastructure Monitoring',
-                  },
-                  {
-                    label: 'Multi-Cloud',
-                  },
-                  {
-                    label: 'Security and Incidents',
-                  },
-                  {
-                    label: 'Tools',
-                  },
-                  {
-                    label: 'Other Solutions',
-                  },
-                ].map(({ label, ...rest }, index) => (
+                  'Security',
+                  'Log Search',
+                  'Dojo AI',
+                  'Observability',
+                  'Alerts, Apps, Dashboards',
+                ].map((label, index) => (
                   <Tab
                     key={label}
                     label={label}
@@ -286,22 +252,19 @@ export const Home = () => {
                       fontWeight: 'bold',
                     }}
                     value={String(index)}
-                    {...rest}
                   />
                 ))}
               </Tabs>
-              {features.map((feature, index) => tab === String(index) && (
+              {features.map((featureGroup, index) => (
                 <Grid
                   component={TabPanel}
                   container
-                  direction='row'
                   justifyContent='center'
                   key={index}
-                  py={6}
                   spacing={4}
                   value={String(index)}
                 >
-                  {feature.map((config) => (
+                  {featureGroup.map((config) => (
                     <Grid
                       item
                       key={config.link}
@@ -310,7 +273,7 @@ export const Home = () => {
                       xs={12}
                     >
                       <Feature
-                        length={feature.length}
+                        length={featureGroup.length}
                         {...config}
                       />
                     </Grid>
