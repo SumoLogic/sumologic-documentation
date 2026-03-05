@@ -13,7 +13,7 @@ Despite all of these services being a part of AWS, troubleshooting across differ
 
 The Sumo Logic AWS Observability solution analyzes data across key AWS services and accounts, establishes activity baselines, and determines causes for application incidents and high deviation events.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Watch the following micro lesson to learn about our AWS Observability solution.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/fz0hceixkc?web_component=true&seo=true&videoFoam=false"

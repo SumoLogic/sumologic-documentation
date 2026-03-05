@@ -11,19 +11,19 @@ This page provides information about the query budget usage limits, which allows
 ## Ingestion - Throttling Limits
 
 :::info
-Only **Administrator** have the access to view the **Ingestion - Throttling Limits** section.
+Only administrators have the access to view the **Ingestion - Throttling Limits** section.
 :::
 
-This section provides information about the baseline and throttling limits set. Click **View Usage and Throttling Limits** button to view the logs, metrics, and traces ingestion rate over the selected time range. With [View Recent Breaches](/docs/manage/security/audit-indexes/audit-index/#throttling-events) button you can view recent throttling limit breaches.
+This section provides information about the baseline and throttling limits set. Click the **View Usage and Throttling Limits** button to view the logs, metrics, and traces ingestion rate over the selected time range. With the **View Recent Breaches** button you can view recent [throttling limit breaches](/docs/manage/security/audit-indexes/audit-index/#throttling-events).
 
 ### Enable Ingestion Throttling Notifications
 
 :::note
-Only users with **Administrator** access can enable this feature.
+Only users with administrator access can enable this feature.
 :::
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon and then **Preferences**. <br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences"style={{border: '1px solid gray'}}  width="300"/>
-1. Access your [Preferences](/docs/get-started/account-settings-preferences/#my-preferences).
+1. Access your [preferences](/docs/get-started/account-settings-preferences/#my-preferences).
 1. Navigate to **My Preferences** and check the **Enable ingestion throttling notifications** checkbox.<br/><img src={useBaseUrl('img/get-started/enable-ingestion-throttling-notifications.png')} alt="enable-ingestion-throttling-notifications"style={{border: '1px solid gray'}}  width="500"/>
 
 ## Availability
@@ -42,8 +42,8 @@ To manage the query size limit follow the below steps:
 
 :::info
 Sumo Logic defines scan as two types:
-  - **Foreground interactive search**. Search page UI, Mobot, and Dashboards.
-  - **Background search**. API, Scheduled Search, Monitor, Scheduled Views, and SLO. 
+  - **Foreground interactive search**. Search page UI, Mobot, and dashboards.
+  - **Background search**. API, scheduled search, monitor, scheduled views, and SLO. 
 :::
 
 :::note

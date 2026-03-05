@@ -34,7 +34,7 @@ Free accounts give you access to most Sumo Logic features, with a credit allocat
 
 <!-- are these numbers still accurate? -->
 
-Trial accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day providing approximately 500GB of search data volume daily or 15TB of search volume, 20 users, and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion) will be applied to your log ingest.
+Trial accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day providing approximately 500GB of search data volume daily or 15TB of search volume, 20 users, and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion/#log-throttling) will be applied to your log ingest.
 
 Trials are limited to 30 days. If you need to extend your trial period, contact our sales team to inquire about a Proof of Concept (PoC).
 
@@ -62,28 +62,27 @@ The following table provides a summary list of key features by Flex package acco
 |:------- | :--- | :---- | :------------- | :------------- |
 | Advanced Span Analytics |  | &#10003; | | &#10003; |
 | Anomaly Alerting |  | &#10003; | | &#10003; |
-| Alerting Integrations (Slack, PagerDuty, ServiceNow, etc.) | &#10003; | &#10003; | | &#10003; |
-| Alert Response | &#10003; | &#10003; | | &#10003; |
+| Alerting Integrations (Slack, PagerDuty, ServiceNow, etc.) | &#10003; | &#10003; | &#10003; | &#10003; |
+| Alert Response | &#10003; | &#10003; | &#10003; | &#10003; |
 | Anomaly Detection |  | &#10003; | | &#10003; |
 | Anomaly Rules |  | | | &#10003; |
-| APM and Distributed Tracing |  | &#10003; | | &#10003; |
-| Application Observability | &#10003; | &#10003; | | &#10003; |
+| APM and Distributed Tracing |  | &#10003; | &#10003; | &#10003; |
+| Application Observability | &#10003; | &#10003; | &#10003; | &#10003; |
 | Audit Index | &#10003; | &#10003; | &#10003; | &#10003; |
 | Automated Log-level Detection |  | | | &#10003; |
-| Automated Playbooks | &#10003; | &#10003; | | &#10003; |
+| Automated Playbooks | &#10003; | &#10003; | &#10003; | &#10003; |
 | Automated Remediation |  | &#10003; | | &#10003; |
-| Automation Service (playbooks for Insight enrichment, notifications, and containment actions) | &#10003; | &#10003; | | &#10003; |
+| Automation Service (playbooks for Insight enrichment, notifications, and containment actions) | &#10003; | &#10003; | &#10003; | &#10003; |
 | AWS CloudTrail and Amazon Guard Duty Threat Benchmarking | | &#10003; | | &#10003; |
 | Case Manager | |  | | &#10003; |
 | Cloud Infrastructure Security |  | &#10003; | | &#10003; |
-| Cloud Log Management | &#10003; | &#10003; | | &#10003; |
+| Cloud Log Management | &#10003; | &#10003; | &#10003; | &#10003; |
 | Cloud SIEM |  |  | | Activation required* |
 | Cloud Security Posture Monitoring |  | &#10003; | | &#10003; |
 | Cloud SOAR |  |  | | Activation required* |
 | Collector Management API | &#10003; | &#10003; | &#10003; | &#10003; |
 | Compliance and Audit Logging |  | &#10003; | | &#10003; |
-| Threat Intelligence |  | &#10003; | | &#10003; |
-| Customizable Dashboards | &#10003; | &#10003; | | &#10003; |
+| Customizable Dashboards | &#10003; | &#10003; | &#10003; | &#10003; |
 | Data Forwarding | | &#10003; | &#10003; | &#10003; |
 | Data Volume Index | | &#10003; | &#10003; | &#10003; |
 | Enterprise Audit and Logging Dashboards |  | &#10003; | | &#10003; |
@@ -93,13 +92,13 @@ The following table provides a summary list of key features by Flex package acco
 | Field Extraction | &#10003; | &#10003; | &#10003; | &#10003; |
 | Geo IP Lookups | | &#10003; | | &#10003; |
 | Global Intelligence Service apps |  |  | | &#10003; |
-| Historical and Live Streaming Dashboards | &#10003; | &#10003; | | &#10003; |
+| Historical and Live Streaming Dashboards | &#10003; | &#10003; | &#10003; | &#10003; |
 | Ingest Budgets |  | &#10003; | | &#10003; |
 | Insight Global Confidence Scores |  |  | | &#10003; |
 | Insight Rules Engine (including 900+ out-of-the-box rules) |  |  | | &#10003; |
 | Insight Trainer |  |  | | &#10003; |
-| Kubernetes Observability | &#10003; | &#10003; | |&#10003; |
-| Live Tail for Streaming Logs | &#10003; | &#10003; | | &#10003; |
+| Kubernetes Observability | &#10003; | &#10003; | &#10003; | &#10003; |
+| Live Tail for Streaming Logs | &#10003; | &#10003; | &#10003; | &#10003; |
 | LogReduce©, LogCompare, and LogExplain | &#10003; | &#10003; | &#10003; | &#10003; |
 | Log Data Continuous Volume | &#10003; | &#10003; | &#10003; |  |
 | Log Data Frequent Tier Volume | | &#10003; | &#10003; |  |
@@ -107,7 +106,7 @@ The following table provides a summary list of key features by Flex package acco
 | Log Search and Visualizations | &#10003; | &#10003; | | &#10003; |
 | Log Search API |  |  | | &#10003; |
 | Lookup Tables |  | &#10003; | &#10003; | &#10003; |
-| Management APIs | &#10003; | &#10003; | | &#10003; |
+| Management APIs | &#10003; | &#10003; | &#10003; | &#10003; |
 | Metrics | &#10003; | &#10003; | &#10003; | &#10003; |
 | Metrics based SLOs |  | | |&#10003; |
 | Metrics data retention | &#10003; | &#10003; | &#10003; | &#10003; |
@@ -115,13 +114,13 @@ The following table provides a summary list of key features by Flex package acco
 | Metrics volume | &#10003; | &#10003; | &#10003; | &#10003; |
 | MITRE ATT&CK Coverage Explorer |  | | | &#10003; |
 | Monitors | &#10003; | &#10003; | &#10003; | &#10003; |
-| Multi-Cloud Observability (AWS, Azure GCP) | &#10003; | &#10003; | |&#10003; |
-| OTel Data Onboarding | &#10003; | &#10003; | |&#10003; |
+| Multi-Cloud Observability (AWS, Azure GCP) | &#10003; | &#10003; | &#10003; | &#10003; |
+| OTel Data Onboarding | &#10003; | &#10003; | &#10003; | &#10003; |
 | OTel for K8s Logs and Events |  |  | |&#10003; |
 | Partitions | &#10003; | &#10003; | &#10003; | &#10003; |
 | PCI Compliance Apps and Dashboards for Audit Readiness | | &#10003; | | &#10003; |
 | Playbooks (including complete Sumo Logic playbook catalog) |  |  | | &#10003; |
-| Predictive Analytics and Outlier Detection | &#10003; | &#10003; | | &#10003; |
+| Predictive Analytics and Outlier Detection | &#10003; | &#10003; | &#10003; | &#10003; |
 | Progressive Automation |  |  | | &#10003; |
 | Real User Monitoring (RUM) |  | &#10003; | &#10003; |&#10003; |
 | Reliability Management (SLIs/SLOs) |  | | |&#10003; |
@@ -130,12 +129,13 @@ The following table provides a summary list of key features by Flex package acco
 | Scheduled Views | &#10003; | &#10003; | &#10003; | &#10003; |
 | Service Maps |  | &#10003; | |&#10003; |
 | Single sign-on (SSO) with SAML | &#10003; | &#10003; | &#10003; | &#10003; |
-| Software Development Optimization | &#10003; | &#10003; | | &#10003; |
+| Software Development Optimization | &#10003; | &#10003; | &#10003; | &#10003; |
 | Sumo Logic Apps | &#10003; | &#10003; | &#10003; | &#10003; |
 | Support | &#10003; | &#10003; | &#10003; | &#10003; |
+| Threat Intelligence |  | &#10003; | &#10003; | &#10003; |
 | Traces | &#10003;<br/>Up to 1.5GB per day* | &#10003;<br/>Up to 5GB per day | &#10003;<br/>5GB per day| &#10003;<br/>Up to 5GB per day |
 | Scan Budget |  |  | | &#10003; |
-| Organization Usage Limits | &#10003; | &#10003; | | &#10003; |
+| Organization Usage Limits | &#10003; | &#10003; | &#10003; | &#10003; |
 | User and Role APIs | &#10003; | &#10003; | &#10003; | <br/>Up to 5GB per day |
 | War Room | |  | | &#10003; |
 
@@ -192,7 +192,7 @@ This panel provides analytics to monitor and compare usage against contract capa
    * **Tracing Ingest**. Credits used for tracing.  
    * **Cloud SIEM Ingest**. Credits used for logs in Cloud SIEM.  
    * **Metrics Ingest**. Credits used for metrics.  
-   * **Promotional Categories**. See [Promotional Credits](#promotional-credits).  
+   * **Promotional Categories**. See [Promotional credits](#promotional-credits).  
 * **Usage % Change**. Highlights changes in usage over selected time intervals.  
 * Track credit consumption against the plan’s baseline usage.  
 * Drill into specific time intervals (day, week, or month) for granular insights.  
@@ -200,13 +200,13 @@ This panel provides analytics to monitor and compare usage against contract capa
 * Hover over charts for detailed information.  
 * Download usage reports or credit usage data as CSV files.  
 
-#### Promotional Credits  
+#### Promotional credits  
 
-There are times when Sumo Logic promotes services and consumables through the provision of Promotional Credits. Promotional Credits are non-transferrable and auto-expire at the end of the promotion period. In other words, if the Promotional Credits are not used within the promotion period, they do not carry over. They are of a "use it or lose it" nature. Promotional Credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional Credit consumption is calculated separately from the credits you paid for in your contract period. Promotional Credits are utilized as the priority credit for the specified credit variable.
+There are times when Sumo Logic promotes services and consumables through the provision of promotional credits. Promotional credits are non-transferrable and auto-expire at the end of the promotion period. In other words, if the promotional credits are not used within the promotion period, they do not carry over. They are of a "use it or lose it" nature. Promotional credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional credit consumption is calculated separately from the credits you paid for in your contract period. Promotional credits are utilized as the priority credit for the specified credit variable.
 
-For example: If you have 10,000 Promotional Credits for "Metrics" in a 100,000-credit contract, the first 10,000 credits for Metrics will use Promotional Credits before switching to paid credits.  
+For example: If you have 10,000 promotional credits for "Metrics" in a 100,000-credit contract, the first 10,000 credits for Metrics will use promotional credits before switching to paid credits.  
 
-To filter and focus on Promotional Credits:  
+To filter and focus on promotional credits:  
 * Deselect all other usage categories.  
 * Refine further by deselecting specific credit types (e.g., Continuous Ingest, Storage).  
 

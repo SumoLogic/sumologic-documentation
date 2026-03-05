@@ -1,50 +1,50 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can create multiple SAML configurations in Sumo. To create an additional SAML configuration, click the plus (**+**) icon to create a new configuration. Enter the settings for the new configuration, as described the previous section.
+You can create multiple SAML configurations in Sumo Logic. To create an additional SAML configuration, click the plus (**+**) icon to create a new configuration. Enter the settings for the new configuration, as described the previous section.
 
 <img src={useBaseUrl('img/security/saml-config-list.png')} alt="Plus button on the Configuration List page" style={{border: '1px solid gray'}} width="500" />
 
 ### Require SAML for sign-in
 
-After you create a SAML configuration, you can require users to sign in using SAML and prevent users from bypassing SAML with a username and password for login. Before you do so, follow the instructions in Check SAML Usage.
+After you create a SAML configuration, you can require users to sign in using SAML and prevent users from bypassing SAML with a username and password for login. Before you do so, follow the instructions in [Check SAML Usage](#check-saml-usage).
 
 ### Check SAML Usage
 
-If you intend to require Sumo users to sign-in using SAML, as described in the following section, Require SAML for sign-in, it is a best practice to first check whether some users are still logging in directly, instead of using SAML. You can run the following query to see, for a particular time range, whether users signed in using SAML or with their username and password:
+If you intend to require Sumo Logic users to sign-in using SAML, as described in the following section, [Require SAML for sign-in](#require-saml-for-sign-in-1), it is a best practice to first check whether some users are still logging in directly, instead of using SAML. You can run the following query to see, for a particular time range, whether users signed in using SAML or with their username and password:
 
 ```sql
 _index=sumologic_audit action=login | count by class, sourceuser
 ```
 
 :::important
-This query depends upon data in the Sumo audit index. If the audit index is not enabled, the query will not return results. To enable the index, follow the instructions in Enable and Manage the Audit Index.
+This query depends upon data in the Sumo Logic audit index. If the audit index is not enabled, the query will not return results. To enable the index, follow the instructions in [Enable the audit index](/docs/manage/security/audit-indexes/audit-index/#enable-the-audit-index).
 :::
 
-The query results show, for each user that has accessed Sumo over the time range, the number of times they have logged in using SAML or by entering a Sumo username and password. In the class column:
+The query results show for each user that has accessed Sumo Logic over the time range, the number of times they have logged in using SAML or by entering a Sumo Logic username and password. In the class column:
 
 * "SAML" indicates the user signed in using SAML.  
 * "SESSION" indicates the user authenticated by entering a username and password.  
 
-If the same user accessed Sumo using both methods (SAML and direct logon) during the time range, the query results will include a row for each method, showing how many times each method was used.
+If the same user accessed Sumo Logic using both methods (SAML and direct logon) during the time range, the query results will include a row for each method, showing how many times each method was used.
 
 <img src={useBaseUrl('img/security/saml-use-query.png')} alt="Query results page showing a row for each method" style={{border: '1px solid gray'}} width="800" />
 
 ### Require SAML for sign-in
-Click Require SAML Sign In to require users to sign in using SAML.
+Click **Require SAML Sign In** to require users to sign in using SAML.
 
 :::tip
-After you lock down SAML, any new users you allowlist will have to select Forgot Password from the login screen to recover their credentials. This is because a SAML-locked down user does NOT have a password.
+After you lock down SAML, any new users you allowlist will have to select **Forgot Password** from the login screen to recover their credentials. This is because a SAML-locked down user does NOT have a password.
 :::
 
 <img src={useBaseUrl('img/security/require-saml.png')} alt="Require SAML toggle on the Configuration List page" style={{border: '1px solid gray'}} width="800" />
 
-Sumo automatically adds your account under **Allow these users to sign in using passwords in addition to SAML** as an allowlisted user as a preventative measure to ensure you’re still able to access Sumo if you run into issues.
+Sumo Logic automatically adds your account under **Allow these users to sign in using passwords in addition to SAML** as an allowlisted user as a preventative measure to ensure you’re still able to access Sumo Logic if you run into issues.
 
 Having only one user able to bypass SAML may not be convenient or practical if you have a global company or a large team. You can add additional allowlisted users by clicking the (+) icon next to **Allow these users to sign in using passwords in addition to SAML**:
 
 <img src={useBaseUrl('img/security/allow-users.png')} alt="Plus button on the allow users page" style={{border: '1px solid gray'}} width="600" />
 
-We do not recommend denying all users password access to Sumo even if you want to enforce log in by SAML. If you attempt to delete your last remaining allowlisted user, you will receive a warning that this is not a recommended practice:
+We do not recommend denying all users password access to Sumo Logic even if you want to enforce log in by SAML. If you attempt to delete your last remaining allowlisted user, you will receive a warning that this is not a recommended practice:
 
 <img src={useBaseUrl('img/security/prevent-password-based-login.png')} alt="Prevent Password-Based Sign In message" style={{border: '1px solid gray'}} width="400" />
 

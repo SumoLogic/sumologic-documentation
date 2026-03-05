@@ -142,10 +142,9 @@ This app uses SumoLogic’s Microsoft Graph Security source to collect [Alerts](
 ### Sample query
 
 ```sql title="Total Alerts"
-_sourceCategory="Labs/MicrosoftGraphSecurity"
-|json"id","status","severity","category","title","description","classification","determination","serviceSource","detectionSource","alertWebUrl" ,"comments[*]","evidence[*]"as  alert_id,status,severity,category,title,description,classification,determination,service_source,detection_source,alert_url,comments,evidence_info nodrop
-
-| where toLowerCase(service_source) = "microsoftdefenderforendpoint"
+_sourceCategory="Labs/MicrosoftGraphSecurity" id microsoftDefenderForEndpoint
+| json "id", "status", "severity", "classification", "serviceSource" as alert_id, status, severity, classification, service_source nodrop
+| where toLowerCase(service_source) matches "microsoftdefenderforendpoint"
 
 // global filters
 | where if ("{{severity}}" = "*", true, severity matches "{{severity}}")
@@ -203,14 +202,40 @@ Security teams can quickly identify which alert categories are most prevalent, v
 
 Geo-location mapping visualizes the alert origin, supporting risk assessment tied to specific regions. Together, these insights provide a balanced blend of historical context and real-time visibility, empowering teams to prioritize high-impact threats and respond effectively.
 
-Overall, this dashboard serves as an essential tool for maintaining situational awareness, tracking alert trends, and strengthening your organization’s response strategy against evolving endpoint threats.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure-Security-Microsoft-Defender-for-Endpoint/Azure-Security-Microsoft-Defender-for-Endpoint-Overview.png' alt="Azure-Security-Microsoft-Defender-for-Endpoint-Overview" />
+Overall, this dashboard serves as an essential tool for maintaining situational awareness, tracking alert trends, and strengthening your organization’s response strategy against evolving endpoint threats.<br/><img src={useBaseUrl('/img/integrations/microsoft-azure/Azure-Security-Microsoft-Defender-for-Endpoint-Overview.png')} alt="Azure-Security-Microsoft-Defender-for-Endpoint-Overview" />
 
 ### Security
 
 The **Azure Security - Microsoft Defender for Endpoint - Security** dashboard delivers a high-level view of your organization’s endpoint threat landscape, helping teams identify where risks concentrate and how they evolve over time. Visual trend panels illustrate changes in alert severity, revealing whether high-risk incidents are increasing and guiding prioritization of response efforts.
 
-Geo-location data highlights alerts emerging from risky countries, allowing teams to assess exposure to region-specific threats. The dashboard also surfaces critical context, such as the top user accounts with compromised roles, which can signal targeted attacks on privileged accounts.
+Geo-location data highlights alerts emerging from embargoed locations, allowing teams to assess exposure to region-specific threats. The dashboard also surfaces critical context, such as the top user accounts with compromised roles, which can signal targeted attacks on privileged accounts.
 
 In addition, the dashboard ranks the most frequently attacked devices and countries linked to suspicious or malicious IP activity, offering clarity on which assets and locations are most at risk. This intelligence supports more targeted defenses and timely intervention.
 
-By combining trend analysis, threat origins, and user risk insights, the Security dashboard equips analysts to recognize patterns, respond to emerging threats proactively, and bolster the organization’s overall security posture against complex endpoint attacks.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure-Security-Microsoft-Defender-for-Endpoint/Azure-Security-Microsoft-Defender-fo-Endpoint-Security.png' alt="Azure-Security-Microsoft-Defender-fo-Endpoint-Security" />
+By combining trend analysis, threat origins, and user risk insights, the Security dashboard equips analysts to recognize patterns, respond to emerging threats proactively, and bolster the organization’s overall security posture against complex endpoint attacks.<br/><img src={useBaseUrl('/img/integrations/microsoft-azure/Azure-Security-Microsoft-Defender-for-Endpoint-Security.png')} alt="Azure-Security-Microsoft-Defender-for-Endpoint-Security" />
+
+## Create monitors for Azure Security - Microsoft Defender for Endpoint app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure Security - Microsoft Defender for Endpoint alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `Microsoft Defender for Endpoint - Alerts Detected from Embargoed Locations` | This alert is triggered when activity is detected from a location flagged as high-risk, enabling you to monitor access attempts from unusual or restricted geographic regions. It enhances your ability to spot suspicious behaviour and potential threats originating from locations outside your organisation’s typical operating areas. | Critical | Count > 0 | 
+| `Microsoft Defender for Endpoint - High Severity Alerts` | This alert is triggered when a high-severity threat is detected, allowing you to promptly monitor and respond to potentially harmful events that may compromise endpoint security. It ensures critical incidents are prioritised for swift investigation and mitigation. | Critical | Count > 0|
+| `Microsoft Defender for Endpoint - Embargoed Device` | This alert is triggered when a single device generates multiple alerts, indicating potentially malicious behaviour. It helps you identify high-risk devices, monitor suspicious activity more effectively, and take swift action to prevent further compromise. | Critical | Count > 5 |
+
+## Upgrade/Downgrade the Azure Security - Microsoft Defender for Endpoint app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Security - Microsoft Defender for Endpoint app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

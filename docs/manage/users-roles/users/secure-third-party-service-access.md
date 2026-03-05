@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Within Sumo Logic, several links in the **Help** menu connect to third-party services, such as **Documentation**, **Support**, and **Community**.
 
-For security reasons, Sumo logic users may only access these third-party services once you verify your email address. If you have a Sumo Logic username and password, then your email address is verified.
+For security reasons, you may only access these third-party services once you verify your email address. If you have a Sumo Logic username and password, then your email address is verified.
 
 Users that do not authenticate to Sumo Logic using a username and password are required to complete the email verification process. This usually applies to users that log in using a third-party Single Sign-On (SSO) service implementing SAML, users that access Sumo Logic from the Heroku add-on, and users of other Sumo Logic integration partners that provide SSO.
 
@@ -21,7 +21,7 @@ To verify your email:
 
 Your email is verified, and you will be given access to the third-party service.
 
-## Secure Third-Party Access and New Organizations
+## Secure third-party access and new organizations
 
 When you create a new Sumo Logic organization, you will be logged in automatically the first time without using a password. This account is not yet activated or verified for SSO third-party access, but an activation email will be sent to you automatically.
 

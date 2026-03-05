@@ -10,13 +10,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Data forwarding to Google Cloud Storage (GCS) is available and is an on-demand feature. To enable access, contact your Sumo Logic executive or [Support](https://support.sumologic.com/support/s).
 :::
 
-This document outlines the instructions that needs to be followed to forward log data from a [partition](/docs/manage/partitions) or [Scheduled View](/docs/manage/scheduled-views) to an S3 or Google Cloud Storage (GCS) bucket. Only new data is forwarded from a partition or Scheduled View once it is set to forward data. 
+This document outlines the instructions that needs to be followed to forward log data from a [partition](/docs/manage/partitions) or [scheduled view](/docs/manage/scheduled-views) to an S3 or Google Cloud Storage (GCS) bucket. Only new data is forwarded from a partition or scheduled view once it is set to forward data. 
 
 To forward data to a storage bucket:
 1. [Configure forwarding destination](#configure-data-forwarding-destination).
 1. [Forward data to destination](#forward-datato-forwarding-destination) from a partition or schedule view.
 
-After data forwarding is configured, you should start to see file objects posted within your configured bucket. If your Scheduled View conducts aggregation, which is a best practice, your aggregate fields are automatically appended to the forwarded objects.
+After data forwarding is configured, you should start to see file objects posted within your configured bucket. If your scheduled view conducts aggregation, which is a best practice, your aggregate fields are automatically appended to the forwarded objects.
 
 :::note
 Data forwarding is not currently supported for data assigned to the Infrequent Tier. 
@@ -26,11 +26,11 @@ Data forwarding is not currently supported for data assigned to the Infrequent T
 
 * An administrator role on the partition where you want to set up forwarding.
 * Follow the instructions on [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to grant Sumo Logic permission to send data to the destination S3 bucket.
-* A partition or Scheduled View to push to Amazon S3 or Google Cloud Storage (GCS).
+* A partition or scheduled view to push to Amazon S3 or Google Cloud Storage (GCS).
 
 ## Forwarding interval 
 
-Messages are buffered during data ingest for either **approximately** five minutes or until 100MB of data is received, whichever is first. Then the buffered data is written to a new CSV file and forwarded after compression. 
+Messages are buffered during data ingest for either approximately five minutes or until 100MB of data is received, whichever is first. Then the buffered data is written to a new CSV file and forwarded after compression. 
 
 The limits mentioned here are upper limits. Actual file size may vary depending on the ingestion volume in scheduled views or partitions of an account. 
 
@@ -54,13 +54,13 @@ These file objects will contain the messages received as well as the system met
 * **sourceCategory**: Is returned blank.
 * **messageTime**: The parsed message time from the log message, as epoch.
 * **receiptTime**: The time the service originally received the message, as epoch.
-* **sourceID**: The unique ID of the Source configured to send the message to the service.
-* **collectorId**: The unique ID of the Collector configured to send the message to the service.
-* **count**: The message number from the specific log Source Name. These should be sequential for a specific Source file.
+* **sourceID**: The unique ID of the source configured to send the message to the service.
+* **collectorId**: The unique ID of the collector configured to send the message to the service.
+* **count**: The message number from the specific log source name. These should be sequential for a specific source file.
 * **format**: The timestamp format used to parse the message time from the log message.
 * **view**: The scheduled view or partition that the message is forwarded from.
 * **encoding**: The encoding of the original file contents.
-* **message**: The raw log message as read from the original Source.
+* **message**: The raw log message as read from the original source.
 * **field**: Aggregate fields are added based on your query.
 
 ### Ordering of fields in forwarded file
@@ -94,7 +94,7 @@ Where:
 
 ## Configure data forwarding destination
 
-Before you can [forward data](#forward-datato-forwarding-destination) from a partition or Scheduled View, you must create a destination that indicates the S3 or GCS bucket where you want to send the forwarded data.
+Before you can [forward data](#forward-datato-forwarding-destination) from a partition or scheduled view, you must create a destination that indicates the S3 or GCS bucket where you want to send the forwarded data.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Manage Data**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. 
 1. Click **+ Add Destination** to add a new destination.
@@ -106,42 +106,42 @@ Before you can [forward data](#forward-datato-forwarding-destination) from a par
             :::note
             You can create only one destination with a particular bucket name.  If you try to create a new destination with the bucket name of an existing destination, the new destination replaces the old one.
             :::
-        1. (Optional)**Description**. You can provide a meaningful description of the connection.
+        1. (Optional) **Description**. You can provide a meaningful description of the connection.
         1. **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in the prerequisite step [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
             * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
-            * For **Key access** enter the **Access Key ID** and **Secret Access Key**. See [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for details.
+            * For **Key access** enter the **Access Key ID** and **Secret Access Key**. See [Manage access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for details.
         1. **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.
         1. **Enable S3 server-side encryption**. Select the check box if you want the forwarded data to be encrypted. For more information, see [Using server-side encryption with Amazon S3 managed keys (SSE-S3)](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html) in AWS help.
     - For **Google Cloud Storage** as the destination type, follow the below steps:<br/><img src={useBaseUrl('img/manage/data-forwarding/create-GCS-destination.png')} alt="Create S3 Destination popup" style={{border: '1px solid gray'}} width="450"/>
         1. **Destination Name**. Enter a name to identify the destination.
-        1. **Bucket Name**. Enter the [exact name of the GCS bucket](https://cloud.google.com/storage/docs/buckets).
+        1. **Bucket Name**. Enter the [exact name of the S3 or GCS bucket](https://cloud.google.com/storage/docs/buckets).
             :::note
             You can create only one destination with a particular bucket name.  If you try to create a new destination with the bucket name of an existing destination, the new destination replaces the old one.
             :::
         1. (Optional) **Description**. Provide a meaningful description of the connection.
-        1. For **HMAC Access Key** and **HMAC Secret Key** enter the values collected from the Google platform service account. See [Manage HMAC keys for service account](https://cloud.google.com/storage/docs/authentication/managing-hmackeys#console_1) for details.
+        1. For **HMAC Access Key** and **HMAC Secret Key** enter the values collected from the Google platform service account. See [Manage HMAC keys for service account](https://cloud.google.com/storage/docs/authentication/managing-hmackeys) for details.
 1. **Active**. Select this check box to enable data forwarding for the entire bucket. To start forwarding data, you will also need to enable forwarding for the desired indexes, as described below.
 1. Click **Save**. <br/>If Sumo Logic is able to verify the credentials, the destination will be added to the list of destinations. If the destination is not added successfully, see [Error and alert conditions](#error-and-alert-conditions) for examples of errors that can occur. 
 
-Once the destination is created, you can start data forwarding for specific partitions or Scheduled Views as described in [Forward data to an forwarding destination](#forward-datato-forwarding-destination) below. 
+Once the destination is created, you can start data forwarding for specific partitions or scheduled views as described in [Forward data to forwarding destination](#forward-datato-forwarding-destination) below. 
 
 ## Forward data to forwarding destination
 
-Once you [configure date forwarding destination](#configure-data-forwarding-destination) that indicates the bucket to receive the data, you can forward data to the destination from partitions and Scheduled Views.
+Once you [configure the data forwarding destination](#configure-data-forwarding-destination) that indicates the bucket to receive the data, you can forward data to the destination from partitions and scheduled views.
 
-1. Depending on whether you want to forward data from a partition or a Scheduled View:
+1. Depending on whether you want to forward data from a partition or a scheduled view:
     * **Partition**: <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Manage Data**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. 
-    * **Scheduled View**: <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Manage Data**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**.
-1. Select the partition or Scheduled View for which you want to enable data forwarding and click the **Edit** button. The edit dialog for the partition or Scheduled View displays. Following is the edit dialog for a partition. <br/><img src={useBaseUrl('img/manage/data-forwarding/enable-option.png')} alt="Enable Data Forwarding checkbox" style={{border: '1px solid gray'}} width="450"/>
+    * **Scheduled view**: <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Manage Data**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**.
+1. Select the partition or scheduled view for which you want to enable data forwarding and click the **Edit** button. The edit dialog for the partition or scheduled view displays. Following is the edit dialog for a partition. <br/><img src={useBaseUrl('img/manage/data-forwarding/enable-option.png')} alt="Enable Data Forwarding checkbox" style={{border: '1px solid gray'}} width="450"/>
     :::tip
-    In addition to forwarding data from existing partitions and Scheduled Views, you can also enable data forwarding by selecting the **Enable Data Forwarding** check box when you first [create a partition](/docs/manage/partitions/flex/create-edit-partition-flex/) or [create a Scheduled View](/docs/manage/scheduled-views/add-scheduled-view/).
+    In addition to forwarding data from existing partitions and scheduled views, you can also enable data forwarding by selecting the **Enable Data Forwarding** check box when you first [create a partition](/docs/manage/partitions/flex/create-edit-partition-flex/) or [create a scheduled view](/docs/manage/scheduled-views/add-scheduled-view/).
     :::
 1. Click the **Enable Data Forwarding** checkbox. More options appear.
 1. **Destination Type**. You can either select **Amazon S3** or **Google Cloud Storage** as your destination type.
     - For **Amazon S3** as the destination type, follow the below steps:<br/><img src={useBaseUrl('img/manage/data-forwarding/specify-destination.png')} alt="Forwarding destination options" style={{border: '1px solid gray'}} width="450"/>
         1. **Forwarding Destination**. Choose one of the following:  
             * **Existing Amazon S3 Destination**. If you select this option, select the destination in the **Amazon S3 Destination** field below.
-            * **New Amazon S3 Destination**. Follow the instructions in [Configure data forwarding destination](#forward-datato-forwarding-destination) above to create a new S3 destination.
+            * **New Amazon S3 Destination**. Follow the instructions in [Configure data forwarding destination](#configure-data-forwarding-destination) above to create a new S3 destination.
         1. **Amazon S3 Destination**. If you chose **Existing Amazon S3 Destination** for the forwarding destination, select the destination here.
     - For **Google Cloud Storage** as the destination type, follow the below steps:<br/><img src={useBaseUrl('img/manage/data-forwarding/specify-destination-gcs.png')} alt="Forwarding destination options" style={{border: '1px solid gray'}} width="450"/>
         1. **Forwarding Destination**. Choose one of the following:  
@@ -178,13 +178,13 @@ Let's say you want to take data from Sumo Logic and run additional analysis on i
 Let's suppose you have an S3 or GCS bucket named `demo-bucket1` where you want to forward your Sumo Logic data. Do the following:
 
 1. [Create a destination](/docs/manage/data-forwarding/forward-data-from-sumologic/#configure-data-forwarding-destination) that points to the `demo-bucket1` bucket. For example, name it **Test destination**. 
-1. Open the partition or Scheduled View whose data you want to [forward data to the new destination](/docs/manage/data-forwarding/forward-data-from-sumologic/#configure-data-forwarding-destination).
-1. In the partition or Scheduled View, select **Enable Data Forwarding**, and fill out the fields that appear:
+1. Open the partition or scheduled view whose data you want to [forward data to the new destination](/docs/manage/data-forwarding/forward-data-from-sumologic/#configure-data-forwarding-destination).
+1. In the partition or scheduled view, select **Enable Data Forwarding**, and fill out the fields that appear:
     1. In **Destination Type** select **Amazon S3** or **Google Cloud Storage** depending on your requirement.
     1. In **Forwarding Destination** select any **Existing Destination**.
     1. In **Destination** select the name of the destination you created earlier, for example, **Test destination**. 
 1. Use the **Data Forwarding Configuration** section to specify whether to forward only log data, log data with metadata, or log data with metadata and enriched fields.
-1. Click **Save** on the partition or Scheduled View. The data will start forwarding to the selected destination bucket specified in the destination.
+1. Click **Save** on the partition or scheduled view. The data will start forwarding to the selected destination bucket specified in the destination.
 
 ## Error and alert conditions
 

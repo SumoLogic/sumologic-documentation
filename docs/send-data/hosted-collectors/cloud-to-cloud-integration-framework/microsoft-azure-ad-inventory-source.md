@@ -89,6 +89,10 @@ To configure a Microsoft Azure AD Inventory Source:
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Microsoft Azure AD Inventory source, consider installing the Sumo Logic app for [Microsoft Azure AD Inventory](/docs/integrations/saas-cloud/microsoft-azure-ad-inventory/) to visualize and analyze the collected data using prebuilt dashboards.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
