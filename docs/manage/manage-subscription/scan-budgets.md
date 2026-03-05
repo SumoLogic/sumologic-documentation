@@ -42,8 +42,8 @@ To create the query size limit using the **Advanced** configuration:
     - **Only allow background query scans**. A warning message will be displayed if you run a query that exceeds the budget set. This will block the foreground searches but will not impact any background searches/automated queries.
     :::info
     Sumo Logic defines scan as two types:
-    - **Foreground interactive search**. Search page UI, Mobot, and Dashboards.
-    - **Background search**. API, Scheduled Search, Monitors, Scheduled Views, and SLO. 
+    - **Foreground interactive search**. Search page UI, Mobot, and dashboards.
+    - **Background search**. API, scheduled search, monitors, scheduled views, and SLO. 
     :::
 1. **Details**. Enter the name for the scan budget.<br/><img src={useBaseUrl('/img/manage/account/create-scan-budget.png')} alt="create-scan-budget" style={{border:'1px solid gray'}} width="650"/>
 1. Click **Save** to create the scan budget.
@@ -70,7 +70,7 @@ To view the selected scan budget:
     - **Per Query Budget**. Limits the data (in GBs) that a single query can consume. If the query size exceeds the set limit, you will not be able to continue scanning until they are within the query size limit.
     - **Time phased budgets**. Limits the data (in GBs) that a single user or a group can consume based on the time phase selected while creating the budget.
   - **Status**. Describes if the scan budget is active or inactive.
-  - **Usage Category**. Describes the type of scan. For Flex this is shown as **Flex Scan** and for Data tier this is shown as **Infrequent Scan**.
+  - **Usage Category**. Describes the type of scan. For Flex this is shown as **Flex Scan** and for data tier this is shown as **Infrequent Scan**.
   - **Scope**. Displays the list of roles or users for whom the selected scan budget is applied for or excluded from.
   - **Capacity (per user)**. Describes the budget set for individual user search.
   - **Action when capacity reached**. Describes the type of action sected to notify when the budget limit is reached.

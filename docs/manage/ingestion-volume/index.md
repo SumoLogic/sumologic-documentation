@@ -14,7 +14,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/ingestion-volume/log-ingestion')}><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Log Ingestion</h4></a>
-  <p>Learn how the logs will be ingested across all Collectors.</p>
+  <p>Learn how the logs will be ingested across all collectors.</p>
   </div>
 </div>
 <div className="box smallbox card">

@@ -21,7 +21,7 @@ You can use Terraform to provide an OpenTelemetry collector with the [`sumologic
 <TerraformLink/>
 :::
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Watch this micro lesson to learn more about the benefits of using OenTelemetry collector.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/c39eyz8shl?web_component=true&seo=true&videoFoam=false"

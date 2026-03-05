@@ -25,7 +25,7 @@ Sumo Logic provides flexible account types within its Cloud Flex Legacy packagi
 * **Professional** accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account) from a Professional to an Enterprise account at any time.
 * **Enterprise** accounts, the premier Sumo Logic log management solution, are built to fit your organization's needs for data volume, data retention, and user management requirements. Enterprise accounts include [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) and [SAML-based SSO](/docs/manage/security/saml/set-up-saml). 
    :::note
-   [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets/) are only available for Enterprise accounts. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
+   [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets/) are only available for Enterprise accounts. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from collectors.
    :::
 
 The following table provides a summary list of key features by package accounts. 
@@ -44,7 +44,7 @@ The following table provides a summary list of key features by package accounts.
 | Log Data storage (Cloud Flex Accounts) | 4GB	 | 30GB | &#10003; | &#10003; |
 | Log Data volume | 500MB per day | 1GB per day* | &#10003; | &#10003; |
 | [LogReduce](/docs/search/behavior-insights/logreduce)  | &#10003; | &#10003; | &#10003; | &#10003; |
-| [Lookup Tables](/docs/search/lookup-tables) | none | Varies by the  account type being trialed | 10 tables per org | 100 tables per org |
+| [Lookup tables](/docs/search/lookup-tables) | none | Varies by the  account type being trialed | 10 tables per org | 100 tables per org |
 | Metrics |   | &#10003; | &#10003; | &#10003; |
 | Metrics data retention |  | &#10003; | &#10003; | &#10003; |
 | Metrics data retention |   | &#10003; | &#10003; | &#10003; |
@@ -57,10 +57,10 @@ The following table provides a summary list of key features by package accounts.
 | Users (Classic Accounts) | Three users | 20 users* | &#10003; | &#10003; |
 | User and Role APIs | &#10003; | &#10003; | &#10003; | &#10003; |
 
-\* Contact [Sumo Logic Sales](mailto:sales@sumologic.com) to customize your account to meet your organization's needs.
+\* Contact [Sumo Logic Sales](https://support.sumologic.com/support/s/) to customize your account to meet your organization's needs.
 
 :::important
-It's important to keep track of your daily usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Manage Ingestion.](../ingestion-volume/log-ingestion.md)
+It's important to keep track of your daily usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion.](/docs/manage/ingestion-volume/log-ingestion/)
 :::
 
 ## Account Limitations and Guidelines
@@ -73,47 +73,47 @@ An account that is within its limits is defined as using **Reserved Capacity.**
 
 ### Collection Limitations
 
-* The maximum number of Collectors allowed per organization is 10,000.
-* The maximum number of Sources allowed on a Collector is 1,000.
+* The maximum number of collectors allowed per organization is 10,000.
+* The maximum number of Sources allowed on a collector is 1,000.
 * The maximum number of Processing Rules allowed on a Source is 100.
 
 ### Continuous Query Limitations
 
-For all Sumo Logic account types (except for Sumo Logic Free) there is an overall limit of 200 continuous queries per Sumo Logic organization that can be run at one time. This includes Dashboard Panels, Alerts, and all other types of queries. 
+For all Sumo Logic account types (except for Sumo Logic Free) there is an overall limit of 200 continuous queries per Sumo Logic organization that can be run at one time. This includes dashboard panels, alerts, and all other types of queries. 
 
 ### Data Limits for Metrics
 
-For billing and reporting purposes, data volume for metrics is measured in Data Points per Minute (DPM). When the DPM limit is exceeded, data is cached on the host and the Source is throttled. The calculation of DPM varies according to the type of metric Source. For details, see [Data Limits for Metrics](../../metrics/manage-metric-volume/data-limits-for-metrics.md). 
+For billing and reporting purposes, data volume for metrics is measured in data points per minute (DPM). When the DPM limit is exceeded, data is cached on the host and the Source is throttled. The calculation of DPM varies according to the type of metric Source. For details, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics/). 
 
 ## Important notes on Sumo Logic Free accounts
 
 Using a Free account is a great way to get to know Sumo Logic. While you're trying the Sumo Logic service, here are important points to be aware of:
 
 * Free accounts run on seven-day intervals. This means that over the course of seven days, you cannot ingest more than a total of 3.5 GB of log data.
-* If you begin to reach the 500 MB daily limit, Sumo Logic sends an email to let you know. You can take action to [reduce the amount of data](../partitions/manage-indexes-variable-retention.md) you're uploading in order to stay below the limit.
+* If you begin to reach the 500 MB daily limit, Sumo Logic sends an email to let you know. You can take action to [reduce the amount of data](/docs/manage/partitions/manage-indexes-variable-retention/) you're uploading in order to stay below the limit.
 * If the 500 MB limit is surpassed, you'll receive an email letting you know that data in the Sumo Logic Cloud can no longer be searched (but additional data is still collected). However, if the data limit is fully exceeded, data collection stops (in addition to search being disabled). Disabled features will be available after your usage falls below 4 GB when averaged over seven days (this could take one day, or up to seven days, depending on the amount of data you've uploaded and where you've uploaded it).
 * In extreme situations, Free accounts may be disabled if the data volume continues to exceed the limits.
-* Free accounts are limited to 20 continuous queries, including [Dashboard Panels](/docs/dashboards/about).
-* Because Free accounts run on seven-day intervals, [Dashboard Panel](/docs/dashboards/about) queries may not use a time range longer than seven days.
+* Free accounts are limited to 20 continuous queries, including [dashboard panels](/docs/dashboards/about).
+* Because Free accounts run on seven-day intervals, [dashboard panel](/docs/dashboards/about) queries may not use a time range longer than seven days.
 * For Sumo Logic Apps, Free accounts are limited to install the [Log Analysis QuickStart app](/docs/integrations/sumo-apps/log-analysis-quickstart).
 * The limitations of a Free account cannot be changed, but you can upgrade to a Professional account at any time.
-* For information on throttling and account caps, see [Manage Ingestion](../ingestion-volume/log-ingestion.md).
+* For information on throttling and account caps, see [Log Ingestion](/docs/manage/ingestion-volume/log-ingestion/).
 
 ### Important notes on Sumo Logic Trial accounts
 
 Using a Trial account is a great way to learn about the advanced features of Sumo Logic. While you're trying the Sumo Logic service, there are a few points that are important to be aware of:
 
 * Trial accounts are allowed to burst up to 5 GB a day for short periods.
-* For information on throttling and account caps, see [Manage Ingestion](../ingestion-volume/log-ingestion.md).
+* For information on throttling and account caps, see [Log Ingestion](/docs/manage/ingestion-volume/log-ingestion/).
 
 ## Account Page
 
 The **Account** page displays information about your Sumo Logic organization, account type, billing period, and the number of users. It also allows the account owner to reassign the role of the Account Owner.
 
-[Data Tiers](/docs/manage/partitions/data-tiers) provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous and Frequent tiers, you can appropriately segment your data by use case and analytics needs, thus enabling you to optimize your analytics investments.
+[Data tiers](/docs/manage/partitions/data-tiers) provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous and Frequent tiers, you can appropriately segment your data by use case and analytics needs, thus enabling you to optimize your analytics investments.
 
 :::note
-[Data Tiers](/docs/manage/partitions/data-tiers) must be enabled on your plan to be able to access this functionality. For more information, contact your Sumo Logic Account Representative.
+[Data tiers](/docs/manage/partitions/data-tiers) must be enabled on your plan to be able to access this functionality. For more information, contact your Sumo Logic Account Representative.
 :::
 
 The top panel of the Account Overview page provides an at-a-glance view of your account information:
@@ -125,7 +125,7 @@ The top panel of the Account Overview page provides an at-a-glance view of your
 * **Continuous Ingest.** Shows your daily capacity for log ingest to the Continuous Data Tier, and your average daily usage. If the daily ingest average over the billing cycle is above your capacity, you will be charged the on-demand rate for the difference.
 * **Frequent Ingest**. Shows your daily capacity for log ingest to the Frequent Data Tier, and your average daily usage. If the daily ingest average over the billing cycle is above your capacity, you will be charged the on-demand rate for the difference.
 * **Metrics Ingest**. Shows your daily capacity for metrics ingest, and your average daily usage, both in DPM. If the daily ingest average over the billing cycle is above your capacity, you will be charged the on-demand rate for the difference. If your daily usage average is higher than your capacity, you will be charged the on-demand rate for the difference.
-* **Storage.** Shows your daily storage capacity and average daily storage usage. You can adjust capacity use by modifying your [retention periods](../partitions/manage-indexes-variable-retention.md).
+* **Storage.** Shows your daily storage capacity and average daily storage usage. You can adjust capacity use by modifying your [retention periods](/docs/manage/partitions/manage-indexes-variable-retention/).
 * **Auto Refresh Dashboard Panels.** Show the number of auto refresh dashboard panels you have set up. Compares the number allowed to the number already in use. For example, out of 200, 174 have been used.
 
 To view the Account page, do the following:
@@ -134,13 +134,13 @@ To view the Account page, do the following:
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/>The Account Overview tab of the Account page is shown by default.
 
 :::note
-You must have a role that grants you the [Account Overview capability](/docs/manage/users-roles/roles/role-capabilities/) to view the Account Overview tab.
+You must have a role that grants you the [Account Overview capability](/docs/manage/users-roles/roles/role-capabilities/#data-management) to view the Account Overview tab.
 :::
 
 <img src={useBaseUrl('img/manage/subscriptions/cloud-flex-account-page.png')} alt="Cloud Flex account page" style={{border: '1px solid gray'}} width="800" />
 
 :::note
-If you are your Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For information on these options, see [Manage Organization](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings).
+If you are your Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For information on these options, see [Manage Organization Settings](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings).
 :::
 
 <img src={useBaseUrl('img/manage/subscriptions/manage-org-links.png')} alt="Manage org links" style={{border: '1px solid gray'}} width="600" />
