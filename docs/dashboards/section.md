@@ -1,7 +1,7 @@
 ---
 id: section
 title: Group Dashboard Panels into Sections (Beta)
-description: Learn about how to use dashboard section. 
+description: Learn about how to group dashboard panels into sections. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
