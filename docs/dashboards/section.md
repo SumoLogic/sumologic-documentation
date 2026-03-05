@@ -1,6 +1,6 @@
 ---
 id: section
-title: Section (Beta)
+title: Group Dashboard Panels into Sections (Beta)
 description: Learn about how to use dashboard section. 
 ---
 
