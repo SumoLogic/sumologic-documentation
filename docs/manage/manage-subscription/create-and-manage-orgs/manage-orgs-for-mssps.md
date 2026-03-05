@@ -44,7 +44,7 @@ You can push the following:
 1. In the **Content** bar, select the content to be pushed:
    * **Cloud SIEM Rules**. For more information about Cloud SIEM rules, refer to [Cloud SIEM Rules](/docs/cse/rules/).
    * **Cloud SIEM Rule Tuning**. For more information about Cloud SIEM rule tuning expressions, refer to [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/).
-   * **Library**. For more information about Library items, refer to [Managing Your Sumo Logic Library](/docs/get-started/library).
+   * **Library**. For more information about Library items, refer to [Managing Your Sumo Logic Library](/docs/get-started/library). You can manage saved searches, scheuled searched, dashboards, and lookup tables items under Library.
    * **Monitors**. For more information about Monitors, refer to [Monitors](/docs/alerts/monitors/).
    * **Source Template**. For more information about source templates, refer to [OpenTelemetry Remote Management Source Templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates/).
 1. Select individual items to be pushed, or all items.
@@ -65,6 +65,7 @@ You can push the following:
    :::note
    Both **Scheduled Searches Connection** and **Scheduled Reports** will be available only when you select a library *folder*.
    :::
+* In the destination organization, if a lookup with the same name already exists and contains data, the push operation is automatically skipped and an error message is displayed. If a lookup table with the same name exists but does not contain any data, the push proceeds and the existing file is replaced with the new data.
 * **Monitor notifications**. Select **Include and Update Notifications** to copy the alert notification to the target organization. If the notification does not already exist, it will be created automatically. Select **Ignore Notifications** to exclude the alert notification, resulting in monitors being pushed without any active notifications.
 * **Source Templates**. Select **Skip the Push** to avoid pushing the source template with same name in the target organization. Select **Overwrite Source Template** to overwrite source template with same name in the target organization.
 
