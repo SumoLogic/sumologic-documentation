@@ -12,9 +12,28 @@ import Iframe from 'react-iframe';
 
 Log Search allows you to query and analyze log data sent to Sumo Logic. There are many features to help you use our robust Search Query Language, such as LogCompare, LogReduce, LogExplain, Lookup Tables, Subqueries, and Time Compare. See [Get Started with Search](/docs/search/get-started-with-search) to begin exploring your data in Sumo Logic.
 
-import TerraformLink from '../reuse/terraform-link.md';
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* Self-paced:
+    * [Mobot Essentials Self Paced](https://learn.sumologic.com/mobot-101)
+    * [Data Search](https://learn.sumologic.com/path/sumo-onboarding/data-search)
+    * [Query Language Basics Self-Paced](https://learn.sumologic.com/query-language-basics)
+    * [Search Mastery Self-Paced](https://learn.sumologic.com/search-mastery-self-paced-course)
+    * [Best Practices for Query Efficiency Workshop](https://learn.sumologic.com/path/sumo-onboarding/best-practices-for-query-efficiency)
+* Instructor-led virtual classes: Scroll down to
+    * [Certifications: Search Mastery](https://www.sumologic.com/learn/training?_certifications=search-mastery)
+    * [Workshop: Mobot Essentials](https://www.sumologic.com/learn/training?_workshops=mobot-essentials)
+    * [Workshop: Best Practices for Query Efficiency](https://www.sumologic.com/learn/training?_workshops=best-practices-for-query-efficiency)
+:::
 
 :::tip
+
+import TerraformLink from '../reuse/terraform-link.md';
+
 You can use Terraform to provide a search with the [`sumologic_log_search`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/log_search) resource.
 
 <TerraformLink/>

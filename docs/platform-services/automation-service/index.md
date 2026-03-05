@@ -9,6 +9,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Automation Service allows you to set up actions that run automatically when certain conditions are met. These automated actions help you to respond quickly to a wide arrange of events. 
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* Self-paced: [Automation Service Workshop Self-Paced](https://learn.sumologic.com/path/sumo-security/automation-service-workshop-self-paced)
+* Instructor-led virtual classes: Scroll down to [Workshops: Automation Workshop](https://www.sumologic.com/learn/training?_workshops=automation-workshop)
+:::
+
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper" >

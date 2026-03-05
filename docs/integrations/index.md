@@ -24,17 +24,16 @@ Some of the guides below are partner-specific, such as Amazon/AWS, Microsoft/Azu
 
 To check if an app is supported by your pricing plan, see [Apps and Sumo Logic Account Plans](/docs/integrations/account-plans).
 
-:::tip
-Learn the difference between our [Next-Gen Apps and Classic Apps](/docs/get-started/apps-integrations/#next-gen-apps).
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* Self-paced: [Fundamentals: Self-Paced](https://learn.sumologic.com/fundamentals-self-paced)
+* Instructor-led virtual classes: Scroll down to [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals)
 :::
 
-import TerraformLink from '../reuse/terraform-link.md';
-
-:::tip
-You can use Terraform to provide apps with the [`sumologic_app`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/app) resource.
-
-<TerraformLink/>
-:::
 
 :::training Micro Lesson
 Watch this tutorial to learn how to use our **App Catalog**.
@@ -51,6 +50,18 @@ Watch this tutorial to learn how to use our **App Catalog**.
   allowfullscreen
 />
 
+:::
+
+:::tip
+Learn the difference between our [Next-Gen Apps and Classic Apps](/docs/get-started/apps-integrations/#next-gen-apps).
+:::
+
+import TerraformLink from '../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide apps with the [`sumologic_app`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/app) resource.
+
+<TerraformLink/>
 :::
 
 <br/>

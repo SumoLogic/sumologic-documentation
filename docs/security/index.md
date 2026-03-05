@@ -20,8 +20,9 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 <SumoAcademy/>
 
 * Self-paced: [Security courses](https://learn.sumologic.com/path/sumo-security)
-* Instructor-led virtual classes: Scroll down to:
-    * [Certifications: Cloud SIEM and Logs for Security](https://www.sumologic.com/learn/training?_certifications=cloud-siem%2Clogs-for-security)
+* Instructor-led virtual classes: Scroll down to
+    * [Certifications: Cloud SIEM](https://www.sumologic.com/learn/training?_certifications=cloud-siem)
+    * [Certifications: Logs for Security](https://www.sumologic.com/learn/training?_certifications=logs-for-security)
     * [Workshops: Essential Cloud SIEM Skills for SOC Analysts](https://www.sumologic.com/learn/training?_workshops=essential-cloud-siem-skills-for-soc-analysts)
 :::
 

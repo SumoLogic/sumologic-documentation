@@ -14,6 +14,18 @@ See [Collection](/docs/send-data/collection) to learn about collectors, sources,
 
 This topic describes features and options that give you administration over accounts, roles, collectors, content sharing, field extraction rules, and much more.
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* Self-paced: 
+    * [Onboarding Fast-Track for Administrators](https://learn.sumologic.com/onboarding-fasttrack-for-admins)
+    * [Administration Self-Paced](https://learn.sumologic.com/administration-self-paced)
+* Instructor-led virtual classes: Scroll down to [Certifications: Administration](https://www.sumologic.com/learn/training?_certifications=administration)
+:::
+
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">

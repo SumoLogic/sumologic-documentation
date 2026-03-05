@@ -17,6 +17,20 @@ Metrics are an effective tool for monitoring, troubleshooting, and identifying t
 * Determine if an outage has occurred and restore service.
 * Determine why an event occurred and how it might be prevented in the future.
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* Self-paced: [Metrics Analytics Self-Paced](https://learn.sumologic.com/path/sumo-observability/metrics-analytics-self-paced)
+* Instructor-led virtual classes: Scroll down to [Metric Analytics](hhttps://www.sumologic.com/learn/training?_certifications=metrics-analytics)
+:::
+
+:::sumo
+To interact with other Sumo Logic users, post feedback, or ask a question about metrics, visit the [Sumo Logic Community](https://community.sumologic.com/s/topic/0TOE0000000gA6tOAE/Unified%20Logs%20and%20Metrics). 
+:::
+
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
@@ -74,8 +88,3 @@ Metrics are an effective tool for monitoring, troubleshooting, and identifying t
 </div>
 </div>
 
-<br/>
-
-:::sumo
-To interact with other Sumo Logic users, post feedback, or ask a question about metrics, visit the [Sumo Logic Community](https://community.sumologic.com/s/topic/0TOE0000000gA6tOAE/Unified%20Logs%20and%20Metrics). 
-:::

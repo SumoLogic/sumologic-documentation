@@ -11,6 +11,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic dashboards enable you to analyze logs and metrics data together on a single dashboard, providing a streamlined user experience.
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* Self-paced: [Fundamentals: Self-Paced](https://learn.sumologic.com/fundamentals-self-paced)
+* Instructor-led virtual classes: Scroll down to [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals)
+:::
+
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper">
