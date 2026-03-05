@@ -36,8 +36,8 @@ To delete a section in your dashboard, follow the below steps:
     - **Delete section only**. Removes the section but keeps the panels in the dashboard.
     - **Delete section and all its content**. Removes the section and all panels within it.
 
-## Sharing a dashboard with section
+## Sharing a dashboard with sections
 
-To share a dashboard with coworkers within your organization, refer to [Share a Dashboard](/docs/dashboards/share-dashboard-new/). When you share a dashboard with multiple section, queries will run and costs will be incured only for the sections in expanded state. Panels in the collapsed section do not execute any queries or incur scan costs until they are expanded.
+To share a dashboard with coworkers within your organization, refer to [Share a Dashboard](/docs/dashboards/share-dashboard-new/). When you share a dashboard with multiple sections, queries will run and costs will be incured only for the sections in expanded state. Panels in the collapsed section do not execute any queries or incur scan costs until they are expanded.
 
 Similarly, if **Autorefresh** is enabled for the dashboard, only panels with the expanded sections are refreshed. Panels in collapsed sections are not refreshed until the section is expanded.
