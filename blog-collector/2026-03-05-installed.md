@@ -6,4 +6,9 @@ keywords:
 hide_table_of_contents: true    
 ---
 
-In this release, we've enhanced the collector security and stability by upgrading the `io.netty:netty-codec-http` to **4.1.129.Final**, addressing the known security vulnerabilities (CVE-2025-67735).
+In this release, we've enhanced the security and stability of the collector with added support for security patches.
+
+#### Security fix
+
+- Upgraded `io.netty:netty-codec-http` to version **4.1.129.Final** to address known security vulnerability (CVE-2025-67735).
+- Upgraded `com.fasterxml.jackson.core` packages to use patched version **2.18.6** to address known security vulnerability (GHSA-72hv-8253-57qq).
