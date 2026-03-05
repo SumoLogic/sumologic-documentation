@@ -2403,7 +2403,6 @@ integrations: [
           'integrations/app-development/puppet',
         ],
       },
-      /*
        {
         type: 'category',
         label: 'Big Data',
@@ -2423,7 +2422,6 @@ integrations: [
           },
         ],
       },
-      */
       {
         type: 'category',
         label: 'Containers and Orchestration',
