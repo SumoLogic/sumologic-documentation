@@ -65,7 +65,7 @@ You can push the following:
    :::note
    Both **Scheduled Searches Connection** and **Scheduled Reports** will be available only when you select a library *folder*.
    :::
-* In the destination organization, if a lookup with the same name already exists and contains data, the push operation is automatically skipped and an error message is displayed. If a lookup table with the same name exists but does not contain any data, the push proceeds and the existing file is replaced with the new data.
+* In the destination organization, if a lookup with the same name already exists with a different schema and contains data, the push operation is automatically skipped and an error message is displayed. If a lookup table with the same name exists but does not contain any data, the push proceeds and the existing file is replaced with the new data.
 * **Monitor notifications**. Select **Include and Update Notifications** to copy the alert notification to the target organization. If the notification does not already exist, it will be created automatically. Select **Ignore Notifications** to exclude the alert notification, resulting in monitors being pushed without any active notifications.
 * **Source Templates**. Select **Skip the Push** to avoid pushing the source template with same name in the target organization. Select **Overwrite Source Template** to overwrite source template with same name in the target organization.
 
