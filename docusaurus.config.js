@@ -34,6 +34,15 @@ module.exports = {
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
   headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'help',
+        href: '/llms.txt',
+        type: 'text/plain',
+        title: 'LLM Documentation Index',
+      },
+    },
     // Intellimize
     {
       tagName: 'style',
