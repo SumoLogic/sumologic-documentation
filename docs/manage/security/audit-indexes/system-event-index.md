@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The System Event Index contains event logs in JSON format on system activities triggered by Sumo Logic, for example, throttling events, rules triggered, and so on. Examining system events allows you to monitor and audit system changes. Enterprise accounts have the System Event Index enabled and available to search by default. 
 
-This index is separate from the [Audit Event Index](/docs/manage/security/audit-indexes/audit-index), which shows user action events rather than events triggered by Sumo Logic. 
+This index is separate from the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/), which shows user action events rather than events triggered by Sumo Logic. 
 
 ## Documentation 
 
@@ -125,4 +125,4 @@ Each system event log has common keys that categorize it to a product area and p
 
 ## Index retention period
 
-By default, the retention period of the System index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partition `sumologic_system_events`. For more information, see [Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).
+By default, the retention period of the System index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partition `sumologic_system_events`. For more information, see [Created and Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).

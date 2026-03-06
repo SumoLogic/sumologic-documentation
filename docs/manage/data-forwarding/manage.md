@@ -24,7 +24,7 @@ The following actions are available on the **Data Forwarding** page. Hover over 
 * Click the **Edit** icon to make changes to the configuration.
 * Click the **Delete** icon to delete the destination. If the destination is currently active, you must deactivate it before it deleting it, as described in the following section.
 
-## Activate or Deactivate Data Forwarding
+## Activate or deactivate data forwarding
 
 If you’d like to start or stop forwarding data, you can activate or deactivate the S3 bucket. 
 
