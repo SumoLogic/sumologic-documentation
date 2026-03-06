@@ -80,7 +80,14 @@ You can delete a panel that you no longer need.
 
 ## Share a dashboard
 
-If required, toggle off the **Include current variable values in the URL** option to hide the variables and organiation details from the URL when you share the dashboard.
+If required, toggle off the **Include current variable values in the URL** option to hide the variables and organization details from the URL when you share the dashboard.
+
+## Create scheduled reports
+
+You can create a scheduled report to receive an email copy of the dashboard at your preferred frequency. To set one up, refer to [Scheduled Reports](/docs/dashboards/scheduled-report/).
+
+To ensure the scheduled report reflects data for the intended child organization, select the required child org(s) from the **Organization** dropdown under the **Select Variables** section.<br/><img src={useBaseUrl('/img/dashboards/scheduled_reports/select-child-org.png')} alt="Select child org from Organization dropdown" style={{border: '1px solid gray'}} width="300" />
+
 
 ## Limitations
 

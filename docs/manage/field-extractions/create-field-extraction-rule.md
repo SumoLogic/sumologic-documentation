@@ -24,7 +24,7 @@ You can use Terraform to provide a field extraction rule with the [`sumologic_fi
 <TerraformLink/>
 :::
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Learn how to create a FER through our video, "Creating a Field Extraction Rule".
 
