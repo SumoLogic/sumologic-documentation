@@ -173,7 +173,7 @@ See information about Library Content (searches, dashboards/reports, and folders
 
 ### Library Content - Monitors
 
-See monitors usage with based on users working with monitors, deletions and notifications.
+See monitors usage based on users working with monitors, deletions and notifications.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/audit-Library-Content-Monitors.png')} alt="test" />
 
