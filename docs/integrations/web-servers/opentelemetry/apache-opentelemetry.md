@@ -19,7 +19,7 @@ The diagram below illustrates the components of the Apache collection for each w
 
 The Sumo Logic app for Apache assumes:
 
-- The [NCSA extended/combined log file format ](http://httpd.apache.org/docs/current/mod/mod_log_config.html)has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/apachereceiver/documentation.md).
+- The [NCSA extended/combined log file format ](https://httpd.apache.org/docs/current/mod/mod_log_config.html)has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/apachereceiver/documentation.md).
 
 :::info
 This app includes [built-in monitors](#apache-alerts). For details on creating custom monitors, refer to [Create monitors for Apache app](#create-monitors-for-apache-app).

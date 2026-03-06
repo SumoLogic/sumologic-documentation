@@ -8,10 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/business/regional-partner-sales.png')} alt="icon" width="50"/>
 
-This guide has information about how to create and manage Sumo Logic Users. In Sumo Logic, an administrator controls access to capabilities and data by assigning capabilities and search filters to roles, and then assigning user to roles. For more information, see [Role-Based Access Control](../roles/role-based-access-control.md).
+This guide has information about how to create and manage Sumo Logic users. In Sumo Logic, an administrator controls access to capabilities and data by assigning capabilities and search filters to roles, and then assigning users to roles. For more information, see [Role-Based Access Control](/docs/manage/users-roles/roles/role-based-access-control/).
 
 :::note
-To manage users and roles, you must have the administrator role or your role must have been assigned the [manage users and roles capability](../roles/role-capabilities.md).
+To manage users and roles, you must have the administrator role or your role must have been assigned the [Manage Users and Roles capability](/docs/manage/users-roles/roles/role-capabilities/#user-management).
 :::
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access the Users page, in the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select  **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. 
@@ -66,7 +66,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/users-roles/users/offboard-user')}><img src={useBaseUrl('img/icons/operations/human-to-machine.png')} alt="User and flowchart icon" width="40"/><h4>Offboard a User</h4></a>
-  <p>Learn the steps to take when removing a user from your Org's Sumo Logic Account.</p>
+  <p>Learn the steps to take when removing a user from your organization's Sumo Logic Account.</p>
   </div>
 </div>
 <div className="box smallbox card">

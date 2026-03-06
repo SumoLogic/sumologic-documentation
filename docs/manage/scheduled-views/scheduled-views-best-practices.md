@@ -66,7 +66,7 @@ Do not use the Pct or Avg operators: they do not yield accurate results. Beca
 * Max
 * Sum
 
-## Scheduled View Validation
+## Scheduled View validation
 
 Scheduled View validation works this way:
 
@@ -103,7 +103,7 @@ _view=myScheduledView
 | totalseconds / totalcount as theaverage
 ```
 
-### Other Operators
+### Other operators
 
 **Count_Distinct, First, Last, Min, Max, Most_Recent, Least_Recent, Pct, Stddev, "Math Values", and RollingStd.**   
 Create the Scheduled View with a **count** operator to count by the fields you want to aggregate with instead of the unsupported operator. Then you can reference the View and run the aggregation you want.
@@ -135,11 +135,11 @@ _view=Points
 | most_recent(points_withtime) as last_result by ip
 ```
 
-## Scheduled View Examples
+## Scheduled View examples
 
 Below are a few examples of queries that can be optimized with a Scheduled View. The original search, the Scheduled View definition, and the query that can be run on the Scheduled View are all shown.
 
-### Pre-Aggregating Data
+### Pre-aggregating data
 
 **Original Search:**
 
@@ -170,7 +170,7 @@ _view=myScheduledView
 ```
 
 
-### Improving Search Performance
+### Improving search performance
 
 **Original Search:**
 
@@ -194,7 +194,7 @@ _view=myScheduledView2
 Notice the parse statement will drop any log entries that do not contain the 192.\* internal IP string from the _sourceCategory. This will create a smaller subset of data that may be more appropriate for a Scheduled View. If you were searching through all of the IIS logs on a regular basis, a partition may be a better solution to improve query performance.
 :::
 
-### Lightweight vs Robust Scheduled View
+### Lightweight vs robust Scheduled View
 
 This Scheduled View query is lightweight, and contains only one group:
 

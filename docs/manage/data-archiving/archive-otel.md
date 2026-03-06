@@ -1,12 +1,12 @@
 ---
 id: archive-otel
 title: Archive Log Data to S3 using OpenTelemetry Collectors
-description: Learn how to archive log data to Amazon S3 using OpenTelemetry Collectors and ingest it on demand.
+description: Learn how to archive log data to Amazon S3 using OpenTelemetry collectors and ingest it on demand.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to archive log data to Amazon S3 using OpenTelemetry Collectors. Archiving allows you to store log data cost-effectively in S3 and ingest it later on demand, while retaining full enrichment and searchability when the data is re-ingested.
+This article describes how to archive log data to Amazon S3 using OpenTelemetry collectors. Archiving allows you to store log data cost-effectively in S3 and ingest it later on demand, while retaining full enrichment and searchability when the data is re-ingested.
 
 :::important
 Do not change the name or location of the archived files in your S3 bucket. Doing so will prevent proper ingestion later.
@@ -14,15 +14,15 @@ Do not change the name or location of the archived files in your S3 bucket. Doin
 
 ## Overview
 
-With the OpenTelemetry-based approach, log data is sent to S3 using an OpenTelemetry Collector pipeline:
+With the OpenTelemetry-based approach, log data is sent to S3 using an OpenTelemetry collector pipeline:
 
-**Sources** > **OpenTelemetry Collector** > **awss3exporter** > **Amazon S3**
+**Sources** > **OpenTelemetry collector** > **awss3exporter** > **Amazon S3**
 
 For S3 archiving, we use:
-- The `awss3exporter` component to upload data to S3. [Learn more](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/awss3exporter).
+- The `awss3exporter` component to upload data to S3. [Learn more](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/exporter/awss3exporter/README.md).
 - The `sumo_ic marshaller`, which formats the archived files so they are compatible with Sumo Logic’s ingestion process.
 
-### Why use OpenTelemetry Collector for archiving logs to S3
+### Why use OpenTelemetry collector for archiving logs to S3
 
 Compared to legacy Installed Collector-based archiving, the OpenTelemetry approach provides:
 - Full control over metadata enrichment
@@ -46,7 +46,7 @@ These attributes can be set statically in configuration, or populated dynamicall
 ## Archive format
 
 :::important
-Only the `v2` archive format is supported when using OpenTelemetry Collector. The legacy `v1` format is deprecated for OpenTelemetry Collector and must not be used. [Learn more](/docs/manage/data-archiving/archive/#archive-format)
+Only the `v2` archive format is supported when using OpenTelemetry collector. The legacy `v1` format is deprecated for OpenTelemetry collector and must not be used. [Learn more](/docs/manage/data-archiving/archive/#archive-format).
 :::
 
 Archived files use the format:
@@ -61,7 +61,7 @@ The identifier values do not need to be real IDs. Dummy values are allowed and i
 In many environments, the `collectorID` can be a dummy value. The `bladeID` (source template ID) is particularly more useful for identifying log types.
 :::
 
-Below is a sample OpenTelemetry Collector configuration that archives logs from files into S3 using the supported Sumo Logic archive format.
+Below is a sample OpenTelemetry collector configuration that archives logs from files into S3 using the supported Sumo Logic archive format.
 
 ```
 receivers:
@@ -108,7 +108,7 @@ service:
 
 ## Ingestion filtering using path patterns
 
-When configuring an AWS S3 Archive Source on a Hosted Collector, specify a file path pattern to control what gets ingested.
+When configuring an AWS S3 archive source on a Hosted Collector, specify a file path pattern to control what gets ingested.
 
 For example, to ingest only Docker logs:
 
@@ -133,80 +133,80 @@ Example:
 | hour1/minute37 | hour1/minute05 to hour1/minute30 | hour1/minute22 |
 | hour1/minute52 | hour1/minute05 to hour1/minute30 | hour1/minute37 |
 
-## Ingest data from Archive
+## Ingest data from archive
 
-You can ingest a specific time range of data from your Archive at any time with an **AWS S3 Archive Source**. First, [create an AWS S3 Archive Source](#create-an-aws-s3-archivesource), then [create an ingestion job](#create-an-ingestion-job).
+You can ingest a specific time range of data from your archive at any time with an AWS S3 archive source. First, [create an AWS S3 archive source](#create-an-aws-s3-archive-source), then [create an ingestion job](#create-an-ingestion-job).
 
 ### Rules
 
 * A maximum of 2 concurrent ingestion jobs is supported. If more jobs are needed contact your Sumo Logic account representative.
 * An ingestion job has a maximum time range of 12 hours. If a longer time range is needed, contact your Sumo Logic account representative.
 * Filenames or object key names must be in either of the following formats:
-    * Sumo Logic [Archive format](#archive-format)
+    * Sumo Logic [archive format](#archive-format)
     * `prefix/dt=YYYYMMDD/hour=HH/fileName.json.gz`
-* If the logs from Archive do not have timestamps, they are only searchable by receipt time.
-* If a Field is tagged to an archived log message and the ingesting Collector or Source has a different value for the Field, the field values already tagged to the archived log take precedence.
-* If the Collector or Source that Archived the data is deleted, the ingesting Collector and Source metadata Fields are tagged to your data.
+* If the logs from archive do not have timestamps, they are only searchable by receipt time.
+* If a field is tagged to an archived log message and the ingesting collector or source has a different value for the field, the field values already tagged to the archived log take precedence.
+* If the collector or source that archived the data is deleted, the ingesting collector and source metadata fields are tagged to your data.
 * You can create ingestion jobs for the same time range, however, jobs maintain a 10 day history of ingested data and any data resubmitted for ingestion within 10 days of its last ingestion will be automatically filtered so it's not ingested.
 
-### Create an AWS S3 Archive Source
+### Create an AWS S3 archive source
 
 :::note
-You need the **Manage Collectors** role capability to create an AWS S3 Archive Source.
+You need the [Manage Collectors](/docs/manage/users-roles/roles/role-capabilities/#data-management) role capability to create an AWS S3 archive source.
 :::
 
-An AWS S3 Archive Source allows you to ingest your Archived data. Configure it to access the AWS S3 bucket that has your Archived data.
+An AWS S3 archive source allows you to ingest your archived data. Configure it to access the AWS S3 bucket that has your archived data.
 
 :::note
-To use JSON to create an AWS S3 Archive Source reference our AWS Log Source parameters and use `AwsS3ArchiveBucket` as the value for `contentType`.
+To use JSON to create an AWS S3 archive source, reference our AWS Log source parameters and use `AwsS3ArchiveBucket` as the value for `contentType`.
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector or one you have created for this purpose.
 1. Select **AWS S3 Archive**. <br/><img src={useBaseUrl('img/archive/archive-icon.png')} alt="Archive icon" width="100"/>
-1. Enter a name for the new Source. A description is optional.
+1. Enter a name for the new source. A description is optional.
 1. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 1. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS.
-1. For **Path Expression**, enter the wildcard pattern that matches the Archive files you'd like to collect. The pattern:
+1. For **Path Expression**, enter the wildcard pattern that matches the archive files you'd like to collect. The pattern:
     * Can use one wildcard (\*).
     * Can specify a [prefix](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys) so only certain files from your bucket are ingested. For example, if your filename is `prefix/dt=<date>/hour=<hour>/minute=<minute>/<collectorId>/<sourceId>/v2/<fileName>.txt.gzip`, you could use `prefix*` to only ingest from those matching files.
     * Cannot use a leading forward slash.
     * Cannot have the S3 bucket name.
-1. For **Source Category**, enter any string to tag to the data collected from this Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Fields**. Click the **+Add Field** link to add custom metadata Fields. Define the fields you want to associate, each field needs a name (key) and value.
+1. For **Source Category**, enter any string to tag to the data collected from this source. Category metadata is stored in a searchable field called `_sourceCategory`.
+1. **Fields**. Click the **+Add Field** link to add custom metadata fields. Define the fields you want to associate, each field needs a name (key) and value.
     :::note
-    Fields specified on an AWS S3 Archive Source take precedence if the archived data has the same fields.
+    Fields specified on an AWS S3 archive source take precedence if the archived data has the same fields.
     :::
-    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
-1. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step Grant Sumo Logic access to an AWS Product.
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the fields schema or is disabled it is ignored, known as dropped.
+1. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/).
     * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role.   
-    * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
-1. Create any Processing Rules you'd like for the AWS Source.
-1. When you are finished configuring the Source, click **Save**.
+    * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for details.
+1. Create any processing rules you'd like for the AWS source.
+1. When you are finished configuring the source, click **Save**.
 
 ## Archive page
 
 :::important
-You need the Manage Collectors or View Collectors [role capability](/docs/manage/users-roles/roles/role-capabilities/) to manage or view an archive.
+You need the [Manage Collectors or View Collectors](/docs/manage/users-roles/roles/role-capabilities/#data-management) role capability to manage or view an archive.
 :::
 
-The Archive page provides a table of all the existing [AWS S3 Archive Sources](#create-an-aws-s3-archivesource) in your account and ingestion jobs.
+The archive page provides a table of all the existing AWS S3 archive sources in your account and ingestion jobs.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Archive page, in the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the archive page, in the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Archive page, in the main Sumo Logic menu select **Manage Data > Collection > Archive**.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the archive page, in the main Sumo Logic menu select **Manage Data > Collection > Archive**.
 
 <img src={useBaseUrl('img/archive/archive-page.png')} alt="Archive page" width="800"/>
 
 ### Details pane
 
-Click on a table row to view the Source details. This includes:
+Click on a table row to view the source details. This includes:
 
 * **Name**
 * **Description**
 * **AWS S3 bucket**
-* All **Ingestion jobs** that are and have been created on the Source.
+* All **Ingestion jobs** that are and have been created on the source.
     * Each ingestion job shows the name, time window, and volume of data processed by the job. Click the icon <img src={useBaseUrl('img/archive/open-search-icon.png')} alt="Open in search icon" width="30" /> to the right of the job name to start a search against the data that was ingested by the job.
     * Hover your mouse over the information icon to view who created the job and when.<br/><img src={useBaseUrl('img/archive/archive-details-pane.png')} alt="Archive details pane" width="325"/>
 
@@ -216,14 +216,14 @@ Click on a table row to view the Source details. This includes:
 A maximum of 2 concurrent jobs is supported.
 :::
 
-An ingestion job is a request to pull data from your S3 bucket. The job begins immediately and provides statistics on its progress. To ingest from your Archive you need an AWS S3 Archive Source configured to access your AWS S3 bucket with the archived data.
+An ingestion job is a request to pull data from your S3 bucket. The job begins immediately and provides statistics on its progress. To ingest from your archive you need an AWS S3 archive source configured to access your AWS S3 bucket with the archived data.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Archive**. You can also click the **Go To...** menu at the top of the screen and select **Archive**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Archive**. 
-1. On the **Archive** page search and select the AWS S3 Archive Source that has access to your archived data.
+1. On the **Archive** page search and select the AWS S3 archive source that has access to your archived data.
 1. Click **New Ingestion Job** and a window appears where you:
     1. Define a mandatory job name that is unique to your account.
     1. Select the date and time range of archived data to ingest. A maximum of 12 hours is supported. <br/><img src={useBaseUrl('img/archive/Archive-ingest-job.png')} alt="Archive ingest job" width="350"/>
-1. Click **Ingest Data** to begin ingestion. The status of the job is visible in the Details pane of the Source in the Archive page.
+1. Click **Ingest Data** to begin ingestion. The status of the job is visible in the details pane of the source in the archive page.
 
 ### Job status
 
@@ -235,19 +235,19 @@ An ingestion job will have one of the following statuses:
 * **Failed**. The job has failed to complete. Partial data may have been ingested and is searchable.
 * **Succeeded** The job completed ingesting and your data is searchable.
 
-## Search ingested Archive data
+## Search ingested archive data
 
-Once your Archive data is ingested with an ingestion job you can search for it as you would any other data ingested into Sumo Logic. On the Archive page find and select the Archive S3 Source that ran the ingestion job to ingest your Archive data. In the [Details pane](#details-pane), you can click the **Open in Search** link to view the data in a Search that was ingested by the job.
+Once your archive data is ingested with an ingestion job you can search for it as you would any other data ingested into Sumo Logic. On the archive page find and select the archive S3 source that ran the ingestion job to ingest your archive data. In the [details pane](#details-pane), you can click the **Open in Search** link to view the data in a search that was ingested by the job.
 
 :::note
 When you search for data in the Frequent or Infrequent Tier, you must explicitly reference the partition.
 :::
 
-The metadata field `_archiveJob` is automatically created in your account and assigned to ingested Archive data. This field does not count against your Fields limit. Ingested Archive data has the following metadata assignments:
+The metadata field `_archiveJob` is automatically created in your account and assigned to ingested archive data. This field does not count against your fields limit. Ingested archive data has the following metadata assignments:
 
 | Field          | Description                         |
 |:----------------|:-------------------------------------|
-| `_archiveJob`   | The name of the ingestion job assigned to ingest your Archive data. |
+| `_archiveJob`   | The name of the ingestion job assigned to ingest your archive data. |
 | `_archiveJobId` | The unique identifier of the ingestion job.                    |
 
 ## Audit ingestion job requests

@@ -48,13 +48,13 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/scheduled-views/pause-disable-scheduled-views')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Pause or Disable Scheduled Views</h4></a>
-  <p>Learn how to pause view stops new data from being Indexed.</p>
+  <p>Learn how to pause a view to stop new data from being indexed.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/scheduled-views/run-search-against-scheduled-view')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Run a Search Against a Scheduled View</h4></a>
-  <p>Learn how to run a search against Indexed data in a Scheduled View.</p>
+  <p>Learn how to run a search against indexed data in a Scheduled View.</p>
   </div>
 </div>
 <div className="box smallbox card">
