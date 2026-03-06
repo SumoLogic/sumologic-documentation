@@ -2,42 +2,35 @@
 id: collect-logs
 title: Collecting Logs for Google Workspace
 sidebar_label: Collecting Logs
-description: Instructions for configuring log collection from Google Workspace Apps and Alert Center, and how to ingest those logs into Sumo Logic.
+description: Instructions for configuring log collection from Google Workspace apps and Alert Center, and how to ingest those logs into Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
 
-This procedure explains how to collect logs from Google Workspace and ingest them into Sumo Logic. You can configure two types of log collection: Google Workspace Alert Center and Google Workspace Audit Source.
+This document outlines how to collect logs from Google Workspace and ingest them into Sumo Logic.
 
 ## Log types
 
 This app uses the following log types:
 
-* **Audit logs**. Fetched from [Google Workspace Apps Audit Source](/docs/send-data/hosted-collectors/google-source/google-workspace-apps-audit-source).
-* **Alert logs**. Fetched from [Google Workspace AlertCenter](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter).
+* **Audit logs**. Fetched from [Google Workspace Audit Source](/docs/send-data/hosted-collectors/google-source/google-workspace-apps-audit-source).
+* **Alert logs**. Fetched from [Google Workspace Alert Center](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter).
 
-**Google Workspace Apps Audit Source** each have a log that records actions in JSON format. The logs are all structurally similar—most have an ID, actor, and an IP Address. The differences are in the events section of the JSON where the actions are recorded.
+**Google Workspace Audit Source**. Has a log that records actions in JSON format. The logs are all structurally similar, where most have an ID, actor, and an IP address. The differences are in the events section of the JSON where the actions are recorded.
 
-**Google Workspace Alert Center** alerts are in JSON format. Most of the alerts have a few common fields. The differences are in the data section of the JSON where the alert type specific details are recorded. For more information, see this Google Workspace [Alert document](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types).
+**Google Workspace Alert Center**. Alerts are in JSON format. Most of the alerts have a few common fields. The differences are in the data section of the JSON where the alert type specific details are recorded. For more information, refer to [Google Workspace Alert](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types).
 
-
-## Configure Collection for Google Workspace Apps Audit Source
+## Configure Collection for Google Workspace Audit Source apps
 
 This section provides instructions for configuring log collection for Google Workspace with Audit Source.
 
-[Google Workspace](#configure-collection-for-google-workspace-apps-audit-source): Monitors and analyzes the activity across all the Google Workspace Apps in one place. You can configure collection for each Google App for which you want to analyze events:
-    * Google Admin
-    * Google Drive
-    * Google Login
-    * Google Token
-
 ### About Source Configuration  
 
-Currently, the source name for Google Workspace is still **Google Workspace Apps Audit Source**, which will be changed/updated shortly.
+Monitors and analyzes the activity across all the Google Workspace apps in one place. Currently, the source name for Google Workspace is still **Google Workspace Audit Source**, which will be changed/updated shortly.
 
-Configure one [Google Workspace Apps Audit Source](/docs/send-data/hosted-collectors/google-source/google-workspace-apps-audit-source) for each Google App from which you want to collect events:
+Configure one [Google Workspace Audit Source](/docs/send-data/hosted-collectors/google-source/google-workspace-apps-audit-source) app for each Google app from which you want to collect events:
 
 * Google Admin
 * Google Calendar
@@ -45,37 +38,37 @@ Configure one [Google Workspace Apps Audit Source](/docs/send-data/hosted-collec
 * Google Login
 * Google Token
 
+:::note
 Google Workspace Drive Audit events are only logged for files owned by users with Google Workspace Business, Enterprise, or Drive Enterprise licenses.
+:::
 
 When you configure your Source Categories, you can configure and use them in two different ways.
 
-**One Single Source Category for all Sources.** For users who are setting up the Google Workspace Apps Audit Source for the first time, we suggest that you use the same single Source Category for each Google Apps Audit Source. For example, **google_apps**.
+  - **Single source category for all sources**. Use this for each Google Apps Audit Source when you are setting up the Google Workspace Audit Source app for the first time. For example, **google_apps**.
+  - **Multiple source categories for each source.** If you are using multiple Source Category for each source, use a naming convention for the source categories that allows you to apply a wildcard. For example, naming your source categories as follows would allow you to refer to all of them with the query **google_app***.
+   * google_app_admin
+   * google_app_calendar
+   * google_app_drive
+   * google_app_login
+   * Google_app_token
 
-**Different Source Categories for each Source.** You may configure a different Source Category for each Source, but we recommend that you use a naming convention for the Source Categories that allows you to apply a wildcard. For example, naming your Source Categories as follows would allow you to refer to all of them with the query **google_app***.
-* google_app_admin
-* google_app_calendar
-* google_app_drive
-* google_app_login
-* Google_app_token
-
-A Google Workspace Apps Audit Source uses the [Google Apps Reports API](https://developers.google.com/admin-sdk/reports/v1/get-start/getting-started) to ingest all audit logs via watchpoints. Activity from the following Google apps are supported in Sumo's Google Workspace App:
+A Google Workspace Audit Source app uses the [Google Apps Reports API](https://developers.google.com/admin-sdk/reports/v1/get-start/getting-started) to ingest all audit logs via watchpoints. Activity from the following Google apps are supported in Sumo Logic app for Google Workspace:
 * Admin
 * Calendar
 * Drive
 * Login
 * Token
 
-Only one Source should be configured per app. In other words, you might set up one Source to collect Calendar audit logs, another to collect Token audit logs, and so on.
-
+Only one source should be configured per app. In other words, you might set up one source to collect calendar audit logs, another to collect token audit logs, and so on.
 
 ### Google Authentication and Authorization  
 
-This Source uses OAuth to integrate with the Google Apps Reports API. Therefore, your Google Apps credentials are never stored by Sumo Logic, and we have no visibility into the details of your Google Apps account.  Sumo Logic only stores OAuth tokens that are generated after authentication and authorization.
+This source uses OAuth to integrate with the Google apps Reports API. Therefore, your Google apps credentials are never stored by Sumo Logic, and we have no visibility into the details of your Google apps account. Sumo Logic only stores OAuth tokens that are generated after authentication and authorization.
 
-When creating or modifying a Google Workspace Apps Audit Source, you will be required to authenticate with Google using the credentials of a user that has access rights to the account, and to the Reports API. See Google's [Reports API: Prerequisites](https://developers.google.com/admin-sdk/reports/v1/guides/prerequisites) documentation for more details. During Google's OAuth consent flow, you will also be asked to grant the Sumo Logic app permission to use the Reports API.
+When creating or modifying a Google Workspace Audit Source app, you will be required to authenticate with Google using the credentials of a user that has access rights to the account, and to the Reports API. See Google's [Reports API: Prerequisites](https://developers.google.com/admin-sdk/reports/v1/guides/prerequisites) documentation for more details. During Google's OAuth consent flow, you will also be asked to grant the Sumo Logic app permission to use the Reports API.
 
 :::note
-Authentication must be with a new Google Workspace Apps Audit Source. We do not support re-authenticating existing sources.
+Authentication must be with a new Google Workspace Audit Source app. We do not support re-authenticating existing sources.
 :::
 
 ### Configure a Collector
@@ -85,25 +78,25 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 ### Configure Google Workspace Apps Audit Sources  
 
-When you have set up a Hosted Collector and have your credentials ready, you're all set to configure the Sources. Perform the steps below for each Google Workspace App you want to monitor.  Before you configure the Sources, choose one of the source category strategies described in [About Source Configuration](#about-source-configuration) above.
+When you have set up a Hosted Collector and have your credentials ready, you're all set to configure the Sources. Perform the steps below for each Google Workspace App you want to monitor. Before you configure the Sources, choose one of the source category strategies described in [About Source Configuration](#about-source-configuration) above.
 
 :::note
-We recommend that you use the same single Source Category for each Google Workspace Apps Audit Source. For example, **google_apps**.
+We recommend that you use single source category for each Google Workspace Audit Source apps. For example, **google_apps**.
 :::
 
-To configure a Google Workspace Apps Audit Source, do the following:
+To configure a Google Workspace Audit Source app, do the following:
 
-1. Configure a **Google Workspace Apps Audit** Source.
+1. Configure a **Google Workspace Apps Audit** source.
 2. Configure the Source fields:
     1. **Name**. (Required) A name is required.
     2. **Description**. Optional.
-    3. **Application**. Select the app that you’d like this Source to collect data from.
+    3. **Application**. Select the app that you’d like this source to collect data from.
     4. **Source Category**. (Required)   
-    5. **Sign in with Google**. Click to give permission to Sumo Logic to set up watchpoints using the Google Workspace Apps Reports API. Click **Accept**.
+    5. **Sign in with Google**. Click to give permission to Sumo Logic to set up watchpoints using the Google Workspace Reports API. Click **Accept**.
 3. Click **Save**.
 
 
-#### Google Workspace App Audit Known Issues  
+#### Limitations  
 
 The Google API has a few known issues that cannot be changed by Sumo Logic.
 
@@ -112,7 +105,7 @@ The Google API has a few known issues that cannot be changed by Sumo Logic.
 **Authentication token limit**. Google limits an application (such as Sumo Logic) to 25 active authentication tokens per Google Workspace Apps account. According to Google’s documentation, the oldest token is invalidated if a 26th token is created. However, during testing, we found that once the 26th token is issued, all previous 25 tokens become invalid. In this situation, the only workaround is to delete and recreate all Google Workspace Apps Audit Sources in Sumo Logic.
 
 **Duplicate records**. The following situations might result in the collection of duplicate log messages:
-* **Complex events**. When a complex an event is logged that contains multiple sub-events, such as a new calendar entry, a JSON object is created to log the event. That object will have an array of event details for each included action (such as inviting guests). When this happens, duplicate event logs might be created for each sub-action. So, if there is one event with three sub actions, the exact same message event data might be duplicated three times, most likely due to a bug in the Google API.
+* **Complex events**. When a complex event is logged that contains multiple sub-events, such as a new calendar entry, a JSON object is created to log the event. That object will have an array of event details for each included action (such as inviting guests). When this happens, duplicate event logs might be created for each sub-action. So, if there is one event with three sub actions, the exact same message event data might be duplicated three times, most likely due to a bug in the Google API.
 * **Watchpoint expiration**. Google API watchpoints expire after about one week. Unfortunately, there does not appear to be a method for refreshing the expiration of a watchpoint. Sumo Logic must keep track of when each watchpoint expires, and in very close sequence, create a new watchpoint and kill the old watchpoint. This results in a slight overlap, typically only a few seconds, when there are two watchpoints for the same application. This might result in duplicate logs during that overlapping period, both of which are collected (which is preferable to the possibility of losing some data).
 
 **Service Availability**. Logging is dependent on the availability of Google services. In some cases, apps may stop producing logs for a period of time. We have observed this during our development and QA testing.
@@ -173,8 +166,6 @@ To provide feedback on these limitations and known issues, contact Google suppor
    ]
 }
 ```
-
-
 
 ### Sample queries
 
