@@ -98,13 +98,13 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 For information about Atlassian OpsGenie, see [OpsGenie documentation](https://support.atlassian.com/opsgenie/resources/).
 
 
-## Alert Creation and Retrieval Across Teams
+## Alert creation and retrieval across teams
 
-In **Opsgenie**, alerts created through an integration can be assigned to a specific team. During testing, alerts were created successfully, but retrieving them returned the error:
+During testing, alerts were created successfully, but retrieving them returned the error:
 
 `Your team does not have access to this alert`
 
-This occurs when the API key used to retrieve the alert belongs to a different team than the team that owns the alert. Opsgenie allows alerts to be created for other teams, but retrieving alerts is restricted based on the team associated with the API key.
+This occurs when the API key used to retrieve the alert belongs to a different team than the team that owns the alert. In Opsgenie, alerts created through an integration can be assigned to a specific team. Opsgenie allows alerts to be created for other teams, but retrieving alerts is restricted based on the team associated with the API key.
 
 ### Recommendation
 
