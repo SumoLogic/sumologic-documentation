@@ -184,6 +184,10 @@ Key insights include compromised user accounts, frequently attacked devices, and
 
 <br/><img src={useBaseUrl('/img/integrations/microsoft-azure/Azure-Security-Microsoft-Entra-ID-Protection-Security.png')} alt="Azure Security - Microsoft Entra ID Protection  - Security" />
 
+## Create monitors for Azure Security - Microsoft Entra ID Protection
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
 <CreateMonitors/>
 
 ### Azure Security - Microsoft Entra ID Protection alerts
