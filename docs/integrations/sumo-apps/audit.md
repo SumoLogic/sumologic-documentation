@@ -171,6 +171,21 @@ See information about Library Content (searches, dashboards/reports, and folders
 **Application Installed by Users.** Shows an aggregation table of applications installed by users with columns for the time, user, app name, and count, for the last 24 hours.
 
 
+### Library Content - Monitors
+
+See monitors usage with based on users working with monitors, deletions and notifications.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/audit-Library-Content-Monitors.png')} alt="test" />
+
+**Top 20 Popular Monitors**. Displays the top 20 monitors with the highest activity in the selected time range, based on audit events.
+
+**Top 20 Users Working With Monitors**. Shows the top 20 users generating the most monitor-related activity in the selected time period.
+
+**Monitors Deleted**. Lists monitors that have active notification configurations, including the notification type and frequency of activity.
+
+**Monitors with Notifications**. Displays monitor deletion events with timestamp, user, and source IP address for audit tracking.
+
+
 ### User Activity - Login and Credentials
 
 See information on user activities, including modifying or resetting passwords, modifying preferences, and logging in or out.
