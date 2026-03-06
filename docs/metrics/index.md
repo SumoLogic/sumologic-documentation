@@ -24,7 +24,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 <SumoAcademy/>
 
 * Self-paced: [Metrics Analytics Self-Paced](https://learn.sumologic.com/path/sumo-observability/metrics-analytics-self-paced)
-* Instructor-led virtual classes: Scroll down to [Metric Analytics](https://www.sumologic.com/learn/training?_certifications=metrics-analytics)
+* Instructor-led virtual classes: Scroll down to [Certifications: Metric Analytics](https://www.sumologic.com/learn/training?_certifications=metrics-analytics)
 :::
 
 :::sumo

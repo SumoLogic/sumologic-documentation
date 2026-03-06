@@ -26,8 +26,8 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
     * [Best Practices for Query Efficiency Workshop](https://learn.sumologic.com/path/sumo-onboarding/best-practices-for-query-efficiency)
 * Instructor-led virtual classes: Scroll down to
     * [Certifications: Search Mastery](https://www.sumologic.com/learn/training?_certifications=search-mastery)
-    * [Workshop: Mobot Essentials](https://www.sumologic.com/learn/training?_workshops=mobot-essentials)
-    * [Workshop: Best Practices for Query Efficiency](https://www.sumologic.com/learn/training?_workshops=best-practices-for-query-efficiency)
+    * [Workshops: Mobot Essentials](https://www.sumologic.com/learn/training?_workshops=mobot-essentials)
+    * [Workshops: Best Practices for Query Efficiency](https://www.sumologic.com/learn/training?_workshops=best-practices-for-query-efficiency)
 :::
 
 :::tip
