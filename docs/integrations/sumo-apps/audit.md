@@ -181,9 +181,9 @@ See monitors usage based on users working with monitors, deletions and notificat
 
 **Top 20 Users Working With Monitors**. Shows the top 20 users generating the most monitor-related activity in the selected time period.
 
-**Monitors Deleted**. Lists monitors that have active notification configurations, including the notification type and frequency of activity.
+**Monitors Deleted**. Displays monitor deletion events with timestamp, user, and source IP address for audit tracking.
 
-**Monitors with Notifications**. Displays monitor deletion events with timestamp, user, and source IP address for audit tracking.
+**Monitors with Notifications**. Lists monitors that have active notification configurations, including the notification type and frequency of activity.
 
 
 ### User Activity - Login and Credentials
