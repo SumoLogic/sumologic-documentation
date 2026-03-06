@@ -230,7 +230,7 @@ This option uses `mcp-proxy` to handle token refresh automatically, so you don't
    ```
 1. In a regular Terminal window (not in Claude Code), set your environment variables.
    ```bash
-   export SUMOLOGIC_MCP_URL="https://prod-bedrockagentcore-gd5o7c6bi7.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp"
+   export SUMOLOGIC_MCP_URL="https://mcp.sumologic.com/mcp"
    export SUMOLOGIC_OAUTH_CLIENT_ID="<your-client-id>"
    export SUMOLOGIC_OAUTH_CLIENT_SECRET="<your-client-secret>"
    export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"
@@ -281,7 +281,7 @@ This option uses `mcp-proxy` to handle token refresh automatically, so you don't
        | jq -rc '.access_token'
    }
 
-   export SUMOLOGIC_MCP_URL="https://prod-bedrockagentcore-gd5o7c6bi7.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp"
+   export SUMOLOGIC_MCP_URL="https://mcp.sumologic.com/mcp"
    export SUMOLOGIC_OAUTH_CLIENT_ID="<your-client-id>"
    export SUMOLOGIC_OAUTH_CLIENT_SECRET="<your-client-secret>"
    export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"
@@ -327,7 +327,7 @@ get_sumologic_oauth_token() {
     | jq -rc '.access_token'
 }
 
-export SUMOLOGIC_MCP_URL="https://prod-bedrockagentcore-gd5o7c6bi7.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp"
+export SUMOLOGIC_MCP_URL="https://mcp.sumologic.com/mcp"
 export SUMOLOGIC_OAUTH_CLIENT_ID="<your-client-id>"
 export SUMOLOGIC_OAUTH_CLIENT_SECRET="<your-client-secret>"
 export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"
@@ -364,7 +364,7 @@ If you need to re-register the server with a new token:
    ```
 1. Re-register the MCP server with the new token:
    ```bash
-   claude mcp add --transport http sumo-logic https://prod-bedrockagentcore-gd5o7c6bi7.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp \
+   claude mcp add --transport http sumo-logic https://mcp.sumologic.com/mcp \
      --header "Authorization: Bearer <your-access-token>"
    ```-->
 
@@ -380,7 +380,7 @@ If you need to re-register the server with a new token:
      "servers": {
        "Sumo Logic MCP server": {
          "type": "http",
-         "url": "https://prod-bedrockagentcore-gd5o7c6bi7.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp",
+         "url": "https://mcp.sumologic.com/mcp",
          "headers": {
            "Authorization": "Bearer ${input:oauthToken}"
          },
