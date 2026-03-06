@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian.png')} alt="criminal-ip" width="90"/>
 
-***Version: 1.4  
-Updated: January 30, 2026***
+***Version: 1.5  
+Updated: March 6, 2026***
 
 OpsGenie, a service powered by Atlassian in the cloud, provides operational teams with robust alert management capabilities. It ensures efficient tracking of notifications triggered by various monitoring systems. The primary goal is to guarantee that alerts reach the appropriate team members and that issues are resolved swiftly. This service has been successfully incorporated and rigorously vetted in combination with OpsGenie's platform.
 
@@ -97,6 +97,19 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 For information about Atlassian OpsGenie, see [OpsGenie documentation](https://support.atlassian.com/opsgenie/resources/).
 
+
+## Alert Creation and Retrieval Across Teams
+
+In **Opsgenie**, alerts created through an integration can be assigned to a specific team. During testing, alerts were created successfully, but retrieving them returned the error:
+
+`Your team does not have access to this alert`
+
+This occurs when the API key used to retrieve the alert belongs to a different team than the team that owns the alert. Opsgenie allows alerts to be created for other teams, but retrieving alerts is restricted based on the team associated with the API key.
+
+### Recommendation
+
+Ensure that the integration API key used for retrieving alerts belongs to the same team that owns the alerts being created, or use an API key with appropriate permissions to access alerts across teams.
+
 ## Change Log
 
 * March 22, 2024 - First upload
@@ -107,3 +120,4 @@ For information about Atlassian OpsGenie, see [OpsGenie documentation](https://s
     + Create Incident - Fixed the bug that caused the action not to add responders to the incident.
 * July 1, 2025 - Fixed an issue related to timeout.
 * January 30, 2026 - Added a retry mechanism to the Create Alert action.
+* March 6, 2026 - Fixed validation logic in the Create Alert action.
