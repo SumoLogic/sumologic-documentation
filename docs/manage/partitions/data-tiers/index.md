@@ -72,7 +72,7 @@ How you can search and use your ingested data varies by the data tier it resides
 | Scheduled Views | &#10003; | | |
 | API Queries |  &#10003; | &#10003; | &#10003; |
 
-<sup>*</sup> Feature activation is subject to minimum volume and service plan requirements, confirmed at time of transaction.
+<sup>*</sup> Feature activation is subject toapplicable service plans, minimum volume requirements, and additional fees, confirmed at the time of transaction.
   
 ## Assigning data to a data tier
 
