@@ -16,7 +16,7 @@ This procedure explains how to collect logs from Google Workspace and ingest the
 This app uses the following log types:
 
 * **Audit logs**. Fetched from [Google Workspace Apps Audit Source](/docs/send-data/hosted-collectors/google-source/google-workspace-apps-audit-source).
-* **Alert logs**. Fetched from [Google Workspace AlertCenter](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter.md).
+* **Alert logs**. Fetched from [Google Workspace AlertCenter](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter).
 
 **Google Workspace Apps Audit Source** each have a log that records actions in JSON format. The logs are all structurally similar—most have an ID, actor, and an IP Address. The differences are in the events section of the JSON where the actions are recorded.
 
