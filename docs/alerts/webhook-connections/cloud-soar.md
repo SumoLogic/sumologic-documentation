@@ -19,13 +19,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 You can configure a webhook connection to allow you to send an alert from a scheduled search to Sumo Logic Cloud SOAR using an incident template.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
-1. Click **+** and choose **Cloud SOAR** as the connection type. The **Create Cloud SOAR Connection** dialog is displayed.<br/><img src={useBaseUrl('img/cloud-soar/CSOAR-connection1.png')} alt="New connection" style={{border: '1px solid gray'}} width="600"/>
-1. Enter a **Name** and give an optional **Description** to the connection.
-1. The **URL** field shows your [Sumo Logic API endpoint](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) followed by `/csoar/v3/incidents/`. For example, `https://api.us2.sumologic.com/api/csoar/v3/incidents/`
-1. In **Authorization Header**, enter your basic authentication access information for the header. For example, `Basic <base64 encode <accessId>:<accessKey>>`. For more information, see [Basic Access (Base64 encoded)](/docs/api/about-apis/getting-started#basic-access-base64-encoded).
-1. Click **Save**. After save, the **Templates** dropdown shows a list of all incident templates by name configured in your Cloud SOAR environment.
-1. Select a **Template**.
-1. The default payload synchronizes with the selected template, and the **Alert Payload** field shows the associated `template_id` field automatically defined in the default payload. A `template_id` is required in the payload in order to configure the connection:
+1. On the **Connections** page, click **+ Add**.
+1. For **Connection Type**, select **Cloud SOAR** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/cloud-soar-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+1. In the **Connection Settings** dialog, enter:
+    * **Name**. Enter a name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
+    * **URL**. The URL field displays your [Sumo Logic API endpoint](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) followed by `/csoar/v3/incidents/`. For example, `https://api.us2.sumologic.com/api/csoar/v3/incidents/`.
+    * **Authorization Header**. Enter your basic authentication access information for the header. For example, `Basic <base64 encode <accessId>:<accessKey>>`. For more information, see [Basic Access (Base64 encoded)](/docs/api/about-apis/getting-started#basic-access-base64-encoded).
+    * Select a template from the **Templates** dropdown.
+      The **Templates** dropdown shows a list of all incident templates by name configured in your Cloud SOAR environment.
+      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-cloud-soar.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+1. Under **Alert and Recovery Payloads**, the default payload synchronizes with the selected template, and the **Alert Payload** field shows the associated `template_id` field automatically defined in the default payload.
+A `template_id` is required in the payload in order to configure the connection:
 
     ```
     {
@@ -56,4 +61,5 @@ You can configure a webhook connection to allow you to send an alert from a sche
     * For information on additional fields, please refer to the [Cloud SOAR APIs](/docs/api/cloud-soar/) documentation.
     * The preceding example shows an `ISO-8601 datetime string`. For information about how to configure it, see [parser documentation](https://dateutil.readthedocs.io/en/stable/parser.html#dateutil.parser.isoparse).
     :::
+1. Click **Test Alert**. If the connection is made to your Cloud SOAR function successfully, you will see a `200 OK` response message.
 1. Click **Save**.

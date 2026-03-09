@@ -18,6 +18,8 @@ Cybersecurity professionals often use multiple threat intelligence feeds to supp
 :::
 
 <!-- 
+:::training Micro Lesson
+
 Watch this micro lesson to learn about Sumo Logic's threat intelligence features.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/s1evf3jfy5?web_component=true&seo=true&videoFoam=false"
@@ -32,6 +34,7 @@ Watch this micro lesson to learn about Sumo Logic's threat intelligence features
   allowfullscreen
 />
 
+:::
 -->
 
 ## Threat intelligence sources
@@ -95,6 +98,10 @@ Add the following capabilities:
        * **Manage Threat Intel Data Store**
 
 You do not need to be assigned these role capabilities to [find threats with log queries](/docs/security/threat-intelligence/find-threats/).
+
+### Allowlist Sumo Logic static IP addresses
+
+Set firewall rules to allowlist the Sumo Logic IPs listed in [Static IP addresses](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/#static-ip-addresses). This allows threat indicators in your Sumo Logic threat intelligence data store to be used without being blocked on your network.
 
 ## Typical workflow
 

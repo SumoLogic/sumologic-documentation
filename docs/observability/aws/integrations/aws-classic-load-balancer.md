@@ -15,9 +15,10 @@ The Sumo Logic app for AWS Observability Classic Load Balancer is a unified logs
 
 The AWS Classic Load Balancer ULM app uses the following log and metric types:
 
-* Metrics included in the AWS/ELB namespace. For more details, see this [*AWS Services help*](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html) page. 
+* Metrics included in the AWS/ELB namespace. For more details, see [this](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html) AWS Services help page. 
 
-* The logs are stored in a `.gzip` format in the specified S3 bucket and contain these fields in this order: timestamp, elb client:port, backend:port, request_processing_time, backend_processing_time, response_processing_time, elb_status_code, backend_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol. For more details on the Classic Load Balancer Access log, see [Classic Load Balancer Access Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html).
+* The logs are stored in a `.gzip` format in the specified S3 bucket and contain these fields in this order: timestamp, elb client:port, backend:port, request_processing_time, backend_processing_time, response_processing_time, elb_status_code, backend_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol. For more details on the Classic Load Balancer Access log, see [Access logs for your Classic Load Balancer
+](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html).
 
 ### Sample log messages
 
@@ -131,7 +132,7 @@ Use this dashboard to:
 
 ### 7. AWS Classic Load Balancer - Threat Intel
 
-**AWS Classic Load Balancer - Threat Intel** dashboard provides insights into incoming requests from malicious sources determined via *Sumo Logic’s Threat Intel feature*. Panels show detailed information on malicious IPs and the malicious confidence of each threat 
+**AWS Classic Load Balancer - Threat Intel** dashboard provides insights into incoming requests from malicious sources determined via [Sumo Logic threat intelligence](/docs/security/threat-intelligence/). Panels show detailed information on malicious IPs and the malicious confidence of each threat 
 
 Use this dashboard to:
 

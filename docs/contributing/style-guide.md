@@ -176,7 +176,11 @@ This action is dangerous and could result in data loss.
 :::
 
 :::sumo Best Practice
-Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
+Highlight Sumo Logic-specific info, best practices, links, and other information from Sumo Logic subject matter experts. You can change the title based on the content.
+:::
+
+:::training
+Links to training courses, certification info, and micro lessons.
 :::
 
 ```
@@ -205,7 +209,11 @@ This action is dangerous and could result in data loss.
 :::
 
 :::sumo Best Practice
-Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
+Highlight Sumo Logic-specific info, best practices, links, and other information from Sumo Logic subject matter experts. You can change the title based on the content.
+:::
+
+:::training
+Links to training courses, certification info, and micro lessons.
 :::
 
 </TabItem>
@@ -309,8 +317,8 @@ When the feature goes GA, remove the beta label and remove a description of the 
 
 ## Capitalization
 
-* Title case (initial cap) all doc titles. Example: `Global Intelligence for Apache Tomcat App`
-* Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case. Example: `Throughput signals and contributing factors`
+* Title case all doc titles. Example: `Cloud SOAR Incident Management and Triage`.
+* Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case. Example: `Throughput signals and contributing factors`.
 
 
 ## Code (inline)
@@ -724,7 +732,8 @@ You can use a link to a file embedding the entire file, or embed a range of code
 
 1. Save your image to the `/static/img` folder. This folder structure mirrors the doc section folders.
    * When updating existing images (like if there's a Sumo UI change), do not add a new version; always replace existing images. Image files take up a lot of room and can slow build times.
-   * File format be .png or .gif.
+   * File format be PNG. Avoid using animated GIFs, as they're generally not accessible; instead, use static images, provide text descriptions, or ensure animations stop within 5 seconds.
+   * Max file size 2MB.
 1. Add the import line to the top of your doc, underneath the [front matter header](#metadata-frontmatter), if it's not already there.
    ```
    import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -1308,7 +1317,7 @@ For repeatable content - an identical section that appears in one or more docs -
 
 Headings in the reuse folder will not appear in the right-side nav in docs where they're imported. For this reason, unless the headers are H4 or below, reuse the content only but retain headings in the other docs.
 
-Example: the content under the Cloud-to-Cloud source docs > Restarting Your Source section ([example](/docs/c2c/info/#restarting-your-source)) lives in the `reuse` folder. The H3 headers live in the actual docs, and H4 headers live in [the `reuse` file](/docs/reuse/restart-c2c-source):
+Example: the content under the Cloud-to-Cloud source docs > Restarting Your Source section ([example](/docs/c2c/info/#restarting-your-source)) lives in the `reuse` folder. The H3 headers live in the actual docs, and H4 headers live in the `reuse` file:
 
 <Tabs
   className="unique-tabs"

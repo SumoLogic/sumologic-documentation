@@ -22,8 +22,9 @@ Added a new integration for [Google Identity Platform](/docs/platform-services/a
 #### Platform
 
 Added new public APIs:
-* Add playbooks to an incident. 
-* Retrieve all playbooks attached to a specific incident.
+* [Add playbooks to an incident](https://api.sumologic.com/docs/csoar/#operation/incidents_runbook_create). 
+* [Retrieve all playbooks attached to a specific incident](https://api.sumologic.com/docs/csoar/#operation/incidents_runbook_retrieve).
+* [List all playbooks with their metadata](https://api.sumologic.com/docs/csoar/#operation/playbook_list_retrieve).
 
 [Learn more](/docs/cloud-soar/automation/#add-a-playbook-to-an-incident-with-the-api).
 

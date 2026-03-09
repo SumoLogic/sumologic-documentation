@@ -18,15 +18,14 @@ The Sumo Logic Audit app uses Sumo Logic audit index events to present informati
 
 ## Installing the Sumo Logic Audit app
 
+### Prerequisite
+
+Enable the Audit Index (`sumologic_audit`) prior to installation. See [Enable the audit index](/docs/manage/security/audit-indexes/audit-index/#enable-the-audit-index) for instructions.
+
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>
 
-## Create monitors for the Sumo Logic Audit app
-
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
-
-<CreateMonitors/>
 
 ## Viewing Sumo Logic Audit dashboards
 
@@ -172,6 +171,21 @@ See information about Library Content (searches, dashboards/reports, and folders
 **Application Installed by Users.** Shows an aggregation table of applications installed by users with columns for the time, user, app name, and count, for the last 24 hours.
 
 
+### Library Content - Monitors
+
+See monitors usage based on users working with monitors, deletions, and notifications.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/audit-Library-Content-Monitors.png')} alt="test" />
+
+**Top 20 Popular Monitors**. Displays the top 20 monitors with the highest activity in the selected time range, based on audit events.
+
+**Top 20 Users Working With Monitors**. Shows the top 20 users generating the most monitor-related activity in the selected time period.
+
+**Monitors Deleted**. Displays monitor deletion events with timestamp, user, and source IP address for audit tracking.
+
+**Monitors with Notifications**. Lists monitors that have active notification configurations, including the notification type and frequency of activity.
+
+
 ### User Activity - Login and Credentials
 
 See information on user activities, including modifying or resetting passwords, modifying preferences, and logging in or out.
@@ -237,6 +251,23 @@ See information on scheduled searches that have been triggered, along with detai
 **Non-200 Status Codes by Name**. Details for non-200 status code results for Webhooks with saved search names and their respective counts.
 
 **Count of Status Codes for Webhooks**. A listing of status codes for Webhooks and their respective counts.
+
+## Create monitors for the Sumo Logic Audit app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Audit app alerts
+
+| Name                                                   | Description                                                                                                | Alert Condition | Recover Condition |
+|:-------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|:----------------|:------------------|
+| `Log Ingest Throttling`                                | This alert is triggered when logs are throttled for a 15 minute window.                                         | Count >= 1      | Count < 1         |
+| `Metric Ingest Throttling`                             | This alert is triggered when metrics are throttled for a 15 minute window.                                      | Count >= 1      | Count < 1         |
+| `Monitor Deleted Alert`                                | This alert is triggered whenever a monitor is deleted.                                                     | Count >= 1      | Count < 1         |
+| `High number of password modification or resets Alert` | This alert is triggered when multiple password resets or modifications are detected in a small time frame. | Count > 5       | Count < = 5       |
+| `High 4XX and 5XX Errors`                              | This alert is triggered when high 4XX/5XX errors are detected.                                             | Count > 20      | Count < = 20      |
+
 
 ## Upgrade/Downgrade the Sumo Logic Audit app (Optional)
 

@@ -105,7 +105,7 @@ Leverage machine learning to identify unusual behavior and suspicious patterns b
 * **Auto-diagnosis and recovery**. The Automation Service handles diagnosis and resolution, closing the loop from alert to recovery.
 * **Customizable detection**. Use advanced rules like "Cluster anomalies" to detect multiple data points exceeding thresholds within a set timeframe.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Watch this micro lesson to learn about anomaly monitors.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/8z9b2zqtc3?web_component=true&seo=true&videoFoam=false"
@@ -205,7 +205,7 @@ For example, if your monitor evaluates the last 1 hour, you can set a resolution
 | `<time range - trigger>` | The duration of time to evaluate. Values range from 2 Minutes to 24 Hours (or 7 Days, by request only). |
 | `<trigger - frequency>` | The frequency that the trigger is evaluated. |
 
-After setting the frequency evaluation, you can preview your [estimated scan data](/docs/manage/partitions/flex/estimate-scan-data) by clicking the **Show Estimated Scan** icon, as seen below.
+After setting the frequency evaluation, you can preview your [estimated scan data](/docs/manage/partitions/estimate-scan-data) by clicking the **Show Estimated Scan** icon, as seen below.
 
 <img src={useBaseUrl('img/alerts/monitors/show-estimated-scan.png')} alt="Estimated Scan Data icon" style={{border: '1px solid gray'}} width="700"/>
 

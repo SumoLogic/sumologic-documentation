@@ -109,7 +109,7 @@ To reduce data usage and alert frequency, you can convert an existing outlier mo
 Alternatively, you can do this from the **Scan Estimates** pop-up.<br/><img src={useBaseUrl('img/alerts/monitors/scan-estimates-anomaly.png')} alt="convert-to-anomaly from scan estimates" style={{border: '1px solid gray'}} width="600"/>
 
 For more guidance on optimizing scan costs on Flex Pricing plans, see:
-* [Scan estimates](/docs/manage/partitions/flex/estimate-scan-data)
+* [Scan estimates](/docs/manage/partitions/estimate-scan-data)
 * [Optimizing scan costs for monitors](/docs/alerts/monitors/monitor-faq/#how-can-i-optimize-scan-costs-for-monitors-when-using-flex-pricing)
 
 ## Monitor History

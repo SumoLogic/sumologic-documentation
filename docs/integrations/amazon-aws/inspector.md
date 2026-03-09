@@ -77,7 +77,7 @@ For information about integrating Amazon Inspector with Security Hub, see [Integ
 You can collect the Amazon Inspector logs using the following methods:
 
 - [Method 1: Inspector > EventBridge > Sumo Logic via HTTP](#method-1-inspector--eventbridge--sumo-logic-via-http-preferred)
-- [Method 2: Inspector > Lambda Function > Sumo Logic via HTTP](#method-2-inspector--eventbridge--sumo-logic-via-http-alternative)
+- [Method 2: Inspector > Lambda Function > Sumo Logic via HTTP](#method-2-inspector--lambda-function--sumo-logic-via-http-alternative)
 - [Method 3: Inspector > Lambda Function > Amazon S3 > Sumo Logic via S3 Source](#method-3-inspector--lambda-function--amazon-s3--sumo-logic-via-s3-source-alternative)
 
 For efficiency and seamless integration, Method 1 using AWS EventBridge is preferred, as it leverages native AWS services to reduce resource overhead and simplify the process.
@@ -109,14 +109,14 @@ Follow the steps below to configure the EventBridge API destination:
 Follow the steps below to create the EventBridge rule:
 1. Sign in to your [Amazon EventBridge Console](https://aws.amazon.com/eventbridge/).
 1. In the navigation bar, click **Rules**.
-1. Set the event source to **AWS services** and then select **Security Hub** as the AWS service.
+1. Set the event source to **AWS services** and then select **Inspector** as the AWS service.
 1. Select **All Events** in Event Type.
 1. Under **Select targets**, choose **EventBridge API destination**.
 1. Select the API Destination created in Step 2.
 1. Select **Create a new role for this specific resource** in the **Execution role**.
 1. Click **Create** to activate the rule.
 
-### Method 2: Inspector > EventBridge > Sumo Logic via HTTP (Alternative)
+### Method 2: Inspector > Lambda Function > Sumo Logic via HTTP (Alternative)
 
 This method uses an AWS Lambda function to process, store, and forward logs to Sumo Logic. While it offers a robust solution, it introduces additional AWS resources, such as Lambda, which can increase both cost and complexity.
 

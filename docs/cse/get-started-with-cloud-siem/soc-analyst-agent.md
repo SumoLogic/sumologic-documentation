@@ -17,7 +17,6 @@ Sumo Logic's SOC Analyst Agent is an agentic AI tool designed to improve the spe
 
 The agent delivers automated verdicts on insights using evidence-backed reasoning to determine whether the insights are malicious, suspicious, or benign. It then provides a concise summary of threat incidents based on triggered signals in the insight. Finally, it presents key findings, including details found in the signals that fired for the insight. All of this results in quicker, more detailed analysis.
 
-<!-- For phase 2 beta 
 The SOC Analyst Agent performs two distinct jobs that mirror an analyst’s daily responsibilities:
 * **Triage**. Delivers automated verdicts on insights using evidence-backed reasoning to determine whether the insights are malicious, suspicious, or benign.
 * **Investigation**. Supports analysts with a hypothesis-driven approach to assess the scope, context, and likely impact of an event.
@@ -25,7 +24,6 @@ The SOC Analyst Agent performs two distinct jobs that mirror an analyst’s dail
 The SOC Analyst Agent provides the following functionality:
 * [AI Investigation tab in Cloud SIEM](#ai-investigation-tab)
 * [Insight investigation in Mobot](#investigate-the-insight-in-mobot)
--->
 
 ## Filter for AI verdicts
 
@@ -59,34 +57,25 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
       Help us refine the tool by using the thumbs-up or thumbs-down buttons to provide feedback on the effectiveness of the summary presented. Clicking the thumbs-down button gives you the opportunity to provide additional feedback.
       ::: 
    1. **Key Findings**. The main points uncovered by AI analysis. Details about these findings can be found in the signals that fired for the insight.
-   
-   <!-- Phase 2 of the beta
    1. **Ask Mobot**. Click to send the AI analysis of the insight to [Sumo Logic Mobot](#investigate-the-insight-in-mobot) for further investigation.
-   -->
-
-
- <!-- Phase 2 of the beta
+   
 ### Investigate the insight in Mobot
 
 1. From the insight's details page, click **Ask Mobot** to open the AI investigation in [Sumo Logic Mobot](/docs/search/mobot/).<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" /> 
 1. Details about the AI investigation appear in Mobot. The entire context of the AI investigation is brought into Mobot so you can quickly drill down for more information about the insight. For example, under each step in **Key Findings**, you can click the provided links to see more details.<br/><img src={useBaseUrl('img/cse/insight-agent-in-mobot.png')} alt="Mobot investigation" style={{border: '1px solid gray'}} width="600" />
 1. In **Ask Something...**, type a question about the insight using details provided in the **What Happened** or **Key Findings** sections above. For example, you could ask to see logs about the entities mentioned in the text (that is, hosts, users, IP addresses, file hashes, and so on). You could even ask more general questions, like "Help me investigate this insight". <br/><img src={useBaseUrl('img/cse/investigation-agent-query.png')} alt="Insight investigation query" style={{border: '1px solid gray'}} width="600" />
 1. Click **Search** <img src={useBaseUrl('img/cse/search-button-in-mobot.png')} alt="Search button in Mobot" width="30" />. Mobot analyzes your request and fashions a query based on it.
-1. Click **View Results** to see the results of your request in the logs query UI. You can also click the suggestions provided to drill down farther. As you ask questions, Mobot retains the context of your conversation about the insight, allowing you to more easily obtain detail. <br/><img src={useBaseUrl('img/cse/investigation-agent-results.png')} alt="Insight investigation query results" style={{border: '1px solid gray'}} width="800" />
+1. Click the link under **Query Results** to see the results of your request in the logs query UI. You can also click the suggestions provided to drill down farther. As you ask questions, Mobot retains the context of your conversation about the insight, allowing you to more easily obtain detail. <br/><img src={useBaseUrl('img/cse/investigation-agent-results.png')} alt="Insight investigation query results" style={{border: '1px solid gray'}} width="800" />
 
 ### Start a new investigation
 
 To clear the context and start a new investigation, click **New Conversation** in the upper-right corner of the screen. To start investigation on another insight, navigate back to Cloud SIEM, select another insight, and click **Ask Mobot**.
--->
 
 ## FAQs
 
 ### What is the Sumo Logic SOC Analyst Agent?
 
-The SOC Analyst Agent is part of the [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#whats-new-dojo-ai-for-the-soc). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks like MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts an immediate sense of threat impact. 
-<!-- Phase 2 of the beta
-When deeper analysis is required, the same agent supports hypothesis-based investigation to map relationships, connect entities, and summarize findings.
--->
+The SOC Analyst Agent is part of the [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#whats-new-dojo-ai-for-the-soc). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks like MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts an immediate sense of threat impact. When deeper analysis is required, the same agent supports hypothesis-based investigation to map relationships, connect entities, and summarize findings.
 
 ### What are the benefits of the agent?
 

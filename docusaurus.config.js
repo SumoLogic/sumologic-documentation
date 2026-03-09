@@ -34,19 +34,93 @@ module.exports = {
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
   headTags: [
+    // Intellimize
     {
-      tagName: 'meta',
+      tagName: 'style',
+      attributes: {},
+      innerHTML:
+        '.anti-flicker, .anti-flicker * { visibility: hidden !important; opacity: 0 !important; }',
+    },
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML:
+        "(function(e,t,p){var n=document.documentElement,s={p:[],r:[]},u={p:s.p,r:s.r,push:function(e){s.p.push(e)},ready:function(e){s.r.push(e)}};e.intellimize=u,n.className+=' '+p,setTimeout(function(){n.className=n.className.replace(RegExp(' ?'+p),'')},t)})(window, 4000, 'anti-flicker');",
+    },
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML: `(function() {
+        var s = document.createElement('script');
+        s.src = 'https://cdn.intellimize.co/snippet/117845498.js';
+        s.async = true;
+        s.onerror = function() {
+          document.documentElement.className =
+            document.documentElement.className.replace(RegExp(' ?anti-flicker'), '');
+        };
+        document.head.appendChild(s);
+      })();`,
+    },
+    {
+      tagName: 'link',
       attributes: {
-        'http-equiv': 'Cache-control',
-        content: 'no-store, max-age=0',
+        rel: 'preconnect',
+        href: 'https://api.intellimize.co',
+        crossorigin: 'anonymous'
       },
     },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://117845498.intellimizeio.com'
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://log.intellimize.co',
+        crossorigin: 'anonymous'
+      },
+    },
+    // Sumo Logic RUM
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML: `
+        (function (w, s, d, r, e, n) {
+          (w[s] = w[s] || {
+            readyListeners: [],
+            onReady: function (e) {
+              w[s].readyListeners.push(e);
+            },
+          }),
+          ((e = d.createElement('script')).async = 1),
+          (e.src = r),
+          (n = d.getElementsByTagName('script')[0]).parentNode.insertBefore(e, n);
+        })(
+          window,
+          'sumoLogicOpenTelemetryRum',
+          document,
+          'https://rum.sumologic.com/sumologic-rum.js'
+        );
+        window.sumoLogicOpenTelemetryRum.onReady(function () {
+          window.sumoLogicOpenTelemetryRum.initialize({
+            collectionSourceUrl: 'https://rum-collectors.us1.sumologic.com/receiver/v1/rum/ZaVnC4dhaV2cNyrqUT5YDFvpALqf3WjXkE5oomYkp_Kpvd8PbxGEQsMpkGX5YtUj1YHkvAO6UU1vGUXSx2Nh2EIEps-Vd8TrD340CoUjZuAxRBuKzg7E_w==',
+            serviceName: 'docs-site-live',
+            deploymentEnvironment: 'live',
+            applicationName: 'docs-site',
+            samplingProbability: 1,
+            collectErrors: true,
+          });
+        });
+      `,
+    },
   ],
-  // Temporarily removes Start Free Trial button conversion event tracking.
-  // To reinstate this, uncomment below and restore trackTrialClick.js file
-  //  clientModules: [
-  //    require.resolve('./src/client-modules/trackTrialClick.js'),
-  //  ],
+  clientModules: [
+    require.resolve('./src/client-modules/trackTrialClick.js'),
+  ],
   future: {
     v4: true,
     experimental_faster: true,
@@ -81,14 +155,24 @@ module.exports = {
               'tip',
               'warning',
               'important',
+              'training',
             ],
           },
+          exclude: [
+            '**/reuse/**',
+            '**/ja/**',
+          ],
         },
         sitemap: {
           lastmod: 'date',
           changefreq: 'daily',
           ignorePatterns: [
             '/docs/reuse/**',
+            '/docs/beta/**',
+            '/ja/**',
+            '/files/**',
+            '/release-notes-*/archive/**',
+            '/release-notes-*/2021/**',
             '/tags/**'
           ],
           filename: 'sitemap.xml',
@@ -261,7 +345,7 @@ module.exports = {
     ],
     announcementBar: {
       id: 'domain',
-      content: '🎉️ <b>Introducing <a href="/docs/search/mobot">Mobot</a>🤖, your conversational interface for Sumo Logic. Search logs using natural language, troubleshoot faster, and get how-to guidance.</b>',
+      content: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/><path d="M19 14l.75 2.75L22.5 17.5l-2.75.75L19 21l-.75-2.75L15.5 17.5l2.75-.75L19 14z"/></svg>Introducing <a href="/docs/search/mobot">Mobot</a>, your conversational interface for Sumo Logic. Search logs using natural language, troubleshoot faster, and get how-to guidance.',
       backgroundColor: '#000',
       textColor: '#000',
     },
