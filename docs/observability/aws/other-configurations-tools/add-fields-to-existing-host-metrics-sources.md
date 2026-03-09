@@ -31,7 +31,7 @@ To deploy the CloudFormation template:
 
 1. Sign on to the AWS Management console.
 
-1. Invoke the CloudFormation YAML template using [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.13.0/hostmetricsfields/host_metrics_add_fields.template.yaml).
+1. Invoke the CloudFormation YAML template using [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.14.0/hostmetricsfields/host_metrics_add_fields.template.yaml).
 
 1. Select the AWS Region where you want to deploy the CloudFormation template.
 1. Provide the input parameters as prompted and described in the [Configuration prompts and input](#configuration-prompts-and-input) section below.
@@ -84,7 +84,7 @@ Below are the steps to use the CloudFormation template with StackSets :
 
 1. Go to [StackSets](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacksets) in your AWS account.
 1. Click **Create StackSet**.<br/><img src={useBaseUrl('img/observability/add-fields8.png')} alt="Create StackSet" style={{border: '1px solid gray'}} width="800" />
-1. Paste the URL `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.13.0/hostmetricsfields/host_metrics_add_fields.template.yaml` in the Amazon S3 URL option and select **Next**. <br/><img src={useBaseUrl('img/observability/add-fields9.png')} alt="Choose a template" style={{border: '1px solid gray'}} width="800" />
+1. Paste the URL `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.14.0/hostmetricsfields/host_metrics_add_fields.template.yaml` in the Amazon S3 URL option and select **Next**. <br/><img src={useBaseUrl('img/observability/add-fields9.png')} alt="Choose a template" style={{border: '1px solid gray'}} width="800" />
 1. Provide a StackSet Name, provide the parameters as explained in the section above, and click **Next**.
 1. Add Tags if needed, select the Administrator role defined in the pre-requisites above, and click **Next**.<br/><img src={useBaseUrl('img/observability/add-fields10.png')} alt="Configure StackSet options" style={{border: '1px solid gray'}} width="800" />
 1. Provide the current account ID and select all the regions in the current account where you would like to deploy the template.<br/><img src={useBaseUrl('img/observability/add-fields11.png')} alt="Set deployment options" style={{border: '1px solid gray'}} width="800" />
