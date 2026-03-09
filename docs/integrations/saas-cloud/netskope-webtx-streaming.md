@@ -15,9 +15,6 @@ Netskope WebTx Streaming for Sumo Logic provides real-time visibility into web t
 This app includes [built-in monitors](#netskope-webtx-streaming-alerts). For details on creating custom monitors, refer to the [Create monitors for Netskope WebTx Streaming app](#create-monitors-for-the-netskope-webtx-streaming-app).
 :::
 
-## Log types
- 
- You can configure [Netskope Log Streaming](https://docs.netskope.com/en/log-streaming) to send the comma-separated values (CSV) logs to an Amazon S3 bucket. The data can then be collected into Sumo Logic using the Sumo Logic [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/).
 
 ## Sample log message
 
@@ -49,29 +46,22 @@ _sourceCategory=Labs/NetskopeWebTx !bytes
 | count
 ```
 
-## Collection configuration and app installation
 
-### Data Collection Setup
+## Collecting logs
 
-Use the [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/) to collect Netskope WebTx Streaming data. When installing the app, use the same source category that you configured while setting up the S3 source. By following these steps, you can ensure that your Netskope WebTx Streaming app is properly integrated and configured to collect and analyze your Netskope WebTx Streaming data
+This section has instructions for collecting logs for the Sumo Logic app for Netskope WebTx Streaming.
 
-### Create a new collector and install the app
+### Collection process overview
 
-import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+To collect logs for Netskope WebTx Streaming, configure [Netskope Log Streaming](https://docs.netskope.com/en/log-streaming) to forward CSV logs to an Amazon S3 bucket, then use an [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/) to ingest the data into Sumo Logic. If you are already collecting Netskope data via an existing S3 source, note the source category configured for that source and use it when installing the app.
 
-<AppCollectionOPtion1/>
+## Installing the Netskope WebTx Streaming app   
 
-### Use an existing collector and install the app
+This section shows you how to install the Sumo Logic app for Netskope WebTx Streaming.
 
-import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppCollectionOPtion2/>
-
-### Use an existing source and install the app
-
-import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
-
-<AppCollectionOPtion3/>
+<AppInstall2/>
 
 ## Viewing the Netskope WebTx Streaming dashboards​​ 
 
