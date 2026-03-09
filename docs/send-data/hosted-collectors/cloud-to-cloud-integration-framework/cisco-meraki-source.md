@@ -119,7 +119,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
   }
   ```
 
-* The following error occurs when the Cisco Meraki API returns a 401 Unauthorized response with the message `Invalid API key`. It indicates that the API key configured in the Cisco Meraki Source is invalid, revoked, or does not have the required permissions. To resolve this issue, verify that you are using the correct and active API key generated from the [Cisco Meraki Dashboard](https://dashboard.meraki.com/) by navigating to **My Profile → API access → Generate new API key**.
+* The following error occurs when the Cisco Meraki API returns a 401 Unauthorized response with the message `Invalid API key`. It indicates that the API key configured in the Cisco Meraki Source is invalid, revoked, or does not have the required permissions. To resolve this issue, verify that you are using the correct and active API key generated from the [Cisco Meraki Dashboard](https://dashboard.meraki.com/) by navigating to **My Profile → API access → Generate new API key**. If issue still persist after generating new API key, then contact **cisco meraki support team**.
 
   ```json
   {
