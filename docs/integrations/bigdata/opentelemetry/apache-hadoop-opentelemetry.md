@@ -24,6 +24,7 @@ Hadoop logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](
 
 <img src={useBaseUrl('img/integrations/web-servers/apache-hadoop-schematics.png')} alt="Schematics" width="800"/>
 
+
 ## Hadoop log types
 
 The app supports logs from the open source version of Hadoop. This app is tested on the `3.3.6` version of Hadoop.
