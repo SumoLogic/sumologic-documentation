@@ -14,7 +14,7 @@ import SumoAcademy from '../../reuse/sumo-logic-academy.md';
 <SumoAcademy/>
 
 * Self-paced: [Logs for Security Self-Paced](https://learn.sumologic.com/path/sumo-security/cloud-security-monitoring-and-analytics-self-paced-course)
-* Instructor-led virtual classes: Scroll down to [Certifications: Logs for Security](https://www.sumologic.com/learn/training?_certifications=logs-for-security)
+* Instructor-led virtual classes: Scroll down to [Certifications: Logs for Security](https://www.sumologic.com/learn/training?_certifications=logs-for-security#section-2)
 :::
 
 This section contains the following topics:
