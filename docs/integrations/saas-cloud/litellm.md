@@ -631,6 +631,22 @@ The **LiteLLM - Vector Overview** dashboard provides visibility into vector stor
 <img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Vector-Overview.png" alt="LiteLLM - Vector Overview" style={{border: '1px solid gray'}} width="800" />
 
 
+## Create monitors for LiteLLM app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### LiteLLM alerts
+
+| Name | Description | Alert Condition                                     | Recover Condition                                       |
+|:--|:--|:----------------------------------------------------|:--------------------------------------------------------|
+| `LiteLLM - Callback Failures` | This alert is triggered when the callback logging failure rate exceeds the threshold, indicating issues with observability pipelines such as logging or webhook callbacks. | Count > 0.01                                        | Count < = 0.01                                          |
+| `LiteLLM - High End-to-End Latency` | This alert is triggered when the average end-to-end request latency exceeds 25 seconds (warning) or 30 seconds (critical). High latency can indicate slow upstream LLM providers, network issues, or proxy overload. | Warning: Count > 25000ms, Critical: Count > 30000ms | Warning: Count < = 25000ms, Critical: Count < = 30000ms |
+| `LiteLLM - High Global Error Rate` | This alert is triggered when the percentage of failed requests relative to total requests exceeds 5%. A high error rate may indicate upstream provider outages, misconfigured routes, or authentication issues. | Count > 5%                                          | Count < = 5%                                            |
+| `LiteLLM - Proxy Down No Traffic` | This alert is triggered when no proxy traffic is detected, indicating the LiteLLM proxy may be down or unreachable. | Count < = 0                                         | Count > 0                                               |
+| `LiteLLM - Team Budget Exhausted` | This alert is triggered when the remaining budget for any team drops to zero or below, indicating the team has exhausted its allocated spend and new requests may be rejected. | Count < = 0                                         | Count > 0                                               |
+
 ## Installing the LiteLLM app
 
 import AppInstall from '../../reuse/apps/app-install-v2.md';
