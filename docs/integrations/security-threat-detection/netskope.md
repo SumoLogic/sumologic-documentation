@@ -2,16 +2,20 @@
 id: netskope
 title: Netskope
 sidebar_label: Netskope
-description: The Netskope app created by Sumo Logic provides visibility into security posture for your applications, as well as allowing you to determine the overall usage of software and SaaS applications in your environment.
+description: The Sumo Logic app for Netskope provides visibility into security posture for your applications, allowing you to determine the overall usage of software and SaaS applications in your environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/>
 
-The Netskope app provides visibility into the security posture of your applications and helps you determine the overall usage of software and SaaS applications.
+The Sumo Logic app for Netskope provides visibility into the security posture of your applications and helps you determine the overall usage of software and SaaS applications.
 
 Netskope is a Cloud Access Security Broker (CASB) hosted in the cloud. The Netskope product is primarily used for enforcing security policies for cloud-based resources, such as Box and Microsoft Office 365. Customers purchase a CASB to address cloud service risks, enforce security policies, and comply with regulations, even when cloud services are beyond their perimeter and out of their direct control.
+
+:::info
+This app includes [built-in monitors](#netskope-alerts). For details on creating custom monitors, refer to [Create monitors for the Netskope app](#create-monitors-for-the-netskope-app).
+:::
 
 ## Log types
 
@@ -80,7 +84,7 @@ For more information on Netskope, refer to the Netskope [documentation](https://
 
 ### Sample queries
 
-The following query sample was is from the Total Sessions panel of the Application Overview Dashboard.
+The following query sample is from the Total Sessions panel of the Application Overview Dashboard.
 
 ```sql
 _sourceCategory="netskope_events" "no" "nspolicy"
@@ -138,18 +142,18 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 The **Netskope - Application Overview** dashboard provides a high-level view of user activity, user geographic location by source IP, total sessions, applications used, distribution and activity of applications, and application trends over time.
 
 Use this dashboard to:
-* Monitor number of users, sessions, and sites using the applications, and find out the popular apps by user and app category.
+* Monitor the number of users, sessions, and sites using the applications, and find out the popular apps by user and app category.
 * Track spikes in application usage over time.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Application_Overview.png')} alt="netskope dashboards" />
 
 ### Application Users
 
-The **Netskope - Application Users** dashboard provides a high-level view of application events, total sessions, user activity and geographic location by source IP and destination IP. This dashboard also shows visual breakdowns of distributions by operating system, browser, device, and user activity.
+The **Netskope - Application Users** dashboard provides a high-level view of application events, total sessions, user activity, and geographic location by source IP and destination IP. This dashboard also shows visual breakdowns of distributions by operating system, browser, device, and user activity.
 
 Use this dashboard to:
 * Monitor recent user activities, track user locations, and find out the top users affected by alerts.
-* Determine user classifications by browsers, devices, operating system (OS).
+* Determine user classifications by browsers, devices, and operating systems (OS).
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Application_Users.png')} alt="netskope dashboards" />
 
@@ -175,7 +179,7 @@ Use this dashboard to:
 
 ### Alert Details
 
-The **Netskope - Alert Details** dashboard provides a visual presentation of alert analytics, including the geographic locations of suspicious source and destination IPs, a time compare of alters, alert outlier trends over time, alerts by application, and recent alerts with a poor cloud confidence level.
+The **Netskope - Alert Details** dashboard provides a visual presentation of alert analytics, including the geographic locations of suspicious source and destination IPs, a time comparison of alerts, alert outlier trends over time, alerts by application, and recent alerts with a poor cloud confidence level.
 
 Use this dashboard to:
 * Compare alerts over time and anomalies in alert rates.
@@ -185,7 +189,7 @@ Use this dashboard to:
 
 ### Data Loss Prevention
 
-The **Netskope - Data Loss Prevention** dashboard provides a high-level view of data loss prevention (DLP) analytics, including incidents by policy over time, incidents by severity and application, incidents by operating system (OS) and browser. This dashboard also shows data on DLP rules, top profiles, incident count, and users affected.
+The **Netskope - Data Loss Prevention** dashboard provides a high-level view of data loss prevention (DLP) analytics, including incidents by policy over time, incidents by severity and application, incidents by operating system (OS), and browser. This dashboard also shows data on DLP rules, top profiles, incident count, and users affected.
 
 Use this dashboard to:
 
@@ -197,7 +201,7 @@ Use this dashboard to:
 
 ### Compromised Credentials
 
-The **Netskope - Compromised Credentials** dashboard provides easily accessible analytics on compromised credentials, including the number of users with compromised credentials, a breach count and top breaches, and source info. This dashboard also provides data on recent compromised credentials, apps used by users after a credentials breach, and user activities after a credentials breach.
+The **Netskope - Compromised Credentials** dashboard provides easily accessible analytics on compromised credentials, including the number of users with compromised credentials, a breach count, and top breaches, and source info. This dashboard also provides data on recent compromised credentials, apps used by users after a credentials breach, and user activities after a credentials breach.
 
 Use this dashboard to:
 * Track credential breaches along with their source.
@@ -208,7 +212,7 @@ Use this dashboard to:
 
 ### Malware
 
-The **Netskope - Malware** dashboard provides a high-level view of total malwares detected, total apps and users affected, total files infected, top source IPs and malware types, and the top users affected. This dashboard also provides data malware incidents by app and severity, affected file types, apps used on infected machines, and the user activity on infected machines.
+The **Netskope - Malware** dashboard provides a high-level view of total malware detected, total apps and users affected, total files infected, top source IPs and malware types, and the top users affected. This dashboard also provides data on malware incidents by app and severity, affected file types, apps used on infected machines, and the user activity on infected machines.
 
 Use this dashboard to:
 * Determine applications and users affected by malware.
@@ -218,10 +222,10 @@ Use this dashboard to:
 
 ### Anomalies
 
-The **Netskope - Anomalies** dashboard provides an at-a-glance view of anomalies on your environment, including the number of anomalies, users affected, anomalies over time, anomalies by app, alert name, and risk level. It also includes data on top users by anomaly risk level and recent anomalies by high risk level.
+The **Netskope - Anomalies** dashboard provides an at-a-glance view of anomalies in your environment, including the number of anomalies, users affected, anomalies over time, anomalies by app, alert name, and risk level. It also includes data on top users by anomaly risk level and recent anomalies by high risk level.
 
 Use this dashboard to:
-* Monitor anomalies in users activities.
+* Monitor anomalies in user activities.
 * Track anomalies with high risk levels.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Anomalies.png')} alt="netskope dashboards" />
@@ -244,15 +248,15 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Netskope app alerts
+### Netskope alerts
 
 | Name  | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Netskope - Compromised Credentials Detected` | This alert triggers a critical alert when Netskope identifies user credentials that have been found in known data breaches. Requires immediate password reset and account investigation. | Count > 0 | Count < = 0 |
-| `Netskope - File Quarantine Action Triggered` | This alert triggers a critical alert when Netskope quarantines a file due to policy violations. Indicates a DLP or security policy intercepted and quarantined content requiring admin review and potential remediation. | Count > 0 | Count < = 0 |
-| `Netskope - High Risk Anomaly Detected` | This alert is triggered when Netskope detects a high-risk behavioral anomaly, such as shared credentials, bulk data exfiltration, or unusual access patterns. Indicates potential account compromise or insider threat. | Count > 0 | Count < = 0 |
-| `Netskope - High Severity DLP Policy Violation` | This alert triggers a critical alert when a high-severity DLP rule violation is detected. Indicates potential sensitive data exposure through cloud applications requiring immediate investigation. | Count > 0 | Count < = 0 |
-| `Netskope - Malware Detected` | This alert triggers a critical alert when Netskope detects malware. Captures malware name, type, severity, affected user, file, and source IP for rapid incident response. | Count > 0 | Count < = 0 |
+| `Netskope - Compromised Credentials Detected` | This alert is triggered when Netskope identifies user credentials that appear in known data breaches, requiring an immediate password reset and account investigation. | Count > 0 | Count < = 0 |
+| `Netskope - File Quarantine Action Triggered` | This alert is triggered when Netskope quarantines a file due to a policy violation, indicating that DLP or security controls have intercepted potentially sensitive or non-compliant content requiring administrative review. | Count > 0 | Count < = 0 |
+| `Netskope - High Risk Anomaly Detected` | This alert is triggered when Netskope detects high-risk behavioral anomalies, such as shared credentials, bulk data exfiltration, or unusual access patterns, which may indicate account compromise or insider threat activity. | Count > 0 | Count < = 0 |
+| `Netskope - High Severity DLP Policy Violation` | This alert is triggered when a high-severity DLP rule violation is detected, indicating potential exposure of sensitive data through cloud applications and requiring immediate investigation. | Count > 0 | Count < = 0 |
+| `Netskope - Malware Detected` | This alert is triggered when Netskope detects malware activity, capturing details such as malware name, type, severity, affected user, file, and source IP to support rapid incident response. | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the Netskope app (Optional)
 
