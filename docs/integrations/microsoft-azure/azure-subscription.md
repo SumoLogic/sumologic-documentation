@@ -2,11 +2,10 @@
 id: azure-subscription
 title: Azure Subscription
 keywords: 
- - azure firewall
- - firewall in azure
- - azure network security
- - azure firewall monitoring
- - azure firewall logs
+ - azure subscription
+ - subscription in azure
+ - azure subscription monitoring
+ - azure subscription metrics
 description: This document outlines what Azure Subscription is, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
