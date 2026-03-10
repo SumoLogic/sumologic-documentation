@@ -18,13 +18,13 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 <SumoAcademy/>
 
-* Self-paced:
+* **Self-paced**:
     * [Mobot Essentials Self Paced](https://learn.sumologic.com/mobot-101)
     * [Data Search](https://learn.sumologic.com/path/sumo-onboarding/data-search)
     * [Query Language Basics Self-Paced](https://learn.sumologic.com/query-language-basics)
     * [Search Mastery Self-Paced](https://learn.sumologic.com/search-mastery-self-paced-course)
     * [Best Practices for Query Efficiency Workshop](https://learn.sumologic.com/path/sumo-onboarding/best-practices-for-query-efficiency)
-* Instructor-led virtual classes:
+* **Instructor-led virtual classes**:
     * [Certifications: Search Mastery](https://www.sumologic.com/learn/training?_certifications=search-mastery#section-2)
     * [Workshops: Mobot Essentials](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2)
     * [Workshops: Best Practices for Query Efficiency](https://www.sumologic.com/learn/training?_workshops=best-practices-for-query-efficiency#section-2)

@@ -16,8 +16,8 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 <SumoAcademy/>
 
-* Self-paced: [Observability courses](https://learn.sumologic.com/path/sumo-observability)
-* Instructor-led virtual classes: [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
+* **Self-paced**: [Observability courses](https://learn.sumologic.com/path/sumo-observability)
+* **Instructor-led virtual classes**: [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
 :::
 
 In this section, we'll introduce the following concepts:

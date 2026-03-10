@@ -15,8 +15,8 @@ import SumoAcademy from '../../reuse/sumo-logic-academy.md';
 
 <SumoAcademy/>
 
-* Self-paced: [Automation Service Workshop Self-Paced](https://learn.sumologic.com/path/sumo-security/automation-service-workshop-self-paced)
-* Instructor-led virtual classes: [Workshops: Automation Workshop](https://www.sumologic.com/learn/training?_workshops=automation-workshop#section-2)
+* **Self-paced**: [Automation Service Workshop Self-Paced](https://learn.sumologic.com/path/sumo-security/automation-service-workshop-self-paced)
+* **Instructor-led virtual classes**: [Workshops: Automation Workshop](https://www.sumologic.com/learn/training?_workshops=automation-workshop#section-2)
 :::
 
 In this section, we'll introduce the following concepts:

@@ -35,8 +35,8 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 <SumoAcademy/>
 
-* Self-paced: [Mobot Essentials Self Paced](https://learn.sumologic.com/mobot-101)
-* Instructor-led virtual classes: [Workshops: Mobot Essentials](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2)
+* **Self-paced**: [Mobot Essentials Self Paced](https://learn.sumologic.com/mobot-101)
+* **Instructor-led virtual classes**: [Workshops: Mobot Essentials](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2)
 :::
 
 ### Key capabilities

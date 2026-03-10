@@ -23,8 +23,10 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 <SumoAcademy/>
 
-* Self-paced: [Data Collection](https://learn.sumologic.com/path/sumo-onboarding/data-collection)
-* Instructor-led virtual classes: [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
+* **Self-paced**: [Data Collection](https://learn.sumologic.com/path/sumo-onboarding/data-collection)
+* **Instructor-led virtual classes**: 
+    * [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
+    * [Certifications: Administration](https://www.sumologic.com/learn/training?_certifications=administration#section-2)
 :::
 
 <div className="box-wrapper" >

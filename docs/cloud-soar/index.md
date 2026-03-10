@@ -13,7 +13,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 <SumoAcademy/>
 
-* Self-paced: 
+* **Self-paced**: 
     * [Cloud SOAR Fundamentals Self-Paced](https://learn.sumologic.com/path/sumo-security/cloud-soar-fundamentals-self-paced)
     * [Cloud SOAR Administration Self-Paced](https://learn.sumologic.com/path/sumo-security/cloud-soar-administration-self-paced)
 :::
