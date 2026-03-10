@@ -85,6 +85,52 @@ see [Office 365 Management Activity API Schema](https://msdn.microsoft.com/EN-US
 
 Each log file from Microsoft contains one or more log messages formatted as a JSON array. If there is more than one message in the array, we separate each log line in the JSON array into an individual log line message within Sumo Logic.
 
+## Setup
+
+### Vendor configuration
+
+The Microsoft Office 365 Audit Source requires you to provide **Tenant Id**, **Client Id**, and **Client Secret** while configuring. To obtain these values, follow the below steps:
+
+#### Step 1: Register a new application
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+   :::note
+   Sign in with an account that has Application Administrator and Global Administrator access for your tenant. Global Administrator access is required later to grant admin consent.
+   :::
+2. In the left menu, navigate to **Azure Active Directory** > **App registrations**.
+3. Click **New registration**.
+4. Complete the form:
+   - **Name**. Add a display name of the application registration in Azure. For example, `SumoLogic-O365AuditSource`.
+   - **Supported account types**. Select “Accounts in this organizational directory only (Single tenant)” to ensure the application is accessible only to users within your organization’s Azure AD tenant and not to external or personal Microsoft accounts.
+   - (Optional) **Redirect URI**. Enter the redirect URI.
+5. Click **Register**.
+6. Once the application is created, open the **Overview** page to collect the **Client ID** and **Tenant ID**.
+
+#### Step 2: Create a client secret
+
+1. In the application menu, navigate to **Certificates & Secrets** > **Client secrets**.
+2. Click **+ New client secret**.
+3. Provide a description. For example, `SumoCollectorSecret`.
+4. Select an expiration period.
+5. Click **Add**.
+6. Collect the client secret by copying the generated value and store it securely. This value is your Client Secret, and it will not be displayed again.
+
+#### Step 3: Grant API permissions
+
+1. In the application menu, select **API permissions** > **+ Add a permission**.
+2. Choose **APIs your organization uses** and search for **Office 365 Management APIs**.
+3. Select **Application permissions** (not Delegated).
+4. Expand **ActivityFeed** and select:
+   1. `ActivityFeed.Read`
+   2. (Optional and only for DLP events) `ActivityFeed.ReadDlp` 
+5. Click **Add permissions**.
+
+#### Step 4: Grant admin consent
+
+1. On the **API permissions** page, click **Grant admin consent for**.
+2. Confirm the action.
+The permissions should now appear as **Granted for**.
+
 ## Configure a Microsoft Office 365 Audit Source
 
 You must configure a separate Source for each Office 365 application you want to collect logs for. These can all be configured on the same Hosted Collector. 
