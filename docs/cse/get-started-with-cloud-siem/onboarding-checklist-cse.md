@@ -224,7 +224,7 @@ You could also create a context action to show users’ Google activity. For exa
 
 See:
 * [Create Context Actions](/docs/cse/administration/create-cse-context-actions/)
-* The [User Activity](/docs/integrations/google/workspace/install-app-dashboards/#user-activity) section of the [Google Workspace App and Dashboards](/docs/integrations/google/workspace/install-app-dashboards/) article
+* The [User Activity](/docs/integrations/google/workspace/install-app-dashboards/#drive---user-activity) section of the [Google Workspace App and Dashboards](/docs/integrations/google/workspace/install-app-dashboards/) article.
 
 ### Configure rules
 
