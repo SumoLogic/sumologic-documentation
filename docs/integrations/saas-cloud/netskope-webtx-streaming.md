@@ -9,10 +9,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope-WebTx-icon" width="50" />
 
-Netskope WebTx Streaming for Sumo Logic provides real-time visibility into web transaction data streamed from the Netskope platform, helping organizations monitor and secure their cloud and web traffic. The app includes five purpose-built dashboards covering transaction health, security posture, file activity, network insights, and user and application behavior. Security and IT teams can detect policy violations, track data movement, identify risky activity, and manage application governance from a single unified view.
+The Sumo Logic app for Netskope WebTx Streaming provides real-time visibility into web transaction data streamed from the Netskope platform, helping organizations monitor and secure their cloud and web traffic. The app includes five purpose-built dashboards covering transaction health, security posture, file activity, network insights, and user and application behavior. Security and IT teams can detect policy violations, track data movement, identify risky activity, and manage application governance from a single unified view.
 
 :::info
-This app includes [built-in monitors](#netskope-webtx-streaming-alerts). For details on creating custom monitors, refer to the [Create monitors for Netskope WebTx Streaming app](#create-monitors-for-the-netskope-webtx-streaming-app).
+This app includes [built-in monitors](#netskope-webtx-streaming-alerts). For details on creating custom monitors, refer to [Create monitors for Netskope WebTx Streaming app](#create-monitors-for-netskope-webtx-streaming-app).
 :::
 
 
@@ -45,7 +45,6 @@ _sourceCategory=Labs/NetskopeWebTx  !bytes
 | count by x_transaction_id
 | count
 ```
-
 
 ## Collecting logs
 
@@ -100,7 +99,7 @@ The **Netskope WebTx Streaming - Users and Applications Overview** dashboard in 
 <br/><img src={useBaseUrl('/img/send-data/Netskope-WebTx-Streaming-Users-and-Applications-Overview.png')} alt="Netskope-WebTx-Streaming-Users-and-Applications-Overview" />
 
 
-## Create monitors for the Netskope WebTx Streaming app
+## Create monitors for Netskope WebTx Streaming app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
@@ -110,14 +109,14 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Netskope WebTx Streaming - Embargoed Geo Locations of Clients Performing Web Transactions` | Detects and logs access from client IP addresses geolocated in embargoed or sanctioned regions, ensuring compliance with regulations and corporate policies. | Critical | Count > 1 |
-| `Netskope WebTx Streaming - Embargoed Geo Locations of Servers of Web Transactions` | Detects and logs access from server IP addresses geolocated in embargoed or sanctioned regions, ensuring compliance with regulations and corporate policies. | Critical | Count > 1|
-| `Netskope WebTx Streaming - File Transfer to Embargoed Location` | File transfers to embargoed or restricted geographic locations. Flags potential compliance or data‑exfiltration risks for timely review and response. | Critical | Count > 2|
-| `Netskope WebTx Streaming - High Latency in Web Requests` | Monitors web request response times and alerts when latency exceeds 5 seconds, which may indicate server overload, network issues, or a DDoS attack. You can adjust the `threshold` variable to match your requirements. | Critical | Count > 1|
-| `Netskope WebTx Streaming - Large Data Download Events` | Highlights any download transactions with abnormally large size (>500MB) to detect potential data exfiltration or abuse of cloud storage services. You can also adjust the `threshold` variable in the monitor query to match your requirements. | Critical | Count > 1|
-| `Netskope WebTx Streaming - Sanctioned Application Access Detected` | Triggers when users access cloud applications tagged as "Sanctioned" beyond a threshold count, indicating shadow IT usage that violates organizational policy. | Warning | Count > 5|
-| `Netskope WebTx Streaming - Suspicious Login from Unusual Location` | Flags logins from geographic locations that deviate from typical user patterns, which might indicate account compromise or unauthorized user access. | Critical | Count > 1|
-| `Netskope WebTx Streaming - Unauthorized Access Attempts` | Tracks failed login attempts or resource access, highlighting potential breaches using status codes like "401 Unauthorized" and unusually frequent attempts from a single IP. | Critical | Count > 5|
+| `Netskope WebTx Streaming - Embargoed Geo Locations of Clients Performing Web Transactions` | This alert is triggered when access is detected and logged from client IP addresses geolocated in embargoed or sanctioned regions. This ensures compliance with regulations and corporate policies. | Critical | Count > 1 |
+| `Netskope WebTx Streaming - Embargoed Geo Locations of Servers of Web Transactions` | This alert is triggered when access is detected and logged from server IP addresses geolocated in embargoed or sanctioned regions. This ensures compliance with regulations and corporate policies. | Critical | Count > 1|
+| `Netskope WebTx Streaming - File Transfer to Embargoed Location` | This alert is triggered when file transfers occur to embargoed or restricted geographic locations, flagging potential compliance violations or data-exfiltration risks for timely review and response. | Critical | Count > 2|
+| `Netskope WebTx Streaming - High Latency in Web Requests` | This alert is triggered when web request response times exceed 5 seconds, which may indicate server overload, network issues, or a potential DDoS attack. You can adjust the threshold variable to match your requirements. | Critical | Count > 1|
+| `Netskope WebTx Streaming - Large Data Download Events` | This alert is triggered when a download transaction exceeds an abnormally large size (greater than 500MB), helping detect potential data exfiltration or misuse of cloud storage services. You can also adjust the `threshold` variable in the monitor query to match your requirements. | Critical | Count > 1|
+| `Netskope WebTx Streaming - Sanctioned Application Access Detected` | This alert is triggered when users access cloud applications tagged as “Sanctioned” beyond a defined threshold, indicating possible shadow IT usage that violates organizational policy. | Warning | Count > 5|
+| `Netskope WebTx Streaming - Suspicious Login from Unusual Location` | This alert is triggered when logins originate from geographic locations that deviate from typical user behavior patterns, which may indicate account compromise or unauthorized access. | Critical | Count > 1|
+| `Netskope WebTx Streaming - Unauthorized Access Attempts` | This alert is triggered when multiple failed login attempts or resource access failures are detected, highlighted by status codes such as “401 Unauthorized” or unusually frequent attempts from a single IP address. | Critical | Count > 5|
 
 
 ## Upgrading/Downgrading the Netskope WebTx Streaming app (Optional)
