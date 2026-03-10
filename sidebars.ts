@@ -2990,7 +2990,7 @@ integrations: [
             'cse/rules/rule-tuning-expressions',
             'cse/rules/tailor-global-rule',
             'cse/rules/insight-trainer',
-            'cse/rules/import-sigma-rules',
+            'cse/rules/convert-sigma-rules',
           ],
         },
         {
