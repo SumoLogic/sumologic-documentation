@@ -23,7 +23,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 * Self-paced: 
     * [Onboarding Fast-Track for Administrators](https://learn.sumologic.com/onboarding-fasttrack-for-admins)
     * [Administration Self-Paced](https://learn.sumologic.com/administration-self-paced)
-* Instructor-led virtual classes: Scroll down to [Certifications: Administration](https://www.sumologic.com/learn/training?_certifications=administration#section-2)
+* Instructor-led virtual classes: [Certifications: Administration](https://www.sumologic.com/learn/training?_certifications=administration#section-2)
 :::
 
 <div className="box-wrapper" >
