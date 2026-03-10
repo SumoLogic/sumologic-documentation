@@ -27,7 +27,9 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 <SumoAcademy/>
 
-* **Self-paced**: [Onboarding courses](https://learn.sumologic.com/page/onboarding)
+* **Self-paced**:
+    * [Fundamentals Self-Paced](https://learn.sumologic.com/fundamentals-self-paced)
+    * [Onboarding courses](https://learn.sumologic.com/page/onboarding)
 * **Instructor-led virtual classes**: [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
 :::
 
