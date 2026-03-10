@@ -244,7 +244,7 @@ The **Netskope - Watchlist & Insider Threat** dashboard provides visibility into
 
 ## Create monitors for the Netskope app
 
-import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
