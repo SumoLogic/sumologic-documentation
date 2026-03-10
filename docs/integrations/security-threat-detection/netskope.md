@@ -226,6 +226,34 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Anomalies.png')} alt="netskope dashboards" />
 
+### Admin Audit & Compliance
+
+The **Netskope - Admin Audit & Compliance** dashboard provides visibility into administrative operations within Netskope, including audit log events, admin user activity, severity levels, configuration changes, and compliance-relevant operations with week-over-week trending.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Admin_Audit_and_Compliance.png')} alt="netskope dashboards" />
+
+### Watchlist & Insider Threat
+
+The **Netskope - Watchlist & Insider Threat** dashboard provides visibility into watchlist-triggered events, insider threat indicators, risky user behaviors, including file sharing, uploads, and data exfiltration patterns. Monitors watched users, applications, activities, object types, and geographic locations.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/Netskope_Watchlist_and_Insider_Threat.png')} alt="netskope dashboards" />
+
+## Create monitors for the Netskope app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Netskope app alerts
+
+| Name  | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Netskope - Compromised Credentials Detected` | This alert triggers a critical alert when Netskope identifies user credentials that have been found in known data breaches. Requires immediate password reset and account investigation. | Count > 0 | Count < = 0 |
+| `Netskope - File Quarantine Action Triggered` | This alert triggers a critical alert when Netskope quarantines a file due to policy violations. Indicates a DLP or security policy intercepted and quarantined content requiring admin review and potential remediation. | Count > 0 | Count < = 0 |
+| `Netskope - High Risk Anomaly Detected` | This alert is triggered when Netskope detects a high-risk behavioral anomaly, such as shared credentials, bulk data exfiltration, or unusual access patterns. Indicates potential account compromise or insider threat. | Count > 0 | Count < = 0 |
+| `Netskope - High Severity DLP Policy Violation` | This alert triggers a critical alert when a high-severity DLP rule violation is detected. Indicates potential sensitive data exposure through cloud applications requiring immediate investigation. | Count > 0 | Count < = 0 |
+| `Netskope - Malware Detected` | This alert triggers a critical alert when Netskope detects malware. Captures malware name, type, severity, affected user, file, and source IP for rapid incident response. | Count > 0 | Count < = 0 |
+
 ## Upgrade/Downgrade the Netskope app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
