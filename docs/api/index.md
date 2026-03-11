@@ -8,6 +8,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Use the Sumo Logic Application Programming Interfaces (APIs) to interact with our platform and access resources and data programmatically from third-party scripts and apps.
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* **Self-paced**: [Sumo Logic APIs + Terraform Self-Paced](https://learn.sumologic.com/sumo-logic-apis-terraform-self-paced)
+:::
+
+:::sumo Get Help
+To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Dojo](https://sumodojo.slack.com).
+:::
+
 <div className="box-wrapper" markdown="1">
 <div className="box boxwidetop card">
   <div className="container">
@@ -276,6 +289,3 @@ Use the Sumo Logic Application Programming Interfaces (APIs) to interact with ou
 </div>
 </div>
 
-:::sumo Get Help
-To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Dojo](https://sumodojo.slack.com).
-:::
