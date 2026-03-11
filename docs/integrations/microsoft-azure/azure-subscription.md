@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
     [Azure Subscription](https://docs.azure.cn/en-us/azure-resource-manager/management/overview) is a foundational, logical container that grants access to Microsoft Azure cloud services, acting as the primary boundary for billing, security, and resource management.
 
-## Log and metric types
+## Metric types
 
 For Azure Subscription, you can collect the following metrics:
 
