@@ -6,7 +6,7 @@ keywords:
  - subscription in azure
  - azure subscription monitoring
  - azure subscription metrics
-description: This document outlines what Azure Subscription is, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
+description: This document outlines what an Azure Subscription is, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -21,10 +21,10 @@ The Sumo Logic app for Azure Subscription allows you to collect, analyze, and mo
 
 For Azure Subscription, you can collect the following metrics:
 
-* **Latency**. Latency data for all requests to Azure Subscription.
-* **Traffic**. Traffic data for all requests to Azure Subscription.
+* **Latency**. Latency data for all requests to the Azure Subscription.
+* **Traffic**. Traffic data for all requests to the Azure Subscription.
 
-For more information on supported metrics schema, refer to [Azure documentation](https://docs.azure.cn/en-us/azure-resource-manager/management/monitor-resource-manager-reference#metrics).
+For more information on the supported metrics schema, refer to [Azure documentation](https://docs.azure.cn/en-us/azure-resource-manager/management/monitor-resource-manager-reference#metrics).
 
 ## Setup
 
@@ -66,7 +66,7 @@ import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
 
 ### Latency
 
-The **Azure Subscription - Latency** dashboard provides details like average subscription latency, operational latency and region based api latency of subscription API.
+The **Azure Subscription - Latency** dashboard provides details like average subscription latency, operational latency, and region based api latency of the subscription API.
 
 Use this dashboard to:
 
@@ -79,7 +79,7 @@ Use this dashboard to:
 
 ### Traffic
 
-The **Azure Subscription - Traffic** dashboard provides details like average subscription traffic, operational traffic and region based api traffic of subscription API.
+The **Azure Subscription - Traffic** dashboard provides details like average subscription traffic, operational traffic, and region based api traffic of the subscription API.
 
 Use this dashboard to:
 
@@ -101,10 +101,10 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 These alerts are metric-based and will work for all Azure Subscriptions.
 
-| Alert Name                                                                    | Alert Description and Conditions                                                                                                                                                                                                                                                                | Alert Condition                          | Recover Condition                          |
-|:------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------|:-------------------------------------------|
-| `Azure Subscription - ARM Latency SLO Breach (Subscription‑wide)`             | This alert is triggered Azure Resource Manager being slow for your whole subscription and latency is greater than 2000 MilliSeconds.                                                                                                                                                            | Critical: `> 2000`<br/>Warning: `> 1500` | Critical: `<= 2000`<br/>Warning: `<= 1500` |
-| `Azure Subscription - ARM Error-Rate Spike (4XX or 5XX)`                      | This alert is triggered when Failing ARM operations deployments, reads, policy calls at subscription level are detected and their count is greater than 100.                                                                                                                                    | Critical: `> 100`<br/>Warning: `> 75`    | Critical: `<= 100`<br/>Warning: `<= 75`    |
+| Alert Name | Alert Description and Conditions | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Subscription - ARM Latency SLO Breach (Subscription‑wide)` | This alert is triggered when Azure Resource Manager is slow for your whole subscription, and latency is greater than 2000 milliseconds. | Critical: `> 2000`<br/>Warning: `> 1500` | Critical: `<= 2000`<br/>Warning: `<= 1500` |
+| `Azure Subscription - ARM Error-Rate Spike (4XX or 5XX)` | This alert is triggered when failing ARM operations, deployments, reads, and policy calls at the subscription level are detected, and their count is greater than 100. | Critical: `> 100`<br/>Warning: `> 75` | Critical: `<= 100`<br/>Warning: `<= 75` |
 
 ## Upgrade/Downgrade the Azure Subscription app (Optional)
 
