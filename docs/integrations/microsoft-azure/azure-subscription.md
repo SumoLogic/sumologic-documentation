@@ -56,24 +56,6 @@ As part of the app installation process, the following fields will be created by
 - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
 - `resource_type`. Azure resource type (for example, azureSubscriptions).
 
-As part of the app installation process, the following FERs will be created by default:
-### Azure location extraction FER
-
-   ```sql
-   Rule Name: AzureLocationExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
-
-   ```sql title="Parse Expression"
-   json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
-   | replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
-   | if (!isBlank(resourceLocation), resourceLocation, location) as location
-   | if (!isBlank(service_region), service_region, location) as location 
-   | if (isBlank(location), "global", location) as location
-   | fields location
-   ```
-
 ## Viewing the Azure Subscription dashboards
 
 import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
