@@ -377,6 +377,13 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-subscription.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-subscription')}>Azure Subscription</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Subscription.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-synapse-analytics.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-synapse-analytics')}>Azure Synapse Analytics</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Synapse Analytics.</p>

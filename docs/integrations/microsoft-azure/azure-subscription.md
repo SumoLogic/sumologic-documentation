@@ -13,7 +13,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-subscription.png')} alt="Thumbnail icon" width="50"/>
 
-    [Azure Subscription](https://docs.azure.cn/en-us/azure-resource-manager/management/overview) is a foundational, logical container that grants access to Microsoft Azure cloud services, acting as the primary boundary for billing, security, and resource management.
+The Sumo Logic app for Azure Subscription allows you to collect, analyze, and monitor cloud activity logs in one centralized platform. This improves security, operational visibility, and compliance monitoring.
+
+[Azure Subscription](https://docs.azure.cn/en-us/azure-resource-manager/management/overview) is a foundational, logical container that grants access to Microsoft Azure cloud services, acting as the primary boundary for billing, security, and resource management.
 
 ## Metric types
 
