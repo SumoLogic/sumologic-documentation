@@ -51,7 +51,7 @@ For an general overview of how to convert Sigma rules to a backend, see [Convert
 Following is a brief overview of how to convert your Sigma rules into Cloud SIEM rule format:
 1. [Install the the Sumo Logic backend into Sigma CLI](#install-the-sumo-logic-backend-into-sigma-cli).
 1. Create a repository to store your Sigma rules.
-1. Create rules in Sigma rule format and place them into your respository. For sample rules, see the [Sigma Rule Repository](https://github.com/SigmaHQ/sigma/blob/master/README.md).<br/> For example, here is a `test-rule.yml` file in Sigma format:
+1. Create rules in Sigma rule format and place them into your repository. For sample rules, see the [Sigma Rule Repository](https://github.com/SigmaHQ/sigma/blob/master/README.md).<br/> For example, here is a `test-rule.yml` file in Sigma format:
    ```bash
    title: Suspicious PowerShell Execution
    logsource:
