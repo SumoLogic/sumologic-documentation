@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-subscription.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Subscription](https://docs.azure.cn/en-us/azure-resource-manager/management/overview) is a foundational, logical container that grants access to Microsoft Azure cloud services, acting as the primary boundary for billing, security, and resource management.
+    [Azure Subscription](https://docs.azure.cn/en-us/azure-resource-manager/management/overview) is a foundational, logical container that grants access to Microsoft Azure cloud services, acting as the primary boundary for billing, security, and resource management.
 
 ## Log and metric types
 
@@ -112,6 +112,15 @@ Use this dashboard to:
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
+
+### Azure Subscription alerts
+
+These alerts are metric-based and will work for all Azure Subscriptions.
+
+| Alert Name                                                                    | Alert Description and Conditions                                                                                              | Alert Condition                       | Recover Condition                       |
+|:------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------|:----------------------------------------|
+| `Azure Subscription - ARM Latency SLO Breach (Subscription‑wide)`             | This alert is triggered Azure Resource Manager (ARM) being slow for your whole subscription (control‑plane degradation).      | Critical: `> 2`<br/>Warning: `> 1.5`  | Critical: `<= 2`<br/>Warning: `<= 1.5`  |
+| `Azure Subscription - ARM Error-Rate Spike (4XX or 5XX)`                      | This alert is triggered when Failing ARM operations (deployments, reads, policy calls) at subscription level.                 | Critical: `> 100`<br/>Warning: `> 75` | Critical: `<= 100`<br/>Warning: `<= 75` |
 
 ## Upgrade/Downgrade the Azure Subscription app (Optional)
 
