@@ -16,6 +16,18 @@ Sumo Logic is an all-in-one cloud data analytics platform focused on Security, O
 
 Let's get started!
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* **Self-paced**: 
+   * [Fundamentals Self-Paced](https://learn.sumologic.com/fundamentals-self-paced)
+   * [Onboarding courses](https://learn.sumologic.com/page/onboarding)
+* **Instructor-led virtual classes**: [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
+:::
+
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
