@@ -76,7 +76,7 @@ Following is a brief overview of how to convert your Sigma rules into Cloud SIEM
      "tags": ["windows", "process_creation"]
      }
    ```
-1. Import the JSON rule file into Sumo Logic using the [Cloud SIEM API](/docs/api/cloud-siem-enterprise/) or UI. <br/>To i[mport the JSON file using the UI](docs/cse/rules/about-cse-rules/#import-a-rule):
+1. Import the JSON rule file into Sumo Logic using the [Cloud SIEM API](/docs/api/cloud-siem-enterprise/) or UI. <br/>To [import the JSON file using the UI](/docs/cse/rules/about-cse-rules/#import-a-rule):
      1. Access the rules list view. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
      1. Click the **Import** button. <br/><img src={useBaseUrl('img/cse/rule-import-button.png')} alt="Rule import button" style={{border: '1px solid gray'}} width="600" /> 
 
