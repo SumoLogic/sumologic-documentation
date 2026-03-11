@@ -7,6 +7,12 @@ description: The Sumo Logic app for LiteLLM provides visibility into LLM proxy u
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<head>
+ <meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+
 <img src={useBaseUrl('img/send-data/litellm-icon.png')} alt="Thumbnail icon" width="45"/>
 
 [LiteLLM](https://docs.litellm.ai/) is an open-source proxy that provides a unified interface to call 100+ LLM APIs (OpenAI, Anthropic, AWS Bedrock, Groq, and more). It routes requests, manages fallbacks, tracks budgets, and exposes Prometheus metrics for observability.
