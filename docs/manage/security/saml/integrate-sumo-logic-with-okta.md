@@ -20,11 +20,10 @@ Sumo Logic using their Single Sign-On (SSO) credentials.
 
 ## Before you start
 
-* Read the "Limitations section" on [Set Up SAML for Single Sign-On](set-up-saml.md).
-* If you plan to manage Sumo role assignments on Okta, before you proceed, make sure that you have: 
-
-  * Configured an Okta group for each Sumo role, with the same name as the Sumo role. For example, you should have an “Administrator” group in Okta, just as you have an “Administrator” role in Sumo.
-  * Assigned your Sumo users to the appropriate Okta groups, based on the Sumo roles you want to assign to each user.  
+* Read [Limitations](/docs/manage/security/saml/set-up-saml/#limitations).
+* If you plan to manage Sumo Logic role assignments on Okta, before you proceed, make sure that you have: 
+  * Configured an Okta group for each Sumo Logic role, with the same name as the Sumo Logic role. For example, you should have an “Administrator” group in Okta, just as you have an “Administrator” role in Sumo Logic.
+  * Assigned your Sumo Logic users to the appropriate Okta groups, based on the Sumo Logic roles you want to assign to each user.  
 
 ## Install the Sumo Logic SAML App in Okta
 
@@ -40,13 +39,12 @@ Sumo Logic using their Single Sign-On (SSO) credentials.
 1. On the **Sign-on Options** tab, select **View Setup Instructions**. <br/><img src={useBaseUrl('img/security/sign-on-options.png')} alt="Sign-on Options tab" style={{border: '1px solid gray'}} width="600" />
 1. Follow the instructions on the **View Setup Instructions** page to configure the Sumo Logic SAML integration. The information that appears is similar to the content of the [How to Configure SAML 2.0 for Sumo Logic](https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Sumologic.html) in Okta help.  The page includes instructions on how to configure on-demand user account provisioning and SP-initiated login.
 
-### Configure Okta to send role assignments to Sumo (Optional)
+### Configure Okta to send role assignments to Sumo Logic (Optional)
 
-In this step, you configure Okta to send group membership information in the SAML assertions it sends, so that Sumo Logic can assign roles to a user at each logon. This allows you to manage Sumo role assignments via Okta. If you don’t want to manage Sumo roles via Okta, skip these steps and proceed to [Add Okta users to the Sumo Logic app in Okta](#add-okta-users-to-the-sumo-logic-app-in-okta) below.
+In this step, you configure Okta to send group membership information in the SAML assertions it sends, so that Sumo Logic can assign roles to a user at each logon. This allows you to manage Sumo Logic role assignments via Okta. If you don’t want to manage Sumo Logic roles via Okta, skip these steps and proceed to [Add Okta users to the Sumo Logic app in Okta](#add-okta-users-to-the-sumo-logic-app-in-okta) below.
 
 These instructions assume that:
-
-* You have configured a set of groups on Okta whose names match the names of the roles defined in Sumo.
+* You have configured a set of groups on Okta whose names match the names of the roles defined in Sumo Logic.
 * You have assigned each user in Okta to the Okta groups that maps to the roles you want the user to have.
 
 There are two sides to the configuration. You'll configure a **Group Attribute Statement i**n Okta and a **Roles Attribute** in Sumo Logic, each with the same value. 
@@ -57,9 +55,9 @@ There are two sides to the configuration. You'll configure a **Group Attribute 
 1. In the **Group Attribute Statements** section, enter a name for the attribute that will contain your Okta groups. For example, "**roles**". Note the name you supply will be used when configuring the **Roles Attribute** in your Sumo Logic SAML configuration. Sumo Logic only accepts a single role attribute name when configuring the **Roles Attribute** in Sumo Logic. <br/><img src={useBaseUrl('img/security/group-attributes-2.png')} alt="Group Attribute Statements section" style={{border: '1px solid gray'}} width="400" />
 1. **Name Format**. Leave unspecified.
 1. **Filter**. In the left-side field, choose one of the options from the pulldown, to select the type of match expression you are going to enter:
-    1. **Starts with**. Useful if all the names of the Okta groups with Sumo users all begin with the same string.
-    1. **Equals**. Useful if there is a single Okta group for Sumo users.
-    1. **Contains**. Useful if all the names of the Okta groups with Sumo users all contain the same string.
+    1. **Starts with**. Useful if all the names of the Okta groups with Sumo Logic users all begin with the same string.
+    1. **Equals**. Useful if there is a single Okta group for Sumo Logic users.
+    1. **Contains**. Useful if all the names of the Okta groups with Sumo Logic users all contain the same string.
     1. **Matches regex.** Use this option if you can’t specify your groups using any of the other filter types.  For example regex `Foo|A.*` will match the Okta group “Foo” and groups whose names begin with the letter “A”. If you are entering a regular expression, you must enter the case correctly. Regular expressions are case-sensitive.
 1. Click **Save** at the bottom of the **Create SAML Integration** page.
 1. In Sumo Logic, go to the **SAML** page. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**.
@@ -82,22 +80,22 @@ If you want to force users to access Sumo Logic using SAML, as opposed to also b
 
 ### Check SAML Usage
 
-If you intend to require Sumo users to sign-in using SAML, as described in the following section, Require SAML for sign-in, it is a best practice to first check whether some users are still logging in directly, instead of using SAML. You can run the following query to see, for a particular time range, whether users signed in using SAML or with their username and password:
+If you intend to require Sumo Logic users to sign-in using SAML, as described in the following section, [Require SAML for sign-in](#require-saml-for-sign-in), it is a best practice to first check whether some users are still logging in directly, instead of using SAML. You can run the following query to see, for a particular time range, whether users signed in using SAML or with their username and password:
 
 ```sql
 _index=sumologic_audit action=login | count by class, sourceuser
 ```
 
 :::important
-This query depends upon data in the Sumo audit index. If the audit index is not enabled, the query will not return results. To enable the index, follow the instructions in Enable and Manage the Audit Index.
+This query depends upon data in the Sumo Logic audit index. If the audit index is not enabled, the query will not return results. To enable the index, follow the instructions in [Enable the Audit Index](/docs/manage/security/audit-indexes/audit-index/#enable-the-audit-index).
 :::
 
-The query results show, for each user that has accessed Sumo over the time range, the number of times they have logged in using SAML or by entering a Sumo username and password. In the class column:
+The query results show, for each user that has accessed Sumo Logic over the time range, the number of times they have logged in using SAML or by entering a Sumo Logic username and password. In the class column:
 
 * "SAML" indicates the user signed in using SAML.  
 * "SESSION" indicates the user authenticated by entering a username and password.  
 
-If the same user accessed Sumo using both methods (SAML and direct logon) during the time range, the query results will include a row for each method, showing how many times each method was used.
+If the same user accessed Sumo Logic using both methods (SAML and direct logon) during the time range, the query results will include a row for each method, showing how many times each method was used.
 
 <img src={useBaseUrl('img/security/saml-use-query.png')} alt="Query results" style={{border: '1px solid gray'}} width="800" />
 
@@ -106,18 +104,18 @@ If the same user accessed Sumo using both methods (SAML and direct logon) during
 Click Require SAML Sign In to require users to sign in using SAML.
 
 :::tip
-After you lock down SAML, any new users you allowlist will have to select Forgot Password from the login screen to recover their credentials. This is because a SAML-locked down user does NOT have a password.
+After you lock down SAML, any new users you allowlist will have to select **Forgot Password** from the login screen to recover their credentials. This is because a SAML-locked down user does NOT have a password.
 :::
 
 <img src={useBaseUrl('img/security/require-saml.png')} alt="Require SAML Sign In toggle" style={{border: '1px solid gray'}} width="800" />
 
-Sumo automatically adds your account under **Allow these users to sign in using passwords in addition to SAML** as an allowlisted user as a preventative measure to ensure you’re still able to access Sumo if you run into issues.
+Sumo Logic automatically adds your account under **Allow these users to sign in using passwords in addition to SAML** as an allowlisted user as a preventative measure to ensure you’re still able to access Sumo Logic if you run into issues.
 
 Having only one user able to bypass SAML may not be convenient or practical if you have a global company or a large team. You can add additional allowlisted users by clicking the (+) icon by **Allow these users to sign in using passwords in addition to SAML**:
 
 <img src={useBaseUrl('img/security/allow-users.png')} alt="Plus button to allow users to sign in" style={{border: '1px solid gray'}} width="800" />
 
-We do not recommend denying all users password access to Sumo even if you want to enforce log in by SAML. If you attempt to delete your last remaining allowlisted user, you will receive a warning that this is not a recommended practice:
+We do not recommend denying all users password access to Sumo Logic even if you want to enforce login by SAML. If you attempt to delete your last remaining allowlisted user, you will receive a warning that this is not a recommended practice:
 
 <img src={useBaseUrl('img/security/prevent-password-based-login.png')} alt="Prevent Password-Based Sign In message" style={{border: '1px solid gray'}} width="400" />
 

@@ -20,11 +20,37 @@ To learn more please see the following links:
 
 To review and submit enhancements for this extension, please visit the [Sumo Logic GitHub repository](https://github.com/SumoLogic/sumologic-lambda-extensions).
 
+## SumoLogic Lambda Extension AWS region availability
+SumoLogic Lambda Extension is available in the following AWS regions:
+us-east-1 (N. Virginia)
+us-east-2 (Ohio)
+eu-north-1 (Stockholm)
+ap-south-1 (Mumbai)
+eu-west-3 (Paris)
+eu-west-2 (London)
+eu-south-1 (Milan)
+eu-west-1 (Ireland)
+ap-northeast-2 (Seoul)
+me-south-1 (Bahrain)
+ap-northeast-1 (Tokyo)
+sa-east-1 (São Paulo)
+ca-central-1 (Canada Central)
+ap-east-1 (Hong Kong)
+ap-southeast-1 (Singapore)
+ap-southeast-2 (Sydney)
+eu-central-1 (Frankfurt)
+us-west-1 (N. California)
+us-west-2 (Oregon)
+ca-west-1 (Calgary)
+
 ## AWS Lambda Supported Runtimes
 
 Sumo Logic supports all Lambda runtimes that support extensions. For a complete list, see [AWS Lambda runtimes](https://docs.aws.amazon.com/lambda/latest/dg/using-extensions.html).
 
 Follow the steps below, to use the new extension to collect your Lambda logs.
+
+## AWS Lambda Managed Instance Support
+Sumologic Lambda Extension from arn version 12 (release v1.4.0) has started supporting [Lambda Managed instances](https://docs.aws.amazon.com/lambda/latest/dg/lambda-managed-instances.html). No additional steps are required. The same extension can be used with the same steps as below to work with managed instance.
 
 ## Step 1: Add a Hosted Collector and HTTP Source
 

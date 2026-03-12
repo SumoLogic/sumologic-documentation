@@ -834,7 +834,8 @@ none
 **Description:** A record flagged an IP address from a threat intelligence match list.
 
 The following Cloud SIEM rules refer to this match list:
-* Threat Intel - Successful Authentication from Threat IP
+
+none
 
 ### unauthorized_external_media
 
