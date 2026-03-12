@@ -10,7 +10,7 @@ description: Sumo Logic is no longer offering Cloud SOAR for sale.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-As of November 1, 2025, Sumo Logic will no longer sell its standalone Cloud SOAR (Security Orchestration, Automation, and Response) product. Sumo Logic will no longer sell Cloud SOAR as a separate licensed offering, instead focusing on delivering enhanced automation and orchestration capabilities through the [Automation Service](/docs/platform-services/automation-service/).
+As of April 23, 2026, Sumo Logic no longer sells its standalone Cloud SOAR (Security Orchestration, Automation, and Response) product. Sumo Logic no longer sells Cloud SOAR as a separate licensed offering, instead focusing on delivering enhanced automation and orchestration capabilities through the [Automation Service](/docs/platform-services/automation-service/).
 
 This strategic decision reflects the evolving cybersecurity landscape, where organizations increasingly prefer unified platforms over disparate point solutions. Sumo Logic's Automation Service, built on the same proven codebase as Cloud SOAR, are now seamlessly integrated into the company's log management and Cloud SIEM solutions, providing you with a more cohesive and efficient security operations experience.
 
@@ -49,7 +49,7 @@ We believe that almost every automation, orchestration, and response use case ca
 
 #### When did this decision take effect? 
 
-The end-of-sale decision is effective as of November 1, 2025. No new Cloud SOAR licenses are being sold from this date forward.
+The end-of-sale decision is effective as of April 23, 2026. No new Cloud SOAR licenses are being sold from this date forward.
 
 #### Will this decision affect Sumo Logic's overall security portfolio? 
 
