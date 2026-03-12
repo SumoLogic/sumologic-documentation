@@ -35,8 +35,8 @@ The SOC Analyst Agent runs in the background against all insights that flow into
    * **Benign**. AI analysis determined that the insight is harmless and is not a candidate for elevation to SOC team investigation.
    * **Inconclusive**. AI analysis could not determine whether the insight needs to be investigated.
    * **In Progress**. AI analysis is in progress.
-   * **Malicious**. AI analysis determined that the insight is malicious, and warrants immediate investigation by your SOC team.
    * **Suspicious**. AI analysis determined that the insight is suspicious and warrants investigation by your SOC team. 
+   * **Malicious**. AI analysis determined that the insight is malicious, and warrants immediate investigation by your SOC team.
 1. Clicking anywhere on the row of an insight that has an AI verdict shows a side panel with results of the verdict. This allows you to browse quickly for insights needing more investigation:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-side-panel.png')} alt="Insight AI side panel" style={{border: '1px solid gray'}} width="800" />
 1. To investigate an insight further, click the insight's ID. Insights with an AI verdict display an **AI Investigation** tab in the insight details page. Use the information on this tab to dive deeper into the insight.
 
@@ -107,3 +107,4 @@ Yes. Analysts can override verdicts and flag feedback within the UI. These actio
    * [SOC Analyst Agent](https://www.sumologic.com/demo/soc-analyst-agent)
    * [Mobot walkthrough](https://www.sumologic.com/demo/mobot-walkthrough)
 * Sumo Logic website: [Dojo AI](https://www.sumologic.com/solutions/dojo-ai)
+* AWS article:[ Accelerating security analytics using Amazon Nova with Sumo Logic](https://aws.amazon.com/solutions/case-studies/sumo-logic-nova-case-study/)
