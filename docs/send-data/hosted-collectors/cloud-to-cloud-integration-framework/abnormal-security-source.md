@@ -53,6 +53,10 @@ To configure an Abnormal Security Source, follow the steps below:
 1. Additionally, if you like to collect the case data, enter **cases** in the **Supported APIs to collect** section. Threat data will be collected by default. But, if you like to collect only case data, you can unselect **threats** from the **Supported APIs to collect** section.
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the Abnormal Security source, consider installing the Sumo Logic app for [Abnormal Security](/docs/integrations/saas-cloud/abnormal-security/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
