@@ -495,6 +495,12 @@ If you prefer not to use Mobot, contact our [support team](https://support.sumol
 ### Security and privacy
 
 <details>
+<summary>Do Dojo AI agents access customer data?</summary>
+
+Mobot (including Query Agent and Knowledge Agent) does not process or analyze customer log data. Schema and field samples are used to provide context to the AI, but your log content is not read or stored by the model.
+</details>
+
+<details>
 <summary>What specific types of customer data or PII does the AI process? Does it filter out PII/sensitive information?</summary>
 
 Mobot processes schema and field samples to provide context to the AI. While field values can contain PII or confidential data (for example, email addresses or IP addresses), these values are used solely to enable insights and are protected under strict compliance and security reviews.
@@ -523,7 +529,15 @@ No. All processing happens within your region's cluster. RAG context is scoped t
 <details>
 <summary>Does a fourth party have access to Mobot customer data?</summary>
 
-No. The foundation model provider used by Amazon Bedrock has no access to customer data.
+No. Mobot uses foundation models securely hosted through Amazon Bedrock. When customer data is processed:
+
+* Customer inputs and outputs are treated as Customer Content under AWS terms.
+* AWS does not use Customer Content to train models or improve Amazon Bedrock.
+* AWS may access Customer Content only as necessary to provide the service or comply with applicable law.
+* Third-party model providers (such as Anthropic) do not have access to customer inputs or outputs.
+* Customer inputs and outputs are not shared with model providers and are not used to train external models.
+
+Customer data processed through Mobot remains within Sumo Logic's secure environment and is used only to deliver results for that customer.
 </details>
 
 ### Technical
@@ -549,13 +563,25 @@ Yes, the on-call developer or security engineer troubleshooting an incident is t
 <details>
 <summary>Does Sumo Logic hold any AI-specific certifications or accreditations?</summary>
 
-No, we do not currently hold any AI-specific certifications or accreditations.
+Sumo Logic is currently reviewing AI compliance within a rapidly evolving regulatory landscape, including ISO 42001, which is designed to help organizations implement AI responsibly.
+
+All Sumo Logic AI capabilities operate within our existing industry-recognized security and compliance framework, including FedRAMP Moderate, SOC 2 Type 2, HIPAA, PCI DSS 4.0.1, and ISO 27001:2022. These attestations govern the confidentiality, integrity, and protection of customer data across our platform, including AI features.
+
+Availability of specific AI capabilities may vary by deployment region based on compliance boundary requirements.
 </details>
 
 <details>
 <summary>How are reviews conducted on the Mobot model?</summary>
 
+The generative AI model used by Mobot is licensed and securely hosted via Amazon Bedrock, meaning it is not directly accessible by Sumo Logic, customers, or third parties.
+
 Each major capability added to Mobot undergoes legal, compliance, and application security reviews. These reviews coincide with new releases that expand insights or process new types of data.
+</details>
+
+<details>
+<summary>Which Mobot capabilities are available in FED deployments?</summary>
+
+The current GA versions of Mobot, including Query Agent and Knowledge Agent, are available in the FED deployment.
 </details>
 
 ### Query Agent
