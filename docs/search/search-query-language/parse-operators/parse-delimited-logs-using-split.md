@@ -3,6 +3,8 @@ id: parse-delimited-logs-using-split
 title: Parse Delimited Logs Using Split
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The **`split`** operator allows you to split strings into multiple strings, and parse delimited log entries, such as space-delimited formats.
 
 To parse log entries from CSV files, you can use the simpler [CSV operator](parse-csv-formatted-logs.md).
@@ -54,7 +56,7 @@ _sourceCategory=colon
 
 which produces results such as:
 
-![split example colon](/img/reuse/query-search/split_example_colon.png)
+<img src={useBaseUrl('img/reuse/query-search/split_example_colon.png')} alt="Split example colon" style={{border: '1px solid gray'}} width="800" />
 
 In another example, you'd use the following query:
 
@@ -65,7 +67,7 @@ _sourceCategory=colon
 
 which provides results like:
 
-![split example](/img/reuse/query-search/split_example1.png)
+<img src={useBaseUrl('img/reuse/query-search/split_example1.png')} alt="Split example" style={{border: '1px solid gray'}} width="700" />
 
 ### Parsing a CSV file
 
@@ -78,7 +80,7 @@ _sourceCategory=csv
 
 which produces results such as:
 
-![splt example](/img/reuse/query-search/split_example3.png)
+<img src={useBaseUrl('img/reuse/query-search/split_example3.png')} alt="Split example" style={{border: '1px solid gray'}} width="700" />
 
 ### Parsing a tab delimited file
 
@@ -93,7 +95,7 @@ _sourceCategory=sumo/zscaler
 
 which produces this result:
 
-![SplitTab.jpg](/img/search/searchquerylanguage/parse-operators/SplitTab.jpg)
+<img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/SplitTab.jpg')} alt="Split tab" style={{border: '1px solid gray'}} width="800" />
 
 Alternatively, you can use the parse operator to extract fields from a tab delimited log file. The following query produces the same result as the previous query.
 

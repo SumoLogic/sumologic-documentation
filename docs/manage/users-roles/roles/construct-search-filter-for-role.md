@@ -7,7 +7,7 @@ description: Construct a role search filter to control what log data users with 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import RoleStacking from '../../../reuse/role-stacking-tip.md';
 
-This page describes how to define search filters for a role. These instructions apply to the **Search Filter** option in Step 6 of the [Create a role](/docs/manage/users-roles/roles/create-manage-roles/#create-a-role) procedure. 
+This page describes how to define search filters for a role. These instructions apply to the **Search Filter** option in the [Create a role](/docs/manage/users-roles/roles/create-manage-roles/#create-a-role) procedure. 
   
 ## Search filter basics
 
@@ -24,10 +24,10 @@ The sections below list search filter limitations, and describe how you can use 
 * Role filters apply to log searches, not metric searches.
 * The [_dataTier](/docs/manage/partitions/data-tiers/searching-data-tiers/) search modifier is not supported in role filters.
 * If one or more of your Field Extraction Rules (FERs) override the out-of-the-box metadata tags you use in your search filters for a role, Live Tail can still provide access to data outside of the scope intended in your search filter. You should either avoid overriding out-of-the-box metadata tags in your FERs or avoid overridden tags in your search filters.
-* Using a field or FERs in a role filter is not supported. It will cause errors for any search run by a user in the role where the field is not valid. For example, if an FER created a field `foo`, adding the `foo=bar` scope to a role will break any search for a user where this field is not valid. This most often causes errors where users search a view where the field is not a valid schema field in that view.
+* Use a field or an FER in the role search filter to control access to data.
 * If the search filter of a role is modified, the data can still be accessed in the pinned queries for up to 24 hours from the original run prior to the search filter modification.
 
-For limitations related to the use of Scheduled Views or Partitions in a search filter, refer to [Partitions](/docs/manage/partitions/#limitations) and [Scheduled Views](/docs/manage/scheduled-views).
+For limitations related to the use of Scheduled Views or partitions in a search filter, refer to [Partitions](/docs/manage/partitions/#limitations) and [Scheduled Views](/docs/manage/scheduled-views).
 
 ### Using metadata in a search filter
 
@@ -246,4 +246,4 @@ When a user with Roles A and B runs a query, Sumo Logic combines the two filters
 
 ## Test role filtering
 
-To test whether filtering works as expected, select a role and click the **Emulate log search** button. For more information, see [Test a role](/docs/manage/users-roles/roles/create-manage-roles/#test-a-roles-log-access-rights).
+To test whether filtering works as expected, select a role and click the **Emulate log search** button. For more information, see [Test a role's log access rights](/docs/manage/users-roles/roles/create-manage-roles/#test-a-roles-log-access-rights).

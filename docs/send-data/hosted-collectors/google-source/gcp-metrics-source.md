@@ -15,6 +15,14 @@ The Sumo Logic GCP Metrics Source gives you complete visibility into all Google 
 For information on API calls and collected metrics, see the [Collected metrics](#collected-metrics) section.
 :::
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a GCP Metrics Source with the [`sumologic_gcp_metrics_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/gcp_metrics_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Google Service account
 
 Sumo Logic uses a Google Service Account to connect and make API calls on your behalf to collect metrics.
@@ -63,7 +71,7 @@ If you create and manage all service accounts in one project which is different 
 For information on available metrics, see [GCP Metrics](https://cloud.google.com/monitoring/api/metrics_gcp).
 
 1. Select an existing Hosted Collector upon which to add the Source. If you do not already have a Collector you would like to use, create one, using the instructions on [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+2. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 3. Click **Add Source** next to a Hosted Collector.
 4. Search for and select **GCP Metrics**. <br/><img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="gcp-icon.png" width="80"/>
 5. **Name**. Enter a name to display for the new source.

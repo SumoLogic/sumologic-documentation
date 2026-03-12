@@ -24,14 +24,16 @@ Smartsheet is used to collaborate on project timelines, documents, calendars, ta
 
 ### Vendor configuration
 
-To collect data from Smartsheet, you need a Smartsheet account with admin privileges that would allow the creation of an app via a developer account. See [steps in the Smartsheet documentation](https://smartsheet.redoc.ly/#section/OAuth-Walkthrough/First-Steps) to create a developer account in Smartsheet.
+To collect data from Smartsheet, you must have a Smartsheet account with **Admin** privileges, which allows you to create an app using a developer account. Refer to the [Smartsheet documentation](https://smartsheet.redoc.ly/#section/OAuth-Walkthrough/First-Steps) for the steps to create a developer account.
+
+To collect data from the `\events` endpoint, the Event Reporting **Premium add-on** is required. This add-on is available for **Enterprise and Advanced Work Management** plans, and you must have **System Admin** permissions. Refer to the [Smartsheet documentation](https://developers.smartsheet.com/api/smartsheet/openapi/events/list-events) for more details. You can also contact Smartsheet support to enable this permission for your account.
 
 ### Source configuration
 
 When you create a Smartsheet source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure Smartsheet Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Smartsheet** icon.
 1. Enter a **Name** to display for the source in the Sumo Logic web application. The description is optional.
@@ -39,6 +41,7 @@ To configure Smartsheet Source:
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+1. (Optional) In **Base URL**, paste the endpoint base URL as per your region and environment. Default is `https://api.smartsheet.com/2.0`.
 1. In **Application (client) ID**, paste in the Client ID from the vendor's setup "Create a Developer Account and Register an App" steps.
 1. In **Client Secret**, paste in the Client Secret from the vendor's setup "Create a Developer Account and Register an App" steps.
 1. In **Oauth 2.0 Authorization Code**, paste in the Authorization Code from the vendor's setup "Create a Developer Account and Register an App" steps.
@@ -65,6 +68,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | app_client_id | String | Yes | `null` | The Smartsheet app client ID to collect from Smartsheet platform. |  |
 | client_secret | String | Yes | `null` | The Smartsheet app client secret to collect from Smartsheet platform. |  |
+| base_url | String | No | `https://api.smartsheet.com/2.0` | Base URL of the Smartsheet endpoint. |  |
 | authorization_code | String | Yes | `null` | The Smartsheet app client OAuth2 authorization code to collect from Smartsheet platform. |  |
 | polling_interval | Integer | Yes | 10 | How frequently the integration should poll to Smartsheet. |  |
 

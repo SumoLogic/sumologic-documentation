@@ -49,7 +49,7 @@ When you create a CrowdStrike Source, you add it to a Hosted Collector. Before 
 
 To configure a CrowdStrike Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CrowdStrike**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -66,6 +66,10 @@ To configure a CrowdStrike Source:
     If no Application ID is provided, a random ID is generated. Any time this ID is changed, the Source will re-read the data stream starting at the beginning.
     :::
 1. When you are finished configuring the Source, click **Submit**.
+
+:::info
+After configuring the CrowdStrike source, consider installing the Sumo Logic app for [CrowdStrike Falcon Endpoint Protection](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection/) to visualize and analyze the collected data using prebuilt dashboards.
+:::
 
 ## Metadata fields
 

@@ -7,7 +7,9 @@ description: Learn about Sumo Logic Flex Pricing.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-Flex Pricing delivers a new financial model for log management in which you can centralize, store, and analyze all application, infrastructure, and security data in one place. This drives collaboration and velocity while delivering a reliable and secure digital experience. Here's how it works:
+Flex Pricing delivers a new financial model for log management in which you can centralize, store, and analyze all application, infrastructure, and security data in one place. This drives collaboration and velocity while delivering a reliable and secure digital experience. 
+
+:::training Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/0sudpuhk83?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -20,6 +22,12 @@ Flex Pricing delivers a new financial model for log management in which you can 
   allow="autoplay; fullscreen"
   allowfullscreen
 />
+
+:::
+
+:::info
+To set up and configure the Flex app, refer to [Flex](/docs/integrations/sumo-apps/flex/).
+:::
 
 ## Feature support
 
@@ -48,31 +56,19 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/sumo-apps/flex"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Setup and Configure Flex app</h4></a>
-  <p>Learn how to setup and configure the Flex app.</p>
+  <a href={useBaseUrl('docs/manage/partitions/flex/create-edit-partition-flex')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create and Edit a Partition</h4></a>
+  <p> Learn how to create and edit a partition in an Index.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/flex/create-edit-partition-flex"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create and Edit a Partition</h4></a>
-  <p> Learn how to create and edit a Partition in an Index.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/manage/partitions/flex/view-partition-details-flex"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>View Details About a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/flex/view-partition-details-flex')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>View Details About a Partition</h4></a>
   <p> Learn how to view details about a Sumo Logic partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/flex/estimate-scan-data"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Estimate Scan Data</h4></a>
-  <p> Learn about the estimate scan data for Flex pricing.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/manage/partitions/flex/faq"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Flex FAQs</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/flex/faq')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Flex FAQs</h4></a>
   <p> Answers to FAQ about Flex.</p>
   </div>
 </div>

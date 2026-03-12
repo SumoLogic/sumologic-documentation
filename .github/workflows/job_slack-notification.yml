@@ -1,0 +1,26 @@
+name: Slack notification
+
+on:
+  workflow_call:
+    inputs:
+      SLACK_MESSAGE:
+        type: string
+        required: true
+    secrets:
+      SLACK_URL:
+        required: true
+
+jobs:
+  notify-channel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: slackapi/slack-github-action@91efab103c0de0a537f72a35f6b8cda0ee76bf0a
+        with:
+          webhook: ${{ secrets.SLACK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            blocks:
+              - type: "section"
+                text:
+                  type: "mrkdwn"
+                  text: "${{ inputs.SLACK_MESSAGE }}"

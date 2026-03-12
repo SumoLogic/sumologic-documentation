@@ -13,10 +13,6 @@ This page describes how to install the Sumo Logic Kubernetes Helm Chart.
 
 ### Helm
 
-:::warning
-An incompatibility was discovered with Helm and the Sumo Logic Kubernetes Collection installation will not work with Helm `v3.18.5` or greater. We are currently working on a fix.
-:::
-
 The Sumo Logic Kubernetes Collection solution is packaged as a Helm Chart. See the [official Helm documentation](https://helm.sh/docs/intro/install/) for installation instructions for the Helm binary.
 
 ### Helm Chart repository
@@ -229,7 +225,7 @@ and the associated hosted collector can be deleted in the Sumo Logic UI.
 
 ## Troubleshooting Installation
 
-See the [Troubleshooting document](/docs/send-data/kubernetes/troubleshoot-collection#troubleshooting-installation).
+See the [Troubleshooting document](/docs/send-data/kubernetes/troubleshoot-collection/installation).
 
 ## Installing in OpenShift platform
 

@@ -51,7 +51,7 @@ When you create a SentinelOne Mgmt API Source, you add it to a Hosted Collector
 
 To configure a SentinelOne Mgmt API Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **SentinelOne Mgmt API**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
@@ -64,6 +64,10 @@ To configure a SentinelOne Mgmt API Source:
 1. **API Token**. Provide the API Token you got from the SentinelOne Management Console. See Authentication above for details.
 1. **Supported APIs to collect**. Select one or more of the available APIs: **activities**, **agents**, and **threats**.
 1. When you are finished configuring the Source, click **Submit**.
+
+:::info
+After configuring the SentinelOne Mgmt API  source, consider installing the Sumo Logic app for [SentinelOne](/docs/integrations/saas-cloud/sentinelone/) to visualize and analyze the collected data using prebuilt dashboards.
+:::
 
 ## Metadata fields
 

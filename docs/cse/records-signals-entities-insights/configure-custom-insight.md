@@ -14,6 +14,14 @@ As described in the [Insight Generation Process](/docs/cse/get-started-with-clou
 
 This topic has instructions for defining a custom insight, which is a configuration you set up that causes Cloud SIEM to generate insights based purely on one or more signals being fired. 
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage insights with the [`sumologic_cse_insights_configuration`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_configuration) and [`sumologic_cse_custom_insight`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_insight) resources.
+
+<TerraformLink/>
+:::
+
 ## Ways to define a custom insight
 
 When you create a custom insight, the following field appears on the creation dialog: 
@@ -47,7 +55,7 @@ In that case, under **Strict Signal Configuration**, select **Only include the s
 
 To create a custom insight:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu, select **Content > Custom Insights**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu, select **Content > Custom Insights**. 
 1. Click **Add Custom Insight** on the **Custom Insights** page.
 1. The **Configure the Custom Insight** popup appears. <br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Configure an insight" style={{border: '1px solid gray'}} width="600"/>
 1. In the **Name** field, enter a name for the custom insight.

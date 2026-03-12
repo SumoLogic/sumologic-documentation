@@ -4,6 +4,7 @@ title: LogReduce Keys
 description: Group by the keys of JSON or keyvalue logs.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The **LogReduce Keys** operator allows you to quickly explore JSON or key-value formatted logs by schemas. If you have a large volume of JSON or key-value logs with different formats and aren't sure which ones you need to focus on, this operator can process them into their object schemas so you can review which ones are relevant to your needs.
 
@@ -102,6 +103,6 @@ _sourceCategory=*cloudtrail* *AccessDenied* 
 
 The schemas returned in your results are sorted based on the alphabetical ordering of keys to allow easy identification of changes in patterns.
 
-![CloudTrail example LogReduce Keys.png](/img/search/behavior-insights/CloudTrail-example-LogReduce-Keys.png)
+<img src={useBaseUrl('img/search/behavior-insights/CloudTrail-example-LogReduce-Keys.png')} alt="CloudTrail example LogReduce Keys" style={{border: '1px solid gray'}} width="700" />
 
 Next, use [LogReduce Values](/docs/search/behavior-insights/logreduce/logreduce-values) to explore the schema based on specific keys.

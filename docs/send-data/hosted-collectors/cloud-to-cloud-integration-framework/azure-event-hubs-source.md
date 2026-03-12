@@ -41,16 +41,13 @@ Third party apps or services can be configured to send event data to Event Hubs 
 
 The Event Hub doesn't have to be in the same subscription as the resource sending logs if the user who configures the setting has appropriate Azure role-based access control access to both subscriptions. By using Azure Lighthouse, it's also possible to have diagnostic settings sent to a event hub in another Azure Active Directory tenant. The event hub namespace needs to be in the same region as the resource being monitored if the resource is regional so you may have to configure multiple Azure Event Hubs Sources. More details about destination limitations and permissions are described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-1. [Create an Event Hub using the Azure portal](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create) by navigating to Event Hubs in the Azure Portal.<br/> ![AzureEventHubstep1.png](/img/send-data/AzureEventHubstep1.png)
-1. Create an Event Hubs namespace. In this example, Namespace is set to **cnctest**:<br/>![AzureEventHubstep2.png](/img/send-data/AzureEventHubstep2.png)<br/> ![AzureEventHubstep3.png](/img/send-data/AzureEventHubstep3.png)
-1. Create an Event Hub Instance.<br/> ![AzureEventHubstep4.png](/img/send-data/AzureEventHubstep4.png)
-    * Shared Access Policies can be set up for the entire namespace. These policies can be used to access/manage all hubs in the namespace. A policy for the namespace is created by default: **RootManageSharedAccessKey** <br/>![AzureEventHubstep5.png](/img/send-data/AzureEventHubstep5.png)
+1. [Create an Event Hub using the Azure portal](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create) by navigating to Event Hubs in the Azure Portal.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep1.png')} alt="Select Azure Event Hubs" style={{border: '1px solid gray'}} width="800" />
+1. Create an Event Hubs namespace. In this example, Namespace is set to **cnctest**:<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep2.png')} alt="Select Add" style={{border: '1px solid gray'}} width="300" /><br/><img src={useBaseUrl('img/send-data/AzureEventHubstep3.png')} alt="Select Review and Create" style={{border: '1px solid gray'}} width="600" />
+1. Create an Event Hub Instance.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep4.png')} alt="Create Event Hubs instance" style={{border: '1px solid gray'}} width="800" />
+    * Shared Access Policies can be set up for the entire namespace. These policies can be used to access/manage all hubs in the namespace. A policy for the namespace is created by default: **RootManageSharedAccessKey** <br/><img src={useBaseUrl('img/send-data/AzureEventHubstep5.png')} alt="Shared access policies" style={{border: '1px solid gray'}} width="500" />
     <br/>In this example, Event Hub Instance is set to <strong>my-hub</strong>.
-1. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) with the **Listen** claim to the newly created Event Hub Instance:<br/>  ![AzureEventHubstep6.png](/img/send-data/AzureEventHubstep6.png)<br/>
-    ![AzureEventHubstep7.png](/img/send-data/AzureEventHubstep7.png)<br/>
-    ![AzureEventHubstep8.png](/img/send-data/AzureEventHubstep8.png)<br/>
-    In this example, Event Hub Instance is set to **SumoCollectionPolicy**.
-1. Copy the Shared Access Policy Key.<br/>  ![AzureEventHubstep9.png](/img/send-data/AzureEventHubstep9.png)
+1. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) with the **Listen** claim to the newly created Event Hub Instance:<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep6.png')} alt="Listen claim" style={{border: '1px solid gray'}} width="800" /><br/><img src={useBaseUrl('img/send-data/AzureEventHubstep7.png')} alt="Shared access policies" style={{border: '1px solid gray'}} width="500" /><br/><img src={useBaseUrl('img/send-data/AzureEventHubstep8.png')} alt="SumoCollectionPolicy" style={{border: '1px solid gray'}} width="800" /><br/>In this example, Event Hub Instance is set to **SumoCollectionPolicy**.
+1. Copy the Shared Access Policy Key.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep9.png')} alt="Copy access key" style={{border: '1px solid gray'}} width="800" />
     Copy the Primary/Secondary key associated with this policy.
 1. When [configuring the Azure Event Hubs Source](#vendor-configuration) in Sumo Logic, our input fields might be:
 
@@ -67,7 +64,7 @@ When you create an Azure Event Hubs Source, you add it to a Hosted Collector. Be
 
 To configure an Azure Event Hubs Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a **HostedCollector**.
 :::
     Make sure the hosted collector is tagged with tenant_name field for the out of the box Azure apps to work. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).

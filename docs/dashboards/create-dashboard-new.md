@@ -1,7 +1,7 @@
 ---
 id: create-dashboard-new
 title: Create a Dashboard
-description: Learn how to create your own custom Dashboard with a panel and query, then customize a chart and add the chart to the dashboard.
+description: Learn how to create your own custom Dashboard with a panel and query, then customize a chart and the chart to the dashboard.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ This page demonstrates how to create a Dashboard, add a query, and then add the
 
 Dashboard allows you to view logs and metrics data on the same dashboard in an integrated and seamless view. This gives you the same control over how your metrics and log data are visualized. Dashboard template capabilities provide for easier data scoping and intuitive chart creation.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Rather watch a short micro lesson video?
 
@@ -38,7 +38,15 @@ When you rename or add a panel to a dashboard it is automatically saved in your
 There are two ways to create a **Dashboard**, either by using the following method, or by creating it directly from the [Log Search page](#log-search-page) or [Metrics page](#metrics-page). Panels and customized charts will be added in later steps.
 
 1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  
-1. Select the Dashboard text field at the top of the window and enter a unique name for your new dashboard.<br/>
+1. Select the Dashboard text field at the top of the window and enter a unique name for your new dashboard.
+
+import TerraformLink from '../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a dashboard with the [`sumologic_dashboard`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/dashboard) resource.
+
+<TerraformLink/>
+:::
 
 ## Add a panel  
 

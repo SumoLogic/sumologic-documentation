@@ -91,7 +91,7 @@ Sumo provides two index-based search optimization features: partitions and sched
 
 ## Use Search Parameters
 
-If your search contains filtering criteria that could change each time the search is executed, take advantage of [Search Templates](search-templates.md). Search templates make it easier for less expert users to obtain search results, and also reduces the risk that such users will run expensive searches.
+If your search contains filtering criteria that could change each time the search is executed, take advantage of [Search Templates](search-templates.md). Search templates make it easier for less expert users to obtain search results, and also reduces the risk that such users will run expensive searches.
 
 ## Aggregate before a lookup
 
@@ -135,4 +135,4 @@ _sourceCategory=Apache/Access and GET
 
 ## Pin searches with long time ranges
 
-A query with a longer time range can run past the default time window for Sumo Logic. To protect against an interruption in a query with a significant time range, [pin it](/docs/get-started/library#pinned-searches). A pinned search can run in the background for up to 24 hours.
+A query with a longer time range can run past the default time window for Sumo Logic. To protect against an interruption in a query with a significant time range, [pin it](/docs/search/get-started-with-search/search-page/pin-a-search). A pinned search can run in the background for up to 24 hours.

@@ -107,23 +107,23 @@ _sourceCategory=Labs/extraHop
 | count
 ```
 
-## Setup
+## Setting up the collection
 
 ### Source configuration
 
 Follow the below steps to configure the Hosted Collector to receive ExtraHop RevealX 360 events:
 
 1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
-2. Configure **Source Category** in the HTTP source - for example, `webhook/extrahop-revealx` - for the ExtraHop RevealX 360 integration.
-3. Copy and save the endpoint URL of the source.
+2. Configure **Source Category** in the HTTP source. Make a note of the Source Category and use the same while installing the app.
+3. When you are finished configuring the Source, copy and save the endpoint URL of the source.
 
 ### Vendor configuration
 
-Configure the webhook integration in ExtraHop RevealX 360 to send events to the Sumo Logic HTTP source. Once configured, it will be triggered each time the events occur within your Extrahop RevealX 360 account.
+Configure the webhook integration by [creating a notification rule](https://docs.extrahop.com/current/detections-create-notification-rule/) in the ExtraHop platform to send events to the Sumo Logic HTTP source.
 
-To configure the ExtraHop RevealX 360 webhook, refer to the [ExtraHop RevealX 360 Documentation](https://docs.extrahop.com/current/detections-create-notification-rule/).
+Make sure you use the endpoint URL of the HTTP source copied form the source configuration.
 
-### Installing the ExtraHop RevealX 360 app
+## Installing the ExtraHop RevealX 360 app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 

@@ -15,9 +15,9 @@ Any financial obligations outlined in your contract remain in effect even if you
 
 Owners of Sumo Logic Free or Trial accounts can permanently delete their organization, removing all users, data, and access to Sumo Logic. This process will also log you out as a user.
 
-1. Navigate to your Account Overview.
+1. Navigate to your Account Overview. 
+   * **[New UI](/docs/get-started/sumo-logic-ui)**. Navigate to **Administration > Account > Account Overview**, or use the **Go To...** menu to select **Account Overview**.
    * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. Navigate to **Administration > Account > Account Overview**.  
-   * **[New UI](/docs/get-started/sumo-logic-ui)**. Navigate to **Administration > Account > Account Overview**, or use the **Go To...** menu to select **Account Overview**.  
 1. At the top of the page, click the **Details** icon.  
 1. Select **Delete this Organization from Sumo Logic?**, then click **Delete Org**.  
 1. In the confirmation dialog, type **DELETE** to confirm.  

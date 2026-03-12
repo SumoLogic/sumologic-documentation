@@ -12,9 +12,9 @@ This topic describes the Cloud SIEM UI for working with insights. 
 
 ## Insights list page
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To open the insights page, click **Insights** at the top of the screen. 
-
 [**New UI**](/docs/get-started/sumo-logic-ui). To open the insights page, in the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To open the insights page, click **Insights** at the top of the screen. 
  
 By default, the **Insights** page presents all insights whose status is not “Closed”, in descending order by event time in a list view. If you’d like to see insights organized by their status, click the **Show Board** icon near the top right corner of the page. For information about the board view, see [Board view](#board-view).
 
@@ -28,25 +28,15 @@ This screenshot shows the **Insights** page in list view. 
 
 <img src={useBaseUrl('img/cse/insights-page.png')} alt="Insights page" style={{border: '1px solid gray'}} width="800"/>
 
-Here’s one row from the List view. The numbered definitions below correspond to the labels in the screenshot.
-
-<img src={useBaseUrl('img/cse/insight-summary.png')} alt="Insight summary" style={{border: '1px solid gray'}} width="800"/>
-
-1. **Creation date and time**. When the insight was created.
-1. **Detection time**. The time between when the first event happened (when the first record in the insight occurred) and when the insight was generated. (This differs from "dwell time", which is the time between when the first record and the last record occurred in an insight.)
-1. **Age**. The elapsed time since the insight was created.
-1. **Insight name**. The insight name, made up of the insight ID, and the MITRE stage or stages associated with the signals in the insight. 
-1. **Related incidents**. Incidents that share common entities and other characteristics.
-1. **Global Confidence**. If sufficient data is available, a [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight is shown. 
-1. **Assignee**. The analyst assigned to the Incident.
-1. The [MITRE ATT&CK](https://attack.mitre.org/) tactics and techniques exhibited by the insight.
-1. **Severity**. The severity of the insight. The value is a function of the configured entity activity score threshold for insight generation. For more information, see [About insight severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process#about-insight-severity).
-1. **Entity**. The entity associated with the insight.
-1. **Signal Data**. This area has three bits of information:
-   * The count of signals that caused the insight to be created.
-   * The total count of signals on the insight entity during the detection window.
-   * How long it's been since the last signal fired associated with the insight fired.
-1. The visualization plots the insight's signals over time (x-axis) by severity (y-axis).
+* **Status**. The [status](/docs/cse/administration/manage-custom-insight-statuses/) of the insight.
+* **ID**. The insight name, made up of the insight ID, and the MITRE stage or stages associated with the signals in the insight.
+* **Created**. When the insight was created.
+* **Assignee**. The analyst assigned to the Incident.
+* **Age**. The elapsed time since the insight was created.
+* **Entity**. The [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) associated with the insight.
+* **Severity**. The severity of the insight. The value is a function of the configured entity activity score threshold for insight generation. For more information, see [About insight severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process#about-insight-severity).
+* **Global Confidence**. If sufficient data is available, a [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight is shown.
+* **Signals**. The total count of signals on the insight entity during the detection window.
 
 ### Board view
 
@@ -74,6 +64,54 @@ You can use the **Filters** area near the top of the page to narrow down the ins
 * Status
 * Tags
 
+### Bulk update insights
+
+You can select multiple insights and make changes to them all at once using either the UI or API.
+
+:::note
+You can select a maximum of 5000 insights in one action, and your organization can have up to five active requests in progress at once.
+:::
+
+:::training Micro Lesson
+
+Watch this micro lesson to learn about bulk updating insights.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/zqzw9krbcs?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Cloud SIEM Bulk Insight Management"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
+
+#### Bulk update insights in the UI
+
+1. Open the insights [list view](#list-view).
+1. [Filter insights](#filtering-insights) to locate only the insights you want to act on.
+1. Use the checkboxes on the insights list view to select multiple insights, or you can click the check box at the top of the list to select all listed insights:<br/><img src={useBaseUrl('img/cse/select-all-insights.png')} alt="Select all insights" style={{border: '1px solid gray'}} width="200"/>
+   <br/>If you click the check box to select all insights, you can then select up to 5000 of the listed insights:<br/><img src={useBaseUrl('img/cse/select-up-to-5000-insights.png')} alt="Select up to 5000 insights" style={{border: '1px solid gray'}} width="800"/>
+1. Choose the action you want to take on the selected insights:
+   * **Close Insights**. Give the insights a [closed resolution](/docs/cse/administration/manage-custom-insight-resolutions/#close-an-insight-using-a-custom-resolution).
+   * **Assign To**. Assign the insights to a Cloud SIEM user.
+   * **Change Status**. Change the insights' [status](/docs/cse/administration/manage-custom-insight-statuses/). 
+   * **Comment**. Add a comment on the selected insights.<br/><img src={useBaseUrl('img/cse/bulk-select-insights.png')} alt="Bulk update insights" style={{border: '1px solid gray'}} width="800"/>
+1. Click **Confirm** on the confirmation dialog box. The update runs, and a banner shows progress of the update. After the update completes, the banner displays for 24 hours so you can track recently-performed bulk updates. 
+1. If you are running multiple bulk updates, keep in mind you cannot have more than five active requests in progress at one time. You will not be able to start another bulk update until there are fewer than five running.
+
+#### Bulk update insights with the API
+
+Use the following [Cloud SIEM APIs](/docs/api/cloud-siem-enterprise/) to bulk update insights:
+* [Create a bulk update job for insights](https://api.sumologic.com/docs/sec/#operation/CreateInsightBulkUpdate). Submit a bulk update job to update multiple insights based on a filter query.
+* [Get bulk update jobs](https://api.sumologic.com/docs/sec/#operation/GetInsightBulkUpdates). List bulk update jobs for the current user.
+* [Get bulk update job status](https://api.sumologic.com/docs/sec/#operation/GetInsightBulkUpdateStatus). Get the current status and details of a bulk update job.
+* [Get bulk update job results](https://api.sumologic.com/docs/sec/#operation/GetInsightBulkUpdateResult). Download the results of a bulk update job with each item's status and any associated errors.
+
 ### View insights in child organizations
 
 If you manage a parent organization with child organizations that also use Cloud SIEM, you can see a list of all insights across multiple child organizations. This is useful if your company is a large enterprise with many organizations or is a Managed Security Service Provider (MSSP), and you'd like to see all insights across all areas in a single page.
@@ -82,9 +120,8 @@ This multi-insights list page (also known as a "federated" page) shows insights 
 
 To be able to see insights in child organizations, [add child organizations](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs) that use Cloud SIEM. Then when the parent organization user goes to their Cloud SIEM insights list page, all the child organizations' insights appear in the list.
 
-<!--
+
 For more information, see [Multi-insights list page in Cloud SIEM](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps/#multi-insights-list-page-in-cloud-siem).
--->
 
 ## Insight details page
 
@@ -94,25 +131,24 @@ From the HUD screen, list view, or board view, click an insight's name to see it
 
 The left pane of the insight details page displays detailed information about the selected insight. Some of the information that appears is the same as what’s in the row for an insight on the **Insights** page, and is described in [List view,](#list-view) above. The additional information that appears in the details pane is defined below.
 
-<img src={useBaseUrl('img/cse/insight-details.png')} alt="Insight details" style={{border: '1px solid gray'}} width="300"/>
+<img src={useBaseUrl('img/cse/insight-details.png')} alt="Insight details" style={{border: '1px solid gray'}} width="350"/>
 
 1. **Actions.** The [insight actions](/docs/cse/administration/create-cse-actions#insight-actions) defined in your environment.
 1. **Close Insight.** Use this option to close an insight. When you click this option, you’re prompted to select an insight resolution.
 1. **Delete Icon.** Use this option to delete an insight. You’ll be prompted to confirm your choice.
+1. **Summary**. [Insight summary](/docs/cse/get-started-with-cloud-siem/insight-summary/) generated by AI.
 1. **Status.** Current status of the insight.
 1. **Assignee** and **Assign to me.** Shows the current assignee and allows you to assign yourself the insight.
 1. **Entity.** The entity the insight fired on.
 1. **Severity.** Severity of the insight. Mouse over it to see an icon you can click to change the insight severity.
 1. **Global Confidence.** The [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight, if available.
-1. **Related Incidents and Triages**. Incidents and triages that are related to this insight.
-1. **Create Incident | Add to Incident**. Create an incident for the insight, or add the insight to an existing incident.
 1. **Signal Data.** The number of signals in the insight.
 1. **Event Time.** The event time for the of the last signal in the insight.
 1. **Detection Time.** The time between when the first event happened (when the first record in the insight occurred) and when the insight was generated. (This differs from "dwell time", which is the time between when the first record and the last record occurred in an insight.)
 1. **Insight Created.** When the insight was created.
 1. **Tags** and **Create a tag.** Displays any tags that have already been assigned to the insight, and a field for adding a tag.
 1. **Comments.** Displays any comments that have been made on the insight, and a field for adding a comment.
-1. **Show Comments/History.** The controls allow you to switch between viewing the insight's comments and history. 
+1. **Show Comments/History.** The controls allow you to switch between viewing the insight's comments and history.
 
 ### Signal visualization area
 
@@ -129,8 +165,7 @@ At the top of the insight details page, you’ll see a signal timeline that visu
 1. **Legend**. Key to the symbols used to represent the signals:
    * **Rule**. Signals that were triggered by other rules.
    * **Anomaly**. Signals that were triggered by User and Entity Behavior Analytics (UEBA) rules.
-   * **Threat intelligence**. Signals that were fired by Threat Intel rules.
-   * **File Analysis**. Signals that were triggered by [Yara file analysis rules](/docs/cse/rules/import-yara-rules).
+   * **Threat intelligence**. Signals that were fired by threat intel rules.
 1. **Show Related**. Click this link to show related signals in addition to attached signals. If you click the **Show Related** checkbox, the page updates and also displays any related signals or related insights.
     * A *related signal* is a signal that isn’t part of the current insight (it’s not attached), but fired on the same entity as the current insight’s attached signals within 7 days of the current insight’s attached signals. 
     * A *related insight* is an insight that a related signal is attached to.
@@ -156,7 +191,7 @@ The **Entities** tab displays a list of one or more _related entities_. This vie
 
 An insight is focused on a primary entity. For example, the username or IP address that's found in each of the insight's signals. Related entities expand the analyst’s view to include additional entities that could be relevant to the insight because they are either listed in the records that belong to signals in that insight or Cloud SIEM has determined that they are the same entity as one included in the insight. For example, Cloud SIEM has determined that an IP address may have been associated with a specific hostname at the time the relevant signal was generated.
 
-The **Entities** tab includes two views, the **list** view and the **graph** view. Both views start with the same list of Related entities. However, the **graph** view can show additional entity relationships extending "outside" of the insight. 
+The **Entities** tab includes two views, the **list** view and the **graph** view. Both views start with the same list of related entities. However, the **graph** view can show additional entity relationships extending "outside" of the insight. 
 
 #### About the Entities tab list view
 
@@ -173,7 +208,7 @@ Other entities could be included due to _detected entity relationships_. For eac
 Involved entities are connected to the primary entity with dashed lines. Entities whose relationships are detected are labeled "**May also be**", indented, and connected with solid lines.
 
 :::note
-It's possible for a related entity to both be involved and detected. In that case, it typically be displayed as detected unless it is in a number of the insight's signals.
+It's possible for a related entity to both be involved and detected. In that case, it typically will be displayed as detected unless it is in a number of the insight's signals.
 :::
 
 How does Cloud SIEM detect entity relationships outside of the insight? Within the time range of the insight, described above, Cloud SIEM searches for related [entities in the following normalized record fields](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md):
@@ -237,10 +272,10 @@ By default, this view shows the same entities that are displayed on the list vie
 
 In addition, the following can appear in the graph:
 * **Detected entities**. Entities with a *detected* relationship will be connected with solid lines. A *detected relationship* is when a relationship is detected between entities (for example, when an IP and hostname appear in a record together, but not necessarily in the insight being viewed).
-* **Threat indicators**. Any entity with a threat indicator will have an additional icon in the upper right. If the threat indicator is Malicious or Suspicious, the entity will be highlighted in red or yellow accordingly.
+* **Threat indicators**. Any entity with a threat indicator will have an additional icon in the upper right. If the threat indicator is Malicious or Suspicious, the entity will be highlighted in red or yellow accordingly. For more information about threat indicators, see [View threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui).
 * **Hover**. If you hover over an entity, it and all connections to it will be highlighted in blue. If its value is not fully visible by default, the full value will be displayed.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Watch this micro lesson to learn more about the entity relationship graph.
 

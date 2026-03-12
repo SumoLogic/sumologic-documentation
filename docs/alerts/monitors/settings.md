@@ -12,8 +12,8 @@ The **Monitors** page allows you to view, create, manage, and organize your moni
 
 ## Accessing monitors
 
-* In the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), select **Manage Data > Monitoring > Monitors**.
 * In the [**New UI**](/docs/get-started/sumo-logic-ui/), select **Monitoring > Monitors**.
+* In the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), select **Manage Data > Monitoring > Monitors**.
 
 Here, you'll find columns displaying the following attributes:
 
@@ -46,7 +46,7 @@ At the top of the page, you can:
 
 The **Monitor Details** tab provides additional information about a selected monitor, the description, Library location, [query](/docs/alerts/monitors/create-monitor/#query), [muting schedules](/docs/alerts/monitors/muting-schedules), [notification preferences](/docs/alerts/monitors/create-monitor/#step-3-notifications-optional), [alert grouping](/docs/alerts/monitors/alert-grouping), [trigger conditions](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), and more.
 
-Click on any monitor in your **Monitors** table, and the **Monitor Details** tab will appear in the right-hand pane.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-details.png')} alt="monitor-details.png" style={{border: '1px solid gray'}} width="600"/>
+Click on any monitor in your **Monitors** table, and the **Monitor Details** tab will appear in the right-hand pane.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-details.png')} alt="monitor-details.png" style={{border: '1px solid gray'}} />
 
 ### View in Log Search
 
@@ -77,12 +77,6 @@ Click the **Disable** button put the monitor in a disabled state so it will not
 
 <img src={useBaseUrl('img/alerts/monitors/disable-monitor.png')} alt="disable-monitor" style={{border: '1px solid gray'}} width="400"/>
 
-### Mute a monitor
-
-Click the **Mute** button mute the monitor. See also: [Muting Schedules](/docs/alerts/monitors/muting-schedules).
-
-<img src={useBaseUrl('img/alerts/monitors/mute-monitor.png')} alt="mute-monitor" style={{border: '1px solid gray'}} width="400"/>
-
 ### More Actions
 
 Click the **More Actions** menu to view more options, including:
@@ -96,7 +90,7 @@ Click the **More Actions** menu to view more options, including:
    :::
 * **Copy Link**. Copies a link to the monitor. Provide the link to any Sumo Logic user in your organization so they can view the monitor. While this option doesn't allow you to share the monitor in the same way you can share a dashboard, you can use this option to quickly allow others in your Sumo Logic organization to view the monitor details.
 
-<img src={useBaseUrl('img/alerts/monitors/more-actions.png')} alt="monitor more actions" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/alerts/monitors/more-actions.png')} alt="monitor more actions" style={{border: '1px solid gray'}} width="300"/>
 
 :::tip
 To quickly access this menu without opening the Details pane, just hover your mouse over a monitor, then click the three-dot kebab icon to view a menu with all of the options available in the [Monitor Details tab](#monitor-details).<br/><img src={useBaseUrl('img/alerts/monitors/quick-menu-monitors.png')} alt="Quick menu.png" style={{border: '1px solid gray'}} width="800"/>
@@ -115,7 +109,7 @@ To reduce data usage and alert frequency, you can convert an existing outlier mo
 Alternatively, you can do this from the **Scan Estimates** pop-up.<br/><img src={useBaseUrl('img/alerts/monitors/scan-estimates-anomaly.png')} alt="convert-to-anomaly from scan estimates" style={{border: '1px solid gray'}} width="600"/>
 
 For more guidance on optimizing scan costs on Flex Pricing plans, see:
-* [Scan estimates](/docs/manage/partitions/flex/estimate-scan-data)
+* [Scan estimates](/docs/manage/partitions/estimate-scan-data)
 * [Optimizing scan costs for monitors](/docs/alerts/monitors/monitor-faq/#how-can-i-optimize-scan-costs-for-monitors-when-using-flex-pricing)
 
 ## Monitor History
@@ -142,7 +136,7 @@ When setting up a new monitor, follow the steps in the [Monitor Details](/docs/a
 
 You can also add tags to monitors that are already created.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. [**New UI**](/docs/get-started/sumo-logic-ui). Go to **Monitoring > Monitors** from the main menu, or use the **Go To...** menu at the top of the screen to navigate to **Monitors**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). Go to **Monitoring > Monitors** from the main menu, or use the **Go To...** menu at the top of the screen to navigate to **Monitors**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
 1. Select a monitor from the list and double-click on it.
 1. In the side panel, click **Edit**.
 1. Under the **Monitor details** step, create a tag using the `key=value` format, following these syntax rules:
@@ -156,7 +150,7 @@ You can also add tags to monitors that are already created.
 
 After you’ve created tags for a monitor, these tags will be applied to future alerts generated by the monitor. You can view and use tags in different places:
 
-* **Alert List**. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Navigate to the **Alerts** section by clicking the notification bell icon at the top of your Sumo Logic dashboard. [**New UI**](/docs/get-started/sumo-logic-ui). Select **Alerts** or click the **Go To...** menu at the top of the screen and select **Alerts**. You'll see a **Tags** column, and you can filter by tags at the top.<br/><img src={useBaseUrl('img/alerts/alerts-list-tags.png')} alt="Alerts list page showing a column labeled 'Tags' next to alert details" style={{border: '1px solid gray'}} width="800" />
+* **Alert List**. [**New UI**](/docs/get-started/sumo-logic-ui). Select **Alerts** or click the **Go To...** menu at the top of the screen and select **Alerts**. You'll see a **Tags** column, and you can filter by tags at the top.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Navigate to the **Alerts** section by clicking the notification bell icon at the top of your Sumo Logic dashboard.<br/><img src={useBaseUrl('img/alerts/alerts-list-tags.png')} alt="Alerts list page showing a column labeled 'Tags' next to alert details" style={{border: '1px solid gray'}} width="800" />
 * **Alert Response**. Click on any alert in your **Alerts List** page to see more details, including tags in the **Tags** section.<br/><img src={useBaseUrl('img/alerts/alert-response-tags.png')} alt="Alert Response page displaying graphs with tags shown in the tags section" style={{border: '1px solid gray'}} width="800" />
 
 
@@ -173,7 +167,7 @@ Access to folders that contain monitors is controlled by permissions. If you hav
 * **Manage**. Ability to move folders and to grant other roles permissions to the folder. If you grant this permission, the permissions listed above will be granted as well.
 
 To set permissions for a monitors folder:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
 2. Right-click on the folder whose permissions you want to set, and click **Edit Permissions**.
 This option is present only if you have been granted **Manage** permission for the folder.
 3. On the edit popup, note that the user who created the folder, and roles with the **Admin Monitors** capability, automatically have all permissions to the folder.  

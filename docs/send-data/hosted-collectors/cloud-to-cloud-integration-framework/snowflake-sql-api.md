@@ -24,8 +24,12 @@ Customers can provide custom SQL queries for the source to execute and a configu
 To collect metric data from the Snowflake SQL API, you must have an authorized Snowflake account. We suggest setting up a dedicated user account with the correct permissions for accessing the SQL tables with the data you are interested in collecting.
 
 1. Create a user account with the correct permissions for accessing the SQL tables you plan to query.
-1. Take note of your admin account identifier following the instructions [here](https://docs.snowflake.com/en/user-guide/admin-account-identifier). The identifier should look something like this: `wp00000.us-east-2.aws`.
+1. Collect your admin account identifier following the instructions in the [Snowflake documentation](https://docs.snowflake.com/en/user-guide/admin-account-identifier). The identifier should look something like this: `wp00000.us-east-2.aws`.
 1. Take note of the database name you plan to query.
+1. Collect your Snowflake Programmatic Access Token following the instructions in the [Snowflake documentation](https://docs.snowflake.com/en/user-guide/programmatic-access-tokens).
+  :::note
+  Starting November 2025, Snowflake will block single-factor authentication (password-only sign-ins) as part of their enhanced security protocols. Sumo Logic recommends that you update your integration to [Programmatic Access Tokens (PATs)](https://docs.snowflake.com/en/user-guide/programmatic-access-tokens) before 1st November 2025 to ensure continued access.
+  :::
 1. Optional additional information such as a role, warehouse, or schema name can also be configured with the source.
 
 ### Source configuration
@@ -33,7 +37,7 @@ To collect metric data from the Snowflake SQL API, you must have an authorized S
 When you create a Snowflake SQL API source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the Snowflake SQL API Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Snowflake SQL API** icon.
 1. Enter a **Name** to display for the source in the Sumo Logic web application. The description is optional.
@@ -41,9 +45,13 @@ To configure the Snowflake SQL API Source:
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. In **Snowflake Username**, enter your Snowflake account username.
-1. In **Snowflake Password**, enter the Snowflake account password associated with your user.
 1. In **Snowflake Account Identifier**, enter your Snowflake account identifier obtained from the vendor configuration above. The identifier should look something like this: `wp00000.us-east-2.aws`.
+1. **Authentication Configuration**. Sumo Logic provides two different ways to configure: **Basic** and **Programmatic Access Token**.
+    - **Basic**:
+      1. In **Snowflake Username**, enter your Snowflake account username.
+      1. In **Snowflake Password**, enter the Snowflake account password associated with your user.
+    - **Programmatic Access Token**:
+      1. In **Snowflake Programmatic Access Token**, enter your Programmatic Access Token collected from the [Snowflake platform](#vendor-configuration).
 1. In **Snowflake Database**, enter your Snowflake database. Separate sources are required to query separate databases.
 1. In **SQL Statement Metric Configuration**, upload a JSON file containing the SQL queries to execute, their polling interval, and additional configuration for translating the results to metrics.
 1. (Optional) In **Snowflake Role**, provide a database role if required.
@@ -86,28 +94,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### Configuration Object
 
-| Parameter | Type   | Required | Default | Description                                                                                                                                                                                               | Example      |
-|:----------|:-------|:---------|:--------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|
+| Parameter | Type   | Required | Default | Description  | Example   |
+|:--|:--|:--|:--|:--|:--|
 | name      | String | Yes      | `null`  | Type a desired name of the source. The name must be unique per collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the collector or source. | |
 | username | String | Yes | `null` | Your Snowflake user account. |  |
 | password | String | Yes | `null` | Your Snowflake user password. |  |
-| accountIdentifier | String | Yes | `null` | Your Snowflake admin account identifier. | `wp00000.us-east-2.aws` |
-| database | String | Yes | `null` | Your Snowflake database name. | `SNOWFLAKE` |
-| MetricConfigSection | String | Yes | `null` | A stringified JSON of the metrics configuration. | See above documentation for examples. |
-
-### Configuration Object
-
-| Parameter | Type   | Required | Default | Description                                                                                                                                                                                               | Example      |
-|:----------|:-------|:---------|:--------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|
-| name      | String | Yes      | `null`  | Type a desired name of the source. The name must be unique per collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
-| description | String | No | `null` | Type a description of the source. | `"Testing source"`
-| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. | `"mySource/test"`
-| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the collector or source. | |
-| username | String | Yes | `null` | Your Snowflake user account. |  |
-| password | String | Yes | `null` | Your Snowflake user password. |  |
+| patToken | String | Yes | `null` | Your Snowflake programmatic access token. | |
 | accountIdentifier | String | Yes | `null` | Your Snowflake admin account identifier. | `wp00000.us-east-2.aws` |
 | database | String | Yes | `null` | Your Snowflake database name. | `SNOWFLAKE` |
 | MetricConfigSection | String | Yes | `null` | A stringified JSON of the metrics configuration. | See above documentation for examples. |

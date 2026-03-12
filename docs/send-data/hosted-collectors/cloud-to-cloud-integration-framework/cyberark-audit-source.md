@@ -43,7 +43,7 @@ Follow the instructions mentioned in the [CyberArk Documentation](https://docs.c
 When you create a CyberArk Audit Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 
 To configure a CyberArk Audit source, follow the steps below:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CyberArk Audit**.
 1. **Name**. Enter a name to display for the source. The description is optional.
@@ -52,6 +52,7 @@ To configure a CyberArk Audit source, follow the steps below:
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
 1. **Identity ID**. Enter your identity ID collected from the [Vendor configuration](#vendor-configuration) section. For example, `ac212`.
+1. Select the **Use my.idaptive.app domain for token URL** checkbox if you are using the `my.idaptive.app` domain in your CyberArk audit credentials. By default, this checkbox will not be selected and it will use the `id.cyberark.cloud` domain.
 1. **Web Application ID**. Enter your application ID collected from the [Vendor configuration](#vendor-configuration) section. For example, `sumologic`.
 1. **Username**. Enter your username(client-id) collected from the [Vendor configuration](#vendor-configuration) section. For example, `user@cyberark.cloud.1234`.
 1. **Password**. Enter your password(client-secret) collected from the [Vendor configuration](#vendor-configuration) section.
@@ -83,6 +84,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"` |
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the collector or source. Use the boolean field `_siemForward` to enable forwarding to SIEM.| `{"_siemForward": false, "fieldA": "valueA"}` |
 | identityId | String | Yes | `null` | Identity ID for your CyberArk account. | `ac212` |
+| useIdaptiveDomain | Boolean | No | `null` |  Specify if we need to use the `my.idaptive.app` domain. | |
 | appId | String | Yes |  `null` | App ID for your CyberArk account. | `sumologic` |
 | username | String | Yes |  `null` | Username(Client ID) for your configured server. | `myuser@cyberark.cloud.1234` |
 | password | String | Yes |  `null` | Password for your configured server. | |

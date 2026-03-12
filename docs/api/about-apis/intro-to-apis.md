@@ -33,7 +33,7 @@ In this section, we'll walk you through creating a personal access key that you 
 
 A user with the [Manage Access Keys role capability](/docs/manage/users-roles/roles/role-capabilities/#security) can create and manage access keys for other users in your organization. As an administrator, you can use the general **Access Keys** page instead of the **Personal Access Keys** page.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). From the left menu, click **Administration > Security**, then select the **Access Keys** tab. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In main Sumo Logic menu select **Administration**, then under **Account Security Settings** select **Access Keys**. You can also click the **Go To..**. menu at the top of the screen and select **Access Keys**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In main Sumo Logic menu select **Administration**, then under **Account Security Settings** select **Access Keys**. You can also click the **Go To..**. menu at the top of the screen and select **Access Keys**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). From the left menu, click **Administration > Security**, then select the **Access Keys** tab. 
 1. Click **+Add Access Key** in the upper right and create it using the same steps as above.
 
 As with the personal access key popup, any displayed ID/key will not be available again once the display screen is closed, so make sure you copy both the ID and key to another location for reference before closing the popup. If you miss copying either of the access values, find your access key in the list, delete it, and then recreate it.

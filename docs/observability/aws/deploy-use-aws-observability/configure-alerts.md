@@ -5,13 +5,15 @@ sidebar_label: Configure Alerts
 description: Sumo Logic has provided out-of-the-box alerts to help you quickly determine if a particular AWS service is available and performing as expected.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Sumo Logic provides pre-configured alerts designed to promptly assess the availability and performance of specific AWS services. These alerts utilize metric datasets with predefined thresholds aligned with industry best practices and AWS recommendations. They are available for each AWS service integrated into the AWS Observability solution and can be deployed via a CloudFormation template.
 
 After installing the AWS Observability solution and selecting "Install Dashboards and Alerts," you can configure these alerts by navigating to the AWS Observability folder under **Monitors**.
 
-![install](/img/observability/install-dashboards-alerts.png)
+<img src={useBaseUrl('img/observability/install-dashboards-alerts.png')} alt="Install Dashboards and Alerts" style={{border: '1px solid gray'}} width="800" />
 
-To enable the monitors you wish to receive alerts from, see [Editing Monitor Settings](/docs/alerts/monitors/settings). To configure alerts to send notifications to other teams or connections, see [Create a Monitor](/docs/alerts/monitors/create-monitor). 
+To enable the monitors you wish to receive alerts from, see [Monitor Settings](/docs/alerts/monitors/settings). To configure alerts to send notifications to other teams or connections, see [Create a New Monitor](/docs/alerts/monitors/create-monitor). 
 
 Sumo Logic provides the following out-of-the-box alerts:
 

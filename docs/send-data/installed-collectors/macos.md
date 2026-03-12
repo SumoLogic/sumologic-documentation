@@ -5,6 +5,8 @@ sidebar_label: For macOS
 description: Install or uninstall a Collector on a macOS system.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Follow the steps in this topic to install or uninstall a Collector on  macOS. See [Installed Collectors](/docs/send-data/installed-collectors) for information on other OSs.
 
 ## System Requirements
@@ -22,7 +24,7 @@ If your machine has already had an Installed Collector installed in the past and
 Download the Collector in either of the following ways.
 
 ### Via installation
-    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
     1. Click **Add Collector**.
     1. Click **Installed Collector**.
     1. Click the link for the Collector to begin the download.
@@ -57,7 +59,7 @@ This method does not support all advanced settings.
    * [Access Key](/docs/manage/security/access-keys/). If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
    * [Installation Token](/docs/manage/security/installation-tokens/). Enter the **Token String** you want to use to register the Collector in the input box.
 1. Click **Finish** to complete the setup.
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the Collector, check the [Error Codes](collector-installation-reference/collector-installation-error-messages.md) list to help troubleshoot.
 
 ### Using the command line installer 
@@ -129,7 +131,7 @@ Uninstalling a Sumo Logic installed Collector requires the following steps:
 
 ### Delete the Collector from Sumo Logic
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Find the Collector you want to remove, and click **Delete**.
 1. When the Confirm dialog displays, click **OK**.
 
@@ -143,11 +145,11 @@ This issue only applies to Collector versions prior to 19.361-8.
 
 When you try to install a Sumo Logic Collector on a Mac running OS X Mountain Lion or later, you may see the error message "App cannot be opened because it is from an unidentified developer". This message appears to prevent installing applications from developers that aren't verified through the Mac App Store:
 
-![install](/img/send-data/Mac_OSX_Gatekeeper.png)
+<img src={useBaseUrl('img/send-data/Mac_OSX_Gatekeeper.png')} alt="Installation error message" style={{border: '1px solid gray'}} width="400>" />
 
 This doesn't mean that you cannot install a Sumo Logic Collector. The Sumo Logic Collector app is a legitimate and safe download. It just takes an extra step.
 
 To install a Sumo Logic Collector:
 
-1. **Control + click** (or right-click) the Sumo Logic application icon and choose **Open**.<br/>![install](/img/send-data/Mac_OSX_Gatekeeper_workaround1.png)
-1. In the next dialog, click **Open**. This will allow the Collector to install.  <br/> ![install](/img/send-data/Mac_OSX_Gatekeeper_workaround2.png)
+1. **Control + click** (or right-click) the Sumo Logic application icon and choose **Open**.<br/><img src={useBaseUrl('img/send-data/Mac_OSX_Gatekeeper_workaround1.png')} alt="Choose Open" style={{border: '1px solid gray'}} width="400" />
+1. In the next dialog, click **Open**. This will allow the Collector to install.  <br/><img src={useBaseUrl('img/send-data/Mac_OSX_Gatekeeper_workaround2.png')} alt="Choose open" style={{border: '1px solid gray'}} width="400" />

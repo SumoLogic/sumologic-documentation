@@ -9,8 +9,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/apm/services-map-icon.png')} alt="icon" width="45"/>
 
 To access the services list and services map features:
-* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Traces** > **Services**.
 * [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Services**. You can also click the **Go To...** menu at the top of the screen and select **Services**.
+* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Traces** > **Services**.
 
 ## Services map view
 

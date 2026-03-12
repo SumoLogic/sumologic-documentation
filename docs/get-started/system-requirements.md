@@ -1,7 +1,6 @@
 ---
 id: system-requirements
 title: System Requirements
-sidebar_label: System requirements
 description: Review the system requirements to ensure your environment is compatible with Sumo Logic for optimized performance and reliability.
 ---
 

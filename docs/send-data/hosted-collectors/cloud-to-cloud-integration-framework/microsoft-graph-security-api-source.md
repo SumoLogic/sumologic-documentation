@@ -65,7 +65,7 @@ When you create a Microsoft Graph Security API Source, you add it to a Hosted C
 
 To configure a Microsoft Graph Security API Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Microsoft Graph Security API**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -78,6 +78,12 @@ To configure a Microsoft Graph Security API Source:
 1. The **Polling Interval** is set to 5 minutes by default. You can adjust it based on your needs.
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
+
+:::info
+After configuring the Microsoft Graph Security API source, you can install relevant Sumo Logic Azure security apps to visualize and analyze the collected data through prebuilt dashboards. 
+
+Depending on your security monitoring needs, you can choose from several apps such as [Microsoft Defender for Endpoint](/docs/integrations/microsoft-azure/microsoft-defender-for-endpoint), [Microsoft Defender for Identity](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity/), [Microsoft Defender for Office 365](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-office-365), [Microsoft Defender for Cloud Apps](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps), [Microsoft Entra ID Protection](/docs/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection), or [Microsoft Graph Security](/docs/integrations/saas-cloud/microsoft-graph-security-v2).
+:::
 
 #### Base URL
 
@@ -146,3 +152,7 @@ The "**Unauthorized request - Account is not provisioned**" error occurs when Mi
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+
+
+

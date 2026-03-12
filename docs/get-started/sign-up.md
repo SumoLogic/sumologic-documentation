@@ -1,7 +1,6 @@
 ---
 id: sign-up
 title: Sign Up and Activate Your Account
-sidebar_label: Sign up and activate your account
 description: Learn how to sign up with Sumo Logic and create your account.
 ---
 

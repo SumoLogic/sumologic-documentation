@@ -23,7 +23,7 @@ This data is gathered directly from your end-user devices and displayed as indiv
 
 All data collected is compatible with OpenTelemetry and doesn't use proprietary vendor code. Real user monitoring supports document load actions as well as XHR communication and route changes for single-page app navigation. The full list of functionalities and configuration is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 See Real User Monitoring in action.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/jfptjgwql1?web_component=true&seo=true&videoFoam=false"
@@ -48,10 +48,9 @@ See Real User Monitoring in action.
 
 Access Traces to confirm that your Sumo Logic service package has been upgraded to include Traces and Real User Monitoring.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Traces, go to the **Home** screen and select **Traces**.
-
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access Traces, in the main Sumo Logic menu select **Observability**, and then under **Application Monitoring** select **Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**.
- 
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access Traces, go to the **Home** screen and select **Traces**.
 
 ## Guides
 

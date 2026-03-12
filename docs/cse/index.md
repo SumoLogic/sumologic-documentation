@@ -15,68 +15,87 @@ Cloud SIEM is a cloud-based security information and event management (SIEM) sys
 * A rich interface that analysts and admins can use to investigate security issues and administer Cloud SIEM itself.
 * Integration with the Sumo Logic core platform.
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* **Self-paced**: 
+    * [Cloud SIEM Training Self-Paced](https://learn.sumologic.com/path/sumo-security/cloud-siem-training-self-paced)
+    * [Essential Cloud SIEM Skills for SOC Analysts](https://learn.sumologic.com/path/sumo-security/essential-cloud-siem-skills-for-soc-analysts)
+* **Instructor-led virtual classes**:
+    * [Certifications: Cloud SIEM](https://www.sumologic.com/learn/training?_certifications=cloud-siem#section-2)
+    * [Workshops: Essential Cloud SIEM Skills for SOC Analysts](https://www.sumologic.com/learn/training?_workshops=essential-cloud-siem-skills-for-soc-analysts#section-2)
+:::
 
 This section contains the following topics:
 
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/get-started-with-cloud-siem"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Get Started with Cloud SIEM</h4></a>
+  <a href={useBaseUrl('docs/cse/get-started-with-cloud-siem')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Get Started with Cloud SIEM</h4></a>
   <p>Learn how to start using Cloud SIEM for threat hunting.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/records-signals-entities-insights"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Records, Signals, Entities, and Insights</h4></a>
+  <a href={useBaseUrl('docs/cse/records-signals-entities-insights')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Records, Signals, Entities, and Insights</h4></a>
   <p>Learn about Insight generation, working with Entities, and how to query Cloud SIEM Records.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/ingestion"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Ingestion</h4></a>
+  <a href={useBaseUrl('docs/cse/ingestion')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Ingestion</h4></a>
   <p>Learn how to configure ingestion for supported products and services.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/rules"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Rules</h4></a>
+  <a href={useBaseUrl('docs/cse/rules')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Rules</h4></a>
   <p>Learn how to write rules, rules syntax, and Cloud SIEM built-in rules.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/schema"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Schema</h4></a>
+  <a href={useBaseUrl('docs/cse/schema')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Schema</h4></a>
   <p>Learn about Cloud SIEM Schema v3, schema attributes, and the Record processing pipeline.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/sensors"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Sensors</h4></a>
+  <a href={useBaseUrl('docs/cse/sensors')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Sensors</h4></a>
   <p>Cloud SIEM Sensors collect log and event data from your infrastructure and applications.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/integrations"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Integrations</h4></a>
+  <a href={useBaseUrl('docs/cse/integrations')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Integrations</h4></a>
   <p>Cloud SIEM integration with Sumo Logic and threat intel sources, and leveraging the Cloud SIEM Insight Enrichment Server.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/match-lists-suppressed-lists"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Match Lists and Suppressed Lists</h4></a>
+  <a href={useBaseUrl('docs/cse/match-lists-suppressed-lists')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Match Lists and Suppressed Lists</h4></a>
   <p>Learn about creating a Match list and their usage in rules.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/automation"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Automation</h4></a>
+  <a href={useBaseUrl('docs/cse/automation')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Automation</h4></a>
   <p>Learn how to configure automations to create notifications and enrichments in Cloud SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/administration"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Administration</h4></a>
+  <a href={useBaseUrl('docs/cse/administration')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Administration</h4></a>
   <p>Learn how to set up user accounts and roles, Actions, Network Blocks, custom Insight status and sub-resolutions, and more.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/cse/troubleshoot')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Shield on a cloud icon" width="40"/><h4>Troubleshoot</h4></a>
+  <p>Learn how to troubleshoot problems with Cloud SIEM.</p>
   </div>
 </div>
 </div>

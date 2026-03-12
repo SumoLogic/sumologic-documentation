@@ -1,7 +1,7 @@
 ---
 slug: /manage/partitions
 title: Partitions
-description: Partitions speed the search process by allowing an Admin to filter a subset of the log messages in an index.
+description: Partitions speed the search process by allowing an admin to filter a subset of the log messages in an index.
 ---
 
 import Iframe from 'react-iframe';
@@ -9,22 +9,29 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Creating a partition enhances search performance by narrowing down the search scope to a smaller subset of messages. Use the Partitions page to set up and manage partitions. 
 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Partitions page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Partitions page, in the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Partitions page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
- 
-
-A partition stores your data in an index separate from the rest of your account's data so you can [optimize searches](../../search/optimize-search-performance.md), [manage variable retention](manage-indexes-variable-retention.md), and specify certain [data to forward to S3](../data-forwarding/amazon-s3-bucket.md).
+A partition stores your data in an index separate from the rest of your account's data so you can [optimize searches](../../search/optimize-search-performance.md), [manage variable retention](manage-indexes-variable-retention.md), and specify certain [data to forward to S3 or GCS](../data-forwarding/forward-data-from-sumologic.md).
 
 :::note
 Data stored in a partition is not stored anywhere else. 
 :::
 
-## About Partitions
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a partition with the [`sumologic_partition`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/partition) resource.
+
+<TerraformLink/>
+:::
+
+## About partitions
 
 Partitions route your data to an index becoming a separate subset of data in your account. Creating smaller and separate subsets of data is central to search optimization. When you run a search against an index, results are returned more quickly and efficiently because the search runs against a smaller data set.
 
-After routing messages to a partition, you can reference it in your search by using the field `_index` with the partition's name. See [Optimizing Search with Partitions](/docs/search/optimize-search-partitions) for details.
+After routing messages to a partition, you can reference it in your search by using the field `_index` with the partition's name. See [Optimize Your Search with Partitions](/docs/search/optimize-search-partitions) for details.
 
 Partitions ingest your messages in real time. They differ from scheduled views in that partitions don’t backfill with aggregate data. They begin building a non-aggregate index from the time the partition is created and index only the data moving forward. Scheduled views backfill with aggregate data, meaning that all data that extends back to the start date of the view query is added to the view.
 
@@ -32,7 +39,7 @@ You define the data that will reside in a partition by defining a routing expres
 
 ## Micro Lesson: Partitions basics
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/p0xs5l91jq?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -62,26 +69,51 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/run-search-against-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Search a Partition</h4></a>
-  <p>Learn how to run a search against data in a Partition.</p>
+  <a href={useBaseUrl('docs/manage/partitions/data-tiers')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers</h4></a>
+  <p>Data tiers provide the ability to allocate data to different storage tiers based on frequency of access - Continuous, Frequent, and Infrequent.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/edit-data-forwarding-destinations-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Edit Data Forwarding Destinations for a Partition</h4></a>
-  <p>Learn how to specify Data Forwarding settings for a Partition.</p>
+  <a href={useBaseUrl('docs/manage/partitions/flex')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Flex Pricing</h4></a>
+  <p>Learn more about the Flex pricing partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/manage-indexes-variable-retention"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage Indexes with Variable Retention</h4></a>
-  <p>Learn how to create Index Partitions and Scheduled Views to store your data.</p>
+  <a href={useBaseUrl('docs/manage/partitions/estimate-scan-data')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Estimate Scan Data</h4></a>
+  <p> Learn about the estimate scan data for data tier and Flex pricing.</p>
+  <p>Learn about Sumo Logic Flex Pricing.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/decommission-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Decommission a Partition</h4></a>
-  <p>Learn how to decommission a Partition to keep it from being started.</p>
+  <a href={useBaseUrl('docs/manage/partitions/run-search-against-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Search a Partition</h4></a>
+  <p>Learn how to run a search against data in a partition.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/manage/partitions/edit-data-forwarding-destinations-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Edit Data Forwarding Destinations for a Partition</h4></a>
+  <p>Learn how to specify data forwarding settings for a partition.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/manage/partitions/manage-indexes-variable-retention')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage Indexes with Variable Retention</h4></a>
+  <p>Learn how to create index partitions and Scheduled Views to store your data.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/manage/partitions/decommission-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Decommission a Partition</h4></a>
+  <p>Learn how to decommission a partition to keep it from being started.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/partitions/faq"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Partitions FAQs</h4></a>
+  <p>Answers to frequently asked questions about Sumo Logic partitions.</p>
   </div>
 </div>
 </div>

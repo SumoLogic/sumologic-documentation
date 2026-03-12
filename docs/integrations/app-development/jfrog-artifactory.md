@@ -167,9 +167,9 @@ For more details about Artifactory logs, refer to [JFrog's Artifactory Log Files
 ### Enable the integration
 
 1. Log in to JFrog Artifactory.
-1. Click the gear icon, then click **Artifactory.** <br/>![jfrog 1](/img/connection-and-integration/jfrog1.png)
-1. Select **Log Analytics**.<br/>![jfrog 2](/img/connection-and-integration/jfrog2.png)
-1. In the dialog **Enable Sumo Logic Integration**, click **Enable**.<br/>![jfrog 3](/img/connection-and-integration/jfrog3.png)
+1. Click the gear icon, then click **Artifactory.** <br/><img src={useBaseUrl('img/connection-and-integration/jfrog1.png')} alt="Click Artifactory" style={{border: '1px solid gray'}} width="600" />
+1. Select **Log Analytics**.<br/><img src={useBaseUrl('img/connection-and-integration/jfrog2.png')} alt="Select Log Analytics" style={{border: '1px solid gray'}} width="600" />
+1. In the dialog **Enable Sumo Logic Integration**, click **Enable**.<br/><img src={useBaseUrl('img/connection-and-integration/jfrog3.png')} alt="Enable Sumo Logic Integration" style={{border: '1px solid gray'}} width="600" />
 
 ### If you do not have a Sumo Logic account
 
@@ -177,7 +177,7 @@ If you do not have an existing Sumo Logic account and it is your first time here
 
 1. Select **Create New Connection**.
 1. Click **Access Dashboard**.
-1. When the Sumo Logic page appears, select **I agree to the Service License Agreement**, and click **Access Dashboard**.<br/>![jfrog 4](/img/connection-and-integration/jfrog4.png)
+1. When the Sumo Logic page appears, select **I agree to the Service License Agreement**, and click **Access Dashboard**.<br/><img src={useBaseUrl('img/connection-and-integration/jfrog4.png')} alt="Access Dashboard" style={{border: '1px solid gray'}} width="800" />
 1. When you see the message **Your Dashboards are being populated**, click **OK, Got It**.
 1. To access your Artifactory dashboards, click **Library** > **Personal** > **Artifactory 7**.<br/><img src={useBaseUrl('img/connection-and-integration/jfrog5.png')} alt="jfrog5.png" width="300"/>
 
@@ -185,7 +185,7 @@ If you do not have an existing Sumo Logic account and it is your first time here
 
 If you already have an existing Sumo Logic account created outside of Artifactory Online:
 
-1. Select **Connection URL** and copy and paste the URL of an existing Sumo Logic [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) in the **Connection URL** text box. <br/>![jfrog 7](/img/connection-and-integration/jfrog7.png)
+1. Select **Connection URL** and copy and paste the URL of an existing Sumo Logic [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) in the **Connection URL** text box. <br/><img src={useBaseUrl('img/connection-and-integration/jfrog7.png')} alt="HTTP Logs and Metrics Source" style={{border: '1px solid gray'}} width="600" />
 1. Sign in to Sumo Logic and verify that your logs are flowing in as expected.
 1. Go to our **Apps Catalog**, search for **Artifactory**, then install the [Sumo Logic app for Artifactory 7](/docs/integrations/app-development/jfrog-artifactory) to get instant insight into your Artifactory logs. 
 
@@ -194,7 +194,7 @@ If you already have an existing Sumo Logic account created outside of Artifactor
 If you already have an existing connection set up via Artifactory Online:
 
 1. The **Use Existing Client ID and Secret** radio button is selected, and keys will pre-populate automatically based on your previous configuration.
-1. Click Access Dashboards to view Dashboards as you did before.<br/>![jfrog 6](/img/connection-and-integration/jfrog6.png)
+1. Click Access Dashboards to view Dashboards as you did before.<br/><img src={useBaseUrl('img/connection-and-integration/jfrog6.png')} alt="Access Dashboards" style={{border: '1px solid gray'}} width="600" />
 
 ## Field Extraction Rules
 

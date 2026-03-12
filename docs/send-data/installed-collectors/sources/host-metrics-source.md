@@ -4,7 +4,7 @@ title: Host Metrics Source
 description: An installed Sumo Logic Collector can collect host metrics from a local host.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 An installed Sumo Logic Collector can collect host metrics pertaining to the local host. The metrics are ingested and become available for metrics visualization. The host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). 
 
@@ -35,14 +35,9 @@ A host metric source running on an Installed Collector on an Amazon EC2 instance
 
 ## Manually Configure a Host Metrics Source
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
-1. Find the name of the installed collector to which you'd like to add a source. Click **Add** and then choose **Add Source**.
-
-    ![add-source2.png](/img/send-data/add-source2.png)
-
-1. Select **Host Metrics** as the source type.
-
-    ![InstalledCollector.png](/img/send-data/host-metrics-icon.png)
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.  
+1. Find the name of the installed collector to which you'd like to add a source. Click **Add** and then choose **Add Source**.<br/><img src={useBaseUrl('img/send-data/add-source2.png')} alt="Add Source button" style={{border: '1px solid gray'}} width="800" />
+1. Select **Host Metrics** as the source type.<br/><img src={useBaseUrl('img/send-data/host-metrics-icon.png')} alt="Host Metrics tile" style={{border: '1px solid gray'}} width="600" />
 1. Set the following:
 
    * **Name**. Enter the name you'd like to display for the new Source. Description is optional. Source name metadata is stored in a searchable field called `_sourceCategory`.
@@ -51,11 +46,8 @@ A host metric source running on an Installed Collector on an Amazon EC2 instance
    * **Fields**. Click the **+Add Field** link to add custom metric metadata. Define the fields you want to associate, providing a name (key) and value for each.
    * **Scan Interval**. Select the frequency for the Source to scan for host metrics data. Selecting a short interval will increase the message volume and could cause your deployment to incur additional charges. The default is 1 minute.
    * **Metrics**. Select check boxes for the metrics to collect. By default, all CPU and memory metrics are collected.
-
-     * Select the top level check box to select all metrics in that category. A blue checkmark icon ![check](/img/send-data/icon_blue_checkmark.png) indicates that the category is selected.
-     * To select individual metrics, click the right-facing arrow to expand the category and select the individual metrics. The icon changes to ![minus](/img/send-data/icon_blue_minus.png) , as shown in the screenshot.        
-
-    ![host-metrics-source.png](/img/send-data/host-metrics-source.png)
+     * Select the top level check box to select all metrics in that category. A blue checkmark icon <img src={useBaseUrl('img/send-data/icon_blue_checkmark.png')} alt="Blue checkmark" width="20" /> indicates that the category is selected.
+     * To select individual metrics, click the right-facing arrow to expand the category and select the individual metrics. The icon changes to <img src={useBaseUrl('img/send-data/icon_blue_minus.png')} alt="Minus mark" width="20" />, as shown in the screenshot.<br/><img src={useBaseUrl('img/send-data/host-metrics-source.png')} alt="Select individual metrics" style={{border: '1px solid gray'}} width="600" />
 
 1. When you are finished configuring the Source, click **Save**.
 

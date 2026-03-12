@@ -26,20 +26,11 @@ If you need to collect from different channels you need to create a separate So
 
 To configure a Windows Event Log Source:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 
-1. Find the name of the Installed Collector to which you'd like to add a source. Click **Add** and then choose **Add Source** from the pop-up menu.
-
-    ![add source from collection page.png](/img/send-data/add-source-from-collection-page.png)
-
-1. Select the **Windows Event Log** Source.
-
-    ![windows event log source icon.png](/img/send-data/windows-event-log-source-icon.png)
-
-1. Choose **Local** or **Remote** for **Type of Windows Source**. Remote types require you to [configure a few settings](preconfigure-machine-collect-remote-windows-events.md) to enable remote access. A Remote Windows Event Log Source uses a single Sumo Logic Collector to collect Windows event log entries from multiple remote systems.
-
-    ![type of windows event log source.png](/img/send-data/windows-event-log-source.png)
-
+1. Find the name of the Installed Collector to which you'd like to add a source. Click **Add** and then choose **Add Source** from the pop-up menu.<br/><img src={useBaseUrl('img/send-data/add-source-from-collection-page.png')} alt="Add source from collection page" style={{border: '1px solid gray'}} width="800" />
+1. Select the **Windows Event Log** Source.<br/><img src={useBaseUrl('img/send-data/windows-event-log-source-icon.png')} alt="Windows event log source icon" style={{border: '1px solid gray'}} width="100" />
+1. Choose **Local** or **Remote** for **Type of Windows Source**. Remote types require you to [configure a few settings](preconfigure-machine-collect-remote-windows-events.md) to enable remote access. A Remote Windows Event Log Source uses a single Sumo Logic Collector to collect Windows event log entries from multiple remote systems.<br/><img src={useBaseUrl('img/send-data/windows-event-log-source.png')} alt="Type of Windows event log source" style={{border: '1px solid gray'}} width="300" />
 1. Set the following:
    * **Name.** Type the name you'd like to display for this source in Sumo Logic. 
    * **Description.** Optional description.
@@ -54,9 +45,7 @@ To configure a Windows Event Log Source:
       * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
    * **Windows Domain. (Remote Source only)** Type the name of the Windows domain, the username for this host, and the password. 
-   * **Event Format**. Select how you want your event logs formatted:
-
-        ![JSON format name update.png](/img/send-data/JSON-format-name-update.png)
+   * **Event Format**. Select how you want your event logs formatted:<br/><img src={useBaseUrl('img/send-data/JSON-format-name-update.png')} alt="JSON format name update>" style={{border: '1px solid gray'}} width="500" />
 
      * **Collect using legacy format**. Events retain their default text format from Windows.
      * **Collect using JSON format**. Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
@@ -65,9 +54,7 @@ To configure a Windows Event Log Source:
      The Windows JSON App requires **JSON format**.
      :::
 
-   * **Windows Event Types.** Select **Forwarded Events**. If you have custom Forwarded Event Channels you can additionally specify them in the **Custom Event Channels** textbox. 
-
-        ![forwarded events checkbox Windows Event Source.png](/img/send-data/forwarded-events-checkbox-Windows-Event-Source.png)
+   * **Windows Event Types.** Select **Forwarded Events**. If you have custom Forwarded Event Channels you can additionally specify them in the **Custom Event Channels** textbox. <br/><img src={useBaseUrl('img/send-data/forwarded-events-checkbox-Windows-Event-Source.png')} alt="Forwarded events checkbox Windows Event Source" style={{border: '1px solid gray'}} width="500" />
 
         If you need to collect from different channels you need to create a separate Source for each **Windows Event Type**. For example, each of the following types should have its own dedicated Source:
 
@@ -78,9 +65,7 @@ To configure a Windows Event Log Source:
    * **Custom Event Channels** allows you to specify, in a comma-separated list, the channels you'd like to collect from. You can specify custom Forwarded Events Channels. If you need help finding channels on the machine where the Source is installed, see [Windows Event Source Custom Channels](windows-event-source-custom-channels.md). Do not enter Standard Event Channels or Forwarded Events in the Custom Events Channels text box. To collect from custom event channels in a Local Event Source, the Collector must have version 19.118 or later installed.
    * Depending on the **Event Format** selected, you'll have different options.
 
-     * **Event Collection Level**. When JSON format is selected you have the option to select:
-
-    ![event levels.png](/img/send-data/event-levels.png)
+     * **Event Collection Level**. When JSON format is selected you have the option to select:<br/><img src={useBaseUrl('img/send-data/event-levels.png')} alt="Event levels" style={{border: '1px solid gray'}} width="500" />
 
        * **Complete Message** will ingest the entire event content along with metadata.
        * **Concise Message** will ingest the first line of event messages along with all of the metadata.
@@ -90,8 +75,8 @@ To configure a Windows Event Log Source:
         :::note
         To omit full event text and only collect event metadata, the collector must have version 19.155 or later installed.
         :::
-
-    ![legacy metadata option.png](/img/send-data/legacy-metadata-option.png)
+        
+        <img src={useBaseUrl('img/send-data/legacy-metadata-option.png')} alt="Legacy metadata option" style={{border: '1px solid gray'}} width="500" />
 
    * **Collection should begin**. Choose or enter how far back you'd like to begin collecting historical logs. You can either:
 
@@ -149,7 +134,7 @@ You can use multiple variables, for example:
 
 `{{sys.PATH}}-{{sys.YourEnvVar}}`
 
-![environment-variable-usage](/img/send-data/environment-variable-usage.png)
+<img src={useBaseUrl('img/send-data/environment-variable-usage.png')} alt="Environment variable usage" style={{border: '1px solid gray'}} width="600" />
 
 :::tip
 The example above uses a hyphen - character to separate variable components. Separator characters are not required. Curly brackets and spaces are not allowed. Underscores and hyphens are recommended.

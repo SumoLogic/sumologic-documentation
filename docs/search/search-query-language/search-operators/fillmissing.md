@@ -4,6 +4,8 @@ title: fillmissing Search Operator
 sidebar_label: fillmissing
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -123,7 +125,7 @@ login
 | sort by _timeslice
 ```
 
-![fillmissing-example-1-without.png](/img/search/searchquerylanguage/search-operators/fillmissing-example-1-without.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/fillmissing-example-1-without.png')} alt="Fillmissing example 1 without" style={{border: '1px solid gray'}} width="300" />
 
 </TabItem>
 <TabItem value="tab2">
@@ -136,7 +138,7 @@ login
 | sort by _timeslice
 ```
 
-![fillmissing-example1-with.png](/img/search/searchquerylanguage/search-operators/fillmissing-example1-with.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/fillmissing-example1-with.png')} alt="Fillmissing example1 with" style={{border: '1px solid gray'}} width="300" />
 
 </TabItem>
 </Tabs>
@@ -163,7 +165,7 @@ login
 | count by type
 ```
 
-![fillmissing-example-1-without.png](/img/search/searchquerylanguage/search-operators/fillmissing-example2-without.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/fillmissing-example2-without.png')} alt="Fillmissing example 1 without" style={{border: '1px solid gray'}} width="200" />
 
 </TabItem>
 <TabItem value="tab4">
@@ -175,7 +177,7 @@ login
   with -1 for _count
 ```
 
-![fillmissing-example1-with.png](/img/search/searchquerylanguage/search-operators/fillmissing-example2-with.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/fillmissing-example2-with.png')} alt="Fillmissing example 1 with" style={{border: '1px solid gray'}} width="200" />
 
 </TabItem>
 </Tabs>
@@ -194,7 +196,7 @@ _sourceCategory="asthana_json_test" and _collector="Asthana-Test"
 
 This query provides the following results:
 
-![all option with transpose.png](/img/search/searchquerylanguage/search-operators/all-option-with-transpose.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/all-option-with-transpose.png')} alt="All option with transpose" style={{border: '1px solid gray'}} width="400" />
 
 ### Multiple generators and transpose
 
@@ -219,7 +221,7 @@ login
 | transpose row _timeslice column type
 ```
 
-![fillmissing-example-1-without.png](/img/search/searchquerylanguage/search-operators/fillmissing-example3-none.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/fillmissing-example3-none.png')} alt="Fillmissing example 1 without" style={{border: '1px solid gray'}} width="400" />
 
 </TabItem>
 <TabItem value="tab2">
@@ -234,7 +236,7 @@ login
 | transpose row _timeslice column type
 ```
 
-![fillmissing-example1-with.png](/img/search/searchquerylanguage/search-operators/fillmissing-example3-before.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/fillmissing-example3-before.png')} alt="Fillmissing example 1 with" style={{border: '1px solid gray'}} width="400" />
 
 </TabItem>
 </Tabs>
@@ -264,4 +266,4 @@ _sourceCategory="asthana_json_test" and _collector="Asthana-Test"
 
 This query provides the following results:
 
-![takeLast with transpose.png](/img/search/searchquerylanguage/search-operators/takeLast-with-transpose.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/takeLast-with-transpose.png')} alt="Takelast option with transpose" style={{border: '1px solid gray'}} width="400" />

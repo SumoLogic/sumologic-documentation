@@ -5,6 +5,8 @@ sidebar_label: Filter and Shape Output Data
 description: Learn how to create and apply custom rules to shape tracing data.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 You may ask yourself, "What if I do not want to send all my trace data to Sumo Logic?". With our OpenTelemetry collector, you can define custom rules to filter and extract data based on your selection.
 
 Our OpenTelemetry collector is uniquely capable of [shaping trace data at output](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/cascadingfilterprocessor). You can define rules in a cascading fashion, assign different volume pool sizes to each rule, and give them different priorities.
@@ -15,7 +17,7 @@ Output-level filtering ensures you will always have valuable, useful, and cost-o
 
 For best results, perform filtering on a central instance of Aggregating OpenTelemetry Collector (see the following diagram), as it gives possibilities to act on whole trace, rather than individual span level.
 
-![env multiple agents bd.png](/img/apm/traces/env-multiple-agents-bd.png)
+<img src={useBaseUrl('img/apm/traces/env-multiple-agents-bd.png')} alt="Environment with multiple agents" style={{border: '1px solid gray'}} width="800" />
 
 The aggregating collector can receive data from local collectors/agents or directly from the tracing client.
 

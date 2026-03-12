@@ -101,8 +101,7 @@ Use this dashboard to:
 * Monitor number of messages received, sent, deleted and other metrics.
 * Monitor message states, queue health, and message lag.
 
-![1.Amazon SQS Overview](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-Overview.png)
-
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-Overview.png')} alt="Amazon SQS Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Queue Stats
 
@@ -110,8 +109,7 @@ The **1. Amazon SQS - Queue Stats** dashboard provides details of SQS queue metr
 * Monitor trend of messages received, sent, deleted and other metrics.
 * Monitor message states, queue health and message lag.
 
-![1.Amazon SQS- Queue Stats](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-QueueStats.png)
-
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-QueueStats.png')} alt="Amazon SQS - Queue Stats dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Audit Events
 
@@ -122,14 +120,14 @@ Use this dashboard to:
 * Monitor event details by users.
 * Monitor successful and error event details.
 
-![2.Amazon SQS Audit Events](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-AuditEvents.png)
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-AuditEvents.png')} alt="Amazon SQS Audit Events dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Threat Intel
 
-The **3. Amazon SQS - Threat Intel** dashboard provides insights into incoming requests to your Amazon SQS services from malicious sources determined via Sumo Logic’s Threat Intel feature. Panels show detailed information on malicious IPs and the malicious confidence of each threat.
+The **3. Amazon SQS - Threat Intel** dashboard provides insights into incoming requests to your Amazon SQS services from malicious sources determined via [Sumo Logic threat intelligence](/docs/security/threat-intelligence/). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 Use this dashboard to:
 * Monitor details of threat locations and count.
 * Get details of threats by malicious confidence and malicious IPs.
 * Get details of all threats by IPs.
 
-![3.Amazon SQS - Threat Intel](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-ThreatIntel.png)
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-ThreatIntel.png')} alt="Amazon SQS - Threat Intel dashboard" style={{border: '1px solid gray'}} width="800" />

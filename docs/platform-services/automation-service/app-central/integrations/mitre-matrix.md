@@ -27,9 +27,7 @@ MITRE is a globally-accessible knowledge base of adversary tactics and technique
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
-import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
-import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
 import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
@@ -37,8 +35,8 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * **Update MITRE ATT&CK**. Select to get the latest MITRE techniques, tactics, etc.
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
-* <IntegrationEngine/>
-* <IntegrationProxy/>
+* **Automation Engine**. Select a bridge. (Cloud execution is not supported for this integration. For more information about cloud and bridge execution, see [Cloud or Bridge execution](/docs/platform-services/automation-service/automation-service-integrations/#cloud-or-bridge-execution).)
+* **Proxy Options**. Select **Use no proxy**. Communication runs on the bridge and does not use a proxy.
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mitre-matrix-configuration.png')} style={{border:'1px solid gray'}} alt="MITRE Matrix configuration" width="400"/>
 

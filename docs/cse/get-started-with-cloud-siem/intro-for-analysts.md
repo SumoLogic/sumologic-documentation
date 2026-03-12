@@ -26,7 +26,7 @@ The following images show Sumo Logic's Cloud SIEM home page.
 * C. **Radar**. Visualizes the last 24 hours of security activity. Dark blue lines represent records, light blue bars represent signals, and red triangles represent insights.
 * D. **Recent Activity**. Displays a feed of the latest insights that have been generated.
 
-Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations. Cloud SIEM automatically normalizes, enriches, and correlates all your data across multiple data sources into actionable security insights. Because it's designed for larger data volumes, most organizations need to ingest a large amount of data each day for insights to surface in Cloud SIEM. For smaller organizations, [additional security features](/docs/security/additional-security-features/) may be a better fit for your data ingest volume. 
+Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations. Cloud SIEM automatically normalizes, enriches, and correlates all your data across multiple data sources into actionable security insights. Because it's designed for larger data volumes, most organizations need to ingest a large amount of data each day for insights to surface in Cloud SIEM. For smaller organizations, [Logs for Security](/docs/security/additional-security-features/) may be a better fit for your data ingest volume. 
 
 ### Getting your data into Cloud SIEM
 
@@ -100,7 +100,7 @@ An [insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) is a g
 
 ### Explore the Cloud SIEM UI
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > SIEM Overview**. You can also click **Go To...** at the top of the screen and select **SIEM Overview**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > SIEM Overview**. You can also click **Go To...** at the top of the screen and select **SIEM Overview**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. 
 1. Near the top of the left pane of the Cloud SIEM UI, you'll see summary statistics. In the upper right corner of this pane, a dropdown menu lets you select the timeframe for the summary statistics. Use the summary panel and the dropdown to answer these questions:
    * How many records have been ingested in the last 8 Hours?
    * How many signals have been created in the last 7 Days?
@@ -109,12 +109,12 @@ An [insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) is a g
    * What time were the most records ingested in the last 24 hours? When were the fewest records ingested? Hint: Hover over the blue line to find out how many records were ingested at each time increment.
    * What time were the most signals created in the last 24 hours? When were the fewest signals created? Hint: Hover over each bar to find out how many signals were generated at each time increment.
    * How many insights have been generated in the last 24 hours? Hint: Each triangle represents one or more insights, so hover over each to find the number of insights each represents.<br/><img src={useBaseUrl('img/cse/intro-hud.gif')} alt="Explore the radar" style={{border: '1px solid gray'}} width="400"/>
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
 1. Use the **Filters** bar in the **Rules** page to answer these questions:
    * How many rules have a name that contains "firewall"? Hint: Use the autocomplete suggestions and dropdown menus to enter `Name contains firewall` in the **Filters** bar.
    * How many rules have a severity score greater than 8?
    * How many rules detect the "persistence" tactic"?<br/><img src={useBaseUrl('img/cse/intro-filter-rules.png')} alt="Filter rules" style={{border: '1px solid gray'}} width="325"/>
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. 
 1. Use the **Filters** bar in the **Entities** page to answer these questions:
    * How many entities have an activity score of 5 or greater? Hint: Use the autocomplete suggestions and dropdown menus to enter `Activity Score greater than` 5 in the **Filters** bar.
    * How many entities have an activity score of 0?<br/><img src={useBaseUrl('img/cse/intro-filter-entities.png')} alt="Filter entities" style={{border: '1px solid gray'}} width="350"/>
@@ -209,7 +209,7 @@ Of course, this process will repeat each day as new insights are generated for y
 
 In this section, you'll be investigating an insight for your organization that was detected through Cloud SIEM. Our goal is to analyze the insight details and complete the narrative of what happened.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Insights** at the top of the screen. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Insights** at the top of the screen. 
 1. Find an insight to investigate. 
 1. Click the insight's name to investigate it. For our example, we found one named **Discovery with Execution and Initial Access**. <br/><img src={useBaseUrl('img/cse/intro-insight-example-investigation.png')} alt="Example threat insight" style={{border: '1px solid gray'}} width="800"/>
 1. Use the insight's name (and the [MITRE ATT&CK matrix](https://attack.mitre.org/matrices/enterprise/)), timeline, signals, and entities to answer these questions:
@@ -218,7 +218,7 @@ In this section, you'll be investigating an insight for your organization that w
    * What order did the events happen in?
    * What hypotheses do you have about how and why the event happened?
    * What other information can you find by exploring this insight?
-1. Scroll to the bottom of the left navigation pane of the insight. Write a short summary of your answers from from the previous step in the **Comments** section. Here is a summary that we could have written for our example: 
+1. Write a short summary of your answers from from the previous step in the insight's **Comments**. Here is a summary that we could have written for our example: 
     "*First, a known phishing link was received in a user's email. A few minutes later, a malicious file was allowed. It seems the user clicked a phishing link and downloaded the file. Then, threat intelligence detected a ZIP file with a known malicious file hash, coming from a domain that has also been recognized as suspicious by external threat monitoring services. Follow-up activity accessing the AWS APIs and Lambda service was detected, the first time that this user has been recorded using those services.  This unusual activity also triggered Amazon's GuardDuty service, recognizing unusual network activity.  All of these individual signals were correlated together into this insight. Given the likelihood of active malware in the network, the user's machine and credentials should be locked down immediately. Further investigation is needed to determine the total impact of the malicious file.*"
 
 ### Dive into signals and entities
@@ -259,7 +259,7 @@ In a previous section, we looked at an insight. In this section, we will use Sum
 1. In the left pane, hover your mouse cursor over the **Entity** field (this is randomly generated and can be a user name or an IP address). Click the context actions (six dots) icon that appears next to the entity name.
 1. From the dropdown (under **Actions**), select **Sumo Logic Search** as described in [Bring it back to Sumo Logic search](#bring-it-back-to-sumo-logic-search). You may need to scroll to find it. You'll be redirected to Sumo Logic search.
 1. Make a note of the entity name that's pre-populated in the query builder.
-1. Open another log search in Sumo Logic: <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.
+1. Open another log search in Sumo Logic: <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. 
 1. Find the top 10 records by threat type for that entity. For example, if the entity is a username, in the search bar type:
    ```
    _index=sec_record_* 
@@ -283,7 +283,7 @@ In addition to the context actions available in the Cloud SIEM UI, there are man
 
 In Cloud SIEM, there are several different actions you can take on each insight. You can comment on the insight, or close it or assign a status to it. When you close an insight, Cloud SIEM uses the resolution information to reduce false positives and duplicates further. Assigning a status to the insight lets you keep working on it, and keep track of your progress. 
 
-You can also assign the insight to yourself or to a colleague, and use the **Actions** button to alert colleagues, create JIRA tickets, send Slack messages, execute playbooks, or use other APIs. This **Actions** button is customizable, but can only be configured by admins. If you need a custom Action, ask your Admin or Sumo account rep for help creating one.
+You can also assign the insight to yourself or to a colleague, and use the **Actions** button to alert colleagues, create JIRA tickets, send Slack messages, execute playbooks, or use other APIs. This **Actions** button is customizable, but can only be configured by admins. If you need a custom Action, ask your Admin or Sumo Logic account rep for help creating one.
 
 ## Tune your environment
 
@@ -303,7 +303,7 @@ If you do decide to write a custom rule, insight, or rule tuning expression, the
 
 You're updating some of the firewalls in your system, and you don't want to trigger unnecessary alerts. Write a rule tuning expression that will allow yourself to bypass firewall-related rules.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**. Then in the top menu, select **Content > Rule Tuning**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**. Then in the top menu, select **Content > Rule Tuning**. 
 1. On the **Rule Tuning** page, click **Add Rule Tuning Expression**.
 1. Name your rule tuning expression.
 1. **Tune selected Rules** should be selected by default. 
@@ -350,7 +350,7 @@ The below image shows a blank rule template.
 
 You're concerned about traffic coming from a particular IP address that isn't covered by any of the default rules in Cloud SIEM. Write a match rule that looks for this IP address.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
 1. Click **Create**.
 1. On the **Match** tile click **Create**.
 1. Provide a name for your rule.
@@ -399,7 +399,7 @@ But what if you want to be alerted right away when a certain rule is triggered?
 
 You want to be alerted right away when your new custom match rule is triggered. Create a custom insight that looks for only this rule.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu, select **Content > Custom Insights**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu, select **Content > Custom Insights**. 
 1. Click **Add Custom Insight**.
 1. Give your custom insight a name.
 1. Under **When Signals are created from the following** select **rules**.

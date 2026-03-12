@@ -4,6 +4,8 @@ title: total Search Operator
 sidebar_label: total
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `total` operator inserts the sum of a set of fields into every row of the set. Unlike the sum operator, which produces an aggregate value, the total operator inserts the total value as a new column, enabling expressions that compare an individual value to the total.
 
 ## Syntax
@@ -39,7 +41,7 @@ In this example, you can find the total data (bytes) transmitted for a time rang
 
 produces results similar to:
 
-![Total.png](/img/search/searchquerylanguage/search-operators/Total.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Total.png')} alt="Total" style={{border: '1px solid gray'}} width="400" />
 
 Note that the t_data value of 16,761,621,241.25455 is the sum of the data field in all rows, many of which are not visible  here.
 
@@ -51,7 +53,7 @@ This query produces only three results, illustrating that _total is simply the s
 | total ps
 ```
 
-![total op](/img/search/searchquerylanguage/search-operators/total-op.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/total-op.png')} alt="Total op" style={{border: '1px solid gray'}} width="400" />
 
 #### Calculate totals by message time
 
@@ -80,4 +82,4 @@ _sourceCategory=IIS (Wyatt OR Luke)
 
 produces results similar to:
 
-![RunningTotal.png](/img/search/searchquerylanguage/search-operators/RunningTotal.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/RunningTotal.png')} alt="Running Total" style={{border: '1px solid gray'}} width="500" />

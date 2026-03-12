@@ -4,6 +4,8 @@ title: most_recent, least_recent Grouping Operators
 sidebar_label: most_recent, least_recent
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `most_recent` and `least_recent` operators, used with the `withtime` operator, are aggregate operators that allow you to select the most recent or least recent value within a group.
 
 The `withtime` operator is given a field and creates a JSON object with the field's value and its timestamp in milliseconds. A field is created with the format `x_withtime` that appears as part of your search results. Then the `most_recent` and `least_recent` operators are used to order your data referencing the `x_withtime` field.
@@ -43,4 +45,4 @@ Say we would like to keep an eye on visitors that hit our site from different co
 
 produces results like:
 
-![Mostrecent.png](/img/search/searchquerylanguage/group-aggregate-operators/mostrecent.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/group-aggregate-operators/mostrecent.png')} alt="Most recent" style={{border: '1px solid gray'}} width="400" />

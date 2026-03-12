@@ -23,7 +23,7 @@ To collect remote Performance Monitor logs, you first need to configure a domai
 To configure a remote Windows Performance Monitor Log Source:
 
 1. Complete the prerequisites to collecting remote events.
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Find the name of the installed Collector to which you'd like to add a Source. Click **Add** and then choose **Add Source** from the pop-up menu.
 1. Click **Windows Performance**. 
 1. Choose **Remote** for the **Type of Windows Performance Source**. 
@@ -40,10 +40,7 @@ To configure a remote Windows Performance Monitor Log Source:
       * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
    * **Windows Domain.** Type the name of the Windows Domain, the Username for this host, and the Password.
-1. **Perfmon Queries.** Select from the provided default Perfmon Queries, or create your own custom query.   
-
-    ![windows performance source.png](/img/send-data/windows-performance-source.png)
-
+1. **Perfmon Queries.** Select from the provided default Perfmon Queries, or create your own custom query.<br/><img src={useBaseUrl('img/send-data/windows-performance-source.png')} alt="Windows performance source" style={{border: '1px solid gray'}} width="600" />
     * Click the query's check box to select it.
     * To add a custom query, click **Add Query**, enter a name and the query. Then click **Add**.
 1. **Processing Rules** (Optional). To add processing rules for the new source, click **Add Rule**. Enter a name, a filter, and select the type. Then click **Apply**.

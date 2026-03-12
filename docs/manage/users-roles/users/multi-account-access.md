@@ -1,7 +1,7 @@
 ---
 id: multi-account-access
 title: Multi-Account Access
-description: Multi-account Access allows you to log into multiple Sumo Logic accounts using one username (email address) and password.
+description: Multi-account access allows you to log into multiple Sumo Logic accounts using one username (email address) and password.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -47,20 +47,19 @@ If that admin creates the same user in a second organization, the user will rece
 
 ## Multi-account and SAML
 
-Multi-account access depends on a username and password to verify your access to multiple accounts. When you log into a session using [SAML](/docs/manage/security/saml), you will not see your multi-account options because Sumo cannot verify your access to those other accounts.
+Multi-account access depends on a username and password to verify your access to multiple accounts. When you log into a session using [SAML](/docs/manage/security/saml), you will not see your multi-account options because Sumo Logic cannot verify your access to those other accounts.
 
 To view multiple orgs with the same email address, you can log out of your SAML session and use your Identity Provider (IdP) to log into the other org.
 
-As an administrator using SAML, if you have users that need to view and switch their account access from one account to another from the Sumo interface, you will need to set them up as whitelisted users on the SAML page and let them log in using a username and password.
+As an administrator using SAML, if you have users that need to view and switch their account access from one account to another from the Sumo Logic interface, you will need to set them up as whitelisted users on the SAML page and let them log in using a username and password.
 
-## Multi-account, password policies, and Web session timeouts
+## Multi-account, password policies, and web session timeouts
 
-Sumo Logic Multi-account users may have access to organizations that use different [Password Policies](../../security/set-password-policy.md). With Multi-account, the password policy data from different organizations is centralized.
-
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Password Policy page, in the main Sumo Logic menu select **Administration > Security > Password Policy**. 
+Sumo Logic multi-account users may have access to organizations that use different [Password Policies](/docs/manage/security/set-password-policy/). With multi-account, the password policy data from different organizations is centralized.
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access the Password Policy page, in the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**.
  
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Password Policy page, in the main Sumo Logic menu select **Administration > Security > Password Policy**. 
 
 In the Password Policy page, you can set the following account settings:
 
@@ -68,7 +67,7 @@ In the Password Policy page, you can set the following account settings:
 * **Password reuse after** (number of unique passwords you must use before you can reuse an old password)
 * **Users locked out after** (attempts, time window, and lockout period)
 
-When a user attempts to log in and fails with Multi-account, that user is limited to the most restrictive policies set across those organizations:
+When a user attempts to log in and fails with multi-account, that user is limited to the most restrictive policies set across those organizations:
 
 * **Passwords expire in** will use the minimum time set across all organizations.
 * **Password reuse after** will use the largest number across all organizations.
@@ -76,16 +75,16 @@ When a user attempts to log in and fails with Multi-account, that user is limite
 
 Users should be aware that one organization might require only four unique passwords whereas another organization might require 10 unique passwords. As a result, whenever they change their password, they cannot reuse any of the previous 10 passwords.
 
-When you take advantage of Multi-account access and switch to an organization with a shorter session timeout, you will need to re-enter credentials if you have been idle for a period exceeding the session timeout, even if it was much earlier in their session. While it may seem confusing to have different organizations with different timeouts, this is the most secure way to handle this case for Multi-account access. 
+When you take advantage of multi-account access and switch to an organization with a shorter session timeout, you will need to re-enter credentials if you have been idle for a period exceeding the session timeout, even if it was much earlier in their session. While it may seem confusing to have different organizations with different timeouts, this is the most secure way to handle this case for multi-account access. 
 
 ## Multi-account and collectors
 
-For Multi-account users, Collector registration with username and password is no longer supported. Multi-account users must use the token or accessid/access key option. 
+For multi-account users, collector registration with username and password is no longer supported. Multi-account users must use the token or accessid/access key option. 
 
 ## Multi-account and APIs
 
-With Multi-account, to use the API, like with Collectors, you will not be able to log in using a username and password. You will be required to use an Access ID and Access Key.
+With multi-account, to use the API, like with collectors, you will not be able to log in using a username and password. You will be required to use an access ID and access Key.
 
-This is due to the fact that Access IDs and Access Keys are tied to an organization, and they are required so that an API request will have the correct context.
+This is due to the fact that access IDs and access keys are tied to an organization, and they are required so that an API request will have the correct context.
 
 API requests made with multiple accounts using only a username and password  will be rejected for insufficient authentication (401).
