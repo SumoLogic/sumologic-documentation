@@ -8,6 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `fields` operator allows you to specify which fields to display and their order in the results of a query. Use a fields operator to reduce the "clutter" of a search output that contains fields that aren't completely relevant to your query.
 
+:::info
+Using the `fields` operator includes both the specified fields and the default fields (from built-in sources and FERs). However, when `fields =` is used, only the specified fields are included in the query results. Make sure to use the `_messagetime` and `_messagecount` for `fields =` operator to function.
+:::
+
 There are two fields operator modes:
 
 * Allowlist - only the fields included are kept in the search output.

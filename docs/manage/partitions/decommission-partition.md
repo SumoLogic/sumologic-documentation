@@ -20,5 +20,5 @@ To decommission a partition:
      :::
 1. The partition details appear on the right side of the page.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/decommision-button.png')} alt="decommision-button" style={{border:'1px solid gray'}} width="400"/>
 1. Click **Decommission**.
-1. In the Confirm dialog, click **OK**.
+1. In the confirmation dialog, click **OK**.
 1. The partition is decommissioned.

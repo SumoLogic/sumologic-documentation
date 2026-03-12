@@ -20,7 +20,7 @@ The AWS Application Load Balancer ULM App uses the following log and metric type
   * **Type.** This is the type of request or connection (HTTP, HTTPS, H2, ws, wss)
   * **Target_group_arn**. This is the Amazon Resource Name (ARN) of the target group
 
-The logs are stored in a `.gzip` format in the specified S3 bucket and contain these fields in this order: timestamp, elb, client:port, target:port, request_processing_time, target_processing_time, response_processing_time, elb_status_code, target_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol, target_group_arn, trace_id. For more details on the ALB Access log, see the [AWS documentation](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging).
+The logs are stored in a `.gzip` format in the specified S3 bucket and contain these fields in this order: timestamp, elb, client:port, target:port, request_processing_time, target_processing_time, response_processing_time, elb_status_code, target_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol, target_group_arn, trace_id. For more details on the ALB Access log, see the [AWS documentation](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging).
 
 ### Sample log messages
 

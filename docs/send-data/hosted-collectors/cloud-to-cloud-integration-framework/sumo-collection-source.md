@@ -42,6 +42,7 @@ Identify your **Deployment** region based on your Base URL. The deployment regio
 |:--|:--|
 | AU  |	`https://api.au.sumologic.com/`  |
 | CA  |	`https://api.ca.sumologic.com/`  |
+| CH  |	`https://api.ch.sumologic.com/`  |
 | DE  |	`https://api.de.sumologic.com/`  |
 | EU  | `https://api.eu.sumologic.com/`  |
 | FED |	`https://api.fed.sumologic.com/` |

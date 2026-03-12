@@ -5,26 +5,26 @@ description: Sumo Logic recommends using the following naming convention for sta
 ---
 
 
-Sumo Logic recommends using the following naming convention for standard fields. This best practice creates standardization across your deployment for use with Field Extraction Rules (FER), Searches and Dashboards, makes it easier for users to recognize fields by their names, and can even improve search performance.
+Sumo Logic recommends using the following naming convention for standard fields. This best practice creates standardization across your deployment for use with Field Extraction Rules (FER), searches and dashboards, makes it easier for users to recognize fields by their names, and can even improve search performance.
 
-For example, if you create your own FER for Source IP, and at some point you want to count by Source IPs across multiple Sources, you can easily do so because you've used the same name for the field across all Sources. In your query, simply use:
+For example, if you create your own FER for source IP, and at some point you want to count by source IPs across multiple sources, you can easily do so because you've used the same name for the field across all sources. In your query, simply use:
 
 ```sql
 | count by src_ip
 ```
 
-Another benefit of using the standard field naming convention is that [Sumo Logic Apps](/docs/get-started/apps-integrations) are created using this naming convention. So if you use it too, your queries will match those of the Sumo Logic Apps’ pre-configured searches and Dashboards.
+Another benefit of using the standard field naming convention is that [Sumo Logic apps](/docs/get-started/apps-integrations) are created using this naming convention. So if you use it too, your queries will match those of the Sumo Logic apps’ pre-configured searches and dashboards.
 
 If you cannot use all the naming conventions for standard fields, we recommend that you at least use the field name conventions for the following:
 
 * Source Hosts
 * Destination Hosts
 * IP address
-* user
+* User
 
-## Source Information
+## Source information
 
-| Field Name | Description |
+| Field name | Description |
 |:--|:--|
 | src_host | Source Host (name or IP) |
 | src_interface  | Source Interface |

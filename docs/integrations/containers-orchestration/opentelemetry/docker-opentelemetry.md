@@ -49,89 +49,41 @@ To collect the Docker container event logs, the following command needs to be ex
 ```
 docker events -f 'type=container' --format '{{json .}}' > <PATH_TO_JSON> & disown
 ```
-Path to this JSON file will be required in the [next step](#step-2-configure-integration), where events are sent to Sumo Logic through a filelog receiver and seen as part of the **Docker - Overview** dashboard. Also, you can add additional parameters to this command to send events for specific containers. [Learn more](https://docs.docker.com/engine/reference/commandline/events/).
+Path to this JSON file will be required in the [next step](#step-2-configure-the-source-template), where events are sent to Sumo Logic through a filelog receiver and seen as part of the **Docker - Overview** dashboard. Also, you can add additional parameters to this command to send events for specific containers. [Learn more](https://docs.docker.com/engine/reference/commandline/events/).
 
 ## Collection configuration and app installation
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-<ConfigAppInstall/>
+### Step 1: Set up remotely managed OpenTelemetry collector
 
-### Step 1: Set up Collector
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+:::note
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
+:::
 
-<SetupColl/>
+<OtelCollectorInstallation/>
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-collector.png')} style={{border:'1px solid gray'}} alt="Docker-collector"/>
+### Step 2: Configure the source template
 
-### Step 2: Configure integration
+import DockerConfigureSourceTemplate from '../../../reuse/send-data/docker-configure-source-template.md';
 
-In this step, you will configure the yaml required for the Docker Collection.
+<DockerConfigureSourceTemplate/>
 
-- **Docker Event log location**. Enter the path of the JSON file generated through the command in the prerequisite section.
-- **Excluded Image List**. A list of strings, [regexes](https://golang.org/pkg/regexp/), or [globs](https://github.com/gobwas/glob) whose referent container image names will not be among the queried containers for scrapping metrics. Learn more about [*excluded_images*](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/dockerstatsreceiver/README.md#configuration).
+import TimestampParsing from '../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 
-You can add any custom fields which you want to tag along with the data ingested in sumo.
+<TimestampParsing/>
 
-Click on the **Download YAML File** button to get the yaml file.
+import ProcessingRules from '../../../reuse/opentelemetry/processing-rules.md';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-YAML.png')} style={{border:'1px solid gray'}} alt="Docker-YAML"/>
+<ProcessingRules/>
 
-### Step 3: Send logs to Sumo
+### Step 3: Push the source template to the desired remotely managed collectors
 
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 
-<LogsIntro/>
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Linux"
-  values={[
-    {label: 'Linux', value: 'Linux'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
-
-<TabItem value="Linux">
-
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Docker instance that needs to be monitored.
-1. Place `Env` file in the `/etc/otelcol-sumo/env/` directory.
-1. Restart the collector using:
-  ```
-  sudo systemctl restart otelcol-sumo
-  ```
-
-</TabItem>
-<TabItem value="Chef">
-
-import ChefEnv from '../../../reuse/apps/opentelemetry/chef-with-env.md';
-
-<ChefEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsEnv from '../../../reuse/apps/opentelemetry/ansible-with-env.md';
-
-<AnsEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetEnv from '../../../reuse/apps/opentelemetry/puppet-with-env.md';
-
-<PuppetEnv/>
-
-</TabItem>
-</Tabs>
-
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+<DataConfiguration/>
 
 ## Sample log message
 

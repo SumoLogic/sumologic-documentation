@@ -29,6 +29,16 @@ It connects you to two specialized agents that handle different tasks:
 
 Together, these agents help you troubleshoot faster, explore your data more intuitively, and learn the platform without friction.
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* **Self-paced**: [Mobot Essentials Self Paced](https://learn.sumologic.com/mobot-101)
+* **Instructor-led virtual classes**: [Workshops: Mobot Essentials](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2)
+:::
+
 ### Key capabilities
 
 * **Auto-visualization**. Generate charts automatically from search results and add them directly to dashboards.
@@ -66,7 +76,7 @@ Select **Query Agent** to get help with Sumo Logic log search queries. In this s
 
 <img src={useBaseUrl('img/search/mobot/query-agent-select.png')} alt="Query Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="700" />
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 This short video introduces Query Agent and how it can help you with log search and analysis—perfect for getting a quick overview before diving in.
 
@@ -90,7 +100,7 @@ Query Agent builds on the query translation foundation of the previous *Copilot*
 
 To open Mobot, click **Mobot** in the left nav.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 In this video, you'll learn how to turn natural language requests into queries, simplifying data exploration.
 
@@ -399,7 +409,7 @@ Select **Knowledge Agent** to get help using Sumo Logic.
 
 <img src={useBaseUrl('img/search/mobot/knowledge-agent-select.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="700" />
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Learn more about Knowledge Agent's key features and capabilities.
 
