@@ -37,9 +37,14 @@ jobs:
           AWS_REGION: us-east-1
         run: |
           set -euo pipefail
-          OIDC_TOKEN=$(curl -sSL -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+          OIDC_TOKEN=$(curl -fsSL -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
             "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" \
             | jq -r '.value')
+
+          if [ -z "$OIDC_TOKEN" ] || [ "$OIDC_TOKEN" = "null" ]; then
+            echo "::error::Failed to retrieve OIDC token"
+            exit 1
+          fi
           CREDS=$(aws sts assume-role-with-web-identity \
             --role-arn "$AWS_ROLE_ARN" \
             --role-session-name "GitHubActions" \
