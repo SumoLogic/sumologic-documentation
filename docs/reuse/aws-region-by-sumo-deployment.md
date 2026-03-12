@@ -4,6 +4,7 @@ The following table describes the AWS regions used by each Sumo Logic deployment
 |:----|:----|:---|:-----|
 | AU | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/api/   |
 | CA | Canada (Central) | ca-central-1 | https://api.ca.sumologic.com/api/   |
+| CH | Swizerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/api/ |
 | DE | EU (Frankfurt)  | eu-central-1 | https://api.de.sumologic.com/api/   |
 | EU | EU (Ireland)    | eu-west-1  | https://api.eu.sumologic.com/api/   |
 | FED | US East (N. Virginia) | us-east-1  | https://api.fed.sumologic.com/api/  |
@@ -41,5 +42,5 @@ You can run the following query against the downloaded file in Sumo Logic to det
 After configuring the firewall, Collector, and Sources, confirm that the Collector and Sources are working by verifying that you can receive a given type of message (such as syslog messages) at the specified location.
 
 For more information, see:
-* [AWS documentation: Service endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html)
+* [AWS documentation: Service endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html)
 * [Sumo Logic Privacy Statement](https://www.sumologic.com/privacy-statement/)

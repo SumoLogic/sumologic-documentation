@@ -46,7 +46,7 @@ At the top of the page, you can:
 
 The **Monitor Details** tab provides additional information about a selected monitor, the description, Library location, [query](/docs/alerts/monitors/create-monitor/#query), [muting schedules](/docs/alerts/monitors/muting-schedules), [notification preferences](/docs/alerts/monitors/create-monitor/#step-3-notifications-optional), [alert grouping](/docs/alerts/monitors/alert-grouping), [trigger conditions](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), and more.
 
-Click on any monitor in your **Monitors** table, and the **Monitor Details** tab will appear in the right-hand pane.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-details.png')} alt="monitor-details.png" style={{border: '1px solid gray'}} width="600"/>
+Click on any monitor in your **Monitors** table, and the **Monitor Details** tab will appear in the right-hand pane.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-details.png')} alt="monitor-details.png" style={{border: '1px solid gray'}} />
 
 ### View in Log Search
 
@@ -77,12 +77,6 @@ Click the **Disable** button put the monitor in a disabled state so it will not
 
 <img src={useBaseUrl('img/alerts/monitors/disable-monitor.png')} alt="disable-monitor" style={{border: '1px solid gray'}} width="400"/>
 
-### Mute a monitor
-
-Click the **Mute** button mute the monitor. See also: [Muting Schedules](/docs/alerts/monitors/muting-schedules).
-
-<img src={useBaseUrl('img/alerts/monitors/mute-monitor.png')} alt="mute-monitor" style={{border: '1px solid gray'}} width="400"/>
-
 ### More Actions
 
 Click the **More Actions** menu to view more options, including:
@@ -96,7 +90,7 @@ Click the **More Actions** menu to view more options, including:
    :::
 * **Copy Link**. Copies a link to the monitor. Provide the link to any Sumo Logic user in your organization so they can view the monitor. While this option doesn't allow you to share the monitor in the same way you can share a dashboard, you can use this option to quickly allow others in your Sumo Logic organization to view the monitor details.
 
-<img src={useBaseUrl('img/alerts/monitors/more-actions.png')} alt="monitor more actions" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/alerts/monitors/more-actions.png')} alt="monitor more actions" style={{border: '1px solid gray'}} width="300"/>
 
 :::tip
 To quickly access this menu without opening the Details pane, just hover your mouse over a monitor, then click the three-dot kebab icon to view a menu with all of the options available in the [Monitor Details tab](#monitor-details).<br/><img src={useBaseUrl('img/alerts/monitors/quick-menu-monitors.png')} alt="Quick menu.png" style={{border: '1px solid gray'}} width="800"/>
@@ -115,7 +109,7 @@ To reduce data usage and alert frequency, you can convert an existing outlier mo
 Alternatively, you can do this from the **Scan Estimates** pop-up.<br/><img src={useBaseUrl('img/alerts/monitors/scan-estimates-anomaly.png')} alt="convert-to-anomaly from scan estimates" style={{border: '1px solid gray'}} width="600"/>
 
 For more guidance on optimizing scan costs on Flex Pricing plans, see:
-* [Scan estimates](/docs/manage/partitions/flex/estimate-scan-data)
+* [Scan estimates](/docs/manage/partitions/estimate-scan-data)
 * [Optimizing scan costs for monitors](/docs/alerts/monitors/monitor-faq/#how-can-i-optimize-scan-costs-for-monitors-when-using-flex-pricing)
 
 ## Monitor History

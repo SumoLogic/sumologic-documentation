@@ -15,11 +15,19 @@ A Sumo Logic CloudWatch Source allows you to gather metrics data from an Amazon 
 We recommend using the newer AWS Kinesis Firehose for Metrics Source to collect CloudWatch metrics. For more information, see [Which to use: Kinesis Firehose source or CloudWatch source?](aws-kinesis-firehose-metrics-source.md)
 :::
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an Amazon CloudWatch source with the [`sumologic_cloudwatch_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloudwatch_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Supported AWS metrics
 
 A Sumo CloudWatch Source only supports CloudWatch metrics that are emitted at a regular interval. It cannot ingest metrics that are emitted with significant latency, such as Amazon S3 Daily Storage Metrics or AWS Billing metrics, or at sporadic intervals, such as Amazon DynamoDB throttled events.
 
-Sumo does support S3 Request Metrics. Since S3 does not publish the request metrics by default, you must enable them if you want to collect them. For more information, see [Monitoring Metrics with Amazon CloudWatch](http://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html) in AWS help.
+Sumo does support S3 Request Metrics. Since S3 does not publish the request metrics by default, you must enable them if you want to collect them. For more information, see [Monitoring Metrics with Amazon CloudWatch](https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html) in AWS help.
 
 :::tip
 EC2 metrics have high latency and can increase the costs of your AWS account. For EC2 metrics, consider [Installing a Collector with a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source.md). The advantage is near zero latency and more information at a lower overall cost.
@@ -39,15 +47,15 @@ Here’s how tag filtering works:
 * If you specify a single `tag = value` pair for a namespace, the source will collect metrics from resources with that tag value.  
 * If you specify multiple values for a specific tag for a namespace, as shown below, the filters are OR’ed. For example, with the following setting, the source will collect metrics from resources in the AWS/DynamoDB namespace whose `owner` tag is *either* “Veronica” or “Bryan”.   
 
-   ![same-namespace-same-line.png](/img/send-data/same-namespace-same-line.png)
+   <img src={useBaseUrl('img/send-data/same-namespace-same-line.png')} alt="Same namespace same line" style={{border: '1px solid gray'}} width="500" />
 
 * You can use multiple lines to define filters for different tags in the same namespace. Filters on the same namespace but in different lines are AND’ed together. For example, with the following setting the source will collect metrics from resources in the AWS/DynamoDB namespace whose whose `owner` tag is “Veronica” *and* `Env` tag is = “prod”.   
 
-   ![same-namespace-mult-lines.png](/img/send-data/same-namespace-mult-lines.png)
+   <img src={useBaseUrl('img/send-data/same-namespace-mult-lines.png')} alt="Same namespace multi-line" style={{border: '1px solid gray'}} width="500" />
 
 * Filters on different namespaces are UNION’ed together. For example, with the following setting the source will collect metrics from resources in the AWS/DynamoDB namespace whose `owner` tag is “Veronica”, and also from resources in the AWS/Redshift namespace whose `Env` tag is “prod”.   
 
-   ![diff-namespaces.png](/img/send-data/diff-namespaces.png)
+   <img src={useBaseUrl('img/send-data/diff-namespaces.png')} alt="Different namespaces" style={{border: '1px solid gray'}} width="500" />
 
 Tag filters will not be applied to previously ingested data, and can take a few minutes to apply to existing data.
 
@@ -98,9 +106,7 @@ AWS tag filtering is supported for the following AWS namespaces.
 1. Before you begin, grant permission for Sumo Logic to list available metrics and get metric data points. See [Grant Access to an AWS Product](grant-access-aws-product.md) for details.
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Click **Add Source** next to a Hosted Collector.
-1. Select **AWS CloudWatch Metrics**. 
-
-   ![cloudwatch metrics configure.png](/img/send-data/cloudwatch-metrics-configure.png)
+1. Select **AWS CloudWatch Metrics**. <br/><img src={useBaseUrl('img/send-data/cloudwatch-metrics-configure.png')} alt="CloudwWtch metrics configure" style={{border: '1px solid gray'}} width="500" />
 
 1. **Name**. Enter a name to display for the new source.
 1. **Description.** Optional description.
@@ -111,9 +117,7 @@ AWS tag filtering is supported for the following AWS namespaces.
    If you change the namespace selection, there may be a delay of as much as 15 minutes before the change is reflected in the available options for metrics queries.
    :::
 
-1. **AWS Tag Filters**. This setting is visible only if you selected one or more of the namespaces listed in [About AWS tag filtering](#about-aws-tag-filtering).
-
-   ![aws-tag-filters.png](/img/send-data/aws-tag-filters.png)
+1. **AWS Tag Filters**. This setting is visible only if you selected one or more of the namespaces listed in [About AWS tag filtering](#about-aws-tag-filtering).<br/><img src={useBaseUrl('img/send-data/aws-tag-filters.png')} alt="AWS tag filters" style={{border: '1px solid gray'}} width="500" />
 
    Tag filters allow you to filter the CloudWatch metrics you collect by the AWS tags you have assigned to your AWS resources. You can define tag filters for each supported namespace. If you do not define any tag filters, all metrics will be collected for the regions and namespaces you configured for the source above:
 
@@ -130,7 +134,7 @@ AWS tag filtering is supported for the following AWS namespaces.
 1. For **AWS** **Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in step 1, [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md).
 
    * For **Role-based access** enterthe Role ARN that was provided by AWS after creating the role.
-   * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details in AWS's documentation.
+   * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](https://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details in AWS's documentation.
 
 1. **Scan Interval**. Use the default of 5 minutes, or change this value to indicate how frequently Sumo Logic should poll the CloudWatch API. To learn more about polling interval considerations, see [AWS CloudWatch Scan Interval](#aws-cloudwatch-scaninterval) below.
 1. **Total Metrics.** This field displays the total number of metrics (unique metric time series) that will be collected if the Source is created with the current configuration. If all of your CloudWatch metrics are published at a 1 minute interval, then "Total Metrics" will also be the total number of 'data points per minute' that are generated by this source. However, if your CloudWatch metrics are published every 5 minutes, then you would divide this number by 5 to get the number of 'data points per minute' that would be generated by this source. The field automatically refreshes the count when there are changes to the following fields: Regions, Namespaces, or AWS credentials.
@@ -140,7 +144,7 @@ AWS tag filtering is supported for the following AWS namespaces.
 
 Sometime after you configure the AWS access method for the source, the source configuration UI will start to display the number of unique time series for each namespace configured for the source.
 
-![cloudwatch-metrics-by-namespace.png](/img/send-data/cloudwatch-metrics-by-namespace.png)
+<img src={useBaseUrl('img/send-data/cloudwatch-metrics-by-namespace.png')} alt="CloudWatch metrics by namespace" style={{border: '1px solid gray'}} width="600" />
 
 ## CloudWatch metric visibility
 
@@ -190,4 +194,4 @@ Statistic=Minimum
 
 ## Collected metrics
 
-For details on Amazon CloudWatch collected metrics, refer to: [CW Support for AWS](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html)
+For details on Amazon CloudWatch collected metrics, refer to: [CW Support for AWS](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html)

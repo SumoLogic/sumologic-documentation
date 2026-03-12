@@ -4,6 +4,8 @@ title: lookup (Classic) Search Operator
 sidebar_label: lookup (Classic)
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 :::note
 This topic has information about the classic version of the `lookup` operator, which works with the classic Lookup Tables feature.
 
@@ -168,4 +170,4 @@ You only get the last associated value as a result. 
 
 For example, if you are searching your Apache Access logs from 34.87.4.6 and you are looking for an internal server errors by a specific keyid, lookup provides the last result that matches your criteria:
 
-![lookup-duplicate.png](/img/search/searchquerylanguage/search-operators/lookup-duplicate.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/lookup-duplicate.png')} alt="lookup duplicate" style={{border: '1px solid gray'}} width="800" />

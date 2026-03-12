@@ -4,6 +4,8 @@ title: format Search Operator
 sidebar_label: format
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `format` operator allows you to format and combine data from parsed fields. Numbers, strings, and dates can be formatted into a user-defined string. This allows data in logs, such as dates or currency amounts, to be formatted as human readable, when otherwise it would be hard to decipher.
 
 The [`concat`](concat.md) operator is a simpler version of the Format operator, and may be used instead for simpler use cases.
@@ -40,7 +42,7 @@ error
 
 which results in:
 
-![Format](/img/search/searchquerylanguage/search-operators/Format.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Format.png')} alt="Format" style={{border: '1px solid gray'}} width="800" />
 
 ### Format numbers
 

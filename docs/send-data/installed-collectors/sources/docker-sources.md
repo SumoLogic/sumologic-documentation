@@ -33,10 +33,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Dock
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
-1. Select **Docker Logs**. The Docker Logs page appears.
-
-    ![docker logs source.png](/img/send-data/docker-logs-source.png)
-
+1. Select **Docker Logs**. The Docker Logs page appears.<br/><img src={useBaseUrl('img/send-data/docker-logs-source.png')} alt="Docker logs source" style={{border: '1px solid gray'}} width="600" />
 1. Configure the source fields:
 
    * **Name**. (Required).
@@ -91,7 +88,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Dock
    :::note
    To collect metrics for the Docker ULM App, select **Metrics** as the Content Type.
    :::
-   ![docker-stats.png](/img/send-data/docker-stats.png)
+   <img src={useBaseUrl('img/send-data/docker-stats.png')} alt="Docker stats" style={{border: '1px solid gray'}} width="600" />
 1. Configure the source fields:
 
    * **Name.** (Required)

@@ -5,6 +5,8 @@ sidebar_label: Search Query Language support
 description: Use our extensive Search Query Language to gain valuable insight into your traces.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 You can use our [Search Query Language](/docs/search/search-query-language) in a log search to query raw spans from tracing data for the same period as the default partition.
 
 Tracing data retention in `_trace_spans` index is the same as default log index retention.
@@ -51,7 +53,7 @@ You can parse your spans in the same way you parse log data. This includes any v
 
 ### View Your Search Results
 
-When viewing your search results you can add any parsed fields to display by selecting them from the Field Browser on the left, or by using the fields operator in your query. The following image shows a query using the `fields` operator to display `operation`, `service`, `spanid`, `statuscode`, and `traceid`. The Field Browser can also set the fields to display.<br/> ![spans search with fields highlighted.png](/img/apm/spans-search-with-fields-highlighted.png)
+When viewing your search results you can add any parsed fields to display by selecting them from the Field Browser on the left, or by using the fields operator in your query. The following image shows a query using the `fields` operator to display `operation`, `service`, `spanid`, `statuscode`, and `traceid`. The Field Browser can also set the fields to display.<br/><img src={useBaseUrl('img/apm/spans-search-with-fields-highlighted.png')} alt="Spans search with fields highlighted" style={{border: '1px solid gray'}} width="800" />
 
 ### Monitors and Scheduled Searches
 You can also set Monitors and Scheduled Searches for Traces.
@@ -105,14 +107,14 @@ _index=_trace_spans
 | fields operation, service, spanid, statuscode, traceid
 ```
 
-![spans basic example with where operations.png](/img/apm/spans-basic-example-with-where-operations.png)
+<img src={useBaseUrl('img/apm/spans-basic-example-with-where-operations.png')} alt="spans basic example with where operations" style={{border: '1px solid gray'}} width="<insert-pixel-number>" />
 
 #### Break them down by HTTP code status
 
 To find out more details about the errors found in the example above you
 can look in the **tags** field and view the `http.status_code` field.
 
-![img](/img/apm/traces/http-code-status.png)
+<img src={useBaseUrl('img/apm/traces/http-code-status.png')} alt="HTTP code status" style={{border: '1px solid gray'}} width="500" />
 
 To extract this tag as a new field and filter it to show only codes below 500 (4xx essentially) you could run the following query:
 
@@ -124,7 +126,7 @@ _index=_trace_spans
 | where code < 500
 ```
 
-![spans with where operation example.png](/img/apm/spans-with-where-operation-example.png)
+<img src={useBaseUrl('img/apm/spans-with-where-operation-example.png')} alt="Spans with where operation exampl" style={{border: '1px solid gray'}} width="800" />
 
 ### View errors by status over time
 
@@ -145,4 +147,4 @@ _index=_trace_spans
 
 The column chart displayed in the following screenshot has normal stacking selected.
 
-![new index spans over time example.png](/img/apm/traces/new-index-spans-over-time-example.png)
+<img src={useBaseUrl('img/apm/traces/new-index-spans-over-time-example.png')} alt="New index spans over time example" style={{border: '1px solid gray'}} width="800" />

@@ -15,6 +15,14 @@ The Sumo Logic GCP Metrics Source gives you complete visibility into all Google 
 For information on API calls and collected metrics, see the [Collected metrics](#collected-metrics) section.
 :::
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a GCP Metrics Source with the [`sumologic_gcp_metrics_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/gcp_metrics_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Google Service account
 
 Sumo Logic uses a Google Service Account to connect and make API calls on your behalf to collect metrics.

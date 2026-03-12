@@ -4,6 +4,8 @@ title: replace Search Operator
 sidebar_label: replace
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `replace` operator allows you to replace all instances of a specified string with another string. You can specify the string to replace with a matching regex or literal text. You might use it to find all instances of a name and change it to a new name or to replace punctuation in a field with different punctuation. This operator is useful anytime you need to rename something.
 
 
@@ -99,7 +101,7 @@ error
 
 which provides results like:
 
-![replace](/img/reuse/query-search/replace_operator_example.png)
+<img src={useBaseUrl('img/reuse/query-search/replace_operator_example.png')} alt="Replace" style={{border: '1px solid gray'}} width="600" />
 
 ### Remove underscores from a field to make it human readable
 

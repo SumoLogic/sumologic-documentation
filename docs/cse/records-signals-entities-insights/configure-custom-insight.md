@@ -14,6 +14,14 @@ As described in the [Insight Generation Process](/docs/cse/get-started-with-clou
 
 This topic has instructions for defining a custom insight, which is a configuration you set up that causes Cloud SIEM to generate insights based purely on one or more signals being fired. 
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage insights with the [`sumologic_cse_insights_configuration`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_configuration) and [`sumologic_cse_custom_insight`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_insight) resources.
+
+<TerraformLink/>
+:::
+
 ## Ways to define a custom insight
 
 When you create a custom insight, the following field appears on the creation dialog: 

@@ -1,0 +1,342 @@
+{
+  "name": "Azure Firewall - Monitors",
+  "description": "",
+  "type": "MonitorsLibraryFolderExport",
+  "children": [
+    {
+      "name": "Azure Firewall - SNAT Port Utilization (%)",
+      "description": "This alert is triggered when whenever the average SNAT port utilization is greater than 80% and triggers warning if  SNAT port utilization is greater than 70%",
+      "type": "MonitorsLibraryMonitorExport",
+      "monitorType": "Metrics",
+      "evaluationDelay": "0m",
+      "alertName": null,
+      "runAs": null,
+      "notificationGroupFields": [],
+      "queries": [
+        {
+          "rowId": "A",
+          "query": "tenant_name=* subscription_id=* resource_group=* resource_name=* resource_type=AZUREFIREWALLS provider_name=MICROSOFT.NETWORK location=* protocol=* metric=SNATPortUtilization statistic=average | quantize using avg | avg"
+        }
+      ],
+      "triggers": [
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "Critical",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 80,
+          "thresholdType": "GreaterThan",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "Warning",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 70,
+          "thresholdType": "GreaterThan",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "ResolvedCritical",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 80,
+          "thresholdType": "LessThanOrEqual",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "ResolvedWarning",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 70,
+          "thresholdType": "LessThanOrEqual",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        }
+      ],
+      "timeZone": "Asia/Kolkata",
+      "notifications": [],
+      "isDisabled": false,
+      "groupNotifications": true,
+      "playbook": "",
+      "sloId": null,
+      "monitorTemplateId": null,
+      "tags": null,
+      "automatedPlaybookIds": []
+    },
+    {
+      "name": "Azure Firewall - Health State",
+      "description": "This alert is triggered when whenever the average Firewall health state is less than 90% and trigger warning whenever average Firewall health state is less than 80%",
+      "type": "MonitorsLibraryMonitorExport",
+      "monitorType": "Metrics",
+      "evaluationDelay": "0m",
+      "alertName": null,
+      "runAs": null,
+      "notificationGroupFields": [],
+      "queries": [
+        {
+          "rowId": "A",
+          "query": "tenant_name=* subscription_id=* resource_group=* resource_name=* resource_type=AZUREFIREWALLS provider_name=MICROSOFT.NETWORK location=* status=* reason=*  metric=FirewallHealth statistic=average | quantize using avg | avg"
+        }
+      ],
+      "triggers": [
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "Critical",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 90,
+          "thresholdType": "LessThan",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "Warning",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 80,
+          "thresholdType": "LessThan",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "ResolvedCritical",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 90,
+          "thresholdType": "GreaterThanOrEqual",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "ResolvedWarning",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 80,
+          "thresholdType": "GreaterThanOrEqual",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        }
+      ],
+      "timeZone": "Asia/Kolkata",
+      "notifications": [],
+      "isDisabled": false,
+      "groupNotifications": true,
+      "playbook": "",
+      "sloId": null,
+      "monitorTemplateId": null,
+      "tags": null,
+      "automatedPlaybookIds": []
+    },
+    {
+      "name": "Azure Firewall - Average Latency Probe(Milliseconds)",
+      "description": "Triggers critical whenever the average Latency Probe is greater than 10 milliseconds and triggers warning when average Latency Probe is greater than 5",
+      "type": "MonitorsLibraryMonitorExport",
+      "monitorType": "Metrics",
+      "evaluationDelay": "0m",
+      "alertName": null,
+      "runAs": null,
+      "notificationGroupFields": [],
+      "queries": [
+        {
+          "rowId": "A",
+          "query": "tenant_name=* subscription_id=* resource_group=* resource_name=* resource_type=AZUREFIREWALLS provider_name=MICROSOFT.NETWORK location=* metric=FirewallLatencyPng statistic=average | quantize using avg | avg"
+        }
+      ],
+      "triggers": [
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "Critical",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 10,
+          "thresholdType": "GreaterThan",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "Warning",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 5,
+          "thresholdType": "GreaterThan",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "ResolvedCritical",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 10,
+          "thresholdType": "LessThanOrEqual",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "ResolvedWarning",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 5,
+          "thresholdType": "LessThanOrEqual",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        }
+      ],
+      "timeZone": "Asia/Kolkata",
+      "notifications": [],
+      "isDisabled": false,
+      "groupNotifications": true,
+      "playbook": "",
+      "sloId": null,
+      "monitorTemplateId": null,
+      "tags": null,
+      "automatedPlaybookIds": []
+    },
+    {
+      "name": "Azure Firewall - Network Rule Hit Count",
+      "description": "Triggers critical alert whenever the total Network rules hit count is greater than 500 and triggers warning whenever Network rules hit count is greater than 300",
+      "type": "MonitorsLibraryMonitorExport",
+      "monitorType": "Metrics",
+      "evaluationDelay": "0m",
+      "alertName": null,
+      "runAs": null,
+      "notificationGroupFields": [],
+      "queries": [
+        {
+          "rowId": "A",
+          "query": "tenant_name=* subscription_id=* resource_group=* resource_name=* resource_type=AZUREFIREWALLS provider_name=MICROSOFT.NETWORK location=* status=* reason=* metric=NetworkRuleHit statistic=total | quantize using sum | sum"
+        }
+      ],
+      "triggers": [
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "Critical",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 500,
+          "thresholdType": "GreaterThan",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "Warning",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 300,
+          "thresholdType": "GreaterThan",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "ResolvedCritical",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 500,
+          "thresholdType": "LessThanOrEqual",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "ResolvedWarning",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 300,
+          "thresholdType": "LessThanOrEqual",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        }
+      ],
+      "timeZone": "Asia/Kolkata",
+      "notifications": [],
+      "isDisabled": false,
+      "groupNotifications": true,
+      "playbook": "",
+      "sloId": null,
+      "monitorTemplateId": null,
+      "tags": null,
+      "automatedPlaybookIds": []
+    },
+    {
+      "name": "Azure Firewall - Average Throughput(bits per second)",
+      "description": "Triggers critical alert whenever the average Throughput is greater than 100000 bits/second and warning alert when average Throughput is greater than 50000",
+      "type": "MonitorsLibraryMonitorExport",
+      "monitorType": "Metrics",
+      "evaluationDelay": "0m",
+      "alertName": null,
+      "runAs": null,
+      "notificationGroupFields": [],
+      "queries": [
+        {
+          "rowId": "A",
+          "query": "tenant_name=* subscription_id=* resource_group=* resource_name=* resource_type=AZUREFIREWALLS provider_name=MICROSOFT.NETWORK location=* metric=Throughput statistic=average | quantize using avg | avg"
+        }
+      ],
+      "triggers": [
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "Critical",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 99999,
+          "thresholdType": "GreaterThan",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "Warning",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 50000,
+          "thresholdType": "GreaterThan",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "ResolvedCritical",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 99999,
+          "thresholdType": "LessThanOrEqual",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        },
+        {
+          "detectionMethod": "MetricsStaticCondition",
+          "triggerType": "ResolvedWarning",
+          "resolutionWindow": null,
+          "timeRange": "-5m",
+          "threshold": 50000,
+          "thresholdType": "LessThanOrEqual",
+          "occurrenceType": "Always",
+          "minDataPoints": 2
+        }
+      ],
+      "timeZone": "Asia/Kolkata",
+      "notifications": [],
+      "isDisabled": false,
+      "groupNotifications": true,
+      "playbook": "",
+      "sloId": null,
+      "monitorTemplateId": null,
+      "tags": null,
+      "automatedPlaybookIds": []
+    }
+  ]
+}

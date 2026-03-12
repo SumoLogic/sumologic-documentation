@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Metrics types 
 
-Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source/#collected-metrics).
+Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Collected metrics](/docs/send-data/installed-collectors/sources/host-metrics-source/#collected-metrics).
 
 * [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#cpu-metrics)
 * [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#memory-metrics)
@@ -28,7 +28,7 @@ The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or lon
 
 ### AWS metadata
 
-Collectors running on Host Metrics (EC2) instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source/).
+Collectors running on Host Metrics (EC2) instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AAWS Metadata (Tag) Source](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source/).
 
 ### Sample queries 
 

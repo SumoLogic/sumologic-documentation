@@ -4,6 +4,8 @@ title: rollingstd Search Operator
 sidebar_label: rollingstd
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `rollingstd` operator finds the rolling standard deviation of a field, allowing you to identify changes over time.
 
 For example, you'd use `rollingstd` in a query to identify spikes in activity for a Collector, or for a URL in your site. You can use a `rollingstd` to find compute the average number from the past, to identify changes (larger or smaller) over time.
@@ -42,7 +44,7 @@ _sourceCategory=katta
 
 produces results like:
 
-![rollingstd](/img/reuse/query-search/rollingstd_new.png)
+<img src={useBaseUrl('img/reuse/query-search/rollingstd_new.png')} alt="rollingstd" style={{border: '1px solid gray'}} width="400" />
 
 ### Find the rolling standard deviation of a field between time points
 
@@ -58,11 +60,11 @@ Using `rollingstd` with `timeslice`, you can run a query similar to:
 
 that produces results like:
 
-![example 1](/img/reuse/query-search/rollingstd_example.png)
+<img src={useBaseUrl('img/reuse/query-search/rollingstd_example.png')} alt="Example 1" style={{border: '1px solid gray'}} width="400" />
 
 The aggregation table can be made into an area chart, like this:
 
-![example 2](/img/reuse/query-search/rollingstd_example2.png)
+<img src={useBaseUrl('img/reuse/query-search/rollingstd_example2.png')} alt="Example 2" style={{border: '1px solid gray'}} width="800" />
 
 ### Specify a window length of 5, but only 4 data points are available
 
@@ -80,6 +82,6 @@ _sourceCategory=katta
 
 which produces results like:
 
-![data points](/img/reuse/query-search/rollingstd_new_data_points.png)
+<img src={useBaseUrl('img/reuse/query-search/rollingstd_new_data_points.png')} alt="Data points" style={{border: '1px solid gray'}} width="400" />
 
 `rollingstd` is also used with the [backshift](backshift.md) operator.

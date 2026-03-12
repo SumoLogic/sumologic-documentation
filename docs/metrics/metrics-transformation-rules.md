@@ -18,15 +18,15 @@ Metrics transformation rules are useful when:
 ## Key facts
 
 * A metrics transformation rule applies to metrics that match a selector that you define for the rule. You can check what metrics will be affected by entering the selector in a metric query tab.  
-* You can reduce the amount of time that Sumo will retain metrics that match the rule selector. By default, Sumo saves your metrics for 400 days. In a transformation rule, you can set the retention period for metrics that match the selector to 15 days.   
+* You can reduce the amount of time that Sumo Logic will retain metrics that match the rule selector. By default, Sumo Logic saves your metrics for 400 days. In a transformation rule, you can set the retention period for metrics that match the selector to 15 days.   
 * Optionally, you aggregate the metrics that match the selector by one or more dimensions. If you choose to aggregate the metrics:
    * You can specify a retention time of either 15 or 400 days for aggregated metrics.
-   * You can reduce the retention time for the raw (non-aggregated) metrics to zero. In this case, Sumo will aggregate the metrics, and discard the raw metrics.
+   * You can reduce the retention time for the raw (non-aggregated) metrics to zero. In this case, Sumo Logic will aggregate the metrics, and discard the raw metrics.
    * You can transform one or more dimensions of the aggregated metrics using mustache templates. For instance, you can transform the metric dimension to include a suffix that indicates that the metric is aggregated. This makes it easier to distinguish between raw and aggregated metrics.
 
 ## Limitations
 
-* You can create a maximum of 50 metrics transformation rules per Sumo account.
+* You can create a maximum of 50 metrics transformation rules per Sumo Logic account.
 * It can take up to five minutes for a new or updated of a metrics transformation rule to take effect.
 * You cannot alert on a metric created by a transformation rule.
 * You cannot use a metric created by a transformation rule in the selector for a different transformation rule.
@@ -44,7 +44,7 @@ Metrics transformation rules are useful when:
     * **Do Not Store**. This option does not not appear until and unless you specify one or more aggregation dimensions in the **Aggregate on** section below. (This is to ensure that your raw metrics are not deleted if they haven’t been aggregated.)
     * **400 days**
     * **15 days**
-1. **Aggregate On**. (Optional) If you would like to aggregate the raw metrics by one or more dimensions, click **+Add** and enter the dimension name. Upon ingestion, Sumo will [quantize](introduction/metric-quantization.md) the aggregated metrics to one minute and one hour resolutions for all rollup types: avg, min, max, sum, and count.  You can aggregate raw metrics on a maximum of 10 dimensions
+1. **Aggregate On**. (Optional) If you would like to aggregate the raw metrics by one or more dimensions, click **+Add** and enter the dimension name. Upon ingestion, Sumo Logic will [quantize](/docs/metrics/introduction/metric-quantization/) the aggregated metrics to one minute and one hour resolutions for all rollup types: avg, min, max, sum, and count.  You can aggregate raw metrics on a maximum of 10 dimensions
 1. **Aggregate Retention**. (Required if you entered an aggregation dimension). The retention period for the aggregated metrics. Available options are:
     * **400 Days**
     * **15 Days**
@@ -57,7 +57,7 @@ Metrics transformation rules are useful when:
 * If a `metric` is not present among dimensions a rule aggregates on, you **must** explicitly add it to the transformations.
 * If you use mustache templates to form the name of a dimension you are adding or replacing, you can use a maximum of 10 templates.
 * A metrics transform rule is limited to 10 transformations.
-* The name you assign to a transformed dimension, and the values returned for transformed dimensions are each limited to 4096 characters. If the dimension key or value is longer than 4096 characters, Sumo will truncate the key or value, retaining only the first 4096 characters.
+* The name you assign to a transformed dimension, and the values returned for transformed dimensions are each limited to 4096 characters. If the dimension key or value is longer than 4096 characters, Sumo Logic will truncate the key or value, retaining only the first 4096 characters.
 :::
 
 ## Edit a metrics transformation rule

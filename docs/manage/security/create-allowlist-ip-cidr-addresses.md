@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
 
-Once the feature is enabled, the IP address or [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) of each user in an account must be added to the allowlist in order to log in to Sumo Logic UI or make any requests via the Sumo Logic APIs. The allowlist does not cover the Collector IP (Server IP) to connect to Sumo Logic.
+Once the feature is enabled, the IP address or [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) of each user in an account must be added to the allowlist in order to log in to Sumo Logic UI or make any requests via the Sumo Logic APIs. The allowlist does not cover the Collector IP (Server IP) to connect to Sumo Logic.
 
 You can also share dashboards with users connecting from IP addresses or CIDRs in this allowlist. That way they can see the dashboard without logging in, but the dashboard remains private to your allowlist. The public cannot see it.
 
@@ -32,7 +32,7 @@ The IP is generally your host IP address. But if your request is coming through 
 1. Under **Service Allowlist Settings**, select the **Enable Dashboard Allowlist** check box. <br/><img src={useBaseUrl('img/security/service-allow-list-2.png')} alt="Enable Dashboard Allowlist** check box in Service Allowlist settings" style={{border: '1px solid gray'}} width="400" />
 1. Copy and paste your IP address in the **IP Address or CIDR** text box, a **Description** is optional, then click **Add**.
 1. Type additional IP and/or CIDR addresses in the text box, and click **Add**. Repeat this step until you've added all the addresses you'd like to allowlist.
-vClick **Save**.
+Click **Save**.
 
 ### Disable allowlist settings
 

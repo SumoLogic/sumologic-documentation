@@ -4,6 +4,8 @@ title: accum Search Operator
 sidebar_label: accum
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `accum` operator calculates the cumulative sum of a field. It can be used to find a count by a specific time interval and can be used to find a total running count across all intervals.
 
 ## Syntax
@@ -36,7 +38,7 @@ _sourceCategory=IIS/Access (Wyatt OR Luke)
 
 produces results of a running total of all requests, similar to:
 
-![Accum](/img/search/searchquerylanguage/search-operators/Accum.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Accum.png')} alt="Accum" style={{border: '1px solid gray'}} width="500" />
 
 ### Running total by user name
 
@@ -54,4 +56,4 @@ _sourceCategory=IIS/Access (Wyatt OR Luke)
 
 produces results of a running total for each user's requests, similar to:
 
-![Accum by user](/img/search/searchquerylanguage/search-operators/AccumByUser.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/AccumByUser.png')} alt="Accum by user" style={{border: '1px solid gray'}} width="500" />

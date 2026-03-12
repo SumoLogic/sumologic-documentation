@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 By default, when performing non-aggregate Log Search queries, the results are displayed in the **Time** and **Messages** column. You can further drill down the results using [Show and Hide Fields in the Field Browser](/docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser).
 
-If you want to view the results with all the parameter field values, you can select all the parameter fields in the **Hidden Fields** tab, which makes the results page clustered. You can overcome this by using the **Log Message Inspector** option. **Log Message Inspector** dock will display an **INFO/ERROR** to quickly identify the type of each log message using the color-code, raw log message, message time, receipt time, and the parameter values associated with the query. 
+If you want to view the results with all the parameter field values, you can select all the parameter fields in the **Hidden Fields** tab, which makes the results page clustered. You can overcome this by using the **Log Message Inspector** option. **Log Message Inspector** dock will display an **INFO/ERROR** to quickly identify the type of each log message using the color-code, raw log message, message time, receipt time, searchable time, and the parameter values associated with the query. 
 
 <img src={useBaseUrl('img/search/get-started-search/search-page/log-message-inspector.png')} width="500" style={{border: '1px solid gray'}} alt="log-message-inspector" />
 

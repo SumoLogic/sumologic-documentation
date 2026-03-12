@@ -62,7 +62,7 @@ To configure a Windows Active Directory Inventory Source:
      *  **Exclude Distinguished Name Suffixes**. Provide a semi-colon separated list of Distinguished Name suffixes. When set, the Source won't ingest any records that contain the Distinguished Name suffixes specified.
      *  **Directory Filter**. Specifies a filter to use when searching for Domain Objects in Active Directory.
    * **Advanced Options for Logs**.
-     * **Enable Timestamp Parsing**. Disable this option so that timestamps are not parsed. Disabling this option will stamp logs with the time at which the messages are received. For more information, see [Message time and receipt time](/docs/send-data/collector-faq/#message-time-and-receipt-time).
+     * **Enable Timestamp Parsing**. Disable this option so that timestamps are not parsed. Disabling this option will stamp logs with the time at which the messages are received. For more information, see [Message time and receipt time](/docs/send-data/collector-faq/#message-time-receipt-time-and-searchable-time).
    *  **Processing Rules for Logs**. Create any processing rules you'd like for the new Source.
 1. Click **Save**.
 
@@ -94,7 +94,7 @@ You can use multiple variables, for example:
 {{sys.PATH}}-{{sys.YourEnvVar}}
 ```
 
-![img](/img/send-data/environment-variable-usage.png)
+<img src={useBaseUrl('img/send-data/environment-variable-usage.png')} alt="Multiple variables" style={{border: '1px solid gray'}} width="500" />
 
 :::tip
 The example above uses a hyphen (`-`) character to separate variable components. Separator characters are not required. Curly brackets and spaces are not allowed. Underscores and hyphens are recommended.

@@ -138,7 +138,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
     * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
-    * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
+    * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](https://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 12. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
     * **Scan Interval.** Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources).
     * **SNS Subscription Endpoint (Highly Recommended**). New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file. Click the box below to open instructions:
@@ -216,7 +216,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
     * Topic ARN — from Step 4.
     * Protocol — **HTTPS**
     * EndPoint — Sumo source Endpoint URL you noted in Step 3.
-6. After a subscription is created, Amazon SNS sends a [subscription confirmation ](http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm)message to the Sumo source endpoint. Do the following:
+6. After a subscription is created, Amazon SNS sends a [subscription confirmation ](https://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm)message to the Sumo source endpoint. Do the following:
     * Go to the Sumo search box and execute the following:
      ```
      _sourceCategory=AWS/SES/Events/Notifications SubscribeURL
@@ -227,7 +227,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 8. After completing successful subscription, Configure Notifications Using the Amazon SES Console. For detailed instructions, see the [Amazon documentation](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-sns-notifications.html#configure-feedback-notifications-console).
 
 :::note
-SES sends notifications to SNS in a JSON format. Any notification sent through SNS is by default wrapped into a JSON message. This then creates a nested JSON that is a nearly unreadable message. To prevent the problem of nested JSON messages, we highly recommend configuring SNS to use [raw message ](http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html)delivery option.
+SES sends notifications to SNS in a JSON format. Any notification sent through SNS is by default wrapped into a JSON message. This then creates a nested JSON that is a nearly unreadable message. To prevent the problem of nested JSON messages, we highly recommend configuring SNS to use [raw message ](https://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html)delivery option.
 :::
 
 ## Installing the Amazon SES app

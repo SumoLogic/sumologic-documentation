@@ -50,13 +50,13 @@ Log sources that issue intrusion-related messages include:
 
 Cloud SIEM provides the following normalized intrusion rules:
 
-* Intrusion Scan - Targeted - This rule looks for an intrusion product detecting an internal IP sending different exploits to another external IP in a short timeframe.
-* Intrusion Sweep - This rule looks for an intrusion product detecting an internal IP sending the same exploit to multiple internal IPs in a short timeframe.
-* High Severity Intrusion Signature - This rule looks for an intrusion product detecting a High severity intrusion signature sourcing from an internal IP.
-* Critical Severity Intrusion Signature - This rule looks for an intrusion product detecting a critical severity intrusion signature sourcing from an internal IP.
-* Informational Severity Intrusion Signature - This rule looks for an intrusion product detecting an informational severity intrusion signature sourcing from an internal IP.
-* Low Severity Intrusion Signature - This rule looks for an intrusion product detecting a low severity intrusion signature sourcing from an internal IP. 
-* Medium Severity Intrusion Signature - This rule looks for an intrusion product detecting a medium severity intrusion signature sourcing from an internal IP.
+* [Intrusion Scan - Targeted](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/THRESHOLD-S00514.md) - This rule looks for an intrusion product detecting an internal IP sending different exploits to another external IP in a short timeframe.
+* [Intrusion Sweep](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/THRESHOLD-S00515.md) - This rule looks for an intrusion product detecting an internal IP sending the same exploit to multiple internal IPs in a short timeframe.
+* [High Severity Intrusion Signature](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00666.md) - This rule looks for an intrusion product detecting a high severity intrusion signature sourcing from an internal IP.
+* [Critical Severity Intrusion Signature](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00513.md) - This rule looks for an intrusion product detecting a critical severity intrusion signature sourcing from an internal IP.
+* [Informational Severity Intrusion Signature](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00669.md) - This rule looks for an intrusion product detecting an informational severity intrusion signature sourcing from an internal IP.
+* [Low Severity Intrusion Signature](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00668.md) - This rule looks for an intrusion product detecting a low severity intrusion signature sourcing from an internal IP. 
+* [Medium Severity Intrusion Signature](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00667.md) - This rule looks for an intrusion product detecting a medium severity intrusion signature sourcing from an internal IP.
 
 **Requirements for Intrusion Signature rules:**
 
@@ -80,11 +80,11 @@ Log sources that issue malware-related messages include:
 
 Cloud SIEM provides the following normalized malware rules:
 
-* Malware Outbreak - Same malware signature on multiple hosts in a short timeframe.
-* Persistent Malware Infection - Single host with multiple malware infections with the same signature in a short timeframe.
-* Malware Not Cleaned - Malware the antivirus fails to clean.
-* Malware Cleaned - Malware the antivirus successfully cleans.
-* Antivirus Ransomware Detection - Malware determined to be ransomware based on the signature/virus name.
+* [Malware Outbreak](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/THRESHOLD-S00517.md) - Same malware signature on multiple hosts in a short timeframe.
+* [Persistent Malware Infection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/THRESHOLD-S00520.md) - Single host with multiple malware infections with the same signature in a short timeframe.
+* [Malware Not Cleaned](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00518.md) - Malware the antivirus fails to clean.
+* [Malware Cleaned](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00519.md) - Malware the antivirus successfully cleans.
+* [Antivirus Ransomware Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00516.md) - Malware determined to be ransomware based on the signature/virus name.
 
 ### direct
 
@@ -101,4 +101,4 @@ Log sources that issue behavior-related messages include:
 
 Cloud SIEM provides the following normalized direct rule:
 
-* Normalized Security Signal - Passes through an alert from an endpoint security product and adjusts the severity accordingly based on the severity provided in the log.
+* [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md) - Passes through an alert from an endpoint security product and adjusts the severity accordingly based on the severity provided in the log.

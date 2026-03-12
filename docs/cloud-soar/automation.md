@@ -26,19 +26,47 @@ The following sections describe automation features only used in Cloud SOAR.
 
 ## Run playbooks in Cloud SOAR
 
-In Cloud SOAR, playbooks are run from [incidents](/docs/cloud-soar/incidents-triage/#incidents). To run playbooks in Cloud SOAR, perform the following steps:
-1. [Create a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-a-new-playbook) to use in incident response. When you create the playbook, do the following:
-   1. Click the **Edit** icon on the **Start** node:<br/><img src={useBaseUrl('img/platform-services/automation-service/start-node.png')} alt="Start node" style={{border:'1px solid gray'}} width="100"/>
-   1. Ensure that the **Add one or more params as a playbook input** field is left blank: <br/><img src={useBaseUrl('img/platform-services/automation-service/edit-start-node-input.png')} alt="Edit node dialog" style={{border:'1px solid gray'}} width="500"/><br/>Do *not* click the field to show the dropdown menu: <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/><br/>The other values in the field are used for automation outside of Cloud SOAR:
-      * **Insight** and **Entity** are for launching a playbook from a Cloud SIEM automation.
-      * **Alert** is for launching a playbook from a monitor. 
-      * **Parse from JSON** is for launching a playbook from another playbook.
-   1. Proceed to create the playbook as needed.
-1. [Create an incident template](#create-a-new-incident-template) to be assigned to incidents. When you create the template, add the playbook to the template and select **Autorun** to run the playbook when the incident is created, or deselect if you want to manually run the playbook from the incident.<br/><img src={useBaseUrl('img/cloud-soar/new-incident-template-add-playbook.png')} alt="New template" style={{border: '1px solid gray'}} width="700"/>
-1. Monitor and run playbooks on [incidents](/docs/cloud-soar/incidents-triage/#incidents):
-   * Within an incident, select **Operations > Playbooks** to see the playbooks assigned to the incident. 
-   * If playbooks haven't been assigned by an incident template, you can add playbooks by clicking the **+** button.
-   * To manually run a playbook for the incident, click the **Run** button at the bottom of the screen.<br/><img src={useBaseUrl('img/cloud-soar/playbook-on-incident.png')} alt="Playbook on an incident" style={{border: '1px solid gray'}} width="700"/>
+In Cloud SOAR, playbooks are run from [incidents](/docs/cloud-soar/incidents-triage/#incidents). This section describes how to create and run playbooks on incidents.
+
+### Create a playbook to use for incidents
+
+When you [create a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-a-new-playbook) to use in incident response, do the following:
+1. Click the **Edit** icon on the **Start** node:<br/><img src={useBaseUrl('img/platform-services/automation-service/start-node.png')} alt="Start node" style={{border:'1px solid gray'}} width="100"/>
+1. Ensure that the **Add one or more params as a playbook input** field is left blank: <br/><img src={useBaseUrl('img/platform-services/automation-service/edit-start-node-input.png')} alt="Edit node dialog" style={{border:'1px solid gray'}} width="500"/><br/>Do *not* click the field to show the dropdown menu: <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/><br/>The other values in the field are used for automation outside of Cloud SOAR:
+   * **Insight** and **Entity** are for launching a playbook from a Cloud SIEM automation.
+   * **Alert** is for launching a playbook from a monitor. 
+   * **Parse from JSON** is for launching a playbook from another playbook.
+1. Proceed to create the playbook as needed.
+
+### Add a playbook to an incident template
+
+1. [Create an incident template](#create-a-new-incident-template) to be assigned to incidents. 
+1. When you create the template, add the playbook to the template and select **Autorun** to run the playbook when the incident is created, or deselect if you want to manually run the playbook from the incident.<br/><img src={useBaseUrl('img/cloud-soar/new-incident-template-add-playbook.png')} alt="New template" style={{border: '1px solid gray'}} width="700"/>
+
+### Manually add a playbook to an incident
+
+1. Open the [incident](/docs/cloud-soar/incidents-triage/#incidents) in Cloud SOAR.
+1. Select **Operations > Playbooks**.
+1. Click the **+** button to add the playbook.
+1. Click **List View** to see the playbooks attached to the incident.<br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-add-playbook-to-incident.png')} alt="Manually add playbook" style={{border: '1px solid gray'}} width="700"/>
+
+### Monitor and run playbooks on incidents
+
+To monitor and run playbooks on [incidents](/docs/cloud-soar/incidents-triage/#incidents):
+1. Within an incident, select **Operations > Playbooks** to see the playbooks assigned to the incident. 
+1. If playbooks haven't been assigned by an incident template, you can add playbooks by clicking the **+** button.
+1. To manually run a playbook for the incident, click the **Run** button at the bottom of the screen.<br/><img src={useBaseUrl('img/cloud-soar/playbook-on-incident.png')} alt="Playbook on an incident" style={{border: '1px solid gray'}} width="700"/>
+
+### Add a playbook to an incident with the API
+
+You can attach playbooks to an [incident](/docs/cloud-soar/incidents-triage/#incidents) with the API. This lets you automate incident workflows without having to use the UI, and enables integration with external systems.
+
+Use the following APIs:
+* [incidents_runbook_create](https://api.sumologic.com/docs/csoar/#operation/incidents_runbook_create). Attach one or more playbooks to an incident, with an option to auto-run them after attachment.
+* [incidents_runbook_retrieve](https://api.sumologic.com/docs/csoar/#operation/incidents_runbook_retrieve). Retrieve all playbooks attached to a specific incident.
+* [playbook_list_retrieve](https://api.sumologic.com/docs/csoar/#operation/playbook_list_retrieve). Get a list of all playbooks, including their IDs. Use the playbook IDs to run the above incident APIs.
+
+For more information about how to use APIs, see [Cloud SOAR APIs](/docs/api/cloud-soar/).
 
 ## Incident templates
 

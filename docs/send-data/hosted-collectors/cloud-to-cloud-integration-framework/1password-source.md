@@ -59,6 +59,10 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the 1Password source, consider installing the Sumo Logic app for [1Password](/docs/integrations/saas-cloud/1password/) to visualize and analyze the collected data using prebuilt dashboards.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
@@ -106,7 +110,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 After configuring your Source, you should check the status of the source in the **Collectors** page >  **Status** column. If the Source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
 
-![troubleshooting.jpg](/img/send-data/1password-troubleshooting.jpg)
+<img src={useBaseUrl('img/send-data/1password-troubleshooting.jpg')} alt="Troubleshooting" style={{border: '1px solid gray'}} width="800" />
 
 To resolve these errors:
 - Make sure the Base URL matches your domain.

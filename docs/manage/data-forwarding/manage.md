@@ -8,6 +8,14 @@ description: View, edit, delete, activate, and deactivate data forwarding destin
 Data forwarding is not currently supported for data assigned to the Infrequent Tier. 
 :::
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage data forwarding with the [`sumologic_data_forwarding_destination`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/data_forwarding_destination) and [`sumologic_data_forwarding_rule`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/data_forwarding_rule) resources.
+
+<TerraformLink/>
+:::
+
 ## View, edit, or delete a data forwarding destination
 
 The following actions are available on the **Data Forwarding** page. Hover over a destination in the table and select any of the following:
@@ -16,7 +24,7 @@ The following actions are available on the **Data Forwarding** page. Hover over 
 * Click the **Edit** icon to make changes to the configuration.
 * Click the **Delete** icon to delete the destination. If the destination is currently active, you must deactivate it before it deleting it, as described in the following section.
 
-## Activate or Deactivate Data Forwarding
+## Activate or deactivate data forwarding
 
 If you’d like to start or stop forwarding data, you can activate or deactivate the S3 bucket. 
 

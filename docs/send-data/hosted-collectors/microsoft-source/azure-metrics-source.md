@@ -9,6 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Azure Metrics Source is used to collect all available metrics from Azure Monitor into Sumo Logic. To obtain a complete list of metrics that are collected using this source, refer to the [Azure Documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/metrics-index#supported-metrics-and-log-categories-by-resource-type).
 
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an Azure Metrics source with the [`sumologic_azure_metrics_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/azure_metrics_source) resource.
+
+<TerraformLink/>
+:::
+
 ## Setup
 
 ### Vendor configuration

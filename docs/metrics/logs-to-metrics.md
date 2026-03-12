@@ -13,7 +13,7 @@ The Logs-to-Metrics feature allows you to extract or create metrics from log da
 
 You can use the above methods in combination: you can extract metrics from logs, and also count them to create a new metric.
 
-Once you have extracted or created metrics from your log data, you can use them like any other metrics in Sumo. You can run metric queries on them, include those queries in dashboards, and set monitors on them.
+Once you have extracted or created metrics from your log data, you can use them like any other metrics in Sumo Logic. You can run metric queries on them, include those queries in dashboards, and set monitors on them.
 
 ## Logs-to-Metrics best practices and limitations
 
@@ -45,9 +45,9 @@ A logs-to-metrics rule will not create a metric dimension value longer than 250
 
 ### Metric volume limits and rule disabling 
 
-Sumo will not allow you to save a Logs-to-Metrics rule that results in more than 30,000 unique time series. 
+Sumo Logic will not allow you to save a Logs-to-Metrics rule that results in more than 30,000 unique time series. 
 
-If, over time, the volume of unique time series returned by a Logs-to-Metrics rule grows to more than 30,000, Sumo will disable the rule. You can see that a rule is disabled on the Logs-to-Metrics page: a red icon appears to the left of the rule name.
+If, over time, the volume of unique time series returned by a Logs-to-Metrics rule grows to more than 30,000, Sumo Logic will disable the rule. You can see that a rule is disabled on the Logs-to-Metrics page: a red icon appears to the left of the rule name.
 
 <img src={useBaseUrl('img/metrics/disabled-ltm.png')} alt="Disabled metrics" style={{border: '1px solid gray'}} width="400" />
 
@@ -73,11 +73,11 @@ Logs-to-Metrics will not work with fields created from field extraction rules (F
 
 ### Logs-to-Metrics is not retroactive
 
-Once you save a Logs-to-Metrics rule, Sumo will commence creating metrics. Sumo does not apply your rule to logs that have previously been ingested. 
+Once you save a Logs-to-Metrics rule, Sumo Logic will commence creating metrics. Sumo Logic does not apply your rule to logs that have previously been ingested. 
 
 ### Supported and unsupported parsing operators
 
-Not all Sumo parsing operators are supported. For more information, see [Create a Logs-to-Metrics rule](logs-to-metrics.md).
+Not all Sumo Logic parsing operators are supported. For more information, see [Create a Logs-to-Metrics rule](/docs/metrics/logs-to-metrics/#create-a-logs-to-metrics-rule).
 
 ### Scheduled views and indexes are not supported
 
@@ -97,21 +97,21 @@ The _dataTier search modifier is not supported in Logs-to-Metrics rules.
 
 ## Enable Logs-to-Metrics rule creation by non-admin users
 
-By default, only Sumo admins can create Logs-to-Metrics rules. To enable this feature for other users you can create a role with the **Manage Logs-to-Metrics** capability, or add the capability to an existing role. See Create and Manage Roles. 
+By default, only Sumo Logic admins can create Logs-to-Metrics rules. To enable this feature for other users you can create a role with the **Manage Logs-to-Metrics** capability, or add the capability to an existing role. See [Create and Manage Roles](/docs/manage/users-roles/roles/create-manage-roles/). 
 
 ## Create a Logs-to-Metrics rule
 
 This section describes how to create a Logs-to-Metrics rule.
 
 :::note
-You must be a Sumo admin to create a Logs-to-Metrics rule, or have a role with the **Manage Logs-to-Metrics** capability, as described in the previous section.
+You must be a Sumo Logic admin to create a Logs-to-Metrics rule, or have a role with the **Manage Logs-to-Metrics** capability, as described in the previous section.
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Metrics**, select **Logs to Metrics**. You can also click the **Go To...** menu at the top of the screen and select **Logs to Metrics**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Metrics > Logs-to-Metrics**. <br/>The page displays a list of existing Logs-to-Metrics rules. <br/><img src={useBaseUrl('img/metrics/log-to-metrics-add.png')} alt="Add button" style={{border: '1px solid gray'}} width="800" />
 1. To create a new rule, click **Add Logs-to-Metrics Rule** in the upper right of the page. The **Add Logs-to-Metrics Rule** page appears. <br/><img src={useBaseUrl('img/metrics/add-logs-to-metrics-rules.png')} alt="Add Logs-to-Metrics Rule" style={{border: '1px solid gray'}} width="500" />
 1. In the **Parse Log Messages** section:
     1. **Name**. Specify a rule name.
-    1. **Scope**. Enter a query that returns the log messages from which you want to extract or calculate metrics. For best performance, enter a scope that returns only the log messages from which you want to create metrics. For example: `_sourceCategory=alert !info !warn ``error` Once you enter a valid scope, 10 recent matching log lines appear in the **Preview Parse Expression** section of the page.
+    1. **Scope**. Enter a query that returns the log messages from which you want to extract or calculate metrics. For best performance, enter a scope that returns only the log messages from which you want to create metrics. For example: `_sourceCategory=alert !info !warn ``error`. Once you enter a valid scope, 10 recent matching log lines appear in the **Preview Parse Expression** section of the page.
         :::note
         The preview pane of parsed messages will respect the role search query of the user creating the rule. However, the Logs-to-Metrics rule will run globally—the rule author’s role search query will not be applied.
         :::
@@ -131,7 +131,7 @@ You must be a Sumo admin to create a Logs-to-Metrics rule, or have a role with t
 
        <img src={useBaseUrl('img/metrics/preview-parse-expression.png')} alt="Preview parse expression" style={{border: '1px solid gray'}} width="600" />
 
-1. After you enter a valid parse expression, extracted fields appear in the **Select Metrics and Dimensions** section of the page. In this section, you define the metrics and dimensions the rule will extract. Note that in addition to any fields you extracted with your parse expression, the following Sumo metadata fields are listed:
+1. After you enter a valid parse expression, extracted fields appear in the **Select Metrics and Dimensions** section of the page. In this section, you define the metrics and dimensions the rule will extract. Note that in addition to any fields you extracted with your parse expression, the following Sumo Logic metadata fields are listed:
          * `_sourceHost`
          * `_source`
          * `_sourceName`

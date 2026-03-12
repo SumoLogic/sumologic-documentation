@@ -17,7 +17,7 @@ This section provides instructions for collecting logs for the the PCI Complianc
 
 To configure an AWS CloudTrail Source, do the following:
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
-2. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) in your AWS account.
+2. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) in your AWS account.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source) to Sumo Logic.
 5. Install the Sumo Logic app for [PCI Compliance for AWS CloudTrail](#installing-the-pci-compliance-for-aws-cloudtrail-app).
