@@ -40,4 +40,6 @@ To delete a section in your dashboard, follow the below steps:
 
 To share a dashboard with coworkers within your organization, refer to [Share a Dashboard](/docs/dashboards/share-dashboard-new/). When you share a dashboard with multiple sections, queries will run and costs will be incured only for the sections in expanded state. Panels in the collapsed section do not execute any queries or incur scan costs until they are expanded.
 
-Similarly, if **Autorefresh** is enabled for the dashboard, only panels with the expanded sections are refreshed. Panels in collapsed sections are not refreshed until the section is expanded.
+If **Autorefresh** is enabled for the dashboard, only panels within expanded sections are refreshed. Panels in collapsed sections remain unchanged and are refreshed only after their section is expanded.
+
+When exporting a dashboard as a report, any collapsed panels remain collapsed in the report, reflecting the exact state of the dashboard at the time of export.
