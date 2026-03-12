@@ -450,7 +450,7 @@ To get the most accurate answers, try the following when asking questions:
 Sumo Logic Mobot leverages foundational models provided by Amazon Bedrock, inheriting their robust compliance and security posture. For detailed information, refer to the following Amazon Bedrock security and compliance resources:
 
 * [Security in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security.html)
-* [Amazon Bedrock Security and Privacy](https://aws.amazon.com/bedrock/security-compliance/)
+* [Amazon Bedrock Security and Privacy](https://aws.amazon.com/bedrock/faqs/#security--ny85yy)
 
 Additionally, all aspects of our service, including Mobot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts.
 
