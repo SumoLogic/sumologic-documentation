@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/OpenLLMetry.png' alt="Thumbnail icon" width="175"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="35"/>
 
-OpenLLMetry is an open-source observability framework designed to provide visibility into applications built using Large Language Models (LLMs), Vector databases, AL Frameworks, Protocal (MCP). Built on top of OpenTelemetry standards, it enables developers and operations teams to collect and analyze telemetry data such as traces, metrics, and application-specific events generated during interactions.
+OpenLLMetry is an open-source observability framework designed to provide visibility into applications built using Large Language Models (LLMs), Vector databases, AL Frameworks, Protocol (MCP). Built on top of OpenTelemetry standards, it enables developers and operations teams to collect and analyze telemetry data such as traces, metrics, and application-specific events generated during interactions.
 
 With OpenLLMetry, teams can monitor the complete lifecycle of LLM requests, including prompt execution, model responses, latency, token usage, and errors. It also helps track how different components—such as LLM providers, APIs, vector databases, frameworks, and supporting services—interact within AI/ML applications.
 
