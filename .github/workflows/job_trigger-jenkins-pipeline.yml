@@ -36,6 +36,7 @@ jobs:
           AWS_ROLE_ARN: ${{ secrets.WEBOPS_AWS_ROLE_JENKINS }}
           AWS_REGION: us-east-1
         run: |
+          set -euo pipefail
           OIDC_TOKEN=$(curl -sSL -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
             "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" \
             | jq -r '.value')
