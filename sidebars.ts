@@ -2373,6 +2373,25 @@ integrations: [
        },
       {
         type: 'category',
+        label: 'AI/ML',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/aiml/index'},
+        items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            link: {type: 'doc', id: 'integrations/aiml/opentelemetry/index'},
+            items: [
+              'integrations/aiml/opentelemetry/openllmetry',
+            ],
+          },
+        ],
+      },
+      {
+        type: 'category',
         label: 'App Development',
         collapsible: true,
         collapsed: true,
