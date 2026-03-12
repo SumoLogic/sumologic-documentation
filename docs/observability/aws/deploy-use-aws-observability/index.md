@@ -14,7 +14,7 @@ These topics have information about Sumo Logic's AWS Observability Solution, ho
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Watch a micro lesson on deploying the AWS Observability Solution. 
 
