@@ -2160,7 +2160,7 @@ integrations: [
         'integrations/amazon-aws/inspector-classic',
         'integrations/amazon-aws/kinesis-streams',
         'integrations/amazon-aws/amazon-opensearch',
-      //  'integrations/amazon-aws/amazon-sagemaker',
+        'integrations/amazon-aws/amazon-sagemaker',
         'integrations/amazon-aws/rds',
         'integrations/amazon-aws/redshift-ulm',
         'integrations/amazon-aws/route-53-resolver-security',
@@ -2255,7 +2255,7 @@ integrations: [
          'integrations/microsoft-azure/azure-database-for-postgresql',
          'integrations/microsoft-azure/azure-event-grid',
          'integrations/microsoft-azure/azure-event-hubs',
-        // 'integrations/microsoft-azure/azure-firewall',
+         'integrations/microsoft-azure/azure-firewall',
          'integrations/microsoft-azure/azure-front-door',
          'integrations/microsoft-azure/azure-functions',
          'integrations/microsoft-azure/azure-hdinsight',
@@ -2403,7 +2403,6 @@ integrations: [
           'integrations/app-development/puppet',
         ],
       },
-      /*
        {
         type: 'category',
         label: 'Big Data',
@@ -2423,7 +2422,6 @@ integrations: [
           },
         ],
       },
-      */
       {
         type: 'category',
         label: 'Containers and Orchestration',
