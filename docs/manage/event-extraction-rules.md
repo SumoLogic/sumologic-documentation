@@ -52,23 +52,6 @@ You need the `Manage Event Extraction Rules` [role capability](/docs/manage/user
 When an Event Extraction Rule is created, events only from previous seven days are automatically backfilled into the event index.
 :::
 
-## Search for user data events
-
-Searching the user data events is the same as running a normal search against your ingested data. You specify the `_index` metadata field with `sumologic_userdata_events`.
-
-For example, to search for system events:
-
-1. In the Search page, enter the following: `_index=sumologic_userdata_events`.
-     :::info
-     Make sure to enter the query exactly as shown. Changing any part of the query renders it ineffective.
-     :::
-1. Choose the time range for the events that you'd like to review.
-1. Click **Start** to run the search.
-
-:::note
-You can identify the source of event using `eventExtractionRuleID` field in the **sumologic_userdata_events** index.
-:::
-
 ## Edit a rule
 
 To edit the existing event extraction rule, follow the below steps:
@@ -106,4 +89,21 @@ To delete the existing event extraction rule, follow the below steps:
 - To restrict user access to extracted events, you can deny access to the `sumologic_userdata_events` index for specific roles. Ensure that you have the **[Usage Management](/docs/manage/users-roles/roles/role-capabilities/#user-management)** capability enabled, as it is required to configure index-level access restrictions.
 - An Event Extraction Rule can generate a maximum of 1,000 events per hour. If this limit is exceeded, the rule may be automatically disabled and a system event will be generated. You can view those by querying the `_index=sumologic_system_events` and `_sourcecategory=eventExtractionRule`. To re-enable the rule, review and refine the rule query to reduce the event volume.
 - Audit logs for all create, read, update, and delete (CRUD) actions performed on Event Extraction Rules are available in the `_index=sumologic_audit_events ` and `_sourcecategory=eventExtractionRule`.
+
+## Verify user data events
+
+Search user data events primarily to verify that a newly created event extraction rule is generating events or confirm their source event extraction rule. Additionally, this event index can be used in dashboards, scheduled searches, or for other event analysis use cases. Specify the `_index` metadata field with `sumologic_userdata_events`.
+
+For example, to search for system events:
+
+1. In the Search page, enter the following: `_index=sumologic_userdata_events`.
+     :::info
+     Make sure to enter the query exactly as shown. Changing any part of the query renders it ineffective.
+     :::
+1. Choose the time range for the events that you'd like to review.
+1. Click **Start** to run the search.
+
+:::note
+You can identify the source of event using `eventExtractionRuleID` field in the **sumologic_userdata_events** index.
+:::
 
