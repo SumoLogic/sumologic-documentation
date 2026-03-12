@@ -20,14 +20,15 @@ The following table provides the static IP addresses used for Cloud-to-Cloud Int
 
 | Deployment | Static IP addresses     |
 |:------------|:----------|
-| AU         | 13.210.38.180, 54.253.14.8, 52.63.30.49    |
-| CA         | 3.96.85.212, 3.97.51.58, 3.96.95.249        |
-| DE         | 52.28.151.126, 18.193.176.46, 18.192.147.254        |
-| EU         | 54.74.133.34, 18.200.219.230, 54.216.109.182         |
-| JP         | 52.69.8.121, 54.248.157.127, 18.182.95.102        |
-| KR    | 13.209.100.246, 3.37.181.174, 3.38.126.107  |
+| AU         | 13.210.38.180, 54.253.14.8, 52.63.30.49                                            |
+| CA         | 3.96.85.212, 3.97.51.58, 3.96.95.249                                               |
+| CH         | 16.62.108.141, 16.63.37.253, 16.63.8.54                                            |
+| DE         | 52.28.151.126, 18.193.176.46, 18.192.147.254                                       |
+| EU         | 54.74.133.34, 18.200.219.230, 54.216.109.182                                       |
+| JP         | 52.69.8.121, 54.248.157.127, 18.182.95.102                                         |
+| KR         | 13.209.100.246, 3.37.181.174, 3.38.126.107                                         |
 | US1        | 54.209.19.175, 23.22.90.93, 23.22.11.54, 34.228.131.3, 34.237.107.105, 3.88.82.220 |
-| US2    | 54.149.79.97, 54.218.43.134, 44.239.32.230, 35.161.2.93    |
+| US2        | 54.149.79.97, 54.218.43.134, 44.239.32.230, 35.161.2.93                            |
 
 For the Federal environments, a different set of Static IPs is available for each C2C deployment.
 
@@ -189,7 +190,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-vulnerability-management-source')}><img src={useBaseUrl('img/send-data/crest-logo.png')} alt="icon" width="125"/><h4>Cisco Vulnerability Management</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-vulnerability-management-source')}><img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="125"/><h4>Cisco Vulnerability Management</h4></a>
   <p>Provides a secure endpoint to receive assets data from Asset API and vulnerabilities data from Vulnerability API.</p>
   </div>
 </div>
@@ -453,7 +454,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source')}><img src={useBaseUrl('img/send-data/miro-logo.png')} alt="icon" width="50"/><h4>Miro</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source')}><img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="icon" width="50"/><h4>Miro</h4></a>
   <p>Ingests audit logs obtained from the Audit log API.</p>
   </div>
 </div>

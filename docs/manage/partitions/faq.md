@@ -21,7 +21,7 @@ For Flex customers:
 ## How does Sumo Logic decide on which partitions to scan?
 
 1. For any query, the first step is determining the scope of the query. If your query does not explicitly mention the `index/view` clause in the source expression, Sumo Logic will consider all partitions in the default scope. You can override the scope of the query by mentioning the specific `index/view` in the source expression `(_index=partitionA)` or adding other tier partitions in the scope by using `_dataTier` modifier like `_dataTier=Infrequent or _dataTier=All`.
-2. Then apply a **[partition selection process](#what-happens-in-the-partition-selection-process)** as mentioned below that helps with the final list of partitions that will scan.
+2. Then apply a [partition selection process](#what-happens-in-the-partition-selection-process) as mentioned below that helps with the final list of partitions that will scan.
 
 ## What happens in the partition selection process?
 
@@ -64,4 +64,4 @@ If the query's scope does not include any partitions, the partition selection pr
 
 ### Are all the data scanned in the selected partitions?
 
-No data outside the specified timerange and intervalType (Message Time or Receipt Time) is scanned for the query.
+No data outside the specified time range and interval type (message time, receipt time, or searchable time) is scanned for the query.

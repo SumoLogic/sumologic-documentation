@@ -6,10 +6,6 @@ description: Suppressed lists allow you to suppress signals that contain a parti
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has information about suppressed lists and how to create them.
-
-## About suppressed lists
-
 Cloud SIEM supports several types of [signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression): suppression of redundant signals, suppression of signals on particular entities, suppression of signals on blocks of IP addresses, and finally the suppressed lists feature, which enables you to suppress signals that contain a particular indicator value in any of the signals’ records.  
 
 You can create suppressed lists from the Cloud SIEM UI or using the Cloud SIEM API. A suppressed list can contain a set of indicators—IPs (CIDR blocks), hostnames, or any other type that you can use in a match list—and then any signal that has a record containing a listed indicator will be suppressed. 
@@ -22,11 +18,13 @@ Note that each suppressed list has a **Target Column**, which you define when yo
 
 When you create a suppressed list, you can choose one of the following as its target column.
 
-* Hostname
-* File Hash
-* URL
+* Destination IP Address
+* Destination IP ASN
+* Destination IP ISP
+* Destination IP Organization
 * Domain
-* Username
+* File Hash
+* Hostname
 * IP Address
 * IP ASN
 * IP ISP
@@ -35,10 +33,8 @@ When you create a suppressed list, you can choose one of the following as its ta
 * Source IP ASN
 * Source IP ISP
 * Source IP Organization
-* Destination IP Address
-* Destination IP ASN
-* Destination IP ISP
-* Destination IP Organization
+* URL
+* Username
 
 ## Suppressed list or match list?
 
@@ -55,7 +51,7 @@ Cloud SIEM uses suppressed lists similar to how it uses [match lists](#suppresse
 Keep in mind:
 * Suppression lists will suppress any signal where the suppressed indicator is present, regardless of the primary entity in the signal.
 * Entity suppression will only suppress the signal if the suppressed entity is the primary signal.
-* If any entities within the record match items listed in a suppressed list, suppressed signals will be generated for those entities across all rules. Consequently, these signals will not affect the entity's Activity Score or contribute to insight generation.
+* If any entities within the record match items listed in a suppressed list, suppressed signals will be generated for those entities across all rules. Consequently, these signals will not affect the entity's activity score or contribute to insight generation.
 
 When a record contains a value that matches one or more suppressed lists, two fields in the record get populated:
 * `listMatches`. Cloud SIEM adds the names of the suppressed lists that the record matched, and the column values of those lists. For example, if an IP address in a record matches the SourceIP address in the “vuln_scanners” suppressed list, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`    

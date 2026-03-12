@@ -15,7 +15,7 @@ The Sumo Logic app for AWS Application Load Balancing uses logs and metrics to g
 ## Log types
 
 This app uses:
-* The metrics are included in the AWS/Application ELB namespace. For more details, see [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/elb-metricscollected.html#load-balancer-metrics-alb).
+* The metrics are included in the AWS/Application ELB namespace. For more details, see [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/elb-metricscollected.html#load-balancer-metrics-alb).
 * The [Application Load Balancer Access](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) Log introduces two new fields in addition to the fields contained in the Classic ELB Access log:
     * `Type`. This is the type of request or connection (HTTP, HTTPS, H2, ws, wss).
     * `target_group_arn`. This is the Amazon Resource Name (ARN) of the target group.
@@ -82,7 +82,7 @@ When you create an AWS Source, you'll need to identify the Hosted Collector you 
 
 Before you begin to use the AWS Elastic Load Balancing (ELB) Application app, complete the following steps:
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
-2. [Enable Application Load Balancer logging](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) in AWS.
+2. [Enable Application Load Balancer logging](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) in AWS.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 
 #### Collecting access Logs for AWS Application Load Balancer

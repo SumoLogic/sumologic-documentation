@@ -6,13 +6,13 @@ description: You can modify or cancel alerts that are no longer valuable to your
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The ability to modify or turn off alerts created by another user is now possible with Content Sharing. Sometimes the need or frequency of a log alert changes while the creator is unavailable and with Content Sharing you can give that ability to another Role or user within your Organization.
+The ability to modify or turn off alerts created by another user is possible with content sharing. Sometimes the need or frequency of a log alert changes while the creator is unavailable, and with content sharing you can give that ability to another role or user within your organization.
 
-We strongly recommend sharing your scheduled searches with at least one Role or a user you trust to allow you more flexibility with alerts.
+We strongly recommend sharing your scheduled searches with at least one role or a user you trust to allow you more flexibility with alerts.
 
 ## Edit an alert
 
-If you or your role has Edit permissions on a scheduled search you can modify the frequency and type of alert as well as the query if you need to make any adjustments such as the threshold or timeslice.
+If you or your role has edit permissions on a scheduled search you can modify the frequency and type of alert as well as the query if you need to make any adjustments such as the threshold or timeslice.
 
 :::note
 If you're using a search template with your saved search, you cannot modify the query from the alert.
@@ -29,7 +29,7 @@ To edit an alert:
 
 ## Cancel alerts on a shared search
 
-If you have Edit permissions on the shared search, you can stop recipients from receiving alerts by setting the run frequency to **Never**. We recommend doing this when a search is no longer relevant rather than deleting the search so that it can be available to you later if you need it. Deleting the shared search is possible, if you have Manage permissions, but does not allow you the ability to restore a scheduled search later if you need it.
+If you have edit permissions on the shared search, you can stop recipients from receiving alerts by setting the run frequency to **Never**. We recommend doing this when a search is no longer relevant rather than deleting the search so that it can be available to you later if you need it. Deleting the shared search is possible if you have manage permissions, but does not allow you the ability to restore a scheduled search later if you need it.
 
 1. Navigate to the scheduled search you want to edit, as described above in [Edit an alert](#edit-an-alert).
 1. Select the edit icon in the library for the scheduled search.<br/><img src={useBaseUrl('img/content-sharing/EditAlert.png')} alt="Select the edit icon in the library" style={{border: '1px solid gray'}} width="800" />

@@ -82,7 +82,7 @@ import Theme from '../reuse/dark-light-theme.md';
 
 ## Architecture
 
-Sumo Logic Cloud SOAR facilitates timely management of incident response with a rich library of customizable playbooks for different threats.
+Sumo Logic Cloud SOAR facilitates timely management of incident response with a library of customizable playbooks for different threats.
 
 This solution additionally provides capabilities to support incident responders during the process of assessment, investigation, and data collection to help uncover additional information and metrics analytics. It facilitates documentation and knowledge transfer of information across the critical teams working on incident response and SOC operations team members.
 
