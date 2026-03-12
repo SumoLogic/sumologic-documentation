@@ -550,7 +550,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-sourc
 | Parameter | Type | Required | Default | Description | Example |
 |:---|:---|:---|:---|:---|:---|
 | sourceType | String | Yes | `null` | HTTP | Not modifiable |
-| workload | String | Yes | `null` | Select the type of log to collect. If you want to collect from additional content types, create additional instances of this Source type. | `Audit.Exchange` |
+| workload | String | Yes | `null` | Select the type of log to collect. If you want to collect from additional content types, create additional instances of this source type. | `Audit.Exchange` |
 | region | String | Yes | `Commercial` | Select the region that corresponds to your Microsoft 365 or Office 365 subscription plan. | not modifiable |
 | tenantId | String | Yes | `null` | Enter the tenant Id collected from the Azure platform. | `11111111‑aaaa‑2222‑bbbb‑333333333333` |
 | clientId | String | Yes | `null` | Enter the client Id collected from the Azure platform.| `44444444‑cccc‑5555‑dddd‑666666666666` |
