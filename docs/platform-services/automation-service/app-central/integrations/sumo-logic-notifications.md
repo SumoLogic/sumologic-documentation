@@ -18,11 +18,25 @@ Integration with Sumo Logic platform for monitors and Slack Notification.
 
 ## Sumo Logic Notifications configuration
 
+### Create a Sumo Logic access key
+
 [Create an access key](/docs/manage/security/access-keys/#create-an-access-key) and copy the resulting **Access ID** and **Access Key**. Store the ID and access key (temporally) into a text editor.
 
 :::note
 The ID and key won't be available again once you close the confirmation screen.
 :::
+
+### Create a Slack token
+
+Configure a Bot or User OAuth token in Slack as described in [Slack Configuration](/docs/platform-services/automation-service/app-central/integrations/slack/#slack-configuration). You will provide the token when you configure the integration as described in the next section.
+
+Add the following scopes to the token:
+* For sending notifications (messages) to Slack:
+    * `chat:write`. Required to send messages to a user or channel.
+    * `chat:write.public` (optional). Only needed if the bot needs to post to public channels where it’s not a member yet.
+* For looking up a Slack user by email:
+    * `users:read.email`. Required to find a user by their email address.
+    * `users:read` (optional). Add if general user profile information is also needed.
 
 ## Configure Sumo Logic Notifications in Automation Service and Cloud SOAR
 
@@ -42,17 +56,12 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * <SumoLogicAPIURL/>
 * <AccessID/>
 * <AccessKey/>
-* **Slack Bot/User OAuth Token**. Enter the Bot or User OAuth token from Slack. (The authentication token bears the required scopes.) For information about tokens, see [Slack documentation](https://api.slack.com/concepts/token-types).
+* **Slack Bot/User OAuth Token**. Enter the Slack token. See [Create a Slack token](#create-a-slack-token) above.
 
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
 * <IntegrationEngine/>
 * <IntegrationProxy/>
-
-    * **Sumo Logic API URL**. URL to the API of the instance (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
-    * **Access ID**. The access ID that you copied earlier.
-    * **Access Key**. The access key that you copied earlier.
-    * **Slack Bot/User OAuth Token**. To set up the Slack app, refer to [Slack configuration](/docs/platform-services/automation-service/app-central/integrations/slack/) within App Central. You'll require a Slack Bot/User OAuth Token.
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-notifications-configuration.png')} style={{border:'1px solid gray'}} alt="Sumo Logic Notifications configuration" width="400"/>
 ## Change Log

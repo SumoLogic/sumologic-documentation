@@ -10,26 +10,33 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Installation Tokens register [Installed Collectors](/docs/send-data/installed-collectors) to your Sumo Logic account. They are assigned to your account, do not expire, and can only be used to register Installed Collectors. You can deactivate, reactivate, or delete tokens at any time.
 
-Opposed to [Access Keys](access-keys.md), you can embed your Installation Tokens in installation scripts confident they cannot be used to make [API](/docs/api) requests if compromised. You can also freely deactivate or delete [users](/docs/manage/users-roles/users) without worrying about updating Access Keys in installation scripts since Installation Tokens are associated with your account instead of users.
+Opposed to [access keys](access-keys.md), you can embed your Installation Tokens in installation scripts confident they cannot be used to make [API](/docs/api) requests if compromised. You can also freely deactivate or delete [users](/docs/manage/users-roles/users) without worrying about updating access keys in installation scripts since Installation Tokens are associated with your account instead of users.
 
 :::note
 Multiple collectors can use the installation token. Additionally, installation tokens are only used to initially register the collectors to the account, and are not used by the collector after that point. 
+:::
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a token with the [`sumologic_token`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/token) resource.
+
+<TerraformLink/>
 :::
 
 ## Limitations
 
 * Your account can have up to 100 Installation Tokens, active and inactive.
 * Installation Token names must be unique.
-* When using the RPM or Debian package you need to use user.properties to register Collectors.
+* When using the RPM or Debian package you need to use user.properties to register collectors.
 
 ## Manage Installation Tokens
 
-Installation Tokens in your account are manageable on the Installation Tokens page.
+Installation Tokens in your account are manageable on the Installation Tokens page. 
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Installation Tokens page, in the main Sumo Logic menu select **Administration > Security > Installation Tokens**. 
-
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Installation Tokens page, in the top menu select **Administration**, and then under **Account Security Settings** select **Installation Tokens**. You can also click the **Go To...** menu at the top of the screen and select **Installation Tokens**. 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Installation Tokens page, in the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Installation Tokens**. You can also click the **Go To...** menu at the top of the screen and select **Installation Tokens**. 
  
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Installation Tokens page, in the main Sumo Logic menu select **Administration > Security > Installation Tokens**.
 
 Managing Installation Tokens requires the **Manage Tokens** role capability.
 
@@ -37,7 +44,7 @@ Managing Installation Tokens requires the **Manage Tokens** role capability.
 
 The Installation Tokens page displays the following information: 
 
-* **Status** shows a green checkmark ![Green checkmark.png](/img/security/installation-tokens/green-checkmark.png) to indicate if the Installation Token is active and available for use or an exclamation mark in a red circle ![Red circle with a white exclamation mark.png](/img/security/installation-tokens/red-circle-white-exclamation.png) to indicate if the Installation Token is deactivated and not available for use.
+* **Status** shows a green checkmark <img src={useBaseUrl('img/security/installation-tokens/green-checkmark.png')} alt="Green checkmark" width="25" /> to indicate if the Installation Token is active and available for use or an exclamation mark in a red circle <img src={useBaseUrl('img/security/installation-tokens/red-circle-white-exclamation.png')} alt="Red circle with a white exclamation mark" width="25" /> to indicate if the Installation Token is deactivated and not available for use.
 * **Token Name** is the name of the Installation Token, these must be unique.
 * **Description** shows the optional description of the Installation Token.
 
@@ -53,22 +60,22 @@ For the Installation Tokens listed, select a row to view its details. A details 
 
 <img src={useBaseUrl('img/security/installation-tokens/token-details-pane.png')} alt="Token details" style={{border: '1px solid gray'}} width="300" />
 
-### Add Token
+### Add token
 
 1. Click the **+ Add Token** button on the top right of the table. A panel named **Create Installation Token** appears to the right of the table.
 1. Input a unique name and optionally provide a description, then click **Save**.<br/><img src={useBaseUrl('img/security/installation-tokens/create-token.png')} alt="Create Installation Token panel" style={{border: '1px solid gray'}} width="300" />
 
-### Deactivate Token
+### Deactivate token
 
-Deactivated tokens cannot be used to register Collectors. You can deactivate a token at any time.
+Deactivated tokens cannot be used to register collectors. You can deactivate a token at any time.
 
 Select **Deactivate** from the menu on the right of the row on the table or in the details pane of the token under the **More Actions** dropdown.
 
 <img src={useBaseUrl('img/security/installation-tokens/deactivate-token.png')} alt="Deactivate selected on the More Actions menu" style={{border: '1px solid gray'}} width="300" />
 
-### Delete Token
+### Delete token
 
-Deleted tokens are removed from your account and cannot be used anymore. Since tokens are only used to register a Collector it won't affect registered Collectors.
+Deleted tokens are removed from your account and cannot be used anymore. Since tokens are only used to register a collector it won't affect registered collectors.
 
 Select **Delete Token** from the menu on the right of the row on the table or in the details pane of the token under the **More Actions** dropdown.
 
@@ -76,7 +83,7 @@ Select **Delete Token** from the menu on the right of the row on the table or i
 
 ## Using Installation Tokens
 
-This section provides information on using Installation Tokens to register [Installed Collectors](/docs/send-data/installed-collectors). For details on Collector installation, see [Install a Collector on Linux](/docs/send-data/installed-collectors/linux.md), [Install a Collector on MacOS](/docs/send-data/installed-collectors/macos.md), and [Install a Collector on Windows](/docs/send-data/installed-collectors/windows.md).
+This section provides information on using Installation Tokens to register [Installed Collectors](/docs/send-data/installed-collectors). For details on collector installation, see [Install a Collector on Linux](/docs/send-data/installed-collectors/linux.md), [Install a Collector on macOS](/docs/send-data/installed-collectors/macos.md), and [Install a Collector on Windows](/docs/send-data/installed-collectors/windows.md).
 
 ### Command line installer
 
@@ -88,7 +95,7 @@ For example:
 sudo ./SumoCollector.sh -q -Vsumo.token_and_url=<installationToken>
 ```
 
-Where `<installationToken>` is the **Token String** you want to use to register the Collector.
+Where `<installationToken>` is the **Token String** you want to use to register the collector.
 
 
 ### user.properties
@@ -124,9 +131,9 @@ For example, the following decoded **Token String**: `SUMOXXXXXXXXXXXXXXXXXXXXXX
 would be used as:
 `url=https://collectors.sumologic.com token=SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXX`.
 
-## Audit Tokens
+## Audit tokens
 
-You can use the Audit Event Index to review the management of installation tokens and when they're used to register Collectors. For full details on the event log schema and common parameters see Audit Event Index documentation.
+You can use the Audit Event Index to review the management of installation tokens and when they're used to register collectors. For full details on the event log schema and common parameters see [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/).
 
 ### Token management events
 
@@ -178,7 +185,7 @@ An example event log when a token is changed from inactive to active is:
 
 ### Collector registration events
 
-Collectors registered with installation tokens are recorded in the Audit Event Index with the ID and name of the token that registered the Collector. The following query returns Collector registrations done with installation tokens.
+Collectors registered with installation tokens are recorded in the Audit Event Index with the ID and name of the token that registered the collector. The following query returns collector registrations done with installation tokens.
 
 ```sql
 _index=sumologic_audit_events _sourceCategory=collection CollectorRegistrationTokenContext

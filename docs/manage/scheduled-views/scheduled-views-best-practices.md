@@ -4,6 +4,8 @@ title: Scheduled Views Best Practices and Examples
 description: A Scheduled View is a query that runs on a schedule. This topic has some tips for setting up Scheduled View queries.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 A Scheduled View reduces aggregate data down to the bare minimum, so they contain only the results that you need to generate your data. Queries that run against Scheduled Views return search results much faster because the data is pre-aggregated before the query is run. Scheduled Views process queries once per minute.
 
 These items are required in Scheduled View queries:
@@ -64,7 +66,7 @@ Do not use the Pct or Avg operators: they do not yield accurate results. Beca
 * Max
 * Sum
 
-## Scheduled View Validation
+## Scheduled View validation
 
 Scheduled View validation works this way:
 
@@ -101,7 +103,7 @@ _view=myScheduledView
 | totalseconds / totalcount as theaverage
 ```
 
-### Other Operators
+### Other operators
 
 **Count_Distinct, First, Last, Min, Max, Most_Recent, Least_Recent, Pct, Stddev, "Math Values", and RollingStd.**   
 Create the Scheduled View with a **count** operator to count by the fields you want to aggregate with instead of the unsupported operator. Then you can reference the View and run the aggregation you want.
@@ -133,11 +135,11 @@ _view=Points
 | most_recent(points_withtime) as last_result by ip
 ```
 
-## Scheduled View Examples
+## Scheduled View examples
 
 Below are a few examples of queries that can be optimized with a Scheduled View. The original search, the Scheduled View definition, and the query that can be run on the Scheduled View are all shown.
 
-### Pre-Aggregating Data
+### Pre-aggregating data
 
 **Original Search:**
 
@@ -168,7 +170,7 @@ _view=myScheduledView
 ```
 
 
-### Improving Search Performance
+### Improving search performance
 
 **Original Search:**
 
@@ -192,7 +194,7 @@ _view=myScheduledView2
 Notice the parse statement will drop any log entries that do not contain the 192.\* internal IP string from the _sourceCategory. This will create a smaller subset of data that may be more appropriate for a Scheduled View. If you were searching through all of the IIS logs on a regular basis, a partition may be a better solution to improve query performance.
 :::
 
-### Lightweight vs Robust Scheduled View
+### Lightweight vs robust Scheduled View
 
 This Scheduled View query is lightweight, and contains only one group:
 
@@ -202,7 +204,7 @@ _sourceCategory=prod/web/iis | timeslice 1m | count by _timeslice
 
 which would produce results like:
 
-![lightweight](/img/scheduled-views/scheduled_view_lightweight.png)
+<img src={useBaseUrl('img/scheduled-views/scheduled_view_lightweight.png')} alt="Lightweight Scheduled View query" width="400" />
 
 Compared to this Scheduled View query, which is more robust, but five times heavier with one additional column:
 
@@ -212,7 +214,7 @@ _sourceCategory=prod/web/iis | timeslice 1m | count by _timeslice, status_code
 
 This would produce results like:
 
-![robust](/img/scheduled-views/scheduled_view_robust.png)
+<img src={useBaseUrl('img/scheduled-views/scheduled_view_robust.png')} alt="Robus Scheduled View query" style={{border: '1px solid gray'}} width="500" />
 
 Now you can use **sum** on your records, because the counts are broken out. For example, use the sum operator to aggregate the aggregation in the following query:
 
@@ -222,6 +224,8 @@ _view=nice_view_man | timeslice 1d | sum(_count) by _timeslice, status_code
 
 ## FAQ
 
-### Upgrade your scheduled views to avoid negative count results
+### How to avoid negative count results
 
-The existing scheduled views will use the `Int` data type for the `count` operator, giving a negative count value after crossing the maximum integer value of `2147483647`. To resolve this, create a new scheduled view with the same starting date as the old scheduled view. These new scheduled views will utilize the `Long` data type for the `count` operator and will not provide negative values.
+Validate if you are using the scheduled views created before August 28, 2024. The scheduled views created before this date will use the `Int` data type for the `count` operator, inturn resulting in a negative count value after exceeding the maximum integer value of `2147483647`. 
+
+To resolve this, create a new scheduled view with the same starting date as the old scheduled view. These new scheduled views will utilize the `Long` data type for the `count` operator and will not provide negative values.

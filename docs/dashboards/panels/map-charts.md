@@ -29,7 +29,7 @@ To add a panel with a Cluster or Heatmap:
 1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300"/>
 
 ### Limitations
-* Map charts have a display limit of 10,000 results.
+* Map charts queries have a display limit of 1440 results. If your query exceeds this limit, consider refining your query to see all results in the chart.
 * Colors of map markers cannot be changed.
 
 ## Missile map

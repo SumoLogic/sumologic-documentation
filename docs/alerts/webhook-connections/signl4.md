@@ -43,10 +43,14 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
 
 To create a webhook:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
-1. Click **+ Add** and choose **Webhook** as connection type.
-1. For the name, enter **Sumo Logic SIGNL4** and give an optional description to the connection.
-1. Paste the SIGNL4 webhook URL (from the step above) into the **URL** field.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
+1. On the **Connections** page, click **+ Add**.
+1. For **Connection Type**, select **Webhook** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/webhook-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+1. In the **Connection Settings** dialog, enter:
+    * **Name**. Enter **Sumo Logic SIGNL4** as the name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
+    * **URL**. Enter the SIGNL4 webhook URL (from the step above) into the **URL** field.
+      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-signl4.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
 1. Enter the following content in the **Alert Payload** field:
     ```json
     {
@@ -84,7 +88,7 @@ To create a webhook:
      :::note
      Do not update the `X-S4-...` fields, otherwise recovery notifications will not be generated.
      :::
-1. To test the connection, click **Test Alert**. If successful, you'll see a `201 OK` response message.
+1. Click **Test Alert** or **Test Recovery** to test the connection. If successful, you'll see a `200 OK` response message.
 1. Click **Save**.
 
 ### Configure a Scheduled Search

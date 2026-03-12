@@ -4,6 +4,8 @@ title: tourl Search Operator
 sidebar_label: tourl
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `tourl` operator provides you the ability to assign a short name that describes the URL. It is similar to creating a href for the URL with a short name. URLs are generally long and they do not tell you what information is displayed when the URL is opened. A common benefit of using this operator is to provide a description of a URL to display in dashboards.
 
 
@@ -38,7 +40,7 @@ When your URL points to another Sumo Logic feature from your account, such as a 
 
 Right-click the link to view the tab-options menu:
 
-![tab menu.png](/img/search/searchquerylanguage/search-operators/tourl-tab-menu.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/tourl-tab-menu.png')} alt="Tab menu" style={{border: '1px solid gray'}} width="300" />
 
 If you do not see the menu, it is not a supported link.
 
@@ -58,7 +60,7 @@ If you’re sharing the Akamai Denials by Host search query in a dashboard with 
 
 When you add this to a dashboard, you’ll see the short name. When you click the link, it will open the Akamai denials by host search query.
 
-![AkamaiSearchQuery.png](/img/search/searchquerylanguage/search-operators/tourl-AkamaiSearchQuery.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/tourl-AkamaiSearchQuery.png')} alt="Akamai search query" style={{border: '1px solid gray'}} width="600>" />
 
 #### Using a column for short name, and a prefix
 
@@ -78,8 +80,8 @@ Notice the query uses the value `"Scheduled search failed at: "` as the value fo
 
 The query result will be:
 
-![tourlResult.png](/img/search/searchquerylanguage/search-operators/tourlResult.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/tourlResult.png')} alt="tourl result" style={{border: '1px solid gray'}} width="600" />
 
 When you add the result to a dashboard, you’ll see the short name. When you click the link, it will take you to the scheduled search query.
 
-![toUrlDashboard.png](/img/search/searchquerylanguage/search-operators/toUrlDashboard.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/toUrlDashboard.png')} alt="toUrl dashboard" style={{border: '1px solid gray'}} width="800" />

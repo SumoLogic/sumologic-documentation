@@ -2,6 +2,7 @@
 id: faq
 title: Sumo Logic FAQ
 sidebar_label: FAQ
+description: Answers to frequently asked questions about Sumo Logic.
 ---
 
 
@@ -25,7 +26,7 @@ For example, from our own production logs, we use the following:
 
 This is a key-value pair log, which is easy to parse and easy to read in Sumo.
 
-## What Types of Logs Can I Collect?
+## What types of logs can I collect?
 
 The following table lists data types and some of the popular sources that produce logs, which can be collected by Sumo Logic. This list is a sample only to provide a general idea of the possible sources of log data; it is not complete.
 
@@ -43,20 +44,10 @@ The following table lists data types and some of the popular sources that produc
 | SaaS | <ul><li>[Box](/docs/integrations/saas-cloud/box)</li><li>[ServiceNow](/docs/alerts/webhook-connections/servicenow/set-up-connections.md)</li><li>[Salesforce](/docs/integrations/saas-cloud/salesforce)</li><li>[Microsoft Office 365](/docs/integrations/microsoft-azure/office-365)</li></ul> |
 | Security | <ul><li>Cisco</li><li>McAfee</li><li>Symantec</li><li>Qualys</li></ul> |
 
-## Where is My Data Stored?
+## Where is my data stored?
 
-Where your data is stored depends on the geographical location the
-Account Owner selected when establishing your Sumo Logic account. 
+Where your data is stored depends on the geographical location the Account Owner selects when creating your Sumo Logic account. Your data is stored only in your selected region.
 
-* Australia. Your data is stored in the AWS ap-southeast-2 (Sydney) region.
-* Canada. Your data is stored in the AWS ca-central-1 (Central) region.
-* Europe. Ireland. Your data is stored in the AWS eu-west-1 (Ireland) region.
-* Europe. Frankfurt. Your data is stored in the AWS eu-central-1 (Frankfurt) region.
-* Japan. Your data is stored in the AWS ap-northeast-1 (Tokyo) region.
-* North America. Your data is stored in the AWS us-east-1 (Northern Virginia) or us-west-2 (Oregon) region.
-* South Korea. Your data is stored in the AWS ap-northeast-2 (Seoul) region.
-* Federal. Your data is stored in the AWS us-east-1 (Northern Virginia) region.
+import AWSDeploymentRegion from '../reuse/aws-region-by-sumo-deployment.md';
 
-Your data is stored only in your region. 
-
-For more information, see [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html) and our [Privacy Statement](https://www.sumologic.com/privacy-statement/).
+<AWSDeploymentRegion/>

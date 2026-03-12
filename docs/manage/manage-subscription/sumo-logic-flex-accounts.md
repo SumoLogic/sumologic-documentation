@@ -34,11 +34,7 @@ Free accounts give you access to most Sumo Logic features, with a credit allocat
 
 <!-- are these numbers still accurate? -->
 
-Trial accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day providing approximately 500GB of search data volume daily or 15TB of search volume, 20 users, and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion) will be applied to your log ingest.
-
-To access your [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management) page:
-* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Account > Data Management**.
-* [**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Account** select **Data Management**. You can also click the **Go To...** menu at the top of the screen and select **Data Management**.
+Trial accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day providing approximately 500GB of search data volume daily or 15TB of search volume, 20 users, and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion/#log-throttling) will be applied to your log ingest.
 
 Trials are limited to 30 days. If you need to extend your trial period, contact our sales team to inquire about a Proof of Concept (PoC).
 
@@ -64,85 +60,84 @@ The following table provides a summary list of key features by Flex package acco
 
 | Feature | Free | Trial | Essentials | Enterprise Suite Flex |
 |:------- | :--- | :---- | :------------- | :------------- |
-| Advanced Span Analytics |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Anomaly Alerting |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Alerting Integrations (Slack, PagerDuty, ServiceNow, etc.) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Alert Response | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Anomaly Detection |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Anomaly Rules |  | | | ![check](/img/reuse/check.png) |
-| APM and Distributed Tracing |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Application Observability | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Audit Index | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Automated Log-level Detection |  | | |![check](/img/reuse/check.png) |
-| Automated Playbooks | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Automated Remediation |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Automation Service (playbooks for Insight enrichment, notifications, and containment actions) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| AWS CloudTrail and Amazon Guard Duty Threat Benchmarking | | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Case Manager | |  | | ![check](/img/reuse/check.png) |
-| Cloud Infrastructure Security |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Cloud Log Management | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
+| Advanced Span Analytics |  | &#10003; | | &#10003; |
+| Anomaly Alerting |  | &#10003; | | &#10003; |
+| Alerting Integrations (Slack, PagerDuty, ServiceNow, etc.) | &#10003; | &#10003; | &#10003; | &#10003; |
+| Alert Response | &#10003; | &#10003; | &#10003; | &#10003; |
+| Anomaly Detection |  | &#10003; | | &#10003; |
+| Anomaly Rules |  | | | &#10003; |
+| APM and Distributed Tracing |  | &#10003; | &#10003; | &#10003; |
+| Application Observability | &#10003; | &#10003; | &#10003; | &#10003; |
+| Audit Index | &#10003; | &#10003; | &#10003; | &#10003; |
+| Automated Log-level Detection |  | | | &#10003; |
+| Automated Playbooks | &#10003; | &#10003; | &#10003; | &#10003; |
+| Automated Remediation |  | &#10003; | | &#10003; |
+| Automation Service (playbooks for Insight enrichment, notifications, and containment actions) | &#10003; | &#10003; | &#10003; | &#10003; |
+| AWS CloudTrail and Amazon Guard Duty Threat Benchmarking | | &#10003; | | &#10003; |
+| Case Manager | |  | | &#10003; |
+| Cloud Infrastructure Security |  | &#10003; | | &#10003; |
+| Cloud Log Management | &#10003; | &#10003; | &#10003; | &#10003; |
 | Cloud SIEM |  |  | | Activation required* |
-| Cloud Security Posture Monitoring |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
+| Cloud Security Posture Monitoring |  | &#10003; | | &#10003; |
 | Cloud SOAR |  |  | | Activation required* |
-| Collector Management API | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Compliance and Audit Logging |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Threat Intelligence |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Customizable Dashboards | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Data Forwarding | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Data Volume Index | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Enterprise Audit and Logging Dashboards |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Entity Normalization |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Entity Relationship Graph |  | | | ![check](/img/reuse/check.png) |
-| Entity Timeline |  |  | | ![check](/img/reuse/check.png) |
-| Field Extraction | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Geo IP Lookups | | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Global Intelligence Service apps |  |  | | ![check](/img/reuse/check.png) |
-| Historical and Live Streaming Dashboards | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Ingest Budgets |  | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Insight Global Confidence Scores |  |  | | ![check](/img/reuse/check.png) |
-| Insight Rules Engine (including 900+ out-of-the-box rules) |  |  | | ![check](/img/reuse/check.png) |
-| Insight Trainer |  |  | | ![check](/img/reuse/check.png) |
-| Kubernetes Observability | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Live Tail for Streaming Logs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| LogReduce©, LogCompare, and LogExplain | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Log Data Continuous Volume | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
-| Log Data Frequent Tier Volume | | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  |
-| Log Data storage  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Log Search and Visualizations | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Log Search API |  |  | | ![check](/img/reuse/check.png) |
-| Lookup Tables |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Management APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Metrics | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Metrics based SLOs |  | | |![check](/img/reuse/check.png) |
-| Metrics data retention | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Metrics Predict Operators |  |  | |![check](/img/reuse/check.png) |
-| Metrics volume | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| MITRE ATT&CK Coverage Explorer |  | | | ![check](/img/reuse/check.png) |
-| Monitors | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Multi-Cloud Observability (AWS, Azure GCP) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| OTel Data Onboarding | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| OTel for K8s Logs and Events |  |  | |![check](/img/reuse/check.png) |
-| Partitions | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| PCI Compliance Apps and Dashboards for Audit Readiness | | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Playbooks (including complete Sumo Logic playbook catalog) |  |  | | ![check](/img/reuse/check.png) |
-| Predictive Analytics and Outlier Detection | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Progressive Automation |  |  | | ![check](/img/reuse/check.png) |
-| Real User Monitoring (RUM) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Reliability Management (SLIs/SLOs) |  | | |![check](/img/reuse/check.png) |
-| Risk Assessment |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Scheduled Alert Muting | |  | |![check](/img/reuse/check.png) |
-| Scheduled Views | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Service Maps |  | ![check](/img/reuse/check.png) | |![check](/img/reuse/check.png) |
-| Single sign-on (SSO) with SAML | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Software Development Optimization | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| Sumo Logic Apps | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Supervised Active Intelligence |  |  | | ![check](/img/reuse/check.png) |
-| Support | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Traces | ![check](/img/reuse/check.png)<br/>Up to 1.5GB per day* | ![check](/img/reuse/check.png)<br/>Up to 5GB per day | ![check](/img/reuse/check.png)<br/>5GB per day| ![check](/img/reuse/check.png)<br/>Up to 5GB per day |
-| Usage Management - Advanced |  |  | | ![check](/img/reuse/check.png) |
-| Usage Management - Basic | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | | ![check](/img/reuse/check.png) |
-| User and Role APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | <br/>Up to 5GB per day |
-| War Room | |  | | ![check](/img/reuse/check.png) |
+| Collector Management API | &#10003; | &#10003; | &#10003; | &#10003; |
+| Compliance and Audit Logging |  | &#10003; | | &#10003; |
+| Customizable Dashboards | &#10003; | &#10003; | &#10003; | &#10003; |
+| Data Forwarding | | &#10003; | &#10003; | &#10003; |
+| Data Volume Index | | &#10003; | &#10003; | &#10003; |
+| Enterprise Audit and Logging Dashboards |  | &#10003; | | &#10003; |
+| Entity Normalization |  | &#10003; | |&#10003; |
+| Entity Relationship Graph |  | | | &#10003; |
+| Entity Timeline |  |  | | &#10003; |
+| Field Extraction | &#10003; | &#10003; | &#10003; | &#10003; |
+| Geo IP Lookups | | &#10003; | | &#10003; |
+| Global Intelligence Service apps |  |  | | &#10003; |
+| Historical and Live Streaming Dashboards | &#10003; | &#10003; | &#10003; | &#10003; |
+| Ingest Budgets |  | &#10003; | | &#10003; |
+| Insight Global Confidence Scores |  |  | | &#10003; |
+| Insight Rules Engine (including 900+ out-of-the-box rules) |  |  | | &#10003; |
+| Insight Trainer |  |  | | &#10003; |
+| Kubernetes Observability | &#10003; | &#10003; | &#10003; | &#10003; |
+| Live Tail for Streaming Logs | &#10003; | &#10003; | &#10003; | &#10003; |
+| LogReduce©, LogCompare, and LogExplain | &#10003; | &#10003; | &#10003; | &#10003; |
+| Log Data Continuous Volume | &#10003; | &#10003; | &#10003; |  |
+| Log Data Frequent Tier Volume | | &#10003; | &#10003; |  |
+| Log Data storage  | &#10003; | &#10003; | &#10003; | &#10003; |
+| Log Search and Visualizations | &#10003; | &#10003; | | &#10003; |
+| Log Search API |  |  | | &#10003; |
+| Lookup Tables |  | &#10003; | &#10003; | &#10003; |
+| Management APIs | &#10003; | &#10003; | &#10003; | &#10003; |
+| Metrics | &#10003; | &#10003; | &#10003; | &#10003; |
+| Metrics based SLOs |  | | |&#10003; |
+| Metrics data retention | &#10003; | &#10003; | &#10003; | &#10003; |
+| Metrics Predict Operators |  |  | |&#10003; |
+| Metrics volume | &#10003; | &#10003; | &#10003; | &#10003; |
+| MITRE ATT&CK Coverage Explorer |  | | | &#10003; |
+| Monitors | &#10003; | &#10003; | &#10003; | &#10003; |
+| Multi-Cloud Observability (AWS, Azure GCP) | &#10003; | &#10003; | &#10003; | &#10003; |
+| OTel Data Onboarding | &#10003; | &#10003; | &#10003; | &#10003; |
+| OTel for K8s Logs and Events |  |  | |&#10003; |
+| Partitions | &#10003; | &#10003; | &#10003; | &#10003; |
+| PCI Compliance Apps and Dashboards for Audit Readiness | | &#10003; | | &#10003; |
+| Playbooks (including complete Sumo Logic playbook catalog) |  |  | | &#10003; |
+| Predictive Analytics and Outlier Detection | &#10003; | &#10003; | &#10003; | &#10003; |
+| Progressive Automation |  |  | | &#10003; |
+| Real User Monitoring (RUM) |  | &#10003; | &#10003; |&#10003; |
+| Reliability Management (SLIs/SLOs) |  | | |&#10003; |
+| Risk Assessment |  | &#10003; | |&#10003; |
+| Scheduled Alert Muting | |  | |&#10003; |
+| Scheduled Views | &#10003; | &#10003; | &#10003; | &#10003; |
+| Service Maps |  | &#10003; | |&#10003; |
+| Single sign-on (SSO) with SAML | &#10003; | &#10003; | &#10003; | &#10003; |
+| Software Development Optimization | &#10003; | &#10003; | &#10003; | &#10003; |
+| Sumo Logic Apps | &#10003; | &#10003; | &#10003; | &#10003; |
+| Support | &#10003; | &#10003; | &#10003; | &#10003; |
+| Threat Intelligence |  | &#10003; | &#10003; | &#10003; |
+| Traces | &#10003;<br/>Up to 1.5GB per day* | &#10003;<br/>Up to 5GB per day | &#10003;<br/>5GB per day| &#10003;<br/>Up to 5GB per day |
+| Scan Budget |  |  | | &#10003; |
+| Organization Usage Limits | &#10003; | &#10003; | &#10003; | &#10003; |
+| User and Role APIs | &#10003; | &#10003; | &#10003; | <br/>Up to 5GB per day |
+| War Room | |  | | &#10003; |
 
 \* Contact your account manager to customize your account to meet your organization's needs.
 
@@ -151,8 +146,8 @@ The following table provides a summary list of key features by Flex package acco
 The **Account Overview** tab provides a detailed view of your Sumo Logic account, including organization details, subscription type, contract periods, credit usage, live dashboards, and real-time alerts. Account owners can also reassign the Account Owner role from this page.
 
 To access the **Account Overview** tab:  
-* **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. Navigate to **Administration > Account > Account Overview**.  
 * **[New UI](/docs/get-started/sumo-logic-ui)**. Navigate to **Administration > Account > Account Overview**, or select **Account Overview** from the **Go To...** menu.
+* **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. Navigate to **Administration > Account > Account Overview**.  
 
 To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities/#data-management) capability.
 
@@ -197,7 +192,7 @@ This panel provides analytics to monitor and compare usage against contract capa
    * **Tracing Ingest**. Credits used for tracing.  
    * **Cloud SIEM Ingest**. Credits used for logs in Cloud SIEM.  
    * **Metrics Ingest**. Credits used for metrics.  
-   * **Promotional Categories**. See [Promotional Credits](#promotional-credits).  
+   * **Promotional Categories**. See [Promotional credits](#promotional-credits).  
 * **Usage % Change**. Highlights changes in usage over selected time intervals.  
 * Track credit consumption against the plan’s baseline usage.  
 * Drill into specific time intervals (day, week, or month) for granular insights.  
@@ -205,13 +200,13 @@ This panel provides analytics to monitor and compare usage against contract capa
 * Hover over charts for detailed information.  
 * Download usage reports or credit usage data as CSV files.  
 
-#### Promotional Credits  
+#### Promotional credits  
 
-There are times when Sumo Logic promotes services and consumables through the provision of Promotional Credits. Promotional Credits are non-transferrable and auto-expire at the end of the promotion period. In other words, if the Promotional Credits are not used within the promotion period, they do not carry over. They are of a "use it or lose it" nature. Promotional Credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional Credit consumption is calculated separately from the credits you paid for in your contract period. Promotional Credits are utilized as the priority credit for the specified credit variable.
+There are times when Sumo Logic promotes services and consumables through the provision of promotional credits. Promotional credits are non-transferrable and auto-expire at the end of the promotion period. In other words, if the promotional credits are not used within the promotion period, they do not carry over. They are of a "use it or lose it" nature. Promotional credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional credit consumption is calculated separately from the credits you paid for in your contract period. Promotional credits are utilized as the priority credit for the specified credit variable.
 
-For example: If you have 10,000 Promotional Credits for "Metrics" in a 100,000-credit contract, the first 10,000 credits for Metrics will use Promotional Credits before switching to paid credits.  
+For example: If you have 10,000 promotional credits for "Metrics" in a 100,000-credit contract, the first 10,000 credits for Metrics will use promotional credits before switching to paid credits.  
 
-To filter and focus on Promotional Credits:  
+To filter and focus on promotional credits:  
 * Deselect all other usage categories.  
 * Refine further by deselecting specific credit types (e.g., Continuous Ingest, Storage).  
 

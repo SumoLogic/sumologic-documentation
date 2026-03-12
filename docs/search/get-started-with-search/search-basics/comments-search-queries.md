@@ -23,7 +23,7 @@ Comments can be useful for the following use cases:
 When you comment out a line of your search query, the user interface displays the commented text as grey and italic. See the following
 example of commenting out a single line in a query:
 
-![one line comment.png](/img/search/get-started-search/search-basics/comments-search-queries/one-line-comment.png)
+<img src={useBaseUrl('img/search/get-started-search/search-basics/comments-search-queries/one-line-comment.png')} alt="One line comment" style={{border: '1px solid gray'}} width="800" />
 
 If the query is valid without the line that is commented out, it will still run when you click **Start**.
 
@@ -31,7 +31,7 @@ The `where` statement is commented out in the above statement.
 
 The following is a multi-line comment.
 
-![multi line comment.png](/img/search/get-started-search/search-basics/comments-search-queries/multi-line-comment.png)
+<img src={useBaseUrl('img/search/get-started-search/search-basics/comments-search-queries/multi-line-comment.png')} alt="Multi line comment" style={{border: '1px solid gray'}} width="800" />
 
 ## Pro Tip: Leverage pre-built Sumo Logic app queries
 

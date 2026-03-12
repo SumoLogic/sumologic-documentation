@@ -1,0 +1,15 @@
+{
+    "api.version": "v1",
+    "source": {
+      "config": {
+            "name": "Varonis",
+            "domainURL": "https://partners1.xxx.varonis.io",
+            "apiKey": "vkey1xxxTQggH",
+            "pollingIntervalMin": "5m"
+  },
+      "schemaRef": {
+        "type": "Varonis"
+      },
+      "sourceType": "Universal"
+   }
+}  

@@ -56,7 +56,7 @@ Here are some examples where index aliasing is used in wildcard queries.
 
 ## Run a search against a partition from the Partitions page
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
 1. Do one of the following:
     * Click the **Search Icon** to the right of the partition name. This launches a search on just the data indexed in the partition.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/partitions-page-search-icon.png')} style={{border:'1px solid gray'}} alt="icon" />    
     * Select a partition from the table and click the **Search Icon** to the right of the routing expression. This launches a search that runs the expression against the partition, as well as any other logs that match the query. This means that you can capture search results on all data, not just the data indexed in the partition.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/edit-partition-pane-search-icon.png')} style={{border:'1px solid gray'}} alt="edit-partition-pane-search-icon" width="300"/>    
@@ -65,7 +65,7 @@ Here are some examples where index aliasing is used in wildcard queries.
 
 - If you have the [Data Tiers](/docs/manage/partitions/data-tiers/) feature, see [Searching Data Tiers](/docs/manage/partitions/data-tiers/searching-data-tiers/) for information about how to search partitions by Data Tier.
 
-- If you have the Flex feature, see [Searching Flex](/docs/manage/partitions/flex/) for information about how to search partitions.
+- If you have the Flex feature, see [Flex Pricing](/docs/manage/partitions/flex/) for information about how to search partitions.
 
 ## Why did I get a message to run a search against a partition?
 

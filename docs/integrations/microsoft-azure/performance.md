@@ -135,7 +135,7 @@ To collect logs for the Windows Performance App, do the following:
 
 To complete the configuration, you'll need to edit each Windows Performance Source (you are using to collect logs) to add a custom query.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 2. Find the Collector and the Windows Performance Source.
 3. For the **Source**, click **Edit**.
 4. Under **Perfmon Queries** select the check boxes for these queries:

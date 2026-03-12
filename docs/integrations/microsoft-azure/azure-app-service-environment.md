@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 An [Azure App Service Environment](https://learn.microsoft.com/en-us/azure/app-service/environment/overview) is an Azure App Service feature that provides a fully isolated and dedicated environment for running App Service apps securely at high scale. This integration helps in monitoring your environments operational events such as upgrades, scaling, and suspensions.
 
-The below instructions applies to App Service Environment v3.
+The instructions below apply to App Service Environment v3.
 
 ## Log types
 
@@ -28,6 +28,10 @@ You must explicitly enable diagnostic settings for each Azure App Service Enviro
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AppServiceEnvironment/Logs`.
 
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+
 ### Configure logs collection
 
 #### Diagnostic logs
@@ -44,7 +48,9 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 #### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). If you are already collecting activity logs for a subscription, do not perform this step.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
+
+<ActivityLogs/>
 
 ## Installing the Azure App Service Environment app
 

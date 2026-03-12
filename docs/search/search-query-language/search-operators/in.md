@@ -4,6 +4,8 @@ title: in Search Operator
 sidebar_label: in
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `in` operator returns a Boolean value: true if the specified property is in the specified object, or false if it is not.
 
 ## Syntax
@@ -30,4 +32,4 @@ _sourceCategory=Apache/Access
 
 would return results similar to:
 
-![in](/img/search/searchquerylanguage/search-operators/in.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/in.png')} alt="in search operator" style={{border: '1px solid gray'}} width="800" />

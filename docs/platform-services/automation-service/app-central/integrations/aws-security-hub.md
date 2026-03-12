@@ -7,14 +7,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.3  
-Updated: Feb 28, 2024***
+***Version: 1.4
+Updated: Aug 28, 2025***
 
 Interact with AWS Security Hub through Insights and Findings.
 
 ## Actions
 
-* **Batch Import Finding** (*Enrichment*) - Import a batch of findings.
+* **Import Single Finding** (*Enrichment*) - Import a single finding.
 * **Create Insight** (*Containment*) - Create a new insight with the specified information.
 * **Delete Insight** (*Containment*) - Delete the specified insight.
 * **Get Findings** (*Enrichment*) - Get findings matching the specified query.
@@ -61,3 +61,7 @@ For information about AWS Security Hub, see [AWS Security Hub documentation](htt
 * March 10, 2022 - Logo
 * June 19, 2023 (v1.2) - Updated the integration with Environmental Variables
 * February 28, 2023 (v1.3) - Updated code for compatibility with Python 3.12
+* August 28, 2025 (v1.4)
+  * Renamed action `Batch Import Finding` to `Import Single Finding`.
+  * Renamed action `List Enable Products` to `List Enabled Products`.
+  * Updated hints for all actions.

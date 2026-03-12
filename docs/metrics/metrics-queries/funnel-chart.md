@@ -11,12 +11,12 @@ A funnel chart visualizes categorical data. It’s useful for visualizing the st
 
 ## Create a funnel chart
 
-1. Enter and run a metrics query in the Metrics Explorer.
+1. [Create a metrics query](/docs/metrics/metrics-queries/metrics-explorer/#create-a-metric-query) in the Metrics Search.
    :::note
-   Don't include the `outlier` operator in your query, as it isn't supported in this chart type.
+   Don't include the [`outlier`](/docs/metrics/metrics-operators/outlier/) operator in your query, as it isn't supported in this chart type.
 1. Click the **Chart** tab.
 1. Under **Panel Type**, click **Categorical**.
-1. Under **Visual Settings**, choose **Funnel** in the **Chart Type pulldown**.
+1. Under **Visual Settings**, choose **Funnel** in the **Chart Type** pulldown.
 1. **Statistic Type**. Use the pulldown to select a statistic type: *Average*, *Count*, *Minimum*, *Sum*, or *Latest*.
 1. **Color Palette**. Choose an alternative color palette, if desired.
 1. **Fill Opacity**. You can adjust the opacity of the categories in the funnel chart by selecting or entering a decimal value greater than 0, and no greater than 1.
@@ -26,10 +26,10 @@ A funnel chart visualizes categorical data. It’s useful for visualizing the st
 
 ## Example funnel chart
 
-<img src={useBaseUrl('img/metrics/funnel-chart.png')} alt="funnel-chart.png"/>
+<img src={useBaseUrl('img/metrics/funnel-chart.png')} alt="funnel-chart.png" style={{border: '1px solid gray'}} width="800" />
 
-**Notes**
-
+:::note
 * **Funnel width**. The width of the funnel reflects the number of datapoints at each stage of the process.
 * **Category label**. The label for each category is the combination of the metric value, the percentage of the time series that fall into the category, and the field by which the time series are aggregated.
-**Sorting**. By default, the categories in the funnel chart are not sorted. You can sort them by the value of the metric or the label of the metric, either in ascending or descending order.
+* **Sorting**. By default, the categories in the funnel chart are not sorted. You can sort them by the value of the metric or the label of the metric, either in ascending or descending order.
+:::

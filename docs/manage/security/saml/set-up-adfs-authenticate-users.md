@@ -14,7 +14,7 @@ Have the values available that you configured in Sumo Logic. See [Set Up SAML fo
 
 To configure ADFS to authenticate Sumo Logic users, perform the following tasks. 
 
-## Add Relying Party Trust
+## Add relying party trust
 
 The relying party trust configuration is required for the connection between Sumo Logic and ADFS.
 
@@ -34,7 +34,7 @@ The relying party trust configuration is required for the connection between Sum
 
 After creating the relying party trust, create the claim rules and update the relying party trust as needed. The editing interface opens automatically when you complete the **Relying Party Trust** wizard.
 
-The claim rule requires an Email Attribute in the assertion, either the SAML Subject or another SAML attribute per the SAML configuration. The value of the Email Attribute must be a valid email address. It is used to uniquely identify the user in the organization.
+The claim rule requires an email attribute in the assertion, either the SAML subject or another SAML attribute per the SAML configuration. The value of the email attribute must be a valid email address. It is used to uniquely identify the user in the organization.
 
 Sumo Logic only validates that the email address format is valid, not that the email address actually exists during login. Using a nonexistent email address will work, but will reduce the ability of the user to receive some system notifications and access third-party services that require the user to verify email address ownership.
 
@@ -46,7 +46,7 @@ To create claim rules:
     1. Enter a name for the claim rule.
     1. Select **Active Directory** as the attribute store.
     1. Select **E-Mail Addresses** for both the LDAP attribute and outgoing claim type.
-    1. If you set up on-demand provisioning when configuring Sumo SAML, you should also map the LDAP attributes **Given Name** and **Surname.  Select** "Given Name" and "Surname" from the dropdown and then ADFS will correctly send claim types.
+    1. If you set up on-demand provisioning when configuring Sumo Logic SAML, you should also map the LDAP attributes **Given Name** and **Surname.  Select** "Given Name" and "Surname" from the dropdown and then ADFS will correctly send claim types.
     1. Select Click **OK** to save the rule. <br/><img src={useBaseUrl('img/security/ldap4a.png')} alt="Configure Claim Rule window" style={{border: '1px solid gray'}} width="700" />
 1. Click **Add Rule** to create another rule. Select **Transform an Incoming Claim** as the template and click **Next**. <br/><img src={useBaseUrl('img/security/claim04.png')} alt="Transform an Incoming Claim selection" style={{border: '1px solid gray'}} width="700" />
 1. Enter a name for the claim rule, and specify the following settings:
@@ -63,7 +63,7 @@ There are a few relying party trust settings that aren’t accessible through th
 1. To specify these settings, select the relying party trust entry in the ADFS Management application and select **Actions > Properties**.
 
 1. On the **Identifiers** tab, enter a display name. Enter your relying party identifier and click **Add**. <br/><img src={useBaseUrl('img/security/trust01.png')} alt="Identifiers tab" style={{border: '1px solid gray'}} width="400" />
-1. On the **Endpoints** tab, add the **SAML Assertion Consumer Endpoint URL** to point to the Assertion Consumer URL that the Sumo Logic SAML configuration specifies. For example: `https://service.us2.sumologic.com/sumo/saml/consume/1234567890` <br/><img src={useBaseUrl('img/security/SumoEndpoints-4.png')} alt="Endpoints tab" style={{border: '1px solid gray'}} width="400" />
+1. On the **Endpoints** tab, add the **SAML Assertion Consumer Endpoint URL** to point to the assertion consumer URL that the Sumo Logic SAML configuration specifies. For example: `https://service.us2.sumologic.com/sumo/saml/consume/1234567890` <br/><img src={useBaseUrl('img/security/SumoEndpoints-4.png')} alt="Endpoints tab" style={{border: '1px solid gray'}} width="400" />
 1. The new endpoint appears on the **Endpoints** tab. <br/><img src={useBaseUrl('img/security/SumoEndpoints-4.png')} alt="New endpoint on the Endpoints tab" style={{border: '1px solid gray'}} width="400" />
 1. On the **Endpoints** tab, click to add a new endpoint.
    * **Endpoint type**. Select "SAML Logout".
@@ -82,6 +82,6 @@ You can now test the ADFS SSO implementation by attempting to log in
 from the login URL. If you have any trouble, return to Sumo Logic and
 perform the following steps:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. 
 1. Select the **Debug Mode** check box and click **Save**.
 1. Test again.

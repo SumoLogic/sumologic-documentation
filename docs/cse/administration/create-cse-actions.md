@@ -30,7 +30,7 @@ You can use Cloud SIEM actions to issue a notification to another service when c
 
 An action can be configured for insight-related activity as described below in [Insight actions](#insight-actions). You can also configure an action to be run when a rule is automatically disabled, as described below in [Rule actions](#rule-actions).
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Watch this micro lesson to learn how to configure an action.
 
@@ -75,7 +75,7 @@ The notification sent by a rule action contains the name of the rule and the re
 
 ## Create an action
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Actions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Actions**. You can also click the **Go To...** menu at the top of the screen and select **Actions**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Actions**. You can also click the **Go To...** menu at the top of the screen and select **Actions**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Integrations** select **Actions**. 
 1. On the **Actions** tab, click **+ Add Action**.
 1. The **Add Action** popup appears. <br/><img src={useBaseUrl('img/cse/create-action-empty.png')} alt="Create action dialog" style={{border: '1px solid gray'}} width="400" />
 1. **Name**. Enter a name that communicates what the action does.

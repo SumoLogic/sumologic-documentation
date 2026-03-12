@@ -2,7 +2,7 @@
 id: troubleshoot-parsers
 title: Troubleshoot Parsers
 sidebar_label: Parsers
-description: Learn how to troubleshoot problems with log parsers.
+description: Get troubleshooting tips for resolving issues with Sumo Logic log parsers used in Cloud SIEM signal and record processing.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

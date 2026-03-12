@@ -39,33 +39,24 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the YAML required for Windows collection. Below are the inputs required for configuration:
+import WindowsConfigureSourceTemplate from '../../../../../reuse/send-data/windows-configure-source-template.md';
 
-- **Name**. Name of the source template.
-- **Description**. Description for the source template.
-
-#### Logs collection
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, Sumo Logic tags `_sourceCategory` with the value `otel/windows`.
-- **Windows Event**. In this section you can select choose among the most widely used Windows event channel for which Windows event log collection will be enabled. You can also provide **Custom Event Channels** providing any customer event channel for which event logs are to be collected.
-- **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse).
-
-#### Metrics collection
-- **Metrics**. Select the metric scrappers you want to enable. By default, metric collection for CPU, memory, disk, load, file system, network and paging are enabled, and process metric collection is disabled.
-
-##### Enable process metric collection (optional)
-
-import ProcMetrics from '../../../../../reuse/apps/opentelemetry/process-metric-collection.md';
-
-<ProcMetrics/>
-
-- **Scan Interval**. The frequency at which the source is scanned.
-- **Processing Rules**.  You can add processing rules for logs/metrics collected. To learn more, refer to [Processing Rules](/docs/send-data/opentelemetry-collector/remote-management/processing-rules/). For masking windows event logs,  refer to [Mask Rules for Windows Source Template](/docs/send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules-windows).
+<WindowsConfigureSourceTemplate/>
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 
 import DataConfiguration from '../../../../../reuse/apps/opentelemetry/data-configuration.md';
 
 <DataConfiguration/>
+
+:::note
+If the agent crashes with the following error log:
+
+`failed to start service: cannot start pipelines: failed to start "windowseventlog/(channel_name)" receiver: start stanza: failed to open local subscription, error: failed to subscribe to (channel_name) channel: The specified channel could not be found.;`
+
+It means that the specified event channel name in the custom event channel list does not exist on the remote host where the source template is being pushed.
+To resolve this issue, you can either remove the non-existent channel name from the source template (ST) or upgrade the Sumo Logic OpenTelemetry Collector agent to version 0.130.1 or later and the ST to version 8.0.0 or later.
+:::
 
 :::info
 Refer to the [changelog](/docs/send-data/opentelemetry-collector/remote-management/source-templates/windows/changelog/) for information on periodic updates to this source template.

@@ -4,6 +4,8 @@ title: predict Search Operator
 sidebar_label: predict
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Uses a series of time-stamped numerical values to `predict` future values. The predict operator can be useful in the following cases:
 
 * As an early warning system, alerting you when a threshold is about to be reached.
@@ -15,7 +17,7 @@ For example, you'd use `predict` to take your current disk space capacity number
 The `predict` operator supports two predictive models:
 
 * Auto-regressive. Uses an advanced auto-regressive (AR) algorithm to learn patterns in the data. It automatically detects the cyclical patterns in the data and uses the cycles in its prediction.   
-* Linear regression. Uses existing data over the query time range as a training set to generate a [linear model](http://en.wikipedia.org/wiki/Linear_regression), and then extrapolates future values using this model.
+* Linear regression. Uses existing data over the query time range as a training set to generate a [linear model](https://en.wikipedia.org/wiki/Linear_regression), and then extrapolates future values using this model.
 
 :::note
 If a missing data point is encountered in the generated time series, Sumo uses a zero value and issues a warning to alert you. If you'd like to use customized values, you can do so with the [fillmissing](fillmissing.md) operator.   
@@ -107,11 +109,11 @@ _sourceCategory=Labs/Apache/Access status_code=404 | timeslice 1m | count(status
 
 The query returns an aggregation table with columns for `error_count`, `error_count_predicted`, and `error_count_error`.
 
-![agg-table-predict-linear.png](/img/search/searchquerylanguage/search-operators/agg-table-predict-linear.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/agg-table-predict-linear.png')} alt="Agg table predict linear" style={{border: '1px solid gray'}} width="600" />
 
 From here, you can select the **Line Chart** icon, and automatically create a Combo Chart that represents the `error_count_error` as a column chart, and the `error_count` and `error_count_predicted` mapped on top of that with separate lines. Note that the `(absolute value)_count_error` series is toggled off by default. Click it in the legend to display the column chart.
 
-![combo-chart-predict-linear.png](/img/search/searchquerylanguage/search-operators/combo-chart-predict-linear.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/combo-chart-predict-linear.png')} alt="Combo chart predict linear" style={{border: '1px solid gray'}} width="800" />
 
 ### predict using auto-regressive model
 
@@ -123,12 +125,12 @@ _sourceCategory=Labs/Apache/Access status_code=404 | timeslice 1m | count(status
 
 The query returns an aggregation table with columns for `error_count`, `error_count_predicted`, `error_count_linear`, and `_error_count_error`.
 
-![agg-table-predict-ar.png](/img/search/searchquerylanguage/search-operators/agg-table-predict-ar.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/agg-table-predict-ar.png')} alt="Agg table predict" style={{border: '1px solid gray'}} width="800" />
 
 From here, you can select the **Line Chart** icon, and automatically create a Combo Chart that represents the `error_count_error` as a column chart, and the `error_count` and `error_count_predicted` mapped on top of that with separate lines. Note that the `(absolute value)_count_error` series is toggled off by default. Click it in the legend to display the column chart.
 
-![combo-chart-predict-ar.png](/img/search/searchquerylanguage/search-operators/combo-chart-predict-ar.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/combo-chart-predict-ar.png')} alt="Combo chart predict ar" style={{border: '1px solid gray'}} width="800" />
 
 Note that, if desired, you can display the `_count_linear` series, to see the value predicted by the simple linear regression model by clicking it in the legend.
 
-![combo-chart-predict-ar-with-linear.png](/img/search/searchquerylanguage/search-operators/combo-chart-predict-ar-with-linear.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/combo-chart-predict-ar-with-linear.png')} alt="Combo chart predict ar with linear" style={{border: '1px solid gray'}} width="800" />

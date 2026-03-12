@@ -4,7 +4,9 @@ title: Log and Tracing Data Volume Index
 description: The Data Volume Index is populated with a set of log messages that contain information on how much data (by bytes and messages count) your account is ingesting.
 ---
 
-The data volume index is populated with a set of log messages every five minutes. The messages contain information on how much data (by bytes and messages count) your account is ingesting. Your data volume is calculated based on when your logs were received, in Sumo this timestamp is stored with the `_receiptTime` [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field. Each log message includes information based on one of the following index source categories.
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+The Data Volume Index is populated with a set of log messages every five minutes. The messages contain information on how much data (by bytes and messages count) your account is ingesting. Your data volume is calculated based on when your logs were received. In Sumo Logic this timestamp is stored with the `_receiptTime` [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field. Each log message includes information based on one of the following index source categories.
 
 | Index Log Type | Index Source Category |
 |:--------------------|:--------------------------------|
@@ -22,15 +24,15 @@ The data volume index is populated with a set of log messages every five minutes
 | View               | `view_volume`                    |
 | SourceCategory     | `view_and_extractedAndCollectedFieldSize_volume`          |
 
-You can query the data volume index just like any other message using the Sumo Logic search page. To see the data created within the data volume index, when you search, specify the `_index` metadata field with a value of `sumologic_volume`. For more information, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
+You can query the data volume index just like any other message using the Sumo Logic search page. To see the data created within the data volume index, when you search, specify the `_index` metadata field with a value of `sumologic_volume`. For more information, see [Built-in Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
 
-## Sumo Logic App for Data Volume
+## Sumo Logic app for data volume
 
-Sumo Logic provides an application that utilizes the data volume index to see your account's volume usage as a glance. For details, see [Data Volume app](/docs/integrations/sumo-apps/data-volume).
+Sumo Logic provides an application that utilizes the data volume index to see your account's volume usage as a glance. For details, see [Sumo Logic Data Volume App](/docs/integrations/sumo-apps/data-volume).
 
-## Known Issue
+## Known issue
 
-There is a known issue when searching against `_sourceCategory` values where scheduled views show up blank. This causes results to be returned with numbers as the _sourceCategory values.
+There is a known issue when searching against `_sourceCategory` values where scheduled views show up blank. This causes results to be returned with numbers as the `_sourceCategory` values.
 
 For example, you would see:
 
@@ -39,7 +41,7 @@ For example, you would see:
 "count":353325
 ```
 
-In this case, the _sourceCategory returns `2862`, which is the actual size of the default index from the scheduled view.
+In this case, the `_sourceCategory` returns `2862`, which is the actual size of the default index from the scheduled view.
 
 ## Query the Data Volume Index
 
@@ -62,7 +64,7 @@ _index=sumologic_volume AND _sourceCategory=collector_and_tier_volume
 If the data volume index is not enabled, a search will not produce any results.
 :::
 
-## Data Volume Index Message Format
+## Data Volume Index message format
 
 The data volume index messages are JSON formatted messages that contain parent objects for each source data point, and child objects that detail the message size and count for each parent.
 
@@ -82,7 +84,7 @@ For example, a single message for the "Collector" volume data may look similar t
 
 ## Examples
 
-**Volume for Each Category**
+### Volume for each category
 
 This example query will return the volume for each Source Category by
 data tier.
@@ -97,11 +99,11 @@ _index=sumologic_volume _sourceCategory = "sourcecategory_and_tier_volume"
 
 would produce results such as:
 
-![clipboard_e08593bedbf920dea82726b15964e56f6.png](/img/manage/ingestion-volume/volume-each-category.png)
+<img src={useBaseUrl('img/manage/ingestion-volume/volume-each-category.png')} alt="Volume for each category" style={{border: '1px solid gray'}} width="500" />
 
-**Volume for Each Collector by Tier**
+### Volume for each collector by tier
 
-This example query will return the volume for each Collector.
+This example query will return the volume for each collector.
 
 ```sql
 _index=sumologic_volume _sourceCategory = "collector_and_tier_volume"
@@ -111,9 +113,9 @@ _index=sumologic_volume _sourceCategory = "collector_and_tier_volume"
 | sum(gbytes) as gbytes by collector,dataTier
 ```
 
-**Volume for a Specific Source**
+### Volume for a specific source
 
-The following query returns the message volume for a specific Source. The Source name and Data tier can be supplied within a JSON operation to get the data for that Source.
+The following query returns the message volume for a specific source. The source name and data tier can be supplied within a JSON operation to get the data for that source.
 
 ```sql
 _index=sumologic_volume _sourceCategory = "source_and_tier_volume"
@@ -125,9 +127,9 @@ _index=sumologic_volume _sourceCategory = "source_and_tier_volume"
 | fields gbytes
 ```
 
-**Volume for a Specific Collector**
+### Volume for a specific collector
 
-The following query returns the message volume for a specific Collector. The Collector name and Data tier can be supplied within a JSON operation to get the data for that Collector.
+The following query returns the message volume for a specific collector. The collector name and data tier can be supplied within a JSON operation to get the data for that collector.
 
 ```sql
 _index=sumologic_volume _sourceCategory = "collector_and_tier_volume"
@@ -139,29 +141,29 @@ _index=sumologic_volume _sourceCategory = "collector_and_tier_volume"
 | fields gbytes
 ```
 
-**Volume for Each Source Host**
+### Volume for each source host
 
-The following query returns the message volume for each Source Host. The sourcehost name and data tier can be supplied within a JSON operation to get the data for that sourcehost.
+The following query returns the message volume for each source host. The source host name and data tier can be supplied within a JSON operation to get the data for that source host.
 
 ```sql
 _index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as sourcehost, dataTier, bytes, count
-| where sourcehost="<<sourcejost_json>>" and dataTier="<<datatier_json>>"
+| where sourcehost="<<sourcehost_json>>" and dataTier="<<datatier_json>>"
 | bytes/1Gi as gbytes
 | sum(gbytes) as gbytes by sourcehost
 | fields gbytes
 ```
 
-**Volume for the Default Index**
+### Volume for the default index
 
-The following query returns the message volume for the Default Index. The data tier can be supplied with a JSON operation to filter results of that tier.
+The following query returns the message volume for the default index. The data tier can be supplied with a JSON operation to filter results of that tier.
 
 ```sql
 _index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as sourcehost, dataTier, bytes, count
-| where sourcehost="<<sourcejost_json>>" and dataTier="<<datatier_json>>"
+| where sourcehost="<<sourcehost_json>>" and dataTier="<<datatier_json>>"
 | bytes/1Gi as gbytes
 | sum(gbytes) as gbytes by sourcehost
 | fields gbytes
@@ -171,9 +173,7 @@ _index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume"
 
 Sumo Logic populates the Tracing Data Volume Index with a set of JSON-formatted messages every five minutes. The messages contain the volume of tracing billed bytes and span count of Tracing data that your account is ingesting. 
 
-You can query the index to:
-
-* Get the total tracing data volume (billed bytes/spans count) ingested by collector, source, source name, source category, or source host.
+You can query the index to get the total tracing data volume (billed bytes/spans count) ingested by collector, source, source name, source category, or source host.
 
 ### Message format
 
@@ -223,7 +223,7 @@ _index=sumologic_volume _sourceCategory="sourcecategory_tracing_volume"
 
 This query produces results like these: 
 
-![tracing-volume-source-category](/img/manage/ingestion-volume/tracing-volume-source-category.png)
+<img src={useBaseUrl('img/manage/ingestion-volume/tracing-volume-source-category.png')} alt="Tracing volume source category" style={{border: '1px solid gray'}} width="400" />
 
 #### Tracing volume by collector
 
@@ -238,11 +238,11 @@ _index=sumologic_volume _sourceCategory="collector_tracing_volume"
 
 This query produces results like these:
 
-![image](/img/manage/ingestion-volume/tracing-volume-source-category.png)
+<img src={useBaseUrl('img/manage/ingestion-volume/tracing-volume-source-category.png')} alt="Tracing volume by collector" style={{border: '1px solid gray'}} width="400" />
 
 #### Tracing volume for a specific collector
 
-This query returns the tracing volume for a specific Collector. The Collector name can be supplied within a JSON operation to get the data for that Collector.
+This query returns the tracing volume for a specific collector. The collector name can be supplied within a JSON operation to get the data for that collector.
 
 ```sql
 _index=sumologic_volume _sourceCategory="collector_tracing_volume"
@@ -255,7 +255,7 @@ _index=sumologic_volume _sourceCategory="collector_tracing_volume"
 
 #### Query for tracing ingestion outliers
 
-This query runs against the tracing volume index and uses the [*outlier*](/docs/search/search-query-language/search-operators/outlier) operator to find timeslices in which your tracing ingestion in billed bytes or span count was greater than the running average by a statistically significant amount.
+This query runs against the tracing volume index and uses the [outlier](/docs/search/search-query-language/search-operators/outlier) operator to find timeslices in which your tracing ingestion in billed bytes or span count was greater than the running average by a statistically significant amount.
 
 ```sql
 _index=sumologic_volume _sourceCategory=sourcecategory_tracing_volume
@@ -270,7 +270,7 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 #### Query for tracing ingestion prediction 
 
-This query runs against the tracing volume index and uses the [*predict*](/docs/search/search-query-language/search-operators/predict) operator to predict future values.
+This query runs against the tracing volume index and uses the [predict](/docs/search/search-query-language/search-operators/predict) operator to predict future values.
 
 ```sql
 _index=sumologic_volume _sourceCategory=sourcecategory_tracing_volume
@@ -286,4 +286,4 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 ### Index retention period
 
-By default, the retention period of the Data Volume index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_volume`. For more information, see [Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).
+By default, the retention period of the Data Volume index is the same as the retention period of your default partition. You can change the retention period by editing the partition that contains the index, `sumologic_volume`. For more information, see [Created and Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).

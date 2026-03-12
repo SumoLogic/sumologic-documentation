@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
 :::note
-If you are a Sumo Logic Service Provider, see [Create and Manage Orgs (Service Providers)](create-manage-orgs-service-providers.md).
+If you are a Sumo Logic Service Provider, see [Create and Manage Orgs (Service Providers)](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-service-providers/).
 :::
 
 ## Availability
@@ -19,16 +19,16 @@ If you are a Sumo Logic Service Provider, see [Create and Manage Orgs (Service P
 | Credits | Enterprise Operations, Enterprise Security, Enterprise Suite |
 
 :::note
-This feature is not enabled by default. If you’d like to have it enabled, contact your Sumo Logic Account Executive.
+This feature is not enabled by default. If you’d like to have it enabled, contact your Sumo Logic account executive.
 :::
 
-This topic has information about Sumo Logic’s Organizations (“Sumo Orgs”) feature, which you can use to create and manage orgs. We use the term *parent org* to refer to the org from which you create a new org, and *child orgs* to refer to the orgs you create. 
+This topic has information about Sumo Logic’s organizations feature, which you can use to create and manage orgs. We use the term *parent org* to refer to the org from which you create a new org, and *child orgs* to refer to the orgs you create. 
 
-Sumo Orgs allows you to logically group, provision, and centrally manage and monitor the credits usage of multiple orgs.
+Sumo Logic organizations allow you to logically group, provision, and centrally manage and monitor the credits usage of multiple orgs.
 
 When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. We refer to the different flavors of ingest—Continuous Log Ingest, Frequent Log Ingest, and so on—as *product variables*. When you provision a child org you use a Credits Calculator to estimate and allocate required credits for each product variable. 
 
-We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. For example, if you estimate 1GB usage for logs and specify that as the baseline when you create the org, Sumo Logic will start [throttling](/docs/manage/ingestion-volume/log-ingestion.md) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.
+We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. For example, if you estimate 1GB usage for logs and specify that as the baseline when you create the org, Sumo Logic will start [throttling](/docs/manage/ingestion-volume/log-ingestion/#log-throttling) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.
 
 Users that have the required role capabilities (described in the following section) can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI in the **Organizations** tab and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
 
@@ -36,7 +36,7 @@ Users that have the required role capabilities (described in the following secti
 
 This section has instructions for creating a new org.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Learn how to create a new child organization.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/hdr7wf9hin?web_component=true&seo=true&videoFoam=false"
@@ -57,7 +57,7 @@ Learn how to create a new child organization.
 After you create a new org, you can’t delete it.
 :::
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.
 1. Click **+ Add Organization**.<br/> <img src={useBaseUrl('/img/manage/subscriptions/add-org.png')} alt="add-org" style={{border:'1px solid gray'}} width="800" />
 1. The **Create New Organization** pane appears. <br/> <img src={useBaseUrl('/img/manage/subscriptions/create-new-org.png')} alt="create-new-org.png" style={{border:'1px solid gray'}} width="400" />
 
@@ -99,7 +99,7 @@ After you create a new org, you can’t delete it.
 
 ## Update an org's credits allocation
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Watch this micro lesson to learn more about managing a child org.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/cijbsnbz65?web_component=true&seo=true&videoFoam=false"
@@ -121,7 +121,7 @@ If the org has already depleted its credits, you can see a red color warning ico
 :::
 
 To change an org's credits allocation:
-1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.
+1.  [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. 
 1. Click the row for the org you want to edit.
 1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/manage/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
 1. Under **Modify Allocation**, you can increase or decrease the credits based on your requirement.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-button.png')} style={{border:'1px solid grey'}} alt="allocation" width="450" />
@@ -167,9 +167,9 @@ You can view the aggreagte usage for all child orgs across usage category in the
 * **Storage**. Credits used for log storage in the Continuous and Frequent Tiers.
 * **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent Tier.
-* **Promotional categories**. For more information, see [Promotional Credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#promotional-credits).
+* **Promotional categories**. For more information, see [Promotional credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#promotional-credits).
 
-By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking **Download Detailed Credit Usages** from the kebab icon next to the Download Report button.
+By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking **Download Detailed Credit Usages** from the kebab icon next to the **Download Report** button.
 
 <img src={useBaseUrl('img/manage/subscriptions/account-overview-new.png')} alt="your description" style={{border:'1px solid gray'}} />
 
@@ -205,7 +205,7 @@ By clicking the **Download Report** button, you can download the selected child 
 
 ## Audit logging for organizations
 
-This section has examples of the messages Sumo Logic writes to the Audit Event Index when you create or update an org.
+This section has examples of the messages Sumo Logic writes to the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) when you create or update an org.
 
 ### OrganizationCreated
 

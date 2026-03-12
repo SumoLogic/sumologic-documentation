@@ -15,17 +15,108 @@ const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString()
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Sumo Logic Docs',
-  tagline: '',
+  tagline: 'Documentation, guides, and API references for Sumo Logic',
   url: process.env.HOSTNAME || "http://localhost:3000",
   trailingSlash: true,
   baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'throw',
+  onDuplicateRoutes: 'throw',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
   favicon: 'https://www.sumologic.com/favicon.ico',
   organizationName: 'sumologic', // Usually your GitHub org/user name.
   projectName: 'sumologic-documentation', // Usually your repo name.
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
+  ],
+  headTags: [
+    // Intellimize
+    {
+      tagName: 'style',
+      attributes: {},
+      innerHTML:
+        '.anti-flicker, .anti-flicker * { visibility: hidden !important; opacity: 0 !important; }',
+    },
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML:
+        "(function(e,t,p){var n=document.documentElement,s={p:[],r:[]},u={p:s.p,r:s.r,push:function(e){s.p.push(e)},ready:function(e){s.r.push(e)}};e.intellimize=u,n.className+=' '+p,setTimeout(function(){n.className=n.className.replace(RegExp(' ?'+p),'')},t)})(window, 4000, 'anti-flicker');",
+    },
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML: `(function() {
+        var s = document.createElement('script');
+        s.src = 'https://cdn.intellimize.co/snippet/117845498.js';
+        s.async = true;
+        s.onerror = function() {
+          document.documentElement.className =
+            document.documentElement.className.replace(RegExp(' ?anti-flicker'), '');
+        };
+        document.head.appendChild(s);
+      })();`,
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://api.intellimize.co',
+        crossorigin: 'anonymous'
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://117845498.intellimizeio.com'
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://log.intellimize.co',
+        crossorigin: 'anonymous'
+      },
+    },
+    // Sumo Logic RUM
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML: `
+        (function (w, s, d, r, e, n) {
+          (w[s] = w[s] || {
+            readyListeners: [],
+            onReady: function (e) {
+              w[s].readyListeners.push(e);
+            },
+          }),
+          ((e = d.createElement('script')).async = 1),
+          (e.src = r),
+          (n = d.getElementsByTagName('script')[0]).parentNode.insertBefore(e, n);
+        })(
+          window,
+          'sumoLogicOpenTelemetryRum',
+          document,
+          'https://rum.sumologic.com/sumologic-rum.js'
+        );
+        window.sumoLogicOpenTelemetryRum.onReady(function () {
+          window.sumoLogicOpenTelemetryRum.initialize({
+            collectionSourceUrl: 'https://rum-collectors.us1.sumologic.com/receiver/v1/rum/ZaVnC4dhaV2cNyrqUT5YDFvpALqf3WjXkE5oomYkp_Kpvd8PbxGEQsMpkGX5YtUj1YHkvAO6UU1vGUXSx2Nh2EIEps-Vd8TrD340CoUjZuAxRBuKzg7E_w==',
+            serviceName: 'docs-site-live',
+            deploymentEnvironment: 'live',
+            applicationName: 'docs-site',
+            samplingProbability: 1,
+            collectErrors: true,
+          });
+        });
+      `,
+    },
   ],
   clientModules: [
     require.resolve('./src/client-modules/trackTrialClick.js'),
@@ -64,14 +155,24 @@ module.exports = {
               'tip',
               'warning',
               'important',
+              'training',
             ],
           },
+          exclude: [
+            '**/reuse/**',
+            '**/ja/**',
+          ],
         },
         sitemap: {
           lastmod: 'date',
           changefreq: 'daily',
           ignorePatterns: [
             '/docs/reuse/**',
+            '/docs/beta/**',
+            '/ja/**',
+            '/files/**',
+            '/release-notes-*/archive/**',
+            '/release-notes-*/2021/**',
             '/tags/**'
           ],
           filename: 'sitemap.xml',
@@ -82,7 +183,7 @@ module.exports = {
           routeBasePath: 'release-notes-service',
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
-          blogDescription: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
+          blogDescription: 'Latest features and bug fixes for Sumo Logic log analytics, AI and automation, observability, alerts, sources, and more.',
           postsPerPage: 'ALL',
           showReadingTime: false,
           onUntruncatedBlogPosts: 'ignore',
@@ -92,8 +193,8 @@ module.exports = {
             type: 'rss',
             xslt: true,
             title: 'Sumo Logic Service Release Notes',
-            description: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
-            copyright: `Copyright ©${new Date().getFullYear()} Sumo Logic`,
+            description: 'Latest features and bug fixes for Sumo Logic log analytics, AI and automation, observability, alerts, sources, and more.',
+            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
           },
         },
         theme: {
@@ -116,15 +217,6 @@ module.exports = {
     ['@docusaurus/plugin-google-gtag',
       {
         trackingID: ['G-CVH19TBVSL', 'G-9FTQ9KJJBY'],
-      },
-    ],
-    ['@docusaurus/plugin-content-docs',
-      {
-        id: 'community',
-        path: './community',
-        routeBasePath: 'hackathon',
-        sidebarPath: require.resolve('./sidebarsCommunity.js'),
-        breadcrumbs: false,
       },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -209,7 +301,7 @@ module.exports = {
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
           postsPerPage: 'ALL',
-          blogDescription: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
+          blogDescription: 'Latest features, improvements, and fixes for the Sumo Logic Installed Collector and OpenTelemetry Collector.',
           showReadingTime: false,
           onUntruncatedBlogPosts: 'ignore',
           onInlineTags: 'ignore',
@@ -218,7 +310,7 @@ module.exports = {
             type: 'rss',
             xslt: true,
             title: 'Sumo Logic Collector Release Notes',
-            description: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
+            description: 'Latest features, improvements, and fixes for the Sumo Logic Installed Collector and OpenTelemetry Collector.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
           },
         },
@@ -241,18 +333,21 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [
-      {
-        name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts',
-      },
-      {
-        name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586'
-      },
+      { name: 'keywords', content: 'sumo logic, documentation, log management, observability, cloud siem, monitoring, API, tutorials' },
+      { name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586' },
+      { name: 'description', content: 'Sumo Logic documentation for log analytics, cloud monitoring, security, observability, and AI-powered troubleshooting. Get started guides, API references, and release notes.' },
+      { property: 'og:site_name', content: 'Sumo Logic Docs' },
+      { property: 'og:description', content: 'Sumo Logic documentation for log analytics, cloud monitoring, security, observability, and AI-powered troubleshooting. Get started guides, API references, and release notes.' },
+      { property: 'og:image', content: 'https://www.sumologic.com/wp-content/uploads/meta-HomePage_1200x628-1.png' },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '628' },
+      { property: 'og:image:alt', content: 'Sumo Logic Docs' },
     ],
     announcementBar: {
-      id: 'blackhat',
-      content: 'Visit Sumo Logic at Black Hat USA in Las Vegas: August 6-7, 2025 | Mandalay Bay | Booth #5812 | <a target="_blank" rel="noopener noreferrer" href="https://www.sumologic.com/events/black-hat-book-meeting">Click here</a> to book a meeting with us!',
-      backgroundColor: '#b0eefe',
-      textColor: '#091E42',
+      id: 'domain',
+      content: 'Come see us at RSA Conference 2026! Visit booth 6465 — March 23–26 in San Francisco. <a href="https://www.sumologic.com/events/rsa-conference/book-meeting" target="_blank" rel="noopener noreferrer">Book a meeting</a>.',
+      backgroundColor: '#000',
+      textColor: '#000',
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
@@ -264,12 +359,14 @@ module.exports = {
     },
     colorMode: {
       defaultMode: 'light',
+      disableSwitch: false,
     },
     algolia: {
       appId: '2SJPGMLW1Q',
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
       contextualSearch: false,
+      searchPagePath: 'docs-search', // Default value is 'search'; renamed to 'docs-search' so it doesn't conflict with '/Search' redirect
       insights: true,
       insightsConfig: {
         useCookie: true, // alt to useCookie: true,
@@ -395,23 +492,8 @@ module.exports = {
             to: '/docs/release-notes',
           },
           {
-            type: 'search',
+            label: 'Support',
             position: 'left',
-          },
-          {
-            type: 'html',
-            position: 'right',
-            value: 'google_translate',
-          },
-          {
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'right',
-            className: 'header-trial',
-            alt: 'Sign up for a Sumo Logic free trial',
-          },
-          {
-            position: 'right',
-            className: 'support-menu-trigger',
             to: '#',
             type: 'dropdown',
             items: [
@@ -437,11 +519,15 @@ module.exports = {
               },
             ],
           },
+        //{
+          //className: 'header-github-link',
+          //to: 'https://github.com/SumoLogic/sumologic-documentation',
+          //position: 'right',
+          //alt: 'Link to Sumo Logic Docs GitHub repository',
+        //},
           {
-            className: 'header-github-link',
-            to: 'https://github.com/SumoLogic/sumologic-documentation',
-            position: 'right',
-            alt: 'Link to Sumo Logic Docs GitHub repository',
+            type: 'search',
+            position: 'left',
           },
         ],
       },
@@ -449,55 +535,54 @@ module.exports = {
         style: 'dark',
         links: [
           {
-            items: [
-              {
-                label: 'Training & Certifications',
-                href: 'https://www.sumologic.com/learn/training/',
-              },
-              {
-                label: 'Events & Webinars',
-                href: 'https://www.sumologic.com/events/',
-              },
-              {
-                label: 'Request a Demo',
-                href: 'https://www.sumologic.com/request-demo',
-              },
-            ],
-            title: 'Learn',
-          },
-          {
-            items: [
-              {
-                label: 'Contact Support',
-                href: 'https://support.sumologic.com/support/s',
-              },
-              {
-                label: 'Sumo Dojo Slack',
-                href: 'https://sumodojo.slack.com/',
-              },
-              {
-                label: 'Community',
-                href: 'https://support.sumologic.com/support/s/topiccatalog',
-              },
-            ],
             title: 'Help',
-          },
-          {
             items: [
               {
-                label: 'Docs GitHub',
-                href: 'https://github.com/SumoLogic/sumologic-documentation',
+                label: 'Contact support',
+                href: 'https://support.sumologic.com/support/s'
               },
               {
-                label: 'Sumo Logic GitHub',
-                href: 'https://github.com/SumoLogic',
-              },
+                label: 'Community forum',
+                href: 'https://support.sumologic.com/support/s/topiccatalog' },
               {
-                label: 'Sumo Labs Projects',
-                href: 'https://github.com/SumoLogic-Labs',
+                label: 'Dojo Slack community',
+                href: 'https://sumodojo.slack.com'
               },
             ],
-            title: 'Open Source',
+          },
+          {
+            title: 'Learn',
+            items: [
+              {
+                label: 'Training and certifications',
+                href: 'https://www.sumologic.com/learn/training'
+              },
+              {
+                label: 'Webinars and events',
+                href: 'https://www.sumologic.com/events'
+              },
+              {
+                label: 'Sumo Logic blog',
+                href: 'https://www.sumologic.com/blog'
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'Start Free Trial',
+                href: 'https://www.sumologic.com/sign-up'
+              },
+              {
+                label: 'Request a demo',
+                href: 'https://www.sumologic.com/request-demo'
+              },
+              {
+                label: 'Status page',
+                href: 'https://status.sumologic.com'
+              },
+            ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,

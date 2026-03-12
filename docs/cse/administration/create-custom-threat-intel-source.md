@@ -7,19 +7,15 @@ description: Learn how to manage custom threat intelligence sources in Cloud SIE
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::info
-**You can no longer add custom threat intelligence sources in Cloud SIEM**. To create new sources, use the Sumo Logic threat intelligence framework. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence). [Contact Support](https://support.sumologic.com/support/s/) if you still need to create custom sources in Cloud SIEM.
-:::
-
 Prior to the introduction of [Sumo Logic Threat Intelligence](/docs/security/threat-intelligence), administrators created their own custom threat intelligence sources, which they manually populated as opposed to using an automatic feed. This article has information about managing these custom threat intelligence sources in Cloud SIEM. 
 
 Previously, administrators created custom threat intelligence sources interactively from the Cloud SIEM UI by uploading a .csv file, or using Cloud SIEM APIs. They populated the sources with IP addresses, domains, URLs, email addresses, and file hashes.
 
 ## View threat intelligence sources in Cloud SIEM
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Threat Intelligence**.
+[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Threat Intelligence**.
 
 ## Search indicators
 

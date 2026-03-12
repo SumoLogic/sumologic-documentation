@@ -7,36 +7,36 @@ description: Learn about how Sumo aggregates metric data points over time bucket
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo ingests individual metric data points from your metric sources. In metric visualizations, rather than charting individual data points, Sumo presents the aggregated value of the data points received during an interval.
+Sumo Logic ingests individual metric data points from your metric sources. In metric visualizations, rather than charting individual data points, Sumo Logic presents the aggregated value of the data points received during an interval.
 
 Quantization is the process of aggregating metric data points for time series over an interval, for example, an hour or a minute, using a particular aggregation function: `avg`, `min`, `max`, `sum`, `count`, or `rate`.
 
 
 ### Quantization terminology
 
-This section defines the quantization-related terms we use in Sumo. So, what is quantization? At a high level, it’s the process that Sumo Logic performs on raw data points to produce the aggregated metric values that your metric queries run against.
+This section defines the quantization-related terms we use in Sumo Logic. So, what is quantization? At a high level, it’s the process that Sumo Logic performs on raw data points to produce the aggregated metric values that your metric queries run against.
 
 
 #### Buckets
 
-We use the term _bucket_ to refer to the intervals across which Sumo quantizes your metrics.
+We use the term _bucket_ to refer to the intervals across which Sumo Logic quantizes your metrics.
 
-When you run a metric query, Sumo divides up your metric query time range into contiguous buckets, either automatically, or based on the interval you specify in the `quantize` operator. For example, given this query:
+When you run a metric query, Sumo Logic divides up your metric query time range into contiguous buckets, either automatically, or based on the interval you specify in the `quantize` operator. For example, given this query:
 
 ```sql
 metric=CPU_Idle | quantize to 15m
 ```
 
-Sumo divides your time range into 15 minute buckets.
+Sumo Logic divides your time range into 15 minute buckets.
 
-For each bucket, Sumo uses a rollup type, described below, to aggregate the values of all the data points in the bucket. The aggregated values are displayed in your metric visualization or processed further in the pipeline.
+For each bucket, Sumo Logic uses a rollup type, described below, to aggregate the values of all the data points in the bucket. The aggregated values are displayed in your metric visualization or processed further in the pipeline.
 
-By default, Sumo uses the `avg` rollup type. You can specify another rollup type by using the `quantize` operator, as described in [Quantize with rollup type specified](/docs/metrics/introduction/metric-quantization#quantize-with-rollup-type-specified) below.
+By default, Sumo Logic uses the `avg` rollup type. You can specify another rollup type by using the `quantize` operator, as described in [Quantize with rollup type specified](/docs/metrics/introduction/metric-quantization#quantize-with-rollup-type-specified) below.
 
 
 #### Rollup types
 
-We use the term rollup to refer to the aggregation function Sumo uses when quantizing metrics. This table describes the different rollup types you can select when running a query.
+We use the term rollup to refer to the aggregation function Sumo Logic uses when quantizing metrics. This table describes the different rollup types you can select when running a query.
 
 | Rollup type | Description |
 | :-- | :-- |
@@ -47,34 +47,34 @@ We use the term rollup to refer to the aggregation function Sumo uses when quant
 | [`count`](/docs/metrics/metrics-operators/count/) | Calculates the count of data points for a time series in each bucket. |
 | [`rate`](/docs/metrics/metrics-operators/rate/) | Calculates the per-second rate of change between data points in a time series in each bucket.  |
 
-Sumo quantizes metrics upon ingestion and at query time.
+Sumo Logic quantizes metrics upon ingestion and at query time.
 
 ### Quantization at ingestion
 
-Upon ingestion, Sumo quantizes raw metric data points to one hour resolutions for all rollup types: `avg`, `min`, `max`, `sum`, `count`, and `rate`. This data is stored in one hour rollup tables in Sumo. The raw data is stored in a table referred to as the baseline table. For information about retention times, see [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage.md).
+Upon ingestion, Sumo Logic quantizes raw metric data points to one hour resolutions for all rollup types: `avg`, `min`, `max`, `sum`, `count`, and `rate`. This data is stored in one hour rollup tables in Sumo Logic. The raw data is stored in a table referred to as the baseline table. For information about retention times, see [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage).
 
 ### Automatic quantization at query time
 
-This section describes how Sumo quantizes metrics when you run a metric query without specifying quantization interval.
+This section describes how Sumo Logic quantizes metrics when you run a metric query without specifying quantization interval.
 
-If you do not use the `quantize to INTERVAL` in your metric query, Sumo automatically determines an optimal quantization interval, based on the age of the data you are querying and the query time range. The quantization interval is shown at the top of the metric query tab.
+If you do not use the `quantize to INTERVAL` in your metric query, Sumo Logic automatically determines an optimal quantization interval, based on the age of the data you are querying and the query time range. The quantization interval is shown at the top of the metric query tab.
 
 
 <img src={useBaseUrl('img/metrics/quantization-query-time.png')} alt="metrics" />
 
 
-The age of the metrics in the time range governs the minimum quantization interval (based on what rollups are available for the query time range). Sumo retains only the last 30 days of raw metric data. So, when you query metrics that are more than 30 days old, Sumo must quantize the data to at least 1 hour, because that’s the minimum resolution rollup available given the age of the data.
+The age of the metrics in the time range governs the minimum quantization interval (based on what rollups are available for the query time range). Sumo Logic retains only the last 30 days of raw metric data. So, when you query metrics that are more than 30 days old, Sumo Logic must quantize the data to at least 1 hour, because that’s the minimum resolution rollup available given the age of the data.
 
-If you want, you can override the automatic quantization interval. In the Metrics Explorer’s basic mode you can set the quantization interval in the row creator in the UI. In advanced mode, use the `quantize` operator and specify the interval that fits your need
+If you want, you can override the automatic quantization interval. In the Metrics Search’s basic mode you can set the quantization interval in the row creator in the UI. In advanced mode, use the `quantize` operator and specify the interval that fits your need
 
-Sumo Logic sets the actual quantization interval to be as close to your selection as possible. If it is not possible to set the actual interval to the targeted interval—typically because too many buckets would be produced to reasonably show on the chart—Sumo displays a message like the following:
+Sumo Logic sets the actual quantization interval to be as close to your selection as possible. If it is not possible to set the actual interval to the targeted interval—typically because too many buckets would be produced to reasonably show on the chart—Sumo Logic displays a message like the following:
 
 <img src={useBaseUrl('img/metrics/quantization-warning.png')} alt="metrics" />
 
 Sumo Logic will never decrease the quantization interval that you specify. We’ll either use that interval, or increase it as appropriate.
 
 
-#### How Sumo chooses rollup table and quantization interval
+#### How Sumo Logic chooses rollup table and quantization interval
 
 If you do not specify a rollup type in your query, Sumo Logic will run the query using the `avg` rollup.
 
@@ -98,12 +98,12 @@ The table below shows how Sumo Logic selects a quantization interval based on qu
 
 ### Explicit quantization at query time  
 
-When you run a metric query, you can optionally use [Metrics Quantize Operator](/docs/metrics/metrics-operators/quantize.md) to specify a quantization interval, rollup type, or both.
+When you run a metric query, you can optionally use the [quantize metrics operator](/docs/metrics/metrics-operators/quantize) to specify a quantization interval, rollup type, or both.
 
-When you run a query with the `quantize` operator, the way that Sumo quantizes your metric data points depends on the rollup type you specify, if any, in the `quantize` clause of your query. Rollup types include `avg`, `min`, `max`, `sum`, and `count`.
+When you run a query with the `quantize` operator, the way that Sumo Logic quantizes your metric data points depends on the rollup type you specify, if any, in the `quantize` clause of your query. Rollup types include `avg`, `min`, `max`, `sum`, and `count`.
 
 :::note
-Specifying rollup type and quantization interval is optional for the `quantize` operator, however, one of them needs to be present.
+Specifying rollup type and quantization interval is optional for the `quantize` operator. However, one of them needs to be present.
 :::
 
 #### Quantize with rollup type specified  
@@ -114,7 +114,7 @@ To specify the rollup type for quantization, include the `quantize` operator as 
 metric=CPU_Idle | quantize to 15m using sum
 ```
 
-Sumo will quantize to the `sum` rollup type.
+Sumo Logic will quantize to the `sum` rollup type.
 
 Also, you can skip specifying target quantization interval:
 

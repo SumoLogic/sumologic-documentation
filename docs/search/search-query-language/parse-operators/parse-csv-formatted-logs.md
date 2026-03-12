@@ -3,7 +3,7 @@ id: parse-csv-formatted-logs
 title: Parse CSV Formatted Logs
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The **CSV** operator allows you to parse CSV (Comma Separated Values) formatted log entries. It uses a comma as the default delimiter.
 
@@ -48,7 +48,7 @@ _sourceCategory=csv
 
 which provides results like:
 
-![csv example](/img/reuse/query-search/csv_example1.png)
+<img src={useBaseUrl('img/reuse/query-search/csv_example1.png')} alt="CSV example>" style={{border: '1px solid gray'}} width="600" />
 
 ### Parse a stream query and extract search terms
 
@@ -60,6 +60,6 @@ which provides results like:
 
 This produces results like:
 
-![csv operator](/img/reuse/query-search/csv_operator_example_695x65.png)
+<img src={useBaseUrl('img/reuse/query-search/csv_operator_example_695x65.png')} alt="CSV operator" style={{border: '1px solid gray'}} width="800" />
 
 For more information on parsing CSV files, see [Lookup](/docs/search/search-query-language/search-operators/lookup-classic) operator and [Save](/docs/search/search-query-language/search-operators/save-classic) operator.

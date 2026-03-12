@@ -2,7 +2,7 @@
 id: filter-template-variables
 title: Filtering Dashboards with Template Variables
 sidebar_label: Filtering with Template Variables
-description: Learn how to use template variables to dynamically filter dashboard data.
+description: Use filter and template variables in dashboards to create dynamic visualizations that respond to changing input and user-defined criteria.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

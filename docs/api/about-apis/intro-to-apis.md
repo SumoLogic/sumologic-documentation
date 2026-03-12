@@ -9,14 +9,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/advanced-certificates.png')} alt="Thumbnail icon" width="50"/>
 
-Sumo Logic has a host of useful APIs across all products that can add valuable functionality to any organization by providing access to data and activities without going through the website. API calls can be used for data gathering, automation of processes, and custom reports.
+Sumo Logic has a host of useful APIs across all products that let you access data and perform actions without using the Sumo Logic UI. API calls can be used for to gather data, automate processes, and create custom reports.
 
-This article presumes that you have a solid understanding of Sumo Logic functionality: collectors, queries, security offerings, etc. While APIs are typically for "power users" looking for additional customization and access to web service resources, you also don't need a computer science degree to understand and make use of API calls. This article helps walk you through the basics and get you going with important data queries through the API.
+This article is for users who are familiar with Sumo Logic features (collectors, queries, and security tools, for example), but new to working with APIs. You don’t need a development background to follow along. We’ll cover the basics so you can start making API calls to run queries and perform tasks.
 
-In this article, you'll learn about:
-* How to create a Sumo Logic access ID/key.
-* How to access Sumo Logic APIs.
-* How to use APIs with Sumo Logic's Cloud SIEM.
+In this article, you'll learn how to:
+
+* Create a Sumo Logic access ID/key.
+* Access Sumo Logic APIs.
+* Use APIs with Sumo Logic's Cloud SIEM.
 
 ## Create an access key
 
@@ -32,7 +33,7 @@ In this section, we'll walk you through creating a personal access key that you 
 
 A user with the [Manage Access Keys role capability](/docs/manage/users-roles/roles/role-capabilities/#security) can create and manage access keys for other users in your organization. As an administrator, you can use the general **Access Keys** page instead of the **Personal Access Keys** page.
 
-1. Navigate to the **Access Keys** page. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). From the left menu, click **Administration > Security**, then select the **Access Keys** tab. [**New UI**](/docs/get-started/sumo-logic-ui/). In the upper-right corner, click on **Administration > Access Keys**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In main Sumo Logic menu select **Administration**, then under **Account Security Settings** select **Access Keys**. You can also click the **Go To..**. menu at the top of the screen and select **Access Keys**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). From the left menu, click **Administration > Security**, then select the **Access Keys** tab. 
 1. Click **+Add Access Key** in the upper right and create it using the same steps as above.
 
 As with the personal access key popup, any displayed ID/key will not be available again once the display screen is closed, so make sure you copy both the ID and key to another location for reference before closing the popup. If you miss copying either of the access values, find your access key in the list, delete it, and then recreate it.
@@ -66,11 +67,9 @@ However, most API users do not use a traditional web browser for API calls, othe
 An open source application such as [Postman](https://www.postman.com/) can be a convenient tool for testing and developing with API calls. To use Postman, download and install the app. Then:
 1. Enter the URL for the API call.
 1. Click the **Authorization** tab.
-1. Fill in the username and password fields with your Sumo Logic access ID and access key respectively. 
+1. Fill in the username and password fields with your Sumo Logic access ID and access key, respectively.
 1. Click **Send** when finished.
-1. You see the JSON output (or error messages if there is a problem) in the bottom panel.
-
-<img src={useBaseUrl('img/api/postman-ui.png')} alt="Postman UI" style={{border: '1px solid gray'}} width="800" />  
+1. You see the JSON output (or error messages if there is a problem) in the bottom panel.<br/><img src={useBaseUrl('img/api/postman-ui.png')} alt="Postman UI" style={{border: '1px solid gray'}} width="800" />  
 
 Most programming and scripting languages provide modules and libraries for making web service and API calls in code. For instance, the following Python code can make the same "get collectors" call programmatically using the `requests` library:
 
@@ -98,6 +97,18 @@ if __name__ == '__main__':
 
 As you are learning how APIs work, we recommend setting up an API test program, then follow along with the API examples shown in the following sections. To execute API commands, you can use Postman as shown above, another API test application, or set up a quick code snippet in Python or the programming language of your choice.
 
+### Download the OpenAPI Specification
+
+Optionally, you can download the OpenAPI Specification for the Sumo Logic API and import it to your API test application. This lets you view the full specification for all Sumo Logic APIs and run them directly from your testing tool.
+
+1. Select the API documentation URL for your deployment from the [Documentation](/docs/api/about-apis/getting-started/#documentation) section of the *API Authentication, Endpoints, and Security* article. For instance, US users would access either https://api.sumologic.com/docs/ or https://api.us2.sumologic.com/docs/. 
+1. Click the **Download** button at the top of the page. <br/><img src={useBaseUrl('img/api/openapi-spec-download-button.png')} alt="Button to download Sumo Logic OpenAPI Specification" style={{border: '1px solid gray'}} width="600" />
+1. Import the downloaded file to your API test application. For example, to [import the file to Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/), select **File > Import**.
+1. The imported specification appears. Select any API to run it.<br/><img src={useBaseUrl('img/api/imported-api.png')} alt="Imported API specification" style={{border: '1px solid gray'}} width="500" />
+1. You can also download the API specification for Cloud SIEM or Cloud SOAR from the following locations. Simply select the API documentation URL for your deployment and click the **Download** button at the top of the page:
+     * [Cloud SIEM API documentation](/docs/api/cloud-siem-enterprise/#documentation)
+     * [Cloud SOAR API documentation](/docs/api/cloud-soar/#documentation)
+
 ## Basic API GET commands
 
 Retrieving system data and configuration is one of the most common use cases for utilizing platform APIs. These data retrieval operations are generally known as GET commands in reference to the "GET" verb used by the HTTP protocol. Data retrieved through API calls can be processed by outside applications and scripts for report generation and advanced analytics, extending functionality beyond that offered by the Sumo Logic website.
@@ -116,7 +127,9 @@ Note the first ID from your list or the sample ID shown above from the Sumo Logi
 
 <img src={useBaseUrl('img/api/collector-id.png')} alt="Collector ID" style={{border: '1px solid gray'}} width="800" />  
 
-Note that the collector data itself also contains a helpful follow-up link to analyze the sources currently configured for our chosen collector. Follow up by clicking on (or copying into the URL field) the given URL for sources:  `https://api.sumologic.com/api/v1/collectors/<collectorID>/sources`
+Note that the collector data itself also contains a helpful follow-up link to analyze the sources currently configured for our chosen collector. Follow up by clicking on (or copying into the URL field) the given URL for sources:
+
+`https://api.sumologic.com/api/v1/collectors/<collectorID>/sources`
 
 <img src={useBaseUrl('img/api/collector-sources.png')} alt="Collector sources" style={{border: '1px solid gray'}} width="800" />  
 

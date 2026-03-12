@@ -4,7 +4,7 @@ title: Search Load Indicator
 description: The search load indicator gives you feedback on the amount of system load and provides suggestions on what you can do to reduce the load by making your query more specific.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Searches vary considerably in the amount of load they place on the system. All of the following can affect the search load:
 
@@ -20,7 +20,7 @@ Look for the load indicator in the bar below the bar chart in the search result
 * Medium (orange, two dots)
 * High (red, three dots)
 
-![search load](/img/search/get-started-search/search-page/search-load.png)
+<img src={useBaseUrl('img/search/get-started-search/search-page/search-load.png')} alt="Search load" style={{border: '1px solid gray'}} width="800>" />
 
 Click the dotted icon to get more information:
 

@@ -5,6 +5,18 @@ sidebar_label: Changelog
 description: Changelog for Windows source template for OpenTelemetry.
 ---
 
+## [9.1.0] - 2026-01-19
+### Added
+- Default `_parser` tagging for logs forwarded to Cloud SIEM.
+
+## [9.0.0] - 2025-11-07
+### Added
+- Validation for regular expression
+
+## [8.0.0] - 2025-08-20
+### Added
+- Flag for preventing shutdown of the collector when failing to open the event log channel, and instead log a warning.
+
 ## [7.0.0] - 2025-04-30
 ### Fixed
 - Validation for choosing at least one scraper when metric section is enabled.

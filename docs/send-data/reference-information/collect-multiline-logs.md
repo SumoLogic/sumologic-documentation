@@ -7,7 +7,7 @@ description: Sumo Logic Sources can be configured to detect log boundaries autom
 Sumo Logic Sources, by default, have multiline processing enabled. Multiline processing is used to ensure that a log message made up of multiple lines, with each line separated by a line break or carriage return, is correctly grouped as a single log message when ingested into Sumo Logic.
 
 :::warning
-The line breaks or carriage returns are control characters used to create new lines, usually represented by the escape sequences `\r` and `\r\n`, but are often invisible in text editors. Sumo Logic will not be able to split your log messages that do not contain these characters.
+The line breaks or carriage returns are control characters used to create new lines, usually represented by the escape sequences `\n` and `\r\n`, but are often invisible in text editors. Sumo Logic will not be able to split your log messages that do not contain these characters.
 :::
 
 ## Multiline Processing Caveats

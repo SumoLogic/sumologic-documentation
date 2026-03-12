@@ -16,6 +16,9 @@ import {
   faXTwitter,
   faYoutube,
   faLinkedinIn,
+  faGithub,
+  faSquareFacebook,
+  faRedditAlien,
 } from '@fortawesome/free-brands-svg-icons';
 import { Stack } from '@mui/system';
 import {
@@ -136,6 +139,20 @@ export const Footer = () => {
         >
           {[
             {
+              alt: 'Sumo Logic GitHub',
+              color: '#e3e3e3',
+              href: 'https://github.com/SumoLogic',
+              'aria-label': 'Sumo Logic GitHub',
+              icon: faGithub,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
+            },
+            {
               alt: 'Sumo Logic YouTube',
               color: '#e3e3e3',
               href: 'https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw',
@@ -150,10 +167,24 @@ export const Footer = () => {
               }
             },
             {
-              alt: 'Sumo Logic X (formerly known as Twitter)',
+              alt: 'Sumo Logic LinkedIn',
+              color: '#e3e3e3',
+              href: 'https://www.linkedin.com/company/sumo-logic',
+              'aria-label': 'Sumo Logic LinkedIn',
+              icon: faLinkedinIn,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
+            },
+            {
+              alt: 'Sumo Logic X (formerly Twitter)',
               color: '#e3e3e3',
               href: 'https://x.com/SumoLogic',
-              'aria-label': 'Sumo Logic X (formerly known as Twitter)',
+              'aria-label': 'Sumo Logic X (formerly Twitter)',
               icon: faXTwitter,
               size: 'lg',
               sx: {
@@ -164,11 +195,25 @@ export const Footer = () => {
               }
             },
             {
-              alt: 'Sumo Logic LinkedIn',
+              alt: 'Sumo Logic Facebook',
               color: '#e3e3e3',
-              href: 'https://www.linkedin.com/company/sumo-logic',
-              'aria-label': 'Sumo Logic LinkedIn',
-              icon: faLinkedinIn,
+              href: 'https://www.facebook.com/Sumo.Logic',
+              'aria-label': 'Sumo Logic Facebook',
+              icon: faSquareFacebook,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
+            },
+            {
+              alt: 'Sumo Logic Reddit',
+              color: '#e3e3e3',
+              href: 'https://www.reddit.com/r/sumologic',
+              'aria-label': 'Sumo Logic Reddit',
+              icon: faRedditAlien,
               size: 'lg',
               sx: {
                 cursor: 'pointer',
@@ -215,7 +260,11 @@ export const Footer = () => {
             {
               label: 'Terms of Use',
               href: 'https://www.sumologic.com/terms-conditions',
-            }].map(({ href, label }) => (
+            },
+            {
+              label: 'CA Privacy Notice',
+              href: 'https://www.sumologic.com/legal/privacy-statement#ca_notice',
+            },].map(({ href, label }) => (
               <Fragment key={href}>
                 <Link
                   color='#6c7993'
