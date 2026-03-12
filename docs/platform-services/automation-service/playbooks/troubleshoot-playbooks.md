@@ -105,3 +105,45 @@ Following are some common problems that can occur with playbooks:
     * There are alert surges. <br/>
     * The playbook is not optimized properly and actions are stuck in a loop.
     * There are Cartesian flag issues (too many nested elements to process as part of the returned API result).
+
+## Playbook executions
+
+When playbooks run, you can view the outcome for either a single playbook or for all playbooks:
+* [View executions of a single playbook](#view-executions-of-a-single-playbook)
+* [View executions of all playbooks](#view-executions-of-all-playbooks)
+
+### View executions of a single playbook
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. 
+1. Select a playbook.
+1. Click the kebab button in the upper-right corner of the UI.
+1. Select **View Executions**. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-view-executions.png')} alt="View Executions menu option" style={{border:'1px solid gray'}} width="800"/>
+1. The executions of the playbook are displayed in the **Playbook Executions** screen.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-all.png')} alt="View a playbook's executions" style={{border:'1px solid gray'}} width="800"/>
+      :::tip
+      Notice that the playbook's ID appears in the search bar at the top of the screen. Viewing executions of a playbook is one way to find the ID for a playbook.
+      :::
+1. To see information about a specific execution:
+   1. Click an entry. Information about the execution displays.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-details.png')} alt="Playbook execution details" style={{border: '1px solid gray'}} width="800"/>
+   1. To view the information in a separate tab, click **View Execution Details**.
+1. To perform additional actions on executions in the screen, hover your mouse over an entry and select icons that display:
+   * <img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-go-to-playbook-icon.png')} alt="Go to Playbook button" style={{border: '1px solid gray'}} width="25"/> **Go to Playbook**. Opens the playbook. 
+   * <img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-kill-playbook-icon.png')} alt="Kill Playbook button" style={{border: '1px solid gray'}} width="25"/> **Kill Playbook**. Stops a running playbook.
+
+### View executions of all playbooks
+
+You can view executions of all playbooks on the **Playbook Executions** screen. The page shows the playbook names, run status, and start time and end time.
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbook Executions**. You can also click the **Go To...** menu at the top of the screen and select **Playbook Execution**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbook Executions**.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-executions.png')} alt="Playbook executions screen" style={{border: '1px solid gray'}} width="800"/>
+1. To find playbook executions:
+   1. Enter commands like the following in the search bar at the top of the screen:
+      * Type a word from the name of a playbook (for example, `VirusTotal`). Executions of all playbooks with that word in their name are displayed.
+      * Enter `Name:"<name of playbook>"` (for example, `Name: "527 - Enrich Entity with VirusTotal"`)
+      * Enter `Playbook ID:"<ID of playbook>"` (for example, `Playbook ID: "6618edc1043a590011932926"`). To get a playbook's ID, [view executions of a single playbook](#view-executions-of-a-single-playbook), or use the [playbook_list_retreive](https://api.sumologic.com/docs/csoar/#operation/playbook_list_retrieve) API.
+   1. When you enter a query, click **Save New Query** <img src={useBaseUrl('img/platform-services/automation-service/save-new-query-icon.png')} alt="Save New Query button" style={{border: '1px solid gray'}} width="25"/> in the search bar and click **Add to bookmarks** to save the query for later use.
+1. To see information about a playbook's execution:
+   1. Click an entry in the list of playbook executions. Information about the execution displays.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-execution-details.png')} alt="Playbook execution details" style={{border: '1px solid gray'}} width="800"/>
+   1. To view the information in a separate tab, click **View Execution Details**.
+1. To perform additional actions on executions in the screen, hover your mouse over an entry and select icons that display:
+   * <img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-go-to-playbook-icon.png')} alt="Go to Playbook button" style={{border: '1px solid gray'}} width="25"/> **Go to Playbook**. Opens the playbook. 
+   * <img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-kill-playbook-icon.png')} alt="Kill Playbook button" style={{border: '1px solid gray'}} width="25"/> **Kill Playbook**. Stops a running playbook.
+ 

@@ -4,6 +4,8 @@ title: Alert Response FAQ
 description: Our commonly asked questions about alert response are documented for your reference.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Is alert response available in all Sumo Logic packages? 
 
 Overall, yes. Alert response is available in all the Sumo Logic packages. However, there are specific features within alert response that only work on specific packages. See the table below for details. 
@@ -41,7 +43,7 @@ For example, in Slack, you can add the following section to the **Alert Payload*
 },
 ```
 
-![alertResponseURLExample.png](/img/alerts/monitors/alertResponseURLExample.png)
+<img src={useBaseUrl('img/alerts/monitors/alertResponseURLExample.png')} alt="Alert response URL example" style={{border: '1px solid gray'}} width="800" />
 
 Learn more about [Alert Variables](/docs/alerts/monitors/alert-variables).
 

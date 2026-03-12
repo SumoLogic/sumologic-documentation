@@ -10,7 +10,6 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
 ## Availability
 
 | Account Type | Account Level |
@@ -53,7 +52,7 @@ After you make this change, you will not be able to edit the account owner.
 1. click **Change Account Owner**. <br/><img src={useBaseUrl('img/manage/subscriptions/Change_account_owner_prompt.png')} alt="Change_account_owner_prompt.png" style={{border: '1px solid gray'}} width="300"/>
 
 :::note
-If the account owner leaves your organization and you cannot transfer the account ownership, please [submit a support ticket](https://support.sumologic.com/support/s) to transfer the account ownership.
+If the account owner leaves your organization and you cannot transfer the account ownership, [submit a support ticket](https://support.sumologic.com/support/s) to transfer the account ownership.
 :::
 
 ### Delete an organization
@@ -75,13 +74,21 @@ By default, your Sumo Logic account has a "service" subdomain. For example, `se
 
 If you have multiple Sumo Logic accounts, you may find it useful to configure a custom subdomain for each of your Sumo Logic accounts.
 
-Custom subdomains can help ensure that requests are authenticated to the right account when links are received. Once configured by your account owner, your custom subdomain will be used in the links Sumo generates when you share queries or dashboards, or the links in alerts and other emails you may receive from your account. These subdomain-enabled links will direct the user to the specified account for authentication.
+Custom subdomains can help ensure that requests are authenticated to the right account when links are received. Once configured by your account owner, your custom subdomain will be used in the links Sumo Logic generates when you share queries or dashboards, or the links in alerts and other emails you may receive from your account. These subdomain-enabled links will direct the user to the specified account for authentication.
 
 When you use custom subdomains in combination with SAML integrations [configured with SP initiated login](/docs/manage/security/saml/set-up-saml), your SAML authentication options will be provided within your subdomain-enabled Sumo Logic login page.
 
 :::note
 * While subdomains are the preferred method to provide access to multiple accounts, you can also use [multi-account access](/docs/manage/users-roles/users/multi-account-access/).
 * Custom subdomains are not currently available for Sumo Logic accounts created through third-party integrations that require authentication using those integrations, such as Heroku and Jfrog.
+:::
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage subdomains with the [`sumologic_subdomain`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/subdomain) resource. 
+
+<TerraformLink/>
 :::
 
 ### Key considerations
@@ -115,20 +122,20 @@ You must be the account owner of the Sumo Logic account to change the account su
 
 This section has instructions for managing and viewing the access for the selected child org.
 
-By default, if you are a user with **Manage Organizations** capability you will be able to see all the child orgs in your parent org and you can configure the users to view and SSO into child organizations. This helps you to define access on a per-child-org basis and precisely control over the sign in process.
+By default, if you are a user with **Manage Organizations** capability you will be able to see all the child orgs in your parent org and you can configure the users with roles to SSO into child organizations. This helps you to define access on a per-child-org basis and precisely control over the sign in process.
 
 But if you are user with only **View Organizations** capability you can see the child orgs with the default access and the child orgs that are assigned to you.
 
 ### Manage access to child org
 
-Follow the below steps to manage access to the child org:
+Follow the steps below to manage access to the child org:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
 1. Click the child org for which you want to restrict the access.
 1. In the right hand pane, click on **More Actions** dropdown and select **Manage Access**.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-manage-access-button.png')} alt="Child Org Manage Access Button" style={{border: '1px solid gray'}} width="400"/>
-1. On prompt, select any of the following:
-     - **All Users with View Organization Capability**. By default, users with **View Organization** capability can view the child orgs. 
-     - **Only Selected Users**. Select this option if you want to restrict your child org to a selected number of users. On selecting this option, you will be prompted to select the list of users on the parent org for whom you need to provide the access.<br/><img src={useBaseUrl('img/manage/subscriptions/select-users-prompt.png')} alt="Select Users Prompt" style={{border: '1px solid gray'}} width="400"/>
+1. When prompted, select the users and assign their respective roles for the selected child organization. This allows parent-organization administrators to manage default role assignments for users who access child organizations through SSO. Administrators can either assign a single role to all users or assign roles individually:
+     - When access control is set to **All Users with View Organization Capability**, administrators can assign a custom role that applies to all users accessing the child organization.
+     - When access control is set to **Only Selected Users**, administrators can assign specific roles to individual users for each child organization. <br/><img src={useBaseUrl('img/manage/subscriptions/select-users-prompt.png')} alt="Select Users Prompt" style={{border: '1px solid gray'}} width="400"/>
 
 ### View access to child org
 
@@ -137,8 +144,8 @@ Follow the below steps to view the child orgs access details:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
 1. Click the child org for which you want to view the access details.
 1. Scroll down in the right pane to the **Access Control** section. You can see one among the following:
-     - **All users with view organization capability**. This will be displayed if the selected child org is configured with view for all users.
-     - **[X] users have access to this organization**. This will be displayed if the selected child org is configured only for selected number of users. **X** indicates the total number of users who have access to the selected child org. Click on this number to get a full list of users with access.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-access-control.png')} alt="Child Org Access Control" style={{border: '1px solid gray'}} width="400"/>
+     - **All users in the organization have Administrator access**. This will be displayed if the selected child org is configured with custom role for all users.
+     - **[X] users has specified role**. This will be displayed if the selected child org is configured only for selected number of users. **X** indicates the total number of users who have access to the selected child org with specified role. Click on this number to get a full list of users with access.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-access-control.png')} alt="Child Org Access Control" style={{border: '1px solid gray'}} width="400"/>
 
 ## SSO for child organizations
 

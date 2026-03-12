@@ -4,9 +4,11 @@ title: Supported Tools and Schema
 description: Learn which Tools and Schema are supported by Software Development Optimization Solution.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Software Development Optimization (SDO) Solution comes bundled with Terraform support for the following tools in each phase of the DevOps lifecycle. While tools not listed in the table below lack Terraform support for automated installation, virtually any DevOps tool can be configured to work with SDO through manual configuration by transforming the structure of data ingested by these tools — using Sumo Logic Field Extraction Rules (FERs) — to adhere to the schema defined below.
 
-| DevOps Phases             | Supported with Terraform                                          |
+| DevOps phases             | Supported with Terraform                                          |
 |:---------------------------|:-----------------------------------------------------------|
 | Planning Phase            | Jira Cloud, Jira Server                                   |
 | Dev/Code                  | GitHub, Bitbucket, GitLab                                 |
@@ -20,15 +22,15 @@ The apps and dashboards that are part of this solution are organized into:
 * Tool specific dashboards that are based on the logs from individual DevOps tools to monitor the operations and security of individual tools.
 * Dashboards that are based on an abstracted schema to monitor DORA metrics and the stages of your CI/CD pipelines across various phases. This is done so that you don’t have to change individual dashboard queries when you replace your tools, as well as to accommodate application development teams that have their own tool sets.
 
-##  Schema Overview
+##  Schema overview
 
 As discussed earlier, the abstraction of tools is achieved via a common event schema model, where events from DevOps tools are mapped to fields via Sumo Logic [Field Extraction Rules (FERs)](/docs/manage/field-extractions). 
 
 This model also enables you to integrate events from any of your tools, that may not be supported at present to the Software Development Optimization solution. 
 
-![SchemaTool.png](/img/sdo/SchemaTool.png)
+<img src={useBaseUrl('img/sdo/SchemaTool.png')} alt="Schema diagram" style={{border: '1px solid gray'}} width="800" />
 
-## Schema Definition
+## Schema definition
 
 The tables below show the schema for various events from DevOps pipeline. These fields are required by Software Development Optimization Solutions dashboards and queries. 
 
@@ -140,7 +142,7 @@ datetime_epoch	This field is used to indicate the date and time in UTC epoch mil
 
 The table below shows how Issue events are represented in the schema.
 
-| Field | Explanation | Required/Optional |
+| Field | Explanation | Required/optional |
 | :-- | :-- | :-- |
 | link | This field is used to provide a URL pointer to the issue event. | Required |
 | issue_key | This field represents an issue ID or key | Required |
@@ -157,7 +159,7 @@ The table below shows how Issue events are represented in the schema.
 
 ## Examples
 
-The mapping of events from tool sets to this event schema is achieved via Sumo Logic [FERs](/docs/manage/field-extractions/create-field-extraction-rule.md). For Example, For [PagerDuty V2 Incidents](https://developer.pagerduty.com/docs/webhooks/v2-overview/), we map the incident payload to the alert event schema using the following **Parse Expression.**
+The mapping of events from tool sets to this event schema is achieved via Sumo Logic [FERs](/docs/manage/field-extractions/create-field-extraction-rule.md). For example, for [PagerDuty V2 Incidents](https://developer.pagerduty.com/docs/webhooks/v2-overview/), we map the incident payload to the alert event schema using the following parse expression:
 
 ```
 parse regex "(?<event>\{\"event\":\"incident\..+?\}(?=,\{\"event\":\"incident\..+|\]\}$))"
@@ -172,7 +174,7 @@ parse regex "(?<event>\{\"event\":\"incident\..+?\}(?=,\{\"event\":\"incident\..
 
 The field extraction rule created is shown in the diagram below: 
 
-![pagerduty-v2-alerts.png](/img/sdo/pagerduty-v2-alerts.png)
+<img src={useBaseUrl('img/sdo/pagerduty-v2-alerts.png')} alt="PagerDuty alerts" style={{border: '1px solid gray'}} width="400" />
 
 
 Examples of mapping field extraction rules to the other out-of-the-box tools can be found in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).

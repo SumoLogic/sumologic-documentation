@@ -3,6 +3,8 @@ id: parsehex
 title: parseHex
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 The parseHex operator allows you to convert a hexadecimal string of 16 or fewer characters to a number.
 
@@ -27,4 +29,4 @@ The following query will convert a hexadecimal string to a decimal number.
 
 It provides the following results:
 
-![parse hex](/img/reuse/query-search/parsehex_operator.png)
+<img src={useBaseUrl('img/reuse/query-search/parsehex_operator.png')} alt="Parse hex" style={{border: '1px solid gray'}} width="700" />

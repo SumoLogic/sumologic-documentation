@@ -4,12 +4,14 @@ permissions:
   contents: write
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - staging/**
     paths-ignore:
       - .github/**
+      - .clabot
+      - CONTRIBUTING.md
+      - README.md
 
 jobs:
   build-site:

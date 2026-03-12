@@ -9,6 +9,10 @@ import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 To collect log messages from files on the same machine where a Collector is installed, create a Local File Source.
 
+:::note
+Local file sources for Installed Collectors (IC) are supported, but Sumo Logic recommends switching to OpenTelemetry (OTEL) source templates for improved scalability, consistency, and future enhancements. To learn more, see [Convert Installed Collector Local File Sources to OpenTelemetry Source Templates](/docs/send-data/installed-collectors/sources/convert-ic-local-file-source-to-otel-st).
+:::
+
 * The Source will run a scan to the target path every two seconds.
 * Compressed files that end with the following file extensions are not collected: * tar, bz2, gz, z, zip, jar, war, 7z, rar, exe, dll, xz, or /var/log/(lastlog\|btmp\|wtmp) binary files
 
@@ -19,6 +23,14 @@ tar.gz files are supported.
 If you are editing a Source, metadata changes are reflected going forward. Metadata for previously collected logs will not be retroactively changed.
 
 For details on the limitations of Installed Collectors and how they work see About Installed Collectors.
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a local file source with the [`sumologic_local_file_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/local_file_source) resource.
+
+<TerraformLink/>
+:::
 
 ## Supported encoding for local file sources
 
@@ -42,15 +54,9 @@ When the Sumo collector accesses a log file to read its content, the collector o
 ## Configure a Local File Source
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
-1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose **Add Source** from the pop-up menu.
-
-    ![img](/img/send-data/add-source.png)    
-1. Select **Local File** for the Source type.
-
-    ![local file source icon.png](/img/send-data/local-file-source-icon.png) 
-1. Set the following choices:
-
-    ![local file source.png](/img/send-data/local-file-source.png)
+1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose **Add Source** from the pop-up menu.<br/><img src={useBaseUrl('img/send-data/add-source.png')} alt="Add source button" style={{border: '1px solid gray'}} width="800" />
+1. Select **Local File** for the Source type.<br/><img src={useBaseUrl('img/send-data/local-file-source-icon.png')} alt="Local file source icon" style={{border: '1px solid gray'}} width="100" />
+1. Set the following choices:<br/><img src={useBaseUrl('img/send-data/local-file-source.png')} alt="Local file source" style={{border: '1px solid gray'}} width="600" />
 
    * **Name**. Type the name you'd like to display for the new Source. Description is optional.
 

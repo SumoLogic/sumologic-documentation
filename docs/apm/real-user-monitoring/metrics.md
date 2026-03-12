@@ -21,7 +21,7 @@ The following document load metrics are collected from JavaScript. These are ava
 
 These metrics, presented in the form of areas on the **Website Performance** panels on [RUM dashboards](/docs/apm/real-user-monitoring/dashboards), can help you understand the sequence of events (pictured below) from user clicks to a fully loaded document.
 
-![Diagram showing various navigation metrics from user clicks to a fully loaded document, including DNS resolution, SSL connection, TCP establishment, request end, first byte, response end, interactive time, and processing end](/img/rum/Navigation-metrics.png)
+<img src={useBaseUrl('img/rum/Navigation-metrics.png')} alt="Document load metrics" style={{border: '1px solid gray'}} width="800" />
 
 Timing metrics are not calculated if the visibility state of the document is "hidden" at any point during the load.
 

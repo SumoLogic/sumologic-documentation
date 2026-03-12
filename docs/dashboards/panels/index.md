@@ -177,7 +177,7 @@ To add a Service Map panel:
 
 1. With the Dashboard open, click the **Add Panel** button and select **Service Map**.<br/><img src={useBaseUrl('/img/dashboards/panels/add-servicemap.png')} style={{border: '1px solid gray'}} alt="add-servicemap" width="400"/>
 1. A panel configuration page opens.<br/><img src={useBaseUrl('/img/dashboards/panels/create-servicemap.png')} style={{border: '1px solid gray'}} alt="create-servicemap" width="800"/>
-1. Select from the dropdown menus to filter the Service Map by the following:<br/><img src={useBaseUrl('/img/apm/traces/filter-servicemap.png')} style={{border: '1px solid gray'}} alt="filter-servicemap" width="800"/>
+1. Select from the dropdown menus to filter the Service Map by the following:<br/><img src={useBaseUrl('/img/apm/filter-servicemap.png')} style={{border: '1px solid gray'}} alt="filter-servicemap" width="800"/>
     * **Application** if your tracing data has the `application=[app-name]`, tag **Service**.
     * To pass the variables from dashboard filters, set `application={{application}}` and/or `service={{service}}`.
 1. Do not set the time. Service Map always shows last 72h of data.

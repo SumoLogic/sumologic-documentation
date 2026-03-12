@@ -1,15 +1,15 @@
 ---
 id: searching-data-tiers
 title: Searching Data Tiers
-description: Learn how to search specific Data Tiers.
+description: Learn how to search specific data tiers.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page has information about how to search different Data Tiers, and when you should use `_dataTier`, a *search modifier* that restricts your search to a single tier. 
+This page has information about how to search different data tiers, and when you should use `_dataTier`, a *search modifier* that restricts your search to a single tier. 
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/5qgw3qizmv?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -27,7 +27,7 @@ import Iframe from 'react-iframe';
 
 ## About the _dataTier search modifier
 
-In Sumo Logic, a search modifier is a tag that gives the Sumo Logic backend information about how to process a query. The `_dataTier` modifier tells Sumo Logic which Data Tier a query should run against: Continuous, Frequent, or Infrequent.
+In Sumo Logic, a search modifier is a tag that gives the Sumo Logic backend information about how to process a query. The `_dataTier` modifier tells Sumo Logic which data tier a query should run against: Continuous, Frequent, or Infrequent.
 
 :::note
 Search modifiers are different from Sumo Logic’s [built-in metadata fields](/docs/search/get-started-with-search/search-basics/built-in-metadata), which are key-value pairs that are tagged to incoming log data, and then can be used to find that data easily, later. 
@@ -73,16 +73,6 @@ In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t a
 * To query all tiers, use `_dataTier=All`.
 * When you run a query that will return data from the Infrequent Tier, the best practice is to review the scan estimate after writing the query and before before running it. See the following section for more information.
 
-### Estimated and actual scan data for Infrequent queries
-
-When you enter a query that will run against the Infrequent Tier (`_dataTier=Infrequent` or `_dataTier=All`), Sumo Logic estimates and displays the amount of data in the Infrequent Tier that will be scanned in order to return the search results. You can view this detail by clicking the meter icon <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" />. A popup appears that displays the estimated scan data for the chargeable tiers.
-
-The example below shows the estimate of how much Infrequent data will be scanned for a query that uses `_dataTier=All` in the scope.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/CrossTier-Query-Start-Estimated-Scan.png')} alt="CrossTier-Query-Start-Estimated-Scan" style={{border:'1px solid gray'}} width="800" />
-
-When you click on the session ID under the histogram, a popup with more detailed information appears. Here you can see the Infrequent data scanned for a query in the scope.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/scan-details.png')} alt="scan-details" style={{border:'1px solid gray'}} width="500" />
-
-If there is no pay-per-search data scanned, a warning message will be displayed in the **Scan Estimates** popup.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/no-scan-data.png')} alt="scan-details" style={{border:'1px solid gray'}} width="350" />
-
 ### Cross-tier searches and role search filters
 
 This section describes the combined result of cross-tier searches and a role search filter.
@@ -104,7 +94,7 @@ When you query scheduled views, the Sumo Logic Audit Index, or the Sumo Logic Au
 
 If you use `_dataTier` to specify a tier other than Continuous in a query of scheduled views or either of the audit indexes, Sumo Logic presents an error message.
 
-### API Support with Rate Limiting
+### API support with rate limiting
 
 The rate limits described in [Rate limit throttling](/docs/api/search-job/#rate-limit-throttling) apply to cross-tier searches with these concurrent active job limits: 
 

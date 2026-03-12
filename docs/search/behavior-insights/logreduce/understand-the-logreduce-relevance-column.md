@@ -5,6 +5,8 @@ sidebar_label: LogReduce Relevance Column
 description: The LogReduce Relevance column displays a numerical score for a signature, predicting which signatures could be most meaningful.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 :::important
 The summarize operator has been renamed the logreduce operator, to match the **LogReduce** button on the **Messages** tab. Both operators will continue to work in search queries as synonyms for a limited time. We recommend that you rewrite saved queries replacing summarize with
 logreduce.
@@ -15,7 +17,7 @@ user. The Relevance value is computed using your history of [feedback](../logre
 
 LogReduce uses the similarity of signature content (the words in a signature) to predict relevance for signatures, even if a signature hasn’t yet been promoted or demoted a specific signature. For example, if a user has promoted a number of signatures that contain the word “database” then new signatures containing “database” will be scored higher.
 
-![Relevance.png](/img/search/logreduce/relevance.png)
+<img src={useBaseUrl('img/search/logreduce/relevance.png')} alt="Relevance" style={{border: '1px solid gray'}} width="800" />
 
 ## What do the Relevance values mean?
 

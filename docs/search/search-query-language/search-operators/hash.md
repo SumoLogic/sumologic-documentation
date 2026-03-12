@@ -4,6 +4,8 @@ title: hash Search Operator
 sidebar_label: hash
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `hash` operator uses a cryptographic hash algorithm to obscure data into a random string value. The operator supports MD5, SHA1, SHA2, and MurmurHash3 algorithms. The default is MD5 if no algorithm is specified.
 
 This is helpful when working with sensitive data such as email addresses, usernames, credit cards, and social security numbers. Each unique value will have a unique hash code allowing you to maintain anonymity.
@@ -62,4 +64,4 @@ Create a unique identifier for each log message by concatenating the built-in me
 | hash(concat(_messagetime, _messageid), "sha1") as guid
 ```
 
-![built-in metadata fields](/img/search/get-started-search/build-search/dynamic-parsing/copy-button-messages-table.png)
+<img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/copy-button-messages-table.png')} alt="Built-in metadata fields" style={{border: '1px solid gray'}} width="500" />

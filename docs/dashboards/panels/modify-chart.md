@@ -39,10 +39,13 @@ To modify general settings click the **General** icon in the menu bar.<br/><im
 
 To save your settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC_Update_Dashboard.png" width="300"/>
 
-### Logs Settings
+### Logs settings
 
-You have the option to use the [receipt time](../../search/get-started-with-search/build-search/use-receipt-time.md)or the default message time.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/dashboard-new-time-settings.png')} style={{border: '1px solid gray'}} alt="dashboard new time settings" width="300"/>
-<br/>You can toggle [Auto Parse Mode](../../search/get-started-with-search/build-search/dynamic-parsing.md).<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/dashboard-new-auto-parse.png')} style={{border: '1px solid gray'}} alt="dashboard new auto parse" width="300"/>
+You have the option to use the [receipt time](../../search/get-started-with-search/build-search/use-receipt-time.md), [searchable time](../../search/get-started-with-search/build-search/use-searchable-time.md), or the default message time.
+
+You can select parsing mode between manual and [Auto Parse Mode](../../search/get-started-with-search/build-search/dynamic-parsing.md).
+
+<img src={useBaseUrl('/img/dashboards/panels/modify-chart/dashboard-new-time-settings.png')} style={{border: '1px solid gray'}} alt="dashboard new time settings" width="400"/>
 
 ### Link dashboards
 
@@ -84,6 +87,49 @@ To override select dashboard displays, do the following:
 1. Select a **Property** from the dropdown list. You can add as many properties and needed.
 1. Optionally, add another override by selecting **Add New Override** and completing steps 2 - 4.
 1. To save your customized settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC_Update_Dashboard" width="300"/>
+
+## Modify the thresholds
+
+:::note
+This feature is only applicable for [table charts](/docs/dashboards/panels/table-charts).
+:::
+
+The ability to modify the threshold allows you to define warning and critical thresholds. 
+
+1. Click the Thresholds icon in the far right menu bar.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/Threshold_icon.png')} style={{border: '1px solid gray'}} alt="Threshold_icon" width="400"/>
+1. Click the toggle in the **Thresholds** pane.<br/><img src={useBaseUrl('/img/metrics/thresholds-toggle.png')} style={{border: '1px solid gray'}} alt="Thresholds_icon" width="400"/>
+1. You can set the thresholds in two ways, **Classic** or **Conditional**:
+    - **Classic:**
+        1. Configure the appropriate comparator and threshold values, based on your data and requirements. You can choose from the following comparators.
+            - **greater than**. Any value greater than the value you specify will violate the threshold.
+            - **greater than or equal to**. Any value greater than or equal to the value you specify will violate the threshold.
+            - **less than**. Any value less than the value you specify will violate this threshold.
+            - **less than or equal**. Any value less than or equal to the value you specify will violate the threshold.
+            - **includes**. Any value between the two values you specify will violate the threshold.
+            - **excludes**. Every value NOT between the two values you specify will violate the threshold.
+        1. If you toggle the **Fill remaining area as green** option, the portion of the chart with no thresholds is shaded in green.<br/><img src={useBaseUrl('/img/metrics/thresholds-default.png')} style={{border: '1px solid gray'}} alt="Thresholds_Classic_icon" width="400"/>
+    - **Conditional:**
+        1. **Column**. Select the column for which the threshold condition should apply.
+        1. **Threshold Dsiplay**. Select the type of visibility you need once the condition is breached.
+            - **Row Background**. Highlights the entire row for which the threshold value is breached.
+            - **Row Text**. Highlights the entire row texts for which the threshold value is breached.
+            - **Cell Background**. Highlights the cell of the selected column for which the threshold value is breached.
+            - **Cell Text**. Highlights only the cell text of the selected column for which the threshold value is breached.
+        1. **Threshold**. You can select the color that needs to be displayed when the breach occurs. Additionally, you can configure the appropriate comparator and threshold values.
+            - **equals**. Any value equal to the value you specify will violate the threshold.
+            - **contains**. Any value containing the value you specify will violate the threshold.
+            - **does not contain**. Any value not containing the value you specify will violate the threshold.
+            - **greater than**. Any value greater than the value you specify will violate the threshold.
+            - **greater than or equal to**. Any value greater than or equal to the value you specify will violate the threshold.
+            - **less than**. Any value less than the value you specify will violate this threshold.
+            - **less than or equal**. Any value less than or equal to the value you specify will violate the threshold.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/Threshold_Conditional_icon.png')} style={{border: '1px solid gray'}} alt="Threshold_Conditional_icon" width="400"/>
+            :::note
+            You can add upto 10 threshold conditions.
+            :::
+
+:::info
+If both thresholds and display overrides are applied to a table chart, the display overrides will take precedence.
+:::
 
 ## Modify chart axes
 

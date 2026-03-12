@@ -25,6 +25,14 @@ Each laptop in the “laptops” group will automatically inherit the criticalit
 
 Note that when an insight is created, any tags that are assigned to the primary entity in the insight are automatically inherited by the insight. So, tags that an entity inherits from an entity group will also be inherited by insights that fire on the entity. (Such inheritance is not retro-active: insights that fired on an entity prior to the entity being tagged won’t be tagged.)
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage entity groups with the [`cse_entity_entity_group_configuration`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_entity_entity_group_configuration) and [`cse_inventory_entity_group_configuration`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_inventory_entity_group_configuration) resources.
+
+<TerraformLink/>
+:::
+
 ## Entity group limits
 
 The number of entity groups you can configure per org varies by the type of the group:
@@ -69,7 +77,7 @@ Follow these instructions to create an entity group based on entity name or whet
     * **Prefix**. After you select this option, a **Prefix** field appears. Enter a string that matches the leading characters of the names of the entities you want to include in the group.
     * **Suffix**. After you select this option, a **Suffix** field appears. Enter a string that matches the trailing characters of the names of the entities you want to include in the group.
     * **IP Address Range.** After you select this option, an **IP Address Range** field appears. Enter a CIDR block of IP addresses.
-    * **Sensor Zone**. This field is present if you selected _IP Address _as the **Entity Type** above. Optionally, select a **Sensor Zone** from the pulldown.
+    * **Sensor Zone**. This field is present if you selected **IP Address** as the **Entity Type** above. Optionally, select a **Sensor Zone** from the pulldown.
     :::note
     If you select a [Sensor Zone](/docs/cse/administration/using-sensor-zones), the IP addresses assigned to the entity group will be limited to addresses that are within the specified **IP Address Range** and also have been assigned the selected Sensor Zone.
     :::

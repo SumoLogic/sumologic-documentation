@@ -144,6 +144,18 @@ The **Azure Machine Learning - Run** dashboard provides details on running exper
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureMachineLearning/Azure-Machine-Learning-Run.png')} alt="Azure Machine Learning - Run dashboard" style={{border: '1px solid gray'}} width="800" />
 
+### Endpoint Deployments
+
+The **Azure Machine Learning - Endpoint Deployments** dashboard tracks CPU, memory, and disk usage per instance, along with network activity, active connections, and deployment capacity — helping identify performance bottlenecks, scaling behavior, and infrastructure issues impacting endpoint reliability.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureMachineLearning/Azure-Machine-Learning-Endpoint-Deployments.png')} alt="Azure Machine Learning - Endpoint Deployments dashboard" style={{border: '1px solid gray'}} width="800" />
+
+### Endpoint Requests
+
+The **Azure Machine Learning - Endpoint Requests** dashboard provides insight into how many requests were received by endpoints and how quickly they are processed, highlighting typical response times (P50) and tail latencies (P90–P99) to help identify performance bottlenecks or service degradation.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureMachineLearning/Azure-Machine-Learning-Endpoint-Requests.png')} alt="Azure Machine Learning - Endpoint Requests" style={{border: '1px solid gray'}} width="800" />
+
 ## Create monitors for Azure Machine Learning app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';

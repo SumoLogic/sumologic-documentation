@@ -15,7 +15,10 @@ You must have a role that grants you the View Scheduled Views [role capability
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <br/><img src={useBaseUrl('/img/scheduled-views/scheduled-view-page.png')} style={{border: '1px solid gray'}} alt="scheduled-view-page" width="800"/>
     * **Add a Filter**. To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
         :::note 
-        You can see the suggestions only if there are two or more responses for the same column or section. 
+        You can see the suggestions only if there are two or more responses for the same column or section.
+        :::
+        :::info
+        To refine the table with Scheduled Views that are scheduled to be paused in the next 21 days, select **Views to be AutoPaused in 21 days** option from the dropdown.
         :::
     * **Status**. Indicates whether the scheduled view is currently Completed, Failed, Not Started, Filling, or Paused.
     * **Name**. The name assigned to the scheduled view.
@@ -33,6 +36,9 @@ You must have a role that grants you the View Scheduled Views [role capability
     * **Start Date**. Date when data was first added to the scheduled view.
     * **Lag Time**. If the scheduled view is not up-to-date, **Lag Time** contains the actual lag time. For more information, see [Scheduled View Lag Time](scheduled-view-lag-time.md).
     * **Timezone**. Displays the selected time zone or the default timezone of your browser while creating the scheduled view.
+    * **Last Accessed**. Displays the timestamp of when the Scheduled View was last accessed.
+    * **AutoPause Status**. Indicates whether AutoPause is currently enabled or disabled for the Scheduled View. This will be enabled by default. To disable, refer to [Disable the AutoPause](/docs/manage/scheduled-views/pause-disable-scheduled-views/#disable-the-autopause).
+    * **Scheduled AutoPause Date**. Displays when the selected Scheduled View is scheduled to be auto-paused.
     * **Query**. The query that returns that data to be written to the scheduled view.
     * **Data Forwarding**. If the scheduled view is configured to forward data to an S3 or GCS bucket, the name of the [data forwarding](../data-forwarding/forward-data-from-sumologic.md) destination.  
     * **Created by** and **Modified by**. The user that created the view, and the user that most recently modified the view. <br/><img src={useBaseUrl('/img/scheduled-views/sched-view-details.png')} style={{border: '1px solid gray'}} alt="sched-view-details" width="400"/>
