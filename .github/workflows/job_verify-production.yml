@@ -1,0 +1,122 @@
+name: Verify production deployment
+
+on:
+  workflow_call:
+    inputs:
+      WAIT_SECONDS:
+        description: Seconds to wait for production to propagate before checking
+        default: 300
+        type: number
+      BASE_URL:
+        description: Production base URL to verify against
+        default: 'https://www.sumologic.com/help'
+        type: string
+      GIT_SHA:
+        description: The commit SHA whose changed files should be verified
+        required: true
+        type: string
+    secrets:
+      SLACK_URL:
+        required: false
+
+jobs:
+  verify-production:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.GIT_SHA }}
+          fetch-depth: 2
+
+      - name: Wait for production propagation
+        run: |
+          echo "Waiting ${{ inputs.WAIT_SECONDS }} seconds for production to propagate..."
+          sleep ${{ inputs.WAIT_SECONDS }}
+
+      - name: Verify changed pages are live on production
+        run: |
+          set -euo pipefail
+
+          # Map of source directory prefixes to their production URL prefixes.
+          # Order matters: more specific prefixes should come first.
+          declare -A ROUTE_MAP=(
+            ["docs/"]="/docs/"
+            ["blog-service/"]="/release-notes-service/"
+            ["blog-cse/"]="/release-notes-cse/"
+            ["blog-csoar/"]="/release-notes-csoar/"
+            ["blog-developer/"]="/release-notes-developer/"
+            ["blog-collector/"]="/release-notes-collector/"
+          )
+
+          BASE_URL="${{ inputs.BASE_URL }}"
+          FAILED=0
+          CHECKED=0
+          SKIPPED=0
+
+          # Get files changed in the deployed commit, scoped to content dirs only
+          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD -- \
+            'docs/' \
+            'blog-service/' \
+            'blog-cse/' \
+            'blog-csoar/' \
+            'blog-developer/' \
+            'blog-collector/' \
+            | grep -E '\.(md|mdx)$' || true)
+
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No doc/blog content files changed in this commit. Nothing to verify."
+            exit 0
+          fi
+
+          echo "Changed content files:"
+          echo "$CHANGED_FILES"
+          echo ""
+
+          while IFS= read -r file; do
+            url_path=""
+
+            for prefix in "${!ROUTE_MAP[@]}"; do
+              if [[ "$file" == ${prefix}* ]]; then
+                # Strip source prefix and .md/.mdx extension, apply route prefix
+                relative="${file#$prefix}"
+                relative="${relative%.*}"
+                # Index files (e.g. index.md) collapse to their directory URL
+                if [[ "$relative" == */index || "$relative" == "index" ]]; then
+                  relative="${relative%/index}"
+                  relative="${relative%index}"
+                fi
+                url_path="${ROUTE_MAP[$prefix]}${relative}/"
+                break
+              fi
+            done
+
+            if [ -z "$url_path" ]; then
+              echo "SKIP (no route mapping): $file"
+              SKIPPED=$((SKIPPED + 1))
+              continue
+            fi
+
+            full_url="${BASE_URL}${url_path}"
+            echo -n "Checking: $full_url ... "
+
+            http_status=$(curl --silent --output /dev/null --write-out "%{http_code}" \
+              --max-time 15 --retry 2 --retry-delay 5 "$full_url")
+
+            if [ "$http_status" = "200" ]; then
+              echo "OK (HTTP $http_status)"
+              CHECKED=$((CHECKED + 1))
+            else
+              echo "FAIL (HTTP $http_status)"
+              FAILED=$((FAILED + 1))
+            fi
+          done <<< "$CHANGED_FILES"
+
+          echo ""
+          echo "Results: $CHECKED OK, $FAILED failed, $SKIPPED skipped"
+
+          if [ "$FAILED" -gt 0 ]; then
+            echo "::error::$FAILED page(s) returned a non-200 status on production. The deploy pipeline reported success but content may not be live."
+            exit 1
+          fi
