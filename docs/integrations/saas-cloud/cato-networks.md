@@ -174,9 +174,9 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Cato Networks - Critical or High Risk Threat Events` | Monitors and highlights critical or  high risk threat events. | Critical | Count > 0 |
-| `Cato Networks - Events Destination from Embargoed Geo Locations` | Monitors and highlights events destination located in sanctioned or embargoed regions to maintain adherence to legal and regulatory standards. | Critical | Count > 0 |
-| `Cato Networks - Events Source from Embargoed Geo Locations` | Monitors and highlights events source located in sanctioned or embargoed regions to maintain adherence to legal and regulatory standards. | Critical | Count > 0 |
+| `Cato Networks - Critical or High Risk Threat Events` | This alert is triggered when critical or high-risk threat events are detected, helping to quickly identify and respond to potential security incidents. | Critical | Count > 0 |
+| `Cato Networks - Events Destination from Embargoed Geo Locations` | This alert is triggered when events are detected with a destination located in sanctioned or embargoed regions, helping ensure compliance with legal and regulatory requirements. | Critical | Count > 0 |
+| `Cato Networks - Events Source from Embargoed Geo Locations` | This alert is triggered when events originate from sources located in sanctioned or embargoed regions, enabling organizations to monitor activity and maintain adherence to legal and regulatory standards. | Critical | Count > 0 |
 
 ## Upgrade/Downgrade the Cato Networks app (Optional)
 
