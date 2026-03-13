@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 You can run a log search query in the selected child org under a parent org. All the results obtained from this search will have the data identified from the selected child org.
 
 :::info
-Only users with **manageOrganizations** and **viewOrganizations** capability can conduct searches across child orgs. 
+Only users with **manageOrganizations** and **viewOrganizations** capability can conduct search across child orgs. 
 :::
 
 Follow the steps below to perform a child org-level search:
