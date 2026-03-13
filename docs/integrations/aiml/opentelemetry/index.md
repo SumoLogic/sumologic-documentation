@@ -1,3 +1,4 @@
+<!--
 ---
 slug: /integrations/aiml/opentelemetry
 title: OpenTelemetry
@@ -10,3 +11,4 @@ import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
+-->

@@ -2385,7 +2385,7 @@ integrations: [
             collapsed: true,
             link: {type: 'doc', id: 'integrations/aiml/opentelemetry/index'},
             items: [
-              'integrations/aiml/opentelemetry/openllmetry',
+              // 'integrations/aiml/opentelemetry/openllmetry',
             ],
           },
         ],
