@@ -164,6 +164,20 @@ The **Cato Networks - Audit Feed** dashboard offers a comprehensive summary of a
 - **Top 10 Objects Changed**. The top objects changed widget identifies the specific objects that have undergone the most modifications, offering insights into areas that require further investigation or monitoring.
 - **Audit Summary**. The audits summary widget provides a concise summary of key audit log details, helping you to quickly understand the nature of the recorded activities.
 
+## Create monitors for Cato Networks app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### SentinelOne alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `Cato Networks - Critical or High Risk Threat Events` | Monitors and highlights critical or  high risk threat events. | Critical | Count > 0 |
+| `Cato Networks - Events Destination from Embargoed Geo Locations` | Monitors and highlights events destination located in sanctioned or embargoed regions to maintain adherence to legal and regulatory standards. | Critical | Count > 0 |
+| `Cato Networks - Events Source from Embargoed Geo Locations` | Monitors and highlights events source located in sanctioned or embargoed regions to maintain adherence to legal and regulatory standards. | Critical | Count > 0 |
+
 ## Upgrade/Downgrade the Cato Networks app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
