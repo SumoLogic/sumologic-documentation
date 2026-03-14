@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/office_365_48.png')} alt="Thumbnail icon" width="40"/>
 
-
 ## Office 365 Audit Log Workload types
 
 :::note
@@ -85,7 +84,52 @@ see [Office 365 Management Activity API Schema](https://msdn.microsoft.com/EN-US
 
 Each log file from Microsoft contains one or more log messages formatted as a JSON array. If there is more than one message in the array, we separate each log line in the JSON array into an individual log line message within Sumo Logic.
 
-## Configure a Microsoft Office 365 Audit Source
+## Setup
+
+### Vendor configuration
+
+The Microsoft Office 365 Audit Source requires you to provide **Tenant Id**, **Client Id**, and **Client Secret** while configuring. To obtain these values, follow the below steps:
+
+#### Step 1: Register a new application
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+   :::note
+   Sign in with an account that has Application Administrator and Global Administrator access for your tenant. Global Administrator access is required later to grant admin consent.
+   :::
+2. In the left menu, navigate to **Azure Active Directory** > **App registrations**.
+3. Click **New registration**.
+4. Complete the form:
+   - **Name**. Add a display name of the application registration in Azure. For example, `SumoLogic-O365AuditSource`.
+   - **Supported account types**. Select **Single tenant only - Sumo Logic** from the dropdown. This ensures that the application is accessible only to users within your organization’s Azure AD tenant and not to external or personal Microsoft accounts.
+5. Click **Register**.
+6. Once the application is created, open the **Overview** page to collect the **Client ID** and **Tenant ID**.
+
+#### Step 2: Create a client secret
+
+1. In the application menu, navigate to **Certificates & Secrets** > **Client secrets**.
+2. Click **+ New client secret**.
+3. Provide a description. For example, `SumoCollectorSecret`.
+4. Select an expiration period.
+5. Click **Add**.
+6. Collect the client secret by copying the generated value and store it securely. This value is your Client Secret, and it will not be displayed again.
+
+#### Step 3: Grant API permissions
+
+1. In the application menu, select **API permissions** > **+ Add a permission**.
+2. Choose **APIs your organization uses** and search for **Office 365 Management APIs**.
+3. Select **Application permissions** (not Delegated).
+4. Expand the **ActivityFeed** and select:
+   1. `ActivityFeed.Read`
+   2. (Optional and only for DLP events) `ActivityFeed.ReadDlp` 
+5. Click **Add permissions**.
+
+#### Step 4: Grant admin consent
+
+1. On the **API permissions** page, click **Grant admin consent for `Your Tenant Name`**.
+2. Confirm the action.
+The permissions should now appear as **Granted for `tenant`**.
+
+### Source configuration
 
 You must configure a separate Source for each Office 365 application you want to collect logs for. These can all be configured on the same Hosted Collector. 
 
@@ -112,7 +156,9 @@ During the configuration, you will need to authenticate to Microsoft using sta
    :::note
    If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM, click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
    :::
-1. Click **Sign in with Office 365** to authenticate to Microsoft using standard OAuth v2 interaction.  
+1. To allow Sumo Logic to access your Office 365 account, select one of the following:
+   1. (Recommended) **App Registration**. Enter the **Tenant Id**, **Client Id**, and **Client Secret** obtained in the [Vendor configuration](#vendor-configuration) section.
+   1. (Optional) **Auth (User Account)**. Click **Sign in with Office 365** to authenticate to Microsoft using standard OAuth v2 interaction.  
     :::note
     Sumo Logic never receives your Microsoft Office 365 credentials.
     :::
@@ -129,6 +175,28 @@ The Microsoft Office 365 Audit Source has events logged in the Sumo Logic Audit
  * [Subscription](#subscription-watchpoints) watchpoint failure events
 
 To search for these events use the Audit Index.
+
+## JSON schema
+
+### Configuration Object
+
+| Parameter | Type | Required | Default | Description | Example |
+|:---|:---|:---|:---|:---|:---|
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"`
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the collector or source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| workload | String | Yes | `null` | Select the type of log to collect. If you want to collect from additional content types, create additional instances of this source type. | `Audit.Exchange` |
+| region | String | Yes | `Commercial` | Select the region that corresponds to your Microsoft 365 or Office 365 subscription plan. | not modifiable |
+| tenantId | String | Yes | `null` | Enter the tenant Id collected from the Azure platform. | `11111111‑aaaa‑2222‑bbbb‑333333333333` |
+| clientId | String | Yes | `null` | Enter the client Id collected from the Azure platform.| `44444444‑cccc‑5555‑dddd‑666666666666` |
+| clientSecret | String | Yes | `null` | Enter the client secret collected from the Azure platform.| `xxxxxxxx‑super‑secret‑value‑xxxxxxxx` |
+
+### JSON example
+
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/ms-office-audit/example.json
+```
 
 ## Known Issues
 
