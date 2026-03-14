@@ -72,7 +72,7 @@ You can select multiple insights and make changes to them all at once using eith
 You can select a maximum of 5000 insights in one action, and your organization can have up to five active requests in progress at once.
 :::
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Watch this micro lesson to learn about bulk updating insights.
 
@@ -166,7 +166,6 @@ At the top of the insight details page, you’ll see a signal timeline that visu
    * **Rule**. Signals that were triggered by other rules.
    * **Anomaly**. Signals that were triggered by User and Entity Behavior Analytics (UEBA) rules.
    * **Threat intelligence**. Signals that were fired by threat intel rules.
-   * **File Analysis**. Signals that were triggered by [YARA file analysis rules](/docs/cse/rules/import-yara-rules).
 1. **Show Related**. Click this link to show related signals in addition to attached signals. If you click the **Show Related** checkbox, the page updates and also displays any related signals or related insights.
     * A *related signal* is a signal that isn’t part of the current insight (it’s not attached), but fired on the same entity as the current insight’s attached signals within 7 days of the current insight’s attached signals. 
     * A *related insight* is an insight that a related signal is attached to.
@@ -276,7 +275,7 @@ In addition, the following can appear in the graph:
 * **Threat indicators**. Any entity with a threat indicator will have an additional icon in the upper right. If the threat indicator is Malicious or Suspicious, the entity will be highlighted in red or yellow accordingly. For more information about threat indicators, see [View threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui).
 * **Hover**. If you hover over an entity, it and all connections to it will be highlighted in blue. If its value is not fully visible by default, the full value will be displayed.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Watch this micro lesson to learn more about the entity relationship graph.
 

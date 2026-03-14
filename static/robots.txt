@@ -1,19 +1,22 @@
 # Algolia-Crawler-Verif: 4E25C3C253AC39D1
+# Sumo Logic Help Docs
+# AI/LLM crawlers are welcome - see /llms.txt for guidance
 
 User-agent: *
-Disallow: /docs/reuse/
-Disallow: /tags/
+Disallow: /docs/reuse/*
+Disallow: /docs/beta/*
+Disallow: /tags/*
 Disallow: /*?tags=
+Disallow: /ja/*
+Disallow: /files/*
+Disallow: /cid-redirects.json
+Disallow: /release-notes-*/archive
+Disallow: /release-notes-*/2021/
+Disallow: /release-notes-*/rss.xml
 Disallow: /adler32/
 Disallow: /deki/
 Disallow: /crc32/
 Disallow: /zlib/
 Disallow: /inffast/
-Disallow: /ja/docs/
-Disallow: /cid-redirects.json/
-Disallow: /files/
-
-# Sumo Logic Help Center
-# AI/LLM crawlers are welcome - see /llms.txt for guidance
 
 Sitemap: https://www.sumologic.com/help/sitemap.xml

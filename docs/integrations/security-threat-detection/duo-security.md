@@ -2,18 +2,18 @@
 id: duo-security
 title: Duo Security
 sidebar_label: Duo Security
-description: The Sumo Logic App for Duo Security helps you monitor your Duo account’s authentication logs, administrator logs, and telephony logs.
+description: The Sumo Logic app for Duo Security helps you monitor your Duo account’s authentication logs, administrator logs, and telephony logs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="thumbnail icon" width="55"/>
 
-Duo provides two-factor authentication, endpoint remediation, and secure single sign-on tools. The Sumo Logic App for Duo Security helps you monitor your Duo account’s [authentication logs](https://duo.com/docs/adminapi#authentication-logs), [administrator logs](https://duo.com/docs/adminapi#administrator-logs), and [telephony logs](https://duo.com/docs/adminapi#telephony-logs). The dashboards provide insight into failed and successful authentications, events breakdown by applications, factors, and users, geo-location of events, admin activities, outliers, threat analysis of authentication, and administrator events.
+Duo provides two-factor authentication, endpoint remediation, and secure single sign-on tools. The Sumo Logic app for Duo Security helps you monitor your Duo account’s [authentication logs](https://duo.com/docs/adminapi#authentication-logs), [administrator logs](https://duo.com/docs/adminapi#administrator-logs), and [telephony logs](https://duo.com/docs/adminapi#telephony-logs). The dashboards provide insight into failed and successful authentications, events breakdown by applications, factors, and users, geo-location of events, admin activities, outliers, threat analysis of authentication, and administrator events.
 
 ## Log types
 
-The Duo Security App uses following logs. Refer to the [Duo documentation](https://duo.com/docs/adminapi#logs) for details of the log schema.
+The Duo Security app uses following logs. Refer to the [Duo documentation](https://duo.com/docs/adminapi#logs) for details of the log schema.
 
 When you generate the Duo credentials, you should do it for the Admin API application.
 
@@ -59,33 +59,61 @@ The Duo Security app helps you monitor your Duo account’s [authentication](htt
 
 ### Overview
 
-Overview of Duo Events including events breakdown by type, geographic location, one-day time comparison of events, and admin activity.
+The **Duo Security - Overview** dashboard provides a high-level summary of Duo activity, including event-type distribution, trends, failed-authentication reasons, geo-location, and recent administrator activity.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/duo-overview.png')} alt="Duo Security dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Duo-Security-Overview.png')} alt="Duo Security dashboards" />
+
+### Activity Events
+
+The **Duo Security - Activity Events** dashboard provides detailed visibility into Duo activity logs, including action trends, top actors, device and browser activity, sensitive actions, and geo-location context for investigation.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/Duo-Security-Activity-Events.png')} alt="Duo Security dashboards" />
 
 ### Administrator Events
 
-Geographic location of admin events, one-day time comparison of events, login errors, admin activity over time, and events breakdown by action.
+The **Duo Security - Administrator Events** dashboard provides comprehensive monitoring of administrator activity, including login errors, successful logins, action breakdowns, trends over time, and geo-location of admin access.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Duo-administrator-events.png')} alt="Duo Security dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Duo-Security-Administrator-Events.png')} alt="Duo Security dashboards" />
 
 ### Success Authentications
 
-Geographic location of successful authentication events, one-day time comparison of events, breakdown of events by Application, Factor, Users, Country, State, and City.
+The **Duo Security - Success Authentications** dashboard provides analysis of successful login events by user, factor, application, reason, and location, with geo maps and trends to validate expected access behavior.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/duo-success-authentication.png')} alt="Duo Security dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Duo-Security-Success-Authentications.png')} alt="Duo Security dashboards" />
 
 ### Failed Authentications
 
-Geographic location of failed authentication events, one-day time comparison of failed events, breakdown of events by Application, Factor, Users, Country, State, and City.
+The **Duo Security - Failed Authentications** dashboard provides focused analysis of failed login activity by reason, factor, application, user, and location, with geo maps and trend comparisons to identify anomalies.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/duo-failed-authentications.png')} alt="Duo Security dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Duo-Security-Failed-Authentications.png')} alt="Duo Security dashboards" />
 
 ### Outliers and Threat Analysis
 
-Outliers and threat analysis of Duo events.
+The **Duo Security - Outliers and Threat Analysis** dashboard helps detect anomalous authentication behavior and investigate threats using threat intelligence enrichment across authentication and administrator events.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/duo-outliers-threat.png')} alt="Duo Security dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Duo-Security-Outliers-and-Threat-Analysis.png')} alt="Duo Security dashboards" />
+
+### Users Overview
+
+The **Duo Security - Users Overview** dashboard provides user posture visibility across status distribution, lockout reasons, enrollment coverage, group membership, inactive users, and lifecycle changes.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/Duo-Security-Users-Overview.png')} alt="Duo Security dashboards" />
+
+## Create monitors for the Duo Security app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Duo Security app alerts
+
+| Name  | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Duo Security - Activity from Embargoed Location` | This alert is triggered when Duo activity is observed from embargoed or high-risk countries. This may indicate unauthorized access, policy violations, or malicious activity originating from restricted geographies. | Count > 0 | Count < = 0 |
+| `Duo Security - Admin Login Error Detected` | This alert is triggered when administrator login errors are detected in Duo. Repeated admin login failures may indicate credential abuse, brute-force attempts, or unauthorized attempts to access privileged accounts. | Count > 0 | Count < = 0 |
+| `Duo Security - Admin Login from Embargoed Location` | This alert is triggered when a Duo administrator login originates from an embargoed or high-risk location. This may indicate compromised administrative access and should be investigated immediately. | Count > 0 | Count < = 0 |
+| `Duo Security - Excessive Failed Authentications by User` | This alert is triggered when a user exceeds three failed Duo authentication attempts within 15 minutes. This may indicate brute-force activity, credential stuffing, or unauthorized access attempts against user accounts. | Count > 3 | Count < = 3 |
+| `Duo Security - Secret Key View Activity` | This alert is triggered when Duo integration secret keys are viewed. Secret key access is a sensitive administrative action and may indicate privilege misuse or preparation for unauthorized integration changes. | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the Duo app (Optional)
 

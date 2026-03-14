@@ -31,11 +31,31 @@ jobs:
         if: always()
         id: ip
         uses: haythem/public-ip@v1.3
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@00943011d9042930efac3dcd3a170e4273319bc8
-        with:
-          role-to-assume: ${{ secrets.WEBOPS_AWS_ROLE_JENKINS }}
-          aws-region: us-east-1
+      - name: Authenticate to AWS via OIDC
+        env:
+          AWS_ROLE_ARN: ${{ secrets.WEBOPS_AWS_ROLE_JENKINS }}
+          AWS_REGION: us-east-1
+        run: |
+          set -euo pipefail
+          OIDC_TOKEN=$(curl -fsSL -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" \
+            | jq -r '.value')
+
+          if [ -z "$OIDC_TOKEN" ] || [ "$OIDC_TOKEN" = "null" ]; then
+            echo "::error::Failed to retrieve OIDC token"
+            exit 1
+          fi
+          CREDS=$(aws sts assume-role-with-web-identity \
+            --role-arn "$AWS_ROLE_ARN" \
+            --role-session-name "GitHubActions" \
+            --web-identity-token "$OIDC_TOKEN" \
+            --duration-seconds 3600 \
+            --query 'Credentials' \
+            --output json)
+          echo "AWS_ACCESS_KEY_ID=$(echo $CREDS | jq -r '.AccessKeyId')" >> $GITHUB_ENV
+          echo "AWS_SECRET_ACCESS_KEY=$(echo $CREDS | jq -r '.SecretAccessKey')" >> $GITHUB_ENV
+          echo "AWS_SESSION_TOKEN=$(echo $CREDS | jq -r '.SessionToken')" >> $GITHUB_ENV
+          echo "AWS_REGION=$AWS_REGION" >> $GITHUB_ENV
       - name: Add runner to AWS security group ingress
         run: aws ec2 authorize-security-group-ingress --group-name ${{ secrets.WEBOPS_AWS_SG_NAME }} --protocol tcp --port ${{ secrets.WEBOPS_JENKINS_PORT }} --cidr ${{ steps.ip.outputs.ipv4 }}/32
       - name: Trigger Jenkins pipeline
