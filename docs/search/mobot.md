@@ -29,6 +29,16 @@ It connects you to two specialized agents that handle different tasks:
 
 Together, these agents help you troubleshoot faster, explore your data more intuitively, and learn the platform without friction.
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* **Self-paced**: [Mobot Essentials Self Paced](https://learn.sumologic.com/mobot-101)
+* **Instructor-led virtual classes**: [Workshops: Mobot Essentials](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2)
+:::
+
 ### Key capabilities
 
 * **Auto-visualization**. Generate charts automatically from search results and add them directly to dashboards.
