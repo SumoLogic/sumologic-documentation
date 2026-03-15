@@ -11,5 +11,5 @@ Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic sty
 @https://github.com/SumoLogic/sumologic-documentation/tree/main/docs
 
 ## Skills
-- .claude/skills/sumo-style — Sumo Logic writing conventions. Claude fetches the live style guide and applies it automatically when writing or editing docs.
-- .claude/skills/docusaurus — Docusaurus 3 syntax, frontmatter templates, and sidebar config patterns.
+- .claude/skills/sumo-style/SKILL.md — Sumo Logic writing conventions. Claude fetches the live style guide and applies it automatically when writing or editing docs.
+- .claude/skills/docusaurus/SKILL.md — Docusaurus 3 syntax, frontmatter templates, and sidebar config patterns.

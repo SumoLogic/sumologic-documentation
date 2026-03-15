@@ -1,23 +1,86 @@
 ---
 name: docusaurus
-description: Generate Docusaurus 3 compatible markdown, frontmatter, sidebars config, and MDX components. Use when creating new docs pages, updating sidebars.ts, or working with Docusaurus-specific features.
+description: Docusaurus 3 syntax, frontmatter templates, MDX components, and sidebar config patterns for the sumologic-documentation repo. Use when creating new docs pages, updating sidebars.ts, or working with any Docusaurus-specific features.
 ---
 
-# Docusaurus 3 — Quick Reference
+# Docusaurus 3 Reference — sumologic-documentation
 
-## Frontmatter template
+## Frontmatter Templates
 
-id: page-id
-title: Page Title (under 60 chars, include keywords)
-sidebar_label: Short Nav Label
-description: 1-2 sentence SEO description.
+### Regular content page
+```yaml
+---
+id: my-page-name
+title: My Page Title          # under 60 chars, include target keywords
+sidebar_label: Sidebar Label  # short nav label
+description: One or two sentences describing this page for search engines.
+---
+```
+
+### Index / hub page (custom URL)
+```yaml
+---
+slug: /section/subsection
+title: Section Title
+sidebar_label: Section Title
+description: Description of this section.
 keywords:
   - keyword1
   - keyword2
-tags: [keyword1, keyword2]
+tags:
+  - tag1
+  - tag2
+---
+```
+
+## Standard Imports
+
+```jsx
+import useBaseUrl from '@docusaurus/useBaseUrl';
+```
+
+For hub/card pages:
+```jsx
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+```
+
+For embedded videos:
+```jsx
+import Iframe from 'react-iframe';
+```
+
+## Hub/Index Page Layouts
+
+### Card grid (sumologic-documentation custom layout)
+```jsx
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<div className="box-wrapper">
+  <div className="box smallbox card">
+    <div className="container">
+      <a href={useBaseUrl('docs/section/page')}>
+        <img src={useBaseUrl('img/icons/icon.png')} alt="icon description" width="40"/>
+        <h4>Card Title</h4>
+      </a>
+      <p>Brief description of this section.</p>
+    </div>
+  </div>
+</div>
+```
+
+### DocCardList (auto-generated from sidebar)
+```jsx
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
 
 ## Admonitions
 
+```markdown
 :::note
 Informational note.
 :::
@@ -38,45 +101,70 @@ Important and potentially problematic information.
 Dangerous action that could result in data loss.
 :::
 
-:::sumo[Best Practice]
-Sumo Logic-specific best practices or SME guidance. Title can be changed.
+:::sumo Best Practice
+Sumo Logic-specific best practice. Title is customizable.
 :::
 
 :::training
 Links to training courses or certifications.
 :::
+```
+
+Admonitions support code blocks, links, bullets, and images inside them.
+
+## Code Blocks
+
+With language and title:
+````markdown
+```json title="config.json"
+{ "key": "value" }
+```
+````
+
+With line highlighting:
+````markdown
+```python {3-5}
+line1
+line2
+highlighted line 3
+highlighted line 4
+highlighted line 5
+line6
+```
+````
 
 ## Images
 
 Add this import under frontmatter:
+```jsx
 import useBaseUrl from '@docusaurus/useBaseUrl';
+```
 
 Image syntax:
-<img src={useBaseUrl('img/your-image.png')} alt="Descriptive alt text" style={{border: '1px solid gray'}} width="500" />
+```jsx
+<img src={useBaseUrl('img/folder/image.png')} alt="Descriptive alt text" style={{border: '1px solid gray'}} width="400" />
+```
 
-- Save images to /static/img
-- PNG format only, max 2MB, max width 800px
-- Always include alt text
+Guidelines:
+- Save images to `/static/img/`
+- PNG format preferred; max 2MB; max display width 800px
+- Always include descriptive `alt` text
 - Square logos: ~50px wide; wide logos: ~100px wide
 
-## Reusable content
+## Collapsible Sections
 
-import MySnippet from '../reuse/my-snippet.md';
-<MySnippet/>
-
-Store reusable snippets in /docs/reuse
-
-## Collapsible sections
-
+```html
 <details>
 <summary>Toggle label here</summary>
 
-Content goes here. Supports markdown, code blocks, images.
+Content goes here. Supports markdown, code blocks, and images.
 
 </details>
+```
 
 ## Tabs
 
+```jsx
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -87,6 +175,7 @@ import TabItem from '@theme/TabItem';
     {label: 'Tab 1', value: 'tab1'},
     {label: 'Tab 2', value: 'tab2'},
   ]}>
+
 <TabItem value="tab1">
 
 Content for tab 1.
@@ -98,39 +187,106 @@ Content for tab 2.
 
 </TabItem>
 </Tabs>
+```
 
-## Sidebar entry (sidebars.ts)
+## Reusable Partials (Snippets)
 
-Single doc entry:
-'folder/page-id'
+Shared content lives in `/docs/reuse/` — these files are not rendered publicly.
 
-Category entry:
+```markdown
+import MySnippet from '../reuse/my-snippet.md';
+
+<MySnippet/>
+```
+
+## Downloadable Files
+
+```jsx
+<a href={useBaseUrl('files/your-file.yaml')} target="_blank">your-file.yaml</a>
+```
+
+Store downloadable files in `/static/files/`.
+
+## Embedded Video (Iframe)
+
+```jsx
+import Iframe from 'react-iframe';
+
+<Iframe url="https://www.youtube.com/embed/VIDEO_ID"
+  width="854px"
+  height="480px"
+  id="myId"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+/>
+```
+
+## sidebars.ts Patterns
+
+### Add a simple doc
+```javascript
+// In the appropriate sidebar array:
+'section/my-doc-id',   // matches frontmatter id: my-doc-id in docs/section/my-doc.md
+```
+
+### Add a category with an index page
+```javascript
 {
   type: 'category',
-  label: 'Section Name',
+  label: 'Category Name',
   collapsible: true,
-  collapsed: false,
-  link: {type: 'doc', id: 'folder/index'},
+  collapsed: true,
+  link: {type: 'doc', id: 'section/index'},
   items: [
-    'folder/doc-id1',
-    'folder/doc-id2',
+    'section/page-one',
+    'section/page-two',
+    {
+      type: 'category',
+      label: 'Sub-category',
+      items: [
+        'section/subcat/page',
+      ],
+    },
   ],
 },
+```
 
-## Hub/index page
+### Sidebar ID → file path mapping
+- Sidebar entry `'section/my-page'` maps to file `docs/section/my-page.md` with frontmatter `id: my-page`
+- For `index.md` files with `slug:`, use the path `'section/index'`
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+## File Naming Conventions
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+- Kebab-case: `my-page-name.md`
+- Section landing pages: `index.md`
+- Reusable snippets: stored in `docs/reuse/`, named descriptively
 
-## Downloadable files
+## Special Folders
 
-<a href={useBaseUrl('files/your-file.yaml')} target="_blank">your-file.yaml</a>
+| Folder | Purpose |
+|--------|---------|
+| `docs/reuse/` | Shared markdown snippets, not rendered publicly |
+| `docs/beta/` | Beta feature docs (closed/open beta) |
+| `docs/contributing/` | Contribution guides and templates |
+| `static/img/` | All images |
+| `static/files/` | Downloadable files (YAML, JSON, etc.) |
+| `blog-service/`, `blog-cse/`, etc. | Release notes (blog-based) |
 
-Store files in /static/files
+## Key Docusaurus Plugins Available
 
-## Local preview commands
+- `remark-code-import` — import code from files into code blocks
+- `remark-import-partial` — import markdown files as partials
 
-yarn start  — hot reload dev server
-yarn build  — full production build
+## Custom Admonition Keywords (configured in this repo)
+
+`note`, `tip`, `warning`, `important`, `danger`, `sumo`, `secondary`, `success`, `training`
+
+## Local Dev Commands
+
+```bash
+yarn start   # hot-reload dev server
+yarn build   # full production build
+```
