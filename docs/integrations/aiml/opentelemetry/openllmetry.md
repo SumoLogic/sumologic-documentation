@@ -46,7 +46,7 @@ You can collect the data in two ways, either by setting up the destination as **
 
 1. [Install](/docs/send-data/hosted-collectors/configure-hosted-collector/) the Sumo Logic hosted collector.
 1. [Create Sumo Logic OTLP/HTTP Source](/docs/send-data/hosted-collectors/http-source/otlp/#create-an-otlphttpsource) under Hosted Collector. 
-1. Cick the **Show URL** option against your selected source on your OTLP/HTTP source page.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/OTLP-HTTP-Source.png' alt="Source" style={{border: '1px solid gray'}} width="800"/>
+1. Click the **Show URL** option against your selected source on your OTLP/HTTP source page.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/OTLP-HTTP-Source.png' alt="Source" style={{border: '1px solid gray'}} width="800"/>
 1. Use any of the following address type to configure the instrumentation code:
     - **Presigned URL**
         - Copy and save the complete URL with embedded authentication.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Presigned-URL.png' alt="PresignedURL" style={{border: '1px solid gray'}} width="800"/>
