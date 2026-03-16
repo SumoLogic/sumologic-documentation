@@ -24,7 +24,7 @@ For Azure Subscription, you can collect the following metrics:
 * **Latency**. Latency data for all requests to the Azure Subscription.
 * **Traffic**. Traffic data for all requests to the Azure Subscription.
 
-For more information on the supported metrics schema, refer to [Azure documentation](https://docs.azure.cn/en-us/azure-resource-manager/management/monitor-resource-manager-reference#metrics).
+For more information on the supported metrics schema, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/monitor-resource-manager-reference#metrics).
 
 ## Setup
 
