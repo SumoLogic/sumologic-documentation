@@ -158,7 +158,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `Cisco Meraki - Embargoed Geo Location Of Destination` | This alert is triggered when data access is detected from Destination IP addresses located in embargoed or sanctioned regions. This alert ensures compliance with regulations and corporate policies. | Count > 0 |
 | `Cisco Meraki - Embargoed Geo Location Of Source` | This alert is triggered when data access is detected from source IP addresses located in embargoed or sanctioned regions. This alert ensures compliance with regulations and corporate policies. | Count > 0 |
 | `Cisco Meraki - Large Size File Scanned Activity Detected` | This alert is triggered when a large volume of file-scanning activity is detected(>500MB) over the network by the client. You can also adjust the "threshold" as per your requirement. | Count > 0 |
-| `Cisco Meraki - Malicious File Detected` | This alert is triggered when "Malicious" file activity is detected over the network by Cisco Meraki AMP. Investigate immediately to isolate affected endpoints, verify blocking action, and correlate file hash with threat intelligence. | Count > 0 |
+| `Cisco Meraki - Malicious File Detected` | This alert is triggered when a malicious file activity is detected over the network by Cisco Meraki AMP. Investigate immediately to isolate affected endpoints, verify blocking action, and correlate file hash with threat intelligence. | Count > 0 |
 
 ## Upgrade/Downgrade the Cisco Meraki - C2C app (Optional)
 
