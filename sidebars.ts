@@ -1184,6 +1184,7 @@ module.exports = {
          'manage/data-archiving/archive-otel',
        ]
      },
+     'manage/deletion-requests',
    ],
   },
 ],
@@ -2373,6 +2374,25 @@ integrations: [
        },
       {
         type: 'category',
+        label: 'AI/ML',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/aiml/index'},
+        items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            link: {type: 'doc', id: 'integrations/aiml/opentelemetry/index'},
+            items: [
+              'integrations/aiml/opentelemetry/openllmetry',
+            ],
+          },
+        ],
+      },
+      {
+        type: 'category',
         label: 'App Development',
         collapsible: true,
         collapsed: true,
@@ -3184,6 +3204,7 @@ integrations: [
         'api/content-management',
         'api/content-permissions',
         'api/dashboard',
+        'api/data-deletion-rules',
         'api/dynamic-parsing',
         'api/field-extraction-rules',
         'api/field-management',
