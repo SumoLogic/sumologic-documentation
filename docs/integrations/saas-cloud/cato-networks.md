@@ -170,7 +170,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### SentinelOne alerts
+### Cato Networks alerts
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
