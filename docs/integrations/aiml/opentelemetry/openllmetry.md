@@ -83,7 +83,7 @@ You can collect the data in two ways, either by setting up the destination as **
             ```
         
     :::info
-    For logs and metrics, refer to the [OTLP/HTTP Source](/docs/send-data/hosted-collectors/http-source/otlp/#data-differentiation).
+    For logs and metrics, refer to the URL format in [Data Differentiation](/docs/send-data/hosted-collectors/http-source/otlp/#data-differentiation).
     :::
 
 ## Instrument sample application for OpenLLMetry
@@ -112,8 +112,8 @@ The **OpenLLMetry SDK(Traceloop)** is configured to export telemetry data using 
 
 The following two configurations are supported:
 
-- **Using an OpenTelemetry collector**. For OpenTelemetry collector, the endpoint connects to `http://localhost:4318`, and the Sumo Logic exporter forwards the collected data to the SaaS platform.
-- **Using an OTLP/HTTP directly**. For OTLP/HTTP source, the endpoint connects to `https://collectors.sumologic.com/receiver/v1/otlp`.
+- For **OpenTelemetry collector**, the endpoint connects to `http://localhost:4318`, and the Sumo Logic exporter forwards the collected data to the SaaS platform.
+- For **OTLP/HTTP source**, the endpoint connects to `https://collectors.sumologic.com/receiver/v1/otlp`.
 
 #### Step 2: Load the embedding model
 
@@ -140,7 +140,7 @@ When you submit a question:
 
 The system returns the top matching documents that are semantically similar to the query. This enables efficient retrieval of relevant information based on meaning rather than exact keyword matches.
 
-### Sample OpenTelemetry collector code
+### Demonstration code for OpenTelemetry collector
 
 <details>
 <summary>OpenTelemetry collector</summary>
@@ -210,7 +210,7 @@ The system returns the top matching documents that are semantically similar to t
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Trace-View-Sumo-Logic.png' alt="Traces-Sumo-Logic" style={{border: '1px solid gray'}} width="800"/>
 
-### Sample OTLP/HTTP source-auth header code
+### Demonstration code for OTLP/HTTP source with Auth-Header
 
 <details>
 <summary>OTLP/HTTP source-auth header</summary>
