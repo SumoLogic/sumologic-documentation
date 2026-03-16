@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/integrations/security-threat-detection/ciscomeraki.png')} alt="ciscomeraki-logo" width="75"/>
 
-The Sumo Logic app for Cisco Meraki - C2C provides real-time insights into the events and helps you to identify potential network events along with admin activities. This app can effectively manage and optimize your network performance, enhance security, and proactively respond to potential threats. The comprehensive insights and monitoring capabilities enable efficient network administration and contribute to a robust and secure network infrastructure.
+The Sumo Logic app for Cisco Meraki app collects data from Cisco Meraki Cloud-to-cloud (C2C) collector, providing comprehensive insights and monitoring capabilities for efficient network management and enhanced security. With features such as organization overview, network traffic analysis and monitoring, real-time security event monitoring, event analysis, client and SSID monitoring, Air Marshal security overview, and visualization/reporting, these dashboards offer valuable information on network configuration, traffic patterns, bandwidth utilization, performance metrics, security events, client activity, and potential threats. By leveraging these key features, you can proactively optimize network performance, analyze traffic trends, identify and mitigate security risks, and make informed decisions to ensure a robust and secure network infrastructure.
 
 Key features and benefits of the Cisco Meraki - C2C app include:
 
@@ -19,6 +19,8 @@ Key features and benefits of the Cisco Meraki - C2C app include:
 - **Air Marshal Security Overview**. Provide wireless intrusion detection and prevention by monitoring security status and identifying potential vulnerabilities in the network.
 - **Enhanced Security Measures**. Monitor blocked connections, file scans, and malicious files to ensure a secure network environment. Prioritize your security efforts by identifying top clients and destinations based on security events and take proactive steps to protect the network and mitigate potential threats.
 - **Visualization and Reporting**. Provides visual representations of network data, making it easy for you to understand and interpret key metrics. Generate reports and share insights with your stakeholders to facilitate decision-making and drive network improvements.
+- **Network Traffic Analysis and Monitoring**. Monitor comprehensive network traffic patterns including application usage, protocol distribution, and port activity. Track bandwidth trends and analyze sent versus received data to understand communication patterns and optimize network performance.
+- **Geographic Risk Assessment and Port Security**. Visualize destination locations and identify high-risk or embargoed regions for compliance awareness. Monitor traffic on insecure ports to detect legacy or unencrypted services and enhance network security posture.
 
 ## Log types
 
@@ -32,44 +34,64 @@ This app uses [Cisco Meraki source](/docs/send-data/hosted-collectors/cloud-to-c
 - [Get Organizations Configuration Changes](https://developer.cisco.com/meraki/api-v1/#!get-organization-configuration-changes) sample log format.
 - [Get Network Events](https://developer.cisco.com/meraki/api-v1/#!get-network-events) sample log format.
 - [Get Network Wireless Air Marshal](https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-air-marshal) sample log format.
+- [Get Network Traffic Events](https://developer.cisco.com/meraki/api-v1/get-network-traffic/) sample log format.
 
 ## Sample queries
 
 ```sql title="Total Organizations"
-_sourceCategory=cm_con2006 licensing
-| json "id", "name", "url", "api.enabled", "licensing.model", "cloud.region.name", "management.details.[*].name", "management.details.[*].value" as id, name, url, enabled, model, region, management_name, management_value nodrop
-| count_distinct(id)
+_sourceCategory=Labs/CiscoMerakiC2C  licensing name management cloud
+| json "id","name","cloud.region.name" as id,name,region nodrop
+
+// global filters 
+| where if("{{organization_name}}" = "*",true,name matches "{{organization_name}}")
+| where if("{{region_name}}" = "*",true,region matches "{{region_name}}")
+
+// panel specific
+| where !isBlank(id)
+| count by id
+| count 
 ```
 
-```sql title="Total Network Logs"
-_sourceCategory=cm_con2006 organizationId
-| json "id", "organizationId", "name", "productTypes", "timeZone", "tags", "enrollmentString", "url", "notes", "isBoundToConfigTemplate" as id, organization_id, name, product_types, time_zone, tags, enrollment_string, url, notes, is_bound_to_config_template nodrop
-| count_distinct(id)
+```sql title="Total Networks"
+_sourceCategory=Labs/CiscoMerakiC2C organizationId name productTypes
+| json "id","name","timeZone" as id,name,time_zone nodrop
+
+// global filters
+| where if("{{time_zone}}"="*",true,time_zone matches "{{time_zone}}")
+| where if("{{network_name}}" = "*",true,name matches "{{network_name}}")
+
+// panel specific
+| count by id
+| count
 ```
 
 ```sql title="Total Events"
-_sourceCategory=cm_con2006 eventType
-| json "ts", "eventType", "clientName", "clientMac", "clientIp", "srcIp", "destIp", "protocol", "uri", "canonicalName", "destinationPort", "fileType", "fileSizeBytes", "disposition", "action", "deviceMac", "priority", "classification", "message", "signature", "ruleId"  as date_time, event_type, client_name, client_mac, client_ip, src_ip, dest_ip, protocol, uri, canonical_name, dest_port, file_type, file_size_bytes, disposition, action, device_mac, priority, classification, message, signature, rule_id nodrop
+_sourceCategory=Labs/CiscoMerakiC2C  eventType priority ts
+| json "clientName", "eventType", "priority", "ts" as client_name, event_type, priority, ts nodrop
+
 | if(priority matches "1", "High", if(priority matches "2", "Medium", if(priority matches "3", "Low", if (priority matches "4", "Very Low", "-")))) as severity
-//filters
-| where event_type matches "{{event_type}}"
-| where client_name matches "{{client_name}}"
-| where severity matches "{{severity}}"
-| count(event_type)
-```
 
-```sql title="Network Activity"
-_sourceCategory=cm_con2006 networkId
-| json "occurredAt", "networkId", "type", "description", "category", "clientId", "clientDescription", "clientMac", "deviceSerial", "deviceName", "ssidNumber", "eventData.radio", "eventData.vap", "eventData.client_mac", "eventData.client_ip", "eventData.channel", "eventData.rssi", "eventData.aid" as occurredAt, networkId, type, description, category, clientId, clientDescription, clientMac, deviceSerial, deviceName, ssidNumber, radio, vap, client_mac, client_ip, channel, rssi, aid nodrop
-// filters
-| where type matches "{{event_type}}"
-| count_distinct(networkId)
-```
+// global filters
+| where if ("{{client_name}}" = "*", true, client_name matches "{{client_name}}")
+| where if ("{{event_type}}" = "*", true, event_type matches "{{event_type}}")
+| where if ("{{severity}}" = "*", true, severity matches "{{severity}}")
 
-```sql title="Total Activities"
-_sourceCategory=cm_con2006 wiredMacs
-| json "ssid", "channels", "firstSeen", "lastSeen", "wiredMacs", "wiredVlans", "wiredLastSeen","bssids[*].bssid","bssids[*].detectedBy[*].device","bssids[*].detectedBy[*].rssi" as ssid, channels, first_seen, last_seen, wired_macs, wired_vlans, wired_last_seen,bssids,devices,rssi_values nodrop
+// panel specific 
+| count by ts // deduplicating via ts as we do not have any unique identifier
 | count
+```
+
+```sql title="Total Network Activity"
+_sourceCategory=Labs/CiscoMerakiC2C  occurredAt networkId
+| json "type", "occurredAt", "networkId" as type, occurred_at, network_id nodrop
+
+// global filters
+| where if ("{{event_type}}" = "*", true, type matches "{{event_type}}")
+| where if ("{{category}}" = "*", true, category matches "{{category}}")
+
+// panel specific
+| count by occurred_at, network_id
+| count 
 ```
 
 ## Collection configuration and app installation
@@ -117,6 +139,26 @@ The **Cisco Meraki - Appliance Security Events** dashboard provides real-time in
 ### Network Events and Air Marshal
 
 The **Cisco Meraki - Network Events and Air Marshal** dashboard provides you with a comprehensive overview of network activity, event timelines, and event type breakdown. It offers insights into associated clients and their respective SSIDs, highlighting recent association events. The geo locations of clients are displayed, allowing for easy identification of their geographical distribution. Additionally, this dashboard presents information on the SSID associated with clients and an Air Marshal overview to monitor security. Risky geo locations are highlighted to help you to identify potential threats and vulnerabilities. With these panels, the dashboard offers a holistic view of network performance, event analysis, client activity, and security monitoring. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Cisco-Meraki-Network-Events-and-Air-Marshal.png')} alt="Cisco-Meraki-Network-Events-and-Air-Marshal" />
+
+### Network Traffic Overview
+
+The **Cisco Meraki - Network Traffic Overview** dashboard provides a detailed overview of Cisco Meraki network traffic, highlighting application usage, protocol distribution, and port activity. It tracks bandwidth trends and compares sent versus received data to reveal communication patterns. Geographic panels map destination locations and identify high-risk or embargoed regions for compliance awareness. The dashboard also monitors traffic on insecure ports to detect legacy or unencrypted services. Overall, it offers clear visibility into network utilization and security posture. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Cisco-Meraki-Network-Traffic-Overview.png')} alt="Cisco-Meraki-Network-Traffic-Overview" />
+
+## Create monitors for Cisco Meraki C2C app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Cisco Meraki C2C Alerts
+
+| Name  | Description | Alert Condition |
+|:--|:--|:--|
+| `Cisco Meraki - Embargoed Geo Location Of Client` | This alert is triggered when data access is detected from client IP addresses located in embargoed or sanctioned regions. This alert ensures compliance with regulations and corporate policies. | Count > 0 |
+| `Cisco Meraki - Embargoed Geo Location Of Destination` | This alert is triggered when data access is detected from Destination IP addresses located in embargoed or sanctioned regions. This alert ensures compliance with regulations and corporate policies. | Count > 0 |
+| `Cisco Meraki - Embargoed Geo Location Of Source` | This alert is triggered when data access is detected from source IP addresses located in embargoed or sanctioned regions. This alert ensures compliance with regulations and corporate policies. | Count > 0 |
+| `Cisco Meraki - Large Size File Scanned Activity Detected` | This alert is triggered when a large volume of file-scanning activity is detected(>500MB) over the network by the client. You can also adjust the threshold as per your requirement. | Count > 0 |
+| `Cisco Meraki - Malicious File Detected` | This alert is triggered when a malicious file activity is detected over the network by Cisco Meraki AMP. Investigate immediately to isolate affected endpoints, verify blocking action, and correlate file hash with threat intelligence. | Count > 0 |
 
 ## Upgrade/Downgrade the Cisco Meraki - C2C app (Optional)
 
