@@ -43,6 +43,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/send-data/installed-collectors/sources/convert-ic-local-file-source-to-otel-st')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Convert Installed Collector Local File Sources to OpenTelemetry Source Templates</h4></a>
+  <p>Convert Installed Collectors Local File Sources to OpenTelemetry Source Templates for improved scalability, consistency, and future enhancements.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/send-data/installed-collectors/sources/windows-event-source-custom-channels')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Windows Event Source Custom Channels</h4></a>
   <p>Find Windows event channels to collect with a Local Windows Event Source.</p>
   </div>

@@ -16,8 +16,6 @@ By default, Query Assist will be enabled in the **Preferences** page. If it is n
 Logs Query Assist is also supported in [Dashboards](/docs/dashboards) and [Scheduled Searches](/docs/alerts/scheduled-searches).
 :::
 
-<img src={useBaseUrl('img/search/get-started-search/query-assist-preview1.gif')} alt="query assist demo gif" style={{border: '1px solid gray'}} width="700"/>
-
 ## Key enhancements
 
 * **Simplified learning curve**. Receive syntax suggestions and schema prompts to write queries without extensive knowledge of query syntax.

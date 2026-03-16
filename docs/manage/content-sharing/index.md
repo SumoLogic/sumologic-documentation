@@ -108,7 +108,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/content-sharing/content-sharing-faq')}><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>FAQ</h4></a>
-  <p>Get to know the answers to basic questions around Content Sharing.</p>
+  <p>Get to know the answers to basic questions around content sharing.</p>
   </div>
 </div>
 </div>

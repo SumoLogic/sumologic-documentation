@@ -110,45 +110,41 @@ The Azure Security – Microsoft Defender for Identity app uses Sumo Logic’s M
 ### Sample queries
 
 ```sql title="Alerts by Status"
-_sourceCategory=MicrosoftGraphSecurityIdentity
-|json"id","status","severity","category","title","description","classification","determination","serviceSource","detectionSource","alertWebUrl" ,"comments[*]","evidence[*]"as  alert_id,status,severity,category,title,description,classification,determination,service_source,detection_source,alert_url,comments,evidence_info nodrop
-
-| where toLowerCase(service_source) matches("microsoftdefenderforidentity")
+_sourceCategory=MicrosoftGraphSecurityIdentity id status microsoftDefenderForIdentity
+| json "id", "status", "severity", "classification", "serviceSource" as alert_id, status, severity, classification, service_source nodrop
+| where toLowerCase(service_source) matches ("microsoftdefenderforidentity")
 
 // global filters
 | where if ("{{severity}}" = "*", true, severity matches "{{severity}}")
-| where if ("{{status}}" = "*", true, status matches "{{status}}")
+| where status matches "{{status}}" AND !isBlank(status)
 | where if ("{{classification}}" = "*", true, classification matches "{{classification}}")
 
 // panel specific
-| count by status,alert_id
-| count as frequency by status
-| sort by frequency,status
+| count by status, alert_id
+| count as count by status
+| sort by count, status asc
 ```
 
 ```sql title="Alerts by Classification"
-_sourceCategory=MicrosoftGraphSecurityIdentity
-|json"id","status","severity","category","title","description","classification","determination","serviceSource","detectionSource","alertWebUrl" ,"comments[*]","evidence[*]"as  alert_id,status,severity,category,title,description,classification,determination,service_source,detection_source,alert_url,comments,evidence_info nodrop
-
-| where toLowerCase(service_source) matches("microsoftdefenderforidentity")
+_sourceCategory=MicrosoftGraphSecurityIdentity id classification microsoftDefenderForIdentity
+| json "id", "status", "severity", "classification", "serviceSource" as alert_id, status, severity, classification, service_source nodrop
+| where toLowerCase(service_source) matches ("microsoftdefenderforidentity")
 
 // global filters
 | where if ("{{severity}}" = "*", true, severity matches "{{severity}}")
 | where if ("{{status}}" = "*", true, status matches "{{status}}")
-| where if ("{{classification}}" = "*", true, classification matches "{{classification}}")
+| where classification matches "{{classification}}" AND !isBlank(classification)
 
 // panel specific
-| where !isBlank(classification)
-| count by classification,alert_id 
-| count as frequency by classification
-| sort by frequency
+| count by classification, alert_id 
+| count as count by classification
+| sort by count, classification asc
 ```
 
 ```sql title="Top 10 Alert Categories"
-_sourceCategory=MicrosoftGraphSecurityIdentity
-|json"id","status","severity","category","title","description","classification","determination","serviceSource","detectionSource","alertWebUrl" ,"comments[*]","evidence[*]"as  alert_id,status,severity,category,title,description,classification,determination,service_source,detection_source,alert_url,comments,evidence_info nodrop
-
-| where toLowerCase(service_source) matches("microsoftdefenderforidentity")
+_sourceCategory=MicrosoftGraphSecurityIdentity id category microsoftDefenderForIdentity
+| json "id", "status", "severity", "category", "classification", "serviceSource" as alert_id, status, severity, category, classification, service_source nodrop
+| where toLowerCase(service_source) matches ("microsoftdefenderforidentity")
 
 // global filters
 | where if ("{{severity}}" = "*", true, severity matches "{{severity}}")
@@ -157,9 +153,9 @@ _sourceCategory=MicrosoftGraphSecurityIdentity
 
 // panel specific
 | where !isBlank(category)
-| count by category,alert_id
-| count as frequency by category
-| sort by frequency
+| count by category, alert_id
+| count as count by category
+| sort by count, category asc
 | limit 10
 ```
 
@@ -209,18 +205,18 @@ The **Azure Security - Microsoft Defender for Identity - Overview** dashboard pr
 Security teams can easily identify dominant alert categories, monitor the most recent alerts for immediate action, and track analyst assignments to ensure accountability. The dashboard also highlights top users associated with alerts, helping detect insider threats or compromised accounts that may require deeper investigation.
 
 Geo-location mapping adds another layer of insight by showing the origin of alerts, supporting region-specific risk assessments. By combining historical trends with real-time visibility, the dashboard enables security teams to focus on high-impact threats and improve response times.
-<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure-Security-Microsoft-Defender-for-Identity/Azure-Security-Microsoft-Defender-for-Identity-Overview.png' alt="Azure Security - Microsoft Defender for Identity - Overview" />
+<br/><img src={useBaseUrl('/img/integrations/microsoft-azure/Azure-Security-Microsoft-Defender-for-Identity-Overview.png')} alt="Azure Security - Microsoft Defender for Identity - Overview" />
 
 ### Security
 
 The **Azure Security - Microsoft Defender for Identity - Security** dashboard offers a strategic, high-level view of the organisation’s endpoint threat landscape, enabling security teams to pinpoint risk concentrations and monitor how threats evolve over time. Interactive trend panels display shifts in alert severity, helping teams quickly identify surges in high-risk incidents and prioritise their response accordingly.
 
-Geo-location insights spotlight alerts originating from high-risk regions, supporting threat assessments tied to specific geopolitical contexts. The dashboard also provides critical visibility into top user accounts with compromised or privileged roles—potential indicators of targeted attacks or insider threats.
+Geo-location insights spotlight alerts originating from embargoed locations, supporting threat assessments tied to specific geopolitical contexts. The dashboard also provides critical visibility into top user accounts with compromised or privileged roles—potential indicators of targeted attacks or insider threats.
 
 Additionally, it ranks the most frequently attacked devices and highlights countries linked to malicious or suspicious IP activity, offering clear insight into the most vulnerable assets and regions. This intelligence allows for more focused defences and faster, more effective threat mitigation.
 
 By integrating trend analysis, threat origin mapping, and user risk profiling, the Security dashboard empowers analysts to detect emerging patterns, respond proactively, and strengthen the organisation’s resilience against sophisticated endpoint threats.
-<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure-Security-Microsoft-Defender-for-Identity/Azure-Security-Microsoft-Defender-for-Identity-Security.png' alt="Azure Security - Microsoft Defender for Identity - Security" />
+<br/><img src={useBaseUrl('/img/integrations/microsoft-azure/Azure-Security-Microsoft-Defender-for-Identity-Security.png')} alt="Azure Security - Microsoft Defender for Identity - Security" />
 
 ## Create monitors for Azure Security - Microsoft Defender for Identity app
 
@@ -232,9 +228,9 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Alerts Detected from Embargoed Locations` | This alert is triggered when activity is detected from a location flagged as high-risk, enabling you to monitor access attempts from unusual or restricted geographic regions. It enhances your ability to spot suspicious behaviour and potential threats originating from locations outside your organisation’s typical operating areas. | Critical | Count > 0 | 
-| `High Severity Alerts` | This alert is triggered when a high-severity threat is detected, allowing you to promptly monitor and respond to potentially harmful events that may compromise endpoint security. It ensures critical incidents are prioritised for swift investigation and mitigation. | Critical | Count > 0|
-| `Embargoed Device` | This alert is triggered when a single device generates multiple alerts, indicating potentially malicious behaviour. It helps you identify high-risk devices, monitor suspicious activity more effectively, and take swift action to prevent further compromise. | Critical | Count > 5 |
+| `Microsoft Defender for Identity - Alerts Detected from Embargoed Locations` | This alert is triggered when activity is detected from a location flagged as high-risk, enabling you to monitor access attempts from unusual or restricted geographic regions. It enhances your ability to spot suspicious behaviour and potential threats originating from locations outside your organisation’s typical operating areas. | Critical | Count > 0 | 
+| `Microsoft Defender for Identity - High Severity Alerts` | This alert is triggered when a high-severity threat is detected, allowing you to promptly monitor and respond to potentially harmful events that may compromise endpoint security. It ensures critical incidents are prioritised for swift investigation and mitigation. | Critical | Count > 0|
+| `Microsoft Defender for Identity - Embargoed Device` | This alert is triggered when a single device generates multiple alerts, indicating potentially malicious behaviour. It helps you identify high-risk devices, monitor suspicious activity more effectively, and take swift action to prevent further compromise. | Critical | Count > 5 |
 
 ## Upgrade/Downgrade the Azure Security - Microsoft Defender for Identity app (Optional)
 

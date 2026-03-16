@@ -401,6 +401,22 @@ With the information provided by this dashboard, security teams can effectively 
 
 <img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Analysis.png')} alt="SentinelOne-Threat-Analysis.png" width="600"/>
 
+## Create monitors for SentinelOne app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### SentinelOne alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `SentinelOne - Embargoed Geo Locations of External Ips` | Monitors and highlights external ips located in sanctioned or embargoed regions to maintain adherence to legal and regulatory standards. | Critical | Count > 0 |
+| `SentinelOne - Multiple Malicious Threat in Recent Time` | Monitors and highlights multiple malicious threat in recent time. | Critical | Count > 10 |
+| `SentinelOne - Multiple Suspicious Threat in Recent Time` | Monitors and highlights multiple suspicious threat in recent time. | Critical | Count > 10 |
+| `Sentinelone - Open Malicious Threat Since More than 24 Hours` | Monitors and highlights open malicious threat since more than 24 hours. | Critical | Count > 0 |
+| `Sentinelone - Open Suspicious Threat Since More than 24 Hours` | Monitors and highlights open suspicious threat since more than 24 hours. | Critical | Count > 0 |
+
 ## Upgrade/Downgrade the SentinelOne app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';

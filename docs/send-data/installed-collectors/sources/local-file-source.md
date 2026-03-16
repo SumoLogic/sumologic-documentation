@@ -9,6 +9,10 @@ import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 To collect log messages from files on the same machine where a Collector is installed, create a Local File Source.
 
+:::note
+Local file sources for Installed Collectors (IC) are supported, but Sumo Logic recommends switching to OpenTelemetry (OTEL) source templates for improved scalability, consistency, and future enhancements. To learn more, see [Convert Installed Collector Local File Sources to OpenTelemetry Source Templates](/docs/send-data/installed-collectors/sources/convert-ic-local-file-source-to-otel-st).
+:::
+
 * The Source will run a scan to the target path every two seconds.
 * Compressed files that end with the following file extensions are not collected: * tar, bz2, gz, z, zip, jar, war, 7z, rar, exe, dll, xz, or /var/log/(lastlog\|btmp\|wtmp) binary files
 

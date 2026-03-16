@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-notifications.png')} alt="sumo-logic-notifications" width="100"/>
 
-***Version: 1.3  
-Updated: Nov 14, 2025***
+***Version: 1.5  
+Updated: February 26, 2026***
 
 Sumo Logic Automation Tools simplifies Cloud SOAR playbooks with data processing and automation.
 
@@ -20,6 +20,7 @@ Sumo Logic Automation Tools simplifies Cloud SOAR playbooks with data processing
 * **Build Signal Output** (*Custom*) - Converts the Sumo Logic SIEM Signal JSON object to HTML or plain text with line breaks. See [Build Signal Output example](#build-signal-output).
 * **Scaled Decimal to Percentage** (*Custom*) - Converts a scaled decimal values between 0 and 1 into a percentage. See [Scaled Decimal to Percentage](#scaled-decimal-to-percentage).
 * **Convert Time** (*custom*) - Converts timestamps to the selected timezone.
+* **Count Occurrence Of Value** (*Custom*) - Counts the occurrence of a specified value in texts.
 
 ## Actions usage
 
@@ -451,6 +452,32 @@ OUTPUT = {
 }
 ```
 
+### Count Occurrence Of Value
+
+```css
+INPUT_TEXT = "This is an example text. This text is for testing."
+VALUE_TO_COUNT = "text"
+```
+```css
+OUTPUT = {"count": 2}
+```
+
+```css
+INPUT_TEXT = "1.1.1.1, 3.3.3.3, 4.4.4.4, 1.1.1.1"
+VALUE_TO_COUNT = "1.1.1.1"
+```
+```css
+OUTPUT = {"count": 2}
+```
+
+```css
+INPUT_TEXT = "sample.com, sample123.com, sample1234.com, hostname.com"
+VALUE_TO_COUNT = "hostname.com"
+```
+```css
+OUTPUT = {"count": 1}
+```
+
 ## Configure Sumo Logic Automation Tools in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
@@ -478,3 +505,5 @@ No authentication configuration is needed. Sumo Logic Automation Tools executes 
 * May 23, 2025 - Introduced the new "Scaled Decimal to Percentage" action, which converts a scaled decimal value into a percentage.
 * June 20, 2025 - Removed `%` sign from the output.
 * Nov 14, 2025 (v1.3) - Added "Convert Time" action to convert timestamps to the selected timezone.
+* Feb 25, 2026 (v1.4) - Added "Count Occurrence Of Value" action to count the occurrence of a specified value in texts.
+* Feb 26, 2026 (v1.5) - Added a new output path to enable easier data consumption in playbook workflows.

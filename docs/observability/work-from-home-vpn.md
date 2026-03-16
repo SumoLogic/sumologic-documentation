@@ -63,8 +63,6 @@ If you are using multiple apps that need an installed collector, we recommend st
 
 To find our Work from Home apps, go to the **App Catalog** > **Work from Home Solution** section.
 
-<img src={useBaseUrl('img/observability/WorkFromHome.gif')} alt="work from home VPN solution" style={{border: '1px solid gray'}} width="800" />
-
 To install any of these apps, follow their directions by clicking on an app link below:
 
 * **SSO**: [Auth0](/docs/integrations/saml/auth0), [Duo Security](/docs/integrations/security-threat-detection/duo-security), [Okta](/docs/integrations/saml/okta), [OneLogin](/docs/integrations/saml/onelogin), [Azure Active Directory](/docs/integrations/microsoft-azure/active-directory-azure)

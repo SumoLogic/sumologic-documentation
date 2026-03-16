@@ -2,7 +2,7 @@
 id: create-manage-orgs-service-providers
 title: Create and Manage Organizations (Service Providers)
 sidebar_label: Service Providers
-description: For Sumo Logic Service Providers, Sumo Orgs eases the process of provisioning and managing POV Trial orgs in multiple Sumo Logic deployments.
+description: For Sumo Logic service providers, using Sumo Logic organitztions eases the process of provisioning and managing POV Trial orgs in multiple Sumo Logic deployments.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -15,27 +15,27 @@ import Iframe from 'react-iframe';
 | Credits | Enterprise Operations, Enterprise Security, Enterprise Suite |
 
 :::note
-This feature is not enabled by default. If you’d like to have it enabled, contact your Sumo Logic Account Executive.
+This feature is not enabled by default. If you’d like to have it enabled, contact your Sumo Logic account executive.
 :::
 
-This topic has information about Sumo Logic’s Organizations (“Sumo Orgs”) feature for Sumo Logic Service Providers. Sumo Orgs allows you to logically group, provision, and centrally manage and monitor the credits usage of multiple orgs. We use the term *parent org* to refer to the org from which you create and manage orgs, and *child orgs* to refer to the orgs you create. 
+This topic has information about Sumo Logic’s organizations feature for Sumo Logic service providers. Sumo Logic organizations allow you to logically group, provision, and centrally manage and monitor the credits usage of multiple orgs. We use the term *parent org* to refer to the org from which you create and manage orgs, and *child orgs* to refer to the orgs you create. 
 
-As a Service Provider, you can create two types of child orgs:
+As a service provider, you can create two types of child orgs:
 
 * You can create POV (Proof of Value) Trial orgs for your prospects to access in order to evaluate Sumo Logic. For more information, see [About POV Trial orgs](#about-pov-trial-orgs).
 * You can create child orgs, either for use within your own company or for customers who are not going to trial Sumo Logic before subscribing.
 
 In either case, the child orgs you create will be the same plan type as the parent org. For example, if you have an Enterprise Suite plan, the child orgs you create will also be Enterprise Suite accounts. 
 
-When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. We refer to the different flavors of ingest—Continuous Log Ingest, Frequent Log Ingest, and so on—as *product variables*. When you provision a child org you use a Credits Calculator to estimate and allocate required credits for each product variable.
+When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. We refer to the different flavors of ingest—Continuous Log Ingest, Frequent Log Ingest, and so on—as *product variables*. When you provision a child org you use a credits calculator to estimate and allocate required credits for each product variable.
 
-We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. (For example, if you estimate 1GB usage for logs and specify that as the "baseline" when you create the org, Sumo Logic will start [throttling](/docs/manage/ingestion-volume/log-ingestion.md) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.)
+We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. (For example, if you estimate 1GB usage for logs and specify that as the "baseline" when you create the org, Sumo Logic will start [throttling](/docs/manage/ingestion-volume/log-ingestion/#log-throttling) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.)
 
 Users that have the required role capabilities can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI in the **Organizations** tab and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
 
 ## About POV Trial orgs
 
-POV Trial orgs you create will have a 45 day trial period. POV Trial orgs will be provisioned with the following ingestion limits.
+POV Trial orgs you create will have a 45 day trial period. POV Trial orgs will be provisioned with the following ingestion limits:
 
 * 5 GB Continuous Tier ingest
 * 5 GB Frequent Tier ingest
@@ -48,12 +48,12 @@ POV Trial orgs you create will have a 45 day trial period. POV Trial orgs will b
 The credits associated with the trial org allocations don’t impact the parent org’s credits allocation.
 :::
 
-You can upgrade a trial org by editing the org and changing the Plan Type. When you upgrade a POV Trial org, if the org is in a different Sumo Logic deployment from the parent org, the Credits calculator may add a deployment factor, which is a percentage upcharge that varies by deployment.
+You can upgrade a trial org by editing the org and changing the Plan Type. When you upgrade a POV Trial org, if the org is in a different Sumo Logic deployment from the parent org, the credits calculator may add a deployment factor, which is a percentage upcharge that varies by deployment.
 
 The plan gets downgraded to [**Free** plan with limitations](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#credits---account-types) once the 45-day POV trial period is over. To prevent this from happening, Sumo Logic provides indicators about the expiration date in two different places on the platform.
 
-* **View details for the selected organizations**. You can see the **Plan Expiry** date with information about the downgrading of your plan in the view details side panel for the selected organizations. This tooltip is different for CSV and Non-CSV provisioned child org.
-* **Child org table**. If the number of days left for expiry is less than 14, a warning icon with the expiry date will be shown against the respective organizations, and the information about downgrading your plan will turn into a warning with the same message.
+* **View details for the selected organizations**. You can see the **Plan Expiry** date with information about the downgrading of your plan in the view details side panel for the selected organizations. This tooltip is different for CSV and non-CSV provisioned child orgs.
+* **Child org table**. If the number of days left for expiration is less than 14, a warning icon with the expiration date will be shown against the respective organizations, and the information about downgrading your plan will turn into a warning with the same message.
 
 :::info
 If your CSE POV trial plan is downgraded to the free plan, your CSE access will be disabled and your data will be erased after seven days.
@@ -73,7 +73,7 @@ After you create a child org, you can’t delete it.
 1. Click **+ Add Organization**. <br/> <img src={useBaseUrl('img/manage/subscriptions/orgs-page.png')} style={{border:'1px solid gray'}} alt="orgs-page" width="800"/>
 1. The **Create New Organization** pane appears.<br/> <img src={useBaseUrl('/img/manage/subscriptions/sp-create-new-org.png')} style={{border:'1px solid gray'}} alt="orgs-page" width="400"/>
 
-### Allocate Credits
+### Allocate credits
 
 1. **Plan Type**. Select your organization's plan type. By default, “POV Trial (45 days)” is selected. Leave it selected.
 1. **Deployment**. Select a Sumo Logic deployment from the list.
@@ -91,7 +91,7 @@ After you create a child org, you can’t delete it.
       * **CSE Log Ingest**. Estimated daily Cloud SIEM ingestion.
 1. Click **Done** to go back.
 
-### Basic Details
+### Basic details
 
 1. **Organization Name**. Enter a unique name for the org.
 1. **Account Owner Email**. Enter the name of the account owner.
@@ -107,7 +107,7 @@ After you create a child org, you can’t delete it.
 1. In the edit pane, choose the **Enterprise plan** that appears as an option in the **Plan Type** dropdown.<br/> <img src={useBaseUrl('/img/manage/subscriptions/upgrade-plan.png')} alt="modify" style={{border:'1px solid gray'}} width="400"/>
 1. A warning message is shown that says you won’t be able to downgrade the org once you upgrade it.<br/> <img src={useBaseUrl('/img/manage/subscriptions/plan-selected.png')} alt="modify" style={{border:'1px solid gray'}} width="400"/>
 1. Click **Set Baseline**.
-1. The Credits Calculator appears.<br/> <img src={useBaseUrl('/img/manage/subscriptions/calculator.png')} alt="calculator" style={{border: '1px solid gray'}} width="400" />
+1. The credits calculator appears.<br/> <img src={useBaseUrl('/img/manage/subscriptions/calculator.png')} alt="calculator" style={{border: '1px solid gray'}} width="400" />
    * **Continuous Log Ingest**. Enter estimated daily ingestion to the Continuous Tier.
    * **Frequent Log Ingest**. Enter estimated daily ingestion to the Frequent Tier.
    * **Infrequent Log Ingest**. Enter estimated daily ingestion to the Infrequent Tier.
@@ -115,7 +115,7 @@ After you create a child org, you can’t delete it.
    * **Tracing**. Enter estimated daily ingestion of traces.
 1. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM. When the **Cloud Log Ingest** field appears, enter a value in GB.
           :::note
-          Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
+          Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM provisioning](#monitor-cloud-siem-provisioning), below.
           :::
 1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.
 1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contract, and the days remaining in your contract.
@@ -138,7 +138,7 @@ If a POV trial org is not upgraded to Enterprise plan after 45 days, the org wil
    * **Tracing**. Enter estimated daily ingestion of traces.
 1. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM. When the **Cloud Log Ingest** field appears, enter a value in GB.
           :::note
-          Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
+          Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM provisioning](#monitor-cloud-siem-provisioning), below.
           :::
 1. As you enter the ingestion estimates, the number of credits required for the specified ingestion levels will be incremented.
 1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contract, and the days remaining in your contract.
@@ -147,7 +147,7 @@ If a POV trial org is not upgraded to Enterprise plan after 45 days, the org wil
 
 ## Update an org's credits allocation
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Watch this micro lesson to learn more about managing a child org.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/cijbsnbz65?web_component=true&seo=true&videoFoam=false"
@@ -183,7 +183,7 @@ To change an org's credits allocation:
 
       **Example 2**: Consider you need to increase credits to your child org. The below image shows that you have used 35 credits out of 31026 credits allocated to your child org. Now, if you wish to increase the credits to your child org, select **Credits to be Added** and add the additional credits required.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-recommendatio-example-2.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendatio-example-2" width="450" />
 1. If you want to modify the baseline, click **View Baseline**. The **Credits Calculator** appears.
-      1. Click **Edit** and follow the steps in [Allocate Credits](#allocate-credits) to update the credits allocation.<br/> <img src={useBaseUrl('img/manage/subscriptions/edit-baseline.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
+      1. Click **Edit** and follow the steps in [Allocate credits](#allocate-credits) to update the credits allocation.<br/> <img src={useBaseUrl('img/manage/subscriptions/edit-baseline.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
       1. Once you save the new baseline, you can view the recommended value in the **Credits to be Added/Reduced** section.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-credits-to-add.png')} style={{border:'1px solid gray'}} alt="baseline-credits-to-add" width="450" />
       1. (Optional) Click **View Details** to view the detailed breakdown of additional credits required value.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-view-details.png')} style={{border:'1px solid gray'}} alt="baseline-view-details" width="450" />
 1. Click **Save** once you finish editing the credit values.
@@ -223,9 +223,9 @@ You can view the aggregate usage for all child orgs across usage category in the
 * **Storage**. Credits used for log storage in the Continuous and Frequent Tiers.
 * **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent Tier.
-* **Promotional categories**. For more information, see [Promotional Credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#promotional-credits).
+* **Promotional categories**. For more information, see [Promotional credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#promotional-credits).
 
-By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking **Download Detailed Credit Usages** from the kebab icon next to the Download Report button.
+By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking **Download Detailed Credit Usages** from the kebab icon next to the **Download Report** button.
 
 <img src={useBaseUrl('img/manage/subscriptions/account-overview-new.png')} alt="your description" style={{border:'1px solid gray'}} />
 
@@ -261,7 +261,7 @@ By clicking the **Download Report** button, you can download the selected child 
 
 ## Audit logging for organizations
 
-This section has examples of the messages Sumo Logic writes to the Audit Event Index when you create, deactivate, and update an org.  
+This section has examples of the messages Sumo Logic writes to the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) when you create, deactivate, and update an org.  
 
 ### OrganizationCreated
 

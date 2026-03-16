@@ -100,15 +100,15 @@ The Azure Security – Microsoft Defender for Cloud Apps uses Sumo Logic’s Mic
 ### Sample queries
 
 ```sql title="Total Alerts"
-_sourceCategory=Labs/MicrosoftGraphSecurity 
-|json"id","status","severity","category","title","description","classification","determination","serviceSource","detectionSource","alertWebUrl" ,"comments[*]","evidence[*]"as  alert_id,status,severity,category,title,description,classification,determination,service_source,detection_source,alert_url,comments,evidence_info nodrop
+_sourceCategory={{Logsdatasource}} serviceSource microsoftDefenderForCloudApps
+| json "id", "status", "severity", "classification", "serviceSource" as  alert_id, status, severity, classification, service_source nodrop
 
-| where toLowerCase(service_source) = "microsoftdefenderforcloudapps"
+| where toLowerCase(service_source) matches "microsoftdefenderforcloudapps"
 
 // global filters
-| where if ("*" = "*", true, severity matches "*")
-| where if ("*" = "*", true, status matches "*")
-| where if ("*" = "*", true, classification matches "*")
+| where if ("{{severity}}" = "*", true, severity matches "{{severity}}")
+| where if ("{{status}}" = "*", true, status matches "{{status}}")
+| where if ("{{classification}}" = "*", true, classification matches "{{classification}}")
 
 // panel specific
 | count by alert_id 
@@ -116,18 +116,17 @@ _sourceCategory=Labs/MicrosoftGraphSecurity
 ```
 
 ```sql title="High Severity Alerts"
-_sourceCategory=Labs/MicrosoftGraphSecurity 
-|json"id","status","severity","category","title","description","classification","determination","serviceSource","detectionSource" ,"comments[*]","evidence[*]"as  alert_id,status,severity,category,title,description,classification,determination,service_source,detection_source,comments,evidence_info nodrop
+_sourceCategory={{Logsdatasource}} serviceSource microsoftDefenderForCloudApps severity
+| json "id", "status", "severity", "classification", "serviceSource" as alert_id, status, severity, classification, service_source nodrop
 
-| where toLowerCase(service_source) = "microsoftdefenderforcloudapps"
+| where (toLowerCase(service_source) matches "microsoftdefenderforcloudapps") and (toLowerCase(severity) matches ("*high*"))
 
 // global filters
-| where if ("*" = "*", true, severity matches "*")
-| where if ("*" = "*", true, status matches "*")
-| where if ("*" = "*", true, classification matches "*")
+| where severity matches "{{severity}}" and !isBlank(severity)
+| where if ("{{status}}" = "*", true, status matches "{{status}}")
+| where if ("{{classification}}" = "*", true, classification matches "{{classification}}")
 
 // panel specific
-| where toLowerCase(severity) matches ("*high*")
 | count by alert_id
 | count
 ```
@@ -176,14 +175,30 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 The **Azure Security - Microsoft Defender for Cloud Apps - Overview** dashboard provides a comprehensive view of endpoint security threats, enabling quick assessment and response through visualizations of total and high-severity alerts by status, source, and classification. It helps teams identify prevalent alert categories, monitor recent activity, and track analyst assignments.
 
 With features like geo-location mapping and top user alerts, the dashboard supports regional risk assessment and detection of insider threats. By combining real-time insights with historical trends, it enhances situational awareness and strengthens incident response strategies.
-<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+-Security-Microsoft-Defender-for-Cloud-Apps/Azure+Security+-+Microsoft+Defender+for+Cloud+Apps+-+Overview.png' alt="Azure Security - Microsoft Defender for Identity Cloud Apps - Overview" />
+
+<br/><img src={useBaseUrl('/img/integrations/microsoft-azure/Azure-Security-Microsoft-Defender-for-Cloud-Apps-Overview.png')} alt="Azure Security - Microsoft Defender for Identity Cloud Apps - Overview" />
 
 ### Security
 
 The **Azure Security - Microsoft Defender for Cloud Apps - Security** dashboard offers a high-level view of endpoint threats, highlighting evolving risks through alert severity trends and geo-location data. It helps teams prioritize responses by revealing increases in high-risk incidents and identifying threats from specific regions.
 
 Key insights include compromised user accounts, frequently attacked devices, and countries linked to malicious IPs, enabling targeted defense strategies. By combining trend analysis with threat origins and user risk data, the dashboard empowers proactive threat response and strengthens overall security posture.
-<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Azure+-Security-Microsoft-Defender-for-Cloud-Apps/Azure+Security+-+Microsoft+Defender+for+Cloud+Apps+-+Security.png' alt="Azure Security - Microsoft Defender for Cloud Apps - Security" />
+
+<br/><img src={useBaseUrl('/img/integrations/microsoft-azure/Azure-Security-Microsoft-Defender-for-Cloud-Apps-Security.png')} alt="Azure Security - Microsoft Defender for Cloud Apps - Security" />
+
+## Create monitors for Azure Security - Microsoft Defender for Cloud Apps
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure Security - Microsoft Defender for Cloud Apps alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `Azure Security - Microsoft Defender for Cloud Apps - Alerts Detected from Embargoed Locations` | This alert is triggered when activity is detected from a location flagged as high-risk, enabling you to monitor access attempts from unusual or restricted geographic regions. It enhances your ability to spot suspicious behaviour and potential threats originating from locations outside your organisation’s typical operating areas. | Critical | Count > 0 | 
+| `Azure Security - Microsoft Defender for Cloud Apps - High Severity Alerts` | This alert is triggered when a high-severity threat is detected, allowing you to promptly monitor and respond to potentially harmful events that may compromise endpoint security. It ensures critical incidents are prioritised for swift investigation and mitigation. | Critical | Count > 0|
+| `Azure Security - Microsoft Defender for Cloud Apps - Embargoed Device` | This alert is triggered when a single device generates multiple alerts, indicating potentially malicious behaviour. It helps you identify high-risk devices, monitor suspicious activity more effectively, and take swift action to prevent further compromise. | Critical | Count > 5 |
 
 ## Upgrade/Downgrade the Azure Security - Microsoft Defender for Cloud Apps app (Optional)
 

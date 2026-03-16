@@ -20,9 +20,6 @@ Following are the updates made in January, 2026.
 We're delighted to announce [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge) version 3.3.0, which: 
 * Ensures stability while scaling.
 * Improves observability into bridge instances reducing dependence on customer logs for debugging common issues.
-* Introduces the Bridge KPI Dashboard, a new dashboard offering insights into bridge operations:
-   * Added capability to examine bridge-related workloads on customer machines.
-   * Now tracks statistics around usage of various bridge versions and installation types (container/rpm/deb).
 
 #### Playbooks
 

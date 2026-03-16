@@ -797,6 +797,48 @@ html[data-theme='light'] .theme-admonition-sumo {
   }
 }
 
+// TRAINING
+html[data-theme='dark'] .theme-admonition-training {
+  background-color: rgba(112, 0, 162, 0.1);
+  --ifm-alert-border-color: #7000a2;
+  border-left: 6px solid #7000a2;
+  padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
+  --ifm-alert-color: #e3e3e3;
+  --ifm-alert-foreground-color: #e3e3e3; /* ← ADD THIS */
+  .admonition-icon {
+    background-color: #7000a2;
+    padding: 5px 5px 0px 5px;
+  }
+  a {
+    color: #c440ff;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+
+html[data-theme='light'] .theme-admonition-training {
+  background-color: rgba(112, 0, 162, 0.05);
+  --ifm-alert-border-color: #7000a2;
+  border-left: 6px solid #7000a2;
+  padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
+  --ifm-alert-color: var(--ifm-font-color-base);
+  --ifm-alert-foreground-color: #7000a2;
+  color: var(--ifm-font-color-base);
+  .admonition-icon {
+    --ifm-alert-foreground-color: #7000a2 !important;
+  }
+  a {
+    color: #7000a2;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
 // IMPORTANT
 html[data-theme='light'] .alert--info {
   --ifm-alert-background-color: rgba(0, 139, 178, 0.05);

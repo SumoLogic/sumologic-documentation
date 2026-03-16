@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Requirements for creating and managing orgs
 
-There are several [role capabilities](/docs/manage/users-roles/roles/role-capabilities) that are required to work with orgs:
+There are several [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#organizations) that are required to work with orgs:
 
 * **View Organizations**. This capability is required to view the Organizations UI.
 * **Create Organizations**. This capability is required to create or provision child organizations.
@@ -26,7 +26,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs')}><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Create and Manage Orgs</h4></a>
-  <p>Learn how to create and manage multiple Sumo Logic Orgs.</p>
+  <p>Learn how to create and manage multiple Sumo Logic orgs.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -38,7 +38,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs-flex')}><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Create and Manage Orgs (Flex)</h4></a>
-  <p>Learn how to create and manage multiple Sumo Logic Orgs with Flex data.</p>
+  <p>Learn how to create and manage multiple Sumo Logic orgs with Flex data.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -150,8 +150,4 @@ Follow the below steps to delink the deactivated child org:
 
 - Only **parent-org** users with Manage Child Orgs capability can initiate a deletion workflow.
 - Compatible with Enterprise, Trial/PoV, and Free-Forever child orgs.
-
-
-
-
 

@@ -85,8 +85,6 @@ The table below shows the `_sourceCategory` that is assigned to event logs by Cl
 | Threat Intel Source Poll | `cseThreatIntelSource`  |
 | [Threshold rule](/docs/cse/rules/write-threshold-rule) | `cseRule` |
 | Virus Total Configuration | `cseConfiguration` |
-| [YARA rule](/docs/cse/rules/import-yara-rules) | `cseYara` |
-| [YARA source](/docs/cse/rules/import-yara-rules) | `cseYara` |
 
 ## _sourceName and _sourceHost assignment
 

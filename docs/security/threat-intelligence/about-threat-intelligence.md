@@ -18,6 +18,8 @@ Cybersecurity professionals often use multiple threat intelligence feeds to supp
 :::
 
 <!-- 
+:::training Micro Lesson
+
 Watch this micro lesson to learn about Sumo Logic's threat intelligence features.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/s1evf3jfy5?web_component=true&seo=true&videoFoam=false"
@@ -32,6 +34,7 @@ Watch this micro lesson to learn about Sumo Logic's threat intelligence features
   allowfullscreen
 />
 
+:::
 -->
 
 ## Threat intelligence sources

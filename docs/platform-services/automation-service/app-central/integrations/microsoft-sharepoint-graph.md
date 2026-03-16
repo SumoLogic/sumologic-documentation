@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-sharepoint.png')} alt="microsoft-sharepoint" width="100"/>
 
-***Version: 1.0  
-Updated: October 10, 2025***
+***Version: 1.1  
+Updated: February 24, 2026***
 
 Utilize Microsoft SharePoint lists, files, and folders during incident investigations.
 
@@ -124,3 +124,4 @@ For information about Microsoft SharePoint, see [SharePoint documentation](https
 ## Change Log
 
 * October 10, 2025 - First upload
+* February 24, 2026 - Improved the Folder Relative URL hint to provide clearer guidance on entering the correct relative path format.

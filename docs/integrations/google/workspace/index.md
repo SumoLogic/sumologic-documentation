@@ -16,6 +16,11 @@ Dashboards also provide full visibility into alerts from Google Workspace Alert 
 
 ## Log and Alert Types
 
+This app uses the following log types:
+
+* **Audit logs**. Collected from [Google Workspace Apps Audit Source](/docs/send-data/hosted-collectors/google-source/google-workspace-apps-audit-source).
+* **Alert logs**. Collected from [Google Workspace AlertCenter](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter).
+
 Each Google Workspace app has its own log that tracks actions in JSON format. The logs are all structurally similar. The differences are in the events section of the JSON where the actions are recorded.
 
 The common areas of the logs are:

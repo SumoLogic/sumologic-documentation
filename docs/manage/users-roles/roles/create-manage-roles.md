@@ -25,6 +25,8 @@ The Administrator role is a super user. It has all of the [capabilities](/docs/m
 
 Users with the Analyst role have a single capability: View Collectors. Its role search filter enables access to all data in Sumo Logic. You can edit the Analyst role filter to change the capabilities assigned to it and to make the role filter more restrictive. You can also delete the Analyst role if desired. For more information, see [Edit a role](#create-a-role) and [Delete a role](#delete-a-role) below.
 
+If you are unsure whether you are an analyst or administrator, you can view your role in **Preferences** (see [Onboarding Checklists](/docs/get-started/onboarding-checklists/)).
+
 ## Create a role
 
 To create a role:
@@ -49,10 +51,6 @@ To create a role:
 1. Click **Save**. 
 
 ### Restrict access using Search Filter and Index Access
-
-:::note
-**Index Access** only appears if the feature has been deployed to your environment. For more information, see our [release note](/release-notes-service/2024/12/31/#october-14-2024-manage). 
-:::
 
 Follow this process to restrict access using the **Search Filter** and **Index Access** sections on the **Create New Role** pane:
 
@@ -101,7 +99,7 @@ To test a role to see if it displays the expected log access behavior, select a 
 ## Add a user to a role
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. 
-1. Navigate to the role and click the number in the **Users** column.<br/><img src={useBaseUrl('img/users-roles/user-in-role-count.png')} alt="User in role count" width="800"/>
+1. Navigate to the role and click the number in the **Users** column.<br/><img src={useBaseUrl('img/users-roles/user-in-role-count.png')} alt="User in role count" style={{border: '1px solid gray'}} width="800"/>
 1. A list of users currently assigned to the role appears.<br/><img src={useBaseUrl('img/users-roles/users-assigned-to-role.png')} alt="Users assigned to role" width="350"/>
 1. Click the **Assign Users** field. A list of users that are not currently assigned to the role appears. Click a user’s name to add the user to the role. 
 1. Add additional users to the role, as desired.
@@ -114,7 +112,7 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 ## Remove a user from a role
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. 
-1. Navigate to the role and click the number in the **Users** column.<br/><img src={useBaseUrl('img/users-roles/role-list.png')} alt="Role list" width="800"/>
+1. Navigate to the role and click the number in the **Users** column.<br/><img src={useBaseUrl('img/users-roles/role-list.png')} alt="Role list" style={{border: '1px solid gray'}} width="800"/>
 1. A list of users currently assigned to the role appears. 
 1. Navigate to the user you want to remove from the role, and click the trash can icon in that row.<br/><img src={useBaseUrl('img/users-roles/delete-user-from-role.png')} alt="Remove user from a role" width="350"/>
 1. Click **Save** when you are done removing users from the role. 
@@ -125,7 +123,7 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 
 ## See which users are assigned to a role
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <br/><img src={useBaseUrl('img/users-roles/user-in-role-count.png')} alt="Count of users in a role" width="800"/>
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <br/><img src={useBaseUrl('img/users-roles/user-in-role-count.png')} alt="Count of users in a role" style={{border: '1px solid gray'}} width="800"/>
 1. Navigate to the role and click the number in the **Users** column to see a list of users assigned to the role.
 
 ## Edit a role
@@ -141,7 +139,7 @@ To edit a role:
 
 ## Delete a role
 
-You can only delete a role to which no users are assigned. Before deleting a role, you must unassign any users currently assigned to it. For information about unassigning a user from a role, see [Remove a User from a Role](#remove-a-user-from-a-role).
+You can only delete a role to which no users are assigned. Before deleting a role, you must unassign any users currently assigned to it. For information about unassigning a user from a role, see [Remove a user from a role](#remove-a-user-from-a-role).
 
 To delete a role:
 

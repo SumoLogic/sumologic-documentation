@@ -59,3 +59,31 @@ If you're deprecating one solution in favor of another (like in the above **Ngin
 ### Hide from search engine results
 
 It can take months for an old URL to drop from Google search engine results. If you need to hide a page immediately from Google, [open a GitHub Issue](https://github.com/SumoLogic/sumologic-documentation/issues/new/choose) and provide the details for our site admin.
+
+### Exclude pages from the site build
+
+You can prevent content from being indexed by excluding it from compilation entirely. Pages that aren't compiled into the build output won't appear on the live site or sitemap, so neither search engines nor internal site search can index them.
+
+To exclude docs, add their paths to the `docs.exclude` setting in `docusaurus.config.js`:
+
+```json title="docusaurus.config.js"
+presets: [
+  [
+    '@docusaurus/preset-classic',
+    ({
+      docs: {
+        exclude: [
+          '**/reuse/**',
+          '**/ja/**',
+        ],
+      },
+    }),
+  ],
+];
+```
+
+Any markdown files in the listed directories are excluded from the build and won't be served or indexed. Note that `reuse` files are still embedded where referenced — they just won't compile as standalone pages.
+
+For finer-grained control — for example, keeping a page compiled but hidden from search — use `robots.txt` or `noindex` meta tags instead. If content should never be published at all, excluding it from compilation is the most reliable approach.
+
+If a document has already been indexed and needs to be urgently removed from Google search results, follow [Google's removal instructions](https://support.google.com/webmasters/answer/9689846?sjid=11985967130976965420-NC).

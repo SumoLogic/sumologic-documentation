@@ -2,7 +2,7 @@
 id: scheduled-report
 title: Scheduled Report
 sidebar_label: Scheduled Report (Email)
-description: Learn how to create, update, delete and export a scheduled dashboard report.
+description: Learn how to create, update, delete, and export a scheduled dashboard report.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

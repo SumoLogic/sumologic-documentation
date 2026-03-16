@@ -83,7 +83,7 @@ An anomaly monitor is triggered when unusual conditions are detected. Anomaly mo
 Weekly seasonality detection is turned off by default to optimize performance. [Contact Sumo Logic Customer Support](https://support.sumologic.com/support/s/contactsupport) to activate it for specific monitors. (*Weekly seasonality detection* is the optimization of baseline calculations to account for the variations of data flow that can occur in a work week.)
 :::
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Watch this micro lesson to learn about anomaly monitors.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/8z9b2zqtc3?web_component=true&seo=true&videoFoam=false"

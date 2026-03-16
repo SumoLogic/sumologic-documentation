@@ -9,7 +9,7 @@ The **Billing** page allows admin users to add or update the credit card informa
 
 All users who have Admin role privileges can manage the billing information for Sumo Logic. This includes the credit card number on file (monthly or annual payment), as well as the billing address and contact information.  
 
-Once changes are submitted, Sumo Logic will begin applies the new credit card for the next billing cycle. To reassign the account owner role to another admin user, see Account Page for your account type.
+Once changes are submitted, Sumo Logic will begin to apply the new credit card for the next billing cycle. To reassign the account owner role to another admin user, see the Account page for your account type.
 
 To modify your billing information:
 
