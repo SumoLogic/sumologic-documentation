@@ -1184,6 +1184,7 @@ module.exports = {
          'manage/data-archiving/archive-otel',
        ]
      },
+     'manage/deletion-requests',
    ],
   },
 ],
@@ -3203,6 +3204,7 @@ integrations: [
         'api/content-management',
         'api/content-permissions',
         'api/dashboard',
+        'api/data-deletion-rules',
         'api/dynamic-parsing',
         'api/field-extraction-rules',
         'api/field-management',
