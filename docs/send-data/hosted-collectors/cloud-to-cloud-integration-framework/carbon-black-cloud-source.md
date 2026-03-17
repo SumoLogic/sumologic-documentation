@@ -69,7 +69,6 @@ To configure a Carbon Black Cloud Source:
 :::info
 After configuring the Carbon Black Cloud source, consider installing the Sumo Logic app for [Carbon Black Cloud](/docs/integrations/security-threat-detection/carbon-black-cloud/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
-carbon-black-cloud
 
 ## Metadata fields
 
