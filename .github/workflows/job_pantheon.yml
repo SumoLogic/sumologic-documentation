@@ -40,7 +40,7 @@ jobs:
   deploy-to-pantheon:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Install SSH key
@@ -74,7 +74,7 @@ jobs:
           echo "PANTHEON_BRANCH=master" >> $GITHUB_ENV
           echo "PANTHEON_ENV=dev" >> $GITHUB_ENV
       - name: Retrieve build artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v8
         with:
           name: build-output
           path: ./build
