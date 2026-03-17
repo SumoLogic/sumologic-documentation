@@ -15,7 +15,7 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source')}><img src='/img/send-data/ms-azure-metrics.svg' alt="icon" width="60"/><h4>Azure Metrics Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source')}><img src='/img/send-data/ms-azure-metrics.png' alt="icon" width="60"/><h4>Azure Metrics Source</h4></a>
   <p>Learn how to configure Azure Metrics Source for Sumo Logic ingestion.</p>
   </div>
 </div>
