@@ -577,7 +577,7 @@ Microsoft Office 365 Audit Source JSON example: 
            "type": "O365AppRegistrationAuthentication",
            "tenantId": "test-tenant-id",
            "clientId": "test-client-id",
-           "clientSecret": "test-cleint-secret"
+           "clientSecret": "test-client-secret"
          }
        }]
      }
