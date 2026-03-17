@@ -42,6 +42,10 @@ To configure an Rapid7 Source:
 1. Enter the **Region** of Rapid7 InsightVM platform.
 1. Enter the **API Key** for authorization.
 
+:::info
+After configuring the Rapid7 source, consider installing the Sumo Logic app for [Rapid7](/docs/integrations/saas-cloud/rapid7/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
