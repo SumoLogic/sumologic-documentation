@@ -88,7 +88,7 @@ To configure the Azure Metrics Source:
 ### JSON example
 
 ```json reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/azure-metrics/example.json
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/hosted-collectors/azure-metrics/example.json
 ```
 
 ## Troubleshooting

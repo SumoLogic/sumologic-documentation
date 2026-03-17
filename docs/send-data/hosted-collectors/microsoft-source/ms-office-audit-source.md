@@ -100,7 +100,7 @@ The Microsoft Office 365 Audit Source requires you to provide **Tenant Id**, *
 3. Click **New registration**.
 4. Complete the form:
    - **Name**. Add a display name of the application registration in Azure. For example, `SumoLogic-O365AuditSource`.
-   - **Supported account types**. Select **Single tenant only - Sumo Logic** from the dropdown. This ensures that the application is accessible only to users within your organization’s Azure AD tenant and not to external or personal Microsoft accounts.
+   - **Supported account types**. Select **Single tenant only - `Your Tenant Name`** from the dropdown. This ensures that the application is accessible only to users within your organization’s Azure AD tenant and not to external or personal Microsoft accounts.
 5. Click **Register**.
 6. Once the application is created, open the **Overview** page to collect the **Client ID** and **Tenant ID**.
 
@@ -158,7 +158,7 @@ During the configuration, you will need to authenticate to Microsoft using sta
    :::
 1. To allow Sumo Logic to access your Office 365 account, select one of the following:
    1. (Recommended) **App Registration**. Enter the **Tenant Id**, **Client Id**, and **Client Secret** obtained in the [Vendor configuration](#vendor-configuration) section.
-   1. (Optional) **Auth (User Account)**. Click **Sign in with Office 365** to authenticate to Microsoft using standard OAuth v2 interaction.  
+   1. **Auth (User Account)**. Click **Sign in with Office 365** to authenticate to Microsoft using standard OAuth v2 interaction.  
     :::note
     Sumo Logic never receives your Microsoft Office 365 credentials.
     :::
@@ -195,7 +195,7 @@ To search for these events use the Audit Index.
 ### JSON example
 
 ```json reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/ms-office-audit/example.json
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/hosted-collectors/ms-office-audit/example.json
 ```
 
 ## Known Issues
