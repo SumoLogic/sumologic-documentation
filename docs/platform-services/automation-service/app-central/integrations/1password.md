@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/1Password.png')} alt="1password" width="80"/>
 
-***Version: 1.0  
+***Version: 1.1  
 Updated: Mar 17, 2026***
 
 1Password's User Management API using OAuth2 authentication. It supports user management operations including listing, retrieving, suspending, and reactivating users.
