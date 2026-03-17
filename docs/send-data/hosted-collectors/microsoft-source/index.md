@@ -21,7 +21,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source')}><img src={useBaseUrl('img/send-data/office_365_48.png')} alt="Thumbnail icon" width="50"/><h4>Microsoft Office 365 Audit Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source')}><img src={useBaseUrl('img/send-data/office_365_48.png')} alt="icon" width="50"/><h4>Microsoft Office 365 Audit Source</h4></a>
   <p>Learn how to configure Microsoft Office 365 Audit Source for Sumo Logic ingestion.</p>
   </div>
 </div>
