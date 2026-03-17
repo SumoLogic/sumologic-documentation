@@ -44,7 +44,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **API URL**. Enter your 1Password API URL, for example, `https://api.1password.com`
+* **API Base URL**. Enter your 1Password API URL, for example, `https://api.1password.com`
 
 * **Client ID**. Enter the Client ID.
 * **Client Secret**. Enter the Client Secret.
