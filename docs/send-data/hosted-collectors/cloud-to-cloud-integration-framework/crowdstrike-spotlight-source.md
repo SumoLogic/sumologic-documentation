@@ -79,6 +79,10 @@ To configure the CrowdStrike Spotlight Source:
 1. (Optional) The **Polling Interval** is set for one hour by default, you can adjust it based on your needs. This sets how often the integration will fetch complete vulnerability instance data that has been updated within most recent polling interval duration.
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the CrowdStrike Spotlight source, consider installing the Sumo Logic app for [CrowdStrike Spotlight](/docs/integrations/saas-cloud/crowdstrike-spotlight/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
