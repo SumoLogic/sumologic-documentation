@@ -50,6 +50,10 @@ To configure a Box Source:
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Box source, consider installing the Sumo Logic app for [Box](/docs/integrations/saas-cloud/box/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
