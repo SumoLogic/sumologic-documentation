@@ -157,8 +157,11 @@ During the configuration, you will need to authenticate to Microsoft using sta
    If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM, click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
    :::
 1. To allow Sumo Logic to access your Office 365 account, select one of the following:
-   1. (Recommended) **App Registration**. Enter the **Tenant Id**, **Client Id**, and **Client Secret** obtained in the [Vendor configuration](#vendor-configuration) section.
-   1. **Auth (User Account)**. Click **Sign in with Office 365** to authenticate to Microsoft using standard OAuth v2 interaction.  
+   - (Recommended) **App Registration**. Enter the **Tenant Id**, **Client Id**, and **Client Secret** obtained in the [Vendor configuration](#vendor-configuration) section.
+   :::note
+   Sumo Logic recommends using **App Registration**–based authentication instead of user account credentials to securely and reliably collect Microsoft Office 365 audit logs. This method aligns with Microsoft's best practices for service-to-service integrations.
+   :::
+   - **Auth (User Account)**. Click **Sign in with Office 365** to authenticate to Microsoft using standard OAuth v2 interaction.  
     :::note
     Sumo Logic never receives your Microsoft Office 365 credentials.
     :::
