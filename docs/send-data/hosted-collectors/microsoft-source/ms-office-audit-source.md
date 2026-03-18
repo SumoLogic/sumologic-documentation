@@ -158,13 +158,13 @@ During the configuration, you will need to authenticate to Microsoft using sta
    :::
 1. To allow Sumo Logic to access your Office 365 account, select one of the following:
    - (Recommended) **App Registration**. Enter the **Tenant Id**, **Client Id**, and **Client Secret** obtained in the [Vendor configuration](#vendor-configuration) section.
-   :::note
-   Sumo Logic recommends using **App Registration**–based authentication instead of user account credentials to securely and reliably collect Microsoft Office 365 audit logs. This method aligns with Microsoft's best practices for service-to-service integrations.
-   :::
+      :::note
+      Sumo Logic recommends using **App Registration**–based authentication instead of user account credentials to securely and reliably collect Microsoft Office 365 audit logs. This method aligns with Microsoft's best practices for service-to-service integrations.
+      :::
    - **Auth (User Account)**. Click **Sign in with Office 365** to authenticate to Microsoft using standard OAuth v2 interaction.  
-    :::note
-    Sumo Logic never receives your Microsoft Office 365 credentials.
-    :::
+      :::note
+      Sumo Logic never receives your Microsoft Office 365 credentials.
+      :::
 1. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the new Source.
 1. When you are finished configuring the Source, click **Save**.
 
