@@ -59,6 +59,10 @@ To configure an Asana Source:
 1. Enter the unique workspace ID for the users service account.
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the Asana source, consider installing the Sumo Logic app for [Asana](/docs/integrations/saas-cloud/asana/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON Configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 

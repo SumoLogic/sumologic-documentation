@@ -66,7 +66,7 @@ To configure a SentinelOne Mgmt API Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the SentinelOne Mgmt API  source, consider installing the Sumo Logic app for [SentinelOne](/docs/integrations/saas-cloud/sentinelone/) to visualize and analyze the collected data using prebuilt dashboards.
+After configuring the SentinelOne Mgmt API  source, consider installing the Sumo Logic app for [SentinelOne](/docs/integrations/saas-cloud/sentinelone/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields
