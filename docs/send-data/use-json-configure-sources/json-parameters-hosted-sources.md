@@ -545,6 +545,10 @@ To disable S3 Replay use the `NoPathExpression` placeholder for `path` and `a
 
 ### Microsoft Office 365 Audit Source
 
+:::note
+Sumo Logic recommends using **App Registration**–based authentication instead of user account credentials to securely and reliably collect Microsoft Office 365 audit logs. This method aligns with Microsoft's best practices for service-to-service integrations. [Learn more](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source/#source-configuration).
+:::
+
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for a Microsoft Office 365 Audit Source.
 
 | Parameter | Type | Required | Default | Description | Example |
