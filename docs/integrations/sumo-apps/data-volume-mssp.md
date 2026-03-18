@@ -41,7 +41,6 @@ Use this dashboard to identify the top sources, collectors, or hosts by ingestin
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-MSSP-Overview.png')} alt="Data Volume for MSSP dashboards" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Logs
 
 The largest data ingest typically comes from log volumes. The **Data Volume for MSSP - Logs** dashboard allows you to view child org log ingest volume by tier by ingesting spikes, outliers, and quota.
@@ -54,17 +53,15 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-MSSP-Logs.png')} alt="Data Volume for MSSP dashboards" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Data Volume for MSSP Logs by Metadata Fields
 
-The **Data Volume for MSSP - Logs by Metadata Fields** dashboard allows you to view log ingest volume by tier, source categories, collectors, and hosts for child orgs
+The **Data Volume for MSSP - Logs by Metadata Fields** dashboard allows you to view log ingest volume by tier, source categories, collectors, and hosts for child orgs.
 
 Use this dashboard to:
 * Identify the top 5 sources categories, source hosts, and collectors by ingest volume for selected child orgs.
 * Examine ingestion trends over time.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-MSSP-Logs-by-Metadata-Fields.png')} alt="Data Volume for MSSP dashboards" style={{border: '1px solid gray'}} width="800" />
-
 
 ### Metrics
 
@@ -88,7 +85,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-MSSP-Log-Spikes.png')} alt="Data Volume for MSSP dashboards" style={{border: '1px solid gray'}} width="800" />
 
-
 ### Capacity Utilization
 
 The **Data Volume for MSSP - Capacity Utilization** dashboard provides views of subscribed, actual, and percentage capacity utilization for logs and metrics.
@@ -98,7 +94,6 @@ Use this dashboard to:
 * Identify the average ingestion and subscribed ingestion capacity by percentage for logs and metrics.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-MSSP-Capacity-Utilization.png')} alt="Data Volume for MSSP dashboards" style={{border: '1px solid gray'}} width="800" />
-
 
 ### Tracing
 
