@@ -56,7 +56,13 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
       :::tip
       Help us refine the tool by using the thumbs-up or thumbs-down buttons to provide feedback on the effectiveness of the summary presented. Clicking the thumbs-down button gives you the opportunity to provide additional feedback.
       :::
-   1. **Recommended Actions**. Actions you can take to remediate the incident. When you click **Execute Action**, a [playbook](/docs/platform-services/automation-service/playbooks/) runs to take the recommended action. Click **View Details** on the confirmation to see details about the playbook automation.<br/><img src={useBaseUrl('img/cse/playbook-automation-confirmation.png')} alt="Playbook automation confirmation" style={{border: '1px solid gray'}} width="400" /> <br/>You can also view results of the playbook automation later by clicking the [**Automations** tab of the insight](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation).
+   1. **Recommended Actions**. Actions you can take to remediate the incident. 
+       1. Click **Execute Action** to run a [playbook](/docs/platform-services/automation-service/playbooks/) to take the recommended action:<br/><img src={useBaseUrl('img/cse/recommended-actions.png')} alt="Recommended actions" style={{border: '1px solid gray'}} width="700" />
+       1. Click **View Details** on the confirmation to see details about the playbook automation:<br/><img src={useBaseUrl('img/cse/playbook-automation-confirmation.png')} alt="Playbook automation confirmation" style={{border: '1px solid gray'}} width="400" /> <br/>
+       1. The playbook execution details are displayed on the [**Automations**](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) tab of the insight. Click **View Playbook** on an automation to see the progress of the playbook execution.<br/><img src={useBaseUrl('img/cse/automations-tab-for-recommended-action.png')} alt="Automations tab" style={{border: '1px solid gray'}} width="700" />
+          :::note
+          To be able to run playbooks from **Recommended Actions**, the integrations that the playbooks use must be properly configured. See [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+          :::
    1. **Key Findings**. The main points uncovered by AI analysis. Details about these findings can be found in the signals that fired for the insight.
 1. Click **Ask Mobot** to send the AI analysis of the insight to [Sumo Logic Mobot](#investigate-the-insight-in-mobot) for further investigation.
    
@@ -72,31 +78,53 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
 
 To clear the context and start a new investigation, click **New Conversation** at the top of the screen. To start investigation on another insight, navigate back to Cloud SIEM, select another insight, and click **Ask Mobot**.
 
+### Example questions
+
+Following are example questions you could try in the **Ask Something...** field: 
+* `Give me an executive summary of the insight`
+* `Create a dashboard with the results of this investigation`
+* `What actions do you recommend for remediation`
+* `Tell me how to create a monitor that will fire if any changes occur on this insight`
+
+Although these are general questions, they give you an idea of the wide variety of questions you can ask the agent. However, rather than ask general questions, we recommend you ask questions specific to the insight you're investigating in order to get the most useful responses.
+
 ## FAQs
 
-### What is the Sumo Logic SOC Analyst Agent?
+<details>
+<summary>What is the Sumo Logic SOC Analyst Agent?</summary>
 
 The SOC Analyst Agent is part of the [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#whats-new-dojo-ai-for-the-soc). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks like MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts an immediate sense of threat impact. When deeper analysis is required, the same agent supports hypothesis-based investigation to map relationships, connect entities, and summarize findings.
+</details>
 
-### What are the benefits of the agent?
+<details>
+<summary>What are the benefits of the agent?</summary>
 
 Security teams spend too much time validating false positives and performing repetitive investigative steps. By embedding reasoning and context-awareness directly into Cloud SIEM, the SOC Analyst Agent eliminates noise, standardizes outcomes, and accelerates time to resolution.
+</details>
 
-### Will the agent increase scanning or data-processing costs?
+<details>
+<summary>Will the agent increase scanning or data-processing costs?</summary>
 
 No. The agent analyzes existing data already ingested into Cloud SIEM. It performs reasoning on metadata and contextual signals rather than initiating new scans.
+</details>
 
-### How does the agent differ from Cloud SIEM correlation or automation rules?
+<details>
+<summary>How does the agent differ from Cloud SIEM correlation or automation rules?</summary>
 
 Unlike traditional correlation logic, which is static, the SOC Analyst Agent applies agentic reasoning. It adapts based on insight context, recent analyst actions, and environmental signals, producing contextual, explainable decisions rather than fixed pattern matches.
+</details>
 
-### What data does the agent rely on to render verdicts?
+<details>
+<summary>What data does the agent rely on to render verdicts?</summary>
 
 The agent draws from normalized security data (`sec_record*` indexes and signals), correlated entities, Sumo Logic’s integrated threat intelligence feeds, and enrichment data (for example, IP geolocation, user behavior, and asset details).
+</details>
 
-### Can analysts provide feedback or correct AI verdicts?
+<details>
+<summary>Can analysts provide feedback or correct AI verdicts?</summary>
 
 Yes. Analysts can override verdicts and flag feedback within the UI. These actions are logged and reviewed to refine model behavior over time as part of the Dojo AI learning loop.
+</details>
 
 ## Additional resources
 
