@@ -1616,3 +1616,16 @@ article header h2[class*='title_'] {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+/* Visually hidden but accessible to screen readers and search engines */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
