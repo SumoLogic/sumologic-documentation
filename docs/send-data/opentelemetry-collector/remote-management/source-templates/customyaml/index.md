@@ -23,7 +23,7 @@ import Iframe from 'react-iframe';
 
 Learn how to configure the Custom YAML source template.
 
-<Iframe url="https://sumo-logic.wistia.com/medias/tgtoagezj5" 
+<Iframe url="https://fast.wistia.net/embed/iframe/tgtoagezj5?web_component=true&seo=true&videoFoam=false" 
   width="854px"
   height="480px"
   title="Micro Lesson: Using Custom YAML source template"
