@@ -124,18 +124,16 @@ jobs:
             echo "No build directory found; skipping path check."
             exit 0
           fi
-          # Find files with disallowed chars: " : < > | * ?
           OFFENDERS=$(find build -type f | grep -E ‘[":<>|*?]’ || true)
           if [ -n "$OFFENDERS" ]; then
-            echo "❌ Disallowed characters found in build artifact paths:"
+            echo "Disallowed characters found in build artifact paths:"
             echo "$OFFENDERS"
             echo "$OFFENDERS" | while IFS= read -r p; do
-              badchars=$(basename "$p" | grep -oE ‘[":<>|*?]’ | tr -d ‘\n’)
-              echo "::error file=${p}::Disallowed character(s): [${badchars}] (Pantheon rejects: \" : < > | * ?)"
+              echo "::error file=${p}::Disallowed character in path - Pantheon rejects these characters"
             done
             exit 1
           fi
-          echo "✅ No disallowed characters found in build artifact paths."
+          echo "No disallowed characters found in build artifact paths."
   spellcheck:
     runs-on: ubuntu-latest
     steps:
