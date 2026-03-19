@@ -54,6 +54,10 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Clobber](/docs/send-data/installed-collectors/collector-installation-reference/force-collectors-name-clobber/)**. During the installation process, use the clobber flag in situations where you're creating a new Collector that will use a name that is already in use by another Collector. Clobber deletes (clobbers) the existing collector with the same name.
 
+**[Cloud SIEM](/docs/cse)**. A cloud-native security information and event management solution that automatically normalizes, correlates, and analyzes your security data. Cloud SIEM surfaces insights that help security analysts detect and investigate threats faster.
+
+**[Cloud SOAR](/docs/cloud-soar)**. A security orchestration, automation, and response platform that helps security teams streamline incident response. Cloud SOAR automates repetitive tasks, orchestrates workflows across security tools, and tracks the full incident lifecycle.
+
 <!--
 **[Cloud](/docs/get-started#sumo-logic-cloud)**. The Sumo Logic Cloud is a secure, scalable repository for all of your operations, security, compliance, development, and other log data. The Sumo Logic Cloud stores, indexes, parses, and analyzes data, and provides unlimited horsepower with elastic scalability.
 -->
@@ -211,10 +215,14 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 **[Microservices](/docs/integrations/app-development)**. The microservices architecture enables you to structure applications as collections of loosely coupled services that are fine-grained, with protocols that are lightweight. Building applications using different smaller services improves modularity and provides for the continuous delivery and deployment of large, complex applications.
 -->
 
+**[Mobot](/docs/search/mobot)**. Sumo Logic's AI assistant. It uses a suite of specialized agents to help you search, analyze, and learn about your data using natural language.
+
 **[Multiline](/docs/send-data/reference-information/collect-multiline-logs)**. Log messages that span multiple lines are called multiline messages.
 
 
 ## O
+
+**[OpenTelemetry Collector, Sumo Logic](/docs/send-data/opentelemetry-collector/)**. An open-source, vendor-agnostic agent for collecting, processing, and exporting telemetry data such as logs, metrics, and traces. Sumo Logic supports the OpenTelemetry Collector as a unified alternative to Installed Collectors for sending observability data to Sumo Logic.
 
 **[Organization](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings)**. In Sumo Logic, org, or organization, refers to your company’s Sumo Logic account (not an individual user’s account).
 
