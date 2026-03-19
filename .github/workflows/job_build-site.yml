@@ -26,9 +26,26 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22.x'
-          cache: 'yarn'
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/yarn
+            node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Docusaurus build cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules/.cache
+            .docusaurus
+          key: ${{ runner.os }}-docusaurus-${{ hashFiles('yarn.lock', 'docusaurus.config.js') }}
+          restore-keys: |
+            ${{ runner.os }}-docusaurus-
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile --prefer-offline
       - name: Clean Docusaurus cache
         run: rm -rf .docusaurus build
       - name: Clear the Docusaurus site
