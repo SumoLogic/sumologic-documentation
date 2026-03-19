@@ -39,30 +39,31 @@ jobs:
             exit 0
           fi
           BAD_LINKS=$(
-            awk 'BEGIN { in_code=0 }
+            awk 'BEGIN { in_code=0; BACKTICK=sprintf("%c",96) }
             {
               raw=$0
 
-              # Toggle fenced code blocks starting with backtick-backtick-backtick or tilde-tilde-tilde
+              # Toggle fenced code blocks
               if (match(raw, /^\s*(`{3,}|~{3,})/)) { in_code = !in_code; next }
               if (in_code) { next }
 
-              # Strip inline code spans so patterns inside do not trigger
+              # Strip inline code spans
               line = raw
-              gsub(/`[^`]*`/, "", line)
+              pattern = BACKTICK "[^" BACKTICK "]*" BACKTICK
+              gsub(pattern, "", line)
 
-              # Find real Markdown links: [text](url)
+              # Find Markdown links
               while (match(line, /\[[^]]+\]\(([^)]+)\)/, m)) {
                 url=m[1]
 
                 # Skip external schemes
                 if (url ~ /^(https?:|mailto:|tel:)/) { line=substr(line, RSTART+RLENGTH); continue }
 
-                # Drop query + fragment
+                # Drop query and fragment
                 sub(/\?.*$/, "", url)
                 sub(/#.*/, "", url)
 
-                # Disallowed characters in relative link targets: " : < > | * ?
+                # Check for disallowed characters
                 if (url ~ /[":<>|*?]/) {
                   printf("%s\t%d\t%s\n", FILENAME, FNR, m[0])
                 }
@@ -73,16 +74,15 @@ jobs:
           )
 
           if [ -n "$BAD_LINKS" ]; then
-            echo "❌ Disallowed characters found in Markdown/MDX link targets:"
+            echo "Disallowed characters found in Markdown/MDX link targets:"
             echo "$BAD_LINKS"
             while IFS=$'\t' read -r file line match; do
               [ -z "$file" ] && continue
-              badchars=$(echo "$match" | grep -oE '[":<>|*?]' | tr -d '\n')
-              echo "::error file=${file},line=${line}::Disallowed character(s) in Markdown link target: [${badchars}] ${match} (Not allowed: \" : < > | * ?)"
+              echo "::error file=${file},line=${line}::Disallowed character in Markdown link - Pantheon rejects these characters"
             done <<< "$BAD_LINKS"
             exit 1
           fi
-          echo "✅ No disallowed characters found in Markdown/MDX link targets."
+          echo "No disallowed characters found in Markdown/MDX link targets."
 
   build-and-deploy:
     runs-on: ubuntu-latest
