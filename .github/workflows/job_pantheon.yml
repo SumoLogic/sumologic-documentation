@@ -68,7 +68,7 @@ jobs:
           chmod +x terminus
           mv terminus /usr/local/bin/terminus
           terminus self:update
-          git config -l | grep 'http\..*\.extraheader' | cut -d= -f1 | xargs -L1 git config --unset-all
+          git config -l | grep 'http\..*\.extraheader' | cut -d= -f1 | xargs -L1 git config --unset-all || true
           git config --global user.email "${{ secrets.PANTHEON_USER_EMAIL }}"
           git config --global user.name "GitHub workflow"
           echo "PANTHEON_BRANCH=master" >> $GITHUB_ENV
