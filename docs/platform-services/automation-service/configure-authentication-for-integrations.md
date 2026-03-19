@@ -8,7 +8,7 @@ description: Learn how to configure authentication for automation integrations.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IAMConfiguration from '../../reuse/automation-service/aws/iam-configuration.md';
 
-This article provides a quick reference to configure authentication for [automation integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) for the Automation Service and Cloud SOAR. Refer to the individual [integrations articles](/docs/platform-services/automation-service/app-central/integrations/) for detailed information on setup, usage, and features. 
+This article provides a quick reference to configure authentication for [automation integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) for the Automation Service and Cloud SOAR. Refer to the individual integrations articles for detailed information on setup, usage, and features. 
 
 ## How to configure authentication for automation integrations
 
