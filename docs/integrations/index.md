@@ -30,7 +30,10 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 <SumoAcademy/>
 
-* **Self-paced**: [Fundamentals: Self-Paced](https://learn.sumologic.com/fundamentals-self-paced)
+* **Self-paced**: 
+   * [Fundamentals: Self-Paced](https://learn.sumologic.com/fundamentals-self-paced)
+   * [Administration Self-Paced](https://learn.sumologic.com/administration-self-paced)
+   * [Tutorials](https://learn.sumologic.com/page/learn-a-new-skill#by-type_tutorial)
 * **Instructor-led virtual classes**: 
    * [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
    * [Certifications: Administration](https://www.sumologic.com/learn/training?_certifications=administration#section-2)
@@ -38,7 +41,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 
 :::training Micro Lesson
-Watch this tutorial to learn how to use our **App Catalog**.
+Watch this micro lesson to learn how to use our **App Catalog**.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/cz203tui1t?web_component=true&seo=true&videoFoam=false"
   width="854px"

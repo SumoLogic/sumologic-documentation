@@ -54,9 +54,9 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Clobber](/docs/send-data/installed-collectors/collector-installation-reference/force-collectors-name-clobber/)**. During the installation process, use the clobber flag in situations where you're creating a new Collector that will use a name that is already in use by another Collector. Clobber deletes (clobbers) the existing collector with the same name.
 
-**[Cloud SIEM](/docs/cse)**. A cloud-native security information and event management solution that automatically normalizes, correlates, and analyzes your security data. Cloud SIEM surfaces insights that help security analysts detect and investigate threats faster.
+[**Cloud SIEM**](/docs/cse). A cloud-native security information and event management solution that automatically normalizes, correlates, and analyzes your security data. Cloud SIEM surfaces insights that help security analysts detect and investigate threats faster.
 
-**[Cloud SOAR](/docs/cloud-soar)**. A security orchestration, automation, and response platform that helps security teams streamline incident response. Cloud SOAR automates repetitive tasks, orchestrates workflows across security tools, and tracks the full incident lifecycle.
+[**Cloud SOAR**](/docs/cloud-soar). A security orchestration, automation, and response platform that helps security teams streamline incident response. Cloud SOAR automates repetitive tasks, orchestrates workflows across security tools, and tracks the full incident lifecycle.
 
 <!--
 **[Cloud](/docs/get-started#sumo-logic-cloud)**. The Sumo Logic Cloud is a secure, scalable repository for all of your operations, security, compliance, development, and other log data. The Sumo Logic Cloud stores, indexes, parses, and analyzes data, and provides unlimited horsepower with elastic scalability.
