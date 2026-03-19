@@ -133,7 +133,7 @@ From the [Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-d
 
 <img src={useBaseUrl('img/cse/insight-details-page.png')} alt="Insight details page" style={{border: '1px solid gray'}} width="800"/>
 
-1. **Ask Mobot**. Click to send the AI analysis of the insight to [Sumo Logic Mobot](#investigate-the-insight-in-mobot) for further investigation. For more information, see [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/).
+1. **Ask Mobot**. Click to send the AI analysis of the insight to [Sumo Logic Mobot](/docs/search/mobot/) for further investigation. For more information, see [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/).
 1. **Actions.** The [insight actions](/docs/cse/administration/create-cse-actions#insight-actions) defined in your environment.
 1. **Close Insight.** Use this option to close an insight. When you click this option, you’re prompted to select an insight resolution.
 1. **Comments.** Displays any comments that have been made on the insight, and a field for adding a comment.
