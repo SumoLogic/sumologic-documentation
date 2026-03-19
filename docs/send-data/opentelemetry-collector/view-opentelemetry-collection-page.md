@@ -78,5 +78,5 @@ Follow the steps below to filter OpenTelemetry collectors based on their status:
 
 Follow the steps below to filter OpenTelemetry collectors that have a newer version available to upgrade:
 
-1. On the **OpenTelemetry Collection** page, click the **Click to add a filter** bar and then select **Upgrade Available**.<br/><img src={useBaseUrl('img/send-data/otel-upgrade-available-filter.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="400" />
+1. On the **OpenTelemetry Collection** page, click the **Click to add a filter** bar and then select **Upgrade Available**.<br/><img src={useBaseUrl('img/send-data/otel-upgrade-available-filter.png')} alt="otel-upgrade-available-filter" style={{border:'1px solid gray'}} width="400" />
 1. You can view a list of OpenTelemetry collectors that need or support an upgrade.
