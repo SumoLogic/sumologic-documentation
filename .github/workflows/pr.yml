@@ -118,22 +118,28 @@ jobs:
         run: yarn build
       # Validate build artifacts for disallowed characters
       - name: Check build artifact paths for disallowed characters
+        env:
+          BUILD_DIR: build
         shell: bash
         run: |
-          if [ ! -d "build" ]; then
-            echo "No build directory found; skipping path check."
+          if [ ! -d "$BUILD_DIR" ]; then
+            echo "No $BUILD_DIR directory found; skipping path check."
             exit 0
           fi
-          OFFENDERS=$(find build -type f | grep -E ‘"|:|<|>|\||\*|\?’ || true)
+          # Disallowed chars: " : < > | * ?
+          OFFENDERS="$(find "$BUILD_DIR" -type f | grep -E ‘[":<>|*?]’)" || true
           if [ -n "$OFFENDERS" ]; then
-            echo "Disallowed characters found in build artifact paths:"
+            echo "❌ Disallowed characters found in build artifact paths:"
             echo "$OFFENDERS"
-            echo "$OFFENDERS" | while IFS= read -r p; do
-              echo "::error file=${p}::Disallowed character in path"
-            done
+            while IFS= read -r p; do
+              rel="${p#$(pwd)/}"
+              [ "$rel" = "$p" ] && rel="$p"
+              badchars=$(echo "$rel" | grep -oE ‘[":<>|*?]’ | tr -d ‘\n’)
+              echo "::error file=${rel}::Disallowed character(s) found in build artifact path: [${badchars}] (Pantheon rejects paths containing any of: \" : < > | * ?)"
+            done <<< "$OFFENDERS"
             exit 1
           fi
-          echo "No disallowed characters found in build artifact paths."
+          echo "✅ No disallowed characters found in build artifact paths."
   spellcheck:
     runs-on: ubuntu-latest
     steps:
