@@ -77,12 +77,12 @@ The Amazon EC2 Auto Scaling app uses the following logs and metrics:
 ### Sample queries
 
 ```sql title="Events by status (CloudTrail logs)"
-account="account" region="region" "\"eventsource\":\"autoscaling.amazonaws.com\"" 
+account="account" region="region" "\"eventsource\":\"autoscaling.amazonaws.com\""
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage", "apiVersion" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message, api_version nodrop
 | where event_source = "autoscaling.amazonaws.com"
 | where namespace matches "aws/autoscaling" or isEmpty(namespace)
 | json field=userIdentity "accountId", "type", "arn", "userName"  as accountid, type, arn, username nodrop
-| parse field=arn ":assumed-role/*" as user nodrop 
+| parse field=arn ":assumed-role/*" as user nodrop
 | parse field=arn "arn:aws:iam::*:*" as accountid, user nodrop
 | json field=requestParameters "autoScalingGroupName" as asgname nodrop
 | if (isBlank(accountid), recipient_account_id, accountid) as accountid
@@ -94,7 +94,7 @@ account="account" region="region" "\"eventsource\":\"autoscaling.amazonaws.com\"
 ```
 
 ```bash title="Group Desired Capacity (Cloud watch Metrics)"
-account=account region=region autoscalinggroupname=cartService namespace=aws/autoscaling metric=GroupDesiredCapacity Statistic=average 
+account=account region=region autoscalinggroupname=cartService namespace=aws/autoscaling metric=GroupDesiredCapacity Statistic=average
 | avg by account, region, autoscalinggroupname
 ```
 
@@ -115,7 +115,7 @@ When you create an AWS Source, you'll need to identify the Hosted Collector you 
 1. Sumo Logic supports collecting metrics using two source types:
    * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
    * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
-1. **Metadata**. Click the **+Add Field** link to add custom log metadata [fields](/docs/manage/fields). Define the fields you want to associate. Each field needs a name (key) and a value. 
+1. **Metadata**. Click the **+Add Field** link to add custom log metadata [fields](/docs/manage/fields). Define the fields you want to associate. Each field needs a name (key) and a value.
    1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
    1. Keep in mind:
       * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
@@ -126,7 +126,7 @@ The namespace for Amazon EC2 Auto Scaling Service is AWS/AutoScaling.
 
 ## Configure field in field schema
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**.
 1. Search for the `autoscalinggroup` field.
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
@@ -143,11 +143,11 @@ Scope (Specific Data): account=* eventSource eventName
 ```
 
 ```sql title="Parse Expression"
-json "eventSource", "awsRegion", "requestParameters", "recipientAccountId" as eventSource, region, requestParameters, accountid nodrop 
+json "eventSource", "awsRegion", "requestParameters", "recipientAccountId" as eventSource, region, requestParameters, accountid nodrop
 | json field=requestParameters "autoScalingGroupName" as autoscalinggroup nodrop
-| where eventSource = "autoscaling.amazonaws.com" 
-| "aws/autoscaling" as namespace 
-| tolowercase(autoscalinggroup) as autoscalinggroup 
+| where eventSource = "autoscaling.amazonaws.com"
+| "aws/autoscaling" as namespace
+| tolowercase(autoscalinggroup) as autoscalinggroup
 | fields region, namespace, autoscalinggroup, accountid
 ```
 
@@ -179,7 +179,7 @@ Use this dashboard for:
 * Identifying and troubleshooting common error messages related to autoscaling operations.
 * Monitoring disruptive events such as group updates, instance detachments, and policy changes.
 
-<img src={useBaseUrl('img/integrations/01.-Amazon-EC2-Auto-Scaling-Overview.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/01.-Amazon-EC2-Auto-Scaling-Overview.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ### CloudTrail Audit
 
@@ -191,7 +191,7 @@ Use this dashboard for:
 * Tracking user activities and potential security concerns related to auto scaling events.
 * Analyzing trends in event types, success rates, and failure patterns over time.
 
-<img src={useBaseUrl('img/integrations/02.-Amazon-EC2-Auto-Scaling-CloudTrail-Audit.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/02.-Amazon-EC2-Auto-Scaling-CloudTrail-Audit.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ### Instances
 
@@ -203,7 +203,7 @@ Use this dashboard for:
 * Observing the total number of instances in each group, including their various states (pending, standby, and terminating).
 * Comparing instance metrics across different auto scaling groups.
 
-<img src={useBaseUrl('img/integrations/03.-Amazon-EC2-Auto-Scaling-Instances.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/03.-Amazon-EC2-Auto-Scaling-Instances.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ### Capacity
 
@@ -216,7 +216,7 @@ Use this dashboard for:
 * Tracking terminating capacity to monitor the scale-in process and resource optimization.
 * Detecting potential issues in the scaling process, such as instances stuck in pending or terminating states.
 
-<img src={useBaseUrl('img/integrations/04.-Amazon-EC2-Auto-Scaling-Capacity.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/04.-Amazon-EC2-Auto-Scaling-Capacity.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ### Warm Pool
 
@@ -229,7 +229,7 @@ Use this dashboard for:
 * Monitoring the terminating capacity in warm pools to understand the instance lifecycle.
 * Optimizing warm pool size and capacity to improve application responsiveness during sudden load increases.
 
-<img src={useBaseUrl('img/integrations/05.-Amazon-EC2-Auto-Scaling-Warm-Pool.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/05.-Amazon-EC2-Auto-Scaling-Warm-Pool.png')} alt="Amazon EC2 Auto Scaling dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ## Create monitors for Amazon EC2 Auto Scaling app
 

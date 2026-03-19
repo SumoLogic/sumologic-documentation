@@ -57,6 +57,10 @@ To configure a Proofpoint On Demand Source:
   * **maillog**: `data`, `id`, `pps`, `sm`, `ts`
 10. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Proofpoint On Demand source, consider installing the Sumo Logic app for [Proofpoint On Demand](/docs/integrations/saas-cloud/proofpoint-on-demand/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |

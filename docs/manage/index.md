@@ -113,4 +113,10 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
   <p>Learn how to archive selected data to an external server or Amazon S3.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/manage/deletion-requests')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Deletion Requests</h4></a>
+  <p> Learn how to independently and efficiently control or remove your sensitive data from Sumo Logic.</p>
+  </div>
+</div>
 </div>

@@ -80,7 +80,7 @@ To configure a Microsoft Graph Security API Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the Microsoft Graph Security API source, you can install relevant Sumo Logic Azure security apps to visualize and analyze the collected data through prebuilt dashboards. 
+After configuring the Microsoft Graph Security API source, you can install relevant Sumo Logic Azure security apps to visualize and analyze the collected data through prebuilt dashboards and monitor alerts. 
 
 Depending on your security monitoring needs, you can choose from several apps such as [Microsoft Defender for Endpoint](/docs/integrations/microsoft-azure/microsoft-defender-for-endpoint), [Microsoft Defender for Identity](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity/), [Microsoft Defender for Office 365](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-office-365), [Microsoft Defender for Cloud Apps](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps), [Microsoft Entra ID Protection](/docs/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection), or [Microsoft Graph Security](/docs/integrations/saas-cloud/microsoft-graph-security-v2).
 :::
