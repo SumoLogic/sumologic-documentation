@@ -12,111 +12,35 @@ on:
     types:
       - checks_requested
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
-
 env:
   CI: true
   NODE_ENV: production
   NODE_OPTIONS: "--max-old-space-size=8192 --max-http-header-size=8192"
-  # Docusaurus build optimizations
-  DOCUSAURUS_SKIP_SERVER_LOGS: true
-  DOCUSAURUS_BUILD_CONCURRENCY: 2
 
 jobs:
-  # Fast validation that doesn't require building
-  validate-links:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - name: Check Markdown/MDX links for disallowed characters
-        shell: bash
-        run: |
-          FILES=$(git ls-files '*.md' '*.mdx' 2>/dev/null || true)
-          if [ -z "$FILES" ]; then
-            echo "No Markdown/MDX files found; skipping link check."
-            exit 0
-          fi
-          BAD_LINKS=$(
-            awk 'BEGIN { in_code=0; BACKTICK=sprintf("%c",96) }
-            {
-              raw=$0
-
-              # Toggle fenced code blocks
-              if (match(raw, /^\s*(`{3,}|~{3,})/)) { in_code = !in_code; next }
-              if (in_code) { next }
-
-              # Strip inline code spans
-              line = raw
-              pattern = BACKTICK "[^" BACKTICK "]*" BACKTICK
-              gsub(pattern, "", line)
-
-              # Find Markdown links
-              while (match(line, /\[[^]]+\]\(([^)]+)\)/, m)) {
-                url=m[1]
-
-                # Skip external schemes
-                if (url ~ /^(https?:|mailto:|tel:)/) { line=substr(line, RSTART+RLENGTH); continue }
-
-                # Drop query and fragment
-                sub(/\?.*$/, "", url)
-                sub(/#.*/, "", url)
-
-                # Check for disallowed characters
-                if (url ~ /[":<>|*?]/) {
-                  printf("%s\t%d\t%s\n", FILENAME, FNR, m[0])
-                }
-
-                line=substr(line, RSTART+RLENGTH)
-              }
-            }' $FILES
-          )
-
-          if [ -n "$BAD_LINKS" ]; then
-            echo "Disallowed characters found in Markdown/MDX link targets:"
-            echo "$BAD_LINKS"
-            while IFS=$'\t' read -r file line match; do
-              [ -z "$file" ] && continue
-              echo "::error file=${file},line=${line}::Disallowed character in Markdown link - Pantheon rejects these characters"
-            done <<< "$BAD_LINKS"
-            exit 1
-          fi
-          echo "No disallowed characters found in Markdown/MDX link targets."
-
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-        with:
-          fetch-depth: 1  # Only need latest commit for PR builds
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
           node-version: '24'
-      - name: Cache dependencies
+          cache: 'yarn'
+      - name: Docusaurus Webpack cache
         uses: actions/cache@v5
         with:
-          path: |
-            ~/.cache/yarn
-            node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: Docusaurus build cache
-        uses: actions/cache@v5
-        with:
-          path: |
-            node_modules/.cache
-            .docusaurus
-          key: ${{ runner.os }}-docusaurus-${{ hashFiles('yarn.lock', 'docusaurus.config.js') }}
-          restore-keys: |
-            ${{ runner.os }}-docusaurus-
+          path: node_modules/.cache
+          key: ${{ runner.os }}-webpack-cache-${{ hashFiles('yarn.lock') }}
       - name: Install dependencies
-        run: yarn install --frozen-lockfile --prefer-offline
+        run: yarn install --frozen-lockfile
+      - name: Clear the Docusaurus site
+        run: |
+          yarn clear
       - name: Build the Docusaurus site
         run: yarn build
-      # Validate build artifacts for disallowed characters
+      # --- Disallowed character checks for Pantheon ---
+      # 1) Fail if any file path in the build output contains disallowed characters
       - name: Check build artifact paths for disallowed characters
         env:
           BUILD_DIR: build
@@ -127,37 +51,83 @@ jobs:
             exit 0
           fi
           # Disallowed chars: " : < > | * ?
-          OFFENDERS="$(find "$BUILD_DIR" -type f | grep -E ‘[":<>|*?]’)" || true
+          OFFENDERS="$(find "$BUILD_DIR" -type f | grep -E '[":<>|*?]')" || true
           if [ -n "$OFFENDERS" ]; then
             echo "❌ Disallowed characters found in build artifact paths:"
             echo "$OFFENDERS"
             while IFS= read -r p; do
               rel="${p#$(pwd)/}"
               [ "$rel" = "$p" ] && rel="$p"
-              badchars=$(echo "$rel" | grep -oE ‘[":<>|*?]’ | tr -d ‘\n’)
+              badchars=$(echo "$rel" | grep -oE '[":<>|*?]' | tr -d '\n')
               echo "::error file=${rel}::Disallowed character(s) found in build artifact path: [${badchars}] (Pantheon rejects paths containing any of: \" : < > | * ?)"
             done <<< "$OFFENDERS"
             exit 1
           fi
           echo "✅ No disallowed characters found in build artifact paths."
+      # 2) Fail if any Markdown/MDX link target contains disallowed characters (excluding external links).
+      #    Ignores fenced code blocks (```/~~~) and inline code (`...`) to avoid false positives from code samples.
+      - name: Check Markdown/MDX links for disallowed characters
+        shell: bash
+        run: |
+          FILES="$(git ls-files '*.md' '*.mdx' 2>/dev/null || true)"
+          if [ -z "$FILES" ]; then
+            echo "No Markdown/MDX files found; skipping link check."
+            exit 0
+          fi
+          BAD_LINKS=$(
+            awk '
+              BEGIN { in_code=0 }
+              {
+                raw=$0
+
+                # Toggle fenced code blocks starting with ``` or ~~~
+                if (match(raw, /^\s*(```|~~~)/)) { in_code = !in_code; next }
+                if (in_code) { next }
+
+                # Strip inline code spans so patterns inside don’t trigger
+                line = raw
+                gsub(/`[^`]*`/, "", line)
+
+                # Find real Markdown links: [text](url)
+                while (match(line, /\[[^]]+\]\(([^)]+)\)/, m)) {
+                  url=m[1]
+
+                  # Skip external schemes
+                  if (url ~ /^(https?:|mailto:|tel:)/) { line=substr(line, RSTART+RLENGTH); continue }
+
+                  # Drop query + fragment
+                  sub(/\?.*$/, "", url)
+                  sub(/#.*/, "", url)
+
+                  # Disallowed characters in relative link targets: " : < > | * ?
+                  if (url ~ /[":<>|*?]/) {
+                    printf("%s\t%d\t%s\n", FILENAME, FNR, m[0])
+                  }
+
+                  line=substr(line, RSTART+RLENGTH)
+                }
+              }
+            ' $FILES
+          )
+
+          if [ -n "$BAD_LINKS" ]; then
+            echo "❌ Disallowed characters found in Markdown/MDX link targets:"
+            echo "$BAD_LINKS"
+            while IFS=$'\t' read -r file line match; do
+              [ -z "$file" ] && continue
+              badchars=$(echo "$match" | grep -oE '[":<>|*?]' | tr -d '\n')
+              echo "::error file=${file},line=${line}::Disallowed character(s) in Markdown link target: [${badchars}] ${match} (Not allowed: \" : < > | * ?)"
+            done <<< "$BAD_LINKS"
+            exit 1
+          fi
+          echo "✅ No disallowed characters found in Markdown/MDX link targets."
   spellcheck:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v45
-        with:
-          files: |
-            docs/**
-            blog/**
       - name: Check spelling
-        if: steps.changed-files.outputs.any_changed == 'true'
         uses: codespell-project/actions-codespell@v2
         with:
           path: docs
           skip: "*.svg,*.js,*.map,*.css,*.scss"
           ignore_words_list: "aks,atleast,cros,ddress,delink,fiel,ist,nd,ot,pullrequest,ser,shttp,wast,fo,seldomly,delt,cruzer,plack,secur,te,nginx,Nginx,notin"
-      - name: Skip spelling check
-        if: steps.changed-files.outputs.any_changed != 'true'
-        run: echo "✅ No documentation files changed, skipping spellcheck"
