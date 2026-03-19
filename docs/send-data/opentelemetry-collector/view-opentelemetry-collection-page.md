@@ -53,7 +53,7 @@ Follow the steps below to filter OpenTelemetry collectors based on their type:
 1. Select one of the following collector types:
    - Locally Managed
    - Remotely Managed
-1. Based on the selected collector type, you can view a list of either locally managed collectors or remotely managed collectors.<br/><img src={useBaseUrl('img/send-data/collectors-with-selected-type.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} />
+1. Based on the selected collector type, you can view a list of either locally managed collectors or remotely managed collectors.<br/><img src={useBaseUrl('img/send-data/collectors-with-selected-type.png')} alt="collectors-with-selected-type" style={{border:'1px solid gray'}} />
 
 ### Collector Tag
 
