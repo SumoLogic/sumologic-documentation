@@ -124,12 +124,12 @@ jobs:
             echo "No build directory found; skipping path check."
             exit 0
           fi
-          OFFENDERS=$(find build -type f | grep -E ‘[":<>|*?]’ || true)
+          OFFENDERS=$(find build -type f | grep -E ‘"|:|<|>|\||\*|\?’ || true)
           if [ -n "$OFFENDERS" ]; then
             echo "Disallowed characters found in build artifact paths:"
             echo "$OFFENDERS"
             echo "$OFFENDERS" | while IFS= read -r p; do
-              echo "::error file=${p}::Disallowed character in path - Pantheon rejects these characters"
+              echo "::error file=${p}::Disallowed character in path"
             done
             exit 1
           fi
