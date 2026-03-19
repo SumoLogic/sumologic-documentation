@@ -72,7 +72,7 @@ Follow the steps below to filter OpenTelemetry collectors based on their status:
 1. Select one of the following statuses:
    - Alive
    - Stopped
-1. Based on the selected status, you can view a list of either alive collectors or stopped collectors.<br/><img src={useBaseUrl('img/send-data/otel-collectors-with-selected-status-filter.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} />
+1. Based on the selected status, you can view a list of either alive collectors or stopped collectors.<br/><img src={useBaseUrl('img/send-data/otel-collectors-with-selected-status-filter.png')} alt="otel-collectors-with-selected-status-filter" style={{border:'1px solid gray'}} />
 
 ### Upgrade Available
 
