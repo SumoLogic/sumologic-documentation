@@ -65,6 +65,10 @@ To configure Kandji Source:
 1. **Processing Rules**. Configure any desired filters, such as allowlist, deny list, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the Kandji source, consider installing the Sumo Logic app for [Kandji](/docs/integrations/saas-cloud/kandji/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.

@@ -64,3 +64,7 @@ Complete the following steps to get the credentials and enable the required scop
 :::info
 Your **Client ID**, **Client Secret**, **Access Token** will be used as input in UI. However, **Refresh Token** will only be required if you have selected **Expire user authorization token** while creating the app.
 :::
+
+:::info
+After configuring the Miro source, consider installing the Sumo Logic app for [Miro](/docs/integrations/saas-cloud/miro/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::

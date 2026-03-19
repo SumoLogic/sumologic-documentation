@@ -60,6 +60,10 @@ When you create a Netskope WebTx API Source, you add it to a Hosted Collector. B
 1. **Netskope Streaming Credentials**. Upload the JSON file downloaded from google cloud platform.
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the Netskope WebTx source, consider installing the Sumo Logic app for [Netskope WebTx](/docs/integrations/saas-cloud/netskope-webtx/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
