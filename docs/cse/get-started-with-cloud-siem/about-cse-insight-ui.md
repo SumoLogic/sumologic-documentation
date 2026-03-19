@@ -24,19 +24,21 @@ Cloud SIEM displays insights and the signals attached to them in the Cloud SIEM 
 
 ### List view
 
-This screenshot shows the **Insights** page in list view. 
+By default, insights are displayed in the list view:
 
 <img src={useBaseUrl('img/cse/insights-page.png')} alt="Insights page" style={{border: '1px solid gray'}} width="800"/>
 
+Following are the columns in the list view. The order of columns in your UI may differ since you can drag and drop the columns into the order you want:
 * **Status**. The [status](/docs/cse/administration/manage-custom-insight-statuses/) of the insight.
 * **ID**. The insight name, made up of the insight ID, and the MITRE stage or stages associated with the signals in the insight.
-* **Created**. When the insight was created.
-* **Assignee**. The analyst assigned to the Incident.
-* **Age**. The elapsed time since the insight was created.
-* **Entity**. The [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) associated with the insight.
 * **Severity**. The severity of the insight. The value is a function of the configured entity activity score threshold for insight generation. For more information, see [About insight severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process#about-insight-severity).
-* **Global Confidence**. If sufficient data is available, a [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight is shown.
+* **AI Verdict**. The AI system's qualitative assessment of the insight. Clicking anywhere on the row of an insight that has an AI verdict shows a side panel with results of the verdict. This allows you to browse quickly for insights needing more investigation. For more information, see [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/).
+* **Assignee**. The analyst assigned to the Incident.
+* **GCS**. If sufficient data is available, a [Global Confidence Score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight is shown.
+* **Entity**. The [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) associated with the insight.
 * **Signals**. The total count of signals on the insight entity during the detection window.
+* **Created**. When the insight was created.
+* **Age**. The elapsed time since the insight was created.
 
 ### Board view
 
@@ -52,6 +54,7 @@ You can switch back to the list view by clicking the **Show List** icon, near th
 
 You can use the **Filters** area near the top of the page to narrow down the insights that appear on the insights page. You can filter by:
 
+* AI Verdict
 * Assignee
 * [Custom resolution](/docs/cse/administration/manage-custom-insight-resolutions/)
 * Created
@@ -61,6 +64,7 @@ You can use the **Filters** area near the top of the page to narrow down the ins
 * Resolution
 * Rule ID
 * Severity
+* Sensor Zone (Record)
 * Status
 * Tags
 
@@ -125,39 +129,30 @@ For more information, see [Multi-insights list page in Cloud SIEM](/docs/manage/
 
 ## Insight details page
 
-From the HUD screen, list view, or board view, click an insight's name to see its details.
+From the [Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/) screen, [list view](#list-view), or [board view](#board-view), click an insight's name to see its details.
 
 <img src={useBaseUrl('img/cse/insight-details-page.png')} alt="Insight details page" style={{border: '1px solid gray'}} width="800"/>
 
-1. **Left pane**. [Insight details pane](#insight-details-pane) showing a summary, the entity that caused the insight to be generated, and additional information.
-1. **Signals**. The [signal visualization area](#signal-visualization-area).
+1. **Ask Mobot**. Click to send the AI analysis of the insight to [Sumo Logic Mobot](#investigate-the-insight-in-mobot) for further investigation. For more information, see [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/).
+1. **Actions.** The [insight actions](/docs/cse/administration/create-cse-actions#insight-actions) defined in your environment.
+1. **Close Insight.** Use this option to close an insight. When you click this option, you’re prompted to select an insight resolution.
+1. **Comments.** Displays any comments that have been made on the insight, and a field for adding a comment.
+1. **History.** Displays the insight's history, including status and assignment changes.
+1. **Delete Icon.** Use this option to delete an insight. You’ll be prompted to confirm your choice.
+1. **Severity.** Severity of the insight. Mouse over it to see an icon you can click to change the insight severity.
+1. **Status.** Current status of the insight.
+1. **Assignee**. Shows the current assignee and allows you to assign yourself the insight.
+1. **AI Verdict**. The AI system's qualitative assessment of the insight. For more information, see [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/).
+1. **Entity.** The entity the insight fired on.
+1. **Age**. The elapsed time since the insight was created.
+1. **Signals**. The total count of signals on the insight entity during the detection window.
+1. **GCS**. The [Global Confidence Score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight, if available.
+1. **Tags** The number of tags that have already been assigned to the insight, and a dropdown arrow to view and add tags.
+1. **AI Investigation**. An artificial intelligence-generated analysis of the insight. Use the information on this tab to guide your investigation. For more information, see [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/).
+1. **Signals**. Click to view the [signal visualization area](#signal-visualization-area).
 1. **Entities**. Click to view [entities](#about-the-entities-tab-graph-view) on the signal.
 1. **Enrichments**. Click this tab to view any enrichments that have been added to the insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
 1. **Automations**. Click to view [automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) on the insight.
-1. **Comments.** Displays any comments that have been made on the insight, and a field for adding a comment.
-1. **Signals**. The [signal visualization area](#signal-visualization-area) displays the signals attached to the insight.
-
-### Insight details pane
-
-The left pane of the insight details page displays detailed information about the selected insight. Some of the information that appears is the same as what’s in the row for an insight on the **Insights** page, and is described in [List view,](#list-view) above. The additional information that appears in the details pane is defined below.
-
-<img src={useBaseUrl('img/cse/insight-details.png')} alt="Insight details" style={{border: '1px solid gray'}} width="400"/>
-
-1. **Actions.** The [insight actions](/docs/cse/administration/create-cse-actions#insight-actions) defined in your environment.
-1. **Close Insight.** Use this option to close an insight. When you click this option, you’re prompted to select an insight resolution.
-1. **Delete Icon.** Use this option to delete an insight. You’ll be prompted to confirm your choice.
-1. **Summary**. [Insight summary](/docs/cse/get-started-with-cloud-siem/insight-summary/) generated by AI.
-1. **Entity.** The entity the insight fired on.
-1. **Status.** Current status of the insight.
-1. **Assignee** and **Assign to me.** Shows the current assignee and allows you to assign yourself the insight.
-1. **Severity.** Severity of the insight. Mouse over it to see an icon you can click to change the insight severity.
-1. **Global Confidence.** The [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight, if available.
-1. **Signal Data.** The number of signals in the insight.
-1. **Event Time.** The event time for the of the last signal in the insight.
-1. **Detection Time.** The time between when the first event happened (when the first record in the insight occurred) and when the insight was generated. (This differs from "dwell time", which is the time between when the first record and the last record occurred in an insight.)
-1. **Insight Created.** When the insight was created.
-1. **Tags** and **Create a tag.** Displays any tags that have already been assigned to the insight, and a field for adding a tag.
-1. **History.** Displays the insight's history, including status and assignment changes.
 
 ### Signal visualization area
 
