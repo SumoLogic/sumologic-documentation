@@ -231,6 +231,23 @@ html[data-theme='light'] {
   min-width: 100px;
 }
 
+html[data-theme='dark'] .DocSearch-Button-Placeholder {
+  color: #bdc1c6 !important;
+}
+
+html[data-theme='light'] .DocSearch-Button-Placeholder {
+  color: #5f6368 !important;
+}
+
+/* DocSearch button outline and icon - minimal brightness for accessibility */
+html[data-theme='dark'] .DocSearch-Button {
+  border-color: #6b6f78 !important;
+}
+
+html[data-theme='dark'] .DocSearch-Search-Icon {
+  color: #6b6f78 !important;
+}
+
 //GitHub icon
 .header-github-link:hover {
   opacity: 0.6;
