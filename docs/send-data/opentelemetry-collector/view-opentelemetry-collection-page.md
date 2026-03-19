@@ -49,7 +49,7 @@ Filters help you quickly narrow down OpenTelemetry collectors based on criteria 
 
 Follow the steps below to filter OpenTelemetry collectors based on their type:
 
-1. On the **OpenTelemetry Collection** page, click the **Click to add a filter** bar and then select **Collector Type** from the dropdown.<br/><img src={useBaseUrl('img/send-data/select-collector-type.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="400" />
+1. On the **OpenTelemetry Collection** page, click the **Click to add a filter** bar and then select **Collector Type** from the dropdown.<br/><img src={useBaseUrl('img/send-data/select-collector-type.png')} alt="select-collector-type" style={{border:'1px solid gray'}} width="400" />
 1. Select one of the following collector types:
    - Locally Managed
    - Remotely Managed
