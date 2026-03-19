@@ -33,45 +33,43 @@ jobs:
       - name: Check Markdown/MDX links for disallowed characters
         shell: bash
         run: |
-          FILES="$(git ls-files '*.md' '*.mdx' 2>/dev/null || true)"
+          FILES=$(git ls-files '*.md' '*.mdx' 2>/dev/null || true)
           if [ -z "$FILES" ]; then
             echo "No Markdown/MDX files found; skipping link check."
             exit 0
           fi
           BAD_LINKS=$(
-            awk '
-              BEGIN { in_code=0 }
-              {
-                raw=$0
+            awk 'BEGIN { in_code=0 }
+            {
+              raw=$0
 
-                # Toggle fenced code blocks starting with ``` or ~~~
-                if (match(raw, /^\s*(```|~~~)/)) { in_code = !in_code; next }
-                if (in_code) { next }
+              # Toggle fenced code blocks starting with backtick-backtick-backtick or tilde-tilde-tilde
+              if (match(raw, /^\s*(`{3,}|~{3,})/)) { in_code = !in_code; next }
+              if (in_code) { next }
 
-                # Strip inline code spans so patterns inside don't trigger
-                line = raw
-                gsub(/`[^`]*`/, "", line)
+              # Strip inline code spans so patterns inside do not trigger
+              line = raw
+              gsub(/`[^`]*`/, "", line)
 
-                # Find real Markdown links: [text](url)
-                while (match(line, /\[[^]]+\]\(([^)]+)\)/, m)) {
-                  url=m[1]
+              # Find real Markdown links: [text](url)
+              while (match(line, /\[[^]]+\]\(([^)]+)\)/, m)) {
+                url=m[1]
 
-                  # Skip external schemes
-                  if (url ~ /^(https?:|mailto:|tel:)/) { line=substr(line, RSTART+RLENGTH); continue }
+                # Skip external schemes
+                if (url ~ /^(https?:|mailto:|tel:)/) { line=substr(line, RSTART+RLENGTH); continue }
 
-                  # Drop query + fragment
-                  sub(/\?.*$/, "", url)
-                  sub(/#.*/, "", url)
+                # Drop query + fragment
+                sub(/\?.*$/, "", url)
+                sub(/#.*/, "", url)
 
-                  # Disallowed characters in relative link targets: " : < > | * ?
-                  if (url ~ /[":<>|*?]/) {
-                    printf("%s\t%d\t%s\n", FILENAME, FNR, m[0])
-                  }
-
-                  line=substr(line, RSTART+RLENGTH)
+                # Disallowed characters in relative link targets: " : < > | * ?
+                if (url ~ /[":<>|*?]/) {
+                  printf("%s\t%d\t%s\n", FILENAME, FNR, m[0])
                 }
+
+                line=substr(line, RSTART+RLENGTH)
               }
-            ' $FILES
+            }' $FILES
           )
 
           if [ -n "$BAD_LINKS" ]; then
