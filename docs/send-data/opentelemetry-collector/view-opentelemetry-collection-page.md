@@ -68,7 +68,7 @@ Follow the steps below to filter OpenTelemetry collectors based on the collector
 
 Follow the steps below to filter OpenTelemetry collectors based on their status:
 
-1. On the **OpenTelemetry Collection** page, click the **Click to add a filter** bar and then select **Status** from the dropdown.<br/><img src={useBaseUrl('img/send-data/otel-collector-status-filter.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="400" />
+1. On the **OpenTelemetry Collection** page, click the **Click to add a filter** bar and then select **Status** from the dropdown.<br/><img src={useBaseUrl('img/send-data/otel-collector-status-filter.png')} alt="otel-collector-status-filter" style={{border:'1px solid gray'}} width="400" />
 1. Select one of the following statuses:
    - Alive
    - Stopped
