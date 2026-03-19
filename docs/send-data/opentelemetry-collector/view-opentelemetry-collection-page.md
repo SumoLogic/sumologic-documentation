@@ -60,7 +60,7 @@ Follow the steps below to filter OpenTelemetry collectors based on their type:
 Follow the steps below to filter OpenTelemetry collectors based on the collector tags:
 
 1. On the **OpenTelemetry Collection** page, click the **Click to add a filter** bar.
-1. Under **Collector Tag**, select the required collector tag.<br/><img src={useBaseUrl('img/send-data/otel-collector-tag-filter.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="400" />
+1. Under **Collector Tag**, select the required collector tag.<br/><img src={useBaseUrl('img/send-data/otel-collector-tag-filter.png')} alt="otel-collector-tag-filter" style={{border:'1px solid gray'}} width="400" />
 1. Select the value assigned to the collector tag.<br/><img src={useBaseUrl('img/send-data/otel-collector-tag-value-filter.png')} alt="mapped-source-templates" style={{border:'1px solid gray'}} width="400" />
 1. Click **Apply**.
 
