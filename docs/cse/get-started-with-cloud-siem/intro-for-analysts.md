@@ -166,16 +166,7 @@ Threat investigation is an iterative process, much like troubleshooting. In both
 
 Cloud SIEM acts as your first line of defense, monitoring your system. Cloud SIEM's threat intelligence and correlation algorithms organize related potential security events into insights. When you get alerted to an insight, it's up to you to diagnose the problem and take action.
 
-<img src={useBaseUrl('img/cse/intro-insight-example.png')} alt="Insight example" style={{border: '1px solid gray'}} width="800"/>
-
-* A. **Name**. The insight's name can point you to how the event occurred, or why the adversaries did it. In this case, the adversaries wanted to gain credential access.
-* B. **Assignee**. You can assign the insight to a coworker, update the insight's status, send alerts, close the insight, and perform other actions here.
-* C. **Entity**. The entity can point to who, where, or what was affected. In this case, the insight is clustered around a username.
-* D. **Left pane**. A summary of the insight's key features, like its severity, can be found in the left pane.
-* E. **Timeline**. The timeline can show you when the events occurred. Each event represents a signal.
-* F. **Signals**. The signals below the timeline contain details of each event.
-
-The insight page shows everything you need to start unravelling the security event. As you start investigating, try to answer as many wh- questions as you can about the event:
+The [insight page](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) shows everything you need to start unravelling the security event. As you start investigating, try to answer as many wh- questions as you can about the event:
 
 * Who is behind the event?
 * What assets did the event affect?
@@ -210,8 +201,8 @@ Of course, this process will repeat each day as new insights are generated for y
 In this section, you'll be investigating an insight for your organization that was detected through Cloud SIEM. Our goal is to analyze the insight details and complete the narrative of what happened.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Insights** at the top of the screen. 
-1. Find an insight to investigate. 
-1. Click the insight's name to investigate it. For our example, we found one named **Discovery with Execution and Initial Access**. <br/><img src={useBaseUrl('img/cse/intro-insight-example-investigation.png')} alt="Example threat insight" style={{border: '1px solid gray'}} width="800"/>
+1. [Find an insight to investigate](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/). 
+1. Click the insight's name to investigate it.
 1. Use the insight's name (and the [MITRE ATT&CK matrix](https://attack.mitre.org/matrices/enterprise/)), timeline, signals, and entities to answer these questions:
    * What events (signals) were detected and correlated together?
    * What is the total of all the severity scores of the signals in this insight?
@@ -243,9 +234,9 @@ The **Entities** tab lists all the entities that your rules have detected in the
 
 Sometimes you want to take your investigation even further. An in-depth threat investigation will use the most of both Cloud SIEM and Sumo Logic's core search functionality. 
 
-There are several ways to bring the information you find in Cloud SIEM back to the Sumo Logic platform. One [context action](/docs/cse/administration/create-cse-context-actions) is **Sumo Logic Search**. Selecting this action will create a log search in Sumo Logic. This way, you can find all log messages with that entity, even if it wasn't detected by a rule in Cloud SIEM. Hover your mouse over the entity name, click the <img src={useBaseUrl('img/cse/intro-context-action-icon.png')} alt="Context action button" style={{border: '1px solid gray'}} width="20"/> button that appears, and select **Sumo Logic Search** from the list.
+There are several ways to bring the information you find in Cloud SIEM back to the Sumo Logic platform. One [context action](/docs/cse/administration/create-cse-context-actions) is **Sumo Logic Search**. Selecting this action will create a log search in Sumo Logic. This way, you can find all log messages with that entity, even if it wasn't detected by a rule in Cloud SIEM. Hover your mouse over the entity name, click the three-dot button that appears, and select **Sumo Logic Search** from the list.
 
-<img src={useBaseUrl('img/cse/intro-log-search-context-action.png')} alt="Sumo Logic Search context menu option" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('img/cse/intro-log-search-context-action.png')} alt="Sumo Logic Search context menu option" style={{border: '1px solid gray'}} width="800"/>
 
 Many entities in the insights, signals, and entities pages have context actions (six dots icon). Hover next to certain entities and the six dot icon may appear, if context actions are available for that object. Use the context actions to insert the entity into an API call, do a DNS lookup, or many other tasks. Your admin can add custom context actions too.
 
