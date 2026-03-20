@@ -29,10 +29,9 @@ To share a link to a search:
         * **Share with specific users and roles**. Select users or roles by clicking in the **Users and Roles** field and choosing from the dropdown list. Optionally, to send an email to the recipients of the shared search, toggle **Notify recipients by email** to ON, and enter a note in the text field.
         * **See who has access**. View the list of users and roles who already have access to the shared search.
         * **Shareable URL**. Use the generated URL to share the search. You can choose to include filters, time range, and other settings when sharing.
-
-    :::info
-    For information on publishing a search, see [Publishing a Search from the Library](/docs/get-started/library#search-the-library).
-    :::
+        :::info
+        For more information about sharing a saved search from the library, refer to [Managing Your Sumo Logic Library](/docs/get-started/library/#share-a-saved-search-from-the-library).
+        :::
 
 
 
