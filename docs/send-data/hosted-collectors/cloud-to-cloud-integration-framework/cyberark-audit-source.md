@@ -65,6 +65,10 @@ To configure a CyberArk Audit source, follow the steps below:
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the CyberArk Audit source, consider installing the Sumo Logic app for [CyberArk Audit](/docs/integrations/saas-cloud/cyberark-audit/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 

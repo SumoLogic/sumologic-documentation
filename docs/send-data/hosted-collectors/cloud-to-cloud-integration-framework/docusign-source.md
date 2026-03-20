@@ -98,6 +98,10 @@ To configure the DocuSign source:
 10. In **RSA Private Key**, enter the rsa private key you generated. See step 8 of [App](#app) section.
 11. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the DocuSign source, consider installing the Sumo Logic app for [DocuSign](/docs/integrations/saas-cloud/docusign/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 If the integration is configured with the SIEM forward option, set the Metadata field `_siemparser` to `/Parsers/System/DocuSign/DocuSign Monitor`.

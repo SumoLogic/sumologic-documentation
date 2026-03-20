@@ -58,6 +58,10 @@ To configure a Code42 Incydr Source:
 1. In **Secret Key**, enter the Secret Key you generated from the Code42 Incydr platform.
 1. In **Data Collection**, select the type of source from which you want to collect the data from. This allows you to limit the response to just the data you want.
 
+:::info
+After configuring the Code42 Incydr source, consider installing the Sumo Logic app for [Code42 Incydr](/docs/integrations/saas-cloud/code42-incydr/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
