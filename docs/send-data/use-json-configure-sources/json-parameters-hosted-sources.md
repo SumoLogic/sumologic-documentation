@@ -76,6 +76,7 @@ The Google Workspace Apps Audit Source cannot be created with JSON. This Source
 | [Google Cloud Platform Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#google-cloud-platform-source) | HTTP |
 | [HTTP Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#http-source) | HTTP |
 | [Microsoft Graph Security API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source) | Universal |
+| [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source/) | HTTP |
 | [Mimecast Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source) | Universal |
 | [Netskope Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) | Universal |
 | [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) | Universal |
@@ -539,6 +540,52 @@ To disable S3 Replay use the `NoPathExpression` placeholder for `path` and `a
             "messagePerRequest": false,
             "sourceType": "HTTP"
         }
+}
+```
+
+### Microsoft Office 365 Audit Source
+
+:::note
+When creating a Microsoft Office 365 Audit source via JSON in Sumo Logic, only the **App Registration**–based authentication method is supported. Authentication using user account credentials is not supported for JSON-based source creation. [Learn more](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source/#vendor-configuration).
+:::
+
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for a Microsoft Office 365 Audit Source.
+
+| Parameter | Type | Required | Default | Description | Example |
+|:---|:---|:---|:---|:---|:---|
+| sourceType | String | Yes | `null` | HTTP | Not modifiable |
+| workload | String | Yes | `null` | Select the type of log to collect. If you want to collect from additional content types, create additional instances of this source type. | `Audit.Exchange` |
+| region | String | Yes | `Commercial` | Select the region that corresponds to your Microsoft 365 or Office 365 subscription plan. | not modifiable |
+| tenantId | String | Yes | `null` | Enter the tenant Id collected from the Azure platform. | `11111111‑aaaa‑2222‑bbbb‑333333333333` |
+| clientId | String | Yes | `null` | Enter the client Id collected from the Azure platform.| `44444444‑cccc‑5555‑dddd‑666666666666` |
+| clientSecret | String | Yes | `null` | Enter the client secret collected from the Azure platform.| `xxxxxxxx‑super‑secret‑value‑xxxxxxxx` |
+
+Microsoft Office 365 Audit Source JSON example: 
+
+```json
+{
+"api.version":"v1",
+   "source": {
+     "sourceType": "HTTP",
+     "name": "o365-api-test-app",
+     "category": "o365/audit",
+     "thirdPartyRef": {
+       "resources": [{
+         "serviceType": "O365AuditNotification",
+         "path": {
+           "type": "O365NotificationPath",
+           "workload": "Audit.Exchange",
+           "region": "Commercial"
+         },
+         "authentication": {
+           "type": "O365AppRegistrationAuthentication",
+           "tenantId": "test-tenant-id",
+           "clientId": "test-client-id",
+           "clientSecret": "test-client-secret"
+         }
+       }]
+     }
+   }
 }
 ```
 

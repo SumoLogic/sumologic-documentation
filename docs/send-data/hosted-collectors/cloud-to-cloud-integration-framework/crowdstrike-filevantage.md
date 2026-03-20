@@ -79,6 +79,10 @@ To configure the CrowdStrike FileVantage Source:
 1. (Optional) The **Polling Interval** is set for 15 minutes default, you can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the CrowdStrike FileVantage source, consider installing the Sumo Logic app for [CrowdStrike FileVantage](/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [How to Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
