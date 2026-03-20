@@ -17,6 +17,26 @@ The Custom YAML source template lets you create and manage source templates thro
 This source template works with sumo remotely managed OpenTelemetry collector version >= 0.136.0
 :::
 
+import Iframe from 'react-iframe';
+
+:::training Micro Lesson
+
+Learn how to configure the Custom YAML source template.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/tgtoagezj5?web_component=true&seo=true&videoFoam=false" 
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Using Custom YAML source template"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
+
 ## Use cases
 
 - You can ingest data and remotely manage ingestion for services that do not have a supported source template by using the Custom YAML editor to supply your own OpenTelemetry YAML configurations. To learn about the available components supported by Sumo Logic, see [Sumo Logic OpenTelemetry Collector Components](https://github.com/SumoLogic/sumologic-otel-collector?tab=readme-ov-file#components).
