@@ -66,6 +66,10 @@ To configure a Carbon Black Cloud Source:
 1. (Optional) The **Polling Interval** is set to 300 seconds by default, you can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Carbon Black Cloud source, consider installing the Sumo Logic app for [Carbon Black Cloud](/docs/integrations/security-threat-detection/carbon-black-cloud/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
