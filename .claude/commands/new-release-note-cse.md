@@ -14,30 +14,30 @@ When you invoke `/new-release-note-cse`, Claude will guide you through:
 
 ## When to use this command
 
-- Publishing Cloud SIEM content updates (rules, log mappers, parsers)
-- Announcing new Cloud SIEM features or bug fixes
-- Creating regular bi-weekly or monthly CSE release notes
-- Documenting Cloud SIEM application updates
+* Publishing Cloud SIEM content updates (rules, log mappers, parsers).
+* Announcing new Cloud SIEM features or bug fixes.
+* Creating regular bi-weekly or monthly CSE release notes.
+* Documenting Cloud SIEM application updates.
 
 ## Release types
 
 ### Content Release (`-content.md`)
 
 For updates to Cloud SIEM detection content:
-- **Rules**: New or updated detection rules
-- **Log Mappers**: New or updated log mapping configurations
-- **Parsers**: Parser updates and enhancements
-- **Schema changes**: New fields or tags
+* **Rules**: New or updated detection rules
+* **Log Mappers**: New or updated log mapping configurations
+* **Parsers**: Parser updates and enhancements
+* **Schema changes**: New fields or tags
 
 **Typical cadence**: Every 1-2 weeks
 
 ### Application Release (`-application.md`)
 
 For Cloud SIEM product features and updates:
-- **New features**: UI improvements, new capabilities
-- **Bug fixes**: Issue resolutions
-- **Performance improvements**: Optimizations
-- **Breaking changes or deprecations**
+* **New features**: UI improvements, new capabilities
+* **Bug fixes**: Issue resolutions
+* **Performance improvements**: Optimizations
+* **Breaking changes or deprecations**.
 
 **Typical cadence**: As needed when features ship
 
@@ -48,26 +48,26 @@ For Cloud SIEM product features and updates:
 Ask the user for:
 
 **Required:**
-- **Release type**: Content or Application
-- **Release date**: Date in YYYY-MM-DD format
-- **Changes**: List of what's included
+* **Release type**: Content or Application
+* **Release date**: Date in YYYY-MM-DD format
+* **Changes**: List of what's included
 
 **For Content Releases:**
-- New/updated rules (rule IDs and names)
-- New/updated log mappers
-- New/updated parsers
-- Brief summary of changes
+* New/updated rules (rule IDs and names).
+* New/updated log mappers.
+* New/updated parsers.
+* Brief summary of changes.
 
 **For Application Releases:**
-- Feature name and description
-- Documentation links
-- Screenshots (if applicable)
-- Any breaking changes
+* Feature name and description.
+* Documentation links.
+* Screenshots (if applicable).
+* Any breaking changes.
 
 **Validate:**
-- Check that date isn't in the future (use today's date if not specified)
-- Ensure file doesn't already exist for this date and type
-- Confirm changes are ready to publish
+* Check that date is not in the future (use today's date if not specified).
+* Ensure file does not already exist for this date and type.
+* Confirm changes are ready to publish.
 
 ### Step 2: Create the markdown file
 
@@ -77,8 +77,8 @@ blog-cse/YYYY-MM-DD-{type}.md
 ```
 
 Examples:
-- `blog-cse/2026-03-19-content.md`
-- `blog-cse/2026-03-19-application.md`
+* `blog-cse/2026-03-19-content.md`.
+* `blog-cse/2026-03-19-application.md`.
 
 **Important**: Files are created in `/blog-cse/` directory, NOT in `/docs/`
 
@@ -90,9 +90,9 @@ Examples:
 title: {Month} {Day}th, {Year} - Content Release
 hide_table_of_contents: true
 keywords:
-  - rules
-  - log mappers
-  - parsers
+  * rules
+  * log mappers
+  * parsers
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 ---
 ```
@@ -103,18 +103,18 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 title: {Month} {Day}, {Year} - Application Update
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
-  - {relevant-keyword}
+  * {relevant-keyword}
 hide_table_of_contents: true
 ---
 ```
 
 **Keywords guidance:**
-- Content releases: always include "rules", "log mappers", "parsers"
-- Application releases: use feature-specific keywords (e.g., "insights", "entities", "signals")
+* Content releases: always include "rules", "log mappers", "parsers"
+* Application releases: use feature-specific keywords (e.g., "insights", "entities", "signals")
 
 **Date formatting:**
-- Use ordinal suffixes: "March 12th", "February 3rd", "January 21st"
-- Full month name, not abbreviated
+* Use ordinal suffixes: "March 12th", "February 3rd", "January 21st"
+* Full month name, not abbreviated.
 
 ### Step 4: Add required import
 
@@ -136,26 +136,26 @@ This content release includes:
 Additional changes are enumerated below.
 
 ### Rules
-- [New] MATCH-SXXXX Rule Name
-- [Updated] FIRST-SXXXX Rule Name. Brief description of what changed.
+* [New] MATCH-SXXXX Rule Name.
+* [Updated] FIRST-SXXXX Rule Name. Brief description of what changed.
 
 ### Log Mappers
-- [New] Vendor - Event Type
-- [Updated] Vendor - Event Type
+* [New] Vendor - Event Type.
+* [Updated] Vendor - Event Type.
 
 ### Parsers
-- [Updated] /Parsers/System/Vendor/Parser Name
+* [Updated] /Parsers/System/Vendor/Parser Name.
 ```
 
 **Content Release Guidelines:**
-- Start with bulleted summary (3-5 high-level points)
-- Use indentation (4 spaces) for bullet points
-- Group changes by type: Rules, Log Mappers, Parsers
-- Use `[New]` or `[Updated]` tags
-- Rule IDs use format: `MATCH-SXXXX`, `FIRST-SXXXX`, `THRESHOLD-SXXXX`
-- Parser paths use full hierarchy: `/Parsers/System/Vendor/Name`
-- Add brief explanations for significant updates
-- Sort items alphabetically within each section
+* Start with bulleted summary (3-5 high-level points).
+* Use indentation (4 spaces) for bullet points.
+* Group changes by type: Rules, Log Mappers, Parsers
+* Use `[New]` or `[Updated]` tags.
+* Rule IDs use format: `MATCH-SXXXX`, `FIRST-SXXXX`, `THRESHOLD-SXXXX`
+* Parser paths use full hierarchy: `/Parsers/System/Vendor/Name`
+* Add brief explanations for significant updates.
+* Sort items alphabetically within each section.
 
 #### Application Release Structure
 
@@ -168,46 +168,46 @@ Additional changes are enumerated below.
 ```
 
 **Application Release Guidelines:**
-- Use H3 (`###`) for each feature
-- Start with clear, concise description
-- Include "Learn more" link to relevant docs
-- Keep it brief (2-3 sentences per feature)
-- Add screenshots using: `<img src={useBaseUrl('img/path')} alt="description" />`
-- Highlight business value and user impact
+* Use H3 (`###`) for each feature.
+* Start with clear, concise description.
+* Include "Learn more" link to relevant docs.
+* Keep it brief (2-3 sentences per feature).
+* Add screenshots using: `<img src={useBaseUrl('img/path')} alt="description" />`
+* Highlight business value and user impact.
 
 ### Step 6: Format dates and titles
 
 **Title formatting rules:**
-- Month: Full name (March, not Mar)
-- Day: Ordinal suffix (12th, 3rd, 21st)
-  - 1st, 2nd, 3rd
-  - 4th-20th end in "th"
-  - 21st, 22nd, 23rd, 31st
-  - 24th-30th end in "th"
-- Year: Full 4 digits
-- Type: "Content Release" or "Application Update"
+* Month: Full name (March, not Mar)
+* Day: Ordinal suffix (12th, 3rd, 21st)
+  * 1st, 2nd, 3rd.
+  * 4th-20th end in "th".
+  * 21st, 22nd, 23rd, 31st.
+  * 24th-30th end in "th".
+* Year: Full 4 digits
+* Type: "Content Release" or "Application Update"
 
 Examples:
-- ✅ "March 19th, 2026 - Content Release"
-- ✅ "February 3rd, 2026 - Application Update"
-- ❌ "Mar 19, 2026 - Content Release" (month abbreviated)
-- ❌ "March 19 2026 - Content Release" (missing "th")
+* ✅ "March 19th, 2026 - Content Release".
+* ✅ "February 3rd, 2026 - Application Update".
+* ❌ "Mar 19, 2026 - Content Release" (month abbreviated).
+* ❌ "March 19 2026 - Content Release" (missing "th").
 
 ### Step 7: Validation checklist
 
 Before finishing, verify:
-- [ ] File created in `/blog-cse/` directory (not `/docs/`)
-- [ ] Filename follows pattern: `YYYY-MM-DD-{type}.md`
-- [ ] Frontmatter complete with all required fields
-- [ ] Title formatted correctly with ordinal suffix
-- [ ] `hide_table_of_contents: true` present
-- [ ] Keywords appropriate for release type
-- [ ] `import useBaseUrl` statement included
-- [ ] Content follows proper structure (Rules → Log Mappers → Parsers)
-- [ ] All `[New]` and `[Updated]` tags present
-- [ ] Parser paths use full `/Parsers/System/Vendor/Name` format
-- [ ] Links use relative paths or `useBaseUrl`
-- [ ] No trailing whitespace or extra blank lines
+* [ ] File created in `/blog-cse/` directory (not `/docs/`).
+* [ ] Filename follows pattern: `YYYY-MM-DD-{type}.md`
+* [ ] Frontmatter complete with all required fields.
+* [ ] Title formatted correctly with ordinal suffix.
+* [ ] `hide_table_of_contents: true` present
+* [ ] Keywords appropriate for release type.
+* [ ] `import useBaseUrl` statement included.
+* [ ] Content follows proper structure (Rules → Log Mappers → Parsers).
+* [ ] All `[New]` and `[Updated]` tags present.
+* [ ] Parser paths use full `/Parsers/System/Vendor/Name` format.
+* [ ] Links use relative paths or `useBaseUrl`.
+* [ ] No trailing whitespace or extra blank lines.
 
 ## Example usage
 
@@ -246,12 +246,12 @@ Claude:
 
 ### Rule ID formats
 
-- `MATCH-SXXXX` — Match rules (most common)
-- `FIRST-SXXXX` — First Seen rules
-- `THRESHOLD-SXXXX` — Threshold rules
-- `AGGREGATION-SXXXX` — Aggregation rules
-- `CHAIN-SXXXX` — Chain rules
-- `OUTLIER-SXXXX` — Outlier rules
+* `MATCH-SXXXX` — Match rules (most common).
+* `FIRST-SXXXX` — First Seen rules.
+* `THRESHOLD-SXXXX` — Threshold rules.
+* `AGGREGATION-SXXXX` — Aggregation rules.
+* `CHAIN-SXXXX` — Chain rules.
+* `OUTLIER-SXXXX` — Outlier rules.
 
 ### Parser path structure
 
@@ -261,36 +261,36 @@ Always use full path:
 ```
 
 Examples:
-- `/Parsers/System/AWS/AWS CloudTrail`
-- `/Parsers/System/Okta/Okta`
-- `/Parsers/System/Microsoft/Microsoft 365`
-- `/Parsers/System/Cisco/Cisco ASA`
+* `/Parsers/System/AWS/AWS CloudTrail`.
+* `/Parsers/System/Okta/Okta`.
+* `/Parsers/System/Microsoft/Microsoft 365`.
+* `/Parsers/System/Cisco/Cisco ASA`.
 
 ### Log Mapper naming
 
 Format: `{Vendor} - {Event Type}`
 
 Examples:
-- `Okta - Authentication Events`
-- `AWS CloudTrail - Management Events`
-- `Microsoft 365 - Audit Logs`
-- `CrowdStrike Falcon - Detection Events`
+* `Okta - Authentication Events`.
+* `AWS CloudTrail - Management Events`.
+* `Microsoft 365 - Audit Logs`.
+* `CrowdStrike Falcon - Detection Events`.
 
 ### Vendor consistency
 
 Use standard vendor names:
-- ✅ "Microsoft 365" (not "Office 365", "O365")
-- ✅ "Google Workspace" (not "G Suite", "GSuite")
-- ✅ "SonicWall Firewall" (not "Dell SonicWall")
-- ✅ "AWS CloudTrail" (not "Amazon CloudTrail")
+* ✅ "Microsoft 365" (not "Office 365", "O365").
+* ✅ "Google Workspace" (not "G Suite", "GSuite").
+* ✅ "SonicWall Firewall" (not "Dell SonicWall").
+* ✅ "AWS CloudTrail" (not "Amazon CloudTrail").
 
 ## Archive process
 
 **When to archive:**
-- At year-end, older releases move to archive files
-- Archive files are in `/blog-cse/{YEAR}/12-31.md`
-- Current year + 1-2 prior years remain active
-- Older years are archived
+* At year-end, older releases move to archive files.
+* Archive files are in `/blog-cse/{YEAR}/12-31.md`.
+* Current year + 1-2 prior years remain active.
+* Older years are archived.
 
 **Archive structure:**
 ```markdown
@@ -302,7 +302,7 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This is an archive of {Year} Cloud SIEM release notes. To view the full archive, [click here](/release-notes-cse/archive).
+This is an archive of {Year} Cloud SIEM release notes. [View the full archive](/release-notes-cse/archive).
 
 <!--truncate-->
 
@@ -315,16 +315,16 @@ This is an archive of {Year} Cloud SIEM release notes. To view the full archive,
 ---
 ```
 
-**Note:** Users typically don't need to manage archives manually. Mention this only if they ask about archiving old releases.
+**Note:** Users typically do not need to manage archives manually. Mention this only if they ask about archiving old releases.
 
 ## Safety principles
 
-- **Check existing files** before creating to avoid duplicates
-- **Validate dates** are not in the future
-- **Use consistent vendor names** (check existing releases for precedent)
-- **Preserve exact rule IDs** when user provides them
-- **Don't invent rule IDs** — ask user if not provided
-- **Link to docs** when mentioning features
+* **Check existing files** before creating to avoid duplicates.
+* **Validate dates** are not in the future.
+* **Use consistent vendor names** (check existing releases for precedent).
+* **Preserve exact rule IDs** when user provides them.
+* **Do not invent rule IDs** — ask user if not provided.
+* **Link to docs** when mentioning features.
 
 ## Post-completion message
 
@@ -334,28 +334,28 @@ After successfully creating the release note, tell the user:
 ✅ Cloud SIEM release note created successfully!
 
 File created:
-- 📄 blog-cse/{date}-{type}.md
+* 📄 blog-cse/{date}-{type}.md.
 
 Summary:
-- Type: {Content Release | Application Update}
-- Date: {formatted date}
-- Changes: {count} rules, {count} log mappers, {count} parsers
+* Type: {Content Release | Application Update}
+* Date: {formatted date}
+* Changes: {count} rules, {count} log mappers, {count} parsers
 
 Next steps:
 1. Review content for accuracy
 2. Add any missing details or descriptions
 3. Verify all rule IDs and parser paths are correct
 4. Add screenshots for application updates (if applicable)
-5. Test locally: npx docusaurus start
+5. Test locally: yarn start
 6. Check preview at: http://localhost:3000/release-notes-cse
 7. Submit PR: "DOCS-XXX - CSE {type} release notes for {date}"
 
 Checklist:
-- [ ] All rule IDs verified
-- [ ] Parser paths use full /Parsers/System/ format
-- [ ] Vendor names consistent with existing releases
-- [ ] Links tested and working
-- [ ] No placeholder text remaining
+* [ ] All rule IDs verified.
+* [ ] Parser paths use full /Parsers/System/ format.
+* [ ] Vendor names consistent with existing releases.
+* [ ] Links tested and working.
+* [ ] No placeholder text remaining.
 
 The release note will appear on the Cloud SIEM release notes page in reverse chronological order (newest first).
 
@@ -365,47 +365,47 @@ Would you like me to help fill in any additional details?
 ## Error handling
 
 **If file already exists:**
-- Show existing file path and date
-- Ask if user wants to:
-  - Add to existing release (append content)
-  - Create with different date
-  - Overwrite (requires confirmation)
+* Show existing file path and date.
+* Ask if user wants to:
+  * Add to existing release (append content).
+  * Create with different date.
+  * Overwrite (requires confirmation).
 
 **If date is invalid:**
-- Show error and ask for correct format (YYYY-MM-DD)
-- Suggest today's date as default
+* Show error and ask for correct format (YYYY-MM-DD).
+* Suggest today's date as default.
 
-**If rule IDs don't match pattern:**
-- Warn user about non-standard format
-- Ask for confirmation before proceeding
+**If rule IDs do not match pattern:**
+* Warn user about non-standard format.
+* Ask for confirmation before proceeding.
 
 **If vendor names are inconsistent:**
-- Check recent releases for the vendor
-- Suggest standard name
-- Ask user to confirm
+* Check recent releases for the vendor.
+* Suggest standard name.
+* Ask user to confirm.
 
 ## Tips and best practices
 
 **Content releases:**
-- Lead with most significant changes in summary
-- Group related changes together (e.g., all Okta updates)
-- Include context for major updates ("Updated detection expression for improved query performance")
-- Keep descriptions concise (one sentence per update)
+* Lead with most significant changes in summary.
+* Group related changes together (e.g., all Okta updates).
+* Include context for major updates ("Updated detection expression for improved query performance").
+* Keep descriptions concise (one sentence per update).
 
 **Application releases:**
-- Lead with user benefit, not technical details
-- Always link to documentation
-- Use screenshots for UI changes
-- Mention if feature requires admin privileges
+* Lead with user benefit, not technical details.
+* Always link to documentation.
+* Use screenshots for UI changes.
+* Mention if feature requires admin privileges.
 
 **General:**
-- Be consistent with formatting across releases
-- Use active voice ("Added support for..." not "Support was added...")
-- Spell out acronyms on first use in each release
-- Keep release notes focused on what changed, not why
+* Be consistent with formatting across releases.
+* Use active voice ("Added support for.." not "Support was added..").
+* Spell out acronyms on first use in each release.
+* Keep release notes focused on what changed, not why.
 
 ## References
 
-- [Cloud SIEM Release Notes](https://sumologic.com/help/release-notes-cse)
-- [Release Notes Index](/docs/release-notes)
-- [Style Guide](/docs/contributing/style-guide)
+* [Cloud SIEM Release Notes](https://sumologic.com/help/release-notes-cse)
+* [Release Notes Index](/docs/release-notes).
+* [Style Guide](/docs/contributing/style-guide).

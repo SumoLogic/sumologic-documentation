@@ -6,36 +6,36 @@ Automates the complete workflow for creating a new Sumo Logic app integration do
 
 When you invoke `/new-app-doc`, Claude will guide you through:
 
-1. **Gather app information** — Vendor name, category, description, and app icon
-2. **Create markdown file** — Generate doc with proper frontmatter and template structure
-3. **Add to sidebar** — Insert entry into `sidebars.ts` navigation
-4. **Add to hub page** — Create card on the appropriate category index page
-5. **Create CID URL** — Add permanent URL mapping in `cid-redirects.json`
-6. **Validate and test** — Check structure and provide next steps
+1. **Gather app information**. Vendor name, category, description, and app icon.
+2. **Create markdown file**. Generate doc with proper frontmatter and template structure.
+3. **Add to sidebar**. Insert entry into `sidebars.ts` navigation.
+4. **Add to hub page**. Create card on the appropriate category index page.
+5. **Create CID URL**. Add permanent URL mapping in `cid-redirects.json`.
+6. **Validate and test**. Check structure and provide next steps.
 
 ## When to use this command
 
-- Creating a new app integration doc in `/docs/integrations/`
-- Documenting a new vendor/product integration
-- Adding a partner ecosystem app
-- Setting up app documentation from scratch
+* Creating a new app integration doc in `/docs/integrations/`.
+* Documenting a new vendor/product integration.
+* Adding a partner ecosystem app.
+* Setting up app documentation from scratch.
 
 ## App categories
 
 Apps are organized by category in `/docs/integrations/`:
 
-- `amazon-aws/` — AWS services
-- `app-development/` — Development tools (GitHub, Jenkins, Jira)
-- `cloud-security-monitoring-analytics/` — Security platforms
-- `containers-orchestration/` — Kubernetes, Docker, container platforms
-- `databases/` — Database systems (MySQL, PostgreSQL, MongoDB)
-- `google/` — Google Cloud services
-- `hosts-operating-systems/` — OS monitoring (Linux, Windows)
-- `microsoft-azure/` — Azure services
-- `saas-cloud-applications/` — SaaS platforms
-- `security-threat-detection/` — Security and threat tools
-- `web-servers/` — Web servers (Nginx, Apache)
-- `partner-ecosystem-apps/` — Third-party partner integrations
+* `amazon-aws/` — AWS services.
+* `app-development/` — Development tools (GitHub, Jenkins, Jira).
+* `cloud-security-monitoring-analytics/` — Security platforms.
+* `containers-orchestration/` — Kubernetes, Docker, container platforms.
+* `databases/` — Database systems (MySQL, PostgreSQL, MongoDB).
+* `google/` — Google Cloud services.
+* `hosts-operating-systems/` — OS monitoring (Linux, Windows).
+* `microsoft-azure/` — Azure services.
+* `saas-cloud-applications/` — SaaS platforms.
+* `security-threat-detection/` — Security and threat tools.
+* `web-servers/` — Web servers (Nginx, Apache).
+* `partner-ecosystem-apps/` — Third-party partner integrations.
 
 ## Workflow
 
@@ -44,18 +44,18 @@ Apps are organized by category in `/docs/integrations/`:
 Ask the user for:
 
 **Required:**
-- **Vendor name**: The product/vendor name (e.g., "Acme", "Datadog", "Okta")
-- **Category**: Which integration category (e.g., "security-threat-detection", "databases")
-- **Description**: Short description of what the app does (1-2 sentences)
+* **Vendor name**. The product/vendor name (e.g., "Acme", "Datadog", "Okta")
+* **Category**. Which integration category (e.g., "security-threat-detection", "databases")
+* **Description**. Short description of what the app does (1-2 sentences)
 
 **Optional:**
-- **App icon URL**: S3 URL for the app icon (default: placeholder)
-- **Is this a partner app?**: Yes/No (determines template type)
-- **Data types**: What data does it collect? (logs, metrics, both)
+* **App icon URL**. S3 URL for the app icon (default: placeholder)
+* **Is this a partner app?**. Yes/No (determines template type)
+* **Data types**. What data does it collect? (logs, metrics, both)
 
 **Derived:**
-- **File ID**: Lowercase, hyphenated version of vendor name (e.g., "acme", "jfrog-artifactory")
-- **File path**: `docs/integrations/{category}/{file-id}.md`
+* **File ID**. Lowercase, hyphenated version of vendor name (e.g., "acme", "jfrog-artifactory")
+* **File path**. `docs/integrations/{category}/{file-id}.md`
 
 ### Step 2: Create the markdown file
 
@@ -85,31 +85,31 @@ Ask the user for:
    ```
 
 4. Add introduction following Sumo Logic branding:
-   - **Must start with**: "The Sumo Logic app for {Vendor Name}..."
-   - Include business value and key use cases
-   - Keep to 2-3 sentences
+   - **Must start with**. "The Sumo Logic app for {Vendor Name}...".
+   - Include business value and key use cases.
+   - Keep to 2-3 sentences.
 
 5. Add template sections:
-   - Log and metric types
-   - Sample log messages
-   - Sample queries
-   - Installing the app (with reusable snippet)
-   - Viewing dashboards (with reusable snippet)
-   - Dashboard sections (placeholders)
-   - Optional: Create monitors section
-   - Optional: Alerts table
-   - Upgrade/Downgrade section
-   - Uninstalling section
+   - Log and metric types.
+   - Sample log messages.
+   - Sample queries.
+   - Installing the app (with reusable snippet).
+   - Viewing dashboards (with reusable snippet).
+   - Dashboard sections (placeholders).
+   - Optional: Create monitors section.
+   - Optional: Alerts table.
+   - Upgrade/Downgrade section.
+   - Uninstalling section.
 
 ### Step 3: Add to sidebar navigation
 
-1. Read `sidebars.ts`
-2. Find the appropriate category section (e.g., `integrations.databases`)
+1. Read `sidebars.ts`.
+2. Find the appropriate category section (e.g., `integrations.databases`).
 3. Add the new doc entry alphabetically:
    ```typescript
    'integrations/category/vendor-slug',
    ```
-4. Validate TypeScript syntax after adding
+4. Validate TypeScript syntax after adding.
 
 **Example:**
 ```typescript
@@ -124,7 +124,7 @@ integrations: {
 
 ### Step 4: Add card to hub page
 
-1. Read the category's `index.md` file (e.g., `docs/integrations/databases/index.md`)
+1. Read the category's `index.md` file (e.g., `docs/integrations/databases/index.md`).
 2. Create a card using the standard HTML pattern:
    ```html
    <div className="box smallbox card">
@@ -138,23 +138,23 @@ integrations: {
      </div>
    </div>
    ```
-3. Insert alphabetically or at the end (depending on hub page sorting)
-4. Ensure proper indentation and closing tags
+3. Insert alphabetically or at the end (depending on hub page sorting).
+4. Ensure proper indentation and closing tags.
 
-**Note**: Some hub pages sort alphabetically, others by priority. Check existing pattern.
+**Note**. Some hub pages sort alphabetically, others by priority. Check existing pattern.
 
 ### Step 5: Create CID URL mapping
 
-1. Read `cid-redirects.json`
+1. Read `cid-redirects.json`.
 2. Find the next available CID number:
-   - Search for highest CID in the integrations range (typically 5000-6000)
-   - Use next sequential number
+   - Search for highest CID in the integrations range (typically 5000-6000).
+   - Use next sequential number.
 3. Add mapping:
    ```json
    "/cid/5XXX": "/docs/integrations/category/vendor-slug",
    ```
-4. Validate JSON syntax
-5. Tell the user their CID number for UI integration
+4. Validate JSON syntax.
+5. Tell the user their CID number for UI integration.
 
 **Example:**
 ```json
@@ -168,57 +168,57 @@ integrations: {
 Guide the user to fill in:
 
 **Log and metric types section:**
-- Add sample log messages in JSON code blocks with proper syntax highlighting
-- Add sample queries in SQL code blocks
-- Reference vendor documentation where appropriate
+* Add sample log messages in JSON code blocks with proper syntax highlighting.
+* Add sample queries in SQL code blocks.
+* Reference vendor documentation where appropriate.
 
 **Dashboard sections:**
-- Each dashboard needs:
-  - Name as H3 heading
-  - Description of what it shows
-  - "Use this dashboard to:" bulleted list
-  - Screenshot with proper sizing: `width="800"` and border style
+* Each dashboard needs:
+  * Name as H3 heading.
+  * Description of what it shows.
+  * "Use this dashboard to:" bulleted list.
+  * Screenshot with proper sizing: `width="800"` and border style.
 
 **Optional sections:**
-- Monitors/Alerts: Only include if app has pre-configured monitors
-- Prerequisites: Only if special setup required
+* Monitors/Alerts: Only include if app has pre-configured monitors.
+* Prerequisites: Only if special setup required.
 
 ### Step 7: Validation checklist
 
 Before finishing, verify:
-- [ ] Frontmatter complete with all required fields
-- [ ] Title is Title Case, under 60 characters
-- [ ] Description starts with "The Sumo Logic app for {Vendor}..."
-- [ ] Tags include "apps" and vendor slug
-- [ ] Added to `sidebars.ts` in correct category
-- [ ] Card added to hub page with proper HTML structure
-- [ ] CID mapping added to `cid-redirects.json`
-- [ ] All reusable imports use correct relative paths
-- [ ] noindex meta tag present for unpublished docs
-- [ ] JSON files valid (no syntax errors)
-- [ ] All placeholder text replaced or removed
+* [ ] Frontmatter complete with all required fields.
+* [ ] Title is Title Case, under 60 characters.
+* [ ] Description starts with "The Sumo Logic app for {Vendor}...".
+* [ ] Tags include "apps" and vendor slug.
+* [ ] Added to `sidebars.ts` in correct category.
+* [ ] Card added to hub page with proper HTML structure.
+* [ ] CID mapping added to `cid-redirects.json`.
+* [ ] All reusable imports use correct relative paths.
+* [ ] noindex meta tag present for unpublished docs.
+* [ ] JSON files valid (no syntax errors).
+* [ ] All placeholder text replaced or removed.
 
 ## Template differences
 
 ### Standard App Template (app-template-v2.md)
 
 Use for Sumo Logic-supported apps:
-- Standard structure with dashboard sections
-- Includes upgrade/downgrade sections
-- Uses `app-install-v2.md` reusable snippet
-- Optional monitors section
+* Standard structure with dashboard sections.
+* Includes upgrade/downgrade sections.
+* Uses `app-install-v2.md` reusable snippet.
+* Optional monitors section.
 
 ### Partner App Template (partner-app-doc.md)
 
 Use for third-party partner apps:
-- Includes "Support" section with partner contact info
-- More detailed collection configuration steps
-- May include prerequisites section
-- Different reusable import paths
+* Includes "Support" section with partner contact info.
+* More detailed collection configuration steps.
+* May include prerequisites section.
+* Different reusable import paths.
 
 **Ask the user which template to use**, or infer from category:
-- `partner-ecosystem-apps/` → Partner template
-- All others → Standard template
+* `partner-ecosystem-apps/` → Partner template.
+* All others → Standard template.
 
 ## Example usage
 
@@ -241,12 +241,12 @@ Claude:
 
 ## Safety principles
 
-- **Check for existing docs** before creating (search for vendor name)
-- **Validate category exists** before creating file
-- **Use correct relative paths** for imports based on file location
-- **Preserve hub page structure** when adding cards (indentation, order)
-- **Validate JSON** after every edit to cid-redirects.json
-- **Don't remove noindex tag** until doc is ready for production
+* **Check for existing docs** before creating (search for vendor name).
+* **Validate category exists** before creating file.
+* **Use correct relative paths** for imports based on file location.
+* **Preserve hub page structure** when adding cards (indentation, order).
+* **Validate JSON** after every edit to cid-redirects.json.
+* **Do not remove noindex tag** until doc is ready for production.
 
 ## Common patterns
 
@@ -271,11 +271,11 @@ docs/integrations/partner-ecosystem-apps/vendor-name.md
 ## Icon guidelines
 
 App icons should:
-- Be in PNG or SVG format
-- Size: ~45-90px width (55px is standard)
-- Stored in: `static/img/integrations/{category}/`
-- S3 URL format: `https://app_icons.s3.amazonaws.com/{vendor}.svg`
-- Alt text: "Thumbnail icon"
+* Be in PNG or SVG format.
+* Size: ~45-90px width (55px is standard).
+* Stored in: `static/img/integrations/{category}/`.
+* S3 URL format: `https://app_icons.s3.amazonaws.com/{vendor}.svg`.
+* Alt text: "Thumbnail icon".
 
 If no icon available, use placeholder and note in checklist.
 
@@ -287,10 +287,10 @@ After successfully creating the app doc, tell the user:
 ✅ App doc created successfully!
 
 Files created/modified:
-- 📄 docs/integrations/{category}/{vendor-slug}.md
-- 🔗 sidebars.ts (added to {category} section)
-- 🎴 docs/integrations/{category}/index.md (card added)
-- 🔢 cid-redirects.json (CID: /cid/XXXX)
+* 📄 docs/integrations/{category}/{vendor-slug}.md
+* 🔗 sidebars.ts (added to {category} section)
+* 🎴 docs/integrations/{category}/index.md (card added)
+* 🔢 cid-redirects.json (CID: /cid/XXXX)
 
 Next steps:
 1. Fill in template sections:
@@ -299,42 +299,42 @@ Next steps:
    - Remove optional sections if not needed
 2. Add app icon to static/img/integrations/{category}/
 3. Remove <meta name="robots" content="noindex" /> when ready to publish
-4. Test locally: npx docusaurus start
+4. Test locally: yarn start
 5. Submit PR: "DOCS-XXX - Add {Vendor Name} app documentation"
 
 Checklist:
-- [ ] Sample logs and queries added
-- [ ] Dashboard sections completed
-- [ ] App icon added
-- [ ] All placeholders replaced
-- [ ] Tested locally
+* [ ] Sample logs and queries added
+* [ ] Dashboard sections completed
+* [ ] App icon added
+* [ ] All placeholders replaced
+* [ ] Tested locally
 
 Would you like me to help fill in any of these sections?
 ```
 
 ## Error handling
 
-**If category doesn't exist**:
-- Show list of valid categories
-- Ask user to confirm or choose different category
+**If category does not exist**:
+* Show list of valid categories.
+* Ask user to confirm or choose different category.
 
 **If doc already exists**:
-- Show existing file path
-- Ask if user wants to update it instead
-- Offer to create with different name (e.g., vendor-v2)
+* Show existing file path.
+* Ask if user wants to update it instead.
+* Offer to create with different name (e.g., vendor-v2).
 
 **If sidebar section not found**:
-- Show closest match
-- Ask for confirmation before creating new section
+* Show closest match.
+* Ask for confirmation before creating new section.
 
 **If CID range full** (unlikely):
-- Suggest next available range
-- Alert user to coordinate with docs team
+* Suggest next available range.
+* Alert user to coordinate with docs team.
 
 **If JSON becomes invalid**:
-- Show syntax error
-- Revert the change
-- Fix and retry
+* Show syntax error.
+* Revert the change.
+* Fix and retry.
 
 ## Reusable snippets reference
 
@@ -348,11 +348,11 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 ```
 
-**Path adjustment**: Relative paths depend on file location depth. Most integrations are 2 levels deep (`../..`).
+**Path adjustment**. Relative paths depend on file location depth. Most integrations are 2 levels deep (`../..`).
 
 ## References
 
-- [App Template v2](/docs/contributing/templates/app-template-v2)
-- [Partner App Template](/docs/contributing/templates/partner-app-doc)
-- [Contributing Guide: Create or Edit a Doc](/docs/contributing/create-edit-doc)
-- [Style Guide](/docs/contributing/style-guide)
+* [App Template v2](/docs/contributing/templates/app-template-v2).
+* [Partner App Template](/docs/contributing/templates/partner-app-doc).
+* [Contributing Guide: Create or Edit a Doc](/docs/contributing/create-edit-doc).
+* [Style Guide](/docs/contributing/style-guide).
