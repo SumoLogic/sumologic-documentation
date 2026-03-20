@@ -75,6 +75,10 @@ To configure a Microsoft Graph Identity Protection Source:
 1. **Supported APIs to collect**. Select one or more of the available APIs, **riskDetections** and **riskyUsers**.
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Microsoft Graph Identity Protection source, consider installing the Sumo Logic app for [Microsoft Graph Identity Protection](/docs/integrations/microsoft-azure/microsoft-graph-identity-protection/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |

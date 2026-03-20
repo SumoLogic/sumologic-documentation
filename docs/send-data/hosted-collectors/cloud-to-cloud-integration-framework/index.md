@@ -500,6 +500,12 @@ In this section, we'll introduce the following concepts:
     <p>Provides a secure endpoint to receive data from the Proofpoint TAP SIEM API.</p>
     </div>
   </div>
+  <div className="box smallbox card">
+    <div className="container">
+    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-trap-source/')}><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/><h4>Proofpoint TRAP</h4></a>
+    <p>Learn to ingest message logs via the API to deliver enhanced email threat visibility and actionable insights for faster detection and response to attacks.</p>
+    </div>
+  </div>
     <div className="box smallbox card">
     <div className="container">
     <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source')}><img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="qualys-icon.png" width="150" /><h4>Qualys VMDR</h4></a>
