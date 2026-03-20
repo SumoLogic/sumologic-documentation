@@ -73,6 +73,10 @@ To configure a Cato Networks Source:
    - If **Audit Events** is selected, the integration will fetch audit data.
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the Cato Networks source, consider installing the Sumo Logic app for [Cato Networks](/docs/integrations/saas-cloud/cato-networks/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
