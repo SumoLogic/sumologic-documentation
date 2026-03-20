@@ -45,6 +45,10 @@ To configure the LastPass Source:
 1. **Polling Interval**. You have the option to select how often to poll for base entry events. Default is 5 minutes.
 1. When you are finished configuring the source, click **Save**.
 
+:::info
+After configuring the LastPass source, consider installing the Sumo Logic app for [LastPass](/docs/integrations/saas-cloud/lastpass/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
