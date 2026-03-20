@@ -96,7 +96,7 @@ jobs:
       - name: Commit build and deploy to Pantheon repo
         run: |
           terminus local:clone --yes --branch="${{ env.PANTHEON_BRANCH }}" ${{ inputs.PANTHEON_SITE_ID }}
-          rsync --archive ./build/ "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}/${{ inputs.SITE_PATH }}"
+          rsync --archive --delete --exclude="cid.php" ./build/ "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}/${{ inputs.SITE_PATH }}"
           chmod -R 755 $HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}/${{ inputs.SITE_PATH }}
           git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" add .
           git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" commit -m "Added content from ${{ github.repository }} at ${{ github.sha }}"
