@@ -92,7 +92,7 @@ To delete the existing event extraction rule, follow the below steps:
 
 ## Verify user data events
 
-Search user data events primarily to verify that a newly created event extraction rule is generating events or confirm source event extraction rule of an event. Additionally, this event index can be used in dashboards, scheduled searches, or for other event analysis use cases. Specify the `_index` metadata field with `sumologic_userdata_events`.
+Search user data events to verify that a newly created event extraction rule is correctly generating events or to confirm the source event extraction rule for a given event. Additionally, this event index can be used in dashboards, scheduled searches, or for other event analysis use cases. Specify the `_index` metadata field with `sumologic_userdata_events`.
 
 For example, to search user data events:
 
