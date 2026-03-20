@@ -68,7 +68,7 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
 1. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the Google Workspace AlertCenter source, consider installing the Sumo Logic app for [Google Workspace](/docs/integrations/google/workspace/install-app-dashboards/) to gain dashboards and insights into the collected data.
+After configuring the Google Workspace AlertCenter source, consider installing the Sumo Logic app for [Google Workspace](/docs/integrations/google/workspace/install-app-dashboards/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata

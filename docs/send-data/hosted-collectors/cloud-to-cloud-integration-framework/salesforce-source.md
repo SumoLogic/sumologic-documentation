@@ -84,6 +84,10 @@ To configure a Salesforce Source:
     :::
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Salesforce source, consider installing the Sumo Logic app for [Salesforce](/docs/integrations/saas-cloud/salesforce/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
