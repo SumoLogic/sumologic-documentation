@@ -57,15 +57,10 @@ Ask the user for:
 * **Description**: What it does and why it matters (2-3 sentences).
 * **Documentation link**: Relative path to the doc.
 
-**Keywords (for both types):**
-* Ask user to confirm or customize keywords
-* Suggest defaults: `installed-collector` or `opentelemetry-collector`
-
 **Validate:**
 * Check that date is not in the future.
 * For installed releases, validate version number format.
 * For OTel releases, ensure documentation link exists.
-* Confirm keywords with user before creating file.
 
 ### Step 2: Create the markdown file
 
@@ -109,11 +104,9 @@ keywords:
 * OTel: Feature name in Title Case (no category suffix)
 
 **Keywords:**
-* **Always ask user to confirm keywords before creating file**
-* Suggested defaults:
-  * Installed Collector: `installed-collector`
-  * OpenTelemetry: `opentelemetry-collector`
-* User may want to add additional keywords based on specific features (e.g., `security`, `bug-fix`, `cdn`)
+* Installed Collector: Always use `installed-collector`
+* OpenTelemetry: Always use `opentelemetry-collector`
+* These keywords are standard and do not need user confirmation
 
 ### Step 4: Add required import
 

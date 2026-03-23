@@ -38,14 +38,12 @@ Key points:
 **Content Release** (`-content-release.md`):
 - For new integrations and playbooks
 - Keywords: automation service, cloud soar, soar (three)
-- Includes RSS icon link
 - Simple format: intro paragraph + Integrations (H3) + Playbooks (H3)
 - [New]/[Updated] tags WITHOUT descriptions
 
 **Application Update** (`-application-update.md`):
 - For platform features and bug fixes
-- Keywords: automation service, cloud soar (two)
-- NO RSS icon
+- Keywords: automation service, cloud soar, soar (three)
 - H2 header: "## {Month} release"
 - Detailed format: Changes and enhancements + Bug Fixes
 - [Added]/[Updated] tags WITH descriptions

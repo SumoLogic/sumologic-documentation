@@ -175,19 +175,12 @@ keywords:
 * Both types use the same standard Sumo Logic preview image:
   * `https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082`
 
-### Step 5: Add required imports and RSS icon
+### Step 5: Add required import
 
 **For both types**, add the useBaseUrl import after frontmatter:
 ```javascript
 import useBaseUrl from '@docusaurus/useBaseUrl';
 ```
-
-**For Content Release only**, add RSS icon after import:
-```html
-<a href="https://help.sumologic.com/release-notes-csoar/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
-```
-
-**Note**: Application Update does NOT include the RSS icon.
 
 ### Step 6: Write content structure
 
@@ -204,8 +197,6 @@ keywords:
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<a href="https://help.sumologic.com/release-notes-csoar/rss.xml"><img src={useBaseUrl('img/release-notes/rss-orange2.png')} alt="icon" width="50"/></a>
 
 This release introduces new integrations, new playbooks, and several updates.
 
@@ -387,7 +378,6 @@ Fixed issues while selecting variables containing the period character in textar
 * [ ] Keywords: automation service, cloud soar, soar (three keywords)
 * [ ] `hide_table_of_contents: true` is present
 * [ ] Import statement included
-* [ ] RSS icon link included
 * [ ] Simple intro paragraph present
 * [ ] Integrations section uses [New]/[Updated] tags
 * [ ] Integration links have NO descriptions (just links)
@@ -403,7 +393,6 @@ Fixed issues while selecting variables containing the period character in textar
 * [ ] Keywords: automation service, cloud soar (two keywords)
 * [ ] `hide_table_of_contents: true` is present
 * [ ] Import statement included
-* [ ] NO RSS icon (Application Update doesn't use it)
 * [ ] H2 header: "## {Month} release"
 * [ ] Intro: "Following are the updates made in {Month} {YYYY}."
 * [ ] Integration changes use [Added]/[Updated] WITH descriptions
@@ -426,12 +415,11 @@ Claude:
    - title: "June 05, 2024 - Content Release"
    - image: Standard Sumo Logic preview image
    - keywords: automation service, cloud soar, soar
-5. Adds RSS icon
-6. Writes content with:
+5. Writes content with:
    - Simple intro: "This release introduces new integrations, new playbooks, and several updates."
    - Integrations section with [New]/[Updated] tags (no descriptions)
    - Playbooks section with ID numbers
-7. Provides checklist
+6. Provides checklist
 ```
 
 ### Application Update Example
