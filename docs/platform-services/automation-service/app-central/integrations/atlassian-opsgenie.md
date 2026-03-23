@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian.png')} alt="criminal-ip" width="90"/>
 
-***Version: 1.5  
-Updated: March 6, 2026***
+***Version: 1.6  
+Updated: March 23, 2026***
 
 OpsGenie, a service powered by Atlassian in the cloud, provides operational teams with robust alert management capabilities. It ensures efficient tracking of notifications triggered by various monitoring systems. The primary goal is to guarantee that alerts reach the appropriate team members and that issues are resolved swiftly. This service has been successfully incorporated and rigorously vetted in combination with OpsGenie's platform.
 
@@ -121,3 +121,6 @@ Ensure that the integration API key used for retrieving alerts belongs to the sa
 * July 1, 2025 - Fixed an issue related to timeout.
 * January 30, 2026 - Added a retry mechanism to the Create Alert action.
 * March 6, 2026 - Fixed validation logic in the Create Alert action.
+* March 23, 2026 (v1.6)
+    + Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+    + Fixed validation logic in the following actions: `Acknowledge Alert`, `Add Note to Alert`, `Add Responder to Alert`, `Add Tag to Alert`, `Assign Alert`, `Close Alert`, `Delete Alert` and `Escalate Alert`.
