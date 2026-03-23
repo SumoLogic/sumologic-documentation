@@ -8,7 +8,7 @@ You can use the `cat` operator to view the contents of a lookup table. Not supp
 
 ## Syntax
 
-```sql
+```sumo
 cat path://”<path-to-table>”
 ```
 
@@ -21,7 +21,7 @@ Where:
 
 For example: 
 
-```sql
+```sumo
 cat path://"/Library/Users/myusername@sumologic.com/Suspicious Users"
 ```
 

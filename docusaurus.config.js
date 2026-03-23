@@ -7,6 +7,8 @@
 const fs = require('fs')
 
 import {themes as prismThemes} from 'prism-react-renderer';
+
+
 const lightCodeTheme = prismThemes.github;
 const darkCodeTheme = prismThemes.dracula;
 
@@ -331,6 +333,10 @@ module.exports = {
           hideable: true,
           autoCollapseCategories: true,
         },
+      },
+    // Fix syntax highligting
+      prism: {
+      additionalLanguages: ['bash', 'sql', `json`],
       },
     // SEO Global Metadata
     metadata: [

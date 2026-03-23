@@ -149,7 +149,7 @@ Lookup schema matching is relaxed to allow Int-Long type mismatch to support the
 
 If the schema type is `Int` and the field type is `Long`, there can be possible overflow resulting in a negative count value after crossing the maximum integer value of `2147483647`. To resolve this, create a new lookup table with `long` data type and run the below query:
 
-```
+```sumo
 cat path://"<Lookup file Path>" | save path://"<New Lookup File Path>"
 ```
 
