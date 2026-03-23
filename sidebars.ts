@@ -3324,7 +3324,7 @@ integrations: [
             'platform-services/automation-service/automation-service-bridge',
                        {
               type: 'category',
-              label: 'Integration Framework',
+              label: 'Open Integration Framework',
               collapsible: true,
               collapsed: true,
               link: {type: 'doc', id: 'platform-services/automation-service/integration-framework/index'},
