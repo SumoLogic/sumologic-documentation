@@ -17,7 +17,6 @@ When you invoke `/new-app-doc`, Claude will guide you through:
 
 * Creating a new app integration doc in `/docs/integrations/`.
 * Documenting a new vendor/product integration.
-* Adding a partner ecosystem app.
 * Setting up app documentation from scratch.
 
 ## App categories
@@ -35,7 +34,6 @@ Apps are organized by category in `/docs/integrations/`:
 * `saas-cloud-applications/` — SaaS platforms.
 * `security-threat-detection/` — Security and threat tools.
 * `web-servers/` — Web servers (Nginx, Apache).
-* `partner-ecosystem-apps/` — Third-party partner integrations.
 
 ## Workflow
 
@@ -50,7 +48,6 @@ Ask the user for:
 
 **Optional:**
 * **App icon URL**. S3 URL for the app icon (default: placeholder)
-* **Is this a partner app?**. Yes/No (determines template type)
 * **Data types**. What data does it collect? (logs, metrics, both)
 
 **Derived:**
@@ -198,27 +195,13 @@ Before finishing, verify:
 * [ ] JSON files valid (no syntax errors).
 * [ ] All placeholder text replaced or removed.
 
-## Template differences
+## App Template Structure
 
-### Standard App Template (app-template-v2.md)
-
-Use for Sumo Logic-supported apps:
+All app docs use the standard app template (app-template-v2.md):
 * Standard structure with dashboard sections.
 * Includes upgrade/downgrade sections.
 * Uses `app-install-v2.md` reusable snippet.
 * Optional monitors section.
-
-### Partner App Template (partner-app-doc.md)
-
-Use for third-party partner apps:
-* Includes "Support" section with partner contact info.
-* More detailed collection configuration steps.
-* May include prerequisites section.
-* Different reusable import paths.
-
-**Ask the user which template to use**, or infer from category:
-* `partner-ecosystem-apps/` → Partner template.
-* All others → Standard template.
 
 ## Example usage
 
@@ -261,11 +244,6 @@ docs/integrations/amazon-aws/s3-audit.md
 ```
 docs/integrations/databases/postgresql.md
 docs/integrations/app-development/jenkins.md
-```
-
-**Partner apps** always in partner directory:
-```
-docs/integrations/partner-ecosystem-apps/vendor-name.md
 ```
 
 ## Icon guidelines
@@ -353,6 +331,5 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 ## References
 
 * [App Template v2](/docs/contributing/templates/app-template-v2).
-* [Partner App Template](/docs/contributing/templates/partner-app-doc).
 * [Contributing Guide: Create or Edit a Doc](/docs/contributing/create-edit-doc).
 * [Style Guide](/docs/contributing/style-guide).

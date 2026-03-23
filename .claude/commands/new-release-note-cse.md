@@ -64,10 +64,15 @@ Ask the user for:
 * Screenshots (if applicable).
 * Any breaking changes.
 
+**Keywords (for both types):**
+* Ask user to confirm or customize keywords
+* Suggest defaults based on release type (see frontmatter section below)
+
 **Validate:**
 * Check that date is not in the future (use today's date if not specified).
 * Ensure file does not already exist for this date and type.
 * Confirm changes are ready to publish.
+* Confirm keywords with user before creating file.
 
 ### Step 2: Create the markdown file
 
@@ -109,8 +114,11 @@ hide_table_of_contents: true
 ```
 
 **Keywords guidance:**
-* Content releases: always include "rules", "log mappers", "parsers"
-* Application releases: use feature-specific keywords (e.g., "insights", "entities", "signals")
+* **Always ask user to confirm keywords before creating file**
+* Suggested defaults:
+  * Content releases: `rules`, `log mappers`, `parsers`
+  * Application releases: Feature-specific keywords (e.g., `insights`, `entities`, `signals`, `cloud siem`)
+* User may want to add or modify keywords based on specific content
 
 **Date formatting:**
 * Use ordinal suffixes: "March 12th", "February 3rd", "January 21st"

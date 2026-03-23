@@ -57,10 +57,15 @@ Ask the user for:
 * **Description**: What it does and why it matters (2-3 sentences).
 * **Documentation link**: Relative path to the doc.
 
+**Keywords (for both types):**
+* Ask user to confirm or customize keywords
+* Suggest defaults: `installed-collector` or `opentelemetry-collector`
+
 **Validate:**
 * Check that date is not in the future.
 * For installed releases, validate version number format.
-* For OTEL releases, ensure documentation link exists.
+* For OTel releases, ensure documentation link exists.
+* Confirm keywords with user before creating file.
 
 ### Step 2: Create the markdown file
 
@@ -82,9 +87,9 @@ Examples:
 ---
 title: Installed Collector Version {X.Y.Z-N}
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
-keywords:
-  * installed-collector
 hide_table_of_contents: true
+keywords:
+  - installed-collector
 ---
 ```
 
@@ -93,19 +98,22 @@ hide_table_of_contents: true
 ---
 title: {Feature Name}
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
-keywords:
-  * opentelemetry
 hide_table_of_contents: true
+keywords:
+  - opentelemetry-collector
 ---
 ```
 
 **Title formatting:**
 * Installed: "Installed Collector Version X.Y.Z-N"
-* OTEL: Feature name in Title Case (no category suffix)
+* OTel: Feature name in Title Case (no category suffix)
 
 **Keywords:**
-* Installed: Always use `installed-collector`
-* OTEL: Always use `opentelemetry`
+* **Always ask user to confirm keywords before creating file**
+* Suggested defaults:
+  * Installed Collector: `installed-collector`
+  * OpenTelemetry: `opentelemetry-collector`
+* User may want to add additional keywords based on specific features (e.g., `security`, `bug-fix`, `cdn`)
 
 ### Step 4: Add required import
 
@@ -182,7 +190,7 @@ We're excited to {announce/introduce} {feature description}. {What it does and b
 ```markdown
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We're excited to announce that you can now convert Installed Collector (IC) local file sources to OpenTelemetry (OTEL) source templates for a more modern, scalable, and consistent data collection experience. This conversion helps future-proof your setup, making it easier to manage collectors at scale while benefiting from ongoing OTEL improvements and support. [Learn more](/docs/send-data/installed-collectors/sources/convert-ic-local-file-source-to-otel-st/).
+We're excited to announce that you can now convert Installed Collector (IC) local file sources to OpenTelemetry (OTel) source templates for a more modern, scalable, and consistent data collection experience. This conversion helps future-proof your setup, making it easier to manage collectors at scale while benefiting from ongoing OTel improvements and support. [Learn more](/docs/send-data/installed-collectors/sources/convert-ic-local-file-source-to-otel-st/).
 ```
 
 **Example (Infrastructure change):**
@@ -214,8 +222,8 @@ Before finishing, verify:
 * [ ] For installed: Sections use H4 (`####`), proper order (Security → Bug → Feature)
 * [ ] For installed: Version numbers in **bold** format
 * [ ] For installed: CVE/GHSA references included where applicable
-* [ ] For OTEL: Starts with "We're excited to..."
-* [ ] For OTEL: "Learn more" link included with relative path
+* [ ] For OTel: Starts with "We're excited to..."
+* [ ] For OTel: "Learn more" link included with relative path
 * [ ] No trailing whitespace.
 
 ## Example usage
@@ -239,7 +247,7 @@ Claude:
 ### OpenTelemetry Example
 
 ```
-User: "Create an OTEL Collector release note about new Kubernetes monitoring support"
+User: "Create an OTel Collector release note about new Kubernetes monitoring support"
 
 Claude:
 1. Confirms type: OpenTelemetry
@@ -289,7 +297,7 @@ When listing upgraded dependencies:
 * **Verify CVE/GHSA references** are accurate.
 * **Use consistent formatting** for dependencies and versions.
 * **Keep installed releases brief** — just the facts.
-* **Focus OTEL releases on benefits** not technical details.
+* **Focus OTel releases on benefits** not technical details.
 
 ## Post-completion message
 
@@ -341,7 +349,7 @@ Next steps:
 3. Ensure feature name and description are clear
 4. Test locally: yarn start
 5. Check preview at: http://localhost:3000/release-notes-collector
-6. Submit PR: "DOCS-XXX - OTEL Collector: {Feature Name}"
+6. Submit PR: "DOCS-XXX - OTel Collector: {Feature Name}"
 
 Checklist:
 * [ ] Feature name is clear and concise.
@@ -371,7 +379,7 @@ Would you like me to help refine the description or add additional details?
 * Warn about format.
 * Ask for confirmation.
 
-**If documentation link looks wrong (OTEL):**
+**If documentation link looks wrong (OTel):**
 * Warn if does not start with `/docs/`.
 * Suggest correction.
 
