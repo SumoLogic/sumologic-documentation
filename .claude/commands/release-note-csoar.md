@@ -505,7 +505,7 @@ Day: Zero-padded two digits (use 01, 06, 08, 15... not 1, 6, 8)
 * **Validate release month alignment** with publication date
 * **Verify integration links** exist before including them
 * **Use consistent formatting** for all integration changes
-* **Include both keywords** — automation service and cloud soar
+* **Include both keywords**. Automation service and cloud soar
 * **Group bug fixes by category** for clarity
 * **Keep descriptions concise** but informative
 

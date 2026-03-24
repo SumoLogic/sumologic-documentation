@@ -289,7 +289,7 @@ When listing upgraded dependencies:
 * **Validate version numbers** follow the correct format.
 * **Verify CVE/GHSA references** are accurate.
 * **Use consistent formatting** for dependencies and versions.
-* **Keep installed releases brief** — just the facts.
+* **Keep installed releases brief**. Just the facts.
 * **Focus OTel releases on benefits** not technical details.
 
 ## Post-completion message

@@ -24,14 +24,14 @@ When you invoke `doc`, Claude will guide you through:
 
 ## When NOT to use this command
 
-* **App integrations** — Use `app-doc` instead.
-* **Cloud-to-Cloud sources** — Use `c2c-source-doc` instead.
-* **Release notes** — Use `release-note-cse` or `release-note-collector` instead.
+* **App integrations**. Use `app-doc` instead.
+* **Cloud-to-Cloud sources**. Use `c2c-source-doc` instead.
+* **Release notes**. Use `release-note-cse` or `release-note-collector` instead.
 
 ## Doc types
 
 ### Feature Documentation
-* Announces and explains new product capabilities.
+* Announces and explains product capabilities.
 * Covers what it does, why it matters, how to use it.
 * Includes configuration steps and examples.
 
@@ -64,7 +64,7 @@ Ask the user for:
 **Required:**
 * **Doc type**: Feature, how-to, concept, reference, or troubleshooting.
 * **Title**: Page title in Title Case (60 characters max for SEO).
-* **File path**: Where to save the file (e.g., `docs/metrics/chart-panel.md`).
+* **File path**: Where to save the file (e.g., `docs/manage/security/access-keys.md`).
 * **Description**: One or two sentences for search engines and metadata.
 
 **Optional:**
@@ -177,7 +177,7 @@ Concrete example showing the feature in use.
 * Limitation 1.
 * Limitation 2.
 
-## Related topics
+## Additional information
 
 * [Related Doc 1](/docs/path/to/doc).
 * [Related Doc 2](/docs/path/to/doc).
@@ -238,7 +238,7 @@ When and why you would use this.
 * Best practice 1.
 * Best practice 2.
 
-## Related topics
+## Additional information
 
 * [Related concept](/docs/path/to/doc).
 * [How-to guide](/docs/path/to/doc).
@@ -266,7 +266,7 @@ Detailed specifications, lists, or technical details.
 code example
 ```
 
-## Related topics
+## Additional information
 
 * [API overview](/docs/path/to/doc).
 * [Getting started](/docs/path/to/doc).
@@ -317,11 +317,12 @@ Guide the user on adding the doc to navigation:
 ```typescript
 {
   type: 'category',
-  label: 'Metrics',
+  label: 'Search',
   items: [
-    'metrics/introduction',
-    'metrics/chart-panel',  // new doc added here
-    'metrics/metrics-queries',
+    'search/get-started-with-search',
+    'search/mobot',  // new doc added here
+    'search/search-cheat-sheets',
+    'search/search-query-language',
   ],
 },
 ```
@@ -361,7 +362,7 @@ If this doc needs a permanent URL for UI links:
 
 **Example:**
 ```json
-"/cid/5122": "/metrics/chart-panel",
+"/cid/5122": "/manage/security/access-keys",
 ```
 
 **Note:** Only create CID if this doc will be linked from the product UI.
@@ -390,16 +391,16 @@ Before finishing, verify:
 ### Feature Doc Example
 
 ```
-User: "Create a doc for the new chart panel feature"
+User: "Create a doc for the new access keys feature"
 
 Claude:
 1. Confirms type: Feature Documentation
 2. Gathers info: title, path, description, keywords
-3. Creates: docs/metrics/chart-panel.md
+3. Creates: docs/manage/security/access-keys.md
 4. Generates frontmatter with proper fields
 5. Scaffolds feature doc structure
-6. Guides on adding to sidebars.ts under Metrics category
-7. Suggests adding card to docs/metrics/index.md
+6. Guides on adding to sidebars.ts under Manage category
+7. Suggests adding card to docs/manage/security/index.md
 8. Asks if CID mapping needed
 9. Provides validation checklist
 ```
@@ -407,12 +408,12 @@ Claude:
 ### How-to Guide Example
 
 ```
-User: "Create a how-to guide for exporting dashboard data"
+User: "Create a how-to guide for installing the OpenTelemetry Collector on Windows"
 
 Claude:
 1. Confirms type: How-to Guide
 2. Gathers info: title, path, description
-3. Creates: docs/dashboards/export-data.md
+3. Creates: docs/send-data/opentelemetry-collector/install-collector/windows.md
 4. Generates frontmatter
 5. Scaffolds how-to structure with prerequisites and steps
 6. Guides on sidebar placement
@@ -424,13 +425,20 @@ Claude:
 ### File path conventions
 
 * `/docs/alerts/` — Alerting and monitoring features.
-* `/docs/dashboards/` — Dashboard and visualization docs.
-* `/docs/metrics/` — Metrics-related features.
-* `/docs/search/` — Search and query documentation.
-* `/docs/send-data/` — Data collection and ingestion.
-* `/docs/integrations/` — Third-party integrations (use specialized commands).
 * `/docs/api/` — API reference documentation.
+* `/docs/apm/` — Application Performance Monitoring and tracing.
+* `/docs/cloud-soar/` — Cloud SOAR documentation.
+* `/docs/cse/` — Cloud SIEM documentation.
+* `/docs/dashboards/` — Dashboard and visualization docs.
+* `/docs/get-started/` — Getting started guides and onboarding.
+* `/docs/integrations/` — Third-party integrations (use specialized commands).
 * `/docs/manage/` — Account and organization management.
+* `/docs/metrics/` — Metrics-related features.
+* `/docs/observability/` — Observability solutions for AWS and Kubernetes.
+* `/docs/platform-services/` — Automation Service and platform features.
+* `/docs/search/` — Search and query documentation.
+* `/docs/security/` — Security and threat intelligence features.
+* `/docs/send-data/` — Data collection and ingestion.
 
 ### Sidebar organization
 
@@ -573,3 +581,11 @@ Would you like me to help add content to any specific section?
 * [Style Guide](/docs/contributing/style-guide).
 * [Create or Edit a Doc](/docs/contributing/create-edit-doc).
 * [Sumo Logic Word List](/docs/contributing/word-list).
+
+---
+
+**Note:** This command is for general documentation. For specialized content types, use the appropriate command:
+
+* **App integrations**. Use `/app-doc` for creating app documentation with standardized templates and structure.
+* **Cloud-to-Cloud sources**. Use `/c2c-source-doc` for Cloud-to-Cloud source integration documentation.
+* **Release notes**. Use `/release-note-cse`, `/release-note-collector`, `/release-note-csoar`, `/release-note-developer`, or `/release-note-service` for product release notes.

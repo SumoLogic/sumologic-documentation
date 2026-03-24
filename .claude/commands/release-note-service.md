@@ -25,11 +25,11 @@ When you invoke `release-note-service`, Claude will guide you through:
 
 Service release notes are organized by platform area:
 
-* **Apps** — App-related features and updates
-* **Collection** — Data collection features, sources, authentication
-* **Manage** — Management and administration features
-* **Search** — Search features, queries, analytics
-* **UI** — User interface updates and improvements (often labeled "New UI")
+* **Apps**. App-related features and updates
+* **Collection**. Data collection features, sources, authentication
+* **Manage**. Management and administration features
+* **Search**. Search features, queries, analytics
+* **UI**. User interface updates and improvements (often labeled "New UI")
 
 ## Workflow
 
@@ -365,9 +365,9 @@ Claude:
 * **Check for existing files** before creating (same date + category = conflict)
 * **Validate category** is one of: apps, collection, manage, search, ui
 * **Use clear, descriptive titles** that explain the feature
-* **Include documentation links** — help users find more info
-* **Use standard frontmatter** — consistent image URL and structure
-* **Keep content focused** — one feature per release note
+* **Include documentation links**. Help users find more info
+* **Use standard frontmatter**. Consistent image URL and structure
+* **Keep content focused**. One feature per release note
 * **Always ask user to confirm keywords** before creating file
 
 ## Post-completion message

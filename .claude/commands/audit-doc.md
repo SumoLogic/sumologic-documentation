@@ -384,13 +384,13 @@ Use this checklist template for the report:
 
 ## Safety principles
 
-* **Do not modify files automatically** — always ask permission first
+* **Do not modify files automatically**. Always ask permission first
 * **Provide specific line numbers** for issues when possible
 * **Explain why something is an issue**, not just that it is
 * **Prioritize critical issues** that break builds or user experience
-* **Be constructive** — suggest fixes, don't just criticize
-* **Consider context** — some style variations may be intentional
-* **Check reusable content** — snippets may be defined elsewhere
+* **Be constructive**. Suggest fixes, don't just criticize
+* **Consider context**. Some style variations may be intentional
+* **Check reusable content**. Snippets may be defined elsewhere
 
 ## Post-audit options
 

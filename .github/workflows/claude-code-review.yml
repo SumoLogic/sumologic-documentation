@@ -1,0 +1,65 @@
+name: Claude Docs Review
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+    paths:
+      - "docs/**/*.md"
+      - "docs/**/*.mdx"
+      - "blog-*/**/*.md"
+      - "src/**/*.md"
+      - "sidebars.ts"
+      - "cid-redirects.json"
+jobs:
+  claude-review:
+    # Skip draft PRs — only review when ready
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write  # Required for Claude to post review comments
+      issues: read
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history needed to diff against base branch
+      - name: Run Claude Docs Review
+        id: claude-review
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Review the changed documentation files in this pull request for Sumo Logic docs quality.
+            Only review .md and .mdx files in docs/, blog-* directories, and sidebars.ts and cid-redirects.json if changed.
+            Do not comment on files you were not asked to review.
+            Check each changed doc file for the following issues. Only flag actual problems — do not suggest style preferences or minor rewrites.
+            FRONTMATTER
+            - Required fields present: id, title, description. Flag if any are missing.
+            - title is Title Case and under 60 characters.
+            - description is a complete sentence and does not start with "This page" or "This document".
+            - id matches the filename (kebab-case, no extension).
+            - No H1 heading in the body — the title frontmatter generates it. Flag if an H1 exists in the body.
+            - Use id: for content pages. Flag if slug: is used on a non-index page.
+            APP DOCS (docs/integrations/**)
+            - Introduction starts with "The Sumo Logic app for [Vendor]...".
+            - Tags include "apps" and the vendor slug.
+            RELEASE NOTES (blog-* directories)
+            - Frontmatter includes: title, image, keywords, authors, tags, date.
+            - Date in filename matches date in frontmatter.
+            MDX SYNTAX
+            - Curly braces { and angle brackets < in prose are escaped (\{ and &lt;). Flag unescaped instances that would cause a build error.
+            - Imports are at the top of the file, below frontmatter.
+            - useBaseUrl import present if img tags or links use useBaseUrl().
+            - Reuse snippet paths (../../reuse/...) match the actual file depth.
+            SIDEBAR AND NAVIGATION (if sidebars.ts changed)
+            - New doc IDs added to sidebars.ts match the frontmatter id of the new file.
+            - No entries point to files in docs/reuse/ — those are import-only partials.
+            CID REDIRECTS (if cid-redirects.json changed)
+            - Valid JSON (no trailing commas, no syntax errors).
+            - New entries follow the format "/cid/NNNN": "/docs/path/to/page".
+            FORMAT YOUR RESPONSE as a GitHub pull request review. Group findings by file. For each issue, include:
+            - The file path
+            - The specific problem
+            - A suggested fix
+            If a file has no issues, do not mention it. If there are no issues across the entire PR, post a single brief comment saying the docs look good.

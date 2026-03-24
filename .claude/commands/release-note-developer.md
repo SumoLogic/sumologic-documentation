@@ -25,13 +25,13 @@ When you invoke `release-note-developer`, Claude will guide you through:
 
 Developer release notes typically cover:
 
-* **APIs** — New endpoints, changes, deprecations
-* **SDKs** — New SDKs, version updates, improvements
-* **CLI** — Command-line tool updates
-* **Integrations** — New integrations or integration changes
-* **Platform** — Platform changes affecting developers
-* **Security** — Authentication, authorization changes
-* **Deprecations** — End-of-life announcements
+* **APIs**. New endpoints, changes, deprecations
+* **SDKs**. New SDKs, version updates, improvements
+* **CLI**. Command-line tool updates
+* **Integrations**. New integrations or integration changes
+* **Platform**. Platform changes affecting developers
+* **Security**. Authentication, authorization changes
+* **Deprecations**. End-of-life announcements
 
 ## Workflow
 
@@ -400,11 +400,11 @@ This is a breaking change. Existing integrations must be updated by June 1, 2026
 
 * **Check for existing files** before creating to avoid duplicates
 * **Use clear, descriptive slugs** that indicate content
-* **Validate dates** — ensure date is not in future
-* **Include documentation links** — help users find more info
-* **Mark breaking changes clearly** — use bold text or H4 sections
-* **Use standard frontmatter** — consistent image URL and structure
-* **Keep content focused** — one topic per release note
+* **Validate dates**. Ensure date is not in future
+* **Include documentation links**. Help users find more info
+* **Mark breaking changes clearly**. Use bold text or H4 sections
+* **Use standard frontmatter**. Consistent image URL and structure
+* **Keep content focused**. One topic per release note
 
 ## Post-completion message
 

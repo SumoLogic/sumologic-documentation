@@ -331,7 +331,7 @@ This is an archive of {Year} Cloud SIEM release notes. [View the full archive](/
 * **Validate dates** are not in the future.
 * **Use consistent vendor names** (check existing releases for precedent).
 * **Preserve exact rule IDs** when user provides them.
-* **Do not invent rule IDs** — ask user if not provided.
+* **Do not invent rule IDs**. Ask user if not provided.
 * **Link to docs** when mentioning features.
 
 ## Post-completion message
