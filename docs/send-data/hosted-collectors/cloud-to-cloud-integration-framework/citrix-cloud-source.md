@@ -87,6 +87,10 @@ To configure the Citrix Cloud API:
 1. **Supported APIs to Collect**. Select any or all of the data sources, such as System Logs, Operation Logs, and Monitor Data Session Logs. By default, the **System Logs** data source will be selected.
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the Citrix Cloud source, consider installing the Sumo Logic app for [Citrix Cloud](/docs/integrations/saas-cloud/citrix-cloud/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 If the integration is configured with the SIEM forward option, set the Metadata field `_siemparser` to `/Parsers/System/Citrix/Citrix Cloud C2C`.

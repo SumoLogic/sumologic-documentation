@@ -29,8 +29,10 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 * **Self-paced**:
     * [Fundamentals Self-Paced](https://learn.sumologic.com/fundamentals-self-paced)
-    * [Onboarding courses](https://learn.sumologic.com/page/onboarding)
-* **Instructor-led virtual classes**: [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
+    * [Micro lessons](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-5)
+* **Instructor-led virtual classes**: 
+    * [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
+    * [Welcome Webinar Resources](https://learn.sumologic.com/welcome-webinar-resources) (To access, first sign in to our [learning portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-learning-portal).)
 :::
 
 ## Prerequisites

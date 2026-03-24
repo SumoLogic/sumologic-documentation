@@ -120,6 +120,7 @@ module.exports = {
   ],
   clientModules: [
     require.resolve('./src/client-modules/trackTrialClick.js'),
+    require.resolve('./src/client-modules/fixAnchorScroll.js'),
   ],
   future: {
     v4: true,

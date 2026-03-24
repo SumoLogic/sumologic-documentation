@@ -254,6 +254,10 @@ To configure an Akamai SIEM API Source:
 1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule.
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Akamai SIEM API source, consider installing the Sumo Logic app for [Akamai SIEM API](/docs/integrations/security-threat-detection/akamai-security-events/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |
