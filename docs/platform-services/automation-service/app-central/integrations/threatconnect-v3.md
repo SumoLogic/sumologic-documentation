@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/threatconnect.png')} alt="threatminer" width="100"/>
 
-***Version: 1.2  
-Updated: February 19, 2026***
+***Version: 1.3  
+Updated: March 23, 2026***
 
 Utilize ThreatConnect intelligence data during incident investigations using V3 APIs.
 
@@ -52,3 +52,4 @@ For information about ThreatConnect, see [ThreatConnect documentation](https://d
 * February 19, 2026
   + Added observations parameter to the Update Intelligence action to enable recording observation counts for indicators.
   + Added output field definitions which helps with playbook data mapping.
+* March 23, 2026 (v1.3)- Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
