@@ -2,7 +2,7 @@
 id: workday
 title: Workday
 sidebar_label: Workday
-description: The Sumo Logic app for Workday provides insights into the user account and admin activities. It provides a complete secure monitoring solution and preconfigured dashboards for visibility into login activity, user activity, and admin activity.
+description: The Sumo Logic App for Workday provides visibility into your Workday environment by monitoring authentication activity, user behavior, and data access patterns. It helps security teams detect suspicious logins unauthorized access, and potential data exfiltration through pre-built dashboards covering API activity, login trends, security posture, and data access risk.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -157,7 +157,7 @@ Use this dashboard to:
 * Identify if key configuration changes are in line with expectations.
 * Identify changes related to permission and role assignments.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Workday-SystemUserActivity.png')} alt="workday dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Workday-System-User-Activity.png')} alt="workday dashboards" />
 
 ### API Activity
 
@@ -175,7 +175,58 @@ Use this dashboard to:
 * Quickly identify any API requests originating from malicious IP addresses.
 * Identify if API requests are being received from devices not supported by your IT teams.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Workday-APIActivity.png')} alt="workday dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Workday-API-Activity.png')} alt="workday dashboards" />
+
+### Data Access and Exfiltration Risk
+
+The **Workday - Data Access and Exfiltration Risk** dashboard tracks report execution patterns, high-volume data access sessions, sensitive task targets, and users with anomalous read or download activity volumes that may indicate data exfiltration risk.
+
+Use this dashboard to:
+* Identify users executing an unusually high number of custom reports or DOWNLOAD operations that may indicate data harvesting.
+* Quickly pinpoint access to sensitive targets such as payroll, compensation, and personal data objects.
+* Get insight into which task IDs and report names are most frequently executed across your environment.
+* Investigate session-level data access patterns to detect bulk extraction attempts before they become incidents.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Workday-Data-Access-and-Exfiltration-Risk.png')} alt="workday dashboards" />
+
+### Security Posture
+
+The **Workday - Security Posture** dashboard tracks MFA adoption, password change events, device management compliance, TLS version usage, and OAuth vs password authentication trends across your Workday tenant.
+
+Use this dashboard to:
+* Monitor MFA enforcement rates and quickly identify users bypassing multi-factor authentication.
+* Detect logins from unmanaged or untrusted devices that do not meet your organization's security policy.
+* Track TLS version distribution to identify sessions using outdated or weak encryption protocols.
+* Investigate password change events and authentication type trends to spot potential account compromise.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Workday-Security-Posture.png')} alt="workday dashboards" />
+
+### Session Intelligence
+
+The **Workday - Session Intelligence** dashboard provides insights into user session durations, browser and OS usage patterns, concurrent sessions, and session-level activity volume to identify unusual session behaviors.
+
+Use this dashboard to:
+* Identify abnormally long or high-volume sessions that may indicate an abandoned, hijacked, or automated session.
+* Understand browser, OS, and device combinations used across your user base to detect unsupported or unusual clients.
+* Detect users accessing Workday from multiple IP addresses within a short timeframe, indicating potential credential sharing or account takeover.
+* Analyze session volume trends over time to identify unexpected spikes in concurrent activity.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Workday-Session-Intelligence.png')} alt="workday dashboards" />
+
+## Create monitors for Workday C2C app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Workday C2C Alerts
+
+| Name  | Description | Alert Condition |
+|:--|:--|:--|
+| `Workday - Brute Force Login Detection` | This alert is triggered when repeated failed login attempts from the same user and IP, flagging an active password-guessing attack before it succeeds. | Count >= 5 |
+| `Workday - Password Changed and Immediate New Session` | This alert flags the account takeover pattern where an attacker resets the password and immediately opens a new session, locking out the legitimate user while establishing persistent access. | Count > 0 |
+| `Workday - Successful Login After Multiple Failures` | This alert confirms a brute force attack succeeded. A user authenticated successfully after more than 3 failures in the same time window. Requires immediate account suspension and session termination. | Count > 3 |
+| `Workday - System Account Login from External IP` | Automation accounts should only originate from Workday Internal. Any external IP login indicates the service account credentials have been stolen or misused outside Workday's infrastructure. | Count > 0 |
 
 ## Upgrade/Downgrade the Workday app (Optional)
 
