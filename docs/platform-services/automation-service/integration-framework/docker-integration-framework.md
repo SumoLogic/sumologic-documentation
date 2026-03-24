@@ -2,7 +2,7 @@
 id: docker-integration-framework
 title: Use Docker with the Open Integration Framework for Cloud SOAR
 sidebar_label: Docker for Cloud SOAR
-description: Learn how to use Docker with the integration framework for Cloud SOAR. 
+description: Learn how to use Docker with the open integration framework for Cloud SOAR. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
