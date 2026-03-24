@@ -30,7 +30,7 @@ Performs comprehensive quality checks on documentation by:
 ## Instructions
 
 Follow the detailed instructions in:
-`/Users/kpohas/sumologic-documentation/.claude/commands/audit-doc.md`
+`.claude/commands/audit-doc.md`
 
 Key points:
 

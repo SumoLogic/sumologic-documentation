@@ -27,7 +27,7 @@ Automates the creation of Service release notes by:
 ## Instructions
 
 Follow the detailed instructions in:
-`/Users/kpohas/sumologic-documentation/.claude/commands/new-release-note-service.md`
+`.claude/commands/new-release-note-service.md`
 
 Key points:
 

@@ -26,7 +26,7 @@ Automates the creation of developer release notes by:
 ## Instructions
 
 Follow the detailed instructions in:
-`/Users/kpohas/sumologic-documentation/.claude/commands/new-release-note-developer.md`
+`.claude/commands/new-release-note-developer.md`
 
 Key points:
 - Developer release notes use individual files per release

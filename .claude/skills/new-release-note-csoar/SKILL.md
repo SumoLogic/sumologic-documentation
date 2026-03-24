@@ -27,7 +27,7 @@ Automates the creation of Cloud SOAR release notes by:
 ## Instructions
 
 Follow the detailed instructions in:
-`/Users/kpohas/sumologic-documentation/.claude/commands/new-release-note-csoar.md`
+`.claude/commands/new-release-note-csoar.md`
 
 Key points:
 
