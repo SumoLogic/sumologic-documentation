@@ -1,7 +1,7 @@
 ---
 id: source-and-collector-cardinality
-title: Source and Collector Cardinality
-sidebar_label: Source and Collector Cardinality
+title: Source and Collector Wise Cardinality
+sidebar_label: Source and Collector Wise Cardinality
 description: Identify and analyze source and collector-level cardinality using audit logs to pinpoint high-cardinality sources.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
