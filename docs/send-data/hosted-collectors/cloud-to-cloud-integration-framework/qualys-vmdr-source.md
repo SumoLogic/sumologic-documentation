@@ -52,6 +52,9 @@ To configure a Qualys VMDR Source:
    * Parse Expression: `"true" as _siemForward`
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Qualys VMDR source, consider installing the Sumo Logic app for [Qualys VMDR](/docs/integrations/saas-cloud/qualys-vmdr/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## FAQ
 

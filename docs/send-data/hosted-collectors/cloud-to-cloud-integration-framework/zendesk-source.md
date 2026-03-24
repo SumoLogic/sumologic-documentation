@@ -45,6 +45,10 @@ To configure a Zendesk Source, follow the steps below:
 1. The **Polling Interval** is set for 5 minutes by default. You can adjust it based on your needs. This sets how often the Source checks for new data.
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the Zendesk source, consider installing the Sumo Logic app for [Zendesk](/docs/integrations/saas-cloud/zendesk/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [How to Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for more details.

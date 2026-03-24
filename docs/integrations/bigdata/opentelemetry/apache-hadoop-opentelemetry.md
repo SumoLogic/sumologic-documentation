@@ -5,24 +5,18 @@ sidebar_label: Apache Hadoop - OTel Collector
 description: Learn about the Sumo Logic OpenTelemetry app for Apache Hadoop.
 ---
 
-<head>
- <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/hadoop.png')} alt="Thumbnail icon" width="175"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="35"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop.png' alt="Thumbnail icon" width="175"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="35"/>
 
 The Sumo Logic app for [Apache Hadoop](https://hadoop.apache.org/docs/stable/) provides logs and metrics to help you monitor the health, performance, availability, and resource utilization of Hadoop clusters. It provides preconfigured dashboards and searches that offer deep visibility into HDFS and YARN components for real-time and historical analysis.
 The app delivers end-to-end observability across NameNode, DataNode, and ResourceManager services, enabling faster troubleshooting, capacity planning, and operational stability.
 
 Hadoop logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) and metrics are sent through the [JMX](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver) receiver with the `target_system` set as [`Hadoop`](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/hadoop.md).
 
-<img src={useBaseUrl('img/integrations/web-servers/apache-hadoop-schematics.png')} alt="Schematics" width="800"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Apache-Hadoop-Schematics.png' alt="Schematics" width="800"/>
 
 ## Hadoop log types
 
@@ -276,7 +270,7 @@ Use this dashboard to:
 - Monitor HDFS health and reliability, tracking volume failures, client write performance, and critical error events.
 - Track ResourceManager lifecycle events and review configuration details to quickly identify stability issues and operational risks.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-Overview.png' alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-Overview.png' style={{border: '1px solid gray'}} alt="Overview" />
 
 ### Apache Hadoop - NameNode Log Analysis
 
@@ -288,7 +282,7 @@ Use this dashboard to:
 * Track **FSImage activity and health**, such as checkpoints, transfers, purge events, and fsync performance.
 * Identify **operational and stability issues** by monitoring block allocation, file operations, connection failures, and NameNode service startup and shutdown events.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-NameNode-Log-Analysis.png' alt="NameNode Log Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-NameNode-Log-Analysis.png' style={{border: '1px solid gray'}} alt="NameNode Log Analysis" />
 
 ### Apache Hadoop - DataNode Log Analysis
 
@@ -302,7 +296,7 @@ Use this dashboard to:
 * Visualize **client write source and destination locations** to understand traffic flow across DataNodes.
 * Detect potential security risks by identifying **highly malicious source and destination IPs** from HDFS client trace logs.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-DataNode-Log-Analysis.png' alt="DataNode Log Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-DataNode-Log-Analysis.png' style={{border: '1px solid gray'}} alt="DataNode Log Analysis" />
 
 ### Apache Hadoop - ResourceManager Errors or Failures Log Analysis
 
@@ -313,7 +307,7 @@ Use this dashboard to:
 * Detect **critical YARN failures and cluster instability**, including node loss, heartbeat timeouts, node removals, and scheduling disablement.
 * Monitor **ResourceManager shutdowns, security-related warnings, and high-severity error events** to quickly identify issues impacting YARN availability and reliability.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-ResourceManager-Errors-or-Failures-Log-Analysis.png' alt="ResourceManager Failures Log Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-ResourceManager-Errors-or-Failures-Log-Analysis.png' style={{border: '1px solid gray'}} alt="ResourceManager Failures Log Analysis" />
 
 ### Apache Hadoop - ResourceManager Log Analysis
 
@@ -324,7 +318,7 @@ Use this dashboard to:
 - Track registered NodeManagers and cluster capacity (memory and vCores), along with node resync and scheduling-related activities.
 - Gain visibility into security, certificate, JVM, and core ResourceManager services, helping identify configuration issues and operational risks before they impact workloads.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-ResourceManager-Log-Analysis.png' alt="ResourceManager Log Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-ResourceManager-Log-Analysis.png' style={{border: '1px solid gray'}} alt="ResourceManager Log Analysis" />
 
 ### Apache Hadoop - NameNode Metrics
 
@@ -336,7 +330,7 @@ Use this dashboard to:
 * Track **HDFS block and file health**, such as total, missing, and corrupt blocks, file counts, and concurrent file accesses by NameNode.
 * Gain visibility into **DataNode availability and volume health**, helping identify capacity risks and HDFS reliability issues early.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-NameNode-Metrics.png' alt="NameNode Metrics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop-NameNode-Metrics.png' style={{border: '1px solid gray'}} alt="NameNode Metrics" />
 
 ## Create monitors for Apache Hadoop app
 

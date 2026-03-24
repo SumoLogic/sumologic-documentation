@@ -9,12 +9,6 @@ description: Learn how to independently and efficiently control or remove your s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
-
 <!-- Originally added as a beta article with DOCS-149. -->
 
 Deletion requests allow you to quickly remove ingested data from Sumo Logic. This is particularly useful for addressing inadvertently ingested sensitive data.
@@ -28,6 +22,10 @@ Key features:
 - **Customizable filters**. Tailor deletion to your needs.
 - **Robust auditing mechanisms**. Ensure thorough tracking.
 
+:::info
+If a certificate of destruction is required, this feature cannot be used. Instead, you must create a Sumo Logic support ticket to request data deletion.
+:::
+
 ## Prerequisites
 
 | Action | Required [role capability](/docs/manage/users-roles/roles/role-capabilities/#data-management) |
@@ -35,6 +33,16 @@ Key features:
 | Create or manage deletion requests | **Manage Deletion Requests** |
 | View deletion requests only | **View Deletion Requests** or **Manage Deletion Requests** |
 | Approve or reject requests | **Review Deletion Requests** (automatically includes Manage and View) |
+
+:::note
+By default, data deletion is disabled and can *only* be enabled by the account owner from the **Policies** page or through a Sumo Logic support ticket. These enablement actions will be captured in the audit log. To enable the the log search data deletion, follow the below steps:
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Administration > Security > Policies**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Administration**, and then under **Account Security Settings**, select **Policies**.
+1. Select the **Enable Log Search Data Deletion** checkbox to allow users with the appropriate role capabilities to manage data deletion requests.<br/><img src={useBaseUrl('img/search/get-started-search/enable-deletion-request.png')} alt="enable deletion request" style={{border: '1px solid gray'}} width="400"/>
+:::
+
+:::info
+You can configure the number of approvers for each data deletion request.
+:::
 
 ## Create a deletion request
 
@@ -110,6 +118,10 @@ Once the deletion request is created, an email notification will be sent to the 
 1. **Approve** or **Reject** the request based on your requirement.<br/><img src={useBaseUrl('img/search/get-started-search/approve-reject-deletion-request.png')} alt="Approve/Reject deletion requests side panel" style={{border: '1px solid gray'}} width="400"/>
     - **Approve**. In the **Approve Deletion Request** pop-up, enter **Delete**, and then click **Delete Data**. This will permanently delete the data.<br/><img src={useBaseUrl('img/search/get-started-search/approve-deletion-request.png')} alt="Approve deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
     - **Reject**. Enter the reason for rejection in the **Reject Deletion Request** pop-up to help the requester understand the reason for rejection and take any necessary actions, and click the **Reject Request** button.<br/><img src={useBaseUrl('img/search/get-started-search/reject-deletion-request.png')} alt="Reject deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
+
+:::note
+To process a data deletion request, approval from two admins with the **Review Deletion Requests** capability is required. If required, account owner can change the default to one admin approver.
+:::
 
 ## Limitations
 

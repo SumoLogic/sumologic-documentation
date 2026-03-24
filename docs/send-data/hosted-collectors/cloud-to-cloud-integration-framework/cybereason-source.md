@@ -75,6 +75,10 @@ To configure a Cybereason Source:
     ```
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Cybereason source, consider installing the Sumo Logic app for [Cybereason](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cybereason) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |

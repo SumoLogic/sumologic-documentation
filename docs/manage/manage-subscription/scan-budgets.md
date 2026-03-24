@@ -22,6 +22,10 @@ You can use Terraform to provide a scan budget with the [`sumologic_scan_budget`
 |:--|:--|
 | Credits | Essentials (Flex) and Enterprise Suite |
 
+:::info
+For information on the roles required to view and manage scan budgets, refer to the [Usage Management](/docs/manage/users-roles/roles/role-capabilities/#usage-management) capabilities.
+:::
+
 ## Set scan budgets
 
 To create the query size limit using the **Advanced** configuration:

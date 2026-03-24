@@ -34,6 +34,12 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
 
+#### Activity logs (optional)
+
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
+
+<ActivityLogs/>
+
 ### Configure metrics collection
 
 import MetricsSource from '../../reuse/metrics-source.md';
@@ -45,24 +51,6 @@ Metric Rule `AzureObservabilityMetadataExtractionVMName` will be created automat
 This metric rule creates new dimension `vmname` for non scale set VMs.
 :::
 
-### Configure logs collection
-
-In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
-
-#### Diagnostic logs
-
-1. To set up the Azure Event Hubs source in Sumo Logic, refer to the  [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-1. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform the steps below for each Azure Virtual Machine namespace that you want to monitor.
-   1. Choose `Stream to an event hub` as the destination.
-   1. Select `allLogs`.
-   1. Use the Event Hub namespace and Event Hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/send-data/azure-eventgrid-logs.png')} alt="Azure Event Grid logs" style={{border: '1px solid gray'}} width="800" />
-1. Tag the location field in the source with the right location value. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure Virtual Machine Tag Location" style={{border: '1px solid gray'}} width="400" />
-
-#### Activity logs (optional)
-
-import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
-
-<ActivityLogs/>
 
 ## Installing the Azure Virtual Machine app
 

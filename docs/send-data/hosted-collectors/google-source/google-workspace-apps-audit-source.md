@@ -45,7 +45,9 @@ In order to provide Sumo logic access to google services, please follow the mana
 1. In the Admin console, go to **Menu** > **Security** > **Access and data control** > **API controls**.
 1. In App access control, click **Manage Third-Party App Access**.
 1. Click **Add app** and search for Sumo Logic OAuth client.
-1. Select Sumo Logic OAuth client, then click **Change access**.
+1. Select the app with the following client ID:<br/>
+`788305497335-k5jf772fpotskbco66orgh48jbvug8uo.apps.googleusercontent.com`
+1. Click **Change access**.
 1. Choose the **Trusted** option to allow access to all Google services. <img src={useBaseUrl('img/send-data/g-suite-change-access.png')} alt="g-suite-change-access" />
 1. Click **Change**.
 

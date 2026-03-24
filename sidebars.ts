@@ -512,7 +512,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source',
-                //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-trap-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-trap-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source',
@@ -1184,6 +1184,7 @@ module.exports = {
          'manage/data-archiving/archive-otel',
        ]
      },
+     'manage/deletion-requests',
    ],
   },
 ],
@@ -2160,7 +2161,7 @@ integrations: [
         'integrations/amazon-aws/inspector-classic',
         'integrations/amazon-aws/kinesis-streams',
         'integrations/amazon-aws/amazon-opensearch',
-      //  'integrations/amazon-aws/amazon-sagemaker',
+        'integrations/amazon-aws/amazon-sagemaker',
         'integrations/amazon-aws/rds',
         'integrations/amazon-aws/redshift-ulm',
         'integrations/amazon-aws/route-53-resolver-security',
@@ -2255,7 +2256,7 @@ integrations: [
          'integrations/microsoft-azure/azure-database-for-postgresql',
          'integrations/microsoft-azure/azure-event-grid',
          'integrations/microsoft-azure/azure-event-hubs',
-        // 'integrations/microsoft-azure/azure-firewall',
+         'integrations/microsoft-azure/azure-firewall',
          'integrations/microsoft-azure/azure-front-door',
          'integrations/microsoft-azure/azure-functions',
          'integrations/microsoft-azure/azure-hdinsight',
@@ -2373,6 +2374,25 @@ integrations: [
        },
       {
         type: 'category',
+        label: 'AI/ML',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/aiml/index'},
+        items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            link: {type: 'doc', id: 'integrations/aiml/opentelemetry/index'},
+            items: [
+              'integrations/aiml/opentelemetry/openllmetry',
+            ],
+          },
+        ],
+      },
+      {
+        type: 'category',
         label: 'App Development',
         collapsible: true,
         collapsed: true,
@@ -2403,7 +2423,6 @@ integrations: [
           'integrations/app-development/puppet',
         ],
       },
-      /*
        {
         type: 'category',
         label: 'Big Data',
@@ -2423,7 +2442,6 @@ integrations: [
           },
         ],
       },
-      */
       {
         type: 'category',
         label: 'Containers and Orchestration',
@@ -2654,6 +2672,7 @@ integrations: [
           'integrations/saas-cloud/miro',
           'integrations/saas-cloud/microsoft-graph-azure-ad-reporting',
           'integrations/saas-cloud/netskope-webtx',
+          //'integrations/saas-cloud/netskope-webtx-streaming',
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',
@@ -2741,6 +2760,7 @@ integrations: [
           'integrations/sumo-apps/audit',
           'integrations/sumo-apps/cse',
           'integrations/sumo-apps/data-volume',
+          'integrations/sumo-apps/data-volume-mssp',
           'integrations/sumo-apps/enterprise-audit',
           'integrations/sumo-apps/enterprise-search-audit',
           'integrations/sumo-apps/flex',
@@ -3186,6 +3206,7 @@ integrations: [
         'api/content-management',
         'api/content-permissions',
         'api/dashboard',
+        'api/data-deletion-rules',
         'api/dynamic-parsing',
         'api/field-extraction-rules',
         'api/field-management',

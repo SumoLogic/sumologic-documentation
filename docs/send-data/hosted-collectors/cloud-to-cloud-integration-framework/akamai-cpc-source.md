@@ -56,6 +56,10 @@ To configure an Akamai CPC Source:
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the Akamai CPC source, consider installing the Sumo Logic app for [Akamai CPC](/docs/integrations/saas-cloud/akamai-cpc/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.

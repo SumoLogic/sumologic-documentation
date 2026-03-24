@@ -44,6 +44,11 @@ Once a request has been submitted, a support ticket is automatically opened. A r
   <a href={useBaseUrl('docs/integrations/sumo-apps/data-volume')}><img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="icon" width="40"/><h4>Data Volume</h4></a>
   <p>Provides a summary and detailed views of your account's data usage volume.</p>
   </div>
+</div><div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/sumo-apps/data-volume')}><img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="icon" width="40"/><h4>Data Volume for MSSP</h4></a>
+  <p>Provides a summary and detailed views of data usage volume for child orgs under a MSSP org.</p>
+  </div>
 </div>
 <div className="box smallbox card">
       <div className="container">

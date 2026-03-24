@@ -21,6 +21,20 @@ What you'll learn:
 * Monitor and troubleshoot your environment
 * Share your findings with your team
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* **Self-paced**:
+    * [Fundamentals Self-Paced](https://learn.sumologic.com/fundamentals-self-paced)
+    * [Micro lessons](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-5)
+* **Instructor-led virtual classes**: 
+    * [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
+    * [Welcome Webinar Resources](https://learn.sumologic.com/welcome-webinar-resources) (To access, first sign in to our [learning portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-learning-portal).)
+:::
+
 ## Prerequisites
 
 You'll need a Sumo Logic account. Sign up for a free trial [here](/docs/get-started/sign-up).
