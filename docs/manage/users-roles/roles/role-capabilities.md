@@ -139,7 +139,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
 | View Usage Management | View [scan budget](/docs/manage/manage-subscription/scan-budgets/). | `viewUsageManagement` |
-| Manage Usage Management | Manage scan budget. | `manageBudgets` |
+| Manage Usage Management | Manage scan budget. | `manageUsageManagement` |
 
 ## Reliability Management
 

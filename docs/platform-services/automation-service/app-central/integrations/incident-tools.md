@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/incident-tools.png')} alt="incident-tools" width="100"/>
 
-***Version: 1.9  
-Updated: Dec 5, 2025***
+***Version: 1.10  
+Updated: March 16, 2026***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -107,3 +107,6 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
     * Update Entity
 * June 24, 2024 (v1.8) - The **Field ID** and **Field Value** fields are now optional in the **Update Incident Fields** action.
 * December 5, 2025 (v1.9) - Added `closing_note` in output field of Get Incident action.
+* March 16, 2026 (v1.10) -  Updated action: Create Incident From Template
+  * Added auto-assignment of current timestamp to Start Time field when not provided.
+  * Enhanced hint text for Incident Label ID and Custom Incident Label fields.

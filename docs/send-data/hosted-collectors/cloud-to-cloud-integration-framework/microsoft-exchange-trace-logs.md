@@ -109,6 +109,10 @@ To configure a Microsoft Exchange Trace Logs Source:
 13. **Collection Time Offset**. Use this value to offset the collection in the past by some amount of time. Microsoft claims data can be missing from the API within the last 24 hours. Set this to `86400` seconds aka 24 hours to help guarantee more complete results or reduce it if you are looking for more real time, but potentially incomplete data.
 14. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Microsoft Exchange Trace source, consider installing the Sumo Logic app for [Microsoft Exchange Trace](/docs/integrations/saas-cloud/microsoft-exchange-trace-logs) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/cse). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
