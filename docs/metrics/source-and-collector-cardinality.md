@@ -12,17 +12,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
-This document explains how to identify and analyze cardinality for sources and collector, helping you pinpoint high-cardinality sources and manage ingestion limits more effectively.
+This document explains how to identify and analyze cardinality ingested per source and collector, helping you pinpoint high-cardinality sources and manage ingestion limits more effectively.
 
-Previously, there was no direct visibility into total account-level cardinality or the contribution from individual sources. When limits were exceeded, there was limited control over which sources were paused. As a result, sources that were not significant contributors could be paused, while the actual high-cardinality sources remained active. This made it difficult to accurately identify and address the root cause of high cardinality.
+Previously, there was no direct visibility into the contribution of cardinality from individual sources. When limits were exceeded, there was limited control over which sources were paused. As a result, sources that were not significant contributors could be paused, while the actual high-cardinality sources remained active. This lack of source-level visibility made it difficult to accurately identify and address the root cause of high cardinality.
 
 To address this, you can now run a query to identify cardinality at the source level and analyze which sources contribute the most within a given collector. This enables more targeted actions and helps avoid unnecessary impact on other sources.
 
 Use the query below to determine the cardinality associated with sources for a specific collector.
 
 ```sql
-_view="sumologic_volume"
-_sourceCategory=cardinalityPerSourceCollector
+_view=sumologic_volume _sourceCategory=cardinalityPerSourceCollector
+  | parse regex "bucket:\s+(?<bucket>\S+)" nodrop
+  | parse regex "(?<collectorId>[^;\s]+);(?<sourceId>\d+):(?<cardinality>\d+)" multi
+  | num(cardinality)
+  | fields bucket, collectorId, sourceId, cardinality
 ```
 
 ## Limitations
