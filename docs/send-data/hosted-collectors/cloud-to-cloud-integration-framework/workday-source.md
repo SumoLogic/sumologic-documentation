@@ -118,6 +118,10 @@ To configure a Workday Source, follow the steps below:
 15. **Polling Interval** (Optional). Select how often you want the Source to collect data from Workday. This is set to 10 minutes by default.
 16. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the Workday source, consider installing the Sumo Logic app for [Workday](/docs/integrations/saas-cloud/workday/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |

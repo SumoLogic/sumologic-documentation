@@ -7,7 +7,7 @@ description: Learn how to use the Automation Service to automate actions.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Automation Service allows you to set up actions that run automatically when certain conditions are met. These automated actions help you to respond quickly to a wide arrange of events. 
+The Automation Service allows you to set up actions that run automatically when certain conditions are met. These automated actions help you to respond quickly to a wide range of events. 
 
 :::training Sumo Logic Academy
 
