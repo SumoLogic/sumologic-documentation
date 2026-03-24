@@ -4,7 +4,7 @@ Automates the creation of Cloud SIEM (CSE) release notes with proper formatting,
 
 ## What this command does
 
-When you invoke `/new-release-note-cse`, Claude will guide you through:
+When you invoke `release-note-cse`, Claude will guide you through:
 
 1. **Determine release type** — Content release or Application release
 2. **Gather release details** — Date, changes, features, bug fixes

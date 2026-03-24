@@ -4,7 +4,7 @@ Automates the creation of general Sumo Logic documentation for features, how-tos
 
 ## What this command does
 
-When you invoke `/new-doc`, Claude will guide you through:
+When you invoke `doc`, Claude will guide you through:
 
 1. **Determine doc type** — Feature, how-to, concept, reference, or troubleshooting.
 2. **Gather information** — Title, description, file path, and keywords.
@@ -24,9 +24,9 @@ When you invoke `/new-doc`, Claude will guide you through:
 
 ## When NOT to use this command
 
-* **App integrations** — Use `/new-app-doc` instead.
-* **Cloud-to-Cloud sources** — Use `/new-c2c-source-doc` instead.
-* **Release notes** — Use `/new-release-note-cse` or `/new-release-note-collector` instead.
+* **App integrations** — Use `app-doc` instead.
+* **Cloud-to-Cloud sources** — Use `c2c-source-doc` instead.
+* **Release notes** — Use `release-note-cse` or `release-note-collector` instead.
 
 ## Doc types
 

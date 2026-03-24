@@ -92,7 +92,7 @@ This pull request {clear description of what changed and why}.
 
 ## Best Practices
 
-1. **Ask for ticket number** - Always ask if there's a Jira/GitHub ticket (optional)
+1. **Ask for ticket number** - Always ask for the Jira/GitHub ticket number (e.g., DOCS-1234). Optional for quick typo fixes or small bug fixes.
 2. **Pre-check the right box** - Analyze the changes and pre-select the appropriate type
 3. **Write clear descriptions** - First line should summarize changes, add bullets for details
 4. **Format for gh pr create** - Use heredoc format for proper multiline PR bodies
@@ -207,22 +207,34 @@ DOCS-9012
 
 ## Ticket Number Patterns
 
-Recognize and accept common ticket patterns:
+Ticket numbers are preferred for most PRs. Recognize and accept common patterns:
 - **Jira**: `DOCS-1234`, `CONN-5678`, `SUMO-9012`
 - **GitHub**: `#123`, `GH-456`
 - **Asana**: URL or task ID
 
-If user provides a ticket, include it. Otherwise, leave the ticket section with the comment placeholder.
+**When tickets are optional:**
+- Quick typo fixes (1-2 word changes)
+- Small bug fixes (one-line changes)
+- Minor formatting corrections
+
+**When tickets are required:**
+- New documentation or features
+- Content updates or revisions
+- Dependency updates
+- Any substantial changes
+
+Always ask the user for their ticket number before creating the PR. If they don't have one for a small fix, proceed without it.
 
 ## PR Title Format
 
-PR title should follow this format:
+PR titles should follow this format:
 
+**With ticket (preferred):**
 ```
 {TICKET} - {Brief description}
 ```
 
-If no ticket:
+**Without ticket (only for quick fixes):**
 ```
 {Brief description}
 ```
@@ -230,8 +242,8 @@ If no ticket:
 Examples:
 - `DOCS-1234 - Add PostgreSQL app documentation`
 - `DOCS-5678 - Update CloudTrail authentication steps`
-- `Fix typos in security integration docs`
-- `Update Docusaurus to v3.2.0`
+- `Fix typo in installation steps` (quick fix, no ticket)
+- `DOCS-7890 - Update Docusaurus to v3.2.0`
 
 ## Using with gh pr create
 

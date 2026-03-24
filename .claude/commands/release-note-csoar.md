@@ -4,7 +4,7 @@ Automates the creation of Cloud SOAR (Automation Service) release notes for plat
 
 ## What this command does
 
-When you invoke `/new-release-note-csoar`, Claude will guide you through:
+When you invoke `release-note-csoar`, Claude will guide you through:
 
 1. **Determine release type** — Content Release or Application Update
 2. **Gather release details** — Date, changes, integrations, playbooks, or platform updates

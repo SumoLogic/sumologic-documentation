@@ -4,7 +4,7 @@ Automates the creation of Service release notes for new features, updates, and i
 
 ## What this command does
 
-When you invoke `/new-release-note-service`, Claude will guide you through:
+When you invoke `release-note-service`, Claude will guide you through:
 
 1. **Determine category** — Apps, Manage, Collection, Search, or UI
 2. **Gather release details** — Feature name, description, and changes

@@ -4,7 +4,7 @@ Automates the creation of Developer release notes for APIs, SDKs, integrations, 
 
 ## What this command does
 
-When you invoke `/new-release-note-developer`, Claude will guide you through:
+When you invoke `release-note-developer`, Claude will guide you through:
 
 1. **Gather release details** — Category, date, title, and content
 2. **Create markdown file** — Generate file with proper frontmatter and structure

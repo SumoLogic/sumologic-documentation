@@ -4,7 +4,7 @@ Automates the creation of Collector release notes for Installed Collector versio
 
 ## What this command does
 
-When you invoke `/new-release-note-collector`, Claude will guide you through:
+When you invoke `release-note-collector`, Claude will guide you through:
 
 1. **Determine release type** — Installed Collector version or OpenTelemetry feature
 2. **Gather release details** — Version number, changes, features, or fixes

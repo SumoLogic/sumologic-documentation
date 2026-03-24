@@ -4,7 +4,7 @@ Automates the complete workflow for creating a new Sumo Logic app integration do
 
 ## What this command does
 
-When you invoke `/new-app-doc`, Claude will guide you through:
+When you invoke `app-doc`, Claude will guide you through:
 
 1. **Gather app information**. Vendor name, category, description, and app icon.
 2. **Create markdown file**. Generate doc with proper frontmatter and template structure.
@@ -23,17 +23,25 @@ When you invoke `/new-app-doc`, Claude will guide you through:
 
 Apps are organized by category in `/docs/integrations/`:
 
-* `amazon-aws/` — AWS services.
-* `app-development/` — Development tools (GitHub, Jenkins, Jira).
-* `cloud-security-monitoring-analytics/` — Security platforms.
-* `containers-orchestration/` — Kubernetes, Docker, container platforms.
-* `databases/` — Database systems (MySQL, PostgreSQL, MongoDB).
-* `google/` — Google Cloud services.
-* `hosts-operating-systems/` — OS monitoring (Linux, Windows).
-* `microsoft-azure/` — Azure services.
-* `saas-cloud-applications/` — SaaS platforms.
-* `security-threat-detection/` — Security and threat tools.
-* `web-servers/` — Web servers (Nginx, Apache).
+1. `aiml/` — AI and Machine Learning platforms
+2. `amazon-aws/` — AWS services
+3. `app-development/` — Development tools (GitHub, Jenkins, Jira)
+4. `bigdata/` — Big data platforms
+5. `cloud-security-monitoring-analytics/` — Cloud security platforms
+6. `containers-orchestration/` — Kubernetes, Docker, containers
+7. `databases/` — Database systems (MySQL, PostgreSQL, MongoDB)
+8. `global-intelligence/` — Global intelligence integrations
+9. `google/` — Google Cloud services
+10. `hosts-operating-systems/` — OS monitoring (Linux, Windows)
+11. `microsoft-azure/` — Azure services
+12. `pci-compliance/` — PCI compliance integrations
+13. `product-list/` — Product integrations
+14. `saas-cloud/` — SaaS cloud applications
+15. `saml/` — SAML authentication providers
+16. `security-threat-detection/` — Security and threat tools
+17. `sumo-apps/` — Sumo Logic native apps
+18. `web-servers/` — Web servers (Nginx, Apache)
+19. `webhooks/` — Webhook integrations
 
 ## Workflow
 
