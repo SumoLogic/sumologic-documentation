@@ -72,6 +72,10 @@ To configure the KnowBe4 API Source:
 12. In **API Key (External Events)**, authenticate your account by entering your API key collected from KnowBe4 account. You can access your API key or generate a new one from **User Event API Management Console**. See [API Token](#api-token) section.
 13. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the KnowBe4 API source, consider installing the Sumo Logic app for [KnowBe4 API](/docs/integrations/saas-cloud/knowbe4/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata Field
 
 If the Source is configured with the **SIEM forward** option, the metadata field `_siemparser` will be set to */Parsers/System/KnowBe4/KnowBe4 KMSAT*.

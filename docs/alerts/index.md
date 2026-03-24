@@ -8,6 +8,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic offers several alerting features. See the topics below for details on how they work and your configuration options.
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* **Self-paced**: [Metrics Analytics Self-Paced](https://learn.sumologic.com/path/sumo-observability/metrics-analytics-self-paced)
+* **Instructor-led virtual classes**: [Certifications: Metric Analytics](https://www.sumologic.com/learn/training?_certifications=metrics-analytics#section-2)
+:::
+
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">

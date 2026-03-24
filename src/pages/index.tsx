@@ -17,7 +17,7 @@ export const Home = () => {
   return (
     <ErrorBoundary>
       <Layout
-        description='Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.'
+        description='Sumo Logic documentation for log analytics, cloud monitoring, security, observability, and AI-powered troubleshooting. Get started guides, API references, and release notes.'
         title='Home'
       >
       {/* H1 hidden, but visible to crawlers */}
@@ -126,7 +126,7 @@ export const Home = () => {
                     textAlign='left'
                     variant='p'
                   >
-                    Get started quickly with our search, visualization, analytics, and security capabilities.
+                    Get started quickly with log analytics, AI-powered troubleshooting, observability, and security.
                   </Typography>
                   {[
                     {
@@ -180,7 +180,7 @@ export const Home = () => {
               <Grid item md={6} pl={{ md: 13 }}>
                 <Box
                   component='img'
-                  alt='hero background image'
+                  alt=''
                   loading='lazy'
                   aria-hidden='true'
                   src={heroImage}
@@ -220,7 +220,7 @@ export const Home = () => {
               textAlign='center'
               variant='subtitle1'
             >
-              Ensure app reliability and security with modern cloud-native monitoring and observability.
+              Monitor, troubleshoot, and secure your environment with log analytics, observability, and AI-powered insights.
             </Typography>
 
             <TabContext value={tab}>

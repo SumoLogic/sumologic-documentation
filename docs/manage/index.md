@@ -14,6 +14,18 @@ See [Collection](/docs/send-data/collection) to learn about collectors, sources,
 
 This topic describes features and options that give you administration over accounts, roles, collectors, content sharing, field extraction rules, and much more.
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* **Self-paced**: 
+    * [Onboarding Fast-Track for Administrators](https://learn.sumologic.com/onboarding-fasttrack-for-admins)
+    * [Administration Self-Paced](https://learn.sumologic.com/administration-self-paced)
+* **Instructor-led virtual classes**: [Certifications: Administration](https://www.sumologic.com/learn/training?_certifications=administration#section-2)
+:::
+
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
@@ -99,6 +111,12 @@ This topic describes features and options that give you administration over acco
   <div className="container">
   <a href={useBaseUrl('docs/manage/data-archiving')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Data Archiving</h4></a>
   <p>Learn how to archive selected data to an external server or Amazon S3.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/manage/deletion-requests')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Deletion Requests</h4></a>
+  <p> Learn how to independently and efficiently control or remove your sensitive data from Sumo Logic.</p>
   </div>
 </div>
 </div>
