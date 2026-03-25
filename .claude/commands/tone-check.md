@@ -6,12 +6,12 @@ Validates documentation against Sumo Logic voice and tone rules, identifying vio
 
 When you invoke `/tone-check`, Claude will:
 
-1. **Fetch style guide** — Get latest voice and tone rules
-2. **Read documentation** — Analyze the specified file
-3. **Identify violations** — Find voice/tone issues with line numbers
-4. **Generate report** — Categorize by severity (Critical, Warning, Suggestion)
-5. **Offer fixes** — Show specific corrections
-6. **Apply changes** — Update with user approval
+1. **Fetch style guide**. Get latest voice and tone rules
+2. **Read documentation**. Analyze the specified file
+3. **Identify violations**. Find voice/tone issues with line numbers
+4. **Generate report**. Categorize by severity (Critical, Warning, Suggestion)
+5. **Offer fixes**. Show specific corrections
+6. **Apply changes**. Update with user approval
 
 ## When to use this command
 
@@ -374,11 +374,11 @@ The source is easy to configure in just a few steps.
 ## Next Steps
 
 Would you like me to:
-1. **Auto-fix all issues** — Apply all corrections automatically
-2. **Fix critical issues only** — Just fix the must-have items
-3. **Show specific fixes** — Let me walk through each fix
-4. **Generate checklist** — Create a manual review checklist
-5. **Export report** — Save this report as a markdown file
+1. **Auto-fix all issues**. Apply all corrections automatically
+2. **Fix critical issues only**. Just fix the must-have items
+3. **Show specific fixes**. Let me walk through each fix
+4. **Generate checklist**. Create a manual review checklist
+5. **Export report**. Save this report as a markdown file
 ```
 
 ### Step 5: Offer Fixes
@@ -402,20 +402,20 @@ After presenting the report, ask what the user wants to do:
 
 ## Safety Guidelines
 
-- **NEVER modify automatically without asking** — always present report first
-- **Provide context** — explain WHY something violates tone rules, not just WHAT
-- **Show specific fixes** — don't just flag issues, suggest corrections with line numbers
-- **Preserve technical accuracy** — tone fixes should not change meaning
-- **Respect user decisions** — if they decline a fix, respect that choice
+- **NEVER modify automatically without asking**. always present report first
+- **Provide context**. explain WHY something violates tone rules, not just WHAT
+- **Show specific fixes**. don't just flag issues, suggest corrections with line numbers
+- **Preserve technical accuracy**. tone fixes should not change meaning
+- **Respect user decisions**. if they decline a fix, respect that choice
 
 ## What NOT to Flag
 
-1. **Code blocks** — Don't check voice/tone in code snippets
-2. **Quoted content** — Don't flag violations in quotations
-3. **Product names** — Don't flag "Sumo" in product names like "Sumo App"
-4. **URLs and paths** — Don't check tone in technical identifiers
-5. **Examples of wrong usage** — Don't flag intentionally incorrect examples
-6. **Comments or notes** — May use different tone
+1. **Code blocks**. Don't check voice/tone in code snippets
+2. **Quoted content**. Don't flag violations in quotations
+3. **Product names**. Don't flag "Sumo" in product names like "Sumo App"
+4. **URLs and paths**. Don't check tone in technical identifiers
+5. **Examples of wrong usage**. Don't flag intentionally incorrect examples
+6. **Comments or notes**. May use different tone
 
 ## Edge Cases
 
@@ -514,10 +514,10 @@ For 1-2 violations, just fix them:
 
 ## Tips for Running Tone Checks
 
-1. **Run early and often** — Catch issues before they multiply
-2. **Check before PRs** — Don't let violations reach review
-3. **Use with /simplify** — Tone check after simplifying content
-4. **Train your eye** — Learn common patterns to avoid them
-5. **Focus on critical first** — Don't get bogged down in suggestions
-6. **Batch similar fixes** — Fix all passive voice at once
-7. **Re-run after fixes** — Verify all issues resolved
+1. **Run early and often**. Catch issues before they multiply
+2. **Check before PRs**. Don't let violations reach review
+3. **Use with /simplify**. Tone check after simplifying content
+4. **Train your eye**. Learn common patterns to avoid them
+5. **Focus on critical first**. Don't get bogged down in suggestions
+6. **Batch similar fixes**. Fix all passive voice at once
+7. **Re-run after fixes**. Verify all issues resolved

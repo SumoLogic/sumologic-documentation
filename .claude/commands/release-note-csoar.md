@@ -6,11 +6,11 @@ Automates the creation of Cloud SOAR (Automation Service) release notes for plat
 
 When you invoke `release-note-csoar`, Claude will guide you through:
 
-1. **Determine release type** — Content Release or Application Update
-2. **Gather release details** — Date, changes, integrations, playbooks, or platform updates
-3. **Create markdown file** — Generate file with proper frontmatter and structure
-4. **Format content** — Apply correct formatting for the release type
-5. **Validate and preview** — Check structure and provide next steps
+1. **Determine release type**. Content Release or Application Update
+2. **Gather release details**. Date, changes, integrations, playbooks, or platform updates
+3. **Create markdown file**. Generate file with proper frontmatter and structure
+4. **Format content**. Apply correct formatting for the release type
+5. **Validate and preview**. Check structure and provide next steps
 
 ## When to use this command
 

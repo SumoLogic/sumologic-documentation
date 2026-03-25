@@ -6,13 +6,13 @@ Audits `docusaurus.config.js` for misconfigurations, deprecated settings, and be
 
 When you invoke `/audit-config`, Claude will:
 
-1. **Read configuration** — Analyze `docusaurus.config.js`
-2. **Validate structure** — Check required fields and proper format
-3. **Check for deprecated settings** — Identify Docusaurus 2 → 3 migration issues
-4. **Validate plugins and themes** — Ensure proper configuration
-5. **Check file references** — Verify paths exist
-6. **Generate report** — List issues by severity
-7. **Offer fixes** — Apply corrections with user approval
+1. **Read configuration**. Analyze `docusaurus.config.js`
+2. **Validate structure**. Check required fields and proper format
+3. **Check for deprecated settings**. Identify Docusaurus 2 → 3 migration issues
+4. **Validate plugins and themes**. Ensure proper configuration
+5. **Check file references**. Verify paths exist
+6. **Generate report**. List issues by severity
+7. **Offer fixes**. Apply corrections with user approval
 
 ## When to use this command
 
@@ -457,11 +457,11 @@ For each missing file:
 ## Next Steps
 
 Would you like me to:
-1. **Auto-fix all issues** — Apply all corrections
-2. **Fix critical issues only** — Just the must-fix items
-3. **Show fixes line-by-line** — Walk through each change
-4. **Test build** — Run `npm run build` to check for errors
-5. **Save report** — Export this report to a file
+1. **Auto-fix all issues**. Apply all corrections
+2. **Fix critical issues only**. Just the must-fix items
+3. **Show fixes line-by-line**. Walk through each change
+4. **Test build**. Run `npm run build` to check for errors
+5. **Save report**. Export this report to a file
 ```
 
 ### Step 11: Offer Fixes
@@ -485,11 +485,11 @@ After presenting the report:
 
 ## Safety Guidelines
 
-- **NEVER modify automatically** — config changes can break the build
-- **Show exact diffs** — user must see specific changes before applying
-- **Validate after changes** — offer to run `npm run build` to test
-- **Backup recommendation** — suggest committing current config first
-- **Explain impact** — tell user what each fix does and why it matters
+- **NEVER modify automatically**. config changes can break the build
+- **Show exact diffs**. user must see specific changes before applying
+- **Validate after changes**. offer to run `npm run build` to test
+- **Backup recommendation**. suggest committing current config first
+- **Explain impact**. tell user what each fix does and why it matters
 
 ## Edge Cases
 
@@ -580,8 +580,8 @@ Suggest:
 
 ## Tips
 
-1. **Run after upgrades** — Always audit after Docusaurus version updates
-2. **Check before deploy** — Catch issues before production
-3. **Regular maintenance** — Run quarterly or when adding features
-4. **Compare with official** — Check Docusaurus docs for latest best practices
-5. **Test thoroughly** — Build and serve locally after changes
+1. **Run after upgrades**. Always audit after Docusaurus version updates
+2. **Check before deploy**. Catch issues before production
+3. **Regular maintenance**. Run quarterly or when adding features
+4. **Compare with official**. Check Docusaurus docs for latest best practices
+5. **Test thoroughly**. Build and serve locally after changes

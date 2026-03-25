@@ -6,11 +6,11 @@ Automates the creation of Service release notes for new features, updates, and i
 
 When you invoke `release-note-service`, Claude will guide you through:
 
-1. **Determine category** — Apps, Manage, Collection, Search, or UI
-2. **Gather release details** — Feature name, description, and changes
-3. **Create markdown file** — Generate file with proper frontmatter and structure
-4. **Format content** — Apply correct formatting for the feature announcement
-5. **Validate and preview** — Check structure and provide next steps
+1. **Determine category**. Apps, Manage, Collection, Search, or UI
+2. **Gather release details**. Feature name, description, and changes
+3. **Create markdown file**. Generate file with proper frontmatter and structure
+4. **Format content**. Apply correct formatting for the feature announcement
+5. **Validate and preview**. Check structure and provide next steps
 
 ## When to use this command
 
@@ -329,31 +329,31 @@ Claude:
 
 ## Category guidelines
 
-**Apps** — Use for:
+**Apps**. Use for:
 * New apps or app updates
 * App integrations
 * App-specific features
 * MSSP or multi-tenant features
 
-**Collection** — Use for:
+**Collection**. Use for:
 * New sources or source types
 * Collection authentication changes
 * Collector features
 * Data ingestion enhancements
 
-**Manage** — Use for:
+**Manage**. Use for:
 * Account management features
 * User and role management
 * Security and compliance features
 * Settings and configuration updates
 
-**Search** — Use for:
+**Search**. Use for:
 * Search language enhancements
 * Query performance improvements
 * Analytics features
 * Data parsing updates
 
-**UI** — Use for:
+**UI**. Use for:
 * User interface changes
 * Navigation improvements
 * Visual design updates

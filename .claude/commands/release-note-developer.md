@@ -6,10 +6,10 @@ Automates the creation of Developer release notes for APIs, SDKs, integrations, 
 
 When you invoke `release-note-developer`, Claude will guide you through:
 
-1. **Gather release details** — Category, date, title, and content
-2. **Create markdown file** — Generate file with proper frontmatter and structure
-3. **Format content** — Apply correct formatting for the release type
-4. **Validate and preview** — Check structure and provide next steps
+1. **Gather release details**. Category, date, title, and content
+2. **Create markdown file**. Generate file with proper frontmatter and structure
+3. **Format content**. Apply correct formatting for the release type
+4. **Validate and preview**. Check structure and provide next steps
 
 ## When to use this command
 

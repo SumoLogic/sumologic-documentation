@@ -6,11 +6,11 @@ Simplifies overly complex, verbose, or hard-to-understand documentation content 
 
 When you invoke `/simplify`, Claude will:
 
-1. **Read target content** — Get the file, section, or text to simplify
-2. **Analyze complexity** — Identify reading level, passive voice, long sentences, jargon
-3. **Rewrite content** — Simplify while maintaining technical accuracy
-4. **Present comparison** — Show before/after with complexity analysis
-5. **Apply changes** — Update with user approval
+1. **Read target content**. Get the file, section, or text to simplify
+2. **Analyze complexity**. Identify reading level, passive voice, long sentences, jargon
+3. **Rewrite content**. Simplify while maintaining technical accuracy
+4. **Present comparison**. Show before/after with complexity analysis
+5. **Apply changes**. Update with user approval
 
 ## When to use this command
 
@@ -320,27 +320,27 @@ Show the user:
 After user approval:
 
 1. **Use Edit tool** to replace the content
-2. **Preserve structure** — keep headings, lists, code blocks unchanged
-3. **Maintain formatting** — line breaks, markdown syntax
+2. **Preserve structure**. keep headings, lists, code blocks unchanged
+3. **Maintain formatting**. line breaks, markdown syntax
 4. **Confirm success**
 
 ## Safety Guidelines
 
-- **NEVER modify automatically** — always show simplified version first and get approval
-- **Preserve technical accuracy** — don't oversimplify to the point of incorrectness
-- **Keep code unchanged** — only simplify prose, not code snippets or examples
-- **Maintain original meaning** — clarify, don't change intent or facts
-- **Don't remove necessary technical terms** — if a term is required, define it instead
+- **NEVER modify automatically**. always show simplified version first and get approval
+- **Preserve technical accuracy**. don't oversimplify to the point of incorrectness
+- **Keep code unchanged**. only simplify prose, not code snippets or examples
+- **Maintain original meaning**. clarify, don't change intent or facts
+- **Don't remove necessary technical terms**. if a term is required, define it instead
 
 ## What NOT to Simplify
 
-1. **Code snippets or examples** — Leave code as-is
-2. **API endpoint names** — Don't change technical identifiers
-3. **Product names** — Proper nouns stay the same
-4. **Quotes or references** — Don't modify quoted content
-5. **Already-simple content** — If it's 8th grade or below, leave it
-6. **URLs or file paths** — Technical paths must stay exact
-7. **Version numbers** — Don't change technical specifications
+1. **Code snippets or examples**. Leave code as-is
+2. **API endpoint names**. Don't change technical identifiers
+3. **Product names**. Proper nouns stay the same
+4. **Quotes or references**. Don't modify quoted content
+5. **Already-simple content**. If it's 8th grade or below, leave it
+6. **URLs or file paths**. Technical paths must stay exact
+7. **Version numbers**. Don't change technical specifications
 
 ## Edge Cases
 
@@ -378,13 +378,13 @@ May already be optimal:
 
 ## Tips for Good Simplification
 
-1. **Read aloud** — If it sounds stiff or confusing, simplify more
-2. **One idea per sentence** — Don't combine unrelated concepts
-3. **Front-load information** — Put the main point first
-4. **Use familiar words** — Choose words most people know
-5. **Provide examples** — Concrete examples clarify abstract concepts
-6. **Test with fresh eyes** — Would a new user understand this?
-7. **Maintain voice** — Keep Sumo Logic conversational tone
+1. **Read aloud**. If it sounds stiff or confusing, simplify more
+2. **One idea per sentence**. Don't combine unrelated concepts
+3. **Front-load information**. Put the main point first
+4. **Use familiar words**. Choose words most people know
+5. **Provide examples**. Concrete examples clarify abstract concepts
+6. **Test with fresh eyes**. Would a new user understand this?
+7. **Maintain voice**. Keep Sumo Logic conversational tone
 
 ## After Simplification
 

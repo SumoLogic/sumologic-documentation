@@ -6,11 +6,11 @@ Automates the creation of Collector release notes for Installed Collector versio
 
 When you invoke `release-note-collector`, Claude will guide you through:
 
-1. **Determine release type** — Installed Collector version or OpenTelemetry feature
-2. **Gather release details** — Version number, changes, features, or fixes
-3. **Create markdown file** — Generate file with proper frontmatter and structure
-4. **Format content** — Apply correct formatting for version releases or features
-5. **Validate and preview** — Check structure and provide next steps
+1. **Determine release type**. Installed Collector version or OpenTelemetry feature
+2. **Gather release details**. Version number, changes, features, or fixes
+3. **Create markdown file**. Generate file with proper frontmatter and structure
+4. **Format content**. Apply correct formatting for version releases or features
+5. **Validate and preview**. Check structure and provide next steps
 
 ## When to use this command
 

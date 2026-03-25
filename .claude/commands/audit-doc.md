@@ -7,12 +7,12 @@ Performs comprehensive quality checks on documentation files to ensure adherence
 When you invoke `/audit-doc`, Claude will:
 
 1. **Read and analyze the specified doc file**
-2. **Check frontmatter** — Validate required fields and format
-3. **Review content structure** — Check headings, sections, and organization
-4. **Validate links and images** — Check paths, alt text, and references
-5. **Check style adherence** — Apply Sumo Logic style guide rules
-6. **Report findings** — Provide detailed feedback with specific line numbers
-7. **Suggest fixes** — Offer actionable recommendations
+2. **Check frontmatter**. Validate required fields and format
+3. **Review content structure**. Check headings, sections, and organization
+4. **Validate links and images**. Check paths, alt text, and references
+5. **Check style adherence**. Apply Sumo Logic style guide rules
+6. **Report findings**. Provide detailed feedback with specific line numbers
+7. **Suggest fixes**. Offer actionable recommendations
 
 ## When to use this command
 
@@ -396,12 +396,12 @@ Use this checklist template for the report:
 
 After completing the audit, offer these options:
 
-1. **Auto-fix critical issues** — Fix required frontmatter, broken links
-2. **Fix specific issues** — User selects which to fix
-3. **Generate PR checklist** — Create checklist from findings
-4. **Detailed style guide** — Link to specific style guide sections
-5. **Save audit report** — Export findings to file
-6. **Run again** — After user makes changes manually
+1. **Auto-fix critical issues**. Fix required frontmatter, broken links
+2. **Fix specific issues**. User selects which to fix
+3. **Generate PR checklist**. Create checklist from findings
+4. **Detailed style guide**. Link to specific style guide sections
+5. **Save audit report**. Export findings to file
+6. **Run again**. After user makes changes manually
 
 ## Advanced features
 

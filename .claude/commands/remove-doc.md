@@ -6,12 +6,12 @@ Automates the complete workflow for removing or moving a Sumo Logic doc while pr
 
 When you invoke `/remove-doc`, Claude will guide you through:
 
-1. **Create 301 redirect** — Add redirect mapping to `cid-redirects.json`.
-2. **Update internal links** — Find and replace all references to the old URL.
-3. **Remove from hub pages** — Delete card from parent `index.md` and Product List.
-4. **Delete the doc file** — Remove the actual markdown file.
-5. **Remove from navigation** — Delete entry from `sidebars.ts`.
-6. **Optional steps** — Add deprecation notes, hide from search engines.
+1. **Create 301 redirect**. Add redirect mapping to `cid-redirects.json`.
+2. **Update internal links**. Find and replace all references to the old URL.
+3. **Remove from hub pages**. Delete card from parent `index.md` and Product List.
+4. **Delete the doc file**. Remove the actual markdown file.
+5. **Remove from navigation**. Delete entry from `sidebars.ts`.
+6. **Optional steps**. Add deprecation notes, hide from search engines.
 
 ## When to use this command
 

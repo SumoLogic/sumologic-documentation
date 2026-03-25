@@ -6,12 +6,12 @@ Rewrites the intro/opening paragraph of a documentation page to match Sumo Logic
 
 When you invoke `/rewrite-intro`, Claude will:
 
-1. **Fetch the style guide** — Get latest voice and tone rules from live style guide
-2. **Read the documentation file** — Analyze the current introduction
-3. **Identify issues** — Find voice/tone violations, branding issues, clarity problems
-4. **Rewrite the intro** — Create a new opening that matches Sumo Logic standards
-5. **Present changes** — Show before/after with explanation of what changed
-6. **Apply edits** — Update the file with user approval
+1. **Fetch the style guide**. Get latest voice and tone rules from live style guide
+2. **Read the documentation file**. Analyze the current introduction
+3. **Identify issues**. Find voice/tone violations, branding issues, clarity problems
+4. **Rewrite the intro**. Create a new opening that matches Sumo Logic standards
+5. **Present changes**. Show before/after with explanation of what changed
+6. **Apply edits**. Update the file with user approval
 
 ## When to use this command
 
@@ -184,17 +184,17 @@ Be specific about what changed and why.
 After user approval:
 
 1. **Use Edit tool** to replace the intro section
-2. **Preserve all other content** — only replace the intro paragraphs
-3. **Maintain formatting** — keep existing markdown structure, images, code blocks
-4. **Confirm success** — Let user know the changes were applied
+2. **Preserve all other content**. only replace the intro paragraphs
+3. **Maintain formatting**. keep existing markdown structure, images, code blocks
+4. **Confirm success**. Let user know the changes were applied
 
 ## Safety Guidelines
 
-- **NEVER modify files automatically** — always show the rewrite and get user approval first
-- **Preserve existing content** — only replace the intro section, don't touch anything else
-- **Maintain formatting** — keep existing markdown structure, line breaks, spacing
-- **Don't change frontmatter** — unless specifically asked
-- **Verify document type** — apply correct branding rules (app vs. source vs. feature)
+- **NEVER modify files automatically**. always show the rewrite and get user approval first
+- **Preserve existing content**. only replace the intro section, don't touch anything else
+- **Maintain formatting**. keep existing markdown structure, line breaks, spacing
+- **Don't change frontmatter**. unless specifically asked
+- **Verify document type**. apply correct branding rules (app vs. source vs. feature)
 
 ## Edge Cases
 
@@ -299,13 +299,13 @@ Metrics provide quantitative measurements of your infrastructure and application
 
 ## Tips for Good Rewrites
 
-1. **Lead with value** — Start with what it is and what it does, not background
-2. **Be specific** — "monitor login patterns" not "gain visibility"
-3. **Show benefits** — Tell the reader why they should care
-4. **Keep it short** — 2-3 sentences is usually enough for an intro
-5. **Match document type** — Apps and sources have specific openers
-6. **Test reading level** — Read it aloud; if it sounds stiff, simplify
-7. **Focus on the user** — "You can..." not "This allows users to..."
+1. **Lead with value**. Start with what it is and what it does, not background
+2. **Be specific**. "monitor login patterns" not "gain visibility"
+3. **Show benefits**. Tell the reader why they should care
+4. **Keep it short**. 2-3 sentences is usually enough for an intro
+5. **Match document type**. Apps and sources have specific openers
+6. **Test reading level**. Read it aloud; if it sounds stiff, simplify
+7. **Focus on the user**. "You can..." not "This allows users to..."
 
 ## After the Rewrite
 

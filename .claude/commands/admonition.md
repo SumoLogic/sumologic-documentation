@@ -6,12 +6,12 @@ Scaffolds a new custom admonition type for Docusaurus with icon, styling, and co
 
 When you invoke `admonition`, Claude will:
 
-1. **Gather specifications** — Name, icon, colors, purpose
-2. **Create icon component** — Add to Admonition index file
-3. **Register configuration** — Add to AdmonitionConfigs
-4. **Add theme styles** — Configure light and dark modes
-5. **Generate documentation** — Usage examples and preview
-6. **Test the admonition** — Optionally create test page
+1. **Gather specifications**. Name, icon, colors, purpose
+2. **Create icon component**. Add to Admonition index file
+3. **Register configuration**. Add to AdmonitionConfigs
+4. **Add theme styles**. Configure light and dark modes
+5. **Generate documentation**. Usage examples and preview
+6. **Test the admonition**. Optionally create test page
 
 ## When to use this command
 
@@ -438,11 +438,11 @@ Add usage guidelines for contributors.
 
 ## Safety Guidelines
 
-- **NEVER modify files automatically** — show all changes for review
-- **Test thoroughly** — ensure it works in both light and dark themes
-- **Maintain consistency** — follow existing admonition patterns
-- **Validate colors** — check WCAG contrast ratios for accessibility
-- **Build test** — offer to run `npm run build` after changes
+- **NEVER modify files automatically**. show all changes for review
+- **Test thoroughly**. ensure it works in both light and dark themes
+- **Maintain consistency**. follow existing admonition patterns
+- **Validate colors**. check WCAG contrast ratios for accessibility
+- **Build test**. offer to run `npm run build` after changes
 
 ## Common Icon Examples
 
@@ -509,14 +509,14 @@ Common errors:
 
 ## Tips for Good Admonitions
 
-1. **Choose meaningful names** — Clear purpose from the name
-2. **Keep icons simple** — Complex icons don't scale well
-3. **Test both themes** — Check light and dark mode appearance
-4. **Use consistently** — Document when to use this type
-5. **Don't overdo it** — Too many types confuse users
-6. **Match existing style** — Follow patterns from sumo/training
-7. **Consider accessibility** — Ensure sufficient color contrast
-8. **Document usage** — Update style guide with examples
+1. **Choose meaningful names**. Clear purpose from the name
+2. **Keep icons simple**. Complex icons don't scale well
+3. **Test both themes**. Check light and dark mode appearance
+4. **Use consistently**. Document when to use this type
+5. **Don't overdo it**. Too many types confuse users
+6. **Match existing style**. Follow patterns from sumo/training
+7. **Consider accessibility**. Ensure sufficient color contrast
+8. **Document usage**. Update style guide with examples
 
 ## After Creation
 
