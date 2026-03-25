@@ -2655,6 +2655,7 @@ integrations: [
           'integrations/saas-cloud/druva',
           'integrations/saas-cloud/druva-cyber-resilience',
           'integrations/saas-cloud/fastly',
+          'integrations/saas-cloud/github-copilot',
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
           'integrations/saas-cloud/jamf',
