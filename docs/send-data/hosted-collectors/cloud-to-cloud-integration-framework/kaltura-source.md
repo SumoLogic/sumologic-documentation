@@ -74,6 +74,10 @@ To configure a Kaltura source:
 1. **Base Entry Init Lookback**. You have option to configure from when the integration should collect Kaltura **Base Entry** events. Default is 1 day.
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the Kaltura source, consider installing the Sumo Logic app for [Kaltura](/docs/integrations/saas-cloud/kaltura/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |

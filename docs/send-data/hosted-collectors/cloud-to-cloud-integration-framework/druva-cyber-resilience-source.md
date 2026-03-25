@@ -52,6 +52,10 @@ To configure a Druva Cyber Resilience Source:
 1. **Secret Key**. Enter your Secret Key. To get Secret Key, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials#createnewcreds).
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the Druva Cyber Resilience source, consider installing the Sumo Logic app for [Druva Cyber Resilience](/docs/integrations/saas-cloud/druva-cyber-resilience/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata field
 
 | Field | Value | Description |
