@@ -59,7 +59,7 @@ Complete the following steps to get the credentials and enable the required scop
 
 8. Copy the **Client ID** and **Client Secret** from the **App Credentials** page.
 
- <img src={useBaseUrl('img/send-data/get-credentials.png')} alt="Get cedentials" width="500" />
+ <img src={useBaseUrl('img/send-data/get-credentials.png')} alt="Get credentials" width="500" />
 
 :::info
 Your **Client ID**, **Client Secret**, **Access Token** will be used as input in UI. However, **Refresh Token** will only be required if you have selected **Expire user authorization token** while creating the app.
