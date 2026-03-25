@@ -182,10 +182,10 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
 | `Email Activity Detected from Embargoed Locations` | This alert triggers when an email activity is detected from a location identified as high-risk. This helps you to monitor activity from unusual or restricted geographic locations, enhancing your ability to identify suspicious activity. | Critical | Count > 0 | 
-| `High Severity Case Detected` | This alert is triggered when abnormal security detects a case with high severity. It indicates a high-impact threat that requires immediate investigation and remediation to prevent potential exploitation or data compromise. | Critical | Count > 0|
-| `Malware Detected` | This alert is triggered when abnormal security detects malware in a system. It indicates a high-impact malware that requires immediate investigation and remediation to prevent potential exploitation or data compromise. | Critical | Count > 0 |
+| `High Severity Case Detected` | This alert is triggered when Abnormal Security detects a case with high severity. It indicates a high-impact threat that requires immediate investigation and remediation to prevent potential exploitation or data compromise. | Critical | Count > 0|
+| `Malware Detected` | This alert is triggered when Abnormal Security detects malware in a system. It indicates a high-impact malware that requires immediate investigation and remediation to prevent potential exploitation or data compromise. | Critical | Count > 0 |
 | `Multiple Threat Detections on Single Attacked Party` | This alert activates when a single party has multiple threat detections within a specific timeframe. It allows you to quickly identify end users with a high concentration of threat activity, enabling swift action to contain and remediate potential infections. | Critical | Count > 0 |
-| `Threat With High Score Detected` | This alert is triggered when abnormal security detects a threat with a high attack score. It indicates a high-impact threat that requires immediate investigation and remediation to prevent potential exploitation or data compromise. | Critical | Count > 0 |
+| `Threat With High Score Detected` | This alert is triggered when Abnormal Security detects a threat with a high attack score. It indicates a high-impact threat that requires immediate investigation and remediation to prevent potential exploitation or data compromise. | Critical | Count > 0 |
 
 ## Upgrade/Downgrade the Abnormal Security app (Optional)
 
