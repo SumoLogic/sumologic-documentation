@@ -173,7 +173,7 @@ Trend panels such as Logins by Status Over Time and Login Attempt Outliers enabl
 
 Detailed login logs at the bottom of the dashboard support quick investigation and response. Together, these insights strengthen authentication monitoring and enhance overall Salesforce security posture.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Salesforce-Logins.png')} alt="SalesForce dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Salesforce-Logins-Activity.png')} alt="SalesForce dashboards" />
 
 
 ### Report Performance
