@@ -179,7 +179,7 @@ If you do not have an existing Sumo Logic account and it is your first time here
 1. Click **Access Dashboard**.
 1. When the Sumo Logic page appears, select **I agree to the Service License Agreement**, and click **Access Dashboard**.<br/><img src={useBaseUrl('img/connection-and-integration/jfrog4.png')} alt="Access Dashboard" style={{border: '1px solid gray'}} width="800" />
 1. When you see the message **Your Dashboards are being populated**, click **OK, Got It**.
-1. To access your Artifactory dashboards, click **Library** > **Personal** > **Artifactory 7**.<br/><img src={useBaseUrl('img/connection-and-integration/jfrog5.png')} alt="jfrog5.png" width="300"/>
+1. To access your Artifactory dashboards, click **Library** > **Personal** > **Artifactory 7**.<br/><img src={useBaseUrl('img/connection-and-integration/jfrog5.png')} alt="Artifactory7 folder" width="300"/>
 
 ### If you have a Sumo Logic account
 

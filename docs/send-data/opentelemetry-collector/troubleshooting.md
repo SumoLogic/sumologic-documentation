@@ -78,7 +78,7 @@ Because the OpenTelemetry Collector is connected to the terminal, it will stop r
 
 #### I am seeing some errors related to Sumo Logic OpenTelemetry Collector stating that `Unable to get a heartbeat`. Does this mean my collector is not collecting any data?
 
-<img src={useBaseUrl('img/send-data/error2-faq.png')} alt="error2-faq.png" width="950" />
+<img src={useBaseUrl('img/send-data/error2-faq.png')} alt="Unable to get a heartbeat error" width="950" />
 
 This means the collector is having trouble connecting to the Sumo Logic backend.
 
