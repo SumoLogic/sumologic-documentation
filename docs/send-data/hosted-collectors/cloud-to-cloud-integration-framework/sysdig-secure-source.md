@@ -77,6 +77,10 @@ Each detailed log will be broken down into two logs, one for packages and one fo
 - `assetType`, `metadata`, and `stage` will be collected from the **Result API**.
 :::
 
+:::info
+After configuring the Sysdig Secure source, consider installing the Sumo Logic app for [Sysdig Secure](/docs/integrations/saas-cloud/sysdig-secure/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 

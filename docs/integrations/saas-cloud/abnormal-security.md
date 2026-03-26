@@ -2,7 +2,7 @@
 id: abnormal-security
 title: Abnormal Security
 sidebar_label: Abnormal Security
-description: The Sumo Logic app for the Abnormal Security offers robust monitoring of email security threats.
+description: The Sumo Logic app for Abnormal Security offers robust monitoring of email security threats.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -90,34 +90,40 @@ This app uses the Abnormal Security Source to collect [threat logs](https://app.
 
 ### Sample queries
 
-```sql title="Threats Over Time"
-_sourceCategory="Labs/AbnormalSecurity" sourcetype threat_log
-| json "event.attack_strategy", "event.attacked_party", "event.attack_vector", "event.attack_type", "sourcetype", "event.auto_remediated", "event.post_remediated" as strategy, party, vector, type, source_type, auto_remediated, post_remediated nodrop
+```sql title="Threats Over Time by Attack Type"
+_sourceCategory="Labs/AbnormalSecurity" attackType
+| json "abxMessageId", "attackType", "attackedParty", "attackStrategy", "attackVector", "autoRemediated", "postRemediated", "remediationStatus" as message_id, attack_type, attacked_party, attack_strategy, attack_vector, auto_remediated, post_remediated, remediation_status nodrop
 
 // global filters
-| where type matches "{{attack_type}}"
-| where party matches "{{attack_party}}"
-| where strategy matches "{{attack_strategy}}"
-| where vector matches "{{attack_vector}}"
-| where auto_remediated matches "{{auto_remediated}}"
-| where post_remediated matches "{{post_remediated}}"
+| where attack_type matches "{{attack_type}}"
+| where if ("{{attacked_party}}" = "*", true, attacked_party matches "{{attacked_party}}")
+| where if ("{{attack_strategy}}" = "*", true, attack_strategy matches "{{attack_strategy}}")
+| where if ("{{attack_vector}}" = "*", true, attack_vector matches "{{attack_vector}}")
+| where if ("{{auto_remediated}}" = "*", true, auto_remediated matches "{{auto_remediated}}")
+| where if ("{{post_remediated}}" = "*", true, post_remediated matches "{{post_remediated}}")
+| where if ("{{remediation_status}}" = "*", true, remediation_status matches "{{remediation_status}}")
 
-| where source_type matches ("threat_log")
+| where !isBlank(attack_type)
 | timeslice 1d
-| count as frequency by _timeslice
+| count by _timeslice, message_id, attack_type
+| count by _timeslice, attack_type
+| fillmissing timeslice, values all in attack_type
+| transpose row _timeslice column attack_type
 ```
 
-```sql title="Cases Over Time"
-_sourceCategory="Labs/AbnormalSecurity" sourcetype case_log
-| json "event.severity_level", "event.caseId", "event.description", "sourcetype" as severity, case_id, description, source_type nodrop
+```sql title="Cases Over Time by Severity"
+_sourceCategory="Labs/AbnormalSecurity" caseId severity_level
+| json "severity_level", "caseId", "description" as severity, case_id, description nodrop
 
 // global filters
 | where severity matches "{{severity}}"
+| where if ("{{case_id}}" = "*", true, case_id matches "{{case_id}}")
 
-| where source_type matches ("case_log")
-| timeslice 1d
-| count as frequency by _timeslice
-
+| where !isBlank(severity)
+| timeslice 1h 
+| count by _timeslice, severity
+| fillmissing timeslice, values all in severity
+| transpose row _timeslice column severity
 ```
 
 ## Collection configuration and app installation
@@ -155,15 +161,31 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Abnormal Security - Overview** dashboard provides detailed insights into email threats, highlighting total threats, phishing and malware attacks, and trends over time. It categorizes threats by type, vector, and attack party, and tracks the severity and progression of cases. This dashboard helps security teams quickly identify and respond to email security incidents effectively.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Abnormal-Security/Abnormal-Security-Overview.png' alt="Abnormal-Security-Overview" />
+The **Abnormal Security - Overview** dashboard provides detailed insights into email threats, highlighting total threats, phishing and malware attacks, and trends over time. It categorizes threats by type, vector, and attack party, and tracks the severity and progression of cases. This dashboard helps security teams quickly identify and respond to email security incidents effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Abnormal-Security-Overview.png')} alt="Abnormal-Security-Overview" />
 
 ### Emails
 
-The **Abnormal Security - Emails** dashboard provides insights into email threat management. It shows the counts of remediated emails, top threat senders and receivers, and email threat activity over time. Additionally, it visualizes the geolocation of email senders, highlighting risky regions. This helps in tracking and mitigating email-based threats efficiently.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Abnormal-Security/Abnormal-Security-Emails.png' alt="Abnormal-Security-Emails" />
+The **Abnormal Security - Emails** dashboard provides insights into email threat management. It shows the counts of remediated emails, top threat senders and receivers, and email threat activity over time. Additionally, it visualizes the geolocation of threat email senders, highlighting risky regions. This helps in tracking and mitigating email-based threats efficiently.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Abnormal-Security-Emails.png')} alt="Abnormal-Security-Emails" />
 
 ### Cases
 
-The **Abnormal Security - Cases** dashboard provides an overview of security cases, showing their severity levels, trends over time, and detailed information on recent cases. It includes visualizations for case severity (High, Medium, and Low), a trend line of cases over time, and a table of the latest cases with descriptions. This dashboard aids in monitoring and prioritizing security incidents effectively.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Abnormal-Security/Abnormal-Security-Cases.png' alt="Abnormal-Security-Cases" />
+The **Abnormal Security - Cases** dashboard provides an overview of security cases, showing their severity levels, trends over time, and detailed information on recent cases. It includes visualizations for case severity (High, Medium, and Low), a trend line of cases over time, and a table of the latest cases with descriptions. This dashboard aids in monitoring and prioritizing security incidents effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Abnormal-Security-Cases.png')} alt="Abnormal-Security-Cases" />
+
+## Create monitors for Abnormal Security app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Abnormal Security alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `Email Activity Detected from Embargoed Locations` | This alert is triggered when an email activity is detected from a location identified as high-risk. This helps you to monitor activity from unusual or restricted geographic locations, enhancing your ability to identify suspicious activity. | Critical | Count > 0 | 
+| `High Severity Case Detected` | This alert is triggered when Abnormal Security detects a case with high severity. It indicates a high-impact threat that requires immediate investigation and remediation to prevent potential exploitation or data compromise. | Critical | Count > 0|
+| `Malware Detected` | This alert is triggered when Abnormal Security detects malware in a system. It indicates a high-impact malware that requires immediate investigation and remediation to prevent potential exploitation or data compromise. | Critical | Count > 0 |
+| `Multiple Threat Detections on Single Attacked Party` | This alert is triggered when a single party has multiple threat detections within a specific timeframe. It allows you to quickly identify end users with a high concentration of threat activity, enabling swift action to contain and remediate potential infections. | Critical | Count > 0 |
+| `Threat With High Score Detected` | This alert is triggered when Abnormal Security detects a threat with a high attack score. It indicates a high-impact threat that requires immediate investigation and remediation to prevent potential exploitation or data compromise. | Critical | Count > 0 |
 
 ## Upgrade/Downgrade the Abnormal Security app (Optional)
 

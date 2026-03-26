@@ -86,6 +86,10 @@ To configure an Webex source:
 1. **Select Event Categories for Audit Logs**. You have the option to **Collect all events** or **Select events**, where you can specify the exact event categories you would like to collect from the admin audit logs. You can also select from the pre-defined list or type in event categories.
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the Webex source, consider installing the Sumo Logic app for [Webex](/docs/integrations/saas-cloud/webex/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 

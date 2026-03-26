@@ -69,6 +69,10 @@ To configure a ChatGPT Compliance Source, follow the steps below:
 1. **Polling Interval**. The polling interval is set for 1 hour by default and can be configured to a maximum of 24 hours. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the ChatGPT Compliance source, consider installing the Sumo Logic app for [ChatGPT Compliance](/docs/integrations/saas-cloud/chatgpt-compliance/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.
