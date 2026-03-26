@@ -2762,6 +2762,7 @@ integrations: [
           'integrations/sumo-apps/data-volume',
           'integrations/sumo-apps/data-volume-mssp',
           'integrations/sumo-apps/enterprise-audit',
+          'integrations/sumo-apps/enterprise-audit-collector-data-forwarding-mssp',
           'integrations/sumo-apps/enterprise-search-audit',
           'integrations/sumo-apps/flex',
           'integrations/sumo-apps/infrequent-data-tier',
