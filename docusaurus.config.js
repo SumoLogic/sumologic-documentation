@@ -7,8 +7,6 @@
 const fs = require('fs')
 
 import {themes as prismThemes} from 'prism-react-renderer';
-
-
 const lightCodeTheme = prismThemes.github;
 const darkCodeTheme = prismThemes.dracula;
 
