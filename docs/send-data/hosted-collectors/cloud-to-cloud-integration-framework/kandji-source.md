@@ -11,7 +11,7 @@ description: The Kandji Source provides a secure endpoint to receive threat deta
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="Kandji icon" width="50"/>
 
 Kandji is the Apple device management and security platform that empowers secure and productive global work. With Kandji, Apple devices transform themselves into enterprise-ready endpoints, with all the right apps, settings, and security systems in place. Through advanced automation and thoughtful experiences, Kandji brings much-needed harmony to the way IT, InfoSec, and Apple device users work.
 

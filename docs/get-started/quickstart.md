@@ -9,7 +9,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="35"/>
+<img src={useBaseUrl('img/icons/business/mission.png')} alt="Mission icon" width="35"/>
 
 Sumo Logic provides extensive features and options to gather, monitor, and analyze data, manage your infrastructure, integrate with third-party applications, and so much more!
 

@@ -11,7 +11,7 @@ description: This integration accesses CyberArk SIEM integration API to retrieve
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/cyberark.png')} alt="CyberArk icon" width="50"/>
 
 The CyberArk Identity Security platform is a comprehensive identity management solution that enhances enterprise security through features such as single sign-on, multi-factor authentication, and privileged access control. It streamlines identity operations while providing extensive protection against both external and internal cyber threats.
 

@@ -11,7 +11,7 @@ description: Learn how to collect Varonis Alerts with their detailed information
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/misc/varonis-logo.png')} alt="icon" width="100"/>
+<img src={useBaseUrl('img/integrations/misc/varonis-logo.png')} alt="Varonis icon" width="100"/>
 
 The Sumo Logic source for Varonis Alerts enables you to collect alerts from Varonis into Sumo Logic. This integration helps you to collect real-time intelligent alerts about suspicious activity across your files, emails, and data stores. Powered by advanced threat detection and behavioral analytics, these alerts help security teams quickly identify insider threats, ransomware, and data breaches. With clear context and actionable insights, Varonis Alerts enable faster response and stronger protection of your most sensitive information.
 

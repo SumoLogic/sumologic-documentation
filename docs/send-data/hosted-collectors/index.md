@@ -44,13 +44,13 @@ The maximum number of Collectors allowed per organization is 10,000.
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/configure-hosted-collector')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>Configure a Hosted Collector and Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/configure-hosted-collector')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data Collection icon" width="30"/><h4>Configure a Hosted Collector and Source</h4></a>
   <p>Set up Hosted Collectors so you can move data to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws')}><img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="icon" width="50"/><h4>Amazon and AWS Sources</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws')}><img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Amazon Web Services icon" width="50"/><h4>Amazon and AWS Sources</h4></a>
   <p>Collect from one of the many AWS products that we support.</p>
   </div>
 </div>

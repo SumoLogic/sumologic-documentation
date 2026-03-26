@@ -7,7 +7,7 @@ description: Add a Google Workspace Apps Audit Source to ingest audit logs from 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/google-workspace-audit.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/google-workspace-audit.png')} alt="Google Workspace Audit icon" width="40"/>
 
 A Google Workspace Apps Audit Source uses the [Google Apps Reports API](https://developers.google.com/admin-sdk/reports/v1/get-start/getting-started) to ingest all audit logs through watchpoints. [Activity from the following Google apps](https://developers.google.com/admin-sdk/reports/v1/reference/activities/list) can be collected:
 

@@ -7,7 +7,7 @@ description: Datadog webhook connections allow you to alert and connect to your 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src='https://upload.wikimedia.org/wikipedia/en/7/7e/Datadog_logo.svg' alt="icon" width="50"/>
+<img src='https://upload.wikimedia.org/wikipedia/en/7/7e/Datadog_logo.svg' alt="Datadog icon" width="50"/>
 
 Once you set up a webhook connection, you can send a Sumo Logic alert to your Datadog account. For information on how to build your webhook
 payload refer to Datadog webhooks in their [API Help](https://docs.datadoghq.com/integrations/webhooks/).

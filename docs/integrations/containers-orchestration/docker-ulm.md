@@ -7,7 +7,7 @@ description: The Docker ULM app is a unified logs and metrics (ULM) app that uti
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="90"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Docker icon" width="90"/>
 
 :::note
 The Docker app will be fully functional working with Docker setup using cgroup v1. For more details on cgroup click [here](https://docs.docker.com/config/containers/runmetrics/#control-groups).
@@ -484,8 +484,8 @@ You build templates for sourceCategory and sourceHost specifying component varia
 ```
 
 Where:
-* `NAMESPACE` is a namespace that indicates the variable type. 
-* `VAR_NAME` is the variable name.  These are case-sensitive.
+* `NAMESPACE` is a namespace that indicates the variable type.
+* `VAR_NAME` is the variable name. These are case-sensitive.
 
 The table below defines the types of variables you can use.
 

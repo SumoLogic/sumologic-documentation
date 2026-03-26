@@ -7,7 +7,7 @@ description: Learn how to use the AWS Kinesis Firehose for Metrics source to ing
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/aws-kinesis-firehose-metrics.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/aws-kinesis-firehose-metrics.png')} alt="AWS Kinesis Firehose Metrics icon" width="50"/>
 
 This page has information about Sumo Logic’s AWS Kinesis Firehose for Metrics source.
 

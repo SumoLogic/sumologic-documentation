@@ -76,19 +76,19 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source')}><img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="icon" width="100"/><h4>Abnormal Security Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source')}><img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="Abnormal Security icon" width="100"/><h4>Abnormal Security Source</h4></a>
   <p>Abnormal Security Source helps to collect abnormal threat log from the Abnormal Security platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source')}><img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="icon" width="50"/><h4>Airtable Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source')}><img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="Airtable icon" width="50"/><h4>Airtable Source</h4></a>
   <p>Airtable Source helps to retrieve Airtable audit logs into the Sumo Logic environment.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-cpc-source')}><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="icon" width="120"/><h4>Akamai CPC Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-cpc-source')}><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Akamai icon" width="120"/><h4>Akamai CPC Source</h4></a>
   <p>Learn to fetch CPC-Configs, CPC-Alerts, and CPC-Alert Details from the Akamai platform.</p>
   </div>
 </div>
@@ -100,49 +100,49 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source')}><img src={useBaseUrl('img/send-data/armis-icon.png')} alt="icon" width="80"/><h4>Armis API Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source')}><img src={useBaseUrl('img/send-data/armis-icon.png')} alt="Armis icon" width="80"/><h4>Armis API Source</h4></a>
   <p>Armis API Source helps to fetch device and alert logs from the Armis platform and send it to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source')}><img src={useBaseUrl('img/send-data/asana-icon.png')} alt="icon" width="40"/><h4>Asana Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source')}><img src={useBaseUrl('img/send-data/asana-icon.png')} alt="Asana icon" width="40"/><h4>Asana Source</h4></a>
   <p>Learn to retrieve Asana audit logs into the Sumo Logic environment.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/atlassian-source')}><img src={useBaseUrl('img/send-data/atlassian-icon.png')} alt="icon" width="40"/><h4>Atlassian Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/atlassian-source')}><img src={useBaseUrl('img/send-data/atlassian-icon.png')} alt="Atlassian icon" width="40"/><h4>Atlassian Source</h4></a>
   <p>Learn how to retrieve Atlassian audit logs into the Sumo Logic environment.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source')}><img src={useBaseUrl('img/send-data/automox-logo.png')} alt="icon" width="40"/><h4>Automox Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source')}><img src={useBaseUrl('img/send-data/automox-logo.png')} alt="Automox icon" width="40"/><h4>Automox Source</h4></a>
   <p>Learn how to retrieve all events objects, audit trail events, and device inventory details into the Sumo Logic environment.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source')}><img src={useBaseUrl('img/send-data/aws-cost-explorer-icon.png')} alt="icon" width="50"/><h4>AWS Cost Explorer</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source')}><img src={useBaseUrl('img/send-data/aws-cost-explorer-icon.png')} alt="AWS Cost Explorer icon" width="50"/><h4>AWS Cost Explorer</h4></a>
   <p>Learn to collect cost and usage reports from AWS Cost Explorer Source.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-iam-users-source')}><img src={useBaseUrl('img/integrations/misc/aws-iam-logo.png')} alt="icon" width="50"/><h4>AWS IAM Users</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-iam-users-source')}><img src={useBaseUrl('img/integrations/misc/aws-iam-logo.png')} alt="AWS Iam icon" width="50"/><h4>AWS IAM Users</h4></a>
   <p>Learn to collect the IAM User Inventory logs from the AWS SDK and send them to Sumo Logic for analysis.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source')}><img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/><h4>Azure Event Hubs</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source')}><img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="Azure Event Hub icon" width="40"/><h4>Azure Event Hubs</h4></a>
   <p>Provides a secure endpoint to receive data from Azure Event Hubs.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/bitwarden-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="icon" width="80" /><h4>Bitwarden</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/bitwarden-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="Bitwarden icon" width="80" /><h4>Bitwarden</h4></a>
   <p>Learn how to collect event logs from the Bitwarden API.</p>
   </div>
 </div>
@@ -166,7 +166,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source')}><img src={useBaseUrl('img/send-data/cato-logo.png')} alt="icon" width="90"/><h4>Cato Networks</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source')}><img src={useBaseUrl('img/send-data/cato-logo.png')} alt="Cato icon" width="90"/><h4>Cato Networks</h4></a>
   <p>Cato Networks Source helps to retrieve Cato audit and security logs into the Sumo Logic environment.</p>
   </div>
 </div>
@@ -178,49 +178,49 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source')}><img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="90"/><h4>Cisco AMP</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source')}><img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="Cisco AMP icon" width="90"/><h4>Cisco AMP</h4></a>
   <p>Provides a secure endpoint to receive data from the Cisco Amp System Log API.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source')}><img src={useBaseUrl('img/send-data/cisco-meraki-sumo-source-select.png')} alt="icon" width="90"/><h4>Cisco Meraki</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source')}><img src={useBaseUrl('img/send-data/cisco-meraki-sumo-source-select.png')} alt="Cisco Meraki Sumo Source Select icon" width="90"/><h4>Cisco Meraki</h4></a>
   <p>Provides a secure endpoint to receive data from the Cisco Meraki API.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-vulnerability-management-source')}><img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="125"/><h4>Cisco Vulnerability Management</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-vulnerability-management-source')}><img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="Cisco AMP icon" width="125"/><h4>Cisco Vulnerability Management</h4></a>
   <p>Provides a secure endpoint to receive assets data from Asset API and vulnerabilities data from Vulnerability API.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source')}><img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="icon" width="100"/><h4>Citrix Cloud Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source')}><img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="Citrix Cloud icon" width="100"/><h4>Citrix Cloud Source</h4></a>
   <p>Provides a secure endpoint to receive System Log data from the Citrix Cloud System Log API.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source')}><img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="icon" width="50"/><h4>Cloud SIEM AWS EC2 Inventory</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source')}><img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="AWS EC2 icon" width="50"/><h4>Cloud SIEM AWS EC2 Inventory</h4></a>
   <p>Provides a secure endpoint to receive event data from the EC2 describe instances API.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions')}><img src={useBaseUrl('img/icons/business/SaaS.png')} alt="icon" width="50"/><h4>Cloud-to-Cloud Versions</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions')}><img src={useBaseUrl('img/icons/business/SaaS.png')} alt="SAAS icon" width="50"/><h4>Cloud-to-Cloud Versions</h4></a>
   <p>Sources in the Cloud-to-Cloud Integration Framework need updates over time to maintain data collection.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source')}><img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="icon" width="100"/><h4>Code42 Incydr</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source')}><img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="Code42 Incydr icon" width="100"/><h4>Code42 Incydr</h4></a>
   <p>Learn how to collect alerts, file events, and audit logs from Code42 Incydr.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source')}><img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="icon" width="120"/><h4>Confluent Cloud Metrics</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source')}><img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="Confluent Cloud icon" width="120"/><h4>Confluent Cloud Metrics</h4></a>
   <p>Learn how to collect metrics from the Confluent Cloud Metrics platform and send them to Sumo Logic.</p>
   </div>
 </div>
@@ -262,25 +262,25 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source')}><img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/><h4>CyberArk EPM</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source')}><img src={useBaseUrl('img/send-data/cyberark.png')} alt="CyberArk icon" width="50"/><h4>CyberArk EPM</h4></a>
   <p>Before configuring an AWS Source give Sumo Logic access to your AWS product</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-audit-source')}><img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/><h4>CyberArk Audit</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-audit-source')}><img src={useBaseUrl('img/send-data/cyberark.png')} alt="CyberArk icon" width="50"/><h4>CyberArk Audit</h4></a>
   <p>Learn to collect audits using the CyberArk SIEM integrations API.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source')}><img src={useBaseUrl('img/send-data/cybereason-logo.png')} alt="icon" width="60"/><h4>Cybereason</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source')}><img src={useBaseUrl('img/send-data/cybereason-logo.png')} alt="Cybereason icon" width="60"/><h4>Cybereason</h4></a>
   <p>Provides a secure endpoint to receive authentication logs from the Cybereason Malops API.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/databricks-audit-source')}><img src={useBaseUrl('img/collector/databricks-icon.png')} alt="icon" width="80"/><h4>Databricks Audit</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/databricks-audit-source')}><img src={useBaseUrl('img/collector/databricks-icon.png')} alt="Databricks icon" width="80"/><h4>Databricks Audit</h4></a>
   <p>Track user and system activities to support governance and compliance using Databricks Audit logs.</p>
   </div>
 </div>
@@ -370,43 +370,43 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source')}><img src={useBaseUrl('img/send-data/jamf.png')} alt="icon" width="120"/><h4>Jamf</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source')}><img src={useBaseUrl('img/send-data/jamf.png')} alt="Jamf icon" width="120"/><h4>Jamf</h4></a>
   <p>Collect inventory data from the Jamf platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jfrog-xray-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/jfrog.png')} alt="icon" width="60"/><h4>JFrog Xray</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jfrog-xray-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/jfrog.png')} alt="JFrog icon" width="60"/><h4>JFrog Xray</h4></a>
   <p>Collect violation events from JFrog Xray.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source')}><img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="icon" width="120"/><h4>JumpCloud Directory Insights </h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source')}><img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="JumpCloud Directory Insights icon" width="120"/><h4>JumpCloud Directory Insights </h4></a>
   <p>Collect events data from the JumpCloud Directory Insight.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/kaltura-source')}><img src={useBaseUrl('img/send-data/kaltura-logo.png')} alt="icon" width="75"/><h4>Kaltura Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/kaltura-source')}><img src={useBaseUrl('img/send-data/kaltura-logo.png')} alt="Kaltura icon" width="75"/><h4>Kaltura Source</h4></a>
   <p>Learn how to collect Audit Trail and Base Entry events from Kaltura platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/kandji-source')}><img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="icon" width="75"/><h4>Kandji Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/kandji-source')}><img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="Kandji icon" width="75"/><h4>Kandji Source</h4></a>
   <p>Learn how to collect threat details, devices list, device activities, and device details from the Kandji platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source')}><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="120"/><h4>KnowBe4 API Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source')}><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="KnowBe4 icon" width="120"/><h4>KnowBe4 API Source</h4></a>
   <p>Collects user events data into Sumo Logic for storage, analysis, and alerting.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/lastpass-source')}><img src={useBaseUrl('img/send-data/lastpass.png')} alt="icon" width="50"/><h4>LastPass Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/lastpass-source')}><img src={useBaseUrl('img/send-data/lastpass.png')} alt="LastPass icon" width="50"/><h4>LastPass Source</h4></a>
   <p>Collects audit reporting events from the LastPass platform.</p>
   </div>
 </div>
@@ -424,37 +424,37 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs')}><img src={useBaseUrl('img/send-data/microsoft-exchange-logo.svg')} alt="icon" width="120"/><h4>Microsoft Exchange Trace Logs</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs')}><img src={useBaseUrl('img/send-data/microsoft-exchange-logo.svg')} alt="Microsoft Exchange icon" width="120"/><h4>Microsoft Exchange Trace Logs</h4></a>
   <p>Collects email trace logs from the Office 365 reporting web service.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source')}><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Azure AD Reporting</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source')}><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="MS Graph icon" width="50"/><h4>Microsoft Graph Azure AD Reporting</h4></a>
   <p>Collects Directory Audit, Sign-in, and Provisioning data from MS Graph API Azure AD activity reports.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source')}><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Identity Protection</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source')}><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="MS Graph icon" width="50"/><h4>Microsoft Graph Identity Protection</h4></a>
   <p>Collects Risk Detection and Risky User data from the Microsoft Graph Identity Protection API.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source')}><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Security API</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source')}><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="MS Graph icon" width="50"/><h4>Microsoft Graph Security API</h4></a>
   <p>Provides a secure endpoint to receive alerts from the Microsoft Graph Security API endpoint.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source')}><img src={useBaseUrl('img/send-data/Mimecast-icon.png')} alt="icon" width="50"/><h4>Mimecast</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source')}><img src={useBaseUrl('img/send-data/Mimecast-icon.png')} alt="Mimecast icon" width="50"/><h4>Mimecast</h4></a>
   <p>Supports collecting SIEM, DLP, Audit, and Hold Message List data from the Mimecast API.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source')}><img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="icon" width="50"/><h4>Miro</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source')}><img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="Miro icon" width="50"/><h4>Miro</h4></a>
   <p>Ingests audit logs obtained from the Audit log API.</p>
   </div>
 </div>
@@ -490,19 +490,19 @@ In this section, we'll introduce the following concepts:
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source')}><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/><h4>Proofpoint On Demand</h4></a>
+    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source')}><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Proofpoint icon" width="140"/><h4>Proofpoint On Demand</h4></a>
     <p>Collects data and uses the secure WebSocket protocol to stream logs.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source')}><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/><h4>Proofpoint TAP</h4></a>
+    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source')}><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Proofpoint icon" width="140"/><h4>Proofpoint TAP</h4></a>
     <p>Provides a secure endpoint to receive data from the Proofpoint TAP SIEM API.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-trap-source/')}><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/><h4>Proofpoint TRAP</h4></a>
+    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-trap-source/')}><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Proofpoint icon" width="140"/><h4>Proofpoint TRAP</h4></a>
     <p>Learn to ingest message logs via the API to deliver enhanced email threat visibility and actionable insights for faster detection and response to attacks.</p>
     </div>
   </div>
@@ -556,61 +556,61 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source')}><img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="50"/><h4>Sophos Central</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source')}><img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="Sophos icon" width="50"/><h4>Sophos Central</h4></a>
         <p>Learn to receive authentication logs from the Sophos Central APIs.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source')}><img src={useBaseUrl('img/send-data/stix-logo.png')} alt="icon" width="75"/><h4>STIX/TAXII 1 Client</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source')}><img src={useBaseUrl('img/send-data/stix-logo.png')} alt="STIX/TAXII icon" width="75"/><h4>STIX/TAXII 1 Client</h4></a>
         <p>Learn how to set up a STIX/TAXII 1.x client to collect threat intelligence indicators into the Sumo Logic environment.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source')}><img src={useBaseUrl('img/send-data/stix-logo.png')} alt="icon" width="75"/><h4>STIX/TAXII 2 Client</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source')}><img src={useBaseUrl('img/send-data/stix-logo.png')} alt="STIX/TAXII icon" width="75"/><h4>STIX/TAXII 2 Client</h4></a>
         <p>Learn how to set up a STIX/TAXII 2.x client to collect threat intelligence indicators into the Sumo Logic environment.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source')}><img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="icon" width="55"/><h4>Sumo Collection</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source')}><img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="Sumo Logic icon" width="55"/><h4>Sumo Collection</h4></a>
         <p>Learn how to collect the list of collectors and their sources using the Sumo Logic Collector API and Sources API.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source')}><img src={useBaseUrl('img/send-data/sumo-logic-kickstart-data.png')} alt="icon" width="120"/><h4>Sumo Logic Kickstart Data</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source')}><img src={useBaseUrl('img/send-data/sumo-logic-kickstart-data.png')} alt="Sumo Logic Kickstart Data icon" width="120"/><h4>Sumo Logic Kickstart Data</h4></a>
         <p>Learn how to collect audit reporting events using Sumo Logic sample data.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source')}><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="150"/><h4>Symantec Endpoint Security Source</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-endpoint-security-source')}><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="Symantec icon" width="150"/><h4>Symantec Endpoint Security Source</h4></a>
         <p>Learn to collect incidents and incident events from the Symantec Endpoint Security platform.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source')}><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="150"/><h4>Symantec Web Security Service</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source')}><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="Symantec icon" width="150"/><h4>Symantec Web Security Service</h4></a>
         <p>Learn to receive WSS Access logs from the Symantec WSS API.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sysdig-secure-source')}><img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="icon" width="100"/><h4>Sysdig Secure</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sysdig-secure-source')}><img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="Sysdig icon" width="100"/><h4>Sysdig Secure</h4></a>
         <p>Collect the scan results from the scanner using the Sysdig API.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source')}><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="120"/><h4>Tenable</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source')}><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="Tenable icon" width="120"/><h4>Tenable</h4></a>
         <p>Learn to ingest audit-log events, vulnerability, and asset data from the Tenable.io APIs.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source')}><img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="icon" width="80"/><h4>Trellix mVision ePO</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source')}><img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="Trellix icon" width="80"/><h4>Trellix mVision ePO</h4></a>
         <p>Learn how to collect event logs using the Trellix mVision ePO.</p>
         </div>
       </div>

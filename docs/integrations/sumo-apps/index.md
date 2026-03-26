@@ -29,24 +29,24 @@ Once a request has been submitted, a support ticket is automatically opened. A r
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/sumo-apps/audit')}><img src={useBaseUrl('img/integrations/sumo-apps/Audit_Img.png')} alt="icon" width="40"/><h4>Audit</h4></a>
+  <a href={useBaseUrl('docs/integrations/sumo-apps/audit')}><img src={useBaseUrl('img/integrations/sumo-apps/Audit_Img.png')} alt="Audit icon" width="40"/><h4>Audit</h4></a>
   <p>Use this guide to work with the Sumo Logic Audit App.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/sumo-apps/cse')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Cloud SIEM</h4></a>
+  <a href={useBaseUrl('docs/integrations/sumo-apps/cse')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="40"/><h4>Cloud SIEM</h4></a>
   <p>Gives visibility into what’s going on in your Cloud SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/sumo-apps/data-volume')}><img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="icon" width="40"/><h4>Data Volume</h4></a>
+  <a href={useBaseUrl('docs/integrations/sumo-apps/data-volume')}><img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="Volume view icon" width="40"/><h4>Data Volume</h4></a>
   <p>Provides a summary and detailed views of your account's data usage volume.</p>
   </div>
 </div><div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/sumo-apps/data-volume')}><img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="icon" width="40"/><h4>Data Volume for MSSP</h4></a>
+  <a href={useBaseUrl('docs/integrations/sumo-apps/data-volume')}><img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="Volume view icon" width="40"/><h4>Data Volume for MSSP</h4></a>
   <p>Provides a summary and detailed views of data usage volume for child orgs under a MSSP org.</p>
   </div>
 </div>
@@ -58,7 +58,7 @@ Once a request has been submitted, a support ticket is automatically opened. A r
 </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href={useBaseUrl('docs/integrations/sumo-apps/enterprise-search-audit')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Enterprise Search Audit</h4></a>
+      <a href={useBaseUrl('docs/integrations/sumo-apps/enterprise-search-audit')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="40"/><h4>Enterprise Search Audit</h4></a>
       <p>A guide to our Enterprise Search Audit App.</p>
       </div>
     </div>

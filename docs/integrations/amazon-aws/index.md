@@ -417,7 +417,7 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://s3.amazonaws.com/app_icons/AWS_Cost_Explorer.png' alt="icon" width="50"/>
+  <img src='https://s3.amazonaws.com/app_icons/AWS_Cost_Explorer.png' alt="AWS Cost Explorer icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/cost-explorer')}>AWS Cost Explorer</a></h4>
   <p>A guide to the Sumo Logic app for AWS Cost Explorer.</p>
   </div>

@@ -11,7 +11,7 @@ description: Learn how to collect Databricks Audit logs and send them to Sumo Lo
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/collector/databricks-icon.png')} alt="icon" width="80"/>
+<img src={useBaseUrl('img/collector/databricks-icon.png')} alt="Databricks icon" width="80"/>
 
 The Sumo Logic source for Databricks enables you to collect audit logs from Databricks into Sumo Logic. This integration helps you to capture structured records of user and system activities within the Databricks workspace, including SQL queries, job executions, cluster events, and workspace changes. These logs facilitate auditing, security monitoring, and regulatory compliance.
 

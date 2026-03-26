@@ -38,7 +38,7 @@ In this section, we'll show you how to set up source templates for the following
   </div>
     <div className="box smallbox card">
     <div className="container">
-      <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/source-templates/kafka')}><img src={useBaseUrl('img/integrations/containers-orchestration/kafka.png')} alt="icon" width="65"/><h4>Kafka</h4></a><p>Learn how to configure our OTel Kafka source template.</p>
+      <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/source-templates/kafka')}><img src={useBaseUrl('img/integrations/containers-orchestration/kafka.png')} alt="Kafka icon" width="65"/><h4>Kafka</h4></a><p>Learn how to configure our OTel Kafka source template.</p>
     </div>
   </div>
     <div className="box smallbox card">

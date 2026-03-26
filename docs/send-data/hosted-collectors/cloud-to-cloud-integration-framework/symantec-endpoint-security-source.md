@@ -10,7 +10,7 @@ description: Learn how to collect incident and incident events using the Symante
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="125"/>
+<img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="Symantec icon" width="125"/>
 
 Symantec Endpoint Protection is a client-server solution that protects laptops, desktops, and servers in networks against malware, risks, and vulnerabilities. Symantec Endpoint Protection combines virus protection with advanced threat protection to proactively secure client computers against known and unknown threats. This integration collects this information using the [Symantec Incidents API](https://apidocs.securitycloud.symantec.com/#/doc?id=edr_incidents) and ingests it into Sumo Logic.
 

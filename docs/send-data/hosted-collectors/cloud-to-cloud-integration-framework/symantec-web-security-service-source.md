@@ -11,7 +11,7 @@ description: The Symantec Web Security Service Source provides a secure endpoint
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="125"/>
+<img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="Symantec icon" width="125"/>
 
 The Symantec Web Security Service Source provides a secure endpoint to receive WSS Access logs from the Symantec WSS API. It securely stores the required authentication, scheduling, and state tracking information.
 

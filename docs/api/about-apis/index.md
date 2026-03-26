@@ -19,7 +19,7 @@ This section contains articles about how to use the Sumo Logic APIs.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/api/about-apis/getting-started')}><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="icon" width="50"/><h4>Authentication and Endpoints</h4></a>
+  <a href={useBaseUrl('docs/api/about-apis/getting-started')}><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="API icon" width="50"/><h4>Authentication and Endpoints</h4></a>
   <p>Get your API credentials and endpoint URL to start using the Sumo Logic APIs.</p>
   </div>
 </div>

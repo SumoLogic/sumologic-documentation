@@ -7,7 +7,7 @@ description: The Sumo Logic Enterprise Audit apps present information on account
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="55"/>
+<img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="55"/>
 
 The Sumo Logic Enterprise Audit apps are JSON-based to provide for more meaningful audit messages. The apps generate queries that are compatible with the new Sumo Logic Audit Event Index. The Enterprise Audit apps do not support the previous version of the audit index. For information on available datasets and related source categories, see [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index).
 

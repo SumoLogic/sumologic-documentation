@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import Iframe from 'react-iframe';
 
-<img src={useBaseUrl('img/integrations/integrations.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/integrations/integrations.png')} alt="Integrations icon" width="50"/>
 
 In this section, you'll find documentation for our **App Catalog**, encompassing Sumo Logic apps, webhooks, and other integrations.
 
@@ -110,7 +110,7 @@ You can use Terraform to provide apps with the [`sumologic_app`](https://registr
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/')}><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="45"/><h4>Cloud Security Monitoring/Analytics</h4></a>
+  <a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Security icon" width="45"/><h4>Cloud Security Monitoring/Analytics</h4></a>
   <p>A guide to Sumo Logic apps for cloud security data source.</p>
   </div>
 </div>
@@ -122,7 +122,7 @@ You can use Terraform to provide apps with the [`sumologic_app`](https://registr
 </div>
 <div className="box smallbox card">
   <div className="container">
-    <a href={useBaseUrl('docs/integrations/global-intelligence')}><img src={useBaseUrl('img/global-intelligence/gis.svg')} alt="icon" width="35"/><h4>Global Intelligence</h4></a>
+    <a href={useBaseUrl('docs/integrations/global-intelligence')}><img src={useBaseUrl('img/global-intelligence/gis.svg')} alt="Global Intelligence icon" width="35"/><h4>Global Intelligence</h4></a>
     <p>Sumo Logic apps for Global Intelligence provide valuable real-time security intelligence.</p>
     </div>
 </div>

@@ -6,7 +6,7 @@ description: Data Archiving allows you to archive selected data to an external s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/send-data.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Send Data icon" width="50"/>
 
 Archive allows you to forward log data from Installed Collectors to AWS S3 buckets to collect later. If you have logs that you do not need to search immediately, you can archive them for later use. You can also ingest them from your archive on-demand with five-minute granularity.  
 

@@ -6,7 +6,7 @@ description: Use the Sumo Logic Integration for Datadog to start sending data fr
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src='https://upload.wikimedia.org/wikipedia/en/7/7e/Datadog_logo.svg' alt="icon" width="50"/>
+<img src='https://upload.wikimedia.org/wikipedia/en/7/7e/Datadog_logo.svg' alt="Datadog icon" width="50"/>
 
 The Sumo Logic Integration for Datadog allows you to send events and alerts from Datadog to Sumo Logic using HTTP Collectors. To get started:
 

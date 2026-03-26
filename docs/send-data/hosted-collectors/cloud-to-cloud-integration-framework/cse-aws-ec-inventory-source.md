@@ -11,7 +11,7 @@ description: The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="AWS EC2 icon" width="50"/>
 
 The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint to receive event data from the [EC2 describe instances API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html). It securely stores the required authentication, scheduling, and state tracking information.
 

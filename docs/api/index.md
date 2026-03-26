@@ -24,7 +24,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 <div className="box-wrapper" markdown="1">
 <div className="box boxwidetop card">
   <div className="container">
-  <a href={useBaseUrl('docs/api/about-apis/')}><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="icon" width="50"/><h4>About Sumo Logic APIs</h4></a>
+  <a href={useBaseUrl('docs/api/about-apis/')}><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="API icon" width="50"/><h4>About Sumo Logic APIs</h4></a>
   <p>Learn about Sumo Logic APIs, including endpoints and how to use them.</p>
   </div>
 </div></div>
@@ -74,7 +74,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/api/content-management')}><img src={useBaseUrl('img/icons/operations/topology-explorer.png')} alt="icon" width="50"/><h4>Content</h4></a>  
+  <a href={useBaseUrl('docs/api/content-management')}><img src={useBaseUrl('img/icons/operations/topology-explorer.png')} alt="Topology Explorer icon" width="50"/><h4>Content</h4></a>  
   </div>
 </div>
 <div className="box smallbox card">
@@ -109,7 +109,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/api/folder-management')}><img src={useBaseUrl('img/icons/archive.png')} alt="icon" width="40"/><h4>Folders</h4></a>      
+  <a href={useBaseUrl('docs/api/folder-management')}><img src={useBaseUrl('img/icons/archive.png')} alt="Archive icon" width="40"/><h4>Folders</h4></a>      
   </div>
 </div>
 <div className="box smallbox card">

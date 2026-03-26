@@ -7,7 +7,7 @@ import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/business/beta.png')} alt="icon" width="55"/>
+<img src={useBaseUrl('img/icons/business/beta.png')} alt="Beta icon" width="55"/>
 
 Beta features are capabilities that are coming soon to general availability. To participate, contact your Sumo account executive.
 

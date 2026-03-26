@@ -21,7 +21,7 @@ In this section, we'll introduce the following concepts and more:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/alerts/webhooks.png')} alt="icon" width="60"/>
+  <img src={useBaseUrl('img/alerts/webhooks.png')} alt="Webhooks icon" width="60"/>
   <h4><a href={useBaseUrl('docs/alerts/webhook-connections/set-up-webhook-connections')}>Set Up Webhook Connections</a></h4>
   </div>
 </div>
@@ -33,13 +33,13 @@ In this section, we'll introduce the following concepts and more:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="50"/>
+  <img src={useBaseUrl('img/icons/security/SOC.png')} alt="Soc icon" width="50"/>
   <h4><a href={useBaseUrl('docs/alerts/webhook-connections/cloud-soar')}>Cloud SOAR</a></h4>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://upload.wikimedia.org/wikipedia/en/7/7e/Datadog_logo.svg' alt="icon" width="50"/>
+  <img src='https://upload.wikimedia.org/wikipedia/en/7/7e/Datadog_logo.svg' alt="Datadog icon" width="50"/>
   <h4><a href={useBaseUrl('docs/alerts/webhook-connections/datadog')}>Datadog</a></h4>
   </div>
 </div>
@@ -99,7 +99,7 @@ In this section, we'll introduce the following concepts and more:
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src='https://companieslogo.com/img/orig/NOW-6d5a01eb.png?t=1647966832' alt="icon" width="60"/>
+    <img src='https://companieslogo.com/img/orig/NOW-6d5a01eb.png?t=1647966832' alt="Now 6d5a01eb icon" width="60"/>
     <h4><a href={useBaseUrl('docs/alerts/webhook-connections/servicenow')}>ServiceNow</a></h4>
     </div>
   </div>
