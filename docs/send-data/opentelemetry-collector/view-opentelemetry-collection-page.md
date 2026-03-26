@@ -41,6 +41,27 @@ To view details about an OpenTelemetry Collector:
         - **Created**. Timestamp when the collector was created.
     - **Source Templates**. Displays all the source configuration linked with the collector.
 
+## Status Overview
+
+The Status Overview panels provide a centralized, high-level health view of OpenTelemetry collectors. Each panel displays key metrics and includes a **View Collectors** button that drills down when clicked into filtered lists for quick diagnosis and resolution.
+
+### Key Panels
+
+**Collector(s) are due for upgrade**:
+- Displays collectors requiring upgrades.
+- You can click the **View Collectors** button to view the collectors that are older than the current version and needs upgrade.
+
+**Offline collectors**:
+- Displays collectors that are offline for over 30 minutes in the last 24 hours.
+- You can click the **View Collectors** button to view the affected collectors.
+
+**Collector(s) are not configured**
+- Displays the remotely managed collectors with no sources configured to ingest data.
+- You can click the **View Collectors** button to view the affected collectors.
+:::note
+To conffigure a source template, see [Create a new source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#create-a-new-source-template).
+:::
+
 ## Find the OpenTelemetry collectors using filters
 
 Filters help you quickly narrow down OpenTelemetry collectors based on criteria such as **Collector Type**, **Collector Tag**, **Status**, and **Upgrade Available**, so you can efficiently locate the most relevant collectors without manually browsing through the entire catalog, saving time and effort.<br/><img src={useBaseUrl('img/send-data/add-a-filter-otel-collector.png')} alt="filter-otel-collectors" style={{border:'1px solid gray'}} />
