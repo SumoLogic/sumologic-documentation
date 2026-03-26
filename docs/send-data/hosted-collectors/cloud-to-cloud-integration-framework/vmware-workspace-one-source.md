@@ -77,6 +77,10 @@ To configure a VMware Workspace One Source:
 1. Select the **Collect Apps Details** checkbox to collect the apps details.
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the VMware Workspace One source, consider installing the Sumo Logic app for [VMware Workspace One](/docs/integrations/saas-cloud/vmware-workspace-one/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
