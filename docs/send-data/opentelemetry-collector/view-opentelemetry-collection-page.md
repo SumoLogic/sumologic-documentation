@@ -59,7 +59,7 @@ The Status Overview panels provide a centralized, high-level health view of Open
 - Displays the remotely managed collectors with no sources configured to ingest data.
 - You can click the **View Collectors** button to view the affected collectors.
 :::note
-To conffigure a source template, see [Create a new source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#create-a-new-source-template).
+To configure a source template, see [Create a new source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#create-a-new-source-template).
 :::
 
 ## Find the OpenTelemetry collectors using filters
