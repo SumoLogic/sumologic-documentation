@@ -49,7 +49,7 @@ The example below has parameters that were automatically added by the Collector 
 
 The collector.properties parameter `collector.localfile.inputType` has been added and set to `nonblocking` to tell the Collector to use the [Windows Rollable path for UNC file paths](/docs/send-data/collector-faq#file-locking-problems-when-using-windows-unc-with-local-file-sources). That is the only collector.properties parameter in this example.
 
-```
+```sumo
 receiver.url = https://collectors.sumologic.com
 windows.remote.jni = true
 cpuTarget = -1
