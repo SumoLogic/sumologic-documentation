@@ -334,10 +334,6 @@ module.exports = {
           autoCollapseCategories: true,
         },
       },
-    // Fix syntax highligting
-      prism: {
-      additionalLanguages: ['bash', 'sql', `json`],
-      },
     // SEO Global Metadata
     metadata: [
       { name: 'keywords', content: 'sumo logic, documentation, log management, observability, cloud siem, monitoring, API, tutorials' },
@@ -383,7 +379,7 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json'],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json', `sql`, `sumo`],
     },
       navbar: {
         logo: {
