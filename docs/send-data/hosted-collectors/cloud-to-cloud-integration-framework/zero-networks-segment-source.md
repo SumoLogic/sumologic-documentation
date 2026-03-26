@@ -53,6 +53,10 @@ To configure a Zero Networks Segment Source:
 You can only use 256 characters for the network activity filters field.
 :::
 
+:::info
+After configuring the Zero Networks Segment source, consider installing the Sumo Logic app for [Zero Networks Segment](/docs/integrations/saas-cloud/zero-networks-segment/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata field
 
 | Field | Value | Description |
