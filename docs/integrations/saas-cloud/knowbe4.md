@@ -169,4 +169,4 @@ Each panel has a set of filters that are applied to the results for that panel o
 
 The **KnowBe4 - Overview** dashboard provides an overview of phishing security tests. It provides insights into the test results, including the total number of tests, active tests, and recipient users. Additionally, the dashboard displays the distribution of test status, the level of difficulty of the tests, and the phish-prone percentage. The dashboard also includes a summary of the phishing security tests and failures, as well as the top failed users and their geo-locations. These insights can help organizations identify areas that require further attention and improve their overall security posture against phishing attacks.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/KnowBe4-Overview.png')} alt="KnowBe4-Overview.png" width="600"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/KnowBe4-Overview.png')} alt="KnowBe4 - Overview dashboard" width="600"/>

@@ -194,7 +194,7 @@ For example, if your monitor evaluates the last 1 hour, you can set a resolution
 
 **Example: Logs - Static - Critical and Warning**  
 
-<img src={useBaseUrl('img/alerts/monitors/logs-trigger-type.png')} alt="logs trigger type.png" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/alerts/monitors/logs-trigger-type.png')} alt="Logs trigger type" style={{border: '1px solid gray'}} width="600"/>
 
 `Alert when result is <threshold type> <threshold> within <time range - trigger>. Evaluate every <trigger - frequency>.`
 
@@ -246,7 +246,7 @@ Tune the number of anomalous data points detected per day compared to the predic
 
 **Example: Logs - Outlier - Critical and Warning**
 
-<img src={useBaseUrl('img/alerts/monitors/monitor-outlier-logs.png')} alt="monitor outlier logs.png" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/monitor-outlier-logs.png')} alt="Monitor outlier logs" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <consecutive> consecutive out of <window> data points`
 
@@ -296,7 +296,7 @@ Examples:
 
 **Example: Metrics - Static - Critical and Warning**
 
-<img src={useBaseUrl('img/alerts/monitors/metrics-trigger-types.png')} alt="metrics trigger types.png" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/alerts/monitors/metrics-trigger-types.png')} alt="Metrics trigger types" style={{border: '1px solid gray'}} width="800" />
 
 `Alert when result is <threshold type> <threshold> <occurrence type> <time range>`
 
@@ -372,7 +372,7 @@ For recovery, Sumo Logic will automatically resolve the incident when the resolu
 
 **Example: Metrics - Outlier - Critical and Warning**
 
-<img src={useBaseUrl('img/alerts/monitors/monitor-metrics-outlier-triggers.png')} alt="monitor metrics outlier triggers.png" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/monitor-metrics-outlier-triggers.png')} alt="Monitor metrics outlier triggers" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <time range>`
 

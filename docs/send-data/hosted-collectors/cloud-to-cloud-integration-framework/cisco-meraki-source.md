@@ -31,12 +31,12 @@ The Cisco Meraki Source provides a secure endpoint to receive data from the Mer
 In this configuration, you will set up an Meraki source account and configure it to be authorized and authenticated to use device logs and alerts from MERAKI API.
 To obtain an Meraki auth token, follow the steps below:
 1. Log in to the [Meraki](https://dashboard.meraki.com/) application.
-1. Navigate to the **Organization**, under **Configure** section, select **Settings** page.<br/> <img src={useBaseUrl('img/send-data/cisco-meraki-org-settings.png')} alt="cisco-meraki-org-settings.png" width="500" />
-1. Check the **Enable access to the Cisco Meraki Dashboard API** <br/> <img src={useBaseUrl('img/send-data/cisco-meraki-org-enable-api.png')} alt="cisco-meraki-org-enable-api.png" width="800" />
-1. Click **Save Changes** at the bottom of the page.<br/> <img src={useBaseUrl('img/send-data/cisco-meraki-org-save.png')} alt="cisco-meraki-org-save.png" width="400" />
-1. Navigate to your profile by clicking your name in the upper right corner and select **My profile**.<br/> <img src={useBaseUrl('img/send-data/cisco-meraki-my-profile.png')} alt="cisco-meraki-my-profile.png" width="500" />
-1. Scroll down to **API access** and click **Generate new API key**.<br/> <img src={useBaseUrl('img/send-data/cisco-meraki-generate-key.png')} alt="cisco-meraki-generate-key.png" width="400" />
-1. Save your new API key into your preferred password vault for later use.<br/> <img src={useBaseUrl('img/send-data/cisco-meraki-save-key.png')} alt="cisco-meraki-save-key.png" width="500" />
+1. Navigate to the **Organization**, under **Configure** section, select **Settings** page.<br/> <img src={useBaseUrl('img/send-data/cisco-meraki-org-settings.png')} alt="Cisco Meraki org settings" width="500" />
+1. Check the **Enable access to the Cisco Meraki Dashboard API** <br/> <img src={useBaseUrl('img/send-data/cisco-meraki-org-enable-api.png')} alt="Cisco Meraki org enable API" width="800" />
+1. Click **Save Changes** at the bottom of the page.<br/> <img src={useBaseUrl('img/send-data/cisco-meraki-org-save.png')} alt="Cisco Meraki org save" width="400" />
+1. Navigate to your profile by clicking your name in the upper right corner and select **My profile**.<br/> <img src={useBaseUrl('img/send-data/cisco-meraki-my-profile.png')} alt="Cisco Meraki my profile" width="500" />
+1. Scroll down to **API access** and click **Generate new API key**.<br/> <img src={useBaseUrl('img/send-data/cisco-meraki-generate-key.png')} alt="Cisco Meraki generate key" width="400" />
+1. Save your new API key into your preferred password vault for later use.<br/> <img src={useBaseUrl('img/send-data/cisco-meraki-save-key.png')} alt="Cisco Meraki save key" width="500" />
 
 For more detailed steps with troubleshooting examples, visit the official documentation [here](https://developer.cisco.com/meraki/api-v1/#!authorization/authorization).
 
@@ -58,8 +58,8 @@ To configure Cisco Meraki Source:
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a checkmark is shown when the field exists in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a checkmark is shown when the field exists in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 7. **Base URL**. It refers to the default URL where your Meraki account is hosted. If you are located in China, you have the option to modify the base URL.
 8. **API Key**. Provide the [API key](#vendor-configuration) you generated from your Meraki account. 
 9. **Meraki Organization ID**. Provide the numeric [Meraki organization ID](#vendor-configuration) of the Meraki org you want to collect data from. You can only provide one ID. Please create multiple sources for multiple Meraki organizations.

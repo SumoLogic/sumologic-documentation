@@ -62,7 +62,7 @@ For a field that is configured to be boolean, make sure that the field value is 
 1. Mouse over the lookup table you want to view, and select **Edit** from the three-dot kebab menu.
 1. The edit page for the lookup table appears. <br/><img src={useBaseUrl('img/search/lookup-tables/edit-lookup-table.png')} alt="Edit lookup table" style={{border: '1px solid gray'}} width="800" />
 1. Click **Replace Data**.
-1. The **Replace All Lookup Data** popup appears. <br/><img src={useBaseUrl('img/search/lookup-tables/replace-all-lookup-data.png')} alt="replace-all-lookup-data.png" width="350"/>
+1. The **Replace All Lookup Data** popup appears. <br/><img src={useBaseUrl('img/search/lookup-tables/replace-all-lookup-data.png')} alt="Replace All Lookup Data popup" width="350"/>
 1. Click **Upload**.
 1. Navigate to the .csv file and click **Open**.
 1. Click **Done.**
@@ -77,7 +77,7 @@ Follow the steps below to delete all of the contents of a lookup table:
 1. Mouse over the lookup table you want to delete, and select **Edit** from the three-dot kebab menu.
 1. The edit page for the lookup table appears.  <br/><img src={useBaseUrl('img/search/lookup-tables/edit-lookup-table.png')} alt="Edit lookup table" style={{border: '1px solid gray'}} width="800" />
 1. Click **Delete Data.**
-1. You are prompted to confirm that you want to delete the contents of the lookup file. <br/><img src={useBaseUrl('img/search/lookup-tables/delete-lookup-data.png')} alt="delete-lookup-data.png" width="350"/>
+1. You are prompted to confirm that you want to delete the contents of the lookup file. <br/><img src={useBaseUrl('img/search/lookup-tables/delete-lookup-data.png')} alt="Delete lookup data confirmation" width="350"/>
 1. Enter `Delete`, and click **Delete**.
 
 ### Update a lookup table with the save operator
@@ -92,7 +92,7 @@ If you want to replicate a lookup table schema in a different folder in the Libr
 
 1. Go to your **Library**.
 1. Mouse over the lookup table you want to export, and select **Export** from the three-dot kebab menu.
-1. The export popup presents the contents of the lookup table in JSON format.<br/>   <img src={useBaseUrl('img/search/lookup-tables/export-lookup-table.png')} alt="export-lookup-table.png" width="350"/>
+1. The export popup presents the contents of the lookup table in JSON format.<br/>   <img src={useBaseUrl('img/search/lookup-tables/export-lookup-table.png')} alt="Export lookup table" width="350"/>
 1. Click **Copy** to copy the JSON to the clipboard, or **Download** to download a JSON file.
 1. Click **Done**. 
 1. To create new lookup table with the JSON, follow the instructions in [Import Content in the Library](/docs/get-started/library#import-content).
@@ -120,7 +120,7 @@ When you are viewing a Lookup Table in the Library, you can view information abo
 
 You can toggle your view between **Lookup Actions Queue** and **Lookup Actions History** with the icons labeled **a** and **b** in the screenshot below, respectively.
 
-<img src={useBaseUrl('img/search/lookup-tables/lookup-actions-history.png')} alt="lookup-actions-history.png" width="300"/>
+<img src={useBaseUrl('img/search/lookup-tables/lookup-actions-history.png')} alt="Lookup actions history" width="300"/>
 
 The notifications include what type of update was initiated and its status.
 
