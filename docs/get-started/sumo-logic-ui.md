@@ -54,7 +54,7 @@ You'll land on the Sumo Logic **Home** page, which provides an at-a-glance view 
 * Recently Opened Dashboards
 * Recently Run Searches
 * Recommended Dashboards 
-* Pinned Searches<br/><img src={useBaseUrl('img/get-started/dashboard-searches.png')} alt="dashboard-searches.png" style={{border: '1px solid gray'}} width="500" />
+* Pinned Searches<br/><img src={useBaseUrl('img/get-started/dashboard-searches.png')} alt="Dashboard searches" style={{border: '1px solid gray'}} width="500" />
 
 ## Left navigation panel
 
@@ -67,19 +67,19 @@ Access your dashboard libraries, searches, folders, and your personal collection
 * Your **Library**, which contains:
    * Your own **Installed Apps** from the App Catalog.
    * Your **Personal** dashboards and searches.
-   * Dashboards and searches shared within your organization.<br/><img src={useBaseUrl('/img/get-started/library.png')} alt="library.png" style={{border: '1px solid gray'}} width="500"/> <br/>Click **Open library page** to use the **Library** search bar to find items quickly. **View as** mode should be set to **Me**.<br/><img src={useBaseUrl('img/get-started/library-search.png')} alt="library-search.png" style={{border: '1px solid gray'}} width="700"/> <br/>If you're an admin, you can view the Library in Content Administrator mode. The **Content Administrator** library is available to Administrator roles only. To browse this content, go to **Library** > click **Open Library page** > click the **View as** dropdown > click **Content Administrator**.<br/><img src={useBaseUrl('img/get-started/library-content-admin.gif')} alt="library-content-admin.gif" width="800"/>
-* **Recent** dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/recent.png')} alt="recent.png" width="400"/>
-* Your **Favorites** list of favorited dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/favs.png')} alt="favs.png" style={{border: '1px solid gray'}} width="400"/>
+   * Dashboards and searches shared within your organization.<br/><img src={useBaseUrl('/img/get-started/library.png')} alt="Library" style={{border: '1px solid gray'}} width="500"/> <br/>Click **Open library page** to use the **Library** search bar to find items quickly. **View as** mode should be set to **Me**.<br/><img src={useBaseUrl('img/get-started/library-search.png')} alt="Library search" style={{border: '1px solid gray'}} width="700"/> <br/>If you're an admin, you can view the Library in Content Administrator mode. The **Content Administrator** library is available to Administrator roles only. To browse this content, go to **Library** > click **Open Library page** > click the **View as** dropdown > click **Content Administrator**.<br/><img src={useBaseUrl('img/get-started/library-content-admin.gif')} alt="Library content admin" width="800"/>
+* **Recent** dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/recent.png')} alt="Recent" width="400"/>
+* Your **Favorites** list of favorited dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/favs.png')} alt="Favs" style={{border: '1px solid gray'}} width="400"/>
 
 :::tip
-Enlarge your working area by hiding the left-side nav panel. Just click the hamburger menu icon. To unhide it, click the hamburger menu icon again.<br/><img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="hamburger.gif" width="300"/>
+Enlarge your working area by hiding the left-side nav panel. Just click the hamburger menu icon. To unhide it, click the hamburger menu icon again.<br/><img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="Hamburger" width="300"/>
 :::
 
 ## Top navigation bar
 
 The global toolbar (top nav bar) provides access to critical functions and settings, in the following order: [Go To...](#go-to-menu-options), [Help](/docs/get-started/help), and your user profile options ([Notifications](/docs/get-started/account-settings-preferences) and [Preferences](/docs/get-started/account-settings-preferences)).
 
-<img src={useBaseUrl('/img/get-started/admin-config.png')} alt="admin-config.png" style={{border: '1px solid gray'}} width="300"/>
+<img src={useBaseUrl('/img/get-started/admin-config.png')} alt="Admin config" style={{border: '1px solid gray'}} width="300"/>
 
 ### Go To... menu options
 
@@ -102,7 +102,7 @@ For more information, see [Account Preferences and Credentials](account-settings
 
 To enhance multitasking, you can now keep multiple tab open simultaneously (for example: log search, dashboards, App Catalog, and Preferences) using your web browser's tab grouping functionality. By adding Sumo Logic tabs to a tab group, any new tabs opened within the Sumo Logic platform will automatically open in the same tab group.
 
-<img src={useBaseUrl('/img/get-started/tabs.png')} alt="tabs.png" width="500" />
+<img src={useBaseUrl('/img/get-started/tabs.png')} alt="Tabs" width="500" />
 
 This also allows you to collapse the tab group to reclaim valuable real estate in your browser's tab bar.
 
@@ -160,7 +160,7 @@ To add a dashboard to your Favorites:
 To add a log search to your Favorites:
 1. [Save the search](/docs/search/get-started-with-search/search-basics/save-search) (if not already saved) by clicking **Save As**. Then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
 1. Click **Save**.
-1. Click the three-dot kebab icon and select **Favorite** from the dropdown list. <br/><img src={useBaseUrl('img/get-started/favorite-saved-search.png')} alt="favorite-saved-search.png" width="200"/>
+1. Click the three-dot kebab icon and select **Favorite** from the dropdown list. <br/><img src={useBaseUrl('img/get-started/favorite-saved-search.png')} alt="Favorite saved search" width="200"/>
 
 ### Share a dashboard, search, or folder
 
@@ -175,7 +175,7 @@ For walkthrough instructions, go to the [Share Content](/docs/manage/content-sh
 
 To see dashboards, searches, and folders that have been shared with you, do the following:
 
-1. From the left-side nav, click **Recent**.<br/><img src={useBaseUrl('img/get-started/recent.png')} alt="recent.png" width="400"/>
+1. From the left-side nav, click **Recent**.<br/><img src={useBaseUrl('img/get-started/recent.png')} alt="Recent" width="400"/>
 1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.<br/><img src={useBaseUrl('img/get-started/ui/Dash3.png')} alt="Dropdown menu with Recently Opened By and Recently Shared With Me options" width="200"/>
 
 ### Pin and manage searches
@@ -186,8 +186,8 @@ You must start a search for the **Pin** option to appear. To pin a search, do t
 
 1. Open a Search page.
 1. Enter a query in the search box and click **Start**.
-1. Click the three-dot icon and select **Pin** from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/pin-search.png')} alt="pin-search.png" width="200"/>
-1. A message appears telling you the location of your pinned search in the **Library**. The pinned search takes the name of the Search tab by default.<br/><img src={useBaseUrl('img/get-started/pinmessage.png')} alt="pinmessage.png" width="350"/>
+1. Click the three-dot icon and select **Pin** from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/pin-search.png')} alt="Pin search" width="200"/>
+1. A message appears telling you the location of your pinned search in the **Library**. The pinned search takes the name of the Search tab by default.<br/><img src={useBaseUrl('img/get-started/pinmessage.png')} alt="Pinmessage" width="350"/>
 1. To change the name of a pinned search, double-click the Search tab and enter a new name in the name field.
 
 Once a search is pinned, it cannot be unpinned, but you can remove it from the **Pinned Searches** tab. You can pin up to 10 searches at a time. Queries that use the [`save` operator](/docs/search/search-query-language/search-operators/save) cannot be pinned.
@@ -251,7 +251,7 @@ We understand that the removal of in-app tabs in the New UI is a significant cha
 
 After analyzing tab usage data, we've found that a minimal portion of previously opened tabs are actively utilized by our users. Consequently, the Sumo Logic UI often remains cluttered with multiple unused tabs. With the introduction of the New UI experience, if you fail to close browser tabs from previous sessions, they will automatically reload upon login.
 
-<img src={useBaseUrl('img/get-started/tab-reload.gif')} alt="tab-reload.gif" />
+<img src={useBaseUrl('img/get-started/tab-reload.gif')} alt="Tab reload" />
 
 Moreover, we've made the **Recents** feature more prominent in the navigation bar and plan to extend it to other content types which will make it easier for users to open recently opened tabs.
 </details>
@@ -269,7 +269,7 @@ If you switch back to the Classic UI, you will not have access to:
 
 The Classic UI will be retired in 2025 and will no longer receive updates. The exact date will be communicated closer to the transition. If you still need to access it temporarily, select **Switch to classic UI** from the left navigation menu.
 
-<img src={useBaseUrl('img/get-started/return-to-classic.png')} alt="return-to-classic.png" width="200"/>
+<img src={useBaseUrl('img/get-started/return-to-classic.png')} alt="Return to classic" width="200"/>
 
 We encourage you to stay in the New UI and take advantage of its benefits!
 

@@ -80,7 +80,7 @@ To rename or close a tab, do the following:
 
 Log Search, Metrics, and Live Tail tabs have additional options you can use to customize your environment. The tabs even stay open when you sign out and sign back in again, so you can start where you left off. Clicking any of the following icons opens a tabbed window.
 
-<img src={useBaseUrl('img/get-started/ui/WTS_UI_LogSearch-Metrics-LiveTail.png')} alt="WTS_UI_LogSearch-Metrics-LiveTail.png" width="200"/>
+<img src={useBaseUrl('img/get-started/ui/WTS_UI_LogSearch-Metrics-LiveTail.png')} alt="UI log search Metrics Live Tail" width="200"/>
 
 To access additional Log Search, Metrics, and Live Tail options, do the following:
 
@@ -128,7 +128,7 @@ This section shows you how to get started working with logs and metrics. The li
 To launch a search, metrics visualization, or live tail session, do the following:
 
 1. Go to the Sumo Logic **Home** page.
-1. Click one of the following Home page icons:<br/><img src={useBaseUrl('img/get-started/ui/home-icons.png')} alt="home-icons.png" style={{border: '1px solid gray'}}  width="600"/>
+1. Click one of the following Home page icons:<br/><img src={useBaseUrl('img/get-started/ui/home-icons.png')} alt="Home icons" style={{border: '1px solid gray'}}  width="600"/>
    * [Log Search](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
    * [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
    * [Traces](/docs/apm/traces/). Monitor user activity, span analytics, service maps, and transaction traces between microservices.
@@ -161,7 +161,7 @@ To view Favorites and add to the list, do the following:
 1. To add a search to the Favorites list, do the following:
    1. [Save the search](/docs/search/get-started-with-search/search-basics/save-search) (if not already saved) by clicking **Save As**, then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
    1. Click **Save**.
-   1. Click the three-dot kebab icon and click **Favorite** from the provided options. <br/> <img src={useBaseUrl('img/get-started/ui/favorite-saved-search.png')} alt="favorite-saved-search.png" width="200"/>
+   1. Click the three-dot kebab icon and click **Favorite** from the provided options. <br/> <img src={useBaseUrl('img/get-started/ui/favorite-saved-search.png')} alt="Favorite saved search" width="200"/>
 
 ### Share a dashboard, search, or folder
 
@@ -193,7 +193,7 @@ To pin a search, do the following:
 
 1. Open a Search page.
 1. Enter a query in the search box and click **Start**.
-1. Click the three-dot kebab icon and click **Pin** from the provided options.<br/><img src={useBaseUrl('img/get-started/ui/pin-search.png')} alt="pin-search.png" style={{border: '1px solid gray'}} width="200"/>
+1. Click the three-dot kebab icon and click **Pin** from the provided options.<br/><img src={useBaseUrl('img/get-started/ui/pin-search.png')} alt="Pin search" style={{border: '1px solid gray'}} width="200"/>
 1. A message appears telling you the location of your pinned search in the Library. The Pinned Search takes the name of the Search tab by default.<br/><img src={useBaseUrl('img/get-started/ui/pinmessage.png')} alt="Location of pinned search" style={{border: '1px solid gray'}} width="500" />
 1. To change the name of a Pinned Search, double-click the Search tab and enter a new name in the name field.
 

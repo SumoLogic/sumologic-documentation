@@ -44,7 +44,7 @@ You may edit the retention period of partitions and Scheduled Views. The minimum
 1. On the **Partitions** or **Scheduled Views** tab, hover over the item you would like to edit the retention period for.
 1. Click the three-dot kebab icon on the right of the desired row, and from the menu select **Edit Retention Period**. (You may also edit the retention period from the expanded information dialog. Next to **Retention Period**, click **Edit**.)
 1. In the **Edit Retention Period** dialog, enter the new retention period in days.
-   1. If the new retention period is longer than the previous period, click **Save**.<br/> <img src={useBaseUrl('img/manage/partitions-data-tiers/edit_retention_period_save.png')} alt="edit_retention_period_save.png" style={{border:'1px solid gray'}} width="300"/>
+   1. If the new retention period is longer than the previous period, click **Save**.<br/> <img src={useBaseUrl('img/manage/partitions-data-tiers/edit_retention_period_save.png')} alt="Edit retention period save" style={{border:'1px solid gray'}} width="300"/>
       :::info
       The new retention policy will apply to all logs in the partition that have not yet aged out, not just to newly ingested data.
       :::

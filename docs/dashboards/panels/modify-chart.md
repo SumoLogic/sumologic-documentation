@@ -37,7 +37,7 @@ To modify general settings click the **General** icon in the menu bar.<br/><im
 * To change the font size click the **Title Font Size** arrows up or down. 
 * To add a helpful description, click in the **Description** field and enter a brief explanation of the chart's purpose.
 
-To save your settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC_Update_Dashboard.png" width="300"/>
+To save your settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC Update dashboard" width="300"/>
 
 ### Logs settings
 

@@ -10,7 +10,7 @@ description: Learn how to fetch device and alerts logs from Armis platform and s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="80" />
+<img src={useBaseUrl('img/send-data/armis-icon.png')} alt="Armis icon" width="80" />
 
 Armis API is a device security platform that discover devices, tracks behavior, detects threats, and takes action to protect your business. The Source integration ingests alert and device data from the Armis platform.
 
@@ -32,10 +32,10 @@ Armis and Sumo Logic recommend using the Armis SIEM Integration, which pushes lo
 In this configuration, you will set up an Armis source account and configure it to be authorized and authenticated to use device logs and alerts from Armis API.
 To obtain an Armis auth token, follow the steps below:
 1. Log into the [Armis](https://armis.com/) application.
-1. Navigate to **Settings** > **API Management** on your Armis application.<br/> <img src={useBaseUrl('img/send-data/armis-settings.png')} alt="armis-settings.png" width="900" style={{border:'1px solid gray'}} />
-1. Create a new API secret key if you haven't created one yet by clicking the **Create** button from the API Management page.<br/> <img src={useBaseUrl('img/send-data/create-api.png')} alt="create-api.png" width="=700" />
-1. Click **Show** to view the secret key.<br/> <img src={useBaseUrl('img/send-data/show-secretkey.png')} alt="show-secretkey.png" width="700" />
-1. A popup window will be displayed. Copy and paste the secret key to a folder location. Remember, you will need to enter this key while creating the **Armis Cloud-to-Cloud Source**.<br/><img src={useBaseUrl('img/send-data/show-key.png')} alt="show-key.png" width="400" />
+1. Navigate to **Settings** > **API Management** on your Armis application.<br/> <img src={useBaseUrl('img/send-data/armis-settings.png')} alt="Armis settings" width="900" style={{border:'1px solid gray'}} />
+1. Create a new API secret key if you haven't created one yet by clicking the **Create** button from the API Management page.<br/> <img src={useBaseUrl('img/send-data/create-api.png')} alt="Create API" width="=700" />
+1. Click **Show** to view the secret key.<br/> <img src={useBaseUrl('img/send-data/show-secretkey.png')} alt="Show secretkey" width="700" />
+1. A popup window will be displayed. Copy and paste the secret key to a folder location. Remember, you will need to enter this key while creating the **Armis Cloud-to-Cloud Source**.<br/><img src={useBaseUrl('img/send-data/show-key.png')} alt="Show key" width="400" />
 
 ### Source configuration
 
@@ -48,8 +48,8 @@ To configure an Armis Source:
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a checkmark is shown when the field exists in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a checkmark is shown when the field exists in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. In **Instance URL**, enter the Armis hostname.
    :::info
    Armis Instance URL is the Armis hostname. For example, `https://armis-instance.armis.com`.

@@ -34,7 +34,7 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
         * **Event hub namespace**. Select the namespace.
         * **Event hub name (optional)**. Select the hub name.
         * **Event hub policy name**. Leave the default policy, **RootManageSharedAccessKey**, or select another as desired.
-          <br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-audit.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting-audit.png" width="800"/>
+          <br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-audit.png')} style={{border: '1px solid gray'}} alt="Diagnostic setting audit" width="800"/>
     1. Click **Save.**
 
 ## Installing the Azure Audit app
