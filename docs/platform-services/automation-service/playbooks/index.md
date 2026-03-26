@@ -10,7 +10,7 @@ import ActionsLimit from '../../../reuse/actions-limit.md';
 
 Playbooks can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
 
-To run a playbook, add it to an automation. You can run playbooks in [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), and [Cloud SOAR](/docs/cloud-soar/automation/#run-playbooks-in-cloud-soar). Sumo Logic provides a number of out-of-the-box playbooks that you can use install to use your automations. See [Playbooks in App Central](/docs/platform-services/automation-service/playbooks-in-app-central/).
+To run a playbook, add it to an automation. You can run playbooks in [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), and [Cloud SOAR](/docs/cloud-soar/automation/#run-playbooks-in-cloud-soar). Sumo Logic provides a number of out-of-the-box playbooks that you can use install to use your automations. See [Out-of-the-Box Playbooks in App Central](/docs/platform-services/automation-service/playbooks-in-app-central/).
 
 :::note
 <ActionsLimit/>
@@ -40,7 +40,7 @@ You can use Terraform to manage playbooks with the [`sumologic_csoar_playbook`](
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/platform-services/automation-service/playbooks/arrays-in-playbooks/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Arrays in Playbooks</h4></a>
-  <p>Learn how to handle arrays in Automation Service playbooks </p>
+  <p>Learn how to handle arrays in Automation Service playbooks. </p>
   </div>
 </div>
 <div className="box smallbox card">

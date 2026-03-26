@@ -62,6 +62,10 @@ To configure a GitHub Copilot Source, follow the steps below:
 1. **Metrics Period(in days)**. Specifies the number of past days for which metrics data should be collect. This is set to 1 day by default. You can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the GitHub Copilot source, consider installing the Sumo Logic app for [GitHub Copilot](/docs/integrations/saas-cloud/github-copilot/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for more details.

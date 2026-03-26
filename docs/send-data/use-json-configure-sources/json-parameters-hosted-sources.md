@@ -76,6 +76,7 @@ The Google Workspace Apps Audit Source cannot be created with JSON. This Source
 | [Google Cloud Platform Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#google-cloud-platform-source) | HTTP |
 | [HTTP Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#http-source) | HTTP |
 | [Microsoft Graph Security API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source) | Universal |
+| [Microsoft Office 365 Audit Source](#microsoft-office-365-audit-source) | HTTP |
 | [Mimecast Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source) | Universal |
 | [Netskope Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) | Universal |
 | [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) | Universal |
@@ -91,6 +92,7 @@ The Google Workspace Apps Audit Source cannot be created with JSON. This Source
 | Field Type | Type Value |
 |:--|:--|
 | [AWS CloudWatch Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awscloudwatchsource) | Polling |
+| [Azure Metrics Source](#azure-metrics-source) | Polling |
 
 ## Log Source parameters for Hosted Collectors
 
@@ -542,6 +544,52 @@ To disable S3 Replay use the `NoPathExpression` placeholder for `path` and `a
 }
 ```
 
+### Microsoft Office 365 Audit Source
+
+:::note
+When creating a Microsoft Office 365 Audit source via JSON in Sumo Logic, only the **App Registration**–based authentication method is supported. Authentication using user account credentials is not supported for JSON-based source creation. [Learn more](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source/#vendor-configuration).
+:::
+
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for a Microsoft Office 365 Audit Source.
+
+| Parameter | Type | Required | Default | Description | Example |
+|:---|:---|:---|:---|:---|:---|
+| sourceType | String | Yes | `null` | HTTP | Not modifiable |
+| workload | String | Yes | `null` | Select the type of log to collect. If you want to collect from additional content types, create additional instances of this source type. | `Audit.Exchange` |
+| region | String | Yes | `Commercial` | Select the region that corresponds to your Microsoft 365 or Office 365 subscription plan. | not modifiable |
+| tenantId | String | Yes | `null` | Enter the tenant Id collected from the Azure platform. | `11111111‑aaaa‑2222‑bbbb‑333333333333` |
+| clientId | String | Yes | `null` | Enter the client Id collected from the Azure platform.| `44444444‑cccc‑5555‑dddd‑666666666666` |
+| clientSecret | String | Yes | `null` | Enter the client secret collected from the Azure platform.| `xxxxxxxx‑super‑secret‑value‑xxxxxxxx` |
+
+Microsoft Office 365 Audit Source JSON example: 
+
+```json
+{
+"api.version":"v1",
+   "source": {
+     "sourceType": "HTTP",
+     "name": "o365-api-test-app",
+     "category": "o365/audit",
+     "thirdPartyRef": {
+       "resources": [{
+         "serviceType": "O365AuditNotification",
+         "path": {
+           "type": "O365NotificationPath",
+           "workload": "Audit.Exchange",
+           "region": "Commercial"
+         },
+         "authentication": {
+           "type": "O365AppRegistrationAuthentication",
+           "tenantId": "test-tenant-id",
+           "clientId": "test-client-id",
+           "clientSecret": "test-client-secret"
+         }
+       }]
+     }
+   }
+}
+```
+
 ## Metrics Source parameters for Hosted Collectors
 
 ### AWS CloudWatch Source
@@ -630,4 +678,29 @@ This is an AWS Kinesis Firehose for Metrics Source JSON example:
     }
   }
 }
+```
+
+### Azure Metrics Source
+
+The following parameters are for an Azure Metrics Source.
+
+| Parameter | Type | Required | Default | Description | Example |
+|:---|:---|:---|:---|:---|:---|
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"`
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| environment | String | Yes | `null` | Type of environment from which you would like to collect metrics. | |
+| limitToRegions | Array | No | `null` | Specify the regions from which you want to collect metrics. To collect from all regions, leave `null`. | |
+| limitToNamespaces | Array | No | `null` | Specify the namespaces from which you want to collect metrics. To collect from all namespaces, leave `null`. | |
+| tagFilters | JSON Object | No | `null` | For each namespace, if defined, the source will only collect metrics for resources that match the tag filter. | |
+| tenantId | String | Yes | `null` | Enter the tenant Id collected from the Azure platform. | |
+| clientId | String | Yes | `null` | Enter the client Id collected from the Azure platform.| |
+| clientSecret | String | Yes | `null` | Enter the client secret collected from the Azure platform.| |
+| scanInterval | Integer | No | 1 minute | How frequently the integration should collect the metrics data from Azure. <br/> **Options**: 1m or 5m. |  |
+
+Azure Metrics Source JSON example:
+
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/hosted-collectors/azure-metrics/example.json
 ```

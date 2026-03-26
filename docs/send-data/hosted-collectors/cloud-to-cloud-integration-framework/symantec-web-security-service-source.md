@@ -65,6 +65,10 @@ To configure a Symantec Web Security Service Source:
 1. **API Username** and **Password**. Provide the Symantec Web Security Service user credentials you want to use to authenticate collection requests. This was copied during the [Vendor configuration](#vendor-configuration) steps above.
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Symantec Web Security Service source, consider installing the Sumo Logic app for [Symantec Web Security Service](/docs/integrations/saas-cloud/symantec-web-security-service/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata fields
 
 | Field | Value | Description |

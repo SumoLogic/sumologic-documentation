@@ -2998,6 +2998,7 @@
   "/cid/1131": "/docs/integrations/bigdata/opentelemetry/apache-hadoop-opentelemetry",
   "/cid/1136": "/docs/integrations/amazon-aws/amazon-sagemaker",
   "/cid/1139": "/docs/integrations/microsoft-azure/azure-firewall",
+  "/cid/1140": "/docs/integrations/microsoft-azure/azure-subscription",
   "/cid/1141": "/docs/integrations/saas-cloud/litellm",
   "/cid/1142": "/docs/integrations/aiml/opentelemetry/openllmetry",
   "/cid/1143": "/docs/integrations/sumo-apps/data-volume-mssp",

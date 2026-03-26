@@ -1,8 +1,8 @@
 ---
 id: example-files-integration-framework
-title: Example Files for the Integration Framework
+title: Example Files for the Open Integration Framework
 sidebar_label: Example Files
-description: See example files for the integration framework. 
+description: See example files for the open integration framework. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
