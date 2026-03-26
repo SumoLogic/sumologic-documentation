@@ -58,6 +58,10 @@ To configure a OneLogin source:
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the source, click **Save**.
 
+:::info
+After configuring the OneLogin source, consider installing the Sumo Logic app for [OneLogin](/docs/integrations/saml/onelogin/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
