@@ -2283,7 +2283,7 @@ integrations: [
          'integrations/microsoft-azure/sql',
          'integrations/microsoft-azure/azure-sql-elastic-pool',
          'integrations/microsoft-azure/azure-sql-managed-instance',
-         'integrations/microsoft-azure/azure-stream-analytics',
+         'integrations/microsoft-azure/azure-subscription',
          'integrations/microsoft-azure/azure-synapse-analytics',
          'integrations/microsoft-azure/azure-virtual-machine',
          'integrations/microsoft-azure/azure-virtual-network',
