@@ -117,7 +117,7 @@ import CisNote from '../../reuse/cis-note.md';
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/security-threat-detection/sailpoint')}><img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} width="150"/><h4>SailPoint</h4></a>
+  <a href={useBaseUrl('docs/integrations/security-threat-detection/sailpoint')}><img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} alt="SailPoint logo" width="150"/><h4>SailPoint</h4></a>
   <p>A guide to the Sumo Logic app for SailPoint.</p>
   </div>
 </div>

@@ -574,7 +574,7 @@ If your user account is not an administrator check your role assignment for any
 
 #### Verify that your Collectors are running
 
-Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/>. Stopped Collectors and Sources are marked with <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/>. Stopped Collectors do not send any data.
+Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/>. Stopped Collectors and Sources are marked with <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/>. Stopped Collectors do not send any data.
 
 If a Collector is stopped, you can verify the Collector's status and restart it if necessary.
 

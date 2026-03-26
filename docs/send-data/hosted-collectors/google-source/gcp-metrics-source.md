@@ -44,13 +44,13 @@ To create and configure a Service Account and download the JSON authentication f
 
 1. Visit your Google Cloud project’s [credentials page](https://console.cloud.google.com/apis/credentials) for the project you want to monitor.
 2. Click **Create Credentials** and select **Service account**.
-<img src={useBaseUrl('img/send-data/service-acct.png')} alt="send-data/service-account.png" />
+<img src={useBaseUrl('img/send-data/service-acct.png')} alt="Send data for service account" />
 3. Enter a unique name and click **Create**.
-<img src={useBaseUrl('img/send-data/service-acct-create.png')} alt="send-data/service-account-create.png" />
+<img src={useBaseUrl('img/send-data/service-acct-create.png')} alt="Send data for service account create" />
 4. Click the Service account on the page to modify roles and download the JSON key.
 5. Click the **Permissions** tab and add the following roles: Compute Viewer, Monitoring Viewer, and Cloud Asset Viewer.
 6. Click the **Keys** tab then **Add Key**.
-<img src={useBaseUrl('img/send-data/service-acct-keys.png')} alt="send-data/service-account-keys.png" />
+<img src={useBaseUrl('img/send-data/service-acct-keys.png')} alt="Send data for service account keys" />
 7. Select JSON and click **Create**. You will use the downloaded JSON file when creating the source.
 
 For more information, see [Service account credentials](https://developers.google.com/workspace/guides/create-credentials#service-account).
@@ -60,7 +60,7 @@ For more information, see [Service account credentials](https://developers.googl
 If you create and manage all service accounts in one project which is different than the project Sumo Logic will collect metrics from, you need to add the Principal to the project you will collect GCP metrics.
 
 1. In the project, select **IAM** in the left navigation.
-2. Click **+Add**. <br/><img src={useBaseUrl('img/send-data/add-principal.png')} alt="add-principal.png" />
+2. Click **+Add**. <br/><img src={useBaseUrl('img/send-data/add-principal.png')} alt="Add principal" />
 1. Enter the email for the Service Account to add as a principal, for example: `server@example.gsserviceaccount.com`.
 2. **Select a role** from the list, or click +Add Another Role as needed.
 3. Click **Save**.
@@ -73,9 +73,9 @@ For information on available metrics, see [GCP Metrics](https://cloud.google.com
 1. Select an existing Hosted Collector upon which to add the Source. If you do not already have a Collector you would like to use, create one, using the instructions on [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 3. Click **Add Source** next to a Hosted Collector.
-4. Search for and select **GCP Metrics**. <br/><img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="gcp-icon.png" width="80"/>
+4. Search for and select **GCP Metrics**. <br/><img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="GCP icon" width="80"/>
 5. **Name**. Enter a name to display for the new source.
-<img src={useBaseUrl('img/send-data/gcp-metrics-basic.png')} alt="gcp-metrics-basic.png" />
+<img src={useBaseUrl('img/send-data/gcp-metrics-basic.png')} alt="GCP metrics basic" />
 6. **Description.** Optional description.
 7. **Regions**. Optional limit to selected Google Cloud regions.
   :::note
@@ -125,14 +125,14 @@ For information on available metrics, see [GCP Metrics](https://cloud.google.com
 
   </details>
 
-9. **Custom Services** (Optional). A Custom Service for collecting custom metrics. Click the **+Add** link to add a custom service using a name (key) and value. For example, enter `service1` and `custom.googleapis.com/my_cumulative_metric1;custom.googleapis.com/my_cumulative_metric2;`.<br/><img src={useBaseUrl('img/send-data/gcp-custom-services.png')} alt="gcp-custom-services.png" />
+9. **Custom Services** (Optional). A Custom Service for collecting custom metrics. Click the **+Add** link to add a custom service using a name (key) and value. For example, enter `service1` and `custom.googleapis.com/my_cumulative_metric1;custom.googleapis.com/my_cumulative_metric2;`.<br/><img src={useBaseUrl('img/send-data/gcp-custom-services.png')} alt="GCP custom services" />
   :::note
   Do not use quotes when entering a custom service.
   :::
 10. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices#good-and-bad-source-categories). Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions). This can be a maximum of 1,024 characters.
 11. **Fields**. Click the **+Add link** to add custom log metadata [Fields](/docs/manage/fields), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
-    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 12. **GCP Access**. Upload the JSON Google service account credentials file. This allows Sumo Logic to make API calls to Google Cloud.
 
