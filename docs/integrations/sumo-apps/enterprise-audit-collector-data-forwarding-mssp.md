@@ -17,9 +17,9 @@ The Enterprise Audit - Collector and Data Forwarding Management for MSSP app pre
 
 The Audit Event Index is only available for Trial and Enterprise accounts.
 
-| Account Type    | Account Level      |
-| :--------- | :-------- |
-| Cloud Flex    | Trial, Enterprise    |
+| Account Type | Account Level |
+| :-- | :-- |
+| Cloud Flex | Trial, Enterprise |
 | Credits | Trial, Enterprise Operations, Enterprise Suite, Enterprise Security |
 
 ## Installing the Enterprise Audit - Collector and Data Forwarding Management for MSSP app
