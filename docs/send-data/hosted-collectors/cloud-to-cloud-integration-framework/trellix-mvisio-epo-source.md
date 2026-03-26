@@ -53,6 +53,10 @@ To configure a Trellix mVision ePO Source, follow the steps below:
 1. (Optional) The **Polling Interval** is set for 5 minutes by default. You can adjust it based on your needs. This sets how often the Source checks for new data.
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the Trellix mVision ePO source, consider installing the Sumo Logic app for [Trellix mVision ePO](/docs/integrations/saas-cloud/trellix-mvision-epo/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## Metadata field
 
 | Field | Value | Description |

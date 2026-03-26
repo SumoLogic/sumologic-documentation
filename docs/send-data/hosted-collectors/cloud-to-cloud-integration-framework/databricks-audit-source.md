@@ -65,6 +65,10 @@ To configure Databricks Audit Source:
 1. The **Polling Interval** is set for 5 minutes by default. You can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Save**.
 
+:::info
+After configuring the Databricks Audit source, consider installing the Sumo Logic app for [Databricks Audit](/docs/integrations/saas-cloud/databricks-audit/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
