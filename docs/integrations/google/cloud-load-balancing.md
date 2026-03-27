@@ -7,7 +7,7 @@ description: The Sumo Logic App for Google Cloud Load Balancing helps you monito
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/clb.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/clb.png')} alt="Cloud Load Balancing icon" width="50"/>
 
 Google Cloud Load Balancing is Google’s load balancing service for Google Cloud Platform. The Sumo Logic App for Google Cloud Load Balancing helps you monitor your **Application load balancer** activity. There are 3 types of Application load balancer available in GCP:
 - Global External

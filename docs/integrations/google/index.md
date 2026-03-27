@@ -337,7 +337,7 @@ This guide has documentation for all of the apps that Sumo Logic provides for Go
   </div>
   <div className="box smallbox card">
     <div className="container">
-      <img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
+      <img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="150"/>
       <h4><a href={useBaseUrl('docs/integrations/google/workspace')}>Google Workspace</a></h4>
       <p>A guide to the Sumo Logic app for Google Workspace.</p>
     </div>

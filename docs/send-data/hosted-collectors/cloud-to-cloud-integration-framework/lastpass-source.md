@@ -10,7 +10,7 @@ description: Learn how to collect audit reporting events from LastPass platform.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/lastpass.png')} alt="thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/send-data/lastpass.png')} alt="LastPass icon" width="55"/>
 
 LastPass is a password manager tool that allows you to store, secure, and autofill your passwords. LastPass' users get a password vault, which is the encrypted part of the LastPass password manager where passwords, secure notes, and sensitive information are safely stored. The LastPass source collects audit reporting events data and sends it to Sumo Logic.
 

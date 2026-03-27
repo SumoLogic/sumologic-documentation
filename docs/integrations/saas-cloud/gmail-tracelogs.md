@@ -175,7 +175,7 @@ The **Gmail Trace Logs - Security Overview** dashboard lets you monitor spam mes
 
 The **CrowdStrike Analysis**. To protect your organisation from threats, the app also scans the SHA256 hash of Gmail attachments with CrowdStrike's threat detection service.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/crowdstrike-analysis.png')} alt="Crowdstrike Analysis" width="900"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/crowdstrike-analysis.png')} alt="CrowdStrike Analysis" width="900"/>
 
 ## Upgrading the Microsoft Teams app (optional)
 

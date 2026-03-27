@@ -46,7 +46,7 @@ This guide has documentation for Sumo apps for web servers.
 
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="thumbnail icon" width="100"/>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="Microsoft IIS 10 icon" width="100"/>
   <h4><a href={useBaseUrl('docs/integrations/web-servers/iis-10')}>IIS 10</a></h4>
   <p>The IIS 10 app is a unified logs and metrics app that helps you monitor your IIS web servers' availability, performance, health, and resource utilization.</p>
   </div>

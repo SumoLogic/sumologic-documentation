@@ -152,7 +152,7 @@ You can use Terraform to provide apps with the [`sumologic_app`](https://registr
 </div>
 <div className="box smallbox card">
    <div className="container">
-   <a href={useBaseUrl('docs/integrations/security-threat-detection')}><img src={useBaseUrl('img/icons/security/detect-insider-threats.png')} alt="thumbnail icon" width="45"/><h4>Security and Threat Detection</h4></a>
+   <a href={useBaseUrl('docs/integrations/security-threat-detection')}><img src={useBaseUrl('img/icons/security/detect-insider-threats.png')} alt="Detect Insider Threats icon" width="45"/><h4>Security and Threat Detection</h4></a>
    <p>Learn about Sumo apps for Security and Threat Detection.</p>
   </div>
 </div>

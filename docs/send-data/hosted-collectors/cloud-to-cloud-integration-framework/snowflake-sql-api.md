@@ -10,7 +10,7 @@ description: Learn how to collect metrics from Snowflake SQL aggregation queries
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="thumbnail icon" width="150"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="Snowflake icon" width="150"/>
 
 The Snowflake SQL API source can be used to execute SQL queries with aggregation fields and translate the results to metrics. This source only collects metrics and does not currently collect any log data.
 

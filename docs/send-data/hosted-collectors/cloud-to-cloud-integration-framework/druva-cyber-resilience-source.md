@@ -10,7 +10,7 @@ description: Learn how to configure the Druva Cyber Resilience Cloud-to-Cloud so
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="Druva icon" width="85"/>
 
 The Druva Data Resiliency Cloud provides unified, easy-to-manage data protection for all workloads. Druva’s cyber resilience solutions keep backup data safe, help to prepare for cyber attacks, and automate the process of recovering data.
 

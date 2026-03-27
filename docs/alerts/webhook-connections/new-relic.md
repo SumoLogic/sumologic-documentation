@@ -7,7 +7,7 @@ description: Send data from alerts to your New Relic account.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src='https://newrelic.com/themes/custom/erno/assets/mediakit/new_relic_logo_horizontal.png' alt="thumbnail icon" width="100"/>
+<img src='https://newrelic.com/themes/custom/erno/assets/mediakit/new_relic_logo_horizontal.png' alt="New Relic Logo Horizontal icon" width="100"/>
 
 New Relic webhook connections allow you to send alert results to New Relic as a custom event (Insight). You can learn more about the New Relic Insights custom events in their [API Help](https://docs.newrelic.com/docs/insights/explore-data/custom-events/insert-custom-events-insights-api).
 

@@ -7,7 +7,7 @@ description: The Google Cloud Firewall App enables you to monitor request activi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/firewall.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/firewall.png')} alt="Firewall icon" width="50"/>
 
 The Google Cloud Firewall App enables you to monitor request activity and the effect of your firewall rules. Google Cloud Platform (GCP) firewall rules can allow or deny traffic to and from VMs in a Google VPC network.
 

@@ -154,13 +154,13 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="50"/><h4>Carbon Black Cloud (Tag)</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="VMware Carbon Black Cloud icon" width="50"/><h4>Carbon Black Cloud (Tag)</h4></a>
   <p>Provides a secure endpoint to receive data from the Carbon Black Cloud, Enriched Event Search, and Alerts APIs.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="50"/><h4>Carbon Black Inventory</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="VMware Carbon Black Cloud icon" width="50"/><h4>Carbon Black Inventory</h4></a>
   <p>Provides a secure endpoint to receive data from the CB Devices API.</p>
   </div>
 </div>
@@ -226,37 +226,37 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>Crowdstrike</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="65"/><h4>Crowdstrike</h4></a>
   <p>Provides a secure endpoint to receive event data from the CrowdStrike Streams API.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike FDR</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="65"/><h4>CrowdStrike FDR</h4></a>
   <p>Provides a secure endpoint to ingest Falcon Data Replicator events using the S3 ingestion.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike FDR Host Inventory</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="65"/><h4>CrowdStrike FDR Host Inventory</h4></a>
   <p>Provides a secure endpoint to receive device data from the CrowdStrike Host and Host Group Management APIs.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike FileVantage</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="65"/><h4>CrowdStrike FileVantage</h4></a>
   <p>Learn how to collect file integrity monitoring logs from the CrowdStrike FileVantage platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike Spotlight</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="65"/><h4>CrowdStrike Spotlight</h4></a>
   <p>Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike Spotlight platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike Threat Intel</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="65"/><h4>CrowdStrike Threat Intel</h4></a>
   <p>Learn how to collect combined endpoint indicators data from the CrowdStrike Threat Intel platform.</p>
   </div>
 </div>
@@ -310,19 +310,19 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source')}><img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="thumbnail icon" width="110"/><h4>Druva</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source')}><img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="Druva icon" width="110"/><h4>Druva</h4></a>
   <p>Learn how to configure the Druva C2C source setup in your Sumo Logic environment.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source')}><img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="thumbnail icon" width="110"/><h4>Druva Cyber Resilience</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source')}><img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="Druva icon" width="110"/><h4>Druva Cyber Resilience</h4></a>
   <p>Learn how to configure the Druva Cyber Resilience C2C source setup in your Sumo Logic environment.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="thumbnail icon" width="40"/><h4>Duo</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="Duo icon" width="40"/><h4>Duo</h4></a>
   <p>Provides a secure endpoint to receive authentication logs from the Duo Authentication Logs API.</p>
   </div>
 </div>
@@ -352,19 +352,19 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="180"/><h4>Google Workspace AlertCenter</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="180"/><h4>Google Workspace AlertCenter</h4></a>
   <p>Configure Google Workspace AlertCenter Cloud-to-Cloud connector.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="180"/><h4>Google Workspace</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="180"/><h4>Google Workspace</h4></a>
   <p>Collects a list of users from the Google Workspace Users API.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/intel471-threat-intel.png')} alt="thumbnail icon" width="100"/><h4>Intel 471 Threat Intel</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/intel471-threat-intel.png')} alt="Intel471 Threat Intel icon" width="100"/><h4>Intel 471 Threat Intel</h4></a>
   <p>Learn to collect threat indicators from the Intel 471 platform.</p>
   </div>
 </div>
@@ -412,13 +412,13 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source')}><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="25"/><h4>Microsoft Azure AD Inventory (Tag)</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source')}><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="Active Directory icon" width="25"/><h4>Microsoft Azure AD Inventory (Tag)</h4></a>
   <p>Collects user and device data from the Microsoft Graph API Security endpoint.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source/')}><img src={useBaseUrl('img/send-data/mandiant-threat-intel-logo.png')} alt="thumbnail icon" width="60"/><h4>Mandiant Threat Intel</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source/')}><img src={useBaseUrl('img/send-data/mandiant-threat-intel-logo.png')} alt="Mandiant Threat Intel icon" width="60"/><h4>Mandiant Threat Intel</h4></a>
   <p>Learn to collect threat indicators from the Mandiant platform.</p>
   </div>
 </div>
@@ -460,13 +460,13 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/><h4>Netskope</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope icon" width="75"/><h4>Netskope</h4></a>
   <p>Provides a secure endpoint to receive event data from the Netskope API.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/><h4>Netskope WebTx</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope icon" width="75"/><h4>Netskope WebTx</h4></a>
   <p>The Netskope WebTx API integration ingests Web Transaction logs from Netskope Event Stream.</p>
   </div>
 </div>
@@ -484,7 +484,7 @@ In this section, we'll introduce the following concepts:
 </div>
   <div className="box smallbox card">
     <div className="container">
-    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="100"/><h4>Palo Alto Cortex XDR</h4></a>
+    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="Palo Alto Network icon" width="100"/><h4>Palo Alto Cortex XDR</h4></a>
     <p>Allows you to ingest incidents from your Cortex XDR application.</p>
     </div>
   </div>

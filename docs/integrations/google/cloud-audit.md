@@ -7,7 +7,7 @@ description: The Google Cloud Audit App helps you monitor the activities in your
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/cloudaudit.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/cloudaudit.png')} alt="Cloud Audit icon" width="50"/>
 
 The Google Cloud Audit App helps you with audit and compliance by enabling you to monitor activities and track the actions of administrators in your Google Cloud Platform projects. The preconfigured dashboards provide insight into the network, security, operations, and users of your Google Cloud Platform projects.
 

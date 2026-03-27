@@ -8,7 +8,7 @@ description: The Sumo Logic App for Google Compute Engine helps you monitor your
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
-<img src={useBaseUrl('img/integrations/google/ce.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/google/ce.png')} alt="Compute Engine icon" width="75"/>
 
 Google Compute Engine is an Infrastructure as a Service (IaaS) component of Google Cloud Platform that delivers virtual machines running in Google's data centres and worldwide fibre network. The Sumo Logic app for Google Compute Engine helps you to monitor your infrastructure by providing preconfigured dashboards that allow you to view the activities, users, and message severity along with performance metrics monitoring CPU, network, disk, and quotas for your Google Compute Engine infrastructure.
 

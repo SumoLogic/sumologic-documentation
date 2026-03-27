@@ -10,7 +10,7 @@ description: Learn how to collect events from Smartsheet platform.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/smartsheet.png')} alt="thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/send-data/smartsheet.png')} alt="Smartsheet icon" width="55"/>
 
 Smartsheet is used to collaborate on project timelines, documents, calendars, tasks, and other works. Smartsheet integrates and connects with many of the systems teams use today. This allows for efficient information sharing, improved collaboration, and decision-making across teams’ tech stack. The Smartsheet source collects and ingests the events that are occurring in your Smartsheet organization account. Examples of events are creation, update, load, and delete of sheets, reports, dashboards, attachments, and users.
 

@@ -7,7 +7,7 @@ description: The Sumo Logic app for Netskope provides visibility into security p
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope icon" width="75"/>
 
 The Sumo Logic app for Netskope provides visibility into the security posture of your applications and helps you determine the overall usage of software and SaaS applications.
 

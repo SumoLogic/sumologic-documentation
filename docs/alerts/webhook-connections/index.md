@@ -69,13 +69,13 @@ In this section, we'll introduce the following concepts and more:
 </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="thumbnail icon" width="55"/>
+    <img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="Microsoft Teams icon" width="55"/>
     <h4><a href={useBaseUrl('docs/alerts/webhook-connections/microsoft-teams')}>MS Teams</a></h4>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src='https://newrelic.com/themes/custom/erno/assets/mediakit/new_relic_logo_horizontal.png' alt="thumbnail icon" width="100"/>
+    <img src='https://newrelic.com/themes/custom/erno/assets/mediakit/new_relic_logo_horizontal.png' alt="New Relic Logo Horizontal icon" width="100"/>
     <h4><a href={useBaseUrl('docs/alerts/webhook-connections/new-relic')}>New Relic</a></h4>
     </div>
   </div>

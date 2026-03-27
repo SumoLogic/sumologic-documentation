@@ -62,7 +62,7 @@ The maximum number of Collectors allowed per organization is 10,000.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/google-source')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="125"/><h4>Google Sources</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/google-source')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="125"/><h4>Google Sources</h4></a>
   <p>Collect data from your Google Cloud Platform and other products.</p>
   </div>
 </div>
@@ -74,7 +74,7 @@ The maximum number of Collectors allowed per organization is 10,000.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-syslog-source')}><img src={useBaseUrl('img/send-data/cloud-syslog.png')} alt="thumbnail icon" width="60"/><h4>Cloud Syslog Sources</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-syslog-source')}><img src={useBaseUrl('img/send-data/cloud-syslog.png')} alt="Cloud Syslog icon" width="60"/><h4>Cloud Syslog Sources</h4></a>
   <p>Configure a cloud syslog source to send data to Sumo Logic.</p>
   </div>
 </div>

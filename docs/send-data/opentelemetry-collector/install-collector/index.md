@@ -22,7 +22,7 @@ Learn how to install the Sumo Logic OpenTelemetry Collector on various platforms
   </div>
   <div className="box smallbox card">
    <div className="container">
-    <a href={useBaseUrl('docs/send-data/opentelemetry-collector/install-collector/windows')}><img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="25"/><h4>Install Collector on Windows</h4></a>
+    <a href={useBaseUrl('docs/send-data/opentelemetry-collector/install-collector/windows')}><img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="25"/><h4>Install Collector on Windows</h4></a>
     <p>Install the OpenTelemetry collector on Windows.</p>
     </div>
   </div>

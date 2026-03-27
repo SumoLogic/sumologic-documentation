@@ -7,7 +7,7 @@ description: Analyze CrowdStrike Falcon FileVantage data to identify unauthorize
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="85"/>
 
 The Sumo Logic app for CrowdStrike Falcon FileVantage enables security analysts to monitor and analyze file integrity across your environment. Leveraging the CrowdStrike Falcon FileVantage data helps detect unauthorized or high-risk file changes, policy violations, and suspicious activity that may indicate potential threats or compliance breaches.
 

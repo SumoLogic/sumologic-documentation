@@ -7,7 +7,7 @@ description: Send notifications from alerts to Microsoft Teams.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="Microsoft Teams icon" width="50"/>
 
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
 
