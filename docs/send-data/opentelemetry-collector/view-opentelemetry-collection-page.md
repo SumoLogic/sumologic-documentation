@@ -49,7 +49,7 @@ The **Status Overview** panels provide a centralized, high-level health view of 
 ### Key Panels
 
 #### Collector(s) are due for upgrade
-- Displays collectors requiring upgrades.
+Displays the total number of collectors that require upgrades. Click **View Collectors** button to view the collectors that are older than the current version and needs upgrade. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/upgrade-available.png')} alt="status-overview" style={{border:'1px solid gray'}} />
 - You can click the **View Collectors** button to view the collectors that are older than the current version and needs upgrade.
 <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/upgrade-available.png')} alt="status-overview" style={{border:'1px solid gray'}} />
 
