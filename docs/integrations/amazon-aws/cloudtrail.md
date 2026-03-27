@@ -183,7 +183,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 See an overview of your AWS users, resources, network, and security events. The panels present information about top 10 users, failed logins, user locations, and resource creation and deletion.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-overview.png')} alt="AWS CloudTrail" width="900"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-Overview.png')} alt="AWS CloudTrail" width="900"/>
 
 **Geo Location of All Users**. Using a geolocation search, shows the locations of the IPs used by visitors on a map of the world.
 
@@ -202,7 +202,7 @@ See an overview of your AWS users, resources, network, and security events. The 
 
 See information about your AWS users, including user locations, administrative activities, and instance launch and termination by users.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-usermonitoring.png')} alt="AWS CloudTrail" width="900"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-User-Monitoring.png')} alt="AWS CloudTrail" width="900"/>
 
 **Geo Location of All Users**. Using a geolocation search, shows the locations of the IPs used by visitors on a map of the world for the last 24 hours.
 
@@ -217,11 +217,30 @@ See information about your AWS users, including user locations, administrative a
 **Recent Activity by Administrative Users**. Activity over the last three hours are displayed by the name of the event (CreateUser, PutUserPolicy, and so on) and by the user’s name and location.
 
 
+### Root User Monitoring
+
+See information about root user activity in your AWS account, including root user locations, administrative activities, and instance launch and termination by root user. This dashboard has the same panels as the User Monitoring dashboard but is filtered specifically for root user activity.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-Root-Users.png')} alt="AWS CloudTrail" width="900"/>
+
+**Geo Location of Root Users**. Using a geolocation search, shows the locations of the IPs used by the root user on a map of the world for the last 24 hours.
+
+**Root Account Activities Over Time**. Shows root user administrative activity every hour in a stacked column chart over the past 24 hours.
+
+**Top 10 Activities by Root Users**. See which activities have been performed the most by the root user in a bar chart for the last 24 hours.
+
+**Top 10 Users**. This panel displays the top 10 most active events by the root user in a column chart for the last 24 hours.
+
+**Launched and Terminated Instances by Root User**. Shows the number of instances that have either been launched or terminated by the root user every hour over the past 24 hours in a stacked column chart.
+
+**Recent Activity by Root Users**. Root user activity over the last three hours are displayed by the name of the event (CreateUser, PutUserPolicy, and so on) and by the user's location.
+
+
 ### Network and Security
 
 See information about network and security events, authorization failures, security group and network ACL changes, and short lived critical operations.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-network.png')} alt="AWS CloudTrail" width="900"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-Network-and-Security.png')} alt="AWS CloudTrail" width="900"/>
 
 **Authorization Failures from All Countries**. Uses a geolocation search to display a map of where failures occur world-wide.
 
@@ -244,7 +263,7 @@ See information about network and security events, authorization failures, secur
 
 See information about operations activity in your AWS account, including action events, requested AWS services, events by AWS region, created and deleted resources, and elastic IP address operations.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-operations.png')} alt="AWS CloudTrail" width="900"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-Operations.png')} alt="AWS CloudTrail" width="900"/>
 
 **Action Events**. Displays a list of events that correspond to a user performing a certain AWS action over the past hour.
 
@@ -263,7 +282,7 @@ See information about operations activity in your AWS account, including action 
 
 See information about CloudTrail console logins, including location of users, login events by user, logins from multiple IP address, logins from outside the US, and logins without multi-factor authentication.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-consolelogins.png')} alt="AWS CloudTrail" width="900"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-Console-Logins.png')} alt="AWS CloudTrail" width="900"/>
 
 **Geo Location of All Users**. Uses a geo lookup operation to display the locations of all users by IP address on a map of the world for the last 24 hours.
 
@@ -288,6 +307,8 @@ See information about CloudTrail console logins, including location of users, lo
 
 See information about S3 public objects and buckets, including counts of new public objects, public buckets, and modified public objects.
 
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-S3-Public-Objects-and-Buckets.png')} alt="AWS CloudTrail" width="900"/>
+
 **New Public Objects**. Shows a count of new public objects for the last 24 hours.
 
 **New Public Objects by Object-Bucket.** Displays new public objects per object on a timeline using the `timeslices` of one hour as a stacked column chart for the last 24 hours.
@@ -305,6 +326,33 @@ See information about S3 public objects and buckets, including counts of new pub
 **Modified Public Objects-Bucket**. Displays modified public objects per object on a timeline using the `timeslices` of one hour as a stacked column chart for the last 24 hours.
 
 **Modified Public Objects Table**. Displays a table with modified public objects in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
+
+## Create monitors for AWS CloudTrail app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS CloudTrail alerts
+
+| Name                                                                     | Description                                                                                                                                                                                                                                                                                             | Alert Condition | Recover Condition |
+|:-------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------|:------------------|
+| `AWS CloudTrail - Console Login Detected Without MFA(Multi Factor Auth)` | This alert is triggered when a console login without multi-factor authentication (MFA) is detected. `Note: Please change the _sourceCategory to match your collector’s source category instead of using the default value.`                                                                             | Count > 0       | Count < = 0       |
+| `AWS CloudTrail - IAM Policy Change Detected Alert`                      | This alert is triggered when an IAM policy change is detected. `Note: Please change the _sourceCategory to match your collector’s source category instead of using the default value.`                                                                                                                  | Count > 0       | Count < = 0       |
+| `AWS CloudTrail - KMS Key Deletion Alert`                                | This alert is triggered when a KMS key deletion is detected. `Note: Please change the _sourceCategory to match your collector’s source category instead of using the default value.`                                                                                                                    | Count > 0       | Count < = 0       |
+
+
+## Upgrade/Downgrade the AWS CloudTrail app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS CloudTrail app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Additional resources
 
