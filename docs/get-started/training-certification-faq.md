@@ -134,7 +134,7 @@ Both Analyst and Admin accounts are available for any learner to request. Choose
 
    <img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Lab credentials self-service tool" style={{border: '1px solid gray'}} width="600" />
 
-3. Click **Request Training Analyst Login** or **Request Training Admin Login** based on your course requirements.
+3. Click **Request Analyst Login** or **Request Admin Login** based on your course requirements.
 4. Review the summary confirmation that appears and accept to proceed.
 5. The system will automatically assign you an available account:
    * **Analyst accounts**. `training+analyst###@sumologic.com` (where ### is between 001-999).
