@@ -87,7 +87,7 @@ Only follow these steps if you are installing a Slack App on a specific workspac
 you have followed the prior steps for creating the Slack app with the appropriate permissions before continuing to this
 section.
 
-1. On the app settings page, click **Install App** and the **Install to Workspace** button. <br/><img src={useBaseUrl('img/send-data/slack-install-app-to-workspace.png')} alt="slack-install-app-to-workspace.png" width="650"/>
+1. On the app settings page, click **Install App** and the **Install to Workspace** button. <br/><img src={useBaseUrl('img/send-data/slack-install-app-to-workspace.png')} alt="Slack install app to workspace" width="650"/>
 2. Allow your new Slack App to monitor your workspace. <br/><img src={useBaseUrl('img/send-data/slack-app-allow.png')} alt="Allow App to Monitor Workspace" width="450"/>
 3. Save the generated access token. This will be used by the Sumo Logic  configuration for access. <br/><img src={useBaseUrl('img/send-data/slack-copy-user-token.png')} alt="Copy Token" width="500"/>
 
@@ -122,8 +122,8 @@ To configure a Slack Source:
 1. Enter a **Name** for the Source. The **Description** is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **API Auth Bearer Token**. Enter the Slack App access token from the previous steps.
 1. **Slack API Collection**. Select the Slack collection API you want to collect logs from (Web or Audit).
 1. **Polling Interval in Minutes**. Enter the frequency in minutes for collecting the data. Default is 5 mins.

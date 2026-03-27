@@ -35,7 +35,7 @@ The integration with CyberArk EPM's API allows for retrieving administrative, de
 In this configuration, you will set up a CyberArk EPM source account and configure it to be authorized and authenticated to use CyberArk API. CyberArk EPM supports EPM Authentication. It authenticates a user to EPM using the username and password and returns a token and EPM server URL.
 To set up a CyberArk account, follow the steps below:
 1. Navigate to [CyberArk](https://login.epm.cyberark.com/login) application.
-1. Enter the **Username** and **Password** of your choice. You can enter any combination of letters, numbers, or special characters for both the username and password. There are no limitations on the length or complexity of the username and password either. <br/> <img src={useBaseUrl('img/send-data/login-cyberark.png')} alt="login-cyberark.png" width="600" />
+1. Enter the **Username** and **Password** of your choice. You can enter any combination of letters, numbers, or special characters for both the username and password. There are no limitations on the length or complexity of the username and password either. <br/> <img src={useBaseUrl('img/send-data/login-cyberark.png')} alt="Login CyberArk" width="600" />
 
 ### Source configuration
 
@@ -50,8 +50,8 @@ To configure a CyberArk EPM Source, follow the steps below:
 1. **Source Category**. Enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. Fields. (Optional) Click **+Add** to ad additional fields; each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **EPM Username**. Enter your EPM username from the [Vendor configuration](#vendor-configuration) section.
 1. **EPM User Password**. Enter your EPM password from the [Vendor configuration](#vendor-configuration) section.
 1. **CyberArk EPM Dispatch Server**. Enter your CyberArk EPM Dispatch Server URL, it is the dispatch server for your region. Following are some examples of dispatch server URLs:

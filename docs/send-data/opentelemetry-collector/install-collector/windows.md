@@ -39,7 +39,7 @@ You can install our OpenTelemetry Collector using either of the following method
 1. Select the **Time Zone**. By default, the timezone is set to `(UTC) Etc/UTC`.
 1. (Optional) In the **Collector Settings**, select the **Ephemeral** checkbox to auto-delete your collector after 12 hours and select the **Locally Manage Collector** checkbox if you want to configure, maintain, and monitor the collector locally.
 1. Copy the command.
-1. Open PowerShell and execute the command in the PowerShell where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-install-command.png')} alt="windows-ui-installation-6.png" width="900" />
+1. Open PowerShell and execute the command in the PowerShell where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-install-command.png')} alt="Windows UI installation - PowerShell" width="900" />
 1. Wait for the installation process to complete, then click **Next** to proceed.
 1. On the next screen, you will see a list of available Source Templates. Select the required Source Template and proceed with the data configuration.
 
@@ -81,13 +81,13 @@ The script is going to perform the following operations:
 ### Manual Step-by-Step Installation
 
 1. Go to the [latest release documentation](https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest).
-2. Download `otelcol-sumo_x.y.z.0_en-US.x64.msi` from the `Assets` section.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation.png')} alt="windows-installation.png" width="450" />
-3. Run Installer.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-1.png')} alt="windows-installation-1.png" width="450" />
-4. Read and accept End-User License Agreement.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-2.png')} alt="windows-installation-2.png" width="450" />
-5. Select binary destination.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-3.png')} alt="windows-installation-3.png" width="450" />
-6. Set Installation Token and Tags properties.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-4.png')} alt="windows-installation-4.png" width="450" />
-7. Click **Install** to begin installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-5.png')} alt="windows-installation-5.png" width="450" />
-8. Wait for installation to be completed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-6.png')} alt="windows-stallation-6.png" width="450" />
+2. Download `otelcol-sumo_x.y.z.0_en-US.x64.msi` from the `Assets` section.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation.png')} alt="Assets section" width="450" />
+3. Run Installer.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-1.png')} alt="Setup wizard" width="450" />
+4. Read and accept End-User License Agreement.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-2.png')} alt="Destination folder" width="450" />
+5. Select binary destination.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-3.png')} alt="Windows installation 3" width="450" />
+6. Set Installation Token and Tags properties.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-4.png')} alt="Installation token" width="450" />
+7. Click **Install** to begin installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-5.png')} alt="Click Install" width="450" />
+8. Wait for installation to be completed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-6.png')} alt="Finish button" width="450" />
 9. You can modify configuration, which should be placed in `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config` directory.
    :::note
    `C:\ProgramData` directory is hidden by default.
@@ -160,9 +160,9 @@ Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumolog
 
 ## Uninstall
 
-1. Go to **Add or remove programs**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-1.png')} alt="windows-uninstallation-1.png" width="550" />
-1. Find **OpenTelemetry Collector** and click **Uninstall**.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-2.png')} alt="windows-uninstallation-2.png" width="550" />
-1. Confirm the uninstallation.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-3.png')} alt="windows-uninstallation-3.png" width="350" />
+1. Go to **Add or remove programs**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-1.png')} alt="Windows uninstallation 1" width="550" />
+1. Find **OpenTelemetry Collector** and click **Uninstall**.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-2.png')} alt="Add or remove programs" width="550" />
+1. Confirm the uninstallation.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-3.png')} alt="Uninstall" width="350" />
 
 ## Upgrading the Collector
 

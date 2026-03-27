@@ -27,7 +27,7 @@ To learn about the vendors and products that Sumo Logic integrates with, refer t
 
 Many of our apps are labeled with the **Certified by Sumo Logic** designation. Just look for the blue checkmark symbol:
 
-<img src={useBaseUrl('img/get-started/cert-app.png')} alt="cert-app.png" style={{border:'1px solid gray'}} width="500" />
+<img src={useBaseUrl('img/get-started/cert-app.png')} alt="Cert app symbol" style={{border:'1px solid gray'}} width="500" />
 
 These apps have gone through code and functional review with the Sumo Logic app development team as part of the [App Intelligence Partner Program](https://www.sumologic.com/technology-partners). This process includes feedback and re-review as needed, and ensures that apps certified through this process meet the team's quality standards.
 

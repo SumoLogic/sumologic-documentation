@@ -63,6 +63,42 @@ The app uses [Mimecast Source](/docs/send-data/hosted-collectors/cloud-to-cloud-
   "recipientAddress": "sam@mimecast.com"
 }
 ```
+```json title="Audit Log"
+{
+  "id": "eNoVzt0KgjAYgOF72bGQWyIt6MDU1Kz1p2nSSenMhfqRm",
+  "auditType": "Completed Directory Sync",
+  "user": "user1@gmail.com",
+  "eventTime": "2026-03-19T07:43:54+0000",
+  "eventInfo": "Action Performed - Processed 10 domain(s) by unknown user Date: 2026-03-19 Time: 03:43:08 -0400 IP: unknown Application: ADSync",
+  "category": "account_logs"
+}
+```
+```json title="Hold Message List Log"
+{
+  "id": "eNpVzskOgjAABNB_6VUPLRrbkngBA0gEN",
+  "reason": "Message Hold Applied - Spam Signature policy",
+  "reasonId": "MESSAGE_HOLD_APPLIED_SPAM_SIGNATURE_POLICY",
+  "reasonCode": "message_hold_applied_spam_signature_policy",
+  "from": {
+    "emailAddress": "useru70oki54@gmail.com",
+    "displayableName": "JAH & CO. IP"
+  },
+  "fromHeader": {
+    "emailAddress": "user5dy2h709@gmail.com",
+    "displayableName": "JAH & CO. IP"
+  },
+  "to": {
+    "emailAddress": "userm9obo5nt@gmail.com",
+    "displayableName": "Foreigntm"
+  },
+  "subject": "RE: Temporary Extensions for Submission of Documents",
+  "route": "INBOUND",
+  "hasAttachments": false,
+  "size": 37742,
+  "dateReceived": "2026-03-19T09:16:26+0000",
+  "policyInfo": "Carey y Cia Spam Scanning"
+}
+```
 </details>
 
 ## Sample queries
@@ -70,20 +106,54 @@ The app uses [Mimecast Source](/docs/send-data/hosted-collectors/cloud-to-cloud-
 <details>
 <summary>View Sample Queries</summary>
 
-```sql title="Messages Delivered Without TLS"
-_sourceCategory=Labs/mimecast   delivered direction
-| json "accountId","delivered","tlsUsed" as account_id, delivered, use_tls nodrop
-| where delivered="true" 
-| where use_tls="false"
-| count(account_id)
+```sql title="Total Audit Events"
+_sourceCategory={{Logsdatasource}} auditType id
+| json "id", "auditType", "user", "category" as id, audit_type, user, category nodrop
+
+// global filters
+| where audit_type matches "{{audit_type}}" and category matches "{{category}}" and user matches "{{user}}"
+
+| count by id
+| count
 ```
 
 ```sql title="DLP Events Over Time"
-_sourceCategory=Labs/mimecast   messageId policy action
-| json "messageId","policy","action","route","recipientAddress","senderAddress" as message_id, policy, action, route, recipient, sender nodrop
-| timeslice 1d
-| count(message_id) as frequency by _timeslice
+_sourceCategory={{Logsdatasource}} senderAddress 
+| json "messageId", "action", "policy", "route", "senderAddress", "recipientAddress" as id, action, policy, route, sender, receiver nodrop
+
+// global filters
+| where action matches "{{action}}" and policy matches "{{policy}}" and route matches "{{route}}" and sender matches "{{sender}}" and receiver matches "{{receiver}}"
+
+| timeslice 1h
+| count by id, _timeslice
+| count as count by _timeslice
 | fillmissing timeslice
+```
+
+```sql title="Hold Messages by Policy"
+_sourceCategory={{Logsdatasource}} reasonCode policyInfo
+| json "id", "reasonCode", "route", "policyInfo", "from.emailAddress", "to.emailAddress" as id, reason_code, route, policy_info, sender_email, receiver_email nodrop
+
+// global filters
+| where reason_code matches "{{reason_code}}" and route matches "{{route}}" and policy_info matches "{{policy_info}}" and sender_email matches "{{sender_email}}" and receiver_email matches "{{receiver_email}}" 
+
+| count by id, policy_info
+| count by policy_info
+| sort by _count, policy_info asc
+```
+
+```sql title="Geo Location of Senders"
+_sourceCategory={{Logsdatasource}} eventType senderIp
+| json "aggregateId", "eventType","action","accountId", "route", "senderIp" as id, event_type, action, account_id, route, sender_ip nodrop
+
+// global filters
+| where if ("{{event_type}}" = "*", true, event_type matches "{{event_type}}")
+| where if ("{{account_id}}" = "*", true, account_id matches "{{account_id}}")
+
+| count by id, sender_ip
+| count by sender_ip
+| lookup latitude, longitude from geo://location on ip = sender_ip
+| where !isNull(latitude)
 ```
 </details>
 
@@ -118,14 +188,63 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 
 * Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
-### Overview
+### Mimecast - Audit Events Overview
 
-The **Mimecast - Overview** dashboard provides a comprehensive view of the message logs and related Data Loss Prevention(DLP) policies. This dashboard provides insight into the total number of messages delivered and messages delivered and received without TLS. Additionally, this dashboard enables monitoring of messages that triggered DLP policies over time, the top 10 DLP policies, and a summary of recent messages that triggered DLP.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Mimecast/Mimecast+-+Overview+new.png' alt="Mimecast-Overview" />
+The **Mimecast - Audit Events Overview** dashboard provides comprehensive monitoring of Mimecast audit events including directory sync operations, user activities, and administrative actions. Use this dashboard to track operational health, detect anomalous activity patterns, and investigate audit trail details.
 
-### Email Activity Summary
+<img src={useBaseUrl('img/integrations/saas-cloud/Mimecast-Audit-Events-Overview.png')} alt="Mimecast - Audit Events Overview Dashboard" width="600"/>
 
-The **Mimecast - Email Activity Summary** dashboard provides a comprehensive view of the message traffic for both incoming and outgoing messages. This dashboard provides insight into the geographic locations of senders and recipients, rejection types for messages, received message status, delivered message direction, and a summary of both message types. Additionally, this dashboard displays information on the most frequently used ciphers, domains that are not using TLS, and reasons for messages being on hold.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Mimecast/Mimecast+-+Email+Activity+Summary+new.png' alt="Mimecast-Email-Activity-Summary" />
+### Mimecast - DLP Policy Monitoring
 
-### Target Threat Protection
+The **Mimecast - DLP Policy Monitoring** dashboard monitors Mimecast Data Loss Prevention policy triggers across email traffic. Use this dashboard to investigate DLP action patterns, identify top senders and recipients triggering policies, detect anomalous DLP volumes, and review policy enforcement effectiveness.
 
-The **Mimecast - Target Threat Protection** dashboard provides a comprehensive view of the threat protection logs resulting from any malicious activity. This dashboard provides a summary of the recent attachment threats detected, recent activity on malicious URLs, and recent blocked emails. Additionally, this dashboard provides insight into the top 10 recipients and senders of malicious attachment messages and the top 10 malicious senders and targeted recipients.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Mimecast/Mimecast+-+Target+Threat+Protection+new.png' alt="Mimecast-Target-Threat-Protection" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Mimecast-DLP-Policy-Monitoring.png')} alt="Mimecast - DLP Policy Monitoring Dashboard" width="600"/>
+
+### Mimecast - Hold Message Analysis
+
+The **Mimecast - Hold Message Analysis** dashboard monitors quarantined and held email messages across Mimecast policies. Use this dashboard to investigate spam hold patterns, identify top targeted recipients, detect hold volume anomalies, and review policy effectiveness.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Mimecast-Hold-Message-Analysis.png')} alt="Mimecast - Hold Message Analysis Dashboard" width="600"/>
+
+### Mimecast SIEM Logs - Overview
+
+The **Mimecast SIEM Logs - Overview** dashboard presents a comprehensive view of siem message logs and related data loss prevention policies. It tracks the total number of messages delivered, along with those delivered and received without TLS. Additionally, the dashboard enables monitoring of messages that triggered data loss prevention policies over time.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Mimecast-SIEM-Logs-Overview.png')} alt="Mimecast SIEM Logs - Overview Dashboard" width="600"/>
+
+### Mimecast SIEM Logs - Threat Protection
+
+The **Mimecast SIEM Logs - Threat Protection** dashboard provides valuable insights into protection logs. It features several widgets, such as the top 10 recipients and senders, action types, and the most common attachment types.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Mimecast-SIEM-Logs-Threat-Protection.png')} alt="Mimecast SIEM Logs - Threat Protection Dashboard" width="600"/>
+
+### Mimecast SIEM Logs - Email Processing and Delivery
+
+The **Mimecast SIEM Logs - Email Processing and Delivery** dashboard offers significant insights into message traffic for both incoming and outgoing messages. It provides useful details such as the geographic locations of senders and recipients, rejection types for messages, received message status, delivered message direction, and a brief summary of both message types. Moreover, the dashboard displays information on the most frequently used ciphers, domains that are not using TLS, and reasons for messages being on hold.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Mimecast-SIEM-Logs-Email-Processing-and-Delivery.png')} alt="Mimecast SIEM Logs - Email Processing and Delivery Dashboard" width="600"/>
+
+## Create monitors for Mimecast app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Mimecast alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `Mimecast - Sender from Embargoed Geo Locations` | Monitors and highlights events where sender is located in sanctioned or embargoed regions to maintain adherence to legal and regulatory standards. | Critical | Count > 0 |
+| `Mimecast - Receiver from Embargoed Geo Locations` | Monitors and highlights events where receiver is located in sanctioned or embargoed regions to maintain adherence to legal and regulatory standards. | Critical | Count > 10 |
+
+## Upgrade/Downgrade the Mimecast app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Mimecast app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

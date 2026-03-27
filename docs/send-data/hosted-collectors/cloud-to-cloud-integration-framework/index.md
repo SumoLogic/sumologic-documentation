@@ -148,7 +148,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source')}><img src={useBaseUrl('img/send-data/box-logo.svg')} alt="box-logo.svg" width="80" /><h4>Box</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source')}><img src={useBaseUrl('img/send-data/box-logo.svg')} alt="Box logo" width="80" /><h4>Box</h4></a>
   <p>The Box API integration ingests events from the GetEvents API.</p>
   </div>
 </div>
@@ -304,7 +304,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source')}><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-icon.svg')} alt="dropbox-icon.png" width="45"/><h4>Dropbox</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source')}><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-icon.svg')} alt="Dropbox icon" width="45"/><h4>Dropbox</h4></a>
   <p>Provides a secure endpoint to receive team events from the Get Events API.</p>
   </div>
 </div>
@@ -508,19 +508,19 @@ In this section, we'll introduce the following concepts:
   </div>
     <div className="box smallbox card">
     <div className="container">
-    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source')}><img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="qualys-icon.png" width="150" /><h4>Qualys VMDR</h4></a>
+    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source')}><img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="Qualys icon" width="150" /><h4>Qualys VMDR</h4></a>
     <p>The Qualys VMDR Source tracks errors, reports its health, and start-up progress.</p>
     </div>
 </div>
     <div className="box smallbox card">
     <div className="container">
-    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source')}><img src={useBaseUrl('img/send-data/rapid7-logo.png')} width="120"/><h4>Rapid7</h4></a>
+    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source')}><img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="Rapid7 logo" width="120"/><h4>Rapid7</h4></a>
     <p>Collects asset and vulnerabilities data from Rapid7 InsightVM.</p>
     </div>
   </div>
     <div className="box smallbox card">
     <div className="container">
-    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} width="120"/><h4>SailPoint</h4></a>
+    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} alt="SailPoint logo" width="120"/><h4>SailPoint</h4></a>
     <p>Provides a secure endpoint to receive Events and User Inventory data from the IdentityNow V3 API.</p>
     </div>
   </div>
@@ -532,7 +532,7 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source')}><img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="sentinelone-icon.png" width="50" /><h4>SentinelOne Mgmt API</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source')}><img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="SentinelOne icon" width="50" /><h4>SentinelOne Mgmt API</h4></a>
         <p>Collects data from the SentinelOne Management Console.</p>
         </div>
       </div>

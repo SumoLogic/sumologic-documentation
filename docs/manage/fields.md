@@ -67,8 +67,8 @@ Fields can be assigned to a collector and source using the **Fields** input ta
 1. Create or find and select the collector or source you want to assign fields to.
 1. Click the **+Add Field** link in the **Fields** section. Define the fields you want to associate, each field needs a name (key) and value.
 
-    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the fields table schema.
-    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 1. **Automatically activate all fields on save**. 
 
@@ -233,7 +233,7 @@ You need the **Manage Fields** [role capability](users-roles/roles/role-capab
 
 The Fields page displays the following information: 
 
-* **Status** shows a checkmark in a green circle <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> to indicate if the field is actively being applied or an exclamation mark in a red circle <img src={useBaseUrl('img/fields/red-exclamation-circle.png')} alt="Red exclamation circle" width="20" /> to indicate if the field is disabled and being dropped.
+* **Status** shows a checkmark in a green circle <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> to indicate if the field is actively being applied or an exclamation mark in a red circle <img src={useBaseUrl('img/fields/red-exclamation-circle.png')} alt="Red exclamation circle" width="20" /> to indicate if the field is disabled and being dropped.
 * **Field Name** is the name of the field, known as the key in the key-value pair.
 * **Data Type** shows the data type of the field.
 * **Field Extraction Rules** shows the number of Field Extraction Rules that reference the field.

@@ -37,7 +37,7 @@ You cannot delete a new child org once it is created.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.
 1. Click **+ Add Organization**.<br/> <img src={useBaseUrl('/img/manage/subscriptions/add-org.png')} alt="add-org" style={{border:'1px solid gray'}} width="800" />
-1. The **Create New Organization** pane appears. <br/> <img src={useBaseUrl('/img/manage/subscriptions/create-new-org.png')} alt="create-new-org.png" style={{border:'1px solid gray'}} width="400" />
+1. The **Create New Organization** pane appears. <br/> <img src={useBaseUrl('/img/manage/subscriptions/create-new-org.png')} alt="Create New Organization pane" style={{border:'1px solid gray'}} width="400" />
 
 ### Allocate credits
 

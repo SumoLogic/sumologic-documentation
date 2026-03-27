@@ -277,7 +277,7 @@ Use this dashboard to:
 
 The **SQL Server - Backup Restore Mirroring** dashboard provides information about the Transaction log backup events, Database backup events, Restore activities, Backup failures and reasons, and Mirroring errors.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Backup-Restore-Mirroring.png' />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Backup-Restore-Mirroring.png' alt="SQL Server - Backup Restore mMrroring dashboard" />
 
 ### Operations
 
