@@ -9,8 +9,6 @@ Based on user feedback, we're introducing several changes to the Sumo Logic Kube
 
 This page describes the major changes and the necessary migration steps.
 
-## Important changes
-
 ## Prometheus 3.0
 
 Prometheus 3.0 includes several breaking changes. Learn more about those changes and the migration guide in the [documentation](https://prometheus.io/docs/prometheus/latest/migration/).
@@ -168,10 +166,8 @@ Internally, Sumo Logic Helm Chart will convert this configuration into Routing c
 
 ## Metrics Server
 
-We have changed our bitnami based metrics server to the Open Source metrics server. 
+We have changed our Bitnami based metrics server to the open source Metrics Server. 
 
 ### How to upgrade
 
-The default configurations has been changed as per the [document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/helm/sumologic/README.md). Any existing customization involves porting configurations values from the [Bitnami metrics server specification](https://artifacthub.io/packages/helm/bitnami/metrics-server) to the [open-source metrics server specification](https://artifacthub.io/packages/helm/metrics-server/metrics-server).
-
-
+The default configurations has been changed as per [this document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/helm/sumologic/README.md). Any existing customization involves porting configurations values from the [Bitnami Metrics Server specification](https://artifacthub.io/packages/helm/bitnami/metrics-server) to the [open source Metrics Server specification](https://artifacthub.io/packages/helm/metrics-server/metrics-server).
