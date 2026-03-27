@@ -7,7 +7,7 @@ description: The Sumo Logic app for the Airtable app offers functionality for mo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="airtable-icon.png" width="50" />
+<img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="Airtable icon" width="50" />
 
 The Airtable app for Sumo Logic monitors and analyzes your organization's Airtable audit logs, providing insights into user activity, data trends, and security events. This app is based on the Airtable Audit Logs, which provide detailed information on all actions performed in your Airtable account.
 
@@ -139,11 +139,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Airtable - Overview** dashboard provides a high-level view of key metrics related to Airtable platform user activity, audits, and execution. It contains widgets that display data such as total audit logs and failed executions, action distribution, and top-performing actions and users. The dashboard also provides information on activity trends over time and user locations. The Audit Log Summary widget provides a quick overview of all platform activity. Overall, the dashboard helps users quickly understand how the platform is used and identify areas for improvement.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Airtable/Airtable+-+Overview.png')} alt="airtable-overview.png"/>
+The **Airtable - Overview** dashboard provides a high-level view of key metrics related to Airtable platform user activity, audits, and execution. It contains widgets that display data such as total audit logs and failed executions, action distribution, and top-performing actions and users. The dashboard also provides information on activity trends over time and user locations. The Audit Log Summary widget provides a quick overview of all platform activity. Overall, the dashboard helps users quickly understand how the platform is used and identify areas for improvement.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Airtable/Airtable+-+Overview.png')} alt="Airtable - Overview dashboard"/>
 
 ### Security Overview
 
-The **Airtable - Security Overview** dashboard provides a high-level view of user activity related to security on the platform. It includes widgets that show data such as newly created accounts, access tokens, and deleted org units and workspaces. The dashboard also tracks changes in authentication methods, downloaded attachments, role updates, and user activity trends. In addition, it highlights users who have been newly assigned admin roles and any collaborator changes, helping to improve overall security monitoring.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Airtable/Airtable+-+Security+Overview.png')} alt="airtable-security-overview.png"/>
+The **Airtable - Security Overview** dashboard provides a high-level view of user activity related to security on the platform. It includes widgets that show data such as newly created accounts, access tokens, and deleted org units and workspaces. The dashboard also tracks changes in authentication methods, downloaded attachments, role updates, and user activity trends. In addition, it highlights users who have been newly assigned admin roles and any collaborator changes, helping to improve overall security monitoring.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Airtable/Airtable+-+Security+Overview.png')} alt="Airtable - Security Overview dashboard"/>
 
 ## Create monitors for Airtable app
 

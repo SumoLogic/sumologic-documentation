@@ -25,7 +25,7 @@ This section explains the benefit of using `along` when you join metrics queries
 
 In the Metrics Search you can run up to six separate queries and display and compare the query results on the same chart. The queries are labeled from #A to #F.
 
-<img src={useBaseUrl('img/metrics/multiple-queries.png')} alt="multiple-queries.png" style={{border: '1px solid gray'}} width="700"/>
+<img src={useBaseUrl('img/metrics/multiple-queries.png')} alt="Multiple queries" style={{border: '1px solid gray'}} width="700"/>
 
 You can combine (join) the results of multiple queries, or use values from one query to filter values from another.
 
@@ -33,7 +33,7 @@ Here’s an example of a simple join that sums two metrics:
 
 `#C: #A + #B`
 
-<img src={useBaseUrl('img/metrics/simple-join.png')} alt="simple-join.png" style={{border: '1px solid gray'}} width="700"/>
+<img src={useBaseUrl('img/metrics/simple-join.png')} alt="Simple join" style={{border: '1px solid gray'}} width="700"/>
 
 This join works fine, if each of the joined queries returns a single result. But, if a query contains references to multiple rows, and two or more of the referenced rows return more than one result, you need to use an `along` statement to match time series from different rows using one or more fields that you specify.
 
@@ -124,7 +124,7 @@ For example, consider a joined query that compares the `CPU_User` metric from tw
 
 Doing a quick comparison of metrics and average value over a short period can yield can surprising results, as the screenshot below illustrates.
 
-<img src={useBaseUrl('img/metrics/odd-join-results.png')} alt="odd-join-results.png" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/metrics/odd-join-results.png')} alt="Odd join results" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 query `#C` computed the two values of the average value.

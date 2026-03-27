@@ -148,7 +148,7 @@ For example:
 
 #### I am seeing some errors related to Sumo Logic OpenTelemetry Collector stating that `Unable to collect from a file`. Does this mean my collector is not collecting any data?
 
-<img src={useBaseUrl('img/send-data/error-faq.png')} alt="error-faq.png" width="950" />
+<img src={useBaseUrl('img/send-data/error-faq.png')} alt="Error FAQ" width="950" />
 
 In this case, this means that the collector couldn’t find the file you wanted to collect logs from. There can be lot of reasons why this error happens, including not having appropriate permissions.
 
@@ -160,7 +160,7 @@ The collector will still collect and send data from other sources as long as the
 
 This is a result of not running the collector as root.
 
-<img src={useBaseUrl('img/send-data/error2-faq.png')} alt="error2-faq.png"  />
+<img src={useBaseUrl('img/send-data/error2-faq.png')} alt="Error FAQ - Result"  />
 
 #### Why am I seeing `Dropping data because sending_queue is full` in OpenTelemetry Collector logs?
 
@@ -216,7 +216,7 @@ service:
         - sumologic
 ```
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-ping.png')} alt="otel-ping.png" width="450" />
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-ping.png')} alt="OTEL ping" width="450" />
 
 [httpcheck_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/httpcheckreceiver/README.md
 
