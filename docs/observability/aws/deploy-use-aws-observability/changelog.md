@@ -9,6 +9,17 @@ This section provides details on the available versions of the AWS Observability
 
 To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Create a stack from the CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html) for more information.
 
+### AWSO lifecycle
+
+| Release (AWSO) | Release Date   | Active Support             | Additional Notes |
+|:---------------|:---------------|:---------------------------|:-----------------|
+| 2.13.0         | 7th Oct, 2025  | Yes                        | |
+| 2.12.0         | 1st April, 2025| Yes                        | |
+| 2.11.0         | 24th Jan, 2025 | Yes - Ends on 1st May 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th April, 2025 |
+| 2.10.0         | 4th Sep, 2024  | Yes - Ends on 1st May 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th April, 2025 |
+| 2.9.0          | 2nd Aug, 2024  | Yes - Ends on 1st May 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th April, 2025 |
+| 2.8.0 or Less  | 17th May, 2024 | No                         | AWS Lambda runtime Node.js 18.x was deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-deprecated)) |
+
 ## v2.13.0, 07-Oct-2025
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.13.0/sumologic_observability.master.template.yaml`
 
@@ -29,6 +40,7 @@ Updates:
 
 Deprecation:
 * The Global Intelligence for AWS CloudTrail DevOps app is scheduled for deprecation in the near future and, as a result, has been removed from the AWS Observability Solution.
+* AWS Observability Solution versions that rely on deprecated AWS Lambda runtimes are also considered deprecated. Since Nodejs18.x was deprecated on September 1st, 2025, all AWS Observability versions up to and including 2.8.0 are now deprecated.
 
 ## v2.12.0, 01-Apr-2025
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.12.0/sumologic_observability.master.template.yaml`
