@@ -19,7 +19,7 @@ In this section, you'll learn how to install and configure OpenTelemetry distrib
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/java')}><img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="131px Java Programming Language icon" width="30"/><h4>Java</h4></a>
+  <a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/java')}><img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="Java Programming Language icon" width="30"/><h4>Java</h4></a>
   </div>
 </div>
 <div className="box smallbox card">

@@ -53,7 +53,7 @@ Learn how to collect telemetry data from applications written in the following p
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="131px Java Programming Language icon" width="30"/>
+  <img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="Java Programming Language icon" width="30"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java')}>Java</a></h4>
   </div>
 </div>
@@ -109,7 +109,7 @@ Learn how to install and configure OpenTelemetry distributed tracing for AWS Lam
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="131px Java Programming Language icon" width="30"/>
+  <img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="Java Programming Language icon" width="30"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/java')}>Java</a></h4>
   </div>
 </div>
@@ -140,7 +140,7 @@ Setting up Tracing instrumentation for applications deployed in Kubernetes just 
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="131px Java Programming Language icon" width="30"/>
+  <img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="Java Programming Language icon" width="30"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes')}>Java</a></h4>
   </div>
 </div>
