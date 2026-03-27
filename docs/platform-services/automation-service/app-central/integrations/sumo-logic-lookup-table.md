@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic" width="100"/>
 
-***Version: 1.0
+***Version: 1.0  
 Updated: Mar 27, 2026***
 
 The Lookup Table Management API allows you to manage lookup tables from HTTP endpoints. Lookup tables enable you to enrich your log data with contextual information from external sources. For more information, see [Lookup Tables](/docs/search/lookup-tables/).
