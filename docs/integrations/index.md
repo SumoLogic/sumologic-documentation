@@ -164,7 +164,7 @@ You can use Terraform to provide apps with the [`sumologic_app`](https://registr
 </div>
 <div className="box smallbox card">
     <div className="container">
-    <a href={useBaseUrl('docs/integrations/webhooks/')}><img src={useBaseUrl('img/icons/cloud/scale-and-elastic.png')} alt="Scale And Elastic icon" width="50"/><h4>Webhooks</h4></a>
+    <a href={useBaseUrl('docs/integrations/webhooks/')}><img src={useBaseUrl('img/icons/cloud/scale-and-elastic.png')} alt="Scale and Elastic icon" width="50"/><h4>Webhooks</h4></a>
     <p>Documentation for Sumo Logic webhook integrations.</p>
   </div>
 </div>

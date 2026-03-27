@@ -33,14 +33,14 @@ If you're looking for an app for Microsoft Windows, see [Microsoft and Azure](/d
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Linux Transparent icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Linux icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/hosts-operating-systems/linux')}>Linux</a></h4>
   <p>A guide to the Sumo Logic app for Linux.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Linux Transparent icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Linux icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/hosts-operating-systems/linux-performance')}>Linux Performance (Deprecated)</a></h4>
   <p>A guide to the Sumo Logic app for Linux Performance.</p>
   </div>

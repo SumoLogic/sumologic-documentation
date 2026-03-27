@@ -102,7 +102,7 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-cache-for-redis.png')} alt="Azure Cache For Redis icon" width="60"/>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-cache-for-redis.png')} alt="Azure Cache for Redis icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-cache-for-redis')}>Azure Cache for Redis</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Cache for Redis.</p>
   </div>
@@ -130,7 +130,7 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-cosmos-db-for-postgresql.png')} alt="Azure Cosmos DB For PostgreSQL icon" width="60"/>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-cosmos-db-for-postgresql.png')} alt="Azure Cosmos DB for PostgreSQL icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-cosmos-db-for-postgresql')}>Azure Cosmos DB for PostgreSQL</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Cosmos DB for PostgreSQL.</p>
   </div>
@@ -151,21 +151,21 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-mariadb.png')} alt="Azure Database For MariaDB icon" width="60"/>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-mariadb.png')} alt="Azure Database for MariaDB icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-database-for-mariadb')}>Azure Database for MariaDB</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Database for MariaDB.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-mysql.png')} alt="Azure Database For MySQL icon" width="60"/>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-mysql.png')} alt="Azure Database for MySQL icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-database-for-mysql')}>Azure Database for MySQL</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Database for MySQL.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-postgresql.png')} alt="Azure Database For PostgreSQL icon" width="60"/>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-postgresql.png')} alt="Azure Database for PostgreSQL icon" width="60"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-database-for-postgresql')}>Azure Database for PostgreSQL</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Database for PostgreSQL.</p>
   </div>
@@ -305,13 +305,13 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/microsoft-azure/azure-security-defender-for-cloud')}><img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-cloud.png')} alt="Microsoft Defender For Cloud icon" width="75"/><h4>Azure Security - Defender for Cloud</h4></a>
+  <a href={useBaseUrl('docs/integrations/microsoft-azure/azure-security-defender-for-cloud')}><img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-cloud.png')} alt="Microsoft Defender for Cloud icon" width="75"/><h4>Azure Security - Defender for Cloud</h4></a>
   <p>Learn about the Sumo Logic collection process for the Azure Security - Defender for Cloud service.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps"><img src={useBaseUrl('img/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps.png')} alt="Azure Security Microsoft Defender For Cloud Apps icon" width="55"/><h4>Azure Security - Microsoft Defender for Cloud Apps</h4></a>
+  <a href="/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps"><img src={useBaseUrl('img/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps.png')} alt="Azure Security Microsoft Defender for Cloud Apps icon" width="55"/><h4>Azure Security - Microsoft Defender for Cloud Apps</h4></a>
   <p>Learn about the Sumo Logic collection process for the Azure Security - Microsoft Defender for Cloud Apps.</p>
   </div>
 </div>
@@ -419,7 +419,7 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-identity.png')} alt="Microsoft Defender For Identity icon" width="40"/>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-identity.png')} alt="Microsoft Defender for Identity icon" width="40"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/microsoft-defender-for-endpoint')}>Microsoft Defender for Endpoint</a></h4>
   <p>A guide to the Sumo Logic app for Microsoft Defender for Endpoint.</p>
   </div>

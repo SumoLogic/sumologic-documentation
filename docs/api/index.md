@@ -214,7 +214,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/api/saml-configuration')}><img src={useBaseUrl('img/icons/security/security-and-compliance.png')} alt="Security And Compliance icon" width="50"/><h4>SAML Configuration</h4></a>
+  <a href={useBaseUrl('docs/api/saml-configuration')}><img src={useBaseUrl('img/icons/security/security-and-compliance.png')} alt="Security and Compliance icon" width="50"/><h4>SAML Configuration</h4></a>
   </div>
 </div>
 <div className="box smallbox card">

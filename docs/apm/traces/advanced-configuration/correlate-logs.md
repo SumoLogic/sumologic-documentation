@@ -20,7 +20,7 @@ Our configurations, available in several programming languages, will inject the 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png' alt="Javascript Logo Transparent Logo Javascript Images 3 icon" width="95"/>
+  <img src='https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png' alt="JavaScript icon" width="95"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript/traceid-spanid-injection-into-logs')}>JavaScript</a></h4>
   <p>Injects data into user logs in your JavaScript apps.</p>
   </div>

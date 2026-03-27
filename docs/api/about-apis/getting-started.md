@@ -7,7 +7,7 @@ description: Authenticate and connect to Sumo Logic APIs. Learn how to set up ac
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/security-and-compliance.png')} alt="Security And Compliance icon" width="40"/>
+<img src={useBaseUrl('img/icons/security/security-and-compliance.png')} alt="Security and Compliance icon" width="40"/>
 
 This guide describes API authentication and the Sumo Logic endpoints to use for your API client.
 

@@ -59,7 +59,7 @@ Learn how to collect telemetry data from applications written in the following p
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png' alt="Javascript Logo Transparent Logo Javascript Images 3 icon" width="95"/>
+  <img src='https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png' alt="JavaScript icon" width="95"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript')}>JavaScript</a></h4>
   </div>
 </div>
@@ -146,7 +146,7 @@ Setting up Tracing instrumentation for applications deployed in Kubernetes just 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png' alt="Javascript Logo Transparent Logo Javascript Images 3 icon" width="95"/>
+  <img src='https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png' alt="JavaScript icon" width="95"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes')}>JavaScript</a></h4>
   </div>
 </div>

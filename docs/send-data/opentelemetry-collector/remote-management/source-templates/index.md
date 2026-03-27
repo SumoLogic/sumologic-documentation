@@ -43,7 +43,7 @@ In this section, we'll show you how to set up source templates for the following
   </div>
     <div className="box smallbox card">
     <div className="container">
-      <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/source-templates/linux')}><img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Linux Transparent icon" width="30"/><h4>Linux</h4></a><p>Learn how to configure our OTel Linux source template.</p>
+      <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/source-templates/linux')}><img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Linux icon" width="30"/><h4>Linux</h4></a><p>Learn how to configure our OTel Linux source template.</p>
     </div>
   </div>
     <div className="box smallbox card">
