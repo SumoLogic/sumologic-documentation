@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Workday icon" width="50"/>
 
 Workday is a cloud-based enterprise resource planning (ERP) system that enables organizations to manage their financial, human resources, payroll, and procurement processes in one central platform. It offers a range of features such as analytics, reporting, and workflow automation to help businesses make informed decisions and streamline their operations. Workday is a comprehensive solution for businesses looking to improve their efficiency, productivity, and financial management.
 

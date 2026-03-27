@@ -6,7 +6,7 @@ description: Our AWS Observability Solution provides a framework to simplify mon
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Thumbnail icon" width="65"/>
+<img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Amazon Web Services icon" width="65"/>
 
 Our AWS Observability Solution provides a framework to simplify monitoring and troubleshooting of your AWS cloud infrastructure. Utilize the Sumo Logic observability app dashboards to quickly isolate and resolve issues.
 

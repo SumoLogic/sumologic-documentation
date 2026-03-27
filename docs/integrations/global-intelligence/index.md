@@ -13,21 +13,21 @@ Our Global Intelligence Service apps provide security teams with valuable real-t
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/gi-guardduty.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/amazon-aws/gi-guardduty.png')} alt="Global Intelligence GuardDuty icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-guardduty')}>Global Intelligence for Amazon GuardDuty</a></h4>
   <p>A guide to the Sumo Logic app for GI for Amazon GuardDuty.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Global Intelligence Devops icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops')}>Global Intelligence for AWS CloudTrail DevOps</a></h4>
   <p>A guide to the Sumo Logic app for GI for AWS CloudTrail DevOps.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="Global Intelligence Secops icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops')}>Global Intelligence for AWS CloudTrail SecOps</a></h4>
   <p>A guide to the Sumo Logic app for GI for AWS CloudTrail SecOps.</p>
   </div>

@@ -64,13 +64,13 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/c2c/info/')}><img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/><h4>Cloud-to-Cloud Info</h4></a>
+  <a href={useBaseUrl('docs/c2c/info/')}><img src={useBaseUrl('img/integrations/1password/1password.png')} alt="1Password icon" width="50"/><h4>Cloud-to-Cloud Info</h4></a>
   <p>Learn the basics of setting up Cloud-to-Cloud Integration Framework sources.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source')}><img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/><h4>1Password</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source')}><img src={useBaseUrl('img/integrations/1password/1password.png')} alt="1Password icon" width="50"/><h4>1Password</h4></a>
   <p>Provides a secure endpoint to receive Sign-in Attempts and Item Usage from the 1Password Event API.</p>
   </div>
 </div>
@@ -94,7 +94,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source')}><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="120"/><h4>Akamai SIEM API</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source')}><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Akamai icon" width="120"/><h4>Akamai SIEM API</h4></a>
   <p>Provides a secure endpoint to receive security events generated on the Akamai platform.</p>
   </div>
 </div>
@@ -172,7 +172,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/chatgpt-compliance-source')}><img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="Thumbnail icon" width="100"/><h4>ChatGPT Compliance</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/chatgpt-compliance-source')}><img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="Chatgpt Compliance icon" width="100"/><h4>ChatGPT Compliance</h4></a>
   <p>Securely collect and analyze ChatGPT Compliance platform conversation logs.</p>
   </div>
 </div>
@@ -286,19 +286,19 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source')}><img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Thumbnail icon" width="45"/><h4>Digital Guardian</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source')}><img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Digital Guardian icon" width="45"/><h4>Digital Guardian</h4></a>
   <p>Learn how to collect export data from the Digital Guardian and send it to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source')}><img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="Thumbnail icon" width="45"/><h4>DocuSign</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source')}><img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="DocuSign icon" width="45"/><h4>DocuSign</h4></a>
   <p>Learn how to collect customer event data from the DocuSign and send it to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dragos-source')}><img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="Thumbnail icon" width="50"/><h4>Dragos</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dragos-source')}><img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="Dragos icon" width="50"/><h4>Dragos</h4></a>
   <p>Learn how to collect address, asset, vulnerability, notification, and zone details from the Dragos API and send them to Sumo Logic.</p>
   </div>
 </div>
@@ -334,7 +334,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/github-copilot-source')}><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/github.png')} alt="Thumbnail icon" width="100"/><h4>Github Copilot</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/github-copilot-source')}><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/github.png')} alt="GitHub icon" width="100"/><h4>Github Copilot</h4></a>
   <p>Learn to collect the organization metrics and team metrics from GitHub Copilot platform.</p>
   </div>
 </div>
@@ -472,13 +472,13 @@ In this section, we'll introduce the following concepts:
 </div>
   <div className="box smallbox card">
     <div className="container">
-    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source')}><img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Thumbnail icon" width="75"/><h4>Okta</h4></a>
+    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source')}><img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Okta icon" width="75"/><h4>Okta</h4></a>
     <p>Provides a secure endpoint to receive event data from the Okta System Log API and Users API.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source')}><img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/onelogin.png')} alt="Thumbnail icon" width="75"/><h4>OneLogin</h4></a>
+    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source')}><img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/onelogin.png')} alt="Onelogin icon" width="75"/><h4>OneLogin</h4></a>
     <p>Provides a secure and centralized access to user lists from the OneLogin API.</p>
   </div>
 </div>
@@ -526,7 +526,7 @@ In this section, we'll introduce the following concepts:
   </div>
   <div className="box smallbox card">
     <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source')}><img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Thumbnail icon" width="75"/><h4>Salesforce</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source')}><img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Salesforce icon" width="75"/><h4>Salesforce</h4></a>
         <p>Provides a secure endpoint to receive event data from the Salesforce through its Rest API.</p>
         </div>
       </div>
@@ -538,19 +538,19 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source')}><img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="50"/><h4>Slack</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source')}><img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Slack icon" width="50"/><h4>Slack</h4></a>
         <p>Learn about the Slack Source, part of Sumo Logic's Cloud-to-Cloud Integration Framework.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/smartsheet-source')}><img src={useBaseUrl('img/send-data/smartsheet.png')} alt="Thumbnail icon" width="50"/><h4>Smartsheet</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/smartsheet-source')}><img src={useBaseUrl('img/send-data/smartsheet.png')} alt="Smartsheet icon" width="50"/><h4>Smartsheet</h4></a>
         <p>Learn how to collect events from Smartsheet platform.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/snowflake-logs-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="Thumbnail icon" width="150"/><h4>Snowflake Logs</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/snowflake-logs-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="Snowflake icon" width="150"/><h4>Snowflake Logs</h4></a>
         <p>Learn how to collect logs from Snowflake platform.</p>
         </div>
       </div>
@@ -616,7 +616,7 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source')}><img src={useBaseUrl('img/send-data/trend-micro-logo.png')} alt="Thumbnail icon" width="150"/><h4>Trend Micro</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trend-micro-source')}><img src={useBaseUrl('img/send-data/trend-micro-logo.png')} alt="Trend Micro icon" width="150"/><h4>Trend Micro</h4></a>
         <p>Learn how to collect alert details from Trend Micro platform.</p>
         </div>
       </div>
@@ -628,61 +628,61 @@ In this section, we'll introduce the following concepts:
       </div>
             <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source')}><img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Thumbnail icon" width="50"/><h4>Universal Connector Source</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source')}><img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Square icon" width="50"/><h4>Universal Connector Source</h4></a>
         <p> Learn how to set up a Universal Connector to collect data into the Sumo Logic environment.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/varonis-source"><img src={useBaseUrl('img/integrations/misc/varonis-logo.png')} alt="Thumbnail icon" width="100"/><h4>Varonis Alerts</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/varonis-source"><img src={useBaseUrl('img/integrations/misc/varonis-logo.png')} alt="Varonis icon" width="100"/><h4>Varonis Alerts</h4></a>
         <p>Learn to collect alerts from the Varonis platform and send them to Sumo Logic.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vectra-source"><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/vectra.png')} alt="Thumbnail icon" width="100"/><h4>Vectra</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vectra-source"><img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/vectra.png')} alt="Vectra icon" width="100"/><h4>Vectra</h4></a>
         <p>Learn to collect the list of threats detected in the Vectra platform.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source')}><img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="Thumbnail icon" width="60"/><h4>VMware Workspace One</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source')}><img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="VMware Workspace One icon" width="60"/><h4>VMware Workspace One</h4></a>
         <p> Learn how to collect the device details and corresponding list of applications for the devices from the VMware Workspace One platform.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source')}><img src={useBaseUrl('img/send-data/webex-logo.png')} alt="Thumbnail icon" width="100"/><h4>Webex</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source')}><img src={useBaseUrl('img/send-data/webex-logo.png')} alt="Webex icon" width="100"/><h4>Webex</h4></a>
         <p>Learn to collect admin audit events using Webex API.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source')}><img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="50"/><h4>Workday</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source')}><img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Workday icon" width="50"/><h4>Workday</h4></a>
         <p>Learn to create a Workday Source.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source')}><img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="Thumbnail icon" width="80"/><h4>Zendesk</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source')}><img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="Zendesk icon" width="80"/><h4>Zendesk</h4></a>
         <p>Learn to collect audit logs from the Zendesk platform.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source')}><img src={useBaseUrl('img/integrations/misc/zerofox-logo.png')} alt="Thumbnail icon" width="50"/><h4>ZeroFox</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source')}><img src={useBaseUrl('img/integrations/misc/zerofox-logo.png')} alt="ZeroFox icon" width="50"/><h4>ZeroFox</h4></a>
         <p>Learn to collect threat indicators using the ZeroFox API and send them to Sumo Logic for analysis.</p>
         </div>
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source')}><img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Thumbnail icon" width="45"/><h4>Zero Networks Segment</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source')}><img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Zero Networks icon" width="45"/><h4>Zero Networks Segment</h4></a>
         <p>Learn to collect audit logs and network activity data from Zero Networks Segment.</p>
         </div>
       </div>
     <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zimperium-mtd-source')}><img src={useBaseUrl('img/send-data/zimperium-mtd.png')} alt="Thumbnail icon" width="45"/><h4>Zimperium MTD Source</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zimperium-mtd-source')}><img src={useBaseUrl('img/send-data/zimperium-mtd.png')} alt="Zimperium Mtd icon" width="45"/><h4>Zimperium MTD Source</h4></a>
         <p>Learn to collect the device logs from the Zimperium API and send it to Sumo Logic.</p>
         </div>
       </div>

@@ -7,7 +7,7 @@ description: Collect Audit Log content types to track and monitor usage of Micro
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/office_365_48.png')} alt="Thumbnail icon" width="40"/>
+<img src={useBaseUrl('img/send-data/office_365_48.png')} alt="Office 365 48 icon" width="40"/>
 
 ## Office 365 Audit Log Workload types
 

@@ -7,7 +7,7 @@ description: The Sumo Logic App for Workday provides visibility into your Workda
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Workday icon" width="50"/>
 
 The Sumo Logic app for Workday provides insights into authentication activity, user activity, and administrator activity. The pre-configured dashboards help identify events that identify compliance and incident reporting, common security events, and real-time analysis of suspicious activities.
 

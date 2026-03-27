@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/logs.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/logs.png')} alt="Logs icon" width="50"/>
 
 The Lookup Management API allows you to manage [Lookup Tables](/docs/search/lookup-tables) from HTTP endpoints.
 

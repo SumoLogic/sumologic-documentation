@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Cogniti
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-cognitive-search.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-cognitive-search.png')} alt="Azure Cognitive Search icon" width="50"/>
 
 [Azure Cognitive Search](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search) is a cloud search service that gives developers infrastructure, APIs, and tools for building a rich search experience over private, heterogeneous content in web, mobile, and enterprise applications. This integration helps in analyzing the performance and availability of your search service.
 

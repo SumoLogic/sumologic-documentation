@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic iLert integra
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/ilert-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/ilert-logo.png')} alt="iLert icon" width="50"/>
 
 
 The iLert app for Sumo Logic enables efficient integration of the alert management system with Sumo Logic's robust analytics platform. The provided dashboard panels offer comprehensive insights, including tracking Unique Alert Generation, categorizing alerts by source and priority (highlighting high-priority ones), monitoring Pending and Resolved Alerts, and assessing overall alert status. Users can identify top active responders, analyze alerts based on event type and source trends, and stay informed with a concise summary of recent alerts. This integration enhances alert management and incident response capabilities, providing a powerful solution for effective monitoring and analysis.

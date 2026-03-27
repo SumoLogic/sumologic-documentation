@@ -11,7 +11,7 @@ description: The Okta Source provides a secure endpoint to receive event data fr
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Okta icon" width="75"/>
 
 The Okta Source provides a secure endpoint to receive event data from the Okta [System Log API](https://developer.okta.com/docs/reference/api/system-log/), [Users API](https://developer.okta.com/docs/reference/api/users/), and [User's Group API](https://developer.okta.com/docs/reference/api/users/#get-user-s-groups).
 It securely stores the required authentication, scheduling, and state tracking information.

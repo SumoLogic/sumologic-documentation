@@ -56,7 +56,7 @@ The maximum number of Collectors allowed per organization is 10,000.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework')}><img src={useBaseUrl('img/icons/cloud/cloud-systems.png')} alt="Thumbnail icon" width="40"/><h4>Cloud-to-Cloud Integration Framework Sources</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework')}><img src={useBaseUrl('img/icons/cloud/cloud-systems.png')} alt="Cloud Systems icon" width="40"/><h4>Cloud-to-Cloud Integration Framework Sources</h4></a>
   <p>Collect logs and events directly from SaaS and Cloud platforms.</p>
   </div>
 </div>
@@ -68,7 +68,7 @@ The maximum number of Collectors allowed per organization is 10,000.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/microsoft-source')}><img src={useBaseUrl('img/send-data/microsoft.png')} alt="Thumbnail icon" width="40"/><h4>Microsoft Sources</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/microsoft-source')}><img src={useBaseUrl('img/send-data/microsoft.png')} alt="Microsoft icon" width="40"/><h4>Microsoft Sources</h4></a>
   <p>Collect data from your Microsoft platform and other products.</p>
   </div>
 </div>
@@ -80,13 +80,13 @@ The maximum number of Collectors allowed per organization is 10,000.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/http-source')}><img src={useBaseUrl('img/send-data/http-logs-metrics.png')} alt="Thumbnail icon" width="45"/><h4>Configure HTTP Source for Logs, Metrics, Traces, OTLP</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/http-source')}><img src={useBaseUrl('img/send-data/http-logs-metrics.png')} alt="HTTP Logs Metrics icon" width="45"/><h4>Configure HTTP Source for Logs, Metrics, Traces, OTLP</h4></a>
   <p>Upload logs, metrics, traces, and more to an HTTP Source.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/webhook-sources/zoom')}><img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Thumbnail icon" width="60"/><h4>Zoom Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/webhook-sources/zoom')}><img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Zoom icon" width="60"/><h4>Zoom Source</h4></a>
   <p>Learn how to create HTTP Zoom source and enable events subscriptions.</p>
   </div>
 </div>

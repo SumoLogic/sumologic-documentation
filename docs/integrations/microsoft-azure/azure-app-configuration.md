@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure App Con
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-configuration.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-configuration.png')} alt="Azure App Configuration icon" width="50"/>
 
 [Azure App Configuration](https://learn.microsoft.com/en-us/azure/azure-app-configuration/overview) provides a service to centrally manage application settings and feature flags. This integration helps in monitoring resource usage, such as the total number of requests, number of throttled requests, and request duration per configuration store.
 

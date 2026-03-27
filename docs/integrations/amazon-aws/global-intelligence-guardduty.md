@@ -7,7 +7,7 @@ description: Global Intelligence for Amazon GuardDuty
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/gi-guardduty.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/gi-guardduty.png')} alt="Global Intelligence GuardDuty icon" width="50"/>
 
 [Amazon GuardDuty](https://aws.amazon.com/guardduty/) is a threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts and workloads. The Sumo Logic App for Global Intelligence for Amazon GuardDuty analyzes GuardDuty threats from the Sumo Logic population to create baselines of threats. These baselines enable you to optimize security posture and remediation based on how unusual your GuardDuty findings are compared to Sumo Logic customers. The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment.
 

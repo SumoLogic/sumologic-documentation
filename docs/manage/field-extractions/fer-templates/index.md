@@ -40,7 +40,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/field-extractions/fer-templates/aws-cloudtrail-logs')}><img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail.png')} alt="Cloudtrail icon" width="50"/><h4>AWS CloudTrail Logs</h4></a>
+  <a href={useBaseUrl('docs/manage/field-extractions/fer-templates/aws-cloudtrail-logs')}><img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail.png')} alt="CloudTrail icon" width="50"/><h4>AWS CloudTrail Logs</h4></a>
   <p>Learn how to parse the common fields in your AWS CloudTrail log.</p>
   </div>
 </div>

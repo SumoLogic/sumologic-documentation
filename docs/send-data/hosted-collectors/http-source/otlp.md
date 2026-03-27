@@ -6,7 +6,7 @@ description: Use an HTTP OTLP Source to collect OTLP formatted Logs, Metrics, an
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 An OTLP/HTTP Source is an endpoint for receiving OTLP-formatted Logs, Metrics, and Traces. This is an alternative option to installing an OpenTelemetry Collector for sending OTLP data to Sumo Logic.
 

@@ -67,13 +67,13 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source')}><img src={useBaseUrl('img/send-data/cloudtrail-source.png')} alt="Thumbnail icon" width="40"/><h4>AWS CloudTrail</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source')}><img src={useBaseUrl('img/send-data/cloudtrail-source.png')} alt="Cloudtrail Source icon" width="40"/><h4>AWS CloudTrail</h4></a>
   <p>AWS CloudTrail Source records API calls made to AWS.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source')}><img src={useBaseUrl('img/integrations/amazon-aws/elb.png')} alt="Thumbnail icon" width="40"/><h4>AWS Elastic Load Balancing</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source')}><img src={useBaseUrl('img/integrations/amazon-aws/elb.png')} alt="AWS Elastic Load Balancing icon" width="40"/><h4>AWS Elastic Load Balancing</h4></a>
   <p>Add the AWS ELB Source to upload messages to Sumo Logic.</p>
   </div>
 </div>

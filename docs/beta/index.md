@@ -28,7 +28,7 @@ Following are articles for features in open beta:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/api/metrics-searches/')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/><h4>Metrics Search Management APIs</h4></a>
+  <a href={useBaseUrl('docs/api/metrics-searches/')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/><h4>Metrics Search Management APIs</h4></a>
   <p>Use Metrics Searches (Beta) API endpoints to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization.</p>
   </div>
 </div>

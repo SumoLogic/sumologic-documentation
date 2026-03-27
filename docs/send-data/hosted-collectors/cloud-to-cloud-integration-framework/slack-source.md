@@ -7,7 +7,7 @@ description: Install the Slack Source for Sumo Logic.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="60"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Slack icon" width="60"/>
 
 This topic describes the Slack Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 

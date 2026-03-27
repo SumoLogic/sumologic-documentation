@@ -12,7 +12,7 @@ description: The 1Password Source provides a secure endpoint to receive Sign-in 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
-<img src="https://app_icons.s3.amazonaws.com/1Password.png" alt="Thumbnail icon" width="80"/>
+<img src="https://app_icons.s3.amazonaws.com/1Password.png" alt="1Password icon" width="80"/>
 
 The 1Password Source provides a secure endpoint to receive sign-in attempts, item usage, and audit events from the [1Password Event API](https://support.1password.com/events-api-reference/). It securely stores the required authentication, scheduling, and state tracking information.
 

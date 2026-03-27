@@ -6,7 +6,7 @@ description: Set up a Zoom HTTP Source as an endpoint for receiving Webhook even
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Thumbnail icon" width="50"/><br/>
+<img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Zoom icon" width="50"/><br/>
 
 Zoom HTTP Source is an endpoint for receiving Webhook events that are grouped into the following core event types:
 - Meeting Events

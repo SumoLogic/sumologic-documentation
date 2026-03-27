@@ -53,13 +53,13 @@ Learn how to collect telemetry data from applications written in the following p
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="Thumbnail icon" width="30"/>
+  <img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="131px Java Programming Language icon" width="30"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java')}>Java</a></h4>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png' alt="Thumbnail icon" width="95"/>
+  <img src='https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png' alt="Javascript Logo Transparent Logo Javascript Images 3 icon" width="95"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript')}>JavaScript</a></h4>
   </div>
 </div>
@@ -71,31 +71,31 @@ Learn how to collect telemetry data from applications written in the following p
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/512px-.NET_Core_Logo.svg.png' alt="Thumbnail icon" width="55"/>
+    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/512px-.NET_Core_Logo.svg.png' alt=".NET Core icon" width="55"/>
     <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net')}>.NET</a></h4>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src='https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' alt="Thumbnail icon" width="50"/>
+    <img src='https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' alt="Python Logo Notext icon" width="50"/>
     <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python')}>Python</a></h4>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src='https://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg' alt="Thumbnail icon" width="55"/>
+    <img src='https://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg' alt="Ruby icon" width="55"/>
     <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby')}>Ruby</a></h4>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src='https://upload.wikimedia.org/wikipedia/commons/6/62/Ruby_On_Rails_Logo.svg' alt="Thumbnail icon" width="125"/>
+    <img src='https://upload.wikimedia.org/wikipedia/commons/6/62/Ruby_On_Rails_Logo.svg' alt="Ruby On Rails icon" width="125"/>
     <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby-on-rails')}>Ruby on Rails</a></h4>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/saas-cloud/istio.png')} alt="Thumbnail icon" width="100"/>
+    <img src={useBaseUrl('img/integrations/saas-cloud/istio.png')} alt="Istio icon" width="100"/>
     <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/istio')}>Istio</a></h4>
     </div>
   </div>
@@ -109,25 +109,25 @@ Learn how to install and configure OpenTelemetry distributed tracing for AWS Lam
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="Thumbnail icon" width="30"/>
+  <img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="131px Java Programming Language icon" width="30"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/java')}>Java</a></h4>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg' alt="Thumbnail icon" width="95"/>
+  <img src='https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg' alt="Node.js icon" width="95"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/nodejs')}>NodeJS</a></h4>
   </div>
 </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src='https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' alt="Thumbnail icon" width="50"/>
+    <img src='https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' alt="Python Logo Notext icon" width="50"/>
     <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/python')}>Python</a></h4>
     </div>
   </div>    
   <div className="box smallbox card">
     <div className="container">
-    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/512px-.NET_Core_Logo.svg.png' alt="Thumbnail icon" width="55"/>
+    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/512px-.NET_Core_Logo.svg.png' alt=".NET Core icon" width="55"/>
     <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/dotnet')}>Dotnet</a></h4>
     </div>
   </div>
@@ -140,19 +140,19 @@ Setting up Tracing instrumentation for applications deployed in Kubernetes just 
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="Thumbnail icon" width="30"/>
+  <img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="131px Java Programming Language icon" width="30"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes')}>Java</a></h4>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png' alt="Thumbnail icon" width="95"/>
+  <img src='https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png' alt="Javascript Logo Transparent Logo Javascript Images 3 icon" width="95"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes')}>JavaScript</a></h4>
   </div>
 </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src='https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' alt="Thumbnail icon" width="50"/>
+    <img src='https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' alt="Python Logo Notext icon" width="50"/>
     <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes')}>Python</a></h4>
     </div>
   </div>

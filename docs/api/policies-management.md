@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/security/security.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/security/security.png')} alt="Security icon" width="50"/>
 
 The Policies Management API allows you to control the security and share settings of your organization. For more information, see [Security](/docs/manage/security/).
 

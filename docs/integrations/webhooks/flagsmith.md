@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic Flagsmith int
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/flagsmith-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/flagsmith-logo.png')} alt="Flagsmith icon" width="50"/>
 
 Flagsmith facilitates feature management across web, mobile, and server-side applications. You can use a webhook in the Flagsmith platform to forward feature-related events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor the creation, updates, and overrides of features for identities and segment events in Sumo Logic. For more details, refer to the [Flagsmith Documentation](https://docs.flagsmith.com/).
 
