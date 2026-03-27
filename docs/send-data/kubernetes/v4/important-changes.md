@@ -165,3 +165,13 @@ sumologic:
 Routing configurations are still defined under `sumologic.logs.otelcol.routing.table`.
 
 Internally, Sumo Logic Helm Chart will convert this configuration into Routing connector configurations.
+
+## Metrics Server
+
+We have changed our bitnami based metrics server to the Open Source metrics server. 
+
+### How to upgrade
+
+The default configurations has been changed as per the [document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/helm/sumologic/README.md). Any existing customization involves porting configurations values from the [Bitnami metrics server specification](https://artifacthub.io/packages/helm/bitnami/metrics-server) to the [open-source metrics server specification](https://artifacthub.io/packages/helm/metrics-server/metrics-server).
+
+
