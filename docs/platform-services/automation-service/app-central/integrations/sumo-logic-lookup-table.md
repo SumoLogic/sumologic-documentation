@@ -62,6 +62,9 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 For detailed API documentation, see [Sumo Logic APIs](/docs/api/).
 
+## Notes
+* **Upload CSV File** action will be available in Cloud SOAR only.
+
 ## Category
 
 SIEM
