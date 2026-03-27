@@ -15,9 +15,9 @@ To install or upgrade to the required version of the CloudFormation template, u
 |:--|:--|:--|:--|
 | 2.13.0 | 7th Oct, 2025 | Yes | |
 | 2.12.0 | 1st April, 2025| Yes | |
-| 2.11.0 | 24th Jan, 2025 | Yes - Ends on 1st May 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th April, 2025 |
-| 2.10.0 | 4th Sep, 2024  | Yes - Ends on 1st May 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th April, 2025 |
-| 2.9.0 | 2nd Aug, 2024  | Yes - Ends on 1st May 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th April, 2025 |
+| 2.11.0 | 24th Jan, 2025 | Yes - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th April, 2025 |
+| 2.10.0 | 4th Sep, 2024  | Yes - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th April, 2025 |
+| 2.9.0 | 2nd Aug, 2024  | Yes - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th April, 2025 |
 | 2.8.0 or Less | 17th May, 2024 | No | AWS Lambda runtime Node.js 18.x was deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-deprecated)) |
 
 ## v2.13.0, 07-Oct-2025
