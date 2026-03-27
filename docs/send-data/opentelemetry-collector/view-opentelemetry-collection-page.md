@@ -43,7 +43,7 @@ To view details about an OpenTelemetry Collector:
 
 ## Status Overview
 
-The Status Overview panels provide a centralized, high-level health view of OpenTelemetry collectors. Each panel displays key metrics and includes a **View Collectors** button that drills down when clicked into filtered lists for quick diagnosis and resolution.
+The **Status Overview** panels provide a centralized, high-level health view of OpenTelemetry collectors. Each panel displays key metrics and includes a **View Collectors** button that drills down when clicked into filtered lists for quick diagnosis and resolution.
 <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/status-overview.png')} alt="status-overview" style={{border:'1px solid gray'}} />
 
 ### Key Panels
