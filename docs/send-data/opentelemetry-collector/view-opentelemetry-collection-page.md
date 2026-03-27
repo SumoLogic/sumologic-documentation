@@ -50,7 +50,6 @@ The **Status Overview** panels provide a centralized, high-level health view of 
 
 #### Collector(s) are due for upgrade
 Displays the total number of collectors that require upgrades. Click **View Collectors** button to view the collectors that are older than the current version and needs upgrade. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/upgrade-available.png')} alt="status-overview" style={{border:'1px solid gray'}} />
-<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/upgrade-available.png')} alt="status-overview" style={{border:'1px solid gray'}} />
 
 #### Offline collectors
 - Displays collectors that are offline for over 30 minutes in the last 24 hours.
