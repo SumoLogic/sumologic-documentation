@@ -29,7 +29,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/acquia')}><img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="airtable-icon.png" width="40"/><h4>Airtable</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/acquia')}><img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="Airtable icon" width="40"/><h4>Airtable</h4></a>
   <p>Monitor and analyze your Airtable audit logs.</p>
   </div>
 </div>
@@ -53,25 +53,25 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/armis')}><img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="90"/><h4>Armis</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/armis')}><img src={useBaseUrl('img/send-data/armis-icon.png')} alt="Armis icon" width="90"/><h4>Armis</h4></a>
   <p>Monitor and manage your device security.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/asana')}><img src={useBaseUrl('img/send-data/asana-icon.png')} alt="asana-icon.png" width="60" /><h4>Asana</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/asana')}><img src={useBaseUrl('img/send-data/asana-icon.png')} alt="Asana icon" width="60" /><h4>Asana</h4></a>
   <p>Monitor and analyze the Asana data to detect potential security threats related to user activity.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/atlassian')}><img src={useBaseUrl('img/send-data/atlassian-icon.png')} alt="atlassian-icon.png" width="60" /><h4>Atlassian</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/atlassian')}><img src={useBaseUrl('img/send-data/atlassian-icon.png')} alt="Atlassian icon" width="60" /><h4>Atlassian</h4></a>
   <p>Monitor and analyze the critical events of Atlassian data.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/automox')}><img src={useBaseUrl('img/send-data/automox-logo.png')} alt="automox-icon.png" width="60" /><h4>Automox</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/automox')}><img src={useBaseUrl('img/send-data/automox-logo.png')} alt="Automox icon" width="60" /><h4>Automox</h4></a>
   <p>Gain insights into Automox events and audit data to enhance security monitoring, streamline endpoint management, and boost operational resilience.</p>
   </div>
 </div>
@@ -83,7 +83,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/bitwarden')}><img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="bitwarden-icon.png" width="100" /><h4>Bitwarden</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/bitwarden')}><img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="Bitwarden icon" width="100" /><h4>Bitwarden</h4></a>
   <p>Gain insights into user activity, security events, and administrative changes within your Bitwarden environment.</p>
   </div>
 </div>
@@ -215,13 +215,13 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/dropbox')}><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-icon.svg')} alt="dropbox-icon.png" width="45"/><h4>Dropbox</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/dropbox')}><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-icon.svg')} alt="Dropbox icon" width="45"/><h4>Dropbox</h4></a>
   <p>Monitor and analyze your Dropbox usage data.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/druva-cyber-resilience')}><img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="dropbox-icon.png" width="45"/><h4>Druva Cyber Resilience</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/druva-cyber-resilience')}><img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="Dropbox icon" width="45"/><h4>Druva Cyber Resilience</h4></a>
   <p>Enhance your cybersecurity posture by providing real-time insights.</p>
   </div>
 </div>
@@ -397,7 +397,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/sentinelone')}><img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="sentinelone-icon.png" width="50" /><h4>SentinelOne</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/sentinelone')}><img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="Sentinelone icon" width="50" /><h4>SentinelOne</h4></a>
   <p>Monitor your organization's SentinelOne Threats and Agents logs.</p>
   </div>
 </div>

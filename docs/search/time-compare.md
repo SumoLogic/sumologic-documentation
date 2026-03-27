@@ -40,7 +40,7 @@ Click the **Time Compare** button to run the default timeshift comparison of 1 d
 
 The comparison results appear in a new column titled with the timeshift.
 
-<img src={useBaseUrl('img/search/timecompare/timecompare-results-aug-24-2021.png')} alt="timecompare-results-aug-24-2021.png" width="400"/>
+<img src={useBaseUrl('img/search/timecompare/timecompare-results-aug-24-2021.png')} alt="Time compare results" width="400"/>
 
 ### Custom Time Compare
 
@@ -48,7 +48,7 @@ To create a custom Time Compare, select **Custom** from the menu, then make yo
 
 You can retrieve time-shifted data up to the last 40 days. We do not support going back further in time.
 
-<img src={useBaseUrl('img/search/timecompare/CustomTimeCompare.png')} alt="CustomTimeCompare.png" width="400"/>
+<img src={useBaseUrl('img/search/timecompare/CustomTimeCompare.png')} alt="Customtimecompare" width="400"/>
 
 1. Compare this query to a `[number] [hour, day, week]` historical timeshift.
 1. With `[number]` time period(s). If the number is bigger than 0:
@@ -110,7 +110,7 @@ The following query returns data from the present, along with results from yeste
 
 This comparison can be displayed visually as:
 
-<img src={useBaseUrl('img/reuse/query-search/compare_single_diagram.png')} alt="compare_single_diagram.png" width="300"/>
+<img src={useBaseUrl('img/reuse/query-search/compare_single_diagram.png')} alt="Compare single diagram" width="300"/>
 
 In another example, this query returns data from the present along with results from last week.
 

@@ -27,7 +27,7 @@ The search modifier `dataTier` is not supported for Flex queries.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. 
 1. Click **+ Add Partition**.
-1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/create-new-partition-flex.png')} alt="create-new-partition-flex.png"  style={{border:'1px solid gray'}} width="300"/>
+1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/create-new-partition-flex.png')} alt="Create New Partition for Flex"  style={{border:'1px solid gray'}} width="300"/>
 1. **Name**. Enter a name for the partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores (`_`) and hyphens (`-`). However, a partition name cannot start with `sumologic_`, an underscore `_`, or a hyphen (`-`).
 1. (Optional) **Include this partition in default scope**. By default, this checkbox is selected. Deselect this checkbox if you need to exclude this partition from the [default scope in your search](/docs/manage/partitions/flex/faq/#how-can-i-optimize-my-query-using-default-scope).
     :::note
@@ -87,7 +87,7 @@ You can make some changes to an existing partition:  
      :::
 1. Click the row with the partition you want to edit.
 1. The partition details are displayed on the right side of the page.
-1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/edit-partition-pane-flex.png')} alt="edit-partition-pane-flex.png"  style={{border:'1px solid gray'}} width="300"/>
+1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/edit-partition-pane-flex.png')} alt="Edit partition pane for Flex"  style={{border:'1px solid gray'}} width="300"/>
 1. **Include this partition in default scope**. Select/deselect the checkbox to include/exclude this partition as the default scope in your search.
     :::note
     After changing the default scope of a partition, expect a delay of 2 to 3 minutes to reflect the change in the query scope.

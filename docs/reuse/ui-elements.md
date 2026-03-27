@@ -17,6 +17,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 | <img src={useBaseUrl('img/content-sharing/classic-icon-recents.png')} alt="classic-icon-recents" width="15%" /> | Recents | Access content you’ve recently accessed and recently shared with you. |
 | <img src={useBaseUrl('img/content-sharing/classic-icon-favorites.png')} alt="classic-icon-recents" width="15%" /> | Favorites | Content you’ve marked as favorite. |
 | <img src={useBaseUrl('img/content-sharing/classic-icon-personal.png')} alt="classic-icon-recents" width="15%" /> | Personal | Content you manage. |
-| <img src={useBaseUrl('img/content-sharing/classic-icon-library.png')} alt="classic-icon-library.png" width="15%" /> | Library | List of all accessible content, including your creations and the content shared with you. |
+| <img src={useBaseUrl('img/content-sharing/classic-icon-library.png')} alt="Classic icon library" width="15%" /> | Library | List of all accessible content, including your creations and the content shared with you. |
 | <img src={useBaseUrl('img/content-sharing/classic-icon-more-actions-kebab-three-dot.png')} alt="classic-icon-more-actions-kebab-three-dot" width="15%" /> | More Actions / Three-Dot Kebab  | Click to reveal a menu with additional options. |
-| <img src={useBaseUrl('img/content-sharing/classic-nav-menu.png')} alt="nav-menu.png" /> | Navigation Menu  | Main Sumo Logic menu containing your collectors, sources, library, help, and more. |
+| <img src={useBaseUrl('img/content-sharing/classic-nav-menu.png')} alt="Nav menu" /> | Navigation Menu  | Main Sumo Logic menu containing your collectors, sources, library, help, and more. |
