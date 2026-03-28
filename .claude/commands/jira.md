@@ -71,10 +71,10 @@ When invoked, ask the user what they want to do:
 
 * **Create a ticket**. Ask for title, Technical Area, type (Task/Bug/Story), and description. Auto-suggest the default assignee based on the Technical Area table above.
 * **Look up a ticket**. Search by issue key (e.g. DOCS-1234) or keyword.
-* **Update a ticket**. Ask which field to update (status, description, assignee, priority, Technical Area).
-* **List open tickets**. Fetch open issues in DOCS, sorted by created date descending.
-* **My tickets**. Fetch issues assigned to the current user.
-* **Transition a ticket**. Move through workflow states: To Do → In Progress → In Review → Done.
+* **Update a ticket**. Ask which field to update (Description, Assignee, Priority, or Technical Area).
+* **Change ticket status**. Move through workflow states: To Do → In Progress → In Review → Done.
+* **View my tickets**. Fetch issues in DOCS assigned to the current user. Default to open issues; ask if they want to filter by status.
+* **View all open tickets**. Fetch all open issues in the DOCS project, sorted by created date descending.
 
 ## Style rules for ticket descriptions
 
