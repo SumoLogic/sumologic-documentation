@@ -36,7 +36,7 @@ This pull request {description}
 
 ## Ticket (if applicable)
 
-{TICKET-1234}
+{https://sumologic.atlassian.net/browse/DOCS-1234}
 ```
 
 ### Key Rules
@@ -46,5 +46,6 @@ This pull request {description}
 3. **Pre-check the appropriate checkbox** - Select the correct change type
 4. **PR title format**: `TICKET - Description` (e.g., `DOCS-1234 - Add PostgreSQL app`)
 5. **Ask for ticket number** - Always ask before creating PRs (optional only for quick typo fixes)
+6. **Use full Jira link** - In the "Ticket (if applicable)" section, use the full URL (e.g., `https://sumologic.atlassian.net/browse/DOCS-1234`) not just the ticket number
 
 For detailed examples and implementation guidance, see `.claude/commands/_pr-template-guide.md`.
