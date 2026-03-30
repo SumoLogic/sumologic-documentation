@@ -4,7 +4,6 @@ title: Upwind
 description: Learn about the collection process for the Sumo Logic Upwind integration.
 ---
 
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/upwind-logo.png')} alt="thumbnail icon" width="55"/>
@@ -17,7 +16,7 @@ For more details, see [Upwind Custom Webhook documentation](https://docs.upwind.
 
 The Sumo Logic app for Upwind ingests security events into Sumo Logic through a custom webhook in Upwind workflows. Configure your webhook/workflow to send the log types you want to monitor.
 
-The following log types are used in Upwind Sumo Logic app:
+The following log types are used in the Upwind Sumo Logic app:
 - Audit events
 - Configuration findings
 - Threat detections
@@ -61,11 +60,11 @@ _sourceCategory="Labs/Upwind" id severity status category mitre_attacks
 
 ## Setup
 
-This section has instructions for collecting logs for the Sumo Logic Upwind webhook collection.
+This section includes instructions for collecting logs for the Sumo Logic Upwind webhook collection.
 
 ### Source configuration
 
-Follow the below steps to configure the Hosted Collector to receive Upwind events.
+Follow the steps below to configure the Hosted Collector to receive Upwind events.
 
 1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one.
 2. Add an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
@@ -76,7 +75,7 @@ Follow the below steps to configure the Hosted Collector to receive Upwind event
 
 Configure the webhook integration in Upwind to send events to the Sumo Logic HTTP source.
 
-Follow the below steps to configure the Upwind webhook and workflow.
+Follow the steps below to configure the Upwind webhook and workflow.
 
 1. Sign in to your Upwind account.
 2. Go to **Components > Integrations > Monitoring & Logging > Custom Webhook**.
@@ -125,7 +124,7 @@ The **Upwind - Audit - Security and Operations** dashboard focuses on security a
 
 ### Configuration Findings - Overview
 
-The **Upwind - Configuration Findings - Overview** dashboard provides summary visibility into configuration findings, including severity and trend-oriented analysis.
+The **Upwind - Configuration Findings - Overview** dashboard provides insights into configuration findings, including severity and trend-oriented analysis.
 
 <img src={useBaseUrl('img/integrations/webhooks/Upwind-Configuration-Findings-Overview.png')} style={{border: '1px solid black'}} alt="Configuration-Findings-Overview"/>
 
@@ -137,7 +136,7 @@ The **Upwind - Configuration Findings - Security** dashboard helps security team
 
 ### Threat Detection - Overview
 
-The **Upwind - Threat Detection - Overview** dashboard provides comprehensive visibility into threat detections including severity distribution, MITRE ATT&CK tactics, affected cloud resources, initiating actors, and high-recurrence open threats.
+The **Upwind - Threat Detection - Overview** dashboard provides comprehensive visibility into threat detections, including severity distribution, MITRE ATT&CK tactics, affected cloud resources, initiating actors, and high-recurrence open threats.
 
 <img src={useBaseUrl('img/integrations/webhooks/Upwind-Threat-Detection-Overview.png')} style={{border: '1px solid black'}} alt="Threat-Detection-Overview"/>
 
