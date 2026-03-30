@@ -146,7 +146,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Upwind app alerts
+### Upwind alerts
 
 | Name  | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
