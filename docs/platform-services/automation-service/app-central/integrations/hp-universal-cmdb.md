@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hp-universal-cmdb.png')} alt="hp-universal-cmdb" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hp-universal-cmdb.png')} alt="HP Universal CMDB icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 06, 2023***

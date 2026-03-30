@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mcafee-esm.png')} alt="mcafee-esm" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mcafee-esm.png')} alt="McAfee ESM icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 11, 2023***

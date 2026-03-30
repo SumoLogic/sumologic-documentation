@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/anomali-threatstream.png')} alt="anomali-threatstream" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/anomali-threatstream.png')} alt="Anomali ThreatStream icon" width="100"/>
 
 ***Version: 1.2  
 Updated: Jun 27, 2023***

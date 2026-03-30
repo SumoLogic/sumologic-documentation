@@ -151,13 +151,13 @@ The **SailPoint - Overview** dashboard provides a summary of SailPoint events, a
 
 The **SailPoint - Successful Authentications** dashboard provides the details of success logins such as the geolocation, country, state, failed login trends, outlier, and top 10 users.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Successful-Authentications.png')} alt="Successful-Authentications"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Successful-Authentications.png')} alt="Successful Authentications"/>
 
 ### Failed Authentications
 
 The **SailPoint - Failed Authentications** dashboard shows the details of failed logins such as the geolocation, country, state, failed login trends, outlier, and top 10 users.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Failed-Authentications.png')} alt="Failed-Authentications"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Failed-Authentications.png')} alt="Failed Authentications"/>
 
 ### Security
 

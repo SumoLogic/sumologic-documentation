@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-stealthwatch.png')} alt="cisco-stealthwatch" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-stealthwatch.png')} alt="Cisco Stealthwatch icon" width="70"/>
 
 ***Version: 1.1  
 Updated: Jul 06, 2023***

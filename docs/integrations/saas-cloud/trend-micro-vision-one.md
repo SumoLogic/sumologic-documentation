@@ -7,7 +7,7 @@ description: The Trend Micro Vision One app for Sumo Logic is designed to enhanc
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/trend-micro-vision-one.png')} alt="Trend-Micro-Vision-One-icon" width="50" />
+<img src={useBaseUrl('img/send-data/trend-micro-vision-one.png')} alt="Trend Micro Vision One icon" width="50" />
 
 The Trend Micro Vision One app for Sumo Logic is designed to enhance the efficiency and effectiveness of security teams, offering a powerful solution for proactive threat monitoring and rapid incident response. With this app, you can gain real-time visibility into security events and incidents within your organization's infrastructure, allowing them to detect and react to potential threats quickly. It offers a suite of interactive dashboards with pre-configured visual tools like charts, graphs, and tables that provide a thorough view of all alerts and indicators. These features make it easier for teams to discern trends, patterns, and anomalies in your security data, ultimately strengthening your organization's security posture and protecting against advanced threats and attacks.
 
@@ -266,7 +266,7 @@ Use this dashboard to:
 - Analyze the distribution of alerts by provider, status, and investigation result to prioritize response efforts and allocate resources effectively.
 - Track alert trends over time and correlate them with specific event types or indicators to identify patterns or emerging threats.
 - Review the top affected entities and detection models to focus on the most critical assets and effective detection mechanisms.
-<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/TrendMicroVisionOne/Trend-Micro-Vision-One-Overview.png' alt="Trend-Micro-Vision-One-Overview" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/TrendMicroVisionOne/Trend-Micro-Vision-One-Overview.png' alt="Trend Micro Vision One Overview" />
 
 ## Create monitors for the Trend Micro Vision One app
 

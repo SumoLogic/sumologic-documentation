@@ -218,6 +218,6 @@ To filter and focus on promotional credits:
 * Use the Pan feature (magnifying glass icon) to scroll through data.  
 * Hover over chart sections for detailed information.  
 
-<img src={useBaseUrl('/img/manage/account/account-overview-flex.png')} alt="account-overview-flex" style={{border:'1px solid gray'}} width="800"/>  
+<img src={useBaseUrl('/img/manage/account/account-overview-flex.png')} alt="Account overview Flex" style={{border:'1px solid gray'}} width="800"/>  
 
-<img src={useBaseUrl('/img/manage/subscriptions/flex-usage-categories.png')} alt="flex-usage-categories" style={{border:'1px solid gray'}} width="800"/>
+<img src={useBaseUrl('/img/manage/subscriptions/flex-usage-categories.png')} alt="Flex usage categories" style={{border:'1px solid gray'}} width="800"/>

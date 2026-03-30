@@ -7,7 +7,7 @@ description: The Trust Login app for Sumo Logic provides security analysts with 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="Trust-Login-icon" width="50" />
+<img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="Trust Login icon" width="50" />
 
 The Sumo Logic app for Trust Login helps security analysts monitor authentication events, user activities, and potential security threats. It tracks login attempts, account changes, and policy updates in real time to detect anomalies. The Trust Login dashboard provides insights into event breakdowns, trends, and time-based comparisons, facilitating faster incident response and investigations. Additionally, the geo-location metrics identify login attempts from high-risk regions, enhancing threat detection. The alert mechanism highlights unusual activities, such as suspicious logins and geo-location events, enabling proactive threat mitigation. By centralizing security insights, the app improves visibility, streamlines investigations, and strengthens overall security.
 
@@ -156,7 +156,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Events Overview
 
-The **Trust Login - Events Overview** dashboard provides a snapshot of the authentication events, user activities, and system changes. It includes visuals like event breakdowns, trends, and geo-location monitoring to detect suspicious behavior in your organization.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Trust+Login/Trust+Login+-+Events+Overview.png' alt="Trust-Login-Events-Overview" />
+The **Trust Login - Events Overview** dashboard provides a snapshot of the authentication events, user activities, and system changes. It includes visuals like event breakdowns, trends, and geo-location monitoring to detect suspicious behavior in your organization.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Trust+Login/Trust+Login+-+Events+Overview.png' alt="Trust Login Events Overview" />
 
 ## Create monitors for the Trust Login app
 

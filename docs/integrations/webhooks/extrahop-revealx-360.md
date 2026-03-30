@@ -7,7 +7,7 @@ description: The ExtraHop RevealX 360 app for Sumo Logic provides security analy
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/extrahop-revealx-360-icon.png')} alt="extrahop-revealx-360-icon" width="150"/>
+<img src={useBaseUrl('img/send-data/extrahop-revealx-360-icon.png')} alt="Extrahop RevealX 360 icon" width="150"/>
 
 The ExtraHop RevealX 360 app offers powerful network detection and response capabilities, providing organisations with in-depth visibility into security threats throughout their environment. By centralizing detection data such as total detections, average risk scores, MITRE attack techniques, and destination device activity, this app allows security teams to quickly identify, prioritize, and investigate suspicious activities.
 
@@ -141,7 +141,7 @@ The **ExtraHop RevealX 360 - Security** dashboard provides a comprehensive overv
 
 This dashboard helps security teams monitor detection trends, track changes in risk levels, and gain insights into the most frequently observed MITRE techniques, top destination devices, and key targets on the network. It also highlights detections linked to high-risk or embargoed geolocations, offering valuable context for prioritizing investigations.
 
-By consolidating these insights into a unified view, the dashboard enhances threat detection, supports more informed response actions, and strengthens defenses against evolving network-based attacks.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Extrahop+RevealX+360/Extrahop-RevealX-360-Security.png' alt="Extrahop-RevealX-360-Security" style={{border:'1px solid gray'}} />
+By consolidating these insights into a unified view, the dashboard enhances threat detection, supports more informed response actions, and strengthens defenses against evolving network-based attacks.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Extrahop+RevealX+360/Extrahop-RevealX-360-Security.png' alt="Extrahop RevealX 360 Security" style={{border:'1px solid gray'}} />
 
 ## Create monitors for ExtraHop RevealX 360 app
 

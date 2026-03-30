@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/abuse.ch-sslbl-feed.png')} alt="abuse.ch-sslbl-feed" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/abuse.ch-sslbl-feed.png')} alt="Abuse.ch SSLBL feed" width="90"/>
 
 ***Version: 1.2  
 Updated: Jun 26, 2023***

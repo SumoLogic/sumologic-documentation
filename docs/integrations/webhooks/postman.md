@@ -136,19 +136,19 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Postman - Overview** provides an overview of valuable insights and statistical data concerning collections, team activity feed events, and API tests.
 
-<img src={useBaseUrl('img/integrations/webhooks/Postman-Overview.png')} style={{border: '1px solid black'}} alt="Postman-Overview"/>
+<img src={useBaseUrl('img/integrations/webhooks/Postman-Overview.png')} style={{border: '1px solid black'}} alt="Postman Overview"/>
 
 ### Collections, Requests & Team Activity
 
 The **Postman - Collections, Requests & Team Activity** provides valuable insights and statistical data concerning collections, including their requests, updates, and team activity feed events.
 
-<img src={useBaseUrl('img/integrations/webhooks/Postman-Collections,_Requests_&_Team_Activity.png')} style={{border: '1px solid black'}} alt="Postman-Collections,_Requests_&_Team_Activity"/>
+<img src={useBaseUrl('img/integrations/webhooks/Postman-Collections,_Requests_&_Team_Activity.png')} style={{border: '1px solid black'}} alt="Postman Collections, Requests & Team_Activity"/>
 
 ### Monitors
 
 The **Postman - Monitors** provides immediate notifications and real-time data regarding the results of API tests.
 
-<img src={useBaseUrl('img/integrations/webhooks/Postman-Monitors.png')} style={{border: '1px solid black'}} alt="Postman-Monitors"/>
+<img src={useBaseUrl('img/integrations/webhooks/Postman-Monitors.png')} style={{border: '1px solid black'}} alt="Postman Monitors"/>
 
 ## Upgrade/Downgrade the Postman app (Optional)
 
