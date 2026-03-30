@@ -48,7 +48,7 @@ Use these values when configuring the CrowdStrike FDR Source in Sumo Logic.
 The field names in Sumo Logic differ from CrowdStrike FDR. Use the mapping below:
 
 | Sumo Logic Field | CrowdStrike FDR Field |
-|--|--|
+|:--|:--|
 | AWS Access Key ID | Client ID |
 | AWS Secret Access Key | Secret |
 | SQS Queue URL | Notifications URL |
