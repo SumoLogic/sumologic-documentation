@@ -197,7 +197,8 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 
 | Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/webhooks/uptime-logo.png')} alt="Thumbnail icon" width="50"/>   | [Uptime](https://uptime.com/)  | 	Webhook: [Uptime](/docs/integrations/webhooks/uptime/)	 |
+|  <img src={useBaseUrl('img/integrations/webhooks/upwind-logo.png')} alt="Thumbnail icon" width="50"/>   | [Upwind](https://upwind.com/)  | 	Webhook: [Upwind](/docs/integrations/webhooks/upwind/)	 |
+|  <img src={useBaseUrl('img/integrations/webhooks/squadcast-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Squadcast](https://www.squadcast.com/) | Webhook: [Squadcast](/docs/integrations/webhooks/squadcast/)	 |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/urlscan.io.png')} alt="Thumbnail icon" width="75"/> | [URLScan.io](https://urlscan.io/) | Automation integration: [URLScan.io](/docs/platform-services/automation-service/app-central/integrations/urlscan.io/) |
 
 ## V
