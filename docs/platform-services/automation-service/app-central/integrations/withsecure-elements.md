@@ -24,7 +24,7 @@ WithSecure Elements is a single, modular solution consisting of a complete range
 1. Log in to [WithSecure Elements](https://elements.withsecure.com/) technology.
 1. Go on **MANAGEMENT > Client API**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-1.png')} style={{border:'1px solid gray'}} alt="Client API" width="300" />
 1. Click on **Add New**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-2.png')} style={{border:'1px solid gray'}} alt="Add new" width="400" />
-1. Add a description and click **Add**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-3.png')} style={{border:'1px solid gray'}} alt="Add a descriptio;n" width="600" />
+1. Add a description and click **Add**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-3.png')} style={{border:'1px solid gray'}} alt="Add a description" width="600" />
 1. Copy and save the **Client ID** and **Secret**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-4.png')} style={{border:'1px solid gray'}} alt="Save client ID and secret" width="600" />
 
 ## Configure WithSecure Elements in Automation Service and Cloud SOAR

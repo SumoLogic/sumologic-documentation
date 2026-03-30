@@ -199,7 +199,7 @@ See information about group management in Azure Activity Directory, including gr
 
 See information about Authorization in Azure Active Directory including the name of authorization operations done, successful and failed authorization events, and breakdown of results.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Active-Directory/Azure-Active-Directory-Authorization-Authentication-Other.png')} alt="Azure Active Directory Authorization Authentication Othe" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Active-Directory/Azure-Active-Directory-Authorization-Authentication-Other.png')} alt="Azure Active Directory Authorization Authentication Other" />
 
 **Operation Name.** Shows the name of authorizations or authentication, and a count of how many times they happened on a bar chart, for the last 24 hours.
 

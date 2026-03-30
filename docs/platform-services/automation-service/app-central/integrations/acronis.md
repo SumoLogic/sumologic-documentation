@@ -22,7 +22,7 @@ Follow these steps to get your [API key](https://developer.acronis.com/doc/conne
 1. Select **Manage account** from the dashboard. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-1.png')} style={{border:'1px solid gray'}} alt="Acronis manage account" width="400"/>
 1. From the **SETTINGS** select **API clients**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-2.png')} style={{border:'1px solid gray'}} alt="Acronis API clients" width="400"/>
 1. Click **+ Create API Client** and enter a name.  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-3.png')} style={{border:'1px solid gray'}} alt="Acronis create API client" width="400"/> <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-4.png')} style={{border:'1px solid gray'}} alt="Acronis 4" width="400"/>
-1. Copy and save the Client ID, Secret, and Data center URL.  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-5.png')} style={{border:'1px solid gray'}} alt="Acronis copy the client ID and secrect" width="400"/>
+1. Copy and save the Client ID, Secret, and Data center URL.  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-5.png')} style={{border:'1px solid gray'}} alt="Acronis copy the client ID and secret" width="400"/>
 
 ## Configure Acronis in Automation Service and Cloud SOAR
 

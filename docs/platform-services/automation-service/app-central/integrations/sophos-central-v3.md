@@ -26,7 +26,7 @@ The following steps show how to create new [API credentials](https://docs.sophos
 
 1. Log in to the [Sophos Central Partner](https://central.sophos.com/manage/partner) platform.
 1. On the left click on **Settings & Policies** and then click the **API credentials**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-1.png')} style={{border:'1px solid gray'}} alt="Sophos central" width="600"/>
-1. Click on **Add Credential**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-2.png')} style={{border:'1px solid gray'}} alt="Add crendentials" width="600"/>
+1. Click on **Add Credential**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-2.png')} style={{border:'1px solid gray'}} alt="Add credentials" width="600"/>
 1. Enter **Credential name (required)** and the description if you want.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-3.png')} style={{border:'1px solid gray'}} alt="Credentials name" width="600"/>
 1. Click the **Copy** button on the Client ID and paste it temporally in a text editor.
 1. Click **Show Client Secret**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-4.png')} style={{border:'1px solid gray'}} alt="Show client secret" width="600"/>
