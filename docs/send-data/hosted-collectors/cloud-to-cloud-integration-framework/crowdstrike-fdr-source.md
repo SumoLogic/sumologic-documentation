@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
 
-The CrowdStrike Falcon Data Replicator (FDR) Source provides a secure endpoint to ingest [Falcon Data Replicator](https://falcon.crowdstrike.com/support/documentation/9/falcon-data-replicator) events using the S3 ingestion capability by consumed SQS notifications of new S3 objects. It securely stores the required authentication, scheduling, and state tracking information.
+The CrowdStrike Falcon Data Replicator (FDR) Source provides a secure way to ingest [Falcon Data Replicator](https://falcon.crowdstrike.com/support/documentation/9/falcon-data-replicator) events from Amazon S3 using SQS notifications for new objects. It securely manages authentication, scheduling, and state tracking.
 
 :::important
 The [CrowdStrike API documentation](https://falcon.crowdstrike.com/login/?next=%2Fdocumentation%2F9%2Ffalcon-data-replicator) is not public and can only be accessed by partners or customers.
@@ -32,7 +32,27 @@ The [CrowdStrike API documentation](https://falcon.crowdstrike.com/login/?next=%
 You must contact the [CrowdStrike support team](https://supportportal.crowdstrike.com/) to enable CrowdStrike FDR. If it's not enabled, your requests will receive HTTP 500 responses.
 :::
 
-Once CrowdStrike FDR is enabled in the CrowdStrike console, navigate to **Support** > **API Clients and Keys**. You need to **Create new credentials** to copy the **AWS Access Key ID**, **AWS Secret Access Key**, and **SQS Queue URL** to provide to Sumo Logic when creating your CrowdStrike FDR Source.
+Follow the steps below to configure the FDR in the CrowdStrike console:
+
+1. Sign in to the [CrowdStrike Falcon](https://falcon.crowdstrike.com/login?next=%2Fdocumentation%2F9%2Ffalcon-data-replicator) platform.
+2. Navigate to **Support and resources** > **Resources and tools** > **Falcon Data Replicator**.
+3. Click **Create feed**.
+4. Configure the feed with required information and note the following values:
+   - **Client ID**
+   - **Secret**
+   - **Notifications URL (SQS Queue URL)**
+   - **Storage region (S3 region)**
+
+Use these values when configuring the CrowdStrike FDR Source in Sumo Logic.
+
+The field names in Sumo Logic differ from CrowdStrike FDR. Use the mapping below:
+
+| Sumo Logic Field | CrowdStrike FDR Field |
+|:--|:--|
+| AWS Access Key ID | Client ID |
+| AWS Secret Access Key | Secret |
+| SQS Queue URL | Notifications URL |
+| S3 Region | Storage region |
 
 ### Source configuration
 
@@ -48,10 +68,10 @@ To configure a CrowdStrike FDR Source:
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
-1. **AWS Access Key ID**: Provide your AWS Access Key ID you copied from CrowdStrike, see the [Vendor configuration](#vendor-configuration) section.
-1. **AWS Secret Access Key**: Provide your AWS Secret Access Key you copied from CrowdStrike, see the [Vendor configuration](#vendor-configuration) section.
-1. **SQS Queue URL**. Provide your SQS Queue URL you copied from CrowdStrike, see the [Vendor configuration](#vendor-configuration) section.
-1. **S3 Region**. Select the S3 Region your data is in, this normally is the same region specified in the **SQS Queue**.
+1. **AWS Access Key ID**. Enter the Client ID you collected from the CrowdStrike FDR platform, see the [Vendor configuration](#vendor-configuration) section.
+1. **AWS Secret Access Key**. Enter the Secret value you collected from CrowdStrike FDR platform, see the [Vendor configuration](#vendor-configuration) section.
+1. **SQS Queue URL**. Enter the Notifications URL you collected from CrowdStrike FDR platform, see the [Vendor configuration](#vendor-configuration) section.
+1. **S3 Region**. Select the region corresponding to the **Storage region** provided in the [Vendor configuration](#vendor-configuration) section.
 1. (Optional) **Historical Data Collection**. Select the specified time range to ingest only the desired data. By default, it is seven days.
     - By default, all messages are ingested into Sumo Logic without any filtering. However, with the appropriate configuration, customers can ensure that only the desired data within the specified time range is ingested. For instance, if you want to ingest data from the last three days only, then you should configure the source by selecting `3 Days` as the value.
     - Crowdstrike FDR will queue up to 7 days worth of data, if it's configured without any consumer ingesting the events. You should be aware that this historical data will be collected only with the C2C integration.
