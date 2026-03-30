@@ -7,7 +7,7 @@ description: The Sumo Logic app for Kaltura allows you to monitor trends, detect
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/kaltura-logo.png')} alt="Thumbnail icon" width="70"/>
+<img src={useBaseUrl('img/send-data/kaltura-logo.png')} alt="Kaltura icon" width="70"/>
 
 The Sumo Logic app for Kaltura offers a comprehensive overview of key metrics within the content management ecosystem, including total entries, user activity trends, and event distributions. It provides visualizations and analytics to help you monitor trends, detect changes, and optimize your content strategies, enabling you to make informed decisions and maintain the security of the platform.
 

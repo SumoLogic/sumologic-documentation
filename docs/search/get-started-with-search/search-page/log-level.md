@@ -60,7 +60,7 @@ Just execute a log search to see the `_loglevel` field:
 | Element | Description
 | :-- | :--
 | A | Histogram with stacked bars representing log level distribution over your search timeframe.
-| B | Interactive Histogram legend showing the log level that each color represents. Click on any label to isolate it in the Histogram and corresponding messages beneath that. To select multiple log levels, use **shift + click**. In the following example, the **ERROR** and **INFO** label have been selected, so you'll see only error and info logs reflected. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/log-level-error-filter.png')} width="850" alt="log-level-error-filter.png" /> |
+| B | Interactive Histogram legend showing the log level that each color represents. Click on any label to isolate it in the Histogram and corresponding messages beneath that. To select multiple log levels, use **shift + click**. In the following example, the **ERROR** and **INFO** label have been selected, so you'll see only error and info logs reflected. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/log-level-error-filter.png')} width="850" alt="Log level error filter" /> |
 | C | [Field Browser](/docs/search/get-started-with-search/search-page/field-browser) **_loglevel** filter. You can use this reserved field in your queries to perform advanced operations.
 | D | Log level for this log message. Quickly identify the log level of each log message using the color-coded Histogram legend for each message.
 | E | Distribution of log levels under **_loglevel** field in the field browser.

@@ -7,7 +7,7 @@ description: The Sumo Logic app for GitHub Copilot provides a comprehensive visi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/github_copilot.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/send-data/github_copilot.png')} alt="GitHub Copilot icon" width="50"/>
 
 The Sumo Logic app for GitHub Copilot delivers clear, actionable visibility into Copilot adoption, engagement, and productivity across your organization. It consolidates key metrics, such as active users, suggestion efficiency, language usage, and chat activity, so you can monitor how Copilot is used and measure its impact on development workflows.
 

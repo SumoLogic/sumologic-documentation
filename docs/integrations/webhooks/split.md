@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic Split integra
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/split-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/split-logo.png')} alt="Split icon" width="50"/>
 
 The Split app for Sumo Logic enables you to seamlessly monitor feature flagging, experiment results, and user behavior, enabling data-driven decision making and fostering a more agile and competitive development process. This app is based on Split Webhook, which provides seamless integration between Split and Sumo Logic.
 

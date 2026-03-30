@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/mongodb.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/databases/mongodb.png')} alt="MongoDB icon" width="100"/>
 
 MongoDB is a source-available cross-platform document-oriented database program. The Sumo Logic app for MongoDB supports logs and metrics from the open source version of MongoDB. The app is tested on the 4.4.4 version of MongoDB.
 

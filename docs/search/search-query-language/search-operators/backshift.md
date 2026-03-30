@@ -32,7 +32,7 @@ Use `backshift` to see the difference of fields between time points.
 
 Running a query like this:
 
-```sql
+```sumo  
 _sourceCategory=Labs/Apache/Access
 | timeslice by 1m
 | count by _timeslice

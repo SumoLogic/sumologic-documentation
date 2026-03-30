@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic Zebrium RCaaS
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/zebrium-rcaas-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/zebrium-rcaas-logo.png')} alt="Zebrium RCaaS icon" width="50"/>
 
 Zebrium RCaaS (Root Cause as a Service) is an AI-driven platform that automates root cause analysis of software incidents, helping developers identify and resolve issues quickly by analyzing log and metric data. You can use a webhook in the Zebrium RCaaS platform to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor automated root cause analysis results, detect anomalies, and proactively address software incidents with insights in Sumo Logic. For more details, refer to the [Zebrium RCaaS Documentation](https://docs.zebrium.com/).
 

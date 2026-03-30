@@ -8,7 +8,7 @@ description: This app offers a centralized, structured view into your AWS securi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/security-qs.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/security-qs.png')} alt="Security QS icon" width="50"/>
 
 The **AWS Security Hub – OCSF** app offers a centralized, structured view into your AWS security findings using the Open Cybersecurity Schema Framework (OCSF). This app is designed to help security teams identify threats, track compliance violations, and investigate affected resources with speed and clarity.
 

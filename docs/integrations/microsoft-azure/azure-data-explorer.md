@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Data Ex
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-data-explorer.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-data-explorer.png')} alt="Azure Data Explorer icon" width="50"/>
 
 [Azure Data Explorer](https://learn.microsoft.com/en-gb/azure/data-explorer/data-explorer-overview) is a fully managed, high-performance, and big data analytics platform that is easy to analyze high volumes of data in near real time. This integration helps in monitoring the usage, health, and performance of the Azure Data Explorer cluster resources.
 

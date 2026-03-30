@@ -7,7 +7,7 @@ description: The Sumo Logic app for Azure Audit allows you to collect Azure Audi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-audit.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-audit.png')} alt="Azure Audit icon" width="75"/>
 
 The Azure Audit app allows you to collect data from the Azure Activity Log (formerly known as Azure Audit logs) and monitor the health of your Azure environment. This app provides preconfigured dashboards that allow you to monitor active directory activity, resource usage, service health, and user activity.
 
@@ -34,7 +34,7 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
         * **Event hub namespace**. Select the namespace.
         * **Event hub name (optional)**. Select the hub name.
         * **Event hub policy name**. Leave the default policy, **RootManageSharedAccessKey**, or select another as desired.
-          <br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-audit.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting-audit.png" width="800"/>
+          <br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-audit.png')} style={{border: '1px solid gray'}} alt="Diagnostic setting audit" width="800"/>
     1. Click **Save.**
 
 ## Installing the Azure Audit app
