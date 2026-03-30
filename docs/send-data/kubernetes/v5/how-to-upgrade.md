@@ -14,7 +14,7 @@ Before proceeding, ensure you meet the requirements and review the necessary con
 
 ## Requirements
 
-- `helm3`
+- `helm4`
 - `kubectl`
 - Set the following environment variables, which our commands will use:
    ```bash
