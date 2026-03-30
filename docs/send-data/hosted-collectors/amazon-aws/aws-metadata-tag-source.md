@@ -7,7 +7,7 @@ description: A Sumo Logic AWS Metadata Source allows you to collect Tags from EC
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/aws-metadata-tag.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/aws-metadata-tag.png')} alt="AWS Metadata Tag icon" width="40"/>
 
 A Sumo Logic AWS Metadata Source allows you to collect tags from EC2 instances running on AWS. Tags are returned in your search results and can be referenced in queries. For information about assigning tags to EC2 instances, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in AWS help. Only one AWS Metadata Source is required to collect tags from multiple hosts.
 

@@ -11,7 +11,7 @@ description: The Microsoft Azure AD Inventory Source collects user and device
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="Active Directory icon" width="55"/>
 
 The Microsoft Azure AD Inventory Source collects user and device data from the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview) Security endpoint. It securely stores the required authentication, scheduling, and state tracking information.
 

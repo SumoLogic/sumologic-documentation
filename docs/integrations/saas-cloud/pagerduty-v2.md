@@ -7,7 +7,7 @@ description: The Sumo Logic App for PagerDuty V2 collects incident messages from
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/pagerduty.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/pagerduty.png')} alt="PagerDuty icon" width="75"/>
 
 The Sumo Logic App for PagerDuty V2 collects incident messages from your PagerDuty account via a webhook, and displays incident data in pre-configured Dashboards that allow you to monitor and analyze the activity of your PagerDuty account and Services. The Sumo Logic App for PagerDuty V2 uses Webhooks V2, to provide enhanced context for alert object models.
 

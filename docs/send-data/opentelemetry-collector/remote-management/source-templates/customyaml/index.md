@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="30"/>
 
 The Custom YAML source template lets you create and manage source templates through a streamlined YAML editor, offering a flexible and efficient way to define how data is collected and ingested into Sumo Logic. It generates an OpenTelemetry configuration from a provided YAML file and pushes it to a remotely managed OpenTelemetry collector (abbreviated as otelcol). This enables you to directly manage collector configurations in YAML format and seamlessly ingest OpenTelemetry data into Sumo Logic.
 

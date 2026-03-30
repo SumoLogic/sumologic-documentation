@@ -6,7 +6,7 @@ description: The Sumo Logic App for Amazon EC2 Auto Scaling provides comprehensi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-ec2-auto-scaling-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon-ec2-auto-scaling-logo.png')} alt="Amazon EC2 Auto Scaling icon" width="50"/>
 
 Amazon EC2 Auto Scaling helps you maintain application availability and lets you automatically add or remove EC2 instances using scaling policies that you define. Dynamic or predictive scaling policies let you add or remove EC2 instance capacity to service established or real-time demand patterns.
 

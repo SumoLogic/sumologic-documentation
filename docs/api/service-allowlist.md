@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/security/unlock.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/security/unlock.png')} alt="Unlock icon" width="50"/>
 
 The [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses) Management API allows you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
 

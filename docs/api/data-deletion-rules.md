@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/dashboards.png')} alt="Dashboards icon" width="50"/>
 
 Data Deletion Rules APIs let you request removal of ingested data from Sumo Logic, helping you quickly address inadvertently ingested sensitive data.
 

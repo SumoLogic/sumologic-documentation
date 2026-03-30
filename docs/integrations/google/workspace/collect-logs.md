@@ -7,7 +7,7 @@ description: Instructions for configuring log collection from Google Workspace a
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
+<img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="150"/>
 
 This document outlines how to collect logs from Google Workspace and ingest them into Sumo Logic.
 

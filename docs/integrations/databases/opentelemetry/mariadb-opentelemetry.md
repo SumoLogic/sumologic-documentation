@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="Thumbnail icon" width="60"/><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="Mariadb icon" width="60"/><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The [MariaDB](https://mariadb.org/about/) app is a logs based app that helps you monitor MariaDB database. Pre-configured dashboards provide insight into the health of your database clusters, replication, error logs, slow queries and failed logins.
 

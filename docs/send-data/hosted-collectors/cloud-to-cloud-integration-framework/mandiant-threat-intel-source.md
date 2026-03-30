@@ -10,7 +10,7 @@ description: Learn how to collect indicators list from Mandiant Threat Intel pla
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/mandiant-threat-intel-logo.png')} alt="icon" width="60" />
+<img src={useBaseUrl('img/send-data/mandiant-threat-intel-logo.png')} alt="Mandiant Threat Intel icon" width="60" />
 
 The Mandiant Threat Intel source ingests threat intelligence indicators using the Mandiant API and sends them to Sumo Logic as normalized threat indicators. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
 

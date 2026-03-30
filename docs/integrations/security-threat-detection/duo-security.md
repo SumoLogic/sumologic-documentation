@@ -7,7 +7,7 @@ description: The Sumo Logic app for Duo Security helps you monitor your Duo acco
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="Duo icon" width="55"/>
 
 Duo provides two-factor authentication, endpoint remediation, and secure single sign-on tools. The Sumo Logic app for Duo Security helps you monitor your Duo account’s [authentication logs](https://duo.com/docs/adminapi#authentication-logs), [administrator logs](https://duo.com/docs/adminapi#administrator-logs), and [telephony logs](https://duo.com/docs/adminapi#telephony-logs). The dashboards provide insight into failed and successful authentications, events breakdown by applications, factors, and users, geo-location of events, admin activities, outliers, threat analysis of authentication, and administrator events.
 

@@ -7,7 +7,7 @@ description: The Google Cloud Functions app enables you monitor your usage of Go
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/functions.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/functions.png')} alt="Functions icon" width="50"/>
 
 The Google Cloud Functions app enables you to monitor your usage of Google Cloud Functions. The preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures with help of audit logs and metrics.
 

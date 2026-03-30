@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/operations/rules.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/rules.png')} alt="Rules icon" width="50"/>
 
 The Event Analytics Management API allows you to configure event extraction rules from HTTP endpoints. For more information, refer to [Event Extraction Rules](/docs/manage/event-extraction-rules).
 

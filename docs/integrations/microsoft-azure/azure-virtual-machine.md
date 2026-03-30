@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Virtual
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-vm-icon.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-vm-icon.png')} alt="Azure VM icon" width="50"/>
 
 [Azure Virtual Machine](https://learn.microsoft.com/en-us/azure/virtual-machines/) is a virtualized computing environment on Microsoft's cloud platform, that allows users to run applications and tasks on a dedicated, scalable, and on-demand basis. Azure Virtual Machine (VM) provides scalable computing capacity in the Azure Cloud. You can use Azure VM to launch as many or as few virtual servers as you need, configure security and networking, and manage storage.
 

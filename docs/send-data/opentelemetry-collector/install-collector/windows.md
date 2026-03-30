@@ -7,7 +7,7 @@ description: Install the OpenTelemetry Collector on Windows to collect metrics a
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="35"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="35"/>
 
 Follow the steps in this topic to install or uninstall an OpenTelemetry Collector on Windows. See [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for information on other operating systems.
 

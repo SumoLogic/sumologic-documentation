@@ -7,7 +7,7 @@ description: The Databricks Audit app for Sumo Logic provides insights into your
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/collector/databricks-icon.png')} alt="thumbnail icon" width="70"/>
+<img src={useBaseUrl('img/collector/databricks-icon.png')} alt="Databricks Icon icon" width="70"/>
 
 The Sumo Logic app for Databricks Audit provides insights into your organization's security analytics. It provides real-time visibility into user activity, administrative operations, and security-related events across Databricks workspaces, empowering security and compliance teams to quickly detect, investigate, and respond to suspicious behavior.
 

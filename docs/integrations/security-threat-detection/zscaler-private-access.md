@@ -7,7 +7,7 @@ description: The Zscaler Private Access app collects logs from Zscaler using the
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="Zscaler icon" width="75"/>
 
 The Sumo Logic app for Zscaler Private Access (ZPA) collects logs from Zscaler using the Log Streaming Service (LSS) to populate pre-configured searches and dashboards that provide easy-to-access visual insights into user behaviors, security, connector status, and risk.
 
