@@ -8,6 +8,7 @@ description: This page describes how to upgrade Kubernetes Collection to v5.
 This guide walks you through upgrading to Sumo Logic Kubernetes Collection v5.0.0, including key changes, migration steps, and best practices to ensure a smooth transition. Here's what’s new:
 * Prometheus operator which has been deprecated in v4 has now been removed in v5
 * Otel operator is now the single source for metrics collection
+* Removed feasibility to forward prometheus metrics into Otel metrics pipeline as described [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v4.0/docs/kube-prometheus.md)
 
 Before proceeding, ensure you meet the requirements and review the necessary configuration changes detailed in this guide.
 
@@ -41,3 +42,9 @@ Otel operators should now scrape your custom app metrics exposed behind the serv
 
 3. **Scrape configs**:
    If you have kube-prometheus-stack.prometheus.prometheusSpec.additionalScrapeConfigs defined, Move it to sumologic.metrics.collector.otelcol.config.merge.receivers.prometheus.config.scrape_configs
+
+
+### Stop forwarding metrics using Prometheus remote writes into Otel pipeline
+This is applicable for you if you are using your own prometheus operator and using remote write proxy to forward metrics into sumologic kubernetes metrics collection pipeline as discussed [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v4.0/docs/kube-prometheus.md)
+
+We have provided this feasibility of forwarding metrics from prometheus to sumologic kubernetes collection since we don't had Otel operator in the past for metrics collection and sumologic relied on Promtheus too to scrape metrics and don't want to install another prometheus instance to scrape metrics. But now, Otel operator has been standardized to collect metrics using all types of scraping mechanisms that promtheus supports. Please refer pervious section on converting metrics config from Prometheus to Otel operator to start using Otel to scrape metrics.
