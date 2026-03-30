@@ -36,7 +36,7 @@ Follow the steps below to configure the FDR in the CrowdStrike console:
 
 1. Log in to the [CrowdStrike Falcon](https://falcon.crowdstrike.com/login?next=%2Fdocumentation%2F9%2Ffalcon-data-replicator) console.
 2. Navigate to:
-   Support and resources > Resources and tools > Falcon Data Replicator
+   **Support and resources** > **Resources and tools** > **Falcon Data Replicator**
 3. Click **Create feed**.
 4. Configure the feed and note the following values:
    - **Client ID**
