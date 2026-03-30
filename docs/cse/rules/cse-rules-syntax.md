@@ -43,6 +43,67 @@ The following Sumo Logic core platform literals are supported in Cloud SIEM rule
   * For example, `"\"foo\""` is the literal `"foo"`
 
 
+## Referencing record fields
+
+Cloud SIEM records contain two types of fields that you can reference in rule expressions:
+
+* **Normalized fields**. These are schema fields that Cloud SIEM maps during log ingestion to provide a consistent structure across different log sources. Reference these fields directly by name.
+* **Parsed fields**. These are the original fields from the log source that the parser extracts, typically following the vendor's schema. These fields are stored in a `fields` dictionary and require special syntax to access.
+
+### Normalized fields
+
+Reference normalized fields directly by name in your rule expressions:
+
+```
+action = "blocked"
+```
+
+```
+srcDevice_ip = "192.168.1.100"
+```
+
+```
+severity > 5
+```
+
+For a complete list of normalized schema fields, see the [Cloud SIEM Schema](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md).
+
+### Parsed fields (fields syntax)
+
+To reference non-normalized parsed fields, use the `fields` dictionary syntax:
+
+```
+fields['parsed-field_name'] = "value of interest"
+```
+
+This syntax allows you to access fields that were extracted by the parser but not mapped to a normalized schema field.
+
+**Examples**
+
+* Match on a specific parsed field value:
+   ```
+   fields['EventType'] = "UserLogon"
+   ```
+
+* Combine parsed fields with normalized fields:
+   ```
+   action = "blocked" AND fields['risk_score'] > 80
+   ```
+
+* Use parsed fields with functions:
+   ```
+   int(fields['bytes_transferred']) > 1000000
+   ```
+
+* Check if a parsed field contains a pattern:
+   ```
+   fields['command_line'] LIKE '%powershell%'
+   ```
+
+:::tip
+To discover which parsed fields are available for a particular log source, examine sample records in Cloud SIEM or review the parser configuration for that source.
+:::
+
 ## Rules language functions
 
 Following are rules language functions commonly used in Cloud SIEM rule expressions. 

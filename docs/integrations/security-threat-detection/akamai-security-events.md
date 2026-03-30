@@ -6,7 +6,7 @@ description: The Sumo Logic app for Akamai Security Events allows you to visuali
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/akamai_logo.png')} alt="thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/akamai_logo.png')} alt="Akamai icon" width="100"/>
 
 Akamai Security Events app allows you to visualize security events generated on the Akamai platform. The preconfigured dashboards provide insights into attack data, sources of attack, attack queries, geolocation of attack source, context on attack’s HTTP request, and rules triggered by the attack.
 

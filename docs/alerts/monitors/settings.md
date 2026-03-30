@@ -46,7 +46,7 @@ At the top of the page, you can:
 
 The **Monitor Details** tab provides additional information about a selected monitor, the description, Library location, [query](/docs/alerts/monitors/create-monitor/#query), [muting schedules](/docs/alerts/monitors/muting-schedules), [notification preferences](/docs/alerts/monitors/create-monitor/#step-3-notifications-optional), [alert grouping](/docs/alerts/monitors/alert-grouping), [trigger conditions](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), and more.
 
-Click on any monitor in your **Monitors** table, and the **Monitor Details** tab will appear in the right-hand pane.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-details.png')} alt="monitor-details.png" style={{border: '1px solid gray'}} />
+Click on any monitor in your **Monitors** table, and the **Monitor Details** tab will appear in the right-hand pane.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-details.png')} alt="Monitor details" style={{border: '1px solid gray'}} />
 
 ### View in Log Search
 
@@ -93,7 +93,7 @@ Click the **More Actions** menu to view more options, including:
 <img src={useBaseUrl('img/alerts/monitors/more-actions.png')} alt="monitor more actions" style={{border: '1px solid gray'}} width="300"/>
 
 :::tip
-To quickly access this menu without opening the Details pane, just hover your mouse over a monitor, then click the three-dot kebab icon to view a menu with all of the options available in the [Monitor Details tab](#monitor-details).<br/><img src={useBaseUrl('img/alerts/monitors/quick-menu-monitors.png')} alt="Quick menu.png" style={{border: '1px solid gray'}} width="800"/>
+To quickly access this menu without opening the Details pane, just hover your mouse over a monitor, then click the three-dot kebab icon to view a menu with all of the options available in the [Monitor Details tab](#monitor-details).<br/><img src={useBaseUrl('img/alerts/monitors/quick-menu-monitors.png')} alt="Quick menu" style={{border: '1px solid gray'}} width="800"/>
 :::
 
 ### Convert to Anomaly
@@ -114,11 +114,11 @@ For more guidance on optimizing scan costs on Flex Pricing plans, see:
 
 ## Monitor History
 
-In the **Monitor History** tab, you can view a monitor's history of triggered and resolved alerts.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-history.png')} alt="monitor-history.png" style={{border: '1px solid gray'}} width="800"/>
+In the **Monitor History** tab, you can view a monitor's history of triggered and resolved alerts.<br/><img src={useBaseUrl('img/alerts/monitors/monitor-history.png')} alt="Monitor history" style={{border: '1px solid gray'}} width="800"/>
 
 ## Monitor-based SLO
 
-To learn about the **Monitor-based SLO** tab, see [Create an SLO from the Monitors list page](/docs/observability/reliability-management-slo/create-slo/#create-an-slo-from-monitors-list-page).<br/><img src={useBaseUrl('img/alerts/monitors/monitor-based-slo.png')} alt="monitor-history.png" style={{border: '1px solid gray'}} width="800"/>
+To learn about the **Monitor-based SLO** tab, see [Create an SLO from the Monitors list page](/docs/observability/reliability-management-slo/create-slo/#create-an-slo-from-monitors-list-page).<br/><img src={useBaseUrl('img/alerts/monitors/monitor-based-slo.png')} alt="Monitor history" style={{border: '1px solid gray'}} width="800"/>
 
 ## Tags
 

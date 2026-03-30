@@ -7,7 +7,7 @@ description: The Microsoft Graph Security V2 app for Sumo Logic enables you to i
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="icon" width="50"/>
+<img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="MS Graph icon" width="50"/>
 
 The Microsoft Graph Security V2 app for Sumo Logic empowers you to analyze security threats and take proactive measures to safeguard your organization. With its comprehensive widgets, you can track and analyze your security alerts in detail.
 

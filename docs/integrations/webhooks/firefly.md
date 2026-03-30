@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic Firefly integ
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/firefly-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/firefly-logo.png')} alt="Firefly icon" width="50"/>
 
 Firefly's Cloud Asset Management solution enables DevOps, SREs, and platform engineering teams to control their entire cloud footprint and manage it more efficiently and consistently using Infrastructure-as-Code. You can use a webhook in the Firefly platform to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor the system for various events including drift detection, unmanaged resource detection, ghost resource detection, and policy violations in Sumo Logic. For more details, refer to the [Firefly Documentation](https://firefly-5.gitbook.io/firefly-documentation-portal/).
 

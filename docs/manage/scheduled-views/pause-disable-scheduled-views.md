@@ -16,7 +16,7 @@ Scheduled View creators/owners and all active account administrators will receiv
 
 | In-app notification | Details section notification |
 | :-- | :-- |
-| <img src={useBaseUrl('/img/scheduled-views/in-app-notification.png')} alt="in-app-notification" style={{border:'1px solid gray'}} width="400"/> | <img src={useBaseUrl('/img/scheduled-views/notification-details-page.png')} alt="notification-details-page.png" style={{border:'1px solid gray'}} width="400"/> |
+| <img src={useBaseUrl('/img/scheduled-views/in-app-notification.png')} alt="in-app-notification" style={{border:'1px solid gray'}} width="400"/> | <img src={useBaseUrl('/img/scheduled-views/notification-details-page.png')} alt="Notification details page" style={{border:'1px solid gray'}} width="400"/> |
 
 ### Disable the AutoPause
 

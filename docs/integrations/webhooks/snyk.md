@@ -7,7 +7,7 @@ description: The Snyk app for Sumo Logic delivers real-time visibility into secu
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/snyk.png')} alt="thumbnail icon" width="80"/>
+<img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/snyk.png')} alt="Snyk icon" width="80"/>
 
 The Snyk vulnerability monitoring app for Sumo Logic delivers real-time visibility into security vulnerabilities across your software projects and dependencies. By ingesting detailed vulnerability data from Snyk, the app helps security and DevOps teams track risk exposure, prioritize remediation, and maintain a strong security posture. The Snyk app provides insights into critical, high, and other severity vulnerabilities, enabling faster detection and response without including license or unrelated data.
 

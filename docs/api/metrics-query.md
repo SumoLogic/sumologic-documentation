@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="50"/>
 
 The Metrics Query API allows you to execute queries on various metrics and retrieve multiple time-series (data-points) over time from HTTP endpoints. For information about running a metrics query using the API, see [Executing a query](/docs/api/metrics/#executing-a-query) in *Metrics APIs*.
 

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/security/get-valuable-security.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/security/get-valuable-security.png')} alt="Get Valuable Security icon" width="50"/>
 
 The [SAML Configuration](/docs/manage/security/saml/set-up-saml) Management API allows you to provision Security Assertion Markup Language (SAML) 2.0 to enable Single Sign-On (SSO) for user access to Sumo Logic.
 
