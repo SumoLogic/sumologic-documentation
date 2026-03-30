@@ -69,7 +69,7 @@ To configure a CrowdStrike FDR Source:
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **AWS Access Key ID**. Enter the Client ID you collected from the CrowdStrike FDR platform, see the [Vendor configuration](#vendor-configuration) section.
-1. **AWS Secret Access Key**: Enter the Secret value you obtained from CrowdStrike FDR, see the [Vendor configuration](#vendor-configuration) section.
+1. **AWS Secret Access Key**. Enter the Secret value you collected from CrowdStrike FDR platform, see the [Vendor configuration](#vendor-configuration) section.
 1. **SQS Queue URL**. Enter the Notifications URL you obtained from CrowdStrike FDR, see the [Vendor configuration](#vendor-configuration) section.
 1. **S3 Region**. Select the region corresponding to the **Storage region** provided in the [Vendor configuration](#vendor-configuration) section.
 1. (Optional) **Historical Data Collection**. Select the specified time range to ingest only the desired data. By default, it is seven days.
