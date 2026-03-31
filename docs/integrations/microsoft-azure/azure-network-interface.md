@@ -10,7 +10,7 @@ description: This document outlines what is Azure Network Interface, how to set 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-network-interface.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-network-interface.png')} alt="Azure Network Interface icon" width="50"/>
 
 [Azure Network Interface (NIC)](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface) enables an Azure virtual machine (VM) to communicate with the internet, Azure, and on-premises resources. This integration helps in monitoring packet and data throughput.
 

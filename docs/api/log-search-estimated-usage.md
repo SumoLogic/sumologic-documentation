@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/logs.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/logs.png')} alt="Logs icon" width="50"/>
 
 The Log Search Estimated Usage API gets the estimated volume of data that would be scanned for a given log search in the Infrequent Data Tier and Flex, over a particular time range.
 

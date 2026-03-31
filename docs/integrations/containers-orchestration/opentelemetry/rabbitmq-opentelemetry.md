@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/rabbitmq.png')} alt="icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/rabbitmq.png')} alt="RabbitMQ icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 RabbitMQ logs are sent to Sumo Logic through the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). RabbitMQ metrics are sent through the [RabbitMQ](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/rabbitmqreceiver) metrics receiver.
 

@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Relay s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-relay.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-relay.png')} alt="Azure Relay icon" width="50"/>
 
 The [Azure Relay](https://learn.microsoft.com/en-us/azure/azure-relay/relay-what-is-it) service enables you to securely expose services that run in your corporate network to the public cloud. This integration helps in monitoring  everything that happens with operations and actions that are conducted against your Azure Relay namespace by using the API, or through language SDK.
 

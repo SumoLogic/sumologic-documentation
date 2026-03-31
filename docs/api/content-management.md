@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/operations/topology-explorer.png')} alt="icon" width="60"/>
+<img src={useBaseUrl('img/icons/operations/topology-explorer.png')} alt="Topology Explorer icon" width="60"/>
 
 The Content Management API allows you to manage content in your organization’s [Library](/docs/get-started/library) from HTTP endpoints.
 

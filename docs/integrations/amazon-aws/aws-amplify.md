@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic AWS Amplify s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/aws-amplify-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/aws-amplify-logo.png')} alt="AWS Amplify icon" width="50"/>
 
 AWS Amplify is a set of purpose-built tools and features that enables frontend web and mobile developers to quickly and easily build full-stack applications on AWS. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html).
 

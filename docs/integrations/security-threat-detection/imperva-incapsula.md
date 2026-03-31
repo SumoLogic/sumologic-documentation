@@ -7,7 +7,7 @@ description: The Imperva Incapsula - Web Application Firewall (WAF) app helps yo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/imperva.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/imperva.png')} alt="Imperva icon" width="75"/>
 
 Imperva Incapsula is a cloud-based application delivery service that includes web security, DDoS protection, CDN, and load balancing.
 

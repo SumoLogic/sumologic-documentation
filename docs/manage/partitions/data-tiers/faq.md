@@ -83,7 +83,7 @@ Add a custom metadata field at either the collector or source level, and then us
 
 Then, when you create a new partition, you can use the field in the scoping expression along with other scoping rules.
 
-<img src={useBaseUrl('img/manage/partitions-data-tiers/use-tier.png')} alt="use-tier.png" width="350"/> 
+<img src={useBaseUrl('img/manage/partitions-data-tiers/use-tier.png')} alt="Use tier" width="350"/> 
 
 In the future, if you want to change the data that goes into the partition, you can just update the usage field.
 

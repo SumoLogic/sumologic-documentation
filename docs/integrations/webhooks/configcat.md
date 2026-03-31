@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic ConfigCat int
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/configcat-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/configcat-logo.png')} alt="Configcat icon" width="50"/>
 
 ConfigCat is a hosted service for feature flag and configuration management. You can use a webhook in the ConfigCat platform to forward events related to feature flags and configuration changes to the Sumo Logic HTTP endpoint. Using these logs, you can monitor the entire lifecycle of their system, from the creation and updates of flags, settings, rules, and environments in Sumo Logic. For more details, refer to the [ConfigCat Documentation](https://configcat.com/docs/getting-started/).
 

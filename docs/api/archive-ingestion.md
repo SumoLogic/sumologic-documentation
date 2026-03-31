@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/archive.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/icons/archive.png')} alt="Archive icon" width="40"/>
 
 The Archive Ingestion Management API allows you to ingest data from Archive destinations. You can use this API to ingest data from your Archive with an existing [AWS S3 Archive Source](/docs/manage/data-archiving/archive#create-an-aws-s3-archivesource).
 

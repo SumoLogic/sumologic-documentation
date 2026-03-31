@@ -15,14 +15,14 @@ The Sumo Logic AWS API Gateway app provides insights into API Gateway tasks whil
 The AWS API Gateway app uses the following logs and metrics:
 
 * Amazon API Gateway metrics:
-  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-metrics.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-* [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-metrics.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+* [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
 * Amazon API Gateway access logs:
-  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging-variables.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging-variables.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
 
 ### Sample log messages
 

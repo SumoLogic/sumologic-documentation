@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/cassandra.png')} alt="Thumbnail icon" width="60"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/databases/cassandra.png')} alt="Cassandra icon" width="60"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The [Cassandra](https://cassandra.apache.org/_/cassandra-basics.html) app is a log and metrics-based app that helps you monitor the availability, performance, health, and resource utilization of your Cassandra clusters. The pre-configured dashboards provide insight into resource utilization, cache/Gossip/Memtable statistics, error and warnings, request served and latency, storage, and compaction.
 
