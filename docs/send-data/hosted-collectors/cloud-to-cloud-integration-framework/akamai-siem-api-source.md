@@ -11,7 +11,7 @@ description: The Akamai SIEM API Source provides a secure endpoint to receive se
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Akamai icon" width="90"/>
 
 The Akamai SIEM API Source provides a secure endpoint to receive security events generated on the Akamai platform by leveraging the [V1 SIEM API](https://developer.akamai.com/api/cloud_security/siem/v1.html). It securely stores the required authentication, scheduling, and state tracking information.
 

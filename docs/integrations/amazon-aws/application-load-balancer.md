@@ -6,7 +6,7 @@ description: The Sumo Logic app for AWS Elastic Load Balancing ULM - Application
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/alb.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/alb.png')} alt="AWS Application Load Balancer icon" width="50"/>
 
 The AWS Application Load Balancer functions at the application layer, receives requests, evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group.
 

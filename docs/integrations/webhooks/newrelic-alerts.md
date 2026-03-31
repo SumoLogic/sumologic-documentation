@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic New Relic Ale
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/newrelic-alerts-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/newrelic-alerts-logo.png')} alt="Newrelic Alerts icon" width="50"/>
 
 New Relic's alerts and applied intelligence are designed for busy DevOps teams to end response fatigue and detect and diagnose incidents and prioritize them for immediate action. You can use a webhook in the New Relic platform to forward alert events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor the entire lifecycle of issues with events such as activation, acknowledgment, closure, priority changes, and other updates in Sumo Logic. For more details, refer to the [New Relic Alerts Documentation](https://docs.newrelic.com/docs/alerts-applied-intelligence/overview/).
 

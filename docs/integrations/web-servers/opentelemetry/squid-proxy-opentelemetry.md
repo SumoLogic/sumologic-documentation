@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/squid-proxy.png')} alt="Thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/web-servers/squid-proxy.png')} alt="Squid Proxy icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The [Squid](http://www.squid-cache.org/Intro/) Proxy app is a logs app that helps you monitor activity in Squid Proxy. The preconfigured dashboards provide insight into served and denied requests; HTTP response codes; URLs experiencing redirects, client errors, and server errors; and quality of service data that helps you understand your users' experience.
 

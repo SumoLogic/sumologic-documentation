@@ -7,7 +7,7 @@ description: The Sumo Logic app for Confluent Cloud offers deep visibility into 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="Confluent Cloud icon" width="100"/>
 
 Confluent Cloud is a fully managed, cloud-native data streaming platform based on Apache Kafka. It enables real-time data processing, integration, and movement across applications and systems without managing infrastructure. With built-in support for connectors, ksqlDB, and stream governance, it simplifies building scalable, event-driven architectures.
 

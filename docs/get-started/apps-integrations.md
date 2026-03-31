@@ -7,7 +7,7 @@ description: Learn how to install apps to your Library and to multiple environme
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/cloud/apps.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/cloud/apps.png')} alt="Apps icon" width="50"/>
 
 Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you. In this doc, you'll learn how to install apps from the **App Catalog** to your Library and how to manage them in multiple environments.
 

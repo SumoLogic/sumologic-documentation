@@ -11,7 +11,7 @@ description: The Duo Source provides a secure endpoint to receive logs from mul
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="Duo icon" width="55"/>
 
 The Duo Source collects logs from multiple Duo API endpoints. It securely stores the required authentication, scheduling, and state tracking information.
 

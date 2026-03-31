@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Automat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-automation.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-automation.png')} alt="Azure Automation icon" width="50"/>
 
 [Azure Automation](https://learn.microsoft.com/en-us/azure/automation/overview) delivers a cloud-based automation, operating system updates, and configuration service that supports consistent management across your Azure and non-Azure environments. It includes process automation, configuration management, update management, shared capabilities, and heterogeneous features. This integration helps in monitoring create, update and delete operations for the Automation runbooks, jobs and automation assets like connection, credential, variable, and certificate. It also gives insights into the status of your Automation jobs.
 

@@ -7,7 +7,7 @@ description: The Sumo Logic app for Sophos offers robust security monitoring and
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="Sophos icon" width="40"/>
 
 The Sumo Logic app for Sophos delivers robust security monitoring and threat detection capabilities by harnessing detailed data from Sophos security solutions. This app features pre-configured dashboards that provide deep insights into security events and alerts, enabling security teams to quickly identify, analyze, and respond to potential threats.
 

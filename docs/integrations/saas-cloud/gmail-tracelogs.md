@@ -7,7 +7,7 @@ description: The Sumo Logic App for Gmail Trace Logs monitors spam, malware thre
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/gmail-icon.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/gmail-icon.png')} alt="Gmail icon" width="100"/>
 
 Gmail Trace Logs is a new Sumo Logic app based on the Gmail BigQuery Cloud-to-Cloud source, which is a managed analytics data warehouse that provides scalable Gmail reports of your organization.
 
@@ -175,7 +175,7 @@ The **Gmail Trace Logs - Security Overview** dashboard lets you monitor spam mes
 
 The **CrowdStrike Analysis**. To protect your organisation from threats, the app also scans the SHA256 hash of Gmail attachments with CrowdStrike's threat detection service.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/crowdstrike-analysis.png')} alt="Crowdstrike Analysis" width="900"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/crowdstrike-analysis.png')} alt="CrowdStrike Analysis" width="900"/>
 
 ## Upgrading the Microsoft Teams app (optional)
 

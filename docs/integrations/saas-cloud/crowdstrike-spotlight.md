@@ -7,7 +7,7 @@ description: The CrowdStrike Spotlight app for Sumo Logic provides real-time vis
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="85"/>
 
 The Sumo Logic app for CrowdStrike Spotlight offers real-time visibility into vulnerabilities across your organization's assets to the security teams. By integrating with CrowdStrike's powerful endpoint protection platform, the app helps security analysts monitor, detect, and prioritize vulnerabilities based on severity, operating system, internet exposure, and remediation status.
 

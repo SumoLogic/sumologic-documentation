@@ -7,7 +7,7 @@ description: The Sumo Logic App for Microsoft Defender for Endpoint outlines the
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-identity.png')} alt="Thumbnail icon" width="60"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-identity.png')} alt="Microsoft Defender for Identity icon" width="60"/>
 
 The **Azure Security – Microsoft Defender for Endpoint** app empowers organizations to strengthen endpoint protection and proactively defend against advanced cyber threats. By centralizing alert data from devices like desktops, laptops, mobile devices, and servers, the app offers actionable insights that help security teams detect, investigate, and respond to suspicious activity faster and more effectively.
 

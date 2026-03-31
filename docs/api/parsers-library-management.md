@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/operations/parsing-data.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/parsing-data.png')} alt="Parsing Data icon" width="50"/>
 
 Use this API to customize parsers. The parsers library contains the parsers used in the `_parser` field for collector, FER, or query. For more information on customizing parsers, see [Parser Editor](/docs/cse/schema/parser-editor/).
 

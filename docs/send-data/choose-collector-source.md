@@ -206,7 +206,7 @@ The following table shows the major differences between them.
 
 ## Sumo Logic Sources
 
-<img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/icons/operations/collect.png')} alt="Collect icon" width="75"/>
 
 Sources are the environments that Sumo Logic Collectors connect to collect data from your site. Each Source is configured to collect files in a specific way, depending on the type of Collector you're using.
 

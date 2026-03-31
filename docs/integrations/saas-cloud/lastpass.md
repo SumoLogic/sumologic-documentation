@@ -7,7 +7,7 @@ description: The LastPass app for Sumo Logic provides security analysts with cri
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/send-data/lastpass.png')} alt="thumbnail icon" width="55"/>
+<img src={useBaseUrl('/img/send-data/lastpass.png')} alt="LastPass icon" width="55"/>
 
 The Sumo Logic app for LastPass enables security analysts to monitor critical LastPass activities, providing visibility into both user and admin actions that are vital for maintaining account security. The app offers dashboards that track key events such as user logins, password resets, and multi-factor authentication (MFA) changes, helping to detect unusual patterns or potential threats. 
 

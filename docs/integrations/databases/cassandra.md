@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/cassandra.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/databases/cassandra.png')} alt="Cassandra icon" width="75"/>
 
 The Cassandra app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Cassandra clusters. Preconfigured dashboards provide insight into cluster health, resource utilization, cache/Gossip/Memtable statistics, compaction, garbage collection, thread pools, and write paths.
 
