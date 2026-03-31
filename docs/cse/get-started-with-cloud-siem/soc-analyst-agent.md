@@ -4,14 +4,17 @@ title: SOC Analyst Agent
 sidebar_label: SOC Analyst Agent
 description: Learn how to use Sumo Logic's SOC Analyst Agent to perform investigations of Cloud SIEM insights.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <head>
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Closed Preview</span></a></p>
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+:::info
+This feature is in closed preview. For more information, contact your Sumo Logic account executive.
+:::
 
 Sumo Logic's SOC Analyst Agent is an agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations. 
 
@@ -74,6 +77,7 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
 1. In **Ask Something...**, type a question about the insight using details provided in the **What Happened** or **Key Findings** sections above. For example, you could ask to see logs about the entities mentioned in the text (that is, hosts, users, IP addresses, file hashes, and so on). You could even ask more general questions, like "Help me investigate this insight". <br/><img src={useBaseUrl('img/cse/investigation-agent-query.png')} alt="Insight investigation query" style={{border: '1px solid gray'}} width="600" />
 1. Click **Search** <img src={useBaseUrl('img/cse/search-button-in-mobot.png')} alt="Search button in Mobot" width="30" />. Mobot analyzes your request and fashions a query based on it.
 1. Click **View Results** to see the results of your request in the logs query UI. You can also click the suggestions provided to drill down farther. As you ask questions, Mobot retains the context of your conversation about the insight, allowing you to more easily obtain detail. <br/><img src={useBaseUrl('img/cse/investigation-agent-results.png')} alt="Insight investigation query results" style={{border: '1px solid gray'}} width="800" />
+1. As you work with the investigation agent, after each step you will be presented with follow-up questions. Type a number corresponding to a follow-up question, or enter your own question.<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-followup-questions.png')} alt="Insight investigation follow-up questions" style={{border: '1px solid gray'}} width="600" />
 
 ### Start a new investigation
 
@@ -107,6 +111,7 @@ Security teams spend too much time validating false positives and performing rep
 <summary>Will the agent increase scanning or data-processing costs?</summary>
 
 No. The agent analyzes existing data already ingested into Cloud SIEM. It performs reasoning on metadata and contextual signals rather than initiating new scans.
+
 </details>
 
 <details>
@@ -125,6 +130,26 @@ The agent draws from normalized security data (`sec_record*` indexes and signals
 <summary>Can analysts provide feedback or correct AI verdicts?</summary>
 
 Yes. Analysts can override verdicts and flag feedback within the UI. These actions are logged and reviewed to refine model behavior over time as part of the Dojo AI learning loop.
+</details>
+
+### FAQs for preview
+
+<details>
+<summary>What controls are in place to ensure system stability?</summary>
+
+To ensure stable performance, the agent performs system-wide rate limiting, which imposes usage controls across the entire SOC Analyst Agent user base to manage capacity. As a result, auto-investigation may skip some insights or entities if investigating them would exceed rate limits. However, in these instances, manual investigation remains available (with some limits).
+</details>
+
+<details>
+<summary>Does the agent automatically investigate things that are not entities in Cloud SIEM?</summary>
+
+Traditional Cloud SIEM entities are itens like users, IP addresses, hosts, and the like. In addition to these, the agent automatically investigates things that are not usually identified as entities in Cloud SIEM, such as related cloud resources, API endpoints, or service accounts relevant to the insight. This intelligent entity prioritization results in faster investigation and reduces time spent manually determining which entities to investigate.
+</details>
+
+<details>
+<summary>Can I converse with the agent in the same way I am used to doing with other AI-enabled tools?</summary>
+
+Yes, you can. In your investigation, you are not limited in how you proceed. You can engage the agent in a conversational flow to direct the investigation any way you want. However, the agent has many tools that can help should you need guidance. For example, the agent presents follow-up questions after each step that offer you multiple paths for investigation, and can even generate dashboards based on investigation context.
 </details>
 
 ## Additional resources
