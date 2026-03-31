@@ -107,7 +107,7 @@ This example query is from the **Allowed Network Activity by Direction** panel o
 <details>
 <summary>Click to expand</summary>
 
-```sql
+```sumo
 _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC allow
 | csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, \
 4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as src_ip, \

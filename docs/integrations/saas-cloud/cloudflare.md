@@ -39,7 +39,7 @@ The Cloudflare App uses HTTP request logs in JSON format gathered from all of th
 
 The following log query is from the ‘Total Number of Requests’ panel in the ‘Cloudflare - Snapshot’ dashboard.
 
-```sql
+```sumo
 ClientCountry*
 | json "EdgePathingSrc", "EdgePathingOp","EdgePathingStatus", "ClientCountry",
 "ClientIP", "ClientDeviceType", "ClientRequestHost", "ClientRequestUserAgent",

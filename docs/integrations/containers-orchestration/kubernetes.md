@@ -50,7 +50,7 @@ getsockopt: connection refused"}
 
 ### Sample queries
 
-```sql title="Message Breakdown by Container from the Dashboard Container Logs"
+```sumo title="Message Breakdown by Container from the Dashboard Container Logs"
  cluster = * and namespace = * and pod = * and container = *
 | json field=_raw "log" as message
 | fields - message | count container | top 10 container by _count
@@ -137,7 +137,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
    1. All monitors are disabled by default on installation. If you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
   1. By default, the monitors are configured in a monitor folder called **Kubernetes**, if you would like to change the name of the folder, update the monitor folder name in this file.
 1. If you would like the alerts to send email or connection notifications, modify the file **kubernetes_notifications.auto.tfvars** and populate `connection_notifications_critical`, `connection_notifications_warnings`, `connection_notifications_missingdata` and `email_notifications_critical`, `email_notifications_warnings`, `email_notifications_missingdata` as per the below examples.
-   ```sql title="Pagerduty Connection Example"
+   ```sumo title="Pagerduty Connection Example"
    connection_notifications_critical = [
        {
          connection_type       = "PagerDuty",
@@ -154,7 +154,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
      ]
    ```
    Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/docs/api/monitors-management). For information on overriding payload for different connection types, refer to [this document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-   ```sql title="Email Notifications Example"
+   ```sumo title="Email Notifications Example"
    email_notifications_critiical = [
        {
          connection_type       = "Email",

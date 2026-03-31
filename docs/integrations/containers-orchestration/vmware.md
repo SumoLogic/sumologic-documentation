@@ -44,7 +44,7 @@ computeResource=esx1.sumolabscluster.com,,,key=3553,,,chainId=3269
 ### Sample queries
 
 The following query is from the vSphere Errors Trend panel of the vCenter Errors - Analysis Dashboard.
-```sql
+```sumo
 _sourceCategory = Labs/VMWare6.5 and ("error" or "fail" or "critical")
 | parse "message=*,,," as err_msg
 | parse "host=*,,," as esx_host
@@ -258,7 +258,7 @@ python3 $SCRIPT_PATH/esx_perf_metrics.py -s 192.168.124.29 -t sumologic_host -to
    * For more detailed information, see the shell script for configuration options.
 
     Sample CRON job to periodically run the **cron_vcenter_metrics.sh** script every 15 minutes (use the `sudo crontab -e` option), and add the following line:
-      ```sql
+      ```sumo
       */15 * * * * /var/log/vmware/cron_vcenter_metrics.sh
       ```
 

@@ -298,7 +298,7 @@ The OpenTelemetry Collector emits comprehensive internal metrics categorized by 
 
 This sample query is from the **Pipeline Health Overview** panel.
 
-```sql
+```sumo
 sumo.datasource=otel_collector
 | json auto maxdepth 1 nodrop
 | if (isEmpty(log), _raw, log) as _raw
@@ -310,13 +310,13 @@ sumo.datasource=otel_collector
 
 This sample metrics query is from the **Collector Resource Usage** panel.
 
-```sql title="Sample metrics query"
+```sumo title="Sample metrics query"
 sumo.datasource=otel_collector metric=otelcol_process_memory_rss deployment.environment=* | avg by deployment.environment
 ```
 
 This sample query monitors queue health from the **Exporter Queue Health** panel.
 
-```sql
+```sumo
 sumo.datasource=otel_collector metric=otelcol_exporter_queue_size deployment.environment=* 
 | avg by exporter, deployment.environment
 ```

@@ -111,7 +111,7 @@ Learn more about [fields of alert](https://learn.microsoft.com/en-us/graph/api/r
 
 ## Sample queries
 
-```sql title="Alerts Count"
+```sumo title="Alerts Count"
 _sourceCategory="ms_graph"
 |json"id","status","severity","category","feedback","assignedTo","userStates[*]",,"title","description","confidence","malwareStates[*].category" as  alert_id,status,severity,category,feedback,analyst,user_info,title,description,confidence,malware_category nodrop
 | where severity matches "{{severity}}"

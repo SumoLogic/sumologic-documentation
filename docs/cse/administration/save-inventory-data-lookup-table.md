@@ -62,7 +62,7 @@ In this step you create an aggregate search that returns the fields required for
 
 For our use case, the query is:
 
-```sql
+```sumo
 _sourceCategory="/windows/inventory" and _collector="ad-collector"
 | where !isBlank(mail) and !isBlank(samaccountname)
 | count by mail, samaccountname

@@ -56,7 +56,7 @@ started (kafka.server.KafkaServer)
 
 This sample query string is from the Logs panel of the **Kafka - Logs** dashboard.
 
-```sql
+```sumo
 messaging_cluster=* messaging_system="kafka" \
 | json auto maxdepth 1 nodrop | if (isEmpty(log), _raw, log) as kafka_log_message \
 | parse field=kafka_log_message "[*] * *" as date_time,severity,msg | where severity in ("ERROR", "FATAL") \
@@ -158,7 +158,7 @@ It should give you the following result:
 
 9. Make sure jolokia.jar exists at /opt/jolokia/ directory of kafka pod. This is an example of what a [Pod definition file](https://sumologic-app-data.s3.amazonaws.com/Kafka/Kafka_Pod_annotations_Labels_MountVolume.yaml) looks like.
 10. Once this has been done, the Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step. Verify metrics are flowing into Sumo Logic by running the following metrics query:
- ```sql
+ ```sumo
  component="messaging" and messaging_system="kafka"
  ```
 

@@ -110,7 +110,7 @@ scheduler.go:197] Failed to schedule pod: hello-app/frontend-56f7975f44-8sgj7"}
 
 The following query sample is taken from the **Top 10 URLs with Problem Status Codes** panel on the **EKS - API Server Audit Overview** dashboard.
 
-```sql
+```sumo
 _sourceCategory = "EKS_LOGS"
 and _sourceName = kube-apiserver-audit*
 | json field=_raw "message.responseStatus.code" as status_code

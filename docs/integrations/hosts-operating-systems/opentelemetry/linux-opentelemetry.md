@@ -129,7 +129,7 @@ Dec 13 04:44:00 <1> [zypper++] Summary.cc(readPool):133 I_TsU(27372)Mesa-libGL1-
 
 This is a sample log query from the **Total Event Distribution** panel.
 
-```sql
+```sumo
 %"sumo.datasource"=linux   
 | parse regex "\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S+)\s(?<process_name>\w*)(?:\[\d+\]|):\s+"
 |where dest_hostname matches "{{dest_hostname}}" AND process_name matches "{{process_name}}"
@@ -140,7 +140,7 @@ This is a sample log query from the **Total Event Distribution** panel.
 
 This is a metrics query from the **CPU Utilization Over Time** panel.
 
-```sql
+```sumo
 sumo.datasource=linux host.name=* metric=system.cpu.utilization state=(user OR system OR wait OR steal OR softirq OR interrupt OR nice) | sum by host.name | outlier
 ```
 

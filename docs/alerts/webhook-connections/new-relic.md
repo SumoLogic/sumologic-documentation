@@ -70,7 +70,7 @@ A maximum of 200 aggregate results or 10 raw messages for this field can be sent
 
 By default, a "timestamp" field will be applied in New Relic Insights when the event is received. To override this, you must specify "timestamp" as a field in your Sumo Logic query (as an unformatted Unix timestamp, in seconds or milliseconds relative to the Unix epoch). For example, if you would like your timeslice to be represented in New Relic as the timestamp, you may add the following to your query:
 
-```sql
+```sumo
 | timeslice 1m
 | format ("%s",_timeslice) as timestamp
 | count by timestamp

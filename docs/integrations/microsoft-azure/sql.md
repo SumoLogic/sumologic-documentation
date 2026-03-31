@@ -77,7 +77,7 @@ The Sumo Logic app for Azure SQL app uses the following log types:
 
 ### Sample queries
 
-```sql title="Top 10 Errors"
+```sumo title="Top 10 Errors"
 _sourceCategory=Azure/DB/SQL/Logs ErrorEvent
 | json "LogicalServerName", "SubscriptionId", "ResourceGroup", "resourceId", "category", "operationName", "properties" nodrop
 | json field=properties "severity", "error_number", "DatabaseName", "message", "user_defined", "state"
@@ -139,7 +139,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 Follow the below command to update the audit policy with new actions using Azure CLI. If you want to use any other mechanism, refer to the [Microsoft documentation](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification?view=sql-server-ver16).
 ).
 
-  ```sql title="Command to enable audit logs"
+  ```sumo title="Command to enable audit logs"
   az sql db audit-policy update --ids "/subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Sql/servers/<server name>/databases/<database name>" --actions DATABASE_PERMISSION_CHANGE_GROUP DATABASE_OWNERSHIP_CHANGE_GROUP DATABASE_ROLE_MEMBER_CHANGE_GROUP USER_CHANGE_PASSWORD_GROUP SCHEMA_OBJECT_PERMISSION_CHANGE_GROUP SCHEMA_OBJECT_OWNERSHIP_CHANGE_GROUP SCHEMA_OBJECT_CHANGE_GROUP DATABASE_CHANGE_GROUP DATABASE_OBJECT_CHANGE_GROUP  'SELECT, INSERT, UPDATE, DELETE on database::<database name> by public'  --ehari /subscriptions/<subscription_id>/resourcegroups/<resource group where event hub is present>/providers/microsoft.eventhub/namespaces/<event hub namespace>/authorizationrules/rootmanagesharedaccesskey --ehts Enabled  --state Enabled
   ```
 

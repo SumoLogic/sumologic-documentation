@@ -93,7 +93,7 @@ The Sumo Logic app for ExtraHop RevealX 360 ingests [detection events](https://d
 
 ## Sample queries
 
-```sql title="Total Detections"
+```sumo title="Total Detections"
 _sourceCategory=Labs/extraHop
 | json "id", "time", "url", "src.username", "risk_score", "mitre_techniques[*].name", "dst.device.name", "dst.device.macaddr", "dst.device.ipaddrs.[*]", "dst.ipaddr", "type", "title", "description", "recommended_factors", "categories_ids", "dst.hostname", "dst.role" as id, time, url, src_username, risk_score, mitre_techniques, dst_device_name, dst_device_mac_address, dst_device_ip_list, dst_device_ip_2, type, title, description, recommended_factors, categories_ids, dst_hostname, dst_role nodrop
 

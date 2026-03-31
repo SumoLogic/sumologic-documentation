@@ -82,7 +82,7 @@ Dec 13 04:44:00 <1> [zypper++] Summary.cc(readPool):133 I_TsU(27372)Mesa-libGL1-
 
 ## Sample queries
 
-```sql
+```sumo
 sumo.datasource=linux deployment.environment=* host.group=* host.name=*
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s+(?<dest_host>\S*)\s+(?<process>\w*)(?:\[\d+\]:|:)\s*(?<message>.+)$" nodrop
 | if (isEmpty(dest_host), _sourceHost, dest_host) as dest_host

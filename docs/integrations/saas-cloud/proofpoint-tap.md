@@ -138,7 +138,7 @@ This app uses [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to
 
 ## Sample queries
 
-```sql title="Sample Message Events Query (Number of Messages)"
+```sumo title="Sample Message Events Query (Number of Messages)"
 _sourceCategory="milan_proofpoint_tap" ("MESSAGE_BLOCKED" OR "MESSAGE_DELIVERED")
 | json "id","type","cluster","sender","recipient","messageParts[*].disposition","messageParts[*].sandboxStatus","messageSize","modulesRun","policyRoutes","senderIP","threatsInfoMap[*].classification","threatsInfoMap[*].threatType","threatsInfoMap[*].threatStatus","impostorScore","malwareScore","phishScore","spamScore","quarantineFolder","quarantineRule","subject" as id,type,cluster,sender,recipient,dispositions,sandboxStatuses,messageSize,modules_run,policy_route,sender_ip,threat_categories,threat_types,threat_status,impostor_score,malware_score,phish_score,spam_score,quarantine_folder,quarantine_rule,subject nodrop
 | extract field=threat_status "\"?(?<status>[\w\s\-&.,]*)\"?[,\n\]]" multi
@@ -155,7 +155,7 @@ _sourceCategory="milan_proofpoint_tap" ("MESSAGE_BLOCKED" OR "MESSAGE_DELIVERED"
 | count_distinct(id)
 ```
 
-```sql title="Sample Click Events Query (Number of Clicks)"
+```sumo title="Sample Click Events Query (Number of Clicks)"
 _sourceCategory="milan_proofpoint_tap" ("CLICK_PERMITTED" or "CLICK_BLOCKED")
 | json "id","type","threatUrl","classification","clickIP","senderIP","sender","recipient","threatStatus" as id,type,threat_url,category,click_ip,sender_ip,sender,recipient,threat_status nodrop
 | where type matches "{{click_type}}"

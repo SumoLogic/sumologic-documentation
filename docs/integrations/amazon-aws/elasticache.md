@@ -76,11 +76,11 @@ The Amazon ElastiCache app uses the following logs and metrics:
 
 ### Sample queries
 
-```sql title="Average Engine CPU Utilization by cacheclusterid and cachenodeid and Metric-based"
+```sumo title="Average Engine CPU Utilization by cacheclusterid and cachenodeid and Metric-based"
 account=* region=* namespace=aws/elasticache metric=EngineCPUUtilization statistic=Average CacheClusterId=* CacheNodeId=* | avg by CacheClusterId, CacheNodeId, account, region, namespace
 ```
 
-```sql title="ElastiCache Node Reboot Events and CloudTrail-Log-base:"
+```sumo title="ElastiCache Node Reboot Events and CloudTrail-Log-base:"
 account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\"elasticache.amazonaws.com\"" (Reboot* or CacheNodesRebooted)
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message nodrop
 | where event_source = "elasticache.amazonaws.com" and (event_name matches "Reboot*" or event_name="CacheNodesRebooted")
@@ -144,7 +144,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
-```sql
+```sumo
 Rule Name: AwsObservabilityElastiCacheCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.com"
@@ -152,7 +152,7 @@ Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.co
 
 **Parse Expression**
 
-```sql
+```sumo
 | json "eventSource", "awsRegion", "requestParameters.cacheClusterId", "responseElements.cacheClusterId", "recipientAccountId" as eventSource, region, req_cacheClusterId, res_cacheClusterId, accountid nodrop
 | where eventSource = "elasticache.amazonaws.com"
 | if (!isEmpty(req_cacheClusterId), req_cacheClusterId, res_cacheClusterId) as cacheclusterid
@@ -165,7 +165,7 @@ Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.co
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
 
-```sql
+```sumo
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
@@ -174,7 +174,7 @@ Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 **Parse Expression**. Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account

@@ -189,7 +189,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 This sample Query is from the **Artifactory - Cached Deployment Activity** > **Accepted Deploys by Geolocation** panel.
 
-```sql title="Query String"
+```sumo title="Query String"
 " %"sumo.datasource"=artifactory "ACCEPTED DEPLOY" "-cache"
 |parse "[*] [*] *" as trace_id, event_type, user_info
 | parse regex field=user_info "(?:(?<repo>[^:]*):(?<path>[^\s]*))?\s+(?<opt_msg>[\w\s:]+)?\s+(?<user>[^\/]+)\/(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\."

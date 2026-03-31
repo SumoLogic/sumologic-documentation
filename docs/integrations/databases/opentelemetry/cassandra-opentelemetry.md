@@ -143,7 +143,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample log message
 
-```sql
+```sumo
   INFO [ScheduledTasks:1] 2023-01-08 09:18:47,347 StatusLogger.java:101 - system.schema_aggregates
 ```
 
@@ -188,7 +188,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 Following is a query from the Cassandra app's **Cassandra - Overview** dashboard Nodes Up panel:
 
-```sql
+```sumo
 %"sumo.datasource"=cassandra %"deployment.environment"=* %"db.cluster.name"=*   "INFO" | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw
 | parse regex field=_raw "(?<level>[A-Z]*) *\[(?<thread_name>[^\]]*?)[:_-]?(?<thread_id>[0-9]*)\] (?<Date>.{10} .{12}) *(?<source_file>[^:]*):(?<source_line>[0-9]*) - (?<message>.*)"
@@ -202,7 +202,7 @@ Following is a query from the Cassandra app's **Cassandra - Overview** dashboard
 
 Following is the query from Cassandra App's overview Dashboard's Number of Requests Panel:
 
-```sql
+```sumo
 sumo.datasource=cassandra deployment.environment=* db.cluster.name=* db.node.name=* metric=cassandra.client.request.count | sum 
 ```
 

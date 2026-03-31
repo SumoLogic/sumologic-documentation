@@ -11,11 +11,11 @@ The `tourl` operator provides you the ability to assign a short name that descri
 
 ## Syntax
 
-```sql
+```sumo
 tourl(<url_column_name>, <url_short_name_column>) as <field>
 ```
 
-```sql
+```sumo
 tourl(<url_column_name>, <url_short_name_column>, <url_short_name_prefix>, <url_short_name_suffix>) as <field>
 ```
 
@@ -53,7 +53,7 @@ If you do not see the menu, it is not a supported link.
 
 If you’re sharing the Akamai Denials by Host search query in a dashboard with others, you can use the `tourl` operator to add a href to the URL in the dashboard. You’ll run this query to generate the short name:
 
-```sql
+```sumo
 | tourl("https://www.sumologic.net/ui/#section/search/H10KMVHzntXo9PrFAumuFemdU27f2iqU7bA3U7Lq", "Akamai Denials by Host") as AkamaiQuery
 | count AkamaiQuery
 ```
@@ -68,7 +68,7 @@ In the dashboard of failed scheduled searches, you can use the tourl operator to
 
 You’ll run this query to generate the short name:
 
-```sql
+```sumo
 _index=sumologic_audit class=scheduled_search action=FINISH status=FAILURE
 | where _sourceCategory="scheduled_search"
 | KV "SchTime", "Url"

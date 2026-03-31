@@ -68,7 +68,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 
 The sample query is from **Successes Vs Failures** panel from [Active Directory Service Failures](#service-failures) dashboard.
 
-```sql
+```sumo
 _sourceCategory=Labs/windows-jsonformat
 | json "EventID", "Computer", "Keywords" as event_id, host, keywords nodrop
 | if (keywords = "Audit Failure", "Failure", "Success") as status

@@ -236,11 +236,11 @@ here for the message body...' JMSDestinationType='queue' AMQ_SCHEDULED_CRON='' J
 
 ## Sample metrics
 
-```sql
+```sumo
 "Query","metric","deployment.environment","host.name","messaging.cluster.name","messaging.node.name","messaging.system","os.type","sumo.datasource","broker","destination","unit","latest"
 ```
 
-```sql
+```sumo
 "#A","activemq.message.wait_time.avg","testprod","ip-10-0-10-92","activemq_cluster","ip-10-0-10-92","activemq","linux","activemq","localhost","testtopic","ms","254.4"
 ```
 
@@ -250,7 +250,7 @@ here for the message body...' JMSDestinationType='queue' AMQ_SCHEDULED_CRON='' J
 
 This sample log query is from the **Events by Severity** panel of the **ActiveMQ - Logs** dashboard.
 
-```sql
+```sumo
 sumo.datasource=activemq deployment.environment={{deployment.environment}} messaging.cluster.name={{messaging.cluster.name}} messaging.node.name={{messaging.node.name}}
 | json auto maxdepth 1 nodrop
 | if (isEmpty(log), _raw, log) as raw_log_message
@@ -261,7 +261,7 @@ sumo.datasource=activemq deployment.environment={{deployment.environment}} messa
 
 This sample metrics query from the **Average Enqueue Latency** panel of the **ActiveMQ - Destinations** dashboard.
 
-```sql
+```sumo
 sumo.datasource=activemq deployment.environment={{deployment.environment}} messaging.cluster.name={{messaging.cluster.name}} messaging.node.name={{messaging.node.name}} destination={{destination}} !(destination=activemq.*)  metric=activemq.message.wait_time.avg | avg by destination,messaging.cluster.name
 ```
 

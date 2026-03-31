@@ -44,12 +44,12 @@ IIS Log files are generated as local files. For a standard Windows Server, the d
 Within the folder, you will find subfolders for each site configured with IIS. The logs are stored in folders that follow a naming pattern like W3SVC1, W3SVC2, W3SVC3, etc. The number at the end of the folder name corresponds to your site ID. For example, W3SVC2 is for site ID 2.
 
 - IIS Access Logs (W3C default format) Sumo Logic expects logs in [W3C](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging) format with following fields:
-  ```sql
+  ```sumo
   #Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
   ```
    * IIS allows you to choose fields to log in IIS access logs. For explanations on the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
 - HTTP Error Logs Sumo Logic expects Error logs in following format:
-  ```sql
+  ```sumo
   #Fields: date time c-ip c-port s-ip s-port protocol_version verb cookedurl_query protocol_status siteId Reason_Phrase Queue_Name
   ```
 
@@ -178,7 +178,7 @@ A warning message will be printed if any one of the specified performance counte
 
 ## Sample log messages
 
-```sql title="Sample Log Message - Non-Kubernetes environments"
+```sumo title="Sample Log Message - Non-Kubernetes environments"
 2023-01-13 10:56:55 10.0.0.111 GET / ProgramID=236 443 - 207.235.176.5 Mozilla/5.0+(compatible;+Nimbostratus-Bot/v1.3.2;+http://cloudsystemnetworks.com) http://www.google.com/url?sa=t&rct=j&q=anomaly%20detection&source=web&cd=4 304 11 1236 70
 ```
 
@@ -218,13 +218,13 @@ A warning message will be printed if any one of the specified performance counte
 
 This sample Query is from the **IIS - Overview** > **Visitor Location** panel.
 
-```sql title="Query String"
+```sumo title="Query String"
 " %\"sumo.datasource\"=iis %\"webengine.cluster.name\"=* | json \"log\" as _rawlog nodrop \n| if (isEmpty(_rawlog), _raw, _rawlog) as iis_log_message\n| parse regex field=iis_log_message \"(?<server_ip>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}) (?<method>\\S+?) (?<cs_uri_stem>\\S+?) (?<cs_uri_query>\\S+?) (?<s_port>\\S+?) (?<cs_username>\\S+?) (?<c_ip>\\S+?) (?<cs_User_Agent>\\S+?) (?<cs_referer>\\S+?) (?<sc_status>\\S+?) (?<sc_substatus>\\S+?) (?<sc_win32_status>\\S+?) (?<time_taken>\\S+?)$\"\n| count by c_ip\n| lookup latitude, longitude, country_name from geo://location on ip=c_ip\n| where !isNull(latitude)"
 ```
 
 ## Sample metric query
 
-```sql title="Running Application pool"
+```sumo title="Running Application pool"
 sumo.datasource=iis  deployment.environment=* webengine.cluster.name=* webengine.node.name=* instance=*  metric=win.app.pool.was.Current.Application.Pool.State  | filter latest = 3 | count
 ```
 

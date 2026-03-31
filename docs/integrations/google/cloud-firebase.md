@@ -47,7 +47,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Firebase inte
 
 Note that while creating the sync as part of the **Choose logs to include in sink** section, you can use the following query:
 
-```sql
+```sumo
 resource.type=<resource_type> resource.labels.service=<service_name>
 ```
 

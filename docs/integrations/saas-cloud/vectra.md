@@ -138,7 +138,7 @@ This app uses Sumo Logic’s [Vectra Source](/docs/send-data/hosted-collectors/c
 
 ### Sample queries
 
-```sql title="Total Detections"
+```sumo title="Total Detections"
 _sourceCategory="Labs/Vectra"
 | json "id","last_timestamp","first_timestamp","state","t_score","c_score","category","type","summary.operations[*]","grouped_details[*].src_ips[*]","detection_url","assigned_to","detection","certainty","src_account.id","src_account.name","src_account.url","src_account.threat","src_account.certainty" as id,last_timestamp,first_timestamp,state,t_score,c_score,category,type,operations,src_ips,detection_url,assigned_to,detection,certainty,src_account_id,src_account_name,src_account_url,src_account_threat,src_account_certainty nodrop
 | if (t_score>=70,"critical",if(t_score>=41 and t_score<=69, "medium", if(t_score<=40,"low","unknown"))) as severity

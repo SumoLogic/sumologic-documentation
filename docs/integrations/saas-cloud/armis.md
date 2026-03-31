@@ -164,7 +164,7 @@ This section contains log messages for both Alerts and Device sources. It helps 
 
 This section contains the sample queries of both the `Alerts` and `Device`.
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourceCategory=ArmisDashboards alertId
 | json "alertId","activityUUIDs","connectionIds","description","deviceIds","severity","status","time","title","type" as alertId,activityUUIDs,connectionIds,description,deviceIds,severity,status,time,title,type nodrop
 | where severity matches"{{Severity}}" and  status matches"{{Status}}" and type matches"{{Type}}"
@@ -176,7 +176,7 @@ _sourceCategory=ArmisDashboards alertId
 | count_distinct(alertId)
 ```
 
-```sql title="Device"
+```sumo title="Device"
 _sourceCategory=ArmisDashboards id
 | json "id","name","manufacturer","model","riskLevel","sensor","site.name","type","category","operatingSystem" as id, name, manufacturer, model, riskLevel, sensor, site, type, category, operatingSystem nodrop
 | where site matches "{{Site}}" and manufacturer matches "{{Manufacturer}}" and type matches "{{Type}}"

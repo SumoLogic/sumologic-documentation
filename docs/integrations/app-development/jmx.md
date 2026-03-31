@@ -35,7 +35,7 @@ The following types of metrics are collected from JMX:
 
 This query sample is from the **CPU Load Vs Current Threads** panel of **JMX - Overview** dashboard.
 
-```sql
+```sumo
 _sourceCategory=Labs/jmx/metrics
 metric=java_lang_OperatingSystem_TotalMemorySize jolokia_agent_url={{Server}} | eval (_value / 1024 / 1024 / 1024) | sum
 ```
@@ -88,7 +88,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 Metrics filtering is done by whitelisting the metrics we want through name/mbean/paths configuration.
 
-```sql
+```sumo
 [agent]
   interval = "60s"
 [[inputs.jolokia2_agent]]
@@ -181,7 +181,7 @@ The following steps assume you are collecting JMX metrics from a Kubernetes envi
 
 Ensure that Prometheus passes all metrics to Sumo Logic. If you use the below annotations to configure Telegraf, it should work correctly; otherwise, refer to [Collecting Application Metrics](/docs/send-data/kubernetes/collecting-metrics).
 
-```sql
+```sumo
 annotations:
         telegraf.influxdata.com/inputs: |+
           [[inputs.jolokia2_agent]]

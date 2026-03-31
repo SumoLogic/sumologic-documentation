@@ -58,7 +58,7 @@ This section explains the steps to collect MariaDB metrics from a Kubernetes env
 
 1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)
 2. On your MariaDB Pods, add the following annotations:
-```sql
+```sumo
 annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -127,7 +127,7 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
 
 1. **(Recommended Method) Add labels on your MariaDB pods to capture logs from standard output**. Make sure that the logs from MariaDB are sent to stdout. Follow the instructions below to capture MariaDB logs from stdout on Kubernetes.
    1. Apply following labels to the MariaDB pod:
-    ```sql
+    ```sumo
     environment: "prod_ENV_TO_BE_CHANGED"
     component: "database"
     db_system: "mariadb"
@@ -193,7 +193,7 @@ MariaDB logs written to a log file can be collected via the Local File Source of
 1. To configure the MariaDB log file(s), locate your local server.cnf configuration file in the database directory.
 2. Open server.cnf in a text editor.
 3. Set the following parameters in the `[mariadb]` section:
-```sql
+```sumo
 [mariadb]
 log_error=/var/log/mariadb/mariadb-error.log
 log_output=FILE
@@ -314,7 +314,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 2. **Set up Telegraf**.
    1. Install Telegraf, if you haven’t already, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
    2. Configure and start Telegraf to begin collecting metrics data from Telegraf. We will use the [MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify `telegraf.conf` and copy and paste the text below:  
-   ```sql
+   ```sumo
    [[inputs.mysql]]
     servers = ["user_TO_BE_CHANGED:password_TO_BE_CHANGED@tcp(IP_ADDRESS_MARIADB_TO_BE_CHANGED:PORT_MARIADB_TO_BE_CHANGED)/?tls=false"]
     metric_version = 2

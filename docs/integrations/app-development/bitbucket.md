@@ -83,7 +83,7 @@ Parameters:
 * Source_Branch:*
 * Deploy_Result:*
 
-```sql title="Query String"
+```sumo title="Query String"
 _sourceCategory="bitbucket" production  deploymentEnvironment pipe_result_link deploy_status commit_link
 | json field=_raw "buildNumber", "deploymentEnvironment", "branch", "repoFullName", "pipe_result_link", "deploy_status", "pr_id", "commit", "tag", "projectKey", "repoOwner", "commit_link" , "event_date"
 | repoFullName as repo_name

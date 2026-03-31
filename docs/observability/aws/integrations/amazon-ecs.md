@@ -284,7 +284,7 @@ The Amazon ECS app uses the following logs and metrics:
 
 Created ECS Resources:
 
-```sql title="CloudTrail Log based"
+```sumo title="CloudTrail Log based"
 account=dev region=us-east-1 namespace=aws/ecs "\"eventSource\":\"ecs.amazonaws.com\"" (CreateCluster or CreateService or RegisterContainerInstance or RegisterTaskDefinition or RunTask)
 | json "eventName", "eventSource", "awsRegion", "requestParameters", "sourceIPAddress" as event_name, event_source, Region, requestParameters, src_ip nodrop
 | where event_source = "ecs.amazonaws.com"
@@ -298,7 +298,7 @@ account=dev region=us-east-1 namespace=aws/ecs "\"eventSource\":\"ecs.amazonaws.
 
 Average CPU Utilization by ServiceName:
 
-```sql title="Metric based"
+```sumo title="Metric based"
 account=dev region=us-east-1 namespace=aws/ecs metric=CPUUtilization statistic=Average ClusterName=* ServiceName=* | avg by ClusterName, ServiceName, account, region, namespace
 ```
  

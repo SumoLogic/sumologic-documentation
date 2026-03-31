@@ -76,7 +76,7 @@ The Sumo Logic app for OneLogin uses the following logs:
 
 ## Sample queries
 
-```sql title="Users by State"
+```sumo title="Users by State"
 _sourceCategory="Labs/OneLogin"
 | json "id", "state", "invitation_sent_at", "activated_at", "status", "last_login", "invalid_login_attempts", "password_changed_at", "email", "username", "locked_until", "firstname", "lastname", "group_id", "updated_at", "created_at", "member_of" as id, state, invitation_sent_at, activated_at, status, last_login, invalid_login_attempts, password_changed_at, email, user_name, locked_until, first_name, last_name, group_id, updated_at, created_at, member_of nodrop
 

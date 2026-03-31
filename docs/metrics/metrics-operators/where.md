@@ -9,7 +9,7 @@ You can use the `where` operator to filter out either entire time series, or ind
 
 ## Syntax
 
-```sql
+```sumo
 where [VALUE BOOLEAN EXPRESSION | REDUCER BOOLEAN EXPRESSION]
 ```
 
@@ -17,7 +17,7 @@ Where:
 
 * `[VALUE BOOLEAN EXPRESSION]` is a value expression that operates on individual data points of a time series. For example,
 
-  ```sql
+  ```sumo
   _value > 3
   ```
 
@@ -25,7 +25,7 @@ Where:
 
 * `[REDUCER BOOLEAN EXPRESSION]` evaluates the value returned from applying an aggregation function to a given time series. For example:
 
-  ```sql
+  ```sumo
   avg > 5
   ```
 
@@ -48,7 +48,7 @@ For more examples, see [Filtering time series](#filtering-time-series).
 
 **Syntax**
 
-```sql
+```sumo
 where [VALUE BOOLEAN EXPRESSION]
 ```
 
@@ -56,13 +56,13 @@ where [VALUE BOOLEAN EXPRESSION]
 
 This query filters out data points that are less or equal than 5.
 
-```sql
+```sumo
 metric=CPU_Idle | where _value > 5
 ```
 
 This query filters out data points that are less or equal than the minimum value minus 5.
 
-```sql
+```sumo
 metric=CPU_Idle | where _value > min - 5
 ```
 
@@ -72,7 +72,7 @@ metric=CPU_Idle | where _value > min - 5
 
 This query returns the time series where the average value of its data points is greater than 3.
 
-```sql
+```sumo
 metric=CPU_Idle | where avg > 3
 ```
 
@@ -80,7 +80,7 @@ metric=CPU_Idle | where avg > 3
 
 This query filters out time series based on how many times the values of individual data points of a time series meet a value condition over a particular duration.
 
-```sql
+```sumo
 where [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] [duration]
 ```
 
@@ -96,12 +96,12 @@ Where:
 
 This query only returns the time series that have only values greater than 3 for any consecutive 5 minutes of the time range.
 
-```sql
+```sumo
 metric=CPU_Idle | where _value > 3 all any 5m
 ```
 
 This query only returns the time series that have at least three data points with values greater than 3 for any consecutive 5 minutes of the time range.
 
-```sql
+```sumo
 metric=CPU_Idle | where _value > 3 atleast 3 any 5m
 ```

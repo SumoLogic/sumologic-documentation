@@ -312,7 +312,7 @@ This app uses Sumo Logic’s [Digital Guardian ARC Source](/docs/send-data/hoste
 
 ### Sample query
 
-```sql title="Activities By Protocol"
+```sumo title="Activities By Protocol"
 _sourceCategory="Labs/DigitalGuardian"
 | json "dg_guid", "dg_utype", "dg_cn", "dg_user", "dg_machine_name", "dg_proc_file_name", "dg_time", "ua_pt" as id, operation_type, company_name, user, computer, application_name, time, protocol nodrop
 

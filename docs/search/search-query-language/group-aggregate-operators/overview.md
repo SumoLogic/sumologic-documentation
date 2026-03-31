@@ -13,7 +13,7 @@ Only search results that have been aggregated using a group or aggregate operato
 
 When using any grouping function, the word **by** is sufficient for representing the group operator. The typical construction when using group-by functions is:
 
-```sql
+```sumo
 grouping_function by <fieldname>
 ```
 
@@ -25,7 +25,7 @@ By default, the ordering is not defined inside of groups created using a group-b
 
 ## Syntax
 
-```sql
+```sumo
 ... | group_by_function <field_to_operate_on> group by <field_to_group_by>[, <field2>, ...]
 ```
 
@@ -40,46 +40,46 @@ You can use **by** instead of **group by** so `count group by user` is equ
 
 For example, you cannot use:
 
-```sql
+```sumo
 ... | avg(x + y) as average, sum(x+y) as total
 ```
 
 You would need to do that in two separate steps, such as:
 
-```sql
+```sumo
 ... | x + y as z | avg(z) as average, sum(z) as total
 ```
 
 In another example, you cannot use:
 
-```sql
+```sumo
 avg(abs_latency)/1000/60 as avg_latency_min
 ```
 
 Instead, you'd need to use two separate lines:
 
-```sql
+```sumo
 avg(abs_latency_ms) as avg_latency_ms
 | avg_latency_ms / 1000 / 60 as avg_latency_min
 ```
 
 ## Examples
 
-```sql title="Sort by _count and limit to 10 results"
+```sumo title="Sort by _count and limit to 10 results"
 * | parse "GET * " as url 
 | count by url 
 | sort by _count 
 | limit 10
 ```
 
-```sql title="Count by user"
+```sumo title="Count by user"
 status AND down 
 | parse regex "user=(?<user>.*?)"
 | parse regex "host=(?<msg_host>.*?)"
 | count by user
 ```
 
-```sql title="Count by the Source IP address"
+```sumo title="Count by the Source IP address"
 _sourceCategory=apache 
 | parse "* " as src_ip
 | parse "GET *" as url
@@ -87,11 +87,11 @@ _sourceCategory=apache 
 | sort by _count
 ```
 
-```sql title="Group by multiple fields"
+```sumo title="Group by multiple fields"
 | count(field1), avg(field2) group by field1, _timeslice
 ```
 
-```sql title="Use multiple aggregate operators"
+```sumo title="Use multiple aggregate operators"
 | max(amount) as amount_max, count(datetime) as datetime_count, sum(_size) as messages_size_sum, last(query) as last_query
 ```
 

@@ -116,7 +116,7 @@ The Sumo Logic app for Netlify ingests site deployment events into Sumo Logic th
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory="webhook/netlify" "name"
 | json "id", "state", "name", "created_at", "updated_at", "user_id", "build_id", "error_message", "branch", "locked", "title", "commit_message", "context", "deploy_time", "manual_deploy", "public_repo", "committer", "published_at" as id, state, name, createdAt, updatedAt, userId, buildId, errorMessage, branch, locked, title, commitMessage, context, deployTime, manualDeploy, publicRepo, committer, publishedAt nodrop
 | where name matches "{{siteName}}" and branch matches "{{branch}}" and context matches "{{context}}" and state matches "{{state}}" and manualDeploy matches "{{manualDeploy}}" and publicRepo matches "{{publicRepo}}"
@@ -151,7 +151,7 @@ Follow the below steps to configure the Netlify webhook.
     - **URL to notify**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
 7. Click **Save**.
 8. Verify Netlify events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 `_sourceCategory=webhook/netlify`
 ```
 

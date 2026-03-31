@@ -179,7 +179,7 @@ The Amazon Bedrock app uses the following logs and metrics:
 
 ### Sample queries
 
-```sql title="Successful Event Locations (CloudTrail log based)"
+```sumo title="Successful Event Locations (CloudTrail log based)"
 account=* region=us-east-1 namespace=aws/bedrock "\"eventSource\":\"bedrock.amazonaws.com\"" !errorCode
 | json "eventSource", "eventName", "eventType", "sourceIPAddress", "errorCode", "errorMessage" nodrop
 | json "userIdentity.type", "userIdentity.userName", "userIdentity.arn", "recipientAccountId", "awsRegion" as user_type, user_name, arn, accountid, region nodrop
@@ -192,7 +192,7 @@ account=* region=us-east-1 namespace=aws/bedrock "\"eventSource\":\"bedrock.amaz
 | lookup latitude, longitude from geo://location on ip=sourceIPAddress
 ```
 
-```sql title="Top 10 Error Message (CloudTrail log based)"
+```sumo title="Top 10 Error Message (CloudTrail log based)"
 account=* region=us-east-1 namespace=aws/bedrock "\"eventSource\":\"bedrock.amazonaws.com\"" errorCode
 | json "eventSource", "eventName", "eventType", "sourceIPAddress", "errorCode", "errorMessage" nodrop
 | json "userIdentity.type", "userIdentity.userName", "userIdentity.arn", "recipientAccountId", "awsRegion" as user_type, user_name, arn, accountid, region nodrop
@@ -205,7 +205,7 @@ account=* region=us-east-1 namespace=aws/bedrock "\"eventSource\":\"bedrock.amaz
 | sort by eventCount, errorMessage asc
 ```
 
-```sql title="Top 20 Non-ReadOnly Events (CloudTrail log based)"
+```sumo title="Top 20 Non-ReadOnly Events (CloudTrail log based)"
 account=* region=us-east-1 namespace=aws/bedrock "\"eventSource\":\"bedrock.amazonaws.com\""
 | json "eventSource", "eventName", "eventType", "sourceIPAddress", "errorCode", "errorMessage" nodrop
 | json "userIdentity.type", "userIdentity.userName", "userIdentity.arn", "recipientAccountId", "awsRegion" as user_type, user_name, arn, accountid, region nodrop
@@ -220,7 +220,7 @@ account=* region=us-east-1 namespace=aws/bedrock "\"eventSource\":\"bedrock.amaz
 | limit 20
 ```
 
-```sql title="Event Details (CloudWatch log based)"
+```sumo title="Event Details (CloudWatch log based)"
 account=* region=* namespace=aws/bedrock
 | json "accountId", "region", "operation", "identity.arn", "modelId" as accountid, region, operation, arn, modelid nodrop
 | parse field=arn "arn:aws:*::*:user/*" as user_type, f1, user_name nodrop
@@ -230,7 +230,7 @@ account=* region=* namespace=aws/bedrock
 | sort by events, accountid asc, region asc, operation asc, user_type asc, user_name asc, modelid asc
 ```
 
-```sql title="Operations Trend (CloudWatch log based)"
+```sumo title="Operations Trend (CloudWatch log based)"
 account=* region=* namespace=aws/bedrock
 | json "accountId", "region", "operation", "identity.arn", "modelId" as accountid, region, operation, arn, modelid nodrop
 | parse field=arn "arn:aws:*::*:user/*" as user_type, f1, user_name nodrop
@@ -241,7 +241,7 @@ account=* region=* namespace=aws/bedrock
 | transpose row _timeslice column operation
 ```
 
-```sql title="ModelId Trend (CloudWatch log based)"
+```sumo title="ModelId Trend (CloudWatch log based)"
 account=* region=* namespace=aws/bedrock
 | json "accountId", "region", "operation", "identity.arn", "modelId" as accountid, region, operation, arn, modelid nodrop
 | parse field=arn "arn:aws:*::*:user/*" as user_type, f1, user_name nodrop
@@ -253,11 +253,11 @@ account=* region=* namespace=aws/bedrock
 ```
 
 
-```sql title="Invocation Latency By Model (CloudWatch Metric)"
+```sumo title="Invocation Latency By Model (CloudWatch Metric)"
 account=* region=* namespace=aws/bedrock modelid=* metric=InvocationLatency statistic=average | avg by modelid 
 ```
 
-```sql title="Trend Invocations By Model (CloudWatch Metric)"
+```sumo title="Trend Invocations By Model (CloudWatch Metric)"
 account=* region=* namespace=aws/bedrock modelid=* metric=Invocations statistic= sum | quantize using sum | sum by modelid
 ```
 
@@ -323,13 +323,13 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
-```sql
+```sumo
 Rule Name: AwsObservabilityBedrockCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "bedrock.amazonaws.com"
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 json "eventSource", "awsRegion", "recipientAccountId" as event_source, region, accountid nodrop
 | where event_source matches "bedrock.amazonaws.com"
 | "aws/bedrock" as namespace
@@ -340,14 +340,14 @@ json "eventSource", "awsRegion", "recipientAccountId" as event_source, region, a
 
 #### Create/Update Field Extraction Rule(s) for Bedrock CloudWatch logs
 
-```sql
+```sumo
 Rule Name: AwsObservabilityBedrockCloudWatchLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
 account=* region=* _sourceHost=/aws/bedrock/*
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 if (isEmpty(namespace),"unknown",namespace) as namespace
 | if (_sourceHost matches "/aws/bedrock/*", "aws/bedrock", namespace) as namespace
 | json "modelId" as modelId nodrop
@@ -359,7 +359,7 @@ if (isEmpty(namespace),"unknown",namespace) as namespace
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 
-```sql
+```sumo
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
@@ -369,7 +369,7 @@ Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 
 Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the `“dev”` alias for an AWS account with ID `"956882123456"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your AWS account id with the AWS account alias you set up earlier for the individual child account
 | "" as account

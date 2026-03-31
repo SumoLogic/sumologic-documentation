@@ -139,7 +139,7 @@ To parse authentication logs:
 
 ### Sample queries
 
-```sql title="Recent Flow Counts"
+```sumo title="Recent Flow Counts"
 _sourceCategory=observable | json field=_raw "obsrvbl_type", "effective_session_count" as type, session_count
 | where type="session_count"
 | timeslice 10m
@@ -147,7 +147,7 @@ _sourceCategory=observable | json field=_raw "obsrvbl_type", "effective_session_
 | order by _timeslice
 ```
 
-```sql title="Top Observation Host"
+```sumo title="Top Observation Host"
 _sourceCategory=observable
 | json field=_raw "obsrvbl_type", "source_info.name" as type, name
 | where type = "observation"

@@ -136,7 +136,7 @@ If your system handles metrics, use the Sumo Logic app for [Docker ULM](/docs/in
 
 ### Sample queries
 
-```sql title="Containers created or started"
+```sumo title="Containers created or started"
 _sourceCategory=docker  ("\"status\":\"create\"" or "\"status\":\"start\"")  id from
 | parse "\"status\":\"*\"" as status, "\"id\":\"*\"" as container_id, "\"from\":\"*\"" as image
 | count_distinct(container_id)
@@ -290,12 +290,12 @@ In the **Container Filter** field, you can enter a comma-separated list of one o
 * An exclusion (denylist) filter, which begins with an exclamation mark, for example, `!master-container` or `!prod-*`
 
 For example, this filter list will cause the source to collect from all containers whose names start with `prod-`, except those that match `prod-*-mysql`. It will also collect from containers with names that match `master-*-app-*`, and from the `sumologic-collector` container:
-```sql
+```sumo
 prod-*, !prod-*-mysql, master-*-app-*, sumologic-collector
 ```
 
 If your filter list contains only exclusions, the source will collect all containers except from those that match your exclusion filters. In the example below, it will cause the source to exclude containers whose names begin with `container123` and `prod-`.
-```sql
+```sumo
 !container123*, !prod-*
 ```
 
@@ -337,17 +337,17 @@ Docker engine events log data doesn't support the tagging with metadata.
 
 ---
 For example:
-```sql
+```sumo
 {{container.ID}}
 ```
 
 You can use multiple variables, for example:
-```sql
+```sumo
 {{container.ID}}-{{label.label_name}}-{{env.var_name}}
 ```
 
 You can incorporate text in the metadata expression, for example:
-```sql
+```sumo
 ID-{{container.ID}}-AnyTextYouWant{{label.label_name}}
 ```
 

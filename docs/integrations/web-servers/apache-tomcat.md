@@ -95,7 +95,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
    curl localhost:9273/metrics
    ```
    1. Add annotations on your Apache Tomcat pods. On your Apache Tomcat Pods, add the following annotations:
-   ```sql
+   ```sumo
    annotations:
      telegraf.influxdata.com/class: sumologic-prometheus
      prometheus.io/scrape: "true"
@@ -203,7 +203,7 @@ This section explains the steps to collect Apache Tomcat logs from a Kubernetes 
 **(Recommended Method) Add labels on your Apache Tomcat pods to capture logs from standard output.** Follow the instructions below to capture Apache Tomcat logs from stdout on Kubernetes.
 
 1. Apply the following labels to the Apache Tomcat pods:
-   ```sql
+   ```sumo
       environment: "prod_CHANGEME"
        component: "webserver"
        webserver_system: "tomcat"
@@ -336,7 +336,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 Create or modify telegraf.conf and copy and paste the text below:  
 
-```sql
+```sumo
 [[inputs.tomcat]]
   url = "http://127.0.0.1:80/manager/status/all?XML=true"
   username = "<username>"
@@ -412,7 +412,7 @@ Create or modify telegraf.conf and copy and paste the text below:
 ```
     For multiple instances of Tomcat on a single server, including multiple input sections of  
 
-```sql
+```sumo
 [inputs.tomcat]]
   url = "http://127.0.0.1:80/manager/status/all?XML=true"
   username = "<username>"

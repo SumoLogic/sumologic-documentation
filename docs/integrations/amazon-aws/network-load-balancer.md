@@ -18,7 +18,7 @@ The AWS Network Load Balancer app uses AWS Network Load Balancer metrics.
 
 ### Sample queries
 
-```sql title="Active Flows (Connections) by Load Balancer (Metric-based)"
+```sumo title="Active Flows (Connections) by Load Balancer (Metric-based)"
 account=* region=* LoadBalancer=* Namespace=aws/NetworkELB metric=ActiveFlowCount Statistic=Sum | sum by account, region, namespace, LoadBalancer
 ```
 
@@ -61,13 +61,13 @@ Namespace for AWS Network Load Balancer Service is AWS/NetworkELB.
 Create a Field Extraction Rule for AWS Network Load Balancer Cloudtrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 **AWS Network Load Balancer CloudTrail Logs**
-```sql
+```sumo
 Rule Name: AwsObservabilityNLBCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.amazonaws.com" "2015-12-01"
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name", "requestParameters.type", "requestParameters.loadBalancerArn", "requestParameters.listenerArn", "apiVersion" as event_source, region, accountid, networkloadbalancer, loadbalancertype, loadbalancerarn, listenerarn, api_version nodrop
 | where event_source = "elasticloadbalancing.amazonaws.com" and api_version matches "2015-12-01" 
 | "" as namespace
@@ -85,7 +85,7 @@ json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name",
 
 Create the following Metric Rule for the AWS/NetworkELB namespace if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
 
-```sql title="Rule 1*"
+```sumo title="Rule 1*"
 Rule name: AwsObservabilityNLBMetricsAddonEntityRule
 Metric match expression: Namespace=AWS/NetworkELB LoadBalancer=*
 Variable name: networkloadbalancer

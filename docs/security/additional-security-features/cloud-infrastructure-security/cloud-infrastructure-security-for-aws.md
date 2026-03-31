@@ -87,7 +87,7 @@ Cloud Infrastructure Security for AWS utilizes the following log types:
 
 ##### Failed Console Logins
 
-```sql
+```sumo
 _sourceCategory=Labs/AWS/CloudTrail ("ConsoleLogin" and "Failed authentication")
 | json "eventName","sourceIPAddress","userIdentity.userName","userIdentity.principalId","responseElements.ConsoleLogin","additionalEventData.MFAUsed" ,"eventSource","awsRegion","eventType","eventCategory","userIdentity.type","eventTime","requestParameters.AccessControlPolicy.AccessControlList.Grant[*].Permission","errorCode","userIdentity.accountId","errorMessage" as event.action,server.ip,user.name,user_principal, login_result,mfa_used,event_source,cloud.region,event_type,event_category,user_identity_type,event_time,permission,error_code,cloud.account.id,error_message nodrop
 | if(isEmpty(user.name), if(isEmpty(user_principal),"NA",user_principal), user.name) as user.name

@@ -209,7 +209,7 @@ To configure a Source for IIS Performance Logs, do the following:
 <details>
 <summary>Copy and paste this `telegraf.conf` file and modify it for your environment (<strong>click to expand</strong>).</summary>
 
-```sql
+```sumo
 [[inputs.win_perf_counters]]
   [[inputs.win_perf_counters.object]]
     # HTTP Service request queues in the Kernel before being handed over to User Mode.

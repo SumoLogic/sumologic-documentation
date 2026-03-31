@@ -56,7 +56,7 @@ This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://develop
 ```
 ## Sample queries
 
-```sql title="Total Phishing Security Tests"
+```sumo title="Total Phishing Security Tests"
 _sourceCategory=miro
 | json "id", "type", "context.team.name", "context.organization.name", "context.ip", "createdAt", "event", "createdBy.name", "createdBy.email" as id, type, team_name, organization_name, ip, createdAt, event, user_name, user_email nodrop
 | where organization_name matches "{{organization}}"

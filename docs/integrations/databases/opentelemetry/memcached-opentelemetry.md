@@ -36,11 +36,11 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 ## Prerequisites
 
 1. Configure logging in Memcached: By default, the installation of Memcached will not write any request logs to disk. To add a log file for Memcached, you can use the following syntax:
-    ```sql
+    ```sumo
     memcached -d -m 3072 -l localhost -p 11211 -u nobody -v 2>>/var/log/memcached/memcached.log
     ```
 2. Or, if you're on RHEL/CentOS, you can edit the file `/etc/sysconfig/memcached` like so:
-    ```sql
+    ```sumo
     PORT="11211"
     USER="memcached"
     MAXCONN="3048"
@@ -215,7 +215,7 @@ Jun 23 07:35:01 node03 memcached: \
 
 Following is the query from Errors panel of Memcached app's overview Dashboard:
 
-```sql
+```sumo
 %"deployment.environment"=* %"db.cluster.name"=* %"sumo.datasource"=memcached memcached ">" ERROR | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as memcached_log_message
 | parse regex field=memcached_log_message ">(?<pid>\d+) (?<cmd>\w+)"
@@ -225,7 +225,7 @@ Following is the query from Errors panel of Memcached app's overview Dashboard:
 ```
 ## Sample metrics queries
 
-```sql title="Total Get"
+```sumo title="Total Get"
 sumo.datasource=memcached deployment.environment=* db.cluster.name=* db.node.name=* metric=memcached.commands command=get | sum
 ```
 

@@ -55,7 +55,7 @@ The Sumo Logic app for Stripe ingests Stripe events into Sumo Logic through an o
 
 ### Sample queries
 
-```sql
+```sumo
 _sourcecategory=webhook/stripe object
 | json "type", "data.object.object" as  type, object nodrop
 | where type matches "{{type}}" and object matches "{{object}}"
@@ -93,7 +93,7 @@ Follow the below steps to configure the Stripe webhook.
     - **Select events**. Select events to listen for webhook.
 5. Click **Add endpoint**.
 6. Verify Stripe events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-  ```sql
+  ```sumo
   _sourceCategory=webhook/stripe
   ```
 

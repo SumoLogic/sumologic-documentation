@@ -81,7 +81,7 @@ If your resource group contains only resources created by the older ARM template
    5. Select the setting whose event hub column matches with your older event hub namespace. Go to **Edit settings** corresponding to that setting and delete it.
  2. **Wait for all data to be ingested into Sumo**. The azure function is draining all the logs from the older event hub namespace and sending them to sumo, we will need to wait till it finishes it. You can run a query in sumo with your older source name `(_source=<your older source name>)` and see if all the data has already come into sumo till the date when you deleted the diagnostic settings.
  3. **Verify the new source is ingesting logs without any delay**. You can run the below query to verify the latency.
-  ```sql
+  ```sumo
   _source=<new source name>
  | formatDate(fromMillis(_receipttime),"MM/dd hh:mm") as r
  | formatDate(fromMillis(_messagetime),"MM/dd hh:mm") as t
@@ -105,7 +105,7 @@ If your resource group contains only resources created by the older ARM template
     1. Go to the resource group, where Sumo Logic’s log collection ARM template was deployed, and select the **SumoAzureLogs** Function app.
     2. Click **Stop** at the top bar as shown below.<br/><img src={useBaseUrl('img/send-data/stopping-dataflow2.png')} alt="Stopping data flow" style={{border: '1px solid gray'}} width="800" />
  2. **Verify the new source is ingesting logs without any delay**. You can run the below query to verify the latency.
-  ```sql
+  ```sumo
   _source=<new source name>
   | formatDate(fromMillis(_receipttime),"MM/dd hh:mm") as r
   | formatDate(fromMillis(_messagetime),"MM/dd hh:mm") as t

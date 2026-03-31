@@ -174,7 +174,7 @@ This app uses Sumo Logic's Microsoft Graph Security Source to collect v2 [Alerts
 
 ### Sample queries     
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourceCategory={{Logsdatasource}} id
 | json "id", "status", "severity", "classification" as  alert_id, status, severity, classification nodrop
 

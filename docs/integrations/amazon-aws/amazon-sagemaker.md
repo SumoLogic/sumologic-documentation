@@ -111,7 +111,7 @@ The Amazon SageMaker app uses the following logs and metrics:
 
 ### Sample queries
 
-```sql title="Successful Event Locations (CloudTrail log based)"
+```sumo title="Successful Event Locations (CloudTrail log based)"
 account=* region=* namespace=aws/sagemaker "\"eventSource\":\"sagemaker.amazonaws.com\"" !errorCode
 | json "eventSource", "eventName", "eventType", "sourceIPAddress", "errorCode", "errorMessage" nodrop
 | json "userIdentity.type", "userIdentity.userName", "userIdentity.arn", "recipientAccountId", "awsRegion" as user_type, user_name, arn, accountid, region nodrop
@@ -123,7 +123,7 @@ account=* region=* namespace=aws/sagemaker "\"eventSource\":\"sagemaker.amazonaw
 | where !isnull(latitude)
 ```
 
-```sql title="Top 10 Error Message (CloudTrail log based)"
+```sumo title="Top 10 Error Message (CloudTrail log based)"
 account=* region=* namespace=aws/sagemaker "\"eventSource\":\"sagemaker.amazonaws.com\"" errorCode
 | json "eventSource", "eventName", "eventType", "sourceIPAddress", "errorCode", "errorMessage" nodrop
 | json "userIdentity.type", "userIdentity.userName", "userIdentity.arn", "recipientAccountId", "awsRegion" as user_type, user_name, arn, accountid, region nodrop
@@ -135,7 +135,7 @@ account=* region=* namespace=aws/sagemaker "\"eventSource\":\"sagemaker.amazonaw
 | where !isnull(latitude)
 ```
 
-```sql title="Top 20 Non-ReadOnly Events (CloudTrail log based)"
+```sumo title="Top 20 Non-ReadOnly Events (CloudTrail log based)"
 account=* region=* namespace=aws/sagemaker "\"eventSource\":\"sagemaker.amazonaws.com\""
 | json "eventSource", "eventName", "eventType", "sourceIPAddress", "errorCode", "errorMessage" nodrop
 | json "userIdentity.type", "userIdentity.userName", "userIdentity.arn", "recipientAccountId", "awsRegion" as user_type, user_name, arn, accountid, region nodrop
@@ -147,7 +147,7 @@ account=* region=* namespace=aws/sagemaker "\"eventSource\":\"sagemaker.amazonaw
 | limit 20
 ```
 
-```sql title="Access Log Status Code by Endpoints (CloudWatch log based)"
+```sumo title="Access Log Status Code by Endpoints (CloudWatch log based)"
 account=* region=* namespace=/aws/sagemaker/endpoints ACCESS_LOG 
 | json field=_raw "message","logGroup" as message, logGroup nodrop
 | if (isBlank(message), _raw, message) as line
@@ -162,7 +162,7 @@ account=* region=* namespace=/aws/sagemaker/endpoints ACCESS_LOG
 | sort by _count, endpointname, status asc
 ```
 
-```sql title="Recent Logs Processing Jobs (CloudWatch log based)"
+```sumo title="Recent Logs Processing Jobs (CloudWatch log based)"
 account=* region=* namespace=/aws/sagemaker/processingjobs
 | json field=_raw "message" as message nodrop
 | if (isBlank(message), _raw, message) as message
@@ -173,11 +173,11 @@ account=* region=* namespace=/aws/sagemaker/processingjobs
 | sort by time
 ```
 
-```sql title="Feature Store Invocations (CloudWatch Metric)"
+```sumo title="Feature Store Invocations (CloudWatch Metric)"
 account=* region=* namespace=aws/sagemaker featuregroupname=* operationname=* metric=Invocations statistic=sum | quantize using sum | sum 
 ```
 
-```sql title="CPU Utilization by Endpoint (CloudWatch Metric)"
+```sumo title="CPU Utilization by Endpoint (CloudWatch Metric)"
 account=* region=* namespace=/aws/sagemaker/endpoints endpointname=* metric=CPUUtilization statistic=average | avg by endpointname 
 ```
 
@@ -251,13 +251,13 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
-```sql
+```sumo
 Rule Name: AwsObservabilitySagemakerCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "sagemaker.amazonaws.com"
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 json "eventSource", "awsRegion", "recipientAccountId" as event_source, region, accountid nodrop
 | where event_source matches "sagemaker.amazonaws.com"
 | "aws/sagemaker" as namespace
@@ -268,14 +268,14 @@ json "eventSource", "awsRegion", "recipientAccountId" as event_source, region, a
 
 #### Create/Update Field Extraction Rule(s) for SageMaker CloudWatch logs
 
-```sql
+```sumo
 Rule Name: AwsObservabilitySagemakerCloudWatchLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
 account=* region=* _sourceHost=/aws/sagemaker/*
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 extract field=_sourceHost "/aws/sagemaker/(?<ns>[^/]*)" nodrop
 | extract field=_sourceHost "/aws/sagemaker/[^/]+/(?<variant>[^/]*)" nodrop
 | concat("/aws/sagemaker/", ns) as fullns
@@ -292,7 +292,7 @@ extract field=_sourceHost "/aws/sagemaker/(?<ns>[^/]*)" nodrop
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present and update it as required.
 
-```sql
+```sumo
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
@@ -302,7 +302,7 @@ Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 
 Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the `“dev”` alias for an AWS account with ID `"956882123456"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your AWS account id with the AWS account alias you set up earlier for the individual child account
 | "" as account

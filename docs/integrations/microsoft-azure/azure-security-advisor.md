@@ -93,7 +93,7 @@ You can collect the following logs for the Azure Security - Advisor app:
 
 ### Sample queries
 
-```sql title="Recommendation"
+```sumo title="Recommendation"
 _sourceCategory=azure/advisor 
 | json field=_raw 
     "data.alertContext.properties.recommendationResourceLink", "data.essentials.alertId", "data.alertContext.level", "data.alertContext.properties.recommendationImpact", "data.alertContext.ReceivedTime", "data.alertContext.properties.recommendationName", "data.alertContext.properties.recommendationCategory", "data.essentials.targetResourceType", "data.essentials.targetResourceGroup", "data.alertContext.tenantId", "data.essentials.investigationLink" as recommendation_link, alert_id, severity, impact, recommendation_eval_date,display_name, category,affected_resource_type, affected_resource_name, tenant_id,   azure_portal_link nodrop

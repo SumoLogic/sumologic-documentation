@@ -22,7 +22,7 @@ You can collect the logs for Sumo Logic's Google Cloud Bigquery BI engine integr
 ### Configure logs collection
 
 * Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
-   ```sql
+   ```sumo
    (resource.type="bigquery_biengine_model")
    ```
 

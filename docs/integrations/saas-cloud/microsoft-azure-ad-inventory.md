@@ -119,7 +119,7 @@ This app uses Sumo Logic’s Microsoft Azure AD Inventory Source to collect [Use
 
 ### Sample queries
 
-```sql title="Total Devices"
+```sumo title="Total Devices"
 _sourceCategory="Azure_AD_Inventory" deviceId
 | json "deviceId", "isCompliant", "isManaged", "isRooted", "manufacturer", "deviceOwnership", "managementType", "profileType", "operatingSystem", "enrollmentType", "complianceExpirationDateTime", "deviceCategory", "trustType", "registrationDateTime", "onPremisesSyncEnabled", "onPremisesLastSyncDateTime", "approximateLastSignInDateTime" as device_id, is_compliant, is_managed, is_rooted, manufacturer, device_ownership, management_type, profile_type, operating_system, enrollment_type, compliance_expiration_date_time, device_category, trust_type, registration_date_time, on_premises_sync_enabled, on_premises_last_sync_date_time, approximate_last_sign_in_date_time nodrop
 

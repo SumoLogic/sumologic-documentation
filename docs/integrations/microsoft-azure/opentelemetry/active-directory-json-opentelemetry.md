@@ -120,7 +120,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample log messages
 
-```sql
+```sumo
 {
 record_id:"121139",
 channel:"Security",
@@ -162,7 +162,7 @@ level:"Information"
 
 This sample Query is from the Active Directory - Active Directory Service Activity > Top 10 Messages panel.
 
-```sql
+```sumo
 %"sumo.datasource"=activeDirectory
 | json "event_id", "computer", "message" as event_id, host, msg_summary nodrop
 | parse regex field=msg_summary "(?<msg_summary>.*\.*)" nodrop

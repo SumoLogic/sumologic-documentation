@@ -38,7 +38,7 @@ Different Alert types used by Opsgenie, with sample payloads, are defined here: 
 The following query sample is taken from the **Alerts by Priority Over Time** panel on the **Opsgenie - Alerts Breakdown Dashboard**:
 
 
-```sql
+```sumo
 _sourceCategory="opsgenie/events" Create
 | json "alert.createdAt", "alert.description", "alert.message", "action", "alert.team",  
 "alert.priority", "alert.source" , "alert.tags[*]","alert.recipients[*]" as created_at,

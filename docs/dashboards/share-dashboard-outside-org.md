@@ -89,14 +89,14 @@ When someone views a dashboard without signing in, Sumo Logic logs the following
 
 You can use [Scheduled Searches](/docs/alerts/scheduled-searches) to create alerts and reports on sharing dashboards outside your organization.
 
-```sql title="Scheduled search report of dashboard views"
+```sumo title="Scheduled search report of dashboard views"
 _index=sumologic_audit and _sourceName=REPORT "Viewed Report"
 | parse "Name=*, Id=Some(*)," as dashboardName,dashboardId
 | parse "URL=*, ViewerIP=*" as url,viewerip
 | count
 ```
 
-```sql title="Visualization of dashboard views by geography"
+```sumo title="Visualization of dashboard views by geography"
 _index=sumologic_audit and _sourceName=REPORT "Viewed Report"
 | parse "Name=*, Id=Some(*)," as dashboardName,dashboardId
 | parse "URL=*, ViewerIP=*" as url,viewerip

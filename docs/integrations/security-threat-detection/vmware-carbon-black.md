@@ -125,7 +125,7 @@ Utilize the S3 bucket created in the previous steps while configuring the Event 
 
 In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving findings. Search by the source category you assigned to the HTTP Source that receives the log data, for example:
 
-```sql
+```sumo
 _sourceCategory="cb_edr_events" or _sourceCategory="cb_endpoint_standard_events"
 ```
 

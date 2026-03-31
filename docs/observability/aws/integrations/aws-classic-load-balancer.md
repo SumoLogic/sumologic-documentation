@@ -30,7 +30,7 @@ The AWS Classic Load Balancer ULM app uses the following log and metric types:
 
 The following query sample was taken from the **5XX Backend Response Codes** panel on the **AWS Classic Load Balancer - Connections and Host Status** dashboard.
 
-```sql
+```sumo
 account=dev region=us-east-1 Namespace=aws/elb loadbalancername=long-api-lb AvailabilityZone=* metric=HTTPCode_Backend_5XX Statistic=Sum | sum by account, region, namespace, loadbalancername, AvailabilityZone
 ```
 

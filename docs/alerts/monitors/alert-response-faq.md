@@ -78,17 +78,17 @@ There could be two reasons for the card not loading:
 * Sometimes because of internal system errors Log Fluctuation cards might not appear. If the problem persists please contact the Sumo Logic support team. 
 * The Dimensional Explanation card has some limitations on where it might not work. Currently, the card doesn't work for the following cases:
     * Parse based filtering query
-        ```sql
+        ```sumo
         _sourceCategory = security/okta
         "app.user_management.push_profile_failure"
         | json field=_raw "uuid=*" as uuid
         ```
    * Uncategorized
-       ```sql
+       ```sumo
        106.212.160.* or 180.151.66.*
        ```
    * Only unstructured search term
-       ```sql
+       ```sumo
        "NIFI_STORESTODUNNHUMBY_ERROR"
        "PPID" AND "sfe-staging-web"
        \"url\":\"/api/private/printing/"

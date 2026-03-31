@@ -112,7 +112,7 @@ The Sumo Logic App for KnowBe4 consumes Phishing Security logs. Refer to the [Kn
 
 ## Sample queries
 
-```sql title="Total Phishing Security Tests"
+```sumo title="Total Phishing Security Tests"
 _sourceCategory="knowbe4nfr" campaign_id
 | json "campaign_id", "pst_id", "status", "name", "phish_prone_percentage", "started_at", "duration", "template.name", "template.difficulty", "scheduled_count", "delivered_count", "opened_count", "clicked_count", "replied_count", "attachment_open_count", "macro_enabled_count", "data_entered_count", "qr_code_scanned_count", "reported_count", "bounced_count" as campaign_id, pst_id, status, name, phish_prone_percentage, started_at, duration, template_name, template_difficulty, scheduled_count, delivered_count, opened_count, clicked_count, replied_count, attachment_open_count, macro_enabled_count, data_entered_count, qr_code_scanned_count, reported_count, bounced_count nodrop
 | first(status) as status group by pst_id, name
@@ -121,7 +121,7 @@ _sourceCategory="knowbe4nfr" campaign_id
 ```
 
 
-```sql title="Total Recipient User"
+```sumo title="Total Recipient User"
 _sourceCategory="knowbe4nfr" recipient_id
 | json "recipient_id", "pst_id", "user.first_name", "user.last_name", "user.email", "scheduled_at", "delivered_at", "opened_at", "clicked_at", "replied_at", "attachment_opened_at", "macro_enabled_at", "data_entered_at", "qr_code_scanned", "reported_at", "bounced_at", "ip", "ip_location", "browser", "browser_version", "os" as recipient_id, pst_id, first_name, last_name,
 email, scheduled_at, delivered_at, opened_at, clicked_at, replied_at, attachment_opened_at, macro_enabled_at, data_entered_at, qr_code_scanned, reported_at, bounced_at, ip, ip_location, browser, browser_version, os nodrop

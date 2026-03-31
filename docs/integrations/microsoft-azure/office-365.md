@@ -77,7 +77,7 @@ For information on Microsoft APIs and message types, see Microsoft Office 365 Au
 
 ### Sample queries
 
-```sql title="SharePoint Operations"
+```sumo title="SharePoint Operations"
 _sourceCategory=O365* CreationTime Workload ("\"Workload\":\"SharePoint\"" or "\"Workload\":\"OneDrive\"")
 | json "Operation", "Workload"
 | where Workload in ("SharePoint", "OneDrive")
@@ -86,7 +86,7 @@ _sourceCategory=O365* CreationTime Workload ("\"Workload\":\"SharePoint\"" or "\
 | transpose row _timeslice column operation
 ```
 
-```sql title="Failed Activity by Workload"
+```sumo title="Failed Activity by Workload"
 _sourceCategory=O365* Workload Operation "ResultStatus" fail*
 | json "Workload", "ResultStatus", "Operation"
 | where resultstatus matches "*fail*" or resultstatus matches "*Fail*"

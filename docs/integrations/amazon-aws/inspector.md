@@ -58,7 +58,7 @@ For information about integrating Amazon Inspector with Security Hub, see [Integ
 
 ### Sample queries
 
-```sql title="Findings by resource type and severity query"
+```sumo title="Findings by resource type and severity query"
 (_sourceCategory="securityhub_findings" OR _sourceCategory="Labs/AWS/SecurityHub")
 | json  "AwsAccountId", "Id", "GeneratorId", "ProductArn", "CreatedAt", "UpdatedAt", "Resources",
  "Severity.Normalized", "SourceUrl",

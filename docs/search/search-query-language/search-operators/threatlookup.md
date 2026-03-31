@@ -49,7 +49,7 @@ Query responses return the following [normalized indicator](/docs/security/threa
 
 ## Examples
 
-```sql title="Single best match for srcDevice_ip with confidence greater than 50"
+```sumo title="Single best match for srcDevice_ip with confidence greater than 50"
 _index=sec_record*
 | threatlookup singleIndicator srcDevice_ip
 | where _threatlookup.confidence > 50
@@ -57,7 +57,7 @@ _index=sec_record*
 | count by _timeslice
 ```
 
-```sql title="Matches in a 'mysource' custom source for srcDevice_ip with confidence greater than 50"
+```sumo title="Matches in a 'mysource' custom source for srcDevice_ip with confidence greater than 50"
 _index=sec_record*
 | threatlookup source="mysource" srcDevice_ip
 | where _threatlookup.confidence > 50

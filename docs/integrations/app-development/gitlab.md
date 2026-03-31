@@ -35,7 +35,7 @@ For more information about log messages, see [GitLab documentation](https://docs
 
 This section provides a sample query from the **Opened Merge Requests** panel on the **GitLab - Merge Requests** dashboard.
 
-```sql
+```sumo
 _sourceCategory="sumo/GitLab" and _collector="GitLab" %"x-GitLab-event"="Merge Request Hook"
 |json "object_attributes.state" as merge_request_state
 | where merge_request_state="opened"

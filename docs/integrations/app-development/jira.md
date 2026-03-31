@@ -30,7 +30,7 @@ For more information, see [Webhooks](https://developer.atlassian.com/server/jira
 
 ### Sample queries
 
-```sql title="Users created"
+```sumo title="Users created"
 _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
 | json  "webhookEvent", "user.emailAddress", "user.displayName", "user.name", "timestamp" as event_name, user_email, user_name, user, timestamp nodrop
 | where event_name ="user_created"

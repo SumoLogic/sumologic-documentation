@@ -89,7 +89,7 @@ The Sumo Logic app for Split ingests Split events into Sumo Logic through an out
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory=webhook/split type auditLogType
 | json "type", "auditLogType" as type, auditLogType nodrop
 | where type matches "{{type}}" and auditLogType matches "{{auditLogType}}"
@@ -126,7 +126,7 @@ Follow the below steps to configure the Split webhook.
         - **Environments**. Select the environment in Split from which data should be sent.
 6. Click **Save**.
 7. Verify Split events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-  ```sql
+  ```sumo
   _sourceCategory=webhook/split
   ```
 

@@ -208,7 +208,7 @@ bluechip-office - - 19/01/2023:05:02:10 Z "GET /jira/rest/gadget/1.0/averageage/
 
 This sample query is from the **Jira - Overview** dashboard > **Catalina Requests** panel.
 
-```sql
+```sumo
 "%"sumo.datasource"=jira
 | parse "URI *," as URI
 | parse regex "\d{2}-\w{3}-\d{4}\s\d{2}:\d{2}:\d{2}.\d{3}\s(?<log_level>\w+)\s\[(?<thread>[^\]]+)\]\s(?<component>\S+)\s(?<message>.*)"

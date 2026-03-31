@@ -24,7 +24,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Bigtable inte
 ### Configure logs collection
 
 * Collect **Audit Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). These Audit Logs can be accessed based on the [permissions and roles](https://cloud.google.com/bigtable/docs/audit-logging#audit_log_permissions). To enable logging for Google BigTable, refer to [Google documentation](https://cloud.google.com/bigtable/docs/audit-logging#enabling_audit_logging). For more detail on Bigtable operations being audited, refer to [audited operations](https://cloud.google.com/bigtable/docs/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
-   ```sql
+   ```sumo
    (resource.type=audited_resource AND (resource.labels.service=bigtableadmin.googleapis.com OR resource.labels.service=bigtable.googleapis.com))
    ```
 
@@ -33,7 +33,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Bigtable inte
   :::
 
 * Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Bigtable platform logs include logs related to Bigtable instance, cluster, tables, and backup. While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
-   ```sql
+   ```sumo
    (resource.type=bigtable_instance OR bigtable_cluster OR bigtable_table OR bigtable_backup)
    ```
 

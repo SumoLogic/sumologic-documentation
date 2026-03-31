@@ -47,7 +47,7 @@ The Druva Cyber Resilience app utilizes Sumo Logic's Druva Cyber Resilience Sour
 
 ## Sample queries
 
-```sql title="Events Count"
+```sumo title="Events Count"
 _source="Milan_Druva_Cyber_Resilience_v0.0.1"
 | json "id","area","category","type","syslogSeverity","syslogFacility" as id,area,category,type,syslog_severity,syslog_facility nodrop
 | if (syslog_severity=0,"Emergency",if(syslog_severity = 1,"Alert",if(syslog_severity = 2,"Critical",if(syslog_severity=3,"Error",if(syslog_severity = 4,"Warning",if(syslog_severity=5,"Notice",if(syslog_severity=6,"Informational",if(syslog_severity=7,"Debug","None")))))))) as syslog_severity

@@ -108,7 +108,7 @@ This app uses Sumo Logic’s [Cisco AMP Source](/docs/send-data/hosted-collector
 
 ### Sample queries
 
-```sql title="Total Events"
+```sumo title="Total Events"
 _sourceCategory="Labs/cisco-amp-app"
 | json "id", "connector_guid", "severity", "event_type", "computer.active", "file.disposition", "detection_id", "detection", "computer.hostname", "computer.user", "tactics[*]", "techniques[*]", "computer.external_ip", "file.file_name", "file.file_path", "file.parent.file_name", "file.identity.sha256", "file.identity.sha1", "file.identity.md5", "file.parent.identity.sha256", "date", "computer.network_addresses[*]", "file.parent.process_id", "file.parent.disposition", "computer.links.trajectory", "computer.links.computer", "computer.links.group" as id, connector_guid, severity, event_type, status, file_type, detection_id, detection, hostname, user, tactics, techniques, external_ip, file_name, file_path, parent_file_name, sha2565, sha1, md5, parent_sha256, date, computer_network_addresses, process_id, parent_file_type, trajectory_link, computer_link, group_link nodrop
 

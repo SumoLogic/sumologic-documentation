@@ -31,7 +31,7 @@ To learn more about configuring monitoring for Azure functions, refer to the [Az
 
 ### Sample queries
 
-```sql title="Error by function app"
+```sumo title="Error by function app"
 tenant_name=* subscription_id=* location=* resource_group=* provider_name=microsoft.web resource_type=sites  resource_name=* (metric=Http4xx or metric=Http5xx) statistic=total
 ```
 

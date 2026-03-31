@@ -66,7 +66,7 @@ This app uses Sumo Logic’s [CyberArk Audit source](/docs/send-data/hosted-coll
 
 ## Sample queries
 
-```sql title="Password Reset Events"
+```sumo title="Password Reset Events"
 _sourceCategory="Labs/CyberArkAudit"
 | json "uuid", "auditType", "serviceName", "actionType", "action", "identityType", "source", "auditCode", "timestamp", "tenantId", "username", "userId", "component", "message", "customData" as id, audit_type, service_name, action_type, action, identity_type, source, audit_code, timestamp, tenant_id, username, user_id, component, message, custom_data nodrop
 

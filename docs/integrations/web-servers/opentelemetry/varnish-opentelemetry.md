@@ -125,7 +125,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ### Sample log messages in Non-Kubernetes environments
 
-```sql
+```sumo
 175.120.107.250 - - [24/Jan/2023:14:37:44 +0530] "POST /_media/resource_thumb_video_my_v2_homepage.jpg HTTP/1.1" 404 99737883 "http://yahoo.com/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25"
 ```
 
@@ -133,7 +133,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 This sample query is from the **Varnish Overview - Traffic Volume** dashboard > **MB Served Over Time** panel.
 
-```sql title="Query String"
+```sumo title="Query String"
 %"sumo.datasource"=varnish %"webengine.system"=varnish %"webengine.cluster.name"=* | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw
 | parse regex "(?<client_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s+(?<logname>\S+)\s+(?<user>[\S]+)\s+\[" nodrop

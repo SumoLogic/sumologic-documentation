@@ -429,7 +429,7 @@ To highlight lines in the code, use `{#}` in the title line with lines numbers. 
 </TabItem>
 <TabItem value="Result">
 
-```sql {2-6}
+```sumo {2-6}
 _sourceCategory=reinvent/travel/checkout
 [subquery:_sourceCategory=reinvent/travel/nginx
      | count by src_ip

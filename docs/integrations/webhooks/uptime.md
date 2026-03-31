@@ -55,7 +55,7 @@ Follow the below steps to configure the Uptime.com webhook.
     - **URL**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
 6. Click **Save**.
 6. Verify Uptime.com events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-  ```sql
+  ```sumo
   _sourceCategory=webhook/uptime
   ```
 

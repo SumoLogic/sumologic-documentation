@@ -53,7 +53,7 @@ instance of Win32_NTLogEvent
 
 ### Sample queries
 
-```sql title="Recent Policy Changes"
+```sumo title="Recent Policy Changes"
 _sourceCategory=OS/Windows "Policy Change"
 | parse regex "CategoryString = \"(?<category>[^\"]+?)\";[\s\S]+?Logfile = \"Security\""
 | count by category

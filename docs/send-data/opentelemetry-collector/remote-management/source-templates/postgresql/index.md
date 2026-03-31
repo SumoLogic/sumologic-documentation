@@ -42,7 +42,7 @@ Configure logging in PostgreSQL:
 2. Connect to the database server (using SSH) in a terminal window.
 3. Open `postgresql.conf` configuration file.
 4. Under the ERROR REPORTING AND LOGGING section of the file, use the following config parameters. For more information on the following parameters, [click here](https://www.postgresql.org/docs/12/static/runtime-config-logging.html).
-  ```sql
+  ```sumo
     log_destination = 'stderr'
     logging_collector = on
     log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'

@@ -154,7 +154,7 @@ metrics:
 
 ### Sample queries
 
-```sql title="Failed Resources"
+```sumo title="Failed Resources"
 _sourceCategory=prod/web/puppet/reports
 | parse "\"resources\":{\"name\":\"resources\",\"label\":\"Resources\",\"values\":[[\"total\",\"Total\",*],[\"skipped\",\"Skipped\",*],[\"failed\",\"Failed\",*],[\"failed_to_restart\",\"Failed to restart\",*],[\"restarted\",\"Restarted\",*],[\"changed\",\"Changed\",*],[\"out_of_sync\",\"Out of sync\",*],[\"scheduled\",\"Scheduled\",*],[\"corrective_change\",\"Corrective change\",*]]" as total_res,skipped,failed,failed_to_restart,restarted,changed,out_of_sync,scheduled,corrective_change
 | sum(total_res) as total_resources, sum(failed) as failed_resources

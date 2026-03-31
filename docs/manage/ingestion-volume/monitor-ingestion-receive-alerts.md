@@ -31,11 +31,11 @@ You must update all of the indicated fields for the search to save successfully
     ```
     You can find the correct values on the Account page. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account** select **Account Overview**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/><img src={useBaseUrl('img/manage/ingestion-volume/account-overview.png')} alt="account overview" />
 3. (Optional)  Modify the following line if you want to change the percentage threshold for generating the alert.
-    ```sql
+    ```sumo
     | where pct_used > 85
     ```
     Example: To generate an alert at 80 % utilization, change the line to:
-    ```sql
+    ```sumo
     | where pct_used > 80
     ```
 
@@ -97,7 +97,7 @@ You must update the indicated field for the search to be successfully saved.
 
 1. Enable the Data Volume Index. See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
 1. Substitute the correct value of `X` for the following parameter in the search query (see entry in yellow in the query below).
-   ```sql
+   ```sumo
    X as daily_plan_size
    ```
    The correct value is on the Account page.
@@ -140,11 +140,11 @@ This hourly alert is generated when both of the following occur:
 
 1. Enable the Data Volume Index. See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
 1. (Optional) To adjust the sensitivity of this alert, change either of the values from the following line of the query:
-    ```sql
+    ```sumo
     | where pct_increase  > 30 and ingest_weight\> 30
     ```
     Example: Change the `pct_increase` value higher to make the alert less sensitive.
-    ```sql
+    ```sumo
     | where pct_increase  > 50 and ingest_weight\> 30
     ```
 1. (Optional) To change the alert to evaluate a spike in a collector or source, do either of the following: 
@@ -195,11 +195,11 @@ attributes `alive` and `LastSeenAlive`.
 
 1. Enable the Data Volume Index.  See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
 1. (Optional) Depending on how busy your collectors are, you can modify the following alert threshold:
-    ```sql
+    ```sumo
     | where mins_since_last_logs\>= 60
     ```
     For example, if your collectors ingest less often than 60 minutes, 4 hours may be more appropriate and you can change the line to 240 minutes:
-    ```sql
+    ```sumo
     | where mins_since_last_logs\>= 240
     ```
 
@@ -233,12 +233,12 @@ After completing the setup steps, you'll need to create a monitor. 
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0**.
 1. (Optional) You can test your new alert in one of the following ways.
     * Limit the results to monitor just two collectors by adding this extra line to the end of the query:
-        ```sql
+        ```sumo
         | where collector = "some_name" or collector = "some_other_name"
         ```
    * Turn off a collector using [Start or Stop a Collector using Scripts](/docs/send-data/collection/start-stop-collector-using-scripts.md) and verify that you received the alert.
    * Reduce the time range for collectors to send data to 15 minutes:
-        ```sql
+        ```sumo
         | where mins_since_last_logs\>= 15
         ```
 
@@ -256,7 +256,7 @@ Enable the Audit Index. See [Enable the audit Index](/docs/manage/security/aud
 
 #### Query
 
-```sql
+```sumo
 _index=sumologic_audit _sourceCategory=account_management _sourceName=VOLUME_QUOTA "rate limit"
 ```
 

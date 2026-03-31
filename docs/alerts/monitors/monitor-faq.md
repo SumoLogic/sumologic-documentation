@@ -30,7 +30,7 @@ For example, instead of creating one monitor to alert on CPU utilization, you co
 
 Sumo Logic will automatically disable a monitor if it violates specific limitations. You can check the reason it was disabled with the [System Event Index](/docs/manage/security/audit-indexes/system-event-index.md). The following query will search the System Event Index for the reason:
 
-```sql
+```sumo
 _index=sumologic_system_events MonitorSystemDisabled <monitorId>
 ```
 
@@ -43,7 +43,7 @@ A common reason a metric monitor is disabled is the cardinality limit was excee
 
 For example, if you use Kubernetes and have 20,000 pods in your deployment, a query that spans all pods, like the following, will result in the cardinality error.
 
-```sql
+```sumo
 deployment=acme metric=container_cpu_usage_seconds_total | rate | sum by pod
 ```
 
@@ -51,11 +51,11 @@ deployment=acme metric=container_cpu_usage_seconds_total | rate | sum by pod
 
 Break your monitor into several monitors. Based on the above Kubernetes example, if you are collecting Kubernetes data from different AWS regions, instead of creating a single alert on all pods across all AWS regions, create one alert per AWS region, as shown below.
 
-```sql title="Monitor 1 query"
+```sumo title="Monitor 1 query"
 deployment=acme region=us-west2 metric=container_cpu_usage_seconds_total | rate | sum by pod
 ```
 
-```sql title="Monitor 2 query"
+```sumo title="Monitor 2 query"
 deployment=acme region=us-east1 metric=container_cpu_usage_seconds_total | rate | sum by pod
 ```
 

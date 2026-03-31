@@ -69,7 +69,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 <details>
 <summary><strong>Click to expand.</strong> On your Squid Proxy Pods, add the following annotations:</summary>
 
-```sql
+```sumo
 annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -269,7 +269,7 @@ This section explains the steps to collect Squid Proxy logs from a Kubernetes en
 
 1. **(Recommended Method) Add labels on your Squid Proxy pods to capture logs from standard output**. Make sure that the logs from Squid Proxy are sent to stdout. Follow the instructions below to capture Squid Proxy logs from stdout on Kubernetes.
    1. Apply the following labels to the Squid Proxy pod:
-    ```sql
+    ```sumo
     environment="prod_CHANGEME"
     component="proxy"
     proxy_system="squidproxy"
@@ -411,7 +411,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 <details>
 <summary><strong>Click to expand</strong>. Create or modify `telegraf.conf` and copy and paste the text below:</summary>
 
-```sql
+```sumo
 [[inputs.snmp]]]
   agents = ["udp://127.0.0.1:3401"]
   name = "squid"
@@ -602,11 +602,11 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
    * **Applied At.** Choose **Ingest Time.**
    * **Scope**. Select **Specific Data.**
    * **Scope**: Enter the following keyword search expression.
-     ```sql
+     ```sumo
      pod_labels_environment=* pod_labels_component=proxy pod_labels_proxy_cluster=* pod_labels_proxy_system=*
      ```
    * **Parse Expression**. Enter the following parse expression:
-    ```sql
+    ```sumo
     if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
     | pod_labels_component as component
     | pod_labels_proxy_system as proxy_system

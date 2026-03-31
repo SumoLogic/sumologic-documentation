@@ -105,7 +105,7 @@ The cost of queries depends on two factors: 
 
 Using keywords or other metadata in a query will not reduce the amount of data scanned. For example, the inclusion of a keyword and custom field in the scope of the query below does not reduce the amount of data that Sumo Logic will scan. Sumo Logic will scan all data in the partition named `ybase_partition`.
 
-```sql
+```sumo
 _index=ybase_partition (error and cluster=nxt)
 ```
 

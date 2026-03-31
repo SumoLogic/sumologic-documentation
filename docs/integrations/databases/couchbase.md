@@ -64,7 +64,7 @@ To collect Couchbase metrics from a Kubernetes environment, we use the Telegraf 
 
 1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf).
 2. On your Couchbase Pods, add the following annotations:
-```sql
+```sumo
 annotations:
   telegraf.influxdata.com/class: sumologic-prometheus
   prometheus.io/scrape: "true"
@@ -118,7 +118,7 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
 
 1. **Add labels on your Couchbase pods to capture logs from standard output on Kubernetes (recommended)**.
    1. Apply following labels to the Couchbase pod:
-    ```sql
+    ```sumo
     environment = "prod_CHANGEME"
     component = "database"
     db_system = "couchbase"
@@ -154,7 +154,7 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
       tailing-sidecar: sidecarconfig;<mount>:<path_of_Couchbase_log_file>/<Couchbase_log_file_name>
     ```
     Example:
-    ```sql
+    ```sumo
     annotations:
       tailing-sidecar: sidecarconfig;data:/opt/couchbase/var/lib/couchbase/logs/audit.log
     ```
@@ -202,7 +202,7 @@ To collect logs directly from your Couchbase machine, use an Installed Collector
   * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
   * **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
   * **Fields.** Set the following fields
-     ```sql
+     ```sumo
      component = database
      db_system = couchbase
      db_cluster = <Your_Couchbase_Cluster_Name>
@@ -273,7 +273,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
     4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 3. **Install Telegraf, if you haven’t already**, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
 2. **Configure and start Telegraf.** As part of collecting metrics data from Telegraf, we will use the[ Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify `telegraf.conf` and copy and paste the text below:
-```sql
+```sumo
 [[inputs.couchbase]]
   servers = ["http://<USER_TO_BE_CHANGED>:<PASS_TO_BE_CHANGED>@localhost:8091"]
   bucket_stats_included = ["*"]

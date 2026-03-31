@@ -38,7 +38,7 @@ This app uses [Cisco Meraki source](/docs/send-data/hosted-collectors/cloud-to-c
 
 ## Sample queries
 
-```sql title="Total Organizations"
+```sumo title="Total Organizations"
 _sourceCategory=Labs/CiscoMerakiC2C  licensing name management cloud
 | json "id","name","cloud.region.name" as id,name,region nodrop
 
@@ -52,7 +52,7 @@ _sourceCategory=Labs/CiscoMerakiC2C  licensing name management cloud
 | count 
 ```
 
-```sql title="Total Networks"
+```sumo title="Total Networks"
 _sourceCategory=Labs/CiscoMerakiC2C organizationId name productTypes
 | json "id","name","timeZone" as id,name,time_zone nodrop
 
@@ -65,7 +65,7 @@ _sourceCategory=Labs/CiscoMerakiC2C organizationId name productTypes
 | count
 ```
 
-```sql title="Total Events"
+```sumo title="Total Events"
 _sourceCategory=Labs/CiscoMerakiC2C  eventType priority ts
 | json "clientName", "eventType", "priority", "ts" as client_name, event_type, priority, ts nodrop
 
@@ -81,7 +81,7 @@ _sourceCategory=Labs/CiscoMerakiC2C  eventType priority ts
 | count
 ```
 
-```sql title="Total Network Activity"
+```sumo title="Total Network Activity"
 _sourceCategory=Labs/CiscoMerakiC2C  occurredAt networkId
 | json "type", "occurredAt", "networkId" as type, occurred_at, network_id nodrop
 

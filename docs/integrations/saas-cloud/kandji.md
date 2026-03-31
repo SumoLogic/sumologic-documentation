@@ -280,7 +280,7 @@ This app uses Sumo Logic’s Kandji Source to collect threat events and device e
 
 ## Sample queries
 
-```sql title="Device Activities by Action Type"
+```sumo title="Device Activities by Action Type"
 _sourceCategory="Labs/kandji" details
 |json "device_id","action_type","details.command_type","computer.name","created_at" as device_id, action_type, command_type, device_name ,created_at nodrop
 

@@ -207,7 +207,7 @@ The following table provides sample log messages for the different log types.
 
 The sample query is from the **Channel Summary** panel of **Slack - Public Channels** dashboard.
 
-```sql
+```sumo
 _sourceCategory=Labs/slack
 | join ("logType":"channelDetail"
 | json "channel_name", "channel_id", "teamName", "members" as Channel, ChannelId, Workspace, Members

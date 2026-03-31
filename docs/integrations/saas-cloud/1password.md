@@ -129,7 +129,7 @@ The 1Password app uses the following logs:
 
 ### Sample queries
 
-```sql title="Successful Sign-in"
+```sumo title="Successful Sign-in"
 _sourceCategory="1pw"
 | json "type", "category", "timestamp",  "details", "target_user.name", "target_user.email", "client.app_name", "client.app_version", "client.platform_name", "client.os_name", "client.os_version", "client.ip_address", "location.country", "location.region", "location.city" as type, category, timestamp, details, target_user_name, target_user_email, client_app_name, client_app_version, client_platform, client_os, client_os_version, client_ip, country, region, city
 | where category matches  "{{category}}" AND type matches  "{{type}}" AND country matches  "{{country}}" AND city matches  "{{city}}" AND target_user_name matches  "{{target_user_name}}" AND client_app_name matches  "{{client_app_name}}" AND client_platform matches  "{{client_platform}}" AND client_os matches  "{{client_os}}"
@@ -137,7 +137,7 @@ _sourceCategory="1pw"
 | count by timestamp, target_user_name, type, category, details,client_app_name, client_app_version, client_platform, client_os, client_os_version, client_ip, country, region, city
 ```
 
-```sql title="Failed Sign-in"
+```sumo title="Failed Sign-in"
 _sourceCategory="1pw"
 | json "type", "category", "timestamp",  "details", "target_user.name", "target_user.email", "client.app_name", "client.app_version", "client.platform_name", "client.os_name", "client.os_version", "client.ip_address", "location.country", "location.region", "location.city" as type, category, timestamp, details, target_user_name, target_user_email, client_app_name, client_app_version, client_platform, client_os, client_os_version, client_ip, country, region, city
 | where category matches  "{{category}}" AND type matches  "{{type}}" AND country matches  "{{country}}" AND city matches  "{{city}}" AND target_user_name matches  "{{target_user_name}}" AND client_app_name matches  "{{client_app_name}}" AND client_platform matches  "{{client_platform}}" AND client_os matches  "{{client_os}}"
@@ -145,13 +145,13 @@ _sourceCategory="1pw"
 | count by timestamp, target_user_name, type, category, details,client_app_name, client_app_version, client_platform, client_os, client_os_version, client_ip, country, region, city
 ```
 
-```sql title="Item Usage"
+```sumo title="Item Usage"
 _sourceCategory=1pw action
 | json "timestamp", "user.name", "client.app_name", "client.platform_name", "client.platform_version", "client.os_name", "client.os_version", "client.ip_address", "location.country", "location.region", "location.city", "action", "vault_uuid", "item_uuid" as timestamp, user_name, client_app_name, client_platform, client_platform_version, client_os, client_os_version, client_ip, country, region, city, action, vault_uuid, item_uuid
 | count by timestamp, user_name, client_app_name, client_platform, client_platform_version, client_os, client_os_version, client_ip, country, region, city, action, vault_uuid, item_uuid
 ```
 
-```sql title="Recent Access Activities"
+```sumo title="Recent Access Activities"
 _sourceCategory="app/"
 | json "uuid", "object_type", "action", "actor_details.email", "aux_details.name", "aux_details.email", "aux_info" as uuid, object_type, action, actor_email, aux_name, aux_email, aux_info nodrop
 

@@ -53,7 +53,7 @@ This app uses Sumo Logic’s [Webex Source](/docs/send-data/hosted-collectors/cl
 
 ### Sample queries
 
-```sql title="Total Audit Events"
+```sumo title="Total Audit Events"
 _sourceCategory="cisco_webex"
 | parse "\"id\": \"*\"" as event_id nodrop
 | parse "\"eventDescription\": \"*\"" as event_description nodrop

@@ -47,7 +47,7 @@ The Sumo Logic App for Azure Network Watcher uses Network Security Group (NSG) f
 
 ### Sample queries
 
-```sql title="Denied Traffic Flow by Source Location"
+```sumo title="Denied Traffic Flow by Source Location"
 _sourceCategory="security/flowlogs"
 | json field=_raw "rule_name"
 | json field=_raw "resource_id"

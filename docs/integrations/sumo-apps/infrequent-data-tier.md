@@ -37,7 +37,7 @@ The Search Audit Index for Infrequent Data Tier App has the following fields:
 
 You can start using the index by using the following query:
 
-```sql
+```sumo
 _index=sumologic_search_usage_per_query \
 analytics_tier="Infrequent"
 ```
@@ -46,7 +46,7 @@ analytics_tier="Infrequent"
 
 The following query is from the **Data Scanned Over Time** panel of the **Infrequent Cost** dashboard.
 
-```sql
+```sumo
 _index=sumologic_search_usage_per_query analytics_tier = "Infrequent" !(user_name=*sumologic.com) !(status_message="Query Failed")
 | fields data_scanned_bytes, query, is_aggregate, query_type, remote_ip, retrieved_message_count, scanned_message_count, scanned_partition_count, session_id, status_message, user_name
 |data_scanned_bytes / 1Gi as sizeInGB
@@ -86,7 +86,7 @@ The Search Audit Index must be enabled by an administrator. To enable the Searc
 1. Under **Sumo Logic Auditing**, select **Enable Search Audit Record**. <br/><img src={useBaseUrl('img/security/Search_Audit_Index_Enabled.png')} alt="Enable Search Audit Index Record checkbox" style={{border: '1px solid gray'}} width="600" />
 
 You can verify if you already have the Search Audit Index enabled by querying:
-```sql
+```sumo
 _index=sumologic_search_usage_per_query
 ```
 

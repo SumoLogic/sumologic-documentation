@@ -139,7 +139,7 @@ You can use the Audit Event Index to review the management of installation token
 
 When an installation token is created, deleted, or updated and event log is created. These include the before (from) and after (to) configurations as well as the ID and name of the token and who made the request. To search for management operations like, creating, deleting, and updating tokens, use the following query:
 
-```sql
+```sumo
 _index=sumologic_audit_events _sourceCategory=tokens
 ```
 
@@ -187,7 +187,7 @@ An example event log when a token is changed from inactive to active is:
 
 Collectors registered with installation tokens are recorded in the Audit Event Index with the ID and name of the token that registered the collector. The following query returns collector registrations done with installation tokens.
 
-```sql
+```sumo
 _index=sumologic_audit_events _sourceCategory=collection CollectorRegistrationTokenContext
 ```
 

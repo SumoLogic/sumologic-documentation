@@ -97,7 +97,7 @@ _sourceCategory=<source-category-name>
 Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-extraction-rule) to parse fields from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. Use these parsed fields along with lookup operator.
 
 1. Create the FER For example, for Cylance Security Events, create and use the following Field Extraction Rule:
-   ```sql
+   ```sumo
    parse "Event Type: *, Event Name: *, Device Name: *, IP Address: (*, *), File Name: *, Path: *, Drive Type: *, SHA256: *, MD5: *, Status: *, Cylance Score: *, Found Date: *, File Type: *, Is Running: *, Auto Run: *, Detected By: *" as event_type,event_name,device_name,src_ip,dest_ip,file_name,path,drive_type,sha,md5,status,score,found,file_type,isRunning,autoRun,detected
    ```
 1. Customize your query so you can use parsed fields from FER with the lookup operator, where src_ip is the parsed field from FER (see step # 1). For example:
@@ -150,7 +150,7 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
    ```
    -->
 2. Now, you can run your Threat Intel query on top of this view:
-     ```sql
+     ```sumo
      _view=cylance_threat
      | count by src_ip
      ```

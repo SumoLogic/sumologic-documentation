@@ -101,7 +101,7 @@ This app uses Sumo Logic’s [CrowdStrike FileVantage Source](/docs/send-data/ho
 
 ### Sample queries
 
-```sql title="File Changes"
+```sumo title="File Changes"
 _sourceCategory="Labs/CrowdStrikeFalconFileVantage" entity_type file
 | json "id", "is_suppressed", "severity", "entity_type", "action_type", "host.os_version", "platform_name", "host.name", "user_name", "policy.rule_group.name", "policy.rule_group.rule.base_path", "process_id", "process_image_file_name", "host.external_ip", "action_timestamp", "entity_path", "policy.name" as id, is_suppressed, severity, entity_type, action_type, os_version, platform_name, host_name, user_name, rule_group_name, rule_base_path, process_id, process_image_file_name, ip, action_timestamp, entity_path, policy_name nodrop
 

@@ -97,7 +97,7 @@ The Azure Security – Microsoft Entra ID Protection uses Sumo Logic’s Microso
 
 ### Sample queries
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourceCategory={{Logsdatasource}} serviceSource azureAdIdentityProtection
 |json"id", "status", "severity", "classification", "serviceSource" as  alert_id, status, severity, classification, service_source nodrop
 
@@ -113,7 +113,7 @@ _sourceCategory={{Logsdatasource}} serviceSource azureAdIdentityProtection
 | count
 ```
 
-```sql title="High Severity Alerts"
+```sumo title="High Severity Alerts"
 _sourceCategory={{Logsdatasource}} serviceSource azureAdIdentityProtection severity
 |json"id", "status", "severity", "classification", "serviceSource" as alert_id, status, severity, classification, service_source nodrop
 

@@ -85,7 +85,7 @@ On Linux servers, the strings that you specify in an exe or pattern section are 
 
 Example: For filtering executable name containing nginx (i.e., `pgrep <exe>`)
 
-```sql
+```sumo
 [[inputs.procstat]]
     pid_tag=false
     exe = "nginx"
@@ -94,7 +94,7 @@ Example: For filtering executable name containing nginx (i.e., `pgrep <exe>`)
 
 Example: For filtering command lines containing config (i.e., `pgrep -f <pattern>`)
 
-```sql
+```sumo
 [[inputs.procstat]]
     pid_tag=false
         pattern = "config"
@@ -106,7 +106,7 @@ On servers running Windows Server, these strings are evaluated as WMI queries. (
 
 Example: For filtering executable name containing nginx.
 
-```sql
+```sumo
 [[inputs.procstat]]
     pid_finder = "native"
     pid_tag=false
@@ -115,7 +115,7 @@ Example: For filtering executable name containing nginx.
 
 Example: For filtering command lines containing config.
 
-```sql
+```sumo
 [[inputs.procstat]]
     pid_finder = "native"
     pid_tag=false
@@ -124,7 +124,7 @@ Example: For filtering command lines containing config.
 
 Example: For defining multiple patterns for multiple processes you can use the plugin multiple times.
 
-```sql
+```sumo
 [[inputs.procstat]]
    pid_tag=false
    exe = "nginx"
@@ -138,7 +138,7 @@ Example: For defining multiple patterns for multiple processes you can use the p
 
 * To identify the operating system version and name.
    * For Windows machines, run the command in PowerShell to get the OS Version.
-     ```sql
+     ```sumo
      [System.Environment]::OSVersion.Version
        (Get-WmiObject -class Win32_OperatingSystem).Caption
      ```
@@ -160,13 +160,13 @@ Example: For defining multiple patterns for multiple processes you can use the p
 
 **CPU Utilization by Host** panel in **Host Metrics - CPU** Dashboard
 
-```sql
+```sumo
 host.name=*  cpu=cpu-total  metric=(host_cpu_usage_user OR host_cpu_usage_system OR host_cpu_usage_iowait OR host_cpu_usage_steal OR host_cpu_usage_softirq OR host_cpu_usage_irq OR host_cpu_usage_nice) | sum by host.name
 ```
 
 **CPU Usage** panel in **Process Metrics Details** Dashboard
 
-```sql
+```sumo
 metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.name, process.executable.name | outlier
 ```
 
@@ -216,7 +216,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 1. By default, the monitors are configured in a monitor folder called “Host and “Process Metrics”, if you would like to change the name of the folder, update the monitor folder name in this file.
 1. **Email and Connection Notification Configuration Examples**. If you would like the alerts to send email or connection notifications, configure these in the file `host_process_metrics_notifications.auto.tfvars`.
    * To configure notifications, modify the file `host_process_metrics_notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types. Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-   ```sql title="Pagerduty Connection Example:"
+   ```sumo title="Pagerduty Connection Example:"
    connection_notifications = [
        {
          connection_type       = "PagerDuty",
@@ -233,7 +233,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
      ]
    ```
 
-   ```sql title="Email Notifications Example"
+   ```sumo title="Email Notifications Example"
    email_notifications = [
        {
          connection_type       = "Email",

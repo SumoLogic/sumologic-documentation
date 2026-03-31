@@ -110,7 +110,7 @@ The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be
 
 The following query is from the threat score trend line in the **GI GuardDuty: Your Company v. Global Baseline** dashboard.
 
-```sql
+```sumo
 _sourceCategory=GIS/test/guardduty
 | json "accountId", "arn", "type","service.detectorId","service.action","severity","title","description","region" nodrop
 | json "type", "severity"

@@ -9,7 +9,7 @@ The `in` operator functionality can be used in a metrics query selector as short
 
 ## Syntax
 
-```sql
+```sumo
 <selectors> <field>=(<value>[, <value>, …])
 ```
 
@@ -23,6 +23,6 @@ Where:
 ## Example
 This example will match time series in which the value of the `dimX` field is one of the strings in the array enclosed in parentheses.
 
-```sql
+```sumo
 metric=CPU_Total dimX=(123, 345, 567)
 ```

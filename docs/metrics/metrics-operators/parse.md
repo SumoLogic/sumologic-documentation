@@ -14,7 +14,7 @@ Each wildcard in the pattern corresponds to a specified field. The parse operato
 
 ## Syntax
 
-```sql
+```sumo
 parse [field=FIELD] PATTERN as PARSED_FIELD [, PARSED_FIELD, ...]
 ```
 
@@ -30,7 +30,7 @@ Where:
 
 In this query, we parse the `LoadBalancer` field. The format of the field is `type/name/id`, for example:   
 
-```sql
+```sumo
 app/app-song-8d/4567223890123456
 ```
 

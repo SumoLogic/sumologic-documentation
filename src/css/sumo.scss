@@ -1694,6 +1694,8 @@ article header h2[class*='title_'] {
 }
 
 /* Apply variables to Prism token classes, scoped to sumo language only */
+/* Reset Dracula dark theme italic bleed-through */
+.language-sumo .token         { font-style: normal !important; }
 .language-sumo .token.keyword  { color: var(--sumo-keyword);  }
 .language-sumo .token.string   { color: var(--sumo-string);   }
 .language-sumo .token.url      { color: var(--sumo-url);      }

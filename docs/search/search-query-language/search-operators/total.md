@@ -12,13 +12,13 @@ The `total` operator inserts the sum of a set of fields into every row of the se
 
 Create a new field (named **`_total`** by default) containing the sum of the specified field:
 
-```sql
+```sumo
 total <field>
 ```
 
 Create a new field containing the sum of the specified field for groups of the set of fields specified in the by clause. A given row's total is the sum of the specified field for all rows with matching values in the by clause fields.
 
-```sql
+```sumo
 total <field> [as <field>] [by <field1>, <field2>, ...]
 ```
 
@@ -34,7 +34,7 @@ total <field> [as <field>] [by <field1>, <field2>, ...]
 
 In this example, you can find the total data (bytes) transmitted for a time range. Running a query such as:
 
-```sql
+```sumo
 * | parse "bytes:*," as data
 | total data as t_data
 ```
@@ -47,7 +47,7 @@ Note that the t_data value of 16,761,621,241.25455 is the sum of the data fiel
 
 This query produces only three results, illustrating that _total is simply the sum of ps:
 
-```sql
+```sumo
 * | parse "BytesTotalPersec = \"*\"" as ps
 | where ps > 3000
 | total ps
@@ -59,7 +59,7 @@ This query produces only three results, illustrating that _total is simply the s
 
 To group rows by their message time and calculate different totals for each time, use the `_messageTime` field:
 
-```sql
+```sumo
 * | limit 10
 | 1 as data
 | total data by _messagetime
@@ -71,7 +71,7 @@ This query looks at the first 10 rows and creates a field called data in each. R
 
 Say you'd like to find the running total of requests from certain users. Running a query similar to:
 
-```sql
+```sumo
 _sourceCategory=IIS (Wyatt OR Luke)
 | parse "* * * * * * * * " as date, time, csmethod, cs_uri_stem, cs_uri_query, s_port, c_ip, cs_username
 | timeslice by 1m

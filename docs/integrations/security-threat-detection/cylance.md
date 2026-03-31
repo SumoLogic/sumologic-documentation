@@ -47,7 +47,7 @@ Policy Name: Allowed Anywhere Internally
 
 The following query is from the **Event Name Trend** panel of the **Cylance - AuditLog Dashboard**.
 
-```sql
+```sumo
 _sourceCategory=*cylance* "Event Type:" AuditLog
 | parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
 | parse "Message: *," as msg nodrop | parse "Source IP: *," as src_ip nodrop | parse "User: *" as user nodrop
@@ -116,7 +116,7 @@ Before your can configure Sumo Logic to ingest logs, you must set up remote log 
 
 The following extraction rules use different approaches.
 
-```sql title="AuditLog"
+```sumo title="AuditLog"
 _sourceCategory=*cylance* "Event Type:" AuditLog
 | parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
 | parse "Message: *," as msg nodrop | parse "Source IP: *," as src_ip nodrop | parse "User: *" as user nodrop
@@ -131,7 +131,7 @@ _sourceCategory=*cylance* "Event Type:" AuditLog
 | parse field=msg "Zone: *; Policy Assigned: *; Policy Applied To All Devices In Zone: *" as zone, policy, PolicyAppliedToAllDevicesInZone
 ```
 
-```sql title="Device"
+```sumo title="Device"
 _sourceCategory=*cylance* "Event Type: Device"
 | parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
 | parse "Device Name: *, Agent Version: *, IP Address: (*), MAC Address: (*), Logged On Users: (*), OS: *, Zone Names: (*)" as device_name, agent_version, ip_address, mac_address, LoggedOnUsers, os, zone nodrop
@@ -145,7 +145,7 @@ _sourceCategory=*cylance* "Event Type: Device"
 ```
 
 
-```sql title="DeviceControl"
+```sumo title="DeviceControl"
 _sourceCategory=*cylance* "Event Type: DeviceControl"
 | parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
 | parse "Device Name: *, External Device Type: *, External Device Vendor ID: *,
@@ -155,12 +155,12 @@ external_device_vendor_id, external_device_name, external_device_product_id,
 external_device_serialno, zone, device_id, policy nodrop
 ```
 
-```sql title="ExploitAttempt"
+```sumo title="ExploitAttempt"
 _sourceCategory=*cylance* ExploitAttempt
 | parse "Event Type: *, Event Name: *, Device Name: *, IP Address: (*), Action: *, Process ID: *, Process Name: *, User Name: *, Violation Type: *, Zone Names: (*), Device Id: *, Policy Name: *" as event_type, event_name, device_name, ip_address, action, pid, pname, user, violation, zone, device_id, policy
 ```
 
-```sql title="ScriptControl"
+```sumo title="ScriptControl"
 _sourceCategory=*cylance* ScriptControl
 | parse "Event Type: *, Event Name: *, Device Name: *, File Path: *, Interpreter: *, Interpreter
 Version: *, Zone Names: (*), User Name: *, Device Id: *, Policy Name: *" as event_type,
@@ -168,7 +168,7 @@ event_name, device_name, filepath, interpreter, interpreterVersion, zone, user, 
 policy nodrop
 ```
 
-```sql title="Threat"
+```sumo title="Threat"
 _sourceCategory=*cylance* Threat "Event Type: Threat"
 | parse "Is Malware: *, " as malware_status nodrop
 | parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
@@ -180,14 +180,14 @@ md5, status, score, found, file_type, isRunning, autoRun, detected_by, zone  nod
 as isUniqueToCylance, threatClassification, device_id, policy nodrop
 ```
 
-```sql title="ThreatClassification"
+```sumo title="ThreatClassification"
 _sourceCategory=*cylance* ThreatClassification
 | parse "Event Type: *, Event Name: *, Threat Class: *, Threat Subclass: *, SHA256: *, MD5: *"
 as event_type, event_name, threat_class, threat_subclass, sha, md5
 ```
 
 
-```sql title="AppControl"
+```sumo title="AppControl"
 _sourceCategory=*cylance* "Event Type:" AppControl
 | parse "Event Type: *," as event_type nodrop
 | parse "Event Name: *, Device Name: *, IP Address: (*), Action: *, Action Type: *, File Path: *,

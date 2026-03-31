@@ -28,7 +28,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Router integr
     - Route events related to route announcements between the two BGP peers.
 
 While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
-   ```sql
+   ```sumo
    (resource.type=gce_router)
    ```
 

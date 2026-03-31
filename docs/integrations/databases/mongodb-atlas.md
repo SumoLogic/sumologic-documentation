@@ -221,7 +221,7 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 
 This sample query is from the MongoDB Atlas Audit dashboard > Recent Audit Events panel.
 
-```sql
+```sumo
 (_sourceCategory="Labs/mongodbatlas6/logs" ) | json "atype", "local.ip", "remote.ip", "users","result", "project_id", "hostname", "cluster_name", "param" as atype, local_ip, remote_ip, users, result, project_id, hostname, cluster_name, param
 | json field=param "db", "ns" as database1, database2 nodrop
 | parse field=database2 "*.*" as database2, collection nodrop

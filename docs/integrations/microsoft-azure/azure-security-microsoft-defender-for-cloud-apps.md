@@ -99,7 +99,7 @@ The Azure Security – Microsoft Defender for Cloud Apps uses Sumo Logic’s Mic
 
 ### Sample queries
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourceCategory={{Logsdatasource}} serviceSource microsoftDefenderForCloudApps
 | json "id", "status", "severity", "classification", "serviceSource" as  alert_id, status, severity, classification, service_source nodrop
 
@@ -115,7 +115,7 @@ _sourceCategory={{Logsdatasource}} serviceSource microsoftDefenderForCloudApps
 | count
 ```
 
-```sql title="High Severity Alerts"
+```sumo title="High Severity Alerts"
 _sourceCategory={{Logsdatasource}} serviceSource microsoftDefenderForCloudApps severity
 | json "id", "status", "severity", "classification", "serviceSource" as alert_id, status, severity, classification, service_source nodrop
 

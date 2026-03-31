@@ -1584,11 +1584,11 @@ Run `terraform destroy` again.
 #### Solution
 Delete existing hierarchy and a create new one:<br/>
 1. Get Hierarchy-id list of existing hierarchies and keep it noted. Learn [more](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint. <br/>
-   ```sql
+   ```sumo
    curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
    ```
 1. Delete the existing Hierarchy. Learn [more](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint.<br/>
-   ```sql
+   ```sumo
    curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X DELETE https://<apiendpoint>/api/v1/entities/hierarchies/<hierarchyid>`
    ```
 
@@ -1602,7 +1602,7 @@ Import Error: cannot import name 'SumoLogic' from 'sumologic'
 ```
 #### Solution
 The package is [sumologic-sdk](https://pypi.org/project/sumologic-sdk/) and install it for AWS observability solution using the following command:
-  ```sql
+  ```sumo
   pip install sumologic-sdk
   ```
 ### Invalid IAM role OR AccessDenied
@@ -1688,7 +1688,7 @@ Navigate to the location where you have installed the AWS Observability Terrafor
 
 1. Go to `cd .terraform/modules/collection-module.classic_lb_module/aws/elasticloadbalancing/elb.tf`
 2. Replace the code with the code give below.
-  ```sql
+  ```sumo
   resource "aws_serverlessapplicationrepository_cloudformation_stack" "auto_enable_access_logs" {
     for_each = toset(local.auto_enable_access_logs ? ["auto_enable_access_logs"] : [])
 
@@ -1713,7 +1713,7 @@ Navigate to the location where you have installed the AWS Observability Terrafor
   ```
 3. Go to `cd .terraform/modules/collection-module.elb_module/aws/elb/elb.tf`
 4. Replace the code with the code provided below.
-  ```sql
+  ```sumo
   resource "aws_serverlessapplicationrepository_cloudformation_stack" "auto_enable_access_logs" {
     for_each = toset(local.auto_enable_access_logs ? ["auto_enable_access_logs"] : [])
 

@@ -269,7 +269,7 @@ This app includes [built-in monitors](#snyk-alerts). For details on creating cus
 
 ## Sample queries
 
-```sql title="Total Vulnerabilities"
+```sumo title="Total Vulnerabilities"
 _sourceCategory="Labs/Snyk"
 | json "project.id", "project.name", "project.origin", "project.created", "project.type", "project.branch", "project.totalDependencies", "project.testFrequency", "project.browseUrl", "org.id", "org.name", "org.url", "org.created", "newIssues", "removedIssues" as project_id, project_name, project_origin, project_created, project_type, project_branch, project_dependencies, project_frequency, project_url, org_id, org_name, org_url, org_created, new_issues, removed_issues nodrop 
 

@@ -27,7 +27,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud VPN integrati
     - Other information that varies depending on the log entry.
 
 While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
-   ```sql
+   ```sumo
    (resource.type=vpn_gateway)
    ```
 

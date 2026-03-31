@@ -15,7 +15,7 @@ Trace operators require the following:
 
 ## Syntax
 
-```sql
+```sumo
 trace "<regex>" "<starting_value>"
 ```
 
@@ -27,7 +27,7 @@ Let's say that your product uses a variety of session IDs to track requests as t
 
 Imagine that an error happened at some point in the process, generating an error including "PROCESSING FAILED: webID=7F92. Starting from this information, we can use a trace operator in our query to following the chain of activity:
 
-```sql
+```sumo
 * | trace "ID=([0-9a-fA-F]{4})" "7F92" | where _raw matches "*ERROR*"
 ```
 

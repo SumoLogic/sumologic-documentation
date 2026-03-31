@@ -161,7 +161,7 @@ import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configurat
 
 This sample log query is from the **Windows - Security Analytics - User Account Changes** dashboard > **Failed Logins Summary** panel.
 
-```sql
+```sumo
 sumo.datasource=windows "Microsoft-Windows-Security-Auditing" ("4770" OR "4771" OR "4772" OR "4776" OR "4777" OR "4768" OR "4769" OR "4820" OR "4625" OR "4624" OR "4647" OR "4778" OR "4779" OR "4800" OR "4801" OR "4802" OR "4803") "Audit Failure" * * * * *
 | json "channel", "provider", "event_id", "computer","task","keywords","event_data","message" as Channel, Provider, EventID, Computer, Task, Keywords, Event_Data, Message  nodrop
 | json field=EventID "qualifiers","id" as  qualifiers, EventID

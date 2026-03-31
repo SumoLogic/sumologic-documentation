@@ -204,7 +204,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample log queries
 
-```sql
+```sumo
 _source="hadoop/filelog"
 | json "message" nodrop
 | if (_raw matches "{*", message, _raw) as message

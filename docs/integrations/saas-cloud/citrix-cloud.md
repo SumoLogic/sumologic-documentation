@@ -54,7 +54,7 @@ This Citrix Cloud App uses [SystemLog](https://developer.cloud.com/citrix-cloud/
 
 ### Sample queries
 
-```sql="Active Team Members"
+```sumo="Active Team Members"
 _sourceCategory="citrixCloudSource"
 | json "eventType","targetDisplayName","targetEmail","beforeChanges.AccessType","afterChanges.AccessType","actorType","message.en-US" as event_type,name, email, access_type_before, access_type_after, actor, message nodrop
 | where event_type matches("*platform/administrator/create*")

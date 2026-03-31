@@ -202,7 +202,7 @@ This app uses Sumo Logic’s [Akamai CPC Source](/docs/send-data/hosted-collecto
 
 ### Sample queries
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourceCategory="Labs/AkamaiCPC"
 | json "cpcConfigId", "cpcAlertId", "cpcAlertLink", "cpcAlertType", "severityLevel", "cpcAlertStatus", "cpcAlertFlags", "alertTime", "firstSeenTime", "lastSeenTime","details.dataSubtypes[*].dataSubtype","details.threatIndicators","details.destination.destinationHostname","details.destination.vendor","details.destination.hostnameRiskScore","details.destination.destinationUrls","details.scriptSource.vendor","details.scriptSource.hostnameRiskScore","details.scriptSource.scriptOrigin","details.scriptSource.scriptUrls","details.scriptSource.scriptHostname","details.affectedSessionCount","details.dataSubtypes[*].dataOperations[*]" as cpc_config_id, cpc_alert_id, cpc_alert_link, cpc_alert_type, severity_level, cpc_alert_status, cpc_alert_flags, alert_time, first_seen_time, last_seen_time,data_sub_type, threat_indicators,destination_hostname,destination_vendor,destination_hostname_risk_score,destination_urls, source_script_vendor, source_hostname_risk_score, source_script_origin, source_script_urls,source_hostname,affected_session_count,data_operations nodrop
 

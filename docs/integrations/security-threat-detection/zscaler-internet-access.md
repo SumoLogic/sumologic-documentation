@@ -70,7 +70,7 @@ The Sumo Logic app for Zscaler uses NSS feed output logs (Web, Tunnel, DNS, and 
 
 ## Sample queries
 
-```sql title="Top 10 Blocked Base URLs"
+```sumo title="Top 10 Blocked Base URLs"
 _sourceCategory=ZIA
 | json field=_raw "event.clientpublicIP", "event.user", "event.url", "event.action" as src_ip, src_user, url, action
 | where action != "Allowed"

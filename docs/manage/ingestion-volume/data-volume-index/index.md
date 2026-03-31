@@ -23,7 +23,7 @@ Data Volume Index will be enabled by default for Flex package accounts.
 
 After the Data Volume Index is enabled, you can access it using this search query: 
 
-```sql
+```sumo
 _index=sumologic_volume
 ```
 

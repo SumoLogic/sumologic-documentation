@@ -73,7 +73,7 @@ The JFrog Xray app uses the following log types:
 
 The sample query is from Watches Invoked panel of the **JFrog Xray - Overview** dashboard.
 
-```sql
+```sumo
 _sourceCategory = Labs/jfrog/xray
 | json "top_severity", "issues", "watch_name", "policy_name" as TopSeverity, Issues, WatchName, PolicyName nodrop
 | where !(TopSeverity matches "Pending Scan")
@@ -233,11 +233,11 @@ pip3 install sumologic-jfrog-xray
 4. Create a configuration file **jfrogxraycollector.yaml** in the home directory as shown below, and fill in the parameter `<Variables>` where indicated.
 5. Create a cron job to run the collector every 5 minutes, (use the crontab -e option), in one of the following ways:
   * For Python 2 - add the following line in your crontab:
-```sql
+```sumo
 */5 * * * *  /usr/bin/python -m sumojfrogxray.main > /dev/null 2>&1
 ```
   * For Python 3 - add the following line in your crontab:
-```sql
+```sumo
 */5 * * * *  /usr/bin/python3 -m sumojfrogxray.main > /dev/null 2>&1
 ```
 

@@ -23,7 +23,7 @@ We use the term _bucket_ to refer to the intervals across which Sumo Logic quant
 
 When you run a metric query, Sumo Logic divides up your metric query time range into contiguous buckets, either automatically, or based on the interval you specify in the `quantize` operator. For example, given this query:
 
-```sql
+```sumo
 metric=CPU_Idle | quantize to 15m
 ```
 
@@ -110,7 +110,7 @@ Specifying rollup type and quantization interval is optional for the `quantize` 
 
 To specify the rollup type for quantization, include the `quantize` operator as the first operator in your query (immediately after the selector), and specify the rolloup type with the `using` clause. For example, given this query:
 
-```sql
+```sumo
 metric=CPU_Idle | quantize to 15m using sum
 ```
 
@@ -118,7 +118,7 @@ Sumo Logic will quantize to the `sum` rollup type.
 
 Also, you can skip specifying target quantization interval:
 
-```sql
+```sumo
 metric=CPU_Idle | quantize using max
 ```
 
@@ -134,7 +134,7 @@ If your metrics query uses the `quantize` operator without specifying a rollup t
 
 For example, given this query:
 
-```sql
+```sumo
 metric=CPU_Idle | quantize to 15m
 ```
 

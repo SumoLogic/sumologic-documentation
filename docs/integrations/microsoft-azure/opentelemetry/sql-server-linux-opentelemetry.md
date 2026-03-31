@@ -135,7 +135,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 Following is the query from **Error and warning count** panel from the **SQL Server app - Overview** dashboard:
 
-```sql
+```sumo
  %"db.cluster.name"=* %"deployment.environment"=*  %"sumo.datasource"=sqlserver ("Error:" or "Warning:") | json "log" as _rawlog nodrop
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw
 | parse regex "\s+(?<Logtype>Error|Warning):\s+(?<message>.*)$"

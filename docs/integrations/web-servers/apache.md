@@ -69,7 +69,7 @@ The Sumo Logic app for Apache assumes:
 
 This sample Query is from the **Top 5 Clients Causing 4xx Errors** panel of the Apache - Web server Operations dashboard.
 
-```sql title="Query String"
+```sumo title="Query String"
 webserver_system=apache webserver_farm=* HTTP (40* OR 41* OR 42* OR 43* OR 44* or 45* or 49*)
 | json "log" nodrop | if (_raw matches "{*", log, _raw) as mesg
 | parse regex field=mesg "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop
@@ -158,7 +158,7 @@ ServerName localhost:8080
   </IfModule>
 ```
 2. Add annotations on your Apache pods:
-```sql
+```sumo
 annotations:
  telegraf.influxdata.com/class: sumologic-prometheus
   prometheus.io/scrape: "true"
@@ -194,7 +194,7 @@ annotations:
    * For more information on configuring the Apache input plugin for Telegraf, see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache).
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the configuration and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic by running the following metrics query:
-  ```sql
+  ```sumo
   webserver_farm=<your_apache_webserver_farmname> \
   component="webserver" and webserver_system="apache"
   ```
@@ -273,7 +273,7 @@ This section provides instructions for configuring metrics collection for the Su
 4. **Install Telegraf**. Follow the steps in [this document](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 5. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [Apache input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
    1. Create or modify the telegraf.conf file and copy and paste the text below in the relevant sections:
-      ```sql
+      ```sumo
       [[inputs.apache]]
         urls = ["http://localhost/server-status?auto"]
         response_timeout = "5s"
@@ -364,7 +364,7 @@ For error logs, the following directives are to be noted:
     * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
     * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
     * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
-    ```sql
+    ```sumo
     component = webserver
     webserver_system = apache
     webserver_farm = <your_apache_webserver_farmname>

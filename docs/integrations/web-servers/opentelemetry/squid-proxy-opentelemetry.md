@@ -151,7 +151,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ### Sample log messages in Non-Kubernetes environments
 
-```sql
+```sumo
 1674483805.439 44 192.168.100.40 TCP_REFRESH_MODIFIED/301 514 GET http://openstack.org/ - HIER_DIRECT/192.168.100.40 text/html
 ```
 
@@ -159,7 +159,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 This sample Query is from the **Squid Proxy - HTTP Response Analysis** > **URLs Experiencing Redirections** panel.
 
-```sql title="Query String"
+```sumo title="Query String"
 %"sumo.datasource"=squidproxy %"webengine.cluster.name"=*  host.name=* %"webengine.system"=squidproxy
 | json "log" as message nodrop 
 | if (isEMpty(message), _raw, message) as message

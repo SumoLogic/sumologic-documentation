@@ -144,7 +144,7 @@ This app uses [Symantec Endpoint Security Source](/docs/send-data/hosted-collect
 
 ### Sample queries
 
-```sql title="Incidents by Severity"
+```sumo title="Incidents by Severity"
 _sourceCategory="Labs/SES" !device_uid
 | json "incident_uid", "type", "severity_id", "priority_id", "category_id", "conclusion", "detection_type", "state_id", "suspected_breach", "created", "modified", "message", "incident_url", "rule_name", "product_name", "remediation" as incident_uid, type, severity, priority, category, conclusion, detection_type, state, suspected_breach, created_timestamp, modified_timestamp, message, incident_url, rule_name, product_name, remediation nodrop
 
@@ -164,7 +164,7 @@ _sourceCategory="Labs/SES" !device_uid
 | sort by _count, severity
 ```
 
-```sql title="Incidents Over Time"
+```sumo title="Incidents Over Time"
 _sourceCategory="Labs/SES" !device_uid
 | json "incident_uid", "type", "severity_id", "priority_id", "category_id", "conclusion", "detection_type", "state_id", "suspected_breach", "created", "modified", "message", "incident_url", "rule_name", "product_name", "remediation" as incident_uid, type, severity, priority, category, conclusion, detection_type, state, suspected_breach, created_timestamp, modified_timestamp, message, incident_url, rule_name, product_name, remediation nodrop
 
@@ -186,7 +186,7 @@ _sourceCategory="Labs/SES" !device_uid
 | transpose row _timeslice column state
 ```
 
-```sql title="Top 10 Devices by Events"
+```sumo title="Top 10 Devices by Events"
 _sourceCategory="Labs/SES" device_uid
 | json "events", "incident_uid", "type", "conclusion", "rule_name", "message", "suspected_breach", "detection_type", "product_name", "incident_url" as events, incident_uid, incident_type, incident_conclusion, incident_rule_name, incident_message, suspected_breach, detection_type, incident_product_name, incident_url
 | parse regex field=events "(?<event>\{(?:[^\{\}]|\{[^\{\}]*\})*\})" multi 

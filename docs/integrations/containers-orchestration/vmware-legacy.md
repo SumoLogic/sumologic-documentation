@@ -46,7 +46,7 @@ For information on collecting unified logs and metrics for VMware, see [VMware U
 
 ## Sample queries
 
-```sql title="vCenter User Activity"
+```sumo title="vCenter User Activity"
  _sourceCategory=esx_perf OR _sourceCategory=vcenter_log "message=User "
  | parse "message=User * *,,," as user,task
  | timeslice 5m
@@ -54,7 +54,7 @@ For information on collecting unified logs and metrics for VMware, see [VMware U
  | transpose row _timeslice column task as *
 ```
 
-```sql title="Average Memory Used in MB"
+```sumo title="Average Memory Used in MB"
 _sourceCategory=esx_perf OR _sourceCategory=vcenter_log "Memory" AND "NonKernel MBytes"
 | parse "\\\\*\\Memory\\NonKernel MBytes: *" as esx_server,mbytes
 | timeslice by 1h
@@ -181,7 +181,7 @@ A Sumo Logic [Syslog Source](/docs/send-data/installed-collectors/sources/syslog
 3. We will assume the user account running the Sumo Logic vmware scripts  is the "vi-admin" user. This user account should not be a "root" user and should have full read write execute permissions to the directories where the **vSphere5.0.gz** and **vSphere5.5.gz** files are extracted. In the absence of adequate permissions, unexpected script errors will occur.
 4. Edit the **cron_vcenter_events.sh** script by changing the `SCRIPT_PATH` variable to reflect the absolute path where the script resides. If you have multiple vCenter servers, create a new line for each one. Make sure you add the credential for each server (as described in [Install vMA](#install-the-vmware-legacy-app)).
 5. Test running the **query_vCenter.pl** script (that queries the vCenter Server for events) as described in [Troubleshooting and Manual Testing](#troubleshooting-and-manual-testing). Use the following example command:
-   ```sql
+   ```sumo
    query_vCenter.pl -s [vcenterserver] -f output.txt
    ```
 6. Create a cron job to periodically run the **cron_vcenter_events.sh** script at the interval you'd like.

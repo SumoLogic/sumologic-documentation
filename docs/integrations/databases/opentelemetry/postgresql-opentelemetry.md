@@ -52,7 +52,7 @@ Configure logging in PostgreSQL:
 2. Connect to the database server (using SSH) in a terminal window.
 3. Open `postgresql.conf` configuration file.
 4. Under the ERROR REPORTING AND LOGGING section of the file, use the following config parameters. For more information on the following parameters, [click here](https://www.postgresql.org/docs/12/static/runtime-config-logging.html).
-  ```sql
+  ```sumo
     log_destination = 'stderr'
     logging_collector = on
     log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'
@@ -127,7 +127,7 @@ import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configurat
 
 ## Sample metrics
 
-```sql
+```sumo
 {"queryId":"A","_source":"postgresql-metric-otel","source":"idx_read","db.table":"company","_sourceName":"Http Input","host":"ip-172-31-91-203.ec2.internal","os.type":"linux","sumo.datasource":"postgresql","db.system":"postgresql","postgresql.database.name":"postgres","_sourceCategory":"Labs/postgresql-otel/metric","deployment.environment":"postgresqlEnvanema","_contentType":"Carbon2","metric":"postgresql.blocks_read","_collectorId":"000000000CD05E30","db.schema":"public","_sourceId":"000000004453F6D9","unit":"1","db.cluster.name":"postgresqlOtelClusteranema","postgresql.table.name":"public.company","_collector":"Labs - postgresql-otel","max":5,"min":0,"avg":1.92,"sum":115,"latest":0,"count":60}
 ```
 
@@ -135,7 +135,7 @@ import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configurat
 
 This sample query is from the **PostgreSQL - Overview** dashboard, **Fatal Errors** panel.
 
-```sql
+```sumo
 sumo.datasource=postgresql db.cluster.name=*
 | json auto maxdepth 1 nodrop
 | if (isEmpty(log), _raw, log) as _raw
@@ -146,7 +146,7 @@ sumo.datasource=postgresql db.cluster.name=*
 
 This sample query is from the **PostgreSQL - Database Metrics** dashboard, **Number of Active Databases** panel.
 
-```sql
+```sumo
 sumo.datasource=postgresql deployment.environment=* db.cluster.name=* metric=postgresql.backends postgresql.database.name=* db.node.name=* | count by postgresql.database.name | count
 ```
 

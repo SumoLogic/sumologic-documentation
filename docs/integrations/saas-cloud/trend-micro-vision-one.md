@@ -196,7 +196,7 @@ This app uses Sumo Logic’s Trend Micro Vision One Source to collect [alert log
 
 ## Sample queries
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourceCategory="Labs/TrendMicroVisionOne"
 | json "id", "status", "investigationResult", "workbenchLink", "alertProvider", "model", "modelType", "score", "severity", "createdDateTime", "updatedDateTime", "incidentId", "impactScope.desktopCount","impactScope.serverCount","impactScope.accountCount","impactScope.emailAddressCount","impactScope.containerCount","impactScope.cloudIdentityCount","description","indicators","impactScope.entities[*].entityType","matchedRules","matchedRules[*].matchedFilters[*].mitreTechniqueIds" as id,status,investigation_result,workbench_link,alert_provider,model,model_type,score,severity,created_date_time,updated_date_time, incident_id,desktop_count,server_count,account_count,email_address_count,container_count,cloud_identity_count,description,indicators,entity_types,matched_rules,mitre_techniques nodrop
 

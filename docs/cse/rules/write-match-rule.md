@@ -32,7 +32,7 @@ A match rule doesn’t allow you to define other conditions for signal, like req
 
 Here’s an example of the rule expression for a match rule:
 
-```sql
+```sumo
 metadata_vendor = 'Amazon AWS' AND metadata_product = 'CloudTrail' AND metadata_deviceEventId = 'AwsApiCall-CreateUserPoolClient'
 ```
 

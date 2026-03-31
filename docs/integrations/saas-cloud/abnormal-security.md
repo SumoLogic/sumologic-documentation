@@ -90,7 +90,7 @@ This app uses the Abnormal Security Source to collect [threat logs](https://app.
 
 ### Sample queries
 
-```sql title="Threats Over Time by Attack Type"
+```sumo title="Threats Over Time by Attack Type"
 _sourceCategory="Labs/AbnormalSecurity" attackType
 | json "abxMessageId", "attackType", "attackedParty", "attackStrategy", "attackVector", "autoRemediated", "postRemediated", "remediationStatus" as message_id, attack_type, attacked_party, attack_strategy, attack_vector, auto_remediated, post_remediated, remediation_status nodrop
 
@@ -111,7 +111,7 @@ _sourceCategory="Labs/AbnormalSecurity" attackType
 | transpose row _timeslice column attack_type
 ```
 
-```sql title="Cases Over Time by Severity"
+```sumo title="Cases Over Time by Severity"
 _sourceCategory="Labs/AbnormalSecurity" caseId severity_level
 | json "severity_level", "caseId", "description" as severity, case_id, description nodrop
 

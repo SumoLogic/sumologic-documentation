@@ -41,7 +41,7 @@ This app uses Sumo Logic’s Zendesk Source to collect [audit logs](https://deve
 ```
 ## Sample queries
 
-```sql title="Total Audits"
+```sumo title="Total Audits"
 _sourceCategory="Labs/Zendesk"
 | json "url","id","action_label","actor_id","source_id","source_type","source_label","action","change_description","ip_address","created_at","actor_name" as url, id, action_label, actor_id, source_id, source_type, source_label, action, change_description, ip_address, created_at, actor_name nodrop
 

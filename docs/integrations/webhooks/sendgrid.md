@@ -56,7 +56,7 @@ Follow the below steps to configure the SendGrid Webhook:
     - **Test Your Integration**. select to receive an HTTP POST request with example events as a JSON array at your provided Post URL.
 6. Click **Save**.
 7. Verify SendGrid events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-  ```sql
+  ```sumo
   _sourceCategory=webhook/sendgrid
   ```
 

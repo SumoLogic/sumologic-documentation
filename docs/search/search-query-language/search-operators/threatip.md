@@ -16,7 +16,7 @@ The only Indicators of Compromise (IOC) supported is IP address.
 
 ## Syntax
 
-```sql
+```sumo
 threatip <ip_address_field>
 ```
 

@@ -39,7 +39,7 @@ MariaDB logs written to a log file can be collected via the Filelog receiver of 
 1. To configure the MariaDB log files, locate your local `server.cnf` configuration file in the database directory.
 2. Open `server.cnf` in a text editor.
 3. Set the following parameters in the `[mariadb]` section:
-  ```sql
+  ```sumo
   [mariadb]
   log_error=/var/log/mariadb/mariadb-error.log
   log_output=FILE
@@ -170,7 +170,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample logs
 
-```sql
+```sumo
 2023-01-09*04:51:04 0 [ERROR] mysqld: Event Scheduler: An error occurred when initializing system tables. Disabling the Event Scheduler.
 ```
 
@@ -178,7 +178,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 Following query is from the "Errors" panel of the overview dashboard in Mariadb app: 
 
-```sql
+```sumo
  %"sumo.datasource"=mariadb %"deployment.environment"=* %"db.cluster.name"=* "[ERROR]"
 | json "log" nodrop
 | if (isEmpty(log), _raw, log) as mariadb_log_message

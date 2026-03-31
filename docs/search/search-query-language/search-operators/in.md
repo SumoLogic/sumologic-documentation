@@ -10,7 +10,7 @@ The `in` operator returns a Boolean value: true if the specified property is in 
 
 ## Syntax
 
-```sql
+```sumo
 <field> in (<value_1>[, <value_2>, <value_3>, ...])
 ```
 

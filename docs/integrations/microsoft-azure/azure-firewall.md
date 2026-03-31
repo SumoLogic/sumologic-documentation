@@ -102,13 +102,13 @@ As part of the app installation process, the following fields will be created by
 As part of the app installation process, the following FERs will be created by default:
 ### Azure location extraction FER
 
-   ```sql
+   ```sumo
    Rule Name: AzureLocationExtractionFER
    Applied at: Ingest Time
    Scope (Specific Data): tenant_name=*
    ```
 
-   ```sql title="Parse Expression"
+   ```sumo title="Parse Expression"
    json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
    | replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
    | if (!isBlank(resourceLocation), resourceLocation, location) as location
@@ -119,13 +119,13 @@ As part of the app installation process, the following FERs will be created by d
 
 #### Resource ID extraction FER
 
-   ```sql
+   ```sumo
    Rule Name: AzureResourceIdExtractionFER
    Applied at: Ingest Time
    Scope (Specific Data): tenant_name=*
    ```
 
-   ```sql title="Parse Expression"
+   ```sumo title="Parse Expression"
    json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
    | if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
    | toUpperCase(resourceId) as resourceId

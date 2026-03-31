@@ -188,7 +188,7 @@ The Jenkins app uses the following log types:
 }
 ```
 
-```sql title="Console Logs"
+```sumo title="Console Logs"
 [2019-06-04 09:02:37,386 +00:00] channel stopped
 ```
 
@@ -265,7 +265,7 @@ The Jenkins app uses the following log types:
 
 This sample query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
 
-```sql
+```sumo
 _sourceCategory=Labs/Jenkins/Sourabh/Logs In_Progress
 | json "name", "result", "number" as Job_Name, Result, Job_Number
 | where Result = "In_Progress"

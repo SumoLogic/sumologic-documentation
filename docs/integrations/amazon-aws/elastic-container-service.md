@@ -277,7 +277,7 @@ This page has instructions for collecting logs and metrics for the Amazon ECS wi
 
 ### Sample queries
 
-```sql title="Deleted Resources Over Time"
+```sumo title="Deleted Resources Over Time"
 _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInstance or DeregisterTaskDefinition or StopTask) and !(InternalFailure)
 | json "eventName" as event_name
 | parse "\"userName\":\"*\"" as user
@@ -297,7 +297,7 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 ## Creating Field Extraction Rule(s)
 
 Create a Field Extraction Rule for CloudTrail Logs ([learn more](/docs/manage/field-extractions/create-field-extraction-rule)).
-```sql
+```sumo
 Rule Name: AwsObservabilityECSCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):

@@ -14,7 +14,7 @@ The rate operator also assigns the value of the metric tag to be `rate($metric)`
 
 ## Syntax
 
-```sql
+```sumo
 rate [increasing | decreasing | counter] [[over] INTERVAL]
 ```
 where `INTERVAL` is the duration over which you want to calculate and average rate, in seconds (`s`) , minutes (`m`), hours (`h`), or days (`d`).
@@ -35,7 +35,7 @@ You can also use the `increasing` or `decreasing` option to make `rate` consider
 
 This query calculates the increase or decrease per second in the `Net_InBytes` metric from one collected data point to the next. 
 
-```sql
+```sumo
 metric=Net_InBytes Interface=eth0 | rate
 ```
 
@@ -43,7 +43,7 @@ metric=Net_InBytes Interface=eth0 | rate
 
 This query calculates the increase in `apiserver_request_total` counter value from one collected data point to the next. 
 
-```sql
+```sumo
 metric=apiserver_request_total | rate counter
 ```
 
@@ -51,6 +51,6 @@ metric=apiserver_request_total | rate counter
 
 This query calculates the average rate of `apiserver_request_total` counter value changes over a 5-minute time window
 
-```sql
+```sumo
 metric=apiserver_request_total | rate counter over 5m
 ```

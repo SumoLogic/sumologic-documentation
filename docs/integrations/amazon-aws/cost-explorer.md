@@ -38,7 +38,7 @@ The **AWS Cost Explorer** App uses the JSON formatted logs collected using **AWS
 
 The following query sample was taken from the **Cost by Region** panel on the **AWS Cost Explorer - Account** dashboard.
 
-```sql
+```sumo
 account={{account}} region CostUsd CostType StartDate EndDate MetricType Granularity Daily
 | json "region", "CostUsd", "CostType", "StartDate", "EndDate", "MetricType", "Granularity", "Estimated"
 | where MetricType matches "{{MetricType}}" and estimated matches "{{estimated}}"
@@ -65,11 +65,11 @@ Create a Field Extraction Rule (FER) for AWS Cost Explorer Logs. Learn how to cr
 * **Rule Name:** AWSCostExplorerFER
 * **Applied at:** Ingest Time
 * **Scope (Specific Data):**
-  ```sql
+  ```sumo
   account = * region CostUsd CostType StartDate EndDate MetricType Granularity Service LinkedAccount
   ```
 * **Parse Expression:** Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “securityprod” alias for an AWS account with ID "123456789" and the “infraprod” alias for an AWS account with ID "987654321", your parse expression would look like:
-  ```sql
+  ```sumo
   | json "LinkedAccount"
   | if (LinkedAccount = "123456789",  "securityprod", LinkedAccount ) as LinkedAccount
   | if (LinkedAccount = "987654321",  "infraprod", LinkedAccount ) as LinkedAccount

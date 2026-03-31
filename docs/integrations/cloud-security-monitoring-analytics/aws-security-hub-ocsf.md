@@ -161,7 +161,7 @@ The AWS Security Hub - OCSF app uses the [Security Hub Findings](https://docs.aw
 
 ### Sample query
 
-```sql total="Total Findings"
+```sumo total="Total Findings"
 _sourcecategory="yl/webhook" category_name activity_name
 | json "detail.findings[0]" as finding nodrop
 | json field=finding "finding_info.uid","finding_info.first_seen_time","finding_info.last_seen_time","finding_info.modified_time", "finding_info.modified_time_dt", "severity","cloud.account.uid","status","compliance.status","finding_info.types","cloud.region","class_name","finding_info.analytic.category","activity_name","metadata.product.name","metadata.product.vendor_name","resources[*]","finding_info.title","remediation.desc","remediation.references[0]","evidences[*].data.resource_role" as finding_id,finding_first_seen_time,finding_last_seen_time,finding_modified_time,finding_info_modified_time_dt,severity,aws_account_id,finding_status,compliance_status,finding_types,cloud_region,class_name,category_name,activity_name,product_name,vendor_name,resources,title,remediation_description,remediation_references,evidences_data_resource_roles nodrop

@@ -96,7 +96,7 @@ This section explains the steps to collect ActiveMQ metrics from a Kubernetes en
    </cors>
    ```
 3. Add the following annotations on your ActiveMQ pods:
-```sql
+```sumo
  annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -194,7 +194,7 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
 1. **Collect ActiveMQ logs written to standard output**. If your [ActiveMQ pod is writing logs to standard output](https://activemq.apache.org/how-can-i-enable-detailed-logging), follow the steps below to collect logs:
    1. Make sure that the logs from ActiveMQ are sent to stdout. Follow the instructions below to capture ActiveMQ logs from stdout on Kubernetes.
    Apply the following labels to the ActiveMQ pods:
-    ```sql
+    ```sumo
     environment: "prod_CHANGE_ME"
       component: "messaging"
       messaging_system: "activemq"
@@ -268,7 +268,7 @@ This section provides instructions for configuring metrics collection for the Su
         </cors>
         ```
    2. Create or modify `telegraf.conf` and copy and paste the text below:  
-   ```sql
+   ```sumo
    [[inputs.disk]]
      mount_points = ["/"]
      [inputs.disk.tags]
@@ -365,7 +365,7 @@ Based on your infrastructure and networking setup choose one of these methods to
 2. **Configure ActiveMQ to log to a Local file**. By default, ActiveMQ logs are stored in `<Folder ActiveMQ Installed>/data/activemq.log`. The default directory for log files is listed in the [log4j.properties](https://github.com/apache/activemq/blob/main/activemq-console/src/test/resources/log4j2-test.properties) file. To configure the log output destination to a log file:
    * Navigate to directory : `<Folder ActiveMQ Installed>`
    * Open file log4j.properties and edit options below:
-     ```sql
+     ```sumo
      log4j.appender.logfile.file=${activemq.data}/activemq.log
      log4j.appender.logfile.maxFileSize=10240MB
      log4j.logger.org.apache.activemq=DEBUG
