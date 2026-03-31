@@ -182,7 +182,7 @@ After completing the setup steps above, schedule the search to run, as follows.�
 
 ## Data not sent alert
 
-This hourly alert will notify you if any of your collectors have not sent log data for the last 24 hours (-24h). Because this alert will trigger if *any* collectors do not send data in the specified time range, we recommend that you verify that all your collectors are sending data before you set this alert and that you extend the time range if 24 hours is not long enough for your data to collect.
+This hourly alert notifies you if any collectors have not sent log data in the past 24 hours (-24h). Since this alert is triggered when *any* collector stops sending data within this timeframe, ensure that all collectors are actively sending data before enabling the alert, and adjust the time range if 24 hours is insufficient for your data collection cycle.
 
 :::note
 This type of alert isn't suitable for ephemeral environments and can send false positives.
@@ -190,8 +190,7 @@ This type of alert isn't suitable for ephemeral environments and can send false 
 
 #### Setup
 
-**Prerequisite**. All collectors must be sending data *before* you set this alert. This alert will trigger if *any* collectors do not send data in the specified time range. If you want to identify collectors that are not ingesting for a long time or have not ingested at all, you can use the [collector API](/docs/api/collector-management/collector-api-methods-examples)
-attributes `alive` and `LastSeenAlive`.
+**Prerequisite**. All collectors must be sending data *before* you set this alert. This alert will be triggered if *any* collector stops sending data in the specified time range. If you want to identify collectors that are not ingesting for a long time or have not ingested at all, you can use the [collector API](/docs/api/collector-management/collector-api-methods-examples) attributes `alive` and `LastSeenAlive`.
 
 1. Enable the Data Volume Index.  See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
 1. (Optional) Depending on how busy your collectors are, you can modify the following alert threshold:
@@ -225,9 +224,9 @@ If you do not want the results of the query across sources or source categories 
 
 #### Scheduling
 
-After completing the setup steps, you'll need to create a monitor. 
+After completing the setup steps above, schedule the search to run, as follows:  
 
-1. [Create a monitor](/docs/alerts/monitors/create-monitor) corresponding to the query you've created above.
+1. Schedule the query you just created in the Setup section. For details, see [Create a Scheduled Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the **Run frequency** to **Hourly**.
 1. Set a time range. The default is **Last 24 hours**. If you need to allow for more time because some collectors do not typically ingest data that often, specify a longer time range. For example, seven days.<br/><img src={useBaseUrl('img/manage/ingestion-volume/AlertDataLoss.png')} alt="Alert" style={{border: '1px solid gray'}} width="500" />
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0**.
