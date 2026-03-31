@@ -143,7 +143,7 @@ To ensure stable performance, the agent performs system-wide rate limiting, whic
 <details>
 <summary>Does the agent automatically investigate things that are not entities in Cloud SIEM?</summary>
 
-Traditional Cloud SIEM entities are itens like users, IP addresses, hosts, and the like. In addition to these, the agent automatically investigates things that are not usually identified as entities in Cloud SIEM, such as related cloud resources, API endpoints, or service accounts relevant to the insight. This intelligent entity prioritization results in faster investigation and reduces time spent manually determining which entities to investigate.
+Traditional Cloud SIEM entities are items like users, IP addresses, hosts, and the like. In addition to these, the agent automatically investigates things that are not usually identified as entities in Cloud SIEM, such as related cloud resources, API endpoints, or service accounts relevant to the insight. This intelligent entity prioritization results in faster investigation and reduces time spent manually determining which entities to investigate.
 </details>
 
 <details>
