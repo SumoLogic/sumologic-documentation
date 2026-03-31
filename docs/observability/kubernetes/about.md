@@ -7,7 +7,7 @@ description: Learn how Sumo Logic brings ease-of-use to Kubernetes, how to get t
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/kubernetes-explorer.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/icons/operations/kubernetes-explorer.png')} alt="Kubernetes Explorer icon" width="40"/>
 
 With the Sumo Logic Kubernetes Solution, you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. You can:
 

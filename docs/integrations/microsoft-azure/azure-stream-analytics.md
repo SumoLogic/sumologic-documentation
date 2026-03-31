@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Stream 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-stream-analytics.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-stream-analytics.png')} alt="Azure Stream Analytics icon" width="50"/>
 
 [Azure Stream Analytics](https://learn.microsoft.com/en-us/azure/stream-analytics/stream-analytics-introduction) is a fully managed stream processing engine that is designed to analyze and process large volumes of streaming data with sub-millisecond latencies. This integration helps in monitoring and troubleshooting your query and job performance.
 

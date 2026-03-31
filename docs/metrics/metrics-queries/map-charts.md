@@ -18,8 +18,8 @@ Map visualizations are supported in the Metrics Search and dashboard panel build
 ## Create a map chart
 
 1. Enter a metrics query that returns dimensions that provide latitude and longitude. Your query can return multiple metrics, but there’s a limit to how many you can visualize. A cluster chart supports queries that return two metrics. A heat map supports a single metric.
-2. Open the **Chart** tab, and select **Map** as **Panel Type**. <br/><img src={useBaseUrl('img/metrics/map-option.png')} alt="map-option.png" style={{border: '1px solid gray'}} width="800" />
-3. If your query returns dimensions named _latitude_ and _longitude_, the chart tab will display a cluster chart on a world map. If the dimensions that contain latitude and longitude are not named _latitude_ and _longitude_, use the pull-downs in the **Coordinate Data** area to select the dimensions that contain the coordinates. <br/><img src={useBaseUrl('img/metrics/cluster-map-one-metric.png')} alt="cluster-map-one-metric.png" style={{border: '1px solid gray'}} width="800" />
+2. Open the **Chart** tab, and select **Map** as **Panel Type**. <br/><img src={useBaseUrl('img/metrics/map-option.png')} alt="Map option" style={{border: '1px solid gray'}} width="800" />
+3. If your query returns dimensions named _latitude_ and _longitude_, the chart tab will display a cluster chart on a world map. If the dimensions that contain latitude and longitude are not named _latitude_ and _longitude_, use the pull-downs in the **Coordinate Data** area to select the dimensions that contain the coordinates. <br/><img src={useBaseUrl('img/metrics/cluster-map-one-metric.png')} alt="Cluster map one metric" style={{border: '1px solid gray'}} width="800" />
 
 ## Interacting with a map chart
 
@@ -34,7 +34,7 @@ If your metrics query returns two metrics, you can choose between:
 
 ### Display secondary metric
 
-If your metrics query returns two metrics, choosing the **Display Secondary Metric** option will result in both metrics being visualized on the chart. Note that when you choose this option, you can set a different chart type for each of the metrics. One can be cluster and the other a heatmap, as shown in the screenshot below. <br/><img src={useBaseUrl('img/metrics/secondary-metric.png')} alt="secondary-metric.png" style={{border: '1px solid gray'}} width="800" />
+If your metrics query returns two metrics, choosing the **Display Secondary Metric** option will result in both metrics being visualized on the chart. Note that when you choose this option, you can set a different chart type for each of the metrics. One can be cluster and the other a heatmap, as shown in the screenshot below. <br/><img src={useBaseUrl('img/metrics/secondary-metric.png')} alt="Secondary metric" style={{border: '1px solid gray'}} width="800" />
 
 ### Statistic type
 
@@ -42,4 +42,4 @@ By default, query results are aggregated by the `count` function on the chart. Y
 
 ### Thresholds
 
-The clusters on a cluster chart are color-coded red, yellow, and green, based on thresholds that we determine based on your query results. If you want to set your own thresholds, add an additional threshold setting, or remove a threshold toggle the **Auto** option off.<br/><img src={useBaseUrl('img/metrics/thresholds-map-chart.png')} alt="thresholds.png" style={{border: '1px solid gray'}} width="300"/>
+The clusters on a cluster chart are color-coded red, yellow, and green, based on thresholds that we determine based on your query results. If you want to set your own thresholds, add an additional threshold setting, or remove a threshold toggle the **Auto** option off.<br/><img src={useBaseUrl('img/metrics/thresholds-map-chart.png')} alt="Thresholds" style={{border: '1px solid gray'}} width="300"/>

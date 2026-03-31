@@ -7,7 +7,7 @@ description: Provides insight into your JFrog Artifactory binary repository.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/jfrog-Artifactory.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/app-development/jfrog-Artifactory.png')} alt="JFrog Artifactory icon" width="100"/>
 
 JFrog Artifactory is a universal artifact repository manager that integrates with CI/CD and DevOps tools to provide artifact tracking. The Sumo Logic app for Artifactory 7 provides insight into your JFrog Artifactory binary repository. Our preconfigured dashboards provide an overview of your system as well as Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity.
 
@@ -179,7 +179,7 @@ If you do not have an existing Sumo Logic account and it is your first time here
 1. Click **Access Dashboard**.
 1. When the Sumo Logic page appears, select **I agree to the Service License Agreement**, and click **Access Dashboard**.<br/><img src={useBaseUrl('img/connection-and-integration/jfrog4.png')} alt="Access Dashboard" style={{border: '1px solid gray'}} width="800" />
 1. When you see the message **Your Dashboards are being populated**, click **OK, Got It**.
-1. To access your Artifactory dashboards, click **Library** > **Personal** > **Artifactory 7**.<br/><img src={useBaseUrl('img/connection-and-integration/jfrog5.png')} alt="jfrog5.png" width="300"/>
+1. To access your Artifactory dashboards, click **Library** > **Personal** > **Artifactory 7**.<br/><img src={useBaseUrl('img/connection-and-integration/jfrog5.png')} alt="Artifactory7 folder" width="300"/>
 
 ### If you have a Sumo Logic account
 

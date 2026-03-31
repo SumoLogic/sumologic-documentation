@@ -158,4 +158,4 @@ CAT sumo://content/slos
 | where !(tags = "{}")
 ```
 
-<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="slo-tags-query.png" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="SLO tags query" style={{border: '1px solid gray'}} width="800" />

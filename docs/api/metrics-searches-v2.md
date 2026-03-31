@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/>
+<img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/>
 
 <!-- Originally added as a beta article with SUMO-124040. -->
 

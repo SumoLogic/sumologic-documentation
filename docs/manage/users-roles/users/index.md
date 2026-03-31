@@ -6,7 +6,7 @@ description: Create user accounts and assign roles.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/business/regional-partner-sales.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/business/regional-partner-sales.png')} alt="Regional Partner Sales icon" width="50"/>
 
 This guide has information about how to create and manage Sumo Logic users. In Sumo Logic, an administrator controls access to capabilities and data by assigning capabilities and search filters to roles, and then assigning users to roles. For more information, see [Role-Based Access Control](/docs/manage/users-roles/roles/role-based-access-control/).
 

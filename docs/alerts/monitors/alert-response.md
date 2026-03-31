@@ -6,7 +6,7 @@ description: Quickly investigate and resolve issues you've been alerted about wi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/alert-and-notify.png')} alt="alert-and-notify.png" width="40"/>
+<img src={useBaseUrl('img/icons/operations/alert-and-notify.png')} alt="Alert and notify icon" width="40"/>
 
 Alert response provides contextual insights about triggered alerts to minimize the time needed to investigate and resolve application failures. An alert provides curated information to on-calls to help them troubleshoot issues more quickly.
 
@@ -123,7 +123,7 @@ The following images and lists describe alert element on the page.<br/><img src=
 * **D**. Status of the alert (**Active** or **Resolved**).
 * **E**. Refreshes the alert page.
 * **F**. Opens the [playbook associated with this monitor](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional).  
-   * Playbooks allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert:<br/><img src={useBaseUrl('img/alerts/monitors/playbook-example.png')} alt="playbook example.png" style={{border: '1px solid gray'}} width="250" />
+   * Playbooks allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert:<br/><img src={useBaseUrl('img/alerts/monitors/playbook-example.png')} alt="Text playbook example" style={{border: '1px solid gray'}} width="250" />
    * [Automated Playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) run automatically when an alert is triggered: <br/><img src={useBaseUrl('img/alerts/monitors/automated-playbooks-in-alert-screen.png')} alt="Automated playbooks" style={{border: '1px solid gray'}} width="300" />
 * **G**. Opens the monitor that generated this alert.
 * **H**. Resolves the alert. This will also resolve the monitor that generated the alert. The monitor will fire again when the alert condition is met.

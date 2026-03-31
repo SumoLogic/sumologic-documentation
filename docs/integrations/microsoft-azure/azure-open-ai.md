@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure OpenAI 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-openai.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-openai.png')} alt="Azure OpenAI icon" width="50"/>
 
 [Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/overview) is a fully managed platform that provides access to advanced generative AI models from OpenAI, such as GPT, Codex, and Embeddings, within Azure’s secure, enterprise-grade environment. It integrates seamlessly with Azure services like Cognitive Search, Machine Learning, and Logic Apps, as well as with external applications and data sources, enabling powerful capabilities in natural language processing, code generation, and reasoning. The platform also supports monitoring of key performance metrics, including request volume, token usage, response latency, and error rates, to ensure efficient model utilization and reliable AI-driven application performance.
 

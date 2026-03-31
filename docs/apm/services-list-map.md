@@ -6,7 +6,7 @@ description: View your application topology and investigate microservice interac
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/apm/services-map-icon.png')} alt="icon" width="45"/>
+<img src={useBaseUrl('img/apm/services-map-icon.png')} alt="Services Map icon" width="45"/>
 
 To access the services list and services map features:
 * [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Services**. You can also click the **Go To...** menu at the top of the screen and select **Services**.

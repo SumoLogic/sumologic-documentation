@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop.png' alt="Thumbnail icon" width="175"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="35"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop.png' alt="Hadoop icon" width="175"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="35"/>
 
 The Sumo Logic app for [Apache Hadoop](https://hadoop.apache.org/docs/stable/) provides logs and metrics to help you monitor the health, performance, availability, and resource utilization of Hadoop clusters. It provides preconfigured dashboards and searches that offer deep visibility into HDFS and YARN components for real-time and historical analysis.
 The app delivers end-to-end observability across NameNode, DataNode, and ResourceManager services, enabling faster troubleshooting, capacity planning, and operational stability.

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="Role Based Access icon" width="50"/>
 
 Roles determine the functions that users are able to perform in Sumo Logic. The Role Management API (V2) allows you to configure access on partitions and manage roles from HTTP endpoints.
 
