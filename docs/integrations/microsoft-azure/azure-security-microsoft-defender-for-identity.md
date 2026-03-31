@@ -6,7 +6,7 @@ description: Learn how to collect alerts from the Azure Security - Microsoft Def
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="MS Graph icon" width="50"/>
 
 The Sumo Logic app for Azure Security – Microsoft Defender for Identity enhances endpoint protection by centralizing alert data from various devices, enabling faster detection, investigation, and response to cyber threats. It uses advanced analytics and threat intelligence to identify malicious behavior and high-risk activity. With detailed dashboards and visualizations, it helps security teams track recurring incidents, assess vulnerabilities, and reduce response time, offering a comprehensive view of your organization’s endpoint security posture.
 

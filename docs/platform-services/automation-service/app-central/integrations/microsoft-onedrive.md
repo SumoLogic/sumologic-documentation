@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-onedrive.png')} alt="microsoft-onedrive" width="100"/>
 
-***Version: 1.9  
-Updated: November 28, 2025***
+***Version: 1.10  
+Updated: March 31, 2026***
 
 Utilize and manipulate files for incident investigation using OneDrive.
 
@@ -80,3 +80,4 @@ For information about Microsoft OneDrive, see [OneDrive documentation](https://l
 * November 28, 2025 (v1.9)
     - Added support for downloading file from site document library using hostname and site name parameters.
     - Added support for downloading file from specific user accounts via user principal name parameter.
+* March 31, 2026 (v1.10) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

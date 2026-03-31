@@ -7,7 +7,7 @@ description: The Sumo Logic app for Palo Alto Networks 11 helps you analyze traf
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan9.png')} alt="thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/pan9.png')} alt="Palto Alto Networks icon" width="90"/>
 
 The Sumo Logic app for Palo Alto Networks 11 app helps you analyze traffic and understand your Palo Alto Networks environments. In addition, you can dive deeper into the data, which is broken down by threat detection indicators, malware type, and so on.
 

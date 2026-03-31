@@ -7,7 +7,7 @@ description: The Kandji app for Sumo Logic provides comprehensive visibility int
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="Kandji icon" width="50"/>
 
 The Sumo Logic app for Kandji provides comprehensive visibility into the security and management of Apple devices within an organization. This app enables security teams to monitor threats, detect vulnerabilities, and track device health in real time. By analyzing the threat counts, device enrollment trends, activity types, and geographic distribution, this app helps you to identify risks and respond to potential security incidents swiftly.
 

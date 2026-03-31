@@ -18,7 +18,7 @@ From April 30, 2025, Sumo Logic will no longer support adding a source using thi
 Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection method supports a throughput limit of 1MB/s (86GB/day) per named Event Hub egress rate. If you require higher throughput, we recommend using [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source).
 :::
 
-<img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="Azure Event Hub icon" width="40"/>
 
 This cloud-to-cloud Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -74,8 +74,8 @@ To configure an Azure Event Hubs Source:
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.  
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.  
 1. **Azure Event Hubs Namespace**. Enter your Azure Event Hubs Namespace name. 
 1. **Event Hubs Instance Name**. Enter the Azure Event Hubs Instance Name.
 1. **Shared Access Policy**. Enter your Shared Access Policy Name and Key. The Shared Access Policy requires the **Listen** claim.

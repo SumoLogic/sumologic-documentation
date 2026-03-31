@@ -6,7 +6,7 @@ sidebar_label: Azure Event Hubs Source Migration
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="Azure Event Hub icon" width="40"/>
 
 As **Azure Event Hubs source** supports logs, you can migrate your [ARM-based Azure Monitor Logs Collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source) (functions prefixed with SUMOAzureLogs). This source is available in all deployments, including FedRAMP.
 

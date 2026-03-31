@@ -7,7 +7,7 @@ description: The Sumo Logic app for Microsoft Azure AD Inventory offers enhanced
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="Active Directory icon" width="55"/>
 
 The Sumo Logic app for Microsoft Azure AD Inventory provides enhanced security monitoring by offering visibility into user activities and device management. The app provides built-in dashboards that help security teams track sign-in activities, monitor user demographics, and manage devices. It supports proactive threat detection by identifying unauthorized access, tracking device compliance, and ensuring all devices meet security standards. This app is vital for maintaining a secure and compliant Azure AD environment, enabling continuous oversight and governance of organizational resources.
 

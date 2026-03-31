@@ -90,8 +90,8 @@ For some chart types, you can use the **Thresholds** tab in the **Display Settin
 
 **To set threshold values**
 
-1. After you enter your query, in the **Chart** view, click the **Thresholds** icon in the right-side pane of icons. <br/> <img src={useBaseUrl('img/metrics/thresholds-icon.png')} alt="Thresholds icon.png" style={{border: '1px solid gray'}} width="800"/>
-2. Click the toggle in the **Thresholds** pane. <br/><img src={useBaseUrl('img/metrics/thresholds-toggle.png')} alt="thresholds-icon.png" width="350"/>
+1. After you enter your query, in the **Chart** view, click the **Thresholds** icon in the right-side pane of icons. <br/> <img src={useBaseUrl('img/metrics/thresholds-icon.png')} alt="Thresholds icon" style={{border: '1px solid gray'}} width="800"/>
+2. Click the toggle in the **Thresholds** pane. <br/><img src={useBaseUrl('img/metrics/thresholds-toggle.png')} alt="Thresholds icon" width="350"/>
 3. The **Thresholds** area updates to display default settings. <br/> <img src={useBaseUrl('img/metrics/thresholds-default.png')} alt="Thresholds default settings" style={{border: '1px solid gray'}} width="350"/>
 4. Configure the appropriate comparator and threshold values, based on your data and requirements. You can choose from the following comparators.
     * **greater than**. Any value greater than the value you specify will violate the threshold.

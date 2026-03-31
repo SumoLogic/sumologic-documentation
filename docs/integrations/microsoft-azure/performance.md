@@ -7,7 +7,7 @@ description: The Windows Performance app provides insight into your system's ope
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="75"/>
 
 The Windows Performance app provides insight into your system's operation and events so that you can better manage and maintain your Windows systems. The app uses predefined Dashboards and searches that provide visibility into your environment for real-time analysis of system and network performance and overall usage.
 

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/general/session.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/general/session.png')} alt="Session icon" width="50"/>
 
 The SCIM User Management API allows you to provision users to Sumo Logic from [SCIM provisioning providers](/docs/manage/security/scim/).
 

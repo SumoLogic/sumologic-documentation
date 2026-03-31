@@ -6,7 +6,7 @@ description: The Sumo Logic app for Amazon EKS - Control Plane provides visibili
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/eks.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/eks.png')} alt="EKS icon" width="50"/>
 
 [Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks/) (EKS) allows you to readily deploy, manage, and scale container-based applications with [Kubernetes](https://aws.amazon.com/kubernetes/) on AWS. The Sumo Logic app for Amazon EKS - Control Plane provides visibility into the EKS control plane with operational insights into the api server, scheduler, control manager, and worker nodes. The app’s preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
 

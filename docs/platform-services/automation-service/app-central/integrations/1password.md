@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/1Password.png')} alt="1password" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/1Password.png')} alt="1Password" width="80"/>
 
 ***Version: 1.1  
 Updated: Mar 17, 2026***

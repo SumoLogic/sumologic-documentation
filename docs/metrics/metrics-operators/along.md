@@ -26,4 +26,4 @@ Queries #A and #B return the `Net_InBytes` and `Net_OutBytes` metrics with the a
 #B: metric=Net_OutBytes account=* | avg by account
 #C: #B - #A along account
 ```
-<img src={useBaseUrl('img/metrics/along-example.png')} alt="along-example.png"/>
+<img src={useBaseUrl('img/metrics/along-example.png')} alt="Along example"/>

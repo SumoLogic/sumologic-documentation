@@ -6,7 +6,7 @@ description: The Sumo Logic app for Amazon Redshift ULM helps you monitor activi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/redshift.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/redshift.png')} alt="Redshift icon" width="50"/>
 
 Amazon Redshift is Amazon’s data warehousing service. The Sumo Logic app for Amazon Redshift ULM helps you monitor activity in Amazon Redshift. The app is a unified logs and metrics application with preconfigured dashboards provide insight into database connections, SQL command and statement execution, database user account events, CloudTrail events, and resource utilization by node and cluster.
 
