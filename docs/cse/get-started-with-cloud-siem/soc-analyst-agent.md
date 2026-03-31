@@ -10,10 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Closed Preview</span></a></p>
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Preview</span></a></p>
 
 :::info
-This feature is in closed preview. For more information, contact your Sumo Logic account executive.
+This feature is in preview. For more information, contact your Sumo Logic account executive.
 :::
 
 Sumo Logic's SOC Analyst Agent is an agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations. 
@@ -85,13 +85,18 @@ To clear the context and start a new investigation, click **New Conversation** a
 
 ### Example questions
 
-Following are example questions you could try in the **Ask Something...** field: 
+Following are example questions you could try in the **Ask Something...** field:
 * `Give me an executive summary of the insight`
-* `Create a dashboard with the results of this investigation`
 * `What actions do you recommend for remediation`
 * `Tell me how to create a monitor that will fire if any changes occur on this insight`
 
 Although these are general questions, they give you an idea of the wide variety of questions you can ask the agent. However, rather than ask general questions, we recommend you ask questions specific to the insight you're investigating in order to get the most useful responses.
+
+### Generate dashboards
+
+To generate dashboards based on the context of your investigation, simply ask Mobot. For example, in the **Ask Something...** field you could type `Create a dashboard with the results of this investigation`. The agent will build the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard-generaged.png')} alt="Ask to generate dashboard" style={{border: '1px solid gray'}} width="700" />
+
+Click the provided link to view the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard.png')} alt="Dashboard generated for insight investigation" style={{border: '1px solid gray'}} width="700" />
 
 ## FAQs
 
@@ -149,7 +154,7 @@ Traditional Cloud SIEM entities are items like users, IP addresses, hosts, and t
 <details>
 <summary>Can I converse with the agent in the same way I am used to doing with other AI-enabled tools?</summary>
 
-Yes, you can. In your investigation, you are not limited in how you proceed. You can engage the agent in a conversational flow to direct the investigation any way you want. However, the agent has many tools that can help should you need guidance. For example, the agent presents follow-up questions after each step that offer you multiple paths for investigation, and can even generate dashboards based on investigation context.
+Yes, you can. In your investigation, you are not limited in how you proceed. You can engage the agent in a conversational flow to direct the investigation any way you want. However, the agent has many tools that can help should you need guidance. For example, the agent presents follow-up questions after each step that offer you multiple paths for investigation.
 </details>
 
 ## Additional resources
