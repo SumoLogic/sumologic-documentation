@@ -5,7 +5,7 @@ sidebar_label: Microsoft Exchange Trace Logs
 tags:
   - cloud-to-cloud
   - microsoft-exchange-trace-logs
-description: The Microsoft Exchange Trace Logs Source collects list of the message trace logs via the Microsoft Graph API.
+description: The Microsoft Exchange Trace Logs Source collects a list of the message trace logs via the Microsoft Graph API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -24,7 +24,7 @@ The Microsoft Exchange Trace Logs source collects the [Message Trace](https://le
 
 ### Vendor configuration
 
-This source requires you to register an application within Azure Active Directory, generate the client secret, give the required permission and generate the service principal. Follow the instructions below.
+This source requires you to register an application within Azure Active Directory, generate the client secret, give the required permission, and generate the service principal. Follow the instructions below.
 
 #### Register an Azure Application
 
@@ -34,7 +34,7 @@ Follow the mentioned steps in Microsoft [document](https://learn.microsoft.com/e
 
 1. Within your Azure application setup in the previous steps, click on `Certificates & secrets` from the left navigation pane and then click `New client secret`. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-client-secret-step-1.png')} alt="New client secret" width="700" />
 
-2. A right pane will slide out asking for a description and expiration for the secret. This secret is used by Sumo Logic to connect via OAuth 2.0 to establish continuous access to your Exchange Trace logs with an auto generated refresh token.<br/> <img src={useBaseUrl('img/send-data/ms-exchange-client-secret-step-2.png')} alt="Description and expiration for the secret secret" width="700" />
+2. A right pane will slide out asking for a description and expiration for the secret. This secret is used by Sumo Logic to connect via OAuth 2.0 to establish continuous access to your Exchange Trace logs with an auto-generated refresh token.<br/> <img src={useBaseUrl('img/send-data/ms-exchange-client-secret-step-2.png')} alt="Description and expiration for the secret secret" width="700" />
 
 3. Take note of the secret value shown on this page. You will never be able to see this value from Azure after navigating away from this page. We recommend you keep it in a protected password management vault.<br/> <img src={useBaseUrl('img/send-data/ms-exchange-client-secret-step-3.png')} alt="Hidden value" width="700" />
 
@@ -74,12 +74,12 @@ If you are already using version 1.0.x of this C2C source, you will see an upgra
 
 To configure a Microsoft Exchange Trace Logs Source:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu, select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Search for and select **MS Exchange Trace Logs**.
 4. Enter a **Name** for the Source. The description is optional.
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-6. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
+6. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and a value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 8. **Client ID**. Enter your Client ID from your Azure Application. This should be a Globally Unique Identifier (aka GUID).
@@ -118,7 +118,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ### Service principal-less authentication failed
 
-If source is facing the following error:
+If the source is facing the following error:
 
 ```
 Service principal-less authentication failed: The service principal for App ID 8bd644d1-64a1-4d4b-ae52-2e0cbf64e373 was not found. Please create a service principal for this app in your tenant. Provisioning may take several hours to complete.
@@ -127,7 +127,7 @@ Service principal-less authentication failed: The service principal for App ID 8
 This means the service principal has either not been created or has not yet been enabled. To resolve this:
 
 - **If you have not created the service principal**, follow the steps in the [Generate the Service Principal](#generate-the-service-principal) section above.
-- **If the service principal has already been generated**, as mentioned in API response provisioning can take several hours to complete. Wait a few hours, then reconfigure/restart the source with the correct credentials.
+- **If the service principal has already been generated**, as mentioned in the API response, provisioning can take several hours to complete. Wait a few hours, then reconfigure/restart the source with the correct credentials.
 
 ## FAQ
 
