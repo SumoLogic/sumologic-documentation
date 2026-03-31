@@ -8,84 +8,51 @@ description: This Sumo Logic App for Microsoft Exchange Trace logs provides visi
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
-The MessageTrace API offers insight into the handling of emails that have gone through Office 365 for an organization. The Sumo Logic Microsoft Exchange Trace Logs App provides information on the delivery status of messages including Delivered, Failed, Quarantined, Pending, and Spam. The app dashboard analyzes message size, sender and receiver locations, and provides threat analysis by utilizing Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
+The Microsoft Exchange Trace Logs App provides a comprehensive view of email flow within your Exchange environment, offering deep insights into message transmission, delivery, and security posture. It helps administrators analyze trends, identify anomalies, and monitor communication efficiency. With built-in dashboards for both operational performance and security, the app centralizes trace log data for simplified monitoring and decision-making. This solution enhances visibility and supports proactive management of mail traffic and threats.
 
 ## Log types
 
-The Sumo Logic App for Microsoft Exchange Trace Logs uses the [MessageTrace reports](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)). To learn about the Microsoft Exchange Trace logs fields, see the [Fields](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)#fields) documentation.
+This app uses [Message Trace](https://learn.microsoft.com/en-us/graph/api/messagetracingroot-list-messagetraces?view=graph-rest-1.0&tabs=http) logs collected via the Microsoft Graph API. For details about the available fields, see the [Message Trace properties](https://learn.microsoft.com/en-us/graph/api/resources/exchangemessagetrace?view=graph-rest-1.0#properties) documentation.
 
-### Sample log messages
+### Sample log message
 
 ```json
 {
- "odata.metadata": "https://reports.office365.com/ecp/ReportingWebService/Reporting.svc/$metadata#MessageTrace",
- "value": [
-   {
-     "Organization": "org.onmicrosoft.com",
-     "MessageId": "<233af449-87f6-4902-bcf5-77838a4e7603@az.southcentralus.unknown.microsoft.com>",
-     "Received": "2022-11-29T05:35:08.2652371",
-     "SenderAddress": "azure-noreply@microsoft.com",
-     "RecipientAddress": "ebenzoni@org.onmicrosoft.com",
-     "Subject": "Azure AD Identity Protection Weekly Digest",
-     "Status": "Delivered",
-     "ToIP": null,
-     "FromIP": "20.97.34.221",
-     "Size": 145153,
-     "MessageTraceId": "aa1a3e28-8967-4bfb-06d3-08dad1cb7a0e",
-     "StartDate": "2022-11-27T17:08:26.8492706Z",
-     "EndDate": "2022-11-29T17:08:26.8492706Z",
-     "Index": 0
-   },
-   {
-     "Organization": "org.onmicrosoft.com",
-     "MessageId": "<c41de266-153b-487c-a142-618d99505b38@az.southcentralus.unknown.microsoft.com>",
-     "Received": "2022-11-29T05:35:07.7450561",
-     "SenderAddress": "azure-noreply@microsoft.com",
-     "RecipientAddress": "lmilby@org.onmicrosoft.com",
-     "Subject": "Azure AD Identity Protection Weekly Digest",
-     "Status": "Delivered",
-     "ToIP": null,
-     "FromIP": "20.97.34.221",
-     "Size": 144900,
-     "MessageTraceId": "0c1d5652-d2eb-496c-a741-08dad1cb79be",
-     "StartDate": "2022-11-27T17:08:26.8492706Z",
-     "EndDate": "2022-11-29T17:08:26.8492706Z",
-     "Index": 1
-   },
-   {
-     "Organization": "org.onmicrosoft.com",
-     "MessageId": "<072e0c5d-66d0-40ac-a376-52b11344255a@az.northcentralus.unknown.microsoft.com>",
-     "Received": "2022-11-29T05:35:07.2828271",
-     "SenderAddress": "azure-noreply@microsoft.com",
-     "RecipientAddress": "sumo-apps@org.onmicrosoft.com",
-     "Subject": "Azure AD Identity Protection Weekly Digest",
-     "Status": "Delivered",
-     "ToIP": null,
-     "FromIP": "20.51.6.33",
-     "Size": 145123,
-     "MessageTraceId": "4d68a1db-9375-4ae8-1f6f-08dad1cb7978",
-     "StartDate": "2022-11-27T17:08:26.8492706Z",
-     "EndDate": "2022-11-29T17:08:26.8492706Z",
-     "Index": 2
-   }
- ]
+  "id": "eae9f88e-4c85-4eaa-abd9-08de67858004",
+  "messageId": "<80b868fd-fdf9-4a0c-9612-ccfd8fdc870b@az.westus2.microsoft.com>",
+  "status": "delivered",
+  "receivedDateTime": "2026-02-09T02:47:00.929Z",
+  "recipientAddress": "ryaduvanshi.ctr@itsumologic.onmicrosoft.com",
+  "senderAddress": "microsoft-noreply@microsoft.com",
+  "subject": "View your Office 365 E3 Developer invoice",
+  "size": 628118,
+  "fromIP": "2a01:111:f403:c007::2",
+  "toIP": ""
 }
 ```
 
-### Sample queries
+### Sample query
 
-```sql title="Message Delivery Status"
-_sourceCategory="o365dummy"
-| json "Organization", "MessageId", "Received","SenderAddress", "RecipientAddress", "Subject", "Status", "ToIP", "FromIP", "Size", "MessageTraceId", "StartDate", "EndDate", "Index" as organization, message_id, received, sender_address, recipient_address, subject, status, toIP, fromIP, size, message_traceId, start_date, end_Date, index nodrop
-| where status matches"{{status}}"
-| where sender_address matches"{{sender_address}}"
-| where organization matches "{{organization}}"
-| lookup latitude, longitude, country_code, country_name, region, city, postal_code from geo://location on ip = fromIP
-| where country_name matches "{{country}}"
-| timeslice 1d
-| count by _timeslice, status
-| fillmissing timeslice, values all in status
-| transpose row _timeslice column status
+```sql title="Delivered Messages"
+_sourceCategory={{Logsdatasource}} id senderAddress recipientAddress delivered 
+| json "id","fromIP","toIP","status","senderAddress","recipientAddress" as id,from_ip,top_ip,status,sender_address,recipient_address nodrop
+
+| where status = "delivered"
+
+// Global filter 
+| lookup  country_name from geo://location on ip = from_ip
+| country_name as source
+| lookup  country_name from geo://location on ip = top_ip
+| country_name as destination_country
+| if(isBlank(destination_country),"Exchange Online",destination_country) as destination
+| where if("{{source}}" ="*",true,source matches "{{source}}")
+| where if("{{destination}}"="*",true,destination matches "{{destination}}")
+| where if("{{sender_address}}"="*",true,sender_address matches "{{sender_address}}")
+| where if("{{recipient_address}}"="*",true,recipient_address matches "{{recipient_address}}")
+
+// Panel specific
+| count by id,sender_address,recipient_address,_messagetime
+| count 
 ```
 ## Collection configuration and app installation
 
@@ -94,7 +61,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 <CollectionConfiguration/>
 
 :::important
-Use the [Cloud-to-Cloud Integration for Microsoft Exchange Trace Logs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Microsoft Exchange Trace Logs app is properly integrated and configured to collect and analyze your Microsoft Exchange Trace Logs data.
+Use the [Cloud-to-Cloud Integration for Microsoft Exchange Trace Logs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs) (use 2.0.x version of source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Microsoft Exchange Trace Logs app is properly integrated and configured to collect and analyze your Microsoft Exchange Trace Logs data.
 :::
 
 ### Create a new collector and install the app
@@ -115,6 +82,38 @@ import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
 <AppCollectionOPtion3/>
 
+## Viewing Microsoft Exchange Trace Logs dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+:::note
+If you are using version 1.0.x of the [Microsoft Exchange Trace Logs C2C source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs), the legacy **Microsoft Exchange Trace Logs - Overview** and **Microsoft Exchange Trace Logs - Message Monitoring** dashboards are available to visualize your data. We recommend upgrading to the latest version of the C2C source and app for improved functionality and support.
+:::
+
+### Overview
+
+The **Microsoft Exchange Trace Logs Overview** dashboard provides a comprehensive view of email flow and performance across your Exchange environment. It highlights key metrics such as message volumes, delivery success and failure rates, and total data transmitted. The dashboard also offers insights into top senders and recipients, geo-location patterns, and inbound or outbound domain activity. Additionally, it includes trend analyses and detailed message-level information to help identify anomalies, monitor high-volume transmissions, and ensure smooth mail operations.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Exchange-Trace-Logs-Overview.png')} alt="Microsoft Exchange Trace Logs - Overview" width="900"/>
+
+### Security Overview
+
+The **Microsoft Exchange Trace Logs - Security Overview** dashboard offers a focused view of email security metrics within your Exchange environment. It monitors quarantined and spam messages, delivery failure trends, and the geographic origins of emails from embargoed regions. The dashboard integrates threat intelligence to analyze sender and recipient addresses, highlighting potential risks. It also showcases top senders, recipients, domains, and subjects associated with specific entities, helping security teams quickly identify suspicious patterns, assess threats, and strengthen overall email protection.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Exchange-Trace-Logs-Security-Overview.png')} alt="Microsoft Exchange Trace Logs - Security Overview" width="900"/>
+
+## Create monitors for Microsoft Exchange Trace Logs app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Microsoft Exchange Trace Logs alerts
+
+| Name  | Description | Alert Condition |
+|:--|:--|:--|
+| `Microsoft Exchange Trace Logs - High Volume Data Transmitted Emails Detected` | Monitors identify emails transmitting unusually large volumes of data. Triggers an alert when high-volume data transfers are detected, helping uncover potential data exfiltration or compliance breaches promptly. You can also modify the "threshold" value as per your requirement. | Count > 0 |
+| `Microsoft Exchange Trace Logs - Recipients in Embargoed Geo Locations Detected` | Tracks Microsoft Exchange trace logs to identify email recipients located in embargoed or restricted regions. Triggers an alert when messages are delivered to these high-risk locations, helping detect potential compliance breaches or data transfer violations promptly. | Count > 0 |
+| `Microsoft Exchange Trace Logs - Senders from Embargoed Geo Locations Detected` | Tracks Microsoft Exchange trace logs to identify email senders originating from embargoed or restricted regions. Triggers an alert when messages are sent from these high-risk locations, helping detect potential policy violations or compliance risks promptly. | Count > 0 |
+
 ## Upgrading the Microsoft Exchange Trace Logs app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
@@ -126,17 +125,3 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
-
-## Viewing Microsoft Exchange Trace Logs dashboards
-
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
-
-<ViewDashboards/>
-
-### Overview
-
-The **Microsoft Exchange Trace Logs - Overview** dashboard provides information on the delivery status of messages, including outliers, and a summary of the message size. <br/><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs-overview.png')} alt="Microsoft Exchange Trace Logs Overview" width="900"/>
-
-### Message Monitoring
-
-The **Microsoft Exchange Trace Logs - Message Monitoring** dashboard mainly focuses on the message traffic, including the number of unique senders and receivers and their domains. It shows the geographical locations of senders, receivers, and failed messages, and performs security threat analysis on the senders. Additionally, it displays the top 10 senders.<br/><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs-message-monitoring.png')} alt="Microsoft Exchange Trace Logs Message Monitoring" width="900"/>
