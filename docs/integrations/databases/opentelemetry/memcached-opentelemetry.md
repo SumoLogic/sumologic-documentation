@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/memcached.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/databases/memcached.png')} alt="Memcached icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The [Memcached](https://memcached.org/about) app is a logs-based app that helps you monitor the availability, performance, health, and resource utilization of your Memcached clusters. Preconfigured dashboards provide insight into operational metrics, cache performance, resource utilization, errors, warnings, and commands executed.
 

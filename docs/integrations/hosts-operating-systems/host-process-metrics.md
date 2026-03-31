@@ -6,7 +6,7 @@ description: The Sumo Logic app for Host and Process Metrics allows you to monit
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/hostAndProcessMetrics.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/hostAndProcessMetrics.png')} alt="Host and Process Metrics icon" width="75"/>
 
 The Sumo Logic app for Host and Process Metrics allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses Telegraf, an open-source, plugin-based collector for the collection of both host and process metrics data.
 

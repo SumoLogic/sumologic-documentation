@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic Zenduty integ
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/zenduty-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/zenduty-logo.png')} alt="Zenduty icon" width="50"/>
 
 Zenduty is an incident management platform that helps businesses manage and respond to critical incidents by providing on-call scheduling, alert routing, and collaboration tools, ensuring timely incident resolution and minimizing downtime. You can use a webhook in the Zenduty platform to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor critical incident and it's related activities in Sumo Logic. For more details, refer to the [Zenduty Documentation](https://docs.zenduty.com/).
 

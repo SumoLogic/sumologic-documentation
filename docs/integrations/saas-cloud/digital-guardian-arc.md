@@ -7,7 +7,7 @@ description: The Sumo Logic app for Digital Guardian ARC provides a comprehensiv
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Digital Guardian icon" width="50"/>
 
 The Sumo Logic app for Digital Guardian ARC provides a comprehensive suite of dashboards and alerts to help security analysts monitor, detect, and respond to critical events within their data protection environment. Designed to integrate seamlessly with Digital Guardian's Advanced Reporting and Analytics (ARC), this app offers actionable insights into endpoint activities, user behavior, and policy violations to enhance data security.
 

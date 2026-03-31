@@ -6,7 +6,7 @@ description: Learn how to collect alerts from the Azure Security - Microsoft Def
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-office-365.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-office-365.png')} alt="Microsoft Defender Office 365 icon" width="50"/>
 
 The Sumo Logic app for Azure Security – Microsoft Defender for Office 365 provides visibility into threats and alerts across Microsoft 365. It includes dashboards to monitor alert activity, geographic trends, detection sources, and user-level details, enabling quick identification of phishing, malware, and suspicious sign-ins. High-severity alerts, malicious IPs, compromised accounts, and targeted devices are highlighted to support rapid response. The app helps strengthen Office 365 security posture, prioritize incidents, and detect potential compromises across users and devices.
 

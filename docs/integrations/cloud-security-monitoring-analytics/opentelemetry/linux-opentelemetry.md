@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Linux.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Linux.png')} alt="Linux icon" width="100"/>
 
 Linux - Cloud Security Monitoring and Analytics - OpenTelemetry is a unified log app that ingests distribution of Linux data to Sumo Logic via OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). The app's preconfigured dashboards provide insight into user, service, systems, login, and privilege activity, providing a better understanding of your production environments and surface relevant insights by tuning out-of-the-box content to align with your security team's focus.
 

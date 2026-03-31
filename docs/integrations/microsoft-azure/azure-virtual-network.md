@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Azure Virtual
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-virtual-network.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-virtual-network.png')} alt="Azure Virtual Network icon" width="50"/>
 
 [Azure Virtual Network](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview) is a service that provides the fundamental building block for your private network in Azure enabling many types of Azure resources to securely communicate with each other, using the internet, and on-premises networks. This integration helps in monitoring the outgoing and incoming traffic flows, dropped packets, bandwidth consumption, and verifying network isolation and compliance.
 

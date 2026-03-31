@@ -7,7 +7,7 @@ description: The DocuSign app for Sumo Logic helps you monitor and secure your D
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="Thumbnail icon" width="40"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="DocuSign icon" width="40"/>
 
 The Sumo Logic app for DocuSign helps you monitor and secure your DocuSign account by providing real-time actionable insights into critical events, alerts, and user activity, allowing you to identify and address potential security threats before they can cause harm. With the DocuSign app, you can also protect data loss, identify suspicious activity, maintain the security of your DocuSign account, and prevent data breaches - all from a single, centralized platform.
 

@@ -7,7 +7,7 @@ description: The Sumo Logic app for Palo Alto Networks 9 utilizes PANOS 9 new fe
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan9.png')} alt="thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/pan9.png')} alt="Palto Alto Networks icon" width="90"/>
 
 The Sumo Logic app for Palo Alto Networks 9 utilizes PANOS 9 new features in predefined dashboards to provide extensive security analytics throughout your Palo Alto Networks environment. New PANOS 9 features include:
 

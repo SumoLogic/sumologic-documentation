@@ -7,7 +7,7 @@ description: The Sumo Logic App for Microsoft Purview Data Loss Prevention outli
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-purview-data-loss-prevention.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-purview-data-loss-prevention.png')} alt="Microsoft Purview Data Loss Prevention icon" width="100"/>
 
 Microsoft Purview Data Loss Prevention (DLP) is a tool that helps you prevent the accidental or intentional sharing of sensitive information, such as credit card numbers, social security numbers, or confidential business data, across Microsoft 365 environments.
 

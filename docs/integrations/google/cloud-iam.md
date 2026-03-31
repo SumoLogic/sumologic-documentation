@@ -7,7 +7,7 @@ description: The Google Cloud IAM App gives you visibility into the activities i
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/iam.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/iam.png')} alt="IAM icon" width="50"/>
 
 Google Cloud Identity and Access Management (Cloud IAM) allows you to create and manage permissions for Google Cloud Platform resources. The Google Cloud IAM App gives you visibility into the activities in Cloud IAM. The preconfigured dashboards allow you to monitor the IAM project activities, operations, role activities, and policy changes.
 

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/operations/topology-explorer.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/topology-explorer.png')} alt="Topology Explorer icon" width="50"/>
 
 Use this API to manage [OpenTelemetry Remote Management Source Templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates/).
 

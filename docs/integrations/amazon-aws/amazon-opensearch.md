@@ -6,7 +6,7 @@ description: Learn about the collection process for the Amazon OpenSearch Servic
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-opensearch-service-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon-opensearch-service-logo.png')} alt="Amazon OpenSearch Service icon" width="50"/>
 
 Amazon OpenSearch Service is a managed service that makes it easy to deploy, operate, and scale OpenSearch clusters in the AWS Cloud. An OpenSearch Service domain is synonymous with an OpenSearch cluster. Domains are clusters with the settings, instance types, instance counts, and storage resources that you specify. 
 

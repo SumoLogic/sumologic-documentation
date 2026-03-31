@@ -6,7 +6,7 @@ description: The Sumo Logic app for Amazon SNS is a unified logs and metrics app
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/sns.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/sns.png')} alt="SNS icon" width="50"/>
 
 Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients.
 
@@ -15,8 +15,8 @@ The Sumo Logic app for Amazon SNS collects CloudTrail logs and CloudWatch metric
 ## Log and Metrics types
 
 The Sumo Logic app for Amazon SNS uses:
-* SNS CloudWatch Metrics. For details, see [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html). 
-* SNS operations using AWS CloudTrail. For details, see [here](https://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html). 
+* SNS CloudWatch Metrics. For details, see [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html).
+* SNS operations using AWS CloudTrail. For details, see [here](https://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html).
 
 ### Sample log messages
 

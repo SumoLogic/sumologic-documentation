@@ -7,7 +7,7 @@ description: The Sumo Logic app for Alert Logic provides enhanced security opera
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/integrations/security-threat-detection/alert-logic-logo.jpg')} alt="thumbnail icon" width="200"/>
+<img src={useBaseUrl('/img/integrations/security-threat-detection/alert-logic-logo.jpg')} alt="Alert Logic icon" width="200"/>
 
 The Sumo Logic app for Alert Logic provides enhanced security operations by seamlessly combining the capabilities of Alert Logic's incident detection and response with Sumo Logic's advanced log management and analytics platform. This powerful integration allows you to gain comprehensive insights into your security landscape, detect potential threats, and respond effectively to security incidents.
 

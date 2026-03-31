@@ -174,7 +174,7 @@ Use this dashboard to:
 * Review client activity.
 * Review server errors for troubleshooting insights.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_API_Server.png')} alt="K8s control plane dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_API_Server.png')} alt="Kubernetes control plane dashboards" />
 
 ### Controller Manager
 
@@ -187,7 +187,7 @@ Use this dashboard to:
 * Review the trends in event severities to assist with troubleshooting.
 * Get an overview of the number and types of errors, then dive deeper into their causes with the information provided in the error log stream.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_Controller_Manager.png')} alt="K8s control plane dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_Controller_Manager.png')} alt="Kubernetes control plane dashboards" />
 
 ### Kube System
 
@@ -199,7 +199,7 @@ Use this dashboard to:
 * Review the details for the pods and containers in the kube system.
 * Analyze the details of the error stream to determine high severity problems and proactively troubleshoot root cause solutions.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_Kube_System.png')} alt="K8s control plane dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_Kube_System.png')} alt="Kubernetes control plane dashboards" />
 
 ### Scheduler
 
@@ -210,7 +210,7 @@ Use this dashboard to:
 * Get an overview of scheduler health and status.
 * Review scheduler latency details.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_Scheduler.png')} alt="K8s control plane dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_Scheduler.png')} alt="Kubernetes control plane dashboards" />
 
 ### Security Audit Events
 
@@ -223,7 +223,7 @@ Use this dashboard to:
 * Monitor Kubernetes audit events.
 * Identify and investigate unexpected or anomalous activity.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_Security_Audit_Events.png')} alt="K8s control plane dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_Security_Audit_Events.png')} alt="Kubernetes control plane dashboards" />
 
 ### etcd3
 
@@ -234,4 +234,4 @@ Use this dashboard to:
 * Get a high-level view of the health and performance of the etcd backing store for the cluster.
 * Review performance data for cache insertions and deletions, to determine if there any potential problems and proactively troubleshoot root cause solutions.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_etcd3.png')} alt="K8s control plane dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_etcd3.png')} alt="Kubernetes control plane dashboards" />

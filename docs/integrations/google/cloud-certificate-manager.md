@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudCertificateManager.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudCertificateManager.png')} alt="Google Cloud Certificate Manager icon" width="50"/>
 
 Certificate Manager lets you acquire and manage Transport Layer Security (TLS) certificates for use with Google Cloud load balancers. For more details, refer to the [GCP documentation](https://cloud.google.com/certificate-manager/docs/overview)
 

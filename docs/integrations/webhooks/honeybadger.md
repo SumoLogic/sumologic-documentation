@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic honeybadger i
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/honeybadger-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/honeybadger-logo.png')} alt="Honeybadger icon" width="50"/>
 
 Honeybadger is a technology company specializing in error monitoring and exception tracking solutions. You can use a webhook in the Honeybadger platform to forward logs to the Sumo Logic HTTP endpoint. Using these logs, you can monitor the error lifecycle, uptime and check-in events in Sumo Logic. For more details, refer to the [Honeybadger Documentation](https://docs.honeybadger.io/).
 

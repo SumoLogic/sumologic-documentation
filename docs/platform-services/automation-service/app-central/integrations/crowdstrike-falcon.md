@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.20  
-Updated: Dec 05, 2025***
+***Version: 1.21  
+Updated: March 31, 2026***
 
 The CrowdStrike Falcon integration allows you to pull and update Alerts/Incidents, and search Incidents/Devices/Alerts.
 
@@ -114,3 +114,4 @@ For information about CrowdStrike Falcon, see [CrowdStrike documentation](https:
     + Get User ID By Mail
 * Dec 05, 2025 (v1.20) - Added new action
     + On Demand Device Scan
+* March 31, 2026 (v1.21) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

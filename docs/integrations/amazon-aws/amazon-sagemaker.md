@@ -7,7 +7,7 @@ description: Learn about the collection process for the Amazon SageMaker service
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-sagemaker-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon-sagemaker-logo.png')} alt="Amazon SageMaker icon" width="50"/>
 
 The Sumo Logic Amazon SageMaker app dashboards offer insights into CloudTrail, CloudWatch Logs, and performance metrics for your Amazon SageMaker service. These preconfigured dashboards enable you to monitor logs and the runtime performance metrics of your Amazon SageMaker.
 

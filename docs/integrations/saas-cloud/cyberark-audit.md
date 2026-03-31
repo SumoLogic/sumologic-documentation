@@ -7,7 +7,7 @@ description: The CyberArk Audit app for Sumo Logic provides insights into your o
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/cyberark.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/send-data/cyberark.png')} alt="CyberArk icon" width="50"/>
 
 The Sumo Logic app for CyberArk Audit is a robust tool that provides insights into your organization's cybersecurity practices. It helps IT and security teams monitor, analyze, and visualize audit trails of user activities, security events, and anomalies. By tracking data on security events, identity management, component usage, and administrative actions, the app delivers actionable intelligence to identify and mitigate security risks, ensuring compliance with regulations and internal policies. Customizable dashboards and detailed reporting enhance its ability to strengthen security.
 

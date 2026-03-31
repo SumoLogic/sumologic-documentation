@@ -7,7 +7,7 @@ description: The Sumo Logic app for Cisco AMP helps you to gain real-time monito
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="Cisco AMP icon" width="85"/>
 
 The Sumo Logic app for Cisco AMP provides security analysts with essential tools to enhance threat detection, conduct thorough investigations, and strengthen cybersecurity defenses. It offers security analysts with a powerful platform for real-time monitoring and analysis of cybersecurity incidents. Analysts can evaluate event severity, identify types of incidents, assess host activities, and analyze file types involved in breaches. 
 

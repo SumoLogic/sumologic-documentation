@@ -6,7 +6,7 @@ description: The Sumo Logic app for AWS Web Application Firewall (WAF) analyzes 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="WAF icon" width="50"/>
 
 AWS Web Application Firewall (WAF) is a web application firewall that helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources.
 

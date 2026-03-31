@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic Postman integ
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/postman-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/postman-logo.png')} alt="Postman icon" width="50"/>
 
 The Postman app for Sumo Logic enables you to monitor API test results, collection changes, monitor alerts, environment modifications, and custom automation workflow triggers effectively. This app is based on Postman Webhook, which provides seamless integration between Postman and Sumo Logic. The app enhances the reliability, performance, and security of APIs while optimizing resource allocation and fostering effective team collaboration.
 

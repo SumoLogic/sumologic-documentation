@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic Superwise int
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/superwise-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/superwise-logo.png')} alt="Superwise icon" width="50"/>
 
 Superwise is an AI monitoring platform that helps organizations ensure the reliability of their machine learning models by providing real-time insights, anomaly detection, and performance monitoring, enabling proactive maintenance and optimization of AI systems. You can use a webhook in the Superwise platform to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor critical incident and it's related activities in Sumo Logic. For more details, refer to the [Superwise Documentation](https://docs.superwise.ai/).
 

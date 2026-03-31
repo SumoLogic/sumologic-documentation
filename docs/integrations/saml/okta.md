@@ -7,7 +7,7 @@ description: The Sumo Logic app for Okta helps you monitor the admin actions, fa
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Okta icon" width="75"/>
 
 Okta provides secure connections between people and your applications on any device through identity management service built for the cloud. The Sumo Logic app for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta. The app consists of dashboards that give you visibility into the applications, accesses, user events, and Multi-Factor Authentication (MFA).
 

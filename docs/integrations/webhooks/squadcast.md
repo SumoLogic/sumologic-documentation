@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic Squadcast int
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/squadcast-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/squadcast-logo.png')} alt="Squadcast icon" width="50"/>
 
 The Squadcast app for Sumo Logic enables you to promptly respond to incidents, assess response times, and monitor SLA compliance effectively. This app is based on Squadcast Webhook, which provides seamless integration between Squadcast and Sumo Logic. The app provides a crucial audit trail for compliance and reporting, supports post-incident analysis, and empowers organizations to demonstrate their commitment to incident management best practices.
 

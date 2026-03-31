@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic Grafana OnCal
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/grafana-oncall-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/grafana-oncall-logo.png')} alt="Grafana Oncall icon" width="50"/>
 
 Grafana OnCall is an open source incident response management tool built to help teams improve their collaboration and resolve incidents faster. You can use a webhook in the Grafana OnCall platform to forward critical alert group events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor the entire spectrum of alert group actions, encompassing the creation, escalation status, user acknowledgments, resolution status, and user-initiated silence events in Sumo Logic. For more details, refer to the [Grafana OnCall Documentation](https://grafana.com/docs/oncall/latest/).
 

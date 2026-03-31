@@ -7,7 +7,7 @@ description: The Sumo Logic app for Cisco Meraki provides a single-pane-of-glass
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/ciscomeraki.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/ciscomeraki.png')} alt="Cisco Meraki icon" width="75"/>
 
 The Cisco Meraki app provides a single-pane-of-glass for monitoring and troubleshooting network security, end-to-end performance, switch port management, and device management of your Cisco Meraki wireless infrastructure management platform.  
 

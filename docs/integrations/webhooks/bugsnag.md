@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic Bugsnag integ
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/bugsnag-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/bugsnag-logo.png')} alt="Bugsnag icon" width="50"/>
 
 Bugsnag provides software teams with an automated crash detection platform for their web and mobile applications. You can use a webhook in the Bugsnag platform to forward error-related events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor various events such as spikes in errors, new releases, error occurrences, frequent error patterns, milestones reached, collaborator interactions, and state changes in Sumo Logic. For more details, refer to the [Bugsnag Documentation](https://docs.bugsnag.com/).
 

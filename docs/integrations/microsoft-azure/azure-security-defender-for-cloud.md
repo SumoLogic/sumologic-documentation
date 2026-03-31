@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Securit
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-cloud.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-defender-for-cloud.png')} alt="Microsoft Defender for Cloud icon" width="50"/>
 
 The Sumo Logic app for Azure Security - Defender for Cloud is a powerful solution designed to provide Azure cloud security analysts with actionable insights into their cloud security posture. By integrating with Azure Security - Defender for Cloud, this app delivers advanced monitoring, alerting, and compliance tracking capabilities through purpose-built dashboards tailored to meet the needs of security teams.
 

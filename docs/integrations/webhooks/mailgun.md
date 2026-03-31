@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic Mailgun integ
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/mailgun-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/mailgun-logo.png')} alt="Mailgun icon" width="50"/>
 
 
 The Mailgun app for Sumo Logic enables you to seamlessly monitor email system performance and user interactions through two comprehensive dashboards. The provided dashboard empowers you to analyze and optimize email delivery by monitoring event trends, identifying errors, understanding client behaviour, and tracking event geolocation data, ensuring efficient email management and an enhanced user experience. Meanwhile, the dashboard also offers a holistic view of email delivery, allowing you to track issues, complaint patterns, and geographic trends in events and complaints, facilitating effective email management and optimization.

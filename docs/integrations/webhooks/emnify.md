@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic EMnify integr
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/emnify-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/emnify-logo.png')} alt="Emnify icon" width="50"/>
 
 EMnify is the leading cloud-building block for cellular communications in the IoT stack, connecting millions of IoT devices globally. You can use a webhook in the EMnify platform to forward system events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor the authentication, lifecycle transition and configuration change events in Sumo Logic. For more details, refer to the [EMnify Documentation](https://docs.emnify.com/).
 

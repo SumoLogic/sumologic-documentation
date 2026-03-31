@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudFireStore.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudFireStore.png')} alt="Google Cloud Firestore icon" width="50"/>
 
 Firestore is a NoSQL document database built for automatic scaling, high performance, and ease of application development. For more details, refer to the [GCP documentation](https://cloud.google.com/firestore/docs)
 

@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic mParticle int
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/mparticle-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/mparticle-logo.png')} alt="mParticle icon" width="50"/>
 
 mParticle lets you track detailed run-time performance data on your mobile apps. You can use a webhook in the mParticle platform to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor various app activities, including custom events, session details, screen views, crashes, push notifications, and network performance events in Sumo Logic. For more details, refer to the [mParticle Documentation](https://docs.mparticle.com/).
 

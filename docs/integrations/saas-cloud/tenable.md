@@ -6,7 +6,7 @@ description: The Sumo Logic app for Tenable provides comprehensive visibility an
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/send-data/tenable-logo.png')} alt="icon" width="125"/>
+<img src={useBaseUrl('/img/send-data/tenable-logo.png')} alt="Tenable icon" width="125"/>
 
 The Tenable app empowers security professionals to gain comprehensive visibility and actionable insights into your organization's security posture by leveraging data from the Tenable [Vulnerabilities API](https://developer.tenable.com/reference/exports-vulns-request-export) and [Audit Events API](https://developer.tenable.com/reference/audit-log-events). This powerful integration allows you to proactively monitor, analyze, and respond to security vulnerabilities and audit events, helping you strengthen your cybersecurity defences and reduce risk.
 

@@ -7,7 +7,7 @@ description: Detect and respond to threats in real time to ensure compliance and
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Akamai icon" width="100"/>
 
 The Sumo Logic app for Akamai Client-Side Protection (CPC) helps organizations monitor and secure their client-side web applications. It provides real-time visibility into alerts, threat indicators, and data exposure risks from client-side scripts, enabling fast and accurate threat detection. Using Akamai’s data, the app identifies threats like data exfiltration, script-based attacks, policy violations, and insecure handling of sensitive data. Pre-configured dashboards show alert trends, risk levels, and anomalies, helping analysts investigate incidents and respond efficiently. With clear visualizations and detailed event insights, the app supports compliance (e.g., PCI) and strengthens the security of client-facing digital assets.
 

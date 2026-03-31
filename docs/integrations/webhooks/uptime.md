@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic Uptime.com in
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/uptime-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/uptime-logo.png')} alt="Uptime icon" width="50"/>
 
 Uptime.com is a website monitoring service that tracks website availability and performance, providing real-time alerts to ensure a smooth online experience. You can use a webhook in the Uptime.com platform to forward alerts related events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor website or service uptime, downtime incidents, response times, and performance metrics in Sumo Logic. For more details, refer to the [Uptime.com Documentation](https://support.uptime.com/hc/en-us).
 

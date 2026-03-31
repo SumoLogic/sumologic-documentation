@@ -7,7 +7,7 @@ description: The Sumo Logic app for Google Cloud Security Command Center helps y
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/google-cloud-security-command-center.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/google/google-cloud-security-command-center.png')} alt="Google Cloud Security Command Center icon" width="75"/>
 
 The Sumo Logic app for Google Cloud Security Command Center (SCC) provides real-time visibility into cloud risks, including misconfigurations, threats, and vulnerabilities in Google Cloud environments. It features pre-configured dashboards that highlight high-priority security findings, such as privileged account issues, API misuse, software vulnerabilities, severity breakdowns, resource and project-level filtering, and detailed summaries to streamline triage and remediation workflows. This enables you to monitor, investigate, and respond effectively to improve cloud security, reduce risk, and maintain compliance.
 

@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic SendGrid inte
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/sendGrid-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/sendGrid-logo.png')} alt="Sendgrid icon" width="50"/>
 
 SendGrid is a cloud-based email delivery and management platform that helps businesses send transactional and marketing emails reliably and efficiently. You can use a webhook in the SendGrid platform to forward email actions related events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor recipient engagement, track email delivery status, and respond to events like opens, clicks, bounces, unsubscribes, and spam reports in Sumo Logic. For more details, refer to the [SendGrid Documentation](https://docs.sendgrid.com/).
 

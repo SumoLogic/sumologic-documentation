@@ -7,7 +7,7 @@ description: The Opsgenie App provides at-a-glance views and detailed analytics 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="Opsgenie icon" width="75"/>
 
 The Opsgenie App provides at-a-glance views and detailed analytics for alerts on your DevOps environment, allowing you to effectively monitor and gain valuable insights into your incidents and incident handling operations.
 

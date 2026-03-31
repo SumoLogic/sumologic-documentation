@@ -7,7 +7,7 @@ description: The Sumo Logic app for Google Kubernetes Engine (GKE) - Control Pla
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/k8s.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/google/k8s.png')} alt="Kubernetes icon" width="75"/>
 
 [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine/) provides a managed environment where you can easily deploy, manage, and scale your container-based applications using the Google Cloud infrastructure.
 

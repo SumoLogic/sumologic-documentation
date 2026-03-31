@@ -7,7 +7,7 @@ description: The Observable Networks app allows you to monitor your Observable N
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Observable.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/Observable.png')} alt="Observable icon" width="75"/>
 
 The Observable Networks app allows you to monitor your Observable Networks deployment from Sumo Logic. The app Overview Dashboard provides insight to high-level data about your network.
 

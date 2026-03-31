@@ -7,7 +7,7 @@ description: The Sumo Logic App for Zimperium provides visibility into mobile th
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/integrations/zimperium/zimperium-logo.png')} alt="Thumbnail icon" width="80" />
+<img src={useBaseUrl('/img/integrations/zimperium/zimperium-logo.png')} alt="Zimperium icon" width="80" />
 
 The Sumo Logic app for Zimperium equips security analysts with comprehensive visibility into mobile threat activity, enabling faster detection, investigation, and response to security incidents on mobile devices. Its dashboard centralizes Zimperium’s threat intelligence and device telemetry, helping identify high-risk users, compromised devices, and malicious activity targeting mobile endpoints.
 
@@ -259,7 +259,7 @@ Administrator privileges are required to access the Account Management page.
 :::
 3. Add a new **Data Export Configuration** and set the **Destination Type** to **REST Endpoint**.
 4. Enter the required details as shown in the screenshot below, and use the **Sumo Logic HTTP Source URL** from step 1 as the **Endpoint**.
-<img src={useBaseUrl('/img/integrations/zimperium/add-data-export-config.png')} alt="Thumbnail icon" width="500"/>
+<img src={useBaseUrl('/img/integrations/zimperium/add-data-export-config.png')} alt="Add Data Export Config" width="500"/>
 
 ## Installing the Zimperium app
 

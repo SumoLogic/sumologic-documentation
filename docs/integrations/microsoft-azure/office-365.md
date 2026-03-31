@@ -7,7 +7,7 @@ description: The Sumo Logic App for Microsoft Office 365 ingests Microsoft Offic
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/365.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/365.png')} alt="365 icon" width="50"/>
 
 The Microsoft Office 365 App ingests Microsoft Office 365 Audit logs for Azure Active Directory, Exchange, and SharePoint. Preconfigured Dashboards allow you to monitor and analyze your complete Office 365 system for administrator and user activity.
 

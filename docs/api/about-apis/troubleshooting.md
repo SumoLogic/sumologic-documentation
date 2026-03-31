@@ -8,7 +8,7 @@ description: This guide provides information to help you troubleshoot errors you
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiEndpoints from '../../reuse/api-endpoints.md';
 
-<img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Troubleshoot icon" width="50"/>
 
 This guide provides information to help you troubleshoot errors you may find when using the Sumo Logic APIs.
 

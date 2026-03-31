@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon-intelligence.png')} alt="crowdstrike-falcon-intelligence" width="100"/>
 
-***Version: 1.7  
-Updated: Mar 4, 2024***
+***Version: 1.8  
+Updated: March 31, 2026***
 
 CrowdStrike® Falcon Intelligence™ is an automated threat intelligence service built on the CrowdStrike Falcon Platform. It automates incident investigations and streamlines breach response so you can make faster, more confident cyber security decisions. Organizations, regardless of size or sophistication, learn from the attacks in their environment applying that knowledge to proactively prevent future attacks. Falcon Intelligence provides insight into global threats, tracked by CrowdStrike’s elite team of intelligence experts.
 
@@ -84,3 +84,4 @@ For information about CrowdStrike Falcon Intelligence, see [CrowdStrike document
 * March 21, 2023 - Logo updated
 * June 30, 2023 (v1.5) - Updated the integration with Environmental Variables
 * March 4, 2024 (v1.7) - Updated code for compatibility with Python 3.12
+* March 31, 2026 (v1.8) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

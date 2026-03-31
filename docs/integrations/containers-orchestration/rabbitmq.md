@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/rabbitmq.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/rabbitmq.png')} alt="RabbitMQ icon" width="50"/>
 
 The RabbitMQ app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your RabbitMQ messaging clusters. Preconfigured dashboards provide insight into cluster status, exchanges, queues, nodes and error logs.
 

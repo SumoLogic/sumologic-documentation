@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The Sumo Logic OpenTelemetry Collector Insights app provides comprehensive monitoring and observability for your OpenTelemetry Collector instances. Monitor collector performance, telemetry data flow, resource utilization, and troubleshoot data collection issues with preconfigured dashboards and alerts. Track metrics and logs to ensure your telemetry pipeline is running smoothly and efficiently.
 

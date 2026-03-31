@@ -7,7 +7,7 @@ description: The Sumo Logic app for Payment Card Industry (PCI) Compliance for W
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="75"/>
 
 The Windows Legacy app provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows Legacy app consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, and User Activity.
 

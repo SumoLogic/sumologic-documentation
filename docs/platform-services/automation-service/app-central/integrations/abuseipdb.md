@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/abuseipdb.png')} alt="abuseipdb" width="100"/>
 
-***Version: 1.4  
-Updated: May 29, 2024***
+***Version: 1.5  
+Updated: March 31, 2026***
 
 Enrich IP addresses with reputation information gathered from AbuseIPDB.
 
@@ -65,3 +65,4 @@ For information about AbuseIPDB, see [AbuseIPDB documentation](https://www.abuse
 	+ Fixed Typo
 * May 29, 2024 (v1.4)
 	+ Updated **IP Reputation** action which now supports saving reports as incident attachments and artifacts
+* March 31, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

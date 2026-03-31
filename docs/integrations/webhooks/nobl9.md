@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic Nobl9 integra
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/nobl9-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/nobl9-logo.png')} alt="Nobl9 icon" width="50"/>
 
 Nobl9 is a pioneering company specializing in Service Level Objective (SLO) management, empowering businesses to optimize and ensure the reliability of their digital services through advanced monitoring, measurement, and proactive performance enhancements. You can use a webhook in the Nobl9 platform to forward alert events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor the entire spectrum of alert actions, encompassing the creation, user acknowledgments, resolution status, and user-initiated silence events in Sumo Logic. For more details, refer to the [Nobl9 Documentation](https://docs.nobl9.com/).
 

@@ -7,7 +7,7 @@ description: The Active Directory JSON App helps you monitor your Windows Active
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="40"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="40"/>
 
 The Sumo Logic app for Active Directory JSON (2012+) helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format. The app includes predefined searches and dashboards that provide user activity into your environment for real-time analysis of overall usage.
 

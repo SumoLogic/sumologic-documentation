@@ -7,7 +7,7 @@ description: The Sumo Logic app for Snowflake Logs allows you to gain real-time 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="Thumbnail icon" width="150"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="Snowflake icon" width="150"/>
 
 The Sumo Logic app for Snowflake Logs offers a powerful analytics solution designed to help you fully leverage the Snowflake cloud data platform. Known for its scalability and advanced data warehousing capabilities and analytics, Snowflake supports data-driven decision-making at scale. This app provides real-time visibility into key metrics, query performance, and the overall health of Snowflake environments. By analyzing Snowflake logs, you can monitor system performance, track login activity, optimize data management, and maintain better control over your data warehouse.
 

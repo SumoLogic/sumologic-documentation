@@ -6,7 +6,7 @@ description: The Sumo Logic app for Amazon RDS Metrics provides visibility into 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/rds.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/rds.png')} alt="RDS icon" width="50"/>
 
 **Amazon RDS**
 

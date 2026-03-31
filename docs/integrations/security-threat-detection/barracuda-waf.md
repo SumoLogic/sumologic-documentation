@@ -7,7 +7,7 @@ description: The Barracuda WAF App analyzes traffic flowing through the Barracud
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/barracuda.png')} alt="thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/barracuda.png')} alt="Barracuda icon" width="100"/>
 
 The Barracuda Web Application Firewall protects your web, mobile and API applications from being compromised, prevents data breaches, ensure protection from web attacks, provide control access and authentication.
 

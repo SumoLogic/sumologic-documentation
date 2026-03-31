@@ -10,7 +10,7 @@ description: Learn how to configure the KnowBe4 Cloud-to-Cloud source setup usin
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="100"/>
+<img src={useBaseUrl('img/send-data/knowbe4.png')} alt="KnowBe4 icon" width="100"/>
 
 The KnowBe4 API integration collects user events data into Sumo Logic for storage, analysis, and alerting. It ingests events data from the [Events API](https://developer.knowbe4.com/rest/userEvents#tag/Events/operation/listEvents), phishing security tests from the [Phishing Security Tests API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get), and recipient results from the [Recipient Results API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests~1%7Bpst_id%7D~1recipients/get).
 

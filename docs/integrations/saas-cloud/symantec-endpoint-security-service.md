@@ -7,7 +7,7 @@ description: The Sumo Logic app for Symantec Web Security provides real-time ins
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="125"/>
+<img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="Symantec icon" width="125"/>
 
 Symantec Endpoint Security safeguards organizations from various network threats and risks. The Sumo Logic app for Symantec Endpoint Security provides visibility into log data by using the Symantec Endpoint Security Service. This service collects and forwards the Symantec Endpoint Security data to Sumo Logic for analysis, offering a comprehensive view of the endpoint security statuses through various widgets. These widgets present essential information, including the number of incidents categorised by type, impacted hosts, malicious files, threat details, and critical or high-severity incidents. The dashboard also highlights potential security vulnerabilities, such as the top 10 affected hosts, IP addresses, and malicious files. This allows administrators to monitor and manage endpoint security in real time, enhancing quick responses to threats.
 By utilizing the Symantec Endpoint Security Service, organizations can protect their employees' endpoints and enhance their defenses against emerging threats.

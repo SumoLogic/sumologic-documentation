@@ -7,7 +7,7 @@ description: The Infrequent Data Tier App provides visibility into usage and cos
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Infrequent Data Tier icon" width="75"/>
 
 The Sumo Logic app for the Infrequent Data Tier provides visibility into on-demand search usage and associated costs through intuitive, preconfigured dashboards and searches. Infrequent Data Tiers offer an economical, fully managed log analytics solution for high-volume data that is accessed infrequently. This enables you to aggregate, store, and analyze verbose log sources, such as application debug logs, CDN logs, load balancer logs, and other infrequently accessed logs at a significantly lower cost.
 

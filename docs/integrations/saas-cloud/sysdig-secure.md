@@ -7,7 +7,7 @@ description: The Sysdig Secure app for Sumo Logic provides insights into contain
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="thumbnail icon" width="125"/>
+<img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="Sysdig icon" width="125"/>
 
 The Sumo Logic app for Sysdig Secure integrates Sysdig Secure’s security insights with Sumo Logic's powerful analytics to help security teams monitor and protect Kubernetes and containerized environments. It provides real-time visibility into vulnerabilities, compliance, and threats by analyzing security events from various sources such as Kubernetes clusters, container registries, and runtime environments. With it's intuitive dashboards, Sysdig Secure helps security professionals understand risks, assess vulnerability impact, and monitor runtime behavior to detect threats before they affect production environments. By centralizing data and presenting it through clear visualizations, the app enables effective collaboration, proactive defense, faster remediation, and continuous compliance in dynamic, containerized environments.
 

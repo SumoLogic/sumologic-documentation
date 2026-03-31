@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudTrace.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudTrace.png')} alt="Google Cloud Trace icon" width="50"/>
 
 Cloud Trace, a distributed tracing system for Google Cloud, helps you understand how long it takes your application to handle incoming requests from users or other applications, and how long it takes to complete operations like RPC calls performed when handling the requests. For more details, refer to the [GCP documentation](https://cloud.google.com/trace/docs/overview).
 

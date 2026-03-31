@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudBackupforGKE.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudBackupforGKE.png')} alt="Google Cloud Backup for GKE icon" width="50"/>
 
 Backup for GKE is a service for backing up and restoring workloads in GKE clusters. For more details, refer to the [GCP documentation](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke).
 

@@ -7,7 +7,7 @@ description: The Sumo Logic app for Symantec Web Security provides real-time ins
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="125"/>
+<img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="Symantec icon" width="125"/>
 
 The Sumo Logic app for Symantec Web Security provides real-time insights into the web traffic and helps you to identify potential security threats. This app is based on a cloud-to-cloud Symantec Web Security Service source that collects Symantec Web Security access logs.
 With the Sumo Logic app for Symantec Web Security, you can:

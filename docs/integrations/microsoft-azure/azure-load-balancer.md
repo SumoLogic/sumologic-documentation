@@ -13,7 +13,7 @@ description: This document outlines what is Azure Load Balancer, how to set it u
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-load-balancer.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-load-balancer.png')} alt="Azure Load Balancer icon" width="50"/>
 
 [Azure Load Balancer](https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview) is an Azure service that allows you to evenly distribute incoming network traffic across a group of Azure VMs or instances in a Virtual Machine Scale Set. This integration helps in monitoring inbound and outbound data throughput, outbound flows, and the application endpoint health  of your Load Balancers.
 

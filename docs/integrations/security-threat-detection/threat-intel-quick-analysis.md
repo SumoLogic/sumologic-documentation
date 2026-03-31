@@ -7,7 +7,7 @@ description: The Threat Intel Quick Analysis app correlates threat intelligence 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/threatintel.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/threatintel.png')} alt="Threat Intel icon" width="75"/>
 
 The Threat Intel Quick Analysis app correlates [threat intelligence](/docs/security/threat-intelligence/) data with your own log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. The Threat Intel Quick Analysis app scans selected logs for threats based on IP, URL, domain, SHA-256 hashes, and email.
 

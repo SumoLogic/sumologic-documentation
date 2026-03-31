@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic NeoLoad integ
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/neoload-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/neoload-logo.png')} alt="Neoload icon" width="50"/>
 
 
 The Sumo Logic app for Neoload provides a high-level perspective, enabling monitoring of test execution, completion, termination, and tests in progress. It also tracks targeted projects, tests, scenarios, and workspaces while assessing overall test and quality status. Also the dashboards delve deeper into performance testing, offering insights into test frequency, test organization by workspace and projects, and various trends and tests with execution time and max virtual users (VUs). The app empowers users to make data-driven decisions, optimize testing strategies, and enhance overall performance testing efficiency.

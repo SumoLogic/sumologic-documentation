@@ -7,7 +7,7 @@ description: The Cylance App enables you to analyze Cylance security events by t
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/cylance.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/cylance.png')} alt="Cylance icon" width="75"/>
 
 The Cylance App enables you to analyze Cylance security events by type, status, and detection method. You can use the App to investigate Cylance-specific events and provide operational visibility to team members without logging into Cylance.
 

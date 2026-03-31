@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic Stripe integr
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/stripe-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/stripe-logo.png')} alt="Stripe icon" width="50"/>
 
 The Stripe app for Sumo Logic enables you to seamlessly monitor financial transactions, customer interactions, and subscription management. This app is based on Split Webhook, which provides seamless integration between Split and Sumo Logic. With this app, you can make data-driven decisions, improve financial efficiency, and enhance customer experiences, ensuring your business stays competitive and responsive in today's fast-paced market.
 

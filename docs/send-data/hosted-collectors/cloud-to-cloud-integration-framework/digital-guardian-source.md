@@ -11,7 +11,7 @@ description: Learn how to collect export data from the Digital Guardian and send
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Digital Guardian icon" width="50"/>
 
 Digital Guardian is a data protection platform that discovers, classifies, and controls data movement across endpoints, networks, and the cloud. Digital Guardian Analytics and Reporting Cloud (DG ARC) is an advanced analytics, workflow, and reporting cloud service that delivers no-compromise data protection.
 

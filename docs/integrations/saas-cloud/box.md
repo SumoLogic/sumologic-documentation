@@ -7,7 +7,7 @@ description: Provides insight into user behavior patterns, monitors resources, a
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/box.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/box.png')} alt="Box icon" width="50"/>
 
 The Sumo Logic app for Box provides insight into user behavior patterns, monitors resources, and even tracks administrative activities. The app consists of three predefined Dashboards, providing visibility into your environment for real time analysis.
 

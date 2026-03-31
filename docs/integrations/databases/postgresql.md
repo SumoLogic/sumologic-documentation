@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="PostgreSQL icon" width="75"/>
 
 The Sumo Logic app for PostgreSQL is a unified logs and metrics app for monitoring your PostgreSQL database. The app provides operational insights into the PostgreSQL database—installed on your local hardware—for real time analysis.
 

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/redis.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/databases/redis.png')} alt="Redis icon" width="50"/>
 
 Redis is an in-memory data structure implementing a distributed, in-memory key-value database with optional durability.
 

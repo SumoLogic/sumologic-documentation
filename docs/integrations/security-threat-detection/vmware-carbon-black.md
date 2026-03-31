@@ -7,7 +7,7 @@ description: The VMware Carbon Black App provides comprehensive visibility into 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="Carbon Black Cloud icon" width="75"/>
 
 Sumo Logic provides a complete security analytics solution by allowing you to correlate, validate and investigate VMware Carbon Black endpoint alerts with alerts from other security vendors and security threat feeds to identify and remediate the root causes of new security threats.
 
