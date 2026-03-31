@@ -114,6 +114,7 @@
     "nth-check": "^2.0.1",
     "p-queue": "6.6.2",
     "p-timeout": "3.2.0",
+    "parse5": "^8.0.0",
     "path-to-regexp": "3.3.0",
     "postcss": "^8.4.38",
     "postcss-calc": "9.0.1",
