@@ -7,7 +7,7 @@ description: Learn how to collect alerts from the Azure Security - Microsoft Ent
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection.png')} alt="Azure Security Microsoft Entra ID Protection icon" width="50"/>
 
 The Azure Security – Microsoft Entra ID Protection application strengthens identity security within Azure environments by proactively detecting, investigating, and mitigating identity-related risks. It helps organizations safeguard user accounts and credentials against potential compromise, ensuring secure access to critical cloud resources
 

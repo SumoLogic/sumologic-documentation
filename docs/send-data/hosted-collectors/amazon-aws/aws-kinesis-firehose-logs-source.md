@@ -7,7 +7,7 @@ description: Learn how to use the AWS Kinesis Firehose for Logs source to ingest
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/aws-kinesis-firehose-logs.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/aws-kinesis-firehose-logs.png')} alt="AWS Kinesis Firehose Logs icon" width="50"/>
 
 An AWS Kinesis Firehose for Logs Source allows you to ingest CloudWatch logs or any other logs streamed and delivered via Amazon Kinesis Data Firehose.
 

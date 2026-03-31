@@ -7,7 +7,7 @@ description: Learn how to get started with the Sumo Logic APIs
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/advanced-certificates.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/advanced-certificates.png')} alt="Advanced Certificates icon" width="50"/>
 
 Sumo Logic has a host of useful APIs across all products that let you access data and perform actions without using the Sumo Logic UI. API calls can be used for to gather data, automate processes, and create custom reports.
 

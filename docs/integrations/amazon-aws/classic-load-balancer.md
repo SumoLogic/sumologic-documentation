@@ -6,7 +6,7 @@ description: The Sumo Logic app for AWS Elastic Load Balancing Classic is a unif
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/clb.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/clb.png')} alt="AWS Classic Load Balancer icon" width="50"/>
 
 AWS Elastic Load Balancer Classic distributes the incoming application traffic across multiple EC2 instances in multiple Availability Zones.
 

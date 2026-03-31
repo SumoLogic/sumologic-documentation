@@ -6,7 +6,7 @@ description: Administrators can unlock a user's account, though they are not req
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/unlock.png')} alt="icon" width="70"/>
+<img src={useBaseUrl('img/icons/security/unlock.png')} alt="Unlock icon" width="70"/>
 
 If you see the following message when you try to log into Sumo Logic, your account is locked: 
 

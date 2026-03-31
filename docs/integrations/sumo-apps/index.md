@@ -6,7 +6,7 @@ description: Docs for apps that help you monitor your Sumo Logic org.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/sumo-apps/sumoapps.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/sumoapps.png')} alt="Sumo Logic Apps icon" width="75"/>
 
 Sumo Logic provides a number of apps you can use to monitor your Sumo org, for instance, to understand data volume or see information about audit events.
 
@@ -29,66 +29,66 @@ Once a request has been submitted, a support ticket is automatically opened. A r
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/sumo-apps/audit')}><img src={useBaseUrl('img/integrations/sumo-apps/Audit_Img.png')} alt="icon" width="40"/><h4>Audit</h4></a>
+  <a href={useBaseUrl('docs/integrations/sumo-apps/audit')}><img src={useBaseUrl('img/integrations/sumo-apps/Audit_Img.png')} alt="Audit icon" width="40"/><h4>Audit</h4></a>
   <p>Use this guide to work with the Sumo Logic Audit App.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/sumo-apps/cse')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Cloud SIEM</h4></a>
+  <a href={useBaseUrl('docs/integrations/sumo-apps/cse')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="40"/><h4>Cloud SIEM</h4></a>
   <p>Gives visibility into what’s going on in your Cloud SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/sumo-apps/data-volume')}><img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="icon" width="40"/><h4>Data Volume</h4></a>
+  <a href={useBaseUrl('docs/integrations/sumo-apps/data-volume')}><img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="Volume view icon" width="40"/><h4>Data Volume</h4></a>
   <p>Provides a summary and detailed views of your account's data usage volume.</p>
   </div>
 </div><div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/sumo-apps/data-volume')}><img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="icon" width="40"/><h4>Data Volume for MSSP</h4></a>
+  <a href={useBaseUrl('docs/integrations/sumo-apps/data-volume')}><img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="Volume view icon" width="40"/><h4>Data Volume for MSSP</h4></a>
   <p>Provides a summary and detailed views of data usage volume for child orgs under a MSSP org.</p>
   </div>
 </div>
 <div className="box smallbox card">
       <div className="container">
-      <a href={useBaseUrl('docs/integrations/sumo-apps/enterprise-audit')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Thumbnail icon" width="40"/><h4>Enterprise Audit (multiple apps)</h4></a>
+      <a href={useBaseUrl('docs/integrations/sumo-apps/enterprise-audit')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="40"/><h4>Enterprise Audit (multiple apps)</h4></a>
       <p>A guide to the Sumo Logic app for Enterprise Audit.</p>
       </div>
 </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href={useBaseUrl('docs/integrations/sumo-apps/enterprise-search-audit')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Enterprise Search Audit</h4></a>
+      <a href={useBaseUrl('docs/integrations/sumo-apps/enterprise-search-audit')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="40"/><h4>Enterprise Search Audit</h4></a>
       <p>A guide to our Enterprise Search Audit App.</p>
       </div>
     </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href={useBaseUrl('docs/integrations/sumo-apps/flex')}><img src={useBaseUrl('img/integrations/sumo-apps/flex-tier.png')} alt="Thumbnail icon" width="40"/><h4>Flex</h4></a>
+      <a href={useBaseUrl('docs/integrations/sumo-apps/flex')}><img src={useBaseUrl('img/integrations/sumo-apps/flex-tier.png')} alt="Flex Tier icon" width="40"/><h4>Flex</h4></a>
       <p>A guide to the Sumo Logic Flex app.</p>
       </div>
     </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href={useBaseUrl('docs/integrations/sumo-apps/infrequent-data-tier')}><img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="40"/><h4>Infrequent Data Tier</h4></a>
+      <a href={useBaseUrl('docs/integrations/sumo-apps/infrequent-data-tier')}><img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Infrequent Data Tier icon" width="40"/><h4>Infrequent Data Tier</h4></a>
       <p>A guide to the Sumo Logic Infrequent Data Tier app.</p>
       </div>
     </div>
     <div className="box smallbox card">
     <div className="container">
-    <a href={useBaseUrl('docs/integrations/sumo-apps/kickstart-data')}><img src={useBaseUrl('img/send-data/sumo-logic-kickstart-data.png')} alt="Thumbnail icon" width="100"/><h4>Kickstart Data</h4></a>
+    <a href={useBaseUrl('docs/integrations/sumo-apps/kickstart-data')}><img src={useBaseUrl('img/send-data/sumo-logic-kickstart-data.png')} alt="Sumo Logic Kickstart Data icon" width="100"/><h4>Kickstart Data</h4></a>
     <p>A guide to the Sumo Logic Kickstart Data app.</p>
     </div>
   </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href={useBaseUrl('docs/integrations/sumo-apps/log-analysis-quickstart')}><img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="40"/><h4>Log Analysis QuickStart</h4></a>
+      <a href={useBaseUrl('docs/integrations/sumo-apps/log-analysis-quickstart')}><img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Infrequent Data Tier icon" width="40"/><h4>Log Analysis QuickStart</h4></a>
       <p>A guide to the Sumo Logic Log Analysis QuickStart app.</p>
       </div>
     </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href={useBaseUrl('docs/integrations/sumo-apps/opentelemetry-collector-insights')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>OpenTelemetry Collector Insights</h4></a>
+      <a href={useBaseUrl('docs/integrations/sumo-apps/opentelemetry-collector-insights')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="40"/><h4>OpenTelemetry Collector Insights</h4></a>
       <p>A guide to the Sumo Logic OpenTelemetry Collector Insights app.</p>
       </div>
     </div>

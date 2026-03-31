@@ -11,7 +11,7 @@ description: The Mimecast source collects SIEM, DLP, Audit, and Hold Message Li
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/Mimecast-icon.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/Mimecast-icon.png')} alt="Mimecast icon" width="50"/>
 
 The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List data from the [Mimecast API](https://developer.services.mimecast.com/apis). It securely stores the required authentication, scheduling, and state tracking information.
 

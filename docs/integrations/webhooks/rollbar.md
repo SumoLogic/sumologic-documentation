@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic Rollbar integ
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/rollbar-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/rollbar-logo.png')} alt="Rollbar icon" width="50"/>
 
 Rollbar is an error tracking and monitoring platform that assists developers in identifying and resolving software issues quickly, enhancing application reliability. You can use a webhook in the Rollbar platform to forward errors, occurrences, and activities related events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor details such as error messages, stack traces, affected endpoints, user information, and environment variables in Sumo Logic. For more details, refer to the [Rollbar Documentation](https://docs.rollbar.com/docs).
 

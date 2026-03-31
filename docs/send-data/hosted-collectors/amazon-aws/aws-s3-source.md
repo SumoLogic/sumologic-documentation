@@ -8,7 +8,7 @@ description: Add an Amazon S3 Source to upload messages to Sumo Logic.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="Amazon S3 Audit icon" width="40"/>
 
 Amazon Simple Storage Service (Amazon S3) provides a web services interface that can be used to store and retrieve any amount of data from anywhere on the web. Use an Amazon S3 Source to upload data to Sumo Logic from S3.
 

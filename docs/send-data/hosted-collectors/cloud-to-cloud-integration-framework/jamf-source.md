@@ -10,7 +10,7 @@ description: Learn how to collect data from the Jamf platform.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/jamf.png')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/send-data/jamf.png')} alt="Jamf icon" width="85"/>
 
 Jamf is a software company that specializes in mobile device management (MDM) and endpoint management solutions for Apple devices such as Macs, iPhones, iPads, and Apple TVs. This Jamf integration helps you to ingest inventory data using the [Jamf Pro API](https://developer.jamf.com/jamf-pro/v11.4.0/docs/jamf-pro-api-overview) and [Jamf Classic API](https://developer.jamf.com/jamf-pro/v11.4.0/docs/getting-started-2).
 

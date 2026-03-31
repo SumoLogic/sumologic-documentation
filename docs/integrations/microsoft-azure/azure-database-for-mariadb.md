@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Databas
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-mariadb.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-mariadb.png')} alt="Azure Database for MariaDB icon" width="50"/>
 
 [Azure Database for MariaDB](https://learn.microsoft.com/en-us/azure/mariadb/overview) is a relational database service in the Microsoft cloud based on the MariaDB community edition. This integration helps in identifying slow queries, tracking database-level activity, including connection, administration, data definition language (DDL), and data manipulation language (DML) events.
 
