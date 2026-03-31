@@ -31,7 +31,7 @@ Before running this command, you should have:
 
 ## Process
 
-### Step 1: Gather Information
+### Step 1: Gather information
 
 Ask the user for the following information using AskUserQuestion:
 
@@ -67,7 +67,7 @@ Ask the user for the following information using AskUserQuestion:
   * "Yes, ready to add" (description: "I have the complete table of data sources and intervals")
   * "No, I'll add later" (description: "Leave the example table structure")
 
-### Step 2: Generate Slug and Paths
+### Step 2: Generate slug and paths
 
 From the vendor name provided:
 1. Generate a slug: lowercase, hyphenated version (e.g., "Druva" → "druva", "AWS CloudTrail" → "aws-cloudtrail")
@@ -75,7 +75,7 @@ From the vendor name provided:
 3. Generate document ID: `{slug}-source`
 4. Generate CID: `c2c-{slug}`
 
-### Step 3: Create the Documentation File
+### Step 3: Create the documentation file
 
 Create the file at the path determined in Step 2 with the following structure:
 
@@ -225,7 +225,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 
 **Location**: The C2C sources are typically organized by category (Security, Cloud, etc.) or alphabetically in a flat list. Add to the appropriate section based on existing patterns.
 
-### Step 5: Create CID Redirect
+### Step 5: Create CID redirect
 
 1. Open `cid-redirects.json`
 2. Add a new entry for the CID mapping:
@@ -239,7 +239,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 
 Insert in alphabetical order by CID.
 
-### Step 6: Create Placeholder Config Files
+### Step 6: Create placeholder config files
 
 Create two placeholder files for JSON and Terraform examples that the user can populate:
 
@@ -286,12 +286,12 @@ output "sumologic_{slug}_source" {
 }
 ```
 
-### Step 7: Summary and Next Steps
+### Step 7: Summary and next steps
 
 After creating all files, provide a summary:
 
 ```markdown
-## Created C2C Source Documentation
+## Created C2C source documentation
 
 **Files created:**
 * `/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/{slug}-source.md`
@@ -321,7 +321,7 @@ After creating all files, provide a summary:
 `https://sumologic.com/help/cid/c2c-{slug}`
 ```
 
-## Error Handling
+## Error handling
 
 * If the file already exists, warn the user and ask if they want to overwrite
 * If the sidebar section structure has changed, notify the user to manually add the entry

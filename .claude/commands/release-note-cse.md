@@ -133,7 +133,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Step 5: Write content
 
-#### Content Release Structure
+#### Content release structure
 
 ```markdown
 This content release includes:
@@ -165,7 +165,7 @@ Additional changes are enumerated below.
 * Add brief explanations for significant updates.
 * Sort items alphabetically within each section.
 
-#### Application Release Structure
+#### Application release structure
 
 ```markdown
 ### {Feature Name}

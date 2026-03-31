@@ -44,7 +44,7 @@ For platform features, enhancements, and bug fixes:
 
 ## Release structure (varies by type)
 
-### Content Release Structure
+### Content release structure
 
 Simple format with just lists:
 
@@ -52,7 +52,7 @@ Simple format with just lists:
 2. **Integrations** (H3) - Bulleted list of [New]/[Updated] integrations
 3. **Playbooks** (H3) - Bulleted list of [New] playbooks with IDs and titles
 
-### Application Update Structure
+### Application update structure
 
 Detailed format with descriptions and bug fixes:
 

@@ -119,7 +119,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Step 5: Write content
 
-#### Installed Collector Release Structure
+#### Installed Collector release structure
 
 ```markdown
 In this release, we've enhanced the security and stability of the Collector with added support for security patches.
@@ -158,7 +158,7 @@ In this release, we've enhanced the security and stability of the Collector with
 * Fixed an issue with forwarded Windows event collection that occurred on systems running with latest Windows version.
 ```
 
-#### OpenTelemetry Release Structure
+#### OpenTelemetry release structure
 
 ```markdown
 We're excited to {announce/introduce} {feature description}. {What it does and benefits}. [Learn more](/docs/path/to/doc).

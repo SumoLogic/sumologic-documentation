@@ -13,6 +13,7 @@ Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic sty
 ## Skills
 - .claude/skills/sumo-style/SKILL.md — Sumo Logic writing conventions. Claude fetches the live style guide and applies it automatically when writing or editing docs.
 - .claude/skills/docusaurus/SKILL.md — Docusaurus 3 syntax, frontmatter templates, and sidebar config patterns.
+- .claude/skills/pr-template-guide/SKILL.md — PR template structure, formatting examples, and best practices.
 
 ## Pull Requests
 
@@ -48,4 +49,4 @@ This pull request {description}
 5. **Ask for ticket number** - Always ask before creating PRs (optional only for quick typo fixes)
 6. **Use full Jira link** - In the "Ticket (if applicable)" section, use the full URL (e.g., `https://sumologic.atlassian.net/browse/DOCS-1234`) not just the ticket number
 
-For detailed examples and implementation guidance, see `.claude/commands/_pr-template-guide.md`.
+For detailed examples and implementation guidance, see `.claude/skills/pr-template-guide/SKILL.md`.

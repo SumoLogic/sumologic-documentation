@@ -145,7 +145,7 @@ Common redundant phrases:
 | has the ability to | can |
 | at the present time | now |
 
-### Step 3: Apply Simplification Rules
+### Step 3: Apply simplification rules
 
 #### Sentence Structure Rules
 
@@ -207,7 +207,7 @@ Common redundant phrases:
    - Easier to scan
    - Better comprehension
 
-### Step 4: Simplification Examples
+### Step 4: Simplification examples
 
 #### Example 1: Passive Voice + Jargon
 
@@ -324,7 +324,7 @@ After user approval:
 3. **Maintain formatting**. line breaks, markdown syntax
 4. **Confirm success**
 
-## Safety Guidelines
+## Safety guidelines
 
 - **NEVER modify automatically**. always show simplified version first and get approval
 - **Preserve technical accuracy**. don't oversimplify to the point of incorrectness
@@ -342,7 +342,7 @@ After user approval:
 6. **URLs or file paths**. Technical paths must stay exact
 7. **Version numbers**. Don't change technical specifications
 
-## Edge Cases
+## Edge cases
 
 ### Already simple content
 If content already meets readability standards:
