@@ -134,12 +134,6 @@ In this section, we'll introduce the following concepts:
   <p>Learn to collect the IAM User Inventory logs from the AWS SDK and send them to Sumo Logic for analysis.</p>
   </div>
 </div>
-<!-- <div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source')}><img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="Azure Event Hub icon" width="40"/><h4>Azure Event Hubs</h4></a>
-  <p>Provides a secure endpoint to receive data from Azure Event Hubs.</p>
-  </div>
-</div> -->
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/bitwarden-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="Bitwarden icon" width="80" /><h4>Bitwarden</h4></a>
