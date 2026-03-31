@@ -11,7 +11,7 @@ description: The Sysdig Secure Source aims to collect the scan results from the 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="icon" width="125"/>
+<img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="Sysdig icon" width="125"/>
 
 Sysdig Secure is a comprehensive security platform that provides continuous security and compliance monitoring for cloud-native environments. This is designed specifically to address the security needs of modern containerised and Kubernetes infrastructures. Sysdig Secure enables organisations to detect, prevent, and respond to security threats and ensure compliance in real-time.
 

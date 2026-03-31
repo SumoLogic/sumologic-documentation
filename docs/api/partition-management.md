@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/operations/data-overage.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/data-overage.png')} alt="Data Overage icon" width="50"/>
 
 The Partitions Management API allows you to improve search performance by searching over a smaller number of messages. For more information, see [Partitions](/docs/manage/partitions/).
 

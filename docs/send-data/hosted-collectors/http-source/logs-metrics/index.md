@@ -7,7 +7,7 @@ description: An HTTP Source is an endpoint for receiving logs and metrics, uploa
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/http-logs-metrics.png')} alt="Thumbnail icon" width="60"/>
+<img src={useBaseUrl('img/send-data/http-logs-metrics.png')} alt="HTTP Logs Metrics icon" width="60"/>
 
 An HTTP Logs and Metrics Source is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 

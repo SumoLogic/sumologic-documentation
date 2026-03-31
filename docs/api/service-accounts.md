@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="User Permissions icon" width="50"/>
 
 The Service Accounts API allows you to manage service accounts. [Service accounts](/docs/manage/security/service-accounts/) are a special type of account designed for automating processes that use Sumo Logic APIs, such as scripts, integrations, and infrastructure as code. Unlike user accounts, service accounts are not associated with an individual and do not allow for interactive logins.
 

@@ -7,7 +7,7 @@ description: Learn how to use Terraform with Sumo Logic.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/api/terraform-icon.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/api/terraform-icon.png')} alt="Terraform icon" width="50"/>
 
 ## What is Terraform?
 

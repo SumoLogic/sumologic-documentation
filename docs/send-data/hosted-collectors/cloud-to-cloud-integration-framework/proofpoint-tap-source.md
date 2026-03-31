@@ -10,7 +10,7 @@ description: The Proofpoint TAP Source provides a secure endpoint to receive da
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/>
+<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Proofpoint icon" width="140"/>
 
 The Proofpoint TAP Source provides a secure endpoint to receive data from the Proofpoint [TAP SIEM API](https://help.proofpoint.com/Threat_Insight_Dashboard/API_Documentation/SIEM_API). It securely stores the required authentication, scheduling, and state tracking information.
 

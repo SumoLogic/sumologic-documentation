@@ -7,7 +7,7 @@ description: The F5 - BIG-IP Local Traffic Manager (LTM) app helps you optimize 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/f5.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/f5.png')} alt="F5 icon" width="75"/>
 
 The F5 - BIG-IP Local Traffic Manager (LTM) app helps you optimize and secure network traffic patterns coming into your data center using the F5 BIG-IP platform.
 

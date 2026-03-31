@@ -7,7 +7,7 @@ description: Learn about the collection process for the Amazon Bedrock AgentCore
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-bedrock-agentcore-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon-bedrock-agentcore-logo.png')} alt="Amazon Bedrock AgentCore icon" width="50"/>
 
 [Amazon Bedrock AgentCore](https://docs.aws.amazon.com/bedrock-agentcore) is a fully managed service that enables you to build and deploy AI agents with advanced capabilities. AgentCore provides runtime observability, memory management, gateway functionality, built-in tools, and identity services to help you monitor and optimize your AI agent deployments. It offers comprehensive metrics, logs, and traces for agent execution activity, resource utilization, error tracking, and performance monitoring.
 

@@ -6,7 +6,7 @@ description: Data Archiving allows you to archive selected data to an external s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/send-data.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Send Data icon" width="50"/>
 
 Archive allows you to forward log data from Installed Collectors to AWS S3 buckets to collect later. If you have logs that you do not need to search immediately, you can archive them for later use. You can also ingest them from your archive on-demand with five-minute granularity.  
 
@@ -21,7 +21,7 @@ In this section, we'll introduce the following concepts:
   <div className="box smallbox card">
     <div className="container">
       <a href={useBaseUrl('docs/manage/data-archiving/archive')}>
-        <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="45" />
+        <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Send Data icon" width="45" />
         <h4>Archive Log Data to S3 using Installed Collectors</h4>
       </a>
       <p>Learn to archive data to S3 using Installed Collectors for future ingestion and retrieval.</p>
@@ -30,7 +30,7 @@ In this section, we'll introduce the following concepts:
   <div className="box smallbox card">
     <div className="container">
       <a href={useBaseUrl('docs/manage/data-archiving/archive-otel/')}>
-        <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="45" />
+        <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Send Data icon" width="45" />
         <h4>Archive Log Data to S3 using OpenTelemetry Collectors</h4>
       </a>
       <p>Learn to archive data to S3 using OpenTelemetry Collectors for future ingestion and retrieval.</p>

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon-sandbox.png')} alt="crowdstrike-falcon-sandbox" width="100"/>
 
-***Version: 1.3  
-Updated: Jul 14, 2023***
+***Version: 1.4  
+Updated: March 31, 2026***
 
 Malware Analysis Tool providing threat intelligence.
 
@@ -56,3 +56,4 @@ For information about CrowdStrike Falcon Sandbox, see [CrowdStrike documentation
 * March 21, 2023 (v1.1) - Logo updated
 * June 27, 2023 (v1.2) - Updated the integration with Environmental Variables
 * July 14, 2023 (v1.3) - Changed fields visibility
+* March 31, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

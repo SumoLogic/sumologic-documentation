@@ -6,7 +6,7 @@ description: Global Intelligence for AWS CloudTrail - DevOps provides insights f
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Global Intelligence Devops icon" width="75"/>
 
 Global Intelligence for AWS CloudTrail - DevOps provides insights for on-call engineers, infrastructure engineers, and DevOps users accelerate root cause analysis for incidents by providing error rate and configuration insights benchmarked from Sumo Logic’s AWS customers for nine AWS services:
 

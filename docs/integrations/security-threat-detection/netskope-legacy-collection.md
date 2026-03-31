@@ -6,7 +6,7 @@ description: The Netskope App created by Sumo Logic provides visibility into sec
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope icon" width="55"/>
 
 :::info legacy
 This document contains our legacy collection method for non-Fedramp Sumo logic deployments. If you are not using the Sumo Logic FedRamp deployment, use the [new Cloud-to-Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app.

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/strimzi.png')} alt="icon" width="150"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/strimzi.png')} alt="Strimzi icon" width="150"/>
 
 This guide provides an overview of Kafka metrics collection from Kafka pods deployed with the Strimzi Kafka operator.
 
