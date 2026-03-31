@@ -7,7 +7,7 @@ description: The Druva Cyber Resilience app for Sumo Logic is a comprehensive an
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="Druva icon" width="85"/>
 
 The Druva Cyber Resilience app for Sumo Logic is a comprehensive and powerful solution designed to enhance your cybersecurity posture by providing real-time insights and actionable information through intuitive and informative dashboards. This app equips security teams with the tools to effectively safeguard the digital assets, respond to security incidents, and ensure business continuity in the face of evolving cyber threats. Each dashboard within this app focuses on a specific aspect of cybersecurity and resilience, offering valuable insights into potential threats and strategies to mitigate them effectively.
 

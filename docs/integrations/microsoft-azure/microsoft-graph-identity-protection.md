@@ -7,7 +7,7 @@ description: The Sumo Logic App for Microsoft Graph Identity Protection provides
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="dropbox-icon.png" width="50"/>
+<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="Dropbox icon" width="50"/>
 
 The Microsoft Graph Identity Protection App for Sumo Logic provides organizations with advanced security monitoring and analytics capabilities for their Microsoft Graph Identity Protection data. The app leverages Sumo Logic's [cloud-to-cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source) to collect and analyze data from the Microsoft Graph Identity Protection Source, allowing organizations to proactively identify potential security risks and take action to mitigate them.
 

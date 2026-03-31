@@ -7,7 +7,7 @@ description: The Sumo Logic app for Twistlock provides comprehensive monitoring 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/twistlock.png')} alt="thumbnail icon" width="135"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/twistlock.png')} alt="Twistlock icon" width="135"/>
 
 [Twistlock](https://www.twistlock.com/) is a cloud native cybersecurity platform for hosts, containers, and serverless setups that ensures the protection of all your workloads across any environment.
 

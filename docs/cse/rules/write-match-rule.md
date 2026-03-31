@@ -100,7 +100,7 @@ Watch this micro lesson to learn how to create a match rule.
       <CseDynamicSeverity/>
    1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="Add More Mappings option" style={{border: '1px solid gray'}} width="300"/>
    1. Click **Add More Mappings**. (Optional) You can define additional mappings if desired. If you don’t, the severity value will be the value of the record field you selected above.
-   1. The **if the value is** option appears.<br/><img src={useBaseUrl('img/cse/if-the-value-is.png')} alt="If the Value is Option.png" style={{border: '1px solid gray'}} width="300"/>
+   1. The **if the value is** option appears.<br/><img src={useBaseUrl('img/cse/if-the-value-is.png')} alt="If the value is option" style={{border: '1px solid gray'}} width="300"/>
    1. Select one of the following options:
       * **greater than**. The record field’s value must be greater than the numeric value you supply. The match is not inclusive. For example "greater than “5" will match “5.1”, but not “5”.
       * **less than**. The record field’s value must be less than the numeric value you supply. The match is not inclusive. For example "less than 5" will match “4.9” but not “5”.

@@ -156,7 +156,7 @@ To add a link to a Panel in order to drill down to another Dashboard, see [Add 
 ### Syntax
 
 ```
-[<Text>](<URL>)
+[link text](url)
 ```
 
 <img src={useBaseUrl('/img/dashboards/panels/link-syntax-example-Jan-2021.png')} style={{border: '1px solid gray'}} alt="link syntax example Jan 2021" width="600"/>

@@ -7,7 +7,7 @@ description: The Sumo Logic App for KnowBe4 offers functionality for monitoring 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="100" />
+<img src={useBaseUrl('img/send-data/knowbe4.png')} alt="KnowBe4 icon" width="100" />
 
 The KnowBe4 App for Sumo Logic allows you to easily integrate data from KnowBe4, a security awareness training and simulated phishing platform, into your Sumo Logic account. This App provides an overview of your organization's phishing security testing performance. It includes metrics on the total number of tests, active tests, recipient users, failed recipient users, and distribution of status.
 
@@ -169,4 +169,4 @@ Each panel has a set of filters that are applied to the results for that panel o
 
 The **KnowBe4 - Overview** dashboard provides an overview of phishing security tests. It provides insights into the test results, including the total number of tests, active tests, and recipient users. Additionally, the dashboard displays the distribution of test status, the level of difficulty of the tests, and the phish-prone percentage. The dashboard also includes a summary of the phishing security tests and failures, as well as the top failed users and their geo-locations. These insights can help organizations identify areas that require further attention and improve their overall security posture against phishing attacks.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/KnowBe4-Overview.png')} alt="KnowBe4-Overview.png" width="600"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/KnowBe4-Overview.png')} alt="KnowBe4 - Overview dashboard" width="600"/>

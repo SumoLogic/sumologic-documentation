@@ -6,7 +6,7 @@ description: Learn how to assess Azure Advisor’s recommendations, track remedi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-security-advisor.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-security-advisor.png')} alt="Azure Security Advisor icon" width="50"/>
 
 The **Azure Security - Advisor** app provides security analysts visibility into Azure Advisor’s recommendations on security, reliability, operational excellence, and cost optimization. It helps organizations proactively address risks, improve the cloud infrastructure's resiliency, and optimize Azure resource use.
 

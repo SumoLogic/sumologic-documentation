@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Logic A
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-logic-app.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-logic-app.png')} alt="Azure Logic App icon" width="50"/>
 
 [Azure Logic App](https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview) is a cloud platform where you can create and run automated workflows with little to no code. This integration helps in monitoring logic app workflow's run status, trigger history, run history, and performance. It also helps in tracking successful delivery or receipt, errors, and properties for business-to-business (B2B) messages.
 

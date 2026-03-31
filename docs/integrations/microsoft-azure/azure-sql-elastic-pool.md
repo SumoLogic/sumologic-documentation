@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure SQL Ela
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-sql-elastic-pool.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-sql-elastic-pool.png')} alt="Azure SQL Elastic Pool icon" width="50"/>
 
 The [Azure SQL Elastic Pools](https://learn.microsoft.com/en-us/azure/azure-sql/database/elastic-pool-overview?view=azuresql) are a simple, cost-effective solution for managing and scaling multiple databases that have varying and unpredictable usage demands. This integration helps in monitoring the resource utilization of your elastic pools.
 

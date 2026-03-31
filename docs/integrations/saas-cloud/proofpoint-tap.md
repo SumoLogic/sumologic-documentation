@@ -7,7 +7,7 @@ description: The Sumo Logic app for Proofpoint TAP provides comprehensive visibi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/>
+<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Proofpoint icon" width="140"/>
 
 The Sumo Logic app for Proofpoint Targeted Attack Protection (TAP) app provides comprehensive visibility and analysis of messages and clicks of malicious URLs. Proofpoint TAP is a cybersecurity solution offered by Proofpoint, a leading cybersecurity company. By leveraging advanced technologies and threat intelligence, Proofpoint TAP helps organizations detect and mitigate sophisticated threats, reducing the risk of successful cyberattacks.
 
