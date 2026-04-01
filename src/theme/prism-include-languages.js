@@ -1,3 +1,7 @@
+// SCOPE (DOCS-63): The `sumo` language definition covers Sumo Logic LOG search
+// query syntax only (pipe operators, parse, where, count, fields, keywords, etc.).
+// Metrics query syntax highlighting is out of scope and will be addressed in a
+// future initiative.
 export default function (Prism) {
   Prism.languages.sumo = {
     // 1. Strings

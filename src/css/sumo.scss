@@ -1651,6 +1651,11 @@ article header h2[class*='title_'] {
    Sumo Logic brand colors for `sumo` language syntax highlighting
    Add to src/css/custom.css
    Brand palette reference: Primary Blues, Secondary Teals, Accent Purples
+
+   SCOPE (DOCS-63): This highlighting covers Sumo Logic LOG search query
+   syntax only (pipe operators, parse, where, count, fields, etc.).
+   Metrics query syntax highlighting is out of scope and will be addressed
+   in a future initiative.
    ========================================================================== */
 
 /* Light mode */
