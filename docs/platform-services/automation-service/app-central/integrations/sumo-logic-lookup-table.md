@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.0  
-Updated: Mar 27, 2026***
+***Version: 1.1  
+Updated: April 1, 2026***
 
 The Lookup Table Management API allows you to manage lookup tables from HTTP endpoints. Lookup tables enable you to enrich your log data with contextual information from external sources. For more information, see [Lookup Tables](/docs/search/lookup-tables/).
 
@@ -72,3 +72,4 @@ SIEM
 ## Change Log
 
 * March 27, 2026 - First Upload
+* April 1, 2026 - Added Sumo Logic logo.
