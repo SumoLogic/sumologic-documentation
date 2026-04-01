@@ -16,32 +16,9 @@ Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic sty
 - .claude/skills/pr-template-guide/SKILL.md — PR template structure, formatting examples, and best practices.
 
 ## Pull Requests
-
 **CRITICAL REQUIREMENT**: ALL pull requests MUST use the official template from `.github/PULL_REQUEST_TEMPLATE.md`. No exceptions.
 
-### Required Template Structure
-
-```markdown
-## Purpose of this pull request
-
-This pull request {description}
-
-{Additional sections like Summary, Testing Plan go HERE - under this heading}
-
-## Select the type of change
-
-- [ ] Minor Changes - Typos, formatting, slight revisions
-- [ ] Update Content - Revisions, updating sections
-- [ ] New Content - New features, sections, pages, tutorials
-- [ ] Site and Tools - .clabot, version updates, maintenance, dependencies, new packages for the site (Docusaurus, Gatsby, React, etc.)
-
-## Ticket (if applicable)
-
-{https://sumologic.atlassian.net/browse/DOCS-1234}
-```
-
 ### Key Rules
-
 1. **Template is mandatory** - Use the exact structure above for every PR
 2. **Additional sections** - Any extra sections (Summary, Testing Plan, etc.) go UNDER "Purpose of this pull request" heading, before "Select the type of change"
 3. **Pre-check the appropriate checkbox** - Select the correct change type
