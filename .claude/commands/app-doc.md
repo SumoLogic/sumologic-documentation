@@ -203,7 +203,7 @@ Before finishing, verify:
 * [ ] JSON files valid (no syntax errors).
 * [ ] All placeholder text replaced or removed.
 
-## App template structure
+## App Template Structure
 
 All app docs use the standard app template (app-template-v2.md):
 * Standard structure with dashboard sections.

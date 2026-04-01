@@ -146,7 +146,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Step 5: Write content structure
 
-#### Feature documentation structure
+#### Feature Documentation Structure
 
 ```markdown
 Brief introduction explaining what the feature is and why it matters (1-2 paragraphs).

@@ -43,11 +43,11 @@ Ask user which file to check if not specified:
 
 Check for specific violations in order of severity:
 
-## Critical issues (must fix)
+## Critical Issues (Must Fix)
 
 These MUST be fixed before merging.
 
-### Wrong pronouns
+### Wrong Pronouns
 
 ❌ **Violations:**
 - "the user can configure"
@@ -63,7 +63,7 @@ These MUST be fixed before merging.
 
 **Why it matters:** Directly addressing the reader as "you" is conversational and engaging. Third-person references ("the user", "one") create distance and feel institutional.
 
-### Negative contractions
+### Negative Contractions
 
 ❌ **Violations:**
 - can't → **cannot**
@@ -88,7 +88,7 @@ These MUST be fixed before merging.
 **Positive contractions are OK:**
 - you'll, they're, we're, it's, you've, we've
 
-### Incorrect branding
+### Incorrect Branding
 
 ❌ **Violations:**
 - "Sumo" (in prose, not code)
@@ -273,9 +273,9 @@ Format the report with severity levels:
 
 ---
 
-## Critical issues (must fix)
+## Critical Issues (Must Fix)
 
-### Wrong pronouns (2 instances)
+### Wrong Pronouns (2 instances)
 
 **Line 45:**
 ```
@@ -291,7 +291,7 @@ Users should navigate to the Collection page
 
 ---
 
-### Negative contractions (1 instance)
+### Negative Contractions (1 instance)
 
 **Line 89:**
 ```
@@ -400,7 +400,7 @@ After presenting the report, ask what the user wants to do:
 - Provide checklist
 - Available for questions
 
-## Safety guidelines
+## Safety Guidelines
 
 - **NEVER modify automatically without asking**. always present report first
 - **Provide context**. explain WHY something violates tone rules, not just WHAT
@@ -417,7 +417,7 @@ After presenting the report, ask what the user wants to do:
 5. **Examples of wrong usage**. Don't flag intentionally incorrect examples
 6. **Comments or notes**. May use different tone
 
-## Edge cases
+## Edge Cases
 
 ### No Issues Found
 

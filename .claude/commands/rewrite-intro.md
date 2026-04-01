@@ -188,7 +188,7 @@ After user approval:
 3. **Maintain formatting**. keep existing markdown structure, images, code blocks
 4. **Confirm success**. Let user know the changes were applied
 
-## Safety guidelines
+## Safety Guidelines
 
 - **NEVER modify files automatically**. always show the rewrite and get user approval first
 - **Preserve existing content**. only replace the intro section, don't touch anything else
@@ -196,7 +196,7 @@ After user approval:
 - **Don't change frontmatter**. unless specifically asked
 - **Verify document type**. apply correct branding rules (app vs. source vs. feature)
 
-## Edge cases
+## Edge Cases
 
 ### No intro exists
 If the doc has no introduction:
