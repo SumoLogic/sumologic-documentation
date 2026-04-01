@@ -1,7 +1,7 @@
 ---
 id: mcp-server
 title: Sumo Logic MCP Server (Closed Preview)
-description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents from VS Code or Claude Code CLU.
+description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents from VS Code or Claude Code CLI.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -30,7 +30,7 @@ During closed preview, the following MCP clients are supported:
 * **Sumo Logic Administrator role**. Required to create service accounts and OAuth clients. If you're unsure whether you are an administrator, you can find your role in your [Preferences](/docs/get-started/onboarding-checklists/).
 * **Sumo Logic personal access key**. Used to authenticate API calls during setup. See [Access Keys](/docs/manage/security/access-keys/) to learn more. We recommend setting your access key scopes to **Default** (all permissions) so that API requests required for setup are not blocked.
 * **An MCP-compatible client**. Currently, [VS Code + GitHub Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat) and [Claude Code Terminal CLI](https://code.claude.com/docs/en/quickstart) are the only supported clients.
-   * **For VS Code**. You'll need GitHub account with GitHub Copilot access. A free GitHub Copilot plan is available with limited monthly requests.
+   * **For VS Code**. You'll need a GitHub account with GitHub Copilot access. A free GitHub Copilot plan is available with limited monthly requests.
    * **For Claude**. You'll need a paid Claude subscription or Anthropic Console account.
 
 
@@ -120,7 +120,7 @@ UI support for this step is not yet available. You'll need to use the Sumo Logic
 
    <TabItem value="request">
 
-   This example grants the MCP agent the ability to query logs and metrics, understand schema/fields, read saved content, export results.
+   This example grants the MCP agent the ability to query logs and metrics, understand schema/fields, read saved content, and export results.
 
    ```bash title="Example request"
    curl -u "<access-id>:<access-key>" \
@@ -149,8 +149,8 @@ UI support for this step is not yet available. You'll need to use the Sumo Logic
      "description": "OAuth Client for MCP with basic permissions",
      "runAsId": "0000000000C4661B",
      "grantTypes": ["client_credentials"],
-     "scopes": ["runLogSearch", "runMetricsQuery", "viewLibrary", "manageCollectors", "manageFieldExtractionRules", "manageScheduledViews", "managePartitions", "viewMonitorsV2", "manageSlos"]
-     "effectiveScopes": ["runLogSearch", "runMetricsQuery", "viewLibrary", "manageCollectors", "manageFieldExtractionRules", "manageScheduledViews", "managePartitions", "viewMonitorsV2", "manageSlos"]
+     "scopes": ["runLogSearch", "runMetricsQuery", "viewLibrary", "manageCollectors", "manageFieldExtractionRules", "manageScheduledViews", "managePartitions", "viewMonitorsV2", "manageSlos"],
+     "effectiveScopes": ["runLogSearch", "runMetricsQuery", "viewLibrary", "manageCollectors", "manageFieldExtractionRules", "manageScheduledViews", "managePartitions", "viewMonitorsV2", "manageSlos"],
      "clientSecret": "EqyuIvsnae0LnMC2mbJArysXcmp0LuBsRgmyeLtSkFPEzSxdvpYQMDajn_8buaDj"
    }
    ```
@@ -160,7 +160,7 @@ UI support for this step is not yet available. You'll need to use the Sumo Logic
 
 ### Step 3: Generate an access token
 
-In this step, you'll request an OAuth access token from the token endpoint using your client credentials (`"clientId'` and `"clientSecret"`) from the previous step. If applicable, replace `service.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+In this step, you'll request an OAuth access token from the token endpoint using your client credentials (`"clientId"` and `"clientSecret"`) from the previous step. If applicable, replace `service.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 #### Option A: All permissions
 
@@ -421,14 +421,14 @@ Our MCP server provides access to Sumo Logic through these tool categories:
 * **Utility tools**. Discover relevant tools based on context.
 * **Alerts management**. Search, retrieve, and resolve alerts.
 * **Dashboard management**. Create, retrieve, update, and delete dashboards.
-* **Cloud SIEM Insights**. Get insights, triage information, entities, and status updates.
+* **Cloud SIEM**. Manage Insights, detection rules, triage information, entities, and status updates.
 * **Log search**. Create and manage search jobs, retrieve paginated messages and records.
 * **User management**. List users in the organization.
 
 All tools respect your Sumo Logic permission controls and access policies.
 
 :::note
-Tool identifiers are subject to change during the beta period.
+Tool identifiers are subject to change during the closed preview period.
 :::
 
 ### Utility tools
@@ -469,7 +469,9 @@ Tool identifiers are subject to change during the beta period.
 * `Create a new dashboard called "System Overview" that uses the previous query to power a dashboard panel called "Total Log Count Per Minute"`
 * `Add a second panel called "Error Logs Count Per Minute" that is a similar query but only has logs in it that contain the keyword "error" in them`
 
-### Cloud SIEM Insights
+### Cloud SIEM
+
+#### Insights
 
 | Tool | Description |
 | :--- | :---------- |
@@ -483,6 +485,16 @@ Tool identifiers are subject to change during the beta period.
 | `UpdateInsightAssignee`     | Update the assignee of an Insight. |
 | `UpdateInsightStatus`       | Update the status of an Insight. |
 
+#### Detection Rules
+
+| Tool | Description |
+| :--- | :---------- |
+| `CreateTemplatedMatchRule` | Create a new Match Rule. |
+| `CreateThresholdRule`      | Create a new Threshold Rule. |
+| `GetRule`                  | Get a single rule by ID with optional tuning expressions. |
+| `GetRules`                 | Get rules with filtering by category, enabled status, rule source, score, severity, stream, tags, and more. |
+| `UpdateRuleEnabled`        | Enable or disable a detection rule. |
+
 #### Sample prompts
 
 * `Show triage details for INSIGHT-1234`
@@ -491,6 +503,11 @@ Tool identifiers are subject to change during the beta period.
 * `Add a comment to this insight: "This warrants deeper investigation"`
 * `Show recommended next steps for INSIGHT-1234`
 * `Update INSIGHT-1234 status to In Progress`
+* `Create a threshold rule that fires when more than 10 failed logins occur within 5 minutes`
+* `Show me all enabled rules in the authentication category`
+* `Get details for rule ID <id>`
+* `Disable rule <id>`
+* `List all rules that have fired in the last 7 days`
 
 ### Log search
 
@@ -597,6 +614,18 @@ These prompts demonstrate multi-step investigations that chain multiple tools to
 * `Search for the top 10 source IPs generating authentication errors in the last hour, then create a dashboard panel showing those results.`
 
 * `Get the current SIEM overview dashboard, add a new panel for open Critical Insights count, and save it.`
+
+### Detection rule management
+
+* `List all enabled threshold rules and show me which ones have the highest signal counts in the last 7 days.`
+
+* `Find all rules in the 'lateral-movement' category, check if any are disabled, and enable them.`
+
+* `Create a new match rule that detects SSH brute force attempts by looking for more than 5 failed SSH authentication events from the same source IP within 10 minutes.`
+
+* `Get all rules tagged 'ransomware', check their signal counts, and if any haven't fired in 30 days, disable them and add a comment explaining why.`
+
+* `Find all custom rules (ruleSource = 'custom'), get their details including tuning expressions, and create a summary report of which ones are actively generating Insights.`
 
 ## Usage guidance and cost controls
 
