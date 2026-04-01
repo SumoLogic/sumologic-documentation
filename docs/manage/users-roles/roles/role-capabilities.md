@@ -125,6 +125,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | View Alerts | View alerts on the [Alert page](/docs/alerts/monitors/alert-response). | `viewAlerts` |
 | View Muting Schedules | View [Muting Schedules](/docs/alerts/monitors/muting-schedules). | `viewMutingSchedules` |
 | Manage Muting Schedules | Create, edit, and delete Muting Schedules. | `manageMutingSchedules` |
+| Credit Usage Alerts | Create and manage the credit usage alerts. | `manageMonitorsV2` |
 
 <!-- 
 ## Open Analytics
