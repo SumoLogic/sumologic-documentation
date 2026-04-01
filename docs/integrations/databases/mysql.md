@@ -239,7 +239,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “MySQL add
     * For information about properties that can be configured globally in the Telegraf agent, see the [Configuration](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) documentation for Telegraf.
 3. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods with the labels and annotations you added in the previous step.
 4. To verify the metrics have been ingested, run this metrics query:
-  ```sumo
+  ```sql
   db_cluster=<your_mysql_cluster_name> component="database" and db_system="mysql"
   ```
 

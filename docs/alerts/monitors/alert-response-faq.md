@@ -84,11 +84,11 @@ There could be two reasons for the card not loading:
         | json field=_raw "uuid=*" as uuid
         ```
    * Uncategorized
-       ```
+       ```sql
        106.212.160.* or 180.151.66.*
        ```
    * Only unstructured search term
-       ```
+       ```sql
        "NIFI_STORESTODUNNHUMBY_ERROR"
        "PPID" AND "sfe-staging-web"
        \"url\":\"/api/private/printing/"

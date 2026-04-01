@@ -164,7 +164,7 @@ sumo.datasource=docker
 
 This sample metrics query is from the **Top 5 Containers by CPU Usage** panel in the **Docker - Overview** dashboard.
 
-```sumo
+```sql
 sumo.datasource=docker container.image.name={{container.image.name}} container.name={{container.name}}  metric=container.cpu.usage.total
 | avg by container.name
 | topk(5,avg)
