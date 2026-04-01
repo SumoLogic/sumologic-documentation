@@ -434,7 +434,7 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
-```sumo
+```
 Rule Name: AwsObservabilityRdsCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "rds.amazonaws.com"
@@ -460,7 +460,7 @@ Scope (Specific Data): account=* eventname eventsource "rds.amazonaws.com"
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 
-```sumo
+```
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
@@ -482,7 +482,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 #### Create/Update Field Extraction Rule(s) for RDS CloudWatch logs
 
 
-```sumo
+```
 Rule Name: AwsObservabilityGenericCloudWatchLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):

@@ -21,7 +21,7 @@ Each method has advantages. Using an Amazon S3 source is more reliable, while us
 
 ## Field Extraction Rule for VPC Flow logs
 Here is an example [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md) for VPC Flow logs.
-```sumo
+```
 Rule Name: VPCFlowLogFER
 Applied at: Ingest Time
 Scope (Specific Data):

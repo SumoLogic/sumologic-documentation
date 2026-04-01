@@ -179,7 +179,7 @@ Jun 23 07:35:01 node03 memcached: \
 
 ## Sample metric messages
 
-```sumo
+```json
 {
   "queryId": "A",
   "_source": "memcached-otel",

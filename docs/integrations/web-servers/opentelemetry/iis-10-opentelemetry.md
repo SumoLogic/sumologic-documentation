@@ -183,7 +183,7 @@ A warning message will be printed if any one of the specified performance counte
 ```
 
 ## Sample metrics
-```sumo
+```json
 {
     "queryId": "A",
     "_source": "iis/windowsperfcounters",
