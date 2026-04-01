@@ -94,7 +94,7 @@ Although these are general questions, they give you an idea of the wide variety 
 
 ### Generate dashboards
 
-To generate dashboards based on the context of your investigation, simply ask Mobot. For example, in the **Ask Something...** field you could type `Create a dashboard with the results of this investigation`. The agent will build the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard-generaged.png')} alt="Ask to generate dashboard" style={{border: '1px solid gray'}} width="700" />
+To generate dashboards based on the context of your investigation, simply ask Mobot. For example, in the **Ask Something...** field you could type `Create a dashboard with the results of this investigation`. The agent will build the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard-generated.png')} alt="Ask to generate dashboard" style={{border: '1px solid gray'}} width="700" />
 
 Click the provided link to view the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard.png')} alt="Dashboard generated for insight investigation" style={{border: '1px solid gray'}} width="700" />
 
