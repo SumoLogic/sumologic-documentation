@@ -51,13 +51,13 @@ The `{AppName}` App uses...
 
 ### Log query
 
-```sumo title="Log query"
+```sql title="Log query"
 \<add your query here\>
 ```
 
 ### Metric query
 
-```sumo title="Metric query"
+```sql title="Metric query"
 \<add your query here\>
 ```
 

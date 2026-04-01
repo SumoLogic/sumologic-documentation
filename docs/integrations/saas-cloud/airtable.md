@@ -153,7 +153,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Airtable monitors
 
-| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition |
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
 | `Airtable - Embargoed Geo Locations of Audit Logs` | This alert is triggered when audit logs originating from sanctioned or embargoed regions are detected. This alert helps maintain adherence to legal and regulatory standards. | Critical | Count > 0 |
 

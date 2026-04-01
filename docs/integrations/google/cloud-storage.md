@@ -68,7 +68,7 @@ The App uses:
 
 ### Sample log queries
 
-```sql
+```sumo
 _sourceCategory=*gcp* data logName resource "\"type\":\"gcs_bucket\""
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/cloudaudit.googleapis.com%2*"
