@@ -12,13 +12,14 @@ export default function (Prism) {
       greedy: true,
     },
 
-    // 3. URLs (VERY IMPORTANT - prevent // issues)
-    'url': /\b(?:asn|path|https?):\/\/[^\s]+/,
+    // 3. URLs — covers all Sumo Logic URL schemes
+    'url': /\b(?:asn|geo|https?|path|sumo):\/\/\S+/,
 
-    // 4. Keywords — full Sumo Logic operator set
+    // 4. Keywords — full Sumo Logic operator set (case-sensitive by design)
     // Includes: search operators, aggregate operators, parse operators,
     // Behavior Insights operators, modifiers, and boolean keywords
-    'keyword': /\b(accum|as|backshift|bin|cat|compare|contains|dedup|diff|fields|fillmissing|filter|format|formatDate|geoip|hash|join|limit|lookup|lookupContains|logcompare|logexplain|matches|now|num|outlier|parse|predict|replace|rollingstd|save|sessionize|smooth|sort|substring|threatip|timeslice|toLowerCase|toUpperCase|top|topk|total|tourl|trace|transpose|trim|urldecode|urlencode|where|avg|count|count_distinct|count_frequent|first|last|median|min|max|most_recent|least_recent|pct|pct_sampling|stddev|sum|values|json|csv|xml|keyvalue|split|if|in|and|or|not|by|on|from|append|multi|auto|field|nodrop|asc|desc|true|false)\b/,
+    // Alphabetized for maintainability
+    'keyword': /\b(?:accum|and|append|as|asc|auto|avg|backshift|bin|by|cat|compare|contains|count|count_distinct|count_frequent|csv|dedup|desc|diff|false|field|fields|fillmissing|filter|first|format|formatDate|from|geoip|hash|if|in|join|json|keyvalue|last|least_recent|limit|logcompare|logexplain|logreduce|lookup|lookupContains|matches|max|median|min|most_recent|multi|nodrop|not|now|num|on|or|outlier|parse|parseDate|parseHex|pct|pct_sampling|predict|replace|rollingstd|save|sessionize|smooth|sort|split|stddev|substring|sum|threatip|timeslice|toLowerCase|top|topk|total|toUpperCase|tourl|trace|transpose|trim|true|urldecode|urlencode|values|where|xml)\b/,
 
     // 5. Time units — MUST come before number so "1m", "24h" etc. match fully
     'time': /\b\d+(?:ms|s|m|h|d|w)\b/,
@@ -26,11 +27,11 @@ export default function (Prism) {
     // 6. Numbers
     'number': /\b\d+(?:\.\d+)?\b/,
 
-    // 7. Operators (removed bare - to avoid false matches on hyphenated field names)
-    'operator': /\||=|\+|\/|,|\*/,
+    // 7. Operators — character class for clarity
+    'operator': /[|=+/,*]/,
 
-    // 8. Metadata fields — case-insensitive to handle _messagetime/_messageTime variants
-    'metadata': /\b_(?:sourceCategory|sourceHost|sourceName|collector|source|dataTier|messageTime|raw|view|index)\b/i,
+    // 8. Metadata fields — alphabetized; case-insensitive to handle _messagetime/_messageTime variants
+    'metadata': /\b_(?:collector|dataTier|index|messageTime|raw|source|sourceCategory|sourceHost|sourceName|view)\b/i,
 
     // 9. Functions (anything followed by parentheses)
     'function': /\b[a-zA-Z_]\w*(?=\()/,
