@@ -87,13 +87,6 @@ Live mode restrictions do not apply to Dashboard. 
    * An operator is not supported at this refresh interval.
    * The number of grouped elements is too large for the requested interval.
 
-## Auto Refresh
-
-Your dashboard can automatically refresh its panels to the latest information. You have the ability to configure the refresh interval rate by clicking the dropdown arrow next to the refresh icon.
-
-There are some restrictions when using operators with dashboards. To learn more, see [Restricted Operators in Dashboards](/docs/dashboards/restricted-operators-dashboards).<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/auto-refresh-dropdown-options.png')} alt="auto refresh dropdown options" style={{border: '1px solid gray'}} width="200" />
-<br/>A list of the refresh interval rates is provided for you to select from.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/dashboard-new-refresh-interval-options.png')} alt="dashboard new refresh interval options" style={{border: '1px solid gray'}} width="100" />
-
 ## Dark Theme
 
 Dashboards have two themes available: Light mode (which is the default) and Dark mode. You can toggle between the two themes within the dashboard by clicking the three-dot kebab icon. The following image shows the option to **Switch to Dark Theme**.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/dark-theme-switch.png')} alt="dark theme switch" style={{border: '1px solid gray'}} width="700" />
@@ -118,3 +111,66 @@ To view the dashboard information, follow the steps below:
     - **Time Zone**. The time zone for the set time range.
     - **Scanned Bytes**. The total amount of data scanned in bytes.
     - **Dashboard ID**. A unique identification ID for the dashboard. Copy and use the dashboard ID within the APIs to identify the dashboard when making requests.
+
+
+## Auto-Refresh
+
+Auto refresh helps you to refresh the panels with latest data automatically in your dashboard.
+
+Administrators can control the availability of auto-refresh behavior for all dashboards from the Policies page.
+
+:::note
+To enable or disable this feature, you must be an **Administrator** with the **ManageDashboardExecutionControls** capability.
+:::
+
+### Enable the Sumo Logic policy
+
+In this section, you will enable the ability to disable your dashboard auto refresh. By default, auto refresh will be enabled with **30 seconds** minimum time interval. Follow the below steps to change this configuration:
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
+1. Uncheck the **Allow Auto-Refresh Configuration for all dashboards** checkbox to disable the auto-refresh.
+1. If checked, select the minimum auto-refresh interval from the dropdown based on your requirement. You can select from 30 seconds to 1 day.
+
+<img src={useBaseUrl('img/get-started/auto-refresh.png')} alt="Auto-Refresh" style={{border: '1px solid gray'}} width="500" />
+
+
+### Using auto refresh 
+
+Once, you have enabled the **Auto-Refresh** you can now see that the panels getting refreshed as per the selected auto-refresh interval. If required, you can configure the refresh interval rate by clicking the dropdown arrow next to the **Run** button. Select the refresh interval of your choice from the list.
+
+:::info
+There are some restrictions when using operators with dashboards. To learn more, see [Restricted Operators in Dashboards](/docs/dashboards/restricted-operators-dashboards).
+:::
+
+:::note
+The dropdown only displays the time-interval which is greater than or equal to the set minimum auto-refresh interval in the **Policies** page.
+:::
+
+<img src={useBaseUrl('/img/dashboards/about-dashboard/auto-refresh-dropdown-options.png')} alt="auto refresh dropdown options" style={{border: '1px solid gray'}} width="400" />
+
+## Auto Run
+
+Auto Run leverages you to run the panels in dashboard automatically, if not manual initiation is required.  
+
+Administrators can control the availability of auto-run behavior for all dashboards from the Policies page.
+
+:::note
+To enable or disable this feature, you must be an **Administrator** with the **ManageDashboardExecutionControls** capability.
+:::
+
+### Enable the Sumo Logic policy
+
+In this section, you will enable the ability to auto run your dashboard panels. By default, auto-run will be disabled, to enable it follow the below steps:
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
+1. Check the **Enable Auto-Run for all dashboards** checkbox.
+
+<img src={useBaseUrl('img/get-started/auto-run.png')} alt="Auto-Run" style={{border: '1px solid gray'}} width="500" />
+
+### Using the auto run
+
+When **Auto Run** is disabled you cannot see any data in the panels until you click the **Run** button. Clicking the **Run** button will run all the panels in the dashboad. If you want to run only the selected panel, click <img src={useBaseUrl('/img/dashboards/about-dashboard/rerun.png')} alt="rerun-button" style={{border: '1px solid gray'}} width="30" /> button on top-right of each panel.
+
+Panels do not rerun after actions such as adding, editing, deleting, changing the time range, or changing the template variable until you click the **Run** button after you changes. You will always see the below warning message near to your search box once any of the above update is made to the dashbaord:
+
+`Auto-Run is disabled. Hit Run to apply the changes.`
