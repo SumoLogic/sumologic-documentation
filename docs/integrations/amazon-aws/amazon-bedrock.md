@@ -323,7 +323,7 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
-```
+```sql
 Rule Name: AwsObservabilityBedrockCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "bedrock.amazonaws.com"
@@ -340,7 +340,7 @@ json "eventSource", "awsRegion", "recipientAccountId" as event_source, region, a
 
 #### Create/Update Field Extraction Rule(s) for Bedrock CloudWatch logs
 
-```
+```sql
 Rule Name: AwsObservabilityBedrockCloudWatchLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -359,7 +359,7 @@ if (isEmpty(namespace),"unknown",namespace) as namespace
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 
-```
+```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs

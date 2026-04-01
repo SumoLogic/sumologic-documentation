@@ -75,7 +75,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf).
 2. On your Nginx Pods, add the following annotations:
- ```
+ ```sql
  annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -126,7 +126,7 @@ This section explains the steps to collect Nginx logs from a Kubernetes environm
 
 1. **(Recommended Method) Add labels on your Nginx pods to capture logs from standard output.** Make sure that the logs from Nginx are sent to stdout. Follow the instructions below to capture Nginx logs from stdout on Kubernetes.
    1. Apply the following labels to the Nginx pod.
-    ```
+    ```sql
     labels:
      environment="prod_CHANGEME"
      component="webserver"
@@ -157,7 +157,7 @@ This section explains the steps to collect Nginx logs from a Kubernetes environm
      tailing-sidecar: sidecarconfig;<mount>:<path_of_nginx_log_file>/<Nginx_log_file_name>
    ```
    Example:
-   ```
+   ```sql
    annotations:
      tailing-sidecar: sidecarconfig;data:/var/log/nginx/error.log
    ```
@@ -267,7 +267,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 3. As part of collecting metrics data from Telegraf, we will use the [nginx input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
 Create or modify `telegraf.conf` and copy and paste the text below:  
-```
+```sql
 [[inputs.nginx]]
   urls = ["http://IP_TO_BE_CHANGED/nginx_status"]
   response_timeout = "5s"

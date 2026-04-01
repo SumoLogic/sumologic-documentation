@@ -110,7 +110,7 @@ It’s assumed that you are using the latest helm chart version. If not, upgrade
 This section explains the steps to collect HAProxy metrics from a Kubernetes environment. In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment.
 
 1. On your HAProxy Pods, add the following annotations:
-```
+```sql
 annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -152,7 +152,7 @@ annotations:
 This section explains the steps to collect HAProxy logs from a Kubernetes environment.
 
 1. Add labels on your HAProxy pods to capture logs from the standard output (`stdout`) on Kubernetes:
-  ```
+  ```sql
   labels:
     environment: "prod"
     component: "proxy"
@@ -208,7 +208,7 @@ This section provides instructions for configuring metrics collection for the Su
 4. Configure and start Telegraf: As part of collecting metrics data from Telegraf, we will use the [HAProxy input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/haproxy) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/sumologic) to send data to Sumo Logic.  
 
 Create or modify telegraf.conf, and copy and paste the text below:
-```
+```sql
 [[inputs.haproxy]]
   username = "username_CHANGEME"
   password = "password_CHANGEME"

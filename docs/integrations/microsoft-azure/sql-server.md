@@ -77,7 +77,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
   GO
   ```
   On your SQL Server Pods, add the following annotations:
-  ```
+  ```sql
    annotations:
       telegraf.influxdata.com/class: sumologic-prometheus
       prometheus.io/scrape: "true"
@@ -136,7 +136,7 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
 1. **(Recommended Method) Add labels on your SQL server pods to capture logs from standard output**. Make sure that the logs from SQL Server are sent to stdout. Follow the instructions below to capture SQL Server logs from stdout on Kubernetes.
 
 1. Apply following labels to the SQL server pods:
-   ```
+   ```sql
    environment: "prod_CHANGE_ME"
    component: "database"
    db_system: "SQLserver"
@@ -317,7 +317,7 @@ GO
 
 Create or modify `telegraf.conf` and copy and paste the text below:  
 
-```
+```sql
 [[inputs.sqlserver]]
   servers = [ "Server=<IP_ENV_TO_BE_CHANGED>;Port=<Port_ENV_TO_BE_CHANGED>;User Id=<Username_ENV_TO_BE_CHANGED>;Password=<Password_ENV_TO_BE_CHANGED>;app name=telegraf;log=1;",]
   database_type = "SQLServer"

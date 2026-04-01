@@ -113,7 +113,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
-```
+```sql
 Rule Name: AwsObservabilitySNSCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource \"sns.amazonaws.com\"

@@ -69,7 +69,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 <details>
 <summary><strong>Click to expand.</strong> On your Squid Proxy Pods, add the following annotations:</summary>
 
-```
+```sql
 annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -411,7 +411,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 <details>
 <summary><strong>Click to expand</strong>. Create or modify `telegraf.conf` and copy and paste the text below:</summary>
 
-```
+```sql
 [[inputs.snmp]]]
   agents = ["udp://127.0.0.1:3401"]
   name = "squid"

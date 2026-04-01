@@ -255,7 +255,7 @@ This section explains the steps to collect MySQL logs from a Kubernetes environm
 If your MySQL Helm chart/pod is writing the logs to standard output, follow these steps:
 
 Apply the following labels to your MySQL pods:
-```
+```sql
 labels:
     environment: "prod"
     component: "database"

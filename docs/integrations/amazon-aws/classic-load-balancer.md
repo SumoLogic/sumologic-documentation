@@ -123,7 +123,7 @@ Create a Field Extraction Rule for AWS Classic Load Balancer access logs and Clo
 
 **AWS Classic Load Balancer access logs**
 
-```
+```sql 
 Rule Name: AwsObservabilityElbAccessLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/logs
@@ -139,7 +139,7 @@ Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/
 
 **AWS Classic Load Balancer CloudTrail Logs**
 
-```
+```sql
 Rule Name: AwsObservabilityCLBCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.amazonaws.com" "2012-06-01"

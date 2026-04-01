@@ -127,7 +127,7 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
 
 1. **(Recommended Method) Add labels on your MariaDB pods to capture logs from standard output**. Make sure that the logs from MariaDB are sent to stdout. Follow the instructions below to capture MariaDB logs from stdout on Kubernetes.
    1. Apply following labels to the MariaDB pod:
-    ```
+    ```sql
     environment: "prod_ENV_TO_BE_CHANGED"
     component: "database"
     db_system: "mariadb"

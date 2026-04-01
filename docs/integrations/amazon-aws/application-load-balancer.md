@@ -121,7 +121,7 @@ Create Field Extraction Rule (FER) for AWS Application Load Balancer access logs
 
 **AWS Application Load Balancer access logs**
 
-```
+```sql
 Rule Name: AwsObservabilityAlbAccessLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* region=* (http or https or h2 or grpcs or ws or wss)
@@ -133,7 +133,7 @@ parse "* * * * * * * * * * * * \"*\" \"*\" * * * \"*\"" as Type, DateTime, loadb
 
 **AWS Application Load Balancer CloudTrail logs**
 
-```
+```sql
 Rule Name: AwsObservabilityALBCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.amazonaws.com" "2015-12-01"

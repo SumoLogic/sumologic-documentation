@@ -138,7 +138,7 @@ This section explains the steps to collect Memcached logs from a Kubernetes envi
 
 1. **Add labels on your Memcached pods to capture logs from standard output (recommended method)**.
    1. Apply the following labels to the Memcached pods:
-    ```
+    ```sql
     environment: "prod_ENV_TO_BE_CHANGED"
     component: "database"
     db_system: "memcached"

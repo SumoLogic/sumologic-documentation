@@ -156,7 +156,7 @@ This section explains the steps to collect MongoDB logs from a Kubernetes enviro
 
 1. **Add labels on your MongoDB pods to capture logs from standard output on Kubernetes**. Make sure that the logs from MongoDB are sent to stdout. For more details, see this [doc](https://docs.mongodb.com/manual/reference/log-messages/).
    1. Apply following labels to the MongoDB pods:
-   ```
+   ```sql
    labels:
        environment: "prod"
        component: "database"

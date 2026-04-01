@@ -464,12 +464,12 @@ In the **Container Filter** field, you can enter a comma-separated list of one o
 * An exclusion filter, which begins with an exclamation mark, for example, `!master-container` or `!prod-*`
 
 For example, this filter list below will cause the source to collect from all containers whose names start with `“prod-”`, except those that match `“prod-*-mysql”`. It will also collect from containers with names that match `“master-*-app-*”`, and from the `“sumologic-collector”` container.
-```
+```sql
 prod-*, !prod-*-mysql, master-*-app-*, sumologic-collector
 ```
 
 If your filter list contains only exclusions, the source will collect all containers except from those that match your exclusion filters. The below example will cause the source to exclude containers whose names begin with `“container123”` and `“prod-”`.
-```
+```sql
 !container123*, !prod-*
 ```
 
@@ -479,7 +479,7 @@ If your filter list contains only exclusions, the source will collect all contai
 In collector version 19.216-22 and later, when you configure the sourceCategory and sourceHost for a Docker Log Source or a Docker Stats Source, you can specify the value using variables available from Docker and its host.
 
 You build templates for sourceCategory and sourceHost specifying component variables in this form:
-```
+```sql
 {{NAMESPACE.VAR_NAME}}
 ```
 
@@ -500,17 +500,17 @@ Docker engine event log data doesn't support the tagging with metadata.
 
 For example:
 
-```
+```sql
 {{container.ID}}
 ```
 
 You can use multiple variables, for example:
-```
+```sql
 {{container.ID}}-{{label.label_name}}-{{env.var_name}}
 ```
 
 You can incorporate text in the metadata expression, for example:
-```
+```sql
 ID{{container.ID}}-AnyTextYouWant{{label.label_name}}
 ```
 

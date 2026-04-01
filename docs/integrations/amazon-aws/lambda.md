@@ -225,7 +225,7 @@ Create a Field Extraction Rule for AWS Lambda. Learn how to create a Field Extra
 
 ### Cloud Trail FER
 
-```
+```sql
 Rule Name: AwsObservabilityFieldExtractionRule
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "lambda.amazonaws.com"

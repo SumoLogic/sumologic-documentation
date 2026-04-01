@@ -144,7 +144,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
-```
+```sql
 Rule Name: AwsObservabilityElastiCacheCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.com"
@@ -165,7 +165,7 @@ Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.co
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
 
-```
+```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs

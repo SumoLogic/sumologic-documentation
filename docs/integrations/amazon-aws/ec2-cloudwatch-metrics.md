@@ -161,7 +161,7 @@ To configure a CloudTrail Source, perform these steps:
 
 ### CloudTrail Field Extraction Rule
 
-```
+```sql
 Rule Name: AwsObservabilityEC2CloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "ec2.amazonaws.com"
@@ -193,7 +193,7 @@ Scope (Specific Data): account=* eventname eventsource "ec2.amazonaws.com"
 
 If you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
 
-```
+```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=<SourceCategory_of_CloudTrail_source_created_in_sumo>
