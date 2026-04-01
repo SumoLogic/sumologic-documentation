@@ -136,7 +136,7 @@ Create a Field Extraction Rule (FER) for Amazon EC2 Auto Scaling access logs and
 
 **Amazon EC2 Auto Scaling CloudTrail logs**
 
-```sumo
+```
 Rule Name: AwsObservabilityEC2ASGCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventSource eventName

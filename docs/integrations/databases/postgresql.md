@@ -142,7 +142,7 @@ This section explains the steps to collect PostgreSQL logs from a Kubernetes env
 
 1. Configuring logging parameters in postgresql.conf
     1. Edit the postgresql.conf configuration file present in your pod. Under the **ERROR REPORTING AND LOGGING** section of the file, use the following config parameters.
-   ```sumo
+   ```sql
    log_min_duration_statement = 250
    log_connections = on
    log_duration = on
@@ -155,7 +155,7 @@ This section explains the steps to collect PostgreSQL logs from a Kubernetes env
    * It’s recommended to save configurations in ConfigMap so that when pods are spawned/killed, the configuration is not lost. See [these instructions](https://docs.bitnami.com/kubernetes/infrastructure/postgresql/configuration/customize-config-file) on how to customize the config file in the bitnami helm chart.
 
 2. Apply the following labels to your PostgreSQL pods:
-  ```sumo
+  ```sql
   environment: "<environmentname-CHANGEME>"
     --For example, prod, dev, qa
   component: "database"
@@ -211,7 +211,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQ
       * **Applied At**. Choose Ingest Time
       * **Scope**. Select Specific Data
       * **Scope**: Enter the following keyword search expression:
-       ```sumo
+       ```sql
        pod_labels_environment=* pod_labels_component=database \
        pod_labels_db_system=* pod_labels_db_cluster=*
        ```
@@ -282,7 +282,7 @@ Perform the steps outlined below for each PostgreSQL database server.
    2. Connect to the database server (using SSH) in a terminal window.
    3. Open postgresql.conf configuration file.
    4. Under the **ERROR REPORTING AND LOGGING** section of the file, use following config parameters. For more information on the following parameters, [click here](https://www.postgresql.org/docs/12/static/runtime-config-logging.html).
-    ```sumo
+    ```sql
     log_destination = 'stderr'
     logging_collector = on
     log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'

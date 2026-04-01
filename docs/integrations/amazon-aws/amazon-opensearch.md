@@ -254,7 +254,7 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule/).
 
-```sumo
+```
 Rule Name: AwsObservabilityOpenSearchCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventName eventSource "es.amazonaws.com"
@@ -270,7 +270,7 @@ Scope (Specific Data): account=* eventName eventSource "es.amazonaws.com"
 
 #### Create/Update Field Extraction Rule(s) for OpenSearch CloudWatch logs
 
-```sumo
+```
 Rule Name: AwsObservabilityOpenSearchCloudWatchLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):

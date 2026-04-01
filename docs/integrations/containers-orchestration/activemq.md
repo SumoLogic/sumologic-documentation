@@ -96,7 +96,7 @@ This section explains the steps to collect ActiveMQ metrics from a Kubernetes en
    </cors>
    ```
 3. Add the following annotations on your ActiveMQ pods:
-```sumo
+```
  annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -194,7 +194,7 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
 1. **Collect ActiveMQ logs written to standard output**. If your [ActiveMQ pod is writing logs to standard output](https://activemq.apache.org/how-can-i-enable-detailed-logging), follow the steps below to collect logs:
    1. Make sure that the logs from ActiveMQ are sent to stdout. Follow the instructions below to capture ActiveMQ logs from stdout on Kubernetes.
    Apply the following labels to the ActiveMQ pods:
-    ```sumo
+    ```
     environment: "prod_CHANGE_ME"
       component: "messaging"
       messaging_system: "activemq"
@@ -268,7 +268,7 @@ This section provides instructions for configuring metrics collection for the Su
         </cors>
         ```
    2. Create or modify `telegraf.conf` and copy and paste the text below:  
-   ```sumo
+   ```
    [[inputs.disk]]
      mount_points = ["/"]
      [inputs.disk.tags]

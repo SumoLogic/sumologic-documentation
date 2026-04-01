@@ -137,7 +137,7 @@ The following steps assume you are collecting Nginx Plus metrics from a Kubernet
     * Make a note of the URL where the API is exposed. It will match the format like [https://localhost:8080/api](https://localhost:8080/api).
 2. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)
 3. On your Nginx Plus Pods, add the following annotations to configure Telegraf.
-   ```sumo
+   ```
    annotations:
         telegraf.influxdata.com/inputs: |+
         [[inputs.nginx_plus_api]]
@@ -234,7 +234,7 @@ This section provides instructions for configuring metrics collection for the Su
 3. **Configure a Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the HTTP Source URL.
 4. **Install Telegraf**. Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#install-telegraf-in-a-non-kubernetes-environment) to install Telegraf.
 5. **Configure and start Telegraf**. Create a file called telegraf.conf and add the appropriate configuration. The following is a basic example:
-```sumo
+```
 [agent]
   interval = "60s"
 -- Read Nginx Plus full API information (ngx_http_api_module)

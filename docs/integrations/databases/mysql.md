@@ -172,7 +172,7 @@ Ensure that you are monitoring your Kubernetes clusters with the Telegraf operat
 This configures metrics collection from Kubernetes.
 
 1. Add the following annotations to your MySQL pods, and make the edits described below:
-```sumo
+```sql
 primary:
   podAnnotations:
     telegraf.influxdata.com/class: sumologic-prometheus
@@ -255,7 +255,7 @@ This section explains the steps to collect MySQL logs from a Kubernetes environm
 If your MySQL Helm chart/pod is writing the logs to standard output, follow these steps:
 
 Apply the following labels to your MySQL pods:
-```sumo
+```
 labels:
     environment: "prod"
     component: "database"
@@ -326,7 +326,7 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
 3. **Install Telegraf**. For instructions see [Install Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we use the [MySQL input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 5. Create or modify the `telegraf.conf` file, and copy the following into the relevant sections.
-```sumo
+```sql
 [[inputs.mysql]]
   servers = ["user:passwd@tcp(127.0.0.1:3306)/?tls=false"]
   table_schema_databases = []
@@ -359,7 +359,7 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
 9. **Setting values in telegraf.conf**. Make the following updates to `telegraf.conf`.
    * In the `[[inputs.mysql]]` section, set `servers` to the URL of your MySQL server. For information about additional input plugin configuration options, see the [Readme](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) for the MySQL input plugin.
    * Configure the metrics to collect by uncommenting the following lines. For more information, see this [section](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql#configuration) of the Readme.  
-    ```sumo
+    ```sql
     [[inputs.mysql]]
      table_schema_databases = []
      gather_slave_status = true
@@ -405,7 +405,7 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
 1. **Configure MySQL to log to a local file(s)**. MySQL logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector. To configure the MySQL log file(s), locate your local `my.cnf` configuration file in the database directory.
    1. Open `my.cnf` in a text editor.
    2. Set the following parameters in the `[mysqld]` section:
-   ```sumo
+   ```sql
    [mysqld]
        log_error = /var/log/mysql/error.log
        slow_query_log=1

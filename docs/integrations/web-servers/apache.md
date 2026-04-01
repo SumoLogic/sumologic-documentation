@@ -158,7 +158,7 @@ ServerName localhost:8080
   </IfModule>
 ```
 2. Add annotations on your Apache pods:
-```sumo
+```
 annotations:
  telegraf.influxdata.com/class: sumologic-prometheus
   prometheus.io/scrape: "true"
@@ -273,7 +273,7 @@ This section provides instructions for configuring metrics collection for the Su
 4. **Install Telegraf**. Follow the steps in [this document](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 5. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [Apache input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
    1. Create or modify the telegraf.conf file and copy and paste the text below in the relevant sections:
-      ```sumo
+      ```
       [[inputs.apache]]
         urls = ["http://localhost/server-status?auto"]
         response_timeout = "5s"

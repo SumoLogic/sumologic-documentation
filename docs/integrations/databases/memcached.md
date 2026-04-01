@@ -86,7 +86,7 @@ Follow the steps listed below to collect Memcached metrics from a Kubernetes env
 
 1. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)
 2. On your Memcached Pods, add the following annotations:
-```sumo
+```sql
  annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -138,7 +138,7 @@ This section explains the steps to collect Memcached logs from a Kubernetes envi
 
 1. **Add labels on your Memcached pods to capture logs from standard output (recommended method)**.
    1. Apply the following labels to the Memcached pods:
-    ```sumo
+    ```
     environment: "prod_ENV_TO_BE_CHANGED"
     component: "database"
     db_system: "memcached"
@@ -201,7 +201,7 @@ This section provides instructions for configuring logs and metrics collection f
 2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the **HTTP Source URL**.
 3. **Install Telegraf** using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the Memcached [input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify `telegraf.conf` and copy and paste the text below:  
-```sumo
+```sql
  servers = ["localhost:11211"]
   [inputs.memcached.tags]
     environment ="dev_ENV_TO_BE_CHANGED"

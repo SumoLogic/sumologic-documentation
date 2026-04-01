@@ -32,7 +32,7 @@ This page has instructions for collecting logs and metrics for the Amazon ECS ap
 ## Creating Field Extraction Rule(s)
 
 Create Field Extraction Rule for CloudTrail Logs ([learn more](/docs/manage/field-extractions/create-field-extraction-rule)).
-```sumo
+```
 Rule Name: AwsObservabilityECSCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -46,7 +46,7 @@ Parse Expression:
 
 Create Field Extraction Rule for Container Insights Performance Events Logs of Task and Containers.
 
-```sumo
+```
 Rule Name: AwsObservabilityECSPerformanceEventsFER
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -110,7 +110,7 @@ To set up an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-a
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create or update the following Field Extraction Rule to map proper AWS account(s) friendly name/alias:
 
-```sumo
+```
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data):

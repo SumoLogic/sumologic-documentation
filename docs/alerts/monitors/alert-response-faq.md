@@ -84,18 +84,18 @@ There could be two reasons for the card not loading:
         | json field=_raw "uuid=*" as uuid
         ```
    * Uncategorized
-       ```sumo
+       ```
        106.212.160.* or 180.151.66.*
        ```
    * Only unstructured search term
-       ```sumo
+       ```
        "NIFI_STORESTODUNNHUMBY_ERROR"
        "PPID" AND "sfe-staging-web"
        \"url\":\"/api/private/printing/"
        OR "\"response\":\"first byte timeout\""
        ```
    * Only structured search terms connected via or
-       ```
+       ```sumo
        _sourceCategory=cx.eventlog/*/login-monitor OR
        _sourceCategory=cx.eventlog/*/ssh-login-monitor
        ```

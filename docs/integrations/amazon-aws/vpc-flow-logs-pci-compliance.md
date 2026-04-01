@@ -26,7 +26,7 @@ You can use either of the following methods to collect Amazon VPC Flow Logs:
 ## Field Extraction Rule(s) for VPC Flow logs  
 Create Field Extraction Rule for VPC Flow Logs.
 
-```sumo
+```
 Rule Name: VPCFlowLogFER
 Applied at: Ingest Time
 Scope (Specific Data):

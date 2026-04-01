@@ -85,7 +85,7 @@ On Linux servers, the strings that you specify in an exe or pattern section are 
 
 Example: For filtering executable name containing nginx (i.e., `pgrep <exe>`)
 
-```sumo
+```
 [[inputs.procstat]]
     pid_tag=false
     exe = "nginx"
@@ -94,7 +94,7 @@ Example: For filtering executable name containing nginx (i.e., `pgrep <exe>`)
 
 Example: For filtering command lines containing config (i.e., `pgrep -f <pattern>`)
 
-```sumo
+```
 [[inputs.procstat]]
     pid_tag=false
         pattern = "config"
@@ -106,7 +106,7 @@ On servers running Windows Server, these strings are evaluated as WMI queries. (
 
 Example: For filtering executable name containing nginx.
 
-```sumo
+```
 [[inputs.procstat]]
     pid_finder = "native"
     pid_tag=false
@@ -115,7 +115,7 @@ Example: For filtering executable name containing nginx.
 
 Example: For filtering command lines containing config.
 
-```sumo
+```
 [[inputs.procstat]]
     pid_finder = "native"
     pid_tag=false
@@ -124,7 +124,7 @@ Example: For filtering command lines containing config.
 
 Example: For defining multiple patterns for multiple processes you can use the plugin multiple times.
 
-```sumo
+```
 [[inputs.procstat]]
    pid_tag=false
    exe = "nginx"

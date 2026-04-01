@@ -115,7 +115,7 @@ area and provide details of the event.
 
 To search the Audit Event Index or System Event Index for logs that describe Cloud SIEM events:
 
-1. Start a [log search](/docs/search/get-started-with-search/search-basics/about-search-basics/).
+1. Start a [log search](/docs/search/get-started-with-search/search-basics/about-search-basics/). 
 2. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:  
     ```sumo
     _index=sumologic_system_events

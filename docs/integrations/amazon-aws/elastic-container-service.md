@@ -297,7 +297,7 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 ## Creating Field Extraction Rule(s)
 
 Create a Field Extraction Rule for CloudTrail Logs ([learn more](/docs/manage/field-extractions/create-field-extraction-rule)).
-```sumo
+```
 Rule Name: AwsObservabilityECSCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):

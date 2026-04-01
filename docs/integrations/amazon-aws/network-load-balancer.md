@@ -61,7 +61,7 @@ Namespace for AWS Network Load Balancer Service is AWS/NetworkELB.
 Create a Field Extraction Rule for AWS Network Load Balancer Cloudtrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 **AWS Network Load Balancer CloudTrail Logs**
-```sumo
+```
 Rule Name: AwsObservabilityNLBCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.amazonaws.com" "2015-12-01"

@@ -87,7 +87,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)
 2. On your RabbitMQ Pods, add the following annotations:
-```sumo
+```sql
  annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -139,7 +139,7 @@ This section explains the steps to collect RabbitMQ logs from a Kubernetes envir
 
 1. **Add labels on your RabbitMQ pods to capture logs from standard output**. Make sure that the logs from RabbitMQ are sent to stdout. For more details see this [doc](https://www.rabbitmq.com/logging.html). Follow the instructions below to capture RabbitMQRabbitMQ logs from stdout on Kubernetes.
    1. Apply following labels to the RabbitMQ pods:
-    ```sumo
+    ```sql
     environment: "prod_CHANGE_ME"
      component: "messaging"
      messaging_system: "rabbitmq"
@@ -214,7 +214,7 @@ Enable the RabbitMQ management plugins by running the command below on every nod
  ```
 
 Create or modify telegraf.conf and copy and paste the text below:  
-```sumo
+```sql
 [[inputs.rabbitmq]]
            url = "http://localhost:15672"
            username = "<username_CHANGE_ME>"
@@ -272,7 +272,7 @@ Based on your infrastructure and networking setup choose one of these methods to
 To configure the log output destination to a log file, use one of the following settings, either in the[ configuration file](https://www.rabbitmq.com/logging.html).
 
 Edit or create file config: /etc/rabbitmq/rabbitmq.conf following below:
-```sumo
+```sql
 log.dir = /var/log/rabbitmq
 log.file = rabbitmq.log
 log.file.level = debug

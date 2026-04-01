@@ -93,7 +93,7 @@ CMD ["telegraf"]
 **Step 3. Add annotations on your Oracle pods**
 
 On your Oracle Pods, add the following annotations:
-```sumo
+```sql
 annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -190,13 +190,13 @@ For all other parameters, see [this doc](/docs/send-data/collect-from-other-data
 1. Determine the location of the Oracle log file on Kubernetes. This can be determined from the Oracle.conf for your Oracle cluster along with the mounts on the Oracle pods.
 1. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
 1. Add the following annotation in addition to the existing annotations.
-```sumo
+```sql
 annotations:
   tailing-sidecar: sidecarconfig;<mount>:<path_of_Oracle_log_file>/<SQLserver_log_file_name>
 ```
 
 Example:
-```sumo
+```sql
 annotations:
   tailing-sidecar: sidecarconfig;data:/var/opt/oracle/errorlog
 ```
@@ -324,7 +324,7 @@ The instructions for setting up the Oracle performance metrics script vary by op
 
    You can create a `telegraf.conf` file or modify an existing `telegraf.conf` file, then copy and paste the text below:
 
-```sumo
+```sql
 [[inputs.exec]]
   commands = ["/path_TO_BE_CHANGED/exec_oracle_metrics.sh"]
   timeout = "5s"
@@ -495,7 +495,7 @@ In this step, you install Python 3.7.10 for Linux.
   Version 19.3.0.0.0
   ```
 4. Run a sample SQL query to test the connection.
-  ```sumo
+  ```sql
   SQL> select BANNER from v$version;                
   BANNER
   ----------------------------------------
@@ -628,7 +628,7 @@ Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
 Version 19.3.0.0.0
 ```
 6. Run some sample SQL queries to test the connection.
-```sumo
+```sql
 SQL> select BANNER from v$version;
 BANNER
 -----------------------------------------------------------------

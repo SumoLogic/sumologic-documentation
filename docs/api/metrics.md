@@ -409,7 +409,7 @@ Example use of this API can be seen in [this Python script](https://gist.github.
 
 To use this script, set the (user, pw) variables and run these commands from an IPython or Jupyter notebook:
 
-```sumo
+```sql
 df = exampleQuery(user, pw, query)
 df.fillna(method='backfill').plot()
 plt.show()

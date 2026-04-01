@@ -71,7 +71,7 @@ The following information walks through [pino](https://www.npmjs.com/package/pin
       const { PinoInstrumentation } = require('@opentelemetry/instrumentation-pino');
       ```
    * Register `PinoInstrumentation`.
-      ```js
+      ```sql
       registerInstrumentations({
       instrumentations: [
          new PinoInstrumentation(),

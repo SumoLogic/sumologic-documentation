@@ -101,7 +101,7 @@ Ensure that you are monitoring your Kubernetes clusters with the Telegraf operat
 :::
 
 1. To collect metrics from a Kubernetes environment, add the following annotations on your Redis pods:
-  ```sumo
+  ```sql
    annotations:
       telegraf.influxdata.com/class: sumologic-prometheus
       prometheus.io/scrape: "true"
@@ -157,7 +157,7 @@ This section explains the steps to collect Redis logs from a Kubernetes environm
 
 1. **Collect Redis logs written to standard output**. If your Redis helm chart/pod is writing the logs to standard output, then follow the steps listed below.
    1. Apply the following labels to your Redis pods:
-    ```sumo
+    ```sql
     environment: "ENV_TO_BE_CHANGED"
     component: "database"
     db_system: "redis"    
@@ -220,7 +220,7 @@ This section provides instructions for configuring metrics collection for the Su
 3. Install Telegraf. Follow the steps in [this document ](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md)Use the [in this document following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. Configure and start Telegraf. As part of collecting metrics data from Telegraf, we will use the [Redis input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.  
    1. Create or modify the telegraf.conf file and copy and paste the text below:   
-    ```sumo
+    ```sql
     [[inputs.redis]]
       servers = ["tcp://localhost:6379"]
       namepass = ["redis"]

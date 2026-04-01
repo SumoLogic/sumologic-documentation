@@ -118,7 +118,7 @@ Namespace for **Amazon DynamoDB** Service is **AWS/DynamoDB**.
 
 Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
-```sumo
+```
 Rule Name: AwsObservabilityDynamoDBCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -135,7 +135,7 @@ Parse Expression:
 ### Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of CloudTraillogs and are ingesting them from all accounts into a single Sumo Logic CloudTraillog source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
-```sumo
+```
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data):

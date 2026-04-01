@@ -172,7 +172,7 @@ This section explains the steps to collect Cassandra logs from a Kubernetes envi
 
 1. Add labels on your Cassandra pods to capture logs from standard output on Kubernetes.
    1. Apply following labels to the Cassandra pods:
-     ```sumo
+     ```sql
      environment: "<Ex prod, stag>"
      component: "database"
      db_system: "cassandra"
@@ -208,12 +208,12 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra
    1. Determine the location of the Cassandra log file on Kubernetes. This can be determined from the Cassandra logback.xml for your Cassandra cluster along with the mounts on the Cassandra pods.
    2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
    3. Add the following annotation in addition to the existing annotations.
-   ```sumo
+   ```sql
    annotations:
      tailing-sidecar: sidecarconfig;<mount>:<path_of_Cassandra_log_file>/  <Cassandra_log_file_name>
    ```
   Example:
-   ```sumo
+   ```sql
    annotations:
      tailing-sidecar: sidecarconfig;data:/opt/bitnami/cassandra/logs/cassandra.log
    ```
@@ -260,7 +260,7 @@ This section provides instructions for configuring metrics collection for the Su
 
   Create or modify telegraf.conf and copy and paste the text below:  
 
-```sumo
+```sql
 [[inputs.jolokia2_agent]]
   urls = ["http://localhost:8778/jolokia"]
   name_prefix = "cassandra_java_"
@@ -386,7 +386,7 @@ Based on your infrastructure and networking setup choose one of these methods to
    * OFF
 
   To permanently add debug logging to a class permanently using the logback framework, use nodetool setlogginglevel to check you have the right class before you set it in the logback.xml file in install_location/conf. Modify to include the following line or similar at the end of the file:
-   ```sumo
+   ```xml
    <logger name="org.apache.cassandra.gms.FailureDetector" level="DEBUG"/>
    ```
   Restart the node to invoke the change.

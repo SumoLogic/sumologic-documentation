@@ -258,7 +258,7 @@ python3 $SCRIPT_PATH/esx_perf_metrics.py -s 192.168.124.29 -t sumologic_host -to
    * For more detailed information, see the shell script for configuration options.
 
     Sample CRON job to periodically run the **cron_vcenter_metrics.sh** script every 15 minutes (use the `sudo crontab -e` option), and add the following line:
-      ```sumo
+      ```sql
       */15 * * * * /var/log/vmware/cron_vcenter_metrics.sh
       ```
 
