@@ -172,7 +172,7 @@ To access the **Account Overview** tab:
 * **Plan**. Shows your subscription type (e.g., Trial, Enterprise Suite Flex).  
 * **Contract period**. Lists the start and end dates of your contract.  
 * **Live Dashboard Panels and Real-Time Alerts Count**. Displays the count of live dashboards and real-time alerts.
-* **Create Alert**. Click this button to create a monitor that sends a warning alert when 70% of credits are used and a critical alert when 90% of credits are used. This opens the **New Monitor** pane with a prefilled query. In the **Trigger Type** section, select the alert severity you want to configure, **Warning** or **Critical**, based on the percentage of credits consumed. You can then add your preferred notification channels, such as email, Slack, or webhooks, and save the monitor to create the alert. For more customization, refer to [Create a New Monitor](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions).
+* **Create Usage Alert**. Click this button to create a monitor that sends a warning alert when 70% of credits are used and a critical alert when 90% of credits are used. This opens the **New Monitor** pane with a prefilled query. In the **Trigger Type** section, select the alert severity you want to configure, **Warning** or **Critical**, based on the percentage of credits consumed. You can then add your preferred notification channels, such as email, Slack, or webhooks, and save the monitor to create the alert. For more customization, refer to [Create a New Monitor](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions).
 
 
 ### Total Credit Usage panel  
