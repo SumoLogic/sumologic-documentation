@@ -254,7 +254,7 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
     * If you selected only **Use Existing Source** or **Do Not Collect**, the solution is installed. Proceed to [Start using the solution](#start-using-the-solution).
 
        :::tip
-       Using only existing sources is the easiest way to install, since it means you don't have to create any new sources.
+       Using only existing sources is the easiest way to install, since it means you do not have to create any new sources.
        :::
 
     * If you selected **Create New Source** for *any* source, the following screen appears. You must perform the steps in the following sections:
