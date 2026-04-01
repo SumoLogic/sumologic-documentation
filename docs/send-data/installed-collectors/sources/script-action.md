@@ -148,7 +148,7 @@ is the output file of the Scheduled Search.
 
 If you run the following query:
 
-```
+```sumo
 _source=ScriptAction_Shell_Script
 ```
 

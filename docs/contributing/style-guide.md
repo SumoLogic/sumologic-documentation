@@ -335,7 +335,7 @@ Use single backticks (\` \`) to format inline code as monospace font. Example us
 
 <TabItem value="Markdown">
 
-```
+```sumo
 `_view = sumologic_slo_output`
 ```
 </TabItem>

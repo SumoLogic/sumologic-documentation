@@ -39,7 +39,7 @@ This guide provides an overview of the Sumo app for PostgreSQL features and Dash
 
 This sample query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
 
-```txt title="Query String"
+```sumo title="Query String"
 _sourceCategory=/PostgreSQL/*  db_system=postgresql db_cluster={{db_cluster}}
 | json auto maxdepth 1 nodrop
 | if (isEmpty(log), _raw, log) as _raw
@@ -570,6 +570,6 @@ postgresql_table_size<br/>
 
 ## Additional resources
 
-* Blogs: 
+* Blogs:
    * [How to use Kubernetes to deploy Postgres](https://www.sumologic.com/blog/kubernetes-deploy-postgres/)
-   * [PostgreSQL vs MySQL](https://www.sumologic.com/blog/postgresql-vs-mysql/) 
+   * [PostgreSQL vs MySQL](https://www.sumologic.com/blog/postgresql-vs-mysql/)

@@ -183,7 +183,7 @@ To configure the access keys expiration policy:
 
 Access key events are recorded in the Audit Event Index. To search for for access key events, run this query:
 
-```
+```sumo
 _index=sumologic_audit_events _sourceCategory=accessKeys
 ```
 

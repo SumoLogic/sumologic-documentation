@@ -41,7 +41,7 @@ You must update all of the indicated fields for the search to save successfully
 
 #### Query
 
-```
+```sumo
 _index=sumologic_volume and sizeInBytes and _sourceCategory="sourcename_volume"
 | parse regex "\"(?<sourcename>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "sizeInBytes", "count" as bytes, count
@@ -106,7 +106,7 @@ You must update the indicated field for the search to be successfully saved.
 
 #### Query
 
-```
+```sumo
 _index=sumologic_volume sizeInBytes
 | where _sourceCategory="collector_volume"
 | parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
@@ -153,7 +153,7 @@ This hourly alert is generated when both of the following occur:
 
 #### Query
 
-```
+```sumo
 _index=sumologic_volume sizeInBytes _sourceCategory="sourcecategory_volume"
 | parse regex "\"(?<_sourcecategory>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "sizeInBytes", "count" as bytes, count
@@ -204,7 +204,7 @@ This type of alert isn't suitable for ephemeral environments and can send false 
 
 #### Query
 
-```
+```sumo
 _index=sumologic_volume sizeInBytes _sourceCategory="collector_volume"
 | parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "sizeInBytes", "count" as bytes, count

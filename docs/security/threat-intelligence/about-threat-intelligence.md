@@ -117,7 +117,7 @@ Use the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-inde
 
 Use a search like the following:
 
-```
+```sumo
 _index=sumologic_audit_events _sourceCategory=threatIntelligence
 ```
 

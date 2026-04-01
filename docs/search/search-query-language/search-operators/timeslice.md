@@ -143,7 +143,7 @@ This query produces these results in the Aggregates tab, which you can display a
 
 **Example 3:** Monitoring non-normal status codes (400s and 500s) on Apache servers.
 
-```
+```sumo
 _sourceCategory=Apache/Access
 | parse "HTTP/1.1\" * " as status_code
 | where status_code >= 400

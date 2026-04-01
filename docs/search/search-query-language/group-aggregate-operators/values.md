@@ -38,7 +38,7 @@ This is an example of a response field with IP addresses:
 
 To identify all IP addresses by region:
 
-```
+```sumo
 _sourceCategory=Labs/*
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | values(ip_address) by region
@@ -46,7 +46,7 @@ _sourceCategory=Labs/*
 
 To identify all IP addresses and namespaces by region:
 
-```
+```sumo
 _sourceCategory=Labs/*
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | values(ip_address) as val_ip, values(namespace) as val_namespace by region

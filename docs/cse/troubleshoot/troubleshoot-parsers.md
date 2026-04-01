@@ -221,7 +221,7 @@ Following are some ways to gather samples.
 #### Search for message IDs
 
 Gather a sample by searching for the logs that are failing to parse using the identified `_messageId`(s):
-```
+```sumo
 _sourceCategory=<your/source/category>
 | where _messageId in (<messageId1>,<messageId2>,<etc.>)
 ```
@@ -229,7 +229,7 @@ _sourceCategory=<your/source/category>
 #### Identify an event ID
 
 If an entire source is failing to parse because it is not presently supported out-of-the-box, gather a sample by first identifying a likely event ID:
-```
+```sumo
 _sourceCategory=<your/source/category> 
 | fields eventID
 | first(_raw) by eventID
@@ -241,7 +241,7 @@ Utilizing the first operator lets you cut down on extraneous samples. It may be 
 #### Gather failing event IDs
 
 If a particular event ID or IDs as set in the parser using `MAPPER:event_id` are failing, gather the failing event IDs. Construct a search query using the failing event IDs and gather unique examples of each `_raw` per event ID:
-```
+```sumo
 _sourceCategory=<your/source/category>
 | fields eventID
 | where eventID in ("list","of","eventIDs")

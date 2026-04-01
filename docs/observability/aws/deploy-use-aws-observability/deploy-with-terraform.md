@@ -459,7 +459,7 @@ Here we have a **production** AWS account profile in **us-east-1** and **us-east
 * Since this is a single account, we can use the global account alias which is defined in **var.aws_account_alias**.
 * A hosted collector is created per AWS account. If you deploy the solution for multiple regions in the same AWS account, you should use the same collector that was created for the first region of the AWS account and for each subsequent region module as shown in the code.
 
-```
+```sumo
 module "production-us-east-1" {
   source = "./source-module"
   providers = { aws = aws.production-us-east-1 }
@@ -501,7 +501,7 @@ Here we have a **production** AWS account profile in **us-east-1** and **us-east
 * A hosted collector is created per AWS account. If you deploy the solution for multiple regions in the same account, you should use the same collector that was created for the first region of the account for each subsequent region module as shown in the code.
 * For each new AWS account, ensure you create a new hosted collector for first region and then reuse the same collector created within given AWS account for subsequent regions.
 
-```
+```sumo
 module "production-us-east-1" {
   source = "./source-module"
   providers = { aws = aws.production-us-east-1 }
@@ -1341,7 +1341,7 @@ sumologic_existing_collector_details = {
 
 **Override Example JSON:**
 
-```
+```sumo
 # Use the same collector created for module production-us-east-1 for the new source module.
   sumologic_existing_collector_details = {
     create_collector = false

@@ -194,7 +194,7 @@ For example, a single message for collector volume data may look similar to the 
 
 When you query the index, the query scope must include the following:
 
-```
+```sumo
 _index=sumologic_volume _sourceCategory=<index_source_category>
 ```
 

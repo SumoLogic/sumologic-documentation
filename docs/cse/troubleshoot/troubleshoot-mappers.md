@@ -148,7 +148,7 @@ Following are some ways to gather samples.
 #### Search for message IDs
 
 Gather a sample by searching for the map logs that are failing using the identified `_messageId`(s):
-```
+```sumo
 _sourceCategory=<your/source/category>
 | where _messageId in (<messageId1>,<messageId2>,<etc.>)
 ```
@@ -156,7 +156,7 @@ _sourceCategory=<your/source/category>
 #### Identify an event ID
 
 If a particular event ID or IDs as set in the parser using `MAPPER:event_id` are failing to map, gather the failing event IDs. Construct a search query using the failing event IDs and gather unique examples of each _raw per event ID.
-```
+```sumo
 _sourceCategory=your/source/category 
 | fields eventID
 | where eventID in ("list","of","eventIDs")

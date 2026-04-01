@@ -67,17 +67,17 @@ When you configure a Scheduled Search to create Cloud SIEM signals, you are prom
 
 Let's suppose that `user_username` is the entity field we want to use, and its value needs to be mapped to `actor.email`. Then you need to add the following line to the query: `actor.email as user_username`.
 
-And because the final output of this query is an aggregate, and Cloud SIEM signals expect `normalizedfield`, `stage`, and `entity`, we need need to add those in the `count` expression. 
+And because the final output of this query is an aggregate, and Cloud SIEM signals expect `normalizedfield`, `stage`, and `entity`, we need need to add those in the `count` expression.
 
 This is how the final query might look:
 
-```txt
+```sumo
 ((_index=sec_record_* objectType=*)
 AND _sourcename = "Google Apps Audit Event")
 AND _sourcecategory = "GoogleWorkspace/Groups"
 | 5 as normalizedseverity
 | "Initial Access" as stage
-| json auto 
+| json auto
 | actor.email as user_username
 | count by events.name, events.type, actor.email, event.parameters.user_email, event.parameters.group_email, user_username, stage, normalizedseverity
 ```
@@ -107,7 +107,7 @@ AND _sourcecategory = "GoogleWorkspace/Groups"
 ## View signals in Cloud SIEM
 
 To view signals that were created from a scheduled search, run a keyword search on “Scheduled Search” on the **Signals** page in the Cloud SIEM UI:
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Signals**. You can also click the **Go To...** menu at the top of the screen and select **Signals**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**, and then select **Signals** in the top menu. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Signals**. You can also click the **Go To...** menu at the top of the screen and select **Signals**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**, and then select **Signals** in the top menu.
 1. Click in the **Filters** field at the top of the screen.
 1. Type **Scheduled Search** and press Enter. The keyword search returns a list of all signals created by scheduled searches.
 1. Click a signal from the list. Below is a screenshot of a signal that was created from a scheduled search. Note that:

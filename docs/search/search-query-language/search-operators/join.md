@@ -104,7 +104,7 @@ returns results similar to:
 
 The join operator can consume significant processing time. Selectivity reduces the number of log messages that must be considered. To improve join operator performance, place the parse operators toward the start of the query expression, bringing the search anchors to the front of the search scope, as in this example:
 
-```
+```sumo
 ("starting stream from" OR "starting search") | join
 (parse "starting stream from *" AS a) AS t1,
 (parse "starting search * from parent stream *" AS b, c) AS t2

@@ -64,7 +64,7 @@ _siemDataType=Inventory
 
 You can scope your search using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata), for example, by specifying the source category assigned to the inventory source:
 
-```
+```sumo
 _sourceCategory=AD_inventory
 ```
 

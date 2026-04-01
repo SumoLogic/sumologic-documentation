@@ -74,7 +74,7 @@ HTTP/1.1", host: "example.com", referrer: "https://abc.example.com/"
 
 This sample query is from the [Nginx Plus - Overview](#overview) dashboard > **Responses Over Time** panel.
 
-```
+```sumo
 _sourceCategory=Labs/Nginx/Logs
 | json auto maxdepth 1 nodrop
 | if (isEmpty(log), _raw, log) as nginx_log_message

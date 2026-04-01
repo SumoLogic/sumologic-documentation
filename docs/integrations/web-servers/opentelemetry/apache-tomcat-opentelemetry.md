@@ -202,7 +202,7 @@ Dec 13, 2022 03:53:03 PM org.apache.catalina.startup.Catalina start INFO: Server
 ```
 
 ## Sample metrics
-```
+```sumo
 {
   "queryId":"A",
   "_source":"apache-tomcat-otel",

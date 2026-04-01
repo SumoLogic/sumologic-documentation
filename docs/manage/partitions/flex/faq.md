@@ -30,13 +30,13 @@ Yes, you can use [Role-Based Access Control (RBAC)](/docs/manage/users-roles/rol
 
 For example, if you want to restrict access to a partition whose routing expression is:
 
-```
+```sumo
 _sourceCategory=staging/*
 ```
 
 You can create a role with this role search filter:
 
-```
+```sumo
 !(_sourceCategory=staging/*)
 ```
 

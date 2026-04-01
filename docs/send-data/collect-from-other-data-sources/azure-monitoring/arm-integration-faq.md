@@ -58,7 +58,7 @@ The following is a Field Extraction Rule (FER) solution.
 
 You extract the resource type in FERs and override the `_sourceCategory` with `<custom source category for ex azure_logs/prod/NETWORKSECURITYGROUPS>` so that when a user searches, the new sourcecategory is used. For example:
 
-```
+```sumo
 _sourceCategory = azure_logs | json auto | parse field=resource_id  "/*/*"
 as resource_type, resource_name | concat('azure_logs/prod/", resource_type) as _sourceCategory
 ```
@@ -233,7 +233,7 @@ The following is a Field Extraction Rule (FER) solution.
 
 You extract the container name in FERs  and override the `_sourceCategory` with `_sourceCategory/<containername>` so that when a user searches the new sourcecategory is used. For example:
 
-```
+```sumo
 _sourceCategory = azure_logs | json auto | parse field=resource_id  "/NETWORKSECURITYGROUPS/*"
 as nsg_name | concat('azure_logs/", nsg_name) as _sourceCategory
 ```

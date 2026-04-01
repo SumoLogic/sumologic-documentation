@@ -117,7 +117,7 @@ produces these results:
 
 In addition, you can assign names to fields that differ from their original key names. To use `aID` instead of `accountId` and `eName` instead of `eventName`, you'd use the `as` option like this:
 
-```
+```sumo
 _index=sumologic_audit_events | json "accountId", "eventName" as aID, eName | fields aID, eName
 ```
 

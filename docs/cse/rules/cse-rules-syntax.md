@@ -1048,13 +1048,13 @@ attribute.
 
 **Examples**
 
-```
+```sumo
 | json field=fields "foo" as alias
 | where toInt(alias) > 5
 ```
 
 
-```
+```sumo
 | json field=fields "packetsSent" as packets_sent
 | json field=fields "packetsReceived" as packets_received
 | where toInt(packets_sent) != toInt(packets_received)

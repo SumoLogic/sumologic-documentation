@@ -73,7 +73,7 @@ Running a query containing a `matches` operator on Apache Access logs can show y
 
 Running a search like:
 
-```
+```sumo
 _sourceCategory=Apache/Access
 | extract "\"[A-Z]+ \S+ HTTP/[\d\.]+\" \S+ \S+ \S+ \"(?<agent>[^\"]+?)\""
 | if (agent matches "*Windows NT*","Windows","Other") as OS

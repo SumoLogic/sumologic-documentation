@@ -281,7 +281,7 @@ This section provides a sample query from the **Top Processes** panel of the **C
 #### Query String
 
 
-```
+```sumo
 _sourceCategory="Labs/cb-edr-json" | parse regex "(?:process_name)(?:\"\:\"|=')
 (?<process_name>.*?)(?:\"|')" multi | parse regex "ioc_type(?:\"\:\"|=')(?<ioc_type>.*?)(?:\"|')
 " nodrop | parse regex "feed_name(?:\"\:\"|=')(?<feed_name>.*?)(?:\"|')" nodrop | parse regex

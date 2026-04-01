@@ -97,7 +97,7 @@ The outlier values are represented by the pink triangles in the resulting chart.
 Run the following query to find outlier values in Apache logs over the
 last 3 hours.
 
-```
+```sumo
 _sourceCategory=Apache/Access
 | parse "HTTP/1.1\" * " as status_code
 | where status_code matches "5*"

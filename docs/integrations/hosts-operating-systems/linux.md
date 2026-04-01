@@ -147,7 +147,7 @@ _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("
 Returns all failed authentication attempts by either a user or a process. Suggested time range: -1 day.
 
 
-```
+```sumo
 _sourceCategory=*linux* ("authentication failure" or "FAILED SU" or "input_userauth_request: invalid user" or "Invalid user" or "Failed publickey" or "Failed password")
 | parse regex "\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S+)\s(?<process_name>\w*)(?:\[|:)" nodrop
 | parse " user = * " as dest_user nodrop

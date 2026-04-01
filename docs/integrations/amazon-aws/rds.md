@@ -482,7 +482,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 #### Create/Update Field Extraction Rule(s) for RDS CloudWatch logs
 
 
-```
+```sumo
 Rule Name: AwsObservabilityGenericCloudWatchLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):

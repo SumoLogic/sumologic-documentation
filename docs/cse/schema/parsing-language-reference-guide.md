@@ -1028,7 +1028,7 @@ Using the "default" transform and the "none" transform together without any o
 
 **Examples**
 
-```
+```sumo
 [transform:Parse Logs]
 VARIABLE_TRANSFORM_INDEX = event.event_type_id
 VARIABLE_TRANSFORM:1 = Parse Logs_Event Type 1

@@ -250,7 +250,7 @@ This is a sample log message for non-Kubernetes environments.
 
 This sample query is from the **Puppet - Overview** dashboard > **Node Requests Summary Over Time** panel.
 
-```
+```sumo
 %"sumo.datasource"=puppet
 | parse regex "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop
 | parse regex "(?<method>[A-Z]+)\s(?<url>\S+)\sHTTP/[\d\.]+\"\s(?<status_code>\d+)\s(?<size>[\d-]+)\s\"(?<referrer>.*?)\"\s\"(?<user_agent>.+?)\".*"
