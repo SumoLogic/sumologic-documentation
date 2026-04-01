@@ -269,7 +269,7 @@ This section explains the steps to collect Squid Proxy logs from a Kubernetes en
 
 1. **(Recommended Method) Add labels on your Squid Proxy pods to capture logs from standard output**. Make sure that the logs from Squid Proxy are sent to stdout. Follow the instructions below to capture Squid Proxy logs from stdout on Kubernetes.
    1. Apply the following labels to the Squid Proxy pod:
-    ```sumo
+    ```sql
     environment="prod_CHANGEME"
     component="proxy"
     proxy_system="squidproxy"

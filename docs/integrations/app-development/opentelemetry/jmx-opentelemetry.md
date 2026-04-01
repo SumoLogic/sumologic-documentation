@@ -35,7 +35,7 @@ For more information on different metrics collected, refer to the [JMX receiver 
 
 ### Sample metrics query
 
-```sumo
+```sql
 sumo.datasource=jmx metric=jvm.memory.heap.used
 ```
 

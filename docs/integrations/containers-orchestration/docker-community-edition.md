@@ -234,7 +234,7 @@ Follow the instructions for the operating system of the host where you will inst
 
 ### Step 4: Add a Docker stats source
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Stats**, then for Content Type select **Logs (JSON)** to collect data as JSON logs.
 4. Configure the following source fields:
@@ -337,17 +337,17 @@ Docker engine events log data doesn't support the tagging with metadata.
 
 ---
 For example:
-```sumo
+```sql
 {{container.ID}}
 ```
 
 You can use multiple variables, for example:
-```sumo
+```sql
 {{container.ID}}-{{label.label_name}}-{{env.var_name}}
 ```
 
 You can incorporate text in the metadata expression, for example:
-```sumo
+```sql
 ID-{{container.ID}}-AnyTextYouWant{{label.label_name}}
 ```
 

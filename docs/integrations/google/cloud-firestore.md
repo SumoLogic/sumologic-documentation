@@ -24,7 +24,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Firestore int
 ### Configure logs collection
 
 * Collect **Audit Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). These Audit Logs can be accessed based on the [permissions and roles](https://cloud.google.com/firestore/docs/audit-logging#audit_log_permissions). To enable logging for Google Firestore, refer to [Google documentation](https://cloud.google.com/firestore/docs/audit-logging#enabling_audit_logging). For more detail on Firestore operations being audited, refer to [audited operations](https://cloud.google.com/firestore/docs/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
-   ```sumo
+   ```sql
    (resource.type=(datastore_database OR datastore_index))
    ```
 

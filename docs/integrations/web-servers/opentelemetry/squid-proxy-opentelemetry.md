@@ -151,7 +151,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ### Sample log messages in Non-Kubernetes environments
 
-```sumo
+```sql
 1674483805.439 44 192.168.100.40 TCP_REFRESH_MODIFIED/301 514 GET http://openstack.org/ - HIER_DIRECT/192.168.100.40 text/html
 ```
 

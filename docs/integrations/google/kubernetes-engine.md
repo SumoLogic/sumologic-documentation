@@ -184,7 +184,7 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 
 ### Sample queries
 
-```sumo title="Error Stream - Google Cloud Logging"
+```sql title="Error Stream - Google Cloud Logging"
 _source="GKE Cloud Logs" error
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | json field=_raw "message.data.jsonPayload.message" as message
@@ -194,7 +194,7 @@ _source="GKE Cloud Logs" error
 | count by timestamp, project, cluster,log_name, message
 ```
 
-```sumo title="Created Resources by Node Over Time - Google Cloud Logging"
+```sql title="Created Resources by Node Over Time - Google Cloud Logging"
 _sourceCategory = "GKE Cloud Logs" logName reason host "\"type\":\"gke_cluster\"" "\"reason\":\"Created\""
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/events"
@@ -256,7 +256,7 @@ To create an export of GKE logs, do the following:
     2. Select "Cloud Pub/Sub" as the **Sink Service**.
     3. Set **Sink Destination** to the Pub/Sub topic you created in the [Google Cloud Platform Source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source) procedure. For example, "pub-sub-logs".
     4. In “**Choose logs to include in sink**” Section : Determine the **GCP services** for which you need to get the logs. Also the logsName filter can be added in the inclusion filter for minimizing the logs send to Sumo Logic for the GKE app. This inclusion filter can be taken as:
-```sumo
+```sql
 (resource.type="gke_cluster" OR resource.type="k8s_cluster" OR resource.type="k8s_node" OR resource.type="k8s_pod" )  \
 AND (logName="projects/<project_name></em>/logs/events" OR \
 logName="projects/<project_name></em>/logs/kube-proxy" OR \

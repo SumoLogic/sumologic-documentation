@@ -23,7 +23,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Auto Scaler i
 ### Configure logs collection
 
 * Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). When you enable autoscaling, the [autoscaler](https://cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs) makes scaling decisions based on the options that you specify. Each scaling decision is logged by Cloud Logging which can be collected. While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
-   ```sumo
+   ```sql
    (resource.type=autoscaler)
    ```
 

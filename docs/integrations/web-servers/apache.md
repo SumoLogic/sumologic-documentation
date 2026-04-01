@@ -364,7 +364,7 @@ For error logs, the following directives are to be noted:
     * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
     * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
     * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
-    ```sumo
+    ```sql
     component = webserver
     webserver_system = apache
     webserver_farm = <your_apache_webserver_farmname>

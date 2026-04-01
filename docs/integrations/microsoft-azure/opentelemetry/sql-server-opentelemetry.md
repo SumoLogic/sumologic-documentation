@@ -242,7 +242,7 @@ This is a sample log query from the **Error and warning count** panel in the **S
 
 This is a sample metrics query from the **Page Buffer hit ratio %** panel in the **SQL Server - Performance Counters** dashboard.
 
-```sumo
+```sql
 sumo.datasource=sqlserver deployment.environment=* db.cluster.name=* metric=sqlserver.page.buffer_cache.hit_ratio
 ```
 

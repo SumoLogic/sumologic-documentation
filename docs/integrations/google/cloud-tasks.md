@@ -23,7 +23,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Tasks integra
 ### Configure logs collection
 
 * Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Follow the [instructions](https://cloud.google.com/tasks/docs/logging#turning_on_logging) to enable logging for Google Cloud tasks. While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
-   ```sumo
+   ```sql
    resource.type=cloud_tasks_queue
    ```
 

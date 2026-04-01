@@ -178,7 +178,7 @@ To learn how to create field extraction rules, [Create a Field Extraction Rules]
 
 Create a field extraction rule for cloudTrail logs:
 
-```sql
+```sumo
 Rule Name: AwsObservabilityApiGatewayCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -194,7 +194,7 @@ Parse Expression:
 
 Create a field extraction rule for access logs:
 
-```sql
+```sumo
 Rule Name: AwsObservabilityApiGatewayAccessLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -208,7 +208,7 @@ json "apiId", "domainName", "stage" as apiId, domainName, stage
 
 Create/Update field extraction rule(s) for cloudwatch logs:
 
-```sql
+```sumo
 Rule Name: AwsObservabilityGenericCloudWatchLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -234,7 +234,7 @@ if (isEmpty(namespace),"unknown",namespace) as namespace
 
 Create the following metrics rule for the AWS API Gateway app, if not already created. To learn how to create a metrics rule, see [Metrics Rules Editor](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
 
-```sumo
+```sql
 Rule name: AwsObservabilityApiGatewayApiNameMetricsEntityRule
 Metric match expression: Namespace=AWS/ApiGateway apiid=*
 Variable name: apiname
@@ -541,7 +541,7 @@ To configure a CloudTrail Source, perform these steps:
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following field extraction rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
 
-```sql
+```sumo
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data):

@@ -365,7 +365,7 @@ Based on your infrastructure and networking setup choose one of these methods to
 2. **Configure ActiveMQ to log to a Local file**. By default, ActiveMQ logs are stored in `<Folder ActiveMQ Installed>/data/activemq.log`. The default directory for log files is listed in the [log4j.properties](https://github.com/apache/activemq/blob/main/activemq-console/src/test/resources/log4j2-test.properties) file. To configure the log output destination to a log file:
    * Navigate to directory : `<Folder ActiveMQ Installed>`
    * Open file log4j.properties and edit options below:
-     ```sumo
+     ```sql
      log4j.appender.logfile.file=${activemq.data}/activemq.log
      log4j.appender.logfile.maxFileSize=10240MB
      log4j.logger.org.apache.activemq=DEBUG

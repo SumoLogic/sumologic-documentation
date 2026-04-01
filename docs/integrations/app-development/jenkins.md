@@ -188,7 +188,7 @@ The Jenkins app uses the following log types:
 }
 ```
 
-```sumo title="Console Logs"
+```sql title="Console Logs"
 [2019-06-04 09:02:37,386 +00:00] channel stopped
 ```
 

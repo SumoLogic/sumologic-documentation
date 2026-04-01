@@ -92,8 +92,8 @@ To install the app, do the following:
 3. Optionally, on this page, you can also see a preview of the dashboards included with the app.
 4. Click **Add Integration**.
 5. On the next configuration page, titled **Install App**, follow the instructions (Add Repo, Monitor & Alert Installation, Install Helm chart). When you're done, click **Next**.
-   :::note 
-   Helm chart installation via command line is required in order to install the Kubernetes app and see the dashboards in the next step. 
+   :::note
+   Helm chart installation via command line is required in order to install the Kubernetes app and see the dashboards in the next step.
    :::
 6. (Optional) On the next configuration step, titled **Preview & Done**, click the blue **Explore Dashboards** button or **Open Dashboards in Library** to check out your Kubernetes dashboards. Here, you'll also be given the options to add another cluster, configure Kubernetes monitors, or manage your collectors.
 
@@ -113,7 +113,7 @@ For details on the individual alerts, see [Kubernetes Alerts](/docs/observabilit
 
 1. Download the [JSON file](https://raw.githubusercontent.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/main/monitor_packages/kubernetes/kubernetes.json) describing all the monitors.   
 2. The alerts should be restricted to specific clusters and/or namespaces to prevent the monitors hitting the cardinality limits. To limit the alerts, update the JSON file by replacing the text `$$kubernetes_data_source` with `<Your Custom Filter>`. For example: `cluster=k8s-prod.01`.
-3. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
+3. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**.
 4. Click **Add**.
 5. Click **Import** to import monitors from the JSON above.
 
@@ -137,7 +137,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
    1. All monitors are disabled by default on installation. If you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
   1. By default, the monitors are configured in a monitor folder called **Kubernetes**, if you would like to change the name of the folder, update the monitor folder name in this file.
 1. If you would like the alerts to send email or connection notifications, modify the file **kubernetes_notifications.auto.tfvars** and populate `connection_notifications_critical`, `connection_notifications_warnings`, `connection_notifications_missingdata` and `email_notifications_critical`, `email_notifications_warnings`, `email_notifications_missingdata` as per the below examples.
-   ```txt title="Pagerduty Connection Example"
+   ```sql title="Pagerduty Connection Example"
    connection_notifications_critical = [
        {
          connection_type       = "PagerDuty",
@@ -154,7 +154,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
      ]
    ```
    Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/docs/api/monitors-management). For information on overriding payload for different connection types, refer to [this document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-   ```txt title="Email Notifications Example"
+   ```sql title="Email Notifications Example"
    email_notifications_critiical = [
        {
          connection_type       = "Email",

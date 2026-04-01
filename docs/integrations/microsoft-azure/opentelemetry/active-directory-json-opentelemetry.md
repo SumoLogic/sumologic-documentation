@@ -120,7 +120,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample log messages
 
-```sumo
+```sql
 {
 record_id:"121139",
 channel:"Security",

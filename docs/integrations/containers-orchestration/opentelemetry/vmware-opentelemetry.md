@@ -148,7 +148,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 This sample query is from the **VMWare - Overview** > **Top 25 ESXi Hosts - CPU Utilization** panel.
 
-```sumo title="Metric query"
+```sql title="Metric query"
 sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.name=* vcenter.cluster.name=* vcenter.host.name=* | topk(25,avg)
 ```
 

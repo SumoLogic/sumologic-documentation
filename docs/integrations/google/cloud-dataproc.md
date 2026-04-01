@@ -24,12 +24,12 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Dataproc inte
 ### Configure logs collection
 
 * Collect **Audit Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). These Audit Logs can be accessed based on the [permissions and roles](https://cloud.google.com/dataproc/docs/guides/audit-logging#audit_log_permissions). To enable logging for Google Dataproc, refer to [Google documentation](https://cloud.google.com/dataproc/docs/guides/audit-logging#enabling_audit_logging). For more detail on Dataproc operations being audited, refer to [audited operations](https://cloud.google.com/dataproc/docs/guides/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
-   ```sumo
+   ```sql
    (resource.type=audited_resource resource.labels.service=dataproc.googleapis.com)
    ```
 
 * Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Dataproc platform logs include job logs and cluster logs. [Here](https://cloud.google.com/dataproc/docs/guides/logging#permissions) are the permissions required to access job and cluster logs. While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
-   ```sumo
+   ```sql
    (resource.type=(cloud_dataproc_cluster OR cloud_dataproc_job))
    ```
 

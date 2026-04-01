@@ -118,7 +118,7 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
 
 1. **Add labels on your Couchbase pods to capture logs from standard output on Kubernetes (recommended)**.
    1. Apply following labels to the Couchbase pod:
-    ```sumo
+    ```sql
     environment = "prod_CHANGEME"
     component = "database"
     db_system = "couchbase"
@@ -202,7 +202,7 @@ To collect logs directly from your Couchbase machine, use an Installed Collector
   * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
   * **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
   * **Fields.** Set the following fields
-     ```sumo
+     ```sql
      component = database
      db_system = couchbase
      db_cluster = <Your_Couchbase_Cluster_Name>

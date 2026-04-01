@@ -118,6 +118,6 @@ Here are legacy variables available for alert notifications from metrics monitor
 
 ### Email message
 
-```sumo
+```sql
 Monitor Alert: {{TriggerTimeRange}} on {{Name}}
 ```
