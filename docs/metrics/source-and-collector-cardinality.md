@@ -20,7 +20,7 @@ To address this, you can now run a query to identify cardinality at the source l
 
 Use the query below to determine the cardinality associated with sources for a specific collector.
 
-```sumo
+```sql
 _view=sumologic_volume _sourceCategory=cardinalityPerSourceCollector
   | parse regex "bucket:\s+(?<bucket>\S+)" nodrop
   | parse regex "(?<collectorId>[^;\s]+);(?<sourceId>\d+):(?<cardinality>\d+)" multi

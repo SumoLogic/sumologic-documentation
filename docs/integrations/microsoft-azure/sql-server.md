@@ -66,7 +66,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 1. **[Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)**.
 2. **Add annotations on your SQL Server pods**. Before you add annotations, you need to create a login on every SQL Server pod  you want to monitor, with following script:
-  ```sumo
+  ```sql
   USE master;
   GO
   CREATE LOGIN [Username_ENV_TO_BE_CHANGED] WITH PASSWORD=N'Password_CHANGE_ME';

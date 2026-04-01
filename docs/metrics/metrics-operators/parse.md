@@ -14,7 +14,7 @@ Each wildcard in the pattern corresponds to a specified field. The parse operato
 
 ## Syntax
 
-```sumo
+```sql
 parse [field=FIELD] PATTERN as PARSED_FIELD [, PARSED_FIELD, ...]
 ```
 
@@ -30,13 +30,13 @@ Where:
 
 In this query, we parse the `LoadBalancer` field. The format of the field is `type/name/id`, for example:   
 
-```sumo
+```sql
 app/app-song-8d/4567223890123456
 ```
 
 This query creates a field for each of the forward-slash-separated segments:  
 
-```sumo
+```sql
 AvailabilityZone=us-west-1a metric=HTTPCode_Target_2XX_Count | parse field=LoadBalancer */*/* as type, name, id
 ```
 
@@ -46,6 +46,6 @@ The `parse` operator creates fields named `type`, `name`, and `id` that have the
 
 You can use the field(s) you’ve parsed within the same query, after the `parse` operator. for example, this query parses the `name` field out of the  `LoadBalancer` field, returns the average value of the `HTTPCode_Target_2XX_Count` metric by the `name` field.
 
-```sumo
+```sql
 AvailabilityZone=us-west-1a metric=HTTPCode_Target_2XX_Count | parse field=LoadBalancer */*/* as type, name, id | avg by name
 ```

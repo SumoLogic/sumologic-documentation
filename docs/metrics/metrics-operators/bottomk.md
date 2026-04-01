@@ -9,7 +9,7 @@ The `bottomk` operator applies a specified aggregation function to the time seri
 
 ## Syntax
 
-```sumo
+```sql
 bottomk (N, SCALAR_EXPRESSION) [by FIELD [, FIELD, ...]]
 ```
 
@@ -35,7 +35,7 @@ Where: 
 
 This query ranks the time series that match the query selector by the average value of the `CPU_Sys` metric over the time range, and returns the bottom 5 time series.
 
-```sumo
+```sql
 _contentType=HostMetrics metric=CPU_Sys | bottomk (5, avg)
 ```
 
@@ -43,7 +43,7 @@ _contentType=HostMetrics metric=CPU_Sys | bottomk (5, avg)
 
 This query applies a math expression to each time series that matches the query selector. The math expression calculates the average value over the time range, plus 3 standard deviations.  The time series are ranked by the calculated value, and the bottom 5 time series are returned.
 
-```sumo
+```sql
 _contentType=HostMetrics metric=CPU_Sys | bottomk (5, avg + 3 * stddev)
 ```
 
@@ -51,6 +51,6 @@ _contentType=HostMetrics metric=CPU_Sys | bottomk (5, avg + 3 * stddev)
 
 This query calculates 10th percentile of the `Mem_FreePercent` metric for each time series that matches the query, ranks the time series on that basis, and returns the bottom 5 time series. 
 
-```sumo
+```sql
 _contentType=HostMetrics metric=Mem_FreePercent | bottomk (5, pct (10))
 ```

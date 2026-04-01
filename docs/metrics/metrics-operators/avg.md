@@ -10,7 +10,7 @@ The `avg` operator calculates the average of all matching time series. If groupi
 
 ## Syntax
 
-```sumo
+```sql
 avg [by FIELD [, FIELD, ...]]
 ```
 
@@ -20,7 +20,7 @@ avg [by FIELD [, FIELD, ...]]
 
 This query returns the average value of the `RequestCount` metric across matching time series.  
 
-```sumo
+```sql
 Namespace=AWS/ApplicationELB metric=RequestCount Statistic=Sum AvailabilityZone=* Region=* TargetGroup=* | avg 
 ```  
 
@@ -30,7 +30,7 @@ Namespace=AWS/ApplicationELB metric=RequestCount Statistic=Sum AvailabilityZone=
 
 This query returns the average value of the `RequestCount` metric by one field—`TargetGroup`—across all matching time series, for the selected query range. Each line on the chart corresponds to a `TargetGroup`.
 
-```sumo
+```sql
 Namespace=AWS/ApplicationELB metric=RequestCount Statistic=Sum AvailabilityZone=* Region=* TargetGroup=* | avg by TargetGroup
 ```  
  
@@ -38,6 +38,6 @@ Namespace=AWS/ApplicationELB metric=RequestCount Statistic=Sum AvailabilityZone=
 
 Returns the average value of the metric by two fields—`TargetGroup` and `_sourceName`—across all matching time series, for the selected query range. Each line on the chart corresponds to a `_resourceName-TargetGroup` combination.
 
-```sumo
+```sql
 Namespace=AWS/ApplicationELB metric=RequestCount Statistic=Sum AvailabilityZone=* Region=* TargetGroup=* | avg by TargetGroup, _sourceName
 ```

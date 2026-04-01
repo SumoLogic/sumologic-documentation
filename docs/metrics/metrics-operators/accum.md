@@ -13,7 +13,7 @@ values.
 
 ## Syntax
 
-```sumo
+```sql
 accum
 ```
 

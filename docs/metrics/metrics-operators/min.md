@@ -10,7 +10,7 @@ The `min` operator calculates the minimum value of the time series that match t
 
 ## Syntax
 
-```sumo
+```sql
 min [by FIELD [, FIELD, ...]]
 ```
 
@@ -20,7 +20,7 @@ min [by FIELD [, FIELD, ...]]
 
 This query returns the minimum `CPU_Sys` value for each time interval across all matching time series.
 
-```sumo
+```sql
 dep=prod metric=CPU_Sys | min
 ```
 
@@ -28,7 +28,7 @@ dep=prod metric=CPU_Sys | min
 
 This query returns the minimum `CPU_Sys` value by node for each time interval across all matching time series.
 
-```sumo
+```sql
 cluster=search metric=CPU_Sys | min by node
 ```  
  

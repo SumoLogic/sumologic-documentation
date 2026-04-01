@@ -509,7 +509,7 @@ if (isEmpty(namespace),"unknown",namespace) as namespace
 
 Create the following two Metric Rules for the aws/rds namespace if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
 
-```sumo title="Rule 1"
+```sql title="Rule 1"
 Rule name: AwsObservabilityRDSClusterMetricsEntityRule
 Metric match expression: Namespace=AWS/RDS DBClusterIdentifier=*
 Variable name: dbidentifier
@@ -517,7 +517,7 @@ Tag sequence: $DBClusterIdentifier._1
 Save it
 ```
 
-```sumo title="Rule 2"
+```sql title="Rule 2"
 Rule name: AwsObservabilityRDSInstanceMetricsEntityRule
 Metric match expression: Namespace=AWS/RDS DBInstanceIdentifier=*
 Variable name: dbidentifier

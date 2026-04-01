@@ -290,12 +290,12 @@ In the **Container Filter** field, you can enter a comma-separated list of one o
 * An exclusion (denylist) filter, which begins with an exclamation mark, for example, `!master-container` or `!prod-*`
 
 For example, this filter list will cause the source to collect from all containers whose names start with `prod-`, except those that match `prod-*-mysql`. It will also collect from containers with names that match `master-*-app-*`, and from the `sumologic-collector` container:
-```sumo
+```sql
 prod-*, !prod-*-mysql, master-*-app-*, sumologic-collector
 ```
 
 If your filter list contains only exclusions, the source will collect all containers except from those that match your exclusion filters. In the example below, it will cause the source to exclude containers whose names begin with `container123` and `prod-`.
-```sumo
+```sql
 !container123*, !prod-*
 ```
 

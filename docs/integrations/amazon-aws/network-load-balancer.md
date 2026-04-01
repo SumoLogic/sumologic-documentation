@@ -85,7 +85,7 @@ json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name",
 
 Create the following Metric Rule for the AWS/NetworkELB namespace if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
 
-```sumo title="Rule 1*"
+```sql title="Rule 1*"
 Rule name: AwsObservabilityNLBMetricsAddonEntityRule
 Metric match expression: Namespace=AWS/NetworkELB LoadBalancer=*
 Variable name: networkloadbalancer

@@ -17,7 +17,7 @@ The `predict` operator outputs two time series: the original input time series a
 
 ## Syntax
 
-```sumo
+```sql
 predict [model=<model>] [forecast=<forecast>] [ar.window=<ar.window>]
 ```
 
@@ -47,11 +47,11 @@ Where:
 In this example, a developer would like to forecast Read Capacity Consumed for an AWS DynamoDB table over the next 24 hours. Series B in the screenshot below provides the input for the actual Read Capacity Consumed time series. Series C takes Series B as input to create a forecast using the auto-regression model 24 hours into the future.
 
 Series B:
-```sumo
+```sql
 namespace=aws/dynamodb account=prod region=us-east-2 tablename=kinesistosumologicconnector metric=ConsumedReadCapacityUnits Statistic=Maximum
 ```
 Series C:
-```sumo
+```sql
 #B |  predict model=ar forecast=24h
 ```
 The forecast is compared with the Provisioned Read Capacity (Series A) so that the developer can validate if the DynamoDB table has sufficient read capacity to support forecasted read consumption.
@@ -62,7 +62,7 @@ The forecast is compared with the Provisioned Read Capacity (Series A) so that t
 
 Sumo Logic APM renders golden signals from trace data as request, error, and latency time series. In this example, the developer of the “coffee-bar-app” wants to forecast requests per hour for the “coffee-machine” service using metrics derived from transaction traces. The the auto-regressive model predicts requests per hour 50 data points into the future:
 
-```sumo
+```sql
 metric=service_requests _contentType=metricfromtrace application="the-coffee-bar-app" service="the-coffee-machine" | quantize 1h using sum  | sum | fillmissing interpolation | predict model=ar forecast=50
 ```
 <img src={useBaseUrl('img/metrics/predict-2.png')} alt="example query 2"/>

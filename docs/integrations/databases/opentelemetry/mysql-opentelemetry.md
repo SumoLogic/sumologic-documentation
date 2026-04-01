@@ -66,7 +66,7 @@ Configure MySQL to log to a local file(s). MySQL logs written to a log file can 
 1. Open `my.cnf` in a text editor.
 2. Set the following parameters in the `[mysqld]` section:
 
-  ```sumo
+  ```sql
   [mysqld]
   log_error = /var/log/mysql/error.log
   slow_query_log=1

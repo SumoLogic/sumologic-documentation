@@ -9,7 +9,7 @@ The `pct` operator calculates, at each timestamp, the nth percentile of values o
 
 ## Syntax
 
-```sumo
+```sql
 pct(DOUBLE) [by FIELD [, FIELD, ...]]
 ```
 
@@ -21,7 +21,7 @@ Where `DOUBLE` is floating point number between 0.0 and 100.0, both inclusive.
 
 This query calculates a single time series, where each plotted value is the 95th percentile of the `MemoryUsed` metric of the input time series for a timeslice.  
 
-```sumo
+```sql
 metric=MemoryUsed | pct(95.0)
 ```
 
@@ -29,6 +29,6 @@ metric=MemoryUsed | pct(95.0)
 
 This query is similar to the previous but it calculates the percentile of the `MemoryUsed` metric by a metric field, in this case, `node`. The query returns a time series for each node; each plotted point in a time series corresponds to the 95th percentile of all of the input time series with that `node` value, for a timeslice.
 
-```sumo
+```sql
 metric=MemoryUsed | pct(95.0) by node
 ```

@@ -9,7 +9,7 @@ The `max` operator calculates the maximum value of the time series that match th
 
 ## Syntax
 
-```sumo
+```sql
 max [by FIELD [, FIELD, ...]]
 ```
 
@@ -20,7 +20,7 @@ max [by FIELD [, FIELD, ...]]
 This query returns the maximum `CPU_Sys` value for each time interval
 across all matching time series.
 
-```sumo
+```sql
 dep=prod metric=CPU_Sys | max
 ```
 
@@ -28,7 +28,7 @@ dep=prod metric=CPU_Sys | max
 
 This query returns the maximum `CPU_Sys` value by node for each time interval across all matching time series.
 
-```sumo
+```sql
 cluster=search metric=CPU_Sys | max by node
 ```  
  

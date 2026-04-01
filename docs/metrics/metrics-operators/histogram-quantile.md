@@ -10,29 +10,29 @@ operator.
 
 ## Syntax
 
-```sumo
+```sql
 histogram_quantile(quantile)
 ```
 
 ## Examples
 
-```sumo
+```sql
 * | histogram_quantile(.99)
 ```
 
-```sumo
+```sql
 * | histogram_quantile(.5)
 ```
 
 The following PromQL query to measure the 99th quantile of the `apiserver_request_latencies` histogram:
 
-```sumo
+```sql
 histogram_quantile(0.99, rate(apiserver_request_latencies_bucket{}[5m]))
 ```
 
 It would be written in Sumo Logic as:
 
-```sumo
+```sql
 metric=apiserver_request_latencies_bucket | quantize using max | delta | histogram_quantile(0.99)
 ```
 

@@ -11,7 +11,7 @@ The `delta` operator updates the `metric` dimension, if present, to `delta($metr
 
 ## Syntax
 
-```sumo
+```sql
 delta [increasing | decreasing | counter]
 ```
 
@@ -27,7 +27,7 @@ You can also use the `increasing` or `decreasing` option to make `delta` conside
 
 This query returns a time series that reflects the difference in the `Net_InBytes`  metric for the `eth0` interface  between a charted value and the one preceding it.
 
-```sumo
+```sql
 metric=Net_InBytes Interface=eth0 | delta
 ```
 
@@ -35,7 +35,7 @@ metric=Net_InBytes Interface=eth0 | delta
 
 This query returns a time series that reflects the difference in the `elasticsearch_jvm_mem_heap_used_in_bytes`  metric between a charted value and the one preceding it, only considering pairs of consecutive points where the second point is greater than the first point.
 
-```sumo
+```sql
 metric=elasticsearch_jvm_mem_heap_used_in_bytes | delta increasing
 ```
 
@@ -43,6 +43,6 @@ metric=elasticsearch_jvm_mem_heap_used_in_bytes | delta increasing
 
 This query returns a time series that reflects the difference in the `apiserver_request_total` counter between a charted value and the one preceding it, accounting for counter resets.
 
-```sumo
+```sql
 metric=apiserver_request_total | delta counter
 ```

@@ -138,7 +138,7 @@ Example: For defining multiple patterns for multiple processes you can use the p
 
 * To identify the operating system version and name.
    * For Windows machines, run the command in PowerShell to get the OS Version.
-     ```sumo
+     ```sql
      [System.Environment]::OSVersion.Version
        (Get-WmiObject -class Win32_OperatingSystem).Caption
      ```
@@ -216,7 +216,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 1. By default, the monitors are configured in a monitor folder called “Host and “Process Metrics”, if you would like to change the name of the folder, update the monitor folder name in this file.
 1. **Email and Connection Notification Configuration Examples**. If you would like the alerts to send email or connection notifications, configure these in the file `host_process_metrics_notifications.auto.tfvars`.
    * To configure notifications, modify the file `host_process_metrics_notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types. Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-   ```sumo title="Pagerduty Connection Example:"
+   ```sql title="Pagerduty Connection Example:"
    connection_notifications = [
        {
          connection_type       = "PagerDuty",
@@ -233,7 +233,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
      ]
    ```
 
-   ```sumo title="Email Notifications Example"
+   ```sql title="Email Notifications Example"
    email_notifications = [
        {
          connection_type       = "Email",

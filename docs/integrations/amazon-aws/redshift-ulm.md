@@ -25,7 +25,7 @@ dir="ltr">authenticated |Mon, 21 May 2018 01:38:01:601|::ffff:127.0.0.1 |32828 |
  |98031|vendor |himanshu |password |0|TLSv1.2 |ECDHE-RSA-AES256-SHA384 |0| | | |
 ```
 
-```sumo title="Amazon Redshift User Activity Audit Log Sample"
+```sql title="Amazon Redshift User Activity Audit Log Sample"
 '2018-05-21T06:00:09Z UTC [ db=prod_sales user=duc pid=99753 userid=95 xid=6728324 ]' LOG: create table SumoProdbackUp.organization as
  (select * from SumoProd.simpleuser)
 '2018-05-21T06:00:09Z UTC [ db=vendor user=ankit pid=36616 userid=53 xid=2956702 ]' LOG: DELETE FROM SumoProd.employee WHERE id = 38;

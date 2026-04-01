@@ -10,7 +10,7 @@ The `timeshift` operator shifts the time series from your metrics query by a spe
 
 ## Syntax
 
-```sumo
+```sql
 timeshift TIME_INTERVAL
 ```
 
@@ -22,13 +22,13 @@ Where:
 
 Query #A returns the `CPU_Idle` metric for the currently selected query time range, the last 15 minutes.
 
-```sumo
+```sql
 #A _sourceCategory=prod/host _sourceHost=my-mac= metric=CPU_Idle
 ```
 
 Query #B returns the `CPU_Idle` metric for the 15 minute period that ended two hours ago.
 
-```sumo
+```sql
 #B _sourceCategory=prod/host _sourceHost=my-mac= metric=CPU_Idle | timeshift 2h
 ```
 

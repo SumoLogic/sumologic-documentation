@@ -95,7 +95,7 @@ You can use a transformation rule to aggregate high cardinality data from ephem
 Here’s what the rule does:
 
 1. The rule is applied to metrics that match the selector `metric=container_*`.  (Metrics whose name begin with “container_”.) For this example, assume that these are the matching metrics:  
-    ```sumo
+    ```sql
     metric=container_memory_usage_bytes service=foo container=1234 pod=abcd
     metric=container_memory_usage_bytes service=foo container=4321 pod=dcba
     metric=container_fs_bytes service=foo container=1234 pod=abcd
@@ -105,6 +105,6 @@ Here’s what the rule does:
 1. Matching metrics will be aggregating by the `metric` and `service` dimensions. The aggregated metrics are quantized to one minute and one hour resolutions for all rollup types: avg, min, max, sum, and count.
 1. The aggregated metrics shown above will be retained for 400 days, then discarded. Only the dimensions upon which the raw metrics were aggregated are preserved in the aggregated metrics. The `container` and `pod` dimensions are not included in the aggregated metrics.
 1. The aggregated metrics will have the value of the metric dimension modified to have a suffix of `_agg`, like this:  
-    ```sumo
+    ```sql
     metric=container_memory_usage_bytes_agg service=foo metric=container_fs_bytes_agg service=foo
     ```

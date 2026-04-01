@@ -116,7 +116,7 @@ The results of a query with a join are calculated separately for every quantizat
 
 For example, consider a joined query that compares the `CPU_User` metric from two different hosts.
 
-```sumo
+```sql
 #A: metric=CPU_User _source=”HostMetrics”
 #B: metric=CPU_User _source=”JBM Host Metrics”
 #C: #A+#B/2
@@ -134,7 +134,7 @@ At the right end of each query row, you can see that that quantization period au
 
 To avoid this issue, you can specify a longer quantization bucket using the `quantize` operator. We recommend you explicitly set the quantization interval in queries that a joined query references. For example:
 
-```sumo
+```sql
 #A: metric=CPU_User _source=”HostMetrics” | quantize to 15s
 #B: metric=CPU_User _source=”JBM Host Metrics” | quantize to 15s
 ```
@@ -145,7 +145,7 @@ To avoid this issue, you can specify a longer quantization bucket using the `qua
 
 Queries #A and #B return the `CPU_User` and `CPU_Sys` metrics for time series whose `_sourceHost` dimension starts with the string `cqsplitter-`. Query #C performs a summation for the pairs of time series from #A and #B whose `_sourceHost`  value matches.
 
-```sumo
+```sql
 #A: metric=CPU_User _sourceHost=cqsplitter-*
 #B: metric=CPU_Sys _sourceHost=cqsplitter-*
 #C: #A + #B along _sourceHost
@@ -155,7 +155,7 @@ Queries #A and #B return the `CPU_User` and `CPU_Sys` metrics for time series wh
 
 This query considers and returns a disk percentage metric available and free for devices with the same `devName`.  
 
-```sumo
+```sql
 #A: metric=DiskFree DevName=*
 #B: metric=DiskUsed DevName=*
 #C: (#B / (#A + #B)) * 100 as DiskUsedPercent along DevName
@@ -166,7 +166,7 @@ This query considers and returns a disk percentage metric available and free for
 
 This query adds `bytes_in` to `bytes_out` for each node, and creates the metric `bytes_total`. Each time series in #A gets paired with an appropriate series from #B, the one that has the same `cluster` and `node` fields.
 
-```sumo
+```sql
 #A: metric=bytes_in node=* cluster=*
 #B: metric=bytes_out node=* cluster=*
 #C: #A + #B along cluster, node as bytes_total
@@ -176,7 +176,7 @@ This query adds `bytes_in` to `bytes_out` for each node, and creates the metric 
 
 This query calculates `bytes_in` as a percentage of `bytes_total` for each node. The expression allows referring to the same series more than once in the expression. In this example, `#A` appears twice in the expression.
 
-```sumo
+```sql
 #A: metric=bytes_in node=* cluster=*
 #B: metric=bytes_out node=* cluster=*
 #C: #A * 100 / (#A + #B) along cluster, node as bytes_in_pct_total
@@ -185,7 +185,7 @@ This query calculates `bytes_in` as a percentage of `bytes_total` for each node.
 
 When running a join queries with an aggregate operator, as a rule of thumb, include all the aggregation dimensions in the result query using `along`:
 
-```sumo
+```sql
 #A: metric=Net_InBytes | avg by _sourceHost
 #B: metric=Net_OutBytes | avg by _sourceHost
 #C: #B - #A along _sourceHost
@@ -200,7 +200,7 @@ Filtering metrics using metadata can be useful when you have requirements like:
 
 The query below simulates the effect of filtering on metadata from another row (#A) by using a metric join that includes only data for metrics available in results from that other row. This example effectively filters results from row #B to leave only those with the `_sourceHost` value returned query #A:
 
-```sumo
+```sql
 #B + 0 * #A along _sourceHost
 ```
 
@@ -211,7 +211,7 @@ The easiest way to analyze this query is going from the end backwards. In this q
 
 An advanced version of this query shows all metrics of `CPU_LoadAvg` for 1 minute, 5 minutes, and 15 minutes for top three servers according to the `CPU_LoadAvg_1min` (in the result sets returned by rows #A, #D and #E):
 
-```sumo
+```sql
 #A: _sourceHost=nite-metricsstore-* metric=CPU_LoadAvg_1min | topk(3,avg)
 #B: _sourceHost=nite-metricsstore-* metric=CPU_LoadAvg_5min
 #C: _sourceHost=nite-metricsstore-* metric=CPU_LoadAvg_15min

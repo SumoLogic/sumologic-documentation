@@ -10,7 +10,7 @@ Counts the total number of time series that match the query. If grouping is spec
 
 ## Syntax
 
-```sumo
+```sql
 count [by FIELD [, FIELD, ...]]
 ```
 
@@ -20,7 +20,7 @@ count [by FIELD [, FIELD, ...]]
 
 This query returns the number of time series for the `size` metric. 
 
-```sumo
+```sql
 metric=size | count
 ```
 
@@ -28,7 +28,7 @@ metric=size | count
 
 This query returns the number of time series for the size metric by `src_ip`. 
 
-```sumo
+```sql
 metric=size | count by src_ip
 ```
 
@@ -36,7 +36,7 @@ metric=size | count by src_ip
 
 This example shows a query in the [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer) in basic mode. In advanced mode, the query would look like:
 
-```sumo
+```sql
 metric=4XXError | count by method
 ```
 

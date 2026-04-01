@@ -102,7 +102,7 @@ As part of the app installation process, the following fields will be created by
 As part of the app installation process, the following FERs will be created by default:
 ### Azure location extraction FER
 
-   ```sumo
+   ```sql
    Rule Name: AzureLocationExtractionFER
    Applied at: Ingest Time
    Scope (Specific Data): tenant_name=*
@@ -119,7 +119,7 @@ As part of the app installation process, the following FERs will be created by d
 
 #### Resource ID extraction FER
 
-   ```sumo
+   ```sql
    Rule Name: AzureResourceIdExtractionFER
    Applied at: Ingest Time
    Scope (Specific Data): tenant_name=*

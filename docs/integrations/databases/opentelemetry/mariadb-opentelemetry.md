@@ -39,7 +39,7 @@ MariaDB logs written to a log file can be collected via the Filelog receiver of 
 1. To configure the MariaDB log files, locate your local `server.cnf` configuration file in the database directory.
 2. Open `server.cnf` in a text editor.
 3. Set the following parameters in the `[mariadb]` section:
-  ```sumo
+  ```sql
   [mariadb]
   log_error=/var/log/mariadb/mariadb-error.log
   log_output=FILE
