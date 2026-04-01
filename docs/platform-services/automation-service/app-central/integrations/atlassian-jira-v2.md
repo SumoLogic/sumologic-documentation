@@ -40,7 +40,7 @@ This integration uses the [Jira REST API v2](https://developer.atlassian.com/clo
 
 Sign in to [Jira](https://id.atlassian.com) with your Atlassian account.
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-2.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-2" width="300"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-2.png')} style={{border:'1px solid gray'}} alt="Atlassian jira V2 sign in" width="300"/>
 
 ### Create an API token
 
@@ -48,7 +48,7 @@ Sign in to [Jira](https://id.atlassian.com) with your Atlassian account.
 1. Log in to https://id.atlassian.com/manage-profile/security/api-tokens.
 1. Click **Create API token**.
 1. From the dialog that appears, enter a memorable and concise **Label** for your token and click **Create**.
-1. Click **Copy to clipboard**, then paste the token to your script, or elsewhere to save.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-3.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-3" width="300"/>
+1. Click **Copy to clipboard**, then paste the token to your script, or elsewhere to save.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-3.png')} style={{border:'1px solid gray'}} alt="Atlassian Jira V2 Copy to clipboard" width="300"/>
 
 ### Revoke an API token
 
@@ -90,7 +90,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * Populate **Cloud SOAR API URL** and **Cloud SOAR JWT (token)** when using the **Add Issue Attachment To Incident** action.
 :::
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-5" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="Atlassian Jira V2 configuration dialog" width="400"/>
 
 For information about Atlassian Jira, see [Jira documentation](https://confluence.atlassian.com/jira). For the REST API v2, see the [REST API v2 documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/).
 

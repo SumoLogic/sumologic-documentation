@@ -28,7 +28,7 @@ Updated: Jul 18, 2023***
 ## Akenza configuration
 
 1. Log in to the Akenza platform with your email and password and follow the link for configuration.
-1. Create an [API key](https://docs.akenza.io/akenza.io/get-started/reference/api-documentation#api-keys) in the Akenza UI by locating an API key and clicking on the button **Generate API Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/akenza/akenza-1.png')} style={{border:'1px solid gray'}} alt="akenza-1" width="800"/>
+1. Create an [API key](https://docs.akenza.io/akenza.io/get-started/reference/api-documentation#api-keys) in the Akenza UI by locating an API key and clicking on the button **Generate API Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/akenza/akenza-1.png')} style={{border:'1px solid gray'}} alt="Akenza API key" width="800"/>
 
 ## Configure Akenza in Automation Service and Cloud SOAR
 

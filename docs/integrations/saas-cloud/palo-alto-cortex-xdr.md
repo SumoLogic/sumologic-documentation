@@ -196,11 +196,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Alerts Overview
 
-The **Palo Alto Cortex XDR - Alerts Overview** dashboard provides real-time analysis of the alerts triggered and white-listed. This dashboard offers insights into the alerts based on severity over time, most frequent sources, types of triggered alerts,  geo location of all alerts, and alerts originating from high-risk countries. This dashboard provides information on the most frequent actions taken in response to alerts, the top categories of alerts, and a summary of recent alerts for quick reference.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Palo-Alto-Cortex-XDR-Alerts-Overview.png')} alt="Palo-Alto-Cortex-XDR-Alerts-Overview" width="800"/>
+The **Palo Alto Cortex XDR - Alerts Overview** dashboard provides real-time analysis of the alerts triggered and white-listed. This dashboard offers insights into the alerts based on severity over time, most frequent sources, types of triggered alerts,  geo location of all alerts, and alerts originating from high-risk countries. This dashboard provides information on the most frequent actions taken in response to alerts, the top categories of alerts, and a summary of recent alerts for quick reference.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Palo-Alto-Cortex-XDR-Alerts-Overview.png')} alt="Palo Alto Cortex XDR Alerts Overview" width="800"/>
 
 ### Incidents Overview
 
-The **Palo Alto Cortex XDR - Incidents Overview** dashboard provides the number of incidents created and disabled. This dashboard offers insights into the incidents based on severity over time and incidents by status. This dashboard also highlights the most frequently assigned users to handle incidents, information about the commonly observed MITRE techniques and tactics utilized, and a summary of recent incidents for quick reference.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Palo-Alto-Cortex-XDR-Incidents-Overview.png')} alt="Palo-Alto-Cortex-XDR-Incidents-Overview" width="800"/>
+The **Palo Alto Cortex XDR - Incidents Overview** dashboard provides the number of incidents created and disabled. This dashboard offers insights into the incidents based on severity over time and incidents by status. This dashboard also highlights the most frequently assigned users to handle incidents, information about the commonly observed MITRE techniques and tactics utilized, and a summary of recent incidents for quick reference.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Palo-Alto-Cortex-XDR-Incidents-Overview.png')} alt="Palo Alto Cortex XDR Incidents Overview" width="800"/>
 
 ## Upgrade/Downgrade the Palo Alto Cortex XDR app (Optional)
 

@@ -346,7 +346,7 @@ Use this dashboard to:
 * Gain insights into your Nginx health using Critical Errors and Status of Nginx Server.
 * Get insights into Active and dropped connections.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Overview.png')} alt="Nginx-Overview" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Overview.png')} alt="Nginx Overview" />
 
 ### Error Logs
 
@@ -357,7 +357,7 @@ Use this dashboard to:
 * Track and view client geographic locations generating errors.
 * Track critical alerts and emergency error alerts.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Error-Logs.png')} alt="Nginx-Error-Logs" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Error-Logs.png')} alt="Nginx Error Logs" />
 
 ### Trends
 
@@ -367,7 +367,7 @@ Use this dashboard to:
 * To understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
 * Gain insights into originated traffic location by region. This can help you allocate compute resources to different regions according to their needs.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Trends.png')} alt="Nginx-Trends" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Trends.png')} alt="Nginx Trends" />
 
 ### Outlier Analysis
 
@@ -379,7 +379,7 @@ Use this dashboard to:
 
 You can use schedule searches to send alerts to yourself whenever there is an outlier detected by Sumo Logic.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Outlier-Analysis.png')} alt="Nginx-Outlier-Analysis" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Outlier-Analysis.png')} alt="Nginx Outlier Analysis" />
 
 ### Threat Intel
 
@@ -388,7 +388,7 @@ The **Nginx - Threat Intel** dashboard provides an at-a-glance view of threats t
 Use this dashboard to:
 * To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Threat-Intel.png')} alt="Nginx-Threat-Intel" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Threat-Intel.png')} alt="Nginx Threat Intel" />
 
 
 ### Web Server Operations
@@ -400,7 +400,7 @@ Use this dashboard to:
 * Gain insights into Client and Server Responses on the Nginx Server. This helps you identify errors in the Nginx Server.
 * To identify geo-locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-WebServerOperations.png')} alt="Nginx-WebServerOperations" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-WebServerOperations.png')} alt="Nginx Web Server Operations" />
 
 
 ### Visitor Access Types
@@ -412,7 +412,7 @@ Use this dashboard to:
 * Understand which platform and browsers are used to gain access to your infrastructure.
 * These insights can be useful for planning in which browsers, platforms, and operating systems (OS) should be supported by different software services.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-VisitorAccessTypes.png')} alt="Nginx-VisitorAccessTypes" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-VisitorAccessTypes.png')} alt="Nginx Visitor Access Types" />
 
 
 ### Visitor Locations
@@ -423,7 +423,7 @@ Use this dashboard to:
 
 * Gain insights into the geographic locations of your user base. This is useful for resource planning in different regions across the globe.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-VisitorLocations.png')} alt="Nginx-VisitorLocations" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-VisitorLocations.png')} alt="Nginx Visitor Locations" />
 
 ### Visitor Traffic Insight
 
@@ -434,7 +434,7 @@ Use this dashboard to:
 * To understand the type of content that is frequently requested by users.
 * It helps in allocating IT resources according to the content types.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-VisitorTrafficInsight.png')} alt="Nginx-VisitorTrafficInsight" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-VisitorTrafficInsight.png')} alt="Nginx Visitor Traffic Insight" />
 
 ### Connections and Requests Metrics
 
@@ -445,7 +445,7 @@ Use this dashboard to:
 * Gain information about active and dropped connections. This helps you identify the connection rejected by the Nginx Server.
 * Gain information about the total requests handled by Nginx Server per second. This helps you understand read, and write requests on the Nginx Server.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Connections-and-Requests.png')} alt="Nginx-Connections-and-Requests" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Connections-and-Requests.png')} alt="Nginx Connections and Requests" />
 
 ## Create monitors for Nginx app
 

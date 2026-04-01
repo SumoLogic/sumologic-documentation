@@ -126,7 +126,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Events
 
-The **Cato Networks - Events** dashboard provides a detailed summary of the event-related metrics and insights. This dashboard provides a holistic view of event-related information, enabling users to identify trends, assess risks, and make informed decisions.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Events.png')} alt="Cato-Networks-Events" />
+The **Cato Networks - Events** dashboard provides a detailed summary of the event-related metrics and insights. This dashboard provides a holistic view of event-related information, enabling users to identify trends, assess risks, and make informed decisions.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Events.png')} alt="Cato Networks Events" />
 - **Total Events**. Displays the total number of events that allows you to gauge the scale of activity.
 - **Events by Type**. The distribution of events by type provides a breakdown of the different categories, offering valuable context.
 - **Tunnel Protocol Distribution**. The tunnel protocol distribution showcases the usage of different protocols, indicating potential security concerns.
@@ -141,7 +141,7 @@ The **Cato Networks - Events** dashboard provides a detailed summary of the even
 
 ### Threat Analysis
 
-The **Cato Networks - Threat Analysis** dashboard provides a comprehensive overview of threat-related information, enabling you to understand and address potential risks effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Threat-Analysis.png')} alt="Cato-Networks-Threat-Analysis" />
+The **Cato Networks - Threat Analysis** dashboard provides a comprehensive overview of threat-related information, enabling you to understand and address potential risks effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Threat-Analysis.png')} alt="Cato Networks Threat Analysis" />
 - **Total Threat Events**. Displays the total number of threat events, giving you an overall understanding of the threat landscape.
 - **Threats Frequency**. The threats frequency widget highlights the frequency of threats, allowing you to identify patterns and trends.
 - **Threats by Type**. The threat by types widget categorizes threats and provides insights into the specific types of threats encountered.
@@ -155,7 +155,7 @@ The **Cato Networks - Threat Analysis** dashboard provides a comprehensive overv
 
 ### Audit Feed
 
-The **Cato Networks - Audit Feed** dashboard offers a comprehensive summary of audit log activities, which provides valuable insights into system administration and changes. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Audit-Feed.png')} alt="Cato-Networks-Audit-Feed"/>
+The **Cato Networks - Audit Feed** dashboard offers a comprehensive summary of audit log activities, which provides valuable insights into system administration and changes. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Audit-Feed.png')} alt="Cato Networks Audit Feed"/>
 - **Total Audit Logs**. Displays the total number of audit logs which gives you an overview of the scale and volume of recorded activities.
 - **Activity Types**. The activity types widget categorizes the types of activities recorded, offering a breakdown of the different actions performed.
 - **Top 10 Active Admins**. The top 10 active admins widget highlights the most actively involved administrators, providing visibility into their level of engagement.

@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/knowbe4-phisher.png')} alt="knowbe4-phisher" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/knowbe4-phisher.png')} alt="KnowBe4 PhishER icon" width="100"/>
 
 ***Version: 1.6  
 Updated: Mar 4, 2024***

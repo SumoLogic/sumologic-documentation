@@ -43,9 +43,9 @@ A custom list variable allows you to specify random string values for a variable
 
 To add a Custom List variable to a dashboard, do the following:
 
-1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show-and-Hide-filters" width="250"/>
-1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="create-dashboard-filter" width="800"/>
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Create-Template-Variable-dialog.png')} style={{border:'1px solid gray'}} alt="Create-Template-Variable-dialog" width="800"/>
+1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show and Hide filters" width="250"/>
+1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="Create dashboard filter" width="800"/>
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Create-Template-Variable-dialog.png')} style={{border:'1px solid gray'}} alt="Create Template Variable dialog" width="800"/>
 1. Select **Custom List** as the **Variable Type**.
 1. **List Items** are your variable values. Use a comma separated list for variable options, separating individual options with a comma. For example, `small, medium, large`.
 1. (Optional) **Include the option to select all values (\*)** will be selected by default. This includes a wildcard asterisk (\*) in the available options.
@@ -58,9 +58,9 @@ A Metrics Metadata Search variable allows you to specify metric metadata to a
 
 To add a Metrics Metadata Search variable to a dashboard, do the following:
 
-1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show-and-Hide-filters" width="250"/>
-1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="create-dashboard-filter" width="800"/>
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/dashboard-new-metrics-metadata-search-variable.png')} style={{border:'1px solid gray'}} alt="dashboard-new-metrics-metadata-search-variable" width="800"/>
+1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show and Hide filters" width="250"/>
+1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="Create dashboard filter" width="800"/>
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/dashboard-new-metrics-metadata-search-variable.png')} style={{border:'1px solid gray'}} alt="Dashboard new metrics metadata search variable" width="800"/>
 1. Select **Metrics Metadata Search** as the **Variable Type**.
 1. The **Fields (key)** is the metadata field you want to use as the filter.
 1. (Optional) **Filters** allow you to filter the scope of your data before choosing the field you want to use. Click in the **Filter** input, begin typing, and choose a filter from the pop-up list. A list of valid values appears. Select a value for the filter, and add other filters as needed.
@@ -74,9 +74,9 @@ A Logs Search variable allows you to specify log metadata fields to act as a 
 
 To add a Logs Search variable to a dashboard, do the following:
 
-1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show-and-Hide-filters" width="250"/>
-1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="create-dashboard-filter" width="800"/>
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Variable-for-logs-search.png')} style={{border:'1px solid gray'}} alt="Variable-for-logs-search" width="800"/>
+1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show and Hide filters" width="250"/>
+1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="Create dashboard filter" width="800"/>
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Variable-for-logs-search.png')} style={{border:'1px solid gray'}} alt="Variable for logs search" width="800"/>
 1. Select **Logs Search** as the **Variable Type**.
 1. Click in the **Query** field and begin typing your query. Select valid options from the pop-up list as they appear until your query is complete.
 1. The **Key** is the metadata field you want to use as the filter. Once a Key is selected the Preview table will show example values based on the query running for the last 15 minutes.
@@ -95,13 +95,13 @@ With a Scope-based Variable, you can define a variable that automatically applie
 
 To add a Scope-based Variable to a dashboard, do the following:
 
-1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show-and-Hide-filters" width="250"/>
-1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="create-dashboard-filter" width="800"/>
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/scope-based-variable.png')} style={{border:'1px solid gray'}} alt="scope-based-variable" width="800"/>
+1. In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/Show-and-Hide-filters.png')} style={{border:'1px solid gray'}} alt="Show and Hide filters" width="250"/>
+1. In the Dashboard top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/create-dashboard-filter.png')} style={{border:'1px solid gray'}} alt="Create dashboard filter" width="800"/>
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/scope-based-variable.png')} style={{border:'1px solid gray'}} alt="Scope based variable" width="800"/>
 1. Select **Scope-based Variable** as the **Variable Type**.
 1. The **Fields (key)** is the metadata field you want to use as the filter. Once a Key is selected the Preview table will show example values based on the query running for the last 15 minutes.
 1. (Optional) **Display all values available** will be selected by default. If you want to specify any values, deselect this option and enter the required value(s) in section below.
-1. (Optional) **Apply filter to all panels in dashboard** will be selected by default. If you want to apply this variable to selected panel, deselect this option and select the panels from the dropdown. You can also click on <img src={useBaseUrl('img/dashboards/filter-template-variables/preview-the-panels.png')} style={{border:'1px solid gray'}} alt="preview-the-panels" width="30"/> to preview and select the dashboard panel to which you want to apply this variable.
+1. (Optional) **Apply filter to all panels in dashboard** will be selected by default. If you want to apply this variable to selected panel, deselect this option and select the panels from the dropdown. You can also click on <img src={useBaseUrl('img/dashboards/filter-template-variables/preview-the-panels.png')} style={{border:'1px solid gray'}} alt="Preview the panels" width="30"/> to preview and select the dashboard panel to which you want to apply this variable.
 1. (Optional) **Include the option to select all values (\*)** will be selected by default. This includes a wildcard asterisk (\*) in the available options.
 1. (Optional) Enter a **Default Value** for the variable.
 1. Click **Create Template Variable** to apply the variable to the dashboard.
@@ -112,9 +112,9 @@ This task shows you how to modify an existing template variable in a Dashboard 
 
 To edit a template variable, do the following:
 
-1. Hover the cursor over the end of the template variable field to display the options icon.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/options-menu-for-variable.png')} style={{border:'1px solid gray'}} alt="options-menu-for-variable" width="800"/>
-1. Click the **Details** icon and select **Edit** from the dropdown menu. The Edit Variable dialog appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/edit-variable.png')} style={{border:'1px solid gray'}} alt="edit-variable" width="800"/>
-1. Edit the variable as needed.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/edit-variable-dialog.png')} style={{border:'1px solid gray'}} alt="edit-variable-dialog" width="800"/>
+1. Hover the cursor over the end of the template variable field to display the options icon.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/options-menu-for-variable.png')} style={{border:'1px solid gray'}} alt="Options menu for variable" width="800"/>
+1. Click the **Details** icon and select **Edit** from the dropdown menu. The Edit Variable dialog appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/edit-variable.png')} style={{border:'1px solid gray'}} alt="Edit variable" width="800"/>
+1. Edit the variable as needed.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/edit-variable-dialog.png')} style={{border:'1px solid gray'}} alt="Edit variable dialog" width="800"/>
 1. Click **Save Template Variable** to apply your changes.
 
 ## Delete a template variable
@@ -123,8 +123,8 @@ This task shows you how you can easily delete a template variable from Dashboard
 
 To delete a template variable, do the following:
 
-1. Hover the cursor over the end of the template variable field to display the options icon.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/options-menu-for-variable.png')} style={{border:'1px solid gray'}} alt="options-menu-for-variable" width="800"/>
-1. Click the options icon and select **Delete** from the dropdown menu. The variable along with the resulting data transformations are automatically removed from the dashboard.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/delete-variable.png')} style={{border:'1px solid gray'}} alt="delete-variable" width="800"/>
+1. Hover the cursor over the end of the template variable field to display the options icon.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/options-menu-for-variable.png')} style={{border:'1px solid gray'}} alt="Options menu for variable" width="800"/>
+1. Click the options icon and select **Delete** from the dropdown menu. The variable along with the resulting data transformations are automatically removed from the dashboard.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/delete-variable.png')} style={{border:'1px solid gray'}} alt="Delete variable" width="800"/>
 
 ## Use variables in queries
 

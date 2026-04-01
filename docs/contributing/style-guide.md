@@ -811,7 +811,7 @@ Add appropriate `alt` text for accessibility. See [Add an image](#add-an-image) 
 
 | &#9989; **Do** | &#10060; **Don't** |
 |:---------------|:-------------------|
-| <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="alt-text" width="400"/> | <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="alt-text" width="400"/> |
+| <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="Alt text" width="400"/> | <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="Alt text" width="400"/> |
 
 ### Images in lists
 
@@ -828,13 +828,13 @@ When adding an image to a bulleted or sequential list, include the image snippet
 <TabItem value="Markdown">
 
 ```md
-1. Here is a dinosaur.<br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur.<br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="Alt text" width="100"/>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-1. Here is a dinosaur. <br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur. <br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="Alt text" width="100"/>
 
 </TabItem>
 </Tabs>

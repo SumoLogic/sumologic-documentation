@@ -52,8 +52,8 @@ You can push the following:
 1. On the **Push Selected Content** box, navigate to the **Destinations** section to select the organizations to push the selected items to. You can push to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2-csiem.png')} alt="Push Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Push**. A **Pushing in progress** dialog is displayed. 
 1. (Optional) If required, follow the below steps to stop the push:
-   1. Click the **Stop Push** button on the dialog box. <br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-button.png')} alt="stop-push-button" style={{border: '1px solid gray'}} width="500"/>
-   1. Click **Stop Push** on the confirmation pop-up. To view the results table, refer to [View results](#view-results).<br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-confirmation.png')} alt="stop-push-confirmation" style={{border: '1px solid gray'}} width="400"/>
+   1. Click the **Stop Push** button on the dialog box. <br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-button.png')} alt="Stop push button" style={{border: '1px solid gray'}} width="500"/>
+   1. Click **Stop Push** on the confirmation pop-up. To view the results table, refer to [View results](#view-results).<br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-confirmation.png')} alt="Stop push confirmation" style={{border: '1px solid gray'}} width="400"/>
 
 ### Tips
 
@@ -97,7 +97,7 @@ If a content push job is stopped or interrupted, you can review the progress and
 
 1. After the push is stopped, a warning banner appears at the top of the content search bar. Click **View Results** in the warning banner to open the **Content Push Job Results** page.
    <br/><img src={useBaseUrl('img/manage/subscriptions/mssp-view-results.png')} alt="MSSPs View Results Button" style={{border: '1px solid gray'}} width="800"/>
-1. On the **Content Push Job Results** page, you can view the number of destination org details with the total number of items processed. You can also find the successful, failed, and stopped items.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-content-push-job-results.png')} alt="mssp-content-push-job-results" style={{border: '1px solid gray'}} width="800"/>
+1. On the **Content Push Job Results** page, you can view the number of destination org details with the total number of items processed. You can also find the successful, failed, and stopped items.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-content-push-job-results.png')} alt="MSSP content push job results" style={{border: '1px solid gray'}} width="800"/>
    :::note
    Select the **Show Warning Updates** checkbox to display the warning-related entries in the **Failed Updates** section.
    :::

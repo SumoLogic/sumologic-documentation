@@ -326,7 +326,7 @@ The **Microsoft Defender for Cloud - Alerts** dashboard provides a centralized v
 
 An affected resources table lists impacted Azure services, such as virtual machines and storage accounts, to assess the scope of incidents. The dashboard also summarizes frequent alert types, enabling recognition of recurring issues like privilege escalation or malware detections. A top action plan provides recommended steps for addressing severe alerts, helping analysts respond swiftly and effectively. Lastly, an alert summary offers detailed descriptions of recent high-severity events, supporting deeper investigation and remediation efforts. This dashboard equips security teams with the insights needed to protect their Azure environment from emerging threats.
 
-<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Microsoft-Defender-for-Cloud/Microsoft-Defender-for-Cloud-Alerts.png' alt="Microsoft-Defender-for-Cloud-Alerts" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Microsoft-Defender-for-Cloud/Microsoft-Defender-for-Cloud-Alerts.png' alt="Microsoft Defender for Cloud Alerts" />
 
 ### Regulatory Compliance
 
@@ -336,7 +336,7 @@ The dashboard offers detailed breakdowns of passed, failed, and skipped controls
 
 This dashboard empowers teams to prioritize remediation efforts, track progress over time, and strengthen their cloud security posture. With actionable insights and a focus on simplifying regulatory alignment, the dashboard is an essential resource for achieving and maintaining compliance in Azure environments.
 
-<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Microsoft-Defender-for-Cloud/Microsoft-Defender-for-Cloud-Regulatory-Compliance.png' alt="Microsoft-Defender-for-Cloud-Regulatory-Compliance" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Microsoft-Defender-for-Cloud/Microsoft-Defender-for-Cloud-Regulatory-Compliance.png' alt="Microsoft Defender for Cloud Regulatory Compliance" />
 
 ### Security Recommendations
 
@@ -346,7 +346,7 @@ The dashboard highlights affected resources, such as Virtual Machines, Storage A
 
 Detailed remediation steps are included in the Top Action Plans, providing clear guidance for resolving high-risk vulnerabilities. This dashboard empowers security teams to proactively secure their Azure environment, streamline remediation workflows, and maintain compliance with organizational security goals.
 
-<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Microsoft-Defender-for-Cloud/Microsoft-Defender-for-Cloud-Security-Recommendations.png' alt="Microsoft-Defender-for-Cloud-Security-Recommendations" />
+<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Microsoft-Defender-for-Cloud/Microsoft-Defender-for-Cloud-Security-Recommendations.png' alt="Microsoft Defender for Cloud Security Recommendations" />
 
 ## Create monitors for Azure Security - Defender for Cloud app
 
@@ -368,9 +368,9 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 If your configured Event Hub instance is not successfully sending data to Sumo Logic. Follow the below steps to troubleshoot the issue:
 
-1. Navigate to the **Event Hub Instance Blade** in the Azure portal and select the **Data Explorer (preview)** tab to send sample events.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/event-hub-instance-blade.png')} style={{border:'1px solid gray'}} alt="event-hub-instance-blade" width="800"/>
-1. In the **Data Explorer (preview)** page, click **Send event** and preview the sample events.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/data-explorer.png')} style={{border:'1px solid gray'}} alt="data-explorer" width="800"/>
-1. Verify if those events are being sent to the [Sumo Logic by Live Tailing](/docs/search/live-tail/about-live-tail/). If the data matches, then the Event Hub instance will successfully send data to Sumo Logic. <br/> <img src={useBaseUrl('img/integrations/microsoft-azure/live-tailing.png')} style={{border:'1px solid gray'}} alt="live-tailing" width="800"/>
+1. Navigate to the **Event Hub Instance Blade** in the Azure portal and select the **Data Explorer (preview)** tab to send sample events.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/event-hub-instance-blade.png')} style={{border:'1px solid gray'}} alt="Event hub instance blade" width="800"/>
+1. In the **Data Explorer (preview)** page, click **Send event** and preview the sample events.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/data-explorer.png')} style={{border:'1px solid gray'}} alt="Data explorer" width="800"/>
+1. Verify if those events are being sent to the [Sumo Logic by Live Tailing](/docs/search/live-tail/about-live-tail/). If the data matches, then the Event Hub instance will successfully send data to Sumo Logic. <br/> <img src={useBaseUrl('img/integrations/microsoft-azure/live-tailing.png')} style={{border:'1px solid gray'}} alt="Live tailing" width="800"/>
 
 ### Validate alerts at Event Hub
 
@@ -380,7 +380,7 @@ If you are not receiving any alerts from the Microsoft Defender to the Event Hub
 1. In the **Security Alerts** page, select the **Sample Alerts** tab.
 1. Click on **Create sample alerts** to receive the sample alerts. This validates that the sample alerts are forwarded to the configured Event Hub instance.
 
-<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/validate-microsoft-defender-alerts.png')} style={{border:'1px solid gray'}} alt="validate-microsoft-defender-alerts" width="800"/>
+<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/validate-microsoft-defender-alerts.png')} style={{border:'1px solid gray'}} alt="Validate Microsoft Defender alerts" width="800"/>
 
 :::info
 There may be a delay in forwarding alerts from Microsoft Defender to the Event Hub instance. If you experience significant delays, reach out to Azure Support for assistance.

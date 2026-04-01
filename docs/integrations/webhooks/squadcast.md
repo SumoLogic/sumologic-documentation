@@ -216,13 +216,13 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Squadcast - Overview** improves visibility into activities within the Squadcast platform by categorizing them according to event type and the associated resources. It provides valuable data and statistics on various aspects, including incident status updates, the primary services, and alerts triggering incidents, as well as incidents violating service level objectives (SLOs).
 
-<img src={useBaseUrl('img/integrations/webhooks/Squadcast-Overview.png')} style={{border: '1px solid black'}} alt="Squadcast-Overview"/>
+<img src={useBaseUrl('img/integrations/webhooks/Squadcast-Overview.png')} style={{border: '1px solid black'}} alt="Squadcast Overview"/>
 
 ### Incidents
 
 The **Squadcast - Incidents** offers valuable statistics and insights regarding events associated with incident postmortems, communication channels, tasks, and notes.
 
-<img src={useBaseUrl('img/integrations/webhooks/Squadcast-Incidents.png')} style={{border: '1px solid black'}} alt="Squadcast-Incidents"/>
+<img src={useBaseUrl('img/integrations/webhooks/Squadcast-Incidents.png')} style={{border: '1px solid black'}} alt="Squadcast Incidents"/>
 
 ## Upgrade/Downgrade the Squadcast app (Optional)
 

@@ -7,7 +7,7 @@ description: The Sumo Logic App for Citrix Cloud offers monitoring and analyzing
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon" width="80"/>
+<img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="Citrix Cloud icon" width="80"/>
 
 The Citrix Cloud is a platform that manages and hosts various Citrix cloud services. The Citrix Cloud App for Sumo Logic allows you to keep track of any modifications made to configurations or actions that have affected your environment and other account administrators. This app is built on the Citrix Cloud source, which ensures effortless integration between Citrix Cloud and Sumo Logic. Through real-time analysis, the App offers dashboards to display critical metrics, enabling you to understand administrator, client administrator, and group administrator activities within your Active Directory or Azure Active Directory (AD).
 
@@ -82,11 +82,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Citrix Cloud - Administrator Overview** dashboard provides detailed information on newly added administrators, pending invitations, and recently deleted administrators from your Citrix Cloud account, including any updates to roles and permissions. The Dashboard also allows for easy visualization of the distribution of event types and the actors who perform these records, enabling you to identify trends and patterns in administrator activity.
 
-In addition to the above, the Dashboard provides a summary of all the Administrator events, allowing you to quickly assess the overall state of your Citrix Cloud account. With this Dashboard, you can easily monitor and analyze administrator activity, ensuring that your Citrix Cloud account remains secure and compliant with your organization's policies and regulations.<br/><img src={useBaseUrl('img/integrations/saas-cloud/citrix-admin-overview.png')} alt="citrix-admin-overview" width="750"/>
+In addition to the above, the Dashboard provides a summary of all the Administrator events, allowing you to quickly assess the overall state of your Citrix Cloud account. With this Dashboard, you can easily monitor and analyze administrator activity, ensuring that your Citrix Cloud account remains secure and compliant with your organization's policies and regulations.<br/><img src={useBaseUrl('img/integrations/saas-cloud/citrix-admin-overview.png')} alt="Citrix admin overview" width="750"/>
 
 ### Client, Group Administrator Overview
 
-**Citrix Cloud - Client, Group Administrator Overview** dashboard provides detailed information about newly added and recently deleted clients and group administrators from your Citrix Cloud account. It also indicates whether any group administrators' roles/permissions have been updated. It also provides a summary of all Administrator events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/client-group-admin-overview.png')} alt="client-group-admin-overview" width="750"/>
+**Citrix Cloud - Client, Group Administrator Overview** dashboard provides detailed information about newly added and recently deleted clients and group administrators from your Citrix Cloud account. It also indicates whether any group administrators' roles/permissions have been updated. It also provides a summary of all Administrator events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/client-group-admin-overview.png')} alt="Client group admin overview" width="750"/>
 
 ## Upgrade/Downgrade the Citrix Cloud app (Optional)
 

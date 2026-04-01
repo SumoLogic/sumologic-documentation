@@ -158,7 +158,7 @@ The following steps assume you are collecting Nginx Plus metrics from a Kubernet
 
 ### For Non-Kubernetes environments
 
-We use the Telegraf operator for Nginx Plus metric collection and the Sumo Logic Installed Collector for collecting Nginx Plus logs. The diagram below illustrates the components of the Nginx Plus collection in a non-Kubernetes environment.<br/><img src={useBaseUrl('img/integrations/web-servers/nginxplus-nonk8s.png')} alt="nginxplus-nonk8s" />
+We use the Telegraf operator for Nginx Plus metric collection and the Sumo Logic Installed Collector for collecting Nginx Plus logs. The diagram below illustrates the components of the Nginx Plus collection in a non-Kubernetes environment.<br/><img src={useBaseUrl('img/integrations/web-servers/nginxplus-nonk8s.png')} alt="Nginx Plus non-Kubernetes" />
 
 Telegraf runs on the same system as Nginx Plus and uses the [Nginx Plus input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) to obtain Nginx Plus metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Nginx on the other hand are sent to either a Sumo Logic Local File source.
 
@@ -286,7 +286,7 @@ Use this dashboard to:
 * Gain insights into your Nginx health using Critical Errors and Status of Nginx Server.
 * Get insights into Active and dropped connections.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Overview.png')} alt="Nginx-Plus-Overview" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Overview.png')} alt="Nginx Plus Overview" />
 
 ### Error Logs Analysis
 
@@ -297,7 +297,7 @@ Use this dashboard to:
 * Track and view client geographic locations generating errors.
 * Track critical alerts and emergency error alerts.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Error-Logs-Analysis.png')} alt="Nginx-Plus-Error-Logs-Analysis" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Error-Logs-Analysis.png')} alt="Nginx Plus Error Logs Analysis" />
 
 ### Logs Timeline Analysis
 

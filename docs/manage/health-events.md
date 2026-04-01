@@ -78,8 +78,8 @@ Each health event log has common keys that categorize it to a product area and p
 
 Configuring the scheduled search for the selected health event will help you with timely alerts to all the recipients when the health event is triggered every time. To configure, follow the below steps:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Monitoring > Health Events**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Health Events**. <br/><img src={useBaseUrl('/img/health-events/health-events-table.png')} alt="health-events-table" style={{border: '1px solid gray'}} width="800"/>
-1. Click on the required row to view the details of a health event. <br/><img src={useBaseUrl('/img/health-events/health-event-detail.png')} alt="health-events-detial" style={{border: '1px solid gray'}} width="400"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Monitoring > Health Events**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Health Events**. <br/><img src={useBaseUrl('/img/health-events/health-events-table.png')} alt="Health events table" style={{border: '1px solid gray'}} width="800"/>
+1. Click on the required row to view the details of a health event. <br/><img src={useBaseUrl('/img/health-events/health-event-detail.png')} alt="Health events detail" style={{border: '1px solid gray'}} width="400"/>
 1. Click the **Create Scheduled Search** button and configure it based on your requirement. For more details, refer to [Create a Scheduled Search](/docs/alerts/scheduled-searches/schedule-search/).
     :::info
     Query will be auto-generated for the selected health event.
@@ -109,8 +109,8 @@ The health events table allows you to easily view and investigate problems which
 It may take up to 15 minutes for a 90% usage breach for Lookup Tables, Partitions, Fields, or Field Extraction Rules (FERs) to reflect on the Health Events page after detection.
 :::
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Monitoring > Health Events**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Health Events**. <br/><img src={useBaseUrl('/img/health-events/health-events-table.png')} alt="health-events-table" style={{border: '1px solid gray'}} width="800"/>
-1. Click on the required row to view the details of a health event. <br/><img src={useBaseUrl('/img/health-events/health-event-detail.png')} alt="health-events-detial" style={{border: '1px solid gray'}} width="400"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Monitoring > Health Events**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Health Events**. <br/><img src={useBaseUrl('/img/health-events/health-events-table.png')} alt="Health events table" style={{border: '1px solid gray'}} width="800"/>
+1. Click on the required row to view the details of a health event. <br/><img src={useBaseUrl('/img/health-events/health-event-detail.png')} alt="Health events detail" style={{border: '1px solid gray'}} width="400"/>
     - **Create Scheduled Search**. Click this button to get alerts for specific health events. The unique identifier of the resource type is used in the query. See [Create a Scheduled Search](../alerts/scheduled-searches/schedule-search.md) for details.
     - Under the **More Actions** menu you can select:
         * **Event History** to run a search against the **sumologic_system_events** partition to view all of the related event logs.
@@ -133,7 +133,7 @@ It may take up to 15 minutes for a 90% usage breach for Lookup Tables, Partition
 
 ## View health events in collection page
 
-A **Health** column on the Collection page shows color-coded healthy, error, and warning states for Collectors and Sources to quickly determine the health of your Collectors and Sources.<br/><img src={useBaseUrl('/img/health-events/Collection-health-column.png')} alt="Collection-health-column" style={{border: '1px solid gray'}} width="800"/>
+A **Health** column on the Collection page shows color-coded healthy, error, and warning states for Collectors and Sources to quickly determine the health of your Collectors and Sources.<br/><img src={useBaseUrl('/img/health-events/Collection-health-column.png')} alt="Collection health column" style={{border: '1px solid gray'}} width="800"/>
 
 To view the number of health events associated with the Collector or Source, perform the following steps:
 

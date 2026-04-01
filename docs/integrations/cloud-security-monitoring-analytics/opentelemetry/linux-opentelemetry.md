@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 Linux - Cloud Security Monitoring and Analytics - OpenTelemetry is a unified log app that ingests distribution of Linux data to Sumo Logic via OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). The app's preconfigured dashboards provide insight into user, service, systems, login, and privilege activity, providing a better understanding of your production environments and surface relevant insights by tuning out-of-the-box content to align with your security team's focus.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Schematics.png' alt="Linux-Schematics" style={{border: '1px solid gray'}} />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Schematics.png' alt="Linux Schematics" style={{border: '1px solid gray'}} />
 
 ## Fields created in Sumo Logic for Linux - Security Analytics
 
@@ -115,7 +115,7 @@ Use this dashboard to:
 - Verify the status of critical systems.
 - Monitor excessive failed login attempts and detect total number of attempts to break into the system.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Monitoring-Overview.png' style={{border: '1px solid gray'}} alt="Linux-Security-Monitoring-Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Monitoring-Overview.png' style={{border: '1px solid gray'}} alt="Linux Security Monitoring Overview" />
 
 ### Login Activity
 
@@ -125,7 +125,7 @@ Use this dashboard to:
 - Monitor access to the Linux computing environment.
 - Monitor failed and successful user logins.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-Login-Activity.png' style={{border: '1px solid gray'}} alt="Linux-Security-Analytics-Login-Activity" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-Login-Activity.png' style={{border: '1px solid gray'}} alt="Linux Security Analytics Login Activity" />
 
 ### Privileged Activity
 
@@ -135,7 +135,7 @@ Use this dashboard to:
 - Monitor successful and failed access attempts to systemswith administrative privileges.
 - Monitor actions performed by users with administrative privileges.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-Privileged-Activity.png' style={{border: '1px solid gray'}} alt="Linux-Security-Analytics-Privileged-Activity" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-Privileged-Activity.png' style={{border: '1px solid gray'}} alt="Linux Security Analytics Privileged Activity" />
 
 
 ### User, Service, and System Monitoring
@@ -146,7 +146,7 @@ Use this dashboard to:
 - Monitor accounts created and deleted.
 - Monitor service usage and other system activity.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-User-Service-and-System-Monitoring.png' style={{border: '1px solid gray'}} alt="Linux-Security-Analytics-User-Service-and-System-Monitoring" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-User-Service-and-System-Monitoring.png' style={{border: '1px solid gray'}} alt="Linux Security Analytics User Service and System Monitoring" />
 
 
 ## Create monitors for Linux - Cloud Security Monitoring and Analytics app

@@ -61,7 +61,7 @@ This section provides instructions for collecting logs for the F5 - BIG-IP LTM A
 
 ### Collection overview
 
-The following image provides a high-level view of the F5 - BIG-IP LTM collection process using the [Telemetry Streaming](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/).<br/><img src={useBaseUrl('img/integrations/security-threat-detection/Telemetry-Services.png')} alt="Telemetry-Services" />
+The following image provides a high-level view of the F5 - BIG-IP LTM collection process using the [Telemetry Streaming](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/).<br/><img src={useBaseUrl('img/integrations/security-threat-detection/Telemetry-Services.png')} alt="Telemetry Services" />
 
 Telemetry Streaming (TS) is a software RPM file. Installing it on BIG-IP enables you to declaratively aggregate, normalize, and forward statistics and events from the BIG-IP to a consumer application by posting a single TS JSON declaration to TS’s declarative REST API endpoint.
 

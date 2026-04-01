@@ -10,7 +10,7 @@ description: Learn how to collect abnormal threat and case logs from the Abnorma
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="abnormal-security-logo" width="90" />
+<img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="Abnormal security logo" width="90" />
 
 Abnormal Security is a behavioral AI-based email security platform that learns the behavior of every identity in a cloud email environment and analyzes the risk of every event to block the most sophisticated attacks.
 
@@ -31,8 +31,8 @@ The Abnormal Security integration ingests threat data and case data identified b
 The Abnormal Security source requires you to provide an authentication token. To obtain the token, follow the steps below.
 1. Sign in to the [Abnormal Security](https://portal.abnormalsecurity.com/) platform.
 1. In the **Manage** section, click on the **Settings** option.
-1. In the **Settings** section, click on the **Integrations** option.<br/><img src={useBaseUrl('img/send-data/abnormal-settings.png')} alt="abnormal-settings" style={{border: '1px solid gray'}} width="300" />
-1. Scroll down to the **Additional Integrations** section and click **+ Connect** on the **Abnormal REST API** card to display an integration page for your organization.<br/><img src={useBaseUrl('img/send-data/additional-integrations.png')} alt="additional-integrations" style={{border: '1px solid gray'}} width="200" />
+1. In the **Settings** section, click on the **Integrations** option.<br/><img src={useBaseUrl('img/send-data/abnormal-settings.png')} alt="Abnormal settings" style={{border: '1px solid gray'}} width="300" />
+1. Scroll down to the **Additional Integrations** section and click **+ Connect** on the **Abnormal REST API** card to display an integration page for your organization.<br/><img src={useBaseUrl('img/send-data/additional-integrations.png')} alt="Additional integrations" style={{border: '1px solid gray'}} width="200" />
 1. In the **IP Safelist** field, enter the [IP addresses](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/#static-ip-addresses) for your deployment.<br/><img src={useBaseUrl('img/send-data/integrations.png')} alt="integrations" style={{border: '1px solid gray'}} width="800" />
 1. Copy and save the **Access token**.
 

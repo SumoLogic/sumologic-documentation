@@ -7,7 +7,7 @@ description: The Sumo Logic app for the Webex provides comprehensive monitoring 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/webex-logo.png')} alt="webex-logo" width="120" />
+<img src={useBaseUrl('img/send-data/webex-logo.png')} alt="Webex logo" width="120" />
 
 The Sumo Logic app for Webex provides comprehensive monitoring and analysis of Webex environments, offering real-time visibility into security events, user activities, and system health. This app includes pre-built dashboards and queries that help organizations quickly identify and respond to security incidents, track user behaviors, manage device activities, and ensure compliance. With detailed insights into login events, authorization activities, device management, and administrative actions, this app enhances operational efficiency and strengthens security postures by providing actionable intelligence.
 
@@ -114,11 +114,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Webex - Overview** dashboard provides a holistic view of all critical activities within the Webex environment. It summarizes total audit events, device creation, deletion, reboot status, and user management activities including creation, deletion, and updates. The dashboard categorizes events by type, user agent, and administrator actions, displaying trends over time and geographical locations of events. It includes a section for recent events, highlighting the immediate actions taken within the system. This dashboard aids administrators in maintaining an overview of operational status and identifying any anomalies or unusual activities promptly. <br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Webex/Webex-Overview.png' alt="Webex-Overview" />
+The **Webex - Overview** dashboard provides a holistic view of all critical activities within the Webex environment. It summarizes total audit events, device creation, deletion, reboot status, and user management activities including creation, deletion, and updates. The dashboard categorizes events by type, user agent, and administrator actions, displaying trends over time and geographical locations of events. It includes a section for recent events, highlighting the immediate actions taken within the system. This dashboard aids administrators in maintaining an overview of operational status and identifying any anomalies or unusual activities promptly. <br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Webex/Webex-Overview.png' alt="Webex Overview" />
 
 ### Security Events
 
-The **Webex - Security Events** dashboard in Sumo Logic offers a detailed view of security-related activities within the Webex environment. It tracks changes in Multi-Factor Authentication (MFA) status, remote access events, login activities, and authorization events over time. The dashboard includes sections for recent login and authorization code events, recent deactivated and reactivated users, and activities on allow and deny lists. Additionally, it provides insights into external admin additions and accounts assigned to external users. This dashboard provides information about potential security issues and helps in proactive incident management. <br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Webex/Webex-Security-Events.png' alt="Webex-Security-Events" />
+The **Webex - Security Events** dashboard in Sumo Logic offers a detailed view of security-related activities within the Webex environment. It tracks changes in Multi-Factor Authentication (MFA) status, remote access events, login activities, and authorization events over time. The dashboard includes sections for recent login and authorization code events, recent deactivated and reactivated users, and activities on allow and deny lists. Additionally, it provides insights into external admin additions and accounts assigned to external users. This dashboard provides information about potential security issues and helps in proactive incident management. <br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Webex/Webex-Security-Events.png' alt="Webex Security Events" />
 
 ## Upgrade/Downgrade the Webex app (Optional)
 

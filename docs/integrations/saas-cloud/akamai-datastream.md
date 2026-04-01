@@ -100,25 +100,25 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Akamai DataStream - Overview** dashboard displays the geo location of requests, requests from risky locations, cache hit ratio trend, URLs causing issues, and user agent breakdown.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Overview.png')} alt="Akamai-DataStream-Overview"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Overview.png')} alt="Akamai DataStream Overview"/>
 
 ### Performance and Qos Monitoring
 
 The **Akamai DataStream - Performance and Qos Monitoring** dashboard analyze response time and provides analysis between response time and requests, DNS lookup delay by geolocations, and shows transfer time by the requested path.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Performance-and-Qos-Monitoring.png')} alt="Akamai-DataStream-Performance-and-Qos-Monitoring"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Performance-and-Qos-Monitoring.png')} alt="Akamai DataStream Performance and Qos Monitoring"/>
 
 ### Requests Type
 
 The **Akamai DataStream - Requests Type** dashboard provides details about visitor platforms, breakdown of browsers and OS, cache hit ratio by content type, and requests with errors.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Requests-Type.png')} alt="Akamai-DataStream-Requests-Type"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Requests-Type.png')} alt="Akamai DataStream Requests Type"/>
 
 ### Akamai DataStream - Video Streaming
 
 The **Akamai DataStream - Video Streaming** dashboard displays details related to video streaming requests, and analyzes failed vs successful video streaming requests over time.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Video-Streaming.png')} alt="Akamai-DataStream-Video-Streaming"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Video-Streaming.png')} alt="Akamai DataStream Video Streaming"/>
 
 ## Upgrade/Downgrade the Akamai DataStream app (Optional)
 

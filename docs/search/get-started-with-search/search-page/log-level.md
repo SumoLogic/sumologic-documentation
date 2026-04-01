@@ -55,7 +55,7 @@ If multiple log levels are detected in the message, they will be prioritized in 
 
 Just execute a log search to see the `_loglevel` field:
 
-<img src={useBaseUrl('img/search/get-started-search/search-page/log-level-legend.png')} width="950" alt="log-level-legend" />
+<img src={useBaseUrl('img/search/get-started-search/search-page/log-level-legend.png')} width="950" alt="Log level legend" />
 
 | Element | Description
 | :-- | :--

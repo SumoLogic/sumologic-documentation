@@ -152,7 +152,7 @@ If you already have AWS CloudTrail logs flowing into Sumo Logic, you can skip th
 
 With this graphic, you can see how to collect logs from AWS CloudTrail DevOps and send them to Sumo Logic.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Collection_Process_Overview-devops.png')} alt="Collection_Process_Overview-devops" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Collection_Process_Overview-devops.png')} alt="Collection Process Overview devops" />
 
 ### Prerequisites
 

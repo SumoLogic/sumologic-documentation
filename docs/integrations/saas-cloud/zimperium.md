@@ -277,7 +277,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Security
 
-The **Zimperium - Security** dashboard enables you to monitor mobile threats by severity, investigate malicious network connections, and correlate detections with specific users for targeted response. It highlights top actionable threats, vulnerable OS versions, jailbroken devices, and system tampering events, while providing visibility into device risk posture to prioritize high-risk assets and track mitigation efforts for compliance. The dashboard streamlines detection, investigation, and remediation of mobile security incidents.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/zimperium/Zimperium+-+Security.png' alt="Zimperium-Security" />
+The **Zimperium - Security** dashboard enables you to monitor mobile threats by severity, investigate malicious network connections, and correlate detections with specific users for targeted response. It highlights top actionable threats, vulnerable OS versions, jailbroken devices, and system tampering events, while providing visibility into device risk posture to prioritize high-risk assets and track mitigation efforts for compliance. The dashboard streamlines detection, investigation, and remediation of mobile security incidents.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/zimperium/Zimperium+-+Security.png' alt="Zimperium Security" />
 
 ## Create monitors for the Zimperium app
 

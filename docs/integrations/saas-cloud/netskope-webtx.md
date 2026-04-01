@@ -7,7 +7,7 @@ description: The Sumo Logic app for Netskope WebTx collects transaction events f
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope-WebTx-icon" width="50" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope WebTx icon" width="50" />
 
 Netskope WebTx solution provides visibility and insights into web transactions, helping you to monitor, analyze, and secure web traffic. Integrating Netskope WebTx with Sumo Logic helps you to monitor and analyze web traffic through Netskope's security cloud services in real-time or over a specified period. By aggregating data on transactions, user behavior, operating systems, locations, and more, this app offers insights to detect security threats, manage traffic, optimize response times, and ensure compliance. With customizable dashboards and reports, it supports you in maintaining a strong security posture while using cloud applications and services.
 
@@ -142,11 +142,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Netskope WebTx - Overview** dashboard provides insights into web transaction data, helping you monitor, analyze, and secure your web traffic. It includes key metrics like total web transactions, average transaction time, and network performance. The dashboard highlights the most active users, breaks down transactions by operating system, and shows regional patterns through geographic distributions. It also categorizes transactions by log type and status, monitors top domains and hosts, and tracks popular transaction methods. With recent transaction data, the dashboard is a valuable tool for both operational management and strategic planning.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Netskope+WebTx/Netskope+WebTx+-+Overview.png' alt="Netskope-WebTx-Overview" />
+The **Netskope WebTx - Overview** dashboard provides insights into web transaction data, helping you monitor, analyze, and secure your web traffic. It includes key metrics like total web transactions, average transaction time, and network performance. The dashboard highlights the most active users, breaks down transactions by operating system, and shows regional patterns through geographic distributions. It also categorizes transactions by log type and status, monitors top domains and hosts, and tracks popular transaction methods. With recent transaction data, the dashboard is a valuable tool for both operational management and strategic planning.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Netskope+WebTx/Netskope+WebTx+-+Overview.png' alt="Netskope WebTx Overview" />
 
 ### Security Overview
 
-The **Netskope WebTx - Security Overview** dashboard provides a strategic view of web transaction security for network administrators and security teams. It aggregates key security metrics to identify high-risk activities, such as transactions with embargoed locations, unauthorized access attempts, and unusual request latency. The dashboard also monitors access patterns to cloud storage from risky countries, potential data exfiltration, and trends in data uploads and downloads, helping safeguard against data breaches and improve compliance and security strategies.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Netskope+WebTx/Netskope+WebTx+-+Security+Overview.png' alt="Netskope-WebTx-Security-Overview" />
+The **Netskope WebTx - Security Overview** dashboard provides a strategic view of web transaction security for network administrators and security teams. It aggregates key security metrics to identify high-risk activities, such as transactions with embargoed locations, unauthorized access attempts, and unusual request latency. The dashboard also monitors access patterns to cloud storage from risky countries, potential data exfiltration, and trends in data uploads and downloads, helping safeguard against data breaches and improve compliance and security strategies.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Netskope+WebTx/Netskope+WebTx+-+Security+Overview.png' alt="Netskope WebTx Security Overview" />
 
 ## Create monitors for the Netskope WebTx app
 

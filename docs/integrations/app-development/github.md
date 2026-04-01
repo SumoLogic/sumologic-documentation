@@ -192,7 +192,7 @@ The **GitHub - Overview** dashboard provides an at-a-glance view of your GitHub 
 Use this dashboard to:
 * Get an overview of GitHub commits, Pull Requests, and Issues.
 
-<img src={useBaseUrl('img/integrations/app-development/GitHub-Overview.png')} alt="GitHub-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/GitHub-Overview.png')} alt="GitHub Overview" />
 
 ### Branch Overview
 
@@ -216,7 +216,7 @@ Use this dashboard to:
 * Review issue status including unassigned, open, and closed issues.
 * Quickly review the issue details and take action accordingly.
 
-<img src={useBaseUrl('img/integrations/app-development/GitHubIssueOverview.png')} alt="GitHub-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/GitHubIssueOverview.png')} alt="GitHub Overview" />
 
 ### Pull Request Overview
 
@@ -227,7 +227,7 @@ Use this dashboard to:
 * Review comments on pull requests.
 * Identify open and not merged critical pull requests.
 
-<img src={useBaseUrl('img/integrations/app-development/GitHub-Pull-Request-Overview.png')} alt="GitHub-Pull-Request-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/GitHub-Pull-Request-Overview.png')} alt="GitHub Pull Request Overview" />
 
 ### Security
 
@@ -238,7 +238,7 @@ Use this dashboard to:
 * Review and manage repositories.
 * View and manage teams.
 
-<img src={useBaseUrl('img/integrations/app-development/GitHub-Security.png')} alt="GitHub-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/GitHub-Security.png')} alt="GitHub Overview" />
 
 ### User Activity
 
@@ -249,7 +249,7 @@ Use this dashboard to:
 * Determine files added, removed, and modified by users.
 * Identify any harmful file types added by users.
 
-<img src={useBaseUrl('img/integrations/app-development/Github-User-Activity.png')} alt="GitHub-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/Github-User-Activity.png')} alt="GitHub Overview" />
 
 ### GHAS - Advanced Security Overview
 

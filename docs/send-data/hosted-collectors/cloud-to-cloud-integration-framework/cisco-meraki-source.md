@@ -118,17 +118,29 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
       "errorInfo": "meraki '/api/v1/organizations/orgIdInput' not found using API key"
   }
   ```
+*  The following error occurs when the Cisco Meraki API returns a 401 Unauthorized response with the message `Invalid API key`.
 
-* The following error occurs when the Cisco Meraki API returns a 401 Unauthorized response with the message `Invalid API key`. It indicates that the API key configured in the Cisco Meraki Source is invalid, revoked, or does not have the required permissions. To resolve this issue, verify that you are using the correct and active API key generated from the [Cisco Meraki Dashboard](https://dashboard.meraki.com/) by navigating to **My Profile → API access → Generate new API key**. If the issue still persists after generating a new API key, then contact the **Cisco Meraki support team**.
+    ```json
+    {
+        "state": "Error",
+        "errorType": "THIRD-PARTY-GENERIC",
+        "errorCode": 401,
+        "errorInfo": "cisco meraki api response 401 Unauthorized: {\"errors\":[\"Invalid API key\"]}"
+    }
+    ```
+    **Root Cause:**
 
-  ```json
-  {
-      "state": "Error",
-      "errorType": "THIRD-PARTY-GENERIC",
-      "errorCode": 401,
-      "errorInfo": "cisco meraki api response 401 Unauthorized: {\"errors\":[\"Invalid API key\"]}"
-  }
-  ```
+    The Cisco Meraki source can encounter intermittent or repeated `401 Unauthorized` or `401 Invalid API key` responses **even when the API key is valid**. This is a known third-party behavior pattern acknowledged in prior investigations and Cisco Meraki communications.
+
+    One possible trigger is a **redirect behavior** where the authorization header is not preserved across redirects, which can make an otherwise valid request appear unauthorized.
+
+    Sumo Logic treats this as a generic error condition, and the **source does not automatically stop** because of these responses. Data collection will continue to retry and resume normally.
+
+    **Recommended Actions:**
+
+    1. **Verify the API key.** Confirm that you are using a correct and active API key generated from the [Cisco Meraki Dashboard](https://dashboard.meraki.com/) by navigating to **My Profile → API access → Generate new API key**.
+    2. **Check for intermittent patterns.** If the error appears intermittently but data collection resumes on its own, this is likely the known redirect/authorization behavior on the Meraki side and **no action is required**.
+    3. **Contact Cisco Meraki support.** If the error persists continuously and no data is being collected even after regenerating the API key, contact the **Cisco Meraki support team** to investigate potential API-side issues such as redirect handling or key restrictions.
 
 * The following error occurs when the API call to Cisco Meraki fails because the Meraki organization or network associated with the API key does not have a valid license. API access is available only for actively licensed Meraki organizations, and the issue may occur if the organization’s license has expired or if the API key is associated with an unlicensed or trial organization. In this case, visit the [Cisco Meraki Dashboard](https://dashboard.meraki.com/) and check the license status under **Organization → Configure → License info**.
 

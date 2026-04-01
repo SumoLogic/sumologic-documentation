@@ -235,7 +235,7 @@ This section explains the steps to collect Apache logs from a Kubernetes environ
 
 We use the Telegraf Operator for Apache metrics collection and the Sumo Logic Installed Collector for collecting Apache logs. The diagram below illustrates the components of the Apache collection in a non-Kubernetes environment for each web server. Telegraf runs on the same host as Apache, and uses the [Apache input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) to obtain Apache metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Apache logs are sent to a Sumo Logic Local File source of an installed collector.
 
-<img src={useBaseUrl('img/integrations/web-servers/apache-non-k8s.png')} alt="apache-non-k8s" />
+<img src={useBaseUrl('img/integrations/web-servers/apache-non-k8s.png')} alt="Apache non-Kubernetes" />
 
 This section provides instructions for configuring metrics collection for the Sumo Logic app for Apache. Follow the instructions to set up metrics collection for each server belonging to a Apache server farm:
 

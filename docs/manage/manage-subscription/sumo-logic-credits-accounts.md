@@ -126,7 +126,7 @@ To view this tab, your role must include the [View Account Overview](/docs/manag
 * Download reports or credit usage data as CSV files.  
 * Hover over charts for detailed insights.  
 
-<img src={useBaseUrl('/img/manage/account/account-usage-fields.png')} alt="account-overview-credits" style={{border:'1px solid gray'}} width="800"/>  
+<img src={useBaseUrl('/img/manage/account/account-usage-fields.png')} alt="Account overview credits" style={{border:'1px solid gray'}} width="800"/>  
 
 ### Organization information panel  
 

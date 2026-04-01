@@ -7,7 +7,7 @@ description: The Sumo Logic app for Abnormal Security offers robust monitoring o
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="abnormal-security-logo" width="90" />
+<img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="Abnormal security logo" width="90" />
 
 The Sumo Logic app for Abnormal Security offers robust monitoring of email security threats. It includes dashboards for an overview of total threats, detailed email threat analysis, and case management by severity and time trends. Key features highlight the threat types, attack vectors, and geolocation of senders, thereby aiding security teams in effectively identifying and responding to incidents. This app helps security teams to effectively monitor, identify, and respond to email-based threats, ensuring robust email security management. It offers actionable insights and visualizations to prioritize and mitigate security incidents efficiently.
 
@@ -161,15 +161,15 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Abnormal Security - Overview** dashboard provides detailed insights into email threats, highlighting total threats, phishing and malware attacks, and trends over time. It categorizes threats by type, vector, and attack party, and tracks the severity and progression of cases. This dashboard helps security teams quickly identify and respond to email security incidents effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Abnormal-Security-Overview.png')} alt="Abnormal-Security-Overview" />
+The **Abnormal Security - Overview** dashboard provides detailed insights into email threats, highlighting total threats, phishing and malware attacks, and trends over time. It categorizes threats by type, vector, and attack party, and tracks the severity and progression of cases. This dashboard helps security teams quickly identify and respond to email security incidents effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Abnormal-Security-Overview.png')} alt="Abnormal Security Overview" />
 
 ### Emails
 
-The **Abnormal Security - Emails** dashboard provides insights into email threat management. It shows the counts of remediated emails, top threat senders and receivers, and email threat activity over time. Additionally, it visualizes the geolocation of threat email senders, highlighting risky regions. This helps in tracking and mitigating email-based threats efficiently.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Abnormal-Security-Emails.png')} alt="Abnormal-Security-Emails" />
+The **Abnormal Security - Emails** dashboard provides insights into email threat management. It shows the counts of remediated emails, top threat senders and receivers, and email threat activity over time. Additionally, it visualizes the geolocation of threat email senders, highlighting risky regions. This helps in tracking and mitigating email-based threats efficiently.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Abnormal-Security-Emails.png')} alt="Abnormal Security Emails" />
 
 ### Cases
 
-The **Abnormal Security - Cases** dashboard provides an overview of security cases, showing their severity levels, trends over time, and detailed information on recent cases. It includes visualizations for case severity (High, Medium, and Low), a trend line of cases over time, and a table of the latest cases with descriptions. This dashboard aids in monitoring and prioritizing security incidents effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Abnormal-Security-Cases.png')} alt="Abnormal-Security-Cases" />
+The **Abnormal Security - Cases** dashboard provides an overview of security cases, showing their severity levels, trends over time, and detailed information on recent cases. It includes visualizations for case severity (High, Medium, and Low), a trend line of cases over time, and a table of the latest cases with descriptions. This dashboard aids in monitoring and prioritizing security incidents effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Abnormal-Security-Cases.png')} alt="Abnormal Security Cases" />
 
 ## Create monitors for Abnormal Security app
 

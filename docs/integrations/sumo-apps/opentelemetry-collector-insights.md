@@ -220,18 +220,18 @@ If you want to configure your source locally, you can do so by downloading the Y
 
 ### Step 1: Set up OpenTelemetry collector
 
-To get started, set up a remotely managed collector on your system by following the.instructions in [Step 1: Set up collector](#step-1-set-up-collector).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/install-otel-collector.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
+To get started, set up a remotely managed collector on your system by following the.instructions in [Step 1: Set up collector](#step-1-set-up-collector).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/install-otel-collector.png')} alt="Learn more button warning" style={{border:'1px solid gray'}} width="700"/>
 
 For the apps listed above, the installation commands now include a `--remotely-managed` flag. When this flag is used, a remotely managed collector is installed automatically instead of a locally managed one. If you prefer to use a locally managed collector, simply remove the flag from the installation command.
 
 ### Step 2: Configure app integration
 
-Configure the source template for the above mentioned apps to ingest logs or metrics, or both. [Learn more](/docs/send-data/opentelemetry-collector/remote-management/source-templates/).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/configure-app.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
+Configure the source template for the above mentioned apps to ingest logs or metrics, or both. [Learn more](/docs/send-data/opentelemetry-collector/remote-management/source-templates/).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/configure-app.png')} alt="Learn more button warning" style={{border:'1px solid gray'}} width="700"/>
 
 ### Step 3: Link Collectors
 
-1. Link the remotely managed OpenTelemetry collector by name or tags to associate it with the configured source template. If you already provided tags in [Step 1](#step-1-set-up-opentelemetry-collector), they will be automatically populated at this stage.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/link-collectors.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
-2. Once the source template is created, you can [edit](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#edit-a-source-template) it anytime as needed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/st-created-successfully.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
+1. Link the remotely managed OpenTelemetry collector by name or tags to associate it with the configured source template. If you already provided tags in [Step 1](#step-1-set-up-opentelemetry-collector), they will be automatically populated at this stage.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/link-collectors.png')} alt="Learn more button warning" style={{border:'1px solid gray'}} width="700"/>
+2. Once the source template is created, you can [edit](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#edit-a-source-template) it anytime as needed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/st-created-successfully.png')} alt="Learn more button warning" style={{border:'1px solid gray'}} width="700"/>
 
 ### Configure OpenTelemetry collectors locally
 
@@ -240,7 +240,7 @@ You can configure your source locally by downloading the YAML file.
 To download the YAML file, follow the steps below:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). Go to the main Sumo Logic menu and select **Data Management**, and under **Data Collection** select **Source Template**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
 1. Select the source template whose YAML configuration you want to download. If the required source template is not available, create a new one by clicking **+ Add Source**.
-1. In the right pane, under **Source Configuration**, click **Copy** or **Download YAML File** to download and manage the configuration locally.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/copy-yaml.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="400"/>
+1. In the right pane, under **Source Configuration**, click **Copy** or **Download YAML File** to download and manage the configuration locally.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/copy-yaml.png')} alt="Learn more button warning" style={{border:'1px solid gray'}} width="400"/>
 
 ## Sample log messages
 
