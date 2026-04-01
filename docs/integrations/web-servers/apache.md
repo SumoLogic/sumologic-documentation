@@ -194,7 +194,7 @@ annotations:
    * For more information on configuring the Apache input plugin for Telegraf, see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache).
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the configuration and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic by running the following metrics query:
-  ```sumo
+  ```sql
   webserver_farm=<your_apache_webserver_farmname> \
   component="webserver" and webserver_system="apache"
   ```

@@ -158,7 +158,7 @@ It should give you the following result:
 
 9. Make sure jolokia.jar exists at /opt/jolokia/ directory of kafka pod. This is an example of what a [Pod definition file](https://sumologic-app-data.s3.amazonaws.com/Kafka/Kafka_Pod_annotations_Labels_MountVolume.yaml) looks like.
 10. Once this has been done, the Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step. Verify metrics are flowing into Sumo Logic by running the following metrics query:
- ```sumo
+ ```sql
  component="messaging" and messaging_system="kafka"
  ```
 

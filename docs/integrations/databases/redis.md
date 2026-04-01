@@ -146,7 +146,7 @@ Ensure that you are monitoring your Kubernetes clusters with the Telegraf operat
    * For more information on configuring the Redis input plugin for Telegraf, see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis).
 3. Once this has been done, the Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 4. Verify metrics in Sumo Logic by running the following metrics query:
-  ```sumo
+  ```sql
   db_cluster=<Your_Redis_Cluster_Name> component="database" \
   and db_system="redis"
   ```

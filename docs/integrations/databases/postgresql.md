@@ -127,7 +127,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQ
         * `db_system= “postgresql”`. This value identifies the database system.
    * For more information on configuring the PostgreSQL input plugin for Telegraf, see [this doc](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/postgresql_extensible/README.md). For more information on all other Telegraf related global parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf).
 3. Once this has been done, the Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the annotations defined in the previous step. Verify metrics are flowing into Sumo Logic by running the following metrics query.
-  ```sumo
+  ```sql
   component="database" and db_system="postgresql"
   ```
 
