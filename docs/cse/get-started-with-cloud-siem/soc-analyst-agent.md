@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Preview</span></a></p>
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Extended Preview</span></a></p>
 
 :::info
 This feature is in preview. For more information, contact your Sumo Logic account executive.
