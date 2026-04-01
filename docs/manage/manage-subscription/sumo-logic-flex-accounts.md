@@ -144,7 +144,8 @@ The following table provides a summary list of key features by Flex package acco
 ## Account Overview
 
 :::note
-To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities/#data-management) capability.
+- To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) capability. 
+- To view, create, and manage the **Create Usage Alerts**, you must have the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities/#alerting).
 :::
 
 The **Account Overview** tab provides a detailed view of your Sumo Logic account, including organization details, subscription type, contract periods, credit usage, live dashboards, and real-time alerts. Account owners can also reassign the Account Owner role from this page.
