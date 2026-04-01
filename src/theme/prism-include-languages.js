@@ -19,7 +19,7 @@ export default function (Prism) {
     // Includes: search operators, aggregate operators, parse operators,
     // Behavior Insights operators, modifiers, and boolean keywords
     // Alphabetized for maintainability
-    'keyword': /\b(?:accum|and|append|as|asc|auto|avg|backshift|bin|by|cat|compare|contains|count|count_distinct|count_frequent|csv|dedup|desc|diff|false|field|fields|fillmissing|filter|first|format|formatDate|from|geoip|hash|if|in|join|json|keyvalue|last|least_recent|limit|logcompare|logexplain|logreduce|lookup|lookupContains|matches|max|median|min|most_recent|multi|nodrop|not|now|num|on|or|outlier|parse|parseDate|parseHex|pct|pct_sampling|predict|replace|rollingstd|save|sessionize|smooth|sort|split|stddev|substring|sum|threatip|timeslice|toLowerCase|top|topk|total|toUpperCase|tourl|trace|transpose|trim|true|urldecode|urlencode|values|where|xml)\b/,
+    'keyword': /\b(?:accum|and|append|as|asc|auto|avg|backshift|bin|by|cat|compare|contains|count|count_distinct|count_frequent|csv|dedup|desc|diff|false|field|fields|fillmissing|filter|first|format|formatDate|from|geo|geoip|hash|if|in|join|json|keyvalue|last|least_recent|limit|logcompare|logexplain|logreduce|lookup|lookupContains|matches|max|median|min|most_recent|multi|nodrop|not|now|num|on|or|outlier|parse|parseDate|parseHex|pct|pct_sampling|predict|replace|rollingstd|save|sessionize|smooth|sort|split|stddev|substring|sum|threatip|threatlookup|timeslice|toLowerCase|top|topk|total|toUpperCase|tourl|trace|transpose|trim|true|urldecode|urlencode|values|where|xml)\b/,
 
     // 5. Time units — MUST come before number so "1m", "24h" etc. match fully
     'time': /\b\d+(?:ms|s|m|h|d|w)\b/,
