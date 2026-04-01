@@ -69,7 +69,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\
 | sort by _count, event_status asc
 ```
 
-```sumo title="Messages Published (Metrics-based)"
+```sql title="Messages Published (Metrics-based)"
 account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicname}} metric=NumberOfMessagesPublished Statistic=Sum | sum
 ```
 

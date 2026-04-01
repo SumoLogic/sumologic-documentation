@@ -18,7 +18,7 @@ The AWS Network Load Balancer app uses AWS Network Load Balancer metrics.
 
 ### Sample queries
 
-```sumo title="Active Flows (Connections) by Load Balancer (Metric-based)"
+```sql title="Active Flows (Connections) by Load Balancer (Metric-based)"
 account=* region=* LoadBalancer=* Namespace=aws/NetworkELB metric=ActiveFlowCount Statistic=Sum | sum by account, region, namespace, LoadBalancer
 ```
 

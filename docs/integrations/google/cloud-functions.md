@@ -34,7 +34,7 @@ _sourceCategory=*gcp* logName textPayload "\"type\":\"cloud_function\"" "\"textP
 
 ### Sample metric query
 
-```sumo title="Number of Errors"
+```sql title="Number of Errors"
 cloud.provider=gcp project_id=* region=* cloud.platform=gcp_cloudfunctions function_name=* metric=function/execution_count statistic=average !status=ok | sum
 ```
 

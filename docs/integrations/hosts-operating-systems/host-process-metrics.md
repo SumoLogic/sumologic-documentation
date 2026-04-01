@@ -160,13 +160,13 @@ Example: For defining multiple patterns for multiple processes you can use the p
 
 **CPU Utilization by Host** panel in **Host Metrics - CPU** Dashboard
 
-```sumo
+```sql
 host.name=*  cpu=cpu-total  metric=(host_cpu_usage_user OR host_cpu_usage_system OR host_cpu_usage_iowait OR host_cpu_usage_steal OR host_cpu_usage_softirq OR host_cpu_usage_irq OR host_cpu_usage_nice) | sum by host.name
 ```
 
 **CPU Usage** panel in **Process Metrics Details** Dashboard
 
-```sumo
+```sql
 metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.name, process.executable.name | outlier
 ```
 

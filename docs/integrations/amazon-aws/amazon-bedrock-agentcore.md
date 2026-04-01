@@ -278,11 +278,11 @@ account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/b
 | limit 25
 ```
 
-```sumo title="Runtime Invocations (CloudWatch Metric)"
+```sql title="Runtime Invocations (CloudWatch Metric)"
 account=* region=* namespace=aws/bedrock/agentcore metric=invocations operation=InvokeAgentRuntime statistic=sum | quantize using sum | sum
 ```
 
-```sumo title="Gateway Average Latency (CloudWatch Metric)"
+```sql title="Gateway Average Latency (CloudWatch Metric)"
 account=* region=* namespace=aws/bedrock/agentcore metric=latency operation=InvokeGateway statistic=average | quantize using avg | avg
 ```
 

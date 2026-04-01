@@ -62,7 +62,7 @@ The AWS DynamoDB app uses the following logs and metrics:
 
 ### Sample queries
 
-```sumo title="Successful Request latency by Table Name (Metric based)"
+```sql title="Successful Request latency by Table Name (Metric based)"
 namespace=aws/dynamodb metric=SuccessfulRequestLatency Statistic=Average account=* region=* tablename=*  | sum by account, region, namespace, tablename
 ```
 

@@ -190,7 +190,7 @@ account=* region=* namespace=aws/es "\"eventsource\":\"es.amazonaws.com\""
 | sort by event_count, event_name asc
 ```
 
-```sumo title="Write Latency by Domain Name (Metrics-based)"
+```sql title="Write Latency by Domain Name (Metrics-based)"
 account=* region=* namespace=aws/es domainname=* !nodeid=* metric=WriteLatency statistic = average | avg by domainname 
 ```
 

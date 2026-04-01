@@ -140,7 +140,7 @@ This is a sample log query from the **Total Event Distribution** panel.
 
 This is a metrics query from the **CPU Utilization Over Time** panel.
 
-```sumo
+```sql
 sumo.datasource=linux host.name=* metric=system.cpu.utilization state=(user OR system OR wait OR steal OR softirq OR interrupt OR nice) | sum by host.name | outlier
 ```
 

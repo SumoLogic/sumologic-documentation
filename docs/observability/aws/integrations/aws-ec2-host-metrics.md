@@ -32,7 +32,7 @@ Collectors running on Host Metrics (EC2) instances can optionally collect AWS Me
 
 ### Sample queries 
 
-```sumo title="CPU utilization (Host metric based)"
+```sql title="CPU utilization (Host metric based)"
 metric=CPU_Sys _sourceCategory=Labs/AWS/Host/Metrics _sourceHost=* _collector=* _source = * account=* region=* instancetype=* namespace=hostmetrics instanceid=* | avg
 ```
 

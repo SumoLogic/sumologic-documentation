@@ -310,13 +310,13 @@ sumo.datasource=otel_collector
 
 This sample metrics query is from the **Collector Resource Usage** panel.
 
-```sumo title="Sample metrics query"
+```sql title="Sample metrics query"
 sumo.datasource=otel_collector metric=otelcol_process_memory_rss deployment.environment=* | avg by deployment.environment
 ```
 
 This sample query monitors queue health from the **Exporter Queue Health** panel.
 
-```sumo
+```sql
 sumo.datasource=otel_collector metric=otelcol_exporter_queue_size deployment.environment=* 
 | avg by exporter, deployment.environment
 ```

@@ -168,7 +168,7 @@ db.system=mysql db.cluster.name={{db.cluster.name}} "User@Host"  "Query_time" 
 
 This sample metrics query is from the **FSync Op Count** panel.
 
-```sumo title="Sample metrics query"
+```sql title="Sample metrics query"
 sumo.datasource=mysql deployment.environment=* db.cluster.name=* db.node.name=* metric=mysql.operations operation=fsyncs  | sum
 ```
 

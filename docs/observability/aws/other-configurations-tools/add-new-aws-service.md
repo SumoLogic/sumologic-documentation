@@ -290,7 +290,7 @@ You can add a variable to your queries by using
 
 For example:
 
-```sumo
+```sql
 namespace=aws/sqs metric=NumberOfMessagesSent
 account={{account}}  region={{region}} queuename={{queuename}} | avg by QueueName, account, region, namespace
 ```

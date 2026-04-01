@@ -68,7 +68,7 @@ The app uses SQS logs and metrics for:
 
 **Messages Received (Metrics-based)**
 
-```sumo
+```sql
 metric=NumberOfMessagesReceived Statistic=Sum account=* region=* namespace=* queuename=* | sum by account, region, namespace, queuename
 ```
 

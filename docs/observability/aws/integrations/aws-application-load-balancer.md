@@ -36,7 +36,7 @@ DH-RSA-AES256-GCM-SHA384 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:10403021
 
 The following query sample was taken from the **HTTP Target 5xx per Target Group** panel on the **AWS Application Load Balancer - HTTP Target Group Codes** dashboard.
 
-```sumo
+```sql
 _sourceCategory=Labs/AWS/ALB/Metrics Namespace=aws/applicationelb metric=HTTPCode_Target_5XX_Count
 Statistic=Sum _sourceHost=* _collector=* region=* targetgroup=* AvailabilityZone=* entity=* account=*
 | parse field= TargetGroup */* as Unused, TargetGroup | sum by TargetGroup

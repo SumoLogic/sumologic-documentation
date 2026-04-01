@@ -35,7 +35,7 @@ The following types of metrics are collected from JMX:
 
 This query sample is from the **CPU Load Vs Current Threads** panel of **JMX - Overview** dashboard.
 
-```sumo
+```sql
 _sourceCategory=Labs/jmx/metrics
 metric=java_lang_OperatingSystem_TotalMemorySize jolokia_agent_url={{Server}} | eval (_value / 1024 / 1024 / 1024) | sum
 ```

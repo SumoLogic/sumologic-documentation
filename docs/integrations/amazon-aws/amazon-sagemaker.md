@@ -173,11 +173,11 @@ account=* region=* namespace=/aws/sagemaker/processingjobs
 | sort by time
 ```
 
-```sumo title="Feature Store Invocations (CloudWatch Metric)"
+```sql title="Feature Store Invocations (CloudWatch Metric)"
 account=* region=* namespace=aws/sagemaker featuregroupname=* operationname=* metric=Invocations statistic=sum | quantize using sum | sum 
 ```
 
-```sumo title="CPU Utilization by Endpoint (CloudWatch Metric)"
+```sql title="CPU Utilization by Endpoint (CloudWatch Metric)"
 account=* region=* namespace=/aws/sagemaker/endpoints endpointname=* metric=CPUUtilization statistic=average | avg by endpointname 
 ```
 

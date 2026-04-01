@@ -217,7 +217,7 @@ _source="hadoop/filelog"
 ```
 
 ## Sample metrics
-```json
+```
 {
   "Query": "A",
   "metric": "hadoop.name_node.block.missing",

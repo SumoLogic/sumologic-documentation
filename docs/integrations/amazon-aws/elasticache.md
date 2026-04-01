@@ -76,7 +76,7 @@ The Amazon ElastiCache app uses the following logs and metrics:
 
 ### Sample queries
 
-```sumo title="Average Engine CPU Utilization by cacheclusterid and cachenodeid and Metric-based"
+```sql title="Average Engine CPU Utilization by cacheclusterid and cachenodeid and Metric-based"
 account=* region=* namespace=aws/elasticache metric=EngineCPUUtilization statistic=Average CacheClusterId=* CacheNodeId=* | avg by CacheClusterId, CacheNodeId, account, region, namespace
 ```
 

@@ -236,7 +236,7 @@ webengine.cluster.name=* %"sumo.datasource"=haproxy
 
 Here is a sample metrics query from the **Http Response Codes** dashboard > **HAProxy - Backend Metrics** panel:
 
-```sumo
+```sql
 sumo.datasource=haproxy metric=haproxy.requests.total status_code=* haproxy.service_name=backend deployment.environment=* webengine.cluster.name=* webengine.node.name=*  haproxy.proxy_name=* 
 | parse field=status_code *  as code 
 | avg by webengine.cluster.name,webengine.node.name,haproxy.proxy_name,code

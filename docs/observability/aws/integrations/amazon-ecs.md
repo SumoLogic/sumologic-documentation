@@ -298,7 +298,7 @@ account=dev region=us-east-1 namespace=aws/ecs "\"eventSource\":\"ecs.amazonaws.
 
 Average CPU Utilization by ServiceName:
 
-```sumo title="Metric based"
+```sql title="Metric based"
 account=dev region=us-east-1 namespace=aws/ecs metric=CPUUtilization statistic=Average ClusterName=* ServiceName=* | avg by ClusterName, ServiceName, account, region, namespace
 ```
  

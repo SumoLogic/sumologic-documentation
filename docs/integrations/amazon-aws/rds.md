@@ -193,7 +193,7 @@ The Amazon RDS app uses the following logs and metrics:
 
 ### Sample queries
 
-```sumo title="Average Database Connections in Use (Metric based)"
+```sql title="Average Database Connections in Use (Metric based)"
 Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=* dbidentifier=* | avg by account, region, dbidentifier
 ```
 

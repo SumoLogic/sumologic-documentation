@@ -253,11 +253,11 @@ account=* region=* namespace=aws/bedrock
 ```
 
 
-```sumo title="Invocation Latency By Model (CloudWatch Metric)"
+```sql title="Invocation Latency By Model (CloudWatch Metric)"
 account=* region=* namespace=aws/bedrock modelid=* metric=InvocationLatency statistic=average | avg by modelid 
 ```
 
-```sumo title="Trend Invocations By Model (CloudWatch Metric)"
+```sql title="Trend Invocations By Model (CloudWatch Metric)"
 account=* region=* namespace=aws/bedrock modelid=* metric=Invocations statistic= sum | quantize using sum | sum by modelid
 ```
 

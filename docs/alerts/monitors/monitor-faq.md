@@ -43,7 +43,7 @@ A common reason a metric monitor is disabled is the cardinality limit was excee
 
 For example, if you use Kubernetes and have 20,000 pods in your deployment, a query that spans all pods, like the following, will result in the cardinality error.
 
-```sumo
+```sql
 deployment=acme metric=container_cpu_usage_seconds_total | rate | sum by pod
 ```
 
@@ -51,11 +51,11 @@ deployment=acme metric=container_cpu_usage_seconds_total | rate | sum by pod
 
 Break your monitor into several monitors. Based on the above Kubernetes example, if you are collecting Kubernetes data from different AWS regions, instead of creating a single alert on all pods across all AWS regions, create one alert per AWS region, as shown below.
 
-```sumo title="Monitor 1 query"
+```sql title="Monitor 1 query"
 deployment=acme region=us-west2 metric=container_cpu_usage_seconds_total | rate | sum by pod
 ```
 
-```sumo title="Monitor 2 query"
+```sql title="Monitor 2 query"
 deployment=acme region=us-east1 metric=container_cpu_usage_seconds_total | rate | sum by pod
 ```
 

@@ -129,7 +129,7 @@ If you receive an error during installation that includes the message `failed to
 
 This is a sample metrics query from the **CPU User Time** panel in the **Host Metric - CPU** dashboard.
 
-```sumo title="Metrics Query String"
+```sql title="Metrics Query String"
 sumo.datasource=windows host.name={{host.name}} cpu=cpu0  metric=system.cpu.utilization state=user | avg by host.name
 ```
 

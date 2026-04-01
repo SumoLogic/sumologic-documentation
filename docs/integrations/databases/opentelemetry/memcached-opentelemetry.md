@@ -225,7 +225,7 @@ Following is the query from Errors panel of Memcached app's overview Dashboard:
 ```
 ## Sample metrics queries
 
-```sumo title="Total Get"
+```sql title="Total Get"
 sumo.datasource=memcached deployment.environment=* db.cluster.name=* db.node.name=* metric=memcached.commands command=get | sum
 ```
 
