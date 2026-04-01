@@ -17,8 +17,8 @@ The **Automation** section contains configuration tools for Cloud SOAR's automat
 Because Cloud SOAR provides automation functionality to the [Automation Service](/docs/platform-services/automation-service/), many features are identical between Cloud SOAR and the Automation Service. Therefore, for information about the following Cloud SOAR features, see the Automation Service articles:
 * [App Central](/docs/platform-services/automation-service/app-central/)
 * [Integrations](/docs/platform-services/automation-service/automation-service-integrations/)
-* [Automation bridge](/docs/platform-services/automation-service/automation-service-bridge)
-* [Integration framework](/docs/platform-services/automation-service/integration-framework/)
+* [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge)
+* [Integration Framework](/docs/platform-services/automation-service/integration-framework/)
 * [Audit logging](/docs/platform-services/automation-service/automation-service-audit-logging)
 * [Playbooks](/docs/platform-services/automation-service/playbooks/). (For information specific to running playbooks in Cloud SOAR, see [Run playbooks in Cloud SOAR](#run-playbooks-in-cloud-soar) below.)
 
@@ -70,7 +70,7 @@ For more information about how to use APIs, see [Cloud SOAR APIs](/docs/api/clou
 
 ## Incident templates
 
-Incident templates define the way in which incidents will be created for a specific alert, incident type or event. They allow you to define a certain number of incident attributes (for example, incident type, severity, assignment, and any other default or custom incident parameters) that will automatically be set each time an incident is generated, based on the template. This may include type, classification, incident assignment, playbooks, knowledge base articles, or any other incident attribute. Since rules are created for generating incidents based on syslog messages, email, SIEM integrations, or other data sources, it is the incident templates that will define how the initial incident will be created.
+Incident templates define the way in which incidents will be created for a specific alert, incident type, or event. They allow you to define a certain number of incident attributes (for example, incident type, severity, assignment, and any other default or custom incident parameters) that will automatically be set each time an incident is generated, based on the template. This may include type, classification, incident assignment, playbooks, knowledge base articles, or any other incident attribute. Since rules are created for generating incidents based on syslog messages, email, SIEM integrations, or other data sources, it is the incident templates that will define how the initial incident will be created.
 
 ### Create a new incident template
 
@@ -78,7 +78,7 @@ Incident templates define the way in which incidents will be created for a speci
 1. Click **+** to the left of **Template**.<br/><img src={useBaseUrl('img/cloud-soar/incident-templates.png')} alt="Add template" style={{border: '1px solid gray'}} width="800"/>
 1. Define the template: <br/><img src={useBaseUrl('img/cloud-soar/create-incident-template.png')} alt="Create incident template dialog" style={{border: '1px solid gray'}} width="400"/>
    1. **Template name**. Enter a name that is easily identifiable and related to the activity it is developed for.
-   1. **Category**. Enter a category for this template. For example, suppose we're building a template for a DLP incident. We might enter a category named **Data Theft**, but we can enter anything we want that will help us group incident templates in the future. You can customize this field to fit your environment, as well as all other fields in Cloud SOAR (see [Custom fields](/docs/cloud-soar/settings/#custom-fields)).
+   1. **Category**. Enter a category for this template. For example, suppose we're building a template for a Data Loss Prevention (DLP) incident. We might enter a category named **Data Theft**, but we can enter anything we want that will help us group incident templates in the future. You can customize this field to fit your environment, as well as all other fields in Cloud SOAR (see [Custom fields](/docs/cloud-soar/settings/#custom-fields)).
    1. **Tags**. Enter any tags to further categorize or define the incident. You can use these tags later when searching for or correlating events.
 1. Click **Incident** at the top of the dialog.
 1. Define any incident parameters you want to set by default when an incident is creating using the template: <br/><img src={useBaseUrl('img/cloud-soar/create-incident-template-2.png')} alt="Create incident template dialog to define the incident type" style={{border: '1px solid gray'}} width="400"/>
@@ -250,7 +250,7 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
 
 ### Bidirectional use cases between Slack and incident management
 
-You can manage Slack communication channels directly by creating/editing various incidents within Cloud SOAR. Here are some use cases:
+You can manage Slack communication channels directly by creating or editing various incidents within Cloud SOAR. Here are some use cases:
 
 * Creating an incident <br/>When an incident is created, a conversation channel will automatically be created within your Slack workspace, where the channel name will be formed like this: **incident-incident_id**. Furthermore, all users (owners, investigators, groups) who are part of the workspace will be added to the channel.<br/><img src={useBaseUrl('img/cloud-soar/created-incident-fs.png')} alt="Created incident" style={{border: '1px solid gray'}} width="800"/><br/><img src={useBaseUrl('img/cloud-soar/created-slack-channel.png')} alt="Created Slack channel" style={{border: '1px solid gray'}} width="800"/>
 * Adding / removing users from the incident <br/>When users (owners, investigators, groups) are added or removed from the incident, they will be managed in the same way within the channel in the workspace.

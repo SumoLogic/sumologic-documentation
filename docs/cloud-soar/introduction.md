@@ -18,7 +18,7 @@ Cloud SOAR can help security analysts orchestrate and automate many pieces of th
 
 #### Security Orchestration, Automation, and Response
 
-Broadly speaking, Security Orchestration Automation and Response (SOAR) is a collection of scripts, APIs, playbooks, daemons, threat intelligence databases, dashboards, and other tools. In this introduction, we’ll be focusing on a few tools in particular:
+Broadly speaking, Security Orchestration, Automation, and Response (SOAR) is a collection of scripts, APIs, playbooks, daemons, threat intelligence databases, dashboards, and other tools. In this introduction, we’ll be focusing on a few tools in particular:
 
 * **Threat Intel**. A database of information gathered by external sources about various entities, such as host names, file hashes, IP addresses, and other known Indicators of Compromise. 
 * **Playbooks**. A collection of automated or semi-automated workflows that use Cloud SOAR integrations, tasks, and a variety of flow control decisions such as conditional statements.
@@ -32,7 +32,7 @@ The cybersecurity cycle is an iterative, scientific process, much like troublesh
 
 <img src={useBaseUrl('img/cloud-soar/incident-response-process.png')} alt="Incident response process" style={{border: '1px solid gray'}} width="600" />
 
-While Security Information Event Management (SIEM) tools help automate the threat hunting and investigation process, Security Orchestration Automation and Response (SOAR) tools are typically used in response to an active or potential threat. Both these tools work together as part of the security pipeline in your security operations center (SOC).
+While Security Information and Event Management (SIEM) tools help automate the threat hunting and investigation process, Security Orchestration, Automation, and Response (SOAR) tools are typically used in response to an active or potential threat. Both these tools work together as part of the security pipeline in your security operations center (SOC).
 
 All of Sumo Logic’s security solutions can help with every step of this process. However, broadly speaking, [Cloud SIEM](/docs/cse/) focuses on the investigation phase, and Cloud SOAR focuses on the response phase. All our solutions can be used on their own, or together. For example, you can investigate an insight in Cloud SIEM, then use the **Actions** button inside the insight to send the information to Cloud SOAR, where you can orchestrate the response to the incident.
 
@@ -197,7 +197,7 @@ For example, let’s say one of the employees at your company accidentally downl
  
 The main way to respond to an incident in Cloud SOAR is by executing a playbook. Playbooks are automated, or partially automated, workflows that act based on information from an incident. You typically execute a playbook after you have identified a threat. The playbook will then automatically orchestrate many parts of the investigation, containment, eradication, and recovery processes.
 
-For example, let’s say you identified potential malware on an employee’s computer. First you must investigate to verify that the threat isn’t a false positive, for example by checking the data against an external threat intelligence database. Once the threat is verified, notifications have to be sent to relevant teams through Slack. You then need to contain the threat by quarantining the infected machine with a Palo Alto firewall to block the IP address source of the attack. Containment might also include resetting passwords via an SSO service like Okta. Finally, you can open a Jira ticket to assign the IT department to provision a new laptop to infected users to recover and restore. And finally, you need to open another Jira ticket for the HR department to assign cybersecurity training to the infected employees, as part of lessons learned. 
+For example, let’s say you identified potential malware on an employee’s computer. First you must investigate to verify that the threat is not a false positive, for example by checking the data against an external threat intelligence database. Once the threat is verified, notifications have to be sent to relevant teams through Slack. You then need to contain the threat by quarantining the infected machine with a Palo Alto firewall to block the IP address source of the attack. Containment might also include resetting passwords via a Single Sign-On (SSO) service like Okta. Finally, you can open a Jira ticket to assign the IT department to provision a new laptop to infected users to recover and restore. And finally, you need to open another Jira ticket for the HR department to assign cybersecurity training to the infected employees, as part of lessons learned. 
 
 Many of these tasks can be automated through APIs and other integrations. All of these steps can be bundled together in a playbook. We could create a playbook called "Malware Detected" in Cloud SOAR. Then, instead of remembering to do each of these tasks individually, we can simply click "Run" on the playbook, and all the tasks will be done automatically. 
 
@@ -317,7 +317,7 @@ You can use Cloud SOAR to make downloadable reports, using the same information 
 
 ### What is Cloud SOAR administration?
 
-Broadly speaking, Security Orchestration Automation and Response (SOAR) is a collection of scripts, APIs, playbooks, daemons, threat intelligence databases, dashboards, and other tools. As a Cloud SOAR administrator, you’ll be focusing on a few areas in particular:
+Broadly speaking, Security Orchestration, Automation, and Response (SOAR) is a collection of scripts, APIs, playbooks, daemons, threat intelligence databases, dashboards, and other tools. As a Cloud SOAR administrator, you’ll be focusing on a few areas in particular:
 * **Role-based access controls**. Admins can create different roles and user groups with different levels of edit and view access to various areas within Cloud SOAR.
 * **Dashboards and reports**. Admins manage the default settings, create templates, and configure the look and feel of Cloud SOAR dashboards and reports for their organization.
 * **Playbooks and automations**. Admins configure and manage the playbooks, automations, integrations, and tasks in Cloud SOAR. This requires access keys and knowledge of APIs.
@@ -439,7 +439,7 @@ To test the new field, we'll create a new incident manually.
 1. Scroll down to the bottom to see your new field. Your field may appear in either the left or right column. It may be near the bottom or several rows up.
 1. Type a value in your new field. For example, if your new field is for a source IP, you could type in an IP address, such as **1.1.1.1**.
 1. For **Incident ID**, enter a unique identifier.
-1. For for **Type** select **General**, for **Purpose** select **Generic**, and for **Category** select **General**. 
+1. For **Type** select **General**, for **Purpose** select **Generic**, and for **Category** select **General**. 
 1. Leave other fields as their defaults, then click **Create**.
 
 :::note

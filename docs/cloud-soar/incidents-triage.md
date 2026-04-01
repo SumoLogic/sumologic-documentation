@@ -102,7 +102,7 @@ To perform a simple cross-match search, simply write the keyword you want to sea
 
 `"incident"` or `'incident'`
 
-By wrapping a single or multiple keywords in double or single quotation marks, the given keywords will be searched as an exact matching. Longer or partial hits won't be included in the search results.
+By wrapping a single or multiple keywords in double or single quotation marks, the given keywords will be searched as an exact matching. Longer or partial hits will not be included in the search results.
 
 #### Column specification
 
@@ -385,7 +385,7 @@ Perform the following steps to:
     1. In the **Add action** dialog, select the following:
        1. **Action Type**. Select **Add to Triage**. This is the action that automatically adds events to the **Triage** page.
        1. **Type**. Select the playbook type you added in step 1 above (for example, *Custom Triage*). When the automation rule runs, it will execute all the playbooks that have this type. (While you can select one of the out-of-the-box types here, for our example select your custom type to give you more control over the playbooks that will run.) 
-       1. **Auto grab user**. Select a user to automatically grab the triage when it is added to the **Triage** page. You can also leave this field empty if you don't want an analyst or group to automatically grab the triage event.
+       1. **Auto grab user**. Select a user to automatically grab the triage when it is added to the **Triage** page. You can also leave this field empty if you do not want an analyst or group to automatically grab the triage event.
        1. Click **Save**.<br/><img src={useBaseUrl('img/cloud-soar/triage-add-action.png')} alt="Select the 'Add to Triage' action type for an automation rule" style={{border: '1px solid gray'}} width="400"/>
     1. When done, your automation rule should look something like this. Note that your automation rule should have the **Add to Triage** action in order to add events to triage.<br/><img src={useBaseUrl('img/cloud-soar/triage-automation-rule.png')} alt="Example automation rule for triage" style={{border: '1px solid gray'}} width="800"/>
 1. Create playbooks with the custom playbook type you created in step 1 above (for example, *Custom Triage*):

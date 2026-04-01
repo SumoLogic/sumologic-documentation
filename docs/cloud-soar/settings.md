@@ -35,7 +35,7 @@ Use these settings to configure how Cloud SOAR handles [incidents](/docs/cloud-s
     * **Extract from**:
        * **Incident field**. Gather objects from the incident properties.
        * **Task field**. Gather objects from the incident tasks.
-       * **Note field**. Gather objects from the the incident notes.
+       * **Note field**. Gather objects from the incident notes.
     * **Filename extension whitelist**. Enter filename extensions to allow when gathering objects.
 * **Process Phase**. Configure phases for monitoring progress of incidents as they progress. Determine whether the phase is **Mandatory**, and the **Status** of the incident when the phase is reached. Select **Show Deleted** to show phases on deleted incidents.
 * **Mandatory Closing Note**. Make a final incident note mandatory before the incident can be closed.
@@ -131,10 +131,10 @@ A complete list of field types is listed below. Additional fields are required o
 | Color Picker  | Interactive color picker to select a color. |
 | Date | Date only picker. |
 | Date & Time   | Date and time picker. |
-| Email Address | Email address available to use in actions which require a email input.    |
+| Email Address | Email address available to use in actions which require an email input.    |
 | Filename | Filename available to use in actions which require a filename input.   |
 | Hash | Hash value available to use in actions which require a hash input.  |
-| IP Address    | IP address available to use in actions which require a IP address input.    |
+| IP Address    | IP address available to use in actions which require an IP address input.    |
 | List   | Dropdown list.  |
 | Multi Select List | Multiselect list box.  |
 | Numeric Textbox   | Accepting numeric values only.  |
@@ -143,7 +143,7 @@ A complete list of field types is listed below. Additional fields are required o
 | Time Interval     | Numeric time interval which can be used as a value in another calculated field.  |
 | Timezone   | Timezone list dropdown. |
 | URL | URL available to use in actions which require a URL input. |
-| User Details | User details, such as a user name. Available to use in actions which require a user details input. |
+| User Details | User details, such as a user name. Available to use in actions which require user details input. |
 
 ### Using custom fields for SLAs
 
