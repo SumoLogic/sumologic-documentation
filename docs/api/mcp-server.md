@@ -421,7 +421,7 @@ Our MCP server provides access to Sumo Logic through these tool categories:
 * **Utility tools**. Discover relevant tools based on context.
 * **Alerts management**. Search, retrieve, and resolve alerts.
 * **Dashboard management**. Create, retrieve, update, and delete dashboards.
-* **Cloud SIEM**. Manage Insights, detection rules, triage information, entities, and status updates.
+* **Cloud SIEM**. Manage insights, detection rules, triage information, entities, and status updates.
 * **Log search**. Create and manage search jobs, retrieve paginated messages and records.
 * **User management**. List users in the organization.
 
