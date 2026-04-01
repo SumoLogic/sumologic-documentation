@@ -11,7 +11,7 @@ This topic describes the Cloud SIEM parsing language, which you can use to write
 
 Parsing is the first step in the Cloud SIEM [record processing pipeline](/docs/cse/schema/record-processing-pipeline) — it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message. We refer to the result of the parsing process as a *field dictionary*. The raw message is retained. 
 
-Parsers are written in a specialized Sumo Logic Parsing Language. The parser code resides in a a parser configuration object. At runtime, parser code is executed by the Sumo Logic parsing engine.
+Parsers are written in a specialized Sumo Logic Parsing Language. The parser code resides in a parser configuration object. At runtime, parser code is executed by the Sumo Logic parsing engine.
 
 ## Key concepts
 
@@ -932,7 +932,7 @@ If `<field_name>` isn’t specified, the field dictionary is passed through inst
 
 ### TRANSFORM_IF_ELSE
 
-Compares a field value or the log entry if none is supplied to a regex, and if the value matches, runs the first of the two specified transforms with `<field_name>` (or the log entry by default) as input. If the value doesn't match the regex, the second specified transform is run.
+Compares a field value or the log entry if none is supplied to a regex, and if the value matches, runs the first of the two specified transforms with `<field_name>` (or the log entry by default) as input. If the value does not match the regex, the second specified transform is run.
 
 **Syntax**
 
@@ -1050,7 +1050,7 @@ Where:
 
 `<int>, <int> …` specify the list of field indexes (with zero being the first field) used to select fields. The values of those fields are concatenated using "-" as the separator; then the result is used to find the correct VARIABLE_TRANSFORM by its `<type value>`. The transform is applied then to `field-to-parse-name`. That completes the execution of the transform group.
 
-If `<field-to-parse_name>` isn't specified it defaults to checking the log entry and passing through. 
+If `<field-to-parse_name>` is not specified it defaults to checking the log entry and passing through. 
 
 ### VARIABLE_TRANSFORM_INDEX (syntax 2)
 

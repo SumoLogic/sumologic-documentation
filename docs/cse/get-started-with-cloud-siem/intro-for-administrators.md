@@ -43,10 +43,10 @@ The first part of the security data pipeline is collection and ingestion in Sumo
 These messages are then forwarded to Cloud SIEM. It's a good idea to periodically examine the data you're ingesting and sending to Cloud SIEM. Ask yourself these questions:
 
 * **Are you ingesting enough data?** Cloud SIEM takes thousands or millions of records and boils them down into just a handful of insights. Most organizations ingest more than 50GB of data every day to start finding any insights. If your ingest volume is smaller than this, consider sending more data to Cloud SIEM or using other security solutions like the [Threat Intel Quick Analysis app](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/).
-* **Are you ingesting too much data?** More data doesn't always mean more insights. The threat detection logic built into Cloud SIEM generally prevents false positives. However, some organizations choose to ingest or store less data as a way to cut costs. One solution is partitioning your data into different tiers, and only sending some of that data along to Cloud SIEM. 
-* **Are you ingesting the right data?** Cloud SIEM doesn't just work on quantity alone. Quality data will affect your performance as well. As a best practice, you'll need to bring in quality data sources that are supported by Cloud SIEM. High-value data sources include [CloudTrail logs](/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail/), [Windows event logs](/docs/send-data/installed-collectors/sources/collect-forwarded-events-windows-event-collector/), [AWS logs](/docs/integrations/amazon-aws/), and [GuardDuty logs](/docs/integrations/amazon-aws/guardduty/). You should also consider whether your data is structured, like key-value pairs, or unstructured, like plain text files. Most data ingested into Sumo Logic is semi-structured, like JSON logs.
+* **Are you ingesting too much data?** More data does not always mean more insights. The threat detection logic built into Cloud SIEM generally prevents false positives. However, some organizations choose to ingest or store less data as a way to cut costs. One solution is partitioning your data into different tiers, and only sending some of that data along to Cloud SIEM. 
+* **Are you ingesting the right data?** Cloud SIEM does not just work on quantity alone. Quality data will affect your performance as well. As a best practice, you'll need to bring in quality data sources that are supported by Cloud SIEM. High-value data sources include [CloudTrail logs](/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail/), [Windows event logs](/docs/send-data/installed-collectors/sources/collect-forwarded-events-windows-event-collector/), [AWS logs](/docs/integrations/amazon-aws/), and [GuardDuty logs](/docs/integrations/amazon-aws/guardduty/). You should also consider whether your data is structured, like key-value pairs, or unstructured, like plain text files. Most data ingested into Sumo Logic is semi-structured, like JSON logs.
 
-Once you've answered these questions, you can assess what is and isn't working for you and your SOC team. You can then partition your data in Sumo Logic and forward some or all of it to Cloud SIEM.
+Once you've answered these questions, you can assess what is and is not working for you and your SOC team. You can then partition your data in Sumo Logic and forward some or all of it to Cloud SIEM.
 
 #### Extra resources
 
@@ -144,11 +144,11 @@ In this section, we'll send a simple JSON log message to the HTTP source we crea
 #### Tips and tricks
 
 * If you get an error after running the CURL command in step 2, make sure your quotation marks are straight. Copy and pasting the command sometimes changes the formatting of these quote marks into curly quotes.
-* If you don't see any records, try:
+* If you do not see any records, try:
     * increasing the timestamp range to the last 60 minutes or the last 3 hours.
     * making sure the metadata source category you searched in the **Filters** bar matches the one you created earlier.
     * searching for the log in Sumo Logic with this query: `_index=sec_record_* metadata_sourceCategory=<source-category>`. Replace `source-category` with the source category you created. 
-* If you still don't see your custom JSON record after these troubleshooting steps, try sending another log message from your terminal window. Make sure the command completes without any errors.
+* If you still do not see your custom JSON record after these troubleshooting steps, try sending another log message from your terminal window. Make sure the command completes without any errors.
 
 ### Logs into records
 
@@ -213,7 +213,7 @@ In this section, we'll create a log mapping to ensure the custom ingest mapping 
 
 ### Send another log message to Cloud SIEM
 
-Your new log and ingest mappings won't apply to the first log message you sent in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem). In this section, we'll send another log message to the HTTP source we created in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source). Then, we'll look for that new log message in Cloud SIEM. This time, the log and ingest mappings we created in [Set up an ingest mapping](#set-up-an-ingest-mapping) and [Set up a log mapping](#set-up-a-log-mapping) should apply to the new record.
+Your new log and ingest mappings will not apply to the first log message you sent in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem). In this section, we'll send another log message to the HTTP source we created in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source). Then, we'll look for that new log message in Cloud SIEM. This time, the log and ingest mappings we created in [Set up an ingest mapping](#set-up-an-ingest-mapping) and [Set up a log mapping](#set-up-a-log-mapping) should apply to the new record.
 
 1. Open a CLI window, such as Terminal or PowerShell. 
 1. Type this command:
@@ -240,17 +240,17 @@ Your new log and ingest mappings won't apply to the first log message you sent i
     1. Type the source category you used in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
     1. You should see a record with the IP address and threat name parsed properly.
 
-Although the log message and method of ingestion was identical, the log message failed to parse into a Cloud SIEM record in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem) because the log and ingest mappings weren't configured. After we configured the log and ingest mappings, the new log messages forwarded to Cloud SIEM successfully completed the parse, map, and enrich steps to become a record.
+Although the log message and method of ingestion was identical, the log message failed to parse into a Cloud SIEM record in [Send a log message to Cloud SIEM](#send-a-log-message-to-cloud-siem) because the log and ingest mappings were not configured. After we configured the log and ingest mappings, the new log messages forwarded to Cloud SIEM successfully completed the parse, map, and enrich steps to become a record.
 
 #### Tips and tricks
 
 * If you get an error after running the CURL command, make sure your quotation marks are straight. Copy and pasting the command sometimes changes the formatting of these quote marks into curly quotes.
-* If you don't see any records, try: 
+* If you do not see any records, try: 
     * increasing the timestamp range to the last 60 minutes or the last 3 hours.
     * making sure the metadata source category you searched in the **Filters** bar matches the one you created in [Enable data forwarding for an HTTP source](#enable-data-forwarding-for-an-http-source).
     * searching for the log in Sumo Logic with this query: `_index=sec_record_* metadata_sourceCategory=<source-category>`. Replace `<source-category>` with the source category you created earlier. 
-* If you still don't see your custom JSON record after these troubleshooting steps, try sending another log message from your terminal window. Make sure the command completes without any errors. 
-* If your new record failed too (you see two failed records), either your log or ingest mapping weren't configured correctly. Review those configurations and try again.
+* If you still do not see your custom JSON record after these troubleshooting steps, try sending another log message from your terminal window. Make sure the command completes without any errors. 
+* If your new record failed too (you see two failed records), either your log or ingest mapping were not configured correctly. Review those configurations and try again.
 
 ## Tune your environment
 
@@ -265,9 +265,9 @@ You've already learned how to set up log and ingest mappings to ensure rules acc
  
 You've already learned how to set up log and ingest mappings to ensure rules accurately match and track these entities. Now that you have a properly parsed record in Cloud SIEM, it will be compared to rules and potentially generate signals and insights.
 
-Although you don't have to write rules from scratch, you can. In fact, there are several customizations you can do through Cloud SIEM.
+Although you do not have to write rules from scratch, you can. In fact, there are several customizations you can do through Cloud SIEM.
 * [Rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/) are simple ways to add small exceptions and other clauses to existing rules.
-* [Rules](/docs/cse/rules/about-cse-rules/) let you write logic that's unique to your system, to cover threats or data sources that aren't covered by built-in rules.
+* [Rules](/docs/cse/rules/about-cse-rules/) let you write logic that's unique to your system, to cover threats or data sources that are not covered by built-in rules.
 * [Custom insights](/docs/cse/records-signals-entities-insights/configure-custom-insight/) let you get alerts based on just one rule or a chain of rules.
 * [Match lists](/docs/cse/match-lists-suppressed-lists/create-match-list/) can help create groups of entities, such as domains or IP addresses, that can be used when creating other custom content.
 
@@ -275,11 +275,11 @@ Through [role-based access controls](/docs/manage/users-roles/roles/role-based-a
 
 ### Custom rules
 
-You don't have to write rules from scratch. The Sumo Logic content team creates and maintains hundreds of out-of-the-box rules, to get you started. You can find documentation on all the out-of-the-box rules in the [Cloud SIEM Content Catalog](/docs/cse/get-started-with-cloud-siem/cloud-siem-content-catalog/). These rules are updated frequently, often every few days. You can check out the most recent updates in the [release notes](/release-notes-cse/).
+You do not have to write rules from scratch. The Sumo Logic content team creates and maintains hundreds of out-of-the-box rules, to get you started. You can find documentation on all the out-of-the-box rules in the [Cloud SIEM Content Catalog](/docs/cse/get-started-with-cloud-siem/cloud-siem-content-catalog/). These rules are updated frequently, often every few days. You can check out the most recent updates in the [release notes](/release-notes-cse/).
 
-However, if you have a specific threat you're concerned about or a unique data source that isn't covered, you can write a custom rule. See [Rule types](/docs/cse/rules/about-cse-rules#rule-types) for the types of rules you can create:
+However, if you have a specific threat you're concerned about or a unique data source that is not covered, you can write a custom rule. See [Rule types](/docs/cse/rules/about-cse-rules#rule-types) for the types of rules you can create:
 * **Match rules** take a simple boolean statement, check if it's true or false. If it's true, then an entity is extracted and a signal is created.
-* **Threshold rules** are triggered when a match is found a certain number of times. So, for example, if one failed login attempt is acceptable, but 5 isn't, then a threshold rule would fire after the fifth failed login attempt. 
+* **Threshold rules** are triggered when a match is found a certain number of times. So, for example, if one failed login attempt is acceptable, but 5 is not, then a threshold rule would fire after the fifth failed login attempt. 
 * **Chain rules** fire when certain events happen in a certain time window. So, for example, if you want to look for 5 failed login attempts followed by one successful log in within one hour, you'd use a chain rule.
 * **Aggregation rules** are triggered when up to six different events accumulate over time. For example, if you want a rule that looks for a large number of event types from a single device IP, you'd use aggregation rules.
 * **First Seen rules** are triggered when behavior by an entity (such as a user) is encountered for the first time. For instance, it fires the first time a user logged in from a new geographic location.
@@ -318,7 +318,7 @@ In this section, we'll write a rule that looks for three unique Windows event ID
     1. Click **Submit** to save your rule.
 
 #### Tips and tricks
-* Rule names must be unique. If your rule won't submit, it's possible that there is a rule with the same name.
+* Rule names must be unique. If your rule will not submit, it's possible that there is a rule with the same name.
 * The autocomplete feature can help you write the logic. For example, typing "ip" will bring up a dropdown showing all available fields related to IP addresses.
 * The syntax coloring can help you write the logic. For example, try using single quotes ('...') instead of double quotes ("..."). Notice that the syntax coloring lights up correctly when you use double quotes, which is the best practice.
 * Insights are named based on the tactics and techniques tagged in the signals. Consider which tactic or technique from the [MITRE ATT&CK](https://attack.mitre.org/) framework your rule is looking for when selecting tags.
@@ -408,7 +408,7 @@ As a Cloud SIEM administrator, you can explore App Central and install any integ
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then and click **App Central** in the left navigation bar. 
 1. Click **Integrations** at the top of the window.
-1. Find any integration that isn't already installed and click **Install**. If an integration has already been installed by another user, you will not see the option to download it. Instead, it will say **Installed**. 
+1. Find any integration that is not already installed and click **Install**. If an integration has already been installed by another user, you will not see the option to download it. Instead, it will say **Installed**. 
 1. A popup window will appear, summarizing the actions that will become available once the integration has been installed. Once you have reviewed these actions, click **Install**. The actions will vary based on which integration you chose to install. 
 1. Verify the integration is installed. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  
 
@@ -418,7 +418,7 @@ You should see the integration you installed here. This is how you can verify wh
 
 Once you've identified a potential security incident, you can respond to it in Cloud SIEM by executing a playbook. Playbooks are automated, or partially automated, workflows that act based on information from an incident. A playbook can enrich data, contain threats, notify teams, and other actions with custom APIs. These actions help automatically orchestrate many parts of the investigation, containment, eradication, and recovery processes.
 
-Custom playbooks allow you to automate any task that uses a custom API. You can also use them to automate tasks that aren't part of the hundreds of default playbooks included in Cloud SIEM.
+Custom playbooks allow you to automate any task that uses a custom API. You can also use them to automate tasks that are not part of the hundreds of default playbooks included in Cloud SIEM.
 
 Playbooks are made up of nodes which are connected together in a flowchart. Whether you're customizing a playbook or creating one from scratch, you have several node options:
 * **Actions**. Enrich data, execute APIs, send notifications, or use other integrations. 

@@ -42,7 +42,7 @@ Many [Cloud-To-Cloud (C2C)](/docs/send-data/hosted-collectors/cloud-to-cloud-int
 Other methods depend upon legacy methods which bypass parsers and are generally not recommended. These include:
 
 * Setting `_siemForward` without a parser.
-   * For structured logs, this will use a Sumo Logic [ingest mapping](/docs/cse/ingestion/sumo-logic-ingest-mapping/) and has limited options for specific parsing or relies on setting mapping metadata in fields or via a a field extraction rule.
+   * For structured logs, this will use a Sumo Logic [ingest mapping](/docs/cse/ingestion/sumo-logic-ingest-mapping/) and has limited options for specific parsing or relies on setting mapping metadata in fields or via a field extraction rule.
    * For unstructured logs, this will utilize legacy Grok parsers which are approaching end-of-life and are not maintained outside of critical bug fixes.
 * Older cloud-to-cloud sources set `_siemForward` and mapper metadata fields within the cloud-to-cloud source.
 
@@ -70,7 +70,7 @@ The [Enterprise Audit - Cloud SIEM app](/docs/integrations/sumo-apps/cse/) provi
 Common failure types:
 * **Parser failures**. Include parser path and specific parsing error.
 * **Mapper failures**. Usually mention mapper or mapping issues.
-* **Mixed failures**. May indicate parser output doesn't match mapper expectations.
+* **Mixed failures**. May indicate parser output does not match mapper expectations.
 
 ### Investigate failed records
  

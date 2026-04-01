@@ -65,7 +65,7 @@ Entity names have a limit of 512 characters. If an entity's name value is 512 ch
 | f | **Activity Score**. The current activity score for the entity, which by default is the sum of the severities of the signals that have fired on the entity over the previous two weeks. For more information, see [Understanding entity activity scores](/docs/cse/get-started-with-cloud-siem/insight-generation-process#understanding-entity-activity-scores), in the *Insight Generation Process* topic. |
 | g | **Signal Severity Total**. The total amount of signal severity for the entity. |
 | h | **Suppressed Lists**. If an entity is on a suppressed list, that means that signals will not be fired on the entity. |
-| i | **Criticality**. Shows whether a [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) has been assigned to the entity. A criticality adjusts the severity of signals for specific entities based on some risk factor or other consideration. If a criticality hasn't been assigned to an entity, the column contains "default". | 
+| i | **Criticality**. Shows whether a [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) has been assigned to the entity. A criticality adjusts the severity of signals for specific entities based on some risk factor or other consideration. If a criticality has not been assigned to an entity, the column contains "default". | 
 
 ## About the entities details page
 
@@ -140,7 +140,7 @@ or criticality for one or more entities.
 1. After selecting the entities you want to update, click **Change Tags**. 
 1. Click the down arrow to display the options: <br/><img src={useBaseUrl('img/cse/tag-options.png')} alt="Tag options" style={{border: '1px solid gray'}} width="400"/>
    * **Add.** Select this option to add one or more tags to the entity, without affecting any tags already assigned to the entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select  multiple tags to add.
-   * **Remove**. Select his option to remove one or more tags from the entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select multiple tags to remove. If a selected entity doesn't have the specified tags, no change will be made to the entity. 
+   * **Remove**. Select his option to remove one or more tags from the entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select multiple tags to remove. If a selected entity does not have the specified tags, no change will be made to the entity. 
    * **Replace**. Select this option to remove all of the tags currently assigned to the entity and add one or more specified tags. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. 
     :::important
     When you use the **Replace** option, be sure to specify new tags. If you do not, the existing tags will still be removed.

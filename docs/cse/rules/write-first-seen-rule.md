@@ -2,7 +2,7 @@
 id: write-first-seen-rule
 title: Write a First Seen Rule
 sidebar_label: First Seen Rule
-description: First seen rules allow you to generate a signal when behavior by an entity (user) is encountered that hasn't been seen before.
+description: First seen rules allow you to generate a signal when behavior by an entity (user) is encountered that has not been seen before.
 keywords:
   - sumo logic
   - cloud siem
@@ -29,7 +29,7 @@ You can use Terraform to manage first seen rules with the [`sumologic_cse_first_
 
 ## About first seen rules
 
-First seen rules allow you to generate a signal when behavior by an entity (such as a user) is encountered that hasn't been seen before. For example, a first seen rule might look for the events like the following:
+First seen rules allow you to generate a signal when behavior by an entity (such as a user) is encountered that has not been seen before. For example, a first seen rule might look for the events like the following:
 
 * First time a user logged in from a new geographic location (geolocation)
 * Newly created or added admin accounts

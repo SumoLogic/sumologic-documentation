@@ -33,7 +33,7 @@ Cloud SIEM supports TAXII 1.x and TAXII 2.x. 
 
 ## Leveraging indicators in rules
 
-Threat intelligence indicators allow you to enrich incoming records with threat intel information. Cloud SIEM uses the the `hasThreatMatch` rules function to compare incoming records with information from the threat feed. When there is a “match”, for instance, when an IP address in a record matches an IP address that the feed says is malicious, Cloud SIEM adds relevant information to that record. 
+Threat intelligence indicators allow you to enrich incoming records with threat intel information. Cloud SIEM uses the `hasThreatMatch` rules function to compare incoming records with information from the threat feed. When there is a “match”, for instance, when an IP address in a record matches an IP address that the feed says is malicious, Cloud SIEM adds relevant information to that record. 
 
 Because the threat intel information is persisted within records, you can reference it downstream in both rules and search. The built-in rules that come with Cloud SIEM will also automatically create a signal for any record with a match from your threat feed. 
 
