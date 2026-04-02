@@ -97,16 +97,15 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ## Troubleshooting
 
-After you configure your Source, you should check the status of the Source in the Collectors page. In case the Source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
+After you configure your Source, check the status of the Source on the **Collection** page. If the Source is not functioning as expected, you may see an error in the **Status** column, as shown below:
 
 <img src={useBaseUrl('img/send-data/box-troubleshooting.png')} alt="Box Troubleshooting" style={{border: '1px solid gray'}} width="800" />
 
-The following section details how you can resolve various errors: 
+The following section details how you can resolve various errors:
 
 ### Invalid or Missing Grant Type
 
-**Error**:
-`{\"error\":\"invalid_grant\",\"error_description\":\"Invalid grant_type parameter or parameter missing\"}`. This error usually indicates that the OAuth token request is invalid or the app is not fully configured for Server Authentication (JWT).
+**Error**: `{"error":"invalid_grant","error_description":"Invalid grant_type parameter or parameter missing"}`. This error usually indicates that the OAuth token request is invalid or the app is not fully configured for Server Authentication (JWT).
 
 **Solution**: Verify JWT app setup, re-upload a fresh credentials JSON file, and confirm the app is authorized and enabled in the Box **Admin Console**.
 
