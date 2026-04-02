@@ -97,41 +97,41 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ## Troubleshooting
 
-After you configure your Source, check the status of the Source on the **Collection** page. If the Source is not functioning as expected, you may see an error in the **Status** column, as shown below:
+After you configure your source, check the status of the source on the **Collection** page. If the source is not functioning as expected, you may see an error in the **Status** column, as shown below:
 
 <img src={useBaseUrl('img/send-data/box-troubleshooting.png')} alt="Box Troubleshooting" style={{border: '1px solid gray'}} width="800" />
 
-The following section details how you can resolve various errors:
+The following sections detail how you can resolve various errors.
 
-### Invalid or Missing Grant Type
+### Invalid or missing grant type
 
 **Error**: `{"error":"invalid_grant","error_description":"Invalid grant_type parameter or parameter missing"}`. This error usually indicates that the OAuth token request is invalid or the app is not fully configured for Server Authentication (JWT).
 
 **Solution**: Verify JWT app setup, re-upload a fresh credentials JSON file, and confirm the app is authorized and enabled in the Box **Admin Console**.
 
-### Server Unavailable
+### Server unavailable
 
 **Error**: `{"error":"temporarily_unavailable","error_description":"The server is currently unable to handle the request due to a temporary overloading of the server"}`. This indicates a temporary Box service-side issue.
 
 **Solution**: Retry after a short wait, check [Box Status](https://status.box.com/), and contact Box Support if the issue persists.
 
-### Connection Error
+### Connection error
 
 **Error**: `{"error_description":"read: connection reset by peer"}`. This indicates a network interruption between Sumo Logic and Box.
 
 **Solution**: Retry the Source and verify that your network and security controls allow outbound HTTPS access to required Box API endpoints.
 
-### Invalid Request
+### Invalid request
 
 **Error**: `{"error":"invalid_request","error_description":"A request parameter was invalid"}`. This means one or more Box API request parameters are invalid, unsupported, or malformed.
 
 **Solution**: Verify the query parameter names and values in the Box API request, then retry with supported parameters only.
 
-### Unauthorized Client
+### Unauthorized client
 
 **Error**: `{"error":"unauthorized_client","error_description":"This app is not authorized by the enterprise admin"}`. This means the Box enterprise admin has not approved the app for your org.
 
-**Solution**: Have your Box enterprise admin authorize and enable the app in **Admin Console** > **Integrations** > **Platform Apps Manager**, then retry the Source.
+**Solution**: Have your Box enterprise admin authorize and enable the app in **Admin Console** > **Integrations** > **Platform Apps Manager**, then retry the source.
 
 ## FAQ
 
