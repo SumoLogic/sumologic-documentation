@@ -2389,6 +2389,13 @@ integrations: [
               'integrations/aiml/opentelemetry/openllmetry',
             ],
           },
+          'integrations/amazon-aws/amazon-bedrock',
+          'integrations/amazon-aws/amazon-bedrock-agentcore',
+          'integrations/amazon-aws/amazon-sagemaker',
+          'integrations/microsoft-azure/azure-machine-learning',
+          'integrations/microsoft-azure/azure-open-ai',
+          'integrations/saas-cloud/chatgpt-compliance',
+          'integrations/saas-cloud/github-copilot',
         ],
       },
       {
