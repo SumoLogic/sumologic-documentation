@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="Role Based Access icon" width="50"/>
 
 Roles determine the functions that users are able to perform in Sumo Logic. The Role Management API (V2) allows you to configure access on partitions and manage roles from HTTP endpoints.
 
@@ -44,7 +44,7 @@ Currently, Role Management APIs V2 records both the V1 and V2 log line changes.
 V2 changes are **only** applicable for `RoleUpdate` and `RoleCreated` events.
 :::
 
-<br/><img src={useBaseUrl('img/users-roles/JSON-diff-V1-V2.png')} alt="JSON-diff-V1-V2" style={{border: '1px solid gray'}} width="800"/>
+<br/><img src={useBaseUrl('img/users-roles/JSON-diff-V1-V2.png')} alt="JSON diff V1 V2" style={{border: '1px solid gray'}} width="800"/>
 
 For example, consider you are interested in querying upon audit logs with change in `RoleUpdated` or `RoleCreated` events. Now, if you perform this search you will initially see the V1 type of event in the search results. However, to view the results with the V2 event type, you are required to adjust the parameters in the query.
 

@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic Split integra
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/split-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/split-logo.png')} alt="Split icon" width="50"/>
 
 The Split app for Sumo Logic enables you to seamlessly monitor feature flagging, experiment results, and user behavior, enabling data-driven decision making and fostering a more agile and competitive development process. This app is based on Split Webhook, which provides seamless integration between Split and Sumo Logic.
 
@@ -151,13 +151,13 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Split - Overview** dashboard offers transparency into actions performed by both administrators and team members, delivering valuable insights into audit events, their distribution, and statistics categorized by their respective types.
 
-<img src={useBaseUrl('img/integrations/webhooks/Split-Overview.png')} style={{border: '1px solid black'}} alt="Split-Overview"/>
+<img src={useBaseUrl('img/integrations/webhooks/Split-Overview.png')} style={{border: '1px solid black'}} alt="Split Overview"/>
 
 ### Users and Groups
 
 The **Split - Users and Groups** dashboard offers concise statistical summaries pertaining to Split users and groups, including administrative actions taken concerning them.
 
-<img src={useBaseUrl('img/integrations/webhooks/Split-Users_and_Groups.png')} style={{border: '1px solid black'}} alt="Split-Users_and_Groups"/>
+<img src={useBaseUrl('img/integrations/webhooks/Split-Users_and_Groups.png')} style={{border: '1px solid black'}} alt="Split Users_and_Groups"/>
 
 ## Upgrade/Downgrade the Split app (Optional)
 

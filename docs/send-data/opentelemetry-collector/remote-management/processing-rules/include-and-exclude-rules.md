@@ -27,7 +27,7 @@ To include only messages from a Windows Event log with ID `8015`, you can add a 
 .*"id":8015.*
 ```
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/processingrule-include-logs.png')} alt="collector-installation-completion-page" style={{border:'1px solid gray'}} width="700" />
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/processingrule-include-logs.png')} alt="Collector installation completion page" style={{border:'1px solid gray'}} width="700" />
 
 ## Metrics: Include and exclude rules
 
@@ -47,7 +47,7 @@ To filter by the name of a metric, select this option and provide a regex that m
 
 For example, to collect only network metrics while collecting host metrics, specify `network` as the metric name.
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/processingrule-include-metricname.png')} alt="collector-installation-completion-page" style={{border:'1px solid gray'}} width="700" />
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/processingrule-include-metricname.png')} alt="Processing rule includes metric name" style={{border:'1px solid gray'}} width="700" />
 
 ### Filter by dimension
 
@@ -59,7 +59,7 @@ To filter by metric dimensions, select this option and specify key-value pairs i
 
 For example, when collecting host metrics, you can filter CPU metrics data for a specific CPU (say `cpu0`), and you can mention the respective key value pair in the dimension table.
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/processingrule-include-metricdimension.png')} alt="collector-installation-completion-page" style={{border:'1px solid gray'}} width="700" />
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/processingrule-include-metricdimension.png')} alt="Processing rule includes metric dimension" style={{border:'1px solid gray'}} width="700" />
 
 ### Filter by metrics name and dimension
 
@@ -74,7 +74,7 @@ For example, when collecting host metrics, you can filter network metrics for a 
 * Metric name regex: `network`
 * Dimension key-value pairs: `device=lo`, `direction=transmit`
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/processingrule-include-metricnameanddimension.png')} alt="collector-installation-completion-page" style={{border:'1px solid gray'}} width="700" />
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/processingrule-include-metricnameanddimension.png')} alt="Collector installation completion page" style={{border:'1px solid gray'}} width="700" />
 
 
 ## Rules and limitations

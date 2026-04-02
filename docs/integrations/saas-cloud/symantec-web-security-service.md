@@ -7,7 +7,7 @@ description: The Sumo Logic app for Symantec Web Security provides real-time ins
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="125"/>
+<img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="Symantec icon" width="125"/>
 
 The Sumo Logic app for Symantec Web Security provides real-time insights into the web traffic and helps you to identify potential security threats. This app is based on a cloud-to-cloud Symantec Web Security Service source that collects Symantec Web Security access logs.
 With the Sumo Logic app for Symantec Web Security, you can:
@@ -97,11 +97,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Security Overview
 
-The **Symantec Web Security Service - Security Overview** dashboard provides a comprehensive view of the network security status. It includes widgets for the total number of requests, unique malware detected, geo locations of blocked requests, category statistics, top 10 blocked hosts, top 10 blocked users, top 10 blocked traffic verdicts, security concerns, malicious file type (URI extension), malware action on identification, requests over time, and virus count over time. This information helps you to monitor and manage the network security in real-time, which allows you to quickly identify and respond to potential threats.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Symantec-Web-Security-Service-Security-Overview.png')} alt="Symantec-Web-Security-Service-Security-Overview" width="800"/>
+The **Symantec Web Security Service - Security Overview** dashboard provides a comprehensive view of the network security status. It includes widgets for the total number of requests, unique malware detected, geo locations of blocked requests, category statistics, top 10 blocked hosts, top 10 blocked users, top 10 blocked traffic verdicts, security concerns, malicious file type (URI extension), malware action on identification, requests over time, and virus count over time. This information helps you to monitor and manage the network security in real-time, which allows you to quickly identify and respond to potential threats.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Symantec-Web-Security-Service-Security-Overview.png')} alt="Symantec Web Security Service Security Overview" width="800"/>
 
 ### Web Activity Overview
 
-The **Symantec Web Security Service - Web Activity Overview** dashboard provides a comprehensive view of the web activity status through various widgets. It includes widgets for blocked websites by category, blocked user agents, number of blocked sites over time, blocked sites, bytes sent/received over time, Layer 4 result actions, requests by the user, time spent processing requests by the user, bandwidth usage by user, web activity by total hits, web activity by unique users, and top 10 URI extensions. This information helps you to monitor and manage network security in real time, which allows you to quickly identify and respond to potential threats. With Symantec Web Security Service, businesses can ensure a safe browsing experience and protect against various online threats.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Symantec-Web-Security-Service-Web-Activity-Overview.png')} alt="Symantec-Web-Security-Service-Web-Activity-Overview" width="800"/>
+The **Symantec Web Security Service - Web Activity Overview** dashboard provides a comprehensive view of the web activity status through various widgets. It includes widgets for blocked websites by category, blocked user agents, number of blocked sites over time, blocked sites, bytes sent/received over time, Layer 4 result actions, requests by the user, time spent processing requests by the user, bandwidth usage by user, web activity by total hits, web activity by unique users, and top 10 URI extensions. This information helps you to monitor and manage network security in real time, which allows you to quickly identify and respond to potential threats. With Symantec Web Security Service, businesses can ensure a safe browsing experience and protect against various online threats.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Symantec-Web-Security-Service-Web-Activity-Overview.png')} alt="Symantec Web Security Service Web Activity Overview" width="800"/>
 
 ## Upgrade/Downgrade the Symantec Web Security Service app (Optional)
 

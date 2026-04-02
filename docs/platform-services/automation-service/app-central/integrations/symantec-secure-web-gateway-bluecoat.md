@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/symantec-secure-web-gateway-bluecoat.png')} alt="symantec-secure-web-gateway-bluecoat" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/symantec-secure-web-gateway-bluecoat.png')} alt="Symantec Secure Web gateway Bluecoat icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 07, 2023***

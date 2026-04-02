@@ -167,7 +167,7 @@ The **ChatGPT Compliance – Security** dashboard offers a comprehensive view of
 
 Panels like *Top 10 Users by Conversations* and *Top 10 Users by Messages* highlight the most active participants, enabling administrators to identify behavioral trends and usage patterns, supporting policy alignment and informed decisions on model governance and optimization. Time-series views, such as the *Messages Over Time* panel, track engagement over time to detect spikes or anomalies. Meanwhile, *File Uploads*, *Conversations Summaries*, and *Messages Summaries* centralize interaction metrics for streamlined monitoring and audit readiness. The *Content Sensitivity Scan* further strengthens oversight by flagging messages with potentially sensitive or regulated data for prompt risk mitigation.
 
-By unifying user activity, data sensitivity, and model usage insights in a single dynamic interface, this dashboard delivers the visibility and control needed to ensure transparency, responsible AI use, and compliance across your organization.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/chatgpt-compliance/ChatGPT+Compliance+-+Security.png' alt="ChatGPT-Compliance-Security-Dashboard" />
+By unifying user activity, data sensitivity, and model usage insights in a single dynamic interface, this dashboard delivers the visibility and control needed to ensure transparency, responsible AI use, and compliance across your organization.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/chatgpt-compliance/ChatGPT+Compliance+-+Security.png' alt="ChatGPT Compliance Security Dashboard" />
 
 ## Upgrading/Downgrading the ChatGPT Compliance app (Optional)
 

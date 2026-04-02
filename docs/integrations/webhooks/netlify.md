@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic Netlify integ
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/netlify-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/netlify-logo.png')} alt="Netlify icon" width="50"/>
 
 The Sumo Logic app for Netlify offers a comprehensive solution for managing and optimizing web development and deployment processes. It provides insights into high-level web deployment metrics and essential data such as sites, branches, and repositories. Additionally, the app offers deeper insights into deployment operations, helping identify bottlenecks, resolve issues, and analyze performance metrics. It also focuses on version control and development productivity, offering key metrics to assess development activities, deployment status, and environmental transitions. This integration enables users to make data-driven decisions, optimize web development strategies, and maintain efficient and productive web projects.
 
@@ -176,7 +176,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Netlify - Overview** dashboard offers a comprehensive snapshot of your web deployment ecosystem, providing a detailed insight into critical metrics. With panels tracking Targeted Sites, Branches, and Public Repos, you can effectively manage your web projects. Monitor Total Deployment Triggers, deployment status, errors, deletions, and analyze branch-specific data through Branches by Site. Gain valuable insights into Notifications Generated and their distribution by states, while also delving into deployment specifics by context, process, and repository type. This dashboard keeps you informed with real-time updates on Recent Notifications, empowering you to proactively manage and optimize your web development and hosting operations.
 
-<img src={useBaseUrl('img/integrations/webhooks/Netlify_Overview.png')} style={{border: '1px solid black'}} alt="Netlify-Overview"/>
+<img src={useBaseUrl('img/integrations/webhooks/Netlify_Overview.png')} style={{border: '1px solid black'}} alt="Netlify Overview"/>
 
 ### Build and Deploy Details
 

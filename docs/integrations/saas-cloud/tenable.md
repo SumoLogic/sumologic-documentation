@@ -6,7 +6,7 @@ description: The Sumo Logic app for Tenable provides comprehensive visibility an
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/send-data/tenable-logo.png')} alt="icon" width="125"/>
+<img src={useBaseUrl('/img/send-data/tenable-logo.png')} alt="Tenable icon" width="125"/>
 
 The Tenable app empowers security professionals to gain comprehensive visibility and actionable insights into your organization's security posture by leveraging data from the Tenable [Vulnerabilities API](https://developer.tenable.com/reference/exports-vulns-request-export) and [Audit Events API](https://developer.tenable.com/reference/audit-log-events). This powerful integration allows you to proactively monitor, analyze, and respond to security vulnerabilities and audit events, helping you strengthen your cybersecurity defences and reduce risk.
 
@@ -84,12 +84,12 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Tenable - Overview** dashboard provides in-depth vulnerability assessments across your infrastructure. <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tenable/Tenable-Overview.png')} style={{border: '1px solid gray'}} alt="Tenable-Overview" width="800"/>
+The **Tenable - Overview** dashboard provides in-depth vulnerability assessments across your infrastructure. <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tenable/Tenable-Overview.png')} style={{border: '1px solid gray'}} alt="Tenable Overview" width="800"/>
 
 ### Audit Activity
 
 The **Tenable - Audit Activity** dashboard provides the user events data to monitor and analyze critical audit events within your organization using the Tenable Audit Events API.
-<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tenable/Tenable-Audit-Activity.png')} style={{border: '1px solid gray'}} alt="Tenable-Audit-Activity" width="800"/>
+<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tenable/Tenable-Audit-Activity.png')} style={{border: '1px solid gray'}} alt="Tenable Audit Activity" width="800"/>
 
 ## Upgrade/Downgrade the Tenable app (Optional)
 

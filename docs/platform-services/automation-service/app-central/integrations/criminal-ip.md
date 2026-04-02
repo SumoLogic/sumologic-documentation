@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/criminal-ip.png')} alt="criminal-ip" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/criminal-ip.png')} alt="Criminal IP icon" width="90"/>
 
 ***Version: 1.0  
 Updated: Mar 1, 2024***

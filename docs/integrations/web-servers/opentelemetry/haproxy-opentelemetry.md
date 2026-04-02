@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/haproxy.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/web-servers/haproxy.png')} alt="Haproxy icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The [HAProxy](https://docs.haproxy.org/2.6/intro.html) app is a unified logs and metrics app designed to help you monitor the availability, performance, health, and resource utilization of HAProxy server farms. It provides preconfigured dashboards and searches that offer visibility into your environment for real-time and historical analysis: visitor locations, HTTP error codes percentage, backend and frontend server statistics, traffic patterns, errors, server operations, and access from known malicious sources.
 

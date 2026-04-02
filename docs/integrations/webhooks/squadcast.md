@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic Squadcast int
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/squadcast-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/squadcast-logo.png')} alt="Squadcast icon" width="50"/>
 
 The Squadcast app for Sumo Logic enables you to promptly respond to incidents, assess response times, and monitor SLA compliance effectively. This app is based on Squadcast Webhook, which provides seamless integration between Squadcast and Sumo Logic. The app provides a crucial audit trail for compliance and reporting, supports post-incident analysis, and empowers organizations to demonstrate their commitment to incident management best practices.
 
@@ -216,13 +216,13 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Squadcast - Overview** improves visibility into activities within the Squadcast platform by categorizing them according to event type and the associated resources. It provides valuable data and statistics on various aspects, including incident status updates, the primary services, and alerts triggering incidents, as well as incidents violating service level objectives (SLOs).
 
-<img src={useBaseUrl('img/integrations/webhooks/Squadcast-Overview.png')} style={{border: '1px solid black'}} alt="Squadcast-Overview"/>
+<img src={useBaseUrl('img/integrations/webhooks/Squadcast-Overview.png')} style={{border: '1px solid black'}} alt="Squadcast Overview"/>
 
 ### Incidents
 
 The **Squadcast - Incidents** offers valuable statistics and insights regarding events associated with incident postmortems, communication channels, tasks, and notes.
 
-<img src={useBaseUrl('img/integrations/webhooks/Squadcast-Incidents.png')} style={{border: '1px solid black'}} alt="Squadcast-Incidents"/>
+<img src={useBaseUrl('img/integrations/webhooks/Squadcast-Incidents.png')} style={{border: '1px solid black'}} alt="Squadcast Incidents"/>
 
 ## Upgrade/Downgrade the Squadcast app (Optional)
 

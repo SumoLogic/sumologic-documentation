@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic iLert integra
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/ilert-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/ilert-logo.png')} alt="iLert icon" width="50"/>
 
 
 The iLert app for Sumo Logic enables efficient integration of the alert management system with Sumo Logic's robust analytics platform. The provided dashboard panels offer comprehensive insights, including tracking Unique Alert Generation, categorizing alerts by source and priority (highlighting high-priority ones), monitoring Pending and Resolved Alerts, and assessing overall alert status. Users can identify top active responders, analyze alerts based on event type and source trends, and stay informed with a concise summary of recent alerts. This integration enhances alert management and incident response capabilities, providing a powerful solution for effective monitoring and analysis.
@@ -130,7 +130,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **iLert - Overview** dashboard presents a comprehensive insight into the alert management system, featuring a range of informative panels. Starting with Unique Alert Generation statistics, it displays alerts categorized by their sources and highlights High-Priority alerts for immediate attention. The dashboard also tracks Pending and Resolved Alerts, providing a real-time overview of the alert status. Additionally, it offers a breakdown of alerts by priority, identifies the Top Active Responders, and analyses alert data based on event types and source trends. Users can efficiently spot event-type trends and review a concise summary of recent alerts.
 
-<img src={useBaseUrl('img/integrations/webhooks/iLert_overview.png')} style={{border: '1px solid black'}} alt="iLert-Overview"/>
+<img src={useBaseUrl('img/integrations/webhooks/iLert_overview.png')} style={{border: '1px solid black'}} alt="iLert Overview"/>
 
 ## Upgrade/Downgrade the iLert app (Optional)
 

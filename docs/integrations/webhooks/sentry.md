@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic Sentry integr
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/sentry-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/sentry-logo.png')} alt="Sentry icon" width="50"/>
 
 The Sentry app for Sumo Logic helps you monitor received issues, comments, detected errors, issue alerts, and metric alerts. This app is built on Sentry's internal integration using webhooks, which provides seamless integration between Sentry and Sumo Logic. The app helps proactively identify and address critical issues, reducing downtime and ensuring a seamless user experience.
 
@@ -103,8 +103,8 @@ Follow the below steps to configure the Sentry webhook.
      - **Name**. Enter human readable name of your integration.
      - **Webhook URL**. Enter the Sumo Logic HTTP Source Address created above.
      - **Alert Rule Action**. If enabled, this integration will be available in Issue Alert rules and Metric Alert rules in Sentry.
-7. Assign the necessary permissions.<br/><img src={useBaseUrl('img/integrations/webhooks/Sentry-Permission.png')} style={{border: '1px solid black'}} alt="Sentry-Permission"/>
-8. Enable **Webhooks**.<br/><img src={useBaseUrl('img/integrations/webhooks/Sentry-Webhooks.png')} style={{border: '1px solid black'}} alt="Sentry-Webhooks"/>
+7. Assign the necessary permissions.<br/><img src={useBaseUrl('img/integrations/webhooks/Sentry-Permission.png')} style={{border: '1px solid black'}} alt="Sentry Permission"/>
+8. Enable **Webhooks**.<br/><img src={useBaseUrl('img/integrations/webhooks/Sentry-Webhooks.png')} style={{border: '1px solid black'}} alt="Sentry Webhooks"/>
 9. Verify Sentry events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
     ```sql
     _sourceCategory=webhook/sentry

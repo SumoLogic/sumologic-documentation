@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure SQL Man
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-sql-managed-instance.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-sql-managed-instance.png')} alt="Azure SQL Managed Instance icon" width="50"/>
 
 [Azure SQL Managed Instance](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview) is a scalable cloud database service that's always running on the latest stable version of the Microsoft SQL Server database engine and a patched OS with 99.99% built-in high availability, offering close to 100% feature compatibility with SQL Server. This integration helps in monitoring resource usage and tracking database events of your managed instances.
 

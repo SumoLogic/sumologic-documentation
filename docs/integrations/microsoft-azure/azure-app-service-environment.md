@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure App Ser
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-service-environment.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-service-environment.png')} alt="Azure App Service Environment icon" width="50"/>
 
 An [Azure App Service Environment](https://learn.microsoft.com/en-us/azure/app-service/environment/overview) is an Azure App Service feature that provides a fully isolated and dedicated environment for running App Service apps securely at high scale. This integration helps in monitoring your environments operational events such as upgrades, scaling, and suspensions.
 

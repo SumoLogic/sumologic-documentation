@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews-daemon.png')} alt="microsoft-defender-atp" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews-daemon.png')} alt="Microsoft Defender ATP icon" width="100"/>
 
 ***Version: 2.6  
 Updated: May 16, 2025***
@@ -77,23 +77,23 @@ Each application you want the Microsoft identity platform to perform identity an
 Follow these steps to create the app registration:
 
 1. Sign in to the [Azure portal](https://portal.azure.com/).
-1. If you have access to multiple tenants, use the Directory + subscription filter  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-1.png')} style={{border:'1px solid gray'}} alt="microsoft-ews-daemon" width="30"/> in the top menu to select the tenant in which you want to register an application.
+1. If you have access to multiple tenants, use the Directory + subscription filter  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-1.png')} style={{border:'1px solid gray'}} alt="Microsoft ews daemon" width="30"/> in the top menu to select the tenant in which you want to register an application.
 1. Search for and select the **Azure Active Directory**.
 1. Under **Manage**, select **App registrations > New registration**.
 1. Enter a Name for your application. Users of your app might see this name, and you can change it later.
 1. Select Register to complete the initial app registration.
-1. Don't enter anything for **Redirect URI (optional)**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-2.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="800"/>
+1. Don't enter anything for **Redirect URI (optional)**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-2.png')} style={{border:'1px solid gray'}} alt="Microsoft defender atp" width="800"/>
 
 When registration completes, the Azure portal displays the app registration's Overview pane, which includes its Application (client) ID. Also referred to as just client ID, this value uniquely identifies your application in the Microsoft identity platform.
 
 The client ID as one aspect in validating the security tokens it receives from the identity platform.
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-3.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="800"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-3.png')} style={{border:'1px solid gray'}} alt="Microsoft defender atp" width="800"/>
 
 **Add credentials**
 
 Credentials are used by confidential client applications that access an API. Examples of confidential clients are web apps, or service- and daemon-type applications. Credentials allow your application to authenticate as itself, requiring no interaction from a user at runtime.
 
-You can add client secrets (a string) as credentials to your confidential client app registration.<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-4.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="800"/>
+You can add client secrets (a string) as credentials to your confidential client app registration.<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-4.png')} style={{border:'1px solid gray'}} alt="Microsoft defender atp" width="800"/>
 
 **Add a client secret**
 
@@ -112,7 +112,7 @@ The client secret, known also as an application password, is a string value of y
 2. Select **API permissions > Add a permission**.
 3. Delegated permissions are selected by default. Delegated permissions are appropriate for client apps that access an API as the signed-in user, and whose access should be restricted to the permissions you select in the next step.
 4. Application permissions are for service- or daemon-type applications that need to access API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your API.
-5. Select Add a permission, and add the following permissions (as we can see from the picture).<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-5.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="800"/>
+5. Select Add a permission, and add the following permissions (as we can see from the picture).<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-5.png')} style={{border:'1px solid gray'}} alt="Microsoft defender atp" width="800"/>
 
 **EWS API need to be configure these permissions**
 

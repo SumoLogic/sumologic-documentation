@@ -10,7 +10,7 @@ Sumo Logic can lookup an Autonomous System Number (ASN) and organization name b
 
 The ASN Lookup operator uses [lookup-classic](/docs/search/search-query-language/search-operators/lookup-classic) with a specific path, `asn://default`, to provide the ASN and associated organization.
 
-```sql
+```sumo
 lookup\<field\> from asn://default on ip\<ip_address\>
 ```
 
@@ -30,7 +30,7 @@ The `organization` and `carrier_organization` lookup fields will have the same v
 
 The following query references a data stream with IPv4 addresses, parses those IPv4 addresses, and then uses ASN Lookup to retrieve their autonomous system information. 
 
-```sql
+```sumo
 _dataTier=all _sourceCategory=stream "remote_ip="
 | parse regex "(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | lookup organization, registering_organization, asn from asn://default on ip = ip

@@ -7,7 +7,7 @@ description: The Sumo Logic app for SentinelOne offers functionality for monitor
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="sentinelone-icon.png" width="50" />
+<img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="SentinelOne icon" width="50" />
 
 The SentinelOne app for Sumo Logic provides security professionals with a comprehensive view of their organization's security posture. The app, based on Sumo Logic’s SentinelOne Source, allows you to quickly ingest data from your SentinelOne agents into Sumo Logic for real-time analysis.
 
@@ -385,13 +385,13 @@ Additionally, the dashboard includes information on the frequency of agents by i
 
 The SentinelOne Agent Overview enables organizations to quickly identify any issues with agent deployment or performance and take corrective action to improve their overall security posture. It is a powerful tool for any organization looking to ensure the effectiveness and efficiency of its threat protection solutions.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Agent-Overview.png')} alt="SentinelOne-Agent-Overview.png" width="600"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Agent-Overview.png')} alt="SentinelOne - Agent Overview dashboard" width="600"/>
 
 ### Threat Overview
 
 The **SentinelOne - Threat Overview** provides a comprehensive overview of threats detected by SentinelOne, a threat intelligence and response platform. The dashboard includes widgets that display key information on unresolved threats, suspicious threats detected, threats to be mitigated, resolved threats, and threats that require a reboot. The dashboard also provides insights into the types of threats detected, their current status, and their classification source. With this dashboard, security teams can quickly identify and respond to potential security threats, minimizing the risk of security breaches and data loss.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Overview.png')} alt="SentinelOne-Threat-Overview.png" width="600"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Overview.png')} alt="SentinelOne - Threat Overview dashboard" width="600"/>
 
 ### Threat Analysis
 
@@ -399,7 +399,7 @@ The **SentinelOne - Threat Analysis** provides a comprehensive view of the threa
 
 With the information provided by this dashboard, security teams can effectively prioritize and manage their response to potential security threats. They can quickly identify the most critical threats, monitor the effectiveness of their threat detection engines, and respond to the most heavily infected devices. The "SentinelOne - Threat Analysis" is a valuable tool for any organization looking to proactively manage their cybersecurity risk.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Analysis.png')} alt="SentinelOne-Threat-Analysis.png" width="600"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Analysis.png')} alt="SentinelOne - Threat Analysis dashboard" width="600"/>
 
 ## Create monitors for SentinelOne app
 

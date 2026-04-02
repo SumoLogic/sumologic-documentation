@@ -7,7 +7,7 @@ description: The Sumo Logic app for Cisco AMP helps you to gain real-time monito
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="Cisco AMP icon" width="85"/>
 
 The Sumo Logic app for Cisco AMP provides security analysts with essential tools to enhance threat detection, conduct thorough investigations, and strengthen cybersecurity defenses. It offers security analysts with a powerful platform for real-time monitoring and analysis of cybersecurity incidents. Analysts can evaluate event severity, identify types of incidents, assess host activities, and analyze file types involved in breaches. 
 
@@ -161,7 +161,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Cisco AMP - Overview** dashboard is a comprehensive tool that provides security analysts with a high-level summary of key cybersecurity metrics. It tracks total security events, newly detected threats, and recent endpoint activities, offering real-time visibility into the organization's threat landscape. By categorizing threats according to severity levels and types, the dashboard helps analysts quickly identify and prioritize response actions. It also highlights key information on top threat actors and prevalent attack techniques, enhancing threat intelligence and supporting robust incident response strategies. Continuous monitoring of threat trends and endpoint activities empowers analysts to proactively mitigate risks, ensuring a resilient cybersecurity defense posture and effective threat management. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Cisco-AMP/Cisco-AMP-Overview.png')} alt="Cisco-AMP-Overview-Dashboard" style={{border: '1px solid gray'}} width="800" />
+The **Cisco AMP - Overview** dashboard is a comprehensive tool that provides security analysts with a high-level summary of key cybersecurity metrics. It tracks total security events, newly detected threats, and recent endpoint activities, offering real-time visibility into the organization's threat landscape. By categorizing threats according to severity levels and types, the dashboard helps analysts quickly identify and prioritize response actions. It also highlights key information on top threat actors and prevalent attack techniques, enhancing threat intelligence and supporting robust incident response strategies. Continuous monitoring of threat trends and endpoint activities empowers analysts to proactively mitigate risks, ensuring a resilient cybersecurity defense posture and effective threat management. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Cisco-AMP/Cisco-AMP-Overview.png')} alt="Cisco AMP Overview Dashboard" style={{border: '1px solid gray'}} width="800" />
  
 ## Create monitors for the Cisco AMP app
 

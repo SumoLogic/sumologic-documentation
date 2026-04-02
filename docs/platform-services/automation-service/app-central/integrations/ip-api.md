@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ip-api.png')} alt="ip-api" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ip-api.png')} alt="IP-API icon" width="90"/>
 
 ***Version: 1.1  
 Updated: Jul 05, 2023***
@@ -18,8 +18,8 @@ The integration with IP-API allows users to lookup any IP address. IP-API is IP 
 ## IP-API configuration
 
 1. To configure IP-API, log in to [IP-API](https://members.ip-api.com/) with your e-mail and password. 
-1. In the main page, click on the section Manage API Keys.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ip-api/ip-api-1.png')} style={{border:'1px solid gray'}} alt="ip-api" width="600"/>
-1. Copy the API key and save it (temporarily) in a text editor. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ip-api/ip-api-2.png')} style={{border:'1px solid gray'}} alt="ip-api" width="600"/>
+1. In the main page, click on the section Manage API Keys.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ip-api/ip-api-1.png')} style={{border:'1px solid gray'}} alt="Ip api" width="600"/>
+1. Copy the API key and save it (temporarily) in a text editor. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ip-api/ip-api-2.png')} style={{border:'1px solid gray'}} alt="Ip api" width="600"/>
 
 ## Configure IP-API in Automation Service and Cloud SOAR
 

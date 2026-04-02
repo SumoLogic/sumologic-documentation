@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic Gremlin integ
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/gremlin-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/gremlin-logo.png')} alt="Gremlin icon" width="50"/>
 
 Gremlin provides you the framework to safely, securely, and easily simulate real outages with an ever-growing library of attacks. You can use a webhook in the Gremlin platform to forward experiment-related events from the Gremlin platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor the lifecycle of their experiments, starting from initialization, through the running phase, and up to the completion of the experiment in Sumo Logic. For more details, refer to the [Gremlin Documentation](https://www.gremlin.com/docs/).
 

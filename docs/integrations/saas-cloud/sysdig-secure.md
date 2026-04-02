@@ -7,7 +7,7 @@ description: The Sysdig Secure app for Sumo Logic provides insights into contain
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="thumbnail icon" width="125"/>
+<img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="Sysdig icon" width="125"/>
 
 The Sumo Logic app for Sysdig Secure integrates Sysdig Secure’s security insights with Sumo Logic's powerful analytics to help security teams monitor and protect Kubernetes and containerized environments. It provides real-time visibility into vulnerabilities, compliance, and threats by analyzing security events from various sources such as Kubernetes clusters, container registries, and runtime environments. With it's intuitive dashboards, Sysdig Secure helps security professionals understand risks, assess vulnerability impact, and monitor runtime behavior to detect threats before they affect production environments. By centralizing data and presenting it through clear visualizations, the app enables effective collaboration, proactive defense, faster remediation, and continuous compliance in dynamic, containerized environments.
 
@@ -237,11 +237,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Runtime Scan
 
-The **Sysdig Secure - Runtime Scan** dashboard provides real-time insights into the security posture of assets and Kubernetes environments during runtime. It aggregates data from Sysdig Secure’s runtime scanning API, allowing you to monitor active threats and vulnerabilities in running assets. Key features highlight vulnerabilities, track security events such as privilege escalations, and identify compliance violations. By presenting detailed information on runtime risks and potential attack vectors, the dashboard helps security professionals effectively mitigate threats and maintain secure, compliant environments.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sysdig+Secure/Sysdig+Secure+-+Runtime+Scan.png' alt="Runtime-Scan" />
+The **Sysdig Secure - Runtime Scan** dashboard provides real-time insights into the security posture of assets and Kubernetes environments during runtime. It aggregates data from Sysdig Secure’s runtime scanning API, allowing you to monitor active threats and vulnerabilities in running assets. Key features highlight vulnerabilities, track security events such as privilege escalations, and identify compliance violations. By presenting detailed information on runtime risks and potential attack vectors, the dashboard helps security professionals effectively mitigate threats and maintain secure, compliant environments.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sysdig+Secure/Sysdig+Secure+-+Runtime+Scan.png' alt="Runtime Scan" />
 
 ### Full Scan
 
-The **Sysdig Secure - Full Scan** dashboard serves as a strategic assessment tool, providing detailed information on asset packages and vulnerabilities based on results from the runtime scan API. It illustrates asset evolution over time and their distribution across operating systems and architectures. The dashboard also highlights the most frequent vulnerabilities, exploitable vulnerabilities, and detailed package data. By identifying the most at-risk assets, it supports the maintenance of a robust and secure infrastructure.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sysdig+Secure/Sysdig+Secure+-+Full+Scan.png' alt="Full-Scan" />
+The **Sysdig Secure - Full Scan** dashboard serves as a strategic assessment tool, providing detailed information on asset packages and vulnerabilities based on results from the runtime scan API. It illustrates asset evolution over time and their distribution across operating systems and architectures. The dashboard also highlights the most frequent vulnerabilities, exploitable vulnerabilities, and detailed package data. By identifying the most at-risk assets, it supports the maintenance of a robust and secure infrastructure.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sysdig+Secure/Sysdig+Secure+-+Full+Scan.png' alt="Full Scan" />
 
 ## Create monitors for Sysdig Secure app
 

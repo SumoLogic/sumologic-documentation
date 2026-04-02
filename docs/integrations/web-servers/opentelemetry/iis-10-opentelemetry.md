@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="thumbnail icon" width="130"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="Microsoft Iis 10 icon" width="130"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The [Internet Information Services](https://learn.microsoft.com/en-gb/iis/get-started/introduction-to-iis/introduction-to-iis-architecture) (IIS) 10 app is a logs and metrics app designed to monitor the availability and performance of your IIS web servers. Preconfigured dashboards and searches provide insight into application pools, ASP.NET applications, requests, latency, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources.
 
@@ -292,31 +292,31 @@ The **IIS - Visitor Traffic Insight** Dashboard provides detailed information on
 
 The **IIS - Application Pool** dashboard provides a high-level view of Application Pool State, Information and Worker Process Metrics.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Application-Pool.png' alt="IIS-Application-Pool" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Application-Pool.png' alt="IIS Application Pool" />
 
 ### ASP.NET
 
 The **IIS - ASP.NET** dashboard provides a high-level view of the ASP.NET global performance counters. This dashboard helps you to analyse the state server sessions, monitor applications performance, and understand the request execution and wait time.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-ASP.NET.png' alt="IIS-ASP.NET" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-ASP.NET.png' alt="IIS ASP.NET" />
 
 ### ASP.NET Applications
 
 The **IIS - ASP.NET Applications** dashboard provides a high-level view of the ASP.NET application performance counters. This dashboard helps you to monitor compilations, errors, cache, requests executing, requests in application queue, pipeline instance count, and output cache.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-ASP.NET-Applications.png' alt="IIS-ASP.NET-Applications" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-ASP.NET-Applications.png' alt="IIS ASP.NET Applications" />
 
 ### Cache Performance
 
 The **IIS - Cache Performance** dashboard provides a high-level view of the the Web Service Cache Counters object includes cache counters specific to the World Wide Web Publishing Service. This dashboard helps you to monitor the output cache, cache memory, file cache, and URI cache.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Cache-Performance.png' alt="IIS-Cache-Performance" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Cache-Performance.png' alt="IIS Cache Performance" />
 
 ### Web Service
 
 The **IIS - Web Service** dashboard provides a high-level view of the Web Service object includes counters specific to the World Wide Web Publishing Service. This dashboard helps you to monitor the total site, connections, site uptime, method, and miscellaneous.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Web-Service.png' alt="IIS-Web-Service" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Web-Service.png' alt="IIS Web Service" />
 
 ## Create monitors for IIS app
 

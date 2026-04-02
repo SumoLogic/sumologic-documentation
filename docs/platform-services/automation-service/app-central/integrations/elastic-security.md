@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/elastic-security.png')} alt="elastic-security" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/elastic-security.png')} alt="Elastic Security icon" width="100"/>
 
 ***Version: 1.3  
 Updated: Mar 4, 2024***

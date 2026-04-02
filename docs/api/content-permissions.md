@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/general/community.png')} alt="Thumbnail icon" width="60"/>
+<img src={useBaseUrl('img/icons/general/community.png')} alt="Community icon" width="60"/>
 
 The Content Permissions API allows you to share your folders, searches, and dashboards with specific users or roles from HTTP endpoints. For more information, see [Share Content](/docs/manage/content-sharing/).
 

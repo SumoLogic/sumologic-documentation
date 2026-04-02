@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-cyber-vision.png')} alt="cisco-cyber-vision" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-cyber-vision.png')} alt="Cisco Cyber Vision icon" width="70"/>
 
 ***Version: 1.2  
 Updated: Jul 13, 2023***

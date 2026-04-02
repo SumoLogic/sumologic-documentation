@@ -11,7 +11,7 @@ import ApiRoles from '../../reuse/api-roles.md';
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-<img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data Collection icon" width="50"/>
 
 The Collector Management API gives you the ability to manage Collectors and Sources from HTTP endpoints. See the topics below for Collector API and Source API methods and examples, as well as upgrading and downgrading Collectors using the API.
 

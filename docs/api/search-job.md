@@ -10,7 +10,7 @@ import ApiEndpoints from '../reuse/api-endpoints.md';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/search.png')} alt="Thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="55"/>
 
 The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication.
 

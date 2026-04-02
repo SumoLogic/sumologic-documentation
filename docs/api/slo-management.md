@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/>
+<img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="35"/>
 
 With the SLO Management API, you can monitor and set up alerts on KPIs for your most important services or user experience. For more information, see [Reliability Management (SLOs and SLIs)](/docs/observability/reliability-management-slo).
 

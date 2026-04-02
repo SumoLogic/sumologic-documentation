@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/neustar-ip-geopoint.png')} alt="neustar-ip-geopoint" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/neustar-ip-geopoint.png')} alt="Neustar IP GeoPoint icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jun 26, 2023***

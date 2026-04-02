@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/domain-dossier.png')} alt="domain-dossier" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/domain-dossier.png')} alt="Domain Dossier icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 06, 2023***
