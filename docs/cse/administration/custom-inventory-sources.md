@@ -42,7 +42,7 @@ In this step, you configure an HTTP Source that will receive the inventory data 
 7. **Description**. (Optional)
 8. **Source Host**. (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost`.
 9. **Source Category**. Enter a string to tag the output collected from the source, for example, _cse/custom/inventory_. The string that you supply will be saved in a metadata field called `_sourceCategory`.
-10. **SIEM Processing**. Click the checkbox to configure the source to forward log messages to Cloud SIEM.
+10. **SIEM Processing**. Click the check box to configure the source to forward log messages to Cloud SIEM.
 11. **Fields**. Click **+Add Field**, and add a field whose name is `_siemdatatype` with value _inventory_.
 12. Click **Save**
 13. Copy the URL that appears. You will need this to create the Webook in the next step.

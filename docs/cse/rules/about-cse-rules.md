@@ -65,7 +65,7 @@ When you click a rule on the **Rules** page, a details page for the rule appears
 | d | [**Status**](/docs/cse/rules/rules-status/), [**Rule Type**](/docs/cse/rules/about-cse-rules/#rule-types), **Severity**, and number of [**Tuning Expressions**](#about-tuning-expressions).  |
 | e | **Signal Suppression**. When [signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/) occurred. Click a square on the calendar to see the number of signals suppressed on that day. |
 | f | **Rule Editor**. Click in fields to edit the rule. For information about the fields, see articles for the [rule types](#rule-types). |
-| g | **Prototype Rule**. Select the checkbox to [save the rule a prototype](/docs/cse/rules/write-chain-rule/#save-as-prototype).  |
+| g | **Prototype Rule**. Select the check box to [save the rule a prototype](/docs/cse/rules/write-chain-rule/#save-as-prototype).  |
 | h | **History**. Change events for the rule, including who made the change and the type of change event. |
 | i | **Insights**. The [insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) that resulted from the rule's firing.  |
 

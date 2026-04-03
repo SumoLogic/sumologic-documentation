@@ -128,7 +128,7 @@ With the error(s) identified, pivot to the raw message(s) for further troublesho
 
 If you have identified a log message that should be parsed by an existing parser (the format is right, there is a clear security use case, and so on) then it helps to understand the structure of the parser first to begin troubleshooting.
 
-Some parsers are very simple (most often structured log formats):
+Some parsers are simple (most often structured log formats):
 * A format is defined.
 * Parser expects mapping metadata and where they come from to be static or come from the same templated key value pair in the log.
 * Parser expects time parsing to be formulated using a single attribute and for time to be in a single format.

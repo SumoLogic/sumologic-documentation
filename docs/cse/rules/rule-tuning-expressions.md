@@ -50,7 +50,7 @@ You can use Terraform to manage rule tuning expressions with the [`rule_tuning_e
 
 ## Writing a tuning expression
 
-Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and Cloud SIEM [rules language](/docs/cse/rules/cse-rules-syntax) functions. For more information, see [About rule expressions](/docs/cse/rules/about-cse-rules#about-rule-expressions).
+Writing a tuning expression is like writing a rule expression. A tuning expression can use metadata, record fields, and Cloud SIEM [rules language](/docs/cse/rules/cse-rules-syntax) functions. For more information, see [About rule expressions](/docs/cse/rules/about-cse-rules#about-rule-expressions).
 
 :::training Micro Lesson
 

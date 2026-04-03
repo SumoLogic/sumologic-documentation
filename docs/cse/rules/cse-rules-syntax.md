@@ -1341,7 +1341,7 @@ Allows you to specify an offset that will output only part of a string, referred
 * The `startOffset` must be a non-negative integer and less than the length of the `sourceString`.
 * The `endOffset` must be a non-negative integer that is equal to or greater than `startOffset`.
 * If the `endOffset` is not specified, the `substring` is taken from the `startOffset` until the very end of the `sourceString`.
-* The `endOffset` may be equal to or greater than the length of the `sourceString`, but it would behave the same as if the user did not specify an `endOffset`.
+* The `endOffset` may be equal to or greater than the length of the `sourceString`, but it would behave the same as if you did not specify an `endOffset`.
 
 **Examples**
 
@@ -1349,7 +1349,7 @@ Allows you to specify an offset that will output only part of a string, referred
 
    `substring("Hello world!", 6)`
 
-* The following expression returns "Sumo":
+* The following expression returns "Sumo Logic":
 
    `substring("Sumo Logic", 0, 4)`
 

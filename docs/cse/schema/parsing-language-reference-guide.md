@@ -1120,7 +1120,7 @@ Will convert `events.1.parameters.1.name = x, events.1.parameters.1.value = y in
 
 **Mixing and matching regex and non-regex formats**
 
-You can mix and match these formats. That is advisable because the non-regex format is more performant. The `_$INDEX` capture group in a regex match will need to match all characters after the non-regex field. The following example behaves just like the previous one:
+You can mix and match these formats. That is advisable because the non-regex format is more performant. The `_$INDEX` capture group in a regex match will need to match all characters after the non-regex field. The following example behaves like the previous one:
 
 `ZIP:test_key:r|^test_key(?P<_$INDEX>_?[^_]*)(_(?P<_$LIST_INDEX>.*)) = testRegexPrefix_`
 

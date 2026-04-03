@@ -50,7 +50,7 @@ To create the lookup table schema:
 1. For the first column, enter:
    * **Fields**. Enter *mail*.
    * **Value Type**. Leave the default, *string*, selected.
-   * **Primary Key Field(s)**. Click the **Yes** checkbox.
+   * **Primary Key Field(s)**. Click the **Yes** check box.
 1. For the second column, enter:
    * **Fields**. Enter *samaccountname*.
    * **Value Type**. Leave the default, *string,* selected.

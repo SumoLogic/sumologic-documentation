@@ -54,7 +54,7 @@ When you [create a playbook](/docs/platform-services/automation-service/playbook
 
 To monitor and run playbooks on [incidents](/docs/cloud-soar/incidents-triage/#incidents):
 1. Within an incident, select **Operations > Playbooks** to see the playbooks assigned to the incident. 
-1. If playbooks haven't been assigned by an incident template, you can add playbooks by clicking the **+** button.
+1. If playbooks have not been assigned by an incident template, you can add playbooks by clicking the **+** button.
 1. To manually run a playbook for the incident, click the **Run** button at the bottom of the screen.<br/><img src={useBaseUrl('img/cloud-soar/playbook-on-incident.png')} alt="Playbook on an incident" style={{border: '1px solid gray'}} width="700"/>
 
 ### Add a playbook to an incident with the API
@@ -130,7 +130,7 @@ You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-
     ```
     :::note
     * For details on variables you can use as parameters within your JSON object, see [Configure Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables).
-    * For information on additional fields, please refer to the [Cloud SOAR APIs](/docs/api/cloud-soar/) documentation.
+    * For information on additional fields, refer to the [Cloud SOAR APIs](/docs/api/cloud-soar/) documentation.
     * The preceding example shows an `ISO-8601 datetime string`. For information about how to configure it, see [parser documentation](https://dateutil.readthedocs.io/en/stable/parser.html#dateutil.parser.isoparse).
     :::
 1. Click **Save**.
@@ -244,7 +244,7 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
  If you have configured Slack as described in [Configure Slack for Cloud SOAR](#configure-slack-for-cloud-soar), you can set a playbook’s [user choice](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-a-user-choice-node-to-a-playbook) to be answered by Slack.
 
 1. Run a playbook with a User Choice action. The following example shows a simple playbook with two available answers: **Close Incident** and **Investigate**. Notice that the option **Answer By Slack** is enabled.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-playbook.png')} alt="Playbook with user choices" style={{border: '1px solid gray'}} width="700"/>
-<br/>In this case, the Authorizer set is just a user. If a group is chosen, a message will be sent directly from the CSOAR Bot to every available user. If a user is not selected, and the playbook is inside an incident, the message will be sent within the relevant channel in the Slack workspace, and all the users within it will be authorized to choose one of the User Choice available options.
+<br/>In this case, the Authorizer set is a user. If a group is chosen, a message will be sent directly from the CSOAR Bot to every available user. If a user is not selected, and the playbook is inside an incident, the message will be sent within the relevant channel in the Slack workspace, and all the users within it will be authorized to choose one of the User Choice available options.
 1. When the playbook flow reaches the **User Choice**, the user will receive a message containing the reference to the incident, the playbook name, and the question set for the **User Choice**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice.png')} alt="Slack user choice message" style={{border: '1px solid gray'}} width="600"/>
 1. After a recipient chooses one of the available options, the playbook flow will continue and a message will inform the user or the group about the choice made.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice-2.png')} alt="Selected user choice" style={{border: '1px solid gray'}} width="600"/>
 

@@ -84,7 +84,7 @@ Let's look at the details of one signal:
 * A. **Description**. Every signal's details page includes a description, detailed metadata, and other information to help your threat investigation.
 * B. **Event Time**. The event time tells you when the event occurred.
 * C. **Severity**. A signal's severity score is a number between 0 and 10. This score is used to track the entity's activity score.
-* D. **Rule**. Signals are created when the conditions of a rule are met. You can click on the rule from the signal's details page to learn more.
+* D. **Rule**. Signals are created when the conditions of a rule are met. You can click the rule from the signal's details page to learn more.
 * E. **Tags**. Tags or stages use the MITRE ATT&CK framework to point you toward how or why an event occurred.
 * F. **Entity**. The entity can be any unique identifier like an IP address. In this case, it's a username.
 
@@ -184,7 +184,7 @@ The insight page shows everything you need to start unravelling the security eve
 * Why did the event occur?
 * How did the event occur? 
 
-When signals cluster together, Cloud SIEM uses their tactics and techniques to name the insights they generate. The insight's name can point you to how the event occurred, or why the adversary is behaving that way. For example, a tactic name like discovery or persistence shows the reasons the adversary has. Similarly, tactic names like initial access or execution can tell you a little about the methods the adversary used. These names are just starting points, however, and you may need to revise your hypotheses as you continue your investigations.
+When signals cluster together, Cloud SIEM uses their tactics and techniques to name the insights they generate. The insight's name can point you to how the event occurred, or why the adversary is behaving that way. For example, a tactic name like discovery or persistence shows the reasons the adversary has. Similarly, tactic names like initial access or execution can tell you a little about the methods the adversary used. These names are starting points, however, and you may need to revise your hypotheses as you continue your investigations.
 
 Example: An insight is named "Discovery with Execution". Why did the event occur? Probably so the adversary could discover your information. How did the event occur? By using an executable file or a similar technique. 
 
@@ -363,7 +363,7 @@ You're concerned about traffic coming from a particular IP address that is not c
     1. Select **constant** from the **and a ___ severity of** dropdown.
     1. Drag the severity meter to select a severity for your rule. In this example, a low severity like 1 would be appropriate.
     1. Under tags, select some tactics and techniques from the MITRE ATT&CK framework. For this example, you could select **Tactic** and then **TA0001 - Initial Access**. 
-1. Select the **Save this rule as a prototype** checkbox. As a best practice, whenever you create a new rule, save it as a prototype so you can monitor its behavior for a few weeks before pushing it to your system live.
+1. Select the **Save this rule as a prototype** check box. As a best practice, whenever you create a new rule, save it as a prototype so you can monitor its behavior for a few weeks before pushing it to your system live.
 1. Click **Submit** to save your rule.
 1. Verify your rule exists by going back to the rules page (step 1). You should see it there. You may need to refresh the page to find it.
 
@@ -431,12 +431,12 @@ Before you create custom rules from scratch, there are some best practices you'l
 
 * **Check existing rules**. Sumo Logic already has hundreds of [built-in rules](/docs/cse/rules/cse-built-in-rules/), so you might not need to write a new one. Or, you may only need to make small changes to existing rules, like adding a rule tuning expression or adjusting a severity score.
 * **Know your system**. You'll need to understand the [schema](/docs/cse/schema/) and [log mappings](/docs/cse/schema/create-structured-log-mapping/) of all the records ingested into Cloud SIEM to write effective rules. You might want to work with an administrator on your team who knows this to write better rules.
-* **Know your risk appetite**. In addition to your system's details about log mappings and other metadata, you need to understand your company's risk appetite and risk tolerance. For example, some companies might want to monitor a large amount of outbound traffic, but not consider this a threat. So, they'd assign this rule a severity of zero. However, other companies might be alarmed by outbound traffic and consider it data exfiltration, assigning the same rule a severity of five.
+* **Know your risk appetite**. In addition to your system's details about log mappings and other metadata, you need to understand your company's risk appetite and risk tolerance. For example, some companies might want to monitor a large amount of outbound traffic, but not consider this a threat. So, they would assign this rule a severity of zero. However, other companies might be alarmed by outbound traffic and consider it data exfiltration, assigning the same rule a severity of five.
 * **Know the rule types**. You also need to understand all [the types of rules](/docs/cse/rules/about-cse-rules/#rule-types). If your use case requires a chain rule, but you try writing a threshold rule, the rule might not be as efficient or effective.
 * **Make small changes**. As a best practice, when you do write a new rule or edit an existing one, make small changes. For example, instead of decreasing a severity score from 8 to 2, try decreasing it from 8 to 7 and monitoring the change for a while.
 * **Save as a prototype**. Another best practice is to [save all new rules as a prototype](/docs/cse/rules/write-match-rule#save-as-prototype). This allows you to monitor the rule's behavior, without creating new insights and alerts.
 
-Rule tuning, custom rules, and custom insights are just a taste of what you can customize in Cloud SIEM. However, some customizations, like configuring the [Actions button](/docs/cse/administration/create-cse-actions), need admin privileges. You can work with your admin or your Sumo Logic account rep to customize:
+Rule tuning, custom rules, and custom insights are a taste of what you can customize in Cloud SIEM. However, some customizations, like configuring the [Actions button](/docs/cse/administration/create-cse-actions), need admin privileges. You can work with your admin or your Sumo Logic account rep to customize:
 * [Log mappings](/docs/cse/schema/create-structured-log-mapping/)
 * [Match lists](/docs/cse/match-lists-suppressed-lists/)
 * [APIs](/docs/cse/administration/cse-apis/) and other [plugins](/docs/cse/integrations/)
