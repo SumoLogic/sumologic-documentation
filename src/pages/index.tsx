@@ -282,7 +282,26 @@ export const Home = () => {
               ))}
             </TabContext>
           </Stack>
-
+          <Box
+            sx={{
+              borderTop: '1px solid',
+              borderColor: 'grey.200',
+              mt: 2,
+              pb: 8,
+              pt: 5,
+            }}>
+            <Grid container spacing={4}>
+              <Grid item xs={12} md={4}>
+                <RecentlyCreatedArticles />
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <MostViewedArticles />
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <RecentlyUpdatedArticles />
+              </Grid>
+            </Grid>
+          </Box>
         </Container>
       </Layout>
     </ErrorBoundary>
