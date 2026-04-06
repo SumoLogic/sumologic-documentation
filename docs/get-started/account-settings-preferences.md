@@ -168,7 +168,7 @@ By default, saved searches run automatically when selected. Deselect this option
 
 #### Enable in-app tabs for Logs Search
 
-Select this checkbox to enable in-app tabs. In-app tabs support drag-and-drop reordering and horizontal scrolling for easier navigation. If you prefer to use the browser tabs, deselect this checkbox to turn the feature off.
+Select this checkbox to enable in-app tabs, allowing you to manage multiple searches within a single browser window. In-app tabs support drag-and-drop reordering and horizontal scrolling for easier navigation. If you prefer using your browser’s native tabs instead, clear this checkbox to turn the feature off.
 
 ### Alerts
 
