@@ -10,6 +10,9 @@ import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
 import ErrorBoundary from '../components/ErrorBoundary';
 import GoogleTranslateNavbarItem from '../theme/NavbarItem/GoogleTranslateNavbarItem';
+import RecentlyCreatedArticles from '../components/RecentlyCreatedArticles';
+import RecentlyUpdatedArticles from '../components/RecentlyUpdatedArticles';
+import MostViewedArticles from '../components/MostViewedArticles';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
