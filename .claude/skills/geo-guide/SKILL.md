@@ -1,6 +1,6 @@
 ---
 name: geo-guide
-description: GEO (Generative Engine Optimisation) principles and patterns for Sumo Logic documentation in the sumologic-documentation repo. Use when creating or updating docs to rewrite headings as questions, adding FAQ sections, applying BLUF writing style, or adding JSON-LD schema markup to Docusaurus frontmatter. Also trigger for requests like "make my app doc AI-friendly", "optimise for AI citation", "add FAQ schema", or any task involving GEO, structured metadata, or discoverability of Sumo Logic docs for LLMs.
+description: GEO (Generative Engine Optimisation) principles and patterns for Sumo Logic documentation in the sumologic-documentation repo. Use when creating or updating docs to rewrite headings as questions, adding FAQ sections, applying BLUF writing style, or adding JSON-LD schema markup to Docusaurus frontmatter. Also trigger for requests like "make my app doc AI-friendly", "optimise for AI citation", "add FAQ schema", or any task involving GEO, structured metadata, or discoverability of Sumo Logic docs for LLMs. Do not use for general documentation updates, routine edits, standard page creation, or any PR that does not explicitly ask for GEO or AI optimisation. 
 ---
 
 # GEO Reference — Sumo Logic Docs
@@ -11,55 +11,75 @@ GEO optimises documentation so AI tools like ChatGPT, Perplexity, and Gemini **c
 
 ## Frontmatter Template (GEO-optimised)
 
+GEO changes heading style, page structure, frontmatter fields, and content layout in ways that diverge from the standard Sumo Logic style guide. Apply it only when explicitly requested. Apply GEO when the prompt contains phrases like:
+
+- "optimise for AI citation"
+- "GEO optimise this page"
+- "make this doc AI-friendly"
+- "make this citable by AI tools"
+- "add FAQ schema"
+- "add JSON-LD" 
+- "add structured metadata"
+- "apply BLUF" 
+- "rewrite headings as questions"
+
+Do not  apply GEO for:
+- Routine documentation updates, bug fixes, or content corrections 
+- Standard new page creation without an explicit AI-optimisation request
+- Pull requests that mention SEO but not GEO or AI citation
+- Any task where the prompt does not specifically ask for GEO
+
 Sumo Logic doc pages live under `/docs/` and follow this frontmatter pattern:
 
 ```yaml
 ---
-id: my-page-name
-title: How Do I [Task] with Sumo Logic?
-sidebar_label: Short Nav Label
-description: One sentence answering the page question for AI crawlers and search engines.
-keywords:
-  - Sumo Logic
-  - feature or product name
-  - capability term
-head:
-  - tagName: script
-    attributes:
-      type: application/ld+json
-    innerHTML: |
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Your first question here?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Your plain-text answer here."
+  id: my-page-name
+  title: How Do I [Task] with Sumo Logic? 
+  sidebar_label: Short Nav Label
+  description: One sentence answering the page question for AI crawlers and search engines. 
+  keywords: 
+    - Sumo Logic
+    - feature or product name
+    - capability term
+  head:
+    - tagName: script
+      attributes:
+        type: application/ld+json
+      innerHTML: |
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Your first question here?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your plain-text answer here." 
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Your second question here?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your plain-text answer here."
+              }
             }
-          },
-          {
-            "@type": "Question",
-            "name": "Your second question here?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Your plain-text answer here."
-            }
-          }
-        ]
-      }
+          ]
+        }
 ---
 ```
 
+When generating GEO-optimised frontmatter, add # [GEO: Principle N] inline comments next to each GEO-specific field so reviewers can immediately distinguish GEO additions from standard frontmatter fields. Remove these comments only if the project's YAML linter rejects them.
+
 **Rules:**
+
 - `title` is phrased as a question and matches the H1 (generated from frontmatter ).
 - `description` is one sentence describing what the feature does and what problem it solves.
 - `keywords` include: the integrated product name, Sumo Logic, and 2–3 capability terms (for example: security, monitoring, logs).
 - `mainEntity` in the JSON-LD must mirror the FAQ section at the bottom of the page body to keep them in sync.
 - FAQ answers in JSON-LD must be plain text.
-
 
 ## The Five GEO Principles
 
@@ -79,7 +99,6 @@ Use Scheduled Searches to run a saved search automatically and alert your team w
 - Lead every intro and every H2/H3 section with the answer, not the motivation.
 - Follow the answer with context, prerequisites, steps, and examples.
 - Apply at every section level, not just the top of the page.
-
 
 ### Principle 2 — One page, one question
 
@@ -149,6 +168,10 @@ Every major page ends with a structured FAQ block. These are the highest-value c
 Add `keywords` and JSON-LD FAQ schema to every major documentation page. See the [Frontmatter Templates](#frontmatter-templates) above for the full patterns This is the signal layer AI crawlers read before rendering the page.
 
 ## Gotchas
+
+These are GEO-specific behaviors that differ from standard doc authoring. Apply GEO only when explicitly requested. GEO restructures pages in ways that are intentional for AI citation but inconsistent with the standard Sumo Logic style guide. Applying it to the wrong pull requests creates review noise and style drift.
+
+Only apply GEO when the prompt explicitly asks for it. Trigger phrases are listed in above. If a prompt asks you to "update the authentication page" with no mention of GEO, AI citation, or structured metadata, make the content change only. Do not add JSON-LD, do not rewrite headings as questions, do not add an FAQ section.
 
 These are GEO-specific behaviors that differ from standard doc authoring in this repository.
 
