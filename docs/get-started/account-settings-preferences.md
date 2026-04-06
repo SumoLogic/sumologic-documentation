@@ -70,7 +70,7 @@ To set up 2-Step Verification, you will need to install a Time-Based One-Time Pa
 
 These settings apply only to your personal account and do not affect other users in your organization. Changes take effect the next time you sign in.
 
-<img src={useBaseUrl('img/get-started/my-preferences.png')} alt="preference settings" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/get-started/my-preferences.png')} alt="preference settings" style={{border: '1px solid gray'}} width="500" />
 
 ### Timezone and Date Format
 
@@ -165,6 +165,10 @@ Keep this option selected to automatically open the search autocomplete dialog w
 #### Automatically run the search after selecting it from a list of saved searches
 
 By default, saved searches run automatically when selected. Deselect this option if you prefer to start searches manually.
+
+#### Enable in-app tabs for Logs Search
+
+Select this checkbox to enable in-app tabs. In-app tabs support drag-and-drop reordering and horizontal scrolling for easier navigation. If you prefer to use the browser tabs, deselect this checkbox to turn the feature off.
 
 ### Alerts
 
