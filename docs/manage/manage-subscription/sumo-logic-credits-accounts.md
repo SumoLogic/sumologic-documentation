@@ -110,7 +110,7 @@ The following table provides a summary list of key features by credits package a
 
 :::note
 - To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) capability. 
-- To view, create, and manage the **Create Usage Alerts**, you must have the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities/#alerting).
+- To view, create, and manage the **Create Usage Alerts**, you must have the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities/#alerting) role capability.
 :::
 
 The **Account Overview** tab provides detailed information about your Sumo Logic organization, including account type, contract periods, credit usage, live dashboards, and real-time alerts. Account owners can also reassign the Account Owner role from this page.  
