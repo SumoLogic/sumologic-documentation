@@ -489,8 +489,8 @@ Tool identifiers are subject to change during the closed preview period.
 
 | Tool | Description |
 | :--- | :---------- |
-| `CreateTemplatedMatchRule` | Create a new Match Rule. |
-| `CreateThresholdRule`      | Create a new Threshold Rule. |
+| `CreateTemplatedMatchRule` | Create a new match rule. |
+| `CreateThresholdRule`      | Create a new threshold rule. |
 | `GetRule`                  | Get a single rule by ID with optional tuning expressions. |
 | `GetRules`                 | Get rules with filtering by category, enabled status, rule source, score, severity, stream, tags, and more. |
 | `UpdateRuleEnabled`        | Enable or disable a detection rule. |
