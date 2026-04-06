@@ -7,7 +7,7 @@ description: The Zendesk app for Sumo Logic provides security analysts with crit
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="Zendesk-icon" width="50" />
+<img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="Zendesk icon" width="50" />
 
 The Sumo Logic app for Zendesk is designed to provide security analysts with critical visibility into their organization's Zendesk environment. It offers real-time monitoring of audit events, user activity, and security-related changes such as logins, user provisioning, and configuration updates. The app includes dashboards that track the actions of users, groups, and organizations, highlighting potential risks like audits from risky locations or impossible login attempts. 
 
@@ -89,7 +89,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Zendesk - Overview** dashboard provides a high-level summary of key security metrics. It tracks total audit events, newly created users, groups, and organizations, helping security analysts monitor real-time activity. The dashboard breaks down audit actions by type, source, and geography, allowing for quick identification of suspicious activity or trends, such as logins or audits from risky locations. Top actors and recent audits are displayed to show who is making changes. Analysts can also track sign-in events over time to spot unusual login patterns, ensuring timely detection of potential threats. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Zendesk/Zendesk-Overview.png' alt="Zendesk-Overview" />
+The **Zendesk - Overview** dashboard provides a high-level summary of key security metrics. It tracks total audit events, newly created users, groups, and organizations, helping security analysts monitor real-time activity. The dashboard breaks down audit actions by type, source, and geography, allowing for quick identification of suspicious activity or trends, such as logins or audits from risky locations. Top actors and recent audits are displayed to show who is making changes. Analysts can also track sign-in events over time to spot unusual login patterns, ensuring timely detection of potential threats. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Zendesk/Zendesk-Overview.png' alt="Zendesk Overview" />
 
 ## Create monitors for Zendesk app
 

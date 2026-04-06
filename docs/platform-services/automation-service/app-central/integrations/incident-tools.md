@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/incident-tools.png')} alt="incident-tools" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/incident-tools.png')} alt="Incident Tools icon" width="100"/>
 
 ***Version: 1.10  
 Updated: March 16, 2026***

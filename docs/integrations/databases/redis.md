@@ -87,7 +87,7 @@ Sumo Logic supports collection of logs and metrics data from Redis in both Kuber
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from Redis in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
-<br/><img src={useBaseUrl('img/integrations/databases/redis-flow.png')} alt="redis-flow" />
+<br/><img src={useBaseUrl('img/integrations/databases/redis-flow.png')} alt="Redis flow" />
 
 The first service in the metrics pipeline is Telegraf. Telegraf collects metrics from Redis. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: that is, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Redis input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator.
 Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
@@ -209,7 +209,7 @@ This section explains the steps to collect Redis logs from a Kubernetes environm
 </TabItem>
 <TabItem value="non-k8s">
 
-For Non-Kubernetes environments, we use the Telegraf Operator for Redis metric collection and Sumo Logic Installed Collector for collecting Redis logs. The diagram below illustrates the components of the Redis collection in a non-Kubernetes environment. Telegraf runs on the same system as Redis, and uses the Redis input plugin to obtain Redis metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Redis on the other hand are sent to either a Sumo Logic Local File or Syslog source.<br/><img src={useBaseUrl('img/integrations/databases/redis-nonk8.png')} alt="redis-nonk8s" />
+For Non-Kubernetes environments, we use the Telegraf Operator for Redis metric collection and Sumo Logic Installed Collector for collecting Redis logs. The diagram below illustrates the components of the Redis collection in a non-Kubernetes environment. Telegraf runs on the same system as Redis, and uses the Redis input plugin to obtain Redis metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Redis on the other hand are sent to either a Sumo Logic Local File or Syslog source.<br/><img src={useBaseUrl('img/integrations/databases/redis-nonk8.png')} alt="Redis non-Kubernetes" />
 
 This section provides instructions for configuring metrics collection for the Sumo Logic app for Redis. Follow the instructions below to set up metrics and logs collection for a given Redis cluster:
 

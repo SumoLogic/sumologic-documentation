@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hatching-triage.png')} alt="hatching-triage" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hatching-triage.png')} alt="Hatching triage icon" width="100"/>
 
 ***Version: 1.4  
 Updated: August 13, 2025***

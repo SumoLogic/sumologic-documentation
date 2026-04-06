@@ -49,7 +49,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuseipdf/abuseipdf-1.png')} style={{border:'1px solid gray'}} alt="any.run-3" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuseipdf/abuseipdf-1.png')} style={{border:'1px solid gray'}} alt="AbuseIPDB configuration dialog" width="400"/>
 
 For information about AbuseIPDB, see [AbuseIPDB documentation](https://www.abuseipdb.com/api.html).
 

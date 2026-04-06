@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/arcsight-esm.png')} alt="arcsight-esm" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/arcsight-esm.png')} alt="ArcSight ESM icon" width="90"/>
 
 ***Version: 1.2  
 Updated: Mar 4, 2024***

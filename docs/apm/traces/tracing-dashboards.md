@@ -78,7 +78,7 @@ You are limited to three Trace List panels in a dashboard.
 To add a Trace List panel to your Dashboard:
 1. Open or create a new Dashboard.
 2. Click **Add Panel** and select **Trace List**. Or select the **Trace List** option on a new Dashboard.<br/><img src={useBaseUrl('img/apm/traces/add-tracelist.png')} alt="Add tracelist" style={{border: '1px solid gray'}} width="400" />
-    <br/>A panel configuration page opens.<br/><img src={useBaseUrl('img/apm/traces/create-tracelist.png')} alt="Create-tracelist" style={{border: '1px solid gray'}} width="800" />
+    <br/>A panel configuration page opens.<br/><img src={useBaseUrl('img/apm/traces/create-tracelist.png')} alt="Create tracelist" style={{border: '1px solid gray'}} width="800" />
 3. Configure a [Trace query](view-and-investigate-traces.md) to search for desired set of traces.
 4. Select a time range or create a custom range for the panel. You can set this when creating or at any time when viewing the Dashboard panel.<br/><img src={useBaseUrl('img/apm/traces/timerange.png')} alt="Time range" style={{border: '1px solid gray'}} width="300" />
 5. The **Chart Type** is set to Table.

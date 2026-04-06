@@ -188,7 +188,7 @@ Triggers are evaluated by balancing the requirement of timely alert notification
 
 When configuring monitor trigger conditions, you can set a resolution window to resolve alerts quickly once the underlying issue is fixed. The resolution window specifies how long a monitor will wait before resolving an alert after the issue is corrected.
 
-For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-logs.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
+For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-logs.png')} alt="Config resolution window" style={{border: '1px solid gray'}} width="700"/>
 
 #### Static detection method
 
@@ -215,7 +215,7 @@ For example, if an alert is set to `greater than 10`, the recovery would be se
 
 **Example: Logs - Static - Missing Data**
 
-<img src={useBaseUrl('img/alerts/monitors/logs-static-missing.png')} alt="logs-static-missing" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/logs-static-missing.png')} alt="Logs static missing" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when missing data within <time range - trigger>. Evaluate every <trigger - frequency>.`
 
@@ -277,7 +277,7 @@ For Metrics monitors, you can choose to recover based on a single data point bel
 
 When configuring monitor trigger conditions, you can set a resolution window to resolve alerts quickly once the underlying issue is fixed. The resolution window specifies how long a monitor will wait before resolving an alert after the issue is corrected.
 
-For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-metrics.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
+For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-metrics.png')} alt="Config resolution window" style={{border: '1px solid gray'}} width="700"/>
 
 #### Prerequisites
 
@@ -345,7 +345,7 @@ Anomaly detection applies to one time series at a time. All metrics anomaly moni
 
 **Example: Metrics - Anomaly - Critical**
 
-<img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-critical.png')} alt="metrics-anomaly-critical" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-critical.png')} alt="Metrics anomaly critical" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when anomaly count is at least <count> (max. 5) at any time within <time range>`
 
@@ -358,7 +358,7 @@ Tune the number of anomalous data points detected per day compared to the predic
 
 **Example: Metrics - Anomaly - Missing Data**
 
-<img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-missing.png')} alt="metrics-anomaly-missing" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-missing.png')} alt="Metrics anomaly missing" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when missing data within <time range>`
 

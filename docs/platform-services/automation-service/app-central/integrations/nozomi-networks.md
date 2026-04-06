@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/nozomi-networks.png')} alt="nozomi-networks" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/nozomi-networks.png')} alt="Nozomi Networks icon" width="100"/>
 
 ***Version: 1.2  
 Updated: Jul 19, 2023***

@@ -21,7 +21,7 @@ Updated: March 31, 2026**
 
 ## Airtable configuration
 
-1. Sign in to the Airtable platform with your email ID and password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/airtable/airtable-1.png')} style={{border:'1px solid gray'}} alt="airtable-1" width="800"/>
+1. Sign in to the Airtable platform with your email ID and password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/airtable/airtable-1.png')} style={{border:'1px solid gray'}} alt="Airtable sign in" width="800"/>
 1. To create your token, refer to the [Airtable documentation](https://airtable.com/developers/web/guides/personal-access-tokens).
 
 ## Configure Airtable in Automation Service and Cloud SOAR

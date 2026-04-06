@@ -10,7 +10,7 @@ description: Learn how to collect audit logs using the Zendesk API.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="Zendesk-icon" width="70" />
+<img src={useBaseUrl('img/send-data/zendesk-icon.png')} alt="Zendesk icon" width="70" />
 
 Zendesk is widely used across various industries, including technology, retail, healthcare, education, financial services, and many more. This platform is vital for its ease of use, scalability, and ability to integrate with other business tools and applications. The audit log shows various changes in the Zendesk account since the account was created. Records of these changes are saved indefinitely, and you can view the entire change history. This source collects the audit logs from the Zendesk API and ingests them into Sumo Logic.
 

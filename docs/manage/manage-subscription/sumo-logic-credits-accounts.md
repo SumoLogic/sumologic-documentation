@@ -131,8 +131,9 @@ To access the **Account Overview** tab:
 * Track consumption against plan baselines.  
 * Visualize usage by day, week, or month.  
 * Download reports or credit usage data as CSV files.  
-* Hover over charts for detailed insights.  
+* Hover over charts for detailed insights.
 * Create alerts for 70% and 90% credit breach.
+
 
 ### Organization information panel  
 

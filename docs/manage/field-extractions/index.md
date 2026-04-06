@@ -27,7 +27,7 @@ You can see the suggestions only if there are two or more responses for the same
 You need the **Manage field extraction rules** [role capability](../users-roles/roles/role-capabilities.md) to create a field extraction rule. 
 :::
 
-<img src={useBaseUrl('img/field-extraction-rules/fer-page.png')} alt="fer-page" style={{border:'1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/field-extraction-rules/fer-page.png')} alt="Fer page" style={{border:'1px solid gray'}} width="800"/>
 
 The Field Extraction Rules page displays the following information: 
 

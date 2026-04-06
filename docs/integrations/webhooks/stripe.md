@@ -118,19 +118,19 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Stripe - Overview** enhances transparency into activities within the Stripe platform by classifying them based on event type and object. It offers valuable insights and statistics on events related to Payment Intents, Plans, Promotional Codes, and Billing Portal Configuration.
 
-<img src={useBaseUrl('img/integrations/webhooks/Stripe-Overview.png')} style={{border: '1px solid black'}} alt="Stripe-Overview"/>
+<img src={useBaseUrl('img/integrations/webhooks/Stripe-Overview.png')} style={{border: '1px solid black'}} alt="Stripe Overview"/>
 
 ### Products
 
 The **Stripe - Products** provides valuable insights and statistics concerning events related to products, encompassing tax rates and coupons.
 
-<img src={useBaseUrl('img/integrations/webhooks/Stripe-Products.png')} style={{border: '1px solid black'}} alt="Stripe-Products"/>
+<img src={useBaseUrl('img/integrations/webhooks/Stripe-Products.png')} style={{border: '1px solid black'}} alt="Stripe Products"/>
 
 ### Customers and Billing
 
 The **Stripe - Customers and Billing** offers valuable insights and statistical data about customer and billing-related events including subscriptions and invoices.
 
-<img src={useBaseUrl('img/integrations/webhooks/Stripe-Customers_and_Billing.png')} style={{border: '1px solid black'}} alt="Stripe-Customers_and_Billing"/>
+<img src={useBaseUrl('img/integrations/webhooks/Stripe-Customers_and_Billing.png')} style={{border: '1px solid black'}} alt="Stripe Customers_and_Billing"/>
 
 ## Upgrade/Downgrade the Stripe app (Optional)
 

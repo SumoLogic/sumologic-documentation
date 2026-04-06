@@ -4,7 +4,7 @@ To configure an AWS Cost Explorer Source:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **AWS Cost Explorer**.<br/>  <img src={useBaseUrl('img/send-data/aws-cost-explorer-icon.png')} alt="aws-cost-explorer-icon" width="10%" />
+1. Search for and select **AWS Cost Explorer**.<br/>  <img src={useBaseUrl('img/send-data/aws-cost-explorer-icon.png')} alt="AWS Cost Explorer icon" width="10%" />
 1. Enter a **Name** for the Source in the Sumo Logic console. The **Description** is optional.<br/>  <img src={useBaseUrl('img/integrations/amazon-aws/cost-explorer-v2-1-1.png')} alt="Cost Explorer v2 1 1" width="400" />
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 1. For [Fields](/docs/manage/fields), click the **+Add** link to add custom log metadata. Define the fields you want to associate. Each field needs a name (key) and value.

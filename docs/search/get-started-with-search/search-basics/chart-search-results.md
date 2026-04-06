@@ -30,11 +30,11 @@ The **New Visualization** feature enables the new chart visualizations for your 
 * **Data**. This section represents the data that has been used to plot the chart. Toggle the **Round data point** ON/OFF the round off to the value in tooltip.
 * **Visual Settings**. Allows you to further customize your chart. The other customizing properties include: [**Color Palette**](/docs/dashboards/panels/modify-chart/#modifydisplay-settings), [**Fill Opacity**](/docs/dashboards/panels/modify-chart/#modifydisplay-settings), [**Marker Type**](/docs/dashboards/panels/modify-chart/#modifydisplay-settings), and [**Dimensions**](/docs/dashboards/panels/modify-chart/#modifychart-axes) (x, y, and z).
 
-<img src={useBaseUrl('img/search/get-started-search/search-basics/log-query-charts-properties-new.png')} alt="log-query-charts-properties-new" style={{border:'1px solid black'}} width="800" />
+<img src={useBaseUrl('img/search/get-started-search/search-basics/log-query-charts-properties-new.png')} alt="Log query charts properties new" style={{border:'1px solid black'}} width="800" />
 
 Charts will appear in **New Visualization** style by default. If you prefer to use the **Classic Visualization** UI, click the **Classic Visualizations** button, then in the popup window, click **Switch to Classic Visualizations** to proceed.  
 
-<img src={useBaseUrl('img/search/get-started-search/search-basics/switch-to-classic-visualizations.png')} alt="switch-to-classic-visualizations" style={{border:'1px solid gray'}} width="400" />
+<img src={useBaseUrl('img/search/get-started-search/search-basics/switch-to-classic-visualizations.png')} alt="Switch to classic visualizations" style={{border:'1px solid gray'}} width="400" />
 
 ## FAQ
 

@@ -46,7 +46,7 @@ You can set up a Script Action using the Sumo web app, described in [Option A](#
 1. **Name.** Enter a name to display for the Script Action.
 1. **Description**. Optional.
 1. **Specify a timeout for your command**. You can optionally set a timeout for script execution. Setting a timeout ensures that a script is killed, making sure that resources aren't fully consumed. If you set a timeout, make sure to select a generous amount of time to make sure that the script has enough time to finish running.
-1. **Command.** Choose the type of command you're going to use.<br/><img src={useBaseUrl('img/send-data/script-action-commands.png')} alt="Script-action-commands" style={{border: '1px solid gray'}} width="400" />
+1. **Command.** Choose the type of command you're going to use.<br/><img src={useBaseUrl('img/send-data/script-action-commands.png')} alt="Script action commands" style={{border: '1px solid gray'}} width="400" />
 1. **Script.** Enter the path to the script. Do not enter the contents of the script. (When the Collector executes the script, it will pass the full path to a file containing the search results that triggered the Script Action as the first and only parameter.)
 1. **Working Directory.** Specify a directory if you need your Script Action to execute in a different directory than the Collector installation directory.
 1. Click **Save**.

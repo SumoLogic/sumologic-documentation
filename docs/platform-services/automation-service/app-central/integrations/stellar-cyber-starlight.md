@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/stellar-cyber-starlight.png')} alt="stellar-cyber-starlight" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/stellar-cyber-starlight.png')} alt="Stellar Cyber Starlight icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 03, 2023***

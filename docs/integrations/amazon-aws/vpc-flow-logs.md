@@ -224,7 +224,7 @@ You can also filter Accepts dashboard by any combination of `DestinationIP`, `So
 
 **Use case**: Use this dashboard to track requests that are not permitted by Security Groups and Network ACLs.One can compare bytes and packets rejected per minute with yesterday and last week. One can monitor top source IP's and ports from where the requests are rejected.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Rejects.png')} alt="amazon-vpc-flow-logs" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Rejects.png')} alt="Amazon VPC flow logs" />
 
 
 #### Filtering the Rejects dashboard
@@ -241,7 +241,7 @@ You can also filter the Rejects dashboard by any combination of `DestinationIP`,
 
 **Use case description**: Use this dashboard for comparing the permissive and non permissive traffic based on ports, protocols and network interfaces. Also one can monitor abnormal behavior, current and future trends based on total packets and bytes flowing across the network. One can filter by Action to filter out data for permissive and non permissive traffic. Similarly one can filter by `interfaceid`, `src_ip`, `dest_ip`, `src_port`, `dest_port` to further filter out the traffic for analysis.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Traffic.png')} alt="amazon-vpc-flow-logs-traffic" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Traffic.png')} alt="Amazon VPC flow logs traffic" />
 
 #### Filtering the Traffic dashboard
 
@@ -264,7 +264,7 @@ Key facts about this dashboard:
 
 **Use case:**  Use this dashboard for monitoring the traffic direction. Also use this dashboard for identifying over permissive and restrictive security groups.One can also use this to identify unused security groups and inbound rules by comparing the traffic associated with the security group to the security group rules in EC2 console.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Security-Groups.png')} alt="amazon-vpc-flow-logs-security-groups" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Security-Groups.png')} alt="Amazon VPC flow logs security groups" />
 
 #### Filtering the Security Groups dashboard
 
@@ -276,7 +276,7 @@ You can also filter the Security Groups dashboard by any combination of `Destina
 
 **Amazon VPC Flow Logs - Outliers** dashboard provides panels which show any outliers around Bytes, Packets and Accepted/Rejected traffic. In addition to this there is a separate section “Security Group” which has panels for outliers with respect to inbound and outbound traffic. This dashboard is populated only if you chose VPC-JSON option for LogFormat when you deployed the CloudFormation template.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Outliers.png')} alt="amazon-vpc-flow-logs-outliers" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Outliers.png')} alt="Amazon VPC flow logs outliers" />
 
 #### Filtering the Outlier dashboard
 

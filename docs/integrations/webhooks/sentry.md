@@ -103,8 +103,8 @@ Follow the below steps to configure the Sentry webhook.
      - **Name**. Enter human readable name of your integration.
      - **Webhook URL**. Enter the Sumo Logic HTTP Source Address created above.
      - **Alert Rule Action**. If enabled, this integration will be available in Issue Alert rules and Metric Alert rules in Sentry.
-7. Assign the necessary permissions.<br/><img src={useBaseUrl('img/integrations/webhooks/Sentry-Permission.png')} style={{border: '1px solid black'}} alt="Sentry-Permission"/>
-8. Enable **Webhooks**.<br/><img src={useBaseUrl('img/integrations/webhooks/Sentry-Webhooks.png')} style={{border: '1px solid black'}} alt="Sentry-Webhooks"/>
+7. Assign the necessary permissions.<br/><img src={useBaseUrl('img/integrations/webhooks/Sentry-Permission.png')} style={{border: '1px solid black'}} alt="Sentry Permission"/>
+8. Enable **Webhooks**.<br/><img src={useBaseUrl('img/integrations/webhooks/Sentry-Webhooks.png')} style={{border: '1px solid black'}} alt="Sentry Webhooks"/>
 9. Verify Sentry events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
     ```sql
     _sourceCategory=webhook/sentry

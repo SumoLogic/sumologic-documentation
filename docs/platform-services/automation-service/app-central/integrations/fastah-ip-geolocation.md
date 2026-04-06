@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fastah-ip-geolocation.png')} alt="fastah-ip-geolocation" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fastah-ip-geolocation.png')} alt="Fastah IP Geolocation icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 06, 2023***
@@ -17,7 +17,7 @@ Fastah's IP Geolocation provides information in geo-targeting, displaying countr
 
 ## Fastah IP Geolocation configuration
 
-Sign in to [Fastah API Developer Console](https://docs.getfastah.com/docs/using-the-developer-portal) with your email and password. Then go to Dashboard and under Subscriptions copy your primary key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/fastah-ip-geolocation/fastah-ip-geolocation-1.png')} style={{border:'1px solid gray'}} alt="fastah-ip-geolocation" width="800"/>
+Sign in to [Fastah API Developer Console](https://docs.getfastah.com/docs/using-the-developer-portal) with your email and password. Then go to Dashboard and under Subscriptions copy your primary key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/fastah-ip-geolocation/fastah-ip-geolocation-1.png')} style={{border:'1px solid gray'}} alt="Fastah ip geolocation" width="800"/>
 
 ## Configure Fastah IP Geolocation in Automation Service and Cloud SOAR
 

@@ -66,10 +66,10 @@ You can also filter by compliance period to view your past activity and plan ahe
 You can launch a Log Search session directly from an SLO dashboard panel, giving you the ability to drill down into further granular details.
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > SLOs**.
 1. Double-click on any SLO line item.
-1. Hover over the panel > Click the kebab icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" style={{border: '1px solid gray'}} width="150"/>
+1. Hover over the panel > Click the kebab icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="Open in log search" style={{border: '1px solid gray'}} width="150"/>
 
 :::tip
-Once opened in **Log Search**, you can click **Add to Dashboard** to add SLO dashboard panels to your own custom dashboards.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" style={{border: '1px solid gray'}} width="200"/>
+Once opened in **Log Search**, you can click **Add to Dashboard** to add SLO dashboard panels to your own custom dashboards.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="Add to dashboard" style={{border: '1px solid gray'}} width="200"/>
 :::
 
 
@@ -120,7 +120,7 @@ To join the results of your SLO precomputed data from `_view=sumologic_slo_outpu
 
 Say you want a high-level overview into the health of your SLOs. A honeycomb visualization on the error budget remaining percentage is a nice way to achieve that.
 
-<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" style={{border: '1px solid gray'}} width="450"/>
+<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="Percent error remaining" style={{border: '1px solid gray'}} width="450"/>
 
 You can use the following query to construct the above:
 

@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alienvault-usm-central.png')} alt="alienvault-otx" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alienvault-usm-central.png')} alt="Alienvault USM Central icon" width="90"/>
 
 ***Version: 1.1  
 Updated: Jun 26, 2023***

@@ -195,7 +195,7 @@ You can filter data on VMWare dashboards with template variables. Template varia
 
 The **VMWare - Overview** dashboard provides an at-a-glance view of unique clusters, ESXi hosts, and unique VMs. It also provides data for datastore disk utilisation, VM disk usage, CPU Utilization, Memory Utilization, and Network Usage for VMs and Hosts.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Overview.png' alt="VMWare-Overview"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Overview.png' alt="VMware Overview"/>
 
 - **Number of ESXi Hosts in Cluster**. The total number of ESXi hosts in the cluster.
 - **Number of VMs in Cluster**. The total number of VMs in the cluster.
@@ -215,7 +215,7 @@ The **VMWare - Overview** dashboard provides an at-a-glance view of unique clust
 
 The **VMWare - Clusters** dashboard provides at-a-glance analysis of VMWare cluster metrics like Hosts count, VM count, available CPU, and Memory percentage.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Clusters.png' alt="VMWare-Clusters"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Clusters.png' alt="VMware Clusters"/>
 
 - **Number of ESXi Hosts in Cluster**. The total number of ESXi hosts in the cluster.
 - **Number of VMs in Cluster**. The total number of VMs in the cluster.
@@ -226,7 +226,7 @@ The **VMWare - Clusters** dashboard provides at-a-glance analysis of VMWare clus
 
 The **VMWare - Resource Pools** dashboard provides an at-a-glance analysis of Resource Pool metrics like Memory Usage, CPU Usage, Shares of CPU, and Memory.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Resource-Pools.png' alt="VMWare-Resource-Pools"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Resource-Pools.png' alt="VMware Resource Pools"/>
 
 - **Cluster CPU Usage**. CPU usage of the resource pool.
 - **Cluster Memory Usage**. Memory usage of the resource pool.
@@ -237,7 +237,7 @@ The **VMWare - Resource Pools** dashboard provides an at-a-glance analysis of Re
 
 The **VMWare - Host Overview** dashboard provides at-a-glance analysis of ESXi Hosts metrics like CPU Utilization, Memory Utilization, Read/ Write Latency, and Network Usage.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Host-Overview.png' alt="VMWare-Host-Overview-Details"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Host-Overview.png' alt="VMware Host Overview Details"/>
 
 - **Top 25 ESXi Hosts CPU Utilization**. Top 25 ESXi Hosts CPU Utilization.
 - **Top 25 ESXi Hosts Memory Utilization**. Top 25 ESXi Hosts Memory Utilization.
@@ -249,7 +249,7 @@ The **VMWare - Host Overview** dashboard provides at-a-glance analysis of ESXi H
 
 The **VMWare - Host Details** dashboard provides detailed analysis of ESXi Hosts metrics like CPU Usage, Memory Usage, Disk Read/ Write Rate, Network Usage, Network Packet Rate, and Network Packet Error Rate.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Host-Details.png' alt="VMWare-Host-Overview-Details"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Host-Details.png' alt="VMware Host Overview Details"/>
 
 - **Top 25 ESXi Hosts CPU Usage**. Top 25 ESXi Hosts CPU usage.
 - **Top 25 ESXi Hosts Disk Read/ Write Rate**. Top 25 ESXi Hosts Disk read/ write rate.
@@ -261,7 +261,7 @@ The **VMWare - Host Details** dashboard provides detailed analysis of ESXi Hosts
 
 The **VMWare - VM Overview** dashboard provides an at-a-glance analysis of VM metrics like CPU Utilization, Memory Utilization, Disk Utilization, Network Usage, and Disk Usage.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-VM-Overview.png' alt="VMWare-VM-Overview-Details"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-VM-Overview.png' alt="VMware VM Overview Details"/>
 
 - **Top 25 VMs CPU Utilization**. Top 25 VMs CPU utilization.
 - **Top 25 VMs Memory Utilization**. Top 25 VMs Memory utilization.
@@ -275,7 +275,7 @@ The **VMWare - VM Overview** dashboard provides an at-a-glance analysis of VM me
 
 The **VMWare - VM Details** dashboard provides a detailed analysis of VM metrics like CPU Usage, Memory Usage, Read/Write Latency, Network Packet Rate, and Memory Swapped.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-VM-Details.png' alt="VMWare-VM-Overview-Details"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-VM-Details.png' alt="VMware VM Overview Details"/>
 
 - **Top 25 VMs CPU Usage**. Top 25 VMs CPU usage.
 - **Top 25 VMs Memory Usage**. Top 25 VMs Memory usage.
