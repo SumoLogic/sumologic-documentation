@@ -113,9 +113,9 @@ To view the dashboard information, follow the steps below:
     - **Dashboard ID**. A unique identification ID for the dashboard. Copy and use the dashboard ID within the APIs to identify the dashboard when making requests.
 
 
-## Auto-Refresh
+## Auto Refresh
 
-Auto refresh helps you to refresh the panels with latest data automatically in your dashboard.
+**Auto Refresh** helps you to refresh the panels with latest data automatically in your dashboard.
 
 Administrators can control the availability of auto-refresh behavior for all dashboards from the Policies page.
 
@@ -133,7 +133,6 @@ In this section, you will enable the ability to disable your dashboard auto refr
 
 <img src={useBaseUrl('img/get-started/auto-refresh.png')} alt="Auto-Refresh" style={{border: '1px solid gray'}} width="500" />
 
-
 ### Using auto refresh 
 
 Once, you have enabled the **Auto-Refresh** you can now see that the panels getting refreshed as per the selected auto-refresh interval. If required, you can configure the refresh interval rate by clicking the dropdown arrow next to the **Run** button. Select the refresh interval of your choice from the list.
@@ -150,7 +149,7 @@ The dropdown only displays the time-interval which is greater than or equal to t
 
 ## Auto Run
 
-Auto Run leverages you to run the panels in dashboard automatically, if not manual initiation is required.  
+**Auto Run** leverages you to run the panels in dashboard automatically, if not manual initiation is required.  
 
 Administrators can control the availability of auto-run behavior for all dashboards from the Policies page.
 
@@ -167,7 +166,7 @@ In this section, you will enable the ability to auto run your dashboard panels. 
 
 <img src={useBaseUrl('img/get-started/auto-run.png')} alt="Auto-Run" style={{border: '1px solid gray'}} width="500" />
 
-### Using the auto run
+### Using auto run
 
 When **Auto Run** is disabled you cannot see any data in the panels until you click the **Run** button. Clicking the **Run** button will run all the panels in the dashboard. If you want to run only the selected panel, click <img src={useBaseUrl('/img/dashboards/about-dashboard/rerun.png')} alt="rerun-button" style={{border: '1px solid gray'}} width="30" /> button on top-right of each panel.
 
