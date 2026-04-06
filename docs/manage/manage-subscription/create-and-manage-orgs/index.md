@@ -74,7 +74,7 @@ You can access the child credits usage for a selected organization from the **Or
 1.  [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. 
 1. Click the row for the org you want to access the credits usage.
 1. You can see the total percentage of credits consumed out of the total number of credits allocated in the **Allocation & usage** section.
-1. Click **Open in Account Overview** for a detailed child credit usage report for the selected organization.<br/> <img src={useBaseUrl('img/manage/subscriptions/child-credits-usage.png')} alt="child-credits-usage" style={{border:'1px solid gray'}} width="450"/>
+1. Click **Open in Account Overview** for a detailed child credit usage report for the selected organization.<br/> <img src={useBaseUrl('img/manage/subscriptions/child-credits-usage.png')} alt="Child credits usage" style={{border:'1px solid gray'}} width="450"/>
 
 ### View baselines
 
@@ -120,8 +120,8 @@ You can deactivate the child org when it is no longer needed. Before deactivatin
 Follow the below steps to deactivate a child org:
 
 1.  [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. 
-1. Click the three-dot kebab icon to the right of the child org you'd like to deactivate, then click **Deactivate** from the dropdown. Or, click the row for the org you want to deactivate and click the **Deactivate** button in the right-side panel. <br/> <img src={useBaseUrl('img/manage/subscriptions/deactivate.png')} style={{border:'1px solid gray'}} alt="deactivate" width="800" />Or,<br/> <img src={useBaseUrl('img/manage/subscriptions/deactivate-right-panel.png')} style={{border:'1px solid gray'}} alt="deactivate-right-panel" width="450" />
-1. Click **Deactivate** on the confirmation pop-up. Confirming this action will permanently deactivate the selected child org.<br/> <img src={useBaseUrl('img/manage/subscriptions/deactivate-confirmation.png')} style={{border:'1px solid gray'}} alt="deactivate-confirmation" width="450" />
+1. Click the three-dot kebab icon to the right of the child org you'd like to deactivate, then click **Deactivate** from the dropdown. Or, click the row for the org you want to deactivate and click the **Deactivate** button in the right-side panel. <br/> <img src={useBaseUrl('img/manage/subscriptions/deactivate.png')} style={{border:'1px solid gray'}} alt="deactivate" width="800" />Or,<br/> <img src={useBaseUrl('img/manage/subscriptions/deactivate-right-panel.png')} style={{border:'1px solid gray'}} alt="Deactivate right panel" width="450" />
+1. Click **Deactivate** on the confirmation pop-up. Confirming this action will permanently deactivate the selected child org.<br/> <img src={useBaseUrl('img/manage/subscriptions/deactivate-confirmation.png')} style={{border:'1px solid gray'}} alt="Deactivate confirmation" width="450" />
 
 When you deactivate a child org:
 
@@ -143,7 +143,7 @@ Follow the below steps to delink the deactivated child org:
 
 1.  [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. 
 1. Click the three-dot kebab icon to the right of the deactivated child org you'd like to delink, then click **Delink** from the dropdown. Or, click the row for the org you want to delink and click the **Delink** button in the right-side panel.<br/> <img src={useBaseUrl('img/manage/subscriptions/delink.png')} style={{border:'1px solid gray'}} alt="your description" width="800" />Or,<br/> <img src={useBaseUrl('img/manage/subscriptions/delink-right-panel.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
-1. Click **Delink** on the confirmation pop-up. Confirming this action will permanently delink the selected child org.<br/> <img src={useBaseUrl('img/manage/subscriptions/delink-confirmation.png')} style={{border:'1px solid gray'}} alt="delink-confirmation" width="450" />
+1. Click **Delink** on the confirmation pop-up. Confirming this action will permanently delink the selected child org.<br/> <img src={useBaseUrl('img/manage/subscriptions/delink-confirmation.png')} style={{border:'1px solid gray'}} alt="Delink confirmation" width="450" />
 
 
 ### Limitations

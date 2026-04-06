@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope-WebTx-icon" width="50" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope WebTx icon" width="50" />
 
 The Sumo Logic app for Netskope WebTx Streaming provides real-time visibility into web transaction data streamed from the Netskope platform, helping organizations monitor and secure their cloud and web traffic. The app includes five purpose-built dashboards covering transaction health, security posture, file activity, network insights, and user and application behavior. Security and IT teams can detect policy violations, track data movement, identify risky activity, and manage application governance from a single unified view.
 
@@ -78,31 +78,31 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Netskope WebTx Streaming - Overview** dashboard in Sumo Logic provides a high-level view of web transaction activity, covering total transactions, HTTP and WebSocket volumes, and average response times. It includes geographic maps for client and server locations along with breakdowns by HTTP status, cloud applications, and web categories. Transaction trends over time and a recent transactions table give teams a single-pane view for operational monitoring and performance management.
 
-<img src={useBaseUrl('/img/send-data/Netskope-WebTx-Streaming-Overview.png')} alt="Netskope-WebTx-Streaming-Overview" />
+<img src={useBaseUrl('/img/send-data/Netskope-WebTx-Streaming-Overview.png')} alt="Netskope WebTx Streaming Overview" />
 
 ### Security Overview
 
 The **Netskope WebTx Streaming - Security Overview** dashboard in Sumo Logic delivers a focused view of web transaction security for network administrators and security teams. It highlights blocked transactions, triggered policies, unauthorized access attempts, and SSL errors, while surfacing risky geographic activity and potential data exfiltration. Upload and download trends provide additional context for data movement, making this dashboard essential for threat detection and compliance monitoring.
 
-<img src={useBaseUrl('/img/send-data/Netskope-WebTx-Streaming-Security-Overview.png')} alt="Netskope-WebTx-Streaming-Security-Overview" />
+<img src={useBaseUrl('/img/send-data/Netskope-WebTx-Streaming-Security-Overview.png')} alt="Netskope WebTx Streaming Security Overview" />
 
 ### File Activity
 
 The **Netskope WebTx Streaming - File Activity** dashboard in Sumo Logic tracks file transfer activity across web transactions. It provides visibility into object type distributions, top file types transferred, and data throughput trends over time. A detailed recent file transfer events table captures object names, types, categories, and sizes, helping teams monitor data movement and support data loss prevention efforts.
 
-<img src={useBaseUrl('/img/send-data/Netskope-WebTx-Streaming-File-Activity.png')} alt="Netskope-WebTx-Streaming-File-Activity" />
+<img src={useBaseUrl('/img/send-data/Netskope-WebTx-Streaming-File-Activity.png')} alt="Netskope WebTx Streaming File Activity" />
 
 ### Client and Network Insights
 
 The **Netskope WebTx Streaming - Client and Network Insights** dashboard in Sumo Logic offers visibility into the network and client-side aspects of web transactions. It covers top DNS destinations, transaction hosts, geographic regions, HTTP methods, operating systems, browser types, device types, and access methods. These insights give network and IT teams the context needed to understand client diversity, traffic patterns, and access behaviors across the environment.
 
-<img src={useBaseUrl('/img/send-data/Netskope-WebTx-Streaming-Client-and-Network-Insights.png')} alt="Netskope-WebTx-Streaming-Client-and-Network-Insights" />
+<img src={useBaseUrl('/img/send-data/Netskope-WebTx-Streaming-Client-and-Network-Insights.png')} alt="Netskope WebTx Streaming Client and Network Insights" />
 
 ### Users and Applications Overview
 
 The **Netskope WebTx Streaming - Users and Applications Overview** dashboard in Sumo Logic provides visibility into user behavior and application usage across web traffic. It surfaces top users with policy violations, login and logout trends, most-used applications, and application categories. Sanctioned versus unsanctioned traffic comparisons and Cloud Confidence Level (CCL) ratings help teams manage shadow IT risk and enforce application governance policies.
 
-<br/><img src={useBaseUrl('/img/send-data/Netskope-WebTx-Streaming-Users-and-Applications-Overview.png')} alt="Netskope-WebTx-Streaming-Users-and-Applications-Overview" />
+<br/><img src={useBaseUrl('/img/send-data/Netskope-WebTx-Streaming-Users-and-Applications-Overview.png')} alt="Netskope WebTx Streaming Users and Applications Overview" />
 
 
 ## Create monitors for Netskope WebTx Streaming app

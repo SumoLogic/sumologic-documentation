@@ -16,7 +16,7 @@ Scheduled View creators/owners and all active account administrators will receiv
 
 | In-app notification | Details section notification |
 | :-- | :-- |
-| <img src={useBaseUrl('/img/scheduled-views/in-app-notification.png')} alt="in-app-notification" style={{border:'1px solid gray'}} width="400"/> | <img src={useBaseUrl('/img/scheduled-views/notification-details-page.png')} alt="Notification details page" style={{border:'1px solid gray'}} width="400"/> |
+| <img src={useBaseUrl('/img/scheduled-views/in-app-notification.png')} alt="In app notification" style={{border:'1px solid gray'}} width="400"/> | <img src={useBaseUrl('/img/scheduled-views/notification-details-page.png')} alt="Notification details page" style={{border:'1px solid gray'}} width="400"/> |
 
 ### Disable the AutoPause
 
@@ -28,7 +28,7 @@ Autopause will be enabled for all the Scheduled Views created. Follow the below 
 1. Click **Edit** to open the pane for editing.
 1. Scroll down and uncheck the **Enable AutoPause** checkbox.
 
-<img src={useBaseUrl('/img/scheduled-views/Enable-AutoPause.png')} alt="enable-autopause-scheduled-view" style={{border:'1px solid gray'}} width="400"/>
+<img src={useBaseUrl('/img/scheduled-views/Enable-AutoPause.png')} alt="Enable autopause scheduled view" style={{border:'1px solid gray'}} width="400"/>
 
 ### Re-start the Scheduled View
 
@@ -38,7 +38,7 @@ If a paused Scheduled View is still required, you can manually re-enable at any 
 1. To refine the table with Scheduled View paused results, use the **Add a filter** section located above the table and select **Status:Paused** from the dropdown.
 1. Click on the required Scheduled View and click **Start** button to resume.
 
-<img src={useBaseUrl('/img/scheduled-views/Restart-SV.png')} alt="restart-scheduled-view-page" style={{border:'1px solid gray'}} width="400"/>
+<img src={useBaseUrl('/img/scheduled-views/Restart-SV.png')} alt="Restart scheduled view page" style={{border:'1px solid gray'}} width="400"/>
 
 ## Manually pause a scheduled view
 

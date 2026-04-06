@@ -433,7 +433,7 @@ The **CrowdStrike Spotlight - Overview** dashboard provides security analysts wi
 
 The dashboard categorizes vulnerabilities by severity (Critical, High, Medium, and Low), operating system type (Windows and Linux), and internet exposure, helping analysts prioritize threats based on risk factors. Geolocation data highlights the location of the most severe vulnerabilities aiding in threat localization. The panel showing vulnerabilities by remediation level tracks the organization's progress in resolving these issues. 
 
-Analysts can also monitor top affected hosts, asset criticality, and vulnerabilities over time to spot trends and potential areas of concern. Additional detailed views provide information on vulnerability remediation actions, pending patches, and asset details, helping teams focus on closing security gaps promptly and efficiently. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/CrowdStrike-Spotlight/CrowdStrike-Spotlight-Overview.png' alt="CrowdStrike-Spotlight-Overview" />
+Analysts can also monitor top affected hosts, asset criticality, and vulnerabilities over time to spot trends and potential areas of concern. Additional detailed views provide information on vulnerability remediation actions, pending patches, and asset details, helping teams focus on closing security gaps promptly and efficiently. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/CrowdStrike-Spotlight/CrowdStrike-Spotlight-Overview.png' alt="CrowdStrike Spotlight Overview" />
 
 ## Create monitors for CrowdStrike Spotlight app
 

@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-umbrella-v2.png')} alt="cisco-umbrella-v2" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-umbrella-v2.png')} alt="Cisco Umbrella V2 icon" width="70"/>
 
 ***Version: 1.3  
 Updated: Jul 03, 2023***

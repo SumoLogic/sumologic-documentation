@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/forescout-eyesight.png')} alt="forescout-eyesight" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/forescout-eyesight.png')} alt="Forescout eyeSight icon" width="80"/>
 
 ***Version: 1.2  
 Updated: Jul 18, 2023***

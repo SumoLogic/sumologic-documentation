@@ -97,7 +97,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Bitwarden - Security** dashboard offers security analysts a centralized view of critical user and system activity. It highlights high-risk events such as SSO disablement, master password resets, failed two-step verifications, and decryption key migrations. Visual tools like event timelines and geographic heatmaps help quickly identify anomalies. The dashboard also enforces security policies by flagging access from embargoed regions and tracking users who disable two-step login.
 
-Detailed login and invitation data supports monitoring of access patterns and potential insider threats. Each panel is optimized for real-time investigation and auditing, enhancing the ability to detect and respond to suspicious behavior. The dashboard improves visibility, accountability, and response time for security incidents in the Bitwarden.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Bitwarden/Bitwarden+-+Security.png' alt="Bitwarden-Security" />
+Detailed login and invitation data supports monitoring of access patterns and potential insider threats. Each panel is optimized for real-time investigation and auditing, enhancing the ability to detect and respond to suspicious behavior. The dashboard improves visibility, accountability, and response time for security incidents in the Bitwarden.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Bitwarden/Bitwarden+-+Security.png' alt="Bitwarden Security" />
 
 ## Create monitors for Bitwarden app
 

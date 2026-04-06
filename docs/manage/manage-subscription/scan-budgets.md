@@ -30,7 +30,7 @@ For information on the roles required to view and manage scan budgets, refer to 
 
 To create the query size limit using the **Advanced** configuration:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Scan Budget**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic main menu select **Administration**, and then under **Account**, select **Scan Budget**. You can also click the **Go To...** menu at the top of the screen and select **Scan Budget**.<br/><img src={useBaseUrl('/img/manage/account/scan-budget-advanced.png')} alt="scan-budget-advanced" style={{border:'1px solid gray'}} width="800"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Scan Budget**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic main menu select **Administration**, and then under **Account**, select **Scan Budget**. You can also click the **Go To...** menu at the top of the screen and select **Scan Budget**.<br/><img src={useBaseUrl('/img/manage/account/scan-budget-advanced.png')} alt="Scan budget advanced" style={{border:'1px solid gray'}} width="800"/>
 1. Click **+ Create Scan Budget**.
 1. **Scope**. Include or exclude the users and roles for whom the scan budget should apply.
 1. **Capacity**. You can set either query level or time-phased budgets. You can also check the query size of the last 10 queries by clicking on the **Click here** button to help you determine the appropriate size limit.
@@ -49,7 +49,7 @@ To create the query size limit using the **Advanced** configuration:
     - **Foreground interactive search**. Search page UI, Mobot, and dashboards.
     - **Background search**. API, scheduled search, monitors, scheduled views, and SLO. 
     :::
-1. **Details**. Enter the name for the scan budget.<br/><img src={useBaseUrl('/img/manage/account/create-scan-budget.png')} alt="create-scan-budget" style={{border:'1px solid gray'}} width="650"/>
+1. **Details**. Enter the name for the scan budget.<br/><img src={useBaseUrl('/img/manage/account/create-scan-budget.png')} alt="Create scan budget" style={{border:'1px solid gray'}} width="650"/>
 1. Click **Save** to create the scan budget.
 
 :::note
@@ -62,7 +62,7 @@ To view the selected scan budget:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Scan Budget**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic main menu select **Administration**, and then under **Account**, select **Scan Budget**. You can also click the **Go To...** menu at the top of the screen and select **Scan Budget**.
 1. Click the scan budget that you want to view.
-1. In the details section: <br/><img src={useBaseUrl('/img/manage/account/view-scan-budget.png')} alt="view-scan-budget" style={{border:'1px solid gray'}} width="400"/>
+1. In the details section: <br/><img src={useBaseUrl('/img/manage/account/view-scan-budget.png')} alt="View scan budget" style={{border:'1px solid gray'}} width="400"/>
   - **Edit**. Click the **Edit** button to open the pane for editing. Edit the required fields and click on **Save**.
     :::note
     You can only edit the **Capacity** for *Org-wide Query Budget* set using Basic.
@@ -92,7 +92,7 @@ When you configure multiple budgets for the same user, the scope with the larges
 
 ### Exceeding the scan budget query limit
 
-When you perform a log search, if the results exceed the specified query limit, an error message will be displayed with no results. For example, consider you set a budget of 1 GB/query, and when your log search results exceed the set budget limit, an error message will be displayed as shown below.<br/><img src={useBaseUrl('/img/manage/account/exceed-scan-budget-warning.png')} alt="exceed-scan-budget-warning" style={{border:'1px solid gray'}} width="800"/>
+When you perform a log search, if the results exceed the specified query limit, an error message will be displayed with no results. For example, consider you set a budget of 1 GB/query, and when your log search results exceed the set budget limit, an error message will be displayed as shown below.<br/><img src={useBaseUrl('/img/manage/account/exceed-scan-budget-warning.png')} alt="Exceed scan budget warning" style={{border:'1px solid gray'}} width="800"/>
 
 ### Update the budget time window, applied on, capacity, or action
 

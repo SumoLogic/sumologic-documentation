@@ -7,7 +7,7 @@ description: The Trellix mVision ePO app for Sumo Logic enables security analyst
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="Trust-Login-icon" width="90" />
+<img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="Trust Login icon" width="90" />
 
 The Sumo Logic app for Trellix mVision ePO provides centralized visibility into endpoint threats, enabling security teams to detect, analyze, and respond to risks across their environment. It aggregates data on detections, remediation failures, severity, and suspicious behaviors to highlight high-priority incidents and defense gaps.
 
@@ -144,7 +144,7 @@ The **Trellix mVision ePO - Security** dashboard offers a unified view of endpoi
 
 The dashboard provides real-time insights into suspicious processes, malicious file quarantines, C2 callbacks, user-targeted attacks, and unusual network port usage. It highlights threat activity by type, category, detection method, and affected endpoints, with geographical visualizations, including threats from embargoed regions, for added context.
 
-By consolidating this information, the dashboard enables faster threat detection, analysis, and response, reducing dwell time and enhancing endpoint defenses.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Trellix-mVision-ePO/Trellix+mVision+ePO+-+Security.png' alt="Trellix-mVision-ePO–Security-Dashboard" />
+By consolidating this information, the dashboard enables faster threat detection, analysis, and response, reducing dwell time and enhancing endpoint defenses.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Trellix-mVision-ePO/Trellix+mVision+ePO+-+Security.png' alt="Trellix mVision ePO–Security Dashboard" />
 
 ## Create monitors for the Trellix mVision ePO app
 
