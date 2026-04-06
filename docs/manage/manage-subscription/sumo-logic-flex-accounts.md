@@ -164,7 +164,7 @@ To access the **Account Overview** tab:
 * Download usage reports or CSV files.  
 * Hover over charts for detailed data insights.  
 * Usage data updates frequently to reflect near real-time account status, while storage usage updates daily and may take up to 24 hours to appear.
-* Create alerts for 70% and 90% credit breach
+* Create alerts for 70% and 90% credit breach.
 
 ### Organization information panel  
 
