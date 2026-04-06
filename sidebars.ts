@@ -2269,7 +2269,7 @@ integrations: [
          'integrations/microsoft-azure/azure-network-interface',
          'integrations/microsoft-azure/network-watcher',
          'integrations/microsoft-azure/azure-notification-hubs',
-         'integrations/microsoft-azure/azure-open-ai',
+         'integrations/microsoft-azure/microsoft-foundry',
          'integrations/microsoft-azure/azure-public-ipAddress',
          'integrations/microsoft-azure/azure-relay',
          'integrations/microsoft-azure/azure-security-advisor',

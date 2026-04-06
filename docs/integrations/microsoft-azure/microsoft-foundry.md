@@ -1,7 +1,7 @@
 ---
-id: azure-open-ai
-title: Azure OpenAI
-description: Learn about the Sumo Logic collection process for the Azure OpenAI service.
+id: microsoft-foundry
+title: Microsoft Foundry
+description: Learn about the Sumo Logic collection process for the Microsoft Foundry service.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
