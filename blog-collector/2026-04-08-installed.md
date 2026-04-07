@@ -16,4 +16,4 @@ In this release, we've enhanced the security and stability of the collector with
 #### Bug fix
 
 - Fixed an issue on Windows installation where duplicate registry entries with suffixed **App IDs** could be created, which could cause stale information to be retained.
-- Fixed an issue with windows event reset, post windows upgrade, auto detection, and collection recovery.
+- Fixed an issue that caused Windows Event reset after a Windows upgrade during auto-detection and collection recovery.
