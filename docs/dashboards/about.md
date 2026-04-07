@@ -170,6 +170,6 @@ In this section, you will enable the ability to auto run your dashboard panels. 
 
 When **Auto Run** is disabled you cannot see any data in the panels until you click the **Run** button. Clicking the **Run** button will run all the panels in the dashboard. If you want to run only the selected panel, click <img src={useBaseUrl('/img/dashboards/about-dashboard/rerun.png')} alt="rerun-button" style={{border: '1px solid gray'}} width="30" /> button on top-right of each panel.
 
-Panels do not rerun after actions such as adding, editing, deleting, changing the time range, or changing the template variable until you click the **Run** button after you changes. You will always see the below warning message near to your search box once any of the above update is made to the dashboard:
+Panels do not rerun after actions such as adding, editing, deleting, changing the time range, or changing the template variable until you click the **Run** button after your changes. You will always see the below warning message near to your search box once any of the above update is made to the dashboard:
 
 `Auto-Run is disabled. Hit Run to apply the changes.`
