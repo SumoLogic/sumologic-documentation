@@ -12,11 +12,11 @@ Hexadecimal string is always returned in upper-case.
 
 ## Syntax
 
-```sql
+```sumo
 decToHex(<long_field>) as <field>
 ```
 
-```sql
+```sumo
 decToHex("<long_string>") as <field>
 ```
 
@@ -24,16 +24,16 @@ decToHex("<long_string>") as <field>
 
 The following returns `V` with a value of `1337`:
 
-```sql
+```sumo
 | decToHex("4919") as V
 ```
 
-```sql
+```sumo
 ... | count by _collector | decToHex(_count) as v
 ```
 
 The following returns `d` with a value of `46`:
 
-```sql
+```sumo
 ... | decToHex("70") as d
 ```

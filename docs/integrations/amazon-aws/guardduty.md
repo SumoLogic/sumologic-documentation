@@ -155,7 +155,7 @@ The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be se
 <details>
 <summary>Click to expand</summary>
 
-```sql title="Threat details"
+```sumo title="Threat details"
 _sourceCategory=aws/guardduty
 | json field=_raw "accountId", "region", "partition", "id", "arn", "type","service.serviceName","service.detectorId","service.action","severity","title","description" nodrop
 | json field=_raw "resource.resourceType" as resourceType nodrop

@@ -25,7 +25,7 @@ For sample log messages, see [Data Samples](https://developer.carbonblack.com/re
 
 #### Endpoint Standard
 
-```sql title="Alerts"
+```sumo title="Alerts"
 _sourceCategory=CBCloud
 | json field=_raw "id", "alert_url" , "severity", "device_name","device_username", "device_target_value", "threat_id", "device_os", "type", "sensor_action", "process_name", "reason", "backend_timestamp","ttps" as alert_id, alert_url ,severity ,device_name, user,target_priority, incident_id, device_os, type, sensor_action, process_name, reason, backend_timestamp,ttps nodrop 
 | where type ="CB_ANALYTICS"
@@ -35,7 +35,7 @@ _sourceCategory=CBCloud
 | count
 ```
 
-```sql title="Events"
+```sumo title="Events"
 _sourceCategory = CBCloud
 | json field=_raw "event_origin", "event_id", "event_description", "alert_id", "process_cmdline" as event_origin, event_id, event_description, alert_id, process_cmdline
 | where event_origin="NGAV"
@@ -44,14 +44,14 @@ _sourceCategory = CBCloud
 
 #### Enterprise EDR
 
-```sql title="Events"
+```sumo title="Events"
 _sourceCategory = CBCloud
 | json field=_raw "event_origin",  "process_guid", "process_cmdline", "parent_cmdline", "process_username" as event_origin, process_guid, process_cmdline, parent_cmdline, process_username nodrop
 | where event_origin="EDR"
 | count by  event_origin, process_guid, process_cmdline, parent_cmdline, process_username
 ```
 
-```sql title="Alerts"
+```sumo title="Alerts"
 _sourceCategory=CBCloud WATCHLIST
 | json field=_raw "id", "alert_url" , "severity", "device_name","device_username", "device_target_value", "threat_id", "device_os", "type", "sensor_action", "process_name", "reason", "backend_timestamp","ioc_id" as alert_id, alert_url ,severity ,device_name, user,target_priority, incident_id, device_os, type, sensor_action, process_name, reason, backend_timestamp,ioc_id nodrop //s3
 | where type ="WATCHLIST"

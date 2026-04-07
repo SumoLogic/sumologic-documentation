@@ -7,7 +7,7 @@ description: Understand how to write field expressions in search queries to calc
 
 The Sumo Logic Query Language can be used to create fields based on calculated expressions, such as:
 
-```sql
+```sumo
 | 3 + 2 as val
 | "Hello, world" as welcome
 | 34 % 10 as remainder
@@ -25,7 +25,7 @@ Numbers can be calculated using combinations of addition, subtraction, multiplic
 
 In our Query Language, a number, or numeric literal, is a set of digits containing no spaces, with an optional decimal point. Commas are not allowed, and leading and trailing zeros are ignored.  We also allow scientific notation using "e+" or "e-" to divide the number from the exponent. Here are some examples of simple numeric literals:
 
-```sql
+```sumo
 | 537 as a
 | 3.14e+4 as bigpi
 | -42.300 as b
@@ -39,7 +39,7 @@ Numeric literals may optionally end with a suffix. There are two available type
 
 This is a shorthand way to express scalar numeric values multiplied by common factors. Some examples of size suffixes:
 
-```sql
+```sumo
 | 2k as twoThousand
 | 1B as oneBillion
 | 1.5M as onePointFiveMillion
@@ -63,7 +63,7 @@ These suffixes are also supported in Cloud SIEM rules. See [Sumo Logic core plat
 
 This is used to represent units of time. **The base unit of time returned is the millisecond**. For example, 1.5s would be returned as 1,500. One and a half seconds converted to the base unit of milliseconds. Some examples of time suffixes:
 
-```sql
+```sumo
 | 1w as oneWeek
 | 1m as oneMinute
 | 1.5s as oneAndAHalfSeconds
@@ -90,7 +90,7 @@ These suffixes are also supported in Cloud SIEM rules. See [Sumo Logic core plat
 
 Numeric expressions are evaluated using the usual precedence rules: parentheses, multiplication, and division, then addition and subtraction. Equal precedence is evaluated left to right. Here are some examples:
 
-```sql
+```sumo
 | 537 + 435 as value
 | 52 * 6 - 2  as noparen // 310, not 208
 | 52 * (6 - 2) as paren  // 208, not 310
@@ -100,7 +100,7 @@ Numeric expressions are evaluated using the usual precedence rules: parentheses,
 
 An expression can involve a series of operations. 
 
-```sql
+```sumo
 | 537 + 435 + 39 + 18.5 as value
 | 22 - (34 % 10) * pow(2, 3) as value
 ```
@@ -115,7 +115,7 @@ Use the pow operator to calculate an exponent. The operator "^" is not recognize
 
 Boolean expressions, those that evaluate to true or false, can be assigned to fields as well. The words “true” and “false” act as if they were reserved. Use the "!" to mean boolean “not.” Examples:
 
-```sql
+```sumo
 | true as yes
 | false as locked
 | !false as a      // sets a to true
@@ -125,7 +125,7 @@ Boolean expressions, those that evaluate to true or false, can be assigned to fi
 
 Comparison operators include equals ("=" or "=="), >", "\<", "\>=", "\<=", "\<\\>" (or "!=") and produce Boolean values. Examples:
 
-```sql
+```sumo
 | x = 2 as duo            // same as x == 2 as duo
 | y >= 49 as older
 | field <> 0 as nonzero
@@ -138,7 +138,7 @@ Remember that x = y is a Boolean expression, not an assignment. The expression 
 
 Characters quoted with double quotes (not single quotes) are string literals. Use a backslash to escape double quotes in the string. Examples:
 
-```sql
+```sumo
 | "Don’t forget" as reminder
 | "They said, \"No later than 10\"" as response
 | "Hello, \"Sue,\" if that is your name" as greeting

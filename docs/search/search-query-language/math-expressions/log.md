@@ -8,12 +8,12 @@ The logarithm function returns the natural logarithm of x.
 
 ## Syntax
 
-```sql
+```sumo
 log(<x>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 * | log(2) as v
 ```

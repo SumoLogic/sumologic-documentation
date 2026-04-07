@@ -8,7 +8,7 @@ Use the `filter` operator to filter the output of a search based on the filterin
 
 ## Syntax
 
-```sql
+```sumo
 "filter" <fieldname>+ in (<child_query>)
 <child_query> ::= (non data-retrieval sumo query )
 <fieldname> ::= (name of a field)
@@ -29,7 +29,7 @@ The operator can process up to 100,000 data points for a single query. It autom
 
 ### Show all source hosts with outlier violations
 
-```sql
+```sumo
 _sourceCategory=HttpServers
 | timeslice 1m
 | count by _timeslice, _sourceHost
@@ -39,7 +39,7 @@ _sourceCategory=HttpServers
 
 ### Show top two source hosts with the most messages
 
-```sql
+```sumo
 _sourceCategory=HttpServers
 | timeslice 1m
 | count by _timeslice, _sourceHost
@@ -49,7 +49,7 @@ _sourceCategory=HttpServers
 
 ### Show top three source hosts with most outlier violations
 
-```sql
+```sumo
 _sourceCategory=HttpServers
 | timeslice 1m
 | count by _timeslice, _sourceHost

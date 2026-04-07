@@ -8,7 +8,7 @@ The `join` operator combines records of two or more data streams. Results are a
 
 ## Syntax
 
-```sql
+```sumo
 ... | join
 (parse "starting stream from *" AS a) as t1,
 (parse "starting search * from parent stream *" AS b, c) as t2,
@@ -20,7 +20,7 @@ and t1.a = t3.e
 A `timewindow` can be added to constrain how far apart in time records
 are allowed to join, using the following syntax:
 
-```sql
+```sumo
 ... | join
 (parse "starting stream from *" AS a) as t1,
 (parse "starting search * from parent stream *" AS b, c) as t2,
@@ -32,7 +32,7 @@ and t1.a = t3.e
 
 To operate on fields in each table after the ON clause, use this syntax:
 
-```sql
+```sumo
 ... | join
 (parse "starting stream from *" AS a) AS t1,
 (parse "starting search * from parent stream *" AS b, c) AS t2
@@ -84,7 +84,7 @@ starting search search-32342 from parent stream stream-7343
 
 Running a query like:
 
-```sql
+```sumo
 * | join
 (parse "starting stream from *" AS a) AS T1,
 (parse "starting search * from parent stream *" AS b, c) AS T2
@@ -104,7 +104,7 @@ returns results similar to:
 
 The join operator can consume significant processing time. Selectivity reduces the number of log messages that must be considered. To improve join operator performance, place the parse operators toward the start of the query expression, bringing the search anchors to the front of the search scope, as in this example:
 
-```
+```sumo
 ("starting stream from" OR "starting search") | join
 (parse "starting stream from *" AS a) AS t1,
 (parse "starting search * from parent stream *" AS b, c) AS t2
@@ -127,7 +127,7 @@ event=purchase session=23456 value=20
 
 Running a query like:
 
-```sql
+```sumo
 * | join
 (parse "event=login session=* time=*" AS s1,time) as t1,
 (parse "event=purchase session=* value=*" AS s2, v2) as t2
@@ -146,7 +146,7 @@ Produces results similar to:
 
 Adding a Diff operator, such as:
 
-```sql
+```sumo
 * | join
 (parse "event=login session=* time=*" AS s1,time) as t1,
 (parse "event=purchase session=* value=*" AS s2, v2) as t2
@@ -166,7 +166,7 @@ produces results similar to:
 
 In another example with diff, running a query such as:
 
-```sql
+```sumo
 _sourceCategory=[sourceCategoryName] | join
 (parse "Attempting to execute task *. delay: * ms." as taskId, delay) as t1,
 (parse "Completed execution of task *. Execution duration: * s" as taskId, duration) as t2
@@ -191,7 +191,7 @@ Produces results like this in the Log Search **Aggregates** tab:
 
 Assume you have a Join query, such as:
 
-```sql
+```sumo
 * | join
 (parse "starting stream from *" AS a) AS t1,
 (parse "starting search * from parent stream *" AS b, c) AS t2
@@ -200,7 +200,7 @@ on t1.a = t2.c
 
 After the Join statement, to use the T1.a and the T2.b fields in subsequent clauses, you'd instead refer to them as T1_a and T1_b. For example, to use the [fields operator](fields.md) to single out the T1.a and T2.b values, use the following query:
 
-```sql
+```sumo
 * | join
 (parse "starting stream from *" AS a) AS t1,
 (parse "starting search * from parent stream *" AS b, c) AS t2

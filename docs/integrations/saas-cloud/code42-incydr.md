@@ -360,7 +360,7 @@ This app uses Sumo Logic’s [Code42 Incydr Source](/docs/send-data/hosted-colle
 
 ### Sample queries
 
-```sql title="Total Audits"
+```sumo title="Total Audits"
 _sourceCategory="Labs/Code42Incydr" type$
 | json "type$", "actorId", "actorName", "actorAgent", "actorIpAddress", "timestamp", "actorType", "success", "type" as audit_type, actor_id, actor_name, actor_agent,actor_ip_address, timestamp, actor_type, success, search_type nodrop
 
@@ -376,7 +376,7 @@ _sourceCategory="Labs/Code42Incydr" type$
 | count
 ```
 
-```sql title="Total File Events"
+```sumo title="Total File Events"
 _sourceCategory="Labs/Code42Incydr" file
 | json "@timestamp","event.id","event.action","event.observer","event.detectorDisplayName","user.email","user.id","file.url","file.name","file.originalName","file.directory","file.category","file.mimeType","file.sizeInBytes","file.owner","source.category","source.operatingSystem","source.ip","destination.ip","risk.score","risk.severity","risk.indicators","user.deviceUid" as timestamp,event_id, event_action, event_observer, event_detector_display_name, user_email, user_id, file_url, file_name, file_original_name, file_directory, file_category,file_mimetype, file_size_in_bytes, file_owner, source_category,source_operating_system,source_ip,destination_ip,risk_score,risk_severity,risk_indicators,device_uid nodrop
 
@@ -393,7 +393,7 @@ _sourceCategory="Labs/Code42Incydr" file
 | count
 ```
 
-```sql title="Total Sessions"
+```sumo title="Total Sessions"
 _sourceCategory="Labs/Code42Incydr" !type$ sessionId
 | json "sessionId", "actorId","tenantId", "beginTime","endTime", "noRiskEvents", "lowEvents", "moderateEvents", "highEvents", "criticalEvents", "riskIndicators", "triggeredAlerts", "states[0].state","exfiltrationSummary","riskIndicatorsAlertedOn[*].name", "contentInspectionResults.status","riskIndicators[*].name" as session_id, actor_id,tenant_id, begin_epoch,end_epoch, no_risk_events, low_risk_events, moderate_risk_events, high_risk_events, critical_risk_events,risk_indicators,triggered_alerts, state, exfiltration_summary, risk_indicators_alerted_on, content_inspection_results,risk_indicators_names nodrop
 

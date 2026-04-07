@@ -22,7 +22,7 @@ The Google Cloud Firewall App uses the following logs:
 
 **Denied Ingress Traffic by Network Over Time**
 
-```
+```sumo
 _sourceCategory=*gcp* logName reference resource "\"type\":\"gce_subnetwork\"" "\"direction\":\"INGRESS\"" "\"disposition\":\"DENIED\""
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | parse regex "\"reference\":\"network:[^\"/]+/firewall:(?<rule_name>[^\"]+)\""

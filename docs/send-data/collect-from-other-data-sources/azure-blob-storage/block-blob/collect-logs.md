@@ -85,7 +85,7 @@ In this step, you use a Sumo Logic-provided Azure Resource Manager (ARM) templat
     :::
 1. Click **Create a Resource**, search for **Template deployment** in the Azure Portal, and then click **Create.**
 1. On the Custom deployment blade, click **Build your own template in the editor**.
-1. Copy the contents of the template and paste it into the editor window.<br/><img src={useBaseUrl('/img/send-data/edit-template.png')} alt="edit-template" width="800"/>
+1. Copy the contents of the template and paste it into the editor window.<br/><img src={useBaseUrl('/img/send-data/edit-template.png')} alt="Edit template" width="800"/>
 1. Click **Save**.
 1. On the Custom deployment blade, do the following:
    1. Create a new Resource Group (recommended) or select an existing one.
@@ -103,7 +103,7 @@ In this step, you use a Sumo Logic-provided Azure Resource Manager (ARM) templat
     :::
 1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deploymente" width="400"/>
 1. Verify that the deployment was successful by looking at **Notifications** at the top right corner of the Azure Portal.<br/><img src={useBaseUrl('img/send-data/notification-success.png')} alt="Notification success" style={{border: '1px solid gray'}} width="400" />
-1. (Optional) In the same window, click **Go to resource group** to verify that all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/Azure_Blob_all-resources.png')} alt="Azure_Blob_all-resources" style={{border:"1px solid gray"}} width="800"/>
+1. (Optional) In the same window, click **Go to resource group** to verify that all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/Azure_Blob_all-resources.png')} alt="Azure Blob all resources" style={{border:"1px solid gray"}} width="800"/>
 
 <details>
 
@@ -116,7 +116,7 @@ This section describes how to push logs from a network security group into Azure
 * Click on **Select resource** and choose a NSG that is present in the same region as the storage account configured in [Step 1](#step-1-configure-azure-storage-account).
 * Under **Subscription > Storage Accounts**, select the storage account configured in [Step 1](#step-1-configure-azure-storage-account).
 * Specify the **Retention (days)** and click **Review + create**. <br/><img src={useBaseUrl('/img/send-data/review+create.png')} alt="review+create" width="700"/>
-* Review the configuration of the flow log and click **Create**. <br/><img src={useBaseUrl('/img/send-data/review-configuration.png')} alt="review-configuration" width="600"/>
+* Review the configuration of the flow log and click **Create**. <br/><img src={useBaseUrl('/img/send-data/review-configuration.png')} alt="Review configuration" width="600"/>
 
 </details>
 
@@ -144,7 +144,7 @@ To authorize the App Service to list the Storage Account key, do the following:
 1. Go to **Storage Account** and click **Access Control(IAM)**.<br/><img src={useBaseUrl('img/send-data/AzureBlob_AccessControl_IAM.png')} alt="Azure Blob access control IAM" style={{border: '1px solid gray'}} width="400" />
 1. Click the **Add** **+** at the top of the page.<br/><img src={useBaseUrl('img/send-data/AzureBlob_IAM_Add.png')} alt="Azure Blob IAM add" style={{border: '1px solid gray'}} width="800" />
 1. Select **Add role assignment** from dropdown.
-1. In the **Add role assignment** window, go to **Role** tab and choose **Storage Blob Data Reader**. Click **Next**. <br/><img src={useBaseUrl('/img/send-data/storage-blob-data-reader.png')} alt="storage-blob-data-reader" width="800"/>
+1. In the **Add role assignment** window, go to **Role** tab and choose **Storage Blob Data Reader**. Click **Next**. <br/><img src={useBaseUrl('/img/send-data/storage-blob-data-reader.png')} alt="Storage Blob Data Reader" width="800"/>
 1. In **Members** tab, select **Managed Identity**.
 1. In the **Select Managed identities** window,
 

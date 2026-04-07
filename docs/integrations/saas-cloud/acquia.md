@@ -107,7 +107,7 @@ request_id="v-0000zzzz-d2b4-0000-b3a4-129zzzzd8266"
 This section provides examples for Drupal request, Apache access, and PHP error queries.
 
 
-```sql title="Drupal request"
+```sumo title="Drupal request"
 _sourceCategory=Labs/Acquia drupal-requests
 | parse "<133>1 * * *.* - - - [*] * * * http_code=* query=* uid=* php_pid=* php_time=* queue_wait=*
 request_id=\"*\"" as timestamp,lb,host,logtype,time,appurl,method,url,http_code,query,uid,php_id,
@@ -118,7 +118,7 @@ php_time,queue_wait,request_id
 ```
 
 
-```sql title="Apache access"
+```sumo title="Apache access"
 _sourceCategory=Labs/Acquia apache-access
 | parse " - - - * - - [*] \"* * HTTP/1.1\" * * \"*\" \"*\" vhost=* host=* hosting_site=* pid=*
 request_time=* forwarded_for=\"*\" request_id=\"*\" location=\"*\"" as src_ip,timestamp,method,
@@ -127,7 +127,7 @@ request_id,location
 | where !(status_code matches "2*")
 ```
 
-```sql title="PHP error"
+```sumo title="PHP error"
 _sourceCategory=Labs/Acquia php-errors
 | parse "* * * * - - - [*] *: * request_id=\"*\"" as head,systime,env,host,time,type,message,
 request_id

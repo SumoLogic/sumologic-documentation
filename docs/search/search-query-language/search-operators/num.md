@@ -11,7 +11,7 @@ The `num` operator converts a field to a double value (64-bit IEEE 754 double-pr
 
 ## Syntax
 
-```sql
+```sumo
 num(<field>) [as <field>]
 ```
 
@@ -23,7 +23,7 @@ num(<field>) [as <field>]
 
 Use this query to use num to search for Scheduled Searches, and sort them by the time it took each search to execute in seconds. Without the conversion, the results would be sorted in alphabetical order.
 
-```sql
+```sumo
 _sourceCategory=concierge completed execution
 | parse "Execution duration: * s" as duration
 | num(duration) | sort by duration

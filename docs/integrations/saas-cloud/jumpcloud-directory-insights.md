@@ -7,7 +7,7 @@ description: The Sumo Logic app for JumpCloud Directory Insights provides a comp
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="jumpcloud-directory-insights" width="100"/>
+<img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="JumpCloud directory insights" width="100"/>
 
 The Sumo Logic app for JumpCloud Directory Insights provides comprehensive visibility into user activities, authentication events, and security actions in the JumpCloud managed environment. By using JumpCloud Directory Insights logs, this app enables IT administrators and security analysts to monitor access, detect anomalies, and respond to security threats efficiently.
 
@@ -194,7 +194,7 @@ This app uses Sumo Logic’s [JumpCloud Directory Insights Source](/docs/send-da
 
 ### Sample queries
 
-```sql title="Top 10 Services"
+```sumo title="Top 10 Services"
 _sourceCategory="Labs/JumpCloud"
 | json "id", "timestamp", "service", "event_type", "client_ip", "success", "initiated_by.type", "auth_method", "useragent.os_full", "geoip.region_name", "resource.name" as id, event_time, service, event_type, ip, success, event_initiator, auth_method, device, region_name, resource_name nodrop
 

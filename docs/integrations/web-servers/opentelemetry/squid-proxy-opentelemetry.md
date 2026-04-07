@@ -159,7 +159,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 This sample Query is from the **Squid Proxy - HTTP Response Analysis** > **URLs Experiencing Redirections** panel.
 
-```sql title="Query String"
+```sumo title="Query String"
 %"sumo.datasource"=squidproxy %"webengine.cluster.name"=*  host.name=* %"webengine.system"=squidproxy
 | json "log" as message nodrop 
 | if (isEMpty(message), _raw, message) as message

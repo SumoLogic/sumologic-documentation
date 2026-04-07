@@ -7,7 +7,7 @@ description: The Trellix mVision ePO app for Sumo Logic enables security analyst
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="Trust-Login-icon" width="90" />
+<img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="Trust Login icon" width="90" />
 
 The Sumo Logic app for Trellix mVision ePO provides centralized visibility into endpoint threats, enabling security teams to detect, analyze, and respond to risks across their environment. It aggregates data on detections, remediation failures, severity, and suspicious behaviors to highlight high-priority incidents and defense gaps.
 
@@ -87,7 +87,7 @@ This app uses Sumo Logic’s [Trellix mVision ePO Source](/docs/send-data/hosted
 
 ## Sample queries
 
-```sql title="Total Threat Detections"
+```sumo title="Total Threat Detections"
 _sourceCategory="Trellix-mVision-ePO"
 | json "id", "attributes.threathandled", "attributes.threatseverity", "attributes.threattype", "attributes.threatcategory", "attributes.analyzerdetectionmethod", "attributes.targethostname", "attributes.threatname", "attributes.analyzeripv4", "attributes.timestamp", "attributes.sourcehostname", "attributes.sourceusername", "attributes.sourceprocessname", "attributes.targetprocessname", "attributes.threatactiontaken", "attributes.targetfilename", "attributes.targethash", "attributes.sourceipv4", "attributes.targetipv4", "attributes.targetport", "attributes.targetprotocol", "attributes.sourceurl", "attributes.targetusername", "attributes.targetipv6" as id, threat_handled, threat_severity, threat_type, threat_category, analyzer_detection_method, target_hostname, threat_name, analyzer_ipv4, timestamp, source_hostname, source_username, source_processname, target_processname, threat_action_taken, target_filename, target_hash, source_ipv4, target_ipv4, target_port, target_protocol, source_url, target_username, target_ipv6 nodrop
 
@@ -144,7 +144,7 @@ The **Trellix mVision ePO - Security** dashboard offers a unified view of endpoi
 
 The dashboard provides real-time insights into suspicious processes, malicious file quarantines, C2 callbacks, user-targeted attacks, and unusual network port usage. It highlights threat activity by type, category, detection method, and affected endpoints, with geographical visualizations, including threats from embargoed regions, for added context.
 
-By consolidating this information, the dashboard enables faster threat detection, analysis, and response, reducing dwell time and enhancing endpoint defenses.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Trellix-mVision-ePO/Trellix+mVision+ePO+-+Security.png' alt="Trellix-mVision-ePO–Security-Dashboard" />
+By consolidating this information, the dashboard enables faster threat detection, analysis, and response, reducing dwell time and enhancing endpoint defenses.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Trellix-mVision-ePO/Trellix+mVision+ePO+-+Security.png' alt="Trellix mVision ePO–Security Dashboard" />
 
 ## Create monitors for the Trellix mVision ePO app
 

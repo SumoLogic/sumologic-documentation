@@ -204,11 +204,11 @@ The system returns the top matching documents that are semantically similar to t
 
 #### Trace overview
   
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Traces-Sumo-Logic.png' alt="Traces-Sumo-Logic" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Traces-Sumo-Logic.png' alt="Traces Sumo Logic" style={{border: '1px solid gray'}} width="800"/>
 
 #### Trace view detail
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Trace-View-Sumo-Logic.png' alt="Traces-Sumo-Logic" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Trace-View-Sumo-Logic.png' alt="Traces Sumo Logic" style={{border: '1px solid gray'}} width="800"/>
 
 ### Demonstration code for OTLP/HTTP source with Auth-Header
 
@@ -284,10 +284,10 @@ The system returns the top matching documents that are semantically similar to t
 
 #### Trace overview
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Traces-Sumo-Logic-OTLP-HTTP-Source.png' alt="Traces-Sumo-Logic" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Traces-Sumo-Logic-OTLP-HTTP-Source.png' alt="Traces Sumo Logic" style={{border: '1px solid gray'}} width="800"/>
 
 #### Trace view detail
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Trace-View-Sumo-Logic-OTLP-HTTP-Source.png' alt="Traces-Sumo-Logic" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Trace-View-Sumo-Logic-OTLP-HTTP-Source.png' alt="Traces Sumo Logic" style={{border: '1px solid gray'}} width="800"/>
 
 

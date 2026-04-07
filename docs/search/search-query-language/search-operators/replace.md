@@ -11,11 +11,11 @@ The `replace` operator allows you to replace all instances of a specified string
 
 ## Syntax
 
-```sql
+```sumo
 replace(<sourceString>, <searchString>, <replaceString>) as <field>
 ```
 
-```sql
+```sumo
 replace(<sourceString>, /<regex>/, <replaceString>) as <field>
 ```
 
@@ -60,7 +60,7 @@ If you have a URL and would like to see the number of times it was visited, but
 
 To remove the ID `12345678` from the field `url` you can use the following query with a regex:
 
-```sql
+```sumo
 | replace(url, /[0-9]{5,}/, "") as url
 ```
 
@@ -78,7 +78,7 @@ Following on from the previous example, you can reference strings in a capture 
 
 To replace the ID section of the URL with different text that includes a string from a capture group you can use the following query:
 
-```sql
+```sumo
 | replace(url, /(flight)\/([0-9]{5,})/, "new-$2-url") as url
 ```
 
@@ -92,7 +92,7 @@ The regex has two capture groups and in the `<replaceString>` we have specified 
 
 To replace periods in a field with different punctuation, you'd use the following query. This query also uses the [Fields](fields.md) operator to display only the required fields.
 
-```sql
+```sumo
 error
 | parse "[logger=*]" as logger
 | replace(logger, ".","->") as logger_replace
@@ -107,7 +107,7 @@ which provides results like:
 
 If you had underscores in a field called `moduleName`, you'd use a query such as:
 
-```sql
+```sumo
 ... | replace(moduleName, "_", " ") as humanReadableModuleName
 ```
 
@@ -115,7 +115,7 @@ If you had underscores in a field called `moduleName`, you'd use a query such as
 
 To replace periods in a phone number with dashes, you'd use a query such as:
 
-```sql
+```sumo
 phone_num
 | parse "[phone_num=*]" as phone_num
 | replace(phone_num, ".", "-") as phone_num_dash
@@ -125,7 +125,7 @@ phone_num
 
 In this example, we have a field called `deploymentName` with values that are abbreviations for the different deployments in an environment, such as `apac-prod`, `eu-prod`, `us-prod`, and `us-dev`. To replace the abbreviations with full titles for each deployment, you'd use a query like this:
 
-```sql
+```sumo
 replace(deploymentName,"apac","Asia Pacific") as deploymentName
 | replace(deploymentName,"eu","Europe") as deploymentName
 | replace(deploymentName,"us","United States") as deploymentName
@@ -137,7 +137,7 @@ replace(deploymentName,"apac","Asia Pacific") as deploymentName
 
 For example, in multiple strings, to replace all number 5's with number 7's, and also replace all 4's with 2's, use multiple replace operations, as shown in the following query:
 
-```sql
+```sumo
 | replace(field, "5","7") as field
 | replace(field, "4","2") as field
 ```
@@ -148,7 +148,7 @@ The same field name, `field` in the above example, needs to be passed to subs
 
 In this example, we set the initial event_id to match the event_code, and then do the replace operation on the event_id. This way, the event_id is always set with the match, and then the replaced value is passed back into the field with any subsequent operations that do not match.
 
-```sql
+```sumo
 _sourceName=Application
 |timeslice 1h
 | parse "SourceName = \"*\";" as Source

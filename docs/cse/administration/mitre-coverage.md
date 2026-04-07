@@ -185,7 +185,7 @@ Select the values to filter:
 
 MITRE ATT&CK coverage events are recorded in the System Event Index. To query for MITRE ATT&CK events, run this query:
 
-```
+```sumo
 _index=sumologic_system_events _sourceCategory=cseMitreAttackCoverage
 ```
 

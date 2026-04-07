@@ -71,7 +71,7 @@ And because the final output of this query is an aggregate, and Cloud SIEM signa
 
 This is how the final query might look:
 
-```txt
+```sumo
 ((_index=sec_record_* objectType=*)
 AND _sourcename = "Google Apps Audit Event")
 AND _sourcecategory = "GoogleWorkspace/Groups"

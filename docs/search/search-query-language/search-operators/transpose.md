@@ -10,7 +10,7 @@ Similar to a Pivot Table in Excel, the `transpose` operator allows you to take a
 
 Without `transpose`, the following query renders a factual, but not useful table below:
 
-```sql
+```sumo
 _sourceCategory=Labs/Apache/Access
 | timeslice 5m
 | count by _timeslice, status_code
@@ -20,7 +20,7 @@ _sourceCategory=Labs/Apache/Access
 
 With `transpose`, you can use your query to define your rows as the `timeslice` and the columns as the status code:
 
-```sql {4}
+```sumo {4}
 _sourceCategory=Labs/Apache/Access
 | timeslice 5m
 | count by _timeslice, status_code
@@ -43,11 +43,11 @@ With transpose, the results display in an easy-to-read manner status codes by ti
 
 ## Syntax
 
-```sql
+```sumo
 transpose row [<row fields>] column [<column fields>] as [<output fields>]
 ```
 
-```sql
+```sumo
 transpose row [<row fields>] column [<column fields>]
 ```
 
@@ -72,7 +72,7 @@ As a reminder, if a field name contains a special character (such as `-`) the ch
 
 Let's say that errors are logged by module; we'd like to view errors by each module's name. Running a query similar to:
 
-```sql
+```sumo
 error | parse "module=*]" asmodule| timeslice 1m
 | count as value by _timeslice, module
 | transpose row _timeslice column module as [moduleName1, moduleName2, ...]
@@ -88,7 +88,7 @@ Try changing the Stacking setting (under Change Properties) to **Normal** to s
 
 Because you can use the transpose operator without prior knowledge of the fields it will generate, you can view logins by users and organization. Running a query similar to:
 
-```sql
+```sumo
 _sourceCategory=service
 | parse "Successful login for user '*', organization: '*'" as user, org_id
 | timeslice 1d
@@ -104,7 +104,7 @@ will produce a stacked graph similar to:
 
 Let's return to the query with the Apache web server status codes, but status_code is a pre-parsed field.
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | timeslice 1m
 | count by _timeslice, status_code
@@ -125,7 +125,7 @@ For information on handling null fields, see [isNull](/docs/search/search-query
 
 Continuing from the previous example, you can influence the results by specifying the variable names, see [Syntax](#syntax) for details. You need to know the variable names returned from the transpose operation if you want to order them. In this example, if you know you will get 200, 400, and 500 status codes returned in your results you'd order them by specifying the variable names in the order you want, like this:
 
-```sql {4}
+```sumo {4}
 _sourceCategory=Apache/Access
 | timeslice 1m
 | count by _timeslice, status_code

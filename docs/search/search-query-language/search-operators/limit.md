@@ -14,7 +14,7 @@ Sumo Logic Apps often use the limit operator in queries to display system data 
 
 ## Syntax
 
-```sql
+```sumo
 limit #
 ```
 
@@ -28,7 +28,7 @@ limit #
 
 In this example, we simply query for the term "error" without using an aggregation operator, and limit will reduce the number of raw messages returned to 10.
 
-```sql
+```sumo
 error *
 | limit 10
 ```
@@ -40,7 +40,7 @@ range you have queried.
 
 In this query, you can search for errors, count by the `_sourceCategory`, sort by the count, and limit the results to the top 5 errors.
 
-```sql
+```sumo
 error *
 | count by _sourceCategory
 | sort by _count | limit 5
@@ -54,7 +54,7 @@ which would provide results similar to:
 
 In this query, you can see the top 10 Windows services per host that have started and stopped over the last 10 hours.
 
-```sql
+```sumo
 _sourceCategory=OS/Windows Service Control Manager
 | parse regex "Message = \"The (?<service>\w.+?) service entered the (?<state>\w+) state"
 | parse regex "ComputerName = \"(?<host>[^\"]+)\";"

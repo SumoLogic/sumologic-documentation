@@ -38,7 +38,7 @@ For example, to search for audit events:
 
 This Audit Event Index has detailed JSON logs for the following features. To search for audit events for a specific feature use the metadata field `_sourceCategory` with its corresponding value. For example, to search user action events for access keys you would use the query:
 
-```sql
+```sumo
 _index=sumologic_audit_events _sourceCategory=accessKeys
 ```
 

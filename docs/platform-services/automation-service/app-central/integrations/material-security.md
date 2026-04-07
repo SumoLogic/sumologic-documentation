@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/material-security.png')} alt="material-security" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/material-security.png')} alt="Material Security icon" width="100"/>
 
 ***Version: 1.3  
 Updated: Jul 18, 2023***

@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-ios-xe.png')} alt="cisco-ios-xe" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-ios-xe.png')} alt="Cisco IOS XE" width="70"/>
 
 ***Version: 1.1  
 Updated: Jul 06, 2023***

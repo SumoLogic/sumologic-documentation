@@ -119,7 +119,7 @@ This app uses Sumo Logic’s Microsoft Azure AD Inventory Source to collect [Use
 
 ### Sample queries
 
-```sql title="Total Devices"
+```sumo title="Total Devices"
 _sourceCategory="Azure_AD_Inventory" deviceId
 | json "deviceId", "isCompliant", "isManaged", "isRooted", "manufacturer", "deviceOwnership", "managementType", "profileType", "operatingSystem", "enrollmentType", "complianceExpirationDateTime", "deviceCategory", "trustType", "registrationDateTime", "onPremisesSyncEnabled", "onPremisesLastSyncDateTime", "approximateLastSignInDateTime" as device_id, is_compliant, is_managed, is_rooted, manufacturer, device_ownership, management_type, profile_type, operating_system, enrollment_type, compliance_expiration_date_time, device_category, trust_type, registration_date_time, on_premises_sync_enabled, on_premises_last_sync_date_time, approximate_last_sign_in_date_time nodrop
 
@@ -170,11 +170,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Devices Overview
 
-The **Microsoft Azure AD Inventory - Devices Overview** dashboard is designed to provide security monitoring and management. It enables security teams to track device compliance, identify non-compliant devices, and monitor the distribution of devices based on critical security-related attributes like operating systems, management types, and ownership. By highlighting non-compliant devices and recent sign-in activities, the dashboard supports proactive threat detection, helping you to identify potential vulnerabilities, and ensures that only secure and compliant devices access organizational resources.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Azure-AD-Inventory/Microsoft-Azure-AD-Inventory-Devices-Overview.png')} alt="Microsoft-Azure-AD-Inventory-Devices-Overview" />
+The **Microsoft Azure AD Inventory - Devices Overview** dashboard is designed to provide security monitoring and management. It enables security teams to track device compliance, identify non-compliant devices, and monitor the distribution of devices based on critical security-related attributes like operating systems, management types, and ownership. By highlighting non-compliant devices and recent sign-in activities, the dashboard supports proactive threat detection, helping you to identify potential vulnerabilities, and ensures that only secure and compliant devices access organizational resources.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Azure-AD-Inventory/Microsoft-Azure-AD-Inventory-Devices-Overview.png')} alt="Microsoft Azure AD Inventory Devices Overview" />
 
 ### Users Overview
 
-The **Microsoft Azure AD Inventory - Users Overview** dashboard provides a comprehensive security-focused view of user activities and demographics within your Azure AD environment. It tracks metrics such as office locations, job titles, preferred languages, and recent sign-in activity. By highlighting inactive users and displaying recent successful and unsuccessful sign-in attempts, the dashboard helps security teams identify potential unauthorized access, monitor user behavior, and enforce compliance with security policies. This tool is essential for maintaining a secure and well-governed Azure AD environment. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Azure-AD-Inventory/Microsoft-Azure-AD-Inventory-Users-Overview.png')} alt="Microsoft-Azure-AD-Inventory-Users-Overview" />
+The **Microsoft Azure AD Inventory - Users Overview** dashboard provides a comprehensive security-focused view of user activities and demographics within your Azure AD environment. It tracks metrics such as office locations, job titles, preferred languages, and recent sign-in activity. By highlighting inactive users and displaying recent successful and unsuccessful sign-in attempts, the dashboard helps security teams identify potential unauthorized access, monitor user behavior, and enforce compliance with security policies. This tool is essential for maintaining a secure and well-governed Azure AD environment. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Azure-AD-Inventory/Microsoft-Azure-AD-Inventory-Users-Overview.png')} alt="Microsoft Azure AD Inventory Users Overview" />
 
 ## Create monitors for Microsoft Azure AD Inventory app
 

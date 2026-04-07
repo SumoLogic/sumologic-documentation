@@ -25,8 +25,7 @@ Perform threat intelligence evidence gathering with VirusTotal.
 * **Scan File** (*Enrichment*) - Scan the specific file.
 * **Scan URL** (*Enrichment*) - Scan on a specific URL.
 * **URL Reputation** (*Enrichment*) - Gather reputation information for multiple URLs.
-  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-1.png')} style={{border:'1px solid gray'}} alt="virus-total" width="800"/>
-  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-2.png')} style={{border:'1px solid gray'}} alt="virus-total" width="800"/>
+  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-1.png')} style={{border:'1px solid gray'}} alt="Playbook showing Virus Total actions" width="800"/>
 
 ## Category
 
