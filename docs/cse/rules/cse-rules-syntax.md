@@ -11,7 +11,7 @@ This topic describes commonly used Cloud SIEM rules language functions. Rules l
 
 The following Sumo Logic core platform literals are supported in Cloud SIEM rule expressions. For more information about these literals, see [Field Expressions](/docs/search/search-query-language/field-expressions/).
 
-* [Time-based suffixed literals](/docs/search/search-query-language/field-expressions/#time-suffix) (millisecond-based. i.e., 1s == 1000)
+* [Time-based suffixed literals](/docs/search/search-query-language/field-expressions/#time-suffix) (millisecond-based, that is, 1s == 1000)
 
   * ns (nanosecond)
   * us (microsecond)
@@ -455,7 +455,7 @@ When you reference a threat intel  list using `array_contains`, you must substit
 
 **Syntax for matching to a keyword tag**
 
-The syntax for checking to see if the the `fieldsTag` field contains a particular keyword tag is:
+The syntax for checking to see if the `fieldsTag` field contains a particular keyword tag is:
 
 `array_contains(fieldTags["user_username"], "keyword-tag")`
 
@@ -466,7 +466,7 @@ where:
 
 **Syntax for matching to a schema key tag**
 
-The syntax for checking to see if the the `fieldTag` field contains a particular schema key tag is:
+The syntax for checking to see if the `fieldTag` field contains a particular schema key tag is:
 
 `array_contains(fieldTags["user_username"], "schema-key:schema-value")`
 
@@ -711,10 +711,10 @@ Parameters:
 * **`<fields>`**. A list of comma-separated [field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
 * **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `>=`, `!=`. <br/>You can filter on the following indicator attributes:
    * `confidence`. Confidence that the data represents a valid threat, where 100 is highest.  Malicious confidence scores from different sources are normalized and mapped to a 0-100 numerical value.
-   * `indicator`. Value of the indicator, such as an IP address, file name, email address, etc. 
+   * `indicator`. Value of the indicator, such as an IP address, file name, email address, and so on. 
    * `source`. The source in the Sumo Logic datastore displayed in the **Threat Intelligence** tab.
    * `threat_type`. The threat type of the indicator (for example, `anomalous-activity`, `anonymization`, `benign`, `compromised`, `malicious-activity`, `attribution`, `unknown`).
-   * `type`. The indicator type (for example, `ipv4-addr`, `domain-name`, `'file:hashes`, etc.)
+   * `type`. The indicator type (for example, `ipv4-addr`, `domain-name`, `'file:hashes`, and so on)
 * **`<indicators>`**. An optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
    * `active_indicators`. Match active indicators only (default).
    * `expired_indicators`. Match expired indicators only.
@@ -1341,7 +1341,7 @@ Allows you to specify an offset that will output only part of a string, referred
 * The `startOffset` must be a non-negative integer and less than the length of the `sourceString`.
 * The `endOffset` must be a non-negative integer that is equal to or greater than `startOffset`.
 * If the `endOffset` is not specified, the `substring` is taken from the `startOffset` until the very end of the `sourceString`.
-* The `endOffset` may be equal to or greater than the length of the `sourceString`, but it would behave the same as if the user did not specify an `endOffset`.
+* The `endOffset` may be equal to or greater than the length of the `sourceString`, but it would behave the same as if you did not specify an `endOffset`.
 
 **Examples**
 
@@ -1349,7 +1349,7 @@ Allows you to specify an offset that will output only part of a string, referred
 
    `substring("Hello world!", 6)`
 
-* The following expression returns "Sumo":
+* The following expression returns "Sumo Logic":
 
    `substring("Sumo Logic", 0, 4)`
 

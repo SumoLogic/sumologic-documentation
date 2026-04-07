@@ -108,7 +108,7 @@ area and provide details of the event.
 | `eventName` | The name of the event. | String |
 | `eventTime` | The event timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. | String |
 | `eventFormatVersion` | The event log format version. | String |
-| `operator` | Information of who did the operation. If it's missing, the Sumo service was the operator. | JSON object of Strings |
+| `operator` | Information of who did the operation. If it's missing, the Sumo Logic service was the operator. | JSON object of Strings |
 | `subsystem` | The product area of the event. | String |
 
 ## Search for Cloud SIEM events 

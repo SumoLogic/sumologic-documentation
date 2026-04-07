@@ -26,7 +26,7 @@ The [Enterprise Audit - Cloud SIEM app](/docs/integrations/sumo-apps/cse/) provi
 Common failure types:
 * **Parser failures**. Include parser path and specific parsing error.
 * **Mapper failures**. Usually mention mapper or mapping issues.
-* **Mixed failures**. May indicate parser output doesn't match mapper expectations.
+* **Mixed failures**. May indicate parser output does not match mapper expectations.
 
 ### Mapping failure workflow
 

@@ -17,7 +17,7 @@ Rule issues can manifest in several ways:
 * [Too many signals](#too-many-signals-are-generated)
 <br/>False positive signals or signals that aren’t useful are being triggered or are unsuppressed.
 * [Unexpected signal suppression](#signal-suppression-problems)
-<br/>Signals are not suppressed that you want to suppress, or signals are suppressed that you don't want to be suppressed.
+<br/>Signals are not suppressed that you want to suppress, or signals are suppressed that you do not want to be suppressed.
 * [Signal time out of sync](#signal-time-offset)
 <br/>Signals being generated out of sync with the actual event time either in the past or future.
 
@@ -35,7 +35,7 @@ Rules with a [tuning expression](/docs/cse/rules/rule-tuning-expressions/) added
 
 ### Entity selector
 
-The [entity selector on a rule](/docs/cse/rules/about-cse-rules/#on-entity-configuration) controls what entity or entities (for example, usernames, hosts, IP addresses etc.) a signal will be generated for. Records that match the expression and contain a corresponding entity will create a signal for each present entity. Multiple entities may be selected. In the event of a record with multiple matching entities and that matches the expression, a signal will be generated for each entity. 
+The [entity selector on a rule](/docs/cse/rules/about-cse-rules/#on-entity-configuration) controls what entity or entities (for example, usernames, hosts, IP addresses and so on) a signal will be generated for. Records that match the expression and contain a corresponding entity will create a signal for each present entity. Multiple entities may be selected. In the event of a record with multiple matching entities and that matches the expression, a signal will be generated for each entity. 
 
 <img src={useBaseUrl('img/cse/troubleshoot-rules-entity-selector.png')} alt="Example entity selector on a rule" style={{border: '1px solid gray'}} width="500" />
 
@@ -171,7 +171,7 @@ Despite limitations, the Test Rule Expression feature is still a crucial compone
     1. If no:
        * Validate that matching records contain the grouping criteria.
        * Review contributing mappers are mapping the fields, or if using "fields" for parsed but not mapped attributes, that the parser is parsing the desired field for the record. For specific steps on mapping and parsing issues, see [Troubleshoot Mappers](/docs/cse/troubleshoot/troubleshoot-mappers/) and [Troubleshoot Parsers](/docs/cse/troubleshoot/troubleshoot-parsers/).
-1. Are other aggregation criteria being met (counts, math functions, distinct values, etc.)?
+1. Are other aggregation criteria being met (counts, math functions, distinct values, and so on)?
     1. If yes, see [Escalate rule issues](#escalate-rule-issues).
     1. If no, interrogate math functions, count, or count distinct criteria are met. [Searches against `sec_record` indexes](#records-index) are best suited for evaluating these criteria.
 1. If all rule criteria are met and signals are not being generated see [Escalate rule issues](#escalate-rule-issues).
@@ -200,7 +200,7 @@ If signals are not suppressed that you want to suppress, validate that each cond
 <br/>Ensure entity or entities pertinent to the detection are selected.
 1. Validate that a signal is generated within the suppression window (default 72 hours or overridden window size).
 
-If signals are suppressed that you don't want to be suppressed: 
+If signals are suppressed that you do not want to be suppressed: 
 1. Validate that the above suppression criteria are not being met. 
 1. Consider making the signal name more dynamic by including relevant templated values that surface unique characteristics of a signal. 
 1. Signal on additional entities. 
