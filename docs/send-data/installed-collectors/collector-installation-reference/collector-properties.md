@@ -94,7 +94,7 @@ Collector versions 19.253-26+ support **wrapper** configuration parameters.
 | collector.wildcard.fpSize | integer  | Fingerprint size to use (in bytes) when determining new file rotation. | 2048 |
 | collector.wildcard.pathMatcher | string   | Path expression matcher to use when evaluating file paths. | RegexPathExpressionMatcher |
 | collector.windows.active.directory.log.escape.special.characters | boolean | Allows escaping of special characters in Windows Active Directory Inventory Logs Source. | false  |
-| collector.windows.automatic.retry.events.collection | boolean | Master switch for RN reset detection. Change it to true to enable the parameter. | false  |
+| collector.windows.automatic.retry.events.collection | boolean | Master switch for record number reset detection. Change it to true to enable the parameter. | false  |
 | collector.windows.constant.sleep.interval.retry.windows.event | boolean | Allows to wait for a constant time to retry sending data whenever we get some invalid data. | false  |
 | collector.winlog.dcom.connectionTimeout | integer  | WMI connection timeout in milliseconds for Windows Event Log Sources. | 60000 |
 | collector.winlog.dcom.notificationSessionTimeout | integer  | WMI notification session timeout in milliseconds for Windows Event Log Sources. | 1800000 |
