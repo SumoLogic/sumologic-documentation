@@ -2,7 +2,7 @@
 id: generate-cse-signals
 title: Generate Cloud SIEM Signals With a Scheduled Search
 sidebar_label: Generate Cloud SIEM Signals
-description: You can generate a Cloud SIEM signal with a scheduled search.
+description: Create a Sumo Logic scheduled search to generate Cloud SIEM signals, with guidance on required fields, MITRE ATT&CK stage mappings, and record type schemas.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

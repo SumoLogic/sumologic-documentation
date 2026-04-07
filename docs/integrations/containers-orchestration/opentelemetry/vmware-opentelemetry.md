@@ -2,7 +2,7 @@
 id: vmware-opentelemetry
 title: VMWare - OpenTelemetry Collector
 sidebar_label: VMWare - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry app for VMWare.
+description: Monitor VMware vCenter, ESXi hosts, clusters, and VMs using the Sumo Logic OpenTelemetry app with predefined dashboards for CPU, memory, and disk metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,7 +2,7 @@
 id: faq
 title: Data Tiers FAQ
 sidebar_label: FAQ
-description: Answers to frequently asked questions about Data Tiers.
+description: Get answers to frequently asked questions about Sumo Logic Data Tiers, including how to choose between Continuous, Frequent, and Infrequent tiers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
