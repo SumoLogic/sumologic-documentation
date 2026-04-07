@@ -209,7 +209,7 @@ The table below lists attributes most typically used in user inventory records. 
 
 The search below extracts inventory fields from JAMF logs.
 
-```json
+```sumo
 _sourceCategory="security/jamf" and _collector="Jamf"
 | json field _raw "event.computer.osVersion as os_version
 | json field _raw "event.computer.deviceName as hostname

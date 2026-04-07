@@ -189,7 +189,7 @@ _​sourceCategory=OS/Linux/Security ("sudo" or "root" or "su")
 
 Returns all failed SU attempts.
 
-```bash
+```sumo
 _sourceCategory=*linux*("authentication failure" or "FAILED SU" or "input_userauth_request: invalid user" or "Invalid user" or "Failed publickey" or "Failed password") ("su:" or "su[")  
 | parse regex "\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S+)\s(?<process_name>\w*)(?:\[|:)" nodrop
 | parse " user = * " as dest_user nodrop
@@ -263,7 +263,7 @@ Returns all failed attempts to change a user password.
 
 Suggested time range: -1 day
 
-```bash
+```sumo
 _sourceCategory=OS/Linux/* "Authentication failure"
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[|:)" nodrop
 | parse "User *:" as dest_user nodrop

@@ -40,7 +40,7 @@ and the multiline setup.
 
 Once you have ingested the logs, parsing is straightforward. Your logs might look something like this:
 
-```sumo
+```
 [29514] [07-10-13 12:54] :
 Processing SomeComponent#show (for 111.111.111.111 at 2013-07-10 12:54:19) [GET]
 [29514] [07-10-13 12:54] :   Parameters: {"slug"\>"2013/7/7/4502012/someurl", "action"\>"show", controller"\>"somecomponent"}
@@ -52,7 +52,7 @@ Processing SomeComponent#show (for 111.111.111.111 at 2013-07-10 12:54:19) [GET]
 
 For that format, you could do a search query like this:
 
-```
+```sumo
 _sourceCategory=*RoR* | parse "Completed in *ms (View: *, DB: *) | * OK" as totalTime,viewTime,dbTime,returnCode | timeslice by 1m | avg(totalTime) as avgTotalTime by _timeslice
 ```
 

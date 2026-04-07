@@ -252,7 +252,7 @@ The [Enterprise Audit - Cloud SIEM](/docs/integrations/sumo-apps/cse/) app inclu
 
 Use this search query to return signal attributes for a single rule including the name, the vendor/product combo producing the signals, the entity and type of entity, as well as whether the signal was suppressed. This can be used to quickly identify broad triggering attributes for a given rule and assist in tuning.
 
-```json
+```sumo
 (_index=sec_signal) ruleId="MATCH-U00000" 
 | json field=fullRecords "[0].metadata_vendor" as vendor nodrop
 | json field=fullRecords "[0].metadata_product" as product nodrop
@@ -267,7 +267,7 @@ Use this search query to return signal attributes for a single rule including th
 
 Use this search query to return the top entities creating signals to identify patterns in those entities that may indicate false positives or opportunities for rule tuning.
 
-```json
+```sumo
 (_index=sec_signal)
 | json field=fullRecords "[0].metadata_vendor" as vendor nodrop
 | json field=fullRecords "[0].metadata_product" as product nodrop
