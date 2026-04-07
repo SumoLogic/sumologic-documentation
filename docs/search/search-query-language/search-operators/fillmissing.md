@@ -24,7 +24,7 @@ The `fillmissing` operator allows you to define generators over the fields in th
 
 You can define multiple generators, which enumerate tuples for every combination of the values enumerated by each of the generators (such as the [Cartesian product](https://en.wikipedia.org/wiki/Cartesian_product)). For example, if you used the following query:
 
-```sql
+```sumo
 | fillmissing values("a1", "a2") in A,
               values("b1") in B,
               values("c1", "c2", "c3") in C
@@ -76,7 +76,7 @@ The fillmissing operator allows generators to enumerate up to 10,000 combination
 
 This section describes the syntax for the `fillmissing` operator.
 
-```sql
+```sumo
 fillmissing <keyFieldGenerator> [, <keyFieldGenerator> ]  [ with <nonKeyFieldSpecs> ] [ takeLast ]
 ```
 
@@ -118,7 +118,7 @@ Notice also that for the timeslice generator, the key field name is optional
 
 <TabItem value="tab1">
 
-```sql
+```sumo
 login
 | timeslice 15m
 | count by _timeslice
@@ -130,7 +130,7 @@ login
 </TabItem>
 <TabItem value="tab2">
 
-```sql
+```sumo
 login
 | timeslice 15m
 | count by _timeslice
@@ -160,7 +160,7 @@ Notice also how we changed the default value of `_count` from 0 to -1.
 
 <TabItem value="tab3">
 
-```sql
+```sumo
 login
 | count by type
 ```
@@ -170,7 +170,7 @@ login
 </TabItem>
 <TabItem value="tab4">
 
-```sql
+```sumo
 	login
 | count by type
 | fillmissing values("web", "api", "internal") in type
@@ -186,7 +186,7 @@ login
 
 The all option uses all the distinct values for the field from the query results without requiring you to enumerate the values of the field manually.
 
-```sql
+```sumo
 _sourceCategory="asthana_json_test" and _collector="Asthana-Test"
 | timeslice 1m
 | count by _timeslice, sweets
@@ -213,7 +213,7 @@ This example shows how multiple generators can be used to enumerate every combin
 
 <TabItem value="tab1">
 
-```sql
+```sumo
 login
 | parse "Completed in * ms." as latency
 | timeslice 15m
@@ -226,7 +226,7 @@ login
 </TabItem>
 <TabItem value="tab2">
 
-```sql
+```sumo
 login
 | parse "Completed in * ms." as latency
 | timeslice 15m
@@ -243,7 +243,7 @@ login
 
 Note that in this simple example, you can achieve a similar effect without the need to specify all the expected values for the `type` field, by applying the `fillmissing` operator after the `transpose`, like this:
 
-```sql
+```sumo
 login
 | parse "Completed in * ms." as latency
 | timeslice 15m
@@ -256,7 +256,7 @@ However, the filled-in fields will always be null (instead of 0 like in the prev
 
 ### Takelast option
 
-```sql
+```sumo
 _sourceCategory="asthana_json_test" and _collector="Asthana-Test"
 | timeslice 1m
 | count by _timeslice, sweets

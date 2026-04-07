@@ -16,7 +16,7 @@ To find the available event channels for collection, execute the following Power
 
 Enter the following command into PowerShell:
 
-```
+```sumo
 # to see channels listed in the standard order
 Get-WinEvent -ListLog *
 

@@ -230,7 +230,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample queries
 
-```sql title="Errors by Component( MongoDB - Errors and Warnings)"
+```sumo title="Errors by Component( MongoDB - Errors and Warnings)"
 deployment.environment=* db.cluster.name=* sumo.datasource=mongodb  | json "log"  as _rawlog nodrop
 | if  (isEmpty(_rawlog), _raw, _rawlog)  as _raw
 | json field=_raw "t.$date"  as  timestamp

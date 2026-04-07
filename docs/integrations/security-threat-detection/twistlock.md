@@ -88,7 +88,7 @@ compliance="0"
 
 The following query sample is from the **Vulnerability Scan Events by Severity** panel in the **Twistlock - Overview** dashboard.
 
-```
+```sumo
 _sourceCategory=*Twistlock* type log_type *scan* vulnerability severity
 | parse regex "\s+(?<component>Twistlock-Console|Twistlock-Defender?)\s*.*\s*time=\"" nodrop
 | parse "type=\"*\"" as type nodrop | parse "log_type=\"*\"" as log_type nodrop | parse "severity=\"*\""

@@ -61,7 +61,7 @@ The Windows - Cloud Security Monitoring and Analytics app uses Windows Security 
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
-```sql
+```sumo
 _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit policy was changed" or *policy*change* or "Policy Change" or 4902 or 4904 or 4905 or 4906 or 4907 or 4912 or 4715 or 4719 or 4739)
 | json "EventID", "Computer", "Message" as event_id, host, msg_summary nodrop
 | parse regex field = msg_summary "(?<msg_summary>.*\.*)"

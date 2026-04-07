@@ -277,7 +277,7 @@ This page has instructions for collecting logs and metrics for the Amazon ECS wi
 
 ### Sample queries
 
-```sql title="Deleted Resources Over Time"
+```sumo title="Deleted Resources Over Time"
 _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInstance or DeregisterTaskDefinition or StopTask) and !(InternalFailure)
 | json "eventName" as event_name
 | parse "\"userName\":\"*\"" as user

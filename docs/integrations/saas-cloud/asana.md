@@ -55,7 +55,7 @@ This app uses Asana Source to collect [Audit Logs](https://developers.asana.com/
 
 ### Sample queries
 
-```sql title="Events by App Authorization"
+```sumo title="Events by App Authorization"
 _sourceCategory="asana-app"
 | json "gid","event_type","resource.name","resource.email","resource.resource_type","event_category", "created_at", "actor.name", "actor.email","context.client_ip_address" as gid, event_type, resource_name, resource_email, resource_type, event_category, created_at, actor_name, actor_email, ip nodrop
 | where event_type in ("user_app_authorized","user_app_revoked")

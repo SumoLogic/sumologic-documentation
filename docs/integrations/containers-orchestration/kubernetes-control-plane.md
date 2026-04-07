@@ -83,7 +83,7 @@ For additional information on metrics options you can configure for collection, 
 
 ### Sample queries
 
-```sql title="Control Manager - Event Severity Trend"
+```sumo title="Control Manager - Event Severity Trend"
 _sourceCategory = *controller*
 | json field=_raw "log" as log
 | parse regex field=log "^(?<severity>.)(?:[0-9])"
@@ -119,7 +119,7 @@ To determine custom data filters for source categories, do the following:
 
 1. Run a query similar to the following in Sumo Logic to determine the source categories. Use the Collector Name that you configured for Kubernetes collection.
 
-  ```sql
+  ```sumo
   _collector="<Collector Name>"
   | count by _sourceCategory
   ```

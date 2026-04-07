@@ -8,11 +8,11 @@ The `substring` operator allows you to specify an offset that will output only p
 
 ## Syntax
 
-```sql
+```sumo
 substring(<sourceString>, <startOffset>, <endOffset>) as <outputField>
 ```
 
-```sql
+```sumo
 substring(<sourceString>, <startOffset>) as <outputField>
 ```
 
@@ -29,7 +29,7 @@ substring(<sourceString>, <startOffset>) as <outputField>
 
 Use the following query to output only the word "world!" and the exclamation point from "Hello world!"
 
-```sql
+```sumo
 ... | substring("Hello world!", 6)
 ```
 
@@ -37,13 +37,13 @@ Use the following query to output only the word "world!" and the exclamation poi
 
 This query would output the word "Sumo" from the company name "Sumo Logic".
 
-```sql
+```sumo
 ... | substring("Sumo Logic", 0, 4)
 ```
 
 Whereas this query would output the entire company name:
 
-```sql
+```sumo
 ... | substring("Sumo Logic", 0, 100)
 ```
 
@@ -51,7 +51,7 @@ Whereas this query would output the entire company name:
 
 This query would output only the year from the string dateTimeString:
 
-```sql
+```sumo
 ... | substring(dateTimeString, 0, 4)
 ```
 
@@ -59,7 +59,7 @@ This query would output only the year from the string dateTimeString:
 
 Use the following query to extract an employee’s initials from substrings firstName and lastName, then transform the letters to uppercase and Concat them as "initials":
 
-```sql
+```sumo
 | substring(firstName, 0, 1) as x
 | substring(lastName, 0, 1) as y
 | toUpperCase(concat(x, y)) as initials
@@ -71,12 +71,12 @@ These are examples of queries that will not work with the Substring Operator:
 
 This query will not work because the startOffset is negative:
 
-```sql
+```sumo
 ... | substring("Hello world", -1)
 ```
 
 This query will not work because numerically the endOffset is before the startOffset:
 
-```sql
+```sumo
 ... | substring("Hello world", 3, 2)
 ```

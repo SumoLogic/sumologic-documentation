@@ -110,7 +110,7 @@ In the table below, the left column contains schema fields that contain IP addre
 | `srcDevice_ip `| `srcDevice_ip_location` | `srcDevice_ip_isInternal` |
 | `srcDevice_natIp`	 | `srcDevice_natIp_location` | `srcDevice_natIp_isInternal` |
 
-<!-- Can't reproduce the screenshot
+<!-- Cannot reproduce the screenshot
 
 The screenshot below shows a record that contains several network block-related enrichment fields. Note that:
 

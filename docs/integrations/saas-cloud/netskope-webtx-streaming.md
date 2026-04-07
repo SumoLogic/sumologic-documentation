@@ -31,7 +31,7 @@ date time time-taken cs-bytes sc-bytes bytes c-ip s-ip cs-username cs-method cs-
 
 ## Sample queries
 
-```sql title="Total Transactions"
+```sumo title="Total Transactions"
 _sourceCategory=Labs/NetskopeWebTx  !bytes
 | csv _raw extract  14 as cs_content_type, 17 as cs_dns, 10 as cs_method, 9 as cs_username, 15 as sc_status, 37 as x_c_os, 47 as x_category, 24 as x_cs_app, 45 as x_cs_traffic_type, 49 as x_type, 52 as x_transaction_id
 

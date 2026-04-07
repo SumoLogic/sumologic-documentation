@@ -77,13 +77,13 @@ A few sources on Hosted Collectors will behave differently when instructed to st
 
 To search for only ingest budgets with minute control where threshold was breached:
 
-```sql
+```sumo
 _index=sumologic_audit exceeded drop_data "bytes/minute"
 ```
 
 To search for ingest budgets that are currently enforced to stop collecting data:
 
-```sql
+```sumo
 _index=sumologic_audit_events minuteVolume stopCollecting
 ```
 
@@ -92,7 +92,7 @@ _index=sumologic_audit_events minuteVolume stopCollecting
 1. Identify sources which are not critical data sources where stricter data controls can be added to prevent your organization from being throttled.
 1. Identify `_sourceCategory` or any other identifier for the sources.
 1. Run the following query. The goal of this query is to understand previous data ingestion trends and suggest to you the peak volume seen per minute. To obtain the most accurate ingest rates, run the query using the [Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time/).
-   ```sql    
+   ```sumo    
     _sourceCategory=<source category> AND _index=<partition name>
     | timeslice 1m
     | sum(_size) as bytes by _timeslice

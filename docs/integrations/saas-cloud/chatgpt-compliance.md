@@ -72,7 +72,7 @@ This app uses Sumo Logic’s [ChatGPT Compliance Source](/docs/send-data/hosted-
 
 ## Sample queries
 
-```sql title="Messages by Content Type"
+```sumo title="Messages by Content Type"
 _sourceCategory=GPT
 | json "id", "last_active_at", "user_id", "user_email", "title", "workspace_id", "message.author.role", "message.author.tool_name", "message.content.type", "message.content.value", "message.files.data[*]", "message.gpt_id", "message.id" as id, last_active_at, user_id, user_email, title, workspace_id, role, tool_name, message_type, message_value, files_data, gpt_id, message_id nodrop
 
@@ -90,7 +90,7 @@ _sourceCategory=GPT
 | sort by _count, message_type
 ```
 
-```sql title="Messages by Role"
+```sumo title="Messages by Role"
 _sourceCategory=GPT
 | json "id", "last_active_at", "user_id", "user_email", "title", "workspace_id", "message.author.role", "message.author.tool_name", "message.content.type", "message.content.value", "message.files.data[*]", "message.gpt_id", "message.id" as id, last_active_at, user_id, user_email, title, workspace_id, role, tool_name, message_type, message_value, files_data, gpt_id, message_id nodrop
 
@@ -108,7 +108,7 @@ _sourceCategory=GPT
 | sort by _count, role
 ```
 
-```sql title="Top 10 Users by Conversations"
+```sumo title="Top 10 Users by Conversations"
 _sourceCategory=GPT
 | json "id", "last_active_at", "user_id", "user_email", "title", "workspace_id", "message.author.role", "message.author.tool_name", "message.content.type", "message.content.value", "message.files.data[*]", "message.gpt_id", "message.id" as id, last_active_at, user_id, user_email, title, workspace_id, role, tool_name, message_type, message_value, files_data, gpt_id, message_id nodrop
 

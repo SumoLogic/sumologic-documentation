@@ -59,7 +59,7 @@ For Azure Virtual Network, you can collect the following logs and metrics:
 
 ### Sample queries
 
-```sql title="Flow Traffic by Rule Name"
+```sumo title="Flow Traffic by Rule Name"
 _sourceCategory=Azure/VirtualNetworkFlow/Logs
 | json field=_raw "rule_name"
 | json field=_raw "target_resource_id"

@@ -148,7 +148,7 @@ import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configurat
 
 This sample log query is from the **Docker Events Over Time** panel in the **Docker - Overview** dashboard.
 
-```sql title="Log query"
+```sumo title="Log query"
 sumo.datasource=docker
 | json field=_raw "status" as state
 | json field=_raw "Type" as type

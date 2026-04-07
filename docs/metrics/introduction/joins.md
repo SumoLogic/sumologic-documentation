@@ -116,7 +116,7 @@ The results of a query with a join are calculated separately for every quantizat
 
 For example, consider a joined query that compares the `CPU_User` metric from two different hosts.
 
-```
+```sql
 #A: metric=CPU_User _source=”HostMetrics”
 #B: metric=CPU_User _source=”JBM Host Metrics”
 #C: #A+#B/2
@@ -134,7 +134,7 @@ At the right end of each query row, you can see that that quantization period au
 
 To avoid this issue, you can specify a longer quantization bucket using the `quantize` operator. We recommend you explicitly set the quantization interval in queries that a joined query references. For example:
 
-```
+```sql
 #A: metric=CPU_User _source=”HostMetrics” | quantize to 15s
 #B: metric=CPU_User _source=”JBM Host Metrics” | quantize to 15s
 ```

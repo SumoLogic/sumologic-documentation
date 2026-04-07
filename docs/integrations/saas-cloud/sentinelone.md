@@ -321,7 +321,7 @@ The Sumo Logic app for SentinelOne consumes Threats and Agents logs, refer to th
 
 ## Sample queries
 
-```sql title="Suspicious threats detected"
+```sumo title="Suspicious threats detected"
 _sourceCategory=sentinelone  threatInfo
 | json "id", "threatInfo.incidentStatus", "threatInfo.classificationSource", "threatInfo.confidenceLevel", "threatInfo.detectionEngines", "threatInfo.initiatedBy", "threatInfo.rebootRequired", "threatInfo.createdAt", "threatInfo.detectionType", "threatInfo.mitigationStatus", "threatInfo.analystVerdict", "threatInfo.threatName", "agentRealtimeInfo.siteName","agentRealtimeInfo.agentOsType", "agentRealtimeInfo.agentMachineType" as id, incidentStatus, classificationSource, confidenceLevel, detectionEngines, initiatedBy, rebootRequired, createdAt, detectionType, mitigationStatus, analystVerdict, threatName, siteName, agentOsType, agentMachineType nodrop
 | where siteName matches "{{site}}" or isNull(siteName)
@@ -333,7 +333,7 @@ _sourceCategory=sentinelone  threatInfo
 | count_distinct(id)
 ```
 
-```sql title="Total Agents"
+```sumo title="Total Agents"
 _sourceCategory=sentinelone  uuid
 | Json "uuid","scanStatus","siteName","mitigationMode","infected","firewallEnabled","activeThreats","installerType","osName","mitigationModeSuspicious","isPendingUninstall","networkStatus","osType","isActive","isUninstalled","isDecommissioned","externalIp","modelName","machineType" as id,scan_status,site_name,mitigation_mode,infected,firewall_enabled,active_threats,installer_type,os_name,mitigation,is_pending_uninstall,network_status,os_type,is_active,is_uninstalled,is_decommissioned,ip,model_name,machine_type nodrop
 | where site_name matches "{{site}}" or isNull(site_name)

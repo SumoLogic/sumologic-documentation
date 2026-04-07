@@ -73,7 +73,7 @@ This App uses Akamai Source to collect [DataStream 2 Logs](https://techdocs.akam
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory="akamai"
 | json "version", "streamId", "cp", "reqId", "reqTimeSec", "bytes", "cliIP", "statusCode", "proto", "reqHost", "reqMethod", "reqPath", "reqPort", "rspContentLen", "rspContentType", "UA", "tlsOverheadTimeMSec", "tlsVersion", "objSize", "uncompressedSize", "overheadBytes", "totalBytes", "queryStr", "breadcrumbs", "accLang", "cookie", "range", "referer", "xForwardedFor", "maxAgeSec", "reqEndTimeMSec", "errorCode", "turnAroundTimeMSec", "transferTimeMSec", "dnsLookupTimeMSec", "lastByte", "edgeIP", "country", "state", "city", "serverCountry", "billingRegion", "cacheStatus", "securityRules", "ewUsageInfo", "ewExecutionInfo", "customField" as  version, streamId, cp, reqId, reqTimeSec, bytes, cliIP, statusCode, proto, reqHost, reqMethod, reqPath, reqPort, rspContentLen, rspContentType, UA, tlsOverheadTimeMSec, tlsVersion, objSize, uncompressedSize, overheadBytes, totalBytes, queryStr, breadcrumbs, accLang, cookie, range, referer, xForwardedFor, maxAgeSec, reqEndTimeMSec, errorCode, turnAroundTimeMSec, transferTimeMSec, dnsLookupTimeMSec, lastByte, edgeIP, country, state, city, serverCountry, billingRegion, cacheStatus, securityRules, ewUsageInfo, ewExecutionInfo, customField
 ```

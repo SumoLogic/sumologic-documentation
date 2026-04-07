@@ -44,7 +44,7 @@ When you create a table chart panel, and if your query looks for URLs, then use 
 
 For example, if you used this query to search for hits to the Sumo Logic Help system:
 
-```sql
+```sumo
 _sourceCategory=aws/cloudtrail 
 | keyvalue "LoginTo" 
 | count loginto
