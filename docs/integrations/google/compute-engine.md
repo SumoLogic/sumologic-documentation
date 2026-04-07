@@ -23,7 +23,7 @@ The Sumo Logic app for Google Cloud Compute Engine uses the following logs and m
 
 ### Sample queries
 
-```bash title="Top 10 User"
+```sumo title="Top 10 User"
 _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 | json "message.data.resource.type" as type
 | parse regex "\s+\"logName\":\"(?<log_name>\S+)\""

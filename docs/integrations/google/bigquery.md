@@ -31,7 +31,7 @@ The Google BigQuery App uses:
 
 ### Sample logs queries
 
-```bash title="Created Resources Over Time"
+```sumo title="Created Resources Over Time"
 _sourceCategory=*gcp* logName resource "type":"bigquery_resource"
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/cloudaudit.googleapis.com%2Factivity"
