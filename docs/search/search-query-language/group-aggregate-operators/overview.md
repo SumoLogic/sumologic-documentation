@@ -2,7 +2,7 @@
 id: overview
 title: Group or Aggregate Operators Overview
 sidebar_label: Overview
-description: Aggregating (group-by) functions evaluate messages and place them into groups.
+description: Learn how aggregating (group-by) functions work in Sumo Logic, including syntax, rules, and how to use the group operator to aggregate search results.
 ---
 
 Aggregating (group-by) functions evaluate messages and place them into groups. The `group` operator is used in conjunction with group-by functions.

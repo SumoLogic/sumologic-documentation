@@ -2,7 +2,7 @@
 id: linux
 title: Linux
 sidebar_label: Linux
-description: Allows you to view the events, logins, and security status of your Linux system.
+description: Monitor Linux system health with the Sumo Logic app, using predefined dashboards and searches to view events, user logins, and security status in real time.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -1,7 +1,7 @@
 ---
 id: access-keys
 title: Access Keys
-description: Access keys allow you to securely register new collectors or access Sumo Logic APIs.
+description: Create and manage Sumo Logic access keys used to register new collectors, authenticate API requests, and authorize scripts and automation workflows.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';

@@ -1,7 +1,7 @@
 ---
 id: search-for-a-collector-or-source
 title: Search for a Collector or Source
-description: Search for a Collector or Source on the Manage Collection page.
+description: Search for Sumo Logic collectors and sources by name or source category on the Collection page, with wildcard support and status filtering options.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
