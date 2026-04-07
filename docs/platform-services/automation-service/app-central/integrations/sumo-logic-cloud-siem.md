@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.15  
-Updated: Jan 6, 2025***
+***Version: 1.16  
+Updated: Apr 3, 2026***
 
 
 This [automation integration](/docs/platform-services/automation-service/app-central/integrations/) utilizes Cloud SIEM entities to correlate signals and insights. This integration requires authentication. (Because the [Sumo Logic Cloud SIEM Internal](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem-internal/) integration operates internally with Sumo Logic, no additional authentication is needed.)
@@ -150,3 +150,7 @@ SIEM
 * January 6, 2025 (v1.15)
   * New Action added:
     - Add Match List Item
+* April 3, 2026 (v1.16)
+  * Fixed output field mapping for nested fields with dots in field names in the following actions:
+    - Get Signal
+    - List Signals

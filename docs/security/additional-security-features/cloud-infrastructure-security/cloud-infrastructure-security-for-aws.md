@@ -254,7 +254,7 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
     * If you selected only **Use Existing Source** or **Do Not Collect**, the solution is installed. Proceed to [Start using the solution](#start-using-the-solution).
 
        :::tip
-       Using only existing sources is the easiest way to install, since it means you don't have to create any new sources.
+       Using only existing sources is the easiest way to install, since it means you do not have to create any new sources.
        :::
 
     * If you selected **Create New Source** for *any* source, the following screen appears. You must perform the steps in the following sections:
@@ -301,7 +301,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
     * **Security-tooling and log-archiving account Region**. Enter your Security Tooling and Log Archive account region if it's different from the default.
     * **AWS Organization root ID**. Enter the ID for your organization root. This string requires `r-` followed by from 4 to 32 lowercase letters or digits.
     :::note
-    You can find the values for this section in the **Organizational structure** section of your [AWS accounts](https://console.aws.amazon.com/organizations/v2/home/accounts) page. Sign in to the AWS console, click on your profile in the top-right corner, select **Organization**, and in the left nav bar select **Policy management > AWS accounts**. You must have the correct permissions to view the account IDs. For more information about organizations, see [AWS documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-organizations.png')} alt="AWS organizational structure" style={{border: '1px solid gray'}} width="700"/>
+    You can find the values for this section in the **Organizational structure** section of your [AWS accounts](https://console.aws.amazon.com/organizations/v2/home/accounts) page. Sign in to the AWS console, click your profile in the top-right corner, select **Organization**, and in the left nav bar select **Policy management > AWS accounts**. You must have the correct permissions to view the account IDs. For more information about organizations, see [AWS documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-organizations.png')} alt="AWS organizational structure" style={{border: '1px solid gray'}} width="700"/>
     ::: 
 1. (Optional) In **Permissions**, select the IAM role name or Amazon Resource Name (ARN) for the Cloud Formation to use for all operations performed on the stack. Do one of the following:
     * Select **IAM role name**, and in the **Sample-role-name** dropdown select a sample name.
@@ -343,14 +343,14 @@ If you selected **Create New Source** for any source on the [**Configure Sources
       * **Security-tooling and log-archiving account Region**. Enter your Security Tooling and Log Archive account region if it's different from the default.
       * **AWS Organization root ID**. Enter the ID for your organization root. This string requires `r-` followed by from 4 to 32 lowercase letters or digits.<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-2.png')} alt="AWS organization configuration" style={{border: '1px solid gray'}} width="700"/>
           :::note
-          You can find the values for this dialog in the **Organizational structure** section of your [AWS accounts](https://console.aws.amazon.com/organizations/v2/home/accounts) page. Sign in to the AWS console, click on your profile in the top-right corner, select **Organization**, and in the left nav bar select **Policy management > AWS accounts**. You must have the correct permissions to view the account IDs. For more information about organizations, see [AWS documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-organizations.png')} alt="AWS organizational structure" style={{border: '1px solid gray'}} width="700"/>
+          You can find the values for this dialog in the **Organizational structure** section of your [AWS accounts](https://console.aws.amazon.com/organizations/v2/home/accounts) page. Sign in to the AWS console, click your profile in the top-right corner, select **Organization**, and in the left nav bar select **Policy management > AWS accounts**. You must have the correct permissions to view the account IDs. For more information about organizations, see [AWS documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-organizations.png')} alt="AWS organizational structure" style={{border: '1px solid gray'}} width="700"/>
           :::
 1. In **3. AWS Service configuration**, fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
-      * **Publish Amazon GuardDuty data to Sumo**
-      * **Publish AWS CloudTrail data to Sumo** 
-      * **Publish AWS Security Hub data to Sumo** 
-      * **Publish AWS WAF data to Sumo** 
-      * **Publish AWS Network Firewall data to Sumo** 
+      * **Publish Amazon GuardDuty data to Sumo Logic**
+      * **Publish AWS CloudTrail data to Sumo Logic** 
+      * **Publish AWS Security Hub data to Sumo Logic** 
+      * **Publish AWS WAF data to Sumo Logic** 
+      * **Publish AWS Network Firewall data to Sumo Logic** 
       <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-3.png')} alt="AWS service configuration" style={{border: '1px solid gray'}} width="700"/>
 1. If you selected **Yes** in the preceding step, you can accept the default values in the following sections to set up each source, unless there are any values you'd like to change. <br/><br/>If you selected **No** in the preceding step, in the following sections you must answer **No** when asked if you want to create a source, and you must replace the source category name with the value of your existing installed source.
 

@@ -108,15 +108,22 @@ The following table provides a summary list of key features by credits package a
 
 ## Account Overview  
 
+:::note
+- To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) role capability. 
+- To view, create, and manage the **Create Usage Alerts**, you must have the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities/#alerting) role capability.
+:::
+
 The **Account Overview** tab provides detailed information about your Sumo Logic organization, including account type, contract periods, credit usage, live dashboards, and real-time alerts. Account owners can also reassign the Account Owner role from this page.  
 
 To access the **Account Overview** tab:    
 * **[New UI](/docs/get-started/sumo-logic-ui)**. Navigate to **Administration > Account > Account Overview**, or select **Account Overview** from the **Go To...** menu.
 * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. Navigate to **Administration > Account > Account Overview**.  
 
-To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) capability.  
 
 [Data Tiers](/docs/manage/partitions/data-tiers) are available with Enterprise Suite packages, allowing you to optimize analytics by segmenting data into Continuous, Frequent, and Infrequent tiers. For more details, contact your Sumo Logic account manager.  
+
+<img src={useBaseUrl('/img/manage/account/account-usage-fields.png')} alt="account-overview-credits" style={{border:'1px solid gray'}} width="800"/>  
+
 
 ### Key features  
 
@@ -124,9 +131,9 @@ To view this tab, your role must include the [View Account Overview](/docs/manag
 * Track consumption against plan baselines.  
 * Visualize usage by day, week, or month.  
 * Download reports or credit usage data as CSV files.  
-* Hover over charts for detailed insights.  
+* Hover over charts for detailed insights.
+* Create alerts for 70% and 90% credit breach.
 
-<img src={useBaseUrl('/img/manage/account/account-usage-fields.png')} alt="Account overview credits" style={{border:'1px solid gray'}} width="800"/>  
 
 ### Organization information panel  
 
@@ -140,6 +147,7 @@ To view this tab, your role must include the [View Account Overview](/docs/manag
 * **Credits Used**. Total and percentage used since the start of the current contract.  
 * **Credits Remaining**. Remaining credits and percentage consumed.  
 * **Total Credits Usage Breakdown**. Consumed contract and promotional credits.  
+* **Create Usage Alert**. Click this button to create a monitor that sends a warning alert when 70% of credits are used and a critical alert when 90% of credits are used. This opens the **New Monitor** pane with a prefilled query. In the **Trigger Type** section, select the alert severity you want to configure, **Warning** or **Critical**, based on the percentage of credits consumed. You can then add your preferred notification channels, such as email, Slack, or webhooks, and save the monitor to create the alert. For more customization, refer to [Create a New Monitor](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions).
 
 ### Usage Forecast panel  
 

@@ -19,7 +19,7 @@ Threat Intelligence sources are used at the time of record ingestion. When a rec
 -->
 
 
-ThreatQ is a threat intelligence platform that centrally manages and correlates external sources of threat intel information. If you have a ThreatQ subscription, Cloud SIEM’s ThreatQ integration allows you to leverage ThreatQ threat intel feeds. To do so, you simply configure a ThreatQ source in Cloud SIEM. You supply the information Cloud SIEM needs to connect to ThreatQ and fetch feed updates on a periodic basis.
+ThreatQ is a threat intelligence platform that centrally manages and correlates external sources of threat intel information. If you have a ThreatQ subscription, Cloud SIEM’s ThreatQ integration allows you to leverage ThreatQ threat intel feeds. To do so, you configure a ThreatQ source in Cloud SIEM. You supply the information Cloud SIEM needs to connect to ThreatQ and fetch feed updates on a periodic basis.
 
 ## Configure a ThreatQ source
 
