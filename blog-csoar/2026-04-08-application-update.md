@@ -47,7 +47,7 @@ Upgraded the `python3_generic` **(Python 3.8)** Docker image to `python3_12_gene
 #### Platform
 
 - Reduced initial page load times to improve the performance of Cloud SOAR and Automation pages.
-- Introduced a redesigned delete confirmation modal with clearer messaging to help prevent accidental deletions across Playbooks, Playbook Executions, Incident Templates, Integrations, Rules, and Bridge.
+- Introduced a redesigned delete confirmation modal with clearer messaging to help prevent accidental deletions across playbooks, playbook executions, incident templates, integrations, rules, and the Automation Bridge.
 - Enhanced “no results” states on listing pages by adding a **Clear Filters** option when no results are found.
 - Updated search behavior on listing pages (such as the Playbooks page) to exclude deleted records unless the **Deleted** filter is explicitly applied.
 
