@@ -40,7 +40,7 @@ Upgraded the `python3_generic` **(Python 3.8)** Docker image to `python3_12_gene
 - [URLScan.io](/docs/platform-services/automation-service/app-central/integrations/urlscan.io/)
 - [Atlassian Jira Cloud](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-cloud/)
 - [Atlassian Jira V2](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/)
-- [Atlassian Opsgenie](docs/platform-services/automation-service/app-central/integrations/atlassian-opsgenie/)
+- [Atlassian Opsgenie](/docs/platform-services/automation-service/app-central/integrations/atlassian-opsgenie/)
 - [Cloudflare](/docs/platform-services/automation-service/app-central/integrations/cloudflare/)
 - [ThreatConnect V3](/docs/platform-services/automation-service/app-central/integrations/threatconnect-v3/)
 
