@@ -28,7 +28,7 @@ Key features of the Tenable app include:
     - **Scan Source & Agent Coverage**. Monitor how assets are discovered and identify gaps in agent deployment across your environment.
     - **Asset Trend Analysis**. Track asset trends over time across network, OS, scan source, and agent coverage dimensions.
 - **Enhanced Security Posture**. By combining data from the Tenable Vulnerabilities API, Audit Events API, and Asset Events API, you can strengthen your organization's security posture by proactively addressing vulnerabilities and monitoring security incidents.
-- **Risk Reduction**. Identify and promptly mitigate high-severity vulnerabilities and security threats, reducing the risk of security breaches.
+- **Risk Reduction**. Identify and promptly mitigate high-severity vulnerabilities and security threats to reduce the risk of security breaches.
 - **Efficient Remediation**. Locate affected hosts and prioritize remediation efforts to streamline the process of securing your environment.
 - **Compliance Assurance**. Simplify compliance monitoring and reporting by tracking relevant audit events and security controls.
 - **Real-time Insights**. Gain real-time insights into your security environment to enable rapid incident response and threat containment.
