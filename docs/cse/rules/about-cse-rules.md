@@ -2,7 +2,7 @@
 id: about-cse-rules
 title: About Cloud SIEM Rules
 sidebar_label: About Cloud SIEM Rules
-description: Learn about Cloud SIEM rules, rules syntax, and how to write rules.
+description: Understand Cloud SIEM rules that fire on incoming records to create signals, including rule types, syntax, and how rules fit into the insight generation process.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

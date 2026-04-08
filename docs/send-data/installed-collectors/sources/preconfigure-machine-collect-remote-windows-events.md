@@ -1,7 +1,7 @@
 ---
 id: preconfigure-machine-collect-remote-windows-events
 title: Preconfigure a Machine to Collect Remote Windows Events
-description: You can configure a system for remote access by a Remote Windows Event Log Source.
+description: Configure user accounts and firewall settings on Windows Server 2012+ to allow a Sumo Logic Remote Windows Event Log Source to collect events remotely.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

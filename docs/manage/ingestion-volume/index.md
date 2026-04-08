@@ -1,7 +1,7 @@
 ---
 slug: /manage/ingestion-volume
 title: Ingestion and Volume
-description: Learn how to manage the ingestion of data by Sumo Logic.
+description: Manage Sumo Logic data ingestion with tools for monitoring log ingestion, viewing collection status, tracking data volume, and setting ingest budgets.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
