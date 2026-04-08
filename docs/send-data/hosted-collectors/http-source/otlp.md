@@ -155,7 +155,7 @@ export OTEL_EXPORTER_OTLP_ENDPOINT=<source_url>
 
 ### JSON example
 
-``` json
+```json
 {
   "api.version":"v1",
   "source":{
