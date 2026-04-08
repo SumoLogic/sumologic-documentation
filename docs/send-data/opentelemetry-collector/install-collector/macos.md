@@ -2,7 +2,7 @@
 id: macos
 title: Install OpenTelemetry Collector on macOS
 sidebar_label: macOS
-description: Learn how to install the Sumo Logic OpenTelemetry Collector on macOS.
+description: Install the Sumo Logic OpenTelemetry Collector on macOS using the UI, install script, or manual steps. Supports macOS 10.X+, both amd64 and arm64.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

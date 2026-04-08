@@ -1,7 +1,7 @@
 ---
 id: remote-windows-event-log-source
 title: Remote Windows Event Log Source
-description: Collect Windows event logs from a remote machine.
+description: Configure a Remote Windows Event Log Source to collect Windows event logs from multiple remote Windows Server 2012+ systems using a single Sumo Logic Collector.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

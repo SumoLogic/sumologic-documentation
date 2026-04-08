@@ -1,7 +1,7 @@
 ---
 slug: /integrations/amazon-aws
 title: Amazon and AWS
-description: Learn how to use Sumo Logic apps for Amazon and AWS.
+description: Browse all Sumo Logic apps for Amazon Web Services, including integrations for AppFlow, Athena, Bedrock, EC2, RDS, Lambda, and dozens of other AWS services.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

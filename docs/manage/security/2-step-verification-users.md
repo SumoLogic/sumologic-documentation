@@ -1,7 +1,7 @@
 ---
 id: 2-step-verification-users
 title: 2-Step Verification for Users
-description: Learn how to set up and use 2-Step Verification for your user account.
+description: Enable and configure 2-Step Verification for your Sumo Logic account using a TOTP authenticator app such as Google Authenticator or Duo Mobile.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

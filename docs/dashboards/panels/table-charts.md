@@ -1,7 +1,7 @@
 ---
 id: table-charts
 title: Table Charts
-description: Table charts are the default chart type in the Aggregates tab.
+description: Use table charts in Sumo Logic dashboards to display aggregated search results, listing event types and counts using group-by queries in the Aggregates tab.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
