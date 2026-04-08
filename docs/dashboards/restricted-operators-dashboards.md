@@ -45,7 +45,7 @@ The following operators cannot be used with dashboards:
   * `_dataTier`
 
 * [Receipt time searches](/docs/search/get-started-with-search/build-search/use-receipt-time) are not supported.
-* Only [relative time ranges](docs/search/get-started-with-search/search-basics/time-range-expressions/#relative-time-range-expressions) are supported. [Absolute time ranges](/docs/search/get-started-with-search/search-basics/time-range-expressions/#absolute-time-range-expressions) with custom end times are not supported.
+* Only [relative time ranges](/docs/search/get-started-with-search/search-basics/time-range-expressions/#relative-time-range-expressions) are supported. [Absolute time ranges](/docs/search/get-started-with-search/search-basics/time-range-expressions/#absolute-time-range-expressions) with custom end times are not supported.
 
 ## Include only after the first group-by phrase
 
