@@ -1,6 +1,6 @@
 ---
 id: docker
-title: Install OpenTelemetry Collector on Docker
+title: Install OpenTelemetry Collector using Docker
 sidebar_label: Docker
 ---
 

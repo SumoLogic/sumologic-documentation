@@ -1,6 +1,6 @@
 ---
 id: chef
-title: Install OpenTelemetry Collector on Chef
+title: Install OpenTelemetry Collector using Chef
 sidebar_label: Chef
 description: Learn how to install the Sumo Logic OpenTelemetry Collector on Chef.
 ---

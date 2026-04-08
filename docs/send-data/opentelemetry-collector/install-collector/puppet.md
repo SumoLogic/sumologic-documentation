@@ -1,6 +1,6 @@
 ---
 id: puppet
-title: Install OpenTelemetry Collector on Puppet
+title: Install OpenTelemetry Collector using Puppet
 sidebar_label: Puppet
 description: Learn how to install the Sumo Logic OpenTelemetry Collector on Puppet.
 ---

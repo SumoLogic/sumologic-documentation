@@ -1,6 +1,6 @@
 ---
 id: ansible
-title: Install OpenTelemetry Collector on Ansible
+title: Install OpenTelemetry Collector using Ansible
 sidebar_label: Ansible
 ---
 
