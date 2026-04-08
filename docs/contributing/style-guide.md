@@ -249,9 +249,7 @@ Here's a cool tip.
 
 ## Preview releases
 
-Following are the instructions for formatting docs at each release stage. You may also need to publish a corresponding release note (check with your SME).
-
-For release type definitions, see [page with table]
+Following are the instructions for formatting docs at each release stage. For release type definitions, see [Preview Releases](/docs/preview).
 
 ### Private Preview
 
