@@ -17,7 +17,7 @@ Following are the updates made in March 2026.
 
 #### New integrations
 
-We are excited to introduce the following new integrations:
+We are excited to introduce new integrations for the following services:
 
 - [1Password](/docs/platform-services/automation-service/app-central/integrations/1password/)
 - [Sumo Logic Lookup Table](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-lookup-table/)
