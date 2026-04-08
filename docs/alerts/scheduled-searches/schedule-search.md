@@ -1,7 +1,7 @@
 ---
 id: schedule-search
 title: Create a Scheduled Search
-description: Learn how to save and schedule a log search to run at a regularly scheduled time, and add alerts.
+description: Save and schedule Sumo Logic log searches to run at specified intervals and configure alerts, including email, webhook, and other notification options.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

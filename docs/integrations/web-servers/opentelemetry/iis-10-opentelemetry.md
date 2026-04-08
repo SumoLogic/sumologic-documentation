@@ -2,7 +2,7 @@
 id: iis-10-opentelemetry
 title: IIS 10 - OpenTelemetry Collector
 sidebar_label: IIS 10 - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry app for IIS 10.
+description: Monitor IIS 10 availability and performance using the Sumo Logic OpenTelemetry app with dashboards for requests, latency, errors, and traffic patterns.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

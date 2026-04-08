@@ -2,7 +2,7 @@
 id: terraform-with-sumo-logic
 title: Use Terraform with Sumo Logic
 sidebar_label: Terraform with Sumo Logic
-description: Learn how to use Terraform with Sumo Logic.
+description: Use Terraform infrastructure-as-code to manage Sumo Logic resources including collectors, monitors, dashboards, Cloud SIEM rules, and field mappings.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

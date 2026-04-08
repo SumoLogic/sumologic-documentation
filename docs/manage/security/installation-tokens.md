@@ -1,7 +1,7 @@
 ---
 id: installation-tokens
 title: Installation Tokens
-description: Use Installation Tokens to register Installed Collectors.
+description: Use Sumo Logic Installation Tokens to register Installed Collectors securely in scripts and automation without risking API access if a token is compromised.
 ---
 
 import Tabs from '@theme/Tabs';
