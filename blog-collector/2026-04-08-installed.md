@@ -10,7 +10,7 @@ In this release, we've enhanced the security and stability of the collector with
 
 #### Security fix
 
-- Upgraded `io.netty` packages to **4.1.132.Final** to address known security vulnerability (CVE-2026-33871 and CVE-2026-33870)
+- Upgraded `io.netty` packages to **4.1.132.Final** to address known security vulnerabilities ([CVE-2026-33871](https://nvd.nist.gov/vuln/detail/CVE-2026-33871) and [CVE-2026-33870](https://nvd.nist.gov/vuln/detail/CVE-2026-33870)).
 - Upgraded `io-netty:netty-codec-http` to **4.1.132.Final** to resolve an [HTTP header parsing issue](https://github.com/netty/netty/issues/16020).
 
 #### Bug fix
