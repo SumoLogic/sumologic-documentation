@@ -44,6 +44,12 @@ Learn how to install the Sumo Logic OpenTelemetry Collector on various platforms
     <p>Install the OpenTelemetry collector on Chef.</p>
     </div>
   </div>
+  <div className="box smallbox card">
+   <div className="container">
+   <a href={useBaseUrl('docs/send-data/opentelemetry-collector/install-collector/docker')}><img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="docker" width="100"/><h4>Install Collector on Docker</h4></a>
+    <p>Install the OpenTelemetry collector on Docker.</p>
+    </div>
+  </div>
     <div className="box smallbox card">
    <div className="container">
    <a href={useBaseUrl('docs/send-data/opentelemetry-collector/install-collector/upgrade-opentelemetry-collector/')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OTel thumbnail icon" width="25"/><h4>Upgrade OpenTelemetry Collector</h4></a>
