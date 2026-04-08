@@ -107,4 +107,5 @@ When **Auto Parse Mode** is disabled, you'll be in manual parsing mode, meaning:
 * Total fields shown in the field browser consist of all the fields extracted across log lines.
 * The [Field Browser](/docs/search/get-started-with-search/search-page/field-browser) displays the count of the fields as well as the distribution of values of each field. These calculations are done for the first 200 fields that are parsed by a run-time FER and 100 dynamic parsed extracted field.
 * Not supported in non-aggregate queries in Scheduled Views and Scheduled Searches.
+* When the number of parsed fields exceeds the dynamic parsing limit, different messages may contain different sets of parsed fields. For example, the set of fields parsed from one message may differ from the set parsed from another. This is an expected behavior caused by batched and distributed message processing.
 

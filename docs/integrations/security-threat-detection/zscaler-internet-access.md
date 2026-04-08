@@ -2,7 +2,7 @@
 id: zscaler-internet-access
 title: Zscaler Internet Access
 sidebar_label: Zscaler Internet Access
-description: Learn about the Sumo Logic app for Zscaler Internet Access (ZIA).
+description: Monitor Zscaler Internet Access (ZIA) with the Sumo Logic app using Cloud NSS logs to visualize threats, DNS, web traffic, and user browsing activity.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

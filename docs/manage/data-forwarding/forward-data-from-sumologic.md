@@ -1,7 +1,7 @@
 ---
 id: forward-data-from-sumologic
 title: Forward Data from Sumo Logic to S3 or GCS
-description: Learn about how to forward data from Sumo Logic to S3 or GCS.
+description: Configure data forwarding from Sumo Logic partitions or scheduled views to Amazon S3 or Google Cloud Storage (GCS) buckets in CSV or JSON format.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

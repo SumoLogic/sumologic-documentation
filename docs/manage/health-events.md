@@ -1,7 +1,7 @@
 ---
 id: health-events
 title: Health Events
-description: Monitor the health of your Collectors, Sources, and Log data.
+description: Monitor Sumo Logic system health events for collectors, sources, and ingest budgets, including auto-generated alerts when capacity thresholds are exceeded.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
