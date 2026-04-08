@@ -52,7 +52,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Collection - Amazon Web Services | [CSE AWS EC2 Inventory](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source/) | &#10003; | |
 | Collection - Archive | [AWS S3 archive](/docs/manage/data-archiving/archive) | &#10003; | &#10003; |
 | Collection - Cloud APIs | [Akamai SIEM API](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.* |
-| Collection - Cloud APIs | [Azure Event Hubs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) | &#10003; | &#10003; |
+| Collection - Cloud APIs | [Azure Event Hubs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/) | &#10003; | &#10003; |
 | Collection - Cloud APIs | [Box](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.* |
 | Collection - Cloud APIs | [Carbon Black Cloud](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.* |
 | Collection - Cloud APIs | [Carbon Black Inventory](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source/) | &#10003; | &#10003;<br/>Available upon request within 5 business days. |
