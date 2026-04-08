@@ -8,7 +8,7 @@ description: Learn how to use the Metrics Browser to query your metrics.
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview">Preview</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

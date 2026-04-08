@@ -169,7 +169,7 @@ module.exports = {
           changefreq: 'daily',
           ignorePatterns: [
             '/docs/reuse/**',
-            '/docs/beta/**',
+            '/docs/preview/**',
             '/ja/**',
             '/files/**',
             '/release-notes-*/archive/**',

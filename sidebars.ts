@@ -68,6 +68,16 @@ module.exports = {
         }
       ],
     },
+    {
+      type: 'category',
+      label: 'Preview Releases',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'preview/index'},
+      items: [
+          'api/metrics-searches'
+      ],
+    },
   ],
   // *** SEND DATA
   senddata: [
@@ -3247,19 +3257,6 @@ integrations: [
         'api/token-management',
         'api/tracing',
         'api/user-management',
-      ],
-    },
-  ],
-  //List of Beta features
-  beta: [
-    {
-      type: 'category',
-      label: 'Beta',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'beta/index'},
-      items: [
-        'api/metrics-searches'
       ],
     },
   ],

@@ -247,73 +247,89 @@ Here's a cool tip.
 
 :::
 
+## Preview releases
 
-## Beta releases
+Following are the instructions for formatting docs at each release stage. You may also need to publish a corresponding release note (check with your SME).
 
-### Closed beta
+For release type definitions, see [page with table]
 
-Closed beta release features are exclusively available to participating customers. Documentation for these features is not publicly accessible; Sumo Logic representatives provide the documentation links only to the involved customers. These links are excluded from our table of contents.
+### Private Preview
 
-To format a closed beta release:
+Private Preview release features are exclusively available to participating customers. Documentation for these features is not publicly accessible; Sumo Logic representatives provide the documentation links only to the involved customers. These links are excluded from our table of contents.
 
-1. Underneath the frontmatter, add:
-   * The [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), which prevents search crawlers from picking it up.
-   * The Sumo Logic Docs beta label.
-     ```md {7-11}
-     ---
-     id: xyz-source
-     title: XYZ Source (Beta)
-     description: The XYZ Source provides a secure endpoint to receive event data.
-     ---
+To format a Private Preview release:
 
-     <head>
-      <meta name="robots" content="noindex" />
-     </head>
+* Add `(Preview)` after the title.
+* Add the [`robots` meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), which prevents search crawlers from picking it up.
+* Add the `preview` badge, which contains a link to the [Preview](/docs/preview) landing page.
 
-     <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+```md {3,8-10,12}
+---
+id: xyz
+title: XYZ (Preview)
+sidebar_label: XYZ
+description: The XYZ feature enables...
+---
 
-     First paragraph goes here...
-     ```
-2. Publish the document.
+<head>
+<meta name="robots" content="noindex" />
+</head>
 
-### Open beta
+<p><a href={useBaseUrl('docs/preview')}><span className="preview">Preview</span></a></p>
 
-When the feature moves to open beta, it becomes available to all customers. Help topics for an open beta feature have a beta label at the top, appear in the site table of contents, and are linked from the [Beta Features](/docs/beta/) section.
+First paragraph goes here...
+```
 
-To format an open beta release:
+### Extended Preview
 
-1. Underneath the frontmatter, add the beta label.
-   ```md {7}
+Extended Preview releases are available to a broader selected group that provides scaled feedback. Features are 75-90% production-ready. Format these the same as [Private Preview](#private-preview) docs.
+
+### Public Preview
+
+For Public Preview releases, the widest eligible audience gets early access to features that are 90-100% production-ready.
+
+To format a Public Preview release:
+
+1. Add the
+1. Underneath the frontmatter, add the Preview badge.
+   ```md
    ---
    id: xyz-source
-   title: XYZ Source (Beta)
-   description: The XYZ Source provides a secure endpoint to receive  event data.
+   title: XYZ Source (Preview)
+   description: The XYZ Source provides a secure endpoint to receive event data.
    ---
 
-   <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+   <p><a href={useBaseUrl('docs/preview')}><span className="preview">Preview</span></a></p>
 
-   First paragraph goes here...
+   First paragraph...
    ```
-1. Add the doc file path to `sidebars.ts` under its appropriate section, then add to the beta section with the same file path. For example, if your doc path is `docs/get-started/sumo-logic-ui.md`, add it to the `get-started/` section, then add to the `beta/` section with the same file path.
-     ```js title="sidebars.ts"
-     getstarted: [
+1. Add the doc's file path to `sidebars.ts` under its appropriate section and the preview section. (For example, a doc at `/docs/send-data/xyz` would be added under both `label: 'Send Data'` and `label: 'Preview'`.)
+     ```js {6,13}
+     ...
        {
          type: 'category',
-         label: 'Welcome to Sumo Logic',
+         label: 'Send Data',
          items: [
-           'get-started/sumo-logic-ui',
-           ...
-     beta: [
+           'send-data/xyz',
+     ...
        {
          type: 'category',
-         label: 'Beta',
+         label: 'Preview',
          items: [
-           'get-started/sumo-logic-ui',
-           ...
+           'send-data/xyz',
+     ...
      ```
-1. Publish the doc.
 
-When the feature goes GA, remove the beta label and remove a description of the feature from the `/docs/beta` section.
+
+### Generally Available
+
+When a feature becomes Generally Available (GA):
+
+- Remove the `(Preview)` title addendum, preview badge, and the `robots` meta tag from the doc.
+- Move feature's card from the `/docs/preview` index page to its appropriate parent index page.
+- Move the `sidebars.ts` entry to its appropriate section.
+
+Then follow the standard [create doc](/docs/contributing/create-edit-doc) instructions.
 
 ## Capitalization
 

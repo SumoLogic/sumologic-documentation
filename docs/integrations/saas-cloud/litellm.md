@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview">Preview</span></a></p>
 
 <img src={useBaseUrl('img/send-data/litellm-icon.png')} alt="LiteLLM icon" width="45"/>
 

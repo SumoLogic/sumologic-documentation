@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview">Preview</span></a></p>
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope WebTx icon" width="50" />
 
