@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-sql-managed-instance.png')} alt="Azure SQL Managed Instance icon" width="50"/>
 
-[Azure SQL Managed Instance](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview) is a scalable cloud database service that's always running on the latest stable version of the Microsoft SQL Server database engine and a patched OS with 99.99% built-in high availability, offering close to 100% feature compatibility with SQL Server. This integration helps in monitoring resource usage and tracking database events of your managed instances.
+[Azure SQL Managed Instance](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview) is a scalable cloud database service that's always running on the latest stable version of the Microsoft SQL Server database engine and a patched OS with 99.99% built-in high availability, offering close to 100% feature compatibility with SQL Server. This integration helps monitor resource usage and track database events for your managed instances.
 
 ## Log and metric types
 
@@ -24,7 +24,7 @@ For Azure SQL Managed Instance, you can collect the following logs and metrics:
 * **DatabaseWaitStatistics**. Contains wait statistics events recording wait type, wait time, signal wait time, and task count per database.
 * **QueryStoreRuntimeStatistics**. Contains query runtime statistics events including CPU time, duration, logical I/O reads and writes, and execution counts per query hash.
 * **SQLSecurityAuditEvents**. Contains SQL security audit events recording authentication, DML, DDL, and permission events with principal, client application, and host information.
-* **DevOpsOperationsAudit**. Contains DevOps operations audit events recording control-plane operations such as session changes, server-level configuration, and policy events.
+* **DevOpsOperationsAudit**. Contains DevOps operations audit events that record control-plane operations, such as session changes, server-level configuration changes, and policy events.
 * **Timeouts**. Contains timeout event data for queries that exceeded execution time limits.
 * **ResourceUsageStats**. Contains resource usage statistics events for CPU, storage, and I/O utilization at the instance level.
 
@@ -38,9 +38,9 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 * Activity logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Eventhubs source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/). We recommend you create a separate source for activity logs. If you are already collecting these logs, you can skip this step.
 * Metrics collection using our [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
-You must explicitly enable diagnostic settings for each Azure SQL Managed Instance that you want to monitor. You can forward logs to the same Eventhub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
+You must explicitly enable diagnostic settings for each Azure SQL Managed Instance that you want to monitor. You can forward logs to the same Event Hub, provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-When you configure the Eventhubs source or Azure metrics source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/SQLManagedInstance/Logs`, `Azure/SQLManagedInstance/ActivityLogs`, and `Azure/SQLManagedInstance/Metrics`.
+When you configure the Event Hubs source or the Azure Metrics source, plan your source category to simplify querying. A hierarchical approach allows you to make use of wildcards. For example: `Azure/SQLManagedInstance/Logs`, `Azure/SQLManagedInstance/ActivityLogs`, and `Azure/SQLManagedInstance/Metrics`.
 
 ### Configure collector
 
@@ -56,14 +56,14 @@ import MetricsSource from '../../reuse/metrics-source.md';
 
 #### Diagnostic logs
 
-In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Eventhub.
+In this section, you will configure a pipeline for shipping diagnostic logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
 1. To set up the Azure Eventhubs source in Sumo Logic, refer to [Azure Eventhubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-1. To create the diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform below steps for each Azure SQL Managed Instance that you want to monitor.
+1. To create the diagnostic settings in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform the following steps for each Azure SQL Managed Instance that you want to monitor.
     * Choose `Stream to an Eventhub` as the destination.
     * Select `allLogs`.
-    * Use the Eventhub namespace and Eventhub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Managed-SQL-Configure-Diagnostic-Logs.png')} alt="Azure SQL Managed Instance Tag Location" style={{border: '1px solid gray'}} width="800" />
-1. Tag the location field in the source with right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure SQL Managed Instance Tag Location" style={{border: '1px solid gray'}} width="400" />
+    * Use the Eventhub namespace and Eventhub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Managed-SQL-Configure-Diagnostic-Logs.png')} alt="Azure SQL Managed Instance Tag Location" style={{border: '1px solid gray'}} width="800" />
+1. Tag the location field in the source with the right location value.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Location.png')} alt="Azure SQL Managed Instance Tag Location" style={{border: '1px solid gray'}} width="400" />
 
 #### Activity logs (optional)
 
@@ -81,8 +81,8 @@ import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
 As part of the app installation, the following fields will be created by default:
 
-- `tenant_name`. This is a collector level field and is set during the collector configuration. Its value is the name of your Azure tenant.
-- `location`. The region to which the resource name belongs to.
+- `tenant_name`. This is a collector-level field set during collector configuration. Its value is the name of your Azure tenant.
+- `location`. The region to which the resource name belongs.
 - `subscription_id`. ID associated with a subscription where the resource is present.
 - `resource_group`. The resource group name where the Azure resource is present.
 - `provider_name`. Azure resource provider name (for example, Microsoft.Sql).
@@ -174,7 +174,7 @@ Use this dashboard to:
 
 ### Database Wait Statistics
 
-The **Azure SQL Managed Instance - Database Wait Statistics** dashboard provides insight into wait patterns, wait type distribution, signal versus resource waits, and per-database wait time analysis.
+The **Azure SQL Managed Instance - Database Wait Statistics** dashboard provides insights into wait patterns, wait-type distribution, signal versus resource waits, and per-database wait-time analysis.
 
 Use this dashboard to:
 
@@ -192,7 +192,7 @@ Use this dashboard to:
 
 - Track total query executions, CPU time, and maximum duration to identify the most expensive workloads.
 - Identify the top queries by CPU and execution count using query hash to target optimization efforts.
-- Analyze logical I/O reads and writes and memory consumption by database to detect resource-intensive patterns.
+- Analyze logical I/O reads and writes and memory consumption by the database to detect resource-intensive patterns.
 
 <!--IMAGE_PLACEHOLDER: Azure-SQL-MI-Query-Performance.png-->
 
@@ -210,7 +210,7 @@ Use this dashboard to:
 
 ### DevOps Operations Audit
 
-The **Azure SQL Managed Instance - DevOps Operations Audit** dashboard covers control-plane audit events including session changes, server-level operations, and configuration events at the managed instance level.
+The **Azure SQL Managed Instance - DevOps Operations Audit** dashboard covers control-plane audit events, including session changes, server-level operations, and configuration events at the managed instance level.
 
 Use this dashboard to:
 
@@ -246,7 +246,7 @@ Use this dashboard to:
 
 ### Database Health and Workload Summary
 
-The **Azure SQL Managed Instance - Database Health and Workload Summary** dashboard provides a combined health view integrating error counts, wait statistics, and query performance metrics per database.
+The **Azure SQL Managed Instance - Database Health and Workload Summary** dashboard provides a combined health view that integrates error counts, wait statistics, and query performance metrics for each database.
 
 Use this dashboard to:
 
@@ -266,11 +266,11 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Azure SQL Managed Instance - High CPU Utilization` | This alert fires when average CPU utilization exceeds the threshold, indicating compute saturation. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
-| `Azure SQL Managed Instance - High Storage Utilization` | This alert fires when storage usage percentage exceeds the threshold, indicating storage pressure. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
-| `Azure SQL Managed Instance - Database Errors` | This alert fires when the total error count exceeds the threshold within the evaluation window. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
-| `Azure SQL Managed Instance - High Wait Time` | This alert fires when total wait time exceeds the threshold, indicating locking or I/O contention. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
-| `Azure SQL Managed Instance - Failed Security Audit Events` | This alert fires when the count of failed security audit events exceeds the threshold. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
+| `Azure SQL Managed Instance - High CPU Utilization` | This alert is triggered when average CPU utilization exceeds the threshold, indicating compute saturation. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
+| `Azure SQL Managed Instance - High Storage Utilization` | This alert is triggered when storage usage percentage exceeds the threshold, indicating storage pressure. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
+| `Azure SQL Managed Instance - Database Errors` | This alert is triggered when the total error count exceeds the threshold within the evaluation window. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
+| `Azure SQL Managed Instance - High Wait Time` | This alert is triggered when total wait time exceeds the threshold, indicating locking or I/O contention. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
+| `Azure SQL Managed Instance - Failed Security Audit Events` | This alert is triggered when the count of failed security audit events exceeds the threshold. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
 
 ## Upgrade/Downgrade the Azure SQL Managed Instance app (Optional)
 
