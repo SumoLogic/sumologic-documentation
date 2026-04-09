@@ -1,6 +1,7 @@
 ---
 slug: /metrics/metrics-operators
 title: Metrics Operators
+description: Reference guide to Sumo Logic metrics operators with syntax and usage examples for querying, transforming, and analyzing time series metrics data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
