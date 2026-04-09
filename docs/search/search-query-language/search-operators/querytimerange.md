@@ -8,7 +8,7 @@ The `queryTimeRange()` operator returns the time duration for the query being ex
 
 ## Syntax
 
-```sql
+```sumo
 queryTimeRange() as <field>
 ```
 
@@ -20,7 +20,7 @@ queryTimeRange() as <field>
 
 To get the range of time for your query:
 
-```sql
+```sumo
 error
 | queryTimeRange() as range
 ```

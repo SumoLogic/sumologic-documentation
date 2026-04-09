@@ -14,7 +14,7 @@ It is important to note that `backshift` does not automatically add timeslices, 
 
 ## Syntax
 
-```sql
+```sumo
 backshift <field> [, shift_length] [by <field>]
 ```
 

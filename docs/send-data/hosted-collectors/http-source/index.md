@@ -1,7 +1,7 @@
 ---
 slug: /send-data/hosted-collectors/http-source
 title: Configure HTTP Source for Logs, Metrics, Traces, OTLP
-description: An HTTP Source is an endpoint for receiving logs, metrics, traces, and OTLP uploaded via a URL.
+description: Configure HTTP Sources on Sumo Logic hosted collectors to receive logs, metrics, traces, and OTLP data uploaded via a unique, securely encoded URL.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -164,7 +164,7 @@ This app uses Sumo Logic’s [GitHub Copilot source](/docs/send-data/hosted-coll
 
 ## Sample queries
 
-```sql title="Code Suggestion Acceptance Rate Over Time"
+```sumo title="Code Suggestion Acceptance Rate Over Time"
 _sourceCategory="Labs/GithubCopilot"
 | json "date","copilot_ide_code_completions.editors[*].models[*].languages[*]" as date, copilot_ide_code_completions_editors_models_languages nodrop
 | extract field=copilot_ide_code_completions_editors_models_languages "\"?(?<editor_language>\{[^\}]+\})\"?[,\n\]]" multi

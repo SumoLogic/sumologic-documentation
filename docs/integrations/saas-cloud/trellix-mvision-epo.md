@@ -87,7 +87,7 @@ This app uses Sumo Logic’s [Trellix mVision ePO Source](/docs/send-data/hosted
 
 ## Sample queries
 
-```sql title="Total Threat Detections"
+```sumo title="Total Threat Detections"
 _sourceCategory="Trellix-mVision-ePO"
 | json "id", "attributes.threathandled", "attributes.threatseverity", "attributes.threattype", "attributes.threatcategory", "attributes.analyzerdetectionmethod", "attributes.targethostname", "attributes.threatname", "attributes.analyzeripv4", "attributes.timestamp", "attributes.sourcehostname", "attributes.sourceusername", "attributes.sourceprocessname", "attributes.targetprocessname", "attributes.threatactiontaken", "attributes.targetfilename", "attributes.targethash", "attributes.sourceipv4", "attributes.targetipv4", "attributes.targetport", "attributes.targetprotocol", "attributes.sourceurl", "attributes.targetusername", "attributes.targetipv6" as id, threat_handled, threat_severity, threat_type, threat_category, analyzer_detection_method, target_hostname, threat_name, analyzer_ipv4, timestamp, source_hostname, source_username, source_processname, target_processname, threat_action_taken, target_filename, target_hash, source_ipv4, target_ipv4, target_port, target_protocol, source_url, target_username, target_ipv6 nodrop
 

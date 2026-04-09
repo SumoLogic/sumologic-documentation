@@ -10,12 +10,12 @@ The square root function returns the square root value of x.
 
 ## Syntax
 
-```sql
+```sumo
 sqrt(<x>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 * | sqrt(4) as v
 ```

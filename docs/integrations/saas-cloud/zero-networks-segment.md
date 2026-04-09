@@ -100,7 +100,7 @@ This app uses Sumo Logic’s [Zero Networks Segment Source](/docs/send-data/host
 
 ## Sample queries
 
-```sql title="Total Audit Logs"
+```sumo title="Total Audit Logs"
 _sourceCategory="zero-networks-app" auditType
 | json "auditType", "details", "timestamp", "reportedObjectId", "performedBy.name", "performedBy.id", "destinationEntitiesList[*]", "enforcementSource", "userRole", "isoTimestamp" as audit_type, details, timestamp, reported_object_id, actor, actor_id, destination_entities_list, enforcement_source, user_role, iso_timestamp nodrop
 

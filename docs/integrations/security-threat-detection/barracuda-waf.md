@@ -43,7 +43,7 @@ The following table shows sample log messages for the corresponding log types.
 
 Sample Query is from **Top Clients by Bandwidth** panel of the **Barracuda WAF - Client Traffic** dashboard.
 
-```sql
+```sumo
 _sourceCategory=Labs/loggen/barracuda " TR "
 | parse regex "(?<Unit_Name>[^ ]+) TR(?<Log>.*)"
 | split Log delim=' ' extract 4 as Client_Ip, 13 as Bytes_Sent, 2 as Service_Ip, 3 as Service_Port
@@ -121,27 +121,27 @@ To configure logging in Barracuda WAF, do the following:
 
 The following shows field extraction rules for different log formats.
 
-```sql title="System Log"
+```sumo title="System Log"
 parse regex "(?<Unit_Name>[^ ]+) SYS(?<Log>.*)"
 | parse field=log " * * * *" as Module_Name, Log_Level, Event_Id, Log_Details
 ```
 
-```sql title="Web Firewall Log"
+```sumo title="Web Firewall Log"
 parse regex "(?<Unit_Name>[^ ]+) WF(?<Log>.*)"
 | parse field=Log " * * * * * * * * * * [*] * * * * \"*\" * * * * *" as Severity, Attack_Type, Client_Ip, Client_Port, Service_Ip, Service_Port, Rule, Rule_Type, Action, Follow_Up_Action, Attack_Details, Method, URL, Protocol, Session_Id, User_Agent, Proxy_Ip, Proxy_Port, User, Referrer, UID
 ```
 
-```sql title="Access Log"
+```sumo title="Access Log"
 parse regex "(?<Unit_Name>[^ ]+) TR(?<Log>.*)"
 | parse field=Log " * * * * * * * * * * * * * * * * * * * * * * * * * * * \"*\" * * * * * * *" as Service_Ip, Service_Port, Client_Ip, Client_Port, Login, Cretificate_User, Http_Method, Http_Protocol, Domain, HttpVersion, Response_Code, Bytes_Sent, Bytes_Received, Cache_Hit, Time_Taken, Backend_Server, Backend_Server_Port, Server_Time, Session_Id, Response_Type, Profile_Matched, Protected, WF_Matched, URL, Query_String, Referrer, Cookie, User_Agent, Proxy_ip, Proxy_Port, Authenticated_User, Custom_Header_1, Custom_Header_2, Custom_Header_3, UID
 ```
 
-```sql title="Audit Log"
+```sumo title="Audit Log"
 parse regex "(?<Unit_Name>[^ ]+) AUDIT(?<Log>.*)"
 | parse field=Log " * * * * * * * * * * * * * *" as Admin_Name, Client_Type, Login_Ip, Login_Port, Transaction_Type, Transaction_Id, Command_Name, Change_Type, Object_Type, Object_Name, Variable_Name, Old_Value, New_Value, Additional_Data
 ```
 
-```sql title="Network Firewall Log"
+```sumo title="Network Firewall Log"
 parse regex "(?<Unit_Name>[^ ]+) NF(?<Log>.*)"
 | parse field=Log " * * * * * * * * *" as Log_Level, Protocol, Source_Ip, Source_Port, Destination_Ip, Destination_Port, ACL_Policy, ACL_Name, Log_Details
 ```

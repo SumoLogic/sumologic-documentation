@@ -9,7 +9,7 @@ The **round** function returns the closest integer to x.
 
 ## Syntax
 
-```sql
+```sumo
 round(<x> [,<y>]) as <field>
 ```  
 
@@ -17,13 +17,13 @@ X is the value to round. Y is the number of decimal places to round to.
 
 ## Examples
 
-```sql
+```sumo
 * | round(1.549, 2) as a
 ```
 
 You can calculate the message volume for a specific Source Host using this query. You can use the round function to get the closest integer value of the volume.  
 
-```sql
+```sumo
 _index=sumologic_volume
 | where _sourceCategory="sourcehost_volume"
 | parse regex "\"(?<sourcehost>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi

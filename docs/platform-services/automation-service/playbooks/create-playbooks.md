@@ -2,7 +2,7 @@
 id: create-playbooks
 title: Create Playbooks
 sidebar_label: Create Playbooks
-description: Learn how to create playbooks in the Automation Service to run automated actions.   
+description: Create and configure Automation Service playbooks to run automated actions for monitors, Cloud SIEM insights, entities, and Cloud SOAR incidents.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

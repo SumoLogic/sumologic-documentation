@@ -79,7 +79,7 @@ Once opened in **Log Search**, you can click **Add to Dashboard** to add SLO das
 
 Sumo Logic continuously computes data for your SLOs behind the scenes. This data, which powers your SLO dashboards, is also made available as log messages, and can be used to build custom dashboards. You can execute the following query to access your SLO data in logs:
 
-```sql
+```sumo
 _view=sumologic_slo_output
 ```
 
@@ -109,7 +109,7 @@ The SLO lookup table resides under a fixed path, `sumo://content/slos`. You can 
 
 
 To join the results of your SLO precomputed data from `_view=sumologic_slo_output` with the metadata contained in the SLO lookup table, you can use the following query:
-  ```sql
+  ```sumo
   _view=sumologic_slo_output
   | lookup * from sumo://content/slos on sloId, sloVersion
   ```
@@ -124,7 +124,7 @@ Say you want a high-level overview into the health of your SLOs. A honeycomb vis
 
 You can use the following query to construct the above:
 
-```sql
+```sumo
 _view=sumologic_slo_output
 | lookup * from sumo://content/slos on sloId, sloVersion
 | where !isBlank (sloname) and slofolderpath matches "*"
@@ -142,7 +142,7 @@ _view=sumologic_slo_output
 
 Let's say you have multiple SLOs for your `ingestion` service and you want to visualize all of those together. You can tag all those SLOs with `service=ingestion` and then leverage your SLO tags in **Log Search** queries using the SLO lookup table. Here's the query that will return data from all your SLOs belonging to the `ingestion` service:
 
-```sql
+```sumo
 _view=sumologic_slo_output
 | lookup tags from sumo://content/slos on sloId, sloVersion
 | json field=tags "service"
@@ -153,7 +153,7 @@ Now that you have filtered the exact set of SLOs needed, all sorts of roll ups c
 
 In general, to display all of your SLOs that have one or more tags:
 
-```sql
+```sumo
 CAT sumo://content/slos
 | where !(tags = "{}")
 ```

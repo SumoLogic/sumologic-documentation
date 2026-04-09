@@ -117,7 +117,7 @@ This app uses Sumo Logic’s [Sumo Collection Source](/docs/send-data/hosted-col
 
 ### Sample queries
 
-```sql title="Total Sources"
+```sumo title="Total Sources"
 _sourceCategory="Labs/SumoCollection" sourceType
 | json "id", "sourceType", "alive", "schemaRef.type", "state.state", "state.errorType", "state.errorInfo", "config.name", "state.errorCode", "config.fields._siemForward", "name", "category", "hostName", "automaticDateParsing", "multilineProcessingEnabled", "useAutolineMatching", "forceTimeZone", "encoding",  "fields._siemForward" as id, source_type, alive, c2c_source, state, error_type, error_info, name, error_code, siem_forward, source_name, category, host_name, automatic_date_parsing, multiline_processing_enabled, use_autoline_matching, force_time_zone, encoding, source_siem_forward nodrop
 

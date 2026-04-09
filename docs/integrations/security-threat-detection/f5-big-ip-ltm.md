@@ -39,7 +39,7 @@ The F5 - BIG-IP Local Traffic Manager (LTM) app uses event logs with payloads, a
 
 The following query sample is from the **F5 - BIG-IP LTM - Overview** Dashboard, **Pool Status** panel.
 
-```
+```sumo
 _sourceCategory=f5/bigip/ltm  systemInfo
 | json field=_raw "telemetryEventCategory"  as telemetryEventCategory
 | json field=_raw "virtualServers"

@@ -10,10 +10,10 @@ The `isReservedIP` operator checks if an IPv4 address is reserved as defined by 
 
 ## Syntax
 
-```sql
+```sumo
 isReservedIP("<IPv4_string>") as <field>
 ```
-```sql
+```sumo
 isReservedIP(<IPv4_string_field>) [as <field>]
 ```
 
@@ -28,24 +28,24 @@ The following warning is shown when results are dropped or an IPv6 address is d
 
 ## Examples
 
-```sql
+```sumo
 | isReservedIP(dest_host)
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isReservedIP("127.0.0.0") as isReserved
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isReservedIP("169.254.0.0") as isReserved
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isReservedIP("192.0.0.0") as isReserved
 ```

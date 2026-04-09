@@ -38,7 +38,7 @@ ECDHE-RSA-CAMELLIA256-SHA384 TLSv1.2
 
 ### Sample queries
 
-```sql title="Response Codes Distribution by Domain and URI (Access Log Based)"
+```sumo title="Response Codes Distribution by Domain and URI (Access Log Based)"
 account={{account}} region={{region}} namespace={{namespace}}
 | parse "* * * * * * * * * * * \"*\" \"*\" * *" as datetime, loadbalancername, client, backend, request_processing_time, backend_processing_time, response_processing_time, elb_status_code, backend_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol
 | where tolowercase(loadbalancername) matches tolowercase("{{loadbalancername}}")
@@ -128,7 +128,7 @@ Rule Name: AwsObservabilityElbAccessLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/logs
 ```
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 | parse "* * * * * * * * * * * \"*\" \"*\" * *" as datetime, loadbalancername, client, backend, request_processing_time, backend_processing_time, response_processing_time, elb_status_code, backend_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol
 | parse regex field=datetime "(?<datetimevalue>\d{0,4}-\d{0,2}-\d{0,2}T\d{0,2}:\d{0,2}:\d{0,2}\.\d+Z)"
 | where !isBlank(loadbalancername) and !isBlank(datetimevalue)
@@ -145,7 +145,7 @@ Applied at: Ingest Time
 Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.amazonaws.com" "2012-06-01"
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.loadBalancerName" as event_source, region, accountid, loadbalancername nodrop 
 | where event_source = "elasticloadbalancing.amazonaws.com"
 | toLowerCase(loadbalancername) as loadbalancername 

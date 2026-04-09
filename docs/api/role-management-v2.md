@@ -48,7 +48,7 @@ V2 changes are **only** applicable for `RoleUpdate` and `RoleCreated` events.
 
 For example, consider you are interested in querying upon audit logs with change in `RoleUpdated` or `RoleCreated` events. Now, if you perform this search you will initially see the V1 type of event in the search results. However, to view the results with the V2 event type, you are required to adjust the parameters in the query.
 
-```sql title="V1 Audit Logging"
+```sumo title="V1 Audit Logging"
 (_index=sumologic_audit_events)
 | json fields=_raw "roleIdentity.roleName" as role_name
 | json fields=_raw "eventTime" as eventTime
@@ -59,7 +59,7 @@ For example, consider you are interested in querying upon audit logs with change
 | count by eventTime, eventName, actor, role_name, create_role, update_role
 ```
 
-```sql title="V2 Audit Logging"
+```sumo title="V2 Audit Logging"
 (_index=sumologic_audit_events)
 | json fields=_raw "roleIdentity.roleName" as role_name
 | json fields=_raw "eventTime" as eventTime

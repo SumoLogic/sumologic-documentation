@@ -125,7 +125,7 @@ Here's a sample log message you'd find in Non-Kubernetes environments.
 
 This sample Query is from the **RabbitMQ - Logs dashboard** > **Events** by Severity panel.
 
-```sql title="Query String"
+```sumo title="Query String"
  %"sumo.datasource"="rabbitmq" %"messaging.cluster.name"=* host.name=*
 | json "log" as _rawlog nodrop
 | if(isEmpty(_rawlog),_raw,_rawlog) as _raw
@@ -136,8 +136,9 @@ This sample Query is from the **RabbitMQ - Logs dashboard** > **Events** by Seve
 
 This sample query is from the **Average Number of Consumers** panel in **RabbitMQ - Metrics** dashboard.
 
-```sql sumo.datasource=rabbitmq metric=rabbitmq.consumer.count deployment.environment=*  messaging.cluster.name=* messaging.node.name=*  rabbitmq.queue.name=* rabbitmq.vhost.name=*
-| avg by messaging.cluster.name 
+```sql
+sumo.datasource=rabbitmq metric=rabbitmq.consumer.count deployment.environment=*  messaging.cluster.name=* messaging.node.name=*  rabbitmq.queue.name=* rabbitmq.vhost.name=*
+| avg by messaging.cluster.name
 | sum
 ```
 

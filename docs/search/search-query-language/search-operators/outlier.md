@@ -12,14 +12,14 @@ To do this, the Outlier operator tracks the moving average and standard deviatio
 
 ## Syntax
 
-```sql
+```sumo
 ...
 | timeslice <time_period>
 | <aggregate operator> as <field> by _timeslice
 | outlier <field> [window=<#>, threshold=<#>, consecutive=<#>, direction=<+->]
 ```
 
-```sql
+```sumo
 ...
 | timeslice <time_period>
 | <aggregate operator> by _timeslice, <field>
@@ -53,7 +53,7 @@ You can configure options by setting parameters through keyword arguments, such 
 
 For example, this query would set the following parameters:
 
-```sql
+```sumo
 ... | outlier <field> window=5,threshold=3,consecutive=2,direction=+-
 ```
 
@@ -79,7 +79,7 @@ For example, this query would set the following parameters:
 Run the following query to find outlier values in IIS logs over the last
 6 hours.
 
-```sql
+```sumo
 _sourceCategory=IIS/Access
 | parse regex "\d+-\d+-\d+ \d+:\d+:\d+ (?<server_ip>\S+) (?<method>\S+) (?<cs_uri_stem>/\S+?) \S+ \d+ (?<user>\S+) (?<client_ip>[\.\d]+) "
 | parse regex "\d+ \d+ \d+ (?<response_time>\d+)$"
@@ -97,7 +97,7 @@ The outlier values are represented by the pink triangles in the resulting chart.
 Run the following query to find outlier values in Apache logs over the
 last 3 hours.
 
-```
+```sumo
 _sourceCategory=Apache/Access
 | parse "HTTP/1.1\" * " as status_code
 | where status_code matches "5*"
@@ -115,7 +115,7 @@ resulting chart.
 
 You can also run a query like this:
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | timeslice 1m
 | count by _timeslice, _sourceHost
@@ -148,7 +148,7 @@ If you have used the outlier operator, it is easy to create a multidimensional o
 
 For example, the following example query will determine many time series, one per each `_sourceHost`:
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | timeslice 1m
 | count by _timeslice,_sourceHost
@@ -170,7 +170,7 @@ This way, you will not need to build an alert for each series of data (each `_so
 
 The following example query allows you to monitor when application users experience failures. It monitors all user accounts by unique user ID, and applies outlier to the amount of “fail” messages that occur across every user account:
 
-```sql
+```sumo
 _sourceCategory=O365*
 | parse "\"UserId\":\"*\"" as user_id
 | parse "\"ResultStatus\":\"*\"" as result
@@ -196,7 +196,7 @@ This section provides two examples of how to display multidimensional outlier re
 
 In this example, we’ll extract `_count_violation` from the multi-series outlier table and display that. This allows you to display the distribution of outliers among various time-series.
 
-```sql
+```sumo
 error (_sourceCategory=Apache* or _sourceCategory=IIS*)
 | timeslice 1m
 | count by _timeslice, _sourceCategory
@@ -215,7 +215,7 @@ This example query uses the **`_count_error`** (distance from the expected value
 
 This way, you can display outliers visually in terms of deviation from the expected value.
 
-```sql
+```sumo
 _sourceCategory=Apache*
 | timeslice 30m
 | count  by _timeslice, status_code

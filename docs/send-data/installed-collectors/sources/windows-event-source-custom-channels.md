@@ -1,7 +1,7 @@
 ---
 id: windows-event-source-custom-channels
 title: Windows Event Source Custom Channels
-description: Find Windows event channels to collect with a Local Windows Event Source.
+description: Find and configure Windows event channels for a Local or Remote Windows Event Source using PowerShell to list available channels and record counts.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,7 +16,7 @@ To find the available event channels for collection, execute the following Power
 
 Enter the following command into PowerShell:
 
-```
+```sumo
 # to see channels listed in the standard order
 Get-WinEvent -ListLog *
 

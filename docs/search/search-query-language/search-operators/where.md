@@ -10,11 +10,11 @@ The `where` operator allows you to filter results based on a boolean expressio
 For example, using `where` with the boolean operator [`isValidIP`](/docs/search/search-query-language/search-operators/isvalidip/#isvalidip):
 
 * Filters as true and returns results:
-    ```sql
+    ```sumo
     | where isValidIP("192.168.0.10")
     ```
 * Filters as false and will not return results:
-    ```sql
+    ```sumo
     | where !isValidIP("192.168.0.10")
     ```
 
@@ -22,18 +22,18 @@ The `where` operator must appear as a separate operator distinct from other oper
 
 This query will NOT work:
 
-```sql
+```sumo
 ...| parse "seconds=*;" as time where > 5
 ```
 
 Instead, separate the `where` operator from the preceding `parse` operator like this:
 
-```sql
+```sumo
 ...| parse "seconds=*;" as time  | where time > 5
 ```
 ## Syntax
 
-```sql
+```sumo
 ... | where <boolean expression> | ...
 ```
 
@@ -55,75 +55,75 @@ Use [comparison operators](/docs/search/search-query-language/field-expressions.
 
 ## Example
 
-```sql
+```sumo
 ... | where a<b
 ```
 
-```sql
+```sumo
 ... | where a=x
 ```
 
-```sql
+```sumo
 ... | where a>=x
 ```
 
-```sql
+```sumo
 ... | where a<=x
 ```
 
-```sql
+```sumo
 ... | where a<x
 ```
 
-```sql
+```sumo
 ... | where x<10
 ```
 
-```sql
+```sumo
 ... | where (x >=10 and x <=20)
 ```
 
-```sql
+```sumo
 ... | where x="some string"
 ```
 
-```sql
+```sumo
 ... | where _sourceCategory="xyz"
 ```
 
-```sql
+```sumo
 ... | where user<>"root"
 ```
 
-```sql
+```sumo
 ... | where x matches "some string"
 ```
 
-```sql
+```sumo
 ... | where x matches "fail*"
 ```
 
-```sql
+```sumo
 ... | where x matches /regex/
 ```
 
-```sql
+```sumo
 ... | where !(x matches /regex/)
 ```
 
-```sql
+```sumo
 ... | num(x) | where x in (4, 3, 5)
 ```
 
-```sql
+```sumo
 ... | where x in ("error", "fail")
 ```
 
-```sql
+```sumo
 ... | where x not in ("error", "fail")
 ```
 
-```sql
+```sumo
 ... | where x matches "Android" or x matches "iPhone" or x matches "iPad"
 ```
 
@@ -133,13 +133,13 @@ If you need a query using the `where` operator, where xxx DOES NOT match yyy,
 
 For example:
 
-```sql
+```sumo
 ...| where !(<field xxx> matches "<value yyy>") | ...
 ```
 
 or:
 
-```sql
+```sumo
 ...| where !(status matches "200")
 ```
 

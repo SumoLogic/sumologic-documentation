@@ -149,7 +149,7 @@ The Sumo Logic app for Squadcast ingests events into Sumo Logic through an outgo
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory=webhook/squadcast type "incident.triggered"
 | json "event.type", "event.resource" as type, resource nodrop
 | where type matches "{{type}}" and resource matches "{{resource}}"
@@ -191,7 +191,7 @@ Follow the below steps to configure the Squadcast webhook.
             - **Select Payload Template**. Choose from one of the pre-configured templates or create your own payload.
 7. Click **Save**.
 8. Verify Squadcast events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-  ```sql
+  ```sumo
   _sourceCategory=webhook/squadcast
   ```
 

@@ -10,7 +10,7 @@ The `values` operator provides all the distinct values of a field. This allows
 
 ## Syntax
 
-```sql
+```sumo
 values(<field>) [by <group_by_fields>] [as <field_name>]
 ```
 
@@ -38,7 +38,7 @@ This is an example of a response field with IP addresses:
 
 To identify all IP addresses by region:
 
-```
+```sumo
 _sourceCategory=Labs/*
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | values(ip_address) by region
@@ -46,7 +46,7 @@ _sourceCategory=Labs/*
 
 To identify all IP addresses and namespaces by region:
 
-```
+```sumo
 _sourceCategory=Labs/*
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | values(ip_address) as val_ip, values(namespace) as val_namespace by region
@@ -54,7 +54,7 @@ _sourceCategory=Labs/*
 
 To identify all sources by error type in my stack that logged an error in the last 24 hours:
 
-```sql
+```sumo
 _sourceCategory=prod01*
 | parse regex "(?i)(?<log_level>WARN|CRITICAL|ERROR|FATAL)"
 | toUppercase(log_level)
@@ -64,7 +64,7 @@ _sourceCategory=prod01*
 
 To identify users that logged in from more than one country in the last 24 hours with a list of countries logged in from:
 
-```sql
+```sumo
 _sc=org-service “login”
 | parse username
 | geolookup country on ip=login_ip
@@ -76,14 +76,14 @@ _sc=org-service “login”
 
 To know if my services have interacted with any known IOC threats.
 
-```sql
+```sumo
 ...| values(IOC) by src_ip
 ```
 
 To understand what ports were scanned or communicated over by one
 `src_ip`.
 
-```sql
+```sumo
 _source="PatchingInfo" and _collector="AWS SecurityHub Non Prod"
 | json field=_raw "port_name" as ports
 | json field=_raw "src_ip" as src_ip

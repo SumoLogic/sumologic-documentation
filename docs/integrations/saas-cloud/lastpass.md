@@ -34,7 +34,7 @@ This app uses Sumo Logic’s LastPass Source to collect [audit events](https://s
 ```
 ## Sample queries
 
-```sql title="Top 10 Active Users"
+```sumo title="Top 10 Active Users"
 _sourceCategory="lastpass_event" Action Username
 | json "Time","Username", "Action","IP_Address", "Data" as time, user, action, ip_address, data nodrop
 

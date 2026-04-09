@@ -153,7 +153,7 @@ import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configurat
 
 This is a sample log query from the **Errors** panel.
 
-```sql
+```sumo
 db.system=elasticsearch %"deployment.environment"={{deployment.environment}} db.cluster.name={{db.cluster.name}} ERROR | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw
 | json field=_raw "timestamp" as timestamp

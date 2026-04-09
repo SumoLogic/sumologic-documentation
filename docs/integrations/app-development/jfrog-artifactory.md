@@ -58,8 +58,8 @@ admin/149.5.95.40.
 
 ### Sample queries
 
-```sql title="Requests by Repo"
-_sourceCategory = Labs/artifactory/*
+```sumo title="Requests by Repo"
+_sourceCategory=Labs/artifactory/*
 | where _sourceCategory matches "*artifactory/request"
 | parse "*|*|*|*|*|*|*|*|*|*|*" as datetime, traceid, ip, user, method, path, status_code, response_size, request_size, response_time, user_agent
 | where !(path matches "/ui*" ) and !(path matches "/webapp*")
@@ -69,8 +69,8 @@ _sourceCategory = Labs/artifactory/*
 | sort by count
 ```
 
-```sql title="Denied Login Attempts"
-_sourceCategory = Labs/artifactory/* "login" DENIED
+```sumo title="Denied Login Attempts"
+_sourceCategory=Labs/artifactory/* "login" DENIED
 | where _sourceCategory matches "*artifactory/access"
 | parse " [*] *" as event_type, user_info
 | parse regex field=user_info "\s*for\s*\w+\s*:\s*(?<user>[^\/]+)\s*\/\s*(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\."| where event_type = "DENIED LOGIN"
@@ -79,8 +79,8 @@ _sourceCategory = Labs/artifactory/* "login" DENIED
 ```
 
 
-```sql title="Most Active Locations"
-_sourceCategory = Labs/artifactory/*
+```sumo title="Most Active Locations"
+_sourceCategory=Labs/artifactory/*
 | where _sourceCategory matches "*artifactory/traffic"
 | parse regex "(?<year>\d{4})(?<month>\d{2})(?<day>\d{2})(?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})\|(?<traceid>\w+)\|\d*\|(?<direction>[^|]*)\|\s*(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[^|]*)\|(?<repo>[^:]*):(?<fullfilepath>[^|]*)\|(?<size>\d*)" nodrop
 | where !isNull(ip) and ip != ""
@@ -200,19 +200,19 @@ If you already have an existing connection set up via Artifactory Online:
 
 Here are Artifactory extraction rules that use different approaches.
 
-```sql title="Traffic"
+```sumo title="Traffic"
 _sourceCategory=*artifactory*
 | where _sourceCategory matches "*artifactory/traffic"
 | parse regex "(?<year>\d{4})(?<month>\d{2})(?<day>\d{2})(?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})\|\d*\|(?<direction>[^|]*)\|\s*(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[^|]*)\|(?<repo>[^:]*):(?<fullfilepath>[^|]*)\|(?<size>\d*)" nodrop
 ```
 
-```sql title="Access Logs"
+```sumo title="Access Logs"
 _sourceCategory=*artifactory*
 | where _sourceCategory matches "*artifactory/access"
 | parse "[*] *:* for */*" as what, repo, path, user, ip
 ```
 
-```sql title="Request Logs"
+```sumo title="Request Logs"
 _sourceCategory=*artifactory*
 | where _sourceCategory matches "*artifactory/request"
 | parse "*|*|*|*|*|*|*|*|*|*" as datetime, response_time, type, ip, user, method, path, protocol, status_code, size

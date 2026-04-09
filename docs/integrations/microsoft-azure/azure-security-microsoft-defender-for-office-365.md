@@ -109,7 +109,7 @@ The Azure Security – Microsoft Defender for Office 365 app uses SumoLogic’s 
 
 ### Sample queries
 
-```sql title="Recent Alerts"
+```sumo title="Recent Alerts"
 _sourceCategory=Labs/AzureSecurityMicrosoftDefenderFor365 microsoftDefenderForOffice365
 | json "id", "status", "severity", "category", "title", "description", "classification", "determination", "serviceSource", "alertWebUrl" as alert_id, status, severity, category, title, description, classification, determination, service_source, alert_url nodrop
 | where toLowerCase(service_source) matches "microsoftdefenderforoffice365"

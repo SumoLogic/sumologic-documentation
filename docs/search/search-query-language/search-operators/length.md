@@ -10,7 +10,7 @@ For example, you'd use the Length operator in free text fields where content is 
 
 ## Syntax
 
-```sql
+```sumo
 length(<field>) [as <field>]
 ```
 
@@ -25,7 +25,7 @@ length(<field>) [as <field>]
 
 Use the following query to find queries under 20 characters.
 
-```sql
+```sumo
 _sourceCategory=apache error
 | parse "query: *," as query
 | where length(query) <= 20
@@ -35,7 +35,7 @@ _sourceCategory=apache error
 
 Use this query to count results by the length of the query.
 
-```sql
+```sumo
 _sourceCategory=apache error
 | parse "query: *," as query
 | length(query) as query_length

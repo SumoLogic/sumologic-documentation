@@ -44,7 +44,7 @@ Your data may be a string data type instead of a number. Most aggregate operator
 
 Example:
 
-```sql
+```sumo
 _sourceCategory=concierge completed execution
 | parse "Execution duration: * s" as duration
 | timeslice 5m

@@ -56,7 +56,7 @@ started (kafka.server.KafkaServer)
 
 This sample query string is from the Logs panel of the **Kafka - Logs** dashboard.
 
-```sql
+```sumo
 messaging_cluster=* messaging_system="kafka" \
 | json auto maxdepth 1 nodrop | if (isEmpty(log), _raw, log) as kafka_log_message \
 | parse field=kafka_log_message "[*] * *" as date_time,severity,msg | where severity in ("ERROR", "FATAL") \
