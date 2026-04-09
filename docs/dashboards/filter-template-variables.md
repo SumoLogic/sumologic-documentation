@@ -113,7 +113,7 @@ This task shows you how to modify an existing template variable in a Dashboard 
 To edit a template variable, do the following:
 
 1. Hover the cursor over the end of the template variable field to display the options icon.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/options-menu-for-variable.png')} style={{border:'1px solid gray'}} alt="options-menu-for-variable" width="800"/>
-1. Click the **Details** icon and select **Edit** from the dropdown menu. The Edit Variable dialog appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/edit-variable.png')} style={{border:'1px solid gray'}} alt="edit-variable" width="800"/>
+1. Click the options icon and select **Edit** from the dropdown menu. The **Edit Template Variable** dialog appears.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/edit-variable.png')} style={{border:'1px solid gray'}} alt="edit-variable" width="800"/>
 1. Edit the variable as needed.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/edit-variable-dialog.png')} style={{border:'1px solid gray'}} alt="edit-variable-dialog" width="800"/>
 1. Click **Save Template Variable** to apply your changes.
 
