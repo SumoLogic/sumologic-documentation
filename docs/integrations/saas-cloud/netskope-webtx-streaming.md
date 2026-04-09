@@ -1,6 +1,6 @@
 ---
 id: netskope-webtx-streaming
-title: Netskope WebTx Streaming (Beta)
+title: Netskope WebTx Streaming (Private Preview)
 sidebar_label: Netskope WebTx Streaming
 description: The Sumo Logic app for Netskope WebTx Streaming collects transaction events from the Netskope platform to enhance visibility into your web transactions.
 ---
@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview">Private Preview</span></a></p>
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope WebTx icon" width="50" />
 

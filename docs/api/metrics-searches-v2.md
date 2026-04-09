@@ -1,8 +1,8 @@
 ---
 id: metrics-searches-v2
-title: Metrics Search Management APIs (V2)
-sidebar_label: Metrics Searches (V2)
-description: Use Metrics Search Management APIs (V2) endpoints to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization.
+title: Metrics Search Management APIs v2 (Public Preview)
+sidebar_label: Metrics Searches v2
+description: Use Metrics Search Management APIs v2 endpoints to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,9 +11,9 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/>
 
-<!-- Originally added as a beta article with SUMO-124040. -->
+<!-- Originally added as a preview article with SUMO-124040. -->
 
-Use Metrics Search Management APIs V2 to save metrics searches in the content library, organize them in a folder hierarchy, and list metrics searches under your personal folder.
+Use Metrics Search Management APIs V2 (Public Preview) to save metrics searches in the content library, organize them in a folder hierarchy, and list metrics searches under your personal folder.
 
 ## Documentation
 

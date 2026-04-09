@@ -1,6 +1,6 @@
 ---
 id: infrequent-tier-dashboard-support
-title: Infrequent Tier Support for Dashboards
+title: Infrequent Tier Support for Dashboards (Private Preview)
 description: Learn how to set up dashboard panels against the Infrequent data tier.
 ---
 
@@ -10,9 +10,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview">Private Preview</span></a></p>
 
-<!-- Originally added as a beta article with DASH-734. -->
+<!-- Originally added as a preview article with DASH-734. -->
 
 Previously, dashboards were only supported in our Continuous data tier. With this update, you can set up dashboard panels to include data from the Infrequent Tier.
 

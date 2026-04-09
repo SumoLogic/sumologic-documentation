@@ -87,5 +87,3 @@ Follow Sumo Logic social media for company news and updates:
 <a href="https://www.linkedin.com/company/sumo-logic" style={{marginRight: '12px'}}><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" width="32" height="32" alt="LinkedIn"/></a>
 <a href="https://x.com/SumoLogic" style={{marginRight: '12px'}}><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/X_icon.svg" width="32" height="32" alt="X"/></a>
 <a href="https://www.facebook.com/Sumo.Logic"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" width="32" height="32" alt="Facebook"/></a>
-
-### Release types

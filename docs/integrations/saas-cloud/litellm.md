@@ -1,6 +1,6 @@
 ---
 id: litellm
-title: LiteLLM
+title: LiteLLM (Private Preview)
 sidebar_label: LiteLLM
 description: The Sumo Logic app for LiteLLM provides visibility into LLM proxy usage, cost, latency, deployment health, and performance across OpenAI, Bedrock, Groq, and other providers.
 ---
@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview">Private Preview</span></a></p>
 
 <img src={useBaseUrl('img/send-data/litellm-icon.png')} alt="LiteLLM icon" width="45"/>
 
