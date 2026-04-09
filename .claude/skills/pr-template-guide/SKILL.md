@@ -87,12 +87,12 @@ This pull request {clear description of what changed and why}.
 
 ## Ticket (if applicable)
 
-{TICKET-1234 or leave blank if no ticket}
+{https://sumologic.atlassian.net/browse/DOCS-1234 or leave blank if no ticket}
 ```
 
 ## Best Practices
 
-1. **Ask for ticket number** - Always ask for the Jira/GitHub ticket number (e.g., DOCS-1234). Optional for quick typo fixes or small bug fixes.
+1. **Ask for ticket number** - Always ask for the Jira/GitHub ticket number (e.g., DOCS-1234). Use the full URL in the PR body. Optional for quick typo fixes or small bug fixes.
 2. **Pre-check the right box** - Analyze the changes and pre-select the appropriate type
 3. **Write clear descriptions** - First line should summarize changes, add bullets for details
 4. **Format for gh pr create** - Use heredoc format for proper multiline PR bodies
@@ -121,7 +121,7 @@ This pull request adds documentation for the PostgreSQL app integration. This in
 
 ## Ticket (if applicable)
 
-DOCS-1234
+https://sumologic.atlassian.net/browse/DOCS-1234
 ```
 
 ### Example 2: Content Updates
@@ -140,7 +140,7 @@ This pull request updates the CloudTrail documentation to reflect the new authen
 
 ## Ticket (if applicable)
 
-DOCS-5678
+https://sumologic.atlassian.net/browse/DOCS-5678
 ```
 
 ### Example 3: Quality Fixes
@@ -202,15 +202,15 @@ This pull request updates Docusaurus from v3.1.0 to v3.2.0 and updates related d
 
 ## Ticket (if applicable)
 
-DOCS-9012
+https://sumologic.atlassian.net/browse/DOCS-9012
 ```
 
 ## Ticket Number Patterns
 
-Ticket numbers are preferred for most PRs. Recognize and accept common patterns:
-- **Jira**: `DOCS-1234`, `CONN-5678`, `SUMO-9012`
-- **GitHub**: `#123`, `GH-456`
-- **Asana**: URL or task ID
+Ticket links are preferred for most PRs. Always use full URLs:
+- **Jira**: `https://sumologic.atlassian.net/browse/DOCS-1234`
+- **GitHub**: `https://github.com/SumoLogic/sumologic-documentation/issues/123`
+- **Asana**: Full task URL
 
 **When tickets are optional:**
 - Quick typo fixes (1-2 word changes)
@@ -264,7 +264,7 @@ This pull request adds documentation for the PostgreSQL app integration.
 
 ## Ticket (if applicable)
 
-DOCS-1234
+https://sumologic.atlassian.net/browse/DOCS-1234
 EOF
 )"
 ```

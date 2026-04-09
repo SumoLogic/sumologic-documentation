@@ -197,7 +197,7 @@ The Amazon RDS app uses the following logs and metrics:
 Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=* dbidentifier=* | avg by account, region, dbidentifier
 ```
 
-```sql title="Top 10 Error Codes (MySQL CloudTrail Log based)"
+```sumo title="Top 10 Error Codes (MySQL CloudTrail Log based)"
 "\"eventsource\":\"rds.amazonaws.com\"" errorCode account=dev Namespace=aws/rds region=us-east-1
 | json "eventTime", "eventName", "eventSource", "awsRegion", "userAgent", "recipientAccountId", "userIdentity", "requestParameters", "responseElements", "errorCode", "errorMessage",  "requestID", "sourceIPAddress" as eventTime, event_name, event_source, Region, user_agent, accountId1, userIdentity, requestParameters, responseElements, error_code, error_message, requestID, src_ip nodrop
 | where event_source = "rds.amazonaws.com" and !isEmpty(error_code)
@@ -213,7 +213,7 @@ Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=
 | top 10 error_code by Frequency, error_code asc
 ```
 
-```sql title="Error Logs (MySQL CloudWatch log based)"
+```sumo title="Error Logs (MySQL CloudWatch log based)"
 account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds*Error Warning
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse field=message "[*] *" as LogLevel, msgDetails
@@ -223,7 +223,7 @@ account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds*Error W
 | sort by _timeslice, msgDetails asc
 ```
 
-```sql title="SlowQuery Logs (MySQL CloudWatch log based)"
+```sumo title="SlowQuery Logs (MySQL CloudWatch log based)"
 account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds*SlowQuery "User@Host" "Query_time"
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse regex field=message "(?<query_block># User@Host:[\S\s]+?SET timestamp=\d+;[\S\s]+?;)" multi
@@ -238,7 +238,7 @@ account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds*SlowQue
 | sort by avgTime | limit 100
 ```
 
-```sql title="Audit Logs (MySQL CloudWatch log based)"
+```sumo title="Audit Logs (MySQL CloudWatch log based)"
 account=* region=* dbidentifier=* namespace=aws/rds _sourceHost=/aws/rds*Audit CONNECT
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse field=message ",*,*,*,*,*,*,*,*,*" as instance, user, host, f1, f2, action, database, f3, f4 nodrop
@@ -247,7 +247,7 @@ account=* region=* dbidentifier=* namespace=aws/rds _sourceHost=/aws/rds*Audit C
 | count as eventCount
 ```
 
-```sql title="General Logs (MySQL CloudWatch log based)"
+```sumo title="General Logs (MySQL CloudWatch log based)"
 account=* region=* dbidentifier=* namespace=aws/rds _sourceHost=/aws/rds*general Connect
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse regex field=message "\s*\d+\s+(?<cmdType>\S+)\s*(?<command>.*)"
@@ -261,7 +261,7 @@ account=* region=* dbidentifier=* namespace=aws/rds _sourceHost=/aws/rds*general
 | sort by count, user asc | limit 20
 ```
 
-```sql title="Slow Queries (PostgreSQL CloudWatch log based)"
+```sumo title="Slow Queries (PostgreSQL CloudWatch log based)"
 account=* region=* namespace=aws/rds _sourceHost=/aws/rds*postgresql dbidentifier=* duration
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse field=message "* * *:*(*):*@*:[*]:*:*" as date,time,time_zone,host,thread_id,user,database,processid,severity,msg
@@ -272,7 +272,7 @@ account=* region=* namespace=aws/rds _sourceHost=/aws/rds*postgresql dbidentifie
 | count
 ```
 
-```sql title="Failed Authentications (PostgreSQL CloudWatch log based)"
+```sumo title="Failed Authentications (PostgreSQL CloudWatch log based)"
 account=* region=* namespace=aws/rds _sourceHost=/aws/rds*postgresql dbidentifier=* "authentication failed"
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse field=message "* * *:*(*):*@*:[*]:*:*" as date,time,time_zone,host,thread_id,user,database,processid,severity,msg
@@ -281,7 +281,7 @@ account=* region=* namespace=aws/rds _sourceHost=/aws/rds*postgresql dbidentifie
 | count as %"Count"
 ```
 
-```sql title="Failed Authentications (MSSQL CloudWatch log based)"
+```sumo title="Failed Authentications (MSSQL CloudWatch log based)"
 account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds/*Error Logon Login failed for user
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse field=message "* Logon       Login failed for user '*'. Reason: * [CLIENT: *]" as time, user, reason, client_ip
@@ -292,7 +292,7 @@ account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds/*Error 
 | sort by _timeslice
 ```
 
-```sql title="Engine and Its DB Instance (Oracle CloudTrail log based)"
+```sumo title="Engine and Its DB Instance (Oracle CloudTrail log based)"
 account=* region=* namespace=aws/rds "\"eventSource\":\"rds.amazonaws.com\"" !errorCode
 | json "eventTime", "eventName", "eventSource", "awsRegion", "userAgent", "recipientAccountId", "userIdentity", "requestParameters", "responseElements", "errorCode", "errorMessage",  "requestID", "sourceIPAddress" as eventTime, event_name, event_source, Region, user_agent, accountId1, userIdentity, requestParameters, responseElements, error_code, error_message, requestID, src_ip nodrop
 | where event_source = "rds.amazonaws.com"
@@ -311,7 +311,7 @@ account=* region=* namespace=aws/rds "\"eventSource\":\"rds.amazonaws.com\"" !er
 | fields -freq
 ```
 
-```sql title="ORA Messages Over Time (Oracle CloudWatch log based)"
+```sumo title="ORA Messages Over Time (Oracle CloudWatch log based)"
 account=* region=* namespace=aws/rds dbidentifier=*  _sourceHost=/aws/rds/*alert ORA-*
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message 
 | parse regex field=message "(?<oraerr>ORA-\d{5}): (?<oramsg>.*)" multi
@@ -320,7 +320,7 @@ account=* region=* namespace=aws/rds dbidentifier=*  _sourceHost=/aws/rds/*alert
 | transpose row _timeslice column oraerr
 ```
 
-```sql title="Database Availability (Proxy CloudWatch log based)"
+```sumo title="Database Availability (Proxy CloudWatch log based)"
 account=* region=* namespace=aws/rds proxyname=* _sourceHost=/aws/rds/proxy/* "Database" and "is now available for read/write access"
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse regex field=message "\"(?<dbidentifier>[^\"]+)\" at (?<db_host>\d{1,3}(?:\.\d{1,3}){3}):(?<db_port>\d+) is now available for read/write access from (?<client_ip>\d{1,3}(?:\.\d{1,3}){3})(?:\. Version: (?<db_version>.+))?" nodrop
@@ -440,7 +440,7 @@ Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "rds.amazonaws.com"
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 | json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as eventSource, region, requestParameters, responseElements, accountid nodrop 
 | where eventSource = "rds.amazonaws.com" | "aws/rds" as namespace  
 | json field=requestParameters "dBInstanceIdentifier", "resourceName", "dBClusterIdentifier", "dBProxyName" as dBInstanceIdentifier1, resourceName, dBClusterIdentifier1, dBProxyName1 nodrop 
@@ -470,7 +470,7 @@ Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 
 Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your AWS account ID with the AWS account alias you set up earlier for the individual child account
 | "" as account

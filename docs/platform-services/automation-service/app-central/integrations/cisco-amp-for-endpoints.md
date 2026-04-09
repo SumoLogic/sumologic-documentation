@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-amp-for-endpoints.png')} alt="cisco-amp-for-endpoints" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-amp-for-endpoints.png')} alt="Cisco AMP for Endpoints icon" width="70"/>
 
 ***Version: 1.2  
 Updated: Jun 21, 2023***

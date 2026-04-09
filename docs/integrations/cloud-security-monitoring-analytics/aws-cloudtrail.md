@@ -64,7 +64,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 }
 ```
 
-```sql title="Field Extraction Template"
+```sumo title="Field Extraction Template"
 | parse "\"sourceIPAddress\":\"*\"" as source_ipaddress
 | parse "\"eventName\":\"*\"" as event_name
 | parse "\"eventSource\":\"*\"" as event_source
@@ -74,7 +74,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 
 ### Sample queries
 
-```sql title="Created and Deleted Network and Security Events"
+```sumo title="Created and Deleted Network and Security Events"
 _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
 | parse "\"userName\":\"*\"" as user
 | parse "\"eventName\":\"*\"" as event

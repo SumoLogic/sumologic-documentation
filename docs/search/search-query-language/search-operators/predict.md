@@ -35,7 +35,7 @@ The syntax for **`predict`** varies depending on whether you use the linear regr
 
 For the linear regression model:
 
-```sql
+```sumo
 ... | timeslice 1m | count by _timeslice | predict _count by 1m
 ```
 
@@ -48,7 +48,7 @@ output:  
 
 ## Syntax for the auto-regressive model
 
-```sql
+```sumo
 ... | timeslice 1m | count by _timeslice | predict _count by 1m model=ar, ar.window=n, forecast=n
 ```
 
@@ -62,7 +62,7 @@ The table below defines the parameters for running `predict` using the AR model.
 
 In the following query, the first three lines count the number of messages that contain an error term for every half minute. The last line uses the auto-regressive model to predict 100 data points in the future, based on 50 data points.
 
-```sql
+```sumo
 _sourceCategory=taskmanager jobState=InQueue error | timeslice 30s | count by _timeslice | predict _count by 30s model=ar,ar.window=50,forecast=100
 ```
 
@@ -89,7 +89,7 @@ If there are cyclical patterns that fit within the `ar.window`, the auto-regress
 
 For example, if there is an hourly cyclical pattern, the following query will learn that cycle:
 
-```sql
+```sumo
 ... | timeslice 5m
 | <aggregate function> by _timeslice as _val  
 | predict _val by 5m model=ar, ar.window=15
@@ -103,7 +103,7 @@ In this query, the window size (15 consecutive data points) covers more than 1 h
 
 This query predicts the count of 404 errors per minute using linear regression.
 
-```sql
+```sumo
 _sourceCategory=Labs/Apache/Access status_code=404 | timeslice 1m | count(status_code) as error_count by _timeslice | predict error_count by 1m
 ```
 
@@ -119,7 +119,7 @@ From here, you can select the **Line Chart** icon, and automatically create a 
 
 This query predicts the count of 404 errors per minute using the auto-regressive model.
 
-```sql
+```sumo
 _sourceCategory=Labs/Apache/Access status_code=404 | timeslice 1m | count(status_code) as error_count by _timeslice | predict error_count by 1m model=ar
 ```
 

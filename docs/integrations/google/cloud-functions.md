@@ -21,7 +21,7 @@ The Sumo Logic app for Google Cloud Functions uses the following logs and metric
 
 ### Sample queries
 
-```sql title="Created Resources Over Time"
+```sumo title="Created Resources Over Time"
 _sourceCategory=*gcp* logName textPayload "\"type\":\"cloud_function\"" "\"textPayload\":\"Function execution took"
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/cloudfunctions.googleapis.com%2Fcloud-functions"

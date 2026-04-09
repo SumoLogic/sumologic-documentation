@@ -158,7 +158,7 @@ To find a mismatch from a `lookup`  query, use the [isNull](/docs/search/searc
 
 For example:
 
-```sql
+```sumo
 | parse "code=*]" as code
 | lookup status_code from shared/statusupdates on status = code
 | if (isNull(status_code), "unknown", status_code) as status_code

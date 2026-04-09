@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ibm-maximo.png')} alt="ibm-maximo" width="60"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ibm-maximo.png')} alt="IBM Maximo icon" width="60"/>
 
 ***Version: 1.3  
 Updated: Jul 07, 2023***

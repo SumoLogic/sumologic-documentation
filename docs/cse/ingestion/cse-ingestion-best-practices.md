@@ -35,7 +35,7 @@ We recommend the following ingestion methods, starting with the most preferred:
     If there is a parser for your data source, but you find it doesn’t completely meet your needs–for instance if the parser doesn’t support the particular log format you use–consider customizing the parser with a [local configuration](/docs/cse/schema/parser-editor#create-a-local-configuration-for-a-system-parser). If that’s not practical, you can submit a request for a new parser by filing a ticket at [https://support.sumologic.com](https://support.sumologic.com/).  
 
     When you forward logs to Cloud SIEM for parser processing, there are two bits of important configuration: 
-    1. Configure the source to forward logs. To configure an HTTP source to send log messages to Cloud SIEM, click the [**SIEM Processing** checkbox](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source). You can configure other source types to send data to Cloud SIEM by assigning a field named `_siemforward`, set to *true*, to the source. For example:  
+    1. Configure the source to forward logs. To configure an HTTP source to send log messages to Cloud SIEM, click the [**SIEM Processing** check box](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source). You can configure other source types to send data to Cloud SIEM by assigning a field named `_siemforward`, set to *true*, to the source. For example:  
 
         ```
         _siemforward=true

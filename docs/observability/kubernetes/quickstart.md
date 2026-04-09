@@ -20,7 +20,7 @@ This guide will walk you through setting up the [Sumo Logic Kubernetes solution]
 :::tip
 As an alternative to this quickstart, you can use our in-product onboarding to accomplish the same tasks in single setup workflow. Go to **App Catalog** > **Kubernetes** > **Begin Integration**.
 
-<img src={useBaseUrl('img/observability/k8s-onboarding.png')} alt="k8s-onboarding" />
+<img src={useBaseUrl('img/observability/k8s-onboarding.png')} alt="Kubernetes onboarding" />
 :::
 
 :::training Micro Lesson

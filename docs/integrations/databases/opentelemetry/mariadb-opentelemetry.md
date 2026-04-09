@@ -178,7 +178,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 Following query is from the "Errors" panel of the overview dashboard in Mariadb app: 
 
-```sql
+```sumo
  %"sumo.datasource"=mariadb %"deployment.environment"=* %"db.cluster.name"=* "[ERROR]"
 | json "log" nodrop
 | if (isEmpty(log), _raw, log) as mariadb_log_message

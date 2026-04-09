@@ -54,7 +54,7 @@ The Druva app utilizes Sumo Logic's Druva Source to gather [Audit Events](https:
 
 ## Sample queries
 
-```sql title="Number of Users"
+```sumo title="Number of Users"
 _sourceCategory="druva_app"
 |json"eventID","eventType","eventState","eventDetails","initiator","inSyncUserID","inSyncUserName","inSyncUserEmail","inSyncDataSourceID","clientOS","ip","timestamp","severity" as event_id,event_type,event_state,event_details,initiator,user_id,user_name,user_email,device_id,client_os,ip,time_stamp,severity nodrop
 | where severity matches "{{severity}}"

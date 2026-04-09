@@ -18,11 +18,11 @@ The input to the operator is a percentile. For example:
 
 ## Syntax
 
-```sql
+```sumo
 ...| pct(<field> [, percentile]) [as <field>] [by <field>]
 ```
 
-```sql
+```sumo
 ...| pct(<field> [, percentile, percentile, percentile]) [by <field>]
 ```
 
@@ -35,7 +35,7 @@ The input to the operator is a percentile. For example:
 
 ## Examples
 
-```sql
+```sumo
 | parse "filesize=*:" as filesize
 | pct(filesize, 75, 95) by _sourceHost
 ```

@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-confluence.png')} alt="atlassian-confluence" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-confluence.png')} alt="Atlassian Confluence icon" width="80"/>
 
 ***Version: 1.0  
 Updated: Oct 13, 2023***

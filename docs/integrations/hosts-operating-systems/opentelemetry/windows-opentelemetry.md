@@ -98,7 +98,7 @@ If you receive an error during installation that includes the message `failed to
 
 ## Sample metrics message
 
-```sql
+```sumo
 {
 	"queryId":"A",
 	"_source":"windows-otel-metric",
@@ -135,7 +135,7 @@ sumo.datasource=windows host.name={{host.name}} cpu=cpu0  metric=system.cpu.uti
 
 This is a sample log query from the **System Restarts** panel in the **Windows - Overview** dashboard.
 
-```sql title="Log Query String"
+```sumo title="Log Query String"
 %"sumo.datasource"=windows  "\"channel\":\"Security\""
 | json "event_id", "computer", "message", "channel" as event_id_obj, host.name, msg_summary, channel nodrop 
 | json field=event_id_obj "id" as event_id

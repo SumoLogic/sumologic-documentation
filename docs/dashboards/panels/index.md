@@ -165,13 +165,13 @@ The link is displayed is in the panel.
 
 ## Services Panel
 
-<img src={useBaseUrl('/img/dashboards/panels/icon-service-map.png')} style={{border: '1px solid gray'}} alt="icon-service-map" width="75"/>
+<img src={useBaseUrl('/img/dashboards/panels/icon-service-map.png')} style={{border: '1px solid gray'}} alt="Icon service map" width="75"/>
 
 The [Services List and Map](/docs/apm/services-list-map) views display high-level views of your application environment, giving you a greater insight into your application architecture and dependencies between monitored microservices.
 
 The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click on a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
 
-You can filter the map according to application and service. See the [Dashboard](/docs/dashboards/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.<br/><img src={useBaseUrl('/img/dashboards/panels/panel-service.png')} style={{border: '1px solid gray'}} alt="panel-service" width="800"/>
+You can filter the map according to application and service. See the [Dashboard](/docs/dashboards/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.<br/><img src={useBaseUrl('/img/dashboards/panels/panel-service.png')} style={{border: '1px solid gray'}} alt="Panel service" width="800"/>
 
 To add a Services panel:
 
@@ -182,12 +182,12 @@ To add a Services panel:
     * To pass the variables from dashboard filters, set `application={{application}}` and/or `service={{service}}`.
 1. Do not set the time. Service Map always shows last 72h of data.
 1. The **Chart Type** is set to Graph.
-1. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.<br/><img src={useBaseUrl('/img/apm/traces/tracelist-details.png')} style={{border: '1px solid gray'}} alt="tracelist-details" width="400"/>
+1. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.<br/><img src={useBaseUrl('/img/apm/traces/tracelist-details.png')} style={{border: '1px solid gray'}} alt="Tracelist details" width="400"/>
 1. Click **Add to Dashboard**.
 
 ## Traces Panel
 
-<img src={useBaseUrl('/img/dashboards/panels/icon-trace-list.png')} style={{border: '1px solid gray'}} alt="icon-trace-list" width="75"/>
+<img src={useBaseUrl('/img/dashboards/panels/icon-trace-list.png')} style={{border: '1px solid gray'}} alt="Icon trace list" width="75"/>
 
 Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](/docs/apm/spans), and a breakdown of services. The panel panel displays the [Traces page](/docs/apm/traces/) table to give at-a-glance tracking for traces through your Dashboard. To view transaction and service details ([Trace View](/docs/apm/traces/view-and-investigate-traces)), click a trace from the panel. 
 
@@ -197,7 +197,7 @@ See the [Dashboard](/docs/dashboards/about) guide for additional information and
 You are limited to three Traces panels in a dashboard.
 :::
 
-<img src={useBaseUrl('/img/dashboards/panels/panel-trace.png')} style={{border: '1px solid gray'}} alt="panel-trace" width="600"/>
+<img src={useBaseUrl('/img/dashboards/panels/panel-trace.png')} style={{border: '1px solid gray'}} alt="Panel trace" width="600"/>
 
 To add a Traces panel:
 

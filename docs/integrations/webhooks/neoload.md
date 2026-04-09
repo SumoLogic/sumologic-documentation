@@ -44,7 +44,7 @@ The Sumo Logic integration for NeoLoad ingests web events into Sumo Logic throug
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory="webhook/neoload"
 | json "Test Name", "Project", "Scenario", "Status", "Quality Status", "Workspace Name" as testName, project, scenario, status, qualityStatus, workspace nodrop
 | where testName matches "{{testName}}" and project matches "{{project}}" and scenario matches "{{scenario}}" and status matches "{{status}}" and qualityStatus matches "{{qualityStatus}}" and workspace matches "{{workspace}}"
@@ -109,7 +109,7 @@ Follow the steps to configure the NeoLoad webhook.
     
 5. Click **Save**.
 6. Verify NeoLoad events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 `_sourceCategory=webhook/neoload`
 ```
 

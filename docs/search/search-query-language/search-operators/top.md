@@ -14,7 +14,7 @@ We recommend you use the [`topk`](/docs/search/search-query-language/search-ope
 
 ## Syntax
 
-```sql
+```sumo
 top <#> <field> [by <group_by_operator>]
 ```
 
@@ -24,7 +24,7 @@ top <#> <field> [by <group_by_operator>]
 
 Use the following query to list the top 5 source categories with errors, and get their count.
 
-```sql
+```sumo
 error | top 5 _sourceCategory
 ```
 
@@ -35,7 +35,7 @@ which produces results like:
 You can use the following query to get the same results, but make the
 count explicit:
 
-```sql
+```sumo
 error | top 5 _sourceCategory by count
 ```
 
@@ -44,7 +44,7 @@ error | top 5 _sourceCategory by count
 This query lists the top 10 source categories by message time, without
 an explicit count.
 
-```sql
+```sumo
 error | top 10 _sourceCategory by _messagetime
 ```
 

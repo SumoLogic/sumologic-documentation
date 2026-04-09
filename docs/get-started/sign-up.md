@@ -1,7 +1,7 @@
 ---
 id: sign-up
 title: Sign Up and Activate Your Account
-description: Learn how to sign up with Sumo Logic and create your account.
+description: Sign up for a free 30-day Sumo Logic trial via the website or AWS Marketplace using Google SSO or email to start ingesting and analyzing your data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

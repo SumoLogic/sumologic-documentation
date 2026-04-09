@@ -296,7 +296,7 @@ This app uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https
 <details>
 <summary>View Sample Queries</summary>
 
-```sql title="Total Audits"
+```sumo title="Total Audits"
 _sourceCategory={{Logsdatasource}} (activityDisplayName  "Directory Audit")
 | json "_logType","id","initiatedBy.user","result","operationType","category","loggedByService","activityDisplayName","targetResources[*].displayName","targetResources[*].type" as log_type,id,initiator_user,result,operation_type,category,logged_by_service,activity,targeted_resource_names,targeted_resource_types nodrop
 
@@ -321,7 +321,7 @@ _sourceCategory={{Logsdatasource}} (activityDisplayName  "Directory Audit")
 | count 
 ```
 
-```sql title="Failed Sign-Ins"
+```sumo title="Failed Sign-Ins"
 _sourceCategory={{Logsdatasource}} Signin userDisplayName userPrincipalName failureReason
 | json "_logType","id","clientAppUsed","conditionalAccessStatus","riskLevelAggregated","riskDetail","riskState","status.errorCode","deviceDetail.operatingSystem","location.countryOrRegion","isInteractive","appDisplayName","resourceDisplayName","userPrincipalName" as log_type,id,client_app_used,conditional_access_status,risk_level,risk_detail,risk_state,error_code,device_os,country,is_interactive,app_display_name,resource_name,user_principal nodrop
 
@@ -347,7 +347,7 @@ _sourceCategory={{Logsdatasource}} Signin userDisplayName userPrincipalName fail
 | count
 ```
 
-```sql title="Activities Failure Rate Percentage"
+```sumo title="Activities Failure Rate Percentage"
 _sourceCategory={{Logsdatasource}} (Provisioning provisioningAction provisioningSteps provisioningStatusInfo)
 | json "_logType","id","initiatedBy.initiatorType","provisioningAction","provisioningStatusInfo.status","servicePrincipal.displayName","targetSystem.displayName","sourceIdentity.identityType","targetIdentity.identityType","tenantId","provisioningStatusInfo.errorInformation.errorCategory","provisioningStatusInfo.errorInformation.errorCode" as log_type,id,initiated_by,provisioning_action,provisioning_status,service_principal,target_system_name,source_identity_type,target_identity_type,tenant_id,error_category,error_code nodrop
 

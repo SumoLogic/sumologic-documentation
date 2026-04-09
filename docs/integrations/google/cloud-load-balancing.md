@@ -45,7 +45,7 @@ The Sumo Logic app for Google Cloud Load Balancer uses the following three [metr
 
 ### Sample logs queries
 
-```bash title="Status codes per load balancer"
+```sumo title="Status codes per load balancer"
 _sourceCategory=*gcp* data logName resource "\"type\":\"http_load_balancer\""
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/requests"

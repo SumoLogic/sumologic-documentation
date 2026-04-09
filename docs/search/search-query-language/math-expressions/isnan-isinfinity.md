@@ -16,31 +16,31 @@ Null, empty, or blank strings will not return a result.
 
 ## Syntax
 
-```sql
+```sumo
 isNaN("<string>") as <field>
 ```
 
-```sql
+```sumo
 isNaN(<string_field>) [as <field>]
 ```
 
-```sql
+```sumo
 isInfinity("<string>") as <field>
 ```
 
-```sql
+```sumo
 isInfinity(<string_field>) [as <field>]
 ```
 
 ## Examples
 
-```sql
+```sumo
 | 5/0 as infinity
 | isInfinity(infinity) as boolean
 ```
 
 Returns `boolean` as `true`.     
-```sql
+```sumo
 | parse "has * total tokens" as total_token
 | where !isNaN(total_token)
 ```

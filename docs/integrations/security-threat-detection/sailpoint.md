@@ -88,7 +88,7 @@ The SailPoint Source ingests:
 
 ### Sample queries
 
-```sql title="Authentication Event"
+```sumo title="Authentication Event"
 _sourceCategory=Labs/sailpoint ipAddress
 | json field=_raw "created", "type", "technicalName", "status","operation","actor.name", "action", "name", "target.name", "attributes.sourceName" as created, event_type, technical_name_in_search, event_status, operation, user_name, action, event_desc, target_name, source_name
 | json "org" as org
@@ -100,7 +100,7 @@ _sourceCategory=Labs/sailpoint ipAddress
 | sort _count
 ```
 
-```sql title="SailPoint Event Type"
+```sumo title="SailPoint Event Type"
 _sourceCategory=Labs/sailpoint
 | json field=_raw "created", "type", "technicalName", "status","operation","actor.name", "action", "name", "target.name", "attributes.sourceName" as created, event_type, technical_name_in_search, event_status, operation, user_name, action, event_desc, target_name, source_name | json "org" as org
 | count by event_type
@@ -151,13 +151,13 @@ The **SailPoint - Overview** dashboard provides a summary of SailPoint events, a
 
 The **SailPoint - Successful Authentications** dashboard provides the details of success logins such as the geolocation, country, state, failed login trends, outlier, and top 10 users.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Successful-Authentications.png')} alt="Successful-Authentications"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Successful-Authentications.png')} alt="Successful Authentications"/>
 
 ### Failed Authentications
 
 The **SailPoint - Failed Authentications** dashboard shows the details of failed logins such as the geolocation, country, state, failed login trends, outlier, and top 10 users.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Failed-Authentications.png')} alt="Failed-Authentications"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Failed-Authentications.png')} alt="Failed Authentications"/>
 
 ### Security
 

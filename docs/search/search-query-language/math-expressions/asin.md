@@ -8,12 +8,12 @@ Returns the inverse sine of the argument.
 
 ## Syntax
 
-```sql
+```sumo
 asin(<x>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 * | asin(1) as v
 ```

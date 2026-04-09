@@ -10,29 +10,29 @@ These expressions are used to evaluate a condition as either true or false, with
 
 ## Syntax
 
-```sql
+```sumo
 if(<condition>, <value_if_true>, <value_if_false>) as <field>
 ```
 
 ## Examples
 
-```sql
+```sumo
 | if(status_code matches "5*", 1, 0) as serverError
 ```
 
-```sql
+```sumo
 | if(status_code matches "2*", 1, 0) as success
 ```
 
-```sql
+```sumo
 if(!(status_code matches "2*"), 1, 0) as failure
 ```
 
-```sql
+```sumo
 | if(status matches "WARN" or status matches "ERROR", 1, 0) as status
 ```
 
-```sql
+```sumo
 | if(alpha > 1 and beta > 5, "true", "false") as conditionState
 ```
 
@@ -41,7 +41,7 @@ if(!(status_code matches "2*"), 1, 0) as failure
 To create **nested** if statements, your query should use the following
 syntax:  
 
-```sql
+```sumo
 | if(message matches "*/schedule?*","Alert Scheduled",
 if(message matches "*/update?*","Alert Updated",
 if(message matches "*/cancel?*","Alert Canceled","N/A"))) as problem
@@ -49,21 +49,21 @@ if(message matches "*/cancel?*","Alert Canceled","N/A"))) as problem
 
 ### Question mark (?) syntax
 
-```sql
+```sumo
 <condition> ? <value_if_true> : <value_if_false> as <field>
 ```
 
 ## Examples
 
-```sql
+```sumo
 | disk_usage > threshold ? "disk full" : "OK" as status
 ```
 
-```sql
+```sumo
 | !(disk_usage > threshold) ? "disk full" : "OK" as status
 ```
 
-```sql
+```sumo
 | a < b ? a : b as this_or_that     // This is the same as min(a, b)
 ```
 

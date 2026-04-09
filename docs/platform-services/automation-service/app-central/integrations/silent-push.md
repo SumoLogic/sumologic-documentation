@@ -6,7 +6,7 @@ description: ''
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/silent-push.png')} alt="
-crowdstrike-falcon" width="100"/>
+Silent Push icon" width="100"/>
 
 ***Version: 1.0  
 Updated: July 15, 2024***

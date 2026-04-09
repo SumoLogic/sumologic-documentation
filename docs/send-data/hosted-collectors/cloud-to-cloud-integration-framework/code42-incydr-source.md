@@ -10,7 +10,7 @@ description: Learn how to collect sessions, file events, and audit logs from the
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="code42-incydr-icon" width="100" />
+<img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="Code42 Incydr icon" width="100" />
 
 The Code42 Incydr is an insider risk management solution that allows you to detect and respond to data exposure and exfiltration from corporate computer, cloud, and email systems. It provides the visibility, context, and controls needed to protect data without overwhelming security teams or inhibiting employee productivity.
 

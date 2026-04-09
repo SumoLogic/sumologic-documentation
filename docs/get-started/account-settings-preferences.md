@@ -180,8 +180,8 @@ Select this option to receive notifications only for monitors you're subscribed 
 
 #### Enable "Active alerts only" as default filter
 
-By default, your alerts list only displays alerts with an active status. Alerts with a resolved status are excluded.<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" style={{border: '1px solid gray'}} width="500" />
+By default, your alerts list only displays alerts with an active status. Alerts with a resolved status are excluded.<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="Alert preferences" style={{border: '1px solid gray'}} width="500" />
 
 #### Enable "My subscriptions" as default filter
 
-By default, alerts you are subscribed to will appear in your alerts list.<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" style={{border: '1px solid gray'}} width="500" />
+By default, alerts you are subscribed to will appear in your alerts list.<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="Alert preferences" style={{border: '1px solid gray'}} width="500" />

@@ -135,7 +135,7 @@ Non-nation-state-based threats are categorized by intention, not location. For i
 
 **Data Type:** string<br/>
 **Description:** Indicates a confidence level by which an indicator is considered to be malicious. For example, a malicious file hash may always have a value of high while domains and IP addresses will very likely change over time. The malicious confidence level is also represented under the labels list in the JSON data structure.<br/>
-Once an indicator has been marked with a malicious confidence level, it continues to have that confidence level value until updated by CrowdStrike. If you think there is a false positive, please file a Support ticket, and we'll work with CrowdStrike to investigate the IoC in question and update the threat details.<br/>
+Once an indicator has been marked with a malicious confidence level, it continues to have that confidence level value until updated by CrowdStrike. If you think there is a false positive, file a Support ticket, and we'll work with CrowdStrike to investigate the IoC in question and update the threat details.<br/>
 **Values:**
 
 * high

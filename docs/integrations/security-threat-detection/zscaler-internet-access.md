@@ -2,7 +2,7 @@
 id: zscaler-internet-access
 title: Zscaler Internet Access
 sidebar_label: Zscaler Internet Access
-description: Learn about the Sumo Logic app for Zscaler Internet Access (ZIA).
+description: Monitor Zscaler Internet Access (ZIA) with the Sumo Logic app using Cloud NSS logs to visualize threats, DNS, web traffic, and user browsing activity.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -70,7 +70,7 @@ The Sumo Logic app for Zscaler uses NSS feed output logs (Web, Tunnel, DNS, and 
 
 ## Sample queries
 
-```sql title="Top 10 Blocked Base URLs"
+```sumo title="Top 10 Blocked Base URLs"
 _sourceCategory=ZIA
 | json field=_raw "event.clientpublicIP", "event.user", "event.url", "event.action" as src_ip, src_user, url, action
 | where action != "Allowed"

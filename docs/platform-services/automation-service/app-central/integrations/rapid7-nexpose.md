@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapid7-nexpose.png')} alt="rapid7-nexpose" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapid7-nexpose.png')} alt="Rapid7 Nexpose icon" width="80"/>
 
 ***Version: 1.1  
 Updated: Jul 07, 2023***

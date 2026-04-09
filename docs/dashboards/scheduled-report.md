@@ -2,7 +2,7 @@
 id: scheduled-report
 title: Scheduled Report
 sidebar_label: Scheduled Report (Email)
-description: Learn how to create, update, delete, and export a scheduled dashboard report.
+description: Schedule automated email delivery of Sumo Logic dashboards in PDF or PNG format to share insights with your team, including non-Sumo Logic users.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
