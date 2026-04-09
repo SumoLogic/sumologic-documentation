@@ -344,7 +344,7 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
 ### Sample queries
 
 The following sample query is from the **Unique AWS Resource Types** panel of **Dashboard 01: Attack Surface Benchmark**.
-```sql
+```sumo
 _sourceCategory=Labs/AWS/CloudTrail/Analytics
 | json "eventSource", "errorCode" nodrop
 | where isBlank(errorCode)

@@ -269,7 +269,7 @@ This app includes [built-in monitors](#snyk-alerts). For details on creating cus
 
 ## Sample queries
 
-```sql title="Total Vulnerabilities"
+```sumo title="Total Vulnerabilities"
 _sourceCategory="Labs/Snyk"
 | json "project.id", "project.name", "project.origin", "project.created", "project.type", "project.branch", "project.totalDependencies", "project.testFrequency", "project.browseUrl", "org.id", "org.name", "org.url", "org.created", "newIssues", "removedIssues" as project_id, project_name, project_origin, project_created, project_type, project_branch, project_dependencies, project_frequency, project_url, org_id, org_name, org_url, org_created, new_issues, removed_issues nodrop 
 
@@ -342,7 +342,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Snyk Security - Overview** dashboard provides a clear, high-level picture of your organization’s vulnerabilities. It includes widgets showing key information like the total number of vulnerabilities by severity, recently fixed issues, and how vulnerabilities are prioritized. The dashboard highlights the most vulnerable packages and projects, so you can quickly see where the biggest risks are. It also shows vulnerabilities over time, helping you track security improvements or emerging threats. The Vulnerability Summary widget provides a quick snapshot of your overall security status. This dashboard helps security teams easily monitor vulnerabilities, understand risks, and focus on fixing the most important issues.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Snyk/Snyk-Security-Overview.png')} style={{border: '1px solid gray'}} alt="Snyk-Security-Overview" width="800"/>
+The **Snyk Security - Overview** dashboard provides a clear, high-level picture of your organization’s vulnerabilities. It includes widgets showing key information like the total number of vulnerabilities by severity, recently fixed issues, and how vulnerabilities are prioritized. The dashboard highlights the most vulnerable packages and projects, so you can quickly see where the biggest risks are. It also shows vulnerabilities over time, helping you track security improvements or emerging threats. The Vulnerability Summary widget provides a quick snapshot of your overall security status. This dashboard helps security teams easily monitor vulnerabilities, understand risks, and focus on fixing the most important issues.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Snyk/Snyk-Security-Overview.png')} style={{border: '1px solid gray'}} alt="Snyk Security Overview" width="800"/>
 
 ## Create monitors for the Snyk app
 

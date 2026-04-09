@@ -94,7 +94,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 
 ### Sample queries
 
-```sql title="Commits Over Time"
+```sumo title="Commits Over Time"
 "commits" "https://api.github.com/repos"
 | json "commits[*].id[*]", "repository.name", "pusher.name" as commit_size, repo_name, user
 | where commit_size != "[]"
@@ -104,7 +104,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 | count by _timeslice
 ```
 
-```sql title="Members Added or Removed"
+```sumo title="Members Added or Removed"
 | json "action", "scope", "member.login", "member.id", "member.type", "team.name", "team.permission", "organization.login" as action, scope, member_name, member_id, member_type, team_name, team_permission, org_login
 | count by member_id, action, team_name, org_login, member_name, team_permission
 | order by action, member_id
@@ -112,7 +112,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 ```
 
 
-```sql title="Total Number Open Issues"
+```sumo title="Total Number Open Issues"
 | json "action", "issue.id", "issue.number", "issue.title" , "issue.state", "issue.created_at", "issue.updated_at", "issue.closed_at", "issue.body", "issue.user.login", "issue.url", "repository.name", "repository.open_issues_count" as axn, issue_ID, issue_num, issue_title, state, createdAt, updatedAt, closedAt, body, user, url, repo_name, repoOpenIssueCnt
 | withtime repoOpenIssueCnt
 | most_recent (repoopenissuecnt_withtime) as number_issues by repo_name
@@ -192,7 +192,7 @@ The **GitHub - Overview** dashboard provides an at-a-glance view of your GitHub 
 Use this dashboard to:
 * Get an overview of GitHub commits, Pull Requests, and Issues.
 
-<img src={useBaseUrl('img/integrations/app-development/GitHub-Overview.png')} alt="GitHub-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/GitHub-Overview.png')} alt="GitHub Overview" />
 
 ### Branch Overview
 
@@ -216,7 +216,7 @@ Use this dashboard to:
 * Review issue status including unassigned, open, and closed issues.
 * Quickly review the issue details and take action accordingly.
 
-<img src={useBaseUrl('img/integrations/app-development/GitHubIssueOverview.png')} alt="GitHub-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/GitHubIssueOverview.png')} alt="GitHub Overview" />
 
 ### Pull Request Overview
 
@@ -227,7 +227,7 @@ Use this dashboard to:
 * Review comments on pull requests.
 * Identify open and not merged critical pull requests.
 
-<img src={useBaseUrl('img/integrations/app-development/GitHub-Pull-Request-Overview.png')} alt="GitHub-Pull-Request-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/GitHub-Pull-Request-Overview.png')} alt="GitHub Pull Request Overview" />
 
 ### Security
 
@@ -238,7 +238,7 @@ Use this dashboard to:
 * Review and manage repositories.
 * View and manage teams.
 
-<img src={useBaseUrl('img/integrations/app-development/GitHub-Security.png')} alt="GitHub-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/GitHub-Security.png')} alt="GitHub Overview" />
 
 ### User Activity
 
@@ -249,7 +249,7 @@ Use this dashboard to:
 * Determine files added, removed, and modified by users.
 * Identify any harmful file types added by users.
 
-<img src={useBaseUrl('img/integrations/app-development/Github-User-Activity.png')} alt="GitHub-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/Github-User-Activity.png')} alt="GitHub Overview" />
 
 ### GHAS - Advanced Security Overview
 

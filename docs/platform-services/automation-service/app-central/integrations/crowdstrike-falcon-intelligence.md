@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon-intelligence.png')} alt="crowdstrike-falcon-intelligence" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon-intelligence.png')} alt="CrowdStrike Falcon Intelligence icon" width="100"/>
 
 ***Version: 1.8  
 Updated: March 31, 2026***
@@ -34,14 +34,14 @@ CrowdStrike® Falcon Intelligence™ is an automated threat intelligence service
 
 Create API clients to grant various levels of API access for Falcon Intelligence.
 
-1. From the [API Clients and Keys](https://falcon.crowdstrike.com/support/api-clients-and-keys) page, click **Add new API client** on the right of the **OAuth2 API Clients** table.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-1.png')} style={{border:'1px solid gray'}} alt="crowdstrike-falcon-intelligence" width="800"/>
+1. From the [API Clients and Keys](https://falcon.crowdstrike.com/support/api-clients-and-keys) page, click **Add new API client** on the right of the **OAuth2 API Clients** table.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-1.png')} style={{border:'1px solid gray'}} alt="Crowdstrike falcon intelligence" width="800"/>
 2. Provide details to define your API client:
     * **Client Name** (required)
     * **Description** (optional)
     * [API Scopes](https://falcon.crowdstrike.com/documentation/46/crowdstrike-oauth2-based-apis#api-scopes) (required):
         + Select the **Read** and/or **Write** boxes next to a scope to enable access to its endpoints.
         + A "–" displays in place of a checkbox when a **Read/Write**.
-        + The scope already checked must be assigned. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-2.png')} style={{border:'1px solid gray'}} alt="crowdstrike-falcon-intelligence" width="600"/>
+        + The scope already checked must be assigned. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-2.png')} style={{border:'1px solid gray'}} alt="Crowdstrike falcon intelligence" width="600"/>
 3. Click **Add** to save the API client and generate the client ID and secret.
 
 :::tip

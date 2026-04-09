@@ -30,15 +30,15 @@ Some Webhook events may not be available based on the plan type. Refer to the Pr
 
 Follow the below steps to get the required fields for user configuration:
 1. Sign in to [Zoom Marketplace](https://marketplace.zoom.us/).
-1. In the upper right corner, click **Develop > Build Legacy App**.<br/><img src={useBaseUrl('img/send-data/zoom-sign-in.png')} alt="zoom-sign-in" style={{border: '1px solid gray'}} width="200"/>
+1. In the upper right corner, click **Develop > Build Legacy App**.<br/><img src={useBaseUrl('img/send-data/zoom-sign-in.png')} alt="Zoom sign in" style={{border: '1px solid gray'}} width="200"/>
 1. **Create** a Webhook Only.
 1. Specify the following App Information:
     - App Name    
     - Short Description
     - Company Name
     - Developer Name
-    - Developer Email Address <br/><img src={useBaseUrl('img/send-data/zoom-app-info.png')} alt="zoom-app-info" width="500"/>
-1. Click **Continue** to copy the **Secret Token** value. <br/><img src={useBaseUrl('img/send-data/secret-token.png')} alt="secret-token" width="500"/>
+    - Developer Email Address <br/><img src={useBaseUrl('img/send-data/zoom-app-info.png')} alt="Zoom app info" width="500"/>
+1. Click **Continue** to copy the **Secret Token** value. <br/><img src={useBaseUrl('img/send-data/secret-token.png')} alt="Secret token" width="500"/>
 1. Keep this window open and configure the Zoom source on Sumo Logic.
 
 ## Create Zoom Source
@@ -47,7 +47,7 @@ To configure a Zoom Source:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **Zoom**. <br/> <img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Zoom icon" width="60"/>
-1. Enter a **Name** for the Source. A description is optional. <br/><img src={useBaseUrl('img/send-data/zoom-configuration-settings.png')} alt="zoom-configuration-settings" width="400"/>
+1. Enter a **Name** for the Source. A description is optional. <br/><img src={useBaseUrl('img/send-data/zoom-configuration-settings.png')} alt="Zoom configuration settings" width="400"/>
 1. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields that allow you to organize your data.For Source Category, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Fields**. Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
@@ -70,7 +70,7 @@ To configure a Zoom Source:
 ## Enable Events Subscriptions
 
 1. Go back to the Zoom Marketplace page that you left open in [step 1](#setup-and-configuration).
-1. Enable **Event Subscriptions**. <br/><img src={useBaseUrl('img/send-data/events-subscriptions.png')} alt="events-subscriptions" width="550"/>
+1. Enable **Event Subscriptions**. <br/><img src={useBaseUrl('img/send-data/events-subscriptions.png')} alt="Events subscriptions" width="550"/>
 1. Click **Add new event subscription** and provide the following information:
    * **Subscription Name** (for example, Sumo Logic)
    * **Event notification endpoint URL.** Provide the Sumo logic endpoint URL copied after creating the Zoom source .
@@ -80,7 +80,7 @@ To configure a Zoom Source:
     :::note
     You may face ingestion issues if you use more than one subscription per webhook.
     :::
-1. Click **Continue**, to see the app activated message. <br/><img src={useBaseUrl('img/send-data/app-activated-message.png')} alt="app-activated-message" width="400"/>
+1. Click **Continue**, to see the app activated message. <br/><img src={useBaseUrl('img/send-data/app-activated-message.png')} alt="App activated message" width="400"/>
 
 ### JSON configuration
 

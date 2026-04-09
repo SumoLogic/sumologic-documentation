@@ -8,16 +8,16 @@ The **ceil** operator rounds up a field value to the nearest integer value.
 
 ## Syntax
 
-```sql
+```sumo
 ceil(<x>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 * | ceil(1.5) as v
 ```
 
-```sql
+```sumo
  * | ceil(-1.5) as v
 ```

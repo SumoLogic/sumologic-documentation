@@ -8,11 +8,11 @@ The `hexToDec` operator converts a hexadecimal string of 16 or fewer characters 
 
 ## Syntax
 
-```sql
+```sumo
 hexToDec("<hexadecimal string>") as <field>
 ```
 
-```sql
+```sumo
 hexToDec(<hexadecimal_field>) as <field>
 ```
 
@@ -20,14 +20,14 @@ hexToDec(<hexadecimal_field>) as <field>
 
 The following returns `V` with a value of `4919`
 
-```sql
+```sumo
 | hexToDec("0000000000001337") as V
 ```
 
-```sql
+```sumo
 ... | count by _collector | decToHex(_count) as v | hexToDec(v) as h
 ```
 
-```sql
+```sumo
 ... | count by _collector | where _count = hexToDec("7AF")
 ```

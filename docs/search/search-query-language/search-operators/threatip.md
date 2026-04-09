@@ -16,7 +16,7 @@ The only Indicators of Compromise (IOC) supported is IP address.
 
 ## Syntax
 
-```sql
+```sumo
 threatip <ip_address_field>
 ```
 
@@ -29,7 +29,7 @@ threatip <ip_address_field>
 
 ## Example
 
-```
+```sumo
 _sourceCategory=Labs/*
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | threatip ip_address

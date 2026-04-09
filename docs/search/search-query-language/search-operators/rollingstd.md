@@ -16,7 +16,7 @@ If you specify a window length of 5, but only 4 data points are available, the `
 
 ## Syntax
 
-```sql
+```sumo
 rollingstd <field> [, window_length] [as <field>]
 ```
 
@@ -34,7 +34,7 @@ rollingstd <field> [, window_length] [as <field>]
 
 Running a query such as:
 
-```sql
+```sumo
 _sourceCategory=katta
 | timeslice by 1m
 | count by _timeslice,_sourceHost
@@ -50,7 +50,7 @@ produces results like:
 
 Using `rollingstd` with `timeslice`, you can run a query similar to:
 
-```sql
+```sumo
 * | parse "bytes: '*'" as bytes
 | timeslice 1m
 | sum(bytes) as bytes by _timeslice
@@ -71,7 +71,7 @@ The aggregation table can be made into an area chart, like this:
 Before 5 values are available, the `rollingstd` operator takes an average
 of whatever is available. For example:
 
-```sql
+```sumo
 _sourceCategory=katta
 | timeslice by 1m
 | count by _timeslice,_sourceHost

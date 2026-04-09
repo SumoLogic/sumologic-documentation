@@ -10,7 +10,7 @@ description: Learn how to collect data using the BigQuery API.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/google-bigquery-icon.png')} alt="google-bigquery-icon" width="70" />
+<img src={useBaseUrl('img/send-data/google-bigquery-icon.png')} alt="Google BigQuery icon" width="70" />
 
 Google Cloud’s BigQuery is a fully managed enterprise data warehouse that helps you to manage and analyze your data, which also provides built-in features such as ML, geospatial analysis, and business intelligence. The Google BigQuery integration gets data from a [Google BigQuery](https://cloud.google.com/bigquery) table via a provided query.
 
@@ -78,7 +78,7 @@ Following are some examples that demonstrate what values to use for the Query, C
 
 You can see double quotes for the timestamp as it is a string.
 
-```sql
+```sumo
 Select * from MyProject.MyDataSet.MyTable where timestamp > "%CHECKPOINT%"
 ```
 
@@ -90,7 +90,7 @@ Select * from MyProject.MyDataSet.MyTable where timestamp > "%CHECKPOINT%"
 
 Specific example on a public dataset:
 
-```sql
+```sumo
 SELECT base_url,source_url,collection_category,collection_number,timestamp(sensing_time) as sensing_time FROM bigquery-public-data.cloud_storage_geo_index.landsat_index where sensing_time > '%CHECKPOINT%' order by sensing_time asc LIMIT 100
 ```
 
@@ -102,7 +102,7 @@ SELECT base_url,source_url,collection_category,collection_number,timestamp(sensi
 
 ##### Example 2: Checkpoint Field is a numeric field.
 
-```sql
+```sumo
 SELECT trip_id,subscriber_type,start_time,duration_minutes FROM bigquery-public-data.austin_bikeshare.bikeshare_trips where trip_id > %CHECKPOINT% order by start_time asc LIMIT 100
 ```
 
@@ -116,7 +116,7 @@ SELECT trip_id,subscriber_type,start_time,duration_minutes FROM bigquery-public-
 
 In the example below, you'll need to replace `MyProject` and `MyDataSet` with values matching your environment.
 
-```sql
+```sumo
 SELECT gmail.message_info,gmail.event_info,gmail.event_info.timestamp_usec AS TIMESTAMP FROM `MyProject.MyDataSet.activity` WHERE gmail.event_info.timestamp_usec > %CHECKPOINT% order by TIMESTAMP LIMIT 30000
 ```
 

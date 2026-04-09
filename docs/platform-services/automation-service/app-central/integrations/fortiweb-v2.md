@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortiweb-v2.png')} alt="fortiweb-v2" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortiweb-v2.png')} alt="FortiWeb V2" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 06, 2023***

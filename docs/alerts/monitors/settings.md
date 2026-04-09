@@ -35,9 +35,9 @@ At the top of the page, you can:
    :::tip
    To view all currently triggered monitors, click **Status: All Triggered**.
    :::
-* **Add** > **New Folder**. Creates a folder to organize your monitors.<br/><img src={useBaseUrl('img/alerts/monitors/new-folder.png')} alt="import-folder" style={{border: '1px solid gray'}} width="250"/>
-* **Add** > **New Monitor**. Creates a [new monitor](/docs/alerts/monitors/create-monitor).<br/><img src={useBaseUrl('img/alerts/monitors/new-monitor.png')} alt="new-monitor" style={{border: '1px solid gray'}} width="250"/>
-* **Add** > **Import**. Imports monitors using the exported JSON copied from the [**More Actions** menu](#more-actions) of the original monitor. This function allows you to transfer data immediately.<br/><img src={useBaseUrl('img/alerts/monitors/import-monitor.png')} alt="import-monitor" style={{border: '1px solid gray'}} width="250"/><br/>
+* **Add** > **New Folder**. Creates a folder to organize your monitors.<br/><img src={useBaseUrl('img/alerts/monitors/new-folder.png')} alt="Import folder" style={{border: '1px solid gray'}} width="250"/>
+* **Add** > **New Monitor**. Creates a [new monitor](/docs/alerts/monitors/create-monitor).<br/><img src={useBaseUrl('img/alerts/monitors/new-monitor.png')} alt="New monitor" style={{border: '1px solid gray'}} width="250"/>
+* **Add** > **Import**. Imports monitors using the exported JSON copied from the [**More Actions** menu](#more-actions) of the original monitor. This function allows you to transfer data immediately.<br/><img src={useBaseUrl('img/alerts/monitors/import-monitor.png')} alt="Import monitor" style={{border: '1px solid gray'}} width="250"/><br/>
    :::important
    The Sumo Logic JSON format may change without notice, and future compatibility with imported JSON is not guaranteed.
    :::
@@ -56,10 +56,10 @@ For logs monitors, the **View in Log Search** button opens a new **Log Search** 
 
 For metrics monitors, the **View in Metrics Search** button opens the Metrics Search with the monitor’s threshold values pre-applied. This allows you to compare the set thresholds against real-time data in the Metrics Search graph.
 
-1. Navigate to the **Trigger Conditions** section and note the thresholds values defined for Critical and Warning data conditions. All other parameters, such as the 15-minute window and the "at all times" option, will be set to default.<br/><img src={useBaseUrl('img/alerts/monitors/trigger-conditions.png')} alt="view-in-explorer-page" width="450" />
+1. Navigate to the **Trigger Conditions** section and note the thresholds values defined for Critical and Warning data conditions. All other parameters, such as the 15-minute window and the "at all times" option, will be set to default.<br/><img src={useBaseUrl('img/alerts/monitors/trigger-conditions.png')} alt="View in explorer page" width="450" />
 1. Click **View in Metrics Search**. The Metrics Search page will display with the same threshold values applied to the panel and graph.
-1. On the **Panel settings** page, click threshold icon to view the defined threshold values for the monitor.<br/><img src={useBaseUrl('img/alerts/monitors/thresholds-icon.png')} alt="thresholds-icon" width="500" />
-1. To adjust the chart view, you may need to change the time range in the graph, as the default window is set to 15 minutes.<br/><img src={useBaseUrl('img/alerts/monitors/thresholds-graph.png')} alt="thresholds-graph" width="950" />
+1. On the **Panel settings** page, click threshold icon to view the defined threshold values for the monitor.<br/><img src={useBaseUrl('img/alerts/monitors/thresholds-icon.png')} alt="Thresholds icon" width="500" />
+1. To adjust the chart view, you may need to change the time range in the graph, as the default window is set to 15 minutes.<br/><img src={useBaseUrl('img/alerts/monitors/thresholds-graph.png')} alt="Thresholds graph" width="950" />
 
 :::note
 The same threshold translation functionality applies when [creating a monitor from Metrics Search](/docs/alerts/monitors/create-monitor/#from-metrics-search) and when [opening the Alert Response page in Metrics Search](/docs/alerts/monitors/alert-response/#translating-thresholds).
@@ -69,13 +69,13 @@ The same threshold translation functionality applies when [creating a monitor fr
 
 Click the **Edit** button to make changes to the selected monitor.
 
-<img src={useBaseUrl('img/alerts/monitors/edit-monitor.png')} alt="edit-monitor" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('img/alerts/monitors/edit-monitor.png')} alt="Edit monitor" style={{border: '1px solid gray'}} width="400"/>
 
 ### Disable a monitor
 
 Click the **Disable** button put the monitor in a disabled state so it will not fire any notifications.
 
-<img src={useBaseUrl('img/alerts/monitors/disable-monitor.png')} alt="disable-monitor" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('img/alerts/monitors/disable-monitor.png')} alt="Disable monitor" style={{border: '1px solid gray'}} width="400"/>
 
 ### More Actions
 
@@ -104,7 +104,7 @@ Outlier-to-anomaly conversion is currently not supported for metrics monitors.
 
 Outlier monitors are functionally similar to anomaly monitors, but they tend to generate more noise. From a data usage perspective, anomaly monitors are more cost-effective.
 
-To reduce data usage and alert frequency, you can convert an existing outlier monitor to an anomaly-based monitor by clicking **Convert to Anomaly**. This action will open a monitor configuration window with the [detection method](/docs/alerts/monitors/create-monitor/#detection-method) preset to **Anomaly**, and you can adjust other settings as needed. You’ll then have the option to either disable the original outlier monitor or keep it active.<br/><img src={useBaseUrl('img/alerts/monitors/convert-to-anomaly.png')} alt="convert-to-anomaly" style={{border: '1px solid gray'}} width="600"/>
+To reduce data usage and alert frequency, you can convert an existing outlier monitor to an anomaly-based monitor by clicking **Convert to Anomaly**. This action will open a monitor configuration window with the [detection method](/docs/alerts/monitors/create-monitor/#detection-method) preset to **Anomaly**, and you can adjust other settings as needed. You’ll then have the option to either disable the original outlier monitor or keep it active.<br/><img src={useBaseUrl('img/alerts/monitors/convert-to-anomaly.png')} alt="Convert to anomaly" style={{border: '1px solid gray'}} width="600"/>
 
 Alternatively, you can do this from the **Scan Estimates** pop-up.<br/><img src={useBaseUrl('img/alerts/monitors/scan-estimates-anomaly.png')} alt="convert-to-anomaly from scan estimates" style={{border: '1px solid gray'}} width="600"/>
 

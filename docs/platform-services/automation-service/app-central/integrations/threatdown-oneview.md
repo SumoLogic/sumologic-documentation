@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/threatdown-oneview.png')} alt="threatdown-oneview" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/threatdown-oneview.png')} alt="ThreatDown OneView icon" width="100"/>
 
 ***Version: 1.0  
 Updated: Mar 7, 2025***
@@ -43,9 +43,9 @@ Threat Intelligence Reputation
 ### Generate API credentials
 
 [Create API credentials](https://support.threatdown.com/hc/en-us/articles/4413799441683-Create-OAuth2-credentials-for-OneView) from your Malwarebytes account:
-1. Sign in to [Malwarebytes](https://oneview.threatdown.com/dashboard) with your Malwarebytes account. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview5.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview5" width="300"/>
-2. Click **Integrate**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview6.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview6" width="200"/>
-3. Click **"+"** to create credentials. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview7.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview7" width="800"/>
+1. Sign in to [Malwarebytes](https://oneview.threatdown.com/dashboard) with your Malwarebytes account. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview5.png')} style={{border:'1px solid gray'}} alt="Threatdown oneview5" width="300"/>
+2. Click **Integrate**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview6.png')} style={{border:'1px solid gray'}} alt="Threatdown oneview6" width="200"/>
+3. Click **"+"** to create credentials. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview7.png')} style={{border:'1px solid gray'}} alt="Threatdown oneview7" width="800"/>
 4. Give a name to the application.
 1. Select the required access. <br/>When configuring credentials for the integration, permissions can be set to Read, Write, and Execute. While it's possible to grant only the required permissions based on your use case, we recommend assigning all three permissions during credential creation. This ensures full compatibility with all available actions in the integration and avoids permission-related failures in the future.
 <br/>The minimum required permissions vary based on the type of actions being performed:
@@ -78,7 +78,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview2.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview2" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview2.png')} style={{border:'1px solid gray'}} alt="Threatdown oneview2" width="400"/>
 
 For information about ThreatDown OneView, see [ThreatDown OneView documentation](https://support.threatdown.com/hc/en-us/sections/4413802067603-Administration).
 

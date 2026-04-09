@@ -43,7 +43,7 @@ https 2017-11-20T22:05:36 long-bill-lb 77.222.19.149:41148 10.168.203.134:23662 
 
 ### Sample queries
 
-```sql title="Access-Log-Based"
+```sumo title="Access-Log-Based"
 account="account" region="region" namespace="AWS/ApplicationELB"
 | parse "* * * * * * * * * * * * \"*\" \"*\" * * * \"*\"" as Type, DateTime, loadbalancer, Client, Target, RequestProcessingTime, TargetProcessingTime, ResponseProcessingTime, ElbStatusCode, TargetStatusCode, ReceivedBytes, SentBytes, Request, UserAgent, SslCipher, SslProtocol, TargetGroupArn, TraceId
 | where tolowercase(loadbalancer) matches tolowercase("{{loadbalancer}}")
@@ -127,7 +127,7 @@ Applied at: Ingest Time
 Scope (Specific Data): account=* region=* (http or https or h2 or grpcs or ws or wss)
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 parse "* * * * * * * * * * * * \"*\" \"*\" * * * \"*\"" as Type, DateTime, loadbalancer, Client, Target, RequestProcessingTime, TargetProcessingTime, ResponseProcessingTime, ElbStatusCode, TargetStatusCode, ReceivedBytes, SentBytes, Request, UserAgent, SslCipher, SslProtocol, TargetGroupArn, TraceId | tolowercase(loadbalancer) as loadbalancer | fields loadbalancer
 ```
 
@@ -139,7 +139,7 @@ Applied at: Ingest Time
 Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.amazonaws.com" "2015-12-01"
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name", "requestParameters.type", "requestParameters.loadBalancerArn", "requestParameters.listenerArn", "apiVersion" as event_source, region, accountid, loadbalancer, loadbalancertype, loadbalancerarn, listenerarn, api_version nodrop
 | where event_source = "elasticloadbalancing.amazonaws.com" and api_version matches "2015-12-01" 
 | "" as namespace 

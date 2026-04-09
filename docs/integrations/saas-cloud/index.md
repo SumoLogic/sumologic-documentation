@@ -77,7 +77,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/aws-iam-users')}><img src={useBaseUrl('img/integrations/misc/aws-iam-logo.png')} alt="aws-iam-users-logo" width="60" /><h4>AWS IAM Users</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/aws-iam-users')}><img src={useBaseUrl('img/integrations/misc/aws-iam-logo.png')} alt="Aws iam users logo" width="60" /><h4>AWS IAM Users</h4></a>
   <p>Gain insights into AWS IAM Users events to enhance user activity and security within your AWS environment.</p>
   </div>
 </div>
@@ -137,7 +137,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/citrix-cloud')}><img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon" width="80"/><h4>Citrix</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/citrix-cloud')}><img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="Citrix Cloud icon" width="80"/><h4>Citrix</h4></a>
   <p>Track configuration modifications impacting your environment and admins.</p>
   </div>
 </div>

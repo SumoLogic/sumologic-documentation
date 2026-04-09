@@ -27,10 +27,10 @@ Automox is a cloud-native patching platform that automates patch management acro
 
 Follow these steps to [get your API key from Automox](https://docs.automox.com/product/Product_Documentation/Settings/Managing_Keys.htm):
 
-1. Select **Keys** from the menu. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/automox/automox-1.png')} style={{border:'1px solid gray'}} alt="automox-1" width="400"/>
-1. Click the **ADD** button to add a new API key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/automox/automox-2.png')} style={{border:'1px solid gray'}} alt="automox-2" width="600"/>
-1. Choose a name for this key and then click the button to generate the new key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/automox/automox-3.png')} style={{border:'1px solid gray'}} alt="automox-3" width="400"/>
-1. Copy the API key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/automox/automox-4.png')} style={{border:'1px solid gray'}} alt="automox-4" width="800"/>
+1. Select **Keys** from the menu. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/automox/automox-1.png')} style={{border:'1px solid gray'}} alt="Automox kyes" width="400"/>
+1. Click the **ADD** button to add a new API key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/automox/automox-2.png')} style={{border:'1px solid gray'}} alt="Automox add API key" width="600"/>
+1. Choose a name for this key and then click the button to generate the new key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/automox/automox-3.png')} style={{border:'1px solid gray'}} alt="Automox choose name for the key" width="400"/>
+1. Copy the API key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/automox/automox-4.png')} style={{border:'1px solid gray'}} alt="Automox copy API key" width="800"/>
 
 ## Configure Automox in Automation Service and Cloud SOAR
 

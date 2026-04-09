@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/f5-as3.png')} alt="f5-as3" width="60"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/f5-as3.png')} alt="F5 AS3 icon" width="60"/>
 
 ***Version: 1.1  
 Updated: Jul 06, 2023***

@@ -2,7 +2,7 @@
 id: ms-office-audit-source
 title: Microsoft Office 365 Audit Source
 sidebar_label: MS Office 365 Audit Source
-description: Collect Audit Log content types to track and monitor usage of Microsoft Office 365.
+description: Collect Microsoft Office 365 audit logs including Exchange, SharePoint, Azure AD, General, and DLP Event content types to monitor usage and activity.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

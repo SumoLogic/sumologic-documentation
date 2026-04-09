@@ -8,12 +8,12 @@ Returns the inverse cosine of the argument.
 
 ## Syntax
 
-```sql
+```sumo
 acos(<x>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 * | acos(1) as v
 ```

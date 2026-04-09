@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/withsecure-endpoint-protection.png')} alt="withsecure-endpoint-protection" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/withsecure-endpoint-protection.png')} alt="WithSecure Endpoint Protection icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 18, 2023***
@@ -24,12 +24,12 @@ To use the Endpoint Protection API, you need EPP user credentials and an API key
 To generate an API key:
 1. Log in to the protal with the account used for the API.
 1. Open Endpoint Protection section and open any sub-menu.
-1. Click on the user icon in the top right of the screen and select **Get management API key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-endpoint-protection/withsecure-endpoint-protection-1.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="800" />
+1. Click on the user icon in the top right of the screen and select **Get management API key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-endpoint-protection/withsecure-endpoint-protection-1.png')} style={{border:'1px solid gray'}} alt="Get management API" width="800" />
 1. This starts the Management API key wizard.
 1. Accept the terms of use.
 1. Make note of the generated API key and the API server URL to use when making API requests.
 1. If MFA has been enabled, disable MFA from settings.
-1. Logout.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-endpoint-protection/withsecure-endpoint-protection-2.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="600" />
+1. Logout.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-endpoint-protection/withsecure-endpoint-protection-2.png')} style={{border:'1px solid gray'}} alt="Generated API key and server URL" width="600" />
 
 ## Configure WithSecure Endpoint Protection in Automation Service and Cloud SOAR
 

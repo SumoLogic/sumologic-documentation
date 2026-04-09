@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-onedrive.png')} alt="microsoft-onedrive" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-onedrive.png')} alt="Microsoft OneDrive icon" width="100"/>
 
 ***Version: 1.10  
 Updated: March 31, 2026***

@@ -180,8 +180,8 @@ However, if you want to use multiple metadata fields as your filter criteria, f
 
 1. In the App Catalog, select the application you want to install and click **Add Integration**.
 1. Click the down arrow next to **Source Category**.<br/><img src={useBaseUrl('/img/get-started/library/add-apache.png')} alt="Custom Data Filter" style={{border:'1px solid gray'}} width="500" />
-1. A **Custom Data Filter** option appears. Click the option.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter.png')} alt="apache-custom-filter" style={{border:'1px solid gray'}} width="500" />
-1. Enter a filter expression in the **Custom Data Filter** field. For example filters, see [Example custom data filters](#example-custom-data-filters), below.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter-field.png')} alt="apache-custom-filter-field" style={{border:'1px solid gray'}} width="500" />
+1. A **Custom Data Filter** option appears. Click the option.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter.png')} alt="Apache custom filter" style={{border:'1px solid gray'}} width="500" />
+1. Enter a filter expression in the **Custom Data Filter** field. For example filters, see [Example custom data filters](#example-custom-data-filters), below.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter-field.png')} alt="Apache custom filter field" style={{border:'1px solid gray'}} width="500" />
 
 ### Example custom data filters
 

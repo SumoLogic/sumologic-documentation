@@ -1,7 +1,7 @@
 ---
 id: azure-app-service-environment
 title: Azure App Service Environment
-description: Learn about the Sumo Logic collection process for the Azure App Service Environment service.
+description: Collect Azure App Service Environment activity logs and platform event logs via Azure Monitor and Event Hubs using the Sumo Logic Azure integration.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

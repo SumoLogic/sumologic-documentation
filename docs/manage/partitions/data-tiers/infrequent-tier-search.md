@@ -21,15 +21,15 @@ Previously, scheduled searches were only supported in Sumo Logic’s Continuous 
 This means you can now include data from the Infrequent Tier in the scope of the scheduled search.
 
 * For example, you can use `_dataTier=Infrequent` in your query scope:
-  ```sql
+  ```sumo
   _dataTier=Infrequent _sourceCategory=appA "error"
   ```
 * Or, you can select data in the Infrequent Tier by specifying the Partition that contains it, like this:
-  ```sql
+  ```sumo
   _index=some_infrequent_index
   ```
   or
-  ```sql
+  ```sumo
   _index=some_infrequent_index OR _index=some_continuous_index
   ```
 

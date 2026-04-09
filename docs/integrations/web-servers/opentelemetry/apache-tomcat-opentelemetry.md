@@ -190,7 +190,7 @@ Dec 13, 2022 03:53:03 PM org.apache.catalina.startup.Catalina start INFO: Server
 
 ## Sample log queries
 
-```sql
+```sumo
  %"sumo.datasource"=tomcat %"webengine.cluster.name"=*
 | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw 
@@ -202,7 +202,7 @@ Dec 13, 2022 03:53:03 PM org.apache.catalina.startup.Catalina start INFO: Server
 ```
 
 ## Sample metrics
-```
+```json
 {
   "queryId":"A",
   "_source":"apache-tomcat-otel",

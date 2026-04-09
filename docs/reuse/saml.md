@@ -12,7 +12,7 @@ After you create a SAML configuration, you can require users to sign in using SA
 
 If you intend to require Sumo Logic users to sign-in using SAML, as described in the following section, [Require SAML for sign-in](#require-saml-for-sign-in-1), it is a best practice to first check whether some users are still logging in directly, instead of using SAML. You can run the following query to see, for a particular time range, whether users signed in using SAML or with their username and password:
 
-```sql
+```sumo
 _index=sumologic_audit action=login | count by class, sourceuser
 ```
 
