@@ -168,7 +168,9 @@ By default, saved searches run automatically when selected. Deselect this option
 
 #### Enable in-app tabs for Logs Search
 
-Select this checkbox to enable in-app tabs, allowing you to manage multiple searches within a single browser window. In-app tabs support drag-and-drop reordering and horizontal scrolling for easier navigation. If you prefer using your browser’s native tabs instead, clear this checkbox to turn the feature off.
+Select this checkbox to enable in-app tabs, allowing you to run and manage multiple searches within a single Log Search window in the [**New UI**](/docs/get-started/sumo-logic-ui). This feature makes it easier to work on multiple investigations side by side without relying on separate browser tabs. You can keep long-running or reference searches open, switch between queries without losing context, and compare results across searches more efficiently, helping streamline troubleshooting and analysis workflows.
+
+To use this feature, open a new tab directly within Log Search and run a new or existing query in each tab. You can switch between tabs at any time to continue your analysis, reorder tabs using drag-and-drop, and scroll horizontally to navigate across multiple open tabs. This helps you stay organized while working across related searches or datasets.
 
 ### Alerts
 
