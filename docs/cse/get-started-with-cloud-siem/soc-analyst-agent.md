@@ -35,11 +35,12 @@ The SOC Analyst Agent runs in the background against all insights that flow into
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen. 
 1. In the insight list page, note that the **AI Verdict** column shows the results of the AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-verdict-column.png')} alt="Insight AI Verdict column" style={{border: '1px solid gray'}} width="800" />
 1. Click **Start typing here to create a filter** near the top of the insights page and select **AI Verdict** to search for insights based on the verdict they are assigned:
-   * **Benign**. AI analysis determined that the insight is harmless and is not a candidate for elevation to SOC team investigation.
-   * **Inconclusive**. AI analysis could not determine whether the insight needs to be investigated.
-   * **In Progress**. AI analysis is in progress.
-   * **Suspicious**. AI analysis determined that the insight is suspicious and warrants investigation by your SOC team. 
    * **Malicious**. AI analysis determined that the insight is malicious, and warrants immediate investigation by your SOC team.
+   * **Suspicious**. AI analysis determined that the insight is suspicious and warrants investigation by your SOC team. 
+   * **Benign**. AI analysis determined that the insight is harmless and is not a candidate for elevation to SOC team investigation.
+   * **In Progress**. AI analysis is in progress.
+   * **Inconclusive**. AI analysis could not determine whether the insight needs to be investigated.
+   * **Not Investigated**. No AI analysis was performed on the insight because of rate limiting rules controlling how many insights can be automatically processed to generate AI verdicts. Insights that have not been investigated display an **Investigate** button at the top of the insight details page. Click this button to manually initiate an AI investigation. For more information about rate limiting and its role in ensuring system stability, see [FAQs](#faqs) below.
 1. Clicking anywhere on the row of an insight that has an AI verdict shows a side panel with results of the verdict. This allows you to browse quickly for insights needing more investigation:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-side-panel.png')} alt="Insight AI side panel" style={{border: '1px solid gray'}} width="800" />
 1. To investigate an insight further, click the insight's ID. Insights with an AI verdict display an **AI Investigation** tab in the insight details page. Use the information on this tab to dive deeper into the insight.
 
@@ -142,7 +143,11 @@ Yes. Analysts can override verdicts and flag feedback within the UI. These actio
 <details>
 <summary>What controls are in place to ensure system stability?</summary>
 
-To ensure stable performance, the agent performs system-wide rate limiting, which imposes usage controls across the entire SOC Analyst Agent user base to manage capacity. As a result, auto-investigation may skip some insights or entities if investigating them would exceed rate limits. However, in these instances, manual investigation remains available (with some limits).
+To ensure stable performance, the agent performs system-wide rate limiting, which imposes usage controls across the entire SOC Analyst Agent user base to manage capacity. As a result, auto-investigation may skip some insights if investigating them would exceed rate limits. The skipped insights show **Not Investigated** in the **AI Verdicts** column. However, in these instances, you can manually start an investigation of the insight by clicking the **Investigate** button. 
+
+Be aware, though, that if you have reached your limit of the total number of insights you can get AI verdicts for in a certain time period, a message will appear telling you when you can next click the **Investigate** button to initiate an AI investigation.
+
+If you have questions about the AI investigation rate limiting for your organization, ask your Sumo Logic representative.
 </details>
 
 <details>
