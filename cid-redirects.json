@@ -3002,6 +3002,7 @@
   "/cid/1141": "/docs/integrations/saas-cloud/litellm",
   "/cid/1142": "/docs/integrations/aiml/opentelemetry/openllmetry",
   "/cid/1143": "/docs/integrations/sumo-apps/data-volume-mssp",
+  "/cid/1144": "/docs/integrations/sumo-apps/enterprise-audit-collector-data-forwarding-mssp",
   "/cid/1146": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source",
   "/cid/1147": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source/",
   "/cid/1148": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source/",
