@@ -110,37 +110,37 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Box - Overview** dashboard provides a high-level operational view of Box activity including total event volume, security signals, admin action counts, event type distribution, geolocation of events, top active users, and recent event history for rapid situational awareness.
+The **Box - Overview** dashboard provides a high-level operational view of Box activity, including total event volume, security signals, admin action counts, event type distribution, event geolocation, top active users, and recent event history, enabling rapid situational awareness.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Box-Overview.png')} alt="Box dashboards" />
 
 ### Admin and compliance
 
-The **Box - Admin and Compliance** dashboard monitors administrative and compliance-sensitive Box events including admin role assignments, user account lifecycle (create, edit, delete), group membership changes, application public key management, data retention policy updates, and access grant/revoke activity to support governance and audit investigations.
+The **Box - Admin and Compliance** dashboard monitors administrative and compliance-sensitive Box events, including admin role assignments, user account lifecycle (create, edit, delete), group membership changes, application public key management, data retention policy updates, and access grant/revoke activity to support governance and audit investigations.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Box-Admin-and-Compliance.png')} alt="Box dashboards" />
 
 ### Collaboration and sharing
 
-The **Box - Collaboration and Sharing** dashboard tracks collaboration and sharing behavior across Box, including external collaboration invitations, resource sharing events, folder permission changes, collaboration role modifications, and collaboration removals to identify risky content exposure and unauthorized access patterns.
+The **Box - Collaboration and Sharing** dashboard tracks collaboration and sharing behavior across Box, including external collaboration invitations, resource-sharing events, folder permission changes, collaboration role modifications, and collaboration removals, to identify risky content exposure and unauthorized access patterns.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Box-Collaboration-and-Sharing.png')} alt="Box dashboards" />
 
 ### Resource monitoring
 
-The **Box - Resource Monitoring** dashboard analyzes file and folder operations including uploads, downloads, deletions, moves, copies, and lock/unlock events to surface the most accessed resources, top uploaders, and anomalous resource activity patterns.
+The **Box - Resource Monitoring** dashboard analyzes file and folder operations, including uploads, downloads, deletions, moves, copies, and lock/unlock events, to surface the most accessed resources, top uploaders, and anomalous resource activity patterns.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Box-Resource-Monitoring.png')} alt="Box dashboards" />
 
 ### Security threats and anomalies
 
-The **Box - Security Threats and Anomalies** dashboard highlights critical security signals including malicious file detections, sharing and upload policy violations, abnormal download behavior, device trust failures, logins from embargoed locations, threat intelligence events, and access to files containing sensitive content such as credentials, keys, and tokens.
+The **Box - Security Threats and Anomalies** dashboard highlights critical security signals, including malicious file detections, sharing and upload policy violations, abnormal download behavior, device trust failures, logins from embargoed locations, threat intelligence events, and access to files containing sensitive content such as credentials, keys, and tokens.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Box-Security-Threats-and-Anomalies.png')} alt="Box dashboards" />
 
 ### User monitoring
 
-The **Box - User Monitoring** dashboard monitors user authentication activity including total and failed logins, successful versus failed login trends, unique active users, admin login events, new device registrations, top source IPs, and OAuth2 token activity to detect suspicious access patterns.
+The **Box - User Monitoring** dashboard monitors user authentication activity, including total and failed logins, successful versus failed login trends, unique active users, admin login events, new device registrations, top source IPs, and OAuth2 token activity to detect suspicious access patterns.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Box-User-Monitoring.png')} alt="Box dashboards" />
 
