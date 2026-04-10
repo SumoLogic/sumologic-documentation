@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/joe-sandbox.png')} alt="joe-sandbox" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/joe-sandbox.png')} alt="Joe Sandbox" width="100"/>
 
 ***Version: 1.5  
 Updated: Mar 6, 2024***

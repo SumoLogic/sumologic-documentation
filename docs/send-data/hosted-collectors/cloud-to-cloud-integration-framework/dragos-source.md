@@ -9,7 +9,7 @@ description: Collect address, asset, vulnerability, notification, and zone detai
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="dragos-logo" width="50" />
+<img src={useBaseUrl('img/send-data/dragos-logo.png')} alt="Dragos logo" width="50" />
 
 Dragos is a cybersecurity platform with an ecosystem tailored for industrial environments, including Industrial Control Systems (ICS), Supervisory Control and Data Acquisition (SCADA), Distributed Control System (DCS), and Operational Technology (OT) environments.
 Dragos's Operational Technology (OT) offers clear visibility into your Industrial Control System (ICS) assets and communications. It monitors networks, detects threats, and addresses vulnerabilities without causing disruptions or shutdowns, helping you respond confidently to potential threats.

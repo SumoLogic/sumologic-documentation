@@ -24,9 +24,9 @@ Intelligence X is a search engine and data archive. The search works with select
 Follow these steps to get your API Key and URL from Intelligence X:
 
 1. Sign up to [IntelX](https://intelx.io/) platform.
-1. Click on Account.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-1.png')} style={{border:'1px solid gray'}} alt="intelligence-x" width="400"/>
+1. Click on Account.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-1.png')} style={{border:'1px solid gray'}} alt="Click on Account" width="400"/>
 1. Click on the Developer tab.
-1. Copy the API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-2.png')} style={{border:'1px solid gray'}} alt="intelligence-x" width="400"/>
+1. Copy the API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-2.png')} style={{border:'1px solid gray'}} alt="API key" width="400"/>
 
 ## Configure Intelligence X in Automation Service and Cloud SOAR
 

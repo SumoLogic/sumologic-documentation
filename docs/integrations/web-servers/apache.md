@@ -69,7 +69,7 @@ The Sumo Logic app for Apache assumes:
 
 This sample Query is from the **Top 5 Clients Causing 4xx Errors** panel of the Apache - Web server Operations dashboard.
 
-```sql title="Query String"
+```sumo title="Query String"
 webserver_system=apache webserver_farm=* HTTP (40* OR 41* OR 42* OR 43* OR 44* or 45* or 49*)
 | json "log" nodrop | if (_raw matches "{*", log, _raw) as mesg
 | parse regex field=mesg "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop
@@ -235,7 +235,7 @@ This section explains the steps to collect Apache logs from a Kubernetes environ
 
 We use the Telegraf Operator for Apache metrics collection and the Sumo Logic Installed Collector for collecting Apache logs. The diagram below illustrates the components of the Apache collection in a non-Kubernetes environment for each web server. Telegraf runs on the same host as Apache, and uses the [Apache input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) to obtain Apache metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Apache logs are sent to a Sumo Logic Local File source of an installed collector.
 
-<img src={useBaseUrl('img/integrations/web-servers/apache-non-k8s.png')} alt="apache-non-k8s" />
+<img src={useBaseUrl('img/integrations/web-servers/apache-non-k8s.png')} alt="Apache non-Kubernetes" />
 
 This section provides instructions for configuring metrics collection for the Sumo Logic app for Apache. Follow the instructions to set up metrics collection for each server belonging to a Apache server farm:
 

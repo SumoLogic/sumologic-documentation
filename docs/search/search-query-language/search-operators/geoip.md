@@ -12,7 +12,7 @@ Any IP addresses that do not have a location, such as internal addresses, will r
 
 ## Syntax
 
-```sql
+```sumo
 geoip <ip_address_field> [<optional_field1>, <optional_field2>...]
 ```
 
@@ -46,7 +46,7 @@ To map the IP addresses properly you must [count](/docs/search/search-query-lang
 
 Your query should use the following syntax:
 
-```sql
+```sumo
 | parse "[ip_fieldname]" as [ip_address]
 | geoip ip_address
 | count by latitude, longitude, [other geo_locator fields]
@@ -69,7 +69,7 @@ Sample log message:
 
 Using logs that match the example log format, running a query like this:
 
-```sql
+```sumo
 | parse "remote_ip=*]" as remote_ip
 | geoip remote_ip
 | count by latitude, longitude
@@ -98,7 +98,7 @@ Enter a query that parses the IP field from your logs, a **geoip** operator to
 
 This example returns the optional fields region, continent, and postal_code.
 
-```sql
+```sumo
 | parse "remote_ip=*]" as remote_ip
 | geoip remote_ip
 | count by latitude, longitude, region, continent, postal_code
@@ -110,7 +110,7 @@ To find a mismatch from a geo lookup operator query, use the [isNull](/docs/sea
 
 For example, running a query like:
 
-```sql
+```sumo
 | parse "remote_ip=*]" as remote_ip
 | geoip remote_ip
 | if (isNull(country_code), "unknown", country_code) as country_code

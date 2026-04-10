@@ -209,7 +209,7 @@ The Amazon Bedrock AgentCore app uses the following logs and metrics:
 
 ### Sample queries
 
-```sql title="Successful Event Locations (CloudTrail log based)"
+```sumo title="Successful Event Locations (CloudTrail log based)"
 account=* region=* namespace=aws/bedrock/agentcore "\"eventSource\":\"bedrock-agentcore.amazonaws.com\"" !errorCode
 | json "eventSource", "eventName", "eventType", "sourceIPAddress", "errorCode", "errorMessage" nodrop
 | json "userIdentity.type", "userIdentity.userName", "userIdentity.arn", "recipientAccountId", "awsRegion" as user_type, user_name, arn, accountid, region nodrop
@@ -218,7 +218,7 @@ account=* region=* namespace=aws/bedrock/agentcore "\"eventSource\":\"bedrock-ag
 | lookup latitude, longitude from geo://location on ip=sourceIPAddress
 ```
 
-```sql title="Top 10 Error Messages (CloudTrail log based)"
+```sumo title="Top 10 Error Messages (CloudTrail log based)"
 account=* region=* namespace=aws/bedrock/agentcore "\"eventSource\":\"bedrock-agentcore.amazonaws.com\"" errorCode
 | json "eventSource", "eventName", "eventType", "sourceIPAddress", "errorCode", "errorMessage" nodrop
 | json "userIdentity.type", "userIdentity.userName", "recipientAccountId", "awsRegion" as user_type, user_name, accountid, region nodrop
@@ -228,7 +228,7 @@ account=* region=* namespace=aws/bedrock/agentcore "\"eventSource\":\"bedrock-ag
 | limit 10
 ```
 
-```sql title="Top 20 Non-ReadOnly Events (CloudTrail log based)"
+```sumo title="Top 20 Non-ReadOnly Events (CloudTrail log based)"
 account=* region=* namespace=aws/bedrock/agentcore "\"eventSource\":\"bedrock-agentcore.amazonaws.com\""
 | json "eventSource", "eventName", "eventType", "readOnly", "recipientAccountId", "awsRegion" as event_source, event_name, event_type, read_only, accountid, region nodrop
 | where eventSource matches "bedrock-agentcore.amazonaws.com"
@@ -238,7 +238,7 @@ account=* region=* namespace=aws/bedrock/agentcore "\"eventSource\":\"bedrock-ag
 | limit 20
 ```
 
-```sql title="Browser Tool CPU Usage (CloudWatch log based)"
+```sumo title="Browser Tool CPU Usage (CloudWatch log based)"
 account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/bedrock-agentcore/browser* "browser.vcpu.hours.used"
 | json "metrics['browser.vcpu.hours.used']", "agentcore_resource_id" as vcpu_hours, resource_id nodrop
 | where !isBlank(vcpu_hours)
@@ -246,7 +246,7 @@ account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/b
 | sort by total_vcpu_hours desc
 ```
 
-```sql title="Code Interpreter Memory Usage (CloudWatch log based)"
+```sumo title="Code Interpreter Memory Usage (CloudWatch log based)"
 account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/bedrock-agentcore/code-interpreter* "codeInterpreter.memory.gb_hours.used"
 | json "metrics['codeInterpreter.memory.gb_hours.used']", "agentcore_resource_id" as memory_gb_hours, resource_id nodrop
 | where !isBlank(memory_gb_hours)
@@ -254,14 +254,14 @@ account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/b
 | sort by total_memory_gb_hours desc
 ```
 
-```sql title="Gateway Request Success vs Errors (CloudWatch log based)"
+```sumo title="Gateway Request Success vs Errors (CloudWatch log based)"
 account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/bedrock-agentcore/gateway/APPLICATION_LOGS* body isError
 | json "body.isError" as is_error nodrop
 | if(is_error matches "true", "Error", "Success") as status
 | count by status
 ```
 
-```sql title="Memory Extraction Success vs Errors (CloudWatch log based)"
+```sumo title="Memory Extraction Success vs Errors (CloudWatch log based)"
 account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/bedrock-agentcore/memory/* "Extracted memories"
 | json "body.isError", "body.log", "namespace" as is_error, log_message, memory_namespace nodrop
 | where log_message matches "Extracted*memories"
@@ -269,7 +269,7 @@ account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/b
 | count by status
 ```
 
-```sql title="Runtime Top CPU-Intensive Sessions (CloudWatch log based)"
+```sumo title="Runtime Top CPU-Intensive Sessions (CloudWatch log based)"
 account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/bedrock-agentcore/runtime/USAGE_LOGS* "agent.runtime.vcpu.hours.used"
 | json "metrics['agent.runtime.vcpu.hours.used']", "attributes['agent.name']", "attributes['session.id']" as vcpu_hours, agent_name, session_id nodrop
 | where !isBlank(session_id) and !isBlank(vcpu_hours)
@@ -367,7 +367,7 @@ Applied at: Ingest Time
 Scope (Specific Data): account=* eventSource "bedrock-agentcore.amazonaws.com"
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 | json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.resourceArn", "resources[0].ARN", "requestParameters.agentRuntimeId", "requestParameters.memoryId", "requestParameters.browserId", "requestParameters.codeInterpreterId", "requestParameters.gatewayIdentifier", "requestParameters.resourceArnBeingAuthorized", "responseElements.agentRuntime.agentRuntimeId", "responseElements.memory.memoryId", "responseElements.browser.browserId", "responseElements.codeInterpreter.codeInterpreterId", "responseElements.gateway.gatewayId", "requestParameters.resourceCredentialProviderName" as event_source, region, accountid, resourceArn_req, resourceArn_main, agentRuntimeId, memoryId, browserId, codeInterpreterId, gatewayIdentifier, resourcearnbeingauthorized_req, agentRuntimeId_res, memoryId_res, browserId_res, codeInterpreterId_res, gatewayId_res, identityId_req nodrop
 | where event_source matches "bedrock-agentcore.amazonaws.com"
 | "aws/bedrock-agentcore" as namespace
@@ -403,7 +403,7 @@ Applied at: Ingest Time
 Scope (Specific Data): account=* region=* _sourcehost=/aws/vendedlogs/bedrock-agentcore/* resource_arn
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 | json "resource_arn" as resource_arn 
 | "aws/bedrock-agentcore" as namespace
 | parse field=resource_arn "arn:*:bedrock-agentcore:*:*:*/*" as agentcore_arn_part, agentcore_region, agentcore_accountid, agentcore_resource_type, agentcore_resource_id
@@ -424,7 +424,7 @@ Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 
 Enter a parse expression to create an "account" field that maps to the alias you set for each sub-account. For example, if you used the `"dev"` alias for an AWS account with ID `"123456789012"` and the `"prod"` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your AWS account id with the AWS account alias you set up earlier for the individual child account
 | "" as account
@@ -447,7 +447,7 @@ Scope (Specific Data): _sourceCategory=aws/observability/cloudwatch/logs
 
 Enter a parse expression to create an "account" field that maps to the alias you set for each sub-account. For example, if you used the `"dev"` alias for an AWS account with ID `"123456789012"` and the `"prod"` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
-```sql
+```sumo
 | json "account_id", "account.id" as accountid1, accountid2 nodrop
 | if (!isEmpty(accountid1), accountid1, accountid2) as accountId
 // Manually map your AWS account id with the AWS account alias you set up earlier for the individual child account

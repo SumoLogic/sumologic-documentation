@@ -16,11 +16,11 @@ The `withtime`, `most_recent`, and `least_recent` operators are not considered s
 
 The field `status` is used in the following syntax expressions to represent any field.
 
-```sql
+```sumo
 | parse ... as status | withtime status | most_recent(status_withtime) [as <field>] by _sourceHost
 ```
 
-```sql
+```sumo
 | parse ... as status | withtime status | least_recent(status_withtime) [as <field>] by _sourceHost
 ```
 
@@ -34,7 +34,7 @@ Find the most recent visitors to our site by IP.
 
 Say we would like to keep an eye on visitors that hit our site from different countries. This query will provide the most recent IP addresses based on the logline message time:
 
-```sql
+```sumo
 *ip* OR *address*
 | parse regex "(?<IP>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | lookup latitude, longitude, country_code from geo://location on ip=IP

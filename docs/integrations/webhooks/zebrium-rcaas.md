@@ -41,7 +41,7 @@ Follow the below steps to configure the Zebrium RCaaS webhook.
     - **Authentication Method**. Keep it as **NONE**.
 7. Click **Save**.
 8. Verify Zebrium RCaaS events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-  ```sql
+  ```sumo
   _sourceCategory=webhook/zebriumrcaas
   ```
 

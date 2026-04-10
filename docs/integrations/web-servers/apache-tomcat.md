@@ -33,7 +33,7 @@ This section provides instructions for configuring log and metric collection for
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Apache Tomcat in the Kubernetes environment. Four services in the architecture shown below make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
-<img src={useBaseUrl('img/integrations/web-servers/apachetomcat-k8s.png')} alt="apache-k8s" />
+<img src={useBaseUrl('img/integrations/web-servers/apachetomcat-k8s.png')} alt="Apache Kubernetes" />
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Apache Tomcat. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Apache Tomcat and Jolokia2 input plugins to obtain metrics. For simplicity, the diagram doesn’t show the input plugins. The injection of the Telegraf sidecar container is done by the Telegraf Operator. Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), which enriches metadata and sends metrics to Sumo Logic.
 
@@ -247,7 +247,7 @@ This section explains the steps to collect Apache Tomcat logs from a Kubernetes 
 
 We use the Telegraf operator for Apache Tomcat metric collection and Sumo Logic Installed Collector for collecting Apache Tomcat logs. The diagram below illustrates the components of the Apache Tomcat collection in a non-Kubernetes environment.
 
-<img src={useBaseUrl('img/integrations/web-servers/apache-nonk8s.png')} alt="apache-nonk8s" />
+<img src={useBaseUrl('img/integrations/web-servers/apache-nonk8s.png')} alt="Apache non-Kubernetes" />
 
 Telegraf runs on the same system as Apache Tomcat and uses the [Apache Tomcat](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached#configuration) and [Jolokia2](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) input plugin to obtain Apache Tomcat metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Apache Tomcat on the other hand are sent to a Sumo Logic Local File source.
 

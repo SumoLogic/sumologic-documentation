@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alphamountain.png')} alt="alienvault-otx" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alphamountain.png')} alt="alphaMountain icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Sep 28, 2023***

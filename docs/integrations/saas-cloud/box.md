@@ -67,7 +67,7 @@ The Sumo Logic app for Box collects Box events, which are described in detail [h
 
 ### Sample queries
 
-```sql title="Top 10 Failed Logins"
+```sumo title="Top 10 Failed Logins"
 _sourceCategory=box  type "event_type" login
 | json "created_at","ip_address","event_type","created_by.name","created_by.login" as messagetime,src_ip,event_type, src_user,src_login nodrop
 | json "source.name","source.login","source.type"  as dest_user,dest_login, item_type nodrop

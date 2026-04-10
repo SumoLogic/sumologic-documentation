@@ -56,13 +56,13 @@ Aug 2 04:06:08: host=10.1.1.124: local/ssl2 notice mcpd[3772]: User=jsmith@demo.
 
 In the following examples, the start_anchor is **"user="** and the stop_anchor is **":"**, which ends the email address. The asterisk (`*`) is the glob representing the parsed term. The examples create a new field for each message named **"user"** and that field will contain the value of the email address, in this case `jsmith@demo.com`.
 
-```sql
+```sumo
 ... | parse "user=*:" as user 
 ```
 
 The parse operator also allows you to extract multiple fields in one command:
 
-```sql
+```sumo
 ... | parse "user=*: severity=*:" as user, severity | ... 
 ```
 
@@ -72,13 +72,13 @@ This example creates two fields from the sample log message: `user=jsmith@demo.
 
 You can create field names that contain special characters, for example, spaces, dashes, and backslashes or forward slashes, using the following syntax:
 
-```sql
+```sumo
 ... | parse \<string\>" as %\<field name with special character\>"
 ```
 
 For example, this query will allow you to parse the phrase "Class ID", including the space:
 
-```sql
+```sumo
 ... | parse "[Classification:*]" as %"Class ID"
 ```
 

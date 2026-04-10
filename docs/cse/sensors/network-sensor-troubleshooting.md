@@ -93,7 +93,7 @@ To check interface link negotiation use `ethtool`:
 
 The Speed and Duplex fields indicate the active link settings. For a gigabit ethernet link, those are expected to show `1000Mb/s` and `Full`.
 
-MTU (maximum transmission units) is another setting that should match up between connected devices. If all devices use the standard Ethernet MTU size of 1500 bytes, issues are unlikely. If jumbo frames are in use on the network and an upstream device is using a large MTU (e.g. 9000, 9216, etc.), the capture interface MTU should also be adjusted to
+MTU (maximum transmission units) is another setting that should match up between connected devices. If all devices use the standard Ethernet MTU size of 1500 bytes, issues are unlikely. If jumbo frames are in use on the network and an upstream device is using a large MTU (e.g. 9000, 9216, and so on), the capture interface MTU should also be adjusted to
 match. 
 
 To check the interface MTU:

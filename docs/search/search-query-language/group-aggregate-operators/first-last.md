@@ -31,7 +31,7 @@ If there is no sort order specified for returned results (for example, when usin
 
 ### Syntax
 
-```sql
+```sumo
 first(<field>) [as <field>] [by <field>]
 ```
 
@@ -41,13 +41,13 @@ first(<field>) [as <field>] [by <field>]
 
 ### Example
 
-```sql
+```sumo
 ... | first(error_message) group by hostname
 ```
 
 Note that when you find the first occurrence of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the `_first` fields. See this example:
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | first(url) as first_url, first(status_code) as first_statuscode
 ```
@@ -58,7 +58,7 @@ Finds the last value of the field being evaluated within the time range and acco
 
 ### Syntax
 
-```sql
+```sumo
 last(<field>) [as <field>] [by <field>]
 ```
 
@@ -68,7 +68,7 @@ last(<field>) [as <field>] [by <field>]
 
 ### Example
 
-```sql
+```sumo
 ... | last(status_code) group by hostname
 ```
 
@@ -80,7 +80,7 @@ Aug 2 04:06:08 : host=10.1.1.124: local/ssl2 notice mcpd[3772]: filesize=20454: 
 
 Example based on sample log message:
 
-```sql
+```sumo
 disk*
 | parse "diskutilization=*" as disk
 | disk>0.8?1:0 as overcapacity
@@ -92,7 +92,7 @@ This query finds all messages that contain the term `disk\*` and parses out al
 
 Note that when you find the last occurrence of more than one field, you must create an alias using the [`as` operator](/docs/search/search-query-language/search-operators/as) to rename the `_last` fields. See this example:
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | last(url) as last_url, last(status_code) as last_statuscode
 ```

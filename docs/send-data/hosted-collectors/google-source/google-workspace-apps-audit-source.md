@@ -48,7 +48,7 @@ In order to provide Sumo logic access to google services, please follow the mana
 1. Select the app with the following client ID:<br/>
 `788305497335-k5jf772fpotskbco66orgh48jbvug8uo.apps.googleusercontent.com`
 1. Click **Change access**.
-1. Choose the **Trusted** option to allow access to all Google services. <img src={useBaseUrl('img/send-data/g-suite-change-access.png')} alt="g-suite-change-access" />
+1. Choose the **Trusted** option to allow access to all Google services. <img src={useBaseUrl('img/send-data/g-suite-change-access.png')} alt="G Suite change access" />
 1. Click **Change**.
 
 ## Configuring a Google Workspace Apps Audit Source

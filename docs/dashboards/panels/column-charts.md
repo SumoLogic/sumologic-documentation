@@ -9,7 +9,7 @@ Column charts are useful for visually comparing the number of events that have o
 
 For example, you'd use the following query to create a simple column chart:
 
-```sql
+```sumo
 (error OR fail*) AND exception | count by _sourceCategory | sort by _count
 ```
 
@@ -29,7 +29,7 @@ To add a panel with a column chart:
 
 To create a stacked column chart, use a query that uses a multiple series that counts by at least two things, followed by a `transpose`. For example, this query from the Sumo Logic App for Apache creates a stacked column chart for visits by country over time
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | parse regex "(?<client_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | lookup latitude, longitude, country_code, country_name, region, city, postal_code from geo://location on ip = client_ip

@@ -1,7 +1,7 @@
 ---
 slug: /release-notes
 title: Sumo Logic Release Notes
-description: Here you'll find a chronological list of the newest Sumo Logic features and bug fixes.
+description: Stay current with Sumo Logic release notes covering new features and bug fixes for Service, Cloud SIEM, Cloud SOAR, Collector, and Developer releases.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

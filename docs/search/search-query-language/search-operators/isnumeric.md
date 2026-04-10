@@ -19,18 +19,18 @@ The `isNumeric` operator checks whether a string is a valid Java number. Valid 
 
 ## Examples
 
-```sql
+```sumo
 | isNumeric(num)
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isNumeric("1.56") as isNum
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isNumeric("1e5") as isNum
 ```

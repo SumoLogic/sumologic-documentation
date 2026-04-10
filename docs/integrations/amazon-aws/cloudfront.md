@@ -26,7 +26,7 @@ This app supports only the W3C log output format with a tab (`\t`) field delimit
 
 ### Sample queries
 
-```sql title="Count of HTTP Status Codes"
+```sumo title="Count of HTTP Status Codes"
 _sourceCategory= aws/cf | parse "*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*" as _filedate,_ftime,edgeloc, scbytes, c_ip,method,cs_host,uri_stem,status,referer,user_agent,uri_query,cookie,edgeresult,requestid
 | count as count by status
 | sort by count

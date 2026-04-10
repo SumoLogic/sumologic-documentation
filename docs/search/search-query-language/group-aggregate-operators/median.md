@@ -10,7 +10,7 @@ In order to calculate the median value for a particular field, you can utilize t
 
 ## Syntax
 
-```sql
+```sumo
 pct(<field> [, 50]) [as <field>] [by <field>]
 ```
 
@@ -22,14 +22,14 @@ pct(<field> [, 50]) [as <field>] [by <field>]
 
 For example:
 
-```sql
+```sumo
 * | parse "data=*" as data
   | pct(data, 50) as median
 ```
 
 To calculate the median value of a field called `"Len: *"` as seconds, and then take the median, use the following query:
 
-```sql
+```sumo
 | parse "Len: *" as seconds
 | pct(seconds,50) as median
 ```

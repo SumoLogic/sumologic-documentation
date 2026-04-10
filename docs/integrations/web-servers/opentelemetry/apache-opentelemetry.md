@@ -156,7 +156,7 @@ import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configurat
 
 This sample logs query is from the **Top 5 Clients Causing 4xx Errors** panel of the **Apache - Web server Operations** dashboard.
 
-```sql title="Query String"
+```sumo title="Query String"
 webengine.system=apache webengine.cluster.name=* HTTP (40* OR 41* OR 42* OR 43* OR 44* or 45* or 49*)
 | json "log" nodrop | if  (_raw matches "{*", log, _raw)  as mesg
 | parse regex field=mesg "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop

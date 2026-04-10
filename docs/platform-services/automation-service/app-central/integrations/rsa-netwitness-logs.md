@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rsa-netwitness-logs.png')} alt="rsa-netwitness-logs" width="60"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rsa-netwitness-logs.png')} alt="RSA NetWitness Logs icon" width="60"/>
 
 ***Version: 1.2  
 Updated: Jul 07, 2023***

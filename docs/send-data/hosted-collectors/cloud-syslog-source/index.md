@@ -2,7 +2,7 @@
 slug: /send-data/hosted-collectors/cloud-syslog-source
 title: Cloud Syslog Source
 sidebar_label: Cloud Syslog
-description: You can configure a cloud syslog source to allow a syslog client to send syslog data to Sumo Logic.
+description: Configure a Sumo Logic Cloud Syslog Source to receive RFC 5424-compliant syslog messages over TLS 1.3, with deployment-specific endpoints and source tokens.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

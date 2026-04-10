@@ -9,7 +9,7 @@ description: Learn how to collect assets and vulnerabilities from Rapid7 Insight
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="rapid7-logo" width="80" />
+<img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="Rapid7 logo" width="80" />
 
 The Rapid7 source collects asset and vulnerabilities from [Rapid7 InsightVM](https://help.rapid7.com/insightvm/en-us/api/integrations.html) API and sends it to Sumo Logic. InsightVM provides a fully available, scalable, and efficient way to collect vulnerability data and minimize risk. InsightVM automatically evaluates changes in user's networks, allowing security professionals to better understand and quickly manage the risk posed to their organization.
 

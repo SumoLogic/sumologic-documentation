@@ -132,7 +132,7 @@ The AWS API Gateway app uses the following logs and metrics:
 Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* apiname=* | avg by apiname, namespace, region, account
 ```
 
-```sql title="Top Error Codes (CloudTrail Log-based)"
+```sumo title="Top Error Codes (CloudTrail Log-based)"
 "\"eventSource\":\"apigateway.amazonaws.com\"" errorCode account=dev Namespace=aws/apigateway region=us-east-1
 | json "eventName", "eventSource", "awsRegion", "userAgent", "recipientAccountId", "userIdentity", "requestParameters", "responseElements", "sourceIPAddress", "errorCode", "errorMessage", "requestID" as event_name, event_source, Region, user_agent, accountId1, userIdentity, requestParameters, responseElements, src_ip, errorCode, errorMessage, requestID nodrop
 | where event_source = "apigateway.amazonaws.com" and !isEmpty(errorCode)
@@ -146,7 +146,7 @@ Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* api
 | top 10 errorCode by eventCount, errorCode asc
 ```
 
-```sql title="Distribution by User Agent (Access Log-based)"
+```sumo title="Distribution by User Agent (Access Log-based)"
 account=dev region=us-east-1 namespace=aws/apigateway apiname=* apiid stage domainname requestId identityUserAgent
 | json "requestId", "apiId", "authorizerError", "errorMessage", "errorResponseType", "status", "integrationLatency", "domainName", "identitySourceIp", "identityUserAgent", "stage", "integrationStatus" as requestId, apiId, authorizerError, errorMessage, errorResponseType, status, integrationLatency, domainName, identitySourceIp, identityUserAgent, stage, integrationStatus
 | json "wafLatency", "responseLatency", "responseLength", "path", "httpMethod", "protocol" as wafLatency, responseLatency, responseLength, path, httpMethod, protocol nodrop

@@ -14,7 +14,7 @@ By default, the collapsed version of JSON messages is shown. You can see the to
 
 Click **Expand/Collapse** on the upper right side of the **Messages** table to see expand options:
 * **Expand all Rows.** Rows that show truncated messages are expanded to show complete messages.
-* **Expand all Rows and JSON.** Rows that show truncated messages are expanded to show complete messages, and nested JSON messages are expanded, as shown below. <br/><img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/expanded-json-message.png')} alt="expanded-json-message"/>
+* **Expand all Rows and JSON.** Rows that show truncated messages are expanded to show complete messages, and nested JSON messages are expanded, as shown below. <br/><img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/expanded-json-message.png')} alt="Expanded JSON message"/>
 
 After you’ve expanded either all rows, or all rows and JSON objects, the **Expand/Collapse JSON** has options for resetting your view.
 

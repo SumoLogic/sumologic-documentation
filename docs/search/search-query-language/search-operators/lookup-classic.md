@@ -21,7 +21,7 @@ In either case, you will point the operator to one of the following:
 
 ## Syntax
 
-```sql
+```sumo
 lookup <outputColumn-1> [as <field>] [,<outputColumn-2> [as <field>]] from <filePath> on <joinColumn-1> [,<joinColumn-2>]
 ```
 

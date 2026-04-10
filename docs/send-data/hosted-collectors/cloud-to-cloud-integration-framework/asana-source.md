@@ -10,7 +10,7 @@ description: Learn how to retrieve Asana audit logs into the Sumo Logic environm
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/asana-icon.png')} alt="asana-icon" width="40" />
+<img src={useBaseUrl('img/send-data/asana-icon.png')} alt="Asana icon" width="40" />
 
 The Asana Audit Logs API Integration ingests events from [Asana Audit Logs API](https://developers.asana.com/reference/audit-log-api). Asana can help you to break down large work into manageable tasks. It's a comprehensive work management tool that allows you to track project and task progress, share files, comments, and notes, and keep track of deadlines.
 
@@ -32,7 +32,7 @@ The Asana Audit Logs API Integration ingests events from [Asana Audit Logs API](
 
 Follow the below steps to get the required fields for user configuration:
 
-1. Log in to your [Asana admin console](https://app.asana.com/admin).<br/> <img src={useBaseUrl('img/send-data/asana_login.png')} style={{border:'1px solid gray'}} alt="asana-login" width="400" />
+1. Log in to your [Asana admin console](https://app.asana.com/admin).<br/> <img src={useBaseUrl('img/send-data/asana_login.png')} style={{border:'1px solid gray'}} alt="Asana login" width="400" />
 1. After logging in, click the **Apps** tab from with your admin console.
 1. Click **Service accounts**.
 1. Click the **Add service account** button.

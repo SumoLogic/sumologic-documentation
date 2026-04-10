@@ -58,13 +58,13 @@ Sumo Logic sources that collect inventory data generally have a configuration se
 
 You can search the inventory data collected by inventory sources in a log search tab in Sumo Logic. To find all inventory data, use a search like this:
 
-```
+```sumo
 _siemDataType=Inventory
 ```
 
 You can scope your search using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata), for example, by specifying the source category assigned to the inventory source:
 
-```
+```sumo
 _sourceCategory=AD_inventory
 ```
 

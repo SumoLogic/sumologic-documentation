@@ -95,7 +95,7 @@ instance of Win32_PerfFormattedData_PerfOS_Memory
 
 ### Sample queries
 
-```sql title="Hosts with low available memory"
+```sumo title="Hosts with low available memory"
 _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Memory" "AvailableBytes"
 | parse regex "winbox = (?<dest_host>\S+)" nodrop
 | if (isNull(dest_host) or dest_host="",_sourceHost,dest_host) as host
@@ -108,7 +108,7 @@ _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Memory" "AvailableByt
 | where DataPoints >10 // another threshold: more than 10 minutes where the limit drops under the above threshold
 ```
 
-```sql title="Avg CPU Usage (%) by Host"
+```sumo title="Avg CPU Usage (%) by Host"
 _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Processor" "_Total"
 | parse regex "winbox = (?<dest_host>\S+)" nodrop
 | if (isNull(dest_host) or dest_host="",_sourceHost,dest_host) as host
