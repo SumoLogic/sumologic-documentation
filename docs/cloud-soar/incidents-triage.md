@@ -378,7 +378,10 @@ Perform the following steps to:
 1. Create an automation rule that will add events to triage:
     1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. 
     1. Click **+** to the left of **Rules**.
-    1. On the **Add Automation Rule** dialog, select a name for the rule (for example, *Triage example*). Then select the daemon to use with this new rule, the resource, and fill in all the remaining parameters that you'd like this rule to use.
+    1. On the **Add Automation Rule** dialog, select a name for the rule (for example, *Triage example*). Then select the integration daemon to use with this new rule, the integration resource, and fill in all the remaining parameters that you'd like this rule to use.
+        :::important
+        Before you select the integration daemon, ensure that the integration that supplies the daemon action is fully configured for authentication. This ensures that the integration's vendor can securely communicate with Sumo Logic. For more information about configuring authentication, see [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/). For configuration directions for each integration, see [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/).
+        :::
     1. Click **Save**. The rule appears in the list of available automation rules.
     1. In the **Filters** field of your triage automation rule, make sure to click the **Edit** button to add filtering. This is important to properly evaluate the incoming data and determine when to add an event to triage.
     1. Click **+** to the left of **Actions**.
