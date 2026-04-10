@@ -15,6 +15,7 @@ This page describes the major changes and the necessary migration steps.
 
 :::note
 For those, who are already using Otel operator(default metrics collector) in v4 or not using metrics collection feature at all, this change is not applicable. Please skip this section.
+Only applicable for customers are still using sumologic provided prometheus operator for metrics collection by explicitly enabling kube-prometheus-stack.prometheusOperator.enabled flag.
 :::
 
 Opentelemetry operator has been made the default for metrics collection starting from helm chart v4, but in v4, there
