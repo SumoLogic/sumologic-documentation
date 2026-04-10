@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/akenza.png')} alt="akenza" width="90"/>
 
-***Version: 1.1  
-Updated: Jul 18, 2023***
+***Version: 1.2  
+Updated: April 8, 2026***
 
 **Akenza** is leading the Internet of Things toward broad applicability by reducing technical complexity and empowering companies to create their own smart applications.
 
@@ -58,3 +58,4 @@ For information about Akenza, see [Akenza documentation](https://docs.akenza.io/
 
 * December 14, 2022 - First upload
 * July 18, 2023 (v1.1) - Removed leading/trailing spaces
+* April 8, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
