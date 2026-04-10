@@ -400,7 +400,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-KMSAT-source')}><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="KnowBe4 KMSAT icon" width="120"/><h4>KnowBe4 KMSAT Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-kmsat-source')}><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="KnowBe4 KMSAT icon" width="120"/><h4>KnowBe4 KMSAT Source</h4></a>
   <p>Collects user events data into Sumo Logic for storage, analysis, and alerting.</p>
   </div>
 </div>

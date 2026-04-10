@@ -119,7 +119,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ### Authentication error
 
-**Error**: `{\"error_code\":\"UNAUTHENTICATED\",\"message\":\"Principal is not authenticated\",\"id\":\"549b3c5965ab3ecfa935eb92ed4f1a5e\"}`. This error usually indicates that the request is not able to authenticate with the server.
+**Error**: `{"error_code":"UNAUTHENTICATED\","message":"Principal is not authenticated","id":"549b3c5965ab3ecfa935eb92ed4f1a5e"}`. This error usually indicates that the request is not able to authenticate with the server.
 
 **Solution**: To resolve this error:
 - Verify that the **API Key**, **API ID**, and **Org Key** values are correct and match the credentials in your Carbon Black Cloud console under **Settings > API Access > API Keys**.
