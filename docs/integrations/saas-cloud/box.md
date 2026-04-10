@@ -83,6 +83,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 
 :::important
 Use the [Cloud-to-Cloud Integration Box Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Box app is properly integrated and configured to collect and analyze your Box data.
+:::
 
 ### Create a new collector and install the app
 
