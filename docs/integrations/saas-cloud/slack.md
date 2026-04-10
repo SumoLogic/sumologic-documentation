@@ -2,16 +2,16 @@
 id: slack
 title: Slack
 sidebar_label: Slack
-description: The Sumo Logic app for Slack provides monitoring and data analytics for Slack users, channels, access logs for workspaces with free, standard, and plus plans.
+description: The Sumo Logic app for Slack provides monitoring and data analytics for Slack users, channels, and access logs for workspaces with free, standard, and plus plans.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Slack icon" width="50"/>
 
-The Sumo Logic app for Slack provides monitoring and data analytics for Slack users, channels, access logs for workspaces with free, standard, plus, and enterprise plans. The app is focused on **public channels** only.
+The Sumo Logic app for Slack provides monitoring and data analytics for Slack users, channels, and access logs for workspaces with free, standard, plus, and enterprise plans. The app is focused on **public channels** only.
 
-[Slack](https://slack.com/) is a cloud-based set of software tools and online services that provide for secure collaboration across teams, departments, offices, and countries.
+[Slack](https://slack.com/) is a cloud-based suite of software tools and online services that enable secure collaboration across teams, departments, offices, and countries.
 
 ## Log types
 
@@ -23,7 +23,7 @@ Slack logs are in JSON format. The Slack app utilizes the following log types:
 * [Access logs](https://api.slack.com/methods/team.accessLogs)
 * [Audit logs](https://api.slack.com/docs/audit-logs-api#the_audit_event)
 
-Sumo Logic’s Slack collector enhances the logs by adding a few metadata fields so the raw logs from Slack APIs might differ in format. The availability of all types of logs is determined by the [slack plans](https://get.slack.help/hc/en-us/articles/115003205446-Slack-plans-and-features-).
+Sumo Logic’s Slack collector enhances the logs by adding a few metadata fields, so the raw logs from Slack APIs might differ in format. The availability of all types of logs is determined by the [Slack plans](https://get.slack.help/hc/en-us/articles/115003205446-Slack-plans-and-features-).
 
 | Log Type | Free plan | Standard plan | Plus plan | Enterprise plan |
 |:---|:---|:---|:---|:---|
@@ -205,7 +205,7 @@ The following table provides sample log messages for the different log types.
 
 ### Sample queries
 
-The sample query is from the **Channel Summary** panel of **Slack - Public Channels** dashboard.
+The sample query is from the **Channel Summary** panel of the **Slack - Public Channels** dashboard.
 
 ```sumo
 _sourceCategory=Labs/slack
@@ -265,7 +265,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 <ViewDashboards/>
 
 ### Overview
-The **Slack - Overview** dashboard provides an at-a-glance view of the number of workspaces, members, bots, admins, public channels, and public messages. Panels also show geographic access locations, and key statistics around public messages and files.  
+The **Slack - Overview** dashboard provides an at-a-glance view of the number of workspaces, members, bots, admins, public channels, and public messages. Panels also show geographic access locations and key statistics around public messages and files.  
 Use this dashboard to:
 * Monitor the admins, bots, and members across workspaces.
 * Identify the trends around public messages and files shared.
@@ -319,7 +319,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/saas-cloud/Slack-Channel-Audit.png')} alt="Slack dashboards" />
 
 ### Files Overview
-The **Slack - Files Overview** dashboard monitors file events such as uploads, shares, deletions, and blocked downloads. It also tracks malicious file events and common file types shared across workspaces.  
+The **Slack - Files Overview** dashboard monitors file events, including uploads, shares, deletions, and blocked downloads. It also tracks malicious file events and common file types shared across workspaces.  
 Use this dashboard to:
 * Detect unusual or potentially malicious file activity.
 * Track blocked download and file-sharing events.
@@ -410,11 +410,11 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name  | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Slack - Audit Event Detected from Embargoed Geo Location` | This monitor detects any Slack audit log event originating from a country or region subject to government-imposed embargoes or organizational access restrictions. The audit activity can span across multiple entity types, including users, apps, workspaces, canvases, channels, and files. Such activity may indicate a policy violation, compromised credentials, or the use of a VPN or proxy to bypass geographic controls. | Count > 0 | Count < = 0 |
-| `Slack - Blocked File Download Detected` | Generates an alert when Slack blocks a file download due to security or policy restrictions. Helps identify and investigate potential policy violations, unauthorized access, or data-sharing attempts. | Count > 0 | Count < = 0 |
-| `Slack - Malicious File Activity Detected` | This monitor detects file-related activity in Slack that has been flagged as malicious or suspicious. File-based threats in Slack can span across channels, direct messages, and workspaces, making it a common vector for malware propagation and data exfiltration. Security teams should investigate the associated file, user account, and session context immediately upon trigger. | Count > 0 | Count < = 0 |
-| `Slack - Multiple Device Access Activity Detected` | Detects when a single Slack user account is accessed from multiple devices within a short time window. This may indicate credential sharing, account compromise, or unauthorized access. | Count > 0 | Count < = 0 |
-| `Slack - Repeated Failed Login or Logout Activity Detected` | Detects repeated failed login or logout attempts on a Slack user account within a defined time window. This may indicate a brute force attack, credential stuffing attempt, or unauthorized access activity. | Count > 5 | Count < = 5 |
+| `Slack - Audit Event Detected from Embargoed Geo Location` | This alert is triggered when Slack audit log events originate from embargoed or restricted regions. The audit activity can span across multiple entity types, including users, apps, workspaces, canvases, channels, and files. Such activity may indicate potential policy violations, compromised credentials, or attempts to bypass geographic controls. | Count > 0 | Count < = 0 |
+| `Slack - Blocked File Download Detected` | This alert is triggered when Slack blocks a file download due to security or policy restrictions, helping identify potential policy violations or unauthorized data access. | Count > 0 | Count < = 0 |
+| `Slack - Malicious File Activity Detected` | This alert is triggered when Slack detects file activity flagged as malicious or suspicious. File-based threats in Slack can span across channels, direct messages, and workspaces, making it a common vector for malware propagation and data exfiltration. Security teams should investigate the associated file, user account, and session context immediately upon trigger. | Count > 0 | Count < = 0 |
+| `Slack - Multiple Device Access Activity Detected` | This alert is triggered when a Slack user account is accessed from multiple devices within a short time window, suggesting possible credential sharing or account compromise. | Count > 0 | Count < = 0 |
+| `Slack - Repeated Failed Login or Logout Activity Detected` | This alert is triggered when repeated failed login or logout attempts occur on a Slack user account, indicating potential brute-force or credential-stuffing attacks. | Count > 5 | Count < = 5 |
 
 ## Upgrade/Downgrade the Slack app (Optional)
 
