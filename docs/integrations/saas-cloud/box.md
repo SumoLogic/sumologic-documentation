@@ -2,14 +2,14 @@
 id: box
 title: Box
 sidebar_label: Box
-description: Provides insight into user behavior patterns, monitors resources, and even tracks administrative activities.
+description: The Sumo Logic app for Box provides insight into user behavior patterns, monitors resources, tracks administrative activities, and detects security threats.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/box.png')} alt="Box icon" width="50"/>
 
-The Sumo Logic app for Box provides insight into user behavior patterns, monitors resources, and even tracks administrative activities. The app consists of three predefined Dashboards, providing visibility into your environment for real time analysis.
+The Sumo Logic app for Box provides insight into user behavior patterns, monitors resources, tracks administrative activities, and detects security threats. The app consists of six predefined dashboards covering admin compliance, collaboration, resource monitoring, security anomalies, user authentication, and an operational overview, providing comprehensive visibility into your Box environment.
 
 ## Log types
 
@@ -75,65 +75,91 @@ _sourceCategory=box  type "event_type" login
 | count as EventCount by src_user,src_login,src_ip | top 10 src_user,src_login,src_ip by EventCount
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud-to-Cloud Integration Box Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source) for the Box app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Box Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Box app is properly integrated and configured to collect and analyze your Box data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Box app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration Box Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Box app is properly integrated and configured to collect and analyze your Box data.
 
-<AppInstall2/>
+### Create a new collector and install the app
 
-## Viewing the Box dashboards
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing Box dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-### Collaborations and Shares
+### Overview
 
-<img src={useBaseUrl('img/integrations/saas-cloud/box_app_collaborations.png')} alt="Box dashboards" />
+The **Box - Overview** dashboard provides a high-level operational view of Box activity including total event volume, security signals, admin action counts, event type distribution, geolocation of events, top active users, and recent event history for rapid situational awareness.
 
-**Users with Most Collaboration Activities.** Shows the top users with the most collaboration activities and displays them as a column chart for the last 24 hours.
+<img src={useBaseUrl('img/integrations/saas-cloud/Box-Overview.png')} alt="Box dashboards" />
 
-**Collaborations by Item.** Top items invoked in collaboration activities, displayed as a column chart for the last 24 hours.
+### Admin and compliance
 
-**Collaboration Details.** Displays Box collaboration event information details in an aggregation table with columns for message time, event type, item name, source user, and source login for the last 24 hours.
+The **Box - Admin and Compliance** dashboard monitors administrative and compliance-sensitive Box events including admin role assignments, user account lifecycle (create, edit, delete), group membership changes, application public key management, data retention policy updates, and access grant/revoke activity to support governance and audit investigations.
 
-**Shared Resources.** Displays the details of shared resources such as message time, event type, item name, item type, source user, and source login in an aggregation table for the last 24 hours.
+<img src={useBaseUrl('img/integrations/saas-cloud/Box-Admin-and-Compliance.png')} alt="Box dashboards" />
 
-### Resource Access
+### Collaboration and sharing
 
-<img src={useBaseUrl('img/integrations/saas-cloud/box_app_resource.png')} alt="Box dashboards" />
+The **Box - Collaboration and Sharing** dashboard tracks collaboration and sharing behavior across Box, including external collaboration invitations, resource sharing events, folder permission changes, collaboration role modifications, and collaboration removals to identify risky content exposure and unauthorized access patterns.
 
-**Top 10 Resource Creators.** Displays the top 10 resource creators by showing details of Box upload or create events by user and count as a pie chart for the last 24 hours.
+<img src={useBaseUrl('img/integrations/saas-cloud/Box-Collaboration-and-Sharing.png')} alt="Box dashboards" />
 
-**Top 10 Resource Consumers.** Provides information on the top 10 resource consumers by showing Box download or preview events by user and event count as a pie chart for the last 24 hours.
+### Resource monitoring
 
-**Access Types Over Time.** Shows access event types by count as a stacked column chart using timeslices of one hour on a timeline for the last 24 hours.
+The **Box - Resource Monitoring** dashboard analyzes file and folder operations including uploads, downloads, deletions, moves, copies, and lock/unlock events to surface the most accessed resources, top uploaders, and anomalous resource activity patterns.
 
-**Top 10 Most Accessed Resources.** Lists the top 10 most accessed resources by name in a bar chart for the last 24 hours.
+<img src={useBaseUrl('img/integrations/saas-cloud/Box-Resource-Monitoring.png')} alt="Box dashboards" />
 
-**Top 10 Most Downloaded or Viewed Resources.** Lists the top 10 most downloaded or viewed resources by name in a bar chart for the last 24 hours.
+### Security threats and anomalies
 
-**Resources Moved or Copied.** Displays details on resources that have been copied or moved such as message time, item type, item name, event type, source login, and source user in an aggregation table for the last 24 hours.
+The **Box - Security Threats and Anomalies** dashboard highlights critical security signals including malicious file detections, sharing and upload policy violations, abnormal download behavior, device trust failures, logins from embargoed locations, threat intelligence events, and access to files containing sensitive content such as credentials, keys, and tokens.
 
-### User Monitoring
+<img src={useBaseUrl('img/integrations/saas-cloud/Box-Security-Threats-and-Anomalies.png')} alt="Box dashboards" />
 
-<img src={useBaseUrl('img/integrations/saas-cloud/box_app_user_monitoring.png')} alt="Box dashboards" />
+### User monitoring
 
-**Top 10 Logins by User.** Displays details about the top 10 users with the most logins, such as source user, source login, and event count in an aggregation table for the last 24 hours.
+The **Box - User Monitoring** dashboard monitors user authentication activity including total and failed logins, successful versus failed login trends, unique active users, admin login events, new device registrations, top source IPs, and OAuth2 token activity to detect suspicious access patterns.
 
-**Top 10 Logins by IP.** Shows the top 10 IP addresses that logged into the account in a pie chart for the last 24 hours.
+<img src={useBaseUrl('img/integrations/saas-cloud/Box-User-Monitoring.png')} alt="Box dashboards" />
 
-**Top 10 Failed Logins.** Provides details on failed logins by user and event count in a column chart for the last 24 hours.
+## Create monitors for the Box app
 
-**Administrative Activities.** Displays administrative details such as message time, event type, source IP address, source user, source login, destination user, and destination login in an aggregation table for the last 24 hours.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-**Recent Login Devices Added.** Reports details on recently added login devices such as message time, source login, source user, and source IP address in an aggregation table for the last 24 hours.
+<CreateMonitors/>
 
-**Top 10 Automated Users.** Displays information on top automated users by user and event count in a column chart for the last 24 hours. Automated users are devices or applications that login through a user account.
+### Box app alerts
+
+| Name  | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Box - Abnormal Download Activity` | This alert is triggered when Box detects abnormal download activity for a user. This may indicate bulk data exfiltration, compromised account behavior, or unauthorized access to sensitive content. | Count > 0 | Count < = 0 |
+| `Box - Device Trust Failures` | This alert is triggered when a Box device trust check fails for a user. This may indicate an attempt to access Box from an unmanaged or non-compliant device, which could represent a policy violation or a compromised endpoint. | Count > 0 | Count < = 0 |
+| `Box - Events from Embargoed Locations` | This alert is triggered when Box activity is observed from embargoed or high-risk countries. This may indicate unauthorized access, regulatory compliance violations, or malicious activity originating from restricted geographies. | Count > 0 | Count < = 0 |
+| `Box - Excessive Failed Logins by User` | This alert is triggered when a user exceeds three failed Box login attempts within 15 minutes. This may indicate brute-force activity, credential stuffing, or unauthorized access attempts against user accounts. | Count > 3 | Count < = 3 |
+| `Box - Malicious Files Detected` | This alert is triggered when Box marks a file as malicious. This may indicate malware distribution, an insider threat uploading harmful content, or an attacker attempting to compromise other users who access the file. | Count > 0 | Count < = 0 |
+| `Box - Policy Violations` | This alert is triggered when a Box sharing or upload policy violation is detected. This may indicate an attempt to bypass data governance controls, expose sensitive content externally, or violate organizational compliance policies. | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the Box app (Optional)
 
