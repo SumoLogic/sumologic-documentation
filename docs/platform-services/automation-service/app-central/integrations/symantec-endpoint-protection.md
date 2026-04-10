@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/symantec-endpoint-protection.png')} alt="symantec-endpoint-protection" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/symantec-endpoint-protection.png')} alt="Symantec Endpoint Protection icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 07, 2023***

@@ -6,7 +6,7 @@ description: Learn about the collection process for the Amazon Data Lifecycle Ma
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-data-lifecycle-manager-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon-data-lifecycle-manager-logo.png')} alt="Amazon Data Lifecycle Manager icon" width="50"/>
 
 You can use Amazon Data Lifecycle Manager to automate the creation, retention, and deletion of EBS snapshots and EBS-backed AMIs. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html).
 

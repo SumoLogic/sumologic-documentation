@@ -21,6 +21,6 @@ When you comment out part of your metrics query, the commented text appears in g
 
 Comments you add to a metrics query will appear on dashboards, monitors and SLO pages that use the metrics query.
 
-In this example, a complete line is commented out:<br/><img src={useBaseUrl('img/metrics/line-commented.png')} alt="line-commented.png" style={{border: '1px solid gray'}} width="800" />
+In this example, a complete line is commented out:<br/><img src={useBaseUrl('img/metrics/line-commented.png')} alt="Line commented" style={{border: '1px solid gray'}} width="800" />
 
-In this example, multiple lines are commented out:<br/><img src={useBaseUrl('img/metrics/multiline-comment.png')} alt="line-commented.png" style={{border: '1px solid gray'}} width="800" />
+In this example, multiple lines are commented out:<br/><img src={useBaseUrl('img/metrics/multiline-comment.png')} alt="Multiple lines commented" style={{border: '1px solid gray'}} width="800" />

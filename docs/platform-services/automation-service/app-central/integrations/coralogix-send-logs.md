@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/coralogix-send-logs.png')} alt="coralogix-send-logs" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/coralogix-send-logs.png')} alt="Coralogix Send Logs icon" width="100"/>
 
 ***Version: 1.2  
 Updated: Mar 4, 2024***
@@ -22,7 +22,7 @@ Generate and then copy the [API Key](https://coralogix.com/docs/user-guides/acco
 
 `https://<teamname>.coralogix.com/#/integration/apikey`
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-send-logs/coralogix-send-logs-1.png')} style={{border:'1px solid gray'}} alt="coralogix-send-logs" width="800"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-send-logs/coralogix-send-logs-1.png')} style={{border:'1px solid gray'}} alt="Coralogix send logs" width="800"/>
 
 ## Configure Coralogix - Send Logs in Automation Service and Cloud SOAR
 

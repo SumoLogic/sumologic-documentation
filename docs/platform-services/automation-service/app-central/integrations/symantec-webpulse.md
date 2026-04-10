@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/symantec-webpulse.png')} alt="symantec-webpulse" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/symantec-webpulse.png')} alt="Symantec WebPulse icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 07, 2023***

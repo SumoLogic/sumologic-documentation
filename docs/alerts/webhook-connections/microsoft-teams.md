@@ -7,7 +7,7 @@ description: Send notifications from alerts to Microsoft Teams.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="Microsoft Teams icon" width="50"/>
 
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
 
@@ -32,13 +32,13 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the **Connections** page, click **+ Add**.
-1. For **Connection Type**, select **Microsoft Teams** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/microsoft-teams-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+1. For **Connection Type**, select **Microsoft Teams** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/microsoft-teams-dropdown.png')} alt="Microsoft Teams dropdown menu" style={{border: '1px solid gray'}} width="500" />
 1. In the **Connection Settings** dialog, enter:
     * **Name**. Enter a name for the connection.
     * (Optional) **Description**. Enter a description for the connection.
     * **URL**. Enter the URL from Microsoft Teams.
     * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
-      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-microsoft-teams.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-microsoft-teams.png')} alt="Create New Connection Microsoft Teams icon" style={{border: '1px solid gray'}} width="500" />
 1. (Optional) Customize the **Alert and Recovery Payloads** to include just the information you need.
    One helpful tool to preview changes is [Microsoft's Adaptive Card Designer](https://adaptivecards.io/designer/). The best way to use the tool is to copy the contents of the `"content"` field (including the enclosing curly braces) from the below default payload and work from there.
 1. The following JSON is the default **Alert Payload**, which you can customize as needed.  For details on variables you can use as parameters within your JSON object, see [Configure Webhook payload variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables).

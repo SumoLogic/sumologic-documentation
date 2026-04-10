@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Analysi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-analysis-services.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-analysis-services.png')} alt="Azure Analysis Services icon" width="50"/>
 
 [Azure Analysis Services](https://learn.microsoft.com/en-us/azure/analysis-services/analysis-services-overview) is a fully managed platform as a service (PaaS) that provides enterprise-grade data models in the cloud. This integration monitors server performance and tracks server events like start, stop, pause, restart, and delete.
 

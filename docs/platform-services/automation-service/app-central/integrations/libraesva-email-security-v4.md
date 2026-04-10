@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/libraesva-email-security-v4.png')} alt="libraesva-email-security-v4" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/libraesva-email-security-v4.png')} alt="Libraesva Email Security V4 icon" width="100"/>
 
 ***Version: 4.1  
 Updated: Jul 11, 2023***

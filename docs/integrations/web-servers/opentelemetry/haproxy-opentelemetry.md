@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/haproxy.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/web-servers/haproxy.png')} alt="Haproxy icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The [HAProxy](https://docs.haproxy.org/2.6/intro.html) app is a unified logs and metrics app designed to help you monitor the availability, performance, health, and resource utilization of HAProxy server farms. It provides preconfigured dashboards and searches that offer visibility into your environment for real-time and historical analysis: visitor locations, HTTP error codes percentage, backend and frontend server statistics, traffic patterns, errors, server operations, and access from known malicious sources.
 
@@ -213,7 +213,7 @@ May 13 08:24:43 localhost haproxy[21813]:
 
 This query example is from the **HAProxy - Overview** dashboard > **Top 5 URLs with Errors** panel:
 
-```
+```sumo
 webengine.cluster.name=* %"sumo.datasource"=haproxy
 | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as haproxy_log_message
@@ -236,7 +236,7 @@ webengine.cluster.name=* %"sumo.datasource"=haproxy
 
 Here is a sample metrics query from the **Http Response Codes** dashboard > **HAProxy - Backend Metrics** panel:
 
-```
+```sql
 sumo.datasource=haproxy metric=haproxy.requests.total status_code=* haproxy.service_name=backend deployment.environment=* webengine.cluster.name=* webengine.node.name=*  haproxy.proxy_name=* 
 | parse field=status_code *  as code 
 | avg by webengine.cluster.name,webengine.node.name,haproxy.proxy_name,code

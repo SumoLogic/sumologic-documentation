@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/f5-awaf.png')} alt="f5-awaf" width="60"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/f5-awaf.png')} alt="F5 AWAF icon" width="60"/>
 
 ***Version: 1.1  
 Updated: Jul 06, 2023***
@@ -28,8 +28,8 @@ F5 AWAF protects apps with behavioural analytics, proactive bot defence, and app
 
 ## F5 AWAF configuration
 
-1. To configure F5 AWAF, install the product and use BIG-IP Registration key(s). Might need help from system administrator. Then sign in to BIG-IP with username and password.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-1.png')} style={{border:'1px solid gray'}} alt="f5-awaf" width="800"/>
-1. In the main page, click on the section System, License.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-2.png')} style={{border:'1px solid gray'}} alt="f5-awaf" width="250"/>
+1. To configure F5 AWAF, install the product and use BIG-IP Registration key(s). Might need help from system administrator. Then sign in to BIG-IP with username and password.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-1.png')} style={{border:'1px solid gray'}} alt="F5 awaf" width="800"/>
+1. In the main page, click on the section System, License.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-2.png')} style={{border:'1px solid gray'}} alt="F5 awaf" width="250"/>
 1. In Summary check your Licence and in the tab Module Allocation locate the Advanced Firewall (AFM) and change Provisioning to Nominal. Then click Submit. After submission in Security Tab Network Firewall will appear.
 
 ## Configure F5 AWAF in Automation Service and Cloud SOAR

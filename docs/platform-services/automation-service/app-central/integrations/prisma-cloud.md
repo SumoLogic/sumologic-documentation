@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/prisma-cloud.png')} alt="prisma-cloud" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/prisma-cloud.png')} alt="Prisma Cloud icon" width="100"/>
 
 ***Version: 1.2  
 Updated: Nov 09, 2023***

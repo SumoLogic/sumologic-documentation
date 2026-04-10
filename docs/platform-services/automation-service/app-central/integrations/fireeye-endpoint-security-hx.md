@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-endpoint-security-hx.png')} alt="fireeye-endpoint-security-hx" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-endpoint-security-hx.png')} alt="FireEye Endpoint Security icon" width="100"/>
 
 ***Version: 1.3  
 Updated: Jul 13, 2023***

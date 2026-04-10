@@ -8,11 +8,11 @@ The `trim` operator eliminates leading and trailing spaces from a string field.
 
 ## Syntax
 
-```sql
+```sumo
 trim(<field>) as <field>
 ```
 
-```sql
+```sumo
 trim(" <string expression> ") as <field>
 ```
 
@@ -20,7 +20,7 @@ trim(" <string expression> ") as <field>
 
 Take the string value " Hello World  ". To remove the leading and trailing spaces you'd do the following:
 
-```sql
+```sumo
 | trim(" Hello World  ") as greeting
 ```
 

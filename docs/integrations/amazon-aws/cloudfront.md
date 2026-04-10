@@ -6,7 +6,7 @@ description: The Sumo Logic app for Amazon CloudFront provides analytics on visi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cloudfront.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/cloudfront.png')} alt="CloudFront icon" width="50"/>
 
 Amazon CloudFront is a content delivery network (CDN) that provides an easy way for companies to distribute content to end-users with low latency and high data transfer speeds. The Sumo Logic app for Amazon CloudFront provides analytics on visitor information, rates and statistics, content being served, and other metrics. The app uses predefined searches and Dashboards that provide visibility into your environment for real time analysis of overall usage.
 
@@ -26,7 +26,7 @@ This app supports only the W3C log output format with a tab (`\t`) field delimit
 
 ### Sample queries
 
-```sql title="Count of HTTP Status Codes"
+```sumo title="Count of HTTP Status Codes"
 _sourceCategory= aws/cf | parse "*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*" as _filedate,_ftime,edgeloc, scbytes, c_ip,method,cs_host,uri_stem,status,referer,user_agent,uri_query,cookie,edgeresult,requestid
 | count as count by status
 | sort by count

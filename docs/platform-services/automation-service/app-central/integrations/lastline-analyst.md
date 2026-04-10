@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/lastline-analyst.png')} alt="lastline-analyst" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/lastline-analyst.png')} alt="Lastline Analyst icon" width="100"/>
 
 ***Version: 1.2  
 Updated: Nov 10, 2023***

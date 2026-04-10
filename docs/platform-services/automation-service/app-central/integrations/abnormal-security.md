@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/abnormal-security.png')} alt="abnormal-security" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/abnormal-security.png')} alt="Abnormal security" width="90"/>
 
 ***Version: 1.2  
 Updated: Jun 21, 2023***

@@ -104,7 +104,7 @@ You must have a role that grants you the Manage Field Extractions capability to 
     * **Value**.  aws/observability/cloudtrail/logs
     * **Parse Expression**. Enter  a parse expression to create an “account” field that maps to the alias you set for each child account in the previous step. For example, if you used the “dev” alias for an AWS account with ID  "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:   
 
-        ```sql
+        ```sumo
         | json "recipientAccountId"
         // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
         | "" as account

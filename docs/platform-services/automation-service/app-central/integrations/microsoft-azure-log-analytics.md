@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-azure-log-analytics.png')} alt="microsoft-azure-log-analytics" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-azure-log-analytics.png')} alt="Microsoft Azure Log Analytics icon" width="100"/>
 
 ***Version: 1.0  
 Updated: Sep 04, 2023***

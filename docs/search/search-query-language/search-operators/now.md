@@ -12,7 +12,7 @@ It is important to note that the Now operator outputs the exact time (down to th
 
 ## Syntax
 
-```sql
+```sumo
 now()
 ```
 
@@ -22,7 +22,7 @@ now()
 
 This query returns a long version of the current date and time in milliseconds.
 
-```sql
+```sumo
 * | now() as current_date
 ```
 
@@ -34,7 +34,7 @@ Which returns results similar to:
 
 Use the following query with formatDate to return results for the current date formatted as yyyy-MM-dd.
 
-```sql
+```sumo
 * | formatDate(now(), "yyyy-MM-dd") as today
 ```
 
