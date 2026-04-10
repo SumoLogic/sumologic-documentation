@@ -44,7 +44,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">  
-  <a href={useBaseUrl('docs/api/app-management')}><img src={useBaseUrl('img/integrations/integrations.png')} alt="Integrations icon" width="55"/><h4>Apps (Beta)</h4></a>
+  <a href={useBaseUrl('docs/api/app-management')}><img src={useBaseUrl('img/integrations/integrations.png')} alt="Integrations icon" width="55"/><h4>Apps (Preview)</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
@@ -159,7 +159,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-    <a href={useBaseUrl('docs/api/metrics-searches')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="50"/><h4>Metrics Searches (Beta)</h4></a>      
+    <a href={useBaseUrl('docs/api/metrics-searches')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="50"/><h4>Metrics Searches (Preview)</h4></a>      
   </div>
 </div>
 <div className="box smallbox card">
@@ -293,4 +293,3 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
   </div>
 </div>
 </div>
-

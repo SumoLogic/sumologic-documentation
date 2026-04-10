@@ -1,6 +1,6 @@
 ---
 id: mcp-server
-title: Sumo Logic MCP Server (Private Preview)
+title: Sumo Logic MCP Server (Extended Preview)
 description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents from VS Code or Claude Code CLI.
 ---
 
@@ -12,15 +12,15 @@ import TabItem from '@theme/TabItem';
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Private Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview">Extended Preview</span></a></p>
 
 :::info
-This feature is in Private Preview. For more information, contact your Sumo Logic account executive.
+This feature is in Extended Preview. For more information, contact your Sumo Logic account executive.
 :::
 
 The Sumo Logic MCP server lets external copilots and proprietary models securely query logs, investigate Cloud SIEM insights, manage alerts and dashboards, work with existing Dojo AI agents, and perform user management — all using natural language from your IDE or chat platform.
 
-During the Private Preview period, the following MCP clients are supported:
+During the Extended Preview period, the following MCP clients are supported:
 * [VS Code + GitHub Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)
 * [Claude Code CLI](https://code.claude.com/docs/en/quickstart)
 
@@ -428,7 +428,7 @@ Our MCP server provides access to Sumo Logic through these tool categories:
 All tools respect your Sumo Logic permission controls and access policies.
 
 :::note
-Tool identifiers are subject to change during the Private Preview period.
+Tool identifiers are subject to change during the Extended Preview period.
 :::
 
 ### Utility tools
