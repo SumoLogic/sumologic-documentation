@@ -1,8 +1,8 @@
 ---
 id: chef
-title: Install OpenTelemetry Collector using Chef
+title: Install OpenTelemetry Collector Using Chef
 sidebar_label: Chef
-description: Learn how to install the Sumo Logic OpenTelemetry Collector on Chef.
+description: Learn how to install the Sumo Logic OpenTelemetry Collector using Chef.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

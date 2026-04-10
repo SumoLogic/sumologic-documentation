@@ -1,7 +1,8 @@
 ---
 id: docker
-title: Install OpenTelemetry Collector using Docker
+title: Install OpenTelemetry Collector Using Docker
 sidebar_label: Docker
+description: Learn how to install the Sumo Logic OpenTelemetry Collector using Docker.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
