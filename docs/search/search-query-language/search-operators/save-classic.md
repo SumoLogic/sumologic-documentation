@@ -16,9 +16,7 @@ You will need to remember the path where you point the save operator to put the 
 
 ## Syntax
 
-```sumo
-save [append] <myFolder/mySubFolder/myFileName>
-```
+`save [append] <myFolder/mySubFolder/myFileName>`
 
 ## Rules
 

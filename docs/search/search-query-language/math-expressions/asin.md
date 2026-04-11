@@ -8,9 +8,7 @@ Returns the inverse sine of the argument.
 
 ## Syntax
 
-```sumo
-asin(<x>) as <field>
-```
+`asin(<x>) as <field>`
 
 ## Example
 

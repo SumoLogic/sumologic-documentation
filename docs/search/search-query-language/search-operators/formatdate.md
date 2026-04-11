@@ -14,9 +14,7 @@ If you're looking to convert a date to a timestamp, use [`parseDate`](docs/searc
 
 ## Syntax
 
-```sumo
-formatDate(<date> [, <format> [, <timeZone>]]) as <field>
-```
+`formatDate(<date> [, <format> [, <timeZone>]]) as <field>`
 
 ### Returns
 

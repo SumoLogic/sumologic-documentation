@@ -11,13 +11,9 @@ The `replace` operator allows you to replace all instances of a specified string
 
 ## Syntax
 
-```sumo
-replace(<sourceString>, <searchString>, <replaceString>) as <field>
-```
+`replace(<sourceString>, <searchString>, <replaceString>) as <field>`
 
-```sumo
-replace(<sourceString>, /<regex>/, <replaceString>) as <field>
-```
+`replace(<sourceString>, /<regex>/, <replaceString>) as <field>`
 
 ## Rules
 

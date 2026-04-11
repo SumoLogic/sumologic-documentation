@@ -9,9 +9,7 @@ description: Use the sum operator in Sumo Logic to calculate the total value of 
 
 ## Syntax
 
-```sumo
-sum(<numerical_field>) [as <field>] [by <field>]
-```
+`sum(<numerical_field>) [as <field>] [by <field>]`
 
 ## Rules
 

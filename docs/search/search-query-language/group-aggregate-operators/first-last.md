@@ -31,9 +31,7 @@ If there is no sort order specified for returned results (for example, when usin
 
 ### Syntax
 
-```sumo
-first(<field>) [as <field>] [by <field>]
-```
+`first(<field>) [as <field>] [by <field>]`
 
 ### Rules
 
@@ -58,9 +56,7 @@ Finds the last value of the field being evaluated within the time range and acco
 
 ### Syntax
 
-```sumo
-last(<field>) [as <field>] [by <field>]
-```
+`last(<field>) [as <field>] [by <field>]`
 
 ### Rules
 

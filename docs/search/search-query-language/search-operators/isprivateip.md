@@ -10,13 +10,9 @@ The `isPrivateIP` operator checks if an IPv4 address is private and returns a 
 
 ## Syntax
 
-```sumo
-isPrivateIP("<IPv4_string>") as <field>
-```
+`isPrivateIP("<IPv4_string>") as <field>`
 
-```sumo
-isPrivateIP(<IPv4_string_field>) [as <field>]
-```
+`isPrivateIP(<IPv4_string_field>) [as <field>]`
 
 ## Rules
 
