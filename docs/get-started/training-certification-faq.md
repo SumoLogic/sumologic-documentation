@@ -43,7 +43,7 @@ In this video, we'll walk through learning and certification offerings to help y
 Access complimentary on-demand courses and onboarding tutorials in our self-paced learning portal:
 
 1. Sign in to Sumo Logic.
-2. From your **Home** page, click the **Learn** tab > **Learning Hub – Start Here!**<br/><img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Learning Hub icon in UI" style={{border: '1px solid gray'}} width="600" />
+2. From your **Home** page, click the **Learn** tab > **Learning Hub – Start Here!**<br/><img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Learning Hub icon in UI" style={{border: '1px solid gray'}} width="700" />
 3. Explore our self-paced certification courses and workshops, built to the same standard as our instructor-led offerings, ready for you to learn anytime, anywhere, at your own pace.
 
 ### How can I sign up for free live instructor-led classes?
