@@ -1,18 +1,18 @@
 ---
-id: knowbe4-api-source
-title: KnowBe4 API Source
-sidebar_label: KnowBe4 API
+id: knowbe4-kmsat-source
+title: KnowBe4 KMSAT Source
+sidebar_label: KnowBe4 KMSAT
 tags:
   - cloud-to-cloud
   - knowbe4-api
-description: Learn how to configure the KnowBe4 Cloud-to-Cloud source setup using the Sumo logic environment.
+description: Learn how to configure the KnowBe4 KMSAT Cloud-to-Cloud source setup using the Sumo logic environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/knowbe4.png')} alt="KnowBe4 icon" width="100"/>
 
-The KnowBe4 API integration collects user events data into Sumo Logic for storage, analysis, and alerting. It ingests events data from the [Events API](https://developer.knowbe4.com/rest/userEvents#tag/Events/operation/listEvents), phishing security tests from the [Phishing Security Tests API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get), and recipient results from the [Recipient Results API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests~1%7Bpst_id%7D~1recipients/get).
+The KnowBe4 KMSAT integration collects user events data into Sumo Logic for storage, analysis, and alerting. It ingests events data from the [Events API](https://developer.knowbe4.com/rest/userEvents#tag/Events/operation/listEvents), phishing security tests from the [Phishing Security Tests API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get), and recipient results from the [Recipient Results API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests~1%7Bpst_id%7D~1recipients/get).
 
 ## Data collected
 
@@ -30,7 +30,7 @@ C2C will skip the record if `started_at` data is not in the format of `yyyy-MM-d
 ### Vendor configuration
 
 :::note
-KnowBe4 APIs are only limited to Platinum and Diamond customers.
+KnowBe4 KMSAT APIs are only limited to Platinum and Diamond customers.
 :::
 
 Before you begin setting up your **KnowBe4** Source, which is required to connect to the KnowBe4 API, you'll need to configure your integration with the **Region** and **KnowBe4 API Token**.
@@ -49,7 +49,7 @@ The **Region** is the region where your **KnowBe4** account is located. To know 
 
 #### API Token
 
-The **API security token** is required to authenticate the KnowBe4 APIs. To get the **API token**, follow the steps mentioned in the [KnowBe4 Documentation](https://support.knowbe4.com/hc/en-us/articles/115016090908-Reporting-API-Overview#h_01HBDW9MRQ3XEWZCYK0S0T6MDC).
+The **API security token** is required to authenticate the KnowBe4 KMSAT APIs. To get the **API token**, follow the steps mentioned in the [KnowBe4 Documentation](https://support.knowbe4.com/hc/en-us/articles/115016090908-Reporting-API-Overview#h_01HBDW9MRQ3XEWZCYK0S0T6MDC).
 
 ### Source configuration
 
@@ -112,18 +112,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ### JSON example
 
 ```json reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/knowbe4-api/example.json
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/knowbe4-kmsat/example.json
 ```
 
 ### Terraform example
 
 ```sh reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/knowbe4-api/example.tf
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/knowbe4-kmsat/example.tf
 ```
 
 ## Limitations
 
-There are two limitations to access KnowBe4 APIs:
+There are two limitations to access KnowBe4 KMSAT APIs:
 * Access to the KnowBe4 Event APIs is limited to 10 requests per licensed user account per day, with a maximum of 4 requests per second.
 * Access to the KnowBe4 Phishing APIs is limited to 1,000 requests per day plus the number of licensed users on the account. The API allows a maximum of 4 requests per second, and has a burst limit of 50 requests per minute which starts around 5 minutes and the daily limit starts around 24 hours from the first API request.
 
