@@ -14,9 +14,9 @@ Use the `jsonArraySize` operator to determine the size of a JSON array field.
 ## Example
 
 ```sumo
-_sourceCategory=stream .ett
-| fields tiers
-| jsonArraySize("[1, 2, 3]") as js
+_sourceCategory=stream .ett 
+| fields tiers 
+| jsonArraySize("[1, 2, 3]") as js 
 | jsonArraySize(tiers) as tierCount
 ```
 

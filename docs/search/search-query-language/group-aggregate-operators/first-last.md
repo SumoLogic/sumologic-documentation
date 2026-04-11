@@ -70,9 +70,7 @@ Finds the last value of the field being evaluated within the time range and acco
 
 Sample log message:
 
-```json
-Aug 2 04:06:08 : host=10.1.1.124: local/ssl2 notice mcpd[3772]: filesize=20454: diskutilization=0.4 : 01070638:5: Pool member 172.31.51.22:0 monitor status down.
-```
+`Aug 2 04:06:08 : host=10.1.1.124: local/ssl2 notice mcpd[3772]: filesize=20454: diskutilization=0.4 : 01070638:5: Pool member 172.31.51.22:0 monitor status down.`
 
 Example based on sample log message:
 

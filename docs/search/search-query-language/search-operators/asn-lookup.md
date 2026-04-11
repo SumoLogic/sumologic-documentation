@@ -28,6 +28,8 @@ The `organization` and `carrier_organization` lookup fields will have the same v
 
 The following query references a data stream with IPv4 addresses, parses those IPv4 addresses, and then uses ASN Lookup to retrieve their autonomous system information. 
 
-`_dataTier=all _sourceCategory=stream "remote_ip="
+```sumo
+_dataTier=all _sourceCategory=stream "remote_ip="
 | parse regex "(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
-| lookup organization, registering_organization, asn from asn://default on ip = ip`
+| lookup organization, registering_organization, asn from asn://default on ip = ip
+```
