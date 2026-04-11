@@ -135,7 +135,7 @@ This app uses Sumo Logic’s [Automox Source](/docs/send-data/hosted-collectors/
 _sourceCategory="Labs/automox" activity_id
 | json "id", "activity_id", "activity", "severity", "type_name", "entity.name", "entity.type", "actor.user.email_addr", "actor.user.org.name", "auth_protocol_id", "category_uid", "count", "message", "metadata.correlation_uid", "metadata.tenant_uid", "metadata.product.vendor_name", "status_code", "status_id", "status_details", "time", "user.email", "user_result.email_addr", "user_result.groups[*].type", "user_result.groups[*].name", "user_result.groups[*].privileges[*]", "observables[*].type", "observables[*].value", "observables[*].name", "web_resources[*].name", "web_resources[*].type", "web_resources[*].url_string" as id, activity_id, activity, severity, type_name, entity_name, entity_type, actor_email, actor_org, auth_protocol_id, category_uid, event_count, message, correlation_uid, tenant_uid, vendor_name, status_code, status, status_details, event_time, target_user_email, result_user_email, group_type, group_name, group_privileges, observables_type, observables_value, observables_name, web_resource_name, web_resource_type, url_string nodrop
 
-| If (status matches "0", "Unknown", if (status matches "1", "Success", if (status matches "2", "Failure", "Other"))) as status
+| if (status matches "0", "Unknown", if (status matches "1", "Success", if (status matches "2", "Failure", "Other"))) as status
 
 // global filters
 | where activity matches "{{activity_type}}"

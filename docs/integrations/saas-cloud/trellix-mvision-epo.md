@@ -21,7 +21,7 @@ This app includes [built-in monitors](#trellix-mvision-epo-alerts). For details 
 
 ## Log types
 
-This app uses Sumo Logic’s [Trellix mVision ePO Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source/) to collect event logs from the Trellix mVision ePO platform.
+This app uses Sumo Logic’s [Trellix Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-source/) to collect event logs from the Trellix platform.
 
 ## Sample log message
 
@@ -111,7 +111,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 <CollectionConfiguration/>
 
 :::important
-Use the [Cloud-to-Cloud Integration for Trellix mVision ePO](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Trellix mVision ePO app is properly integrated and configured to collect and analyze your Trellix mVision ePO data.
+Use the [Cloud-to-Cloud Integration for Trellix](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Trellix mVision ePO app is properly integrated and configured to collect and analyze your Trellix mVision ePO data.
 :::
 
 ### Create a new collector and install the app
