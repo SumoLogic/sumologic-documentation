@@ -43,7 +43,7 @@ In this video, we'll walk through learning and certification offerings to help y
 Access complimentary on-demand courses and onboarding tutorials in our self-paced learning portal:
 
 1. Sign in to Sumo Logic.
-2. From your **Home** page, click the **Learn** tab > **Learning Hub – Start Here!**<br/><img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Learning Hub icon in UI" style={{border: '1px solid gray'}} width="700" />
+2. From your **Home** page, click the **Learn** tab > **Learning Hub – Start Here!**<br/><img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Learning Hub icon in UI" style={{border: '1px solid gray'}} width="600" />
 3. Explore our self-paced certification courses and workshops, built to the same standard as our instructor-led offerings, ready for you to learn anytime, anywhere, at your own pace.
 
 ### How can I sign up for free live instructor-led classes?
@@ -226,28 +226,30 @@ Not at this time.
 
 ### I cannot install third-party software on my company-issued device. Can I use a personal device to take exams?
 
-Sumo Logic Academy uses [Kryterion Webassessor](https://www.kryterion.com/blog/the-evolution-of-webassessor-from-bold-beginnings-to-a-future-powered-by-ai/) for exam registration. To ensure a secure testing environment, you must install the "Lockdown Browser" to attend a live proctored Sumo Logic Certified exam. Because many corporate IT policies restrict third-party software, we strongly recommend using a personal device to complete your exam. In this case, simply follow the normal process to access Kryterion through the in-product **Learn** tab from your personal device.
+Yes. Sumo Logic Academy uses [Kryterion Webassessor](https://www.kryterion.com/blog/the-evolution-of-webassessor-from-bold-beginnings-to-a-future-powered-by-ai/) for exam registration. Exams require the Lockdown Browser, software that many corporate IT policies restrict. We strongly recommend using a personal device to complete your exam.
 
-For customers whose access to their Sumo Logic organization is also restricted to approved company machines, a standalone login process is required to log in to Kryterion Webassessor to attend the exam via a personal machine.
+If you can access your Sumo Logic org from your personal device, no special setup is needed. Open the Learn tab from your personal device and follow the normal process.
 
-If you cannot access your Sumo Logic environment from your personal machine, use the following process to enroll you into Webassessor through our standard single sign-on (SSO) procedure, and set a password on your account so that you can log in from a different machine without needing to access Sumo Logic first:
+If your Sumo Logic org is restricted to approved company machines, you'll need to complete a one-time setup to create standalone Webassessor credentials before you can log in from your personal device. Follow the steps below.
 
-1. Log in from your work machine:
-   1. Sign in to Sumo Logic as normal.
-   1. Select the **Learn** tab in the UI.
-   1. Click on **Learning Portal - Start Here!** to register via SSO for. You may be prompted to validate your login via email.
-   1. Click on **Exam Registration**. This will enroll you into Kryterion Webassessor through SSO.<br/><img src={useBaseUrl('img/get-started/learn-tab.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="600" />
-   1. Once logged in to Webassessor, click **Edit Profile** at the top. Copy your username into a note for later use. Note that this will be a string of alphanumeric characters.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-registration.png')} alt="Webassessor" style={{border: '1px solid gray'}} width="600" />
-   1. Click **Log Out**, then on the next screen, **Log In**.
-   1. Now click **Forgot Password**.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-forgot-password.png')} alt="Webassessor forgot password" style={{border: '1px solid gray'}} width="600" />
-   1. Paste your username (not your email address) and click **Submit**.
-   1. An email with a password reset link will be sent to your inbox. Click the link in the email and set a password. Note the password for future use.
-You can now log in to your Webassessor account using both single sign on (SSO) and from the Webassessor login page.
-1. Log in from your personal machine:
-   1. Access the Kryterion Webassessor standalone login page.
-   1. Log in using your username (not your email address) and password set in the previous section.
-   1. You can now proceed as normal with attending your live exam.
-   1. If you pass the exam, you will see the new badge in your Skilljar learner transcript, and an email with your Credly badge acceptance request will also follow as normal.
+#### Step 1: Set up your Webassessor credentials (work machine)
+
+1. Sign in to Sumo Logic and open the **Learn** tab.
+1. Click **Learning Portal - Start Here!** to register via SSO. You may be prompted to validate your login via email.<br/><img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="600" />
+1. Click **Exam Registration**. This enrolls you in Kryterion Webassessor via SSO.<br/><img src={useBaseUrl('img/get-started/exam-registration.png')} alt="Exam registration" style={{border: '1px solid gray'}} width="600" />
+1. Once logged in to Webassessor, click **Edit Profile**.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-editprofile.png')} alt="Webassessor" style={{border: '1px solid gray'}} width="600" />
+1. Copy your username, which will be a string of alphanumeric characters (not your email address), and save it.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-registration.png')} alt="Webassessor" style={{border: '1px solid gray'}} width="600" />
+1. Click **Log Out**, then click **Log In** on the next screen.
+1. Click **Forgot Password**.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-forgot-password.png')} alt="Webassessor forgot password" style={{border: '1px solid gray'}} width="600" />
+1. Paste your username and click **Submit**.
+1. Check your email for a password reset link. Set a password and save it for future use.
+
+#### Step 2: Take your exam (personal device)
+
+1. Go to the Kryterion Webassessor standalone login page.
+1. Log in with your username and the password you just set.
+1. Proceed with your exam as normal.
+1. If you pass, your Credly badge and Skilljar transcript will update as usual.
 
 ## Exam logistics
 
