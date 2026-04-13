@@ -11,83 +11,83 @@ This guide has documentation Sumo apps for container management and orchestratio
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/containers-orchestration/opentelemetry')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="55"/><h4>OpenTelemtry</h4></a>
+  <a href={useBaseUrl('docs/integrations/containers-orchestration/opentelemetry')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="55"/><h4>OpenTelemtry</h4></a>
   <p>A guide to OpenTelemetry apps for containers and orchestration.</p>
   </div>
 </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/containers-orchestration/activemq.png')} alt="Thumbnail icon" width="45"/>
+    <img src={useBaseUrl('img/integrations/containers-orchestration/activemq.png')} alt="ActiveMQ icon" width="45"/>
     <h4><a href={useBaseUrl('docs/integrations/containers-orchestration/activemq')}>Active MQ</a></h4>
     <p>A guide to the Sumo Logic App for ActiveMQ.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Thumbnail icon" width="165"/>
+    <img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Docker icon" width="165"/>
     <h4><a href={useBaseUrl('docs/integrations/containers-orchestration/docker-community-edition')}>Docker Community Edition</a></h4>
     <p>A guide to Sumo Logic app for Docker Community Edition.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Thumbnail icon" width="150"/>
+    <img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Docker icon" width="150"/>
     <h4><a href={useBaseUrl('docs/integrations/containers-orchestration/docker-ulm')}>Docker ULM</a></h4>
     <p>A guide to the Sumo Logic app for Docker ULM.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/containers-orchestration/kafka.png')} alt="Thumbnail icon" width="80"/>
+    <img src={useBaseUrl('img/integrations/containers-orchestration/kafka.png')} alt="Kafka icon" width="80"/>
     <h4><a href={useBaseUrl('docs/integrations/containers-orchestration/kafka')}>Kafka</a></h4>
     <p>A guide to the Sumo Logic app for Kafka related features and technologies.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/containers-orchestration/strimzi.png')} alt="Thumbnail icon" width="100"/>
+    <img src={useBaseUrl('img/integrations/containers-orchestration/strimzi.png')} alt="Strimzi icon" width="100"/>
     <h4><a href={useBaseUrl('docs/integrations/containers-orchestration/strimzi-kafka')}>Strimzi Kafka</a></h4>
     <p>A guide to collecting logs and metrics for Strimzi Kafka.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="Thumbnail icon" width="50"/>
+    <img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="Kubernetes icon" width="50"/>
     <h4><a href={useBaseUrl('docs/integrations/containers-orchestration/kubernetes')}>Kubernetes</a></h4>
     <p>A guide to the Sumo Logic app for Kubernetes.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="Thumbnail icon" width="50"/>
+    <img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="Kubernetes icon" width="50"/>
     <h4><a href={useBaseUrl('docs/integrations/containers-orchestration/kubernetes-control-plane')}>Kubernetes Control Plane</a></h4>
     <p>A guide to the Sumo Logic app for Kubernetes Control Pane.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/containers-orchestration/rabbitmq.png')} alt="Thumbnail icon" width="50"/>
+    <img src={useBaseUrl('img/integrations/containers-orchestration/rabbitmq.png')} alt="RabbitMQ icon" width="50"/>
     <h4><a href={useBaseUrl('docs/integrations/containers-orchestration/rabbitmq')}>RabbitMQ</a></h4>
     <p>A guide to the Sumo Logic app for RabbitMQ.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="Thumbnail icon" width="50"/>
+    <img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="VMware icon" width="50"/>
     <h4><a href={useBaseUrl('docs/integrations/containers-orchestration/vmware')}>VMware</a></h4>
     <p>A guide to the Sumo Logic app for VMware.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="Thumbnail icon" width="50"/>
+    <img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="VMware icon" width="50"/>
     <h4><a href={useBaseUrl('docs/integrations/containers-orchestration/vmware-legacy')}>VMware Legacy</a></h4>
     <p>A guide to the Sumo Logic app for VMware Legacy.</p>
     </div>
   </div>
     <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/containers-orchestration/vmware-tanzu.png')} alt="Thumbnail icon" width="50"/>
+    <img src={useBaseUrl('img/integrations/containers-orchestration/vmware-tanzu.png')} alt="VMware Tanzu icon" width="50"/>
     <h4><a href={useBaseUrl('docs/integrations/containers-orchestration/vmware-tanzu-application-service')}>VMware Tanzu Application Service</a></h4>
     <p>A guide to the Sumo Logic app for VMware Tanzu Application Service.</p>
     </div>

@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-defender-atp.png')} alt="microsoft-defender-atp" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-defender-atp.png')} alt="Microsoft Defender ATP icon" width="100"/>
 
 ***Version: 1.2  
 Updated: Jul 12, 2023***
@@ -35,13 +35,13 @@ Microsoft Defender Advanced Threat Protection (ATP) is a product that enables pr
 
 ## Microsoft Defender ATP configuration
 
-1. Log in to Azure with a user that has the Global Administrator role. Navigate to **Azure Active Directory > App registrations > [New registration](https://learn.microsoft.com/en-us/defender-endpoint/api/exposed-apis-create-app-nativeapp#create-an-app)**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-1.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="800"/>
-1. Choose a name for your application, and then select Register. To enable your app to access Defender for Endpoint and assign it 'Read all alerts' permission, on your application page, select **API Permissions > Add permission > APIs my organization uses**, type *WindowsDefenderATP*, and then select WindowsDefenderATP. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-2.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="800"/>
-1. Select the relevant permissions. For example, 'Read All Alerts'. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-3.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="600"/>
-1. All the permissions would be something like this. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-14.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="600"/>
-2. Select Grant consent. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-4.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="600"/>
-1. Next, add a secret to the application. Select **Certificates & secrets**, add a description to the secret, and then select **Add**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-5.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="600"/>
-1. Navigate to **Overview**, copy and save your application ID and your tenant ID.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-6.png')} style={{border:'1px solid gray'}} alt="microsoft-defender-atp" width="600"/>
+1. Log in to Azure with a user that has the Global Administrator role. Navigate to **Azure Active Directory > App registrations > [New registration](https://learn.microsoft.com/en-us/defender-endpoint/api/exposed-apis-create-app-nativeapp#create-an-app)**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-1.png')} style={{border:'1px solid gray'}} alt="Microsoft defender atp" width="800"/>
+1. Choose a name for your application, and then select Register. To enable your app to access Defender for Endpoint and assign it 'Read all alerts' permission, on your application page, select **API Permissions > Add permission > APIs my organization uses**, type *WindowsDefenderATP*, and then select WindowsDefenderATP. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-2.png')} style={{border:'1px solid gray'}} alt="Microsoft defender atp" width="800"/>
+1. Select the relevant permissions. For example, 'Read All Alerts'. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-3.png')} style={{border:'1px solid gray'}} alt="Microsoft defender atp" width="600"/>
+1. All the permissions would be something like this. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-14.png')} style={{border:'1px solid gray'}} alt="Microsoft defender atp" width="600"/>
+2. Select Grant consent. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-4.png')} style={{border:'1px solid gray'}} alt="Microsoft defender atp" width="600"/>
+1. Next, add a secret to the application. Select **Certificates & secrets**, add a description to the secret, and then select **Add**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-5.png')} style={{border:'1px solid gray'}} alt="Microsoft defender atp" width="600"/>
+1. Navigate to **Overview**, copy and save your application ID and your tenant ID.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-6.png')} style={{border:'1px solid gray'}} alt="Microsoft defender atp" width="600"/>
 
 ## Configure Microsoft Defender ATP in Automation Service and Cloud SOAR
 

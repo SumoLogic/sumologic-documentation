@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/opentext-encase-endpoint-security.png')} alt="opentext-encase-endpoint-security" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/opentext-encase-endpoint-security.png')} alt="Opentext EnCase Endpoint Security icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 03, 2023***

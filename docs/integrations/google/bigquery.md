@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/google/bigquery.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/bigquery.png')} alt="Big Query icon" width="50"/>
 
 The Google BigQuery App helps you monitor the data and activities in your BigQuery data warehouse. With audit logs and analytics, the preconfigured dashboards offer insight into BigQuery's projects, operations, queries, job performance, user management operations, user activities, storage, slots, and billed gigabytes.
 
@@ -31,7 +31,7 @@ The Google BigQuery App uses:
 
 ### Sample logs queries
 
-```bash title="Created Resources Over Time"
+```sumo title="Created Resources Over Time"
 _sourceCategory=*gcp* logName resource "type":"bigquery_resource"
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/cloudaudit.googleapis.com%2Factivity"

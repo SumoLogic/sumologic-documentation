@@ -22,7 +22,7 @@ BitSight offers the world's leading security ratings solution with a mission to 
 ## BitSight configuration
 
 1. To [generate an API Token](https://help.bitsighttech.com/hc/en-us/articles/115014888388-API-Token-Management), after signing in, go to top right corner on the gear icon and select **Account**. 
-1. In the **API Token** section, click **Generate New Token** (this token will be used later in the configuration). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-1.png')} style={{border:'1px solid gray'}} alt="bitsight-security-performance-management-1" width="800"/>
+1. In the **API Token** section, click **Generate New Token** (this token will be used later in the configuration). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-1.png')} style={{border:'1px solid gray'}} alt="BitSight Security Performance Management generate a new token" width="800"/>
 
 ## Configure BitSight Security Performance Management in Automation Service and Cloud SOAR
 

@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Data Volume icon" width="50"/>
 
 The Scan Budget Management APIs allows you to manage scan budgets from HTTP endpoints. Scan budgets apply to all chargeable log scan queries. For more information, refer to [Scan Budget](/docs/manage/manage-subscription/scan-budgets).
 

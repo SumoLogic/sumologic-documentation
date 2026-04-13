@@ -10,31 +10,31 @@ The `isValidIP` operator checks if the value is a valid IP address. The `isVa
 
 ### isValidIP
 
-```sql
+```sumo
 isValidIP("<IP_string>") as <field>
 ```
 
-```sql
+```sumo
 isValidIP(<IP_string_field>) [as <field>]
 ```
 
 ### isValidIPv4
 
-```sql
+```sumo
 isValidIPv4("<IP_string>") as <field>
 ```
 
-```sql
+```sumo
 isValidIPv4(<IP_string_field>) [as <field>]
 ```
 
 ### isValidIPv6
 
-```sql
+```sumo
 isValidIPv6("<IP_string>") as <field>
 ```
 
-```sql
+```sumo
 isValidIPv6(<IP_string_field>) [as <field>]
 ```
 
@@ -44,24 +44,24 @@ isValidIPv6(<IP_string_field>) [as <field>]
 
 ## Examples
 
-```sql
+```sumo
 | isValidIP(dest_host)
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isValidIP("10.255.255.255") as isIP
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isValidIP("192.168.0.1") as isIP
 ```
 
 The following returns `false`:
 
-```sql
+```sumo
 | isValidIP("127.0.500.1") as isIP
 ```

@@ -2,7 +2,7 @@
 id: universal-connector-source
 title: Universal Connector
 sidebar_label: Universal Connector
-description: Learn how to set up a Universal Connector to collect data into the Sumo Logic environment.
+description: Use the Sumo Logic Universal Connector cloud source to collect log data from vendor REST APIs with modular configuration for authentication and pagination.
 ---
 
 import CodeBlock from '@theme/CodeBlock';

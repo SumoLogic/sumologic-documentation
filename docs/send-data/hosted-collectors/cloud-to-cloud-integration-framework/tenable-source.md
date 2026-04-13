@@ -11,7 +11,7 @@ description: The Tenable Source provides a secure endpoint to ingest audit-log e
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="150"/>
+<img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="Tenable icon" width="150"/>
 
 The Tenable Source provides a secure endpoint to ingest audit-log events, vulnerability, and asset data from the [Tenable.io APIs](https://developer.tenable.com). It securely stores the required authentication, scheduling, and state tracking information.
    * The Vulnerability [Export API](https://developer.tenable.com/reference/exports-vulns-request-export) first exports vulnerabilities that are used to initiate export jobs. Next, it gets the export [status](https://developer.tenable.com/reference/exports-vulns-export-status) and then [downloads exported vulnerabilities](https://developer.tenable.com/reference/exports-vulns-download-chunk) in a chunk.

@@ -21,7 +21,7 @@ The `dedup` operator is supported for the following features:
 
 ## Syntax
 
-```sql
+```sumo
 dedup [consecutive] [<int>] [by <field>[, <field2>, ...]]
 ```
 
@@ -78,7 +78,7 @@ The following examples use this sample data.
 
 ### Remove duplicate search results by country
 
-```sql
+```sumo
 | dedup by country
 ```
 
@@ -90,7 +90,7 @@ Returns the most recent record for each country:
 
 For search results that have the same country value, keep the first three that occur and remove all subsequent search results.
 
-```sql
+```sumo
 | dedup 3 by country
 ```
 
@@ -102,7 +102,7 @@ Returns the following results:
 
 For search results that have the same country AND continent values, keep the first two search results that occur and remove all subsequent results.
 
-```sql
+```sumo
 | dedup 2 by country, continent
 ```
 
@@ -114,7 +114,7 @@ Returns the following results:
 
 Remove only consecutive duplicate events. Keep non-consecutive duplicate events. In this example, duplicates must have the same combination of values as the country and continent fields for them to be removed. Non-consecutive events with the same combination of source and host fields will be retained.
 
-```sql
+```sumo
 | dedup consecutive by country, continent
 ```
 

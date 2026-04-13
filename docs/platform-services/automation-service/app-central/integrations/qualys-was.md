@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/qualys-was.png')} alt="qualys-was" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/qualys-was.png')} alt="Qualys WAS icon" width="100"/>
 
 ***Version: 1.2  
 Updated: Sep 28, 2023***

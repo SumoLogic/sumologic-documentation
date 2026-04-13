@@ -20,7 +20,7 @@ For more information on Regular Expressions, see the [Perl documentation](http:
      
 You can use the alternate term `extract`:
 
-```sql
+```sumo
 | extract "<start_expression>(?<field_name><field_expression>)<stop_expression>"
 ```
 
@@ -69,7 +69,7 @@ If you want to extract out the value from your numbered capturing group to a nam
 
 Extracting IP addresses from logs is straight-forward using a parse regex similar to:
 
-```sql
+```sumo
 ... | parse regex "(?<ip_address>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | ...
 ```
@@ -78,7 +78,7 @@ Parsing multiple fields in a single query.
 
 Parse regex supports parsing out multiple fields in one query. For example, say we want to parse username and host information from logs. Use a query similar to:
 
-```sql
+```sumo
 ... | parse regex "user=(?<user>.*?):" 
 | parse regex "host=(?<msg_host>.*?):" 
 | ...
@@ -99,19 +99,19 @@ Oct 11 18:20:49 host123.example.com 16234564: Oct 11 18:20:49: %SEC-6-IPACCESSLO
 
 you can write the following query to extract the `protocol`:
 
-```sql
+```sumo
 | parse regex "list 101 (accepted|denied) (?<protocol>.*?) "
 ```
 
 So, you'd actually write:
 
-```sql
+```sumo
 | parse regex "list 101 (?:accepted|denied) (?<protocol>.*?) "
 ```
 
 But if you mean to also capture whether it is an `accepted` or a `denied` into an alias, then you'd include:
 
-```sql
+```sumo
 | parse regex "list 101 (?<status>accepted|denied) (?<protocol>.*?) "
 ```
 
@@ -125,7 +125,7 @@ In addition to parsing a field value, the **multi** option (also called parse 
 
 For example, in the Amazon VPC flow logs you can identify the messages with the same source and destination IP addresses using parse regex multi.
 
-```sql
+```sumo
 _sourceCategory=aws/vpc
 | parse regex "(?<ip_address>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" multi
 | count by ip_address, _raw
@@ -148,7 +148,7 @@ You can tell the parser to use case insensitivity by supplying the regex paramet
 
 Use the following parse regex expression to match the "error" in the logs. The `(?i)` tells the parser to ignore case for the trailing expression.
 
-```sql
+```sumo
 | parse regex "reported:\s(?<exception>(?i)error)\s"
 ```
 

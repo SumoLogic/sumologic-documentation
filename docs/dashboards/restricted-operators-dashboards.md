@@ -61,7 +61,7 @@ You can use the following operators in dashboard panels:
 * [`Total`](/docs/search/search-query-language/search-operators/total/)
 * [`Transaction`](/docs/search/search-query-language/transaction-analytics/transaction-operator/) By Flow
 
-```sql title="Example"
+```sumo title="Example"
 "error"
 | timeslice 1d
 | count by _timeslice

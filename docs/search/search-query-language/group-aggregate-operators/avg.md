@@ -10,7 +10,7 @@ The averaging function (`avg`) calculates the average value of the numerical fie
 
 ## Syntax
 
-```sql
+```sumo
 avg(<numerical_field>) [as <field>] [by <field>]
 ```
 
@@ -24,7 +24,7 @@ avg(<numerical_field>) [as <field>] [by <field>]
 
 This example query parses the number of milliseconds and calculates the average across the search time range.
 
-```sql
+```sumo
 _sourceCategory=app
 | parse "time taken: * ms," as time
 | avg(time) as avg_time
@@ -42,6 +42,6 @@ This example shows you how to use more than one aggregate operator like avg in a
 
 When multiple aggregates are used you need to create an alias using the as operator so they each get a unique field name. For example,
 
-```sql
+```sumo
 | avg(time) as avg_time, avg(_size) as logSize
 ```

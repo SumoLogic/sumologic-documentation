@@ -12,27 +12,27 @@ The `order` operator is synonymous with the `sort` operator. You can use them in
 
 ## Syntax
 
-```sql
+```sumo
 sort by <field> (displays results as descending, by default)
 ```
 
-```sql
+```sumo
 order by <field> (displays results as descending, by default)
 ```
 
-```sql
+```sumo
 sort by +<field> (displays results as ascending)
 ```
 
-```sql
+```sumo
 sort by <field> asc (displays results as ascending)
 ```
 
-```sql
+```sumo
 sort by <fieldA>, <fieldB>
 ```
 
-```sql
+```sumo
 top <#> <field>​​​​​​​ by <group_by_operator>
 ```
 
@@ -45,19 +45,19 @@ top <#> <field>​​​​​​​ by <group_by_operator>
 
 ## Examples
 
-```sql
+```sumo
 status AND down | extract "user=(?<user>.*?):" | count (*) group by user | sort by _count
 ```
 
-```sql
+```sumo
 ... | count user | top 2 user by _count
 ```
 
-```sql
+```sumo
 ... | count user | sort by _count asc
 ```
 
-```sql
+```sumo
 | parse "GET * " as url | count by url | order by _count
 | order by _count asc
 ```
@@ -66,7 +66,7 @@ status AND down | extract "user=(?<user>.*?):" | count (*) group by user | sort 
 
 This example counts page hits by sourceHost, sorts them by page hits, and limits the results to the top 10.
 
-```sql
+```sumo
 _sourceCategory=Labs/Apache/Access
 | count as page_hits by _sourceHost
 | sort by page_hits

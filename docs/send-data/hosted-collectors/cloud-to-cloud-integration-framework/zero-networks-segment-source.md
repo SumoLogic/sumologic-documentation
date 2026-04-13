@@ -10,7 +10,7 @@ description: Learn how to collect audit logs and network activity data from Zero
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="zero-networks-icon" width="40" />
+<img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Zero Networks icon" width="40" />
 
 Zero Networks is a cybersecurity company that provides cloud-based security solutions for your networks and endpoints. Segment is a solution that aims to provide comprehensive network security by implementing zero-trust principles. With Segment, Zero Networks provides a cloud-based platform that allows you to create micro-segments across the network. These micro-segments are small, isolated portions of the network that are tightly controlled and can only be accessed by authorized users and devices.
 
@@ -31,7 +31,7 @@ The Zero Networks Segment source requires you to provide the API key and Network
 - (Optional) Follow the below steps to create Network Activity Filters:
   1. Go to **Activities** page.
   1. Under **Network** tab, apply the required filters.
-  1. Copy the filters from the URL.<br/><img src={useBaseUrl('img/send-data/filters.png')} alt="zero-networks-filters" width="700" />
+  1. Copy the filters from the URL.<br/><img src={useBaseUrl('img/send-data/filters.png')} alt="Zero networks filters" width="700" />
 
 ### Source configuration
 

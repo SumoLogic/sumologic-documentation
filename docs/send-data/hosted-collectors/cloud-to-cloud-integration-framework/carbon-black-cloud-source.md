@@ -11,7 +11,7 @@ description: The Carbon Black Cloud Source provides a secure endpoint to receive
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="VMware Carbon Black Cloud icon" width="55"/>
 
 The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Observations Search, Processes Search, and Alerts APIs. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -114,6 +114,19 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 ```sh reference
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/carbon-black-cloud/example.tf
 ```
+
+## Troubleshooting
+
+### Authentication error
+
+**Error**: `{"error_code":"UNAUTHENTICATED\","message":"Principal is not authenticated","id":"549b3c5965ab3ecfa935eb92ed4f1a5e"}`. This error usually indicates that the request is not able to authenticate with the server.
+
+**Solution**: To resolve this error:
+- Verify that the **API Key**, **API ID**, and **Org Key** values are correct and match the credentials in your Carbon Black Cloud console under **Settings > API Access > API Keys**.
+- Confirm that the **CB Cloud Domain** is correct for your environment.
+- Ensure the API key has all [required permissions](#vendor-configuration) assigned. The key needs access to Alerts, Observations Search, and Processes Search APIs.
+- Check that the API key has not been revoked or expired in the Carbon Black Cloud console.
+- If the issue persists, generate a new API key with the required permissions and update the source configuration with the new credentials.
 
 
 ## FAQ

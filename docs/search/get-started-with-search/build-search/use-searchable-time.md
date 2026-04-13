@@ -25,15 +25,15 @@ Follow the below steps to run a search by searchable time:
 
 1. Enter your query in the search text box.
 1. Choose the time range for the query.
-1. Click the gear icon to open the **Search Config** menu and select **Searchable Time** timestamp option.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-option.png')} alt="searchable-time-option" style={{border:'1px solid gray'}} width="500" />     
-1. Review the search results for wide discrepancies between message time, receipt time, and searchable time.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-results-messages-tab.png')} alt="searchable-time-results-messages-tab" style={{border:'1px solid gray'}} width="800" />
+1. Click the gear icon to open the **Search Config** menu and select **Searchable Time** timestamp option.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-option.png')} alt="Searchable time option" style={{border:'1px solid gray'}} width="500" />     
+1. Review the search results for wide discrepancies between message time, receipt time, and searchable time.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-results-messages-tab.png')} alt="Searchable time results messages tab" style={{border:'1px solid gray'}} width="800" />
 
 ### Run a scheduled search using Searchable Time
 
 Follow the below steps to run a scheduled search by searchable time:
 
 1. Enter your query in the search text box and click **Save As..**.
-1. In the **Save Item** pop-up, select **Searchable Time** from the timestamp dropdown.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-scheduled-search.png')} alt="searchable-time-scheduled-search" style={{border:'1px solid gray'}} width="500" />
+1. In the **Save Item** pop-up, select **Searchable Time** from the timestamp dropdown.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-scheduled-search.png')} alt="Searchable time scheduled search" style={{border:'1px solid gray'}} width="500" />
 
 ### Create a dashboard using Searchable Time 
 
@@ -47,7 +47,7 @@ Follow the below steps to run a search using the searchable time in the dashboar
 1. Select a panel type by clicking the corresponding icon.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="600" />
 1. You are prompted to provide a log query.
 1. Navigate to **General** configuration.
-1. Go to **Logs Settings** section and select **Searchbale Time** as the timestamp.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-dashboard.png')} alt="searchable-time-dashboard" style={{border:'1px solid gray'}} width="500" />
+1. Go to **Logs Settings** section and select **Searchbale Time** as the timestamp.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-dashboard.png')} alt="Searchable time dashboard" style={{border:'1px solid gray'}} width="500" />
 
 ## Via API
 

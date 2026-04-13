@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/alerts/webhooks.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/alerts/webhooks.png')} alt="Webhooks icon" width="40"/>
 
 Connections Management APIs let you set up connections to send alerts to third-party tools via webhook. For more information, see [Webhook Connections](/docs/alerts/webhook-connections).
 

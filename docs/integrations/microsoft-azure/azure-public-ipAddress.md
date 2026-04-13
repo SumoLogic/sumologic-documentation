@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Public 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-public-ipAddress.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-public-ipAddress.png')} alt="Azure Public IP Address icon" width="50"/>
 
 [Azure Public IP Addresses](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses) are used by internet resources to communicate inbound to resources in Azure. A public IP address is a resource with its own properties and can be associated with other Azure resources like NAT gateways, Application gateways, and more. This integration helps in monitoring DDoS notification events, packet dropped rate, TCP, and UDP data throughput.
 

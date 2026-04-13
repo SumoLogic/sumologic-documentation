@@ -2,12 +2,12 @@
 slug: /send-data/hosted-collectors/http-source/logs-metrics
 title: HTTP Logs and Metrics Source
 sidebar_label: HTTP Logs and Metrics
-description: An HTTP Source is an endpoint for receiving logs and metrics, uploaded via a URL.
+description: Configure an HTTP Logs and Metrics Source on a Sumo Logic hosted collector to receive logs and metrics from cloud platforms and applications via a unique URL.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/http-logs-metrics.png')} alt="Thumbnail icon" width="60"/>
+<img src={useBaseUrl('img/send-data/http-logs-metrics.png')} alt="HTTP Logs Metrics icon" width="60"/>
 
 An HTTP Logs and Metrics Source is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 

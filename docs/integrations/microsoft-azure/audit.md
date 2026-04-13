@@ -7,7 +7,7 @@ description: The Sumo Logic app for Azure Audit allows you to collect Azure Audi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-audit.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-audit.png')} alt="Azure Audit icon" width="75"/>
 
 The Azure Audit app allows you to collect data from the Azure Activity Log (formerly known as Azure Audit logs) and monitor the health of your Azure environment. This app provides preconfigured dashboards that allow you to monitor active directory activity, resource usage, service health, and user activity.
 
@@ -27,7 +27,7 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
 
 2. Push logs from Azure Monitor to Event Hub.
     1. In the search bar, search, and select **Activity Log**.
-    1. In the **Activity Log** window, click **Export Activity Logs**.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/export-activity-log.png')} style={{border: '1px solid gray'}} alt="activity-log" width="800"/>
+    1. In the **Activity Log** window, click **Export Activity Logs**.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/export-activity-log.png')} style={{border: '1px solid gray'}} alt="Activity log" width="800"/>
     1. Select the log type in **Category details** that you want to ingest.
     1. Select the **Stream to an event hub** checkbox and then select the following:
         * **Subscription**. Select a subscription.

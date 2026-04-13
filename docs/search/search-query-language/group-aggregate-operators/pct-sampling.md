@@ -15,11 +15,11 @@ To find the percentile, the function uses a sample of 1,000 messages. This may c
 
 ## Syntax
 
-```sql
+```sumo
 | pct_sampling(<field> [, percentile]) [as <field>] [by <field>]
 ```
 
-```sql
+```sumo
 | pct_sampling(<field> [, percentile, percentile, percentile]) [as <field>] [by <field>]
 ```
 
@@ -30,20 +30,20 @@ To find the percentile, the function uses a sample of 1,000 messages. This may c
 
 ## Examples
 
-```sql
+```sumo
 * | parse "data=*" as data
 | pct_sampling(data, 95)
 ```
 
 Sample log message:
 
-```sql
+```sumo
 Aug 2 04:06:08 : host=10.1.1.124: local/ssl2 notice mcpd[3772]: filesize=20454: diskutilization=0.4 : 01070638:5: Pool member 172.31.51.22:0 monitor status down.
 ```
 
 Example based on sample log message:
 
-```sql
+```sumo
 file*
 | parse "filesize=*:" as filesize
 | pct_sampling(filesize, 75, 95) by _sourceHost

@@ -7,7 +7,7 @@ description: The Sumo Logic app for Google Cloud Storage helps you monitor both 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/storage.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/google/storage.png')} alt="Storage icon" width="75"/>
 
 The Sumo Logic app for Google Cloud Storage helps you monitor both logs and metrics in Google Cloud Storage. The preconfigured dashboards provide insight into bucket storage, request operations, data transfer, authentication patterns, performance metrics, and optimization opportunities for your Cloud Storage resources.
 
@@ -68,7 +68,7 @@ The App uses:
 
 ### Sample log queries
 
-```
+```sumo
 _sourceCategory=*gcp* data logName resource "\"type\":\"gcs_bucket\""
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/cloudaudit.googleapis.com%2*"

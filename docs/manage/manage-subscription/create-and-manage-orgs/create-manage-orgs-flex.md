@@ -36,7 +36,7 @@ You cannot delete a new child org once it is created.
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.
-1. Click **+ Add Organization**.<br/> <img src={useBaseUrl('/img/manage/subscriptions/add-org.png')} alt="add-org" style={{border:'1px solid gray'}} width="800" />
+1. Click **+ Add Organization**.<br/> <img src={useBaseUrl('/img/manage/subscriptions/add-org.png')} alt="Add org" style={{border:'1px solid gray'}} width="800" />
 1. The **Create New Organization** pane appears. <br/> <img src={useBaseUrl('/img/manage/subscriptions/create-new-org.png')} alt="Create New Organization pane" style={{border:'1px solid gray'}} width="400" />
 
 ### Allocate credits
@@ -50,7 +50,7 @@ You cannot delete a new child org once it is created.
       :::note
       You need to set the baseline to allocate credits.
       :::
-      <img src={useBaseUrl('img/manage/subscriptions/allocate-credits-set-baseline.png')} alt="allocate-credits-set-baseline" style={{border:'1px solid gray'}} width="450" />
+      <img src={useBaseUrl('img/manage/subscriptions/allocate-credits-set-baseline.png')} alt="Allocate credits set baseline" style={{border:'1px solid gray'}} width="450" />
 1. In the credits calculator, enter the following:
       * **Average daily ingestion**. Enter the average daily ingestion of the Flex data.
       * **Estimated Scans per GB of ingested data**. Adjust the toggle bar to specify how many times you expect the data to be scanned.. The default setting is 500X, which means the 1 GB of ingested data will be scanned 500 times. You can set this number based on your analytic usage profile. 
@@ -75,7 +75,7 @@ You cannot delete a new child org once it is created.
 1. **Organization Name**. Enter a unique name for the org.
 1. **Account Owner Email**. Enter the name of the account owner.
 1. **Account Owner First Name**. Enter the account owner’s first name.
-1. **Account Owner Last Name**. Enter the account owner’s last name.<br/> <img src={useBaseUrl('img/manage/subscriptions/basic-details.png')} alt="basic-details" style={{border:'1px solid gray'}} width="450" />
+1. **Account Owner Last Name**. Enter the account owner’s last name.<br/> <img src={useBaseUrl('img/manage/subscriptions/basic-details.png')} alt="Basic details" style={{border:'1px solid gray'}} width="450" />
 
 ## Update an org's credits allocation
 
@@ -93,14 +93,14 @@ To change an org's credits allocation:
       :::
       You can select **Credits to be Added** and enter the recommended credit value or value of your choice to top-up additional credits to avoid credit depletion. This recommendation is calculated based on the usage forecast and average credit usage per day for the selected contract period.
 
-      **Example 1**: Consider that you are heading towards credit depletion and need to add more credits. The below image shows you have almost run out of the credits (1840/1841) allocated to the child org. To increase the credits to the child org, select **Credits to be Added**. An info icon will appear below with a suggestion on how many credits can be added to this child org based on the usage forecast. So, in this case, it is suggested that you add 135 credits.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-recommendation.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendation" width="450" />
-      <br/>Click **View Details** to view the detailed breakdown of the recommended value.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-usage-forecast.png')} style={{border:'1px solid gray'}} alt="modify-allocation-usage-forecast" width="450" />
+      **Example 1**: Consider that you are heading towards credit depletion and need to add more credits. The below image shows you have almost run out of the credits (1840/1841) allocated to the child org. To increase the credits to the child org, select **Credits to be Added**. An info icon will appear below with a suggestion on how many credits can be added to this child org based on the usage forecast. So, in this case, it is suggested that you add 135 credits.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-recommendation.png')} style={{border:'1px solid gray'}} alt="Modify allocation recommendation" width="450" />
+      <br/>Click **View Details** to view the detailed breakdown of the recommended value.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-usage-forecast.png')} style={{border:'1px solid gray'}} alt="Modify allocation usage forecast" width="450" />
 
-      **Example 2**: Suppose you need to increase credits for your child org. The image below shows that you have used 35 out of 31,026 credits allocated to your child org. To add more credits, select **Credits to be Added** and enter the additional credits required.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-recommendatio-example-2.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendatio-example-2" width="450" />
+      **Example 2**: Suppose you need to increase credits for your child org. The image below shows that you have used 35 out of 31,026 credits allocated to your child org. To add more credits, select **Credits to be Added** and enter the additional credits required.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-recommendatio-example-2.png')} style={{border:'1px solid gray'}} alt="Modify allocation recommendatio example 2" width="450" />
 1. If you want to modify the baseline, click **View Baseline**. The credits calculator appears.
-      1. Click **Edit** and follow step 4 in [Allocate credits](#allocate-credits) to update the credits allocation.<br/> <img src={useBaseUrl('img/manage/subscriptions/baselines_2-flex.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
-      1. Once you save the new baseline, you can view the recommended value in the **Credits to be Added/Reduced** section.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-credits-to-add.png')} style={{border:'1px solid gray'}} alt="baseline-credits-to-add" width="450" />
-      1. (Optional) Click **View Details** to view the detailed breakdown of additional credits required value.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-view-details.png')} style={{border:'1px solid gray'}} alt="baseline-view-details" width="450" />
+      1. Click **Edit** and follow step 4 in [Allocate credits](#allocate-credits) to update the credits allocation.<br/> <img src={useBaseUrl('img/manage/subscriptions/baselines_2-flex.png')} style={{border:'1px solid gray'}} alt="Edit baseline" width="450" />
+      1. Once you save the new baseline, you can view the recommended value in the **Credits to be Added/Reduced** section.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-credits-to-add.png')} style={{border:'1px solid gray'}} alt="Baseline credits to add" width="450" />
+      1. (Optional) Click **View Details** to view the detailed breakdown of additional credits required value.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-view-details.png')} style={{border:'1px solid gray'}} alt="Baseline view details" width="450" />
 1. Click **Save** once you finish editing the credit values.
 
 ## Monitor Cloud SIEM provisioning

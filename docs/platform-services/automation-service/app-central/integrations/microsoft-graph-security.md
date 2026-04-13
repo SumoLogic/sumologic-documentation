@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-graph-security.png')} alt="microsoft-graph-security" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-graph-security.png')} alt="Microsoft Graph Security icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jun 21, 2023***

@@ -329,7 +329,7 @@ To increase the maximum Java Heap size:
 
 To monitor collectors for out-of-memory issues, ingest the collector logs, and schedule following search to run every 15 minutes with time range last 15 minutes.
 
-```sql
+```sumo
 _sourceCategory=*LocalCollectorLogs* "java.lang.OutOfMemoryError: Java heap space"
 | timeslice 15m
 | count by _timeslice, _collector
@@ -517,7 +517,7 @@ Review your time zone settings, and apply a time zone on the Source that reflec
 
 The query below can be executed in your account to find the number of messages for each of your Sources where the receipt time and message time are more than 30 minutes apart. This should at least give you a good starting place for you to run additional analysis.
 
-```sql
+```sumo
 *
 | _receiptTime as r
 | _messageTime as t
@@ -535,7 +535,7 @@ The query below can be executed in your account to find the number of messages f
 
 After identifying a list of (problematic) Sources in the previous search, you can then use the query below to view the time delay average, the max delay, and the min delay for each Source. Substitute `<problem_child>` with the Source(s) that you uncovered in the initial query above.  
 
-```sql
+```sumo
 _source=<problem_child>
 | _format as format
 | formatDate(fromMillis(_receipttime),"MM/dd hh:mm") as r

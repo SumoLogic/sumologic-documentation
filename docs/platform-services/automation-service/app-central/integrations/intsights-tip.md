@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/intsights-tip.png')} alt="intsights-tip" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/intsights-tip.png')} alt="Intsights TIP icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 11, 2023***

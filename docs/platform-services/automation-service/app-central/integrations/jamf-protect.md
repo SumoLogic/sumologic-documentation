@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/jamf-protect.png')} alt="jamf-protect" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/jamf-protect.png')} alt="Jamf Protect icon" width="90"/>
 
 ***Version: 1.1  
 Updated: Jun 15, 2023***
@@ -24,7 +24,7 @@ Updated: Jun 15, 2023***
 
 1. Log in to Jamf Protect.
 2. Click on Administrative on the left menu.
-3. Select [Create API Client](https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Jamf_Protect_API.html) and click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf-protect/jamf-protect-1.png')} style={{border:'1px solid gray'}} alt="jamf-protect" width="800"/>
+3. Select [Create API Client](https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Jamf_Protect_API.html) and click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf-protect/jamf-protect-1.png')} style={{border:'1px solid gray'}} alt="Jamf protect" width="800"/>
 4. Copy the API Client Password.
 5. Copy the Client ID in API Client Configuration
 

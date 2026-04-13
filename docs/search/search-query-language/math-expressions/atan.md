@@ -8,12 +8,12 @@ Returns the inverse tangent of the argument.
 
 ## Syntax
 
-```sql
+```sumo
 atan(<x>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 * | atan(1) as v
 ```
