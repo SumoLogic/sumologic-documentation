@@ -10,10 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Extended Preview</span></a></p>
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Public Preview</span></a></p>
 
 :::info
-This feature is in preview. For more information, contact your Sumo Logic account executive.
+This feature is in Public Preview. For more information, contact your Sumo Logic account executive.
 :::
 
 Sumo Logic's SOC Analyst Agent is an agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations. 
