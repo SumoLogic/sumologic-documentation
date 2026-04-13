@@ -147,7 +147,7 @@ The dropdown only displays the time-interval which is greater than or equal to t
 
 ## Auto Run
 
-**Auto Run** lets you control whether dashboard panels run automatically or require manual execution.. Use this when you want explicit control over dashboard execution. For example, you may want to open a dashboard with a fixed absolute time range or make several dashboard variable changes before loading data. Disabling auto run prevents unnecessary panel reloads after each change and helps Flex customers reduce avoidable scan costs.
+**Auto Run** lets you control whether dashboard panels run automatically or require manual execution. Use this when you want explicit control over dashboard execution. For example, you may want to open a dashboard with a fixed absolute time range or make several dashboard variable changes before loading data. Disabling auto run prevents unnecessary panel reloads after each change and helps Flex customers reduce avoidable scan costs.
 
 :::note
 To enable or disable this feature, you must be an **Administrator** or a role with the **ManageDashboardExecutionControls** capability.
@@ -160,7 +160,7 @@ In this section, you will enable the ability to auto run your dashboard panels. 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
 1. Uncheck the **Enable Auto-Run for all dashboards** checkbox.
 
-<img src={useBaseUrl('img/get-started/auto-run.png')} alt="Auto-Run" style={{border: '1px solid gray'}} width="500" />
+<img src={useBaseUrl('img/get-started/auto-run.png')} alt="Auto-Run" style={{border: '1px solid gray'}} width="600" />
 
 ### Using auto run
 
