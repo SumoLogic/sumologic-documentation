@@ -9,12 +9,12 @@ Returns the four-quadrant inverse tangent of the two arguments b and c.
 
 ## Syntax
 
-```sql
+```sumo
 atan2(<b>, <c>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 * | atan2(0, -1) as v
 ```

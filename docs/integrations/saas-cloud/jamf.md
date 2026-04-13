@@ -815,7 +815,7 @@ This app uses Sumo Logic’s [Jamf Source](/docs/send-data/hosted-collectors/clo
 
 ### Sample queries
 
-```sql title="Total Devices"
+```sumo title="Total Devices"
 _sourceCategory="Labs/Jamf" !computer_history !computer_management
 | parse regex "^\{\s*\"id\"\s*:\s*\"(?<device_id>\d+)\",.*" nodrop
 | parse regex ".*\"platform\"\s*:\s*\"(?<platform>[^,]+)\",.*" nodrop
@@ -828,7 +828,7 @@ _sourceCategory="Labs/Jamf" !computer_history !computer_management
 | count as num_devices
 ```
 
-```sql title="Top 10 Installed Applications"
+```sumo title="Top 10 Installed Applications"
 _sourceCategory="Labs/Jamf" computer_history
 | json "computer_history.general.id", "computer_history.general.name", "computer_history.general.mac_address", "computer_history.general.serial_number", "computer_history.mac_app_store_applications.installed[*]" as device_id, device_name, mac_address, serial_number, installed_apps nodrop
 | where !(installed_apps matches "[]")
@@ -845,7 +845,7 @@ _sourceCategory="Labs/Jamf" computer_history
 | sort by num_devices, name
 ```
 
-```sql title="Unique Configured OS Profiles"
+```sumo title="Unique Configured OS Profiles"
 _sourceCategory="Labs/Jamf" computer_management
 | json "computer_management.general.id", "computer_management.general.name", "computer_management.general.mac_address", "computer_management.general.serial_number", "computer_management.os_x_configuration_profiles[*]" as device_id, device_name, mac_address, serial_number, os_configured_profiles nodrop
 | where !(os_configured_profiles matches "[]")

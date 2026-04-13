@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/smtp-v3.png')} alt="smtp-v3" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/smtp-v3.png')} alt="SMTP V3" width="100"/>
 
 ***Version: 3.2  
 Updated: Mar 18, 2024***

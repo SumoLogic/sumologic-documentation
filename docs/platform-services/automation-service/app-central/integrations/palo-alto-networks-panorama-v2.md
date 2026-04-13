@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/palo-alto-networks-panorama-v2.png')} alt="palo-alto-networks-panorama-v2" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/palo-alto-networks-panorama-v2.png')} alt="Palo Alto BNetworks Panorama V2 icon" width="100"/>
 
 ***Version: 2.5  
 Updated: May 29, 2024***

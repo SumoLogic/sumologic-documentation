@@ -60,7 +60,7 @@ The table below displays the response for each text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
-| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, fed, kr, or us1. See [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments. |
+| Sumo Logic Deployment Name | Enter au, ca, ch, de, eu, jp, us2, fed, kr, or us1. See [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments. |
 | Sumo Logic Access ID | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for more information. |
 | Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
 | Sumo Logic Organization ID | You can find your org on the [Preferences](/docs/get-started/account-settings-preferences/#accessing-preferences) page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. |
@@ -260,10 +260,10 @@ AWS Observability hierarchy is auto-populated based on the metrics ingested into
 
 1. Identify the account that you want to remove from the AWS Observability hierarchy. For example, let's assume you want to remove `mobilebankingprod` from the hierarchy.<br/><img src={useBaseUrl('img/observability/hierarchy.png')} style={{border: '1px solid gray'}} alt="hierarchy" width="400"/>
 1. Run the required metric query to identify from which source and collector data is being ingested. For this example, enter the metric query below:
-    ```sql
+    ```sumo
     account= mobilebankingprod | count by _collector , _source
     ```
-    <br/><img src={useBaseUrl('img/observability/metric-query.png')} style={{border: '1px solid gray'}} alt="metric-query" width="800"/>
+    <br/><img src={useBaseUrl('img/observability/metric-query.png')} style={{border: '1px solid gray'}} alt="Metric query" width="800"/>
 1. Delete the source or remove the account tag from the same metric source. After this, the account will be automatically removed from the AWS Observability hierarchy in the next 24 hours.
     :::note
     Removing the account tag will not stop the metrics ingestion.

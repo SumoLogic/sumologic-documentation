@@ -26,7 +26,7 @@ Use Sumo Logic’s [monitoring](/docs/alerts/monitors/) to receive alerts from t
 * If you have already installed the [Amazon Security Quickstart](/docs/integrations/amazon-aws/security-quickstart/), collectors may be duplicated to collect from the same sources. To prevent this, use the existing source category for collection.
 :::
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Watch the following micro lesson to learn about Cloud Infrastructure Security for AWS.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/uxt8gony8i?web_component=true&seo=true&videoFoam=false"
@@ -87,7 +87,7 @@ Cloud Infrastructure Security for AWS utilizes the following log types:
 
 ##### Failed Console Logins
 
-```sql
+```sumo
 _sourceCategory=Labs/AWS/CloudTrail ("ConsoleLogin" and "Failed authentication")
 | json "eventName","sourceIPAddress","userIdentity.userName","userIdentity.principalId","responseElements.ConsoleLogin","additionalEventData.MFAUsed" ,"eventSource","awsRegion","eventType","eventCategory","userIdentity.type","eventTime","requestParameters.AccessControlPolicy.AccessControlList.Grant[*].Permission","errorCode","userIdentity.accountId","errorMessage" as event.action,server.ip,user.name,user_principal, login_result,mfa_used,event_source,cloud.region,event_type,event_category,user_identity_type,event_time,permission,error_code,cloud.account.id,error_message nodrop
 | if(isEmpty(user.name), if(isEmpty(user_principal),"NA",user_principal), user.name) as user.name
@@ -254,7 +254,7 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
     * If you selected only **Use Existing Source** or **Do Not Collect**, the solution is installed. Proceed to [Start using the solution](#start-using-the-solution).
 
        :::tip
-       Using only existing sources is the easiest way to install, since it means you don't have to create any new sources.
+       Using only existing sources is the easiest way to install, since it means you do not have to create any new sources.
        :::
 
     * If you selected **Create New Source** for *any* source, the following screen appears. You must perform the steps in the following sections:
@@ -289,7 +289,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
 1. Scroll down to the **Parameters** section.
 1. In **Deployment**, enter **No** if you want to install to only one account, or **Yes** if you want to install to all accounts in your organization.
 1. In **1. Sumo Logic configuration**, you can accept the defaults. <br/>If fields are missing, or you need to change them, do the following:
-   * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, kr, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started/).
+   * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, kr, fed, or ch. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started/).
    * **Sumo Logic access ID**. Enter the Sumo Logic console access ID, which you received when you created the [access key](/docs/manage/security/access-keys/).
    * **Sumo Logic access key**. Enter your Sumo Logic access key. Retrieve this from your Sumo Logic account.
 1. In **2. AWS Organization configuration**, enter the following. (This step is required only if you are installing the solution to all accounts in your AWS organization.)
@@ -301,7 +301,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
     * **Security-tooling and log-archiving account Region**. Enter your Security Tooling and Log Archive account region if it's different from the default.
     * **AWS Organization root ID**. Enter the ID for your organization root. This string requires `r-` followed by from 4 to 32 lowercase letters or digits.
     :::note
-    You can find the values for this section in the **Organizational structure** section of your [AWS accounts](https://console.aws.amazon.com/organizations/v2/home/accounts) page. Sign in to the AWS console, click on your profile in the top-right corner, select **Organization**, and in the left nav bar select **Policy management > AWS accounts**. You must have the correct permissions to view the account IDs. For more information about organizations, see [AWS documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-organizations.png')} alt="AWS organizational structure" style={{border: '1px solid gray'}} width="700"/>
+    You can find the values for this section in the **Organizational structure** section of your [AWS accounts](https://console.aws.amazon.com/organizations/v2/home/accounts) page. Sign in to the AWS console, click your profile in the top-right corner, select **Organization**, and in the left nav bar select **Policy management > AWS accounts**. You must have the correct permissions to view the account IDs. For more information about organizations, see [AWS documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-organizations.png')} alt="AWS organizational structure" style={{border: '1px solid gray'}} width="700"/>
     ::: 
 1. (Optional) In **Permissions**, select the IAM role name or Amazon Resource Name (ARN) for the Cloud Formation to use for all operations performed on the stack. Do one of the following:
     * Select **IAM role name**, and in the **Sample-role-name** dropdown select a sample name.
@@ -329,7 +329,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
 1. Scroll down to the **Parameters** section.
 1. In **1. Sumo Logic Configuration**, you can accept the defaults. <br/>If fields are missing, or you need to change them, do the following:
       * **Deploy to Organization (All Accounts)**. Select **Yes** to deploy to all accounts in your AWS organization, or select **No** to deploy only to your account.
-      * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, kr, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started/).
+      * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, kr, fed, or ch. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started/).
       * **Sumo Logic access ID**. Enter the Sumo Logic console access ID, which you received when you created the [access key](/docs/manage/security/access-keys/).
       * **Sumo Logic access key**. Enter your Sumo Logic access key. Retrieve this from your Sumo Logic account.
       * **Sumo Logic organization ID**. Enter your Sumo Logic organization ID, which you can find in the Sumo Logic console, under [Account](/docs/get-started/account-settings-preferences).
@@ -343,14 +343,14 @@ If you selected **Create New Source** for any source on the [**Configure Sources
       * **Security-tooling and log-archiving account Region**. Enter your Security Tooling and Log Archive account region if it's different from the default.
       * **AWS Organization root ID**. Enter the ID for your organization root. This string requires `r-` followed by from 4 to 32 lowercase letters or digits.<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-2.png')} alt="AWS organization configuration" style={{border: '1px solid gray'}} width="700"/>
           :::note
-          You can find the values for this dialog in the **Organizational structure** section of your [AWS accounts](https://console.aws.amazon.com/organizations/v2/home/accounts) page. Sign in to the AWS console, click on your profile in the top-right corner, select **Organization**, and in the left nav bar select **Policy management > AWS accounts**. You must have the correct permissions to view the account IDs. For more information about organizations, see [AWS documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-organizations.png')} alt="AWS organizational structure" style={{border: '1px solid gray'}} width="700"/>
+          You can find the values for this dialog in the **Organizational structure** section of your [AWS accounts](https://console.aws.amazon.com/organizations/v2/home/accounts) page. Sign in to the AWS console, click your profile in the top-right corner, select **Organization**, and in the left nav bar select **Policy management > AWS accounts**. You must have the correct permissions to view the account IDs. For more information about organizations, see [AWS documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-organizations.png')} alt="AWS organizational structure" style={{border: '1px solid gray'}} width="700"/>
           :::
 1. In **3. AWS Service configuration**, fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
-      * **Publish Amazon GuardDuty data to Sumo**
-      * **Publish AWS CloudTrail data to Sumo** 
-      * **Publish AWS Security Hub data to Sumo** 
-      * **Publish AWS WAF data to Sumo** 
-      * **Publish AWS Network Firewall data to Sumo** 
+      * **Publish Amazon GuardDuty data to Sumo Logic**
+      * **Publish AWS CloudTrail data to Sumo Logic** 
+      * **Publish AWS Security Hub data to Sumo Logic** 
+      * **Publish AWS WAF data to Sumo Logic** 
+      * **Publish AWS Network Firewall data to Sumo Logic** 
       <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-3.png')} alt="AWS service configuration" style={{border: '1px solid gray'}} width="700"/>
 1. If you selected **Yes** in the preceding step, you can accept the default values in the following sections to set up each source, unless there are any values you'd like to change. <br/><br/>If you selected **No** in the preceding step, in the following sections you must answer **No** when asked if you want to create a source, and you must replace the source category name with the value of your existing installed source.
 

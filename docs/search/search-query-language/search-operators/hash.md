@@ -14,7 +14,7 @@ This is helpful when working with sensitive data such as email addresses, usern
 
 As a Search operator, hash processes the provided field against the specified algorithm to change the current values into random unique values.
 
-```sql
+```sumo
 hash(<field>[<algorithm]) [as <field>]
 ```
 
@@ -28,7 +28,7 @@ Where:
 
 Hash a field of email addresses.
 
-```sql
+```sumo
 _sourceCategory=myLogs
 | parse "email=*" as email_address
 | hash("email_address", "md5") as hashed_email
@@ -38,7 +38,7 @@ _sourceCategory=myLogs
 
 Find a hashed username with the help of the [where](where.md) and [matches](matches.md) operators.
 
-```sql
+```sumo
 _sourceCategory=myLogs
 | parse "username=*" as username
 | where username matches hash("username", "md5")
@@ -48,7 +48,7 @@ _sourceCategory=myLogs
 
 Get the source IP addresses by user hashes.
 
-```sql
+```sumo
 _sourceCategory=myLogs
 | parse "username=*" as username
 | parse "src_ip=*" as src_ip
@@ -60,7 +60,7 @@ _sourceCategory=myLogs
 
 Create a unique identifier for each log message by concatenating the built-in metadata fields (image below) `_messagetime` and `_messageid`.
 
-```sql
+```sumo
 | hash(concat(_messagetime, _messageid), "sha1") as guid
 ```
 

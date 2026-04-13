@@ -8,13 +8,13 @@ The `haversine` operator returns the distance between latitude and longitude va
 
 ## Syntax
 
-```sql
+```sumo
 haversine(<latitude1>, <longitude1>, <latitude2>, <longitude2>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 | haversine(39.04380, -77.48790, 45.73723, -119.81143) as distanceKMs
 ```
 
@@ -24,7 +24,7 @@ This returns a field named distanceKMs with the value '3,512.71000'.
 
 To convert kilometers (KM) to miles you can divide the KM value by 1.609344.
 
-```sql
+```sumo
 | haversine(39.04380, -77.48790, 45.73723, -119.81143)/1.609344 as distanceMiles
 ```
 
@@ -32,7 +32,7 @@ To convert kilometers (KM) to miles you can divide the KM value by 1.609344.
 
 You can use the following query detect landspeed violations in AWS CloudTrail with haversine:
 
-```sql
+```sumo
 _sourceCategory=Labs/AWS/CloudTrail
 | json "userIdentity.userName" as user nodrop
 | json "sourceIPAddress" as ip nodrop

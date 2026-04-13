@@ -38,7 +38,7 @@ points.
 
 Using `diff` with `timeslice`, you can run a query similar to:
 
-```sql
+```sumo
 * | parse "bytes transmitted: '*'" as bytes | timeslice 1m | sum(bytes) as bytes by _timeslice | sort _timeslice | diff bytes as diff_bytes
 ```
 
@@ -52,7 +52,7 @@ Note that there is no value for diff_bytes in line 1, as expected.
 included in a single query. For example, to calculate the diff of bytes
 and compressed bytes:
 
-```sql
+```sumo
 * | parse "data: '*'" as Bytes  | diff Bytes as b  | parse "compress: '*'" as Compressed  | diff Compressed as c
 ```
 
@@ -60,7 +60,7 @@ and compressed bytes:
 includes a **diff** operator, make sure to structure your query similar
 to:
 
-```sql
+```sumo
 * | parse "encoded: '*'" as e  | parse "compressed: '*'" as c  | count by e,c  | diff e as d
 ```
 

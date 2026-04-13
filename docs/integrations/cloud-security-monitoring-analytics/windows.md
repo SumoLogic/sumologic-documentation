@@ -7,7 +7,7 @@ description: A guide to the Sumo Logic app for Windows - Cloud Security Monitori
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Windows icon" width="85"/>
 
 The Cloud Security Monitoring & Analytics for Windows app offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
@@ -61,7 +61,7 @@ The Windows - Cloud Security Monitoring and Analytics app uses Windows Security 
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
-```sql
+```sumo
 _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit policy was changed" or *policy*change* or "Policy Change" or 4902 or 4904 or 4905 or 4906 or 4907 or 4912 or 4715 or 4719 or 4739)
 | json "EventID", "Computer", "Message" as event_id, host, msg_summary nodrop
 | parse regex field = msg_summary "(?<msg_summary>.*\.*)"

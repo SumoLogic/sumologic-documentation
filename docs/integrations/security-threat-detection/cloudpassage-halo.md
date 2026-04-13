@@ -7,7 +7,7 @@ description: The CloudPassage Halo app enables security operators and administra
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/cloudpassage.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/cloudpassage.png')} alt="CloudPassage icon" width="75"/>
 
 The CloudPassage Halo app helps you detect security violations and look for threats across your complex infrastructure, through the analysis of massive volumes of Halo event data. CloudPassage’s Halo platform records over eighty different types of security events about your Halo-managed infrastructure, whether you deploy into public cloud environments or your private data center. These events deliver information about your infrastructure and include critical security alerts for firewall changes, access changes, configuration changes, and file integrity changes, and more.
 

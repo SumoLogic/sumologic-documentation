@@ -16,7 +16,7 @@ Adding a group by function to a smooth operator query produces a running average
 
 ## Syntax
 
-```sql
+```sumo
 smooth <field> [, <window length>] [as <field>]
 ```
 
@@ -36,7 +36,7 @@ The following examples use the `sort` operator to sort the time prior to calcu
 
 Running a query such as:
 
-```sql
+```sumo
 _sourceCategory=katta
 | timeslice by 1m
 | count by _timeslice,_sourceHost
@@ -52,7 +52,7 @@ produces results like:
 
 Using smooth with timeslice, you can run a query similar to:
 
-```sql
+```sumo
 * | parse "bytes transmitted: '*'" as bytes
 | timeslice 1m
 | sum(bytes) as bytes by _timeslice
@@ -68,7 +68,7 @@ that produces results like:
 
 Running a query like:
 
-```sql
+```sumo
 ...| timeslice by 1m
 | avg(oneMinuteRate) as avgRateByHost by _sourceHost,_timeslice
 | sum(avgratebyhost) as totalIncomingRate by _timeslice
@@ -88,7 +88,7 @@ produces results similar to:
 
 Before 5 values are available, the smooth operator takes an average of whatever is available. For example:
 
-```sql
+```sumo
 _sourceCategory=katta
 | timeslice by 1m
 | count by _timeslice,_sourceHost

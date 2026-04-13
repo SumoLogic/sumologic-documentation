@@ -18,6 +18,8 @@ Cybersecurity professionals often use multiple threat intelligence feeds to supp
 :::
 
 <!-- 
+:::training Micro Lesson
+
 Watch this micro lesson to learn about Sumo Logic's threat intelligence features.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/s1evf3jfy5?web_component=true&seo=true&videoFoam=false"
@@ -32,6 +34,7 @@ Watch this micro lesson to learn about Sumo Logic's threat intelligence features
   allowfullscreen
 />
 
+:::
 -->
 
 ## Threat intelligence sources
@@ -106,7 +109,7 @@ Here is the typical workflow to set up and use threat intelligence indicators:
 
 1. A system administrator [ingests threat intelligence indicators](#ingest-threat-intelligence-indicators) and adds them to the threat intelligence data store. For example, install a collector such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and set up the collector to obtain indicators from Federal, vendor, or open services. Ingested indicators appear on the **Threat Intelligence** tab. You can manually add more indicators as needed, such as your own private indicators, using the **Threat Intelligence** tab or the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs.
 1. Analysts use the threat indicators data to uncover threats using [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
-1. A system administrator occasionally checks to see why a connector isn’t ingesting data, or to see how much storage all the indicators are using. They may <!--[run threatlookup with the cat search operator](/docs/search/search-query-language/search-operators/threatlookup/#run-threatlookup-with-the-cat-search-operator) to--> examine their indicators, and then if needed, [delete indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/#delete-threat-intelligence-indicators).
+1. A system administrator occasionally checks to see why a connector is not ingesting data, or to see how much storage all the indicators are using. They may <!--[run threatlookup with the cat search operator](/docs/search/search-query-language/search-operators/threatlookup/#run-threatlookup-with-the-cat-search-operator) to--> examine their indicators, and then if needed, [delete indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/#delete-threat-intelligence-indicators).
 
 ## Audit logging for threat intelligence
 
@@ -114,7 +117,7 @@ Use the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-inde
 
 Use a search like the following:
 
-```
+```sumo
 _index=sumologic_audit_events _sourceCategory=threatIntelligence
 ```
 

@@ -335,7 +335,7 @@ Use single backticks (\` \`) to format inline code as monospace font. Example us
 
 <TabItem value="Markdown">
 
-```
+```sumo
 `_view = sumologic_slo_output`
 ```
 </TabItem>
@@ -429,7 +429,7 @@ To highlight lines in the code, use `{#}` in the title line with lines numbers. 
 </TabItem>
 <TabItem value="Result">
 
-```sql {2-6}
+```sumo {2-6}
 _sourceCategory=reinvent/travel/checkout
 [subquery:_sourceCategory=reinvent/travel/nginx
      | count by src_ip
@@ -811,7 +811,7 @@ Add appropriate `alt` text for accessibility. See [Add an image](#add-an-image) 
 
 | &#9989; **Do** | &#10060; **Don't** |
 |:---------------|:-------------------|
-| <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="alt-text" width="400"/> | <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="alt-text" width="400"/> |
+| <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="Alt text" width="400"/> | <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="Alt text" width="400"/> |
 
 ### Images in lists
 
@@ -828,13 +828,13 @@ When adding an image to a bulleted or sequential list, include the image snippet
 <TabItem value="Markdown">
 
 ```md
-1. Here is a dinosaur.<br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur.<br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="Alt text" width="100"/>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-1. Here is a dinosaur. <br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur. <br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="Alt text" width="100"/>
 
 </TabItem>
 </Tabs>
@@ -1317,7 +1317,7 @@ For repeatable content - an identical section that appears in one or more docs -
 
 Headings in the reuse folder will not appear in the right-side nav in docs where they're imported. For this reason, unless the headers are H4 or below, reuse the content only but retain headings in the other docs.
 
-Example: the content under the Cloud-to-Cloud source docs > Restarting Your Source section ([example](/docs/c2c/info/#restarting-your-source)) lives in the `reuse` folder. The H3 headers live in the actual docs, and H4 headers live in [the `reuse` file](/docs/reuse/restart-c2c-source):
+Example: the content under the Cloud-to-Cloud source docs > Restarting Your Source section ([example](/docs/c2c/info/#restarting-your-source)) lives in the `reuse` folder. The H3 headers live in the actual docs, and H4 headers live in the `reuse` file:
 
 <Tabs
   className="unique-tabs"

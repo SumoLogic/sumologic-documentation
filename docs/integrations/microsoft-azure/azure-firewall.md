@@ -10,15 +10,9 @@ keywords:
 description: This document outlines what Azure Firewall is, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-firewall.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-firewall.png')} alt="Azure Firewall icon" width="50"/>
 
 [Azure Firewall](https://learn.microsoft.com/en-us/azure/firewall/overview) is a cloud-native and intelligent network firewall security service that provides threat protection for your cloud workloads running in Azure. It's a fully stateful firewall as a service with built-in high availability and unrestricted cloud scalability. This integration helps in monitoring firewall health, network rules, application rules, threat intelligence, and IDPS (Intrusion Detection and Prevention System) events.
 
@@ -114,7 +108,7 @@ As part of the app installation process, the following FERs will be created by d
    Scope (Specific Data): tenant_name=*
    ```
 
-   ```sql title="Parse Expression"
+   ```sumo title="Parse Expression"
    json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
    | replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
    | if (!isBlank(resourceLocation), resourceLocation, location) as location
@@ -131,7 +125,7 @@ As part of the app installation process, the following FERs will be created by d
    Scope (Specific Data): tenant_name=*
    ```
 
-   ```sql title="Parse Expression"
+   ```sumo title="Parse Expression"
    json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
    | if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
    | toUpperCase(resourceId) as resourceId

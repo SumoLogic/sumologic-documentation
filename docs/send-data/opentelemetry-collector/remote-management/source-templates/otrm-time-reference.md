@@ -58,13 +58,13 @@ OpenTelemetry Collectors can automatically parse most timestamps without any is
 
 You can use `_format` to see how the timestamp is parsed from the log file. Assign `_format` an alias to return it in your search results, for example: 
 
-```sql
+```sumo
 | _format as timestampFormat
 ```
 
 The fields returned in the search results of `_format` are:
 
-```sql
+```sumo
 t:<parse type>,o:<offset>,l:<length>,p:<date_format>
 ```
 
@@ -82,7 +82,7 @@ where `<parse type>` can take the below mentioned values:
 
 When you’re troubleshooting issues related to timestamp, you can run a query similar to this to see how the timestamp is parsed:
 
-```sql
+```sumo
 _sourceCategory=PaloAltoNetworks
 | _format as timestampformat
 ```

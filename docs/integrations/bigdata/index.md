@@ -1,4 +1,3 @@
-<!--
 ---
 slug: /integrations/bigdata
 title: Big Data
@@ -12,9 +11,8 @@ This guide provides documentation for Sumo Logic apps designed for Big Data tech
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/bigdata/opentelemetry')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="55"/><h4>OpenTelemetry</h4></a>
+  <a href={useBaseUrl('docs/integrations/bigdata/opentelemetry')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="55"/><h4>OpenTelemetry</h4></a>
   <p>A guide to OpenTelemetry apps for Big Data.</p>
   </div>
 </div>
 </div>
--->

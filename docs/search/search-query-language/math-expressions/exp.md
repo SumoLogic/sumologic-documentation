@@ -8,12 +8,12 @@ The exponent function returns Euler's number e raised to the power of x.
 
 ## Syntax
 
-```sql
+```sumo
 exp(<x>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 * | exp(1) as v
 ```

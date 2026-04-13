@@ -8,11 +8,11 @@ The `base64Decode` operator takes a base64 string and converts it to ASCII or no
 
 ## Syntax
 
-```sql
+```sumo
 base64Decode("<string>"[, "<encoding>"]) as <field>
 ```
 
-```sql
+```sumo
 base64Decode(<string_field>[, "<encoding>"]) as <field>
 ```
 

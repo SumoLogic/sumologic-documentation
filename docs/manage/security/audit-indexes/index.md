@@ -54,7 +54,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/security/audit-indexes/documentation-audit-log-definitions')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Documentation for Audit Log Definitions</h4></a>
-  <p>See Audit Event Log Definitions documentation for audited events.</p>
+  <p>Documentation for audited events.</p>
   </div>
 </div>
 </div>

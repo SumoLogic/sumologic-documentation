@@ -8,12 +8,12 @@ Hyperbolic sine of argument in radians.
 
 ## Syntax
 
-```sql
+```sumo
 sinh(<x>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 * | sinh(1) as v
 ```

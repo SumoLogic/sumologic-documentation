@@ -7,7 +7,7 @@ import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/business/beta.png')} alt="icon" width="55"/>
+<img src={useBaseUrl('img/icons/business/beta.png')} alt="Beta icon" width="55"/>
 
 Beta features are capabilities that are coming soon to general availability. To participate, contact your Sumo account executive.
 
@@ -28,7 +28,7 @@ Following are articles for features in open beta:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/api/metrics-searches/')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/><h4>Metrics Search Management APIs</h4></a>
+  <a href={useBaseUrl('docs/api/metrics-searches/')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/><h4>Metrics Search Management APIs</h4></a>
   <p>Use Metrics Searches (Beta) API endpoints to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization.</p>
   </div>
 </div>

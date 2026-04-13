@@ -9,12 +9,12 @@ Hyperbolic tangent of argument in radians.
 
 ## Syntax
 
-```sql
+```sumo
 tanh(<x>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 t* | anh(1) as v
 ```

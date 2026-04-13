@@ -10,7 +10,7 @@ description: The Proofpoint On Demand (PoD) Source collects data from the Proo
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/>
+<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Proofpoint icon" width="140"/>
 
 The Proofpoint On Demand (PoD) Source collects data from the Proofpoint On Demand (PoD) Log Service and uses the secure WebSocket (WSS) protocol to stream logs. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -49,13 +49,17 @@ To configure a Proofpoint On Demand Source:
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 7. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 8. **Cluster ID** and **Token**. Provide the Proofpoint authentication credentials you want to use to [authenticate](#configuration-object) collection requests.
 9. **Supported Events**. There are two types of events you can collect. Select one or both of the options, **message** and **maillog**. The following shows the main fields returned from each type:
   * **message**: `guid`, `connection`, `envelope`, `msg`, `msgParts`, `filter`, `pps`
   * **maillog**: `data`, `id`, `pps`, `sm`, `ts`
 10. When you are finished configuring the Source, click **Submit**.
+
+:::info
+After configuring the Proofpoint On Demand source, consider installing the Sumo Logic app for [Proofpoint On Demand](/docs/integrations/saas-cloud/proofpoint-on-demand/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata fields
 

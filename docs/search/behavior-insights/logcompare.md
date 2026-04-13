@@ -46,7 +46,7 @@ First, run a non-aggregate search, then the **LogCompare** button in the **Mes
 
 Once clicked, a new search is opened with the `logcompare` operator and the specified `timeshift` added to your query, for example:
 
-```sql
+```sumo
 * | logcompare timeshift -24h
 ```
 
@@ -101,21 +101,21 @@ where
 A few examples:
 
 Compare the result of a query with the result of the same query for a time range shifted by 24 hours.  
-```sql
+```sumo
 ... | logcompare timeshift -24h
 ```
 Compare the result of a query with the result of the same query for a time range shifted by 1 day. (Same as previous example.)  
-```sql
+```sumo
 ... | logcompare timeshift -1d
 ```
 
 Compare the result of a query with the result of the same query for a time range specified by `start_time` and `end_time`. This must be a valid time range.
-```sql
+```sumo
 ... | logcompare start_time 2021-01-06T12:00:00-08:00 end_time 2021-01-07T12:00:00-08:00.
 ```
 
 Compare logs on two different hosts (cluster-1 and cluster-2) for the same time period.
-```sql
+```sumo
 _sourceHost=cluster-1| logcompare timeshift -0s baseline(_sourceHost=cluster-2)
 ```
 
@@ -142,7 +142,7 @@ The following are examples that use fields generated from LogCompare.
 
 Use the where operator against the **`_isNew`** field to return only new clusters:
 
-```sql
+```sumo
 error | logcompare timeshift -1d   
 | where (_isNew)
 ```
@@ -151,14 +151,14 @@ error | logcompare timeshift -1d 
 
 And in this example, the logcompare operator shows only clusters that no longer include any messages:
 
-```sql
+```sumo
 error | logcompare timeshift -1d   
 | where _count ==0
 ```
 
 **Show signatures with a count greater than 50, is not new, and has a delta percentage greater than 90.**
 
-```sql
+```sumo
 error | logcompare timeshift -1d  
 | where _deltapercentage>90 and !_isnew and _count>50
 ```
@@ -261,7 +261,7 @@ With LogCompare, you can create a [Monitor](/docs/alerts/monitors) or [Scheduled
 
 To do this, use a search query such as:
 
-```sql
+```sumo
 error | logcompare timeshift -24h | where (_isNew)
 ```
 

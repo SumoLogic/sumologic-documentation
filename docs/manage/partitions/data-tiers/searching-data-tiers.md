@@ -1,15 +1,15 @@
 ---
 id: searching-data-tiers
 title: Searching Data Tiers
-description: Learn how to search specific Data Tiers.
+description: Learn how to search specific data tiers.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page has information about how to search different Data Tiers, and when you should use `_dataTier`, a *search modifier* that restricts your search to a single tier. 
+This page has information about how to search different data tiers, and when you should use `_dataTier`, a *search modifier* that restricts your search to a single tier. 
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/5qgw3qizmv?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -27,7 +27,7 @@ import Iframe from 'react-iframe';
 
 ## About the _dataTier search modifier
 
-In Sumo Logic, a search modifier is a tag that gives the Sumo Logic backend information about how to process a query. The `_dataTier` modifier tells Sumo Logic which Data Tier a query should run against: Continuous, Frequent, or Infrequent.
+In Sumo Logic, a search modifier is a tag that gives the Sumo Logic backend information about how to process a query. The `_dataTier` modifier tells Sumo Logic which data tier a query should run against: Continuous, Frequent, or Infrequent.
 
 :::note
 Search modifiers are different from Sumo Logic’s [built-in metadata fields](/docs/search/get-started-with-search/search-basics/built-in-metadata), which are key-value pairs that are tagged to incoming log data, and then can be used to find that data easily, later. 
@@ -63,7 +63,7 @@ The `_dataTier` search modifier is not supported in:
 * Partition routing expressions
 * Logs-to-Metrics rules
 * In scheduled searches, setting `_dataTier` to All, Frequent, or Infrequent is not supported.
-* Searches against Cloud SIEM data in Sumo Logic. Don't use `_dataTier` when searching Cloud SIEM data. Instead, use `_index` to specify the security partition or partitions you want to access, as described in [Searching for Cloud SIEM Records in Sumo Logic](docs/cse/records-signals-entities-insights/search-cse-records-in-sumo.md).
+* Searches against Cloud SIEM data in Sumo Logic. Don't use `_dataTier` when searching Cloud SIEM data. Instead, use `_index` to specify the security partition or partitions you want to access, as described in [Searching for Cloud SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo.md).
 
 In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](/docs/manage/fields) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
 
@@ -94,7 +94,7 @@ When you query scheduled views, the Sumo Logic Audit Index, or the Sumo Logic Au
 
 If you use `_dataTier` to specify a tier other than Continuous in a query of scheduled views or either of the audit indexes, Sumo Logic presents an error message.
 
-### API Support with Rate Limiting
+### API support with rate limiting
 
 The rate limits described in [Rate limit throttling](/docs/api/search-job/#rate-limit-throttling) apply to cross-tier searches with these concurrent active job limits: 
 

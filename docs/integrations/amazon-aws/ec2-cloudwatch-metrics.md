@@ -7,7 +7,7 @@ description: The Sumo Logic app for AWS EC2 allows you to collect your EC2 insta
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS_EC2_CW_Metrics.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS_EC2_CW_Metrics.png')} alt="AWS EC2 CW Metrics icon" width="50"/>
 
 Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage.
 
@@ -75,7 +75,7 @@ For details on the metrics of AWS EC2, see [here](https://docs.aws.amazon.com/AW
 account=* region=* namespace=aws/ec2 instanceid=* metric=CPUUtilization Statistic=average | avg
 ```
 
-```sql title="Top 10 Error Codes (CloudTrail log-based)"
+```sumo title="Top 10 Error Codes (CloudTrail log-based)"
 account={{account}} region={{region}} namespace={{namespace}} eventname eventsource "ec2.amazonaws.com" errorCode
 | json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as event_source, region, requestParameters, responseElements, accountid nodrop
 | json "userIdentity", "eventName", "sourceIPAddress", "userAgent", "eventType", "requestID", "errorCode", "errorMessage", "eventCategory", "managementEvent" as userIdentity, event_name, src_ip, user_agent, event_type, request_id, error_code, error_message, event_category, management_event nodrop
@@ -170,7 +170,7 @@ Scope (Specific Data): account=* eventname eventsource "ec2.amazonaws.com"
 
 **Parse Expression**
 
-```sql
+```sumo
 | json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as eventSource, region, requestParameters, responseElements, accountid nodrop
 | where eventSource = "ec2.amazonaws.com"
 | "aws/ec2" as namespace
@@ -204,7 +204,7 @@ Scope (Specific Data): _sourceCategory=<SourceCategory_of_CloudTrail_source_crea
 
 Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account

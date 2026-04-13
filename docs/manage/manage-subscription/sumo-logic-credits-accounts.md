@@ -8,11 +8,11 @@ description: View information on Sumo Logic Credits accounts and intuitively mon
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import AccountCredit from '../../reuse/account-credit.md';
 
-Sumo Logic provides flexible account types within its Credits packaging for any size organization.
+Sumo Logic provides flexible account types within its credits packaging for any size organization.
 
 <AccountCredit/>
 
-This page provides information on the Credits account types and how to monitor and manage your account.
+This page provides information on the credits account types and how to monitor and manage your account.
 
 :::note
 This plan was formerly called *Cloud Flex Credits*.
@@ -42,7 +42,7 @@ Trial accounts allow full access to all Sumo Logic features to test how Sumo Log
 - **Retention**: 30 days for all data.
 - **Users**: Up to 20 users.
 
-Trials are limited to 30 days. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest. If you need to extend your trial period or request a Proof of Concept (PoC), contact our [sales team](mailto:sales@sumologic.com).
+Trials are limited to 30 days. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion/#log-throttling) will be applied to your log ingest. If you need to extend your trial period or request a Proof of Concept (PoC), contact our [sales team](https://support.sumologic.com/support/s/).
 
 ### Essentials
 
@@ -54,23 +54,21 @@ For details on upgrading to an Essentials plan or higher, see [Upgrade a Sumo Lo
 
 Enterprise Operations accounts are optimized for best practice operational monitoring at any ingest volume.
 
-[Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets), an Enterprise plan feature, control the capacity of daily log ingestion volume sent to Sumo Logic from collectors. It's important to keep track of your daily data usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion](../ingestion-volume/log-ingestion.md).
+:::tip
+[Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets), a feature of all Enterprise plans, controls the capacity of daily log ingestion volume sent to Sumo Logic from collectors. It's important to keep track of your daily data usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion](/docs/manage/ingestion-volume/log-ingestion).
+:::
 
 ### Enterprise Security
 
 Enterprise Security accounts include advanced security capabilities. Enterprise Security is ideal for security operation centers (SOCs). SOC teams can leverage the latest PCI compliance application frameworks and threat detection capabilities.  
 
-[Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets), an Enterprise plan feature, control the capacity of daily log ingestion volume sent to Sumo Logic from collectors. It's important to keep track of your daily data usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion](../ingestion-volume/log-ingestion.md).
-
 ### Enterprise Suite
 
 Enterprise Suite accounts are optimized to address the most advanced data insight challenges. Enterprise Suite accounts include all of Sumo Logic’s industry-leading capabilities including Sumo Logic’s Tiered Analytics.
 
-[Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets), an Enterprise plan feature, control the capacity of daily log ingestion volume sent to Sumo Logic from collectors. It's important to keep track of your daily data usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion](../ingestion-volume/log-ingestion.md).
-
 ## Features by plan type
 
-The following table provides a summary list of key features by Credits package accounts.
+The following table provides a summary list of key features by credits package accounts.
 
 | Feature | Free | Trial | Essentials | Enterprise Operations | Enterprise Security | Enterprise Suite |
 |:-- | :-- | :-- | :-- | :-- | :-- | :-- |
@@ -110,15 +108,22 @@ The following table provides a summary list of key features by Credits package a
 
 ## Account Overview  
 
+:::note
+- To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) role capability. 
+- To view, create, and manage the **Create Usage Alerts**, you must have the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities/#alerting) role capability.
+:::
+
 The **Account Overview** tab provides detailed information about your Sumo Logic organization, including account type, contract periods, credit usage, live dashboards, and real-time alerts. Account owners can also reassign the Account Owner role from this page.  
 
 To access the **Account Overview** tab:    
 * **[New UI](/docs/get-started/sumo-logic-ui)**. Navigate to **Administration > Account > Account Overview**, or select **Account Overview** from the **Go To...** menu.
 * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. Navigate to **Administration > Account > Account Overview**.  
 
-To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) capability.  
 
 [Data Tiers](/docs/manage/partitions/data-tiers) are available with Enterprise Suite packages, allowing you to optimize analytics by segmenting data into Continuous, Frequent, and Infrequent tiers. For more details, contact your Sumo Logic account manager.  
+
+<img src={useBaseUrl('/img/manage/account/account-usage-fields.png')} alt="account-overview-credits" style={{border:'1px solid gray'}} width="800"/>  
+
 
 ### Key features  
 
@@ -126,9 +131,9 @@ To view this tab, your role must include the [View Account Overview](/docs/manag
 * Track consumption against plan baselines.  
 * Visualize usage by day, week, or month.  
 * Download reports or credit usage data as CSV files.  
-* Hover over charts for detailed insights.  
+* Hover over charts for detailed insights.
+* Create alerts for 70% and 90% credit breach.
 
-<img src={useBaseUrl('/img/manage/account/account-usage-fields.png')} alt="account-overview-credits" style={{border:'1px solid gray'}} width="800"/>  
 
 ### Organization information panel  
 
@@ -142,6 +147,7 @@ To view this tab, your role must include the [View Account Overview](/docs/manag
 * **Credits Used**. Total and percentage used since the start of the current contract.  
 * **Credits Remaining**. Remaining credits and percentage consumed.  
 * **Total Credits Usage Breakdown**. Consumed contract and promotional credits.  
+* **Create Usage Alert**. Click this button to create a monitor that sends a warning alert when 70% of credits are used and a critical alert when 90% of credits are used. This opens the **New Monitor** pane with a prefilled query. In the **Trigger Type** section, select the alert severity you want to configure, **Warning** or **Critical**, based on the percentage of credits consumed. You can then add your preferred notification channels, such as email, Slack, or webhooks, and save the monitor to create the alert. For more customization, refer to [Create a New Monitor](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions).
 
 ### Usage Forecast panel  
 
@@ -162,7 +168,7 @@ This panel provides detailed analytics and comparisons for credit usage:
    * **Metrics Ingest**. Credits used for metrics.  
    * **Storage**. Credits for log storage in Continuous and Frequent Tiers.  
    * **Infrequent Storage**. Credits for log storage in the Infrequent Tier.  
-   * **Promotional Credits**. See [Promotional Credits](#promotional-credits).  
+   * **Promotional Credits**. See [Promotional credits](#promotional-credits).  
 * **Usage % Change**. Highlights changes in usage over selected time intervals.  
 * View data by time period (day, week, or month).  
 * Visualize usage with line or column charts.  
@@ -175,14 +181,14 @@ To analyze usage trends:
 * Use the pan feature (magnifying glass icon) to scroll through data.  
 * Hover over chart sections for detailed insights.  
 
-### Promotional Credits  
+### Promotional credits  
 
-There are times when Sumo Logic promotes services and consumables through the provision of Promotional Credits. Promotional Credits are non-transferrable and auto-expire at the end of the promotion period. In other words, if the Promotional Credits are not used within the promotion period, they do not carry over. They are of a "use it or lose it" nature. Promotional Credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional Credit consumption is calculated separately from the credits you paid for in your contract period. Promotional Credits are utilized as the priority credit for the specified credit variable.
+There are times when Sumo Logic promotes services and consumables through the provision of promotional credits. Promotional credits are non-transferrable and auto-expire at the end of the promotion period. In other words, if the promotional credits are not used within the promotion period, they do not carry over. They are of a "use it or lose it" nature. promotional credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional credit consumption is calculated separately from the credits you paid for in your contract period. Promotional credits are utilized as the priority credit for the specified credit variable.
 
-If your contract includes 100,000 credits and 10,000 Promotional Credits for "Metrics," the first 10,000 credits used for Metrics will be from Promotional Credits. After depletion, contract credits will be used.  
+If your contract includes 100,000 credits and 10,000 promotional credits for "Metrics," the first 10,000 credits used for metrics will be from promotional credits. After depletion, contract credits will be used.  
 
-To monitor Promotional Credits:  
-* Deselect all other usage categories in **Usage Categories** to isolate Promotional Credits.  
+To monitor promotional credits:  
+* Deselect all other usage categories in **Usage Categories** to isolate promotional credits.  
 * Refine further by deselecting specific credit types (e.g., Continuous Ingest, Storage).  
 
-Promotional Credits graphs display the rate of consumption for allocated Promotional Credits.  
+Promotional credits graphs display the rate of consumption for allocated promotional credits.  

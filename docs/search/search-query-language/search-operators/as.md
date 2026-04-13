@@ -10,11 +10,11 @@ The `as` operator is typically used in conjunction with other operators, but it 
 
 ## Syntax
 
-```sql
+```sumo
 <ExistingFieldName> as <field>
 ```
 
-```sql
+```sumo
 <literal> as <field>
 ```
 
@@ -31,13 +31,13 @@ When you rename a field, the original field still exists, but the new field is a
 
 To rename the existing field `ip_addr` as `src_ip`, use:
 
-```sql
+```sumo
 ip_addr as src_ip
 ```
 
 So, the following full query:
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | parse "* - - " as ip_addr
 | ip_addr as src_ip
@@ -51,7 +51,7 @@ Would provide results like:
 
 In this example, you will seed an existing field (`src_ip`) with a new constant (`127.10.10.1`):
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | "127.10.10.1" as src_ip
 ```
@@ -62,7 +62,7 @@ This statement “hardcodes" the value of `127.10.10.1` to the variable `src_ip`
 
 In this example, you will create a new field (`test_src_ip`) and seed it with a constant (`127.10.10.1`):
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | parse "* - -" as src_ip
 | "127.10.10.1" as test_src_ip
@@ -76,7 +76,7 @@ Which provides the following results:
 
 The `as` operator is useful for testing, for example, when you want to create a few log lines and seed them with specific values, like the following query:
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | limit 5
 | "127.10.10.1" as src_ip
@@ -90,14 +90,14 @@ Which provides the following results:
 
 In this next example, you will use `as` after a parse, to name the variable in the pattern `"\* - - "` as `src_ip`:
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | parse "* - - " as src_ip
 ```
 
 In this example, you will use `as` to rename the `_count` field to `errors`.  
 
-```sql
+```sumo
 _sourceCategory=Apache/Access status_code=404
 | count(status_code) as errors
 ```

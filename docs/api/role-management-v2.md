@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="Role Based Access icon" width="50"/>
 
 Roles determine the functions that users are able to perform in Sumo Logic. The Role Management API (V2) allows you to configure access on partitions and manage roles from HTTP endpoints.
 
@@ -19,17 +19,18 @@ To manage roles, you must have an administrator role or your role must have been
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                      |
-|:------------|:--------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/roleManagementV2  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/roleManagementV2  |
-| DE         | https://api.de.sumologic.com/docs/#tag/roleManagementV2  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/roleManagementV2  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/roleManagementV2 |
-| JP         | https://api.jp.sumologic.com/docs/#tag/roleManagementV2  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/roleManagementV2  |
-| US1        | https://api.sumologic.com/docs/#tag/roleManagementV2     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/roleManagementV2 |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/roleManagementV2   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/roleManagementV2   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/roleManagementV2  |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/roleManagementV2   |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/roleManagementV2   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/roleManagementV2  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/roleManagementV2   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/roleManagementV2   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/roleManagementV2      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/roleManagementV2  |
 
 ## Migrate audit logs queries from Role Management API V1 to V2
 
@@ -43,11 +44,11 @@ Currently, Role Management APIs V2 records both the V1 and V2 log line changes.
 V2 changes are **only** applicable for `RoleUpdate` and `RoleCreated` events.
 :::
 
-<br/><img src={useBaseUrl('img/users-roles/JSON-diff-V1-V2.png')} alt="JSON-diff-V1-V2" style={{border: '1px solid gray'}} width="800"/>
+<br/><img src={useBaseUrl('img/users-roles/JSON-diff-V1-V2.png')} alt="JSON diff V1 V2" style={{border: '1px solid gray'}} width="800"/>
 
 For example, consider you are interested in querying upon audit logs with change in `RoleUpdated` or `RoleCreated` events. Now, if you perform this search you will initially see the V1 type of event in the search results. However, to view the results with the V2 event type, you are required to adjust the parameters in the query.
 
-```sql title="V1 Audit Logging"
+```sumo title="V1 Audit Logging"
 (_index=sumologic_audit_events)
 | json fields=_raw "roleIdentity.roleName" as role_name
 | json fields=_raw "eventTime" as eventTime
@@ -58,7 +59,7 @@ For example, consider you are interested in querying upon audit logs with change
 | count by eventTime, eventName, actor, role_name, create_role, update_role
 ```
 
-```sql title="V2 Audit Logging"
+```sumo title="V2 Audit Logging"
 (_index=sumologic_audit_events)
 | json fields=_raw "roleIdentity.roleName" as role_name
 | json fields=_raw "eventTime" as eventTime
