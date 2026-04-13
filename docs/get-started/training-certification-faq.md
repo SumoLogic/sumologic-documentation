@@ -228,7 +228,7 @@ Not at this time.
 
 Yes. Sumo Logic Academy uses [Kryterion Webassessor](https://www.kryterion.com/blog/the-evolution-of-webassessor-from-bold-beginnings-to-a-future-powered-by-ai/) for exam registration. Exams require their Lockdown Browser, software that many corporate IT policies restrict. We strongly recommend using a personal device to complete your exam.
 
-If you can access your Sumo Logic org from your personal device, no special setup is needed. Open the Learn tab from your personal device and follow the normal process.
+If you can access your Sumo Logic org from your personal device, no special setup is needed. Open the **Learn** tab from your personal device and follow the normal process.
 
 If your Sumo Logic org is restricted to approved company machines, you'll need to complete a one-time setup to create standalone Webassessor credentials before you can log in from your personal device. Follow the steps below.
 
