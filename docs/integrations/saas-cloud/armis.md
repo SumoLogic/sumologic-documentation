@@ -190,7 +190,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 <CollectionConfiguration/>
 
 :::important
-Use the [Cloud-to-Cloud Integration for Armis](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Armis app is properly integrated and configured to collect and analyze your Armis data.
+Use the [Cloud-to-Cloud Integration for Armis](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Armis app is properly integrated and configured to collect and analyze your Armis data.
 :::
 
 ### Create a new collector and install the app

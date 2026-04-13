@@ -1,11 +1,11 @@
 ---
-id: digital-guardian-source
-title: Digital Guardian Source
-sidebar_label: Digital Guardian
+id: digital-guardian-arc-source
+title: Digital Guardian ARC Source
+sidebar_label: Digital Guardian ARC
 tags:
   - cloud-to-cloud
   - digital-guardian
-description: Learn how to collect export data from the Digital Guardian and send it to Sumo Logic.
+description: Learn how to collect export data from the Digital Guardian ARC and send it to Sumo Logic.
 ---
 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Digital Guardian is a data protection platform that discovers, classifies, and controls data movement across endpoints, networks, and the cloud. Digital Guardian Analytics and Reporting Cloud (DG ARC) is an advanced analytics, workflow, and reporting cloud service that delivers no-compromise data protection.
 
-The Digital Guardian integration ingests the export data using the Export API and uses Acknowledge API to advance the bookmark value to obtain the next chunk of data from export endpoint.
+The Digital Guardian ARC integration ingests the export data using the Export API and uses Acknowledge API to advance the bookmark value to obtain the next chunk of data from export endpoint.
 
 ## Data collected
 
@@ -27,7 +27,7 @@ The Digital Guardian integration ingests the export data using the Export API an
 
 ### Vendor configuration
 
-The Digital Guardian source requires you to provide the Digital Guardian Base URL (API Gateway URL), Authentication Server URL, Client ID, Client Secret, and Profile to export to configure the source. Follow the below steps to generate the required values:
+The Digital Guardian ARC source requires you to provide the Digital Guardian ARC Base URL (API Gateway URL), Authentication Server URL, Client ID, Client Secret, and Profile to export to configure the source. Follow the below steps to generate the required values:
 
 1. From the ARC Tenant Settings, copy and save the **Tenant ID (API Client ID)** and **Authentication Token (API Secret)**.
 1. From the Digital Guardian Management Console (DGMC), copy the **Access Gateway Base URL (API Gateway URL)** and **Authorization server URL**.
@@ -37,12 +37,12 @@ The Digital Guardian source requires you to provide the Digital Guardian Base UR
 
 ### Source configuration
 
-When you create a Digital Guardian Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Digital Guardian ARC Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure Digital Guardian Source:
+To configure Digital Guardian ARC Source:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
-1. Search for and select the **Digital Guardian** icon.
+1. Search for and select the **Digital Guardian ARC** icon.
 1. Enter a **Name** to display for the Source in Sumo Logic. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
@@ -57,7 +57,7 @@ To configure Digital Guardian Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Digital Guardian source, consider installing the Sumo Logic app for [Digital Guardian](/docs/integrations/saas-cloud/digital-guardian-arc/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Digital Guardian ARC source, consider installing the Sumo Logic app for [Digital Guardian ARC](/docs/integrations/saas-cloud/digital-guardian-arc/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema
@@ -66,7 +66,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{"type":"Digital Guardian"}` | Yes | Define the specific schema type. |
+| schemaRef | JSON Object  | `{"type":"Digital Guardian ARC"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
@@ -88,13 +88,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ### JSON example
 
 ```json reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/digital-guardian/example.json
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/digital-guardian-arc/example.json
 ```
 
 ### Terraform example
 
 ```sh reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/digital-guardian/example.tf
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/digital-guardian-arc/example.tf
 ```
 
 

@@ -1,10 +1,10 @@
-resource "sumologic_cloud_to_cloud_source" "confluent_cloud_metrics_source" {
+resource "sumologic_cloud_to_cloud_source" "confluent_metrics_source" {
   collector_id = sumologic_collector.collector.id
   schema_ref = {
-    type = "Confluent Cloud Metrics"
+    type = "Confluent Metrics"
   }
   config = jsonencode({
-    "name": "Confluent Cloud Metrics",
+    "name": "Confluent Metrics",
             "clientId": "U5XXXYZYGAXXXFRZ",
             "clientSecret": "X2OSZAI4YEn5lZ0cXXXuZ556WlbKYvHPHSCTXXXyFN8dfz",
             "resourceKafkaId": true,
