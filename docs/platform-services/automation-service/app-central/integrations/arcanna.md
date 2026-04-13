@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/arcanna.png')} alt="apivoid" width="90"/>
 
-***Version: 1.1  
-Updated: Jul 18, 2023***
+***Version: 1.2  
+Updated: April 13, 2026***
 
 Arcanna enables experts to train context-aware AI models which encompass their knowledge and experience both in terms of cybersecurity and organizational distinctiveness. All without writing a single line of code.
 
@@ -54,3 +54,4 @@ Threat Intelligence-Reputation
 
 * March 24, 2023 - First upload
 * July 18, 2023 (v1.1) - Removed leading/trailing spaces
+* April 13, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
