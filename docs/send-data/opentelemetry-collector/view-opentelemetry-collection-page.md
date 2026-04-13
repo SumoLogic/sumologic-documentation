@@ -43,20 +43,20 @@ To view details about an OpenTelemetry Collector:
 
 ## Status Overview
 
-The **Status Overview** panels provide a centralized, high-level health view of OpenTelemetry collectors. Each panel displays the count of collectors affected by its specific condition and includes a **View Collectors** button to drill down and view the corresponding collectors.
+The **Status Overview** panels provide a centralized, high-level health view of OpenTelemetry collectors. Each panel displays the count of collectors affected by its specific condition and includes a **View Collectors** button to filter and display the corresponding collectors.
 <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/status-overview.png')} alt="status-overview" style={{border:'1px solid gray'}} />
 
 #### Collector(s) are due for upgrade
 
-Displays the total number of collectors that require upgrades. Click the **View Collectors** button to view the collectors that are older than the current version and need upgrading.
+Displays the total number of collectors that require upgrades. Click the **View Collectors** button to filter for collectors older than the current version that need upgrading.
 
 #### Offline collectors
 
-Displays collectors that are offline for over 30 minutes in the last 24 hours. Click the **View Collectors** button to view the affected collectors.
+Displays collectors that are offline for over 30 minutes in the last 24 hours. Click the **View Collectors** button to filter for the affected collectors.
 
 #### Collector(s) are not configured
 
-Displays the remotely managed collectors with no sources configured to ingest data. Click the **View Collectors** button to view the affected collectors.
+Displays the remotely managed collectors with no sources configured to ingest data. Click the **View Collectors** button to filter for the affected collectors.
 
 :::note
 To configure a source template, see [Create a new source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#create-a-new-source-template).
