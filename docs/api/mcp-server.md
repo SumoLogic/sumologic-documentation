@@ -202,7 +202,11 @@ UI support for this step is not yet available. You'll need to use the Sumo Logic
 
 #### Step 3: Generate an access token
 
-In this step, you'll request an OAuth access token from the token endpoint using your client credentials (`"clientId"` and `"clientSecret"`) from the previous step. If applicable, replace `service.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+In this step, you'll request an OAuth access token from the token endpoint using your client credentials (`"clientId"` and `"clientSecret"`) from the previous step.
+
+:::note Deployment endpoints
+The examples below use `service.sumologic.com`. If your Sumo Logic instance uses a different deployment, replace this with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `service.us2.sumologic.com`, `service.eu.sumologic.com`, etc.). Click **deployment** to see all available URLs.
+:::
 
 #### Option A: All permissions
 
