@@ -14,9 +14,7 @@ It is important to note that `backshift` does not automatically add timeslices, 
 
 ## Syntax
 
-```sumo
-backshift <field> [, shift_length] [by <field>]
-```
+`backshift <field> [, shift_length] [by <field>]`
 
 ## Rules
 

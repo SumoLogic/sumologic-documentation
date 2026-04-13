@@ -10,13 +10,9 @@ The `luhn` operator uses Luhn’s algorithm to check message logs for strings of
 
 ## Syntax
 
-```sumo
-luhn(<field>) [as <field>]
-```
+`luhn(<field>) [as <field>]`
 
-```sumo
-luhn("<input string>") [as <field>]
-```
+`luhn("<input string>") [as <field>]`
 
 ## Examples
 

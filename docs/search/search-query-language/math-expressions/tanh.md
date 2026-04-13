@@ -9,9 +9,7 @@ Hyperbolic tangent of argument in radians.
 
 ## Syntax
 
-```sumo
-tanh(<x>) as <field>
-```
+`tanh(<x>) as <field>`
 
 ## Example
 

@@ -18,13 +18,9 @@ The input to the operator is a percentile. For example:
 
 ## Syntax
 
-```sumo
-...| pct(<field> [, percentile]) [as <field>] [by <field>]
-```
+`...| pct(<field> [, percentile]) [as <field>] [by <field>]`
 
-```sumo
-...| pct(<field> [, percentile, percentile, percentile]) [by <field>]
-```
+`...| pct(<field> [, percentile, percentile, percentile]) [by <field>]`
 
 ## Rules
 

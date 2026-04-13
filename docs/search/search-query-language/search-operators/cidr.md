@@ -24,9 +24,7 @@ Extracts the network prefix from an IPv4 address. 
 
 ### Syntax
 
-```sumo
-getCIDRPrefix("<ip_addr>", "<prefix_length>") as <field>
-```
+`getCIDRPrefix("<ip_addr>", "<prefix_length>") as <field>`
 
 Where:
 
@@ -59,9 +57,7 @@ Compares two IPv4 addresses and returns true if the network prefixes match.
 
 ### Syntax
 
-```sumo
-compareCIDRPrefix("<ip_addr1>", "<ip_addr2>", "<prefix_length>") as <field>
-```
+`compareCIDRPrefix("<ip_addr1>", "<ip_addr2>", "<prefix_length>") as <field>`
 
 `ip_add1` and `ip_addr2` are string representations (such as "10.10.1.35")
 
@@ -119,9 +115,7 @@ A utility function that returns a subnet mask for boolean operations with IPv4 a
 
 ### Syntax
 
-```sumo
-maskFromCIDR("<prefix_length>") as <field>
-```
+`maskFromCIDR("<prefix_length>") as <field>`
 
 Where:
 

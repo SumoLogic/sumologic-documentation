@@ -14,9 +14,7 @@ The [CIDR operator](cidr.md) allows you to leverage _Classless Inter-Domain Rout
 
 ## Syntax
 
-```sumo
-ipv4ToNumber(<ip_addr>) [as <field>]
-```
+`ipv4ToNumber(<ip_addr>) [as <field>]`
 
 ## Rules
 

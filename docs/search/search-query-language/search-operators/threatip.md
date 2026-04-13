@@ -16,9 +16,7 @@ The only Indicators of Compromise (IOC) supported is IP address.
 
 ## Syntax
 
-```sumo
-threatip <ip_address_field>
-```
+`threatip <ip_address_field>`
 
 #### Response Fields
 
