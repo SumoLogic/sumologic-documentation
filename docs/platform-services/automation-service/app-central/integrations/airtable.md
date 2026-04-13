@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/airtable.png')} alt="airtable" width="100"/>
 
-**Version: 1.1  
-Updated: Jul 18, 2023**
+**Version: 1.2  
+Updated: March 31, 2026**
 
 **Airtable** is a spreadsheet-database hybrid, with the features of a database but applied to a spreadsheet.   
 
@@ -21,7 +21,7 @@ Updated: Jul 18, 2023**
 
 ## Airtable configuration
 
-1. Sign in to the Airtable platform with your email ID and password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/airtable/airtable-1.png')} style={{border:'1px solid gray'}} alt="airtable-1" width="800"/>
+1. Sign in to the Airtable platform with your email ID and password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/airtable/airtable-1.png')} style={{border:'1px solid gray'}} alt="Airtable sign in" width="800"/>
 1. To create your token, refer to the [Airtable documentation](https://airtable.com/developers/web/guides/personal-access-tokens).
 
 ## Configure Airtable in Automation Service and Cloud SOAR
@@ -54,3 +54,4 @@ For information about Airtable, see [Airtable documentation](https://support.air
 
 * November 30, 2022 - First upload
 * July 18, 2023 (v1.1) - Updated the integration with Environmental Variables
+* March 31, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

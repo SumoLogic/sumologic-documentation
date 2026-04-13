@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-teams.png')} alt="microsoft-teamsg" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-teams.png')} alt="Microsoft Teams icon" width="100"/>
 
 ***Version: 1.9  
 Updated: Mar 4, 2024***
@@ -46,21 +46,21 @@ Each application you want the Microsoft identity platform to perform identity an
 Follow these steps to create the app registration:
 
 1. Sign in to the [Azure portal](https://portal.azure.com/).
-1. If you have access to multiple tenants, use the **Directory + subscription** filter <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-1.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="30"/> in the top menu to select the tenant in which you want to register an application.
+1. If you have access to multiple tenants, use the **Directory + subscription** filter <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-1.png')} style={{border:'1px solid gray'}} alt="Microsoft teams" width="30"/> in the top menu to select the tenant in which you want to register an application.
 1. Search for and select the **Azure Active Directory.**
 1. Under Manage, select **App registrations** > **New registration**.
 1. Enter a **Name** for your application. Users of your app might see this name, and you can change it later.
-1. Select **Register** to complete the initial app registration. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-2.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="800"/>
+1. Select **Register** to complete the initial app registration. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-2.png')} style={{border:'1px solid gray'}} alt="Register" width="800"/>
 1. Don't enter anything for **Redirect URI (optional)**.
 1. When registration completes, the Azure portal displays the app registration's Overview pane, which includes its **Application (client) ID**. Also referred to as just *client ID*, this value uniquely identifies your application in the Microsoft identity platform.
 
-The client ID as one aspect in validating the security tokens it receives from the identity platform.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-3.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="800"/>
+The client ID as one aspect in validating the security tokens it receives from the identity platform.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-3.png')} style={{border:'1px solid gray'}} alt="Client ID" width="800"/>
 
 **Add Credentials**
 
 Credentials are used by confidential client applications that access an API. Examples of confidential clients are web apps, or service- and daemon-type applications. Credentials allow your application to authenticate as itself, requiring no interaction from a user at runtime.
 
-You can add client secrets (a string) as credentials to your confidential client app registration.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-4.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="800"/>
+You can add client secrets (a string) as credentials to your confidential client app registration.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-4.png')} style={{border:'1px solid gray'}} alt="Client secrets" width="800"/>
 
 **Add a Client Secret**
 

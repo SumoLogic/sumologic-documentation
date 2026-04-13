@@ -2,7 +2,7 @@
 id: collect-metrics-vrealize-operations-manager
 title: Collect Metrics from VMware vRealize Operations Manager 8 Enterprise
 sidebar_label: VMware vRealize Operations Manager
-description: This page provides instructions for collecting metrics from vRops.
+description: Collect performance metrics from VMware vRealize Operations Manager (vRops) into Sumo Logic to monitor physical, virtual, and cloud infrastructure.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

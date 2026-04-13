@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/tufin-securetrack-v2.png')} alt="tufin-securetrack" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/tufin-securetrack-v2.png')} alt="Tufin SecureTrack icon" width="100"/>
 
 ***Version: 1.0  
 Updated: Apr 07, 2023***

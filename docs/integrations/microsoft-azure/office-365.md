@@ -7,7 +7,7 @@ description: The Sumo Logic App for Microsoft Office 365 ingests Microsoft Offic
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/365.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/365.png')} alt="365 icon" width="50"/>
 
 The Microsoft Office 365 App ingests Microsoft Office 365 Audit logs for Azure Active Directory, Exchange, and SharePoint. Preconfigured Dashboards allow you to monitor and analyze your complete Office 365 system for administrator and user activity.
 
@@ -77,7 +77,7 @@ For information on Microsoft APIs and message types, see Microsoft Office 365 Au
 
 ### Sample queries
 
-```sql title="SharePoint Operations"
+```sumo title="SharePoint Operations"
 _sourceCategory=O365* CreationTime Workload ("\"Workload\":\"SharePoint\"" or "\"Workload\":\"OneDrive\"")
 | json "Operation", "Workload"
 | where Workload in ("SharePoint", "OneDrive")
@@ -86,7 +86,7 @@ _sourceCategory=O365* CreationTime Workload ("\"Workload\":\"SharePoint\"" or "\
 | transpose row _timeslice column operation
 ```
 
-```sql title="Failed Activity by Workload"
+```sumo title="Failed Activity by Workload"
 _sourceCategory=O365* Workload Operation "ResultStatus" fail*
 | json "Workload", "ResultStatus", "Operation"
 | where resultstatus matches "*fail*" or resultstatus matches "*Fail*"

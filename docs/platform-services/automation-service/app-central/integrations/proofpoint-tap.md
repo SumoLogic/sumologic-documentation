@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/proofpoint-tap.png')} alt="proofpoint-tap" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/proofpoint-tap.png')} alt="Proofpoint TAP icon" width="100"/>
 
 ***Version: 1.2  
 Updated: Mar 31, 2023***

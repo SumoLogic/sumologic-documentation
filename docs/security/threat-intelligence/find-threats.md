@@ -17,7 +17,7 @@ Any Sumo Logic user can use the [`lookup`](/docs/search/search-query-language/se
 
 For example:
 
-```
+```sumo
 _sourceCategory=cylance "IP Address"
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | where !isNull(ip_address)
@@ -49,7 +49,7 @@ You can use the `threatlookup` search operator to find matches to indicators in 
 
 For example, use the following query to find logs in all `sec_record*` indexes with a `srcDevice_ip` attribute correlated to a threat indicator with a high confidence level (greater than `50`): 
 
-```
+```sumo
 _index=sec_record*
 | threatlookup srcDevice_ip
 | where _threatlookup.confidence > 50

@@ -37,7 +37,7 @@ To modify general settings click the **General** icon in the menu bar.<br/><im
 * To change the font size click the **Title Font Size** arrows up or down. 
 * To add a helpful description, click in the **Description** field and enter a brief explanation of the chart's purpose.
 
-To save your settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC_Update_Dashboard.png" width="300"/>
+To save your settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC Update dashboard" width="300"/>
 
 ### Logs settings
 
@@ -193,8 +193,8 @@ To modify the JSON of a chart, do the following:<br/><img src={useBaseUrl('/img/
 1. Click **Update Dashboard** in the upper right corner of the window to save your chart customizations.
 1. Click the **JSON** icon in the menu bar.
 1. Modify the JSON as necessary.
-1. Click **Update Preview** or **Copy To Clipboard**.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/DB_CustomChart_JSON-option.png')} style={{border: '1px solid gray'}} alt="DB_CustomChart_JSON-option" width="400"/>
-1. To save your customized settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC_Update_Dashboard-option" width="300"/>
+1. Click **Update Preview** or **Copy To Clipboard**.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/DB_CustomChart_JSON-option.png')} style={{border: '1px solid gray'}} alt="DB_CustomChart_JSON option" width="400"/>
+1. To save your customized settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC Update Dashboard option" width="300"/>
 
 ### Values in chart
 

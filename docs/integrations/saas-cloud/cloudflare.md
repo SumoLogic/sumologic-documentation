@@ -7,7 +7,7 @@ description: The Cloudflare App provides a set of dashboards to make analyzing C
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/cloudflare.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/cloudflare.png')} alt="Cloudflare icon" width="50"/>
 
 This application has been developed and is supported by Cloudflare. In case of technical questions, please review the technical [documentation](https://developers.cloudflare.com/logs/) for Cloudflare logs or email [analytics@cloudflare.com](mailto:analytics@cloudflare.com).
 
@@ -39,7 +39,7 @@ The Cloudflare App uses HTTP request logs in JSON format gathered from all of th
 
 The following log query is from the ‘Total Number of Requests’ panel in the ‘Cloudflare - Snapshot’ dashboard.
 
-```sql
+```sumo
 ClientCountry*
 | json "EdgePathingSrc", "EdgePathingOp","EdgePathingStatus", "ClientCountry",
 "ClientIP", "ClientDeviceType", "ClientRequestHost", "ClientRequestUserAgent",

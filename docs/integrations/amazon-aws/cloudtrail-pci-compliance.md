@@ -6,7 +6,7 @@ description: The Sumo Logic app for Payment Card Industry (PCI) Compliance for A
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="PCI icon" width="90"/>
 
 The Sumo Logic app for Payment Card Industry (PCI) Compliance for AWS CloudTrail app offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. The PCI Compliance for AWS CloudTrail app covers PCI requirements 02, 07, 08 and 10.
 

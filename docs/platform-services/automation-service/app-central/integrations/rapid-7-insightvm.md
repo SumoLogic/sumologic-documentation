@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapid-7-insightvm.png')} alt="rapid-7-insightvm" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapid-7-insightvm.png')} alt="Rapid 7 InsightVM icon" width="80"/>
 
 ***Version: 1.2  
 Updated: Jul 07, 2023***

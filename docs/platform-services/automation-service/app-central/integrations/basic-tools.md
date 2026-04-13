@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/basic-tools.png')} alt="basic-tools" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/basic-tools.png')} alt="Basic tools icon" width="100"/>
 
 ***Version: 1.11  
 Updated: Apr 17, 2024***

@@ -10,7 +10,7 @@ description: Learn how to collect abnormal threat and case logs from the Abnorma
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="abnormal-security-logo" width="90" />
+<img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="Abnormal security logo" width="90" />
 
 Abnormal Security is a behavioral AI-based email security platform that learns the behavior of every identity in a cloud email environment and analyzes the risk of every event to block the most sophisticated attacks.
 
@@ -31,8 +31,8 @@ The Abnormal Security integration ingests threat data and case data identified b
 The Abnormal Security source requires you to provide an authentication token. To obtain the token, follow the steps below.
 1. Sign in to the [Abnormal Security](https://portal.abnormalsecurity.com/) platform.
 1. In the **Manage** section, click on the **Settings** option.
-1. In the **Settings** section, click on the **Integrations** option.<br/><img src={useBaseUrl('img/send-data/abnormal-settings.png')} alt="abnormal-settings" style={{border: '1px solid gray'}} width="300" />
-1. Scroll down to the **Additional Integrations** section and click **+ Connect** on the **Abnormal REST API** card to display an integration page for your organization.<br/><img src={useBaseUrl('img/send-data/additional-integrations.png')} alt="additional-integrations" style={{border: '1px solid gray'}} width="200" />
+1. In the **Settings** section, click on the **Integrations** option.<br/><img src={useBaseUrl('img/send-data/abnormal-settings.png')} alt="Abnormal settings" style={{border: '1px solid gray'}} width="300" />
+1. Scroll down to the **Additional Integrations** section and click **+ Connect** on the **Abnormal REST API** card to display an integration page for your organization.<br/><img src={useBaseUrl('img/send-data/additional-integrations.png')} alt="Additional integrations" style={{border: '1px solid gray'}} width="200" />
 1. In the **IP Safelist** field, enter the [IP addresses](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/#static-ip-addresses) for your deployment.<br/><img src={useBaseUrl('img/send-data/integrations.png')} alt="integrations" style={{border: '1px solid gray'}} width="800" />
 1. Copy and save the **Access token**.
 
@@ -47,11 +47,15 @@ To configure an Abnormal Security Source, follow the steps below:
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema, it is ignored, also known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema, it is ignored, also known as dropped.
 1. Enter the **Access Token** for authorization collected from the [Abnormal Security platform](#vendor-configuration).
 1. Additionally, if you like to collect the case data, enter **cases** in the **Supported APIs to collect** section. Threat data will be collected by default. But, if you like to collect only case data, you can unselect **threats** from the **Supported APIs to collect** section.
 1. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the Abnormal Security source, consider installing the Sumo Logic app for [Abnormal Security](/docs/integrations/saas-cloud/abnormal-security/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## JSON schema
 

@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews-extension.png')} alt="microsoft-ews-extension" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews-extension.png')} alt="Microsoft EWS Extension icon" width="100"/>
 
 ***Version: 1.3  
 Updated: Oct 06, 2023***

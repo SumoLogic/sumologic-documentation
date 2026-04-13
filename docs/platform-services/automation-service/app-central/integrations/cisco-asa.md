@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-asa.png')} alt="cisco-asa" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-asa.png')} alt="Cisco ASA icon" width="70"/>
 
 ***Version: 1.1  
 Updated: Jul 06, 2023***

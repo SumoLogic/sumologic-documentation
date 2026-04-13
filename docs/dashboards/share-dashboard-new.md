@@ -59,7 +59,7 @@ To share a dashboard within your organization, do the following:
 1. In the **Access** area, select the user permissions you want to grant from the dropdown list: **Edit**, **View**, or **Manage.** 
 1. Optionally, select **Advanced Access** option to allow users to grant view access to others. For more information, see the [Available Permission Levels](/docs/manage/content-sharing#available-permission-levels) section of the [Share Content](/docs/manage/content-sharing) page.<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/ShareDashboard_Advanced_Access.png')} alt="ShareDashboard_Advanced_Access" />
 1. To share the dashboard with another set of users, but with different access permissions, click **Add users with another access level** and repeat steps 2 and 3.<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/ShareDashboard_User_Roles.png')} alt="ShareDashboard_User_Roles" />
-1. To send an email to the recipients of the shared dashboard, toggle **Notify recipients by email** to ON, and enter a note in the text field.<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/ShareDashboard_Email_notification.png')} alt="ShareDashboard_Email_notification.png" />
+1. To send an email to the recipients of the shared dashboard, toggle **Notify recipients by email** to ON, and enter a note in the text field.<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/ShareDashboard_Email_notification.png')} alt="Notify recipients by email toggle" />
 1. Click **Share**.
 
 ## Shareable URL

@@ -11,7 +11,7 @@ description: The Microsoft Graph Security API Source provides a secure endpoint 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="MS Graph icon" width="40"/>
 
 The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each affected device.
 
@@ -72,15 +72,15 @@ To configure a Microsoft Graph Security API Source:
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. Enter the **Directory (tenant) ID**, **Application (client) ID**, and **Application Client Secret Value** you got from the Application you created in the [Vendor configuration](#vendor-configuration) section.
 1. The **Polling Interval** is set to 5 minutes by default. You can adjust it based on your needs.
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the Microsoft Graph Security API source, you can install relevant Sumo Logic Azure security apps to visualize and analyze the collected data through prebuilt dashboards. 
+After configuring the Microsoft Graph Security API source, you can install relevant Sumo Logic Azure security apps to visualize and analyze the collected data through prebuilt dashboards and monitor alerts. 
 
 Depending on your security monitoring needs, you can choose from several apps such as [Microsoft Defender for Endpoint](/docs/integrations/microsoft-azure/microsoft-defender-for-endpoint), [Microsoft Defender for Identity](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity/), [Microsoft Defender for Office 365](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-office-365), [Microsoft Defender for Cloud Apps](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps), [Microsoft Entra ID Protection](/docs/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection), or [Microsoft Graph Security](/docs/integrations/saas-cloud/microsoft-graph-security-v2).
 :::

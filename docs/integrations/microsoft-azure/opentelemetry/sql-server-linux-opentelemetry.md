@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="SQL icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 :::note logs only
 This is a logs-only app. For collecting metrics and enabling comprehensive monitoring on both Linux and Windows, use the [Microsoft SQL Server - OpenTelemetry App](/docs/integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry).
@@ -135,7 +135,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 Following is the query from **Error and warning count** panel from the **SQL Server app - Overview** dashboard:
 
-```sql
+```sumo
  %"db.cluster.name"=* %"deployment.environment"=*  %"sumo.datasource"=sqlserver ("Error:" or "Warning:") | json "log" as _rawlog nodrop
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw
 | parse regex "\s+(?<Logtype>Error|Warning):\s+(?<message>.*)$"

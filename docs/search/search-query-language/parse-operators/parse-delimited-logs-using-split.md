@@ -48,7 +48,7 @@ For example, if you had a file with the following colon delimited log message:
 
 You could parse the fields using the following query:
 
-```sql
+```sumo
 _sourceCategory=colon
 | parse "] * *" as log_level, split_field
 | split split_field delim=':' extract 1 as user, 2 as account_id, 3 as session_id, 4 as result
@@ -60,7 +60,7 @@ which produces results such as:
 
 In another example, you'd use the following query:
 
-```sql
+```sumo
 _sourceCategory=colon
 | split _raw delim=':' extract 1 as user2, 2 as id, 3 as name
 ```
@@ -73,7 +73,7 @@ which provides results like:
 
 Use the following query to extract comma delimited fields as specified:
 
-```sql
+```sumo
 _sourceCategory=csv
 | split _raw delim=',' extract 1 as user2, 2 as id, 3 as name
 ```
@@ -88,7 +88,7 @@ Use this query to extract fields from a tab delimited log file. 
 
 You have to manually specify the tab character for the delim value.
 
-```sql
+```sumo
 _sourceCategory=sumo/zscaler
 | split _raw delim='    ' extract 1 as Column1, 2 as dlpeng, 3 as cat
 ```
@@ -99,6 +99,6 @@ which produces this result:
 
 Alternatively, you can use the parse operator to extract fields from a tab delimited log file. The following query produces the same result as the previous query.
 
-```sql
+```sumo
 _sourceCategory=sumo/zscaler  | parse "*\t*\t*\t" as Column1,dpleng,cat
 ```

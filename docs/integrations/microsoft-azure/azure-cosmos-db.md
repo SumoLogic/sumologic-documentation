@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Azure Cosmos 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-cosmos-db.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-cosmos-db.png')} alt="Azure Cosmos DB icon" width="50"/>
 
 [Azure Cosmos DB](https://learn.microsoft.com/en-us/azure/cosmos-db/introduction) is a fully managed NoSQL and relational database for modern app development offering single-digit millisecond response times, automatic and instant scalability, along with guaranteed speed at any scale. This integration helps in monitoring the overall performance, failures, capacity, and operational health of all your Azure Cosmos DB resources.
 

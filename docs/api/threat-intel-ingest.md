@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="60"/>
+<img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="60"/>
 
 The Threat Intel Ingest Management API allows you to:
 

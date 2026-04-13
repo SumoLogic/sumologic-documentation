@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/screenshot-machine.png')} alt="screenshot-machine" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/screenshot-machine.png')} alt="Screenshot Machine icon" width="100"/>
 
 Version: 1.3  
 Updated: February 16, 2024
