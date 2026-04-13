@@ -141,11 +141,15 @@ Yes. Analysts can override verdicts and flag feedback within the UI. These actio
 ### FAQs for preview
 
 <details>
-<summary>What controls are in place to ensure system stability?</summary>
+<summary>How does investigation rate limiting work?</summary>
 
-To ensure stable performance, the agent performs system-wide rate limiting, which imposes usage controls across the entire SOC Analyst Agent user base to manage capacity. As a result, auto-investigation may skip some insights if investigating them would exceed rate limits. The skipped insights show **Not Investigated** in the **AI Verdicts** column. However, in these instances, you can manually start an investigation of the insight by clicking the **Investigate** button. 
+To ensure stable performance, the agent performs system-wide rate limiting, which imposes usage controls across the entire SOC Analyst Agent user base to manage capacity. As a result, automatic investigation may skip some insights if investigating them would exceed rate limits. The skipped insights show **Not Investigated** in the **AI Verdicts** column. However, in these instances, you can manually start an investigation of the insight by clicking the **Investigate** button.
 
-Be aware, though, that if you have reached your limit of the total number of insights you can get AI verdicts for in a certain time period, a message will appear telling you when you can next click the **Investigate** button to initiate an AI investigation.
+The rate limits for your organization are:
+* 5 automatic investigations per day.
+* 2 manually triggered investigations per day.
+
+Be aware, though, that if you have reached your limit of the total number of insights that you can get AI verdicts for in a certain time period, a message will appear telling you when you can next click the **Investigate** button to manually initiate an AI investigation.
 
 If you have questions about the AI investigation rate limiting for your organization, ask your Sumo Logic representative.
 </details>
