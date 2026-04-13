@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/have-i-been-pwned.png')} alt="have-i-been-pwned" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/have-i-been-pwned.png')} alt="Have I Been Pwned icon" width="100"/>
 
 ***Version: 1.3  
 Updated: Dec 12, 2023***

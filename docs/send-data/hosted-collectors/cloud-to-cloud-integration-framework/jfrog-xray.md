@@ -11,7 +11,7 @@ description: Learn how to collect data from the JFrog Xray platform.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/jfrog.png')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/jfrog.png')} alt="JFrog icon" width="85"/>
 
 Our JFrog Xray source collects JFrog Xray violations by querying the API for new policy violations when they occur.
 

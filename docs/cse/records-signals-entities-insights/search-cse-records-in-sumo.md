@@ -54,7 +54,7 @@ Inventory log data is not stored in any `sec_record*` partitions. You must use `
 
 Within a FailedRecord, `fields.reason` will contain the reason why the FailedRecord was generated. The following query will extract the failure reason:
 
-```
+```sumo
 _index=sec_record_failure | fields %fields.reason
 ```
 
@@ -92,7 +92,7 @@ To open a log search tab in Sumo Logic, go to the **Home** screen and select **L
 
 To return all the records or signals in a partition, all you need to include in your query is the partition name. For example, to search all records in the `sec_record_network` partition, choose a time range, enter the query below, and then click **Start**:
 
-```sql
+```sumo
 _index=sec_record_network
 ```
 
@@ -111,8 +111,8 @@ You can use the `fields` operator to choose the fields you want to be displayed 
 
 This query adds the `objectType` (which contains the record type) and the `user_username` fields to the displayed output:
 
-```sql
-_index = sec_record_audit
+```sumo
+_index=sec_record_audit
 | fields objectType, user_username
 ```
 <img src={useBaseUrl('img/cse/fields-added.png')} alt="Fields added" style={{border: '1px solid gray'}} width="800"/>
@@ -126,32 +126,32 @@ _index = sec_record_audit
 
 You can search multiple partitions by using `OR` in the query. For example, to search all records in the `sec_record_audit` and `sec_record_network` partitions: 
 
-```sql
-_index = sec_record_audit OR _index = sec_record_network
+```sumo
+_index=sec_record_audit OR _index=sec_record_network
 ```
 
 ## Search all record partitions
 
 To search all records in all of the in partitions that contain Cloud SIEM records, use an asterisk (`*`)wildcard.
 
-```sql
-_index = sec_record_*
+```sumo
+_index=sec_record_*
 ```
 
 ## Query by record type
 
 The `objectType` field in a record indicates its record type. To restrict results to a particular record type, use `_index` to identify the partition that contains that record type, and `objectType` to specify the record type. For example, to search for NetworkHTTP records in the `sec_record_network` partition:
 
-```sql
-_index = sec_record_network objectType=NetworkHTTP
+```sumo
+_index=sec_record_network objectType=NetworkHTTP
 ```
 
 ## Return a count of records by record type 
 
 You can use the count operator to aggregate your query results. In the following query, we use the asterisk wildcard to search across all partitions that contain Cloud SIEM records, and count the results by `objectType`, which contains the record type. The following query returns the count of records of each type. 
 
-```
-_index = sec_record_*
+```sumo
+_index=sec_record_*
 | count as Total _view, objectType
 | order by Total
 ```
@@ -160,7 +160,9 @@ _index = sec_record_*
 
 You can search Cloud SIEM fields by keyword, for example:
 
-`_index=sec_record_authentication kerberos`
+```sumo
+_index=sec_record_authentication kerberos
+```
 
 Keyword searching is supported for security indexes across all fields, unlike other indexes where only the `_raw` field is searched.
 
@@ -172,16 +174,16 @@ The **Security Record Details** field contains a JSON object with all of the fie
 
 You can access the contents of nested attributes, like `fields` in the example below, using a `where` clause:  
 
-```
+```sumo
 _index=sec_record_authentication
-| where %"fields.application" = "test_app"
+| where %"fields.application"="test_app"
 ```
 <img src={useBaseUrl('img/cse/extracted-field.png')} alt="Extracted field" style={{border: '1px solid gray'}} width="800"/>
 
 ## Security index search limitations
 
 * When you use wildcards for field values in a query scope, only records in which those fields are present and not null will be returned. For example, the following query will only return records if the `srcDevice_ip` is present and not null:
-    ```
-    _index = sec_record_* srcDevice_ip=*
+    ```sumo
+    _index=sec_record_* srcDevice_ip=*
     ```  
 * The partitions that contain Cloud SIEM records and signals are stored in a dedicated security data tier. You can’t access data in the security indexes and data in other data tiers (Continuous, Frequent, or Infrequent) and Flex in the same query.

@@ -11,7 +11,7 @@ description: The Sysdig Secure Source aims to collect the scan results from the 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="icon" width="125"/>
+<img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="Sysdig icon" width="125"/>
 
 Sysdig Secure is a comprehensive security platform that provides continuous security and compliance monitoring for cloud-native environments. This is designed specifically to address the security needs of modern containerised and Kubernetes infrastructures. Sysdig Secure enables organisations to detect, prevent, and respond to security threats and ensure compliance in real-time.
 
@@ -25,7 +25,7 @@ Sysdig Secure is a comprehensive security platform that provides continuous secu
 :::note Access the API documents
 1. Sign in to your Sysdig platform.
 1. On the bottom left of the page, click **Secure Operations**.
-1. Click **Next Gen API Docs** under the **Help** menu. <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sysdig/Sysdig+API+docs.png')} alt="Next-Gen-API-Docs" width="500" />
+1. Click **Next Gen API Docs** under the **Help** menu. <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sysdig/Sysdig+API+docs.png')} alt="Next Gen API Docs" width="500" />
 :::
 
 ## Setup

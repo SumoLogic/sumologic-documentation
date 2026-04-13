@@ -23,7 +23,7 @@ Parse a hexadecimal value to a decimal value.
 
 The following query will convert a hexadecimal string to a decimal number.
 
-```sql
+```sumo
 * | parseHex("12D230") as decimalValue
 ```
 

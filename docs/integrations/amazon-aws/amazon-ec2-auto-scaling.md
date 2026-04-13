@@ -6,7 +6,7 @@ description: The Sumo Logic App for Amazon EC2 Auto Scaling provides comprehensi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-ec2-auto-scaling-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon-ec2-auto-scaling-logo.png')} alt="Amazon EC2 Auto Scaling icon" width="50"/>
 
 Amazon EC2 Auto Scaling helps you maintain application availability and lets you automatically add or remove EC2 instances using scaling policies that you define. Dynamic or predictive scaling policies let you add or remove EC2 instance capacity to service established or real-time demand patterns.
 
@@ -76,7 +76,7 @@ The Amazon EC2 Auto Scaling app uses the following logs and metrics:
 
 ### Sample queries
 
-```sql title="Events by status (CloudTrail logs)"
+```sumo title="Events by status (CloudTrail logs)"
 account="account" region="region" "\"eventsource\":\"autoscaling.amazonaws.com\""
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage", "apiVersion" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message, api_version nodrop
 | where event_source = "autoscaling.amazonaws.com"
@@ -142,7 +142,7 @@ Applied at: Ingest Time
 Scope (Specific Data): account=* eventSource eventName
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 json "eventSource", "awsRegion", "requestParameters", "recipientAccountId" as eventSource, region, requestParameters, accountid nodrop
 | json field=requestParameters "autoScalingGroupName" as autoscalinggroup nodrop
 | where eventSource = "autoscaling.amazonaws.com"

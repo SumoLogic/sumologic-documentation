@@ -8,12 +8,12 @@ Cosine of argument in radians.
 
 ## Syntax
 
-```sql
+```sumo
 cos(<x>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 * | cos(1) as v
 ```

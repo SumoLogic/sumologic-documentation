@@ -10,7 +10,7 @@ description: Learn how to collect customer event data from the DocuSign and send
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="Thumbnail icon" width="40"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="DocuSign icon" width="40"/>
 
 DocuSign pioneered the development of e-signature technology, and today DocuSign helps organizations connect and automate how they prepare, sign, act on, and manage agreements. As part of the DocuSign Agreement Cloud, DocuSign offers eSignature, allowing you to sign documents electronically from most devices.
 

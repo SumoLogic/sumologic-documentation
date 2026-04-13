@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mandiant-advantage-threat-intelligence.png')} alt="mandiant-advantage-threat-intelligence" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mandiant-advantage-threat-intelligence.png')} alt="Mandiant Advantage Threat Intelligence icon" width="100"/>
 
 ***Version: 1.5  
 Updated: Jul 18, 2023***
@@ -18,8 +18,8 @@ Mandiant Threat Intelligence is a comprehensive and powerful SaaS platform that 
 
 ## Mandiant Threat Intelligence configuration
 
-1. Log in to [Mandiant Threat Intelligence](https://advantage.mandiant.com/). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mandiant-advantage-threat-intelligence/mandiant-advantage-threat-intelligence-1.png')} style={{border:'1px solid gray'}} alt="mandiant-advantage-threat-intelligence-1" width="600"/>
-1. On **Threat Intelligence** click **Settings**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mandiant-advantage-threat-intelligence/mandiant-advantage-threat-intelligence-2.png')} style={{border:'1px solid gray'}} alt="mandiant-advantage-threat-intelligence-2" width="800"/>
+1. Log in to [Mandiant Threat Intelligence](https://advantage.mandiant.com/). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mandiant-advantage-threat-intelligence/mandiant-advantage-threat-intelligence-1.png')} style={{border:'1px solid gray'}} alt="Mandiant advantage threat intelligence 1" width="600"/>
+1. On **Threat Intelligence** click **Settings**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mandiant-advantage-threat-intelligence/mandiant-advantage-threat-intelligence-2.png')} style={{border:'1px solid gray'}} alt="Mandiant advantage threat intelligence 2" width="800"/>
 1. Click on **Get Key ID And Secret**.
 
 ## Configure Mandiant Advantage Threat intelligence in Automation Service and Cloud SOAR

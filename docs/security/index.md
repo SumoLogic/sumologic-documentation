@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Sumo Logic security solutions support the entire spectrum of security use cases, from security analytics to SIEM and SOAR: 
 * **[Logs for Security](/docs/security/additional-security-features/)**<br/>Provides enhanced insight into threat activity via logs. Collect security log and event data from your infrastructure and applications, on-premises and in-cloud. Analyze your security data with pre-built and custom dashboards, out-of-the-box security apps, and robust queries.
 * **Threat detection, investigation, and response**<br/>After you have collected logs for security, you can use them with the following solutions for threat detection, investigation, and response:
-   * **[Cloud SIEM](/docs/cse/)**<br/>Gives SOC (security operations center) analysts prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions.
+   * **[Cloud SIEM](/docs/cse/)**<br/>Gives security operations center (SOC) analysts prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions.
    * **[Cloud SOAR](/docs/cloud-soar/)**<br/>Fully automates triage, investigation, and remediation of threats for any security professional. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR).
 
 :::training Sumo Logic Academy
@@ -37,7 +37,7 @@ Following are features available with our security solutions. If you have any qu
 | App catalog (out-of-the-box analytics) | &#10003; | &#10003; | &#10003; |
 | Dashboard | &#10003; | &#10003; | &#10003; |
 | Deep search (Sumo Logic Search Query Language) | &#10003; | &#10003; | &#10003; |
-| Advanced analytics with machine learning (GIS for GuardDuty and CloudTrail) | &#10003; | &#10003; | &#10003; |
+| Advanced analytics with machine learning (Global Intelligence Service for GuardDuty and CloudTrail) | &#10003; | &#10003; | &#10003; |
 | Monitoring | &#10003; | &#10003; | &#10003; |
 | Alerts | &#10003; | &#10003; | &#10003; |
 | Threat Intelligence (threat intel feed and threat analysis app) | &#10003; | &#10003; | &#10003; |

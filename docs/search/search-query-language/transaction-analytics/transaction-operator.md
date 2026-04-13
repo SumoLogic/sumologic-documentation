@@ -16,7 +16,7 @@ The transaction operator requires:
 
 ## Syntax
 
-```sql
+```sumo
 transaction on <field1> [, <field2>]... [fringe=<timespec>] with <states> results by [transactions | states | flow]
 ```
 
@@ -28,7 +28,7 @@ States act as matching statements, searching your log for that specific state. T
 
 you'd specify the state as a matching statement on the `sessionId` like this:
 
-```sql
+```sumo
 | transaction on sessionid with "* Starting session *" as init
 ```
 
@@ -49,13 +49,13 @@ Think of states as a way of using log events and fields in your logs to plot the
 
 Syntax:
 
-```sql
+```sumo
 "<match string>" [in <fieldName>] as <stateName>
 ```
 
 Example:
 
-```sql
+```sumo
 with "*LinkAccountAction category=Google*" as linkGoogle,
 with "*LinkAccountAction category=Facebook*" as linkFacebook,
 with "*LinkAccountAction category=LinkedIn*" as linkLinkedIn,
@@ -67,13 +67,13 @@ with "*LinkAccountAction category=Other*" as linkOther
 
 Syntax:
 
-```sql
+```sumo
 states <state1> [as <alias1>] [,<state2> [as <alias2>]]... [in <fieldName>]
 ```
 
 Example:
 
-```sql
+```sumo
 with states login, cart, checkout, shipping, shipping_method, billing, %"Labs/Apache/Access"
 ```
 
@@ -107,7 +107,7 @@ Below you will see two nearly identical queries. On the left, unordered data is 
 
 <TabItem value="tab1">
 
-```sql
+```sumo
 _sourceCategory=oursite
 | where !(user_agent matches "*Pingdom*")
 | where status_code = "200"
@@ -123,7 +123,7 @@ _sourceCategory=oursite
 </TabItem>
 <TabItem value="tab2">
 
-```sql
+```sumo
 _sourceCategory=oursite
 | where !(user_agent matches "*Pingdom*")
 | where status_code = "200"
@@ -157,7 +157,7 @@ If `tw` is the time window for a query, then transactions that satisfy the fol
 
 **For example:**
 
-```sql
+```sumo
 ... | transaction on sessionid fringe=10m
 with "Starting session *" as init,
 with "Initiating countdown *" as countdown_start,
@@ -186,7 +186,7 @@ When you use the transaction operator, it requires one or more transaction IDs t
 
 In this example, using the browser sessionID as the transaction ID, we could define states for `countdown_start` and `countdown_done`:
 
-```sql
+```sumo
 ... | transaction on sessionid
 with "Starting session *" as init,
 with "Initiating countdown *" as countdown_start,
@@ -206,7 +206,7 @@ The fields are assigned a timestamp in milliseconds.
 
 For example, in the query:
 
-```sql
+```sumo
 _source=Syslog (New session) OR (Session deleted)
 | transaction on sessionid with "*New session*" as started, with "*Session deleted*" as ended
 | where started > 0
@@ -223,7 +223,7 @@ In this example, you'd track the states of your e-commerce site to see if there 
 
 Running a query similar to:
 
-```sql
+```sumo
 _sourceCategory=[sourceCategoryName]
 | parse regex "(?<ip>[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})" nodrop
 | transaction on ip

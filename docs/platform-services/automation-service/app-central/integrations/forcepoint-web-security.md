@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/forcepoint-web-security.png')} alt="forcepoint-web-security" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/forcepoint-web-security.png')} alt="Forcepoint Web Security" width="100"/>
 
 ***Version: 1.2  
 Updated: Jul 18, 2023***

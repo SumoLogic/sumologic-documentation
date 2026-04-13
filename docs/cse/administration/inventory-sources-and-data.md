@@ -35,7 +35,7 @@ The AWS Inventory source collects the inventory of AWS resources in your AWS acc
 
 | Inventory source | Type of source | Inventory data collected |
 | :-- | :-- | :-- |
-| [Armis API Integration Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source) | Cloud-to-Cloud | Computer |
+| [Armis Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-source) | Cloud-to-Cloud | Computer |
 | [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source) | Cloud-to-Cloud | Computer |
 | [CrowdStrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source) | Cloud-to-Cloud | Computer |
 | [Cloud SIEM AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source)| Cloud-to-Cloud | Computer |
@@ -58,13 +58,13 @@ Sumo Logic sources that collect inventory data generally have a configuration se
 
 You can search the inventory data collected by inventory sources in a log search tab in Sumo Logic. To find all inventory data, use a search like this:
 
-```
+```sumo
 _siemDataType=Inventory
 ```
 
 You can scope your search using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata), for example, by specifying the source category assigned to the inventory source:
 
-```
+```sumo
 _sourceCategory=AD_inventory
 ```
 

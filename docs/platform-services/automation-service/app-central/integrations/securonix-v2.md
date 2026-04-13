@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/securonix-v2.png')} alt="securonix-v2" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/securonix-v2.png')} alt="Securonix V2 icon" width="100"/>
 
 ***Version: 2.1  
 Updated: Jul 07, 2023***

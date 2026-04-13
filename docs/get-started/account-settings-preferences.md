@@ -7,7 +7,7 @@ description: Update and manage your Sumo Logic account.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="User Permissions icon" width="50"/>
 
 You can review and update your personal account settings and login credentials at any time. The **Preferences** page contains settings that apply only to your account and do not affect other users in your organization.
 
@@ -180,8 +180,8 @@ Select this option to receive notifications only for monitors you're subscribed 
 
 #### Enable "Active alerts only" as default filter
 
-By default, your alerts list only displays alerts with an active status. Alerts with a resolved status are excluded.<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" style={{border: '1px solid gray'}} width="500" />
+By default, your alerts list only displays alerts with an active status. Alerts with a resolved status are excluded.<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="Alert preferences" style={{border: '1px solid gray'}} width="500" />
 
 #### Enable "My subscriptions" as default filter
 
-By default, alerts you are subscribed to will appear in your alerts list.<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" style={{border: '1px solid gray'}} width="500" />
+By default, alerts you are subscribed to will appear in your alerts list.<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="Alert preferences" style={{border: '1px solid gray'}} width="500" />

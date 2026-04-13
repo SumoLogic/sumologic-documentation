@@ -22,7 +22,7 @@ To view details about an OpenTelemetry Collector:
           The dashed line indicates there was no data ingestion in the last hour.
           :::
     - **Last Modified**. Timestamp when the collector was last modified.
-1. Click on the desired collector.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-collector-details.png')} alt="opentelemetry-collection-details-page" style={{border:'1px solid gray'}} width="400"/>
+1. Click on the desired collector.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-collector-details.png')} alt="OpenTelemetry collection details page" style={{border:'1px solid gray'}} width="400"/>
     - **Basic Info**
         - **Name**. Name of the OpenTelemetry Collector. To edit the collector name, refer to the [Collector Name](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#collector-name).
         - **Collector Version**. The collector version used to create the collector.
@@ -70,30 +70,30 @@ Filters help you quickly narrow down OpenTelemetry collectors by criteria such a
 
 Follow the steps below to filter OpenTelemetry collectors based on their type:
 
-1. On the **OpenTelemetry Collection** page, click the **Click to add a filter** bar and then select **Collector Type** from the dropdown.<br/><img src={useBaseUrl('img/send-data/select-collector-type.png')} alt="select-collector-type" style={{border:'1px solid gray'}} width="400" />
+1. On the **OpenTelemetry Collection** page, click the **Click to add a filter** bar and then select **Collector Type** from the dropdown.<br/><img src={useBaseUrl('img/send-data/select-collector-type.png')} alt="Select collector type" style={{border:'1px solid gray'}} width="400" />
 1. Select one of the following collector types:
    - Locally Managed
    - Remotely Managed
-1. Based on the selected collector type, you can view a list of either locally managed collectors or remotely managed collectors.<br/><img src={useBaseUrl('img/send-data/collectors-with-selected-type.png')} alt="collectors-with-selected-type" style={{border:'1px solid gray'}} />
+1. Based on the selected collector type, you can view a list of either locally managed collectors or remotely managed collectors.<br/><img src={useBaseUrl('img/send-data/collectors-with-selected-type.png')} alt="Collectors with selected type" style={{border:'1px solid gray'}} />
 
 ### Collector Tag
 
 Follow the steps below to filter OpenTelemetry collectors based on the collector tags:
 
 1. On the **OpenTelemetry Collection** page, click the **Click to add a filter** bar.
-1. Under **Collector Tag**, select the required collector tag.<br/><img src={useBaseUrl('img/send-data/otel-collector-tag-filter.png')} alt="otel-collector-tag-filter" style={{border:'1px solid gray'}} width="400" />
-1. Select the value assigned to the collector tag.<br/><img src={useBaseUrl('img/send-data/otel-collector-tag-value-filter.png')} alt="otel-collector-tag-value-filter" style={{border:'1px solid gray'}} width="400" />
+1. Under **Collector Tag**, select the required collector tag.<br/><img src={useBaseUrl('img/send-data/otel-collector-tag-filter.png')} alt="OpenTelemetry collector tag filter" style={{border:'1px solid gray'}} width="400" />
+1. Select the value assigned to the collector tag.<br/><img src={useBaseUrl('img/send-data/otel-collector-tag-value-filter.png')} alt="OpenTelemetry collector tag value filter" style={{border:'1px solid gray'}} width="400" />
 1. Click **Apply**.
 
 ### Status
 
 Follow the steps below to filter OpenTelemetry collectors based on their status:
 
-1. On the **OpenTelemetry Collection** page, click the **Click to add a filter** bar and then select **Status** from the dropdown.<br/><img src={useBaseUrl('img/send-data/otel-collector-status-filter.png')} alt="otel-collector-status-filter" style={{border:'1px solid gray'}} width="400" />
+1. On the **OpenTelemetry Collection** page, click the **Click to add a filter** bar and then select **Status** from the dropdown.<br/><img src={useBaseUrl('img/send-data/otel-collector-status-filter.png')} alt="OpenTelemetry collector status filter" style={{border:'1px solid gray'}} width="400" />
 1. Select one of the following statuses:
    - Alive
    - Stopped
-1. Based on the selected status, you can view a list of either alive collectors or stopped collectors.<br/><img src={useBaseUrl('img/send-data/otel-collectors-with-selected-status-filter.png')} alt="otel-collectors-with-selected-status-filter" style={{border:'1px solid gray'}} />
+1. Based on the selected status, you can view a list of either alive collectors or stopped collectors.<br/><img src={useBaseUrl('img/send-data/otel-collectors-with-selected-status-filter.png')} alt="OpenTelemetry collectors with selected status filter" style={{border:'1px solid gray'}} />
 
 ### Upgrade Available
 

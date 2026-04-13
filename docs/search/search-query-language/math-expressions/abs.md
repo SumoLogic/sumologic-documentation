@@ -8,7 +8,7 @@ The absolute function calculates the absolute value of x.
 
 ## Syntax
 
-```sql
+```sumo
 abs(<x>) as <field>
 ```
 
@@ -18,6 +18,6 @@ The function cannot be nested.
 
 ## Example
 
-```sql
+```sumo
 * | abs(-1.5) as v
 ```

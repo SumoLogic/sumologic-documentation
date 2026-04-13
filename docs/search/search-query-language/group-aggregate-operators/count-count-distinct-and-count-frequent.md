@@ -16,7 +16,7 @@ Counts the total number of logs that match the keyword search within the time ra
 
 ### Syntax
 
-```sql
+```sumo
 count[(<field>)] [as <field>] [by <field>, ...]
 ```
 
@@ -29,25 +29,25 @@ count[(<field>)] [as <field>] [by <field>, ...]
 
 To count the number of logs:
 
-```sql
+```sumo
 | count
 ```
 
 To count the number of logs from a specific field, in this example the field is `port`:
 
-```sql
+```sumo
 | count(port)
 ```
 
 To count the number of logs from a specific field based on grouping by other fields: 
 
-```sql
+```sumo
 | count(port) by srcAddress, tgtAddress
 ```
 
 The same example above with an alias field name, `countOfPort`, and an additional aggregate operator, `avg`:
 
-```sql
+```sumo
 | count(port) as countOfPort, avg(bytes) by srcAddress, tgtAddress
 | sort by countOfPort
 ```
@@ -62,7 +62,7 @@ An empty value still counts as a unique value and will be counted.
 
 ### Syntax
 
-```sql
+```sumo
 count_distinct(<field>) [as <field>] [by <field>, ...]
 ```
 
@@ -72,11 +72,11 @@ count_distinct(<field>) [as <field>] [by <field>, ...]
 
 ### Examples
 
-```sql
+```sumo
 | count_distinct(username) group by hostname
 ```
 
-```sql
+```sumo
 _sourceCategory=*apache*
 | parse "* -" as src_ip
 | count_distinct(src_ip)
@@ -98,7 +98,7 @@ The error parameter value is important to making the `count_distinct` function
 
 Also, note that when you want to count the distinct occurrences of more than one field, you must create an alias using the [`as` operator](/docs/search/search-query-language/search-operators/as) to rename the `_count_distinct` fields. See this example:
 
-```sql
+```sumo
 _sourceCategory=PaloAltoNetworks
 | count_distinct(threatid) as cntthreatid, count_distinct(repeatcnt) as cntrepeatcnt
 ```
@@ -113,7 +113,7 @@ You can use the `count_frequent` operator in Dashboard queries, but the number
 
 ### Syntax
 
-```sql
+```sumo
 count_frequent <field>[, <field2>, field3, ...]
 ```
 
@@ -125,7 +125,7 @@ count_frequent <field>[, <field2>, field3, ...]
 
 ### Example
 
-```sql
+```sumo
 * | parse "srcIP=*, url=*" as srcIP, url 
 | count_frequent srcIP, url
 ```

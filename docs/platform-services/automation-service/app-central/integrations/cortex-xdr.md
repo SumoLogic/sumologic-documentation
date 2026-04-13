@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cortex-xdr.png')} alt="cortex-xdr" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cortex-xdr.png')} alt="Cortex XDR icon" width="100"/>
 
 ***Version: 1.5  
 Updated: Oct 15, 2024***

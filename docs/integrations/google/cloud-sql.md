@@ -7,7 +7,7 @@ description: The Sumo Logic app for Google Cloud SQL helps you monitor your usag
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/sql.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/sql.png')} alt="SQL icon" width="50"/>
 
 The Sumo Logic app for Google Cloud SQL helps you to monitor your usage of Google Cloud SQL. The preconfigured dashboards provide insight into created and deleted resources, messages, authorization failures, user activities, and error logs, along with CPU disk memory utilization, Disk input/output operations, replication lag, received/sent bytes, and connections.  
 
@@ -20,7 +20,7 @@ The App uses:
 
 ### Sample queries
 
-```bash title="Created Resources Over Time"
+```sumo title="Created Resources Over Time"
 _sourceCategory=*gcp* data "type":"cloudsql_database" methodName
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/*"

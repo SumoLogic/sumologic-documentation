@@ -11,7 +11,7 @@ description: The Netskope Source provides a secure endpoint to receive event dat
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope icon" width="75"/>
 
 The Netskope Source provides a secure endpoint to receive event data from the [Netskope API](https://docs.netskope.com/en/using-the-rest-api-v2-dataexport-iterator-endpoints). It securely stores the required authentication, scheduling, and state tracking information.
 

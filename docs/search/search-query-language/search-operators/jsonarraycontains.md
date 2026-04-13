@@ -9,7 +9,7 @@ Use the `jsonArrayContains` operator to determine whether a JSON array contains 
 
 ## Syntax
 
-```sql
+```sumo
 jsonArrayContains(<jsonArrayField>, <stringField>)
 ```
 

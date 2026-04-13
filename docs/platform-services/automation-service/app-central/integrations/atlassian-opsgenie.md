@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian.png')} alt="criminal-ip" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian.png')} alt="Altassian Opsgenie icon" width="90"/>
 
 ***Version: 1.6  
 Updated: March 23, 2026***

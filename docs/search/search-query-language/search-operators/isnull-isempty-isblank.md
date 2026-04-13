@@ -65,7 +65,7 @@ In this situation, no `country_code` will be associated with the IP address and 
 
 Running a query like:
 
-```sql
+```sumo
 | parse "remote_ip=*]" as remote_ip
 | lookup country_code from geo://location on ip = remote_ip
 | if (isNull(country_code), "unknown", country_code) as country_code
@@ -79,7 +79,7 @@ uses the `isNull` operator to check the field value of `country_code` and if i
 
 To check for null values from a lookup operation, use a query with [`where`](where.md), like:
 
-```sql
+```sumo
 | parse "example_ip=*]" as ip
 | lookup country_name, city from geo://location on ip = ip
 | where isNull(country_name)

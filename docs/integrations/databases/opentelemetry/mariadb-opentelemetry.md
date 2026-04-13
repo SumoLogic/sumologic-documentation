@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="Thumbnail icon" width="60"/><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="Mariadb icon" width="60"/><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The [MariaDB](https://mariadb.org/about/) app is a logs based app that helps you monitor MariaDB database. Pre-configured dashboards provide insight into the health of your database clusters, replication, error logs, slow queries and failed logins.
 
@@ -178,7 +178,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 Following query is from the "Errors" panel of the overview dashboard in Mariadb app: 
 
-```sql
+```sumo
  %"sumo.datasource"=mariadb %"deployment.environment"=* %"db.cluster.name"=* "[ERROR]"
 | json "log" nodrop
 | if (isEmpty(log), _raw, log) as mariadb_log_message

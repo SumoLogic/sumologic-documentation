@@ -9,12 +9,12 @@ The log10 function returns the base 10 logarithm of x.
 
 ## Syntax
 
-```sql
+```sumo
 log10(<x>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 * | log10(2) as v
 ```

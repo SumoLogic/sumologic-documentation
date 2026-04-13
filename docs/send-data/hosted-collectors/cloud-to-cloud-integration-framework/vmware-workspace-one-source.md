@@ -9,7 +9,7 @@ description: Collect the device details and corresponding list of applications f
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="vmware-workspace-one-logo" width="60" />
+<img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="VMware Workspace ONE logo" width="60" />
 
 VMware Workspace ONE is a comprehensive digital workspace platform that combines unified endpoint management, access management, and application management capabilities. It enables organizations to securely deliver and manage any app on any device, providing a seamless and productive user experience. Workspace ONE empowers IT teams to simplify device management, enhance security, and increase workforce productivity through a unified and integrated process.
 
