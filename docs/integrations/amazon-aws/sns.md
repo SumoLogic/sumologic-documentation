@@ -6,7 +6,7 @@ description: The Sumo Logic app for Amazon SNS is a unified logs and metrics app
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/sns.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/sns.png')} alt="SNS icon" width="50"/>
 
 Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients.
 
@@ -15,8 +15,8 @@ The Sumo Logic app for Amazon SNS collects CloudTrail logs and CloudWatch metric
 ## Log and Metrics types
 
 The Sumo Logic app for Amazon SNS uses:
-* SNS CloudWatch Metrics. For details, see [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html). 
-* SNS operations using AWS CloudTrail. For details, see [here](https://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html). 
+* SNS CloudWatch Metrics. For details, see [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html).
+* SNS operations using AWS CloudTrail. For details, see [here](https://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html).
 
 ### Sample log messages
 
@@ -48,7 +48,7 @@ eventCategory:"Management"
 
 ### Sample queries
 
-```sql title="Events By Status"
+```sumo title="Events By Status"
 account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\"sns.amazonaws.com\""
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message nodrop
 | where event_source = "sns.amazonaws.com"
@@ -121,7 +121,7 @@ Scope (Specific Data): account=* eventname eventsource \"sns.amazonaws.com\"
 
 **Parse Expression**:
 
-```sql
+```sumo
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements nodrop
 | where event_source = "sns.amazonaws.com"
 | json field=userIdentity "accountId", "type", "arn", "userName"  as accountid, type, arn, username nodrop
@@ -147,7 +147,7 @@ In case, you have a centralized collection of CloudTrail logs and are ingesting 
 * **Scope (Specific Data)**: `_sourceCategory=aws/observability/cloudtrail/logs`
 * **Parse Expression**: Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account

@@ -67,7 +67,7 @@ Search syntax, queries, parameters, and filenames are displayed in `Regular Code
 
 Example:
 
-```sql
+```sumo
 | parse [field=<field_name>] "<start_anchor>*<stop_anchor>" as <field> [nodrop]
 ```
 
@@ -80,7 +80,7 @@ The optional arguments are `[field=<field_name>]` and the `[nodrop]` option.
 
 Example:
 
-```sql
+```sumo
 concat(<field1>, <field2>[, <field3>, ...]) as <field>
 ```
 

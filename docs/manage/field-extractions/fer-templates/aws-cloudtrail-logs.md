@@ -42,7 +42,7 @@ description: Parse the common fields in your AWS CloudTrail Logs using the FER t
 
 **Parsing Rule:**
 
-```sql
+```sumo
 parse "eventSource\":\"*\"" as event_source
 | parse "\"sourceIPAddress\":\"*\"" as source_ipaddress
 | parse "\"eventName\":\"*\"" as event_name

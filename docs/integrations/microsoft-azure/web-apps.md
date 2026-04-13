@@ -7,7 +7,7 @@ description: The Sumo Logic app for Azure Web Apps allows you to collect Azure w
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/webapps.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/webapps.png')} alt="Web Apps icon" width="50"/>
 
 The Azure Web Apps app allows you to collect Azure web server and application diagnostics logs and monitor the health of your Azure Web Apps environment. This app provides preconfigured dashboards that allow you to monitor server operation, traffic requests, and response times.
 
@@ -43,7 +43,7 @@ eShopCart.azurewebsites.net 200 0 0 3098 1008 1000
 
 ### Sample queries
 
-```sql title="Traffic over time outlier"
+```sumo title="Traffic over time outlier"
 _sourceCategory=Azure/Web-app
 | parse regex "\d+-\d+-\d+ \d+:\d+:\d+ (?<s_sitename>\S+) (?<cs_method>\S+) (?<cs_uri_stem>\S+) (?<cs_uri_query>\S+) (?<src_port>\S+) (?<src_user>\S+) (?<client_ip>\S+) (?<cs_user_agent>\S+) (?<cs_cookie>\S+) (?<cs_referrer>\S+) (?<cs_host>\S+) (?<sc_status>\S+) (?<sc_substatus>\S+) (?<sc_win32_status>\S+) (?<sc_bytes>\S+) (?<cs_bytes>\S+) (?<time_taken>\S+)"
 | timeslice 5m

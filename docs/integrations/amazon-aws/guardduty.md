@@ -6,7 +6,7 @@ description: The Amazon GuardDuty Sumo Logic app provides insights into the acti
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/guardduty.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/guardduty.png')} alt="GuardDuty icon" width="50"/>
 
 Amazon GuardDuty is a continuous security monitoring service that analyzes and processes VPC Flow Logs and AWS CloudTrail event logs. The Sumo Logic App for Amazon GuardDuty provides insights into the activities in your AWS account based on the findings from Amazon GuardDuty. The App includes preconfigured dashboards that allow you to detect unexpected and potentially malicious activities in your AWS account by providing details on threats by severity, VPC, IP, account ID, region, and resource type.
 
@@ -155,7 +155,7 @@ The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be se
 <details>
 <summary>Click to expand</summary>
 
-```sql title="Threat details"
+```sumo title="Threat details"
 _sourceCategory=aws/guardduty
 | json field=_raw "accountId", "region", "partition", "id", "arn", "type","service.serviceName","service.detectorId","service.action","severity","title","description" nodrop
 | json field=_raw "resource.resourceType" as resourceType nodrop

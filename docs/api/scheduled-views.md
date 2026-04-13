@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/general/calendar.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/general/calendar.png')} alt="Calendar icon" width="50"/>
 
 The [Scheduled View](/docs/manage/scheduled-views) Management API allows you to manage Scheduled Views from HTTP endpoints.
 

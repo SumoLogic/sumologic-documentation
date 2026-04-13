@@ -10,12 +10,12 @@ Hyperbolic cosine of argument in radians.
 
 ## Syntax
 
-```sql
+```sumo
 cosh(<x>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 * | cosh(1) as v
 ```

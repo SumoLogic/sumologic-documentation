@@ -16,7 +16,7 @@ Dynamic Parsing extracts JSON fields when you run a query, at search time (run
 
 With this FER defined, any search on JSON data will automatically parse out its JSON fields, which you can then use within your search query, exactly like any other field. You have an option on the Search Page that allows you to control Dynamic Parsing. Dynamic Parsing is activated when a search is run in **Auto Parse Mode**.
 
-<img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png')} alt="auto parse mode option.png" style={{border: '1px solid gray'}} width="300"/>
+<img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png')} alt="Auto parse mode option" style={{border: '1px solid gray'}} width="300"/>
 
 ## Key benefits
 
@@ -68,7 +68,7 @@ The [field browser](/docs/search/get-started-with-search/search-page/field-brows
 
 ### Field browser
 
-* A search input field allows you to search for fields by name.<br/>  <img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/field-browser-search-field.png')} alt="field-browser-search-field.png" style={{border: '1px solid gray'}} width="500"/>
+* A search input field allows you to search for fields by name.<br/>  <img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/field-browser-search-field.png')} alt="Field browser search field" style={{border: '1px solid gray'}} width="500"/>
 * JSON structures are nested with expand and collapse options.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/field-browser-expand-collapse-JSON.png')} alt="Field browser expand collapse JSON" style={{border: '1px solid gray'}} width="300" />
 * A copy button is available to the right of each field allowing you to easily copy a field name.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/field-browser-copy-field.png')} alt="Field browser copy field" style={{border: '1px solid gray'}} width="500" />
 
@@ -107,4 +107,5 @@ When **Auto Parse Mode** is disabled, you'll be in manual parsing mode, meaning:
 * Total fields shown in the field browser consist of all the fields extracted across log lines.
 * The [Field Browser](/docs/search/get-started-with-search/search-page/field-browser) displays the count of the fields as well as the distribution of values of each field. These calculations are done for the first 200 fields that are parsed by a run-time FER and 100 dynamic parsed extracted field.
 * Not supported in non-aggregate queries in Scheduled Views and Scheduled Searches.
+* When the number of parsed fields exceeds the dynamic parsing limit, different messages may contain different sets of parsed fields. For example, the set of fields parsed from one message may differ from the set parsed from another. This is an expected behavior caused by batched and distributed message processing.
 

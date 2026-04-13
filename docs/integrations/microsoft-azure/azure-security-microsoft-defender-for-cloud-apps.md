@@ -7,7 +7,7 @@ description: Learn how to collect alerts from the Azure Security - Microsoft Def
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps.png')} alt="Azure Security Microsoft Defender for Cloud Apps icon" width="50"/>
 
 The Azure Security – Microsoft Defender for Cloud Apps strengthens the security of cloud-based applications within Azure by offering proactive threat detection and streamlined monitoring. It centralizes data related to cloud app security, enabling security teams to efficiently investigate anomalies, detect vulnerabilities, and take prompt action to mitigate risks. This centralized approach enhances the ability to respond to potential breaches and protects cloud resources more effectively.
 
@@ -99,7 +99,7 @@ The Azure Security – Microsoft Defender for Cloud Apps uses Sumo Logic’s Mic
 
 ### Sample queries
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourceCategory={{Logsdatasource}} serviceSource microsoftDefenderForCloudApps
 | json "id", "status", "severity", "classification", "serviceSource" as  alert_id, status, severity, classification, service_source nodrop
 
@@ -115,7 +115,7 @@ _sourceCategory={{Logsdatasource}} serviceSource microsoftDefenderForCloudApps
 | count
 ```
 
-```sql title="High Severity Alerts"
+```sumo title="High Severity Alerts"
 _sourceCategory={{Logsdatasource}} serviceSource microsoftDefenderForCloudApps severity
 | json "id", "status", "severity", "classification", "serviceSource" as alert_id, status, severity, classification, service_source nodrop
 

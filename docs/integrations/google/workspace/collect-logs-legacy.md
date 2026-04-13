@@ -7,7 +7,7 @@ description: Instructions for configuring log collection from Google Workspace A
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
+<img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="150"/>
 
 :::note legacy
 For the newer method of collecting logs from Google Workspace Alert Center, configure a [Google Alert Workspace Alert Center Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter).
@@ -55,7 +55,7 @@ This section provides a sample Google Workspace Alert Center log message.
 
 The query sample provided in this section is from the **Google Workspace Activity by Users with Compromised Credentials** panel of the **Google Workspace - Alert Center - Investigations** Dashboard.
 
-```sql
+```sumo
 _sourceCategory=googleworkspace_google_apps
 | json "actor", "events", "id" nodrop
 | json field=actor "email"

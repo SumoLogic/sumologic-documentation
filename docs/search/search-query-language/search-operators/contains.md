@@ -9,19 +9,19 @@ The `contains` operator compares string values of two [parsed](/docs/search/sear
 
 ## Syntax
 
-```sql
+```sumo
 contains(<field1>, <field2>) as <field>
 ```
 
-```sql
+```sumo
 <field1> contains <field2> as <field>
 ```
 
-```sql
+```sumo
 | where <field1> contains <field2>
 ```
 
-```sql
+```sumo
 | where contains(<field1>, <field2>)
 ```
 
@@ -43,6 +43,6 @@ instance of alertNotification{ EventIdentifier = 100; Address = 123 Main Street,
 
 Parsing the log so the fields are `city` with the value "San Francisco" and `address` with the value "123 Main Street, San Francisco, California" you'd use the contains operator to return the log if the value of `city` is found in the value of `address`.
 
-```sql
+```sumo
 | where contains(address, city)
 ```

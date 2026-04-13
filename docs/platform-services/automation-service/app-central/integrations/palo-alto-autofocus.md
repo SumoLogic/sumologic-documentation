@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/palo-alto-autofocus.png')} alt="palo-alto-autofocus" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/palo-alto-autofocus.png')} alt="Palo Alto AutoFocus icon" width="100"/>
 
 ***Version: 1.1
 Updated: Jul 07, 2023***

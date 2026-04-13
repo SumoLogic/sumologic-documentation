@@ -24,7 +24,7 @@ Extracts the network prefix from an IPv4 address. 
 
 ### Syntax
 
-```sql
+```sumo
 getCIDRPrefix("<ip_addr>", "<prefix_length>") as <field>
 ```
 
@@ -37,19 +37,19 @@ Where:
 
 The following returns `10.10.1.0`:
 
-```sql
+```sumo
 getCIDRPrefix("10.10.1.35", "24") as net
 ```
 
 The following returns `10.10.1.32`:
 
-```sql
+```sumo
 getCIDRPrefix("10.10.1.35", "27") as net
 ```
 
 The following returns `10.10.1.32`:
 
-```sql
+```sumo
 getCIDRPrefix("10.10.1.35", "29") as net
 ```
 
@@ -59,7 +59,7 @@ Compares two IPv4 addresses and returns true if the network prefixes match.
 
 ### Syntax
 
-```sql
+```sumo
 compareCIDRPrefix("<ip_addr1>", "<ip_addr2>", "<prefix_length>") as <field>
 ```
 
@@ -69,7 +69,7 @@ compareCIDRPrefix("<ip_addr1>", "<ip_addr2>", "<prefix_length>") as <field>
 
 **Boolean expression syntax**
 
-```sql
+```sumo
 compareCIDRPrefix(<ip_addr1>, <ip_addr2>, "<prefix_length>")
 ```
 
@@ -86,15 +86,15 @@ You may find the [isValidIP](/docs/search/search-query-language/search-operators
     (denied OR rejected AND _sourceCategory=firewall | ...
     ```
 1. Parse the IP addresses. For example:   
-    ```sql
+    ```sumo
     ... | parse "ip=*," as ip_address ...
     ```
 1. Compare to the full CIDR notation you requested. For example, 10.10.1.32/27:  
-    ```sql
+    ```sumo
     ... | where compareCIDRPrefix("10.10.1.32", ip_address, "27") | ...
     ```
 1. Keep matching records, and drop non-matching records from search results:  
-    ```sql
+    ```sumo
     ... | count by ip_address
     ```
 
@@ -105,11 +105,11 @@ You may find the [isValidIP](/docs/search/search-query-language/search-operators
    (denied OR rejected AND _sourceCategory=firewall | ...
    ```
 1. Parse the IP addresses. For example:   
-    ```sql
+    ```sumo
     ... | parse "ip=*," as ip_address ...
     ```
 1. Compare to the full CIDR notation you requested, and drop matching records. For example, 10.10.1.32/27:  
-    ```sql
+    ```sumo
     ... | where !compareCIDRPrefix("10.10.1.32", ip_address, "27") | ...
     ```
 
@@ -119,7 +119,7 @@ A utility function that returns a subnet mask for boolean operations with IPv4 a
 
 ### Syntax
 
-```sql
+```sumo
 maskFromCIDR("<prefix_length>") as <field>
 ```
 

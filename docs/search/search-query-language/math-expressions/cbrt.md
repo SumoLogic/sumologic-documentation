@@ -8,12 +8,12 @@ The cube root function returns the cube root value of x.
 
 ## Syntax
 
-```sql
+```sumo
 cbrt(<x>) as <field>
 ```
 
 ## Example
 
-```sql
+```sumo
 * | cbrt(8) as v
 ```

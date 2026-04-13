@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/maxmind-v2.png')} alt="maxmind-v2" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/maxmind-v2.png')} alt="MaxMind V2 icon" width="100"/>
 
 ***Version: 2.0  
 Updated: Mar 29, 2023***

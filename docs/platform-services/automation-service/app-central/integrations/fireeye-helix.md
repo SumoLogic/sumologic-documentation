@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-helix.png')} alt="fireeye-helix" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-helix.png')} alt="FireEye Helix icon" width="100"/>
 
 ***Version: 1.2  
 Updated: Jul 13, 2023***
