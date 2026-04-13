@@ -115,12 +115,10 @@ To view the dashboard information, follow the steps below:
 
 ## Auto Refresh
 
-**Auto Refresh** helps you to refresh the panels with latest data automatically in your dashboard.
-
-Administrators can control the availability of auto-refresh behavior for all dashboards from the Policies page.
+**Auto Refresh** automatically updates dashboard panels with the latest data at a configured interval. onsider disabling it or increasing the minimum refresh interval when frequent updates are not required. For Flex customers, this helps reduce avoidable scan costs from unnecessary refreshes. For Tiered customers, it minimizes unnecessary panel reloads and helps improve dashboard performance.
 
 :::note
-To enable or disable this feature, you must be an **Administrator** with the **ManageDashboardExecutionControls** capability.
+To enable or disable this feature, you must be an **Administrator** or a role with the **ManageDashboardExecutionControls** capability.
 :::
 
 ### Enable the Sumo Logic policy
@@ -149,20 +147,18 @@ The dropdown only displays the time-interval which is greater than or equal to t
 
 ## Auto Run
 
-**Auto Run** leverages you to run the panels in dashboard automatically, if not manual initiation is required.  
-
-Administrators can control the availability of auto-run behavior for all dashboards from the Policies page.
+**Auto Run** lets you control whether dashboard panels run automatically or require manual execution.. Use this when you want explicit control over dashboard execution. For example, you may want to open a dashboard with a fixed absolute time range or make several dashboard variable changes before loading data. Disabling auto run prevents unnecessary panel reloads after each change and helps Flex customers reduce avoidable scan costs.
 
 :::note
-To enable or disable this feature, you must be an **Administrator** with the **ManageDashboardExecutionControls** capability.
+To enable or disable this feature, you must be an **Administrator** or a role with the **ManageDashboardExecutionControls** capability.
 :::
 
 ### Enable the Sumo Logic policy
 
-In this section, you will enable the ability to auto run your dashboard panels. By default, auto-run will be disabled, to enable it follow the below steps:
+In this section, you will enable the ability to auto run your dashboard panels. By default, auto run will be enabled, to disable it follow the below steps:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
-1. Check the **Enable Auto-Run for all dashboards** checkbox.
+1. Uncheck the **Enable Auto-Run for all dashboards** checkbox.
 
 <img src={useBaseUrl('img/get-started/auto-run.png')} alt="Auto-Run" style={{border: '1px solid gray'}} width="500" />
 
