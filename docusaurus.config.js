@@ -120,19 +120,10 @@ module.exports = {
   ],
   clientModules: [
     require.resolve('./src/client-modules/trackTrialClick.js'),
-    require.resolve('./src/client-modules/fixAnchorScroll.js'),
   ],
-  storage: {
-    type: 'localStorage',
-    namespace: true,
-  },
   future: {
-    faster: true,
-    v4: {
-      siteStorageNamespacing: true,
-      fasterByDefault: true,
-      removeLegacyPostBuildHeadAttribute: true,
-    },
+    v4: true,
+    experimental_faster: true,
   },
   staticDirectories: ['static'],
   presets: [
@@ -354,7 +345,7 @@ module.exports = {
     ],
     announcementBar: {
       id: 'domain',
-      content: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/><path d="M19 14l.75 2.75L22.5 17.5l-2.75.75L19 21l-.75-2.75L15.5 17.5l2.75-.75L19 14z"/></svg>Check out <a href="/docs/search/mobot">Mobot</a>, your conversational interface for Sumo Logic. Search logs using natural language, troubleshoot faster, and get how-to guidance.<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/><path d="M19 14l.75 2.75L22.5 17.5l-2.75.75L19 21l-.75-2.75L15.5 17.5l2.75-.75L19 14z"/></svg>',
+      content: 'Come see us at RSA Conference 2026! Visit booth 6465 — March 23–26 in San Francisco. <a href="https://www.sumologic.com/events/rsa-conference/book-meeting" target="_blank" rel="noopener noreferrer">Book a meeting</a>.',
       backgroundColor: '#000',
       textColor: '#000',
     },
@@ -375,14 +366,14 @@ module.exports = {
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
       contextualSearch: false,
-      searchPagePath: 'docs-search', // Default value is 'search'; renamed to 'docs-search' so it doesn't conflict with '/Search' cid-redirect
+      searchPagePath: 'docs-search', // Default value is 'search'; renamed to 'docs-search' so it doesn't conflict with '/Search' redirect
       insights: true,
-      // Testing AskAI in Algolia portal
       askAi: {
         assistantId: 'T7pp7iENesuU',
         indexName: 'crawler_sumodocs',
         apiKey: 'fb2f4e1fb40f962900631121cb365549',
         appId: '2SJPGMLW1Q',
+        suggestedQuestions: true,
       },
       insightsConfig: {
         useCookie: true, // alt to useCookie: true,
@@ -392,7 +383,7 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json', `sql`, `sumo`],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json'],
     },
       navbar: {
         logo: {
