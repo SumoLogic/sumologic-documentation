@@ -50,7 +50,7 @@ When creating or updating the configuration of a Streaming Metrics source, a Hos
     :::note
     Enterprise and Enterprise Suite users can create a maximum of 400 fields.
     :::
-  <img src={useBaseUrl('/img/fields/fields-capacity.png')} alt="fields-capacity" style={{border:'1px solid gray'}} height= "50" width="700"/>
+  <img src={useBaseUrl('/img/fields/fields-capacity.png')} alt="Fields capacity" style={{border:'1px solid gray'}} height= "50" width="700"/>
 * It can take up to 10 minutes for fields to start being assigned to your data.
 * A collector can have up to 10 fields.
 * A source can have up to 10 fields.
@@ -67,8 +67,8 @@ Fields can be assigned to a collector and source using the **Fields** input ta
 1. Create or find and select the collector or source you want to assign fields to.
 1. Click the **+Add Field** link in the **Fields** section. Define the fields you want to associate, each field needs a name (key) and value.
 
-    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the fields table schema.
-    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 1. **Automatically activate all fields on save**. 
 
@@ -233,7 +233,7 @@ You need the **Manage Fields** [role capability](users-roles/roles/role-capab
 
 The Fields page displays the following information: 
 
-* **Status** shows a checkmark in a green circle <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> to indicate if the field is actively being applied or an exclamation mark in a red circle <img src={useBaseUrl('img/fields/red-exclamation-circle.png')} alt="Red exclamation circle" width="20" /> to indicate if the field is disabled and being dropped.
+* **Status** shows a checkmark in a green circle <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> to indicate if the field is actively being applied or an exclamation mark in a red circle <img src={useBaseUrl('img/fields/red-exclamation-circle.png')} alt="Red exclamation circle" width="20" /> to indicate if the field is disabled and being dropped.
 * **Field Name** is the name of the field, known as the key in the key-value pair.
 * **Data Type** shows the data type of the field.
 * **Field Extraction Rules** shows the number of Field Extraction Rules that reference the field.
@@ -275,7 +275,7 @@ Disabling a field will stop it from being assigned to new log data. Any searches
 Built-in fields cannot be disabled.
 :::
 
-In the details pane of the field, click the **Disable** button.<br/><img src={useBaseUrl('/img/fields/disable-field.png')} alt="disable-field" style={{border:'1px solid gray'}} width="450"/>
+In the details pane of the field, click the **Disable** button.<br/><img src={useBaseUrl('/img/fields/disable-field.png')} alt="Disable field" style={{border:'1px solid gray'}} width="450"/>
 
 #### Delete field
 
@@ -291,7 +291,7 @@ Select the **Delete** button in the details pane of the field. To delete a field
 * Collector
 * Source
 
-<img src={useBaseUrl('/img/fields/delete-icon.png')} alt="delete-icon" style={{border:'1px solid gray'}} width="300"/>
+<img src={useBaseUrl('/img/fields/delete-icon.png')} alt="Delete icon" style={{border:'1px solid gray'}} width="300"/>
 
 You will see the following prompt and you must remove the field reference before you can delete it.
 
@@ -309,7 +309,7 @@ If the field is not used by those features you will see the following prompt.
 
 #### View dropped fields
 
-Dropped fields are fields being sent to Sumo Logic, but are being ignored since they are not defined in your fields schema. Use the fields dropdown to view the dropped fields.<br/><img src={useBaseUrl('/img/fields/dropped-fields-table.png')} alt="dropped-fields-table" style={{border:'1px solid gray'}} width="800"/>
+Dropped fields are fields being sent to Sumo Logic, but are being ignored since they are not defined in your fields schema. Use the fields dropdown to view the dropped fields.<br/><img src={useBaseUrl('/img/fields/dropped-fields-table.png')} alt="Dropped fields table" style={{border:'1px solid gray'}} width="800"/>
 
 Click on any dropped field of your choice from the table to open a details pane. There is a convenient button provided to create the field if needed.
 
@@ -317,6 +317,6 @@ Click on any dropped field of your choice from the table to open a details pane.
 It can take a few minutes for a created field to be removed from the **Dropped Fields** table.
 :::
 
-<img src={useBaseUrl('/img/fields/create-field-from-dropped-table.png')} alt="create-field-from-dropped-table" style={{border:'1px solid gray'}} width="800"/>
+<img src={useBaseUrl('/img/fields/create-field-from-dropped-table.png')} alt="Create field from dropped table" style={{border:'1px solid gray'}} width="800"/>
 
  

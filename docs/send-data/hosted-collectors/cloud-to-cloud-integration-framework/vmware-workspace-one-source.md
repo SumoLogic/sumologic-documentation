@@ -9,7 +9,7 @@ description: Collect the device details and corresponding list of applications f
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="vmware-workspace-one-logo" width="60" />
+<img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="VMware Workspace ONE logo" width="60" />
 
 VMware Workspace ONE is a comprehensive digital workspace platform that combines unified endpoint management, access management, and application management capabilities. It enables organizations to securely deliver and manage any app on any device, providing a seamless and productive user experience. Workspace ONE empowers IT teams to simplify device management, enhance security, and increase workforce productivity through a unified and integrated process.
 
@@ -67,8 +67,8 @@ To configure a VMware Workspace One Source:
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
 1. **Endpoint URL**. Enter the [VMware Workspace One platform](#vendor-configuration) endpoint URL.
 1. **Auth URL**. Enter the API region URL to fetch the auth token collected from the [VMware Workspace One platform](#auth-url). For example, `https://uat.uemauth.vmwservices.com`.
 1. **Client ID**. Enter the Client ID of your account collected from the [VMware Workspace One platform](#client-id-and-client-secret). For example, `cfea26d59bd542488ea706b025564d42`.
@@ -76,6 +76,10 @@ To configure a VMware Workspace One Source:
 1. (Optional) **Device Type**. Enter the list of device types to collect information.
 1. Select the **Collect Apps Details** checkbox to collect the apps details.
 1. When you are finished configuring the Source, click **Submit**.
+
+:::info
+After configuring the VMware Workspace One source, consider installing the Sumo Logic app for [VMware Workspace One](/docs/integrations/saas-cloud/vmware-workspace-one/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## JSON schema
 

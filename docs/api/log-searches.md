@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/logs.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/logs.png')} alt="Logs icon" width="50"/>
 
 With the Log Searches Management API, you can list, save, update, and delete your log searches.
 

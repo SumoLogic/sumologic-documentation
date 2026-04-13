@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/phishlabs-eir-ioc-feed.png')} alt="phishlabs-eir-ioc-feed" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/phishlabs-eir-ioc-feed.png')} alt="PhishLabs EIR IOC Feed icon" width="80"/>
 
 ***Version: 1.1  
 Updated: Jun 26, 2023***

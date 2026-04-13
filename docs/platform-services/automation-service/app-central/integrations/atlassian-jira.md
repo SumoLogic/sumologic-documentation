@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira.png')} alt="atlassian-jira" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira.png')} alt="Atlassian Jira icon" width="80"/>
 
-***Version: 1.7  
-Updated: Mar 29, 2024***
+***Version: 1.8  
+Updated: April 13, 2026***
 
 This integration is built specifically for Jira OnPrem (Server and Data Center) and provides a range of issue management capabilities.
 
@@ -100,3 +100,4 @@ For information about Atlassian Jira, see [Jira documentation](https://confluenc
     * Enhanced "Create Issue" and "Update Issue" actions to support Jira custom fields
 * March 29, 2024 (v1.7)
     * Create Issue Action updated to allow new lines in the description field
+* April 13, 2026 (v1.8) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

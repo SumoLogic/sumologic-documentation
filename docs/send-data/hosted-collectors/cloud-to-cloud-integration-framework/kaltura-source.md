@@ -10,7 +10,7 @@ description: Learn how to configure the Kaltura Cloud-to-Cloud source setup usin
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/kaltura-logo.png')} alt="icon" width="70"/>
+<img src={useBaseUrl('img/send-data/kaltura-logo.png')} alt="Kaltura icon" width="70"/>
 
 Kaltura is a video platform for modular systems that exposes different web services that may be deployed in several deployment modes to support different levels of scale. Kaltura’s platform comes in different editions, including the Kaltura-hosted SaaS edition, managed by Kaltura for single publishers and Value Added Resellers (VARs). Kaltura also offers several licensing modes of the self-hosted Kaltura On-Prem edition: Kaltura Community Edition, Kaltura On-Prem for Publishers, and Kaltura OnPrem for OEMs. Kaltura source collects audit trail events and base entry events data and sends it to Sumo Logic.
 
@@ -63,8 +63,8 @@ To configure a Kaltura source:
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Base URL**. Enter the API **Base URL**.
 1. **Partner ID**. Enter the **Partner ID** collected from the [Vendor configuration](#create-a-new-app-token).
 1. **App Token ID**. Enter the **App Token ID** collected from the [Vendor configuration](#create-a-new-app-token).
@@ -73,6 +73,10 @@ To configure a Kaltura source:
 1. **Polling Interval**. You have the option to select how often to poll for base entry events. Default is 24 hours.
 1. **Base Entry Init Lookback**. You have option to configure from when the integration should collect Kaltura **Base Entry** events. Default is 1 day.
 1. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the Kaltura source, consider installing the Sumo Logic app for [Kaltura](/docs/integrations/saas-cloud/kaltura/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata fields
 

@@ -7,7 +7,7 @@ description: The Sumo Logic app for Netskope provides visibility into security p
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope icon" width="75"/>
 
 The Sumo Logic app for Netskope provides visibility into the security posture of your applications and helps you determine the overall usage of software and SaaS applications.
 
@@ -86,7 +86,7 @@ For more information on Netskope, refer to the Netskope [documentation](https://
 
 The following query sample is from the Total Sessions panel of the Application Overview Dashboard.
 
-```sql
+```sumo
 _sourceCategory="netskope_events" "no" "nspolicy"
 | json "_id", "alert", "type", "srcip", "dstip", "appcategory", "app", "os", "user", "device",
 "acked", "site", "timestamp", "ccl", "activity", "browser", "object", "object_type", "from_user",

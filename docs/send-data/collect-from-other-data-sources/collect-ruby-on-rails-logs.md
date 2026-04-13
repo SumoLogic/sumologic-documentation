@@ -52,7 +52,7 @@ Processing SomeComponent#show (for 111.111.111.111 at 2013-07-10 12:54:19) [GET]
 
 For that format, you could do a search query like this:
 
-```sql
+```sumo
 _sourceCategory=*RoR* | parse "Completed in *ms (View: *, DB: *) | * OK" as totalTime,viewTime,dbTime,returnCode | timeslice by 1m | avg(totalTime) as avgTotalTime by _timeslice
 ```
 

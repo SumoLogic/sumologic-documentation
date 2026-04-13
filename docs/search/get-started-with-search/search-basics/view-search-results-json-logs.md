@@ -10,11 +10,11 @@ If your search returns fields that are valid JSON objects, you can expand or col
 
 ## Expand or collapse JSON messages
 
-By default, the collapsed version of JSON messages is shown. You can see the top level JSON attributes, and only the attributes below the top that are objects rather than simple values. <br/><img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/expand-collapse.png')} alt="expand-collapse.png"/>
+By default, the collapsed version of JSON messages is shown. You can see the top level JSON attributes, and only the attributes below the top that are objects rather than simple values. <br/><img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/expand-collapse.png')} alt="Expand collapse"/>
 
 Click **Expand/Collapse** on the upper right side of the **Messages** table to see expand options:
 * **Expand all Rows.** Rows that show truncated messages are expanded to show complete messages.
-* **Expand all Rows and JSON.** Rows that show truncated messages are expanded to show complete messages, and nested JSON messages are expanded, as shown below. <br/><img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/expanded-json-message.png')} alt="expanded-json-message"/>
+* **Expand all Rows and JSON.** Rows that show truncated messages are expanded to show complete messages, and nested JSON messages are expanded, as shown below. <br/><img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/expanded-json-message.png')} alt="Expanded JSON message"/>
 
 After you’ve expanded either all rows, or all rows and JSON objects, the **Expand/Collapse JSON** has options for resetting your view.
 

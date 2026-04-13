@@ -11,7 +11,7 @@ description: The Automox Source provides a secure endpoint to receive all events
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/automox-logo.png')} alt="automox-logo" width="50" />
+<img src={useBaseUrl('img/send-data/automox-logo.png')} alt="Automox logo" width="50" />
 
 Automox is a cloud-based platform for automated IT operations, offering patching, software deployment, and configuration management across Windows, macOS, and Linux devices. It enhances security by automating vulnerability remediation and ensuring systems stay up-to-date.
 
@@ -44,8 +44,8 @@ To configure a Automox Source:
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
    * Define the fields you want to associate, each field needs a name (key) and value.
-      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. In **Bearer Token**, enter the bearer token collected from the Automox platform.
 1. In **Organization ID**, enter the Organization ID collected from the Automox platform.
 1. Select the **Collect Audit Trail Logs** checkbox to collect the audit details.
@@ -56,6 +56,10 @@ To configure a Automox Source:
 1. The **Devices Logs Interval** is set for 12 hours by default. You can adjust it based on your needs.
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the Automox source, consider installing the Sumo Logic app for [Automox](/docs/integrations/saas-cloud/automox/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## JSON schema
 

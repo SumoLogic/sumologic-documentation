@@ -11,7 +11,7 @@ description: Learn how to collect Google Threat Intel data and send it to Sumo L
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/Google-Threat-Intel.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/Google-Threat-Intel.png')} alt="Google Threat Intel icon" width="50"/>
 
 The Sumo Logic source for Google Threat Intel enables you to ingest the indicator data from the Google Threat Intelligence API and send it to Sumo Logic as STIX threat indicators. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).This integration elevates the value of threat hunting by providing tailored risk profiles, including actors, campaigns, and malware families, to enable proactive threat tracking and mitigation.
 
@@ -65,8 +65,8 @@ To configure the Google Threat Intel Source:
 1. Enter a **Name** to display for the Source in Sumo Logic. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. Enter the **API Key** collected from the [vendor configuration](#vendor-configuration).
 1. The **Polling Interval** is set for 1 hour by default. You can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Save**.

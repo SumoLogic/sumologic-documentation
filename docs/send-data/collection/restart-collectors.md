@@ -55,7 +55,7 @@ To restart your Installed Collector in the Sumo Logic platform:
 The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index.md) keeps
 records of restart requests with the `getCollectorRestartRequested` event and restart completions with the `getCollectorRestartCompleted` event. The following is a simple [Search](/docs/search) query that returns these event logs:
 
-```sql
+```sumo
 _index=sumologic_audit_events _sourceCategory=collection
 | where eventName matches /^CollectorRestart/
 ```

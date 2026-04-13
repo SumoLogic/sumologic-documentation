@@ -6,7 +6,7 @@ sidebar_label: Work from Home Solution
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/general/Home.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/general/Home.png')} alt="Home icon" width="50"/>
 
 Enable quick, safe, and reliable work-from-home monitoring with our Work from Home Solution, a suite of in-depth SaaS apps that provide visibility and management for your remote employee workforce with SSO, remote access, endpoint security, and productivity.
 

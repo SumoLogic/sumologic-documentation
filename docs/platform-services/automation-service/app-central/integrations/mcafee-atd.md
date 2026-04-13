@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mcafee-atd.png')} alt="mcafee-atd" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mcafee-atd.png')} alt="McAfee ATD icon" width="100"/>
 
 ***Version: 1.2  
 Updated: Jul 12, 2023***

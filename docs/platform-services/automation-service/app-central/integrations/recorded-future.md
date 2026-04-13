@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/recorded-future.png')} alt="recorded-future" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/recorded-future.png')} alt="Recorded Future icon" width="100"/>
 
 Version: 1.11  
 Updated: March 4, 2024

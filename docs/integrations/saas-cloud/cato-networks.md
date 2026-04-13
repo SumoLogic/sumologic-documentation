@@ -7,7 +7,7 @@ description: Provides real-time insights into the events and identify potential 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/send-data/cato-logo.png')} alt="Thumbnail icon" width="80"/>
+<img src={useBaseUrl('/img/send-data/cato-logo.png')} alt="Cato icon" width="80"/>
 
 The Sumo Logic app for Cato Networks provides real-time insights into the events and helps you to identify potential security threats with admin activities. This app offers a comprehensive suite of dashboards that monitor network events, analyze threats, and track administrative activities, which empowers you with actionable intelligence for network management and security.
 
@@ -61,7 +61,7 @@ This app uses the Sumo Logic Cato Networks source to collect [Events Feed](https
 
 ## Sample queries
 
-```sql title="Total Threat Events"
+```sumo title="Total Threat Events"
 _sourceName="source" event_type  
 | json "user_name", "api_type", "event_message", "application", "api_name", "file_size", "socket_interface", "matched_data_types", "rule", "device_name", "src_site", "internalId", "dlp_profiles", "ip_protocol", "custom_categories", "src_isp_ip", "threat_verdict", "src_ip", "action", "file_type", "dest_is_site_or_vpn", "file_name", "is_sanctioned_app", "vpn_user_email", "threat_type", "dest_ip", "risk_level", "domain_name", "src_is_site_or_vpn", "account_id", "event_sub_type", "signature_id", "rule_id", "host_mac", "client_class", "user_reference_id", "event_type", "full_path_url", "host_ip", "rule_name", "severity", "login_type", "mitre_attack_tactics", "os_version", "src_country", "time", "dest_port", "application_risk", "categories", "src_port", "mitre_attack_subtechniques", "dest_site", "traffic_direction", "link_type", "event_count", "ISP_name", "mitre_attack_techniques", "authentication_type", "os_type", "dest_country", "key_name", "threat_reference", "url", "threat_name", "tunnel_protocol", "dest_country_code", "client_version", "src_country_code", "pop_name" as user_name, api_type, event_message, application, api_name, file_size, socket_interface, matched_data_types, rule, device_name, src_site, internalId, dlp_profiles, ip_protocol, custom_categories, src_isp_ip, threat_verdict, src_ip, action, file_type, dest_is_site_or_vpn, file_name, is_sanctioned_app, vpn_user_email, threat_type, dest_ip, risk_level, domain_name, src_is_site_or_vpn, account_id, event_sub_type, signature_id, rule_id, host_mac, client_class, user_reference_id, event_type, full_path_url, host_ip, rule_name, severity, login_type, mitre_attack_tactics, os_version, src_country, time, dest_port, application_risk, categories, src_port, mitre_attack_subtechniques, dest_site, traffic_direction, link_type, event_count, ISP_name, mitre_attack_techniques, authentication_type, os_type, dest_country, key_name, threat_reference, url, threat_name, tunnel_protocol, dest_country_code, client_version, src_country_code, pop_name nodrop
 
@@ -79,7 +79,7 @@ _sourceName="source" event_type
 | count_distinct(internalId)
 ```
 
-```sql title="Total Audit Logs"
+```sumo title="Total Audit Logs"
 _sourceName="source" admin
 | json "account_id", "admin", "admin_id", "change_type", "creation_date", "insertion_date", "model_name", "model_type", "module" as account_id, admin, admin_id, activity, creation_date, insertion_date, model_name, model_type, module nodrop
 
@@ -126,7 +126,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Events
 
-The **Cato Networks - Events** dashboard provides a detailed summary of the event-related metrics and insights. This dashboard provides a holistic view of event-related information, enabling users to identify trends, assess risks, and make informed decisions.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Events.png')} alt="Cato-Networks-Events" />
+The **Cato Networks - Events** dashboard provides a detailed summary of the event-related metrics and insights. This dashboard provides a holistic view of event-related information, enabling users to identify trends, assess risks, and make informed decisions.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Events.png')} alt="Cato Networks Events" />
 - **Total Events**. Displays the total number of events that allows you to gauge the scale of activity.
 - **Events by Type**. The distribution of events by type provides a breakdown of the different categories, offering valuable context.
 - **Tunnel Protocol Distribution**. The tunnel protocol distribution showcases the usage of different protocols, indicating potential security concerns.
@@ -141,7 +141,7 @@ The **Cato Networks - Events** dashboard provides a detailed summary of the even
 
 ### Threat Analysis
 
-The **Cato Networks - Threat Analysis** dashboard provides a comprehensive overview of threat-related information, enabling you to understand and address potential risks effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Threat-Analysis.png')} alt="Cato-Networks-Threat-Analysis" />
+The **Cato Networks - Threat Analysis** dashboard provides a comprehensive overview of threat-related information, enabling you to understand and address potential risks effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Threat-Analysis.png')} alt="Cato Networks Threat Analysis" />
 - **Total Threat Events**. Displays the total number of threat events, giving you an overall understanding of the threat landscape.
 - **Threats Frequency**. The threats frequency widget highlights the frequency of threats, allowing you to identify patterns and trends.
 - **Threats by Type**. The threat by types widget categorizes threats and provides insights into the specific types of threats encountered.
@@ -155,7 +155,7 @@ The **Cato Networks - Threat Analysis** dashboard provides a comprehensive overv
 
 ### Audit Feed
 
-The **Cato Networks - Audit Feed** dashboard offers a comprehensive summary of audit log activities, which provides valuable insights into system administration and changes. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Audit-Feed.png')} alt="Cato-Networks-Audit-Feed"/>
+The **Cato Networks - Audit Feed** dashboard offers a comprehensive summary of audit log activities, which provides valuable insights into system administration and changes. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Audit-Feed.png')} alt="Cato Networks Audit Feed"/>
 - **Total Audit Logs**. Displays the total number of audit logs which gives you an overview of the scale and volume of recorded activities.
 - **Activity Types**. The activity types widget categorizes the types of activities recorded, offering a breakdown of the different actions performed.
 - **Top 10 Active Admins**. The top 10 active admins widget highlights the most actively involved administrators, providing visibility into their level of engagement.
@@ -170,7 +170,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### SentinelOne alerts
+### Cato Networks alerts
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
