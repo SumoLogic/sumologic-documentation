@@ -2,16 +2,16 @@
 id: slack
 title: Slack
 sidebar_label: Slack
-description: The Sumo Logic app for Slack provides monitoring and data analytics for Slack users, channels, access logs for workspaces with free, standard, and plus plans.
+description: The Sumo Logic app for Slack provides monitoring and data analytics for Slack users, channels, and access logs for workspaces with free, standard, and plus plans.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Slack icon" width="50"/>
 
-The Sumo Logic app for Slack provides monitoring and data analytics for Slack users, channels, access logs for workspaces with free, standard, plus, and enterprise plans. The app is focused on **public channels** only.
+The Sumo Logic app for Slack provides monitoring and data analytics for Slack users, channels, and access logs for workspaces with free, standard, plus, and enterprise plans. The app is focused on **public channels** only.
 
-[Slack](https://slack.com/) is a cloud-based set of software tools and online services that provide for secure collaboration across teams, departments, offices, and countries.
+[Slack](https://slack.com/) is a cloud-based suite of software tools and online services that enable secure collaboration across teams, departments, offices, and countries.
 
 ## Log types
 
@@ -23,7 +23,7 @@ Slack logs are in JSON format. The Slack app utilizes the following log types:
 * [Access logs](https://api.slack.com/methods/team.accessLogs)
 * [Audit logs](https://api.slack.com/docs/audit-logs-api#the_audit_event)
 
-Sumo Logic’s Slack collector enhances the logs by adding a few metadata fields so the raw logs from Slack APIs might differ in format. The availability of all types of logs is determined by the [slack plans](https://get.slack.help/hc/en-us/articles/115003205446-Slack-plans-and-features-).
+Sumo Logic’s Slack collector enhances the logs by adding a few metadata fields, so the raw logs from Slack APIs might differ in format. The availability of all types of logs is determined by the [Slack plans](https://get.slack.help/hc/en-us/articles/115003205446-Slack-plans-and-features-).
 
 | Log Type | Free plan | Standard plan | Plus plan | Enterprise plan |
 |:---|:---|:---|:---|:---|
@@ -205,7 +205,7 @@ The following table provides sample log messages for the different log types.
 
 ### Sample queries
 
-The sample query is from the **Channel Summary** panel of **Slack - Public Channels** dashboard.
+The sample query is from the **Channel Summary** panel of the **Slack - Public Channels** dashboard.
 
 ```sumo
 _sourceCategory=Labs/slack
@@ -265,123 +265,156 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 <ViewDashboards/>
 
 ### Overview
-
-The **Slack - Overview** dashboard provides an at-a-glance view of the number of workspaces, members, bots, admins, public channels, and public messages. Panels also show geographic access locations, and key statistics around public messages  and files.
-
+The **Slack - Overview** dashboard provides an at-a-glance view of the number of workspaces, members, bots, admins, public channels, and public messages. Panels also show geographic access locations and key statistics around public messages and files.  
 Use this dashboard to:
 * Monitor the admins, bots, and members across workspaces.
 * Identify the trends around public messages and files shared.
 * Monitor locations from which workspaces are being accessed.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Overview.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-Overview.png')} alt="Slack dashboards" />
 
 ### Members
-
-The **Slack - Members** dashboard shows trends for total members, active members, and messages by workspace. Panels also show detailed member information, and breakdowns by workspace for roles, timezones, and two factor authentication (2FA).
-
+The **Slack - Members** dashboard summarizes membership activity and composition across Slack. It reports total, guest, and deactivated members, MFA adoption, roles, and time-zone-based distributions.  
 Use this dashboard to:
-* Monitor member activity across workspaces.
-* Identify inactive members that have not accessed the workspace.
-* Identify members that do not have two factor authentication enabled.
+* Track membership changes and activity over time.
+* Assess use of security features such as MFA.
+* Identify member distributions by ownership, billing, and role.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Members.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-Members.png')} alt="Slack dashboards" />
 
 ### Bots
-
-The **Slack - Bots** dashboard displays information on bots, which are software applications that run automated tasks over the Internet. Panels show trends by workspace for all bots, active bots, and messages, as well as detailed information on bots, and a detailed bot summary.
-
+The **Slack - Bots** dashboard provides visibility into all automated bots within the organization. It tracks activation and deactivation trends, bot message volume, and top active bots by workspace.  
 Use this dashboard to:
-* Monitor bots and bot activities across multiple workspaces.
+* Monitor active and deactivated bots across workspaces.
+* Analyze bot activity trends to ensure appropriate usage.
+* Identify automation patterns and messages generated by bots.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Bots.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-Bots.png')} alt="Slack dashboards" />
 
-### Public Channels
-
-The **Slack - Public Channels** dashboard provides detailed information across all channels, as well as active channels. Panels also show information on the top ten channels by files and by attachments, and a summary of all channels.
-
+### App Overview
+The **Slack - App Overview** dashboard summarizes application activity across Slack, including installations, uninstalls, scope expansions, and approval statuses. It identifies high-risk or unapproved apps and highlights top-installed and unapproved user apps.  
 Use this dashboard to:
-* Monitor channel activity across multiple workspaces.
-* Identify inactive channels where messages are not being posted.
+* Track app installation and uninstallation trends across users.
+* Identify unapproved or risky app usage within the organization.
+* Monitor integration events and maintain app compliance.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Public_Channels.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-App-Overview.png')} alt="Slack dashboards" />
 
-### Public Messages
-
-The **Slack - Public Messages** dashboard provides details around attachments, files shared and statistics around messages in Slack public channels.
-
+### Audit Overview
+The **Slack - Audit Overview** dashboard provides visibility into every audited event across devices, browsers, and geographic locations. It details user actions, targets, and actor types to help identify unusual activity or compliance issues.  
 Use this dashboard to:
-* Monitor various file types being shared and identify those that pose the greatest risk.
-* Investigate the details of file shared via the URL links in the Recent File Shared panel.
+* Review all audited events across users and workspaces.
+* Identify patterns or anomalies by geography, OS, or device.
+* Gain insight into who performed what actions on which resources.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Public_Messages_Investigation.png')} alt="Slack dashboards" />
-
-### Access
-
-The **Slack - Access** dashboard helps you monitor how users are accessing Slack and identifies access requests coming in from malicious domains.
-
-Use this dashboard to:
-* Identify all incoming threats detected via Sumo Logic Threat Intel.
-* Identify the kinds of mobile or desktop platforms that users are using to access Slack.
-* Identify trends for user access patterns across multiple workspaces.
-
-<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Access.png')} alt="Slack dashboards" />
-
-### Audit Overview Dashboard
-
-The **Slack - Audit Overview** dashboard provides details around  Slack audit actions, and trends.
-
-Use this dashboard to:
-* Review audit actions and determine which are not approved or need to be corrected.
-* Identify and validate that top users performing audit actions.
-
-<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Audit_Overview.png')} alt="Slack dashboards" />
-
-### User Audit
-
-The **Slack - User Audit** dashboard provides insight into  user and administrative audit actions and trends. Panels also display detailed information for members and guest members.
-
-Use this dashboard to:
-* Monitor audit actions across multiple workspaces.
-* Monitor all role changes for workspaces and identify any suspicious behavior.
-* Monitor and validate that all guest activities are in line with what is expected.
-
-<img src={useBaseUrl('img/integrations/saas-cloud/Slack_User_Audit.png')} alt="Slack dashboards" />
-
-### Workspace Audit
-
-The **Slack - Workspace Audit** dashboard provides information on top users, top audit actions and audit trends. Panels also detail workspace sign on, exports, data retention and billing, and other admin activities.
-
-Use this dashboard to:
-* Monitor all workspace related activities.
-* Monitor changes to single-sign-on settings including two factor authentication.
-* Monitor workspace related, data retention, or billing activities.
-* Monitor the exports that are performed on workspaces.
-
-<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Workspace_Audit.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-Audit-Overview.png')} alt="Slack dashboards" />
 
 ### Channel Audit
-
-The **Slack - Channel Audit** dashboard provides details on the top channel audit actions and trends. The panels also display information on top members and member activity, and top guest members and guest member activity.
-
+The **Slack - Channel Audit** dashboard tracks the creation, deletion, and usage of channels, including activity distribution by privacy and category. It identifies the most active channels, creators, and guest participants.  
 Use this dashboard to:
-* Monitor channel related activities for multiple workspaces.
-* Monitor all the private and public channels joined by members and guests.
-* Monitor all the private channels that are created, deleted, and archived by guests.
+* Monitor overall channel creation and deletion activity.
+* Identify the most active or high-risk channels.
+* Analyze guest and user participation across channels.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Channel_Audit.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-Channel-Audit.png')} alt="Slack dashboards" />
 
-### File and App Audit
-
-The **Slack - File and App Audit** dashboard displays file audit and app audit information. The panels show audit actions, top actions and file types or scopes, top users, and member activity.
-
+### Files Overview
+The **Slack - Files Overview** dashboard monitors file events, including uploads, shares, deletions, and blocked downloads. It also tracks malicious file events and common file types shared across workspaces.  
 Use this dashboard to:
+* Detect unusual or potentially malicious file activity.
+* Track blocked download and file-sharing events.
+* Identify top channels and users driving file-sharing activity.
 
-* Monitor all application and file related activities across multiple workspaces.
-* Identify the top users who perform actions related to applications and files.
-* Identify all guests and members that share, install applications download and upload files across public and private channels.
-* Identify the top scopes under which applications are approved and installed.
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-Files-Overview.png')} alt="Slack dashboards" />
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Slack_File_And_App_Audit.png')} alt="Slack dashboards" />
+### User Authentication and Security
+The **Slack - User Authentication and Security** dashboard displays all login and logout events, including successes and failures. It also tracks SAML configuration changes and access attempts from embargoed regions.  
+Use this dashboard to:
+* Monitor login success, failure, and logout patterns.
+* Identify failed authentication trends and access risks.
+* Review configuration changes impacting authentication and access security.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-User-Authentication-and-Security.png')} alt="Slack dashboards" />
+
+### User Overview
+The **Slack - User Overview** dashboard provides insight into user lifecycles and activity across the environment. It displays counts of total, deactivated, admin, and guest users, and tracks activity by workspace and enterprise.  
+Use this dashboard to:
+* Monitor active, inactive, and administrative users.
+* Understand user distribution across enterprises and workspaces.
+* Review recent user actions for audit and compliance.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-User-Overview.png')} alt="Slack dashboards" />
+
+### Workspace Overview
+The **Slack - Workspace Overview** dashboard presents key metrics and changes related to workspace lifecycle and configuration. It shows creation, deletion, migration, billing, and retention events as well as geographic audits.  
+Use this dashboard to:
+* Assess workspace creation and deletion trends.
+* Review configuration and billing changes across organizations.
+* Track audit actions by entity and workspace over time.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-Workspace-Overview.png')} alt="Slack dashboards" />
+
+### Workspace Security Overview
+The **Slack - Workspace Security Overview** dashboard tracks critical workspace-level security activities, including SSO and 2FA setting changes, embargoed access locations, and permission updates.  
+Use this dashboard to:
+* Monitor configuration changes affecting workspace security.
+* Identify unverified organization audits or embargoed access.
+* Review administrative and permission changes impacting access control.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-Workspace-Security-Overview.png')} alt="Slack dashboards" />
+
+### Access Overview
+The **Slack - Access Overview** dashboard analyzes how users connect to Slack—by device, platform, browser, or ISP—and visualizes usage trends and geographic access points.  
+Use this dashboard to:
+* Monitor where and how users access Slack.
+* Identify mobile, desktop, and web usage trends.
+* Detect unusual access behavior or new connection sources.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-Access-Overview.png')} alt="Slack dashboards" />
+
+### Access Security Overview
+The **Slack - Access Security Overview** dashboard highlights security threats tied to Slack access. It categorizes threats by actor, location, and confidence level, while tracking suspicious cross-device or embargoed logins.  
+Use this dashboard to:
+* Identify access-related threats and their sources.
+* Monitor activity from embargoed or unusual locations.
+* Correlate malicious confidence scores with actor behavior.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-Access-Security-Overview.png')} alt="Slack dashboards" />
+
+### Public Channels
+The **Slack - Public Channels** dashboard tracks engagement and file activity within public channels. It identifies active and inactive channels and highlights those with the most attachments and shared files.  
+Use this dashboard to:
+* Monitor overall public channel activity and participation.
+* Identify top channels contributing to collaboration.
+* Assess file-sharing trends across public channels.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-Public-Channels.png')} alt="Slack dashboards" />
+
+### Public Messages
+The **Slack - Public Messages** dashboard provides visibility into message and file-sharing activity within public channels. It includes statistics on message volumes, attachments, and file types, along with detailed message and file metadata.  
+Use this dashboard to:
+* Track message and attachment activity across public channels.
+* Analyze file type trends and message volume changes over time.
+* Review recent message and file details for audit purposes.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack-Public-Messages.png')} alt="Slack dashboards" />
+
+
+## Create monitors for Slack app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Slack alerts
+
+| Name  | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Slack - Audit Event Detected from Embargoed Geo Location` | This alert is triggered when Slack audit log events originate from embargoed or restricted regions. The audit activity can span across multiple entity types, including users, apps, workspaces, canvases, channels, and files. Such activity may indicate potential policy violations, compromised credentials, or attempts to bypass geographic controls. | Count > 0 | Count < = 0 |
+| `Slack - Blocked File Download Detected` | This alert is triggered when Slack blocks a file download due to security or policy restrictions, helping identify potential policy violations or unauthorized data access. | Count > 0 | Count < = 0 |
+| `Slack - Malicious File Activity Detected` | This alert is triggered when Slack detects file activity flagged as malicious or suspicious. File-based threats in Slack can span across channels, direct messages, and workspaces, making it a common vector for malware propagation and data exfiltration. Security teams should investigate the associated file, user account, and session context immediately upon trigger. | Count > 0 | Count < = 0 |
+| `Slack - Multiple Device Access Activity Detected` | This alert is triggered when a Slack user account is accessed from multiple devices within a short time window, suggesting possible credential sharing or account compromise. | Count > 0 | Count < = 0 |
+| `Slack - Repeated Failed Login or Logout Activity Detected` | This alert is triggered when repeated failed login or logout attempts occur on a Slack user account, indicating potential brute-force or credential-stuffing attacks. | Count > 5 | Count < = 5 |
 
 ## Upgrade/Downgrade the Slack app (Optional)
 
