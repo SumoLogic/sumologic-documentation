@@ -8,9 +8,7 @@ The log1p function computes log(1+x) accurately for small values of x.
 
 ## Syntax
 
-```sumo
-log1p(<x>) as <field>
-```
+`log1p(<x>) as <field>`
 
 ## Example
 

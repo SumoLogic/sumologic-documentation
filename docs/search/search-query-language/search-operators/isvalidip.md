@@ -10,33 +10,21 @@ The `isValidIP` operator checks if the value is a valid IP address. The `isVa
 
 ### isValidIP
 
-```sumo
-isValidIP("<IP_string>") as <field>
-```
+`isValidIP("<IP_string>") as <field>`
 
-```sumo
-isValidIP(<IP_string_field>) [as <field>]
-```
+`isValidIP(<IP_string_field>) [as <field>]`
 
 ### isValidIPv4
 
-```sumo
-isValidIPv4("<IP_string>") as <field>
-```
+`isValidIPv4("<IP_string>") as <field>`
 
-```sumo
-isValidIPv4(<IP_string_field>) [as <field>]
-```
+`isValidIPv4(<IP_string_field>) [as <field>]`
 
 ### isValidIPv6
 
-```sumo
-isValidIPv6("<IP_string>") as <field>
-```
+`isValidIPv6("<IP_string>") as <field>`
 
-```sumo
-isValidIPv6(<IP_string_field>) [as <field>]
-```
+`isValidIPv6(<IP_string_field>) [as <field>]`
 
 ## Rules
 

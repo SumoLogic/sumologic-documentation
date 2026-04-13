@@ -12,9 +12,7 @@ For dashboards in live mode, `queryTimeRange()` is a more suitable option. In mo
 
 ## Syntax
 
-```sumo
-queryStartTime() as <field>
-```
+`queryStartTime() as <field>`
 
 ## Rules
 

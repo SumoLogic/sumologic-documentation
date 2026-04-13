@@ -11,13 +11,9 @@ The `tourl` operator provides you the ability to assign a short name that descri
 
 ## Syntax
 
-```sumo
-tourl(<url_column_name>, <url_short_name_column>) as <field>
-```
+`tourl(<url_column_name>, <url_short_name_column>) as <field>`
 
-```sumo
-tourl(<url_column_name>, <url_short_name_column>, <url_short_name_prefix>, <url_short_name_suffix>) as <field>
-```
+`tourl(<url_column_name>, <url_short_name_column>, <url_short_name_prefix>, <url_short_name_suffix>) as <field>`
 
 Where:
 

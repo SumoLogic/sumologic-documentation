@@ -8,9 +8,7 @@ Converts angles from degrees to radians.
 
 ## Syntax
 
-```sumo
-toRadians(<x>) as <field>
-```
+`toRadians(<x>) as <field>`
 
 ## Example
 

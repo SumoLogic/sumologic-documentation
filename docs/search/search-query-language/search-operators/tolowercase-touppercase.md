@@ -16,13 +16,9 @@ These operators can be useful for normalizing source logs with inconsistent capi
 
 ## Syntax
 
-```sumo
-toLowerCase(<string>) [as <field>]
-```
+`toLowerCase(<string>) [as <field>]`
 
-```sumo
-toUpperCase(<string>) [as <field>]
-```
+`toUpperCase(<string>) [as <field>]`
 
 ## Rules
 

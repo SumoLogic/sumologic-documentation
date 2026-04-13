@@ -12,9 +12,7 @@ It is important to note that the Now operator outputs the exact time (down to th
 
 ## Syntax
 
-```sumo
-now()
-```
+`now()`
 
 ## Examples
 
