@@ -31,7 +31,7 @@ You can create an data masking rule of your own from scratch by following the in
 1. Click the **+ Add Data Masking Rule** button on the top right of the table.<br/><img src={useBaseUrl('img/manage/data-masking-rule/data-masking.png')} alt="Data Masking" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Create New Data Masking Rule** page, fill in the following fields:<br/><img src={useBaseUrl('img/manage/data-masking-rule/create-data-masking-rule.png')} alt="Create data masking rule" style={{border: '1px solid gray'}} width="400"/>
     1. **Name**. A unique, descriptive name for the rule. This cannot be changed after creation.
-    1. (Optional)**Decription**. An optional summary of what the rule masks and why. 
+    1. (Optional)**Description**. An optional summary of what the rule masks and why. 
     1. **Regex Locator**. A regular expression pattern used to identify the segment of log data to mask. Sumo Logic evaluates this pattern against incoming log messages and applies masking to every match. Ensure your regex targets only the sensitive portion to avoid unintended masking.
     1. (Optional)**Mask String**. The replacement text that substitutes any content matched by the Regex Locator. If left blank, Sumo Logic replaces matched content with a default mask.
 1. Click **Save** to activate the rule.
