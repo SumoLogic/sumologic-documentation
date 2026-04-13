@@ -2,7 +2,7 @@
     "api.version": "v1",
     "source": {
         "config": {
-            "name": "KnowBe4",
+            "name": "KnowBe4 KMSAT",
             "description": "Test Source",
             "category": "source_category",
             "region": "US",

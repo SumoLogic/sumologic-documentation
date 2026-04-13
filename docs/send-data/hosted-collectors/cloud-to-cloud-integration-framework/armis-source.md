@@ -1,7 +1,7 @@
 ---
-id: armis-api-source
-title: Armis API Integration Source
-sidebar_label: Armis API
+id: armis-source
+title: Armis Source
+sidebar_label: Armis
 tags:
   - cloud-to-cloud
   - armis-api
@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/armis-icon.png')} alt="Armis icon" width="80" />
 
-Armis API is a device security platform that discover devices, tracks behavior, detects threats, and takes action to protect your business. The Source integration ingests alert and device data from the Armis platform.
+Armis is a device security platform that discover devices, tracks behavior, detects threats, and takes action to protect your business. The Source integration ingests alert and device data from the Armis platform.
 
 :::sumo Best Practice
 Armis and Sumo Logic recommend using the Armis SIEM Integration, which pushes logs from Armis to a Sumo Logic HTTP source. There is a known limitation with the Armis API’s time query parameters, which can result in missing logs when using the Cloud-to-Cloud source. To avoid this, we advise using the Armis-side integration instead.
@@ -69,7 +69,7 @@ To configure an Armis Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the Armis API Integration source, consider installing the Sumo Logic app for [Armis](/docs/integrations/saas-cloud/armis/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Armis source, consider installing the Sumo Logic app for [Armis](/docs/integrations/saas-cloud/armis/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON configuration
@@ -97,13 +97,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ### JSON example
 
 ```json reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/armis-api/example.json
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/armis/example.json
 ```
 
 ### Terraform example
 
 ```sh reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/armis-api/example.tf
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/armis/example.tf
 ```
 
 ## FAQ

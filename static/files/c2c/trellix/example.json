@@ -9,7 +9,7 @@
         "pollingInterval": 5
       },
       "schemaRef":{
-        "type": "Trellix mVision ePO"
+        "type": "Trellix"
       },
       "sourceType": "Universal"
     }
