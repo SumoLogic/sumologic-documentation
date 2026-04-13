@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To view details about an OpenTelemetry Collector:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Collection** select **OpenTelemetry Collector**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collector**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Collection > OpenTelemetry Collector**. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/status-overview.png')} alt="status-overview" style={{border:'1px solid gray'}} />
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Collection** select **OpenTelemetry Collector**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collector**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Collection > OpenTelemetry Collector**. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/opentelemetry-collection-page.png')} alt="opentelemetry-collection-page" style={{border:'1px solid gray'}} />
     - **Name**. Name of the OpenTelemetry Collector.
     - **Health**. Displays the health status of the collector.
     - **Operating System**. Displays the operating system where the collector is installed.
@@ -43,23 +43,21 @@ To view details about an OpenTelemetry Collector:
 
 ## Status Overview
 
-The **Status Overview** panels provide a centralized, high-level health view of OpenTelemetry collectors. Each panel displays key metrics and includes a **View Collectors** button that drills down when clicked into filtered lists for quick diagnosis and resolution.
+The **Status Overview** panels provide a centralized, high-level health view of OpenTelemetry collectors. Each panel displays the count of collectors affected by its specific condition and includes a **View Collectors** button to drill down and view the corresponding collectors.
 <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/status-overview.png')} alt="status-overview" style={{border:'1px solid gray'}} />
 
-### Key Panels
-
 #### Collector(s) are due for upgrade
-Displays the total number of collectors that require upgrades. Click **View Collectors** button to view the collectors that are older than the current version and needs upgrade. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/upgrade-available.png')} alt="status-overview" style={{border:'1px solid gray'}} />
+
+Displays the total number of collectors that require upgrades. Click **View Collectors** button to view the collectors that are older than the current version and needs upgrade.
 
 #### Offline collectors
-- Displays collectors that are offline for over 30 minutes in the last 24 hours.
-- You can click the **View Collectors** button to view the affected collectors.
-<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/offline-collectors.png')} alt="status-overview" style={{border:'1px solid gray'}} />
+
+Displays collectors that are offline for over 30 minutes in the last 24 hours. Click the **View Collectors** button to view the affected collectors.
 
 #### Collector(s) are not configured
-- Displays the remotely managed collectors with no sources configured to ingest data.
-- You can click the **View Collectors** button to view the affected collectors.
-<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/no-source-config.png')} alt="status-overview" style={{border:'1px solid gray'}} />
+
+Displays the remotely managed collectors with no sources configured to ingest data. Click the **View Collectors** button to view the affected collectors.
+
 :::note
 To configure a source template, see [Create a new source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#create-a-new-source-template).
 :::
