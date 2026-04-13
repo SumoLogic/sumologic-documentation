@@ -226,7 +226,7 @@ Not at this time.
 
 ### I cannot install third-party software on my company-issued device. Can I use a personal device to take exams?
 
-Yes. Sumo Logic Academy uses [Kryterion Webassessor](https://www.kryterion.com/blog/the-evolution-of-webassessor-from-bold-beginnings-to-a-future-powered-by-ai/) for exam registration. Exams require the Lockdown Browser, software that many corporate IT policies restrict. We strongly recommend using a personal device to complete your exam.
+Yes. Sumo Logic Academy uses [Kryterion Webassessor](https://www.kryterion.com/blog/the-evolution-of-webassessor-from-bold-beginnings-to-a-future-powered-by-ai/) for exam registration. Exams require their Lockdown Browser, software that many corporate IT policies restrict. We strongly recommend using a personal device to complete your exam.
 
 If you can access your Sumo Logic org from your personal device, no special setup is needed. Open the Learn tab from your personal device and follow the normal process.
 
