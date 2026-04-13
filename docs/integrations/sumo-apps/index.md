@@ -56,6 +56,12 @@ Once a request has been submitted, a support ticket is automatically opened. A r
       <p>A guide to the Sumo Logic app for Enterprise Audit.</p>
       </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/sumo-apps/enterprise-audit-collector-data-forwarding-mssp')}><img src={useBaseUrl('img/integrations/sumo-apps/data_collection.png')} alt="Thumbnail icon" width="40"/><h4>Enterprise Audit - Collector and Data Forwarding for MSSP</h4></a>
+  <p>Collector, Sources activities, and data forwarding trends for child orgs under a MSSP org.</p>
+  </div>
+</div>
     <div className="box smallbox card">
       <div className="container">
       <a href={useBaseUrl('docs/integrations/sumo-apps/enterprise-search-audit')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="40"/><h4>Enterprise Search Audit</h4></a>

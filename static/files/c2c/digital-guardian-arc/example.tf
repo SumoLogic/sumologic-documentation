@@ -1,7 +1,7 @@
-resource "sumologic_cloud_to_cloud_source" "digital-guardian-source" {
+resource "sumologic_cloud_to_cloud_source" "digital-guardian-arc-source" {
   collector_id = sumologic_collector.collector.id
   schema_ref = {
-    type = "Digital Guardian"
+    type = "Digital Guardian ARC"
   }
   config = jsonencode({
         "name": "DG ARC",

@@ -1,11 +1,11 @@
 ---
-id: trellix-mvisio-epo-source
-title: Trellix mVision ePO Source
-sidebar_label: Trellix mVision ePO
+id: trellix-source
+title: Trellix Source
+sidebar_label: Trellix
 tags:
   - cloud-to-cloud
   - trellix-mvisio-epo
-description: Learn how to collect event logs using the Trellix mVision ePO.
+description: Learn how to collect event logs using the Trellix.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -26,7 +26,7 @@ mVision ePO is a key component of the Trellix security management platform, whic
 
 ### Vendor configuration
 
-The Trellix mVision ePO source requires you to provide a Client ID, Client Secret, and API key. To obtain these, follow the steps below.
+The Trellix source requires you to provide a Client ID, Client Secret, and API key. To obtain these, follow the steps below.
 1. Log in to the [Trellix Developer Portal](https://developer.manage.trellix.com/).
 1. Go to the **Self service** menu and click [**API Access Management**](https://developer.manage.trellix.com/mvision/selfservice/access_manag) option.<br/><img src={useBaseUrl('img/send-data/self-service.png')} alt="Self service" style={{border: '1px solid gray'}} width="600" />
     1. Copy **API key** from the API Access Management section. <br/><img src={useBaseUrl('img/send-data/api-key.png')} alt="Api key" style={{border: '1px solid gray'}} width="600" />
@@ -36,12 +36,12 @@ The Trellix mVision ePO source requires you to provide a Client ID, Client Secre
 
 ### Source configuration
 
-When you create a Trellix mVision ePO Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Trellix Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure a Trellix mVision ePO Source, follow the steps below:
+To configure a Trellix Source, follow the steps below:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **Trellix mVision ePO**.
+1. Search for and select **Trellix**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
@@ -54,7 +54,7 @@ To configure a Trellix mVision ePO Source, follow the steps below:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Trellix mVision ePO source, consider installing the Sumo Logic app for [Trellix mVision ePO](/docs/integrations/saas-cloud/trellix-mvision-epo/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Trellix source, consider installing the Sumo Logic app for [Trellix mVision ePO](/docs/integrations/saas-cloud/trellix-mvision-epo/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata field
@@ -69,7 +69,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{"type":"Trellix mVision ePO"}` | Yes | Define the specific schema type. |
+| schemaRef | JSON Object  | `{"type":"Trellix"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
@@ -89,13 +89,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 ### JSON example
 
 ```json reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/trellix-mvisio-epo/example.json
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/trellix/example.json
 ```
 
 ### Terraform example
 
 ```sh reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/trellix-mvisio-epo/example.tf
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/trellix/example.tf
 ```
 
 ## FAQ
