@@ -15,7 +15,7 @@ The ARK integration enables automated interaction with incident data and relatio
 
 * **Get Parents For Incident** (*Enrichment*) - Retrieves parent incidents for a given incident..
 
-## Configure F5 AS3 in Automation Service and Cloud SOAR
+## Configure ARK in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
