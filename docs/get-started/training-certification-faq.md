@@ -130,8 +130,11 @@ Both Analyst and Admin accounts are available for any learner to request. Choose
 #### How to request credentials
 
 1. Open a second browser (for example, Firefox if you are reading this in Chrome) so you can stay logged in to both your regular Sumo Logic account and the training lab at the same time.
-2. Go to your [learning portal](#how-do-i-access-the-learning-portal) and click **Become a Sumo Logic Expert**.<br/><img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Training lab credentials" style={{border: '1px solid gray'}} width="600" />
-3. Click **Request Training Analyst Login** or **Request Training Admin Login** based on your course requirements.
+2. Go to your [learning portal](#how-do-i-access-the-learning-portal) and click **Lab credentials** in the toolbar.
+
+   <img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Lab credentials self-service tool" style={{border: '1px solid gray'}} width="600" />
+
+3. Click **Request Analyst Login** or **Request Admin Login** based on your course requirements.
 4. Review the summary confirmation that appears and accept to proceed.
 5. The system will automatically assign you an available account:
    * **Analyst accounts**. `training+analyst###@sumologic.com` (where ### is between 001-999).
@@ -146,6 +149,10 @@ Both Analyst and Admin accounts are available for any learner to request. Choose
 * Training lab credentials expire at the end of each month.
 * A new set of credentials needs to be generated after the first of each month.
 * Any account-specific data you add will be wiped when credentials expire.
+:::
+
+:::info
+If you need assistance with lab credentials, click the **Get help** link in the self-service tool to email the Sumo Logic Academy team.
 :::
 
 ## Certifications
@@ -235,8 +242,8 @@ If your Sumo Logic org is restricted to approved company machines, you'll need t
 #### Step 1: Set up your Webassessor credentials (work machine)
 
 1. Sign in to Sumo Logic and open the **Learn** tab.
-1. Click **Learning Portal - Start Here!** to register via SSO. You may be prompted to validate your login via email.<br/><img src={useBaseUrl('img/get-started/learning-hub.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="600" />
-1. Click **Exam Registration**. This enrolls you in Kryterion Webassessor via SSO.<br/><img src={useBaseUrl('img/get-started/exam-registration.png')} alt="Exam registration" style={{border: '1px solid gray'}} width="600" />
+1. Click **Learning Portal - Start Here!** to register via SSO. You may be prompted to validate your login via email.<br/><img src={useBaseUrl('img/get-started/learning-hub-sso.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="600" />
+1. Return to the Sumo Logic **Learn** tab and click **Exam Registration**. This enrolls you in Kryterion Webassessor via SSO.<br/><img src={useBaseUrl('img/get-started/exam-registration.png')} alt="Exam registration" style={{border: '1px solid gray'}} width="600" />
 1. Once logged in to Webassessor, click **Edit Profile**.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-editprofile.png')} alt="Webassessor" style={{border: '1px solid gray'}} width="600" />
 1. Copy your username, which will be a string of alphanumeric characters (not your email address), and save it.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-registration.png')} alt="Webassessor" style={{border: '1px solid gray'}} width="600" />
 1. Click **Log Out**, then click **Log In** on the next screen.
