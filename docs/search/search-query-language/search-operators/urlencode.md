@@ -22,13 +22,9 @@ http%3A%2F%2Fyourmainserver-city55555.org%2Ffunctions%2Fmain.php%3Fgk%3DGk45MgHJ
 
 ## Syntax
 
-```sumo
-urlencode(<url_field>) [as <field>]
-```
+`urlencode(<url_field>) [as <field>]`
 
-```sumo
-urlencode("<url string>") as <field>
-```
+`urlencode("<url string>") as <field>`
 
 ## Example
 

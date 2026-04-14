@@ -8,13 +8,9 @@ The `substring` operator allows you to specify an offset that will output only p
 
 ## Syntax
 
-```sumo
-substring(<sourceString>, <startOffset>, <endOffset>) as <outputField>
-```
+`substring(<sourceString>, <startOffset>, <endOffset>) as <outputField>`
 
-```sumo
-substring(<sourceString>, <startOffset>) as <outputField>
-```
+`substring(<sourceString>, <startOffset>) as <outputField>`
 
 ## Rules
 

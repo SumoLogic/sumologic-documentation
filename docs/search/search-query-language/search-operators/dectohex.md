@@ -12,13 +12,9 @@ Hexadecimal string is always returned in upper-case.
 
 ## Syntax
 
-```sumo
-decToHex(<long_field>) as <field>
-```
+`decToHex(<long_field>) as <field>`
 
-```sumo
-decToHex("<long_string>") as <field>
-```
+`decToHex("<long_string>") as <field>`
 
 ## Examples
 

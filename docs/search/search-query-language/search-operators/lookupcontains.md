@@ -14,12 +14,9 @@ The syntax for `lookupContains` in varies depending on whether you use the opera
 
 ### Within a where expression
 
-This is the syntax for using `lookupContains` within a `where`
-expression:
+This is the syntax for using `lookupContains` within a `where` expression:
 
-```sumo
-... | where lookupContains (path://”<path-to-table>”, <event-field>=<lookup-field>) | ...
-```
+`... | where lookupContains (path://”<path-to-table>”, <event-field>=<lookup-field>) | ...`
 
 Where:
 
@@ -36,9 +33,7 @@ Where:
 
 ### Example 1: Using lookupContains within a where expression to compare a single field
 
-The example below compares the value of the `userID` field in an event
-to values of the `user` field in the `suspicious-users` lookup table,
-and returns `true` if the field values match.
+The example below compares the value of the `userID` field in an event to values of the `user` field in the `suspicious-users` lookup table, and returns `true` if the field values match.
 
 ```sumo
 ... | where lookupContains(path://"/Library/Users/username@sumologic.com/suspicious-users", userID=user) | ...

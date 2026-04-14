@@ -8,9 +8,7 @@ The `haversine` operator returns the distance between latitude and longitude va
 
 ## Syntax
 
-```sumo
-haversine(<latitude1>, <longitude1>, <latitude2>, <longitude2>) as <field>
-```
+`haversine(<latitude1>, <longitude1>, <latitude2>, <longitude2>) as <field>`
 
 ## Example
 

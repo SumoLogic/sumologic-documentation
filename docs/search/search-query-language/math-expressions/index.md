@@ -9,9 +9,7 @@ from log lines. 
 
 ## Syntax
 
-```sumo
-| expression [as <field>]
-```
+`| expression [as <field>]`
 
 ## Rules
 

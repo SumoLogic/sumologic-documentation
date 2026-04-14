@@ -10,9 +10,7 @@ Hyperbolic cosine of argument in radians.
 
 ## Syntax
 
-```sumo
-cosh(<x>) as <field>
-```
+`cosh(<x>) as <field>`
 
 ## Example
 

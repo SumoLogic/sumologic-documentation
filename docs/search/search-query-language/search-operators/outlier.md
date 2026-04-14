@@ -12,25 +12,19 @@ To do this, the Outlier operator tracks the moving average and standard deviatio
 
 ## Syntax
 
-```sumo
-...
+`...
 | timeslice <time_period>
 | <aggregate operator> as <field> by _timeslice
-| outlier <field> [window=<#>, threshold=<#>, consecutive=<#>, direction=<+->]
-```
+| outlier <field> [window=<#>, threshold=<#>, consecutive=<#>, direction=<+->]`
 
-```sumo
-...
+`...
 | timeslice <time_period>
 | <aggregate operator> by _timeslice, <field>
-| outlier <_aggregate> by <field> [window=<#>, threshold=<#>, consecutive=<#>, direction=<+->]
-```
+| outlier <_aggregate> by <field> [window=<#>, threshold=<#>, consecutive=<#>, direction=<+->]`
 
 A `timeslice` is required.
 
-The second syntax example uses an additional “group by” clause to find
-outliers for multiple values of a field. See the example below for
-details.
+The second syntax example uses an additional “group by” clause to find outliers for multiple values of a field. See the example below for details.
 
 The following table lists the fields returned in outlier results:
 
@@ -53,9 +47,7 @@ You can configure options by setting parameters through keyword arguments, such 
 
 For example, this query would set the following parameters:
 
-```sumo
-... | outlier <field> window=5,threshold=3,consecutive=2,direction=+-
-```
+`... | outlier <field> window=5,threshold=3,consecutive=2,direction=+-`
 
 * **window=5** : Use the trailing 5 data points to calculate mean and sigma.
 * **threshold=3** : Calculate violation based on +/- 3 standard deviations.
@@ -76,8 +68,7 @@ For example, this query would set the following parameters:
 
 ### IIS logs
 
-Run the following query to find outlier values in IIS logs over the last
-6 hours.
+Run the following query to find outlier values in IIS logs over the last 6 hours.
 
 ```sumo
 _sourceCategory=IIS/Access
@@ -94,8 +85,7 @@ The outlier values are represented by the pink triangles in the resulting chart.
 
 ### Apache logs - Server Errors Over Time
 
-Run the following query to find outlier values in Apache logs over the
-last 3 hours.
+Run the following query to find outlier values in Apache logs over the last 3 hours.
 
 ```sumo
 _sourceCategory=Apache/Access
@@ -157,8 +147,7 @@ _sourceCategory=Apache/Access
 
 You can display the raw results of a multidimensional time series in a table chart, but currently other chart options are not available.
 
-In the following table chart, a value of 1 in the `_count_violation` column indicates that the data point corresponding to that timeslice is
-an outlier.
+In the following table chart, a value of 1 in the `_count_violation` column indicates that the data point corresponding to that timeslice is an outlier.
 
 <img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Multidimensional.png')} alt="Multidimensional" style={{border: '1px solid gray'}} width="800" />
 
