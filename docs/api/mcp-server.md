@@ -1,6 +1,6 @@
 ---
 id: mcp-server
-title: Sumo Logic MCP Server (Closed Preview)
+title: Sumo Logic MCP Server (Private Preview)
 description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents from VS Code or Claude Code CLI.
 ---
 
@@ -12,15 +12,15 @@ import TabItem from '@theme/TabItem';
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Closed Preview</span></a></p>
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Private Preview</span></a></p>
 
 :::info
-This feature is in closed preview. For more information, contact your Sumo Logic account executive.
+This feature is in Private Preview. For more information, contact your Sumo Logic account executive.
 :::
 
 The Sumo Logic MCP server lets external copilots and proprietary models securely query logs, investigate Cloud SIEM insights, manage alerts and dashboards, work with existing Dojo AI agents, and perform user management — all using natural language from your IDE or chat platform.
 
-During closed preview, the following MCP clients are supported:
+During this preview phase, we support the following MCP clients:
 * [VS Code + GitHub Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)
 * [Claude Code CLI](https://code.claude.com/docs/en/quickstart)
 * [ChatGPT](https://chatgpt.com/)
@@ -151,54 +151,23 @@ UI support for this step is not yet available. You'll need to use the Sumo Logic
    This prevents privilege escalation. If the service account's roles are restricted in the future, the OAuth client's effective permissions are automatically reduced as well. If a requested scope is not included in the service account's roles, it will be silently excluded from the OAuth client's effective permissions.
 
    </details>
-1. [Create a new OAuth client](https://api.sumologic.com/docs/#operation/createOAuthClient) using the `"scopes"` from the previous step. `"runAsId"` will be the `"id"` of the [service account you just created](#step-1-create-a-service-account). In the response, note the `"clientId"` and `"clientSecret"`. These are your OAuth client credentials, which you'll use to generate an access token in the next step.
-   <Tabs
-     className="unique-tabs"
-     defaultValue="request"
-     values={[
-       {label: 'Example request', value: 'request'},
-       {label: 'Example response', value: 'response'},
-     ]}>
-
-   <TabItem value="request">
-
-   This example grants the MCP agent the ability to query logs and metrics, understand schema/fields, read saved content, and export results.
-
+1. [Create a new OAuth client](https://api.sumologic.com/docs/#operation/createOAuthClient) using the `scopes` you selected in the previous step. `"runAsId"` will be the `"id"` of the service account you created [in step 1](#step-1-create-a-service-account).
    ```bash title="Example request"
    curl -u "<access-id>:<access-key>" \
-     https://api.sumologic.com/api/v1/oauth/clients \
-     -H 'Content-Type: application/json' \
+     https://api.sumologic.com/api/v1/oauth/clients
+     -H "Content-Type: application/json" \
      -d '{
-       "name": "My OAuth Client",
-       "description": "OAuth Client for MCP",
-       "runAsId": "0000000000C4661B",
-       "grantTypes": ["client_credentials"],
-       "scopes": ["runLogSearch", "runMetricsQuery", "viewLibrary", "manageCollectors", "manageFieldExtractionRules", "manageScheduledViews", "managePartitions", "viewMonitorsV2", "manageSlos"]
+       "type": "ClientCredentialsClient",
+       "name": "<name-for-your-oauth-client>",
+       "description": "<description-for-your-oauth-client>",
+       "scopes": [<comma-separated-list-of-scopes>],
+       "runAs": {
+         "type": "ServiceAccount",
+         "runAsId": "<your-service-account-id>"
+       }
      }'
    ```
-
-   </TabItem>
-   <TabItem value="response">
-
-   ```json title="Example response highlighting client ID and client secret" {2,13}
-   {
-     "clientId": "zVplCFHcpTDwtktBIQmFI2K6s9HEo4HAtcQD1f1M5eQ",
-     "createdAt": "2025-10-16T09:10:00.000Z",
-     "createdBy": "0000000006743FDD",
-     "modifiedAt": "2025-10-16T09:10:00.000Z",
-     "modifiedBy": "0000000006743FDD",
-     "name": "My OAuth Client",
-     "description": "OAuth Client for MCP with basic permissions",
-     "runAsId": "0000000000C4661B",
-     "grantTypes": ["client_credentials"],
-     "scopes": ["runLogSearch", "runMetricsQuery", "viewLibrary", "manageCollectors", "manageFieldExtractionRules", "manageScheduledViews", "managePartitions", "viewMonitorsV2", "manageSlos"],
-     "effectiveScopes": ["runLogSearch", "runMetricsQuery", "viewLibrary", "manageCollectors", "manageFieldExtractionRules", "manageScheduledViews", "managePartitions", "viewMonitorsV2", "manageSlos"],
-     "clientSecret": "EqyuIvsnae0LnMC2mbJArysXcmp0LuBsRgmyeLtSkFPEzSxdvpYQMDajn_8buaDj"
-   }
-   ```
-
-   </TabItem>
-   </Tabs>
+   In the response, note the `"clientId"` and `"clientSecret"`. These are your OAuth client credentials, which you'll use to generate an access token in the next step.
 
 #### Step 3: Generate an access token
 

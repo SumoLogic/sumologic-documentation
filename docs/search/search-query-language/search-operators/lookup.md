@@ -73,9 +73,7 @@ your lookup query scope must include:
 
 ## Syntax 
 
-```sumo
-lookup <outputColumn-1> [as <field>] [,<outputColumn-2> [as <field>]] from path://"<filePath>" on <joinColumn-1> [,<joinColumn-2>]
-```
+`lookup <outputColumn-1> [as <field>] [,<outputColumn-2> [as <field>]] from path://"<filePath>" on <joinColumn-1> [,<joinColumn-2>]`
 
 Where:
 

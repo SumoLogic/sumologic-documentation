@@ -10,9 +10,7 @@ The `values` operator provides all the distinct values of a field. This allows
 
 ## Syntax
 
-```sumo
-values(<field>) [by <group_by_fields>] [as <field_name>]
-```
+`values(<field>) [by <group_by_fields>] [as <field_name>]`
 
 ### Response Field
 

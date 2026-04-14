@@ -191,7 +191,7 @@ Here’s a sample `sources.json` file that you can include in your AMI.
 
 Before setting up the AWS Observability solution we recommend testing permissions for both AWS and Sumo Logic by using a test AWS CloudFormation template. To execute this template:
 
-1. Invoke the AWS CloudFormation template at this [URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.13.0/permissionchecker/permissioncheck.template.yaml).
+1. Invoke the AWS CloudFormation template at this [URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.14.0/permissionchecker/permissioncheck.template.yaml).
 1. Select the desired AWS region to test.
 1. Enter a Stack Name, Sumo Logic Deployment, and Sumo Logic Access ID and Access Key.<br/><img src={useBaseUrl('img/observability/Testing_sumo_Permission_1.png')} alt="Stack details" style={{border: '1px solid gray'}} width="800" />
 1. Click **Create Stack.**
