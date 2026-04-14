@@ -13,7 +13,7 @@ To install or upgrade to the required version of the CloudFormation template, u
 
 | Release (AWSO) | Release Date     | Active Support | Additional Notes |
 |:---------------|:-----------------|:--|:--|
-| 2.14.0         | 14th Apr, 2026 | Yes | |
+| 2.14.0         | 14th Apr, 2026 | Yes | AWSO is not supported in the AWS Zurich region as the Serverless Application Repository is not available there.                                                        |
 | 2.13.0         | 7th Oct, 2025    | Yes | |
 | 2.12.0         | 1st Apr, 2025  | Yes | |
 | 2.11.0         | 24th Jan, 2025   | Yes - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th Apr, 2025 |
