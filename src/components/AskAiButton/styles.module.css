@@ -1,0 +1,42 @@
+.askAiButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0 0.75rem;
+  height: 36px;
+  background: transparent;
+  border: 1px solid var(--ifm-color-border-pale);
+  border-radius: 0.5rem;
+  color: var(--ifm-navbar-link-color);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: -1rem;
+}
+
+.askAiButton:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .askAiButton {
+  border-color: #6b6f78;
+}
+
+[data-theme='dark'] .askAiButton:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.buttonText {
+  display: inline;
+}
+
+.buttonIcon {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .buttonText {
+    display: none;
+  }
+}

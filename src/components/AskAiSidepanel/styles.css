@@ -1,0 +1,84 @@
+/**
+ * Ask AI Sidepanel Styles
+ *
+ * Styles for the Algolia Ask AI sidepanel modal.
+ * Includes backdrop, positioning, and dark mode support.
+ */
+
+/* Backdrop */
+.ask-ai-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  backdrop-filter: blur(4px);
+}
+
+/* Sidepanel Container */
+.ask-ai-sidepanel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 480px;
+  background: var(--ifm-background-color);
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  overflow: hidden;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Mobile: full width */
+@media (max-width: 768px) {
+  .ask-ai-sidepanel {
+    max-width: 100%;
+  }
+}
+
+/* Dark mode support */
+[data-theme='dark'] .ask-ai-backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme='dark'] .ask-ai-sidepanel {
+  box-shadow: -2px 0 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Algolia Sidepanel overrides for theme integration */
+.ask-ai-sidepanel :global(.DocSearch-Sidepanel) {
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  height: 100%;
+}
+
+.ask-ai-sidepanel :global(.DocSearch-Input) {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-base);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.ask-ai-sidepanel :global(.DocSearch-Input:focus) {
+  border-color: var(--ifm-color-primary);
+}
+
+.ask-ai-sidepanel :global(.DocSearch-Button) {
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.ask-ai-sidepanel :global(.DocSearch-Button:hover) {
+  background: var(--ifm-color-primary-dark);
+}

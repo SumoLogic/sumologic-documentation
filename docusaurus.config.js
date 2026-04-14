@@ -545,6 +545,12 @@ module.exports = {
             type: 'search',
             position: 'left',
           },
+          {
+            type: 'html',
+            position: 'left',
+            className: 'navbar-ask-ai-item',
+            value: '<div id="navbar-ask-ai-button"></div>',
+          },
         ],
       },
       footer: {
