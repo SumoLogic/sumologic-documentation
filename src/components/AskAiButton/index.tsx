@@ -46,7 +46,7 @@ export default function AskAiButton({ isOpen, setIsOpen }: AskAiButtonProps) {
       </button>
 
       {isOpen && (
-        <React.Suspense fallback={<div>Loading...</div>}>
+        <React.Suspense fallback={null}>
           <AskAiSidepanel isOpen={isOpen} onClose={() => setIsOpen(false)} />
         </React.Suspense>
       )}
