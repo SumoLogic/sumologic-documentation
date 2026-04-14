@@ -8,9 +8,7 @@ The logarithm function returns the natural logarithm of x.
 
 ## Syntax
 
-```sumo
-log(<x>) as <field>
-```
+`log(<x>) as <field>`
 
 ## Example
 

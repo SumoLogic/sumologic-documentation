@@ -10,9 +10,7 @@ For example, you'd use the Length operator in free text fields where content is 
 
 ## Syntax
 
-```sumo
-length(<field>) [as <field>]
-```
+`length(<field>) [as <field>]`
 
 ## Rules
 

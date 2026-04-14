@@ -10,9 +10,7 @@ The square root function returns the square root value of x.
 
 ## Syntax
 
-```sumo
-sqrt(<x>) as <field>
-```
+`sqrt(<x>) as <field>`
 
 ## Example
 

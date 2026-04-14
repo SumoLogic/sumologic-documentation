@@ -1,11 +1,11 @@
 ---
-id: confluent-cloud-metrics-source
-title: Confluent Cloud Metrics Source
-sidebar_label: Confluent Cloud Metrics
+id: confluent-metrics-source
+title: Confluent Metrics Source
+sidebar_label: Confluent Metrics
 tags:
   - cloud-to-cloud
   - confluent-cloud-metrics
-description: The Confluent Cloud Metrics source aims to collect metric data from the Confluent Cloud Metrics platform API and send them to Sumo Logic.
+description: The Confluent Metrics source aims to collect metric data from the Confluent Metrics platform API and send them to Sumo Logic.
 ---
 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
@@ -30,14 +30,14 @@ This source collects Confluent metrics data that has the single most recent data
 
 ### Vendor configuration
 
-The Confluent Cloud Metrics source requires you to provide the **Client ID (API Key ID)** and the **Client Secret (API Secret)** to access the data.
+The Confluent Metrics source requires you to provide the **Client ID (API Key ID)** and the **Client Secret (API Secret)** to access the data.
 To generate the Client ID and Client Secret, refer to the [cloud API key generation](https://docs.confluent.io/cloud/current/monitoring/metrics-api.html#add-the-metricsviewer-role-to-a-new-service-account) in your Confluent Cloud account.
 
 ### Source configuration
 
-When you create a Confluent Cloud Metrics source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Confluent Metrics source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure a Confluent Cloud Metrics source:
+To configure a Confluent Metrics source:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Confluent Metrics**.
@@ -54,7 +54,7 @@ To configure a Confluent Cloud Metrics source:
 1. When you are finished configuring the source, click **Save**.
 
 :::info
-After configuring the Confluent Cloud Metrics source, consider installing the Sumo Logic app for [Confluent Cloud](/docs/integrations/saas-cloud/confluent-cloud/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Confluent Metrics source, consider installing the Sumo Logic app for [Confluent Cloud](/docs/integrations/saas-cloud/confluent-cloud/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema
@@ -63,7 +63,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{“type”: “Confluent Cloud Metrics”}` | Yes | Define the specific schema type. |
+| schemaRef | JSON Object  | `{“type”: “Confluent Metrics”}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
@@ -94,13 +94,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ### JSON example
 
 ```json reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/confluent-cloud-metrics/example.json
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/confluent-metrics/example.json
 ```
 
 ### Terraform example
 
 ```sh reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/confluent-cloud-metrics/example.tf
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/confluent-metrics/example.tf
 ```
 
 

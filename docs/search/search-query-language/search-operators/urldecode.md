@@ -20,13 +20,9 @@ http://yourmainserver-city55555.org/functions/main.php?gk=Gk45MgHJhEYx8bPYvGfiWS
 
 ## Syntax
 
-```sumo
-urldecode(<url_field>) [as <field>]
-```
+`urldecode(<url_field>) [as <field>]`
 
-```sumo
-urldecode("<url string>") as <field>
-```
+`urldecode("<url string>") as <field>`
 
 ## Example
 
