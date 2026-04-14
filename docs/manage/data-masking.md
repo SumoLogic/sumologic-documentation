@@ -18,6 +18,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Data Masking provides a centralized place to manage and review data masking rules across your organizational hierarchy, helping you enforce data protection standards and prevent sensitive information from appearing in your logs.
 
+## How does data masking work?
+
+Data masking rules are applied at the ingest time, meaning sensitive data is intercepted and replaced as logs flow into Sumo Logic, before the data is stored or indexed. Once a rule is active, any portion of an incoming log message that matches the rule's **Regex Locator** pattern is automatically substituted with the configured or default **Mask String**.
+
+For example, consider a log line that contains an IP address. You can [create a data masking rule](#how-to-create-a-data-masking-rule) with a regex pattern that targets IP address, so that every occurrence is replaced with a mask string of your choice.
+
+**Before masking.** The IP address displayed in plain text:<br/><img src={useBaseUrl('img/manage/data-masking-rule/data-before-masking.png')} alt="Data Before Masking" style={{border: '1px solid gray'}} width="800"/>
+
+**After masking.** The IP address is replaced with the configured mask string:<br/><img src={useBaseUrl('img/manage/data-masking-rule/data-after-masking.png')} alt="Data After Masking" style={{border: '1px solid gray'}} width="800"/>
+
 ## How to create a data masking rule?
 
 You can create an data masking rule of your own from scratch by following the instructions below:
