@@ -71,7 +71,7 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
     return null;
   }
 
-  const { assistantId, indexName, appId, apiKey } = algoliaConfig.askAi;
+  const { assistantId, indexName, appId, apiKey, suggestedQuestions } = algoliaConfig.askAi;
 
   // Create the sidepanel element
   const sidepanel = (
@@ -87,6 +87,7 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
           indexName={indexName}
           assistantId={assistantId}
           onClose={onClose}
+          suggestedQuestions={suggestedQuestions}
           translations={{
             title: 'Ask AI about Sumo Logic',
             placeholder: 'Ask a question about Sumo Logic...',
