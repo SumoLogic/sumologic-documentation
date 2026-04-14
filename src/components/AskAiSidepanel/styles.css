@@ -43,7 +43,8 @@
   right: 0 !important;
   bottom: 0 !important;
   left: auto !important;
-  width: 100% !important;
+  width: 540px !important;
+  min-width: 540px !important;
   max-width: 540px !important;
   z-index: 999 !important;
 }
@@ -67,6 +68,7 @@
   bottom: 0 !important;
   left: 0 !important;
   width: 100% !important;
+  min-width: 100% !important;
   height: 100% !important;
   max-width: none !important;
   transform: none !important;
@@ -79,14 +81,18 @@
   animation: slideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex !important;
   visibility: visible !important;
+  flex-shrink: 0 !important;
 }
 
-/* Ensure panel stays visible during resize */
+/* Ensure panel stays visible during resize and maintains width */
 .ask-ai-sidepanel .DocSearch-Sidepanel-Container.is-open {
   transform: none !important;
   opacity: 1 !important;
   display: flex !important;
   visibility: visible !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  flex-shrink: 0 !important;
 }
 
 @keyframes slideIn {
@@ -109,6 +115,9 @@
 .ask-ai-sidepanel .DocSearch-Sidepanel {
   background-color: var(--ifm-background-color) !important;
   border-left: 1px solid var(--ifm-color-emphasis-200) !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  flex-shrink: 0 !important;
 }
 
 [data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel {
@@ -175,47 +184,172 @@
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--form {
-  border-color: var(--ifm-color-emphasis-300) !important;
-  border-radius: 8px !important;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 2px solid transparent !important;
+  border-radius: 12px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.06) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  padding: 10px 12px !important;
+  min-height: 48px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  position: relative !important;
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--form:focus-within {
   border-color: var(--ifm-color-primary) !important;
-  box-shadow: 0 0 0 3px var(--ifm-color-primary-lightest) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--form {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--form:focus-within {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--textarea {
   color: var(--ifm-font-color-base) !important;
-  font-size: 0.95rem !important;
+  font-size: 1rem !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1.5rem !important;
+  height: 1.5rem !important;
+  min-height: 1.5rem !important;
+  max-height: 200px !important;
+  flex: 1 1 auto !important;
+  resize: none !important;
+  align-self: center !important;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  overflow: hidden !important;
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--textarea::placeholder {
   color: var(--ifm-color-emphasis-600) !important;
 }
 
-/* Submit button styling */
-.ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit {
-  background-color: var(--ifm-color-primary) !important;
-  border-radius: 6px !important;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+/* Override the absolutely positioned actions wrapper */
+.ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--actions {
+  position: static !important;
+  bottom: auto !important;
+  right: auto !important;
+  height: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
 }
 
-.ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit:hover {
-  background-color: var(--ifm-color-primary-dark) !important;
+/* Submit button styling - Default to grey */
+.ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit {
+  background: var(--ifm-color-emphasis-300) !important;
+  border-radius: 6px !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  min-height: 28px !important;
+  max-width: 28px !important;
+  max-height: 28px !important;
+  padding: 0 !important;
+  align-self: center !important;
+  position: relative !important;
+  top: 0 !important;
+  border: none !important;
+}
+
+[data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit {
+  background: var(--ifm-color-emphasis-400) !important;
+}
+
+/* Size the arrow icon to fit the button */
+.ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit svg {
+  width: 16px !important;
+  height: 16px !important;
+  display: block !important;
+  margin: 0 !important;
+  position: relative !important;
+}
+
+/* Enabled state - when user has typed text (blue) */
+.ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit.has-text {
+  background: var(--ifm-color-primary) !important;
+  cursor: pointer !important;
+}
+
+.ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit.has-text svg {
+  color: white !important;
+}
+
+.ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit.has-text:hover {
+  background: var(--ifm-color-primary-dark) !important;
   transform: scale(1.05);
 }
 
-.ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit:disabled {
-  opacity: 0.5;
-  transform: none;
-}
-
 /* ===================================================================
-   Footer
+   Footer - Shrink "Powered by Algolia" branding
    =================================================================== */
 .ask-ai-sidepanel .DocSearch-Sidepanel-Footer {
   background-color: var(--ifm-navbar-background-color) !important;
+  font-size: 0.7rem !important;
+  padding: 0.5rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0 !important;
+}
+
+/* Ensure all direct children are vertically centered */
+.ask-ai-sidepanel .DocSearch-Sidepanel-Footer > * {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove any spacing from text and logo containers */
+.ask-ai-sidepanel .DocSearch-Sidepanel-Footer span,
+.ask-ai-sidepanel .DocSearch-Sidepanel-Footer a,
+.ask-ai-sidepanel .DocSearch-Sidepanel-Footer div {
+  gap: 0.2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Target any nested flex containers */
+.ask-ai-sidepanel .DocSearch-Sidepanel-Footer * {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Shrink the Algolia logo */
+.ask-ai-sidepanel .DocSearch-Sidepanel-Footer svg,
+.ask-ai-sidepanel .DocSearch-Sidepanel-Footer img {
+  height: 16px !important;
+  width: auto !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Shrink any branding text */
+.ask-ai-sidepanel .DocSearch-Sidepanel-Footer * {
+  font-size: 0.7rem !important;
+  line-height: 1.2 !important;
 }
 
 /* ===================================================================
@@ -312,4 +446,28 @@
   line-height: 1.25rem !important;
   content: 'I can help you find information about Sumo Logic features, integrations, troubleshooting guides, APIs, and best practices across our documentation.';
   display: block;
+}
+
+/* ===================================================================
+   Disclaimer Text Override
+   =================================================================== */
+.ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--disclaimer {
+  color: transparent !important;
+  position: relative !important;
+  text-align: center !important;
+}
+
+.ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--disclaimer::before {
+  content: 'Answers are AI-generated from Sumo Docs by Gemini 2.5 Flash and may contain errors.\A Please review and verify.' !important;
+  color: var(--ifm-font-color-base) !important;
+  font-size: 0.8em !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  display: block;
+  white-space: pre-line !important;
+  text-align: center !important;
 }
