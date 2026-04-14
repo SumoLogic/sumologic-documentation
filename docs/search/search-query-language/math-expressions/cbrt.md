@@ -8,9 +8,7 @@ The cube root function returns the cube root value of x.
 
 ## Syntax
 
-```sumo
-cbrt(<x>) as <field>
-```
+`cbrt(<x>) as <field>`
 
 ## Example
 

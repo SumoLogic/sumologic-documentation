@@ -8,9 +8,7 @@ Returns the inverse tangent of the argument.
 
 ## Syntax
 
-```sumo
-atan(<x>) as <field>
-```
+`atan(<x>) as <field>`
 
 ## Example
 

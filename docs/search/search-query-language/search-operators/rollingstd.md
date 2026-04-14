@@ -16,9 +16,7 @@ If you specify a window length of 5, but only 4 data points are available, the `
 
 ## Syntax
 
-```sumo
-rollingstd <field> [, window_length] [as <field>]
-```
+`rollingstd <field> [, window_length] [as <field>]`
 
 ## Rules
 

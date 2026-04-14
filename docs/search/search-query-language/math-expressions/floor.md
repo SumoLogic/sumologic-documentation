@@ -10,9 +10,7 @@ The floor function rounds down to the largest previous integer value. Returns th
 
 ## Syntax
 
-```sumo
-floor(<x>) as <field>
-```
+`floor(<x>) as <field>`
 
 ## Example
 

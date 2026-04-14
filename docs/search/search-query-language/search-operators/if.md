@@ -10,9 +10,7 @@ These expressions are used to evaluate a condition as either true or false, with
 
 ## Syntax
 
-```sumo
-if(<condition>, <value_if_true>, <value_if_false>) as <field>
-```
+`if(<condition>, <value_if_true>, <value_if_false>) as <field>`
 
 ## Examples
 

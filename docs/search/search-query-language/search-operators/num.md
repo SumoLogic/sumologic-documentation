@@ -11,9 +11,7 @@ The `num` operator converts a field to a double value (64-bit IEEE 754 double-pr
 
 ## Syntax
 
-```sumo
-num(<field>) [as <field>]
-```
+`num(<field>) [as <field>]`
 
 ## Rules
 
