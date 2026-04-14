@@ -9,9 +9,7 @@ description: Use the sum operator in Sumo Logic to calculate the total value of 
 
 ## Syntax
 
-```sumo
-sum(<numerical_field>) [as <field>] [by <field>]
-```
+`sum(<numerical_field>) [as <field>] [by <field>]`
 
 ## Rules
 
@@ -25,9 +23,7 @@ sum(<numerical_field>) [as <field>] [by <field>]
 
 Sample log message:
 
-```json
-Aug 2 04:06:08 : host=10.1.1.124: local/ssl2 notice mcpd[3772]: filesize=20454: diskutilization=0.4 : 01070638:5: Pool member 172.31.51.22:0 monitor status down.
-```
+`Aug 2 04:06:08 : host=10.1.1.124: local/ssl2 notice mcpd[3772]: filesize=20454: diskutilization=0.4 : 01070638:5: Pool member 172.31.51.22:0 monitor status down.`
 
 Example based on sample log message above:
 
@@ -36,10 +32,7 @@ file*| parse "filesize=*" as filesize
 | sum (filesize) group _sourceHost
 ```
 
-Finds all messages that contain term **file\*** and parses out all that
-have a `filesize=value`. It will then extract the value of filesize
-and will add all those values per host where those log messages are
-generated.
+Finds all messages that contain term **file\*** and parses out all that have a `filesize=value`. It will then extract the value of filesize and will add all those values per host where those log messages are generated.
 
 When you calculate the sum of more than one field, you must create an alias using the [`as` operator](/docs/search/search-query-language/search-operators/as) to rename the `sum` fields. See this example:
 

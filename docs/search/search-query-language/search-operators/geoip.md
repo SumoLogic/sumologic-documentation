@@ -12,9 +12,7 @@ Any IP addresses that do not have a location, such as internal addresses, will r
 
 ## Syntax
 
-```sumo
-geoip <ip_address_field> [<optional_field1>, <optional_field2>...]
-```
+`geoip <ip_address_field> [<optional_field1>, <optional_field2>...]`
 
 ### Default result fields
 
@@ -46,11 +44,9 @@ To map the IP addresses properly you must [count](/docs/search/search-query-lang
 
 Your query should use the following syntax:
 
-```sumo
-| parse "[ip_fieldname]" as [ip_address]
+`| parse "[ip_fieldname]" as [ip_address]
 | geoip ip_address
-| count by latitude, longitude, [other geo_locator fields]
-```
+| count by latitude, longitude, [other geo_locator fields]`
 
 This syntax produces aggregate results, so you can add a map to a Dashboard.
 
@@ -63,18 +59,14 @@ This syntax produces aggregate results, so you can add a map to a Dashboard.
 
 Sample log message:
 
-```
-2017-12-13 10:29:17,037 -0800 INFO [hostId=prod-frontend-1] [module=SERVICE] [logger=service.endpoint.auth.v1.impl.AuthenticationServiceDelegate [thread=btpool0-8] [remote_ip=67.180.85.25] Successful login for user 'da@users.com', organization: '0000000000000005
-```
+`2017-12-13 10:29:17,037 -0800 INFO [hostId=prod-frontend-1] [module=SERVICE] [logger=service.endpoint.auth.v1.impl.AuthenticationServiceDelegate [thread=btpool0-8] [remote_ip=67.180.85.25] Successful login for user 'da@users.com', organization: '0000000000000005`
 
 Using logs that match the example log format, running a query like this:
 
-```sumo
-| parse "remote_ip=*]" as remote_ip
+`| parse "remote_ip=*]" as remote_ip
 | geoip remote_ip
 | count by latitude, longitude
-| sort _count
-```
+| sort _count`
 
 would produce the following results:
 
@@ -98,11 +90,9 @@ Enter a query that parses the IP field from your logs, a **geoip** operator to
 
 This example returns the optional fields region, continent, and postal_code.
 
-```sumo
-| parse "remote_ip=*]" as remote_ip
+`| parse "remote_ip=*]" as remote_ip
 | geoip remote_ip
-| count by latitude, longitude, region, continent, postal_code
-```
+| count by latitude, longitude, region, continent, postal_code`
 
 ### Handle null values
 
@@ -110,11 +100,9 @@ To find a mismatch from a geo lookup operator query, use the [isNull](/docs/sea
 
 For example, running a query like:
 
-```sumo
-| parse "remote_ip=*]" as remote_ip
+`| parse "remote_ip=*]" as remote_ip
 | geoip remote_ip
-| if (isNull(country_code), "unknown", country_code) as country_code
-```
+| if (isNull(country_code), "unknown", country_code) as country_code`
 
 returns results similar to:
 

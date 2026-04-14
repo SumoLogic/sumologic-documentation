@@ -10,9 +10,7 @@ In order to calculate the median value for a particular field, you can utilize t
 
 ## Syntax
 
-```sumo
-pct(<field> [, 50]) [as <field>] [by <field>]
-```
+`pct(<field> [, 50]) [as <field>] [by <field>]`
 
 ## Rules
 
