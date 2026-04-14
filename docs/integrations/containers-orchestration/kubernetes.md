@@ -50,7 +50,7 @@ getsockopt: connection refused"}
 
 ### Sample queries
 
-```sql title="Message Breakdown by Container from the Dashboard Container Logs"
+```sumo title="Message Breakdown by Container from the Dashboard Container Logs"
  cluster = * and namespace = * and pod = * and container = *
 | json field=_raw "log" as message
 | fields - message | count container | top 10 container by _count

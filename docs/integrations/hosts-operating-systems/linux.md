@@ -2,7 +2,7 @@
 id: linux
 title: Linux
 sidebar_label: Linux
-description: Allows you to view the events, logins, and security status of your Linux system.
+description: Monitor Linux system health with the Sumo Logic app, using predefined dashboards and searches to view events, user logins, and security status in real time.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo app for Linux allows you to view information about events, logins, and the security status of your Linux system. The app consists of predefined searches and three dashboards that provide visibility into your environment for real-time or historical analysis.
 
 :::note
-You may also be interested in the [Sumo Logic App for Linux Cloud Security Monitoring and Analytics](docs/integrations/cloud-security-monitoring-analytics/linux.md).
+You may also be interested in the [Sumo Logic App for Linux Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/linux.md).
 :::
 
 ## Collecting logs for Linux
@@ -123,7 +123,7 @@ These searches are intended to help you understand how privileged and non-privil
 
 Returns all successful remote and local logins by a user. Suggested time range: -1 day.
 
-```sql
+```sumo
 _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("Accepted" and "pam") or "session" or ("to" and "on")) !"closed"
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<_sourceHost>\S*)\s" nodrop
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_host>\S*)\s(?:\w*):\s+(?<message>.*)$" nodrop
@@ -147,7 +147,7 @@ _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("
 Returns all failed authentication attempts by either a user or a process. Suggested time range: -1 day.
 
 
-```
+```sumo
 _sourceCategory=*linux* ("authentication failure" or "FAILED SU" or "input_userauth_request: invalid user" or "Invalid user" or "Failed publickey" or "Failed password")
 | parse regex "\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S+)\s(?<process_name>\w*)(?:\[|:)" nodrop
 | parse " user = * " as dest_user nodrop
@@ -176,7 +176,7 @@ _sourceCategory=*linux* ("authentication failure" or "FAILED SU" or "input_usera
 
 Returns all sudo/su attempts, or activities by "root" user. Modify to include other privileged users that you want to track in your environment.
 
-```sql
+```sumo
 _​sourceCategory=OS/Linux/Security ("sudo" or "root" or "su")
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s" nodrop
 | extract "sudo:\s+(?<src_user>[^ ]+?)\s:.+?USER=(?<dest_user>[^ ]+?)\s+" nodrop
@@ -189,7 +189,7 @@ _​sourceCategory=OS/Linux/Security ("sudo" or "root" or "su")
 
 Returns all failed SU attempts.
 
-```bash
+```sumo
 _sourceCategory=*linux*("authentication failure" or "FAILED SU" or "input_userauth_request: invalid user" or "Invalid user" or "Failed publickey" or "Failed password") ("su:" or "su[")  
 | parse regex "\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S+)\s(?<process_name>\w*)(?:\[|:)" nodrop
 | parse " user = * " as dest_user nodrop
@@ -221,7 +221,7 @@ Returns a list of all new users.
 
 Suggested time range: -1 day
 
-```sql
+```sumo
 _sourceCategory=OS/Linux/S* "useradd" and (("new user") or ("new account"))
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[|:)" nodrop
 | parse "name=*, UID=*, GID=*, home=*, shell=*" as dest_user,dest_uid,dest_gid,home_dir,shell nodrop
@@ -234,7 +234,7 @@ Returns a list of all new groups.
 
 Suggested time range: -1 day
 
-```sql
+```sumo
 _​sourceCategory=OS/Linux/S* "new group"
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[|:)" nodrop
 | parse "name=*, GID=*" as dest_group,dest_gid nodrop
@@ -247,7 +247,7 @@ Returns all messages that indicate a user being added to an administrative group
 
 Suggested time range: -1 day
 
-```sql
+```sumo
 _sourceCategory=OS/Linux/S* "to group" or "default group changed" or "change user"
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[|:)" nodrop
 | parse "add '*' to group '*'" as dest_user,dest_group nodrop
@@ -263,7 +263,7 @@ Returns all failed attempts to change a user password.
 
 Suggested time range: -1 day
 
-```bash
+```sumo
 _sourceCategory=OS/Linux/* "Authentication failure"
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[|:)" nodrop
 | parse "User *:" as dest_user nodrop
@@ -277,7 +277,7 @@ Returns all incidents when the system starts (or restarts).
 
 Suggested time range: -1 day
 
-```sql
+```sumo
 _sourceCategory=OS/Linux/System "Initializing cgroup subsys cpuset"
 | parse regex "^(?<StartTime>\S*\s+\d+\s+\d+:\d+:\d+)\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[\d+\]|):\s+" nodrop
 ```
@@ -288,7 +288,7 @@ Returns all instances when a service is shutting down or exiting. Note that this
 
 Suggested time range: -1 day
 
-```sql
+```sumo
 _sourceCategory=OS/Linux/System ("exiting" or "exited" or "terminating" or "terminated" or "shutting")
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[\d+\]|):\s+"
 | where process_name !=""

@@ -2,7 +2,7 @@
 id: aws-metadata-tag-source
 title: AWS Metadata (Tag) Source
 sidebar_label: AWS Metadata (Tag)
-description: A Sumo Logic AWS Metadata Source allows you to collect Tags from EC2 instances running on AWS.
+description: Collect EC2 instance tags from AWS using a Sumo Logic AWS Metadata Source. Tags appear in search results and can be referenced in metric queries.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -1,7 +1,7 @@
 ---
 slug: /alerts/scheduled-searches
 title: Scheduled Searches
-description: Learn how to schedule log searches to send alerts.
+description: Schedule log searches in Sumo Logic to run continuously and send alerts, save results to an index or lookup table, or generate Cloud SIEM signals.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

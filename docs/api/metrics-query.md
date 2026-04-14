@@ -15,7 +15,7 @@ The Metrics Query API allows you to execute queries on various metrics and retri
 
 Here is example content for a `v1/metricsQueries` API call:
 
-``` json
+```json
 {
   "queries": [
     {

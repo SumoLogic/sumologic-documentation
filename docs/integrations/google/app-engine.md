@@ -201,7 +201,7 @@ The App uses:
 
 ### Sample queries
 
-```bash title="Status codes over time"
+```sumo title="Status codes over time"
 _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 | json "message.data.resource.type" as type
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""

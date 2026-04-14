@@ -67,7 +67,7 @@ The Sumo Logic integration for iLert ingests alert events into Sumo Logic throug
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory="webhook/ilert"
 | json "id", "summary", "details", "reportTime", "status", "eventType", "priority", "alertSource.name", "assignedTo.username", "assignedTo.email", "responders[0].user.username", "responders[0].user.email" as id, summary, detail, reportTime, status, eventType, priority, alertSource, assignedUserName, assignedEmail, responderUserName, responderEmail nodrop
 | where id matches "{{alertId}}" and alertSource matches "{{alertSource}}" and eventType matches "{{eventType}}" and status matches "{{status}}" and  priority matches "{{priority}}"
@@ -105,7 +105,7 @@ Follow the steps to configure the iLert Webhook.
     specific condition if required.
 7. Click **Save**.
 8. Verify iLert events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 `_sourceCategory=webhook/ilert`
 ```
 

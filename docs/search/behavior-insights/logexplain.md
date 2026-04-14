@@ -41,7 +41,7 @@ With the provided results you can:
 
 ## Syntax
 
-```sql
+```sumo
 | logexplain <event_condition> [against <against_condition>] on <fieldname>[,<fieldname>, ...]
 ```
 
@@ -68,8 +68,8 @@ With the provided results you can:
 
 ### Errors by host
 
-```sql
-__sourceCategory=stream 
+```sumo
+_sourceCategory=stream 
 | if(_raw matches "error", 1, 0) as hasError
 | logexplain hasError == 1 on _sourceHost
 ```
@@ -78,7 +78,7 @@ __sourceCategory=stream 
 
 Having seen that there are a lot of `AccessDenied` errors, in the example below, we want to explain which combinations of `eventName`, `userName`, or AWS service (`invokedBy`) might be responsible for errorCode having a value of `AccessDenied` by comparing logs with `AccessDenied` errors against logs with other `errorCode`s. Values from `userName`s or `invokedBy`s might be candidates for further investigation. 
 
-```sql
+```sumo
 _sourceCategory= *cloudtrail* errorCode
 | json field=_raw "eventSource" as eventSource
 | json field=_raw "eventName" as eventName
@@ -97,7 +97,7 @@ After using [LogReduce Values to explore your event logs based on specific key
 
 If a cluster of logs has `reason="FailedScheduling"` indicating the Kubernetes scheduler is unable to find nodes that can satisfy requirements for the requested pods, you can use `logexplain` to understand which pods and the reason they are unable to find a node to run in.
 
-```sql
+```sumo
 _sourceCategory="nite-primary-eks/events"
 | where _raw contains "forge"
 | json auto "object.reason", "object.involvedObject.name", "object.message" as reason, objectName, message
@@ -108,7 +108,7 @@ _sourceCategory="nite-primary-eks/events"
 
 After using [LogReduce Values to explore your event logs based on specific keys](/docs/search/behavior-insights/logreduce/logreduce-values) you can use LogExplain to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that do not contain these errors.
 
-```sql
+```sumo
 _sourceCategory=*cloudtrail*
 | json field=_raw "userIdentity.userName" as userName nodrop
 | json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName_role nodrop
@@ -139,7 +139,7 @@ SecOps Insight: A hacked credential will display a remote login pattern (`eventd
 
 The time compare query attempts to enumerate all machine-to-user combinations over the past 24 hours and compares the average daily logins for each pair of machine and user. As `compare` only supports up to 8 sequential slices, the data has to be sliced into 2-day intervals with 7 epochs, to create 14 days of data.
 
-```sql
+```sumo
 _sourceCategory=OS*Windows* eventid=4624 eventdata_logontype=10
 | count by eventdata_targetusername, eventdata_workstationname
 | where !isBlank(eventdata_targetusername) && !isBlank(eventdata_workstationname)
@@ -155,7 +155,7 @@ In an example dataset, this requires you to examine 150 machine-user combinatio
 
 #### Approach 2: The equivalent query with LogExplain
 
-```sql
+```sumo
 _sourceCategory=OS*Windows* eventid=4624 eventdata_logontype=10
 | where !isBlank(eventdata_targetusername) && !isBlank(eventdata_workstationname)
 | logexplain (now() - _messagetime\< 86400000) on eventdata_workstationname, eventdata_targetusername

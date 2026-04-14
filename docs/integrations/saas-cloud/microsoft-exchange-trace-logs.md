@@ -33,13 +33,13 @@ This app uses [Message Trace](https://learn.microsoft.com/en-us/graph/api/messag
 
 ### Sample query
 
-```sql title="Delivered Messages"
-_sourceCategory={{Logsdatasource}} id senderAddress recipientAddress delivered 
+```sumo title="Delivered Messages"
+_sourceCategory={{Logsdatasource}} id senderAddress recipientAddress delivered
 | json "id","fromIP","toIP","status","senderAddress","recipientAddress" as id,from_ip,top_ip,status,sender_address,recipient_address nodrop
 
 | where status = "delivered"
 
-// Global filter 
+// Global filter
 | lookup  country_name from geo://location on ip = from_ip
 | country_name as source
 | lookup  country_name from geo://location on ip = top_ip
@@ -52,7 +52,7 @@ _sourceCategory={{Logsdatasource}} id senderAddress recipientAddress delivered
 
 // Panel specific
 | count by id,sender_address,recipient_address,_messagetime
-| count 
+| count
 ```
 ## Collection configuration and app installation
 

@@ -260,7 +260,7 @@ AWS Observability hierarchy is auto-populated based on the metrics ingested into
 
 1. Identify the account that you want to remove from the AWS Observability hierarchy. For example, let's assume you want to remove `mobilebankingprod` from the hierarchy.<br/><img src={useBaseUrl('img/observability/hierarchy.png')} style={{border: '1px solid gray'}} alt="hierarchy" width="400"/>
 1. Run the required metric query to identify from which source and collector data is being ingested. For this example, enter the metric query below:
-    ```sql
+    ```sumo
     account= mobilebankingprod | count by _collector , _source
     ```
     <br/><img src={useBaseUrl('img/observability/metric-query.png')} style={{border: '1px solid gray'}} alt="Metric query" width="800"/>

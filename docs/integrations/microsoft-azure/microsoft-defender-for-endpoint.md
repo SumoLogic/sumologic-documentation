@@ -141,7 +141,7 @@ This app uses SumoLogic’s Microsoft Graph Security source to collect [Alerts](
 
 ### Sample query
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourceCategory="Labs/MicrosoftGraphSecurity" id microsoftDefenderForEndpoint
 | json "id", "status", "severity", "classification", "serviceSource" as alert_id, status, severity, classification, service_source nodrop
 | where toLowerCase(service_source) matches "microsoftdefenderforendpoint"

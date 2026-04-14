@@ -377,7 +377,7 @@ This app uses Sumo Logic’s CrowdStrike Spotlight Source to collect [Vulnerabil
 
 ## Sample queries
 
-```sql title="Recent Access Activities"
+```sumo title="Recent Access Activities"
 _sourceCategory="Labs/CrowdstrikeSpotlight"
 | json "status", "cve.severity", "id", "host_info.hostname", "suppression_info.is_suppressed", "host_info.internet_exposure", "host_info.platform", "host_info.os_version", "confidence", "cve.remediation_level", "host_info.asset_criticality", "host_info.local_ip", "remediation.entities[0].action", "host_info.system_manufacturer", "host_info.host_last_seen_timestamp", "created_timestamp", "updated_timestamp", "cve.id", "cve.base_score", "cve.exploitability_score" as status, severity, id, hostname, is_suppressed, internet_exposure, os_type, os_version, confidence, remediation_level, asset_criticality, local_ip, remediation_action, system_manufacturer, host_last_seen_timestamp, vuln_created_timestamp, vuln_updated_timestamp, cve_id, base_score, exploitability_score nodrop
 

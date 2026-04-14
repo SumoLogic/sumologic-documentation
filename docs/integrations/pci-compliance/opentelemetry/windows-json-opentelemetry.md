@@ -70,7 +70,7 @@ import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configurat
 
 This sample log query is from the **Windows - PCI Req 02, 08, 10 - Account, User, System Monitoring** dashboard > **User Account Created** panel.
 
-```sql title="Log Query String"
+```sumo title="Log Query String"
 sumo.datasource=windows deployment.environment={{deployment.environment}} host.group={{host.group}} "\"channel\":\"Security\"" 4720
 | json "event_id.id", "computer", "message", "event_data.SubjectUserName",  "event_data.SubjectDomainName", "event_data.TargetUserName", "event_data.TargetDomainName" as event_id, host, msg_summary, src_user, src_domain, dest_user, dest_domain nodrop
 | if(isBlank(src_user), "Unknown", src_user) as src_user

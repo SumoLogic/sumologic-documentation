@@ -80,7 +80,7 @@ The Amazon ElastiCache app uses the following logs and metrics:
 account=* region=* namespace=aws/elasticache metric=EngineCPUUtilization statistic=Average CacheClusterId=* CacheNodeId=* | avg by CacheClusterId, CacheNodeId, account, region, namespace
 ```
 
-```sql title="ElastiCache Node Reboot Events and CloudTrail-Log-base:"
+```sumo title="ElastiCache Node Reboot Events and CloudTrail-Log-base:"
 account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\"elasticache.amazonaws.com\"" (Reboot* or CacheNodesRebooted)
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message nodrop
 | where event_source = "elasticache.amazonaws.com" and (event_name matches "Reboot*" or event_name="CacheNodesRebooted")
@@ -152,7 +152,7 @@ Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.co
 
 **Parse Expression**
 
-```sql
+```sumo
 | json "eventSource", "awsRegion", "requestParameters.cacheClusterId", "responseElements.cacheClusterId", "recipientAccountId" as eventSource, region, req_cacheClusterId, res_cacheClusterId, accountid nodrop
 | where eventSource = "elasticache.amazonaws.com"
 | if (!isEmpty(req_cacheClusterId), req_cacheClusterId, res_cacheClusterId) as cacheclusterid
@@ -174,7 +174,7 @@ Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 **Parse Expression**. Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account

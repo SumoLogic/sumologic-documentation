@@ -122,9 +122,17 @@ module.exports = {
     require.resolve('./src/client-modules/trackTrialClick.js'),
     require.resolve('./src/client-modules/fixAnchorScroll.js'),
   ],
+  storage: {
+    type: 'localStorage',
+    namespace: true,
+  },
   future: {
-    v4: true,
-    experimental_faster: true,
+    faster: true,
+    v4: {
+      siteStorageNamespacing: true,
+      fasterByDefault: true,
+      removeLegacyPostBuildHeadAttribute: true,
+    },
   },
   staticDirectories: ['static'],
   presets: [

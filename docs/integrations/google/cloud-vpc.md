@@ -83,7 +83,7 @@ The App uses:
 
 ### Sample queries
 
-```bash title="Average latency (ms) by subnet ID"
+```sumo title="Average latency (ms) by subnet ID"
 _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 | json "message.data.resource.type" as type
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""

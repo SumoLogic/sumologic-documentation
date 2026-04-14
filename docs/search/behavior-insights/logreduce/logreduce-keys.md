@@ -24,7 +24,7 @@ With the provided results, you can:
 
 ## Syntax
 
-```sql
+```sumo
 | logreduce keys [parser <parser>] [maxdepth <maxdepth>] [field <fieldname>] [noaggregate]
 ```
 
@@ -57,7 +57,7 @@ Results can be returned in two ways:
 
 ## Examples
 
-```sql
+```sumo
 _sourceCategory = "Labs/AWS/GuardDuty_V8"
 | json keys "region", "partition", "resource"
 | logreduce keys field=resource
@@ -67,14 +67,14 @@ _sourceCategory = "Labs/AWS/GuardDuty_V8"
 
 To get a summary of patterns in Kubernetes event logs, you can quickly scan for unique schemas with LogReduce Keys:
 
-```sql
+```sumo
 _sourceCategory="primary-eks/events"
 | logreduce keys
 ```
 
 Returned schema:
 
-```sql
+```sumo
 object.apiversion, object.count, object.firsttimestamp, object.involvedobject.kind, object.involvedobject.name, object.involvedobject.namespace, object.kind, object.lasttimestamp, object.message, object.metadata.creationtimestamp, object.metadata.name, object.metadata.namespace, object.metadata.resourceversion, object.metadata.selflink, object.metadata.uid, object.reason, object.reportingcomponent, object.reportinginstance, object.source.component, object.type, timestamp, type, object.involvedobject.apiversion, object.involvedobject.resourceversion, object.involvedobject.uid, object.source.host, object.involvedobject.fieldpath
 ```
 
@@ -84,7 +84,7 @@ Next, use [LogReduce Values to explore the schema based on specific keys](/doc
 
 To get a summary of patterns in AWS CloudTrail logs that reference AccessDenied errors for AWS, you'd use a query such as the following:
 
-```sql {13}
+```sumo {13}
 _sourceCategory=*cloudtrail* *AccessDenied* 
 | json field=_raw "userIdentity.userName" as userName nodrop
 | json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName_role nodrop

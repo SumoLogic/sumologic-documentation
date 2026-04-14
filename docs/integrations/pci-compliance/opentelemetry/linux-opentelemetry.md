@@ -88,7 +88,7 @@ Jun 28 07:46:03 bruno-supercomputer useradd[1602]: new account added - account=r
 
 ## Sample queries
 
-```sql
+```sumo
 sumo.datasource=linux deployment.environment=* host.group=* host.name=* "useradd" and ("new user" or "new account")
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s+(?<_sourceHost>\S+)\s+\w*" nodrop
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s+(?<dest_host>\S*)\s+(?<process>\w*)(?:\[\d+\]:|:)\s*(?<msg>.+)$" nodrop

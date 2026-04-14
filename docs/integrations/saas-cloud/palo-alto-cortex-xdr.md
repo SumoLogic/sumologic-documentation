@@ -136,7 +136,7 @@ This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-
 <details>
 <summary>View sample queries</summary>
 
-```sql title="Alerts Triggered"
+```sumo title="Alerts Triggered"
 _sourceCategory="palo_alto_cortex_xdr" "alert_id" "is_whitelisted"
 | json "alert_id","name","severity","source","host_ip","alert_type","action_pretty","agent_os_type","category","detection_timestamp","is_whitelisted","resolution_status" as alert_id,name,severity,source,host_ip,alert_type,action_pretty,agent_os_type,category,detection_timestamp,is_whitelisted,resolution_status nodrop
 | action_pretty as action
@@ -150,7 +150,7 @@ _sourceCategory="palo_alto_cortex_xdr" "alert_id" "is_whitelisted"
 | count_distinct(alert_id)
 ```
 
-```sql title="Incidents Created"
+```sumo title="Incidents Created"
 _sourceCategory="palo_alto_cortex_xdr" "incident_id" "incident_name"
 | json "incident_id","incident_name","creation_time","modification_time","status","severity","assigned_user_mail","alert_count","high_severity_alert_count","critical_severity_alert_count","user_count","xdr_url","wildfire_hits","alerts_grouping_status","mitre_tactics_ids_and_names","mitre_techniques_ids_and_names" as incident_id,incident_name,creation_time,modification_time,status,severity,assigned_user_mail,alert_count,high_severity_alert_count,critical_severity_alert_count,user_count,xdr_url,wildfire_hits,alerts_grouping_status,mitre_tactics_ids_and_names,mitre_techniques_ids_and_names nodrop
 | where alerts_grouping_status matches"{{alerts_grouping_status}}"

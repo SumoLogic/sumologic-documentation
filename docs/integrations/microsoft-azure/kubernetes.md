@@ -158,7 +158,7 @@ When you configure the Event Hubs source, plan your source category to ease the 
 
 ### Sample queries
 
-```sql title="kube-audit"
+```sumo title="kube-audit"
 tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group = {{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} ("kube-audit")
 | json "category", "properties.log", "properties.pod" as category, log, pod
 | where category="kube-audit" and pod matches "{{pod}}"
@@ -168,7 +168,7 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group =
 | order by _count, verb
 ```
 
-```sql title="kube-audit-admin"
+```sumo title="kube-audit-admin"
 tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group = {{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} ("kube-audit-admin")
 | json "category", "properties.log", "properties.pod" as category, log, pod
 | where category="kube-audit-admin" and pod matches "{{pod}}"
@@ -178,7 +178,7 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group =
 | order by _count, verb
 ```
 
-```sql title="kube-apiserver"
+```sumo title="kube-apiserver"
 tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group={{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} location={{location}} method (timeout or abort) ("kube-apiserver")
 | json "properties.log", "category", "time", "properties.pod" as log, category, time, pod
 | where category ="kube-apiserver" and pod matches "{{pod}}"
@@ -187,7 +187,7 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group={
 | sort by uri desc
 ```
 
-```sql title="kube-controller-manager"
+```sumo title="kube-controller-manager"
 tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group = {{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} ("kube-controller-manager")
 | json "properties.log", "category", "time", "properties.pod", "resourceId" as log, category, time, pod, resourceId
 | where category ="kube-controller-manager" and pod matches "{{pod}}"
@@ -196,7 +196,7 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group =
 | sort by _count
 ```
 
-```sql title="kube-scheduler"
+```sumo title="kube-scheduler"
 tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group = {{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} "kube-scheduler"
 | json "properties.log", "category", "time", "properties.pod" as log, category, time, pod
 | where category ="kube-scheduler" and pod matches "{{pod}}"
@@ -207,7 +207,7 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group =
 | fillmissing timeslice(1h)
 ```
 
-```sql title="cluster-autoscaler"
+```sumo title="cluster-autoscaler"
 tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group={{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} ("cluster-autoscaler")
 | json "properties.log", "category", "properties.pod", "resourceId" as log, category, pod, resourceId
 | where category ="cluster-autoscaler" and pod matches "{{pod}}"

@@ -35,7 +35,7 @@ This app also includes [built-in monitors](#digital-guardian-arc-monitors). For 
 
 ## Log types
 
-This app uses Sumo Logic’s [Digital Guardian ARC Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source/) to collect event logs from Digital Guardian ARC.
+This app uses Sumo Logic’s [Digital Guardian ARC Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-arc-source/) to collect event logs from Digital Guardian ARC.
 
 ### Sample log messages
 
@@ -312,7 +312,7 @@ This app uses Sumo Logic’s [Digital Guardian ARC Source](/docs/send-data/hoste
 
 ### Sample query
 
-```sql title="Activities By Protocol"
+```sumo title="Activities By Protocol"
 _sourceCategory="Labs/DigitalGuardian"
 | json "dg_guid", "dg_utype", "dg_cn", "dg_user", "dg_machine_name", "dg_proc_file_name", "dg_time", "ua_pt" as id, operation_type, company_name, user, computer, application_name, time, protocol nodrop
 
@@ -333,7 +333,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 <CollectionConfiguration/>
 
 :::important
-Use the [Cloud-to-Cloud Integration for Digital Guardian ARC](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Digital Guardian ARC app is properly integrated and configured to collect and analyze your Digital Guardian ARC data.
+Use the [Cloud-to-Cloud Integration for Digital Guardian ARC](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-arc-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Digital Guardian ARC app is properly integrated and configured to collect and analyze your Digital Guardian ARC data.
 :::
 
 ### Create a new collector and install the app
