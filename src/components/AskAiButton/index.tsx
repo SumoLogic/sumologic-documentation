@@ -5,27 +5,30 @@
  * Includes keyboard shortcut support (Cmd/Ctrl + I).
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styles from './styles.module.css';
 
 // Lazy load the sidepanel component
 const AskAiSidepanel = React.lazy(() => import('@site/src/components/AskAiSidepanel'));
 
-export default function AskAiButton() {
-  const [isOpen, setIsOpen] = useState(false);
+interface AskAiButtonProps {
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+}
 
+export default function AskAiButton({ isOpen, setIsOpen }: AskAiButtonProps) {
   // Keyboard shortcut: Cmd/Ctrl + I
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key === 'i') {
         event.preventDefault();
-        setIsOpen((prev) => !prev);
+        setIsOpen(!isOpen);
       }
     };
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [isOpen, setIsOpen]);
 
   return (
     <>

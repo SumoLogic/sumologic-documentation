@@ -8,6 +8,7 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import '@docsearch/css/dist/sidepanel.css';
 import './styles.css';
 
 interface AskAiSidepanelProps {
@@ -42,6 +43,22 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isOpen, onClose]);
 
+  // Prevent panel from disappearing on window resize
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleResize = () => {
+      // Force the panel to stay visible by ensuring container classes are maintained
+      const container = document.querySelector('.DocSearch-Sidepanel-Container');
+      if (container && !container.classList.contains('is-open')) {
+        container.classList.add('is-open');
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isOpen]);
+
   if (!isOpen || !SidepanelComponent) {
     return null;
   }
@@ -69,9 +86,12 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
           apiKey={apiKey}
           indexName={indexName}
           assistantId={assistantId}
+          onClose={onClose}
           translations={{
             title: 'Ask AI about Sumo Logic',
-            placeholder: 'Ask a question...',
+            placeholder: 'Ask a question about Sumo Logic...',
+            greeting: 'How can I help you with Sumo Logic today?',
+            introduction: 'I can help you find information about Sumo Logic features, integrations, troubleshooting guides, APIs, and best practices across our documentation.',
             poweredBy: 'Powered by Algolia',
           }}
           insights

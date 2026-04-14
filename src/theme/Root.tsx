@@ -17,6 +17,7 @@ interface RootProps {
 
 export default function Root({ children }: RootProps) {
   const [placeholder, setPlaceholder] = useState<HTMLElement | null>(null);
+  const [isAskAiOpen, setIsAskAiOpen] = useState(false);
 
   useEffect(() => {
     // Find and monitor the navbar placeholder
@@ -45,7 +46,13 @@ export default function Root({ children }: RootProps) {
   return (
     <>
       {children}
-      {placeholder && createPortal(<AskAiButton />, placeholder)}
+      {placeholder && createPortal(
+        <AskAiButton
+          isOpen={isAskAiOpen}
+          setIsOpen={setIsAskAiOpen}
+        />,
+        placeholder
+      )}
     </>
   );
 }
