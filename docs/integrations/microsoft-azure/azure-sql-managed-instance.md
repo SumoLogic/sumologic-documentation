@@ -146,19 +146,20 @@ Use this dashboard to:
 - Identify the top 10 most active databases and highest-volume instances to prioritize operational attention.
 - Track vCore utilization, event volume by category, and error distribution by database to assess overall health.
 
-<!--IMAGE_PLACEHOLDER: Azure-SQL-MI-Overview.png-->
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureSQLManagedInstance/Azure-SQL-Managed-Instance-Overview.png')} alt="Azure SQL Managed Instance - Overview" style={{border: '1px solid gray'}} width="800" />
 
-### Instance Resource Utilization
 
-The **Azure SQL Managed Instance - Instance Resource Utilization** dashboard provides CPU, storage, and I/O performance metrics for each managed instance, including trend analysis and per-instance comparisons.
+### Metrics
+
+The **Azure SQL Managed Instance - Metrics** dashboard provides visibility into CPU utilization, storage capacity, and I/O throughput across managed instances.
 
 Use this dashboard to:
 
-- Monitor average and peak CPU utilization per instance to detect compute saturation and plan capacity.
-- Track storage used versus reserved and I/O request rates to identify storage pressure before it impacts workloads.
-- Analyze CPU utilization trends and storage usage percentages to support right-sizing and scaling decisions.
+- Monitor average and peak CPU utilization and total vCore allocation across all instances.
+- Track storage space used and reserved storage trends to plan capacity.
+- Analyze I/O request counts, bytes read, and bytes written to identify throughput bottlenecks.
 
-<!--IMAGE_PLACEHOLDER: Azure-SQL-MI-Instance-Resource-Utilization.png-->
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureSQLManagedInstance/Azure-SQL-Managed-Instance-Metrics.png')} alt="Azure SQL Managed Instance - Metrics" style={{border: '1px solid gray'}} width="800" />
 
 ### Database Errors
 
@@ -170,7 +171,7 @@ Use this dashboard to:
 - Identify the top 10 error numbers and messages to prioritize investigation and resolution.
 - Analyze severity distribution and one-day error comparison trends to detect regressions quickly.
 
-<!--IMAGE_PLACEHOLDER: Azure-SQL-MI-Database-Errors.png-->
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureSQLManagedInstance/Azure-SQL-Managed-Instance-Database-Errors.png')} alt="Azure SQL Managed Instance - Database Errors" style={{border: '1px solid gray'}} width="800" />
 
 ### Database Wait Statistics
 
@@ -182,11 +183,23 @@ Use this dashboard to:
 - Analyze wait type distribution and heatmaps to distinguish between I/O, locking, CPU scheduling, and memory waits.
 - Track signal versus resource wait ratios and average wait time per task to diagnose root causes of latency.
 
-<!--IMAGE_PLACEHOLDER: Azure-SQL-MI-Database-Wait-Statistics.png-->
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureSQLManagedInstance/Azure-SQL-Managed-Instance-Database-Wait-Statistics.png')} alt="Azure SQL Managed Instance - Database Wait Statistics" style={{border: '1px solid gray'}} width="800" />
 
-### Query Performance
+### Timeouts
 
-The **Azure SQL Managed Instance - Query Performance** dashboard monitors query CPU consumption, execution duration, I/O usage, and memory grants across databases.
+The **Azure SQL Managed Instance - Timeouts** dashboard provides analysis of timeout events including counts, affected databases, error state distribution, query plan correlation, and trends over time.
+
+Use this dashboard to:
+
+- Monitor total timeout counts by instance and identify the most affected databases.
+- Analyze timeout distribution by error state and track trends over time to detect recurring patterns.
+- Identify the top query plans contributing to timeouts and unique query plans per database.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureSQLManagedInstance/Azure-SQL-Managed-Instance-Timeouts.png')} alt="Azure SQL Managed Instance - Timeouts" style={{border: '1px solid gray'}} width="800" />
+
+### Query Performances
+
+The **Azure SQL Managed Instance - Query Performances** dashboard monitors query CPU consumption, execution duration, I/O usage, and memory grants across databases.
 
 Use this dashboard to:
 
@@ -194,7 +207,7 @@ Use this dashboard to:
 - Identify the top queries by CPU and execution count using query hash to target optimization efforts.
 - Analyze logical I/O reads and writes and memory consumption by the database to detect resource-intensive patterns.
 
-<!--IMAGE_PLACEHOLDER: Azure-SQL-MI-Query-Performance.png-->
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureSQLManagedInstance/Azure-SQL-Managed-Instance-Query-Performance.png')} alt="Azure SQL Managed Instance - Query Performance" style={{border: '1px solid gray'}} width="800" />
 
 ### SQL Security Audit
 
@@ -206,7 +219,7 @@ Use this dashboard to:
 - Identify top principals, client hosts, applications, and source IPs generating audit events.
 - Review recent DDL, DML, and failed events to support compliance investigation and incident response.
 
-<!--IMAGE_PLACEHOLDER: Azure-SQL-MI-SQL-Security-Audit.png-->
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureSQLManagedInstance/Azure-SQL-Managed-Instance-SQL-Security-Audit.png')} alt="Azure SQL Managed Instance - SQL Security Audit" style={{border: '1px solid gray'}} width="800" />
 
 ### DevOps Operations Audit
 
@@ -218,19 +231,31 @@ Use this dashboard to:
 - Identify top principals and event classes generating the highest operational activity.
 - Analyze session changes and server-level configuration event details for administrative oversight.
 
-<!--IMAGE_PLACEHOLDER: Azure-SQL-MI-DevOps-Operations-Audit.png-->
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureSQLManagedInstance/Azure-SQL-Managed-Instance-DevOps-Operations-Audit.png')} alt="Azure SQL Managed Instance - DevOps Operations Audit" style={{border: '1px solid gray'}} width="800" />
 
-### Query IO and Concurrency
+### Administrative Operations
 
-The **Azure SQL Managed Instance - Query IO and Concurrency** dashboard measures I/O performance, degree of parallelism, and I/O wait patterns for query execution.
+The **Azure SQL Managed Instance - Administrative Operations** dashboard provides details on operational activities including operation type distribution, status breakdown, and recent write and delete operations.
 
 Use this dashboard to:
 
-- Monitor physical I/O reads, log bytes used, and average and maximum DOP to assess I/O intensity and parallelism.
-- Identify top queries by physical reads and analyze I/O wait type distribution to isolate storage bottlenecks.
-- Track log bytes written trends and physical I/O by query to support query-level I/O optimization.
+- Monitor the distribution of read, write, and delete operation types and their success rates across managed instances.
+- Identify top operations causing errors and correlate them with specific users or applications.
+- Track recent write and delete operations to maintain an audit trail of configuration changes.
 
-<!--IMAGE_PLACEHOLDER: Azure-SQL-MI-Query-IO-and-Concurrency.png-->
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureSQLManagedInstance/Azure-SQL-Managed-Instance-Administrative-Operations.png')} alt="Azure SQL Managed Instance - Administrative Operations" style={{border: '1px solid gray'}} width="800" />
+
+### Policy and Recommendations
+
+The **Azure SQL Managed Instance - Policy and Recommendations** dashboard provides visibility into policy event success and failure rates and recent recommendation events for managed instances.
+
+Use this dashboard to:
+
+- Monitor total successful and failed policy events to ensure proper configuration and compliance.
+- Track recent recommendations by category, impact, and resource to improve performance and security.
+- Identify trends in policy events and recommendations over time to proactively address potential issues.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureSQLManagedInstance/Azure-SQL-Managed-Instance-Policy-and-Recommendations.png')} alt="Azure SQL Managed Instance - Policy and Recommendations" style={{border: '1px solid gray'}} width="800" />
 
 ### Security and Access Governance
 
@@ -242,7 +267,7 @@ Use this dashboard to:
 - Analyze securable class distribution, success versus failure trends, and server versus database audit event ratios.
 - Review schema access by principal and TLS version distribution to identify unauthorized or insecure access patterns.
 
-<!--IMAGE_PLACEHOLDER: Azure-SQL-MI-Security-and-Access-Governance.png-->
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureSQLManagedInstance/Azure-SQL-Managed-Instance-Security-and-Access-Governance.png')} alt="Azure SQL Managed Instance - Security and Access Governance" style={{border: '1px solid gray'}} width="800" />
 
 ### Database Health and Workload Summary
 
@@ -254,7 +279,7 @@ Use this dashboard to:
 - Correlate error severity heatmaps, wait time by database, and top wait types for holistic workload health assessment.
 - Track query execution and CPU trends alongside combined workload details to understand performance trajectory.
 
-<!--IMAGE_PLACEHOLDER: Azure-SQL-MI-Database-Health-and-Workload-Summary.png-->
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureSQLManagedInstance/Azure-SQL-Managed-Instance-Database-Health-and-Workload-Summary.png')} alt="Azure SQL Managed Instance - Database Health and Workload Summary" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for Azure SQL Managed Instance
 
@@ -264,13 +289,12 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Azure SQL Managed Instance alerts
 
-| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
-|:--|:--|:--|:--|
-| `Azure SQL Managed Instance - High CPU Utilization` | This alert is triggered when average CPU utilization exceeds the threshold, indicating compute saturation. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
-| `Azure SQL Managed Instance - High Storage Utilization` | This alert is triggered when storage usage percentage exceeds the threshold, indicating storage pressure. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
-| `Azure SQL Managed Instance - Database Errors` | This alert is triggered when the total error count exceeds the threshold within the evaluation window. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
-| `Azure SQL Managed Instance - High Wait Time` | This alert is triggered when total wait time exceeds the threshold, indicating locking or I/O contention. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
-| `Azure SQL Managed Instance - Failed Security Audit Events` | This alert is triggered when the count of failed security audit events exceeds the threshold. | Critical: `> TBD`<br/>Warning: `> TBD` | Critical: `<= TBD`<br/>Warning: `<= TBD` |
+| Alert Name                                                             | Alert Description and Conditions                                                                                                                                                                  | Alert Condition                       | Recover Condition                       |
+|:-----------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------|:----------------------------------------|
+| `Azure SQL Managed Instance - High CPU Usage Alert`                    | This alert triggers a critical notification when the average CPU usage in any Azure SQL Managed Instance exceeds 90%. A warning notification is generated when the average CPU usage exceeds 80%. | Critical: `> 90`<br/>Warning: `> 80`  | Critical: `<= 90`<br/>Warning: `<= 80`  |
+| `Azure SQL Managed Instance - High Error Count`                        | This alert triggers a critical notification when the error count in any Azure SQL Managed Instance database exceeds 200. A warning notification is triggered when the error count exceeds 50.     | Critical: `> 200`<br/>Warning: `> 50` | Critical: `<= 200`<br/>Warning: `<= 50` |
+| `Azure SQL Managed Instance - High Severity Errors Alert`              | This alert is triggered when the total error count exceeds the threshold within the evaluation window.                                                                                            | Critical: `> 5`<br/>Warning: `> 1`    | Critical: `<= 5`<br/>Warning: `<= 1`    |
+
 
 ## Upgrade/Downgrade the Azure SQL Managed Instance app (Optional)
 
