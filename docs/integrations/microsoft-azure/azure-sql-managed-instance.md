@@ -187,7 +187,7 @@ Use this dashboard to:
 
 ### Timeouts
 
-The **Azure SQL Managed Instance - Timeouts** dashboard provides analysis of timeout events including counts, affected databases, error state distribution, query plan correlation, and trends over time.
+The **Azure SQL Managed Instance - Timeouts** dashboard provides analysis of timeout events, including counts, affected databases, error state distribution, query plan correlation, and trends over time.
 
 Use this dashboard to:
 
@@ -235,7 +235,7 @@ Use this dashboard to:
 
 ### Administrative Operations
 
-The **Azure SQL Managed Instance - Administrative Operations** dashboard provides details on operational activities including operation type distribution, status breakdown, and recent write and delete operations.
+The **Azure SQL Managed Instance - Administrative Operations** dashboard provides details on operational activities, including operation type distribution, status breakdown, and recent write and delete operations.
 
 Use this dashboard to:
 
@@ -289,11 +289,11 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Azure SQL Managed Instance alerts
 
-| Alert Name                                                             | Alert Description and Conditions                                                                                                                                                                  | Alert Condition                       | Recover Condition                       |
-|:-----------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------|:----------------------------------------|
-| `Azure SQL Managed Instance - High CPU Usage Alert`                    | This alert triggers a critical notification when the average CPU usage in any Azure SQL Managed Instance exceeds 90%. A warning notification is generated when the average CPU usage exceeds 80%. | Critical: `> 90`<br/>Warning: `> 80`  | Critical: `<= 90`<br/>Warning: `<= 80`  |
-| `Azure SQL Managed Instance - High Error Count`                        | This alert triggers a critical notification when the error count in any Azure SQL Managed Instance database exceeds 200. A warning notification is triggered when the error count exceeds 50.     | Critical: `> 200`<br/>Warning: `> 50` | Critical: `<= 200`<br/>Warning: `<= 50` |
-| `Azure SQL Managed Instance - High Severity Errors Alert`              | This alert is triggered when the total error count exceeds the threshold within the evaluation window.                                                                                            | Critical: `> 5`<br/>Warning: `> 1`    | Critical: `<= 5`<br/>Warning: `<= 1`    |
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure SQL Managed Instance - High CPU Usage Alert` | This alert is triggered when the average CPU usage in any Azure SQL Managed Instance exceeds 90%, generating a critical notification. A warning notification is generated when the average CPU usage exceeds 80%. | Critical: `> 90`<br/>Warning: `> 80` | Critical: `<= 90`<br/>Warning: `<= 80` |
+| `Azure SQL Managed Instance - High Error Count` | This alert is triggered when the error count in any Azure SQL Managed Instance database exceeds 200, generating a critical notification. A warning notification is triggered when the error count exceeds 50. | Critical: `> 200`<br/>Warning: `> 50` | Critical: `<= 200`<br/>Warning: `<= 50` |
+| `Azure SQL Managed Instance - High Severity Errors Alert` | This alert is triggered when the total error count exceeds the defined threshold within the evaluation window. | Critical: `> 5`<br/>Warning: `> 1` | Critical: `<= 5`<br/>Warning: `<= 1` |
 
 
 ## Upgrade/Downgrade the Azure SQL Managed Instance app (Optional)
