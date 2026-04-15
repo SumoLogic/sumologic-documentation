@@ -14,7 +14,7 @@ This detail can be important when you are building queries. There are at least t
     * **where** value **in** (integer_value1, integer_value2, integer_value3)
     * **where** value **not in** (integer_value1, integer_value2, integer_value3)
 * When you need to numerically sort a series of results from a query, like in this example:
-  ```sql
+  ```sumo
   * | parse "took *ms" as duration | toLong(duration) | sort by duration
   ```
 
@@ -33,6 +33,6 @@ You can use the function `toString()` to cast data to a string.
 
 When casting a field, remember to separate the casting statement with a pipe, like this:
 
-```sql
+```sumo
 * | parse "OSload *ms" as boot_time | number(boot_time)
 ```

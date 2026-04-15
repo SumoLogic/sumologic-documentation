@@ -31,14 +31,12 @@ For example, if you were doing a comparison with yesterday, when you use the com
 
 Compare the present results with a single time period in the past. To make the comparison, specify the time interval you want to go back, in the form of number and time granularity:
 
-```sql
-... | compare timeshift <number><time granularity>
-```
+`... | compare timeshift <number><time granularity>`
 
 The following query returns data from the present, along with results from yesterday. Here the parameter `1d` specifies the time interval we want to go back to get the data for the comparison.
 
-```sql
-... | compare timeshift 1d
+```sumo
+`... | compare timeshift 1d`
 ```
 
 This comparison can be displayed visually as:
@@ -47,7 +45,7 @@ This comparison can be displayed visually as:
 
 In another example, this query returns data from the present along with results from last week.
 
-```sql
+```sumo
 ... | compare timeshift 1w
 ```
 
@@ -55,13 +53,11 @@ In another example, this query returns data from the present along with results
 
 Compare the present results with multiple time periods in the past. The first parameter specifies the time interval between the present query and the most recent comparison point. The second parameter specifies how many comparison points to create.
 
-```sql
-... | compare timeshift <number><time granularity> <number of timeshifts>
-```
+`... | compare timeshift <number><time granularity> <number of timeshifts>`
 
 The following query returns results from the present, along with results from every day of the past week. The first parameter, 1d, specifies the interval between the points of comparison, and the second parameter, 7, specifies the number of comparisons.
 
-```sql
+```sumo
 ... | compare timeshift 1d 7
 ```
 
@@ -71,7 +67,7 @@ Which can be displayed visually as:
 
 The following query returns result from the present with results from the same day in the last 3 weeks. So if today is Monday, then this query will show a result for today and the last three Mondays.
 
-```sql
+```sumo
 ... | compare timeshift 1w 3
 ```
 
@@ -79,13 +75,11 @@ The following query returns result from the present with results from the same 
 
 Aggregate the results from multiple past time periods using an aggregation operator (`avg`, `min`, or `max`).
 
-```sql
-... | compare timeshift <number><time granularity> <number of shifts <avg/min/max>
-```
+`... | compare timeshift <number><time granularity> <number of shifts <avg/min/max>`
 
 The following query returns results from the present along with the average of the results from the last five days:
 
-```sql
+```sumo
 ... | compare timeshift 1d 5 avg
 ```
 
@@ -101,25 +95,21 @@ Other examples:
 ### Advanced
 
 You can also do multiple different comparisons queries under the same compare operator by using multiple timeshift phrases separated by commas.
-```
-... | compare\<comparison >,\<comparison >, ...
-```
+`... | compare\<comparison >,\<comparison >, ...`
 
 For example:
 
-```sql
+```sumo
 ... | compare timeshift 12h, timeshift 1d 3 avg, timeshift 1w
 ```
 
 You can specify an alias, and the columns generated use the name you specify.
 
-```sql
-... | compare <comparison 1>, <comparison 2>, ...
-```
+`... | compare <comparison 1>, <comparison 2>, ...`
 
 For example:
 
-```sql
+```sumo
 ... | compare timeshift 1d as yesterday, timeshift 1w 4 as last_four_weeks
 ```
 
@@ -132,13 +122,13 @@ For example:
 
 * Compare cannot generate more than **seven** additional queries. An additional query is generated whenever a comparison in time is initiated. Note that multiple comparisons and aggregate comparisons will generate multiple queries. For example, the following queries are not allowed:
 
-    ```sql
+    ```sumo
     ... | compare timeshift 1d 14
     ```
 
     This query compares with the past 14 days data. It is not allowed as it generates 14 queries. 
 
-    ```sql
+    ```sumo
     ... | compare timeshift 1d 5 avg, timeshift 1w  4
     ```
 
@@ -146,7 +136,7 @@ For example:
 
 * Duplicate aliases are not allowed. For example, the following query is not allowed:
 
-    ```sql
+    ```sumo
     ... | compare timeshift 1d 7 as last_week, timeshift 1d 7 avg as last_week
     ```
 
@@ -160,7 +150,7 @@ For example:
 
 Use compare to analyze the change in log counts between two days.
 
-```sql
+```sumo
 error
 | timeslice by 1h
 | count by _timeslice
@@ -177,7 +167,7 @@ Create a line chart to visualize the results.
 
 Using the multiple comparison feature, you can compare the number of logs against every ten minutes of the past hour:
 
-```sql
+```sumo
 _sourceHost = prod
 | timeslice by 1m
 | count by _timeslice
@@ -194,7 +184,7 @@ Create a line chart to visualize the results.
 
 Alternatively, you can compare against the average of all the ten minute periods:
 
-```sql
+```sumo
 _sourceHost = prod
 | timeslice by 1m
 | count by _timeslice
@@ -211,7 +201,7 @@ Create a line chart to visualize the results.
 
 Use compare to analyze the change in delays on different `_sourceHost`s using parsed data from logs.
 
-```sql
+```sumo
 "delay:"
 | parse "delay: *" as delay
 | avg(delay) as average_delay_in_millis by _sourceHost
@@ -230,7 +220,7 @@ These results would create a line chart such as the following.
 
 You can use the `compare` operator after a `transpose` operation, such as the following:
 
-```sql
+```sumo
 _sourceCategory=analytics
 | timeslice 1m
 | count by _timeslice, _sourceHost

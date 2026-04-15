@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="Monitor and Visualize icon" width="40"/>
 
 The Muting Schedules Management API allows you to pause alert notifications from monitors. When a muting schedule is active on a monitor, the monitor will still generate alerts, but no notifications will be sent. For more information, see [Muting Schedules](/docs/alerts/monitors/muting-schedules).
 

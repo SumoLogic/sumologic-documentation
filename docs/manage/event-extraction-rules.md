@@ -23,8 +23,8 @@ You need the `Manage Event Extraction Rules` [role capability](/docs/manage/user
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Event Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Event Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Event Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Event Extraction Rules**. 
-1. Click the **+ Add Event Extraction Rule** button on the top right of the table.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/event-extraction-rule.png')} alt="event-extraction-rule" style={{border: '1px solid gray'}} width="800"/>
-1. Enter the following options in the **Create New Event Extraction Rule** page:<br/><img src={useBaseUrl('img/manage/event-extraction-rule/create-event-extraction-rule.png')} alt="create-event-extraction-rule" style={{border: '1px solid gray'}} width="500"/>
+1. Click the **+ Add Event Extraction Rule** button on the top right of the table.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/event-extraction-rule.png')} alt="Event extraction rule" style={{border: '1px solid gray'}} width="800"/>
+1. Enter the following options in the **Create New Event Extraction Rule** page:<br/><img src={useBaseUrl('img/manage/event-extraction-rule/create-event-extraction-rule.png')} alt="Create event extraction rule" style={{border: '1px solid gray'}} width="500"/>
     1. **Log Query**. Enter the log search query for the event to filter the logs. 
         :::note
           - To optimize query performance, limit log volume, parse and extract only the necessary fields, and use the `fields` operator in [denylist mode](/docs/search/search-query-language/search-operators/fields/#denylist) to exclude unnecessary fields and return only what’s required for event correlation and visualization.".
@@ -58,7 +58,7 @@ To edit the existing event extraction rule, follow the below steps:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Event Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Event Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Event Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Event Extraction Rules**.
 1. Navigate to the respective event rule which you wish to edit.
-1. On the left pane, click **Edit** button.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/edit-event-extraction-rules.png')} alt="edit-event-extraction-rule" style={{border: '1px solid gray'}} width="400"/>
+1. On the left pane, click **Edit** button.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/edit-event-extraction-rules.png')} alt="Edit event extraction rule" style={{border: '1px solid gray'}} width="400"/>
 1. In the event extraction rule editing pane, perform the required editing and click **Submit** to save the changes.
 
 ## Duplicate a rule
@@ -67,7 +67,7 @@ To duplicate the existing event extraction rule, follow the below steps:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Event Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Event Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Event Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Event Extraction Rules**.
 1. Navigate to the respective event rule which you wish to duplicate.
-1. On the left pane, click **Duplicate** button.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/duplicate-event-extraction-rules.png')} alt="duplicate-event-extraction-rule" style={{border: '1px solid gray'}} width="400"/>
+1. On the left pane, click **Duplicate** button.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/duplicate-event-extraction-rules.png')} alt="Duplicate event extraction rule" style={{border: '1px solid gray'}} width="400"/>
 1. In the event extraction rule editing pane, perform the required editing and click **Submit** to duplicate the changes.
 
 ## Delete a rule
@@ -76,8 +76,8 @@ To delete the existing event extraction rule, follow the below steps:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Event Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Event Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Event Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Event Extraction Rules**.
 1. Navigate to the respective event rule which you wish to edit.
-1. On the left pane, click **Delete** button.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/delete-event-extraction-rules.png')} alt="delete-event-extraction-rule" style={{border: '1px solid gray'}} width="400"/>
-1. In the **Delete [rule name] item** pop-up, click on **Delete**.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/delete-confirm-event-extraction-rule.png')} alt="delete-confirm-event-extraction-rule" style={{border: '1px solid gray'}} width="400"/>
+1. On the left pane, click **Delete** button.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/delete-event-extraction-rules.png')} alt="Delete event extraction rule" style={{border: '1px solid gray'}} width="400"/>
+1. In the **Delete [rule name] item** pop-up, click on **Delete**.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/delete-confirm-event-extraction-rule.png')} alt="Delete confirm event extraction rule" style={{border: '1px solid gray'}} width="400"/>
 
 ## Limitations
 

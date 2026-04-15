@@ -117,6 +117,7 @@ Each source can have its own unique fields in addition to the generic fields lis
 |:--|:--|
 | [AWS CloudWatch Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awscloudwatchsource) | Polling |
 | [AWS Kinesis Firehose for Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources/#aws-kinesis-firehose-for-metricssource) | HTTP |
+| [Azure Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources/#azure-metrics-source) | Polling |
 | [OLTP Source](/docs/send-data/hosted-collectors/http-source/otlp/) | HTTP |
 
 ## Common parameters for log source types

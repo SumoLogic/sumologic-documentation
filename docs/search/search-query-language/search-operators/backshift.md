@@ -14,9 +14,7 @@ It is important to note that `backshift` does not automatically add timeslices, 
 
 ## Syntax
 
-```sql
-backshift <field> [, shift_length] [by <field>]
-```
+`backshift <field> [, shift_length] [by <field>]`
 
 ## Rules
 
@@ -32,7 +30,7 @@ Use `backshift` to see the difference of fields between time points.
 
 Running a query like this:
 
-```sql
+```sumo  
 _sourceCategory=Labs/Apache/Access
 | timeslice by 1m
 | count by _timeslice

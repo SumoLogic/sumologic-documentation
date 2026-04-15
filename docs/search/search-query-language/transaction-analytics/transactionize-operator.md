@@ -39,7 +39,7 @@ Use the [`merge` operator](merge-operator.md), which reduces a stream of events 
 Parameters must follow the `as [<field>]` clause, as shown in the above
 Syntax section. For example,   
 
-```sql
+```sumo
 | transactionize accountId as account maxlogs = 10
 ```
 
@@ -81,7 +81,7 @@ With that in mind, the logs could look similar to:
 
 To group the logs that belong to the same request, we can use [parse nodrop](/docs/search/search-query-language/parse-operators/parse-nodrop-option) to extract each session ID, then run `transactionize` to group the logs with a query similar to:
 
-```sql
+```sumo
 | parse "[system=001] [sessionId=*]" as system1Id nodrop
 | parse "[system=002][sessionId=*]" as system2Id nodrop
 | parse "[system=003][sessionId=*]" as system3Id nodrop

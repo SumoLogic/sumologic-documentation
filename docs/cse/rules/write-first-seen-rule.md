@@ -2,7 +2,7 @@
 id: write-first-seen-rule
 title: Write a First Seen Rule
 sidebar_label: First Seen Rule
-description: First seen rules allow you to generate a signal when behavior by an entity (user) is encountered that hasn't been seen before.
+description: First seen rules allow you to generate a signal when behavior by an entity (user) is encountered that has not been seen before.
 keywords:
   - sumo logic
   - cloud siem
@@ -29,7 +29,7 @@ You can use Terraform to manage first seen rules with the [`sumologic_cse_first_
 
 ## About first seen rules
 
-First seen rules allow you to generate a signal when behavior by an entity (such as a user) is encountered that hasn't been seen before. For example, a first seen rule might look for the events like the following:
+First seen rules allow you to generate a signal when behavior by an entity (such as a user) is encountered that has not been seen before. For example, a first seen rule might look for the events like the following:
 
 * First time a user logged in from a new geographic location (geolocation)
 * Newly created or added admin accounts
@@ -56,7 +56,7 @@ Watch this micro lesson to learn more about first seen rules.
 
 ## Baselines for first seen rules
 
-A first seen rule is different from other Cloud SIEM rule types in that you don’t define the criteria for firing a signal. Instead, the rule expression in a first seen rule is simply a filter condition that defines what incoming records the rule will apply to. For each first seen rule, Cloud SIEM automatically creates a baseline model of normal behavior for a defined time period (by default using data from the last 90 days) evidenced by records that match the Rule Expression. The activity found during this period is considered normal behavior and will not be alerted on. 
+A first seen rule is different from other Cloud SIEM rule types in that you don’t define the criteria for firing a signal. Instead, the rule expression in a first seen rule is a filter condition that defines what incoming records the rule will apply to. For each first seen rule, Cloud SIEM automatically creates a baseline model of normal behavior for a defined time period (by default using data from the last 90 days) evidenced by records that match the Rule Expression. The activity found during this period is considered normal behavior and will not be alerted on. 
 
 As soon as you save or update a first seen rule (or disable and re-enable it), the full baseline is built using existing data collected. A minimum of 7 days of baseline information needs to be available in order for a rule to be active and generating signals. (That is, events relevant to the baseline must be at least 7 days old before the baseline is considered complete.) If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete. 
 

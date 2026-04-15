@@ -6,7 +6,7 @@ description: The Sumo Logic app for AWS Web Application Firewall (WAF) analyzes 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="WAF icon" width="50"/>
 
 AWS Web Application Firewall (WAF) is a web application firewall that helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources.
 
@@ -55,13 +55,13 @@ The Sumo Logic app for AWS WAF analyzes traffic flowing through AWS WAF and auto
 ```
 
 ## Sample queries
-```sql title="Client IP Threat Info"
+```sumo title="Client IP Threat Info"
 _sourceCategory=AWS/WAF {{client_ip}}
 | parse "\"httpMethod\":\"*\"," as httpMethod,"\"httpVersion\":\"*\"," as httpVersion,"\"uri\":\"*\"," as uri, "{\"clientIp\":\"*\",\"country\":\"*\"" as clientIp,country, "\"action\":\"*\"" as action, "\"matchingNonTerminatingRules\":[*]" as matchingNonTerminatingRules, "\"rateBasedRuleList\":[*]" as rateBasedRuleList, "\"ruleGroupList\":[*]" as ruleGroupList, "\"httpSourceId\":\"*\"" as httpSourceId, "\"httpSourceName\":\"*\"" as httpSourceName, "\"terminatingRuleType\":\"*\"" as terminatingRuleType, "\"terminatingRuleId\":\"*\"" as terminatingRuleId, "\"webaclId\":\"*\"" as webaclId nodrop
 | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=clientip
 ```
 <!-- Per DOCS-643, replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
-```sql title="Client IP Threat Info"
+```sumo title="Client IP Threat Info"
 _sourceCategory=AWS/WAF {{client_ip}}
 | parse "\"httpMethod\":\"*\"," as httpMethod,"\"httpVersion\":\"*\"," as httpVersion,"\"uri\":\"*\"," as uri, "{\"clientIp\":\"*\",\"country\":\"*\"" as clientIp,country, "\"action\":\"*\"" as action, "\"matchingNonTerminatingRules\":[*]" as matchingNonTerminatingRules, "\"rateBasedRuleList\":[*]" as rateBasedRuleList, "\"ruleGroupList\":[*]" as ruleGroupList, "\"httpSourceId\":\"*\"" as httpSourceId, "\"httpSourceName\":\"*\"" as httpSourceName, "\"terminatingRuleType\":\"*\"" as terminatingRuleType, "\"terminatingRuleId\":\"*\"" as terminatingRuleId, "\"webaclId\":\"*\"" as webaclId nodrop
 | threatlookup singleIndicator clientip

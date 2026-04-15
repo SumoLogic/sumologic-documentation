@@ -20,7 +20,7 @@ The list of IP ranges is shared infrastructure. It is not limited to Sumo Logic 
 
 You can run the following query against the downloaded file in Sumo Logic to determine the IP addresses for each deployment.
 
-```sql
+```sumo
 | parse regex "\s+\"ip_prefix\":\s+\"(?<ip_prefix>.*?)\",\n\s+\"region\":\s+\"(?<region>.*?)\",\n\s+\"service\":\s+\"(?<service>.*?)\"" multi
 | where service="AMAZON"
   and (

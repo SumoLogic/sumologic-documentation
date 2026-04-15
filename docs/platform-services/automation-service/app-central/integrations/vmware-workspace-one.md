@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-workspace-one.png')} alt="vmware-workspace-one" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-workspace-one.png')} alt="VMware Workspace ONE icon" width="80"/>
 
 ***Version: 1.1  
 Updated: Jul 07, 2023***

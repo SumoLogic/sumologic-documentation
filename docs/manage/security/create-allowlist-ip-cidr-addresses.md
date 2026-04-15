@@ -1,7 +1,7 @@
 ---
 id: create-allowlist-ip-cidr-addresses
 title: Create an Allowlist for IP or CIDR Addresses
-description: Service Allowlist Settings let you explicitly grant access to specific IP or CIDR addresses.
+description: Create a Sumo Logic Service Allowlist to restrict logins, API access, and dashboard sharing to specific IP addresses or CIDR ranges for enhanced security.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

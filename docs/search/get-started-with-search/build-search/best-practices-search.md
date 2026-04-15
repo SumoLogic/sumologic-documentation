@@ -22,13 +22,13 @@ Whenever possible, use keyword searches and fields already extracted using [Fiel
 
 **Best approach:** Field Extraction Rule field AND keyword
 
-```sql
+```sumo
 _sourceCategory=foo and fielda=valuea
 ```
 
 **Good approach:** Keyword search AND where operator
 
-```sql
+```sumo
 _sourceCategory=foo and valuea
 | parse "somefield *" as somefield
 | where somefield="valuea"
@@ -38,7 +38,7 @@ Only use this option if a keyword alone does not provide the desired results.
 
 **Least preferred approach:** No keyword search, no pre-extracted field
 
-```sql
+```sumo
 _sourceCategory=foo
 | parse "somefield *" as somefield
 | where somefield="valuea"
@@ -50,7 +50,7 @@ When filtering data, make the result set you are working with as small as possib
 
 **Best approach:**
 
-```sql
+```sumo
 _sourceCategory=Prod/User/Eventlog user="john"
 | count by user
 ```
@@ -59,7 +59,7 @@ This example assumes that you also leverage a Field Extraction Rule to eliminate
 
 **Least preferred approach:**
 
-```sql
+```sumo
 _sourceCategory=Prod/User/Eventlog
 | count by user
 | where user="john"
@@ -77,11 +77,11 @@ If you need to use parse regex, avoid the use of expensive operations like `.*`.
 52.87.131.109 - - [2016-09-12 20:13:52.870 +0000] "GET /blog/index.php HTTP/1.1" 304 8932
 ```
 
-```sql title="Best approach"
+```sumo title="Best approach"
 | parse regex "(?<client_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s"
 ```
 
-```sql title="Least preferred approach"
+```sumo title="Least preferred approach"
 | parse regex "(?<client_ip>.*)\s-"
 ```
 
@@ -99,14 +99,14 @@ Whenever possible, you should aggregate data prior to doing a [lookup](/docs/sea
 
 **Best approach:**
 
-```sql
+```sumo
 | count by client_ip
 | lookup is_bad_ip from shared/bad/ips on client_ip=ip
 ```
 
 **Less preferred approach:**
 
-```sql
+```sumo
 | lookup is_bad_ip from shared/bad/ips on client_ip=ip
 | count by is_bad_ip
 ```
@@ -118,7 +118,7 @@ pipe-delimited operation on a separate line.
 
 **Best approach:**
 
-```sql
+```sumo
 _sourceCategory=Apache/Access and GET
 | parse "\"GET * HTTP/1.1\"\" * * \"\"*\"\"" as url,status_code,size,referrer
 | count by status_code,referrer
@@ -127,7 +127,7 @@ _sourceCategory=Apache/Access and GET
 
 **Less preferred approach:**
 
-```sql
+```sumo
 _sourceCategory=Apache/Access and GET
 | parse "\"GET * HTTP/1.1\"\" * * \"\"*\"\"" as url,status_code,size,referrer
 | count by status_code,referrer | sort _count

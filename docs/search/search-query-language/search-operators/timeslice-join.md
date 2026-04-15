@@ -20,7 +20,7 @@ For example, if your table is named *errors*, your field would be `errors__times
 
 Here's an example query:
 
-```sql
+```sumo
 *
 | timeslice 1h
 | join

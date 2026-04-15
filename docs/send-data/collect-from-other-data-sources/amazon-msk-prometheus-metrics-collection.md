@@ -88,7 +88,7 @@ To install and configure Telegraf, do the following:
     * `<MSK_NODE>:11002/metrics` is the [Node Exportermetrics](https://github.com/prometheus/node_exporter)
     :::
 
-```sql
+```sumo
 [agent]
 # The interval property in the agent tells telegraf how often to scrape the metrics.
     interval = "60s"

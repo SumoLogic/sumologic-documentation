@@ -191,7 +191,7 @@ Content for tab 2.
 
 ## Reusable Partials (Snippets)
 
-Shared content lives in `/docs/reuse/` — these files are not rendered publicly.
+Shared content lives in `/docs/reuse/` -- these files are not rendered publicly.
 
 ```markdown
 import MySnippet from '../reuse/my-snippet.md';
@@ -254,7 +254,7 @@ import Iframe from 'react-iframe';
 },
 ```
 
-### Sidebar ID → file path mapping
+### Sidebar ID to file path mapping
 - Sidebar entry `'section/my-page'` maps to file `docs/section/my-page.md` with frontmatter `id: my-page`
 - For `index.md` files with `slug:`, use the path `'section/index'`
 
@@ -277,8 +277,8 @@ import Iframe from 'react-iframe';
 
 ## Key Docusaurus Plugins Available
 
-- `remark-code-import` — import code from files into code blocks
-- `remark-import-partial` — import markdown files as partials
+- `remark-code-import` -- import code from files into code blocks
+- `remark-import-partial` -- import markdown files as partials
 
 ## Custom Admonition Keywords (configured in this repo)
 
@@ -290,3 +290,19 @@ import Iframe from 'react-iframe';
 yarn start   # hot-reload dev server
 yarn build   # full production build
 ```
+
+---
+
+## Gotchas
+
+These are repo-specific behaviors that differ from standard Docusaurus defaults.
+
+- **`/docs/reuse/` files must not appear in `sidebars.ts`.** They are import-only partials. Adding them to the sidebar will create broken or duplicate pages.
+- **`:::sumo` and `:::training` are custom admonitions** configured only in this repo. Standard Docusaurus will not recognize them. Do not add them to other Docusaurus projects.
+- **`:::training` renders with a purple background and graduation cap icon** -- it is intentionally distinct from `:::tip`.
+- **`secondary` and `success` are also custom admonition keywords** in this repo, in addition to the standard Docusaurus set.
+- **Never write an H1 in the body.** The `title:` frontmatter generates the H1. A second H1 in the body breaks page structure and SEO.
+- **Use `id:` for content pages, `slug:` for index/hub pages.** Using `slug:` on a regular content page can break sidebar linking.
+- **Numbered list items in source always use `1.`** Docusaurus handles auto-incrementing on render. Do not manually number `1.`, `2.`, `3.`.
+- **MDX is active.** Curly braces `{` and angle brackets `<` in prose must be escaped or they will cause build errors. Use `\{` and `&lt;` in plain text contexts.
+- **Webpack cache conflicts with Algolia search.** The CI build clears webpack cache on each run. Do not add webpack cache back to the PR workflow.

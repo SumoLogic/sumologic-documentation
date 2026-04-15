@@ -7,7 +7,7 @@ description: The Microsoft Graph Security V2 app for Sumo Logic enables you to i
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="icon" width="50"/>
+<img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="MS Graph icon" width="50"/>
 
 The Microsoft Graph Security V2 app for Sumo Logic empowers you to analyze security threats and take proactive measures to safeguard your organization. With its comprehensive widgets, you can track and analyze your security alerts in detail.
 
@@ -174,7 +174,7 @@ This app uses Sumo Logic's Microsoft Graph Security Source to collect v2 [Alerts
 
 ### Sample queries     
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourceCategory={{Logsdatasource}} id
 | json "id", "status", "severity", "classification" as  alert_id, status, severity, classification nodrop
 
@@ -227,7 +227,7 @@ The **Microsoft Graph Security - Alerts Overview** dashboard lets you analyze se
 
 The top users associated with the alerts widget help you pinpoint and address potential security risks related to user behavior efficiently. The recent alerts widget offers a quick snapshot of the latest security activity, ensuring that you are always up-to-date on the latest developments.
 
-<img src={useBaseUrl('/img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Overview-v2.png')} alt="Microsoft-Graph-Security-Alerts-Overview" />
+<img src={useBaseUrl('/img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Overview-v2.png')} alt="Microsoft Graph Security Alerts Overview" />
 
 ### Alerts Security Overview
 
@@ -235,7 +235,7 @@ The **Microsoft Graph Security - Alerts Security Overview** dashboard allows you
 
 The top 10 countries with malicious or suspicious IP addresses help to identify and mitigate potential threats originating from countries with a history of suspicious or malicious IP activity. The top 10 user accounts with compromised role highlights user accounts with compromised roles, necessitating immediate investigation, and remediation to protect sensitive data and system integrity. The top 10 attacked device gives an overview of the most targeted devices.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Security-Overview-v2.png')} alt="Microsoft-Graph-Security-Alerts-Security-Overview" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Security-Overview-v2.png')} alt="Microsoft Graph Security Alerts Security Overview" />
 
 ## Create monitors for Microsoft Graph Security app
 

@@ -7,7 +7,7 @@ description: Learn the benefits of Dashboard and how it seamlessly integrates lo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/dashboards/about-dashboard/dashboards.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/dashboards/about-dashboard/dashboards.png')} alt="Dashboards icon" width="50"/>
 
 Dashboard allows you to analyze metric and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to effectively monitor and manage a Kubernetes environment.
 

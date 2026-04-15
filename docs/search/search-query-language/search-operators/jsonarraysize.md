@@ -9,13 +9,11 @@ Use the `jsonArraySize` operator to determine the size of a JSON array field.
 
 ## Syntax
 
-```sql
-jsonArraySize(field)
-```
+`jsonArraySize(field)`
 
 ## Example
 
-```sql
+```sumo
 _sourceCategory=stream .ett 
 | fields tiers 
 | jsonArraySize("[1, 2, 3]") as js 
