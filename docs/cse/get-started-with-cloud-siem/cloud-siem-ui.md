@@ -46,7 +46,6 @@ Use the **Cloud SIEM** sidebar menu to access:
     * [**Rule Tuning**](/docs/cse/rules/rule-tuning-expressions/). Manage rule tuning expressions, which are extensions to rules.
     * [**Threat Intelligence**](/docs/cse/administration/create-custom-threat-intel-source/). Manage sources of threat intelligence indicators, individual data points about threats that are gathered from external sources.
     * [**Match List**](/docs/cse/match-lists-suppressed-lists/create-match-list/). Manage match lists, lists of important indicators and identifiers that you want to be addressed by rules.
-    * [**File Analysis**](/docs/cse/rules/import-yara-rules/). Manage sources for YARA rules.
     * [**Custom Insights**](/docs/cse/records-signals-entities-insights/configure-custom-insight/). Manage custom insights, methods to generate insights on some basis other than entity Activity Scores.
     * [**Network Blocks**](/docs/cse/administration/create-use-network-blocks/). Manage network blocks, groups of IP addresses that you can use in rules.
     * [**Suppressed Lists**](/docs/cse/match-lists-suppressed-lists/suppressed-lists/). Manage suppressed lists, lists of indicators that can suppress signal generation.
@@ -90,7 +89,6 @@ Use the **Go To...** menu to access these Cloud SIEM features:
 * [**Custom Types**](/docs/cse/records-signals-entities-insights/create-custom-entity-type/). Manage custom types to more precisely categorize entities.
 * [**Enrichment**](/docs/cse/integrations/enrichments-and-indicators/). Manage elements that enrich data in Cloud SIEM.
 * [**Entities**](/docs/cse/records-signals-entities-insights/view-manage-entities/). View entities, unique actors encountered in incoming messages, such as a user, IP address, or host.
-* [**File Analysis**](/docs/cse/rules/import-yara-rules/). Manage sources for YARA rules. 
 * [**Ingest Mappings**](/docs/cse/ingestion/sumo-logic-ingest-mapping/). Manage the mapping for data ingestion from a data source to Cloud SIEM.
 * [**Insight Detection**](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/). Set the insight detection threshold.
 * [**Insight Resolutions**](/docs/cse/administration/manage-custom-insight-resolutions/). Manage custom insight resolutions.
@@ -139,7 +137,6 @@ Use the **Content** menu to access:
 * [**Rule Tuning**](/docs/cse/rules/rule-tuning-expressions/). Manage rule tuning expressions, which are extensions to rules.
 * [**Threat Intelligence**](/docs/cse/administration/create-custom-threat-intel-source/). Manage sources of threat intelligence indicators, individual data points about threats that are gathered from external sources. 
 * [**Match Lists**](/docs/cse/match-lists-suppressed-lists/create-match-list/). Manage match lists, lists of important indicators and identifiers that you want to be addressed by rules.
-* [**File Analysis**](/docs/cse/rules/import-yara-rules/). Manage sources for YARA rules.
 * [**Custom Insights**](/docs/cse/records-signals-entities-insights/configure-custom-insight/). Manage custom insights, methods to generate insights on some basis other than entity Activity Scores.
 * [**Network Blocks**](/docs/cse/administration/create-use-network-blocks/). Manage network blocks, groups of IP addresses that you can use in rules.
 * [**Suppressed Lists**](/docs/cse/match-lists-suppressed-lists/suppressed-lists/). Manage suppressed lists, lists of indicators that can suppress signal generation.

@@ -7,7 +7,7 @@ description: The Sumo Logic app for Cisco Meraki provides a single-pane-of-glass
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/ciscomeraki.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/ciscomeraki.png')} alt="Cisco Meraki icon" width="75"/>
 
 The Cisco Meraki app provides a single-pane-of-glass for monitoring and troubleshooting network security, end-to-end performance, switch port management, and device management of your Cisco Meraki wireless infrastructure management platform.  
 
@@ -85,7 +85,7 @@ into slot 1
 
 The following query is from the High Severity Threats panel of the Cisco Meraki - Overview dashboard.
 
-```sql
+```sumo
 _sourceCategory=*meraki* "security_event"
 | parse regex " (?<name>\S*?)\s(?<msg_type>urls|flows|events|ids-alerts|security_event|airmarshal_events?)\s+"
 | parse "security_event * signature=* priority=* timestamp=* dhost=* direction=* protocol=* src=*:* dst=*:* message: *" as type, signature, priority, timestamp, dhost, direction, protocol, src_ip, src_port, dest_ip, dest_port, msg nodrop

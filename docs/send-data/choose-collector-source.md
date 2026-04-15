@@ -70,7 +70,7 @@ The Installed Collector and OpenTelemetry Collector are two popular collectors u
 
 **OpenTelemetry Collector**. The OpenTelemetry Collector is a single-agent management solution that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports sources such as Local File, Syslog, Host/Process Metrics, Streaming Metrics, and Transaction Tracing. It provides support for Ingest Budgets, Collector Management API, and remote management. However, it does not provide support for remote upgrades or CPU targets. Instead, upgrades are managed through package managers (yum, apt-get).
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Watch this micro lesson to learn why OpenTelemetry collector should be your first choice.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/g078z3y6ux?web_component=true&seo=true&videoFoam=false"
@@ -181,7 +181,7 @@ If you have additional questions, a [Sumo Logic sales representative](https://w
 
 Depending on the method you'd like to collect logs, and the types of logs you'd like to collect, Sumo Logic has two types of Collectors you can choose from. Learn how to choose your collector that's right for your environment through our video, "Choosing Your Collector Type".
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/iac5fqlnk4?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -206,7 +206,7 @@ The following table shows the major differences between them.
 
 ## Sumo Logic Sources
 
-<img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/icons/operations/collect.png')} alt="Collect icon" width="75"/>
 
 Sources are the environments that Sumo Logic Collectors connect to collect data from your site. Each Source is configured to collect files in a specific way, depending on the type of Collector you're using.
 
@@ -219,7 +219,7 @@ When registering a Collector, you also have the option of [configuring the Coll
 The maximum number of Sources allowed on a Collector is 1,000.
 :::
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/tzmrnrx0cf?web_component=true&seo=true&videoFoam=false"
   width="854px"

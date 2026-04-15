@@ -11,7 +11,7 @@ description: This integration accesses CyberArk SIEM integration API to retrieve
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/cyberark.png')} alt="CyberArk icon" width="50"/>
 
 The CyberArk Identity Security platform is a comprehensive identity management solution that enhances enterprise security through features such as single sign-on, multi-factor authentication, and privileged access control. It streamlines identity operations while providing extensive protection against both external and internal cyber threats.
 
@@ -49,9 +49,10 @@ To configure a CyberArk Audit source, follow the steps below:
 1. **Name**. Enter a name to display for the source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
 1. **Identity ID**. Enter your identity ID collected from the [Vendor configuration](#vendor-configuration) section. For example, `ac212`.
+1. Select the **Use my.idaptive.app domain for token URL** checkbox if you are using the `my.idaptive.app` domain in your CyberArk audit credentials. By default, this checkbox will not be selected and it will use the `id.cyberark.cloud` domain.
 1. **Web Application ID**. Enter your application ID collected from the [Vendor configuration](#vendor-configuration) section. For example, `sumologic`.
 1. **Username**. Enter your username(client-id) collected from the [Vendor configuration](#vendor-configuration) section. For example, `user@cyberark.cloud.1234`.
 1. **Password**. Enter your password(client-secret) collected from the [Vendor configuration](#vendor-configuration) section.
@@ -63,6 +64,10 @@ To configure a CyberArk Audit source, follow the steps below:
 1. **Polling Interval**. The polling interval is the frequency at which the CyberArk Audit C2C source will check for updates from the CyberArk Audit API. By default, the polling interval is set to 5 minutes.
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the CyberArk Audit source, consider installing the Sumo Logic app for [CyberArk Audit](/docs/integrations/saas-cloud/cyberark-audit/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## JSON schema
 
@@ -83,6 +88,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"` |
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the collector or source. Use the boolean field `_siemForward` to enable forwarding to SIEM.| `{"_siemForward": false, "fieldA": "valueA"}` |
 | identityId | String | Yes | `null` | Identity ID for your CyberArk account. | `ac212` |
+| useIdaptiveDomain | Boolean | No | `null` |  Specify if we need to use the `my.idaptive.app` domain. | |
 | appId | String | Yes |  `null` | App ID for your CyberArk account. | `sumologic` |
 | username | String | Yes |  `null` | Username(Client ID) for your configured server. | `myuser@cyberark.cloud.1234` |
 | password | String | Yes |  `null` | Password for your configured server. | |

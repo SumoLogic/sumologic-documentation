@@ -66,7 +66,7 @@ Do not use the Pct or Avg operators: they do not yield accurate results. Beca
 * Max
 * Sum
 
-## Scheduled View Validation
+## Scheduled View validation
 
 Scheduled View validation works this way:
 
@@ -80,7 +80,7 @@ This can be calculated by taking the sum over timeslices and dividing by the tot
 
 **Original Search:**
 
-```sql
+```sumo
 _sourceCategory=mySourceCategory "literal search term"
 | parse “seconds = *,” as seconds
 | avg(seconds)
@@ -88,7 +88,7 @@ _sourceCategory=mySourceCategory "literal search term"
 
 **Scheduled View Definition:**
 
-```sql
+```sumo
 _sourceCategory=mySourceCategory "literal search term"
 | parse “seconds = *,” as seconds
 | timeslice 1m
@@ -97,20 +97,20 @@ _sourceCategory=mySourceCategory "literal search term"
 
 **Query:**
 
-```sql
+```sumo
 _view=myScheduledView
 | sum(secondspertimeslice) as totalseconds, sum(countpertimeslice) as totalcount
 | totalseconds / totalcount as theaverage
 ```
 
-### Other Operators
+### Other operators
 
 **Count_Distinct, First, Last, Min, Max, Most_Recent, Least_Recent, Pct, Stddev, "Math Values", and RollingStd.**   
 Create the Scheduled View with a **count** operator to count by the fields you want to aggregate with instead of the unsupported operator. Then you can reference the View and run the aggregation you want.
 
 For example, if you want to create a Scheduled View with **most_recent**:
 
-```sql
+```sumo
 _sourceCategory=receiver
 | parse "dataPointCount=*)" as points
 | parse "remote_ip=*]" as ip
@@ -120,7 +120,7 @@ _sourceCategory=receiver
 
 Remove the unsupported operation, **most_recent**, and instead create a Scheduled View with the **count** operator:
 
-```sql
+```sumo
 _sourceCategory=receiver
 | parse "dataPointCount=*)" as points
 | parse "remote_ip=*]" as ip
@@ -130,20 +130,20 @@ _sourceCategory=receiver
 
 If the View's name was **Points** you can use the **most_recent** operator against the View:
 
-```sql
+```sumo
 _view=Points
 | most_recent(points_withtime) as last_result by ip
 ```
 
-## Scheduled View Examples
+## Scheduled View examples
 
 Below are a few examples of queries that can be optimized with a Scheduled View. The original search, the Scheduled View definition, and the query that can be run on the Scheduled View are all shown.
 
-### Pre-Aggregating Data
+### Pre-aggregating data
 
 **Original Search:**
 
-```sql
+```sumo
 _sourceCategory=mySourceCategory "literal search term"
 | parse "[clientip *]" as clientip
 | if (clientip matches "*-*","timeout","slow") as type
@@ -153,7 +153,7 @@ _sourceCategory=mySourceCategory "literal search term"
 
 **Scheduled View Definition:**
 
-```sql
+```sumo
 _sourceCategory=mySourceCategory "literal search term"
 | parse "[clientip *]" as clientip
 | if (clientip matches "*-*","timeout","slow") as type
@@ -163,30 +163,30 @@ _sourceCategory=mySourceCategory "literal search term"
 
 **Query:**
 
-```sql
+```sumo
 _view=myScheduledView
 | timeslice 1h
 | sum(value) as value by _timeslice, type
 ```
 
 
-### Improving Search Performance
+### Improving search performance
 
 **Original Search:**
 
-```sql
+```sumo
 _sourceCategory=iis_logs | parse "* * 192.* " as date,time,internalip
 ```
 
 **Scheduled View Definition:**
 
-```sql
+```sumo
 _sourceCategory=iis_logs | parse "* * 192.* " as date,time,internalip
 ```
 
 **Query:**
 
-```sql
+```sumo
 _view=myScheduledView2
 ```
 
@@ -194,11 +194,11 @@ _view=myScheduledView2
 Notice the parse statement will drop any log entries that do not contain the 192.\* internal IP string from the _sourceCategory. This will create a smaller subset of data that may be more appropriate for a Scheduled View. If you were searching through all of the IIS logs on a regular basis, a partition may be a better solution to improve query performance.
 :::
 
-### Lightweight vs Robust Scheduled View
+### Lightweight vs robust Scheduled View
 
 This Scheduled View query is lightweight, and contains only one group:
 
-```sql
+```sumo
 _sourceCategory=prod/web/iis | timeslice 1m | count by _timeslice
 ```
 
@@ -208,7 +208,7 @@ which would produce results like:
 
 Compared to this Scheduled View query, which is more robust, but five times heavier with one additional column:
 
-```sql
+```sumo
 _sourceCategory=prod/web/iis | timeslice 1m | count by _timeslice, status_code
 ```
 
@@ -218,7 +218,7 @@ This would produce results like:
 
 Now you can use **sum** on your records, because the counts are broken out. For example, use the sum operator to aggregate the aggregation in the following query:
 
-```sql
+```sumo
 _view=nice_view_man | timeslice 1d | sum(_count) by _timeslice, status_code
 ```
 

@@ -230,12 +230,12 @@ Searches and dashboards can be shared and unshared at any time. Additionally, o
 
 ## Import and Export Content in the library
 
-In the **Library**, you can export content as JSON, including whole folders with subfolders, saved log searches, saved metric queries, and dashboards. Then you can import the content as JSON into the same or another Sumo Logic organization.
+In the **Library**, you can export content as JSON, including whole folders with subfolders, saved log searches, saved metric queries, lookup tables, and dashboards. Then you can import the content as JSON into the same or another Sumo Logic organization.
 
 The Export and Import functions are provided in order for you to transfer data immediately. The Sumo Logic JSON format may change without notice. There is no guarantee that you will be able to import the JSON in the future.
 
 :::warning limitations
-* Recent Searches, Favorites, Scheduled Views, Partitions, Field Extraction Rules (FERs), and lookups are not supported.
+* Recent Searches, Favorites, Scheduled Views, Partitions, and Field Extraction Rules (FERs) are not supported.
 * For content that is shared, only the content is imported, not the Shared state. You can [share](/docs/dashboards) it again as necessary.
 * All content names must be unique within a folder in the library.
 * Only error free JSON will import successfully.

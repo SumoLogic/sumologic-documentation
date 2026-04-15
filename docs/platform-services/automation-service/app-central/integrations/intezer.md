@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/intezer.png')} alt="ip-api" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/intezer.png')} alt="Intezer icon" width="90"/>
 
 ***Version: 1.1  
 Updated: Jul 07, 2023***

@@ -17,48 +17,48 @@ With the Sumo Logic apps for PCI Compliance, you can meet evolving PCI requireme
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/pci-compliance/opentelemetry')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="55"/><h4>OpenTelemtry</h4></a>
+  <a href={useBaseUrl('docs/integrations/pci-compliance/opentelemetry')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="55"/><h4>OpenTelemtry</h4></a>
   <p>A guide to OpenTelemetry apps for PCI compliance.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="PCI icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/cloudtrail-pci-compliance')}>PCI Compliance for AWS CloudTrail</a></h4>
   <p>A guide to the Sumo Logic app for PCI Compliance for AWS CloudTrail(Legacy).</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="55"/>
+  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="PCI icon" width="55"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/vpc-flow-logs-pci-compliance')}>PCI Compliance for Amazon VPC Flow Logs</a></h4>
   <p>A guide to the Sumo Logic app for PCI Compliance for Amazon VPC Flow Logs.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="PCI icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/pci-compliance/linux')}>PCI Compliance for Linux</a></h4>
   <p>A guide to the Sumo Logic app for PCI Compliance for Linux.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="55"/>
+  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="PCI icon" width="55"/>
   <h4><a href={useBaseUrl('docs/integrations/pci-compliance/palo-alto-networks-9')}>PCI Compliance for Palo Alto Networks 9</a></h4>
   <p>A guide to the Sumo Logic app for PCI Compliance for Palo Alto Networks 9.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="PCI icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/pci-compliance/palo-alto-networks-10')}>PCI Compliance for Palo Alto Networks 10 (Legacy)</a></h4>
   <p>A guide to the Sumo Logic app for PCI Compliance for Palo Alto Networks 10(Legacy).</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="55"/>
+  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="PCI icon" width="55"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/windows-json-pci-compliance')}>PCI Compliance for Windows JSON</a></h4>
   <p>A guide to the Sumo Logic app for PCI Compliance for Windows JSON.</p>
   </div>

@@ -119,17 +119,13 @@ The Network Sensor extracts files observed over cleartext protocols that match s
 * `application/x-msdownload`
 * `application/x-msdos-program`
 
-:::note
-YARA [file analysis](/docs/cse/rules/import-yara-rules) is supported only for files extracted by the Network Sensor. If you use your own Zeek deployment and ingest logs using a Sumo Logic source you can't also upload extracted files. 
-:::
-
 ### Filtering Zeek logs
 
 This section describes two methods you can use to filter the logs that the Network Sensor sends to Cloud SIEM.
 
 * You can configure a Berkeley Packet Filter (BPF) filter using the [filter](/docs/cse/sensors/network-sensor-deployment-guide) parameter in Network Sensor’s configuration file, `trident-sensor.cfg`. This is the most efficient filtering mechanism as it is performed before Network Sensor processing.
 
-    The value of the `filter` parameter is an expression that begins with `not`. This example expression ensures the that the Network Sensor won't process any traffic involving host `a.b.c.com` or host `d.e.f.com`:
+    The value of the `filter` parameter is an expression that begins with `not`. This example expression ensures the that the Network Sensor will not process any traffic involving host `a.b.c.com` or host `d.e.f.com`:
 
     `not ( host a.b.c.com ) and not ( host d.e.f.com )`
 
@@ -143,4 +139,4 @@ This section describes two methods you can use to filter the logs that the Netwo
 
     You can add additional Zeek log types to the list to exclude them.
 
-The BPF filter is applied before `skipped_log_types`. So, given the example BPF filter above, if you add `dns` to the `skipped_log_types` value, you won't ingest logs related to traffic involving hosts `a.b.c.com` or `d.e.f.com`, and you won't ingest DNS data.
+The BPF filter is applied before `skipped_log_types`. So, given the example BPF filter above, if you add `dns` to the `skipped_log_types` value, you will not ingest logs related to traffic involving hosts `a.b.c.com` or `d.e.f.com`, and you will not ingest DNS data.

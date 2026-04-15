@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 To temporarily prevent a user from logging into the Sumo Logic service, you can change the user's status to Inactive. You can reactivate an inactive user at any time without the need to re-enter user details.
 
 :::note
-If you want to permanently remove a user, [you can delete them](delete-user.md). However, before you delete a user, make sure to perform the steps in [Offboard a User](offboard-user.md).
+If you want to permanently remove a user, [you can delete them](/docs/manage/users-roles/users/delete-user/). However, before you delete a user, make sure to perform the steps in [Offboard a User](/docs/manage/users-roles/users/offboard-user/).
 :::
 
 ## What happens when you deactivate a user

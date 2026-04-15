@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-webex.png')} alt="cisco-webex" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-webex.png')} alt="Cisco Webex icon" width="70"/>
 
 ***Version: 1.3  
 Updated: Jun 27, 2023***

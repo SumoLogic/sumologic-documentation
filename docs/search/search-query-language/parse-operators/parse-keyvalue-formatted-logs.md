@@ -52,13 +52,13 @@ For example, this is a log with many key value pairs:
 
 To extract the values for the keys "serviceinfo.IP" and "perf.request_start_timestamp_ms" from the log message, use this query:
 
-```sql
+```sumo
 * | keyvalue regex "\s(.*?)=(.*?)," keys "serviceinfo.IP", "perf.request_start_timestamp_ms" as ip, start_ms
 ```
 
 The **keyvalue** operator also supports regular expressions that contain a **single capture group**. The capture group needs to match the value from your key value pair. You may notice an improvement in performance by running queries with a single match group. For example, for the same log you'd run this query to get the same results as the previous query:
 
-```sql
+```sumo
 * | keyvalue regex "=(.*?)," "serviceinfo.IP", "perf.request_start_timestamp_ms"
 ```
 
@@ -70,19 +70,19 @@ The number of fields specified with the "as" clause must match the number of key
 
 The **keyvalue** operator can be abbreviated in either mode (Inference or Regular Expression). For example, running this query:
 
-```sql
+```sumo
 * | keyvalue infer keys "<a>", "<b>"
 ```
 
 will produce the same results as running this query:
 
-```sql
+```sumo
 * | keyvalue "<a>", "<b>"
 ```
 
 Also, **keyvalue** can be abbreviated to "kv". For example:
 
-```sql
+```sumo
 * | kv "<a>", "<b>"
 ```
 
@@ -90,7 +90,7 @@ Also, **keyvalue** can be abbreviated to "kv". For example:
 
 The **keyvalue** operator supports an optional auto mode when using the default Inference mode.
 
-```sql
+```sumo
 * | keyvalue auto
 ```
 
@@ -99,7 +99,7 @@ The **keyvalue** operator supports an optional auto mode when using the defaul
 * If you want to be able to use the keys later in the query, they must be referred to specifically.
 * You can separate the key and value in a key-value pair using any of these delimiters:
 
-    ```sql
+    ```sumo
     : = ->
     ```
 
@@ -108,7 +108,7 @@ The **keyvalue** operator supports an optional auto mode when using the defaul
 If your log messages contain more than one delimiter you must specify
 one delimiter to use when extracting.
 
-```sql
+```sumo
 * | keyvalue auto delim ":"
 ```
 
@@ -116,27 +116,27 @@ one delimiter to use when extracting.
 
 * **Aliases (renaming)** using [**as**](/docs/search/search-query-language/search-operators/as) are supported. For example:
 
-    ```sql
+    ```sumo
     * | keyvalue auto keys "<key1>", "<key2>" as <field1>, <field2>
     ```
 
 * **refonly** extracts only referenced keys. If this option is not used, **keyvalue auto** extracts all other fields it finds in the message.
 
-    ```sql
+    ```sumo
     * | kv auto keys "<key1>", "<key2>"  refonly
     ```
 
 * **field**=field_name allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md).
 
-    ```sql
+    ```sumo
     * | keyvalue field=<field> [infer keys]
     ```
 
-    ```sql
+    ```sumo
     * | keyvalue auto field=<field> [keys]
     ```
 
-    ```sql
+    ```sumo
     * | keyvalue field=<field> regex "<regex>" [keys]
     ```
 

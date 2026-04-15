@@ -15,7 +15,7 @@ import CisNote from '../../reuse/cis-note.md';
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/opentelemetry')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="55"/><h4>OpenTelemtry</h4></a>
+  <a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/opentelemetry')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="55"/><h4>OpenTelemtry</h4></a>
   <p>A guide to OpenTelemetry apps for Cloud security monitoring and analytics.</p>
   </div>
 </div>
@@ -28,70 +28,70 @@ import CisNote from '../../reuse/cis-note.md';
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/guardduty.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/guardduty.png')} alt="GuardDuty icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/amazon-guardduty/')}>Amazon GuardDuty</a></h4>
   <p>A guide to Amazon GuardDuty Cloud Security Monitoring and Analytics.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_AWS_VPCFlow.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_AWS_VPCFlow.png')} alt="Secmon Aws Vpcflow icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/amazon-vpc-flow')}>Amazon VPC Flow</a></h4>
   <p>A guide to the Sumo Logic app for Amazon VPC Flow.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-   <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/security-qs.png')} alt="Thumbnail icon" width="50"/>
+   <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/security-qs.png')} alt="Security QS icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/aws-security-hub')}>AWS Security Hub</a></h4>
   <p>A guide to the Sumo Logic app for AWS Security Hub.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/security-qs.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/security-qs.png')} alt="Security QS icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/aws-security-hub-ocsf')}>AWS Security Hub - OCSF</a></h4>
   <p>A guide to the Sumo Logic app for AWS Security Hub - OCSF.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/waf.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/waf.png')} alt="WAF icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/aws-waf')}>AWS WAF</a></h4>
   <p>A guide to the Sumo Logic app for AWS WAF Security Analytics.</p>
       </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Linux.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Linux.png')} alt="Secmon Linux icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/linux')}>Linux</a></h4>
   <p>A guide to the Sumo Logic app for Linux Cloud Security Monitoring and Analytics.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Secmon Pan icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/palo-alto-firewall-9')}>Palo Alto Firewall 9</a></h4>
   <p>A guide to the Sumo Logic app for Palo Alto Firewall 9 - Cloud Security Monitoring and Analytics.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Secmon Pan icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/palo-alto-firewall-10')}>Palo Alto Firewall 10</a></h4>
   <p>A guide to the Sumo Logic app for Palo Alto Firewall 10 - Cloud Security Monitoring and Analytics.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Secmon Pan icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/palo-alto-firewall-10')}>Palo Alto Firewall 11</a></h4>
   <p>A guide to the Sumo Logic app for Palo Alto Firewall 11.</p>
   </div>
 </div>
 <div className="box smallbox card">
 <div className="container">
-  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Secmon Windows icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/windows')}>Windows</a></h4>
   <p>A guide to the Sumo Logic app for Windows - Cloud Security Monitoring and Analytics.</p>
   </div>

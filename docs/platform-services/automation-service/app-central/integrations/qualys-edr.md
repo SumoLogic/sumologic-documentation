@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/qualys-edr.png')} alt="qualys-edr" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/qualys-edr.png')} alt="Qualys EDR icon" width="100"/>
 
 ***Version: 1.2  
 Updated: Jun 26, 2023***

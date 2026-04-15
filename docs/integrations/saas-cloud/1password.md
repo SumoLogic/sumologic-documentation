@@ -7,7 +7,7 @@ description: The Sumo Logic App for 1Password helps you monitor your 1Password a
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/integrations/1password/1password.png')} alt="1Password icon" width="55"/>
 
 1Password is a secure and convenient password manager for documents, credit card information, and addresses. The Sumo Logic app for 1Password enables you to monitor sign-in and item usage events within your 1Password account. It offers insights into failed and successful authentications, breaking down events by client applications, type, category, users, and geo-location, while also identifying outliers and analyzing threats related to sign-ins. Furthermore, the app provides in-depth tracking of critical security activities such as account activations, deletions, email changes, and group creations. It visualizes audit events by geographic location, highlights risky areas, and offers detailed logs of recent access activities and role changes. This app helps secure your 1Password vault by delivering comprehensive insights into user actions and threat intelligence on clients accessing shared vaults.
 
@@ -129,7 +129,7 @@ The 1Password app uses the following logs:
 
 ### Sample queries
 
-```sql title="Successful Sign-in"
+```sumo title="Successful Sign-in"
 _sourceCategory="1pw"
 | json "type", "category", "timestamp",  "details", "target_user.name", "target_user.email", "client.app_name", "client.app_version", "client.platform_name", "client.os_name", "client.os_version", "client.ip_address", "location.country", "location.region", "location.city" as type, category, timestamp, details, target_user_name, target_user_email, client_app_name, client_app_version, client_platform, client_os, client_os_version, client_ip, country, region, city
 | where category matches  "{{category}}" AND type matches  "{{type}}" AND country matches  "{{country}}" AND city matches  "{{city}}" AND target_user_name matches  "{{target_user_name}}" AND client_app_name matches  "{{client_app_name}}" AND client_platform matches  "{{client_platform}}" AND client_os matches  "{{client_os}}"
@@ -137,7 +137,7 @@ _sourceCategory="1pw"
 | count by timestamp, target_user_name, type, category, details,client_app_name, client_app_version, client_platform, client_os, client_os_version, client_ip, country, region, city
 ```
 
-```sql title="Failed Sign-in"
+```sumo title="Failed Sign-in"
 _sourceCategory="1pw"
 | json "type", "category", "timestamp",  "details", "target_user.name", "target_user.email", "client.app_name", "client.app_version", "client.platform_name", "client.os_name", "client.os_version", "client.ip_address", "location.country", "location.region", "location.city" as type, category, timestamp, details, target_user_name, target_user_email, client_app_name, client_app_version, client_platform, client_os, client_os_version, client_ip, country, region, city
 | where category matches  "{{category}}" AND type matches  "{{type}}" AND country matches  "{{country}}" AND city matches  "{{city}}" AND target_user_name matches  "{{target_user_name}}" AND client_app_name matches  "{{client_app_name}}" AND client_platform matches  "{{client_platform}}" AND client_os matches  "{{client_os}}"
@@ -145,13 +145,13 @@ _sourceCategory="1pw"
 | count by timestamp, target_user_name, type, category, details,client_app_name, client_app_version, client_platform, client_os, client_os_version, client_ip, country, region, city
 ```
 
-```sql title="Item Usage"
+```sumo title="Item Usage"
 _sourceCategory=1pw action
 | json "timestamp", "user.name", "client.app_name", "client.platform_name", "client.platform_version", "client.os_name", "client.os_version", "client.ip_address", "location.country", "location.region", "location.city", "action", "vault_uuid", "item_uuid" as timestamp, user_name, client_app_name, client_platform, client_platform_version, client_os, client_os_version, client_ip, country, region, city, action, vault_uuid, item_uuid
 | count by timestamp, user_name, client_app_name, client_platform, client_platform_version, client_os, client_os_version, client_ip, country, region, city, action, vault_uuid, item_uuid
 ```
 
-```sql title="Recent Access Activities"
+```sumo title="Recent Access Activities"
 _sourceCategory="app/"
 | json "uuid", "object_type", "action", "actor_details.email", "aux_details.name", "aux_details.email", "aux_info" as uuid, object_type, action, actor_email, aux_name, aux_email, aux_info nodrop
 
@@ -205,37 +205,37 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **1Password - Overview** provides an overview of 1Password events including events breakdown by type, category, geographic location, one-day time comparison of events, audit logs by audit type, and failed sign-in activity.
 
-<img src={useBaseUrl('img/integrations/1password/1Password-Overview.png')} alt="1Password-Overview" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Overview.png')} alt="1Password Overview" />
 
 ### Successful Sign-ins
 
 The **1Password - Successful Sign-ins** dashboard provides geographic location of successful sign-in events, one-day time comparison of events, breakdown of events by Category, Type, Users, Country, State, and City.
 
-<img src={useBaseUrl('img/integrations/1password/1Password-Successful-Sign-ins.png')} alt="1Password-Successful-Sign-ins" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Successful-Sign-ins.png')} alt="1Password Successful Sign ins" />
 
 ### Failed Sign-ins
 
 The **1Password - Failed Sign-ins** dashboard provides geographic location of failed events, one-day time comparison of events, breakdown of events by Category, Type, Users, Country, State, and City.
 
-<img src={useBaseUrl('img/integrations/1password/1Password-Failed-Sign-ins.png')} alt="1Password-Failed-Sign-ins" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Failed-Sign-ins.png')} alt="1Password Failed Sign ins" />
 
 ### Threat Intel
 
 The **1Password - Threat Intel** dashboard provides high-level views of threats throughout your 1Password Service. Dashboard panels display visual graphs and detailed information on Threats by the client, target user, source app, platform, threats by actors, and threats by malicious confidence.
 
-<img src={useBaseUrl('img/integrations/1password/1Password-Threat-Intel.png')} alt="1Password-Threat-Intel" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Threat-Intel.png')} alt="1Password Threat Intel" />
 
 ### Item Usage
 
 The **1Password - Item Usage** dashboard shows information about items in shared vaults that have been modified, accessed, or used. This dashboard provides you geo-locations of clients who accessed items in the shared vault, it also provides threat intel analysis of client IPs to secure your vault access.
 
-<img src={useBaseUrl('img/integrations/1password/1Password-Item-Usage.png')} alt="1Password-Item-Usage" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Item-Usage.png')} alt="1Password Item Usage" />
 
 ### Audit Security
 
 The **1Password - Audit Security** dashboard provides a comprehensive view of security-related activities and monitors critical user activities by tracking key metrics such as account activations, deletions, email changes, and group creations. This dashboard helps you visualize the geographical distribution of audit events and highlights top actions, risky locations, and changes to security configurations like MFA and SSO. It includes detailed logs of recent access activities, role changes, and service account token events, ensuring comprehensive oversight of security events. This dashboard is essential for quick identification and rectification of potential security threats in 1Password.
 
-<img src={useBaseUrl('img/integrations/1password/1Password-Audit-Security.png')} alt="1Password-Audit-Security" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Audit-Security.png')} alt="1Password Audit Security" />
 
 ## Create monitors for 1Password app
 

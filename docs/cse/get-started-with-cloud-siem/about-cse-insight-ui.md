@@ -64,11 +64,59 @@ You can use the **Filters** area near the top of the page to narrow down the ins
 * Status
 * Tags
 
+### Bulk update insights
+
+You can select multiple insights and make changes to them all at once using either the UI or API.
+
+:::note
+You can select a maximum of 5000 insights in one action, and your organization can have up to five active requests in progress at once.
+:::
+
+:::training Micro Lesson
+
+Watch this micro lesson to learn about bulk updating insights.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/zqzw9krbcs?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Cloud SIEM Bulk Insight Management"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
+
+#### Bulk update insights in the UI
+
+1. Open the insights [list view](#list-view).
+1. [Filter insights](#filtering-insights) to locate only the insights you want to act on.
+1. Use the check boxes on the insights list view to select multiple insights, or you can click the check box at the top of the list to select all listed insights:<br/><img src={useBaseUrl('img/cse/select-all-insights.png')} alt="Select all insights" style={{border: '1px solid gray'}} width="200"/>
+   <br/>If you click the check box to select all insights, you can then select up to 5000 of the listed insights:<br/><img src={useBaseUrl('img/cse/select-up-to-5000-insights.png')} alt="Select up to 5000 insights" style={{border: '1px solid gray'}} width="800"/>
+1. Choose the action you want to take on the selected insights:
+   * **Close Insights**. Give the insights a [closed resolution](/docs/cse/administration/manage-custom-insight-resolutions/#close-an-insight-using-a-custom-resolution).
+   * **Assign To**. Assign the insights to a Cloud SIEM user.
+   * **Change Status**. Change the insights' [status](/docs/cse/administration/manage-custom-insight-statuses/). 
+   * **Comment**. Add a comment on the selected insights.<br/><img src={useBaseUrl('img/cse/bulk-select-insights.png')} alt="Bulk update insights" style={{border: '1px solid gray'}} width="800"/>
+1. Click **Confirm** on the confirmation dialog box. The update runs, and a banner shows progress of the update. After the update completes, the banner displays for 24 hours so you can track recently-performed bulk updates. 
+1. If you are running multiple bulk updates, keep in mind you cannot have more than five active requests in progress at one time. You will not be able to start another bulk update until there are fewer than five running.
+
+#### Bulk update insights with the API
+
+Use the following [Cloud SIEM APIs](/docs/api/cloud-siem-enterprise/) to bulk update insights:
+* [Create a bulk update job for insights](https://api.sumologic.com/docs/sec/#operation/CreateInsightBulkUpdate). Submit a bulk update job to update multiple insights based on a filter query.
+* [Get bulk update jobs](https://api.sumologic.com/docs/sec/#operation/GetInsightBulkUpdates). List bulk update jobs for the current user.
+* [Get bulk update job status](https://api.sumologic.com/docs/sec/#operation/GetInsightBulkUpdateStatus). Get the current status and details of a bulk update job.
+* [Get bulk update job results](https://api.sumologic.com/docs/sec/#operation/GetInsightBulkUpdateResult). Download the results of a bulk update job with each item's status and any associated errors.
+
 ### View insights in child organizations
 
 If you manage a parent organization with child organizations that also use Cloud SIEM, you can see a list of all insights across multiple child organizations. This is useful if your company is a large enterprise with many organizations or is a Managed Security Service Provider (MSSP), and you'd like to see all insights across all areas in a single page.
 
-This multi-insights list page (also known as a "federated" page) shows insights just as in a normal [insights list page](#insights-list-page). However, when you click an insight on the page, it opens the insight's details in the child organization's UI. You can also use the [board view](#board-view) on the multi-insights page to move insights to different statuses.
+This multi-insights list page (also known as a "federated" page) shows insights as in a normal [insights list page](#insights-list-page). However, when you click an insight on the page, it opens the insight's details in the child organization's UI. You can also use the [board view](#board-view) on the multi-insights page to move insights to different statuses.
 
 To be able to see insights in child organizations, [add child organizations](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs) that use Cloud SIEM. Then when the parent organization user goes to their Cloud SIEM insights list page, all the child organizations' insights appear in the list.
 
@@ -118,8 +166,7 @@ At the top of the insight details page, you’ll see a signal timeline that visu
    * **Rule**. Signals that were triggered by other rules.
    * **Anomaly**. Signals that were triggered by User and Entity Behavior Analytics (UEBA) rules.
    * **Threat intelligence**. Signals that were fired by threat intel rules.
-   * **File Analysis**. Signals that were triggered by [YARA file analysis rules](/docs/cse/rules/import-yara-rules).
-1. **Show Related**. Click this link to show related signals in addition to attached signals. If you click the **Show Related** checkbox, the page updates and also displays any related signals or related insights.
+1. **Show Related**. Click this link to show related signals in addition to attached signals. If you click the **Show Related** check box, the page updates and also displays any related signals or related insights.
     * A *related signal* is a signal that isn’t part of the current insight (it’s not attached), but fired on the same entity as the current insight’s attached signals within 7 days of the current insight’s attached signals. 
     * A *related insight* is an insight that a related signal is attached to.
 1. **Sort options**. You can sort the signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.
@@ -131,8 +178,8 @@ Below the signal timeline, you’ll see a list of signals. By default, only atta
 
 <img src={useBaseUrl('img/cse/signal-list-area.png')} alt="Signal list area" style={{border: '1px solid gray'}} width="600"/>
 
-1. **Remove** button. Removes multiple signals selected with the checkbox. You cannot select all signals for removal. If you do, the **Remove** button is disabled and this message appears when you hover over it with your mouse: **Bulk removal of signals is disabled as a minimum of 1 signal must be attached to the insight. Deselect 1 or more signals to enable bulk removal.**
-1. **Checkbox**. Click to select multiple signals for removal. 
+1. **Remove** button. Removes multiple signals selected with the check box. You cannot select all signals for removal. If you do, the **Remove** button is disabled and this message appears when you hover over it with your mouse: **Bulk removal of signals is disabled as a minimum of 1 signal must be attached to the insight. Deselect 1 or more signals to enable bulk removal.**
+1. **Check box**. Click to select multiple signals for removal. 
 1. **Signal name**. Click to view signal details.
 1. **Remove** button. Removes an individual signal.
 1. **Entity**. The entity associated with the signal. Click to search for the entity, or perform an action on the entity.
@@ -154,7 +201,7 @@ The screenshot below shows the **Entities** tab **list** view for an insight.
 
 In this view, the primary entity is always displayed first. (This is the entity common to each of the signals in the insight). Below the primary entity all of the related entities are listed.
 
-The related entities fall into two categories. The first category, sometimes referred to as _involved entities_, are those entities that aren't the primary entity but are listed in one or more records in the signal(s) in the insight. So, for example, while the primary entity for an insight could be a username, a record in one of the signals in that insight could also include an IP address. That address would be included in this list.
+The related entities fall into two categories. The first category, sometimes referred to as _involved entities_, are those entities that are not the primary entity but are listed in one or more records in the signal(s) in the insight. So, for example, while the primary entity for an insight could be a username, a record in one of the signals in that insight could also include an IP address. That address would be included in this list.
 
 Other entities could be included due to _detected entity relationships_. For each entity in the insight — including the primary entity and other involved entities — Cloud SIEM searches for other entities that seem to be related (across all records, not just that insight's). This search is run across a time range that corresponds to the span of time during which there was activity on the insight. So, for example, if the first record in an insight was created at 8 AM on Wednesday and the last record at 10 PM on Friday, Cloud SIEM might detect that the IP address listed in the insight was associated with a specific hostname (in another record) at that point. 
 
@@ -213,7 +260,7 @@ By default, this view shows the same entities that are displayed on the list vie
 1. **Involved Entities**. As on the list view, the entities that appear on the same signal (also known as *involved* entities) will be connected with dashed lines.
 1. **Related entities**. Entities that are related to this insight will have an insight icon on their upper-left edge. 
 1. **Selected Entity**. When you select an entity, it will be highlighted in blue and the entity details pane will appear on the right.
-1. **Expand control**. If Cloud SIEM has detected additional relationships *outside* of the insight during the selected time frame, an expand/contract control will appear on the entity. Clicking on that control will reveal (or hide) those additional relationships. 
+1. **Expand control**. If Cloud SIEM has detected additional relationships *outside* of the insight during the selected time frame, an expand/contract control will appear on the entity. Clicking that control will reveal (or hide) those additional relationships. 
 1. **Controls**. The graph view has several controls:
    * A **key** that explains how to read the graph
    * **Zoom** controls (you can also use your mouse wheel)
@@ -228,7 +275,7 @@ In addition, the following can appear in the graph:
 * **Threat indicators**. Any entity with a threat indicator will have an additional icon in the upper right. If the threat indicator is Malicious or Suspicious, the entity will be highlighted in red or yellow accordingly. For more information about threat indicators, see [View threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui).
 * **Hover**. If you hover over an entity, it and all connections to it will be highlighted in blue. If its value is not fully visible by default, the full value will be displayed.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Watch this micro lesson to learn more about the entity relationship graph.
 

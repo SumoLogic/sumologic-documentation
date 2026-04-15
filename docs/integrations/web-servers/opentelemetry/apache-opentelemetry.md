@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Thumbnail icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Apache icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The [Apache](https://httpd.apache.org/ABOUT_APACHE.html) app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of Apache web server farms. Preconfigured dashboards and searches provide visibility into your environment for real-time or historical analysis: visitor locations, visitor access types, traffic patterns, errors, web server operations, resource utilization, and access from known malicious sources.
 
@@ -19,7 +19,7 @@ The diagram below illustrates the components of the Apache collection for each w
 
 The Sumo Logic app for Apache assumes:
 
-- The [NCSA extended/combined log file format ](http://httpd.apache.org/docs/current/mod/mod_log_config.html)has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/apachereceiver/documentation.md).
+- The [NCSA extended/combined log file format ](https://httpd.apache.org/docs/current/mod/mod_log_config.html)has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/apachereceiver/documentation.md).
 
 :::info
 This app includes [built-in monitors](#apache-alerts). For details on creating custom monitors, refer to [Create monitors for Apache app](#create-monitors-for-apache-app).
@@ -156,7 +156,7 @@ import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configurat
 
 This sample logs query is from the **Top 5 Clients Causing 4xx Errors** panel of the **Apache - Web server Operations** dashboard.
 
-```sql title="Query String"
+```sumo title="Query String"
 webengine.system=apache webengine.cluster.name=* HTTP (40* OR 41* OR 42* OR 43* OR 44* or 45* or 49*)
 | json "log" nodrop | if  (_raw matches "{*", log, _raw)  as mesg
 | parse regex field=mesg "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop

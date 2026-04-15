@@ -36,7 +36,7 @@ You can push the following:
 * Cloud SIEM [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/)
 * [Library](/docs/get-started/library)
 * [Monitors](/docs/alerts/monitors/)
-* [Source Template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/)
+* [Source templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates/)
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.
 1. Select the **Manage Content** tab.
@@ -44,7 +44,7 @@ You can push the following:
 1. In the **Content** bar, select the content to be pushed:
    * **Cloud SIEM Rules**. For more information about Cloud SIEM rules, refer to [Cloud SIEM Rules](/docs/cse/rules/).
    * **Cloud SIEM Rule Tuning**. For more information about Cloud SIEM rule tuning expressions, refer to [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/).
-   * **Library**. For more information about Library items, refer to [Managing Your Sumo Logic Library](/docs/get-started/library).
+   * **Library**. For more information about Library items, refer to [Managing Your Sumo Logic Library](/docs/get-started/library). You can manage saved searches, scheuled searched, dashboards, and lookup tables items under Library.
    * **Monitors**. For more information about Monitors, refer to [Monitors](/docs/alerts/monitors/).
    * **Source Template**. For more information about source templates, refer to [OpenTelemetry Remote Management Source Templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates/).
 1. Select individual items to be pushed, or all items.
@@ -52,8 +52,8 @@ You can push the following:
 1. On the **Push Selected Content** box, navigate to the **Destinations** section to select the organizations to push the selected items to. You can push to all organizations, a single child organization, or multiple child organizations.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-selected-items-2-csiem.png')} alt="Push Selected Items dialog" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Push**. A **Pushing in progress** dialog is displayed. 
 1. (Optional) If required, follow the below steps to stop the push:
-   1. Click the **Stop Push** button on the dialog box. <br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-button.png')} alt="stop-push-button" style={{border: '1px solid gray'}} width="500"/>
-   1. Click **Stop Push** on the confirmation pop-up. To view the results table, refer to [View Results](#view-results).<br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-confirmation.png')} alt="stop-push-confirmation" style={{border: '1px solid gray'}} width="400"/>
+   1. Click the **Stop Push** button on the dialog box. <br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-button.png')} alt="Stop push button" style={{border: '1px solid gray'}} width="500"/>
+   1. Click **Stop Push** on the confirmation pop-up. To view the results table, refer to [View results](#view-results).<br/><img src={useBaseUrl('img/manage/subscriptions/stop-push-confirmation.png')} alt="Stop push confirmation" style={{border: '1px solid gray'}} width="400"/>
 
 ### Tips
 
@@ -65,6 +65,7 @@ You can push the following:
    :::note
    Both **Scheduled Searches Connection** and **Scheduled Reports** will be available only when you select a library *folder*.
    :::
+* In the destination organization, if a lookup with the same name already exists with a different schema and contains data, the push operation is automatically skipped and an error message is displayed. If a lookup table with the same name exists but does not contain any data, the push proceeds and the existing file is replaced with the new data.
 * **Monitor notifications**. Select **Include and Update Notifications** to copy the alert notification to the target organization. If the notification does not already exist, it will be created automatically. Select **Ignore Notifications** to exclude the alert notification, resulting in monitors being pushed without any active notifications.
 * **Source Templates**. Select **Skip the Push** to avoid pushing the source template with same name in the target organization. Select **Overwrite Source Template** to overwrite source template with same name in the target organization.
 
@@ -96,7 +97,7 @@ If a content push job is stopped or interrupted, you can review the progress and
 
 1. After the push is stopped, a warning banner appears at the top of the content search bar. Click **View Results** in the warning banner to open the **Content Push Job Results** page.
    <br/><img src={useBaseUrl('img/manage/subscriptions/mssp-view-results.png')} alt="MSSPs View Results Button" style={{border: '1px solid gray'}} width="800"/>
-1. On the **Content Push Job Results** page, you can view the number of destination org details with the total number of items processed. You can also find the successful, failed, and stopped items.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-content-push-job-results.png')} alt="mssp-content-push-job-results" style={{border: '1px solid gray'}} width="800"/>
+1. On the **Content Push Job Results** page, you can view the number of destination org details with the total number of items processed. You can also find the successful, failed, and stopped items.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-content-push-job-results.png')} alt="MSSP content push job results" style={{border: '1px solid gray'}} width="800"/>
    :::note
    Select the **Show Warning Updates** checkbox to display the warning-related entries in the **Failed Updates** section.
    :::
@@ -113,14 +114,14 @@ If a content push job is stopped or interrupted, you can review the progress and
 
 You can view all content management push in the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) by using the following query:
 
-```sql
+```sumo
 _index=sumologic_audit_events
 | where eventname = "ContentSynced"
 ```
 
 To see the results displayed the same as in [View History](#view-history), use the following query:
 
-```sql
+```sumo
 _index=sumologic_audit_events
 | where eventname = "ContentSynced"
 | orchestratorJob.id as job_sync_id

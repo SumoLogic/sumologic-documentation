@@ -10,7 +10,7 @@ Our Search Syntax is based on a funnel or "pipeline" concept. The wide mouth of 
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 How to search data using the Basic Search Mode in Sumo Logic.
 
@@ -53,7 +53,7 @@ This query means:
 
 As queries get longer and more complex, it is a best practice to format your queries by using a soft return before the pipes, such as:
 
-```sql
+```sumo
 _sourceCategory=apache
 | parse "* --" as src_ip
 | count by src_ip | sort _count

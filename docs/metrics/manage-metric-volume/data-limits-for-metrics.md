@@ -57,7 +57,7 @@ Some Amazon namespaces report metrics every minute, while others report every fi
 
 Total CloudWatch metrics per namespace = 10 x 5
 
-See the [AWS documentation](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html) for details on the metrics for different namespaces.
+See the [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html) for details on the metrics for different namespaces.
 
 ### Limits for streaming metric sources
 

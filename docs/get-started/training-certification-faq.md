@@ -18,7 +18,7 @@ Certification exams are paid and live‑proctored through our assessment partner
 * [**Sumo Logic Partner Training**](https://partnertraining.sumologic.com), dedicated technical training for Sumo Logic partners. To sign up, you'll need an access code, which you can obtain from your account manager.
 * [**Sumo Logic Certified**](#certifications), our certification program for Sumo Logic Academy, allowing you to certify via proctored exam and receive a digital credential reflecting your new, proven skillset.
 
-:::sumo micro lesson
+:::training Micro Lesson
 
 In this video, we'll walk through learning and certification offerings to help you maximize your investment in the Sumo Logic platform.
 
@@ -59,7 +59,7 @@ Self‑paced training is available in our [learning portal](#how-do-i-access-the
 
 ### What content is available for self‑paced learning?
 
-* **Learning Paths** for General, Observability, and Security ([Learning Hub](#how-do-i-access-the-learning-portal) > **Become a Sumo Expert**).
+* **Learning Paths** for General, Observability, and Security ([Learning Hub](#how-do-i-access-the-learning-portal) > **Become a Sumo Logic Expert**).
 * **Micro Lessons** ([Learning Hub](#how-do-i-access-the-learning-portal) > **Learn a New Skill**).
 * **Recorded Live Training** sessions with lab guides and slides ([Learning Hub](#how-do-i-access-the-learning-portal) > **Recorded Live Training**).
 
@@ -113,25 +113,51 @@ If you see an error when starting a new lesson, try these steps:
 
 Use the Training Lab environment to get hands‑on practice with course exercises. This environment is curated and set up to work along with our training curriculum.
 
+During instructor-led and on-demand courses, you may be asked to access a Sumo Logic training lab environment. This environment is separate from your production Sumo Logic account and is provided specifically for hands-on learning.
+
+:::info
+Training lab accounts are for working through hands-on lab guides using built-in data only. To trial Sumo Logic with your own data, set up a separate [trial](https://www.sumologic.com/sign-up/) or paid account.
+:::
+
 ### How do I access the training lab environment?
 
-1. Choose a number between 001 and 999. Use this number across your labs.
-2. Open a second browser (for example, Firefox if you are reading this in Chrome) so you can stay logged in to both your regular Sumo Logic account and the training lab at the same time.
-3. In the second browser window, go to [https://service.sumologic.com](https://service.sumologic.com).
-4. Enter the credentials posted at the top of the **Become a Sumo Expert** page in the learning portal.
-5. You will know you have access when hovering over the user profile in the upper-right corner shows **Sumo Logic Training**.
-6. Save your training username for use during training.
+Training lab credentials are available via self-service directly from your learning portal.
 
-### Where can I find the training lab credentials?
+#### Choose your credential type
 
-Credentials change monthly. Go to the [learning portal](#how-do-i-access-the-learning-portal) > **Become a Sumo Expert**.
+Both Analyst and Admin accounts are available for any learner to request. Choose the credentials you need based on the requirements or instructions in your course. In most cases, this is Analyst, but certain courses (like Administration) need admin-level privileges.
 
-<img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Training lab credentials" style={{border: '1px solid gray'}} width="600" />
+#### How to request credentials
 
+1. Open a second browser (for example, Firefox if you are reading this in Chrome) so you can stay logged in to both your regular Sumo Logic account and the training lab at the same time.
+2. Go to your [learning portal](#how-do-i-access-the-learning-portal) and click **Lab credentials** in the toolbar.
+
+   <img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Lab credentials self-service tool" style={{border: '1px solid gray'}} width="600" />
+
+3. Click **Request Analyst Login** or **Request Admin Login** based on your course requirements.
+4. Review the summary confirmation that appears and accept to proceed.
+5. The system will automatically assign you an available account:
+   * **Analyst accounts**. `training+analyst###@sumologic.com` (where ### is between 001-999).
+   * **Admin accounts**. `training+admin###@sumologic.com` (where ### is between 001-999).
+6. Your credentials will be displayed on screen and sent to your email address.
+7. In the second browser window, go to [service.sumologic.com](https://service.sumologic.com) and log in with your assigned credentials.
+8. You will know you have access when hovering over the user profile in the upper-right corner shows **Sumo Logic Training**.
+9. Save your training username for use during training.
+
+:::note
+* Do not share your credentials with others.
+* Training lab credentials expire at the end of each month.
+* A new set of credentials needs to be generated after the first of each month.
+* Any account-specific data you add will be wiped when credentials expire.
+:::
+
+:::info
+If you need assistance with lab credentials, click the **Get help** link in the self-service tool to email the Sumo Logic Academy team.
+:::
 
 ## Certifications
 
-:::sumo micro lesson
+:::training Micro Lesson
 
 Sumo Logic Academy certifications use proctored, skills-based exams with digital badges issued through Credly. We recommend six months of hands-on experience before registering.
 
@@ -207,28 +233,30 @@ Not at this time.
 
 ### I cannot install third-party software on my company-issued device. Can I use a personal device to take exams?
 
-Sumo Logic Academy uses [Kryterion Webassessor](https://www.kryterion.com/blog/the-evolution-of-webassessor-from-bold-beginnings-to-a-future-powered-by-ai/) for exam registration. To ensure a secure testing environment, you must install the "Lockdown Browser" to attend a live proctored Sumo Logic Certified exam. Because many corporate IT policies restrict third-party software, we strongly recommend using a personal device to complete your exam. In this case, simply follow the normal process to access Kryterion through the in-product **Learn** tab from your personal device.
+Yes. Sumo Logic Academy uses [Kryterion Webassessor](https://www.kryterion.com/blog/the-evolution-of-webassessor-from-bold-beginnings-to-a-future-powered-by-ai/) for exam registration. Exams require their Lockdown Browser, software that many corporate IT policies restrict. We strongly recommend using a personal device to complete your exam.
 
-For customers whose access to their Sumo Logic organization is also restricted to approved company machines, a standalone login process is required to log in to Kryterion Webassessor to attend the exam via a personal machine.
+If you can access your Sumo Logic org from your personal device, no special setup is needed. Open the **Learn** tab from your personal device and follow the normal process.
 
-If you cannot access your Sumo Logic environment from your personal machine, use the following process to enroll you into Webassessor through our standard single sign-on (SSO) procedure, and set a password on your account so that you can log in from a different machine without needing to access Sumo Logic first:
+If your Sumo Logic org is restricted to approved company machines, you'll need to complete a one-time setup to create standalone Webassessor credentials before you can log in from your personal device. Follow the steps below.
 
-1. Log in from your work machine:
-   1. Sign in to Sumo Logic as normal.
-   1. Select the **Learn** tab in the UI.
-   1. Click on **Learning Portal - Start Here!** to register via SSO for. You may be prompted to validate your login via email.
-   1. Click on **Exam Registration**. This will enroll you into Kryterion Webassessor through SSO.<br/><img src={useBaseUrl('img/get-started/learn-tab.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="600" />
-   1. Once logged in to Webassessor, click **Edit Profile** at the top. Copy your username into a note for later use. Note that this will be a string of alphanumeric characters.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-registration.png')} alt="Webassessor" style={{border: '1px solid gray'}} width="600" />
-   1. Click **Log Out**, then on the next screen, **Log In**.
-   1. Now click **Forgot Password**.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-forgot-password.png')} alt="Webassessor forgot password" style={{border: '1px solid gray'}} width="600" />
-   1. Paste your username (not your email address) and click **Submit**.
-   1. An email with a password reset link will be sent to your inbox. Click the link in the email and set a password. Note the password for future use.
-You can now log in to your Webassessor account using both single sign on (SSO) and from the Webassessor login page.
-1. Log in from your personal machine:
-   1. Access the Kryterion Webassessor standalone login page.
-   1. Log in using your username (not your email address) and password set in the previous section.
-   1. You can now proceed as normal with attending your live exam.
-   1. If you pass the exam, you will see the new badge in your Skilljar learner transcript, and an email with your Credly badge acceptance request will also follow as normal.
+#### Step 1: Set up your Webassessor credentials (work machine)
+
+1. Sign in to Sumo Logic and open the **Learn** tab.
+1. Click **Learning Portal - Start Here!** to register via SSO. You may be prompted to validate your login via email.<br/><img src={useBaseUrl('img/get-started/learning-hub-sso.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="600" />
+1. Return to the Sumo Logic **Learn** tab and click **Exam Registration**. This enrolls you in Kryterion Webassessor via SSO.<br/><img src={useBaseUrl('img/get-started/exam-registration.png')} alt="Exam registration" style={{border: '1px solid gray'}} width="600" />
+1. Once logged in to Webassessor, click **Edit Profile**.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-editprofile.png')} alt="Webassessor" style={{border: '1px solid gray'}} width="600" />
+1. Copy your username, which will be a string of alphanumeric characters (not your email address), and save it.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-registration.png')} alt="Webassessor" style={{border: '1px solid gray'}} width="600" />
+1. Click **Log Out**, then click **Log In** on the next screen.
+1. Click **Forgot Password**.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-forgot-password.png')} alt="Webassessor forgot password" style={{border: '1px solid gray'}} width="600" />
+1. Paste your username and click **Submit**.
+1. Check your email for a password reset link. Set a password and save it for future use.
+
+#### Step 2: Take your exam (personal device)
+
+1. Go to the Kryterion Webassessor standalone login page.
+1. Log in with your username and the password you just set.
+1. Proceed with your exam as normal.
+1. If you pass, your Credly badge and Skilljar transcript will update as usual.
 
 ## Exam logistics
 

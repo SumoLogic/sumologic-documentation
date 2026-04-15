@@ -13,8 +13,8 @@ The Sumo Logic app for Amazon SNS collects CloudTrail logs and CloudWatch metric
 
 The app uses SNS logs and metrics:
 
-* [SNS CloudWatch Metrics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html)
-* [SNS operations using AWS CloudTrail](http://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html)
+* [SNS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html)
+* [SNS operations using AWS CloudTrail](https://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html)
 
 
 ### Sample log messages
@@ -47,7 +47,7 @@ The app uses SNS logs and metrics:
 
 ### Sample queries
 
-```sql title="Events By Status"
+```sumo title="Events By Status"
 account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\"sns.amazonaws.com\""
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message nodrop
 | where event_source = "sns.amazonaws.com"
@@ -87,7 +87,7 @@ Use this dashboard to:
 * Monitor number of messages and messages by publish size.
 * Monitor delivered and failed notifications.
 
-<img src={useBaseUrl('img/observability/Amazon-SNS-Overview.png')} alt="Amazon-SNS-Overview.png" />
+<img src={useBaseUrl('img/observability/Amazon-SNS-Overview.png')} alt="Amazon SNS - Overview dashboard" />
 
 ### Amazon SNS - Audit Events  
 
@@ -100,7 +100,7 @@ Use this dashboard to:
 * Monitor successful and error events with error code in detail.
 * Get details of active topic names and users of both successful and error events.
 
-<img src={useBaseUrl('img/observability/Amazon-SNS-Audit-Events.png')} alt="Amazon-SNS-Overview.png" />
+<img src={useBaseUrl('img/observability/Amazon-SNS-Audit-Events.png')} alt="Amazon SNS - Audit Events dashboard" />
 
 
 ### Amazon SNS - Messages, Notifications  
@@ -115,7 +115,7 @@ Use this dashboard to:
 * Compare messages published and message size by today, yesterday, last week.  
 * Compare notifications delivered and failed by today, yesterday, last week.
 
-<img src={useBaseUrl('img/observability/Amazon-SNS-Messages-Notifications.png')} alt="Amazon-SNS-Overview.png" />
+<img src={useBaseUrl('img/observability/Amazon-SNS-Messages-Notifications.png')} alt="Amazon SNS - Messages, Notifications dashboard" />
 
 
 
@@ -130,7 +130,7 @@ Use this dashboard to:
 * Get details of all threats by IPs.
 
 
-<img src={useBaseUrl('img/observability/Amazon-SNS-Threat-Intel.png')} alt="Amazon-SNS-Overview.png" />
+<img src={useBaseUrl('img/observability/Amazon-SNS-Threat-Intel.png')} alt="Amazon SNS - Threat Intel dashboard" />
 
 ### Amazon SNS - Audit Events Details
 
@@ -142,4 +142,4 @@ Use this dashboard to:
 * Get all details of all subscription events.
 * Get details of all read only and non read only events.
 
-<img src={useBaseUrl('img/observability/Amazon-SNS-Audit-Events-Details.png')} alt="Amazon-SNS-Overview.png" />
+<img src={useBaseUrl('img/observability/Amazon-SNS-Audit-Events-Details.png')} alt="Amazon SNS - Audit Events Details dashboard" />

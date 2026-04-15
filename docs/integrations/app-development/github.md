@@ -7,15 +7,15 @@ description: Connects to your GitHub repository at the Organization or Repositor
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/GitHub.png')} alt="Thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/integrations/app-development/GitHub.png')} alt="GitHub icon" width="55"/>
 
 The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level, and ingests GitHub events through a webhook. These events populate the pre-configured Dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 
 :::note
 If you want to collect audit logs for [GitHub Enterprise](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/audit-log-events-for-your-enterprise):
 
-1. Follow the instructions on [how to stream GitHub Enterprise Audit Logs to an Amazon S3 bucket](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise#setting-up-streaming-to-amazon-s3) or [Azure Event Hubs](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise#setting-up-streaming-to-azure-event-hubs).
-1. Use an [Amazon S3 source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) or [Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source) to send those logs to Sumo Logic. This app will work with [global webhook for Github enterprise](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-a-global-webhook-for-a-github-enterprise), [organization webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-an-organization-webhook) or [repository webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-a-repository-webhook).
+1. Follow the instructions on [how to stream GitHub Enterprise Audit Logs to an Amazon S3 bucket](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise#setting-up-streaming-to-amazon-s3) or [Azure Event Hubs](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise#setting-up-streaming-to-azure-event-hubs). Use an [Amazon S3 source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) or [Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source) to send those logs to Sumo Logic. 
+1. This app will work with [global webhook for Github enterprise](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-a-global-webhook-for-a-github-enterprise), [organization webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-an-organization-webhook) or [repository webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-a-repository-webhook).
 
 Make sure not to select the same webhook event type at multiple levels (i.e., enterprise, organization, or repository) to avoid ingesting duplicate data.
 :::
@@ -34,6 +34,10 @@ The Sumo Logic App for GitHub ingests GitHub events via a webhook. Sumo Logic in
 * Push
 * Repository
 * Team_add
+
+:::note
+To fetch events such as **Issues**, **Pull**, **Pull_request**, and **Push**, use either an [organization webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-an-organization-webhook) or a [repository webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-a-repository-webhook) in GitHub.
+:::
 
 For the GitHub Advanced Security dashboards Sumo Logic App for GitHub uses these types events, but not limited to:
 
@@ -90,7 +94,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 
 ### Sample queries
 
-```sql title="Commits Over Time"
+```sumo title="Commits Over Time"
 "commits" "https://api.github.com/repos"
 | json "commits[*].id[*]", "repository.name", "pusher.name" as commit_size, repo_name, user
 | where commit_size != "[]"
@@ -100,7 +104,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 | count by _timeslice
 ```
 
-```sql title="Members Added or Removed"
+```sumo title="Members Added or Removed"
 | json "action", "scope", "member.login", "member.id", "member.type", "team.name", "team.permission", "organization.login" as action, scope, member_name, member_id, member_type, team_name, team_permission, org_login
 | count by member_id, action, team_name, org_login, member_name, team_permission
 | order by action, member_id
@@ -108,7 +112,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 ```
 
 
-```sql title="Total Number Open Issues"
+```sumo title="Total Number Open Issues"
 | json "action", "issue.id", "issue.number", "issue.title" , "issue.state", "issue.created_at", "issue.updated_at", "issue.closed_at", "issue.body", "issue.user.login", "issue.url", "repository.name", "repository.open_issues_count" as axn, issue_ID, issue_num, issue_title, state, createdAt, updatedAt, closedAt, body, user, url, repo_name, repoOpenIssueCnt
 | withtime repoOpenIssueCnt
 | most_recent (repoopenissuecnt_withtime) as number_issues by repo_name
@@ -188,7 +192,7 @@ The **GitHub - Overview** dashboard provides an at-a-glance view of your GitHub 
 Use this dashboard to:
 * Get an overview of GitHub commits, Pull Requests, and Issues.
 
-<img src={useBaseUrl('img/integrations/app-development/GitHub-Overview.png')} alt="GitHub-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/GitHub-Overview.png')} alt="GitHub Overview" />
 
 ### Branch Overview
 
@@ -212,7 +216,7 @@ Use this dashboard to:
 * Review issue status including unassigned, open, and closed issues.
 * Quickly review the issue details and take action accordingly.
 
-<img src={useBaseUrl('img/integrations/app-development/GitHubIssueOverview.png')} alt="GitHub-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/GitHubIssueOverview.png')} alt="GitHub Overview" />
 
 ### Pull Request Overview
 
@@ -223,7 +227,7 @@ Use this dashboard to:
 * Review comments on pull requests.
 * Identify open and not merged critical pull requests.
 
-<img src={useBaseUrl('img/integrations/app-development/GitHub-Pull-Request-Overview.png')} alt="GitHub-Pull-Request-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/GitHub-Pull-Request-Overview.png')} alt="GitHub Pull Request Overview" />
 
 ### Security
 
@@ -234,7 +238,7 @@ Use this dashboard to:
 * Review and manage repositories.
 * View and manage teams.
 
-<img src={useBaseUrl('img/integrations/app-development/GitHub-Security.png')} alt="GitHub-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/GitHub-Security.png')} alt="GitHub Overview" />
 
 ### User Activity
 
@@ -245,7 +249,7 @@ Use this dashboard to:
 * Determine files added, removed, and modified by users.
 * Identify any harmful file types added by users.
 
-<img src={useBaseUrl('img/integrations/app-development/Github-User-Activity.png')} alt="GitHub-Overview" />
+<img src={useBaseUrl('img/integrations/app-development/Github-User-Activity.png')} alt="GitHub Overview" />
 
 ### GHAS - Advanced Security Overview
 

@@ -9,6 +9,10 @@ import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 To collect log messages from files on the same machine where a Collector is installed, create a Local File Source.
 
+:::note
+Local file sources for Installed Collectors (IC) are supported, but Sumo Logic recommends switching to OpenTelemetry (OTEL) source templates for improved scalability, consistency, and future enhancements. To learn more, see [Convert Installed Collector Local File Sources to OpenTelemetry Source Templates](/docs/send-data/installed-collectors/sources/convert-ic-local-file-source-to-otel-st).
+:::
+
 * The Source will run a scan to the target path every two seconds.
 * Compressed files that end with the following file extensions are not collected: * tar, bz2, gz, z, zip, jar, war, 7z, rar, exe, dll, xz, or /var/log/(lastlog\|btmp\|wtmp) binary files
 
@@ -89,8 +93,8 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 1. Set any of the following options under **Advanced**:
 <img src={useBaseUrl('/img/send-data/advanced-options-local-file-source.png')} alt="Advanced options for log" style={{border: '1px solid gray'}} width="600"/>

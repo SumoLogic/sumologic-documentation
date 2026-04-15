@@ -2,7 +2,7 @@
 id: cloud-siem-automation-examples
 title: Cloud SIEM Automation Examples
 sidebar_label: Automation Examples
-description: See examples that show you how to create automations for different situations.   
+description: Learn to create Cloud SIEM automations using the Automation Service, with examples ranging from simple enrichments to advanced custom integration workflows.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

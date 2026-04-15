@@ -68,7 +68,7 @@ Once a monitor triggers an alert with one or more attached playbooks, you can vi
    | <img src={useBaseUrl('img/alerts/monitors/playbook-completed-icon.png')} alt="Completed icon" width="30" /> | Completed |
    | <img src={useBaseUrl('img/alerts/monitors/playbook-completed-with-errors-icon.png')} alt="Completed icon" width="30" /> | Completed with errors |
 
-1. Click the playbook name to open the [playbook in the Automation Service](//docs/platform-services/automation-service/playbooks/). <br/>The playbook shows the status of each action in the playbook that ran for the alert. For example, **Success** displays at the bottom of actions that have successfully completed, **Failed** for actions that did not complete, or **Waiting Owner** for actions that need user interaction. <br/><img src={useBaseUrl('img/alerts/monitors/playbook-in-automation-service.png')} alt="Playbook in the Automation Service" style={{border: '1px solid gray'}} width="800" />
+1. Click the playbook name to open the [playbook in the Automation Service](/docs/platform-services/automation-service/playbooks/). <br/>The playbook shows the status of each action in the playbook that ran for the alert. For example, **Success** displays at the bottom of actions that have successfully completed, **Failed** for actions that did not complete, or **Waiting Owner** for actions that need user interaction. <br/><img src={useBaseUrl('img/alerts/monitors/playbook-in-automation-service.png')} alt="Playbook in the Automation Service" style={{border: '1px solid gray'}} width="800" />
 1. Click an action to view more about its status. Status information opens in a box to the left. <br/>In the following example of an action whose status is **Waiting Owner**, an **Action Task** appears in the box that describes user interaction required to complete the task. <br/><img src={useBaseUrl('img/alerts/monitors/playbook-waiting-owner.png')} alt="Playbook awaiting user interaction" style={{border: '1px solid gray'}} width="800" />
 1. If you have an action marked as **Waiting Owner**, perform the steps needed to complete the **Action Task**. When done, click the appropriate button at the bottom of the **Waiting Owner** action box (**Approve**, **Approve & Close**, or **Reject**). The action completes, and the subsequent remaining actions in the playbook run.<br/><img src={useBaseUrl('img/alerts/monitors/playbook-complete-task.png')} alt="Playbook awaiting user interaction" style={{border: '1px solid gray'}} width="300" />
 1. Address any other actions in the playbook that need attention. For example, click and open any failed actions to see why they failed and to determine what you need to do to get them to complete successfully.
@@ -83,7 +83,7 @@ An anomaly monitor is triggered when unusual conditions are detected. Anomaly mo
 Weekly seasonality detection is turned off by default to optimize performance. [Contact Sumo Logic Customer Support](https://support.sumologic.com/support/s/contactsupport) to activate it for specific monitors. (*Weekly seasonality detection* is the optimization of baseline calculations to account for the variations of data flow that can occur in a work week.)
 :::
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Watch this micro lesson to learn about anomaly monitors.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/8z9b2zqtc3?web_component=true&seo=true&videoFoam=false"

@@ -38,7 +38,7 @@ For example, to search for audit events:
 
 This Audit Event Index has detailed JSON logs for the following features. To search for audit events for a specific feature use the metadata field `_sourceCategory` with its corresponding value. For example, to search user action events for access keys you would use the query:
 
-```sql
+```sumo
 _index=sumologic_audit_events _sourceCategory=accessKeys
 ```
 
@@ -132,4 +132,4 @@ Each audit event log has common keys that categorize it to a product area and pr
 
 ## Index retention period
 
-By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partition, `sumologic_audit_events`. For more information, see [Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).
+By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partition, `sumologic_audit_events`. For more information, see [Create and Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).

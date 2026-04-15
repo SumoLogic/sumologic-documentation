@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/kela-darkbeast.png')} alt="kela-darkbeast" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/kela-darkbeast.png')} alt="Kela Darkbeast icon" width="70"/>
 
 ***Version: 1.1  
 Updated: Jul 05, 2023***
