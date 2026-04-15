@@ -1,6 +1,6 @@
 ---
 id: oauth
-title: OAuth
+title: OAuth Client Setup
 description: Set up OAuth authentication to securely connect external applications and services to Sumo Logic.
 ---
 
@@ -16,9 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 insert preview badge
 -->
 
-OAuth 2.0 enables secure authentication between Sumo Logic and external applications without sharing passwords. Use OAuth to connect AI tools (such as the [MCP Server](/docs/api/mcp-server)), custom integrations, and third-party services to your Sumo Logic account.
-
-## Authentication flows
+OAuth 2.0 enables secure authentication between Sumo Logic and external applications without sharing passwords. Use OAuth to connect AI tools (such as our [MCP server](/docs/api/mcp-server)), custom integrations, and third-party services to your Sumo Logic account.
 
 Sumo Logic supports two OAuth 2.0 authentication flows:
 
@@ -26,10 +24,6 @@ Sumo Logic supports two OAuth 2.0 authentication flows:
 | :--- | :--- | :--- | :--- |
 | [Authorization Code](#authorization-code-flow) | User-facing applications with browser-based login | Simple (UI-based) | Automatic |
 | [Client Credentials](#client-credentials-flow) | Service-to-service authentication, automated workflows | Moderate (API-based) | Manual or automatic |
-
-**Authorization Code flow** is recommended for applications where users interactively log in through their browser. This flow handles token refresh automatically and requires minimal configuration.
-
-**Client Credentials flow** is designed for server-to-server communication where no user interaction is required. This flow uses service accounts and provides granular control over permissions through OAuth scopes.
 
 ## Authorization Code flow
 
@@ -77,7 +71,9 @@ After the user authorizes your application, Sumo Logic redirects to your redirec
 https://your-redirect-uri?code=AUTHORIZATION_CODE
 ```
 
-Exchange this code for an access token by making a POST request to the token endpoint:
+Exchange this code for an access token by making a POST request to the token endpoint.
+
+Replace `[deployment-endpoint]` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `service.sumologic.com`, `service.us2.sumologic.com`, `service.eu.sumologic.com`):
 
 ```bash
 curl -X POST https://[deployment-endpoint]/oauth/token \
@@ -105,7 +101,9 @@ Use the `access_token` to authenticate API requests. Store the `refresh_token` s
 
 ### Refresh access tokens
 
-Access tokens expire after a set period (typically 1 hour). Use the refresh token to obtain a new access token without requiring the user to log in again:
+Access tokens expire after a set period (typically 1 hour). Use the refresh token to obtain a new access token without requiring the user to log in again.
+
+Replace `[deployment-endpoint]` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `service.sumologic.com`):
 
 ```bash
 curl -X POST https://[deployment-endpoint]/oauth/token \
@@ -122,19 +120,18 @@ The response includes a new access token. The refresh token may also be rotated 
 
 This flow uses service accounts for server-to-server authentication. Applications authenticate directly with Sumo Logic using a client ID and client secret, without requiring user interaction.
 
-### Prerequisites
-
+:::info prerequisites
 * **Sumo Logic Administrator role**. Required to create OAuth clients and service accounts.
-* **Sumo Logic personal access key**. Used to authenticate API calls during setup. See [Access Keys](/docs/manage/security/access-keys/).
+* **Sumo Logic personal access key**. Used to authenticate API calls during setup ([learn more](/docs/manage/security/access-keys/)).
+:::
 
-### Step 1: Create a service account
+### Create a service account
 
 Create a Sumo Logic service account to represent your application or service. You can also use an existing service account.
 
 1. Log in to Sumo Logic as an Administrator.
 1. [Create a service account](/docs/manage/security/service-accounts/#create-a-service-account) with the appropriate roles for your use case.
 1. [Get a list of all service accounts](https://api.sumologic.com/docs/#operation/listServiceAccounts) in your organization and find the `id` of the service account you just created. You'll use this ID in the next step.
-
    <Tabs
      className="unique-tabs"
      defaultValue="request"
@@ -143,9 +140,7 @@ Create a Sumo Logic service account to represent your application or service. Yo
        {label: 'Example response', value: 'response'},
      ]}>
    <TabItem value="request">
-
    Replace `<accessId>` and `<accessKey>` with your personal access key credentials. Replace `service.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if different.
-
    ```bash
    curl -u "<accessId>:<accessKey>" \
      https://service.sumologic.com/api/v1/serviceAccounts
@@ -175,7 +170,7 @@ Create a Sumo Logic service account to represent your application or service. Yo
    </TabItem>
    </Tabs>
 
-### Step 2: Create an OAuth client
+### Create an OAuth client
 
 Create an OAuth client under your service account. This generates the credentials your application will use to authenticate.
 
@@ -265,7 +260,7 @@ UI support for this step is not yet available. You'll need to use the Sumo Logic
    </TabItem>
    </Tabs>
 
-### Step 3: Generate an access token {#generate-access-token}
+### Generate an access token
 
 Request an OAuth access token from the token endpoint using your client credentials.
 
@@ -389,7 +384,7 @@ For Client Credentials flow, the OAuth client's effective permissions are limite
 <details>
 <summary>How do I find the token endpoint for my deployment?</summary>
 
-The token endpoint URL varies by [deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). For most deployments, the pattern is:
+The token endpoint URL varies by [deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). Replace `[deployment-endpoint]` with your deployment's service endpoint. The pattern is:
 
 ```
 https://[deployment-endpoint]/oauth/token
@@ -400,7 +395,7 @@ For example:
 * US2: `https://service.us2.sumologic.com/oauth/token`
 * EU: `https://service.eu.sumologic.com/oauth/token`
 
-To discover the endpoint programmatically, query:
+To discover the endpoint programmatically, replace `[deployment-endpoint]` with your service endpoint (e.g., `service.sumologic.com`) and query:
 ```bash
 curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
 ```

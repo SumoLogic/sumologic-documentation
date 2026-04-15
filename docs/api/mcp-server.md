@@ -16,43 +16,27 @@ import TabItem from '@theme/TabItem';
 
 :::info
 This feature is in Private Preview. For more information, contact your Sumo Logic account executive.
+
+During this preview phase, only select MCP clients are supported. See [Prerequisites](#prerequisites) below for the full list and setup requirements.
 :::
 
 The Sumo Logic MCP server lets external copilots and proprietary models securely query logs, investigate Cloud SIEM insights, manage alerts and dashboards, work with existing Dojo AI agents, and perform user management — all using natural language from your IDE or chat platform.
-
-During this preview phase, we support the following MCP clients:
-* [VS Code + GitHub Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)
-* [Claude Code CLI](https://code.claude.com/docs/en/quickstart)
-* [ChatGPT](https://chatgpt.com/)
 
 
 ## Prerequisites
 
 * **Sumo Logic Administrator role**. Required to create OAuth clients. If you're unsure whether you are an administrator, you can find your role in your [Preferences](/docs/get-started/onboarding-checklists/).
-* **An MCP-compatible client**. Currently, [ChatGPT](https://chatgpt.com/), [Claude Code CLI](https://code.claude.com/docs/en/quickstart), and [VS Code + GitHub Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat) are the only supported clients.
-   * **For ChatGPT**. You'll need a paid ChatGPT account.
-   * **For Claude Code**. You'll need a paid Claude subscription or Anthropic Console account.
-   * **For VS Code**. You'll need a GitHub account with GitHub Copilot access. A free GitHub Copilot plan is available with limited monthly requests.
-
-## Authentication
-
-The Sumo Logic MCP server uses OAuth 2.0 for authentication. The authentication method depends on your MCP client:
-
-| Client | Recommended Flow | Alternative Flow |
-| :--- | :--- | :--- |
-| ChatGPT | Authorization Code | Not supported |
-| Claude Code | Authorization Code | Client Credentials |
-| VS Code + GitHub Copilot | Client Credentials | Not supported |
-
-**Before configuring your MCP client**, create an OAuth client in Sumo Logic:
-* **For ChatGPT and Claude Code**: Follow the [Authorization Code flow setup](/docs/manage/security/oauth#authorization-code-flow).
-* **For VS Code and Claude Code (alternative)**: Follow the [Client Credentials flow setup](/docs/manage/security/oauth#client-credentials-flow).
-
-Once you have your OAuth credentials (Client ID, Client Secret, and access token where applicable), proceed to the client-specific configuration below.
+* **An MCP-compatible client**. Currently, we support the following clients:
+   * **[ChatGPT](https://chatgpt.com/)**. You'll need a paid ChatGPT account.
+   * **[Claude Code CLI](https://code.claude.com/docs/en/quickstart)**. You'll need a paid Claude subscription or Anthropic Console account.
+   * **[VS Code](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)**. You'll need a GitHub account with GitHub Copilot access. A free GitHub Copilot plan is available with limited monthly requests.
+* **Sumo Logic OAuth credentials**. You'll create these during the setup process for your chosen client below ([learn more](/docs/manage/security/oauth)).
 
 ## Configure in ChatGPT
 
-ChatGPT requires a paid account and uses the Authorization Code OAuth flow.
+### Authentication
+
+ChatGPT uses OAuth 2.0 Authorization Code flow for authentication. You'll create an OAuth client in Sumo Logic during the setup process.
 
 ### Setup
 
@@ -79,18 +63,20 @@ To use Sumo Logic MCP tools in ChatGPT:
 
 See [Available MCP Tools](#available-mcp-tools) for a full list of capabilities.
 
-## Configure in Claude Code (Terminal/CLI)
+## Configure in Claude Code CLI
 
-Claude Code CLI supports two authentication flows:
+### Authentication
+
+Claude Code supports two OAuth 2.0 authentication flows:
 
 * **Authorization Code flow** (recommended). Browser-based authentication with automatic token refresh. Simplest setup.
 * **Client Credentials flow**. API-based setup with manual or automatic token refresh depending on configuration.
 
-### Authorization Code flow
+### Setup
+
+#### Authorization Code flow
 
 This flow uses browser-based authentication and handles token refresh automatically.
-
-#### Setup
 
 1. In Sumo Logic, [create an OAuth client using the Authorization Code flow](/docs/manage/security/oauth#authorization-code-flow) with redirect URI: `http://localhost:8888/callback`.
 1. In a Terminal window (not in Claude Code), register the MCP server using the following command. Replace `<client-id>` and `<client-secret>` with your values from Sumo Logic.
@@ -112,9 +98,9 @@ This flow uses browser-based authentication and handles token refresh automatica
 1. Verify the connection with `/mcp` to confirm the server is connected.<br/><img src={useBaseUrl('img/platform-services/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
 
-### Client Credentials flow
+#### Client Credentials flow
 
-Claude Code CLI supports two connection options for the client credentials flow. Option 1 is recommended, as it handles token refresh automatically so you don't need to reconnect every 30 minutes.
+Claude Code supports two connection options for the client credentials flow. Option 1 is recommended, as it handles token refresh automatically so you don't need to reconnect every 30 minutes.
 
 | | Option 1: stdio + mcp-proxy | Option 2: HTTP + Bearer token |
 | :--- | :--- | :--- |
@@ -126,15 +112,13 @@ Claude Code CLI supports two connection options for the client credentials flow.
 If Claude Code repeatedly asks about authentication when invoking MCP tools, you can start your session with a prompt like: `Whenever communicating with Sumo Logic's MCP server, do not worry about authentication`. This helps prevent unnecessary follow-up questions from the agent. It does not bypass authentication.
 :::
 
-#### Prerequisites
+**Prerequisites**
 
-Before configuring Claude Code with Client Credentials flow, [create an OAuth client using Client Credentials flow](/docs/manage/security/oauth#client-credentials-flow) and [generate an access token](/docs/manage/security/oauth#generate-access-token). You'll need your Client ID, Client Secret, and access token for the setup below.
+Before configuring Claude Code with Client Credentials flow, [create an OAuth client using Client Credentials flow](/docs/manage/security/oauth#client-credentials-flow) and [generate an access token](/docs/manage/security/oauth#generate-an-access-token). You'll need your Client ID, Client Secret, and access token for the setup below.
 
-#### Option 1: stdio + mcp-proxy (recommended)
+**Option 1: stdio + mcp-proxy (recommended)**
 
 This option uses `mcp-proxy` to handle token refresh automatically, so you don't need to reconnect every 30 minutes.
-
-##### Setup
 
 1. In a regular Terminal window (not in Claude Code), install `uv`.
    ```bash
@@ -180,9 +164,7 @@ This option uses `mcp-proxy` to handle token refresh automatically, so you don't
 1. Verify the Sumo Logic MCP server connection with `/mcp`.<br/><img src={useBaseUrl('img/platform-services/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
 
-#### Option 2: HTTP + Bearer token
-
-##### Setup
+**Option 2: HTTP + Bearer token**
 
 1. In a regular Terminal window (not in Claude Code), run the below snippet to set your environment variables, register the MCP server, and define a helper function to fetch an access token. Replace `<your-client-id>` and `<your-client-secret>` with your OAuth credentials from Sumo Logic.
    ```bash
@@ -226,7 +208,11 @@ This option uses `mcp-proxy` to handle token refresh automatically, so you don't
 1. In Claude Code, verify the Sumo Logic MCP server connection with `/mcp`.<br/><img src={useBaseUrl('img/platform-services/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
 
-##### Token expiration and reconnection
+### Reconnecting
+
+:::note
+This section only applies if you're using Client Credentials flow with Option 2 (HTTP + Bearer token). Authorization Code flow and Option 1 (stdio + mcp-proxy) handle token refresh automatically.
+:::
 
 OAuth access tokens expire after 30 minutes. When the token expires, Claude Code will lose connection to the MCP server. You may see an error: `Incompatible auth server: does not support dynamic client registration`.
 
@@ -242,10 +228,18 @@ get_sumologic_oauth_token() {
 export SUMOLOGIC_MCP_URL="https://mcp.sumologic.com/mcp"
 export SUMOLOGIC_OAUTH_CLIENT_ID="<your-client-id>"
 export SUMOLOGIC_OAUTH_CLIENT_SECRET="<your-client-secret>"
-export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"
+export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"  # Replace service.sumologic.com with your deployment endpoint
 export SUMOLOGIC_OAUTH_ACCESS_TOKEN="$(get_sumologic_oauth_token)"
 claude
 ```
+
+:::tip
+The token endpoint URL varies by [deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). To discover it programmatically (for example, in an automation script), query the Authorization Server Metadata for your deployment:
+```bash
+curl https://service.sumologic.com/.well-known/oauth-authorization-server
+```
+The response includes the `token_endpoint` and other supported OAuth parameters.
+:::
 
 If you need to re-register the server with a new token:
 1. Remove the existing MCP server configuration.
@@ -268,13 +262,13 @@ If you need to re-register the server with a new token:
    ```
 1. Verify the Sumo Logic MCP server connection with `/mcp`.<br/><img src={useBaseUrl('img/platform-services/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 
-## Configure in VS Code via GitHub Copilot Chat
+## Configure in VS Code
 
-VS Code with GitHub Copilot Chat uses the Client Credentials OAuth flow.
+### Authentication
 
-### Prerequisites
+VS Code with GitHub Copilot Chat uses OAuth 2.0 Client Credentials flow for authentication.
 
-Before configuring VS Code, [create an OAuth client using Client Credentials flow](/docs/manage/security/oauth#client-credentials-flow) and [generate an access token](/docs/manage/security/oauth#generate-access-token). You'll need your access token for the setup below.
+Before you begin, [create an OAuth client using Client Credentials flow](/docs/manage/security/oauth#client-credentials-flow) and [generate an access token](/docs/manage/security/oauth#generate-an-access-token). You'll need your access token for the setup below.
 
 ### Setup
 
@@ -306,7 +300,7 @@ Before configuring VS Code, [create an OAuth client using Client Credentials flo
    ```
    If you've previously configured other MCP servers here, this should be an additive process (that is, do not delete existing ones you still intend to use).
 1. In the **mcp.json** file, click the **Start** button just above `"Sumo Logic MCP server": {`.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-mcp-start.png')} alt="VS Code Start button in mcp.json configuration file" width="600"/>
-1. You'll be prompted in the command palette for an OAuth access token. Enter your [access token from Sumo Logic](/docs/manage/security/oauth#generate-access-token) there.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-oauth-input.png')} alt="prompt in command palette for OAuth access token" width="600"/>
+1. You'll be prompted in the command palette for an OAuth access token. Enter your [access token from Sumo Logic](/docs/manage/security/oauth#generate-an-access-token) there.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-oauth-input.png')} alt="prompt in command palette for OAuth access token" width="600"/>
 1. Confirm that the server shows as **Running**.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-running.png')} alt="prompt in command palette for OAuth access token" width="600"/>
 1. Open GitHub Copilot Chat and ensure it's set to **Agent** mode.
 1. You should now be connected to the Sumo Logic MCP server. Verify by asking `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
@@ -316,7 +310,7 @@ Before configuring VS Code, [create an OAuth client using Client Credentials flo
 Access tokens expire in 30 minutes and may also expire after quitting and restarting VS Code. When this occurs:
 1. You'll see a **Dynamic Client Registration not supported** popup asking for an OAuth client ID. Do NOT provide this. Click **Cancel**.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-dynamic-reg-popup.png')} alt="Dynamic Client Registration not supported popup asking for an OAuth client ID with Cancel button highlighted" width="500"/>
 1. You'll be prompted again for an OAuth client ID in your command palette. Tap **Escape** on your keyboard.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-esc-clientid.png')} alt="VS Code command palette search with MCP: Open User Configuration highlighted" width="600"/>
-1. [Generate a new access token in Sumo Logic](/docs/manage/security/oauth#generate-access-token).
+1. [Generate a new access token in Sumo Logic](/docs/manage/security/oauth#generate-an-access-token).
 1. Reopen your **mcp.json** file.
 1. Hover your mouse over the redacted access token until the **Edit | Clear | Clear All** options appear, then click **Edit**.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-oauth-edit.png')} alt="edit VS Code OAuth access token" width="600"/>
 1. Enter your new access token in the command palette and then restart the Sumo Logic MCP server.
