@@ -207,7 +207,7 @@ Use this dashboard to:
 - Identify the top queries by CPU and execution count using query hash to target optimization efforts.
 - Analyze logical I/O reads and writes and memory consumption by the database to detect resource-intensive patterns.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureSQLManagedInstance/Azure-SQL-Managed-Instance-Query-Performance.png')} alt="Azure SQL Managed Instance - Query Performance" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureSQLManagedInstance/Azure-SQL-Managed-Instance-Query-Performances.png')} alt="Azure SQL Managed Instance - Query Performance" style={{border: '1px solid gray'}} width="800" />
 
 ### SQL Security Audit
 
