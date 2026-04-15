@@ -45,7 +45,7 @@ To configure an OTLP/HTTP Source:
 :::note
 * Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to OTLP Endpoint have appropriate timestamps.
 * Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics).
-* If the data you send to Sumo Logic is nested, Sumo Logic processes and ingests data only up to the first 10 nested levels. Data beyond this limit is discarded.
+* If the data sent to Sumo Logic contains nested structures, only the first 10 levels of nesting are processed and ingested. Any data beyond the 10th level is discarded.
 :::
 
 ### View the endpoint URL
