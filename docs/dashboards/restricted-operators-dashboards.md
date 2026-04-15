@@ -38,7 +38,7 @@ The following operators cannot be used with dashboards:
   * [`Subquery`](/docs/search/subqueries)
   * `Threat Intel`
   * [`Trace`](/docs/search/search-query-language/search-operators/trace)
-  * [`Timeslice`](/docs/search/search-query-language/search-operators/timeslice) greater than 1 day
+  * [`Timeslice`](/docs/search/search-query-language/search-operators/timeslice) greater than 1 day.
   * [`Transactionize`](/docs/search/search-query-language/transaction-analytics/transactionize-operator/)
 
 * The following search modifier cannot be used.
