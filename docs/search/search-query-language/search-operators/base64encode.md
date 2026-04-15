@@ -7,13 +7,9 @@ The `base64Encode` operator takes an ASCII or non-ASCII string and converts it t
 
 ## Syntax
 
-```sumo
-base64Encode("<string>") as <field>
-```
+`base64Encode("<string>") as <field>`
 
-```sumo
-base64Encode(<string_field>) as <field>
-```
+`base64Encode(<string_field>) as <field>`
 
 ## Example
 

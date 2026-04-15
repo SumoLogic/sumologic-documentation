@@ -31,14 +31,12 @@ For example, if you were doing a comparison with yesterday, when you use the com
 
 Compare the present results with a single time period in the past. To make the comparison, specify the time interval you want to go back, in the form of number and time granularity:
 
-```sumo
-... | compare timeshift <number><time granularity>
-```
+`... | compare timeshift <number><time granularity>`
 
 The following query returns data from the present, along with results from yesterday. Here the parameter `1d` specifies the time interval we want to go back to get the data for the comparison.
 
 ```sumo
-... | compare timeshift 1d
+`... | compare timeshift 1d`
 ```
 
 This comparison can be displayed visually as:
@@ -55,9 +53,7 @@ In another example, this query returns data from the present along with results
 
 Compare the present results with multiple time periods in the past. The first parameter specifies the time interval between the present query and the most recent comparison point. The second parameter specifies how many comparison points to create.
 
-```sumo
-... | compare timeshift <number><time granularity> <number of timeshifts>
-```
+`... | compare timeshift <number><time granularity> <number of timeshifts>`
 
 The following query returns results from the present, along with results from every day of the past week. The first parameter, 1d, specifies the interval between the points of comparison, and the second parameter, 7, specifies the number of comparisons.
 
@@ -79,9 +75,7 @@ The following query returns result from the present with results from the same 
 
 Aggregate the results from multiple past time periods using an aggregation operator (`avg`, `min`, or `max`).
 
-```sumo
-... | compare timeshift <number><time granularity> <number of shifts <avg/min/max>
-```
+`... | compare timeshift <number><time granularity> <number of shifts <avg/min/max>`
 
 The following query returns results from the present along with the average of the results from the last five days:
 
@@ -101,9 +95,7 @@ Other examples:
 ### Advanced
 
 You can also do multiple different comparisons queries under the same compare operator by using multiple timeshift phrases separated by commas.
-```
-... | compare\<comparison >,\<comparison >, ...
-```
+`... | compare\<comparison >,\<comparison >, ...`
 
 For example:
 
@@ -113,9 +105,7 @@ For example:
 
 You can specify an alias, and the columns generated use the name you specify.
 
-```sumo
-... | compare <comparison 1>, <comparison 2>, ...
-```
+`... | compare <comparison 1>, <comparison 2>, ...`
 
 For example:
 

@@ -15,9 +15,7 @@ Trace operators require the following:
 
 ## Syntax
 
-```sumo
-trace "<regex>" "<starting_value>"
-```
+`trace "<regex>" "<starting_value>"`
 
 ## Tracing session IDs
 

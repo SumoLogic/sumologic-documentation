@@ -9,9 +9,7 @@ The log10 function returns the base 10 logarithm of x.
 
 ## Syntax
 
-```sumo
-log10(<x>) as <field>
-```
+`log10(<x>) as <field>`
 
 ## Example
 

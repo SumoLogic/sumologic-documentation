@@ -10,9 +10,7 @@ The `in` operator returns a Boolean value: true if the specified property is in 
 
 ## Syntax
 
-```sumo
-<field> in (<value_1>[, <value_2>, <value_3>, ...])
-```
+`<field> in (<value_1>[, <value_2>, <value_3>, ...])`
 
 In the syntax, we are checking the value of the field provided for the \<field\> argument.
 
