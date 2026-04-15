@@ -234,7 +234,7 @@ claude
 ```
 
 :::tip
-The token endpoint URL varies by [deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). To discover it programmatically (for example, in an automation script), query the Authorization Server Metadata for your deployment:
+The token endpoint URL varies by [deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). To discover it programmatically (for example, in an automation script), query the Authorization Server Metadata for your deployment:
 ```bash
 curl https://service.sumologic.com/.well-known/oauth-authorization-server
 ```
