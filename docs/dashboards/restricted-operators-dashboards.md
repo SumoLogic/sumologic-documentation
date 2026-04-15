@@ -21,7 +21,7 @@ The following operators cannot be used with dashboards:
 ## Auto refresh and public dashboard restrictions
 
 * The following operators cannot be used:
-  * `Compare With` can be used when your query's aggregate operation is grouped by a [timeslice](/docs/search/search-query-language/search-operators/timeslice)
+  * `Compare With` can be used when your query's aggregate operation is grouped by a [timeslice](/docs/search/search-query-language/search-operators/timeslice).
   * [`Cat`](/docs/search/search-query-language/search-operators/cat/)
   * `Details`
   * [`First`, `Last`](/docs/search/search-query-language/group-aggregate-operators/first-last/) - instead use the **withtime** option, see [`most_recent` and `least_recent`](/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent).
