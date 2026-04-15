@@ -13,10 +13,6 @@ For additional articles about lookup tables, see the following:
 * To configure a Lookup Table for use in Cloud SIEM, see [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/).
 * To populate a Lookup Table with Cloud SIEM inventory data, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table/).
 
-:::note
-New Lookup Tables are available in all deployments except Sumo Logic's Montreal deployment, pending AWS providing a required AWS service in the Montreal region.
-:::
-
 :::tip
 You can also use the [Lookups API](https://api.sumologic.com/docs/#tag/lookupManagement) to create and manage Lookup Tables. 
 :::
