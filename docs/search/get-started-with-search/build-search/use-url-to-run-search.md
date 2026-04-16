@@ -32,7 +32,7 @@ https://<endpoint>/log-search/create?query=<urlEncodedQuery>&parameters=<param1:
 
 Create a URL for the following log query, using a relative time range expression of `-10w` to `-1w`.:
 
-```sql
+```sumo
 test query | count by _source
 ```
 
@@ -45,13 +45,13 @@ https://service.sumologic.com/log-search/create?query=test%20query%20%7C%20count
 
 Create a URL for the following log query, using a relative time range expression of `-60m` to `-30m`.:
 
-```sql
+```sumo
 {{app_name}} error | count
 ```
 
 Assuming that user selects `billing` app from the list of apps, the final query is :
 
-```sql
+```sumo
 billing error | count
 ```
 

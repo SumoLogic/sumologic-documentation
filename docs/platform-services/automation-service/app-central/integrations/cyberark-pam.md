@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cyberark-pam.png')} alt="cyberark-pam" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cyberark-pam.png')} alt="Cyberark PAM icon" width="100"/>
 
 ***Version: 1.3  
 Updated: March 20, 2024***
@@ -50,7 +50,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-4.png')} style={{border:'1px solid gray'}} alt="cyberark-pam" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-4.png')} style={{border:'1px solid gray'}} alt="Cyberark pam" width="400"/>
 
 For information about CyberArk, see [CyberArk documentation](https://docs.cyberark.com/portal/latest/en/docs.htm). For information about CyberArk APIs, see their [REST APIs documentation](https://docs.cyberark.com/pam-self-hosted/latest/en/content/webservices/implementing%20privileged%20account%20security%20web%20services%20.htm).
 

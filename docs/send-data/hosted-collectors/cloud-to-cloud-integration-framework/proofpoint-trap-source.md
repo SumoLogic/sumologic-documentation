@@ -1,6 +1,6 @@
 ---
 id: proofpoint-trap-source
-title: Proofpoint TRAP Source (Beta)
+title: Proofpoint TRAP Source
 sidebar_label: Proofpoint TRAP
 tags:
   - cloud-to-cloud
@@ -8,16 +8,10 @@ tags:
 description: Learn how to collect Proofpoint TRAP message data and send it to Sumo Logic.
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
-
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="150"/>
+<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Proofpoint icon" width="150"/>
 
 The Sumo Logic source for Proofpoint TRAP enables you to ingest message logs from the Proofpoint TRAP API and send them to Sumo Logic for analysis. This integration enhances email threat visibility by providing detailed insights into message disposition, threats detected, and policy actions, helping security teams identify, investigate, and respond to email-based attacks more effectively.
 
@@ -48,8 +42,8 @@ To configure the Proofpoint TRAP Source:
 1. Enter a **Name** to display for the Source in Sumo Logic. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Base URL**. Enter your [Base URL](#vendor-configuration).
 1. **Auth Base URL**. Enter your [Auth Base URL](#vendor-configuration).
 1. **Client ID**. Enter your [Client ID](#vendor-configuration).

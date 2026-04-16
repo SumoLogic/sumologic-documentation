@@ -7,7 +7,7 @@ description: Allows you to manage your Microsoft Internet Information Services (
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="thumbnail icon" width="120"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="Microsoft IIS 10 icon" width="120"/>
 
 The IIS 7 App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. Additionally, you can monitor customer paths and interactions to learn how customers are using your product. The app consists of predefined searches and Dashboards, which provide visibility into your environment for real-time or historical analysis.
 
@@ -55,7 +55,7 @@ The following query samples are taken from the IIS 7 App.
 
 The following query is taken from the **Requests by App Over Time** panel on the **IIS 7 Traffic Insights - App Requests Dashboard**.
 
-```sql title="Requests by App Over Time"
+```sumo title="Requests by App Over Time"
 _sourceCategory=IIS*
 | parse regex "\d+-\d+-\d+ \d+:\d+:\d+ (?<server_ip>\S+) (?<method>\S+) (?<cs_uri_stem>/\S+?) "
 | parse regex field=cs_uri_stem "/(?<app>[^\./]+)/" nodrop
@@ -67,7 +67,7 @@ _sourceCategory=IIS*
 
 The following query is taken from the **OSes and Browsers** panel of the **IIS 7 Traffic Insights - Content and Client Platform Dashboard**.
 
-```sql title="Operating Systems (OSes) and Browsers"
+```sumo title="Operating Systems (OSes) and Browsers"
 _sourceCategory=IIS*
 | parse regex "\d+-\d+-\d+ \d+:\d+:\d+ (?<server_ip>\S+) (?<method>\S+) (?<cs_uri_stem>/\S+?) \S+ \d+ (?<user>\S+) (?<client_ip>[\.\d]+) (?<agent>\S+) "
 | if ((agent matches "*Windows NT*") or (agent matches "*Windows+NT*") or (agent matches "*Windows *") or (agent matches "*Win32*") or (agent matches "*Win64*"), "Windows", "Other") as OS |

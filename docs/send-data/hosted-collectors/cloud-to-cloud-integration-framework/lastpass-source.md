@@ -10,7 +10,7 @@ description: Learn how to collect audit reporting events from LastPass platform.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/lastpass.png')} alt="thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/send-data/lastpass.png')} alt="LastPass icon" width="55"/>
 
 LastPass is a password manager tool that allows you to store, secure, and autofill your passwords. LastPass' users get a password vault, which is the encrypted part of the LastPass password manager where passwords, secure notes, and sensitive information are safely stored. The LastPass source collects audit reporting events data and sends it to Sumo Logic.
 
@@ -37,13 +37,17 @@ To configure the LastPass Source:
 1. Enter a **Name** to display for the source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. In **CID (Account Number)**, enter your CID account number collected from the LastPass platform.
 1. In **API Secret**, enter your API Secret ID collected from the LastPass platform.
 1. In **TimeZone**, enter the timezone of admin LastPass account.
 1. **Polling Interval**. You have the option to select how often to poll for base entry events. Default is 5 minutes.
 1. When you are finished configuring the source, click **Save**.
+
+:::info
+After configuring the LastPass source, consider installing the Sumo Logic app for [LastPass](/docs/integrations/saas-cloud/lastpass/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## JSON schema
 

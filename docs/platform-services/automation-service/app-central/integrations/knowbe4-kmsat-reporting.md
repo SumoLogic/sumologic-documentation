@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/knowbe4-kmsat-reporting.png')} alt="knowbe4-kmsat-reporting" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/knowbe4-kmsat-reporting.png')} alt="KnowBe4 KMSAT Reporting icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jun 15, 2023***

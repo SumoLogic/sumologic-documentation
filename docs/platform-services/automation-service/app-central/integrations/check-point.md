@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/check-point.png')} alt="check-point" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/check-point.png')} alt="Check Point icon" width="100"/>
 
 ***Version: 1.4  
 Updated: Jun 26, 2023***

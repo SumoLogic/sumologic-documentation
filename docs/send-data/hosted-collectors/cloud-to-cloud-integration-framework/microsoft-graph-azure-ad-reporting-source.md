@@ -11,7 +11,7 @@ description: The Microsoft Graph Azure AD Reporting Source collects Directory Au
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="MS Graph icon" width="40"/>
 
 The Microsoft Graph Azure AD Reporting Source collects [Directory Audit](https://docs.microsoft.com/en-us/graph/api/directoryaudit-list?view=graph-rest-1.0), [Sign-in](https://docs.microsoft.com/en-us/graph/api/signin-list?view=graph-rest-1.0), and [Provisioning](https://docs.microsoft.com/en-us/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0) data from the [Microsoft Graph API Azure AD activity reports](https://docs.microsoft.com/en-us/graph/api/resources/azure-ad-auditlog-overview?view=graph-rest-1.0). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -73,12 +73,16 @@ To configure a Microsoft Graph Azure AD Reporting Source:
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**. 
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**. 
 1. Provide the **Directory (tenant) ID** and **Application (client) ID** you got after you registered (created) the Azure Application in step 5 of the setup section.
 1. **Application Client Secret Value**. Provide the Application Client Secret Value you created in step 7 of the setup section.
 1. **Supported APIs to collect**. Select one or more of the available APIs: **Directory Audit**, **Sign-in**, and **Provisioning**.
 1. When you are finished configuring the Source, click **Submit**.
+
+:::info
+After configuring the Microsoft Graph Azure AD Reporting source, consider installing the Sumo Logic app for [Microsoft Graph Azure AD Reporting](/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata fields
 

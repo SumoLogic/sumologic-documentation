@@ -7,7 +7,7 @@ description: The Sumo Logic app for Jenkins helps you monitor build successes, f
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/jenkins.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/app-development/jenkins.png')} alt="Jenkins icon" width="50"/>
 
 [Jenkins](https://jenkins.io/) is an open source automation server that provides a simple way to set up a continuous integration or delivery environment for building and testing software. The Sumo Logic App for Jenkins helps you monitor your build processes and Jenkins master and server health via pre-configured dashboards.
 
@@ -265,7 +265,7 @@ The Jenkins app uses the following log types:
 
 This sample query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
 
-```sql
+```sumo
 _sourceCategory=Labs/Jenkins/Sourabh/Logs In_Progress
 | json "name", "result", "number" as Job_Name, Result, Job_Number
 | where Result = "In_Progress"

@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-sentinel.png')} alt="microsoft-sentinel" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-sentinel.png')} alt="Microsoft Sentinel icon" width="100"/>
 
 ***Version: 1.7  
 Updated: April 26, 2025***

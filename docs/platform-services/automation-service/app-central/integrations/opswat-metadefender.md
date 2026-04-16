@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/opswat-metadefender.png')} alt="opswat-metadefender" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/opswat-metadefender.png')} alt="Opswat Metadefender icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 07, 2023***

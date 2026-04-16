@@ -7,7 +7,7 @@ description: Learn how to use the AWS Kinesis Firehose for Metrics source to ing
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/aws-kinesis-firehose-metrics.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/aws-kinesis-firehose-metrics.png')} alt="AWS Kinesis Firehose Metrics icon" width="50"/>
 
 This page has information about Sumo Logic’s AWS Kinesis Firehose for Metrics source.
 
@@ -61,9 +61,9 @@ In this step, you create the AWS Kinesis Firehose for Metrics source.
 1. Select **AWS Kinesis Firehose** for Metrics.
 1. Enter a **Name** for the source.
 1. (Optional) Enter a **Description**.
-1. For **Source Category**, enter any string to tag the output collected from this Source. Category metadata is stored in a searchable field called `_sourceCategory`.<br/><img src={useBaseUrl('img/send-data/kinesis-aws-source.png')} alt="kinesis-aws-source.png" style={{border: '1px solid gray'}} width="500"/>
+1. For **Source Category**, enter any string to tag the output collected from this Source. Category metadata is stored in a searchable field called `_sourceCategory`.<br/><img src={useBaseUrl('img/send-data/kinesis-aws-source.png')} alt="Source category" style={{border: '1px solid gray'}} width="500"/>
 1. For **AWS Tag Filters** (Optional) , enter keys and values to add filters to your metrics. AWS Tag filters are supported for AWS namespaces but not for custom namespaces.
-**Example** <br/><img src={useBaseUrl('img/send-data/kinesis-aws-tag-filters.png')} alt="kinesis-aws-source.png" style={{border: '1px solid gray'}} width="500"/>
+**Example** <br/><img src={useBaseUrl('img/send-data/kinesis-aws-tag-filters.png')} alt="Kinesis AWS source" style={{border: '1px solid gray'}} width="500"/>
 1. For **AWS Access** of a Kinesis Metric source, the role requires `tag:GetResources` permission. The Kinesis Log source does not require permissions.
 1. Click **Save**.
 

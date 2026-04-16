@@ -11,7 +11,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <p> <a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a> </p>
 
-<img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/>
+<img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/>
 
 Use Metrics Search Management APIs to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization.
 

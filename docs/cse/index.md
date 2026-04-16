@@ -21,12 +21,13 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 <SumoAcademy/>
 
-* **Self-paced**: 
-    * [Cloud SIEM Training Self-Paced](https://learn.sumologic.com/path/sumo-security/cloud-siem-training-self-paced)
+* **Self-paced**:
     * [Essential Cloud SIEM Skills for SOC Analysts](https://learn.sumologic.com/path/sumo-security/essential-cloud-siem-skills-for-soc-analysts)
+    * [Cloud SIEM Training Self-Paced](https://learn.sumologic.com/path/sumo-security/cloud-siem-training-self-paced)
 * **Instructor-led virtual classes**:
-    * [Certifications: Cloud SIEM](https://www.sumologic.com/learn/training?_certifications=cloud-siem#section-2)
     * [Workshops: Essential Cloud SIEM Skills for SOC Analysts](https://www.sumologic.com/learn/training?_workshops=essential-cloud-siem-skills-for-soc-analysts#section-2)
+    * [Certifications: Cloud SIEM](https://www.sumologic.com/learn/training?_certifications=cloud-siem#section-2)
+    * [Workshops: Automation Workshop](https://www.sumologic.com/learn/training?_workshops=automation-workshop#section-2)
 :::
 
 This section contains the following topics:

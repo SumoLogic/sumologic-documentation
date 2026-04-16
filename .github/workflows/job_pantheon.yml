@@ -40,7 +40,7 @@ jobs:
   deploy-to-pantheon:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Install SSH key
@@ -68,13 +68,13 @@ jobs:
           chmod +x terminus
           mv terminus /usr/local/bin/terminus
           terminus self:update
-          git config -l | grep 'http\..*\.extraheader' | cut -d= -f1 | xargs -L1 git config --unset-all
+          git config -l | grep 'http\..*\.extraheader' | cut -d= -f1 | xargs -L1 git config --unset-all || true
           git config --global user.email "${{ secrets.PANTHEON_USER_EMAIL }}"
           git config --global user.name "GitHub workflow"
           echo "PANTHEON_BRANCH=master" >> $GITHUB_ENV
           echo "PANTHEON_ENV=dev" >> $GITHUB_ENV
       - name: Retrieve build artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v8
         with:
           name: build-output
           path: ./build
@@ -96,7 +96,7 @@ jobs:
       - name: Commit build and deploy to Pantheon repo
         run: |
           terminus local:clone --yes --branch="${{ env.PANTHEON_BRANCH }}" ${{ inputs.PANTHEON_SITE_ID }}
-          rsync --archive ./build/ "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}/${{ inputs.SITE_PATH }}"
+          rsync --archive --delete --exclude="cid.php" ./build/ "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}/${{ inputs.SITE_PATH }}"
           chmod -R 755 $HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}/${{ inputs.SITE_PATH }}
           git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" add .
           git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" commit -m "Added content from ${{ github.repository }} at ${{ github.sha }}"

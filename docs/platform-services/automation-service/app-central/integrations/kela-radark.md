@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/kela-radark.png')} alt="kela-radark" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/kela-radark.png')} alt="Kela Radark icon" width="80"/>
 
 ***Version: 1.1  
 Updated: Jul 03, 2023***
@@ -22,7 +22,7 @@ KELA's RADARK delivers automated threat intelligence, cultivating the targeted a
 
 1. Sign in **KELA RaDark** using your username and password.
 2. The API token can be generated through the RADARK UI, under the user menu - Generate Api Key.
-3. Make sure you copy and save the api token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-radark/kela-radark-1.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="600"/>
+3. Make sure you copy and save the api token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-radark/kela-radark-1.png')} style={{border:'1px solid gray'}} alt="API token" width="600"/>
 
 ## Configure KELA RaDark in Automation Service and Cloud SOAR
 

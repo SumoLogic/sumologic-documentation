@@ -7,7 +7,7 @@ description: The Trend Micro Deep Security app works with system and security ev
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src='https://upload.wikimedia.org/wikipedia/commons/f/f4/Trend_Micro_logo.svg' alt="thumbnail icon" width="100"/>
+<img src='https://upload.wikimedia.org/wikipedia/commons/f/f4/Trend_Micro_logo.svg' alt="Trend Micro icon" width="100"/>
 
 The Trend Micro Deep Security app works with system and security events to monitor event history such as anti-malware, IPS, web reputation, firewall, integrity and log inspection events. The app analyzes security events from both on-premises and cloud-based Trend Micro Deep Security products.
 
@@ -80,7 +80,7 @@ Now you must add the Syslog Source to your Policy configuration. Set the integra
 
 ## Sample queries
 
-```sql title="Top 5 Reasons For Prevented Packets"
+```sumo title="Top 5 Reasons For Prevented Packets"
 _sourceCategory=Trendmicro dst
 | parse "CEF:0|*|*|*|*|*|*|*" as Device_Vendor,Device_Product,Device_Version,Signature_ID, Name, Severity, Extension
 | where (signature_id >= 100 AND signature_id <= 199) OR signature_id = 20 OR signature_id = 21

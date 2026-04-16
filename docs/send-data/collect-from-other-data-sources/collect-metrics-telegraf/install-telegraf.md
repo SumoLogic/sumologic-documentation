@@ -181,7 +181,7 @@ You can adjust the collection and reporting intervals in the `[agent]` block of 
 
 The following example collects and send metrics to Sumo Logic every 30 seconds.
 
-```sql
+```sumo
 [agent]
   interval = "30s"
   flush_interval = "30s"
@@ -191,7 +191,7 @@ The following example collects and send metrics to Sumo Logic every 30 seconds.
 
 You may wish to add additional metadata to the metrics that Telegraf collects. You can do so with Global Tags. Global tags can be specified in the `[global_tags]` table in key="value" format. All metrics that are collected will be tagged with the specified tags.
 
-```sql
+```sumo
 [global_tags]
   dc = "us-east-1"
 ```
