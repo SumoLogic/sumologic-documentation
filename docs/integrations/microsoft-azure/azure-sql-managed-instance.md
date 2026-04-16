@@ -289,11 +289,15 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Azure SQL Managed Instance alerts
 
+These alerts are metric-based and will work for all Azure SQL Managed Instances.
+
 | Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Azure SQL Managed Instance - High CPU Usage Alert` | This alert is triggered when the average CPU usage in any Azure SQL Managed Instance exceeds 90%, generating a critical notification. A warning notification is generated when the average CPU usage exceeds 80%. | Critical: `> 90`<br/>Warning: `> 80` | Critical: `<= 90`<br/>Warning: `<= 80` |
-| `Azure SQL Managed Instance - High Error Count` | This alert is triggered when the error count in any Azure SQL Managed Instance database exceeds 200, generating a critical notification. A warning notification is triggered when the error count exceeds 50. | Critical: `> 200`<br/>Warning: `> 50` | Critical: `<= 200`<br/>Warning: `<= 50` |
-| `Azure SQL Managed Instance - High Severity Errors Alert` | This alert is triggered when the total error count exceeds the defined threshold within the evaluation window. | Critical: `> 5`<br/>Warning: `> 1` | Critical: `<= 5`<br/>Warning: `<= 1` |
+| `Azure SQL Managed Instance - Average CPU percentage` | This alert is triggered when Average CPU percentage becomes greater than 80%. Also Warning alert is triggered when Average CPU percentage becomes greater than 70%. | Critical: `> 80`<br/>Warning: `> 70` | Critical: `<= 80`<br/>Warning: `<= 70` |
+| `Azure SQL Managed Instance - Average IO Bytes Written` | This alert is triggered when average IO bytes written is greater than 1000000 Bytes. | Critical: `> 1000000` | Critical: `<= 1000000` |
+| `Azure SQL Managed Instance - IO requests count` | This alert is triggered when IO requests count is greater than 1000. | Critical: `> 1000` | Critical: `<= 1000` |
+| `Azure SQL Managed Instance - Storage Space Reserved` | This alert is triggered when average storage space reserved is less than 10000000 MB. | Critical: `< 10000000` | Critical: `>= 10000000` |
+| `Azure SQL Managed Instance - Storage Space Used` | This alert is triggered when storage space used is greater than 6442450 MB. | Critical: `> 6442450` | Critical: `<= 6442450` |
 
 
 ## Upgrade/Downgrade the Azure SQL Managed Instance app (Optional)
