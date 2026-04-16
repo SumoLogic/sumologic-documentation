@@ -8,11 +8,9 @@ Use the `filter` operator to filter the output of a search based on the filterin
 
 ## Syntax
 
-```sumo
-"filter" <fieldname>+ in (<child_query>)
+`"filter" <fieldname>+ in (<child_query>)
 <child_query> ::= (non data-retrieval sumo query )
-<fieldname> ::= (name of a field)
-```
+<fieldname> ::= (name of a field)`
 
 ### Caveats
 

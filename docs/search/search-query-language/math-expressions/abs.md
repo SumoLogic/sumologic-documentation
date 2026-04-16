@@ -8,9 +8,7 @@ The absolute function calculates the absolute value of x.
 
 ## Syntax
 
-```sumo
-abs(<x>) as <field>
-```
+`abs(<x>) as <field>`
 
 ## Rules
 

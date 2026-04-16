@@ -10,13 +10,9 @@ The `isPublicIP` operator checks if an IPv4 address is public and returns a bo
 
 ## Syntax
 
-```sumo
-isPublicIP("<IPv4_string>") as <field>
-```
+`isPublicIP("<IPv4_string>") as <field>`
 
-```sumo
-isPublicIP(<IPv4_string_field>) [as <field>]
-```
+`isPublicIP(<IPv4_string_field>) [as <field>]`
 
 ## Rules
 

@@ -14,9 +14,7 @@ If you're using [`top`](top.md), we recommend switching to `topk` for all your q
 
 ## Syntax
 
-```sumo
-topk(<#>, <top_field>[, <top_field_2>, ...]) [by <group_by_fields>]
-```
+`topk(<#>, <top_field>[, <top_field_2>, ...]) [by <group_by_fields>]`
 
 `#` is an integer equal to or greater than 1.
 
