@@ -18,7 +18,7 @@
 
 ## Crawl guidance
 
-- Crawl frequency: Daily for release notes, weekly for other documentation.
+- Crawl frequency: Daily.
 - Respect rate limits: Maximum 1 request per second.
 - Identify yourself with a descriptive user-agent string.
 
