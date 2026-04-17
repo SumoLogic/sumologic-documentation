@@ -9,12 +9,15 @@ import TabItem from '@theme/TabItem';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<!-- Is OAuth in Private Preview?
 <head>
   <meta name="robots" content="noindex" />
 </head>
-insert preview badge
--->
+
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
 
 OAuth 2.0 enables secure authentication between Sumo Logic and external applications without sharing passwords. Use OAuth to connect AI tools, custom integrations, and third-party services to your Sumo Logic account.
 

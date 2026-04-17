@@ -1,6 +1,6 @@
 ---
 id: mcp-server
-title: Sumo Logic MCP Server (Private Preview)
+title: Sumo Logic MCP Server
 description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents from VS Code or Claude Code CLI.
 ---
 
@@ -15,22 +15,19 @@ import TabItem from '@theme/TabItem';
 <p><a href={useBaseUrl('docs/beta')}><span className="beta">Private Preview</span></a></p>
 
 :::info
-This feature is in Private Preview. For more information, contact your Sumo Logic account executive.
-
-During this preview phase, only select MCP clients are supported. See [Prerequisites](#prerequisites) below for the full list and setup requirements.
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
 :::
 
-The Sumo Logic MCP server lets MCP clients (external AI models) securely query logs, investigate Cloud SIEM insights, manage alerts and dashboards, work with existing Dojo AI agents, and perform user management. Use natural language from your IDE or chat platform.
-
+The Sumo Logic MCP server lets MCP clients (external AI models) securely query logs, investigate Cloud SIEM insights, manage alerts and dashboards, and work with Dojo AI agents using natural language from your IDE or chat platform.
 
 ## Prerequisites
 
 * **Sumo Logic Administrator role**. Required to create OAuth clients. If you're unsure whether you are an administrator, you can find your role in your [Preferences](/docs/get-started/onboarding-checklists/).
+* **Sumo Logic OAuth credentials**. You'll create these during the setup process for your chosen client below ([learn more](/docs/manage/security/oauth)).
 * **An MCP-compatible client**. Currently, we support the following clients:
    * **[ChatGPT](https://chatgpt.com/)**. You'll need a paid ChatGPT account.
    * **[Claude Code CLI](https://code.claude.com/docs/en/quickstart)**. You'll need a paid Claude subscription or Anthropic Console account.
    * **[VS Code](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)**. You'll need a GitHub account with GitHub Copilot access. A free GitHub Copilot plan is available with limited monthly requests.
-* **Sumo Logic OAuth credentials**. You'll create these during the setup process for your chosen client below ([learn more](/docs/manage/security/oauth)).
 
 ## Configure in ChatGPT
 
