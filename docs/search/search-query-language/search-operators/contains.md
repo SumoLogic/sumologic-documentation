@@ -9,21 +9,13 @@ The `contains` operator compares string values of two [parsed](/docs/search/sear
 
 ## Syntax
 
-```sumo
-contains(<field1>, <field2>) as <field>
-```
+`contains(<field1>, <field2>) as <field>`
 
-```sumo
-<field1> contains <field2> as <field>
-```
+`<field1> contains <field2> as <field>`
 
-```sumo
-| where <field1> contains <field2>
-```
+`| where <field1> contains <field2>`
 
-```sumo
-| where contains(<field1>, <field2>)
-```
+`| where contains(<field1>, <field2>)`
 
 ## Rules
 

@@ -18,9 +18,7 @@ This operator supersedes the more limited [`threatip`](/docs/search/search-query
 
 ## Syntax
 
-```
-threatlookup [singleIndicator] [source="<source_value>"] <indicator>
-```
+`threatlookup [singleIndicator] [source="<source_value>"] <indicator>`
 
 Where:
 * `singleIndicator` returns the single best matching threat intelligence entry. (In the response, `num_matches` indicates how many total matches across your sources there are.) If `singleIndicator` is not specified, all matching entries from your intelligence sources are returned in separate rows.

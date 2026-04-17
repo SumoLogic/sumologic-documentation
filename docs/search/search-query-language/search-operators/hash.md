@@ -14,9 +14,7 @@ This is helpful when working with sensitive data such as email addresses, usern
 
 As a Search operator, hash processes the provided field against the specified algorithm to change the current values into random unique values.
 
-```sumo
-hash(<field>[<algorithm]) [as <field>]
-```
+`hash(<field>[<algorithm>]) [as <field>]`
 
 Where:
 

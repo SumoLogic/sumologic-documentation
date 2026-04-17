@@ -14,9 +14,7 @@ Either raw or aggregated results can be saved with the `save` operator.
 
 ## Syntax 
 
-```sumo
-save [append] path://”<path-to-table>”
-```
+`save [append] path://”<path-to-table>”`
 
 Where: 
 

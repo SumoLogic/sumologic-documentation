@@ -8,13 +8,9 @@ The `trim` operator eliminates leading and trailing spaces from a string field.
 
 ## Syntax
 
-```sumo
-trim(<field>) as <field>
-```
+`trim(<field>) as <field>`
 
-```sumo
-trim(" <string expression> ") as <field>
-```
+`trim(" <string expression> ") as <field>`
 
 ## Example
 

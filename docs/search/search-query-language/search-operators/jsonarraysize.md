@@ -9,9 +9,7 @@ Use the `jsonArraySize` operator to determine the size of a JSON array field.
 
 ## Syntax
 
-```sumo
-jsonArraySize(field)
-```
+`jsonArraySize(field)`
 
 ## Example
 

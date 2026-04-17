@@ -8,9 +8,7 @@ You can use the `cat` operator to view the contents of a lookup table. Not supp
 
 ## Syntax
 
-```sumo
-cat path://”<path-to-table>”
-```
+`cat path://”<path-to-table>”`
 
 Where:
 

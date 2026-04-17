@@ -8,13 +8,9 @@ The `hexToDec` operator converts a hexadecimal string of 16 or fewer characters 
 
 ## Syntax
 
-```sumo
-hexToDec("<hexadecimal string>") as <field>
-```
+`hexToDec("<hexadecimal string>") as <field>`
 
-```sumo
-hexToDec(<hexadecimal_field>) as <field>
-```
+`hexToDec(<hexadecimal_field>) as <field>`
 
 ## Examples
 
