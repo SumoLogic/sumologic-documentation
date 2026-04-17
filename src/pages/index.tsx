@@ -132,7 +132,7 @@ export const Home = () => {
                     {
                       children: 'Start a free trial',
                       description: 'Sign up for a Sumo Logic free trial',
-                      to: 'https://www.sumologic.com/sign-up/',
+                      href: 'https://www.sumologic.com/sign-up/',
                     },
                     {
                       children: '1. Set up collector and source',
@@ -149,8 +149,8 @@ export const Home = () => {
                       description: 'Monitor, troubleshoot, and secure your environment',
                       to: '/docs/get-started/quickstart#step-3-monitor-and-troubleshoot-your-environment',
                     },
-                  ].map(({ children, to }) => (
-                    <Link key={to} to={to} style={{ textDecoration: 'none' }}>
+                  ].map(({ children, to, href }) => (
+                    <Link key={to || href} to={to} href={href} style={{ textDecoration: 'none' }}>
                       <Button
                         sx={{
                           bgcolor: 'transparent',
