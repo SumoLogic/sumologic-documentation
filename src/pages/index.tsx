@@ -132,7 +132,7 @@ export const Home = () => {
                     {
                       children: 'Start a free trial',
                       description: 'Sign up for a Sumo Logic free trial',
-                      to: 'https://www.sumologic.com/sign-up',
+                      to: 'https://www.sumologic.com/sign-up/',
                     },
                     {
                       children: '1. Set up collector and source',
