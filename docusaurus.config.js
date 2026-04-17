@@ -37,7 +37,7 @@ module.exports = {
     {
       tagName: 'link',
       attributes: {
-        rel: 'help',
+        rel: 'llms-txt',
         href: '/llms.txt',
         type: 'text/plain',
         title: 'LLM Documentation Index',
