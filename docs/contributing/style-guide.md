@@ -247,88 +247,6 @@ Here's a cool tip.
 
 :::
 
-## Preview releases
-
-Following are the instructions for formatting docs at each release stage. For release type definitions, see [Preview Releases](/docs/preview).
-
-### Private Preview
-
-Private Preview release features are exclusively available to participating customers. Documentation for these features is not publicly accessible; Sumo Logic representatives provide the documentation links only to the involved customers. These links are excluded from our table of contents.
-
-To format a Private Preview release:
-
-* Add `(Preview)` after the title.
-* Add the [`robots` meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), which prevents search crawlers from picking it up.
-* Add the `preview` badge, which contains a link to the [Preview](/docs/preview) landing page.
-
-```md {3,8-10,12}
----
-id: xyz
-title: XYZ (Preview)
-sidebar_label: XYZ
-description: The XYZ feature enables...
----
-
-<head>
-<meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Preview</span></a></p>
-
-First paragraph goes here...
-```
-
-### Extended Preview
-
-Extended Preview releases are available to a broader selected group that provides scaled feedback. Features are 75-90% production-ready. Format these the same as [Private Preview](#private-preview) docs.
-
-### Public Preview
-
-For Public Preview releases, the widest eligible audience gets early access to features that are 90-100% production-ready.
-
-To format a Public Preview release:
-
-1. Add the
-1. Underneath the frontmatter, add the Preview badge.
-   ```md
-   ---
-   id: xyz-source
-   title: XYZ Source (Preview)
-   description: The XYZ Source provides a secure endpoint to receive event data.
-   ---
-
-   <p><a href={useBaseUrl('docs/preview')}><span className="preview">Preview</span></a></p>
-
-   First paragraph...
-   ```
-1. Add the doc's file path to `sidebars.ts` under its appropriate section and the preview section. (For example, a doc at `/docs/send-data/xyz` would be added under both `label: 'Send Data'` and `label: 'Preview'`.)
-     ```js {6,13}
-     ...
-       {
-         type: 'category',
-         label: 'Send Data',
-         items: [
-           'send-data/xyz',
-     ...
-       {
-         type: 'category',
-         label: 'Preview',
-         items: [
-           'send-data/xyz',
-     ...
-     ```
-
-
-### Generally Available
-
-When a feature becomes Generally Available (GA):
-
-- Remove the `(Preview)` title addendum, preview badge, and the `robots` meta tag from the doc.
-- Move feature's card from the `/docs/preview` index page to its appropriate parent index page.
-- Move the `sidebars.ts` entry to its appropriate section.
-
-Then follow the standard [create doc](/docs/contributing/create-edit-doc) instructions.
-
 ## Capitalization
 
 * Title case all doc titles. Example: `Cloud SOAR Incident Management and Triage`.
@@ -1265,6 +1183,105 @@ This is a partial list of trademarked terms, which should be capitalized exactly
 
 Never use Sumo Logic in the plural or possessive form.
 
+
+## Preview releases
+
+Following are the instructions for formatting docs at each release stage. For release type definitions, see [Preview Releases](/docs/preview).
+
+### Private Preview
+
+Private Preview release features are exclusively available to participating customers. Documentation for these features is not publicly accessible; Sumo Logic representatives provide the documentation links only to the involved customers. These links are excluded from our table of contents.
+
+To format a Private Preview release:
+
+* Add `(Private Preview)` after the title.
+* Add the [`robots` meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), which prevents search crawlers from picking it up.
+* Add the Private Preview badge, which contains a link to the [Preview](/docs/preview) landing page.
+
+```md {3,8-10,12}
+---
+id: xyz
+title: XYZ (Private Preview)
+sidebar_label: XYZ
+description: The XYZ feature enables...
+---
+
+<head>
+<meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview">Private Preview</span></a></p>
+
+First paragraph goes here...
+```
+
+### Extended Preview
+
+Extended Preview releases are still limited to a select group. These follow a format similar to Private Previews.
+
+* Add `(Extended Preview)` after the title.
+* Add the Extended Preview badge.
+* Add the [`robots` meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), if not already there.
+
+```md {3,8,9,10,12}
+---
+id: xyz-source
+title: XYZ Source (Extended Preview)
+description: The XYZ Source provides a secure endpoint to receive event data.
+---
+
+<head>
+<meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview">Extended Preview</span></a></p>
+
+First paragraph...
+```
+
+### Public Preview
+
+To format a Public Preview release:
+
+* Add `(Public Preview)` after the title.
+* Add the Public Preview badge.
+* Remove the [`robots` meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), if present.
+
+```md {3,7}
+---
+id: xyz-source
+title: XYZ Source (Public Preview)
+description: The XYZ Source provides a secure endpoint to receive event data.
+---
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview">Public Preview</span></a></p>
+
+First paragraph...
+```
+
+* Add a tile card to the Public Preview doc's [Available features](/docs/preview/public-preview#available-features) section.
+```md {12-20}
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/api/metrics-searches/')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/><h4>Metrics Search Management APIs</h4></a>
+  <p>Use Metrics Search API endpoints to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/xyz-source')}><img src={useBaseUrl('img/send-data/xyz.png')} alt="XYZ icon" width="40"/><h4>XYZ Source</h4></a>
+  <p>The XYZ Source provides a secure endpoint to receive event data.</p>
+  </div>
+</div>
+</div>
+```
+
+### Generally Available
+
+When a feature becomes Generally Available (GA), remove all Preview-related labels/badges, the `robots` meta tag, and the Public Preview doc tile card.
+
+Then follow the standard [Create a Doc](/docs/contributing/create-edit-doc) instructions.
 
 ## Punctuation
 

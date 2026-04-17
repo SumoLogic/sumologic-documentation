@@ -75,7 +75,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'preview/index'},
       items: [
-          'api/metrics-searches'
+          'preview/public-preview',
       ],
     },
   ],

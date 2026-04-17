@@ -13,7 +13,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <!-- Originally added as a preview article with SUMO-124040. -->
 
-Use Metrics Search Management APIs V2 (Public Preview) to save metrics searches in the content library, organize them in a folder hierarchy, and list metrics searches under your personal folder.
+Use Metrics Search Management APIs V2 to save metrics searches in the content library, organize them in a folder hierarchy, and list metrics searches under your personal folder.
 
 ## Documentation
 
