@@ -1,6 +1,6 @@
 ---
 id: dynamodb
-title: Amazon DynamoDB
+title: AWS DynamoDB
 description: The Sumo Logic app for DynamoDB provides operational insight into your database environment and Dashboards displaying the events, errors, latency, and capacity of your DynamoDB environment.
 ---
 

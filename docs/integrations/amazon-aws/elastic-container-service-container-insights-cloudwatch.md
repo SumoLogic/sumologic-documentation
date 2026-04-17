@@ -1,6 +1,6 @@
 ---
 id: elastic-container-service-container-insights-cloudwatch
-title: Amazon Elastic Container Service (ECS) using Container Insights and CloudWatch
+title: Amazon Elastic Container Service (ECS) with Container Insights and CloudWatch
 sidebar_label: Amazon ECS with Container Insights and CloudWatch
 description: Provides preconfigured searches and Dashboards that allow you to monitor various metrics.
 ---
