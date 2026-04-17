@@ -20,7 +20,7 @@ This feature is in Private Preview. For more information, contact your Sumo Logi
 During this preview phase, only select MCP clients are supported. See [Prerequisites](#prerequisites) below for the full list and setup requirements.
 :::
 
-The Sumo Logic MCP server lets external copilots and proprietary models securely query logs, investigate Cloud SIEM insights, manage alerts and dashboards, work with existing Dojo AI agents, and perform user management — all using natural language from your IDE or chat platform.
+The Sumo Logic MCP server lets MCP clients (external AI models) securely query logs, investigate Cloud SIEM insights, manage alerts and dashboards, work with existing Dojo AI agents, and perform user management. Use natural language from your IDE or chat platform.
 
 
 ## Prerequisites
@@ -104,7 +104,7 @@ Claude Code supports two connection options for the client credentials flow. Opt
 
 | | Option 1: stdio + mcp-proxy | Option 2: HTTP + Bearer token |
 | :--- | :--- | :--- |
-| **Token refresh** | Automatic | Manual — every 30 minutes |
+| **Token refresh** | Automatic | Manual (every 30 minutes) |
 | **Additional requirement** | `uv` | None |
 | **Best for** | Ongoing use | Quick setup and testing |
 
@@ -497,11 +497,11 @@ These prompts demonstrate multi-step investigations that chain multiple tools to
 
 ### Cross-tool correlation
 
-* `Find all alerts that fired in the last hour, check if any of them are related to existing open insights, and for those that aren't — search logs to determine if a new insight should be escalated manually.`
+* `Find all alerts that fired in the last hour, check if any of them are related to existing open insights, and for those that aren't, search logs to determine if a new insight should be escalated manually.`
 
 * `Compare insight volume week-over-week: pull insights from the last 7 days vs the 7 days before that, broken down by severity, and identify any rules that are newly firing this week.`
 
-* `Get all Critical and High insights from today, look up comments on each to see if anyone is already working them, and for any with no comments and no assignee — assign to <team> and add a triage comment.`
+* `Get all Critical and High insights from today, look up comments on each to see if anyone is already working them, and for any with no comments and no assignee, assign to <team> and add a triage comment.`
 
 ### Team operations and reporting
 

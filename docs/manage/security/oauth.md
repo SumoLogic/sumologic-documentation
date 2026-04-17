@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 insert preview badge
 -->
 
-OAuth 2.0 enables secure authentication between Sumo Logic and external applications without sharing passwords. Use OAuth to connect AI tools (such as our [MCP server](/docs/api/mcp-server)), custom integrations, and third-party services to your Sumo Logic account.
+OAuth 2.0 enables secure authentication between Sumo Logic and external applications without sharing passwords. Use OAuth to connect AI tools, custom integrations, and third-party services to your Sumo Logic account.
 
 Sumo Logic supports two OAuth 2.0 authentication flows:
 
@@ -27,7 +27,7 @@ Sumo Logic supports two OAuth 2.0 authentication flows:
 
 ## Authorization Code flow
 
-This flow uses interactive browser-based authentication. Users authorize your application to access Sumo Logic on their behalf, and the application receives an access token to make API requests.
+This flow uses interactive browser-based authentication. Users authorize an external application to access Sumo Logic on their behalf, and the application receives an access token to make API requests.
 
 ### Create an OAuth client
 
@@ -101,7 +101,7 @@ Use the `access_token` to authenticate API requests. Store the `refresh_token` s
 
 ### Refresh access tokens
 
-Access tokens expire after a set period (typically 1 hour). Use the refresh token to obtain a new access token without requiring the user to log in again.
+Access tokens expire after the number of seconds indicated by the `expires_in` property. Use the refresh token to obtain a new access token without requiring the user to log in again.
 
 Replace `[deployment-endpoint]` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `service.sumologic.com`):
 
@@ -114,7 +114,7 @@ curl -X POST https://[deployment-endpoint]/oauth/token \
   -d "client_secret=YOUR_CLIENT_SECRET"
 ```
 
-The response includes a new access token. The refresh token may also be rotated (a new one provided), depending on your configuration.
+The response includes a new access token. The refresh token will be rotated (a new one provided) with each refresh.
 
 ## Client Credentials flow
 
@@ -122,7 +122,6 @@ This flow uses service accounts for server-to-server authentication. Application
 
 :::info prerequisites
 * **Sumo Logic Administrator role**. Required to create OAuth clients and service accounts.
-* **Sumo Logic personal access key**. Used to authenticate API calls during setup ([learn more](/docs/manage/security/access-keys/)).
 :::
 
 ### Create a service account
@@ -131,134 +130,157 @@ Create a Sumo Logic service account to represent your application or service. Yo
 
 1. Log in to Sumo Logic as an Administrator.
 1. [Create a service account](/docs/manage/security/service-accounts/#create-a-service-account) with the appropriate roles for your use case.
-1. [Get a list of all service accounts](https://api.sumologic.com/docs/#operation/listServiceAccounts) in your organization and find the `id` of the service account you just created. You'll use this ID in the next step.
-   <Tabs
-     className="unique-tabs"
-     defaultValue="request"
-     values={[
-       {label: 'Example request', value: 'request'},
-       {label: 'Example response', value: 'response'},
-     ]}>
-   <TabItem value="request">
-   Replace `<accessId>` and `<accessKey>` with your personal access key credentials. Replace `service.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if different.
-   ```bash
-   curl -u "<accessId>:<accessKey>" \
-     https://service.sumologic.com/api/v1/serviceAccounts
-   ```
-   </TabItem>
-   <TabItem value="response">
-   ```json title="Example response highlighting service account ID" {12}
-   {
-     "data": [
-       {
-         "name": "My Service Account",
-         "email": "service@example.com",
-         "roleIds": [
-           "00000000000001DF",
-           "00000000000002D2"
-         ],
-         "createdAt": "2025-10-16T09:10:00.000Z",
-         "createdBy": "0000000006743FDD",
-         "modifiedAt": "2025-10-16T09:10:00.000Z",
-         "modifiedBy": "0000000006743FE8",
-         "id": "0000000000C4661B",
-         "isActive": true
-       }
-     ]
-   }
-   ```
-   </TabItem>
-   </Tabs>
+1. Get the service account ID. You'll use this ID in the next step.
+   * **Via UI**: Go to **Administration** > **Security** > **Service Accounts**, click on your service account, and copy the ID from the browser URL (appears as `selectedId=00000000076D28F9`).
+   * **Via API**: Alternatively, [get a list of all service accounts](https://api.sumologic.com/docs/#operation/listServiceAccounts) and find the `id` field in the response.
+
+<details>
+<summary>Example API request for listing service accounts</summary>
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="request"
+  values={[
+    {label: 'Example request', value: 'request'},
+    {label: 'Example response', value: 'response'},
+  ]}>
+
+<TabItem value="request">
+
+Replace `<accessId>` and `<accessKey>` with your personal access key credentials. Replace `service.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if different.
+
+```bash
+curl -u "<accessId>:<accessKey>" \
+  https://service.sumologic.com/api/v1/serviceAccounts
+```
+
+</TabItem>
+<TabItem value="response">
+
+```json title="Example response highlighting service account ID" {14}
+{
+  "data": [
+    {
+      "name": "My Service Account",
+      "email": "service@example.com",
+      "roleIds": [
+        "00000000000001DF",
+        "00000000000002D2"
+      ],
+      "createdAt": "2025-10-16T09:10:00.000Z",
+      "createdBy": "0000000006743FDD",
+      "modifiedAt": "2025-10-16T09:10:00.000Z",
+      "modifiedBy": "0000000006743FE8",
+      "id": "0000000000C4661B",
+      "isActive": true
+    }
+  ]
+}
+```
+
+</TabItem>
+</Tabs>
+
+</details>
 
 ### Create an OAuth client
 
 Create an OAuth client under your service account. This generates the credentials your application will use to authenticate.
 
-:::note
-UI support for this step is not yet available. You'll need to use the Sumo Logic API.
-:::
-
-1. [Get a list of available OAuth scopes](https://api.sumologic.com/docs/#operation/listOAuthScopes) and decide which ones your OAuth client needs. The scopes you request must already be included in your service account's effective permissions.
-
-   <details>
-   <summary>How are scopes enforced?</summary>
-
+1. Log in to Sumo Logic as an Administrator.
+1. Go to **Administration** > **Security** > **OAuth**.
+1. Click **+ Add Client**.
+1. For **Type**, select **Client Credentials**.
+1. Enter a **Name** and optional **Description** for your application.
+1. Select the **Service Account** this OAuth client will run as (created in the previous step).
+1. Select the **Scopes** your OAuth client needs. The scopes you request must already be included in your service account's effective permissions.
+   :::tip
    The permissions granted to an OAuth client are limited to the intersection of:
    * The roles (RBAC capabilities) assigned to the service account.
    * The scopes assigned to the OAuth client.
 
-   This prevents privilege escalation. If the service account's roles are restricted in the future, the OAuth client's effective permissions are automatically reduced. If a requested scope is not included in the service account's roles, it will be silently excluded from the OAuth client's effective permissions.
+   This prevents privilege escalation. If the service account's roles are restricted in the future, the OAuth client's effective permissions are automatically reduced.
+   :::
+1. Click **Save**.
+1. Copy the **Client ID** and **Client Secret**. You'll need these to configure your application.
 
-   </details>
+<details>
+<summary>Creating an OAuth client via API (advanced)</summary>
 
-1. [Create a new OAuth client](https://api.sumologic.com/docs/#operation/createOAuthClient) using the scopes you selected. Set `runAsId` to the service account ID from Step 1.
+Alternatively, you can [create an OAuth client using the API](https://api.sumologic.com/docs/#operation/createOAuthClient). This allows scripted or automated OAuth client provisioning.
 
-   <Tabs
-     className="unique-tabs"
-     defaultValue="request"
-     values={[
-       {label: 'Example request', value: 'request'},
-       {label: 'Example response', value: 'response'},
-     ]}>
+**How are scopes enforced?**
 
-   <TabItem value="request">
+The permissions granted to an OAuth client are limited to the intersection of the roles (RBAC capabilities) assigned to the service account and the scopes assigned to the OAuth client. This prevents privilege escalation. If the service account's roles are restricted in the future, the OAuth client's effective permissions are automatically reduced. If a requested scope is not included in the service account's roles, it will be silently excluded from the OAuth client's effective permissions.
 
-   Replace `<accessId>` and `<accessKey>` with your personal access key credentials. Replace `service.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if different.
+<Tabs
+  className="unique-tabs"
+  defaultValue="request"
+  values={[
+    {label: 'Example request', value: 'request'},
+    {label: 'Example response', value: 'response'},
+  ]}>
 
-   This example grants permissions to query logs and metrics, access saved content, and manage collectors.
+<TabItem value="request">
 
-   ```bash
-   curl -u "<accessId>:<accessKey>" \
-     https://service.sumologic.com/api/v1/oauth/clients \
-     -H "Content-Type: application/json" \
-     -d '{
-       "type": "ClientCredentialsClient",
-       "name": "My Application OAuth Client",
-       "description": "OAuth client for automated log analysis",
-       "scopes": [
-         "runLogSearch",
-         "runMetricsQuery",
-         "viewLibrary",
-         "manageCollectors",
-         "manageFieldExtractionRules",
-         "manageScheduledViews",
-         "managePartitions"
-       ],
-       "runAs": {
-         "type": "ServiceAccount",
-         "runAsId": "0000000000C4661B"
-       }
-     }'
-   ```
+Replace `<accessId>` and `<accessKey>` with your personal access key credentials. Replace `service.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if different.
 
-   </TabItem>
-   <TabItem value="response">
+This example grants permissions to query logs and metrics, access saved content, and manage collectors.
 
-   ```json title="Example response highlighting client ID and secret" {2,13}
-   {
-     "clientId": "zVplCFHcpTDwtktBIQmFI2K6s9HEo4HAtcQD1f1M5eQ",
-     "createdAt": "2025-10-16T09:10:00.000Z",
-     "createdBy": "0000000006743FDD",
-     "modifiedAt": "2025-10-16T09:10:00.000Z",
-     "modifiedBy": "0000000006743FDD",
-     "type": "ClientCredentialsClient",
-     "name": "My Application OAuth Client",
-     "description": "OAuth client for automated log analysis",
-     "runAs": {
-       "type": "ServiceAccount",
-       "runAsId": "0000000000C4661B"
-     },
-     "grantTypes": ["client_credentials"],
-     "scopes": ["runLogSearch", "runMetricsQuery", "viewLibrary", "manageCollectors", "manageFieldExtractionRules", "manageScheduledViews", "managePartitions"],
-     "effectiveScopes": ["runLogSearch", "runMetricsQuery", "viewLibrary", "manageCollectors", "manageFieldExtractionRules", "manageScheduledViews", "managePartitions"],
-     "clientSecret": "EqyuIvsnae0LnMC2mbJArysXcmp0LuBsRgmyeLtSkFPEzSxdvpYQMDajn_8buaDj"
-   }
-   ```
+```bash
+curl -u "<accessId>:<accessKey>" \
+  https://service.sumologic.com/api/v1/oauth/clients \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "ClientCredentialsClient",
+    "name": "My Application OAuth Client",
+    "description": "OAuth client for automated log analysis",
+    "scopes": [
+      "runLogSearch",
+      "runMetricsQuery",
+      "viewLibrary",
+      "manageCollectors",
+      "manageFieldExtractionRules",
+      "manageScheduledViews",
+      "managePartitions"
+    ],
+    "runAs": {
+      "type": "ServiceAccount",
+      "runAsId": "0000000000C4661B"
+    }
+  }'
+```
 
-   Copy the `clientId` and `clientSecret` from the response. These are your OAuth credentials.
+</TabItem>
+<TabItem value="response">
 
-   </TabItem>
-   </Tabs>
+```json title="Example response highlighting client ID and secret" {2,13}
+{
+  "clientId": "zVplCFHcpTDwtktBIQmFI2K6s9HEo4HAtcQD1f1M5eQ",
+  "createdAt": "2025-10-16T09:10:00.000Z",
+  "createdBy": "0000000006743FDD",
+  "modifiedAt": "2025-10-16T09:10:00.000Z",
+  "modifiedBy": "0000000006743FDD",
+  "type": "ClientCredentialsClient",
+  "name": "My Application OAuth Client",
+  "description": "OAuth client for automated log analysis",
+  "runAs": {
+    "type": "ServiceAccount",
+    "runAsId": "0000000000C4661B"
+  },
+  "grantTypes": ["client_credentials"],
+  "scopes": ["runLogSearch", "runMetricsQuery", "viewLibrary", "manageCollectors", "manageFieldExtractionRules", "manageScheduledViews", "managePartitions"],
+  "effectiveScopes": ["runLogSearch", "runMetricsQuery", "viewLibrary", "manageCollectors", "manageFieldExtractionRules", "manageScheduledViews", "managePartitions"],
+  "clientSecret": "EqyuIvsnae0LnMC2mbJArysXcmp0LuBsRgmyeLtSkFPEzSxdvpYQMDajn_8buaDj"
+}
+```
+
+Copy the `clientId` and `clientSecret` from the response. These are your OAuth credentials.
+
+</TabItem>
+</Tabs>
+
+</details>
 
 ### Generate an access token
 
@@ -356,7 +378,7 @@ Use **Client Credentials flow** for server-to-server authentication, automated w
 <details>
 <summary>How long do access tokens last?</summary>
 
-* **Authorization Code flow**: Access tokens typically expire after 1 hour. Use the refresh token to obtain new access tokens.
+* **Authorization Code flow**: Access tokens expire after the number of seconds indicated by the `expires_in` property.
 * **Client Credentials flow**: Access tokens expire after 30 minutes. Generate a new token when the current one expires.
 
 </details>
