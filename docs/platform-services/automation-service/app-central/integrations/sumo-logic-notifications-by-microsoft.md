@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-notifications.png')} alt="sumo-logic-notifications" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-notifications.png')} alt="Sumo Logic icon" width="100"/>
 
 ***Version: 1.0  
 Updated: Dec 04, 2024***
@@ -98,13 +98,13 @@ Microsoft Graph (7)
 ## Create an access key in Sumo Logic
 
 1. In the main Sumo Logic menu, select your username and then **Preferences**. 
-2. From the preferences screen, in the section **My Access Keys**, click **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="600"/>
-3. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
+2. From the preferences screen, in the section **My Access Keys**, click **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-2.png')} style={{border:'1px solid gray'}} alt="Sumo logic notifications" width="600"/>
+3. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-3.png')} style={{border:'1px solid gray'}} alt="Sumo logic notifications" width="400"/>
 4. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
    :::note
    They won't be available again once you close this screen.
    :::
-5. Click **Done** after you copied the Access ID and Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-4.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
+5. Click **Done** after you copied the Access ID and Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-4.png')} style={{border:'1px solid gray'}} alt="Sumo logic notifications" width="400"/>
 
 ## Configure Sumo Logic Notifications by Microsoft in Automation Service and Cloud SOAR
 

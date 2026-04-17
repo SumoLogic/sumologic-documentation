@@ -69,50 +69,50 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/partitions/data-tiers')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/data-tiers')}><img src={useBaseUrl('img/icons/logs.png')} alt="Logs icon" width="40"/><h4>Data Tiers</h4></a>
   <p>Data tiers provide the ability to allocate data to different storage tiers based on frequency of access - Continuous, Frequent, and Infrequent.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/partitions/flex')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Flex Pricing</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/flex')}><img src={useBaseUrl('img/icons/logs.png')} alt="Logs icon" width="40"/><h4>Flex Pricing</h4></a>
   <p>Learn more about the Flex pricing partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/partitions/estimate-scan-data')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Estimate Scan Data</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/estimate-scan-data')}><img src={useBaseUrl('img/icons/logs.png')} alt="Logs icon" width="40"/><h4>Estimate Scan Data</h4></a>
   <p> Learn about the estimate scan data for data tier and Flex pricing.</p>
   <p>Learn about Sumo Logic Flex Pricing.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/partitions/run-search-against-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Search a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/run-search-against-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="Logs icon" width="40"/><h4>Search a Partition</h4></a>
   <p>Learn how to run a search against data in a partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/partitions/edit-data-forwarding-destinations-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Edit Data Forwarding Destinations for a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/edit-data-forwarding-destinations-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="Logs icon" width="40"/><h4>Edit Data Forwarding Destinations for a Partition</h4></a>
   <p>Learn how to specify data forwarding settings for a partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/partitions/manage-indexes-variable-retention')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage Indexes with Variable Retention</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/manage-indexes-variable-retention')}><img src={useBaseUrl('img/icons/logs.png')} alt="Logs icon" width="40"/><h4>Manage Indexes with Variable Retention</h4></a>
   <p>Learn how to create index partitions and Scheduled Views to store your data.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/partitions/decommission-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Decommission a Partition</h4></a>
+  <a href={useBaseUrl('docs/manage/partitions/decommission-partition')}><img src={useBaseUrl('img/icons/logs.png')} alt="Logs icon" width="40"/><h4>Decommission a Partition</h4></a>
   <p>Learn how to decommission a partition to keep it from being started.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/faq"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Partitions FAQs</h4></a>
+  <a href="/docs/manage/partitions/faq"><img src={useBaseUrl('img/icons/logs.png')} alt="Logs icon" width="40"/><h4>Partitions FAQs</h4></a>
   <p>Answers to frequently asked questions about Sumo Logic partitions.</p>
   </div>
 </div>

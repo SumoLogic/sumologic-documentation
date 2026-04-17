@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/security-scorecard.png')} alt="security-scorecard" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/security-scorecard.png')} alt="Security Scorecard icon" width="100"/>
 
 ***Version: 1.3  
 Updated: Jul 13, 2023***

@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fidelis-elevate-network.png')} alt="fidelis-elevate-network" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fidelis-elevate-network.png')} alt="Fidelis Elevate Network icon" width="80"/>
 
 ***Version: 1.1  
 Updated: Jul 06, 2023***

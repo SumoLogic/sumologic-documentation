@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure IoT Hub
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-iot-hub.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-iot-hub.png')} alt="Azure IoT Hub icon" width="50"/>
 
 [Azure IoT Hub](https://learn.microsoft.com/en-us/azure/iot-hub/iot-concepts-and-iot-hub) is a managed service hosted in the cloud that acts as a central message hub for communication between an IoT application and its attached devices. This integration helps in monitoring the device creation, device connections, device operations, device data usage, and device failures.
 

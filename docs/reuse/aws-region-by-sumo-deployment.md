@@ -20,7 +20,7 @@ The list of IP ranges is shared infrastructure. It is not limited to Sumo Logic 
 
 You can run the following query against the downloaded file in Sumo Logic to determine the IP addresses for each deployment.
 
-```sql
+```sumo
 | parse regex "\s+\"ip_prefix\":\s+\"(?<ip_prefix>.*?)\",\n\s+\"region\":\s+\"(?<region>.*?)\",\n\s+\"service\":\s+\"(?<service>.*?)\"" multi
 | where service="AMAZON"
   and (
@@ -43,4 +43,4 @@ After configuring the firewall, Collector, and Sources, confirm that the Collect
 
 For more information, see:
 * [AWS documentation: Service endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html)
-* [Sumo Logic Privacy Statement](https://www.sumologic.com/privacy-statement/)
+* [Sumo Logic Privacy Statement](https://www.sumologic.com/legal/privacy-statement)

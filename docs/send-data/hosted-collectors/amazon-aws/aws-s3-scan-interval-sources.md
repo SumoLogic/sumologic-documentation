@@ -7,7 +7,7 @@ description: A scan interval defines the waiting time between scans of the objec
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="Amazon S3 Audit icon" width="40"/>
 
 When configuring an [Amazon S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source), you'll set the scan interval, which defines the waiting time between scans of the objects in your S3 bucket. It's important to set an interval that is long enough to allow new files to be uploaded, but is not too short that scans are performed without any new files being available to upload.
 

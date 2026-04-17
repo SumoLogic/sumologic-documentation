@@ -121,14 +121,14 @@ When you test your parser, the editor presents a count of how many
 messages were successfully parsed, and the counts of messages in the
 following categories:
 
-* Parsed messages with warnings—A warning or error occurred but the message was was partially parsed, depending on where the warning or error occurred. The most common cause of a warning is applying a [RENAME_FIELD](/docs/cse/schema/parsing-language-reference-guide#rename_field) statement to a field that isn't present in the message.
+* Parsed messages with warnings—A warning or error occurred but the message was was partially parsed, depending on where the warning or error occurred. The most common cause of a warning is applying a [RENAME_FIELD](/docs/cse/schema/parsing-language-reference-guide#rename_field) statement to a field that is not present in the message.
 * Unparsed messages—An error occurred that caused parsing to fail. Potential causes of parsing failures include:
 
   * An unmatched regex.
   * Invalid XML, when using XML parsing.
   * Invalid JSON parsing, when using JSON parsing.
   * Fewer CSV fields in the message than expected. 
-  * Attempting a transform on a field that doesn't exist unless you use [TRANSFORM_FIELD_IF_PRESENT](/docs/cse/schema/parsing-language-reference-guide#transform_field_if_present).
+  * Attempting a transform on a field that does not exist unless you use [TRANSFORM_FIELD_IF_PRESENT](/docs/cse/schema/parsing-language-reference-guide#transform_field_if_present).
 
 * Dropped messages—The message was dropped due to a [DROP](/docs/cse/schema/parsing-language-reference-guide#drop) statement in the parser. 
 

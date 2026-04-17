@@ -126,7 +126,7 @@ The Sumo Logic Doc Team can help you add your doc to the sidebar and top navigat
 
 Hub pages are `/index` pages that display all docs in that section in card view. Some cards are sorted by alphabetical order, and some are sorted by importance and/or ranking.
 
-As an example, let's say you needed to add a Best Practices doc to the [**Send Data** hub page](/docs/send-data).<br/><img src={useBaseUrl('img/contributing/hub-card-style.png')} alt="icon" />
+As an example, let's say you needed to add a Best Practices doc to the [**Send Data** hub page](/docs/send-data).<br/><img src={useBaseUrl('img/contributing/hub-card-style.png')} alt="Hub Card Style icon" />
 
 Once you decide on placement, use the card HTML code in that doc to create a new entry.
 

@@ -165,29 +165,29 @@ The link is displayed is in the panel.
 
 ## Service Map Panel
 
-<img src={useBaseUrl('/img/dashboards/panels/icon-service-map.png')} style={{border: '1px solid gray'}} alt="icon-service-map" width="75"/>
+<img src={useBaseUrl('/img/dashboards/panels/icon-service-map.png')} style={{border: '1px solid gray'}} alt="Icon service map" width="75"/>
 
 The [Services List and Map](/docs/apm/services-list-map) views display high-level views of your application environment, giving you a greater insight into your application architecture and dependencies between monitored microservices.
 
 The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click on a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
 
-You can filter the map according to application and service. See the [Dashboard](/docs/dashboards/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.<br/><img src={useBaseUrl('/img/dashboards/panels/panel-service.png')} style={{border: '1px solid gray'}} alt="panel-service" width="800"/>
+You can filter the map according to application and service. See the [Dashboard](/docs/dashboards/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.<br/><img src={useBaseUrl('/img/dashboards/panels/panel-service.png')} style={{border: '1px solid gray'}} alt="Panel service" width="800"/>
 
 To add a Service Map panel:
 
-1. With the Dashboard open, click the **Add Panel** button and select **Service Map**.<br/><img src={useBaseUrl('/img/dashboards/panels/add-servicemap.png')} style={{border: '1px solid gray'}} alt="add-servicemap" width="400"/>
-1. A panel configuration page opens.<br/><img src={useBaseUrl('/img/dashboards/panels/create-servicemap.png')} style={{border: '1px solid gray'}} alt="create-servicemap" width="800"/>
-1. Select from the dropdown menus to filter the Service Map by the following:<br/><img src={useBaseUrl('/img/apm/filter-servicemap.png')} style={{border: '1px solid gray'}} alt="filter-servicemap" width="800"/>
+1. With the Dashboard open, click the **Add Panel** button and select **Service Map**.<br/><img src={useBaseUrl('/img/dashboards/panels/add-servicemap.png')} style={{border: '1px solid gray'}} alt="Add servicemap" width="400"/>
+1. A panel configuration page opens.<br/><img src={useBaseUrl('/img/dashboards/panels/create-servicemap.png')} style={{border: '1px solid gray'}} alt="Create servicemap" width="800"/>
+1. Select from the dropdown menus to filter the Service Map by the following:<br/><img src={useBaseUrl('/img/apm/filter-servicemap.png')} style={{border: '1px solid gray'}} alt="Filter servicemap" width="800"/>
     * **Application** if your tracing data has the `application=[app-name]`, tag **Service**.
     * To pass the variables from dashboard filters, set `application={{application}}` and/or `service={{service}}`.
 1. Do not set the time. Service Map always shows last 72h of data.
 1. The **Chart Type** is set to Graph.
-1. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.<br/><img src={useBaseUrl('/img/apm/traces/tracelist-details.png')} style={{border: '1px solid gray'}} alt="tracelist-details" width="400"/>
+1. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.<br/><img src={useBaseUrl('/img/apm/traces/tracelist-details.png')} style={{border: '1px solid gray'}} alt="Tracelist details" width="400"/>
 1. Click **Add to Dashboard**.
 
 ## Trace List Panel
 
-<img src={useBaseUrl('/img/dashboards/panels/icon-trace-list.png')} style={{border: '1px solid gray'}} alt="icon-trace-list" width="75"/>
+<img src={useBaseUrl('/img/dashboards/panels/icon-trace-list.png')} style={{border: '1px solid gray'}} alt="Icon trace list" width="75"/>
 
 Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](/docs/apm/spans), and a breakdown of services. The panel panel displays the [Traces page](/docs/apm/traces/) table to give at-a-glance tracking for traces through your Dashboard. To view transaction and service details ([Trace View](/docs/apm/traces/view-and-investigate-traces)), click a trace from the panel. 
 
@@ -197,12 +197,12 @@ See the [Dashboard](/docs/dashboards/about) guide for additional information and
 You are limited to three Trace List panels in a dashboard.
 :::
 
-<img src={useBaseUrl('/img/dashboards/panels/panel-trace.png')} style={{border: '1px solid gray'}} alt="panel-trace" width="600"/>
+<img src={useBaseUrl('/img/dashboards/panels/panel-trace.png')} style={{border: '1px solid gray'}} alt="Panel trace" width="600"/>
 
 To add a Trace List panel:
 
-1. With the Dashboard open, click the **Add Panel** button. <br/><img src={useBaseUrl('/img/apm/traces/add-tracelist.png')} style={{border: '1px solid gray'}} alt="add-tracelist" width="400"/>
-1. A panel configuration page opens. <br/><img src={useBaseUrl('/img/dashboards/panels/create-tracelist.png')} style={{border: '1px solid gray'}} alt="create-tracelist" width="800"/>
+1. With the Dashboard open, click the **Add Panel** button. <br/><img src={useBaseUrl('/img/apm/traces/add-tracelist.png')} style={{border: '1px solid gray'}} alt="Add tracelist" width="400"/>
+1. A panel configuration page opens. <br/><img src={useBaseUrl('/img/dashboards/panels/create-tracelist.png')} style={{border: '1px solid gray'}} alt="Create tracelist" width="800"/>
 1. Configure a [Trace query](/docs/apm/traces/view-and-investigate-traces) to search for desired set of traces. 
 1. Select a time range or [create a custom range](/docs/dashboards/set-custom-time-ranges) for the panel. You can set this when creating or at any time when viewing the Dashboard panel.<br/><img src={useBaseUrl('/img/dashboards/panels/timerange.png')} style={{border: '1px solid gray'}} alt="timerange" width="300"/>
 1. Select **Chart Type** as either:

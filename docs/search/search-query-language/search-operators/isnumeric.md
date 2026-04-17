@@ -8,8 +8,8 @@ The `isNumeric` operator checks whether a string is a valid Java number. Valid 
 
 ## Syntax
 
-* <code>isNumeric(&quot;&lt;string&gt;&quot;) as &lt;field&gt;</code>
-* <code>isNumeric(&lt;string_field&gt;) [as &lt;field&gt;]</code>
+* `isNumeric("<string>") as <field>`
+* `isNumeric(<string_field>) [as <field>]`
 
 ## Rules
 
@@ -19,18 +19,18 @@ The `isNumeric` operator checks whether a string is a valid Java number. Valid 
 
 ## Examples
 
-```sql
+```sumo
 | isNumeric(num)
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isNumeric("1.56") as isNum
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isNumeric("1e5") as isNum
 ```
