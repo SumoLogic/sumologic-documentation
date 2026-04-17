@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 We're simplifying the terminology we use to describe features in development and validation stages. Starting today, we're replacing **Beta** with **Customer Preview** to help you better understand the state of new features and how they fit into your environment.
 
-## What's Changing
+## What's changing
 
 | Previous Term | New Term | Description |
 |:---|:---|:---|
@@ -21,12 +21,12 @@ We're simplifying the terminology we use to describe features in development and
 | **(New)** | **Public Preview** | All eligible customers. Features are 90-100% production-ready. |
 | **GA** | **General Availability** | No change. Fully supported for all customers. |
 
-## Why This Matters
+## Why this matters
 
 The new Preview terminology provides:
-- **Clearer participation criteria** — understand who can access each tier
-- **Better maturity signals** — know what level of production-readiness to expect
-- **Consistent naming** — the same terminology across all Sumo Logic products and features
+* **Clearer participation criteria**. Understand who can access each tier.
+* **Better maturity signals**. Know what level of production-readiness to expect.
+* **Consistent naming**. The same terminology across all Sumo Logic products and features.
 
 During the transition period, you may see both Beta and Preview labels active at the same time. All documentation, badges, and release notes will adopt the new terminology going forward.
 
