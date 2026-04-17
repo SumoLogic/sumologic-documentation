@@ -4,7 +4,7 @@
 
 ## Site information
 
-- Site: https://www.sumologic.com/help/docs/
+- Site: https://www.sumologic.com/help/
 - Sitemap: https://www.sumologic.com/help/sitemap.xml
 - LLM guidance (this file): https://www.sumologic.com/help/llms.txt
 - All page URLs end with a trailing slash
