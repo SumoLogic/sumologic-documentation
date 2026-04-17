@@ -11,7 +11,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/business/beta.png')} alt="Preview icon" width="55"/>
+<img src={useBaseUrl('img/icons/business/preview.png')} alt="Preview icon" width="55"/>
 
 Sumo Logic uses a standardized Customer Preview program to bring customers into early access for new products and features before they reach general availability (GA). Participating in a Preview gives you the opportunity to explore upcoming capabilities, validate them in your environment, and share feedback that directly shapes product development.
 
