@@ -17,8 +17,8 @@ We're simplifying the terminology we use to describe features in development and
 | Previous Term | New Term | Description |
 |:---|:---|:---|
 | **Closed Beta** | **Private Preview** | Invite only. Features are 60-75% production-ready. |
-| **Beta** | **Extended Preview** | Selected customers. Features are 75-90% production-ready. |
-| **Open Beta** | **Public Preview** | All eligible customers. Features are 90-100% production-ready. |
+| **Open Beta** | **Extended Preview** | Selected customers. Features are 75-90% production-ready. |
+| **(New)** | **Public Preview** | All eligible customers. Features are 90-100% production-ready. |
 | **GA** | **General Availability** | No change. Fully supported for all customers. |
 
 ## Why This Matters
