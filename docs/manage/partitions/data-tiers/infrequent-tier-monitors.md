@@ -1,6 +1,6 @@
 ---
 id: infrequent-tier-monitors
-title: Infrequent Tier Support for Monitors
+title: Monitors and Alert Response Page on Infrequent Tier Data
 description: Learn how to monitor and view the details about the alert against the Infrequent data tier.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
