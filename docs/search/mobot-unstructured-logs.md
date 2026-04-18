@@ -1,5 +1,5 @@
 ---
-id: mobot-unstructured-logs-beta
+id: mobot-unstructured-logs
 title: Sumo Logic Mobot - Unstructured Logs Support
 description: Streamline your log analysis with Sumo Logic Mobot, our AI-based assistant that simplifies log analysis by letting you ask questions in plain English, even for logs without a well-defined structure.
 ---
