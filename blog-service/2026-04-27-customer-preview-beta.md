@@ -30,6 +30,4 @@ The new Preview terminology provides:
 * **Better maturity signals**. Know what level of production-readiness to expect.
 * **Consistent naming**. The same terminology across all Sumo Logic products and features.
 
-During the transition period, you may see both Beta and Preview labels active at the same time. All documentation, badges, and release notes will adopt the new terminology going forward.
-
-[Learn more about Preview Releases](/docs/preview).
+During the transition period, you may see both Beta and Preview labels active at the same time. All documentation, badges, and release notes will adopt the new terminology going forward. [Learn more](/docs/preview).
