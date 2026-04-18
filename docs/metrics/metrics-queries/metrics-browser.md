@@ -10,6 +10,10 @@ description: Learn how to use the Metrics Browser to query your metrics.
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The **Metrics Browser** pane provides a clear and searchable view of all available metrics, including their associated dimensions and values. This allows you to build accurate queries without relying on guesswork, trial-and-error, or broad data scans.

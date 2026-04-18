@@ -12,6 +12,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
 The `threatlookup` operator identifies suspicious indicators of compromise in your data which match your [threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) sources. Using this operator provides security analytics to help you to detect threats in your environment.
 
 This operator supersedes the more limited [`threatip`](/docs/search/search-query-language/search-operators/threatip/) search operator, allowing matches against multiple sources for multiple kinds of indicators.
@@ -21,11 +25,11 @@ This operator supersedes the more limited [`threatip`](/docs/search/search-query
 `threatlookup [singleIndicator] [source="<source_value>"] <indicator>`
 
 Where:
-* `singleIndicator` returns the single best matching threat intelligence entry. (In the response, `num_matches` indicates how many total matches across your sources there are.) If `singleIndicator` is not specified, all matching entries from your intelligence sources are returned in separate rows.
+* `singleIndicator` returns the single best matching threat intelligence entry. (In the response, `num_matches` indicates how many total matches across your sources there are.) If `singleIndicator` is not specified, all matching entries from your intelligence sources are returned in separate rows. 
 
    Note that `singleIndicator` returns the most recent, highest confidence entry from your sources. If there's a tie, the winning entry is whichever the backend storage returned first.
 * `source` is the [threat intelligence source](/docs/security/threat-intelligence/about-threat-intelligence/#threat-intelligence-sources) to search for the threat intelligence indicator. If `source` is not specified, all sources are searched.
-* `<indicator>` is the [field name](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md) containing an [indicator](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) to look up. At least one field name is required.
+* `<indicator>` is the [field name](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md) containing an [indicator](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) to look up. At least one field name is required. 
 
 ### Response fields
 
@@ -70,16 +74,16 @@ To see `threatlookup` used in a query:
 1. Open the Threat Intel Quick Analysis app.
 1. Navigate to a dashboard, such as **Overview**.
 1. Click the three-dot kebab in the upper-right corner of the dashboard panel.
-1. Select **Open in Log Search**.
-1. Look for `threatlookup` used in the query.
+1. Select **Open in Log Search**. 
+1. Look for `threatlookup` used in the query. 
 For example, here is the query used for the **Threat Count** panel in the **Threat Intel Quick Analysis - IP** dashboard:
 ```sumo
-_sourceCategory=<source-category-name>
-| parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+_sourceCategory=<source-category-name> 
+| parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" 
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
 | count as ip_count by ip_address
 | threatlookup singleIndicator ip_address
-// normalize confidence level to a string
+// normalize confidence level to a string 
 | if (_threatlookup.confidence >= 85, "high", if (_threatlookup.confidence >= 50, "medium", if (_threatlookup.confidence >= 15, "low", if (_threatlookup.confidence >= 0, "unverified", "unknown")))) as threat_confidence
 // filter for threat confidence
 | where  threat_confidence matches "*"

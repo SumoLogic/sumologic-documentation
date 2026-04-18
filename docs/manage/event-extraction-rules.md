@@ -10,6 +10,10 @@ description: Learn how to use Sumo Logic event extraction rules.
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
 
+:::info
+This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
+:::
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Event Extraction Rules enables you to automatically extract, correlate, and enrich events directly from log data, making them available for event querying and analysis. By reducing noise and highlighting meaningful events, this capability accelerates troubleshooting and root cause analysis with minimal manual effort. You can precisely control how events are classified by configuring event type and priority, ensuring that the most impactful events are surfaced and clearly represented within log searches for faster, more informed insights.

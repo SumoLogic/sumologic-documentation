@@ -12,6 +12,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
 Grouping panels into sections helps you to better organize complex dashboards by grouping related panels into logical sections. Each section can be expanded or collapsed, allowing you to focus on specific insights while keeping dashboards clean, structured, and easier to navigate. Sections also improve dashboard performance by loading and refreshing only the panels that are currently visible. This approach helps reduce unnecessary query scans and provides greater control over dashboard layout, visibility, and cost efficiency.
 
 ## Add a section

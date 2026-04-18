@@ -12,6 +12,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
 <!-- Originally added as a Preview article with SUMO-176420. -->
 
 Previously, scheduled searches were only supported in Sumo Logic’s Continuous data tier. Now, you can also schedule searches that run against the Infrequent Tier.

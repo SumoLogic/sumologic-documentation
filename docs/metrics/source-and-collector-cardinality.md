@@ -12,6 +12,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
 This document explains how to identify and analyze cardinality ingested per source and collector, helping you pinpoint high-cardinality sources and manage ingestion limits more effectively.
 
 Previously, there was no direct visibility into the contribution of cardinality from individual sources. When limits were exceeded, there was limited control over which sources were paused. As a result, sources that were not significant contributors could be paused, while the actual high-cardinality sources remained active. This lack of source-level visibility made it difficult to accurately identify and address the root cause of high cardinality.

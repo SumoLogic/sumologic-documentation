@@ -11,6 +11,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
 <!-- Originally added as a preview article with SUMO-215957. -->
 
 Previously, monitors and alert response page (ARP) were only supported in Sumo Logic’s Continuous data tier. Now, you can set robust and configurable alerting policies that enable you to get notified about critical changes and view granular details about an individual alert that include data from the Infrequent Tier.

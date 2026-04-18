@@ -12,6 +12,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
 <!-- Originally added as a preview article with DASH-734. -->
 
 Previously, dashboards were only supported in our Continuous data tier. With this update, you can set up dashboard panels to include data from the Infrequent Tier.

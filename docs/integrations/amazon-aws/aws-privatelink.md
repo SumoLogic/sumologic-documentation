@@ -13,6 +13,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
 <!-- Originally added as a preview article with SUMO-187085. -->
 
 Sumo Logic provides the ability to configure private connectivity between your AWS Infrastructure and Sumologic via [AWS PrivateLink](https://aws.amazon.com/privatelink). This prevents any traffic from being accessible to the public internet.
