@@ -1,6 +1,6 @@
 ---
 id: metrics-searches
-title: Metrics Search Management APIs (Public Preview)
+title: Metrics Search Management APIs
 sidebar_label: Metrics Searches
 description: Use Metrics Search API endpoints to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization.
 ---
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<p> <a href={useBaseUrl('docs/preview')}><span className="preview">Public Preview</span></a> </p>
+<p> <a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a> </p>
 
 <img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/>
 

@@ -1,6 +1,6 @@
 ---
 id: event-extraction-rules
-title: Event Analytics Management APIs (Extended Preview)
+title: Event Analytics Management APIs
 sidebar_label: Event Extraction Rules
 description: Use Event Analytics Management APIs to configure Event Extraction Rules.
 ---
@@ -9,7 +9,7 @@ description: Use Event Analytics Management APIs to configure Event Extraction R
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Extended Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';

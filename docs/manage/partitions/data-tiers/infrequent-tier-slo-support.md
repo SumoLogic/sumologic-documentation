@@ -1,6 +1,6 @@
 ---
 id: infrequent-tier-slo-support
-title: Infrequent Tier Support for SLOs (Private Preview)
+title: Infrequent Tier Support for SLOs
 description: Learn how to configure SLOs against the Infrequent data tier.
 ---
 
@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Private Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
 <!-- Originally added as a preview article with SUMO-215965. -->
 

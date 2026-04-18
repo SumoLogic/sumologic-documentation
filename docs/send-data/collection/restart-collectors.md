@@ -1,6 +1,6 @@
 ---
 id: restart-collectors
-title: Restart a Collector (Private Preview)
+title: Restart a Collector
 description: Learn how to restart a Collector from the Collection page.
 ---
 
@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Private Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
 <!-- Originally added as a beta article with SUMO-175343. -->
 

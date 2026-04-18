@@ -1,6 +1,6 @@
 ---
 id: aws-privatelink
-title: Sumo Logic Connector for AWS PrivateLink (Private Preview)
+title: Sumo Logic Connector for AWS PrivateLink
 sidebar_label: AWS PrivateLink
 description: AWS PrivateLink provides private connectivity between VPCs, AWS services, and your on-premises networks, without exposing your traffic to the public internet.
 ---
@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Private Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
 <!-- Originally added as a preview article with SUMO-187085. -->
 

@@ -1,6 +1,6 @@
 ---
 id: mobot-unstructured-logs
-title: Mobot - Unstructured Logs Support (Private Preview)
+title: Mobot - Unstructured Logs Support
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Private Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
 <!-- Originally added as a preview article with DOCS-752. -->
 

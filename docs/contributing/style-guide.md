@@ -1183,105 +1183,148 @@ This is a partial list of trademarked terms, which should be capitalized exactly
 
 Never use Sumo Logic in the plural or possessive form.
 
-
 ## Preview releases
 
 Following are the instructions for formatting docs at each release stage. For release type definitions, see [Preview Releases](/docs/preview).
 
+Private Preview and Extended Preview release features are invite-only, while Public Preview features are by request only to participating customers. Preview docs are published, but excluded from the nav and must not be referenced or appear anywhere in the docs. Sumo Logic representatives provide the documentation links only to the involved customers.
+
+For Preview docs, under the frontmatter, add the `robots` meta tag, then the corresponding badge and preview notice. The Preview badges contain a link to the [Preview](/docs/preview) landing page, and the `robots` meta tag prevents search crawlers from picking it up.
+
 ### Private Preview
 
-Private Preview release features are exclusively available to participating customers. Documentation for these features is not publicly accessible; Sumo Logic representatives provide the documentation links only to the involved customers. These links are excluded from our table of contents.
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
 
-To format a Private Preview release:
+<TabItem value="Markdown">
 
-* Add `(Private Preview)` after the title.
-* Add the [`robots` meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), which prevents search crawlers from picking it up.
-* Add the Private Preview badge, which contains a link to the [Preview](/docs/preview) landing page.
-
-```md {3,8-10,12}
+```md
 ---
-id: xyz
-title: XYZ (Private Preview)
-sidebar_label: XYZ
-description: The XYZ feature enables...
+<frontmatter>
 ---
 
 <head>
 <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Private Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
-First paragraph goes here...
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+<first paragraph>
 ```
+
+</TabItem>
+<TabItem value="Result">
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+</TabItem>
+</Tabs>
+
 
 ### Extended Preview
 
-Extended Preview releases are still limited to a select group. These follow a format similar to Private Previews.
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
 
-* Add `(Extended Preview)` after the title.
-* Add the Extended Preview badge.
-* Add the [`robots` meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), if not already there.
+<TabItem value="Markdown">
 
-```md {3,8,9,10,12}
+```md
 ---
-id: xyz-source
-title: XYZ Source (Extended Preview)
-description: The XYZ Source provides a secure endpoint to receive event data.
+<frontmatter>
 ---
 
 <head>
 <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Extended Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
 
-First paragraph...
+:::info
+This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+<first paragraph>
 ```
+
+
+</TabItem>
+<TabItem value="Result">
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
+
+:::info
+This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+</TabItem>
+</Tabs>
 
 ### Public Preview
 
-To format a Public Preview release:
 
-* Add `(Public Preview)` after the title.
-* Add the Public Preview badge.
-* Remove the [`robots` meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), if present.
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
 
-```md {3,7}
+<TabItem value="Markdown">
+
+```md
 ---
-id: xyz-source
-title: XYZ Source (Public Preview)
-description: The XYZ Source provides a secure endpoint to receive event data.
+<frontmatter>
 ---
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Public Preview</span></a></p>
+<head>
+<meta name="robots" content="noindex" />
+</head>
 
-First paragraph...
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
+
+:::info
+This feature is in Public Preview. To participate, contact your Sumo Logic account representative.
+:::
+
+<first paragraph>
 ```
 
-* Add a tile card to the Public Preview doc's [Available features](/docs/preview/public-preview#available-features) section.
-```md {12-20}
-<div className="box-wrapper" markdown="1">
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/api/metrics-searches/')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/><h4>Metrics Search Management APIs</h4></a>
-  <p>Use Metrics Search API endpoints to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/send-data/xyz-source')}><img src={useBaseUrl('img/send-data/xyz.png')} alt="XYZ icon" width="40"/><h4>XYZ Source</h4></a>
-  <p>The XYZ Source provides a secure endpoint to receive event data.</p>
-  </div>
-</div>
-</div>
-```
+</TabItem>
+<TabItem value="Result">
 
-### Generally Available
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
 
-When a feature becomes Generally Available (GA), remove all Preview-related labels/badges, the `robots` meta tag, and the Public Preview doc tile card.
+:::info
+This feature is in Public Preview. To participate, contact your Sumo Logic account representative.
+:::
 
-Then follow the standard [Create a Doc](/docs/contributing/create-edit-doc) instructions.
+
+</TabItem>
+</Tabs>
+
+
+### Generally Available (GA)
+
+When a feature becomes Generally Available (GA), remove all Preview-related labels, badges, notes, and the `robots` meta tag. Then follow the standard [Create a Doc](/docs/contributing/create-edit-doc) instructions.
 
 ## Punctuation
 

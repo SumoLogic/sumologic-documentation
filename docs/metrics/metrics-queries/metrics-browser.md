@@ -1,6 +1,6 @@
 ---
 id: metrics-browser
-title: Metrics Browser (Private Preview)
+title: Metrics Browser
 sidebar_label: Metrics Browser
 description: Learn how to use the Metrics Browser to query your metrics.
 ---
@@ -8,7 +8,7 @@ description: Learn how to use the Metrics Browser to query your metrics.
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Private Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

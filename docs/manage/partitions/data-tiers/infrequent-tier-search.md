@@ -1,6 +1,6 @@
 ---
 id: infrequent-tier-search
-title: Infrequent Tier Support for Scheduled Searches (Private Preview)
+title: Infrequent Tier Support for Scheduled Searches
 description: Learn how to schedule and run searches against the Infrequent data tier.
 ---
 
@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Private Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
 <!-- Originally added as a Preview article with SUMO-176420. -->
 

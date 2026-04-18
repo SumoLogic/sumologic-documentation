@@ -39,6 +39,14 @@ module.exports = {
         'get-started/faq',
       ],
     },
+    {
+      type: 'category',
+      label: 'Preview Releases',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'preview/index'},
+      items: [],
+    },
     //Contribution guide for documentation
     {
       type: 'category',
@@ -66,16 +74,6 @@ module.exports = {
             'contributing/templates/partner-app-doc',
           ]
         }
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Preview Releases',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'preview/index'},
-      items: [
-          'preview/public-preview',
       ],
     },
   ],

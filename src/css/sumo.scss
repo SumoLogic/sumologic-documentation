@@ -1534,17 +1534,60 @@ article header h2[class*='title_'] {
 
 
 
-// Sumo badges
+// Sumo badges - Preview types (muted Secondary Teal palette)
 
-.preview {
-  background: #C6007E;
+.preview-private {
+  background: #003545;
   color: white;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 13px;
   padding: 4px 12px;
-  text-decoration: none;
+  text-decoration: none !important;
   margin-right: 10px;
   border-radius: 6px;
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+
+.preview-private:hover {
+  text-decoration: none !important;
+  opacity: 0.85;
+}
+
+.preview-extended {
+  background: #005f73;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 4px 12px;
+  text-decoration: none !important;
+  margin-right: 10px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+
+.preview-extended:hover {
+  text-decoration: none !important;
+  opacity: 0.85;
+}
+
+.preview-public {
+  background: #00859f;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 4px 12px;
+  text-decoration: none !important;
+  margin-right: 10px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+
+.preview-public:hover {
+  text-decoration: none !important;
+  opacity: 0.85;
 }
 
 .sl-embed {

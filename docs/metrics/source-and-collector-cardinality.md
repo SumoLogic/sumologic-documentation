@@ -1,6 +1,6 @@
 ---
 id: source-and-collector-cardinality
-title: Source and Collector Wise Cardinality (Private Preview)
+title: Source and Collector Wise Cardinality
 sidebar_label: Source and Collector Wise Cardinality
 description: Identify and analyze source and collector-level cardinality using audit logs to pinpoint high-cardinality sources.
 ---
@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview">Private Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
 This document explains how to identify and analyze cardinality ingested per source and collector, helping you pinpoint high-cardinality sources and manage ingestion limits more effectively.
 
