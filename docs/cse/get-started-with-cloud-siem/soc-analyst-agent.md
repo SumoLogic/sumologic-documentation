@@ -12,6 +12,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
 
+:::info
+This feature is in Public Preview. To participate, contact your Sumo Logic account representative.
+:::
+
 Sumo Logic's SOC Analyst Agent is an agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations.
 
 The agent delivers automated verdicts on insights using evidence-backed reasoning to determine whether the insights are malicious, suspicious, or benign. It then provides a concise summary of threat incidents based on triggered signals in the insight. Finally, it presents key findings, including details found in the signals that fired for the insight. All of this results in quicker, more detailed analysis.

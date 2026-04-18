@@ -3229,8 +3229,6 @@ integrations: [
         'api/lookup-tables',
         'api/metrics',
         'api/metrics-query',
-        'api/metrics-searches-v2',
-        'api/metrics-searches',
         'api/metrics-transformation-rules',
         'api/monitors-management',
         'api/muting-schedules',
