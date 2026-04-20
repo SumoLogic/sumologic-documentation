@@ -26,7 +26,7 @@ helm repo update
 
 ### Sumo Logic account
 
-If you don’t already have a Sumo Logic account, you can [Start a free trial](https://www.sumologic.com/sign-up).
+If you don’t already have a Sumo Logic account, you can [Start a free trial](https://www.sumologic.com/sign-up/).
 
 The following are required to set up and deploy the Sumo Logic Kubernetes collection.
 

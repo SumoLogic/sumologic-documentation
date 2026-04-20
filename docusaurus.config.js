@@ -513,7 +513,7 @@ module.exports = {
               },
               {
                 label: 'Request a Demo',
-                to: 'https://www.sumologic.com/demos',
+                href: 'https://www.sumologic.com/demo',
                 icon: 'co_present',
               },
               {
@@ -581,7 +581,7 @@ module.exports = {
             items: [
               {
                 label: 'Start Free Trial',
-                href: 'https://www.sumologic.com/sign-up'
+                href: 'https://www.sumologic.com/sign-up/'
               },
               {
                 label: 'Request a demo',
