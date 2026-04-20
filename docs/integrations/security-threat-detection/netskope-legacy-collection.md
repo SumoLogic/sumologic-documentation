@@ -262,7 +262,7 @@ The following table explains the configuration file parameters and their usage.
 
 The following query sample was is from the Total Sessions panel of the Application Overview Dashboard.
 
-```sql
+```sumo
 _sourceCategory="netskope_events" "no" "nspolicy"
 | json "_id", "alert", "type", "srcip", "dstip", "appcategory", "app", "os", "user", "device",
 "acked", "site", "timestamp", "ccl", "activity", "browser", "object", "object_type", "from_user",

@@ -109,7 +109,7 @@ Here's a sample log message in a non-Kubernetes environment.
 
 This sample query is from the **Redis - Logs** dashboard > Logs panel.
 
-```sql title="Query string"
+```sumo title="Query string"
 db.cluster.name=* sumo.datasource="redis"
 | json auto maxdepth 1 nodrop
 | if  (isEmpty(log), _raw, log)  as message
@@ -122,7 +122,8 @@ db.cluster.name=* sumo.datasource="redis"
 
 This sample query is from the **Redis - Cluster Operations** dashboard Metrics panel.
 
-```sql sumo.datasource=redis metric=redis.cmd.calls 
+```sql
+sumo.datasource=redis metric=redis.cmd.calls 
 (cmd=set* or cmd=get* or cmd=incr* or cmd=decr* or cmd=mget or cmd=mset* or cmd=strlen or cmd=psetex or cmd=append) 
 deployment.environment=*  db.cluster.name=* db.node.name=*  
 | delta 

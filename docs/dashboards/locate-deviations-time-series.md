@@ -21,7 +21,7 @@ To graph a log query and determine outliers, do the following:
 1. In the upper right corner click **Add Panel** and select **Time Series** as the panel type.<br/><img src={useBaseUrl('/img/dashboards/locate-deviations/example-time-series.png')} alt="example time series" style={{border: '1px solid gray'}} width="300" />
 1. By default, the query builder is set for a **Logs** query.<br/><img src={useBaseUrl('/img/dashboards/locate-deviations/Add_Panel_Logs_Query_option.png')} alt="Add_Panel_Logs_Query_option" style={{border: '1px solid gray'}} width="200" />
 1. Enter your log query in the text field on the right and press **Return** to run the query. We used the following query for our example.
-    ```sql
+    ```sumo
     (_sourceCategory=airflow-service)
     | parse "in time *" as response_time
     | timeslice 10m

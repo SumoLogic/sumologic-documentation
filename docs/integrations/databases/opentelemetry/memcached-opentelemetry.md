@@ -215,7 +215,7 @@ Jun 23 07:35:01 node03 memcached: \
 
 Following is the query from Errors panel of Memcached app's overview Dashboard:
 
-```sql
+```sumo
 %"deployment.environment"=* %"db.cluster.name"=* %"sumo.datasource"=memcached memcached ">" ERROR | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as memcached_log_message
 | parse regex field=memcached_log_message ">(?<pid>\d+) (?<cmd>\w+)"

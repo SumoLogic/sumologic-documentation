@@ -72,7 +72,7 @@ The Google Cloud Audit App uses the following logs:
 
 **Recent firewall changes**
 
-```
+```sumo
 _collector="HTTP Source for GCP Pub/Sub" logName methodName principalEmail request resource timestamp
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/cloudaudit.googleapis.com%2Factivity"

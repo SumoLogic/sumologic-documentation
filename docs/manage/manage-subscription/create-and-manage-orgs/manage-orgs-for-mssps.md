@@ -114,14 +114,14 @@ If a content push job is stopped or interrupted, you can review the progress and
 
 You can view all content management push in the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) by using the following query:
 
-```sql
+```sumo
 _index=sumologic_audit_events
 | where eventname = "ContentSynced"
 ```
 
 To see the results displayed the same as in [View History](#view-history), use the following query:
 
-```sql
+```sumo
 _index=sumologic_audit_events
 | where eventname = "ContentSynced"
 | orchestratorJob.id as job_sync_id

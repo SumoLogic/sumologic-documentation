@@ -135,7 +135,7 @@ import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configurat
 
 This sample query is from the **PostgreSQL - Overview** dashboard, **Fatal Errors** panel.
 
-```sql
+```sumo
 sumo.datasource=postgresql db.cluster.name=*
 | json auto maxdepth 1 nodrop
 | if (isEmpty(log), _raw, log) as _raw

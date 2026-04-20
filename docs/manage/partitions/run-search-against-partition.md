@@ -28,7 +28,7 @@ You'll need to filter the partition, depending on the type of partition using th
 
 ## Search the default partition
 Data that you ingest that is not directed to a partition will go to the default partition, named `sumologic_default`. The default partition is the first partition listed on the **Partitions** page. To run a search against the default partition, include this in the scope of your search:
-```
+```sumo
 _index=sumologic_default
 ```
 

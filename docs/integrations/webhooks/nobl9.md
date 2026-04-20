@@ -53,7 +53,7 @@ Follow the below steps to configure the Nobl9 webhook.
     - **Notification Details**. Select fields from the checklist which will be included in the notification sent to Sumo Logic.
 6. Click **ADD ALERT METHOD**.
 7. Verify Nobl9 events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 `_sourceCategory=webhook/nobl9`
 ```
 

@@ -1,7 +1,7 @@
 ---
 id: health-events
 title: Health Events
-description: Monitor the health of your Collectors, Sources, and Log data.
+description: Monitor Sumo Logic system health events for collectors, sources, and ingest budgets, including auto-generated alerts when capacity thresholds are exceeded.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -87,15 +87,15 @@ Configuring the scheduled search for the selected health event will help you wit
 
 Use the below scheduled search query to get an alert when 90% threshold is exceeded for Lookup Tables, Partitions, Fields, or Field Extraction Rules (FERs).
 
-``` sql
-_index=sumologic_system_events "0000000007063B25" 
-| json "eventType", "resourceIdentity.id" as eventType , resourceId 
+```sumo
+_index=sumologic_system_events "0000000007063B25"
+| json "eventType", "resourceIdentity.id" as eventType , resourceId
 | where eventType = "Health-Change" AND resourceId = "0000000007063B25"
 ```
 
 For specific `eventType`, `resourceId`, `eventName`:
 
-```sql
+```sumo
 _index=sumologic_system_events "0000000007063B25" 
 | json "eventType", "resourceIdentity.id","eventName" as eventType, resourceId, eventName
 | where eventType = "Health-Change" AND resourceId = "0000000007063B25" AND eventName="LookupsLimitApproaching"
@@ -144,7 +144,7 @@ To view the number of health events associated with the Collector or Source, per
 
 Events are indexed and searchable in a separate partition named `sumologic_system_events` in the [System Event Index](/docs/manage/security/audit-indexes/system-event-index). To search all health events run a query against the internal partition named `sumologic_system_events`. For example,  
 
-```sql
+```sumo
 _index=sumologic_system_events "Health-Change"
 ```
 

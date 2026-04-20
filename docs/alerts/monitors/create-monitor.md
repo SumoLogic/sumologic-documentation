@@ -1,7 +1,7 @@
 ---
 id: create-monitor
 title: Create a New Monitor
-description: Learn how to create a Sumo Logic monitor.
+description: Create Sumo Logic monitors with ML-powered anomaly detection, customizable trigger conditions, playbook automation, and alerting for logs and metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

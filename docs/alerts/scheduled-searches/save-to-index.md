@@ -11,7 +11,7 @@ When you create a Scheduled Search, you can save the results to an Index. This w
 
 For example, you could use the following query to find successful logins on a Linux system, then save the results to an Index using the **Save to Index** alert type for your Scheduled Search.
 
-```sql
+```sumo
 _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("Accepted" and "pam") or "session" or ("to" and "on")) !"closed"
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_host>\S*)\s(?:\w*):\s+(?<message>.*)$" nodrop
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_host>\S*)\s(?:\S*)\[\d+\]:\s+(?<message>.*)$" nodrop

@@ -68,7 +68,7 @@ Just execute a log search to see the `_loglevel` field:
 
 The <strong>_loglevel</strong> field value for log messages with the log level <code>""</code> in the Histogram is <code>null</code>. To query these messages, you can run:
 
-```sql  
+```sumo  
 | where isNull(_loglevel)
 ```
 

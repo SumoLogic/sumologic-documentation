@@ -429,7 +429,7 @@ This app uses the [Findings](https://cloud.google.com/security-command-center/do
 
 ### Sample log queries
 
-```sql title="Misconfiguration"
+```sumo title="Misconfiguration"
 _sourceCategory=Labs/googleCloudSCC  MISCONFIGURATION
 | json field=_raw "message.data.finding.name", "message.data.resource", "message.data.finding.resourceName", "message.data.finding.parentDisplayName", "message.data.finding.sourceProperties.Explanation", "message.data.finding.sourceProperties.ExceptionInstructions", "message.data.finding.sourceProperties.Recommendation", "message.data.resource.displayName", "message.data.resource.type", "message.data.finding.description", "message.data.finding.findingClass", "message.data.finding.mute", "message.data.finding.severity", "message.data.finding.state", "message.data.finding.category" as findingName, resource,resourceName, ParentDisplayName, explanation, ExceptionInstructions, Recommendation, displayName, type, description, findingClass, mute, severity, state, category nodrop
 | parse regex field = findingName "organizations\/(?<org_id>\d+)\/sources\/\d+\/locations\/global\/findings\/(?<finding_id>[a-f0-9]+)"
@@ -439,7 +439,7 @@ _sourceCategory=Labs/googleCloudSCC  MISCONFIGURATION
 | count by  finding_id,description, category, severity,findingClass, resource_name, location, folder_name, project_name, state
 ```
 
-```sql title="Threat"
+```sumo title="Threat"
 sourceCategory=Labs/googleCloudSCC  THREAT
 | json field=_raw "message.data.finding.name", "message.data.resource", "message.data.finding.resourceName", "message.data.finding.parentDisplayName", "message.data.finding.sourceProperties.Explanation", "message.data.finding.sourceProperties.ExceptionInstructions", "message.data.finding.sourceProperties.Recommendation", "message.data.resource.displayName", "message.data.resource.type", "message.data.finding.description", "message.data.finding.findingClass", "message.data.finding.mute", "message.data.finding.severity", "message.data.finding.state", "message.data.finding.category" as findingName, resource,resourceName, ParentDisplayName, explanation, ExceptionInstructions, Recommendation, displayName, type, description, findingClass, mute, severity, state, category nodrop
 | parse regex field = findingName "organizations\/(?<org_id>\d+)\/sources\/\d+\/locations\/global\/findings\/(?<finding_id>[a-f0-9]+)"
@@ -449,7 +449,7 @@ sourceCategory=Labs/googleCloudSCC  THREAT
 | count by  finding_id, category, severity,findingClass, resource_name, location, folder_name, project_name, state
 ```
 
-```sql title="Vulnerability"
+```sumo title="Vulnerability"
 _sourceCategory=Labs/googleCloudSCC  VULNERABILITY
 | json field=_raw "message.data.finding.name", "message.data.resource", "message.data.finding.resourceName", "message.data.finding.parentDisplayName", "message.data.finding.sourceProperties.Explanation", "message.data.finding.sourceProperties.ExceptionInstructions", "message.data.finding.sourceProperties.Recommendation", "message.data.resource.displayName", "message.data.resource.type", "message.data.finding.description", "message.data.finding.findingClass", "message.data.finding.mute", "message.data.finding.severity", "message.data.finding.state", "message.data.finding.category" as findingName, resource,resourceName, ParentDisplayName, explanation, ExceptionInstructions, Recommendation, displayName, type, description, findingClass, mute, severity, state, category nodrop
 | parse regex field = findingName "organizations\/(?<org_id>\d+)\/sources\/\d+\/locations\/global\/findings\/(?<finding_id>[a-f0-9]+)"

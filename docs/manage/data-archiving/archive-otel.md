@@ -63,7 +63,7 @@ In many environments, the `collectorID` can be a dummy value. The `bladeID` (sou
 
 Below is a sample OpenTelemetry collector configuration that archives logs from files into S3 using the supported Sumo Logic archive format.
 
-```
+```sumo
 receivers:
   filelog/myapps:
     include: ["/home/ec2-user/docker/validation/s3archive/logs/*.log"]

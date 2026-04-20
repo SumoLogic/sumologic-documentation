@@ -78,7 +78,7 @@ Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and rece
 
 ### Sample queries
 
-```sql title="Top bounced email addresses"
+```sumo title="Top bounced email addresses"
 (_sourceCategory=aws-ses or _sourceCategory=AWS/SES/Notifications) "\"notificationType\":\"Bounce\""
 | json "notificationType" nodrop
 | json "bounce.bounceSubType" as bounceSubType nodrop

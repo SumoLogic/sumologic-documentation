@@ -77,7 +77,7 @@ This app uses Sumo Logic’s Atlassian Source to collect [Event Logs](https://de
 
 ### Sample queries
 
-```sql title="Events by Action"
+```sumo title="Events by Action"
 _sourceCategory="Labs/Atlassian"
 | json "attributes.actor.name", "attributes.action", "attributes.location.countryName", "id", "message.content", "attributes.location.city", "attributes.location.regionName", "attributes.location.ip", "attributes.actor.email", "attributes.time", "type", "attributes.context[*].attributes" as actor, action, country, id, message, city, region, ip, actor_email, time, type, action_performed_against nodrop
 

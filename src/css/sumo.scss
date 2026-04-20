@@ -1646,3 +1646,67 @@ article header h2[class*='title_'] {
   white-space: nowrap;
   border: 0;
 }
+
+/* ==========================================================================
+   Sumo Logic brand colors for `sumo` language syntax highlighting
+   Add to src/css/custom.css
+   Brand palette reference: Primary Blues, Secondary Teals, Accent Purples
+
+   SCOPE (DOCS-63): This highlighting covers Sumo Logic LOG search query
+   syntax only (pipe operators, parse, where, count, fields, etc.).
+   Metrics query syntax highlighting is out of scope and will be addressed
+   in a future initiative.
+   ========================================================================== */
+
+/* Light mode */
+[data-theme='light'] .language-sumo {
+  /* keywords: pipe operators, reserved words — Sumo Blue */
+  --sumo-keyword:  #000099;
+  /* strings: quoted values — Sumo Teal */
+  --sumo-string:   #007A99;
+  /* urls: path://, asn://, https:// — Light Teal (slightly brighter than strings) */
+  --sumo-url:      #0099AA;
+  /* metadata: _sourceCategory, _source etc. — Sumo Purple */
+  --sumo-metadata: #6600CC;
+  /* functions: anything called with () — CTA Blue */
+  --sumo-function: #0444FF;
+  /* numbers and time units — Dark Teal */
+  --sumo-number:   #005F73;
+  /* operators: | = , * — neutral mid-gray */
+  --sumo-operator: #555555;
+  /* regex patterns — Vivid Teal */
+  --sumo-regex:    #008080;
+}
+
+/* Dark mode */
+[data-theme='dark'] .language-sumo {
+  /* keywords — Light Blue (readable on dark bg) */
+  --sumo-keyword:  #4480FF;
+  /* strings — Light Teal */
+  --sumo-string:   #00C8D7;
+  /* urls — slightly brighter teal */
+  --sumo-url:      #00E5E5;
+  /* metadata — Vivid Purple */
+  --sumo-metadata: #C440FF;
+  /* functions — CTA Blue brightened for dark */
+  --sumo-function: #4499FF;
+  /* numbers and time units — Muted Teal */
+  --sumo-number:   #66CCCC;
+  /* operators — light gray */
+  --sumo-operator: #AAAAAA;
+  /* regex patterns — Vivid Teal */
+  --sumo-regex:    #00CCCC;
+}
+
+/* Apply variables to Prism token classes, scoped to sumo language only */
+/* Reset Dracula dark theme italic bleed-through */
+.language-sumo .token         { font-style: normal !important; }
+.language-sumo .token.keyword  { color: var(--sumo-keyword);  }
+.language-sumo .token.string   { color: var(--sumo-string);   }
+.language-sumo .token.url      { color: var(--sumo-url);      }
+.language-sumo .token.metadata { color: var(--sumo-metadata); }
+.language-sumo .token.function { color: var(--sumo-function); }
+.language-sumo .token.number,
+.language-sumo .token.time     { color: var(--sumo-number);   }
+.language-sumo .token.operator { color: var(--sumo-operator); }
+.language-sumo .token.regex    { color: var(--sumo-regex);    }

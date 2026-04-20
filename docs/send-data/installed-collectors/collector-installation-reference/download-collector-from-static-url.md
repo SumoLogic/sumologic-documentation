@@ -1,7 +1,7 @@
 ---
 id: download-collector-from-static-url
 title: Download a Collector from a Static URL
-description: Static URLs provide download links to the most recent version of a Collector.
+description: Use static URLs to download the latest Sumo Logic Installed Collector for Linux, Windows, macOS, and other platforms, updated with every release.
 ---
 
 To download the latest version of our [Installed Collector](/docs/send-data/installed-collectors) agent, use our static URL as described below. Collector versions are updated each time there is a release or patch.

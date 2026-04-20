@@ -67,14 +67,14 @@ To create a macro, follow the steps below:
 
 Consider the below query, which searches for errors with `timeslice` of 5 minutes. 
 
-```
+```sumo
 _sourceCategory=error | timeslice 5m
 | count by _timeslice
 ```
 
 Now, by creating a macro for the `timeslice` field, the query using this macro can be simplified as follows:
 
-```
+```sumo
 _sourceCategory=error | `timeslice_macro`
 ```
 
@@ -82,7 +82,7 @@ _sourceCategory=error | `timeslice_macro`
 
 Consider the below query, which searches for errors with `timeslice` for time of your choice. 
 
-```
+```sumo
 _sourceCategory=error | timeslice 5m
 | count by _timeslice
 ```
@@ -91,7 +91,7 @@ To create a macro that allows you to enter a value of your choice, we use argume
 
 The following is a simplified version of the query that uses the macro with arguments. Replace `<arg1_value>` with the value of your choice.
 
-```
+```sumo
 _sourceCategory=error | `timeslice_macro(<arg1_value>)`
 ```
 

@@ -9,9 +9,7 @@ from log lines. 
 
 ## Syntax
 
-```sql
-| expression [as <field>]
-```
+`| expression [as <field>]`
 
 ## Rules
 
@@ -34,7 +32,7 @@ The Sumo Logic Java library includes the Math class functions, though they are n
 
 The following example uses the `pow()` function:
 
-```sql
+```sumo
 | 10 as number | pow(number, 10) as newnumber
 ```
 
