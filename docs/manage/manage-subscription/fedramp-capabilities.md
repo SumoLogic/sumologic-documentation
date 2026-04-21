@@ -90,7 +90,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Collection - Cloud APIs | [Tenable](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.* |
 | Collection - Cloud APIs | [Workday](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.* |
 | Collection - Cloud APIs | [1Password](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.*
-| Dashboards |  [Dashboard reports](/docs/dashboards/scheduled-report/) | &#10003; | |
+| Dashboards |  [Dashboard reports](/docs/dashboards/scheduled-report/) | &#10003; | &#10003; |
 | Manage Data - Logs | [Data forwarding](/docs/manage/data-forwarding/) | &#10003; | &#10003; |
 | Manage Data - Logs | [Data tiering](/docs/manage/partitions/data-tiers/) | &#10003;<br/>*Only included with Enterprise Suite License.* | &#10003;<br/>*Only included with Enterprise Suite License.* |
 | Manage Data - Logs | [Fields](/docs/manage/fields/) | &#10003; | &#10003; |
