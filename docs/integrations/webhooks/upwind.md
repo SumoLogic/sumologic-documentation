@@ -1,10 +1,16 @@
 ---
 id: upwind
-title: Upwind
+title: Upwind (Beta)
 description: Learn about the collection process for the Sumo Logic Upwind integration.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
 
 <img src={useBaseUrl('img/integrations/webhooks/upwind-logo.png')} alt="thumbnail icon" width="55"/>
 
@@ -95,7 +101,7 @@ _sourceCategory=webhook/upwind
 ```
 
 :::info
-- For webhook and workflow details, refer to [Upwind Custom Webhook documentation](https://docs.upwind.io/integrations/monitoring-and-logging/custom-webhook) and [Workflow documentation](https://docs.upwind.io/settings/workflows).
+For webhook and workflow details, refer to [Upwind Custom Webhook documentation](https://docs.upwind.io/integrations/monitoring-and-logging/custom-webhook) and [Workflow documentation](https://docs.upwind.io/settings/workflows).
 :::
 
 ### Installing the Upwind app
