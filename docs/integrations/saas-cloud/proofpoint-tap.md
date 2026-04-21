@@ -138,7 +138,7 @@ This app uses [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to
 
 ## Sample queries
 
-```sql title="Sample Message Events Query (Number of Messages)"
+```sumo title="Sample Message Events Query (Number of Messages)"
 _sourceCategory="milan_proofpoint_tap" ("MESSAGE_BLOCKED" OR "MESSAGE_DELIVERED")
 | json "id","type","cluster","sender","recipient","messageParts[*].disposition","messageParts[*].sandboxStatus","messageSize","modulesRun","policyRoutes","senderIP","threatsInfoMap[*].classification","threatsInfoMap[*].threatType","threatsInfoMap[*].threatStatus","impostorScore","malwareScore","phishScore","spamScore","quarantineFolder","quarantineRule","subject" as id,type,cluster,sender,recipient,dispositions,sandboxStatuses,messageSize,modules_run,policy_route,sender_ip,threat_categories,threat_types,threat_status,impostor_score,malware_score,phish_score,spam_score,quarantine_folder,quarantine_rule,subject nodrop
 | extract field=threat_status "\"?(?<status>[\w\s\-&.,]*)\"?[,\n\]]" multi
@@ -155,7 +155,7 @@ _sourceCategory="milan_proofpoint_tap" ("MESSAGE_BLOCKED" OR "MESSAGE_DELIVERED"
 | count_distinct(id)
 ```
 
-```sql title="Sample Click Events Query (Number of Clicks)"
+```sumo title="Sample Click Events Query (Number of Clicks)"
 _sourceCategory="milan_proofpoint_tap" ("CLICK_PERMITTED" or "CLICK_BLOCKED")
 | json "id","type","threatUrl","classification","clickIP","senderIP","sender","recipient","threatStatus" as id,type,threat_url,category,click_ip,sender_ip,sender,recipient,threat_status nodrop
 | where type matches "{{click_type}}"
@@ -200,11 +200,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Messages Overview
 
-The **Proofpoint TAP - Messages Overview** dashboard provides real-time analysis of delivered and blocked messages, showing trends and the most active Proofpoint protection clusters. It displays the geographic locations of senders from high-risk countries with the distribution of threats by type, category, and status. The dashboard also provides information on message disposition and sandbox status, highlights the key PPS (Proofpoint Protection Server) modules and policy routes involved in message processing, and presents details about the top senders and receivers. Additionally, it offers a summary of recent messages, giving a quick overview of email activity and any noteworthy events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-TAP-Messages-Overview.png')} alt="Proofpoint-TAP-Messages-Overview"/>
+The **Proofpoint TAP - Messages Overview** dashboard provides real-time analysis of delivered and blocked messages, showing trends and the most active Proofpoint protection clusters. It displays the geographic locations of senders from high-risk countries with the distribution of threats by type, category, and status. The dashboard also provides information on message disposition and sandbox status, highlights the key PPS (Proofpoint Protection Server) modules and policy routes involved in message processing, and presents details about the top senders and receivers. Additionally, it offers a summary of recent messages, giving a quick overview of email activity and any noteworthy events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-TAP-Messages-Overview.png')} alt="Proofpoint TAP Messages Overview"/>
 
 ### Clicks Overview
 
-The **Proofpoint TAP - Clicks Overview** dashboard offers real-time analysis of malicious URLs, providing insights into the trends of the click events. It presents the distribution of threats based on their categories and statuses. Furthermore, the dashboard displays the geographic locations of malicious URL clicks originating from high-risk countries and details about the top senders and receivers of the malicious URLs. Additionally, the dashboard offers a summary of recent click events, delivering a concise overview of the malicious URL click activity and highlighting any significant events that may require attention.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-TAP-Clicks-Overview.png')} alt="Proofpoint-TAP-Clicks-Overview"/>
+The **Proofpoint TAP - Clicks Overview** dashboard offers real-time analysis of malicious URLs, providing insights into the trends of the click events. It presents the distribution of threats based on their categories and statuses. Furthermore, the dashboard displays the geographic locations of malicious URL clicks originating from high-risk countries and details about the top senders and receivers of the malicious URLs. Additionally, the dashboard offers a summary of recent click events, delivering a concise overview of the malicious URL click activity and highlighting any significant events that may require attention.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-TAP-Clicks-Overview.png')} alt="Proofpoint TAP Clicks Overview"/>
 
 ## Upgrade/Downgrade the Proofpoint TAP app (Optional)
 

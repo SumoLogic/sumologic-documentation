@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-azure-security-center.png')} alt="microsoft-azure-security-center" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-azure-security-center.png')} alt="Microsoft Azure Security Center" width="100"/>
 
 ***Version: 1.2  
 Updated: Mar 17, 2026***

@@ -55,7 +55,7 @@ The Webhook events are grouped into the following core event types:
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory=zoom
 | json "event", "payload.object.start_time", "payload.object.topic", "payload.object.uuid", "payload.object.id", "payload.object.type", "payload.object.duration" as event, meeting_start_time, topic, meeting_instance_id, meeting_number, meeting_type, meeting_duration nodrop
 | where event = "meeting.started"

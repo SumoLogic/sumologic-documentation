@@ -163,7 +163,7 @@ dir="ltr">authenticated |Mon, 21 May 2018 01:38:01:601|::ffff:127.0.0.1 |32828 |
 
 ### Sample queries
 
-```sql title="Top Users"
+```sumo title="Top Users"
 dir="ltr">_sourceCategory=*/AWS/Redshift/Audit LOG
 | parse regex "^\'(?<time>\d+\-\d+\-\d+T\d+:\d+:\d+Z \w+)\s+\[\s*(?<parameters>[^\]]+)\]\'\s+LOG:\s+(?<sqlstatement>[^;]*)"
 | parse field=parameters "db=* user=* pid=* userid=* xid=*" as dbName, username, pid, userid, xid nodrop

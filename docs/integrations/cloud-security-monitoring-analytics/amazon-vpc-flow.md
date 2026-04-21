@@ -40,7 +40,7 @@ This section has instructions for collecting logs for the Amazon VPC Flow Logs a
 
 The diagram below illustrates the collection process for Amazon VPC Flow Logs. VPC is enabled to send logs to Amazon CloudWatch. A Lambda function subscribes to a CloudWatch Log Group to obtain the flow logs, and then sends the data on to a Sumo Logic HTTP Source on a hosted collector. The AWS resources are created by a Sumo-provided CloudFormation template.
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWSCloudWatch-Collection.png')} alt="AWSCloudWatch-Collection"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWSCloudWatch-Collection.png')} alt="AWSCloudWatch Collection"/>
 
 
 ### Step 1: Enable Amazon VPC Flow Logs

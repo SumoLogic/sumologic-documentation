@@ -2,7 +2,7 @@ Automation action events are provided to the audit index (`_index=sumologic_audi
 
 Run the following query to find the actions count per hour:
 
-```
+```sumo
 (_index=sumologic_audit_events OR _index=sumologic_system_events) _sourceCategory=oar*
 | json field=_raw "AutomationAction.name" as actionName nodrop
 | json field=_raw "AutomationAction.playbook" as playbook nodrop 

@@ -10,7 +10,7 @@ description: Learn how to collect events data from the JumpCloud Directory Insig
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="jumpcloud-directory-insights-icon" width="120" />
+<img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="JumpCloud Directory Insights icon" width="120" />
 
 JumpCloud's open directory platform unifies your technology stack across identity, access, and device management in a cost-effective manner that doesn't sacrifice security or functionality. Directory Insights gives you a clear path to view, analyze, and save user and resource activity data, in a standard format that you can query in real time.
 

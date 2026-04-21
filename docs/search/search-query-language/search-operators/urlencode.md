@@ -22,19 +22,15 @@ http%3A%2F%2Fyourmainserver-city55555.org%2Ffunctions%2Fmain.php%3Fgk%3DGk45MgHJ
 
 ## Syntax
 
-```sql
-urlencode(<url_field>) [as <field>]
-```
+`urlencode(<url_field>) [as <field>]`
 
-```sql
-urlencode("<url string>") as <field>
-```
+`urlencode("<url string>") as <field>`
 
 ## Example
 
 To encode a URL in your PagerDuty logs, you can run this query:
 
-```sql
+```sumo
 _sourceCategory=pagerduty
 | kv "html_url" as url
 | urlencode(url) as url

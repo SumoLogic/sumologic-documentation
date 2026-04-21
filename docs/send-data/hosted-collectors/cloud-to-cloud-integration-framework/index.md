@@ -100,8 +100,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source')}><img src={useBaseUrl('img/send-data/armis-icon.png')} alt="Armis icon" width="80"/><h4>Armis API Source</h4></a>
-  <p>Armis API Source helps to fetch device and alert logs from the Armis platform and send it to Sumo Logic.</p>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-source')}><img src={useBaseUrl('img/send-data/armis-icon.png')} alt="Armis icon" width="80"/><h4>Armis Source</h4></a>
+  <p>Armis Source helps to fetch device and alert logs from the Armis platform and send it to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -220,8 +220,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source')}><img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="Confluent Cloud icon" width="120"/><h4>Confluent Cloud Metrics</h4></a>
-  <p>Learn how to collect metrics from the Confluent Cloud Metrics platform and send them to Sumo Logic.</p>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-metrics-source')}><img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="Confluent Cloud icon" width="120"/><h4>Confluent Metrics</h4></a>
+  <p>Learn how to collect metrics from the Confluent Metrics platform and send them to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -286,8 +286,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source')}><img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Digital Guardian icon" width="45"/><h4>Digital Guardian</h4></a>
-  <p>Learn how to collect export data from the Digital Guardian and send it to Sumo Logic.</p>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-arc-source')}><img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Digital Guardian ARC icon" width="45"/><h4>Digital Guardian ARC</h4></a>
+  <p>Learn how to collect export data from the Digital Guardian ARC and send it to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -400,7 +400,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source')}><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="KnowBe4 icon" width="120"/><h4>KnowBe4 API Source</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-kmsat-source')}><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="KnowBe4 KMSAT icon" width="120"/><h4>KnowBe4 KMSAT Source</h4></a>
   <p>Collects user events data into Sumo Logic for storage, analysis, and alerting.</p>
   </div>
 </div>
@@ -610,8 +610,8 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source')}><img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="Trellix icon" width="80"/><h4>Trellix mVision ePO</h4></a>
-        <p>Learn how to collect event logs using the Trellix mVision ePO.</p>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-source')}><img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="Trellix icon" width="80"/><h4>Trellix</h4></a>
+        <p>Learn how to collect event logs using the Trellix.</p>
         </div>
       </div>
       <div className="box smallbox card">
@@ -622,7 +622,7 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trust-login-source')}><img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="trust-login-icon" width="80"/><h4>Trust Login</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trust-login-source')}><img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="Trust login icon" width="80"/><h4>Trust Login</h4></a>
         <p>Learn how to collect report logs from Trust Login platform.</p>
         </div>
       </div>

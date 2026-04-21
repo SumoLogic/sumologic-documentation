@@ -115,7 +115,7 @@ metric=CPU_Idle | filter max > .3  | eval 100 * (1 - _value) | avg by hostname
 The [`parse` operator](/docs/metrics/metrics-operators/parse/) can extract values from metric names. A common use case is to split metric or tag strings into parts, for example, to remove high cardinality instance or stack IDs. (Use [metrics transformation rules](/docs/metrics/metrics-transformation-rules/) for Graphite Carbon type metric strings to turn them into tag and value formats on ingest, or to aggregate metrics to reduce high cardinality tags).
 
 For example, if the load balancer is `app/app-song-8d/4567223890123456`, the following query:
-```
+```sql
 availabilityZone=us-west-1a metric=HTTPCode_Target_5XX_Count | parse field=LoadBalancer */*/* as type, name, id | sum by name
 ```
 

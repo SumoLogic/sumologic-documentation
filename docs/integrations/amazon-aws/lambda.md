@@ -102,7 +102,7 @@ This section provides sample Amazon CloudWatch Logs and CloudTrail Lambda Data E
 
 ### Sample queries
 
-```sql title="Requests by Function Versions (Based on CloudWatch logs)"
+```sumo title="Requests by Function Versions (Based on CloudWatch logs)"
 account={{account}} region={{region}} Namespace={{namespace}}
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 // | json "logStream", "logGroup" nodrop
@@ -115,7 +115,7 @@ account={{account}} region={{region}} Namespace={{namespace}}
 | transpose row functionname column version
 ```
 
-```sql title="Top AWS Services Using Lambda Functions (Cloud Trail Logs Based)"
+```sumo title="Top AWS Services Using Lambda Functions (Cloud Trail Logs Based)"
 "lambda.amazonaws.com" "\"eventName\":\"Invoke\"" "\"type\":\"AWSService\"" account={{account}} Namespace={{namespace}} region={{region}}
 | json "eventName", "eventSource", "awsRegion", "userAgent", "sourceIPAddress", "recipientAccountId", "userIdentity", "requestParameters", "additionalEventData" as event_name, event_source, Region, user_agent, src_ip, accountId, userIdentity, requestParameters, additionalEventData nodrop
 | json field=userIdentity "type", "userName", "invokedBy", "arn" as caller_type, user_name, invoked_by, arn nodrop | json field=requestParameters "functionName", "resource" as functionname, resource nodrop | json field=additionalEventData "functionVersion" as func_version nodrop
@@ -231,7 +231,7 @@ Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "lambda.amazonaws.com"
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 | json "eventSource", "awsRegion", "requestParameters", "recipientAccountId" as eventSource, region, requestParameters, accountid nodrop
 | where eventSource = "lambda.amazonaws.com"
 | json field=requestParameters "functionName", "resource" as functionname, resource nodrop
@@ -257,7 +257,7 @@ Scope (Specific Data): _sourceCategory=<SourceCategory_of_CloudTrail_source_crea
 
 Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account

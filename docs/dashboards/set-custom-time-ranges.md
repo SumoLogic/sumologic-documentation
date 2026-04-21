@@ -48,7 +48,7 @@ A dashboard has a default time range defined by its creator. The default time ra
 
 ### Modify time ranges
 
-You can modify the time range in panel to zoom in for granular details, especially for charts with larger compliance periods. To do so, select and drag across date/time and click **Update dashboard time range** button to zoom in further. Now, this time range is considered as a temporary time range and all the time series panels in the dashboard will be zoomed in for the selected time range. <br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/update-dashboard-time-range.png')} alt="update-dashboard-time-range" style={{border: '1px solid gray'}} width="500"/>
+You can modify the time range in panel to zoom in for granular details, especially for charts with larger compliance periods. To do so, select and drag across date/time and click **Update dashboard time range** button to zoom in further. Now, this time range is considered as a temporary time range and all the time series panels in the dashboard will be zoomed in for the selected time range. <br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/update-dashboard-time-range.png')} alt="Update dashboard time range" style={{border: '1px solid gray'}} width="500"/>
 
 After you do, the new time range is shown in blue, and a more options menu is available that allows you to revert back to the default, or make it the default time range. <br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/dashboard-setting-modified.png')} alt="dash modified" style={{border: '1px solid gray'}} width="675"/>
 

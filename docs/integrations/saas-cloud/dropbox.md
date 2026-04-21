@@ -94,7 +94,7 @@ The Dropbox App for Sumo Logic uses [Team events from Dropbox](https://www.dropb
 
 ### Sample queries
 
-```sql title="Active Team Members"
+```sumo title="Active Team Members"
 _sourceCategory="dropboxSource"
 | json "$['actor']['.tag']","$['actor']*['.tag']","$['actor']*['account_id']","$['actor']*['display_name']","$['actor']*['email']","$['actor']*['team_member_id']","$['event_type']['.tag']","$['event_type']['description']","details.app_info.display_name", "origin.geo_location.ip_address", "origin.geo_location.country","$['event_category']['.tag']","involve_non_team_member" as actor,actor_is_team_member,actor_account_id, actor_display_name, actor_email,actor_team_member_id, event_type, event_type_description, app_name,location,country, event_category,involve_non_team_member nodrop
 | where actor matches"{{actor}}"

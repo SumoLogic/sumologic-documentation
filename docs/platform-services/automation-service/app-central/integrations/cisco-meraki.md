@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-meraki.png')} alt="cisco-meraki" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-meraki.png')} alt="Cisco Meraki" width="70"/>
 
 ***Version: 1.3  
 Updated: Oct 24, 2025***

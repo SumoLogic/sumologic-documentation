@@ -58,7 +58,7 @@ The Sumo Logic integration for Hasura ingests events into Sumo Logic through an 
 ```
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory="webhook/hasura"
 | json "id", "created_at", "event.op","table.name","table.schema","trigger.name" as id, created_at, operation, tableName, tableSchema, triggerName nodrop
 | where tableSchema matches "{{tabelSchema}}" and tableName matches "{{tabelName}}" and operation matches "{{operation}}" and triggerName matches "{{triggerName}}"
@@ -93,7 +93,7 @@ Follow the below steps to configure the Hasura webhook.
     - **Webhook (HTTP/S) Handlers**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
 6. Click **Create Event Trigger**.
 7. Verify Hasura events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 _sourceCategory=webhook/hasura
 ```
 

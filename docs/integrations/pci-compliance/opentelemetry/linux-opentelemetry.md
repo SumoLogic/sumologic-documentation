@@ -17,7 +17,7 @@ The PCI Compliance for Linux - OpenTelemetry is a unified log app that sends Lin
 The PCI Compliance for Linux app covers PCI requirements 02, 07, 08, and 10.
 :::
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Schematics.png' alt="Linux-Schematics" style={{border: '1px solid gray'}} />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Schematics.png' alt="Linux Schematics" style={{border: '1px solid gray'}} />
 
 ## Fields created in Sumo Logic for Linux PCI Compliance
 
@@ -88,7 +88,7 @@ Jun 28 07:46:03 bruno-supercomputer useradd[1602]: new account added - account=r
 
 ## Sample queries
 
-```sql
+```sumo
 sumo.datasource=linux deployment.environment=* host.group=* host.name=* "useradd" and ("new user" or "new account")
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s+(?<_sourceHost>\S+)\s+\w*" nodrop
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s+(?<dest_host>\S*)\s+(?<process>\w*)(?:\[\d+\]:|:)\s*(?<msg>.+)$" nodrop

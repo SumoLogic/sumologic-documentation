@@ -80,7 +80,7 @@ Now you must add the Syslog Source to your Policy configuration. Set the integra
 
 ## Sample queries
 
-```sql title="Top 5 Reasons For Prevented Packets"
+```sumo title="Top 5 Reasons For Prevented Packets"
 _sourceCategory=Trendmicro dst
 | parse "CEF:0|*|*|*|*|*|*|*" as Device_Vendor,Device_Product,Device_Version,Signature_ID, Name, Severity, Extension
 | where (signature_id >= 100 AND signature_id <= 199) OR signature_id = 20 OR signature_id = 21

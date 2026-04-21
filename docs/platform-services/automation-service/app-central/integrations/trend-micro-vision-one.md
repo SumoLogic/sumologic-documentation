@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/trend-micro-vision-one.png')} alt="trend-micro-vision-one" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/trend-micro-vision-one.png')} alt="Trend Micro Vision One icon" width="80"/>
 
 ***Version: 1.2  
 Updated: Jun 3, 2025***

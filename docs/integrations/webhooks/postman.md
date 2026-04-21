@@ -69,7 +69,7 @@ The Sumo Logic app for Postman ingests Postman events into Sumo Logic through an
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory=webhook/postman "collection" "_postman_id"
 | json "collection.info._postman_id", "collection.info.name", "collection.item[*].request.method" as postmanId, name, methodList nodrop
 | where postmanId matches "{{postmanId}}" and name matches "{{name}}"
@@ -111,7 +111,7 @@ Follow the below steps to configure the Postman webhook.
         - **Choose Monitor**. Select the monitor you wish to send results for.
 6. Click **Add Integration**.
 7. Verify Postman events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-  ```sql
+  ```sumo
   _sourceCategory=webhook/postman
   ```
 
@@ -136,19 +136,19 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Postman - Overview** provides an overview of valuable insights and statistical data concerning collections, team activity feed events, and API tests.
 
-<img src={useBaseUrl('img/integrations/webhooks/Postman-Overview.png')} style={{border: '1px solid black'}} alt="Postman-Overview"/>
+<img src={useBaseUrl('img/integrations/webhooks/Postman-Overview.png')} style={{border: '1px solid black'}} alt="Postman Overview"/>
 
 ### Collections, Requests & Team Activity
 
 The **Postman - Collections, Requests & Team Activity** provides valuable insights and statistical data concerning collections, including their requests, updates, and team activity feed events.
 
-<img src={useBaseUrl('img/integrations/webhooks/Postman-Collections,_Requests_&_Team_Activity.png')} style={{border: '1px solid black'}} alt="Postman-Collections,_Requests_&_Team_Activity"/>
+<img src={useBaseUrl('img/integrations/webhooks/Postman-Collections,_Requests_&_Team_Activity.png')} style={{border: '1px solid black'}} alt="Postman Collections, Requests & Team_Activity"/>
 
 ### Monitors
 
 The **Postman - Monitors** provides immediate notifications and real-time data regarding the results of API tests.
 
-<img src={useBaseUrl('img/integrations/webhooks/Postman-Monitors.png')} style={{border: '1px solid black'}} alt="Postman-Monitors"/>
+<img src={useBaseUrl('img/integrations/webhooks/Postman-Monitors.png')} style={{border: '1px solid black'}} alt="Postman Monitors"/>
 
 ## Upgrade/Downgrade the Postman app (Optional)
 

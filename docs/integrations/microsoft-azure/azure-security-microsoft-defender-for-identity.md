@@ -109,7 +109,7 @@ The Azure Security – Microsoft Defender for Identity app uses Sumo Logic’s M
 
 ### Sample queries
 
-```sql title="Alerts by Status"
+```sumo title="Alerts by Status"
 _sourceCategory=MicrosoftGraphSecurityIdentity id status microsoftDefenderForIdentity
 | json "id", "status", "severity", "classification", "serviceSource" as alert_id, status, severity, classification, service_source nodrop
 | where toLowerCase(service_source) matches ("microsoftdefenderforidentity")
@@ -125,7 +125,7 @@ _sourceCategory=MicrosoftGraphSecurityIdentity id status microsoftDefenderForIde
 | sort by count, status asc
 ```
 
-```sql title="Alerts by Classification"
+```sumo title="Alerts by Classification"
 _sourceCategory=MicrosoftGraphSecurityIdentity id classification microsoftDefenderForIdentity
 | json "id", "status", "severity", "classification", "serviceSource" as alert_id, status, severity, classification, service_source nodrop
 | where toLowerCase(service_source) matches ("microsoftdefenderforidentity")
@@ -141,7 +141,7 @@ _sourceCategory=MicrosoftGraphSecurityIdentity id classification microsoftDefend
 | sort by count, classification asc
 ```
 
-```sql title="Top 10 Alert Categories"
+```sumo title="Top 10 Alert Categories"
 _sourceCategory=MicrosoftGraphSecurityIdentity id category microsoftDefenderForIdentity
 | json "id", "status", "severity", "category", "classification", "serviceSource" as alert_id, status, severity, category, classification, service_source nodrop
 | where toLowerCase(service_source) matches ("microsoftdefenderforidentity")

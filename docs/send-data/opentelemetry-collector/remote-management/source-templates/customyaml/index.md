@@ -79,11 +79,11 @@ A new source template will always be created with the latest version of the sour
 
 Follow the below steps to create a data collection configuration to gather the required logs and link them to all the collectors with the help of collector tags.
 
-1. Under **Link Collectors**, you will have the option to link the collectors using the collector name or by adding collector tags to find the group of collectors (for example, `application = Apache`).<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="link-collectors" style={{border: '1px solid gray'}} width="800" />
+1. Under **Link Collectors**, you will have the option to link the collectors using the collector name or by adding collector tags to find the group of collectors (for example, `application = Apache`).<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="Link collectors" style={{border: '1px solid gray'}} width="800" />
 1. Navigate to **Preview Collector(s**) to view collector compatibility details and see which collectors will be linked to the newly created source template.
 If collectors are mapped using both **Collector Name** and **Collector Tags**, separate preview sections will be shown for each mapping type.<br/><img src={useBaseUrl('img/send-data/preview-collectors1.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800" /><br/><img src={useBaseUrl('img/send-data/preview-collectors2.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800" />
     :::note
-    Incompatible version conflict will be found if your collectors cannot be linked to the source template due to version incompatibility or unsupported operating system. To move to the next step, make sure you update the collect version of the incompatible collector.<br/><img src={useBaseUrl('img/send-data/incompatible-collectors.png')} alt="incompatible-collectors" style={{border:'1px solid gray'}} width="700"/>
+    Incompatible version conflict will be found if your collectors cannot be linked to the source template due to version incompatibility or unsupported operating system. To move to the next step, make sure you update the collect version of the incompatible collector.<br/><img src={useBaseUrl('img/send-data/incompatible-collectors.png')} alt="Incompatible collectors" style={{border:'1px solid gray'}} width="700"/>
     :::
 1. Click **Next** to complete source template creation. In the background, the system will apply the configuration to all the compatible linked collectors and starts collecting the respective telemetry data from the remote host.
 1. Apply the source template to the linked collectors and manage or update it as needed.

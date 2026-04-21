@@ -11,7 +11,7 @@ description: The Cybereason Source provides a secure endpoint to receive authent
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
-<img src={useBaseUrl('img/send-data/cybereason-logo.png')} alt="cybereason-logo" width="70" />
+<img src={useBaseUrl('img/send-data/cybereason-logo.png')} alt="Cybereason logo" width="70" />
 
 The Cybereason Source provides a secure endpoint to receive authentication logs from the Cybereason [Malops API](https://nest.cybereason.com/documentation/api-documentation/all-versions/retrieve-all-malops-all-types#getmalopsmalware). It securely stores the required authentication, scheduling, and state tracking information.
 

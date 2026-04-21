@@ -12,9 +12,7 @@ For dashboards in live mode, `queryTimeRange()` is a more suitable option. In mo
 
 ## Syntax
 
-```sql
-queryStartTime() as <field>
-```
+`queryStartTime() as <field>`
 
 ## Rules
 
@@ -24,14 +22,14 @@ queryStartTime() as <field>
 
 To get a duration of your query:
 
-```sql
+```sumo
 error
 | (queryEndTime() - queryStartTime()) as duration
 ```
 
 To list start time, end time, and duration:
 
-```sql
+```sumo
 error
 | queryStartTime() as starttime
 | queryEndTime() as endtime

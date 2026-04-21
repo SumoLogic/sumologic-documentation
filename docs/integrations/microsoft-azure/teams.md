@@ -41,7 +41,7 @@ For more information, see Microsoft’s [list of Teams Activities](https://docs.
 ```
 
 ### Sample queries
-```sql
+```sumo
 _sourceCategory="O365/General"
 | json "Workload", "Operation" , "UserId" as workload, operation, email
 | where workload = "MicrosoftTeams"

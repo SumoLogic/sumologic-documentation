@@ -122,9 +122,17 @@ module.exports = {
     require.resolve('./src/client-modules/trackTrialClick.js'),
     require.resolve('./src/client-modules/fixAnchorScroll.js'),
   ],
+  storage: {
+    type: 'localStorage',
+    namespace: true,
+  },
   future: {
-    v4: true,
-    experimental_faster: true,
+    faster: true,
+    v4: {
+      siteStorageNamespacing: true,
+      fasterByDefault: true,
+      removeLegacyPostBuildHeadAttribute: true,
+    },
   },
   staticDirectories: ['static'],
   presets: [
@@ -505,7 +513,7 @@ module.exports = {
               },
               {
                 label: 'Request a Demo',
-                to: 'https://www.sumologic.com/demos',
+                href: 'https://www.sumologic.com/demo',
                 icon: 'co_present',
               },
               {
@@ -573,7 +581,7 @@ module.exports = {
             items: [
               {
                 label: 'Start Free Trial',
-                href: 'https://www.sumologic.com/sign-up'
+                href: 'https://www.sumologic.com/sign-up/'
               },
               {
                 label: 'Request a demo',

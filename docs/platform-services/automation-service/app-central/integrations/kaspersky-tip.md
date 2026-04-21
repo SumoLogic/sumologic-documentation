@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/kaspersky-tip.png')} alt="kaspersky-tip" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/kaspersky-tip.png')} alt="Kaspersky TIP icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 05, 2023***
