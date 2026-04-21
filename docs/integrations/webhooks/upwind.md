@@ -1,6 +1,6 @@
 ---
 id: upwind
-title: Upwind (Beta)
+title: Upwind
 description: Learn about the collection process for the Sumo Logic Upwind integration.
 ---
 
@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
 <img src={useBaseUrl('img/integrations/webhooks/upwind-logo.png')} alt="thumbnail icon" width="55"/>
 
