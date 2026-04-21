@@ -1,6 +1,6 @@
 ---
 id: data-masking
-title: How to manage data masking rules in Sumo Logic
+title: How to manage data masking rules in Sumo Logic (Preview)
 keywords:
   - data-masking
   - data-protection
@@ -12,7 +12,7 @@ description: Learn how to create, edit, disable, and delete data masking rules t
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/beta')}><span className="beta">Preview</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
