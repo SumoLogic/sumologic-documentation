@@ -6,8 +6,6 @@ description: Use lookup tables in Sumo Logic to enrich your searches with extern
 
 This guide has information about Lookup Tables. 
 
-New Lookup Tables are available in all deployments except Sumo Logic's Montreal deployment, pending AWS providing a required AWS service in the Montreal region.
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this section, we'll introduce the following concepts:

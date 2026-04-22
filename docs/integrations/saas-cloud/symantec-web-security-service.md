@@ -53,7 +53,7 @@ This app uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/
 ```
 ## Sample queries
 
-```sql title="Unique Inbound Domains"
+```sumo title="Unique Inbound Domains"
 _sourceCategory=swssDev
 | parse "\"cs(User-Agent)\": \"*\"" as user_agent
 | json "x-bluecoat-request-tenant-id", "date", "time", "time-taken", "x-virus-id", "cs-userdn", "s-action", "cs-host", "cs-uri-port", "cs-uri-path", "s-ip", "c-ip", "cs-bytes", "sc-bytes", "cs-categories", "sc-filter-result", "cs-uri-extension", "x-exception-id", "x-bluecoat-placeholder" as id, date, time, total_time, virus_id, user, s_action, host, cs_uri_port, cs_uri_path, s_ip, client_ip, bytes_send, bytes_receive, category, filter_result, uri_extension, exception_id, x_bluecoat_placeholder nodrop

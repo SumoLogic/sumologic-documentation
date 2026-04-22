@@ -10,9 +10,7 @@ The `bin` operator assigns output results to user defined bins. A bin is configu
 
 ## Syntax
 
-```sql
-bin <numeric field> width=<#>[, min=<#>][, max=<#>]
-```
+`bin <numeric field> width=<#>[, min=<#>][, max=<#>]`
 
 Where:
 
@@ -38,7 +36,7 @@ You can sort by the lower or upper boundary of the bin interval.
 A query counting error messages and using the bin operator to see the
 distribution of error counts based on bins with a width of 100:
 
-```sql
+```sumo
 _sourceCategory=stream error
 | timeslice 1m
 | count by _timeslice
@@ -54,7 +52,7 @@ _sourceCategory=stream error
 A query parsing the latency of a function call and using the bin
 operator to see latency distribution over time:
 
-```sql
+```sumo
 _sourceCategory=analytics
 | parse "ms: *" as time
 | bin time width=10.0, min = 0.0, max = 500.0
@@ -62,7 +60,7 @@ _sourceCategory=analytics
 
 You can aggregate bins further:
 
-```sql
+```sumo
 _sourceCategory=analytics
 | parse "ms: *" as time
 | bin time width=10, min = 0, max = 500

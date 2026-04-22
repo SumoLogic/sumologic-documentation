@@ -69,7 +69,7 @@ The Sumo Logic app for Postman ingests Postman events into Sumo Logic through an
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory=webhook/postman "collection" "_postman_id"
 | json "collection.info._postman_id", "collection.info.name", "collection.item[*].request.method" as postmanId, name, methodList nodrop
 | where postmanId matches "{{postmanId}}" and name matches "{{name}}"
@@ -111,7 +111,7 @@ Follow the below steps to configure the Postman webhook.
         - **Choose Monitor**. Select the monitor you wish to send results for.
 6. Click **Add Integration**.
 7. Verify Postman events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-  ```sql
+  ```sumo
   _sourceCategory=webhook/postman
   ```
 

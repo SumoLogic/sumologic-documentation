@@ -137,7 +137,7 @@ The Sumo Logic collector uses Okta System Log API to get the logs of Okta System
 
 ### Sample queries
 
-```sql title="Details of Applications Deleted"
+```sumo title="Details of Applications Deleted"
 _sourceCategory = "okta" "application.lifecycle.delete"
 | json field=_raw "eventType" as event_type
 | where event_type = "application.lifecycle.delete"
@@ -159,7 +159,7 @@ _sourceCategory = "okta" "application.lifecycle.delete"
 ```
 
 
-```sql title="Details of MFA Deactivate Event"
+```sumo title="Details of MFA Deactivate Event"
 _sourceCategory = "okta" "user.mfa.factor.deactivate"
 | json field=_raw "eventType" as event_type
 | where event_type = "user.mfa.factor.deactivate"

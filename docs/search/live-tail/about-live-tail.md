@@ -38,7 +38,7 @@ There is also a [Live Tail Command Line Interface](live-tail-cli.md) (CLI). Thi
 
 * You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors.
 * A Live Tail session expires after one hour of inactivity to give your system the best performance possible. If your Live Tail session expires, you can restart it at any time.
-* If you navigate away from the Live Tail tab, your session will run for five more minutes and then time out.
+* If you navigate away from the Live Tail tab, your session will run for three more minutes and then time out.
 * There is a message limit of about 1000 messages per second. Keyword filters do not affect the message rate.
 * There currently is a limit of 10 concurrent Live Tail sessions per organization.
 * There is a limit of four Live Tail sessions per user.

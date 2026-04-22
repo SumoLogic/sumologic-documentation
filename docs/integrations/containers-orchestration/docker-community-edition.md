@@ -136,7 +136,7 @@ If your system handles metrics, use the Sumo Logic app for [Docker ULM](/docs/in
 
 ### Sample queries
 
-```sql title="Containers created or started"
+```sumo title="Containers created or started"
 _sourceCategory=docker  ("\"status\":\"create\"" or "\"status\":\"start\"")  id from
 | parse "\"status\":\"*\"" as status, "\"id\":\"*\"" as container_id, "\"from\":\"*\"" as image
 | count_distinct(container_id)

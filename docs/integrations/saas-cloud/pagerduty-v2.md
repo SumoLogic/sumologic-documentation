@@ -28,7 +28,7 @@ For examples of incident.trigger, incident.acknowledge, incident.resolve, and in
 
 The following Top Altering Services query is shown on the PagerDuty V2 - Overview dashboard.
 
-```
+```sumo
 _sourceCategory=Labs/pagerduty_v2 "incident.trigger"
 | parse regex "(?<event>\{\"event\":\"incident\..+?\}(?=,\{\"event\":\"incident\..+|\]\}$))" multi
 | json  field=event "event","log_entries", "created_on", "incident", "webhook"

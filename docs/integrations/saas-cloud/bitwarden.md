@@ -48,7 +48,7 @@ This app uses Sumo Logic’s [Bitwarden Source](/docs/send-data/hosted-collector
 
 ### Sample queries
 
-```sql title="Event Breakdown"
+```sumo title="Event Breakdown"
 _sourceCategory=Labs/bitwarden
 | json "actingUserName", "date", "object", "type", "typeName", "ipAddress","deviceName","actingUserEmail" as user_name, date, object, event_code, event_name, ip, device_name, user_email
 | lookup event_name from https://sumologic-app-data.s3.us-east-1.amazonaws.com/bitwarden_events.csv on event_code=event_code

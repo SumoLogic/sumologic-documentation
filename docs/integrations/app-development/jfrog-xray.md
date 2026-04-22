@@ -73,7 +73,7 @@ The JFrog Xray app uses the following log types:
 
 The sample query is from Watches Invoked panel of the **JFrog Xray - Overview** dashboard.
 
-```sql
+```sumo
 _sourceCategory = Labs/jfrog/xray
 | json "top_severity", "issues", "watch_name", "policy_name" as TopSeverity, Issues, WatchName, PolicyName nodrop
 | where !(TopSeverity matches "Pending Scan")

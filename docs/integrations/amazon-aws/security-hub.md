@@ -71,7 +71,7 @@ The AWS Security Hub CSPM utilizes the [Amazon findings](https://docs.aws.amazon
 
 ### Sample queries
 
-```sql title="Findings by resource type and severity query"
+```sumo title="Findings by resource type and severity query"
 (_sourceCategory="securityhub_findings" OR _sourceCategory="Labs/AWS/SecurityHub")
 | json  "AwsAccountId", "Id", "GeneratorId", "ProductArn", "CreatedAt", "UpdatedAt", "Resources",
  "Severity.Normalized", "SourceUrl",
@@ -152,7 +152,7 @@ Each search result translates to one finding—only one resource per finding is 
 
 In the following example, the query generates a finding that there is direct external traffic to a secured port which violates one of the PCI requirement checks.
 
-```sql
+```sumo
 _sourceCategory=Labs/AWS/VPC ACCEPT (3306 or 5439 or 5432 or 1433 or 2638 or 5984)
 | json "message" as _rawvpc nodrop | if (_raw matches "{*", _rawvpc,_raw) as message
 | parse field=message "* * * * * * * * * * * * * *" as version,aws_account_id,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status

@@ -85,7 +85,7 @@ The parse operations provided refer to the following XML log:
 
 You can parse information using an XPath reference, such as the `first_name` element value:
 
-```sql
+```sumo
 * | parse xml "/users/user/first_name/text()" as first_name
 ```
 
@@ -93,7 +93,7 @@ The `text()` function will pull the text value of the element. The results wou
 
 To parse the second `user` element in the array you'd use the following:
 
-```sql
+```sumo
 * | parse xml "/users/user[2]/first_name/text()" as first_name
 ```
 
@@ -101,13 +101,13 @@ The results would return a field named `first_name` with a value of `Bob`.
 
 To parse the last element in an array you'd use the following:
 
-```sql
+```sumo
 * | parse xml "/users/user[last()]/first_name/text()" as first_name
 ```
 
 To parse an element based on an attribute, in this example where id="456", you'd use the following:
 
-```
+```sumo
 * | parse xml "/users/user[@id=456]/first_name/text()" as first_name"
 ```
 
@@ -115,7 +115,7 @@ To parse an element based on an attribute, in this example where id="456", you
 
 To parse the `id` attribute you'd use the following:
 
-```sql
+```sumo
 * | parse xml "/users/user/@id" as id
 ```
 
@@ -123,13 +123,13 @@ The results would return a field named `id` with a value of `123`.
 
 To parse the `id` value from the second `user` element you'd use the following:
 
-```sql
+```sumo
 * | parse xml "/users/user[2]/@id" as id
 ```
 
 To parse the `id` value from the last user in the list you'd use the following: 
 
-```sql
+```sumo
 * | parse xml "/users/user[last()]/@id" as id
 ```
 
@@ -137,6 +137,6 @@ To parse the `id` value from the last user in the list you'd use the following:�
 
 To parse multiple element and attribute values from a single message into separate fields use a comma-separated list of Xpath expressions. For example, to parse the `first_name` element value and the `id` attribute from our example you'd use the following: 
 
-```sql
+```sumo
 * | parse xml "/users/user/@id", "/users/user/first_name/text()" as id, first_name
 ```
