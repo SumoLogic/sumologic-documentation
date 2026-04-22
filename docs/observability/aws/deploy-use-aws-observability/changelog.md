@@ -74,6 +74,7 @@ Updates:
 * Updated the SAM Lambda runtime from Node.js v20.x to v22.x.
 * Updated the Lambda runtime to Node.js v22.x in the CloudFormation template for `AWS CloudWatch Logs with Dead Letter Queue Support`.
 * Updated the SecurityHub SAM Lambda runtime from Python v3.11 to v3.13.
+* Discontinued support for Mumbai deployment.
 * Updated Lambda runtime to Python v3.13 in the CloudFormation template for `Kinesis Metric Collection`
 * Updated 9 apps and 4 monitors to accommodate new threat intel feed: AWS Application Load Balancer, AWS API Gateway, AWS Classic Load Balancer, AWS DynamoDB, AWS EC2, AWS Lambda, Amazon RDS, Amazon SNS, Amazon SQS.
 
