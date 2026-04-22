@@ -10,10 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Public Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
 
 :::info
-This feature is in Public Preview. For more information, contact your Sumo Logic account executive.
+This feature is in Public Preview. To participate, contact your Sumo Logic account representative.
 :::
 
 Sumo Logic's SOC Analyst Agent is an agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations. 
@@ -176,4 +176,4 @@ Yes, you can. In your investigation, you are not limited in how you proceed. You
    * [SOC Analyst Agent](https://www.sumologic.com/demo/soc-analyst-agent)
    * [Mobot walkthrough](https://www.sumologic.com/demo/mobot-walkthrough)
 * Sumo Logic website: [Dojo AI](https://www.sumologic.com/solutions/dojo-ai)
-* AWS article:[ Accelerating security analytics using Amazon Nova with Sumo Logic](https://aws.amazon.com/solutions/case-studies/sumo-logic-nova-case-study/)
+* AWS article: [Accelerating security analytics using Amazon Nova with Sumo Logic](https://aws.amazon.com/solutions/case-studies/sumo-logic-nova-case-study/)
