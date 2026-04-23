@@ -2994,6 +2994,7 @@
   "/cid/1122": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source",
   "/cid/1124": "/docs/integrations/saas-cloud/zero-networks-segment/",
   "/cid/1125": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-trap-source",
+  "/cid/1126": "/docs/integrations/saas-cloud/proofpoint-trap",
   "/cid/1128": "/docs/send-data/opentelemetry-collector/install-collector/upgrade-opentelemetry-collector",
   "/cid/1138": "/docs/send-data/installed-collectors/sources/convert-ic-local-file-source-to-otel-st",
   "/cid/1131": "/docs/integrations/bigdata/opentelemetry/apache-hadoop-opentelemetry",

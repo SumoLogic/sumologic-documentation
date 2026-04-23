@@ -379,6 +379,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/proofpoint-trap')}><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Proofpoint icon" width="120"/><h4>Proofpoint TRAP</h4></a>
+  <p>Visibility into email threats detected and remediated by Proofpoint TRAP.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/qualys-vmdr')}><img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="Qualys icon" width="120"/><h4>Qualys VMDR</h4></a>
   <p>Track errors, health, start-up progress, and cloud security.</p>
   </div>
