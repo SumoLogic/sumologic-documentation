@@ -12,6 +12,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
 <img src={useBaseUrl('img/integrations/webhooks/upwind-logo.png')} alt="thumbnail icon" width="55"/>
 
 Upwind is a runtime-powered cloud security platform that helps monitor cloud threats, configuration findings, and security operations activity. You can use a custom webhook in Upwind to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor audit activity, configuration findings, and threat detections in Sumo Logic.
