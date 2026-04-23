@@ -12,7 +12,6 @@ You can use the `where` operator to filter out either entire time series, or ind
 ```sql
 where [VALUE BOOLEAN EXPRESSION | REDUCER BOOLEAN EXPRESSION]
 ```
-
 Where:
 
 * `[VALUE BOOLEAN EXPRESSION]` is a value expression that operates on individual data points of a time series. For example,
