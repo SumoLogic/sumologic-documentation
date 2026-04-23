@@ -31,7 +31,7 @@ New Features:
 * AWS Observability solution now supports Sumo Logic European Sovereign Cloud (ESC) deployment.
 
 Deprecation:
-* Deprecated AWS Observability Solution versions: 2.9.0, 2.10.0, 2.11.0.
+* AWS Observability Solution versions that rely on deprecated AWS Lambda runtimes are also considered deprecated. Since Nodejs20.x was deprecated on April 30th, 2026. All AWS Observability versions up to and including 2.11.0 are now deprecated.
 
 ## v2.14.0, 14-April-2026
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.14.0/sumologic_observability.master.template.yaml`
