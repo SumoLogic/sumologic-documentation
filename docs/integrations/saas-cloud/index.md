@@ -380,7 +380,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/proofpoint-trap')}><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Proofpoint icon" width="120"/><h4>Proofpoint TRAP</h4></a>
-  <p>Visibility into email threats detected and remediated by Proofpoint TRAP.</p>
+  <p>Gain visibility into email threats detected and remediated by Proofpoint TRAP.</p>
   </div>
 </div>
 <div className="box smallbox card">
