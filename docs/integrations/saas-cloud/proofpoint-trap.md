@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Proofpoint icon" width="140"/>
 
-The Sumo Logic app for Proofpoint TRAP (Threat Response Auto-Pull) provides comprehensive visibility into email threats detected and remediated by Proofpoint, including phishing, malware, impostor/BEC attempts, and suspicious messages. The app consists of four predefined dashboards covering threat overview, remediation effectiveness, security operations and threat analysis, and user risk and exposure to give security teams actionable insights into email-borne attacks across the organization.
+The Sumo Logic app for Proofpoint TRAP (Threat Response Auto-Pull) provides comprehensive visibility into email threats that Proofpoint detects and remediates, including phishing, malware, impostor/BEC attempts, and suspicious messages. The app consists of four predefined dashboards covering threat overview, remediation effectiveness, security operations, threat analysis, and user risk and exposure, providing security teams with actionable insights into email-borne attacks across the organization.
 
 :::info
 This app includes [built-in monitors](#proofpoint-trap-app-alerts). For details on creating custom monitors, refer to [Create monitors for the Proofpoint TRAP app](#create-monitors-for-the-proofpoint-trap-app).
@@ -131,7 +131,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Proofpoint TRAP - Overview** dashboard provides a high-level summary of email threat activity with total message trends, disposition distributions, source and threat-type breakdowns, top targeted users and senders, and recent threat events. Detailed phishing, malware, and remediation-specific use cases are available in dedicated dashboards.
+The **Proofpoint TRAP - Overview** dashboard provides a high-level summary of email threat activity, including total message trends, disposition distributions, source and threat-type breakdowns, top-targeted users and senders, and recent threat events. Detailed phishing, malware, and remediation-specific use cases are available in dedicated dashboards.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-TRAP-Overview.png')} alt="Proofpoint TRAP dashboards" />
 
@@ -143,13 +143,13 @@ The **Proofpoint TRAP - Remediation and Response** dashboard monitors the effect
 
 ### Security and Threat Analysis
 
-The **Proofpoint TRAP - Security and Threat Analysis** dashboard combines actionable security insights with deep threat analysis. It provides delivered high-risk threat monitoring, user click exposure, remediation tracking, plus detailed analysis of phishing, malware, impostor/BEC, and suspicious email threats including threat disposition trends, URL and attachment details, and investigative data.
+The **Proofpoint TRAP - Security and Threat Analysis** dashboard combines actionable security insights with serious threat analysis. It provides delivered high-risk threat monitoring, user-click exposure, remediation tracking, and detailed analysis of phishing, malware, impostor/BEC, and suspicious email threats, including threat disposition trends, URL and attachment details, and investigative data.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-TRAP-Security-and-Threat-Analysis.png')} alt="Proofpoint TRAP dashboards" />
 
 ### User Risk and Exposure
 
-The **Proofpoint TRAP - User Risk and Exposure** dashboard highlights user-level risk indicators including very attacked person (VAP) targeting, threat messages read before quarantine, permitted link clicks on threat messages, delivered threats, risk event trends over time, and comprehensive high-risk user exposure details for incident prioritization.
+The **Proofpoint TRAP - User Risk and Exposure** dashboard highlights user-level risk indicators, including very attacked person (VAP) targeting, threat messages read before quarantine, permitted link clicks on threat messages, delivered threats, risk event trends over time, and comprehensive high-risk user exposure details for incident prioritization.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-TRAP-User-Risk-and-Exposure.png')} alt="Proofpoint TRAP dashboards" />
 
