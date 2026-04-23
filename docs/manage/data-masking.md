@@ -28,6 +28,10 @@ For example, consider a log line that contains an IP address. You can [create a 
 
 **After masking.** The IP address is replaced with the configured mask string:<br/><img src={useBaseUrl('img/manage/data-masking-rule/data-after-masking.png')} alt="Data After Masking" style={{border: '1px solid gray'}} width="800"/>
 
+:::note
+Masking is strictly based on customer-defined regex rules and happens as the **last step** after all query processing. This means string manipulations in queries can potentially bypass regex-based masking.
+:::
+
 ## How to create a data masking rule?
 
 You can create an data masking rule of your own from scratch by following the instructions below:
@@ -45,6 +49,18 @@ You can create an data masking rule of your own from scratch by following the in
     1. **Regex Locator**. A regular expression pattern used to identify the segment of log data to mask. Sumo Logic evaluates this pattern against incoming log messages and applies masking to every match. Ensure your regex targets only the sensitive portion to avoid unintended masking.
     1. (Optional) **Mask String**. The replacement text that substitutes any content matched by the Regex Locator. If left blank, Sumo Logic replaces matched content with a default mask.
 1. Click **Save** to activate the rule.
+
+## What are the limitations of data masking?
+
+| Area | Behavior |
+|:--|:--|
+| **Scheduled Search (Save to Lookup/Index)** | Results are masked or unmasked depending on the `View Unmasked Data` role capability of the user who created the scheduled search. |
+| **Field names** | Masking applies to field values only, not field names. For example, when using the `transpose` operator, values that become field names are not masked. |
+| **Timestamp** | The following timestamp fields are not eligible for data masking: `_messageTime`, `_receiptTime`, and `_searchableTime`. |
+| **Lookup UI page** | Results displayed on the Lookup UI page are always shown unmasked. |
+| **Cloud SIEM (CSE) pages** | Data masking is not applied to any Cloud SIEM pages. |
+| **Internal system queries** | Data masking is not applied to queries running under internal caller modules or system user contexts. |
+| **Query assist suggestions** | Masking is not applied to query-assist suggestions, regardless of the user's role or data access level. |
 
 ## How to edit a data masking rule?
 
@@ -102,3 +118,4 @@ Disabling a rule pauses masking while preserving the rule's configuration so it 
 ### Is there a limit to how many data masking rules an organization can create?
 
 Yes. An organization can have a maximum of **50 data masking rules**. To add a new rule once the limit is reached, an existing rule must be deleted first.
+
