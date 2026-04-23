@@ -1,6 +1,6 @@
 ---
-id: mobot-unstructured-logs-beta
-title: Sumo Logic Mobot - Unstructured Logs Support (Beta)
+id: mobot-unstructured-logs
+title: Sumo Logic Mobot - Unstructured Logs Support
 description: Streamline your log analysis with Sumo Logic Mobot, our AI-based assistant that simplifies log analysis by letting you ask questions in plain English, even for logs without a well-defined structure.
 ---
 
@@ -10,17 +10,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
-<!-- Originally added as a beta article with DOCS-752. -->
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
 
-This feature is in Beta. For more information, contact your Sumo Logic account executive.
+<!-- Originally added as a preview article with DOCS-752. -->
 
 Unstructured Logs Support for [Sumo Logic Mobot](/docs/search/mobot), our AI assistant, enables it to understand and provide insights from raw, text-based logs, even if they don't follow a structured format like JSON. This means you can ask questions in plain English and get meaningful results from nearly any log data, without requiring Field Extraction Rules (FERs).
 
 ## What's new
 
-Currently, [Mobot works best on structured (JSON) logs](/docs/search/mobot/#compatible-log-formats). With this beta update, Mobot automatically applies parsing logic to unstructured logs, even if no FERs are configured.
+Currently, [Mobot works best on structured (JSON) logs](/docs/search/mobot/#compatible-log-formats). With this preview, Mobot automatically applies parsing logic to unstructured logs, even if no FERs are configured.
 
 At this stage, Mobot prioritizes unstructured logs that are already used in dashboards, allowing it to surface insights from high-value log sources out-of-the-box. This means it won’t interpret all raw logs yet, but we’re actively working to broaden this support beyond dashboards.
 
