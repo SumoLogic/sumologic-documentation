@@ -1,6 +1,6 @@
 ---
 id: data-masking
-title: How to manage data masking rules in Sumo Logic (Preview)
+title: How to manage data masking rules in Sumo Logic
 keywords:
   - data-masking
   - data-protection
@@ -12,7 +12,11 @@ description: Learn how to create, edit, disable, and delete data masking rules t
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -29,7 +33,7 @@ For example, consider a log line that contains an IP address. You can [create a 
 **After masking.** The IP address is replaced with the configured mask string:<br/><img src={useBaseUrl('img/manage/data-masking-rule/data-after-masking.png')} alt="Data After Masking" style={{border: '1px solid gray'}} width="800"/>
 
 :::note
-Masking is strictly based on customer-defined regex rules and happens as the **last step** after all query processing. This means string manipulations in queries can potentially bypass regex-based masking.
+Masking is strictly based on user-defined regex rules and happens as the **last step** after all query processing. This means string manipulations in queries can potentially bypass regex-based masking.
 :::
 
 ## How to create a data masking rule?
