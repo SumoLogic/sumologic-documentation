@@ -39,6 +39,14 @@ module.exports = {
         'get-started/faq',
       ],
     },
+    {
+      type: 'category',
+      label: 'Preview Releases',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'preview/index'},
+      items: [],
+    },
     //Contribution guide for documentation
     {
       type: 'category',
@@ -2823,6 +2831,7 @@ integrations: [
           'integrations/webhooks/stripe',
           'integrations/webhooks/superwise',
           'integrations/webhooks/uptime',
+          //'integrations/webhooks/upwind',
           'integrations/webhooks/zebrium-rcaas',
           'integrations/webhooks/zenduty',
         ],
@@ -3234,8 +3243,6 @@ integrations: [
         'api/lookup-tables',
         'api/metrics',
         'api/metrics-query',
-        'api/metrics-searches-v2',
-        'api/metrics-searches',
         'api/metrics-transformation-rules',
         'api/monitors-management',
         'api/muting-schedules',
@@ -3262,19 +3269,6 @@ integrations: [
         'api/token-management',
         'api/tracing',
         'api/user-management',
-      ],
-    },
-  ],
-  //List of Beta features
-  beta: [
-    {
-      type: 'category',
-      label: 'Beta',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'beta/index'},
-      items: [
-        'api/metrics-searches'
       ],
     },
   ],
