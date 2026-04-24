@@ -5,11 +5,11 @@ sidebar_label: Hash Rules
 description: Create an OpenTelemetry collector remote management hash rule to replace an expression with a hash code.
 ---
 
-A hash rule is a processing rule that allows you to replace an expression with a hash code generated for that value. Hashed data is completely hidden (obfuscated) before being sent to Sumo Logic. This can be very useful in situations where some type of data must not leave your premises, such as credit cards and social security numbers. Each unique value will have a unique hash code.
+A hash rule is a processing rule that allows you to replace an expression with a hash code generated for that value. Hashed data is completely hidden (obfuscated) before being sent to Sumo Logic. This can be very useful in situations where certain types of data must not leave your premises, such as credit card numbers and Social Security numbers. Each unique value will have a unique hash code.
 
 The hash algorithm used is **SHA-256**.
 
-Ingestion volume is calculated after applying the hash filter. If the hash reduces the size of the log, the smaller size will be measured against ingestion limits.
+Ingestion volume is calculated after the hash filter is applied. If the hash reduces the log size, the smaller size will be measured against ingestion limits.
 
 :::note
 Currently available for Local File ST only.
@@ -19,7 +19,7 @@ Currently available for Local File ST only.
 
 When you add a hash rule action to your processing rules, you need to provide two inputs:
 
-1. **Expression**: A regular expression that must contain exactly **one capture group** `( )`. The string value matched through this capture group is what will be hashed using SHA-256. If there are multiple parts of the string which needs to be hashed, add additional hashing processing rules for it.
+1. **Expression**: A regular expression that must contain exactly **one capture group** `( )`. The string value matched by this capture group will be hashed using SHA-256. If multiple parts of the string need to be hashed, add additional hashing rules for them.
 
 2. **Replacement Format**: The formatted replacement string that will replace the matching string in the log. Use `%s` to refer to the hashed value from the SHA-256 function. The `%s` reference is mandatory and can only be used once.
 
@@ -79,21 +79,21 @@ memberid=%s
 ```
 
 :::important
-Any hashing expression should be tested and verified with a sample source file before applying it to your production logs.
+Any hashing expression should be tested and verified on a sample source file before being applied to your production logs.
 :::
 
 ## Rules and limitations
 
-* The regular expression must contain exactly **one capture group** enclosed in `( )`. Values inside this capture group will be hashed. If there are multiple parts of the string which needs to be hashed, add additional hashing processing rules for it.
+* The regular expression must contain exactly **one capture group** enclosed in `( )`. Values inside this capture group will be hashed. If multiple parts of the string need to be hashed, add additional hashing rules for them.
 
 * You can use an anchor to detect specific values in your logs. Only the value within the capture group will be hashed.
 
 * The hash algorithm is **SHA-256** (MD5 is not supported for OpenTelemetry collectors).
 
-* Make sure you do not specify a regular expression that matches a full log line. Doing so will result in the entire log line being hashed.
+* Make sure you do not specify a regular expression that matches a full log line. Doing so will hash the entire log line.
 
 * The replacement format must include `%s` exactly once to reference the hashed value.
 
-* Do not unnecessarily match on more of the log than needed. Use precise regular expressions to ensure that only the intended sensitive information is hashed, not surrounding context.
+* Do not unnecessarily match on more of the log than needed. Use precise regular expressions to ensure that only the intended sensitive information is hashed, not the surrounding context.
 
 * Each unique value will produce a unique hash code. The same input value will always produce the same hash output, allowing you to correlate occurrences while keeping the actual value hidden.
