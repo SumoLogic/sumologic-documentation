@@ -28,7 +28,7 @@ Processing rules for metrics collection support the following rule types:
 
 You can create one or more processing rules for a source template, combining the different types of filters to generate the exact data set you want sent to Sumo Logic.  
 
-When a Source has multiple rules they are processed in the following order: includes, excludes followed by the order of occurence of hashing or masking rule.
+When a Source has multiple rules they are processed in the following order: includes, excludes followed by the order of occurrence of hashing or masking rule.
 
 Exclude rules take priority over include rules. Include rules are processed first, however, if an exclude rule matches data that matched the include rule filter, the data is excluded.
 
