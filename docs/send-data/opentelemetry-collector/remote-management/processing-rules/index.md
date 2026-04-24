@@ -37,4 +37,10 @@ In this section, we'll introduce the following concepts:
   <p>Create an OTRM Windows source template mask rule to replace an expression with a mask string.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/processing-rules/hash-rules')}><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>OTRM Hash Rules</h4></a>
+  <p>Create an OTRM hash rule to replace an expression with a hash code. Currently available for Local File ST only.</p>
+  </div>
+</div>
 </div>
