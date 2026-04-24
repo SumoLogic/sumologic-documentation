@@ -17,8 +17,6 @@ Query data and utilize action in ZeroFox Platform.
 * **List Alerts** *(Enrichment)* - Returns alerts matching given/default filters and parameters.
 * **List Users** *(Enrichment)* - Lists all users.
 * **Request Takedown** *(Containment)* - Takedowns an existing alert.
-* **Alerts ZeroFox Daemon** *(Daemon)* - Daemon to fetch alerts.
-
 
 ## Notes
 
