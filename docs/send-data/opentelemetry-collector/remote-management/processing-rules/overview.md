@@ -10,12 +10,12 @@ Processing rules affect only the data sent to Sumo Logic; logs and metrics on y
 
 ## Logs collection
 
-Processing rules for logs collection support the following rule types:
+Processing rules for log collection support the following rule types:
 
-* [Exclude messages that match](include-and-exclude-rules.md). Remove messages that you do not want to send to Sumo Logic at all ("denylist" filter). These messages are skipped by OpenTelemetry Collector and are not uploaded to Sumo Logic.
+* [Exclude messages that match](include-and-exclude-rules.md). Remove messages that you do not want to send to Sumo Logic at all ("denylist" filter). These messages are skipped by the OpenTelemetry Collector and are not uploaded to Sumo Logic.
 * [Include messages that match](include-and-exclude-rules.md). Send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of rule can be useful, for example, if you only want to include messages coming from a firewall.
-* [Mask messages that match](mask-rules.md). Replace an expression with a mask string that you can customize. This is another way to your protect data, such as passwords, that you do not normally track.
-* [Hash messages that match](hash-rules.md). Replace an expression with a hash code generated for that value. This completely hides sensitive data such as credit cards and social security numbers before being sent to Sumo Logic.
+* [Mask messages that match](mask-rules.md). Replace an expression with a customizable mask string. This is another way to protect data you do not normally track, such as passwords.
+* [Hash messages that match](hash-rules.md). Replace an expression with a hash code generated for that value. This completely obscures sensitive data, such as credit card numbers and Social Security numbers, before they are sent to Sumo Logic.
 
 ## Metrics collection
 
@@ -26,13 +26,13 @@ Processing rules for metrics collection support the following rule types:
 
 ## How do processing rules work together?
 
-You can create one or more processing rules for a source template, combining the different types of filters to generate the exact data set you want sent to Sumo Logic.  
+You can create one or more processing rules for a source template, combining different filter types to generate the exact dataset you want sent to Sumo Logic.  
 
-When a Source has multiple rules they are processed in the following order: includes, excludes followed by the order of occurrence of hashing or masking rule.
+When a Source has multiple rules, they are processed in the following order: includes, excludes, followed by the order of occurrence of hashing or masking rules.
 
-Exclude rules take priority over include rules. Include rules are processed first, however, if an exclude rule matches data that matched the include rule filter, the data is excluded.
+Exclude rules take priority over include rules. Include rules are processed first. However, if an exclude rule matches data that matched the include rule filter, the data is excluded.
 
 ## Limitations
 
 * Regular expressions must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax).
-* Processing rules are tested with maximum of 20 rules.
+* Processing rules are tested with a maximum of 20 rules.
