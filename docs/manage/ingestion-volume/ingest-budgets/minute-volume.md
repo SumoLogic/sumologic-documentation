@@ -18,14 +18,14 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 * Fields assigned with Field Extraction Rules are not supported in the scope of an ingest budget. 
 * `_budget` is a reserved keyword used by legacy ingest budgets. Do not use this reserved field when creating a new ingest budget.
 * Data is not automatically recovered or ingested later once the capacity tracking is reset.
-* Avoid creating multiple ingest budgets with the same scope. In such a scenario, Ingest budgets whose capacity is reached first is executed.
+* Avoid creating multiple ingest budgets with the same scope. In such a scenario, ingest budgets whose capacity is reached first is executed.
 * In the scope, do not wrap values in quotes, unless the value explicitly has quotes. For example, if you want to assign the scope with `_collector` and the name of the Collector is `CloudTrail`, you would assign the scope as `_collector=CloudTrail` instead of `_collector="CloudTrail"`.
 
 ## Budget assignment​
 
 The **Scope** supports the option to assign ingest budgets to your log data by either:
 
-* A Field that is enabled in the [Fields](/docs/manage/fields) table.
+* A field that is enabled in the [fields](/docs/manage/fields) table.
 * One of the following built-in metadata fields: `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, or `_sourceName`.
 
 The value supports a single wildcard, such as `_sourceCategory=prod*payment`.
@@ -34,7 +34,7 @@ For example, a **Scope** expression like `_sourceCategory=/dev/catalog/*` im
 
 ## Source-type behavior​
 
-A few Sources on Hosted Collectors will behave differently when instructed to stop collecting data.
+A few sources on Hosted Collectors will behave differently when instructed to stop collecting data.
 
 * HTTP sources will drop data requests, yet still return a `200 OK` response.
 * AWS S3-based sources will skip objects.
@@ -45,11 +45,11 @@ A few Sources on Hosted Collectors will behave differently when instructed to st
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. 
 1. Click the **+ Add Budget** button on the top right of the table.
-1.  A panel named **Create Ingest Budget** will appear to the right of the **Ingest Budgets** table.<br/><img src={useBaseUrl('img/manage/ingestion-volume/create-ingest-budget.png')} alt="create-ingest-budget" style={{border: '1px solid gray'}} width="300" />
+1.  A panel named **Create Ingest Budget** will appear to the right of the **Ingest Budgets** table.<br/><img src={useBaseUrl('img/manage/ingestion-volume/create-ingest-budget.png')} alt="Create ingest budget" style={{border: '1px solid gray'}} width="300" />
 1. Under **Create Ingest Budget**, provide the following information.
    * **Name**. Enter the name you'd like to assign to the new ingest budget.
    * **Description** is optional.
-   * **Scope**. Define the log data to apply to the ingest budget. See budget assignment for details and review the rules above. Once scope is defined, you can click on the hyperlink to view the ingest rate of your defined scope. Sumo Logic populates a query to run across all Data Tiers to find the right Ingestion trend.
+   * **Scope**. Define the log data to apply to the ingest budget. See budget assignment for details and review the rules above. Once scope is defined, you can click on the hyperlink to view the ingest rate of your defined scope. Sumo Logic populates a query to run across all data tiers to find the right Ingestion trend.
    * **Capacity**. This sets your budget capacity.
       1. Select **Minute Volume**.
       1. **Amount.** Enter a value up to 1023.999.
@@ -77,13 +77,13 @@ A few Sources on Hosted Collectors will behave differently when instructed to st
 
 To search for only ingest budgets with minute control where threshold was breached:
 
-```sql
+```sumo
 _index=sumologic_audit exceeded drop_data "bytes/minute"
 ```
 
 To search for ingest budgets that are currently enforced to stop collecting data:
 
-```sql
+```sumo
 _index=sumologic_audit_events minuteVolume stopCollecting
 ```
 
@@ -92,7 +92,7 @@ _index=sumologic_audit_events minuteVolume stopCollecting
 1. Identify sources which are not critical data sources where stricter data controls can be added to prevent your organization from being throttled.
 1. Identify `_sourceCategory` or any other identifier for the sources.
 1. Run the following query. The goal of this query is to understand previous data ingestion trends and suggest to you the peak volume seen per minute. To obtain the most accurate ingest rates, run the query using the [Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time/).
-   ```sql    
+   ```sumo    
     _sourceCategory=<source category> AND _index=<partition name>
     | timeslice 1m
     | sum(_size) as bytes by _timeslice

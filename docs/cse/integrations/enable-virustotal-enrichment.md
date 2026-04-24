@@ -28,7 +28,7 @@ For each insight created, the enrichment checks the records in the signals that 
 * `file_hash_sha256`
 * `file_hash_ssdeep`
 
-The enrichment looks up each value it finds in VirusTotal, calling the VirusTotal API to do so. When a record value has a match in VirusTotal, the enrichment writes the response to Cloud SIEM, where you can view it the signal’s **Enrichment** tab. For an example, see [Example VirusTotal Enrichment](#example-virustotal-enrichment).
+The enrichment looks up each value it finds in VirusTotal, calling the VirusTotal API to do so. When a record value has a match in VirusTotal, the enrichment writes the response to Cloud SIEM, where you can view it the signal’s **Enrichment** tab. For an example, see [Example VirusTotal enrichment](#example-virustotal-enrichment).
 
 :::note
 VirusTotal enrichments are only added to signals that are part of an insight.

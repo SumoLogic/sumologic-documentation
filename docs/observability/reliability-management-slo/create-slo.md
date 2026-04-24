@@ -45,7 +45,7 @@ You can use Terraform to manage SLOs with the [`sumologic_slo`](https://registry
       1. Click **Add** > **Import**.
       1. Enter a Name for the SLO.
       1. Copy and paste the JSON in the text editor.
-      1. Click **Import**.<br/><img src={useBaseUrl('img/observability/slo-import.png')} alt="Reliability Management SLO SLI" />
+      1. Click **Import**.<br/><img src={useBaseUrl('img/observability/slo-import.png')} alt="Reliability Management SLO SLI" width="800" />
 3. Select the **Signal Type**:
     * **Latency**. Select to calculate the speed of services, lag time.
     * **Error**. Select to monitor for errors that occur in your services.
@@ -126,7 +126,7 @@ You can create SLOs directly from your Sumo Logic log search. This allows you to
 To create an SLO from the **Metrics** page:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Metrics > All Metric Searches**. You can also click the **Go To...** menu at the top of the screen and select **All Metric Searches**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Metrics**. 
-1. Under **Metrics Search**, select your desired **Metric** and **Filters**. Optionally, you can **Add Operator**.<br/><img src={useBaseUrl('img/observability/metrics-slo.png')} alt="metrics-slo.png" style={{border: '1px solid gray'}} width="800" />
+1. Under **Metrics Search**, select your desired **Metric** and **Filters**. Optionally, you can **Add Operator**.<br/><img src={useBaseUrl('img/observability/metrics-slo.png')} alt="Metrics SLO" style={{border: '1px solid gray'}} width="800" />
 1. Click the three-dot kebab icon, then select **Create an SLO**.
 1. Follow the instructions under [Create an SLO (general)](#create-an-slo-general).
 
@@ -148,8 +148,8 @@ Your monitor must be in an **active** state.
 1. Click on any active monitor to open its panel.
 1. Choose one of the methods below:<br/>Click **More Actions** > **Create SLO**.<br/><img src={useBaseUrl('img/observability/more-actions-create-slo.png')} alt="Monitor-based SLO" style={{border: '1px solid gray'}} width="500" />   <br/>Or, click <strong>Monitor-based SLO</strong> > <strong>Add Monitor-based SLO</strong>.<br/><img src={useBaseUrl('img/observability/add-monitor-based-slo.png')} alt="Monitor-based SLO" style={{border: '1px solid gray'}} width="500" /><br/>
 This will open the **New SLO** window.
-1. **Define your SLI**. Your monitor's **Source**, **Signal Type**, and **Trigger Event** settings will auto-populate here (you can override these if you need to).<br/><img src={useBaseUrl('img/observability/new-slo1.png')} alt="Monitor-based SLO" />
-1. **Define your SLO**. Set your window-based threshold here.<br/><img src={useBaseUrl('img/observability/new-slo2.png')} alt="Monitor-based SLO" />
+1. **Define your SLI**. Your monitor's **Source**, **Signal Type**, and **Trigger Event** settings will auto-populate here (you can override these if you need to).<br/><img src={useBaseUrl('img/observability/new-slo1.png')} alt="Monitor-based SLO" width="800" />
+1. **Define your SLO**. Set your window-based threshold here.<br/><img src={useBaseUrl('img/observability/new-slo2.png')} alt="Monitor-based SLO" width="500" />
 1. When you're done, click **Save**, which will save the SLO.<br/><img src={useBaseUrl('img/observability/new-slo4.png')} alt="Monitor-based SLO" width="350" />
 
 To edit SLO parameters:
@@ -158,7 +158,7 @@ To edit SLO parameters:
 
 To edit SLO parameters from a monitor:
 1. Go to the **Monitors** tab and click on any monitor.<br/><img src={useBaseUrl('img/observability/monitors-tab.png')} alt="Monitor-based SLO" width="500" />
-1. In the panel, click **Monitor-based SLO** to view the list of SLOs associated with that particular monitor.<br/><img src={useBaseUrl('img/observability/monitor-based-slo-panel.png')} alt="Monitor-based SLO" />
+1. In the panel, click **Monitor-based SLO** to view the list of SLOs associated with that particular monitor.<br/><img src={useBaseUrl('img/observability/monitor-based-slo-panel.png')} alt="Monitor-based SLO" width="800" />
 
 :::important
 Any monitor update that changes the monitor definition will lead to a change in the version of related SLOs. This means that the SLO history or SLI will get reset for the SLO. Example include trigger condition changes and evaluation delay changes. Changes unrelated to the definition like **Name**, **Description** will not affect the related SLOs.
@@ -215,17 +215,17 @@ To add a tag while creating a new SLO:
 
 After you've added a tag, you'll see it populate in the **Tags** column next to your SLO in the list.
 
-1. Click **Add a filter** at the top of the screen, then click **Tag**.<br/><img src={useBaseUrl('img/observability/slo-tags.png')} alt="slo-tags.png" style={{border: '1px solid gray'}} width="400" />
+1. Click **Add a filter** at the top of the screen, then click **Tag**.<br/><img src={useBaseUrl('img/observability/slo-tags.png')} alt="SLO tags" style={{border: '1px solid gray'}} width="400" />
 
-2. Scroll through the list of tags or type in the tag name you're looking for.<br/><img src={useBaseUrl('img/observability/slo-tags.gif')} alt="slo-tags.gif" style={{border: '1px solid gray'}} width="800" />
+2. Scroll through the list of tags or type in the tag name you're looking for.<br/><img src={useBaseUrl('img/observability/slo-tags.gif')} alt="SLO tags" style={{border: '1px solid gray'}} width="800" />
 
-<img src={useBaseUrl('img/observability/FilterByTagKey.png')} alt="FilterByTagKey.png" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/observability/FilterByTagKey.png')} alt="Filter by tag key" style={{border: '1px solid gray'}} width="800" />
 
 If you run a query with multiple values for same tag key, they are `OR`'d. Tag filters for different tag keys are `AND`'d.
 
 In this tag filter example query below, it's looking for SLOs where the `service` is either `cart` OR `checkout` OR `coffee-machine`.
 
-<img src={useBaseUrl('img/observability/FilterByTagValue.png')} alt="FilterByTagValue.png" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/observability/FilterByTagValue.png')} alt="Filter by tag value" style={{border: '1px solid gray'}} width="800" />
 
 ### Save filter
 
@@ -233,12 +233,12 @@ You can create and save custom filter views, allowing you to focus on the SLOs a
 
 1. Click in the **Add a filter** field.
 2. Enter the filters. In this example (see screenshot below #3), we are using tag filters. To use a tag filter, select `tag` -> select tag key (`application` in this example) -> select value for that tag key (`coffee-bar` in this example). You can select multiple filters for a saved filters.
-3. Click the **Save Filter** icon on the right.<br/><img src={useBaseUrl('img/observability/SaveANewFilter.png')} alt="SaveANewFilter.png" style={{border: '1px solid gray'}} width="800" />
-4. Enter a name for the filter (we'll call it `Coffee Bar Application`).<br/><img src={useBaseUrl('img/observability/SaveANewFilterDialogue.png')} alt="SaveANewFilterDialogue.png" style={{border: '1px solid gray'}} width="800" />
+3. Click the **Save Filter** icon on the right.<br/><img src={useBaseUrl('img/observability/SaveANewFilter.png')} alt="Saveanewfilter" style={{border: '1px solid gray'}} width="800" />
+4. Enter a name for the filter (we'll call it `Coffee Bar Application`).<br/><img src={useBaseUrl('img/observability/SaveANewFilterDialogue.png')} alt="Save a new filter dialogue" style={{border: '1px solid gray'}} width="800" />
 5. Optionally, you can set this as your default view so that when you load SLOs list page, this set of filters will be rendered by default.
 6. Click **Save**.
 
-This is how default filter rendering looks like:<br/><img src={useBaseUrl('img/observability/DefaultView.png')} alt="DefaultView.png" style={{border: '1px solid gray'}} width="800" />
+This is how default filter rendering looks like:<br/><img src={useBaseUrl('img/observability/DefaultView.png')} alt="Default view" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 You can also set a saved filter view as default later by clicking the kebab menu next to the funnel icon > Click on **Set as default**.
@@ -246,11 +246,11 @@ You can also set a saved filter view as default later by clicking the kebab menu
 
 You can see the list of all saved filter views by clicking on the funnel icon.
 
-<img src={useBaseUrl('img/observability/ListOfSavedFilters.png')} alt="ListOfSavedFilters.png" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/observability/ListOfSavedFilters.png')} alt="List of saved filters" style={{border: '1px solid gray'}} width="800" />
 
 You can make further modifications to a saved filter view later using kebab menu options next to the funnel icon.
 
-<img src={useBaseUrl('img/observability/MenuOptionsForAnExistingFilter.png')} alt="MenuOptionsForAnExistingFilter.png" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/observability/MenuOptionsForAnExistingFilter.png')} alt="Menu options for an existing filter" style={{border: '1px solid gray'}} width="800" />
 
 :::note  
 * A maximum of 10 saved views are allowed per user.

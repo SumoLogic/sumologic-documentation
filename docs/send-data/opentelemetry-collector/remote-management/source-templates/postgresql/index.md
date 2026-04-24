@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="20"/>
+<img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="PostgreSQL icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="20"/>
 
 The PostgreSQL source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of PostgreSQL logs and metrics to Sumo Logic.
 
@@ -42,7 +42,7 @@ Configure logging in PostgreSQL:
 2. Connect to the database server (using SSH) in a terminal window.
 3. Open `postgresql.conf` configuration file.
 4. Under the ERROR REPORTING AND LOGGING section of the file, use the following config parameters. For more information on the following parameters, [click here](https://www.postgresql.org/docs/12/static/runtime-config-logging.html).
-  ```sql
+  ```sumo
     log_destination = 'stderr'
     logging_collector = on
     log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'
@@ -86,18 +86,9 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for PostgreSQL collection. Below are the inputs required for configuration:
+import PostgresqlConfigureSourceTemplate from '../../../../../reuse/send-data/postgresql-configure-source-template.md';
 
-- **Name**. Name of the source template.
-- **Description**. Description for the source template.
-- **Error Log Path**. Enter the path of the error log file for your PostgreSQL instance.
-- **Endpoint**. The endpoint of the PostgreSQL server. This value should be host:port. Default endpoint is `localhost:5432`.
-  :::note
-  There should not be any http prefixed to this value. For example, `http://localhost:port`. 
-  :::
-- **UserName**. Enter the PostgreSQL username.
-- **Password Environment Variable Name**. Enter the PostgreSQL password environment variable name.
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, Sumo Logic tags `_sourceCategory` with the value otel/postgresql user needs to provide the value for `db.cluster.name`.
+<PostgresqlConfigureSourceTemplate/>
 
 import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 

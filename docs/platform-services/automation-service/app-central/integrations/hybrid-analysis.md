@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hybrid-analysis.png')} alt="hybrid-analysis" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hybrid-analysis.png')} alt="Hybrid Analysis icon" width="80"/>
 
 ***Version: 1.6  
 Updated: Jun 14, 2023***
@@ -24,7 +24,7 @@ Submit malware for free analysis with Falcon Sandbox and Hybrid Analysis technol
 
 ## Hybrid Analysis configuration
 
-To obtain an API Key visit your [profile page](https://www.hybrid-analysis.com/my-account?tab=%23api-key-tab) at the top right menu and navigate to the API key tab. Then press the 'Create API key' button as following: <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-1.png')} style={{border:'1px solid gray'}} alt="hybrid-analysis" width="600"/>
+To obtain an API Key visit your [profile page](https://www.hybrid-analysis.com/my-account?tab=%23api-key-tab) at the top right menu and navigate to the API key tab. Then press the 'Create API key' button as following: <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-1.png')} style={{border:'1px solid gray'}} alt="Hybrid analysis" width="600"/>
 
 ## Configure Hybrid Analysis in Automation Service and Cloud SOAR
 

@@ -43,7 +43,7 @@ In Sumo Logic, records are stored in partitions, which are indexes that enable b
 There is a separate partition for forwarded raw messages for which records were not created, because no log mapper was available.
 
 :::tip
-Inventory log data is not stored in any `sec_record*` partitions. You must use `_siemDataType=Inventory` in your query to find inventory data. See [Searching Inventory Data](/docs/cse/administration/inventory-sources-and-data/#searching-inventory-data).
+Inventory log data is not stored in any `sec_record*` partitions. You must use `_siemDataType=Inventory` in your query to find inventory data. See [Searching inventory data](/docs/cse/administration/inventory-sources-and-data/#searching-inventory-data).
 :::
 
 ### Partition for unparsed or unmapped messages
@@ -54,7 +54,7 @@ Inventory log data is not stored in any `sec_record*` partitions. You must use `
 
 Within a FailedRecord, `fields.reason` will contain the reason why the FailedRecord was generated. The following query will extract the failure reason:
 
-```
+```sumo
 _index=sec_record_failure | fields %fields.reason
 ```
 
@@ -77,8 +77,8 @@ If you have the **View Partitions** role capability, you can search Cloud SIEM p
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. 
 1. The partitions that contain Cloud SIEM records begin with the string "sec_record".<br/><img src={useBaseUrl('img/cse/security-partitions.png')} alt="Security partitions" style={{border: '1px solid gray'}} width="800"/>  
-2. To search for all content in the partition, click the icon that appears next to a Partition name when you hover over a row.  
-3. A log search tab opens with a query, like `_index=PartitionName`, that returns all of the logs created within the currently selected time range, 15 minutes by default. For a description of the results, see [Search all records in a partition](#search-all-record-partitions), below.
+2. To search for all content in the partition, click the icon that appears next to a partition name when you hover over a row.  
+3. A log search tab opens with a query, like `_index=PartitionName`, that returns all of the logs created within the currently selected time range, 15 minutes by default. For a description of the results, see [Search all record partitions](#search-all-record-partitions), below.
 
 ## Search data in a log search tab
 
@@ -92,7 +92,7 @@ To open a log search tab in Sumo Logic, go to the **Home** screen and select **L
 
 To return all the records or signals in a partition, all you need to include in your query is the partition name. For example, to search all records in the `sec_record_network` partition, choose a time range, enter the query below, and then click **Start**:
 
-```sql
+```sumo
 _index=sec_record_network
 ```
 
@@ -107,17 +107,17 @@ Note that:
 
 You can use the `fields` operator to choose the fields you want to be displayed when you run the search. You can add additional fields to those that are displayed by default. 
 
-To add display fields:
+##### To add display fields
 
 This query adds the `objectType` (which contains the record type) and the `user_username` fields to the displayed output:
 
-```sql
-_index = sec_record_audit
+```sumo
+_index=sec_record_audit
 | fields objectType, user_username
 ```
 <img src={useBaseUrl('img/cse/fields-added.png')} alt="Fields added" style={{border: '1px solid gray'}} width="800"/>
 
-**To save a search**
+##### To save a search
 
 1. To save the query for future use, choose **Save As** from the three-dot kebab menu in the search bar.<br/><img src={useBaseUrl('img/cse/save-as.png')} alt="Save as log search" style={{border: '1px solid gray'}} width="800"/>
 2. On the **Save Item** popup, name the query, choose a folder location, and then click **Save**.<br/><img src={useBaseUrl('img/cse/save.png')} alt="Save" style={{border: '1px solid gray'}} width="400"/>
@@ -126,32 +126,32 @@ _index = sec_record_audit
 
 You can search multiple partitions by using `OR` in the query. For example, to search all records in the `sec_record_audit` and `sec_record_network` partitions: 
 
-```sql
-_index = sec_record_audit OR _index = sec_record_network
+```sumo
+_index=sec_record_audit OR _index=sec_record_network
 ```
 
 ## Search all record partitions
 
 To search all records in all of the in partitions that contain Cloud SIEM records, use an asterisk (`*`)wildcard.
 
-```sql
-_index = sec_record_*
+```sumo
+_index=sec_record_*
 ```
 
 ## Query by record type
 
 The `objectType` field in a record indicates its record type. To restrict results to a particular record type, use `_index` to identify the partition that contains that record type, and `objectType` to specify the record type. For example, to search for NetworkHTTP records in the `sec_record_network` partition:
 
-```sql
-_index = sec_record_network objectType=NetworkHTTP
+```sumo
+_index=sec_record_network objectType=NetworkHTTP
 ```
 
 ## Return a count of records by record type 
 
 You can use the count operator to aggregate your query results. In the following query, we use the asterisk wildcard to search across all partitions that contain Cloud SIEM records, and count the results by `objectType`, which contains the record type. The following query returns the count of records of each type. 
 
-```
-_index = sec_record_*
+```sumo
+_index=sec_record_*
 | count as Total _view, objectType
 | order by Total
 ```
@@ -160,28 +160,30 @@ _index = sec_record_*
 
 You can search Cloud SIEM fields by keyword, for example:
 
-`_index=sec_record_authentication kerberos`
+```sumo
+_index=sec_record_authentication kerberos
+```
 
 Keyword searching is supported for security indexes across all fields, unlike other indexes where only the `_raw` field is searched.
 
 ### Referencing nested JSON fields
 
-The **Security Record Details** field contains a JSON object with all of the fields from the underlying record or signal. Some of the data is nested in one or more sub-objects, like the `fields` object for record., shown expanded in the screenshot below. The fields object contains the contents of the [fields](/docs/cse/schema/schema-attributes) field in the underlying record, which is all of the unnormalized data from the original log message before it was normalized to the Cloud SIEM schema.
+The **Security Record Details** field contains a JSON object with all of the fields from the underlying record or signal. Some of the data is nested in one or more sub-objects, like the `fields` object for record, shown expanded in the screenshot below. The fields object contains the contents of the [fields](/docs/cse/schema/schema-attributes) in the underlying record, which is all of the unnormalized data from the original log message before it was normalized to the Cloud SIEM schema.
 
 <img src={useBaseUrl('img/cse/nested-fields.png')} alt="Nested fields" style={{border: '1px solid gray'}} width="800"/>
 
 You can access the contents of nested attributes, like `fields` in the example below, using a `where` clause:  
 
-```
+```sumo
 _index=sec_record_authentication
-| where %"fields.application" = "test_app"
+| where %"fields.application"="test_app"
 ```
 <img src={useBaseUrl('img/cse/extracted-field.png')} alt="Extracted field" style={{border: '1px solid gray'}} width="800"/>
 
 ## Security index search limitations
 
 * When you use wildcards for field values in a query scope, only records in which those fields are present and not null will be returned. For example, the following query will only return records if the `srcDevice_ip` is present and not null:
-    ```
-    _index = sec_record_* srcDevice_ip=*
+    ```sumo
+    _index=sec_record_* srcDevice_ip=*
     ```  
-* The partitions that contain Cloud SIEM records and signals are stored in a dedicated security data tier. You can’t access data in the security indexes and data in other data tiers (Continuous, Frequent, or Infrequent) and flex in the same query.
+* The partitions that contain Cloud SIEM records and signals are stored in a dedicated security data tier. You can’t access data in the security indexes and data in other data tiers (Continuous, Frequent, or Infrequent) and Flex in the same query.

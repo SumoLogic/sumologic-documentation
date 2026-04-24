@@ -20,10 +20,10 @@ This guide will walk you through setting up the [Sumo Logic Kubernetes solution]
 :::tip
 As an alternative to this quickstart, you can use our in-product onboarding to accomplish the same tasks in single setup workflow. Go to **App Catalog** > **Kubernetes** > **Begin Integration**.
 
-<img src={useBaseUrl('img/observability/k8s-onboarding.png')} alt="k8s-onboarding" />
+<img src={useBaseUrl('img/observability/k8s-onboarding.png')} alt="Kubernetes onboarding" width="800" />
 :::
 
-:::sumo Micro lesson
+:::training Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/8yo13sfpl2?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -174,4 +174,4 @@ We also provide a selection of security-focused partner apps with specialized de
 
 Make the most of our Kubernetes Observability offerings by enrolling in our free training, where you'll learn more about using OpenTelemetry collectors, tracing agents, and our Reliability Management features. The Sumo Kubernetes Analyst Certification is a hands-on class that shows you how to expand your knowledge of Kubernetes by solving common use cases.
 
-<a href="https://www.sumologic.com/learn/training/"><img src={useBaseUrl('img/kubernetes/K8s_Kubernetes_Analyst_Cert.png')} alt="K8s_Kubernetes_Analyst_Cert.png" width="450"/></a>
+<a href="https://www.sumologic.com/learn/training/"><img src={useBaseUrl('img/kubernetes/K8s_Kubernetes_Analyst_Cert.png')} alt="Kubernetes Analyst Cert icon" width="450"/></a>

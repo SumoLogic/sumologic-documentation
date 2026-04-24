@@ -10,7 +10,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-<img src={useBaseUrl('img/integrations/databases/mysql.png')} alt="Thumbnail icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
+<img src={useBaseUrl('img/integrations/databases/mysql.png')} alt="MySQL icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="30"/>
 
 The MySQL source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of MySQL logs and metrics to Sumo Logic.
 
@@ -36,7 +36,7 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 MySQL logs are stored in log files. Slow query logs must be explicitly enabled to be able to be written to a log file. To configure the MySQL log file(s), locate your local `my.cnf` configuration file in the database directory.
    1. Open `my.cnf` in a text editor.
    2. Set the following parameters in the `[mysqld]` section:
-   ```sql
+   ```sumo
    [mysqld]
        log_error = /var/log/mysql/error.log
        slow_query_log=1
@@ -77,16 +77,9 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for MySQL collection. Below are the inputs required for configuration:
+import MysqlConfigureSourceTemplate from '../../../../../reuse/send-data/mysql-configure-source-template.md';
 
-- **Name**. Name of the source template.
-- **Description**. Description for the source template.
-- **Error log path**. Location where the SQL Errors are logged. Please refer to your my.cnf file.
-- **Slow Transaction log file path (optional)**. Location where the Slow SQL transactions are logged. Please refer to your my.cnf file.
-- **Endpoint**. The URL of the MySQL endpoint (default: `localhost:3306`).
-- **Username**. Enter the MySQL username.
-- **Password Environment Variable Name**. Enter the MySQL password environment variable name.
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, Sumo Logic tags `_sourceCategory` with the value otel/mysql user needs to provide the value for `db.cluster.name`.
+<MysqlConfigureSourceTemplate/>
 
 import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 

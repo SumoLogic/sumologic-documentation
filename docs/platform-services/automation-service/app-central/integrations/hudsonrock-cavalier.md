@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hudsonrock-cavalier.png')} alt="hudsonrock-cavalier" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hudsonrock-cavalier.png')} alt="HudsonRock Cavalier icon" width="80"/>
 
 ***Version: 1.0  
 Updated: Feb 03, 2023***

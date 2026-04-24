@@ -19,10 +19,10 @@ An authorized user can configure context actions and assign them to particular e
 * **Context actions on record fields**. You can assign a context action to selected record fields, or all record fields. In the Cloud SIEM UI, the action will be available on the context action menu for selected fields.     
 * **Context actions on IOC types**. You can assign a context action to one or more of the following IOC data types:
     * Domain
-    * IP Address
-    * URL
     * Hash
+    * IP address
     * MAC Address
+    * URL
 
 The context actions menu will be available for any of these types, wherever they appear in the Cloud SIEM UI.
 
@@ -44,7 +44,7 @@ In the screenshot below, context actions are listed below the built-in **Add to 
 
 If an action name is shown in red font, that indicates that the action depends on a record field that doesn’t exist.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Watch this micro lesson to learn more about how to use context actions.
 
@@ -123,7 +123,7 @@ The table below defines the parameters you can use in the URL template for a con
 
 ### Value
 
-(Required) The `{{value}}` parameter inserts the target of the context action, for instance an IP Address to be inserted into the URL to a threat intel service. For example:
+(Required) The `{{value}}` parameter inserts the target of the context action, for instance an IP address to be inserted into the URL to a threat intel service. For example:
 
 `https://www.abuseipdb.com/whois/{{value}}`
 

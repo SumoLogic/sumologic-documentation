@@ -104,7 +104,7 @@ When attempting to upgrade a Windows Collector from the UI, the upgrade fails an
 
 This is a known issue regarding upgrading a Windows collector from versions 19.60-x to the latest released version. The cause is a missing wrapper.dll file, which is required during a pre-check test of the Collector during upgrade. To correct this issue and allow the upgrade to succeed, perform the following steps on the affected host:
 
-1. Download the <a href={useBaseUrl('/files/wrapper-dll.zip')} target="_blank">wrapper-dll.zip</a> file attached to this article, which includes the missing wrapper.dll files.
+1. Download the <a href={useBaseUrl('files/wrapper-dll.zip')} target="_blank">wrapper-dll.zip</a> file attached to this article, which includes the missing wrapper.dll files.
 1. Stop the Sumo Logic Collector service running on the host.
 1. Unzip the downloaded file and place the extracted .dll files into the following directory, where \<version\> is the "current version" listed in the upgrade UI in Sumo Logic:
 
@@ -329,7 +329,7 @@ To increase the maximum Java Heap size:
 
 To monitor collectors for out-of-memory issues, ingest the collector logs, and schedule following search to run every 15 minutes with time range last 15 minutes.
 
-```sql
+```sumo
 _sourceCategory=*LocalCollectorLogs* "java.lang.OutOfMemoryError: Java heap space"
 | timeslice 15m
 | count by _timeslice, _collector
@@ -447,19 +447,19 @@ Use the following tips for working with historical data:
 
 ## Troubleshooting time discrepancies
 
-In most scenarios, the message time and receipt time of a log message in Sumo Logic should be almost the same, within a minute of each other. However, network latency, random (not continuous) spikes in data volume, and service disruptions can cause delays, leading to a discrepancy between message time and receipt time. Large discrepancies can lead to incorrect events being displayed, and may even cause search performance issues. On some occasions, it can also prevent Dashboards from populating with data.
+In most scenarios, the message time, receipt time, and searchable time of a log message in Sumo Logic should be almost the same, within a minute of each other. However, network latency, random (not continuous) spikes in data volume, and service disruptions can cause delays, leading to a discrepancy between message time, receipt time, and searchable time. Large discrepancies can lead to incorrect events being displayed, and may even cause search performance issues. On some occasions, it can also prevent dashboards from populating with data.
 
-This page explains the elements that can be involved in time
-discrepancies and offers solutions for troubleshooting your problem.
+This page explains the elements that can be involved in time discrepancies and offers solutions for troubleshooting your problem.
 
 :::tip
 See details on the supported [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference.md).
 :::
 
-#### Message time and receipt time
+#### Message time, Receipt time, and Searchable time
 
 * **Message time** represents the time of your log events. This is parsed from your logs by the Collector. When adding a Source to a Collector, most users choose to automatically detect timestamps in their logs and parse them by selecting **Extract timestamp information from log file entries** in the Source configuration settings.
 * **Receipt time** is the timestamp the log message was received by the Collector. See [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) for details.
+* **Searchable Time** refers to the additional processing time required to make logs available for searching after they are received by the Sumo Logic system. This processing includes enrichment, indexing, and storage, all of which contribute to the overall searchable time. See [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time/) for more details.
 
 :::note
 If Enable Timestamp Parsing is not selected for your Source, Sumo Logic automatically sets the message time to be equivalent to the receipt time.
@@ -503,7 +503,7 @@ In this scenario, there is no time zone in the sample message at all. However, t
 
 #### Troubleshooting a misconfigured time zone
 
-If you are experiencing apparent delays during ingest (receiving data), select the "Use Receipt Time" check box under the time picker. This will present data in the order in which it was received by Sumo, as well as display the timestamp that has been detected/applied.
+If you are experiencing apparent delays during ingest (receiving data), select the **Use Receipt Time** check box under the time picker. This will present data in the order in which it was received by Sumo Logic, as well as display the timestamp that has been detected/applied.
 
 <img src={useBaseUrl('img/send-data/UseReceiptTime_chekcbox.png')} alt="Use receipt time checkbox" style={{border: '1px solid gray'}} width="800" />
 
@@ -517,7 +517,7 @@ Review your time zone settings, and apply a time zone on the Source that reflec
 
 The query below can be executed in your account to find the number of messages for each of your Sources where the receipt time and message time are more than 30 minutes apart. This should at least give you a good starting place for you to run additional analysis.
 
-```sql
+```sumo
 *
 | _receiptTime as r
 | _messageTime as t
@@ -535,7 +535,7 @@ The query below can be executed in your account to find the number of messages f
 
 After identifying a list of (problematic) Sources in the previous search, you can then use the query below to view the time delay average, the max delay, and the min delay for each Source. Substitute `<problem_child>` with the Source(s) that you uncovered in the initial query above.  
 
-```sql
+```sumo
 _source=<problem_child>
 | _format as format
 | formatDate(fromMillis(_receipttime),"MM/dd hh:mm") as r
@@ -568,13 +568,13 @@ Make sure that you're viewing Running Collectors or All Collectors in the S
 
 #### Try a search
 
-Collected data should be searchable within a couple of minutes. You can run a search based on when Sumo Logic received your data by running a search by Receipt Time. Try specifying the Collector with the metadata field `_collector` and the Collector name, like `_collector=<name>`.
+Collected data should be searchable within a couple of minutes. You can run a search based on when Sumo Logic received your data by running a search by **Receipt Time** timestamp or run a search based on when the log data is ready for search after they are received by the Sumo Logic system by **Searchable Time** timestamp. Try specifying the Collector with the metadata field `_collector` and the Collector name, like `_collector=<name>`.
 
-If your user account is not an administrator check your Role assignment for any search filters that may be restricting access to the data.
+If your user account is not an administrator check your role assignment for any search filters that may be restricting access to the data.
 
 #### Verify that your Collectors are running
 
-Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/>. Stopped Collectors and Sources are marked with <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/>. Stopped Collectors do not send any data.
+Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/>. Stopped Collectors and Sources are marked with <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/>. Stopped Collectors do not send any data.
 
 If a Collector is stopped, you can verify the Collector's status and restart it if necessary.
 

@@ -1,59 +1,61 @@
-# Home | Sumo Logic Docs
+# Sumo Logic Help Center (LLM Instructions)
 
-Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.
+This file provides guidance for AI systems and language models on how to discover, interpret, and cite Sumo Logic documentation.
 
-## Getting Started
+## Canonical documentation
 
-- [Get Started](https://www.sumologic.com/help/docs/get-started/): A guide to help you begin using Sumo Logic, covering initial setup and configuration.
-- [1. Set up collector and source](https://www.sumologic.com/help/docs/get-started/quickstart/#step-1-get-your-data-into-sumo): Instructions on how to set up data collectors and sources for effective data ingestion.
-- [2. Explore your data insights](https://www.sumologic.com/help/docs/get-started/quickstart/#step-2-search-and-analyze-your-data): Learn how to analyze and visualize your data for actionable insights.
-- [3. Monitor and secure your environment](https://www.sumologic.com/help/docs/get-started/quickstart/#step-3-monitor-and-troubleshoot-your-environment): Best practices for monitoring and securing your applications and infrastructure.
+- Help landing page (navigation only): https://www.sumologic.com/help
+- Primary documentation root: https://www.sumologic.com/help/docs/
+- Sitemap: https://www.sumologic.com/help/sitemap.xml
 
-## Core Features
+## Content usage guidance
 
-### Data Management
+- Use content under /help/docs/ for all product documentation, configuration, procedures, and troubleshooting.
+- Do not use the /help landing page as a source of technical truth; it is navigation only.
+- Use section headings (H2/H3) on docs pages to locate precise answers.
+- When answering questions, cite the canonical URL under https://www.sumologic.com/help/docs/.
 
-- [Log Search](https://www.sumologic.com/help/docs/search/): Detailed information on how to perform log searches within Sumo Logic for troubleshooting and analysis.
-- [Metrics](https://www.sumologic.com/help/docs/metrics): Overview of metrics collection and monitoring capabilities.
-- [Traces](https://www.sumologic.com/help/docs/apm/traces): Insights into tracing requests across distributed systems for performance monitoring.
+## Terms of use
 
-### Dashboards and Alerts
+- Content may be used to answer user questions about Sumo Logic products and services.
+- Always cite the source URL when using our documentation.
+- Do not reproduce large portions of content verbatim; summarize and cite instead.
+- Respect copyright and attribute content to Sumo Logic.
 
-- [Dashboards](https://www.sumologic.com/help/docs/dashboards/): Guide on creating and managing dashboards to visualize your data effectively.
-- [Alerts](https://www.sumologic.com/help/docs/alerts/): Instructions on setting up alerts to notify you of important events or anomalies in your data.
+## Crawl guidance
 
-### Security
+- Crawl frequency: Daily for /help/docs/release-notes/, weekly for other documentation.
+- Respect rate limits: Maximum 1 request per second.
+- User agent: Identify yourself with a descriptive user agent string.
+- Focus crawling on /help/docs/ for technical documentation.
 
-- [Security](https://www.sumologic.com/help/docs/security/): Information on security features and best practices within Sumo Logic.
-- [Cloud SIEM Schema](https://www.sumologic.com/help/docs/cse/schema/): Schema details for the Cloud SIEM feature, including data structure and usage.
+## Machine-friendly access
 
-## Integrations and APIs
 
-- [Apps and Integrations](https://www.sumologic.com/help/docs/integrations/): A list of available applications and integrations that enhance Sumo Logic's functionality.
-- [API Docs](https://www.sumologic.com/help/docs/api/): Comprehensive documentation for using Sumo Logic's APIs.
-- [API Reference](https://api.sumologic.com/docs/): Detailed reference for API endpoints and their usage.
+## Recommended entry points
 
-## Advanced Features
+- Get started: https://www.sumologic.com/help/docs/get-started/
+- Search query language: https://www.sumologic.com/help/docs/search/
+- Alerts and monitors: https://www.sumologic.com/help/docs/alerts/
+- Integrations: https://www.sumologic.com/help/docs/integrations/
+- Security and Cloud SIEM: https://www.sumologic.com/help/docs/security/
+- Release notes: https://www.sumologic.com/help/docs/release-notes/
 
-- [Kubernetes Observability](https://www.sumologic.com/help/docs/observability/kubernetes/): Insights into monitoring Kubernetes environments with Sumo Logic.
-- [Subqueries](https://www.sumologic.com/help/docs/search/subqueries/): Explanation of how to use subqueries for advanced data analysis.
-- [SAML](https://www.sumologic.com/help/docs/integrations/saml/): Information on integrating SAML for single sign-on capabilities.
+## APIs
 
-## Support and Community
+- API guides: https://www.sumologic.com/help/docs/api/
+- API reference: https://api.sumologic.com/docs/
 
-- [Contact Support](https://support.sumologic.com/support/s): How to reach Sumo Logic support for assistance.
-- [Request a Demo](https://www.sumologic.com/demos): Information on how to request a demonstration of Sumo Logic's features.
-- [Community](https://support.sumologic.com/support/s/topiccatalog): Join the Sumo Logic community for discussions, tips, and shared experiences.
+## Non-documentation resources
 
-## Additional Resources
+The following pages are not product documentation and should not be used as primary sources for technical answers:
 
-- [Release Notes](https://www.sumologic.com/help/docs/release-notes/): Updates and changes in the latest versions of Sumo Logic.
-- [Submit Feedback](https://github.com/SumoLogic/sumologic-documentation/issues/new/choose): Provide feedback on your experience with Sumo Logic documentation.
-- [Contribute to Docs](https://www.sumologic.com/help/docs/contributing/): Guidelines for contributing to the Sumo Logic documentation.
+- Support portal: https://support.sumologic.com/support/s
+- Community: https://support.sumologic.com/support/s/topiccatalog
+- Marketing, legal, and privacy pages under https://www.sumologic.com/
 
-## Legal Information
+## Contact
 
-- [Privacy Statement](https://www.sumologic.com/privacy-statement): Details on how Sumo Logic handles user data and privacy.
-- [Terms of Use](https://www.sumologic.com/terms-conditions): The terms governing the use of Sumo Logic services.
-
-This structured summary provides a comprehensive overview of the Sumo Logic documentation, ensuring that all relevant links and descriptions are included for easy reference.
+- For questions about LLM integration or this file: documentation@sumologic.com
+- Documentation issues: Use the feedback widget ("Edit this page") on documentation pages
+- Last updated: 2026-02-04

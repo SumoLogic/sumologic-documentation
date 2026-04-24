@@ -10,7 +10,7 @@ description: Learn how to retrieve Asana audit logs into the Sumo Logic environm
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/asana-icon.png')} alt="asana-icon" width="40" />
+<img src={useBaseUrl('img/send-data/asana-icon.png')} alt="Asana icon" width="40" />
 
 The Asana Audit Logs API Integration ingests events from [Asana Audit Logs API](https://developers.asana.com/reference/audit-log-api). Asana can help you to break down large work into manageable tasks. It's a comprehensive work management tool that allows you to track project and task progress, share files, comments, and notes, and keep track of deadlines.
 
@@ -32,7 +32,7 @@ The Asana Audit Logs API Integration ingests events from [Asana Audit Logs API](
 
 Follow the below steps to get the required fields for user configuration:
 
-1. Log in to your [Asana admin console](https://app.asana.com/admin).<br/> <img src={useBaseUrl('img/send-data/asana_login.png')} style={{border:'1px solid gray'}} alt="asana-login" width="400" />
+1. Log in to your [Asana admin console](https://app.asana.com/admin).<br/> <img src={useBaseUrl('img/send-data/asana_login.png')} style={{border:'1px solid gray'}} alt="Asana login" width="400" />
 1. After logging in, click the **Apps** tab from with your admin console.
 1. Click **Service accounts**.
 1. Click the **Add service account** button.
@@ -53,11 +53,15 @@ To configure an Asana Source:
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. Enter the Personal Access Token (PAT) from the Asana platform.
 1. Enter the unique workspace ID for the users service account.
 1. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the Asana source, consider installing the Sumo Logic app for [Asana](/docs/integrations/saas-cloud/asana/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## JSON Configuration
 

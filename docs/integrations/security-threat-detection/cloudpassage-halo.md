@@ -7,7 +7,7 @@ description: The CloudPassage Halo app enables security operators and administra
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/cloudpassage.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/cloudpassage.png')} alt="CloudPassage icon" width="75"/>
 
 The CloudPassage Halo app helps you detect security violations and look for threats across your complex infrastructure, through the analysis of massive volumes of Halo event data. CloudPassage’s Halo platform records over eighty different types of security events about your Halo-managed infrastructure, whether you deploy into public cloud environments or your private data center. These events deliver information about your infrastructure and include critical security alerts for firewall changes, access changes, configuration changes, and file integrity changes, and more.
 
@@ -71,7 +71,7 @@ To set up CloudPassage Halo, do the following:
 
 ### AWS Configuration
 
-If this is the first time you are using the SQS, it is strongly recommended to go through [Quick start with SQS](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-getting-started.html) first.
+If this is the first time you are using the SQS, it is strongly recommended to go through [Quick start with SQS](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-getting-started.html) first.
 
 **SQS (Simple Queue Service)**. This queue stores one message at any given time.  It contains “the last time (in Zulu format)” the script ran to collect the events from Halo.  The message is then deleted and new one (with the current time in Zulu format) is added into the queue.
 
@@ -80,7 +80,7 @@ The queue is automatically created the first time you run the **Halo_events_to_S
 
 #### Lambda Functions
 
-If this is the first time you are using the Lambda, it is strongly recommended to go through [Quick start with Lambda](http://docs.aws.amazon.com/lambda/latest/dg/getting-started.html) first.
+If this is the first time you are using the Lambda, it is strongly recommended to go through [Quick start with Lambda](https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html) first.
 
 
 #### Recommended configuration

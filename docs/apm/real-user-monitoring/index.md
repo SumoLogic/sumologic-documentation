@@ -9,7 +9,7 @@ import Iframe from 'react-iframe';
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-<img src={useBaseUrl('img/icons/apm.png')} alt="icon" width="60"/>
+<img src={useBaseUrl('img/icons/apm.png')} alt="APM icon" width="60"/>
 
 Real User Monitoring (RUM) gives you the ability to understand how users interact with the digital interfaces of your business and if their experience is satisfactory or not. This open-source-powered and flexible capability brings you full visibility into what’s happening in your user's browser while interacting with your web applications.
 
@@ -23,7 +23,7 @@ This data is gathered directly from your end-user devices and displayed as indiv
 
 All data collected is compatible with OpenTelemetry and doesn't use proprietary vendor code. Real user monitoring supports document load actions as well as XHR communication and route changes for single-page app navigation. The full list of functionalities and configuration is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 See Real User Monitoring in action.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/jfptjgwql1?web_component=true&seo=true&videoFoam=false"

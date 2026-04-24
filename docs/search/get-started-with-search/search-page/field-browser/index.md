@@ -14,7 +14,7 @@ For non-aggregate queries, the Field Browser is useful for narrowing results on
 
 The Field Browser displays the number of values for each field returned in a search. It works in real time, so you can fine tune the fields you want to view or hide. After setting the fields to display, save your preferences so that the correct fields are always displayed in your searches. The preferences are saved just for your user account and don’t change the way data is displayed in other user accounts.
 
-In addition to the fields found in your logs, the Field Browser shows **Time**, **Receipt Time**, and **Message** (for raw log messages). No [drill-down searches](search-from-field-browser.md) can be run on these fields because they do not contain number or string data that can be searched on.
+In addition to the fields found in your logs, the Field Browser shows **Time**, **Receipt Time**, **Searchable Time**, and **Message** (for raw log messages). No [drill-down searches](search-from-field-browser.md) can be run on these fields because they do not contain number or string data that can be searched on.
 
 - **Messages** represents the collapsed version of the log message with each row showing up to 10 lines. 
 - **Message time** represents the time of your log events. This is parsed from your logs by the Collector. When adding a Source to a Collector, most users choose to automatically detect timestamps in their logs and parse them by selecting Extract timestamp information from log file entries in the Source configuration settings.
@@ -22,12 +22,12 @@ In addition to the fields found in your logs, the Field Browser shows **Time**, 
   :::info
   The **Receipt Time** field will only be displayed in the field browser when it is included as field in the query or when the **Use the Receipt Time** option for time interval type is toggled on.
   :::
-- **Searchable Time** refers to the additional processing time required to make logs available for searching after they are received by the Sumo Logic system. This processing includes enrichment, indexing, and storage, all of which contribute to the overall Searchable Time.
+- **Searchable Time** refers to the additional processing time required to make logs available for searching after they are received by the Sumo Logic system. This processing includes enrichment, indexing, and storage, all of which contribute to the overall searchable time. See [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time/) for more details.
   :::note
   The **Searchable Time** field will only be displayed in the field browser.
   :::
   
-<img src={useBaseUrl('/img/search/get-started-search/search-page/FB-Field-Browser-Display-Fields.png')} style={{border:'1px solid gray'}} alt="FB_Field-Browser_Display-Fields" width="300"/>
+<img src={useBaseUrl('/img/search/get-started-search/search-page/FB-Field-Browser-Display-Fields.png')} style={{border:'1px solid gray'}} alt="Field Browser display fields" width="300"/>
 
 - A. Search for fields by entering text in this field.
 - B. List of Fields shown in the Messages tab.
@@ -68,6 +68,7 @@ The Field Browser is limited for aggregate queries in the following ways:
 * Field counts—If messages returned are less than or equal to 2500 messages, then an exact calculation is shown. If more than 2500 messages are returned, an approximation is shown.
 * The **Approximate Count** displays the count of the field values for the field. This does not display complete field values count for that field but it's just to calculate average, minimum, maximum, and standard deviation values from the first 100,000 raw messages. The field values will be skipped if the 100,000 raw messages limit is exceeded.
 * The system limits the number of fields extracted for display in the field browser. Use the [`fields` Operator](/docs/search/search-query-language/search-operators/fields) to control which exact fields are retrieved.
+* The field browser displays the count of the fields as well as the distribution of values of each field. These calculations are done for the first 200 fields that are parsed by a run-time FER and 100 dynamic parsed extracted field.
   
 ## Guide contents
 
@@ -76,13 +77,13 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/field-browser/search-from-field-browser')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Search from the Field Browser</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/field-browser/search-from-field-browser')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="40"/><h4>Search from the Field Browser</h4></a>
   <p>Drilling down into a field from the Field Browser is seamless for non-aggregate queries.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Show and Hide Fields in the Field Browser</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="40"/><h4>Show and Hide Fields in the Field Browser</h4></a>
   <p>Change the fields that are displayed in search results by showing or hiding in the Field Browser.</p>
   </div>
 </div>

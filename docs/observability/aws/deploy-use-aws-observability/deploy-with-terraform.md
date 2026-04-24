@@ -102,7 +102,7 @@ Before you run the Terraform script, perform the following actions on a server m
     Note that templates located at [sumologic-solution-templates/aws-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) directory contain references to files from the [sumologic-solution-templates/aws-observability](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability) directory.
     :::
 1. Configure the following mandatory parameters in the **main.auto.tfvars** file.
-   * `sumologic_environment`: This input specifies the Sumo Logic deployment that you want to use. Refer to [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for a list of available deployments. Possible values include `au`, `ca`, `de`, `eu`, `jp`, `us2`, `fed`, `kr`, or `us1`.
+   * `sumologic_environment`: This input specifies the Sumo Logic deployment that you want to use. Refer to [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for a list of available deployments. Possible values include `au`, `ca`, `ch`, `de`, `eu`, `jp`, `us2`, `fed`, `kr`, or `us1`.
    * `sumologic_access_id`: This input specifies the Sumo Logic access ID that you want to use. For more information on how to obtain an access ID, refer to the [Access Keys](/docs/manage/security/access-keys) documentation.
    * `sumologic_access_key`: [Sumo Logic Access Key](/docs/manage/security/access-keys) is used for Sumo Logic API calls.
    * `sumologic_organization_id`: Sumo Logic Organization ID. You can find your organization ID on the [Preferences](/docs/get-started/account-settings-preferences/#my-profile) page in the Sumo Logic UI. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.
@@ -117,7 +117,7 @@ Before you run the Terraform script, perform the following actions on a server m
        export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
        export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
        ```
-       Provide your Sumo Logic deployment for the `SUMOLOGIC_ENV` variable. For example: `au`, `ca`, `de`, `eu`, `jp`, `us2`, `fed`, `kr`, or `us1`. For more information on Sumo Logic deployments, see [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). 
+       Provide your Sumo Logic deployment for the `SUMOLOGIC_ENV` variable. For example: `au`, `ca`, `ch`, `de`, `eu`, `jp`, `us2`, `fed`, `kr`, or `us1`. For more information on Sumo Logic deployments, see [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). 
    1. Run fields.sh using this command:
       ```bash
       sh fields.sh
@@ -459,7 +459,7 @@ Here we have a **production** AWS account profile in **us-east-1** and **us-east
 * Since this is a single account, we can use the global account alias which is defined in **var.aws_account_alias**.
 * A hosted collector is created per AWS account. If you deploy the solution for multiple regions in the same AWS account, you should use the same collector that was created for the first region of the AWS account and for each subsequent region module as shown in the code.
 
-```
+```sumo
 module "production-us-east-1" {
   source = "./source-module"
   providers = { aws = aws.production-us-east-1 }
@@ -501,7 +501,7 @@ Here we have a **production** AWS account profile in **us-east-1** and **us-east
 * A hosted collector is created per AWS account. If you deploy the solution for multiple regions in the same account, you should use the same collector that was created for the first region of the account for each subsequent region module as shown in the code.
 * For each new AWS account, ensure you create a new hosted collector for first region and then reuse the same collector created within given AWS account for subsequent regions.
 
-```
+```sumo
 module "production-us-east-1" {
   source = "./source-module"
   providers = { aws = aws.production-us-east-1 }
@@ -1341,7 +1341,7 @@ sumologic_existing_collector_details = {
 
 **Override Example JSON:**
 
-```
+```sumo
 # Use the same collector created for module production-us-east-1 for the new source module.
   sumologic_existing_collector_details = {
     create_collector = false
@@ -1505,7 +1505,7 @@ The following table provides a list of all source parameters and their default v
 |:--|:--|:--|
 | `access_id` | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.	                                                                                                                           | Ignore if already configured in **main.auto.tfvars** file. |
 | `access_key` | Sumo Logic Access Key. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.                                                                                                                           | Ignore if already configured in main.auto.tfvars file.
-| `environment` | Enter au, ca, de, eu, jp, us2, fed, kr, or us1. See Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for information. Ignore this setting if you entered it in Source Parameters.                                                                                                        | Ignore if already configured in main.auto.tfvars file. |
+| `environment` | Enter au, ca, ch, de, eu, jp, us2, fed, kr, or us1. See [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for information. Ignore this setting if you entered it in Source Parameters.  | Ignore if already configured in main.auto.tfvars file. |
 | `sumologic_organization_id` | You can find your org on the Preferences page in the Sumo Logic UI. For more information, see the Preferences Page topic. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources." See Preferences Page.                                                    | Ignore if already configured in main.auto.tfvars file. |
 | `apps_folder_name` | Provide a folder name where all the apps will be installed under your Personal folder. Default value is "AWS Observability Apps".                                                                                                                                                  | `"AWS Observability Apps"`  |
 | `monitors_folder_name` | Provide a folder name where all the monitors will be installed under the Personal folder of the user whose access keys you have entered. Default value will be "AWS Observability Monitors".                                                                                       | `"AWS Observability Monitors"` |
@@ -1584,11 +1584,11 @@ Run `terraform destroy` again.
 #### Solution
 Delete existing hierarchy and a create new one:<br/>
 1. Get Hierarchy-id list of existing hierarchies and keep it noted. Learn [more](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint. <br/>
-   ```sql
+   ```sumo
    curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
    ```
 1. Delete the existing Hierarchy. Learn [more](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint.<br/>
-   ```sql
+   ```sumo
    curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X DELETE https://<apiendpoint>/api/v1/entities/hierarchies/<hierarchyid>`
    ```
 
@@ -1602,7 +1602,7 @@ Import Error: cannot import name 'SumoLogic' from 'sumologic'
 ```
 #### Solution
 The package is [sumologic-sdk](https://pypi.org/project/sumologic-sdk/) and install it for AWS observability solution using the following command:
-  ```sql
+  ```sumo
   pip install sumologic-sdk
   ```
 ### Invalid IAM role OR AccessDenied
@@ -1688,7 +1688,7 @@ Navigate to the location where you have installed the AWS Observability Terrafor
 
 1. Go to `cd .terraform/modules/collection-module.classic_lb_module/aws/elasticloadbalancing/elb.tf`
 2. Replace the code with the code give below.
-  ```sql
+  ```sumo
   resource "aws_serverlessapplicationrepository_cloudformation_stack" "auto_enable_access_logs" {
     for_each = toset(local.auto_enable_access_logs ? ["auto_enable_access_logs"] : [])
 
@@ -1713,7 +1713,7 @@ Navigate to the location where you have installed the AWS Observability Terrafor
   ```
 3. Go to `cd .terraform/modules/collection-module.elb_module/aws/elb/elb.tf`
 4. Replace the code with the code provided below.
-  ```sql
+  ```sumo
   resource "aws_serverlessapplicationrepository_cloudformation_stack" "auto_enable_access_logs" {
     for_each = toset(local.auto_enable_access_logs ? ["auto_enable_access_logs"] : [])
 

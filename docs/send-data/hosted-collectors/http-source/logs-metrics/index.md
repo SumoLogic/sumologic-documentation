@@ -2,12 +2,12 @@
 slug: /send-data/hosted-collectors/http-source/logs-metrics
 title: HTTP Logs and Metrics Source
 sidebar_label: HTTP Logs and Metrics
-description: An HTTP Source is an endpoint for receiving logs and metrics, uploaded via a URL.
+description: Configure an HTTP Logs and Metrics Source on a Sumo Logic hosted collector to receive logs and metrics from cloud platforms and applications via a unique URL.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/http-logs-metrics.png')} alt="Thumbnail icon" width="60"/>
+<img src={useBaseUrl('img/send-data/http-logs-metrics.png')} alt="HTTP Logs Metrics icon" width="60"/>
 
 An HTTP Logs and Metrics Source is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 
@@ -40,8 +40,8 @@ To configure an HTTP Logs and Metrics Source:
 1. (Optional) For **Source Host **and** Source Category**, enter any string to tag the output collected from the source. (Category metadata is stored in a searchable field called _sourceCategory.)
 1. **Forward to SIEM**. This option is present if [Cloud SIEM](/docs/cse/) is enabled. Click the checkbox to send the logs collected by the source to Cloud SIEM.
 1. **Fields/Metadata.** Click the **+Add** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **Advanced Options for Logs.** Advanced options do *not* apply to uploaded metrics.<br/><img src={useBaseUrl('img/send-data/HTTP-source-advanced-options-for-logs.png')} alt="A screenshot of the 'Advanced Options for Logs' settings in Sumo Logic. The options include 'Extract timestamp information from log file entries' (checked), 'Default Time Zone' with options to 'Use time zone from log file. If not detected, use default time zone' (selected) and 'Ignore time zone from log file and instead use default time zone'. The 'Timestamp Format' settings offer 'Automatically detect the format' (selected) and 'Specify a format'. The 'Message Processing' section has 'Multiline Processing' checked. The 'Infer Message Boundaries' options include 'Detect Automatically' (selected) and 'Add Boundary Regex'. Finally, there is an unchecked option for 'One Message Per Request', which notes that each request will be treated as a single message, ignoring line breaks." width="400"/>
    * **Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
      * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
@@ -53,15 +53,15 @@ To configure an HTTP Logs and Metrics Source:
        * **One Message Per Request.** Select this option if you'll be sending a single message with each HTTP request. For more information, see [Multiline options in HTTP sources](#multiline-options-in-http-sources). 
 1. **Processing Rules.** Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule. Processing rules are applied to log data, but not to metric data.
 1. When you are finished configuring the Source, click **Save**.
-1. When the URL associated with the source is displayed, copy the URL so you can use it to upload data.<br/><img src={useBaseUrl('img/send-data/http-source-address.png')} alt="HTTP Source Address dialog " style={{border: '1px solid gray'}} width="500" />
-
-<!-- Per DOCS-1266, replace the preceding step with the following: 
 1. In the **HTTP Source Address** dialog box, select one of the following to copy the URL where the source data will be stored:
    * **Presigned URL**. Select to copy a presigned URL with embedded authentication.<br/><img src={useBaseUrl('img/send-data/http-source-address-new.png')} alt="HTTP Source Address with presigned URL" style={{border: '1px solid gray'}} width="600"/>
    * **Auth Header**. Select to copy the URL, as well as a separate authorization header that contains an authentication token. This option provides greater security than a presigned URL because placing the authentication token in the authorization header of a request prevents the token from being exposed in the URL.<br/><img src={useBaseUrl('img/send-data/http-source-address-and-auth-header.png')} alt="HTTP Source Address with authorization header" style={{border: '1px solid gray'}} width="600"/>
 1. Copy the URL (and header if applicable) and keep in a safe place. You will use the URL in the next step: [Upload data to the HTTP Logs and Metrics Source](#upload-data-to-the-httplogs-and-metrics-source).
 1. Click **Done**.
--->
+
+import TokenBasedAuth from '../../../../reuse/token-based-auth-http-sources.md';
+
+<TokenBasedAuth/>
 
 :::note
 * Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to HTTP Endpoint have appropriate timestamps.

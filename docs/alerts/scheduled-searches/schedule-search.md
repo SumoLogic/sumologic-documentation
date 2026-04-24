@@ -1,7 +1,7 @@
 ---
 id: schedule-search
 title: Create a Scheduled Search
-description: Learn how to save and schedule a log search to run at a regularly scheduled time, and add alerts.
+description: Save and schedule Sumo Logic log searches to run at specified intervals and configure alerts, including email, webhook, and other notification options.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,6 +9,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This article outlines the process of creating a Scheduled Search, which is essentially a saved [Log Search](/docs/search) that you set to run at specified intervals and configure with [alerts](#step-6-choose-a-scheduled-search-alert-type).
 
 To run a Scheduled Search using receipt time, save the search with receipt time enabled.
+
+To run a Scheduled Search using searchable time, save the search with searchable time enabled.
 
 import TerraformLink from '../../reuse/terraform-link.md';
 
@@ -25,7 +27,7 @@ This section describes how to create a Scheduled Search at the time you save a s
 ### Step 1. Initiate Creation
 
 1. Run a Log Search and click the save icon.
-1. In the popup, click **Schedule this search**.<br/><img src={useBaseUrl('img/alerts/schedule-this-search.png')} alt="schedule-this-search.png" width="500"/>
+1. In the popup, click **Schedule this search**.<br/><img src={useBaseUrl('img/alerts/schedule-this-search.png')} alt="Schedule this search" width="500"/>
 
 ### Step 2. Set Run Frequency
 
