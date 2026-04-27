@@ -143,13 +143,18 @@ The following table provides a summary list of key features by Flex package acco
 
 ## Account Overview
 
+:::note
+- To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) role capability. 
+- To view, create, and manage the **Create Usage Alerts**, you must have the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities/#alerting) role capability.
+:::
+
 The **Account Overview** tab provides a detailed view of your Sumo Logic account, including organization details, subscription type, contract periods, credit usage, live dashboards, and real-time alerts. Account owners can also reassign the Account Owner role from this page.
 
 To access the **Account Overview** tab:  
 * **[New UI](/docs/get-started/sumo-logic-ui)**. Navigate to **Administration > Account > Account Overview**, or select **Account Overview** from the **Go To...** menu.
 * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. Navigate to **Administration > Account > Account Overview**.  
 
-To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities/#data-management) capability.
+<img src={useBaseUrl('/img/manage/account/account-usage-fields-flex.png')} alt="flex-account-overview-credits" style={{border:'1px solid gray'}} width="800"/>  
 
 ### Key features  
 
@@ -159,6 +164,7 @@ To view this tab, your role must include the [View Account Overview](/docs/manag
 * Download usage reports or CSV files.  
 * Hover over charts for detailed data insights.  
 * Usage data updates frequently to reflect near real-time account status, while storage usage updates daily and may take up to 24 hours to appear.
+* Create alerts for 70% and 90% credit breach.
 
 ### Organization information panel  
 
@@ -166,6 +172,8 @@ To view this tab, your role must include the [View Account Overview](/docs/manag
 * **Plan**. Shows your subscription type (e.g., Trial, Enterprise Suite Flex).  
 * **Contract period**. Lists the start and end dates of your contract.  
 * **Live Dashboard Panels and Real-Time Alerts Count**. Displays the count of live dashboards and real-time alerts.
+* **Create Usage Alert**. Click this button to create a monitor that sends a warning alert when 70% of credits are used and a critical alert when 90% of credits are used. This opens the **New Monitor** pane with a prefilled query. In the **Trigger Type** section, select the alert severity you want to configure, **Warning** or **Critical**, based on the percentage of credits consumed. You can then add your preferred notification channels, such as email, Slack, or webhooks, and save the monitor to create the alert. For more customization, refer to [Create a New Monitor](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions).
+
 
 ### Total Credit Usage panel  
 

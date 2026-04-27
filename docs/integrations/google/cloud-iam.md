@@ -84,7 +84,7 @@ The Google Cloud IAM App uses [Google Cloud Audit Logs](https://cloud.google.com
 
 ### Sample queries
 
-```sql title="Added roles over time"
+```sumo title="Added roles over time"
 _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 | json "message.data.resource.type" as type
 | parse regex "\s+\"logName\":\"(?<log_name>\S+)\""

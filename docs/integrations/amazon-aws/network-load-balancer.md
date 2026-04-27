@@ -60,6 +60,7 @@ Namespace for AWS Network Load Balancer Service is AWS/NetworkELB.
 
 FER **AwsObservabilityNLBCloudTrailLogsFER** to extract fields region, namespace, networkloadbalancer, accountid will be created as a part of app installation.
 
+
 ## Metric rules
 
 Metric Rule **AwsObservabilityNLBMetricsAddonEntityRule** for the AWS/NetworkELB namespace will be created as a part of app installation.

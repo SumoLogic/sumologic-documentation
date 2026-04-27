@@ -53,7 +53,7 @@ This app uses Sumo Logic’s [Databricks Audit source](/docs/send-data/hosted-co
 
 ## Sample queries
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourceCategory="Labs/DatabricksAudit"
 | json "action_name", "audit_level", "event_time", "response", "service_name", "source_ip_address", "user_identity", "workspace_id" as action_name, audit_level, event_time, response, service_name, ip_address, user_identity, workspace_id nodrop
 | json field=response "status_code", "result", "error_message" as status_code, result, error_message nodrop
@@ -73,7 +73,7 @@ _sourceCategory="Labs/DatabricksAudit"
 | count
 ```
 
-```sql title="API Response Code"
+```sumo title="API Response Code"
 _sourceCategory="Labs/DatabricksAudit"
 | json "action_name", "audit_level", "event_time", "response", "service_name", "source_ip_address", "user_identity", "workspace_id" as action_name, audit_level, event_time, response, service_name, ip_address, user_identity, workspace_id nodrop
 | json field=response "status_code", "result", "error_message" as status_code, result, error_message nodrop

@@ -154,7 +154,7 @@ This app uses Sumo Logic’s [VMware Workspace ONE Source](/docs/send-data/hoste
     
 ## Sample queries
 
-```sql title="Total Devices"
+```sumo title="Total Devices"
 _sourcecategory = "VMWare"
 | json  "Ownership", "UserEmailAddress", "IsDeviceDNDEnabled", "LocationGroupName", "Imei", "SystemIntegrityProtectionEnabled", "DeviceFriendlyName", "ProcessorArchitecture", "IsRoaming", "ComplianceStatus", "UserName", "LastComplianceCheckOn", "IsDeviceLocatorEnabled", "HostName", "IsCloudBackupEnabled", "LastEnrolledOn", "DeviceReportedName", "SerialNumber", "IsActivationLockEnabled", "CompromisedStatus", "OperatingSystem", "Model", "DataProtectionStatus", "SecurityPatchDate", "LocalHostName", "IsSupervised", "Platform", "LocationGroupId.Name", "OSBuildVersion", "TotalPhysicalMemory", "OEMInfo", "LastCompromisedCheckOn", "UserId.Uuid", "UserId.Name", "EnrollmentStatus", "DataEncryptionYN" as ownership,user_email, is_dnd_enabled, location_group_name, imei, is_system_protection_enabled, device_name, architecture, is_roaming, compliance_status, user_name, last_compliance_checked_on, is_device_location_enabled, hostname, is_cloud_backup_enabled, last_enrolled_on, device_reported_name, serial_number, is_activation_lock_enabled, compromised_status, os, model, data_protection_status, security_patch_date, local_hostname, is_supervised, platform, location_groupid_name, os_build_version, total_physical_mem, oem_info, last_compromised_checked_on, uuid, user_name1, entrollment_status, data_encryption nodrop
 | json "DeviceNetworkInfo[0].IPAddress" as ip nodrop

@@ -18,14 +18,14 @@ To create Box Plot Chart panels, your query must include:
 
 For example, this query can be rendered as a Box Plot Chart:
 
-```sql
+```sumo
 error | 5 as a | 6 as b | 7 as c | 8 as d | 9 as e | min(a), pct(b,25), pct(c,50), pct(d,75), max(e)
 ```
 
 Because this query does not meet all the requirements, it cannot be
 rendered as a Box Plot Chart:
 
-```sql
+```sumo
 error | 5 as a | 7 as b | 7 as c | 7 as d | avg(a,b), max(c,d), min(c)
 ```
 
@@ -33,13 +33,13 @@ The above query is missing the lower, median, and upper quartile values.
 
 If you query contains more than one of a min, lower quartile, median quartile, upper quartile, or max value, the Box Plot will be rendered using the first value encountered.  For example, the box plot rendered for this query would be based on the first `min` value in the query, `min(a)`.
 
-```sql
+```sumo
 error | 5 as a | 6 as b | 7 as c | 8 as d | 9 as e | min(a), min (b), pct(b,25), pct(c,50), pct(d,75), max(e)
 ```
 
 The [Sumo Logic App for Amazon VPC Flow Logs](/docs/integrations/amazon-aws/vpc-flow-logs) uses a query that creates a Box Plot Chart. It is:
 
-```sql
+```sumo
 _sourceCategory=vpc  
 | json "message","logStream","logGroup"
 | parse field=message "* * * * * * * * * * * * * *" as version,accountID,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status

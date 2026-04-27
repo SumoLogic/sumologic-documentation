@@ -21,7 +21,7 @@ This app includes [built-in monitors](#trellix-mvision-epo-alerts). For details 
 
 ## Log types
 
-This app uses Sumo Logic’s [Trellix mVision ePO Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source/) to collect event logs from the Trellix mVision ePO platform.
+This app uses Sumo Logic’s [Trellix Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-source/) to collect event logs from the Trellix platform.
 
 ## Sample log message
 
@@ -87,7 +87,7 @@ This app uses Sumo Logic’s [Trellix mVision ePO Source](/docs/send-data/hosted
 
 ## Sample queries
 
-```sql title="Total Threat Detections"
+```sumo title="Total Threat Detections"
 _sourceCategory="Trellix-mVision-ePO"
 | json "id", "attributes.threathandled", "attributes.threatseverity", "attributes.threattype", "attributes.threatcategory", "attributes.analyzerdetectionmethod", "attributes.targethostname", "attributes.threatname", "attributes.analyzeripv4", "attributes.timestamp", "attributes.sourcehostname", "attributes.sourceusername", "attributes.sourceprocessname", "attributes.targetprocessname", "attributes.threatactiontaken", "attributes.targetfilename", "attributes.targethash", "attributes.sourceipv4", "attributes.targetipv4", "attributes.targetport", "attributes.targetprotocol", "attributes.sourceurl", "attributes.targetusername", "attributes.targetipv6" as id, threat_handled, threat_severity, threat_type, threat_category, analyzer_detection_method, target_hostname, threat_name, analyzer_ipv4, timestamp, source_hostname, source_username, source_processname, target_processname, threat_action_taken, target_filename, target_hash, source_ipv4, target_ipv4, target_port, target_protocol, source_url, target_username, target_ipv6 nodrop
 
@@ -111,7 +111,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 <CollectionConfiguration/>
 
 :::important
-Use the [Cloud-to-Cloud Integration for Trellix mVision ePO](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Trellix mVision ePO app is properly integrated and configured to collect and analyze your Trellix mVision ePO data.
+Use the [Cloud-to-Cloud Integration for Trellix](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Trellix mVision ePO app is properly integrated and configured to collect and analyze your Trellix mVision ePO data.
 :::
 
 ### Create a new collector and install the app

@@ -85,7 +85,7 @@ into slot 1
 
 The following query is from the High Severity Threats panel of the Cisco Meraki - Overview dashboard.
 
-```sql
+```sumo
 _sourceCategory=*meraki* "security_event"
 | parse regex " (?<name>\S*?)\s(?<msg_type>urls|flows|events|ids-alerts|security_event|airmarshal_events?)\s+"
 | parse "security_event * signature=* priority=* timestamp=* dhost=* direction=* protocol=* src=*:* dst=*:* message: *" as type, signature, priority, timestamp, dhost, direction, protocol, src_ip, src_port, dest_ip, dest_port, msg nodrop

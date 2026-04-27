@@ -1,7 +1,7 @@
 ---
 id: aws-privatelink
-title: Sumo Logic Connector for AWS PrivateLink (Beta)
-sidebar_label: AWS PrivateLink (Beta)
+title: Sumo Logic Connector for AWS PrivateLink
+sidebar_label: AWS PrivateLink
 description: AWS PrivateLink provides private connectivity between VPCs, AWS services, and your on-premises networks, without exposing your traffic to the public internet.
 ---
 
@@ -11,9 +11,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
-<!-- Originally added as a beta article with SUMO-187085. -->
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+<!-- Originally added as a preview article with SUMO-187085. -->
 
 Sumo Logic provides the ability to configure private connectivity between your AWS Infrastructure and Sumologic via [AWS PrivateLink](https://aws.amazon.com/privatelink). This prevents any traffic from being accessible to the public internet.
 

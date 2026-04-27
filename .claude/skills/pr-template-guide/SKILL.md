@@ -2,6 +2,8 @@
 
 This document provides guidance on formatting PR descriptions according to the repository's official PR template. **Use this for ALL pull requests**, regardless of what changed or how the changes were made.
 
+**KEY RULE**: All PR descriptions and bulleted lists of changes appear AFTER the "## Purpose of this pull request" heading, BEFORE the "## Select the type of change" heading.
+
 ## Official PR Template
 
 Located at `.github/PULL_REQUEST_TEMPLATE.md`:
@@ -71,6 +73,8 @@ Use when:
 
 ## PR Description Format
 
+**IMPORTANT**: All PR descriptions (including bulleted lists of changes) appear AFTER the "## Purpose of this pull request" heading, BEFORE the "## Select the type of change" heading.
+
 ```markdown
 ## Purpose of this pull request
 
@@ -92,9 +96,9 @@ This pull request {clear description of what changed and why}.
 
 ## Best Practices
 
-1. **Ask for ticket number** - Always ask for the Jira/GitHub ticket number (e.g., DOCS-1234). Use the full URL in the PR body. Optional for quick typo fixes or small bug fixes.
+1. **Extract ticket from branch name** - If the current branch name follows the pattern DOCS-XXXX, CONN-XXXX, etc., automatically extract the ticket number and use the full Jira URL (e.g., `https://sumologic.atlassian.net/browse/DOCS-1540`). If no ticket pattern in branch name, ask the user for the ticket number. Use the full URL in the PR body. Tickets are optional only for quick typo fixes or small bug fixes.
 2. **Pre-check the right box** - Analyze the changes and pre-select the appropriate type
-3. **Write clear descriptions** - First line should summarize changes, add bullets for details
+3. **Write clear descriptions** - First line should summarize changes, add bullets for details. **All description content goes under "## Purpose of this pull request"**
 4. **Format for gh pr create** - Use heredoc format for proper multiline PR bodies
 5. **Match commit messages** - Keep PR title and commit message aligned
 
@@ -212,6 +216,12 @@ Ticket links are preferred for most PRs. Always use full URLs:
 - **GitHub**: `https://github.com/SumoLogic/sumologic-documentation/issues/123`
 - **Asana**: Full task URL
 
+### How to Determine the Ticket Number
+
+1. **Check branch name first** - If the current branch name follows patterns like DOCS-1540, CONN-5675, etc., extract the ticket number and construct the full Jira URL automatically
+2. **Ask the user** - If no ticket pattern is found in the branch name, ask the user for their ticket number
+3. **Skip for trivial fixes** - If it's a quick typo fix or minor correction, tickets are optional
+
 **When tickets are optional:**
 - Quick typo fixes (1-2 word changes)
 - Small bug fixes (one-line changes)
@@ -222,8 +232,6 @@ Ticket links are preferred for most PRs. Always use full URLs:
 - Content updates or revisions
 - Dependency updates
 - Any substantial changes
-
-Always ask the user for their ticket number before creating the PR. If they don't have one for a small fix, proceed without it.
 
 ## PR Title Format
 

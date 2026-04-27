@@ -157,7 +157,7 @@ service:
 ```
 
 Doing this will allow you to search the collectors logs in Sumo Logic by performing a log search similar to the following:
-```
+```sumo
 _collector="<collector name>" and _sourceName="/var/log/otelcol.log"
 ```
 
@@ -215,7 +215,7 @@ service:
 ```
 
 Doing this will allow you to search the collectors metrics in Sumo Logic by performing a metrics search similar to the following:
-```
+```sumo
 _collector="<collector name>"  _sourcename="otc metric input"
 ```
 

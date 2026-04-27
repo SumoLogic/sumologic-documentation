@@ -128,7 +128,7 @@ Using an open source Python tool called mjson that comes with the standard Pytho
 
 When running your command to get the results, simply add the following. Note the **> results.txt** which is saving the results to a file named **results.txt**.
 
-```sql
+```bash
 | grep "\"_raw\":" | sed 's/^[ \t]*"_raw": "//g' | sed 's/",[ \t]*$//g' > results.txt
 ```
 

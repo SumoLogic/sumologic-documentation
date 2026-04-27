@@ -193,7 +193,7 @@ This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapi
 
 ## Sample queries
 
-```sql title="Assets by Type"
+```sumo title="Assets by Type"
 _sourceCategory="Rapid7" assessed_for_policies // fetches assets
 | json "id", "type", "os_system_name", "risk_score", "host_name", "ip","severe_vulnerabilities", "total_vulnerabilities", "last_assessed_for_vulnerabilities", "mac", "last_scan_end", "tags[*].name" as id, type, operating_system, risk_score, host_name, ip, severe_vulnerabilities, total_vulnerabilities, last_assessed_time, mac, last_scan_end, tag_name_list nodrop
 | extract field=tag_name_list "\"?(?<tag_name>[\w\s\-&.-z)(,]*?)\"?[,\n\]]" multi
@@ -204,7 +204,7 @@ _sourceCategory="Rapid7" assessed_for_policies // fetches assets
 | sort by frequency
 ```
 
-```sql title="Top 10 Vulnerabilities"
+```sumo title="Top 10 Vulnerabilities"
 _sourceCategory="Rapid7" (cvss_v2_access_complexity or asset_id)
 | join
 (json "id","severity","risk_score" as id, severity,risk_score) as vulnerability,

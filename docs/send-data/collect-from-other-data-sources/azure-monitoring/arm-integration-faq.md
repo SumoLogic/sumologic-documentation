@@ -58,7 +58,7 @@ The following is a Field Extraction Rule (FER) solution.
 
 You extract the resource type in FERs and override the `_sourceCategory` with `<custom source category for ex azure_logs/prod/NETWORKSECURITYGROUPS>` so that when a user searches, the new sourcecategory is used. For example:
 
-```
+```sumo
 _sourceCategory = azure_logs | json auto | parse field=resource_id  "/*/*"
 as resource_type, resource_name | concat('azure_logs/prod/", resource_type) as _sourceCategory
 ```
@@ -76,7 +76,7 @@ All Azure functions are enabled with application insights. To export Azure funct
 
 1. Go to the Sumo Logic **App Catalog** and navigate to your **Azure Function** app.
 1. Go to **Monitoring > Logs**, and run the below query.
-    ```sql
+    ```sumo
     union isfuzzy=true
     availabilityResults,
     requests,
@@ -233,7 +233,7 @@ The following is a Field Extraction Rule (FER) solution.
 
 You extract the container name in FERs  and override the `_sourceCategory` with `_sourceCategory/<containername>` so that when a user searches the new sourcecategory is used. For example:
 
-```
+```sumo
 _sourceCategory = azure_logs | json auto | parse field=resource_id  "/NETWORKSECURITYGROUPS/*"
 as nsg_name | concat('azure_logs/", nsg_name) as _sourceCategory
 ```
@@ -247,7 +247,7 @@ To filter events by container name, do the following:
 
 1. Go to **Event subscription > Filters** tab.
 2. Enter the following in the Subject Begins With field, replacing `<container_name>` with the name of the container from where you want to export logs.
-   ```sql
+   ```sumo
    /blobServices/default/containers/<container_name>/
    ```
 

@@ -133,7 +133,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 This sample query is from the **Varnish Overview - Traffic Volume** dashboard > **MB Served Over Time** panel.
 
-```sql title="Query String"
+```sumo title="Query String"
 %"sumo.datasource"=varnish %"webengine.system"=varnish %"webengine.cluster.name"=* | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw
 | parse regex "(?<client_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s+(?<logname>\S+)\s+(?<user>[\S]+)\s+\[" nodrop

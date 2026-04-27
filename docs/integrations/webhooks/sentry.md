@@ -60,7 +60,7 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory="webhook/sentry" action issue id project
 | json "action", "actor.name", "data.issue.id", "data.issue.title", "data.issue.level", "data.issue.status", "data.issue.platform", "data.issue.firstSeen", "data.issue.lastSeen", "data.issue.project.name", "data.issue.metadata.type", "data.issue.metadata.value", "data.issue.count", "data.issue.substatus", "data.issue.assignedTo" as action, actor_name, issue_id, title, level, status, platform, first_seen, last_seen, project, error_type, error_value, issue_count, substatus, assigned_to_raw nodrop
 | json field=assigned_to_raw "name" as assigned_to_name nodrop
@@ -106,7 +106,7 @@ Follow the below steps to configure the Sentry webhook.
 7. Assign the necessary permissions.<br/><img src={useBaseUrl('img/integrations/webhooks/Sentry-Permission.png')} style={{border: '1px solid black'}} alt="Sentry Permission"/>
 8. Enable **Webhooks**.<br/><img src={useBaseUrl('img/integrations/webhooks/Sentry-Webhooks.png')} style={{border: '1px solid black'}} alt="Sentry Webhooks"/>
 9. Verify Sentry events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-    ```sql
+    ```sumo
     _sourceCategory=webhook/sentry
     ```
 

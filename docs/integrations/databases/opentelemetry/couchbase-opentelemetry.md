@@ -172,7 +172,7 @@ _time=09/Jan/2023:04:50:03 +0000+07:00 _level=ERROR _msg=Failed to perform INSER
 
 Following query is from **Average Latency of All HTTP Requests** panel from Couchbase Overview dashboard:
 
-```sql
+```sumo
  %"db.cluster.name"=* %"deployment.environment"=* %"sumo.datasource"="couchbase"
 | json "log" as _rawlog nodrop
 | if(isEmpty(_rawlog),_raw,_rawlog) as _raw

@@ -25,7 +25,6 @@ SumoLogic Lambda Extension is available in the following AWS regions:
 us-east-1 (N. Virginia)
 us-east-2 (Ohio)
 eu-north-1 (Stockholm)
-ap-south-1 (Mumbai)
 eu-west-3 (Paris)
 eu-west-2 (London)
 eu-south-1 (Milan)

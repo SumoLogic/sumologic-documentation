@@ -59,7 +59,7 @@ This app uses Sumo Logic’s [Carbon Black Inventory Source](/docs/send-data/hos
 
 ## Sample queries
 
-```sql title="Total Devices"
+```sumo title="Total Devices"
 _sourceCategory="Labs/CarbonBlackInventory"
 | json "id", "quarantined", "compliance_status", "host_based_firewall_status", "av_status", "sensor_pending_update", "os", "vulnerability_severity", "last_external_ip_address", "sensor_states", "passive_mode", "name", "sensor_out_of_date", "last_reported_time", "last_contact_time", "registered_time", "vulnerability_score", "os_version", "av_last_scan_time" as id, quarantined, compliance_status, host_based_firewall_status, av_status_list, sensor_pending_update, os, vulnerability_severity, last_external_ip_address, sensor_states_list, passive_mode, name, sensor_out_of_date, last_reported_time, last_contact_time, registered_time, vulnerability_score, os_version, av_last_scan_time nodrop
 

@@ -4,7 +4,7 @@
 
 User-agent: *
 Disallow: /docs/reuse/*
-Disallow: /docs/beta/*
+Disallow: /docs/preview/*
 Disallow: /tags/*
 Disallow: /*?tags=
 Disallow: /ja/*

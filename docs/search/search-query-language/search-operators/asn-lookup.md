@@ -10,9 +10,7 @@ Sumo Logic can lookup an Autonomous System Number (ASN) and organization name b
 
 The ASN Lookup operator uses [lookup-classic](/docs/search/search-query-language/search-operators/lookup-classic) with a specific path, `asn://default`, to provide the ASN and associated organization.
 
-```sumo
-lookup\<field\> from asn://default on ip\<ip_address\>
-```
+`lookup\<field\> from asn://default on ip\<ip_address\>`
 
 |  Lookup fields |  Description |
 |:--|:--|

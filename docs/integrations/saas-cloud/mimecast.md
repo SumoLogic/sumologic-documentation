@@ -106,7 +106,7 @@ The app uses [Mimecast Source](/docs/send-data/hosted-collectors/cloud-to-cloud-
 <details>
 <summary>View Sample Queries</summary>
 
-```sql title="Total Audit Events"
+```sumo title="Total Audit Events"
 _sourceCategory={{Logsdatasource}} auditType id
 | json "id", "auditType", "user", "category" as id, audit_type, user, category nodrop
 
@@ -117,7 +117,7 @@ _sourceCategory={{Logsdatasource}} auditType id
 | count
 ```
 
-```sql title="DLP Events Over Time"
+```sumo title="DLP Events Over Time"
 _sourceCategory={{Logsdatasource}} senderAddress 
 | json "messageId", "action", "policy", "route", "senderAddress", "recipientAddress" as id, action, policy, route, sender, receiver nodrop
 
@@ -130,7 +130,7 @@ _sourceCategory={{Logsdatasource}} senderAddress
 | fillmissing timeslice
 ```
 
-```sql title="Hold Messages by Policy"
+```sumo title="Hold Messages by Policy"
 _sourceCategory={{Logsdatasource}} reasonCode policyInfo
 | json "id", "reasonCode", "route", "policyInfo", "from.emailAddress", "to.emailAddress" as id, reason_code, route, policy_info, sender_email, receiver_email nodrop
 
@@ -142,7 +142,7 @@ _sourceCategory={{Logsdatasource}} reasonCode policyInfo
 | sort by _count, policy_info asc
 ```
 
-```sql title="Geo Location of Senders"
+```sumo title="Geo Location of Senders"
 _sourceCategory={{Logsdatasource}} eventType senderIp
 | json "aggregateId", "eventType","action","accountId", "route", "senderIp" as id, event_type, action, account_id, route, sender_ip nodrop
 

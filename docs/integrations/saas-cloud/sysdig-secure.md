@@ -168,7 +168,7 @@ This app uses Sumo Logic’s [Sysdig Secure Source](/docs/send-data/hosted-colle
 
 ### Sample queries
 
-```sql title="Total Running Critical Severity Vulnerabilities"
+```sumo title="Total Running Critical Severity Vulnerabilities"
 _sourceCategory=Labs/SysdigSecure mainAssetName
 | json "mainAssetName", "resourceId", "runningVulnTotalBySeverity.critical","vulnTotalBySeverity.critical", "runningVulnTotalBySeverity.high", "vulnTotalBySeverity.high", "runningVulnTotalBySeverity.medium", "vulnTotalBySeverity.medium", "runningVulnTotalBySeverity.low", "vulnTotalBySeverity.low", "runningVulnTotalBySeverity.negligible", "vulnTotalBySeverity.negligible", "policyEvaluationResult", "$['scope']['asset.type']", "$['scope']['kubernetes.cluster.name']", "$['scope']['workload.name']", "$['scope']['kubernetes.workload.type']" as asset_name, resource_id, running_critical_vuln, total_critical_vuln, running_high_vuln, total_high_vuln, running_medium_vuln, total_medium_vuln, running_low_vuln, total_low_vuln, running_negligible_vuln, total_negligible_vuln, policy_result, asset_type, kubernete_cluster, workload_name, kubernete_workload_type nodrop
 
@@ -183,7 +183,7 @@ _sourceCategory=Labs/SysdigSecure mainAssetName
 | sum(running_critical_vuln)
 ```
 
-```sql title="Resources by Package Count"
+```sumo title="Resources by Package Count"
 _sourceCategory=sysdig_secure_app
 | json "_resourceId", "assetType", "metadata.os", "metadata.architecture", "vulnerability", "package" as resource_id, asset_type, os, architecture, vuln, package nodrop
 | extract field=vuln "\"severity\":\s*\"(?<severity>[^\"]+)\"" nodrop

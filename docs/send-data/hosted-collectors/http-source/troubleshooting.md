@@ -35,7 +35,7 @@ This can occur when the Heroku app engine hits a timeout, does a retry, and expe
 
 You can run this query in Sumo to confirm the issue:
 
-```
+```sumo
 “Error L10 (output buffer overflow)" | parse ": * messages dropped" as num_dropped | sum(num_dropped) _collector,_source | sort by _sum
 ```
 
