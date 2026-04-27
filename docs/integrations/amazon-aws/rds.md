@@ -432,29 +432,7 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 ### Field Extraction Rule(s)
 
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
-
-```sql
-Rule Name: AwsObservabilityRdsCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventname eventsource "rds.amazonaws.com"
-```
-
-```sql title="Parse Expression"
-| json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as eventSource, region, requestParameters, responseElements, accountid nodrop 
-| where eventSource = "rds.amazonaws.com" | "aws/rds" as namespace  
-| json field=requestParameters "dBInstanceIdentifier", "resourceName", "dBClusterIdentifier", "dBProxyName" as dBInstanceIdentifier1, resourceName, dBClusterIdentifier1, dBProxyName1 nodrop 
-| json field=responseElements "dBInstanceIdentifier", "dBClusterIdentifier", "dBProxy.dBProxyName", "dBProxyTargetGroup.dBProxyName" as dBInstanceIdentifier3, dBClusterIdentifier3, dBProxyName2, dBProxyName3 nodrop
-| parse field=resourceName "arn:aws:rds:*:db:*" as f1, dBInstanceIdentifier2 nodrop 
-| parse field=resourceName "arn:aws:rds:*:cluster:*" as f1, dBClusterIdentifier2 nodrop
-| if (resourceName matches "arn:aws:rds:*:db:*", dBInstanceIdentifier2, if (!isEmpty(dBInstanceIdentifier1), dBInstanceIdentifier1, dBInstanceIdentifier3) ) as dBInstanceIdentifier 
-| if (resourceName matches "arn:aws:rds:*:cluster:*", dBClusterIdentifier2, if (!isEmpty(dBClusterIdentifier1), dBClusterIdentifier1, dBClusterIdentifier3) ) as dBClusterIdentifier 
-| if (isEmpty(dBInstanceIdentifier), dBClusterIdentifier, dBInstanceIdentifier) as dbidentifier 
-| tolowercase(dbidentifier) as dbidentifier
-| if (!isEmpty(dBProxyName1), dBProxyName1, if (!isEmpty(dBProxyName2), dBProxyName2, dBProxyName3)) as proxyname
-| tolowercase(proxyname) as proxyname
-| fields region, namespace, dBInstanceIdentifier, dBClusterIdentifier, dbidentifier, proxyname, accountid
-```
+FER **AwsObservabilityRdsCloudTrailLogsFER** to extract fields region, namespace, dBInstanceIdentifier, dBClusterIdentifier, dbidentifier, proxyname, accountid will be created as a part of app installation.
 
 ### Centralized AWS CloudTrail log collection
 
@@ -481,49 +459,11 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 #### Create/Update Field Extraction Rule(s) for RDS CloudWatch logs
 
-
-```
-Rule Name: AwsObservabilityGenericCloudWatchLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* region=* (_sourceHost=/aws/* or _sourceHost=API*Gateway*Execution*Logs*)
-Parse Expression:
-if (isEmpty(namespace),"unknown",namespace) as namespace
-| if (_sourceHost matches "/aws/lambda/*", "aws/lambda", namespace) as namespace 
-| if (_sourceHost matches "/aws/rds/*", "aws/rds", namespace) as namespace 
-| if (_sourceHost matches "/aws/ecs/containerinsights/*", "aws/ecs", namespace) as namespace 
-| if (_sourceHost matches "/aws/kinesisfirehose/*", "aws/firehose", namespace) as namespace 
-| if (_sourceHost matches "/aws/apigateway/*", "aws/apigateway", namespace) as namespace 
-| if (_sourceHost matches "API-Gateway-Execution-Logs*", "aws/apigateway", namespace) as namespace 
-| parse field=_sourceHost "/aws/lambda/*" as functionname nodrop | tolowercase(functionname) as functionname 
-| parse field=_sourceHost "/aws/rds/proxy/*" as proxyname nodrop
-| parse field=_sourceHost "/aws/rds/instance/*/" as dbidentifier nodrop
-| parse field=_sourceHost "/aws/rds/cluster/*/" as dbidentifier nodrop
-| parse field=_sourceHost "/aws/apigateway/*/*" as apiid, stage nodrop 
-| parse field=_sourceHost "API-Gateway-Execution-Logs_*/*" as apiid, stage nodrop | apiid as apiName 
-| tolowercase(dbidentifier) as dbidentifier 
-| fields namespace, functionname, proxyname, dbidentifier, apiid, apiName
-```
+FER **AwsObservabilityGenericCloudWatchLogsFER** to extract fields namespace, functionname, proxyname, dbidentifier, apiid, apiName will be created as a part of app installation.
 
 ### Metric Rules
 
-Create the following two Metric Rules for the aws/rds namespace if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
-
-```sql title="Rule 1"
-Rule name: AwsObservabilityRDSClusterMetricsEntityRule
-Metric match expression: Namespace=AWS/RDS DBClusterIdentifier=*
-Variable name: dbidentifier
-Tag sequence: $DBClusterIdentifier._1
-Save it
-```
-
-```sql title="Rule 2"
-Rule name: AwsObservabilityRDSInstanceMetricsEntityRule
-Metric match expression: Namespace=AWS/RDS DBInstanceIdentifier=*
-Variable name: dbidentifier
-Tag sequence: $DBInstanceIdentifier._1
-Save it
-```
+Metric Rules **AwsObservabilityRDSClusterMetricsEntityRule** and **AwsObservabilityRDSInstanceMetricsEntityRule** for the aws/rds namespace will be created as a part of app installation.
 
 ## Installing the RDS app  
 

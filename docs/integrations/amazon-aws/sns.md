@@ -111,33 +111,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 
 ### Field Extraction Rule(s)
 
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
-
-```sql
-Rule Name: AwsObservabilitySNSCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventname eventsource \"sns.amazonaws.com\"
-```
-
-**Parse Expression**:
-
-```sql
-| json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements nodrop
-| where event_source = "sns.amazonaws.com"
-| json field=userIdentity "accountId", "type", "arn", "userName"  as accountid, type, arn, username nodrop
-| parse field=arn ":assumed-role/*" as user nodrop
-| parse field=arn "arn:aws:iam::*:*" as accountid, user nodrop
-| json field=requestParameters "topicArn", "name", "resourceArn", "subscriptionArn" as req_topic_arn, req_topic_name, resource_arn, subscription_arn  nodrop
-| json field=responseElements "topicArn" as res_topic_arn nodrop
-| if (isBlank(req_topic_arn), res_topic_arn, req_topic_arn) as topic_arn
-| if (isBlank(topic_arn), resource_arn, topic_arn) as topic_arn
-| parse field=topic_arn "arn:aws:sns:*:*:*" as region_temp, accountid_temp, topic_arn_name_temp nodrop
-| parse field=subscription_arn "arn:aws:sns:*:*:*:*" as region_temp, accountid_temp, topic_arn_name_temp, arn_value_temp nodrop
-| if (isBlank(req_topic_name), topic_arn_name_temp, req_topic_name) as topicname
-| if (isBlank(accountid), recipient_account_id, accountid) as accountid
-| "aws/sns" as namespace
-| fields region, namespace, topicname, accountid
-```
+FER **AwsObservabilitySNSCloudTrailLogsFER** to extract fields region, namespace, topicname, accountid will be created as a part of app installation.
 
 ## Centralized AWS CloudTrail Log Collection
 In case, you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following **Field Extraction Rule** to map a proper AWS account(s) friendly name/alias. Create it if not already present or update it as required.

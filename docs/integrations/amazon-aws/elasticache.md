@@ -142,24 +142,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 
 ### Field Extraction Rule(s)
 
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
-
-```sql
-Rule Name: AwsObservabilityElastiCacheCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.com"
-```
-
-**Parse Expression**
-
-```sql
-| json "eventSource", "awsRegion", "requestParameters.cacheClusterId", "responseElements.cacheClusterId", "recipientAccountId" as eventSource, region, req_cacheClusterId, res_cacheClusterId, accountid nodrop
-| where eventSource = "elasticache.amazonaws.com"
-| if (!isEmpty(req_cacheClusterId), req_cacheClusterId, res_cacheClusterId) as cacheclusterid
-| "aws/elasticache" as namespace
-| tolowercase(cacheclusterid) as cacheclusterid
-| fields region, namespace, cacheclusterid, accountid
-```
+FER **AwsObservabilityElastiCacheCloudTrailLogsFER** to extract fields eventSource, region, req_cacheClusterId, res_cacheClusterId, accountid will be created as a part of app installation.
 
 ### Centralized AWS CloudTrail Log Collection
 

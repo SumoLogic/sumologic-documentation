@@ -133,26 +133,8 @@ Sumo Logic supports collecting metrics using two source types:
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
 
 ## Field Extraction Rule(s)
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
-* **Rule Name**: AwsObservabilitySQSCloudTrailLogsFER
-* **Applied at**: Ingest Time
-* **Scope (Specific Data)**: account=* eventname eventsource "sqs.amazonaws.com"
-* **Parse Expression**:
-
-```sql
-json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements", "sourceIPAddress" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements, src_ip  nodrop
-| json field=userIdentity "accountId", "type", "arn", "userName" as accountid, type, arn, username nodrop
-| json field=requestParameters "queueUrl" as queueUrlReq nodrop
-| json field=responseElements "queueUrl" as queueUrlRes nodrop
-| where event_source="sqs.amazonaws.com"
-| if(event_name="CreateQueue", queueUrlRes, queueUrlReq) as queueUrl
-| parse regex field=queueUrl "(?<queueName>[^\/]*$)"
-| if (isBlank(recipient_account_id), accountid, recipient_account_id) as accountid
-|! toLowerCase(queuename) as queuename
-| "aws/sqs" as namespace
-| fields region, namespace, queuename, accountid
-```
+FER **AwsObservabilitySQSCloudTrailLogsFER** to extract fields region, namespace, queuename, accountid will be created as a part of app installation.
 
 ## Centralized AWS CloudTrail Log Collection
 

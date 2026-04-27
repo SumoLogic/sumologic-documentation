@@ -58,40 +58,11 @@ Namespace for AWS Network Load Balancer Service is AWS/NetworkELB.
 
 ## Field Extraction Rule(s)
 
-Create a Field Extraction Rule for AWS Network Load Balancer Cloudtrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
-
-**AWS Network Load Balancer CloudTrail Logs**
-```sql
-Rule Name: AwsObservabilityNLBCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.amazonaws.com" "2015-12-01"
-```
-
-```sql title="Parse Expression"
-json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name", "requestParameters.type", "requestParameters.loadBalancerArn", "requestParameters.listenerArn", "apiVersion" as event_source, region, accountid, networkloadbalancer, loadbalancertype, loadbalancerarn, listenerarn, api_version nodrop
-| where event_source = "elasticloadbalancing.amazonaws.com" and api_version matches "2015-12-01" 
-| "" as namespace
-| parse field=loadbalancerarn ":loadbalancer/*/*/*" as balancertype1, networkloadbalancer1, f1 nodrop
-| parse field=listenerarn ":listener/*/*/*/*" as balancertype2, networkloadbalancer2, f1, f2 nodrop
-| if(loadbalancertype matches "network", "aws/networkelb", if(balancertype1 matches "net", "aws/networkelb", if(balancertype2 matches "net", "aws/networkelb", namespace))) as namespace 
-| if(loadbalancertype matches "application", "aws/applicationelb", if(balancertype1 matches "app", "aws/applicationelb", if(balancertype2 matches "app", "aws/applicationelb", namespace))) as namespace
-| where namespace="aws/networkelb" or isEmpty(namespace)  
-| if (!isEmpty(networkloadbalancer), networkloadbalancer, if (!isEmpty(networkloadbalancer1), networkloadbalancer1, networkloadbalancer2)) as networkloadbalancer
-| toLowerCase(networkloadbalancer) as networkloadbalancer 
-| fields region, namespace, networkloadbalancer, accountid
-```
+FER **AwsObservabilityNLBCloudTrailLogsFER** to extract fields region, namespace, networkloadbalancer, accountid will be created as a part of app installation.
 
 ## Metric rules
 
-Create the following Metric Rule for the AWS/NetworkELB namespace if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
-
-```sql title="Rule 1*"
-Rule name: AwsObservabilityNLBMetricsAddonEntityRule
-Metric match expression: Namespace=AWS/NetworkELB LoadBalancer=*
-Variable name: networkloadbalancer
-Tag sequence: $LoadBalancer._1
-Save it
-```
+Metric Rule **AwsObservabilityNLBMetricsAddonEntityRule** for the AWS/NetworkELB namespace will be created as a part of app installation.
 
 ## Installing the AWS Network Load Balancer app
 

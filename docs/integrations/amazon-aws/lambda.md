@@ -225,23 +225,8 @@ Create a Field Extraction Rule for AWS Lambda. Learn how to create a Field Extra
 
 ### Cloud Trail FER
 
-```sql
-Rule Name: AwsObservabilityFieldExtractionRule
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventname eventsource "lambda.amazonaws.com"
-```
+FER **AwsObservabilityFieldExtractionRule** to extract fields region, namespace, functionname, accountid will be created as a part of app installation.
 
-```sql title="Parse Expression"
-| json "eventSource", "awsRegion", "requestParameters", "recipientAccountId" as eventSource, region, requestParameters, accountid nodrop
-| where eventSource = "lambda.amazonaws.com"
-| json field=requestParameters "functionName", "resource" as functionname, resource nodrop
-| parse regex field=functionname "\w+:\w+:\S+:[\w-]+:\S+:\S+:(?<functionname>[\S]+)$" nodrop
-| parse field=resource "arn:aws:lambda:*:function:*" as f1, functionname2 nodrop
-| if (isEmpty(functionname), functionname2, functionname) as functionname
-| "aws/lambda" as namespace
-| tolowercase(functionname) as functionname
-| fields region, namespace, functionname, accountid
-```
 
 ### Centralized AWS CloudTrail Log Collection
 
@@ -268,16 +253,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 ### Cloud Watch FER
 
-```yml
-Rule Name: AwsObservabilityLambdaCloudWatchLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* region* _sourceHost=/aws/lambda/*
-Parse Expression:
-| parse field=_sourceHost "/aws/lambda/*" as functionname
-| tolowercase(functionname) as functionname
-| "aws/lambda" as namespace
-| fields functionname, namespace
-```
+FER **AwsObservabilityLambdaCloudWatchLogsFER** to extract fields functionname, namespace will be created as a part of app installation.
 
 ## Installing the AWS Lambda App
 
