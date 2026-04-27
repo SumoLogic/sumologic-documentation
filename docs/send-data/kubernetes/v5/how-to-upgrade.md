@@ -53,7 +53,7 @@ If you still have specific use cases that require forwarding metrics from your o
 
 This receiver accepts Prometheus remote write requests but only supports,
 - Remote Write v2 protocol
-- Remote write endpoint defaults to /api/v1/write, this is only endpoint where sumologic metrics pipeline accepts remote writes. You need to change your prometheus configuration to send metrics to this endpoint.
+- /api/v1/write as the default Remote write endpoint, this is only endpoint where sumologic metrics pipeline accepts remote writes. You need to change your prometheus configuration to send metrics to this endpoint.
   
 For guidelines on enabling Remote Write v2, please refer to the prometheusremotewritereceiver documentation
  [prometheusremotewrite receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/prometheusremotewritereceiver#prometheus-compatibility) documentation.
