@@ -134,7 +134,8 @@ Sumo Logic supports collecting metrics using two source types:
 
 ## Field Extraction Rule(s)
 
-FER **AwsObservabilitySQSCloudTrailLogsFER** to extract fields region, namespace, queuename, accountid will be created as a part of app installation.
+The FER `AwsObservabilitySQSCloudTrailLogsFER` to extract fields `region`, `namespace`, `queuename`, and `accountid` will be created as a part of app installation.
+
 ## Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following **Field Extraction Rule** to map a proper AWS account(s) friendly name/alias. Create it if not already present/update it as required.

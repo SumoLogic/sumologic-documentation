@@ -432,7 +432,7 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 ### Field Extraction Rule(s)
 
-FER **AwsObservabilityRdsCloudTrailLogsFER** to extract fields region, namespace, dBInstanceIdentifier, dBClusterIdentifier, dbidentifier, proxyname, accountid will be created as a part of app installation.
+The FER `AwsObservabilityRdsCloudTrailLogsFER` to extract fields `region`, `namespace`, `dBInstanceIdentifier`, `dBClusterIdentifier`, `dbidentifier`, `proxyname`, and `accountid` will be created as a part of app installation.
 
 ### Centralized AWS CloudTrail log collection
 
@@ -459,11 +459,11 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 #### Create/Update Field Extraction Rule(s) for RDS CloudWatch logs
 
-FER **AwsObservabilityGenericCloudWatchLogsFER** to extract fields namespace, functionname, proxyname, dbidentifier, apiid, apiName will be created as a part of app installation.
+The FER `AwsObservabilityGenericCloudWatchLogsFER` to extract fields `namespace`, `functionname`, `proxyname`, `dbidentifier`, `apiid`, and `apiName` will be created as a part of app installation.
 
 ### Metric Rules
 
-Metric Rules **AwsObservabilityRDSClusterMetricsEntityRule** and **AwsObservabilityRDSInstanceMetricsEntityRule** for the aws/rds namespace will be created as a part of app installation.
+The Metric Rules `AwsObservabilityRDSClusterMetricsEntityRule` and `AwsObservabilityRDSInstanceMetricsEntityRule` for the aws/rds namespace will be created as a part of app installation.
 
 ## Installing the RDS app  
 

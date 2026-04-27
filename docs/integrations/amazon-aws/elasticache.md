@@ -142,7 +142,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 
 ### Field Extraction Rule(s)
 
-FER **AwsObservabilityElastiCacheCloudTrailLogsFER** to extract fields eventSource, region, req_cacheClusterId, res_cacheClusterId, accountid will be created as a part of app installation.
+The FER `AwsObservabilityElastiCacheCloudTrailLogsFER` to extract fields `eventSource`, `region`, `req_cacheClusterId`, `res_cacheClusterId`, and `accountid` will be created as a part of app installation.
 
 ### Centralized AWS CloudTrail Log Collection
 

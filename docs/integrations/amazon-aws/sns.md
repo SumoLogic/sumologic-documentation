@@ -111,7 +111,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 
 ### Field Extraction Rule(s)
 
-FER **AwsObservabilitySNSCloudTrailLogsFER** to extract fields region, namespace, topicname, accountid will be created as a part of app installation.
+The FER `AwsObservabilitySNSCloudTrailLogsFER` to extract fields `region`, `namespace`, `topicname`, and `accountid` will be created as a part of app installation.
 
 ## Centralized AWS CloudTrail Log Collection
 In case, you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following **Field Extraction Rule** to map a proper AWS account(s) friendly name/alias. Create it if not already present or update it as required.

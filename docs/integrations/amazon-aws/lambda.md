@@ -225,7 +225,7 @@ Create a Field Extraction Rule for AWS Lambda. Learn how to create a Field Extra
 
 ### Cloud Trail FER
 
-FER **AwsObservabilityFieldExtractionRule** to extract fields region, namespace, functionname, accountid will be created as a part of app installation.
+The FER `AwsObservabilityFieldExtractionRule` to extract fields `region`, `namespace`, `functionname`, and `accountid` will be created as a part of app installation.
 
 ### Centralized AWS CloudTrail Log Collection
 
@@ -252,7 +252,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 ### Cloud Watch FER
 
-FER **AwsObservabilityLambdaCloudWatchLogsFER** to extract fields functionname, namespace will be created as a part of app installation.
+The FER `AwsObservabilityLambdaCloudWatchLogsFER` to extract fields `functionname` and `namespace` will be created as a part of app installation.
 
 ## Installing the AWS Lambda App
 
