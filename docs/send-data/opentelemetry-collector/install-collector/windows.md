@@ -160,13 +160,54 @@ Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumolog
 
 ## Uninstall
 
+The recommended way to uninstall the OpenTelemetry Collector depends on how you installed it.
+
+### Install script
+
+If you installed the Collector with the install script, you can use the command below to uninstall the Collector:
+
+```bash
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Uninstall
+```
+
+You can also use flag `-p` to remove all existing configurations as well:
+
+```bash
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Uninstall -Purge
+```
+
+### Manual step-by-step uninstall
+
 1. Go to **Add or remove programs**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-1.png')} alt="Windows uninstallation 1" width="550" />
 1. Find **OpenTelemetry Collector** and click **Uninstall**.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-2.png')} alt="Add or remove programs" width="550" />
 1. Confirm the uninstallation.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-3.png')} alt="Uninstall" width="350" />
 
 ## Upgrading the Collector
 
-To upgrade the collector perform installation step and it will automatically upgrade the binary in-place.
+First, you need to upgrade the Collector version. The exact steps depend on how it was installed.
+
+### Install Script
+
+Running the install script below will simply upgrade the collector to the latest version:
+
+```bash
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Upgrade
+```
+
+### Manual step-by-step Installation
+
+If you installed the Collector manually, the simplest way to upgrade is to follow these steps:
+
+1. [Uninstall the Collector manually](#manual-step-by-step-uninstall)
+1. [Install the Collector again with a new version](#manual-step-by-step-installation). Installing the collector manually will automatically upgrade the binary in-place.
+
+## Update your Config
+
+After an upgrade, you should make sure that your config for OpenTelemetry Collector is up to date.
+
+To see changes in upstream OpenTelemetry components, refer to the [core changelog](https://github.com/open-telemetry/opentelemetry-collector/releases) and [contrib changelog](https://github.com/open-telemetry/opentelemetry-collector-contrib/releases).
+
+List of breaking changes specific to Sumo Logic Distribution of OpenTelemetry Collector can be found [here](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/upgrading.md).
 
 ## Troubleshooting
 
