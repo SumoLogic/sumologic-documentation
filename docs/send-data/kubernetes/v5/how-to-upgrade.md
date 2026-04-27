@@ -8,7 +8,6 @@ description: This page describes how to upgrade Kubernetes Collection to v5.
 This guide walks you through upgrading to Sumo Logic Kubernetes Collection v5.0.0, including key changes, migration steps, and best practices to ensure a smooth transition. Here's what’s new:
 * Prometheus operator which has been deprecated in v4 has now been removed in v5
 * Otel operator is now the single source for metrics collection
-* Removed feasibility to forward prometheus metrics into Otel metrics pipeline as described [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v4.0/docs/kube-prometheus.md)
 
 Before proceeding, ensure you meet the requirements and review the necessary configuration changes detailed in this guide.
 
