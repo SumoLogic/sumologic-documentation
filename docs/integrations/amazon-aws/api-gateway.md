@@ -1,6 +1,7 @@
 ---
 id: api-gateway
 title: AWS API Gateway
+sidebar_label: AWS API Gateway
 description: Amazon API Gateway service allows you to create RESTful APIs, HTTP APIs, and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 ---
 
@@ -565,7 +566,7 @@ Enter a parse expression to create an `account` field that maps to the alias you
 
 Now that you have set up a collection for the **AWS API gateway**, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
@@ -715,3 +716,35 @@ Use these dashboards to:
 #### AWS API Gateway - Enhanced Monitoring (WebSocket API)
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/7.-AWS-API-Gateway-Enhanced-Monitoring-WebSocket-API.png' alt="Enhanced Monitoring (WebSocket API)" />
+
+## Create monitors for AWS API Gateway app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS API Gateway alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:-----|:------------|:----------------|:--|
+| `AWS API Gateway - High Server-Side Errors` | This alert fires where there are too many API requests (>5%) with server-side errors within 5 minutes. | Count > = 0.05 | Count < 0.05 |
+| `AWS API Gateway - High Client-Side Errors` | This alert fires where there are too many API requests (>5%) with client-side errors within 5 minutes. | Count > = 0.05 | Count < 0.05 |
+| `AWS API Gateway - High Integration Latency` | This alert fires when we detect the high integration latency for the API requests in a stage within 5 minutes. | Count > = 2000 | Count < 2000 |
+| `AWS API Gateway - High Latency` | This alert fires when we detect the high latency in a stage within 5 minutes for REST and HTTP API. | Count > = 2500 | Count < 2500 |
+| `AWS API Gateway - Low Traffic API` | This alert fires where there is low message traffic volume for the API within 5 minutes. | Count < = 1 | Count > 1 |
+| `AWS API Gateway - High Authorizer Errors` | This alert fires where there are too many API requests (>5%) with authorizer errors within 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS API Gateway - High Integration Errors` | This alert fires where there are too many API requests (>5%) with integration errors within 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS API Gateway - High WAF Errors` | This alert fires where there are too many API requests (>5%) with WAF errors within 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS API Gateway - High WAF Latency` | This alert fires when we detect the high WAF latency for the REST and WebSocket API requests in a stage within 5 minutes. | Count > 1000 | Count < = 1000 |
+
+## Upgrade/Downgrade the AWS API Gateway app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS API Gateway app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

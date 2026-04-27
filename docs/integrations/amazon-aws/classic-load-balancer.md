@@ -1,6 +1,7 @@
 ---
 id: classic-load-balancer
 title: AWS Classic Load Balancer
+sidebar_label: AWS Classic Load Balancer
 description: The Sumo Logic app for AWS Elastic Load Balancing Classic is a unified logs and metrics (ULM) app which helps you monitor the classic load balancer.
 ---
 
@@ -153,11 +154,11 @@ json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.loadBa
 | fields region, namespace, loadbalancername, accountid
 ```
 
-## Install the AWS Classic Load Balancer app
+## Installing the AWS Classic Load Balancer app
 
 Now that you have set up a collection for AWS Classic Load Balancer, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
@@ -256,3 +257,32 @@ Use this dashboard to:
 * Identify the most common error types and the users experiencing highest failure rates, facilitating targeted improvements and user support.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-CloudTrail-Audit.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for AWS Classic Load Balancer app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS Classic Load Balancer alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:-----|:------------|:----------------|:--|
+| `AWS Classic Load Balancer - Access from Highly Malicious Sources` | This alert fires when the Classic load balancer is accessed from highly malicious IP addresses within last 5 minutes. | Count > 0 | Count < = 0 |
+| `AWS Classic Load Balancer - Deletion Alert` | This alert fires when we detect greater than or equal to 2 application load balancers are deleted over a 5 minute time-period. | Count > = 2 | Count < 2 |
+| `AWS Classic Load Balancer - High 4XX Errors` | This alert fires where there are too many HTTP requests (>5%) with a response status of 4xx within an interval of 5 minutes. | Count > = 5 | Count < 5 |
+| `AWS Classic Load Balancer - High 5XX Errors` | This alert fires where there are too many HTTP requests (>5%) with a response status of 5xx within an interval of 5 minutes. | Count > = 5 | Count < 5 |
+| `AWS Classic Load Balancer - High Latency` | This alert fires when we detect that the average latency for a given Classic load balancer within a time interval of 5 minutes is greater than or equal to three seconds. | Count > = 3000 | Count < 3000 |
+| `AWS Classic Load Balancer - Targets Deregistered` | This alert fires when we detect greater than or equal to 1 target is de-registered over a 5 minute time-period. | Count > = 1 | Count < 1 |
+
+## Upgrade/Downgrade the AWS Classic Load Balancer app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS Classic Load Balancer app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

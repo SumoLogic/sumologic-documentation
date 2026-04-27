@@ -219,7 +219,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 Now that you have set up collection for AWS EC2 metrics install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
@@ -319,3 +319,32 @@ Use this dashboard to:
 * Monitor if an instance has passed the system status check at last minute
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/6.1.-AWS-EC2-Status-Check-CloudWatch-Metrics.png' alt="AWS EC2 Status Check (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for AWS EC2 app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS EC2 alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:-----|:------------|:----------------|:--|
+| `AWS EC2 CW - High CPU Utilization` | This alert fires when the average CPU Utilization based on cloud watch metrics, within a 5 minute interval for an EC2 instance is high (>=85%). | Count > 85 | Count < = 85 |
+| `AWS EC2 CW - Status Check Failed` | This alert fires when there is a status check failures within a 5 minute interval for an EC2 instance. | Count > 0 | Count < = 0 |
+| `AWS EC2 - High Disk Utilization` | This alert fires when the average disk utilization within a 5 minute time interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
+| `AWS EC2 - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
+| `AWS EC2 - High System CPU Utilization` | This alert fires when the average system CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
+| `AWS EC2 - High Total CPU Utilization` | This alert fires when the average total CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
+
+## Upgrade/Downgrade the AWS EC2 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS EC2 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

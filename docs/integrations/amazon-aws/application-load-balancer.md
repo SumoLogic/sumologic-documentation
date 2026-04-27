@@ -1,6 +1,7 @@
 ---
 id: application-load-balancer
 title: AWS Application Load Balancer
+sidebar_label: AWS Application Load Balancer
 description: The Sumo Logic app for AWS Elastic Load Balancing ULM - Application is a unified logs and metrics (ULM) app that gives you visibility into the health of your Application Load Balancer and target groups.
 ---
 
@@ -163,6 +164,8 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 ## Viewing AWS Application Load Balancer dashboards
 
+We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
+
 ### Overview
 
 The **AWS Application Load Balancer - Overview** dashboard provides visibility into the health of your Application Load Balancer and target groups, with at-a-glance views of latency, request and host status, requests from malicious sources, and HTTP backend codes.
@@ -255,3 +258,32 @@ Use this dashboard to:
 * Identify the most common error types and the users experiencing the highest failure rates, facilitating targeted improvements and user support.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application-Load-Balancer-CloudTrail-Audit.png')} alt="AWS Application Load Balancer dashboard" style={{border: '1px solid gray'}} width="800"/>
+
+## Create monitors for AWS Application Load Balancer app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS Application Load Balancer alerts
+
+| Name                                                                  | Description                                                                                                                                                          | Alert Condition   | Recover Condition |
+|:----------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------|:--|
+| `AWS Application Load Balancer - Access from Highly Malicious Sources` | This alert fires when an Application load balancer is accessed from highly malicious IP addresses within last 5 minutes.                                             | Count > 0         | Count < = 0       |
+| `AWS Application Load Balancer - Deletion Alert`                       | This alert fires when an Application load balancer is deleted within last 5 minutes.                                                                                 | Count > = 2       | Count < 2         |
+| `AWS Application Load Balancer - High 4XX Errors`                      | This alert fires where there are too many HTTP requests (>5%) with a response status of 4xx within an interval of 5 minutes.                                         | Count > = 5       | Count < 5         |
+| `AWS Application Load Balancer - High 5XX Errors`                      | This alert fires where there are too many HTTP requests (>5%) with a response status of 5xx within an interval of 5 minutes.                                         | Count > = 5       | Count < 5         |
+| `AWS Application Load Balancer - High Latency`                         | This alert fires when we detect that the average latency for a given Application load balancer within a time interval of 5 minutes is greater than or equal to three seconds. | Count > = 3000    | Count < 3000      |
+| `AWS Application Load Balancer - Targets Deregistered`                 | This alert fires when targets are deregistered from an Application load balancer within last 5 minutes.                                                              | Count > = 1       | Count < 1         |
+
+## Upgrade/Downgrade the AWS Application Load Balancer app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS Application Load Balancer app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
