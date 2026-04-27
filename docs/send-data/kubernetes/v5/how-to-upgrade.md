@@ -44,7 +44,18 @@ Otel operators should now scrape your custom app metrics exposed behind the serv
    If you have kube-prometheus-stack.prometheus.prometheusSpec.additionalScrapeConfigs defined, Move it to sumologic.metrics.collector.otelcol.config.merge.receivers.prometheus.config.scrape_configs
 
 
-### Stop forwarding metrics using Prometheus remote writes into Otel pipeline
-This is applicable for you if you are using your own prometheus operator and using remote write proxy to forward metrics into sumologic kubernetes metrics collection pipeline as discussed [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v4.0/docs/kube-prometheus.md)
+### Forwarding Metrics Using Prometheus Remote Write into the OTel Pipeline
+This section is applicable if you are using your own Prometheus Operator and forwarding metrics into the Sumo Logic Kubernetes metrics collection pipeline using prometheus remote write protocol.
 
-We have provided this feasibility of forwarding metrics from prometheus to sumologic kubernetes collection since we don't had Otel operator in the past for metrics collection and sumologic relied on Promtheus too to scrape metrics and don't want to install another prometheus instance to scrape metrics. But now, Otel operator has been standardized to collect metrics using all types of scraping mechanisms that promtheus supports. Please refer previous section on converting metrics config from Prometheus to Otel operator to start using Otel to scrape metrics.
+In the past, Sumo Logic relied on Prometheus to scrape metrics and since there was no OTel Operator for metrics collection at the time, forwarding via Prometheus remote write was the recommended approach. Now that the OTel Operator has been standardized for metrics collection and supports all Prometheus scraping mechanisms, we recommend migrating. Please refer to the previous section on converting metrics configuration from Prometheus to the OTel Operator.
+
+If you still have specific use cases that require forwarding metrics from your own Prometheus instance into the OTel metrics pipeline, we have introduced the prometheusremotewritereceiver as an alternative.
+
+This receiver accepts Prometheus remote write requests but only supports,
+- Remote Write v2 protocol
+- Remote write endpoint defaults to /api/v1/write, this is only endpoint where sumologic metrics pipeline accepts remote writes. You need to change your prometheus configuration to send metrics to this endpoint.
+  
+For guidelines on enabling Remote Write v2, please refer to the prometheusremotewritereceiver documentation
+ [prometheusremotewrite receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/prometheusremotewritereceiver#prometheus-compatibility) documentation.
+
+In the meantime, if you need more time to migrate, you can enable the flag metadata.metrics.enableSumoPrometheusRemotewriteReceiver which retains the same functionality as older versions, which allows both Prometheus Remote Write v1 and v2 and customizing remote write endpoint. Please note that this flag is intended as a temporary migration aid and will be removed in a future release.
