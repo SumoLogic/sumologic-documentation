@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.18  
 Updated: April 27, 2026***
 
-Integration with Sumo Logic platform for Sumo Logic system calls
+Integration with Sumo Logic platform for Sumo Logic system calls.
 
 ## Actions
 

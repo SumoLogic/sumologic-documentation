@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.5
+***Version: 1.5  
 Updated: April 27, 2026***
 
 Interact with AWS Security Hub through Insights and Findings.
