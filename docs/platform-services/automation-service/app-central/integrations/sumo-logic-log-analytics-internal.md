@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.17  
-Updated: Apr 5, 2024***
+***Version: 1.18  
+Updated: April 27, 2026***
 
 Integration with Sumo Logic platform for Sumo Logic system calls
 
@@ -25,3 +25,4 @@ No configuration is needed. Sumo Logic Log Analytics Internal executes without a
 ## Change Log
 
 * April 5, 2024 - First upload
+* April 27, 2026 (v1.18) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
