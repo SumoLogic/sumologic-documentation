@@ -158,7 +158,7 @@ To install FIPS compliant binary, add `-Fips $True` option to the installation c
 
 Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) in our repository for more details.
 
-## Uninstall
+## Uninstalling the collector
 
 The recommended way to uninstall the OpenTelemetry Collector depends on how you installed it.
 
