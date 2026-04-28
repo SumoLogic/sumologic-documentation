@@ -78,6 +78,7 @@ Sumo Logic provides the following sources based on the underlying code of our ST
 * Nozomi TAXII Client
 * Recorded Future TAXII Client
 * Unit42 TAXII Client
+* SOCRadar TAXII Client
 
 When you set up a source, search for "taxii" and select the tile for the source you want to install:<br/><img src={useBaseUrl('img/security/taxii-sources.png')} alt="TAXII sources" style={{border: '1px solid gray'}} width="800" />
 
@@ -131,6 +132,7 @@ Below is a list of Sumo Logic recommended configuration examples for specific th
 | <a href={useBaseUrl('files/c2c/taxii-2/eclecticiq-config.json')} target="_blank">Eclecticiq</a> | |
 | <a href={useBaseUrl('files/c2c/taxii-2/recorded-future-config.json')} target="_blank">Recorded Future</a> | Use your API key as the HTTP password and leave the username blank. Currently, the Recorded Future TAXII v2 service supports Recorded Future’s [default and large risk lists](https://support.recordedfuture.com/hc/en-us/articles/115008327148-Default-and-Large-Risk-Lists). For more specific risk lists based on an individual risk rule, use Recorded Future’s TAXII v1 service. |
 | <a href={useBaseUrl('files/c2c/taxii-2/palo-alto-unit42-config.json')} target="_blank">PaloAlto Unit42</a> | |
+| <a href={useBaseUrl('files/c2c/taxii-2/socradar-config.json')} target="_blank">SOCRadar</a> | Use STIX/TAXII version `2.1` with **Basic** authentication. The Discovery URL is `https://taxii2.socradar.com/taxii2/`. SOCRadar provides three API roots: `radar_alpha` (collections grouping 10 feeds each), `radar_gamma` (individual standard feeds), and `radar_premium` (premium subscription-based feeds). To obtain your TAXII username and password, contact SOCRadar at `support@socradar.io` or via the SOCRadar Platform. Keep only the `ti_root_url` entries you want to ingest in the JSON config — `radar_alpha` for collections grouping 10 feeds each, `radar_gamma` for individual standard feeds, and `radar_premium` for premium subscription-based feeds. |
 
 ## FAQ
 
