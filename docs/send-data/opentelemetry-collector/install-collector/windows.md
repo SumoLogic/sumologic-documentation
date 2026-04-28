@@ -162,7 +162,7 @@ Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumolog
 
 The uninstall process depends on how the collector was originally installed.
 
-### ### Using the install script
+### Using the install script
 
 If the Collector was installed using the install script, run the following command to uninstall it:
 
@@ -198,7 +198,7 @@ Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePoint
 
 If the Collector was installed manually, upgrade it by completing the following steps:
 
-1. [Uninstall the Collector manually](#manual-step-by-step-uninstall).
+1. [Uninstall the Collector manually](#manual-uninstall).
 1. [Reinstall the Collector with a new version](#manual-step-by-step-installation). Reinstalling will upgrade the binary in place.
 
 ## Update your Config
