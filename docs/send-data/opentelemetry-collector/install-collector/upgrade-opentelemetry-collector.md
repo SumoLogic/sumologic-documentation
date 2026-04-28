@@ -26,7 +26,7 @@ Run the following command to upgrade to the latest version:
 
 `apt-get update --quiet && apt-get install otelcol-sumo --only-upgrade`
 
-For Debian-based systems, the command first updates the package lists quietly, then upgrades only the otelcol-sumo package (without reinstalling or affecting other packages). This ensures your collector is updated to the latest version from the official repository.
+For Debian-based systems, the command first updates the package lists quietly, then upgrades only the otelcol-sumo package (without reinstalling or affecting other packages). This ensures your collector is up to date with the latest version from the official repository.
 
 ### Windows
 
