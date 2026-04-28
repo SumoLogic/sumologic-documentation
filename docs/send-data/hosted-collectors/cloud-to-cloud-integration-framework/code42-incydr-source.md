@@ -16,6 +16,10 @@ The Code42 Incydr is an insider risk management solution that allows you to dete
 
 Code42 Incydr source is used to analyze and fetch sessions, file events, and audit logs using the [Code42 Incydr API](https://developer.code42.com/api) and send it to Sumo Logic.
 
+:::note
+Upgrade the Code42 Incydr source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
