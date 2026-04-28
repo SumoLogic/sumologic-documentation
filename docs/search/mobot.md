@@ -266,7 +266,7 @@ Prerequisites:
 To view Query Agent queries:
 1. Open **Log Search**.
 1. Use the following query:
-   ```sql
+   ```sumo
    _view=sumologic_search_usage_per_query
    | where query_type in ("Query Agent")
    | count user_name, query
@@ -370,7 +370,7 @@ Query Agent querying is compatible with JSON logs, partial JSON logs, and unstru
 
 To retrieve a list of `_sourceCategories` with JSON data, use the following query:
 
-```sql
+```sumo
 _sourceCategory=* "{" "}"
 | limit 10000 | logreduce keys noaggregate
 | count by _sourceCategory, _schema
@@ -398,7 +398,7 @@ If you're on a [tiered pricing](/docs/manage/partitions/data-tiers/searching-dat
 
 * Query Agent searches across *continuous data tiers only*, unless otherwise specified.
 * To query a specific tier, include the `_dataTier` field in your prompt. For example, to search the Infrequent tier:
-   ```sql
+   ```sumo
    _dataTier=Infrequent
    ```
 

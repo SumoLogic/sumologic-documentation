@@ -2,7 +2,7 @@
 id: iis-10-opentelemetry
 title: IIS 10 - OpenTelemetry Collector
 sidebar_label: IIS 10 - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry app for IIS 10.
+description: Monitor IIS 10 availability and performance using the Sumo Logic OpenTelemetry app with dashboards for requests, latency, errors, and traffic patterns.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -183,7 +183,7 @@ A warning message will be printed if any one of the specified performance counte
 ```
 
 ## Sample metrics
-```
+```json
 {
     "queryId": "A",
     "_source": "iis/windowsperfcounters",
@@ -218,7 +218,7 @@ A warning message will be printed if any one of the specified performance counte
 
 This sample Query is from the **IIS - Overview** > **Visitor Location** panel.
 
-```sql title="Query String"
+```sumo title="Query String"
 " %\"sumo.datasource\"=iis %\"webengine.cluster.name\"=* | json \"log\" as _rawlog nodrop \n| if (isEmpty(_rawlog), _raw, _rawlog) as iis_log_message\n| parse regex field=iis_log_message \"(?<server_ip>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}) (?<method>\\S+?) (?<cs_uri_stem>\\S+?) (?<cs_uri_query>\\S+?) (?<s_port>\\S+?) (?<cs_username>\\S+?) (?<c_ip>\\S+?) (?<cs_User_Agent>\\S+?) (?<cs_referer>\\S+?) (?<sc_status>\\S+?) (?<sc_substatus>\\S+?) (?<sc_win32_status>\\S+?) (?<time_taken>\\S+?)$\"\n| count by c_ip\n| lookup latitude, longitude, country_name from geo://location on ip=c_ip\n| where !isNull(latitude)"
 ```
 

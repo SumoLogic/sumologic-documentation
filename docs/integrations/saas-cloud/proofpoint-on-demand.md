@@ -136,7 +136,7 @@ This app uses Proofpoint on Demand source to collect the data from Proofpoint on
 
 ## Sample queries
 
-```sql title="Unique Inbound Domains"
+```sumo title="Unique Inbound Domains"
 _sourceCategory="pod_src"
 | json "guid","filter.routeDirection","msg.header.from","msg.header.to","filter.disposition","connection.ip","ts","msg.header.subject","msg.header.message-id","final_module","final_rule","action_dmarc","filter.quarantine.folder","filter.isMsgEncrypted","final_action" as guid,route_direction,sender_email,receiver_email,disposition,ip,time_stamp,subject,message_id,final_module,final_rule,action_dmarc,quarantine_folder,is_encrypted,final_action nodrop
 | where route_direction matches "{{route_direction}}"

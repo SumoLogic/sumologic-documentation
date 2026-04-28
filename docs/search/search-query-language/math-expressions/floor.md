@@ -10,16 +10,14 @@ The floor function rounds down to the largest previous integer value. Returns th
 
 ## Syntax
 
-```sql
-floor(<x>) as <field>
-```
+`floor(<x>) as <field>`
 
 ## Example
 
-```sql
+```sumo
 * | floor(1.5) as v
 ```
 
-```sql
+```sumo
 * | floor(-1.5) as v
 ```

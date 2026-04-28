@@ -8,7 +8,6 @@ The following table describes the AWS regions used by each Sumo Logic deployment
 | DE | EU (Frankfurt)  | eu-central-1 | https://api.de.sumologic.com/api/   |
 | EU | EU (Ireland)    | eu-west-1  | https://api.eu.sumologic.com/api/   |
 | FED | US East (N. Virginia) | us-east-1  | https://api.fed.sumologic.com/api/  |
-| IN | Asia Pacific (Mumbai) | ap-south-1 | https://api.in.sumologic.com/api/   |
 | JP  | Asia Pacific (Tokyo)  | ap-northeast-1 | https://api.jp.sumologic.com/api/  |
 | KR | Asia Pacific (Seoul) | ap-northeast-2 | https://api.kr.sumologic.com/api/  |
 | US1 | US East (N. Virginia) | us-east-1  | https://api.sumologic.com/api/|
@@ -20,7 +19,7 @@ The list of IP ranges is shared infrastructure. It is not limited to Sumo Logic 
 
 You can run the following query against the downloaded file in Sumo Logic to determine the IP addresses for each deployment.
 
-```sql
+```sumo
 | parse regex "\s+\"ip_prefix\":\s+\"(?<ip_prefix>.*?)\",\n\s+\"region\":\s+\"(?<region>.*?)\",\n\s+\"service\":\s+\"(?<service>.*?)\"" multi
 | where service="AMAZON"
   and (
@@ -43,4 +42,4 @@ After configuring the firewall, Collector, and Sources, confirm that the Collect
 
 For more information, see:
 * [AWS documentation: Service endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html)
-* [Sumo Logic Privacy Statement](https://www.sumologic.com/privacy-statement/)
+* [Sumo Logic Privacy Statement](https://www.sumologic.com/legal/privacy-statement)

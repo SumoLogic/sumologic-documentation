@@ -77,7 +77,7 @@ This app uses Sumo Logic’s Sophos Source to collect [Alerts](https://developer
 
 ### Sample queries
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourceCategory=sophos managedAgent raisedAt // mandatory fields for alerts
 | json "severity","category","product","managedAgent.type","tenant.name","type","description","raisedAt","id" as severity,category,product,source,tenant,type,description,raisedAt,id nodrop
 

@@ -2,7 +2,7 @@
 id: scheduled-report
 title: Scheduled Report
 sidebar_label: Scheduled Report (Email)
-description: Learn how to create, update, delete, and export a scheduled dashboard report.
+description: Schedule automated email delivery of Sumo Logic dashboards in PDF or PNG format to share insights with your team, including non-Sumo Logic users.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,6 +12,7 @@ The scheduled report feature enables you to receive an emailed copy of a dashboa
 You can distribute the dashboard to people in your Sumo Logic organization who do not have access to the platform, enabling better information sharing. It is also useful for compliance management, as it automatically captures and archives the state of the dashboard.
 
 :::info
+- Scheduled reports are supported in the **Fed** environment.
 - For PNG format export, you will receive both embedded and attached copy of the dashboard to your email.
 - If a PDF and/or PNG export fails, you’ll receive an error notification by email.
 :::

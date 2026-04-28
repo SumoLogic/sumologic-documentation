@@ -147,7 +147,7 @@ Wrap string literal variables in quotes `"{{<variable_name>}}"`. If your values 
 
 For example,
 
-```sql
+```sumo
 _sourceCategory=query
 | where type = {{_type}}
 | count_distinct(type)

@@ -300,7 +300,7 @@ TNS-12514: TNS:listener does not currently know of service requested in connect 
 
 This sample query is from the **Oracle - Overview** dashboard > **DB Connection** panel.
 
-```sql title="Query String"
+```sumo title="Query String"
  %"db.cluster.name"=* %"deployment.environment"=* %"sumo.datasource"=oracle establish ("SID=" or "SERVICE_NAME=")  | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as oracle_log_message 
 | parse regex field=oracle_log_message "CONNECT_DATA[\s\S]+?SERVICE_NAME=(?<serviceName>[^)]*)\)[\s\S]+establish" nodrop

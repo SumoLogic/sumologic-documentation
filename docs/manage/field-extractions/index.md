@@ -1,7 +1,7 @@
 ---
 slug: /manage/field-extractions
 title: Field Extractions
-description: Field Extraction speeds the search process by parsing fields as log messages are ingested.
+description: Use Field Extraction Rules (FERs) to parse fields from log messages at ingestion time, improving search performance for alerts, dashboards, and ad hoc queries.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

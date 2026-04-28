@@ -1,6 +1,6 @@
 ---
 id: netskope-webtx-streaming
-title: Netskope WebTx Streaming (Beta)
+title: Netskope WebTx Streaming
 sidebar_label: Netskope WebTx Streaming
 description: The Sumo Logic app for Netskope WebTx Streaming collects transaction events from the Netskope platform to enhance visibility into your web transactions.
 ---
@@ -11,7 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope WebTx icon" width="50" />
 
@@ -31,7 +35,7 @@ date time time-taken cs-bytes sc-bytes bytes c-ip s-ip cs-username cs-method cs-
 
 ## Sample queries
 
-```sql title="Total Transactions"
+```sumo title="Total Transactions"
 _sourceCategory=Labs/NetskopeWebTx  !bytes
 | csv _raw extract  14 as cs_content_type, 17 as cs_dns, 10 as cs_method, 9 as cs_username, 15 as sc_status, 37 as x_c_os, 47 as x_category, 24 as x_cs_app, 45 as x_cs_traffic_type, 49 as x_type, 52 as x_transaction_id
 

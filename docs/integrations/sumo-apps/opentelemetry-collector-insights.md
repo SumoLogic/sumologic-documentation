@@ -298,7 +298,7 @@ The OpenTelemetry Collector emits comprehensive internal metrics categorized by 
 
 This sample query is from the **Pipeline Health Overview** panel.
 
-```sql
+```sumo
 sumo.datasource=otel_collector
 | json auto maxdepth 1 nodrop
 | if (isEmpty(log), _raw, log) as _raw

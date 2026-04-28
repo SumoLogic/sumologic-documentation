@@ -66,7 +66,7 @@ If you want to simplify a user search with a template, you can use label-value p
 
 For example, if we use the following sample query on how to locate users by IP addresses:
 
-```sql
+```sumo
 _sourceCategory=service "Successful login from UI"
 | parse "[auth=User:*:*:*] [remote_ip=*]" as user,user_id,g,remote_ip
 | where user_id matches joeX
@@ -79,7 +79,7 @@ For example, your team could use this query to locate “time-travelers”, susp
 
 First create parameters for `user_name` and `state` to eliminate the manual entries joeX and CA:
 
-```sql
+```sumo
 _sourceCategory=service "Successful login from UI"
 | parse "[auth=User:*:*:*] [remote_ip=*]" as user,user_id,g,remote_ip
 | where user_id matches {{user_name}}
@@ -100,7 +100,7 @@ Next, specify the `user_name` parameter as a lookup that already has the associa
 
 Let’s take a simple query:
 
-```sql
+```sumo
 _sourceCategory=apache_error
 | timeslice 1m
 | count by _timeslice
@@ -108,7 +108,7 @@ _sourceCategory=apache_error
 
 Yet even this simple query requires users to know about the query language, the use of pipes and fields in Sumo. You can specify the argument to timeslice as a parameter:
 
-```sql
+```sumo
 _sourceCategory=apache_error
 | timeslice {{parameter}}m
 | count by _timeslice
@@ -120,7 +120,7 @@ The parameter is now available for your users to modify as they want, with any i
 
 Optional. To give your users even more flexibility letting them append seconds or minutes at the end of the time slice, make the timeslice parameter type **Any**. Users can then add values such as 15s or 5m, or even longer values of 1h, 1d, or 1w.
 
-```sql
+```sumo
 _sourceCategory=apache_error
 | timeslice {{timeslice}}
 | count by _timeslice

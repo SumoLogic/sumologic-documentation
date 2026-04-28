@@ -118,7 +118,7 @@ To provide feedback on these limitations and known issues, contact Google suppor
 * **Name**. A relevant name, such as "Google"
 * **Scope**. `_sourceCategory=google*`
 * **Parse Expression**.  
-  ```sql
+  ```sumo
   | json "id","actor","events"  \
   | json field=actor "email", "profileId" \
   | json field=id "applicationName"
@@ -169,7 +169,7 @@ To provide feedback on these limitations and known issues, contact Google suppor
 
 ### Sample queries
 
-```sql title="Top 10 Apps by Count"
+```sumo title="Top 10 Apps by Count"
 _source=google_* token
 | json "id","actor", "events"
 | json field=actor "email", "profileId"
@@ -182,7 +182,7 @@ _source=google_* token
 ```
 
 
-```sql title="Logins from Multiple IPs"
+```sumo title="Logins from Multiple IPs"
 _sourceCategory=google*
 | json "actor","ipAddress"
 | json "events"

@@ -227,7 +227,7 @@ To forward Microsoft Defender events to Sumo Logic, you can set up an efficient 
 
 ## Sample queries
 
-```sql title="Alerts"
+```sumo title="Alerts"
 _sourceCategory=azure/defender   SystemAlertId
 | json field=_raw "SystemAlertId" as alert_id
 | dedup alert_id
@@ -252,7 +252,7 @@ _sourceCategory=azure/defender   SystemAlertId
 | fields - _count
 ```
 
-```sql title="Security Recommendation"
+```sumo title="Security Recommendation"
 _sourceCategory=azure/defender  "Microsoft.Security/assessments" 
 | where type = "Microsoft.Security/assessments" 
 | json field=_raw "id"
@@ -286,7 +286,7 @@ _sourceCategory=azure/defender  "Microsoft.Security/assessments"
 | fields - _count
 ```
 
-```sql title="Regulatory compliance"
+```sumo title="Regulatory compliance"
 _sourceCategory=azure/defender  "Microsoft.Security/regulatoryComplianceStandards/regulatoryComplianceControls/regulatoryComplianceAssessments"
 | json  "properties.assessmentDetailsLink", "securityEventDataEnrichment.isSnapshot", "name" as assesment_link, is_snapshot, id
 | dedup by id

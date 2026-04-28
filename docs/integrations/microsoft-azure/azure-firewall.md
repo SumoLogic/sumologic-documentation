@@ -108,7 +108,7 @@ As part of the app installation process, the following FERs will be created by d
    Scope (Specific Data): tenant_name=*
    ```
 
-   ```sql title="Parse Expression"
+   ```sumo title="Parse Expression"
    json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
    | replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
    | if (!isBlank(resourceLocation), resourceLocation, location) as location
@@ -125,7 +125,7 @@ As part of the app installation process, the following FERs will be created by d
    Scope (Specific Data): tenant_name=*
    ```
 
-   ```sql title="Parse Expression"
+   ```sumo title="Parse Expression"
    json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
    | if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
    | toUpperCase(resourceId) as resourceId

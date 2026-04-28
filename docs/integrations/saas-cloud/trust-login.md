@@ -62,7 +62,7 @@ This app uses Sumo Logic’s [Trust Login Source](/docs/send-data/hosted-collect
     
 ## Sample queries
 
-```sql title="Events by Category"
+```sumo title="Events by Category"
 _sourceCategory=TrustLoginAppTest
 | json "id", "event.type", "event.category", "event.producer", "subject.type", "objects", "subject.data.full_name", "subject.data.ip_address", "created_at", "event.context_data.log_msg", "subject.data.email", "subject.id", "subject.data.first_name", "subject.data.last_name" as event_id, event_type, event_category, event_producer, subject_type, objects, subject_full_name, subject_ip_address, created_at, event_msg, subject_email, subject_id, subject_first_name, subject_last_name nodrop
 | parse regex field=objects "(?<objects>\{(?:[^\{\}]|\{[^\{\}]*\})*\})" multi
@@ -80,7 +80,7 @@ _sourceCategory=TrustLoginAppTest
 | sort by _count, event_category
 ```
 
-```sql title="Events Over Time by Type"
+```sumo title="Events Over Time by Type"
 _sourceCategory=TrustLoginAppTest
 | json "id", "event.type", "event.category", "event.producer", "subject.type", "objects", "subject.data.full_name" as event_id, event_type, event_category, event_producer, subject_type, objects, subject_full_name nodrop
 | parse regex field=objects "(?<objects>\{(?:[^\{\}]|\{[^\{\}]*\})*\})" multi
@@ -100,7 +100,7 @@ _sourceCategory=TrustLoginAppTest
 | transpose row _timeslice column event_type
 ```
 
-```sql title="Top 10 User"
+```sumo title="Top 10 User"
 _sourceCategory=TrustLoginAppTest
 | json "id", "event.type", "event.category", "event.producer", "subject.type", "objects", "subject.data.full_name" as event_id, event_type, event_category, event_producer, subject_type, objects, subject_full_name nodrop
 | parse regex field=objects "(?<objects>\{(?:[^\{\}]|\{[^\{\}]*\})*\})" multi

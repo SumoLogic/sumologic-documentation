@@ -20,7 +20,7 @@ The App uses:
 
 ### Sample queries
 
-```bash title="Created Resources Over Time"
+```sumo title="Created Resources Over Time"
 _sourceCategory=*gcp* data "type":"cloudsql_database" methodName
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/*"

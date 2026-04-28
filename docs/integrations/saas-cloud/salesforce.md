@@ -57,7 +57,7 @@ For the complete list of available events and fields, see [Event Monitoring Even
 
 ### Sample queries
 
-```sql title="Most Viewed Reports"
+```sumo title="Most Viewed Reports"
 _sourceCategory=salesforce EVENT_TYPE REPORT_ID_DERIVED Report
 | json "EVENT_TYPE", "REPORT_ID_DERIVED", "REPORT_ID_DERIVED_LOOKUP", "REQUEST_STATUS" as event_type, report_id, report_name, request_status nodrop
 | where event_type matches "Report"

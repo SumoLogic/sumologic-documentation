@@ -234,7 +234,7 @@ The Zimperium app leverages the threat events collected via Zimperium Webhook.
 
 ### Sample queries
 
-```sql title="Threat Summary"
+```sumo title="Threat Summary"
 _sourceCategory=*zimperium* system_token  mitigated
 | json field=_raw "additional_public_forensics", "team_name", "account_id", "device_owner", "device_info", "user_info", "eventtimestamp", "location", "mitigated", "forensics", "event_id", "risk_posture", "severity" nodrop 
 | json field=_raw "mitigated" 

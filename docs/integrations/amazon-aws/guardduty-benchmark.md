@@ -219,7 +219,7 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 
 The following query is from the **Threats by Region** panel of the **Amazon GuardDuty - Threat Details** dashboard:
 
-```sql
+```sumo
 _sourceCategory=*guardduty*
 | json field=_raw "accountId", "region", "partition", "id", "arn", "type","service.serviceName","service.detectorId","service.action","severity","title","description" nodrop
 | parse field=type "*:*/*" as ThreatPurpose,ResourceType,ThreatName

@@ -9,7 +9,7 @@ Bar charts are useful for visually comparing the number of events that have occu
 
 For example, you'd use the following query to create a simple Bar chart:
 
-```sql
+```sumo
 (error OR fail*) AND exception | count by _sourceCategory | sort by _count
 ```
 

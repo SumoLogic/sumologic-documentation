@@ -147,7 +147,7 @@ The Sumo Logic app for Amazon OpenSearch uses:
 
 ### Sample queries
 
-```sql title="Average GC Time (Cloud Watch Error Log)"
+```sumo title="Average GC Time (Cloud Watch Error Log)"
 account=* region=* namespace=aws/es domainname=* "[WARN ][o.o.m.j.JvmGcMonitorService]"
 | parse "[*][WARN ][o.o.m.j.JvmGcMonitorService] [*] [gc][young][*][*] duration [*s], collections [*]__PATH__[*], total [*]__PATH__[*], memory [*mb]->[*mb]__PATH__[*], all_pools {*}" as timestamp, node_id, gc_event, gc_event_id, duration, collections, total_duration, total_duration1, total_duration2, memory_before_gc, memory_after_gc, memory_total, pool_details
 | parse field=pool_details "[*] [*]->[*]__PATH__[*]" as pool_name, pool_memory_before, pool_memory_after, pool_memory_total
@@ -156,7 +156,7 @@ account=* region=* namespace=aws/es domainname=* "[WARN ][o.o.m.j.JvmGcMonitorSe
 | fields Avg_Time
 ```
 
-```sql title="Top 5 Slow Queries by Index (Cloud Watch Slow Log)"
+```sumo title="Top 5 Slow Queries by Index (Cloud Watch Slow Log)"
 account=* region=* namespace=aws/es domainname=* "[index.search.slowlog.query]"
 | parse "[*][*][*] [*] [*][*] took[*], took_millis[*], total_hits[*], stats[], search_type[*], total_shards[*], source[*], id[*]" as timestamp,log_level,log_type, node_id, index_name, shard_number, execution_time, execution_time_millis, total_hits, search_type, total_shards, source, id
 | where log_type = "index.search.slowlog.query"
@@ -165,7 +165,7 @@ account=* region=* namespace=aws/es domainname=* "[index.search.slowlog.query]"
 | topk(5, execution_time_millis) by index_name
 ```
 
-```sql title="Failed Login by User (Cloud Watch Audit Log)"
+```sumo title="Failed Login by User (Cloud Watch Audit Log)"
 account=* region=* namespace=aws/es domainname=* FAILED_LOGIN
 | json "audit_cluster_name", "audit_node_id","audit_category","audit_request_origin", "audit_request_remote_address", "audit_request_layer","audit_request_effective_user", "audit_rest_request_path"
 | parse field= audit_cluster_name "*:*" as account_id, domain_name
@@ -175,7 +175,7 @@ account=* region=* namespace=aws/es domainname=* FAILED_LOGIN
 | sort by freq, domainname asc, audit_request_effective_user asc
 ```
 
-```sql title="Successful Events by Event Name (Cloud Trail Logs)"
+```sumo title="Successful Events by Event Name (Cloud Trail Logs)"
 account=* region=* namespace=aws/es "\"eventsource\":\"es.amazonaws.com\""
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message nodrop
 | where event_source = "es.amazonaws.com" 
@@ -260,7 +260,7 @@ Applied at: Ingest Time
 Scope (Specific Data): account=* eventName eventSource "es.amazonaws.com"
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 | json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.domainName" as event_source, region, accountid, domainname nodrop 
 | where event_source = "es.amazonaws.com" 
 | toLowerCase(domainname) as domainname 
@@ -277,7 +277,7 @@ Scope (Specific Data):
 account=* region=* _sourceHost=/aws/OpenSearchService/*
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 | if (isEmpty(namespace),"unknown",namespace) as namespace
 | if (_sourceHost matches "/aws/OpenSearchService/*", "aws/es", namespace) as namespace
 | parse field=_sourceHost "/aws/OpenSearchService/domains/*/*" as domainname,logType nodrop 
@@ -294,7 +294,7 @@ In case you have a centralized collection of CloudTrail logs and are ingesting t
 * **Scope (Specific Data)**: `_sourceCategory=aws/observability/cloudtrail/logs`  
 * **Parse Expression**: Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your AWS account ID with the AWS account alias you set up earlier for the individual child account
 | "" as account
