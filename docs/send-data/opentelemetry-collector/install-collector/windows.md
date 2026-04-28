@@ -170,7 +170,7 @@ If the Collector was installed using the install script, run the following comma
 Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Uninstall
 ```
 
-You can also use the flag `-Purge` to remove all existing configurations as well:
+To also remove all existing configurations, add the `-Purge` flag:
 
 ```bash
 Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Uninstall -Purge
