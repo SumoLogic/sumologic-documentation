@@ -8,4 +8,16 @@ keywords:
 hide_table_of_contents: true    
 ---
 
-We've updated **Auto Refresh** and introduced **Auto Run** for dashboards, giving administrators greater control over dashboard execution behavior. Auto Refresh now supports disabling the feature entirely or setting a minimum refresh interval (from 30 seconds to 1 day), helping reduce unnecessary panel reloads and avoidable scan costs. The new Auto Run feature lets you control whether panels execute automatically or only when you manually click **Run**, which is useful when working with fixed time ranges or making multiple variable changes before loading data. [Learn more](/docs/dashboards/about/#auto-run).
+We're excited to announce enhancements to dashboard execution controls with updates to **Auto Refresh** and the introduction of **Auto Run**, providing administrators with more flexibility and helping reduce unnecessary compute usage.
+
+**Auto Refresh enhancements:**
+    - Disable auto refresh entirely, or
+    - Set a minimum refresh interval (30 seconds to 1 day).
+
+This helps minimize unnecessary panel reloads and reduce avoidable scan costs.
+
+**New: Auto Run**
+    - Control whether panels execute automatically or only when **Run** is clicked.
+    - Ideal for fixed time ranges or when adjusting multiple variables before loading data.
+
+[Learn more](/docs/dashboards/about/#auto-run).
