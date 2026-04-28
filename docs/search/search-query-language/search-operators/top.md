@@ -14,9 +14,7 @@ We recommend you use the [`topk`](/docs/search/search-query-language/search-ope
 
 ## Syntax
 
-```sumo
-top <#> <field> [by <group_by_operator>]
-```
+`top <#> <field> [by <group_by_operator>]`
 
 ## Examples
 

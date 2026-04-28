@@ -8,9 +8,7 @@ Hyperbolic sine of argument in radians.
 
 ## Syntax
 
-```sumo
-sinh(<x>) as <field>
-```
+`sinh(<x>) as <field>`
 
 ## Example
 

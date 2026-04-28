@@ -10,13 +10,9 @@ The `as` operator is typically used in conjunction with other operators, but it 
 
 ## Syntax
 
-```sumo
-<ExistingFieldName> as <field>
-```
+`<ExistingFieldName> as <field>`
 
-```sumo
-<literal> as <field>
-```
+`<literal> as <field>`
 
 ## Rules
 

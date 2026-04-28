@@ -44,13 +44,11 @@ To map the IP addresses properly you must [count](/docs/search/search-query-lan
 
 Your query should use the following syntax:
 
-```sumo
-| parse "[ip_fieldname]" as [ip_address]
+`| parse "[ip_fieldname]" as [ip_address]
 | lookup latitude, longitude [optional_geo_locator fields]
   from geo://location on ip=[ip_address]
 | count by latitude, longitude, [other geo_locator fields]
-| sort _count
-```
+| sort _count`
 
 This syntax produces aggregate results, so you can add a map to a Dashboard.
 

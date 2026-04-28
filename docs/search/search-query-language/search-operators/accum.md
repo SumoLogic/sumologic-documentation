@@ -10,9 +10,7 @@ The `accum` operator calculates the cumulative sum of a field. It can be used to
 
 ## Syntax
 
-```sumo
-accum <field> [as <field>] [by <field1>, <field2>, ...]
-```
+`accum <field> [as <field>] [by <field1>, <field2>, ...]`
 
 ## Rules
 

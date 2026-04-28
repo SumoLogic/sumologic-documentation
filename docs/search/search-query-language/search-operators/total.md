@@ -12,15 +12,11 @@ The `total` operator inserts the sum of a set of fields into every row of the se
 
 Create a new field (named **`_total`** by default) containing the sum of the specified field:
 
-```sumo
-total <field>
-```
+`total <field>`
 
 Create a new field containing the sum of the specified field for groups of the set of fields specified in the by clause. A given row's total is the sum of the specified field for all rows with matching values in the by clause fields.
 
-```sumo
-total <field> [as <field>] [by <field1>, <field2>, ...]
-```
+`total <field> [as <field>] [by <field1>, <field2>, ...]`
 
 ## Rules
 

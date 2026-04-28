@@ -17,13 +17,9 @@ Let’s say you log each time a user successfully logs into your service, and yo
 
 ## Syntax 
 
-```sumo
-timeslice <#><time_period> [as <field>] | <aggregating_operator> by <field>
-```
+`timeslice <#><time_period> [as <field>] | <aggregating_operator> by <field>`
 
-```sumo
-timeslice <#> buckets [as <field>] | <aggregating_operator> by <field>
-```
+`timeslice <#> buckets [as <field>] | <aggregating_operator> by <field>`
 
 Supported `<time_period>` values are weeks (`w`), days (`d`), hours (`h`), minutes (`m`), and seconds (`s`).
 
