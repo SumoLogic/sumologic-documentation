@@ -10,7 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
 
 The `threatlookup` operator identifies suspicious indicators of compromise in your data which match your [threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) sources. Using this operator provides security analytics to help you to detect threats in your environment.
 
@@ -18,9 +22,7 @@ This operator supersedes the more limited [`threatip`](/docs/search/search-query
 
 ## Syntax
 
-```
-threatlookup [singleIndicator] [source="<source_value>"] <indicator>
-```
+`threatlookup [singleIndicator] [source="<source_value>"] <indicator>`
 
 Where:
 * `singleIndicator` returns the single best matching threat intelligence entry. (In the response, `num_matches` indicates how many total matches across your sources there are.) If `singleIndicator` is not specified, all matching entries from your intelligence sources are returned in separate rows. 
@@ -161,7 +163,3 @@ _index=sec_record*
 | timeslice 1h
 | count by _timeslice
 ```
-
-
-
-

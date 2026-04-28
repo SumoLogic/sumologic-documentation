@@ -14,9 +14,7 @@ Sumo Logic Apps often use the limit operator in queries to display system data 
 
 ## Syntax
 
-```sumo
-limit #
-```
+`limit #`
 
 ## Rules
 

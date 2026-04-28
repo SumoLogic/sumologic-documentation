@@ -43,13 +43,9 @@ With transpose, the results display in an easy-to-read manner status codes by ti
 
 ## Syntax
 
-```sumo
-transpose row [<row fields>] column [<column fields>] as [<output fields>]
-```
+`transpose row [<row fields>] column [<column fields>] as [<output fields>]`
 
-```sumo
-transpose row [<row fields>] column [<column fields>]
-```
+`transpose row [<row fields>] column [<column fields>]`
 
 Results can be influenced in three ways:
 

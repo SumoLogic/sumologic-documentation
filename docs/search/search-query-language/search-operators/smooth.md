@@ -16,9 +16,7 @@ Adding a group by function to a smooth operator query produces a running average
 
 ## Syntax
 
-```sumo
-smooth <field> [, <window length>] [as <field>]
-```
+`smooth <field> [, <window length>] [as <field>]`
 
 ## Rules
 

@@ -16,13 +16,9 @@ The `withtime`, `most_recent`, and `least_recent` operators are not considered s
 
 The field `status` is used in the following syntax expressions to represent any field.
 
-```sumo
-| parse ... as status | withtime status | most_recent(status_withtime) [as <field>] by _sourceHost
-```
+`| parse ... as status | withtime status | most_recent(status_withtime) [as <field>] by _sourceHost`
 
-```sumo
-| parse ... as status | withtime status | least_recent(status_withtime) [as <field>] by _sourceHost
-```
+`| parse ... as status | withtime status | least_recent(status_withtime) [as <field>] by _sourceHost`
 
 ## Rules
 
