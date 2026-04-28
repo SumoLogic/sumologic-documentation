@@ -186,7 +186,7 @@ Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePoint
 
 First, you need to upgrade the Collector version. The exact steps depend on how it was installed.
 
-### Install Script
+### Using the install script
 
 Run the following script to automatically upgrade the Collector to the latest version:
 
