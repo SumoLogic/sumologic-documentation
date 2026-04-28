@@ -194,7 +194,7 @@ Run the following script to automatically upgrade the Collector to the latest ve
 Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Upgrade
 ```
 
-### Manual step-by-step Installation
+### Manual upgrade
 
 If you installed the Collector manually, the simplest way to upgrade is to follow these steps:
 
