@@ -156,7 +156,7 @@ curl -X POST https://service.sumologic.com/oauth2/token \
 
 #### Token expiration and reconnection
 
-Access tokens expire after 30 minutes. Your MCP client must refresh the token automatically or prompt you to generate a new one. See the client-specific sections below to configure your client and set the token as a Bearer token to authorize requests.
+Access tokens expire after 12 hours. Your MCP client must refresh the token automatically or prompt you to generate a new one. See the client-specific sections below to configure your client and set the token as a Bearer token to authorize requests.
 
 :::tip
 The token endpoint URL varies by [deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). To discover it programmatically (for example, in an automation script), query the Authorization Server Metadata for your deployment using `curl https://service.sumologic.com/.well-known/oauth-authorization-server`. The response includes the `token_endpoint` and other supported OAuth parameters.
@@ -175,11 +175,11 @@ curl -H "Authorization: Bearer <access-token>" \
 
 ## Configure in Claude Code (Terminal/CLI)
 
-Claude Code CLI supports two connection options. Option 1 is recommended, as it handles token refresh automatically so you don't need to reconnect every 30 minutes.
+Claude Code CLI supports two connection options. Option 1 is recommended, as it handles token refresh automatically so you don't need to reconnect every 12 hours.
 
 | | Option 1: stdio + mcp-proxy | Option 2: HTTP + Bearer token |
 | :--- | :--- | :--- |
-| **Token refresh** | Automatic | Manual — every 30 minutes |
+| **Token refresh** | Automatic | Manual — every 12 hours |
 | **Additional requirement** | `uv` | None |
 | **Best for** | Ongoing use | Quick setup and testing |
 
@@ -189,7 +189,7 @@ If Claude Code repeatedly asks about authentication when invoking MCP tools, you
 
 ### Option 1: stdio + mcp-proxy (recommended)
 
-This option uses `mcp-proxy` to handle token refresh automatically, so you don't need to reconnect every 30 minutes.
+This option uses `mcp-proxy` to handle token refresh automatically, so you don't need to reconnect every 12 hours.
 
 #### Setup
 
@@ -285,7 +285,7 @@ This option uses `mcp-proxy` to handle token refresh automatically, so you don't
 
 #### Token expiration and reconnection
 
-OAuth access tokens expire after 30 minutes. When the token expires, Claude Code will lose connection to the MCP server. You may see an error: `Incompatible auth server: does not support dynamic client registration`.
+OAuth access tokens expire after 12 hours. When the token expires, Claude Code will lose connection to the MCP server. You may see an error: `Incompatible auth server: does not support dynamic client registration`.
 
 To reconnect, run the following in your terminal each time you start a new session to ensure a fresh token:
 ```bash
@@ -376,7 +376,7 @@ If you need to re-register the server with a new token:
 
 ### Reconnecting
 
-Access tokens expire in 30 minutes and may also expire after quitting and restarting VS Code. When this occurs:
+Access tokens expire after 12 hours and may also expire after quitting and restarting VS Code. When this occurs:
 1. You'll see a **Dynamic Client Registration not supported** popup asking for an OAuth client ID. Do NOT provide this. Click **Cancel**.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-dynamic-reg-popup.png')} alt="Dynamic Client Registration not supported popup asking for an OAuth client ID with Cancel button highlighted" width="500"/>
 1. You'll be prompted again for an OAuth client ID in your command palette. Tap **Escape** on your keyboard.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-esc-clientid.png')} alt="VS Code command palette search with MCP: Open User Configuration highlighted" width="600"/>
 1. [Generate a new access token](#step-3-generate-an-access-token).
