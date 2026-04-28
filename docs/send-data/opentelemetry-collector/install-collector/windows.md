@@ -203,7 +203,7 @@ If the Collector was installed manually, upgrade it by completing the following 
 
 ## Update your Config
 
-After an upgrade, make sure your OpenTelemetry Collector configuration is up to date.
+After upgrading, verify that your OpenTelemetry Collector configuration is up to date.
 
 To see changes in upstream OpenTelemetry components, refer to the [core changelog](https://github.com/open-telemetry/opentelemetry-collector/releases) and [contrib changelog](https://github.com/open-telemetry/opentelemetry-collector-contrib/releases).
 
