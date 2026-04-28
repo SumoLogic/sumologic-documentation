@@ -1,14 +1,18 @@
 ---
 id: event-extraction-rules
 title: Event Extraction Rules
-description: Learn how to use Sumi Logic event extraction rules.
+description: Learn how to use Sumo Logic event extraction rules.
 ---
 
 <head>
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
+
+:::info
+This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
+:::
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

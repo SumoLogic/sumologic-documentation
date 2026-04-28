@@ -87,7 +87,6 @@ The following are the Sumo Logic OTel Lambda layers for AWS Region amd64 (x86_64
 | ap-northeast-1 | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v2-15-0:1 |
 | ap-northeast-2 | arn:aws:lambda:ap-northeast-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v2-15-0:1 |
 | ap-northeast-3 | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-java-x86_64-v2-15-0:1 |
-| ap-south-1     | arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v2-15-0:1     |
 | ap-southeast-1 | arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v2-15-0:1 |
 | ap-southeast-2 | arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v2-15-0:1 |
 | ca-central-1   | arn:aws:lambda:ca-central-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v2-15-0:1   |
@@ -112,7 +111,6 @@ The following are the Sumo Logic OTel Lambda layers for AWS Region arm64 archit
 |:--|:--|
 | ap-northeast-1 | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v2-15-0:1 |
 | ap-northeast-3 | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-java-arm64-v2-15-0:1 |
-| ap-south-1     | arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v2-15-0:1     |
 | ap-southeast-1 | arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v2-15-0:1 |
 | ap-southeast-2 | arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v2-15-0:1 |
 | eu-central-1   | arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v2-15-0:1   |
