@@ -206,7 +206,6 @@ If the Collector was installed manually, upgrade it by completing the following 
 After upgrading, verify that your OpenTelemetry Collector configuration is up to date.
 
 - To see changes in upstream OpenTelemetry components, refer to the [core changelog](https://github.com/open-telemetry/opentelemetry-collector/releases) and [contrib changelog](https://github.com/open-telemetry/opentelemetry-collector-contrib/releases).
-
 - For breaking changes specific to the Sumo Logic Distribution of OpenTelemetry Collector, see the [upgrade guide](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/upgrading.md).
 
 ## Troubleshooting
