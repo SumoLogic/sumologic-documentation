@@ -176,7 +176,7 @@ To also remove all existing configurations, add the `-Purge` flag:
 Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Uninstall -Purge
 ```
 
-### Manual step-by-step uninstall
+### Manual uninstall
 
 1. Go to **Add or remove programs**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-1.png')} alt="Windows uninstallation 1" width="550" />
 1. Find **OpenTelemetry Collector** and click **Uninstall**.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-2.png')} alt="Add or remove programs" width="550" />
