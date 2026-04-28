@@ -160,7 +160,7 @@ Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumolog
 
 ## Uninstalling the collector
 
-The recommended way to uninstall the OpenTelemetry Collector depends on how you installed it.
+The uninstall process depends on how the collector was originally installed.
 
 ### Install script
 
