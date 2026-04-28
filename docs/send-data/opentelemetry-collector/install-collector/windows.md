@@ -199,7 +199,7 @@ Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePoint
 If the Collector was installed manually, upgrade it by completing the following steps:
 
 1. [Uninstall the Collector manually](#manual-step-by-step-uninstall).
-1. [Install the Collector again with a new version](#manual-step-by-step-installation). Installing the collector manually will upgrade the binary in place.
+1. [Reinstall the Collector with a new version](#manual-step-by-step-installation). Reinstalling will upgrade the binary in place.
 
 ## Update your Config
 
