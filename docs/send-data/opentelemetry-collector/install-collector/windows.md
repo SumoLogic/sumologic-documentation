@@ -32,10 +32,10 @@ You can install our OpenTelemetry Collector using either of the following method
 
 ### UI Installation
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu, select **Data Management**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. 
 1. On the OpenTelemetry Collection page, click **Add Collector**.
 1. On the left panel, select **Windows** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-windows.png')} alt="Windows terminal" style={{border: '1px solid gray'}} width="900"/>
-1. Select/create installation token and customize your tags.
+1. Select/create an installation token and customize your tags.
 1. Select the **Time Zone**. By default, the timezone is set to `(UTC) Etc/UTC`.
 1. (Optional) In the **Collector Settings**, select the **Ephemeral** checkbox to auto-delete your collector after 12 hours and select the **Locally Manage Collector** checkbox if you want to configure, maintain, and monitor the collector locally.
 1. Copy the command.
@@ -47,15 +47,15 @@ If you choose to close this Source template creation screen, you can navigate ba
 
 ### Install Script
 
-A single line installation powered by Install Script.
+A single-line installation powered by Install Script.
 
 #### Get the Installation Token
 
-Get your [installation token](/docs/manage/security/installation-tokens) if you do not have it already. We are going to refer to this token as `<TOKEN>` in next streps.
+Get your [installation token](/docs/manage/security/installation-tokens) if you do not already have it. We will refer to this token as `<TOKEN>` in the next steps.
 
 #### Run Installation Script
 
-Run the following command in the same PowerShell window, replacing `<TOKEN>` with your token from previous step:
+Run the following command in the same PowerShell window, replacing `<TOKEN>` with your token from the previous step:
 
 ```sh
 Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>" -Tags @{"host.group" = "default"; "deployment.environment" = "default"}
@@ -63,20 +63,20 @@ Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePoint
 
 The script is going to perform the following operations:
 
-* Install or upgrade operation by placing the latest version as `C:\Program Files\Sumo Logic\OpenTelemetry Collector\bin`
+* Install or upgrade the operation by placing the latest version in `C:\Program Files\Sumo Logic\OpenTelemetry Collector\bin`.
 * Get [static configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/sumologic.yaml) and place it as `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\sumologic.yaml`
-* Create user configuration directory (`C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`) with `common.yaml` file which will contain installation token
+* Create user configuration directory (`C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`) with `common.yaml` file, which will contain installation token
 * Create `OtelcolSumo` (`Sumo Logic OpenTelemetry Collector`) service
 
 #### Script Options
 
-| Name           | Description      | Takes Value          |
-|:---------------|:----------------|:-------------|
-| `-InstallationToken` | Installation token      | Yes       |
-| `-Tags`         | Sets tags for collector. This argument should be a map. | Yes, for example `@{"host.group" = "default"; "deployment.environment" = "default"}` |
+| Name | Description | Takes Value |
+|:--|:--|:--|
+| `-InstallationToken` | Installation token | Yes |
+| `-Tags`  Sets tags for the collector. This argument should be a map. | Yes, for example `@{"host.group" = "default"; "deployment.environment" = "default"}` |
 | `-InstallHostMetrics` | Installs the hostmetrics configuration to collect host metrics. The default is `$False`. | Yes, for example: `-InstallHostMetrics $True` or `-InstallHostMetrics $False`. |
 | `-Fips` | If set to `$True`, installs the FIPS-compliant binary. The default is `$False`. See [FIPS](#fips) section for more details. | Yes, for example: `-Fips $True` or `-Fips $False` |
-| `-Version` | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version. | Yes, for example: `-Version 0.94.0-sumo-2` |
+| `-Version` | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets the latest version. | Yes, for example: `-Version 0.94.0-sumo-2` |
 
 ### Manual Step-by-Step Installation
 
@@ -87,8 +87,8 @@ The script is going to perform the following operations:
 5. Select binary destination.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-3.png')} alt="Windows installation 3" width="450" />
 6. Set Installation Token and Tags properties.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-4.png')} alt="Installation token" width="450" />
 7. Click **Install** to begin installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-5.png')} alt="Click Install" width="450" />
-8. Wait for installation to be completed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-6.png')} alt="Finish button" width="450" />
-9. You can modify configuration, which should be placed in `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config` directory.
+8. Wait for the installation to be completed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-6.png')} alt="Finish button" width="450" />
+9. You can modify the configuration, which should be placed in the `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config` directory.
    :::note
    `C:\ProgramData` directory is hidden by default.
    :::
@@ -104,7 +104,7 @@ Status   Name               DisplayName
 ------   ----               -----------
 Running  OtelcolSumo        Sumo Logic OpenTelemetry Collector
 ```
-Alternatively, you can open `Services.msc` and check whether Sumo Logic OTel Collector Service is running or not.
+Alternatively, you can open `Services.msc` and check whether the Sumo Logic OTel Collector Service is running or not.
 
 ### Additional Settings
 
@@ -118,7 +118,7 @@ Exporters leverage the HTTP communication and respect the following proxy enviro
 * `HTTPS_PROXY`
 * `NO_PROXY`
 
-You can set it by adding the following properties to Windows Registry key `HKLM:\SYSTEM\CurrentControlSet\Services\OtelcolSumo\Environment`:
+You can set it by adding the following properties to the Windows Registry key `HKLM:\SYSTEM\CurrentControlSet\Services\OtelcolSumo\Environment`:
 
 ```text
 FTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
@@ -170,7 +170,7 @@ If you installed the Collector with the install script, you can use the command 
 Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Uninstall
 ```
 
-You can also use flag `-p` to remove all existing configurations as well:
+You can also use the flag `-Purge` to remove all existing configurations as well:
 
 ```bash
 Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Uninstall -Purge
@@ -199,11 +199,11 @@ Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePoint
 If you installed the Collector manually, the simplest way to upgrade is to follow these steps:
 
 1. [Uninstall the Collector manually](#manual-step-by-step-uninstall)
-1. [Install the Collector again with a new version](#manual-step-by-step-installation). Installing the collector manually will automatically upgrade the binary in-place.
+1. [Install the Collector again with a new version](#manual-step-by-step-installation). Installing the collector manually will upgrade the binary in place.
 
 ## Update your Config
 
-After an upgrade, you should make sure that your config for OpenTelemetry Collector is up to date.
+After an upgrade, make sure your OpenTelemetry Collector configuration is up to date.
 
 To see changes in upstream OpenTelemetry components, refer to the [core changelog](https://github.com/open-telemetry/opentelemetry-collector/releases) and [contrib changelog](https://github.com/open-telemetry/opentelemetry-collector-contrib/releases).
 
@@ -244,7 +244,7 @@ crypto/internal/backend.init.0()
         crypto/internal/backend/cng_windows.go:34 +0x85
 ```
 
-This means you are running the Sumo Logic Otelcol FIPS binary in a non-FIPS environment. The FIPS binary is built using the `requirefips` mode, which means that the collector only works in a FIPS-compliant environment and will fail to start otherwise.
+This means you are running the Sumo Logic Otelcol FIPS binary in a non-FIPS environment. The FIPS binary is built in `requirefips` mode, which means the collector only works in a FIPS-compliant environment and will fail to start otherwise.
 
 To verify if your instance is in FIPS mode, open your registry editor and navigate to **HKLM\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy\Enabled**.
 * If the Enabled value is `1`, then FIPS is enabled successfully.
