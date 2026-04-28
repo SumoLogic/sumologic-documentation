@@ -188,7 +188,7 @@ First, you need to upgrade the Collector version. The exact steps depend on how 
 
 ### Install Script
 
-Running the install script below will simply upgrade the collector to the latest version:
+Run the following script to automatically upgrade the Collector to the latest version:
 
 ```bash
 Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Upgrade
