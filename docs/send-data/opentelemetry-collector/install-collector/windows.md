@@ -162,7 +162,7 @@ Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumolog
 
 The uninstall process depends on how the collector was originally installed.
 
-### Install script
+### ### Using the install script
 
 If you installed the Collector with the install script, you can use the command below to uninstall the Collector:
 
