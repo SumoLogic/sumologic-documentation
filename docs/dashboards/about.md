@@ -148,7 +148,6 @@ The dropdown only displays the time-interval which is greater than or equal to t
 ## Auto Run
 
 **Auto Run** lets you control whether dashboard panels run automatically or require manual execution. Use this when you want explicit control over dashboard execution. For example, you may want to open a dashboard with a fixed absolute time range or make several dashboard variable changes before loading data. Disabling auto run prevents unnecessary panel reloads after each change and helps Flex customers reduce avoidable scan costs.
-
 :::note
 To enable or disable this feature, you must be an **Administrator** or a role with the **ManageDashboardExecutionControls** capability.
 :::
