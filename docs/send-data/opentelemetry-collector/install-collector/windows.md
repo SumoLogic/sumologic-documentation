@@ -164,7 +164,7 @@ The uninstall process depends on how the collector was originally installed.
 
 ### ### Using the install script
 
-If you installed the Collector with the install script, you can use the command below to uninstall the Collector:
+If the Collector was installed using the install script, run the following command to uninstall it:
 
 ```bash
 Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Uninstall
