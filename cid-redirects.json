@@ -3013,6 +3013,7 @@
   "/cid/1152": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/",
   "/cid/1155": "/docs/manage/data-masking/",
   "/cid/1153": "/docs/send-data/opentelemetry-collector/install-collector/docker",
+  "/cid/1154": "/docs/send-data/hosted-collectors/amazon-aws/krutrim-object-source",
   "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-source",
   "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source/": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-metrics-source/",
   "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source/": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-arc-source/",
