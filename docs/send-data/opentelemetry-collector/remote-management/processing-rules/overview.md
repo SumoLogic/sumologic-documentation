@@ -2,6 +2,7 @@
 id: overview
 title: OpenTelemetry Remote Management Processing Rules
 sidebar_label: Overview
+description: Get an overview of how to use processing rules to specify what kind of data is sent to Sumo Logic using OpenTelemetry remote management.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
