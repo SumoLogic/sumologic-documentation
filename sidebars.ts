@@ -2673,6 +2673,7 @@ integrations: [
           'integrations/saas-cloud/kandji',
           'integrations/saas-cloud/knowbe4',
           'integrations/saas-cloud/lastpass',
+          'integrations/saas-cloud/litellm',
           'integrations/saas-cloud/microsoft-azure-ad-inventory',
           'integrations/saas-cloud/microsoft-exchange-trace-logs',
           'integrations/saas-cloud/microsoft-graph-security-v1',
