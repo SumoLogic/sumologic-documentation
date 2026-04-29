@@ -210,7 +210,73 @@ If CloudTrail isn't configured, Mobot checks common source categories and partit
 2. **Verify IAM permissions** — ensure the role has `s3:GetObject` and `s3:ListBucket` permissions
 3. **Set source category** — tag the source with a category like `aws/cloudtrail` for easy querying
 
-Once data flows, queries like `_sourceCategory=*cloudtrail*` will return audit events.
+Use natural language to ask what you're looking for. For better results, include the name of the data source you're querying and any related fields or values. If you don't select a source, Query Agent chooses one automatically based on your question.
+
+For example, if you enter "Show me recent user-service logs", Query Agent selects the correct source category and returns recent events. An intent card appears in the conversation pane summarizing your goal. Query Agent then surfaces suggested follow-up queries with related refinements you can click.
+
+#### Identify patterns
+
+After you click a follow-up suggestion or type a refinement, Query Agent refreshes the results and updates the intent card and query to reflect the new focus. With each refinement, Query Agent adjusts the query, applies the changes, and renders a visual chart.
+
+For example, asking "What's the request volume by service?" would aggregate traffic by service. Query Agent might surface that user-service has 3× higher requests than baseline, while other services remain healthy—suggesting a traffic surge on one service.
+
+#### Analyze geographic distribution
+
+As you go, Query Agent presents new suggestions to help you pivot into related questions. The intent card expands each time to include the new scope, and results show additional details.
+
+For example, asking "Where are these requests coming from?" aggregates by geography. Query Agent might reveal that 80% of requests originate from France, with elevated activity from China, Netherlands, and India—a geographic clustering pattern consistent with coordinated attacks.
+
+#### Examine error patterns and sources
+
+Query Agent maintains context from previous questions, so you can continue refining without repeating filters. For example, asking "What status codes are returned by the register API?" shows that over 85% of requests are failing with 503 errors. Following up with "Which IPs are behind these 503 errors?" reveals that two IPs account for over 97% of the failed traffic.
+
+#### Validate with threat intelligence
+
+You can enrich findings by asking Query Agent to cross-reference with external data. For example, "Check these IPs against threat intel" would reveal if the source IPs are flagged as known malicious actors, confirming whether the incident is an attack or organic load.
+
+#### Next steps
+
+In just a few conversational turns, we went from an initial alert to confirming a DDoS attack with:
+
+* Identified affected services and APIs
+* Traced attack origin to specific geographic regions and IPs
+* Validated malicious actors using threat intelligence
+* Quantified impact on latency and error rates
+
+From here, you can continue refining or take action like blocking malicious IPs, [opening the query in Log Search](#open-in-log-search), [adjusting the time range](#time-range), [editing the query logic](#edit-query-code), or [starting over with a new chat](#new-conversation).
+
+### Working with Query Agent
+
+#### Time range
+
+By default, Query Agent searches run with a 15-minute time range. If your search does not return any results, consider expanding the time range.
+
+Click the clock icon (see below), select your desired time range from the dropdown, then click the blue search button.
+
+<img src={useBaseUrl('img/search/mobot/time-period.png')} alt="Mobot time period" style={{border: '1px solid gray'}} width="400" />
+
+#### Chart type
+
+Query Agent automatically visualizes your data. For example, a query like "Top ip by geo" triggers a geo lookup and displays results on a map.
+
+<img src={useBaseUrl('img/search/mobot/geo-chart.png')} alt="Mobot chart types" style={{border: '1px solid gray'}} width="800" />
+
+Select your preferred chart type, such as **Table**, **Bar**, **Column**, or **Line** view to visualize your results. You can also click **Add to Dashboard** to export an AI-generated dashboard for root cause analysis.
+
+<img src={useBaseUrl('img/search/mobot/add-to-dashboard.png')} alt="Mobot add to dashboard button" style={{border: '1px solid gray'}} width="500" />
+
+The following rules are used to deduce chart type:
+* If both latitude and longitude fields exist, it returns a MAP chart type.
+* If there is only one field and one record, it returns an SVP chart type. Example query: `(_sourceCategory=ic/linux/gcp) | count by %"_sourcename" | count`
+* If a `sort` operator is present and there are string fields, it returns a TABLE. Given that there is a `sort` operator, probably the user is interested in `count`. Query: `(_sourceCategory=ic/linux/gcp) | count by %"_sourcename" | sort by _count`
+* If there is a `_timeslice` field, it returns a LINE chart type if there are numeric fields or a TABLE chart type if there are string fields.
+* If there is one string field, one numeric field, and record count is less than 6, it returns a PIE chart type. Query: `(_sourceCategory=ic/linux/gcp) | count by %"_sourcename"`.
+* If there is one string field, less than 3 numeric fields, and record count is less than 20, it returns a LINE chart.
+* If none of the above conditions are met, it defaults to returning a TABLE chart type.
+
+#### Edit query code
+
+Optionally, you can manually edit your log search query code.
 
 :::tip
 This detection works for any data source — Kubernetes logs, application metrics, custom integrations. When you ask for data that doesn't exist, Mobot helps you understand why and what to do.
