@@ -7,6 +7,16 @@ description: The Sumo Logic app for Proofpoint TRAP (Threat Response Auto-Pull) 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
 <img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Proofpoint icon" width="140"/>
 
 The Sumo Logic app for Proofpoint TRAP (Threat Response Auto-Pull) provides comprehensive visibility into email threats that Proofpoint detects and remediates, including phishing, malware, impostor/BEC attempts, and suspicious messages. The app consists of four predefined dashboards covering threat overview, remediation effectiveness, security operations, threat analysis, and user risk and exposure, providing security teams with actionable insights into email-borne attacks across the organization.
