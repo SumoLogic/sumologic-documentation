@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/darkowl.png')} alt="darkowl" width="100"/>
 
-***Version: 1.3
+***Version: 1.3  
 Updated: April 29, 2026***
 
 Perform threat intelligence evidence gathering with DarkOwl.
