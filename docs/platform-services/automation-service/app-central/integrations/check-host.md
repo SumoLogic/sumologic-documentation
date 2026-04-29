@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/check-host.png')} alt="Check Host icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 13, 2023***
+***Version: 1.2  
+Updated: April 27, 2026***
 
 Check-Host is a modern online tool for website monitoring and checking performance and availability of any URLs from many countries and data centers. Allows you to monitor response time from different locations.
 
@@ -52,3 +52,4 @@ Analytics and Monitoring
 	+ Updated the integration with Environmental Variables
 	+ Changed fields visibility
 	+ Changed Daemon compatibility
+* April 27, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

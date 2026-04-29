@@ -18,6 +18,10 @@ Workday is a cloud-based enterprise resource planning (ERP) system that enables 
 
 The Sumo Logic source integration for Workday facilitates retrieving sign-on logs and activity logs from the Workday API.
 
+:::note
+Upgrade the Workday source to the latest version 3.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
