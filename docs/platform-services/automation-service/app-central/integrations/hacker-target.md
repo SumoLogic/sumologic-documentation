@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hacker-target.png')} alt="Hacker target icon" width="100"/>
 
-***Version: 1.2
+***Version: 1.2  
 Updated: April 29, 2026***
 
 Utilize Hacker Target's investigational tools during an incident.
