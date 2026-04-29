@@ -304,7 +304,6 @@ module.exports = {
                   collapsed: true,
                   link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/processing-rules/index'},
                   items:[
-                    'send-data/opentelemetry-collector/remote-management/processing-rules/hash-rules',
                     'send-data/opentelemetry-collector/remote-management/processing-rules/include-and-exclude-rules',
                     'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules',
                     'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules-windows',

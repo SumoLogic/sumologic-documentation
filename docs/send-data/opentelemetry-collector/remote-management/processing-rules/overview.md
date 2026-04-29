@@ -15,7 +15,7 @@ Processing rules for log collection support the following rule types:
 * [Exclude messages that match](include-and-exclude-rules.md). Remove messages that you do not want to send to Sumo Logic at all ("denylist" filter). These messages are skipped by the OpenTelemetry Collector and are not uploaded to Sumo Logic.
 * [Include messages that match](include-and-exclude-rules.md). Send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of rule can be useful, for example, if you only want to include messages coming from a firewall.
 * [Mask messages that match](mask-rules.md). Replace an expression with a customizable mask string. This is another way to protect data you do not normally track, such as passwords.
-* [Hash messages that match](hash-rules.md). Replace an expression with a hash code generated for that value. This completely obscures sensitive data, such as credit card numbers and Social Security numbers, before they are sent to Sumo Logic.
+* [Hash messages that match](mask-rules.md). Replace an expression with a hash code generated for that value. This completely obscures sensitive data, such as credit card numbers and Social Security numbers, before they are sent to Sumo Logic.
 
 ## Metrics collection
 
