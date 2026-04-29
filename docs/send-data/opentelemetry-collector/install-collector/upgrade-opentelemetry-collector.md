@@ -30,7 +30,13 @@ For Debian-based systems, the command first updates the package lists quietly, t
 
 ### Windows
 
-Run the following command to upgrade to the latest version:
+Run the following command to upgrade to the latest version using winget (recommended):
+
+```
+winget upgrade otelcol-sumo
+```
+
+Run the following command to upgrade to the latest version using install script:
 
 ```
 Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Upgrade
@@ -64,10 +70,16 @@ For Linux systems, FIPS packages use the otelcol-sumo-fips package name instead 
 
 #### Windows (FIPS)
 
-Run the following command to upgrade to the latest FIPS-compliant version:
+Run the following command to upgrade to the latest version using winget (recommended):
 
 ```
-Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>" -Fips $True
+winget upgrade otelcol-sumo-fips
+```
+
+Run the following command to upgrade to the latest version using install script:
+
+```
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Fips $True -Upgrade
 ```
 
 Important points:
