@@ -287,6 +287,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/litellm')}><img src={useBaseUrl('img/send-data/litellm-icon.png')} alt="LastPass icon" width="60" /><h4>LiteLLM</h4></a>
+  <p>Gain visibility into LLM usage, cost, latency, and performance across OpenAI, Bedrock, Groq, and other providers.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/microsoft-azure-ad-inventory')}><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="Active Directory icon" width="70" /><h4>Microsoft Azure AD Inventory</h4></a>
   <p>Identify security threats by analyzing users and devices logs.</p>
   </div>
