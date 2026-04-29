@@ -2,7 +2,7 @@
 id: mask-rules
 title: OpenTelemetry Remote Management Hash and Mask Rules
 sidebar_label: Hash and Mask Rules
-description: Create an OpenTelemetry collector remote management mask rule to replace an expression with a mask string.
+description: Use hash and mask processing rules to replace an expression with the respective hash and mask strings.
 ---
 
 ## OpenTelemetry Remote Management Hash Rules
