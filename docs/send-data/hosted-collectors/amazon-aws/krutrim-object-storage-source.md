@@ -10,7 +10,7 @@ import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 <img src={useBaseUrl('img/send-data/krutrim-icon.png')} alt="Krutrim Object Storage icon" width="40"/>
 
-Krutrim Object Storage, part of the Ola group’s AI computing stack, provides S3-compatible object storage as part of its broader AI infrastructure and cloud platform.
+Krutrim is a part of the Ola group’s AI computing stack, which provides S3-compatible object storage as part of its broader AI infrastructure and cloud platform.
 
 Sumo Logic can collect and analyze logs from Krutrim Object Storage using the existing Amazon Web Services S3 Source, since Krutrim implements the standard S3 API. This allows reuse of the same connector logic, authentication model, and ingestion pipeline with only a custom endpoint configuration specific to Krutrim.
 
