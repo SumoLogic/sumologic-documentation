@@ -2,7 +2,7 @@
 id: mobot
 title: Sumo Logic Mobot
 sidebar_label: Mobot ✨
-description: Accelerate troubleshooting with Mobot, Sumo Logic's AI-powered assistant. Ask questions in plain English to generate log queries (Query Agent) or get help learning the platform (Knowledge Agent).
+description: Accelerate troubleshooting and platform learning with Mobot, Sumo Logic's AI-powered conversational assistant. Ask questions in plain English to analyze log data or get answers sourced from official documentation.
 keywords:
   - copilot
   - mobot
@@ -10,6 +10,7 @@ keywords:
   - ai
   - machine learning
   - ml
+  - dojo ai
 ---
 
 import Iframe from 'react-iframe';
