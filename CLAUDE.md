@@ -31,7 +31,9 @@ For detailed examples and implementation guidance, see `.claude/skills/pr-templa
 ## Git Rules
 **CRITICAL**: Never commit, merge, or push changes without explicit user approval — even if "accept edits" is enabled. Always ask first.
 
-Before pushing any commit:
+Before merging any PR, provide the user with the commit description and wait for explicit approval.
+
+Before pushing any commit that changes docs content:
 1. Run `yarn start` (if not already running)
 2. Tell the user to confirm the changes appear correctly on the site
 3. Wait for explicit approval before pushing
