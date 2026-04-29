@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/azure-ad.png')} alt="axonius" width="80"/>
 
-***Version: 1.10  
-Updated: Jan 3, 2025***
+***Version: 1.11  
+Updated: April 27, 2026***
 
 Azure Active Directory (Azure AD) is Microsoft's cloud-based identity and access management service, which helps your employees sign in and access resources.
 
@@ -107,3 +107,4 @@ For information about Microsoft Entra ID (formerly Azure AD), see [Entra ID docu
     + Added New Action:
       + List Of Group Members
       + Remove Member From Group
+* April 27, 2026 (v1.11) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

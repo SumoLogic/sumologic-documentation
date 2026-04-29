@@ -8,13 +8,9 @@ The `base64Decode` operator takes a base64 string and converts it to ASCII or no
 
 ## Syntax
 
-```sumo
-base64Decode("<string>"[, "<encoding>"]) as <field>
-```
+`base64Decode("<string>"[, "<encoding>"]) as <field>`
 
-```sumo
-base64Decode(<string_field>[, "<encoding>"]) as <field>
-```
+`base64Decode(<string_field>[, "<encoding>"]) as <field>`
 
 ### Supported encodings
 

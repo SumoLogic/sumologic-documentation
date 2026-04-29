@@ -70,7 +70,7 @@ To set up 2-Step Verification, you will need to install a Time-Based One-Time Pa
 
 These settings apply only to your personal account and do not affect other users in your organization. Changes take effect the next time you sign in.
 
-<img src={useBaseUrl('img/get-started/my-preferences.png')} alt="preference settings" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/get-started/my-preferences.png')} alt="preference settings" style={{border: '1px solid gray'}} width="500" />
 
 ### Timezone and Date Format
 
@@ -165,6 +165,12 @@ Keep this option selected to automatically open the search autocomplete dialog w
 #### Automatically run the search after selecting it from a list of saved searches
 
 By default, saved searches run automatically when selected. Deselect this option if you prefer to start searches manually.
+
+#### Enable in-app tabs for Logs Search
+
+Select this checkbox to enable in-app tabs, allowing you to run and manage multiple searches within a single Log Search window in the [**New UI**](/docs/get-started/sumo-logic-ui). This feature makes it easier to work on multiple investigations side by side without relying on separate browser tabs. You can keep long-running or reference searches open, switch between queries without losing context, and compare results across searches more efficiently, helping streamline troubleshooting and analysis workflows.
+
+To use this feature, open a new tab directly within Log Search and run a new or existing query in each tab. You can switch between tabs at any time to continue your analysis, reorder tabs using drag-and-drop, and scroll horizontally to navigate across multiple open tabs. This helps you stay organized while working across related searches or datasets.
 
 ### Alerts
 

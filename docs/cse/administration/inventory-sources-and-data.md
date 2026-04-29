@@ -35,7 +35,7 @@ The AWS Inventory source collects the inventory of AWS resources in your AWS acc
 
 | Inventory source | Type of source | Inventory data collected |
 | :-- | :-- | :-- |
-| [Armis API Integration Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source) | Cloud-to-Cloud | Computer |
+| [Armis Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-source) | Cloud-to-Cloud | Computer |
 | [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source) | Cloud-to-Cloud | Computer |
 | [CrowdStrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source) | Cloud-to-Cloud | Computer |
 | [Cloud SIEM AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source)| Cloud-to-Cloud | Computer |

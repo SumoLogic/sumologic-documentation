@@ -9,14 +9,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The `formatDate` operator allows you to format dates in log files as a string in the format you require, such as U.S. date formatting, European formatting, and timestamps. 
 
 :::note
-If you're looking to convert a date to a timestamp, use [`parseDate`](docs/search/search-query-language/parse-operators/parsedate.md).
+If you're looking to convert a date to a timestamp, use [`parseDate`](/docs/search/search-query-language/parse-operators/parsedate.md).
 :::
 
 ## Syntax
 
-```sumo
-formatDate(<date> [, <format> [, <timeZone>]]) as <field>
-```
+`formatDate(<date> [, <format> [, <timeZone>]]) as <field>`
 
 ### Returns
 

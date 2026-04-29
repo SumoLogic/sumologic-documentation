@@ -12,29 +12,17 @@ The `order` operator is synonymous with the `sort` operator. You can use them in
 
 ## Syntax
 
-```sumo
-sort by <field> (displays results as descending, by default)
-```
+`sort by <field> (displays results as descending, by default)`
 
-```sumo
-order by <field> (displays results as descending, by default)
-```
+`order by <field> (displays results as descending, by default)`
 
-```sumo
-sort by +<field> (displays results as ascending)
-```
+`sort by +<field> (displays results as ascending)`
 
-```sumo
-sort by <field> asc (displays results as ascending)
-```
+`sort by <field> asc (displays results as ascending)`
 
-```sumo
-sort by <fieldA>, <fieldB>
-```
+`sort by <fieldA>, <fieldB>`
 
-```sumo
-top <#> <field>​​​​​​​ by <group_by_operator>
-```
+`top <#> <field>​​​​​​​ by <group_by_operator>`
 
 ## Rules
 

@@ -22,9 +22,7 @@ Queries using `sessionize` cannot be added to a Dashboard.
 
 ## Syntax
 
-```sumo
-sessionize ("<anchor pattern1>") as (<alias list1>), ("<anchor pattern2>") as (<alias list2>)
-```
+`sessionize ("<anchor pattern1>") as (<alias list1>), ("<anchor pattern2>") as (<alias list2>)`
 
 Where *anchor pattern* is like a parse anchor expression, except that it can include variables from previous expressions (using `$variableName`).
 

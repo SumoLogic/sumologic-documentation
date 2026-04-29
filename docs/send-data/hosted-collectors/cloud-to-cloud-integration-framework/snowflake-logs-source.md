@@ -14,6 +14,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Snowflake is a leading cloud data platform known for its scalable, innovative data warehousing and analytics solutions. It provides organizations with reliable and flexible tools to support data-driven decision-making. Snowflake enables seamless access to essential tables, allowing you to efficiently retrieve data, monitor key metrics, optimize data management processes, and enhance visibility and control over your Snowflake environment.
 
+:::note
+Upgrade the Snowflake Logs source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
+
 ## Data collected
 
 The data will be collected from Snowflake's database using the connection string from the following log types and their respective tables:

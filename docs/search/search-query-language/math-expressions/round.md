@@ -9,9 +9,7 @@ The **round** function returns the closest integer to x.
 
 ## Syntax
 
-```sumo
-round(<x> [,<y>]) as <field>
-```  
+`round(<x> [,<y>]) as <field>`
 
 X is the value to round. Y is the number of decimal places to round to.
 

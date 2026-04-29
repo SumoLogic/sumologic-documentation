@@ -2,7 +2,7 @@
 id: overview
 title: Group or Aggregate Operators Overview
 sidebar_label: Overview
-description: Aggregating (group-by) functions evaluate messages and place them into groups.
+description: Learn how aggregating (group-by) functions work in Sumo Logic, including syntax, rules, and how to use the group operator to aggregate search results.
 ---
 
 Aggregating (group-by) functions evaluate messages and place them into groups. The `group` operator is used in conjunction with group-by functions.
@@ -25,9 +25,7 @@ By default, the ordering is not defined inside of groups created using a group-b
 
 ## Syntax
 
-```sumo
-... | group_by_function <field_to_operate_on> group by <field_to_group_by>[, <field2>, ...]
-```
+`... | group_by_function <field_to_operate_on> group by <field_to_group_by>[, <field2>, ...]`
 
 You can use **by** instead of **group by** so `count group by user` is equivalent to `count by user`.
 

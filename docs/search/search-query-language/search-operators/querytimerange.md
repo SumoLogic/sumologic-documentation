@@ -8,9 +8,7 @@ The `queryTimeRange()` operator returns the time duration for the query being ex
 
 ## Syntax
 
-```sumo
-queryTimeRange() as <field>
-```
+`queryTimeRange() as <field>`
 
 ## Rules
 

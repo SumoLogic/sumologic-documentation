@@ -13,9 +13,7 @@ In another example, if you had a log message of an incident with four fields, su
 
 ## Syntax
 
-```sumo
-concat(<field1>, <field2>[, <field3>, ...]) as <field>
-```
+`concat(<field1>, <field2>[, <field3>, ...]) as <field>`
 
 ## Rules
 

@@ -13,9 +13,7 @@ Extracts the maximum value of the numerical field being evaluated within the tim
 
 ### Syntax
 
-```sumo
-max(<numerical_field>) [as <field>] [by <field>]
-```
+`max(<numerical_field>) [as <field>] [by <field>]`
 
 ### Rules
 
@@ -47,9 +45,7 @@ Extracts the minimum value of the numerical field being evaluated within the tim
 
 ### Syntax
 
-```sumo
-min(numerical_field) [as <field>] [by <field>]
-```
+`min(numerical_field) [as <field>] [by <field>]`
 
 ### Rules
 
