@@ -2688,6 +2688,7 @@ integrations: [
           'integrations/saas-cloud/palo-alto-cortex-xdr',
           'integrations/saas-cloud/proofpoint-on-demand',
           'integrations/saas-cloud/proofpoint-tap',
+          //'integrations/saas-cloud/proofpoint-trap',
           'integrations/saas-cloud/qualys-vmdr',
           'integrations/saas-cloud/rapid7',
           'integrations/saas-cloud/salesforce',
