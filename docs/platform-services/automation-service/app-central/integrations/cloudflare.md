@@ -92,4 +92,4 @@ For information about Cloudflare, see [Cloudflare documentation](https://develop
 * November 5, 2024 (v1.2) - Added Custom token auth in all actions
 * July 3. 2025 (v1.3) -  Updated the endpoint used in the resource test file to one that does not require any additional permissions on the token.
 * March 23, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-* April 29, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+* April 29, 2026 (v1.5) - Fixed urllib3 issue
