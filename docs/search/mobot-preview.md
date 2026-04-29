@@ -1,6 +1,6 @@
 ---
 id: mobot-preview
-title: Sumo Logic Mobot (Private Preview)
+title: Sumo Logic Mobot (Extended Preview)
 description: Mobot is Sumo Logic's next-generation AI assistant that unifies log analysis and platform guidance in a single conversational interface with automated routing and higher-order reasoning.
 keywords:
   - mobot
@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
 
 :::info Participation requirement
 Access requires a signed AI addendum. This applies to all future stages (extended preview, public preview, and GA) because Mobot processes raw log data. Contact your account team if you have not yet signed the addendum.
@@ -153,7 +153,7 @@ Follow-up:
 
 ## Limitations
 
-Mobot is in Private Preview and has the following known limitations.
+Mobot is in Extended Preview and has the following known limitations.
 
 **Use cases**
 - Currently limited to log analysis.
