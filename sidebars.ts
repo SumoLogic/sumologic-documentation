@@ -2819,7 +2819,7 @@ integrations: [
           'integrations/webhooks/stripe',
           'integrations/webhooks/superwise',
           'integrations/webhooks/uptime',
-          //'integrations/webhooks/upwind',
+          'integrations/webhooks/upwind',
           'integrations/webhooks/zebrium-rcaas',
           'integrations/webhooks/zenduty',
         ],
