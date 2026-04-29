@@ -1,7 +1,6 @@
 ---
 id: mobot-preview
-title: Sumo Logic Mobot
-sidebar_label: Mobot (Preview) ✨
+title: Sumo Logic Mobot (Private Preview)
 description: Mobot is Sumo Logic's next-generation AI assistant that unifies log analysis and platform guidance in a single conversational interface with automated routing and higher-order reasoning.
 keywords:
   - mobot
@@ -19,21 +18,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
-:::info
-This feature is in Private Preview. Features and behavior described here are subject to change before general availability.
-
-**Participation requirement**: Access requires a signed AI addendum. This applies to all future stages (extended preview, public preview, and GA) because Mobot processes raw log data. Contact your account team if you have not yet signed the addendum.
-
-Your feedback directly shapes the product. See [Feedback](#feedback) below.
+:::info Participation requirement
+Access requires a signed AI addendum. This applies to all future stages (extended preview, public preview, and GA) because Mobot processes raw log data. Contact your account team if you have not yet signed the addendum.
 :::
 
-This page covers what is new in Mobot for Private Preview participants. For full reference documentation on the current GA version of Mobot, see [Sumo Logic Mobot](/docs/search/mobot/).
+This preview introduces a new iteration of [Sumo Logic Mobot](/docs/search/mobot/) that functions as a conversational intelligence layer between you and your data. It understands intent from open-ended questions, plans and executes multi-step analysis behind the scenes, and delivers structured, narrative-driven answers with suggested next steps. Because Mobot carries context across turns, follow-up questions, refinements, and changes in direction feel part of the same flow.
 
-Mobot is Sumo Logic's next-generation AI assistant for log analysis and investigation. It serves as the unified "AI front door" for all natural language questions, automatically routing your requests to the right capability without requiring you to manually select an agent.
-
-Mobot functions as a conversational intelligence layer between you and your data. It understands intent from open-ended questions, plans and executes multi-step analysis behind the scenes, and delivers structured, narrative-driven answers with suggested next steps. Because Mobot carries context across turns, follow-up questions, refinements, and changes in direction feel part of the same flow. Whether you are troubleshooting an incident, analyzing trends, or exploring your data, Mobot helps analysts of all skill levels reach decisions faster.
+Your feedback directly shapes the product. See [Feedback](#feedback) below.
 
 ## What's new
+
+Features and behavior described here are subject to change before general availability.
 
 | | Before | Now |
 |:--|:--|:--|
@@ -48,42 +43,36 @@ Mobot functions as a conversational intelligence layer between you and your data
 | **Follow-up guidance** | Suggested follow-up queries | Suggested follow-up questions guiding next investigation steps |
 | **Feedback** | Thumbs up/down | Thumbs up/down + shareable conversation URL |
 
-## Getting started
-
-To open Mobot, click **Mobot** in the left nav.
-
-Type your question in the **Ask Something** field and press Enter or click the send button. You can ask a data question (for example, `Show me logs from last 15 minutes`) or a platform question (for example, `How do I set up an OTel Collector?`).
-
-<img src={useBaseUrl('img/search/mobot/ask-something-mobotv2.png')} alt="Mobot interface showing unified prompt input" style={{border: '1px solid gray'}} width="700" />
-
-## How Mobot works
-
 ### Automated routing
-
-Mobot automatically routes your question to the appropriate skill:
-
-- **Log analysis**. For questions about your data, including errors, trends, anomalies, and security events.
-- **Platform how-to**. For questions about using Sumo Logic, including configuration, setup, and best practices.
 
 You no longer need to choose between Query Agent and Knowledge Agent. Mobot handles this for you.
 
-### Understanding and guiding intent
+Open Mobot by clicking **Mobot** in the left nav. Then type your question in the **Ask Something** field.
 
-Mobot interprets natural language questions even when they are incomplete or ambiguous. If your question falls outside available data or system capabilities, Mobot clarifies or redirects rather than returning an error.
+<img src={useBaseUrl('img/search/mobot/ask-something-mobotv2.png')} alt="Mobot interface showing unified prompt input" style={{border: '1px solid gray'}} width="600" />
+
+Try asking:
+
+* A log analysis question about errors, trends, anomalies, or security events (for example, `Show me logs from last 15 minutes`).
+* A platform how-to question about configuration, setup, or best practices (for example, `How do I set up an OTel Collector?`).
+
+Mobot automatically routes your question to the appropriate skill, as seen here:
+
+<img src={useBaseUrl('img/search/mobot/platform-how-to-mobotv2.png')} alt="Mobot platform how-to answer" style={{border: '1px solid gray'}} width="700" />
+
+### Clarification prompts
+
+Mobot interprets natural language questions even when they are incomplete or ambiguous. If your question is unclear, Mobot asks a targeted follow-up question to narrow intent before running a search. For example, asking `Show me logs from last 15 minutes` without specifying a source prompts Mobot to ask which application, service, or log source you are interested in, with inline examples such as `kubernetes`, `nginx`, or `auth_logs`.
+
+Respond with a source name, source category expression, or any keyword related to what you are looking for. If your question falls outside available data or system capabilities, Mobot clarifies or redirects rather than returning an error.
+
+<img src={useBaseUrl('img/search/mobot/clarification-prompt-mobotv2.png')} alt="Mobot clarification prompt" style={{border: '1px solid gray'}} width="700" />
 
 ### Thinking and planning
 
 While Mobot processes your question, it displays a thinking or planning indicator showing that it is identifying relevant data sources and analyzing the problem. Behind the scenes, Mobot selects relevant data sources, schema, lookup tables, and saved queries, infers time ranges based on context, and retrieves log data enriched with environmental context.
 
 <img src={useBaseUrl('img/search/mobot/inline-results-mobotv2.png')} alt="Mobot inline results with thinking state" style={{border: '1px solid gray'}} width="700" />
-
-### Clarification prompts
-
-If your question is ambiguous, Mobot asks a targeted follow-up question to narrow intent before running a search. For example, asking `Show me logs from last 15 minutes` without specifying a source prompts Mobot to ask which application, service, or log source you are interested in, with inline examples such as `kubernetes`, `nginx`, or `auth_logs`.
-
-Respond with a source name, source category expression, or any keyword related to what you are looking for.
-
-<img src={useBaseUrl('img/search/mobot/clarification-prompt-mobotv2.png')} alt="Mobot clarification prompt" style={{border: '1px solid gray'}} width="700" />
 
 ### Multi-step analysis
 
@@ -92,16 +81,6 @@ Mobot orchestrates multi-step analysis automatically. It translates your questio
 ### Notable findings
 
 After returning results, Mobot summarizes anything that stands out at the bottom of the response, labeled **Notable**. For example, if `WARN` entries share an unusual pattern, Mobot flags them, explains what they may indicate, and asks whether you want to investigate further.
-
-### Follow-up guidance
-
-After each result, Mobot suggests follow-up questions to guide your investigation forward. Click a suggestion to continue the conversation, or type your own refinement.
-
-### Platform how-to answers
-
-When your question is about using Sumo Logic rather than your data, Mobot routes it automatically to platform guidance without requiring you to switch agents.
-
-<img src={useBaseUrl('img/search/mobot/platform-how-to-mobotv2.png')} alt="Mobot platform how-to answer" style={{border: '1px solid gray'}} width="700" />
 
 ### Configuration gap detection
 
@@ -113,70 +92,64 @@ This detection works reactively. When you ask a question that requires a specifi
 
 You can also use this capability on demand. For example:
 
-- "Do I have AWS CloudTrail data?"
-- "Is Kubernetes data flowing in?"
-- "Do I have any threat intel lookups set up?"
+* `Do I have AWS CloudTrail data?`
+* `Is Kubernetes data flowing in?`
+* `Do I have any threat intel lookups set up?`
 
 ### Conversation history
 
 Mobot retains your conversation history indefinitely. To resume a previous investigation, open the **My Conversations** list and select the conversation.
 
-:::note
-Mobot does not retain memory across sessions. Each new conversation starts fresh with no context from previous sessions. If you find yourself re-explaining a problem or correcting earlier assumptions, start a new conversation.
-:::
-
-### Share a conversation
-
-To share feedback or collaborate on an investigation, copy the conversation URL directly from the interface.
-
-## Unstructured logs support
-
-Mobot includes built-in support for unstructured logs (raw, text-based log data that does not follow a structured format like JSON). You can ask questions in plain English and get meaningful results from nearly any log data, without requiring Field Extraction Rules (FERs).
-
-### What's new
+### Unstructured logs support
 
 Previously, Mobot worked best on structured (JSON) logs. With this preview release, Mobot automatically applies parsing logic to unstructured logs, even if no FERs are configured.
 
+Now it has built-in support for unstructured logs (raw, text-based log data that does not follow a structured format like JSON). You can ask questions in plain English and get meaningful results from nearly any log data, without requiring Field Extraction Rules (FERs).
+
 At this stage, Mobot prioritizes unstructured logs that are already used in dashboards, allowing it to surface insights from high-value log sources out-of-the-box. This means it will not interpret all raw logs yet, but support is actively being expanded beyond dashboards.
 
-- **Broader coverage**. Mobot parses and generates insights from unstructured log formats, even without FERs, making it useful for environments that include custom or inconsistent log types.
-- **Improved usability**. Ask questions in natural language. Mobot interprets your intent and suggests relevant searches, even for raw, non-JSON logs.
-- **Performance and reliability**. Response times and suggestion accuracy are consistent with Mobot's structured log experience.
-- **Security and compliance**. The same strict data handling and privacy standards apply. Unstructured logs support builds on Mobot's secure foundation.
+* **Broader coverage**. Mobot parses and generates insights from unstructured log formats, even without FERs, making it useful for environments that include custom or inconsistent log types.
+* **Improved usability**. Ask questions in natural language. Mobot interprets your intent and suggests relevant searches, even for raw, non-JSON logs.
+* **Performance and reliability**. Response times and suggestion accuracy are consistent with Mobot's structured log experience.
+* **Security and compliance**. The same strict data handling and privacy standards apply. Unstructured logs support builds on Mobot's secure foundation.
 
-### Common use cases
+#### Common use cases
 
-- **General log exploration**. Ask questions about unstructured logs already used in your dashboards, even if they lack predefined fields.
-- **Error triage**. Investigate frequently visualized log data to surface patterns and recurring issues in unstructured formats.
-- **Security insights**. Detect anomalies or signs of failed logins by querying raw logs already powering security dashboards.
-- **Smarter prioritization**. Mobot focuses on unstructured logs that are visualized in dashboards, helping you get meaningful insights from high-value data sources.
+* **General log exploration**. Ask questions about unstructured logs already used in your dashboards, even if they lack predefined fields.
+* **Error triage**. Investigate frequently visualized log data to surface patterns and recurring issues in unstructured formats.
+* **Security insights**. Detect anomalies or signs of failed logins by querying raw logs already powering security dashboards.
+* **Smarter prioritization**. Mobot focuses on unstructured logs that are visualized in dashboards, helping you get meaningful insights from high-value data sources.
 
 ## Example prompts
 
-Mobot works best when you start with a business question, not a query. Ask questions the way you naturally think about a problem, then refine through conversation.
-
-**Tips:**
+Mobot works best when you start with a business question, not a query. Ask questions the way you naturally think about a problem, then refine through conversation. Here are some tips:
 - Start broad, then refine with follow-up questions.
 - Do not worry about structure. Mobot will guide you.
 - If Mobot needs more context, provide a hint such as a data source, lookup table, or field name.
 
 ### Developer and SRE
 
-- "What does the error trend look like for my service over the past 24 hours?"
-- "Are any services consistently breaching indexing latency SLOs?"
+* `What does the error trend look like for my service over the past 24 hours?`
 
-Follow-up examples:
-- "Which instances are most impacted?"
-- "When did this start?"
+* `Are any services consistently breaching indexing latency SLOs?`
+
+Follow-up:
+
+* `Which instances are most impacted?`
+
+* `When did this start?`
 
 ### Security analyst
 
-- "Have there been any recent phishing attempts?"
-- "Are there any unusual authentication patterns in our environment?"
+* `Have there been any recent phishing attempts?`
 
-Follow-up examples:
-- "Which users are involved?"
-- "Is this activity increasing over time?"
+* `Are there any unusual authentication patterns in our environment?`
+
+Follow-up:
+
+* `Which users are involved?`
+
+* `Is this activity increasing over time?`
 
 ## Limitations
 
@@ -204,29 +177,6 @@ Mobot is in Private Preview and has the following known limitations.
 - No memory across sessions. Each conversation starts fresh.
 - Legal, safety, and content guardrails are in progress and will continue to be strengthened.
 
-## Example workflows
-
-### Log investigation
-
-1. Ask a broad question, for example: `Show me API errors from the last hour`.<br/>Mobot returns error logs from the relevant source, showing `ERROR` and `WARN` level entries with timestamps, status codes, and error messages.
-1. Refine the results, for example: `Filter to 500 errors only`.<br/>The Notable findings callout flags the most common error pattern and suggests investigating further.
-1. Dig deeper, for example: `Group by endpoint and count`.<br/>Results narrow the investigation to the specific API route generating most errors.
-1. Correlate, for example: `Show me deployment logs around that time`.<br/>Mobot retrieves deployment events and identifies a deployment that occurred shortly before the error spike.
-
-### Observability investigation
-
-1. Type a question in plain English, for example: `Show me error trends for the payment service over the last 24 hours`.
-1. Mobot identifies the relevant data source, runs the analysis, and returns results.
-1. Review the results and click a suggested follow-up to drill deeper, for example: `Which error codes are most common?`
-1. Continue refining conversationally until you reach a conclusion.
-
-### Cloud SIEM security investigation
-
-1. Specify the Cloud SIEM source in your question, for example: `Show me malicious network activity from _index=sec_record_network`.
-1. Mobot routes the question to log analysis and returns results.
-1. Click a suggested follow-up or type a refinement to identify patterns.
-1. Continue the investigation to isolate affected users or IPs.
-
 ## FAQ
 
 <details>
@@ -236,15 +186,9 @@ This release replaces the manual Query Agent and Knowledge Agent selection with 
 </details>
 
 <details>
-<summary>Do I need to select an agent?</summary>
+<summary>Do I need to select an agent? What happened to Query Agent and Knowledge Agent?</summary>
 
-No. Mobot automatically determines the best way to answer your question based on what you ask.
-</details>
-
-<details>
-<summary>What happened to Query Agent and Knowledge Agent?</summary>
-
-The underlying capabilities are still there, but you no longer select them manually. Mobot routes data questions and how-to questions automatically based on your input.
+No. The underlying capabilities are still there, but you no longer select them manually. Mobot automatically routes data questions to log analysis and how-to questions to platform guidance based on what you ask.
 </details>
 
 <details>
@@ -287,12 +231,6 @@ Mobot prioritizes unstructured logs that are already used in dashboards. This im
 <summary>How is unstructured log support different from structured log support?</summary>
 
 Structured logs have predefined fields, allowing Mobot to map queries directly. For unstructured logs, Mobot uses AI and parsing techniques to infer structure on the fly.
-</details>
-
-<details>
-<summary>How do I share feedback?</summary>
-
-Use the thumbs up or thumbs down icons to rate results, or copy the conversation URL from the interface to share a specific session with your account representative.
 </details>
 
 <details>
