@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/druva.png')} alt="druva" width="90"/>
 
-***Version: 1.0  
-Updated: April 4, 2024***
+***Version: 1.1  
+Updated: April 29, 2026***
 
  Druva is a service designed primarily to respond to ransomware attacks, identified by detecting anomalies and suspicious behavior for data protected across data sources including data centers and endpoints.
 
@@ -52,3 +52,4 @@ For information about Druva, see [Druva documentation](https://help.druva.com/en
 ## Change Log
 
 * April 4, 2024 - First upload
+* April 29, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
