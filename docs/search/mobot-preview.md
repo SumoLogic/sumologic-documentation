@@ -31,7 +31,7 @@ This page covers what is new in Mobot for Private Preview participants. For full
 
 Mobot is Sumo Logic's next-generation AI assistant for log analysis and investigation. It serves as the unified "AI front door" for all natural language questions, automatically routing your requests to the right capability without requiring you to manually select an agent.
 
-Mobot functions as a collaborative thinking partner. It understands intent from open-ended questions, plans and executes multi-step analysis behind the scenes, and delivers structured, narrative-driven answers with suggested next steps. Whether you're troubleshooting an incident, analyzing trends, or exploring your data, Mobot helps analysts of all skill levels reach decisions faster.
+Mobot functions as a conversational intelligence layer between you and your data. It understands intent from open-ended questions, plans and executes multi-step analysis behind the scenes, and delivers structured, narrative-driven answers with suggested next steps. Because Mobot carries context across turns, follow-up questions, refinements, and changes in direction feel part of the same flow. Whether you are troubleshooting an incident, analyzing trends, or exploring your data, Mobot helps analysts of all skill levels reach decisions faster.
 
 ## What's new
 
@@ -73,7 +73,7 @@ Mobot interprets natural language questions even when they are incomplete or amb
 
 ### Thinking and planning
 
-While Mobot processes your question, it displays a thinking or planning indicator showing that it is identifying relevant data sources and analyzing the problem. Behind the scenes, Mobot selects relevant data sources, schema, and lookup tables, infers time ranges based on context, and retrieves log data enriched with environmental context.
+While Mobot processes your question, it displays a thinking or planning indicator showing that it is identifying relevant data sources and analyzing the problem. Behind the scenes, Mobot selects relevant data sources, schema, lookup tables, and saved queries, infers time ranges based on context, and retrieves log data enriched with environmental context.
 
 <img src={useBaseUrl('img/search/mobot/inline-results-mobotv2.png')} alt="Mobot inline results with thinking state" style={{border: '1px solid gray'}} width="700" />
 
@@ -256,7 +256,7 @@ Mobot can detect missing sources or partitions reactively. When you ask a questi
 <details>
 <summary>Is Mobot an investigation or SRE agent?</summary>
 
-No. Mobot is a unified conversational interface for interacting with your data, with initial capabilities focused on log analysis. It can support investigation-style workflows such as troubleshooting and pattern exploration, but that is one type of outcome, not its primary role. The goal is to let you talk to your data, explore and refine answers conversationally, and let Mobot guide analysis and retrieve relevant log data.
+No. Mobot is built to go wide, not deep. It is a unified conversational interface for interacting with your data across log analysis and platform guidance, with automated routing and multi-step reasoning. Specialist tools built for SOC or SRE workflows are built to go deep, with purpose-built playbooks, triage steps, and integrations tailored to those roles. Mobot's goal is to let you talk to your data, explore and refine answers conversationally, and surface insights without requiring you to know which query to write or which agent to invoke.
 </details>
 
 <details>
@@ -295,6 +295,12 @@ Structured logs have predefined fields, allowing Mobot to map queries directly. 
 Use the thumbs up or thumbs down icons to rate results, or copy the conversation URL from the interface to share a specific session with your account representative.
 </details>
 
+<details>
+<summary>Will Mobot support additional capabilities over time?</summary>
+
+Yes. Mobot is designed to be extensible. Over time, more skills can be added as teams across the platform contribute new capabilities. The current preview focuses on log analysis and platform how-to guidance, with additional skills planned for future releases.
+</details>
+
 ## Feedback
 
 Your feedback directly shapes Mobot before general availability. Use the thumbs up and thumbs down icons in the conversation to rate individual responses.
@@ -305,9 +311,3 @@ To report an issue, copy the conversation URL and share it with your Sumo Logic 
 - What you expected.
 - What Mobot returned instead.
 - Whether the issue was prompt comprehension, context understanding, answer accuracy, answer clarity, or something else.
-
-## Additional resources
-
-- [Sumo Logic Mobot](/docs/search/mobot/).
-- [Search Query Language](/docs/search/search-query-language).
-- [Dashboards](/docs/dashboards).
