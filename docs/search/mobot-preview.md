@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
 
 :::info Participation requirement
-Access requires a signed AI addendum. This applies to all future stages (extended preview, public preview, and GA) because Mobot processes raw log data. Contact your account team if you have not yet signed the addendum.
+Access requires a signed AI addendum. This applies to all future stages (public preview and GA) because Mobot processes raw log data. Contact your account team if you have not yet signed the addendum.
 :::
 
 This preview introduces a new iteration of [Sumo Logic Mobot](/docs/search/mobot/) that functions as a conversational intelligence layer between you and your data. It understands intent from open-ended questions, plans and executes multi-step analysis behind the scenes, and delivers structured, narrative-driven answers with suggested next steps. Because Mobot carries context across turns, follow-up questions, refinements, and changes in direction feel part of the same flow.
