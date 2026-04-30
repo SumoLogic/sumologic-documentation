@@ -196,11 +196,6 @@ No. The underlying capabilities are still there, but you no longer select them m
 Mobot can detect missing sources or partitions reactively. When you ask a question that requires a specific data source, Mobot attempts the query and detects if the partition or data does not exist, then provides setup guidance. Mobot cannot proactively scan your environment and generate a list of all unconfigured integrations.
 </details>
 
-<details>
-<summary>Is Mobot an investigation or SRE agent?</summary>
-
-No. Mobot is built to go wide, not deep. It is a unified conversational interface for interacting with your data across log analysis and platform guidance, with automated routing and multi-step reasoning. Specialist tools built for SOC or SRE workflows are built to go deep, with purpose-built playbooks, triage steps, and integrations tailored to those roles. Mobot's goal is to let you talk to your data, explore and refine answers conversationally, and surface insights without requiring you to know which query to write or which agent to invoke.
-</details>
 
 <details>
 <summary>Does Mobot retain memory across sessions?</summary>
