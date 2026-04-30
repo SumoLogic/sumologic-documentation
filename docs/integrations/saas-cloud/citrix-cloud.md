@@ -80,13 +80,40 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Administrator Overview
 
-**Citrix Cloud - Administrator Overview** dashboard provides detailed information on newly added administrators, pending invitations, and recently deleted administrators from your Citrix Cloud account, including any updates to roles and permissions. The Dashboard also allows for easy visualization of the distribution of event types and the actors who perform these records, enabling you to identify trends and patterns in administrator activity.
+**Citrix Cloud - Administrator Overview** dashboard provides detailed information about records of newly added administrators, pending invitations, and recently deleted administrators from your Citrix Cloud account. Also, it highlights if any roles/permissions are updated for any administrator. The dashboard also visualizes the distribution of event types and actors performing records. Moreover, it gives a summary of all the Administrator events.
 
-In addition to the above, the Dashboard provides a summary of all the Administrator events, allowing you to quickly assess the overall state of your Citrix Cloud account. With this Dashboard, you can easily monitor and analyze administrator activity, ensuring that your Citrix Cloud account remains secure and compliant with your organization's policies and regulations.<br/><img src={useBaseUrl('img/integrations/saas-cloud/citrix-admin-overview.png')} alt="citrix-admin-overview" width="750"/>
+In addition to the above, the Dashboard provides a summary of all the Administrator events, allowing you to quickly assess the overall state of your Citrix Cloud account. With this Dashboard, you can easily monitor and analyze administrator activity, ensuring that your Citrix Cloud account remains secure and compliant with your organization's policies and regulations.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Citrix-Cloud-Administrator-Overview.png')} alt="citrix-admin-overview" width="750"/>
 
-### Client, Group Administrator Overview
+### Client and Group Administrator Overview
 
-**Citrix Cloud - Client, Group Administrator Overview** dashboard provides detailed information about newly added and recently deleted clients and group administrators from your Citrix Cloud account. It also indicates whether any group administrators' roles/permissions have been updated. It also provides a summary of all Administrator events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/client-group-admin-overview.png')} alt="client-group-admin-overview" width="750"/>
+**Citrix Cloud - Client, Group Administrator Overview** dashboard provides detailed information about newly added clients and group administrators, and recently deleted clients and group administrators from your Citrix Cloud account. Also, it highlights if any roles/permissions are updated for any group administrators. Furthermore, it gives a summary of all the Administrator events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Citrix-Cloud-Client-Group-Administrator-Overview.png')} alt="client-group-admin-overview" width="750"/>
+
+### Network and Client Overview
+
+**Citrix Cloud - Network and Client Overview** dashboard provides visibility into network performance (ICA RTT latency), client endpoint inventory, client version compliance, connection state distribution, and external vs internal access patterns. It helps identify high-latency sessions, outdated Workspace app clients, and unusual access patterns.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Citrix-Cloud-Network-Client-Overview.png')} alt="citrix-admin-overview" width="750"/>
+
+### Session Logon Performance
+
+**Citrix Cloud - Session Logon Performance** dashboard provides detailed analysis of Citrix session logon performance including logon duration trends, authentication duration, brokering duration, and phase-wise breakdown of the logon process. It helps identify slow logons, bottlenecks in authentication or profile loading, and performance trends by user and machine.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Citrix-Cloud-Session-Logon-Performance.png')} alt="citrix-admin-overview" width="750"/>
+
+### User Experience and Session Health
+
+**Citrix Cloud - User Experience and Session Health** dashboard provides a holistic view of Citrix user experience and session health. It tracks total active users, unique sessions, session reconnections, exit code distribution, delivery type breakdown, top users and machines by session load, and a comprehensive user session summary. It helps administrators identify heavy users, overloaded machines, abnormal session terminations, and reconnection patterns that indicate poor user experience.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Citrix-Cloud-User-Experience-Session-Health.png')} alt="citrix-admin-overview" width="750"/>
+
+## Create monitors for the Citrix Cloud app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Citrix Cloud Security Alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `Citrix Cloud - Administrator Deleted` | This alert is triggered when an administrator account is deleted from the Citrix Cloud environment, enabling audit tracking of privileged account removals. | Critical | Count > 0 |
+| `Citrix Cloud - Administrator Permission or Role Changed` | This alert is triggered when an administrator's access type or role is modified, enabling detection of unauthorized privilege escalation or permission changes. | Critical | Count > 0|
+| `Citrix Cloud - High ICA RTT Latency` | This alert is triggered when the P95 ICA round-trip time exceeds 200ms, indicating network latency issues between Citrix clients and virtual desktops. | Critical | p95_rtt_ms > 200|
+| `Citrix Cloud - High Session Logon Duration` | This alert is triggered when the average session logon duration exceeds 120 seconds, indicating slow logon performance impacting user experience. | Critical | avg_logon_sec > 120|
 
 ## Upgrade/Downgrade the Citrix Cloud app (Optional)
 
