@@ -10,7 +10,7 @@ description: This integration collects threat indicators using the Intel 471 API
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/intel471-threat-intel.png')} alt="intel471-threat-intel.png" width="100" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/intel471-threat-intel.png')} alt="Intel 471 threat intel logo" width="100" />
 
 The Intel 471 Threat Intel source collects threat intelligence indicators using the [Intel 471 Stream API](https://titan.intel471.com/api/docs-openapi/#tag/Indicators/paths/~1indicators~1stream/get) and sends them to Sumo Logic as normalized threat indicators for analysis. For more information, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
 
@@ -44,8 +44,8 @@ To configure an Intel 471 Threat Intel source:
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**. 
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**. 
 1. **Username**. Enter your login ID or email address.
 1. **API Key**. Enter the API key of the user account collected from the [Intel 471 Threat Intel platform](#vendor-configuration).
 1. **Sumo Logic Threat Intel Source ID**. Enter the name you want to use for the Intel 471 source that will be created in the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab in Sumo Logic. The Intel 471 threat intelligence indicators will be stored in this source. Do not use spaces in the name.

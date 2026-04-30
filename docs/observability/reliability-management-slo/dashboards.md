@@ -66,10 +66,10 @@ You can also filter by compliance period to view your past activity and plan ahe
 You can launch a Log Search session directly from an SLO dashboard panel, giving you the ability to drill down into further granular details.
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > SLOs**.
 1. Double-click on any SLO line item.
-1. Hover over the panel > Click the kebab icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" style={{border: '1px solid gray'}} width="150"/>
+1. Hover over the panel > Click the kebab icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="Open in log search" style={{border: '1px solid gray'}} width="150"/>
 
 :::tip
-Once opened in **Log Search**, you can click **Add to Dashboard** to add SLO dashboard panels to your own custom dashboards.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" style={{border: '1px solid gray'}} width="200"/>
+Once opened in **Log Search**, you can click **Add to Dashboard** to add SLO dashboard panels to your own custom dashboards.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="Add to dashboard" style={{border: '1px solid gray'}} width="200"/>
 :::
 
 
@@ -79,7 +79,7 @@ Once opened in **Log Search**, you can click **Add to Dashboard** to add SLO das
 
 Sumo Logic continuously computes data for your SLOs behind the scenes. This data, which powers your SLO dashboards, is also made available as log messages, and can be used to build custom dashboards. You can execute the following query to access your SLO data in logs:
 
-```sql
+```sumo
 _view=sumologic_slo_output
 ```
 
@@ -109,7 +109,7 @@ The SLO lookup table resides under a fixed path, `sumo://content/slos`. You can 
 
 
 To join the results of your SLO precomputed data from `_view=sumologic_slo_output` with the metadata contained in the SLO lookup table, you can use the following query:
-  ```sql
+  ```sumo
   _view=sumologic_slo_output
   | lookup * from sumo://content/slos on sloId, sloVersion
   ```
@@ -120,11 +120,11 @@ To join the results of your SLO precomputed data from `_view=sumologic_slo_outpu
 
 Say you want a high-level overview into the health of your SLOs. A honeycomb visualization on the error budget remaining percentage is a nice way to achieve that.
 
-<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" style={{border: '1px solid gray'}} width="450"/>
+<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="Percent error remaining" style={{border: '1px solid gray'}} width="450"/>
 
 You can use the following query to construct the above:
 
-```sql
+```sumo
 _view=sumologic_slo_output
 | lookup * from sumo://content/slos on sloId, sloVersion
 | where !isBlank (sloname) and slofolderpath matches "*"
@@ -142,7 +142,7 @@ _view=sumologic_slo_output
 
 Let's say you have multiple SLOs for your `ingestion` service and you want to visualize all of those together. You can tag all those SLOs with `service=ingestion` and then leverage your SLO tags in **Log Search** queries using the SLO lookup table. Here's the query that will return data from all your SLOs belonging to the `ingestion` service:
 
-```sql
+```sumo
 _view=sumologic_slo_output
 | lookup tags from sumo://content/slos on sloId, sloVersion
 | json field=tags "service"
@@ -153,9 +153,9 @@ Now that you have filtered the exact set of SLOs needed, all sorts of roll ups c
 
 In general, to display all of your SLOs that have one or more tags:
 
-```sql
+```sumo
 CAT sumo://content/slos
 | where !(tags = "{}")
 ```
 
-<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="slo-tags-query.png" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="SLO tags query" style={{border: '1px solid gray'}} width="800" />

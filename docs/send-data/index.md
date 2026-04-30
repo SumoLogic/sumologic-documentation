@@ -17,6 +17,20 @@ Learn how to send data to Sumo Logic and get started with our observability and 
 * [How to use the Collection UI](/docs/send-data/collection)
 :::
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* **Self-paced**: 
+    * [Onboarding Fast Track for Administrators](https://learn.sumologic.com/onboarding-fasttrack-for-admins)
+    * [Fundamentals Self-Paced](https://learn.sumologic.com/fundamentals-self-paced)
+    * [Administration Self-Paced](https://learn.sumologic.com/administration-self-paced)
+* **Instructor-led virtual classes**: 
+    * [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
+    * [Certifications: Administration](https://www.sumologic.com/learn/training?_certifications=administration#section-2)
+:::
 
 <div className="box-wrapper" >
 <div className="box smallbox card">

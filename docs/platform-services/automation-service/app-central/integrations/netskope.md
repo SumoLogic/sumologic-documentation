@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/netskope.png')} alt="netskope" width="100"/>
 
-***Version: 1.2  
-Updated: Mar 4, 2024***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -57,3 +57,4 @@ For information about Netskope, see [Netskope documentation](https://docs.netsko
     + Changed fields visibility
     + Changed Daemon compatibility (Netskope Get Event List Daemon)
 * March 4, 2024 (v1.2) - Updated code for compatibility with Python 3.12
+* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

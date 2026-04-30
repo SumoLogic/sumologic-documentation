@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-carbon-black-cloud-endpoint-standard-v2.png')} alt="vmware-carbon-black-cloud-endpoint-standard-v2" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-carbon-black-cloud-endpoint-standard-v2.png')} alt="VMware Carbon Black Cloud Endpoint Standard V2 icon" width="70"/>
 
 ***Version: 2.2  
 Updated: Mar 4, 2024***

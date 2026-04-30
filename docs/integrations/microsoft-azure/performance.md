@@ -7,7 +7,7 @@ description: The Windows Performance app provides insight into your system's ope
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="75"/>
 
 The Windows Performance app provides insight into your system's operation and events so that you can better manage and maintain your Windows systems. The app uses predefined Dashboards and searches that provide visibility into your environment for real-time analysis of system and network performance and overall usage.
 
@@ -95,7 +95,7 @@ instance of Win32_PerfFormattedData_PerfOS_Memory
 
 ### Sample queries
 
-```sql title="Hosts with low available memory"
+```sumo title="Hosts with low available memory"
 _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Memory" "AvailableBytes"
 | parse regex "winbox = (?<dest_host>\S+)" nodrop
 | if (isNull(dest_host) or dest_host="",_sourceHost,dest_host) as host
@@ -108,7 +108,7 @@ _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Memory" "AvailableByt
 | where DataPoints >10 // another threshold: more than 10 minutes where the limit drops under the above threshold
 ```
 
-```sql title="Avg CPU Usage (%) by Host"
+```sumo title="Avg CPU Usage (%) by Host"
 _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Processor" "_Total"
 | parse regex "winbox = (?<dest_host>\S+)" nodrop
 | if (isNull(dest_host) or dest_host="",_sourceHost,dest_host) as host

@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/elastic-security.png')} alt="elastic-security" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/elastic-security.png')} alt="Elastic Security icon" width="100"/>
 
-***Version: 1.3  
-Updated: Mar 4, 2024***
+***Version: 1.4  
+Updated: April 29, 2026***
 
 Elastic Security equips analysts to prevent, detect, and respond to threats. The free and open solution delivers SIEM, endpoint security, threat hunting, cloud monitoring, and more.
 
@@ -78,3 +78,4 @@ For information about Elastic Security, see [Elastic Security documentation](htt
     + Changed fields visibility
     + Updated Daemon compatibility (Fetch Items Elastic Security)
 * March 4, 2024 (v1.3) - Updated code for compatibility with Python 3.12
+* April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

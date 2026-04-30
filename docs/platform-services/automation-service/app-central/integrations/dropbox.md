@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/dropbox.png')} alt="dropbox" width="100"/>
 
-***Version: 1.0  
-Updated: Jan 30, 2023***
+***Version: 1.1  
+Updated: April 29, 2026***
 
 **Dropbox** is used for storing, sharing and access files across devices.
 
@@ -47,3 +47,4 @@ For information about Dropbox, see [Dropbox documentation](https://www.dropbox.c
 ## Change Log
 
 * January 30, 2023 - First upload
+* April 29, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

@@ -42,7 +42,7 @@ When your query has multiple parse expressions, using `nodrop` acts as an **OR
 
 Queries can use the `nodrop` option with a parser:
 
-```sql
+```sumo
 _sourceCategory=Apache* 
 | parse "[sessionId=*]" as sessionid nodrop
 ```
@@ -51,7 +51,7 @@ _sourceCategory=Apache* 
 
 You can parse out an IP address using parse regex and parse nodrop:
 
-```sql
+```sumo
 _sourceCategory=Apache* 
 | parse regex "(?<src_ip>\d{1,3}\.\d{1,3}.\d{1,3}\.\d{1,3})" nodrop
 ```
@@ -60,7 +60,7 @@ _sourceCategory=Apache* 
 
 When specifying `nodrop` in one parse expression but not another the search will return logs that match **either** the first **OR** second parse statements. For example, you can return logs that match either `GET` or `POST` in a URL:
 
-```sql
+```sumo
 _sourceCategory=Apache*
 | parse "GET * HTTP" as url nodrop 
 | parse "POST * HTTP" as url

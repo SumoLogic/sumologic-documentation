@@ -72,7 +72,7 @@ This app uses Sumo Logic’s [ChatGPT Compliance Source](/docs/send-data/hosted-
 
 ## Sample queries
 
-```sql title="Messages by Content Type"
+```sumo title="Messages by Content Type"
 _sourceCategory=GPT
 | json "id", "last_active_at", "user_id", "user_email", "title", "workspace_id", "message.author.role", "message.author.tool_name", "message.content.type", "message.content.value", "message.files.data[*]", "message.gpt_id", "message.id" as id, last_active_at, user_id, user_email, title, workspace_id, role, tool_name, message_type, message_value, files_data, gpt_id, message_id nodrop
 
@@ -90,7 +90,7 @@ _sourceCategory=GPT
 | sort by _count, message_type
 ```
 
-```sql title="Messages by Role"
+```sumo title="Messages by Role"
 _sourceCategory=GPT
 | json "id", "last_active_at", "user_id", "user_email", "title", "workspace_id", "message.author.role", "message.author.tool_name", "message.content.type", "message.content.value", "message.files.data[*]", "message.gpt_id", "message.id" as id, last_active_at, user_id, user_email, title, workspace_id, role, tool_name, message_type, message_value, files_data, gpt_id, message_id nodrop
 
@@ -108,7 +108,7 @@ _sourceCategory=GPT
 | sort by _count, role
 ```
 
-```sql title="Top 10 Users by Conversations"
+```sumo title="Top 10 Users by Conversations"
 _sourceCategory=GPT
 | json "id", "last_active_at", "user_id", "user_email", "title", "workspace_id", "message.author.role", "message.author.tool_name", "message.content.type", "message.content.value", "message.files.data[*]", "message.gpt_id", "message.id" as id, last_active_at, user_id, user_email, title, workspace_id, role, tool_name, message_type, message_value, files_data, gpt_id, message_id nodrop
 
@@ -167,7 +167,7 @@ The **ChatGPT Compliance – Security** dashboard offers a comprehensive view of
 
 Panels like *Top 10 Users by Conversations* and *Top 10 Users by Messages* highlight the most active participants, enabling administrators to identify behavioral trends and usage patterns, supporting policy alignment and informed decisions on model governance and optimization. Time-series views, such as the *Messages Over Time* panel, track engagement over time to detect spikes or anomalies. Meanwhile, *File Uploads*, *Conversations Summaries*, and *Messages Summaries* centralize interaction metrics for streamlined monitoring and audit readiness. The *Content Sensitivity Scan* further strengthens oversight by flagging messages with potentially sensitive or regulated data for prompt risk mitigation.
 
-By unifying user activity, data sensitivity, and model usage insights in a single dynamic interface, this dashboard delivers the visibility and control needed to ensure transparency, responsible AI use, and compliance across your organization.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/chatgpt-compliance/ChatGPT+Compliance+-+Security.png' alt="ChatGPT-Compliance-Security-Dashboard" />
+By unifying user activity, data sensitivity, and model usage insights in a single dynamic interface, this dashboard delivers the visibility and control needed to ensure transparency, responsible AI use, and compliance across your organization.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/chatgpt-compliance/ChatGPT+Compliance+-+Security.png' alt="ChatGPT Compliance Security Dashboard" />
 
 ## Upgrading/Downgrading the ChatGPT Compliance app (Optional)
 

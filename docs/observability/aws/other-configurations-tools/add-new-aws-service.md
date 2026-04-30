@@ -207,13 +207,13 @@ We will take AWS/SQS as an example. For SQS, we selected QueueName as our resour
 
 Scope:
 
-```sql
+```sumo
 (_sourceCategory=aws/observability/cloudtrail/logs "eventSource":"sqs.amazonaws.com")
 ```
 
 Parse expression:
 
-```sql
+```sumo
 json "eventSource", "awsRegion", "requestParameters" as eventSource, region, requestParameters nodrop
 | json field=requestParameters "queueName" as queuename nodrop
 | where eventSource = "sqs.amazonaws.com"
@@ -271,7 +271,7 @@ Write log queries to include variables so data can be filtered in the
 
 For example:
 
-```sql
+```sumo
 account={{account}} namespace={{namespace}} region={{region}} queuename={{queuename}} “sqs.amazonaws.com”
 | json "eventName", "awsRegion", "requestParameters.queueName", "sourceIPAddress", "userIdentity.userName" as event_name, Region, queuename, src_ip, user
 | count by event_name
@@ -284,7 +284,7 @@ the data. Please see this document help doc for details
 
 You can add a variable to your queries by using
 
-```sql
+```sumo
 <key name> = {{variable name}}
 ```
 

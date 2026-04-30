@@ -247,74 +247,6 @@ Here's a cool tip.
 
 :::
 
-
-## Beta releases
-
-### Closed beta
-
-Closed beta release features are exclusively available to participating customers. Documentation for these features is not publicly accessible; Sumo Logic representatives provide the documentation links only to the involved customers. These links are excluded from our table of contents.
-
-To format a closed beta release:
-
-1. Underneath the frontmatter, add:
-   * The [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), which prevents search crawlers from picking it up.
-   * The Sumo Logic Docs beta label.
-     ```md {7-11}
-     ---
-     id: xyz-source
-     title: XYZ Source (Beta)
-     description: The XYZ Source provides a secure endpoint to receive event data.
-     ---
-
-     <head>
-      <meta name="robots" content="noindex" />
-     </head>
-
-     <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
-
-     First paragraph goes here...
-     ```
-2. Publish the document.
-
-### Open beta
-
-When the feature moves to open beta, it becomes available to all customers. Help topics for an open beta feature have a beta label at the top, appear in the site table of contents, and are linked from the [Beta Features](/docs/beta/) section.
-
-To format an open beta release:
-
-1. Underneath the frontmatter, add the beta label.
-   ```md {7}
-   ---
-   id: xyz-source
-   title: XYZ Source (Beta)
-   description: The XYZ Source provides a secure endpoint to receive  event data.
-   ---
-
-   <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
-
-   First paragraph goes here...
-   ```
-1. Add the doc file path to `sidebars.ts` under its appropriate section, then add to the beta section with the same file path. For example, if your doc path is `docs/get-started/sumo-logic-ui.md`, add it to the `get-started/` section, then add to the `beta/` section with the same file path.
-     ```js title="sidebars.ts"
-     getstarted: [
-       {
-         type: 'category',
-         label: 'Welcome to Sumo Logic',
-         items: [
-           'get-started/sumo-logic-ui',
-           ...
-     beta: [
-       {
-         type: 'category',
-         label: 'Beta',
-         items: [
-           'get-started/sumo-logic-ui',
-           ...
-     ```
-1. Publish the doc.
-
-When the feature goes GA, remove the beta label and remove a description of the feature from the `/docs/beta` section.
-
 ## Capitalization
 
 * Title case all doc titles. Example: `Cloud SOAR Incident Management and Triage`.
@@ -335,7 +267,7 @@ Use single backticks (\` \`) to format inline code as monospace font. Example us
 
 <TabItem value="Markdown">
 
-```
+```sumo
 `_view = sumologic_slo_output`
 ```
 </TabItem>
@@ -429,7 +361,7 @@ To highlight lines in the code, use `{#}` in the title line with lines numbers. 
 </TabItem>
 <TabItem value="Result">
 
-```sql {2-6}
+```sumo {2-6}
 _sourceCategory=reinvent/travel/checkout
 [subquery:_sourceCategory=reinvent/travel/nginx
      | count by src_ip
@@ -811,7 +743,7 @@ Add appropriate `alt` text for accessibility. See [Add an image](#add-an-image) 
 
 | &#9989; **Do** | &#10060; **Don't** |
 |:---------------|:-------------------|
-| <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="alt-text" width="400"/> | <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="alt-text" width="400"/> |
+| <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="Alt text" width="400"/> | <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="Alt text" width="400"/> |
 
 ### Images in lists
 
@@ -828,13 +760,13 @@ When adding an image to a bulleted or sequential list, include the image snippet
 <TabItem value="Markdown">
 
 ```md
-1. Here is a dinosaur.<br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur.<br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="Alt text" width="100"/>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-1. Here is a dinosaur. <br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur. <br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="Alt text" width="100"/>
 
 </TabItem>
 </Tabs>
@@ -1251,6 +1183,148 @@ This is a partial list of trademarked terms, which should be capitalized exactly
 
 Never use Sumo Logic in the plural or possessive form.
 
+## Preview releases
+
+Following are the instructions for formatting docs at each release stage. For release type definitions, see [Preview Releases](/docs/preview).
+
+Private Preview and Extended Preview release features are invite-only, while Public Preview features are by request only to participating customers. Preview docs are published, but excluded from the nav and must not be referenced or appear anywhere in the docs. Sumo Logic representatives provide the documentation links only to the involved customers.
+
+For Preview docs, under the frontmatter, add the `robots` meta tag, then the corresponding badge and preview notice. The Preview badges contain a link to the [Preview](/docs/preview) landing page, and the `robots` meta tag prevents search crawlers from picking it up.
+
+### Private Preview
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+---
+<frontmatter>
+---
+
+<head>
+<meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+<first paragraph>
+```
+
+</TabItem>
+<TabItem value="Result">
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+</TabItem>
+</Tabs>
+
+
+### Extended Preview
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+---
+<frontmatter>
+---
+
+<head>
+<meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
+
+:::info
+This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+<first paragraph>
+```
+
+
+</TabItem>
+<TabItem value="Result">
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
+
+:::info
+This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+</TabItem>
+</Tabs>
+
+### Public Preview
+
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+---
+<frontmatter>
+---
+
+<head>
+<meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
+
+:::info
+This feature is in Public Preview. To participate, contact your Sumo Logic account representative.
+:::
+
+<first paragraph>
+```
+
+</TabItem>
+<TabItem value="Result">
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
+
+:::info
+This feature is in Public Preview. To participate, contact your Sumo Logic account representative.
+:::
+
+
+</TabItem>
+</Tabs>
+
+
+### Generally Available (GA)
+
+When a feature becomes Generally Available (GA), remove all Preview-related labels, badges, notes, and the `robots` meta tag. Then follow the standard [Create a Doc](/docs/contributing/create-edit-doc) instructions.
 
 ## Punctuation
 

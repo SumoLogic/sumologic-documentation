@@ -7,7 +7,7 @@ description: Learn how to install apps to your Library and to multiple environme
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/cloud/apps.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/cloud/apps.png')} alt="Apps icon" width="50"/>
 
 Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you. In this doc, you'll learn how to install apps from the **App Catalog** to your Library and how to manage them in multiple environments.
 
@@ -27,7 +27,7 @@ To learn about the vendors and products that Sumo Logic integrates with, refer t
 
 Many of our apps are labeled with the **Certified by Sumo Logic** designation. Just look for the blue checkmark symbol:
 
-<img src={useBaseUrl('img/get-started/cert-app.png')} alt="cert-app.png" style={{border:'1px solid gray'}} width="500" />
+<img src={useBaseUrl('img/get-started/cert-app.png')} alt="Cert app symbol" style={{border:'1px solid gray'}} width="500" />
 
 These apps have gone through code and functional review with the Sumo Logic app development team as part of the [App Intelligence Partner Program](https://www.sumologic.com/technology-partners). This process includes feedback and re-review as needed, and ensures that apps certified through this process meet the team's quality standards.
 
@@ -180,8 +180,8 @@ However, if you want to use multiple metadata fields as your filter criteria, f
 
 1. In the App Catalog, select the application you want to install and click **Add Integration**.
 1. Click the down arrow next to **Source Category**.<br/><img src={useBaseUrl('/img/get-started/library/add-apache.png')} alt="Custom Data Filter" style={{border:'1px solid gray'}} width="500" />
-1. A **Custom Data Filter** option appears. Click the option.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter.png')} alt="apache-custom-filter" style={{border:'1px solid gray'}} width="500" />
-1. Enter a filter expression in the **Custom Data Filter** field. For example filters, see [Example custom data filters](#example-custom-data-filters), below.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter-field.png')} alt="apache-custom-filter-field" style={{border:'1px solid gray'}} width="500" />
+1. A **Custom Data Filter** option appears. Click the option.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter.png')} alt="Apache custom filter" style={{border:'1px solid gray'}} width="500" />
+1. Enter a filter expression in the **Custom Data Filter** field. For example filters, see [Example custom data filters](#example-custom-data-filters), below.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter-field.png')} alt="Apache custom filter field" style={{border:'1px solid gray'}} width="500" />
 
 ### Example custom data filters
 

@@ -2,8 +2,7 @@
 id: mobot
 title: Sumo Logic Mobot
 sidebar_label: Mobot ✨
-# Edit description to include QA and KA
-description: Accelerate troubleshooting with Mobot, Sumo Logic's AI-powered assistant. Ask questions in plain English to generate log queries (Query Agent) or get help learning the platform (Knowledge Agent).
+description: Accelerate troubleshooting and platform learning with Mobot, Sumo Logic's AI-powered conversational assistant. Ask questions in plain English to analyze log data or get answers sourced from official documentation.
 keywords:
   - copilot
   - mobot
@@ -11,6 +10,7 @@ keywords:
   - ai
   - machine learning
   - ml
+  - dojo ai
 ---
 
 import Iframe from 'react-iframe';
@@ -28,6 +28,16 @@ It connects you to two specialized agents that handle different tasks:
 * **Knowledge Agent** answers how-to questions about Sumo Logic—anything from setup to troubleshooting, best practices, and more—sourced from our official documentation.
 
 Together, these agents help you troubleshoot faster, explore your data more intuitively, and learn the platform without friction.
+
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* **Self-paced**: [Mobot Essentials Self Paced](https://learn.sumologic.com/mobot-101)
+* **Instructor-led virtual classes**: [Workshops: Mobot Essentials](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2)
+:::
 
 ### Key capabilities
 
@@ -198,7 +208,7 @@ Query Agent automatically visualizes your data. For example, a query like "Top i
 
 Select your preferred chart type, such as **Table**, **Bar**, **Column**, or **Line** view to visualize your results. You can also click **Add to Dashboard** to export an AI-generated dashboard for root cause analysis.
 
-<img src={useBaseUrl('img/search/mobot/chart-types.png')} alt="Mobot chart types" style={{border: '1px solid gray'}} width="500" />
+<img src={useBaseUrl('img/search/mobot/add-to-dashboard.png')} alt="Mobot add to dashboard button" style={{border: '1px solid gray'}} width="500" />
 
 The following rules are used to deduce chart type:
 * If both latitude and longitude fields exist, it returns a MAP chart type.
@@ -256,7 +266,7 @@ Prerequisites:
 To view Query Agent queries:
 1. Open **Log Search**.
 1. Use the following query:
-   ```sql
+   ```sumo
    _view=sumologic_search_usage_per_query
    | where query_type in ("Query Agent")
    | count user_name, query
@@ -360,7 +370,7 @@ Query Agent querying is compatible with JSON logs, partial JSON logs, and unstru
 
 To retrieve a list of `_sourceCategories` with JSON data, use the following query:
 
-```sql
+```sumo
 _sourceCategory=* "{" "}"
 | limit 10000 | logreduce keys noaggregate
 | count by _sourceCategory, _schema
@@ -388,7 +398,7 @@ If you're on a [tiered pricing](/docs/manage/partitions/data-tiers/searching-dat
 
 * Query Agent searches across *continuous data tiers only*, unless otherwise specified.
 * To query a specific tier, include the `_dataTier` field in your prompt. For example, to search the Infrequent tier:
-   ```sql
+   ```sumo
    _dataTier=Infrequent
    ```
 
@@ -440,7 +450,7 @@ To get the most accurate answers, try the following when asking questions:
 Sumo Logic Mobot leverages foundational models provided by Amazon Bedrock, inheriting their robust compliance and security posture. For detailed information, refer to the following Amazon Bedrock security and compliance resources:
 
 * [Security in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/security.html)
-* [Amazon Bedrock Security and Privacy](https://aws.amazon.com/bedrock/security-compliance/)
+* [Amazon Bedrock Security and Privacy](https://aws.amazon.com/bedrock/faqs/#security--ny85yy)
 
 Additionally, all aspects of our service, including Mobot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts.
 
@@ -485,6 +495,12 @@ If you prefer not to use Mobot, contact our [support team](https://support.sumol
 ### Security and privacy
 
 <details>
+<summary>Do Dojo AI agents access customer data?</summary>
+
+Mobot (including Query Agent and Knowledge Agent) does not process or analyze customer log data. Schema and field samples are used to provide context to the AI, but your log content is not read or stored by the model.
+</details>
+
+<details>
 <summary>What specific types of customer data or PII does the AI process? Does it filter out PII/sensitive information?</summary>
 
 Mobot processes schema and field samples to provide context to the AI. While field values can contain PII or confidential data (for example, email addresses or IP addresses), these values are used solely to enable insights and are protected under strict compliance and security reviews.
@@ -513,7 +529,15 @@ No. All processing happens within your region's cluster. RAG context is scoped t
 <details>
 <summary>Does a fourth party have access to Mobot customer data?</summary>
 
-No. The foundation model provider used by Amazon Bedrock has no access to customer data.
+No. Mobot uses foundation models securely hosted through Amazon Bedrock. When customer data is processed:
+
+* Customer inputs and outputs are treated as Customer Content under AWS terms.
+* AWS does not use Customer Content to train models or improve Amazon Bedrock.
+* AWS may access Customer Content only as necessary to provide the service or comply with applicable law.
+* Third-party model providers (such as Anthropic) do not have access to customer inputs or outputs.
+* Customer inputs and outputs are not shared with model providers and are not used to train external models.
+
+Customer data processed through Mobot remains within Sumo Logic's secure environment and is used only to deliver results for that customer.
 </details>
 
 ### Technical
@@ -539,13 +563,25 @@ Yes, the on-call developer or security engineer troubleshooting an incident is t
 <details>
 <summary>Does Sumo Logic hold any AI-specific certifications or accreditations?</summary>
 
-No, we do not currently hold any AI-specific certifications or accreditations.
+Sumo Logic is currently reviewing AI compliance within a rapidly evolving regulatory landscape, including ISO 42001, which is designed to help organizations implement AI responsibly.
+
+All Sumo Logic AI capabilities operate within our existing industry-recognized security and compliance framework, including FedRAMP Moderate, SOC 2 Type 2, HIPAA, PCI DSS 4.0.1, and ISO 27001:2022. These attestations govern the confidentiality, integrity, and protection of customer data across our platform, including AI features.
+
+Availability of specific AI capabilities may vary by deployment region based on compliance boundary requirements.
 </details>
 
 <details>
 <summary>How are reviews conducted on the Mobot model?</summary>
 
+The generative AI model used by Mobot is licensed and securely hosted via Amazon Bedrock, meaning it is not directly accessible by Sumo Logic, customers, or third parties.
+
 Each major capability added to Mobot undergoes legal, compliance, and application security reviews. These reviews coincide with new releases that expand insights or process new types of data.
+</details>
+
+<details>
+<summary>Which Mobot capabilities are available in FED deployments?</summary>
+
+The current GA versions of Mobot, including Query Agent and Knowledge Agent, are available in the FED deployment.
 </details>
 
 ### Query Agent

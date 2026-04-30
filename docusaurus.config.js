@@ -15,7 +15,7 @@ const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString()
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Sumo Logic Docs',
-  tagline: '',
+  tagline: 'Documentation, guides, and API references for Sumo Logic',
   url: process.env.HOSTNAME || "http://localhost:3000",
   trailingSlash: true,
   baseUrl: process.env.BASE_URL || "/",
@@ -120,10 +120,19 @@ module.exports = {
   ],
   clientModules: [
     require.resolve('./src/client-modules/trackTrialClick.js'),
+    require.resolve('./src/client-modules/fixAnchorScroll.js'),
   ],
+  storage: {
+    type: 'localStorage',
+    namespace: true,
+  },
   future: {
-    v4: true,
-    experimental_faster: true,
+    faster: true,
+    v4: {
+      siteStorageNamespacing: true,
+      fasterByDefault: true,
+      removeLegacyPostBuildHeadAttribute: true,
+    },
   },
   staticDirectories: ['static'],
   presets: [
@@ -168,7 +177,7 @@ module.exports = {
           changefreq: 'daily',
           ignorePatterns: [
             '/docs/reuse/**',
-            '/docs/beta/**',
+            '/docs/preview/**',
             '/ja/**',
             '/files/**',
             '/release-notes-*/archive/**',
@@ -183,7 +192,7 @@ module.exports = {
           routeBasePath: 'release-notes-service',
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
-          blogDescription: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
+          blogDescription: 'Latest features and bug fixes for Sumo Logic log analytics, AI and automation, observability, alerts, sources, and more.',
           postsPerPage: 'ALL',
           showReadingTime: false,
           onUntruncatedBlogPosts: 'ignore',
@@ -193,8 +202,8 @@ module.exports = {
             type: 'rss',
             xslt: true,
             title: 'Sumo Logic Service Release Notes',
-            description: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
-            copyright: `Copyright ©${new Date().getFullYear()} Sumo Logic`,
+            description: 'Latest features and bug fixes for Sumo Logic log analytics, AI and automation, observability, alerts, sources, and more.',
+            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
           },
         },
         theme: {
@@ -301,7 +310,7 @@ module.exports = {
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
           postsPerPage: 'ALL',
-          blogDescription: 'Stay up to date with the latest features, improvements, and fixes in the Sumo Logic Installed Collector by reviewing the official release notes.',
+          blogDescription: 'Latest features, improvements, and fixes for the Sumo Logic Installed Collector and OpenTelemetry Collector.',
           showReadingTime: false,
           onUntruncatedBlogPosts: 'ignore',
           onInlineTags: 'ignore',
@@ -310,7 +319,7 @@ module.exports = {
             type: 'rss',
             xslt: true,
             title: 'Sumo Logic Collector Release Notes',
-            description: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
+            description: 'Latest features, improvements, and fixes for the Sumo Logic Installed Collector and OpenTelemetry Collector.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
           },
         },
@@ -333,19 +342,20 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [
-      { name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts' },
+      { name: 'keywords', content: 'sumo logic, documentation, log management, observability, cloud siem, monitoring, API, tutorials' },
       { name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586' },
-      { name: 'description', content: 'Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.' },
+      { name: 'description', content: 'Sumo Logic documentation for log analytics, cloud monitoring, security, observability, and AI-powered troubleshooting. Get started guides, API references, and release notes.' },
       { property: 'og:site_name', content: 'Sumo Logic Docs' },
-      { property: 'og:description', content: 'Sumo Logic Docs - best-in-class cloud monitoring, log management, Cloud SIEM tools, and real-time insights for web and SaaS based apps.' },
+      { property: 'og:description', content: 'Sumo Logic documentation for log analytics, cloud monitoring, security, observability, and AI-powered troubleshooting. Get started guides, API references, and release notes.' },
       { property: 'og:image', content: 'https://www.sumologic.com/wp-content/uploads/meta-HomePage_1200x628-1.png' },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '628' },
       { property: 'og:image:alt', content: 'Sumo Logic Docs' },
+      { property: 'og:type', content: 'article' },
     ],
     announcementBar: {
       id: 'domain',
-      content: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/><path d="M19 14l.75 2.75L22.5 17.5l-2.75.75L19 21l-.75-2.75L15.5 17.5l2.75-.75L19 14z"/></svg>Introducing <a href="/docs/search/mobot">Mobot</a>, your conversational interface for Sumo Logic. Search logs using natural language, troubleshoot faster, and get how-to guidance.',
+      content: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/><path d="M19 14l.75 2.75L22.5 17.5l-2.75.75L19 21l-.75-2.75L15.5 17.5l2.75-.75L19 14z"/></svg>Check out <a href="https://www.sumologic.com/help/docs/search/mobot/">Mobot</a>, your conversational interface for Sumo Logic. Search logs using natural language, troubleshoot faster, and get how-to guidance.<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/><path d="M19 14l.75 2.75L22.5 17.5l-2.75.75L19 21l-.75-2.75L15.5 17.5l2.75-.75L19 14z"/></svg>',
       backgroundColor: '#000',
       textColor: '#000',
     },
@@ -376,7 +386,7 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json'],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json', `sql`, `sumo`],
     },
       navbar: {
         logo: {
@@ -504,7 +514,7 @@ module.exports = {
               },
               {
                 label: 'Request a Demo',
-                to: 'https://www.sumologic.com/demos',
+                href: 'https://www.sumologic.com/demo',
                 icon: 'co_present',
               },
               {
@@ -572,7 +582,7 @@ module.exports = {
             items: [
               {
                 label: 'Start Free Trial',
-                href: 'https://www.sumologic.com/sign-up'
+                href: 'https://www.sumologic.com/sign-up/'
               },
               {
                 label: 'Request a demo',

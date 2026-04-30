@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ibm-qradar.png')} alt="ibm-qradar" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ibm-qradar.png')} alt="IBM QRadar icon" width="100"/>
 
-***Version: 1.3  
-Updated: Jul 11, 2023***
+***Version: 1.4  
+Updated: April 29, 2026***
 
 IBM QRadar SIEM helps security teams detect, prioritize and respond to threats across the enterprise.
 
@@ -78,3 +78,4 @@ For information about IBM QRadar, see [IBM QRadar documentation](https://www.ibm
 	+ Added new actions:
 		- Search Into Events QRadar V3
 		- Search Into Events QRadar V4
+* April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

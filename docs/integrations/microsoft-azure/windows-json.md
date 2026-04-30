@@ -6,12 +6,12 @@ description: The Windows JSON app provides insight into your Windows system's op
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="75"/>
 
 The Windows JSON app provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows JSON app is based on the JSON Windows event log format and consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and Applications.
 
 :::note
-You may also be interested in the [Sumo Logic App for Windows Cloud Security Monitoring and Analytics](docs/integrations/cloud-security-monitoring-analytics/windows.md).
+You may also be interested in the [Sumo Logic App for Windows Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/windows.md).
 :::
 
 ## Log types
@@ -68,7 +68,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
-```sql
+```sumo
 _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit policy was changed" or *policy*change* or "Policy Change" or 4902 or 4904 or 4905 or 4906 or 4907 or 4912 or 4715 or 4719 or 4739)
 | json "EventID", "Computer", "Message" as event_id, host, msg_summary nodrop
 | parse regex field = msg_summary "(?<msg_summary>.*\.*)"

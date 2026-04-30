@@ -10,13 +10,9 @@ The `isPrivateIP` operator checks if an IPv4 address is private and returns a 
 
 ## Syntax
 
-```sql
-isPrivateIP("<IPv4_string>") as <field>
-```
+`isPrivateIP("<IPv4_string>") as <field>`
 
-```sql
-isPrivateIP(<IPv4_string_field>) [as <field>]
-```
+`isPrivateIP(<IPv4_string_field>) [as <field>]`
 
 ## Rules
 
@@ -34,18 +30,18 @@ address is detected:
 
 The following returns `true`:
 
-```sql
+```sumo
 | isPrivateIP("10.255.255.255") as isPrivate
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isPrivateIP("192.168.0.1") as isPrivate
 ```
 
 The following returns `false`:
 
-```sql
+```sumo
 | isPrivateIP("127.0.0.1") as isPrivate
 ```
