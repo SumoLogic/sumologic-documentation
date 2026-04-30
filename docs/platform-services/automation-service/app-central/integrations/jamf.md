@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/jamf.png')} alt="jamf" width="70"/>
 
-***Version: 1.3  
-Updated: Jun 28, 2023***
+***Version: 1.4  
+Updated: April 29, 2026***
 
 The Jamf platform creates IT software that manages Apple devices.
 
@@ -63,3 +63,4 @@ Example: [https://yourServer.jamfcloud.com](https://yourServer.jamfcloud.com)
 * November 23, 2022 - First upload
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
 * June 28, 2023 (v1.3) - Updated **List Computers** Action
+* April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

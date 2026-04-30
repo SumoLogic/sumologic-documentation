@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-amp-for-endpoints.png')} alt="Cisco AMP for Endpoints icon" width="70"/>
 
-***Version: 1.2  
-Updated: Jun 21, 2023***
+***Version: 1.3  
+Updated: April 27, 2026***
 
 Perform a wide variety of Enrichment and Containment actions for endpoint investigation and response with Cisco AMP for Endpoints.
 
@@ -69,3 +69,4 @@ For information about Cisco Secure Endpoint (formerly AMP for Endpoints), see [S
 * January 29, 2019 - First upload
 * May 22, 2020 - Added additional actions
 * June 21, 2023 (v1.2) - Updated the integration with Environmental Variables
+* April 27, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

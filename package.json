@@ -115,7 +115,7 @@
     "p-queue": "6.6.2",
     "p-timeout": "3.2.0",
     "path-to-regexp": "3.3.0",
-    "postcss": "^8.4.38",
+    "postcss": "^8.5.10",
     "postcss-calc": "9.0.1",
     "postcss-colormin": "6.1.0",
     "postcss-convert-values": "6.1.0",

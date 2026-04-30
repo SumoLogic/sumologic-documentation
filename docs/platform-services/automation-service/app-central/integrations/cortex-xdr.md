@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cortex-xdr.png')} alt="Cortex XDR icon" width="100"/>
 
-***Version: 1.5  
-Updated: Oct 15, 2024***
+***Version: 1.6  
+Updated: April 29, 2026***
 
 Query data and utilize actions in Palo Alto Networks Cortex XDR.
 
@@ -71,3 +71,4 @@ For information about Cortex XDR, see [Cortex XDR documentation](https://docs-co
 * July 11, 2023 (v1.3) - Removed leading/trailing spaces
 * March 4, 2024 (v1.4) - Updated code for compatibility with Python 3.12
 * October 15, 2024 (v1.5) - Fixed the timeout error.
+* April 29, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
