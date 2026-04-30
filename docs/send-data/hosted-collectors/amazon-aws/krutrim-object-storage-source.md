@@ -14,7 +14,7 @@ Krutrim is a part of the Ola group’s AI computing stack, which provides S3-com
 
 Sumo Logic can collect and analyze logs from Krutrim Object Storage using the existing Amazon Web Services S3 Source, since Krutrim implements the standard S3 API. This allows reuse of the same connector logic, authentication model, and ingestion pipeline with only a custom endpoint configuration specific to Krutrim.
 
-This integration demonstrates how Sumo Logic extends its existing S3 ingestion capabilities to support Krutrim and other S3-compatible storage systems with minimal changes, enabling centralized observability across multiple cloud providers while maintaining consistent data collection and analytics.
+This integration enables how Sumo Logic extends its existing S3 ingestion capabilities to support Krutrim and other S3-compatible storage systems with minimal changes, enabling centralized observability across multiple cloud providers while maintaining consistent data collection and analytics.
 
 ## Why S3 compatibility matters
 
