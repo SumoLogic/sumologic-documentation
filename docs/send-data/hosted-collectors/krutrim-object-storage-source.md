@@ -6,7 +6,7 @@ description: Krutrim Object Storage enables seamless log ingestion and centraliz
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import CollBegin from '../../../reuse/collection-should-begin-note.md';
+import CollBegin from '../../reuse/collection-should-begin-note.md';
 
 <img src={useBaseUrl('img/send-data/krutrim-icon.png')} alt="Krutrim Object Storage icon" width="40"/>
 
