@@ -416,6 +416,7 @@ module.exports = {
           link: {type: 'doc', id: 'send-data/hosted-collectors/index'},
           items: [
             'send-data/hosted-collectors/configure-hosted-collector',
+            'send-data/hosted-collectors/krutrim-object-storage',
             {
               type: 'category',
               label: 'Amazon/AWS Sources',
@@ -439,7 +440,6 @@ module.exports = {
                 'send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source',
                 'send-data/hosted-collectors/amazon-aws/collection-aws-govcloud',
                 'send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation',
-                'send-data/hosted-collectors/amazon-aws/krutrim-object-storage',
               ],
             },
             {

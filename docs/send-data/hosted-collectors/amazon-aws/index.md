@@ -107,10 +107,4 @@ In this section, we'll introduce the following concepts:
   <p>Use CloudFormation to set up AWS products.</p>
   </div>
 </div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/krutrim-object-storage')}><img src={useBaseUrl('img/send-data/aws-cloudformation.svg')} alt="AWS CloudFormation icon" width="30"/><h4>Krutrim Object Storage</h4></a>
-  <p>Use Krutrim Object Storage source to collect and send data to Sumo Logic.</p>
-  </div>
-</div>
 </div>

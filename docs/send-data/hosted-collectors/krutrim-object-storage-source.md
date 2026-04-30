@@ -55,8 +55,11 @@ This ensures reliable and consistent ingestion without dependency on external ev
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
 1. Select **Krutrim Object Storage**.
 1. Enter a name for the new Source. A description is optional.
-1. (Optional) For Source Category, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called _sourceCategory.
-1. **Region**. Select the appropriate region.
+1. (Optional) For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.)
+
+1. **Region**. Select the appropriate region:
+    - Bangalore (ap-south-1)
+    - Hyderabad (ap-south-1)
 1. **Bucket Name**. Enter the exact bucket name from Krutrim Object Storage.
 1. **Path Expression**. Enter the wildcard pattern that matches the Krutrim Object Storage objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a multiple wildcard. Do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details.
 1. **Collection should begin.** Set the collection start time to define historical ingestion range. You can either:
@@ -70,10 +73,9 @@ This ensures reliable and consistent ingestion without dependency on external ev
     :::note
     <CollBegin/>
     :::
-1. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.)
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **Krutrim Access**. Enter the **Access ID** and **Secret Key.** See [AWS Access Key ID](https://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
-1. **Log File Discovery**. Configure the **Scan Interval** from the dropdown to periodically scan your Krutrim Object Storage for new items. **Automatic** is recommended to not incur additional AWS charges.
+1. **Log File Discovery**. Configure the **Scan Interval** from the dropdown to periodically scan your Krutrim Object Storage for new items. **Automatic** is recommended to not incur additional charges.
 1. When you are finished configuring the Source, click **Save**.
