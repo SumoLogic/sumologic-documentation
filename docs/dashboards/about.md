@@ -115,7 +115,7 @@ To view the dashboard information, follow the steps below:
 
 ## Auto Refresh
 
-**Auto Refresh** automatically updates dashboard panels with the latest data at a configured interval. onsider disabling it or increasing the minimum refresh interval when frequent updates are not required. For Flex customers, this helps reduce avoidable scan costs from unnecessary refreshes. For Tiered customers, it minimizes unnecessary panel reloads and helps improve dashboard performance.
+**Auto Refresh** automatically updates dashboard panels with the latest data at a configured interval. Consider disabling it or increasing the minimum refresh interval when frequent updates are not required. For Flex customers, this helps reduce avoidable scan costs from unnecessary refreshes. For Tiered customers, it minimizes unnecessary panel reloads and helps improve dashboard performance.
 
 :::note
 To enable or disable this feature, you must be an **Administrator** or a role with the **ManageDashboardExecutionControls** capability.
