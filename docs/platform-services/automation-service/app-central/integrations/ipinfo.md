@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ipinfo.png')} alt="ipinfo" width="90"/>
 
-***Version: 1.2  
-Updated: Nov 24, 2023***
+***Version: 1.3  
+Updated: April 29, 2026***
 
 IPinfo is an IP data provider specialized in IP address geolocation, ASN, IP address company, VPN detection, carrier IP address, IP address ranges, and hosted domain data.
 
@@ -61,3 +61,4 @@ For information about IPinfo, see [IPinfo documentation](https://ipinfo.io/devel
 	+ Enabled Incident Artifacts feature flag for IP Address field
 	+ Added integer validator and placeholder for Connection Timeout resource field
 	+ Removed trailing/leading spaces
+* April 29, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
