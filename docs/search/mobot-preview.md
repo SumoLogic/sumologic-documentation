@@ -32,18 +32,16 @@ Features and behavior described here are subject to change before general availa
 
 | | Before | Now |
 |:--|:--|:--|
-| **Interface** | Separate Query Agent and Knowledge Agent selection | Unified interface with no manual agent selection required |
-| **Routing** | Manual | Automatic routing to the right skill based on your question |
-| **Reasoning** | Natural language to log query translation | Higher-order reasoning, planning, and implicit log analysis |
-| **Results rendering** | Query results open in Log Search | Results render as structured tables inline in the conversation |
-| **Anomaly surfacing** | Not available | Notable findings callout flags patterns and suggests next steps |
-| **Missing data sources** | Returns no results or an error | Detects missing partitions or indexes and provides setup guidance |
-| **Log support** | Structured and semi-structured logs | Structured, semi-structured, and unstructured logs |
-| **Conversation history** | 24 hours | Retained indefinitely (subject to change) |
-| **Follow-up guidance** | Suggested follow-up queries | Suggested follow-up questions guiding next investigation steps |
-| **Feedback** | Thumbs up/down | Thumbs up/down + shareable conversation URL |
+| **[Interface and routing](#united-interface)** | Separate Query Agent and Knowledge Agent with manual selection | Unified interface with automatic routing to the right skill |
+| **[Reasoning](#thinking-and-planning)** | Natural language to log query translation | Higher-order reasoning, planning, and implicit log analysis |
+| **[Results rendering](#results-rendering)** | Query results open in Log Search | Query results render as structured table summaries inline in the conversation, plus option to open in Log Search |
+| **[Anomaly surfacing](#results-rendering)** | Not available | Highlights unusual patterns and suggests next steps |
+| **[Missing data sources](#configuration-gap-detection)** | Returns no results or an error | Detects missing partitions or indexes and provides setup guidance |
+| **[Log support](#unstructured-logs-support)** | Structured and semi-structured logs | Structured, semi-structured, and unstructured logs |
+| **[Conversation history](#conversation-history)** | 24 hours | Retained indefinitely (subject to change) |
+| **[Feedback](#feedback)** | Thumbs up/down | Thumbs up/down + shareable conversation URL |
 
-### Automated routing
+### United interface
 
 You no longer need to choose between Query Agent and Knowledge Agent. Mobot handles this for you.
 
@@ -60,27 +58,37 @@ Mobot automatically routes your question to the appropriate skill, as seen here:
 
 <img src={useBaseUrl('img/search/mobot/platform-how-to-mobotv2.png')} alt="Mobot platform how-to answer" style={{border: '1px solid gray'}} width="700" />
 
-### Clarification prompts
-
-Mobot interprets natural language questions even when they are incomplete or ambiguous. If your question is unclear, Mobot asks a targeted follow-up question to narrow intent before running a search. For example, asking `Show me logs from last 15 minutes` without specifying a source prompts Mobot to ask which application, service, or log source you are interested in, with inline examples such as `kubernetes`, `nginx`, or `auth_logs`.
-
-Respond with a source name, source category expression, or any keyword related to what you are looking for. If your question falls outside available data or system capabilities, Mobot clarifies or redirects rather than returning an error.
-
-<img src={useBaseUrl('img/search/mobot/clarification-prompt-mobotv2.png')} alt="Mobot clarification prompt" style={{border: '1px solid gray'}} width="700" />
-
 ### Thinking and planning
 
-While Mobot processes your question, it displays a thinking or planning indicator showing that it is identifying relevant data sources and analyzing the problem. Behind the scenes, Mobot selects relevant data sources, schema, lookup tables, and saved queries, infers time ranges based on context, and retrieves log data enriched with environmental context.
-
-<img src={useBaseUrl('img/search/mobot/inline-results-mobotv2.png')} alt="Mobot inline results with thinking state" style={{border: '1px solid gray'}} width="700" />
+While Mobot processes your question, it displays a **Thinking...** or **Planning...** indicator showing that it is identifying relevant data sources and analyzing the problem. Behind the scenes, Mobot selects relevant data sources, schema, lookup tables, and saved queries, infers time ranges based on context, and retrieves log data enriched with environmental context.
 
 ### Multi-step analysis
 
 Mobot orchestrates multi-step analysis automatically. It translates your question into the appropriate analytical steps, applies multi-step reasoning to synthesize findings, and presents results as a structured response with suggested next steps.
 
-### Notable findings
+### Results rendering
 
-After returning results, Mobot summarizes anything that stands out at the bottom of the response, labeled **Notable**. For example, if `WARN` entries share an unusual pattern, Mobot flags them, explains what they may indicate, and asks whether you want to investigate further.
+When Mobot returns results, they appear summarized inline as structured tables directly in the conversation, plus a shortcut button to expand on results in a separate Log Search view.
+
+In this example, Mobot summarizes what stands out at the bottom of the response, labeled **Notable**. For example, if `WARN` entries share an unusual pattern, Mobot flags them, explains what they may indicate, and asks whether you want to investigate further.
+
+<img src={useBaseUrl('img/search/mobot/inline-results-mobotv2.png')} alt="Mobot inline results with thinking state" style={{border: '1px solid gray'}} width="700" />
+
+Here's another example showing Mobot displaying inline results and summarizing key observations below it:
+
+<img src={useBaseUrl('img/search/mobot/inline-results-summary-mobotv2.png')} alt="Mobot inline results table with key observations" style={{border: '1px solid gray'}} width="700" />
+
+### Clarification prompts
+
+Mobot interprets natural language questions even when they are incomplete or ambiguous. If your question is unclear, Mobot asks a targeted follow-up question to narrow intent before running a search.
+
+For example, asking `Show me logs from last 15 minutes` or `Show me all logs from the last 24 hours` without specifying a source prompts Mobot to ask which application, service, or log source you are interested in, with inline examples such as `kubernetes`, `nginx`, or `auth_logs`.
+
+<img src={useBaseUrl('img/search/mobot/clarification-prompt-mobotv2.png')} alt="Mobot clarification prompt" style={{border: '1px solid gray'}} width="600" />
+
+<img src={useBaseUrl('img/search/mobot/clarification-prompt-logs-mobotv2.png')} alt="Mobot clarification prompt" style={{border: '1px solid gray'}} width="600" />
+
+Respond with a source name, source category expression, or any keyword related to what you are looking for. If your question falls outside available data or system capabilities, Mobot clarifies or redirects rather than returning an error.
 
 ### Configuration gap detection
 
@@ -95,10 +103,6 @@ You can also use this capability on demand. For example:
 * `Do I have AWS CloudTrail data?`
 * `Is Kubernetes data flowing in?`
 * `Do I have any threat intel lookups set up?`
-
-### Conversation history
-
-Mobot retains your conversation history indefinitely. To resume a previous investigation, open the **My Conversations** list and select the conversation.
 
 ### Unstructured logs support
 
@@ -119,6 +123,10 @@ At this stage, Mobot prioritizes unstructured logs that are already used in dash
 * **Error triage**. Investigate frequently visualized log data to surface patterns and recurring issues in unstructured formats.
 * **Security insights**. Detect anomalies or signs of failed logins by querying raw logs already powering security dashboards.
 * **Smarter prioritization**. Mobot focuses on unstructured logs that are visualized in dashboards, helping you get meaningful insights from high-value data sources.
+
+### Conversation history
+
+Mobot retains your conversation history indefinitely. To resume a previous investigation, open the **My Conversations** list and select the conversation.
 
 ## Example prompts
 
@@ -150,6 +158,10 @@ Follow-up:
 * `Which users are involved?`
 
 * `Is this activity increasing over time?`
+
+### Product and research
+
+* `What integrations does Sumo Logic support for cloud security?`
 
 ## Limitations
 
