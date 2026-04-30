@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/phishlabs-drp.png')} alt="PhishLabs DRP icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jun 22, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 Digital Risk Protection from PhishLabs protects your organization's critical digital assets and data from online threats including brand abuse, account takeover, social media scams, data leakage, and advanced email attacks.
 
@@ -50,3 +50,4 @@ For information about PhishLabs, see the [PhishLabs website](https://www.phishla
 
 * February 16, 2023 - First upload
 * June 22, 2023 (v1.1) - Changed indentation
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
