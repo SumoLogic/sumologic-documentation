@@ -7,16 +7,6 @@ description: The Sumo Logic app for LiteLLM provides visibility into LLM proxy u
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
- <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
-
-:::info
-This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
-:::
-
 <img src={useBaseUrl('img/send-data/litellm-icon.png')} alt="LiteLLM icon" width="45"/>
 
 The Sumo Logic app for LiteLLM provides preconfigured dashboards to monitor request volume, latency, token consumption, spend, budget and rate limits, deployment and fallback health, infrastructure (Redis, Postgres), and user or route visibility. Use the app to track cost by team or API key, identify slow models, detect failures and fallbacks, and ensure your LLM proxy is running smoothly.

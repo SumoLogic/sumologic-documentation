@@ -136,9 +136,9 @@ Select the default page to appear when you log in to Sumo Logic. This preference
 
 Select to show the user interface in a **Dark theme** or **Light theme**.
 
-This setting applies only to the user interface in the [Automation Service](/docs/platform-services/automation-service/), [Cloud SIEM](/docs/cse/), and [Cloud SOAR](/docs/cloud-soar/). A global setting is not supported at this time.
+[**New UI**](/docs/get-started/sumo-logic-ui). Dark and Light theme support is available across the Sumo Logic Log Analytics Platform. You can select your preferred theme in **Account Preferences**, or use the global theme button in the top toolbar, located adjacent to the **Go to...** button, to switch themes instantly from anywhere in the platform.<br/><img src={useBaseUrl('img/get-started/global-theme-button.png')} alt="Global Theme Button" style={{border: '1px solid gray'}} width="300" />
 
-You can also apply a [dark theme specifically for dashboards](/docs/dashboards/about/#dark-theme).
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Select between **Light** or **Dark** mode in the **Account Preferences** page. This setting applies only to the user interface in the [Automation Service](/docs/platform-services/automation-service/), [Cloud SIEM](/docs/cse/), and [Cloud SOAR](/docs/cloud-soar/). A global setting is not supported at this time. You can also apply a [dark theme specifically for dashboards](/docs/dashboards/about/#dark-theme).
 
 ### Query Editing
 
