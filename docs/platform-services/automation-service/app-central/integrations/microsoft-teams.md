@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-teams.png')} alt="Microsoft Teams icon" width="100"/>
 
-***Version: 1.9  
-Updated: Mar 4, 2024***
+***Version: 1.10  
+Updated: April 30, 2026***
 
 Microsoft Teams is the ultimate hub for teamwork and intelligent communications. Built on the strength and scale of Microsoft 365 with over 120 million users, Microsoft Teams is a chat-based workspace in Microsoft 365. Microsoft Graph makes it easy to create large numbers of teams and populate them with users and channels, by automating the creation and management of teams, and channels. also send a messages to chats or channels.
 
@@ -429,3 +429,4 @@ For information about Microsoft Teams, see [Microsoft Teams documentation](https
 * July 5, 2023 (v1.8)
     + Updated Actions - List Users & Create Channel
 * March 4, 2024 (v1.9) - Updated code for compatibility with Python 3.12
+* April 30, 2026 (v1.10) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
