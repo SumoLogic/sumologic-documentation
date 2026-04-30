@@ -204,6 +204,9 @@ This option uses `mcp-proxy` to handle token refresh automatically, so you don't
    export SUMOLOGIC_OAUTH_CLIENT_SECRET="<your-client-secret>"
    export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"
    ```
+   :::tip
+   `mcp.sumologic.com/mcp` defaults to the us1 deployment. OAuth tokens are deployment-bound, so if your org is on a different deployment, replace this with the deployment-specific form: `mcp.<deployment>.sumologic.com/mcp` (for example, `mcp.us2.sumologic.com/mcp`). See [Sumo Logic endpoints by deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the full list.
+   :::
 1. Register the MCP server. Choose a scope.
    * **User scope** (available in all directories, recommended).
      ```bash
@@ -256,6 +259,9 @@ This option uses `mcp-proxy` to handle token refresh automatically, so you don't
    export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"
    export SUMOLOGIC_OAUTH_ACCESS_TOKEN="$(get_sumologic_oauth_token)"
    ```
+   :::tip
+   `mcp.sumologic.com/mcp` defaults to the us1 deployment. OAuth tokens are deployment-bound, so if your org is on a different deployment, replace this with the deployment-specific form: `mcp.<deployment>.sumologic.com/mcp` (for example, `mcp.us2.sumologic.com/mcp`). See [Sumo Logic endpoints by deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the full list.
+   :::
 1. Register the MCP server. Choose a scope.
    * **User scope** (available in all directories, recommended).
        ```bash
@@ -286,6 +292,10 @@ This option uses `mcp-proxy` to handle token refresh automatically, so you don't
 #### Token expiration and reconnection
 
 OAuth access tokens expire after 12 hours. When the token expires, Claude Code will lose connection to the MCP server. You may see an error: `Incompatible auth server: does not support dynamic client registration`.
+
+:::note
+If you see a `403` error with message `insufficient_scope - The request requires higher privileges than provided by the access token`, the cause may be a **deployment mismatch** rather than a missing permission. This happens when the OAuth token was generated for one deployment but `SUMOLOGIC_MCP_URL` points to a different one. Verify that your `SUMOLOGIC_MCP_URL` and `SUMOLOGIC_OAUTH_TOKEN_URL` use the same deployment.
+:::
 
 To reconnect, run the following in your terminal each time you start a new session to ensure a fresh token:
 ```bash
@@ -368,6 +378,9 @@ If you need to re-register the server with a new token:
    }
    ```
    If you've previously configured other MCP servers here, this should be an additive process (that is, do not delete existing ones you still intend to use).
+   :::tip
+   `mcp.sumologic.com/mcp` defaults to the us1 deployment. OAuth tokens are deployment-bound, so if your org is on a different deployment, replace the `"url"` value with the deployment-specific form: `mcp.<deployment>.sumologic.com/mcp` (for example, `mcp.us2.sumologic.com/mcp`). See [Sumo Logic endpoints by deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the full list.
+   :::
 1. In the **mcp.json** file, click the **Start** button just above `"Sumo Logic MCP server": {`.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-mcp-start.png')} alt="VS Code Start button in mcp.json configuration file" width="600"/>
 1. You'll be prompted in the command palette for an OAuth access token. Enter your [access token](#step-3-generate-an-access-token) there.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-oauth-input.png')} alt="prompt in command palette for OAuth access token" width="600"/>
 1. Confirm that the server shows as **Running**.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-running.png')} alt="prompt in command palette for OAuth access token" width="600"/>
@@ -377,6 +390,11 @@ If you need to re-register the server with a new token:
 ### Reconnecting
 
 Access tokens expire after 12 hours and may also expire after quitting and restarting VS Code. When this occurs:
+
+:::note
+If you see a `403` error with message `insufficient_scope - The request requires higher privileges than provided by the access token`, the cause may be a **deployment mismatch** rather than a missing permission. This happens when the OAuth token was generated for one deployment but the `"url"` in **mcp.json** points to a different one. Verify that both use the same deployment.
+:::
+
 1. You'll see a **Dynamic Client Registration not supported** popup asking for an OAuth client ID. Do NOT provide this. Click **Cancel**.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-dynamic-reg-popup.png')} alt="Dynamic Client Registration not supported popup asking for an OAuth client ID with Cancel button highlighted" width="500"/>
 1. You'll be prompted again for an OAuth client ID in your command palette. Tap **Escape** on your keyboard.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-esc-clientid.png')} alt="VS Code command palette search with MCP: Open User Configuration highlighted" width="600"/>
 1. [Generate a new access token](#step-3-generate-an-access-token).
