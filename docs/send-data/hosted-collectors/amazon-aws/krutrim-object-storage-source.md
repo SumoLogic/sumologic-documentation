@@ -47,7 +47,7 @@ This ensures reliable and consistent ingestion without dependency on external ev
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/) to the storage bucket.
 1. Ensure logs are being delivered to the Krutrim Object Storage bucket.
 1. Identify or create a Hosted Collector in Sumo Logic.
-    When you create an Krutrim Object Storage Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+    When you create a Krutrim Object Storage Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 ## Create a Krutrim Object Storage Source
 
