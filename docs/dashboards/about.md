@@ -118,7 +118,7 @@ To view the dashboard information, follow the steps below:
 **Auto Refresh** automatically updates dashboard panels with the latest data at a configured interval. Consider disabling it or increasing the minimum refresh interval when frequent updates are not required. For Flex customers, this helps reduce avoidable scan costs from unnecessary refreshes. For Tiered customers, it minimizes unnecessary panel reloads and helps improve dashboard performance.
 
 :::note
-To enable or disable this feature, you must be an **Administrator** or a role with the **ManageDashboardExecutionControls** capability.
+To enable or disable this feature, you must be an **Administrator** or a role with the [**Manage Dashboard Execution Controls**](/docs/manage/users-roles/roles/role-capabilities/#dashboards) capability.
 :::
 
 ### Enable the Sumo Logic policy
