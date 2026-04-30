@@ -175,7 +175,6 @@ Mobot is in Extended Preview and has the following known limitations.
 - Responses may not always be fully accurate or complete.
 - Ambiguous questions may require clarification before Mobot can proceed.
 - No memory across sessions. Each conversation starts fresh.
-- Legal, safety, and content guardrails are in progress and will continue to be strengthened.
 
 ## FAQ
 
