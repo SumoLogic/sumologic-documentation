@@ -86,7 +86,7 @@ After returning results, Mobot summarizes anything that stands out at the bottom
 
 When you request data from a source that has not been configured, Mobot detects the missing partition or index and provides step-by-step setup guidance rather than returning an empty result.
 
-For example, asking `Show me Cloud SIEM network records grouped by action` when Cloud SIEM is not enabled prompts Mobot to explain what is missing and walk you through how to enable it.
+For example, asking `Show me Cloud SIEM network records grouped by action` when Cloud SIEM is not enabled prompts Mobot to explain what is missing and walks you through how to enable it.
 
 This detection works reactively. When you ask a question that requires a specific data source, Mobot attempts the query and detects if the partition or data does not exist. Mobot cannot proactively scan your environment or generate a list of all unconfigured integrations.
 
