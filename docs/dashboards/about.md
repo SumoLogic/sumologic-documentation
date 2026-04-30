@@ -133,7 +133,7 @@ In this section, you will enable the ability to disable your dashboard auto refr
 
 ### Using auto refresh 
 
-Once, you have enabled the **Auto-Refresh** you can now see that the panels getting refreshed as per the selected auto-refresh interval. If required, you can configure the refresh interval rate by clicking the dropdown arrow next to the **Run** button. Select the refresh interval of your choice from the list.
+Once you have enabled the **Auto-Refresh**, you can now see the panels getting refreshed as per the selected auto-refresh interval. If required, you can configure the refresh interval rate by clicking the dropdown arrow next to the **Run** button. Select the refresh interval of your choice from the list.
 
 :::info
 There are some restrictions when using operators with dashboards. To learn more, see [Restricted Operators in Dashboards](/docs/dashboards/restricted-operators-dashboards).
