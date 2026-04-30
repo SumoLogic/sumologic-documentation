@@ -68,7 +68,7 @@ The maximum number of Collectors allowed per organization is 10,000.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('send-data/hosted-collectors/krutrim-object-storage')}><img src={useBaseUrl('img/send-data/krutrim-icon.png')} alt="Krutrim Object Storage icon" width="30"/><h4>Krutrim Object Storage</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/krutrim-object-storage')}><img src={useBaseUrl('img/send-data/krutrim-icon.png')} alt="Krutrim Object Storage icon" width="30"/><h4>Krutrim Object Storage</h4></a>
   <p>Use Krutrim Object Storage source to collect and send data to Sumo Logic.</p>
   </div>
 </div>
