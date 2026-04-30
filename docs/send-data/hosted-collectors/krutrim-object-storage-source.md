@@ -61,7 +61,7 @@ This ensures reliable and consistent ingestion without dependency on external ev
     - Bangalore (ap-south-1)
     - Hyderabad (ap-south-1)
 1. **Bucket Name**. Enter the exact bucket name from Krutrim Object Storage.
-1. **Path Expression**. Enter the wildcard pattern that matches the Krutrim Object Storage objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a multiple wildcard. Do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details.
+1. **Path Expression**. Enter the wildcard pattern that matches the Krutrim Object Storage objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a multiple wildcard. Do **NOT** use a leading forward slash.
 1. **Collection should begin.** Set the collection start time to define historical ingestion range. You can either:
    * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”.
    * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m).
