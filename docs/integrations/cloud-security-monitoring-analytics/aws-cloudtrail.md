@@ -181,3 +181,15 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `CloudTrail Logging Stopped or Deleted` | This alert is triggered when CloudTrail logging is stopped or a trail is deleted. `Note: Please change the _sourceCategory to match your collector's source category instead of using the default value.` | Count > 0 | Count < = 0 |
 | `GuardDuty Disabled` | This alert is triggered when GuardDuty is disabled or a member account is disassociated from its master account. `Note: Please change the _sourceCategory to match your collector's source category instead of using the default value.` | Count > 0 | Count < = 0 |
 | `Root Account Used` | This alert is triggered when the AWS root account is used to perform an action. `Note: Please change the _sourceCategory to match your collector's source category instead of using the default value.` | Count > 0 | Count < = 0 |
+
+## Upgrade/Downgrade the AWS CloudTrail app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS CloudTrail app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
