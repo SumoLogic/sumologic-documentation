@@ -49,7 +49,7 @@ jobs:
           key: ${{ secrets.PANTHEON_SSH_KEY }}
           config: |
             Host *.drush.in
-              StrictHostKeyChecking no
+               StrictHostKeyChecking no
           known_hosts: ${{ secrets.PANTHEON_KNOWN_HOSTS }}
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
