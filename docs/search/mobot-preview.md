@@ -168,25 +168,20 @@ Follow-up:
 Mobot is in Extended Preview and has the following known limitations.
 
 **Use cases**
-- Currently limited to log analysis.
-- No support for metrics, traces, or other telemetry types.
-- Capabilities are constrained by available skills. Domain intelligence and planning capabilities are still evolving.
+* Log analysis only. Metrics, traces, and other telemetry types are not supported.
+* Capabilities are constrained by available skills. Domain intelligence and planning are still evolving.
 
 **Access and actions**
-- Read-only. Mobot can query and analyze data but cannot modify, delete, or ingest data.
-- Cannot create or manage dashboards, monitors, or scheduled searches.
-- No access to external systems such as CRM, databases, APIs, or third-party tools.
+* Read-only. Mobot can query and analyze data but cannot modify, delete, ingest data, manage dashboards or monitors, or access external systems.
 
 **Data and query constraints**
-- Only works with data that has been ingested and is still within your retention period.
-- Large time ranges (30 or more days) may be slow or time out.
-- Very complex or deeply nested queries may hit platform limits.
+* Only works with data that has been ingested and is still within your retention period.
+* Large time ranges (30 or more days) or deeply nested queries may be slow, time out, or hit platform limits.
 
 **Experience**
-- Performance and latency may vary depending on query complexity.
-- Responses may not always be fully accurate or complete.
-- Ambiguous questions may require clarification before Mobot can proceed.
-- No memory across sessions. Each conversation starts fresh.
+* Performance and latency may vary depending on query complexity.
+* Responses may not always be fully accurate or complete.
+* No memory across sessions. Each conversation starts fresh.
 
 ## FAQ
 
