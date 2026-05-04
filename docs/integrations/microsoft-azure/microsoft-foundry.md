@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Microsoft Fou
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-openai.png')} alt="Microsoft Foundry icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-foundry-icon.png')} alt="Microsoft Foundry icon" width="50"/>
 
 [Microsoft Foundry (formerly Azure AI Studio)](https://azure.microsoft.com/en-us/products/ai-foundry) is an interoperable AI platform that enables developers to build faster and smarter, while organizations gain fleetwide security and governance in a unified portal. It’s never been easier to build, deploy, and scale AI apps and agents that understand your business context and deliver business impact.
 

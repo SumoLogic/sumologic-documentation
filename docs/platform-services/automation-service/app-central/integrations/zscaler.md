@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zscaler.png')} alt="axonius" width="80"/>
 
-**Version: 1.7  
-Updated: Aug 29, 2025**
+**Version: 1.8  
+Updated: April 30, 2026**
 
 Zscaler Internet Access is a cloud native [security service edge (SSE)](https://www.zscaler.com/solutions/zscaler-security-service-edge) solution that builds on a [decade of secure web gateway leadership](https://www.zscaler.com/gartner-magic-quadrant-secure-web-gateways-2020). Offered as a scalable SaaS platform from the world’s largest security cloud, it replaces legacy network security solutions to stop advanced attacks and prevent data loss with a comprehensive zero trust approach.
 
@@ -72,3 +72,4 @@ For information about Zscaler, see [Zscaler documentation](https://help.zscaler.
 * February 20, 2024 (v1.3) - Fixed an issue that prevented some actions from being executed
 * March 20, 2024 (v1.6) - Added new field in "Add URL To Category" and "Remove URL From Category" actions to use with custom URL categories
 * August 29, 2025 (v1.7) - Updated the exception handling for better error messages in all the actions and integration file
+* April 30, 2026 (v1.8) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
