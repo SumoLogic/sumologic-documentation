@@ -24,6 +24,9 @@ To configure a remote Windows Event Log Source:
 1. Select the **Windows Event Log** source.<br/><img src={useBaseUrl('img/send-data/windows-event-log-source-icon.png')} alt="Windows event log source icon" style={{border: '1px solid gray'}} width="100" />
 1. Choose **Remote** for **Type of Windows Event Source**.
 1. (Available in version 19.361-3+) Check the **Domain Controller Mode** checkbox to set the Source as a part of Windows Active Directory Inventory (AD). The Source will detect any (potentially many) domain controllers on the AD network. Each domain controller contains an event log that includes a security log. The Source connects to each domain controller’s security log and begins monitoring events.<br/><img src={useBaseUrl('img/send-data/DCM.png')} alt="Domain Controller Mode" style={{border: '1px solid gray'}} width="500" />
+  :::note
+    Domain Controller Mode is also available for OpenTelemetry collectors using the Custom YAML Source Template. [Learn more](/docs/send-data/opentelemetry-collector/remote-management/source-templates/customyaml/#step-2-configure-the-source-template/).
+  :::
 1. Set the following:
    * **Name.** Type the name you'd like to display for this source in Sumo Logic. 
    * **Description.** Optional description.
