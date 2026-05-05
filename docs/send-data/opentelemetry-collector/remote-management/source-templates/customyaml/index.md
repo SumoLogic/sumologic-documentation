@@ -79,7 +79,7 @@ Follow the steps below to configure the Custom YAML source template to collect e
 
 1. Enter the **Name** of the source template. For example, `windowseventlog-receiver`.
 1. (Optional) Enter the **Description** for the source template.
-1. Under **YAML Configuration**, provide your OpenTelemetry configurations in YAML format or select an existing file from the **Select YAML Template** dropdown.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/configure-window-event-log-receiver.png')} alt="source template page" style={{border:'1px solid gray'}} width="90%" />
+1. Under **YAML Configuration**, provide your OpenTelemetry configurations in YAML format or select an existing file from the **Select YAML Template** dropdown.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/configure-window-event-log-receiver.png')} alt="configure-window-event-log-receiver-otel" style={{border:'1px solid gray'}} width="90%" />
 
 ### Step 3: Push the source template to the remotely managed collectors
 
