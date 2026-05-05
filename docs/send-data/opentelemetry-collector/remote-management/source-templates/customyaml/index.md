@@ -71,7 +71,7 @@ Follow the steps below to configure the Custom YAML source template required for
 1. (Optional) Enter the **Description** for the source template.
 1. Under **YAML Configuration**, provide your OpenTelemetry configurations in YAML format or select an existing file from the **Select YAML Template** dropdown.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/configure-source.png')} alt="source template page" style={{border:'1px solid gray'}} width="90%" />
 
-#### Configure Domain Controller Mode for Windows AD Event collection
+#### Configure domain controller mode for Windows AD event collection
 
 You can set the `discover_domain_controllers: true` in the YAML to include the source in the Windows Active Directory (AD) inventory. The source then automatically discovers all domain controllers on the AD network, connects to each controller's event log, and begins monitoring events.
 
