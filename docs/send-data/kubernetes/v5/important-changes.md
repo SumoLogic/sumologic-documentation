@@ -22,7 +22,7 @@ The OpenTelemetry operator became the default for metrics collection starting wi
 
 If you are still using Prometheus Operator in Helm chart v4 and haven't migrated to OpenTelemetry operator yet, please follow [OpenTelemetry Operator migration guide](https://www.sumologic.com/help/docs/send-data/kubernetes/v4/important-changes/#opentelemetry-collector-for-metrics-collection) before upgrading to this version. The guide will help you to install OpenTelemetry Operator CRDs, which are a prerequisite for this upgrade.
 
-## Prometheus Remote Write
+## Prometheus remote write
 
 :::note
 This change applies only to customers who are forwarding metrics from their own Prometheus instance into the Sumo Logic Kubernetes metrics collection pipeline via remote write. If you are not using Prometheus remote write, please skip this section.
