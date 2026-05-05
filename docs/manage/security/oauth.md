@@ -58,7 +58,7 @@ curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
 
 The response includes `authorization_endpoint`, `token_endpoint`, and other supported OAuth parameters.
 
-:::tip
+:::note
 The permissions granted via Authorization Code flow are the intersection of:
 * The roles (RBAC capabilities) assigned to the authenticated user.
 * The scopes assigned to the OAuth client.
@@ -162,7 +162,7 @@ Alternatively, you can [create an OAuth client using the API](https://api.sumolo
 
 **How are scopes enforced?**
 
-The permissions granted to an OAuth client are limited to the intersection of the roles (RBAC capabilities) assigned to the service account and the scopes assigned to the OAuth client. This prevents privilege escalation. If the service account's roles are restricted in the future, the OAuth client's effective permissions are automatically reduced. If a requested scope is not included in the service account's roles, it will be silently excluded from the OAuth client's effective permissions.
+[Permissions are the intersection of the service account's roles and the OAuth client's scopes](#create-an-oauth-client-1). If a requested scope is not included in the service account's roles, it will be silently excluded from the OAuth client's effective permissions.
 
 <Tabs
   className="unique-tabs"
@@ -356,19 +356,14 @@ For Authorization Code flow, revoking Authorization Consent causes the next toke
 <details>
 <summary>What happens if I change a service account's roles?</summary>
 
-For Client Credentials flow, the OAuth client's effective permissions are limited to the intersection of the service account's roles and the OAuth client's scopes. If you restrict the service account's roles, the OAuth client's permissions are automatically reduced, even if the configured scopes remain unchanged.
+For Client Credentials flow, [permissions are the intersection of the service account's roles and the OAuth client's scopes](#create-an-oauth-client-1). If you restrict the service account's roles, the OAuth client's permissions are automatically reduced, even if the configured scopes remain unchanged.
 
 </details>
 
 <details>
 <summary>What happens if a user's roles change in Authorization Code flow?</summary>
 
-For Authorization Code flow, the effective permissions are the intersection of:
-* The roles (RBAC capabilities) assigned to the authenticated user.
-* The scopes assigned to the OAuth client.
-* The scopes requested in the authorization request.
-
-If a user's roles are restricted, their effective OAuth permissions are reduced at the next token refresh. If roles are expanded, the new permissions become available at the next token refresh.
+For Authorization Code flow, [permissions are the intersection of the user's roles, the OAuth client's scopes, and the requested scopes](#complete-the-oauth-flow). If a user's roles are restricted, their effective OAuth permissions are reduced at the next token refresh. If roles are expanded, the new permissions become available at the next token refresh.
 
 </details>
 
