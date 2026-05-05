@@ -73,7 +73,7 @@ Follow the steps below to configure the Custom YAML source template required for
 
 #### Configure Domain Controller Mode for Windows AD Event collection
 
-You can set the `discover_domain_controllers: true` in the YAML to include the source in the Windows Active Directory (AD) inventory. The source automatically discovers all domain controllers on the AD network, connects to each controller’s event log, and begins monitoring events.
+You can set the `discover_domain_controllers: true` in the YAML to include the source in the Windows Active Directory (AD) inventory. The source then automatically discovers all domain controllers on the AD network, connects to each controller's event log, and begins monitoring events.
 
 Follow the steps below to configure the Custom YAML source template to collect events from all domain controllers on the collector host:
 
