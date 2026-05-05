@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/threatminer.png')} alt="threatminer" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 13, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 Search DNS records for enrichment data with Cloud SOAR integration with ThreatMiner.
 
@@ -49,3 +49,4 @@ For information about ThreatMiner, see the [ThreatMiner website](https://www.thr
 	+ Updated the integration with Environmental Variables
 	+ Changed fields visibility
 	+ Added new action: Search DNS Records V2
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
