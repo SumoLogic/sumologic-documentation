@@ -10,7 +10,7 @@ description: The Cortex Cloud-to-Cloud Source Integration allows you to ingest a
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="Palo Alto icon" width="100"/>
 
 The Palo Alto Cortex XDR Source provides a secure endpoint to receive alerts from the [Get Alerts Incident Management API](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Cortex-XDR-API-Overview). It securely stores the required authentication, scheduling, and state tracking information.
 

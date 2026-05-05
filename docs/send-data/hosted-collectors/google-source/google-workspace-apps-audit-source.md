@@ -7,7 +7,7 @@ description: Add a Google Workspace Apps Audit Source to ingest audit logs from 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/google-workspace-audit.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/google-workspace-audit.png')} alt="Google Workspace Audit icon" width="40"/>
 
 A Google Workspace Apps Audit Source uses the [Google Apps Reports API](https://developers.google.com/admin-sdk/reports/v1/get-start/getting-started) to ingest all audit logs through watchpoints. [Activity from the following Google apps](https://developers.google.com/admin-sdk/reports/v1/reference/activities/list) can be collected:
 
@@ -46,9 +46,9 @@ In order to provide Sumo logic access to google services, please follow the mana
 1. In App access control, click **Manage Third-Party App Access**.
 1. Click **Add app** and search for Sumo Logic OAuth client.
 1. Select the app with the following client ID:<br/>
-`788305497335-k5jf772fpotskbco66orgh48jbvug8uo.apps.googleusercontent.com`
+`788305497335-k5j5772fpotskboo66orgh48jbvug8uo.apps.googleusercontent.com`
 1. Click **Change access**.
-1. Choose the **Trusted** option to allow access to all Google services. <img src={useBaseUrl('img/send-data/g-suite-change-access.png')} alt="g-suite-change-access" />
+1. Choose the **Trusted** option to allow access to all Google services. <img src={useBaseUrl('img/send-data/g-suite-change-access.png')} alt="G Suite change access" />
 1. Click **Change**.
 
 ## Configuring a Google Workspace Apps Audit Source

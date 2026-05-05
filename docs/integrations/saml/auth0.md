@@ -7,7 +7,7 @@ description: The Sumo Logic App for Auth0 makes it easy to analyze and visualize
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saml/auth0.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/saml/auth0.png')} alt="Auth0 icon" width="50"/>
 
 Auth0 is a cloud-based, extensible identity provider for applications. The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs, and provides insight into security and operational issues.
 
@@ -108,7 +108,7 @@ Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_
 
 ## Sample queries
 
-```sql title="Logins by Client per Day"
+```sumo title="Logins by Client per Day"
 _collector="productionappauth0Logs_Collector"
 | json "client_name"
 | where client_name != ""
@@ -117,7 +117,7 @@ _collector="productionappauth0Logs_Collector"
 | transpose row _timeslice column client_name
 ```
 
-```sql title="Client Version Usage"
+```sumo title="Client Version Usage"
 _collector="productionappauth0Logs_Collector"
 | json "auth0_client.name", "auth0_client.version"
 | concat(%auth0_client.name, " ", %auth0_client.version) as auth0_client_version
@@ -126,7 +126,7 @@ _collector="productionappauth0Logs_Collector"
 | transpose row _timeslice column auth0_client_version
 ```
 
-```sql title="Top 10 Recent Errors"
+```sumo title="Top 10 Recent Errors"
 _collector="productionappauth0Logs_Collector"
 | json "type", "connection", "description", "client_name"
 | where type != "slo"

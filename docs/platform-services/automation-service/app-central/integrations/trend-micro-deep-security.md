@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/trend-micro-deep-security.png')} alt="trend-micro-deep-security" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/trend-micro-deep-security.png')} alt="Trend Micro Deep Security icon" width="80"/>
 
-***Version: 1.2  
-Updated: Jun 22, 2023***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Utilize Trend Micro Deep Security to interact with IP lists, firewall and intrusion rules, and gather enrichment data during incident investigations.
 
@@ -63,3 +63,4 @@ For information about Trend Micro Deep Security, see [Trend Micro Deep Security 
 * February 17, 2023 (v1.1)
 	+ New Action: Search Systems By IP
 * June 22, 2023 (v1.1) - Removed unnecessary empty lines
+* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

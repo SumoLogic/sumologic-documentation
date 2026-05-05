@@ -7,7 +7,7 @@ description: The Rapid7 app for Sumo Logic provides an improved security posture
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="rapid7-logo" width="100" />
+<img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="Rapid7 logo" width="100" />
 
 The Sumo Logic app for Rapid7 enables you to gain deeper insights into asset and vulnerability management activities by collecting asset and vulnerability activities using Sumo Logic's cloud-to-cloud Rapid7 source.
 
@@ -193,7 +193,7 @@ This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapi
 
 ## Sample queries
 
-```sql title="Assets by Type"
+```sumo title="Assets by Type"
 _sourceCategory="Rapid7" assessed_for_policies // fetches assets
 | json "id", "type", "os_system_name", "risk_score", "host_name", "ip","severe_vulnerabilities", "total_vulnerabilities", "last_assessed_for_vulnerabilities", "mac", "last_scan_end", "tags[*].name" as id, type, operating_system, risk_score, host_name, ip, severe_vulnerabilities, total_vulnerabilities, last_assessed_time, mac, last_scan_end, tag_name_list nodrop
 | extract field=tag_name_list "\"?(?<tag_name>[\w\s\-&.-z)(,]*?)\"?[,\n\]]" multi
@@ -204,7 +204,7 @@ _sourceCategory="Rapid7" assessed_for_policies // fetches assets
 | sort by frequency
 ```
 
-```sql title="Top 10 Vulnerabilities"
+```sumo title="Top 10 Vulnerabilities"
 _sourceCategory="Rapid7" (cvss_v2_access_complexity or asset_id)
 | join
 (json "id","severity","risk_score" as id, severity,risk_score) as vulnerability,
@@ -253,11 +253,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Assets Overview
 
-The **Rapid7 - Assets Overview** dashboard provides a detailed summary of the assets within the Rapid7 source. It presents a comprehensive view of the total asset count, highlighting the top 10 vulnerable assets based on their risk score and the number of associated vulnerabilities. Additionally, this dashboard offers valuable information about the leading operating systems among assets, the distribution of assets by type, the geographic location of assets, and a summary of recent assets based on their most recent scan time.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Rapid7-Assets-Overview.png')} alt="Rapid7-Assets-Overview" width="750"/>
+The **Rapid7 - Assets Overview** dashboard provides a detailed summary of the assets within the Rapid7 source. It presents a comprehensive view of the total asset count, highlighting the top 10 vulnerable assets based on their risk score and the number of associated vulnerabilities. Additionally, this dashboard offers valuable information about the leading operating systems among assets, the distribution of assets by type, the geographic location of assets, and a summary of recent assets based on their most recent scan time.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Rapid7-Assets-Overview.png')} alt="Rapid7 Assets Overview" width="750"/>
 
 ### Vulnerabilities Overview
 
-The **Rapid7 - Vulnerabilities Overview** dashboard offers significant insights into vulnerability findings from the assets. It tracks the number of new and remediated vulnerability findings over the period. The dashboard includes visual representations of vulnerabilities categorized by severity and highlights the top 10 vulnerabilities related to assets. Additionally, it presents a summary of the leading 10 solutions utilized to address vulnerabilities and showcases recent vulnerability instances based on their most recent discovery time, along with information on the assets involved.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Rapid7-Vulnerabilities-Overview.png')} alt="Rapid7-Vulnerabilities-Overview" width="750"/>
+The **Rapid7 - Vulnerabilities Overview** dashboard offers significant insights into vulnerability findings from the assets. It tracks the number of new and remediated vulnerability findings over the period. The dashboard includes visual representations of vulnerabilities categorized by severity and highlights the top 10 vulnerabilities related to assets. Additionally, it presents a summary of the leading 10 solutions utilized to address vulnerabilities and showcases recent vulnerability instances based on their most recent discovery time, along with information on the assets involved.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Rapid7-Vulnerabilities-Overview.png')} alt="Rapid7 Vulnerabilities Overview" width="750"/>
 
 ## Upgrade/Downgrade the Rapid7 app (Optional)
 

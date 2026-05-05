@@ -10,9 +10,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
-<!-- Originally added as a beta article with SUMO-215965. -->
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+<!-- Originally added as a preview article with SUMO-215965. -->
 
 Previously, SLOs were only supported in Sumo Logic's Continuous data tier. This support enabled you to configure SLOs on Infrequent Tier logs to increase the monitoring coverage for reliability management.
 
@@ -21,15 +25,15 @@ Previously, SLOs were only supported in Sumo Logic's Continuous data tier. This 
 While defining SLOs for the Infrequent Tier logs, you can use the following sample queries.
 
 * Use `_dataTier=Infrequent` in your query scope to only search for data in the Infrequent Tier. For example:
-  ```sql
+  ```sumo
   _dataTier=Infrequent _sourceCategory=APIService | parse "Status: *" as status_code | where status_code >= 500
   ```
 * Or, use `_index` parameter to specify the Partition that contains the data you want to access. For example:
-  ```sql
+  ```sumo
   _index=some_infrequent_index
   ```
   Or, you can also search across multiple indices by using the `OR` operator. For example:
-  ```sql
+  ```sumo
   _index=some_infrequent_index OR _index=some_continuous_index
   ```
 

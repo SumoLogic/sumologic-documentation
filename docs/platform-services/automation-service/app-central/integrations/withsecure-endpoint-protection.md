@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/withsecure-endpoint-protection.png')} alt="withsecure-endpoint-protection" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/withsecure-endpoint-protection.png')} alt="WithSecure Endpoint Protection icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 18, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 WithSecure™ (formerly F-Secure) Elements Endpoint Protection is cloud-native, AI-powered endpoint protection that you can deploy instantly from your browser and manage easily from a single console. It integrates across all your endpoints, keeping your organization fenced in from attacks.
 
@@ -24,12 +24,12 @@ To use the Endpoint Protection API, you need EPP user credentials and an API key
 To generate an API key:
 1. Log in to the protal with the account used for the API.
 1. Open Endpoint Protection section and open any sub-menu.
-1. Click on the user icon in the top right of the screen and select **Get management API key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-endpoint-protection/withsecure-endpoint-protection-1.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="800" />
+1. Click on the user icon in the top right of the screen and select **Get management API key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-endpoint-protection/withsecure-endpoint-protection-1.png')} style={{border:'1px solid gray'}} alt="Get management API" width="800" />
 1. This starts the Management API key wizard.
 1. Accept the terms of use.
 1. Make note of the generated API key and the API server URL to use when making API requests.
 1. If MFA has been enabled, disable MFA from settings.
-1. Logout.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-endpoint-protection/withsecure-endpoint-protection-2.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="600" />
+1. Logout.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-endpoint-protection/withsecure-endpoint-protection-2.png')} style={{border:'1px solid gray'}} alt="Generated API key and server URL" width="600" />
 
 ## Configure WithSecure Endpoint Protection in Automation Service and Cloud SOAR
 
@@ -66,3 +66,4 @@ Threat Intelligence-Reputation
 
 * March 27, 2023 - First upload
 * July 18, 2023 (v1.1) - Removed leading/trailing spaces
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

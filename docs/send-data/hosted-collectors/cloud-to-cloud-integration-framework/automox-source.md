@@ -11,7 +11,7 @@ description: The Automox Source provides a secure endpoint to receive all events
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/automox-logo.png')} alt="automox-logo" width="50" />
+<img src={useBaseUrl('img/send-data/automox-logo.png')} alt="Automox logo" width="50" />
 
 Automox is a cloud-based platform for automated IT operations, offering patching, software deployment, and configuration management across Windows, macOS, and Linux devices. It enhances security by automating vulnerability remediation and ensuring systems stay up-to-date.
 

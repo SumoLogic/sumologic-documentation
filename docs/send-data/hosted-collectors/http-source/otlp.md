@@ -6,7 +6,7 @@ description: Use an HTTP OTLP Source to collect OTLP formatted Logs, Metrics, an
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 An OTLP/HTTP Source is an endpoint for receiving OTLP-formatted Logs, Metrics, and Traces. This is an alternative option to installing an OpenTelemetry Collector for sending OTLP data to Sumo Logic.
 
@@ -45,6 +45,7 @@ To configure an OTLP/HTTP Source:
 :::note
 * Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to OTLP Endpoint have appropriate timestamps.
 * Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics).
+* If the data sent to Sumo Logic contains nested structures, only the first 10 levels of nesting are processed and ingested. Any data beyond the 10th level is discarded.
 :::
 
 ### View the endpoint URL
@@ -155,7 +156,7 @@ export OTEL_EXPORTER_OTLP_ENDPOINT=<source_url>
 
 ### JSON example
 
-``` json
+```json
 {
   "api.version":"v1",
   "source":{

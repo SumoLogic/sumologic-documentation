@@ -10,7 +10,7 @@ description: Learn how to fetch CPC-Configs, CPC-Alerts, and CPC-Alert Details f
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Akamai icon" width="90"/>
 
 Akamai Client-Side Protection and Compliance (CPC) is a security solution designed to monitor and protect against client-side threats such as JavaScript-based data skimming and formjacking. It provides visibility into third-party script behavior and enforces security policies to ensure compliance with data protection standards.
 

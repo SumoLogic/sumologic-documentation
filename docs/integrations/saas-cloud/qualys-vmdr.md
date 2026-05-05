@@ -43,7 +43,7 @@ The Sumo logic app for Qualys VMDR uses vulnerability data from [Vulnerability A
 
 ### Sample queries
 
-```sql
+```sumo
 source=Qualys
 | where (_raw matches /^\{.*\}$/)
 

@@ -7,7 +7,7 @@ description: The Sumo Logic App for KnowBe4 offers functionality for monitoring 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="100" />
+<img src={useBaseUrl('img/send-data/knowbe4.png')} alt="KnowBe4 icon" width="100" />
 
 The KnowBe4 App for Sumo Logic allows you to easily integrate data from KnowBe4, a security awareness training and simulated phishing platform, into your Sumo Logic account. This App provides an overview of your organization's phishing security testing performance. It includes metrics on the total number of tests, active tests, recipient users, failed recipient users, and distribution of status.
 
@@ -112,7 +112,7 @@ The Sumo Logic App for KnowBe4 consumes Phishing Security logs. Refer to the [Kn
 
 ## Sample queries
 
-```sql title="Total Phishing Security Tests"
+```sumo title="Total Phishing Security Tests"
 _sourceCategory="knowbe4nfr" campaign_id
 | json "campaign_id", "pst_id", "status", "name", "phish_prone_percentage", "started_at", "duration", "template.name", "template.difficulty", "scheduled_count", "delivered_count", "opened_count", "clicked_count", "replied_count", "attachment_open_count", "macro_enabled_count", "data_entered_count", "qr_code_scanned_count", "reported_count", "bounced_count" as campaign_id, pst_id, status, name, phish_prone_percentage, started_at, duration, template_name, template_difficulty, scheduled_count, delivered_count, opened_count, clicked_count, replied_count, attachment_open_count, macro_enabled_count, data_entered_count, qr_code_scanned_count, reported_count, bounced_count nodrop
 | first(status) as status group by pst_id, name
@@ -121,7 +121,7 @@ _sourceCategory="knowbe4nfr" campaign_id
 ```
 
 
-```sql title="Total Recipient User"
+```sumo title="Total Recipient User"
 _sourceCategory="knowbe4nfr" recipient_id
 | json "recipient_id", "pst_id", "user.first_name", "user.last_name", "user.email", "scheduled_at", "delivered_at", "opened_at", "clicked_at", "replied_at", "attachment_opened_at", "macro_enabled_at", "data_entered_at", "qr_code_scanned", "reported_at", "bounced_at", "ip", "ip_location", "browser", "browser_version", "os" as recipient_id, pst_id, first_name, last_name,
 email, scheduled_at, delivered_at, opened_at, clicked_at, replied_at, attachment_opened_at, macro_enabled_at, data_entered_at, qr_code_scanned, reported_at, bounced_at, ip, ip_location, browser, browser_version, os nodrop
@@ -136,7 +136,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 <CollectionConfiguration/>
 
 :::important
-Use the [Cloud-to-Cloud Integration for KnowBe4](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your KnowBe4 app is properly integrated and configured to collect and analyze your KnowBe4 data.
+Use the [Cloud-to-Cloud Integration for KnowBe4 KMSAT](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-kmsat-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your KnowBe4 app is properly integrated and configured to collect and analyze your KnowBe4 KMSAT data.
 :::
 
 ### Create a new collector and install the app

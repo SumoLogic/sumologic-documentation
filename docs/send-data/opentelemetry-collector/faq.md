@@ -102,9 +102,46 @@ Changing the collector's name will result in re-registering the collector with S
 
 Refer to the Uninstall section in the following docs:
 * [Linux](/docs/send-data/opentelemetry-collector/install-collector/linux/#uninstall)
-* [Windows](/docs/send-data/opentelemetry-collector/install-collector/windows/#uninstall)
+* [Windows](/docs/send-data/opentelemetry-collector/install-collector/windows/#uninstalling-the-collector)
 * [macOS](/docs/send-data/opentelemetry-collector/install-collector/macos/#uninstall)
 
+
+#### How can I verify the SHA256 checksum of a downloaded collector binary?
+
+GitHub provides a SHA256 digest for every asset on the [releases page](https://github.com/SumoLogic/sumologic-otel-collector/releases/latest). Expand an asset on the releases page to view its digest, or fetch all digests at once with the GitHub CLI:
+
+```bash
+gh api repos/SumoLogic/sumologic-otel-collector/releases/latest \
+  --jq '.assets[] | "\(.digest)  \(.name)"'
+```
+
+Then verify locally using the digest value (without the `sha256:` prefix):
+
+<Tabs groupId="os" defaultValue="linux" values={[{label:'Linux',value:'linux'},{label:'macOS',value:'macos'},{label:'Windows',value:'windows'}]}>
+<TabItem value="linux">
+
+```bash
+echo "<sha256>  <filename>" | sha256sum --check
+```
+
+</TabItem>
+<TabItem value="macos">
+
+```bash
+echo "<sha256>  <filename>" | shasum -a 256 --check
+```
+
+</TabItem>
+<TabItem value="windows">
+
+```powershell
+(Get-FileHash -Algorithm SHA256 "<filename>").Hash -eq "<sha256>".ToUpper()
+```
+
+</TabItem>
+</Tabs>
+
+A successful check prints `OK` (Linux/macOS) or `True` (Windows).
 
 ## Data ingestion and forwarding
 

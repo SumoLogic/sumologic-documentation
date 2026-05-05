@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/knowbe4-phisher.png')} alt="knowbe4-phisher" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/knowbe4-phisher.png')} alt="KnowBe4 PhishER icon" width="100"/>
 
-***Version: 1.6  
-Updated: Mar 4, 2024***
+***Version: 1.7  
+Updated: April 29, 2026***
 
 KnowBe4 PhishER Identifies and responds to email threats faster with automatic prioritization for emails, also helps your InfoSec and Security Operations team cut through the inbox noise and respond to the most dangerous threats more quickly.
 
@@ -53,3 +53,4 @@ For information about KnowBe4 PhishER, see [KnowBe4 PhishER documentation](https
     + New Daemon: PhishER Messages Daemon
 * September 26, 2023 (v1.5) - Updated Action: **Get Message**
 * March 4, 2024 (v1.6) - Updated code for compatibility with Python 3.12
+* April 29, 2026 (v1.7) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

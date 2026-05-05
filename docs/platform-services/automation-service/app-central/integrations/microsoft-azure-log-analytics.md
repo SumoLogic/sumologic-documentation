@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-azure-log-analytics.png')} alt="microsoft-azure-log-analytics" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-azure-log-analytics.png')} alt="Microsoft Azure Log Analytics icon" width="100"/>
 
-***Version: 1.0  
-Updated: Sep 04, 2023***
+***Version: 1.1  
+Updated: April 30, 2026***
 
 Log Analytics is a tool in the Azure portal that's used to edit and run log queries against data in the Azure Monitor Logs store.
 
@@ -45,3 +45,4 @@ For information about Microsoft Azure Log Analytics, see [Microsoft Azure Log An
 ## Change Log
 
 * September 4, 2023 (v1.0) - First upload
+* April 30, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

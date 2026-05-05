@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/openai-chatgpt.png')} alt="openai-chatgpt" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/openai-chatgpt.png')} alt="OpenAI ChatGPT icon" width="100"/>
 
-***Version: 1.3  
-Updated: Jun 26, 2023***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 The OpenAI API can be applied to virtually any task that involves understanding or generating natural language, code, or images. We offer a spectrum of models with different levels of power suitable for different tasks, as well as the ability to fine-tune your own custom models. These models can be used for everything from content generation to semantic search and classification.
 
@@ -32,7 +32,7 @@ Because *gpt-3.5-turbo* performs at a similar capability to *text-davinci-003* b
 
 ## OpenAI ChatGPT Configuration
 
-**Grab your API keys**. Log into your OpenAI [dashboard](https://platform.openai.com/account/api-keys) and click your profile icon at the top right. Go to **View API Keys** and click **Create new secret key** to generate your API secret key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-1.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="800"/>
+**Grab your API keys**. Log into your OpenAI [dashboard](https://platform.openai.com/account/api-keys) and click your profile icon at the top right. Go to **View API Keys** and click **Create new secret key** to generate your API secret key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-1.png')} style={{border:'1px solid gray'}} alt="Openai chatgpt" width="800"/>
 
 ## Configure OpenAI ChatGPT in Automation Service and Cloud SOAR
 
@@ -61,7 +61,7 @@ For information about OpenAI, see [OpenAI documentation](https://platform.openai
 
 ## Test Create Chat Completion action
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-9.png')} style={{border:'1px solid gray'}} alt="openai-chatgpt" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/openai-chatgpt/openai-chatgpt-9.png')} style={{border:'1px solid gray'}} alt="Openai chatgpt" width="400"/>
 
 **Action Fields:**
 
@@ -82,3 +82,4 @@ For information about OpenAI, see [OpenAI documentation](https://platform.openai
 
 * May 12, 2023 - First upload
 * June 26, 2023 (v1.3) - Changed multiline hints to single line
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

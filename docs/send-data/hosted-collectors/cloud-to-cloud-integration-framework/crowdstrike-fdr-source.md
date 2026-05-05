@@ -10,7 +10,7 @@ description: The CrowdStrike Falcon Data Replicator (FDR) Source provides a secu
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="85"/>
 
 The CrowdStrike Falcon Data Replicator (FDR) Source provides a secure way to ingest [Falcon Data Replicator](https://falcon.crowdstrike.com/support/documentation/9/falcon-data-replicator) events from Amazon S3 using SQS notifications for new objects. It securely manages authentication, scheduling, and state tracking.
 

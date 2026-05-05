@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ibm-x-force-exchange.png')} alt="ibm-x-force-exchange" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ibm-x-force-exchange.png')} alt="IBM X-Force Exchange icon" width="100"/>
 
-***Version: 1.5  
-Updated: June 26, 2024***
+***Version: 1.6  
+Updated: April 29, 2026***
 
 IBM X-Force Exchange is a cloud-based threat intelligence platform that allows you to consume, share and act on threat intelligence. It enables you to rapidly research the latest global security threats, aggregate actionable intelligence, consult with experts and collaborate with peers.
 
@@ -75,3 +75,4 @@ Threat Intelligence-Reputation
 		- Whois Lookup V2
 * June 26, 2024 (v1.5)
 	+ Updated Whois Lookup and Passive DNS actions with the new Cloud SOAR API; results can now be saved as incident attachments and artifacts.
+* April 29, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

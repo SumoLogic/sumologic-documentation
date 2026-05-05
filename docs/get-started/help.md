@@ -6,7 +6,7 @@ title: Help
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-<img src={useBaseUrl('img/icons/business/support.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/icons/business/support.png')} alt="Support icon" width="40"/>
 
 Our in-product left-nav **Help** menu provides quick access to Sumo Logic Support, community, and more.
 

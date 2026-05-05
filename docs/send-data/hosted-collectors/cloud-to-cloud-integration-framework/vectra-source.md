@@ -10,7 +10,7 @@ description: Learn how to collect the list of threats detected in the Vectra pla
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/vectra.png')} alt="Vectra-icon" width="70" />
+<img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/vectra.png')} alt="Vectra icon" width="70" />
 
 Vectra is a leading cybersecurity company specialising in AI-driven threat detection and response solutions. Vectra is committed to helping organisations protect their digital assets from evolving cyber threats. It provides comprehensive visibility across the entire network, enabling organisations to identify malicious activities, including insider threats and advanced persistent threats (APTs).
 

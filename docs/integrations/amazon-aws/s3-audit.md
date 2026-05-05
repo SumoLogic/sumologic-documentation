@@ -6,7 +6,7 @@ description: Provides a simple web services interface that can be used to store 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="S3 Audit icon" width="50"/>
 
 Amazon Simple Storage Service (S3) provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web. The Sumo Logic App for Amazon S3 Audit presents details from access logs that contain information about the request type, the average response time, and the inbound and outbound data volume.
 
@@ -24,7 +24,7 @@ The server access log files consist of a sequence of new-line delimited log reco
 
 ### Sample queries
 
-```sql
+```sumo
 | parse "* * [*] * * * * * \"* HTTP/1.1\" * * * * * * * \"*\" *" as bucket_owner, bucket, time, remoteIP, requester, request_ID, operation, key, request_URI, status_code, error_code, bytes_sent, object_size, total_time, turn_time, referrer, user_agent, version_ID
 | parse regex field=operation "[A-Z]+\.(?<operation>[\w.]+)"
 | count by operation
@@ -64,7 +64,7 @@ Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automati
 
 Use the following Parse Expression:
 
-```sql
+```sumo
 parse "* * [*] * * * * * \"* HTTP/1.1\" * * * * * * * \"*\" *" as bucket_owner, bucket, time, remoteIP, requester, request_ID, operation, key, request_URI, status_code, error_code, bytes_sent, object_size, total_time, turn_time, referrer, user_agent, version_ID
 ```
 

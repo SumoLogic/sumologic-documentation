@@ -10,7 +10,7 @@ description: Learn to collect the conversations from ChatGPT Compliance platform
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="ChatGPT-Compliance-icon" width="40" />
+<img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="ChatGPT Compliance icon" width="40" />
 
 OpenAI provides advanced AI solutions for enterprises, offering secure, compliant, and customizable conversational AI capabilities to improve the productivity while meeting organizational governance and regulatory needs.
 

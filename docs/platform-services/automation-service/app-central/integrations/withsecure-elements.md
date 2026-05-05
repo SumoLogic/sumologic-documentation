@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/withsecure-elements.png')} alt="withsecure-elements" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/withsecure-elements.png')} alt="WithSecure Elements icon" width="80"/>
 
-***Version: 1.2  
-Updated: Mar 4, 2024***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 WithSecure Elements is a single, modular solution consisting of a complete range of cybersecurity applications that offer end-to-end enterprise and cloud coverage. The product includes our award-winning technologies for vulnerability management, patch management, endpoint protection, and endpoint detection and response. In today's unpredictable and ever-changing business environment, our all-in-one security solution helps build and ensure a resilient business.
 
@@ -22,10 +22,10 @@ WithSecure Elements is a single, modular solution consisting of a complete range
 ## WithSecure Elements configuration
 
 1. Log in to [WithSecure Elements](https://elements.withsecure.com/) technology.
-1. Go on **MANAGEMENT > Client API**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-1.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="300" />
-1. Click on **Add New**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-2.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="400" />
-1. Add a description and click **Add**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-3.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="600" />
-1. Copy and Save the **Client ID** and **Secret**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-4.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="600" />
+1. Go on **MANAGEMENT > Client API**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-1.png')} style={{border:'1px solid gray'}} alt="Client API" width="300" />
+1. Click on **Add New**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-2.png')} style={{border:'1px solid gray'}} alt="Add new" width="400" />
+1. Add a description and click **Add**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-3.png')} style={{border:'1px solid gray'}} alt="Add a description" width="600" />
+1. Copy and save the **Client ID** and **Secret**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-4.png')} style={{border:'1px solid gray'}} alt="Save client ID and secret" width="600" />
 
 ## Configure WithSecure Elements in Automation Service and Cloud SOAR
 
@@ -61,3 +61,4 @@ Threat Intelligence-Reputation
 * March 22, 2023 - First upload
 * July 18, 2023 (v1.1) - Removed leading/trailing spaces
 * March 4, 2024 (v1.2) - Updated code for compatibility with Python 3.12
+* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

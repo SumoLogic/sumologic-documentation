@@ -6,7 +6,7 @@ description: Ingests logs of API calls made to AWS, providing greater visibility
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail.png')} alt="CloudTrail icon" width="50"/>
 
 [Amazon Web Services (AWS) CloudTrail](https://aws.amazon.com/cloudtrail/) records API calls made to AWS. The Sumo Logic App for CloudTrail ingests these logs, providing greater visibility into events that, in turn, allows for security and operations forensics. For example, you can use the Sumo Logic App for CloudTrail to analyze raw CloudTrail data to investigate user behavior patterns. Or, by correlating CloudTrail data with other data sets, you can get a broader understanding of events from operating systems, intrusion detection systems, or even application logs.
 
@@ -44,7 +44,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Sample queries
 
-```sql title="Created and Deleted Network and Security Events"
+```sumo title="Created and Deleted Network and Security Events"
 _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
 | parse "\"userName\":\"*\"" as user
 | parse "\"eventName\":\"*\"" as event
@@ -82,7 +82,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 
 ### Field Extraction Template
 
-```sql
+```sumo
 | parse "\"sourceIPAddress\":\"*\"" as source_ipaddress nodrop
 | parse "\"eventName\":\"*\"" as event_name nodrop
 | parse "\"eventSource\":\"*\"" as event_source nodrop
@@ -122,7 +122,7 @@ To track Admin activity in your AWS account and to provide data for all Administ
 2. [Upload](/docs/send-data/hosted-collectors/http-source/logs-metrics) the admin_users.csv file to the HTTP Source. For example, using cURL, you’d type `curl -X POST -T admin_users.csv “<url>"`, making sure to replace `<url>` with the unique URL generated for your HTTP Source.
 3. To verify that the data has uploaded, run the following search after about 10 minutes: `_sourceCategory=admin_users`
 4. If the search returns the correct result, run the following search to save the data to a shared location that can be referenced by the Panels in the CloudTrail app:
-  ```sql
+  ```sumo
   _sourceCategory=admin_users
   | parse "*" as admin_user
   | count as count by admin_user

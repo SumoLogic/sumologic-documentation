@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/kaspersky-tip.png')} alt="kaspersky-tip" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/kaspersky-tip.png')} alt="Kaspersky TIP icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 05, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Quickly determine whether an investigated object is dangerous or clean by requesting detailed information about URLs, IP addresses and hashes from the Kaspersky Threat Intelligence Portal, directly from Sumo Logic SOAR Platform.
 
@@ -46,3 +46,4 @@ For information about Kaspersky TIP, see [Kaspersky TIP documentation](https://o
 * July 10, 2019 - First upload
 * January 22, 2020 - Updated "search Intelligence" action
 * July 5, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
