@@ -2,14 +2,14 @@
 id: full-list-of-changes
 title: Kubernetes Collection v4.0.0 - Full List of Changes
 sidebar_label: Full list of Changes
-description: This page describes full list of changes in Kubernetes Collection v4.
+description: This page describes the complete list of changes in Kubernetes Collection v4.
 ---
 
 - Drop Prometheus recording rule metrics
 
-  This has already been called out in v4 upgrade guide, this is only applicable now for those who were still using promtheus operator in v4 and just migrating to Otel operator in v5.
+  This has already been called out in the v4 upgrade guide. This is only applicable now for those who were still using the Prometheus operator in v4 and just migrating to the Otel operator in v5.
 
-  OpenTelemetry cannot collect Prometheus recording rule metrics. The new version therefore stops collecting the following recording rule metrics.
+  OpenTelemetry cannot collect Prometheus recording rule metrics. The new version, therefore, stops collecting the following recording rule metrics.
 
   - kube_pod_info_node_count
   - node_cpu_saturation_load1
