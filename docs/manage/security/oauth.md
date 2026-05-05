@@ -46,78 +46,26 @@ This flow uses interactive browser-based authentication. Users authorize an exte
 1. Click **Save**.
 1. Copy the **Client ID** and **Client Secret**. You'll need these to configure your application.
 
-### Authorize your application
+### Complete the OAuth flow
 
-Direct users to the Sumo Logic authorization endpoint to request access. The endpoint URL varies by deployment.
+Sumo Logic's Authorization Code flow follows the [OAuth 2.1 specification](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1). Your OAuth library or client handles the authorization, token exchange, and token refresh steps automatically by following the standard protocol.
 
-```
-https://[deployment-endpoint]/oauth/authorize?
-  client_id=YOUR_CLIENT_ID
-  &redirect_uri=YOUR_REDIRECT_URI
-  &response_type=code
-  &scope=REQUESTED_SCOPES
-```
-
-Replace the following values:
-* `[deployment-endpoint]` - Your Sumo Logic [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `service.sumologic.com`, `service.us2.sumologic.com`, `service.eu.sumologic.com`)
-* `YOUR_CLIENT_ID` - Client ID from the OAuth client you created
-* `YOUR_REDIRECT_URI` - The redirect URI you registered (must be URL-encoded)
-* `REQUESTED_SCOPES` - Space-separated list of OAuth scopes your application needs (optional for most use cases)
-
-When users visit this URL, they'll see a Sumo Logic login page. After authenticating and approving access, Sumo Logic redirects them to your `redirect_uri` with an authorization code.
-
-### Exchange authorization code for tokens
-
-After the user authorizes your application, Sumo Logic redirects to your redirect URI with an authorization code:
-
-```
-https://your-redirect-uri?code=AUTHORIZATION_CODE
-```
-
-Exchange this code for an access token by making a POST request to the token endpoint.
-
-Replace `[deployment-endpoint]` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `service.sumologic.com`, `service.us2.sumologic.com`, `service.eu.sumologic.com`):
+To discover the authorization and token endpoints for your deployment, query the Authorization Server Metadata. Replace `[deployment-endpoint]` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `service.sumologic.com`, `service.us2.sumologic.com`, `service.eu.sumologic.com`):
 
 ```bash
-curl -X POST https://[deployment-endpoint]/oauth/token \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "grant_type=authorization_code" \
-  -d "code=AUTHORIZATION_CODE" \
-  -d "redirect_uri=YOUR_REDIRECT_URI" \
-  -d "client_id=YOUR_CLIENT_ID" \
-  -d "client_secret=YOUR_CLIENT_SECRET"
+curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
 ```
 
-The response includes an access token and a refresh token:
+The response includes `authorization_endpoint`, `token_endpoint`, and other supported OAuth parameters.
 
-```json
-{
-  "access_token": "eyJhbGc...",
-  "token_type": "Bearer",
-  "expires_in": 3600,
-  "refresh_token": "def50200...",
-  "scope": "granted scopes"
-}
-```
+:::tip
+The permissions granted via Authorization Code flow are the intersection of:
+* The roles (RBAC capabilities) assigned to the authenticated user.
+* The scopes assigned to the OAuth client.
+* The scopes requested in the authorization request.
 
-Use the `access_token` to authenticate API requests. Store the `refresh_token` securely to obtain new access tokens when the current one expires.
-
-### Refresh access tokens
-
-Access tokens expire after the number of seconds indicated by the `expires_in` property. Use the refresh token to obtain a new access token without requiring the user to log in again.
-
-Replace `[deployment-endpoint]` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `service.sumologic.com`):
-
-```bash
-curl -X POST https://[deployment-endpoint]/oauth/token \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "grant_type=refresh_token" \
-  -d "refresh_token=YOUR_REFRESH_TOKEN" \
-  -d "client_id=YOUR_CLIENT_ID" \
-  -d "client_secret=YOUR_CLIENT_SECRET"
-```
-
-The response includes a new access token. The refresh token will be rotated (a new one provided) with each refresh.
+This means a user cannot grant more permissions than they already have in Sumo Logic.
+:::
 
 ## Client Credentials flow
 
@@ -330,19 +278,23 @@ The response includes an access token:
 Use this access token as a Bearer token in the `Authorization` header when making API requests:
 
 ```bash
-curl https://service.sumologic.com/api/v1/search/jobs \
+curl https://api.sumologic.com/api/v1/search/jobs \
   -H "Authorization: Bearer eyJhbGc..."
 ```
+
+:::tip
+`api.sumologic.com` defaults to the us1 deployment. Replace with your [deployment-specific endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if your org is on a different deployment (for example, `api.us2.sumologic.com`, `api.eu.sumologic.com`).
+:::
 
 ### Token expiration
 
 Access tokens generated with Client Credentials flow expire after 30 minutes. When a token expires, generate a new one by repeating the token request. Unlike Authorization Code flow, Client Credentials flow does not provide refresh tokens.
 
 :::tip Discovering endpoints programmatically
-The token endpoint URL varies by deployment. To discover it programmatically (for example, in automation scripts), query the Authorization Server Metadata for your deployment:
+The token endpoint URL varies by deployment. To discover it programmatically (for example, in automation scripts), query the Authorization Server Metadata. Replace `[deployment-endpoint]` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `service.sumologic.com`, `service.us2.sumologic.com`):
 
 ```bash
-curl https://service.sumologic.com/.well-known/oauth-authorization-server
+curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
 ```
 
 The response includes the `token_endpoint` and other supported OAuth parameters.
@@ -350,7 +302,7 @@ The response includes the `token_endpoint` and other supported OAuth parameters.
 
 ## Security best practices
 
-* **Protect client secrets**. Store client secrets securely using environment variables, secrets management systems, or encrypted configuration files. Never commit secrets to version control.
+* **Protect client secrets**. For Client Credentials flow, store client secrets securely using environment variables, secrets management systems, or encrypted configuration files — never commit them to version control. In Authorization Code flow, the `clientSecret` is not directly exposed in the token exchange and carries less risk, but should still be stored securely.
 * **Use least privilege**. Request only the OAuth scopes your application needs. For Client Credentials flow, assign service accounts the minimum roles required.
 * **Rotate credentials regularly**. Create new OAuth clients periodically and deactivate old ones. Update service account credentials on a regular schedule.
 * **Monitor OAuth usage**. Review audit logs for OAuth client activity. Watch for unexpected patterns like unusual request volumes or access to sensitive resources.
@@ -397,12 +349,26 @@ Yes. To revoke access for an OAuth client:
 
 For Client Credentials flow, you can also deactivate or delete the associated service account, which will immediately revoke all access for OAuth clients using that service account.
 
+For Authorization Code flow, revoking Authorization Consent causes the next token refresh to fail. The current access token remains valid until it expires.
+
 </details>
 
 <details>
 <summary>What happens if I change a service account's roles?</summary>
 
 For Client Credentials flow, the OAuth client's effective permissions are limited to the intersection of the service account's roles and the OAuth client's scopes. If you restrict the service account's roles, the OAuth client's permissions are automatically reduced, even if the configured scopes remain unchanged.
+
+</details>
+
+<details>
+<summary>What happens if a user's roles change in Authorization Code flow?</summary>
+
+For Authorization Code flow, the effective permissions are the intersection of:
+* The roles (RBAC capabilities) assigned to the authenticated user.
+* The scopes assigned to the OAuth client.
+* The scopes requested in the authorization request.
+
+If a user's roles are restricted, their effective OAuth permissions are reduced at the next token refresh. If roles are expanded, the new permissions become available at the next token refresh.
 
 </details>
 
@@ -433,8 +399,10 @@ curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
 Yes. OAuth access tokens work with all Sumo Logic APIs. Include the access token in the `Authorization` header as a Bearer token:
 
 ```bash
-curl https://service.sumologic.com/api/v1/users \
+curl https://api.sumologic.com/api/v1/users \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
+
+Replace `api.sumologic.com` with your [deployment-specific endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if your org is on a different deployment.
 
 </details>

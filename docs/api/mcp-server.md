@@ -46,6 +46,9 @@ ChatGPT uses OAuth 2.0 Authorization Code flow for authentication. You'll create
    * **MCP Server URL**: `https://mcp.sumologic.com/mcp`
    * **OAuth Client ID**: Your Client ID from Sumo Logic
    * **OAuth Client Secret**: Your Client Secret from Sumo Logic
+   :::tip
+   `mcp.sumologic.com/mcp` defaults to the us1 deployment. OAuth tokens are deployment-bound, so if your org is on a different deployment, replace this with the deployment-specific form: `mcp.<deployment>.sumologic.com/mcp` (for example, `mcp.us2.sumologic.com/mcp`). See [Sumo Logic endpoints by deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the full list.
+   :::
 1. Check **I understand and want to Continue**.
 1. Click **Create**.
 1. ChatGPT will open a browser window to authenticate with Sumo Logic. Log in to complete the OAuth flow.
@@ -64,29 +67,35 @@ See [Available MCP Tools](#available-mcp-tools) for a full list of capabilities.
 
 ### Authentication
 
-Claude Code supports two OAuth 2.0 authentication flows:
-
-* **Authorization Code flow** (recommended). Browser-based authentication with automatic token refresh. Simplest setup.
-* **Client Credentials flow**. API-based setup with manual or automatic token refresh depending on configuration.
+Claude Code CLI uses OAuth 2.0 Authorization Code flow for authentication. Browser-based login handles token refresh automatically.
 
 ### Setup
 
-#### Authorization Code flow
-
-This flow uses browser-based authentication and handles token refresh automatically.
-
 1. In Sumo Logic, [create an OAuth client using the Authorization Code flow](/docs/manage/security/oauth#authorization-code-flow) with redirect URI: `http://localhost:8888/callback`.
-1. In a Terminal window (not in Claude Code), register the MCP server using the following command. Replace `<client-id>` and `<client-secret>` with your values from Sumo Logic.
+1. In a Terminal window (not in Claude Code), register the MCP server. Replace `<client-id>` and `<client-secret>` with your values from Sumo Logic. Choose a scope:
+   * **User scope** (available in all directories, recommended).
+     ```bash
+     claude mcp add --transport http \
+       --scope user \
+       --client-id "<client-id>" \
+       --callback-port 8888 \
+       --client-secret \
+       sumo-logic "https://mcp.sumologic.com/mcp"
+     ```
+   * **Project scope** (available only in the current directory, writes to `.mcp.json`).
+     ```bash
+     claude mcp add --transport http \
+       --scope project \
+       --client-id "<client-id>" \
+       --callback-port 8888 \
+       --client-secret \
+       sumo-logic "https://mcp.sumologic.com/mcp"
+     ```
+   :::tip
+   `mcp.sumologic.com/mcp` defaults to the us1 deployment. OAuth tokens are deployment-bound, so if your org is on a different deployment, replace this with the deployment-specific form: `mcp.<deployment>.sumologic.com/mcp` (for example, `mcp.us2.sumologic.com/mcp`). See [Sumo Logic endpoints by deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the full list.
+   :::
+1. Launch Claude Code. With **user scope**, run `claude` from any directory. With **project scope**, run it from the directory where you registered the server.
    ```bash
-   claude mcp add --transport http \
-     --client-id "<client-id>" \
-     --callback-port 8888 \
-     --client-secret \
-     sumo-logic "https://mcp.sumologic.com/mcp"
-   ```
-1. Launch Claude Code.
-   ```bash
-   cd /path/to/your/project
    claude
    ```
 1. In Claude Code, run `/mcp`.
@@ -94,181 +103,6 @@ This flow uses browser-based authentication and handles token refresh automatica
 1. Claude Code will open a browser window to authenticate with Sumo Logic. Log in to complete the OAuth flow.
 1. Verify the connection with `/mcp` to confirm the server is connected.<br/><img src={useBaseUrl('img/platform-services/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
-
-#### Client Credentials flow
-
-Claude Code CLI supports two connection options. Option 1 is recommended, as it handles token refresh automatically so you don't need to reconnect every 12 hours.
-
-| | Option 1: stdio + mcp-proxy | Option 2: HTTP + Bearer token |
-| :--- | :--- | :--- |
-| **Token refresh** | Automatic | Manual — every 12 hours |
-| **Additional requirement** | `uv` | None |
-| **Best for** | Ongoing use | Quick setup and testing |
-
-
-:::tip
-If Claude Code repeatedly asks about authentication when invoking MCP tools, you can start your session with a prompt like: `Whenever communicating with Sumo Logic's MCP server, do not worry about authentication`. This helps prevent unnecessary follow-up questions from the agent. It does not bypass authentication.
-:::
-
-**Prerequisites**
-
-Before configuring Claude Code with Client Credentials flow, [create an OAuth client using Client Credentials flow](/docs/manage/security/oauth#client-credentials-flow) and [generate an access token](/docs/manage/security/oauth#generate-an-access-token). You'll need your Client ID, Client Secret, and access token for the setup below.
-
-**Option 1: stdio + mcp-proxy (recommended)**
-
-This option uses `mcp-proxy` to handle token refresh automatically, so you don't need to reconnect every 12 hours.
-
-1. In a regular Terminal window (not in Claude Code), install `uv`.
-   ```bash
-   brew install uv
-   ```
-1. In a regular Terminal window (not in Claude Code), set your environment variables. Replace `<your-client-id>` and `<your-client-secret>` with your OAuth credentials from Sumo Logic.
-   ```bash
-   export SUMOLOGIC_MCP_URL="https://mcp.sumologic.com/mcp"
-   export SUMOLOGIC_OAUTH_CLIENT_ID="<your-client-id>"
-   export SUMOLOGIC_OAUTH_CLIENT_SECRET="<your-client-secret>"
-   export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"
-   ```
-   :::tip
-   `mcp.sumologic.com/mcp` defaults to the us1 deployment. OAuth tokens are deployment-bound, so if your org is on a different deployment, replace this with the deployment-specific form: `mcp.<deployment>.sumologic.com/mcp` (for example, `mcp.us2.sumologic.com/mcp`). See [Sumo Logic endpoints by deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the full list.
-   :::
-1. Register the MCP server. Choose a scope.
-   * **User scope** (available in all directories, recommended).
-     ```bash
-     claude mcp add \
-       --transport stdio \
-       --scope user \
-       sumo-logic \
-       -- uvx --python=3.13.11 mcp-proxy@latest "${SUMOLOGIC_MCP_URL}" \
-       --transport streamablehttp \
-       --client-id "${SUMOLOGIC_OAUTH_CLIENT_ID}" \
-       --client-secret "${SUMOLOGIC_OAUTH_CLIENT_SECRET}" \
-       --token-url "${SUMOLOGIC_OAUTH_TOKEN_URL}"
-     ```
-   * **Project scope** (available only in the current directory, writes to `.mcp.json`).
-     ```bash
-     claude mcp add \
-       --transport stdio \
-       --scope project \
-       sumo-logic \
-       -- uvx --python=3.13.11 mcp-proxy@latest "${SUMOLOGIC_MCP_URL}" \
-       --transport streamablehttp \
-       --client-id "${SUMOLOGIC_OAUTH_CLIENT_ID}" \
-       --client-secret "${SUMOLOGIC_OAUTH_CLIENT_SECRET}" \
-       --token-url "${SUMOLOGIC_OAUTH_TOKEN_URL}"
-     ```
-1. Launch Claude Code.
-   ```bash
-   cd /path/to/your/project
-   claude
-   ```
-1. Verify the Sumo Logic MCP server connection with `/mcp`.<br/><img src={useBaseUrl('img/platform-services/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
-1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
-
-**Option 2: HTTP + Bearer token**
-
-1. In a regular Terminal window (not in Claude Code), run the below snippet to set your environment variables, register the MCP server, and define a helper function to fetch an access token. Replace `<your-client-id>` and `<your-client-secret>` with your OAuth credentials from Sumo Logic.
-   ```bash
-   get_sumologic_oauth_token() {
-     curl -s -X POST "${SUMOLOGIC_OAUTH_TOKEN_URL}" \
-       -H "Content-Type: application/x-www-form-urlencoded" \
-       -d "grant_type=client_credentials&client_id=${SUMOLOGIC_OAUTH_CLIENT_ID}&client_secret=${SUMOLOGIC_OAUTH_CLIENT_SECRET}" \
-       | jq -rc '.access_token'
-   }
-
-   export SUMOLOGIC_MCP_URL="https://mcp.sumologic.com/mcp"
-   export SUMOLOGIC_OAUTH_CLIENT_ID="<your-client-id>"
-   export SUMOLOGIC_OAUTH_CLIENT_SECRET="<your-client-secret>"
-   export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"
-   export SUMOLOGIC_OAUTH_ACCESS_TOKEN="$(get_sumologic_oauth_token)"
-   ```
-   :::tip
-   `mcp.sumologic.com/mcp` defaults to the us1 deployment. OAuth tokens are deployment-bound, so if your org is on a different deployment, replace this with the deployment-specific form: `mcp.<deployment>.sumologic.com/mcp` (for example, `mcp.us2.sumologic.com/mcp`). See [Sumo Logic endpoints by deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the full list.
-   :::
-1. Register the MCP server. Choose a scope.
-   * **User scope** (available in all directories, recommended).
-       ```bash
-       claude mcp add \
-         --transport http \
-         --scope user \
-         sumo-logic \
-         "${SUMOLOGIC_MCP_URL}" \
-         --header "Authorization: Bearer ${SUMOLOGIC_OAUTH_ACCESS_TOKEN}"
-       ```
-   * **Project scope** (available only in the current directory, writes to `.mcp.json`).
-     ```bash
-     claude mcp add \
-       --transport http \
-       --scope project \
-       sumo-logic \
-       "${SUMOLOGIC_MCP_URL}" \
-       --header "Authorization: Bearer ${SUMOLOGIC_OAUTH_ACCESS_TOKEN}"
-     ```
-1. Launch Claude Code via Terminal.
-   ```bash
-   cd /path/to/your/project
-   claude
-   ```
-1. In Claude Code, verify the Sumo Logic MCP server connection with `/mcp`.<br/><img src={useBaseUrl('img/platform-services/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
-1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
-
-### Reconnecting
-
-:::note
-This section only applies if you're using Client Credentials flow with Option 2 (HTTP + Bearer token). Authorization Code flow and Option 1 (stdio + mcp-proxy) handle token refresh automatically.
-:::
-
-OAuth access tokens expire after 12 hours. When the token expires, Claude Code will lose connection to the MCP server. You may see an error: `Incompatible auth server: does not support dynamic client registration`.
-
-:::note
-If you see a `403` error with message `insufficient_scope - The request requires higher privileges than provided by the access token`, the cause may be a **deployment mismatch** rather than a missing permission. This happens when the OAuth token was generated for one deployment but `SUMOLOGIC_MCP_URL` points to a different one. Verify that your `SUMOLOGIC_MCP_URL` and `SUMOLOGIC_OAUTH_TOKEN_URL` use the same deployment.
-:::
-
-To reconnect, run the following in your terminal each time you start a new session to ensure a fresh token:
-```bash
-get_sumologic_oauth_token() {
-  curl -s -X POST "${SUMOLOGIC_OAUTH_TOKEN_URL}" \
-    -H "Content-Type: application/x-www-form-urlencoded" \
-    -d "grant_type=client_credentials&client_id=${SUMOLOGIC_OAUTH_CLIENT_ID}&client_secret=${SUMOLOGIC_OAUTH_CLIENT_SECRET}" \
-    | jq -rc '.access_token'
-}
-
-export SUMOLOGIC_MCP_URL="https://mcp.sumologic.com/mcp"
-export SUMOLOGIC_OAUTH_CLIENT_ID="<your-client-id>"
-export SUMOLOGIC_OAUTH_CLIENT_SECRET="<your-client-secret>"
-export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"  # Replace service.sumologic.com with your deployment endpoint
-export SUMOLOGIC_OAUTH_ACCESS_TOKEN="$(get_sumologic_oauth_token)"
-claude
-```
-
-:::tip
-The token endpoint URL varies by [deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). To discover it programmatically (for example, in an automation script), query the Authorization Server Metadata for your deployment:
-```bash
-curl https://service.sumologic.com/.well-known/oauth-authorization-server
-```
-The response includes the `token_endpoint` and other supported OAuth parameters.
-:::
-
-If you need to re-register the server with a new token:
-1. Remove the existing MCP server configuration.
-   ```bash
-   claude mcp remove sumo-logic --scope user
-   ```
-1. Re-register the MCP server with the new token.
-   ```bash
-   claude mcp add \
-     --transport http \
-     --scope user \
-     sumo-logic \
-     "${SUMOLOGIC_MCP_URL}" \
-     --header "Authorization: Bearer ${SUMOLOGIC_OAUTH_ACCESS_TOKEN}"
-   ```
-1. Re-launch Claude Code.
-   ```bash
-   cd /path/to/your/project
-   claude
-   ```
-1. Verify the Sumo Logic MCP server connection with `/mcp`.<br/><img src={useBaseUrl('img/platform-services/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 
 ## Configure in VS Code
 
