@@ -6,8 +6,8 @@ description: This page describes how to upgrade the Kubernetes Collection to v5.
 ---
 
 This guide walks you through upgrading to Sumo Logic Kubernetes Collection v5.0.0, including key changes, migration steps, and best practices to ensure a smooth transition. Here's what’s new:
-* Prometheus operator which has been deprecated in v4 has now been removed in v5
-* OpenTelemetry operator is now the single source for metrics collection
+* Prometheus operator, which has been deprecated in v4, has now been removed in v5.
+* OpenTelemetry operator is now the single source for metrics collection.
 
 Before proceeding, ensure you meet the requirements and review the necessary configuration changes detailed in this guide.
 
@@ -24,11 +24,10 @@ Before proceeding, ensure you meet the requirements and review the necessary con
 If you have already migrated to the OpenTelemetry operator in v4, not using the Prometheus operator, or not using the metrics collection feature at all, please skip this section.
 
 ### Convert Prometheus remote writes to OpenTelemetry metrics filters
-Please follow [this guide](https://www.sumologic.com/help/docs/send-data/kubernetes/v4/how-to-upgrade/#convert-prometheus-remote-writes-to-otel-metrics-filters) which has detailed steps
+Please follow [this guide](https://www.sumologic.com/help/docs/send-data/kubernetes/v4/how-to-upgrade/#convert-prometheus-remote-writes-to-otel-metrics-filters) for detailed steps.
 
 ### Converting custom application metrics collection config from Prometheus to OpenTelemetry operator
-Prometheus has three main types of collection mechanisms, namely, podmonitors, servicemonitors, and scrape configurations. If you are collecting custom application metrics using any of these
-three methods, let's see how it maps to the OpenTelemetry operator.
+Prometheus has three main types of collection mechanisms, namely, podmonitors, servicemonitors, and scrape configurations. If you are collecting custom application metrics using any of these three methods, let's see how it maps to the OpenTelemetry operator.
 
 1. **Pod annotations**:
    No change. The OpenTelemetry operator looks for pods annotated with prometheus.io/scrape=true and collects their metrics.
@@ -36,14 +35,14 @@ three methods, let's see how it maps to the OpenTelemetry operator.
 2. **Service monitors**:
    The OpenTelemetry operator scrapes your custom application metrics, which are exposed via a service, using serviceMonitors, just as the Prometheus operator does. You just need to move your
 custom service monitors from Prometheus to OpenTelemetry configuration.
-If you have additional custom Service Monitors defined under kube-prometheus-stack.prometheus.additionalServiceMonitor, Move it to sumologic.metrics.additionalServiceMonitors
+If you have additional custom Service Monitors defined under `kube-prometheus-stack.prometheus.additionalServiceMonitor`, move them to `sumologic.metrics.additionalServiceMonitors`.
 OpenTelemetry operators should now scrape your custom app metrics exposed behind the service.
 
 3. **Scrape configs**:
-   If you have kube-prometheus-stack.prometheus.prometheusSpec.additionalScrapeConfigs defined, move it to sumologic.metrics.collector.otelcol.config.merge.receivers.prometheus.config.scrape_configs
+   If you have `kube-prometheus-stack.prometheus.prometheusSpec.additionalScrapeConfigs` defined, move it to `sumologic.metrics.collector.otelcol.config.merge.receivers.prometheus.config.scrape_configs`.
 
 
-### Forwarding Metrics Using Prometheus Remote Write into the OTel Pipeline
+### Forwarding metrics using Prometheus remote write into the OpenTelemetry pipeline
 This section applies if you are using your own Prometheus Operator and forwarding metrics to the Sumo Logic Kubernetes metrics collection pipeline via the Prometheus remote write protocol.
 
 In the past, Sumo Logic relied on Prometheus to scrape metrics, and since there was no OpenTelemetry Operator for metrics collection at the time, forwarding via Prometheus remote write was the recommended approach. Now that the OpenTelemetry Operator has been standardized for metrics collection and supports all Prometheus scraping mechanisms, we recommend migrating. Please refer to the previous section on converting metrics configuration from Prometheus to the OpenTelemetry Operator.
