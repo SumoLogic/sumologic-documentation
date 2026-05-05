@@ -28,21 +28,22 @@ Before submitting an issue, you can browse our [existing GitHub issues](https://
 
 Submitting a minor fix, such as correcting a typo, is very easy and can be done quickly without having to clone or fork your GitHub repository locally. Check out the instructions below.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Check out this brief tutorial on how to submit a basic change to our docs.
 
-<Iframe url="https://www.youtube.com/embed/2ONgNj8pNLY?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+<Iframe url="https://fast.wistia.net/embed/iframe/83p9f6qa6n?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: Contributing to Sumo Docs: Simple Edits Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
-        <br/>
+:::
 
 <details>
 <summary>View text instructions</summary>
@@ -55,9 +56,6 @@ Check out this brief tutorial on how to submit a basic change to our docs.
 
 This will fork and submit changes to the Docs Team for review.
 </details>
-
-:::
-
 
 ## Edit a doc
 
@@ -128,7 +126,7 @@ The Sumo Logic Doc Team can help you add your doc to the sidebar and top navigat
 
 Hub pages are `/index` pages that display all docs in that section in card view. Some cards are sorted by alphabetical order, and some are sorted by importance and/or ranking.
 
-As an example, let's say you needed to add a Best Practices doc to the [**Send Data** hub page](/docs/send-data).<br/><img src={useBaseUrl('img/contributing/hub-card-style.png')} alt="icon" />
+As an example, let's say you needed to add a Best Practices doc to the [**Send Data** hub page](/docs/send-data).<br/><img src={useBaseUrl('img/contributing/hub-card-style.png')} alt="Hub Card Style icon" />
 
 Once you decide on placement, use the card HTML code in that doc to create a new entry.
 

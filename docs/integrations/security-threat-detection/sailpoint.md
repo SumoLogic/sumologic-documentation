@@ -7,7 +7,7 @@ description: The Sumo Logic app for SailPoint helps you monitor the user events,
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} />
+<img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} alt="SailPoint logo" width="100"/>
 
 SailPoint is an identity management solution that helps organizations manage employee permissions, digital identities, information security, data access, and compliance. The Sumo Logic app for SailPoint helps you monitor the user events, actions, operations, failed logins, successful logins, and user activities to your applications through SailPoint. This app consists of dashboards that give you visibility into the source deletion, user events, and geo locations of authentication events.
 
@@ -88,7 +88,7 @@ The SailPoint Source ingests:
 
 ### Sample queries
 
-```sql title="Authentication Event"
+```sumo title="Authentication Event"
 _sourceCategory=Labs/sailpoint ipAddress
 | json field=_raw "created", "type", "technicalName", "status","operation","actor.name", "action", "name", "target.name", "attributes.sourceName" as created, event_type, technical_name_in_search, event_status, operation, user_name, action, event_desc, target_name, source_name
 | json "org" as org
@@ -100,22 +100,40 @@ _sourceCategory=Labs/sailpoint ipAddress
 | sort _count
 ```
 
-```sql title="SailPoint Event Type"
+```sumo title="SailPoint Event Type"
 _sourceCategory=Labs/sailpoint
 | json field=_raw "created", "type", "technicalName", "status","operation","actor.name", "action", "name", "target.name", "attributes.sourceName" as created, event_type, technical_name_in_search, event_status, operation, user_name, action, event_desc, target_name, source_name | json "org" as org
 | count by event_type
 | sort by _count
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-Follow the instructions for setting up [Cloud-to-Cloud Integration for SailPoint App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the SailPoint app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for SailPoint](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your SailPoint app is properly integrated and configured to collect and analyze your SailPoint data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing SailPoint dashboards
 
@@ -133,13 +151,13 @@ The **SailPoint - Overview** dashboard provides a summary of SailPoint events, a
 
 The **SailPoint - Successful Authentications** dashboard provides the details of success logins such as the geolocation, country, state, failed login trends, outlier, and top 10 users.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Successful-Authentications.png')} alt="Successful-Authentications"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Successful-Authentications.png')} alt="Successful Authentications"/>
 
 ### Failed Authentications
 
 The **SailPoint - Failed Authentications** dashboard shows the details of failed logins such as the geolocation, country, state, failed login trends, outlier, and top 10 users.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Failed-Authentications.png')} alt="Failed-Authentications"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Failed-Authentications.png')} alt="Failed Authentications"/>
 
 ### Security
 
@@ -147,7 +165,7 @@ The **SailPoint - Security** dashboard provides a summary of source deletion eve
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Security.png')} alt="security"/>
 
-## Upgrading the SailPoint app (Optional)
+## Upgrade/Downgrade the SailPoint app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

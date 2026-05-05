@@ -7,32 +7,35 @@ sidebar_label: Flex
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-<img src={useBaseUrl('img/integrations/sumo-apps/flex-tier.png')} alt="Thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/flex-tier.png')} alt="Flex Tier icon" width="55"/>
 
-With Sumo Logic Flex, you gain an efficient and centralized log analytics framework capable of managing enterprise-wide cloud-scale log ingestion without cost concerns. It aligns cost to business value and overcomes today’s ever-growing data challenge by only charging customers for data storage and analytics executed. This revolutionary new consumption model provides customers with a scalable and efficient log analytics architecture that grows to manage enterprise-wide and cloud-scale log ingestion without the risk of runaway costs.
+The Sumo Logic app for Flex enables you to gain an efficient and centralized log analytics framework capable of managing enterprise-wide cloud-scale log ingestion without cost concerns. It aligns cost to business value and overcomes today’s ever-growing data challenge by only charging customers for data storage and analytics executed. This revolutionary new consumption model provides customers with a scalable and efficient log analytics architecture that grows to manage enterprise-wide and cloud-scale log ingestion without the risk of runaway costs.
 
-<details>
-<summary><strong>Micro Lesson</strong>: Viewing the Flex App Dashboards</summary>
-<Iframe url="https://www.youtube.com/embed/kn3SVhAIwDk?si=nMQBWvp5Ruo-nOaB"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-</details>
+:::training Micro Lesson
+Learn how to view the Flex app dashboards.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/5nbwkw5y46??web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Viewing the Flex App Dashboards Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
     
 ## Log types
 
-- [Log and Tracing Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/)
-- [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/)
+- [Log and Tracing Flex Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/)
+- [Metrics Flex Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/)
 - [Log Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#log-search-audit-index-message-fields)
 
 :::info
-By default, [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#log-search-audit-index-message-fields) are enabled to collect data for the Flex app.
+By default, [Flex Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#log-search-audit-index-message-fields) are enabled to collect data for the Flex app.
 :::
 
 ### Log samples
@@ -166,8 +169,8 @@ By default, [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/
 
 ### Sample queries
 
-``` sql title="Ingest Volume - GB/Day"
-_index=sumologic_volume 
+```sumo title="Ingest Volume - GB/Day"
+_index=sumologic_volume
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as sourcecategory, dataTier, bytes, count
 | where _sourceCategory matches "sourcecategory_and_tier_volume" and dataTier matches "Flex"
@@ -181,13 +184,17 @@ For more examples, refer to [Log and Tracing Data Volume Index](/docs/manage/ing
 
 ## Installing the Flex app
 
-Flex app will be pre-installed for all the Flex users. 
+### Prerequisite
+
+Enable both the Flex Index (`sumologic_volume`) and the Search Audit Index (`_view = sumologic_search_usage_per_query`) before installation. See [Flex Index](/docs/manage/ingestion-volume/data-volume-index/) and [Enable the Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#enable-the-search-audit-index) for instructions.
+
+The Flex app will be pre-installed for all Flex users. 
 
 1. Navigate to **App Catalog > Installed Apps** to find the installed Flex app. 
 1. Click the **Flex** app tile.
 1. Go to **What's Included > Dashboards: View content in Library** to preview the dashboards.
 
-If you do not have the Flex app installed, follow the below steps.
+If you do not have the Flex app installed, follow the steps below.
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
@@ -201,37 +208,61 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Flex - Overview** dashboard displays the amount of data that you are ingesting and scanning in logs. It also helps you understand how much data you are ingesting in Metrics and Tracing.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Overview.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" /> 
+The **Flex - Overview** dashboard displays the amount of data that you are ingesting and scanning in logs. It also helps you understand how much data you are ingesting in Metrics and Tracing.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Overview.png" alt="Flex Overview" style={{border:'1px solid gray'}} width="800" /> 
 
 ### Capacity Utilization
 
-The **Flex - Capacity Utilization** dashboard displays the subscribed, actual, and percentage capacity utilization for logs and metrics.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Capacity-Utilization.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" /> 
+The **Flex - Capacity Utilization** dashboard displays the subscribed, actual, and percentage capacity utilization for logs and metrics.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Capacity-Utilization.png" alt="Flex Overview" style={{border:'1px solid gray'}} width="800" /> 
 
 ### Credits Consumed
 
-The **Flex - Credits Consumed** dashboard provides visibility into the total amount of [Sumo Logic Credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts) consumed by your organization. This allows you to monitor and control search costs.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Credits-Consumed.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" /> 
+The **Flex - Credits Consumed** dashboard provides visibility into the total amount of [Sumo Logic Credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts) consumed by your organization. This allows you to monitor and control search costs.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Credits-Consumed.png" alt="Flex Overview" style={{border:'1px solid gray'}} width="800" /> 
+
+:::note
+The `credits_conversion` parameter indicates the credits consumed per 1 GB of scan. The credits conversion used in the dashboard and saved searches might be different from what is defined in your contract (Credits Table) based on your account subscription type, so update this parameter for accurate calculation. Check with your account executive to determine this value for your account.
+:::
 
 ### Feature Level Scan Volume
 
-The **Flex - Feature Level Scan Volume** dashboard provides visibility into the scan volume at a feature level in order to monitor and control cost at a feature level.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Feature-Level-Scan-Volume.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" />
+The **Flex - Feature Level Scan Volume** dashboard provides visibility into the scan volume at a feature level to monitor and control cost at a feature level.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Feature-Level-Scan-Volume.png" alt="Flex Overview" style={{border:'1px solid gray'}} width="800" />
+
+:::note
+The `credits_conversion` parameter indicates the credits consumed per 1 GB of scan. The credits conversion used in the dashboard and saved searches might be different from what is defined in your contract (Credits Table) based on your account subscription type, so update this parameter for accurate calculation. Check with your account executive to determine this value for your account.
+:::
 
 ### Log Spikes
 
-The **Flex - Log Spikes** dashboard helps to review details of your data ingested for logs.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Log-Spikes.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" />
+The **Flex - Log Spikes** dashboard helps to review details of your data ingested for logs.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Log-Spikes.png" alt="Flex Overview" style={{border:'1px solid gray'}} width="800" />
 
 ### Logs
 
-The **Flex - Logs** dashboard helps you see your log ingest volume between default and non-default indexes along with the predicted growth. This dashboard also provides details about the data volume scan and predicted growth for scan volume.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Logs.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" />
+The **Flex - Logs** dashboard helps you see your log ingest volume between default and non-default indexes, along with the predicted growth. This dashboard also provides details about the Flex scan and predicted growth for scan volume.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Logs.png" alt="Flex Overview" style={{border:'1px solid gray'}} width="800" />
 
 ### Metrics
 
-The **Flex - Metrics** dashboard helps you review metrics details of your data ingestion and identify areas of high-volume ingest.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Metrics.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" />
+The **Flex - Metrics** dashboard helps you review the metrics details of your data ingestion and identify areas of high-volume ingestion.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Metrics.png" alt="Flex Overview" style={{border:'1px solid gray'}} width="800" />
 
 ### Tracing
 
-The **Flex - Tracing** dashboard helps to review Tracing details of your data ingest and to identify areas of high-volume ingest.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Tracing.png" alt="Flex-Overview" style={{border:'1px solid gray'}} width="800" />
+The **Flex - Tracing** dashboard helps to review tracing details of your data ingest and to identify areas of high-volume ingest.<br/><img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Tracing.png" alt="Flex Overview" style={{border:'1px solid gray'}} width="800" />
 
-## Upgrading the Flex app (Optional)
+## Create monitors for the Sumo Logic Flex app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Flex app alerts
+
+| Name  | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Flex - Collector Ingestion Spike Detection` | This alert is generated when the delta of collector log ingestion for the previous day and today is greater than the defined threshold percentage. | Count > 100 | Count < = 100 |
+| `Flex - Daily Credit Budget Exhaustion Alert` | This alert triggers when the total daily credit consumption crosses the set threshold limit to prevent budget depletion and unexpected cost overruns. | Count > 75 | Count < = 75 |
+| `Flex - Daily Data Ingestion Capacity Exceeded Alert` | This alert is triggered when the daily data ingestion value exceeds the set threshold value. | Count > 75 | Count < = 75 |
+| `Flex - Data Scan Volume Threshold Breach` | This alert is generated when the daily average scan volume goes above the set threshold value. | Count > 100 | Count < = 100 |
+| `Flex - Expensive Query Detection Alert` | This alert is triggered when consumed credits for any specific query cross the set threshold value. | Count > 5 | Count < = 5 |
+
+## Upgrade/Downgrade the Flex app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

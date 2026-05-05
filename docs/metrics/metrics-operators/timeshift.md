@@ -32,4 +32,4 @@ Query #B returns the `CPU_Idle` metric for the 15 minute period that ended two h
 #B _sourceCategory=prod/host _sourceHost=my-mac= metric=CPU_Idle | timeshift 2h
 ```
 
-<img src={useBaseUrl('img/metrics/timeshift.png')} alt="your description" />
+<img src={useBaseUrl('img/metrics/timeshift.png')} alt="your description" style={{border: '1px solid gray'}} width="800" />

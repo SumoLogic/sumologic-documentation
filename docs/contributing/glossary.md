@@ -24,7 +24,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Aggregate](/docs/search/search-query-language/group-aggregate-operators)**. A group of data returned by a search, displayed in a simple table in the Aggregates tab of the Search page.
 
-**[Alert](/docs/alerts)**. A notification you can configure for a scheduled search. There are multiple alert types: Email, Script Action, ServiceNow Connection, Webhook, Save to Index, and Real Time Alerts.
+**[Alert](/docs/alerts)**. A notification you can configure for a scheduled search. There are multiple alert types, such as Email, Script Action, ServiceNow Connection, Webhook, and Save to Index.
 
 **[Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses)**. Sumo Logic’s Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
 
@@ -53,6 +53,10 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 **[Cardinality](/docs/metrics/logs-to-metrics/#manage-metric-cardinality)**. Refers to the uniqueness of values in a database column or metric dimension. High cardinality metrics are metrics with dimensions that have many different values, which can result in a high volume of unique time series. In Sumo Logic, you can use a transformation rule to aggregate high cardinality data from ephemeral sources into higher-level metrics that you want to analyze over time.
 
 **[Clobber](/docs/send-data/installed-collectors/collector-installation-reference/force-collectors-name-clobber/)**. During the installation process, use the clobber flag in situations where you're creating a new Collector that will use a name that is already in use by another Collector. Clobber deletes (clobbers) the existing collector with the same name.
+
+[**Cloud SIEM**](/docs/cse). A cloud-native security information and event management solution that automatically normalizes, correlates, and analyzes your security data. Cloud SIEM surfaces insights that help security analysts detect and investigate threats faster.
+
+[**Cloud SOAR**](/docs/cloud-soar). A security orchestration, automation, and response platform that helps security teams streamline incident response. Cloud SOAR automates repetitive tasks, orchestrates workflows across security tools, and tracks the full incident lifecycle.
 
 <!--
 **[Cloud](/docs/get-started#sumo-logic-cloud)**. The Sumo Logic Cloud is a secure, scalable repository for all of your operations, security, compliance, development, and other log data. The Sumo Logic Cloud stores, indexes, parses, and analyzes data, and provides unlimited horsepower with elastic scalability.
@@ -85,7 +89,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Data Volume Index](/docs/manage/ingestion-volume/data-volume-index)**. The Data Volume Index automatically provides data that allows you to understand your account’s data ingest volume in bytes and number of log messages processed overall. The Data Volume Index gives you better visibility into how much data you are sending to Sumo Logic, allowing you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription.
 
-**[Deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)**. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created.
+**[Deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)**. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created.
 
 <!--
 **Dimension**. In [Carbon 2.0](/docs/metrics/introduction/metric-formats#carbon-20) and [Prometheus](/docs/metrics/introduction/metric-formats#prometheus) metrics, dimensions are the one or more space-separated key-value pairs that uniquely identify what is being measured. Dimensions are also referred to as intrinsic tags and labels.
@@ -102,7 +106,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Ephemeral](/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral)**. Refers to data sources, such as containers, that are created and destroyed as appropriate, resulting in a high volume log data or metrics. In Sumo Logic, you can set a collector to be ephemeral—Sumo Logic deletes an ephemeral collector automatically after it has been offline for 12 hours.
 
-**[Endpoints](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)**. Sumo Logic has several pods that are assigned depending on the geographic location and the date an account is created. Sumo Logic redirects your browser to the correct login URL and also redirects Collectors to the correct endpoint. However, if you're using an API you'll need to manually direct requests to the correct API endpoint; API calls are not redirected to another endpoint.
+**[Endpoints](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)**. Sumo Logic has several pods that are assigned depending on the geographic location and the date an account is created. Sumo Logic redirects your browser to the correct login URL and also redirects Collectors to the correct endpoint. However, if you're using an API you'll need to manually direct requests to the correct API endpoint; API calls are not redirected to another endpoint.
 
 **[Enrichment](/docs/cse/integrations/enrichments-and-indicators)**. In Cloud SIEM, addition of data to records that provides more information for analysis of security incidents.
 
@@ -174,9 +178,9 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management)**. Local Configuration File Management allows you to set up and manage Sources on an Installed Collector using one or more JSON files.
 
-**[LogCompare](/docs/search/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
+**[LogCompare](/docs/search/behavior-insights/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
 
-**[LogReduce](/docs/search/logreduce)**. LogReduce uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
+**[LogReduce](/docs/search/behavior-insights/logreduce)**. LogReduce uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
 
 **[Logs-to-Metrics](/docs/metrics/logs-to-metrics)**. A Sumo Logic feature you can use to extract or create metrics from log data. You can extract metrics that are embedded in logs, or count logs as a metric.
 
@@ -211,12 +215,16 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 **[Microservices](/docs/integrations/app-development)**. The microservices architecture enables you to structure applications as collections of loosely coupled services that are fine-grained, with protocols that are lightweight. Building applications using different smaller services improves modularity and provides for the continuous delivery and deployment of large, complex applications.
 -->
 
+**[Mobot](/docs/search/mobot)**. Sumo Logic's AI assistant. It uses a suite of specialized agents to help you search, analyze, and learn about your data using natural language.
+
 **[Multiline](/docs/send-data/reference-information/collect-multiline-logs)**. Log messages that span multiple lines are called multiline messages.
 
 
 ## O
 
-**[Organization](/docs/manage/manage-subscription/manage-org-settings/)**. In Sumo Logic, org, or organization, refers to your company’s Sumo Logic account (not an individual user’s account).
+**[OpenTelemetry Collector, Sumo Logic](/docs/send-data/opentelemetry-collector/)**. An open-source, vendor-agnostic agent for collecting, processing, and exporting telemetry data such as logs, metrics, and traces. Sumo Logic supports the OpenTelemetry Collector as a unified alternative to Installed Collectors for sending observability data to Sumo Logic.
+
+**[Organization](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings)**. In Sumo Logic, org, or organization, refers to your company’s Sumo Logic account (not an individual user’s account).
 
 **Outlier**. Outliers are log data or metric values in a sequence that seem unexpected, and might indicate an operational or performance issue. In Sumo Logic, you can use the [outlier operator](/docs/search/search-query-language/search-operators/outlier) to identify outliers in log data. In addition, Sumo Logic has a [metrics outlier](/docs/metrics/metrics-operators/outlier/) operator that identifies metric data points that are outside the range of expected values.
 
@@ -278,6 +286,8 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 **[Scheduled View](/docs/manage/scheduled-views)**. A Scheduled View is a pre-aggregated index of a subset of data. After building a Scheduled View, you'll be able to run queries against that data set. Because the data is pre-aggregated, meaning that query you'll use to create a Scheduled View contains an aggregate function, search results return much quicker. Additionally, queries run against a Scheduled View cannot time out. Queries that run against Views can be used in scheduled searches, Dashboards, and in ad hoc searches.
 
 **[Search Autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete)**. See Autocomplete.
+
+**[Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time)**. You can display search results in the order in which logs become available for search after being received by the Sumo Logic system.
 
 **[Search Templates](/docs/search/get-started-with-search/build-search/search-templates)**. Search templates simplify searches for users by providing easy to select input choices. You can have search templates replace any text in a query, including fields, keywords, and arguments to operators.
 

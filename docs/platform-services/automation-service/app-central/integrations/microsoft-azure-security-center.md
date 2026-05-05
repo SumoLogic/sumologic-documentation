@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-azure-security-center.png')} alt="microsoft-azure-security-center" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-azure-security-center.png')} alt="Microsoft Azure Security Center" width="100"/>
 
-***Version: 1.1  
-Updated: Jun 21, 2023***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Work with Alerts, Policies, Tasks, and other resources with Microsoft Azure Security Center.
 
@@ -26,8 +26,42 @@ Work with Alerts, Policies, Tasks, and other resources with Microsoft Azure Secu
 * **Update Security Policy** (*Containment*) - Update security policy information.
 * **Update Task Status** (*Containment*) - Update the status of a security task.
 
+## Configure Microsoft Azure Security Center in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Username**. Enter the username of a Microsoft Azure Security Center admin user authorized to authenticate the integration.
+
+* **Password**. Enter the admin user password.
+
+* **Directory (Tenant) ID**. Enter the [tenant ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application#application-id-client-id) of the AAD directory in which you created the application.
+
+* **Application (Client) ID**. Enter your Microsoft 365 Defender [application ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application#application-id-client-id).
+
+* **Application (Client) Secret**. Enter your application (client) secret.
+
+* **Subscription ID**. Enter your [subscription ID](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id). The subscription ID is a GUID that uniquely identifies your subscription to use Azure services.
+
+* **Scope**. Enter the [scope](https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview) to use.
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-azure-security-center-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft Azure Security Center configuration" width="400"/>
+
+For information about Microsoft Defender for Cloud ([formerly Azure Security Center](https://techcommunity.microsoft.com/blog/microsoftdefendercloudblog/a-new-name-for-multi-cloud-security-microsoft-defender-for-cloud/2943020)), see [Microsoft Defender for Clolud documentation](https://learn.microsoft.com/en-us/azure/defender-for-cloud/).
+
 ## Change Log
 
 * March 22, 2019 - First upload
 * March 11, 2022 - Logo
 * June 21, 2023 (v1.1) - Updated the integration with Environmental Variables
+* March 17, 2026 (v1.2) - Align integration with Microsoft recommended authentication (app-only authentication)
+* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

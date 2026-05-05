@@ -4,6 +4,8 @@ title: toLowerCase, toUpperCase Search Operators
 sidebar_label: toLowerCase, toUpperCase
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `toLowerCase` operator takes a string and converts it to all lower case letters. The `toUpperCase` operator takes a string and converts it to all uppercase letters.
 
 These operators can be useful for normalizing source logs with inconsistent capitalization, such as Windows Event logs, or changing file names and paths for files systems that require all lower case letters. They are especially useful for queries that include conditionals and grouping, in order to reduce the number of groups in the search results.
@@ -14,13 +16,9 @@ These operators can be useful for normalizing source logs with inconsistent capi
 
 ## Syntax
 
-```sql
-toLowerCase(<string>) [as <field>]
-```
+`toLowerCase(<string>) [as <field>]`
 
-```sql
-toUpperCase(<string>) [as <field>]
-```
+`toUpperCase(<string>) [as <field>]`
 
 ## Rules
 
@@ -32,7 +30,7 @@ toUpperCase(<string>) [as <field>]
 
 Use the following query to return all the `_sourceHost` matches in upper case letters.
 
-```sql
+```sumo
 _sourceCategory=service OR _sourceCategory=search
 | toUpperCase(_sourceHost) as _sourceHost
 | where _sourceHost matches "NITE*"
@@ -40,13 +38,13 @@ _sourceCategory=service OR _sourceCategory=search
 
 which provides results like:
 
-![](/img/reuse/query-search/toUpperCase.png)
+<img src={useBaseUrl('img/reuse/query-search/toUpperCase.png')} alt="toUpperCase example" style={{border: '1px solid gray'}} width="300" />
 
 ### Using toLowerCase or toUpperCase with an equating condition
 
 **toLowerCase** and **toUpperCase** are useful when you use the equal to sign (`=`) or the not equal to sign (`!=`) with Sumo operators. These conditions are case-sensitive in Sumo Logic. The following example uses **toLowerCase** to convert the hash value to lower case before performing the lookup. 
 
-```sql
+```sumo
 *
 | limit 1
 | toLowerCase ("B101CD29E18A515753409AE86CE68A4CEDBE0D640D385EB24B9BBB69CF8186AE") as hash
@@ -55,11 +53,22 @@ which provides results like:
 | lookup raw from sumo://threat/cs on threat = hash{code}
 ```
 
+<!-- Per DOCS-643, replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
+```sumo
+*
+| limit 1
+| toLowerCase ("B101CD29E18A515753409AE86CE68A4CEDBE0D640D385EB24B9BBB69CF8186AE") as hash
+| count hash
+| fields -_count
+| threatlookup singleIndicator hash{code}
+```
+-->
+
 ### Using toUpperCase with the count operator
 
 This query also returns all matching `_sourceHost` values in upper case letters, using the count operator.
 
-```sql
+```sumo
 _sourceCategory=service OR _sourceCategory=search
 | toUpperCase(_sourceHost) as _sourceHost
 | count by _sourceHost
@@ -67,13 +76,13 @@ _sourceCategory=service OR _sourceCategory=search
 
 which produces results like:
 
-![](/img/reuse/query-search/toUpperCase_count.png)
+<img src={useBaseUrl('img/reuse/query-search/toUpperCase_count.png')} alt="toUpperCase count example" style={{border: '1px solid gray'}} width="200" />
 
 ### Find a user name and convert it to lowercase
 
 This query will search a Source Category for a user name and convert it to lowercase, no matter how the name has been input.
 
-```sql
+```sumo
 _sourceCategory=OS/Linux/Security
 | parse "user=* " as username
 | toLowerCase(username) as username

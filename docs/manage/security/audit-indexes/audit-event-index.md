@@ -13,7 +13,7 @@ description: The Audit Event Index provides event logs in JSON on your account's
 
 The Audit Event Index contains event logs in JSON format on account activities, allowing you to monitor and audit changes. This index contains user action events, which are events that were triggered by a user action, either from the UI or an API. Enterprise accounts have the Audit Event Index enabled and available to search by default. You can use the [Enterprise Audit Apps](/docs/integrations/sumo-apps/enterprise-audit) to visually display data from the Audit Event Index for monitoring and analysis.
 
-This index is separate from the [System Event Index](/docs/manage/security/audit-indexes/system-event-index), which shows events triggered by Sumo Logic rather than user action events. 
+This index is separate from the [System Event Index](/docs/manage/security/audit-indexes/system-event-index), which shows events triggered by Sumo Logic rather than user action events.
 
 This index is improved and different from the [Audit Index](/docs/manage/security/audit-indexes/audit-index), and there is some overlap of audited events. The Audit Index provides event logs in plain text and audits when account limits are reached and operation failures, like throttling and scheduled search events.
 
@@ -23,7 +23,7 @@ All available audited events are documented for your reference. See [Documentat
 
 ## Search the Audit Event Index
 
-Searching the Audit Event Index is the same as running a normal search against your ingested data. You specify the `_index` metadata field with `sumologic_audit_events`. 
+Searching the Audit Event Index is the same as running a normal search against your ingested data. You specify the `_index` metadata field with `sumologic_audit_events`.
 
 For example, to search for audit events:
 
@@ -38,7 +38,7 @@ For example, to search for audit events:
 
 This Audit Event Index has detailed JSON logs for the following features. To search for audit events for a specific feature use the metadata field `_sourceCategory` with its corresponding value. For example, to search user action events for access keys you would use the query:
 
-```sql
+```sumo
 _index=sumologic_audit_events _sourceCategory=accessKeys
 ```
 
@@ -66,10 +66,12 @@ _index=sumologic_audit_events _sourceCategory=accessKeys
 | Security Policy: [Support Account Access](/docs/manage/security/enable-support-account) | `supportAccount` |
 | [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses) | `serviceAllowlist` |
 | [Support Account](/docs/manage/security/enable-support-account) | `supportAccount` |
+| [Threat Intelligence](/docs/security/threat-intelligence/) | `threatIntelligence` |
+| [Tracing Ingest](/docs/apm/traces/tracing-ingest) | `tracingIngest` |
 | [Transformation Rules](/docs/metrics/metrics-transformation-rules) | `transformationRules` |
 | [Users](/docs/manage/users-roles) | `users` |
 | User Sessions | `userSessions` |
-| [2-Step Verification](/docs/manage/security/about-two-step-verification) | `multiFactorAuthentication` |
+| [2-Step Verification](/docs/manage/security/about-2-step-verification) | `multiFactorAuthentication` |
 
 When performing create, update, and delete requests through Sumo Logic APIs, you can find the API accessID within the operator field of your related Audit Event Index messages.
 
@@ -130,4 +132,4 @@ Each audit event log has common keys that categorize it to a product area and pr
 
 ## Index retention period
 
-By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partition, `sumologic_audit_events`. For more information, see [Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).
+By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partition, `sumologic_audit_events`. For more information, see [Create and Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).

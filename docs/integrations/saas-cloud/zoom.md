@@ -7,7 +7,7 @@ description: The Sumo Logic app for Zoom provides visibility into how Zoom is be
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Zoom icon" width="100"/>
 
 Zoom unifies cloud video and audio conferencing, simple online meetings, and group messaging into one easy-to-use platform. The cloud platform facilitates collaboration across mobile devices, desktops, telephones, and room systems for an online meeting space you can depend on. Zoom allows you to stay connected wherever you go with face-to-face video, high quality screen sharing, and instant messaging.
 
@@ -55,7 +55,7 @@ The Webhook events are grouped into the following core event types:
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory=zoom
 | json "event", "payload.object.start_time", "payload.object.topic", "payload.object.uuid", "payload.object.id", "payload.object.type", "payload.object.duration" as event, meeting_start_time, topic, meeting_instance_id, meeting_number, meeting_type, meeting_duration nodrop
 | where event = "meeting.started"
@@ -179,7 +179,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Webinars.png')} alt="Zoom dashboards" />
 
-## Upgrading the Zoom app (Optional)
+## Upgrade/Downgrade the Zoom app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

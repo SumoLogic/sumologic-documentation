@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Jira icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The Sumo Logic app for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events. 
 
@@ -208,7 +208,7 @@ bluechip-office - - 19/01/2023:05:02:10 Z "GET /jira/rest/gadget/1.0/averageage/
 
 This sample query is from the **Jira - Overview** dashboard > **Catalina Requests** panel.
 
-```sql
+```sumo
 "%"sumo.datasource"=jira
 | parse "URI *," as URI
 | parse regex "\d{2}-\w{3}-\d{4}\s\d{2}:\d{2}:\d{2}.\d{3}\s(?<log_level>\w+)\s\[(?<thread>[^\]]+)\]\s(?<component>\S+)\s(?<message>.*)"
@@ -277,3 +277,21 @@ The **Jira - Sprints Events** dashboard provides insights on sprint events in Ji
 The **Jira - User Events** dashboard provides information about user events in Jira, including the number of user events, trends, and users that have been updated, created, and deleted.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-User-Events.png' alt="User Events" />
+
+
+## Create monitors for Jira app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Jira alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Jira - Abnormal Session Creation Rate Alert` | This alert is triggered when there are unusual patterns in session creation/destruction that might indicate security issues or system problems. | Count >= 1 | Count < 1 |
+| `Jira - High Average Response Time Alert` | This alert is triggered when elevated response times in Jira are detected, indicating potential performance degradation. | Count >= 5000 | Count < 5000 |
+| `Jira - High HTTP 4xx Error Rate Alert` | This alert is triggered when there is increase in HTTP 4xx errors to detect service disruptions. | Count >= 50 | Count < 50 |
+| `Jira - High HTTP 5xx Error Rate Alert` | This alert is triggered when there is increase in HTTP 5xx errors to detect service disruptions. | Count >= 50 | Count < 50 |
+| `Jira - High Priority Issues Unassigned SLA Alert` | This alert is triggered when high-priority issues remain unassigned beyond the Default SLA threshold of 30 minutes (1800000 milliseconds). To adjust the SLA, update the value in the query to the desired time in milliseconds (e.g., 15 minutes = 900000, 1 hour = 3600000). | Count >= 1 | Count < 1 |
+| `Jira - Rapid Authentication Failures Alert` | This alert is triggered when a single user experiences more than 10 failed login attempts within 5 minutes, indicating potential password guessing attempts or account lockout issues. | Count > 10 | Count \<= 10 |

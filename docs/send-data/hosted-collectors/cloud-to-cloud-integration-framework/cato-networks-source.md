@@ -7,10 +7,6 @@ tags:
 description: Learn how to configure the Cato Networks Source Cloud-to-Cloud connector for Sumo Logic.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/cato-networks/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/cato-networks/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/cato-networks/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/cato-logo.png')} alt="cato logo" width="50"/>
@@ -33,15 +29,15 @@ In this configuration, you will set up the Cato Networks API Key and Account ID 
 - In the Cato Management Application, only account administrators with the **Editor** privilege can generate keys. (CMA).
 - To ingest security events, you must enable the events feeds on your account. To enable the events feed, follow the steps below:
     1. In the navigation panel, select **System > API Access Management**.
-    1. Select **Event Feed Enabled**. After this, your account starts sending events to the Cato API server. <br/><img src={useBaseUrl('img/send-data/cato-networks-enable-events-feed.png')} alt="cato-networks-enable-events-feed.png" width="700" />
+    1. Select **Event Feed Enabled**. After this, your account starts sending events to the Cato API server. <br/><img src={useBaseUrl('img/send-data/cato-networks-enable-events-feed.png')} alt="Cato Networks enable events feed" width="700" />
 
 #### API Key
 
 All access to Cato networks require an API Key. Follow the below instructions to set up an API Key.
 
-1. In the navigation menu, click **Administration > API Management**. <br/><img src={useBaseUrl('img/send-data/cato-networks-administration.png')} alt="cato-networks-administration.png" width="700" />
+1. In the navigation menu, click **Administration > API Management**. <br/><img src={useBaseUrl('img/send-data/cato-networks-administration.png')} alt="Cato Networks administration" width="700" />
 1. On the **API Keys** tab, click **New**. The **Create API Key** panel opens.
-1. Enter a **Key Name**. <br/><img src={useBaseUrl('img/send-data/cato-networks-new-api-key.png')} alt="cato-networks-new-api-key.png" width="250" />
+1. Enter a **Key Name**. <br/><img src={useBaseUrl('img/send-data/cato-networks-new-api-key.png')} alt="Cato Networks new API key" width="250" />
 1. Select **View** in the **API Permission**.
 1. Select **Any IP** to allow this API key for any IP address under the **Allow Access from IPs** section.
 1. (Optional) Select a date when the API key expires. If you select an expiration date, then you need to update the source configuration with a new API key, or else an unauthorized error will be received.
@@ -54,21 +50,21 @@ All access to Cato networks require an API Key. Follow the below instructions to
 
 #### Account ID
 
-All API calls require an account ID parameter. When logged into the Cato account, look for a four-digit integer in the URL and take note of the account ID. . <br/><img src={useBaseUrl('img/send-data/cato-networks-account-id.png')} alt="cato-networks-account-id.png" width="700" />
+All API calls require an account ID parameter. When logged into the Cato account, look for a four-digit integer in the URL and take note of the account ID. . <br/><img src={useBaseUrl('img/send-data/cato-networks-account-id.png')} alt="Cato Networks account ID" width="700" />
 
 ### Source configuration
 
 When you create an Cato Networks Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Cato Networks Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Cato Networks**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. Enter the **API Key** for Cato Networks account.
 1. Enter the **Account ID** for Cato Networks account.
 1. Select the **Data Types**. You can select one or both of the data sources.
@@ -76,6 +72,10 @@ To configure a Cato Networks Source:
    - If **Security Events** is selected, the integration will fetch security data.
    - If **Audit Events** is selected, the integration will fetch audit data.
 1. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the Cato Networks source, consider installing the Sumo Logic app for [Cato Networks](/docs/integrations/saas-cloud/cato-networks/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata fields
 
@@ -107,15 +107,16 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/cato-networks/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cato-networks/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cato-networks/example.tf
+```
 
-<a href="/files/c2c/cato-networks/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

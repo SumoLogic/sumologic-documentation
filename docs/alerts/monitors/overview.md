@@ -17,13 +17,15 @@ Learn how [monitors differ from Scheduled Searches](/docs/alerts/difference-from
 
 ## Prerequisites
 
-To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities). [Learn more](/docs/alerts/monitors/settings/#folder-permissions) about controlling permissions at the monitor or folder level.
+To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities). [Learn more](/docs/alerts/monitors/settings/#monitor-folder-permissions) about controlling permissions at the monitor or folder level.
 
 ## Rules
 
 The frequency at which a monitor executes depends on various factors, such as the underlying query, the operators used, and the detection window. This frequency can range from a few seconds to several minutes.
 
-For example, if the detection window of your alert is one day, it will be evaluated every few minutes. Conversely, if the detection window of the monitor is 15 minutes, it will be evaluated every few seconds.
+For example, if the detection window of your alert is 24 hours, it will be evaluated every few minutes. Conversely, if the detection window of the monitor is 15 minutes, it will be evaluated every few seconds.
+
+See [Trigger Type (Logs)](/docs/alerts/monitors/create-monitor/#trigger-type-logs) and [Trigger Type (Metrics)](/docs/alerts/monitors/create-monitor/#trigger-type-metrics) for more information.
 
 ### Log monitors
 
@@ -130,7 +132,7 @@ Custom variables used inside the Action Payload.
 ### General
 
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
-* [LogReduce](/docs/search/logreduce/logreduce-operator) / [LogCompare](../../search/logcompare.md) operators are not supported in monitors. If your query contains these operators, you will not be able to create the monitor.  
+* [LogReduce](/docs/search/behavior-insights/logreduce/logreduce-operator) / [LogCompare](/docs/search/behavior-insights/logcompare) operators are not supported in monitors. If your query contains these operators, you will not be able to create the monitor.  
 * Monitors only support the [Continuous data tier](/docs/manage/partitions/data-tiers).
 * An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.

@@ -4,6 +4,8 @@ title: backshift Search Operator
 sidebar_label: backshift
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `backshift` operator helps you compare values as they change over time. It simply shifts the data points it is given and returns them in your results in a new field.
 
 The backshift operator can be used with [rollingstd](/docs/search/search-query-language/search-operators/rollingstd), [smooth](/docs/search/search-query-language/search-operators/smooth), or any other operators whose results could be affected by spikes of data (where a spike could possibly throw off future results).
@@ -12,9 +14,7 @@ It is important to note that `backshift` does not automatically add timeslices, 
 
 ## Syntax
 
-```sql
-backshift <field> [, shift_length] [by <field>]
-```
+`backshift <field> [, shift_length] [by <field>]`
 
 ## Rules
 
@@ -30,7 +30,7 @@ Use `backshift` to see the difference of fields between time points.
 
 Running a query like this:
 
-```sql
+```sumo  
 _sourceCategory=Labs/Apache/Access
 | timeslice by 1m
 | count by _timeslice
@@ -40,8 +40,8 @@ _sourceCategory=Labs/Apache/Access
 
 produces results like:
 
-![backshift_new_table.png](/img/search/searchquerylanguage/search-operators/backshift-table-1.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/backshift-table-1.png')} alt="Backshift new table" style={{border: '1px solid gray'}} width="400" />
 
 Then you can visualize the results as an area chart.
 
-![backshift_new_graph.png](/img/search/searchquerylanguage/search-operators/area-chart-backshift-1.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/area-chart-backshift-1.png')} alt="Backshift new graph" style={{border: '1px solid gray'}} width="800" />

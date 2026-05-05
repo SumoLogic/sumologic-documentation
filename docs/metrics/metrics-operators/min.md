@@ -6,7 +6,7 @@ sidebar_label: min
 
 
 
-The min operator calculates the minimum value of the time series that match the query. If grouping is specified, it calculates the minimum for each group.
+The `min` operator calculates the minimum value of the time series that match the query. If grouping is specified, it calculates the minimum for each group.
 
 ## Syntax
 

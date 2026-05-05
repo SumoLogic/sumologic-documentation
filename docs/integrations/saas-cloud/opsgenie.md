@@ -7,7 +7,7 @@ description: The Opsgenie App provides at-a-glance views and detailed analytics 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="Opsgenie icon" width="75"/>
 
 The Opsgenie App provides at-a-glance views and detailed analytics for alerts on your DevOps environment, allowing you to effectively monitor and gain valuable insights into your incidents and incident handling operations.
 
@@ -38,7 +38,7 @@ Different Alert types used by Opsgenie, with sample payloads, are defined here: 
 The following query sample is taken from the **Alerts by Priority Over Time** panel on the **Opsgenie - Alerts Breakdown Dashboard**:
 
 
-```sql
+```sumo
 _sourceCategory="opsgenie/events" Create
 | json "alert.createdAt", "alert.description", "alert.message", "action", "alert.team",  
 "alert.priority", "alert.source" , "alert.tags[*]","alert.recipients[*]" as created_at,
@@ -86,17 +86,15 @@ To configure log collection for the Opsgenie App, do the following:
 
 ## Installing the Opsgenie App
 
-This section provides instructions for installing the Opsgenie App, as well as examples of each of the app dashboards.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing OpsGenie Dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

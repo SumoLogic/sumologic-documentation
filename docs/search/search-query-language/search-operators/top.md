@@ -4,6 +4,8 @@ title: top Search Operator
 sidebar_label: top
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Use the `top` operator with the [`sort`](/docs/search/search-query-language/search-operators/sort) operator to reduce the number of sorted results returned.
 
 :::tip
@@ -12,9 +14,7 @@ We recommend you use the [`topk`](/docs/search/search-query-language/search-ope
 
 ## Syntax
 
-```sql
-top <#> <field> [by <group_by_operator>]
-```
+`top <#> <field> [by <group_by_operator>]`
 
 ## Examples
 
@@ -22,18 +22,18 @@ top <#> <field> [by <group_by_operator>]
 
 Use the following query to list the top 5 source categories with errors, and get their count.
 
-```sql
+```sumo
 error | top 5 _sourceCategory
 ```
 
 which produces results like:
 
-![example](/img/reuse/query-search/top_example1.png)
+<img src={useBaseUrl('img/reuse/query-search/top_example1.png')} alt="Example" style={{border: '1px solid gray'}} width="200" />
 
 You can use the following query to get the same results, but make the
 count explicit:
 
-```sql
+```sumo
 error | top 5 _sourceCategory by count
 ```
 
@@ -42,10 +42,10 @@ error | top 5 _sourceCategory by count
 This query lists the top 10 source categories by message time, without
 an explicit count.
 
-```sql
+```sumo
 error | top 10 _sourceCategory by _messagetime
 ```
 
 which produces results like:
 
-![example](/img/reuse/query-search/top_example3.png)
+<img src={useBaseUrl('img/reuse/query-search/top_example3.png')} alt="Another example" style={{border: '1px solid gray'}} width="300" />

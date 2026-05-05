@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zendesk.png')} alt="axonius" width="100"/>
 
-***Version: 1.4  
-Updated: March 21, 2024***
+***Version: 1.5  
+Updated: April 30, 2026***
 
 Zendesk enhances customer service security with advanced encryption and access controls to safeguard interactions.
 This integration streamlines ticket lifecycle management, from creation to restoration, and enriches user engagement with comprehensive data retrieval.
@@ -32,6 +32,32 @@ This integration supports two primary authentication methods:
 
 Please ensure that you consult the corresponding guide to activate the API and generate the necessary credentials for your chosen method of authentication.
 
+## Configure Zendesk in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Zendesk URL, for example, `https://your-domain.zendesk.com`.
+
+* **Username**. Enter the username of a Zendesk admin user authorized to authenticate the integration.
+
+* **API Token**. Enter your [Zendesk API token](https://support.zendesk.com/hc/en-us/articles/4408889192858-Managing-access-to-the-Zendesk-API#topic_bsw_lfg_mmb).
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/zendesk-configuration.png')} style={{border:'1px solid gray'}} alt="Zendesk configuration" width="400"/>
+
+For information about Zendesk, see [Zendesk documentation](https://www.zendesk.com/service/ticketing-system/documentation/).
 
 ## Change Log
 
@@ -43,3 +69,4 @@ Please ensure that you consult the corresponding guide to activate the API and g
 * March 21, 2024 (v1.4)
     + Changed "Description" field type to textarea in "Create Ticket" action
     + Changed "Comment" field type to textarea in "Update Ticket" action
+* April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

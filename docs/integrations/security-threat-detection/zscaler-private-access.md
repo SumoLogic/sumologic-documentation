@@ -7,7 +7,7 @@ description: The Zscaler Private Access app collects logs from Zscaler using the
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="Zscaler icon" width="75"/>
 
 The Sumo Logic app for Zscaler Private Access (ZPA) collects logs from Zscaler using the Log Streaming Service (LSS) to populate pre-configured searches and dashboards that provide easy-to-access visual insights into user behaviors, security, connector status, and risk.
 
@@ -71,7 +71,7 @@ To deploy the App Connector, see the [Deployment Guide](https://help.zscaler.com
 Once you have deployed the App Connector, you'll need to configure log receivers to send logs to the Sumo Logic cloud syslog endpoint by doing the following:
 
 1. Log in to your ZPA system.
-2. Go to **Administration** > **Log Receivers**.
+2. Go to **Administration > Log Receivers**.
 3. Click **Add Log Receiver**.
 4. In the **Add Log Receiver** window, configure the following tabs:
     1. [Log Receiver](https://help.zscaler.com/zpa/configuring-log-receiver#Step1)
@@ -181,7 +181,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Users.png')} alt="zscaler private access Dashboard" />
 
-## Upgrading the Zscaler Private Access app (optional)
+## Upgrade/Downgrade the Zscaler Private Access app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

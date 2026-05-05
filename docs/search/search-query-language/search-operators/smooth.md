@@ -4,6 +4,8 @@ title: smooth Search Operator
 sidebar_label: smooth
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `smooth` operator calculates the rolling (or moving) average of a field, measuring the average of a value to "smooth" random variation. Smooth operator reveals trends in the data set you include in a query.
 
 Within a query that contains a smooth operator you will choose a window (described as window_length in the syntax below); the average of the values within the window creates a data point.
@@ -14,9 +16,7 @@ Adding a group by function to a smooth operator query produces a running average
 
 ## Syntax
 
-```sql
-smooth <field> [, <window length>] [as <field>]
-```
+`smooth <field> [, <window length>] [as <field>]`
 
 ## Rules
 
@@ -34,7 +34,7 @@ The following examples use the `sort` operator to sort the time prior to calcu
 
 Running a query such as:
 
-```sql
+```sumo
 _sourceCategory=katta
 | timeslice by 1m
 | count by _timeslice,_sourceHost
@@ -44,13 +44,13 @@ _sourceCategory=katta
 
 produces results like:
 
-![too smooth.png](/img/search/searchquerylanguage/search-operators/too-smooth.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/too-smooth.png')} alt="Too smooth" style={{border: '1px solid gray'}} width="800" />
 
 ### Smooth the difference of a quantity between time points
 
 Using smooth with timeslice, you can run a query similar to:
 
-```sql
+```sumo
 * | parse "bytes transmitted: '*'" as bytes
 | timeslice 1m
 | sum(bytes) as bytes by _timeslice
@@ -60,13 +60,13 @@ Using smooth with timeslice, you can run a query similar to:
 
 that produces results like:
 
-![smooth.png](/img/search/searchquerylanguage/search-operators/smooth.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/smooth.png')} alt="Smooth" style={{border: '1px solid gray'}} width="500" />
 
 ### Use backshift with smooth and rollingstd to view the averages of incoming bytes
 
 Running a query like:
 
-```sql
+```sumo
 ...| timeslice by 1m
 | avg(oneMinuteRate) as avgRateByHost by _sourceHost,_timeslice
 | sum(avgratebyhost) as totalIncomingRate by _timeslice
@@ -80,13 +80,13 @@ Running a query like:
 
 produces results similar to:
 
-![OneMinuteRate.png](/img/search/searchquerylanguage/search-operators/OneMinuteRate.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/OneMinuteRate.png')} alt="One Minute Rate" style={{border: '1px solid gray'}} width="800" />
 
 ### Specify a window length of 5, but only 4 data points are available
 
 Before 5 values are available, the smooth operator takes an average of whatever is available. For example:
 
-```sql
+```sumo
 _sourceCategory=katta
 | timeslice by 1m
 | count by _timeslice,_sourceHost
@@ -97,4 +97,4 @@ _sourceCategory=katta
 
 produces results like:
 
-![Coldsmooth.png](/img/search/searchquerylanguage/search-operators/Coldsmooth.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Coldsmooth.png')} alt="Cold smooth" style={{border: '1px solid gray'}} width="500" />
