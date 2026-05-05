@@ -43,12 +43,12 @@ ChatGPT uses OAuth 2.0 Authorization Code flow for authentication. You'll create
 1. Copy the **Redirect URL** shown in the dialog. You'll use this when [creating your OAuth client in Sumo Logic](/docs/manage/security/oauth#authorization-code-flow).
 1. In Sumo Logic, [create an OAuth client using the Authorization Code flow](/docs/manage/security/oauth#authorization-code-flow) with the redirect URL from ChatGPT.
 1. Return to ChatGPT's Create App dialog and enter:
-   * **MCP Server URL**: `https://mcp.sumologic.com/mcp`
-   * **OAuth Client ID**: Your Client ID from Sumo Logic
-   * **OAuth Client Secret**: Your Client Secret from Sumo Logic
-   :::tip
+   * **MCP Server URL**. `https://mcp.sumologic.com/mcp`
+   :::note Deployment endpoints
    `mcp.sumologic.com/mcp` defaults to the us1 deployment. OAuth tokens are deployment-bound, so if your org is on a different deployment, replace this with the deployment-specific form: `mcp.<deployment>.sumologic.com/mcp` (for example, `mcp.us2.sumologic.com/mcp`). See [Sumo Logic endpoints by deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the full list.
    :::
+   * **OAuth Client ID**. Your Client ID from Sumo Logic.
+   * **OAuth Client Secret**. Your Client Secret from Sumo Logic.
 1. Check **I understand and want to Continue**.
 1. Click **Create**.
 1. ChatGPT will open a browser window to authenticate with Sumo Logic. Log in to complete the OAuth flow.
@@ -91,7 +91,7 @@ Claude Code CLI uses OAuth 2.0 Authorization Code flow for authentication. Brows
        --client-secret \
        sumo-logic "https://mcp.sumologic.com/mcp"
      ```
-   :::tip
+   :::note Deployment endpoints
    `mcp.sumologic.com/mcp` defaults to the us1 deployment. OAuth tokens are deployment-bound, so if your org is on a different deployment, replace this with the deployment-specific form: `mcp.<deployment>.sumologic.com/mcp` (for example, `mcp.us2.sumologic.com/mcp`). See [Sumo Logic endpoints by deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the full list.
    :::
 1. Launch Claude Code. With **user scope**, run `claude` from any directory. With **project scope**, run it from the directory where you registered the server.
@@ -141,7 +141,7 @@ Before you begin, [create an OAuth client using Client Credentials flow](/docs/m
    }
    ```
    If you've previously configured other MCP servers here, this should be an additive process (that is, do not delete existing ones you still intend to use).
-   :::tip
+   :::note Deployment endpoints
    `mcp.sumologic.com/mcp` defaults to the us1 deployment. OAuth tokens are deployment-bound, so if your org is on a different deployment, replace the `"url"` value with the deployment-specific form: `mcp.<deployment>.sumologic.com/mcp` (for example, `mcp.us2.sumologic.com/mcp`). See [Sumo Logic endpoints by deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the full list.
    :::
 1. In the **mcp.json** file, click the **Start** button just above `"Sumo Logic MCP server": {`.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-mcp-start.png')} alt="VS Code Start button in mcp.json configuration file" width="600"/>
@@ -178,7 +178,7 @@ Our MCP server provides access to Sumo Logic through these tool categories:
 All tools respect your Sumo Logic permission controls and access policies.
 
 :::note
-Tool identifiers are subject to change during the private preview period.
+Tool identifiers are subject to change during the preview period.
 :::
 
 ### Utility tools

@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Private Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
 :::info
 This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
@@ -27,6 +27,15 @@ Sumo Logic supports two OAuth 2.0 authentication flows:
 | :--- | :--- | :--- | :--- |
 | [Authorization Code](#authorization-code-flow) | User-facing applications with browser-based login | Simple (UI-based) | Automatic |
 | [Client Credentials](#client-credentials-flow) | Service-to-service authentication, automated workflows | Moderate (API-based) | Manual or automatic |
+
+<a id="how-permissions-work"></a>
+
+:::tip How permissions work
+For both flows, effective permissions are the intersection of the OAuth client's scopes and the caller's roles. This prevents privilege escalation — no OAuth client can grant more access than the caller already has.
+
+* **Authorization Code flow**: intersection of the authenticated user's roles, the OAuth client's scopes, and the scopes requested in the authorization request.
+* **Client Credentials flow**: intersection of the service account's roles and the OAuth client's scopes.
+:::
 
 ## Authorization Code flow
 
@@ -58,15 +67,6 @@ curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
 
 The response includes `authorization_endpoint`, `token_endpoint`, and other supported OAuth parameters.
 
-:::note
-The permissions granted via Authorization Code flow are the intersection of:
-* The roles (RBAC capabilities) assigned to the authenticated user.
-* The scopes assigned to the OAuth client.
-* The scopes requested in the authorization request.
-
-This means a user cannot grant more permissions than they already have in Sumo Logic.
-:::
-
 ## Client Credentials flow
 
 This flow uses service accounts for server-to-server authentication. Applications authenticate directly with Sumo Logic using a client ID and client secret, without requiring user interaction.
@@ -82,8 +82,8 @@ Create a Sumo Logic service account to represent your application or service. Yo
 1. Log in to Sumo Logic as an Administrator.
 1. [Create a service account](/docs/manage/security/service-accounts/#create-a-service-account) with the appropriate roles for your use case.
 1. Get the service account ID. You'll use this ID in the next step.
-   * **Via UI**: Go to **Administration** > **Security** > **Service Accounts**, click on your service account, and copy the ID from the browser URL (appears as `selectedId=00000000076D28F9`).
-   * **Via API**: Alternatively, [get a list of all service accounts](https://api.sumologic.com/docs/#operation/listServiceAccounts) and find the `id` field in the response.
+   * **Via UI**. Go to **Administration** > **Security** > **Service Accounts**, click on your service account, and copy the ID from the browser URL (appears as `selectedId=00000000076D28F9`).
+   * **Via API**. Alternatively, [get a list of all service accounts](https://api.sumologic.com/docs/#operation/listServiceAccounts) and find the `id` field in the response.
 
 <details>
 <summary>Example API request for listing service accounts</summary>
@@ -144,14 +144,7 @@ Create an OAuth client under your service account. This generates the credential
 1. For **Type**, select **Client Credentials**.
 1. Enter a **Name** and optional **Description** for your application.
 1. Select the **Service Account** this OAuth client will run as (created in the previous step).
-1. Select the **Scopes** your OAuth client needs. The scopes you request must already be included in your service account's effective permissions.
-   :::tip
-   The permissions granted to an OAuth client are limited to the intersection of:
-   * The roles (RBAC capabilities) assigned to the service account.
-   * The scopes assigned to the OAuth client.
-
-   This prevents privilege escalation. If the service account's roles are restricted in the future, the OAuth client's effective permissions are automatically reduced.
-   :::
+1. Select the **Scopes** your OAuth client needs. The scopes you request must already be included in your service account's effective permissions. See [How permissions work](#how-permissions-work).
 1. Click **Save**.
 1. Copy the **Client ID** and **Client Secret**. You'll need these to configure your application.
 
@@ -162,7 +155,7 @@ Alternatively, you can [create an OAuth client using the API](https://api.sumolo
 
 **How are scopes enforced?**
 
-[Permissions are the intersection of the service account's roles and the OAuth client's scopes](#create-an-oauth-client-1). If a requested scope is not included in the service account's roles, it will be silently excluded from the OAuth client's effective permissions.
+[Effective permissions are the intersection of the service account's roles and the OAuth client's scopes](#how-permissions-work). If a requested scope is not included in the service account's roles, it will be silently excluded from the OAuth client's effective permissions.
 
 <Tabs
   className="unique-tabs"
@@ -282,7 +275,7 @@ curl https://api.sumologic.com/api/v1/search/jobs \
   -H "Authorization: Bearer eyJhbGc..."
 ```
 
-:::tip
+:::note Deployment endpoints
 `api.sumologic.com` defaults to the us1 deployment. Replace with your [deployment-specific endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if your org is on a different deployment (for example, `api.us2.sumologic.com`, `api.eu.sumologic.com`).
 :::
 
@@ -333,8 +326,8 @@ Use **Client Credentials flow** for server-to-server authentication, automated w
 <details>
 <summary>How long do access tokens last?</summary>
 
-* **Authorization Code flow**: Access tokens expire after the number of seconds indicated by the `expires_in` property.
-* **Client Credentials flow**: Access tokens expire after 30 minutes. Generate a new token when the current one expires.
+* **Authorization Code flow**. Access tokens expire after the number of seconds indicated by the `expires_in` property.
+* **Client Credentials flow**. Access tokens expire after 30 minutes. Generate a new token when the current one expires.
 
 </details>
 
@@ -356,14 +349,14 @@ For Authorization Code flow, revoking Authorization Consent causes the next toke
 <details>
 <summary>What happens if I change a service account's roles?</summary>
 
-For Client Credentials flow, [permissions are the intersection of the service account's roles and the OAuth client's scopes](#create-an-oauth-client-1). If you restrict the service account's roles, the OAuth client's permissions are automatically reduced, even if the configured scopes remain unchanged.
+For Client Credentials flow, [effective permissions are the intersection of the service account's roles and the OAuth client's scopes](#how-permissions-work). If you restrict the service account's roles, the OAuth client's permissions are automatically reduced, even if the configured scopes remain unchanged.
 
 </details>
 
 <details>
 <summary>What happens if a user's roles change in Authorization Code flow?</summary>
 
-For Authorization Code flow, [permissions are the intersection of the user's roles, the OAuth client's scopes, and the requested scopes](#complete-the-oauth-flow). If a user's roles are restricted, their effective OAuth permissions are reduced at the next token refresh. If roles are expanded, the new permissions become available at the next token refresh.
+For Authorization Code flow, [effective permissions are the intersection of the user's roles, the OAuth client's scopes, and the requested scopes](#how-permissions-work). If a user's roles are restricted, their effective OAuth permissions are reduced at the next token refresh. If roles are expanded, the new permissions become available at the next token refresh.
 
 </details>
 
