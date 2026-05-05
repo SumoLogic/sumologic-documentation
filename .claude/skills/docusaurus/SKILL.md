@@ -269,7 +269,7 @@ import Iframe from 'react-iframe';
 | Folder | Purpose |
 |--------|---------|
 | `docs/reuse/` | Shared markdown snippets, not rendered publicly |
-| `docs/beta/` | Beta feature docs (closed/open beta) |
+| `docs/preview/` | Preview feature docs (Private Preview, Extended Preview, Public Preview) |
 | `docs/contributing/` | Contribution guides and templates |
 | `static/img/` | All images |
 | `static/files/` | Downloadable files (YAML, JSON, etc.) |

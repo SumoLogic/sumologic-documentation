@@ -287,6 +287,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/litellm')}><img src={useBaseUrl('img/send-data/litellm-icon.png')} alt="LastPass icon" width="60" /><h4>LiteLLM</h4></a>
+  <p>Gain visibility into LLM usage, cost, latency, and performance across OpenAI, Bedrock, Groq, and other providers.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/microsoft-azure-ad-inventory')}><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="Active Directory icon" width="70" /><h4>Microsoft Azure AD Inventory</h4></a>
   <p>Identify security threats by analyzing users and devices logs.</p>
   </div>
@@ -377,6 +383,14 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <p>Analyze messages and clicks of malicious URLs to improve your security posture.</p>
   </div>
 </div>
+<!--
+  <div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/proofpoint-trap')}><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Proofpoint icon" width="120"/><h4>Proofpoint TRAP</h4></a>
+  <p>Gain visibility into email threats detected and remediated by Proofpoint TRAP.</p>
+  </div>
+</div>
+-->
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/qualys-vmdr')}><img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="Qualys icon" width="120"/><h4>Qualys VMDR</h4></a>

@@ -70,7 +70,7 @@ To set up 2-Step Verification, you will need to install a Time-Based One-Time Pa
 
 These settings apply only to your personal account and do not affect other users in your organization. Changes take effect the next time you sign in.
 
-<img src={useBaseUrl('img/get-started/my-preferences.png')} alt="preference settings" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/get-started/my-preferences.png')} alt="preference settings" style={{border: '1px solid gray'}} width="500" />
 
 ### Timezone and Date Format
 
@@ -136,9 +136,9 @@ Select the default page to appear when you log in to Sumo Logic. This preference
 
 Select to show the user interface in a **Dark theme** or **Light theme**.
 
-This setting applies only to the user interface in the [Automation Service](/docs/platform-services/automation-service/), [Cloud SIEM](/docs/cse/), and [Cloud SOAR](/docs/cloud-soar/). A global setting is not supported at this time.
+[**New UI**](/docs/get-started/sumo-logic-ui). Dark and Light theme support is available across the Sumo Logic Log Analytics Platform. You can select your preferred theme in **Account Preferences**, or use the global theme button in the top toolbar, located adjacent to the **Go to...** button, to switch themes instantly from anywhere in the platform.<br/><img src={useBaseUrl('img/get-started/global-theme-button.png')} alt="Global Theme Button" style={{border: '1px solid gray'}} width="300" />
 
-You can also apply a [dark theme specifically for dashboards](/docs/dashboards/about/#dark-theme).
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Select between **Light** or **Dark** mode in the **Account Preferences** page. This setting applies only to the user interface in the [Automation Service](/docs/platform-services/automation-service/), [Cloud SIEM](/docs/cse/), and [Cloud SOAR](/docs/cloud-soar/). A global setting is not supported at this time. You can also apply a [dark theme specifically for dashboards](/docs/dashboards/about/#dark-theme).
 
 ### Query Editing
 
@@ -165,6 +165,12 @@ Keep this option selected to automatically open the search autocomplete dialog w
 #### Automatically run the search after selecting it from a list of saved searches
 
 By default, saved searches run automatically when selected. Deselect this option if you prefer to start searches manually.
+
+#### Enable in-app tabs for Logs Search
+
+Select this checkbox to enable in-app tabs, allowing you to run and manage multiple searches within a single Log Search window in the [**New UI**](/docs/get-started/sumo-logic-ui). This feature makes it easier to work on multiple investigations side by side without relying on separate browser tabs. You can keep long-running or reference searches open, switch between queries without losing context, and compare results across searches more efficiently, helping streamline troubleshooting and analysis workflows.
+
+To use this feature, open a new tab directly within Log Search and run a new or existing query in each tab. You can switch between tabs at any time to continue your analysis, reorder tabs using drag-and-drop, and scroll horizontally to navigate across multiple open tabs. This helps you stay organized while working across related searches or datasets.
 
 ### Alerts
 
