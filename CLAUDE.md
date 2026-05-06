@@ -41,6 +41,7 @@ Before pushing any commit that changes docs content:
 ## Jira Rules
 - **Assignee**: Assign any newly created Jira ticket to the current user unless otherwise specified
 - **GitHub PR link**: After creating a PR, automatically update the Jira ticket's GitHub field (`customfield_10466`) with the PR URL
+- **Comment attribution**: Always append `— via Claude Code` to any comment posted to a Jira ticket
 
 ## GitHub Rules
 - **Assignee**: Assign any new PR to the current user unless otherwise specified
