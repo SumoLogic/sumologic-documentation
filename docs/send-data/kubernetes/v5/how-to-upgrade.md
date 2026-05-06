@@ -41,8 +41,7 @@ OpenTelemetry operators should now scrape your custom app metrics exposed behind
 3. **Scrape configs**:
    If you have `kube-prometheus-stack.prometheus.prometheusSpec.additionalScrapeConfigs` defined, move it to `sumologic.metrics.collector.otelcol.config.merge.receivers.prometheus.config.scrape_configs`.
 
-
-### Forwarding metrics using Prometheus remote write into the OpenTelemetry pipeline
+### Forwarding metrics using Prometheus remote writes into Otel pipeline
 This section applies if you are using your own Prometheus Operator and forwarding metrics to the Sumo Logic Kubernetes metrics collection pipeline via the Prometheus remote write protocol.
 
 In the past, Sumo Logic relied on Prometheus to scrape metrics, and since there was no OpenTelemetry Operator for metrics collection at the time, forwarding via Prometheus remote write was the recommended approach. Now that the OpenTelemetry Operator has been standardized for metrics collection and supports all Prometheus scraping mechanisms, we recommend migrating. Please refer to the previous section on converting metrics configuration from Prometheus to the OpenTelemetry Operator.
