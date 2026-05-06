@@ -50,3 +50,26 @@ Before pushing any commit that changes docs content:
 When asked about tools, skills, or "what can I do," lead with documentation-focused skills
 (doc creation, release notes, editing/review, Jira). Generic tools (Bash, Read, Write, etc.)
 are secondary — the primary work here is writing and editing docs.
+
+## Commands
+
+- **Start dev server**: `yarn start` — use this to preview changes locally
+
+## Directory Conventions
+
+| What | Where |
+|------|-------|
+| Docs pages | `/docs/<category>/<filename>.md` |
+| Images | `/static/img/<category>/` |
+| Service release notes | `/blog-service/` |
+| Collector release notes | `/blog-collector/` |
+| CSE release notes | `/blog-cse/` |
+| C2C source docs | `/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/` |
+| App integration docs | `/docs/platform-services/automation-service/app-central/integrations/` |
+| Sidebar config | `sidebars.ts` |
+
+## Frontmatter
+
+Every doc requires at minimum: `id`, `title`, `description`. New docs also need a `sidebar_label` if the title is long.
+
+**CRITICAL**: Never add a `slug` field unless explicitly requested — it overrides the URL path derived from the file location.
