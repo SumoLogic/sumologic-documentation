@@ -21,31 +21,25 @@ Before proceeding, ensure you meet the requirements and review the necessary con
    export HELM_RELEASE_NAME=...
    ```
 ## Metrics collection - Prometheus to OpenTelemetry migration
-If you have already migrated to the OpenTelemetry operator in v4, not using the Prometheus operator, or not using the metrics collection feature at all, please skip this section.
+If you have already migrated to the OpenTelemetry operator in v4, not using the Prometheus operator, or not using the metrics collection feature at all, skip this section.
 
 ### Convert Prometheus remote writes to OpenTelemetry metrics filters
-Please follow [this guide](https://www.sumologic.com/help/docs/send-data/kubernetes/v4/how-to-upgrade/#convert-prometheus-remote-writes-to-otel-metrics-filters) for detailed steps.
+
+Follow [this guide](https://www.sumologic.com/help/docs/send-data/kubernetes/v4/how-to-upgrade/#convert-prometheus-remote-writes-to-otel-metrics-filters) for detailed steps.
 
 ### Converting custom application metrics collection config from Prometheus to OpenTelemetry operator
+
 Prometheus has three main types of collection mechanisms, namely, podmonitors, servicemonitors, and scrape configurations. If you are collecting custom application metrics using any of these three methods, let's see how it maps to the OpenTelemetry operator.
 
-1. **Pod annotations**:
-   No change. The OpenTelemetry operator looks for pods annotated with prometheus.io/scrape=true and collects their metrics.
-
-2. **Service monitors**:
-   The OpenTelemetry operator scrapes your custom application metrics, which are exposed via a service, using serviceMonitors, just as the Prometheus operator does. You just need to move your
-custom service monitors from Prometheus to OpenTelemetry configuration.
-If you have additional custom Service Monitors defined under `kube-prometheus-stack.prometheus.additionalServiceMonitor`, move them to `sumologic.metrics.additionalServiceMonitors`.
-OpenTelemetry operators should now scrape your custom app metrics exposed behind the service.
-
-3. **Scrape configs**:
-   If you have `kube-prometheus-stack.prometheus.prometheusSpec.additionalScrapeConfigs` defined, move it to `sumologic.metrics.collector.otelcol.config.merge.receivers.prometheus.config.scrape_configs`.
-
+1. **Pod annotations**. No change. The OpenTelemetry operator looks for pods annotated with prometheus.io/scrape=true and collects their metrics.
+1. **Service monitors**. The OpenTelemetry operator scrapes your custom application metrics, which are exposed via a service, using serviceMonitors, just as the Prometheus operator does. You just need to move your custom service monitors from Prometheus to OpenTelemetry configuration. If you have additional custom Service Monitors defined under `kube-prometheus-stack.prometheus.additionalServiceMonitor`, move them to `sumologic.metrics.additionalServiceMonitors`. OpenTelemetry operators should now scrape your custom app metrics exposed behind the service.
+1. **Scrape configs**. If you have `kube-prometheus-stack.prometheus.prometheusSpec.additionalScrapeConfigs` defined, move it to `sumologic.metrics.collector.otelcol.config.merge.receivers.prometheus.config.scrape_configs`.
 
 ### Forwarding metrics using Prometheus remote write into the OpenTelemetry pipeline
+
 This section applies if you are using your own Prometheus Operator and forwarding metrics to the Sumo Logic Kubernetes metrics collection pipeline via the Prometheus remote write protocol.
 
-In the past, Sumo Logic relied on Prometheus to scrape metrics, and since there was no OpenTelemetry Operator for metrics collection at the time, forwarding via Prometheus remote write was the recommended approach. Now that the OpenTelemetry Operator has been standardized for metrics collection and supports all Prometheus scraping mechanisms, we recommend migrating. Please refer to the previous section on converting metrics configuration from Prometheus to the OpenTelemetry Operator.
+In the past, Sumo Logic relied on Prometheus to scrape metrics, and since there was no OpenTelemetry Operator for metrics collection at the time, forwarding via Prometheus remote write was the recommended approach. Now that the OpenTelemetry Operator has been standardized for metrics collection and supports all Prometheus scraping mechanisms, we recommend migrating. Refer to the previous section on converting metrics configuration from Prometheus to the OpenTelemetry Operator.
 
 If you still have specific use cases that require forwarding metrics from your own Prometheus instance into the OpenTelemetry metrics pipeline, we have introduced the prometheusremotewritereceiver as an alternative.
 
@@ -53,7 +47,6 @@ This receiver accepts Prometheus remote write requests but only supports,
 - Remote Write v2 protocol
 - /api/v1/write as the default Remote write endpoint, this is the only endpoint where SumoLogic metrics pipeline accepts remote writes. You need to change your Prometheus configuration to send metrics to this endpoint.
   
-For guidelines on enabling Remote Write v2, please refer to the 
- [prometheusremotewrite receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/prometheusremotewritereceiver#prometheus-compatibility) documentation.
+For guidelines on enabling Remote Write v2, refer to the [prometheusremotewrite receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/prometheusremotewritereceiver#prometheus-compatibility) documentation.
 
-In the meantime, if you need more time to migrate, you can enable the flag `metadata.metrics.enableSumoPrometheusRemotewriteReceiver`, which retains the same functionality as older versions, allowing both Prometheus Remote Write v1 and v2 protocols and adding custom remote write endpoints via `metadata.metrics.config.additionalEndpoints` parameter. Please note that this flag is intended as a temporary migration aid and will be removed in a future release.
+In the meantime, if you need more time to migrate, you can enable the flag `metadata.metrics.enableSumoPrometheusRemotewriteReceiver`, which retains the same functionality as older versions, allowing both Prometheus Remote Write v1 and v2 protocols and adding custom remote write endpoints via `metadata.metrics.config.additionalEndpoints` parameter. Note that this flag is intended as a temporary migration aid and will be removed in a future release.
