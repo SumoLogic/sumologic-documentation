@@ -26,13 +26,16 @@ Use the query below to determine the cardinality associated with sources for a s
 
 ```sql
 _view=sumologic_volume _sourceCategory=cardinalityPerSourceCollector
-  | parse regex "bucket:\s+(?<bucket>\S+)" nodrop
-  | parse regex "(?<collectorId>[^;\s]+);(?<sourceId>\d+):(?<cardinality>\d+)" multi
+  | parse regex "bucket:\s+(?<bucket>[^,\s]+), totalCardinality: (?<totalCardinality>\d+)"
+  | parse regex "(?<collectorName>[^;\s]+);(?<sourceName>[^:]+?):(?<cardinality>\d+)" multi
   | num(cardinality)
-  | fields bucket, collectorId, sourceId, cardinality
+  | num(totalcardinality )
+  | fields bucket, collectorName, sourceName, cardinality,totalCardinality
 ```
 
 ## Limitations
 
 * If an organization has more than 100 sources, only the top 100 sources (by cardinality) are displayed for an audit log.
 * Source and collector data is refreshed every hour, and a new audit log is generated to reflect the latest cardinality data.
+* The sum of individual sources may not match the total cardinality count. This is because tracing-to-metrics conversions and internal metrics are excluded from individual source counts.
+
