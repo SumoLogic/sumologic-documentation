@@ -40,10 +40,6 @@ By default, data deletion is disabled and can *only* be enabled by the account o
 1. Select the **Enable Log Search Data Deletion** checkbox to allow users with the appropriate role capabilities to manage data deletion requests.<br/><img src={useBaseUrl('img/search/get-started-search/enable-deletion-request.png')} alt="enable deletion request" style={{border: '1px solid gray'}} width="400"/>
 :::
 
-:::info
-You can configure the number of approvers for each data deletion request.
-:::
-
 ## Create a deletion request
 
 You can create a data deletion request from either the **Logs** tab or a **Log Search**. Before you begin, review the following:
@@ -120,7 +116,7 @@ Once the deletion request is created, an email notification will be sent to the 
     - **Reject**. Enter the reason for rejection in the **Reject Deletion Request** pop-up to help the requester understand the reason for rejection and take any necessary actions, and click the **Reject Request** button.<br/><img src={useBaseUrl('img/search/get-started-search/reject-deletion-request.png')} alt="Reject deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
 
 :::note
-To process a data deletion request, approval from two admins with the **Review Deletion Requests** capability is required. If required, account owner can change the default to one admin approver.
+By default, data deletion requests require approval from two admins with the **Review Deletion Requests** capability. To require more than two approvals, contact our [Support team](https://support.sumologic.com/support/s/).
 :::
 
 ## Limitations
