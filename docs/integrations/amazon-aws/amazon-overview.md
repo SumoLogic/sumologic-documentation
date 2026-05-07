@@ -27,15 +27,24 @@ The Sumo Logic Amazon Overview app dashboards provide visibility into your overa
 
 ## Installing the Amazon Overview app
 
-import AppInstall from '../../reuse/apps/app-install.md';
+To install the app:
 
-<AppInstall/>
+1. Select **App Catalog**.
+1. In the 🔎 **Search Apps** field, run a search for your desired app, then select it.
+1. Click **Install App**.
+    :::note
+    Sometimes this button says **Add Integration**.
+    :::
+1. Click **Next**.
+1. Look for the dialog confirming that your app was installed successfully.<br/><img src={useBaseUrl('img/get-started/library/app-success.png')} alt="App success dialog" width="80%" />
+
+**Post-installation**
+
+Once your app is installed, it will appear in your **Personal** folder or the folder that you specified. From here, you can share it with other users in your organization. Dashboard panels will automatically start to fill with data matching the time range query received since you created the panel. Results won't be available immediately, but within about 20 minutes, you'll see completed graphs and maps.
 
 ## Viewing the Amazon Overview dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
-
-<ViewDashboards/>
+The Sumo Logic app for Amazon Overview provides preconfigured dashboards that give you a unified view of your AWS infrastructure. These dashboards aggregate key metrics and logs from multiple AWS services, helping you monitor performance, track resource utilization, and identify issues across your entire AWS environment.
 
 ### AWS Account Overview
 
