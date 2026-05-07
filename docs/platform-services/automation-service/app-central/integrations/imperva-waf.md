@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/imperva-waf.png')} alt="intelligence" width="80"/>
 
-***Version: 1.1  
-Updated: Jun 26, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Imperva WAF offers web application security firewall, providing protection against the most sophisticated security threats. As a cloud-based WAF, it ensures that your website is always protected against any type of application layer hacking attempt.
 
@@ -44,3 +44,4 @@ For information about Imperva WAF, see [Imperva documentation](https://docs.impe
 
 * October 28, 2022 - First upload
 * June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

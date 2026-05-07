@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/onetrust.png')} alt="onetrust" width="100"/>
 
-***Version: 1.1  
-Updated: Feb 5, 2024***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 OneTrust is a technology platform that helps organizations comply with privacy and security regulations like GDPR and CCPA by automating privacy assessments, data mapping, and consent management.
 
@@ -52,3 +52,4 @@ For information about OneTrust, see [OneTrust documentation](https://developer.o
 
 * January 19, 2024 - First upload
 * February 5, 2024 (v1.1) - New action: Create Organization
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

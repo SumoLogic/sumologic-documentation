@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortiproxy.png')} alt="fortiproxy" width="80"/>
 
-***Version: 1.2  
-Updated: Jul 18, 2023***
+***Version: 1.3  
+Updated: April 29, 2026***
 
 Fortinet FortiProxy is a secure web proxy that protects employees against internet-borne attacks by incorporating multiple detection technique such as web filtering, DNS filtering, data loss prevention, antivirus, intrusion prevention, and advanced threat protection. FortiProxy helps to reduce bandwidth demands and optimize the network with content and video caching.
 
@@ -61,3 +61,4 @@ For information about FortiProxy, see [FortiProxy documentation](https://docs.fo
 * February 14, 2022 - First upload
 * June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
 * July 18, 2023 (v1.2) - Code refactoring
+* April 29, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
