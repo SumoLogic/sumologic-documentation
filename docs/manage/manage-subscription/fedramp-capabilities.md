@@ -38,7 +38,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Administration - Users and Roles | [Users](/docs/manage/users-roles/users/) | &#10003; | &#10003; |
 | Collection | [Hosted collectors](/docs/send-data/hosted-collectors/) | &#10003; | &#10003; |
 | Collection | [Installed collectors](/docs/send-data/installed-collectors/) | &#10003; | &#10003; |
-| Collection | [OpenTelemetry collector](/docs/send-data/opentelemetry-collector/) | &#10003; | &#10003;<br/>*OS support:- Linux<br/>- Windows <br/>*UI: No workflow to add collector.* |
+| Collection | [OpenTelemetry collector](/docs/send-data/opentelemetry-collector/) | &#10003; | &#10003;<br/>*OS support: Linux and Windows* <br/>*UI: No workflow to add collector.* |
 | Collection - Amazon Web Services | [Amazon CloudFront](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudfront-source/) | &#10003; | &#10003; |
 | Collection - Amazon Web Services | [Amazon S3](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/) | &#10003; | &#10003; |
 | Collection - Amazon Web Services | [Amazon S3 Audit](/docs/send-data/hosted-collectors/amazon-aws/amazon-s3-audit-source/) | &#10003; | &#10003; |
