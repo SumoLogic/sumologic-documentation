@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapid7-nexpose.png')} alt="Rapid7 Nexpose icon" width="80"/>
 
-***Version: 1.1  
-Updated: Jul 07, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 Utilize and interact with Rapid7 Nexpose scan data during incident investigation
 
@@ -59,3 +59,4 @@ For information about Rapid7 Nexpose, see [Rapid7 Nexpose documentation](https:/
 	+ Get Assets Vulnerability
 	+ Post Asset Search
 * July 7, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

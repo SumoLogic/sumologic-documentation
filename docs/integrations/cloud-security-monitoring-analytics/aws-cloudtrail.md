@@ -151,3 +151,45 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Use Case:** Provides analysis on Threats Associated with CloudTrail Events, Threats By Actor, Threats by Events and I.P, Threats by Events and Result, Threats by Geo Location, Threats Over Time by Result.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Monitoring-Threat-Intelligence.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />
+
+### Security Analytics - Data Exfiltration and Exposure
+
+**Description:** Dashboard analyzing API-level data access, publicly exposed resource creation, and cross-account access patterns to detect data exfiltration attempts.
+
+**Use Case:** Provides analysis of data exposure risks including publicly exposed resources over time, secret accesses via Secrets Manager, KMS decrypt and SSM decryption activity, and sensitive access outliers to help identify potential data exfiltration.
+
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Analytics-Data-Exfiltration-and-Exposure.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />
+
+### Security Analytics - Suspicious Indicators
+
+**Description:** This dashboard tracks ransomware signals like KMS key deletions, backup/snapshot removals, and S3 data protection downgrades.
+
+**Use Case:** Provides visibility into ransomware and destructive activity indicators including KMS key deletions and disables over time, backup deletion events, S3 data protection configuration changes, and detailed tables of impacted resources.
+
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Analytics-Suspicious-Indicators.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />
+
+## Create monitors for the AWS CloudTrail app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS CloudTrail alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `CloudTrail Logging Stopped or Deleted` | This alert is triggered when CloudTrail logging is stopped or a trail is deleted. `Note: Please change the _sourceCategory to match your collector's source category instead of using the default value.` | Count > 0 | Count < = 0 |
+| `GuardDuty Disabled` | This alert is triggered when GuardDuty is disabled or a member account is disassociated from its master account. `Note: Please change the _sourceCategory to match your collector's source category instead of using the default value.` | Count > 0 | Count < = 0 |
+| `Root Account Used` | This alert is triggered when the AWS root account is used to perform an action. `Note: Please change the _sourceCategory to match your collector's source category instead of using the default value.` | Count > 0 | Count < = 0 |
+
+## Upgrade/Downgrade the AWS CloudTrail app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS CloudTrail app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
