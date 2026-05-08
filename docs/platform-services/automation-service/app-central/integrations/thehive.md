@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/thehive.png')} alt="thehive" width="80"/>
 
-***Version: 1.2  
-Updated: May 22, 2025***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Query, update, and work with cases in TheHive from Cloud SOAR.
 
@@ -123,3 +123,4 @@ For issues, questions, or improvements:
   * Fixed ssl related warning issues.
   * Added organization name field in resource which will included in the headers.
   * Enhanced error handling and made the integration more resilient to malformed inputs.
+* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
