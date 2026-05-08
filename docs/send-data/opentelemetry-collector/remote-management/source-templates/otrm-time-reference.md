@@ -170,7 +170,7 @@ Mon Jan 15 10:00:00 NZST 2025
 
 Example Configuration:
 ```yaml
-receiver:
+receivers:
   filelog:
     operators:
       - type: regex_parser
@@ -185,7 +185,7 @@ receiver:
           NZST: Pacific/Auckland
 ```
 
-You need to add timezone abbreviations in time_zone_locations field as shown above allowing each time zone to be resolved to its correct IANA location (Asia/Shanghai, Asia/Kolkata, etc.).
+You need to add time zone abbreviations in time_zone_locations field as shown above allowing each time zone to be resolved to its correct IANA location (Asia/Shanghai, Asia/Kolkata, etc.).
 
 :::tip
 If your timestamp layout contains %Z, this custom YAML approach is the recommended way to disambiguate time zone abbreviations that map to multiple regions (for example, CST can mean China Standard Time UTC+8 or Central Standard Time UTC-6).
