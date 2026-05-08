@@ -462,72 +462,51 @@ Additionally, all aspects of our service, including Mobot, adhere to the securit
 
 ### General
 
-<details>
-<summary>What is Sumo Logic Mobot?</summary>
+**What is Sumo Logic Mobot?**
 
 Mobot is an AI assistant integrated into the Sumo Logic Log Analytics Platform. It enables natural language queries and contextual troubleshooting, helping users extract actionable insights from logs. Mobot does not process or share your log data with any third party.
-</details>
 
-<details>
-<summary>Can I use Mobot to analyze unstructured logs?</summary>
+**Can I use Mobot to analyze unstructured logs?**
 
 Yes, Mobot can extract relevant insights from unstructured logs, provided Field Extraction Rules (FERs) are applied. It also supports semi-structured logs (JSON + unstructured payloads).
-</details>
 
-<details>
-<summary>Does Mobot save search history?</summary>
+**Does Mobot save search history?**
 
 Yes, Mobot retains conversation and search history, allowing you to resume investigations with context and continuity.
-</details>
 
-<details>
-<summary>What role does AI play in Mobot?</summary>
+**What role does AI play in Mobot?**
 
 Mobot uses AI to interpret natural language queries and recommend search results or query refinements, streamlining log analysis.
-</details>
 
-<details>
-<summary>How can I opt out of Mobot?</summary>
+**How can I opt out of Mobot?**
 
 If you prefer not to use Mobot, contact our [support team](https://support.sumologic.com/support/s/). Your account will be updated accordingly.
-</details>
 
 ### Security and privacy
 
-<details>
-<summary>Do Dojo AI agents access customer data?</summary>
+**Do Dojo AI agents access customer data?**
 
 Mobot (including Query Agent and Knowledge Agent) does not process or analyze customer log data. Schema and field samples are used to provide context to the AI, but your log content is not read or stored by the model.
-</details>
 
-<details>
-<summary>What specific types of customer data or PII does the AI process? Does it filter out PII/sensitive information?</summary>
+**What specific types of customer data or PII does the AI process? Does it filter out PII/sensitive information?**
 
 Mobot processes schema and field samples to provide context to the AI. While field values can contain PII or confidential data (for example, email addresses or IP addresses), these values are used solely to enable insights and are protected under strict compliance and security reviews.
-</details>
 
-<details>
-<summary>Is customer data/PII used to train AI models?</summary>
+**Is customer data/PII used to train AI models?**
 
 No, customer data or PII is not used for training AI models. Mobot operates using a foundation model served via Amazon Bedrock, ensuring your data remains private and secure.
-</details>
 
-<details>
-<summary>How long does the AI store customer information or PII, and when and how is it deleted?</summary>
+**How long does the AI store customer information or PII, and when and how is it deleted?**
 
 Certain features may rely on query history stored on a rolling basis for performance optimization. Data is systematically expired to maintain privacy.
 
 For example, our alerts feature log anomaly detection and build ML models from 60 days of logs. To accomplish this, we retrain the model once a week. In this example, each week, we add one week of new data while expiring the oldest week of data. Rolling data windows are done to avoid fetching 60 days of data for every training run.
-</details>
 
-<details>
-<summary>Is any user or org data sent outside our environment?</summary>
+**Is any user or org data sent outside our environment?**
 
 No. All processing happens within your region's cluster. RAG context is scoped to dashboards in your own org—no cross-org data leakage.
-</details>
 
-<details>
-<summary>Does a fourth party have access to Mobot customer data?</summary>
+**Does a fourth party have access to Mobot customer data?**
 
 No. Mobot uses foundation models securely hosted through Amazon Bedrock. When customer data is processed:
 
@@ -538,72 +517,54 @@ No. Mobot uses foundation models securely hosted through Amazon Bedrock. When cu
 * Customer inputs and outputs are not shared with model providers and are not used to train external models.
 
 Customer data processed through Mobot remains within Sumo Logic's secure environment and is used only to deliver results for that customer.
-</details>
 
 ### Technical
 
-<details>
-<summary>Does Mobot use any open-source library, GenAI providers, or cloud providers?</summary>
+**Does Mobot use any open-source library, GenAI providers, or cloud providers?**
 
 For Generative AI, Mobot uses a foundation model served by Amazon Bedrock. Classical ML features leverage open-source Python libraries approved by Sumo Logic.
-</details>
 
-<details>
-<summary>What is the type of AI being used?</summary>
+**What is the type of AI being used?**
 
 Mobot is an ensemble of Generative AI (GenAI) and classical machine learning (ML) techniques. For example, classical ML is used for anomaly detection in alerts.
-</details>
 
-<details>
-<summary>Is there a human in the loop for Mobot?</summary>
+**Is there a human in the loop for Mobot?**
 
 Yes, the on-call developer or security engineer troubleshooting an incident is the expected user. They interact with Mobot using natural language questions or through contextual suggestions.
-</details>
 
-<details>
-<summary>Does Sumo Logic hold any AI-specific certifications or accreditations?</summary>
+**Does Sumo Logic hold any AI-specific certifications or accreditations?**
 
 Sumo Logic is currently reviewing AI compliance within a rapidly evolving regulatory landscape, including ISO 42001, which is designed to help organizations implement AI responsibly.
 
 All Sumo Logic AI capabilities operate within our existing industry-recognized security and compliance framework, including FedRAMP Moderate, SOC 2 Type 2, HIPAA, PCI DSS 4.0.1, and ISO 27001:2022. These attestations govern the confidentiality, integrity, and protection of customer data across our platform, including AI features.
 
 Availability of specific AI capabilities may vary by deployment region based on compliance boundary requirements.
-</details>
 
-<details>
-<summary>How are reviews conducted on the Mobot model?</summary>
+**How are reviews conducted on the Mobot model?**
 
 The generative AI model used by Mobot is licensed and securely hosted via Amazon Bedrock, meaning it is not directly accessible by Sumo Logic, customers, or third parties.
 
 Each major capability added to Mobot undergoes legal, compliance, and application security reviews. These reviews coincide with new releases that expand insights or process new types of data.
-</details>
 
-<details>
-<summary>Which Mobot capabilities are available in FED deployments?</summary>
+**Which Mobot capabilities are available in FED deployments?**
 
 The current GA versions of Mobot, including Query Agent and Knowledge Agent, are available in the FED deployment.
-</details>
 
 ### Query Agent
 
-<details>
-<summary>What's the impact on Query Agent latency?</summary>
+**What's the impact on Query Agent latency?**
 
 Typical end-to-end response time remains under 2 seconds for most queries. Very large result sets or percentile calculations over broad ranges may take up to 5 seconds. During Beta, full query generation may take 6 to 7 seconds, but Mobot streams the first token (intent interpretation) within 2 seconds.
-</details>
 
-<details>
-<summary>What are the current Query Agent limitations?</summary>
+**What are the current Query Agent limitations?**
 
 * For dashboard-aware translations via RAG, Mobot's source expression must share at least one common key-value pair with your dashboard queries. For example, `_sourcecategory=abcd "error"` will match a dashboard query like `_sourcecategory=abcd | count`, but won't match `_source=abcd | count` because there's no shared key-value pair.
 * RAG only considers dashboards that have been opened in the last 90 days when interpreting your query.
 * Very large or highly complex queries may time out or trigger structured fallback responses.
 * The conversational experience is available for log-based searches only. Metrics and Metric Searches are not supported in this Beta.
 * Mobot cannot currently refer to the output of a log search directly in subsequent queries. Each follow-up must be expressed in terms of query refinements rather than referencing previous results. This is an important limitation to be aware of when constructing multi-turn conversations.
-</details>
 
-<details>
-<summary>How do I debug a failed Query Agent translation?</summary>
+**How do I debug a failed Query Agent translation?**
 
 If a translation fails, Mobot generates a contextual error message tailored to the situation. The message includes the generated query, explains why it failed, and suggests how to fix it (for example, `Try narrowing your time window` or `Simplify your filter expression`).
 
@@ -611,38 +572,29 @@ Here are some common cases:
 
 * **No or delayed results**. Give Mobot a few seconds to process complex refinements.  
 * **Output too broad**. Add more context (for example, specify a client or namespace).  
-* **Unexpected numbers**. If results look off, be more explicit. For example, ask `show in milliseconds` or `convert to seconds` to adjust units, or say `show P90` / `switch back to P50 over 1 minute` to refine percentiles.  
-</details>
+* **Unexpected numbers**. If results look off, be more explicit. For example, ask `show in milliseconds` or `convert to seconds` to adjust units, or say `show P90` / `switch back to P50 over 1 minute` to refine percentiles.
 
 ### Knowledge Agent
 
-<details>
-<summary>Does Knowledge Agent use my data to train external models?</summary>
+**Does Knowledge Agent use my data to train external models?**
 
 Mobot and Knowledge Agent run on Amazon Bedrock, an approved and secure subprocessor that complies with Sumo Logic's privacy, security, and data-handling standards.
 
 No customer data is ever used for model training. All processing happens within the secure boundaries of Sumo Logic's architecture, maintaining the same high level of data protection customers already trust.
-</details>
 
-<details>
-<summary>Is my data safe when I use Knowledge Agent?</summary>
+**Is my data safe when I use Knowledge Agent?**
 
 Yes. Knowledge Agent only processes what you provide during your session, and this data remains inside Sumo Logic's secure environment. Nothing is sent to external LLM providers for training or storage.
-</details>
 
-<details>
-<summary>How does Knowledge Agent ensure accuracy?</summary>
+**How does Knowledge Agent ensure accuracy?**
 
 Knowledge Agent pulls directly from Sumo Logic's official product documentation. Responses are always grounded in our published help content, making them accurate, citable, and aligned with the latest platform behavior.
 
 No information is generated from unreliable external sources.
-</details>
 
-<details>
-<summary>Can Knowledge Agent answer questions outside Sumo Logic's documentation?</summary>
+**Can Knowledge Agent answer questions outside Sumo Logic's documentation?**
 
 No. Knowledge Agent is intentionally scoped to use Sumo Logic's internal documentation and resources only. This ensures answers remain trustworthy and consistent with product behavior.
-</details>
 
 ## Feedback
 

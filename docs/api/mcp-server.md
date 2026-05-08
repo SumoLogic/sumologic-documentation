@@ -99,16 +99,15 @@ UI support for this step is not yet available. You'll need to use the Sumo Logic
 :::
 
 1. [Get a list of available OAuth `scopes`](https://api.sumologic.com/docs/#operation/listOAuthScopes) and decide which ones you'd like to assign to your OAuth client. The `scopes` you request here must already be included in your service account's `effectiveScopes` field.
-   <details>
-   <summary>How are scopes enforced?</summary>
+  :::note
+   How are scopes enforced?
 
    The permissions granted to an OAuth client are limited to the intersection of:
    * The roles (RBAC capabilities) assigned to the service account.
    * The scopes assigned to the OAuth client.
 
    This prevents privilege escalation. If the service account's roles are restricted in the future, the OAuth client's effective permissions are automatically reduced as well. If a requested scope is not included in the service account's roles, it will be silently excluded from the OAuth client's effective permissions.
-
-   </details>
+  :::
 1. [Create a new OAuth client](https://api.sumologic.com/docs/#operation/createOAuthClient) using the `scopes` you selected in the previous step. `"runAsId"` will be the `"id"` of the service account you created [in step 1](#step-1-create-a-service-account).
    ```bash title="Example request"
    curl -u "<access-id>:<access-key>" \
@@ -651,15 +650,11 @@ For detailed guidance on securing MCP against cost-based attacks, see our blog p
 
 ## FAQ
 
-<details>
-<summary>Can MCP handle multiple operations in a single request?</summary>
+**Can MCP handle multiple operations in a single request?**
 
 Yes. MCP supports multi-tool calls within a single conversational interaction.
 
-</details>
-
-<details>
-<summary>How does this affect my Sumo Logic usage?</summary>
+**How does this affect my Sumo Logic usage?**
 
 This capability in closed beta requires an AI Addendum. Contact your account representative for pricing information.
 
@@ -667,11 +662,7 @@ This capability in closed beta requires an AI Addendum. Contact your account rep
 For bulk data retrieval or model training, the [Search Job API](/docs/api/search-job) remains the preferred option.
 :::
 
-</details>
-
-<details>
-<summary>Where does my agent run?</summary>
+**Where does my agent run?**
 
 Agents connected via MCP run in your own environment, not within Sumo Logic infrastructure.
 
-</details>

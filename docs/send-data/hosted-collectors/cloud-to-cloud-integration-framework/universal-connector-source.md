@@ -51,9 +51,9 @@ When you create an Universal Connector Source, you add it to a Hosted Collector.
    - <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    - <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Configuration Sections**. Expand each section to learn more about the options available for configuration.
-<details>
-  <summary>Authentication Configuration</summary>
-  <div>
+**Authentication Configuration**
+
+<div>
     Choose the type of authentication based on the vendor API requirements and configure the details of that specific authentication type.
 
 #### Basic
@@ -93,11 +93,10 @@ Optionally, if the vendor API requires it, you can provide one or more `Scopes` 
 Select this authentication option if the vendor API does not require any form of authentication.
 
   </div>
-</details>
 
-<details>
-  <summary>Request Configuration</summary>
-  <div>
+**Request Configuration**
+
+<div>
   Configure how the HTTP requests are created for your source.
 
 :::danger protect your credentials
@@ -151,10 +150,10 @@ Examples URL encoded:
 This is optional and only used if the HTTP `POST` method is configured above. You can use this field to include any information in the HTTP request body. The data included in this field can access our [dynamic values](#dynamic-values-variables).
 
   </div>
-</details>
-<details>
-  <summary>Tracking Progression</summary>
-  <div>
+
+**Tracking Progression**
+
+<div>
   The source needs a way to keep track of its progress to prevent data loss and duplication. Select the type of progression used and configure the details.
 
 #### Time Window
@@ -172,10 +171,10 @@ The start time is inclusive and the end time is exclusive as that is the behavio
 | Max Lookback     | This will determine how far back the window is allowed and should be set based on the vendors data retention policy. If the source encounters a repetitive error causing the window to not move forward for a period of time, the window will not be allowed to stagnate past this configured time. The default is `31d` and we recommend leaving the default unless the vendor specifically states their data retention policy. You can configure this setting between the `window size` and `365d`.                                                                     |
 
   </div>
-</details>
-<details>
-  <summary>HTTP Response Log Ingest Configuration</summary>
-  <div>
+
+**HTTP Response Log Ingest Configuration**
+
+<div>
   Select the format of the data returned by the vendor and configure how the source should break down the response into individual logs with the correct timestamp.
 
 #### JSON with JPath
@@ -274,10 +273,10 @@ The source follows the [JSON Path standard defined here](https://www.ietf.org/ar
 | Time Value Regex | `Date(.*)`   |
 
   </div>
-</details>
-<details>
-  <summary>Pagination</summary>
-  <div>
+
+**Pagination**
+
+<div>
   Select how the source should handle pagination.
 
 #### RFC 8288 Link Headers
@@ -323,10 +322,10 @@ Here is an example of the pagination using values as parameters:
 Use this type of pagination if the vendor API does not implement any kind of pagination.
 
   </div>
-</details>
-<details>
-  <summary>HTTP Client Options</summary>
-  <div>
+
+**HTTP Client Options**
+
+<div>
   You can adjust some options specific to the HTTP client used to make calls to the vendor API. Follow the vendor's recommendations any of these settings.
 
 :::note
@@ -342,7 +341,7 @@ The client will automatically handle HTTP 429 response status codes that include
 | Rate Limit Burst    | The number of requests the source is allowed to burst. The default is `1000`. Set this value to `1` to disable bursting.                                                                                                                                                             |
 
   </div>
-</details>
+
 10. (Optional) **Polling Interval**. Set how frequently to poll for new data. It must be between 5 minutes and 48 hours
 1. When you are finished configuring the Source, click **Save**.
 
@@ -570,40 +569,23 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 
 ## Troubleshooting
 
-<details>
-  <summary>
-    Errors related to partial log ingestion, log preparation, timestamp extraction, or response parsing
-  </summary>
-  <div>
-    <strong>Possible resolution</strong>
-    <ul>
-      <li>Ensure that the <code>HTTP Response Log Ingest Configuration</code> matches the API response structure.</li>
-      <li>Verify that all configured fields exist in the API response.</li>
-      <li>Confirm that the API response is returned in valid JSON format.</li>
-    </ul>
-  </div>
-</details>
+**Errors related to partial log ingestion, log preparation, timestamp extraction, or response parsing**
 
-<details>
-  <summary>Error getting partial logs, error preparing log, error getting timestamp data, timestamp path not in data, or error parsing response data</summary>
-  <div>
-    These errors are typically caused by an improper endpoint response format or incorrect log ingestion configuration. Ensure that your endpoint returns data in a valid JSON format and response fields are as per the configuration.
-  </div>
-</details>
+- Ensure that the <code>HTTP Response Log Ingest Configuration</code> matches the API response structure.
+- Verify that all configured fields exist in the API response.
+- Confirm that the API response is returned in valid JSON format.
 
-<details>
-  <summary>oauth2: cannot parse json: invalid character</summary>
-  <div>
-    This error occurs due to an OAuth 2.0 authentication misconfiguration. Reconfigure the source using valid OAuth 2.0 credentials and ensure that it aligns with the steps in the [Authentication Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
-  </div>
-</details>
+**Error getting partial logs, error preparing log, error getting timestamp data, timestamp path not in data, or error parsing response data**
 
-<details>
-  <summary>Failed to validate the base request config or error preparing new request</summary>
-  <div>
-    These errors indicate that the endpoint configuration is not set up correctly. Verify that your endpoint configuration follows the instructions in the [Request Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
-  </div>
-</details>
+These errors are typically caused by an improper endpoint response format or incorrect log ingestion configuration. Ensure that your endpoint returns data in a valid JSON format and response fields are as per the configuration.
+
+**oauth2: cannot parse json: invalid character**
+
+This error occurs due to an OAuth 2.0 authentication misconfiguration. Reconfigure the source using valid OAuth 2.0 credentials and ensure that it aligns with the steps in the [Authentication Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
+
+**Failed to validate the base request config or error preparing new request**
+
+These errors indicate that the endpoint configuration is not set up correctly. Verify that your endpoint configuration follows the instructions in the [Request Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
 
 ## FAQ
 
@@ -611,18 +593,17 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
 
-<details>
-  <summary>What if I want to query multiple HTTP endpoints?</summary>
-  <div>You will need to create a new source per endpoint for the data you wish to collect, even if the endpoint is within the same API.</div>
-</details>
-<details>
-  <summary>Can I transform the data collected?</summary>
-  <div>No, this source only collects the data. You can use the Sumo Logic platform features to parse/transform the data further after collection.</div>
-</details>
-<details>
-  <summary>What timestamp is used for the data?</summary>
-  <div>If you leave the time parsing configuration blank, it will cause the source to use current time for the collected logs. Be sure to configure the HTTP response log ingestion configuration section to ensure time parsing is correctly handled. The source will enter an error health status if time parsing is configured and is unsuccessful.</div>
-</details>
+**What if I want to query multiple HTTP endpoints?**
+
+You will need to create a new source per endpoint for the data you wish to collect, even if the endpoint is within the same API.
+
+**Can I transform the data collected?**
+
+No, this source only collects the data. You can use the Sumo Logic platform features to parse/transform the data further after collection.
+
+**What timestamp is used for the data?**
+
+If you leave the time parsing configuration blank, it will cause the source to use current time for the collected logs. Be sure to configure the HTTP response log ingestion configuration section to ensure time parsing is correctly handled. The source will enter an error health status if time parsing is configured and is unsuccessful.
 
 :::note
 By default, this source supports up to *512 MB* of memory in a single API response. For higher limits or additional requirements, contact Sumo Logic Support.

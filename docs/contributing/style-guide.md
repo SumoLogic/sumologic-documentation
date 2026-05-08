@@ -417,9 +417,42 @@ You'll see this used in our [C2C source docs](/docs/send-data/hosted-collectors/
 
 Use the Docusaurus [Details](https://docusaurus.io/docs/next/markdown-features#details) feature to collapse long, additional content and long code samples. When collapsed, the content can be searched, but not displayed, when loading a page. Place long lists or lots of content in this section. The reader can expand/collapse as needed. Important content like required steps and instructions should not be placed in an expander.
 
-You can include markdown content in expanders including code samples, embedded videos, bulleted lists, and more.
+### When to use and when NOT to use `<details>` tags
 
-Add a title for the expander between the `<summary>` tags. Then, add all content after `<summary>` tags and before the closing `<details>` tags.
+| Use Case | ✅ DO Use | ❌ DO NOT Use | Why |
+|:---------|:----------|:--------------|:----|
+| **FAQ Sections** | | ❌ Never | **Against GEO principles**: Hidden content negatively impacts Generative Engine Optimization and search visibility. **AI citation fails**: AI tools and search engines cannot properly cite or reference content hidden inside accordion components. FAQ content must be immediately visible and scannable. |
+| **Troubleshooting Sections** | | ❌ Never | Users searching for solutions need immediate visibility of troubleshooting steps. Hidden content creates friction and poor user experience. |
+| **Critical Instructions** | | ❌ Never | Required steps, warnings, or important information must always be visible. Users should not need to click to reveal essential information. |
+| **Short Content** | | ❌ Avoid | If collapsed content is only 2-5 lines, keep it visible. The expand/collapse interaction adds unnecessary friction. |
+| **Primary Documentation Flow** | | ❌ Avoid | Main concepts and procedures should not be hidden behind accordions. Core content must be scannable. |
+| **Long Code Samples** | ✅ Yes | | Code samples over 100 lines of JSON, YAML, or configuration examples benefit from collapsing to reduce page scrolling. |
+| **Multiple Installation Methods** | ✅ Yes | | When documenting 3+ installation methods (UI installer, command-line, package managers), collapse each method so users can choose their preferred approach. |
+| **API Endpoint Documentation** | ✅ Yes | | Collapse detailed request parameters, response formats, and examples to keep API reference pages scannable. |
+| **Alternative Configuration Options** | ✅ Yes | | When showing different setup paths or service configurations (e.g., AWS regions, authentication methods), collapse alternatives to reduce clutter. |
+| **Sample Log Formats** | ✅ Yes | | Lengthy log examples (50+ lines) that users reference occasionally should be collapsed. |
+
+:::warning Important
+Using `<details>` tags for FAQ and troubleshooting content violates **Generative Engine Optimization (GEO)** best practices and prevents AI tools from properly citing your documentation. Always keep FAQ and troubleshooting content visible.
+:::
+
+#### How to use collapsible sections
+
+When using `<details>` tags for appropriate content (see table above), follow these guidelines:
+
+1. **Always include a descriptive title** in the `<summary>` tag. This title should clearly describe what content is collapsed.
+2. **Add the `title` attribute** to the `<details>` tag for better accessibility and SEO.
+3. You can include markdown content in expanders including code samples, embedded videos, bulleted lists, and more.
+4. Add all content after the `<summary>` tags and before the closing `</details>` tag.
+
+```markdown
+<details title="Installation using command-line">
+<summary>Install Using the Command-Line Installer</summary>
+
+Your installation steps and code samples go here...
+
+</details>
+```
 
 <Tabs
   className="unique-tabs"
@@ -465,8 +498,6 @@ Add a title for the expander between the `<summary>` tags. Then, add all content
 
 </TabItem>
 </Tabs>
-
-
 
 
 ## Contractions
