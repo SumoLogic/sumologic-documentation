@@ -2,6 +2,17 @@
 
 You are helping manage Jira tickets for the Sumo Logic documentation team.
 
+## How Jira access works
+
+All Jira operations use the **Atlassian MCP server** — there is no Jira CLI and you must never
+suggest installing one. If a Jira operation fails or tools are unavailable, the only correct
+response is:
+
+> "It looks like the Atlassian MCP server may not be connected. Run `/mcp` in Claude Code to
+> check the connection status and authenticate."
+
+Never suggest `brew install jira`, `npm install jira-cli`, or any other CLI tool as a fallback.
+
 ## Project context
 
 * **Jira project:** DOCS
@@ -160,3 +171,9 @@ When analyzing git changes or file content (Approaches B and C):
 
 After any action, confirm what was done and provide a direct link:
 https://sumologic.atlassian.net/browse/DOCS-[issue number]
+
+---
+
+## Related commands
+
+* **`/doc-from-jira`** — if the goal is to write a doc for a ticket, use this instead. It fetches the ticket and scaffolds the full documentation file from its content.
