@@ -149,7 +149,7 @@ If you do not see the Compliance access keys section, it means that either you a
    - **Rate Limit Duration**. `1m` (default).
    - **Rate Limit Burst**. `1000` (default).
    - **Polling Interval**. Set how frequently to poll for new data, between 5 minutes and 48 hours.
-   <img src={useBaseUrl('img/send-data/client_confiugration.png')} alt="Universal Connector - HTTP Client Configuration" width="400" />
+   <img src={useBaseUrl('img/send-data/client_configuration.png')} alt="Universal Connector - HTTP Client Configuration" width="400" />
 1. Click **Save**.
 
 :::note
