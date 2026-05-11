@@ -29,7 +29,7 @@ _view=sumologic_volume _sourceCategory=cardinalityPerSourceCollector
 | parse regex "bucket:\s+(?<bucket>[^,\s]+), totalCardinality: (?<totalCardinality>\d+)"
 | parse regex "(?<collectorName>[^;\s]+);(?<sourceName>[^:]+?):(?<sourceCardinality>\d+)" multi
 | num(sourceCardinality)
-| num(totalcardinality )
+| num(totalCardinality)
 | fields bucket, collectorName, sourceName, sourceCardinality, totalCardinality
 ```
 
