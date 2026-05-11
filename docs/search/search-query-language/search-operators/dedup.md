@@ -2,6 +2,7 @@
 id: dedup
 title: dedup Search Operator
 sidebar_label: dedup
+description: Use the `dedup` operator to remove duplicate results from your search output. Filter results consecutively or by specific fields to identify the most recent or last few events based on identical field combinations. Supports log search, dashboards with live mode, scheduled searches, and monitors. Specify the number of results to keep and group by fields for targeted deduplication.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

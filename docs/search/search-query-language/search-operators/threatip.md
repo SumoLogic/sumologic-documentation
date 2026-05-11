@@ -2,6 +2,7 @@
 id: threatip
 title: threatip Search Operator
 sidebar_label: threatip
+description: Use the `threatip` operator to identify suspicious IP addresses in your log data for security analytics and threat detection. Correlates data against the Sumo Global Feed threat intelligence source to detect threats and protect against sophisticated cyber-attacks. Supports IP address Indicators of Compromise. Simplified alternative to the Threat Intel Quick Analysis app for IP threat lookups only.
 ---
 
 The `threatip` operator looks for suspicious IP addresses in your log data. Using the operator provides security analytics that help you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks.

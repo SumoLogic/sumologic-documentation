@@ -2,6 +2,7 @@
 id: total
 title: total Search Operator
 sidebar_label: total
+description: Use the `total` operator to insert the sum of a field into every row as a new column, enabling comparisons between individual values and the total. Unlike the sum operator which produces a single aggregate value, total adds the sum as a column in each row. Useful for calculating percentages, ratios, or proportions relative to the total.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,6 +2,7 @@
 id: save
 title: save Search Operator
 sidebar_label: save
+description: Use the `save` operator to save query results to a lookup table for later reference and enrichment. Supports both raw and aggregated results. Use the append option to merge new rows while preserving existing data, or save without append to overwrite the table. Works with TTL-configured tables to set or reset row expiration times. Access saved data using the lookup and cat operators.
 ---
 
 The `save` operator allows you to save the results of a query to a lookup table you have already created, as described in [Create a Lookup Table](/docs/search/lookup-tables/create-lookup-table). You can use the [lookup](/docs/search/search-query-language/search-operators/lookup/) and [cat](/docs/search/search-query-language/search-operators/cat/) operator to access the saved data.

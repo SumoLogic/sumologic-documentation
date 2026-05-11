@@ -2,6 +2,7 @@
 id: trim
 title: trim Search Operator
 sidebar_label: trim
+description: Use the `trim` operator to eliminate leading and trailing spaces from string fields. Cleans up string data with unwanted whitespace, normalizes field values for accurate matching, and prepares data for comparison or aggregation. Useful for data cleanup, standardizing user input, and ensuring consistent string formatting.
 ---
 
 The `trim` operator eliminates leading and trailing spaces from a string field.

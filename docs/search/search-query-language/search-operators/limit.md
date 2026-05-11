@@ -2,6 +2,7 @@
 id: limit
 title: limit Search Operator
 sidebar_label: limit
+description: Use the `limit` operator to reduce the number of raw messages or aggregate results returned in your query. Limits raw message count when used without aggregation, or reduces grouped results count when used after aggregation operators. Essential for creating Top N lists in dashboards, controlling result set size, and displaying the most relevant events at a glance.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

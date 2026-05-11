@@ -2,6 +2,7 @@
 id: substring
 title: substring Search Operator
 sidebar_label: substring
+description: Use the `substring` operator to extract a portion of a string using start and end offset positions. Output only part of a string instead of the whole value, useful for extracting initials from names, truncating long fields, or isolating specific segments of structured data. Specify start offset and optional end offset to define the substring range.
 ---
 
 The `substring` operator allows you to specify an offset that will output only part of a string, referred to as a substring. You can use this operator to output just a part of a string instead of the whole string, for example, if you wanted to output an employee’s initials instead of their whole name.

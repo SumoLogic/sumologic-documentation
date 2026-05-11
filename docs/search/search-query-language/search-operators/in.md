@@ -2,6 +2,7 @@
 id: in
 title: in Search Operator
 sidebar_label: in
+description: Use the `in` operator to check if a field's value matches any value in a specified list and return a boolean result. Returns true if the field value matches any of the provided values, false otherwise. Simplifies queries that would otherwise require multiple OR conditions, making it easier to filter results against multiple possible values.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

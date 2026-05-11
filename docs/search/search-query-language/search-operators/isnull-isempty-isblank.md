@@ -2,6 +2,7 @@
 id: isnull-isempty-isblank
 title: isNull, isEmpty, isBlank Search Operators
 sidebar_label: isNull, isEmpty, isBlank
+description: Use the `isNull`, `isEmpty`, and `isBlank` operators to check string field values for null or empty states. isNull returns true if the string is null, isEmpty checks if a string contains only whitespace, and isBlank checks for null, empty, or whitespace-only strings. Useful for validating parsing operations, lookup matches, and handling missing data from geo lookup or transpose operations.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

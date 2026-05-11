@@ -2,6 +2,7 @@
 id: luhn
 title: luhn Search Operator
 sidebar_label: luhn
+description: Use the `luhn` operator to validate potential credit card numbers in log messages using Luhn's algorithm. Takes a string input, strips out non-numeric characters, and checks if the resulting string is a valid credit card number. Returns true for valid numbers, false otherwise. Useful for detecting and validating payment card data in logs for security auditing or PCI compliance.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

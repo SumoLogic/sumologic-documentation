@@ -2,6 +2,7 @@
 id: isprivateip
 title: isPrivateIP Search Operator
 sidebar_label: isPrivateIP
+description: Use the `isPrivateIP` operator to check if an IPv4 address is a private address and return a boolean result. Returns true for valid private IPv4 addresses in ranges like 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16. Invalid IPv4 addresses are dropped from results. Useful for filtering internal network traffic or identifying private network sources.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,6 +2,7 @@
 id: cat
 title: cat Search Operator
 sidebar_label: cat
+description: Use the `cat` operator to view the contents of a lookup table stored in the Sumo Logic Library. Displays all rows and columns from the specified lookup table path for inspection and validation. Not supported in auto refresh dashboards or scheduled searches. Export results from the Messages tab for large tables.
 ---
 
 You can use the `cat` operator to view the contents of a lookup table. Not supported in auto refresh dashboards or scheduled searches.

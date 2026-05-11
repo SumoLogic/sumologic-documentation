@@ -2,6 +2,7 @@
 id: join
 title: join Search Operator
 sidebar_label: join
+description: Use the `join` operator to combine records from two or more data streams based on common field values. Works like an inner SQL join, admitting results on-the-fly for real-time table building. Supports optional timewindow constraints to limit how far apart in time records can be joined. Useful for correlating data across different log sources or combining multiple streams into unified analysis.
 ---
 
 The `join` operator combines records of two or more data streams. Results are admitted on-the-fly to allow real time tables to be built. Values common to each table are then delivered as search results. The `join` operator in Sumo Logic works much like an [inner SQL join](https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join).

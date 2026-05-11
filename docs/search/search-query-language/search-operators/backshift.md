@@ -2,6 +2,7 @@
 id: backshift
 title: backshift Search Operator
 sidebar_label: backshift
+description: Use the `backshift` operator to compare how numeric values change over time by shifting data points backward and returning them in a new field. Calculate differences between consecutive time intervals or detect rate-of-change patterns. Commonly used with rollingstd and smooth operators to normalize spiky data or eliminate outliers. Supports configurable shift lengths up to 1000 data points.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

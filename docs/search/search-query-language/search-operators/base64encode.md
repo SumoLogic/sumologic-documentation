@@ -2,6 +2,7 @@
 id: base64encode
 title: base64Encode Search Operator
 sidebar_label: base64Encode
+description: Use the `base64Encode` operator to convert ASCII or non-ASCII strings into base64-encoded format within your search queries. Useful for creating encoded payloads for API calls, comparing against base64-encoded data in logs, or generating encoded test data. Supports both standard ASCII characters and international non-ASCII characters for multilingual data processing.
 ---
 The `base64Encode` operator takes an ASCII or non-ASCII string and converts it to a base64 string.
 

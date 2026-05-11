@@ -2,6 +2,7 @@
 id: jsonarraycontains
 title: jsonArrayContains Search Operator
 sidebar_label: jsonArrayContains
+description: Use the `jsonArrayContains` operator to check whether a JSON array field contains a specific string item. Returns true if the item exists in the array, false otherwise. Useful for filtering logs with JSON array fields, checking for specific values in configuration arrays, or validating data presence in structured JSON logs.
 ---
 
 

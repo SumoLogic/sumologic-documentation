@@ -2,6 +2,7 @@
 id: smooth
 title: smooth Search Operator
 sidebar_label: smooth
+description: Use the `smooth` operator to calculate the rolling (or moving) average of a numeric field, smoothing out random variation to reveal underlying trends. Choose a window length to define how many data points contribute to each averaged value. Adapts to available data if fewer points exist than the specified window. Add a group by function to calculate running averages within each group separately.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
