@@ -28,14 +28,12 @@ Sumo Logic supports two OAuth 2.0 authentication flows:
 | [Authorization Code](#authorization-code-flow) | User-facing applications with browser-based login | Simple (UI-based) | Automatic |
 | [Client Credentials](#client-credentials-flow) | Service-to-service authentication, automated workflows | Moderate (API-based) | Manual or automatic |
 
-<a id="how-permissions-work"></a>
+## How permissions work {#how-permissions-work}
 
-:::tip How permissions work
 For both flows, effective permissions are the intersection of the OAuth client's scopes and the caller's roles. This prevents privilege escalation — no OAuth client can grant more access than the caller already has.
 
 * **Authorization Code flow**: intersection of the authenticated user's roles, the OAuth client's scopes, and the scopes requested in the authorization request.
 * **Client Credentials flow**: intersection of the service account's roles and the OAuth client's scopes.
-:::
 
 ## Authorization Code flow
 
