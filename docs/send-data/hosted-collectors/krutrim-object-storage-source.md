@@ -44,7 +44,7 @@ This ensures reliable and consistent ingestion without dependency on external ev
 
 ## Configure Krutrim Object Storage Source
 
-1. Grant Sumo Logic access to the storage bucket. - add access link here
+1. Grant Sumo Logic access to the storage bucket.
 1. Ensure logs are being delivered to the Krutrim Object Storage bucket.
 1. Identify or create a Hosted Collector in Sumo Logic.
     When you create a Krutrim Object Storage Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
@@ -56,7 +56,6 @@ This ensures reliable and consistent ingestion without dependency on external ev
 1. Select **Krutrim Object Storage**.
 1. Enter a name for the new Source. A description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.)
-
 1. **Region**. Select the appropriate region:
     - Bangalore (ap-south-1)
     - Hyderabad (ap-south-1)
@@ -76,6 +75,6 @@ This ensures reliable and consistent ingestion without dependency on external ev
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
-1. **Krutrim Access**. Enter the **Access ID** and **Secret Key.** See [AWS Access Key ID](https://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
+1. **Krutrim Access**. Enter the **Access ID** and **Secret Key.** See [Accessing Buckets](https://docs.cloud.olakrutrim.com/basics/core-infrastructure/storage/object-storage#accessing-buckets).
 1. **Log File Discovery**. Configure the **Scan Interval** from the dropdown to periodically scan your Krutrim Object Storage for new items. **Automatic** is recommended to not incur additional charges.
 1. When you are finished configuring the Source, click **Save**.
