@@ -1,6 +1,7 @@
 ---
 id: parse-csv-formatted-logs
 title: Parse CSV Formatted Logs
+description: Use the CSV operator to parse comma-separated value formatted log entries with comma as the default delimiter. Extract fields by index or position, customize delimiters, and configure escape and quote characters. Ideal for populating lookup tables, analyzing CSV files, or preparing structured data for aggregation. For other delimited formats, use the split operator.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
