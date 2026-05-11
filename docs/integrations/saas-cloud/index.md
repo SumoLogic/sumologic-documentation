@@ -54,7 +54,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/anthropic-compliance')}><img src={useBaseUrl('img/send-data/anthropic.png')} alt="Anthropic Compliance icon" width="90"/><h4>Anthropic Compliance</h4></a>
-  <p>Monitor and manage your compliance security.</p>
+  <p>Monitor and manage your compliance and security.</p>
   </div>
 </div>
 <div className="box smallbox card">
