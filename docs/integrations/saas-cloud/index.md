@@ -53,6 +53,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/anthropic-compliance')}><img src={useBaseUrl('img/send-data/anthropic.png')} alt="Armis icon" width="90"/><h4>Anthropic Compliance</h4></a>
+  <p>Monitor and manage your compliance security.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/armis')}><img src={useBaseUrl('img/send-data/armis-icon.png')} alt="Armis icon" width="90"/><h4>Armis</h4></a>
   <p>Monitor and manage your device security.</p>
   </div>
