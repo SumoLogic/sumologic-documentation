@@ -1,6 +1,7 @@
 ---
 id: parse-field-option
 title: Parse field option
+description: Use the parse field option to parse previously extracted fields or metadata field values like _collector and _source. Works with both parse anchor and parse regex operations using the field=fieldname syntax. Enables chained parsing and extraction from non-message fields for more flexible log processing and multi-stage field extraction.
 ---
 
 Sumo Logic allows you to parse on previously extracted fields, or initial parsing on a metadata field value (`_collector`, `_source`, etc.) using the additional parse syntax of `field<field_name>`.

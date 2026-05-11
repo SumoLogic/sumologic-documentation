@@ -1,6 +1,7 @@
 ---
 id: parsehex
 title: parseHex
+description: Use the parseHex operator to convert hexadecimal strings of 16 or fewer characters to numeric values. Accepts both plain hex format and 0x-prefixed format. Useful for converting hex-encoded IDs, memory addresses, or numeric data from hexadecimal representation to decimal numbers for mathematical operations or filtering.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
