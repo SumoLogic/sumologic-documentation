@@ -1,6 +1,7 @@
 ---
 id: parse-predictable-patterns-using-an-anchor
 title: Parse Predictable Patterns Using an Anchor
+description: Use the parse anchor operator to parse strings using specified start and stop anchors, labeling extracted values as fields for aggregation functions. Extract data between predictable patterns in log messages for sorting, grouping, or analysis. Supports the nodrop option and field option for flexible parsing. Ideal for structured logs with consistent formatting.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

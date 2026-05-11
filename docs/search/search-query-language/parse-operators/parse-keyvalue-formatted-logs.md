@@ -1,6 +1,7 @@
 ---
 id: parse-keyvalue-formatted-logs
 title: Parse Keyvalue Formatted Logs
+description: Use the keyvalue operator to extract values from logs that follow a key-value pair structure by specifying the key paired with each value. Automatically parses structured log formats where data is organized as key=value pairs. Useful for parsing application logs, web server logs, and any structured output with key-value formatting.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
