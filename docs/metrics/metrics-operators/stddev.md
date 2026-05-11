@@ -2,6 +2,7 @@
 id: stddev
 title: stddev Metrics Operator
 sidebar_label: stddev
+description: Use the `stddev` metrics operator to measure the magnitude of deviations between values in time series, calculating standard deviation at each time interval. Low deviation indicates stable, consistent performance while high deviation indicates spread across a large range. Valuable for financial applications, performance analysis, transaction monitoring, and identifying outliers. Returns results as _stddev_ metric.
 ---
 
 
