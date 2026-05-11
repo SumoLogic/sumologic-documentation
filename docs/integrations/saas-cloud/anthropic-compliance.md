@@ -73,9 +73,72 @@ This section has instructions for collecting logs for the Sumo Logic app for Ant
 
 ### Collection process overview
 
-:::important
-Use the [Universal Connector](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Anthropic Compliance app is properly integrated and configured to collect and analyze your Anthropic Compliance data.
-:::
+This app uses the [Universal Connector](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source) to collect activity logs from the Anthropic Compliance API.
+
+### Vendor configuration
+
+To collect logs, you need an Anthropic API key with access to the Compliance API.
+
+1. Sign in to the [Anthropic Console](https://console.anthropic.com/).
+1. Navigate to **Settings** > **API Keys**.
+1. Click **Create Key**, enter a name, and set the appropriate permissions.
+1. Copy and save the API key. It will only be shown once.
+
+### Source configuration
+
+1. On the Data Collection page, click **Add Source** next to a Hosted Collector.
+1. Search for and select **Universal Connector**.
+1. Configure the **General** settings:
+   - **Name**. Enter a name for the source.
+   - **Description**. (Optional) Enter a description.
+   - **Source Category**. Enter a value such as `anthropic_compliance/activities`. This value is stored in the `_sourceCategory` metadata field and must match the source category used when installing the app.
+   - **Fields**. (Optional) Click **+Add** to define any additional fields to associate with the source.
+   <img src={useBaseUrl('img/send-data/source_configuratioin.png')} alt="Universal Connector - General settings" width="600" />
+1. Configure the **Authentication Configuration**:
+   - **Authentication Type**. Select **API Key**.
+   - **How should we use your API key?** Select **In HTTP Request Header**.
+   - **Location Key**. Enter `x-api-key`.
+   - **API Key**. Enter the Anthropic API key you copied above.
+   <img src={useBaseUrl('img/send-data/authentication_configuration.png')} alt="Universal Connector - Authentication Configuration" width="600" />
+1. Configure the **Request Configuration**:
+   - **HTTP Method**. Select `GET`
+   - **Endpoint URL**. Enter `https://api.anthropic.com/v1/compliance/activities`
+   <img src={useBaseUrl('img/send-data/request_configuration.png')} alt="Universal Connector - Request Configuration" width="600" />
+1. Configure the **Tracking Progression**:
+   - **Type**. Select **Time Window**.
+   - **Window Size**. Enter `5m` (default recommended).
+   - **Initial Lookback**. Enter `24h`.
+   - **Progress Window Parameters**. Add the following parameters:
+     | Parameter Name | Parameter Value |
+     |:---------------|:----------------|
+     | `created_at.gte` | `{{ .WindowStartUTC "yyyy-MM-ddTHH:mm:ssZ" }}` |
+     | `created_at.lt` | `{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ssZ" }}` |
+   <img src={useBaseUrl('img/send-data/tracking_configuration.png')} alt="Universal Connector - Tracking Progression" width="600" />
+1. Configure the **HTTP Response Log Ingest Configuration**:
+   - **Format**. Select **JSON with JPath**.
+   - Configure the following log path settings:
+     | Field | Value |
+     |:------|:------|
+     | **Logs JPath** | `$.data[*]` |
+     | **Timestamp JPath** | `$.created_at` |
+     | **Timestamp Format** | `2006-01-02T15:04:05.000000Z` |
+   <img src={useBaseUrl('img/send-data/response_configuration.png')} alt="Universal Connector - HTTP Response Log Ingest Configuration" width="600" />
+1. Configure the **Pagination Configuration**:
+   - **Type**. Select **Continuation Token**.
+   - **Token Location**. Select **Body**.
+   - **Next Page Continuation Token JPath**. Enter `$.next_page`.
+   - **Send Token In**. Select **Parameters**.
+   - **Parameter Key**. Enter `after_id`.
+   <img src={useBaseUrl('img/send-data/pagination_configuration.png')} alt="Universal Connector - Pagination Configuration" width="600" />
+1. (Optional) Configure the **HTTP Client Configuration**:
+   - **HTTP Timeout**. `5m` (default).
+   - **HTTP Client Retries**. `5` (default).
+   - **Rate Limit Requests**. `1000` (default).
+   - **Rate Limit Duration**. `1m` (default).
+   - **Rate Limit Burst**. `1000` (default).
+   - **Polling Interval**. Set how frequently to poll for new data, between 5 minutes and 48 hours.
+   <img src={useBaseUrl('img/send-data/client_confiugration.png')} alt="Universal Connector - HTTP Client Configuration" width="600" />
+1. Click **Save**.
 
 ## Installing the Anthropic Compliance app   
 
