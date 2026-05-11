@@ -105,7 +105,7 @@ If you do not see the Compliance access keys section, it means that either you a
    - **Description**. (Optional) Enter a description.
    - **Source Category**. Enter a value such as `anthropiccompliance/activities`. This value is stored in the `_sourceCategory` metadata field and must match the source category used when installing the app.
    - **Fields**. (Optional) Click **+Add** to define any additional fields to associate with the source.
-   <img src={useBaseUrl('img/send-data/source_configuratioin.png')} alt="Universal Connector - General settings" width="400" />
+   <img src={useBaseUrl('img/send-data/source_configuration.png')} alt="Universal Connector - General settings" width="400" />
 1. Configure the **Authentication Configuration**:
    - **Authentication Type**. Select **API Key**.
    - **How should we use your API key?** Select **In HTTP Request Header**.
