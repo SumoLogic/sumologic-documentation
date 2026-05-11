@@ -26,10 +26,10 @@ Use the query below to determine the cardinality associated with sources for a s
 
 ```sql
 _view=sumologic_volume _sourceCategory=cardinalityPerSourceCollector
-| parse regex "bucket:\s+(?<bucket>[^,\s]+), totalCardinality: (?<totalCardinality>\d+)" nodrop
-| parse regex "(?<collectorName>[^;\s]+);(?<sourceName>[^:]+?):(?<sourceCardinality>\d+)" multi
+| parse regex "bucket:\s+(?<bucket>[^,\s]+), totalCardinality: (?<totalCardinality>\d+)"
+| parse regex "(?<collectorName>[^;\s]+);(?<sourceName>[^:]+?):(?<sourceCardinality>\d+)" multi nodrop
 | num(sourceCardinality)
-| num(totalCardinality)
+| num(totalcardinality )
 | fields bucket, collectorName, sourceName, sourceCardinality, totalCardinality
 ```
 
