@@ -2,6 +2,7 @@
 id: isvalidip
 title: isValidIP, isValidIPv4, isValidIPv6 Search Operators
 sidebar_label: isValidIP, isValidIPv4, isValidIPv6
+description: Use the `isValidIP`, `isValidIPv4`, and `isValidIPv6` operators to validate IP address formats. isValidIP checks for any valid IP address (IPv4 or IPv6), isValidIPv4 validates IPv4 format specifically, and isValidIPv6 validates IPv6 format. Returns true for valid addresses, false otherwise. Useful for filtering malformed IP data and validating address formats before further processing.
 ---
 
 The `isValidIP` operator checks if the value is a valid IP address. The `isValidIPv4` and `isValidIPv6` operators check if the value is a valid IPv4 or IPv6 address respectively. 

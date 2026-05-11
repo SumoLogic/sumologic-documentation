@@ -2,6 +2,7 @@
 id: matches
 title: matches Search Operator
 sidebar_label: matches
+description: Use the `matches` operator to match a string against a wildcard pattern or RE2-compliant regex and return a boolean result. Works with where and if operators for conditional logic. String expressions are case-sensitive and can be provided as fields. Useful for pattern matching, filtering logs with complex string patterns, and building robust queries in dashboard panels.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,6 +2,7 @@
 id: sort
 title: sort Search Operator
 sidebar_label: sort
+description: Use the `sort` operator to order aggregated search results in descending order by default. Combine with top or limit operators to reduce the number of sorted results returned. The order operator is synonymous with sort and can be used interchangeably. Essential for ranking results, creating Top N lists, and organizing query output for analysis and dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

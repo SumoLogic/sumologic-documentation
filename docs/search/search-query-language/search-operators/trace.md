@@ -2,6 +2,7 @@
 id: trace
 title: trace Search Operator
 sidebar_label: trace
+description: Use the `trace` operator as a sophisticated filter to connect related log messages using identifying values like user IDs, IP addresses, or session IDs. Retrieves comprehensive activity sets associated with the original ID using regular expressions to find related messages. Requires a regex pattern and starting value. Ideal for transaction tracing, user activity tracking, and correlation analysis.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

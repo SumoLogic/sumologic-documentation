@@ -2,6 +2,7 @@
 id: sessionize
 title: sessionize Search Operator
 sidebar_label: sessionize
+description: Use the `sessionize` operator to correlate log messages across multiple systems using an extracted value, creating a unified session view. Tracks values like user request IDs through distributed systems, weaving related events into a single thread displayed on one page. For simpler use cases, consider the join operator as an alternative. Ideal for tracing requests through microservices or distributed architectures.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

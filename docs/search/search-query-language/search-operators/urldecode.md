@@ -2,6 +2,7 @@
 id: urldecode
 title: urldecode Search Operator
 sidebar_label: urldecode
+description: Use the `urldecode` operator to decode URL-encoded strings, returning unescaped URLs in readable format. Converts percent-encoded characters back to their original form for analysis. Essential for analyzing web logs, API requests, query parameters, and any data transmitted in URL-encoded format for better readability and parsing.
 ---
 
 The `urldecode` operator decodes a URL you include in a query, returning the decoded (unescaped) URL string.

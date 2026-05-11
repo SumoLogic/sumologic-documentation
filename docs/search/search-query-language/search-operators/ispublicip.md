@@ -2,6 +2,7 @@
 id: ispublicip
 title: isPublicIP Search Operator
 sidebar_label: isPublicIP
+description: Use the `isPublicIP` operator to check if an IPv4 address is a public address and return a boolean result. Returns true for valid public IPv4 addresses that are routable on the internet. Invalid IPv4 addresses are dropped from results. Useful for filtering external network traffic, identifying internet-facing sources, or excluding private network addresses.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

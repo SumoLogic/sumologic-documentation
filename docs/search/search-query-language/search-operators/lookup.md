@@ -2,6 +2,7 @@
 id: lookup
 title: lookup Search Operator
 sidebar_label: lookup
+description: Use the `lookup` operator to enrich log messages with additional fields from lookup tables hosted by Sumo Logic. Joins data from CSV-based lookup tables or tables created via the save operator to add context like user details, service mappings, or threat intelligence. Supports up to 100 MB table size with field values under 1024 bytes. Essential for data enrichment and contextual analysis.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

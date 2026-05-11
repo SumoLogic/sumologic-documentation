@@ -2,6 +2,7 @@
 id: if
 title: if and ? Search Operator
 sidebar_label: if, ?
+description: Use the `if` operator or question mark (`?`) operator to evaluate a condition as true or false and assign different values based on the outcome. This ternary expression provides a shorthand way to express if-else logic in queries. Returns value_if_true when the condition is true, otherwise returns value_if_false. Both value expressions must have the same data type.
 ---
 
 There are two forms of ternary expression you can use in Sumo Logic queries: one is constructed using the `if` operator, and the other uses the question mark (`?`) operator. The syntax varies slightly, but the results are equivalent. You can use the syntax you are most comfortable with.

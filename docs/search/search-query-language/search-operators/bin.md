@@ -2,6 +2,7 @@
 id: bin
 title: bin Search Operator
 sidebar_label: bin
+description: Use the `bin` operator to assign numeric values to user-defined bins for histogram visualization and distribution analysis. Configure bins with a width, optional minimum and maximum boundaries to group data points into ranges. Ideal for visualizing data distribution, analyzing value clusters, and sorting results by numeric intervals in dashboards and charts.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

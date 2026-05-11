@@ -2,6 +2,7 @@
 id: dectohex
 title: decToHex Search Operator
 sidebar_label: decToHex
+description: Use the `decToHex` operator to convert a long integer value of 16 or fewer digits to a hexadecimal string. Uses Two's Complement for negative values and always returns uppercase hexadecimal strings. Useful for converting decimal IP addresses, timestamps, or numeric identifiers to hexadecimal format for analysis or comparison.
 ---
 
 The `decToHex` operator converts a long value of 16 or fewer digits to a hexadecimal string using Two's Complement for negative values.

@@ -2,6 +2,7 @@
 id: compare
 title: compare Search Operator
 sidebar_label: compare
+description: Use the `compare` operator to compare current aggregate query results against one or multiple past time periods. Evaluate performance metrics before and after deployments, track root causes by comparing with historic data, analyze daily or weekly active users, and identify anomalous trends or malicious activity. Works with the Time Compare button to automatically generate syntax for single-period, multi-period, or aggregate-over-multiple-period comparisons.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

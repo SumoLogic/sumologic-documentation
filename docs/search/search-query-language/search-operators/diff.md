@@ -2,6 +2,7 @@
 id: diff
 title: diff Search Operator
 sidebar_label: diff
+description: Use the `diff` operator to calculate the rate of change in a numeric field between consecutive rows. Operates on rows in input stream order, subtracting the current field value from the previous row's value. Add a group by function to calculate differences within each group separately. Requires numeric data and removes non-numerical values from results.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

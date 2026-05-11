@@ -2,6 +2,7 @@
 id: timeslice
 title: timeslice Search Operator
 sidebar_label: timeslice
+description: Use the `timeslice` operator to aggregate data by time period, creating bucketed results based on fixed intervals like five-minute buckets or a fixed-target number of buckets. Essential for grouping data into time-sliced buckets for aggregation analysis and time-series visual analysis. Supports both specific time intervals and automatic bucket count calculation over a time range.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

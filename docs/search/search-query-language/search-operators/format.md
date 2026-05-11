@@ -2,6 +2,7 @@
 id: format
 title: format Search Operator
 sidebar_label: format
+description: Use the `format` operator to format and combine data from parsed fields into user-defined strings. Format numbers, strings, and dates to make log data more human readable, such as converting raw dates or currency amounts into readable formats. Supports all Java String.format syntax. For simpler use cases, consider using the concat operator instead.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

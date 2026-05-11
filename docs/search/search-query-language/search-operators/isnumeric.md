@@ -2,6 +2,7 @@
 id: isnumeric
 title: isNumeric Search Operator
 sidebar_label: isNumeric
+description: Use the `isNumeric` operator to check whether a string is a valid Java number. Returns true for valid numbers including decimals, hexadecimals (0x or 0X prefix), octal numbers, scientific notation, and type-qualified numbers like 123L. Null and empty strings return false. Useful for validating numeric fields before mathematical operations or filtering non-numeric data.
 ---
 
 The `isNumeric` operator checks whether a string is a valid Java number. Valid numbers include hexadecimals marked with the 0x or 0X qualifier, octal numbers, scientific notation and numbers marked with a type qualifier, like 123L.

@@ -2,6 +2,7 @@
 id: fillmissing
 title: fillmissing Search Operator
 sidebar_label: fillmissing
+description: Use the `fillmissing` operator to ensure specific groups appear in query output even when they contain no data. Addresses the limitation where standard group-by queries only return non-empty groups. Essential for detecting anomalies from missing data with the outlier operator and preventing misleading visualizations where line charts incorrectly interpolate across missing timeslices. Specify which groups should always be represented in results.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

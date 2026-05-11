@@ -2,6 +2,7 @@
 id: accum
 title: accum Search Operator
 sidebar_label: accum
+description: Use the `accum` operator to calculate the cumulative sum of a numeric field in your search results. Track running totals by time interval or across all data points, ideal for monitoring incremental growth in request counts, error rates, or resource consumption. Group by specific fields to maintain separate running totals for different categories in a single query.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
