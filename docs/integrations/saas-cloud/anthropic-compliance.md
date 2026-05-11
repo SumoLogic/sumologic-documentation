@@ -99,7 +99,7 @@ This dashboard delivers a high-level summary of all compliance-relevant activiti
 
 ### Billing Monitoring
 
-This dashboard monitors billing-related compliance events including subscription lifecycle changes, spend limit updates, prepaid activity, and recharge events across your Anthropic organization. It highlights the top plan types, organizations with the most billing activity, and users making frequent spend limit changes. Trend analysis and detailed event tables provide full audit coverage for financial governance and compliance. Use this dashboard to detect unauthorized billing changes, track subscription modifications, and ensure spend controls are functioning as intended.
+This dashboard monitors billing-related compliance events, including subscription lifecycle changes, spend limit updates, prepaid activity, and recharge events across your Anthropic organization. It highlights the top plan types, organizations with the most billing activity, and users making frequent spend limit changes. Trend analysis and detailed event tables provide full audit coverage for financial governance and compliance. Use this dashboard to detect unauthorized billing changes, track subscription modifications, and ensure spend controls are functioning as intended.
 
 <img src={useBaseUrl('img/send-data/Anthropic-Compliance-Billing-Monitoring.png')} alt="Anthropic Compliance - Billing Monitoring dashboard" />
 
@@ -112,13 +112,13 @@ This dashboard provides visibility into API key lifecycle events across your Ant
 
 ### Artifacts, Marketplace, and Projects Monitoring
 
-This dashboard tracks lifecycle events for Artifacts, Marketplace items, and Projects within the Anthropic platform, including creation, access, and deletion activities. It provides trend analysis, event breakdowns, and detailed activity tables to help teams identify unusual access patterns or unauthorized changes. Active artifact, project, and user counts give a real-time snapshot of platform engagement. Use this dashboard to maintain governance over shared resources and ensure marketplace and project activity aligns with organizational policies.
+This dashboard tracks lifecycle events for Artifacts, Marketplace items, and Projects on the Anthropic platform, including creation, access, and deletion. It provides trend analysis, event breakdowns, and detailed activity tables to help teams identify unusual access patterns or unauthorized changes. Active artifact, project, and user counts give a real-time snapshot of platform engagement. Use this dashboard to maintain governance over shared resources and to ensure marketplace and project activities align with organizational policies.
 
 <img src={useBaseUrl('img/send-data/Anthropic-Compliance-Artifacts-Marketplace-and-Projects-Monitoring.png')} alt="Anthropic Compliance - Artifacts, Marketplace, and Projects Monitoring dashboard" />
 
 ### Claude Skills and Plugins Monitoring
 
-This dashboard provides visibility into the usage and lifecycle of Claude Skills and Plugins across your Anthropic environment, including invocation trends, event distributions, and top active skills and plugins. It surfaces unique skill and plugin counts alongside detailed activity records to help teams govern AI capability extensions. Usage trends help identify sudden spikes or drops in plugin or skill activity that may warrant investigation. Use this dashboard to ensure approved extensions are being used appropriately and to detect any unauthorized or anomalous AI tool usage.
+This dashboard provides visibility into the usage and lifecycle of Claude Skills and Plugins across your Anthropic environment, including invocation trends, event distributions, and top active skills and plugins. It surfaces unique skill and plugin counts, along with detailed activity records, to help teams govern AI capability extensions. Usage trends help identify sudden spikes or drops in plugin or skill activity that may warrant investigation. Use this dashboard to ensure approved extensions are being used appropriately and to detect any unauthorized or anomalous AI tool usage.
 
 <img src={useBaseUrl('img/send-data/Anthropic-Compliance-Claude-Skills-and-Plugins-Monitoring.png')} alt="Anthropic Compliance - Claude Skills and Plugins Monitoring dashboard" />
 
@@ -143,44 +143,44 @@ This dashboard provides deep visibility into file, document, and data export act
 
 ### Identity, Access, and Authentication Monitoring
 
-This dashboard provides comprehensive monitoring of authentication events, role and group changes, SCIM provisioning, and API key activity across your Anthropic environment. It tracks login success and failure trends, highlights users with failed authentication, and maps activity by geographic location including embargoed regions. Privilege escalation flows and recon-exploit patterns are surfaced to help security teams identify and respond to identity-based threats. Use this dashboard to enforce least-privilege access, investigate authentication anomalies, and maintain a complete audit trail of identity and access events.
+This dashboard provides comprehensive monitoring of authentication events, role and group changes, SCIM provisioning, and API key activity across your Anthropic environment. It tracks login success and failure trends, highlights users with failed authentication, and maps activity by geographic location, including embargoed regions. Privilege escalation flows and recon-exploit patterns are surfaced to help security teams identify and respond to identity-based threats. Use this dashboard to enforce least-privilege access, investigate authentication anomalies, and maintain a complete audit trail of identity and access events.
 
 <img src={useBaseUrl('img/send-data/Anthropic-Compliance-Identity-Access-and-Authentication-Monitoring.png')} alt="Anthropic Compliance - Identity, Access, and Authentication Monitoring dashboard" />
 
 ### MCP Servers, Integrations, and GitHub Enterprise
 
-This dashboard monitors management events for MCP Servers, third-party Integrations, and GitHub Enterprise connections within your Anthropic environment. It tracks active MCP servers, integration types, top GitHub repositories, and the geo-locations of actors performing management actions. Event distribution and detail tables provide full visibility into configuration changes and integration lifecycle activity. Use this dashboard to govern AI infrastructure extensions, detect unauthorized integration changes, and ensure GitHub Enterprise connectivity aligns with organizational security standards.
+This dashboard monitors management events for MCP Servers, third-party Integrations, and GitHub Enterprise connections within your Anthropic environment. It tracks active MCP servers, integration types, top GitHub repositories, and the geo-locations of actors performing management actions. Event distribution and detail tables provide full visibility into configuration changes and integration lifecycle activity. Use this dashboard to govern AI infrastructure extensions, detect unauthorized changes to integrations, and ensure GitHub Enterprise connectivity aligns with organizational security standards.
 
 <img src={useBaseUrl('img/send-data/Anthropic-Compliance-MCP-Servers-Integrations-and-GitHub-Enterprise.png')} alt="Anthropic Compliance - MCP Servers, Integrations, and GitHub Enterprise dashboard" />
 
 ### Organization and Policy Configuration
 
-This dashboard monitors organization-level configuration events including discoverability changes, org management actions, disabled events, and policy modifications made by users. It maps the geo-location of users performing org changes, highlights top users making configuration updates, and tracks event trends over time. Detailed event tables and breakdowns support rapid investigation of unauthorized or unexpected organizational changes. Use this dashboard to ensure configuration governance, detect policy drift, and maintain an auditable record of all organization-level administrative activity.
+This dashboard monitors organization-level configuration events, including discoverability changes, org management actions, disabled events, and user policy modifications. It maps the geo-location of users performing org changes, highlights top users making configuration updates, and tracks event trends over time. Detailed event tables and breakdowns support rapid investigation of unauthorized or unexpected organizational changes. Use this dashboard to ensure configuration governance, detect policy drift, and maintain an auditable record of all organization-level administrative activity.
 
 <img src={useBaseUrl('img/send-data/Anthropic-Compliance-Organization-and-Policy-Configuration.png')} alt="Anthropic Compliance - Organization and Policy Configuration dashboard" />
 
 ### SSO, Directory Sync Monitoring
 
-This dashboard tracks Single Sign-On (SSO) and Directory Sync events across your Anthropic environment, including connection activations, deactivations, deletions, and sync lifecycle activity. It provides event distributions, trend analysis, and geographic mapping of SSO and directory sync activities to support identity governance. Top users performing SSO and directory sync changes are highlighted for accountability and anomaly detection. Use this dashboard to ensure SSO configurations remain secure, detect unauthorized identity provider changes, and maintain compliance with access management policies.
+This dashboard tracks Single Sign-On (SSO) and Directory Sync events across your Anthropic environment, including connection activations, deactivations, deletions, and sync lifecycle activity. It provides event distributions, trend analysis, and geographic mapping of SSO and directory sync activities to support identity governance. Top users performing SSO and directory sync changes are highlighted for accountability and anomaly detection. Use this dashboard to ensure SSO configurations remain secure, detect unauthorized changes to identity providers, and maintain compliance with access management policies.
 
 <img src={useBaseUrl('img/send-data/Anthropic-Compliance-SSO-Directory-Sync-Monitoring.png')} alt="Anthropic Compliance - SSO, Directory Sync Monitoring dashboard" />
 
 ### Session Management
 
-This dashboard monitors user session activity across the Anthropic platform, including session creation, sharing, and termination events. It visualizes session event distributions, activity trends, and geographic locations of session activity including events from embargoed regions. A top users view highlights accounts with the highest session activity for anomaly detection and access governance. Use this dashboard to detect suspicious session behavior, enforce session policy compliance, and investigate unauthorized or geographically anomalous session access.
+This dashboard monitors user session activity across the Anthropic platform, including session creation, sharing, and termination events. It visualizes session event distributions, activity trends, and geographic locations of session activity, including events from embargoed regions. A top user's view highlights accounts with the highest session activity for anomaly detection and access governance. Use this dashboard to detect suspicious session behavior, enforce session policy compliance, and investigate unauthorized or geographically anomalous session access.
 
 
 <img src={useBaseUrl('img/send-data/Anthropic-Compliance-Session-Management.png')} alt="Anthropic Compliance - Session Management dashboard" />
 
 ### User Agent Analysis
 
-This dashboard analyzes the user agents accessing your Anthropic environment, categorizing traffic by browser, operating system, platform, and automated versus human origin. It tracks user agent activity trends, surfaces top agents associated with failed activities, and highlights HTTP errors encountered by different client types. Connector and category trend analysis helps teams identify unusual or unauthorized client tooling over time. Use this dashboard to detect bot activity, investigate suspicious client behavior, and ensure only approved tools and platforms are accessing your Anthropic environment.
+This dashboard analyzes the user agents accessing your Anthropic environment, categorizing traffic by browser, operating system, platform, and automated versus human origin. It tracks user-agent activity trends, surfaces the top agents associated with failed activities, and highlights HTTP errors encountered by different client types. Connector and category trend analysis helps teams identify unusual or unauthorized client tooling over time. Use this dashboard to detect bot activity, investigate suspicious client behavior, and ensure that only approved tools and platforms access your Anthropic environment.
 
 <img src={useBaseUrl('img/send-data/Anthropic-Compliance-User-Agent-Analysis.png')} alt="Anthropic Compliance - User Agent Analysis dashboard" />
 
 ### User Configuration and Invite Lifecycle Monitoring
 
-This dashboard provides full visibility into user configuration changes, invite lifecycle events, role assignments, and organizational membership activity across your Anthropic environment. It tracks users with the highest configuration change frequency, monitors invite link usage, and surfaces geo-location data for user activities including access from embargoed regions. Detailed tables cover role changes, org member invites, user settings updates, and recent activity for comprehensive audit coverage. Use this dashboard to govern user onboarding and offboarding processes, detect unauthorized role changes, and ensure invite and configuration practices comply with organizational policies.
+This dashboard provides full visibility into user configuration changes, invite lifecycle events, role assignments, and organizational membership activity across your Anthropic environment. It tracks users with the highest frequency of configuration changes, monitors invite link usage, and surfaces geolocation data on user activities, including access from embargoed regions. Detailed tables cover role changes, org member invites, user settings updates, and recent activity for comprehensive audit coverage. Use this dashboard to govern user onboarding and offboarding processes, detect unauthorized role changes, and ensure invite and configuration practices comply with organizational policies.
 
 <img src={useBaseUrl('img/send-data/Anthropic-Compliance-User-Configuration-and-Invite-Lifecycle-Monitoring.png')} alt="Anthropic Compliance - User Configuration and Invite Lifecycle Monitoring dashboard" />
 
