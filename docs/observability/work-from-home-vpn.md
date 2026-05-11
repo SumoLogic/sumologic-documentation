@@ -6,7 +6,7 @@ sidebar_label: Work from Home Solution
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/general/Home.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/general/Home.png')} alt="Home icon" width="50"/>
 
 Enable quick, safe, and reliable work-from-home monitoring with our Work from Home Solution, a suite of in-depth SaaS apps that provide visibility and management for your remote employee workforce with SSO, remote access, endpoint security, and productivity.
 
@@ -74,16 +74,16 @@ To install any of these apps, follow their directions by clicking on an app link
 
 Monitor availability, performance, user activity and collaboration, and security across your workforce locations.
 
-<img src={useBaseUrl('img/observability/VPN-UserActivity.png')} alt="work from home VPN solution" />
+<img src={useBaseUrl('img/observability/VPN-UserActivity.png')} alt="work from home VPN solution" width="800" />
 
 
 ### Dashboards for VPN monitoring
 
 We've created these dashboards to help you monitor commonly used VPNs. The dashboards are open source and published on GitHub.
 
-* Dashboard for [Cisco AnyConnect VPN Monitoring](https://github.com/SumoLogic/sumologic-content/tree/master/Cisco). This dashboard displays successful and failed logins, session durations, connections, and concurrent users.<br/> <img src={useBaseUrl('img/observability/vpn-anyconnect.png')} alt="work from home VPN solution" />
-* Dashboard for [Palo Alto Networks GlobalProtect VPN Monitoring](https://github.com/SumoLogic/sumologic-content/tree/master/Palo_Alto_Networks/GlobalProtect)—This dashboard displays successful and failed logins and malicious IP activity.<br/> <img src={useBaseUrl('img/observability/vpn-pan.png')} alt="work from home VPN solution" />
-* Dashboard for [Netscaler VPN Monitoring](https://github.com/SumoLogic/sumologic-content/tree/master/Citrix/VPN)—This dashboard displays successful and failed logins, users authenticating from multiple IPs, and rare user agents.<br/> <img src={useBaseUrl('img/observability/vpn-netscaler.png')} alt="work from home VPN solution" />
+* Dashboard for [Cisco AnyConnect VPN Monitoring](https://github.com/SumoLogic/sumologic-content/tree/master/Cisco). This dashboard displays successful and failed logins, session durations, connections, and concurrent users.<br/> <img src={useBaseUrl('img/observability/vpn-anyconnect.png')} alt="work from home VPN solution" width="800" />
+* Dashboard for [Palo Alto Networks GlobalProtect VPN Monitoring](https://github.com/SumoLogic/sumologic-content/tree/master/Palo_Alto_Networks/GlobalProtect)—This dashboard displays successful and failed logins and malicious IP activity.<br/> <img src={useBaseUrl('img/observability/vpn-pan.png')} alt="work from home VPN solution" width="800" />
+* Dashboard for [Netscaler VPN Monitoring](https://github.com/SumoLogic/sumologic-content/tree/master/Citrix/VPN)—This dashboard displays successful and failed logins, users authenticating from multiple IPs, and rare user agents.<br/> <img src={useBaseUrl('img/observability/vpn-netscaler.png')} alt="work from home VPN solution" width="800" />
 
 ### Tips for creating your own searches and dashboards
 

@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ip-quality-score.png')} alt="ip-quality-score" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ip-quality-score.png')} alt="IP Quality Score icon" width="100"/>
 
-***Version: 1.2  
-Updated: Jan 29, 2024***
+***Version: 1.3  
+Updated: April 29, 2026***
 
 Perform threat intelligence evidence gathering with IPQualityScore.
 
@@ -55,3 +55,4 @@ For information about IPQualityScore, see [IPQualityScore documentation](https:/
     * Extended output mapping with examples
     * Added link to API doc in src code
     * Resized logo
+* April 29, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

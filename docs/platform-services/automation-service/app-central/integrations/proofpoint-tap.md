@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/proofpoint-tap.png')} alt="proofpoint-tap" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/proofpoint-tap.png')} alt="Proofpoint TAP icon" width="100"/>
 
-***Version: 1.2  
-Updated: Mar 31, 2023***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Proofpoint Targeted Attack Protection (TAP) integration which protects against and provides additional visibility into phishing and other malicious attacks.
 
@@ -52,3 +52,4 @@ For information about Proofpoint, see the [Proofpoint website](https://www.proof
 
 * February 4, 2022 - First upload
 * March 31, 2023 (v1.1 and v1.2) - Integration refined.
+* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

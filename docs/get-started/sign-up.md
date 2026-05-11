@@ -1,7 +1,7 @@
 ---
 id: sign-up
 title: Sign Up and Activate Your Account
-description: Learn how to sign up with Sumo Logic and create your account.
+description: Sign up for a free 30-day Sumo Logic trial via the website or AWS Marketplace using Google SSO or email to start ingesting and analyzing your data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,7 +10,7 @@ Sumo Logic provides everything you need to conduct real-time forensics and log m
 
 ## Sign up through Sumo Logic
 
-To start your free trial, head to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up). You can register for an account using either Google single sign-on (SSO) or your email address.
+To start your free trial, head to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up/). You can register for an account using either Google single sign-on (SSO) or your email address.
 
 ### Register using Google SSO
 

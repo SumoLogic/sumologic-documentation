@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/netskope-v2.png')} alt="netskope" width="100"/>
 
-***Version: 1.2  
-Updated: Nov 5, 2024***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Netskope provides unrivaled visibility and real-time data and threat protection when accessing cloud services, websites, and private apps from anywhere, on any device.
 
@@ -45,13 +45,13 @@ Follow the steps below to create a role with the required function scope and obt
       - Administration  
          - Audit Log(View)
       - Objects
-         - URL List(Manage)<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/Netskope_Role_Configuration.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="700"/>     
+         - URL List(Manage)<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/Netskope_Role_Configuration.png')} style={{border:'1px solid gray'}} alt="URL list" width="700"/>     
    1. Click **Save**.
 1. Create or access a service account:
    1. In the same section, click on the **Administrators** tab.  
    1. Select **Service Account**.
-   1. Select the **Role** created in the last step.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/Netskope_ServiceAccount_Creation.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="600"/>     
-1. Copy the generate service account token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/Netskope_API_Token.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="400"/>     
+   1. Select the **Role** created in the last step.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/Netskope_ServiceAccount_Creation.png')} style={{border:'1px solid gray'}} alt="Select the role" width="600"/>     
+1. Copy the generate service account token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/Netskope_API_Token.png')} style={{border:'1px solid gray'}} alt="Service account token" width="400"/>     
    :::warning Important
    Keep this token secure.
    :::
@@ -80,7 +80,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-11.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-11.png')} style={{border:'1px solid gray'}} alt="Netskope configuration dialog" width="400"/>
    
 For information about Netskope RBACv3, see [Netskope RBACv3 configuration](https://docs.netskope.com/en/netskope-rbac-v3-overview).
 
@@ -92,3 +92,4 @@ For information about Netskope RBACv3, see [Netskope RBACv3 configuration](https
 	+ Changed Daemon compatibility
 * November 5, 2024 (v1.2) - Added New action
     + URL List Deploy
+* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

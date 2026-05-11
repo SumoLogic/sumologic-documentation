@@ -2,8 +2,7 @@
 id: mobot
 title: Sumo Logic Mobot
 sidebar_label: Mobot ✨
-# Edit description to include QA and KA
-description: Accelerate troubleshooting with Mobot, Sumo Logic's AI-powered assistant. Ask questions in plain English to generate log queries (Query Agent) or get help learning the platform (Knowledge Agent).
+description: Accelerate troubleshooting and platform learning with Mobot, Sumo Logic's AI-powered conversational assistant. Ask questions in plain English to analyze log data or get answers sourced from official documentation.
 keywords:
   - copilot
   - mobot
@@ -11,6 +10,7 @@ keywords:
   - ai
   - machine learning
   - ml
+  - dojo ai
 ---
 
 import Iframe from 'react-iframe';
@@ -208,7 +208,7 @@ Query Agent automatically visualizes your data. For example, a query like "Top i
 
 Select your preferred chart type, such as **Table**, **Bar**, **Column**, or **Line** view to visualize your results. You can also click **Add to Dashboard** to export an AI-generated dashboard for root cause analysis.
 
-<img src={useBaseUrl('img/search/mobot/chart-types.png')} alt="Mobot chart types" style={{border: '1px solid gray'}} width="500" />
+<img src={useBaseUrl('img/search/mobot/add-to-dashboard.png')} alt="Mobot add to dashboard button" style={{border: '1px solid gray'}} width="500" />
 
 The following rules are used to deduce chart type:
 * If both latitude and longitude fields exist, it returns a MAP chart type.
@@ -266,7 +266,7 @@ Prerequisites:
 To view Query Agent queries:
 1. Open **Log Search**.
 1. Use the following query:
-   ```sql
+   ```sumo
    _view=sumologic_search_usage_per_query
    | where query_type in ("Query Agent")
    | count user_name, query
@@ -370,7 +370,7 @@ Query Agent querying is compatible with JSON logs, partial JSON logs, and unstru
 
 To retrieve a list of `_sourceCategories` with JSON data, use the following query:
 
-```sql
+```sumo
 _sourceCategory=* "{" "}"
 | limit 10000 | logreduce keys noaggregate
 | count by _sourceCategory, _schema
@@ -398,7 +398,7 @@ If you're on a [tiered pricing](/docs/manage/partitions/data-tiers/searching-dat
 
 * Query Agent searches across *continuous data tiers only*, unless otherwise specified.
 * To query a specific tier, include the `_dataTier` field in your prompt. For example, to search the Infrequent tier:
-   ```sql
+   ```sumo
    _dataTier=Infrequent
    ```
 

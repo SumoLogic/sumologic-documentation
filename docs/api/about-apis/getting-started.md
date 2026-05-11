@@ -7,7 +7,7 @@ description: Authenticate and connect to Sumo Logic APIs. Learn how to set up ac
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/security-and-compliance.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/icons/security/security-and-compliance.png')} alt="Security and Compliance icon" width="40"/>
 
 This guide describes API authentication and the Sumo Logic endpoints to use for your API client.
 
@@ -82,7 +82,7 @@ This would yield a Base64 encoded string `QWxhZGRpbjpPcGVuU2VzYW1l` that is used
 
 ## Sumo Logic endpoints by deployment and firewall security
 
-<img src={useBaseUrl('img/icons/operations/firewall.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/firewall.png')} alt="Firewall icon" width="50"/>
 
 Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created.
 

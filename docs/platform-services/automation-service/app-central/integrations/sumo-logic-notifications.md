@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-notifications.png')} alt="sumo-logic-notifications" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-notifications.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.2  
-Updated: Mar 4, 2024***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Integration with Sumo Logic platform for monitors and Slack Notification.
 
@@ -69,3 +69,4 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * September 22, 2023 - First upload
 * October 18, 2023 (v1.1) - Updated **Assess Alert Status** Action (Updated the Scheduled input to be dynamically set)
 * March 4, 2024 (v1.2) - Updated code for compatibility with Python 3.12
+* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

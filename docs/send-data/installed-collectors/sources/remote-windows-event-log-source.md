@@ -1,7 +1,7 @@
 ---
 id: remote-windows-event-log-source
 title: Remote Windows Event Log Source
-description: Collect Windows event logs from a remote machine.
+description: Configure a Remote Windows Event Log Source to collect Windows event logs from multiple remote Windows Server 2012+ systems using a single Sumo Logic Collector.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -24,6 +24,9 @@ To configure a remote Windows Event Log Source:
 1. Select the **Windows Event Log** source.<br/><img src={useBaseUrl('img/send-data/windows-event-log-source-icon.png')} alt="Windows event log source icon" style={{border: '1px solid gray'}} width="100" />
 1. Choose **Remote** for **Type of Windows Event Source**.
 1. (Available in version 19.361-3+) Check the **Domain Controller Mode** checkbox to set the Source as a part of Windows Active Directory Inventory (AD). The Source will detect any (potentially many) domain controllers on the AD network. Each domain controller contains an event log that includes a security log. The Source connects to each domain controller’s security log and begins monitoring events.<br/><img src={useBaseUrl('img/send-data/DCM.png')} alt="Domain Controller Mode" style={{border: '1px solid gray'}} width="500" />
+  :::note
+**Domain Controller Mode** is available for OpenTelemetry collectors using the custom YAML source template. [Learn more](/docs/send-data/opentelemetry-collector/remote-management/source-templates/customyaml/#configure-domain-controller-mode-for-windows-ad-event-collection).
+  :::
 1. Set the following:
    * **Name.** Type the name you'd like to display for this source in Sumo Logic. 
    * **Description.** Optional description.
@@ -34,8 +37,8 @@ To configure a remote Windows Event Log Source:
    * **Source Category.** Enter a string to tag the logs collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](#configuring-sourcecategory-using-variables) below.
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
    * **Windows Domain.** Type the name of the Windows domain, the username for this host, and the password. 
    * **Event Format**. Select how you want your event logs formatted:<br/><img src={useBaseUrl('img/send-data/JSON-format-name-update.png')} alt="JSON format name update" style={{border: '1px solid gray'}} width="500" />
      * **Collect using legacy format**. Events retain their default text format from Windows.

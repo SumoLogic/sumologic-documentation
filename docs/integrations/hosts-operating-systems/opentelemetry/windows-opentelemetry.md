@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The Sumo Logic app for Windows allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon. In addition to that, our Windows app provides insight into your Windows system's operation and events so that you can better manage and maintain your environment.
 
@@ -98,7 +98,7 @@ If you receive an error during installation that includes the message `failed to
 
 ## Sample metrics message
 
-```sql
+```sumo
 {
 	"queryId":"A",
 	"_source":"windows-otel-metric",
@@ -135,7 +135,7 @@ sumo.datasource=windows host.name={{host.name}} cpu=cpu0  metric=system.cpu.uti
 
 This is a sample log query from the **System Restarts** panel in the **Windows - Overview** dashboard.
 
-```sql title="Log Query String"
+```sumo title="Log Query String"
 %"sumo.datasource"=windows  "\"channel\":\"Security\""
 | json "event_id", "computer", "message", "channel" as event_id_obj, host.name, msg_summary, channel nodrop 
 | json field=event_id_obj "id" as event_id

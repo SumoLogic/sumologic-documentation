@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Backup 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-backup.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-backup.png')} alt="Azure Backup icon" width="50"/>
 
 The [Azure Backup](https://learn.microsoft.com/en-us/azure/backup/backup-overview) service provides simple, secure, and cost-effective solutions to back up your data and recover it from the Microsoft Azure cloud. This integration helps you in getting rich insights on your backups across your entire backup estate.
 

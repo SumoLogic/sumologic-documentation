@@ -7,7 +7,7 @@ description: The Data Volume for MSSP app provides you with a summary and detail
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="Volume View icon" width="75"/>
 
 The Data Volume for MSSP app provides you with a summary and detailed views of data usage volume for child orgs under a MSSP org by data type, tier, category, collector, source name, and hosts via predefined searches and dashboards.
 

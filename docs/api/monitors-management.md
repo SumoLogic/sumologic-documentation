@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/alerts.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/icons/alerts.png')} alt="Alerts icon" width="40"/>
 
 The Monitor Management API allows you to manage Monitors from HTTP endpoints. Monitors continuously query your data to monitor and send notifications when specific events occur. For more information, see [Monitors](/docs/alerts/monitors/).
 

@@ -18,7 +18,7 @@ Tue Aug 15 23:30:09 %ASA-6-302016: Teardown UDP connection 40 for outside:44.44.
 
 **Parsing Rule:**
 
-```sql
+```sumo
 extract "%[A-Z]{3}-(?<severity>\d)-(?<msg_code>\d{6}):(?<action>.+)$" nodrop
 | extract " duration (?<duration>[\d:]+) bytes (?<bytes>\d+)" nodrop
 | extract "(?<connection_count>\d+ in use, \d+ most used)" nodrop

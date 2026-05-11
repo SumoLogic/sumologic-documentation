@@ -7,7 +7,7 @@ description: The VMware Workspace ONE app for Sumo Logic helps security analysts
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="vmware-workspace-one-logo" width="50" />
+<img src={useBaseUrl('img/send-data/vmware_workspace_one.png')} alt="VMware Workspace ONE logo" width="50" />
 
 The Sumo Logic app for VMware Workspace ONE helps security analysts in monitoring device compliance, encryption, and overall security status. It provides dashboards that display non-compliant or compromised devices, along with data encryption deficiencies. Additionally, geolocation panels track device locations and identify instances of roaming in restricted areas. 
 
@@ -154,7 +154,7 @@ This app uses Sumo Logic’s [VMware Workspace ONE Source](/docs/send-data/hoste
     
 ## Sample queries
 
-```sql title="Total Devices"
+```sumo title="Total Devices"
 _sourcecategory = "VMWare"
 | json  "Ownership", "UserEmailAddress", "IsDeviceDNDEnabled", "LocationGroupName", "Imei", "SystemIntegrityProtectionEnabled", "DeviceFriendlyName", "ProcessorArchitecture", "IsRoaming", "ComplianceStatus", "UserName", "LastComplianceCheckOn", "IsDeviceLocatorEnabled", "HostName", "IsCloudBackupEnabled", "LastEnrolledOn", "DeviceReportedName", "SerialNumber", "IsActivationLockEnabled", "CompromisedStatus", "OperatingSystem", "Model", "DataProtectionStatus", "SecurityPatchDate", "LocalHostName", "IsSupervised", "Platform", "LocationGroupId.Name", "OSBuildVersion", "TotalPhysicalMemory", "OEMInfo", "LastCompromisedCheckOn", "UserId.Uuid", "UserId.Name", "EnrollmentStatus", "DataEncryptionYN" as ownership,user_email, is_dnd_enabled, location_group_name, imei, is_system_protection_enabled, device_name, architecture, is_roaming, compliance_status, user_name, last_compliance_checked_on, is_device_location_enabled, hostname, is_cloud_backup_enabled, last_enrolled_on, device_reported_name, serial_number, is_activation_lock_enabled, compromised_status, os, model, data_protection_status, security_patch_date, local_hostname, is_supervised, platform, location_groupid_name, os_build_version, total_physical_mem, oem_info, last_compromised_checked_on, uuid, user_name1, entrollment_status, data_encryption nodrop
 | json "DeviceNetworkInfo[0].IPAddress" as ip nodrop
@@ -196,7 +196,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **VMware Workspace ONE - Overview** dashboard provides valuable insights into various security and compliance aspects. It displays the device information that has compromised statuses, gaps in data encryption, and device compliance. This dashboard provides insights into non-compliant devices and users, compromised devices and users, and non-data encrypted devices and users. Additionally, the geolocation panels provide a clear view of device locations and reveal any instances of roaming in restricted regions.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/VMWare+Workspace+ONE/VMWare+Workspace+ONE+-+Overview.png' alt="VMware-Workspace-ONE-Overview" />
+The **VMware Workspace ONE - Overview** dashboard provides valuable insights into various security and compliance aspects. It displays the device information that has compromised statuses, gaps in data encryption, and device compliance. This dashboard provides insights into non-compliant devices and users, compromised devices and users, and non-data encrypted devices and users. Additionally, the geolocation panels provide a clear view of device locations and reveal any instances of roaming in restricted regions.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/VMWare+Workspace+ONE/VMWare+Workspace+ONE+-+Overview.png' alt="VMware Workspace ONE Overview" />
 
 ## Create monitors for the VMware Workspace ONE app
 

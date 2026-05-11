@@ -7,7 +7,7 @@ description: The Amazon VPC (Virtual Private Cloud) Flow - Cloud Security Monito
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_AWS_VPCFlow.png')} alt="Thumbnail icon" width="70"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_AWS_VPCFlow.png')} alt="Security Monitoring AWS VPC Flow icon" width="70"/>
 
 The Amazon VPC (Virtual Private Cloud) Flow - Cloud Security Monitoring and Analytics app thoroughly assess Amazon VPC Flow logs to gain a better understanding of your environment and associated traffic patterns. Dig deep into the data, broken down by access levels, group creation, etc.
 
@@ -40,7 +40,7 @@ This section has instructions for collecting logs for the Amazon VPC Flow Logs a
 
 The diagram below illustrates the collection process for Amazon VPC Flow Logs. VPC is enabled to send logs to Amazon CloudWatch. A Lambda function subscribes to a CloudWatch Log Group to obtain the flow logs, and then sends the data on to a Sumo Logic HTTP Source on a hosted collector. The AWS resources are created by a Sumo-provided CloudFormation template.
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWSCloudWatch-Collection.png')} alt="AWSCloudWatch-Collection"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWSCloudWatch-Collection.png')} alt="AWSCloudWatch Collection"/>
 
 
 ### Step 1: Enable Amazon VPC Flow Logs

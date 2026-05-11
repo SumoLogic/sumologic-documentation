@@ -10,7 +10,7 @@ description: Learn how to collect audit logs and network activity data from Zero
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="zero-networks-icon" width="40" />
+<img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Zero Networks icon" width="40" />
 
 Zero Networks is a cybersecurity company that provides cloud-based security solutions for your networks and endpoints. Segment is a solution that aims to provide comprehensive network security by implementing zero-trust principles. With Segment, Zero Networks provides a cloud-based platform that allows you to create micro-segments across the network. These micro-segments are small, isolated portions of the network that are tightly controlled and can only be accessed by authorized users and devices.
 
@@ -31,7 +31,7 @@ The Zero Networks Segment source requires you to provide the API key and Network
 - (Optional) Follow the below steps to create Network Activity Filters:
   1. Go to **Activities** page.
   1. Under **Network** tab, apply the required filters.
-  1. Copy the filters from the URL.<br/><img src={useBaseUrl('img/send-data/filters.png')} alt="zero-networks-filters" width="700" />
+  1. Copy the filters from the URL.<br/><img src={useBaseUrl('img/send-data/filters.png')} alt="Zero networks filters" width="700" />
 
 ### Source configuration
 
@@ -44,8 +44,8 @@ To configure a Zero Networks Segment Source:
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. Enter the **API Key** for authorization collected from the Zero Networks platform.
 1. Select **Collect Network Activity Data**, to collect network activity data.
 1. (Optional) For **Network Activity Filters**, enter the filters you want to apply for network activity data collected from the Zero Networks platform.

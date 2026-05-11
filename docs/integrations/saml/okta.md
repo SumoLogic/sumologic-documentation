@@ -7,7 +7,7 @@ description: The Sumo Logic app for Okta helps you monitor the admin actions, fa
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Okta icon" width="75"/>
 
 Okta provides secure connections between people and your applications on any device through identity management service built for the cloud. The Sumo Logic app for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta. The app consists of dashboards that give you visibility into the applications, accesses, user events, and Multi-Factor Authentication (MFA).
 
@@ -137,7 +137,7 @@ The Sumo Logic collector uses Okta System Log API to get the logs of Okta System
 
 ### Sample queries
 
-```sql title="Details of Applications Deleted"
+```sumo title="Details of Applications Deleted"
 _sourceCategory = "okta" "application.lifecycle.delete"
 | json field=_raw "eventType" as event_type
 | where event_type = "application.lifecycle.delete"
@@ -159,7 +159,7 @@ _sourceCategory = "okta" "application.lifecycle.delete"
 ```
 
 
-```sql title="Details of MFA Deactivate Event"
+```sumo title="Details of MFA Deactivate Event"
 _sourceCategory = "okta" "user.mfa.factor.deactivate"
 | json field=_raw "eventType" as event_type
 | where event_type = "user.mfa.factor.deactivate"
@@ -237,7 +237,7 @@ Shows the details of administrative actions such as the geolocation of applicati
 
 **Connect AD Agent to Okta.** See the details of connect AD agent to Okta such as the Okta user ID, outcome result, display message, and count, in the last 24 hours.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-AdministrativeActions.png')} alt="Okta-AdministrativeActions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-AdministrativeActions.png')} alt="Okta Administrative Actions" />
 
 
 ### Application Access
@@ -264,7 +264,7 @@ Shows the details of accesses by different applications, the location of logins,
 
 **Outlier in Failed Application Access by User**. See the outlier in the failed accesses in the last three days by user ID and count statistics displayed in a table.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-ApplicationAccess.png')} alt="Okta-AdministrativeActions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-ApplicationAccess.png')} alt="Okta Administrative Actions" />
 
 ### Failed Login Activity
 
@@ -286,7 +286,7 @@ Shows the details of failed logins to Okta such as the geolocation, country, sta
 
 **App Login**. See the breakdown of failed logins by applications for the last three days on a pie chart.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-FailedLoginActivity.png')} alt="Okta-AdministrativeActions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-FailedLoginActivity.png')} alt="Okta Administrative Actions" />
 
 ### Successful Login Activity
 
@@ -308,7 +308,7 @@ Shows the details of successful logins to Okta such as the device, browser, coun
 
 **App Login**. See the breakdown of successful logins by applications for the last three days on a pie chart.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-SuccessfulLoginActivity.png')} alt="Okta-AdministrativeActions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-SuccessfulLoginActivity.png')} alt="Okta Administrative Actions" />
 
 ### User Activity  
 
@@ -332,7 +332,7 @@ Shows the details of user activity such as the geolocation, top 10 users, user e
 
 **User Account Lock**. See the details of locked user accounts in the last 24 hours such as the actor, actor ID, outcome result, displayed message, and count, shown in a table.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-UserActivity.png')} alt="Okta-AdministrativeActions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-UserActivity.png')} alt="Okta Administrative Actions" />
 
 ### User Authentication and MFA
 
@@ -350,7 +350,7 @@ Shows the details of user authentication and Multi-Factor Authentication (MFA) a
 
 **User MFA Activity.** See the details of user MFA activities such as the event type, result, reason, user ID, username, and count, in the last 24 hours, displayed in a table.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-UserAuthenticationAndMFA.png')} alt="Okta-AdministrativeActions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-UserAuthenticationAndMFA.png')} alt="Okta Administrative Actions" />
 
 ## Upgrade/Downgrade the Okta app (Optional)
 

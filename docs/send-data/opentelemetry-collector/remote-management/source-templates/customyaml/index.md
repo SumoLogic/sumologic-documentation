@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="30"/>
 
 The Custom YAML source template lets you create and manage source templates through a streamlined YAML editor, offering a flexible and efficient way to define how data is collected and ingested into Sumo Logic. It generates an OpenTelemetry configuration from a provided YAML file and pushes it to a remotely managed OpenTelemetry collector (abbreviated as otelcol). This enables you to directly manage collector configurations in YAML format and seamlessly ingest OpenTelemetry data into Sumo Logic.
 
@@ -71,6 +71,16 @@ Follow the steps below to configure the Custom YAML source template required for
 1. (Optional) Enter the **Description** for the source template.
 1. Under **YAML Configuration**, provide your OpenTelemetry configurations in YAML format or select an existing file from the **Select YAML Template** dropdown.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/configure-source.png')} alt="source template page" style={{border:'1px solid gray'}} width="90%" />
 
+#### Configure domain controller mode for Windows AD event collection
+
+You can set the `discover_domain_controllers: true` in the YAML to include the source in the Windows Active Directory (AD) inventory. The source then automatically discovers all domain controllers on the AD network, connects to each controller's event log, and begins monitoring events.
+
+Follow the steps below to configure the custom YAML source template to collect events from all domain controllers on the collector host:
+
+1. Enter the **Name** of the source template. For example, `windowseventlog-receiver`.
+1. (Optional) Enter the **Description** for the source template.
+1. Under **YAML Configuration**, provide your OpenTelemetry configurations in YAML format or select an existing file from the **Select YAML Template** dropdown.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/configure-window-event-log-receiver.png')} alt="configure-window-event-log-receiver-otel" style={{border:'1px solid gray'}} width="90%" />
+
 ### Step 3: Push the source template to the remotely managed collectors
 
 :::info
@@ -79,11 +89,11 @@ A new source template will always be created with the latest version of the sour
 
 Follow the below steps to create a data collection configuration to gather the required logs and link them to all the collectors with the help of collector tags.
 
-1. Under **Link Collectors**, you will have the option to link the collectors using the collector name or by adding collector tags to find the group of collectors (for example, `application = Apache`).<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="link-collectors" style={{border: '1px solid gray'}} width="800" />
+1. Under **Link Collectors**, you will have the option to link the collectors using the collector name or by adding collector tags to find the group of collectors (for example, `application = Apache`).<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="Link collectors" style={{border: '1px solid gray'}} width="800" />
 1. Navigate to **Preview Collector(s**) to view collector compatibility details and see which collectors will be linked to the newly created source template.
 If collectors are mapped using both **Collector Name** and **Collector Tags**, separate preview sections will be shown for each mapping type.<br/><img src={useBaseUrl('img/send-data/preview-collectors1.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800" /><br/><img src={useBaseUrl('img/send-data/preview-collectors2.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800" />
     :::note
-    Incompatible version conflict will be found if your collectors cannot be linked to the source template due to version incompatibility or unsupported operating system. To move to the next step, make sure you update the collect version of the incompatible collector.<br/><img src={useBaseUrl('img/send-data/incompatible-collectors.png')} alt="incompatible-collectors" style={{border:'1px solid gray'}} width="700"/>
+    Incompatible version conflict will be found if your collectors cannot be linked to the source template due to version incompatibility or unsupported operating system. To move to the next step, make sure you update the collect version of the incompatible collector.<br/><img src={useBaseUrl('img/send-data/incompatible-collectors.png')} alt="Incompatible collectors" style={{border:'1px solid gray'}} width="700"/>
     :::
 1. Click **Next** to complete source template creation. In the background, the system will apply the configuration to all the compatible linked collectors and starts collecting the respective telemetry data from the remote host.
 1. Apply the source template to the linked collectors and manage or update it as needed.

@@ -1,7 +1,7 @@
 ---
 id: mcp-server
-title: Sumo Logic MCP Server (Closed Preview)
-description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents from VS Code or Claude Code CLU.
+title: Sumo Logic MCP Server
+description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents from VS Code or Claude Code CLI.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,15 +12,15 @@ import TabItem from '@theme/TabItem';
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Closed Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
 
 :::info
-This feature is in closed preview. For more information, contact your Sumo Logic account executive.
+This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
 :::
 
 The Sumo Logic MCP server lets external copilots and proprietary models securely query logs, investigate Cloud SIEM insights, manage alerts and dashboards, work with existing Dojo AI agents, and perform user management — all using natural language from your IDE or chat platform.
 
-During closed preview, the following MCP clients are supported:
+During this preview phase, we support the following MCP clients:
 * [VS Code + GitHub Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)
 * [Claude Code CLI](https://code.claude.com/docs/en/quickstart)
 
@@ -30,7 +30,7 @@ During closed preview, the following MCP clients are supported:
 * **Sumo Logic Administrator role**. Required to create service accounts and OAuth clients. If you're unsure whether you are an administrator, you can find your role in your [Preferences](/docs/get-started/onboarding-checklists/).
 * **Sumo Logic personal access key**. Used to authenticate API calls during setup. See [Access Keys](/docs/manage/security/access-keys/) to learn more. We recommend setting your access key scopes to **Default** (all permissions) so that API requests required for setup are not blocked.
 * **An MCP-compatible client**. Currently, [VS Code + GitHub Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat) and [Claude Code Terminal CLI](https://code.claude.com/docs/en/quickstart) are the only supported clients.
-   * **For VS Code**. You'll need GitHub account with GitHub Copilot access. A free GitHub Copilot plan is available with limited monthly requests.
+   * **For VS Code**. You'll need a GitHub account with GitHub Copilot access. A free GitHub Copilot plan is available with limited monthly requests.
    * **For Claude**. You'll need a paid Claude subscription or Anthropic Console account.
 
 
@@ -109,58 +109,27 @@ UI support for this step is not yet available. You'll need to use the Sumo Logic
    This prevents privilege escalation. If the service account's roles are restricted in the future, the OAuth client's effective permissions are automatically reduced as well. If a requested scope is not included in the service account's roles, it will be silently excluded from the OAuth client's effective permissions.
 
    </details>
-1. [Create a new OAuth client](https://api.sumologic.com/docs/#operation/createOAuthClient) using the `"scopes"` from the previous step. `"runAsId"` will be the `"id"` of the [service account you just created](#step-1-create-a-service-account). In the response, note the `"clientId"` and `"clientSecret"`. These are your OAuth client credentials, which you'll use to generate an access token in the next step.
-   <Tabs
-     className="unique-tabs"
-     defaultValue="request"
-     values={[
-       {label: 'Example request', value: 'request'},
-       {label: 'Example response', value: 'response'},
-     ]}>
-
-   <TabItem value="request">
-
-   This example grants the MCP agent the ability to query logs and metrics, understand schema/fields, read saved content, export results.
-
+1. [Create a new OAuth client](https://api.sumologic.com/docs/#operation/createOAuthClient) using the `scopes` you selected in the previous step. `"runAsId"` will be the `"id"` of the service account you created [in step 1](#step-1-create-a-service-account).
    ```bash title="Example request"
    curl -u "<access-id>:<access-key>" \
-     https://api.sumologic.com/api/v1/oauth/clients \
-     -H 'Content-Type: application/json' \
+     https://api.sumologic.com/api/v1/oauth/clients
+     -H "Content-Type: application/json" \
      -d '{
-       "name": "My OAuth Client",
-       "description": "OAuth Client for MCP",
-       "runAsId": "0000000000C4661B",
-       "grantTypes": ["client_credentials"],
-       "scopes": ["runLogSearch", "runMetricsQuery", "viewLibrary", "manageCollectors", "manageFieldExtractionRules", "manageScheduledViews", "managePartitions", "viewMonitorsV2", "manageSlos"]
+       "type": "ClientCredentialsClient",
+       "name": "<name-for-your-oauth-client>",
+       "description": "<description-for-your-oauth-client>",
+       "scopes": [<comma-separated-list-of-scopes>],
+       "runAs": {
+         "type": "ServiceAccount",
+         "runAsId": "<your-service-account-id>"
+       }
      }'
    ```
-
-   </TabItem>
-   <TabItem value="response">
-
-   ```json title="Example response highlighting client ID and client secret" {2,13}
-   {
-     "clientId": "zVplCFHcpTDwtktBIQmFI2K6s9HEo4HAtcQD1f1M5eQ",
-     "createdAt": "2025-10-16T09:10:00.000Z",
-     "createdBy": "0000000006743FDD",
-     "modifiedAt": "2025-10-16T09:10:00.000Z",
-     "modifiedBy": "0000000006743FDD",
-     "name": "My OAuth Client",
-     "description": "OAuth Client for MCP with basic permissions",
-     "runAsId": "0000000000C4661B",
-     "grantTypes": ["client_credentials"],
-     "scopes": ["runLogSearch", "runMetricsQuery", "viewLibrary", "manageCollectors", "manageFieldExtractionRules", "manageScheduledViews", "managePartitions", "viewMonitorsV2", "manageSlos"]
-     "effectiveScopes": ["runLogSearch", "runMetricsQuery", "viewLibrary", "manageCollectors", "manageFieldExtractionRules", "manageScheduledViews", "managePartitions", "viewMonitorsV2", "manageSlos"]
-     "clientSecret": "EqyuIvsnae0LnMC2mbJArysXcmp0LuBsRgmyeLtSkFPEzSxdvpYQMDajn_8buaDj"
-   }
-   ```
-
-   </TabItem>
-   </Tabs>
+   In the response, note the `"clientId"` and `"clientSecret"`. These are your OAuth client credentials, which you'll use to generate an access token in the next step.
 
 ### Step 3: Generate an access token
 
-In this step, you'll request an OAuth access token from the token endpoint using your client credentials (`"clientId'` and `"clientSecret"`) from the previous step. If applicable, replace `service.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+In this step, you'll request an OAuth access token from the token endpoint using your client credentials (`"clientId"` and `"clientSecret"`) from the previous step. If applicable, replace `service.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 #### Option A: All permissions
 
@@ -187,7 +156,7 @@ curl -X POST https://service.sumologic.com/oauth2/token \
 
 #### Token expiration and reconnection
 
-Access tokens expire after 30 minutes. Your MCP client must refresh the token automatically or prompt you to generate a new one. See the client-specific sections below to configure your client and set the token as a Bearer token to authorize requests.
+Access tokens expire after 12 hours. Your MCP client must refresh the token automatically or prompt you to generate a new one. See the client-specific sections below to configure your client and set the token as a Bearer token to authorize requests.
 
 :::tip
 The token endpoint URL varies by [deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). To discover it programmatically (for example, in an automation script), query the Authorization Server Metadata for your deployment using `curl https://service.sumologic.com/.well-known/oauth-authorization-server`. The response includes the `token_endpoint` and other supported OAuth parameters.
@@ -206,11 +175,11 @@ curl -H "Authorization: Bearer <access-token>" \
 
 ## Configure in Claude Code (Terminal/CLI)
 
-Claude Code CLI supports two connection options. Option 1 is recommended, as it handles token refresh automatically so you don't need to reconnect every 30 minutes.
+Claude Code CLI supports two connection options. Option 1 is recommended, as it handles token refresh automatically so you don't need to reconnect every 12 hours.
 
 | | Option 1: stdio + mcp-proxy | Option 2: HTTP + Bearer token |
 | :--- | :--- | :--- |
-| **Token refresh** | Automatic | Manual — every 30 minutes |
+| **Token refresh** | Automatic | Manual — every 12 hours |
 | **Additional requirement** | `uv` | None |
 | **Best for** | Ongoing use | Quick setup and testing |
 
@@ -220,7 +189,7 @@ If Claude Code repeatedly asks about authentication when invoking MCP tools, you
 
 ### Option 1: stdio + mcp-proxy (recommended)
 
-This option uses `mcp-proxy` to handle token refresh automatically, so you don't need to reconnect every 30 minutes.
+This option uses `mcp-proxy` to handle token refresh automatically, so you don't need to reconnect every 12 hours.
 
 #### Setup
 
@@ -235,6 +204,9 @@ This option uses `mcp-proxy` to handle token refresh automatically, so you don't
    export SUMOLOGIC_OAUTH_CLIENT_SECRET="<your-client-secret>"
    export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"
    ```
+   :::tip
+   `mcp.sumologic.com/mcp` defaults to the us1 deployment. OAuth tokens are deployment-bound, so if your org is on a different deployment, replace this with the deployment-specific form: `mcp.<deployment>.sumologic.com/mcp` (for example, `mcp.us2.sumologic.com/mcp`). See [Sumo Logic endpoints by deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the full list.
+   :::
 1. Register the MCP server. Choose a scope.
    * **User scope** (available in all directories, recommended).
      ```bash
@@ -287,6 +259,9 @@ This option uses `mcp-proxy` to handle token refresh automatically, so you don't
    export SUMOLOGIC_OAUTH_TOKEN_URL="https://service.sumologic.com/oauth2/token"
    export SUMOLOGIC_OAUTH_ACCESS_TOKEN="$(get_sumologic_oauth_token)"
    ```
+   :::tip
+   `mcp.sumologic.com/mcp` defaults to the us1 deployment. OAuth tokens are deployment-bound, so if your org is on a different deployment, replace this with the deployment-specific form: `mcp.<deployment>.sumologic.com/mcp` (for example, `mcp.us2.sumologic.com/mcp`). See [Sumo Logic endpoints by deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the full list.
+   :::
 1. Register the MCP server. Choose a scope.
    * **User scope** (available in all directories, recommended).
        ```bash
@@ -316,7 +291,11 @@ This option uses `mcp-proxy` to handle token refresh automatically, so you don't
 
 #### Token expiration and reconnection
 
-OAuth access tokens expire after 30 minutes. When the token expires, Claude Code will lose connection to the MCP server. You may see an error: `Incompatible auth server: does not support dynamic client registration`.
+OAuth access tokens expire after 12 hours. When the token expires, Claude Code will lose connection to the MCP server. You may see an error: `Incompatible auth server: does not support dynamic client registration`.
+
+:::note
+If you see a `403` error with message `insufficient_scope - The request requires higher privileges than provided by the access token`, the cause may be a **deployment mismatch** rather than a missing permission. This happens when the OAuth token was generated for one deployment but `SUMOLOGIC_MCP_URL` points to a different one. Verify that your `SUMOLOGIC_MCP_URL` and `SUMOLOGIC_OAUTH_TOKEN_URL` use the same deployment.
+:::
 
 To reconnect, run the following in your terminal each time you start a new session to ensure a fresh token:
 ```bash
@@ -399,6 +378,9 @@ If you need to re-register the server with a new token:
    }
    ```
    If you've previously configured other MCP servers here, this should be an additive process (that is, do not delete existing ones you still intend to use).
+   :::tip
+   `mcp.sumologic.com/mcp` defaults to the us1 deployment. OAuth tokens are deployment-bound, so if your org is on a different deployment, replace the `"url"` value with the deployment-specific form: `mcp.<deployment>.sumologic.com/mcp` (for example, `mcp.us2.sumologic.com/mcp`). See [Sumo Logic endpoints by deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for the full list.
+   :::
 1. In the **mcp.json** file, click the **Start** button just above `"Sumo Logic MCP server": {`.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-mcp-start.png')} alt="VS Code Start button in mcp.json configuration file" width="600"/>
 1. You'll be prompted in the command palette for an OAuth access token. Enter your [access token](#step-3-generate-an-access-token) there.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-oauth-input.png')} alt="prompt in command palette for OAuth access token" width="600"/>
 1. Confirm that the server shows as **Running**.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-running.png')} alt="prompt in command palette for OAuth access token" width="600"/>
@@ -407,7 +389,12 @@ If you need to re-register the server with a new token:
 
 ### Reconnecting
 
-Access tokens expire in 30 minutes and may also expire after quitting and restarting VS Code. When this occurs:
+Access tokens expire after 12 hours and may also expire after quitting and restarting VS Code. When this occurs:
+
+:::note
+If you see a `403` error with message `insufficient_scope - The request requires higher privileges than provided by the access token`, the cause may be a **deployment mismatch** rather than a missing permission. This happens when the OAuth token was generated for one deployment but the `"url"` in **mcp.json** points to a different one. Verify that both use the same deployment.
+:::
+
 1. You'll see a **Dynamic Client Registration not supported** popup asking for an OAuth client ID. Do NOT provide this. Click **Cancel**.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-dynamic-reg-popup.png')} alt="Dynamic Client Registration not supported popup asking for an OAuth client ID with Cancel button highlighted" width="500"/>
 1. You'll be prompted again for an OAuth client ID in your command palette. Tap **Escape** on your keyboard.<br/><img src={useBaseUrl('img/platform-services/mcp/vscode-esc-clientid.png')} alt="VS Code command palette search with MCP: Open User Configuration highlighted" width="600"/>
 1. [Generate a new access token](#step-3-generate-an-access-token).
@@ -421,14 +408,14 @@ Our MCP server provides access to Sumo Logic through these tool categories:
 * **Utility tools**. Discover relevant tools based on context.
 * **Alerts management**. Search, retrieve, and resolve alerts.
 * **Dashboard management**. Create, retrieve, update, and delete dashboards.
-* **Cloud SIEM Insights**. Get insights, triage information, entities, and status updates.
+* **Cloud SIEM**. Manage insights, detection rules, triage information, entities, and status updates.
 * **Log search**. Create and manage search jobs, retrieve paginated messages and records.
 * **User management**. List users in the organization.
 
 All tools respect your Sumo Logic permission controls and access policies.
 
 :::note
-Tool identifiers are subject to change during the beta period.
+Tool identifiers are subject to change during the preview period.
 :::
 
 ### Utility tools
@@ -469,19 +456,31 @@ Tool identifiers are subject to change during the beta period.
 * `Create a new dashboard called "System Overview" that uses the previous query to power a dashboard panel called "Total Log Count Per Minute"`
 * `Add a second panel called "Error Logs Count Per Minute" that is a similar query but only has logs in it that contain the keyword "error" in them`
 
-### Cloud SIEM Insights
+### Cloud SIEM
+
+#### Insights
 
 | Tool | Description |
 | :--- | :---------- |
-| `GetAllInsights`            | Get all Insights (paginated via token). |
-| `GetInsight`                | Get a single Insight by ID, including signals, artifacts, and entity details. |
-| `GetInsightComments`        | Get comments on an Insight. |
-| `GetInsightHistory`         | Get history of an Insight. |
-| `GetInsightRelatedEntities` | Get involved entities for an Insight. |
-| `GetInsightTriage`          | Get triage info for an Insight. |
-| `GetInsights`               | Get Insights with filtering by severity, status, assignee, entity, confidence, tags, and more. |
-| `UpdateInsightAssignee`     | Update the assignee of an Insight. |
-| `UpdateInsightStatus`       | Update the status of an Insight. |
+| `GetAllInsights`            | Get all insights (paginated via token). |
+| `GetInsight`                | Get a single insight by ID, including signals, artifacts, and entity details. |
+| `GetInsightComments`        | Get comments on an insight. |
+| `GetInsightHistory`         | Get history of an insight. |
+| `GetInsightRelatedEntities` | Get involved entities for an insight. |
+| `GetInsightTriage`          | Get triage info for an insight. |
+| `GetInsights`               | Get insights with filtering by severity, status, assignee, entity, confidence, tags, and more. |
+| `UpdateInsightAssignee`     | Update the assignee of an insight. |
+| `UpdateInsightStatus`       | Update the status of an insight. |
+
+#### Detection Rules
+
+| Tool | Description |
+| :--- | :---------- |
+| `CreateTemplatedMatchRule` | Create a new match rule. |
+| `CreateThresholdRule`      | Create a new threshold rule. |
+| `GetRule`                  | Get a single rule by ID with optional tuning expressions. |
+| `GetRules`                 | Get rules with filtering by category, enabled status, rule source, score, severity, stream, tags, and more. |
+| `UpdateRuleEnabled`        | Enable or disable a detection rule. |
 
 #### Sample prompts
 
@@ -491,6 +490,11 @@ Tool identifiers are subject to change during the beta period.
 * `Add a comment to this insight: "This warrants deeper investigation"`
 * `Show recommended next steps for INSIGHT-1234`
 * `Update INSIGHT-1234 status to In Progress`
+* `Create a threshold rule that fires when more than 10 failed logins occur within 5 minutes`
+* `Show me all enabled rules in the authentication category`
+* `Get details for rule ID <id>`
+* `Disable rule <id>`
+* `List all rules that have fired in the last 7 days`
 
 ### Log search
 
@@ -526,51 +530,51 @@ These prompts demonstrate multi-step investigations that chain multiple tools to
 
 ### Triage and investigation
 
-* `Show me all Critical Insights from the last 7 days that are still open, then for each one get the related alerts and tell me which entities appear most frequently.`
+* `Show me all critical insights from the last 7 days that are still open, then for each one get the related alerts and tell me which entities appear most frequently.`
 
-* `Get Insight <id>, show me its signals and involved entities, then run a log search for that IP address in the last 24 hours to find raw events.`
+* `Get insight <id>, show me its signals and involved entities, then run a log search for that IP address in the last 24 hours to find raw events.`
 
-* `Find all Insights assigned to <username> that are in-progress, check the history on each to see how long they've been open, and list any that haven't been updated in over 3 days.`
+* `Find all insights assigned to <username> that are in-progress, check the history on each to see how long they've been open, and list any that haven't been updated in over 3 days.`
 
 ### Threat hunting
 
-* `Search logs for any outbound connections to port 4444 in the last 48 hours, extract the source hostnames, then check if any of those hostnames appear as entities in open Insights.`
+* `Search logs for any outbound connections to port 4444 in the last 48 hours, extract the source hostnames, then check if any of those hostnames appear as entities in open insights.`
 
-* `Find all Insights tagged 'ransomware' or 'lateral-movement' from the past 30 days, get the signals for each, and run a log search aggregating activity by user account involved.`
+* `Find all insights tagged 'ransomware' or 'lateral-movement' from the past 30 days, get the signals for each, and run a log search aggregating activity by user account involved.`
 
-* `Look up all Insights where entity type is 'username' and the value contains 'svc-' (service accounts), then search logs for those accounts' authentication events in the last week.`
+* `Look up all insights where entity type is 'username' and the value contains 'svc-' (service accounts), then search logs for those accounts' authentication events in the last week.`
 
 ### Incident response
 
-* `Get Insight <id>, pull its full signal list and all involved entities, search raw logs for each entity in the last 6 hours, then post a summary comment back to the Insight.`
+* `Get insight <id>, pull its full signal list and all involved entities, search raw logs for each entity in the last 6 hours, then post a summary comment back to the insight.`
 
-* `Find all Insights that were closed as 'False Positive' in the last 30 days, group them by rule ID, and search logs to see if those same patterns are still occurring today.`
+* `Find all insights that were closed as 'False Positive' in the last 30 days, group them by rule ID, and search logs to see if those same patterns are still occurring today.`
 
-* `Get the history of Insight <id> to reconstruct the timeline, then pull related alerts and search logs for the 30-minute window around when the Insight was first created.`
+* `Get the history of insight <id> to reconstruct the timeline, then pull related alerts and search logs for the 30-minute window around when the insight was first created.`
 
 ### Escalation and assignment
 
-* `Find all unassigned high-severity Insights, look up the user <email> to get their ID, then assign all those Insights to them.`
+* `Find all unassigned high-severity insights, look up the user <email> to get their ID, then assign all those insights to them.`
 
-* `Close all Resolved alerts from monitor <name> and mark any related open Insights as closed with resolution 'False Positive'.`
+* `Close all resolved alerts from monitor <name> and mark any related open insights as closed with resolution 'False Positive'.`
 
-* `Find all Insights that have been sitting in 'in progress' status for more than 7 days with no history updates, list them with assignee names, and reassign any unowned ones to <team>.`
+* `Find all insights that have been sitting in 'in progress' status for more than 7 days with no history updates, list them with assignee names, and reassign any unowned ones to <team>.`
 
 ### Situational awareness
 
-* `List all Triggered Critical alerts right now, find related alerts for each, then search logs for the top affected source IP to see what it's been doing.`
+* `List all triggered critical alerts right now, find related alerts for each, then search logs for the top affected source IP to see what it's been doing.`
 
-* `Summarize all Insights created in the last 24 hours: how many per severity, which entities are involved, and who they're assigned to.`
+* `Summarize all insights created in the last 24 hours: how many per severity, which entities are involved, and who they're assigned to.`
 
-* `Show me all Triggered alerts that have related alerts fired within 30 minutes of them, then check if any of those correlated alert clusters have spawned an Insight.`
+* `Show me all triggered alerts that have related alerts fired within 30 minutes of them, then check if any of those correlated alert clusters have spawned an insight.`
 
 ### Entity-centric investigation
 
-* `Given IP address <x.x.x.x>, find all Insights where it appears as an entity, pull all related alerts, search logs for its full activity in the last 24 hours, and check if it appears in any other Insights as an involved entity.`
+* `Given IP address <x.x.x.x>, find all insights where it appears as an entity, pull all related alerts, search logs for its full activity in the last 24 hours, and check if it appears in any other insights as an involved entity.`
 
-* `Find the most active entity by Insight count in the last 14 days, get all its Insights with full signal details, then build a timeline dashboard of its activity.`
+* `Find the most active entity by insight count in the last 14 days, get all its insights with full signal details, then build a timeline dashboard of its activity.`
 
-* `Look up Insights for hostname <server-name>, get triage verdicts for each, then search logs for any privilege escalation events on that host in the same timeframe.`
+* `Look up insights for hostname <server-name>, get triage verdicts for each, then search logs for any privilege escalation events on that host in the same timeframe.`
 
 ### Alert and monitor deep dives
 
@@ -580,23 +584,35 @@ These prompts demonstrate multi-step investigations that chain multiple tools to
 
 ### Cross-tool correlation
 
-* `Find all alerts that fired in the last hour, check if any of them are related to existing open Insights, and for those that aren't — search logs to determine if a new Insight should be escalated manually.`
+* `Find all alerts that fired in the last hour, check if any of them are related to existing open insights, and for those that aren't — search logs to determine if a new insight should be escalated manually.`
 
-* `Compare Insight volume week-over-week: pull Insights from the last 7 days vs the 7 days before that, broken down by severity, and identify any rules that are newly firing this week.`
+* `Compare insight volume week-over-week: pull insights from the last 7 days vs the 7 days before that, broken down by severity, and identify any rules that are newly firing this week.`
 
-* `Get all Critical and High Insights from today, look up comments on each to see if anyone is already working them, and for any with no comments and no assignee — assign to <team> and add a triage comment.`
+* `Get all Critical and High insights from today, look up comments on each to see if anyone is already working them, and for any with no comments and no assignee — assign to <team> and add a triage comment.`
 
 ### Team operations and reporting
 
-* `List all users on the security team, then for each one show how many open Insights are assigned to them and what their oldest unresolved Insight is.`
+* `List all users on the security team, then for each one show how many open insights are assigned to them and what their oldest unresolved insight is.`
 
-* `Generate a weekly report: count Insights by severity and status, show the top 5 most triggered monitors from alerts, and list the 3 most common entity types involved in new Insights.`
+* `Generate a weekly report: count insights by severity and status, show the top 5 most triggered monitors from alerts, and list the 3 most common entity types involved in new insights.`
 
 ### Dashboard and data
 
 * `Search for the top 10 source IPs generating authentication errors in the last hour, then create a dashboard panel showing those results.`
 
-* `Get the current SIEM overview dashboard, add a new panel for open Critical Insights count, and save it.`
+* `Get the current SIEM overview dashboard, add a new panel for open Critical insights count, and save it.`
+
+### Detection rule management
+
+* `List all enabled threshold rules and show me which ones have the highest signal counts in the last 7 days.`
+
+* `Find all rules in the 'lateral-movement' category, check if any are disabled, and enable them.`
+
+* `Create a new match rule that detects SSH brute force attempts by looking for more than 5 failed SSH authentication events from the same source IP within 10 minutes.`
+
+* `Get all rules tagged 'ransomware', check their signal counts, and if any haven't fired in 30 days, disable them and add a comment explaining why.`
+
+* `Find all custom rules (ruleSource = 'custom'), get their details including tuning expressions, and create a summary report of which ones are actively generating insights.`
 
 ## Usage guidance and cost controls
 

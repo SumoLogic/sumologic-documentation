@@ -10,7 +10,7 @@ description: Learn how to configure the Druva Cyber Resilience Cloud-to-Cloud so
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="Druva icon" width="85"/>
 
 The Druva Data Resiliency Cloud provides unified, easy-to-manage data protection for all workloads. Druva’s cyber resilience solutions keep backup data safe, help to prepare for cyber attacks, and automate the process of recovering data.
 
@@ -29,9 +29,9 @@ The Druva Cyber Resilience source provides the ability to fetch realize events g
 In this configuration, you will collect the Base URL from the Druva platform to authorize and authenticate the realize events using Druva Realize Events API. Follow the below steps to get the Base URL for user configuration.
 
 1. Sign in to the [Druva console](https://login.druva.com/login).
-1. Go to the **Administration** menu and click **Druva Cloud Settings** option.<br/> <img src={useBaseUrl('img/send-data/druva-console.png')} style={{border: '1px solid gray'}} alt="druva-console" width="800" />
+1. Go to the **Administration** menu and click **Druva Cloud Settings** option.<br/> <img src={useBaseUrl('img/send-data/druva-console.png')} style={{border: '1px solid gray'}} alt="Druva console" width="800" />
 1. Select the **API Credentials** option.
-1. In the API Credentials page, copy and save the **API Endpoint URL**.<br/> <img src={useBaseUrl('img/send-data/druva-cloud-settings.png')} style={{border: '1px solid gray'}} alt="druva-cloud-settings" width="800" />
+1. In the API Credentials page, copy and save the **API Endpoint URL**.<br/> <img src={useBaseUrl('img/send-data/druva-cloud-settings.png')} style={{border: '1px solid gray'}} alt="Druva cloud settings" width="800" />
 
 ### Source configuration
 
@@ -45,8 +45,8 @@ To configure a Druva Cyber Resilience Source:
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **API Endpoint URL**. Enter the API Endpoint URL collected from the [Druva Cyber Resilience platform](#vendor-configuration).
 1. **Client ID**. Enter your Client ID. To get Client ID, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials#createnewcreds).
 1. **Secret Key**. Enter your Secret Key. To get Secret Key, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials#createnewcreds).

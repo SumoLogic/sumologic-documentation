@@ -469,3 +469,14 @@ Track common issues across multiple audits to identify systemic problems.
 * [Contributing Guide](/docs/contributing)
 * [Doc Templates](/docs/contributing/templates)
 * [Docusaurus Documentation](https://docusaurus.io/docs)
+
+---
+
+## Related commands
+
+`/audit-doc` covers structure, style, links, frontmatter, and required sections. It does not
+check SEO/AEO/GEO signals. For discoverability, run both:
+
+* **`/seo-audit`** — checks title length, description quality, question headings, GEO patterns
+* **`/geo-optimize`** — rewrites content to improve AI citation and search visibility
+* **`/tone-check`** — checks voice and tone against Sumo Logic style rules (standalone voice check)

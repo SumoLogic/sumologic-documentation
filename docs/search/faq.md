@@ -10,7 +10,7 @@ You can group messages together with a user-defined field using the [Sessionize
 
 Here's an example:
 
-```sql
+```sumo
 * | sessionize "Starting stream query with sessionId=*," as sessionId, "*$sessionId *" as (_1, _2), "Search delegate session started, sessionId=$sessionId,"
 ```
 

@@ -11,11 +11,15 @@ description: The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="AWS EC2 icon" width="50"/>
 
 The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint to receive event data from the [EC2 describe instances API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html). It securely stores the required authentication, scheduling, and state tracking information.
 
 For information on how inventory data is used in Cloud SIEM, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
+
+:::note
+Upgrade the CSE AWS EC2 Inventory source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
 
 import TerraformLink from '../../../reuse/terraform-link.md';
 
@@ -62,14 +66,14 @@ To configure a Cloud SIEM AWS EC2 Inventory Source:
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **AWS Access**. The integration is configured for either role based AWS authentication or key based AWS authentication.
-    - **Role Based Access**. AWS Role ARN is required for Role based Access. Use the information provided on the source page to configure the role.<br/><img src={useBaseUrl('/img/send-data/role-based.png')} alt="role-based" style={{border: '1px solid gray'}} width="400"/>
-    - **Key Access**. Enter the IAM user access key ID and secret key you want to use to authenticate collection requests.<br/><img src={useBaseUrl('/img/send-data/key-based.png')} alt="key-based" style={{border: '1px solid gray'}} width="400"/>
+    - **Role Based Access**. AWS Role ARN is required for Role based Access. Use the information provided on the source page to configure the role.<br/><img src={useBaseUrl('/img/send-data/role-based.png')} alt="Role based" style={{border: '1px solid gray'}} width="400"/>
+    - **Key Access**. Enter the IAM user access key ID and secret key you want to use to authenticate collection requests.<br/><img src={useBaseUrl('/img/send-data/key-based.png')} alt="Key based" style={{border: '1px solid gray'}} width="400"/>
 1. **Regions**. Provide a list of AWS regions to query EC2 instances, such as `us-east-2`. Make sure that the selected region is enabled in your AWS account.
    :::note Supported AWS Regions
-   `eu-north-1`, `eu-central-1`, `eu-central-2`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `ap-south-1`, `ap-northeast-1`, `ap-northeast-2`, `ap-southeast-1`, `ap-southeast-2`, `sa-east-1`, `ca-central-1`, `us-east-1`, `us-east-2`, `us-west-1`, and `us-west-2`.
+   `eu-north-1`, `eu-central-1`, `eu-central-2`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `ap-northeast-1`, `ap-northeast-2`, `ap-southeast-1`, `ap-southeast-2`, `sa-east-1`, `ca-central-1`, `us-east-1`, `us-east-2`, `us-west-1`, and `us-west-2`.
    :::
 1. (Optional) The **Polling Interval** is set for 600 minutes by default, you can adjust it based on your needs.
 1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule/).

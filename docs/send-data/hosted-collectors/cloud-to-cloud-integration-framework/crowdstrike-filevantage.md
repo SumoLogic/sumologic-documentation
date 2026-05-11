@@ -10,7 +10,7 @@ description: Learn how to collect file integrity monitoring logs from the CrowdS
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="85"/>
 
 The CrowdStrike FileVantage source will collect CrowdStrike FileVantage logs by querying the API for file changes resource IDs. It will then make another API call using those resource IDs to obtain the file changelogs and ingest them into Sumo Logic.
 
@@ -71,8 +71,8 @@ To configure the CrowdStrike FileVantage Source:
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. In **CrowdStrike Base URL**, choose the region as per your Base URL. See [Region](#region) section to know your region.
 1. In **API Client ID**, enter the Client ID you generated and secured from the [API Client](#api-client-and-api-secret) section.
 1. In **API Client Secret**, enter the Client Secret you generated and secured from the [API Secret](#api-client-and-api-secret) section.

@@ -11,7 +11,7 @@ description: The Kandji Source provides a secure endpoint to receive threat deta
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/kandji-logo.png')} alt="Kandji icon" width="50"/>
 
 Kandji is the Apple device management and security platform that empowers secure and productive global work. With Kandji, Apple devices transform themselves into enterprise-ready endpoints, with all the right apps, settings, and security systems in place. Through advanced automation and thoughtful experiences, Kandji brings much-needed harmony to the way IT, InfoSec, and Apple device users work.
 
@@ -54,8 +54,8 @@ To configure Kandji Source:
 1. Enter a **Name** to display for the Source in Sumo Logic. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. In **Endpoint URL**, enter the endpoint URL collected from the Kandji platform.
 1. In **Bearer Token**, enter the bearer token collected from the Kandji platform.
 1. Select the **Collect Threat Details** checkbox to collect threat data. By default, **Collect Threat Details** checkbox will be selected.

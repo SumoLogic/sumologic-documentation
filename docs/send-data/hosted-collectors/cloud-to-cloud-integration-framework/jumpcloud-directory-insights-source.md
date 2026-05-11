@@ -10,7 +10,7 @@ description: Learn how to collect events data from the JumpCloud Directory Insig
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="jumpcloud-directory-insights-icon" width="120" />
+<img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="JumpCloud Directory Insights icon" width="120" />
 
 JumpCloud's open directory platform unifies your technology stack across identity, access, and device management in a cost-effective manner that doesn't sacrifice security or functionality. Directory Insights gives you a clear path to view, analyze, and save user and resource activity data, in a standard format that you can query in real time.
 
@@ -42,8 +42,8 @@ To configure a JumpCloud Directory Insights source:
 1. Enter a **Name** for the source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. In **API Key**, enter the API Key you generated from the JumpCloud Directory Insights platform.
 1. In **Organization ID**, enter the Organization ID you generated from the JumpCloud Directory Insights platform.
 1. In **Service**, select the type of logs to collect. This allows you to limit the response to just the data you want.

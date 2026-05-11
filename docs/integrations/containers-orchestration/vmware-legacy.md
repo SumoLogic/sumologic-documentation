@@ -46,7 +46,7 @@ For information on collecting unified logs and metrics for VMware, see [VMware U
 
 ## Sample queries
 
-```sql title="vCenter User Activity"
+```sumo title="vCenter User Activity"
  _sourceCategory=esx_perf OR _sourceCategory=vcenter_log "message=User "
  | parse "message=User * *,,," as user,task
  | timeslice 5m
@@ -54,7 +54,7 @@ For information on collecting unified logs and metrics for VMware, see [VMware U
  | transpose row _timeslice column task as *
 ```
 
-```sql title="Average Memory Used in MB"
+```sumo title="Average Memory Used in MB"
 _sourceCategory=esx_perf OR _sourceCategory=vcenter_log "Memory" AND "NonKernel MBytes"
 | parse "\\\\*\\Memory\\NonKernel MBytes: *" as esx_server,mbytes
 | timeslice by 1h
