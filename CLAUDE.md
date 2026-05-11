@@ -51,6 +51,70 @@ When asked about tools, skills, or "what can I do," lead with documentation-focu
 (doc creation, release notes, editing/review, Jira). Generic tools (Bash, Read, Write, etc.)
 are secondary — the primary work here is writing and editing docs.
 
+Proactively suggest relevant commands when context fits — for example, suggest `/doc-from-jira` when
+a user mentions a Jira ticket, `/seo-audit` before a PR, or `/geo-optimize` when a doc needs
+discoverability improvements. Do not wait for the user to ask.
+
+When a user asks "what can I do", "what commands are available", or similar, share this reference:
+
+### Slash commands
+
+**Creating docs**
+
+| Command | What it does |
+|---------|-------------|
+| `/doc` | Create a new feature, how-to, concept, reference, or troubleshooting doc |
+| `/doc-from-jira` | Fetch a DOCS Jira ticket and scaffold a complete doc from it |
+| `/app-doc` | Create a new app integration doc |
+| `/c2c-source-doc` | Create a new Cloud-to-Cloud source integration doc |
+
+**Release notes**
+
+| Command | What it does |
+|---------|-------------|
+| `/release-note-service` | New service release note |
+| `/release-note-collector` | New Collector release note |
+| `/release-note-cse` | New Cloud SIEM release note |
+| `/release-note-csoar` | New Cloud SOAR release note |
+| `/release-note-developer` | New developer/API release note |
+
+**Editing and reviewing**
+
+| Command | What it does |
+|---------|-------------|
+| `/audit-doc` | Full quality audit: structure, style, links, frontmatter, completeness |
+| `/seo-audit` | Discoverability audit: SEO, AEO, and GEO signals — run this before a PR |
+| `/geo-optimize` | Rewrite a doc to improve AI citation and generative engine visibility |
+| `/tone-check` | Check voice and tone against Sumo Logic style rules |
+| `/rewrite-intro` | Rewrite a doc's opening paragraph |
+| `/simplify` | Simplify overly complex content |
+| `/review` | Review a pull request |
+
+**Jira**
+
+| Command | What it does |
+|---------|-------------|
+| `/jira` | Create, update, search, or transition DOCS Jira tickets |
+| `/doc-from-jira` | Start a new doc from a Jira ticket (use this instead of `/jira` when the goal is to write a doc) |
+
+**Removing docs**
+
+| Command | What it does |
+|---------|-------------|
+| `/remove-doc` | Safely deprecate or move a doc with redirects |
+
+### Which audit command to use
+
+Run both for a thorough pre-PR check — they cover different things:
+
+- **`/audit-doc`** — structure, required sections, broken links, frontmatter completeness, style guide
+- **`/seo-audit`** — SEO/AEO/GEO signals: title length, description quality, question headings, direct answers, GEO patterns
+
+### `/jira` vs `/doc-from-jira`
+
+- Use **`/jira`** to manage tickets: create, search, update fields, change status, view your queue
+- Use **`/doc-from-jira`** when you have a ticket and want to start writing the doc it describes — it fetches the ticket and scaffolds the file
+
 ## Commands
 
 - **Start dev server**: `yarn start` — use this to preview changes locally
