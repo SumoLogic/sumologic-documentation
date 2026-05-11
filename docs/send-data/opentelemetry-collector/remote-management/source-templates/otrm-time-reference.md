@@ -149,6 +149,53 @@ The following considerations apply to time zones:
 
 We highly recommend that the time zone be set explicitly on any source template where the logs do not have a time zone available. Sumo Logic always attempts to determine the time zone for the Source. However, if that is not possible, the time zone will revert to UTC. In these cases, the time zone will be incorrect, and that could significantly affect forensic analysis and reporting.
 
+### Parsing multiple time zones from a single source
+
+By default, each source template supports a single time zone configuration, which you can set in **Source Template Settings**. However, if your logs contain timestamps from multiple time zones (for example, logs from servers in different regions written to a single file), you can handle this using a custom OpenTelemetry Collector YAML configuration.
+
+:::note
+This capability is not available in the Sumo Logic UI source template configuration. You must configure it via a custom source template using custom YAML.
+:::
+
+The recommended approach is to:
+1. Extract the timestamp abbreviation from log lines using a `regex_parser`.
+1. Apply `time_parser` operators with `time_zone_locations` defined for each time zone present in the log lines.
+
+This is especially useful when the timestamp layout contains `%Z` (a textual time zone abbreviation such as `CST` or `IST`), which can map to different UTC offsets depending on the region.
+
+**Example:**
+
+Consider a log source containing timestamps with multiple time zone abbreviations:
+
+```
+Wed Aug 20 14:08:48 PDT 2025
+Mon Jan 15 10:00:00 NZST 2025
+```
+
+**Example configuration:**
+
+```yaml
+receivers:
+  filelog:
+    operators:
+      - type: regex_parser
+        regex: '^(?P<timestamp>\w{3} \w{3}\s+\d{1,2} \d{2}:\d{2}:\d{2} [A-Z]{2,5} \d{4})'
+        timestamp:
+          parse_from: attributes.timestamp
+          layout_type: strptime
+          layout: '%a %b %d %H:%M:%S %Z %Y'
+          location: Asia/Kolkata
+          time_zone_locations:
+            PDT: America/Los_Angeles
+            NZST: Pacific/Auckland
+```
+
+Add all required time zone abbreviations to the `time_zone_locations` field as shown above, allowing each abbreviation to be resolved to its correct IANA location (for example, `Asia/Shanghai`, `Asia/Kolkata`).
+
+:::tip
+If your timestamp layout contains `%Z`, this custom YAML approach is the recommended way to disambiguate time zone abbreviations that map to multiple regions. For example, `CST` can refer to either China Standard Time (UTC+8) or Central Standard Time (UTC6).
+:::
+
 ### Default time zone
 
 By default, we use the time zone from your web browser set by the operating system to display hours and minutes everywhere in our user interface. You can change the default time zone that the user interface displays by adjusting the **Default time zone** setting on the **Preferences** page. This option overrides the time zone from your web browser, and changes how hours and minutes are displayed in the UI. But this is a personal setting, and does not change the time zone for anyone else in your organization.
