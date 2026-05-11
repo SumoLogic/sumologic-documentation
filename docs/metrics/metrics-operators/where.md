@@ -2,6 +2,7 @@
 id: where
 title: where Metrics Operator
 sidebar_label: where
+description: Use the `where` metrics operator to filter out entire time series or individual data points within a time series using value boolean expressions or reducer boolean expressions. Essential for focusing on specific metrics that meet conditions, filtering outliers, and narrowing analysis to relevant data based on threshold values or aggregated conditions.
 ---
 
 You can use the `where` operator to filter out either entire time series, or individual data points within a time series.

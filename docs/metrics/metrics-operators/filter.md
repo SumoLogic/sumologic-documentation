@@ -2,6 +2,7 @@
 id: filter
 title: filter Metrics Operator
 sidebar_label: filter
+description: Use the `filter` metrics operator to limit results returned by a metric query through aggregation functions or value conditions over time. Note that this functionality is now incorporated into the where operator, which is recommended. The filter operator will be deprecated in the future, so use the where operator for new queries.
 ---
 
 :::note
