@@ -5,7 +5,7 @@ sidebar_label: Collecting Metrics
 description: This document covers multiple different use cases related to scraping custom application metrics exposed in Prometheus format.
 ---
 
-This document covers multiple different use cases related to scraping custom application metrics exposed in Prometheus format.
+This document covers multiple use cases related to scraping custom application metrics exposed in Prometheus format.
 
 There are three major sections:
 
@@ -40,10 +40,10 @@ If you add more than one annotation with the same name, only the last one will b
 ### Application metrics are exposed (multiple endpoints scenario)
 
 :::note  
-Use `sumologic.metrics.additionalServiceMonitors` instead of `kube-prometheus-stack.prometheus.additionalServiceMonitors`. They have identical behavior and can even be used in tandem, but the latter only works if Prometheus is enabled, and won't work with the Otel metrics collector which is the default in v4 of the Chart.
+Use `sumologic.metrics.additionalServiceMonitors` instead of `kube-prometheus-stack.prometheus.additionalServiceMonitors`. They have identical behavior and can even be used in tandem, but the latter only works if Prometheus is enabled, which has been deprecated in v4 and removed in v5, and won't work with the OpenTelemetry metrics collector, which is the default starting from v4 of the Chart.
 :::
 
-If you want to scrape metrics from multiple endpoints in a single Pod, you need a Service which points to the Pod and also to configure `sumologic.metrics.additionalServiceMonitors` in your `user-values.yaml`:
+If you want to scrape metrics from multiple endpoints in a single Pod, you need a Service that points to the Pod and also to configure `sumologic.metrics.additionalServiceMonitors` in your `user-values.yaml`:
 
 ```yaml
 sumologic:
@@ -152,9 +152,9 @@ sumologic:
 
 ### Application metrics are not exposed
 
-In case you want to scrape metrics from an application which does not expose a Prometheus endpoint, you can use telegraf operator. It will scrape metrics according to configuration and expose them on port `9273` so Prometheus will be able to scrape them.
+If you want to scrape metrics from an application that does not expose a Prometheus endpoint, you can use the `telegraf` operator. It will scrape metrics according to the configuration and expose them on port `9273` so that the OpenTelemetry metrics collector can scrape them.
 
-For example, to expose metrics from nginx Pod, you can use the following annotations:
+For example, to expose metrics from the Nginx Pod, you can use the following annotations:
 
 ```yaml
 annotations:
@@ -165,13 +165,13 @@ annotations:
   telegraf.influxdata.com/limits-cpu: '750m'
 ```
 
-`sumologic-prometheus` defines how telegraf operator will expose the metrics. They are going to be exposed in prometheus format on port `9273` and `/metrics` path.
+`sumologic-prometheus` defines how the `telegraf` operator exposes metrics. They are going to be exposed in Prometheus format on port `9273` and `/metrics` path.
 
 :::note
-If you apply annotations on a Pod that's owned by another object, for example DaemonSet, it won't take effect. In such case, the annotation should be added to Pod specification in DaemonSet template.
+If you apply annotations to a Pod that's owned by another object, such as a DaemonSet, they won't take effect. In such a case, the annotation should be added to the Pod specification in the DaemonSet template.
 :::
 
-After restart, the Pod should have an additional `telegraf` container.
+After a restart, the Pod should have an additional `telegraf` container.
 
 To scrape and forward exposed metrics to Sumo Logic, follow one of the following scenarios:
 
@@ -203,7 +203,6 @@ By default, the following attributes should be available:
 | \_sourceName              | Sumo Logic source Name                                     |
 | cluster                   | Cluster Name                                               |
 | endpoint                  | Metrics endpoint                                           |
-| http_listener_v2_path     | Path used to receive data from Prometheus                  |
 | instance                  | Pod instance                                               |
 | job                       | Prometheus job name                                        |
 | k8s.container.name        | Kubernetes Container name                                  |
@@ -216,12 +215,10 @@ By default, the following attributes should be available:
 | k8s.service.name          | Kubernetes Service name                                    |
 | k8s.statefulset.name      | Kubernetes Statefulset name                                |
 | pod*labels*\<label_name\> | Kubernetes Pod label. Every label is a different attribute |
-| prometheus                | Prometheus                                                 |
-| prometheus_replica        | Prometheus Replica name                                    |
-| prometheus_service        | Prometheus Service name                                    |
+| prometheus_service        | OpenTelemetry Service name                                 |
 
 :::note
-Before ingestion to Sumo Logic, attributes are renamed according to the [sumologicschemaprocessor documentation][sumologicschema]
+Before ingestion into Sumo Logic, attributes are renamed according to the [sumologicschemaprocessor documentation][sumologicschema].
 :::
 
 [sumologicschema]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/sumologicschemaprocessor#attribute-translation
