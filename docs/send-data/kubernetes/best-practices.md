@@ -570,6 +570,53 @@ The above, in connection with PVC monitoring, can lead to constant alerts (e.g.,
 [filling_up_alert]: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubepersistentvolumefillingup/
 [sumo-otelcol-batching-doc]: ../../opentelemetry-collector/data-source-configurations/additional-configurations-reference/#using-batch-processor-to-batch-data
 
+### Batching Migration
+We are migrating the default batching logic from the batch processor to exporter-side batching to improve service reliability. For more details refer [Link](https://github.com/open-telemetry/opentelemetry-collector/issues/8122)
+
+#### Queue Size
+When an exporter is preceded by a batch processor, `sending_queue.queue_size` represents the number of batches produced by the batch processor. With exporter-side batching, the batch processor is removed, so `sending_queue.queue_size` instead represents the number of individual requests. As a result, if the queue size is not adjusted accordingly, the queue may fill up more quickly and potentially lead to data loss.
+
+To avoid this, it is recommended to increase `sending_queue.queue_size` by a factor equal to the batch processor’s `send_batch_size`.
+
+##### Example configuration
+Assuming we have a batch processor with config
+```yaml
+batch:
+  send_batch_size: 1_024
+  timeout: 1s
+  send_batch_max_size: 2_048
+```
+
+We have the `sending_queue.queue_size` configured as,
+```yaml
+metadata:
+  logs:
+    config:
+      merge:
+        exporters:
+          otlphttp:
+            sending_queue:
+              queue_size: 1000
+```
+
+The new config should be,
+```yaml
+metadata:
+  logs:
+    config:
+      merge:
+        exporters:
+          otlphttp:
+            sending_queue:
+              queue_size: 1024000 ## = 1000 * 1024
+```
+
+If you have completed the configuration changes and want to proceed with the installation, set this flag to `true` to acknowledge that you understand the changes and their impact.
+
+```yaml
+customBatchingConfigured: true
+```
+
 ### Compaction
 
 The OpenTelemetry Collector doesn't have a compaction mechanism. Local storage can only grow - it can reuse disk space that has already been allocated, but not free it. This leads to a situation where the database file can grow a lot (due to a spike in data traffic) but after some time only small piece of the file will be used for data storage (until next spike).
