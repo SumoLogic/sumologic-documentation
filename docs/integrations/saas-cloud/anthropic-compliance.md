@@ -13,7 +13,7 @@ The Anthropic Compliance Monitoring app for Sumo Logic provides centralized visi
 
 ## Log types
 
-This app uses activity logs of anthropic compliance.
+This app uses Anthropic Compliance's activity logs.
 
 ### Sample log message
 
@@ -67,22 +67,34 @@ _sourceCategory="{{Logsdatasource}}" type actor
 | count
 ```
 
-## Collecting logs
-
-This section has instructions for collecting logs for the Sumo Logic app for Anthropic Compliance.
-
-### Collection process overview
+## Collection configuration
 
 This app uses the [Universal Connector](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source) to collect activity logs from the Anthropic Compliance API.
 
 ### Vendor configuration
 
-To collect logs, you need an Anthropic API key with access to the Compliance API.
+To collect logs, you need an Anthropic API key with access to the Compliance API. Use one of the following options to create the API key:
 
-1. Sign in to the [Anthropic Console](https://console.anthropic.com/).
-1. Navigate to **Settings** > **API Keys**.
-1. Click **Create Key**, enter a name, and set the appropriate permissions.
-1. Copy and save the API key. It will only be shown once.
+#### Console / API 
+
+Keys are created in the **Admin keys** section of Console Settings.
+1. Click **Create key** to name your key.
+2. Receive a secret access key and store it securely. 
+
+:::note
+If the Compliance API is enabled for your organization, Admin keys created here are automatically granted the `read:compliance_activities` scope. If the Compliance API is not yet enabled, contact your Anthropic representative to request access. 
+:::
+
+#### Claude.ai
+
+Keys are created in the **Compliance access keys** section of Data Management Settings.
+1. Click the **Create key** to name your key.
+2. Name the key and select its scopes.
+3. Receive a secret access key and store it securely.
+
+:::note
+If you do not see the Compliance access keys section, it means that either you are not a Primary Owner of the organization, or the Compliance API is not enabled for your organization. The Primary Owner needs to enable it in the Data and Privacy section of your organization's settings.
+:::
 
 ### Source configuration
 
@@ -91,7 +103,7 @@ To collect logs, you need an Anthropic API key with access to the Compliance API
 1. Configure the **General** settings:
    - **Name**. Enter a name for the source.
    - **Description**. (Optional) Enter a description.
-   - **Source Category**. Enter a value such as `anthropic_compliance/activities`. This value is stored in the `_sourceCategory` metadata field and must match the source category used when installing the app.
+   - **Source Category**. Enter a value such as `anthropiccompliance/activities`. This value is stored in the `_sourceCategory` metadata field and must match the source category used when installing the app.
    - **Fields**. (Optional) Click **+Add** to define any additional fields to associate with the source.
    <img src={useBaseUrl('img/send-data/source_configuratioin.png')} alt="Universal Connector - General settings" width="600" />
 1. Configure the **Authentication Configuration**:
@@ -110,7 +122,7 @@ To collect logs, you need an Anthropic API key with access to the Compliance API
    - **Initial Lookback**. Enter `24h`.
    - **Progress Window Parameters**. Add the following parameters:
      | Parameter Name | Parameter Value |
-     |:---------------|:----------------|
+     |:--|:--|
      | `created_at.gte` | `{{ .WindowStartUTC "yyyy-MM-ddTHH:mm:ssZ" }}` |
      | `created_at.lt` | `{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ssZ" }}` |
    <img src={useBaseUrl('img/send-data/tracking_configuration.png')} alt="Universal Connector - Tracking Progression" width="600" />
@@ -118,7 +130,7 @@ To collect logs, you need an Anthropic API key with access to the Compliance API
    - **Format**. Select **JSON with JPath**.
    - Configure the following log path settings:
      | Field | Value |
-     |:------|:------|
+     |:--|:--|
      | **Logs JPath** | `$.data[*]` |
      | **Timestamp JPath** | `$.created_at` |
      | **Timestamp Format** | `2006-01-02T15:04:05.000000Z` |
@@ -126,7 +138,7 @@ To collect logs, you need an Anthropic API key with access to the Compliance API
 1. Configure the **Pagination Configuration**:
    - **Type**. Select **Continuation Token**.
    - **Token Location**. Select **Body**.
-   - **Next Page Continuation Token JPath**. Enter `$.next_page`.
+   - **Next Page Continuation Token JPath**. Enter `$.last_id`.
    - **Send Token In**. Select **Parameters**.
    - **Parameter Key**. Enter `after_id`.
    <img src={useBaseUrl('img/send-data/pagination_configuration.png')} alt="Universal Connector - Pagination Configuration" width="600" />
@@ -140,13 +152,35 @@ To collect logs, you need an Anthropic API key with access to the Compliance API
    <img src={useBaseUrl('img/send-data/client_confiugration.png')} alt="Universal Connector - HTTP Client Configuration" width="600" />
 1. Click **Save**.
 
+:::note
+Once the source is configured, you can verify successful log collection by running searches on the Search page in Sumo Logic using the source category.
+:::
+
 ## Installing the Anthropic Compliance app   
 
 This section shows you how to install the Sumo Logic app for Anthropic Compliance.
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::note
+Next-Gen App: To install or update the app, you must be an account administrator or a user with the Manage Apps, Manage Monitors, Manage Fields, Manage Metric Rules, and Manage Collectors capabilities, depending on the content types included in the app.
+:::
 
-<AppInstall2/>
+1. Select **App Catalog**.
+1. In the 🔎 **Search Apps** field, run a search for your desired app, then select it.
+1. Click **Install App**.
+    :::note
+    Sometimes this button says **Add Integration**.
+    :::
+1. Click **Next** in the **Setup Data** section.
+1. In the **Configure** section of your respective app, complete the following fields.
+    1. **Field Name**. Use the source category or collector name configured in the [Source configuration](/docs/integrations/saas-cloud/anthropic-compliance/#source-configuration) section.
+1. Click **Next**. You will be redirected to the **Preview & Done** section.
+
+**Post-installation**
+
+Once your app is installed, it will appear in your **Installed Apps** folder, and dashboard panels will begin filling automatically.
+
+Each panel slowly fills with data that match the time-range query received since the panel was created. Results will not immediately be available, but will be updated with full graphs and charts over time.
+
 
 ## Viewing the Anthropic Compliance dashboards​​ 
 
