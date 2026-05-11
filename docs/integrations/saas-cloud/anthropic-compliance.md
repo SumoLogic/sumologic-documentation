@@ -156,7 +156,7 @@ If you do not see the Compliance access keys section, it means that either you a
 Once the source is configured, you can verify successful log collection by running searches on the Search page in Sumo Logic using the source category. For example, `_sourceCategory=anthropiccompliance/activities`.
 :::
 
-## Installing the Anthropic Compliance app   
+## Installing the Anthropic Compliance app
 
 This section shows you how to install the Sumo Logic app for Anthropic Compliance.
 
@@ -181,8 +181,7 @@ Once your app is installed, it will appear in your **Installed Apps** folder, an
 
 Each panel slowly fills with data that match the time-range query received since the panel was created. Results will not immediately be available, but will be updated with full graphs and charts over time.
 
-
-## Viewing the Anthropic Compliance dashboards​​ 
+## Viewing the Anthropic Compliance dashboards​​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
