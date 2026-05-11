@@ -44,7 +44,7 @@ This flow uses interactive browser-based authentication. Users authorize an exte
 ### Create an OAuth client
 
 1. Log in to Sumo Logic as an Administrator.
-1. Go to **Administration** > **Security** > **OAuth**.
+1. Go to **Administration** > **Security** > **OAuth Clients**.
 1. Click **+ Add Client**.
 1. For **Type**, select **Authorization Code**.
 1. Enter a **Name** and optional **Description** for your application.
@@ -139,7 +139,7 @@ curl -u "<accessId>:<accessKey>" \
 Create an OAuth client under your service account. This generates the credentials your application will use to authenticate.
 
 1. Log in to Sumo Logic as an Administrator.
-1. Go to **Administration** > **Security** > **OAuth**.
+1. Go to **Administration** > **Security** > **OAuth Clients**.
 1. Click **+ Add Client**.
 1. For **Type**, select **Client Credentials**.
 1. Enter a **Name** and optional **Description** for your application.

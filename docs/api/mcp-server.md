@@ -25,7 +25,7 @@ The Sumo Logic MCP server lets MCP clients (external AI models) securely query l
 * **Sumo Logic Administrator role**. Required to create OAuth clients. If you're unsure whether you are an administrator, you can find your role in your [Preferences](/docs/get-started/onboarding-checklists/).
 * **Sumo Logic OAuth credentials**. You'll create these during the setup process for your chosen client below ([learn more](/docs/manage/security/oauth)).
 * **An MCP-compatible client**. Currently, we support the following clients:
-   * **[ChatGPT](https://chatgpt.com/)**. You'll need a paid ChatGPT account.
+   * **[ChatGPT](https://chatgpt.com/)**.
    * **[Claude Code CLI](https://code.claude.com/docs/en/quickstart)**. You'll need a paid Claude subscription or Anthropic Console account.
    * **[VS Code](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)**. You'll need a GitHub account with GitHub Copilot access. A free GitHub Copilot plan is available with limited monthly requests.
 
