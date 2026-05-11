@@ -102,7 +102,7 @@ Changing the collector's name will result in re-registering the collector with S
 
 Refer to the Uninstall section in the following docs:
 * [Linux](/docs/send-data/opentelemetry-collector/install-collector/linux/#uninstall)
-* [Windows](/docs/send-data/opentelemetry-collector/install-collector/windows/#uninstall)
+* [Windows](/docs/send-data/opentelemetry-collector/install-collector/windows/#uninstalling-the-collector)
 * [macOS](/docs/send-data/opentelemetry-collector/install-collector/macos/#uninstall)
 
 

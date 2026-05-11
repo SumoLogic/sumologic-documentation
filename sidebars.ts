@@ -635,7 +635,7 @@ module.exports = {
           items: [
             {
               type: 'category',
-              label: 'v4 (latest)',
+              label: 'v5 (latest)',
               collapsible: true,
               collapsed: true,
               items: [
@@ -663,6 +663,17 @@ module.exports = {
                     'send-data/kubernetes/troubleshoot-collection/common-issues',
                   ],
                 },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'v5 Upgrade Guide',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'send-data/kubernetes/v5/important-changes',
+                'send-data/kubernetes/v5/how-to-upgrade',
+                'send-data/kubernetes/v5/full-list-of-changes',
               ],
             },
             {

@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sentinelone.png')} alt="sentinelone" width="100"/>
 
-***Version: 1.9  
-Updated: Mar 4, 2024***
+***Version: 1.10  
+Updated: April 30, 2026***
 
 SentinelOne Endpoint Protection Platform (EPP) unifies prevention, detection, and response in a single, purpose-built agent powered by machine learning and automation. It provides prevention and detection of attacks across all major vectors, rapid elimination of threats with fully automated, policy-driven response capabilities, and complete visibility into the endpoint environment with full-context, real-time forensics.
 
@@ -82,3 +82,4 @@ For information about SentinelOne, see [SentinelOne documentation](https://www.s
     + Updated Action: List Agents (Added Query field for Filtering)
 * June 22, 2023 (v1.8) - Removed unnecessary spaces
 * March 4, 2024 (v1.9) - Updated code for compatibility with Python 3.12
+* April 30, 2026 (v1.10) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
