@@ -1,7 +1,7 @@
 ---
 id: parse-nodrop-option
 title: Parse nodrop option
-description: Use the nodrop option with parse operators to include messages that do not match any segment of the parse expression in your results. By default, parse operators drop non-matching messages. Adding nodrop acts as an OR condition in queries with multiple parse expressions, passing non-matching logs to the next parse operation.
+description: Use the nodrop option with parse operators to include messages that do not match any segment of the parse expression in your results.
 ---
 
 

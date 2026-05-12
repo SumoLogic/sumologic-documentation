@@ -1,7 +1,7 @@
 ---
 id: parse-xml-formatted-logs
 title: Parse XML Formatted Logs
-description: Use the XML operator to parse fields from XML logs using a subset of XPath 1.0 specification. Specify what to extract using XPath expressions to navigate XML structure and retrieve values. Requires well-formed and valid XML. Supports field option and nodrop option for flexible XML parsing and field extraction.
+description: Use the XML operator to parse fields from XML logs using a subset of XPath 1.0 specification.
 ---
 
 

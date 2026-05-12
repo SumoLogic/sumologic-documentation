@@ -1,7 +1,7 @@
 ---
 id: parsedate
 title: parseDate
-description: Use the parseDate operator to extract a date or time from a string and convert it to a timestamp in milliseconds. Specify date format patterns and optional timezone for accurate parsing. Supports only millisecond timestamps. To convert epoch timestamps to readable format, use the formatDate operator instead. Essential for timestamp normalization and time-based analysis.
+description: Use the parseDate operator to extract a date or time from a string and convert it to a timestamp in milliseconds.
 ---
 
 

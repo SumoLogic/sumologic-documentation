@@ -1,7 +1,7 @@
 ---
 id: parse-delimited-logs-using-split
 title: Parse Delimited Logs Using Split
-description: Use the split operator to parse delimited log entries such as space-delimited, tab-delimited, or custom-delimited formats. Split strings into multiple fields by extracting values using index or position. Supports custom delimiters and ignores empty values. For CSV files specifically, use the simpler CSV operator instead.
+description: Use the split operator to parse delimited log entries such as space-delimited, tab-delimited, or custom-delimited formats.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
