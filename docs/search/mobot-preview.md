@@ -57,7 +57,7 @@ Mobot automatically routes your question to the appropriate skill, as seen here:
 
 ### Reasoning & complex log analysis
 
-While Mobot processes your question, it displays a **Thinking...** or **Planning...** indicator showing that it is identifying relevant data sources and analyzing the problem. Behind the scenes, Mobot selects relevant data sources, schema, lookup tables, and saved queries, infers time ranges based on context, and retrieves log data enriched with environmental context.
+While Mobot processes your question, it displays a **Thinking...** or **Planning...** indicator showing that it is identifying relevant data sources and analyzing the problem. Behind the scenes, Mobot selects relevant data sources and saved queries, infers time ranges based on context, and retrieves log data.
 
 Mobot orchestrates multi-step analysis automatically. It translates your question into the appropriate analytical steps, applies multi-step reasoning to synthesize findings, and presents results as a structured response with suggested next steps.
 
