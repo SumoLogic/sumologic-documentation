@@ -28,18 +28,22 @@ Sumo Logic supports two OAuth 2.0 authentication flows:
 | [Authorization Code](#authorization-code-flow) | User-facing applications with browser-based login | Simple (UI-based) | Automatic |
 | [Client Credentials](#client-credentials-flow) | Service-to-service authentication, automated workflows | Moderate (API-based) | Manual or automatic |
 
-## How permissions work {#how-permissions-work}
+## Prerequisites
+
+* **Sumo Logic Administrator role**. Required to create OAuth clients and service accounts.
+
+## How permissions work
 
 For both flows, effective permissions are the intersection of the OAuth client's scopes and the caller's roles. This prevents privilege escalation — no OAuth client can grant more access than the caller already has.
 
-* **Authorization Code flow**: intersection of the authenticated user's roles, the OAuth client's scopes, and the scopes requested in the authorization request.
-* **Client Credentials flow**: intersection of the service account's roles and the OAuth client's scopes.
+* **Authorization Code flow**. Intersection of the authenticated user's roles, the OAuth client's scopes, and the scopes requested in the authorization request.
+* **Client Credentials flow**. Intersection of the service account's roles and the OAuth client's scopes.
 
 ## Authorization Code flow
 
 This flow uses interactive browser-based authentication. Users authorize an external application to access Sumo Logic on their behalf, and the application receives an access token to make API requests.
 
-### Create an OAuth client
+### Step 1: Create an OAuth client
 
 1. Log in to Sumo Logic as an Administrator.
 1. Go to **Administration** > **Security** > **OAuth Clients**.
@@ -53,7 +57,7 @@ This flow uses interactive browser-based authentication. Users authorize an exte
 1. Click **Save**.
 1. Copy the **Client ID** and **Client Secret**. You'll need these to configure your application.
 
-### Complete the OAuth flow
+### Step 2: Complete the OAuth flow
 
 Sumo Logic's Authorization Code flow follows the [OAuth 2.1 specification](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1). Your OAuth library or client handles the authorization, token exchange, and token refresh steps automatically by following the standard protocol.
 
@@ -69,11 +73,7 @@ The response includes `authorization_endpoint`, `token_endpoint`, and other supp
 
 This flow uses service accounts for server-to-server authentication. Applications authenticate directly with Sumo Logic using a client ID and client secret, without requiring user interaction.
 
-:::info prerequisites
-* **Sumo Logic Administrator role**. Required to create OAuth clients and service accounts.
-:::
-
-### Create a service account
+### Step 1: Create a service account
 
 Create a Sumo Logic service account to represent your application or service. You can also use an existing service account.
 
@@ -132,7 +132,7 @@ curl -u "<accessId>:<accessKey>" \
 
 </details>
 
-### Create an OAuth client
+### Step 2: Create an OAuth client
 
 Create an OAuth client under your service account. This generates the credentials your application will use to authenticate.
 
@@ -142,7 +142,7 @@ Create an OAuth client under your service account. This generates the credential
 1. For **Type**, select **Client Credentials**.
 1. Enter a **Name** and optional **Description** for your application.
 1. Select the **Service Account** this OAuth client will run as (created in the previous step).
-1. Select the **Scopes** your OAuth client needs. The scopes you request must already be included in your service account's effective permissions. See [How permissions work](#how-permissions-work).
+1. Select the **Scopes** your OAuth client needs. The scopes you request must already be included in your service account's effective permissions. [Learn how permissions work](#how-permissions-work).
 1. Click **Save**.
 1. Copy the **Client ID** and **Client Secret**. You'll need these to configure your application.
 
@@ -224,7 +224,7 @@ Copy the `clientId` and `clientSecret` from the response. These are your OAuth c
 
 </details>
 
-### Generate an access token
+### Step 3: Generate an access token
 
 Request an OAuth access token from the token endpoint using your client credentials.
 
@@ -261,7 +261,7 @@ The response includes an access token:
 {
   "access_token": "eyJhbGc...",
   "token_type": "Bearer",
-  "expires_in": 1800,
+  "expires_in": 43200,
   "scope": "runLogSearch viewLibrary"
 }
 ```
@@ -279,9 +279,9 @@ curl https://api.sumologic.com/api/v1/search/jobs \
 
 ### Token expiration
 
-Access tokens generated with Client Credentials flow expire after 30 minutes. When a token expires, generate a new one by repeating the token request. Unlike Authorization Code flow, Client Credentials flow does not provide refresh tokens.
+Access tokens generated with Client Credentials flow expire after 12 hours. When a token expires, generate a new one by repeating the token request. Unlike Authorization Code flow, Client Credentials flow does not provide refresh tokens.
 
-:::tip Discovering endpoints programmatically
+:::note Discovering endpoints programmatically
 The token endpoint URL varies by deployment. To discover it programmatically (for example, in automation scripts), query the Authorization Server Metadata. Replace `[deployment-endpoint]` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `service.sumologic.com`, `service.us2.sumologic.com`):
 
 ```bash
@@ -320,8 +320,8 @@ Use **Client Credentials flow** for server-to-server authentication, automated w
 
 ### How long do access tokens last?
 
-* **Authorization Code flow**. Access tokens expire after the number of seconds indicated by the `expires_in` property.
-* **Client Credentials flow**. Access tokens expire after 30 minutes. Generate a new token when the current one expires.
+* **Authorization Code flow**. Access tokens expire after 5 minutes, but are automatically renewed by your OAuth client — this is transparent to users.
+* **Client Credentials flow**. Access tokens expire after 12 hours. Generate a new token when the current one expires.
 
 ### Can I revoke OAuth access?
 
