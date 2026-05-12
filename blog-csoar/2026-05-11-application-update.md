@@ -13,10 +13,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The following are the updates made in April 2026.
 
-### Changes and enhancements
-
-This section includes performance improvements, new integrations, UI refinements, and usability enhancements across Sumo Logic.
-
 ### Integrations
 
 - We are excited to introduce the new ZeroFox V2 integration. [Learn more](/docs/platform-services/automation-service/app-central/integrations/zerofox-v2/).
