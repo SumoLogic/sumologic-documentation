@@ -416,6 +416,7 @@ module.exports = {
           link: {type: 'doc', id: 'send-data/hosted-collectors/index'},
           items: [
             'send-data/hosted-collectors/configure-hosted-collector',
+            'send-data/hosted-collectors/krutrim-object-storage',
             {
               type: 'category',
               label: 'Amazon/AWS Sources',
