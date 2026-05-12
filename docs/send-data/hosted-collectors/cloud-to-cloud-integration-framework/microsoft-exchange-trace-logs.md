@@ -20,7 +20,7 @@ We recommend migrating to version 2.x.x only if your tenant is on the
 and has the **`/admin/exchange/tracing/messageTraces`** endpoint enabled. 
 If your tenant does not meet these requirements or the endpoint is not yet 
 available in your environment, please continue using version 1.x.x to 
-ensure uninterrupted data collection.
+ensure uninterrupted data collection. Please refer the this [Microsoft doc](https://techcommunity.microsoft.com/blog/exchange/message-trace-support-using-graph-api-is-now-in-public-preview/4488587#:~:text=Migration%20guidance%20and%20deprecation%20timeline) for  more details.
 :::
 
 ## Data collected
