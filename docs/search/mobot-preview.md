@@ -214,7 +214,7 @@ Structured logs have predefined fields, allowing Mobot to map queries directly. 
 <details>
 <summary>Will Mobot support additional capabilities over time?</summary>
 
-Yes. Mobot is designed to be extensible. Over time, more skills can be added as teams across the platform contribute new capabilities. The current preview focuses on log analysis and platform how-to guidance, with additional skills planned for future releases.
+Yes. Mobot is designed to be extensible. Over time, more capabilities can be added as teams across the platform contribute new features. The current preview focuses on log analysis and platform how-to guidance, with additional capabilities planned for future releases.
 </details>
 
 ## Feedback
