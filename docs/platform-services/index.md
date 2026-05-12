@@ -15,4 +15,12 @@ Platform services are services that are available to use across the entire Sumo 
   <p>Learn how to use the Automation Service to automate actions.</p>
   </div>
 </div>
+<!-- Add when MCP Server goes GA
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/platform-services/mcp-server')}><img src={useBaseUrl('img/icons/mcp-logo.svg')} alt="MCP Server icon" width="40"/><h4>MCP Server</h4></a>
+  <p>Connect AI agents and tools to your Sumo Logic data using the Model Context Protocol.</p>
+  </div>
+</div>
+-->
 </div>

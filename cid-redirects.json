@@ -5115,5 +5115,6 @@
   "/docs/send-data/installed-collectors/collect-logs-from-syslog": "/docs/send-data/installed-collectors",
   "/docs/send-data/installed-collectors/collector-installation-reference/downloadcollector-from-static-url": "/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url",
   "/docs/send-data/installed-collectors/sources/netflow-source": "/docs/send-data/installed-collectors",
-  "/docs/send-data/opentelemetry-collector/remote-management/processing-rules/hash-rules": "/docs/send-data/opentelemetry-collector/remote-management"
+  "/docs/send-data/opentelemetry-collector/remote-management/processing-rules/hash-rules": "/docs/send-data/opentelemetry-collector/remote-management",
+  "/docs/api/mcp-server": "/docs/platform-services/mcp-server"
 }

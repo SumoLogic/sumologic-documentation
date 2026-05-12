@@ -312,29 +312,22 @@ Service accounts cannot log in to the Sumo Logic UI. To view content created by 
 
 ## FAQ
 
-<details>
-<summary>Which OAuth flow should I use?</summary>
+### Which OAuth flow should I use?
 
 Use **Authorization Code flow** for user-facing applications where users log in through their browser. This flow is simpler to set up and handles token refresh automatically.
 
 Use **Client Credentials flow** for server-to-server authentication, automated workflows, or applications that don't have interactive users. This flow provides more control over permissions through service accounts and OAuth scopes.
 
-</details>
-
-<details>
-<summary>How long do access tokens last?</summary>
+### How long do access tokens last?
 
 * **Authorization Code flow**. Access tokens expire after the number of seconds indicated by the `expires_in` property.
 * **Client Credentials flow**. Access tokens expire after 30 minutes. Generate a new token when the current one expires.
 
-</details>
-
-<details>
-<summary>Can I revoke OAuth access?</summary>
+### Can I revoke OAuth access?
 
 Yes. To revoke access for an OAuth client:
 
-1. Go to **Administration** > **Security** > **OAuth**.
+1. Go to **Administration** > **Security** > **OAuth Clients**.
 1. Find the OAuth client you want to revoke.
 1. Click **Delete** or **Deactivate** (depending on UI options available).
 
@@ -342,24 +335,15 @@ For Client Credentials flow, you can also deactivate or delete the associated se
 
 For Authorization Code flow, revoking Authorization Consent causes the next token refresh to fail. The current access token remains valid until it expires.
 
-</details>
-
-<details>
-<summary>What happens if I change a service account's roles?</summary>
+### What happens if I change a service account's roles?
 
 For Client Credentials flow, [effective permissions are the intersection of the service account's roles and the OAuth client's scopes](#how-permissions-work). If you restrict the service account's roles, the OAuth client's permissions are automatically reduced, even if the configured scopes remain unchanged.
 
-</details>
-
-<details>
-<summary>What happens if a user's roles change in Authorization Code flow?</summary>
+### What happens if a user's roles change in Authorization Code flow?
 
 For Authorization Code flow, [effective permissions are the intersection of the user's roles, the OAuth client's scopes, and the requested scopes](#how-permissions-work). If a user's roles are restricted, their effective OAuth permissions are reduced at the next token refresh. If roles are expanded, the new permissions become available at the next token refresh.
 
-</details>
-
-<details>
-<summary>How do I find the token endpoint for my deployment?</summary>
+### How do I find the token endpoint for my deployment?
 
 The token endpoint URL varies by [deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). Replace `[deployment-endpoint]` with your deployment's service endpoint. The pattern is:
 
@@ -377,10 +361,7 @@ To discover the endpoint programmatically, replace `[deployment-endpoint]` with 
 curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
 ```
 
-</details>
-
-<details>
-<summary>Can I use OAuth with the Sumo Logic APIs?</summary>
+### Can I use OAuth with the Sumo Logic APIs?
 
 Yes. OAuth access tokens work with all Sumo Logic APIs. Include the access token in the `Authorization` header as a Bearer token:
 
@@ -390,5 +371,3 @@ curl https://api.sumologic.com/api/v1/users \
 ```
 
 Replace `api.sumologic.com` with your [deployment-specific endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if your org is on a different deployment.
-
-</details>

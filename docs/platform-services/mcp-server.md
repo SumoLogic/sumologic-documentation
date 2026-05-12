@@ -414,15 +414,11 @@ For detailed guidance on securing MCP against cost-based attacks, see our blog p
 
 ## FAQ
 
-<details>
-<summary>Can MCP handle multiple operations in a single request?</summary>
+### Can MCP handle multiple operations in a single request?
 
 Yes. MCP supports multi-tool calls within a single conversational interaction.
 
-</details>
-
-<details>
-<summary>How does this affect my Sumo Logic usage?</summary>
+### How does this affect my Sumo Logic usage?
 
 This capability in closed beta requires an AI Addendum. Contact your account representative for pricing information.
 
@@ -430,11 +426,10 @@ This capability in closed beta requires an AI Addendum. Contact your account rep
 For bulk data retrieval or model training, the [Search Job API](/docs/api/search-job) remains the preferred option.
 :::
 
-</details>
-
-<details>
-<summary>Where does my agent run?</summary>
+### Where does my agent run?
 
 Agents connected via MCP run in your own environment, not within Sumo Logic infrastructure.
 
-</details>
+## Additional resources
+
+* [Sumo Logic MCP Server demo](https://www.sumologic.com/demo/mcp-server)
