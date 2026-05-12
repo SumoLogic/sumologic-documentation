@@ -116,7 +116,7 @@ Once the deletion request is created, an email notification will be sent to the 
     - **Reject**. Enter the reason for rejection in the **Reject Deletion Request** pop-up to help the requester understand the reason for rejection and take any necessary actions, and click the **Reject Request** button.<br/><img src={useBaseUrl('img/search/get-started-search/reject-deletion-request.png')} alt="Reject deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
 
 :::note
-By default, data deletion requests require approval from two admins with the **Review Deletion Requests** capability. To require more than two approvals, contact our [Support team](https://support.sumologic.com/support/s/).
+By default, data deletion requests require approval from two of your org admins with the **Review Deletion Requests** capability. To change the number of required approvals, contact our [Support team](https://support.sumologic.com/support/s/).
 :::
 
 ## Limitations
