@@ -617,6 +617,12 @@ Krutrim Object Storage JSON example: 
             "bucketName": "<BUCKET_NAME>",
             "pathExpression": "*"
           },
+          "authentication": {
+            "type": "S3BucketAuthentication",
+            "awsId": "<KRUTRIM_ACCESS_KEY>",
+            "awsKey": "<KRUTRIM_SECRET_KEY>",
+            "region": "hyd1"
+          }
         }]
       }
   }
