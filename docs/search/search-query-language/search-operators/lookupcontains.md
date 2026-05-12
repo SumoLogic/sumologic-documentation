@@ -2,7 +2,7 @@
 id: lookupcontains
 title: lookupContains Search Operator
 sidebar_label: lookupContains
-description: Use the `lookupContains` operator to check whether a key exists in a lookup table and return a boolean value. Returns true if the key is found, false otherwise. Can be used within a where expression or before it with different syntax variations. Useful for filtering logs based on lookup table membership without retrieving additional fields.
+description: Use the lookupContains operator to check whether a key exists in a lookup table and return a boolean value.Returns true if the key is found, false otherwise.
 ---
 
 Use the `lookupContains` operator to determine whether a key exists in a lookup table. It will return a boolean value.

@@ -2,7 +2,7 @@
 id: cidr
 title: cidr Search Operator
 sidebar_label: CIDR
-description: Use the three CIDR operators (getCIDRPrefix, compareCIDRPrefix, maskFromCIDR) to analyze IPv4 networks using Classless Inter-Domain Routing notation and narrow analysis to specific subnets. Extract network prefixes, compare subnets, and filter traffic by network segment for security and network analysis. Determine traffic between network segments, review events from hosts within specified subnets, or identify addresses outside particular network segments.
+description: Use the three CIDR operators (getCIDRPrefix, compareCIDRPrefix, maskFromCIDR) to analyze IPv4 networks using Classless Inter-Domain Routing notation and narrow analysis to specific subnets.
 ---
 
 Sumo Logic's three CIDR operators work with CIDR (Classless Inter-Domain Routing, sometimes pronounced "cider") notation to narrow the analysis of IPv4 networks to specific subnets. CIDR notations specify the routing prefix of IP addresses. Input data will be trimmed, making these operators more flexible, which allows you to set your expectations accordingly.

@@ -2,7 +2,7 @@
 id: replace
 title: replace Search Operator
 sidebar_label: replace
-description: Use the `replace` operator to replace all instances of a specified string with another string using matching regex or literal text. Find and change names, replace punctuation, standardize formats, or rename values across log fields. Useful for data normalization, cleaning log data, and transforming field values to consistent formats.
+description: Use the replace operator to replace all instances of a specified string with another string using matching regex or literal text.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

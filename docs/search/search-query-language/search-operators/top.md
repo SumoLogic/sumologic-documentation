@@ -2,7 +2,7 @@
 id: top
 title: top Search Operator
 sidebar_label: top
-description: Use the `top` operator with the sort operator to reduce the number of sorted results returned. Consider using the topk operator instead for additional functionality and enhanced capabilities. Useful for creating Top N lists and limiting sorted query results in dashboards and reports.
+description: Use the top operator with the sort operator to reduce the number of sorted results returned.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

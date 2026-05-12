@@ -2,7 +2,7 @@
 id: outlier
 title: outlier Search Operator
 sidebar_label: outlier
-description: Use the `outlier` operator to identify unexpected values in time-stamped numerical data sequences for anomaly detection and alerting. Tracks moving average and standard deviation, flagging data points outside a specified threshold of standard deviations. Requires timeslice aggregation. Ideal for scheduled searches, early warning systems, detecting performance anomalies, and identifying unusual patterns in metrics or log data.
+description: Use the outlier operator to identify unexpected values in time-stamped numerical data sequences for anomaly detection and alerting.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

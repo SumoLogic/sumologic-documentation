@@ -2,7 +2,7 @@
 id: transpose
 title: transpose Search Operator
 sidebar_label: transpose
-description: Use the `transpose` operator to transform list data into table format in the Aggregates tab, similar to Excel pivot tables. Define which data makes rows and columns to create more useful and readable tabular views. Converts sequential data into cross-tabulated format for better analysis and visualization in dashboards and reports.
+description: Use the transpose operator to transform list data into table format in the Aggregates tab, similar to Excel pivot tables.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

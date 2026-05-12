@@ -2,7 +2,7 @@
 id: predict
 title: predict Search Operator
 sidebar_label: predict
-description: Use the `predict` operator to forecast future values based on time-series numerical data. Supports two models - auto-regressive (automatically detects cyclical patterns) and linear regression (extrapolates from existing data). Essential for early warning systems, capacity planning, resource forecasting, and predicting when thresholds will be reached. Helps anticipate issues like disk space exhaustion or seasonal traffic spikes before they occur.
+description: Use the predict operator to forecast future values based on time-series numerical data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

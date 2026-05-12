@@ -2,7 +2,7 @@
 id: hash
 title: hash Search Operator
 sidebar_label: hash
-description: Use the `hash` operator to obscure sensitive data using cryptographic hash algorithms including MD5, SHA1, SHA2, and MurmurHash3. Converts field values into random unique hash codes while preserving uniqueness, allowing you to anonymize personally identifiable information like email addresses, usernames, credit cards, and social security numbers. Each unique value generates a unique hash code, maintaining data relationships without exposing sensitive information.
+description: Use the hash operator to obscure sensitive data using cryptographic hash algorithms including MD5, SHA1, SHA2, and MurmurHash3.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

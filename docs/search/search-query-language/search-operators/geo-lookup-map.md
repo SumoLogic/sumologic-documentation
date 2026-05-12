@@ -2,7 +2,7 @@
 id: geo-lookup-map
 title: Geo Lookup (Map) Search Operator
 sidebar_label: Geo Lookup (Map)
-description: Use the Geo Lookup (Map) operator to match parsed IPv4 or IPv6 addresses to their geographical location for visualization on map charts. Returns latitude and longitude with precision up to five decimal places based on where IP addresses originated. Essential for creating map charts in dashboards. Internal addresses without location data return null values.
+description: Use the Geo Lookup (Map) operator to match parsed IPv4 or IPv6 addresses to their geographical location for visualization on map charts.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,7 +2,7 @@
 id: filter
 title: filter Search Operator
 sidebar_label: filter
-description: Use the `filter` operator to filter search output based on the filtering criteria of a child query. Keeps only records that match the filter criteria, restricting results to the most relevant information. Must follow an aggregate operator and can be used instead of the where operator. All specified fields must be present in the child query output.
+description: Use the filter operator to filter search output based on the filtering criteria of a child query.
 ---
 
 Use the `filter` operator to filter the output of a search based on the filtering criteria of a child query. The `filter` operator keeps only the records that match the filter criteria, allowing you to restrict search results to the most relevant information.

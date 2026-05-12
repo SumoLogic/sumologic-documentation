@@ -2,7 +2,7 @@
 id: ipv4tonumber
 title: ipv4ToNumber Search Operator
 sidebar_label: ipv4ToNumber
-description: Use the `ipv4ToNumber` operator to convert IPv4 addresses from octet dot-decimal format (like 192.168.1.1) to decimal format. This decimal representation makes it easier to compare IP addresses numerically, perform range queries, and analyze IP address sequences without relying on complex IP masking. For subnet analysis, consider using the CIDR operator instead.
+description: Use the ipv4ToNumber operator to convert IPv4 addresses from octet dot-decimal format (like 192.168.1.1) to decimal format.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

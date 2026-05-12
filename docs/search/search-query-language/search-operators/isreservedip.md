@@ -2,7 +2,7 @@
 id: isreservedip
 title: isReservedIP Search Operator
 sidebar_label: isReservedIP
-description: Use the `isReservedIP` operator to check if an IPv4 address is reserved as defined by RFC 5735 and return a boolean result. Returns true for valid reserved IPv4 addresses including loopback, link-local, multicast, and other special-use addresses. Invalid IPv4 addresses are dropped from results. Useful for identifying special-purpose IP addresses in network analysis.
+description: Use the isReservedIP operator to check if an IPv4 address is reserved as defined by RFC 5735 and return a boolean result.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

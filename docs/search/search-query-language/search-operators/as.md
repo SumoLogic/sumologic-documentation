@@ -2,7 +2,7 @@
 id: as
 title: as Search Operator
 sidebar_label: as
-description: Use the `as` operator to rename existing fields or create new constant fields in your search results. Typically used with parse, count, and aggregate functions to assign aliases or hardcode values. When you rename a field, the original is preserved and a new aliased field is added. Improves query readability and standardizes field names across data sources.
+description: Use the as operator to rename existing fields or create new constant fields in your search results.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

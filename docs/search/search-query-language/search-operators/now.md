@@ -2,7 +2,7 @@
 id: now
 title: now Search Operator
 sidebar_label: now
-description: Use the `now` operator to return the current epoch time in milliseconds. Often used with the formatDate operator to get formatted current time. Returns the exact time (down to the millisecond) each time it executes, so results vary slightly across messages processed at different times. Useful for timestamp calculations, time-based filtering, and relative time analysis.
+description: Use the now operator to return the current epoch time in milliseconds.Often used with the formatDate operator to get formatted current time.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

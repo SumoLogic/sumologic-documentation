@@ -2,7 +2,7 @@
 id: geoip
 title: geoip Search Operator
 sidebar_label: geoip
-description: Use the `geoip` operator to match parsed IPv4 or IPv6 addresses to their geographical location for map chart visualization. Returns latitude, longitude, and optional location details with precision up to five decimal places based on where IP addresses originated. Internal addresses without location data return null values. Essential for creating map charts in dashboards.
+description: Use the geoip operator to match parsed IPv4 or IPv6 addresses to their geographical location for map chart visualization.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

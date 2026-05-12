@@ -2,7 +2,7 @@
 id: fields
 title: fields Search Operator
 sidebar_label: fields
-description: Use the `fields` operator to specify which fields to display and their order in query results, reducing clutter from irrelevant fields. Supports two modes - allowlist (include only specified fields) and denylist (exclude specified fields). Use the equals syntax to include only specified fields without defaults. Place the operator last in your query to control field ordering.
+description: Use the fields operator to specify which fields to display and their order in query results, reducing clutter from irrelevant fields.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

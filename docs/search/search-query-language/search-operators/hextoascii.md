@@ -2,7 +2,7 @@
 id: hextoascii
 title: hexToAscii Search Operator
 sidebar_label: hexToAscii
-description: Use the `hexToAscii` operator to convert hexadecimal strings to ASCII text format. Decodes hex-encoded data extracted from logs, network packets, or binary formats into readable text. Useful for analyzing hex-encoded payloads, debug output, or data that was encoded for transmission or storage in hexadecimal format.
+description: Use the hexToAscii operator to convert hexadecimal strings to ASCII text format.
 ---
 
 The `hexToAscii` operator converts a hexadecimal string to an ASCII string.

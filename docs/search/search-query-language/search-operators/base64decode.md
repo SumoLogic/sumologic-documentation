@@ -2,7 +2,7 @@
 id: base64decode
 title: base64Decode Search Operator
 sidebar_label: base64Decode
-description: Use the `base64Decode` operator to convert base64-encoded strings into readable ASCII or non-ASCII text in your log data. Decode authentication tokens, API payloads, email content, or configuration parameters transmitted in base64 format. Supports multiple character encodings including UTF-8 (default), US-ASCII, UTF-16, and UTF-32 variants. Invalid input is returned unaltered.
+description: Use the base64Decode operator to convert base64-encoded strings into readable ASCII or non-ASCII text in your log data.
 ---
 
 The `base64Decode` operator takes a base64 string and converts it to ASCII or non-ASCII string. Input must be a valid base64 string. Invalid input is returned unaltered.

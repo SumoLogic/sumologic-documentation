@@ -2,7 +2,7 @@
 id: formatdate
 title: formatDate Search Operator
 sidebar_label: formatDate
-description: Use the `formatDate` operator to format dates in log files as strings in your required format, such as U.S. date formatting, European formatting, or custom timestamp patterns. Specify the date field, optional format pattern, and optional timezone. For converting a date string to a timestamp, use the parseDate operator instead.
+description: Use the formatDate operator to format dates in log files as strings in your required format, such as U.S.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

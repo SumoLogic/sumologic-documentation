@@ -2,7 +2,7 @@
 id: tourl
 title: tourl Search Operator
 sidebar_label: tourl
-description: Use the `tourl` operator to assign short descriptive names to URLs, similar to creating href links with readable labels. Transforms long URLs into clickable links with meaningful descriptions for better readability in dashboards. Ideal for displaying URLs with context instead of raw URL strings, improving dashboard usability and user experience.
+description: Use the tourl operator to assign short descriptive names to URLs, similar to creating href links with readable labels.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,7 +2,7 @@
 id: num
 title: num Search Operator
 sidebar_label: num
-description: Use the `num` operator to convert a field to a 64-bit IEEE 754 double-precision floating-point number, providing twice the accuracy of 32-bit float values. Useful for sorting results numerically instead of alphabetically (the default), performing precise mathematical operations, and ensuring correct numeric comparisons. Accepts negative/positive integers and real numbers as input.
+description: Use the num operator to convert a field to a 64-bit IEEE 754 double-precision floating-point number, providing twice the accuracy of 32-bit float values.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

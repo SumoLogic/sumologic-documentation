@@ -2,7 +2,7 @@
 id: haversine
 title: haversine Search Operator
 sidebar_label: haversine
-description: Use the `haversine` operator to calculate the distance between two geographical coordinates in kilometers using latitude and longitude values. Coordinates must be specified as positive or negative values based on north/south or east/west orientation rather than N/S, E/W notation. Useful for proximity analysis, distance-based filtering, and geospatial calculations.
+description: Use the haversine operator to calculate the distance between two geographical coordinates in kilometers using latitude and longitude values.
 ---
 
 The `haversine` operator returns the distance between latitude and longitude values of two coordinates in kilometers. Coordinates need to be positive or negative values based on being north/south or east/west, instead of using the terms N/S, E/W.
