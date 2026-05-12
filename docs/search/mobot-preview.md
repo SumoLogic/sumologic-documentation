@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
 
 :::info Participation requirement
-Access requires a signed AI addendum. This applies to all future stages (public preview and GA) because Mobot processes raw log data. Contact your account team if you have not yet signed the addendum.
+Access requires a signed AI addendum. This applies to all future stages (public preview and GA) because Mobot uses AI to make inferences on log data. Contact your account team if you have not yet signed the addendum.
 :::
 
 This preview introduces a new iteration of [Sumo Logic Mobot](/docs/search/mobot/) that functions as a conversational intelligence layer between you and your data. It understands intent from open-ended questions, plans and executes multi-step analysis behind the scenes, and delivers structured, narrative-driven answers with suggested next steps. Because Mobot carries context across turns, follow-up questions, refinements, and changes in direction feel part of the same flow.
@@ -32,16 +32,13 @@ Features and behavior described here are subject to change before general availa
 
 | | Before | Now |
 |:--|:--|:--|
-| **[Interface and routing](#united-interface)** | Separate Query Agent and Knowledge Agent with manual selection | Unified interface with automatic routing to the right skill |
-| **[Reasoning](#thinking-and-planning)** | Natural language to log query translation | Higher-order reasoning, planning, and implicit log analysis |
-| **[Results rendering](#results-rendering)** | Query results open in Log Search | Query results render as structured table summaries inline in the conversation, plus option to open in Log Search |
-| **[Anomaly surfacing](#results-rendering)** | Not available | Highlights unusual patterns and suggests next steps |
-| **[Missing data sources](#configuration-gap-detection)** | Returns no results or an error | Detects missing partitions or indexes and provides setup guidance |
-| **[Log support](#unstructured-logs-support)** | Structured and semi-structured logs | Structured, semi-structured, and unstructured logs |
+| **[Interface and routing](#unified-interface-and-intent-understanding)** | Separate Query Agent and Knowledge Agent with manual selection | Agent automatically uses available capabilities behind the scenes |
+| **[Reasoning & Complex Log Analysis](#reasoning--complex-log-analysis)** | Natural language to log query translation | Higher-order reasoning, planning, and implicit log analysis |
+| **[Results rendering](#results-rendering)** | Query results open in Log Search | Query results render as structured narratives, basic visualization like table summaries, plus option to open in Log Search |
+| **[Log support](#unstructured-logs-support)** | Structured and semi-structured logs | Structured, semi-structured, and [unstructured logs](#unstructured-logs-support) |
 | **[Conversation history](#conversation-history)** | 24 hours | Retained indefinitely (subject to change) |
-| **[Feedback](#feedback)** | Thumbs up/down | Thumbs up/down + shareable conversation URL |
 
-### United interface
+### Unified Interface and Intent Understanding
 
 You no longer need to choose between Query Agent and Knowledge Agent. Mobot handles this for you.
 
@@ -58,17 +55,15 @@ Mobot automatically routes your question to the appropriate skill, as seen here:
 
 <img src={useBaseUrl('img/search/mobot/platform-how-to-mobotv2.png')} alt="Mobot platform how-to answer" style={{border: '1px solid gray'}} width="700" />
 
-### Thinking and planning
+### Reasoning & complex log analysis
 
 While Mobot processes your question, it displays a **Thinking...** or **Planning...** indicator showing that it is identifying relevant data sources and analyzing the problem. Behind the scenes, Mobot selects relevant data sources, schema, lookup tables, and saved queries, infers time ranges based on context, and retrieves log data enriched with environmental context.
-
-### Multi-step analysis
 
 Mobot orchestrates multi-step analysis automatically. It translates your question into the appropriate analytical steps, applies multi-step reasoning to synthesize findings, and presents results as a structured response with suggested next steps.
 
 ### Results rendering
 
-When Mobot returns results, they appear summarized inline as structured tables directly in the conversation, plus a shortcut button to expand on results in a separate Log Search view.
+When Mobot returns query results, they appear as structured narratives, basic visualization like table summaries, plus a shortcut button to expand on results in a separate Log Search view.
 
 In this example, Mobot summarizes what stands out at the bottom of the response, labeled **Notable**. For example, if `WARN` entries share an unusual pattern, Mobot flags them, explains what they may indicate, and asks whether you want to investigate further.
 
@@ -89,20 +84,6 @@ For example, asking `Show me logs from last 15 minutes` or `Show me all logs fro
 <img src={useBaseUrl('img/search/mobot/clarification-prompt-logs-mobotv2.png')} alt="Mobot clarification prompt" style={{border: '1px solid gray'}} width="600" />
 
 Respond with a source name, source category expression, or any keyword related to what you are looking for. If your question falls outside available data or system capabilities, Mobot clarifies or redirects rather than returning an error.
-
-### Configuration gap detection
-
-When you request data from a source that has not been configured, Mobot detects the missing partition or index and provides step-by-step setup guidance rather than returning an empty result.
-
-For example, asking `Show me Cloud SIEM network records grouped by action` when Cloud SIEM is not enabled prompts Mobot to explain what is missing and walks you through how to enable it.
-
-This detection works reactively. When you ask a question that requires a specific data source, Mobot attempts the query and detects if the partition or data does not exist. Mobot cannot proactively scan your environment or generate a list of all unconfigured integrations.
-
-You can also use this capability on demand. For example:
-
-* `Do I have AWS CloudTrail data?`
-* `Is Kubernetes data flowing in?`
-* `Do I have any threat intel lookups set up?`
 
 ### Unstructured logs support
 
@@ -137,13 +118,9 @@ Mobot works best when you start with a business question, not a query. Ask quest
 
 ### Developer and SRE
 
-* `What does the error trend look like for my service over the past 24 hours?`
-
 * `Are any services consistently breaching indexing latency SLOs?`
 
 Follow-up:
-
-* `Which instances are most impacted?`
 
 * `When did this start?`
 
@@ -169,7 +146,7 @@ Mobot is in Extended Preview and has the following known limitations.
 
 **Use cases**
 * Log analysis only. Metrics, traces, and other telemetry types are not supported.
-* Capabilities are constrained by available skills. Domain intelligence and planning are still evolving.
+* Domain intelligence and planning are still evolving.
 
 **Access and actions**
 * Read-only. Mobot can query and analyze data but cannot modify, delete, ingest data, manage dashboards or monitors, or access external systems.
