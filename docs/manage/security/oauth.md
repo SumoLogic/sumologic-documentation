@@ -224,7 +224,7 @@ Copy the `clientId` and `clientSecret` from the response. These are your OAuth c
 
 </details>
 
-### Step 3: Generate an access token
+### Step 3: Generate an access token {#generate-an-access-token}
 
 Request an OAuth access token from the token endpoint using your client credentials.
 
