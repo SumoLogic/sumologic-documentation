@@ -435,7 +435,3 @@ For bulk data retrieval or model training, the [Search Job API](/docs/api/search
 ### Where does my agent run?
 
 Agents connected via MCP run in your own environment, not within Sumo Logic infrastructure.
-
-## Additional resources
-
-* [Sumo Logic MCP Server demo](https://www.sumologic.com/demo/mcp-server)
