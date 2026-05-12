@@ -26,7 +26,7 @@ Updated toast notifications, tooltips, and button components in both UI design a
 
 #### Triage
 
-Improved the performance of the Get Triage Event Details Public [API](https://api.sumologic.com/docs/csoar/#operation/triage_retrieve).
+Improved the performance of the Get Triage Event Details Public API. [Learn more](https://api.sumologic.com/docs/csoar/#operation/triage_retrieve).
 
 #### Playbooks
 
