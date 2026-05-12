@@ -2,7 +2,7 @@
 id: rate
 title: rate Metrics Operator
 sidebar_label: rate
-description: Use the `rate` metrics operator to calculate the per-second rate of change between data points in time series. Supports two modes - regular rate for consecutive data points, or rate over TIME for average rate over a specified window. Updates metric tag to rate($metric) and unit to $unit/second. Essential for counter metrics and throughput analysis.
+description: Use the rate metrics operator to calculate the per-second rate of change between data points in time series.
 ---
 
 

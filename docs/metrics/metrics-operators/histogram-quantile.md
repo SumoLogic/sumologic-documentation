@@ -2,7 +2,7 @@
 id: histogram-quantile
 title: histogram_quantile Metrics Operator
 sidebar_label: histogram_quantile
-description: Use the `histogram_quantile` metrics operator to calculate the φ-quantile (0 ≤ φ ≤ 1) from Prometheus histogram buckets. Specific to Prometheus Histogram data type and equivalent to PromQL histogram_quantile() function. Does not work with non-Prometheus histograms. Essential for calculating percentiles from histogram data.
+description: Use the histogram_quantile metrics operator to calculate the φ-quantile (0 ≤ φ ≤ 1) from Prometheus histogram buckets.
 ---
 
 

@@ -2,7 +2,7 @@
 id: eval
 title: eval Metrics Operator
 sidebar_label: eval
-description: Use the `eval` metrics operator to evaluate time series based on user-specified arithmetic or mathematical functions. Apply complex mathematical operations, transformations, and calculations to metric values. Supports reducer expressions and granularity-based evaluations for flexible metric computation and custom derived metrics.
+description: Use the eval metrics operator to evaluate time series based on user-specified arithmetic or mathematical functions.
 ---
 
 

@@ -2,7 +2,7 @@
 id: delta
 title: delta Metrics Operator
 sidebar_label: delta
-description: Use the `delta` metrics operator to compute the backward difference at each data point, determining how much the metric changed from its previous value in the time series. Supports increasing, decreasing, and counter modes. Updates the metric dimension to delta($metric) or creates metric=delta. Ideal for rate-of-change analysis and derivative calculations.
+description: Use the delta metrics operator to compute the backward difference at each data point, determining how much the metric changed from its previous value in the time series.
 ---
 
 

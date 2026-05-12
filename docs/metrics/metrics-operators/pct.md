@@ -2,7 +2,7 @@
 id: pct
 title: pct Metrics Operator
 sidebar_label: pct
-description: Use the `pct` metrics operator to calculate the nth percentile of input series values at each timestamp for each time interval. When grouping is specified, calculates the percentile for each group. Essential for SLA monitoring, performance analysis, and understanding value distribution at specific percentile thresholds like p50, p95, or p99.
+description: Use the pct metrics operator to calculate the nth percentile of input series values at each timestamp for each time interval.
 ---
 
 

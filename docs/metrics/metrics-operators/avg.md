@@ -2,7 +2,7 @@
 id: avg
 title: avg Metrics Operator
 sidebar_label: avg
-description: Use the `avg` metrics operator to calculate the average of all matching time series. When grouping is specified, calculates the average for each group. Essential for understanding typical values, smoothing out variations, and identifying average performance across multiple metrics or grouped dimensions.
+description: Use the avg metrics operator to calculate the average of all matching time series.When grouping is specified, calculates the average for each group.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

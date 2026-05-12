@@ -2,7 +2,7 @@
 id: quantize
 title: quantize Metrics Operator
 sidebar_label: quantize
-description: Use the `quantize` metrics operator to control quantization behavior by specifying time bucket size and rollup type for aggregating data points. Override automatic quantization with custom intervals (seconds, minutes, hours, days) and rollup types (avg, min, max, sum, count, rate). Essential for precise control over metric aggregation and visualization granularity.
+description: Use the quantize metrics operator to control quantization behavior by specifying time bucket size and rollup type for aggregating data points.
 ---
 
 

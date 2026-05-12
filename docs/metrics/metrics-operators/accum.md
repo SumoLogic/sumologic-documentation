@@ -2,7 +2,7 @@
 id: accum
 title: accum Metrics Operator
 sidebar_label: accum
-description: Use the `accum` metrics operator to create a series of running totals for each metric time series, starting from the first data point and iteratively adding successive values. Useful for tracking cumulative metrics where the total value over time matters, such as total failed or successful transactions, request counts, or accumulated resource usage.
+description: Use the accum metrics operator to create a series of running totals for each metric time series, starting from the first data point and iteratively adding successive values.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

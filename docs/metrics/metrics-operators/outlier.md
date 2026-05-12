@@ -2,7 +2,7 @@
 id: outlier
 title: outlier Metrics Operator
 sidebar_label: outlier
-description: Use the `outlier` metrics operator to identify data points outside the range of expected values by tracking moving average and standard deviation over a specified time window. Calculates threshold bands beyond which data points are considered outliers. Useful for anomaly detection, spotting unusual behavior in visualizations, and tracking behavioral changes. Cannot be directly referenced in monitors.
+description: Use the outlier metrics operator to identify data points outside the range of expected values by tracking moving average and standard deviation over a specified time window.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

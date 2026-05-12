@@ -2,7 +2,7 @@
 id: timeshift
 title: timeshift Metrics Operator
 sidebar_label: timeshift
-description: Use the `timeshift` metrics operator to shift time series from your query by a specified period of time. Essential for comparing current metrics with historical data, creating week-over-week or day-over-day comparisons, and analyzing trends by overlaying time-shifted series on the same chart.
+description: Use the timeshift metrics operator to shift time series from your query by a specified period of time.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

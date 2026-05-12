@@ -2,7 +2,7 @@
 id: sum
 title: sum Metrics Operator
 sidebar_label: sum
-description: Use the `sum` metrics operator to calculate the sum of metric values that match the query. When grouping is specified, calculates the sum for each group. Essential for aggregating totals across multiple time series, calculating combined resource usage, and summing counters or rates across services or dimensions.
+description: Use the sum metrics operator to calculate the sum of metric values that match the query.When grouping is specified, calculates the sum for each group.
 ---
 
 
