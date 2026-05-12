@@ -15,7 +15,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Microsoft Exchange Trace Logs source collects the [Message Trace](https://learn.microsoft.com/en-us/graph/api/messagetracingroot-list-messagetraces?view=graph-rest-1.0&tabs=http) logs via the Microsoft Graph API.
 
 :::note
-Upgrade the Microsoft Exchange Trace Logs source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+We recommend migrating to version 2.x.x only if your tenant is on the 
+[Microsoft Graph Global Service](https://learn.microsoft.com/en-us/graph/api/messagetracingroot-list-messagetraces?view=graph-rest-1.0&tabs=http) 
+and has the **`/admin/exchange/tracing/messageTraces`** endpoint enabled. 
+If your tenant does not meet these requirements or the endpoint is not yet 
+available in your environment, please continue using version 1.x.x to 
+ensure uninterrupted data collection.
 :::
 
 ## Data collected
