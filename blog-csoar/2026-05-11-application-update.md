@@ -11,9 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## April release
 
-Following are the updates made in April 2026.
+The following are the updates made in April 2026.
 
 ### Changes and enhancements
+
+This section includes performance improvements, new integrations, UI refinements, and usability enhancements across Sumo Logic.
 
 ### Integrations
 
@@ -30,7 +32,7 @@ Improved the performance of the Get Triage Event Details Public API. [Learn more
 
 #### Playbooks
 
-Improved the performance of task approve/close APIs.
+Improved the performance of the task approve/close APIs.
 
 #### Incidents
 
