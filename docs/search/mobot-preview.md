@@ -34,7 +34,7 @@ Features and behavior described here are subject to change before general availa
 |:--|:--|:--|
 | **[Interface and routing](#unified-interface-and-intent-understanding)** | Separate Query Agent and Knowledge Agent with manual selection | Agent automatically uses available capabilities behind the scenes |
 | **[Reasoning & Complex Log Analysis](#reasoning--complex-log-analysis)** | Natural language to log query translation | Higher-order reasoning, planning, and implicit log analysis |
-| **[Results rendering](#results-rendering)** | Query results open in Log Search | Query results render as structured narratives, basic visualization like table summaries, plus option to open in Log Search |
+| **[Results rendering](#results-rendering)** | Query results open in Log Search | Query results render as narrative summaries with structured tables inline in the conversation, plus an option to open in Log Search |
 | **[Log support](#unstructured-logs-support)** | Structured and semi-structured logs | Structured, semi-structured, and [unstructured logs](#unstructured-logs-support) |
 | **[Conversation history](#conversation-history)** | 24 hours | Retained indefinitely (subject to change) |
 
