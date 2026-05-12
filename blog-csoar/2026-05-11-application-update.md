@@ -22,7 +22,7 @@ Following are the updates made in April 2026.
 
 ### Platform
 
-Updated toast notifications, tooltips, and button components in both UI design and behaviour to ensure consistency with the platform.
+Updated toast notifications, tooltips, and button components in both UI design and behavior to ensure consistency with the platform.
 
 #### Triage
 
