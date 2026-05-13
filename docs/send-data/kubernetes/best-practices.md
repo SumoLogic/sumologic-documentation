@@ -574,7 +574,7 @@ The above, in connection with PVC monitoring, can lead to constant alerts (e.g.,
 We are migrating the default batching logic from the batch processor to exporter-side batching to improve service reliability. For more details refer [Link](https://github.com/open-telemetry/opentelemetry-collector/issues/8122)
 
 #### Queue Size
-When an exporter is preceded by a batch processor, `sending_queue.queue_size` represents the number of batches produced by the batch processor. With exporter-side batching, the batch processor is removed, so `sending_queue.queue_size` instead represents the number of individual requests. As a result, if the queue size is not adjusted accordingly, the queue may fill up more quickly and potentially lead to data loss.
+When an exporter is preceded by a batch processor, `sending_queue.queue_size` represents the number of batches produced by the batch processor. With exporter-side batching, the batch processor is removed, so `sending_queue.queue_size` instead represents the number of individual records. As a result, if the queue size is not adjusted accordingly, the queue may fill up more quickly and potentially lead to data loss.
 
 To avoid this, it is recommended to increase `sending_queue.queue_size` by a factor equal to the batch processor’s `send_batch_size`.
 
@@ -610,11 +610,45 @@ metadata:
             sending_queue:
               queue_size: 1024000 ## = 1000 * 1024
 ```
+#### Batch Size
+The batching logic is moved from processor to exporter so if you have custom configured the batch size like,
+```yaml
+metadata:
+  logs:
+    config:
+      merge:
+        processors:
+          batch:
+            timeout: 5s
+            send_batch_size: 5000
+            send_batch_max_size: 10000
+```
+
+The new config should be,
+```yaml
+metadata:
+  logs:
+    config:
+      merge:
+        exporters:
+          sumologic: ## for each exporter
+            sending_queue:
+              ## If you had the old queue value as x 
+              ## the new queue_size should x * 5000
+              queue_size: 5000000
+              batch:
+                min_size: 5000
+                max_size: 10000
+                flush_timeout: 5s
+```
+More details of the exporter batch config can be found in [Link](https://github.com/open-telemetry/opentelemetry-collector/blob/main/exporter/exporterhelper/README.md#sending-queue-batch-settings)
+
 
 If you have completed the configuration changes and want to proceed with the installation, set this flag to `true` to acknowledge that you understand the changes and their impact.
 
 ```yaml
-customBatchingConfigured: true
+sumologic:
+  customBatchingConfigured: true
 ```
 
 ### Compaction
