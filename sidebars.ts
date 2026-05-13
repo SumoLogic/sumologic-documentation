@@ -494,6 +494,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/github-copilot-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/glean-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source',
