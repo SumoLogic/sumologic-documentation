@@ -75,8 +75,11 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Manage Share Dashboards Outside Organization | [Share a dashboard](/docs/dashboards/share-dashboard-outside-org/) with users who do not have Sumo Logic access. | `shareDashboardOutsideOrg` |
 | Manage Organization Settings | Configure concurrent session limits and the Data Access Level for Shared Dashboards security policy. | `manageOrgSettings` |
 |Change Data Access Level|Change the [data access level](/docs/dashboards/set-data-access-level/) of dashboards or scheduled searches. | `changeDataAccessLevel` |
+
+<!-- Private Preview features to be added to Security
 | Manage Data Masking Rules | Create, update, enable, disable, or delete [data masking rules](/docs/manage/data-masking). (Private Preview) | `manageDataMaskingRules` |
 | View Unmasked Data | View log data in its original, unmasked form when [data masking rules](/docs/manage/data-masking) are active. Users without this capability see masked data. (Private Preview) | `viewUnmaskedData` |
+-->
 
 ## Dashboards
 
