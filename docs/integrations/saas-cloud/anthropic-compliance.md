@@ -280,6 +280,26 @@ The **Anthropic Compliance - User Configuration and Invite Lifecycle Monitoring*
 
 <img src={useBaseUrl('img/send-data/Anthropic-Compliance-User-Configuration-and-Invite-Lifecycle-Monitoring.png')} alt="Anthropic Compliance - User Configuration and Invite Lifecycle Monitoring dashboard" />
 
+## Create monitors for Anthropic Compliance app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Anthropic Compliance monitors
+
+| Name | Description | Trigger Type | Alert Condition | 
+|:--|:--|:--|:--|
+| `Anthropic Compliance - Admin or Platform API Key Created` | Detects when an Admin API key or Platform API key is created within the Anthropic organization. Adversaries or malicious insiders may create API keys to establish persistent, programmatic access to organizational resources. Any key creation event should be reviewed to verify that it was authorized and expected. | Critical | Count > 0 |
+| `Anthropic Compliance - Anthropic Compliance API Logging Disabled` | Detects when Compliance API logging is disabled for an Anthropic organization. Disabling audit logging is a common defense evasion technique — attackers may disable it to reduce visibility into their activities. Any disabling of compliance API logging should be treated as high priority and investigated immediately. | Critical | Count > 0 |
+| `Anthropic Compliance - Anthropic Organization IP Restriction Deleted` | Detects when an IP restriction policy is deleted from an Anthropic organization. IP allowlisting is a critical access control. Removing IP restrictions may allow an attacker to access Anthropic resources from previously blocked networks, significantly expanding the attack surface. | Critical | Count > 0 |
+| `Anthropic Compliance - Compliance Activity From Embargoed Location` | Detects compliance-related activities originating from embargoed or geographically restricted locations. Alerts are triggered when compliance actions are performed from regions that are prohibited under regulatory or organizational guidelines. | Critical | Count > 0 |
+| `Anthropic Compliance - Excessive Failed Authentication User Activities Detected` | Detects an abnormal number of failed authentication attempts across multiple authentication mechanisms, including SSO failures and magic link login failures within the Anthropic platform. Alerts are triggered when failed authentication attempts exceed the threshold within a specific time window, potentially indicating brute force attacks, credential stuffing, or account takeover attempts. | Critical | Count > 5 |
+| `Anthropic Compliance - Excessive Unauthorized Access Attempts on Compliance API` | Detects repeated unauthorized and forbidden access attempts on the Anthropic Compliance API within a short time window. Alerts are triggered when multiple 401 Unauthorized or 403 Forbidden responses are observed from the same user or IP address, indicating potential credential abuse, brute force attempts, or unauthorized API access activity. | Critical | Count > 5 |
+| `Anthropic Compliance - Org Deletion & Destructive Activity` | Detects any destructive actions, including organization deletions, bulk deletes, user removals, and taint additions within the Anthropic platform. Alerts are triggered when irreversible deletion or destructive events are performed, indicating potential unauthorized data destruction or malicious insider activity requiring immediate investigation. | Critical | Count > 0 |
+| `Anthropic Compliance - Outlier in Anthropic Resource Deletions from User` | Detects unusual spikes in resource deletion activity performed by a single user within the Anthropic platform. Alerts are triggered when a user's deletion activity significantly deviates from their historical baseline, indicating potential insider threat, compromised account, or unauthorized mass deletion of critical resources. | Critical | Count > 1 |
+| `Anthropic Compliance - Unauthenticated User Activity Detected` | Detects suspicious activities or access attempts made by unauthenticated users within the Anthropic platform. Alerts are triggered when restricted resources are accessed without valid authentication or when unusual patterns are identified in unauthenticated traffic. | Critical | Count > 0 |
+
 ## Upgrade/Downgrade the Anthropic Compliance app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
