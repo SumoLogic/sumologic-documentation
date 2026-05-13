@@ -2,7 +2,7 @@
 id: data-masking-management
 title: Data Masking Management APIs
 sidebar_label: Data Masking Management
-description: Use Data Masking Management API endpoints to create, update, and manage data masking rules that protect sensitive information in your logs.
+description: Use Data Masking Management API endpoints to manage data masking rules that protect sensitive information in your logs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,7 +17,7 @@ This feature is in Private Preview. For more information, contact your Sumo Logi
 
 <img src={useBaseUrl('img/icons/security/security.png')} alt="Security icon" width="40"/>
 
-Use Data Masking Management APIs to create, update, and manage data masking rules that automatically redact or replace sensitive information in your logs at ingest time. These APIs help you enforce data protection standards consistently across your organization.
+Use Data Masking Management APIs to manage data masking rules that automatically redact or replace sensitive information in your logs at ingest time. These APIs help you enforce data protection standards consistently across your organization.
 
 For more information, see [Data Masking](/docs/manage/data-masking).
 
