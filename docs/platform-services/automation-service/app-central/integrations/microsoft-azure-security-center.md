@@ -60,6 +60,8 @@ After registering the application, assign the required Azure RBAC roles to grant
 1. Click **Review + assign**.
 1. Repeat the steps above to also assign the **Reader** role.
 
+For more information, see [Assign Azure roles using the Azure portal](https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal).
+
 Alternatively, if you prefer to follow the principle of least privilege, you can create a custom role with only the permissions required by this integration.
 
 ### Create a custom RBAC role (optional)
