@@ -213,3 +213,15 @@ Use this dashboard to:
 * Get details of all threats by IPs.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-ThreatIntel.png' alt="3. Amazon SQS - Threat Intel" style={{border: '1px solid gray'}} width="800" />
+
+### Performance Trends
+
+The **1. Amazon SQS - Performance Trends** dashboard provides derived performance insights including true consumer lag, empty receive rate trends, and cross-queue rankings by backlog and message staleness.
+
+Use this dashboard to:
+* Monitor true consumer lag by tracking combined visible and delayed messages in the backlog.
+* Identify queues with high empty receive rates to optimize polling behavior and reduce costs.
+* Rank queues by consumer backlog size to prioritize capacity planning.
+* Identify message staleness risks by tracking the age of the oldest message per queue.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-PerformanceTrends.png' alt="1. Amazon SQS - Performance Trends" style={{border: '1px solid gray'}} width="800" />
