@@ -87,7 +87,7 @@ Respond with a source name, source category expression, or any keyword related t
 
 ### Unstructured logs support
 
-Previously, Mobot worked best on structured (JSON) logs. With this preview release, Mobot automatically applies parsing logic to unstructured logs, even if no FERs are configured.
+Previously, Mobot worked best on structured (JSON) logs. With this preview release, Mobot can apply parsing logic to unstructured logs, even if no FERs are configured.
 
 Now it has built-in support for unstructured logs (raw, text-based log data that does not follow a structured format like JSON). You can ask questions in plain English and get meaningful results from nearly any log data, without requiring Field Extraction Rules (FERs).
 
