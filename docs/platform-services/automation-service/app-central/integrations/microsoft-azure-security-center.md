@@ -47,6 +47,41 @@ The following steps show how to create a Microsoft Azure Security Center Applica
 1. Once it's created, make sure you save its value, since it's only displayed once.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ms-az-service-center/ms-azure-security-ad-9.png')} style={{border:'1px solid gray'}} alt="Microsoft Azure Security Center 9" width="600"/>
 1. Once the Microsoft Azure Security Center application is configured, you will need the application’s Client ID, secret, and Tenant ID.
 
+### Assign RBAC roles
+
+After registering the application, assign the required Azure RBAC roles to grant it access to Security Center resources.
+
+1. In the [Azure portal](https://portal.azure.com/), navigate to your **Subscription**.
+1. Click **Access Control (IAM)**.
+1. Click **Add** > **Add role assignment**.
+1. Select the **Security Admin** role and click **Next**.
+1. Under **Assign access to**, select **User, group, or service principal**.
+1. Click **Select members**, search for your app registration, and select it.
+1. Click **Review + assign**.
+1. Repeat the steps above to also assign the **Reader** role.
+
+Alternatively, if you prefer to follow the principle of least privilege, you can create a custom role with only the permissions required by this integration.
+
+### Create a custom RBAC role (optional)
+
+1. In the [Azure portal](https://portal.azure.com/), navigate to your **Subscription**.
+1. Click **Access Control (IAM)**.
+1. Click **Roles**, then click **Add** > **Add custom role**.
+1. Enter a **Role name** and **Description**, and select **Start from scratch**.
+1. Click **Next** to go to the **Permissions** tab, then click **Add permissions** and add the following:
+   * `Microsoft.Security/alerts/read`
+   * `Microsoft.Security/alerts/write`
+   * `Microsoft.Security/policies/read`
+   * `Microsoft.Security/policies/write`
+   * `Microsoft.Security/tasks/read`
+   * `Microsoft.Security/tasks/write`
+   * `Microsoft.Security/*/read`
+   * `Microsoft.Resources/subscriptions/read`
+   * `Microsoft.Resources/subscriptions/locations/read`
+   * `Microsoft.Resources/subscriptions/resourceGroups/read`
+1. Under **Assignable scopes**, select your target subscription.
+1. Click **Review + create**.
+1. Once the custom role is created, assign it to your app registration by following the steps in [Assign RBAC roles](#assign-rbac-roles) above, selecting your custom role instead of **Security Admin**.
 
 ## Configure Microsoft Azure Security Center in Automation Service and Cloud SOAR
 
