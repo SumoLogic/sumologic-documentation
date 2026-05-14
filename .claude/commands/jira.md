@@ -174,6 +174,53 @@ https://sumologic.atlassian.net/browse/DOCS-[issue number]
 
 ---
 
+## DOCS Project Fields
+
+When creating or updating tickets, these fields are available:
+
+### Required Fields
+- **Summary** (`summary`) - Ticket title
+- **Technical Area** (`customfield_10748`) - Must be set from the allowed values (see Technical Area list above)
+- **Preview Doc Requirement** (`customfield_10796`) - Defaults to "N/A (General Availability)"
+  - Options: "N/A (General Availability)", "Public Preview", "Extended Preview", "Private Preview"
+
+### Optional Fields
+- **Assignee** (`assignee`) - Auto-assign based on Technical Area unless user specifies
+- **Description** (`description`) - Always use markdown format
+- **Priority** (`priority`) - Defaults to "Medium"
+  - Options: " High" (id: 12023), " Medium" (id: 12024), " Low" (id: 12025)
+- **Due Date** (`customfield_10643`) - Date picker (YYYY-MM-DD format)
+- **Github Pull Request** (`customfield_10466`) - URL field, auto-populate after PR creation
+- **Existing Tech Docs Link** (`customfield_10750`) - URL to related existing docs
+- **Product UI Link** (`customfield_14729`) - URL to product feature/UI
+- **Release Note Requirement** (`customfield_14728`) - "Yes" or "No"
+- **Labels** (`labels`) - Array of strings
+- **Parent** (`parent`) - Link to parent Epic/Story
+
+### When creating tickets with context:
+
+**From git changes or file analysis:**
+- Always set Technical Area based on file paths and content
+- Auto-assign to the appropriate writer
+- Default Preview Doc Requirement to "N/A (General Availability)" unless context suggests otherwise
+- Set Priority to "Medium" unless urgent/critical
+- Populate Description with benefit-driven summary of changes
+- **If updating an existing article:** Set "Existing Tech Docs Link" (`customfield_10750`) with the full production URL (e.g., `https://help.sumologic.com/docs/get-started/training-certification-faq`)
+
+**After PR creation:**
+- Always update the Github Pull Request field with the PR URL using `customfield_10466`
+
+**Field IDs reference:**
+- Technical Area: `customfield_10748`
+- Due Date: `customfield_10643`
+- Github Pull Request: `customfield_10466`
+- Existing Tech Docs Link: `customfield_10750`
+- Preview Doc Requirement: `customfield_10796`
+- Release Note Requirement: `customfield_14728`
+- Product UI Link: `customfield_14729`
+
+---
+
 ## Related commands
 
 * **`/doc-from-jira`** — if the goal is to write a doc for a ticket, use this instead. It fetches the ticket and scaffolds the full documentation file from its content.
