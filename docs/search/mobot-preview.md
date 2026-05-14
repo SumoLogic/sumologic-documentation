@@ -117,10 +117,12 @@ Mobot works best when you start with a business question, not a query. Ask quest
 
 ### Developer and SRE
 
+* `What does the error trend look like for my service over the past 24 hours?`
 * `Are any services consistently breaching indexing latency SLOs?`
 
 Follow-up:
 
+* `Which instances are most impacted?`
 * `When did this start?`
 
 ### Security analyst
