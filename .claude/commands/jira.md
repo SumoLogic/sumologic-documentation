@@ -192,6 +192,8 @@ When creating or updating tickets, these fields are available:
 - **Due Date** (`customfield_10643`) - Date picker (YYYY-MM-DD format)
 - **Github Pull Request** (`customfield_10466`) - URL field, auto-populate after PR creation
 - **Existing Tech Docs Link** (`customfield_10750`) - URL to related existing docs
+  - **IMPORTANT:** Required when transitioning to Published status
+  - Always populate when creating/updating tickets that touch existing articles
 - **Product UI Link** (`customfield_14729`) - URL to product feature/UI
 - **Release Note Requirement** (`customfield_14728`) - "Yes" or "No"
 - **Labels** (`labels`) - Array of strings
@@ -205,7 +207,8 @@ When creating or updating tickets, these fields are available:
 - Default Preview Doc Requirement to "N/A (General Availability)" unless context suggests otherwise
 - Set Priority to "Medium" unless urgent/critical
 - Populate Description with benefit-driven summary of changes
-- **If updating an existing article:** Set "Existing Tech Docs Link" (`customfield_10750`) with the full production URL (e.g., `https://help.sumologic.com/docs/get-started/training-certification-faq`)
+- **If creating/updating a ticket for an existing article:** Always set "Existing Tech Docs Link" (`customfield_10750`) with the full production URL (e.g., `https://help.sumologic.com/docs/get-started/training-certification-faq`)
+  - This field is required before tickets can be transitioned to Published status
 
 **After PR creation:**
 - Always update the Github Pull Request field with the PR URL using `customfield_10466`
