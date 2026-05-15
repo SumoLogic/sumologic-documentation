@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/trend-micro-vision-one.png')} alt="Trend Micro Vision One icon" width="80"/>
 
-***Version: 1.2  
-Updated: Jun 3, 2025***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 The Trend Micro Vision One platform includes advanced XDR capabilities that collect and correlate deep activity data across multiple vectors – email, endpoints, servers, cloud workloads, and networks.
 
@@ -58,3 +58,4 @@ For information about Trend Micro Vision One, see [Trend Micro Vision One docume
 * June 3, 2025 (v1.2)
     + Fixed type SHA1 issue in action `Add Object To Suspicious Object List` and `Delete Object From Suspicious Object List`
     + Added SHA256 support in action `Add Object To Suspicious Object List` and `Delete Object From Suspicious Object List`
+* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

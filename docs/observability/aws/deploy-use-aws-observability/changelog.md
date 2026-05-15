@@ -5,20 +5,43 @@ sidebar_label: Changelog
 description: This section provides details on the available versions of the AWS Observability CloudFormation template.
 ---
 
-This section provides details on the available versions of the AWS Observability Terraform script and CloudFormation template. The details also include all the AWS and Sumo Logic resources that will be updated, and the bugs when upgrading the existing version of the Terraform script or CloudFormation template to the latest version. For more information about how to use Terraform in your Sumo Logic environment, see [Use Terraform with Sumo Logic](/docs/api/about-apis/terraform-with-sumo-logic).
+This section provides details on the available versions of the AWS Observability Terraform script and CloudFormation template. The details also include all AWS and Sumo Logic resources that will be updated, as well as the bugs encountered when upgrading the existing version of the Terraform script or CloudFormation template to the latest version. For more information about how to use Terraform in your Sumo Logic environment, see [Use Terraform with Sumo Logic](/docs/api/about-apis/terraform-with-sumo-logic).
 
-To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Create a stack from the CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html) for more information.
+To install or upgrade to the required version of the CloudFormation template, use the Amazon S3 URL for the YAML file corresponding to the correct version number in the AWS CloudFormation section of the AWS Management Console. See [Create a stack from the CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html) for more information.
 
 ### AWSO lifecycle
 
 | Release (AWSO) | Release Date | Active Support | Additional Notes |
 |:--|:--|:--|:--|
+| 2.14.0 | 14th Apr, 2026 | Yes | AWSO is not supported in the AWS Zurich region, as the Serverless Application Repository is not available there. |
 | 2.13.0 | 7th Oct, 2025 | Yes | |
-| 2.12.0 | 1st April, 2025| Yes | |
-| 2.11.0 | 24th Jan, 2025 | Yes - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th April, 2025 |
-| 2.10.0 | 4th Sep, 2024  | Yes - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th April, 2025 |
-| 2.9.0 | 2nd Aug, 2024  | Yes - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th April, 2025 |
+| 2.12.0 | 1st Apr, 2025 | Yes | |
+| 2.11.0 | 24th Jan, 2025 | Yes - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th Apr, 2025 |
+| 2.10.0 | 4th Sep, 2024 | Yes - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th Apr, 2025 |
+| 2.9.0 | 2nd Aug, 2024 | Yes - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th Apr, 2025 |
 | 2.8.0 or Less | 17th May, 2024 | No | AWS Lambda runtime Node.js 18.x was deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-deprecated)) |
+
+
+## v2.14.0, 14-April-2026
+AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.14.0/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+
+New Features:
+* AWS Observability solution now supports Sumo Logic Zurich deployment.
+
+Updates:
+* Updated and enhanced 9 AWS-related apps:
+  * AWS API Gateway
+  * AWS Application Load Balancer
+  * AWS Classic Load Balancer
+  * AWS Network Load Balancer
+  * Amazon EC2
+  * Amazon ElastiCache
+  * Amazon RDS
+  * Amazon SNS
+  * AWS Lambda
+* Updated FERs for Load Balancer (ALB, NLB).
 
 ## v2.13.0, 07-Oct-2025
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.13.0/sumologic_observability.master.template.yaml`
@@ -51,8 +74,8 @@ Updates:
 * Updated the SAM Lambda runtime from Node.js v20.x to v22.x.
 * Updated the Lambda runtime to Node.js v22.x in the CloudFormation template for `AWS CloudWatch Logs with Dead Letter Queue Support`.
 * Updated the SecurityHub SAM Lambda runtime from Python v3.11 to v3.13.
-* Updated Lambda runtime to Python v3.13 in the CloudFormation template for `Kinesis Metric Collection`
 * Discontinued support for Mumbai deployment.
+* Updated Lambda runtime to Python v3.13 in the CloudFormation template for `Kinesis Metric Collection`
 * Updated 9 apps and 4 monitors to accommodate new threat intel feed: AWS Application Load Balancer, AWS API Gateway, AWS Classic Load Balancer, AWS DynamoDB, AWS EC2, AWS Lambda, Amazon RDS, Amazon SNS, Amazon SQS.
 
 ## v2.11.0, 24-Jan-2025
@@ -92,7 +115,7 @@ AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates
 New Feature:
 * Amazon RDS app - Added support to analyze and monitor RDS MS SQL CloudWatch logs.
 * Amazon RDS app - New monitors added for RDS MS SQL CloudWatch logs. Solution now supports 70 out-of-the-box monitors.
-* By default, the solution now sends CloudFormation deployment telemetry to Sumo Logic. Users have the option to opt out of this telemetry.
+* By default, the solution now sends CloudFormation deployment telemetry to Sumo Logic. Users can opt out of this telemetry.
 
 Updates:
 * Reduced the installation time for the AWS Observability solution using the CloudFormation template.
