@@ -416,6 +416,7 @@ module.exports = {
           link: {type: 'doc', id: 'send-data/hosted-collectors/index'},
           items: [
             'send-data/hosted-collectors/configure-hosted-collector',
+            'send-data/hosted-collectors/krutrim-object-storage',
             {
               type: 'category',
               label: 'Amazon/AWS Sources',
@@ -2700,7 +2701,7 @@ integrations: [
           'integrations/saas-cloud/palo-alto-cortex-xdr',
           'integrations/saas-cloud/proofpoint-on-demand',
           'integrations/saas-cloud/proofpoint-tap',
-          //'integrations/saas-cloud/proofpoint-trap',
+          'integrations/saas-cloud/proofpoint-trap',
           'integrations/saas-cloud/qualys-vmdr',
           'integrations/saas-cloud/rapid7',
           'integrations/saas-cloud/salesforce',

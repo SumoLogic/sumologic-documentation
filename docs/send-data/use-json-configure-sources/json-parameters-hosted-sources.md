@@ -75,6 +75,7 @@ The Google Workspace Apps Audit Source cannot be created with JSON. This Source
 | [Duo Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source) | Universal |
 | [Google Cloud Platform Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#google-cloud-platform-source) | HTTP |
 | [HTTP Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#http-source) | HTTP |
+| [Krutrim Object Storage](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#krutrim-object-storage) | Polling |
 | [Microsoft Graph Security API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source) | Universal |
 | [Microsoft Office 365 Audit Source](#microsoft-office-365-audit-source) | HTTP |
 | [Mimecast Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source) | Universal |
@@ -587,6 +588,44 @@ Microsoft Office 365 Audit Source JSON example: 
        }]
      }
    }
+}
+```
+### Krutrim Object Storage
+
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for a Krutrim Object Storage.
+
+| Parameter | Type |  Required? | Default | Description | Access |
+|:--|:--|:--|:--|:--|:--|
+| sourceType | String | Yes |  | Krutrim | not modifiable |
+
+Krutrim Object Storage JSON example: 
+
+```json
+{
+  "source": {
+      "sourceType": "Polling",
+      "name": "Krutrim HYD1 Source",
+      "contentType": "Krutrim",
+      "cutoffTimestamp": 1776834104619,
+      "scanInterval": 300000,
+      "paused": false,
+      "thirdPartyRef": {
+        "resources": [{
+          "serviceType": "Krutrim",
+          "path": {
+            "type": "S3BucketPathExpression",
+            "bucketName": "<BUCKET_NAME>",
+            "pathExpression": "*"
+          },
+          "authentication": {
+            "type": "S3BucketAuthentication",
+            "awsId": "<KRUTRIM_ACCESS_KEY>",
+            "awsKey": "<KRUTRIM_SECRET_KEY>",
+            "region": "hyd1"
+          }
+        }]
+      }
+  }
 }
 ```
 
