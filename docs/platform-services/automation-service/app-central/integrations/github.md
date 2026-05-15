@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/github.png')} alt="github" width="80"/>
 
-Version: 1.5  
-Updated: Jul 06, 2023
+***Version: 1.6  
+Updated: April 29, 2026***
 
 **GitHub** is an Internet hosting service for software development and version control using Git. It provides the distributed version control of Git plus access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project
 
@@ -48,3 +48,4 @@ For information about GitHub, see [GitHub documentation](https://docs.github.com
 * May 16, 2023 (v1.2) - First upload
 * May 22, 2023 (v1.4) - Action Get Commit by URL refactored
 * July 6, 2023 (v1.5) - Removed leading/trailing spaces
+* April 29, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

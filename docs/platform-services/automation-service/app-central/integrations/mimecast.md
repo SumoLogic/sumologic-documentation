@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mimecast.png')} alt="mimecast" width="100"/>
 
-***Version: 1.4  
-Updated: Feb 28, 2024***
+***Version: 1.5  
+Updated: April 30, 2026***
 
 Mimecast protects an enterprise's email infrastructure from viruses, malware, phishing, and the rise of deep-fake attacks. It does this by deploying a layered cyber resilience solution that prevents email-borne infections and reduces data loss by archiving emails.
 
@@ -61,3 +61,4 @@ For information about Mimecast, see [Mimecast documentation](https://integration
 * July 7, 2023 (v1.2) - Removed leading/trailing spaces
 * July 14, 2023 (v1.3) - Code refactoring
 * February 28, 2024 (v1.4) - Updated code for compatibility with Python 3.12
+* April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

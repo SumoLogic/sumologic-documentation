@@ -39,6 +39,14 @@ module.exports = {
         'get-started/faq',
       ],
     },
+    {
+      type: 'category',
+      label: 'Preview Releases',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'preview/index'},
+      items: [],
+    },
     //Contribution guide for documentation
     {
       type: 'category',
@@ -408,6 +416,7 @@ module.exports = {
           link: {type: 'doc', id: 'send-data/hosted-collectors/index'},
           items: [
             'send-data/hosted-collectors/configure-hosted-collector',
+            'send-data/hosted-collectors/krutrim-object-storage',
             {
               type: 'category',
               label: 'Amazon/AWS Sources',
@@ -626,7 +635,7 @@ module.exports = {
           items: [
             {
               type: 'category',
-              label: 'v4 (latest)',
+              label: 'v5 (latest)',
               collapsible: true,
               collapsed: true,
               items: [
@@ -654,6 +663,17 @@ module.exports = {
                     'send-data/kubernetes/troubleshoot-collection/common-issues',
                   ],
                 },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'v5 Upgrade Guide',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'send-data/kubernetes/v5/important-changes',
+                'send-data/kubernetes/v5/how-to-upgrade',
+                'send-data/kubernetes/v5/full-list-of-changes',
               ],
             },
             {
@@ -2270,7 +2290,7 @@ integrations: [
          'integrations/microsoft-azure/azure-network-interface',
          'integrations/microsoft-azure/network-watcher',
          'integrations/microsoft-azure/azure-notification-hubs',
-         'integrations/microsoft-azure/azure-open-ai',
+         'integrations/microsoft-azure/microsoft-foundry',
          'integrations/microsoft-azure/azure-public-ipAddress',
          'integrations/microsoft-azure/azure-relay',
          'integrations/microsoft-azure/azure-security-advisor',
@@ -2665,6 +2685,7 @@ integrations: [
           'integrations/saas-cloud/kandji',
           'integrations/saas-cloud/knowbe4',
           'integrations/saas-cloud/lastpass',
+          'integrations/saas-cloud/litellm',
           'integrations/saas-cloud/microsoft-azure-ad-inventory',
           'integrations/saas-cloud/microsoft-exchange-trace-logs',
           'integrations/saas-cloud/microsoft-graph-security-v1',
@@ -2680,6 +2701,7 @@ integrations: [
           'integrations/saas-cloud/palo-alto-cortex-xdr',
           'integrations/saas-cloud/proofpoint-on-demand',
           'integrations/saas-cloud/proofpoint-tap',
+          'integrations/saas-cloud/proofpoint-trap',
           'integrations/saas-cloud/qualys-vmdr',
           'integrations/saas-cloud/rapid7',
           'integrations/saas-cloud/salesforce',
@@ -2810,6 +2832,7 @@ integrations: [
           'integrations/webhooks/stripe',
           'integrations/webhooks/superwise',
           'integrations/webhooks/uptime',
+          'integrations/webhooks/upwind',
           'integrations/webhooks/zebrium-rcaas',
           'integrations/webhooks/zenduty',
         ],
@@ -3221,8 +3244,6 @@ integrations: [
         'api/lookup-tables',
         'api/metrics',
         'api/metrics-query',
-        'api/metrics-searches-v2',
-        'api/metrics-searches',
         'api/metrics-transformation-rules',
         'api/monitors-management',
         'api/muting-schedules',
@@ -3249,19 +3270,6 @@ integrations: [
         'api/token-management',
         'api/tracing',
         'api/user-management',
-      ],
-    },
-  ],
-  //List of Beta features
-  beta: [
-    {
-      type: 'category',
-      label: 'Beta',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'beta/index'},
-      items: [
-        'api/metrics-searches'
       ],
     },
   ],
