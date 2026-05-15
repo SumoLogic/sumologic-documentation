@@ -9,7 +9,9 @@
         "fields":{
           "_siemForward":false
         },
-        "application_id":"5a03f2a8-4de9-4243-9d27-32c8f3921466"
+        "application_id":"5a03f2a8-4de9-4243-9d27-32c8f3921466",
+        "azure_gov_l4": false,
+        "apiRetentionDays": 30
       },
       "schemaRef":{
         "type":"MS Graph Azure AD Reporting"

@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/smtp-v3.png')} alt="smtp-v3" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/smtp-v3.png')} alt="SMTP V3" width="100"/>
 
-***Version: 3.2  
-Updated: Mar 18, 2024***
+***Version: 3.3  
+Updated: April 30, 2026***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -36,8 +36,51 @@ However, for optimal results with HTML templates, we recommend clicking on the t
 
 Email Gateway
 
+## Configure SMTP V3 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Email Account**. Enter an SMTP email account address.
+
+* **SMTP Server**. Enter your SMTP server, for example, `smtp.office365.com`.
+
+* **Port**. Enter your SMTP port, for example, `587`.
+
+* <IntegrationCertificate/>
+* **Connection Security**. Select the security method for your connection:
+   * **None**
+   * **STARTTLS**
+   * **SSL/TLS**
+
+* **Authentication Method**. Select the authentication method:
+   * **None**
+   * **Plain password**
+   * **Encrypted password**
+
+* **Username**. Enter the username for an SMTP admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/smtp-v3-configuration.png')} style={{border:'1px solid gray'}} alt="SMTP V3 configuration" width="400"/>
+
 ## Change Log
 
 * June 20, 2022 - First upload
 * October 6, 2023 (v3.1) - Integration Updated
 * March 18, 2024 (v3.2) - Send Email action updated
+* April 30, 2026 (v3.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

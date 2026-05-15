@@ -1,0 +1,12 @@
+{
+  "name": "Eclecticiq TAXII",
+  "authType": "Basic",
+  "ti_user_source_id": "Eclecticiq Indicators",
+  "basicUsername": "--- USER EMAIL ACCOUNT HERE ---",
+  "basicPassword": "--- USER PASSWORD HERE ---",
+  "ti_version": "2.1",
+  "ti_root_source": "1",
+  "ti_discovery_url": "https://ic-playground.eclecticiq.com/taxii2/",
+  "enable_limit": false,
+  "polling_interval": "1h"
+}

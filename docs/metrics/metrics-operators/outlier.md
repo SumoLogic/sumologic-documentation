@@ -4,6 +4,8 @@ title: outlier Metrics Operator
 sidebar_label: outlier
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The metrics `outlier` operator identifies metrics data points that are outside the range of expected values. Outliers help you spot unusual behavior in your metrics visualizations and track the behavior over time.
 
 `outlier` tracks the moving average and standard deviation of a time series over a specified time window, and calculates a threshold band, outside of which data points are considered outliers. You can use optional qualifiers to specify the time window, the number of standard deviations beyond which a data point is considered an outlier, and the directionality of the deviation.
@@ -24,6 +26,6 @@ Where:
 * `threshold` is the number of standard deviations from the moving average that defines the threshold band. Default: 3
 * `direction` specifies what deviation direction should trigger violations: positive deviations (`+`), negative deviations (`-`), or both (`+-`). Default: `+-`.
 
-![outlier-operator.png](/img/metrics/outlier-operator.png)
+<img src={useBaseUrl('img/metrics/outlier-operator.png')} alt="outlier operator" style={{border: '1px solid gray'}} width="800" />
 
 In the visualization, the threshold band is the part shaded in pink. The outlier values are represented by the pink triangles.

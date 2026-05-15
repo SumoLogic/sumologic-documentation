@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/eclecticiq.png')} alt="eclecticiq" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 State-of-the-art CTI technology for large enterprises, governments, and MSSPs.
 
@@ -27,7 +27,33 @@ State-of-the-art CTI technology for large enterprises, governments, and MSSPs.
 * **Update Enricher** (*Containment*) - Update enricher by ID.
 * **Get Enricher Details** (*Enrichment*) - Retrieve detail about an enricher by ID.
 
+## Configure EclecticIQ in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the URL for your EclecticIQ instance.
+
+* **API Token**. Enter an EclecticIQ [API token](https://docs.eclecticiq.com/ic/2.13.0/Create_an_API_token.html).
+
+* **API Version**. Enter the EclecticIQ API version number.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/eclecticiq-configuration.png')} style={{border:'1px solid gray'}} alt="EclecticIQ configuration" width="400"/>
+
+For information about EclecticIQ, see the [EclecticIQ documentation](https://docs.eclecticiq.com/).
+
 ## Change Log
 
 * November 15, 2021 - First upload
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

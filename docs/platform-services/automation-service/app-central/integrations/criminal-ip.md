@@ -5,15 +5,14 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/criminal-ip.png')} alt="criminal-ip" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/criminal-ip.png')} alt="Criminal IP icon" width="90"/>
 
-***Version: 1.0  
-Updated: Mar 1, 2024***
+***Version: 1.1  
+Updated: April 29, 2026***
 
 Criminal IP is a cybersecurity search engine that uses AI technology to scan global IP addresses, identifying connected devices and assessing threats. It provides detailed intelligence on malicious IPs, domains, and offers real-time data integration through an API for organizational security management.
 
 ## Actions
-
 
 * **Scan Domain** *(Enrichment)* - Initiating a new scan of a specific domain.
 * **Get IP Malicious Info** *(Enrichment)* - Inquire whether a specific IP address is a malicious IP address.
@@ -26,8 +25,30 @@ Criminal IP is a cybersecurity search engine that uses AI technology to scan glo
 * **Get Employee Identity Analysis** *(Enrichment)* - Retrieve search results of banners using filters.
 * **Get IP Report Summary** *(Enrichment)* - Retrieve summarized data, such as issues, risks, open ports, connections, and detection information for a specific IP address.
 
+## Configure Criminal IP in Automation Service and Cloud SOAR
 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your Criminal IP API URL, for example, `https://api.criminalip.io`
+
+* **API Key**. Enter your Criminal IP API key.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/criminal-ip/criminal-ip-configuration.png')} style={{border:'1px solid gray'}} alt="Criminal IP configuration" width="400"/>
+
+For information about Criminal IP, see the [Criminal IP website](https://www.criminalip.io/).
 
 ## Change Log
 
 * March 1, 2024 - First upload
+* April 29, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

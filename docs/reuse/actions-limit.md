@@ -1,1 +1,1 @@
-By default, the actions limit is set to 200 per hour to prevent abuse of system resources or runaway processes. For more information, see [Actions limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit).
+The number of actions that can be run per hour is limited to prevent abuse of system resources or runaway processes. For more information, see [Actions limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit).

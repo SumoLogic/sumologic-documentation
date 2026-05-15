@@ -3,6 +3,8 @@ id: parse-delimited-logs-using-split
 title: Parse Delimited Logs Using Split
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The **`split`** operator allows you to split strings into multiple strings, and parse delimited log entries, such as space-delimited formats.
 
 To parse log entries from CSV files, you can use the simpler [CSV operator](parse-csv-formatted-logs.md).
@@ -46,7 +48,7 @@ For example, if you had a file with the following colon delimited log message:
 
 You could parse the fields using the following query:
 
-```sql
+```sumo
 _sourceCategory=colon
 | parse "] * *" as log_level, split_field
 | split split_field delim=':' extract 1 as user, 2 as account_id, 3 as session_id, 4 as result
@@ -54,31 +56,31 @@ _sourceCategory=colon
 
 which produces results such as:
 
-![split example colon](/img/reuse/query-search/split_example_colon.png)
+<img src={useBaseUrl('img/reuse/query-search/split_example_colon.png')} alt="Split example colon" style={{border: '1px solid gray'}} width="800" />
 
 In another example, you'd use the following query:
 
-```sql
+```sumo
 _sourceCategory=colon
 | split _raw delim=':' extract 1 as user2, 2 as id, 3 as name
 ```
 
 which provides results like:
 
-![split example](/img/reuse/query-search/split_example1.png)
+<img src={useBaseUrl('img/reuse/query-search/split_example1.png')} alt="Split example" style={{border: '1px solid gray'}} width="700" />
 
 ### Parsing a CSV file
 
 Use the following query to extract comma delimited fields as specified:
 
-```sql
+```sumo
 _sourceCategory=csv
 | split _raw delim=',' extract 1 as user2, 2 as id, 3 as name
 ```
 
 which produces results such as:
 
-![splt example](/img/reuse/query-search/split_example3.png)
+<img src={useBaseUrl('img/reuse/query-search/split_example3.png')} alt="Split example" style={{border: '1px solid gray'}} width="700" />
 
 ### Parsing a tab delimited file
 
@@ -86,17 +88,17 @@ Use this query to extract fields from a tab delimited log file. 
 
 You have to manually specify the tab character for the delim value.
 
-```sql
+```sumo
 _sourceCategory=sumo/zscaler
 | split _raw delim='    ' extract 1 as Column1, 2 as dlpeng, 3 as cat
 ```
 
 which produces this result:
 
-![SplitTab.jpg](/img/search/searchquerylanguage/parse-operators/SplitTab.jpg)
+<img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/SplitTab.jpg')} alt="Split tab" style={{border: '1px solid gray'}} width="800" />
 
 Alternatively, you can use the parse operator to extract fields from a tab delimited log file. The following query produces the same result as the previous query.
 
-```sql
+```sumo
 _sourceCategory=sumo/zscaler  | parse "*\t*\t*\t" as Column1,dpleng,cat
 ```

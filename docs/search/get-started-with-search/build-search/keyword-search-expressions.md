@@ -60,7 +60,7 @@ During collection, raw messages are broken into individual keyword terms, or gro
 
 A phrase is any text with these boundaries. So given this sample message:
 
-```sql
+```sumo
 2013-08-13 21:25:15,456 98765432 [com.test.services.test.TESTClientImpl] TEST Request:id=1234567 TEST1234567
 ```
 
@@ -96,14 +96,14 @@ After the keyword search expression, to search for case sensitive keywords, you
 
 For example, if you want to search for the keyword "**info**" in lowercase, you'd use this query:
 
-```sql
+```sumo
 info
 | parse regex "(?<sample>info)"
 ```
 
 If you want to search for the keyword "**INFO**" in uppercase, you'd use this query:
 
-```sql
+```sumo
 info
 | parse regex "(?<sample>INFO)"
 ```
@@ -142,8 +142,8 @@ It is '\u001F', U+001F UNIT SEPARATOR
 * **Multiple space whitespace character**. This character determines the multiple spaces present in the payload or in the source expression.
 
  For example, in the following query, there are multiple space characters present in `"VM Periodic" and "Task Thread"`, but normalization returns the same result as a single space whitespace character.
- ```sql
- sourceCategory=stream_thread_dumps "VM Periodic_____Task Thread"
+ ```sumo
+ _sourceCategory=stream_thread_dumps "VM Periodic_____Task Thread"
  ```
 
  :::note
@@ -153,8 +153,8 @@ It is '\u001F', U+001F UNIT SEPARATOR
 * **Tab whitespace character**. This character determines the tab whitespace character present in the payload or in the source expression.
 
  For example, in the the following query there is a tab character present in `"VM Periodic" and "Task Thread"`, but normalization returns the same result as a single space whitespace character.
- ```sql
- sourceCategory=stream_thread_dumps "VM Periodic_Task Thread"
+ ```sumo
+ _sourceCategory=stream_thread_dumps "VM Periodic_Task Thread"
  ```
 
  :::note
@@ -164,8 +164,8 @@ It is '\u001F', U+001F UNIT SEPARATOR
 * **New line character**. This character determines the new line whitespace character present in the payload or in the source expression.
 
  For example, in the following query, there is a new line after the string `Task`, but normalization returns the same result as a single space whitespace character. This shows that a query string with a single space can match a log line that has a new line character.
- ```sql
- sourceCategory=stream_thread_dumps "VM Periodic Task\nThread"
+ ```sumo
+ _sourceCategory=stream_thread_dumps "VM Periodic Task\nThread"
  ```
 
  :::note
@@ -175,14 +175,14 @@ It is '\u001F', U+001F UNIT SEPARATOR
 * **New line tab character**. This character determines the new line and tab whitespace characters present in the payload or source expression.
 
   For example, in the the following query, there is a new line and tab character after the string `Task`, but normalization returns the same result as a single space whitespace character. This shows that a query string with a single space can match a log line that has a new line and a tab whitespace character.
-  ```sql
-  sourceCategory=stream_thread_dumps "VM Periodic Task\n\tThread"
+  ```sumo
+  _sourceCategory=stream_thread_dumps "VM Periodic Task\n\tThread"
   ```
   :::note
   The character `\n\t` is used to describe the new line + tab whitespace characters.
   :::
 
 All of the above queries containing various whitespace characters will accept a single space whitespace character by default and return the desired results. See the query below.
-```sql
-sourceCategory=stream_thread_dumps "VM Periodic Task Thread"
+```sumo
+_sourceCategory=stream_thread_dumps "VM Periodic Task Thread"
 ```

@@ -4,6 +4,8 @@ title: ipv4ToNumber Search Operator
 sidebar_label: ipv4ToNumber
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The `ipv4ToNumber` operator allows you to convert an Internet Protocol version 4 (IPv4) IP address from the octet dot-decimal format to a decimal format. This decimal format makes it easier to compare one IP address to another, rather than relying on IP masking.
 
 :::tip
@@ -12,9 +14,7 @@ The [CIDR operator](cidr.md) allows you to leverage _Classless Inter-Domain Rout
 
 ## Syntax
 
-```sql
-ipv4ToNumber(<ip_addr>) [as <field>]
-```
+`ipv4ToNumber(<ip_addr>) [as <field>]`
 
 ## Rules
 
@@ -26,7 +26,7 @@ ipv4ToNumber(<ip_addr>) [as <field>]
 
 The following query parses IP addresses, and converts them to numbers, then uses the fields operator to remove all fields except "ip" and "num".
 
-```sql
+```sumo
 _sourceCategory=service remote_ip
 | parse "[remote_ip=*]" as ip
 | ipv4ToNumber(ip) as num
@@ -35,13 +35,13 @@ _sourceCategory=service remote_ip
 
 would produce results like:
 
-![ipv4](/img/reuse/query-search/ipv4ToNumber.png)
+<img src={useBaseUrl('img/reuse/query-search/ipv4ToNumber.png')} alt="ipv4" style={{border: '1px solid gray'}} width="400" />
 
 ### Detect the IP range for a single user
 
 The following query looks at the number of IP addresses, and the IP range, by user. This could be used to determine if someone has hacked a user account.
 
-```sql
+```sumo
 _sourceCategory=service remote_ip
 | parse "auth=User:*:" as user
 | parse "[remote_ip=*]" as remote_ip
@@ -54,4 +54,4 @@ _sourceCategory=service remote_ip
 
 would produce results like:
 
-![ipv4ToNumber](/img/search/searchquerylanguage/search-operators/ipv4ToNumber.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/ipv4ToNumber.png')} alt="ipv4ToNumber" style={{border: '1px solid gray'}} width="400" />

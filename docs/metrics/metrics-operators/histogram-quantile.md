@@ -17,11 +17,11 @@ histogram_quantile(quantile)
 ## Examples
 
 ```sql
-histogram_quantile(.99)
+* | histogram_quantile(.99)
 ```
 
 ```sql
-histogram_quantile(.5)
+* | histogram_quantile(.5)
 ```
 
 The following PromQL query to measure the 99th quantile of the `apiserver_request_latencies` histogram:
@@ -30,7 +30,7 @@ The following PromQL query to measure the 99th quantile of the `apiserver_reque
 histogram_quantile(0.99, rate(apiserver_request_latencies_bucket{}[5m]))
 ```
 
-It would be written in Sumo as:
+It would be written in Sumo Logic as:
 
 ```sql
 metric=apiserver_request_latencies_bucket | quantize using max | delta | histogram_quantile(0.99)

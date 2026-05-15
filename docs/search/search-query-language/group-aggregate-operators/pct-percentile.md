@@ -18,13 +18,9 @@ The input to the operator is a percentile. For example:
 
 ## Syntax
 
-```sql
-...| pct(<field> [, percentile]) [as <field>] [by <field>]
-```
+`...| pct(<field> [, percentile]) [as <field>] [by <field>]`
 
-```sql
-...| pct(<field> [, percentile, percentile, percentile]) [by <field>]
-```
+`...| pct(<field> [, percentile, percentile, percentile]) [by <field>]`
 
 ## Rules
 
@@ -35,8 +31,8 @@ The input to the operator is a percentile. For example:
 
 ## Examples
 
-```sql
-| parse "filesize=*" as filesize
+```sumo
+| parse "filesize=*:" as filesize
 | pct(filesize, 75, 95) by _sourceHost
 ```
 

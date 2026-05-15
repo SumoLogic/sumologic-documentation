@@ -4,7 +4,7 @@ title: cidr Search Operator
 sidebar_label: CIDR
 ---
 
-Sumo Logic's three CIDR operators work with CIDR (Classless Inter-Domain Routing, sometimes pronounced "cider") notation to narrow the analysis of IPv4 networks to specific subnets. CIDR notations specify the routing prefix of IP addresses.
+Sumo Logic's three CIDR operators work with CIDR (Classless Inter-Domain Routing, sometimes pronounced "cider") notation to narrow the analysis of IPv4 networks to specific subnets. CIDR notations specify the routing prefix of IP addresses. Input data will be trimmed, making these operators more flexible, which allows you to set your expectations accordingly.
 
 Using the CIDR operators, you can determine the amount of traffic between network segments, review events from hosts within a specified network segment, or even use a not operator to find addresses that didn't originate from a particular network segment. CIDR operators can be used to compare the network segment of two IPv4 addresses, or just identify the network segment involved in particular messages.
 
@@ -16,7 +16,7 @@ IPv4 addresses use a variable number of bits to describe the network. The first
 
 The standard "dotted quad" notation for IPv4 addresses can be difficult to compare if the number of bits assigned to the network is not 16 or 24. The CIDR operators are designed to help.
 
-For general information about Classless Inter-Domain Routing, see this [online article](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).
+For general information about Classless Inter-Domain Routing, see this [online article](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).
 
 ## getCIDRPrefix
 
@@ -24,9 +24,7 @@ Extracts the network prefix from an IPv4 address. 
 
 ### Syntax
 
-```sql
-getCIDRPrefix("<ip_addr>", "<prefix_length>") as <field>
-```
+`getCIDRPrefix("<ip_addr>", "<prefix_length>") as <field>`
 
 Where:
 
@@ -37,19 +35,19 @@ Where:
 
 The following returns `10.10.1.0`:
 
-```sql
+```sumo
 getCIDRPrefix("10.10.1.35", "24") as net
 ```
 
 The following returns `10.10.1.32`:
 
-```sql
+```sumo
 getCIDRPrefix("10.10.1.35", "27") as net
 ```
 
 The following returns `10.10.1.32`:
 
-```sql
+```sumo
 getCIDRPrefix("10.10.1.35", "29") as net
 ```
 
@@ -59,9 +57,7 @@ Compares two IPv4 addresses and returns true if the network prefixes match.
 
 ### Syntax
 
-```sql
-compareCIDRPrefix("<ip_addr1>", "<ip_addr2>", "<prefix_length>") as <field>
-```
+`compareCIDRPrefix("<ip_addr1>", "<ip_addr2>", "<prefix_length>") as <field>`
 
 `ip_add1` and `ip_addr2` are string representations (such as "10.10.1.35")
 
@@ -69,7 +65,7 @@ compareCIDRPrefix("<ip_addr1>", "<ip_addr2>", "<prefix_length>") as <field>
 
 **Boolean expression syntax**
 
-```sql
+```sumo
 compareCIDRPrefix(<ip_addr1>, <ip_addr2>, "<prefix_length>")
 ```
 
@@ -86,15 +82,15 @@ You may find the [isValidIP](/docs/search/search-query-language/search-operators
     (denied OR rejected AND _sourceCategory=firewall | ...
     ```
 1. Parse the IP addresses. For example:   
-    ```sql
+    ```sumo
     ... | parse "ip=*," as ip_address ...
     ```
 1. Compare to the full CIDR notation you requested. For example, 10.10.1.32/27:  
-    ```sql
+    ```sumo
     ... | where compareCIDRPrefix("10.10.1.32", ip_address, "27") | ...
     ```
 1. Keep matching records, and drop non-matching records from search results:  
-    ```sql
+    ```sumo
     ... | count by ip_address
     ```
 
@@ -105,11 +101,11 @@ You may find the [isValidIP](/docs/search/search-query-language/search-operators
    (denied OR rejected AND _sourceCategory=firewall | ...
    ```
 1. Parse the IP addresses. For example:   
-    ```sql
+    ```sumo
     ... | parse "ip=*," as ip_address ...
     ```
 1. Compare to the full CIDR notation you requested, and drop matching records. For example, 10.10.1.32/27:  
-    ```sql
+    ```sumo
     ... | where !compareCIDRPrefix("10.10.1.32", ip_address, "27") | ...
     ```
 
@@ -119,9 +115,7 @@ A utility function that returns a subnet mask for boolean operations with IPv4 a
 
 ### Syntax
 
-```sql
-maskFromCIDR("<prefix_length>") as <field>
-```
+`maskFromCIDR("<prefix_length>") as <field>`
 
 Where:
 

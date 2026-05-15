@@ -6,7 +6,7 @@ description: The Sumo Logic App for AWS Cost Explorer lets you visualize, unders
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src='https://s3.amazonaws.com/app_icons/AWS_Cost_Explorer.png' alt="icon" width="50"/>
+<img src='https://s3.amazonaws.com/app_icons/AWS_Cost_Explorer.png' alt="AWS Cost Explorer icon" width="50"/>
 
 [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer) provides you with a set of default reports that you can use as the starting place for your analysis. From there, use the filtering and grouping capabilities to dive deeper into your cost and usage data and generate custom insights.
 
@@ -38,7 +38,7 @@ The **AWS Cost Explorer** App uses the JSON formatted logs collected using **AWS
 
 The following query sample was taken from the **Cost by Region** panel on the **AWS Cost Explorer - Account** dashboard.
 
-```sql
+```sumo
 account={{account}} region CostUsd CostType StartDate EndDate MetricType Granularity Daily
 | json "region", "CostUsd", "CostType", "StartDate", "EndDate", "MetricType", "Granularity", "Estimated"
 | where MetricType matches "{{MetricType}}" and estimated matches "{{estimated}}"
@@ -55,7 +55,7 @@ When you create an AWS Cost Explorer collector Source, you add it to an existing
 
 ## Field-in-Field Schema
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
 1. Search for the **account** and **linkedaccount** field.
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
@@ -65,12 +65,12 @@ Create a Field Extraction Rule (FER) for AWS Cost Explorer Logs. Learn how to cr
 * **Rule Name:** AWSCostExplorerFER
 * **Applied at:** Ingest Time
 * **Scope (Specific Data):**
-  ```sql
+  ```sumo
   account = * region CostUsd CostType StartDate EndDate MetricType Granularity Service LinkedAccount
   ```
 * **Parse Expression:** Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “securityprod” alias for an AWS account with ID "123456789" and the “infraprod” alias for an AWS account with ID "987654321", your parse expression would look like:
-  ```sql
-  json "LinkedAccount"
+  ```sumo
+  | json "LinkedAccount"
   | if (LinkedAccount = "123456789",  "securityprod", LinkedAccount ) as LinkedAccount
   | if (LinkedAccount = "987654321",  "infraprod", LinkedAccount ) as LinkedAccount
   ```

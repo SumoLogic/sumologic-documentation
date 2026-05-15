@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/tenable.sc.png')} alt="tenable.sc" width="100"/>
 
-***Version: 1.2  
-Updated: Jul 13, 2023***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Connect with Tenable SecurityCenter to execute scans, get scan results and perform administrative actions.
 
@@ -40,6 +40,37 @@ Connect with Tenable SecurityCenter to execute scans, get scan results and perfo
 * **List Scan Results** (*Enrichment*) - List the executed Scan Results.
 * **List Scans** (*Enrichment*) - Get a list of scans.
 
+## Configure Tenable.sc in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your [Tenable SC host address](https://docs.tenable.com/integrations/Atlassian/Jira/Content/introduction.htm#Data-Collection), for example, `tenablesc.eastus.cloudapp.azure.com`.
+
+* **Port**. Enter your Tenable SC [port](https://docs.tenable.com/tenable-core/security-center/Content/TenableCore/AccessRequirements.htm#Port-Requirements).
+
+* **Protocol**. Select the protocol:
+   * **HTTPS**
+   * **HTTP**
+
+* **Username**. Enter the username of a Tenable SC admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/tenable-sc-configuration.png')} style={{border:'1px solid gray'}} alt="Tenable.sc configuration" width="400"/>
+
+For information about Tenable Security Center (formerly Tenable.sc), see [Tenable Security Center  documentation](https://docs.tenable.com/security-center.htm).
+
 ## Change Log
 
 * January 31, 2019 - First upload
@@ -50,3 +81,4 @@ Connect with Tenable SecurityCenter to execute scans, get scan results and perfo
 * July 13, 2023 (v1.2)
 	+ Updated the integration with Environmental Variables
 	+ Changed fields visibility
+* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

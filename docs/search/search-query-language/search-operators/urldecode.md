@@ -20,19 +20,15 @@ http://yourmainserver-city55555.org/functions/main.php?gk=Gk45MgHJhEYx8bPYvGfiWS
 
 ## Syntax
 
-```sql
-urldecode(<url_field>) [as <field>]
-```
+`urldecode(<url_field>) [as <field>]`
 
-```sql
-urldecode("<url string>") as <field>
-```
+`urldecode("<url string>") as <field>`
 
 ## Example
 
 Let's say you'd like to decode URLs connecting to your firewall. Running a query like:
 
-```sql
+```sumo
 http:
 | parse "Connecting to firewall at URL: *" as url
 | urldecode(url) as decoded

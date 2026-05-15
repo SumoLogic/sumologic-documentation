@@ -1,7 +1,7 @@
 ---
 id: table-charts
 title: Table Charts
-description: Table charts are the default chart type in the Aggregates tab.
+description: Use table charts in Sumo Logic dashboards to display aggregated search results, listing event types and counts using group-by queries in the Aggregates tab.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -11,28 +11,32 @@ For example, you'd use the following query to create a simple table chart:
 
 `(error OR fail*) AND exception | count by _sourceCategory | sort by _count`
 
-which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards-new/panels/table-charts/AggResult.png')} alt="AggResult" style={{border: '1px solid gray'}} width="300" />
+which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/table-charts/AggResult.png')} alt="AggResult" style={{border: '1px solid gray'}} width="500" />
 
 ## Create a table chart 
 
 To add a panel with a table chart:
 
-1. Create or open a Dashboard and click on **Add Panel > Time Series** or **Add Panel > Categorical**.<br/><img src={useBaseUrl('/img/dashboards-new/panels/table-charts/time-series-or-categorical.png')} alt="time series or categorical" style={{border: '1px solid gray'}} width="600" />
+1. Create or open a Dashboard and click on **Add Panel > Time Series** or **Add Panel > Categorical**.<br/><img src={useBaseUrl('/img/dashboards/panels/table-charts/time-series-or-categorical.png')} alt="time series or categorical" style={{border: '1px solid gray'}} width="600" />
 1. Provide a Metric or Log query and press **Enter** for it to run. You can create Log and Metric queries on the same panel.
 
     **Log query:**
 
-    Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Add-log-query.png')} alt="Add log query" style={{border: '1px solid gray'}} width="600" />
+    Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-log-query.png')} alt="Add log query" style={{border: '1px solid gray'}} width="600" />
 
     **Metrics query:**
 
-    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries](/docs/metrics/metrics-queries) to ensure successful results. By default, the query builder is set to **Logs**.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Add-log-query.png')} alt="Metrics selection for query builder" style={{border: '1px solid gray'}} width="700" />
+    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries](/docs/metrics/metrics-queries) to ensure successful results. By default, the query builder is set to **Logs**.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-log-query.png')} alt="Metrics selection for query builder" style={{border: '1px solid gray'}} width="700" />
 
-    To create a metrics query utilize the [Metrics Explorer](/docs/metrics/metrics-queries).
+    To create a metrics query utilize the [Metrics Search](/docs/metrics/metrics-queries).
 
-1. Once the query runs you will need to flip the chart type to **Table**.<br/><img src={useBaseUrl('/img/dashboards-new/panels/table-charts/new-table-chart.png')} alt="new table chart" style={{border: '1px solid gray'}} width="700" />
+1. Once the query runs, you will need to flip the chart type to **Table**.
+    1. (Optional) **Missing Data Display**. Enter the text that needs to be displayed when data is missing.
+    1. (Optional) **Font Size**. Font size of the text displayed. By default, `12` is set as font size. You can change this based on your requirement.
+    1. (Optional) **Decimals**. Sets the precision of units displayed. Select the number of decimals to show with a unit, up to 10.
+    1. (Optional) **Rows Per Page**. Set the numbers of rows to display in the table.<br/><img src={useBaseUrl('/img/dashboards/panels/table-charts/new-table-chart.png')} alt="new table chart" style={{border: '1px solid gray'}} width="800" />
 1. [Modify the chart](./modify-chart.md) as desired.
-1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
+1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
 
 ## URL Links in table chart panels
 
@@ -40,13 +44,13 @@ When you create a table chart panel, and if your query looks for URLs, then use 
 
 For example, if you used this query to search for hits to the Sumo Logic Help system:
 
-```sql
+```sumo
 _sourceCategory=aws/cloudtrail 
 | keyvalue "LoginTo" 
 | count loginto
 | sort - _count
 ```
 
-You would see results such as the following in the **Aggregates** tab.<br/><img src={useBaseUrl('/img/dashboards-new/panels/table-charts/URLTable.png')} alt="URLTable" style={{border: '1px solid gray'}} width="600" />
+You would see results such as the following in the **Aggregates** tab.<br/><img src={useBaseUrl('/img/dashboards/panels/table-charts/URLTable.png')} alt="URLTable" style={{border: '1px solid gray'}} width="600" />
 
 Then, follow the steps in the previous section to create a table chart panel.

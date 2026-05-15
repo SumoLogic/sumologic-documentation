@@ -4,6 +4,8 @@ title: lookup (Classic) Search Operator
 sidebar_label: lookup (Classic)
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 :::note
 This topic has information about the classic version of the `lookup` operator, which works with the classic Lookup Tables feature.
 
@@ -19,9 +21,7 @@ In either case, you will point the operator to one of the following:
 
 ## Syntax
 
-```sql
-lookup <outputColumn-1> [as <field>] [,<outputColumn-2> [as <field>]] from <filePath> on <joinColumn-1> [,<joinColumn-2>]
-```
+`lookup <outputColumn-1> [as <field>] [,<outputColumn-2> [as <field>]] from <filePath> on <joinColumn-1> [,<joinColumn-2>]`
 
 Where:
 
@@ -81,7 +81,7 @@ Type the lookup operator in the **Search** tab, just as you'd any other operat
 
 To match the userID string with a users' ID in your CSV, your query could be:
 
-```sql
+```sumo
 * | parse "name=*, phone number=*," as (name, phone)
 | lookup email from https://company.com/userTable.csv on name=userName, phone=cell
 ```
@@ -103,7 +103,7 @@ Running this query adds three fields to the output: **name**, **phone**, and *
 
 In our example above we had several users named John. A lookup operator can be used on a composite set of fields, so you can identify the correct email for each person named John because each unique cell phone number has also been mapped using a query like:
 
-```sql
+```sumo
 * | parse "name=*, phone number=*," as (name, phone)
 | lookup email from https://company.com/userTable.csv on name=userName, phone=cell
 ```
@@ -114,7 +114,7 @@ Running this query adds an **email** field to the output.
 
 Another way to use a lookup operator is to chain lookup operators together. Each operator can call separate CSV files. For example, if you wanted to find user names and the position each user has in a company, your query could be:
 
-```sql
+```sumo
 * | parse "userID=*," as userID
 | lookup userName from https://company.com/userTable.csv on userID=id
 | lookup position from https://company.com/userPosition.csv on userID=id
@@ -139,7 +139,7 @@ To find a mismatch from a lookup operator query, use the [`isNull`](/docs/searc
 
 For example, running a query like:
 
-```sql
+```sumo
 | parse "code=*]" as code
 | lookup status_code from shared/statusupdates on status = code
 | if (isNull(status_code), "unknown", status_code) as status_code
@@ -151,7 +151,7 @@ Once you've saved the results of a search to the Sumo Logic file system using a�
 
 For example, say we wanted to find the date when users signed up in a file named newDailyUsers (the full path is `myFolder/mySubFolder/newDailyUsers`). We'd use this query to find that information:
 
-```sql
+```sumo
 * | parse "user_name=*," as name
   | lookup date from myFolder/mySubFolder/newDailyUsers on name=name
 ```
@@ -168,4 +168,4 @@ You only get the last associated value as a result. 
 
 For example, if you are searching your Apache Access logs from 34.87.4.6 and you are looking for an internal server errors by a specific keyid, lookup provides the last result that matches your criteria:
 
-![lookup-duplicate.png](/img/search/searchquerylanguage/search-operators/lookup-duplicate.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/lookup-duplicate.png')} alt="lookup duplicate" style={{border: '1px solid gray'}} width="800" />

@@ -2,12 +2,12 @@
 id: zscaler-internet-access
 title: Zscaler Internet Access
 sidebar_label: Zscaler Internet Access
-description: Learn about the Sumo Logic app for Zscaler Internet Access (ZIA).
+description: Monitor Zscaler Internet Access (ZIA) with the Sumo Logic app using Cloud NSS logs to visualize threats, DNS, web traffic, and user browsing activity.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="Zscaler icon" width="75"/>
 
 The Sumo Logic app for Zscaler Internet Access (ZIA) collects logs via Cloud Nanolog Streaming Service (NSS) to populate pre-configured searches and Dashboards in order to visualize and provide insight into threats, DNS, web traffic behaviors, security, user browsing activities, and risk.
 
@@ -70,7 +70,7 @@ The Sumo Logic app for Zscaler uses NSS feed output logs (Web, Tunnel, DNS, and 
 
 ## Sample queries
 
-```sql title="Top 10 Blocked Base URLs"
+```sumo title="Top 10 Blocked Base URLs"
 _sourceCategory=ZIA
 | json field=_raw "event.clientpublicIP", "event.user", "event.url", "event.action" as src_ip, src_user, url, action
 | where action != "Allowed"
@@ -103,7 +103,7 @@ Zscaler uses Cloud Nanolog Streaming Service (NSS), which allows direct cloud-to
 To send logs to Sumo Logic using Cloud NSS, add a feed in ZIA using the following steps:
 
 1. Log into your ZIA system.
-1. Go to **Administration** > **Nanolog Streaming Service** > **Cloud NSS Feeds**.
+1. Go to **Administration > Nanolog Streaming Service > Cloud NSS Feeds**.
    :::note enable Cloud NSS
    Cloud NSS is disabled by default in ZIA. If you do not see Cloud NSS Feeds option in your ZIA environment, create a support request with Zscaler support.
    :::
@@ -247,7 +247,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Threats.png')} alt="zscaler internet access Dashboard" />
 
-## Upgrading the Zscaler Internet Access app (Optional)
+## Upgrade/Downgrade the Zscaler Internet Access app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

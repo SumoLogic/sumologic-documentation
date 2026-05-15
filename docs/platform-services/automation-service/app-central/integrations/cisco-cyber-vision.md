@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-cyber-vision.png')} alt="cisco-cyber-vision" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-cyber-vision.png')} alt="Cisco Cyber Vision icon" width="70"/>
 
-***Version: 1.2  
-Updated: Jul 13, 2023***
+***Version: 1.3  
+Updated: April 27, 2026***
 
 Cisco Cyber Vision can delete, set and retrieve allowing ICS with dynamic monitoring on hosts.
 
@@ -25,6 +25,28 @@ Cisco Cyber Vision can delete, set and retrieve allowing ICS with dynamic monito
 * **Save Flow Details** (*Containment*) - Save component Details as attachment.
 * **Last Active Time** *(Enrichment*) - Returns the number of days of the last activity.
 
+## Configure Cisco Cyber Vision in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter the name of your Cisco Cyber Vision host.
+
+* **Token**. Enter a Cisco Cyber Vision [token](https://www.cisco.com/c/en/us/td/docs/security/cyber_vision/Release-5-2-0/b-cisco-cyber-vision-administration-guide-release-5-2-0/m-configure-cisco-cyber-vision.html#topic_5340).
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-cyber-vision-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Cyber Vision configuration" width="400"/>
+
+For information about Cisco Cyber Vision, see [Cisco Cyber Vision documentation](https://www.cisco.com/c/en/us/support/security/cyber-vision/products-user-guide-list.html).
+
 ## Change Log
 
 * December 23, 2020 - First upload
@@ -32,3 +54,4 @@ Cisco Cyber Vision can delete, set and retrieve allowing ICS with dynamic monito
 * July 13, 2023 (v1.2)
 	+ Updated the integration with Environmental Variables
 	+ Changed fields visibility
+* April 27, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

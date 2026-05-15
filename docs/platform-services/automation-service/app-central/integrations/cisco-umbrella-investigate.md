@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-umbrella-investigate.png')} alt="cisco-umbrella-investigate" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-umbrella-investigate.png')} alt="Cisco Umbrella Investigate icon" width="70"/>
 
-***Version: 1.4  
-Updated: Jun 23, 2023***
+***Version: 1.5  
+Updated: April 27, 2026***
 
 Gather enrichment data on incident observables using Cisco Umbrella Investigate.
 
@@ -23,6 +23,29 @@ Gather enrichment data on incident observables using Cisco Umbrella Investigate.
 
 Threat Intelligence-Reputation
 
+## Configure Cisco Umbrella Investigate in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the URL for your Cisco Umbrella Investigate instance.
+
+* **API Token**. Enter an [API key](https://docs.umbrella.com/deployment-umbrella/docs/add-umbrella-api-keys) for Cisco Umbrella Investigate.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco/cisco-umbrella-investigate-configuration.png')} style={{border:'1px solid gray'}} alt="Cisco Umbrella Investigate configuration" width="400"/>
+
+For information about Cisco Umbrella Investigate, see [Cisco Umbrella Investigate documentation](https://docs.umbrella.com/deployment-umbrella/docs/manage-umbrella-investigate).
+
 ## Change Log
 
 * September 25, 2019 - First upload
@@ -33,3 +56,4 @@ Threat Intelligence-Reputation
 * June 23, 2023 (v1.4)
 	+ Updated the integration with Environmental Variables
 	+ Renamed from CISCO Umbrella Investigate OIF to Cisco Umbrella Investigate
+* April 27, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

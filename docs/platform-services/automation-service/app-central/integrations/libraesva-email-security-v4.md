@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/libraesva-email-security-v4.png')} alt="libraesva-email-security-v4" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/libraesva-email-security-v4.png')} alt="Libraesva Email Security V4 icon" width="100"/>
 
-***Version: 4.1  
-Updated: Jul 11, 2023***
+***Version: 4.2  
+Updated: April 29, 2026***
 
 Libraesva Email Security V4 provides security, continuity, and compliance capabilities that include the Email Security Gateway, the Email Load Balancer and the Email Archiver.
 
@@ -25,8 +25,31 @@ Libraesva Email Security V4 provides security, continuity, and compliance capabi
 
 Email Security
 
+## Configure Libraesva Email Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Libraesva URL.
+
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/libraesva-v4-configuration.png')} style={{border:'1px solid gray'}} alt="Libraesa V4 configuration" width="400"/>
+
+For information about Libraesva Email Security V4, see [Libraesva Email Security V4 documentation](https://docs.libraesva.com/doc/libraesva-esg-4/).
+
 ## Change Log
 
 * May 11, 2021 - First upload
 * September 12, 2022 - Changed integration name and logo
 * July 11, 2023 (v4.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v4.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

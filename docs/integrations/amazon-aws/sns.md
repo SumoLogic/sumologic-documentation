@@ -6,7 +6,7 @@ description: The Sumo Logic app for Amazon SNS is a unified logs and metrics app
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/sns.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/sns.png')} alt="SNS icon" width="50"/>
 
 Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients.
 
@@ -15,8 +15,8 @@ The Sumo Logic app for Amazon SNS collects CloudTrail logs and CloudWatch metric
 ## Log and Metrics types
 
 The Sumo Logic app for Amazon SNS uses:
-* SNS CloudWatch Metrics. For details, see [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html). 
-* SNS operations using AWS CloudTrail. For details, see [here](http://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html). 
+* SNS CloudWatch Metrics. For details, see [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html).
+* SNS operations using AWS CloudTrail. For details, see [here](https://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html).
 
 ### Sample log messages
 
@@ -48,7 +48,7 @@ eventCategory:"Management"
 
 ### Sample queries
 
-```sql title="Events By Status"
+```sumo title="Events By Status"
 account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\"sns.amazonaws.com\""
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message nodrop
 | where event_source = "sns.amazonaws.com"
@@ -95,7 +95,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
       * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter a source category. For example, enter `aws/observability/CloudTrail/logs`.
     * **Fields**. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried using the **account** field. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Fields.png')} alt="Fields" />
-    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
+    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
     * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
     * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
     * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
@@ -105,7 +105,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 
 ### Field in Field Schema
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
 1. Search for the `"topicname"` field. 
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
@@ -121,7 +121,7 @@ Scope (Specific Data): account=* eventname eventsource \"sns.amazonaws.com\"
 
 **Parse Expression**:
 
-```sql
+```sumo
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements nodrop
 | where event_source = "sns.amazonaws.com"
 | json field=userIdentity "accountId", "type", "arn", "userName"  as accountid, type, arn, username nodrop
@@ -147,7 +147,7 @@ In case, you have a centralized collection of CloudTrail logs and are ingesting 
 * **Scope (Specific Data)**: `_sourceCategory=aws/observability/cloudtrail/logs`
 * **Parse Expression**: Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account
