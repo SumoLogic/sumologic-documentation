@@ -85,7 +85,7 @@ jobs:
             terminus lock:enable ${{ inputs.PANTHEON_SITE_ID }}.$NORMLIZED_STAGING_ENV_NAME -- "${{ secrets.PANTHEON_AUTH_USER }}" "${{ secrets.PANTHEON_AUTH_PASSWORD }}"
           fi
           terminus connection:set "${{ inputs.PANTHEON_SITE_ID }}.$NORMLIZED_STAGING_ENV_NAME" git
-          echo "PANTHEON_ENV=helpdocs" >> $GITHUB_ENV
+          echo "PANTHEON_ENV=$NORMLIZED_STAGING_ENV_NAME" >> $GITHUB_ENV
           echo "PANTHEON_BRANCH=$NORMLIZED_STAGING_ENV_NAME" >> $GITHUB_ENV
       - name: Commit build and deploy to Pantheon repo
         run: |

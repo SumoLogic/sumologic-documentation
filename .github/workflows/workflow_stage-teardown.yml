@@ -1,0 +1,165 @@
+name: Tear Down Staging Environment
+
+permissions:
+  contents: read
+  pull-requests: write
+  deployments: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: PR number whose staging environment should be torn down
+        required: true
+        type: string
+  issue_comment:
+    types: [created]
+
+jobs:
+  check-comment-trigger:
+    if: github.event_name == 'issue_comment'
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check.outputs.triggered }}
+      pr_number: ${{ github.event.issue.number }}
+      commenter: ${{ github.event.comment.user.login }}
+    steps:
+      - name: Check if comment triggers teardown
+        id: check
+        run: |
+          if [[ "${{ github.event.issue.pull_request }}" != "" ]] && \
+             [[ "${{ github.event.comment.body }}" == "/stage-teardown"* ]]; then
+            echo "triggered=true" >> $GITHUB_OUTPUT
+          else
+            echo "triggered=false" >> $GITHUB_OUTPUT
+          fi
+
+  check-permissions:
+    needs: [check-comment-trigger]
+    if: |
+      always() &&
+      github.event_name == 'issue_comment' &&
+      needs.check-comment-trigger.outputs.should_run == 'true'
+    runs-on: ubuntu-latest
+    outputs:
+      has_permission: ${{ steps.check.outputs.allowed }}
+    steps:
+      - name: Check commenter permissions
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PERMISSION=$(gh api repos/${{ github.repository }}/collaborators/${{ needs.check-comment-trigger.outputs.commenter }}/permission \
+            --jq '.permission')
+
+          if [[ "$PERMISSION" == "write" ]] || \
+             [[ "$PERMISSION" == "maintain" ]] || \
+             [[ "$PERMISSION" == "admin" ]]; then
+            echo "allowed=true" >> $GITHUB_OUTPUT
+          else
+            echo "allowed=false" >> $GITHUB_OUTPUT
+            echo "Error: User ${{ needs.check-comment-trigger.outputs.commenter }} does not have write access"
+            exit 1
+          fi
+
+  teardown:
+    needs: [check-comment-trigger, check-permissions]
+    if: |
+      always() && (
+        github.event_name == 'workflow_dispatch' ||
+        (needs.check-comment-trigger.outputs.should_run == 'true' &&
+         needs.check-permissions.outputs.has_permission == 'true')
+      )
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set PR number
+        id: set-pr
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "number=${{ inputs.pr_number }}" >> $GITHUB_OUTPUT
+          else
+            echo "number=${{ needs.check-comment-trigger.outputs.pr_number }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Generate environment name
+        id: env-name
+        run: echo "name=pr-${{ steps.set-pr.outputs.number }}" >> $GITHUB_OUTPUT
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+
+      - name: Install Terminus
+        run: |
+          curl -L https://github.com/pantheon-systems/terminus/releases/download/4.0.3/terminus.phar --output terminus
+          chmod +x terminus
+          sudo mv terminus /usr/local/bin/terminus
+
+      - name: Terminus login
+        run: terminus auth:login --machine-token ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+
+      - name: Check if environment exists
+        id: check-env
+        run: |
+          if terminus env:list ${{ vars.PANTHEON_SITE_ID }} --format=list | grep -q "^${{ steps.env-name.outputs.name }}$"; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Delete multidev environment
+        if: steps.check-env.outputs.exists == 'true'
+        run: |
+          terminus multidev:delete \
+            --delete-branch \
+            --yes \
+            ${{ vars.PANTHEON_SITE_ID }}.${{ steps.env-name.outputs.name }}
+
+      - name: Update deployment status to inactive
+        if: steps.check-env.outputs.exists == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Get all deployments for this environment
+          DEPLOYMENTS=$(gh api repos/${{ github.repository }}/deployments \
+            --jq "[.[] | select(.environment == \"staging/pr-${{ steps.set-pr.outputs.number }}\") | .id]")
+
+          # Update each deployment status to inactive
+          echo "$DEPLOYMENTS" | jq -r '.[]' | while read DEPLOYMENT_ID; do
+            gh api repos/${{ github.repository }}/deployments/$DEPLOYMENT_ID/statuses \
+              -X POST \
+              -f state="inactive" \
+              -f description="Environment torn down" || true
+          done
+
+      - name: Remove label from PR
+        if: steps.check-env.outputs.exists == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr edit ${{ steps.set-pr.outputs.number }} \
+            --repo ${{ github.repository }} \
+            --remove-label "staging-deployed" || true
+
+      - name: Post confirmation comment
+        if: steps.check-env.outputs.exists == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment ${{ steps.set-pr.outputs.number }} \
+            --repo ${{ github.repository }} \
+            --body "🗑️ Staging environment \`pr-${{ steps.set-pr.outputs.number }}\` has been torn down."
+
+      - name: Post environment not found comment
+        if: steps.check-env.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment ${{ steps.set-pr.outputs.number }} \
+            --repo ${{ github.repository }} \
+            --body "ℹ️ No staging environment found for \`pr-${{ steps.set-pr.outputs.number }}\`. It may have already been torn down."
+
+      - name: Terminus logout
+        if: always()
+        run: terminus auth:logout || true

@@ -1,0 +1,155 @@
+name: Deploy PR to Staging Environment
+
+permissions:
+  contents: read
+  pull-requests: write
+  deployments: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: PR number to build and stage
+        required: true
+        type: string
+  issue_comment:
+    types: [created]
+
+jobs:
+  check-comment-trigger:
+    if: github.event_name == 'issue_comment'
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check.outputs.triggered }}
+      pr_number: ${{ github.event.issue.number }}
+    steps:
+      - name: Check if comment triggers deployment
+        id: check
+        run: |
+          if [[ "${{ github.event.issue.pull_request }}" != "" ]] && \
+             [[ "${{ github.event.comment.body }}" == "/stage-deploy"* ]]; then
+            echo "triggered=true" >> $GITHUB_OUTPUT
+          else
+            echo "triggered=false" >> $GITHUB_OUTPUT
+          fi
+
+  resolve-pr:
+    needs: [check-comment-trigger]
+    if: |
+      always() && (
+        github.event_name == 'workflow_dispatch' ||
+        needs.check-comment-trigger.outputs.should_run == 'true'
+      )
+    runs-on: ubuntu-latest
+    outputs:
+      head_branch: ${{ steps.get-branch.outputs.branch }}
+      head_sha: ${{ steps.get-branch.outputs.sha }}
+      env_name: ${{ steps.env-name.outputs.name }}
+      pr_number: ${{ steps.set-pr.outputs.number }}
+    steps:
+      - name: Set PR number
+        id: set-pr
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "number=${{ inputs.pr_number }}" >> $GITHUB_OUTPUT
+          else
+            echo "number=${{ needs.check-comment-trigger.outputs.pr_number }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get PR branch and SHA
+        id: get-branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PR_DATA=$(gh pr view ${{ steps.set-pr.outputs.number }} \
+            --repo ${{ github.repository }} \
+            --json headRefName,headRefOid)
+
+          BRANCH=$(echo "$PR_DATA" | jq -r '.headRefName')
+          SHA=$(echo "$PR_DATA" | jq -r '.headRefOid')
+
+          if [[ "$BRANCH" == "null" ]] || [[ "$BRANCH" == "" ]]; then
+            echo "Error: Could not find PR #${{ steps.set-pr.outputs.number }}"
+            exit 1
+          fi
+
+          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+          echo "sha=$SHA" >> $GITHUB_OUTPUT
+
+      - name: Generate environment name
+        id: env-name
+        run: echo "name=pr-${{ steps.set-pr.outputs.number }}" >> $GITHUB_OUTPUT
+
+  build-site:
+    needs: resolve-pr
+    uses: ./.github/workflows/job_build-site.yml
+    with:
+      ref: ${{ needs.resolve-pr.outputs.head_branch }}
+
+  deploy:
+    needs: [resolve-pr, build-site]
+    uses: ./.github/workflows/job_pantheon.yml
+    with:
+      PANTHEON_DESTINATION: staging
+      SITE_PATH: help/
+      PANTHEON_SITE_ID: ${{ vars.PANTHEON_SITE_ID }}
+      PANTHEON_STAGING_ENV_NAME: ${{ needs.resolve-pr.outputs.env_name }}
+    secrets:
+      PANTHEON_SSH_KEY: ${{ secrets.PANTHEON_SSH_KEY }}
+      PANTHEON_KNOWN_HOSTS: ${{ secrets.PANTHEON_KNOWN_HOSTS }}
+      PANTHEON_MACHINE_TOKEN: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+      PANTHEON_USER_EMAIL: ${{ secrets.PANTHEON_USER_EMAIL }}
+      PANTHEON_AUTH_USER: ${{ secrets.PANTHEON_AUTH_USER }}
+      PANTHEON_AUTH_PASSWORD: ${{ secrets.PANTHEON_AUTH_PASSWORD }}
+
+  notify:
+    needs: [resolve-pr, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create GitHub Deployment
+        id: create-deployment
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          DEPLOYMENT=$(gh api repos/${{ github.repository }}/deployments \
+            -X POST \
+            -f ref="${{ needs.resolve-pr.outputs.head_sha }}" \
+            -f environment="staging/pr-${{ needs.resolve-pr.outputs.pr_number }}" \
+            -f auto_merge=false \
+            -F required_contexts='[]' \
+            -f description="Staging environment for PR #${{ needs.resolve-pr.outputs.pr_number }}")
+
+          DEPLOYMENT_ID=$(echo "$DEPLOYMENT" | jq -r '.id')
+          echo "deployment_id=$DEPLOYMENT_ID" >> $GITHUB_OUTPUT
+
+      - name: Set deployment status to success
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/${{ github.repository }}/deployments/${{ steps.create-deployment.outputs.deployment_id }}/statuses \
+            -X POST \
+            -f state="success" \
+            -f environment_url="https://${{ needs.resolve-pr.outputs.env_name }}-${{ vars.PANTHEON_SITE_ID }}.pantheonsite.io/help/" \
+            -f description="Staging environment deployed"
+
+      - name: Add label to PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr edit ${{ needs.resolve-pr.outputs.pr_number }} \
+            --repo ${{ github.repository }} \
+            --add-label "staging-deployed"
+
+      - name: Post PR comment
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment ${{ needs.resolve-pr.outputs.pr_number }} \
+            --repo ${{ github.repository }} \
+            --body "🚀 **Staging environment deployed**
+
+**URL**: https://${{ needs.resolve-pr.outputs.env_name }}-${{ vars.PANTHEON_SITE_ID }}.pantheonsite.io/help/
+
+The site is protected with HTTP basic auth. Contact the docs team for credentials.
+
+To tear down this environment, comment \`/stage-teardown\` on this PR."
