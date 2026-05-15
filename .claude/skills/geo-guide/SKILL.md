@@ -1,20 +1,20 @@
 ---
 name: geo-guide
-description: GEO (Generative Engine Optimisation) principles and patterns for Sumo Logic documentation in the sumologic-documentation repo. Use when creating or updating docs to rewrite headings as questions, adding FAQ sections, applying BLUF writing style, or adding JSON-LD schema markup to Docusaurus frontmatter. Also trigger for requests like "make my app doc AI-friendly", "optimise for AI citation", "add FAQ schema", or any task involving GEO, structured metadata, or discoverability of Sumo Logic docs for LLMs. Do not use for general documentation updates, routine edits, standard page creation, or any PR that does not explicitly ask for GEO or AI optimisation. 
+description: GEO (Generative Engine Optimization) principles and patterns for Sumo Logic documentation in the sumologic-documentation repo. Use when creating or updating docs to rewrite headings as questions, adding FAQ sections, applying BLUF writing style, or adding JSON-LD schema markup to Docusaurus frontmatter. Also trigger for requests like "make my app doc AI-friendly", "optimize for AI citation", "add FAQ schema", or any task involving GEO, structured metadata, or discoverability of Sumo Logic docs for LLMs. Do not use for general documentation updates, routine edits, standard page creation, or any PR that does not explicitly ask for GEO or AI optimization. 
 ---
 
 # GEO Reference — Sumo Logic Docs
 
 ## What is GEO?
 
-GEO optimises documentation so AI tools like ChatGPT, Perplexity, and Gemini **cite your content** in their answers. Unlike SEO which targets search rankings, GEO targets AI citation frequency.
+GEO optimizes documentation so AI tools like ChatGPT, Perplexity, and Gemini **cite your content** in their answers. Unlike SEO which targets search rankings, GEO targets AI citation frequency.
 
-## Frontmatter Template (GEO-optimised)
+## Frontmatter Template (GEO-optimized)
 
 GEO changes heading style, page structure, frontmatter fields, and content layout in ways that diverge from the standard Sumo Logic style guide. Apply it only when explicitly requested. Apply GEO when the prompt contains phrases like:
 
-- "optimise for AI citation"
-- "GEO optimise this page"
+- "optimize for AI citation"
+- "GEO optimize this page"
 - "make this doc AI-friendly"
 - "make this citable by AI tools"
 - "add FAQ schema"
@@ -25,7 +25,7 @@ GEO changes heading style, page structure, frontmatter fields, and content layou
 
 Do not  apply GEO for:
 - Routine documentation updates, bug fixes, or content corrections 
-- Standard new page creation without an explicit AI-optimisation request
+- Standard new page creation without an explicit AI-optimization request
 - Pull requests that mention SEO but not GEO or AI citation
 - Any task where the prompt does not specifically ask for GEO
 
@@ -33,49 +33,49 @@ Sumo Logic doc pages live under `/docs/` and follow this frontmatter pattern:
 
 ```yaml
 ---
-  id: my-page-name
-  title: How Do I [Task] with Sumo Logic? 
-  sidebar_label: Short Nav Label
-  description: One sentence answering the page question for AI crawlers and search engines. 
-  keywords: 
-    - Sumo Logic
-    - feature or product name
-    - capability term
-  head:
-    - tagName: script
-      attributes:
-        type: application/ld+json
-      innerHTML: |
-        {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Your first question here?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Your plain-text answer here." 
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Your second question here?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Your plain-text answer here."
-              }
+id: my-page-name
+title: How Do I [Task] with Sumo Logic? 
+sidebar_label: Short Nav Label
+description: One sentence answering the page question for AI crawlers and search engines. 
+keywords: 
+  - Sumo Logic
+  - feature or product name
+  - capability term
+head:
+  - tagName: script
+    attributes:
+      type: application/ld+json
+    innerHTML: |
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Your first question here?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Your plain-text answer here." 
             }
-          ]
-        }
+          },
+          {
+            "@type": "Question",
+            "name": "Your second question here?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Your plain-text answer here."
+            }
+          }
+        ]
+      }
 ---
 ```
 
-When generating GEO-optimised frontmatter, add # [GEO: Principle N] inline comments next to each GEO-specific field so reviewers can immediately distinguish GEO additions from standard frontmatter fields. Remove these comments only if the project's YAML linter rejects them.
+When generating GEO-optimized frontmatter, add # [GEO: Principle N] inline comments next to each GEO-specific field so reviewers can immediately distinguish GEO additions from standard frontmatter fields. Remove these comments only if the project's YAML linter rejects them.
 
 **Rules:**
 
-- `title` is phrased as a question and matches the H1 (generated from frontmatter ).
+- `title` is phrased as a question and matches the H1 (generated from frontmatter).
 - `description` is one sentence describing what the feature does and what problem it solves.
 - `keywords` include: the integrated product name, Sumo Logic, and 2–3 capability terms (for example: security, monitoring, logs).
 - `mainEntity` in the JSON-LD must mirror the FAQ section at the bottom of the page body to keep them in sync.
@@ -102,7 +102,7 @@ Use Scheduled Searches to run a saved search automatically and alert your team w
 
 ### Principle 2 — One page, one question
 
-Each page answers exactly one clearly scoped question. AI cannot follow cross-references between pages, a self-contained page is the only page that gets cited.
+Each page answers exactly one clearly scoped question. AI cannot follow cross-references between pages. A self-contained page is the only page that gets cited.
 
 ```markdown
 <!-- Before — monolithic page -->
@@ -173,11 +173,19 @@ These are GEO-specific behaviors that differ from standard doc authoring. Apply 
 
 Only apply GEO when the prompt explicitly asks for it. Trigger phrases are listed in above. If a prompt asks you to "update the authentication page" with no mention of GEO, AI citation, or structured metadata, make the content change only. Do not add JSON-LD, do not rewrite headings as questions, do not add an FAQ section.
 
-These are GEO-specific behaviors that differ from standard doc authoring in this repository.
-
 - **JSON-LD answers must be plain text**. No Markdown, no HTML tags inside `"text":` values. Bold, code fences, and links will break schema validation.
 - **`title:` and JSON-LD FAQ questions must not overlap**. The title is the page level question but FAQ entries are sub-questions. Repeating the title as a FAQ question adds no citation value.
-- **Keep `description:` under 160 characters**. AI crawlers truncate longer values and may ignore the field entirely.
+- **Keep `description:` between 140–160 characters**. AI crawlers truncate longer values and may ignore the field entirely.
 - **FAQ section and `mainEntity` array must stay in sync**. Adding a question to the body FAQ requires a matching entry in the JSON-LD, and vice versa.
 - **Never write an H1 in the body**. The `title:` frontmatter generates the H1. A second H1 in the body breaks page structure and GEO.
 - **Do not apply GEO to `docs/reuse/` partials.** These files are import-only snippets and are never crawled directly. Apply GEO only to the parent page that imports them.
+
+## Cross-References
+
+Related tooling and guidance:
+
+- **`/geo-optimize`**. Interactive command for applying GEO improvements to a doc. Proposes changes and waits for approval before implementing.
+- **`/seo-audit`**. Audit command that checks SEO/AEO/GEO signals and can hand off to `/geo-optimize` when GEO improvements are needed.
+- **Public style guide**. Human-readable AEO and GEO guidance:
+  - [AEO (Answer Engine Optimization)](https://www.sumologic.com/help/docs/contributing/style-guide/#aeo-answer-engine-optimization)
+  - [GEO (Generative Engine Optimization)](https://www.sumologic.com/help/docs/contributing/style-guide/#geo-generative-engine-optimization)
