@@ -1,5 +1,5 @@
 ---
-title: Delinea
+title: Delinea Secret Server
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/delinea.png')} alt="Delinea icon" width="80"/>
 
 ***Version: 1.0  
-Updated: Apr 20, 2026***
+Updated: May 18, 2026***
 
 Delinea Secret Server is an enterprise-grade password management solution designed to help organizations securely store, manage, and control access to privileged credentials.
 It aims to improve the security of sensitive data, reduce the risk of data breaches, and streamline the password management process.
@@ -21,7 +21,7 @@ It aims to improve the security of sensitive data, reduce the risk of data breac
 * **Delete Secret** (*Containment*) - Delete a specific secret from Delinea Secret Server, permanently removing it from the system.
 
 
-## Configure Delinea in Automation Service and Cloud SOAR
+## Configure Delinea Secret Server in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
@@ -50,4 +50,4 @@ For information about Delinea, see [Delinea documentation](https://updates.thyco
 
 ## Change Log
 
-* April 20, 2026 - First upload
+* May 18, 2026 - First upload
