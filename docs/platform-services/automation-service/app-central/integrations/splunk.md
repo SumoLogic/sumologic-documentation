@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/splunk.png')} alt="splunk" width="70"/>
 
-***Version: 1.3
-Updated: Sep 18, 2025***
+***Version: 1.4
+Updated: April 30, 2026***
 
 Search and send events with Splunk.
 
@@ -81,3 +81,4 @@ For information about Splunk, see [Splunk documentation](https://docs.splunk.com
 * September 18, 2025 (v1.3)
     + Improved timezone handling in alert queries.
     + Improved URL encoding to handle reserved characters.
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/automox.png')} alt="automox" width="80"/>
 
-***Version: 1.1  
-Updated: Jul 03, 2023***
+***Version: 1.2  
+Updated: April 27, 2026***
 
 Automox is a cloud-native patching platform that automates patch management across Windows, macOS, Linux, and third-party software including Adobe, Java, Firefox, Chrome, and Windows.
 
@@ -59,3 +59,4 @@ For information about Automox, see [Automox documentation](https://docs.automox.
 
 * July 7, 2022 - First upload
 * July 3, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 27, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
