@@ -105,7 +105,7 @@ Our docs are GitHub-flavored markdown files containing content like bulleted ins
 
 1. Open your new branch in your IDE and go to the `/docs` folder.
 1. Create a new markdown file in the format `<your-file>.md` and save it to the appropriate subfolder. For example, if you're creating a new metrics doc, you'd save it to the `/docs/metrics` folder.
-1. At the top of your file, add your frontmatter, which is the doc metadata. Follow the instructions under [Frontmatter](/docs/contributing/style-guide/#metadata-frontmatter).
+1. At the top of your file, add your frontmatter, which is the doc metadata. Follow the instructions under [Frontmatter](/docs/contributing/style-guide/#metadata-frontmatter), and see [Metadata descriptions](/docs/contributing/style-guide/#metadata-descriptions) for description length and formatting rules.
 
 
 ### Step 3: Write your doc
