@@ -19,11 +19,6 @@ Macros can also be nested to enable reuse of complex queries:
 * **Inner Macro**. A macro used within the context of another macro query.
 * **Outer Macro**. The macro that references an inner macro.
 
-:::note
-- Only **Administrators** and **Users** with access to **Query Reference** can run queries using macros.
-- Only users with **Manage Macro** capability can create macros.
-:::
-
 ## Add a macro
 
 To create a macro, follow the steps below:
