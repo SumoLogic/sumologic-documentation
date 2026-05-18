@@ -57,7 +57,13 @@ jobs:
           php-version: "8.2"
       - name: Install Terminus
         run: |
-          sudo apt-get install -y --no-install-recommends jq
+          sudo apt update
+          sudo apt install -y curl php-common php-cli php-xml php-mbstring php-curl git jq
+          php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+          php -r "if (hash_file('sha384', 'composer-setup.php') === file_get_contents('https://composer.github.io/installer.sig')) { echo 'Installer verified'.PHP_EOL; } else { echo 'Installer corrupt'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+          php composer-setup.php
+          php -r "unlink('composer-setup.php');"
+          mv composer.phar /usr/local/bin/composer
           curl -L https://github.com/pantheon-systems/terminus/releases/download/4.0.3/terminus.phar --output terminus
           chmod +x terminus
           mv terminus /usr/local/bin/terminus
