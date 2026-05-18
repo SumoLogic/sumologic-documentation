@@ -6,7 +6,7 @@ keywords:
 hide_table_of_contents: true    
 ---
 
-In this release, we've enhanced the security and stability of the Collector with upgraded JRE, security patches, and bug fixes.
+In this release, we've enhanced the security and stability of the Collector with added support for security patches and bug fixes.
 
 #### Security fixes
 
