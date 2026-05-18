@@ -192,3 +192,13 @@ Make sure supported auto-instrumentation images are used:
 * `java` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:1.16.0
 * `nodejs` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.27.0
 * `python` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.28b1
+
+
+## Compatibility Matrix
+| Language | Image Tag | Minimum Runtime Version |
+|----------|-----------|------------------------|
+| Java | 2.27.0 | Java 8+ |
+| .NET | 1.15.0 | .NET 8+ |
+| Python | 0.48b0 | Python 3.8+ |
+| Node.js | 0.74.0 | Node.js 18.19.0+ or 20.6.0+ |
+
