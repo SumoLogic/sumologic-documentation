@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Updated: May 18, 2026***
 
 Delinea Secret Server is an enterprise-grade password management solution designed to help organizations securely store, manage, and control access to privileged credentials.
-It aims to improve the security of sensitive data, reduce the risk of data breaches, and streamline the password management process.
+It aims to improve the security of sensitive data, reduce the risk of data breaches, and streamline password management.
 
 ## Actions
 
