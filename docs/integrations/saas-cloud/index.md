@@ -53,7 +53,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/anthropic-compliance')}><img src={useBaseUrl('img/send-data/anthropic.png')} alt="Anthropic Compliance icon" width="90"/><h4>Anthropic Compliance</h4></a>
+  <a href={useBaseUrl('docs/integrations/saas-cloud/claude-compliance')}><img src={useBaseUrl('img/send-data/claude.png')} alt="Claude Compliance icon" width="90"/><h4>Claude Compliance</h4></a>
   <p>Monitor and manage your compliance and security.</p>
   </div>
 </div>
