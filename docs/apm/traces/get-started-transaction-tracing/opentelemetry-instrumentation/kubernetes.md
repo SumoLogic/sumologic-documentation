@@ -194,9 +194,10 @@ Make sure supported auto-instrumentation images are used:
 * `python` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.28b1
 
 
-## Compatibility Matrix
+## Compatibility matrix
+
 | Language | Image Tag | Minimum Runtime Version |
-|----------|-----------|------------------------|
+|:---------|:----------|:-----------------------|
 | Java | 2.27.0 | Java 8+ |
 | .NET | 1.15.0 | .NET 8+ |
 | Python | 0.48b0 | Python 3.8+ |
