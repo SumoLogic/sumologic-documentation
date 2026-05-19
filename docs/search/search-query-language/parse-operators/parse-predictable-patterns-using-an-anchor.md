@@ -1,6 +1,7 @@
 ---
 id: parse-predictable-patterns-using-an-anchor
 title: Parse Predictable Patterns Using an Anchor
+description: Use the parse anchor operator to parse strings using specified start and stop anchors, labeling extracted values as fields for aggregation functions.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
