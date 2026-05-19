@@ -429,7 +429,7 @@ To set up collection for traces:
 
 </details>
 
-### Samplequery
+### Sample query
 
 ```sumo title="Deleted Resources Over Time"
 _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInstance or DeregisterTaskDefinition or StopTask) and !(InternalFailure)
