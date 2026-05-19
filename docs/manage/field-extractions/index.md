@@ -1,63 +1,99 @@
 ---
 slug: /manage/field-extractions
-title: Field Extractions
-description: Use Field Extraction Rules (FERs) to parse fields from log messages at ingestion time, improving search performance for alerts, dashboards, and ad hoc queries.
+title: Field Extraction Rules Overview
+sidebar_label: Field Extractions
+description: Field Extraction Rules in Sumo Logic parse fields from log messages at ingest time, eliminating the need to parse fields in every query and improving search performance.
+keywords:
+  - field-extraction-rules
+  - FER
+  - parse log fields
+  - log field parsing
+  - ingest time parsing
+  - extract fields from logs
+  - automatic log parsing
+  - log search performance
+head:
+  - tagName: script
+    attributes:
+      type: application/ld+json
+    innerHTML: |
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a Field Extraction Rule in Sumo Logic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Field Extraction Rule (FER) parses fields from log messages at the time they are ingested into Sumo Logic. Once a rule is in place, the pre-parsed fields are available for searches, alerts, scheduled searches, and dashboards without needing to parse fields in every query."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to parse fields from logs automatically in Sumo Logic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Create a Field Extraction Rule under Data Management > Logs > Field Extraction Rules. Define a scope to target the relevant log sources and a parse expression to extract the fields. The rule applies to all data ingested after it is created."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between ingest time and run time field extraction in Sumo Logic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ingest Time rules parse fields when log data arrives, making those fields available immediately in searches, alerts, and dashboards without any query-level parsing. Run Time rules parse fields during a search query. Ingest Time rules improve search performance but only apply to data ingested after the rule is created."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many field extraction rules can a Sumo Logic account have?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Accounts can have up to 50 Ingest Time field extraction rules and up to 200 fields total. Enterprise and Enterprise Suite accounts support up to 400 fields. Fields created from log metadata and Ingest Time rules share the same quota."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do field extraction rules apply to historical log data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Ingest Time field extraction rules only apply to data ingested after the rule is created. To parse historical data, use parse operators in a query or create Scheduled Views to extract fields from data ingested before the rule existed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens when a field extraction rule is deleted in Sumo Logic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Deleting a Field Extraction Rule does not delete the fields it was parsing. Any unwanted fields must be deleted separately from the Fields page."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What permissions are needed to create a field extraction rule in Sumo Logic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Manage field extraction rules role capability is required to create, edit, or delete field extraction rules."
+            }
+          }
+        ]
+      }
 ---
+
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
 Field extractions allow you to parse [fields](/docs/manage/fields) from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. With Field Extraction Rules (FERs) in place, users can use the pre-parsed fields for ad hoc searches, scheduled searches, real-time alerts, and dashboards. In addition, field extraction rules help standardize field names and searches, simplify the search syntax and scope definition, and improve search performance. 
 
-Fields are extracted from the time you create your FER moving forward. Therefore, set your FERs early on to take advantage of this automatic parsing mechanism.
-
-For best practices on naming your fields, see [Field Naming Convention](field-naming-convention.md).
-
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Field Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.
-
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Field Extraction Rules page, in the main Sumo Logic menu select **Manage Data > Logs > Field Extraction Rules**.
-
-To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
-  
 :::note
-You can see the suggestions only if there are two or more responses for the same column or section.
+The **Manage field extraction rules** [role capability](/docs/manage/users-roles/roles/role-capabilities/) is required to create, edit, or delete a field extraction rule.
 :::
 
-:::important
-You need the **Manage field extraction rules** [role capability](../users-roles/roles/role-capabilities.md) to create a field extraction rule. 
+:::info
+Fields are extracted from the time you create your FER moving forward. Therefore, set your FERs early on to take advantage of this automatic parsing mechanism. For best practices on naming your fields, see [Field Naming Convention](field-naming-convention.md).
 :::
-
-<img src={useBaseUrl('img/field-extraction-rules/fer-page.png')} alt="Fer page" style={{border:'1px solid gray'}} width="800"/>
-
-The Field Extraction Rules page displays the following information: 
-
-When hovering over a row in the table there are icons that appear on the far right for editing, disabling and deleting the rule.
-
-* **Status** shows a checkmark in a green circle <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Check in green circle" width="20" /> to indicate if the rule is actively being applied or an exclamation mark in a red circle <img src={useBaseUrl('img/reuse/exclamation-red-circle.png')} alt="Exclamation in red circl" width="20" /> to indicate if the rule is disabled.
-* **Rule Name**
-* **Applied At** indicates when the field extraction process occurs, either at Ingest or Run time.
-* **Scope** 
-* **Created** date and time by user
-* **Last Modified** date and time by user
-* **Fields Capacity** (bottom of table) shows how many fields your account is using, out of the total available for use.
-
-You can view the fields created in your account and what features are referencing them on the [Fields](/docs/manage/fields) page.
-
-On the Field Extraction Rules page you can:
-
-* Click **+ Add** to [create a Field Extraction Rule](create-field-extraction-rule.md).
-* Search Field Extraction Rules by name and scope.
-* [**Edit** a Field Extraction Rule](edit-field-extraction-rules.md).
-* **Disable** a Field Extraction Rule.
-* **Delete** a Field Extraction Rule.
-
-## Limitations
-
-import FerLimit from '../../reuse/fer-limitations.md';
-
-<FerLimit/>
-
-## Micro lesson: Field extraction rules basics
 
 :::training Micro Lesson
 
@@ -75,7 +111,41 @@ import FerLimit from '../../reuse/fer-limitations.md';
 
 :::
 
-## Edit a Field Extraction Rule
+## How do I access the Field Extraction Rules page?
+
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Field Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Field Extraction Rules page, in the main Sumo Logic menu select **Manage Data > Logs > Field Extraction Rules**.
+
+<img src={useBaseUrl('img/field-extraction-rules/fer-page.png')} alt="Fer page" style={{border:'1px solid gray'}} width="800"/>
+
+To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section.
+  
+:::note
+You can see the suggestions only if there are two or more responses for the same column or section.
+:::
+
+The Field Extraction Rules page displays the following information: 
+
+* **Status** shows a checkmark in a green circle <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Check in green circle" width="20" /> to indicate if the rule is actively being applied or an exclamation mark in a red circle <img src={useBaseUrl('img/reuse/exclamation-red-circle.png')} alt="Exclamation in red circl" width="20" /> to indicate if the rule is disabled.
+* **Rule Name**
+* **Applied At** indicates when the field extraction process occurs, either at Ingest or Run time.
+* **Scope** 
+* **Created** date and time by user
+* **Last Modified** date and time by user
+* **Fields Capacity** (bottom of table) shows how many fields your account is using, out of the total available for use.
+
+:::info
+You can view the fields created in your account and what features are referencing them on the [Fields](/docs/manage/fields) page.
+:::
+
+## What are the limits for field extraction rules?
+
+import FerLimit from '../../reuse/fer-limitations.md';
+
+<FerLimit/>
+
+## How do I edit a field extraction rule?
 
 Changes to Field Extraction Rules are implemented immediately.
 
@@ -83,7 +153,7 @@ Changes to Field Extraction Rules are implemented immediately.
 1. Find the rule in the table and click it. A window appears on the right of the table, click the **Edit** button.
 1. Make changes as needed and click **Save** when done.
 
-## Delete a Field Extraction Rule
+## How do I delete a field extraction rule?
 
 Deleting a Field Extraction Rule doesn't delete the fields it was parsing. You can delete any unwanted fields on the [Fields](/docs/manage/fields) page.
 
@@ -132,3 +202,34 @@ In this section, we'll introduce the following concepts:
   </div>
 </div>
 </div>
+
+
+## FAQs
+
+### What is a Field Extraction Rule in Sumo Logic?
+
+A Field Extraction Rule (FER) parses fields from log messages at ingestion time. Once in place, the pre-parsed fields are available for searches, alerts, scheduled searches, and dashboards without needing to parse fields in every query.
+
+### How to parse fields from logs automatically in Sumo Logic?
+
+Create a Field Extraction Rule under **Data Management > Logs > Field Extraction Rules**. Define a scope to target the relevant log sources and a parse expression to extract the fields. The rule applies to all data ingested after it is created.
+
+### What is the difference between ingest time and run time field extraction?
+
+Ingest Time rules parse fields when log data arrives, making those fields immediately available in searches and alerts without query-level parsing. Run Time rules parse fields during a search. Ingest Time rules improve performance but only apply to data ingested after the rule is created.
+
+### How many field extraction rules can an account have?
+
+Accounts support up to 50 Ingest Time rules and 200 fields total. Enterprise and Enterprise Suite accounts support up to 400 fields. Fields from log metadata and Ingest Time rules share the same quota.
+
+### Do field extraction rules apply to historical log data?
+
+No. Ingest Time FERs only apply to data ingested after the rule is created. To parse historical data, use parse operators in a query or create Scheduled Views to extract fields from data ingested before the rule existed.
+
+### What happens when a field extraction rule is deleted?
+
+Deleting a rule does not delete the fields it was parsing. Delete any unwanted fields separately from the [Fields](/docs/manage/fields/) page.
+
+### What permissions are needed to create a field extraction rule?
+
+The **Manage field extraction rules** role capability is required to create, edit, or delete field extraction rules.
