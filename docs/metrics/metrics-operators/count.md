@@ -2,7 +2,7 @@
 id: count
 title: count Metrics Operator
 sidebar_label: count
-description: Use the count metrics operator to count the total number of time series that match the query.When grouping is specified, counts the total for each group.
+description: Use the count metrics operator to count the total number of time series that match the query. When grouping is specified, it counts the total for each group.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
