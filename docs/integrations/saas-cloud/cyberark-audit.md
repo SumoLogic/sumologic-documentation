@@ -159,13 +159,13 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `CyberArk Audit - Deleted Unexpired Files` | This alert is triggered when a CyberArk safe containing unexpired files is deleted. This may indicate accidental data loss or a deliberate attempt to remove active privileged credentials before their expiration. | Count > 0 | Count <= 0 |
-| `CyberArk Audit - Events from Embargoed Locations` | This alert is triggered when CyberArk activity is detected from embargoed or restricted locations. This may indicate unauthorized access attempts from high-risk regions. | Count > 0 | Count <= 0 |
-| `CyberArk Audit - Excessive Password Resets` | This alert is triggered when an unusually high number of password resets occur within a short period. This could be a sign of compromised accounts or malicious insider activity. | Count > 5 | Count <= 5 |
-| `CyberArk Audit - Failed Login Attempts` | This alert is triggered when repeated failed login attempts are detected, indicating brute force attacks or unauthorized attempts to access privileged accounts. | Count > 3 | Count <= 3 |
-| `CyberArk Audit - Multiple Failed Vault Access Attempts` | This alert is triggered when multiple failed attempts are made to access the CyberArk vault, signaling potential credential theft or unauthorized access attempts. | Count > 3 | Count <= 3 |
-| `CyberArk Audit - OAuth Token Generation Events from Embargoed Locations` | This alert is triggered when OAuth tokens are generated from embargoed locations, which may indicate a potential security breach or misuse of privileged access. | Count > 0 | Count <= 0 |
-| `CyberArk Audit - Threats Detected` | This alert is triggered when threats within CyberArk, such as unauthorized access, suspicious activity, or potential compromise of privileged credentials are detected. | Count > 0 | Count <= 0 |
+| `CyberArk Audit - Deleted Unexpired Files` | This alert is triggered when a CyberArk safe containing unexpired files is deleted. This may indicate accidental data loss or a deliberate attempt to remove active privileged credentials before their expiration. | Count > 0 | Count < = 0 |
+| `CyberArk Audit - Events from Embargoed Locations` | This alert is triggered when CyberArk activity is detected from embargoed or restricted locations. This may indicate unauthorized access attempts from high-risk regions. | Count > 0 | Count < = 0 |
+| `CyberArk Audit - Excessive Password Resets` | This alert is triggered when an unusually high number of password resets occur within a short period. This could be a sign of compromised accounts or malicious insider activity. | Count > 5 | Count < = 5 |
+| `CyberArk Audit - Failed Login Attempts` | This alert is triggered when repeated failed login attempts are detected, indicating brute force attacks or unauthorized attempts to access privileged accounts. | Count > 3 | Count < = 3 |
+| `CyberArk Audit - Multiple Failed Vault Access Attempts` | This alert is triggered when multiple failed attempts are made to access the CyberArk vault, signaling potential credential theft or unauthorized access attempts. | Count > 3 | Count < = 3 |
+| `CyberArk Audit - OAuth Token Generation Events from Embargoed Locations` | This alert is triggered when OAuth tokens are generated from embargoed locations, which may indicate a potential security breach or misuse of privileged access. | Count > 0 | Count < = 0 |
+| `CyberArk Audit - Threats Detected` | This alert is triggered when threats within CyberArk, such as unauthorized access, suspicious activity, or potential compromise of privileged credentials are detected. | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the CyberArk Audit app (Optional)
 
