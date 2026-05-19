@@ -20,8 +20,8 @@ Macros can also be nested to enable reuse of complex queries:
 * **Outer Macro**. The macro that references an inner macro.
 
 :::note
-- Only **Administrators** and **Users** with access to **Query Reference** can run queries using macros.
-- Only users with **Manage Macro** capability can create macros.
+- Only users with the **Manage Macros** [role capability](/docs/manage/users-roles/roles/role-capabilities/) can create, edit, and delete macros.
+- All users can view macro definitions, but data access is governed by existing [RBAC](/docs/manage/users-roles/roles/role-capabilities/) policies. If you do not have access to specific data source, you will not be able to access that data when using a macro, even if the macro definition references it.
 :::
 
 ## Add a macro
