@@ -33,16 +33,13 @@ Features and behavior described here are subject to change before general availa
 | | Before | Now |
 |:--|:--|:--|
 | **[Interface and routing](#unified-interface-and-intent-understanding)** | Separate Query Agent and Knowledge Agent with manual selection | Agent automatically uses available capabilities behind the scenes |
-| **[Reasoning & Complex Log Analysis](#reasoning--complex-log-analysis)** | Natural language to log query translation | Higher-order reasoning, planning, and implicit log analysis |
+| **[Reasoning and complex log analysis](#reasoning-and-complex-log-analysis)** | Natural language to log query translation | Higher-order reasoning, planning, and implicit log analysis |
 | **[Results rendering](#results-rendering)** | Query results open in Log Search | Query results render as narrative summaries with structured tables inline in the conversation, plus an option to open in Log Search |
 | **[Log support](#unstructured-logs-support)** | Structured and semi-structured logs | Structured, semi-structured, and [unstructured logs](#unstructured-logs-support) |
-| **[Conversation history](#conversation-history)** | 24 hours | Retained indefinitely (subject to change) |
 
-### Unified Interface and Intent Understanding
+### Unified interface and intent understanding
 
-You no longer need to choose between Query Agent and Knowledge Agent. Mobot handles this for you.
-
-Open Mobot by clicking **Mobot** in the left nav. Then type your question in the **Ask Something** field.
+With Mobot's new unified interface, you no longer need to choose between Query Agent (for log analysis questions) and Knowledge Agent (platform how-to questions). Just enter your question in the **Ask Something** field, and Mobot automatically routes your question to the appropriate capability.
 
 <img src={useBaseUrl('img/search/mobot/ask-something-mobotv2.png')} alt="Mobot interface showing unified prompt input" style={{border: '1px solid gray'}} width="600" />
 
@@ -51,11 +48,23 @@ Try asking:
 * A log analysis question about errors, trends, anomalies, or security events (for example, `Show me logs from last 15 minutes`).
 * A platform how-to question about configuration, setup, or best practices (for example, `How do I set up an OTel Collector?`).
 
-Mobot automatically routes your question to the appropriate skill, as seen here:
+Here are some investigation-based query examples:
 
-<img src={useBaseUrl('img/search/mobot/platform-how-to-mobotv2.png')} alt="Mobot platform how-to answer" style={{border: '1px solid gray'}} width="700" />
+<details>
+<summary><code>I'm getting reports that users can't log in. Is auth-service having issues?</code></summary>
 
-### Reasoning & complex log analysis
+<img src={useBaseUrl('img/search/mobot/auth-service-issues-mobotv2.png')} alt="Mobot log analysis answer showing auth service error trend" style={{border: '1px solid gray'}} width="800" />
+
+</details>
+
+<details>
+<summary><code>What does the error trend look like for my service over the past 24 hours?</code></summary>
+
+<img src={useBaseUrl('img/search/mobot/org-service-errors-mobotv2.png')} alt="Mobot log analysis answer showing service error trend over 24 hours" style={{border: '1px solid gray'}} width="800" />
+
+</details>
+
+### Reasoning and complex log analysis
 
 While Mobot processes your question, it displays a **Thinking...** or **Planning...** indicator showing that it is identifying relevant data sources and analyzing the problem. Behind the scenes, Mobot selects relevant data sources and saved queries, infers time ranges based on context, and retrieves log data.
 
@@ -81,7 +90,7 @@ For example, asking `Show me logs from last 15 minutes` or `Show me all logs fro
 
 <img src={useBaseUrl('img/search/mobot/clarification-prompt-mobotv2.png')} alt="Mobot clarification prompt" style={{border: '1px solid gray'}} width="600" />
 
-<img src={useBaseUrl('img/search/mobot/clarification-prompt-logs-mobotv2.png')} alt="Mobot clarification prompt" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/search/mobot/clarification-prompt-logs-mobotv2.png')} alt="Mobot clarification prompt asking for a log source" style={{border: '1px solid gray'}} width="600" />
 
 Respond with a source name, source category expression, or any keyword related to what you are looking for. If your question falls outside available data or system capabilities, Mobot clarifies or redirects rather than returning an error.
 
@@ -104,10 +113,6 @@ At this stage, Mobot prioritizes unstructured logs that are already used in dash
 * **Security insights**. Detect anomalies or signs of failed logins by querying raw logs already powering security dashboards.
 * **Smarter prioritization**. Mobot focuses on unstructured logs that are visualized in dashboards, helping you get meaningful insights from high-value data sources.
 
-### Conversation history
-
-Mobot retains your conversation history indefinitely. To resume a previous investigation, open the **My Conversations** list and select the conversation.
-
 ## Example prompts
 
 Mobot works best when you start with a business question, not a query. Ask questions the way you naturally think about a problem, then refine through conversation. Here are some tips:
@@ -118,24 +123,21 @@ Mobot works best when you start with a business question, not a query. Ask quest
 ### Developer and SRE
 
 * `What does the error trend look like for my service over the past 24 hours?`
+   * Follow up: `Which instances are most impacted?`
+
 * `Are any services consistently breaching indexing latency SLOs?`
+   * Follow up: `When did this start?`
 
-Follow-up:
-
-* `Which instances are most impacted?`
-* `When did this start?`
+* `Show me pod crash behavior over the last 7 days.`
+   * Follow up: `Are there any patterns worth paying attention to?`
 
 ### Security analyst
 
 * `Have there been any recent phishing attempts?`
+   * Follow up: `Which users are involved?`
 
 * `Are there any unusual authentication patterns in our environment?`
-
-Follow-up:
-
-* `Which users are involved?`
-
-* `Is this activity increasing over time?`
+   * Follow up: `Is this activity increasing over time?`
 
 ### Product and research
 
@@ -163,60 +165,33 @@ Mobot is in Extended Preview and has the following known limitations.
 
 ## FAQ
 
-<details>
-<summary>What's new in this preview release?</summary>
+### What's new in this preview release?
 
-This release replaces the manual Query Agent and Knowledge Agent selection with a unified interface and automated routing. It adds higher-order reasoning, multi-step analysis, support for unstructured logs, and extended conversation history.
-</details>
+This release replaces the manual Query Agent and Knowledge Agent selection with a unified interface and automated routing. It adds higher-order reasoning, multi-step analysis, and support for unstructured logs.
 
-<details>
-<summary>Do I need to select an agent? What happened to Query Agent and Knowledge Agent?</summary>
+### Do I need to select an agent? What happened to Query Agent and Knowledge Agent?
 
 No. The underlying capabilities are still there, but you no longer select them manually. Mobot automatically routes data questions to log analysis and how-to questions to platform guidance based on what you ask.
-</details>
 
-<details>
-<summary>Can Mobot detect what sources or integrations I do not have set up?</summary>
+### Can Mobot detect what sources or integrations I do not have set up?
 
 Mobot can detect missing sources or partitions reactively. When you ask a question that requires a specific data source, Mobot attempts the query and detects if the partition or data does not exist, then provides setup guidance. Mobot cannot proactively scan your environment and generate a list of all unconfigured integrations.
-</details>
 
-
-<details>
-<summary>Does Mobot retain memory across sessions?</summary>
-
-No. Mobot does not retain memory across sessions. Each new conversation starts fresh. Conversation history is retained so you can review past sessions, but Mobot does not carry context from one conversation into another.
-</details>
-
-<details>
-<summary>When should I start a new conversation instead of continuing the same one?</summary>
+### When should I start a new conversation instead of continuing the same one?
 
 Start a new conversation when you are switching to a completely different topic, the current thread has gone in the wrong direction, or you want to reset context. Continue the same conversation when you are refining or digging deeper into the same question, or exploring a problem through multiple follow-up questions. If you find yourself re-explaining the problem or correcting earlier assumptions, it is usually better to start a new conversation.
-</details>
 
-<details>
-<summary>How long is conversation history retained?</summary>
-
-Mobot currently retains conversation history indefinitely. Retention limits are being evaluated and may change before General Availability.
-</details>
-
-<details>
-<summary>Will Mobot interpret all my unstructured logs?</summary>
+### Will Mobot interpret all my unstructured logs?
 
 Mobot prioritizes unstructured logs that are already used in dashboards. This improves the relevance of insights and helps focus on high-value data sources.
-</details>
 
-<details>
-<summary>How is unstructured log support different from structured log support?</summary>
+### How is unstructured log support different from structured log support?
 
 Structured logs have predefined fields, allowing Mobot to map queries directly. For unstructured logs, Mobot uses AI and parsing techniques to infer structure on the fly.
-</details>
 
-<details>
-<summary>Will Mobot support additional capabilities over time?</summary>
+### Will Mobot support additional capabilities over time?
 
 Yes. Mobot is designed to be extensible. Over time, more capabilities can be added as teams across the platform contribute new features. The current preview focuses on log analysis and platform how-to guidance, with additional capabilities planned for future releases.
-</details>
 
 ## Feedback
 
