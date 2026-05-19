@@ -2,7 +2,7 @@
 id: jsonarraysize
 title: jsonArraySize Search Operator
 sidebar_label: jsonArraySize
-description: Use the jsonArraySize operator to determine the number of elements in a JSON array field.Returns the count of items in the array.
+description: Use the jsonArraySize operator to determine the number of elements in a JSON array field. Returns the count of items in the array.
 ---
 
 
