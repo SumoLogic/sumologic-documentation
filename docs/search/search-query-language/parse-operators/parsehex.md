@@ -1,6 +1,6 @@
 ---
 id: parsehex
-title: parseHex
+title: parseHex Operator
 description: Use the parseHex operator to convert hexadecimal strings of 16 or fewer characters to numeric values.Accepts both plain hex format and 0x-prefixed format.
 ---
 
