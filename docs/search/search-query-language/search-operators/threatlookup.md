@@ -2,7 +2,7 @@
 id: threatlookup
 title: threatlookup Search Operator
 sidebar_label: threatlookup
-description: Use the threatlookup operator to search threat intelligence indicators in your log data.This operator is in Private Preview.
+description: Use the threatlookup operator to search threat intelligence indicators in your log data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
