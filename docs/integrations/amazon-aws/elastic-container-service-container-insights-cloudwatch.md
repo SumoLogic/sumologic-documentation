@@ -462,7 +462,7 @@ Use this dashboard to:
 - Monitor the memory and CPU utilization of your cluster.
 - View abnormal read-write activity and network incoming-outgoing bytes.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Overview.png' alt="Amazon ECS - Cluster Overviewdashboard" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Overview.png' alt="Amazon ECS - Cluster Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Cluster Performance Monitoring
 
