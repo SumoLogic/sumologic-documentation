@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.16  
-Updated: Apr 3, 2026***
+***Version: 1.17  
+Updated: April 30, 2026***
 
 
 This [automation integration](/docs/platform-services/automation-service/app-central/integrations/) utilizes Cloud SIEM entities to correlate signals and insights. This integration requires authentication. (Because the [Sumo Logic Cloud SIEM Internal](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem-internal/) integration operates internally with Sumo Logic, no additional authentication is needed.)
@@ -154,3 +154,4 @@ SIEM
   * Fixed output field mapping for nested fields with dots in field names in the following actions:
     - Get Signal
     - List Signals
+* April 30, 2026 (v1.17) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

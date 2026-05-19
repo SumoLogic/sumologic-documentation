@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mandiant-advantage-threat-intelligence.png')} alt="Mandiant Advantage Threat Intelligence icon" width="100"/>
 
-***Version: 1.5  
-Updated: Jul 18, 2023***
+***Version: 1.6  
+Updated: April 30, 2026***
 
 Mandiant Threat Intelligence is a comprehensive and powerful SaaS platform that provides organizations of all sizes with up-to-the-minute, relevant cyber threat intelligence so you can focus on and address the threats that matter now.
 
@@ -55,3 +55,4 @@ Threat Intelligence-Reputation
 
 * April 27, 2023 (v1.0) - First Upload
 * July 18, 2023 (v1.5) - Removed leading/trailing spaces
+* April 30, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

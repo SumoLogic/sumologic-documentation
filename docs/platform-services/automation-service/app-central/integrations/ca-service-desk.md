@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ca-service-desk.png')} alt="axonius" width="50"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 27, 2026***
 
 Work with Resources within CA Service Desk.
 
@@ -53,3 +53,4 @@ For information about CA Service Desk, see [CA Service Management documentation]
 
 * February 14, 2019 - First upload
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 27, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
