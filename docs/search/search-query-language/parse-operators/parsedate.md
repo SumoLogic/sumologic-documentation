@@ -1,6 +1,7 @@
 ---
 id: parsedate
-title: parseDate
+title: parseDate Operator
+description: Use the parseDate operator to extract a date or time from a string and convert it to a timestamp in milliseconds.
 ---
 
 
