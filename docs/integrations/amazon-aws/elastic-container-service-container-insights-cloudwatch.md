@@ -132,7 +132,7 @@ Enter a parse expression to create an `account` field that maps to the alias you
 
 ## Collect Container Insights performance log events for Task and Container
 
-Container Insights collects data asperformance log events using [embedded metric format](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Embedded_Metric_Format.html). More details [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html).
+Container Insights collects data as performance log events using [embedded metric format](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Embedded_Metric_Format.html). More details [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html).
 
 In this step, you'll create a source to collect Task and Container level performance events, which are not converted as CloudWatch metrics.
 
