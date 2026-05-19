@@ -445,7 +445,7 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 
 ## Installing the Amazon ECS app
 
-Now that you have set up acollectionfor Amazon ECS with Container Insights and CloudWatch, install the Sumo Logic app for Amazon ECS with Container Insights and CloudWatch to use the pre-configured searches anddashboardsthat provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for Amazon ECS with Container Insights and CloudWatch, install the Sumo Logic app for Amazon ECS with Container Insights and CloudWatch to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
