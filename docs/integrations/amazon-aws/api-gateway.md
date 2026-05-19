@@ -734,7 +734,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `AWS API Gateway - Low Traffic API` | This alert fires when there is low message traffic volume for the API within 5 minutes. | Count < = 1 | Count > 1 |
 | `AWS API Gateway - High Authorizer Errors` | This alert fires when there are too many API requests (>5%) with authorizer errors within 5 minutes. | Count > 5 | Count < = 5 |
 | `AWS API Gateway - High Integration Errors` | This alert fires when there are too many API requests (>5%) with integration errors within 5 minutes. | Count > 5 | Count < = 5 |
-| `AWS API Gateway - High WAF Errors` | This alert fires where there are too many API requests (>5%) with WAF errors within 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS API Gateway - High WAF Errors` | This alert fires when there are too many API requests (>5%) with WAF errors within 5 minutes. | Count > 5 | Count < = 5 |
 | `AWS API Gateway - High WAF Latency` | This alert fires when we detect the high WAF latency for the REST and WebSocket API requests in a stage within 5 minutes. | Count > 1000 | Count < = 1000 |
 
 ## Upgrade/Downgrade the AWS API Gateway app (Optional)
