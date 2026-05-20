@@ -2,6 +2,7 @@
 id: hextoascii
 title: hexToAscii Search Operator
 sidebar_label: hexToAscii
+description: Use the hexToAscii operator to convert hexadecimal strings to ASCII text format.
 ---
 
 The `hexToAscii` operator converts a hexadecimal string to an ASCII string.
