@@ -21,6 +21,10 @@ Use Data Masking Management APIs to manage data masking rules that automatically
 
 For more information, see [Data Masking](/docs/manage/data-masking).
 
+:::info
+Create, read, update, and delete (CRUD) operations may take up to 30 seconds to reflect changes, applied on a per-organization basis.
+:::
+
 ## Documentation
 
 <ApiIntro/>
