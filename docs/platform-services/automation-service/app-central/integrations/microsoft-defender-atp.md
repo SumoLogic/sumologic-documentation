@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-defender-atp.png')} alt="Microsoft Defender ATP icon" width="100"/>
 
-***Version: 1.3  
-Updated: April 30, 2026***
+***Version: 1.4  
+Updated: May 18, 2026***
 
 Microsoft Defender Advanced Threat Protection (ATP) is a product that enables preventive protection, post-breach detection, automated investigation and response. It is a complete security solution that:
 
@@ -96,3 +96,4 @@ For information about Microsoft Defender for Endpoint (formerly Defender ATP), s
 		- Submit Indicator
 * July 12, 2023 (v1.2) - Changed fields visibility
 * April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+* May 18, 2026 (v1.4) - Fixed `List Machine Actions` action: resolved an issue where the machine name filter was not applied correctly.

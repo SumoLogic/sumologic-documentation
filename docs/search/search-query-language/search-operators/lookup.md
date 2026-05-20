@@ -2,6 +2,7 @@
 id: lookup
 title: lookup Search Operator
 sidebar_label: lookup
+description: Use the lookup operator to enrich log messages with additional fields from lookup tables hosted by Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
