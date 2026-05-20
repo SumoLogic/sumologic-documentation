@@ -42,6 +42,15 @@ The Sumo Logic MCP server lets MCP clients (external AI models) securely query l
 * **An MCP-compatible client that supports OAuth 2.0 Authorization Code flow**. Any MCP client that supports OAuth 2.0 Authorization Code flow with a client ID and secret will work.
    * We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or Anthropic Console account).
 
+## Known limitations
+
+* **Cursor**. Cursor requires redirect URLs starting with `cursor://`, which is not yet supported by the Sumo Logic authorization server.
+* **VS Code**. Recent VS Code releases do not work with the authorization code flow when an explicit client ID and secret are provided.
+
+:::note
+If you have questions about client compatibility, [contact Sumo Logic Support](https://support.sumologic.com/support/s).
+:::
+
 ## Configure in Claude Code CLI
 
 ### Authentication
