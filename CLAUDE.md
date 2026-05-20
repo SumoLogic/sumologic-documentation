@@ -84,7 +84,7 @@ When a user asks "what can I do", "what commands are available", or similar, sha
 | `/tone-check` | Check voice and tone against Sumo Logic style rules |
 | `/rewrite-intro` | Rewrite a doc's opening paragraph |
 | `/simplify` | Simplify overly complex content |
-| `/review` | Review a pull request |
+| `/review` | Review a pull request — applies audit-doc checks to all changed `.md` files |
 
 **Jira**
 
