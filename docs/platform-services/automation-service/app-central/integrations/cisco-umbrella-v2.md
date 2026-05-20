@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-umbrella-v2.png')} alt="Cisco Umbrella V2 icon" width="70"/>
 
-***Version: 1.3  
-Updated: Jul 03, 2023***
+***Version: 1.4  
+Updated: April 27, 2026***
 
 **Cisco Umbrella** is cloud-delivered enterprise network security which provides users with defense against cybersecurity threats.
 
@@ -49,3 +49,4 @@ For information about Cisco Umbrella, see [Cisco Umbrella documentation](https:/
 * May 18, 2023 (v1.2)
 	+ The integration previously known as "**CISCO Umbrella OIF**" has been renamed to "**Cisco Umbrella V2**"
 * July 3, 2023 (v1.3) - Removed leading/trailing spaces
+* April 27, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

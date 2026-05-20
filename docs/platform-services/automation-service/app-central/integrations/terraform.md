@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/terraform.png')} alt="terraform" width="100"/>
 
-***Version: 1.1  
-Updated: Jun 22, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 This [automation integration](/docs/platform-services/automation-service/app-central/integrations/) utilizes Terraform. [Terraform](https://developer.hashicorp.com/terraform) is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage cloud services.
 
@@ -67,3 +67,4 @@ For information about Terraform, see [Terraform documentation](https://developer
 
 * April 08, 2022 - First Upload
 * June 22, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

@@ -2,7 +2,7 @@
 slug: /search/search-query-language/search-operators
 title: Search Operators
 sidebar_label: Search Operators
-description: Process data in meaningful ways and provide logic to queries with search operators. This section lists the available search operators in Sumo's search query language.
+description: Process data in meaningful ways and provide logic to queries with search operators.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
