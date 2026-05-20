@@ -99,6 +99,31 @@ To generate dashboards based on the context of your investigation, simply ask Mo
 
 Click the provided link to view the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard.png')} alt="Dashboard generated for insight investigation" style={{border: '1px solid gray'}} width="700" />
 
+## Related Insights search
+
+When investigating an insight, you can search for other insights that share the same entity or detection rule without leaving the investigation. This provides lateral context immediately — for example, if the same IP address or user appears in other insights, those surface right in the panel.
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen.
+1. Click an insight's ID to open its details page and navigate to the **AI Investigation** tab.
+1. Click **Related Insights**.<br/><img src={useBaseUrl('img/cse/soc-analyst-related-insights.png')} alt="Related Insights search panel" style={{border: '1px solid gray'}} width="800" />
+1. The panel displays other insights that share entities or detection rules with the current insight.
+1. Click an insight in the list to view its details.
+
+## Add comments and close insights
+
+You can add comments and close insights directly from within the investigation workflow, without navigating back to the insights list.
+
+**To add a comment:**
+
+1. From the insight's details page, click **Comment**.<br/><img src={useBaseUrl('img/cse/soc-analyst-add-comment.png')} alt="Add comment to insight" style={{border: '1px solid gray'}} width="800" />
+1. Enter your comment in the prompt and click **Save**.
+
+**To close an insight:**
+
+1. From the insight's details page, click **Close Insight**.<br/><img src={useBaseUrl('img/cse/soc-analyst-close-insight.png')} alt="Close insight from investigation" style={{border: '1px solid gray'}} width="800" />
+1. Select a disposition and optionally add a note.
+1. Click **Confirm**.
+
 ## FAQs
 
 <details>
