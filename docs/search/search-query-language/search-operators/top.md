@@ -2,6 +2,7 @@
 id: top
 title: top Search Operator
 sidebar_label: top
+description: Use the top operator with the sort operator to reduce the number of sorted results returned.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
