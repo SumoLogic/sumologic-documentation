@@ -2,26 +2,6 @@
 
 Audits documentation for search engine optimization (SEO), answer engine optimization (AEO), and generative engine optimization (GEO) signals. Produces a prioritized report and offers to apply fixes.
 
-## What this command does
-
-When you invoke `/seo-audit`, Claude will:
-
-1. **Read the specified file or directory**
-2. **Check SEO signals**. Title length, meta description, keywords, heading structure
-3. **Check AEO signals**. Question-format headings, direct answers, featured snippet readiness
-4. **Check GEO signals**. Authoritative statements, structured facts, LLM citation patterns
-5. **Check internal linking**. Presence of links, descriptive anchor text
-6. **Generate a prioritized report**. Issues ranked by impact
-7. **Offer to fix issues**. Apply improvements with user approval
-
-## When to use this command
-
-* Before submitting a PR for new or updated content
-* Auditing a section or category for discoverability gaps
-* Preparing docs for a product launch or announcement
-* Quarterly content health checks
-* After rewriting or restructuring a doc
-
 ## Signal definitions
 
 **SEO** (Search Engine Optimization): signals that help traditional search engines rank and surface pages.

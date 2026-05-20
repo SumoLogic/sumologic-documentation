@@ -72,11 +72,7 @@ When a user asks "what can I do", "what commands are available", or similar, sha
 
 | Command | What it does |
 |---------|-------------|
-| `/release-note-service` | New service release note |
-| `/release-note-collector` | New Collector release note |
-| `/release-note-cse` | New Cloud SIEM release note |
-| `/release-note-csoar` | New Cloud SOAR release note |
-| `/release-note-developer` | New developer/API release note |
+| `/release-note` | New release note (service, collector, Cloud SIEM, Cloud SOAR, or developer) |
 
 **Editing and reviewing**
 
