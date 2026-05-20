@@ -12,15 +12,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance.png')} alt="Claude Compliance icon" width="40" />
 
+The Sumo Logic source for Claude Compliance enables you to collect chat messages data from Claude into Sumo Logic
 Claude provides advanced AI solutions for enterprises, offering secure, compliant, and customizable conversational AI capabilities with Claude to improve productivity while meeting organizational governance and regulatory needs.
 
-The Claude compliances Messages API Compliance enables enterprise customers to access structured chat logs and metadata to support auditing, compliance, and security requirements.
+The Claude compliances Messages API enables enterprise customers to access structured chat logs and metadata to support auditing, compliance, and security requirements.
 
 ## Data collected
 
-| Source | Description | Polling interval |
-| :-- | :-- | :-- |
-| Chats | Log of user interactions with Claude AI, including exchanged messages and metadata, used for compliance review and auditing. | 5 mins |
+| Polling Interval | Data |
+| :--- | :--- |
+| 5 min |  Messages
 
 ## Setup
 
@@ -66,7 +67,8 @@ To configure a Claude Compliance Source, follow the steps below:
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Organization UUID**. Enter the Organization UUID collected from the [Claude Console](#vendor-configuration).
 1. **API Key**. Enter the API Key generated from the [Claude Console](#vendor-configuration).
-1. **Polling Interval**. The polling interval is set for 1 hour by default and can be configured to a maximum of 24 hours. You can adjust it based on your needs. This sets how often the source checks for new data.
+1. **Polling Interval**. The polling interval is set for 5 minutes by default and can be configured to a maximum of 24 hours. You can adjust it based on your needs. This sets how often the source checks for new data.
+1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
@@ -109,7 +111,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ## Limitations
 - Updates to chats after a prolonged gap may cause re-ingestion and potential duplication.
-- As Claude compliance API continues to evolve, updates may alter conversation data or API behavior, potentially impacting integration consistency.
+- As Claude Compliance API continues to evolve, updates may alter conversation data or API behavior, potentially impacting integration consistency.
 
 ## FAQ
 
