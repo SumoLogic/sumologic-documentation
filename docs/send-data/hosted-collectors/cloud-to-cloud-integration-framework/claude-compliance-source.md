@@ -12,10 +12,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance.png')} alt="Claude Compliance icon" width="40" />
 
-The Sumo Logic source for Claude Compliance enables you to collect chat messages data from Claude into Sumo Logic
-Claude provides advanced AI solutions for enterprises, offering secure, compliant, and customizable conversational AI capabilities with Claude to improve productivity while meeting organizational governance and regulatory needs.
+The Sumo Logic source for Claude Compliance enables you to collect chat messages from Claude into Sumo Logic.
 
-The Claude compliances Messages API enables enterprise customers to access structured chat logs and metadata to support auditing, compliance, and security requirements.
+Claude provides advanced AI solutions for enterprises, offering secure, compliant, and customizable conversational AI capabilities to improve productivity while meeting organizational governance and regulatory needs.
+
+The Compliance API enables enterprise customers to access structured chat logs and metadata to support auditing, compliance, and security requirements.
 
 ## Data collected
 
@@ -31,20 +32,20 @@ You are required to provide the **Organization UUID** and **API Key** to configu
 
 To collect logs, you need a Claude API key with access to the Compliance API. Use one of the following options to create the API key:
 
-#### Console / API 
+#### Console / API
 
 Keys are created in the **Admin keys** section of Console Settings.
 1. Click **Create key** to name your key.
-2. Receive a secret access key and store it securely. 
+2. Receive a secret access key and store it securely.
 
 :::note
-If the Compliance API is enabled for your organization, Admin keys created here are automatically granted the `read:compliance_activities` scope. If the Compliance API is not yet enabled, contact your Claude representative to request access. 
+If the Compliance API is enabled for your organization, Admin keys created here are automatically granted the `read:compliance_activities` scope. If the Compliance API is not yet enabled, contact your Anthropic representative to request access.
 :::
 
 #### Claude.ai
 
 Keys are created in the **Compliance access keys** section of Data Management Settings.
-1. Click the **Create key** to name your key.
+1. Click **Create key** to name your key.
 2. Name the key and select its scopes.
 3. Receive a secret access key and store it securely.
 

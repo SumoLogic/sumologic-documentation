@@ -146,20 +146,20 @@ To collect logs, you need an Anthropic API key with access to the Compliance API
 Admin keys created through Console are limited to the Activity Feed and cannot access chat messages.
 :::
 
-#### Console / API 
+#### Console / API
 
 Keys are created in the **Admin keys** section of Console Settings.
 1. Click **Create key** to name your key.
-2. Receive a secret access key and store it securely. 
+2. Receive a secret access key and store it securely.
 
 :::note
-If the Compliance API is enabled for your organization, Admin keys created here are automatically granted the `read:compliance_activities` scope. If the Compliance API is not yet enabled, contact your Anthropic representative to request access. 
+If the Compliance API is enabled for your organization, Admin keys created here are automatically granted the `read:compliance_activities` scope. If the Compliance API is not yet enabled, contact your Anthropic representative to request access.
 :::
 
 #### Claude.ai
 
 Keys are created in the **Compliance access keys** section of Data Management Settings.
-1. Click the **Create key** to name your key.
+1. Click **Create key** to name your key.
 2. Name the key and select its scopes.
 3. Receive a secret access key and store it securely.
 
@@ -264,106 +264,153 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Activity Overview
 
-The **Claude Compliance - Activity Overview** dashboard delivers a high-level summary of all compliance-relevant activities occurring across your Claude environment, including event volumes, activity types, and threat counts. It maps activity by geographic location, highlights events from embargoed regions, and identifies unauthenticated actors and failed activities. Teams can drill into activity distribution by organization, actor, and identity provider connection type to quickly assess the overall compliance posture and surface anomalous behavior patterns.
+The **Claude Compliance - Activity Overview** dashboard delivers a high-level summary of all compliance-relevant activities occurring across your Claude environment, including event volumes, activity types, and threat counts. It maps activity by geographic location, highlights events from embargoed regions, and identifies unauthenticated actors and failed activities. Teams can drill into activity distribution by organization, actor, and identity provider connection type.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Activity-Overview.png')} alt="Claude Compliance - Activity Overview dashboard" />
+**Use this dashboard to:**
+- Quickly assess the overall compliance posture.
+- Surface anomalous behavior patterns.
+- Detect activities from embargoed regions.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Activity-Overview.png')} alt="Claude Compliance - Activity Overview dashboard" width="800" />
 
 ### Billing Monitoring
 
-The **Claude Compliance - Billing Monitoring** dashboard monitors billing-related compliance events, including subscription lifecycle changes, spend limit updates, prepaid activity, and recharge events across your organization. It highlights the top plan types, organizations with the most billing activity, and users making frequent spend limit changes. Trend analysis and detailed event tables provide full audit coverage for financial governance and compliance. Use this dashboard to detect unauthorized billing changes, track subscription modifications, and ensure spend controls are functioning as intended.
+The **Claude Compliance - Billing Monitoring** dashboard monitors billing-related compliance events, including subscription lifecycle changes, spend limit updates, prepaid activity, and recharge events across your organization. It highlights the top plan types, organizations with the most billing activity, and users making frequent spend limit changes. Trend analysis and detailed event tables provide full audit coverage for financial governance and compliance. **Use this dashboard to:**
+- Detect unauthorized billing changes.
+- Track subscription modifications.
+- Ensure spend controls are functioning as intended.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Billing-Monitoring.png')} alt="Claude Compliance - Billing Monitoring dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Billing-Monitoring.png')} alt="Claude Compliance - Billing Monitoring dashboard" width="800" />
 
 ### API Key Monitoring
 
-The **Claude Compliance - API Key Monitoring** dashboard provides visibility into API key lifecycle events across your Claude environment, including creation, deletion, and modification of API, Admin, Service, and Signing keys. It tracks key event trends over time, highlights the most active users, and surfaces detailed event records for audit and investigation purposes. Use this dashboard to detect unauthorized key activity, monitor privileged admin key usage, and ensure key management practices align with your security policies.
+The **Claude Compliance - API Key Monitoring** dashboard provides visibility into API key lifecycle events across your Claude environment, including creation, deletion, and modification of API, Admin, Service, and Signing keys. It tracks key event trends over time, highlights the most active users, and surfaces detailed event records for audit and investigation purposes. **Use this dashboard to:**
+- Detect unauthorized key activity.
+- Monitor privileged admin key usage.
+- Ensure key management practices align with your security policies.
 
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-API-Key-Monitoring.png')} alt="Claude Compliance - API Key Monitoring dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-API-Key-Monitoring.png')} alt="Claude Compliance - API Key Monitoring dashboard" width="800" />
 
 ### Artifacts, Marketplace, and Projects Monitoring
 
-The **Claude Compliance - Artifacts, Marketplace, and Projects Monitoring** dashboard tracks lifecycle events for Artifacts, Marketplace items, and Projects on the Claude platform, including creation, access, and deletion. It provides trend analysis, event breakdowns, and detailed activity tables to help teams identify unusual access patterns or unauthorized changes. Active artifact, project, and user counts give a real-time snapshot of platform engagement. Use this dashboard to maintain governance over shared resources and to ensure marketplace and project activities align with organizational policies.
+The **Claude Compliance - Artifacts, Marketplace, and Projects Monitoring** dashboard tracks lifecycle events for Artifacts, Marketplace items, and Projects on the Claude platform, including creation, access, and deletion. It provides trend analysis, event breakdowns, and detailed activity tables to help teams identify unusual access patterns or unauthorized changes. Active artifact, project, and user counts give a real-time snapshot of platform engagement. **Use this dashboard to:**
+- Maintain governance over shared resources.
+- Ensure marketplace and project activities align with organizational policies.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Artifacts-Marketplace-and-Projects-Monitoring.png')} alt="Claude Compliance - Artifacts, Marketplace, and Projects Monitoring dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Artifacts-Marketplace-and-Projects-Monitoring.png')} alt="Claude Compliance - Artifacts, Marketplace, and Projects Monitoring dashboard" width="800" />
 
 ### Claude Skills and Plugins Monitoring
 
-The **Claude Compliance - Claude Skills and Plugins Monitoring** dashboard provides visibility into the usage and lifecycle of Claude Skills and Plugins across your Claude environment, including invocation trends, event distributions, and top active skills and plugins. It surfaces unique skill and plugin counts, along with detailed activity records, to help teams govern AI capability extensions. Usage trends help identify sudden spikes or drops in plugin or skill activity that may warrant investigation. Use this dashboard to ensure approved extensions are being used appropriately and to detect any unauthorized or anomalous AI tool usage.
+The **Claude Compliance - Claude Skills and Plugins Monitoring** dashboard provides visibility into the usage and lifecycle of Claude Skills and Plugins across your Claude environment, including invocation trends, event distributions, and top active skills and plugins. It surfaces unique skill and plugin counts, along with detailed activity records, to help teams govern AI capability extensions. Usage trends help identify sudden spikes or drops in plugin or skill activity that may warrant investigation. **Use this dashboard to:**
+- Ensure approved extensions are being used appropriately.
+- Detect unauthorized or anomalous AI tool usage.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Claude-Skills-and-Plugins-Monitoring.png')} alt="Claude Compliance - Claude Skills and Plugins Monitoring dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Claude-Skills-and-Plugins-Monitoring.png')} alt="Claude Compliance - Claude Skills and Plugins Monitoring dashboard" width="800" />
 
 ### Claude Usage Monitoring
 
-The **Claude Compliance - Claude Usage Monitoring** dashboard delivers comprehensive visibility into Claude platform usage, covering chat events, chat snapshots, Claude Code activity, and Claude Command executions. It tracks usage trends, top active users, unique interaction counts, failed chats, and model usage distribution to support both operational monitoring and compliance oversight. Dedicated sections for Claude Code provide insight into trigger modes, top repositories, and event statuses across development workflows. Use this dashboard to enforce acceptable use policies, detect excessive or anomalous usage, and maintain a complete audit trail of Claude interactions.
+The **Claude Compliance - Claude Usage Monitoring** dashboard delivers comprehensive visibility into Claude platform usage, covering chat events, chat snapshots, Claude Code activity, and Claude Command executions. It tracks usage trends, top active users, unique interaction counts, failed chats, and model usage distribution to support both operational monitoring and compliance oversight. Dedicated sections for Claude Code provide insight into trigger modes, top repositories, and event statuses across development workflows. **Use this dashboard to:**
+- Enforce acceptable use policies.
+- Detect excessive or anomalous usage.
+- Maintain a complete audit trail of Claude interactions.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Claude-Usage-Monitoring.png')} alt="Claude Compliance - Claude Usage Monitoring dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Claude-Usage-Monitoring.png')} alt="Claude Compliance - Claude Usage Monitoring dashboard" width="800" />
 
 ### Compliance API Access Monitoring
 
-The **Claude Compliance - Compliance API Access Monitoring** dashboard monitors access to Anthropic's Compliance API, providing visibility into request trends by user agent, HTTP status code distributions, and geographic origin of API calls. It highlights non-2xx error trends, top actor IP addresses, and accessed API endpoint types to help teams detect misuse or unauthorized access attempts. Embargoed geo-location filtering surfaces API access from restricted regions for immediate review. Use this dashboard to ensure Compliance API access is limited to authorized actors and to investigate anomalous or error-prone API usage patterns.
+The **Claude Compliance - Compliance API Access Monitoring** dashboard monitors access to Anthropic's Compliance API, providing visibility into request trends by user agent, HTTP status code distributions, and geographic origin of API calls. It highlights non-2xx error trends, top actor IP addresses, and accessed API endpoint types to help teams detect misuse or unauthorized access attempts. Embargoed geo-location filtering surfaces API access from restricted regions for immediate review. **Use this dashboard to:**
+- Ensure Compliance API access is limited to authorized actors.
+- Investigate anomalous or error-prone API usage patterns.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Compliance-API-Access-Monitoring.png')} alt="Claude Compliance - Compliance API Access Monitoring dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Compliance-API-Access-Monitoring.png')} alt="Claude Compliance - Compliance API Access Monitoring dashboard" width="800" />
 
 ### Data Access and Exfiltration Monitoring
 
-The **Claude Compliance - Data Access and Exfiltration Monitoring** dashboard provides deep visibility into file, document, and data export activities across the Claude platform to help detect potential data exfiltration or unauthorized access. It tracks file access events, reconnaissance behavior, Claude artifact sharing, and platform-level file activities alongside group and project views. Frequently uploaded and most-viewed file analysis helps identify unusual data movement patterns. Use this dashboard to monitor data governance compliance, investigate suspicious exfiltration indicators, and maintain oversight of sensitive content access and sharing.
+The **Claude Compliance - Data Access and Exfiltration Monitoring** dashboard provides deep visibility into file, document, and data export activities across the Claude platform to help detect potential data exfiltration or unauthorized access. It tracks file access events, reconnaissance behavior, Claude artifact sharing, and platform-level file activities alongside group and project views. Frequently uploaded and most-viewed file analysis helps identify unusual data movement patterns. **Use this dashboard to:**
+- Monitor data governance compliance.
+- Investigate suspicious exfiltration indicators.
+- Maintain oversight of sensitive content access and sharing.
 
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Data-Access-and-Exfiltration-Monitoring.png')} alt="Claude Compliance - Data Access and Exfiltration Monitoring dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Data-Access-and-Exfiltration-Monitoring.png')} alt="Claude Compliance - Data Access and Exfiltration Monitoring dashboard" width="800" />
 
 ### Identity, Access, and Authentication Monitoring
 
-The **Claude Compliance - Identity, Access, and Authentication Monitoring** dashboard provides comprehensive monitoring of authentication events, role and group changes, SCIM provisioning, and API key activity across your Claude environment. It tracks login success and failure trends, highlights users with failed authentication, and maps activity by geographic location, including embargoed regions. Privilege escalation flows and recon-exploit patterns are surfaced to help security teams identify and respond to identity-based threats. Use this dashboard to enforce least-privilege access, investigate authentication anomalies, and maintain a complete audit trail of identity and access events.
+The **Claude Compliance - Identity, Access, and Authentication Monitoring** dashboard provides comprehensive monitoring of authentication events, role and group changes, SCIM provisioning, and API key activity across your Claude environment. It tracks login success and failure trends, highlights users with failed authentication, and maps activity by geographic location, including embargoed regions. Privilege escalation flows and recon-exploit patterns are surfaced to help security teams identify and respond to identity-based threats. **Use this dashboard to:**
+- Enforce least-privilege access.
+- Investigate authentication anomalies.
+- Maintain a complete audit trail of identity and access events.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Identity-Access-and-Authentication-Monitoring.png')} alt="Claude Compliance - Identity, Access, and Authentication Monitoring dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Identity-Access-and-Authentication-Monitoring.png')} alt="Claude Compliance - Identity, Access, and Authentication Monitoring dashboard" width="800" />
 
 ### MCP Servers, Integrations, and GitHub Enterprise
 
-The **Claude Compliance - MCP Servers, Integrations, and GitHub Enterprise** dashboard monitors management events for MCP Servers, third-party Integrations, and GitHub Enterprise connections within your Claude environment. It tracks active MCP servers, integration types, top GitHub repositories, and the geo-locations of actors performing management actions. Event distribution and detail tables provide full visibility into configuration changes and integration lifecycle activity. Use this dashboard to govern AI infrastructure extensions, detect unauthorized changes to integrations, and ensure GitHub Enterprise connectivity aligns with organizational security standards.
+The **Claude Compliance - MCP Servers, Integrations, and GitHub Enterprise** dashboard monitors management events for MCP Servers, third-party Integrations, and GitHub Enterprise connections within your Claude environment. It tracks active MCP servers, integration types, top GitHub repositories, and the geo-locations of actors performing management actions. Event distribution and detail tables provide full visibility into configuration changes and integration lifecycle activity. **Use this dashboard to:**
+- Govern AI infrastructure extensions.
+- Detect unauthorized changes to integrations.
+- Ensure GitHub Enterprise connectivity aligns with organizational security standards.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-MCP-Servers-Integrations-and-GitHub-Enterprise.png')} alt="Claude Compliance - MCP Servers, Integrations, and GitHub Enterprise dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-MCP-Servers-Integrations-and-GitHub-Enterprise.png')} alt="Claude Compliance - MCP Servers, Integrations, and GitHub Enterprise dashboard" width="800" />
 
 ### Organization and Policy Configuration
 
-The **Claude Compliance - Organization and Policy Configuration** dashboard monitors organization-level configuration events, including discoverability changes, org management actions, disabled events, and user policy modifications. It maps the geo-location of users performing org changes, highlights top users making configuration updates, and tracks event trends over time. Detailed event tables and breakdowns support rapid investigation of unauthorized or unexpected organizational changes. Use this dashboard to ensure configuration governance, detect policy drift, and maintain an auditable record of all organization-level administrative activity.
+The **Claude Compliance - Organization and Policy Configuration** dashboard monitors organization-level configuration events, including discoverability changes, org management actions, disabled events, and user policy modifications. It maps the geo-location of users performing org changes, highlights top users making configuration updates, and tracks event trends over time. Detailed event tables and breakdowns support rapid investigation of unauthorized or unexpected organizational changes. **Use this dashboard to:**
+- Ensure configuration governance.
+- Detect policy drift.
+- Maintain an auditable record of all organization-level administrative activity.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Organization-and-Policy-Configuration.png')} alt="Claude Compliance - Organization and Policy Configuration dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Organization-and-Policy-Configuration.png')} alt="Claude Compliance - Organization and Policy Configuration dashboard" width="800" />
 
 ### SSO, Directory Sync Monitoring
 
-The **Claude Compliance - SSO, Directory Sync Monitoring** dashboard tracks Single Sign-On (SSO) and Directory Sync events across your Claude environment, including connection activations, deactivations, deletions, and sync lifecycle activity. It provides event distributions, trend analysis, and geographic mapping of SSO and directory sync activities to support identity governance. Top users performing SSO and directory sync changes are highlighted for accountability and anomaly detection. Use this dashboard to ensure SSO configurations remain secure, detect unauthorized changes to identity providers, and maintain compliance with access management policies.
+The **Claude Compliance - SSO, Directory Sync Monitoring** dashboard tracks Single Sign-On (SSO) and Directory Sync events across your Claude environment, including connection activations, deactivations, deletions, and sync lifecycle activity. It provides event distributions, trend analysis, and geographic mapping of SSO and directory sync activities to support identity governance. Top users performing SSO and directory sync changes are highlighted for accountability and anomaly detection. **Use this dashboard to:**
+- Ensure SSO configurations remain secure.
+- Detect unauthorized changes to identity providers.
+- Maintain compliance with access management policies.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-SSO-Directory-Sync-Monitoring.png')} alt="Claude Compliance - SSO, Directory Sync Monitoring dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-SSO-Directory-Sync-Monitoring.png')} alt="Claude Compliance - SSO, Directory Sync Monitoring dashboard" width="800" />
 
 ### Session Management
 
-The **Claude Compliance - Session Management** dashboard monitors user session activity across the Claude platform, including session creation, sharing, and termination events. It visualizes session event distributions, activity trends, and geographic locations of session activity, including events from embargoed regions. A top user's view highlights accounts with the highest session activity for anomaly detection and access governance. Use this dashboard to detect suspicious session behavior, enforce session policy compliance, and investigate unauthorized or geographically anomalous session access.
+The **Claude Compliance - Session Management** dashboard monitors user session activity across the Claude platform, including session creation, sharing, and termination events. It visualizes session event distributions, activity trends, and geographic locations of session activity, including events from embargoed regions. A top user's view highlights accounts with the highest session activity for anomaly detection and access governance. **Use this dashboard to:**
+- Detect suspicious session behavior.
+- Enforce session policy compliance.
+- Investigate unauthorized or geographically anomalous session access.
 
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Session-Management.png')} alt="Claude Compliance - Session Management dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Session-Management.png')} alt="Claude Compliance - Session Management dashboard" width="800" />
 
 ### User Agent Analysis
 
-The **Claude Compliance - User Agent Analysis** dashboard analyzes the user agents accessing your Claude environment, categorizing traffic by browser, operating system, platform, and automated versus human origin. It tracks user-agent activity trends, surfaces the top agents associated with failed activities, and highlights HTTP errors encountered by different client types. Connector and category trend analysis helps teams identify unusual or unauthorized client tooling over time. Use this dashboard to detect bot activity, investigate suspicious client behavior, and ensure that only approved tools and platforms access your Claude environment.
+The **Claude Compliance - User Agent Analysis** dashboard analyzes the user agents accessing your Claude environment, categorizing traffic by browser, operating system, platform, and automated versus human origin. It tracks user-agent activity trends, surfaces the top agents associated with failed activities, and highlights HTTP errors encountered by different client types. Connector and category trend analysis helps teams identify unusual or unauthorized client tooling over time. **Use this dashboard to:**
+- Detect bot activity.
+- Investigate suspicious client behavior.
+- Ensure that only approved tools and platforms access your Claude environment.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-User-Agent-Analysis.png')} alt="Claude Compliance - User Agent Analysis dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-User-Agent-Analysis.png')} alt="Claude Compliance - User Agent Analysis dashboard" width="800" />
 
 ### User Configuration and Invite Lifecycle Monitoring
 
-The **Claude Compliance - User Configuration and Invite Lifecycle Monitoring** dashboard provides full visibility into user configuration changes, invite lifecycle events, role assignments, and organizational membership activity across your Claude environment. It tracks users with the highest frequency of configuration changes, monitors invite link usage, and surfaces geolocation data on user activities, including access from embargoed regions. Detailed tables cover role changes, org member invites, user settings updates, and recent activity for comprehensive audit coverage. Use this dashboard to govern user onboarding and offboarding processes, detect unauthorized role changes, and ensure invite and configuration practices comply with organizational policies.
+The **Claude Compliance - User Configuration and Invite Lifecycle Monitoring** dashboard provides full visibility into user configuration changes, invite lifecycle events, role assignments, and organizational membership activity across your Claude environment. It tracks users with the highest frequency of configuration changes, monitors invite link usage, and surfaces geolocation data on user activities, including access from embargoed regions. Detailed tables cover role changes, org member invites, user settings updates, and recent activity for comprehensive audit coverage. **Use this dashboard to:**
+- Govern user onboarding and offboarding processes.
+- Detect unauthorized role changes.
+- Ensure invite and configuration practices comply with organizational policies.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-User-Configuration-and-Invite-Lifecycle-Monitoring.png')} alt="Claude Compliance - User Configuration and Invite Lifecycle Monitoring dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-User-Configuration-and-Invite-Lifecycle-Monitoring.png')} alt="Claude Compliance - User Configuration and Invite Lifecycle Monitoring dashboard" width="800" />
 
 ### Chats
 
-The **Claude Compliance – Chats** dashboard provides comprehensive oversight of Claude AI usage across your organization, surfacing key metrics including active users, deployed models, project distribution, and message volume trends. It breaks down interactions by role and content type, ranks top models and users, and provides audit-ready tables for generated artifacts, file uploads, and conversation summaries. Granular message-level data supports deep compliance review and sensitive data detection. The dashboard delivers the visibility and control needed to ensure transparency, responsible AI use, and data governance compliance across your organization.
+The **Claude Compliance – Chats** dashboard provides comprehensive oversight of Claude AI usage across your organization, surfacing key metrics including active users, deployed models, project distribution, and message volume trends. It breaks down interactions by role and content type, ranks top models and users, and provides audit-ready tables for generated artifacts, file uploads, and conversation summaries. Granular message-level data supports deep compliance review and sensitive data detection. **Use this dashboard to:**
+- Ensure transparency and responsible AI use across your organization.
+- Support deep compliance review and sensitive data detection.
+- Maintain data governance compliance.
 
 :::note Privacy Protection
 Panels with sensitive conversation data require applying the "message" filter with a specified text value to view detailed results, ensuring controlled access to potentially sensitive information.
 :::
 
-<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Chats.png')} alt="Claude Compliance - Chats dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Chats.png')} alt="Claude Compliance - Chats dashboard" width="800" />
 
 ## Create monitors for Claude Compliance app
 
@@ -373,7 +420,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Claude Compliance monitors
 
-| Name | Description | Trigger Type | Alert Condition | 
+| Name | Description | Trigger Type | Alert Condition |
 |:--|:--|:--|:--|
 | `Claude Compliance - Admin or Platform API Key Created` | Detects when an Admin API key or Platform API key is created within the organization. Adversaries or malicious insiders may create API keys to establish persistent, programmatic access to organizational resources. Any key creation event should be reviewed to verify that it was authorized and expected. | Critical | Count > 0 |
 | `Claude Compliance - Anthropic Compliance API Logging Disabled` | Detects when Compliance API logging is disabled for an organization. Disabling audit logging is a common defense evasion technique — attackers may disable it to reduce visibility into their activities. Any disabling of compliance API logging should be treated as high priority and investigated immediately. | Critical | Count > 0 |
