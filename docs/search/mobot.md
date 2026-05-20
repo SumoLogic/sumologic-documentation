@@ -98,7 +98,9 @@ Query Agent builds on the query translation foundation of the previous *Copilot*
 
 #### Getting started
 
-To open Mobot, click **Mobot** in the left nav.
+You can open Mobot two ways:
+- **Left nav**. Click **Mobot** in the left navigation menu.<br/><img src={useBaseUrl('img/search/mobot/left-nav.png')} alt="Mobot in the left navigation menu" width="500" />
+- **Home page**. Go to **Home**, select the **Home** tab, then click the **Mobot** tile.<br/><img src={useBaseUrl('img/search/mobot/home-nav.png')} alt="Mobot tile on the Home page" width="500" />
 
 :::training Micro Lesson
 

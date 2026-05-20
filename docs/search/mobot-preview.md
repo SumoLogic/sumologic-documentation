@@ -39,26 +39,23 @@ Features and behavior described here are subject to change before general availa
 
 ### Unified interface and intent understanding
 
-With Mobot's new unified interface, you no longer need to choose between Query Agent (for log analysis questions) and Knowledge Agent (platform how-to questions). Just enter your question in the **Ask Something** field, and Mobot automatically routes your question to the appropriate capability.
+With Mobot's new unified interface, you no longer need to choose between Query Agent (for log analysis questions) and Knowledge Agent (platform how-to questions).
+
+Just [open Mobot](/docs/search/mobot#getting-started) and enter a question in the **Ask Something** field.
 
 <img src={useBaseUrl('img/search/mobot/ask-something-mobotv2.png')} alt="Mobot interface showing unified prompt input" style={{border: '1px solid gray'}} width="600" />
 
-Try asking:
-
-* A log analysis question about errors, trends, anomalies, or security events (for example, `Is auth-service having issues?`).<br/><img src={useBaseUrl('img/search/mobot/is-auth-service-having-issues-mobotv2.png')} alt="Mobot log analysis answer showing auth service health check" style={{border: '1px solid gray'}} width="800" />
-* A platform how-to question about configuration, setup, or best practices (for example, `How do I set up an OTel Collector?`).
-
-Here are some investigation-based query examples:
+Try asking a log analysis question (errors, trends, anomalies, or security events) or a platform how-to question (configuration, setup, or best practices). Mobot automatically routes your question to the appropriate capability. Here are some example questions:
 
 <details>
-<summary><code>I'm getting reports that users can't log in. Is auth-service having issues?</code></summary>
+<summary><b>Q:</b> <code>I'm getting reports that users can't log in. Is auth-service having issues?</code></summary>
 
 <img src={useBaseUrl('img/search/mobot/auth-service-issues-mobotv2.png')} alt="Mobot log analysis answer showing auth service error trend" style={{border: '1px solid gray'}} width="800" />
 
 </details>
 
 <details>
-<summary><code>What does the error trend look like for my service over the past 24 hours?</code></summary>
+<summary><b>Q:</b> <code>What does the error trend look like for my service over the past 24 hours?</code></summary>
 
 <img src={useBaseUrl('img/search/mobot/org-service-errors-mobotv2.png')} alt="Mobot log analysis answer showing service error trend over 24 hours" style={{border: '1px solid gray'}} width="800" />
 
@@ -131,7 +128,8 @@ Mobot works best when you start with a business question, not a query. Ask quest
 * `Show me pod crash behavior over the last 7 days.`
    * Follow up: `Are there any patterns worth paying attention to?`
 
-* `Any pipelines failing on first run but passing on retry this week — what's the flakiness pattern?`
+* `Any pipelines failing on first run, but passing on retry this week?`
+   * Follow up: `What's the flakiness pattern?`
 
 * `Checkout-service depends on inventory-service — give me a health snapshot of both.`
 
