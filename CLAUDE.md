@@ -108,7 +108,7 @@ Primary commands for documentation work. Proactively suggest when context fits â
 | `/tone-check` | Check voice and tone against Sumo Logic style rules |
 | `/rewrite-intro` | Rewrite a doc's opening paragraph |
 | `/simplify` | Simplify overly complex content |
-| `/review` | Review a pull request |
+| `/review` | Review a pull request â€” applies audit-doc checks to all changed `.md` files |
 
 **Jira**
 

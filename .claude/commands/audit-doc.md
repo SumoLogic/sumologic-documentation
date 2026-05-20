@@ -46,7 +46,7 @@ Check for required fields and proper formatting:
 * [ ] Only one H1 heading (the title in frontmatter)
 * [ ] H2 sections used for main sections
 * [ ] No skipped heading levels (H2 → H4 without H3)
-* [ ] Headings use Title Case
+* [ ] Headings use sentence case (only first word and proper nouns capitalized)
 
 **Required sections (by doc type):**
 
