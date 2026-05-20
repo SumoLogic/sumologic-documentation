@@ -10,7 +10,7 @@ description: Learn to collect the chats from Claude Compliance platform.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/claude-compliance.png')} alt="Claude Compliance icon" width="40" />
+<img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance.png')} alt="Claude Compliance icon" width="40" />
 
 Claude provides advanced AI solutions for enterprises, offering secure, compliant, and customizable conversational AI capabilities with Claude to improve productivity while meeting organizational governance and regulatory needs.
 
@@ -28,7 +28,7 @@ The Claude compliances Messages API Compliance enables enterprise customers to a
 
 You are required to provide the **Organization UUID** and **API Key** to configure the Claude Compliance source.
 
-To collect logs, you need an Claude API key with access to the Compliance API. Use one of the following options to create the API key:
+To collect logs, you need a Claude API key with access to the Compliance API. Use one of the following options to create the API key:
 
 #### Console / API 
 
@@ -53,9 +53,9 @@ If you do not see the Compliance access keys section, it means that either you a
 
 ### Source configuration
 
-When you create an Claude Compliance Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Claude Compliance Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure an Claude Compliance Source, follow the steps below:
+To configure a Claude Compliance Source, follow the steps below:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Claude Compliance**.

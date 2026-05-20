@@ -53,12 +53,6 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/saas-cloud/claude-compliance')}><img src={useBaseUrl('img/send-data/claude.png')} alt="Claude Compliance icon" width="90"/><h4>Claude Compliance</h4></a>
-  <p>Monitor and manage your compliance and security.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/armis')}><img src={useBaseUrl('img/send-data/armis-icon.png')} alt="Armis icon" width="90"/><h4>Armis</h4></a>
   <p>Monitor and manage your device security.</p>
   </div>
@@ -145,6 +139,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/citrix-cloud')}><img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="Citrix Cloud icon" width="80"/><h4>Citrix</h4></a>
   <p>Track configuration modifications impacting your environment and admins.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/claude-compliance')}><img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance.png')} alt="Claude Compliance icon" width="90"/><h4>Claude Compliance</h4></a>
+  <p>Monitor and manage your compliance and security.</p>
   </div>
 </div>
 <div className="box smallbox card">
