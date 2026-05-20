@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance.png')} alt="Claude Compliance icon" width="50"/>
 
-The Claude Compliance Monitoring app for Sumo Logic provides centralized visibility into Claude platform activities, security events, user behavior, API usage, authentication activity, billing operations, integrations, data access, and organizational changes. The app enables security, compliance, and operations teams to monitor critical activities, detect suspicious behavior, investigate threats, and maintain governance across Claude environments. With dashboards covering Claude usage, API monitoring, authentication, exfiltration detection, integrations, SSO, session management, billing, user lifecycle events, and policy changes, the app delivers real-time operational insights and comprehensive compliance monitoring through detailed analytics and event correlation.
+The Sumo Logic app for Claude Compliance provides security, compliance, and operations teams with centralized visibility into Claude platform activity, covering API usage, authentication events, billing operations, data access, integrations, SSO, and policy changes. Prebuilt dashboards and detection monitors help you identify suspicious behavior, investigate threats, and maintain governance across your Claude environment.
 
 ## Log types
 
