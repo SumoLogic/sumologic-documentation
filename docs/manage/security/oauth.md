@@ -30,7 +30,7 @@ Sumo Logic supports two OAuth 2.0 authentication flows:
 
 ## Prerequisites
 
-* **Sumo Logic Administrator role**. Required to create OAuth clients and service accounts.
+* **Sumo Logic Administrator role**. You'll need this to create OAuth clients and service accounts. If you're unsure whether you have this role, check your [Preferences](/docs/get-started/onboarding-checklists/).
 
 ## How permissions work
 
@@ -59,15 +59,7 @@ This flow uses interactive browser-based authentication. Users authorize an exte
 
 ### Step 2: Complete the OAuth flow
 
-Sumo Logic's Authorization Code flow follows the [OAuth 2.1 specification](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1). Your OAuth library or client handles the authorization, token exchange, and token refresh steps automatically by following the standard protocol.
-
-To discover the authorization and token endpoints for your deployment, query the Authorization Server Metadata. Replace `[deployment-endpoint]` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `service.sumologic.com`, `service.us2.sumologic.com`, `service.eu.sumologic.com`):
-
-```bash
-curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
-```
-
-The response includes `authorization_endpoint`, `token_endpoint`, and other supported OAuth parameters.
+Configure your OAuth library or client with the client ID, secret, and redirect URI from Step 1. Sumo Logic follows the [OAuth 2.1 specification](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1), so any compliant library handles authorization, token exchange, and token refresh automatically.
 
 ## Client Credentials flow
 
@@ -82,55 +74,46 @@ Create a Sumo Logic service account to represent your application or service. Yo
 1. Get the service account ID. You'll use this ID in the next step.
    * **Via UI**. Go to **Administration** > **Security** > **Service Accounts**, click on your service account, and copy the ID from the browser URL (appears as `selectedId=00000000076D28F9`).
    * **Via API**. Alternatively, [get a list of all service accounts](https://api.sumologic.com/docs/#operation/listServiceAccounts) and find the `id` field in the response.
-
-<details>
-<summary>Example API request for listing service accounts</summary>
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="request"
-  values={[
-    {label: 'Example request', value: 'request'},
-    {label: 'Example response', value: 'response'},
-  ]}>
-
-<TabItem value="request">
-
-Replace `<accessId>` and `<accessKey>` with your personal access key credentials. Replace `service.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if different.
-
-```bash
-curl -u "<accessId>:<accessKey>" \
-  https://service.sumologic.com/api/v1/serviceAccounts
-```
-
-</TabItem>
-<TabItem value="response">
-
-```json title="Example response highlighting service account ID" {14}
-{
-  "data": [
-    {
-      "name": "My Service Account",
-      "email": "service@example.com",
-      "roleIds": [
-        "00000000000001DF",
-        "00000000000002D2"
-      ],
-      "createdAt": "2025-10-16T09:10:00.000Z",
-      "createdBy": "0000000006743FDD",
-      "modifiedAt": "2025-10-16T09:10:00.000Z",
-      "modifiedBy": "0000000006743FE8",
-      "id": "0000000000C4661B",
-      "isActive": true
-    }
-  ]
-}
-```
-
-</TabItem>
-</Tabs>
-
-</details>
+     <details>
+     <summary>Example API request for listing service accounts</summary>
+     <Tabs
+       className="unique-tabs"
+       defaultValue="request"
+       values={[
+         {label: 'Example request', value: 'request'},
+         {label: 'Example response', value: 'response'},
+       ]}>
+     <TabItem value="request">
+     Replace `<accessId>` and `<accessKey>` with your personal access key credentials. Replace  `service.sumologic.com` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if different.
+     ```bash
+     curl -u "<accessId>:<accessKey>" \
+       https://service.sumologic.com/api/v1/serviceAccounts
+     ```
+     </TabItem>
+     <TabItem value="response">
+     ```json title="Example response highlighting service account ID" {14}
+     {
+       "data": [
+         {
+           "name": "My Service Account",
+           "email": "service@example.com",
+           "roleIds": [
+             "00000000000001DF",
+             "00000000000002D2"
+           ],
+           "createdAt": "2025-10-16T09:10:00.000Z",
+           "createdBy": "0000000006743FDD",
+           "modifiedAt": "2025-10-16T09:10:00.000Z",
+           "modifiedBy": "0000000006743FE8",
+           "id": "0000000000C4661B",
+           "isActive": true
+         }
+       ]
+     }
+     ```
+     </TabItem>
+     </Tabs>
+     </details>
 
 ### Step 2: Create an OAuth client
 
@@ -224,20 +207,16 @@ Copy the `clientId` and `clientSecret` from the response. These are your OAuth c
 
 </details>
 
-### Step 3: Generate an access token {#generate-an-access-token}
+### Step 3: Generate an access token
 
-Request an OAuth access token from the token endpoint using your client credentials.
-
-:::note Deployment endpoints
-The examples below use `service.sumologic.com`. If your Sumo Logic instance uses a different deployment, replace this with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `service.us2.sumologic.com`, `service.eu.sumologic.com`).
-:::
+Request an OAuth access token from the token endpoint using your client credentials. Replace `<token-endpoint-URL>` with your deployment's token endpoint — see [How do I find the authorization or token endpoint?](#how-do-i-find-the-authorization-or-token-endpoint-for-my-deployment).
 
 **Option A: Request all available permissions**
 
 Omit the `scope` parameter to assign all of the OAuth client's effective scopes to the access token.
 
 ```bash
-curl -X POST https://service.sumologic.com/oauth2/token \
+curl -X POST <token-endpoint-URL> \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -u "<clientId>:<clientSecret>" \
   -d "grant_type=client_credentials"
@@ -248,7 +227,7 @@ curl -X POST https://service.sumologic.com/oauth2/token \
 Use the `scope` parameter to request specific scopes. Separate multiple scopes with spaces, not commas.
 
 ```bash
-curl -X POST https://service.sumologic.com/oauth2/token \
+curl -X POST <token-endpoint-URL> \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -u "<clientId>:<clientSecret>" \
   -d "grant_type=client_credentials" \
@@ -266,30 +245,16 @@ The response includes an access token:
 }
 ```
 
-Use this access token as a Bearer token in the `Authorization` header when making API requests:
+Use this access token as a Bearer token in the `Authorization` header when making API requests. Replace `<api-endpoint>` with your [deployment-specific API endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `api.sumologic.com` for US1, `api.us2.sumologic.com` for US2):
 
 ```bash
-curl https://api.sumologic.com/api/v1/search/jobs \
+curl <api-endpoint>/api/v1/search/jobs \
   -H "Authorization: Bearer eyJhbGc..."
 ```
 
-:::note Deployment endpoints
-`api.sumologic.com` defaults to the us1 deployment. Replace with your [deployment-specific endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if your org is on a different deployment (for example, `api.us2.sumologic.com`, `api.eu.sumologic.com`).
-:::
-
 ### Token expiration
 
-Access tokens generated with Client Credentials flow expire after 12 hours. When a token expires, generate a new one by repeating the token request. Unlike Authorization Code flow, Client Credentials flow does not provide refresh tokens.
-
-:::note Discovering endpoints programmatically
-The token endpoint URL varies by deployment. To discover it programmatically (for example, in automation scripts), query the Authorization Server Metadata. Replace `[deployment-endpoint]` with your [deployment endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `service.sumologic.com`, `service.us2.sumologic.com`):
-
-```bash
-curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
-```
-
-The response includes the `token_endpoint` and other supported OAuth parameters.
-:::
+Access tokens generated with Client Credentials flow expire after 12 hours. When a token expires, generate a new one by repeating the [token request](#step-3-generate-an-access-token). Unlike Authorization Code flow, Client Credentials flow does not provide refresh tokens.
 
 ## Security best practices
 
@@ -343,31 +308,36 @@ For Client Credentials flow, [effective permissions are the intersection of the 
 
 For Authorization Code flow, [effective permissions are the intersection of the user's roles, the OAuth client's scopes, and the requested scopes](#how-permissions-work). If a user's roles are restricted, their effective OAuth permissions are reduced at the next token refresh. If roles are expanded, the new permissions become available at the next token refresh.
 
-### How do I find the token endpoint for my deployment?
+### How do I find the authorization or token endpoint for my deployment?
 
-The token endpoint URL varies by [deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). Replace `[deployment-endpoint]` with your deployment's service endpoint. The pattern is:
+Token endpoint URLs vary by deployment:
 
-```
-https://[deployment-endpoint]/oauth/token
-```
+| Deployment | Token endpoint |
+| :--- | :--- |
+| Asia Pacific (Seoul) | `https://service.kr.sumologic.com/oauth2/token` |
+| Asia Pacific (Sydney) | `https://service.au.sumologic.com/oauth2/token` |
+| Asia Pacific (Tokyo) | `https://service.jp.sumologic.com/oauth2/token` |
+| Canada (Central) | `https://service.ca.sumologic.com/oauth2/token` |
+| Europe (Frankfurt) | `https://service.de.sumologic.com/oauth2/token` |
+| Europe (Ireland) | `https://service.eu.sumologic.com/oauth2/token` |
+| Europe (Zurich) | `https://service.ch.sumologic.com/oauth2/token` |
+| US East (N. Virginia) | `https://service.sumologic.com/oauth2/token` |
+| US East (N. Virginia) - FedRAMP | `https://service.fed.sumologic.com/oauth2/token` |
+| US West (Oregon) | `https://service.us2.sumologic.com/oauth2/token` |
 
-For example:
-* US1: `https://service.sumologic.com/oauth/token`
-* US2: `https://service.us2.sumologic.com/oauth/token`
-* EU: `https://service.eu.sumologic.com/oauth/token`
+To find the `authorization_endpoint` for your deployment (used in [Authorization Code flow](#authorization-code-flow)), query the Authorization Server Metadata:
 
-To discover the endpoint programmatically, replace `[deployment-endpoint]` with your service endpoint (e.g., `service.sumologic.com`) and query:
 ```bash
 curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
 ```
 
+The response includes `authorization_endpoint`, `token_endpoint`, and other supported OAuth parameters.
+
 ### Can I use OAuth with the Sumo Logic APIs?
 
-Yes. OAuth access tokens work with all Sumo Logic APIs. Include the access token in the `Authorization` header as a Bearer token:
+Yes. OAuth access tokens work with all Sumo Logic APIs. Include the access token in the `Authorization` header as a Bearer token. Replace `<api-endpoint>` with your [deployment-specific API endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `api.sumologic.com` for US1, `api.us2.sumologic.com` for US2):
 
 ```bash
-curl https://api.sumologic.com/api/v1/users \
+curl <api-endpoint>/api/v1/users \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
-
-Replace `api.sumologic.com` with your [deployment-specific endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if your org is on a different deployment.
