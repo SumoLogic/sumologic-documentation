@@ -2,7 +2,7 @@
 id: claude-compliance
 title: Claude Compliance
 sidebar_label: Claude Compliance
-description: The Claude Compliance Monitoring app analyzes compliance, security, authentication, API, billing, integration, and Claude activity data from the Claude platform. It provides visibility into user behavior, operational activity, governance changes, and potential security threats across the environment.
+description: The Sumo Logic app for Claude Compliance analyzes activity, security, and compliance data from the Claude platform to support governance and threat detection.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
