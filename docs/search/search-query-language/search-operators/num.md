@@ -2,6 +2,7 @@
 id: num
 title: num Search Operator
 sidebar_label: num
+description: Use the num operator to convert a field to a double-precision floating-point number for use in numeric calculations.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
