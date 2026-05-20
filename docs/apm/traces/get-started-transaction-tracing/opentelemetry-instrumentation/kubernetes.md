@@ -60,7 +60,7 @@ In the case of a Pod with multiple containers inside, you must specify additiona
 
 ## Compatibility matrix
 
-Auto-instrumentation images injected by Sumologic and their Runtime compatibility:
+Auto-instrumentation images injected by Sumo Logic and their runtime compatibility:
 
 | Language | Image Tag | Minimum Runtime Version |
 |:---------|:----------|:-----------------------|
