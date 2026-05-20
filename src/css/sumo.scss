@@ -1690,6 +1690,16 @@ article header h2[class*='title_'] {
   border: 0;
 }
 
+/* Styles for recently created and recently updated articles section */
+
+.recent-articles-row {
+  display: flex;
+  gap: 40px;
+}
+
+.recent-articles-col {
+  flex: 1;
+}
 /* ==========================================================================
    Sumo Logic brand colors for `sumo` language syntax highlighting
    Add to src/css/custom.css
