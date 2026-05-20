@@ -359,4 +359,3 @@ check SEO/AEO/GEO signals. For discoverability, run both:
 
 * **`/seo-audit`** — checks title length, description quality, question headings, GEO patterns
 * **`/geo-optimize`** — rewrites content to improve AI citation and search visibility
-* **`/tone-check`** — checks voice and tone against Sumo Logic style rules (standalone voice check)
