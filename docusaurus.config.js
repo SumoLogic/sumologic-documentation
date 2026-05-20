@@ -243,12 +243,12 @@ module.exports = {
           },
           theme: {
             typography: {
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: '"Lab Grotesque", sans-serif',
               fontSize: '16px',
               fontWeightRegular: '400',
               fontWeightBold: '700',
               headings: {
-                fontFamily: 'Metropolis Semi Bold, sans-serif',
+                fontFamily: '"Lab Grotesque", "Segoe UI"',
                 fontWeight: '400',
               },
               code: {

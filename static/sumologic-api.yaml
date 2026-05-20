@@ -3,7 +3,7 @@ info:
   title: Sumo Logic API
   description: |
     # Getting Started
-    Welcome to the Sumo Logic API reference. You can use these APIs to interact with the Sumo Logic platform. For information on Collector and Search Job APIs, see our [API home page](https://help.sumologic.com/docs/api).
+    Welcome to the Sumo Logic API reference. You can use these APIs to interact with the Sumo Logic platform. This is the interactive API reference embedded in the Sumo Logic documentation site — browse endpoints, view request/response schemas, and explore API details directly here. For information on Collector and Search Job APIs, see our [API home page](https://help.sumologic.com/docs/api).
     ## API Endpoints
     Sumo Logic has several deployments in different geographic locations. You'll need to use the Sumo Logic API endpoint corresponding to your geographic location. See the table below for the different API endpoints by deployment. For details determining your account's deployment, see [API endpoints](https://help.sumologic.com/?cid=3011).
 
