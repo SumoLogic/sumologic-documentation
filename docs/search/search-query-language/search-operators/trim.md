@@ -2,6 +2,7 @@
 id: trim
 title: trim Search Operator
 sidebar_label: trim
+description: Use the trim operator to eliminate leading and trailing spaces from string fields.
 ---
 
 The `trim` operator eliminates leading and trailing spaces from a string field.

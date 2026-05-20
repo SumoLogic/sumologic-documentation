@@ -2,6 +2,7 @@
 id: backshift
 title: backshift Search Operator
 sidebar_label: backshift
+description: Use the backshift operator to compare how numeric values change over time by shifting data points backward and returning them in a new field.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
