@@ -2,26 +2,6 @@
 
 Rewrites the intro/opening paragraph of a documentation page to match Sumo Logic voice and tone standards.
 
-## What this command does
-
-When you invoke `/rewrite-intro`, Claude will:
-
-1. **Fetch the style guide**. Get latest voice and tone rules from live style guide
-2. **Read the documentation file**. Analyze the current introduction
-3. **Identify issues**. Find voice/tone violations, branding issues, clarity problems
-4. **Rewrite the intro**. Create a new opening that matches Sumo Logic standards
-5. **Present changes**. Show before/after with explanation of what changed
-6. **Apply edits**. Update the file with user approval
-
-## When to use this command
-
-* Improving existing documentation intros that don't match Sumo Logic voice
-* Converting formal or stiff language to conversational tone
-* Fixing branding issues (missing app/source openers)
-* Simplifying overly complex opening paragraphs
-* Applying 8th-grade reading level to introductions
-* Fixing passive voice in opening content
-
 ## Workflow
 
 ### Step 1: Fetch Style Guide
@@ -297,19 +277,3 @@ Metrics provide quantitative measurements of your infrastructure and application
 - Simplified: "This functionality" → direct statement
 - Added specific use cases (track, alert, visualize)
 
-## Tips for Good Rewrites
-
-1. **Lead with value**. Start with what it is and what it does, not background
-2. **Be specific**. "monitor login patterns" not "gain visibility"
-3. **Show benefits**. Tell the reader why they should care
-4. **Keep it short**. 2-3 sentences is usually enough for an intro
-5. **Match document type**. Apps and sources have specific openers
-6. **Test reading level**. Read it aloud; if it sounds stiff, simplify
-7. **Focus on the user**. "You can..." not "This allows users to..."
-
-## After the Rewrite
-
-Once applied, suggest:
-- Review the rest of the document for similar issues
-- Consider using `/tone-check` on the full file
-- Verify that the intro flows into the next section

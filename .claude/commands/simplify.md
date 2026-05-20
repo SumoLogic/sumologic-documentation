@@ -2,26 +2,6 @@
 
 Simplifies overly complex, verbose, or hard-to-understand documentation content to meet 8th-grade reading level standards.
 
-## What this command does
-
-When you invoke `/simplify`, Claude will:
-
-1. **Read target content**. Get the file, section, or text to simplify
-2. **Analyze complexity**. Identify reading level, passive voice, long sentences, jargon
-3. **Rewrite content**. Simplify while maintaining technical accuracy
-4. **Present comparison**. Show before/after with complexity analysis
-5. **Apply changes**. Update with user approval
-
-## When to use this command
-
-* Content is too technical or wordy
-* Reading level above 8th grade
-* Long, complex sentences (20+ words)
-* Excessive passive voice
-* Unnecessary jargon or filler words
-* User feedback that docs are "hard to understand"
-* Preparing content for broader audience
-
 ## Workflow
 
 ### Step 1: Get Target Content
@@ -376,20 +356,3 @@ May already be optimal:
 - Remove filler only
 - Don't over-engineer
 
-## Tips for Good Simplification
-
-1. **Read aloud**. If it sounds stiff or confusing, simplify more
-2. **One idea per sentence**. Don't combine unrelated concepts
-3. **Front-load information**. Put the main point first
-4. **Use familiar words**. Choose words most people know
-5. **Provide examples**. Concrete examples clarify abstract concepts
-6. **Test with fresh eyes**. Would a new user understand this?
-7. **Maintain voice**. Keep Sumo Logic conversational tone
-
-## After Simplification
-
-Suggest:
-- Review the rest of the document for similar issues
-- Use `/tone-check` to validate voice and tone
-- Consider if other sections need simplification
-- Test with someone unfamiliar with the topic

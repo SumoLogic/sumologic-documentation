@@ -2,26 +2,6 @@
 
 Validates documentation against Sumo Logic voice and tone rules, identifying violations and suggesting fixes.
 
-## What this command does
-
-When you invoke `/tone-check`, Claude will:
-
-1. **Fetch style guide**. Get latest voice and tone rules
-2. **Read documentation**. Analyze the specified file
-3. **Identify violations**. Find voice/tone issues with line numbers
-4. **Generate report**. Categorize by severity (Critical, Warning, Suggestion)
-5. **Offer fixes**. Show specific corrections
-6. **Apply changes**. Update with user approval
-
-## When to use this command
-
-* Before submitting a pull request
-* After writing new documentation
-* Validating existing docs for compliance
-* Checking docs flagged in reviews
-* Ensuring voice/tone consistency
-* Training on Sumo Logic style
-
 ## Workflow
 
 ### Step 1: Fetch Style Guide
@@ -478,14 +458,6 @@ Some documents may have valid exceptions:
 
 Flag these as suggestions, not critical issues.
 
-## After the Tone Check
-
-Suggest next steps:
-- If many issues: Use `/rewrite-intro` or `/simplify` on problematic sections
-- If clean: Ready for PR
-- If medium issues: Fix and re-run tone check
-- Consider running `/audit-doc` for full quality check
-
 ## Common Patterns
 
 ### Serial Offenders
@@ -512,12 +484,3 @@ For 1-2 violations, just fix them:
 "Found one negative contraction on line 45. Should I fix it?"
 ```
 
-## Tips for Running Tone Checks
-
-1. **Run early and often**. Catch issues before they multiply
-2. **Check before PRs**. Don't let violations reach review
-3. **Use with /simplify**. Tone check after simplifying content
-4. **Train your eye**. Learn common patterns to avoid them
-5. **Focus on critical first**. Don't get bogged down in suggestions
-6. **Batch similar fixes**. Fix all passive voice at once
-7. **Re-run after fixes**. Verify all issues resolved

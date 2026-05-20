@@ -2,24 +2,6 @@
 
 Rewrites and restructures documentation to improve discoverability in AI-powered search tools (ChatGPT, Perplexity, Gemini, Claude, and similar) and to surface content as direct answers in traditional search results. Covers both **AEO** (Answer Engine Optimization — featured snippets, "People also ask") and **GEO** (Generative Engine Optimization — LLM citation and extraction).
 
-## What this command does
-
-When you invoke `/geo-optimize`, Claude will:
-
-1. **Read the doc**
-2. **Diagnose the current state**. Identify AEO and GEO gaps before making changes
-3. **Propose specific improvements**. Show the user what will change and why
-4. **Apply approved changes**. Rewrite only the sections the user approves
-5. **Validate the result**. Confirm the doc is more answer- and citation-ready without breaking accuracy
-
-## When to use this command
-
-* New docs for features that are frequently searched in AI tools or voice search
-* High-traffic docs that rarely appear in AI-generated answers or featured snippets
-* Concept and reference docs where accuracy and citability matter most
-* After `/seo-audit` flags AEO or GEO suggestions
-* Before a product launch to maximize early visibility
-
 ## What this command does NOT change
 
 * Technical accuracy — never alter facts, steps, code, or configuration values

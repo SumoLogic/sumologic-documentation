@@ -81,9 +81,59 @@ Primary commands for documentation work. Proactively suggest when context fits �
 - Doc needs discoverability improvements → suggest `/geo-optimize`
 - User asks about doc quality → suggest `/audit-doc` and `/seo-audit` together
 
-**Key distinctions:**
-- `/jira` = manage tickets | `/doc-from-jira` = scaffold doc from ticket
-- `/audit-doc` = structure/style/links | `/seo-audit` = discoverability signals (run both before PRs)
+### Slash commands
+
+**Creating docs**
+
+| Command | What it does |
+|---------|-------------|
+| `/doc` | Create a new feature, how-to, concept, reference, or troubleshooting doc |
+| `/doc-from-jira` | Fetch a DOCS Jira ticket and scaffold a complete doc from it |
+| `/app-doc` | Create a new app integration doc |
+| `/c2c-source-doc` | Create a new Cloud-to-Cloud source integration doc |
+
+**Release notes**
+
+| Command | What it does |
+|---------|-------------|
+| `/release-note` | New release note (service, collector, Cloud SIEM, Cloud SOAR, or developer) |
+
+**Editing and reviewing**
+
+| Command | What it does |
+|---------|-------------|
+| `/audit-doc` | Full quality audit: structure, style, links, frontmatter, completeness |
+| `/seo-audit` | Discoverability audit: SEO, AEO, and GEO signals — run this before a PR |
+| `/geo-optimize` | Rewrite a doc to improve AI citation and generative engine visibility |
+| `/tone-check` | Check voice and tone against Sumo Logic style rules |
+| `/rewrite-intro` | Rewrite a doc's opening paragraph |
+| `/simplify` | Simplify overly complex content |
+| `/review` | Review a pull request |
+
+**Jira**
+
+| Command | What it does |
+|---------|-------------|
+| `/jira` | Create, update, search, or transition DOCS Jira tickets |
+| `/doc-from-jira` | Start a new doc from a Jira ticket (use this instead of `/jira` when the goal is to write a doc) |
+
+**Removing docs**
+
+| Command | What it does |
+|---------|-------------|
+| `/remove-doc` | Safely deprecate or move a doc with redirects |
+
+### Which audit command to use
+
+Run both for a thorough pre-PR check — they cover different things:
+
+- **`/audit-doc`** — structure, required sections, broken links, frontmatter completeness, style guide
+- **`/seo-audit`** — SEO/AEO/GEO signals: title length, description quality, question headings, direct answers, GEO patterns
+
+### `/jira` vs `/doc-from-jira`
+
+- Use **`/jira`** to manage tickets: create, search, update fields, change status, view your queue
+- Use **`/doc-from-jira`** when you have a ticket and want to start writing the doc it describes — it fetches the ticket and scaffolds the file
 
 ## Commands
 
