@@ -125,11 +125,15 @@ Mobot works best when you start with a business question, not a query. Ask quest
 * `What does the error trend look like for my service over the past 24 hours?`
    * Follow up: `Which instances are most impacted?`
 
-* `Are any services consistently breaching indexing latency SLOs?`
+* `Which services have the worst P99 latency trend lately — anything persistent?`
    * Follow up: `When did this start?`
 
 * `Show me pod crash behavior over the last 7 days.`
    * Follow up: `Are there any patterns worth paying attention to?`
+
+* `Any pipelines failing on first run but passing on retry this week — what's the flakiness pattern?`
+
+* `Checkout-service depends on inventory-service — give me a health snapshot of both.`
 
 ### Security analyst
 
@@ -138,6 +142,8 @@ Mobot works best when you start with a business question, not a query. Ask quest
 
 * `Are there any unusual authentication patterns in our environment?`
    * Follow up: `Is this activity increasing over time?`
+
+* `Any unusual login patterns or access spikes from threat intel IPs in the last 24 hours?`
 
 ### Product and research
 
@@ -195,11 +201,4 @@ Yes. Mobot is designed to be extensible. Over time, more capabilities can be add
 
 ## Feedback
 
-Your feedback directly shapes Mobot before general availability. Use the thumbs up and thumbs down icons in the conversation to rate individual responses.
-
-To report an issue, copy the conversation URL and share it with your Sumo Logic contact. When sharing feedback, it helps to note:
-
-- What you asked.
-- What you expected.
-- What Mobot returned instead.
-- Whether the issue was prompt comprehension, context understanding, answer accuracy, answer clarity, or something else.
+Your input directly shapes Mobot before general availability. For ways to rate responses or report issues, see [Feedback](/docs/search/mobot#feedback).
