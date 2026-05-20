@@ -110,7 +110,9 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 ```
 
 ## Limitations
-- Updates to chats after a prolonged gap may cause re-ingestion and potential duplication.
+- **Re-ingestion after 25 hours**: If a chat message is updated more than 25 hours after initial ingestion, the source will re-ingest all messages from that chat, which may result in duplicate logs in Sumo Logic.
+- **Historical data backfill**: If the source experiences downtime or is temporarily disabled, it will automatically backfill data when restarted. The maximum historical data retrieval period is 30 days from the current date.
+- **Message structure**: Each log entry in Sumo Logic contains a single chat message along with its complete metadata. To view all messages from a conversation, aggregate the logs using the chat ID field.
 - As Claude Compliance API continues to evolve, updates may alter conversation data or API behavior, potentially impacting integration consistency.
 
 ## FAQ
