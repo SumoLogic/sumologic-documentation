@@ -45,7 +45,7 @@ With Mobot's new unified interface, you no longer need to choose between Query A
 
 Try asking:
 
-* A log analysis question about errors, trends, anomalies, or security events (for example, `Show me logs from last 15 minutes`).
+* A log analysis question about errors, trends, anomalies, or security events (for example, `Is auth-service having issues?`).<br/><img src={useBaseUrl('img/search/mobot/is-auth-service-having-issues-mobotv2.png')} alt="Mobot log analysis answer showing auth service health check" style={{border: '1px solid gray'}} width="800" />
 * A platform how-to question about configuration, setup, or best practices (for example, `How do I set up an OTel Collector?`).
 
 Here are some investigation-based query examples:
