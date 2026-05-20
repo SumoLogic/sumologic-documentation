@@ -80,6 +80,20 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
 1. Click **View Results** to see the results of your request in the logs query UI. You can also click the suggestions provided to drill down farther. As you ask questions, Mobot retains the context of your conversation about the insight, allowing you to more easily obtain detail. <br/><img src={useBaseUrl('img/cse/investigation-agent-results.png')} alt="Insight investigation query results" style={{border: '1px solid gray'}} width="800" />
 1. As you work with the investigation agent, after each step you will be presented with follow-up questions. Type a number corresponding to a follow-up question, or enter your own question.<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-followup-questions.png')} alt="Insight investigation follow-up questions" style={{border: '1px solid gray'}} width="600" />
 
+### Search for related insights
+
+During a Mobot investigation, you can search for other insights related to the current one. Mobot offers several dimensions to search by, helping you surface lateral context without leaving the investigation.
+
+Click **Search related insights?** when it appears as a suggested action in Mobot, or ask Mobot directly (for example, "Search for related insights"). Mobot will ask which dimension to explore:<br/><img src={useBaseUrl('img/cse/soc-analyst-related-insights-mobot.png')} alt="Related Insights search in Mobot" style={{border: '1px solid gray'}} width="800" />
+
+* **Same entity**. Other insights involving the same user, IP address, or host.
+* **Same attack name**. Other insights with the same attack name.
+* **Same signal rules**. Insights that share one or more of the same signal rules.
+* **Same MITRE tactics**. Insights that share MITRE ATT&CK tactics.
+* **Concurrent insights**. Insights that were active during the same time window.
+
+Select a dimension to proceed, or enter your own search criteria.
+
 ### Start a new investigation
 
 To clear the context and start a new investigation, click **New Conversation** at the top of the screen. To start investigation on another insight, navigate back to Cloud SIEM, select another insight, and click **Ask Mobot**.
@@ -99,30 +113,14 @@ To generate dashboards based on the context of your investigation, simply ask Mo
 
 Click the provided link to view the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard.png')} alt="Dashboard generated for insight investigation" style={{border: '1px solid gray'}} width="700" />
 
-## Related Insights search
+## Add comments to an insight
 
-When investigating an insight, you can search for other insights that share the same entity or detection rule without leaving the investigation. This provides lateral context immediately — for example, if the same IP address or user appears in other insights, those surface right in the panel.
+You can add comments to an insight directly from the insight details page without leaving your investigation. Comments are visible to other analysts and can be used to document findings, note investigation status, or flag items for follow-up.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen.
-1. Click an insight's ID to open its details page and navigate to the **AI Investigation** tab.
-1. Click **Related Insights**.<br/><img src={useBaseUrl('img/cse/soc-analyst-related-insights.png')} alt="Related Insights search panel" style={{border: '1px solid gray'}} width="800" />
-1. The panel displays other insights that share entities or detection rules with the current insight.
-1. Click an insight in the list to view its details.
+1. From the insight's details page, click **Comments** to open the comments panel.<br/><img src={useBaseUrl('img/cse/soc-analyst-comments-panel.png')} alt="Comments panel on insight details page" style={{border: '1px solid gray'}} width="800" />
+1. Enter your comment in the **Add a comment...** field and save.
 
-## Add comments and close insights
-
-You can add comments and close insights directly from within the investigation workflow, without navigating back to the insights list.
-
-**To add a comment:**
-
-1. From the insight's details page, click **Comment**.<br/><img src={useBaseUrl('img/cse/soc-analyst-add-comment.png')} alt="Add comment to insight" style={{border: '1px solid gray'}} width="800" />
-1. Enter your comment in the prompt and click **Save**.
-
-**To close an insight:**
-
-1. From the insight's details page, click **Close Insight**.<br/><img src={useBaseUrl('img/cse/soc-analyst-close-insight.png')} alt="Close insight from investigation" style={{border: '1px solid gray'}} width="800" />
-1. Select a disposition and optionally add a note.
-1. Click **Confirm**.
+You can also ask [Mobot](#investigate-the-insight-in-mobot) to add a comment on your behalf during an investigation. For example, ask "Add a comment to this insight noting the investigation is in progress." Mobot will draft and post the comment based on the current investigation context.
 
 ## FAQs
 
