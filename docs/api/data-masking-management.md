@@ -44,3 +44,5 @@ For more information, see [Data Masking](/docs/manage/data-masking).
 
 * **Manage Data Masking Rules**. Required to create, update, enable, disable, or delete data masking rules.
 * **View Unmasked Data**. Allows users to view log data in its original, unmasked form.
+
+These capabilities will be listed under [Security](/docs/manage/users-roles/roles/role-capabilities/#security) in Role Capabilities when this feature is GA.
