@@ -13,7 +13,7 @@ The Claude Compliance Monitoring app for Sumo Logic provides centralized visibil
 
 ## Log types
 
-This app uses Claude Compliance's activity logs.
+This app uses Claude Compliance's activity logs and chat message logs.
 
 ### Sample log message
 
@@ -31,6 +31,58 @@ This app uses Claude Compliance's activity logs.
   "organization_uuid": "org_081m2TJpAuK364YHLwQCXe5r",
   "created_at": "2026-05-08T12:18:11.000538Z",
   "organization_id": "01KQS4ZBD35MR4678P2NNXZPW1"
+}
+```
+
+```json title="Chat Messages Log"
+{
+    "id": "claude_chat_01BKzmfeRdSfq7otZxLhEAUp",
+    "name": "Greeting",
+    "created_at": "2026-05-07T17:29:59.354315Z",
+    "updated_at": "2026-05-07T17:30:01.282925Z",
+    "deleted_at": null,
+    "organization_id": "org_013w9ZYpBvS942YQNwJAPw6z",
+    "organization_uuid": "17c1b787-c3ac-46e3-a107-0b58fc85b293",
+    "project_id": null,
+    "model": "claude-sonnet-4-6",
+    "user": {
+        "id": "user_01XyDMpzjS89pFZXqSFUBDr6",
+        "email_address": "giacomo@giacomo.plutoenterprise.org"
+    },
+    "chat_messages": [
+        {
+            "id": "claude_chat_msg_011Caoc3TT3u8K38ho6SPUPJ",
+            "role": "user",
+            "created_at": "2026-05-07T17:29:59.774439Z",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "hey"
+                }
+            ],
+            "files": null,
+            "generated_files": null,
+            "artifacts": null
+        },
+        {
+            "id": "claude_chat_msg_011Caoc3TT4Gh3TnqUYitFAB",
+            "role": "assistant",
+            "created_at": "2026-05-07T17:30:01.282925Z",
+            "content": [
+                {
+                    "type": "text",
+                    "text": " Hey! How can I help you today?"
+                }
+            ],
+            "files": null,
+            "generated_files": null,
+            "artifacts": null
+        }
+    ],
+    "href": "https://claude.ai/chat/53a26065-dc3e-4f8d-99da-5fb6525f14b9",
+    "has_more": false,
+    "first_id": "eyJtc2dfdXVpZCI6ICIwMTllMDM3ZC0zYTRjLTc2NGMtOGMxMy1iZGI0ZDNkZTU4NzkifQ==",
+    "last_id": "eyJtc2dfdXVpZCI6ICIwMTllMDM3ZC0zYTRjLTdjZWEtYjJlNi01M2E5YWNjMDRmYjQifQ=="
 }
 ```
 
@@ -67,13 +119,32 @@ _sourceCategory="{{Logsdatasource}}" type actor
 | count
 ```
 
+```sumo title="Messages by Role"
+_sourceCategory="{{Logsdatasource}}"
+| json "id", "updated_at", "user.id", "user.email_address", "name", "organization_id", "message.role", "message.content[0].type", "message.content[0].text", "message.model", "message.id" as id, updated_at, user_id, user_email, name, organization_id, role, message_type, message_value, model, message_id nodrop
+| where user_email matches "{{user}}" or isBlank(user_email)
+| where role matches "{{role}}" or isBlank(role)
+| where model matches "{{model}}" or isBlank(model)
+| where message_type matches "{{message_type}}" or isBlank(message_type)
+| where message_value contains "{{message}}" or "{{message}}" == "*"
+| where !isBlank(role)
+| count by message_id, role
+| count by role
+| sort by _count, role
+```
+
 ## Collection configuration
 
-This app uses the [Universal Connector](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source) to collect **activity logs** from the Anthropic Compliance API.
+This app uses the [Universal Connector](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source) to collect **activity logs** from the Anthropic Compliance API and Sumo Logic's [Claude Compliance Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) to collect chat messages logs from the Claude Compliance Messages API.
+
 
 ### Vendor configuration
 
 To collect logs, you need an Anthropic API key with access to the Compliance API. Use one of the following options to create the API key:
+
+:::note
+Admin keys created through Console are limited to the Activity Feed and cannot access chat messages.
+:::
 
 #### Console / API 
 
@@ -97,7 +168,7 @@ If you do not see the Compliance access keys section, it means that either you a
 :::
 
 ### Source configuration
-
+#### Universal Connector (for Activity Logs)
 1. On the Data Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Universal Connector**.
 1. Configure the **General** settings:
@@ -155,6 +226,10 @@ If you do not see the Compliance access keys section, it means that either you a
 :::note
 Once the source is configured, you can verify successful log collection by running searches on the Search page in Sumo Logic using the source category. For example, `_sourceCategory=claude_compliance/activities`.
 :::
+
+#### Claude Compliance C2C Source (for Chat Messages)
+
+To collect Claude chat messages logs, configure a dedicated Claude Compliance Cloud-to-Cloud source. For detailed step-by-step instructions, see the [Source configuration section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/#source-configuration) in the Claude Compliance Source documentation.
 
 ## Installing the Claude Compliance app
 
@@ -279,6 +354,16 @@ The **Claude Compliance - User Agent Analysis** dashboard analyzes the user agen
 The **Claude Compliance - User Configuration and Invite Lifecycle Monitoring** dashboard provides full visibility into user configuration changes, invite lifecycle events, role assignments, and organizational membership activity across your Claude environment. It tracks users with the highest frequency of configuration changes, monitors invite link usage, and surfaces geolocation data on user activities, including access from embargoed regions. Detailed tables cover role changes, org member invites, user settings updates, and recent activity for comprehensive audit coverage. Use this dashboard to govern user onboarding and offboarding processes, detect unauthorized role changes, and ensure invite and configuration practices comply with organizational policies.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-User-Configuration-and-Invite-Lifecycle-Monitoring.png')} alt="Claude Compliance - User Configuration and Invite Lifecycle Monitoring dashboard" />
+
+### Chats
+
+The **Claude Compliance – Chats** dashboard provides comprehensive oversight of Claude AI usage across your organization, surfacing key metrics including active users, deployed models, project distribution, and message volume trends. It breaks down interactions by role and content type, ranks top models and users, and provides audit-ready tables for generated artifacts, file uploads, and conversation summaries. Granular message-level data supports deep compliance review and sensitive data detection. The dashboard delivers the visibility and control needed to ensure transparency, responsible AI use, and data governance compliance across your organization.
+
+:::note Privacy Protection
+Panels with sensitive conversation data require applying the "message" filter with a specified text value to view detailed results, ensuring controlled access to potentially sensitive information.
+:::
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Chats.png')} alt="Claude Compliance - Chats dashboard" />
 
 ## Create monitors for Claude Compliance app
 
