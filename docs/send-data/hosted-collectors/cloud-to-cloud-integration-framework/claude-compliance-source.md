@@ -5,7 +5,7 @@ sidebar_label: Claude Compliance
 tags:
   - cloud-to-cloud
   - claude-compliance
-description: Learn to collect the chats from Claude Compliance platform.
+description: Learn to collect the chats from the Claude Compliance platform.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -21,8 +21,8 @@ The Compliance API enables enterprise customers to access structured chat logs a
 ## Data collected
 
 | Polling Interval | Data |
-| :--- | :--- |
-| 5 min |  Messages
+|:--|:--|
+| 5 min |  Messages |
 
 ## Setup
 
@@ -58,14 +58,14 @@ If you do not see the Compliance access keys section, it means that either you a
 When you create a Claude Compliance Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Claude Compliance Source, follow the steps below:
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu, select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Claude Compliance**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
+1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and a value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema, it is ignored, known as dropped.
 1. **Organization UUID**. Enter the Organization UUID collected from the [Claude Console](#vendor-configuration).
 1. **API Key**. Enter the API Key generated from the [Claude Console](#vendor-configuration).
 1. **Polling Interval**. The polling interval is set for 5 minutes by default and can be configured to a maximum of 24 hours. You can adjust it based on your needs. This sets how often the source checks for new data.
@@ -114,7 +114,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 - **Re-ingestion after 25 hours**: If a chat message is updated more than 25 hours after initial ingestion, the source will re-ingest all messages from that chat, which may result in duplicate logs in Sumo Logic.
 - **Historical data backfill**: If the source experiences downtime or is temporarily disabled, it will automatically backfill data when restarted. The maximum historical data retrieval period is 30 days from the current date.
 - **Message structure**: Each log entry in Sumo Logic contains a single chat message along with its complete metadata. To view all messages from a conversation, aggregate the logs using the chat ID field.
-- As Claude Compliance API continues to evolve, updates may alter conversation data or API behavior, potentially impacting integration consistency.
+- As the Claude Compliance API continues to evolve, updates may alter conversation data or API behavior, potentially impacting integration consistency.
 
 ## FAQ
 
