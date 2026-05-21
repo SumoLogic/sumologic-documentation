@@ -96,7 +96,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.| `{"_siemForward": false, "fieldA": "valueA"}` |
 | orgUUID | String | Yes | `null` | Your Organization UUID from Claude Console. | fbc16730-e0af-40gg-a0be-6057d1741b97 |
 | apiKey | String | Yes | `null` | API Key of the account. | sk-ant-XXXXXXXXXXXXXXX |
-| pollingIntervalMinutes | Integer | Yes | `5 minutes` | Time interval (in minutes) after which the source will check for new data. | 5m |
+| pollingIntervalMinutes | String | Yes | `5 minutes` | Time interval (in minutes) after which the source will check for new data. | 5m |
 
 ### JSON example
 
