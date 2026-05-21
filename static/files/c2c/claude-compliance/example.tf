@@ -9,7 +9,7 @@ resource "sumologic_cloud_to_cloud_source" "anthropic-compliance-source" {
     name                = "Claude Compliance"
     orgUUID        = "ABCD-SAMPLE-ORG-UUID"
     apiKey            = "sk-ant-XXXXXXXXX"
-    pollingIntervalHour = "60m"
+    pollingIntervalMinutes = "60m"
   })
 }
 

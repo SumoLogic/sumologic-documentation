@@ -94,9 +94,9 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | description | String | No | `null` | Type a description of the source. | `"Testing source"` |
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"` |
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.| `{"_siemForward": false, "fieldA": "valueA"}` |
-| organizationUUID | String | Yes | `null` | Your Organization UUID from Claude Console. | org_01ABCDEFGHIJK123456789 |
+| orgUUID | String | Yes | `null` | Your Organization UUID from Claude Console. | fbc16730-e0af-40gg-a0be-6057d1741b97 |
 | apiKey | String | Yes | `null` | API Key of the account. | sk-ant-XXXXXXXXXXXXXXX |
-| pollingInterval | Integer | Yes | `5 minutes` | Time interval (in minutes) after which the source will check for new data. | 5m |
+| pollingIntervalMinutes | Integer | Yes | `5 minutes` | Time interval (in minutes) after which the source will check for new data. | 5m |
 
 ### JSON example
 
