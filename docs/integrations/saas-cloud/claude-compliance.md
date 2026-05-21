@@ -120,7 +120,7 @@ _sourceCategory="{{Logsdatasource}}" type actor
 ```
 
 ```sumo title="Messages by Role"
-_sourceCategory="{{Logsdatasource}}"
+_sourceCategory="{{Logsdatasource}}" "claude_chat_msg"
 | json "id", "updated_at", "user.id", "user.email_address", "name", "organization_id", "message.role", "message.content[0].type", "message.content[0].text", "message.model", "message.id" as id, updated_at, user_id, user_email, name, organization_id, role, message_type, message_value, model, message_id nodrop
 | where user_email matches "{{user}}" or isBlank(user_email)
 | where role matches "{{role}}" or isBlank(role)
