@@ -178,17 +178,17 @@ If you do not see the Compliance access keys section, it means that either you a
    - **Description**. (Optional) Enter a description.
    - **Source Category**. Enter a value such as `claude_compliance`. This value is stored in the `_sourceCategory` metadata field and must match the source category used when installing the app.
    - **Fields**. (Optional) Click **+Add** to define any additional fields to associate with the source.
-   <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-source-configuration.png')} alt="Universal Connector - General settings" width="400" />
+        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-source-configuration.png')} alt="Universal Connector - General settings" width="400" style={{border: '1px solid gray'}} />
 1. Configure the **Authentication Configuration**:
    - **Authentication Type**. Select **API Key**.
    - **How should we use your API key?** Select **In HTTP Request Header**.
    - **Location Key**. Enter `x-api-key`.
    - **API Key**. Enter the Claude API key you copied above.
-   <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-authentication-configuration.png')} alt="Universal Connector - Authentication Configuration" width="400" />
+        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-authentication-configuration.png')} alt="Universal Connector - Authentication Configuration" width="400" style={{border: '1px solid gray'}} />
 1. Configure the **Request Configuration**:
    - **HTTP Method**. Select `GET`
    - **Endpoint URL**. Enter `https://api.anthropic.com/v1/compliance/activities`
-   <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-request-configuration.png')} alt="Universal Connector - Request Configuration" width="400" />
+        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-request-configuration.png')} alt="Universal Connector - Request Configuration" width="400" style={{border: '1px solid gray'}} />
 1. Configure the **Tracking Progression**:
    - **Type**. Select **Time Window**.
    - **Window Size**. Enter `5m` (default recommended).
@@ -198,7 +198,7 @@ If you do not see the Compliance access keys section, it means that either you a
      |:--|:--|
      | `created_at.gte` | `{{ .WindowStartUTC "yyyy-MM-ddTHH:mm:ssZ" }}` |
      | `created_at.lt` | `{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ssZ" }}` |
-   <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-tracking-configuration.png')} alt="Universal Connector - Tracking Progression" width="400" />
+        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-tracking-configuration.png')} alt="Universal Connector - Tracking Progression" width="400" style={{border: '1px solid gray'}} />
 1. Configure the **HTTP Response Log Ingest Configuration**:
    - **Format**. Select **JSON with JPath**.
    - Configure the following log path settings:
@@ -207,14 +207,14 @@ If you do not see the Compliance access keys section, it means that either you a
      | **Logs JPath** | `$.data[*]` |
      | **Timestamp JPath** | `$.created_at` |
      | **Timestamp Format** | `2006-01-02T15:04:05.000000Z` |
-   <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-response-configuration.png')} alt="Universal Connector - HTTP Response Log Ingest Configuration" width="400" />
+        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-response-configuration.png')} alt="Universal Connector - HTTP Response Log Ingest Configuration" width="400" style={{border: '1px solid gray'}} />
 1. Configure the **Pagination Configuration**:
    - **Type**. Select **Continuation Token**.
    - **Token Location**. Select **Body**.
    - **Next Page Continuation Token JPath**. Enter `$.last_id`.
    - **Send Token In**. Select **Parameters**.
-   - **Parameter Key**. Enter `after_id`.
-   <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-pagination-configuration.png')} alt="Universal Connector - Pagination Configuration" width="400" />
+   - **Parameter Key**. Enter `after_id`.<br/>
+        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-pagination-configuration.png')} alt="Universal Connector - Pagination Configuration" width="400" style={{border: '1px solid gray'}} />
 1. (Optional) Configure the **HTTP Client Configuration**:
    - **HTTP Timeout**. `5m` (default).
    - **HTTP Client Retries**. `5` (default).
@@ -222,7 +222,7 @@ If you do not see the Compliance access keys section, it means that either you a
    - **Rate Limit Duration**. `1m` (default).
    - **Rate Limit Burst**. `1000` (default).
    - **Polling Interval**. Set how frequently to poll for new data, between 5 minutes and 48 hours.
-   <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-client-configuration.png')} alt="Universal Connector - HTTP Client Configuration" width="400" />
+        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-client-configuration.png')} alt="Universal Connector - HTTP Client Configuration" width="400" style={{border: '1px solid gray'}} />
 1. Click **Save**.
 
 :::note
