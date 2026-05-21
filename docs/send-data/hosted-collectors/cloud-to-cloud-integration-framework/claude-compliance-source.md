@@ -30,28 +30,18 @@ The Compliance API enables enterprise customers to access structured chat logs a
 
 You are required to provide the **Organization UUID** and **API Key** to configure the Claude Compliance source.
 
-To collect logs, you need a Claude API key with access to the Compliance API. Use one of the following options to create the API key:
+#### Steps to Get Organization UUID:
+- After logging in to claude.ai, navigate to **Settings → Account**.
+- Your Organization UUID is displayed in the Account details section.
 
-#### Console / API
-
-Keys are created in the **Admin keys** section of Console Settings.
-1. Click **Create key** to name your key.
-2. Receive a secret access key and store it securely.
-
-:::note
-If the Compliance API is enabled for your organization, Admin keys created here are automatically granted the `read:compliance_activities` scope. If the Compliance API is not yet enabled, contact your Anthropic representative to request access.
-:::
-
-#### Claude.ai
+### Steps to Generate API Key:
 
 Keys are created in the **Compliance access keys** section of Data Management Settings.
 1. Click **Create key** to name your key.
-2. Name the key and select its scopes.
+2. Name the key and select its scopes. For this c2c we need the scope **read:compliance_user_data**
 3. Receive a secret access key and store it securely.
 
-:::note
-If you do not see the Compliance access keys section, it means that either you are not a Primary Owner of the organization, or the Compliance API is not enabled for your organization. The Primary Owner needs to enable it in the Data and Privacy section of your organization's settings.
-:::
+**Note**: If you do not see the Compliance access keys section, it means that either you are not a Primary Owner of the organization, or the Compliance API is not enabled for your organization. The Primary Owner needs to enable it in the Data and Privacy section of your organization's settings.
 
 ### Source configuration
 

@@ -135,7 +135,7 @@ _sourceCategory="{{Logsdatasource}}" "claude_chat_msg"
 
 ## Collection configuration
 
-This app uses the [Universal Connector](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source) to collect **activity logs** from the Claude Compliance API and Sumo Logic's [Claude Compliance Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) to collect chat messages logs from the Claude Compliance Messages API.
+This app uses the [Universal Connector](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source) to collect **activity logs** from the Claude Compliance API and Sumo Logic's [Claude Compliance Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) to collect **chat messages logs** from the Claude Compliance Messages API.
 
 
 ### Vendor configuration
@@ -143,7 +143,7 @@ This app uses the [Universal Connector](/docs/send-data/hosted-collectors/cloud-
 To collect logs, you need a Claude API key with access to the Compliance API. Use one of the following options to create the API key:
 
 :::note
-Admin keys created through Console are limited to the Activity Feed and cannot access chat messages.
+Admin keys created through Console are limited to the Activity Feed and cannot access chat messages via c2c source
 :::
 
 #### Console / API
@@ -160,7 +160,7 @@ If the Compliance API is enabled for your organization, Admin keys created here 
 
 Keys are created in the **Compliance access keys** section of Data Management Settings.
 1. Click **Create key** to name your key.
-2. Name the key and select its scopes.
+2. Name the key and select its scopes. For activities select `read:compliance_activities` and for chat messages select `read:compliance_user_data`
 3. Receive a secret access key and store it securely.
 
 :::note
