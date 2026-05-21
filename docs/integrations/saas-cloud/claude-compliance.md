@@ -247,7 +247,7 @@ Next-Gen App: To install or update the app, you must be an account administrator
     :::
 1. Click **Next** in the **Setup Data** section.
 1. In the **Configure** section of your respective app, complete the following fields.
-    1. **Field Name**. Use the source category or collector name configured in the [Source configuration](/docs/integrations/saas-cloud/claude-compliance/#source-configuration) section.
+    1. **Field Name**. Use the source category or collector name configured in the [Source configuration](#source-configuration) section.
 1. Click **Next**. You will be redirected to the **Preview & Done** section.
 
 **Post-installation**
