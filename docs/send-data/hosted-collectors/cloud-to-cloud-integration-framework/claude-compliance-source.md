@@ -55,6 +55,10 @@ If you do not see the Compliance access keys section, it means that either you a
 
 ### Source configuration
 
+:::note
+Claude Compliance logs can be collected using this source for chat messages. To collect activity logs, use the [Universal Collector](/docs/integrations/saas-cloud/claude-compliance/#collection-configuration).
+:::
+
 When you create a Claude Compliance Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Claude Compliance Source, follow the steps below:
