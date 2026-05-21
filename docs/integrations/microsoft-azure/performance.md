@@ -7,7 +7,7 @@ description: The Windows Performance app provides insight into your system's ope
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="75"/>
 
 The Windows Performance app provides insight into your system's operation and events so that you can better manage and maintain your Windows systems. The app uses predefined Dashboards and searches that provide visibility into your environment for real-time analysis of system and network performance and overall usage.
 
@@ -95,7 +95,7 @@ instance of Win32_PerfFormattedData_PerfOS_Memory
 
 ### Sample queries
 
-```sql title="Hosts with low available memory"
+```sumo title="Hosts with low available memory"
 _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Memory" "AvailableBytes"
 | parse regex "winbox = (?<dest_host>\S+)" nodrop
 | if (isNull(dest_host) or dest_host="",_sourceHost,dest_host) as host
@@ -108,7 +108,7 @@ _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Memory" "AvailableByt
 | where DataPoints >10 // another threshold: more than 10 minutes where the limit drops under the above threshold
 ```
 
-```sql title="Avg CPU Usage (%) by Host"
+```sumo title="Avg CPU Usage (%) by Host"
 _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Processor" "_Total"
 | parse regex "winbox = (?<dest_host>\S+)" nodrop
 | if (isNull(dest_host) or dest_host="",_sourceHost,dest_host) as host
@@ -135,7 +135,7 @@ To collect logs for the Windows Performance App, do the following:
 
 To complete the configuration, you'll need to edit each Windows Performance Source (you are using to collect logs) to add a custom query.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 2. Find the Collector and the Windows Performance Source.
 3. For the **Source**, click **Edit**.
 4. Under **Perfmon Queries** select the check boxes for these queries:
@@ -234,7 +234,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Average Output Queue Length.** Displays the average length of the output queue as a line chart on a timeline using timeslices of one minute for the last 15 minutes.
 
-## Upgrading the Windows Performance app (Optional)
+## Upgrade/Downgrade the Windows Performance app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

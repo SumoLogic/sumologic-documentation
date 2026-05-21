@@ -2,6 +2,7 @@
 id: jsonarraysize
 title: jsonArraySize Search Operator
 sidebar_label: jsonArraySize
+description: Use the jsonArraySize operator to determine the number of elements in a JSON array field. Returns the count of items in the array.
 ---
 
 
@@ -9,13 +10,11 @@ Use the `jsonArraySize` operator to determine the size of a JSON array field.
 
 ## Syntax
 
-```sql
-jsonArraySize(field)
-```
+`jsonArraySize(field)`
 
 ## Example
 
-```sql
+```sumo
 _sourceCategory=stream .ett 
 | fields tiers 
 | jsonArraySize("[1, 2, 3]") as js 

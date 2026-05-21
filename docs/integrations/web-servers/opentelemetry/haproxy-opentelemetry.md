@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/haproxy.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/web-servers/haproxy.png')} alt="Haproxy icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The [HAProxy](https://docs.haproxy.org/2.6/intro.html) app is a unified logs and metrics app designed to help you monitor the availability, performance, health, and resource utilization of HAProxy server farms. It provides preconfigured dashboards and searches that offer visibility into your environment for real-time and historical analysis: visitor locations, HTTP error codes percentage, backend and frontend server statistics, traffic patterns, errors, server operations, and access from known malicious sources.
 
@@ -19,9 +19,13 @@ The OpenTelemetry collector runs on the same host as HAProxy, where it uses the 
 
 ## HAProxy log types
 
-The app supports Logs from the open source version of HAProxy. The App is tested on the 2.3.9 version of HAProxy.
+The app supports logs from the open source version of HAProxy. This app is tested on the `2.3.9` version of HAProxy.
 
 The HAProxy logs are generated in files as configured in the configuration file `/etc/haproxy/haproxy.cfg` ([learn more](https://www.haproxy.com/blog/introduction-to-haproxy-logging/)).
+
+:::info
+This app includes [built-in monitors](#haproxy-alerts). For details on creating custom monitors, refer to the [Create monitors for HAProxy app](#create-monitors-for-haproxy-app).
+:::
 
 ## Fields Create in Sumo Logic for HAProxy
 
@@ -185,13 +189,31 @@ May 13 08:24:43 localhost haproxy[21813]:
 27.2.81.92:64274 [13/May/2021:08:24:43.921] web-edupia.vn-4
 ```
 
+## Sample metrics
+
+```json
+{
+  "Query": "A",
+  "metric": "avg",
+  "haproxy.proxy_name": "stats",
+  "webengine.cluster.name": "haproxy_otel_cluster",
+  "webengine.node.name": "node1",
+  "min": 3385124.8,
+  "max": 3553632,
+  "latest": 3553632,
+  "avg": 3469494.86851211,
+  "sum": 1002684017.0,
+  "count": 289,
+}
+```
+
 ## Sample queries
 
 ### Logs
 
 This query example is from the **HAProxy - Overview** dashboard > **Top 5 URLs with Errors** panel:
 
-```
+```sumo
 webengine.cluster.name=* %"sumo.datasource"=haproxy
 | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as haproxy_log_message
@@ -214,31 +236,13 @@ webengine.cluster.name=* %"sumo.datasource"=haproxy
 
 Here is a sample metrics query from the **Http Response Codes** dashboard > **HAProxy - Backend Metrics** panel:
 
-```
+```sql
 sumo.datasource=haproxy metric=haproxy.requests.total status_code=* haproxy.service_name=backend deployment.environment=* webengine.cluster.name=* webengine.node.name=*  haproxy.proxy_name=* 
 | parse field=status_code *  as code 
 | avg by webengine.cluster.name,webengine.node.name,haproxy.proxy_name,code
 ```
 
-## Sample metrics
-
-```json
-{
-  "Query": "A",
-  "metric": "avg",
-  "haproxy.proxy_name": "stats",
-  "webengine.cluster.name": "haproxy_otel_cluster",
-  "webengine.node.name": "node1",
-  "min": 3385124.8,
-  "max": 3553632,
-  "latest": 3553632,
-  "avg": 3469494.86851211,
-  "sum": 1002684017.0,
-  "count": 289,
-}
-```
-
-## Viewing HAProxy dashboards
+## Viewing the HAProxy dashboards
 
 ### Overview
 
@@ -298,7 +302,7 @@ The **HAProxy - Threat Analysis** dashboard provides an at-a-glance view of thre
 
 Use this dashboard to:
 
-- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-faq) threat feed.
+- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Threat-Analysis.png' alt="Threat Analysis" />
 
@@ -349,3 +353,25 @@ Use this dashboard to:
 - To identify geo locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Web-Server-Operations.png' alt="Web Server Operations" />
+
+
+## Create monitors for HAProxy app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### HAProxy alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `HAProxy - Access from Highly Malicious Sources` | This alert is triggered when an HAProxy is accessed from highly malicious IP addresses. | Count > 0 | Count < = 0 |
+| `HAProxy - Backend Error` | This alert is triggered when backend server error is detected. | Count > 0 | Count < = 0 |
+| `HAProxy - Backend Server Down` | This alert is triggered when a backend server for a given HAProxy server is down. | Count > 0 | Count < = 0 |
+| `HAProxy - High Client (HTTP 4xx) Error Rate` | This alert is triggered when there are too many HTTP requests (>5%) with a response status of 4xx. | Count > 0 | Count < = 0 |
+| `HAProxy - High Server (HTTP 5xx) Error Rate` | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Count > 0 | Count < = 0 |
+
+## Additional resources
+
+* Blog: [Everything you need to know about HAProxy log format](https://www.sumologic.com/blog/haproxy-log-format/)
+* App description: [HAProxy App for Sumo Logic](https://www.sumologic.com/application/haproxy/)

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/memcached.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/databases/memcached.png')} alt="Memcached icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The [Memcached](https://memcached.org/about) app is a logs-based app that helps you monitor the availability, performance, health, and resource utilization of your Memcached clusters. Preconfigured dashboards provide insight into operational metrics, cache performance, resource utilization, errors, warnings, and commands executed.
 
@@ -19,16 +19,19 @@ Memcached logs are sent to Sumo Logic through the OpenTelemetry [filelog receive
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#memcached-alerts). For details on creating custom monitors, refer to the [Create monitors for Memcached app](#create-monitors-for-memcached-app).
+:::
+
 ## Fields creation in Sumo Logic for Memcached
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Memcached App install if not already present.
 
 - **`sumo.datasource`**. Has a fixed value of **memcached**.
-- **`db.system`**. Has a fixed value of **memcached**
-- **`deployment.environment`**. User configured. This is the deployment environment where the Memcache cluster resides. For example: dev, prod or qa.
+- **`db.system`**. Has a fixed value of **memcached**.
+- **`deployment.environment`**. User configured. This is the deployment environment where the Memcache cluster resides. For example: dev, prod, or qa.
 - **`db.cluster.name`**. User configured. Enter a name to identify this Memcached cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - **`db.node.name`**. This has value of the FQDN of the machine where OpenTelemetry collector is collecting logs and metrics from.
-
 
 ## Prerequisites
 
@@ -212,7 +215,7 @@ Jun 23 07:35:01 node03 memcached: \
 
 Following is the query from Errors panel of Memcached app's overview Dashboard:
 
-```sql
+```sumo
 %"deployment.environment"=* %"db.cluster.name"=* %"sumo.datasource"=memcached memcached ">" ERROR | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as memcached_log_message
 | parse regex field=memcached_log_message ">(?<pid>\d+) (?<cmd>\w+)"
@@ -221,13 +224,12 @@ Following is the query from Errors panel of Memcached app's overview Dashboard:
 | sum(ERROR) as ERROR by _timeslice
 ```
 ## Sample metrics queries
-**Total Get**
 
-```
+```sql title="Total Get"
 sumo.datasource=memcached deployment.environment=* db.cluster.name=* db.node.name=* metric=memcached.commands command=get | sum
 ```
 
-## Viewing Memcached Dashboards
+## Viewing the Memcached dashboards
 
 ### Overview
 
@@ -237,7 +239,7 @@ The **Memcached - Overview** dashboard provides an at-a-glance view of the Memca
 
 ### Operations
 
-The **Memcached - Operations** Dashboard provides detailed analysis on connections, thread requested, network bytes, table size.
+The **Memcached - Operations** Dashboard provides detailed analysis on connections, thread requested, network bytes, and table size.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Operations.png' alt="Memcached dashboards" />
 
@@ -246,7 +248,6 @@ The **Memcached - Operations** Dashboard provides detailed analysis on connectio
 The **Memcached - Command Stats** dashboard provides detailed insights into the number of commands being performed.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Command-Stats.png' alt="Memcached dashboards" />
-
 
 ### Cache Information
 
@@ -259,3 +260,20 @@ The **Memcached - Cache Information** dashboard provides insight into cache stat
 The **Memcached - Logs** dashboard helps you quickly analyze your Memcached error logs, commands executed, and objects stored.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Logs.png' alt="Memcached dashboards" />
+
+
+## Create monitors for Memcached app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Memcached alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Memcached - Cache Hit Ratio` | This alert is triggered when low cache hit ratio is less than 50%. The hit rate is one of the most important indicators of Memcached performance. A high hit rate means faster responses to your users. If the hit rate is falling, you need quick visibility into why. | Count < = 50% | Count > 50% |
+| `Memcached - Commands Error` | This alert is triggered when Memcached has error commands. | Count > 0 | Count < = 0 |
+| `Memcached - Current Connections` | This alert is triggered when current connections to Memcached are zero. | Count < = 0 | Count > 0 |
+| `Memcached - High Memory Usage` | This alert is triggered when the Memcached exceed given threshold memory usage (in GB). | Count > 5 | Count < = 5 |
+| `Memcached - High Number of Connections` | This alert is triggered when the number of current connection for Memcached exceed given threshold. | Count > = 1000 | Count < 1000 |

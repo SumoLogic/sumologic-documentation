@@ -8,13 +8,9 @@ tags:
 description: Learn how to configure the Druva Cyber Resilience Cloud-to-Cloud source setup in your Sumo Logic environment.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/druva-cyber-resilience/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/druva-cyber-resilience/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/druva-cyber-resilience/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="Druva icon" width="85"/>
 
 The Druva Data Resiliency Cloud provides unified, easy-to-manage data protection for all workloads. Druva’s cyber resilience solutions keep backup data safe, help to prepare for cyber attacks, and automate the process of recovering data.
 
@@ -33,9 +29,9 @@ The Druva Cyber Resilience source provides the ability to fetch realize events g
 In this configuration, you will collect the Base URL from the Druva platform to authorize and authenticate the realize events using Druva Realize Events API. Follow the below steps to get the Base URL for user configuration.
 
 1. Sign in to the [Druva console](https://login.druva.com/login).
-1. Go to the **Administration** menu and click **Druva Cloud Settings** option.<br/> <img src={useBaseUrl('img/send-data/druva-console.png')} style={{border: '1px solid gray'}} alt="druva-console" width="800" />
+1. Go to the **Administration** menu and click **Druva Cloud Settings** option.<br/> <img src={useBaseUrl('img/send-data/druva-console.png')} style={{border: '1px solid gray'}} alt="Druva console" width="800" />
 1. Select the **API Credentials** option.
-1. In the API Credentials page, copy and save the **API Endpoint URL**.<br/> <img src={useBaseUrl('img/send-data/druva-cloud-settings.png')} style={{border: '1px solid gray'}} alt="druva-cloud-settings" width="800" />
+1. In the API Credentials page, copy and save the **API Endpoint URL**.<br/> <img src={useBaseUrl('img/send-data/druva-cloud-settings.png')} style={{border: '1px solid gray'}} alt="Druva cloud settings" width="800" />
 
 ### Source configuration
 
@@ -43,18 +39,22 @@ When you create a Druva Cyber Resilience Source, you add it to a Hosted Collecto
 
 To configure a Druva Cyber Resilience Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Druva Cyber Resilience** icon.
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** to define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **API Endpoint URL**. Enter the API Endpoint URL collected from the [Druva Cyber Resilience platform](#vendor-configuration).
 1. **Client ID**. Enter your Client ID. To get Client ID, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials#createnewcreds).
 1. **Secret Key**. Enter your Secret Key. To get Secret Key, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials#createnewcreds).
 1. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the Druva Cyber Resilience source, consider installing the Sumo Logic app for [Druva Cyber Resilience](/docs/integrations/saas-cloud/druva-cyber-resilience/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata field
 
@@ -86,15 +86,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/druva-cyber-resilience/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/druva-cyber-resilience/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/druva-cyber-resilience/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/druva-cyber-resilience/example.tf
+```
 
 ## Troubleshooting
 

@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/phishlabs-eir-ioc-feed.png')} alt="phishlabs-eir-ioc-feed" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/phishlabs-eir-ioc-feed.png')} alt="PhishLabs EIR IOC Feed icon" width="80"/>
 
-***Version: 1.1  
-Updated: Jun 26, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 PhishLabs by Fortra is a cyber threat intelligence company that delivers Digital Risk Protection through curated threat intelligence and complete mitigation. PhishLabs provides brand impersonation, account takeover, data leakage and social media threat protection.
 
@@ -16,20 +16,33 @@ PhishLabs by Fortra is a cyber threat intelligence company that delivers Digital
 * **List Incident Indicators** *(Enrichment)* - Retrieve list of incidents and indicators within the feed.
 * **List Global Indicators** *(Enrichment)* - Retrieve global list of indicators.
 
-## PhishLabs EIR - IOC Feed in Automation Service and Cloud SOAR
+## Configure PhishLabs EIR - IOC Feed in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-eir-ioc-feed/phishlabs-eir-ioc-feed-3.png')} style={{border:'1px solid gray'}} alt="phishlabs-eir-ioc-feed" width="600"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
-   * **Label**. The desired name for the resource.
-   * **URL**. Your PhishLabs EIR - IOC Feed API URL.
-   * **Username**. Your PhishLabs EIR - IOC Feed Username.
-   * **Password**. Your PhishLabs EIR - IOC Feed API Password.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-eir-ioc-feed/phishlabs-eir-ioc-feed-4.png')} style={{border:'1px solid gray'}} alt="phishlabs-eir-ioc-feed" width="400"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-eir-ioc-feed/phishlabs-eir-ioc-feed-5.png')} style={{border:'1px solid gray'}} alt="phishlabs-eir-ioc-feed" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-eir-ioc-feed/phishlabs-eir-ioc-feed-6.png')} style={{border:'1px solid gray'}} alt="phishlabs-eir-ioc-feed" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phishlabs-eir-ioc-feed/phishlabs-eir-ioc-feed-7.png')} style={{border:'1px solid gray'}} alt="phishlabs-eir-ioc-feed" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your PhishLabs EIR - IOC API URL.
+
+* **Username**. Enter the username of a PhishLabs EIR - IOC admin user authorized to authenticate the integration. 
+
+* **Password**. Enter the password of the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/phishlabs-eir-ioc-configuration.png')} style={{border:'1px solid gray'}} alt="PhishLabs EIR IOC Feed configuration" width="400"/>
+
+For information about PhishLabs, see the [PhishLabs website](https://www.phishlabs.com/).
 
 ## Change Log
 
 * March 14, 2023 - First upload
 * June 26, 2023 (v1.1) - Removed unnecessary empty lines and other little changes
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

@@ -2,6 +2,7 @@
 id: delta
 title: delta Metrics Operator
 sidebar_label: delta
+description: Use the delta metrics operator to compute the backward difference at each data point, determining how much the metric changed from its previous value in the time series.
 ---
 
 
@@ -25,7 +26,7 @@ You can also use the `increasing` or `decreasing` option to make `delta` conside
 
 ### Difference in a metric value from previous point
 
-This query returns a time series that reflects the difference in the `Net_InBytes`  metric for the eth0 interface  between a charted value and the one preceding it.
+This query returns a time series that reflects the difference in the `Net_InBytes`  metric for the `eth0` interface  between a charted value and the one preceding it.
 
 ```sql
 metric=Net_InBytes Interface=eth0 | delta

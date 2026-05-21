@@ -2,6 +2,7 @@
 id: save
 title: save Search Operator
 sidebar_label: save
+description: Use the save operator to save query results to a lookup table for later reference and enrichment. Supports both raw and aggregated results.
 ---
 
 The `save` operator allows you to save the results of a query to a lookup table you have already created, as described in [Create a Lookup Table](/docs/search/lookup-tables/create-lookup-table). You can use the [lookup](/docs/search/search-query-language/search-operators/lookup/) and [cat](/docs/search/search-query-language/search-operators/cat/) operator to access the saved data.
@@ -14,9 +15,7 @@ Either raw or aggregated results can be saved with the `save` operator.
 
 ## Syntax 
 
-```sql
-save [append] path://”<path-to-table>”
-```
+`save [append] path://”<path-to-table>”`
 
 Where: 
 
@@ -43,7 +42,7 @@ To determine the path to a lookup table, highlight the row for the table in the 
 
 This example saves search results data about new user accounts to the lookup table on Sumo Logic.
 
-```sql
+```sumo
 | parse "name=*," as name
 | parse "action=*," as action
 | parse "date=*," as date
@@ -66,7 +65,7 @@ You can use the `append` option to add rows to a lookup table and to update exis
 
 Let's say that you'd like to append your lookup file each day by scheduling this search to run every 24 hours:
 
-```sql
+```sumo
 | parse "name=*," as name
 | parse "action=*," as action
 | parse "date=*," as date
@@ -79,7 +78,7 @@ Each day the query runs and the new and changed rows are written to the table.
 
 You can also append data to a saved file from different queries. For example, say we have two sources, "bill" that includes billing information, and "config" that contains account information, and we'd like to be able to search for some values from each source. These searches would populate a table with information from both sources:
 
-```sql
+```sumo
 _source=bill | parse "user_id=*," as name
 | parse "user_email=*," as email
 | save path://"/Library/Users/myusername@sumologic.com/Users"

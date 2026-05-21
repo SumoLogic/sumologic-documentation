@@ -50,7 +50,7 @@ getsockopt: connection refused"}
 
 ### Sample queries
 
-```sql title="Message Breakdown by Container from the Dashboard Container Logs"
+```sumo title="Message Breakdown by Container from the Dashboard Container Logs"
  cluster = * and namespace = * and pod = * and container = *
 | json field=_raw "log" as message
 | fields - message | count container | top 10 container by _count
@@ -113,7 +113,7 @@ For details on the individual alerts, see [Kubernetes Alerts](/docs/observabilit
 
 1. Download the [JSON file](https://raw.githubusercontent.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/main/monitor_packages/kubernetes/kubernetes.json) describing all the monitors.   
 2. The alerts should be restricted to specific clusters and/or namespaces to prevent the monitors hitting the cardinality limits. To limit the alerts, update the JSON file by replacing the text `$$kubernetes_data_source` with `<Your Custom Filter>`. For example: `cluster=k8s-prod.01`.
-3. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. Kanso-->
+3. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
 4. Click **Add**.
 5. Click **Import** to import monitors from the JSON above.
 
@@ -123,7 +123,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys). There, you'll need to identify which deployment your Sumo Logic account is in ([learn more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)).
+1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). There, you'll need to identify which deployment your Sumo Logic account is in ([learn more](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)).
 1. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 1. Download the Sumo Logic Terraform package for Kubernetes alerts. The alerts package is available in the [Sumo Logic GitHub repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/kubernetes). You can either download it through the `git clone` command or as a zip file.
 1. **Alert Configuration**. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/`.
@@ -176,7 +176,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts).
 :::
 
-## Upgrading the Kubernetes app
+## Upgrade/Downgrade the Kubernetes app
 
 The current version of our app is not backwards compatible with older Helm Chart versions. Follow the below steps to upgrade.
 
@@ -200,7 +200,7 @@ Use this dashboard to:
 * Navigate the cluster topology
 * Review the memory and CPU usage by cluster and service components.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Cluster_Explorer.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Cluster_Explorer.png')} alt="Kubernetes dashboards" />
 
 
 ### Cluster  
@@ -212,7 +212,7 @@ Use this dashboard to:
 * Get insight into the state and resource usage of cluster components and use this information to fine-tune your Kubernetes cluster.  
 * Get quick insights into the state of the related entities.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Cluster.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Cluster.png')} alt="Kubernetes dashboards" />
 
 
 ### Cluster Overview
@@ -221,7 +221,7 @@ The **Kubernetes - Cluster Overview** dashboard provides a high-level view of th
 * Get quick insights into the health of the cluster.
 * View top resource intensive components and use this information to fine tune your cluster.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Cluster_Overview.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Cluster_Overview.png')} alt="Kubernetes dashboards" />
 
 
 ### Node
@@ -233,7 +233,7 @@ Use this dashboard to:
 * Get insight  into how resources are being used across nodes and fine-tune node configurations accordingly.
 * Investigate potential issues with nodes.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Node.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Node.png')} alt="Kubernetes dashboards" />
 
 ### Node Overview   
 
@@ -243,7 +243,7 @@ Use this dashboard to:
 * Get quick insights into the health of the node.  
 * View top resource intensive components and use this information to fine tune your node.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Node_Overview.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Node_Overview.png')} alt="Kubernetes dashboards" />
 
 
 ### Namespace
@@ -255,7 +255,7 @@ Use this dashboard to:
 * Get insight into the components of a namespace and how resources are being used across namespaces and fine-tune configurations accordingly.  
 * Investigate potential issues.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Namespace.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Namespace.png')} alt="Kubernetes dashboards" />
 
 
 ### Pod
@@ -267,7 +267,7 @@ Use this dashboard to:
 * Get insight into the components of a pod and how resources are being used across namespaces and fine-tune configurations accordingly.  
 * Investigate potential issues.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Pod.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Pod.png')} alt="Kubernetes dashboards" />
 
 
 ### Container
@@ -280,7 +280,7 @@ Use this dashboard to:
 * Determine if containers are stuck in CrashLoopBackOff, Terminated or Waiting states and make necessary adjustments.  
 * Investigate containers that are over-utilizing resources.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Container.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Container.png')} alt="Kubernetes dashboards" />
 
 
 ### Daemonsets Overview
@@ -292,7 +292,7 @@ Use this dashboard to:
 * Identify whether the required replica level is achieved or not.  
 * View logs and errors and investigate potential issues.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Daemonsets_Overview.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Daemonsets_Overview.png')} alt="Kubernetes dashboards" />
 
 
 ### StatefulSets Overview  
@@ -304,7 +304,7 @@ Use this dashboard to:
 * Identify whether the required replica level is achieved or not.
 * View logs and errors and investigate potential issues.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_StatefulSets_Overview.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_StatefulSets_Overview.png')} alt="Kubernetes dashboards" />
 
 
 ### Deployment Overview
@@ -316,7 +316,7 @@ Use this dashboard to:
 * Identify whether the required replica level has been achieved or not.  
 * View logs and errors and investigate potential issues.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Deployment_Overview.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Deployment_Overview.png')} alt="Kubernetes dashboards" />
 
 
 ### Collection Health Check
@@ -332,7 +332,7 @@ Use this dashboard to:
 * Get insight into resource utilization and fine-tune configurations accordingly.
 * View logs and errors and investigate potential issues.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/k8s-health.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/k8s-health.png')} alt="Kubernetes dashboards" />
 
 
 ### Deployment  
@@ -345,7 +345,7 @@ Use this dashboard to:
 * Identify whether the required replica level has been achieved or not.  
 * View logs and errors and investigate potential issues.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Deployment.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Deployment.png')} alt="Kubernetes dashboards" />
 
 
 ### Security Overview
@@ -359,7 +359,7 @@ This dashboard provides high level details around anomalous container, applicati
 Use this dashboard to:  
 * Identify and investigate anomalous activity.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Security_Overview.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Security_Overview.png')} alt="Kubernetes dashboards" />
 
 
 ### Security Rules Triggered
@@ -374,7 +374,7 @@ Use this dashboard to:
 * Reviewed detailed information of anomalous activity.
 * Review if the OB Falco security events are triggered and identify the root cause.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Sec_Rules_Triggered.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Sec_Rules_Triggered.png')} alt="Kubernetes dashboards" />
 
 
 ### Service
@@ -386,7 +386,7 @@ Use this dashboard to:
 * Identify components by Services.  
 * Determine any errors and warnings by Services.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Service.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Service.png')} alt="Kubernetes dashboards" />
 
 
 ### Hygiene Check
@@ -397,7 +397,7 @@ The **Kubernetes - Hygiene Check** dashboard provides visibility into the config
 * Assess bad configurations and determine the trouble areas for proactive adjustment.
 * Monitor resource allocation across your cluster to maintain optimum performance.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Hygiene_Check.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Hygiene_Check.png')} alt="Kubernetes dashboards" />
 
 
 ### CoreDNS
@@ -411,7 +411,7 @@ Use this dashboard to:
 * Review Cache statistics.  
 * Monitor CoreDNSs resource usage and spikes.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CoreDNS.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CoreDNS.png')} alt="Kubernetes dashboards" />
 
 
 ### HPA
@@ -424,4 +424,4 @@ Use this dashboard to:
 * Identify whether the required replica level has been achieved or not.
 * View logs and errors and investigate potential issues.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_HPA.png')} alt="K8s dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_HPA.png')} alt="Kubernetes dashboards" />

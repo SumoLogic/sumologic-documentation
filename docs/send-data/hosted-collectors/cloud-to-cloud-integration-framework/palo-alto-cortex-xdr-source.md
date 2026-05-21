@@ -7,16 +7,12 @@ tags:
 description: The Cortex Cloud-to-Cloud Source Integration allows you to ingest alerts and incidents from your Cortex XDR application.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/palo-alto-cortex-xdr/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/palo-alto-cortex-xdr/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/palo-alto-cortex-xdr/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="Palo Alto icon" width="100"/>
 
-The Palo Alto Cortex XDR Source provides a secure endpoint to receive alerts from the [Get Alerts Incident Management API](https://docs.paloaltonetworks.com/cortex/cortex-xdr/cortex-xdr-api/cortex-xdr-apis/incident-management/get-alerts.html#idbad18e18-5c). It securely stores the required authentication, scheduling, and state tracking information.
+The Palo Alto Cortex XDR Source provides a secure endpoint to receive alerts from the [Get Alerts Incident Management API](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Cortex-XDR-API-Overview). It securely stores the required authentication, scheduling, and state tracking information.
 
 By using the Cortex XDR Source Integration, you can easily access and analyze data from multiple sources, enabling you to quickly identify and respond to potential threats. This Source offers you with a centralized view of security events, allowing you to correlate data from various sources and gain deeper insights into security incidents.
 
@@ -39,27 +35,27 @@ In this configuration, you will set up a Cortex XDR source account and configure
 
 To authenticate to the Cortex XDR APIs, follow the steps below:
 1. Access the [Cortex XDR application](https://sumologic-partner.xdr.us.paloaltonetworks.com/).
-1. Enter your login credentials, including your email ID and password, to log in. You will be directed to the application dashboard. <br/> <img src={useBaseUrl('img/send-data/palo-login.png')} alt="login-palo-login.png" width="600" />
-1. On the left-hand panel of the dashboard, locate the **Settings** option and click on it. Then select **Configurations**.<br/> <img src={useBaseUrl('img/send-data/cortex-settings-configuration.png')} alt="cortex-settings-configuration.png" width="600" />
-1. In the **Configurations** panel, navigate to the **Integrations** option and select **API keys**.<br/> <img src={useBaseUrl('img/send-data/cortex-select-api-key.png')} alt="cortex-select-api-key.png" width="600" />
-1. Click <img src={useBaseUrl('img/send-data/cortex-new-key-button.png')} alt="cortex-new-key-button.png" width="100" /> button to add a new API key.
-1. You will be directed to a page to generate the key. Fill in the required information, then click **Save**.<img src={useBaseUrl('img/send-data/generate-api-key.png')} alt="generate-api-key.png" width="400" />
+1. Enter your login credentials, including your email ID and password, to log in. You will be directed to the application dashboard. <br/> <img src={useBaseUrl('img/send-data/palo-login.png')} alt="Palo Alto login" width="600" />
+1. On the left-hand panel of the dashboard, locate the **Settings** option and click on it. Then select **Configurations**.<br/> <img src={useBaseUrl('img/send-data/cortex-settings-configuration.png')} alt="Cortex settings configuration" width="600" />
+1. In the **Configurations** panel, navigate to the **Integrations** option and select **API keys**.<br/> <img src={useBaseUrl('img/send-data/cortex-select-api-key.png')} alt="Cortex select API key" width="600" />
+1. Click <img src={useBaseUrl('img/send-data/cortex-new-key-button.png')} alt="Cortex new key button" width="100" /> button to add a new API key.
+1. You will be directed to a page to generate the key. Fill in the required information, then click **Save**.<img src={useBaseUrl('img/send-data/generate-api-key.png')} alt="Generate API key" width="400" />
     :::important
     Make sure to assign the API key the **Standard** security level.
     :::
-1. Copy <img src={useBaseUrl('img/send-data/copy-button.png')} alt="copy-button.png" width="30" /> the generated API key and save it to your personal folder for later use when creating the Cortex XDR source. <br/> <img src={useBaseUrl('img/send-data/cortex-api-key-generated.png')} alt="cortex-api-key-generated.png" width="400" />
+1. Copy <img src={useBaseUrl('img/send-data/copy-button.png')} alt="Copy button" width="30" /> the generated API key and save it to your personal folder for later use when creating the Cortex XDR source. <br/> <img src={useBaseUrl('img/send-data/cortex-api-key-generated.png')} alt="Cortex API key generated" width="400" />
 1. Click **Close** to exit the API keys configuration panel.
 
 #### Getting Cortex XDR API ID
 
 1. Once you have obtained the API key, you can retrieve the associated API ID.
-1. To do so, navigate to the API keys page, where you can view all of the created APIs. Your API ID can be found next to the API key you generated. <br/> <img src={useBaseUrl('img/send-data/cortex-api-id.png')} alt="cortex-api-id.png" width="900" />
+1. To do so, navigate to the API keys page, where you can view all of the created APIs. Your API ID can be found next to the API key you generated. <br/> <img src={useBaseUrl('img/send-data/cortex-api-id.png')} alt="Cortex API ID" width="900" />
 
 #### Getting Cortex XDR FQDN
 
 1. Once you have obtained the API key and ID, the next step is to retrieve your FQDN.
-1. Navigate to the API Keys page where you can view all the APIs you have created. Right-click on the API ID you have generated and select **View Examples** from the options that appear. From the API keys page, you can see all the APIs created. Right click on the API ID you have generated, click **View Examples** from the options that appear. <br/> <img src={useBaseUrl('img/send-data/cortex-fqdn.png')} alt="cortex-fqdn.png" width="500" />
-1. The API Example window will appear, and your FQDN can be found in the Curl example that starts from `sumologic-partner.xdr.us.paloaltonetworks.com`<br/> <img src={useBaseUrl('img/send-data/fqdn-name.png')} alt="fqdn-name.png" width="900" />
+1. Navigate to the API Keys page where you can view all the APIs you have created. Right-click on the API ID you have generated and select **View Examples** from the options that appear. From the API keys page, you can see all the APIs created. Right click on the API ID you have generated, click **View Examples** from the options that appear. <br/> <img src={useBaseUrl('img/send-data/cortex-fqdn.png')} alt="Cortex FQDN" width="500" />
+1. The API Example window will appear, and your FQDN can be found in the Curl example that starts from `sumologic-partner.xdr.us.paloaltonetworks.com`<br/> <img src={useBaseUrl('img/send-data/fqdn-name.png')} alt="FQDN name" width="900" />
 
 :::note
 To learn more about the Cordex XDR APIs, refer to the [Get Started with Cortex XDR APIs](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-API-Reference/Get-Started-with-APIs) section.
@@ -71,15 +67,15 @@ When you create a Palo Alto Cortex XDR Source, you add it to a Hosted Collector
 
 To configure a Palo Alto Cortex XDR Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Palo Alto Cortex XDR**.
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **API Key**. Enter the API Key that you generated and secured in step 7 of the [API Key](#getting-cortex-xdr-api-key) section.
 1. **API ID**. Enter the API ID that you generated and secured in step 2 of the [API ID](#getting-cortex-xdr-api-id) section.
 1. **Tenant FQDN**. Enter the FQDN that you obtained when you generated the API Key and API ID, as explained in the [FQDN](#getting-cortex-xdr-fqdn) section. The FQDN is a unique host and domain name associated with each tenant.
@@ -90,7 +86,8 @@ To configure a Palo Alto Cortex XDR Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::note
-To ensure accurate and effective display of all alerts, we recommend enabling duplicate alerts for each alert host IP. This prevents any host IP array flattening.
+- To ensure accurate and effective display of all alerts, we recommend enabling duplicate alerts for each alert host IP. This prevents any host IP array flattening.
+- After configuring the Palo Alto Cortex XDR source, consider installing the Sumo Logic app for [Palo Alto Cortex XDR](/docs/integrations/saas-cloud/palo-alto-cortex-xdr/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields
@@ -132,15 +129,15 @@ The following table shows the **config** parameters for a Palo Alto Cortex XDR�
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/palo-alto-cortex-xdr/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/palo-alto-cortex-xdr/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/palo-alto-cortex-xdr/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/palo-alto-cortex-xdr/example.tf
+```
 
 ## FAQ
 

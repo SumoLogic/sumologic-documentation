@@ -42,7 +42,7 @@ After successful installation of the packages, it is important to properly confi
   ```bash
   OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_ENDPOINT:4318
   ```
-  This should be the OpenTelemetry Collector/Agent endpoint address or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). For Kubernetes environments, see the [available endpoints for a direct connection](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md). For other environments, see [endpoints and protocols](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md).
+  This should be the OpenTelemetry Collector/Agent endpoint address or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). For Kubernetes environments, see the [available endpoints for a direct connection](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md). For other environments, see [endpoints and protocols](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md).
 * Configures the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
   ```bash
   OTEL_SERVICE_NAME=SERVICE_NAME
@@ -84,7 +84,7 @@ Remember to provide configuration using environment variables:
   * [Set up traces collection for Kubernetes environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md)
   * [Set up traces collection for other environments usage](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md)
 * `OTEL_SERVICE_NAME`. A logical service name that represents its business logic.
-* `OTEL_RESOURCE_ATTRIBUTES`. Set "application" name attribute which should represent its business logic and extra attributes attached to all spans. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels).
+* `OTEL_RESOURCE_ATTRIBUTES`. Set "application" name attribute which should represent its business logic and extra attributes attached to all spans. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. For more information, see [Add services panel to dashboard](/docs/apm/services-list-map/#add-services-panel-to-dashboard).
 
 **Example:**
 

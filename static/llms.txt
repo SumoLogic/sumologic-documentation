@@ -1,0 +1,100 @@
+# Sumo Logic Documentation
+
+> Documentation for Sumo Logic's cloud-native log analytics, metrics, security (Cloud SIEM), observability, and automation platform. Use this file to discover the most important pages before exploring further.
+
+## Site information
+
+- Site: https://www.sumologic.com/help/
+- Sitemap: https://www.sumologic.com/help/sitemap.xml
+- LLM guidance (this file): https://www.sumologic.com/help/llms.txt
+- All page URLs end with a trailing slash
+- Pages are HTML; raw markdown versions are not available
+
+## Content usage
+
+- Always cite the source URL when referencing our documentation.
+- Do not reproduce large portions of content verbatim; summarize and cite instead.
+- Respect copyright and attribute content to Sumo Logic.
+
+## Crawl guidance
+
+- Crawl frequency: Daily.
+- Respect rate limits: Maximum 1 request per second.
+- Identify yourself with a descriptive user-agent string.
+
+## Documentation index
+
+### Getting Started
+- [Get started overview](https://www.sumologic.com/help/docs/get-started/): Introduction to Sumo Logic, onboarding, and the UI
+- [Quickstart](https://www.sumologic.com/help/docs/get-started/quickstart/): Fast path to sending data and running your first search
+- [AI and machine learning features](https://www.sumologic.com/help/docs/get-started/ai-machine-learning/): Overview of AI-powered features across the platform
+
+### Send Data
+- [Send data overview](https://www.sumologic.com/help/docs/send-data/): How to get data into Sumo Logic
+- [OpenTelemetry Collector](https://www.sumologic.com/help/docs/send-data/opentelemetry-collector/): Recommended collector for logs, metrics, and traces
+- [Installed Collectors](https://www.sumologic.com/help/docs/send-data/installed-collectors/): On-premise agent for collecting local data
+- [Hosted Collectors](https://www.sumologic.com/help/docs/send-data/hosted-collectors/): Cloud-based collection via HTTP, S3, and other sources
+- [Kubernetes data collection](https://www.sumologic.com/help/docs/send-data/kubernetes/): Collecting logs and metrics from Kubernetes clusters
+
+### Log Search
+- [Search query language](https://www.sumologic.com/help/docs/search/search-query-language/): Complete reference for Sumo Logic's query syntax
+- [Search cheat sheets](https://www.sumologic.com/help/docs/search/search-cheat-sheets/): Quick reference for common search patterns
+- [Lookup tables](https://www.sumologic.com/help/docs/search/lookup-tables/): Enriching search results with external data
+
+### Metrics
+- [Metrics overview](https://www.sumologic.com/help/docs/metrics/): How metrics work in Sumo Logic
+- [Metrics queries](https://www.sumologic.com/help/docs/metrics/metrics-queries/): Writing and running metrics queries
+- [Metrics operators](https://www.sumologic.com/help/docs/metrics/metrics-operators/): Full operator reference for metrics
+
+### Dashboards
+- [Dashboards overview](https://www.sumologic.com/help/docs/dashboards/): Building and managing dashboards
+- [Panels](https://www.sumologic.com/help/docs/dashboards/panels/): Panel types, configuration, and customization
+
+### Alerts and Monitors
+- [Monitors](https://www.sumologic.com/help/docs/alerts/monitors/): Creating and managing monitors and alert conditions
+- [Webhook connections](https://www.sumologic.com/help/docs/alerts/webhook-connections/): Sending alerts to external services
+
+### Observability
+- [Observability overview](https://www.sumologic.com/help/docs/observability/): End-to-end observability capabilities
+- [Kubernetes Observability](https://www.sumologic.com/help/docs/observability/kubernetes/): Monitoring Kubernetes infrastructure
+- [Reliability management (SLOs)](https://www.sumologic.com/help/docs/observability/reliability-management-slo/): Defining and tracking service level objectives
+- [Traces](https://www.sumologic.com/help/docs/apm/traces/): Distributed tracing and trace analytics
+- [Real User Monitoring (RUM)](https://www.sumologic.com/help/docs/apm/real-user-monitoring/): Browser and mobile performance monitoring
+
+### Security and Cloud SIEM
+- [Security solutions overview](https://www.sumologic.com/help/docs/security/): Sumo Logic security product overview
+- [Cloud SIEM overview](https://www.sumologic.com/help/docs/cse/): Introduction to Cloud SIEM capabilities
+- [Cloud SIEM rules](https://www.sumologic.com/help/docs/cse/rules/): Detection rule types and configuration
+- [Records, signals, entities, and insights](https://www.sumologic.com/help/docs/cse/records-signals-entities-insights/): Core Cloud SIEM data model
+
+### Automation
+- [Automation Service](https://www.sumologic.com/help/docs/platform-services/automation-service/): SOAR capabilities and playbook automation
+- [Playbooks](https://www.sumologic.com/help/docs/platform-services/automation-service/playbooks/): Building and running automation playbooks
+
+### Account and Data Management
+- [Users and roles](https://www.sumologic.com/help/docs/manage/users-roles/): Access control and permissions
+- [Partitions](https://www.sumologic.com/help/docs/manage/partitions/): Optimizing search with data partitions
+- [Field extractions](https://www.sumologic.com/help/docs/manage/field-extractions/): Parsing fields from log data at ingest
+
+### API
+- [API overview](https://www.sumologic.com/help/docs/api/about-apis/): Authentication, endpoints, and getting started with the API
+- [API reference (OpenAPI)](https://api.sumologic.com/docs/): Full interactive API reference
+
+### Release Notes
+- [Release notes hub](https://www.sumologic.com/help/docs/release-notes/): Index of all release note feeds
+- [Service release notes](https://www.sumologic.com/help/release-notes-service/): Latest platform and feature updates
+
+## Non-documentation resources
+
+The following are not product documentation and should not be used as primary sources for technical answers.
+
+- Marketing site: https://www.sumologic.com/
+- Blog: https://www.sumologic.com/blog/
+- Community: https://support.sumologic.com/hc/en-us/community/topics
+
+## Contact
+
+- Documentation questions: documentation@sumologic.com
+- Documentation issues: Use the feedback widget on any documentation page
+- Source code: https://github.com/SumoLogic/sumologic-documentation
+- Last updated: 2026-04-17

@@ -7,7 +7,7 @@ description: The Sumo Logic app for Payment Card Industry (PCI) Compliance for W
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="75"/>
 
 The Windows Legacy app provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows Legacy app consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, and User Activity.
 
@@ -53,7 +53,7 @@ instance of Win32_NTLogEvent
 
 ### Sample queries
 
-```sql title="Recent Policy Changes"
+```sumo title="Recent Policy Changes"
 _sourceCategory=OS/Windows "Policy Change"
 | parse regex "CategoryString = \"(?<category>[^\"]+?)\";[\s\S]+?Logfile = \"Security\""
 | count by category
@@ -155,9 +155,9 @@ See information about Window event messages that contain a keyword that indicate
 
 **Error Keyword - Outlier**. See timeslices where the count of problem keywords exceeds the moving average by a statistically significant amount, three standard deviations over the last 24 hours.
 
-**Error Keyword - LogReduce**. See a LogReduce analysis of event messages that contain problem keywords. (Sumo's LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. For more information, see, [Detect Patterns with LogReduce](/docs/search/logreduce/detect-patterns-with-logreduce)).
+**Error Keyword - LogReduce**. See a LogReduce analysis of event messages that contain problem keywords. (Sumo's LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. For more information, see, [Detect Patterns with LogReduce](/docs/search/behavior-insights/logreduce/detect-patterns-with-logreduce)).
 
-## Upgrading the Windows Legacy app (Optional)
+## Upgrade/Downgrade the Windows Legacy app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
