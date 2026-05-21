@@ -1,4 +1,4 @@
-resource "sumologic_cloud_to_cloud_source" "anthropic-compliance-source" {
+resource "sumologic_cloud_to_cloud_source" "claude-compliance-source" {
   collector_id = sumologic_collector.collector.id
 
   schema_ref = {
