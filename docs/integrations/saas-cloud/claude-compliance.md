@@ -135,12 +135,12 @@ _sourceCategory="{{Logsdatasource}}" "claude_chat_msg"
 
 ## Collection configuration
 
-This app uses the [Universal Connector](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source) to collect **activity logs** from the Anthropic Compliance API and Sumo Logic's [Claude Compliance Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) to collect chat messages logs from the Claude Compliance Messages API.
+This app uses the [Universal Connector](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source) to collect **activity logs** from the Claude Compliance API and Sumo Logic's [Claude Compliance Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) to collect chat messages logs from the Claude Compliance Messages API.
 
 
 ### Vendor configuration
 
-To collect logs, you need an Anthropic API key with access to the Compliance API. Use one of the following options to create the API key:
+To collect logs, you need a Claude API key with access to the Compliance API. Use one of the following options to create the API key:
 
 :::note
 Admin keys created through Console are limited to the Activity Feed and cannot access chat messages.
@@ -174,14 +174,14 @@ If you do not see the Compliance access keys section, it means that either you a
 1. Configure the **General** settings:
    - **Name**. Enter a name for the source.
    - **Description**. (Optional) Enter a description.
-   - **Source Category**. Enter a value such as `claude_compliance/activities`. This value is stored in the `_sourceCategory` metadata field and must match the source category used when installing the app.
+   - **Source Category**. Enter a value such as `claude_compliance`. This value is stored in the `_sourceCategory` metadata field and must match the source category used when installing the app.
    - **Fields**. (Optional) Click **+Add** to define any additional fields to associate with the source.
    <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-source-configuration.png')} alt="Universal Connector - General settings" width="400" />
 1. Configure the **Authentication Configuration**:
    - **Authentication Type**. Select **API Key**.
    - **How should we use your API key?** Select **In HTTP Request Header**.
    - **Location Key**. Enter `x-api-key`.
-   - **API Key**. Enter the Anthropic API key you copied above.
+   - **API Key**. Enter the Claude API key you copied above.
    <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-authentication-configuration.png')} alt="Universal Connector - Authentication Configuration" width="400" />
 1. Configure the **Request Configuration**:
    - **HTTP Method**. Select `GET`
@@ -224,7 +224,7 @@ If you do not see the Compliance access keys section, it means that either you a
 1. Click **Save**.
 
 :::note
-Once the source is configured, you can verify successful log collection by running searches on the Search page in Sumo Logic using the source category. For example, `_sourceCategory=claude_compliance/activities`.
+Once the source is configured, you can verify successful log collection by running searches on the Search page in Sumo Logic using the source category. For example, `_sourceCategory=claude_compliance`.
 :::
 
 #### Claude Compliance C2C Source (for Chat Messages)
@@ -254,7 +254,7 @@ Next-Gen App: To install or update the app, you must be an account administrator
 
 Once your app is installed, it will appear in your **Installed Apps** folder, and dashboard panels will begin filling automatically.
 
-Each panel slowly fills with data that match the time-range query received since the panel was created. Results will not immediately be available, but will be updated with full graphs and charts over time.
+Each panel slowly fills with data that matches the time-range query received since the panel was created. Results will not immediately be available, but will be updated with full graphs and charts over time.
 
 ## Viewing the Claude Compliance dashboards​​
 
@@ -313,13 +313,13 @@ The **Claude Compliance - Claude Skills and Plugins Monitoring** dashboard provi
 The **Claude Compliance - Claude Usage Monitoring** dashboard delivers comprehensive visibility into Claude platform usage, covering chat events, chat snapshots, Claude Code activity, and Claude Command executions. It tracks usage trends, top active users, unique interaction counts, failed chats, and model usage distribution to support both operational monitoring and compliance oversight. Dedicated sections for Claude Code provide insight into trigger modes, top repositories, and event statuses across development workflows. **Use this dashboard to:**
 - Enforce acceptable use policies.
 - Detect excessive or anomalous usage.
-- Maintain a complete audit trail of Claude interactions.
+- Maintain a complete audit trail of Claude's interactions.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Claude-Usage-Monitoring.png')} alt="Claude Compliance - Claude Usage Monitoring dashboard" width="800" />
 
 ### Compliance API Access Monitoring
 
-The **Claude Compliance - Compliance API Access Monitoring** dashboard monitors access to Anthropic's Compliance API, providing visibility into request trends by user agent, HTTP status code distributions, and geographic origin of API calls. It highlights non-2xx error trends, top actor IP addresses, and accessed API endpoint types to help teams detect misuse or unauthorized access attempts. Embargoed geo-location filtering surfaces API access from restricted regions for immediate review. **Use this dashboard to:**
+The **Claude Compliance - Compliance API Access Monitoring** dashboard monitors access to Claude's Compliance API, providing visibility into request trends by user agent, HTTP status code distributions, and geographic origin of API calls. It highlights non-2xx error trends, top actor IP addresses, and the types of API endpoints accessed to help teams detect misuse or unauthorized access attempts. It provides geo-location filtering and surfaced API access from restricted regions for immediate review. **Use this dashboard to:**
 - Ensure Compliance API access is limited to authorized actors.
 - Investigate anomalous or error-prone API usage patterns.
 
@@ -327,7 +327,7 @@ The **Claude Compliance - Compliance API Access Monitoring** dashboard monitors 
 
 ### Data Access and Exfiltration Monitoring
 
-The **Claude Compliance - Data Access and Exfiltration Monitoring** dashboard provides deep visibility into file, document, and data export activities across the Claude platform to help detect potential data exfiltration or unauthorized access. It tracks file access events, reconnaissance behavior, Claude artifact sharing, and platform-level file activities alongside group and project views. Frequently uploaded and most-viewed file analysis helps identify unusual data movement patterns. **Use this dashboard to:**
+The **Claude Compliance - Data Access and Exfiltration Monitoring** dashboard provides deep visibility into file, document, and data export activities across the Claude platform helping detect potential data exfiltration or unauthorized access. It tracks file access events, reconnaissance behavior, Claude artifact sharing, and platform-level file activities alongside group and project views. Frequently uploaded and most-viewed file analysis helps identify unusual data movement patterns. **Use this dashboard to:**
 - Monitor data governance compliance.
 - Investigate suspicious exfiltration indicators.
 - Maintain oversight of sensitive content access and sharing.
@@ -410,6 +410,10 @@ The **Claude Compliance – Chats** dashboard provides comprehensive oversight o
 Panels with sensitive conversation data require applying the "message" filter with a specified text value to view detailed results, ensuring controlled access to potentially sensitive information.
 :::
 
+:::note
+This dashboard is powered by Sumo Logic [Claude Compliance Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/).
+:::
+
 <img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Chats.png')} alt="Claude Compliance - Chats dashboard" width="800" />
 
 ## Create monitors for Claude Compliance app
@@ -423,11 +427,11 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | Name | Description | Trigger Type | Alert Condition |
 |:--|:--|:--|:--|
 | `Claude Compliance - Admin or Platform API Key Created` | Detects when an Admin API key or Platform API key is created within the organization. Adversaries or malicious insiders may create API keys to establish persistent, programmatic access to organizational resources. Any key creation event should be reviewed to verify that it was authorized and expected. | Critical | Count > 0 |
-| `Claude Compliance - Anthropic Compliance API Logging Disabled` | Detects when Compliance API logging is disabled for an organization. Disabling audit logging is a common defense evasion technique — attackers may disable it to reduce visibility into their activities. Any disabling of compliance API logging should be treated as high priority and investigated immediately. | Critical | Count > 0 |
+| `Claude Compliance - Anthropic Compliance API Logging Disabled` | Detects when Compliance API logging is disabled for an organization. Disabling audit logging is a common defense evasion technique — attackers may disable it to reduce visibility into their activities. Any disabling of compliance API logging should be treated as a high priority and investigated immediately. | Critical | Count > 0 |
 | `Claude Compliance - Anthropic Organization IP Restriction Deleted` | Detects when an IP restriction policy is deleted from an organization. IP allowlisting is a critical access control. Removing IP restrictions may allow an attacker to access Claude resources from previously blocked networks, significantly expanding the attack surface. | Critical | Count > 0 |
 | `Claude Compliance - Compliance Activity From Embargoed Location` | Detects compliance-related activities originating from embargoed or geographically restricted locations. Alerts are triggered when compliance actions are performed from regions that are prohibited under regulatory or organizational guidelines. | Critical | Count > 0 |
 | `Claude Compliance - Excessive Failed Authentication User Activities Detected` | Detects an abnormal number of failed authentication attempts across multiple authentication mechanisms, including SSO failures and magic link login failures within the Claude platform. Alerts are triggered when failed authentication attempts exceed the threshold within a specific time window, potentially indicating brute force attacks, credential stuffing, or account takeover attempts. | Critical | Count > 5 |
-| `Claude Compliance - Excessive Unauthorized Access Attempts on Compliance API` | Detects repeated unauthorized and forbidden access attempts on the Anthropic Compliance API within a short time window. Alerts are triggered when multiple 401 Unauthorized or 403 Forbidden responses are observed from the same user or IP address, indicating potential credential abuse, brute force attempts, or unauthorized API access activity. | Critical | Count > 5 |
+| `Claude Compliance - Excessive Unauthorized Access Attempts on Compliance API` | Detects repeated unauthorized and forbidden access attempts on the Claude Compliance API within a short time window. Alerts are triggered when multiple 401 Unauthorized or 403 Forbidden responses are observed from the same user or IP address, indicating potential credential abuse, brute force attempts, or unauthorized API access activity. | Critical | Count > 5 |
 | `Claude Compliance - Org Deletion & Destructive Activity` | Detects any destructive actions, including organization deletions, bulk deletes, user removals, and taint additions within the Claude platform. Alerts are triggered when irreversible deletion or destructive events are performed, indicating potential unauthorized data destruction or malicious insider activity requiring immediate investigation. | Critical | Count > 0 |
 | `Claude Compliance - Outlier in Claude Resource Deletions from User` | Detects unusual spikes in resource deletion activity performed by a single user within the Claude platform. Alerts are triggered when a user's deletion activity significantly deviates from their historical baseline, indicating potential insider threat, compromised account, or unauthorized mass deletion of critical resources. | Critical | Count > 1 |
 | `Claude Compliance - Unauthenticated User Activity Detected` | Detects suspicious activities or access attempts made by unauthenticated users within the Claude platform. Alerts are triggered when restricted resources are accessed without valid authentication or when unusual patterns are identified in unauthenticated traffic. | Critical | Count > 0 |
