@@ -2,6 +2,7 @@
 id: timeslice
 title: timeslice Search Operator
 sidebar_label: timeslice
+description: Use the timeslice operator to aggregate data by time period, creating bucketed results based on fixed intervals like five-minute buckets or a fixed-target number of buckets.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
