@@ -168,7 +168,9 @@ If you do not see the Compliance access keys section, it means that either you a
 :::
 
 ### Source configuration
+
 #### Universal Connector (for Activity Logs)
+
 1. On the Data Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Universal Connector**.
 1. Configure the **General** settings:
