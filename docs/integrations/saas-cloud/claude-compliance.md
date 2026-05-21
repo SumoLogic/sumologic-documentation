@@ -231,6 +231,10 @@ Once the source is configured, you can verify successful log collection by runni
 
 To collect Claude chat messages logs, configure a dedicated Claude Compliance Cloud-to-Cloud source. For detailed step-by-step instructions, see the [Source configuration section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/#source-configuration) in the Claude Compliance Source documentation.
 
+:::info
+The existing [Claude Compliance Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) documentation is used to collect Claude chat messages logs.
+:::
+
 ## Installing the Claude Compliance app
 
 This section shows you how to install the Sumo Logic app for Claude Compliance.
