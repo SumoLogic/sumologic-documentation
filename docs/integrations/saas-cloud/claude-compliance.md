@@ -177,7 +177,7 @@ If you do not see the Compliance access keys section, it means that either you a
    - **Name**. Enter a name for the source.
    - **Description**. (Optional) Enter a description.
    - **Source Category**. Enter a value such as `claude_compliance`. This value is stored in the `_sourceCategory` metadata field and must match the source category used when installing the app.
-   - **Parser Path**. This is optional. The value needs to be `/Parsers/System/Anthropic/Claude Activity Logs`
+   - **Parser Path**. (Optional) Set the value to `/Parsers/System/Anthropic/Claude Activity Logs`.
    - **Fields**. (Optional) Click **+Add** to define any additional fields to associate with the source.
         <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-source-configuration.png')} alt="Universal Connector - General settings" width="400" style={{border: '1px solid gray'}} />
 1. Configure the **Authentication Configuration**:
