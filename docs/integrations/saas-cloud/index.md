@@ -143,6 +143,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/claude-compliance')}><img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance.png')} alt="Claude Compliance icon" width="90"/><h4>Claude Compliance</h4></a>
+  <p>Monitor Claude platform activities, security events, and compliance governance.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/cloudflare')}><img src={useBaseUrl('img/integrations/saas-cloud/cloudflare.png')} alt="Cloudflare icon" width="40"/><h4>Cloudflare</h4></a>
   <p>Analyze logs, events, and trends from your websites and apps on the Cloudflare network.</p>
   </div>
