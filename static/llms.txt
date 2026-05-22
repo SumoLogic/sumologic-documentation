@@ -6,7 +6,7 @@
 
 - **Multi-tenant SaaS:** no infrastructure to deploy, patch, or manage
 - **Unified platform:** logs, metrics, traces, and Cloud SIEM in a single product — no stitching together separate tools
-- **Cloud SIEM with automated threat detection:** raw logs are normalised into records, correlated into signals, and surfaced as insights without manual triage
+- **Cloud SIEM with automated threat detection:** raw logs are normalized into records, correlated into signals, and surfaced as insights without manual triage
 - **Native OpenTelemetry support:** ingest OTel-formatted logs, metrics, and traces directly via the OpenTelemetry Collector
 - **Built-in SOAR:** the Automation Service provides playbook-driven response without a separate SOAR product
 - **Petabyte-scale ingest:** designed for high-volume, multi-cloud environments with no capacity planning required
