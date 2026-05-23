@@ -113,14 +113,15 @@ To generate dashboards based on the context of your investigation, simply ask Mo
 
 Click the provided link to view the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard.png')} alt="Dashboard generated for insight investigation" style={{border: '1px solid gray'}} width="700" />
 
-## Add comments to an insight
+## Add a comment to an insight
 
-You can add comments to an insight directly from the insight details page without leaving your investigation. Comments are visible to other analysts and can be used to document findings, note investigation status, or flag items for follow-up.
+You can ask Mobot to add a comment to the current insight. In the **Ask Something...** field, enter a prompt such as `Add a comment that I found a suspicious IP address` and press **Enter**. Mobot posts the comment to the insight's comment section.<br/><img src={useBaseUrl('img/cse/soc-analyst-comments-panel.png')} alt="Adding a comment to an insight via Mobot" style={{border: '1px solid gray'}} width="800" />
 
-1. From the insight's details page, click **Comments** to open the comments panel.<br/><img src={useBaseUrl('img/cse/soc-analyst-comments-panel.png')} alt="Comments panel on insight details page" style={{border: '1px solid gray'}} width="800" />
-1. Enter your comment in the **Add a comment...** field and save.
+Comments are visible to all analysts with access to the insight and can be used to document findings, note investigation status, or flag items for follow-up.
 
-You can also ask [Mobot](#investigate-the-insight-in-mobot) to add a comment on your behalf during an investigation. For example, ask "Add a comment to this insight noting the investigation is in progress." Mobot will draft and post the comment based on the current investigation context.
+## Close an insight
+
+You can also ask Mobot to close the current insight. In the **Ask Something...** field, enter a prompt such as `Close this insight` or `Mark this insight as resolved` and press **Enter**. Mobot closes the insight directly from the investigation area.
 
 ## FAQs
 
