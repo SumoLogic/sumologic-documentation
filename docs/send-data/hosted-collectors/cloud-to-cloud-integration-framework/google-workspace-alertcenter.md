@@ -15,6 +15,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about the Google Workspace AlertCenter Cloud-to-Cloud Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
+:::note
+Upgrade the Google Workspace AlertCenter source to the latest version 2.0.13 for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
