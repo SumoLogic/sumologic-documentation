@@ -24,16 +24,25 @@ Data Masking provides a centralized place to manage and review data masking rule
 
 ## How does data masking work?
 
-Data masking rules are applied at the ingest time, meaning sensitive data is intercepted and replaced as logs flow into Sumo Logic, before the data is stored or indexed. Once a rule is active, any portion of an incoming log message that matches the rule's **Regex Locator** pattern is automatically substituted with the configured or default **Mask String**.
+:::tip
+To mask data at ingest time before it is stored, use [Mask Rules](/docs/send-data/collection/processing-rules/mask-rules/) in Processing Rules.
+:::
 
-For example, consider a log line that contains an IP address. You can [create a data masking rule](#how-to-create-a-data-masking-rule) with a regex pattern that targets IP address, so that every occurrence is replaced with a mask string of your choice.
+Data masking rules are applied at **query processing time**. Logs are stored in their original form, and masking is applied dynamically when you run a query. What you see depends on your assigned role:
+
+- If you do **not** have the `View Unmasked Data` [role capability](/docs/manage/users-roles/roles/role-capabilities/), you see log data with all matching values replaced by the configured **Mask String**.
+- If you have the `View Unmasked Data` capability, you can view log data in its original, unmasked form.
+
+Once a rule is active, any portion of a log message that matches the rule's **Regex Locator** pattern is substituted with the configured or default **Mask String** if you do not have the `View Unmasked Data` capability.
+
+For example, consider a log line that contains an IP address. You can [create a data masking rule](#how-to-create-a-data-masking-rule) with a regex pattern that targets IP addresses, so that every occurrence is replaced with a mask string of your choice.
 
 **Before masking.** The IP address displayed in plain text:<br/><img src={useBaseUrl('img/manage/data-masking-rule/data-before-masking.png')} alt="Data Before Masking" style={{border: '1px solid gray'}} width="800"/>
 
 **After masking.** The IP address is replaced with the configured mask string:<br/><img src={useBaseUrl('img/manage/data-masking-rule/data-after-masking.png')} alt="Data After Masking" style={{border: '1px solid gray'}} width="800"/>
 
 :::note
-Masking is strictly based on user-defined regex rules and happens as the **last step** after all query processing. This means string manipulations in queries can potentially bypass regex-based masking.
+Data masking rule is applied as the **last step** of query processing. This means that any string manipulations earlier in a query execute before masking runs, which may expose sensitive values within the query pipeline.
 :::
 
 ## How to create a data masking rule?
@@ -105,7 +114,7 @@ Data Masking is a centralized feature that lets you create and manage rules to a
 
 ### What role capability is needed to manage data masking rules?
 
-You need the `Manage Data Masking Rules` role capability to create, edit, or disable rules. Users with the `View Unmasked Data` capability can view log data in its original, unmasked form.
+You need the `Manage Data Masking Rules` role capability to create, edit, or disable rules. If you have the `View Unmasked Data` capability, you can view log data in its original, unmasked form.
 
 ### What should be entered as the Mask String?
 
