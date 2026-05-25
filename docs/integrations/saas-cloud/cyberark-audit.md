@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic app for CyberArk Audit is a robust tool that provides insights into your organization's cybersecurity practices. It helps IT and security teams monitor, analyze, and visualize audit trails of user activities, security events, and anomalies. By tracking data on security events, identity management, component usage, and administrative actions, the app delivers actionable intelligence to identify and mitigate security risks, ensuring compliance with regulations and internal policies. Customizable dashboards and detailed reporting enhance its ability to strengthen security.
 
 :::info
-This app includes [built-in monitors](#cyberark-audit-monitors). For details on creating custom monitors, refer to [Create monitors for CyberArk Audit app](#create-monitors-for-cyberark-audit-app).
+This app includes [built-in monitors](#cyberark-audit-app-alerts). For details on creating custom monitors, refer to [Create monitors for CyberArk Audit app](#create-monitors-for-cyberark-audit-app).
 :::
 
 ## Log types
@@ -113,7 +113,7 @@ import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
 <AppCollectionOPtion3/>
 
-## Viewing the CyberArk Audit dashboards​​
+## Viewing the CyberArk Audit dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
@@ -121,15 +121,33 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **CyberArk Audit - Overview** dashboard provides a comprehensive view of audit data, helping teams assess cybersecurity events in your organization. It displays key metrics like total events to display the volume of audit activities, explore events through service names and action types to reveal system access patterns. By categorizing events by audit and identity types, you can get insights into different event categories and user behaviors. Trend analysis and event distribution by geography helps you to identify anomalies, while summaries of deleted events highlights the active and ghost IT activities. This dashboard is the central nervous system for operational monitoring and strategic cybersecurity decisions. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/CyberArk-Audit/CyberArk+Audit+-+Overview.png' alt="CyberArk Audit Overview" />
+The **CyberArk Audit - Overview** dashboard provides a comprehensive view of audit data, helping teams assess cybersecurity events in your organization. It displays key metrics like total events to show the volume of audit activities, explores events through service names and action types to reveal system access patterns, and categorizes events by audit and identity types. Trend analysis and geographical distribution help identify anomalies, while summaries of deleted events highlight active and ghost IT activities within the system environment.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-Audit-Overview.png')} alt="CyberArk Audit - Overview" />
 
 ### Security Overview
 
-The **CyberArk Audit - Security Overview** dashboard provides focuses on security metrics related to audit events for network administrators and cybersecurity teams. It highlights high-risk activities such as password resets, suspicious threats, and multi-factor authentication (MFA) events. The dashboard shows administrative events by location, noting activities from embargoed areas. It visualizes OAuth token generation trends to identify anomalies and secure access points. Summaries of password resets, administrative events, and login attempts help detect vulnerabilities and unauthorized access, enhancing cybersecurity defense. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/CyberArk-Audit/CyberArk+Audit+-+Security+Overview.png' alt="CyberArk Audit Security Overview" />
+The **CyberArk Audit - Security Overview** dashboard focuses on security metrics related to audit events for network administrators and cybersecurity teams. It highlights high-risk activities such as password resets, suspicious threats, and multi-factor authentication (MFA) events. The dashboard displays administrative events by location, noting activities from embargoed areas, and visualizes OAuth token generation trends to identify anomalies and secure access points. Summaries of password resets, administrative events, and login attempts help detect vulnerabilities and unauthorized access.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-Audit-Security-Overview.png')} alt="CyberArk Audit - Security Overview" />
 
 ### Logins
 
-The **CyberArk Audit - Logins** dashboard provides an overview of user authentication activities, tracking successful and failed login trends. It visualizes successful logins by location and flags access from embargoed areas, emphasizing geopolitical access restrictions. For failed logins, the dashboard identifies locations and top users involved, highlighting potential account compromises. This dashboard helps security teams strengthen authentication and prevent unauthorized access, enhancing overall cybersecurity. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/CyberArk-Audit/CyberArk+Audit+-+Logins.png' alt="CyberArk Audit Logins" />
+The **CyberArk Audit - Logins** dashboard provides an overview of user authentication activities, tracking successful and failed login trends. It visualizes successful logins by location and flags access from embargoed areas, emphasizing geopolitical access restrictions. For failed logins, the dashboard identifies locations and top users involved, highlighting potential account compromises and helping security teams strengthen authentication mechanisms.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-Audit-Logins.png')} alt="CyberArk Audit - Logins" />
+
+### Identity Threat Detection
+
+The **CyberArk Audit - Identity Threat Detection** dashboard provides visibility into identity-related security threats including suspicious authentication events without MFA, after-hours login activity, directory sync failures, disabled account provisioning anomalies, authentication method distribution, device and browser-based anomalies, and identity activity outlier detection to help detect compromised credentials and insider threats.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-Audit-Identity-Threat-Detection.png')} alt="CyberArk Audit - Identity Threat Detection" />
+
+### Privileged Access & Secrets
+
+The **CyberArk Audit - Privileged Access & Secrets** dashboard provides deep visibility into privileged access management (PAM) operations and secrets management (Conjur) activities including safe access events, credential retrievals, policy changes, vault operations, secret rotations, privileged session monitoring, and non-human identity actions across the CyberArk ecosystem.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-Audit-Privileged-Access-&-Secrets.png')} alt="CyberArk Audit - Privileged Access & Secrets" />
 
 ## Create monitors for CyberArk Audit app
 
@@ -137,18 +155,19 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### CyberArk Audit monitors
+### CyberArk Audit app alerts
 
-| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+| Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `CyberArk Audit - Events from Embargoed Locations` | This alert is triggered when CyberArk activity is detected from embargoed or restricted locations. This may indicate unauthorized access attempts from high-risk regions. | High | Count > 0 | 
-| `CyberArk Audit - Excessive Password Resets` | This alert is triggered when an unusual high number of password resets occur within a short period. This could be a sign of compromised accounts or malicious insider activity. | High | Count > 5 |
-| `CyberArk Audit - Failed Login Attempts` | This alert is triggered when repeated failed login attempts are detected, indicating brute force attacks or unauthorized attempts to access privileged accounts. | Critical | Count > 0|
-| `CyberArk Audit - Multiple Failed Vault Access Attempts` | This alert notifies you when multiple failed attempts are made to access the CyberArk vault, signaling potential credential theft or unauthorized access attempts. | Critical | Count > 3|
-| `CyberArk Audit - OAuth Token Generation Events from Embargoed Locations` | This alert is triggered when OAuth tokens are generated from embargoed locations, which may indicate a potential security breach or misuse of privileged access. | High | Count > 0|
-| `CyberArk Audit - Threats Detected` | This alert is triggered when threats within CyberArk, such as unauthorized access, suspicious activity, or potential compromise of privileged credentials are detected. | Critical | Count > 0|
+| `CyberArk Audit - Deleted Unexpired Files` | This alert is triggered when a CyberArk safe containing unexpired files is deleted. This may indicate accidental data loss or a deliberate attempt to remove active privileged credentials before their expiration. | Count > 0 | Count < = 0 |
+| `CyberArk Audit - Events from Embargoed Locations` | This alert is triggered when CyberArk activity is detected from embargoed or restricted locations. This may indicate unauthorized access attempts from high-risk regions. | Count > 0 | Count < = 0 |
+| `CyberArk Audit - Excessive Password Resets` | This alert is triggered when an unusually high number of password resets occur within a short period. This could be a sign of compromised accounts or malicious insider activity. | Count > 5 | Count < = 5 |
+| `CyberArk Audit - Failed Login Attempts` | This alert is triggered when repeated failed login attempts are detected, indicating brute force attacks or unauthorized attempts to access privileged accounts. | Count > 3 | Count < = 3 |
+| `CyberArk Audit - Multiple Failed Vault Access Attempts` | This alert is triggered when multiple failed attempts are made to access the CyberArk vault, signaling potential credential theft or unauthorized access attempts. | Count > 3 | Count < = 3 |
+| `CyberArk Audit - OAuth Token Generation Events from Embargoed Locations` | This alert is triggered when OAuth tokens are generated from embargoed locations, which may indicate a potential security breach or misuse of privileged access. | Count > 0 | Count < = 0 |
+| `CyberArk Audit - Threats Detected` | This alert is triggered when threats within CyberArk, such as unauthorized access, suspicious activity, or potential compromise of privileged credentials are detected. | Count > 0 | Count < = 0 |
 
-## Upgrading the CyberArk Audit app (Optional)
+## Upgrade/Downgrade the CyberArk Audit app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
