@@ -132,3 +132,7 @@ Disabling a rule pauses masking while preserving the rule's configuration so it 
 
 Yes. An organization can have a maximum of **50 data masking rules**. To add a new rule once the limit is reached, an existing rule must be deleted first.
 
+### At what point is a data masking rule applied?
+
+Data masking rules are applied as the final step during query processing. Logs are stored in their original form, and masking is applied dynamically when a query runs. If you want to mask logs during ingestion itself, use [Mask Rules](/docs/send-data/collection/processing-rules/mask-rules/) within Processing Rules instead.
+
