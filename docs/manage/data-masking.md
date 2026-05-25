@@ -28,7 +28,7 @@ Data Masking provides a centralized place to manage and review data masking rule
 To mask data at ingest time before it is stored, use [Mask Rules](/docs/send-data/collection/processing-rules/mask-rules/) in Processing Rules.
 :::
 
-Data masking rules are applied at **query processing time**. Logs are stored in their original form, and masking is applied dynamically when you run a query. What you see depends on your assigned role:
+Data masking rules are applied at query processing time. Logs are stored in their original form, and masking is applied dynamically when you run a query. What you see depends on your assigned role:
 
 - If you do **not** have the `View Unmasked Data` [role capability](/docs/manage/users-roles/roles/role-capabilities/), you see log data with all matching values replaced by the configured **Mask String**.
 - If you have the `View Unmasked Data` capability, you can view log data in its original, unmasked form.
