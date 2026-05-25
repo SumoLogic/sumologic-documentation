@@ -425,3 +425,22 @@ Use this dashboard to:
 * View logs and errors and investigate potential issues.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_HPA.png')} alt="Kubernetes dashboards" />
+
+
+### New Fields in Hosted Kubernetes Collectors after v5.0.0
+
+Users would see the following new fields in the Hosted Kubernetes Collectors after upgrading or installing v5.0.0 of Sumologic Kubernetes Collection.
+
+```aiignore
+sumo.cluster.name: <cluster_name> (Shows the cluster name set during the helm chart installation)
+sumo.helm.release: <helm_version> (Shows the helm chart version used to install Sumologic Kubernetes Collection)
+sumo.hostedcollector.subtype: K8s
+```
+<img src={useBaseUrl('img/integrations/containers-orchestration/k8s_collector_fields.png')} alt="Kubernetes Collector Fields" />
+
+
+These fields are added to support the new Kubernetes Collection feature which will be released soon on Sumologic. These new fields are static and do not
+impact the user's storage/ingest budget. Since the new fields are static, they also do not impact cardinality of the metric timeseries.
+
+**Note:** These fields are required to support the new Kubernetes Collection page. If users decide to remove these fields, they will not be able to view 
+the content on the new Kubernetes Collection page (upcoming feature).
