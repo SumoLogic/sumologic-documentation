@@ -962,6 +962,7 @@ module.exports = {
         'manage/partitions/edit-data-forwarding-destinations-partition',
         'manage/partitions/manage-indexes-variable-retention',
         'manage/partitions/decommission-partition',
+        'manage/partitions/flex-to-tier-migration-report',
         'manage/partitions/faq',
       ]
     },
@@ -1064,7 +1065,6 @@ module.exports = {
         'manage/manage-subscription/manage-billing-information',
         'manage/manage-subscription/organization-usage-limits',
         'manage/manage-subscription/scan-budgets',
-        'manage/manage-subscription/flex-to-tier-migration-report',
         'manage/manage-subscription/fedramp-capabilities',
         'manage/manage-subscription/close-cancel-sumo-account',
       ]
