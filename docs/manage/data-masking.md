@@ -123,3 +123,7 @@ Disabling a rule pauses masking while preserving the rule's configuration so it 
 
 Yes. An organization can have a maximum of **50 data masking rules**. To add a new rule once the limit is reached, an existing rule must be deleted first.
 
+### Can we manage data masking rules programmatically?
+
+Yes. Use the [Data Masking Management APIs](/docs/api/data-masking-management) to create, update, and manage data masking rules programmatically.
+
