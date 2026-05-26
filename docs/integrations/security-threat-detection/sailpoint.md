@@ -143,13 +143,13 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **SailPoint - Overview** dashboard provides a high-level operational view of SailPoint activity including total event volume, event type distribution, operation breakdown, trends, geolocation of events, and recent event history for rapid situational awareness.
+The **SailPoint - Overview** dashboard provides a high-level operational view of SailPoint activity, including total event volume, event type distribution, operation breakdown, trends, geolocation of events, and recent event history for rapid situational awareness.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Overview.png')} alt="overview"/>
 
 ### Security
 
-The **SailPoint - Security** dashboard highlights critical security signals including source deletions, identity deletions, bulk account removals, admin configuration changes, and high-risk events that may indicate unauthorized access or insider threats.
+The **SailPoint - Security** dashboard highlights critical security signals, including source deletions, identity deletions, bulk account removals, admin configuration changes, and high-risk events that may indicate unauthorized access or insider threats.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Security.png')} alt="SailPoint - Security"/>
 
@@ -185,7 +185,7 @@ The **SailPoint - Access Items** dashboard provides visibility into entitlement 
 
 ### Access requests and provisioning
 
-The **SailPoint - Access Requests & Provisioning** dashboard monitors access request lifecycle including approvals, denials, provisioning successes and failures, entitlement changes, role assignments, and account modifications.
+The **SailPoint - Access Requests & Provisioning** dashboard monitors access request lifecycle, including approvals, denials, provisioning successes and failures, entitlement changes, role assignments, and account modifications.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Access-Requests-&-Provisioning.png')} alt="SailPoint - Access Requests and Provisioning"/>
 
