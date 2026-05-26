@@ -43,13 +43,13 @@ Suggestions are scoped to your organization's macros and respect your role-based
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs** > **Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.<br/>
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Log Search** page.
 1. Begin typing your query in the query editor.
-1. When part of your expression matches an existing macro, the <img src={useBaseUrl('img/search/log-search-recommendations.png')} alt="Macro recommendations button" width="25" /> button appears near the query editor.
-1. Click the <img src={useBaseUrl('img/search/log-search-recommendations.png')} alt="Macro recommendations button" width="25" /> button to open the recommendation panel.
+1. When part of your expression matches an existing macro, the <img src={useBaseUrl('img/search/log-search-recommendations.png')} alt="Macro recommendations button" width="25" /> button appears near the query editor.<br/><img src={useBaseUrl('img/search/log-search-recommendations-lightbulb.png')} alt="Macro recommendations button" style={{border: '1px solid gray'}} width="800" />
+1. Click the <img src={useBaseUrl('img/search/log-search-recommendations.png')} alt="Macro recommendations button" width="25" /> button to open the recommendation panel.<br/><img src={useBaseUrl('img/search/log-search-recommendations-panel.png')} alt="Macro recommendations button" style={{border: '1px solid gray'}} width="700" />
 1. Review the suggested macros. For each suggestion:
    - Click **Accept** to insert the macro into your query.
    - Click **Remove** to dismiss the suggestion.
-   - Click the <img src={useBaseUrl('img/search/log-search-info-icon.png')} alt="Info button" width="25" /> button to see the macro's name, definition, and a usage example. Use the arrow link in the info panel to navigate directly to that macro's detail page.
-1. After accepting a macro, the <img src={useBaseUrl('img/search/log-search-recommendations.png')} alt="Macro recommendations button" width="25" /> button changes to the <img src={useBaseUrl('img/search/log-search-eye-icon.png')} alt="Eye button" width="25" /> button. Click it to view the definition of the accepted macro.
+   - Click the <img src={useBaseUrl('img/search/log-search-info-icon.png')} alt="Info button" width="25" /> button to see the macro's name, definition, and a usage example. Use the arrow link in the info panel to navigate directly to that macro's detail page.<br/><img src={useBaseUrl('img/search/log-search-recommendations-info.png')} alt="Macro recommendations button" style={{border: '1px solid gray'}} width="500" />
+1. After accepting a macro, the <img src={useBaseUrl('img/search/log-search-recommendations.png')} alt="Macro recommendations button" width="25" /> button changes to the <img src={useBaseUrl('img/search/log-search-eye-icon.png')} alt="Eye button" style={{border: '1px solid gray'}} width="25" /> button. Click it to view the definition of the accepted macro.<br/><img src={useBaseUrl('img/search/log-search-recommendations-accepted.png')} alt="Macro recommendations button" style={{border: '1px solid gray'}} width="800" />
 1. Run your query as usual.
 
 :::tip
