@@ -2,6 +2,7 @@
 id: urlencode
 title: urlencode Search Operator
 sidebar_label: urlencode
+description: Use the urlencode operator to encode URLs into ASCII character set format, the standard format for sending URLs over the internet.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

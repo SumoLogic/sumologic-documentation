@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/datto.png')} alt="datto" width="90"/>
 
-***Version: 1.0  
-Updated: Mar 13, 2024***
+***Version: 1.1  
+Updated: April 29, 2026***
 
 Datto Remote Monitoring and Management (RMM) is a secure cloud-based RMM platform.
 
@@ -50,3 +50,4 @@ For information about Datto RMM, see [Datto RMM documentation](https://rmm.datto
 ## Change Log
 
 * March 13, 2024 - First upload
+* April 29, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-workspace-one.png')} alt="VMware Workspace ONE icon" width="80"/>
 
-***Version: 1.1  
-Updated: Jul 07, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 VMware Workspace ONE is an intelligence-driven digital workspace platform that enables you to simply and securely deliver and manage any app on any device, anywhere.
 
@@ -62,3 +62,4 @@ For information about VMware Workspace ONE, see [Workspace ONE documentation](ht
 
 * May 17, 2022 - First upload
 * July 7, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
