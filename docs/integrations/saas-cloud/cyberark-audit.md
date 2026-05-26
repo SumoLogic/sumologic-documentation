@@ -147,7 +147,7 @@ The **CyberArk Audit - Identity Threat Detection** dashboard provides visibility
 
 The **CyberArk Audit - Privileged Access & Secrets** dashboard provides deep visibility into privileged access management (PAM) operations and secrets management (Conjur) activities including safe access events, credential retrievals, policy changes, vault operations, secret rotations, privileged session monitoring, and non-human identity actions across the CyberArk ecosystem.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-Audit-Privileged-Access-&-Secrets.png')} alt="CyberArk Audit - Privileged Access & Secrets" />
+<img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-Audit-Privileged-Access-and-Secrets.png')} alt="CyberArk Audit - Privileged Access & Secrets" />
 
 ## Create monitors for CyberArk Audit app
 
