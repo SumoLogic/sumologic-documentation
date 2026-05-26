@@ -217,12 +217,12 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `SailPoint - Brute Force Detection (>5 Failed Authentications)` | This alert is triggered when a user exceeds five failed authentication attempts. This may indicate brute-force activity, credential stuffing, or unauthorized access attempts against SailPoint accounts. | Count > 5 | Count <= 5 |
-| `SailPoint - Bulk Account Removals` | This alert is triggered when a large number of account removals occur within a short period. This may indicate unauthorized mass deprovisioning, insider threats, or compromised admin credentials used to remove access at scale. | Count > 0 | Count <= 0 |
-| `SailPoint - Events from Embargoed Locations` | This alert is triggered when SailPoint activity is observed from embargoed or high-risk countries. | Count > 0 | Count <= 0 |
-| `SailPoint - Identity Uncorrelation Events` | This alert is triggered when an identity uncorrelation event is detected in SailPoint. This may indicate unauthorized account detachment, insider threat activity, or administrative changes that could weaken identity governance controls. | Count > 0 | Count <= 0 |
-| `SailPoint - Personal Access Token Usage Spike` | This alert is triggered when an unusual spike in personal access token usage is detected. This may indicate compromised API tokens, automated attacks using stolen credentials, or insider misuse of programmatic access. | Count > 2 | Count <= 2 |
-| `SailPoint - Source Deletion Events` | This alert is triggered when an identity source is deleted from SailPoint. This may indicate data sabotage, insider threat activity, or unauthorized administrative changes that could disrupt identity governance. | Count > 0 | Count <= 0 |
+| `SailPoint - Brute Force Detection (>5 Failed Authentications)` | This alert is triggered when a user exceeds five failed authentication attempts. This may indicate brute-force activity, credential stuffing, or unauthorized access attempts against SailPoint accounts. | Count > 5 | Count < = 5 |
+| `SailPoint - Bulk Account Removals` | This alert is triggered when a large number of account removals occur within a short period. This may indicate unauthorized mass deprovisioning, insider threats, or compromised admin credentials used to remove access at scale. | Count > 0 | Count < = 0 |
+| `SailPoint - Events from Embargoed Locations` | This alert is triggered when SailPoint activity is observed from embargoed or high-risk countries. | Count > 0 | Count < = 0 |
+| `SailPoint - Identity Uncorrelation Events` | This alert is triggered when an identity uncorrelation event is detected in SailPoint. This may indicate unauthorized account detachment, insider threat activity, or administrative changes that could weaken identity governance controls. | Count > 0 | Count < = 0 |
+| `SailPoint - Personal Access Token Usage Spike` | This alert is triggered when an unusual spike in personal access token usage is detected. This may indicate compromised API tokens, automated attacks using stolen credentials, or insider misuse of programmatic access. | Count > 2 | Count < = 2 |
+| `SailPoint - Source Deletion Events` | This alert is triggered when an identity source is deleted from SailPoint. This may indicate data sabotage, insider threat activity, or unauthorized administrative changes that could disrupt identity governance. | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the SailPoint app (Optional)
 
