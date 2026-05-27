@@ -2,23 +2,26 @@
 id: okta
 title: Okta
 sidebar_label: Okta
-description: The Sumo Logic app for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta.
+description: The Sumo Logic app for Okta provides a unified view of identity, access, and authentication activity from Okta system logs. It helps you monitor policy changes, user authentications, lifecycle events, and threat indicators across your organization.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Okta icon" width="75"/>
 
-Okta provides secure connections between people and your applications on any device through identity management service built for the cloud. The Sumo Logic app for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta. The app consists of dashboards that give you visibility into the applications, accesses, user events, and Multi-Factor Authentication (MFA).
+Okta provides secure identity management and access control between users and applications on any device. The Sumo Logic app for Okta offers comprehensive visibility into identity, access, and authentication activity by analyzing Okta system logs. The app includes dashboards that consolidate policy management, user activity, lifecycle events, and threat detection to support compliance, investigation, and continuous improvement in security posture.
 
 ## Log types
 
-The Sumo Logic collector uses Okta System Log API to get the logs of Okta System. The log types include authentication, events, and actions. For more information on the Okta log API, see [here](https://developer.okta.com/docs/api/resources/system_log.html).
+The Sumo Logic collector uses the Okta API to collect two types of logs:
+
+- **System logs**. Collected via the Okta System Log API. The log types include authentication, events, and actions. For more information, see the [Okta System Log API](https://developer.okta.com/docs/api/resources/system_log.html).
+- **User logs**. Collected via the Okta Users API. Includes user profile data, group membership, account status, and credential information.
 
 ### Sample log messages
 
 <details>
-<summary>Click to expand</summary>
+<summary>System Log</summary>
 
 ```json
 {
@@ -135,50 +138,133 @@ The Sumo Logic collector uses Okta System Log API to get the logs of Okta System
 
 </details>
 
+<details>
+<summary>User Logs</summary>
+
+```json
+{
+  "_groups": [
+    {
+      "id": "00g1abc123Everyone0x7",
+      "profile": {
+        "name": "Everyone",
+        "description": "All users in your organization"
+      }
+    },
+    {
+      "id": "00g1yza567HR0x7",
+      "profile": {
+        "name": "Human Resources",
+        "description": "HR and people operations team"
+      }
+    },
+    {
+      "id": "00g1mno345Engineering0x7",
+      "profile": {
+        "name": "Engineering",
+        "description": "Software engineering team"
+      }
+    },
+    {
+      "id": "00g1vwx234Finance0x7",
+      "profile": {
+        "name": "Finance",
+        "description": "Finance and accounting team"
+      }
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "https://globexcorp.okta.com/api/v1/users/00u17m9zau6BuEWNA1d8"
+    }
+  },
+  "activated": "2022-10-19T13:59:47.000Z",
+  "created": "2022-10-18T05:59:47.000Z",
+  "credentials": {
+    "password": {},
+    "provider": { "name": "OKTA", "type": "OKTA" },
+    "recovery_question": { "question": "What is your mother's maiden name?" }
+  },
+  "id": "00u17m9zau6BuEWNA1d8",
+  "lastLogin": "2023-04-24T13:59:47.000Z",
+  "lastUpdated": "2023-02-02T13:59:47.000Z",
+  "passwordChanged": "2022-12-29T13:59:47.000Z",
+  "profile": {
+    "email": "chris.robins@globexcorp.com",
+    "firstName": "Christian",
+    "lastName": "Robins",
+    "login": "chris.robins@globexcorp.com",
+    "mobilePhone": "+18735427481",
+    "secondEmail": "christian.robins@yahoo.com"
+  },
+  "status": "ACTIVE",
+  "statusChanged": "2022-11-04T13:59:47.000Z",
+  "type": { "id": "oty1abc123defaultType0x7" }
+}
+```
+
+</details>
+
 ### Sample queries
 
-```sumo title="Details of Applications Deleted"
-_sourceCategory = "okta" "application.lifecycle.delete"
-| json field=_raw "eventType" as event_type
-| where event_type = "application.lifecycle.delete"
-| json field=_raw "outcome.result" as outcome_result
-| json field=_raw "displayMessage" as display_message
-| json field=_raw "published"as published_time
-| json field=_raw "actor.displayName" as okta_user_name
-| json field=_raw "actor.alternateId" as okta_user_id
-| json field=_raw "actor.type"
-| json field=_raw "severity" as severity
-| json field=_raw "target[0].displayName" as app_name
-| json field=_raw "target[0].type" as app_type
-| json field=_raw "client.ipAddress" as client_ip
-| json field=_raw "client.geographicalContext.city" as city
-| json field=_raw "client.geographicalContext.state" as state
-| json field=_raw "client.geographicalContext.country" as country
-| json field=_raw "client.geographicalContext.postalCode" as postal_code
-| count by app_name, okta_user_id, outcome_result, display_message
+```sumo title="Total Events"
+_sourceCategory={{Logsdatasource}} actor eventType
+| json "uuid","eventType","actor.displayName","actor.type","severity",
+ "client.userAgent.rawUserAgent","client.userAgent.os","client.userAgent.browser",
+ "client.device","client.geographicalContext.city","client.geographicalContext.state",
+ "client.geographicalContext.country","outcome.result","securityContext.isp"
+  as uuid,event_type,actor_name,actor_type,severity,user_agent,os,browser, device,city,state,country,result,isp nodrop
+
+// Global filters
+| where if("{{event_type}}" = "*", true,event_type matches "{{event_type}}")
+| where if("{{okta_user}}" = "*", true, actor_name matches "{{okta_user}}")
+| where if("{{actor_type}}" = "*", true, actor_type matches "{{actor_type}}")
+| where if("{{severity}}" = "*", true, severity matches "{{severity}}")
+| where if("{{user_agent}}" = "*", true, user_agent matches "{{user_agent}}")
+| where if("{{device}}" = "*", true, device matches "{{device}}")
+| where if("{{os}}" = "*", true, os matches "{{os}}")
+| where if("{{browser}}" = "*", true, browser matches "{{browser}}")
+| where if("{{city}}" = "*", true, city matches "{{city}}")
+| where if("{{country}}" = "*", true, country matches "{{country}}")
+| where if("{{state}}" = "*", true, state matches "{{state}}")
+| where if("{{result}}" = "*", true, result matches "{{result}}")
+| where if("{{internet_service_provider}}" = "*", true, isp matches "{{internet_service_provider}}")
+
+// Panel specific
+| count by uuid
+| count 
 ```
 
 
-```sumo title="Details of MFA Deactivate Event"
-_sourceCategory = "okta" "user.mfa.factor.deactivate"
-| json field=_raw "eventType" as event_type
-| where event_type = "user.mfa.factor.deactivate"
-| json field=_raw "outcome.result" as outcome_result
-| json field=_raw "published" as published_time
-| json field=_raw "actor.displayName" as actor
-| json field=_raw "actor.alternateId" as actor_id
-| json field=_raw "actor.type"
-| json field=_raw "severity" as severity
-| json field=_raw "client.userAgent.os" as OS
-| json field=_raw "client.userAgent.browser" as browser
-| json field=_raw "client.device" as device
-| json field=_raw "client.ipAddress" as client_ip
-| json field=_raw "client.geographicalContext.country" as country
-| json field=_raw "client.geographicalContext.state" as state
-| json field=_raw "client.geographicalContext.city" as city
-| json field=_raw "target[0].displayName" as okta_user_name
-| json field=_raw "target[0].alternateId" as okta_user_id
-| count by okta_user_id, actor, outcome_result, country, state
+```sumo title="Risky Events Details"
+_sourceCategory={{Logsdatasource}} actor eventType securityContext risk level HIGH
+| json "uuid","eventType","actor.displayName","actor.type","severity", "client.userAgent.rawUserAgent","client.userAgent.os","client.userAgent.browser","client.device","client.geographicalContext.city","client.geographicalContext.state",
+"client.geographicalContext.country","outcome.result","securityContext.isp","published","target.[*].type","securityContext.risk.detectionName","securityContext.risk.issuer","securityContext.risk.level","securityContext.risk.previousLevel","securityContext.risk.reasons"
+  as uuid,event_type,actor_name,actor_type,severity,user_agent,os,browser,device,city,state,country,result,isp,published,target_type,risk_detection_name,risk_issuer,risk_level,risk_previous_level,risk_reason nodrop
+
+| where !isBlank(risk_level) AND risk_level = "HIGH"
+
+// Global filters
+| where if("{{event_type}}" = "*", true,event_type matches "{{event_type}}")
+| where if("{{okta_user}}" = "*", true, actor_name matches "{{okta_user}}")
+| where if("{{actor_type}}" = "*", true, actor_type matches "{{actor_type}}")
+| where if("{{severity}}" = "*", true, severity matches "{{severity}}")
+| where if("{{user_agent}}" = "*", true, user_agent matches "{{user_agent}}")
+| where if("{{device}}" = "*", true, device matches "{{device}}")
+| where if("{{os}}" = "*", true, os matches "{{os}}")
+| where if("{{browser}}" = "*", true, browser matches "{{browser}}")
+| where if("{{city}}" = "*", true, city matches "{{city}}")
+| where if("{{country}}" = "*", true, country matches "{{country}}")
+| where if("{{state}}" = "*", true, state matches "{{state}}")
+| where if("{{result}}" = "*", true, result matches "{{result}}")
+| where if("{{internet_service_provider}}" = "*", true, isp matches "{{internet_service_provider}}")
+
+// Panel specific
+| count by published, uuid, event_type,actor_name,actor_type,severity,user_agent,os,browser,device,city,state,country,result,isp,target_type,risk_detection_name, risk_issuer, risk_level, risk_previous_level, risk_reason
+| count by published, event_type, actor_name, actor_type, severity, user_agent, os, browser, device, city, state, country, result, isp, target_type, risk_detection_name, risk_issuer, risk_level, risk_previous_level, risk_reason
+| sort by published
+| fields -_count
+| limit 1000
 ```
 
 ## Collection configuration and app installation
@@ -215,142 +301,78 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-### Administrative Actions
+### Application Activity Overview
 
-Shows the details of administrative actions such as the geolocation of application events, severity of events over time, application events, deactivated applications, application creation and deletion, admin accesses, and AD agent connection to Okta.
+The **Okta - Application Activity Overview** dashboard provides visibility into all application access events within your Okta environment. It tracks authentication outcomes, application usage trends, and lifecycle changes, highlighting top and frequently denied applications, as well as outlier access behaviors. This view enables administrators to monitor how users interact with enterprise applications and quickly identify anomalous or risky sign‑on patterns.
 
-**Geolocation of Application Events**. See the number of application events across the world on a map in the last 24 hours.
-
-**Application Events by Severity Over Time**. See the count of application events by severity in the last 24 hours on a line chart.
-
-**Application Events by Severity**. See the count of application events by severity in the last 24 hours on a column chart.
-
-**Breakdown by Events**. See the breakdown of administrative actions by events in the last 24 hours on a pie chart.
-
-**Deactivated Application**. See the app name, user ID, outcome of access attempt, display message, and count of the deactivated applications in the last 24 hours displayed in a table.
-
-**Application Created**. See the count of applications created in the last 24 hours along with the application name, user ID, message displayed, and the outcome result shown in a table.
-
-**Application Deleted**. See the count of applications deleted in the last 24 hours along with the application name, user ID, message displayed, and the outcome result shown in a table.
-
-**Okta Admin Access**. See the user ID, city, display message, outcome result, and count of the Okta Admin Access in the last 24 hours displayed in a table.
-
-**Connect AD Agent to Okta.** See the details of connect AD agent to Okta such as the Okta user ID, outcome result, display message, and count, in the last 24 hours.
-
-<img src={useBaseUrl('img/integrations/saml/Okta-AdministrativeActions.png')} alt="Okta Administrative Actions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-Application-Activity-Overview.png')} alt="Okta Administrative Actions" />
 
 
-### Application Access
+### Events Overview
 
-Shows the details of accesses by different applications, the location of logins, top 10 active users, successful and failed accesses by applications.
-
-**Breakdown By Application**. See the Okta access broken down by application in a pie chart for the last three days.
-
-**Geolocation of Application Logins**. See the number of logins to the application across the world on a map for the last three days.
-
-**Top 10 Applications**. See the name and count of the top 10 applications accessing Okta in the last three days in a table.
-
-**Top 10 Active users**. See the name and count of the top 10 users accessing Okta the last three days displayed in a table.
-
-**Successful Application Access Over Time**. See the successful application accesses over the last three days in a line chart.
-
-**Successful Distinct Application Access by User**. See the successful application accesses by users over the last three days in a line chart.
-
-**Failed Application Access by Users**. See the app name, user ID, outcome of access attempt, display message, and count of the failed access by users in the last three days displayed in a table.
-
-**Failed Application Access by Users over Time**. See the failed accesses by users in the last three days on a line chart.
-
-**Outlier in Successful Application Access by User**. See the outlier in the successful accesses in the last three days by user ID and count statistics displayed in a table.
-
-**Outlier in Failed Application Access by User**. See the outlier in the failed accesses in the last three days by user ID and count statistics displayed in a table.
-
-<img src={useBaseUrl('img/integrations/saml/Okta-ApplicationAccess.png')} alt="Okta Administrative Actions" />
+The **Okta - Events Overview** dashboard delivers a unified view of all Okta system events across users, applications, and policies. It visualizes event counts, severities, geographic distribution, and temporal patterns to surface spikes or anomalies. This dashboard serves as the central health and activity indicator, helping security teams monitor the overall state of Okta operations and environmental risk.
+<img src={useBaseUrl('img/integrations/saml/Okta-Events-Overview.png')} alt="Okta Administrative Actions" />
 
 ### Failed Login Activity
+The **Okta - Failed Login Activity** dashboard focuses on failed authentication events to help identify patterns of login issues or possible attack attempts. It showcases top failed users, failure reasons, and trends by severity and location. This dashboard aids in diagnosing access issues, monitoring brute‑force attempts, and improving authentication reliability.
 
-Shows the details of failed logins to Okta such as the geolocation, country, state, OS, browser, device, top 10 users, and application.
+<img src={useBaseUrl('img/integrations/saml/Okta-Failed-Login-Activity.png')} alt="Okta Administrative Actions" />
 
-**Geolocation of Logins**. See the number of failed logins across the world on a map for the last three days.
+### Identity and Policy Management
+The **Okta - Identity and Policy Management** dashboard monitors identity governance and policy enforcement within the organization. It analyzes policy activity, access control changes, and account lifecycle events to identify misconfigurations or risky policy actions. Ideal for compliance and IAM administrators, it supports audits, reporting, and continuous assessment of access policy alignment.
 
-**Login breakdown by Country and State**. See the count of failed logins broken down by country and state in a stacked column chart on a timeline for the last three days.
-
-**Breakdown by Client OS and Browser**. See the count of failed logins by browsers broken down by OS in a stacked column chart on a timeline for the last three days.
-
-**Logins Overtime**. See the count of failed logins over time in the last three days on a column chart.
-
-**Login - Outlier**. See the failed logins in an outlier chart on a timeline for the last three days.
-
-**Breakdown by Client Device and Browser**. See the count of failed logins by browsers broken down by devices in a stacked column chart on a timeline for the last three days.
-
-**Top 10 Users by Login Attempt Count**. See the top 10 users with the count of failed login attempts for the last three days in a table.
-
-**App Login**. See the breakdown of failed logins by applications for the last three days on a pie chart.
-
-<img src={useBaseUrl('img/integrations/saml/Okta-FailedLoginActivity.png')} alt="Okta Administrative Actions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-Identity-and-Policy-Management.png')} alt="Okta Administrative Actions" />
 
 ### Successful Login Activity
 
-Shows the details of successful logins to Okta such as the device, browser, country, state, OS, geolocation, logins overtime, outlier, top 10 users, and application.
+The **Okta - Successful Login Activity** dashboard provides insights into legitimate user authentication behavior. It displays successful login trends across users, geographies, browsers, and devices while identifying outlier or embargoed geographic access. This helps teams understand normal authentication baselines and ensure authorized usage patterns.
 
-**Geolocation of Logins**. See the number of successful logins across the world on a map for the last three days.
+<img src={useBaseUrl('img/integrations/saml/Okta-Successful-Login-Activity.png')} alt="Okta Administrative Actions" />
 
-**Login breakdown by Country and State**. See the count of successful logins broken down by country and state in a stacked column chart on a timeline for the last three days.
+### Threat Detection and Protection
 
-**Breakdown by Client OS and Browser**. See the count of successful logins by browsers broken down by OS in a stacked column chart on a timeline for the last three days.
+The **Okta - Threat Detection and Protection** dashboard consolidates all threat‑related event data, providing visibility into detected security incidents, suspicious activities, and credential breaches. It classifies threats by type, severity, and target entity to support rapid identification and response. This view strengthens proactive threat detection and enables continuous protection monitoring across the Okta environment.
 
-**Logins Overtime**. See the count of successful logins over time in the last three days on a column chart.
+<img src={useBaseUrl('img/integrations/saml/Okta-Threat-Detection-and-Protection.png')} alt="Okta Administrative Actions" />
 
-**Login - Outlier.** See the successful logins in an outlier chart on a timeline for the last three days.
+### User Account, Lifecycle and Activity  
 
-**Breakdown by Client Device and Browser**. See the count of successful logins by browsers broken down by devices in a stacked column chart on a timeline for the last three days.
+The **Okta - User Account, Lifecycle and Activity** Monitoring dashboard tracks user lifecycle events, administrative actions, and risky account behaviors. It highlights suspended or reactivated accounts, frequent updates, and high‑risk users to aid in compliance and anomaly detection. This dashboard is instrumental in maintaining account hygiene, monitoring privileged accounts, and auditing user access changes.
 
-**Top 10 Users by Login Count**. See the top 10 users with the count of successful logins for the last three days in a table.
+<img src={useBaseUrl('img/integrations/saml/Okta-User-Account-Lifecycle-and-Activity-Monitoring.png')} alt="Okta Administrative Actions" />
 
-**App Login**. See the breakdown of successful logins by applications for the last three days on a pie chart.
+### User and Groups Details
 
-<img src={useBaseUrl('img/integrations/saml/Okta-SuccessfulLoginActivity.png')} alt="Okta Administrative Actions" />
+The **Okta - User and Groups Details** dashboard offers a comprehensive inventory view of users, groups, and authentication providers. It reports user counts by status, provider, and group membership, helping administrators maintain accurate identity records. This dashboard is useful for IAM operations, provisioning validation, and organizational reporting.
 
-### User Activity  
-
-Shows the details of user activity such as the geolocation, top 10 users, user events, events by users, events by severity, password resets, password updates, and user account locks.
-
-**Geolocation of User Activity**. See the number of user activities across the world on a map for the last 24 hours.
-
-**Top 10 Active Users**. See the top 10 active users in the last 24 hours displayed on a bar chart.
-
-**User Events Breakdown**. See the breakdown of user events in the last 24 hours on a pie chart.
-
-**Events by User**. See the count of events per user in the last 24 hours on a column chart.
-
-**User Events by Severity**. See the count of user events by severity for the last 24 hours on a column chart.
-
-**Events by Severity Over Time**. See the count of events by severity for the last 24 hours on a line chart.
-
-**Password Reset Event**. See the details of password reset events such as the username, actor, outcome result, country, state, and count, in the last 24 hours displayed in a table.
-
-**Password Update Event**. See the details of password update events such as the username, actor, outcome result, country, state, and count, in the last 24 hours displayed in a table.
-
-**User Account Lock**. See the details of locked user accounts in the last 24 hours such as the actor, actor ID, outcome result, displayed message, and count, shown in a table.
-
-<img src={useBaseUrl('img/integrations/saml/Okta-UserActivity.png')} alt="Okta Administrative Actions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-User-and-Groups-Details.png')} alt="Okta Administrative Actions" />
 
 ### User Authentication and MFA
 
-Shows the details of user authentication and Multi-Factor Authentication (MFA) activities such as the user authentication over time, MFA events, MFA deactivation, and user authentication using MFA.
+The **Okta - User Authentication and MFA** dashboard provides a detailed analysis of authentication and multi‑factor authentication events across your environment. It tracks success and failure patterns, MFA bypass attempts, and authentication trends by OS, geography, and target type. Security teams can use this to verify MFA enforcement effectiveness, identify suspicious access attempts, and optimize authentication policy configurations.
 
-**User Authentication**. See the count of user authentication in the last 24 hours on a column chart.
+<img src={useBaseUrl('img/integrations/saml/Okta-User-Authentication-and-MFA.png')} alt="Okta Administrative Actions" />
 
-**User MFA Events Over Time**. See the count of user MFA events in the last 24 hours on a column chart.
 
-**User Authentication via MFA**. See the details of user authentication using MFA such as the user ID, factor, user agent, display message, outcome result, and count, in the last 24 hours displayed in a table.
+## Create monitors for the Okta app
 
-**User Authentication Activity.** See the count of user authentication activities in the last 24 hours on a stacked column chart.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-**MFA Deactivate Event**. See the details of MFA deactivate event in the last 24 hours such as the user ID, actor, outcome result, country, state, and count, shown in a table.
+<CreateMonitors/>
 
-**User MFA Activity.** See the details of user MFA activities such as the event type, result, reason, user ID, username, and count, in the last 24 hours, displayed in a table.
+### Okta alerts
 
-<img src={useBaseUrl('img/integrations/saml/Okta-UserAuthenticationAndMFA.png')} alt="Okta Administrative Actions" />
+| Name | Description | Trigger Type | Alert Condition |
+|:--|:--|:--|:--|
+| `Okta - Credential Breach Event Detected` | Monitor triggers an alert whenever Okta reports that a user’s credentials have appeared in a known public data breach, indicating a potential account compromise. This monitor enables security teams to respond quickly by enforcing password resets, notifying affected users, and investigating any suspicious activity to prevent unauthorized access and protect organizational data. | Critical | Count > 0 |
+| `Okta - Events from Embargoed Geo Locations` | This monitor detects Okta events originating from countries or regions subject to government-imposed embargoes or organizational geo-access restrictions. The activity may span across user logins, application access, and administrative actions. Such events may indicate a compliance policy violation, compromised credentials, or the use of a VPN or proxy to bypass geographic access controls. | Critical | Count > 0 |
+| `Okta - Malicious IP Request Detected by ThreatInsight` | This monitor detects Okta ThreatInsight events signaling inbound requests from malicious IPs involved in brute‑force or password‑spray activity, helping identify and block credential‑based attacks. | Critical | Count > 0 |
+| `Okta - Multiple Failed Logins From User` | This monitor detects multiple failed login attempts from a single user within a short period, helping identify potential brute‑force attacks, account lockouts, or use of compromised credentials. | Critical | Count > 5 |
+| `Okta - Repeated Authentication Failures Detected` | This monitor detects a surge in authentication failures occurring across multiple user accounts within a defined time window. The activity may indicate a coordinated credential stuffing campaign, automated attack tooling, or a widespread access disruption affecting the organization. Such patterns warrant immediate investigation to assess the scope and origin of the failures. | Critical | Count > 5 |
+| `Okta - Risky Event Detected` | Monitor triggers when potentially suspicious or high‑risk activity is identified within the Okta environment based on contextual risk signals and security indicators. It enables security teams to promptly investigate unusual behaviors such as anomalous login attempts, elevated risk levels, or other threat-related events to reduce the likelihood of account compromise and unauthorized access. | Critical | Count > 0 |
+| `Okta - Suspicious Activity Self-Reported by End User` | This monitor detects user.account.report_suspicious_activity_by_enduser events triggered when an end user explicitly reports suspicious activity on their own Okta account. Such reports may indicate an account takeover attempt, unauthorized session access, or credential phishing targeting the user. Security teams should treat each report as a high-priority signal and initiate immediate account investigation and containment steps. | Critical | Count > 0 |
+| `Okta - ThreatInsight Attack Detected` | This monitor triggers when Okta logs a security.attack.start event, indicating that ThreatInsight has detected that the organization is under attack. When this event occurs, ThreatInsight automatically increases its logging and blocking sensitivity for suspicious requests, helping security teams identify and mitigate active threats in real time. | Critical | Count > 0 |
+| `Okta - User Risk Level Elevation Detected` | This monitor detects user.risk.detect events triggered when Okta's risk engine identifies that a user is exhibiting behavior or operating within a context associated with elevated risk. The risk signal may be based on anomalous activity patterns, suspicious contextual signals, or known threat indicators. Security teams should investigate flagged accounts and consider enforcing step-up authentication, session termination, or temporary account suspension as appropriate. | Critical | Count > 0 |
 
 ## Upgrade/Downgrade the Okta app (Optional)
 
