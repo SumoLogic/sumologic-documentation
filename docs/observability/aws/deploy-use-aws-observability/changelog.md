@@ -37,7 +37,7 @@ Updates:
    - sumologic-loggroup-connector - v1.0.16
 
 Deprecation:
-* AWS Observability Solution versions that rely on deprecated AWS Lambda runtimes are also considered deprecated. Since Nodejs20.x was deprecated on April 30th, 2026. All AWS Observability versions up to and including 2.11.0 are deprecated.
+* AWS Observability Solution versions that rely on deprecated AWS Lambda runtimes are also considered deprecated. Since Node.js 20.x was deprecated on April 30, 2026, all AWS Observability versions up to and including 2.11.0 are now deprecated.
 [Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-deprecated)
 
 ## v2.14.0, 14-April-2026
