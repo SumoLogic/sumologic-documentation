@@ -26,7 +26,7 @@ The following information is collected by default:
 ## Prerequisites
 
 - **Operating system**. Windows Server (2016 or later). The receiver uses Windows ADSI COM APIs and only runs on Windows.
-- **Domain membership**. The collector must be installed on a machine that is a Domain Controller or a member of the Active Directory domain you want to inventory.
+- **Domain membership**. Install the collector on a machine that is a Domain Controller or a member of the Active Directory domain you want to inventory.
 - **Sumo Logic OpenTelemetry Collector**. [Installed and registered](/docs/send-data/opentelemetry-collector/install-collector/windows) on the Windows machine.
 - **Permissions**. Ensure the account running the collector service has read access to the Active Directory objects you want to query.
 
