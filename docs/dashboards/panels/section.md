@@ -1,14 +1,14 @@
 ---
 id: section
 title: Group Dashboard Panels into Sections
-description: Learn about how to group dashboard panels into sections. 
+description: Group related dashboard panels into collapsible sections to improve organization, navigation, and query performance in Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Grouping panels into sections helps you to better organize complex dashboards by grouping related panels into logical sections. Each section can be expanded or collapsed, allowing you to focus on specific insights while keeping dashboards clean, structured, and easier to navigate. Sections also improve dashboard performance by loading and refreshing only the panels that are currently visible. This approach helps reduce unnecessary query scans and provides greater control over dashboard layout, visibility, and cost efficiency.
 
-## Add a section
+## How to add a section
 
 To add a section to your dashboard, follow the below steps: 
 
@@ -20,7 +20,7 @@ To add a section to your dashboard, follow the below steps:
     - Choose the preferred font size.
         <br/><img src={useBaseUrl('img/dashboards/section/dashboard_section_editor_page.png')} alt="dashboard_section_editor_page" style={{border: '1px solid gray'}} width="800"/>
 
-## Delete a section
+## How to delete a section
 
 To delete a section in your dashboard, follow the below steps:
 
@@ -30,7 +30,7 @@ To delete a section in your dashboard, follow the below steps:
     - **Delete section only**. Removes the section but keeps the panels in the dashboard.
     - **Delete section and all its content**. Removes the section and all panels within it.
 
-## Sharing a dashboard with sections
+## How to share a dashboard with sections
 
 To share a dashboard with coworkers within your organization, refer to [Share a Dashboard](/docs/dashboards/share-dashboard-new/). When you share a dashboard with multiple sections, queries will run and costs will be incurred only for the sections in expanded state. Panels in the collapsed section do not execute any queries or incur scan costs until they are expanded.
 
