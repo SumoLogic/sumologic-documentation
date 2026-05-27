@@ -6,16 +6,6 @@ description: Learn about how to group dashboard panels into sections.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
-
-:::info
-This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
-:::
-
 Grouping panels into sections helps you to better organize complex dashboards by grouping related panels into logical sections. Each section can be expanded or collapsed, allowing you to focus on specific insights while keeping dashboards clean, structured, and easier to navigate. Sections also improve dashboard performance by loading and refreshing only the panels that are currently visible. This approach helps reduce unnecessary query scans and provides greater control over dashboard layout, visibility, and cost efficiency.
 
 ## Add a section
@@ -42,7 +32,7 @@ To delete a section in your dashboard, follow the below steps:
 
 ## Sharing a dashboard with sections
 
-To share a dashboard with coworkers within your organization, refer to [Share a Dashboard](/docs/dashboards/share-dashboard-new/). When you share a dashboard with multiple sections, queries will run and costs will be incured only for the sections in expanded state. Panels in the collapsed section do not execute any queries or incur scan costs until they are expanded.
+To share a dashboard with coworkers within your organization, refer to [Share a Dashboard](/docs/dashboards/share-dashboard-new/). When you share a dashboard with multiple sections, queries will run and costs will be incurred only for the sections in expanded state. Panels in the collapsed section do not execute any queries or incur scan costs until they are expanded.
 
 If **Autorefresh** is enabled for the dashboard, only panels within expanded sections are refreshed. Panels in collapsed sections remain unchanged and are refreshed only after their section is expanded.
 

@@ -1334,6 +1334,7 @@ module.exports = {
             'dashboards/panels/scatter-charts',
             'dashboards/panels/single-value-charts',
             'dashboards/panels/table-charts',
+            'dashboards/panels/section',
           ],
         },
         'dashboards/locate-deviations-time-series',
