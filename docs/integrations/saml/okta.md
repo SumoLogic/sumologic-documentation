@@ -2,7 +2,7 @@
 id: okta
 title: Okta
 sidebar_label: Okta
-description: The Sumo Logic app for Okta provides a unified view of identity, access, and authentication activity from Okta system logs. It helps you monitor policy changes, user authentications, lifecycle events, and threat indicators across your organization.
+description: The Sumo Logic app for Okta provides visibility into authentication, policy management, user lifecycle events, and threat indicators from Okta system logs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -305,53 +305,56 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Okta - Application Activity Overview** dashboard provides visibility into all application access events within your Okta environment. It tracks authentication outcomes, application usage trends, and lifecycle changes, highlighting top and frequently denied applications, as well as outlier access behaviors. This view enables administrators to monitor how users interact with enterprise applications and quickly identify anomalous or risky sign‑on patterns.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-Application-Activity-Overview.png')} alt="Okta Administrative Actions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-Application-Activity-Overview.png')} alt="Okta - Application Activity Overview dashboard" />
 
 
 ### Events Overview
 
 The **Okta - Events Overview** dashboard delivers a unified view of all Okta system events across users, applications, and policies. It visualizes event counts, severities, geographic distribution, and temporal patterns to surface spikes or anomalies. This dashboard serves as the central health and activity indicator, helping security teams monitor the overall state of Okta operations and environmental risk.
-<img src={useBaseUrl('img/integrations/saml/Okta-Events-Overview.png')} alt="Okta Administrative Actions" />
+
+<img src={useBaseUrl('img/integrations/saml/Okta-Events-Overview.png')} alt="Okta - Events Overview dashboard" />
 
 ### Failed Login Activity
+
 The **Okta - Failed Login Activity** dashboard focuses on failed authentication events to help identify patterns of login issues or possible attack attempts. It showcases top failed users, failure reasons, and trends by severity and location. This dashboard aids in diagnosing access issues, monitoring brute‑force attempts, and improving authentication reliability.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-Failed-Login-Activity.png')} alt="Okta Administrative Actions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-Failed-Login-Activity.png')} alt="Okta - Failed Login Activity dashboard" />
 
 ### Identity and Policy Management
+
 The **Okta - Identity and Policy Management** dashboard monitors identity governance and policy enforcement within the organization. It analyzes policy activity, access control changes, and account lifecycle events to identify misconfigurations or risky policy actions. Ideal for compliance and IAM administrators, it supports audits, reporting, and continuous assessment of access policy alignment.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-Identity-and-Policy-Management.png')} alt="Okta Administrative Actions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-Identity-and-Policy-Management.png')} alt="Okta - Identity and Policy Management dashboard" />
 
 ### Successful Login Activity
 
 The **Okta - Successful Login Activity** dashboard provides insights into legitimate user authentication behavior. It displays successful login trends across users, geographies, browsers, and devices while identifying outlier or embargoed geographic access. This helps teams understand normal authentication baselines and ensure authorized usage patterns.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-Successful-Login-Activity.png')} alt="Okta Administrative Actions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-Successful-Login-Activity.png')} alt="Okta - Successful Login Activity dashboard" />
 
 ### Threat Detection and Protection
 
 The **Okta - Threat Detection and Protection** dashboard consolidates all threat‑related event data, providing visibility into detected security incidents, suspicious activities, and credential breaches. It classifies threats by type, severity, and target entity to support rapid identification and response. This view strengthens proactive threat detection and enables continuous protection monitoring across the Okta environment.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-Threat-Detection-and-Protection.png')} alt="Okta Administrative Actions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-Threat-Detection-and-Protection.png')} alt="Okta - Threat Detection and Protection dashboard" />
 
-### User Account, Lifecycle and Activity  
+### User Account, Lifecycle and Activity
 
 The **Okta - User Account, Lifecycle and Activity** Monitoring dashboard tracks user lifecycle events, administrative actions, and risky account behaviors. It highlights suspended or reactivated accounts, frequent updates, and high‑risk users to aid in compliance and anomaly detection. This dashboard is instrumental in maintaining account hygiene, monitoring privileged accounts, and auditing user access changes.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-User-Account-Lifecycle-and-Activity-Monitoring.png')} alt="Okta Administrative Actions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-User-Account-Lifecycle-and-Activity-Monitoring.png')} alt="Okta - User Account, Lifecycle and Activity dashboard" />
 
 ### User and Groups Details
 
 The **Okta - User and Groups Details** dashboard offers a comprehensive inventory view of users, groups, and authentication providers. It reports user counts by status, provider, and group membership, helping administrators maintain accurate identity records. This dashboard is useful for IAM operations, provisioning validation, and organizational reporting.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-User-and-Groups-Details.png')} alt="Okta Administrative Actions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-User-and-Groups-Details.png')} alt="Okta - User and Groups Details dashboard" />
 
 ### User Authentication and MFA
 
 The **Okta - User Authentication and MFA** dashboard provides a detailed analysis of authentication and multi‑factor authentication events across your environment. It tracks success and failure patterns, MFA bypass attempts, and authentication trends by OS, geography, and target type. Security teams can use this to verify MFA enforcement effectiveness, identify suspicious access attempts, and optimize authentication policy configurations.
 
-<img src={useBaseUrl('img/integrations/saml/Okta-User-Authentication-and-MFA.png')} alt="Okta Administrative Actions" />
+<img src={useBaseUrl('img/integrations/saml/Okta-User-Authentication-and-MFA.png')} alt="Okta - User Authentication and MFA dashboard" />
 
 
 ## Create monitors for the Okta app
