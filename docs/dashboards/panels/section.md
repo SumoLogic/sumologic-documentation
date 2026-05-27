@@ -18,7 +18,14 @@ To add a section to your dashboard, follow the below steps:
     - Enter a section name.
     - Set the default state to **Expanded** or **Collapsed**.
     - Choose the preferred font size.
+    - Set the horizontal font alignment to **Left**, **Center**, or **Right**.
+    - Choose the body text color.
+    - Choose the background color.
         <br/><img src={useBaseUrl('img/dashboards/section/dashboard_section_editor_page.png')} alt="dashboard_section_editor_page" style={{border: '1px solid gray'}} width="800"/>
+
+## How to view the scan estimate
+
+To view the scan estimate for a section, click the <img src={useBaseUrl('img/dashboards/section/meter-icon.png')} alt="meter icon" width="30"/> adjacent to the three-dot kebab menu icon on the section header. The scan estimate displays the projected data scan in GB for all panels within that section.<br/><img src={useBaseUrl('img/dashboards/section/scan-estimate.png')} alt="Scan Estimate" style={{border: '1px solid gray'}} width="800"/>
 
 ## How to delete a section
 
@@ -37,3 +44,25 @@ To share a dashboard with coworkers within your organization, refer to [Share a 
 If **Autorefresh** is enabled for the dashboard, only panels within expanded sections are refreshed. Panels in collapsed sections remain unchanged and are refreshed only after their section is expanded.
 
 When exporting a dashboard as a report, any collapsed panels remain collapsed in the report, reflecting the exact state of the dashboard at the time of export.
+
+## FAQ
+
+#### What happens to panels when a section is deleted?
+
+When deleting a section, you can choose to either remove the section only (your panels remain on the dashboard) or remove the section along with all its panels. See [How to delete a section](#how-to-delete-a-section).
+
+#### Do collapsed sections affect dashboard performance?
+
+No. Queries run only for panels in expanded sections. Panels in collapsed sections do not execute queries or incur scan costs until you expand them.
+
+#### Can sections be nested within other sections?
+
+No. Sections cannot be nested. Each section sits at the top level of your dashboard layout.
+
+#### What happens to collapsed sections when exporting or sharing a dashboard?
+
+Collapsed sections remain collapsed in exported reports and shared dashboards, reflecting the exact state of the dashboard at the time of export or sharing.
+
+#### When do panels inside a section refresh?
+
+Panels refresh only when their section is expanded. If **Autorefresh** is enabled, only panels in expanded sections are automatically refreshed. Panels in collapsed sections refresh when you expand them.
