@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Windows Active Directory Inventory receiver for the [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) collects inventory data from [Active Directory](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/) using Windows ADSI (Active Directory Service Interfaces) COM APIs. This includes information such as computer names, usernames, email addresses, and location information.
 
-[Sumo Logic Cloud SIEM](/docs/cse) uses information from Windows Active Directory Inventory to enrich log data, providing additional context and building a more complete profile of your network — for example, connecting the dots between a location and the servers, workstations, and users in that location.
+[Sumo Logic Cloud SIEM](/docs/cse) uses information from Windows Active Directory Inventory to enrich log data, providing additional context and building a more complete profile of your network. For example, linking a location to the servers, workstations, and users in that location.
 
 The following information is collected by default:
 
