@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cuckoo.png')} alt="cuckoo" width="100"/>
 
-***Version: 1.4  
-Updated: Jul 06, 2023***
+***Version: 1.5  
+Updated: April 29, 2026***
 
 Utilize Cuckoo sandbox to detonate potentially malicious files and URLs during an active investigation.
 
@@ -59,3 +59,4 @@ For information about Cuckoo, see [Cuckoo documentation](https://cuckoo.readthed
 * July 6, 2023 (v1.4)
 	+ Updated the integration with Environmental Variables
 	+ Integration renamed from Cuckoo OIF to Cuckoo
+* April 29, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

@@ -63,7 +63,6 @@ The Sumo Logic AWS Observability solution supports the following AWS regions:
 * Asia Pacific (Hong Kong)
 * Asia Pacific (Tokyo)
 * Asia Pacific (Seoul)
-* Asia Pacific (Mumbai)
 * Asia Pacific (Singapore)
 * Asia Pacific (Sydney)
 * Canada (Central)
