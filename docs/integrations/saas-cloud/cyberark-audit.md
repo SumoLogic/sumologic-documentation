@@ -165,7 +165,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `CyberArk Audit - Failed Login Attempts` | This alert is triggered when repeated failed login attempts are detected, indicating brute force attacks or unauthorized attempts to access privileged accounts. | Count > 3 | Count < = 3 |
 | `CyberArk Audit - Multiple Failed Vault Access Attempts` | This alert is triggered when multiple failed attempts are made to access the CyberArk vault, signaling potential credential theft or unauthorized access attempts. | Count > 3 | Count < = 3 |
 | `CyberArk Audit - OAuth Token Generation Events from Embargoed Locations` | This alert is triggered when OAuth tokens are generated from embargoed locations, which may indicate a potential security breach or misuse of privileged access. | Count > 0 | Count < = 0 |
-| `CyberArk Audit - Threats Detected` | This alert is triggered when threats within CyberArk, such as unauthorized access, suspicious activity, or potential compromise of privileged credentials are detected. | Count > 0 | Count < = 0 |
+| `CyberArk Audit - Threats Detected` | This alert is triggered when threats within CyberArk, such as unauthorized access, suspicious activity, or potential compromise of privileged credentials are detected. | Count > 0 | Count < = 0 | 
 
 ## Upgrade/Downgrade the CyberArk Audit app (Optional)
 
