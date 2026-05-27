@@ -55,7 +55,7 @@ The **Base URL** is the URL where your **Citrix Cloud** account is located. To g
 
 #### API client
 
-Refer to this Citrix [documentation](https://developer-docs.citrix.com/en-us/secure-private-access/access-security/getting-started.html#creating-an-api-client) to register the API client and generate the **Client ID** and **Client Secret**.
+Follow the instructions in the [Citrix documentation](https://developer-docs.citrix.com/en-us/secure-private-access/access-security/getting-started.html#creating-an-api-client) to register the API client and generate the **Client ID** and **Client Secret**.
 
 :::note
 - You can save the **Client ID** and **Client Secret** in secure vault.
@@ -64,7 +64,7 @@ Refer to this Citrix [documentation](https://developer-docs.citrix.com/en-us/sec
 
 #### Customer ID
 
-Refer to this Citrix [documentation](https://developer-docs.citrix.com/en-us/secure-private-access/access-security/getting-started.html#getting-the-citrix-customer-id) to get your **Customer ID**.
+Follow the instructions in the [Citrix documentation](https://developer-docs.citrix.com/en-us/secure-private-access/access-security/getting-started.html#getting-the-citrix-customer-id) to get your **Customer ID**.
 
 ### Source configuration
 
