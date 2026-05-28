@@ -641,7 +641,7 @@ metadata:
                 max_size: 10000
                 flush_timeout: 5s
 ```
-More details of the exporter batch config can be found in [Link](https://github.com/open-telemetry/opentelemetry-collector/blob/main/exporter/exporterhelper/README.md#sending-queue-batch-settings)
+For exporter batch config details, see [Sending Queue Batch Settings](https://github.com/open-telemetry/opentelemetry-collector/blob/main/exporter/exporterhelper/README.md#sending-queue-batch-settings).
 
 
 If you have completed the configuration changes and want to proceed with the installation, set this flag to `true` to acknowledge that you understand the changes and their impact.
