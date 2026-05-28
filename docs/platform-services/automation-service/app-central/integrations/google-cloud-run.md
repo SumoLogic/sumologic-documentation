@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
 ***Version: 1.0  
-Updated: May 21, 2026***
+Updated: Jun 2, 2026***
 
 Google Cloud Run is a fully managed serverless platform that lets you run stateless containers directly on top of Google's scalable infrastructure. Use this integration to inventory running services, manage access controls, and decommission services as part of automated response workflows.
 
@@ -99,4 +99,4 @@ For information about Google Cloud Run, see [Google Cloud Run documentation](htt
 
 ## Change Log
 
-* May 21, 2026 (v1.0) - First upload
+* June 2, 2026 (v1.0) - First upload
