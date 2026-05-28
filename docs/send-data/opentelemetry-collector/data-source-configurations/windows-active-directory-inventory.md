@@ -42,7 +42,7 @@ Add the `active_directory_inv` receiver to your collector configuration file (fo
 
 | Parameter | Description | Default | Required |
 |:--|:--|:--|:--|
-| `base_dn` | Base Distinguished Name to search from. Defines the root of the AD subtree to query. | (none) | Yes |
+| `base_dn` | Base Distinguished Name to search from. Defines the root of the AD subtree to query. |  | Yes |
 | `attributes` | List of LDAP attribute names to collect for each object. | `[name, mail, department, manager, memberOf]` | No |
 | `poll_interval` | How often to query Active Directory for inventory data. | `24h` | No |
 
