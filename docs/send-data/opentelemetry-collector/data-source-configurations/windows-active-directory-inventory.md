@@ -159,9 +159,6 @@ The receiver emits one log record per Active Directory object found under the co
 
 Attributes that are not set on an object are omitted from the JSON output. Multi-valued attributes (such as `memberOf`) are returned as arrays.
 
-<!--
-TODO: Add screenshot of logs in Sumo Logic
--->
 
 ## Behavior notes
 
@@ -209,6 +206,4 @@ After the first poll interval elapses, verify that inventory data is flowing int
    ```
 1. You should see log records containing JSON objects with your configured Active Directory attributes.
 
-<!--
-TODO: Add screenshot of search results
--->
+![img_1.png](../../../../static/img/collector/windowsActiveDirectorySearch.png)
