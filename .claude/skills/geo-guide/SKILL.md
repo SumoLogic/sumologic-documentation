@@ -23,7 +23,7 @@ GEO changes heading style, page structure, frontmatter fields, and content layou
 - "apply BLUF" 
 - "rewrite headings as questions"
 
-Do not  apply GEO for:
+Do not apply GEO for:
 - Routine documentation updates, bug fixes, or content corrections 
 - Standard new page creation without an explicit AI-optimization request
 - Pull requests that mention SEO but not GEO or AI citation
@@ -34,40 +34,13 @@ Sumo Logic doc pages live under `/docs/` and follow this frontmatter pattern:
 ```yaml
 ---
 id: my-page-name
-title: How Do I [Task] with Sumo Logic? 
+title: How Do I [Task] with Sumo Logic?
 sidebar_label: Short Nav Label
-description: One sentence answering the page question for AI crawlers and search engines. 
-keywords: 
+description: One sentence answering the page question for AI crawlers and search engines.
+keywords:
   - Sumo Logic
   - feature or product name
   - capability term
-head:
-  - tagName: script
-    attributes:
-      type: application/ld+json
-    innerHTML: |
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Your first question here?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Your plain-text answer here." 
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Your second question here?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Your plain-text answer here."
-            }
-          }
-        ]
-      }
 ---
 ```
 
@@ -78,8 +51,6 @@ When generating GEO-optimized frontmatter, add # [GEO: Principle N] inline comme
 - `title` is phrased as a question and matches the H1 (generated from frontmatter).
 - `description` is one sentence describing what the feature does and what problem it solves.
 - `keywords` include: the integrated product name, Sumo Logic, and 2–3 capability terms (for example: security, monitoring, logs).
-- `mainEntity` in the JSON-LD must mirror the FAQ section at the bottom of the page body to keep them in sync.
-- FAQ answers in JSON-LD must be plain text.
 
 ## The Five GEO Principles
 
@@ -161,22 +132,17 @@ Every major page ends with a structured FAQ block. These are the highest-value c
 - Each answer must be fully self-contained. No "see above" or "refer to X".
 - Questions must match natural AI query language for the topic.
 - Answers must be concise with 1 to 3 sentences.
-- Every FAQ entry must have a matching entry in the JSON-LD `mainEntity` array.
 
 ### Principle 5 — Structured metadata and schema markup
 
-Add `keywords` and JSON-LD FAQ schema to every major documentation page. See the [Frontmatter Templates](#frontmatter-templates) above for the full patterns This is the signal layer AI crawlers read before rendering the page.
+Add `keywords` to every major documentation page. This is the signal layer AI crawlers read before rendering the page. See the [Frontmatter Template (GEO-optimized)](#frontmatter-template-geo-optimized) above for the full pattern. Per-page JSON-LD schema injection requires a swizzled `@theme/DocItem/Metadata` component that does not yet exist in this repo — scope Principle 5 to `keywords` only until that infrastructure is built.
 
 ## Gotchas
 
-These are GEO-specific behaviors that differ from standard doc authoring. Apply GEO only when explicitly requested. GEO restructures pages in ways that are intentional for AI citation but inconsistent with the standard Sumo Logic style guide. Applying it to the wrong pull requests creates review noise and style drift.
+GEO restructures pages in ways that are intentional for AI citation but inconsistent with the standard Sumo Logic style guide. Applying it to the wrong pull requests creates review noise and style drift. Only apply GEO when the prompt explicitly asks for it — trigger phrases are listed above. If a prompt asks you to "update the authentication page" with no mention of GEO, AI citation, or structured metadata, make the content change only. Do not rewrite headings as questions, do not add an FAQ section.
 
-Only apply GEO when the prompt explicitly asks for it. Trigger phrases are listed in above. If a prompt asks you to "update the authentication page" with no mention of GEO, AI citation, or structured metadata, make the content change only. Do not add JSON-LD, do not rewrite headings as questions, do not add an FAQ section.
-
-- **JSON-LD answers must be plain text**. No Markdown, no HTML tags inside `"text":` values. Bold, code fences, and links will break schema validation.
-- **`title:` and JSON-LD FAQ questions must not overlap**. The title is the page level question but FAQ entries are sub-questions. Repeating the title as a FAQ question adds no citation value.
+- **`title:` and FAQ questions must not overlap**. The title is the page-level question; FAQ entries are sub-questions. Repeating the title as a FAQ question adds no citation value.
 - **Keep `description:` between 140–160 characters**. AI crawlers truncate longer values and may ignore the field entirely.
-- **FAQ section and `mainEntity` array must stay in sync**. Adding a question to the body FAQ requires a matching entry in the JSON-LD, and vice versa.
 - **Never write an H1 in the body**. The `title:` frontmatter generates the H1. A second H1 in the body breaks page structure and GEO.
 - **Do not apply GEO to `docs/reuse/` partials.** These files are import-only snippets and are never crawled directly. Apply GEO only to the parent page that imports them.
 
