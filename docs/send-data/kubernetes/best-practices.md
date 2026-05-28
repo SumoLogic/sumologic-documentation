@@ -570,8 +570,8 @@ The above, in connection with PVC monitoring, can lead to constant alerts (e.g.,
 [filling_up_alert]: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubepersistentvolumefillingup/
 [sumo-otelcol-batching-doc]: ../../opentelemetry-collector/data-source-configurations/additional-configurations-reference/#using-batch-processor-to-batch-data
 
-### Batching Migration
-We are migrating the default batching logic from the batch processor to exporter-side batching to improve service reliability. For more details refer [Link](https://github.com/open-telemetry/opentelemetry-collector/issues/8122)
+### Configuring Exporter-Side Batching
+Sumo Logic uses exporter-side batching instead of the batch processor. If you previously configured the batch processor, update your settings as follows. For more details, see [OpenTelemetry Collector issue #8122](https://github.com/open-telemetry/opentelemetry-collector/issues/8122).
 
 #### Queue Size
 When an exporter is preceded by a batch processor, `sending_queue.queue_size` represents the number of batches produced by the batch processor. With exporter-side batching, the batch processor is removed, so `sending_queue.queue_size` instead represents the number of individual records. As a result, if the queue size is not adjusted accordingly, the queue may fill up more quickly and potentially lead to data loss.
