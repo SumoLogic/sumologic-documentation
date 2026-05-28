@@ -16,7 +16,7 @@ Okta provides secure identity management and access control between users and ap
 The Sumo Logic collector uses the Okta API to collect two types of logs:
 
 - **System logs**. Collected via the Okta System Log API. The log types include authentication, events, and actions. For more information, see the [Okta System Log API](https://developer.okta.com/docs/api/resources/system_log.html).
-- **User logs**. Collected via the Okta Users API. Includes user profile data, group membership, account status, and credential information.
+- **User logs**. Collected via the [Okta Users API](https://developer.okta.com/docs/reference/api/users/) and [User Groups API](https://developer.okta.com/docs/reference/api/users/#get-user-s-groups). Includes user profile data, group membership, account status, and credential information.
 
 ### Sample log messages
 
