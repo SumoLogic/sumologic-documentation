@@ -191,6 +191,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+    <a href={useBaseUrl('docs/integrations/saas-cloud/cyberark-epm')}><img src={useBaseUrl('img/send-data/cyberark.png')} alt="CyberArk icon" width="50"/><h4>CyberArk EPM</h4></a>
+    <p>Gain comprehensive visibility into endpoint privilege management, policy enforcement, script activity, and user and endpoint risk with the CyberArk EPM app for Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/databricks-audit')}><img src={useBaseUrl('img/collector/databricks-icon.png')} alt="Databricks icon" width="70"/><h4>Databricks Audit</h4></a>
   <p>Analyze your organization's security practices to identify emerging threats and compliance risks.</p>
   </div>
