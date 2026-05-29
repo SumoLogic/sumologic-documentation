@@ -31,16 +31,16 @@ The VMware Workspace One source supports [O-Auth-based authentication](https://d
 
 #### Endpoint URL
 
-Endpoint URL will be the domain URL of the VMware Workspace console.
+The endpoint URL will be the domain URL of the VMware Workspace console.
 
 
 #### Auth URL
 
 :::note
-VMware is transitioning `*.uemauth.vmwservices.com` domain URLs to legacy status and recommends using the new `*.uemauth.workspaceone.com ` domain URLs. The legacy `*.uemauth.vmwservices.com` URLs may be removed in a future update. For more information, refer [this doc](https://kb.omnissa.com/s/article/6001352).
+VMware is transitioning `*.uemauth.vmwservices.com` domain URLs to legacy status and recommends using the new `*.uemauth.workspaceone.com ` domain URLs instead. The legacy `*.uemauth.vmwservices.com` URLs may be removed in a future update. For more information, see [Workspace ONE domain migration guide](https://kb.omnissa.com/s/article/6001352).
 :::
 
-The following table has lists of the Auth URLs by region. Use the **Auth URL (Recommended)** column for all new and existing configurations. We recommend migrating from the legacy `*.vmwservices.com` URLs to the new `*.workspaceone.com` URLs to avoid any disruption when the legacy URLs are removed.
+The following table lists the Auth URLs by region. Use the **Auth URL (Recommended)** column for all new and existing configurations. We recommend migrating from the legacy `*.vmwservices.com` URLs to the new `*.workspaceone.com` URLs to avoid any disruption when the legacy URLs are removed.
 
 | Region | Auth URL (Recommended) | Legacy Auth URL (Deprecated) |
 |:--|:--|:--|
@@ -64,20 +64,20 @@ To generate the Client ID and Client Secret, refer to the [Create an OAuth Clien
 When you create a VMware Workspace One Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a VMware Workspace One Source:
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu, select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **VMware Workspace One**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
+1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and a value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field sent to Sumo Logic does not exist in the Fields schema, it is ignored and considered dropped.
 1. **Endpoint URL**. Enter the [VMware Workspace One platform](#vendor-configuration) endpoint URL.
 1. **Auth URL**. Enter the API region URL to fetch the auth token collected from the [VMware Workspace One platform](#auth-url). For example, `https://uat.uemauth.workspaceone.com`.
 1. **Client ID**. Enter the Client ID of your account collected from the [VMware Workspace One platform](#client-id-and-client-secret). For example, `cfea26d59bd542488ea706b025564d42`.
 1. **Client Secret**. Enter the Client Secret key of your account collected from the [VMware Workspace One platform](#client-id-and-client-secret). For example, `E2220271xxxxxxxxxxxxxxxxxxxxx4556634`.
 1. (Optional) **Device Type**. Enter the list of device types to collect information.
-1. Select the **Collect Apps Details** checkbox to collect the apps details.
+1. Select the **Collect Apps Details** checkbox to collect the apps' details.
 1. When you are finished configuring the Source, click **Submit**.
 
 :::info
@@ -106,7 +106,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | authURL | String | Yes | `null` | The API URL to fetch the authentication token from the VMware Workspace One source. | `https://uat.uemauth.workspaceone.com` |
 | clientID | String | Yes | `null` | Client ID of your account. | `cfea26d59bd542488ea706b025564d42` |
 | clientSecret | String | Yes | `null` | Client Secret of your account. | `E2220271xxxxxxxxxxxxxxxxxxxxx4556634` |
-| deviceType | String | No | `null` | Platform type of the device. | `Apple, Android, and/or WindowsPC` |
+| deviceType | String | No | `null` | Platform type of the device. | `Apple, Android, and/or Windows PC` |
 | pollingIntervalVulnerabilityMin | String | Yes | `24 hours` | Time interval (in minutes) after which the source will check for new data.<br/>**Default**: 24 hours<br/>**Minimum**: 12 hours<br/>**Maximum**: 24 hours |  |
 | collectAppsDetails | Boolean | No | `False` | Specify if you need to collect the app details. |  |
 
