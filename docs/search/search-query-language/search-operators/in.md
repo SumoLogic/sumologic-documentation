@@ -2,6 +2,7 @@
 id: in
 title: in Search Operator
 sidebar_label: in
+description: Use the in operator to check if a field's value matches any value in a specified list and return a boolean result.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,6 +2,7 @@
 id: contains
 title: contains Search Operator
 sidebar_label: contains
+description: Use the contains operator to compare string values of two parsed fields and check if one field's value exists within another.
 ---
 
 The `contains` operator compares string values of two [parsed](/docs/search/search-query-language/parse-operators) fields and returns a boolean result based on whether the second field's value exists in the first.

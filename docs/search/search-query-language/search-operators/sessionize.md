@@ -2,6 +2,7 @@
 id: sessionize
 title: sessionize Search Operator
 sidebar_label: sessionize
+description: Use the sessionize operator to correlate log messages across multiple systems using an extracted value, creating a unified session view.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

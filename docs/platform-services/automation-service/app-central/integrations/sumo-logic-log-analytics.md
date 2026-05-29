@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.24  
-Updated: Dec 12, 2024***
+***Version: 1.25  
+Updated: April 30, 2026***
 
 Integration with Sumo Logic platform for logs, metrics, and monitors.
 
@@ -117,3 +117,4 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
       + **Search Sumo Logic** Action
       + **Search Sumo Logic Daemon** Action
       + **Aggregates Sumo Logic Daemon** Action
+* April 30, 2026 (v1.25) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

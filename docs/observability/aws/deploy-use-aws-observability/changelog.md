@@ -11,16 +11,35 @@ To install or upgrade to the required version of the CloudFormation template, u
 
 ### AWSO lifecycle
 
-| Release (AWSO) | Release Date | Active Support | Additional Notes |
-|:--|:--|:--|:--|
-| 2.14.0 | 14th Apr, 2026 | Yes | AWSO is not supported in the AWS Zurich region, as the Serverless Application Repository is not available there. |
-| 2.13.0 | 7th Oct, 2025 | Yes | |
-| 2.12.0 | 1st Apr, 2025 | Yes | |
-| 2.11.0 | 24th Jan, 2025 | Yes - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th Apr, 2025 |
-| 2.10.0 | 4th Sep, 2024 | Yes - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th Apr, 2025 |
-| 2.9.0 | 2nd Aug, 2024 | Yes - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th Apr, 2025 |
+| Release (AWSO) | Release Date   | Active Support | Additional Notes                                                                                                                                                                 |
+|:--|:---------------|:--|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 2.15.0 | 28th May, 2026 | Yes | AWSO deployment is not supported in the AWS European Sovereign Cloud and Sumo Logic ESC environments due to the unavailability of the Serverless Application Repository.                         |
+| 2.14.0 | 14th Apr, 2026 | Yes | AWSO is not supported in the AWS Zurich region, as the Serverless Application Repository is not available there.                                                                 |
+| 2.13.0 | 7th Oct, 2025  | Yes |                                                                                                                                                                                  |
+| 2.12.0 | 1st Apr, 2025  | Yes |                                                                                                                                                                                  |
+| 2.11.0 | 24th Jan, 2025 | No - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th Apr, 2025 |
+| 2.10.0 | 4th Sep, 2024  | No - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th Apr, 2025 |
+| 2.9.0 | 2nd Aug, 2024  | No - Ends on 1st May, 2026 | AWS Lambda runtime Node.js 20.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th Apr, 2025 |
 | 2.8.0 or Less | 17th May, 2024 | No | AWS Lambda runtime Node.js 18.x was deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-deprecated)) |
 
+
+## v2.15.0, 28-May-2026
+AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.15.0/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+
+Updates:
+* Updated Apps queries.
+* Addressed CVEs.
+* Upgraded Lambda runtimes to Node.js v24.x and Python 3.14 from Node.js v22.x and Python 3.13.
+* Upgraded SAM app versions:
+   - sumologic-app-utils → 2.0.23
+   - sumologic-s3-logging-auto-enable → 1.0.19
+   - sumologic-loggroup-connector - v1.0.16
+
+Deprecation:
+* AWS Observability Solution versions that rely on deprecated AWS Lambda runtimes are also considered deprecated. Since Node.js 20.x was deprecated on April 30, 2026, all AWS Observability versions up to and including 2.11.0 are now deprecated.
+[Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-deprecated)
 
 ## v2.14.0, 14-April-2026
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.14.0/sumologic_observability.master.template.yaml`
@@ -58,7 +77,7 @@ Updates:
 * Updated Terraform minimum required version to 1.5.7.
 * Addressed CVEs identified in Python and Go modules.
 * Upgraded SAM app versions:
-   -  sumologic-app-utils → 2.0.21
+   - sumologic-app-utils → 2.0.21
    - sumologic-s3-logging-auto-enable → 1.0.18
 
 Deprecation:
@@ -74,8 +93,8 @@ Updates:
 * Updated the SAM Lambda runtime from Node.js v20.x to v22.x.
 * Updated the Lambda runtime to Node.js v22.x in the CloudFormation template for `AWS CloudWatch Logs with Dead Letter Queue Support`.
 * Updated the SecurityHub SAM Lambda runtime from Python v3.11 to v3.13.
-* Updated Lambda runtime to Python v3.13 in the CloudFormation template for `Kinesis Metric Collection`
 * Discontinued support for Mumbai deployment.
+* Updated Lambda runtime to Python v3.13 in the CloudFormation template for `Kinesis Metric Collection`
 * Updated 9 apps and 4 monitors to accommodate new threat intel feed: AWS Application Load Balancer, AWS API Gateway, AWS Classic Load Balancer, AWS DynamoDB, AWS EC2, AWS Lambda, Amazon RDS, Amazon SNS, Amazon SQS.
 
 ## v2.11.0, 24-Jan-2025

@@ -58,6 +58,17 @@ List of annotations per instrumented language:
 
 In the case of a Pod with multiple containers inside, you must specify additional annotation (`instrumentation.opentelemetry.io/container-names`), which will take a comma-separated list of the container names as its value. If annotation for multiple containers is not set, the instrumentation will be provided to the first container on the list.
 
+## Compatibility matrix
+
+Auto-instrumentation images injected by Sumo Logic and their runtime compatibility:
+
+| Language | Image Tag | Minimum Runtime Version |
+|:---------|:----------|:-----------------------|
+| Java | 2.27.0 | Java 8+ |
+| .NET | 1.15.0 | .NET 8+ |
+| Python | 0.48b0 | Python 3.8+ |
+| Node.js | 0.74.0 | Node.js 18.19.0+ or 20.6.0+ |
+
 ## Examples
 
 ### Java auto-instrumentation for Namespace
@@ -188,7 +199,8 @@ In the case of defining an endpoint to export telemetry data from instrumented a
 
 Make sure supported auto-instrumentation images are used:
 
-* `dotnet` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.4.0-beta.1
-* `java` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:1.16.0
-* `nodejs` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.27.0
-* `python` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.28b1
+* `dotnet` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:1.15.0
+* `java` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:2.27.0
+* `nodejs` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.74.0
+* `python` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.48b0
+
