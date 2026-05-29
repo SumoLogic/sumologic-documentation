@@ -95,11 +95,13 @@ jobs:
           echo "PANTHEON_BRANCH=$NORMLIZED_STAGING_ENV_NAME" >> $GITHUB_ENV
       - name: Commit build and deploy to Pantheon repo
         run: |
+          DEFAULT_REASON="${{ github.workflow }} run #${{ github.run_number }}"
+          REASON="DOCS@$(echo "${{ github.sha }}" | cut -c 1-7): ${{ github.event.pull_request.title || github.event.head_commit.message || '$DEFAULT_REASON' }}"
           terminus local:clone --yes --branch="${{ env.PANTHEON_BRANCH }}" ${{ inputs.PANTHEON_SITE_ID }}
           rsync --archive --delete --exclude="cid.php" ./build/ "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}/${{ inputs.SITE_PATH }}"
           chmod -R 755 $HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}/${{ inputs.SITE_PATH }}
           git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" add .
-          git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" commit -m "Added content from ${{ github.repository }} at ${{ github.sha }}"
+          git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" commit -m "$REASON"
           WATCH_COMMIT=$(git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" rev-parse --verify HEAD)
           git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" push origin
           terminus workflow:wait --max 600 --commit $WATCH_COMMIT -- ${{ inputs.PANTHEON_SITE_ID }}.${{ env.PANTHEON_ENV }}

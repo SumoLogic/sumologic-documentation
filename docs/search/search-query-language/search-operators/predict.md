@@ -2,6 +2,7 @@
 id: predict
 title: predict Search Operator
 sidebar_label: predict
+description: Use the predict operator to forecast future values based on time-series numerical data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
