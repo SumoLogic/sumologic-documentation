@@ -90,43 +90,43 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **CyberArk EPM - Overview** dashboard provides a high-level security posture view of all EPM activity across log types, including total events, policy actions, event type distribution, application types, source types, event volume trends, and top users and applications.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-EPM-Overview.png')} alt="CyberArk EPM - Overview" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/CyberArk-EPM/CyberArk-EPM-Overview.png' alt="CyberArk EPM - Overview" />
 
 ### Administrative audit
 
 The **CyberArk EPM - Administrative Audit** dashboard monitors administrative actions in the CyberArk EPM console, tracks policy set changes and role-based access modifications, and provides visibility into who makes configuration changes and from where.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-EPM-Administrative-Audit.png')} alt="CyberArk EPM - Administrative Audit" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/CyberArk-EPM/CyberArk-EPM-Administrative-Audit.png' alt="CyberArk EPM - Administrative Audit" />
 
 ### Application control and trust
 
 The **CyberArk EPM - Application Control & Trust** dashboard monitors application trust decisions, tracks software from untrusted sources, identifies unsigned or unknown applications being executed, and detects newly introduced software across endpoints.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-EPM-Application-Control-&-Trust.png')} alt="CyberArk EPM - Application Control and Trust" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/CyberArk-EPM/CyberArk-EPM-Application-Control-%26-Trust.png' alt="CyberArk EPM - Application Control and Trust" />
 
 ### Privilege elevation activity
 
 The **CyberArk EPM - Privilege Elevation Activity** dashboard provides deep visibility into privilege elevation activity, including who is elevating, which applications are elevated, source and publisher context, non-admin escalation patterns, and unusual elevation spikes.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-EPM-Privilege-Elevation-Activity.png')} alt="CyberArk EPM - Privilege Elevation Activity" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/CyberArk-EPM/CyberArk-EPM-Privilege-Elevation-Activity.png' alt="CyberArk EPM - Privilege Elevation Activity" />
 
 ### Policy enforcement and compliance
 
 The **CyberArk EPM - Policy Enforcement & Compliance** dashboard monitors policy effectiveness, identifies enforcement gaps, tracks policy action behavior, and surfaces high-impact aggregated events that affect many users or endpoints.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-EPM-Policy-Enforcement-&-Compliance.png')} alt="CyberArk EPM - Policy Enforcement and Compliance" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/CyberArk-EPM/CyberArk-EPM-Policy-Enforcement-%26-Compliance.png' alt="CyberArk EPM - Policy Enforcement and Compliance" />
 
 ### Endpoint and user risk analysis
 
 The **CyberArk EPM - Endpoint & User Risk Analysis** dashboard identifies high-risk endpoints and users based on event volume, diversity of applications elevated, lateral movement indicators, and anomalous behavior to support investigation and threat hunting.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-EPM-Endpoint-&-User-Risk-Analysis.png')} alt="CyberArk EPM - Endpoint and User Risk Analysis" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/CyberArk-EPM/CyberArk-EPM-Endpoint-%26-User-Risk-Analysis.png' alt="CyberArk EPM - Endpoint and User Risk Analysis" />
 
 ### Script and PowerShell monitoring
 
 The **CyberArk EPM - Script & PowerShell Monitoring** dashboard focuses on script execution activity, especially PowerShell, and helps detect execution policy bypass attempts, suspicious arguments, unusual script locations, hidden-window evasion, and unsigned script execution.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-EPM-Script-&-PowerShell-Monitoring.png')} alt="CyberArk EPM - Script and PowerShell Monitoring" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/CyberArk-EPM/CyberArk-EPM-Script-%26-PowerShell-Monitoring.png' alt="CyberArk EPM - Script and PowerShell Monitoring" />
 
 ## Create monitors for the CyberArk EPM app
 
