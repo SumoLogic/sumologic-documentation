@@ -36,21 +36,24 @@ Endpoint URL will be the domain URL of the VMware Workspace console.
 
 #### Auth URL
 
+:::note
+VMware is transitioning `*.uemauth.vmwservices.com` domain URLs to legacy status and recommends using the new `*.uemauth.workspaceone.com ` domain URLs. The legacy `*.uemauth.vmwservices.com` URLs may be removed in a future update. For more information, refer [this doc](https://kb.omnissa.com/s/article/6001352).
+:::
 
-The following table contains the Auth URLs based on the location of your VMware Workspace One API account:
+The following table has lists of the Auth URLs by region. Use the **Auth URL (Recommended)** column for all new and existing configurations. We recommend migrating from the legacy `*.vmwservices.com` URLs to the new `*.workspaceone.com` URLs to avoid any disruption when the legacy URLs are removed.
 
-| Region | Auth URL |
-|:--|:--|
-| All UAT Environment | `https://uat.uemauth.vmwservices.com/connect/token` |
-| Australia | `https://apac.uemauth.vmwservices.com/connect/token` |
-| Canada | `https://na.uemauth.vmwservices.com/connect/token` |
-| Germany | `https://emea.uemauth.vmwservices.com/connect/token` |
-| Hong Kong	 | `https://apac.uemauth.vmwservices.com/connect/token` |
-| India | `https://apac.uemauth.vmwservices.com/connect/token` |
-| Japan | `https://apac.uemauth.vmwservices.com/connect/token` |
-| Singapore | `https://apac.uemauth.vmwservices.com/connect/token` |
-| United Kingdom | `https://emea.uemauth.vmwservices.com/connect/token` |
-| United States | `https://na.uemauth.vmwservices.com/connect/token` |
+| Region | Auth URL (Recommended) | Legacy Auth URL (Deprecated) |
+|:--|:--|:--|
+| All UAT Environments | `https://uat.uemauth.workspaceone.com` | `https://uat.uemauth.vmwservices.com` |
+| Australia | `https://apac.uemauth.workspaceone.com` | `https://apac.uemauth.vmwservices.com` |
+| Canada | `https://na.uemauth.workspaceone.com` | `https://na.uemauth.vmwservices.com` |
+| Germany | `https://emea.uemauth.workspaceone.com` | `https://emea.uemauth.vmwservices.com` |
+| Hong Kong | `https://apac.uemauth.workspaceone.com` | `https://apac.uemauth.vmwservices.com` |
+| India | `https://apac.uemauth.workspaceone.com` | `https://apac.uemauth.vmwservices.com` |
+| Japan | `https://apac.uemauth.workspaceone.com` | `https://apac.uemauth.vmwservices.com` |
+| Singapore | `https://apac.uemauth.workspaceone.com` | `https://apac.uemauth.vmwservices.com` |
+| United Kingdom | `https://emea.uemauth.workspaceone.com` | `https://emea.uemauth.vmwservices.com` |
+| United States | `https://na.uemauth.workspaceone.com` | `https://na.uemauth.vmwservices.com` |
 
 #### Client ID and Client Secret
 
@@ -70,7 +73,7 @@ To configure a VMware Workspace One Source:
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
 1. **Endpoint URL**. Enter the [VMware Workspace One platform](#vendor-configuration) endpoint URL.
-1. **Auth URL**. Enter the API region URL to fetch the auth token collected from the [VMware Workspace One platform](#auth-url). For example, `https://uat.uemauth.vmwservices.com`.
+1. **Auth URL**. Enter the API region URL to fetch the auth token collected from the [VMware Workspace One platform](#auth-url). For example, `https://uat.uemauth.workspaceone.com`.
 1. **Client ID**. Enter the Client ID of your account collected from the [VMware Workspace One platform](#client-id-and-client-secret). For example, `cfea26d59bd542488ea706b025564d42`.
 1. **Client Secret**. Enter the Client Secret key of your account collected from the [VMware Workspace One platform](#client-id-and-client-secret). For example, `E2220271xxxxxxxxxxxxxxxxxxxxx4556634`.
 1. (Optional) **Device Type**. Enter the list of device types to collect information.
@@ -100,7 +103,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"` |
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the collector or source. Use the boolean field `_siemForward` to enable forwarding to SIEM.| `{"_siemForward": false, "fieldA": "valueA"}` |
 | requestEndpoint | String | Yes | `null` | The base URL to fetch the data from the VMware Workspace One source. |  |
-| authURL | String | Yes | `null` | The API URL to fetch the authentication token from the VMware Workspace One source. | `https://uat.uemauth.vmwservices.com` |
+| authURL | String | Yes | `null` | The API URL to fetch the authentication token from the VMware Workspace One source. | `https://uat.uemauth.workspaceone.com` |
 | clientID | String | Yes | `null` | Client ID of your account. | `cfea26d59bd542488ea706b025564d42` |
 | clientSecret | String | Yes | `null` | Client Secret of your account. | `E2220271xxxxxxxxxxxxxxxxxxxxx4556634` |
 | deviceType | String | No | `null` | Platform type of the device. | `Apple, Android, and/or WindowsPC` |
