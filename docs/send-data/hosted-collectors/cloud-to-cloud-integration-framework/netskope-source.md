@@ -27,6 +27,10 @@ The following event types are available to collect:
 * incident
 * endpoint
 
+:::note
+Upgrade the Netskope source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
+
 ## Data collected
 
 | Polling Interval | Data |

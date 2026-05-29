@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/libraesva-email-security-v5.png')} alt="Libraesva Email Security V5 icon" width="100"/>
 
-***Version: 5.2  
-Updated: Jul 11, 2023***
+***Version: 5.3  
+Updated: April 29, 2026***
 
 Libraesva Email Security V5 is active defense against phishing, 0-day malware, impersonation, spoofing, and email threats.
 
@@ -76,3 +76,4 @@ Email Security
 * July 7, 2023 (v5.2)
 	+ Updated the integration with Environmental Variables
 	+ Changed fields visibility
+* April 29, 2026 (v5.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

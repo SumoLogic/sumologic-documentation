@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/onelogin.png')} alt="onelogin" width="100"/>
 
-***Version: 1.4  
-Updated: Mar 7, 2024***
+***Version: 1.5  
+Updated: April 30, 2026***
 
 OneLogin streamlines identity management, enabling secure and audited access to critical systems.  
 This integration enables user management and secure app access with MFA and event monitoring.
@@ -62,3 +62,4 @@ For information about OneLogin, see [OneLogin documentation](https://developers.
         * Update User
     * Renamed action List Groups
     * Other minor improvements and fixes
+* April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

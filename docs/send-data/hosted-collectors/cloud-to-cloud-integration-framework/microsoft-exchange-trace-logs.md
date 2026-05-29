@@ -14,17 +14,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Microsoft Exchange Trace Logs source collects the [Message Trace](https://learn.microsoft.com/en-us/graph/api/messagetracingroot-list-messagetraces?view=graph-rest-1.0&tabs=http) logs via the Microsoft Graph API.
 
+:::note
+We recommend migrating to version 2.x.x only if your tenant is on the [Microsoft Graph Global Service](https://learn.microsoft.com/en-us/graph/api/messagetracingroot-list-messagetraces?view=graph-rest-1.0&tabs=http) and has the **`/admin/exchange/tracing/messageTraces`** endpoint enabled. 
+If your tenant does not meet these requirements or the endpoint is not yet available in your environment, please continue using version 1.x.x to ensure uninterrupted data collection. Please refer to this [Microsoft doc](https://techcommunity.microsoft.com/blog/exchange/message-trace-support-using-graph-api-is-now-in-public-preview/4488587#:~:text=Migration%20guidance%20and%20deprecation%20timeline) for  more details.
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
-| :--- | :--- |
-| 5 min |  [Message Traces](https://learn.microsoft.com/en-us/graph/api/messagetracingroot-list-messagetraces?view=graph-rest-1.0&tabs=http) |
+|:--|:--|
+| 5 min | [Message Traces](https://learn.microsoft.com/en-us/graph/api/messagetracingroot-list-messagetraces?view=graph-rest-1.0&tabs=http) |
 
 ## Setup
 
 ### Vendor configuration
 
-This source requires you to register an application within Azure Active Directory, generate the client secret, give the required permission, and generate the service principal. Follow the instructions below.
+This source requires you to register an application in Azure Active Directory, generate a client secret, grant the required permissions, and create a service principal. Follow the instructions below.
 
 #### Register an Azure Application
 
@@ -66,9 +71,10 @@ Service principal-less authentication failed: The service principal for App ID 8
 
 ### Source configuration
 
-When you create a Microsoft Exchange Trace Logs Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Microsoft Exchange Trace Logs Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new one. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-:::note Upgrading from version 1.0.x
+:::note
+**Upgrading from version 1.0.x**:
 If you are already using version 1.0.x of this C2C source, you will see an upgrade option. Click **Upgrade**, ensure that you have completed the vendor configuration above, then reconfigure the source with the correct credentials.
 :::
 
@@ -94,11 +100,11 @@ After configuring the Microsoft Exchange Trace source, consider installing the S
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/cse). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files via the [Collector Management API](/docs/cse). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{"type":"MS Exchange Trace Logs"}` | Yes | Define the specific schema type. |
+| schemaRef | JSON Object | `{"type":"MS Exchange Trace Logs"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | Configuration object | Yes | Source type specific values. |
 

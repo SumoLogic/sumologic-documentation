@@ -113,7 +113,7 @@ keywords:
 * **id**: Required. Use kebab-case, matches filename without `.md`.
 * **title**: Required. Title Case, under 60 characters, includes main keywords.
 * **sidebar_label**: Optional. Use if title is too long for sidebar.
-* **description**: Required for SEO. One or two sentences, under 160 characters.
+* **description**: Required for SEO. 140–160 characters. Plain text only — no backticks or Markdown syntax. Do not start with "This page" or "This doc." Lead with an action verb or the product/feature name.
 * **keywords**: Optional but recommended. 3-5 relevant terms for search.
 
 **Special frontmatter cases:**
