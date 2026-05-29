@@ -92,37 +92,37 @@ The **CyberArk EPM - Overview** dashboard provides a high-level security posture
 
 <img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-EPM-Overview.png')} alt="CyberArk EPM - Overview" />
 
-### Administrative audit
+### Administrative Audit
 
 The **CyberArk EPM - Administrative Audit** dashboard monitors administrative actions in the CyberArk EPM console, tracks policy set changes and role-based access modifications, and provides visibility into who makes configuration changes and from where.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-EPM-Administrative-Audit.png')} alt="CyberArk EPM - Administrative Audit" />
 
-### Application control and trust
+### Application Control & Trust
 
 The **CyberArk EPM - Application Control & Trust** dashboard monitors application trust decisions, tracks software from untrusted sources, identifies unsigned or unknown applications being executed, and detects newly introduced software across endpoints.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-EPM-Application-Control-&-Trust.png')} alt="CyberArk EPM - Application Control and Trust" />
 
-### Privilege elevation activity
+### Privilege Elevation Activity
 
 The **CyberArk EPM - Privilege Elevation Activity** dashboard provides deep visibility into privilege elevation activity, including who is elevating, which applications are elevated, source and publisher context, non-admin escalation patterns, and unusual elevation spikes.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-EPM-Privilege-Elevation-Activity.png')} alt="CyberArk EPM - Privilege Elevation Activity" />
 
-### Policy enforcement and compliance
+### Policy Enforcement & Compliance
 
 The **CyberArk EPM - Policy Enforcement & Compliance** dashboard monitors policy effectiveness, identifies enforcement gaps, tracks policy action behavior, and surfaces high-impact aggregated events that affect many users or endpoints.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-EPM-Policy-Enforcement-&-Compliance.png')} alt="CyberArk EPM - Policy Enforcement and Compliance" />
 
-### Endpoint and user risk analysis
+### Endpoint and User Risk Analysis
 
 The **CyberArk EPM - Endpoint & User Risk Analysis** dashboard identifies high-risk endpoints and users based on event volume, diversity of applications elevated, lateral movement indicators, and anomalous behavior to support investigation and threat hunting.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/CyberArk-EPM-Endpoint-&-User-Risk-Analysis.png')} alt="CyberArk EPM - Endpoint and User Risk Analysis" />
 
-### Script and PowerShell monitoring
+### Script and PowerShell Monitoring
 
 The **CyberArk EPM - Script & PowerShell Monitoring** dashboard focuses on script execution activity, especially PowerShell, and helps detect execution policy bypass attempts, suspicious arguments, unusual script locations, hidden-window evasion, and unsigned script execution.
 
