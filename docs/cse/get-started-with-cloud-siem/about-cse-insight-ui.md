@@ -145,7 +145,6 @@ From the [Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-d
 1. **GCS**. The [Global Confidence Score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight, if available.
 1. **Tags** The number of tags that have already been assigned to the insight, and a dropdown arrow to view and add tags.
 1. **Incidents**. Incidents that the insight is associated with.
-1. **Overview**. Displays an overview of the insight. 
 1. **Signals**. Click to view the [signal visualization area](#signal-visualization-area).
 1. **Entities**. Click to view [entities](#about-the-entities-tab-graph-view) on the signal.
 1. **Enrichments**. Click this tab to view any enrichments that have been added to the insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
