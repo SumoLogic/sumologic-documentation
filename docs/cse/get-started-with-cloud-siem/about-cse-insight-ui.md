@@ -150,7 +150,8 @@ From the [Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-d
 1. **Entities**. Click to view [entities](#about-the-entities-tab-graph-view) on the signal.
 1. **Enrichments**. Click this tab to view any enrichments that have been added to the insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
 1. **Automations**. Click to view [automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) on the insight.
-1. Gear icon. Click to configure the panels in the **Overview** tab.
+<!--1. Gear icon. Click to configure the panels in the **Overview** tab.
+
 
 ### Overview
 
@@ -162,6 +163,7 @@ The **Overview** tab provides panels that give an overview of the insight:
 * **Signals**. The signals on the insight entity that fired during the detection window. For more information on signals, see [Signal visualization area](#signal-visualization-area).
 * **MITRE ATT&CK**. The MITRE ATT&CK tactics and techniques associated with the insight's tracked activity. 
 * **Log Activity**. The log activity associated with the signals that fired to create the insight.
+-->
 
 ### Signal visualization area
 
