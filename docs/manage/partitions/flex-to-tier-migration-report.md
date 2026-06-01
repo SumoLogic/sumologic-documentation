@@ -13,7 +13,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Flex to Tier Migration Report shows your partitions and their readiness for migration to Tiered storage. It includes current recommendation messages and the status of any unsupported features that may be affected by migration.
+The Flex to Tier Migration Report shows your partitions and their readiness for migration from a flex licensing model for log ingestion to a tiered licensing model for log ingestion. It includes recommendation messages and the status of any unsupported features that may be affected by migration.
 
 ## Column definitions
 
@@ -23,7 +23,7 @@ The Flex to Tier Migration Report shows your partitions and their readiness for 
 | **Ingestion Volume** | Total ingestion volume associated with the partition. |
 | **Current Scope** | Indicates whether the partition is currently included or excluded from the migration scope. |
 | **SIEM Forwarding** | Indicates whether SIEM forwarding is enabled for the partition (`true` / `false`). |
-| **Unsupported Features Detected When Moving Towards Tiered** | Displays whether any unsupported dependencies are detected for the partition after migration to Tiered storage. For example, `true [monitor, slo]`. |
+| **Unsupported Features Detected When Moving Towards Tiered** | Displays any unsupported dependencies detected for the partition after migration to Tiered storage. For example, `true [monitor, slo]`. |
 | **Unsupported Monitor** | Lists monitor names currently using the partition that may not function after migration. |
 | **Unsupported SLO** | Lists SLO names associated with the partition that may become unsupported after migration. |
 | **Unsupported Scheduled Views** | Lists scheduled view names dependent on the partition that may not work after migration. |
@@ -35,10 +35,10 @@ The **Recommendation** column displays one of the following messages based on th
 
 | Is Included | Unsupported Features Detected | SIEM Forwarding | Recommendation |
 |:--|:--|:--|:--|
-| `true` | `false` | Any | No action needed. No feature conflicts detected. Excluding this partition can reduce scan cost. |
-| `false` | `false` | `false` | No action needed. No feature conflicts detected. |
-| `false` | `false` | `true` | Switch to Included. SIEM Forwarding will not work correctly on an excluded partition. |
-| `false` | `true` | Any | Switch to Included. Monitors, SLOs, and Scheduled Views will not work correctly on an excluded partition. |
+| `true` | `false` | Any | No action needed. |
+| `false` | `false` | `false` | No action needed. |
+| `false` | `false` | `true` | Switch to Included (Continuous). SIEM Forwarding will not work correctly on an excluded partition. |
+| `false` | `true` | Any | Switch to Included (Continuous). Monitors/SLOs/Scheduled Views will not work correctly on an excluded partition. |
 
 ## FAQ
 
@@ -56,8 +56,4 @@ Monitors and SLOs that rely on a partition excluded from Tiered storage may stop
 
 ### What should you do if my partition has SIEM Forwarding enabled?
 
-If SIEM Forwarding is enabled and the partition is currently excluded from the migration scope, the recommendation is to switch it to Included. SIEM Forwarding does not work correctly on excluded partitions, and leaving it excluded can result in data not being forwarded after migration.
-
-### How can you reduce scan costs during migration?
-
-If a partition is already included in the migration scope and no feature conflicts are detected, you can consider excluding it to reduce scan costs. The report surfaces this opportunity with the message: "No action needed. No feature conflicts detected. Excluding this partition can reduce scan cost."
+If SIEM Forwarding is enabled and the partition is currently excluded from the migration scope, the recommendation is to switch it to Included (Continuous). SIEM Forwarding does not work correctly on excluded partitions, and leaving it excluded can result in data not being forwarded after migration.
