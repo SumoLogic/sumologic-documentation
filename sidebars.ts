@@ -2670,6 +2670,7 @@ integrations: [
           'integrations/saas-cloud/crowdstrike-fdr-host-inventory',
           'integrations/saas-cloud/crowdstrike-spotlight',
           'integrations/saas-cloud/cyberark-audit',
+          'integrations/saas-cloud/cyberark-epm',
           'integrations/saas-cloud/databricks-audit',
           'integrations/saas-cloud/datadog',
           'integrations/saas-cloud/digital-guardian-arc',

@@ -35,7 +35,7 @@ Updates:
 * Upgraded SAM app versions:
    - sumologic-app-utils → 2.0.23
    - sumologic-s3-logging-auto-enable → 1.0.19
-   - sumologic-loggroup-connector - v1.0.16
+   - sumologic-loggroup-connector → v1.0.16
 
 Deprecation:
 * AWS Observability Solution versions that rely on deprecated AWS Lambda runtimes are also considered deprecated. Since Node.js 20.x was deprecated on April 30, 2026, all AWS Observability versions up to and including 2.11.0 are now deprecated.
