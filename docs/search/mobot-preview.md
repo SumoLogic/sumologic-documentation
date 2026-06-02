@@ -32,30 +32,30 @@ Features and behavior described here are subject to change before general availa
 
 | | Before | Now |
 |:--|:--|:--|
-| **[Interface and routing](#unified-interface-and-intent-understanding)** | Separate Query Agent and Knowledge Agent with manual selection | Agent automatically uses available capabilities behind the scenes |
+| **[Interface and routing](#unified-interface-and-intent-understanding)** | Separate Query Agent and Knowledge Agent with manual selection | Mobot automatically uses available capabilities behind the scenes |
 | **[Reasoning and complex log analysis](#reasoning-and-complex-log-analysis)** | Natural language to log query translation | Higher-order reasoning, planning, and implicit log analysis |
 | **[Results rendering](#results-rendering)** | Query results open in Log Search | Query results render as narrative summaries with structured tables inline in the conversation, plus an option to open in Log Search |
 | **[Log support](#unstructured-logs-support)** | Structured and semi-structured logs | Structured, semi-structured, and [unstructured logs](#unstructured-logs-support) |
 
 ### Unified interface and intent understanding
 
-With Mobot's new unified interface, you no longer need to choose between Query Agent (for log analysis questions) and Knowledge Agent (platform how-to questions).
-
-Just [open Mobot](/docs/search/mobot#getting-started) and enter a question in the **Ask Something** field.
+With Mobot's new unified interface, you no longer need to choose between its agents (Query Agent and Knowledge Agent). Just [open Mobot](/docs/search/mobot#getting-started) and enter a question in the **Ask Something** field.
 
 <img src={useBaseUrl('img/search/mobot/ask-something-mobotv2.png')} alt="Mobot interface showing unified prompt input" style={{border: '1px solid gray'}} width="600" />
 
-Try asking a log analysis question (errors, trends, anomalies, or security events) or a platform how-to question (configuration, setup, or best practices). Mobot automatically routes your question to the appropriate capability. Here are some example questions:
+Try asking a log analysis question (errors, trends, anomalies, or security events) or a platform how-to question (configuration, setup, or best practices). Mobot automatically routes your question to the appropriate capability.
+
+Here are some example Mobot queries:
 
 <details>
-<summary><b>Q:</b> <code>I'm getting reports that users can't log in. Is auth-service having issues?</code></summary>
+<summary><b>Q:</b> I'm getting reports that users can't log in. Is auth-service having issues?</summary>
 
 <img src={useBaseUrl('img/search/mobot/auth-service-issues-mobotv2.png')} alt="Mobot log analysis answer showing auth service error trend" style={{border: '1px solid gray'}} width="800" />
 
 </details>
 
 <details>
-<summary><b>Q:</b> <code>What does the error trend look like for my service over the past 24 hours?</code></summary>
+<summary><b>Q:</b> What does the error trend look like for my service over the past 24 hours?</summary>
 
 <img src={useBaseUrl('img/search/mobot/org-service-errors-mobotv2.png')} alt="Mobot log analysis answer showing service error trend over 24 hours" style={{border: '1px solid gray'}} width="800" />
 
@@ -69,7 +69,7 @@ Mobot orchestrates multi-step analysis automatically. It translates your questio
 
 ### Results rendering
 
-When Mobot returns query results, they appear as structured narratives, basic visualization like table summaries, plus a shortcut button to expand on results in a separate Log Search view.
+When Mobot returns query results, they appear as structured narratives, basic visualizations like table summaries, plus a shortcut button to expand on results in a separate Log Search view.
 
 In this example, Mobot summarizes what stands out at the bottom of the response, labeled **Notable**. For example, if `WARN` entries share an unusual pattern, Mobot flags them, explains what they may indicate, and asks whether you want to investigate further.
 
@@ -83,7 +83,7 @@ Here's another example showing Mobot displaying inline results and summarizing k
 
 Mobot interprets natural language questions even when they are incomplete or ambiguous. If your question is unclear, Mobot asks a targeted follow-up question to narrow intent before running a search.
 
-For example, asking `Show me logs from last 15 minutes` or `Show me all logs from the last 24 hours` without specifying a source prompts Mobot to ask which application, service, or log source you are interested in, with inline examples such as `kubernetes`, `nginx`, or `auth_logs`.
+For example, asking `Show me logs from the last 15 minutes` or `Show me all logs from the last 24 hours` without specifying a source prompts Mobot to ask which application, service, or log source you are interested in, with inline examples such as `kubernetes`, `nginx`, or `auth_logs`.
 
 <img src={useBaseUrl('img/search/mobot/clarification-prompt-mobotv2.png')} alt="Mobot clarification prompt" style={{border: '1px solid gray'}} width="600" />
 
