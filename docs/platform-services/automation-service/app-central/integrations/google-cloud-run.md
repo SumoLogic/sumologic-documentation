@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
 ***Version: 1.0  
-Updated: Jun 2, 2026***
+Updated: Jun 3, 2026***
 
 Google Cloud Run is a fully managed serverless platform that lets you run stateless containers directly on top of Google's scalable infrastructure. Use this integration to inventory running services, manage access controls, and decommission services as part of automated response workflows.
 
@@ -16,6 +16,8 @@ Google Cloud Run is a fully managed serverless platform that lets you run statel
 
 * **List Services** (*Enrichment*) - List all Cloud Run services in a project and region to inventory what is currently running.
 * **Get Service** (*Enrichment*) - Retrieve configuration and metadata for a specific Cloud Run service including its URL, revision, and status.
+* **Add Member To Role** (*Containment*) - Add a member (user, service account, or group) to a specific IAM role on a Cloud Run service to grant invoke or admin access.
+* **Remove Member From Role** (*Containment*) - Remove a member from a specific IAM role on a Cloud Run service to revoke access during incident response.
 * **Update Service IAM Policy** (*Containment*) - Modify the IAM policy on a Cloud Run service to restrict or expand who can invoke it.
 * **Delete Service** (*Containment*) - Permanently delete a Cloud Run service to decommission legacy or compromised workloads quickly.
 
@@ -99,4 +101,4 @@ For information about Google Cloud Run, see [Google Cloud Run documentation](htt
 
 ## Change Log
 
-* June 2, 2026 (v1.0) - First upload
+* June 3, 2026 (v1.0) - First upload
