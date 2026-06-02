@@ -6,12 +6,12 @@ description: Collect Windows Active Directory inventory data using the Sumo Logi
 keywords:
     - windows-active-directory-inventory
     - opentelemetry
-    - cloud-SIEM
+    - cloud-siem
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Windows Active Directory Inventory receiver for the [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) collects inventory data from [Active Directory](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/) using Windows ADSI (Active Directory Service Interfaces) COM APIs. This includes information such as computer names, usernames, email addresses, and location information.
+The Windows Active Directory Inventory receiver for the [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) collects inventory data from [Active Directory](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) using Windows ADSI (Active Directory Service Interfaces) COM APIs. This includes information such as computer names, usernames, email addresses, and location information.
 
 [Sumo Logic Cloud SIEM](/docs/cse) uses information from Windows Active Directory Inventory to enrich log data, providing additional context and building a more complete profile of your network. For example, linking a location to the servers, workstations, and users in that location.
 
@@ -159,10 +159,13 @@ The receiver emits one log record per Active Directory object found under the co
 
 Attributes that are not set on an object are omitted from the JSON output. Multi-valued attributes (such as `memberOf`) are returned as arrays.
 
-
 ## Behavior notes
 
-- The first poll fires after the `poll_interval` elapses, not immediately on start.
+:::note
+The first poll fires only after the configured `poll_interval` elapses. It does not run immediately when the receiver starts.
+:::
+
+The following notes describe important behavioral characteristics and operational considerations of the receiver:
 - Container objects (such as OUs) also emit log records with sparse attributes.
 - The receiver traverses the full subtree under the configured `base_dn`.
 - If the `base_dn` does not exist or is unreachable, the receiver logs an error and retries on the next poll interval.
@@ -205,5 +208,4 @@ After the first poll interval elapses, verify that inventory data is flowing int
    _sourceCategory=ad_inventory
    ```
 1. You should see log records containing JSON objects with your configured Active Directory attributes.
-
-![img_1.png](../../../../static/img/collector/windowsActiveDirectorySearch.png)
+<img src={useBaseUrl('img/collector/windowsActiveDirectorySearch.png')} alt="Windows Active Directory Search" />
