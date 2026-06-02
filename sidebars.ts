@@ -2655,7 +2655,6 @@ integrations: [
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/carbon-black-inventory',
           'integrations/saas-cloud/cato-networks',
-          'integrations/saas-cloud/chatgpt-compliance',
           'integrations/saas-cloud/cisco-amp',
           'integrations/saas-cloud/cisco-meraki-c2c',
           'integrations/saas-cloud/cisco-umbrella',
