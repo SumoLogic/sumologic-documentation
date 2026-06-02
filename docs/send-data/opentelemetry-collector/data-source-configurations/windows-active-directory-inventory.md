@@ -1,7 +1,7 @@
 ---
 id: windows-active-directory-inventory
 title: Windows Active Directory Inventory Receiver
-sidebar_label: Windows Active Directory Inventory
+sidebar_label: Windows Active Directory Inventory Receiver
 description: Collect Windows Active Directory inventory data using the Sumo Logic OpenTelemetry Collector to enrich Cloud SIEM log data and build network profiles.
 keywords:
     - windows-active-directory-inventory
