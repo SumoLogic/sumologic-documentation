@@ -9,9 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saml/onelogin.png')} alt="OneLogin icon" width="50"/>
 
-OneLogin is an Identity Management provider that supplies a comprehensive set of enterprise-grade identity and access management solutions, including single sign-on (SSO), user provisioning, and multi-factor authentication (MFA). The Sumo Logic app for OneLogin provides real-time visibility and analysis of OneLogin user activity through event data, such as user logins, administrative operations, provisioning, adaptive MFA, API and OIDC security, and privileged access auditing.
+The Sumo Logic app for OneLogin provides visibility into account activity, user behavior, authentication events, application provisioning, and administrative changes. It helps you monitor user lifecycles, track successful and failed logins, identify inactive or at-risk accounts, analyze risk-based authentication activity, monitor OIDC token operations, and detect security threats while supporting compliance and operational oversight.
 
-The app provides insights into account activity and user behavior, including total and invited users, inactive or never-logged-in accounts, user status, failed and successful login monitoring, lockouts, password reset needs, risk-based authentication events, OIDC token lifecycle operations, application provisioning health, and administrative configuration changes, helping administrators monitor user lifecycles, detect threats, and maintain security and compliance.
+OneLogin is an Identity Management provider that supplies a comprehensive set of enterprise-grade identity and access management solutions, including single sign-on (SSO), user provisioning, and multi-factor authentication (MFA). The Sumo Logic app for OneLogin provides real-time visibility and analysis of OneLogin user activity through event data, such as user logins, administrative operations, provisioning, adaptive MFA, API, and OIDC security, and privileged access auditing.
 
 :::info
 This app includes [built-in monitors](#onelogin-alerts). For details on creating custom monitors, refer to [Create monitors for OneLogin app](#create-monitors-for-onelogin-app).
@@ -195,7 +195,7 @@ _sourceCategory={{userLogsdatasource}} id lastname username
 
 To install the app, do the following:
 :::note
-    Next-Gen App: To install or update the app, you must be an account administrator or a user with Manage Apps, Manage Monitors, Manage Fields, Manage Metric Rules, and Manage Collectors capabilities depending upon the different content types part of the app.
+    Next-Gen App: To install or update the app, you must be an account administrator or have the required permissions, such as Manage Apps, Manage Monitors, Manage Fields, Manage Metric Rules, and Manage Collectors, depending on the content included in the app.
 :::
 1. Select **App Catalog**.
 1. In the 🔎 **Search Apps** field, run a search for your desired app, then select it.
@@ -215,7 +215,7 @@ To install the app, do the following:
 
 Once your app is installed, it will appear in your **Installed Apps** folder, and dashboard panels will start to fill automatically.
 
-Each panel slowly fills with data matching the time range query received since the panel was created. Results will not immediately be available but will be updated with full graphs and charts over time.
+Each panel slowly fills with data matching the time range query received since the panel was created. Results will not immediately be available, but will be updated with full graphs and charts over time.
 
 ## Viewing OneLogin dashboards
 
@@ -225,7 +225,7 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 
 ### Overview
 
-The **OneLogin - Overview** dashboard delivers a high-level operational summary of all activity across the OneLogin platform including visitor geo-locations, app-specific event volumes, and login distributions by country. It highlights event outliers over time, surfaces anomalous patterns, and provides details on the most active users. This dashboard serves as the starting point for daily operational review and rapid anomaly escalation.
+The **OneLogin - Overview** dashboard delivers a high-level operational summary of all activity across the OneLogin platform, including visitor geo-locations, app-specific event volumes, and login distributions by country. It highlights event outliers over time, surfaces anomalous patterns, and provides details on the most active users. This dashboard serves as the starting point for daily operational review and rapid anomaly escalation.
 
 <img src={useBaseUrl('img/integrations/saml/OneLogin-Overview.png')} alt="Overview" />
 
@@ -243,39 +243,37 @@ The **OneLogin - Security** dashboard delivers a comprehensive view of security-
 
 ### User Inventory
 
-The **OneLogin - User Inventory** dashboard provides a centralized view of user account lifecycle tracking total users, invited accounts, never-logged-in users, pending approvals, locked accounts, and password expiration states. It highlights risky conditions including repeated invalid login attempts, inactive users exceeding 90 days, and accounts with unchanged passwords. This dashboard is essential for maintaining identity governance, detecting dormant account risks, and ensuring compliance with access policies.
+The **OneLogin - User Inventory** dashboard provides a centralized view of user account lifecycle tracking, total users, invited accounts, never-logged-in users, pending approvals, locked accounts, and password expiration states. It highlights risky conditions, including repeated invalid login attempts, inactive users exceeding 90 days, and accounts with unchanged passwords. This dashboard is essential for maintaining identity governance, detecting dormant account risks, and ensuring compliance with access policies.
 
 <img src={useBaseUrl('img/integrations/saml/OneLogin-User-Inventory.png')} alt="User Inventory" />
 
 ### Adaptive MFA
 
-The **OneLogin - Adaptive MFA** dashboard provides a centralized view of multi-factor authentication activity, including risk score distribution, MFA challenge vs. suppression ratios, and factor usage patterns. It maps MFA prompts and failures by location, identifies users with high-risk logons, and tracks OTP push denials indicating potential MFA fatigue attacks. This dashboard enables security teams to assess MFA effectiveness, detect bypass attempts, and validate adaptive policy calibration.
+The **OneLogin - Adaptive MFA** dashboard provides a centralized view of multi-factor authentication activity, including risk score distribution, MFA challenge-to-suppression ratios, and factor usage patterns. It maps MFA prompts and failures by location, identifies users with high-risk logons, and tracks OTP push denials, indicating potential MFA fatigue attacks. This dashboard enables security teams to assess MFA effectiveness, detect bypass attempts, and validate adaptive policy calibration.
 
 <img src={useBaseUrl('img/integrations/saml/OneLogin-Adaptive-MFA.png')} alt="Adaptive MFA" />
 
 ### API Security and Monitoring
 
-The **OneLogin - API Security and Monitoring** dashboard provides visibility into programmatic access patterns including OIDC authentication flows, API credential usage, and token lifecycle operations. It tracks API authentication failures, OIDC success/failure ratios by flow type, and surfaces token operations alongside API-driven user management and application lifecycle changes. This dashboard is essential for detecting integration abuse, misconfigured OAuth clients, and unauthorized API access.
+The **OneLogin - API Security and Monitoring** dashboard provides visibility into programmatic access patterns, including OIDC authentication flows, API credential usage, and token lifecycle operations. It tracks API authentication failures, OIDC success/failure ratios by flow type, and surfaces token operations as well as API-driven user management and application lifecycle changes. This dashboard is essential for detecting integration abuse, misconfigured OAuth clients, and unauthorized API access.
 
 <img src={useBaseUrl('img/integrations/saml/OneLogin-API-Security-and-Monitoring.png')} alt="API Security and Monitoring" />
 
 ### Failed Login Monitoring
 
-The **OneLogin - Failed Login Monitoring** dashboard provides focused analysis of unsuccessful authentication attempts categorized by application, risk level, and geographic origin. It correlates failed logins with risk scoring, maps failures to specific users and entities, and reveals temporal spikes indicating brute force or credential stuffing attacks. This dashboard is essential for detecting active attacks and responding to account compromise attempts in real time.
+The **OneLogin - Failed Login Monitoring** dashboard provides focused analysis of unsuccessful authentication attempts categorized by application, risk level, and geographic origin. It correlates failed logins with risk scores, maps failures to specific users and entities, and reveals temporal spikes indicating brute-force or credential-stuffing attacks. This dashboard is essential for detecting active attacks and responding to account compromise attempts in real time.
 
 <img src={useBaseUrl('img/integrations/saml/OneLogin-Failed-Login-Monitoring.png')} alt="Failed Login Monitoring" />
 
-
 ### Successful Login Monitoring
 
-The **OneLogin - Successful Login Monitoring** dashboard provides visibility into all successful authentication events categorized by risk level, application, geographic origin, and user identity. It tracks login volumes to establish baselines, identifies top active users, and correlates successful access with risk scoring to detect compromised accounts. This dashboard helps validate legitimate access and detect anomalous logins from unexpected locations or devices.
+The **OneLogin - Successful Login Monitoring** dashboard provides visibility into all successful authentication events categorized by risk level, application, geographic origin, and user identity. It tracks login volumes to establish baselines, identifies the most active users, and correlates successful access with risk scoring to detect compromised accounts. This dashboard helps validate legitimate access and detect anomalous logins from unexpected locations or devices.
 
 <img src={useBaseUrl('img/integrations/saml/OneLogin-Successful-Login-Monitoring.png')} alt="Successful Login Monitoring" />
 
-
 ### Privileged Access and Admin Audit
 
-The OneLogin - Privileged Access and Admin Audit dashboard provides comprehensive oversight of administrative configuration changes including policy lifecycle events, role assignments, privilege grants/revocations, and API credential activity. It tracks directory changes, mapping rule modifications, and delegated administrative actions, creating a complete audit trail. This dashboard is essential for verifying least-privilege adherence, detecting unauthorized privilege escalation, and maintaining compliance governance.
+The **OneLogin - Privileged Access and Admin Audit** dashboard provides comprehensive oversight of administrative configuration changes, including policy lifecycle events, role assignments, privilege grants/revocations, and API credential activity. It tracks directory changes, mapping rule modifications, and delegated administrative actions, creating a complete audit trail. This dashboard is essential for verifying adherence to least privilege, detecting unauthorized privilege escalation, and maintaining compliance governance.
 
 <img src={useBaseUrl('img/integrations/saml/OneLogin-Privileged-Access-and-Admin-Audit.png')} alt="Privileged Access and Admin Audit" />
 
@@ -292,9 +290,9 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `OneLogin - Account Lockout` | This alert is triggered when a user account has been locked due to multiple failed login attempts. | Critical | Count > 0 |
 | `OneLogin - Password Expired & Reset Pending` | This alert is triggered when user accounts are found with expired passwords or are pending a password reset. | Critical | Count > 0 |
 | `OneLogin - User Rejected` | This alert is triggered when a user account has been rejected, indicating denied access during onboarding or approval. | Critical | Count > 0 |
-| `OneLogin - Events from Embargoed Geo Locations` | This monitor detects OneLogin events originating from IP addresses associated with embargoed or restricted geographic locations, which may indicate compromised credentials, VPN misuse, or policy violations. Immediate investigation is recommended to determine whether the access is legitimate or represents unauthorized activity from a sanctioned region. | Critical | Count > 0 |
-| `OneLogin - High Risk Events Detected` | This monitor triggers when OneLogin assigns a risk score exceeding 51 to an authentication event, indicating an elevated likelihood of malicious activity based on contextual signals such as unusual velocity, unfamiliar locations, or new devices. Security teams should immediately investigate flagged users and consider enforcing step-up authentication or session termination to prevent potential account compromise. | Critical | Count > 0 |
-| `OneLogin - Repeated Failed Authentication Activity Detected` | This monitor detects when a single actor generates more than five failed authentication or access events within a short time window, which may indicate a brute force attack, credential stuffing, or misconfigured application integration. Security teams should investigate the source of failures and consider blocking the actor or enforcing additional verification to prevent unauthorized access. | Critical | Count > 5 |
+| `OneLogin - Events from Embargoed Geo Locations` | This alert is triggered when OneLogin events originate from IP addresses associated with embargoed or restricted geographic locations, which may indicate compromised credentials, VPN misuse, or policy violations. Immediate investigation is recommended to determine whether the access is legitimate or represents unauthorized activity from a sanctioned region. | Critical | Count > 0 |
+| `OneLogin - High Risk Events Detected` | This alert is triggered when OneLogin assigns a risk score greater than 51 to an authentication event, indicating an elevated likelihood of malicious activity based on contextual signals such as unusual velocity, unfamiliar locations, or new devices. Security teams should investigate the flagged user and consider enforcing step-up authentication or session termination to help prevent potential account compromise. | Critical | Count > 0 |
+| `OneLogin - Repeated Failed Authentication Activity Detected` | This alert is triggered when a single actor generates more than five failed authentication or access events within a short time window, which may indicate a brute-force attack, credential stuffing, or a misconfigured application integration. Security teams should investigate the source of the failures and consider blocking the actor or enforcing additional verification to help prevent unauthorized access. | Critical | Count > 5 |
 
 ## Upgrade/Downgrade the OneLogin app (Optional)
 
