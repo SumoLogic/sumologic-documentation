@@ -146,7 +146,7 @@ service:
 After saving your configuration file, restart the Sumo Logic OpenTelemetry Collector service:
 
 ```powershell
-Restart-Service -Name "Sumo Logic OpenTelemetry Collector"
+Restart-Service -Name OtelcolSumo
 ```
 
 ## Output format
