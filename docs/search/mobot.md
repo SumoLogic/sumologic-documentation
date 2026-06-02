@@ -2,8 +2,7 @@
 id: mobot
 title: Sumo Logic Mobot
 sidebar_label: Mobot ✨
-# Edit description to include QA and KA
-description: Accelerate troubleshooting with Mobot, Sumo Logic's AI-powered assistant. Ask questions in plain English to generate log queries (Query Agent) or get help learning the platform (Knowledge Agent).
+description: Accelerate troubleshooting and platform learning with Mobot, Sumo Logic's AI-powered conversational assistant. Ask questions in plain English to analyze log data or get answers sourced from official documentation.
 keywords:
   - copilot
   - mobot
@@ -11,6 +10,7 @@ keywords:
   - ai
   - machine learning
   - ml
+  - dojo ai
 ---
 
 import Iframe from 'react-iframe';
@@ -98,7 +98,9 @@ Query Agent builds on the query translation foundation of the previous *Copilot*
 
 #### Getting started
 
-To open Mobot, click **Mobot** in the left nav.
+There are two ways to open Mobot:
+- **Left nav**. Click **Mobot** in the left navigation menu.<br/><img src={useBaseUrl('img/search/mobot/left-nav.png')} alt="Mobot in the left navigation menu" width="650" />
+- **Home page**. Go to **Home**, select the **Home** tab, then click the **Mobot** tile.<br/><img src={useBaseUrl('img/search/mobot/home-nav.png')} alt="Mobot tile on the Home page" width="650" />
 
 :::training Micro Lesson
 
@@ -208,7 +210,7 @@ Query Agent automatically visualizes your data. For example, a query like "Top i
 
 Select your preferred chart type, such as **Table**, **Bar**, **Column**, or **Line** view to visualize your results. You can also click **Add to Dashboard** to export an AI-generated dashboard for root cause analysis.
 
-<img src={useBaseUrl('img/search/mobot/chart-types.png')} alt="Mobot chart types" style={{border: '1px solid gray'}} width="500" />
+<img src={useBaseUrl('img/search/mobot/add-to-dashboard.png')} alt="Mobot add to dashboard button" style={{border: '1px solid gray'}} width="500" />
 
 The following rules are used to deduce chart type:
 * If both latitude and longitude fields exist, it returns a MAP chart type.
@@ -646,9 +648,18 @@ No. Knowledge Agent is intentionally scoped to use Sumo Logic's internal documen
 
 ## Feedback
 
-We want your feedback! Let us know what you think by clicking the thumbs up icon to verify your query or the thumbs down icon to tell us how we can improve.
+Your feedback directly shapes Mobot. You can share feedback by:
 
-<img src={useBaseUrl('img/search/mobot/feedback-thumbs.png')} alt="Mobot feedback icons in Query Agent conversation" style={{border: '1px solid gray'}} width="800" />
+- Giving Mobot's responses a thumbs up or thumbs down in the conversation.<br/><img src={useBaseUrl('img/search/mobot/feedback-thumbs.png')} alt="Mobot feedback icons in Query Agent conversation" style={{border: '1px solid gray'}} width="400" />
+- Filling out the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLScaHwF9q8o3oSUsnAmpp9wssw-iWDnmbBiGY0WNZjIRS6tQlw/viewform).
+- Sharing directly with your account team.
+
+To report an issue, copy the conversation URL and share it with your Sumo Logic contact. When sharing feedback, it helps to note:
+
+- What you asked.
+- What you expected.
+- What Mobot returned instead.
+- Whether the issue was prompt comprehension, context understanding, answer accuracy, answer clarity, or something else.
 
 ## Opting out
 

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/connectwise-manage.png')} alt="ConnectWise Manage icon" width="100"/>
 
-***Version: 1.3  
-Updated: Oct 29, 2024***
+***Version: 1.4  
+Updated: April 29, 2026***
 
 Create, update, search, and gather ticket information from ConnectWise.
 
@@ -61,3 +61,4 @@ For information about ConnectWise Manage, see the [ConnectWise website](https://
 	+ removed Get Tickets Daemon
 * October 29, 2024 (v1.3) Beta Release
     + Added the "Priority" field to the Create Ticket and Update Ticket actions.
+* April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

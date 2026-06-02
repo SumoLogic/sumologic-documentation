@@ -10,10 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Public Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
 
 :::info
-This feature is in Public Preview. For more information, contact your Sumo Logic account executive.
+This feature is in Public Preview. To participate, contact your Sumo Logic account representative.
 :::
 
 Sumo Logic's SOC Analyst Agent is an agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations. 
@@ -80,6 +80,20 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
 1. Click **View Results** to see the results of your request in the logs query UI. You can also click the suggestions provided to drill down farther. As you ask questions, Mobot retains the context of your conversation about the insight, allowing you to more easily obtain detail. <br/><img src={useBaseUrl('img/cse/investigation-agent-results.png')} alt="Insight investigation query results" style={{border: '1px solid gray'}} width="800" />
 1. As you work with the investigation agent, after each step you will be presented with follow-up questions. Type a number corresponding to a follow-up question, or enter your own question.<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-followup-questions.png')} alt="Insight investigation follow-up questions" style={{border: '1px solid gray'}} width="600" />
 
+### Search for related insights
+
+During a Mobot investigation, you can search for other insights related to the current one. Mobot offers several dimensions to search by, helping you surface lateral context without leaving the investigation.
+
+Click **Search related insights?** when it appears as a suggested action in Mobot, or ask Mobot directly (for example, "Search for related insights"). Mobot will ask which dimension to explore:<br/><img src={useBaseUrl('img/cse/soc-analyst-related-insights-mobot.png')} alt="Related Insights search in Mobot" style={{border: '1px solid gray'}} width="800" />
+
+* **Same entity**. Other insights involving the same user, IP address, or host.
+* **Same attack name**. Other insights with the same attack name.
+* **Same signal rules**. Insights that share one or more of the same signal rules.
+* **Same MITRE tactics**. Insights that share MITRE ATT&CK tactics.
+* **Concurrent insights**. Insights that were active during the same time window.
+
+Select a dimension to proceed, or enter your own search criteria.
+
 ### Start a new investigation
 
 To clear the context and start a new investigation, click **New Conversation** at the top of the screen. To start investigation on another insight, navigate back to Cloud SIEM, select another insight, and click **Ask Mobot**.
@@ -99,12 +113,22 @@ To generate dashboards based on the context of your investigation, simply ask Mo
 
 Click the provided link to view the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard.png')} alt="Dashboard generated for insight investigation" style={{border: '1px solid gray'}} width="700" />
 
+## Add a comment to an insight
+
+You can ask Mobot to add a comment to the current insight. In the **Ask Something...** field, enter a prompt such as `Add a comment that I found a suspicious IP address` and press **Enter**. Mobot posts the comment to the insight's comment section.<br/><img src={useBaseUrl('img/cse/soc-analyst-comments-panel.png')} alt="Adding a comment to an insight via Mobot" style={{border: '1px solid gray'}} width="800" />
+
+Comments are visible to all analysts with access to the insight and can be used to document findings, note investigation status, or flag items for follow-up.
+
+## Close an insight
+
+You can also ask Mobot to close the current insight. In the **Ask Something...** field, enter a prompt such as `Close this insight` or `Mark this insight as resolved` and press **Enter**. Mobot closes the insight directly from the investigation area.
+
 ## FAQs
 
 <details>
 <summary>What is the Sumo Logic SOC Analyst Agent?</summary>
 
-The SOC Analyst Agent is part of the [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#whats-new-dojo-ai-for-the-soc). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks like MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts an immediate sense of threat impact. When deeper analysis is required, the same agent supports hypothesis-based investigation to map relationships, connect entities, and summarize findings.
+The SOC Analyst Agent is part of the [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#dojo-ai). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks like MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts an immediate sense of threat impact. When deeper analysis is required, the same agent supports hypothesis-based investigation to map relationships, connect entities, and summarize findings.
 </details>
 
 <details>
@@ -176,4 +200,4 @@ Yes, you can. In your investigation, you are not limited in how you proceed. You
    * [SOC Analyst Agent](https://www.sumologic.com/demo/soc-analyst-agent)
    * [Mobot walkthrough](https://www.sumologic.com/demo/mobot-walkthrough)
 * Sumo Logic website: [Dojo AI](https://www.sumologic.com/solutions/dojo-ai)
-* AWS article:[ Accelerating security analytics using Amazon Nova with Sumo Logic](https://aws.amazon.com/solutions/case-studies/sumo-logic-nova-case-study/)
+* AWS article: [Accelerating security analytics using Amazon Nova with Sumo Logic](https://aws.amazon.com/solutions/case-studies/sumo-logic-nova-case-study/)

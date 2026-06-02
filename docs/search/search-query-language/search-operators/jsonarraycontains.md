@@ -2,6 +2,7 @@
 id: jsonarraycontains
 title: jsonArrayContains Search Operator
 sidebar_label: jsonArrayContains
+description: Use the jsonArrayContains operator to check whether a JSON array field contains a specific string item.
 ---
 
 

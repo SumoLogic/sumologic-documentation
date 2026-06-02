@@ -12,6 +12,7 @@ The scheduled report feature enables you to receive an emailed copy of a dashboa
 You can distribute the dashboard to people in your Sumo Logic organization who do not have access to the platform, enabling better information sharing. It is also useful for compliance management, as it automatically captures and archives the state of the dashboard.
 
 :::info
+- Scheduled reports are supported in the **Fed** environment.
 - For PNG format export, you will receive both embedded and attached copy of the dashboard to your email.
 - If a PDF and/or PNG export fails, you’ll receive an error notification by email.
 :::
@@ -22,7 +23,7 @@ To schedule a dashboard email report, do the following:
 
 1. Navigate to the dashboard for which you want to create a schedule.
 1. If the dashboard supports template variables, select values, if desired.
-1. Click the kebab menu icon and select **Scheduled Reports**.<br/><img src={useBaseUrl('img/dashboards/scheduled_reports/create_scheduled_report.png')} alt="create_scheduled_report" style={{border: '1px solid gray'}} width="230"/>
+1. Click the kebab menu icon and select **Scheduled Reports**.<br/><img src={useBaseUrl('img/dashboards/scheduled_reports/create_scheduled_report.png')} alt="create_scheduled_report" style={{border: '1px solid gray'}} width="300"/>
   :::info
     The **Scheduled Reports** option appears only if you have edit permissions for the dashboard. You have edit permissions for all dashboards you create, and any dashboards have been [shared](/docs/dashboards/share-dashboard-new/) with you with edit permissions granted.
   :::

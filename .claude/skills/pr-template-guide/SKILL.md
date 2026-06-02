@@ -97,7 +97,7 @@ This pull request {clear description of what changed and why}.
 ## Best Practices
 
 1. **Extract ticket from branch name** - If the current branch name follows the pattern DOCS-XXXX, CONN-XXXX, etc., automatically extract the ticket number and use the full Jira URL (e.g., `https://sumologic.atlassian.net/browse/DOCS-1540`). If no ticket pattern in branch name, ask the user for the ticket number. Use the full URL in the PR body. Tickets are optional only for quick typo fixes or small bug fixes.
-2. **Pre-check the right box** - Analyze the changes and pre-select the appropriate type
+2. **Pre-check the right box** - Check the correct box but always include ALL four checkboxes. Never omit unchecked items from the "Select the type of change" list
 3. **Write clear descriptions** - First line should summarize changes, add bullets for details. **All description content goes under "## Purpose of this pull request"**
 4. **Format for gh pr create** - Use heredoc format for proper multiline PR bodies
 5. **Match commit messages** - Keep PR title and commit message aligned
