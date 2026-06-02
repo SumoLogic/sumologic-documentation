@@ -41,6 +41,12 @@ In this section, we'll cover data source configuration for the Sumo Logic OpenTe
 </div>
 <div class="box smallbox card">
   <div class="container">
+  <a href={useBaseUrl('docs/send-data/opentelemetry-collector/data-source-configurations/windows-active-directory-inventory')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data Collection icon" width="40" /><h4>Windows Active Directory Inventory</h4></a>
+  <p>Instructions for collecting Windows Active Directory inventory data with the OpenTelemetry collector.</p>
+  </div>
+</div>
+<div class="box smallbox card">
+  <div class="container">
   <a href={useBaseUrl('docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data Collection icon" width="40" /><h4>Additional Configurations Reference</h4></a>
   <p>More OpenTelemetry collector configurations.</p>
   </div>
