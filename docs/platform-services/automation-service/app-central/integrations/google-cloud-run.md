@@ -87,6 +87,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
+
 * **Authentication Type**. Select the authentication type: **Service Account Private Key Json** or **Workload Identity Federation Private Key json** and provide the selected type JSON content.
 
 * **Scopes**. Default scope is already added as `https://www.googleapis.com/auth/cloud-platform`. If not, add this scope.
@@ -95,7 +96,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/google-cloud-run.png')} style={{border:'1px solid gray'}} alt="Google Cloud Run configuration" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-cloud-run/google-cloud-run.png')} style={{border:'1px solid gray'}} alt="Google Cloud Run configuration" width="400"/>
 
 For information about Google Cloud Run, see [Google Cloud Run documentation](https://cloud.google.com/run/docs/reference/rest).
 
