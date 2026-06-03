@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="40"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
-The [Active Directory](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) JSON app helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format. The app includes predefined searches and dashboards that provide user activity into your environment for real-time analysis of overall usage.
+The [Active Directory](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) JSON app helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON-based event log format. The app includes predefined searches and dashboards that provide user activity in your environment for real-time analysis of overall usage.
 
 We recommend using the Active Directory JSON app in combination with the Windows JSON app. Active Directory logs are sent to Sumo Logic through OpenTelemetry [windowseventlogreceiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver).
 
@@ -23,7 +23,7 @@ This app includes [built-in monitors](#active-directory-alerts). For details on 
 
 ## Fields creation in Sumo Logic for Active Directory
 
-Following are the [fields](/docs/manage/fields/) which will be created as part of Active Directory App install if not already present.
+The following are the [fields](/docs/manage/fields/) which will be created as part of the Active Directory App install if not already present.
 
 **`sumo.datasource`** - Has fixed value of **activeDirectory**.
 
@@ -58,11 +58,11 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 ### Step 2: Configure Integration
 
-In this step, we will configure the yaml required for Active Directory Collection.
+In this step, we will configure the YAML required for Active Directory Collection.
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo.
+You can add any custom fields that you want to tag along with the data ingested in Sumo.
 
-Click on the **Download YAML File** button to get the yaml file.
+Click on the **Download YAML File** button to get the YAML file.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -84,7 +84,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
 <TabItem value="Windows">
 
-1. Copy the yaml at `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+1. Copy the YAML at `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
 2. Restart the collector using the command `Restart-Service -Name`.
 
 </TabItem>
@@ -173,15 +173,15 @@ This sample Query is from the Active Directory - Active Directory Service Activi
 
 ## Viewing Active Directory dashboards
 
-### Active Directory - Service Activity
+### Service Activity
 
-The **Active Directory - Service Activity** dashboard provides insights into overall active directory services like Category overtime, object creation, top 10 messages.
+The **Active Directory - Service Activity** dashboard provides insights into overall active directory services, like Category overtime, object creation, and top 10 messages.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-Service-Activity.png' alt="Service Activity" />
 
-### Active Directory - Service Failures
+### Service Failures
 
-The **Active Directory - Service Failures** dashboard provides an at-a-glance view of success, failures, and audit failures overtime.
+The **Active Directory - Service Failures** dashboard provides an at-a-glance view of success, failures, and audit failures over time.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-Service-Failures.png' alt="Service Failures" />
 
