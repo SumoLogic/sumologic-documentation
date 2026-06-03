@@ -173,15 +173,15 @@ This sample Query is from the Active Directory - Active Directory Service Activi
 
 ## Viewing Active Directory dashboards
 
-### Active Directory Service Activity
+### Active Directory - Service Activity
 
-The **Active Directory Service Activity** dashboard provides insights into overall active directory services like Category overtime, object creation, top 10 messages.
+The **Active Directory - Service Activity** dashboard provides insights into overall active directory services like Category overtime, object creation, top 10 messages.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-Service-Activity.png' alt="Service Activity" />
 
-### Active Directory Service Failures
+### Active Directory - Service Failures
 
-The **Active Directory Service Failures** dashboard provides an at-a-glance view of success, failures, and audit failures overtime.
+The **Active Directory - Service Failures** dashboard provides an at-a-glance view of success, failures, and audit failures overtime.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-Service-Failures.png' alt="Service Failures" />
 
