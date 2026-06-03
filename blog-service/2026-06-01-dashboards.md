@@ -8,4 +8,4 @@ keywords:
 hide_table_of_contents: true
 ---
 
-We're excited to introduce dashboard sections, a new way to organize complex dashboards by grouping related panels into collapsible logical sections. You can name each section, set its default state to expanded or collapsed, and customize font size to keep your dashboards structured, focused, and easier to navigate. [Learn more](/docs/dashboards/panels/section).
+We're excited to introduce the ability to organize complex dashboards by grouping related panels into collapsible sections. You can name each section, set its default state to expanded or collapsed, and customize font size to keep your dashboards structured, focused, and easier to navigate. [Learn more](/docs/dashboards/panels/section).
