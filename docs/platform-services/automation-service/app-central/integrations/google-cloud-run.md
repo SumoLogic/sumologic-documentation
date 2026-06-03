@@ -25,7 +25,7 @@ Google Cloud Run is a fully managed serverless platform that lets you run statel
 
 Our Google Cloud Run integration supports two types of authentication: Service Account and WIF (Workload Identity Federation). We recommend using WIF since it is more secure and easier to manage. For more information, see [Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation).
 
-## Required AWS details from Sumo Logic
+## Required Sumo Logic details for WIF authentication
 
 To configure the Google Cloud Run integration using WIF authentication, you need the following AWS details from Sumo Logic. These details are essential for setting up the Workload Identity Federation (WIF) credentials in Google Workspace:
 * Deployment name is the unique name of your Sumo Logic [deployment](/docs/api/about-apis/getting-started/#documentation), for example, `dub`, `fra`, etc.
@@ -33,7 +33,6 @@ To configure the Google Cloud Run integration using WIF authentication, you need
 * Sumo Logic AWS role: `<deployment_name>-csoar-automation-gcpiam`
 * Sumo Logic AWS Lambda function: `<deployment_name>-csoar-automation-gcpiam`
 * Full ARN: `arn:aws:sts::926226587429:assumed-role/<deployment_name>-csoar-automation-gcpiam/<deployment_name>-csoar-automation-gcpiam`
-
 
 ### Workload Identity Federation (WIF) authentication
 
@@ -57,7 +56,6 @@ To [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-
 17. Select the service account created above, select the principle as `aws_role`, and provide the ARN `arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}`, then click **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-10.png')} style={{border:'1px solid gray'}} alt="Provide ARN" width="800"/>
 18. Again go to **Grant Access** > **Grant access using service account impersonation**. Select the service account created above. Select the principle as `aws_role` and provide the ARN `arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}/{SumoAWSLambdaFunction}`. Click **SAVE**.
 19. Download the WIF `conf.json` file. Make sure you save it in a safe place. Use the JSON content to configure the Google Cloud Run integration to use WIF authentication in Automation Service and Cloud SOAR.
-
 
 ### Service Account authentication
 
