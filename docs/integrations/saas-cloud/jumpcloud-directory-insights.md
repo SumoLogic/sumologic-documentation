@@ -9,9 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="JumpCloud directory insights" width="100"/>
 
-The Sumo Logic app for JumpCloud Directory Insights provides comprehensive visibility into user activities, authentication events, and security actions in the JumpCloud managed environment. By using JumpCloud Directory Insights logs, this app enables IT administrators and security analysts to monitor access, detect anomalies, and respond to security threats efficiently.
+The Sumo Logic app for JumpCloud Directory Insights provides comprehensive visibility into user activities, authentication events, and security actions within the JumpCloud-managed environment. By using JumpCloud Directory Insights logs, this app enables IT administrators and security analysts to monitor access, detect anomalies, and respond to security threats efficiently.
 
-With pre-configured dashboards, the app delivers insights into user authentication trends, directory modifications, policy enforcement, and security incidents. Analysts can track failed login attempts, privileged access changes, and account lockouts in real time to improve security and ensure organizational policy compliance.
+With pre-configured dashboards, the app delivers insights into user authentication trends, directory modifications, policy enforcement, and security incidents. Analysts can track failed login attempts, changes to privileged access, and account lockouts in real time to improve security and ensure compliance with organizational policies.
 
 :::info
 This app includes [built-in monitors](#jumpcloud-directory-insights-monitors). For details on creating custom monitors, refer to the [Create monitors for JumpCloud Directory Insights app](#create-monitors-for-the-jumpcloud-directory-insights-app).
@@ -217,7 +217,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 <CollectionConfiguration/>
 
 :::important
-Use the [Cloud-to-Cloud Integration for JumpCloud Directory Insights Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your JumpCloud Directory Insights app is properly integrated and configured to collect and analyze your JumpCloud Directory Insights data.
+Use the [Cloud-to-Cloud Integration for JumpCloud Directory Insights Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your JumpCloud Directory Insights app is properly integrated and configured to collect and analyze your data.
 :::
 
 ### Create a new collector and install the app
@@ -252,7 +252,7 @@ The **JumpCloud Directory Insights - Overview** dashboard provides a comprehensi
 
 ### Security Overview
 
-The **JumpCloud Directory Insights - Security Overview** dashboard focuses on security-related events, emphasizing failed login attempts, account lockouts, and privilege escalations. It provides geographic insights into authentication activities, helping you to detect suspicious login locations. This dashboard also tracks high-risk events such as MFA failures and unauthorized access attempts to enhance security monitoring. By analyzing login behaviors and access trends, it helps security teams identify potential threats and enforce compliance policies.
+The **JumpCloud Directory Insights - Security Overview** dashboard focuses on security-related events, emphasizing failed login attempts, account lockouts, and privilege escalations. It provides geographic insights into authentication activities, helping you to detect suspicious login locations. This dashboard also tracks high-risk events such as MFA failures and unauthorized access attempts to enhance security monitoring. Analyzing login behaviors and access trends, it helps security teams identify potential threats and enforce compliance policies.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights - Security Overview" style={{border: '1px solid gray'}} width="800" />
 
@@ -260,67 +260,67 @@ The **JumpCloud Directory Insights - Security Overview** dashboard focuses on se
 
 The **JumpCloud Directory Insights - Password Manager Events** dashboard provides visibility into password manager activity, including user behavior, authentication outcomes, and event type trends. It highlights geographic access patterns, failed event counts, and detailed operation summaries to support credential security monitoring. The dashboard helps teams detect suspicious vault access and investigate password-related anomalies quickly.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights - Password Manager Events" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud-Directory-Insights-Password-Manager-Events.png')} alt="JumpCloud Directory Insights - Password Manager Events" style={{border: '1px solid gray'}} width="800" />
 
 ### Directory Events
 
 The **JumpCloud Directory Insights - Directory Events** dashboard provides insight into directory-related activity such as user actions, event types, and authentication outcomes. It surfaces MFA and status distributions, geographic patterns, and event trends to help identify risky or unusual behavior. Detailed event summaries support rapid investigation of directory changes and access anomalies.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights - Directory Events" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud-Directory-Insights-Directory-Events.png')} alt="JumpCloud Directory Insights - Directory Events" style={{border: '1px solid gray'}} width="800" />
 
 ### SSO and Radius Events
 
 The **JumpCloud Directory Insights - SSO and Radius Events** dashboard provides unified visibility into SSO and RADIUS authentication activity. It tracks application access, IdP-initiated behavior, MFA and auth-type distributions, user activity, and regional access patterns. With dedicated summaries and trend panels for both services, the dashboard helps teams identify authentication failures and security gaps quickly.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights - SSO and Radius Events" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud-Directory-Insights-SSO-and-Radius-Events.png')} alt="JumpCloud Directory Insights - SSO and Radius Events" style={{border: '1px solid gray'}} width="800" />
 
 ### System Events
 
 The **JumpCloud Directory Insights - System Events** dashboard provides monitoring of system-level login and host activity across JumpCloud-managed endpoints. It highlights event and status distributions, top users and hosts, geo location patterns, and temporal trends to reveal suspicious access behavior. Detailed event summaries and failure metrics support investigations into unauthorized access and brute-force activity.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights - System Events" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud-Directory-Insights-System-Events.png')} alt="JumpCloud Directory Insights - System Events" style={{border: '1px solid gray'}} width="800" />
 
 ### Software and Report Events
 
 The **JumpCloud Directory Insights - Software and Report Events** dashboard provides comprehensive monitoring of software and report activity, including event type distributions, trend analysis, and failure tracking. It highlights geographic access patterns and detailed operational summaries to help teams validate software-related changes and reporting workflows. This dashboard supports rapid investigation of anomalous software or report events.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights - Software and Report Events" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud-Directory-Insights-Software-and-Report-Events.png')} alt="JumpCloud Directory Insights - Software and Report Events" style={{border: '1px solid gray'}} width="800" />
 
 ### LDAP Events
 
 The **JumpCloud Directory Insights - LDAP Events** dashboard provides focused monitoring of LDAP authentication and bind activity across users, methods, and outcomes. It highlights failed event patterns, source geo location, ASN organization trends, and event type distributions to detect suspicious directory access behavior. The dashboard also includes detailed summaries and time-series views to support credential abuse investigations.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights - LDAP Events" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud-Directory-Insights-LDAP-Events.png')} alt="JumpCloud Directory Insights - LDAP Events" style={{border: '1px solid gray'}} width="800" />
 
 ### SaaS and Asset Events
 
-The **JumpCloud Directory Insights - SaaS and Asset Events** dashboard provides visibility into SaaS application and asset management activity across your environment. It tracks event distributions, time-based trends, and geo location patterns for both service domains, along with total and failed event metrics. Detailed SaaS and asset summaries help analysts investigate configuration changes and potential misuse.
+The **JumpCloud Directory Insights - SaaS and Asset Events** dashboard provides visibility into SaaS application and asset management activity across your environment. It tracks event distributions, time-based trends, and geo-location patterns for both service domains, along with total and failed event metrics. Detailed SaaS and asset summaries help analysts investigate configuration changes and potential misuse.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights - SaaS and Asset Events" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud-Directory-Insights-SaaS-and-Asset-Events.png')} alt="JumpCloud Directory Insights - SaaS and Asset Events" style={{border: '1px solid gray'}} width="800" />
 
 ### GenAI and AIGW Events
 
 The **JumpCloud Directory Insights - GenAI and AIGW Events** dashboard delivers visibility into GenAI assistant and AI Gateway activity, including usage volume, event type distributions, and top users. It highlights service-level trends, authentication method patterns, and region-based behavior to support operational and security monitoring. Detailed summaries help teams investigate AI interaction anomalies and risk-related events efficiently.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights - GenAI and AIGW Events" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud-Directory-Insights-GenAI-and-AIGW-Events.png')} alt="JumpCloud Directory Insights - GenAI and AIGW Events" style={{border: '1px solid gray'}} width="800" />
 
 ### Access Events
 
 The **JumpCloud Directory Insights - Access Events** dashboard provides visibility into access management activity, including event volume, success and failure outcomes, and top active users. It highlights event and resource type distributions, geographic activity patterns, and time-based trends to help teams detect anomalous access behavior. The dashboard also includes detailed event summaries for faster triage and investigation.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights - Access Events" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud-Directory-Insights-Access-Events.png')} alt="JumpCloud Directory Insights - Access Events" style={{border: '1px solid gray'}} width="800" />
 
 ### Alerts and Notifications Events
 
 The **JumpCloud Directory Insights - Alerts and Notifications Events** dashboard provides comprehensive visibility into alert lifecycle and notification channel activity. It tracks alert creation and status changes, severity trends, notification event patterns, and event status distributions over time. With detailed summary tables and trend views, the dashboard helps security teams validate alerting posture and investigate response workflow changes.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights - Alerts and Notifications Events" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud-Directory-Insights-Alerts-and-Notifications-Events.png')} alt="JumpCloud Directory Insights - Alerts and Notifications Events" style={{border: '1px solid gray'}} width="800" />
 
 ### MDM Events
 
-The **JumpCloud Directory Insights - MDM Events** dashboard provides end-to-end visibility into mobile device management activity, including command execution, request types, status outcomes, and device counts. It surfaces MDM type distributions, event trends, and failure indicators to help teams assess fleet health and operational reliability. Detailed event summaries support troubleshooting of enrollment and command anomalies.
+The **JumpCloud Directory Insights - MDM Events** dashboard provides end-to-end visibility into mobile device management activity, including command execution, request types, status outcomes, and device counts. It surfaces MDM-type distributions, event trends, and failure indicators to help teams assess fleet health and operational reliability. Detailed event summaries support troubleshooting of enrollment and command anomalies.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights - MDM Events" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud-Directory-Insights-MDM-Events.png')} alt="JumpCloud Directory Insights - MDM Events" style={{border: '1px solid gray'}} width="800" />
  
 ## Create monitors for the JumpCloud Directory Insights app
 
@@ -333,10 +333,10 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition |
 |:--|:--|:--|:--|
 | `JumpCloud Directory Insights - Alerts Created` | This alert is triggered when potential security risks, configuration issues, or critical system events requiring investigation are identified. | Critical | Count > 5 |
-| `JumpCloud Directory Insights - Disabled MFA` | This alert is triggered when unauthorized flags or accidental removal of MFA are identified. This could expose accounts to compromise and immediate review is recommended to ensure compliance and security. | Critical | Count > 0 |
+| `JumpCloud Directory Insights - Disabled MFA` | This alert is triggered when unauthorized flags or accidental removal of MFA are identified. This could expose accounts to compromise, and immediate review is recommended to ensure compliance and security. | Critical | Count > 0 |
 | `JumpCloud Directory Insights - Events from Embargoed Locations` | This alert is triggered when logins or actions from embargoed locations are detected, suggesting potential unauthorized access. Investigate to confirm legitimacy or block malicious actors. | Critical | Count > 0 |
 | `JumpCloud Directory Insights - Impossible Logins` | This alert is triggered when the user account is compromised. For example, a user logging in from two distant locations consecutively. Immediate investigation is required to rule out credential theft. | Critical | Count > 0 |
-| `JumpCloud Directory Insights - Unsuccessful Logins` | This alert is triggered when credentials are misconfigured, or when brute-force attacks and credential stuffing are detected. Review source IPs and lock accounts if suspicious activity is confirmed. | Critical | Count > 5 |
+| `JumpCloud Directory Insights - Unsuccessful Logins` | This alert is triggered when credentials are misconfigured or when brute-force attacks and credential stuffing are detected. Review source IPs and lock accounts if suspicious activity is confirmed. | Critical | Count > 5 |
 | `JumpCloud Directory Insights - Unsuccessful SSOs` | This alert is triggered by misconfigurations in identity providers or malicious attempts to bypass SSO. Check SSO logs to identify the cause or any threats. | Critical | Count > 1 |
 
 ## Upgrade/Downgrade the JumpCloud Directory Insights app (Optional)
