@@ -2,6 +2,7 @@
 id: geo-lookup-map
 title: Geo Lookup (Map) Search Operator
 sidebar_label: Geo Lookup (Map)
+description: Use the Geo Lookup (Map) operator to match parsed IPv4 or IPv6 addresses to their geographical location for visualization on map charts.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -44,13 +45,11 @@ To map the IP addresses properly you must [count](/docs/search/search-query-lan
 
 Your query should use the following syntax:
 
-```
-| parse "[ip_fieldname]" as [ip_address]
+`| parse "[ip_fieldname]" as [ip_address]
 | lookup latitude, longitude [optional_geo_locator fields]
   from geo://location on ip=[ip_address]
 | count by latitude, longitude, [other geo_locator fields]
-| sort _count
-```
+| sort _count`
 
 This syntax produces aggregate results, so you can add a map to a Dashboard.
 
@@ -69,7 +68,7 @@ Sample log message:
 
 Using logs that match the example log format, running a query like this:
 
-```
+```sumo
 | parse "[remote_ip=*]" as remote_ip
 | lookup latitude, longitude from geo://location on ip = remote_ip
 | count by latitude, longitude
@@ -99,7 +98,7 @@ To find a mismatch from a geo lookup operator query, use the [isNull](/docs/sea
 
 For example, running a query like:
 
-```
+```sumo
 | parse "[remote_ip=*]" as remote_ip
 | lookup country_code from geo://location on ip = remote_ip
 | if (isNull(country_code), "unknown", country_code) as country_code

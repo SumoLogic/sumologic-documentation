@@ -2,6 +2,7 @@
 id: lookup
 title: lookup Search Operator
 sidebar_label: lookup
+description: Use the lookup operator to enrich log messages with additional fields from lookup tables hosted by Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -30,7 +31,7 @@ These requirements apply to lookup tables that you upload in CSV format:
 
 For example:
 
-```sql
+```sumo
 "id","name","time"
 "1","foo","6-15-12"
 "2","zoo","6-14-12"
@@ -67,15 +68,13 @@ You can only perform a lookup using fields defined as primary keys. If the key c
 
 your lookup query scope must include:
 
-```sql
+```sumo
 ... on srcDevice_ip=srcDevice_ip and eventTime=eventTime and _sourceCategory=sourceCategory
 ```
 
 ## Syntax 
 
-```sql
-lookup <outputColumn-1> [as <field>] [,<outputColumn-2> [as <field>]] from path://"<filePath>" on <joinColumn-1> [,<joinColumn-2>]
-```
+`lookup <outputColumn-1> [as <field>] [,<outputColumn-2> [as <field>]] from path://"<filePath>" on <joinColumn-1> [,<joinColumn-2>]`
 
 Where:
 
@@ -103,7 +102,7 @@ Where:
 
 This lookup matches the `userEmail` field value from a log message with the `email` field in the lookup table at the specified path, and if a match is found, returns the value of the `cell` field with the alias `c1`.
 
-```sql
+```sumo
 | lookup cell as c1 from path://"/Library/Users/myusername@sumologic.com/Suspicious Users" on userEmail=email
 ```
 
@@ -117,7 +116,7 @@ If you're using `lookup` to return a single field, you can place the `lookup` op
 
 This lookup matches the `userEmail` field value from a log message  with the `email` field in the lookup table at the specified path, and if a match is found, returns the the value of two fields from the matching row: `cell1` and `cell2`, with the aliases `c1` and `c2`, respectively: 
 
-```sql
+```sumo
 | lookup cell1 as c1, cell2 as c2 from path://"/Library/Users/myusername@sumologic.com/Suspicious Users" on userEmail=email
 ```
 
@@ -125,7 +124,7 @@ This lookup matches the `userEmail` field value from a log message  with the `e
 
 This lookup matches the `userID `field from a log message with the value of `ID` field in the specified lookup table, and returns all of the fields from the matching row.
 
-```sql
+```sumo
 | lookup * from path://"/Library/Users/myusername@sumologic.com/Users" on userID=id
 ```
 
@@ -133,7 +132,7 @@ This lookup matches the `userID `field from a log message with the value of `ID
 
 Another way to use a lookup operator is to chain lookup operators together. Each operator can call separate CSV files. For example, if you wanted to find user names and the position each user has in a company, your query could be:
 
-```sql
+```sumo
 * | parse "userID=*," as userID
 | lookup userName from https://company.com/userTable.csv on userID=id
 | lookup position from https://company.com/userPosition.csv on userID=id
@@ -158,7 +157,7 @@ To find a mismatch from a `lookup`  query, use the [isNull](/docs/search/searc
 
 For example:
 
-```sql
+```sumo
 | parse "code=*]" as code
 | lookup status_code from shared/statusupdates on status = code
 | if (isNull(status_code), "unknown", status_code) as status_code
@@ -173,6 +172,6 @@ In this example, we match the value of two fields from a log message against t
 
 and if a match is found, we return the value of two fields from the matching row: `cell1` and `cell2`, with the aliases `c1` and `c2`, respectively.
 
-```sql
+```sumo
 | lookup cell1 as c1, cell2 as c2 from path://"/Library/Users/myusername@sumologic.com/Suspicious Users" on userEmail=email, userStatus=status
 ```

@@ -2,6 +2,7 @@
 id: backshift
 title: backshift Search Operator
 sidebar_label: backshift
+description: Use the backshift operator to compare how numeric values change over time by shifting data points backward and returning them in a new field.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -14,9 +15,7 @@ It is important to note that `backshift` does not automatically add timeslices, 
 
 ## Syntax
 
-```sql
-backshift <field> [, shift_length] [by <field>]
-```
+`backshift <field> [, shift_length] [by <field>]`
 
 ## Rules
 
@@ -32,7 +31,7 @@ Use `backshift` to see the difference of fields between time points.
 
 Running a query like this:
 
-```sql
+```sumo  
 _sourceCategory=Labs/Apache/Access
 | timeslice by 1m
 | count by _timeslice

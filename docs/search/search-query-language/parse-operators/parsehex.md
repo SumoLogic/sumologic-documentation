@@ -1,6 +1,7 @@
 ---
 id: parsehex
-title: parseHex
+title: parseHex Operator
+description: Use the parseHex operator to convert hexadecimal strings of 16 or fewer characters to numeric values. Accepts both plain hex format and 0x-prefixed format.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -23,7 +24,7 @@ Parse a hexadecimal value to a decimal value.
 
 The following query will convert a hexadecimal string to a decimal number.
 
-```sql
+```sumo
 * | parseHex("12D230") as decimalValue
 ```
 

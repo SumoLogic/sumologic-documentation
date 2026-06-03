@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/security-scorecard.png')} alt="security-scorecard" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/security-scorecard.png')} alt="Security Scorecard icon" width="100"/>
 
-***Version: 1.3  
-Updated: Jul 13, 2023***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 Create, update, and delete portfolios as well as gather enrichment data on all current portfolios.
 
@@ -83,3 +83,4 @@ For information about Security Scorecard, see [Security Scorecard documentation]
 * July 13, 2023 (v1.3)
 	+ Updated the integration with Environmental Variables
 	+ Changed fields visibility
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

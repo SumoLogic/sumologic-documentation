@@ -47,8 +47,8 @@ To configure a TAXII 2 Client Source:
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Sumo Logic Threat Intel Source ID**. Enter the name you want to use for the source that will be created in the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab in Sumo Logic. The threat intelligence indicators will be stored in this source. Do not use spaces in the name.
 1. **Authentication**. Select the authentication type:
    * **Basic**. Provide your vendor username and password.
@@ -77,6 +77,7 @@ Sumo Logic provides the following sources based on the underlying code of our ST
 * Dragos TAXII Client
 * Nozomi TAXII Client
 * Recorded Future TAXII Client
+* SOCRadar TAXII Client
 * Unit42 TAXII Client
 
 When you set up a source, search for "taxii" and select the tile for the source you want to install:<br/><img src={useBaseUrl('img/security/taxii-sources.png')} alt="TAXII sources" style={{border: '1px solid gray'}} width="800" />
@@ -131,6 +132,7 @@ Below is a list of Sumo Logic recommended configuration examples for specific th
 | <a href={useBaseUrl('files/c2c/taxii-2/eclecticiq-config.json')} target="_blank">Eclecticiq</a> | |
 | <a href={useBaseUrl('files/c2c/taxii-2/recorded-future-config.json')} target="_blank">Recorded Future</a> | Use your API key as the HTTP password and leave the username blank. Currently, the Recorded Future TAXII v2 service supports Recorded Future’s [default and large risk lists](https://support.recordedfuture.com/hc/en-us/articles/115008327148-Default-and-Large-Risk-Lists). For more specific risk lists based on an individual risk rule, use Recorded Future’s TAXII v1 service. |
 | <a href={useBaseUrl('files/c2c/taxii-2/palo-alto-unit42-config.json')} target="_blank">PaloAlto Unit42</a> | |
+| <a href={useBaseUrl('files/c2c/taxii-2/socradar-config.json')} target="_blank">SOCRadar</a> | Use STIX/TAXII version `2.1` with **Basic** authentication. The Discovery URL is `https://taxii2.socradar.com/taxii2/`. SOCRadar provides three API roots: `radar_alpha` (collections grouping 10 feeds each), `radar_gamma` (individual standard feeds), and `radar_premium` (premium subscription-based feeds). To obtain your TAXII username and password, contact SOCRadar at `support@socradar.io` or via the SOCRadar Platform. Keep only the `ti_root_url` entries you want to ingest in the JSON config. |
 
 ## FAQ
 

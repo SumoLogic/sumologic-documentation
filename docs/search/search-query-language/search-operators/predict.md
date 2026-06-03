@@ -2,6 +2,7 @@
 id: predict
 title: predict Search Operator
 sidebar_label: predict
+description: Use the predict operator to forecast future values based on time-series numerical data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -35,9 +36,7 @@ The syntax for **`predict`** varies depending on whether you use the linear regr
 
 For the linear regression model:
 
-```sql
-... | timeslice 1m | count by _timeslice | predict _count by 1m
-```
+`... | timeslice 1m | count by _timeslice | predict _count by 1m`
 
 The linear regression algorithm produces the following fields in the
 output:  
@@ -48,9 +47,7 @@ output:  
 
 ## Syntax for the auto-regressive model
 
-```sql
-... | timeslice 1m | count by _timeslice | predict _count by 1m model=ar, ar.window=n, forecast=n
-```
+`... | timeslice 1m | count by _timeslice | predict _count by 1m model=ar, ar.window=n, forecast=n`
 
 The table below defines the parameters for running `predict` using the AR model.
 
@@ -62,9 +59,7 @@ The table below defines the parameters for running `predict` using the AR model.
 
 In the following query, the first three lines count the number of messages that contain an error term for every half minute. The last line uses the auto-regressive model to predict 100 data points in the future, based on 50 data points.
 
-```sql
-_sourceCategory=taskmanager jobState=InQueue error | timeslice 30s | count by _timeslice | predict _count by 30s model=ar,ar.window=50,forecast=100
-```
+`_sourceCategory=taskmanager jobState=InQueue error | timeslice 30s | count by _timeslice | predict _count by 30s model=ar,ar.window=50,forecast=100`
 
 The auto-regressive algorithm produces the following fields in the
 output:
@@ -89,11 +84,9 @@ If there are cyclical patterns that fit within the `ar.window`, the auto-regress
 
 For example, if there is an hourly cyclical pattern, the following query will learn that cycle:
 
-```sql
-... | timeslice 5m
-| <aggregate function> by _timeslice as _val  
-| predict _val by 5m model=ar, ar.window=15
-```
+`... | timeslice 5m
+| <aggregate function> by _timeslice as _val
+| predict _val by 5m model=ar, ar.window=15`
 
 In this query, the window size (15 consecutive data points) covers more than 1 hour (15 data points \* 5m interval = 75 minutes). So if there are cyclical patterns with a period of less than 75 minutes, the model will discover them.
 
@@ -103,9 +96,7 @@ In this query, the window size (15 consecutive data points) covers more than 1 h
 
 This query predicts the count of 404 errors per minute using linear regression.
 
-```sql
-_sourceCategory=Labs/Apache/Access status_code=404 | timeslice 1m | count(status_code) as error_count by _timeslice | predict error_count by 1m
-```
+`_sourceCategory=Labs/Apache/Access status_code=404 | timeslice 1m | count(status_code) as error_count by _timeslice | predict error_count by 1m`
 
 The query returns an aggregation table with columns for `error_count`, `error_count_predicted`, and `error_count_error`.
 
@@ -119,9 +110,7 @@ From here, you can select the **Line Chart** icon, and automatically create a 
 
 This query predicts the count of 404 errors per minute using the auto-regressive model.
 
-```sql
-_sourceCategory=Labs/Apache/Access status_code=404 | timeslice 1m | count(status_code) as error_count by _timeslice | predict error_count by 1m model=ar
-```
+`_sourceCategory=Labs/Apache/Access status_code=404 | timeslice 1m | count(status_code) as error_count by _timeslice | predict error_count by 1m model=ar`
 
 The query returns an aggregation table with columns for `error_count`, `error_count_predicted`, `error_count_linear`, and `_error_count_error`.
 

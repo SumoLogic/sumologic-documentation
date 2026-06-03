@@ -2,6 +2,7 @@
 id: in
 title: in Search Operator
 sidebar_label: in
+description: Use the in operator to check if a field's value matches any value in a specified list and return a boolean result.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,9 +11,7 @@ The `in` operator returns a Boolean value: true if the specified property is in 
 
 ## Syntax
 
-```sql
-<field> in (<value_1>[, <value_2>, <value_3>, ...])
-```
+`<field> in (<value_1>[, <value_2>, <value_3>, ...])`
 
 In the syntax, we are checking the value of the field provided for the \<field\> argument.
 
@@ -24,7 +23,7 @@ If the value of `<field>` matches any of value arguments (`<value_1>, <value_2>,
 
 The following query:
 
-```
+```sumo
 _sourceCategory=Apache/Access
 | parse "GET * HTTP/1.1\" * * \"*\"" as url, status_code, size, referrer
 | if (status_code in ("500", "501", "502", "503", "504", "505", "506", "401", "402", "403", "404"), "error", "OK message") as reason

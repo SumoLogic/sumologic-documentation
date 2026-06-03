@@ -2,14 +2,14 @@
 id: quickstart
 title: Quickstart Your Sumo Logic Experience
 sidebar_label: Quickstart
-description: Follow our quickstart guide to get up and running with Sumo Logic in minutes.
+description: Get started quickly with Sumo Logic by following this quickstart guide to connect data sources, search and analyze logs, set up monitoring, and share findings.
 keywords:
   - quickstart
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="35"/>
+<img src={useBaseUrl('img/icons/business/mission.png')} alt="Mission icon" width="35"/>
 
 Sumo Logic provides extensive features and options to gather, monitor, and analyze data, manage your infrastructure, integrate with third-party applications, and so much more!
 
@@ -29,8 +29,10 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 * **Self-paced**:
     * [Fundamentals Self-Paced](https://learn.sumologic.com/fundamentals-self-paced)
-    * [Onboarding courses](https://learn.sumologic.com/page/onboarding)
-* **Instructor-led virtual classes**: [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
+    * [Micro lessons](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-5)
+* **Instructor-led virtual classes**: 
+    * [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
+    * [Welcome Webinar Resources](https://learn.sumologic.com/welcome-webinar-resources) (To access, first sign in to our [learning portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-learning-portal).)
 :::
 
 ## Prerequisites

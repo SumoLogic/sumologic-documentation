@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-ise.png')} alt="cisco-ise" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-ise.png')} alt="Cisco ISE" width="70"/>
 
 ***Version: 1.6  
 Updated: Sep 19, 2023***
@@ -33,16 +33,16 @@ Cisco ISE is configured in a way that you'll need to specify the resource togeth
 Therefore, the first requirement is to [enable ERS](https://www.cisco.com/c/en/us/support/docs/security/identity-services-engine/215476-configure-ise-guest-accounts-with-rest-a.html#anc6) from the ISE admin UI. 
 
 1. Go to **Administration > Settings > ERS Settings**. 
-1. Check the **Enable ERS for Read/Write** radio button as shown in the screenshot below.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-1.png')} style={{border:'1px solid gray'}} alt="cisco-ise" width="800"/>
+1. Check the **Enable ERS for Read/Write** radio button as shown in the screenshot below.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-1.png')} style={{border:'1px solid gray'}} alt="Cisco ise" width="800"/>
 1. The following ISE Administrator Groups allow REST API access: 
    * SuperAdmin Read/Write
    * ERSAdmin Read/Write
-   * ERSOperator Read Only <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-2.png')} style={{border:'1px solid gray'}} alt="cisco-ise" width="800"/>
+   * ERSOperator Read Only <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-2.png')} style={{border:'1px solid gray'}} alt="Cisco ise" width="800"/>
    To perform Get Sessions action, the users must be assigned to one of the following Admin Groups:   
       * Super Admin
       * System Admin
       * MnT Admin
-   So you have to use both Admins Groups together to use all the actions inside CSOAR.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-3.png')} style={{border:'1px solid gray'}} alt="cisco-ise" width="800"/>
+   So you have to use both Admins Groups together to use all the actions inside CSOAR.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-3.png')} style={{border:'1px solid gray'}} alt="Cisco ise" width="800"/>
 
 ## Configure Cisco ISE in Automation Service and Cloud SOAR
 

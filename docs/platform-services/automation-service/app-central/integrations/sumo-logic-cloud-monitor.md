@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-cloud-siem" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.0  
-Updated: Mar 12, 2026***
+***Version: 1.1  
+Updated: April 30, 2026***
 
 The Monitor Management API allows you to manage monitors from HTTP endpoints. Monitors continuously query your data to monitor and send notifications when specific events occur. For more information, see [Monitors](/docs/alerts/monitors/).
 
@@ -82,3 +82,4 @@ SIEM
 ## Change Log
 
 * March 12, 2026 - First Upload
+* April 30, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

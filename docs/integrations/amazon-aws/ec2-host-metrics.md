@@ -7,7 +7,7 @@ description: The Sumo Logic App for Host Metrics (EC2) allows you to collect you
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS_EC2_CW_Metrics.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS_EC2_CW_Metrics.png')} alt="AWS EC2 CW Metrics icon" width="50"/>
 
 Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage.
 
@@ -43,7 +43,7 @@ The Host Metrics (EC2) app relies upon an Installed Collector with a [Host Metri
 1. Search for the `instanceid` field. 
 1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Fields_schema.png')} alt="Fields-Schema" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Fields_schema.png')} alt="Fields Schema" />
 
 
 ### Configure Host Metrics sources  
@@ -59,7 +59,7 @@ Perform these steps for each EC2 host:
    * Add a field named **account**, and set it to your AWS account alias.
    * Add a field named **namespace** and set it to **aws/ec2**.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/configure-metadata.png')} alt="configure-metadata" />
+<img src={useBaseUrl('img/integrations/amazon-aws/configure-metadata.png')} alt="Configure metadata" />
 
 3. Set the **Scan Interval** (the frequency at which the Source is scanned) to 1 minute.
 

@@ -11,7 +11,7 @@ description: The Sumo Collection Source aims to collect the list of the collecto
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="icon" width="60"/>
+<img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="Sumo Logic icon" width="60"/>
 
 Sumo Logic's Cloud-to-Cloud (C2C) framework enables seamless data integration by leveraging API-based connections to collect insights from external systems and services. The Sumo Collection Source is part of this framework and is designed to gather a list of collectors and their associated sources directly from the Sumo Logic platform.
 
@@ -66,8 +66,8 @@ To configure a Sumo Collection Source:
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
 1. **Deployment**. Select the deployment region from the dropdown. For example, `AU`.
 1. **Access ID**. Enter the Access ID collected from the [vendor configuration](#access-id-and-access-key). For example, `sug2lhtaa1g6xk`.
 1. **Access Key**. Enter the Access Key collected from the [vendor configuration](#access-id-and-access-key). For example, `00xxxxxx-xxx2-9316-7xx42xxx1x41`.
@@ -77,6 +77,10 @@ To configure a Sumo Collection Source:
     1. **Source API Interval**. Set how often the source needs to check for new source data. The polling interval is set for 5 minutes by default. You can adjust it based on your needs.
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the Sumo Collection source, consider installing the Sumo Logic app for [Sumo Collection](/docs/integrations/saas-cloud/sumo-collection/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## JSON schema
 

@@ -2,6 +2,7 @@
 id: ispublicip
 title: isPublicIP Search Operator
 sidebar_label: isPublicIP
+description: Use the isPublicIP operator to check if an IPv4 address is a public address and return a boolean result.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,13 +11,9 @@ The `isPublicIP` operator checks if an IPv4 address is public and returns a bo
 
 ## Syntax
 
-```sql
-isPublicIP("<IPv4_string>") as <field>
-```
+`isPublicIP("<IPv4_string>") as <field>`
 
-```sql
-isPublicIP(<IPv4_string_field>) [as <field>]
-```
+`isPublicIP(<IPv4_string_field>) [as <field>]`
 
 ## Rules
 
@@ -29,11 +26,11 @@ The following warning is shown when results are dropped or an IPv6 address is d
 
 ## Examples
 
-```sql
+```sumo
 | isPublicIP(dest_host)
 ```
 
 The following returns `false`:
-```sql
+```sumo
 | isPublicIP("10.255.255.255") as isPublic
 ```

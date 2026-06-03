@@ -6,7 +6,7 @@ description: The Sumo Logic app for Amazon Redshift ULM helps you monitor activi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/redshift.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/redshift.png')} alt="Redshift icon" width="50"/>
 
 Amazon Redshift is Amazon’s data warehousing service. The Sumo Logic app for Amazon Redshift ULM helps you monitor activity in Amazon Redshift. The app is a unified logs and metrics application with preconfigured dashboards provide insight into database connections, SQL command and statement execution, database user account events, CloudTrail events, and resource utilization by node and cluster.
 
@@ -163,7 +163,7 @@ dir="ltr">authenticated |Mon, 21 May 2018 01:38:01:601|::ffff:127.0.0.1 |32828 |
 
 ### Sample queries
 
-```sql title="Top Users"
+```sumo title="Top Users"
 dir="ltr">_sourceCategory=*/AWS/Redshift/Audit LOG
 | parse regex "^\'(?<time>\d+\-\d+\-\d+T\d+:\d+:\d+Z \w+)\s+\[\s*(?<parameters>[^\]]+)\]\'\s+LOG:\s+(?<sqlstatement>[^;]*)"
 | parse field=parameters "db=* user=* pid=* userid=* xid=*" as dbName, username, pid, userid, xid nodrop

@@ -47,12 +47,12 @@ If your application has long-running transactions (hours or days), consider the 
 ## Example query
 
 Use the following index and source category filters to find all the `tracingIngest` audit logs:
-```
+```sumo
 _index=sumologic_system_events AND _sourceCategory=tracingIngest
 ```
 
 In the following example, all the events logged indicate some impact on ingest. The example query assumes all event types are events to be informed about.
-```
+```sumo
 _index=sumologic_system_events AND _sourceCategory=tracingIngest
 | json field=_raw "eventName"
 | timeslice 1h

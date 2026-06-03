@@ -10,12 +10,10 @@ Tangent of argument in radians.
 
 ## Syntax
 
-```sql
-tan(<x>) as <field>
-```
+`tan(<x>) as <field>`
 
 ## Example
 
-```sql
+```sumo
 * | tan(1) as v
 ```

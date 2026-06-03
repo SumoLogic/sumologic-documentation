@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/palo-alto-networks-ngfw.png')} alt="palo-alto-networks-ngfw" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/palo-alto-networks-ngfw.png')} alt="Palo Alto Networks NGFW icon" width="100"/>
 
 ***Version: 1.4
 Updated: May 29, 2024***

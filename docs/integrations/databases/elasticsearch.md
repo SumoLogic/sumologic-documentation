@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/elasticsearch.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/databases/elasticsearch.png')} alt="Elasticsearch icon" width="50"/>
 
 The Elasticsearch app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Elasticsearch clusters. Preconfigured dashboards provide insight into cluster health, resource utilization, sharding, garbage collection, and search, index, and cache performance.
 
@@ -148,11 +148,11 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
      * **Applied At.** Choose **Ingest Time**
      * **Scope**. Select **Specific Data**
      * **Scope**: Enter the following keyword search expression:  
-     ```sql
+     ```sumo
      pod_labels_environment=* pod_labels_component=database pod_labels_db_system=* pod_labels_db_cluster=*
      ```
      * **Parse Expression**.Enter the following parse expression:
-   ```sql
+   ```sumo
    if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
        | pod_labels_component as component
        | pod_labels_db_system as db_system

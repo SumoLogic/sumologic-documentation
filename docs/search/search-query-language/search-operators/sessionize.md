@@ -2,6 +2,7 @@
 id: sessionize
 title: sessionize Search Operator
 sidebar_label: sessionize
+description: Use the sessionize operator to correlate log messages across multiple systems using an extracted value, creating a unified session view.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -22,9 +23,7 @@ Queries using `sessionize` cannot be added to a Dashboard.
 
 ## Syntax
 
-```sql
-sessionize ("<anchor pattern1>") as (<alias list1>), ("<anchor pattern2>") as (<alias list2>)
-```
+`sessionize ("<anchor pattern1>") as (<alias list1>), ("<anchor pattern2>") as (<alias list2>)`
 
 Where *anchor pattern* is like a parse anchor expression, except that it can include variables from previous expressions (using `$variableName`).
 
@@ -47,7 +46,7 @@ These two events together for a system can reveal how problematic a particular W
 
 In this example:
 
-```sql
+```sumo
 _sourceCategory=OS/Windows
  | sessionize "ComputerName = \"*\";\n\tEventCode = 4778;*Account Name:\t\t*\r*Account Domain:\t\t*\r*Logon ID:\t\t*\r" as (computerName,_11,userName,_u1,domain,_d1,logonID),
  "ComputerName = \"$computerName\";\n\tEventCode = 4779;*Account Name:\t\t$userName\r*Account Domain:\t\t$domain\r*Logon ID:\t\t*\r" as (_event2,_u2,_d2,_21)

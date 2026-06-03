@@ -102,9 +102,46 @@ Changing the collector's name will result in re-registering the collector with S
 
 Refer to the Uninstall section in the following docs:
 * [Linux](/docs/send-data/opentelemetry-collector/install-collector/linux/#uninstall)
-* [Windows](/docs/send-data/opentelemetry-collector/install-collector/windows/#uninstall)
+* [Windows](/docs/send-data/opentelemetry-collector/install-collector/windows/#uninstalling-the-collector)
 * [macOS](/docs/send-data/opentelemetry-collector/install-collector/macos/#uninstall)
 
+
+#### How can I verify the SHA256 checksum of a downloaded collector binary?
+
+GitHub provides a SHA256 digest for every asset on the [releases page](https://github.com/SumoLogic/sumologic-otel-collector/releases/latest). Expand an asset on the releases page to view its digest, or fetch all digests at once with the GitHub CLI:
+
+```bash
+gh api repos/SumoLogic/sumologic-otel-collector/releases/latest \
+  --jq '.assets[] | "\(.digest)  \(.name)"'
+```
+
+Then verify locally using the digest value (without the `sha256:` prefix):
+
+<Tabs groupId="os" defaultValue="linux" values={[{label:'Linux',value:'linux'},{label:'macOS',value:'macos'},{label:'Windows',value:'windows'}]}>
+<TabItem value="linux">
+
+```bash
+echo "<sha256>  <filename>" | sha256sum --check
+```
+
+</TabItem>
+<TabItem value="macos">
+
+```bash
+echo "<sha256>  <filename>" | shasum -a 256 --check
+```
+
+</TabItem>
+<TabItem value="windows">
+
+```powershell
+(Get-FileHash -Algorithm SHA256 "<filename>").Hash -eq "<sha256>".ToUpper()
+```
+
+</TabItem>
+</Tabs>
+
+A successful check prints `OK` (Linux/macOS) or `True` (Windows).
 
 ## Data ingestion and forwarding
 
@@ -148,7 +185,7 @@ For example:
 
 #### I am seeing some errors related to Sumo Logic OpenTelemetry Collector stating that `Unable to collect from a file`. Does this mean my collector is not collecting any data?
 
-<img src={useBaseUrl('img/send-data/error-faq.png')} alt="error-faq.png" width="950" />
+<img src={useBaseUrl('img/send-data/error-faq.png')} alt="Error FAQ" width="950" />
 
 In this case, this means that the collector couldn’t find the file you wanted to collect logs from. There can be lot of reasons why this error happens, including not having appropriate permissions.
 
@@ -160,7 +197,7 @@ The collector will still collect and send data from other sources as long as the
 
 This is a result of not running the collector as root.
 
-<img src={useBaseUrl('img/send-data/error2-faq.png')} alt="error2-faq.png"  />
+<img src={useBaseUrl('img/send-data/error2-faq.png')} alt="Error FAQ - Result"  />
 
 #### Why am I seeing `Dropping data because sending_queue is full` in OpenTelemetry Collector logs?
 
@@ -216,7 +253,7 @@ service:
         - sumologic
 ```
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-ping.png')} alt="otel-ping.png" width="450" />
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-ping.png')} alt="OTEL ping" width="450" />
 
 [httpcheck_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/httpcheckreceiver/README.md
 

@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/criminal-ip.png')} alt="criminal-ip" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/criminal-ip.png')} alt="Criminal IP icon" width="90"/>
 
-***Version: 1.0  
-Updated: Mar 1, 2024***
+***Version: 1.1  
+Updated: April 29, 2026***
 
 Criminal IP is a cybersecurity search engine that uses AI technology to scan global IP addresses, identifying connected devices and assessing threats. It provides detailed intelligence on malicious IPs, domains, and offers real-time data integration through an API for organizational security management.
 
@@ -51,3 +51,4 @@ For information about Criminal IP, see the [Criminal IP website](https://www.cri
 ## Change Log
 
 * March 1, 2024 - First upload
+* April 29, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

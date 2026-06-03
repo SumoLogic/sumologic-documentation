@@ -45,7 +45,7 @@ Once we've determined which pod is having problems, we can drill down into the 
 
 <img src={useBaseUrl('img/kubernetes/Explore_TS_Pod_drill-down.png')} alt="Explore TS Pod drill-down" style={{border: '1px solid gray'}} width="800" />
 
-<img src={useBaseUrl('img/kubernetes/Explore_TS_Drill-down_Pod_search-results.png')} alt="Explore_TS_Drill-down_Pod_search-results" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/kubernetes/Explore_TS_Drill-down_Pod_search-results.png')} alt="Explore_TS_Drill down_Pod_search results" style={{border: '1px solid gray'}} width="800" />
 
 ## Troubleshooting walkthrough - Pod-level authentication
 

@@ -2,6 +2,7 @@
 id: topk
 title: topk Search Operator
 sidebar_label: topk
+description: Use the topk operator to select top values from fields and group them by other fields, choosing the top of top.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -14,9 +15,7 @@ If you're using [`top`](top.md), we recommend switching to `topk` for all your q
 
 ## Syntax
 
-```sql
-topk(<#>, <top_field>[, <top_field_2>, ...]) [by <group_by_fields>]
-```
+`topk(<#>, <top_field>[, <top_field_2>, ...]) [by <group_by_fields>]`
 
 `#` is an integer equal to or greater than 1.
 
@@ -30,7 +29,7 @@ topk(<#>, <top_field>[, <top_field_2>, ...]) [by <group_by_fields>]
 
 Look at the top five source hosts generating the most errors and the number of errors for given timeslices:
 
-```sql
+```sumo
 error
 | timeslice 1m
 | count by _timeslice, _sourceHost
@@ -43,7 +42,7 @@ error
 
 Look at the top 2 results for a given category:
 
-```sql
+```sumo
 error
 | timeslice 1m
 | count by _timeslice, _sourceHost
@@ -56,7 +55,7 @@ Let's figure out what is the maximum error count for each sourceHost for the giv
 
 Find the top two source host, source category pairs.
 
-```sql
+```sumo
 error
 | timeslice 1m
 | count by _timeslice, _sourceHost, _sourceCategory

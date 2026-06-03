@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/bitsight-security-performance-management.png')} alt="axonius" width="80"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 27, 2026***
 
 BitSight offers the world's leading security ratings solution with a mission to change the way the world manages cybersecurity risk. 
 
@@ -22,7 +22,7 @@ BitSight offers the world's leading security ratings solution with a mission to 
 ## BitSight configuration
 
 1. To [generate an API Token](https://help.bitsighttech.com/hc/en-us/articles/115014888388-API-Token-Management), after signing in, go to top right corner on the gear icon and select **Account**. 
-1. In the **API Token** section, click **Generate New Token** (this token will be used later in the configuration). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-1.png')} style={{border:'1px solid gray'}} alt="bitsight-security-performance-management-1" width="800"/>
+1. In the **API Token** section, click **Generate New Token** (this token will be used later in the configuration). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-1.png')} style={{border:'1px solid gray'}} alt="BitSight Security Performance Management generate a new token" width="800"/>
 
 ## Configure BitSight Security Performance Management in Automation Service and Cloud SOAR
 
@@ -51,3 +51,4 @@ For information about BitSight Security Performance Management, see [Security Pe
 
 * February 10, 2022 - First upload
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 27, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

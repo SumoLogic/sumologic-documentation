@@ -2,6 +2,7 @@
 id: fields
 title: fields Search Operator
 sidebar_label: fields
+description: Use the fields operator to specify which fields to display and their order in query results, reducing clutter from irrelevant fields.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -27,7 +28,7 @@ Fields are not returned in the specified order in [Search Job API](/docs/api/se
 
 For allowlist mode, only fields you specify for inclusion are kept in the search output. For example, to strip out every field except for method and status_code, your query would be:
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | parse " \"* " as method
 | parse "\" * " as status_code
@@ -44,14 +45,14 @@ Allowlist queries allow all system internal fields (fields prefixed with an unde
 
 For denylist mode, all fields except for those you explicitly *remove* remain in the search output. Denylist mode is indicated with a minus sign "-" in a query. For example, to only remove the log_level, module, and process_id fields, your query would be:
 
-```sql
+```sumo
 _sourceCategory=*apache*
 | fields - log_level, module, process_id
 ```
 
 Denylist queries will also remove internal fields (fields prefixed with an underscore "_") when specified. For example:
 
-```sql
+```sumo
 _sourceCategory=*apache*
 | count by size
 | fields - _count
@@ -69,7 +70,7 @@ Aggregate query results, which appear in the **Aggregates** tab, include only th
 
 For example, for this non-aggregate query:
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | parse " \"* " as method
 | parse "\" * " as status_code
@@ -82,7 +83,7 @@ The search results would look like this:
 
 While the same query with an added *count by* statement to make it an aggregate query:
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | parse " \"* " as method
 | parse "\" * " as status_code
@@ -102,7 +103,7 @@ Syntax: `%"field_name"`
 
 Here's an example:
 
-```sql
+```sumo
 | "Robot" as %"learning robot .33."
 ```
 
@@ -114,7 +115,7 @@ By default, the fields in non-aggregated results are ordered alphabetically. Y
 
 For example, if you used:
 
-```sql
+```sumo
 | fields status_code, method
 ```
 
@@ -124,7 +125,7 @@ In an aggregate result, field and column order follows the requested order of th
 
 For example, if you used:
 
-```sql
+```sumo
 | count by status_code, method
 ```
 

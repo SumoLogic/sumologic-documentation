@@ -2,15 +2,14 @@
 id: querytimerange
 title: queryTimeRange Search Operator
 sidebar_label: queryTimeRange()
+description: Use the queryTimeRange operator to return the time duration for the query being executed in milliseconds.
 ---
 
 The `queryTimeRange()` operator returns the time duration for the query being executed in milliseconds. You can use it to establish time ranges for your continuous queries (CQs). This is a preferred operator for queries that run in auto refresh dashboards since it is more accurate than [`queryStartTime()`](querystarttime.md) and [`queryEndTime()`](queryendtime.md) operators in these cases.
 
 ## Syntax
 
-```sql
-queryTimeRange() as <field>
-```
+`queryTimeRange() as <field>`
 
 ## Rules
 
@@ -20,7 +19,7 @@ queryTimeRange() as <field>
 
 To get the range of time for your query:
 
-```sql
+```sumo
 error
 | queryTimeRange() as range
 ```

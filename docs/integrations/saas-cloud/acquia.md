@@ -7,7 +7,7 @@ description: The Sumo Logic App for Acquia provides visibility into the key comp
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/acquia.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/acquia.png')} alt="Acquia icon" width="100"/>
 
 The Sumo Logic App for Acquia provides visibility into the key components of the Acquia platform with preconfigured dashboards for Apache, Varnish, PHP, FPM and Drupal.
 
@@ -107,7 +107,7 @@ request_id="v-0000zzzz-d2b4-0000-b3a4-129zzzzd8266"
 This section provides examples for Drupal request, Apache access, and PHP error queries.
 
 
-```sql title="Drupal request"
+```sumo title="Drupal request"
 _sourceCategory=Labs/Acquia drupal-requests
 | parse "<133>1 * * *.* - - - [*] * * * http_code=* query=* uid=* php_pid=* php_time=* queue_wait=*
 request_id=\"*\"" as timestamp,lb,host,logtype,time,appurl,method,url,http_code,query,uid,php_id,
@@ -118,7 +118,7 @@ php_time,queue_wait,request_id
 ```
 
 
-```sql title="Apache access"
+```sumo title="Apache access"
 _sourceCategory=Labs/Acquia apache-access
 | parse " - - - * - - [*] \"* * HTTP/1.1\" * * \"*\" \"*\" vhost=* host=* hosting_site=* pid=*
 request_time=* forwarded_for=\"*\" request_id=\"*\" location=\"*\"" as src_ip,timestamp,method,
@@ -127,7 +127,7 @@ request_id,location
 | where !(status_code matches "2*")
 ```
 
-```sql title="PHP error"
+```sumo title="PHP error"
 _sourceCategory=Labs/Acquia php-errors
 | parse "* * * * - - - [*] *: * request_id=\"*\"" as head,systime,env,host,time,type,message,
 request_id
@@ -156,8 +156,8 @@ To create a new Sumo Logic hosted collector, do the following:
 5. A **description** is optional.
 6. **Category**. Enter any string to tag the logs collected from this Collector. This Source Category value is stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices).
 7. Click the **+Add Field** link in the **Fields** section to define the [fields](/docs/manage/fields) you want to associate, each field needs a key and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 8. **Assign to a Budget** allows you to assign an [ingest budget](/docs/manage/ingestion-volume/ingest-budgets) to the Collector. The dropdown displays your ingest budgets in the following format:
   ```
   <budget name> (<field value>) (<allocated capacity>)
@@ -214,8 +214,8 @@ To configure a cloud syslog source, do the following:
 4. Enter a **Name** to display for this source in Sumo. Description is optional.
 5. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from this source. (Category metadata is stored in a searchable field called `_sourceCategory`).
 6. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 7. Set any of the following under **Advanced**:
    * **Enable Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns the UTC time zone; if the rest of your logs are from another time zone your search results will be affected.

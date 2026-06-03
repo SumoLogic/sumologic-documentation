@@ -2,6 +2,7 @@
 id: threatlookup
 title: threatlookup Search Operator
 sidebar_label: threatlookup
+description: Use the threatlookup operator to search threat intelligence indicators in your log data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,7 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
  <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
 
 The `threatlookup` operator identifies suspicious indicators of compromise in your data which match your [threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) sources. Using this operator provides security analytics to help you to detect threats in your environment.
 
@@ -18,9 +23,7 @@ This operator supersedes the more limited [`threatip`](/docs/search/search-query
 
 ## Syntax
 
-```
-threatlookup [singleIndicator] [source="<source_value>"] <indicator>
-```
+`threatlookup [singleIndicator] [source="<source_value>"] <indicator>`
 
 Where:
 * `singleIndicator` returns the single best matching threat intelligence entry. (In the response, `num_matches` indicates how many total matches across your sources there are.) If `singleIndicator` is not specified, all matching entries from your intelligence sources are returned in separate rows. 
@@ -49,7 +52,7 @@ Query responses return the following [normalized indicator](/docs/security/threa
 
 ## Examples
 
-```sql title="Single best match for srcDevice_ip with confidence greater than 50"
+```sumo title="Single best match for srcDevice_ip with confidence greater than 50"
 _index=sec_record*
 | threatlookup singleIndicator srcDevice_ip
 | where _threatlookup.confidence > 50
@@ -57,7 +60,7 @@ _index=sec_record*
 | count by _timeslice
 ```
 
-```sql title="Matches in a 'mysource' custom source for srcDevice_ip with confidence greater than 50"
+```sumo title="Matches in a 'mysource' custom source for srcDevice_ip with confidence greater than 50"
 _index=sec_record*
 | threatlookup source="mysource" srcDevice_ip
 | where _threatlookup.confidence > 50
@@ -75,7 +78,7 @@ To see `threatlookup` used in a query:
 1. Select **Open in Log Search**. 
 1. Look for `threatlookup` used in the query. 
 For example, here is the query used for the **Threat Count** panel in the **Threat Intel Quick Analysis - IP** dashboard:
-```
+```sumo
 _sourceCategory=<source-category-name> 
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" 
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
@@ -108,7 +111,7 @@ Timestamps for the following response fields return results as an integer becaus
 
 To convert the timestamp results to a readable output, you must format it in the search itself with [`formatDate`](/docs/search/search-query-language/search-operators/formatdate). For example:
 
-```
+```sumo
 _index=sec_record*
 | threatlookup source="mysource" device_ip
 | formatDate(_threatlookup.valid_until, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'") as valid_until
@@ -117,14 +120,14 @@ _index=sec_record*
 <!-- Per DOCS-35, add this back once we have support for the cat search operator:
 ## Run threatlookup with the cat search operator
 You can run the `threatlookup` search operator with the [`cat` search operator](/docs/search/search-query-language/search-operators/cat/) by using the `sumo://threat-intel` path. This lets you search the entire store of threat intelligence indicators, or just a portion. For example:
-```
+```sumo
 cat sumo://threat-intel  | where _threatlookup.indicator = "192.0.2.0"
 ```
-```
+```sumo
 cat sumo://threat-intel  | where _threatlookup.source = "TAXII2Source" and _threatlookup.indicator = "192.0.2.0"
 ```
 In the `cat` output, timestamp fields (like `valid_until`) will appear as integers. You can use the `formatDate()` function to convert them back to timestamps. For example:
-```
+```sumo
 cat sumo://threat-intel | formatDate(toLong(_threatlookup.valid_until), "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", "UTC") as valid_until
 ```
 :::note
@@ -142,7 +145,7 @@ For example, let's say you have this log message:
 <br/>`198.51.100.7 - - [02/Dec/2025:08:40:01 +0000] "GET /admin/login.php HTTP/1.1" 404 250 "-" "Mozilla/5.0"`
 
 When you run this query:
-```
+```sumo
 | parse regex "(?<client_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | threatlookup singleIndicator client_ip
 ```
@@ -153,7 +156,7 @@ One result row would be returned, containing `_threatlookup.*` fields as null if
 
 If you want to exclude rows without threat intel matches, add an explicit non-match filtering check, for example:
 
-```
+```sumo
 _index=sec_record*
 | threatlookup singleIndicator srcDevice_ip
 | where _threatlookup.confidence > 50
@@ -161,7 +164,3 @@ _index=sec_record*
 | timeslice 1h
 | count by _timeslice
 ```
-
-
-
-

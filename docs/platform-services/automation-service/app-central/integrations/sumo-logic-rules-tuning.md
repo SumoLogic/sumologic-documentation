@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-cloud-siem" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.0  
-Updated: Mar 4, 2026***
+***Version: 1.1  
+Updated: April 30, 2026***
 
 [Rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/) are a powerful feature, allowing users to extend a Cloud SIEM rule’s match expression by appending additional match logic. This enables extending rules without having to duplicate an existing rule for customization and missing out on possible future improvements from the Sumo Logic Threat Labs team. This feature is a key tool in customizing Sumo Logic’s OOTB rules to individual organizations.
 
@@ -63,3 +63,4 @@ SIEM
 ## Change Log
 
 * March 4, 2026 - First Upload
+* April 30, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

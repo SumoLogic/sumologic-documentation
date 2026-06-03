@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/telegram-v2.png')} alt="tenable.io" width="100"/>
 
-***Version: 2.1  
-Updated: Jul 07, 2023***
+***Version: 2.2  
+Updated: April 30, 2026***
 
 Send messages from Cloud SOAR integration with Telegram V2.
 
@@ -51,3 +51,4 @@ For information about Telegram, see the [Telegram website](https://telegram.org/
 
 * February 12, 2021 - First upload
 * July 7, 2023 (v2.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v2.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

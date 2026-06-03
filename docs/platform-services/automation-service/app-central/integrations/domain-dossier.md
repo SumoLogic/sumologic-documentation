@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/domain-dossier.png')} alt="domain-dossier" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/domain-dossier.png')} alt="Domain Dossier icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Perform WHOIS queries with Domain Dossier.
 
@@ -44,3 +44,4 @@ For information about Domain Dossier, see the [Domain Dossier website](https://c
 
 * May 7, 2019 - First upload
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

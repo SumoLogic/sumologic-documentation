@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-ios-xe.png')} alt="cisco-ios-xe" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-ios-xe.png')} alt="Cisco IOS XE" width="70"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 27, 2026***
 
 Utilize and manipulate ACLs and Interfaces with Cisco IOS XE.
 
@@ -53,3 +53,4 @@ For information about Cisco IOS XE, see [Cisco IOS XE documentation](https://www
 
 * September 17, 2019 - First upload
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 27, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

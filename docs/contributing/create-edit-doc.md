@@ -105,7 +105,7 @@ Our docs are GitHub-flavored markdown files containing content like bulleted ins
 
 1. Open your new branch in your IDE and go to the `/docs` folder.
 1. Create a new markdown file in the format `<your-file>.md` and save it to the appropriate subfolder. For example, if you're creating a new metrics doc, you'd save it to the `/docs/metrics` folder.
-1. At the top of your file, add your frontmatter, which is the doc metadata. Follow the instructions under [Frontmatter](/docs/contributing/style-guide/#metadata-frontmatter).
+1. At the top of your file, add your frontmatter, which is the doc metadata. Follow the instructions under [Frontmatter](/docs/contributing/style-guide/#metadata-frontmatter), and see [Metadata descriptions](/docs/contributing/style-guide/#metadata-descriptions) for description length and formatting rules.
 
 
 ### Step 3: Write your doc
@@ -126,7 +126,7 @@ The Sumo Logic Doc Team can help you add your doc to the sidebar and top navigat
 
 Hub pages are `/index` pages that display all docs in that section in card view. Some cards are sorted by alphabetical order, and some are sorted by importance and/or ranking.
 
-As an example, let's say you needed to add a Best Practices doc to the [**Send Data** hub page](/docs/send-data).<br/><img src={useBaseUrl('img/contributing/hub-card-style.png')} alt="icon" />
+As an example, let's say you needed to add a Best Practices doc to the [**Send Data** hub page](/docs/send-data).<br/><img src={useBaseUrl('img/contributing/hub-card-style.png')} alt="Hub Card Style icon" />
 
 Once you decide on placement, use the card HTML code in that doc to create a new entry.
 

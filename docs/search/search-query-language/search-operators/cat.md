@@ -2,15 +2,14 @@
 id: cat
 title: cat Search Operator
 sidebar_label: cat
+description: Use the cat operator to view the contents of a lookup table stored in the Sumo Logic Library.
 ---
 
 You can use the `cat` operator to view the contents of a lookup table. Not supported in auto refresh dashboards or scheduled searches.
 
 ## Syntax
 
-```sql
-cat path://”<path-to-table>”
-```
+`cat path://”<path-to-table>”`
 
 Where:
 
@@ -21,7 +20,7 @@ Where:
 
 For example: 
 
-```sql
+```sumo
 cat path://"/Library/Users/myusername@sumologic.com/Suspicious Users"
 ```
 

@@ -247,74 +247,6 @@ Here's a cool tip.
 
 :::
 
-
-## Beta releases
-
-### Closed beta
-
-Closed beta release features are exclusively available to participating customers. Documentation for these features is not publicly accessible; Sumo Logic representatives provide the documentation links only to the involved customers. These links are excluded from our table of contents.
-
-To format a closed beta release:
-
-1. Underneath the frontmatter, add:
-   * The [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), which prevents search crawlers from picking it up.
-   * The Sumo Logic Docs beta label.
-     ```md {7-11}
-     ---
-     id: xyz-source
-     title: XYZ Source (Beta)
-     description: The XYZ Source provides a secure endpoint to receive event data.
-     ---
-
-     <head>
-      <meta name="robots" content="noindex" />
-     </head>
-
-     <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
-
-     First paragraph goes here...
-     ```
-2. Publish the document.
-
-### Open beta
-
-When the feature moves to open beta, it becomes available to all customers. Help topics for an open beta feature have a beta label at the top, appear in the site table of contents, and are linked from the [Beta Features](/docs/beta/) section.
-
-To format an open beta release:
-
-1. Underneath the frontmatter, add the beta label.
-   ```md {7}
-   ---
-   id: xyz-source
-   title: XYZ Source (Beta)
-   description: The XYZ Source provides a secure endpoint to receive  event data.
-   ---
-
-   <p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
-
-   First paragraph goes here...
-   ```
-1. Add the doc file path to `sidebars.ts` under its appropriate section, then add to the beta section with the same file path. For example, if your doc path is `docs/get-started/sumo-logic-ui.md`, add it to the `get-started/` section, then add to the `beta/` section with the same file path.
-     ```js title="sidebars.ts"
-     getstarted: [
-       {
-         type: 'category',
-         label: 'Welcome to Sumo Logic',
-         items: [
-           'get-started/sumo-logic-ui',
-           ...
-     beta: [
-       {
-         type: 'category',
-         label: 'Beta',
-         items: [
-           'get-started/sumo-logic-ui',
-           ...
-     ```
-1. Publish the doc.
-
-When the feature goes GA, remove the beta label and remove a description of the feature from the `/docs/beta` section.
-
 ## Capitalization
 
 * Title case all doc titles. Example: `Cloud SOAR Incident Management and Triage`.
@@ -335,7 +267,7 @@ Use single backticks (\` \`) to format inline code as monospace font. Example us
 
 <TabItem value="Markdown">
 
-```
+```sumo
 `_view = sumologic_slo_output`
 ```
 </TabItem>
@@ -429,7 +361,7 @@ To highlight lines in the code, use `{#}` in the title line with lines numbers. 
 </TabItem>
 <TabItem value="Result">
 
-```sql {2-6}
+```sumo {2-6}
 _sourceCategory=reinvent/travel/checkout
 [subquery:_sourceCategory=reinvent/travel/nginx
      | count by src_ip
@@ -811,7 +743,7 @@ Add appropriate `alt` text for accessibility. See [Add an image](#add-an-image) 
 
 | &#9989; **Do** | &#10060; **Don't** |
 |:---------------|:-------------------|
-| <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="alt-text" width="400"/> | <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="alt-text" width="400"/> |
+| <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="Alt text" width="400"/> | <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="Alt text" width="400"/> |
 
 ### Images in lists
 
@@ -828,13 +760,13 @@ When adding an image to a bulleted or sequential list, include the image snippet
 <TabItem value="Markdown">
 
 ```md
-1. Here is a dinosaur.<br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur.<br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="Alt text" width="100"/>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-1. Here is a dinosaur. <br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur. <br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="Alt text" width="100"/>
 
 </TabItem>
 </Tabs>
@@ -1088,7 +1020,7 @@ tags: [metrics, traces]
 | `slug:` | (Optional) Overrides the `id:` for the canonical link. Best used for index pages for sections. |
 | `title:` | **(Required)** For SEO purposes, include main keywords in your title and keep it under 60 characters. This title is used in navigation if a `sidebar_label` is not included. |
 | `sidebar_label:` | (Optional) Label for the sidebar navigation. Keep it title short. It does not affect the canonical link or page title. |
-| `description:` | (Optional) 1-2 sentences describing the content in the doc. It appears in search engine results. If omitted, search engines will pull the first couple of sentences from the page. |
+| `description:` | (Optional) 1-2 sentences describing the content in the doc. It appears in search engine results. Keep it 140–160 characters. Use plain text only — no Markdown or backtick formatting. If omitted, search engines will pull the first couple of sentences from the page. See [Metadata descriptions](#metadata-descriptions). |
 | `keywords:` | (Optional) List of keywords to enhance SEO. |
 | `tags:` | (Optional) A string or list of tags that adds labels and permalinks to help with sorting. |
 
@@ -1251,6 +1183,148 @@ This is a partial list of trademarked terms, which should be capitalized exactly
 
 Never use Sumo Logic in the plural or possessive form.
 
+## Preview releases
+
+Following are the instructions for formatting docs at each release stage. For release type definitions, see [Preview Releases](/docs/preview).
+
+Private Preview and Extended Preview release features are invite-only, while Public Preview features are by request only to participating customers. Preview docs are published, but excluded from the nav and must not be referenced or appear anywhere in the docs. Sumo Logic representatives provide the documentation links only to the involved customers.
+
+For Preview docs, under the frontmatter, add the `robots` meta tag, then the corresponding badge and preview notice. The Preview badges contain a link to the [Preview](/docs/preview) landing page, and the `robots` meta tag prevents search crawlers from picking it up.
+
+### Private Preview
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+---
+<frontmatter>
+---
+
+<head>
+<meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+<first paragraph>
+```
+
+</TabItem>
+<TabItem value="Result">
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+</TabItem>
+</Tabs>
+
+
+### Extended Preview
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+---
+<frontmatter>
+---
+
+<head>
+<meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
+
+:::info
+This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+<first paragraph>
+```
+
+
+</TabItem>
+<TabItem value="Result">
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
+
+:::info
+This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+</TabItem>
+</Tabs>
+
+### Public Preview
+
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+---
+<frontmatter>
+---
+
+<head>
+<meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
+
+:::info
+This feature is in Public Preview. To participate, contact your Sumo Logic account representative.
+:::
+
+<first paragraph>
+```
+
+</TabItem>
+<TabItem value="Result">
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
+
+:::info
+This feature is in Public Preview. To participate, contact your Sumo Logic account representative.
+:::
+
+
+</TabItem>
+</Tabs>
+
+
+### Generally Available (GA)
+
+When a feature becomes Generally Available (GA), remove all Preview-related labels, badges, notes, and the `robots` meta tag. Then follow the standard [Create a Doc](/docs/contributing/create-edit-doc) instructions.
 
 ## Punctuation
 
@@ -1528,6 +1602,43 @@ For clarity and search engine discoverability:
 * If you change a URL, set up a [redirect](/docs/contributing/remove-doc#step-1-create-a-301-redirect) so that users don’t get a 404 page.
 * Use Google Analytics to make data-driven decisions.
 :::
+
+### Metadata descriptions
+
+The `description` frontmatter field controls the snippet shown in search engine results. Follow these rules:
+
+* **Length: 140–160 characters.** Google truncates descriptions at approximately 160 characters. Descriptions under 100 characters are too short to be useful — search engines may generate their own snippet instead.
+* **Plain text only.** Do not use Markdown syntax in the `description` field. Backticks, bold (`**`), and other Markdown formatting render as literal characters in HTML `<meta>` tags and appear as symbols in search results.
+* **Lead with an action verb or the product/feature name.** Do not start with "This page", "This doc", or "This article."
+* **Write for humans.** Describe what the reader will learn or accomplish, not just what the page contains.
+
+Example:
+
+| | Description |
+|--|--|
+| Too long | `Use the accum operator to calculate the cumulative sum of a numeric field in your search results. Track running totals by time interval or across all data points, ideal for monitoring incremental growth in request counts, error rates, or resource consumption.` (366 chars) |
+| Too short | `Learn about the accum operator.` (32 chars) |
+| Correct | `Use the accum operator to calculate the cumulative sum of a numeric field. Track running totals by time interval or across all data points.` (140 chars) |
+
+### AEO (Answer Engine Optimization)
+
+Answer Engine Optimization improves the chances of your content appearing as a direct answer in search results, including Google featured snippets and "People also ask" boxes.
+
+* **Answer the question in the first 1–2 sentences.** The opening paragraph should directly state what the subject is or what the reader will accomplish. Do not bury the answer after several sentences of context.
+* **Use question-format H2 headings where natural.** Headings like "What is X?" or "How do I configure Y?" help search engines match content to user queries.
+   * Example: ~~_Overview_~~ &rarr; _What is the Outlier operator?_
+* **Use structured lists and tables.** Search engines extract lists and tables preferentially for featured snippets. Use them wherever content is enumerable or comparative.
+* **Define key terms explicitly.** Write "X is..." or "X means..." on first use so search engines can extract accurate definitions.
+
+### GEO (Generative Engine Optimization)
+
+Generative Engine Optimization improves the likelihood that AI-powered search tools (such as ChatGPT, Perplexity, and Google AI Overviews) cite your content accurately in generated responses.
+
+* **Make the opening paragraph self-contained.** LLMs pull from the first few sentences to decide whether to cite a page. The opening should be understandable without reading anything else on the page.
+* **State facts as explicit standalone sentences.** Avoid burying key information in subordinate clauses. A fact stated in its own sentence is more likely to be cited verbatim.
+   * Example: ~~_The operator, which supports up to 10,000 events per second depending on instance size, works with both collector types._~~ &rarr; _The operator supports up to 10,000 events per second on large instances. It works with both Hosted and Installed Collectors._
+* **Use specific version numbers and dates.** Avoid "latest", "current", or "recent" without a specific value. AI tools reproduce whatever is on the page — vague references become stale citations.
+* **Add an "At a glance" section for long pages.** For pages over 800 words, add a brief summary section near the top with key facts as short bullet points. This is the most citation-friendly portion of a page for generative AI tools.
 
 
 

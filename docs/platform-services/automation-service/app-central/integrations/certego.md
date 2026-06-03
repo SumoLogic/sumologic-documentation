@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/certego.png')} alt="certego" width="100"/>
 
-***Version: 1.2  
-Updated: Jul 11, 2023***
+***Version: 1.3  
+Updated: April 27, 2026***
 
 Certego Managed services for breach detection, cyber security, and response to threats and intrusions.
 
@@ -48,3 +48,4 @@ For information about Certego, see the [Certego website](https://www.certego.net
 * October 25, 2022 - First upload
 * March 29, 2023 - Integration refactored.
 * July 11, 2023 (v1.2) - Removed leading/trailing spaces
+* April 27, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
