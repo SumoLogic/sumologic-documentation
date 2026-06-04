@@ -16,9 +16,9 @@ Google Cloud Run is a fully managed serverless platform that lets you run statel
 
 * **List Services** (*Enrichment*) - List all Cloud Run services in a project and region to inventory what is currently running.
 * **Get Service** (*Enrichment*) - Retrieve configuration and metadata for a specific Cloud Run service including its URL, revision, and status.
-* **Add Member To Role** (*Containment*) - Add a member (user, service account, or group) to a specific IAM role on a Cloud Run service to grant invoke or admin access.
-* **Remove Member From Role** (*Containment*) - Remove a member from a specific IAM role on a Cloud Run service to revoke access during incident response.
-* **Update Service IAM Policy** (*Containment*) - Modify the IAM policy on a Cloud Run service to restrict or expand who can invoke it.
+* **Add Member to Role** (*Containment*) - Add a member (user, service account, or group) to a specific IAM role on a Cloud Run service to grant invoke or admin access.
+* **Remove Member from Role** (*Containment*) - Remove a member from a specific IAM role on a Cloud Run service to revoke access permissions.
+* **Update IAM Policy** (*Containment*) - Modify the IAM policy on a Cloud Run service to restrict or expand who can invoke it.
 * **Delete Service** (*Containment*) - Permanently delete a Cloud Run service to decommission legacy or compromised workloads quickly.
 
 ## Google Cloud Run configuration

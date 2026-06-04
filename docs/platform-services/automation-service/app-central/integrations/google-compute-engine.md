@@ -14,14 +14,17 @@ Google Compute Engine is a scalable, high-performance virtual machine infrastruc
 
 ## Actions
 
-* **Create Disk Snapshot** (*Containment*) - Create a snapshot of a persistent disk attached to an instance.
+* **Add Member to Role** (*Containment*) - Add a member (user, service account, or group) to a specific IAM role on a Compute Engine instance to grant access permissions.
+* **Create Disk Snapshot** (*Notification*) - Create a snapshot of a persistent disk attached to an instance.
 * **Delete Instance** (*Containment*) - Permanently delete a Compute Engine virtual machine instance.
 * **Get Instance** (*Enrichment*) - Retrieve detailed information about a specific virtual machine instance.
 * **List Instances** (*Enrichment*) - List all virtual machine instances within a project and zone.
-* **Restore Disk from Snapshot** (*Remediation*) - Create a new persistent disk from an existing snapshot.
-* **Start Instance** (*Remediation*) - Start a stopped virtual machine instance.
+* **Remove Member from Role** (*Containment*) - Remove a member from a specific IAM role on a Compute Engine instance to revoke access permissions.
+* **Restore Disk from Snapshot** (*Notification*) - Create a new persistent disk from an existing snapshot.
+* **Start Instance** (*Containment*) - Start a stopped virtual machine instance.
 * **Stop Instance** (*Containment*) - Stop a running virtual machine instance.
 * **Update IAM Policy** (*Containment*) - Update the IAM access control policy for a Compute Engine resource.
+* **Check Operation Status** (*Scheduled*) - Poll the status of a long-running operation until it reaches completion. Use this action after asynchronous operations such as stopping, starting, or deleting an instance, creating a disk snapshot, or restoring a disk from a snapshot to confirm the operation has finished.
 
 ## Google Compute Engine Authentication Configuration
 
