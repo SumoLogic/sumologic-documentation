@@ -6,7 +6,7 @@ description: Group related dashboard panels into collapsible sections to improve
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Grouping panels into sections helps you to better organize complex dashboards by grouping related panels into logical sections. Each section can be expanded or collapsed, allowing you to focus on specific insights while keeping dashboards clean, structured, and easier to navigate. Sections also improve dashboard performance by loading and refreshing only the panels that are currently visible. This approach helps reduce unnecessary query scans and provides greater control over dashboard layout, visibility, and cost efficiency.
+Grouping panels into sections helps you to better organize complex dashboards by grouping related panels into logical sections. Each section can be expanded or collapsed, allowing you to focus on specific insights while keeping dashboards clean, structured, and easier to navigate. Sections can help improve dashboard performance by loading and refreshing only the panels in expanded sections. By reducing the number of active panel queries, sections can also help reduce unnecessary query scans and associated costs.
 
 ## How to add a section
 
@@ -43,7 +43,7 @@ To delete a section in your dashboard, follow the below steps:
 
 ## How to share a dashboard with sections
 
-To share a dashboard with coworkers within your organization, refer to [Share a Dashboard](/docs/dashboards/share-dashboard-new/). When you share a dashboard with multiple sections, queries will run and costs will be incurred only for the sections in expanded state. Panels in the collapsed section do not execute any queries or incur scan costs until they are expanded.
+To share a dashboard with coworkers within your organization, refer to [Share a Dashboard](/docs/dashboards/share-dashboard-new/). When you open a shared dashboard, queries are executed only for panels in expanded sections. Panels within collapsed sections do not execute queries or consume scan resources until the section is expanded.
 
 If **Autorefresh** is enabled for the dashboard, only panels within expanded sections are refreshed. Panels in collapsed sections remain unchanged and are refreshed only after their section is expanded.
 
