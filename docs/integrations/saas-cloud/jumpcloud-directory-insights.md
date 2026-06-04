@@ -248,13 +248,13 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **JumpCloud Directory Insights - Overview** dashboard provides a comprehensive view of directory activity, including user authentications, administrative changes, and system modifications. It highlights authentication trends by tracking successful and failed logins over time, helping IT teams identify patterns. This dashboard also provides insights into user provisioning, de-provisioning, and group membership changes, offering visibility into directory structure updates. Additionally, it includes administrator actions such as password resets and policy modifications to monitor privileged activities.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Overview.png')} alt="JumpCloud Directory Insights - Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud-Directory-Insights-Overview.png')} alt="JumpCloud Directory Insights - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Security Overview
 
 The **JumpCloud Directory Insights - Security Overview** dashboard focuses on security-related events, emphasizing failed login attempts, account lockouts, and privilege escalations. It provides geographic insights into authentication activities, helping you to detect suspicious login locations. This dashboard also tracks high-risk events such as MFA failures and unauthorized access attempts to enhance security monitoring. Analyzing login behaviors and access trends, it helps security teams identify potential threats and enforce compliance policies.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud+Directory+Insights+-+Security+Overview.png')} alt="JumpCloud Directory Insights - Security Overview" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/JumpCloud+Directory+Insights/JumpCloud-Directory-Insights-Security-Overview.png')} alt="JumpCloud Directory Insights - Security Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Password Manager Events
 
