@@ -1,5 +1,5 @@
 ---
-id: data-masking-management
+id: data-masking
 title: Data Masking Management APIs
 sidebar_label: Data Masking Management
 description: Use Data Masking Management API endpoints to manage data masking rules that protect sensitive information in your logs.
