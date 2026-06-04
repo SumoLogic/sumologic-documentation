@@ -48,7 +48,7 @@ The Flex to Tier Migration Report is a tool that shows each partition in your or
 
 ### What does the Is Included column mean?
 
-The Is Included column indicates whether a partition is part of the [default scope](/docs/manage/partitions/flex/faq/#how-can-i-optimize-my-query-using-default-scope). A value of `true` means the partition is included in the default scope; `false` means it is excluded. Excluded partitions may need to be switched to included if they have active SIEM forwarding or unsupported feature dependencies.
+The **Is Included** column indicates whether a partition is part of the [default scope](/docs/manage/partitions/flex/faq/#how-can-i-optimize-my-query-using-default-scope). A value of `true` means the partition is included in the default scope; `false` means it is excluded. Excluded partitions may need to be switched to **Included** if they have active SIEM forwarding or unsupported feature dependencies.
 
 ### What happens to monitors and SLOs after migration to Tiered storage?
 
