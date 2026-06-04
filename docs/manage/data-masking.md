@@ -125,5 +125,5 @@ Yes. An organization can have a maximum of **50 data masking rules**. To add a n
 
 ### Can we manage data masking rules programmatically?
 
-Yes. Use the [Data Masking Management APIs](/docs/api/data-masking-management) to create, update, and manage data masking rules programmatically.
+Yes. Use the [Data Masking Management APIs](/docs/api/data-masking) to create, update, and manage data masking rules programmatically.
 
