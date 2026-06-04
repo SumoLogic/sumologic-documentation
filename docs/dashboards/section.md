@@ -40,6 +40,12 @@ To delete a section in your dashboard, follow the below steps:
     - **Delete section only**. Removes the section but keeps the panels in the dashboard.
     - **Delete section and all its content**. Removes the section and all panels within it.
 
+## How to view the scan estimate
+
+To view the scan estimate for a section, click the <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter icon" width="25"/> adjacent to the three-dot kebab menu icon on the section header. The scan estimate displays the projected data scan in GB for all panels within that section.<br/><img src={useBaseUrl('img/dashboards/section/scan-estimate.png')} alt="Scan Estimate" style={{border: '1px solid gray'}} width="800"/>
+
+To view the scan estimate for the entire dashboard broken down by expanded and collapsed sections, see [Dashboard-level scan estimates](/docs/manage/partitions/estimate-scan-data/#dashboard-level-scan-estimates).
+
 ## Sharing a dashboard with sections
 
 To share a dashboard with coworkers within your organization, refer to [Share a Dashboard](/docs/dashboards/share-dashboard-new/). When you share a dashboard with multiple sections, queries will run and costs will be incured only for the sections in expanded state. Panels in the collapsed section do not execute any queries or incur scan costs until they are expanded.
