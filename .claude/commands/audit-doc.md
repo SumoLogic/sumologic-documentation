@@ -2,6 +2,27 @@
 
 Performs comprehensive quality checks on documentation files to ensure adherence to Sumo Logic style guidelines, proper structure, and completeness.
 
+## What this command does
+
+When you invoke `/audit-doc`, Claude will:
+
+1. **Read and analyze the specified doc file**
+2. **Check frontmatter**. Validate required fields and format
+3. **Review content structure**. Check headings, sections, and organization
+4. **Validate links and images**. Check paths, alt text, and references
+5. **Check style adherence**. Apply Sumo Logic style guide rules
+6. **Report findings**. Provide detailed feedback with specific line numbers
+7. **Suggest fixes**. Offer actionable recommendations
+
+## When to use this command
+
+* Before submitting a PR to check doc quality
+* After creating a new doc to validate structure
+* When updating existing docs to ensure consistency
+* To identify broken links or missing images
+* To verify adherence to Sumo Logic style guidelines
+* When reviewing community contributions
+
 ## Workflow
 
 ### Step 1: Identify the doc to audit

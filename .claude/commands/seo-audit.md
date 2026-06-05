@@ -28,10 +28,8 @@ Use the Read tool to read the complete file content including frontmatter.
 
 **Frontmatter**
 
-* [ ] `title` present
-* [ ] `title` is under 60 characters — **Critical** if missing or over 60
+* [ ] `title` is under 60 characters — **Critical** if over 60
 * [ ] `title` includes the primary keyword or product/feature name
-* [ ] `description` present — **Critical** if missing
 * [ ] `description` is 140–160 characters — **Warning** if shorter than 100 or longer than 160
 * [ ] `description` leads with an action verb or product name (not "This page" or "This doc")
 * [ ] `keywords` field present with 3–5 relevant terms — **Suggestion** if missing
@@ -39,8 +37,6 @@ Use the Read tool to read the complete file content including frontmatter.
 
 **Headings**
 
-* [ ] No H1 in body — title frontmatter generates H1; a second H1 breaks SEO — **Critical** if present
-* [ ] H2 used for main sections; no skipped heading levels (H2 → H4 without H3) — **Warning** if skipped
 * [ ] At least 2 H2 headings for pages over 500 words — **Suggestion** if none
 * [ ] No duplicate headings at the same level — **Warning** if duplicated
 * [ ] Headings are under 60 characters — **Suggestion** if over
@@ -49,12 +45,9 @@ Use the Read tool to read the complete file content including frontmatter.
 
 * [ ] First paragraph (after frontmatter) is substantive — tells the reader what the doc covers, why it matters, and who it is for — **Warning** if it is thin (under 50 words) or just restates the title
 * [ ] Page has at least one internal link to a related doc — **Warning** if none
-* [ ] Internal link anchor text is descriptive (not "click here" or "here") — **Warning** if bare
-* [ ] No bare external URLs — wrap in markdown link syntax — **Warning** if present
 
 **Images**
 
-* [ ] All images have non-empty `alt` text — **Critical** if missing
 * [ ] Alt text describes the image content, not just "screenshot" or the filename — **Warning** if generic
 
 ### Step 4: Run AEO checks
@@ -136,11 +129,8 @@ Do not modify files without explicit user approval.
 
 | Issue | Why it matters |
 |-------|---------------|
-| Missing `description` | Search engines cannot generate a preview snippet; AI tools have no summary to cite |
-| Missing `title` | Page cannot be indexed or linked properly |
 | `title` over 60 chars | Truncated in search results; first 60 chars carry the most weight |
-| H1 in body | Duplicate H1 confuses search engines and breaks page structure |
-| Missing image alt text | Accessibility failure; images are invisible to search crawlers |
+| `slug` on regular page | Overrides URL derived from file path; breaks sidebar linking |
 
 ### Warnings
 
@@ -182,10 +172,8 @@ Then ask if the user wants to drill into any specific file.
 
 ## Tips
 
-* Run this before `/audit-doc` to prioritize discoverability fixes first
 * Run this after `/geo-optimize` to verify improvements were applied
 * For batch fixes on description length, `/seo-audit` + `/geo-optimize` together cover most GEO gaps
-* Pair with `/tone-check` for comprehensive pre-PR review
 
 ---
 
@@ -195,4 +183,3 @@ Then ask if the user wants to drill into any specific file.
 
 * **`/audit-doc`** — structure, required sections, broken links, frontmatter completeness, style guide
 * **`/geo-optimize`** — apply GEO improvements after this audit identifies gaps
-* **`/tone-check`** — voice and tone check (standalone; not covered here)
