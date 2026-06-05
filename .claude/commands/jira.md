@@ -188,7 +188,7 @@ When creating or updating tickets, these fields are available:
 - **Assignee** (`assignee`) - Auto-assign based on Technical Area unless user specifies
 - **Description** (`description`) - Always use markdown format
 - **Priority** (`priority`) - Defaults to "Medium"
-  - Options: " High" (id: 12023), " Medium" (id: 12024), " Low" (id: 12025)
+  - Options: "High" (id: 12023), "Medium" (id: 12024), "Low" (id: 12025)
 - **Due Date** (`customfield_10643`) - Date picker (YYYY-MM-DD format)
 - **Github Pull Request** (`customfield_10466`) - URL field, auto-populate after PR creation
 - **Existing Tech Docs Link** (`customfield_10750`) - URL to related existing docs
@@ -212,15 +212,6 @@ When creating or updating tickets, these fields are available:
 
 **After PR creation:**
 - Always update the Github Pull Request field with the PR URL using `customfield_10466`
-
-**Field IDs reference:**
-- Technical Area: `customfield_10748`
-- Due Date: `customfield_10643`
-- Github Pull Request: `customfield_10466`
-- Existing Tech Docs Link: `customfield_10750`
-- Preview Doc Requirement: `customfield_10796`
-- Release Note Requirement: `customfield_14728`
-- Product UI Link: `customfield_14729`
 
 ---
 

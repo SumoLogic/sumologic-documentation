@@ -20,10 +20,11 @@ Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic sty
 
 **Non-negotiable rules:**
 1. **Read template first** - Get current checkbox labels from `.github/PULL_REQUEST_TEMPLATE.md` (never guess or use old labels)
-2. **Use exact text** - Copy checkbox labels verbatim (never paraphrase: "Documentation content", "Website configuration", etc. DO NOT EXIST)
+2. **Use exact text** - Copy checkbox labels verbatim. Current labels are: "Minor Changes", "Update Content", "New Content", "Site and Tools".
 3. **Keep all checkboxes** - Pre-check one box, leave all four in the list
 4. **PR title format**: `TICKET - Description` (e.g., `DOCS-1234 - Add PostgreSQL app`)
-5. **Full Jira URL** - Use `https://sumologic.atlassian.net/browse/DOCS-1234` not ticket number alone
+5. **Ask for ticket number** - Always ask for a Jira ticket before creating a PR. If the user doesn't have one, offer to create it using the Atlassian Jira MCP (optional for quick typo fixes).
+6. **Full Jira URL** - Use `https://sumologic.atlassian.net/browse/DOCS-1234` not ticket number alone
 
 See `.claude/skills/pr-template-guide/SKILL.md` for examples and guidance.
 
@@ -46,7 +47,7 @@ Before pushing any commit that changes docs content:
 - **Existing Tech Docs Link** (`customfield_10750`): 
   - REQUIRED when transitioning to Published status
   - MUST be populated when creating or updating tickets that touch existing articles
-  - Use full production URL (e.g., `https://help.sumologic.com/docs/get-started/training-certification-faq`)
+  - Use full production URL (e.g., `https://www.sumologic.com/help/docs/get-started/training-certification-faq`)
 - **GitHub PR link** (`customfield_10466`): After creating a PR, automatically update this field with the PR URL
 - **Description**: Always use `contentFormat: markdown`
 
@@ -55,7 +56,7 @@ Before pushing any commit that changes docs content:
 - **Titles**: Sentence case, action verb, specific, under 10 words
 - **Descriptions**: Benefit-driven, active voice, under 150 words unless complex, markdown format
 - **Comment attribution**: Always append `— via Claude Code` to any comment posted to a Jira ticket
-- **Status transitions**: Use workflow states: To Do → In Progress → In Review → Published/Done
+- **Status transitions**: Use workflow states: Backlog → To Do → In Progress → Blocked → In Review → On Hold → Published → Closed
 
 ### Publishing Checklist
 Before transitioning any ticket to Published:
@@ -67,12 +68,18 @@ Before transitioning any ticket to Published:
 - **Assignee**: Assign any new PR to the current user unless otherwise specified
 
 ## Slash Commands
-Primary commands for documentation work (proactively suggest when relevant):
+Primary commands for documentation work. Proactively suggest when context fits — don't wait for the user to ask.
 
 **Content:** `/doc`, `/doc-from-jira`, `/app-doc`, `/c2c-source-doc`, `/remove-doc`
 **Release notes:** `/release-note-service`, `/release-note-collector`, `/release-note-cse`, `/release-note-csoar`, `/release-note-developer`
 **Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`, `/tone-check`, `/rewrite-intro`, `/simplify`
 **Workflow:** `/jira`, `/review`
+
+**When to proactively suggest:**
+- User mentions a Jira ticket → suggest `/doc-from-jira`
+- User is about to create a PR → suggest `/seo-audit` first
+- Doc needs discoverability improvements → suggest `/geo-optimize`
+- User asks about doc quality → suggest `/audit-doc` and `/seo-audit` together
 
 **Key distinctions:**
 - `/jira` = manage tickets | `/doc-from-jira` = scaffold doc from ticket
