@@ -1,18 +1,18 @@
-![Sumo Logic Documentation](https://www.sumologic.com/help/img/reuse/sumo-docs-readme.png)
+<img src="https://www.sumologic.com/help/img/reuse/sumo-docs-readme.png" width="400"/>
 
 [![Build](https://img.shields.io/github/actions/workflow/status/SumoLogic/sumologic-documentation/workflow_deploy-to-pantheon-prod.yml?style=flat&label=build)](https://github.com/SumoLogic/sumologic-documentation/actions/workflows/workflow_deploy-to-pantheon-prod.yml)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://www.sumologic.com/help/docs/contributing)
 [![License](https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?style=flat&colorB=ff0000)](LICENSE)
-[![Follow @SumoLogic](https://img.shields.io/badge/Follow_@SumoLogic-1DA1F2?style=flat&logo=x&logoColor=white)](https://x.com/SumoLogic)
+[![Follow @SumoLogic](https://img.shields.io/badge/Follow_@SumoLogic-000000?style=flat&logo=x&logoColor=white)](https://x.com/SumoLogic)
 [![RSS](https://img.shields.io/badge/RSS-FFA500?style=flat&logo=rss&logoColor=white)](https://www.sumologic.com/help/release-notes-service)
 
-![Docusaurus](https://img.shields.io/badge/Docusaurus-3ECC5F?style=flat&logo=docusaurus&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=github-actions&logoColor=white)
-![Algolia](https://img.shields.io/badge/Algolia-003DFF?style=flat&logo=algolia&logoColor=white)
-![Pantheon](https://img.shields.io/badge/Pantheon-FFDC28?style=flat&logo=pantheon&logoColor=black)
+[![Docusaurus](https://img.shields.io/badge/Docusaurus-1A6B3C?style=flat&logo=docusaurus&logoColor=white)](https://docusaurus.io)
+[![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)](https://nodejs.org)
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white)](https://github.com/features/actions)
+[![Algolia](https://img.shields.io/badge/Algolia-003DFF?style=flat&logo=algolia&logoColor=white)](https://www.algolia.com)
+[![Pantheon](https://img.shields.io/badge/Pantheon-FFDC28?style=flat&logo=pantheon&logoColor=black)](https://pantheon.io)
 
 This is the open-source repo for [Sumo Logic Documentation](https://www.sumologic.com/help), the official docs site for Sumo Logic's cloud data analytics platform. The site is built with [Docusaurus 3](https://docusaurus.io/) and supports React, Rehype, and Remark plugins.
 
