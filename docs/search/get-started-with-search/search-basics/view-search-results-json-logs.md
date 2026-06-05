@@ -22,6 +22,10 @@ You can also expand and collapse the JSON objects in a particular message using 
 
 <img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/context-menu.png')} alt="context menu"/>
 
+## Why copy JSON fields easily?
+
+Copying JSON fields from search results used to require manually highlighting the exact text for each value or label — a repetitive and error-prone process. With the copy options now available, hovering over a JSON field and clicking the **Copy** icon captures the full value automatically. If you prefer to copy only a portion, you can still drag to select specific text and copy just that selection.
+
 ## Copy message content
 Right-click an individual message to see the following option:
 
