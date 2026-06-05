@@ -22,8 +22,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic’s AI capabilities span from classical machine learning to generative and agentic AI. At the center is Dojo AI, our multi-agent platform that brings specialized agents into security and observability workflows. This page covers all of these capabilities: what they do, how they work together, and how to get started.
 
-<details>
-<summary>What do these terms mean?</summary>
+**What do these terms mean?**
 
 **Artificial intelligence (AI)** encompasses machines that mimic human-like intelligence, leveraging algorithms to compute tasks efficiently. It includes machine learning, deep learning, generative AI, and agentic AI.
 
@@ -36,8 +35,6 @@ Sumo Logic’s AI capabilities span from classical machine learning to generativ
 **Agentic AI** takes generative AI further by enabling autonomous, multi-step reasoning and action. Agentic systems can plan, use tools, and coordinate specialized agents to complete complex tasks like triaging a security incident or translating a natural-language question into a log query, with a human in the loop.
 
 **Pattern learning** is fundamental to machine learning and deep learning, where algorithms discern patterns in data to make predictions or classifications.
-
-</details>
 
 ## Dojo AI
 
@@ -127,16 +124,13 @@ The [Global Intelligence Service](/docs/integrations/global-intelligence) apps p
 
 ### General
 
-<details>
-<summary>Can I opt out of AI features?</summary>
+**Can I opt out of AI features?**
 
 Yes. You can opt out of specific AI features at any time by submitting a support ticket.
-</details>
 
 ### Security and privacy
 
-<details>
-<summary>Do Dojo AI agents access customer data?</summary>
+**Do Dojo AI agents access customer data?**
 
 Agent interaction with customer data varies by capability.
 
@@ -149,10 +143,8 @@ Any AI capability that processes customer data:
 - Requires execution of the applicable AI addendum to the client agreement
 
 Customers retain control over whether these data-processing capabilities are enabled in their environment.
-</details>
 
-<details>
-<summary>What types of customer data or PII does the AI process? Does it filter sensitive information?</summary>
+**What types of customer data or PII does the AI process? Does it filter sensitive information?**
 
 Sumo Logic AI capabilities follow strict legal, compliance, and security standards to ensure data minimization and fit-for-purpose processing.
 
@@ -161,10 +153,8 @@ Sumo Logic AI capabilities follow strict legal, compliance, and security standar
 - Sumo Logic applies strong safeguards and filtering to ensure sensitive data is handled securely and appropriately at all times.
 
 Capabilities that process customer data, including the SOC Analyst Agent (currently in Public Preview), are available only through explicit customer opt-in and require execution of the applicable AI addendum. These capabilities are never automatically provisioned.
-</details>
 
-<details>
-<summary>Is customer data or PII used to train AI models?</summary>
+**Is customer data or PII used to train AI models?**
 
 No. Customer data is never used to train AI models.
 
@@ -173,10 +163,8 @@ All Sumo Logic AI capabilities are designed to serve customer-specific outcomes 
 Traditional ML features, such as AI-driven alerts, generate models specific to each customer's environment and are never shared or made public.
 
 For more information, see [Security and Compliance](/docs/manage/security).
-</details>
 
-<details>
-<summary>Does any third party have access to Dojo AI customer data?</summary>
+**Does any third party have access to Dojo AI customer data?**
 
 Dojo AI leverages foundation models securely hosted through Amazon Bedrock. When customer data is processed using Amazon Bedrock:
 
@@ -187,10 +175,8 @@ Dojo AI leverages foundation models securely hosted through Amazon Bedrock. When
 - Customer inputs and outputs are not shared with model providers and are not used to train external models.
 
 Customer data processed through Dojo AI remains within Sumo Logic's secure environment and is used only to deliver results for that customer. It is not used to train foundation models or shared with model providers.
-</details>
 
-<details>
-<summary>How long does Dojo AI store customer data, and how is it deleted?</summary>
+**How long does Dojo AI store customer data, and how is it deleted?**
 
 Dojo AI and classical ML features store data only temporarily to optimize performance:
 
@@ -198,45 +184,36 @@ Dojo AI and classical ML features store data only temporarily to optimize perfor
 - Mobot may temporarily retain query history in a rolling window to improve conversational context and response accuracy.
 
 All stored data follows Sumo Logic's data retention and deletion policies, ensuring customer information is never retained longer than necessary.
-</details>
 
 ### Technical
 
-<details>
-<summary>Does Sumo Logic AI use open-source libraries, generative AI providers, or cloud services?</summary>
+**Does Sumo Logic AI use open-source libraries, generative AI providers, or cloud services?**
 
 Yes. Dojo AI leverages foundation models securely hosted through Amazon Bedrock.
-</details>
 
-<details>
-<summary>Does Sumo Logic hold any AI-specific certifications or accreditations?</summary>
+**Does Sumo Logic hold any AI-specific certifications or accreditations?**
 
 Sumo Logic is currently reviewing AI compliance within a rapidly evolving framework, in particular ISO 42001, designed to help organizations implement AI responsibly.
 
 Sumo Logic AI capabilities operate within our existing industry-recognized security and compliance framework, including FedRAMP Moderate, SOC 2 Type 2, HIPAA, PCI DSS 4.0.1, and ISO 27001:2022. These attestations govern the confidentiality, integrity, and protection of customer data.
 
 Availability of specific AI capabilities may vary by deployment region (including FED) based on compliance boundary requirements.
-</details>
 
-<details>
-<summary>Which Dojo AI capabilities are available in FED?</summary>
+**Which Dojo AI capabilities are available in FED?**
 
 The current GA versions of Mobot (including Query Agent and Knowledge Agent) and Summary Agent are available in the FED deployment.
 
 The SOC Analyst Agent and certain newer Dojo AI capabilities are not currently available in FED. These capabilities depend on underlying model configurations that do not yet meet the requirements of our FED compliance boundary.
 
 Sumo Logic is actively evaluating future availability of these capabilities in FED as underlying model support and compliance requirements evolve.
-</details>
 
-<details>
-<summary>What types of model reviews are conducted?</summary>
+**What types of model reviews are conducted?**
 
 The generative AI model is licensed and securely hosted via Amazon Bedrock, meaning it is not directly accessible by Sumo Logic, customers, or third parties.
 
 All new AI capabilities and features undergo comprehensive legal, compliance, and application security reviews before release to ensure data protection, privacy, and regulatory alignment.
 
 Recurring reviews are also conducted with every major update, particularly when a capability introduces new analytics or processes previously unused data types, to maintain ongoing trust and compliance.
-</details>
 
 ## Additional resources
 
