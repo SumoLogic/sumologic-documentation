@@ -8,31 +8,6 @@
 /* ===================================================================
    Backdrop - Enhanced with smooth fade-in
    =================================================================== */
-.ask-ai-backdrop {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  background: rgba(0, 0, 0, 0.48) !important;
-  z-index: 998 !important;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-[data-theme='dark'] .ask-ai-backdrop {
-  background: rgba(0, 0, 0, 0.64) !important;
-}
 
 /* ===================================================================
    Sidepanel Container Wrapper - Default to collapsed (narrow) width
@@ -126,10 +101,12 @@
   width: 100% !important;
   min-width: 100% !important;
   flex-shrink: 0 !important;
+  font-family: 'Lab Grotesque', sans-serif !important;
 }
 
 [data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel {
   border-left-color: var(--ifm-color-emphasis-300) !important;
+  background-color: var(--ifm-navbar-background-color) !important;
 }
 
 /* ===================================================================
@@ -166,9 +143,13 @@
   position: relative !important;
 }
 
+[data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Content {
+  background-color: var(--ifm-navbar-background-color) !important;
+}
+
 /* Disclaimer banner at top of content */
 .ask-ai-sidepanel .DocSearch-Sidepanel-Content::before {
-  content: 'Answers are AI-generated from Sumo Docs by Gemini 2.5 Flash and may contain errors. Please review and verify.' !important;
+  content: 'Answers are AI-generated from Sumo Docs and may contain errors. Please review and verify.' !important;
   display: block !important;
   padding: 0.75rem 1.5rem !important;
   color: var(--ifm-color-emphasis-700) !important;
@@ -177,6 +158,10 @@
   text-align: center !important;
   font-weight: 600 !important;
   white-space: pre-line !important;
+}
+
+[data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Content::before {
+  color: var(--ifm-color-emphasis-500) !important;
 }
 
 /* Scrollbar styling */
@@ -206,7 +191,7 @@
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--form {
-  border: 2px solid transparent !important;
+  border: 1px solid transparent !important;
   border-radius: 12px !important;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.06) !important;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -236,6 +221,7 @@
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--textarea {
   color: var(--ifm-font-color-base) !important;
   font-size: 0.875rem !important;
+  font-family: 'Lab Grotesque', sans-serif !important;
   padding: 0 !important;
   margin: 0 !important;
   line-height: 1.5rem !important;
@@ -253,6 +239,10 @@
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--textarea::placeholder {
   color: var(--ifm-color-emphasis-600) !important;
+}
+
+[data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--textarea::placeholder {
+  color: #bdc1c6 !important;
 }
 
 /* Override the absolutely positioned actions wrapper */
@@ -378,14 +368,9 @@
    Message Bubbles & Content
    =================================================================== */
 .ask-ai-sidepanel .DocSearch-AskAiScreen-Response {
-  background-color: var(--ifm-color-emphasis-100) !important;
-  border-radius: 12px !important;
-  border: 1px solid var(--ifm-color-emphasis-200) !important;
-}
-
-[data-theme='dark'] .ask-ai-sidepanel .DocSearch-AskAiScreen-Response {
-  background-color: var(--ifm-color-emphasis-200) !important;
-  border-color: var(--ifm-color-emphasis-300) !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
 }
 
 /* Text colors */
@@ -421,18 +406,19 @@
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-SuggestedQuestion {
-  background-color: var(--ifm-color-emphasis-0) !important;
-  border-color: var(--ifm-color-emphasis-300) !important;
-  color: var(--ifm-font-color-base) !important;
+  background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: var(--ifm-color-emphasis-600) !important;
   border-radius: 8px !important;
+  font-family: 'Lab Grotesque', sans-serif !important;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: left !important;
   align-self: flex-start !important;
   font-size: 0.7rem !important;
-  padding-top: 0.7rem !important;
-  padding-bottom: 0.7rem !important;
-  padding-left: 0.8rem !important;
-  padding-right: 0.8rem !important;
+  padding-top: 0.35rem !important;
+  padding-bottom: 0.35rem !important;
+  padding-left: 0.6rem !important;
+  padding-right: 0.6rem !important;
   line-height: 1.4 !important;
   min-height: auto !important;
   height: auto !important;
@@ -445,14 +431,27 @@
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-SuggestedQuestion:hover {
   border-color: var(--ifm-color-primary) !important;
-  background-color: var(--ifm-color-emphasis-100) !important;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 [data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-SuggestedQuestion {
-  background-color: var(--ifm-color-emphasis-100) !important;
-  border-color: var(--ifm-color-emphasis-400) !important;
+  background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-SuggestedQuestion:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme='light'] .ask-ai-sidepanel .DocSearch-Sidepanel-SuggestedQuestion {
+  border-color: var(--ifm-color-emphasis-200) !important;
+  color: var(--ifm-color-emphasis-700) !important;
+}
+
+[data-theme='light'] .ask-ai-sidepanel .DocSearch-Sidepanel-SuggestedQuestion:hover {
+  border-color: var(--ifm-color-emphasis-300) !important;
 }
 
 /* ===================================================================
@@ -472,7 +471,7 @@
 .ask-ai-sidepanel .DocSearch-Sidepanel-NewConversationScreen .DocSearch-Sidepanel-Screen--title::before {
   font-size: 1.625rem !important;
   line-height: 2rem !important;
-  content: 'How can I help you with Sumo Logic today?';
+  content: 'How can I help you today?';
   display: block;
 }
 
@@ -499,3 +498,12 @@
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--disclaimer {
   display: none !important;
 }
+
+/* ===================================================================
+   Related Sources — hidden; all sources appear as inline links in the
+   answer body with better context than the chips provide
+   =================================================================== */
+.ask-ai-sidepanel .DocSearch-AskAiScreen-RelatedSources {
+  display: none !important;
+}
+

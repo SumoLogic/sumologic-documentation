@@ -5,7 +5,7 @@
  * Integrates with Docusaurus theme and configuration.
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import '@docsearch/css/dist/sidepanel.css';
@@ -20,6 +20,7 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
   const { siteConfig } = useDocusaurusContext();
   const [SidepanelComponent, setSidepanelComponent] = useState<any>(null);
   const [isExpanded, setIsExpanded] = useState(false);
+  const isResizingRef = useRef(false);
 
   // Lazy load the Algolia Sidepanel component
   useEffect(() => {
@@ -29,6 +30,18 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
       });
     }
   }, [isOpen, SidepanelComponent]);
+
+  // Track resize so we can suppress Algolia's resize-triggered onClose
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+    const onResize = () => {
+      isResizingRef.current = true;
+      clearTimeout(timer);
+      timer = setTimeout(() => { isResizingRef.current = false; }, 500);
+    };
+    window.addEventListener('resize', onResize);
+    return () => { window.removeEventListener('resize', onResize); clearTimeout(timer); };
+  }, []);
 
   // Reset expanded state when panel closes
   useEffect(() => {
@@ -154,7 +167,7 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
     };
   }, [isOpen]);
 
-  if (!isOpen || !SidepanelComponent) {
+  if (!SidepanelComponent) {
     return null;
   }
 
@@ -168,20 +181,28 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
 
   const { assistantId, indexName, appId, apiKey, suggestedQuestions } = algoliaConfig.askAi;
 
-  // Create the sidepanel element
+  // Suppress onClose calls that originate from Algolia's internal resize handling
+  const handleAlgoliaClose = () => {
+    if (!isResizingRef.current) onClose();
+  };
+
+  // Keep component always mounted once loaded; hide via display:none so
+  // Algolia's internal state (conversation history) is never destroyed by resize
   const sidepanel = (
     <>
-      {/* Backdrop */}
-      <div className="ask-ai-backdrop" onClick={onClose} />
-
-      {/* Sidepanel */}
-      <div className={`ask-ai-sidepanel ${isExpanded ? 'is-expanded' : ''}`}>
+      {/* Sidepanel - always mounted, hidden when closed */}
+      <div
+        className={`ask-ai-sidepanel ${isExpanded ? 'is-expanded' : ''}`}
+        style={isOpen ? undefined : { display: 'none' }}
+      >
         <SidepanelComponent
           appId={appId}
           apiKey={apiKey}
           indexName={indexName}
           assistantId={assistantId}
-          onClose={onClose}
+          isOpen={isOpen}
+          onOpen={() => {}}
+          onClose={handleAlgoliaClose}
           suggestedQuestions={suggestedQuestions}
           translations={{
             title: 'Ask AI about Sumo Logic',

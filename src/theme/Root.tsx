@@ -1,15 +1,16 @@
 /**
  * Root component wrapper for Docusaurus
  *
- * This component wraps the entire app and is rendered WITHIN Docusaurus's
- * context providers, so we can safely use hooks like useColorMode here.
- *
- * We use this to mount the Ask AI button to the navbar placeholder.
+ * Renders the Ask AI button into the navbar placeholder via a portal,
+ * and renders AskAiSidepanel directly here — outside the navbar portal —
+ * so the sidepanel is never unmounted by navbar re-renders on resize.
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { createPortal } from 'react-dom';
 import AskAiButton from '@site/src/components/AskAiButton';
+
+const AskAiSidepanel = React.lazy(() => import('@site/src/components/AskAiSidepanel'));
 
 interface RootProps {
   children: React.ReactNode;
@@ -18,40 +19,46 @@ interface RootProps {
 export default function Root({ children }: RootProps) {
   const [placeholder, setPlaceholder] = useState<HTMLElement | null>(null);
   const [isAskAiOpen, setIsAskAiOpen] = useState(false);
+  const [hasEverOpened, setHasEverOpened] = useState(false);
 
   useEffect(() => {
-    // Find and monitor the navbar placeholder
+    if (isAskAiOpen) setHasEverOpened(true);
+  }, [isAskAiOpen]);
+
+  useEffect(() => {
     const findPlaceholder = () => {
+      // Only update if our current placeholder has been removed from the DOM
+      if (placeholder && document.body.contains(placeholder)) {
+        return;
+      }
       const el = document.getElementById('navbar-ask-ai-button');
-      if (el && el !== placeholder) {
+      if (el) {
         setPlaceholder(el);
       }
     };
 
-    // Initial check
     findPlaceholder();
-
-    // Set up interval to check if placeholder exists (handles navbar re-renders)
     const interval = setInterval(findPlaceholder, 500);
 
-    // Also check on window resize
-    window.addEventListener('resize', findPlaceholder);
-
-    return () => {
-      clearInterval(interval);
-      window.removeEventListener('resize', findPlaceholder);
-    };
+    return () => clearInterval(interval);
   }, [placeholder]);
 
   return (
     <>
       {children}
+
+      {/* Button only — portaled into the navbar */}
       {placeholder && createPortal(
-        <AskAiButton
-          isOpen={isAskAiOpen}
-          setIsOpen={setIsAskAiOpen}
-        />,
+        <AskAiButton isOpen={isAskAiOpen} setIsOpen={setIsAskAiOpen} />,
         placeholder
+      )}
+
+      {/* Sidepanel lives here in Root, never inside the navbar portal.
+          Kept mounted once first opened so conversation state survives resize. */}
+      {hasEverOpened && (
+        <Suspense fallback={null}>
+          <AskAiSidepanel isOpen={isAskAiOpen} onClose={() => setIsAskAiOpen(false)} />
+        </Suspense>
       )}
     </>
   );
