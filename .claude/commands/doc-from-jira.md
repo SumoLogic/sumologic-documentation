@@ -2,6 +2,24 @@
 
 Pulls a Jira ticket from the DOCS project, extracts the content requirements, and scaffolds a fully structured documentation file ready for writing. Eliminates the blank-page problem and keeps the doc aligned with the ticket spec from the start.
 
+## What this command does
+
+When you invoke `/doc-from-jira`, Claude will:
+
+1. **Fetch the Jira ticket**. Pull title, description, acceptance criteria, and linked resources
+2. **Determine doc type**. Feature, how-to, concept, reference, or troubleshooting
+3. **Infer the file path**. Based on the technical area and content type
+4. **Scaffold the doc**. Generate a file with correct frontmatter, structure, and placeholder sections pre-populated from the ticket
+5. **Update sidebars.ts**. Add the new doc to navigation (with user approval)
+6. **Link back to Jira**. Set the Jira ticket to In Progress if not already
+
+## When to use this command
+
+* Starting a new doc for a DOCS ticket
+* When a ticket has a detailed description or acceptance criteria worth preserving
+* For tickets with linked specs, PRDs, or engineering docs to pull context from
+* When you want to ensure the doc structure is aligned with what was requested
+
 ## When NOT to use this command
 
 * **App integrations** — use `/app-doc` instead

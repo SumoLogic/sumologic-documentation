@@ -2,6 +2,24 @@
 
 Automates the complete workflow for removing or moving a Sumo Logic doc while preventing broken links and maintaining SEO health.
 
+## What this command does
+
+When you invoke `/remove-doc`, Claude will guide you through:
+
+1. **Create 301 redirect**. Add redirect mapping to `cid-redirects.json`.
+2. **Update internal links**. Find and replace all references to the old URL.
+3. **Remove from hub pages**. Delete card from parent `index.md` and Product List.
+4. **Delete the doc file**. Remove the actual markdown file.
+5. **Remove from navigation**. Delete entry from `sidebars.ts`.
+6. **Optional steps**. Add deprecation notes, hide from search engines.
+
+## When to use this command
+
+* Deprecating legacy docs in favor of new versions.
+* Consolidating duplicate content.
+* Removing outdated documentation.
+* Moving docs to new locations.
+
 ## Workflow
 
 ### Step 1: Gather information
@@ -84,6 +102,24 @@ Before finishing, verify:
 * [ ] JSON files valid (no syntax errors).
 * [ ] Build test passes (optional: `yarn build`).
 
+## Example usage
+
+```
+User: "Remove the nginx-legacy.md doc and redirect to nginx.md"
+
+Claude:
+1. Confirms old path: docs/integrations/web-servers/nginx-legacy.md
+2. Confirms new path: docs/integrations/web-servers/nginx.md
+3. Adds redirect: "/docs/integrations/web-servers/nginx-legacy": "/docs/integrations/web-servers/nginx"
+4. Searches for all references to nginx-legacy
+5. Updates links in 3 files
+6. Removes from web-servers index.md hub page
+7. Deletes nginx-legacy.md
+8. Removes from sidebars.ts
+9. Asks about deprecation note
+10. Provides verification checklist
+```
+
 ## Safety principles
 
 * **Always create the redirect first** before deleting anything.
@@ -133,3 +169,30 @@ Create: Multiple redirects, all pointing to unified-doc.md
 * Revert the change.
 * Fix and retry.
 
+## Post-completion message
+
+After successfully removing a doc, tell the user:
+
+```
+✅ Doc removal complete!
+
+Summary:
+* Added 301 redirect: /old-path → /new-path
+* Updated X internal links across Y files
+* Removed from hub page and sidebar
+* Deleted old doc file
+
+Next steps:
+1. Test locally: yarn start
+2. Verify redirect works
+3. Submit PR with description: "DOCS-XXX - Remove deprecated [doc name]"
+4. Note: Google may take weeks to update search results
+
+Would you like me to run a build test or create a commit?
+```
+
+## References
+
+* [Contributing guide: Move or Remove a Doc](/docs/contributing/remove-doc).
+* [CID redirects documentation](/docs/contributing/create-edit-doc#step-6-create-cid-url).
+* [Sidebar configuration patterns](.claude/skills/docusaurus/).

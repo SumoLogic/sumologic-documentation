@@ -109,7 +109,6 @@ Primary commands for documentation work. Proactively suggest when context fits �
 | `/audit-doc` | Full quality audit: structure, style, links, frontmatter, completeness |
 | `/seo-audit` | Discoverability audit: SEO, AEO, and GEO signals — run this before a PR |
 | `/geo-optimize` | Rewrite a doc to improve AI citation and generative engine visibility |
-| `/review` | Review a pull request — applies audit-doc checks to all changed `.md` files |
 
 **Jira**
 

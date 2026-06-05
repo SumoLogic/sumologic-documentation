@@ -2,11 +2,31 @@
 
 Automates the creation of general Sumo Logic documentation for features, how-tos, concepts, reference pages, and troubleshooting guides.
 
+## What this command does
+
+When you invoke `doc`, Claude will guide you through:
+
+1. **Determine doc type**. Feature, how-to, concept, reference, or troubleshooting.
+2. **Gather information**. Title, description, file path, and keywords.
+3. **Create markdown file**. Generate file with proper frontmatter and basic structure.
+4. **Add to navigation**. Guide on adding to sidebars.ts.
+5. **Add to hub page**. Suggest adding card to parent index page.
+6. **Create CID mapping**. Add permanent URL if needed for UI links.
+7. **Validate and preview**. Check structure and provide next steps.
+
+## When to use this command
+
+* Creating feature documentation.
+* Writing how-to guides and tutorials.
+* Documenting concepts and reference material.
+* Creating troubleshooting guides.
+* Adding general content that does not fit specialized templates (apps, sources, release notes).
+
 ## When NOT to use this command
 
 * **App integrations**. Use `app-doc` instead.
 * **Cloud-to-Cloud sources**. Use `c2c-source-doc` instead.
-* **Release notes**. Use `release-note` instead.
+* **Release notes**. Use `release-note-cse` or `release-note-collector` instead.
 
 ## Doc types
 
