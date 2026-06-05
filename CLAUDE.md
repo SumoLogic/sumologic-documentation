@@ -42,7 +42,7 @@ Before pushing any commit that changes docs content:
 **CRITICAL**: All Jira operations MUST follow the patterns defined in `.claude/commands/jira.md`.
 
 ### Field Requirements
-- **Assignee**: Auto-assign newly created tickets based on Technical Area → Writer mappings in `.claude/commands/jira.md`. If no mapping exists, assign to current user unless otherwise specified.
+- **Assignee**: Do not set manually — Jira Automation assigns based on Technical Area.
 - **Technical Area**: REQUIRED field. Must be set from allowed values. Use file paths and content keywords to determine the correct area (see `.claude/commands/jira.md` for mappings).
 - **Existing Tech Docs Link** (`customfield_10750`): 
   - REQUIRED when transitioning to Published status
