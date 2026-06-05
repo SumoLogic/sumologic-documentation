@@ -1,0 +1,41 @@
+.aiTools {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.header {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 8px;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-800);
+  text-decoration: none;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.action:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.action:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
