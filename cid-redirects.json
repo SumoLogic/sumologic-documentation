@@ -5054,6 +5054,7 @@
   "/docs/manage/credits/cloud-flex-credits-accounts": "/docs/manage/manage-subscription",
   "/docs/metrics/best-practices": "/docs/metrics",
   "/docs/reuse/apps/app-install-sumo-apps": "/docs/get-started/apps-integrations",
+  "/docs/reuse/budget-assignment": "/docs/manage/ingestion-volume/ingest-budgets",
   "/docs/reuse/cse-api-table": "/docs/api/cloud-siem-enterprise",
   "/docs/reuse/cse-dynamic-severity": "/docs/api/cloud-siem-enterprise",
   "/docs/reuse/csoar-api-table": "/docs/api/cloud-soar",
