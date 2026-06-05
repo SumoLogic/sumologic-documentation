@@ -96,7 +96,11 @@ Primary commands for documentation work. Proactively suggest when context fits â
 
 | Command | What it does |
 |---------|-------------|
-| `/release-note` | New release note (service, collector, Cloud SIEM, Cloud SOAR, or developer) |
+| `/release-note-service` | New service release note |
+| `/release-note-collector` | New Collector release note |
+| `/release-note-cse` | New Cloud SIEM release note |
+| `/release-note-csoar` | New Cloud SOAR release note |
+| `/release-note-developer` | New developer/API release note |
 
 **Editing and reviewing**
 
