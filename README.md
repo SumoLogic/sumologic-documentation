@@ -1,12 +1,12 @@
-<img src="https://www.sumologic.com/help/img/reuse/sumo-docs-readme.png" width="400"/>
+# Sumo Docs
 
 [![Build](https://img.shields.io/github/actions/workflow/status/SumoLogic/sumologic-documentation/workflow_deploy-to-pantheon-prod.yml?style=flat&label=build)](https://github.com/SumoLogic/sumologic-documentation/actions/workflows/workflow_deploy-to-pantheon-prod.yml)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://www.sumologic.com/help/docs/contributing)
 [![License](https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?style=flat&colorB=ff0000)](LICENSE)
-[![Follow @SumoLogic](https://img.shields.io/badge/Follow_@SumoLogic-000000?style=flat&logo=x&logoColor=white)](https://x.com/SumoLogic)
-[![RSS](https://img.shields.io/badge/RSS-FFA500?style=flat&logo=rss&logoColor=white)](https://www.sumologic.com/help/release-notes-service)
+[![Twitter Follow](https://img.shields.io/twitter/follow/sumologic.svg?style=social)](https://x.com/SumoLogic)
+[![RSS](https://img.shields.io/badge/RSS-FFA500?style=flat&logo=rss&logoColor=white)](https://www.sumologic.com/help/docs/release-notes/#subscribe-via-rss)
 
-[![Docusaurus](https://img.shields.io/badge/Docusaurus-1A6B3C?style=flat&logo=docusaurus&logoColor=white)](https://docusaurus.io)
+[![Docusaurus](https://img.shields.io/badge/Docusaurus-3ECC5F?style=flat&logo=docusaurus&logoColor=white)](https://docusaurus.io)
 [![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)](https://nodejs.org)
@@ -14,19 +14,9 @@
 [![Algolia](https://img.shields.io/badge/Algolia-003DFF?style=flat&logo=algolia&logoColor=white)](https://www.algolia.com)
 [![Pantheon](https://img.shields.io/badge/Pantheon-FFDC28?style=flat&logo=pantheon&logoColor=black)](https://pantheon.io)
 
-This is the open-source repo for [Sumo Logic Documentation](https://www.sumologic.com/help), the official docs site for Sumo Logic's cloud data analytics platform. The site is built with [Docusaurus 3](https://docusaurus.io/) and supports React, Rehype, and Remark plugins.
+Sumo Docs is the open-source documentation site for Sumo Logic, an AI-powered security operations platform providing Cloud SIEM and security analytics to help teams automate, detect, and investigate threats. Sumo Logic empowers users to monitor, troubleshoot, and defend their environments using AI insights powered by log analytics. Learn more at [sumologic.com](https://www.sumologic.com).
 
-## Table of contents
-
-- [Get involved](#get-involved)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Apply your changes](#apply-your-changes)
-- [Build locally](#build-locally)
-- [Repo structure](#repo-structure)
-- [For Docs Team contributors](#for-docs-team-contributors)
-- [Publishing](#publishing)
-- [License](#license)
+The site is built with [Docusaurus 3](https://docusaurus.io/) and supports React, Rehype, and Remark plugins.
 
 ## Get involved
 
