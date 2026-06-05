@@ -28,9 +28,7 @@ Right-click an individual message to see the following option:
 * **Copy selected text**.
 * **Copy entire string as JSON**. Copies the message to the clipboard in JSON format. This function is not available on Safari due to a
     browser limitation.
-* You can also copy a JSON value name or the entire JSON for an array or JSON field in two ways:
-    * Click the **Copy** icon next to a JSON value to copy the value name or the full JSON structure.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/copy-json.png')} alt="Copy JSON" style={{border: '1px solid gray'}} width="400" />
-    * Highlight the text, right-click, and select **Copy field value**.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/copy-field-name.png')} alt="Copy field name" style={{border: '1px solid gray'}} width="400" />
+* **Copy field value**. Copies the JSON field value.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/copy-field-name.png')} alt="Copy field name" style={{border: '1px solid gray'}} width="400" />
 
 ## Reference parsed JSON fields
 
@@ -48,6 +46,8 @@ Search results table:
     Copying a field name using this option will automatically format [field names that have special characters](/docs/search/get-started-with-search/search-basics/reference-field-special-characters). For example, the field name shown in the screenshot is **total time-series**, it would be automatically formatted to **%"total time-series"** to work properly in a search query.  
      
 * A copy button is available to the right of each column (field) name allowing you to easily copy a field name.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/copy-button-messages-table.png')} alt="Copy button messages table" style={{border: '1px solid gray'}} width="500" />  
+
+* A copy button is available next to a JSON value or the full JSON structure allowing you to copy the selected JSON value or the JSON structure inside the selected array.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/copy-json.png')} alt="Copy JSON" style={{border: '1px solid gray'}} width="400" />
 
 ## Format JSON messages in search results 
 
