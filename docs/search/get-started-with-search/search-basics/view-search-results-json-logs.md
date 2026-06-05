@@ -28,6 +28,9 @@ Right-click an individual message to see the following option:
 * **Copy selected text**.
 * **Copy entire string as JSON**. Copies the message to the clipboard in JSON format. This function is not available on Safari due to a
     browser limitation.
+* You can also copy a JSON value name or the entire JSON for an array or JSON field in two ways:
+    * Click the **Copy** icon next to a JSON value to copy the value name or the full JSON structure.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/copy-json.png')} alt="Copy JSON" style={{border: '1px solid gray'}} width="400" />
+    * Highlight the text, right-click, and select **Copy field value**.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/copy-field-name.png')} alt="Copy field name" style={{border: '1px solid gray'}} width="400" />
 
 ## Reference parsed JSON fields
 
