@@ -1,10 +1,3 @@
-/**
- * Ask AI Sidepanel Component
- *
- * Renders the Algolia Ask AI sidepanel modal using Algolia's official component.
- * Integrates with Docusaurus theme and configuration.
- */
-
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -69,7 +62,6 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
     if (!isOpen) return;
 
     const handleResize = () => {
-      // Force the panel to stay visible by ensuring container classes are maintained
       const container = document.querySelector('.DocSearch-Sidepanel-Container');
       if (container && !container.classList.contains('is-open')) {
         container.classList.add('is-open');
@@ -90,31 +82,23 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
 
       if (!button) return;
 
-      // Get all buttons in the header
       const headerButtons = Array.from(
         document.querySelectorAll('.DocSearch-Sidepanel-Header button')
       );
 
-      // Check if this button is in the header
       if (!headerButtons.includes(button)) return;
 
-      // Get aria-label to identify button type
       const ariaLabel = button.getAttribute('aria-label')?.toLowerCase() || '';
 
-      // Skip if it's the close button
       if (ariaLabel.includes('close')) return;
 
-      // If it's any other header button, toggle expansion
-      console.log('Detected expand button click, aria-label:', ariaLabel);
       setIsExpanded(prev => !prev);
     };
 
-    // Wait for header to be rendered then attach listener
     const checkInterval = setInterval(() => {
       const header = document.querySelector('.DocSearch-Sidepanel-Header');
       if (header) {
         header.addEventListener('click', handleClick);
-        console.log('Attached click listener to header');
         clearInterval(checkInterval);
       }
     }, 100);
@@ -145,19 +129,16 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
       }
     };
 
-    // Initial check
     const checkInterval = setInterval(() => {
       const textarea = document.querySelector('.DocSearch-Sidepanel-Prompt--textarea') as HTMLTextAreaElement;
       if (textarea) {
         updateButtonState();
         textarea.addEventListener('input', updateButtonState);
-        // Auto-focus the textarea when panel opens
         textarea.focus();
         clearInterval(checkInterval);
       }
     }, 100);
 
-    // Cleanup
     return () => {
       clearInterval(checkInterval);
       const textarea = document.querySelector('.DocSearch-Sidepanel-Prompt--textarea');
@@ -171,7 +152,6 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
     return null;
   }
 
-  // Get Algolia config from Docusaurus config
   const algoliaConfig = (siteConfig.themeConfig as any)?.algolia;
 
   if (!algoliaConfig?.askAi) {
@@ -179,18 +159,15 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
     return null;
   }
 
-  const { assistantId, indexName, appId, apiKey, suggestedQuestions } = algoliaConfig.askAi;
+  const { assistantId, suggestedQuestions } = algoliaConfig.askAi;
+  const { appId, apiKey, indexName } = algoliaConfig;
 
-  // Suppress onClose calls that originate from Algolia's internal resize handling
   const handleAlgoliaClose = () => {
     if (!isResizingRef.current) onClose();
   };
 
-  // Keep component always mounted once loaded; hide via display:none so
-  // Algolia's internal state (conversation history) is never destroyed by resize
   const sidepanel = (
     <>
-      {/* Sidepanel - always mounted, hidden when closed */}
       <div
         className={`ask-ai-sidepanel ${isExpanded ? 'is-expanded' : ''}`}
         style={isOpen ? undefined : { display: 'none' }}
@@ -200,6 +177,7 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
           apiKey={apiKey}
           indexName={indexName}
           assistantId={assistantId}
+          agentStudio={true}
           isOpen={isOpen}
           onOpen={() => {}}
           onClose={handleAlgoliaClose}
@@ -217,6 +195,5 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
     </>
   );
 
-  // Render as portal to avoid z-index issues
   return createPortal(sidepanel, document.body);
 }

@@ -1753,3 +1753,107 @@ article header h2[class*='title_'] {
 .language-sumo .token.time     { color: var(--sumo-number);   }
 .language-sumo .token.operator { color: var(--sumo-operator); }
 .language-sumo .token.regex    { color: var(--sumo-regex);    }
+
+/* ===================================================================
+   DocSearch Modal - Ask AI Overrides
+   Brings the modal Ask AI (triggered from top-nav search bar) in line
+   with the custom Ask AI sidepanel styling.
+   =================================================================== */
+
+/* Hide related sources chips (matches sidepanel behavior) */
+.DocSearch-Modal .DocSearch-AskAiScreen-RelatedSources {
+  display: none !important;
+}
+
+/* Flatten the response card — transparent, no border/radius
+   (matches .ask-ai-sidepanel .DocSearch-AskAiScreen-Response) */
+.DocSearch-Modal .DocSearch-AskAiScreen-Response {
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin-block-end: 0 !important;
+}
+
+/* Disclaimer — swap default Algolia text for Sumo Logic copy */
+.DocSearch-Modal .DocSearch-AskAiScreen-Disclaimer {
+  font-size: 0 !important;
+  line-height: 0 !important;
+  padding: 0 !important;
+  align-self: stretch !important;
+  justify-content: center !important;
+}
+
+.DocSearch-Modal .DocSearch-AskAiScreen-Disclaimer::before {
+  content: 'Answers are AI-generated from Sumo Docs and may contain errors. Please review and verify.';
+  display: block;
+  font-size: 0.6rem;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+  padding: 0.75rem 0;
+  text-align: center;
+}
+
+html[data-theme='dark'] .DocSearch-Modal .DocSearch-AskAiScreen-Disclaimer::before {
+  color: var(--ifm-color-emphasis-500);
+}
+
+/* New Conversation Screen — custom title */
+.DocSearch-Modal .DocSearch-NewConversationScreen-Title {
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+.DocSearch-Modal .DocSearch-NewConversationScreen-Title::before {
+  content: 'How can I help you today?';
+  display: block;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+}
+
+/* New Conversation Screen — custom description */
+.DocSearch-Modal .DocSearch-NewConversationScreen-Description {
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+.DocSearch-Modal .DocSearch-NewConversationScreen-Description::before {
+  content: 'I can help you find information about Sumo Logic features, integrations, troubleshooting guides, APIs, and best practices across our documentation.';
+  display: block;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Suggested questions — match sidepanel pill style */
+.DocSearch-Modal .DocSearch-NewConversationScreen-SuggestedQuestion {
+  background-color: transparent !important;
+  border-color: var(--ifm-color-emphasis-200) !important;
+  color: var(--ifm-color-emphasis-700) !important;
+  border-radius: 8px !important;
+  font-size: 0.7rem !important;
+  padding: 0.35rem 0.6rem !important;
+  min-height: auto !important;
+  height: auto !important;
+}
+
+.DocSearch-Modal .DocSearch-NewConversationScreen-SuggestedQuestion:hover {
+  border-color: var(--ifm-color-primary) !important;
+}
+
+html[data-theme='dark'] .DocSearch-Modal .DocSearch-NewConversationScreen-SuggestedQuestion {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html[data-theme='dark'] .DocSearch-Modal .DocSearch-NewConversationScreen-SuggestedQuestion:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-color: var(--ifm-color-primary) !important;
+}
+
+/* Markdown content color — match Docusaurus theme */
+.DocSearch-Modal .DocSearch-Markdown-Content {
+  color: var(--ifm-font-color-base) !important;
+}
