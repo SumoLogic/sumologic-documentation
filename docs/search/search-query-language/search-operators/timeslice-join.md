@@ -2,6 +2,7 @@
 id: timeslice-join
 title: Timeslice Join Results
 sidebar_label: Timeslice Join Results
+description: Use the timeslice operator before the join operator to slice joined data by time period.
 ---
 
 When you gather data using a [`join`](join.md) operator, you can slice data by time period using the [`timeslice`](timeslice.md) operator.

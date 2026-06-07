@@ -54,7 +54,7 @@ Now that you have created a new Dashboard, you can populate it with panels tha
 
 To add a panel to a new Dashboard, do the following:
 
-1. Select a panel type by clicking the corresponding icon.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="600" />
+1. Select a panel type by clicking the corresponding icon.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="800" />
 1. You are prompted to provide a query.
 
 See [Choosing a panel type](/docs/dashboards/panels) for details.

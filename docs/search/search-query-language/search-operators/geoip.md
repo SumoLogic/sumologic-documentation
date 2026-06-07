@@ -2,6 +2,7 @@
 id: geoip
 title: geoip Search Operator
 sidebar_label: geoip
+description: Use the geoip operator to match parsed IPv4 or IPv6 addresses to their geographical location for map chart visualization.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
