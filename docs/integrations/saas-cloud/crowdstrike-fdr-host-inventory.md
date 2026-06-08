@@ -7,7 +7,7 @@ description: Monitor and analyze the CrowdStrike-FDR Host Inventory data to dete
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="85"/>
 
 The Sumo Logic app for CrowdStrike - FDR Host Inventory offers deep visibility into your organization's host inventory managed by CrowdStrike Falcon. This app enables you to monitor critical aspects of your infrastructure, including device status, operating systems, and manufacturers. The app also provides you with insights into the geographical distribution of devices and highlights potential risks by identifying abnormal device statuses. With detailed logs on software details, network configurations, and policy applications, this app helps you to maintain an up-to-date and secure host inventory, ensuring a robust security posture across your environment.
 
@@ -21,7 +21,10 @@ This app uses Sumo Logic’s CrowdStrike-FDR Host Inventory Source to collect [i
 
 ### Sample log message
 
-```json title="Host Inventory Log"
+<details>
+<summary>Host Inventory Log</summary>
+
+```json
 {
             "device_id": "abcd1234wxyz56",
             "cid": "0123456789ABCDEFGHIJKLMNOPQRSTUV",
@@ -88,10 +91,11 @@ This app uses Sumo Logic’s CrowdStrike-FDR Host Inventory Source to collect [i
  }
 
 ```
+</details>
 
 ### Sample queries
 
-```sql title="Devices by Platform"
+```sumo title="Devices by Platform"
 _sourceCategory="crowdStrikeFDRHostInventory"
 | json "status", "platform_name", "os_version", "system_manufacturer", "provision_status", "device_id" as status, platform_name, version, manufacturer, provision_status, device_id nodrop
 // global filters
@@ -106,15 +110,33 @@ _sourceCategory="crowdStrikeFDRHostInventory"
 
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-Follow the instructions provided to set up [Cloud-to-Cloud Integration for CrowdStrike FDR Host Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-host-inventory-source/) for the CrowdStrike FDR Host Inventory app. These instructions will guide you through the process of creating a source using the CrowdStrike FDR Host Inventory Source category, which you will need to use when installing the app. By following these steps, you can ensure that your CrowdStrike FDR Host Inventory app is properly integrated and configured to collect and analyze your CrowdStrike FDR Host Inventory data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the CrowdStrike FDR Host Inventory app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for CrowdStrike FDR Host Inventory](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-host-inventory-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your CrowdStrike FDR Host Inventory app is properly integrated and configured to collect and analyze your CrowdStrike FDR Host Inventory data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing CrowdStrike FDR Host Inventory dashboards
 
@@ -139,7 +161,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `Device Prevention Policy Not Applied` | This alert is fired when the user has not applied the device prevention policy. CrowdStrike prevention policies are rules that determine how the CrowdStrike agent detects and prevents malware on endpoints. They are organized by operating system in the CrowdStrike console, and each operating system has its own set of policies. | Critical | Count > 0 | 
 | `Device Sensor Update Policy Not Applied` | This alert is fired when the user has not applied the device sensor update policy. CrowdStrike's Device Sensor Update Policy allows customers to choose which parts of their fleet should install the latest sensor release, or an older version. This policy is part of the Falcon platform's protection mechanisms, which use AI and machine learning to identify and address advanced threats. | Critical | Count > 0|
 
-## Upgrading the CrowdStrike FDR Host Inventory app (Optional)
+## Upgrade/Downgrade the CrowdStrike FDR Host Inventory app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

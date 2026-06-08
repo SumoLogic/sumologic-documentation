@@ -2,15 +2,16 @@
 id: bin
 title: bin Search Operator
 sidebar_label: bin
+description: Use the bin operator to assign numeric values to user-defined bins for histogram visualization and distribution analysis.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `bin` operator assigns output results to user defined bins. A bin is configured to hold a range of values that can be used for sorting results in a histogram and further aggregation. It is a quick and effective way to visualize the distribution of data.
 
 ## Syntax
 
-```sql
-bin <numeric field> width=<#>[, min=<#>][, max=<#>]
-```
+`bin <numeric field> width=<#>[, min=<#>][, max=<#>]`
 
 Where:
 
@@ -36,7 +37,7 @@ You can sort by the lower or upper boundary of the bin interval.
 A query counting error messages and using the bin operator to see the
 distribution of error counts based on bins with a width of 100:
 
-```sql
+```sumo
 _sourceCategory=stream error
 | timeslice 1m
 | count by _timeslice
@@ -45,14 +46,14 @@ _sourceCategory=stream error
 | sort by _bin_lower
 ```
 
-![bin operator charted.png](/img/search/searchquerylanguage/search-operators/bin-operator-charted.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/bin-operator-charted.png')} alt="Bin operator charted" style={{border: '1px solid gray'}} width="800" />
 
 ### Latency distribution
 
 A query parsing the latency of a function call and using the bin
 operator to see latency distribution over time:
 
-```sql
+```sumo
 _sourceCategory=analytics
 | parse "ms: *" as time
 | bin time width=10.0, min = 0.0, max = 500.0
@@ -60,7 +61,7 @@ _sourceCategory=analytics
 
 You can aggregate bins further:
 
-```sql
+```sumo
 _sourceCategory=analytics
 | parse "ms: *" as time
 | bin time width=10, min = 0, max = 500
@@ -68,4 +69,4 @@ _sourceCategory=analytics
 | sort by _bin_upper
 ```
 
-![example bin.png](/img/search/searchquerylanguage/search-operators/example-bin.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/example-bin.png')} alt="Example bin" style={{border: '1px solid gray'}} width="800" />

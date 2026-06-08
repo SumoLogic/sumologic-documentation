@@ -2,16 +2,17 @@
 id: num
 title: num Search Operator
 sidebar_label: num
+description: Use the num operator to convert a field to a double-precision floating-point number for use in numeric calculations.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `num` operator converts a field to a double value (64-bit IEEE 754 double-precision floating-point number), which is twice as accurate as a float value (32-bit IEEE 754 single-precision floating-point number). Using `num` in a query can be useful for sorting results by number instead of alphabetically, which is the default.
 
 
 ## Syntax
 
-```sql
-num(<field>) [as <field>]
-```
+`num(<field>) [as <field>]`
 
 ## Rules
 
@@ -21,7 +22,7 @@ num(<field>) [as <field>]
 
 Use this query to use num to search for Scheduled Searches, and sort them by the time it took each search to execute in seconds. Without the conversion, the results would be sorted in alphabetical order.
 
-```sql
+```sumo
 _sourceCategory=concierge completed execution
 | parse "Execution duration: * s" as duration
 | num(duration) | sort by duration
@@ -29,4 +30,4 @@ _sourceCategory=concierge completed execution
 
 This query produces results like this:
 
-![numoperator.png](/img/search/searchquerylanguage/search-operators/numoperator.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/numoperator.png')} alt="num operator" style={{border: '1px solid gray'}} width="800" />

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/acronis.png')} alt="acronis" width="90"/>
 
-***Version: 1.1  
-Updated: Jul 03, 2023***
+***Version: 1.2  
+Updated: April 8, 2026***
 
 Acronis develops on-premises and cloud software with integration of backup, disaster recovery, cybersecurity, and endpoint management. It offers a web-based management console that provides infrastructure-utilization insights and allows remote management of backups from any browser on any device, including tablets and smartphones.
 
@@ -17,29 +17,41 @@ Acronis develops on-premises and cloud software with integration of backup, disa
 
 ## Acronis configuration
 
-Follow these steps to get your API key from Arconis.
+Follow these steps to get your [API key](https://developer.acronis.com/doc/connector/authentication/index.html) from Arconis.
 
-1. Select **Manage account** from the dashboard. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-1.png')} style={{border:'1px solid gray'}} alt="acronis-1" width="400"/>
-1. From the **SETTINGS** select **API clients**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-2.png')} style={{border:'1px solid gray'}} alt="acronis-2" width="400"/>
-1. Click **+ Create API Client** and enter a name.  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-3.png')} style={{border:'1px solid gray'}} alt="acronis-3" width="400"/> <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-4.png')} style={{border:'1px solid gray'}} alt="acronis-4" width="400"/>
-1. Copy and save the Client ID, Secret, and Data center URL.  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-5.png')} style={{border:'1px solid gray'}} alt="acronis-5" width="400"/>
+1. Select **Manage account** from the dashboard. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-1.png')} style={{border:'1px solid gray'}} alt="Acronis manage account" width="400"/>
+1. From the **SETTINGS** select **API clients**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-2.png')} style={{border:'1px solid gray'}} alt="Acronis API clients" width="400"/>
+1. Click **+ Create API Client** and enter a name.  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-3.png')} style={{border:'1px solid gray'}} alt="Acronis create API client" width="400"/> <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-4.png')} style={{border:'1px solid gray'}} alt="Acronis 4" width="400"/>
+1. Copy and save the Client ID, Secret, and Data center URL.  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-5.png')} style={{border:'1px solid gray'}} alt="Acronis copy the client ID and secret" width="400"/>
 
-## Acronis in Automation Service and Cloud SOAR
+## Configure Acronis in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-8.png')} style={{border:'1px solid gray'}} alt="acronis-8" width="600"/>
-1. Populate all the required fields (\*):
-   * **Label**. The desired name for the resource.
-   * **URL**. Your Acronis Data Center URL you copied earlier from Acronis. Default: 'https://cloud.acronis.com'/ .
-   * **Client ID**. Your Acronis Client ID you copied earlier from Acronis.
-   * **Client Secret**. Your Acronis Secret you copied earlier from Acronis. 
-1. Click **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-9.png')} style={{border:'1px solid gray'}} alt="acronis-9" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-10.png')} style={{border:'1px solid gray'}} alt="acronis-10" width="400"/>
-1. Click **TEST**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-11.png')} style={{border:'1px solid gray'}} alt="acronis-11" width="300"/>
-1. You should receive a successful notification in the bottom right corner. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/acronis/acronis-12.png')} style={{border:'1px solid gray'}} alt="acronis-12" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+
+* <IntegrationLabel/>
+* **URL**. Enter the Acronis Data Center URL you copied [above](#acronis-configuration). The default is `https://cloud.acronis.com`.
+
+* **Client ID**. Enter the Acronis Client ID you copied above.
+
+* **Client Secret**. The the Acronis Secret you copied above. 
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/acronis-configuration.png')} style={{border:'1px solid gray'}} alt="Acronis configuration" width="400"/>
+
+For information about Acronis, see [Acronis documentation](https://developer.acronis.com/doc/).
 
 ## Change Log
 
 * July 26, 2022 - First upload
 * July 3, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 8, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

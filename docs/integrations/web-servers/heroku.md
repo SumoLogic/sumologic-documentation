@@ -35,7 +35,7 @@ We offer an [add-on for Heroku](https://elements.heroku.com/addons/sumologic) th
 
 #### Log queries
 
-```sql title="Successful App Build Trend"
+```sumo title="Successful App Build Trend"
 _sourceCategory="Heroku" "Build Succeeded"
 | where _sourceName matches "{{log_drain}}"
 | _sourceName as log_drain
@@ -46,7 +46,7 @@ _sourceCategory="Heroku" "Build Succeeded"
 
 #### Metric log queries
 
-```sql title="Memory Utilization (MB)"
+```sumo title="Memory Utilization (MB)"
 _sourceCategory="Heroku"
 | parse regex "dyno=(?<dyno>.*?(?= )).*memory_total=(?<memory_total>.*?(?=MB )).*memory_rss=(?<memory_rss>.*?(?=MB )).*memory_cache=(?<memory_cache>.*?(?=MB )).*memory_swap=(?<memory_swap>.*?(?=MB ))"
 | where dyno matches "{{dyno}}" and _sourceName matches "{{log_drain}}"
@@ -190,18 +190,18 @@ For ease of understanding the log data, you can use a **Field Extraction Rule (F
    d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a
    ```
 2. Define an FER in Sumo Logic.
-    1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
+    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. <br/> [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. 
     2. Click the **+** in the upper left corner of the page to display the **Create Field Extraction Rule** popup.
         * **Rule Name**. Enter a name for the FER.
         * **Scope**. Enter `_sourceCategory=heroku` when the collection is setup via the Sumo Add-on.
         * **Parse Expression**. For each Heroku application reporting data to Sumo, enter a statement that renames the `_sourceName` from the drain ID to the application name. For example:
 
-        ```sql
+        ```sumo
         if (_sourceName="Drain_ID", "Application_Name", _sourceName) as _sourceName
         ```
 
         The FER below changes the value of `_sourceName` for two applications. The first line changes `_sourceName` from “d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a” to “CustApp”. The second line changes `_sourceName` from “d.00870f28-53f9-4680-b2ab-2287ec9d8637” to “VendorApp”:
-        ```sql
+        ```sumo
         if (_sourceName="d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a", "CustApp", _sourceName) as _sourceName
         | if (_sourceName="d.00870f28-53f9-4680-b2ab-2287ec9d8637", "VendorApp", _sourceName) as _sourceName
         ```
@@ -361,7 +361,7 @@ The **Heroku - Application Errors** dashboard demonstrates the use cases for Her
 - **App Errors by Component**. Shows the distribution of application errors for different Heroku components.
 - **App Error Trend by Component**. Shows the count of application errors for different Heroku components over a period of time.
 
-## Upgrading the Heroku app (Optional)
+## Upgrade/Downgrade the Heroku app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

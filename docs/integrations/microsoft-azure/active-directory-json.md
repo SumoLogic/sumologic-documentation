@@ -7,7 +7,7 @@ description: The Active Directory JSON App helps you monitor your Windows Active
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="40"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="40"/>
 
 The Sumo Logic app for Active Directory JSON (2012+) helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format. The app includes predefined searches and dashboards that provide user activity into your environment for real-time analysis of overall usage.
 
@@ -68,7 +68,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 
 The sample query is from **Successes Vs Failures** panel from [Active Directory Service Failures](#service-failures) dashboard.
 
-```sql
+```sumo
 _sourceCategory=Labs/windows-jsonformat
 | json "EventID", "Computer", "Keywords" as event_id, host, keywords nodrop
 | if (keywords = "Audit Failure", "Failure", "Success") as status
@@ -131,7 +131,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Active-Directory-Service-Failures.png')} alt="Active Directory JSON dashboards" />
 
-## Upgrading the Active Directory JSON app (Optional)
+## Upgrade/Downgrade the Active Directory JSON app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

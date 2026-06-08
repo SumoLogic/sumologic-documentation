@@ -4,12 +4,12 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ip-quality-score.png')} alt="ip-quality-score" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ip-quality-score.png')} alt="IP Quality Score icon" width="100"/>
 
-***Version: 1.2  
-Updated: Jan 29, 2024***
+***Version: 1.3  
+Updated: April 29, 2026***
 
-Perform threat intelligence evidence gathering with IP Quality Score.
+Perform threat intelligence evidence gathering with IPQualityScore.
 
 ## Actions
 
@@ -17,6 +17,29 @@ Perform threat intelligence evidence gathering with IP Quality Score.
 * **Get Credit Usage** *(Enrichment)* - Gather Credit usage information from IP Quality Score.
 * **IP Reputation** *(Enrichment)* - Gather IP reputation information from IP Quality Score.
 * **URL Reputation** *(Enrichment)* - Gather URL reputation information from IP Quality Score.
+
+## Configure IPQualityScore in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your IPQualityScore API URL, for example, `https://www.ipqualityscore.com/`
+
+* **API Key**. Enter an IPQualityScore API key.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ip-quality-score-configuration.png')} style={{border:'1px solid gray'}} alt="IPQualityScore configuration" width="400"/>
+
+For information about IPQualityScore, see [IPQualityScore documentation](https://www.ipqualityscore.com/documentation/overview).
 
 ## Change Log
 
@@ -32,3 +55,4 @@ Perform threat intelligence evidence gathering with IP Quality Score.
     * Extended output mapping with examples
     * Added link to API doc in src code
     * Resized logo
+* April 29, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

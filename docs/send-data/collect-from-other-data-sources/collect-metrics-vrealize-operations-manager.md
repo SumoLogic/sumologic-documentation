@@ -2,8 +2,10 @@
 id: collect-metrics-vrealize-operations-manager
 title: Collect Metrics from VMware vRealize Operations Manager 8 Enterprise
 sidebar_label: VMware vRealize Operations Manager
-description: This page provides instructions for collecting metrics from vRops.
+description: Collect performance metrics from VMware vRealize Operations Manager (vRops) into Sumo Logic to monitor physical, virtual, and cloud infrastructure.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 With vRealize Operations Manager (vRops) software, you can proactively identify and solve emerging issues with predictive analysis and smart alerts, ensuring optimal performance and availability of system resources - across physical, virtual, and cloud infrastructures. 
 
@@ -100,7 +102,7 @@ The number of threads can be controlled using a property `THREADSIZE_POOL` in th
 
 To collect performance metrics, do the following:
 
-1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source.md). Make sure that the Content-Type is set to Carbon1. <br/>![VMware.png](/img/send-data/VMware.png)
+1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source.md). Make sure that the Content-Type is set to Carbon1. <br/><img src={useBaseUrl('img/send-data/VMware.png')} alt="VMware" style={{border: '1px solid gray'}} width="600" />
 
 1. Edit the properties in the bundled config.json properties file, as necessary.
 1. Go to the directory for the Sumo Logic scripts, and run the **sumologic-vrops-metric-collection.py** script—which queries the vRops Server for metrics—from that location with the following command:

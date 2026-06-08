@@ -7,7 +7,7 @@ description: Provides you a complete overview of your GitLab’s builds, deploym
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/gitlab.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/app-development/gitlab.png')} alt="GitLab icon" width="75"/>
 
 The Sumo Logic App for GitLab provides you a complete overview of your GitLab’s builds, deployments, pipelines, issues, merge requests, and commits. The integration listens for GitLab events and uses the event data to populate the pre-configured Dashboards.
 
@@ -35,7 +35,7 @@ For more information about log messages, see [GitLab documentation](https://docs
 
 This section provides a sample query from the **Opened Merge Requests** panel on the **GitLab - Merge Requests** dashboard.
 
-```sql
+```sumo
 _sourceCategory="sumo/GitLab" and _collector="GitLab" %"x-GitLab-event"="Merge Request Hook"
 |json "object_attributes.state" as merge_request_state
 | where merge_request_state="opened"
@@ -91,21 +91,15 @@ You can register webhooks for a [Group](https://docs.gitlab.com/ee/user/project/
 Refer to the [GitLab Webhooks documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#configure-a-webhook) to understand more.
 
 
-### Step 3: Enable GitLab Event tagging at Sumo Logic
+### Step 3: GitLab Event tagging at Sumo Logic
 
-Sumo Logic needs to understand the event type for incoming events. To enable this, the [x-gitlab-event](https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html#push-events) event type needs to be enabled. To enable this, perform the following steps in the Sumo Logic console:
-
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
-2. Add Field ‎**x-GitLab-event**‎.
-
+To properly identify the event type for incoming events, Sumo Logic automatically adds the [x-gitlab-event](https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html#push-events) event type to the [Fields](/docs/manage/fields) during app installation.
 
 ## Installing the GitLab App
 
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
-
+<AppInstall2/>
 
 ### Troubleshooting
 
@@ -118,7 +112,7 @@ Field x-gitlab-event not found, please check the spelling and try again.
 Do the following to resolve:
 
 1. Close all app dashboards.
-2. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+2. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
 1. Delete the **x-gitlab-event field.**
 1. Add it again using the Dropped Fields section:
     * At **Dropped Fields** dropdown, click on **x-gitlab-event**, then click **Create Field** to create the field.
@@ -127,6 +121,10 @@ Do the following to resolve:
 
 
 ## Viewing GitLab Dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

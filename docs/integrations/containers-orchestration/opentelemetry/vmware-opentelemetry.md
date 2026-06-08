@@ -2,7 +2,7 @@
 id: vmware-opentelemetry
 title: VMWare - OpenTelemetry Collector
 sidebar_label: VMWare - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry app for VMWare.
+description: Monitor VMware vCenter, ESXi hosts, clusters, and VMs using the Sumo Logic OpenTelemetry app with predefined dashboards for CPU, memory, and disk metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -21,7 +21,12 @@ See the [vSphere product page](https://www.vmware.com/products/vsphere.html) for
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMWare-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#vmware-alerts). For details on creating custom monitors, refer to the [Create monitors for JFrog Artifactory app](#create-monitors-for-vmware-app).
+:::
+
 ## Prerequisites
+
 VMWare metrics are collected through the [vCenter Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/vcenterreceiver) of OpenTelemetry.
 
 This receiver has been built to support ESXi and vCenter versions:
@@ -56,7 +61,9 @@ In this step, we will configure the YAML file required for VMWare Collection. He
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the YAML file.
 
-For the Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
+import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
+
+<EnvVar/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMWare-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -188,7 +195,7 @@ You can filter data on VMWare dashboards with template variables. Template varia
 
 The **VMWare - Overview** dashboard provides an at-a-glance view of unique clusters, ESXi hosts, and unique VMs. It also provides data for datastore disk utilisation, VM disk usage, CPU Utilization, Memory Utilization, and Network Usage for VMs and Hosts.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Overview.png' alt="VMWare-Overview"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Overview.png' alt="VMware Overview"/>
 
 - **Number of ESXi Hosts in Cluster**. The total number of ESXi hosts in the cluster.
 - **Number of VMs in Cluster**. The total number of VMs in the cluster.
@@ -208,7 +215,7 @@ The **VMWare - Overview** dashboard provides an at-a-glance view of unique clust
 
 The **VMWare - Clusters** dashboard provides at-a-glance analysis of VMWare cluster metrics like Hosts count, VM count, available CPU, and Memory percentage.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Clusters.png' alt="VMWare-Clusters"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Clusters.png' alt="VMware Clusters"/>
 
 - **Number of ESXi Hosts in Cluster**. The total number of ESXi hosts in the cluster.
 - **Number of VMs in Cluster**. The total number of VMs in the cluster.
@@ -219,7 +226,7 @@ The **VMWare - Clusters** dashboard provides at-a-glance analysis of VMWare clus
 
 The **VMWare - Resource Pools** dashboard provides an at-a-glance analysis of Resource Pool metrics like Memory Usage, CPU Usage, Shares of CPU, and Memory.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Resource-Pools.png' alt="VMWare-Resource-Pools"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Resource-Pools.png' alt="VMware Resource Pools"/>
 
 - **Cluster CPU Usage**. CPU usage of the resource pool.
 - **Cluster Memory Usage**. Memory usage of the resource pool.
@@ -230,18 +237,19 @@ The **VMWare - Resource Pools** dashboard provides an at-a-glance analysis of Re
 
 The **VMWare - Host Overview** dashboard provides at-a-glance analysis of ESXi Hosts metrics like CPU Utilization, Memory Utilization, Read/ Write Latency, and Network Usage.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Host-Overview.png' alt="VMWare-Host-Overview-Details"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Host-Overview.png' alt="VMware Host Overview Details"/>
 
 - **Top 25 ESXi Hosts CPU Utilization**. Top 25 ESXi Hosts CPU Utilization.
 - **Top 25 ESXi Hosts Memory Utilization**. Top 25 ESXi Hosts Memory Utilization.
 - **Top 25 ESXi Hosts Network Usage**. Top 25 ESXi Hosts Network Usage.
 - **Top 25 ESXi Hosts Disk Read/ Write Latency**. Top 25 ESXi Hosts Disk read/ write latency.
+- **Host Memory Capacity**. Total memory capacity of the host systems being monitored.
 
 ### VMWare - Host Details
 
 The **VMWare - Host Details** dashboard provides detailed analysis of ESXi Hosts metrics like CPU Usage, Memory Usage, Disk Read/ Write Rate, Network Usage, Network Packet Rate, and Network Packet Error Rate.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Host-Details.png' alt="VMWare-Host-Overview-Details"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-Host-Details.png' alt="VMware Host Overview Details"/>
 
 - **Top 25 ESXi Hosts CPU Usage**. Top 25 ESXi Hosts CPU usage.
 - **Top 25 ESXi Hosts Disk Read/ Write Rate**. Top 25 ESXi Hosts Disk read/ write rate.
@@ -253,7 +261,7 @@ The **VMWare - Host Details** dashboard provides detailed analysis of ESXi Hosts
 
 The **VMWare - VM Overview** dashboard provides an at-a-glance analysis of VM metrics like CPU Utilization, Memory Utilization, Disk Utilization, Network Usage, and Disk Usage.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-VM-Overview.png' alt="VMWare-VM-Overview-Details"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-VM-Overview.png' alt="VMware VM Overview Details"/>
 
 - **Top 25 VMs CPU Utilization**. Top 25 VMs CPU utilization.
 - **Top 25 VMs Memory Utilization**. Top 25 VMs Memory utilization.
@@ -261,12 +269,13 @@ The **VMWare - VM Overview** dashboard provides an at-a-glance analysis of VM me
 - **Top 25 VMs Network Usage**. Top 25 VMs Network usage.
 - **Top 25 VMs Disk Usage**. Top 25 VMs Disk usage.
 - **Top 25 VMs Memory Ballooning**. Top 25 VMs Memory Ballooning.
+- **VM CPU Time**. CPU time spent in idle, ready or wait state in %.
 
 ### VMWare - VM Details
 
 The **VMWare - VM Details** dashboard provides a detailed analysis of VM metrics like CPU Usage, Memory Usage, Read/Write Latency, Network Packet Rate, and Memory Swapped.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-VM-Details.png' alt="VMWare-VM-Overview-Details"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/VMWare-OpenTelemetry/VMware-VM-Details.png' alt="VMware VM Overview Details"/>
 
 - **Top 25 VMs CPU Usage**. Top 25 VMs CPU usage.
 - **Top 25 VMs Memory Usage**. Top 25 VMs Memory usage.
@@ -276,3 +285,22 @@ The **VMWare - VM Details** dashboard provides a detailed analysis of VM metrics
 - **Top 25 VMs Network Packet Rate**. Top 25 VMs Network transmitted/received packet rate.
 - **Top 25 VMs Network Packet Drop Rate**. Top 25 VMs Network transmitted/received packet drop rate.
 - **Top 25 VMs Memory Swapped**. Top 25 VMs Memory swapped.
+- **VM Memory Granted**. The amount of memory that is granted to a VM.
+
+## Create monitors for VMWare app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### VMWare alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `VMware - Datastore High Utilization` | This alert is triggered when datastore usage is approaching capacity. | Count `>=` 90 | Count `<` 90 |
+| `VMware - High Virtual Disk Read Latency` | This alert gets triggered on high virtual datastore read latency indicating storage performance issues. | Count `>=` 20 | Count `<` 20 |
+| `VMware - High Virtual Disk Write Latency` | This alert gets triggered on high virtual datastore write latency indicating storage performance issues. | Count `>=` 20 | Count `<` 20 |
+| `VMware - Host CPU High Utilization` | This alert is triggered when host CPU utilization is consistently high, which may impact VM performance. | Count `>=` 90 | Count `<` 90 |
+| `VMware - Host Memory Utilization` | This alert is triggered when host memory utilization is consistently high. | Count `>=` 95 | Count `<` 95 |
+| `VMware - VM CPU Ready Time High` | This alert gets triggered when VMs are waiting too long for CPU resources, indicating CPU contention. | Count `>=` 10 | Count `<` 10 |
+| `VMware - VM Memory Balloon Pressure` | This alert gets triggered when VMs are experiencing significant memory ballooning. | Count `>=` 1024 | Count `<` 1024 |

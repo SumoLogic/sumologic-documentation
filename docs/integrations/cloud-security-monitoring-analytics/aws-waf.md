@@ -7,7 +7,7 @@ description: A guide to the Sumo Logic AWS WAF Security Analytics App.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="Thumbnail icon" width="60"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="WAF icon" width="60"/>
 
 AWS WAF (web application firewall) data is a rich source of security findings, as it allows you to monitor the HTTP and HTTPS requests that are forwarded to CloudFront and let you control overall access to your content. Each dashboard within this application takes a different lens on AWS WAF data, from traffic patterns to threat intelligence, allowing you to truly identify the needles in the haystack that drives critical security concerns within your AWS infrastructure.
 
@@ -19,11 +19,11 @@ To configure Collection for AWS WAF App, follow the instructions from [Collectin
 
 Now that you have set up collection for AWS WAF, install the Sumo Logic App for AWS WAF to use the pre-configured searches and dashboards.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
-## Viewing AWS WAF Security Monitoring Dashboards
+## Viewing AWS WAF Security Monitoring dashboards
 
 ### AWS WAF - Security Monitoring - Overview
 
@@ -52,7 +52,7 @@ See an overview of threats detected and traffic passing through AWS WAF.
 
 See details of threats allowed and blocked by AWS WAF.
 
-img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-WAF-Security-Analytics-Traffic.png')} alt="AWS WAF dashboards" />
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-WAF-Security-Analytics-Traffic.png')} alt="AWS WAF dashboards" />
 
 **Traffic by Geographic Location.** Each section contains the same panels with the only difference being traffic allowed or blocked.
 
@@ -71,7 +71,7 @@ img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-WA
 
 See details of allowed and blocked AWS WAF traffic that matches the built-in Sumo Logic threat IP list.
 
-img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-WAF-Security-Analytics-Threat-Intelligence.png')} alt="AWS WAF dashboards" />
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-WAF-Security-Analytics-Threat-Intelligence.png')} alt="AWS WAF dashboards" />
 
 **Unique Threats Map.** Geolocation heatmap of connection locations.
 

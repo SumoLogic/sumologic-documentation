@@ -28,15 +28,15 @@ With Flex Pricing, there is no cost to ingest and index log data, and no require
 
 Yes, you can use [Role-Based Access Control (RBAC)](/docs/manage/users-roles/roles/role-based-access-control) to restrict access to partitions in Flex. Although you can’t use a role search filter to restrict access to a partition by name, you can filter by the metadata that forms the routing expression for a partition.
 
-For example, if you want to strict access to a partition whose routing expression is:
+For example, if you want to restrict access to a partition whose routing expression is:
 
-```
+```sumo
 _sourceCategory=staging/*
 ```
 
 You can create a role with this role search filter:
 
-```
+```sumo
 !(_sourceCategory=staging/*)
 ```
 
@@ -44,7 +44,7 @@ Then, you assign that role to any user that shouldn’t have access to data in t
 
 ## How can I get visibility into our Flex search costs?
 
-Your **Account Overview** page shows the credits your org has consumed for Flex data searches. <br/><img src={useBaseUrl('/img/subscriptions/flex-usage-categories.png')} alt="flex-usage-categories" style={{border:'1px solid gray'}} width="800"/>
+Your **Account Overview** page shows the credits your org has consumed for Flex data searches. <br/><img src={useBaseUrl('/img/manage/subscriptions/flex-usage-categories.png')} alt="Flex usage categories" style={{border:'1px solid gray'}} width="800"/>
 
 ## How can I optimize Flex data search costs?
 
@@ -55,13 +55,13 @@ Below are some ways to control the cost of running queries data in Flex:
     * **Create one partition per log type (debug, infra, and so on)**. This approach can be leveraged if, most of the time, the team searches one log type per query. For example, the team only queries debug logs, and typically queries other logs like Database logs and OS logs in separate queries. 
 * Try to use a restrictive time range, instead of running a query with a very long time range.
 * Use indexes with the metadata fields to narrow down the volume of data scanned. This in turn will help you to reduce the scan cost. For example, if you're querying data from the `k8s_host` source and it's being sent to multiple partitions, you can limit the scope of your search to the `abc` partition by using `_index=abc` for the selected time range.
-    ```sql
+    ```sumo
     _index=abc AND _sourceCategory=k8s_host
     ```
 
 Using keywords or other metadata in a query will not reduce the amount of data scanned. For example, the inclusion of a keyword and custom field in the scope of the query below does not reduce the amount of data that Sumo Logic will scan. Sumo Logic will scan all data in the partition named `ybase_partition`.
 
-```sql
+```sumo
 _index=ybase_partition (error and cluster=nxt)
 ```
 
@@ -91,8 +91,9 @@ We recommend you configure partitions to have less than 5 TB per day flowing int
 
 Default scope allows you to include or exclude the partitions in the search query, helping you to optimize the search cost. For example, if a query needs to run through 10 partitions, which consumes about 10 GB of search data, narrowing the search query using the default scope can improve the query performance and reduce scan cost. You can modify the default scope by selecting or deselecting the **Include this partition in default scope** checkbox when creating/updating your partition. Let's say that out of 10 partitions, you excluded two partitions. Now, when you run a query that does not have `_index` / `_view` term referenced in the query, the search will only consider the included partitions, reducing the amount of data scanned and lowering the cost.
 
+If you do not specify a partition name using `_index` or `_view`, or if you do not use metadata fields in your query scope that correspond to the routing expression of a partition, you will be billed for all default scope partitions that are not explicitly excluded. This also includes the `sumologic_default` partition.
 
-When partitions are marked as included and `_index` or `_view` is not referenced in the query, all included partitions will be considered by default. Default scope is also useful when `AND` or `OR` conditions are used in the query with `_index`. For example, consider you have three partitions: Partition A (Excluded), Partition B (Included), and Partition C (Included). Below are some scenarios:
+When partitions are marked as included and `_index` or `_view` is not referenced in the query, all partitions part of default scope will be considered by default. Default scope is also useful when `AND` or `OR` conditions are used in the query with `_index`. For example, consider you have three partitions: Partition A (Excluded), Partition B (Included), and Partition C (Included). Below are some scenarios:
 
 - When you run the query without referring to `_index`, for example `error | count`, only Partition B and Partition C will be considered for the query, as Partition A is excluded from the default scope. 
 - When you run a query referring to an index term, for example `_index="Partition A"`, only Partition A will be considered for the query. 
@@ -102,3 +103,20 @@ When partitions are marked as included and `_index` or `_view` is not referenced
 ## How are preview queries charged?
 
 While the current impact is extremely minimal, preview queries that you run during scenarios like monitor creation may incur repetitive but negligible charges.
+
+## What happens to the queries with _dataTier modifier while migrating to Flex Pricing?
+
+:::note
+Users will continue to have support for the `_dataTier` modifier while still migrating to Flex pricing.
+:::
+
+After migrating to the Flex pricing, queries with the `_dataTier` modifier will continue to work as usual. The definition of `_dataTier=Continuous or Frequent or Infrequent` at the time of transition is a snapshot of the partitions that were part of the tier. This ensures a smooth transition to Flex pricing without encountering any issues.
+
+Once the move to Flex pricing is settled, based on the convenience of Administrators and Users, it is recommended to rewrite the queries to move away from the `_dataTier` modifier to improve the scope of queries. There is currently no set time to deprecate the support for the `_dataTier` modifier in Flex pricing.
+
+## Are audit index queries charged?
+
+Queries to the following [audit indexes](/docs/manage/security/audit-indexes/) are not charged:
+* `sumologic_audit_events`
+* `sumologic_system_events`
+* `sumologic_search_usage_per_query`
