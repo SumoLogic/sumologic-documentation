@@ -26,46 +26,78 @@ This app uses Sumo Logic’s [ChatGPT Compliance Source](/docs/send-data/hosted-
 
 ```json
 {
-  "id": "68cccb0d-6994-8321-8268-5193b8b55c01",
-  "created_at": 1760231119.916074,
-  "last_active_at": 1760349119.540962,
+  "event_id": "7c9e3b1d-4d74-4f6c-a84f-5f9d0baf6d91",
+  "type": "CONVERSATION_MESSAGE",
+  "timestamp": "2026-03-18T14:27:45.123456Z",
+  "principal": {
+    "id": "workspace-9a8b7c6d",
+    "type": "CHATGPT_WORKSPACE"
+  },
+  "actor": {
+    "type": "ACCOUNT_USER",
+    "user_id": "user-XyZ987654321",
+    "user_email": "analyst@example.com"
+  },
   "message": {
+    "id": "msg-789456",
     "author": {
-      "object": "compliance.workspace.conversation.message.author",
-      "role": "user",
-      "tool_name": "myfiles_browser"
+      "type": "assistant",
+      "model": "gpt-5.2-pro",
+      "tools_used": [
+        "browser",
+        "python"
+      ]
     },
     "content": {
-      "annotations": [],
       "type": "text",
-      "value": "he didn't get the siding permit yet, but has started working on it."
-    },
-    "created_at": 1760411119.881,
-    "files": {
-      "data": [
+      "value": "I reviewed the uploaded report and found three key risks. See the cited report and reference URLs below.",
+      "annotations": [
         {
-          "created_at": 1760411119.119338,
-          "download_url": "https://files01.oaiusercontent.com/file-TfyE2zmUjSNYWCPudTieSx?se=2025-10-13T10%3A19%3A00Z\u0026sp=r\u0026sv=2024-08-04\u0026sr=b\u0026rscc=max-age%3D3599%2C%20immutable%2C%20private\u0026rscd=attachment%3B%20filename%3DGreg%2520F.txt\u0026skoid=dfdaf859-26f6-4fed-affc-1befb5ac1ac2\u0026sktid=a48cca56-e6da-484e-a814-9c849652bcb3\u0026skt=2025-10-13T09%3A16%3A38Z\u0026ske=2025-10-14T09%3A16%3A38Z\u0026sks=b\u0026skv=2024-08-04\u0026sig=v4gL3%2ByyUihI%2BPuMZTUx30pg7fPh/E/mgx4bc4RzGd8%3D",
-          "id": "file-AfyE2zmUjSNYWCPudTieSx",
-          "name": "Greg F1.txt",
-          "object": "compliance.workspace.conversation.message.file"
+          "type": "url_citation",
+          "urls": [
+            "https://docs.example.com/risk-framework",
+            "https://status.example.com/incidents/123"
+          ]
+        },
+        {
+          "type": "file_citation",
+          "files": [
+            {
+              "id": "file-risk-report-001",
+              "name": "enterprise-risk-report.pdf"
+            }
+          ]
+        },
+        {
+          "type": "quotation",
+          "file_id": "file-risk-report-001",
+          "file_name": "enterprise-risk-report.pdf",
+          "quote": "Third-party vendor outages remain a significant operational risk."
         }
-      ],
-      "has_more": false,
-      "last_id": null,
-      "object": "list"
+      ]
     },
-    "gpt_id": "g-68a29a23af308191a22a206acd7f965a",
-    "id": "b99bae4e-0746-4001-9971-17f8c019d55f",
-    "object": "compliance.workspace.conversation.message",
-    "parent_id": "b99bae4e-0746-4002-9971-17f8c019d55f",
-    "project_id": null
+    "files": [
+      {
+        "id": "file-risk-report-001",
+        "name": "enterprise-risk-report.pdf"
+      },
+      {
+        "id": "file-spreadsheet-002",
+        "name": "risk-register.xlsx"
+      }
+    ]
   },
-  "title": "Anchor div to bottom",
-  "user_id": "user-avcJbusY2W3lkb6aT6aY4gsx",
-  "user_email": "testuser1@test.com",
-  "workspace_id": "11bf645e-d5e8-4478-a70e-e5742ded2436",
-  "object": "compliance.workspace.conversation"
+  "conversation": {
+    "id": "convo-20260318-001",
+    "title": "Enterprise Risk Assessment Review",
+    "gpt_id": "g-risk-assistant",
+    "gpt_name": "Risk Analysis Assistant",
+    "project_id": "proj-risk-001",
+    "project_name": "Risk Management Program",
+    "created_at": "2026-03-18T13:55:10Z",
+    "is_pinned": true,
+    "is_temporary_chat": false
+  }
 }
 ```
 </details>
@@ -74,52 +106,56 @@ This app uses Sumo Logic’s [ChatGPT Compliance Source](/docs/send-data/hosted-
 
 ```sumo title="Messages by Content Type"
 _sourceCategory=GPT
-| json "id", "last_active_at", "user_id", "user_email", "title", "workspace_id", "message.author.role", "message.author.tool_name", "message.content.type", "message.content.value", "message.files.data[*]", "message.gpt_id", "message.id" as id, last_active_at, user_id, user_email, title, workspace_id, role, tool_name, message_type, message_value, files_data, gpt_id, message_id nodrop
+// Common parsing fields
+| json "actor.user_id","actor.user_email","timestamp","message.author.type","message.author.model","message.author.tools_used[*]","message.content.type","message.content.value","conversation.gpt_id" as user_id,user_email,timestamp,author_type,model,tools_used,message_type,message_value,gpt_id nodrop
 
-// global filters
-| where user_email matches "{{user}}" or isBlank(user_email)
-| where role matches "{{role}}" or isBlank(role)
-| where tool_name matches "{{tool}}" or isBlank(tool_name)
-| where gpt_id matches "{{model}}" or isBlank(gpt_id)
-| where message_type matches "{{message_type}}" or isBlank(message_type)
-| where message_value contains "{{message}}" or "{{message}}" == "*"
+// Dashboard Variable Check
+| where user_email = "{{user}}" or "{{user}}" = "*"
+| where author_type = "{{author_type}}" or "{{author_type}}" = "*"
+| where "{{tool}}"="*" or tools_used contains "{{tool}}"
+| where model = "{{model}}" or "{{model}}" = "*"
+| where gpt_id = "{{custom_gpt}}" or "{{custom_gpt}}" = "*"
 
+// Panel Logic
 | where !isBlank(message_type)
 | count by message_id, message_type
 | count by message_type
 | sort by _count, message_type
 ```
 
-```sumo title="Messages by Role"
+```sumo title="Messages by Author Type"
 _sourceCategory=GPT
-| json "id", "last_active_at", "user_id", "user_email", "title", "workspace_id", "message.author.role", "message.author.tool_name", "message.content.type", "message.content.value", "message.files.data[*]", "message.gpt_id", "message.id" as id, last_active_at, user_id, user_email, title, workspace_id, role, tool_name, message_type, message_value, files_data, gpt_id, message_id nodrop
+// Common parsing fields
+| json "actor.user_id","actor.user_email","timestamp","message.author.type","message.author.model","message.author.tools_used[*]","message.content.type","message.content.value","conversation.gpt_id" as user_id,user_email,timestamp,author_type,model,tools_used,message_type,message_value,gpt_id nodrop
 
-// global filters
-| where user_email matches "{{user}}" or isBlank(user_email)
-| where role matches "{{role}}" or isBlank(role)
-| where tool_name matches "{{tool}}" or isBlank(tool_name)
-| where gpt_id matches "{{model}}" or isBlank(gpt_id)
-| where message_type matches "{{message_type}}" or isBlank(message_type)
-| where message_value contains "{{message}}" or "{{message}}" == "*"
+// Dashboard Variable Check
+| where user_email = "{{user}}" or "{{user}}" = "*"
+| where "{{tool}}"="*" or tools_used contains "{{tool}}"
+| where model = "{{model}}" or "{{model}}" = "*"
+| where gpt_id = "{{custom_gpt}}" or "{{custom_gpt}}" = "*"
+| where message_type = "{{message_type}}" or "{{message_type}}" = "*"
 
-| where !isBlank(role)
-| count by message_id, role
-| count by role
-| sort by _count, role
+
+// Panel Logic
+| where !isBlank(author_type)
+| count by message_id, author_type
+| count by author_type
+| sort by _count, author_type
 ```
 
 ```sumo title="Top 10 Users by Conversations"
 _sourceCategory=GPT
-| json "id", "last_active_at", "user_id", "user_email", "title", "workspace_id", "message.author.role", "message.author.tool_name", "message.content.type", "message.content.value", "message.files.data[*]", "message.gpt_id", "message.id" as id, last_active_at, user_id, user_email, title, workspace_id, role, tool_name, message_type, message_value, files_data, gpt_id, message_id nodrop
+// Common parsing fields
+| json "actor.user_id","actor.user_email","timestamp","message.author.type","message.author.model","message.author.tools_used[*]","message.content.type","message.content.value","conversation.gpt_id","conversation.gpt_name","message.id","conversation.id" as user_id,user_email,timestamp,author_type,model,tools_used,message_type,message_value,gpt_id,gpt_name,message_id,id nodrop
 
-// global filters
-| where user_email matches "{{user}}" or isBlank(user_email)
-| where role matches "{{role}}" or isBlank(role)
-| where tool_name matches "{{tool}}" or isBlank(tool_name)
-| where gpt_id matches "{{model}}" or isBlank(gpt_id)
-| where message_type matches "{{message_type}}" or isBlank(message_type)
-| where message_value contains "{{message}}" or "{{message}}" == "*"
+// Dashboard Variable Check
+| where author_type = "{{author_type}}" or "{{author_type}}" = "*"
+| where "{{tool}}"="*" or tools_used contains "{{tool}}"
+| where model = "{{model}}" or "{{model}}" = "*"
+| where gpt_id = "{{custom_gpt}}" or "{{custom_gpt}}" = "*"
+| where message_type = "{{message_type}}" or "{{message_type}}" = "*"
 
+// Panel Logic
 | where !isBlank(user_id) and !isBlank(user_email)
 | count by id, user_id, user_email
 | count as frequency by user_id, user_email
