@@ -248,6 +248,11 @@ html[data-theme='dark'] .DocSearch-Search-Icon {
   color: #6b6f78 !important;
 }
 
+/* Prevent search input text from overlapping the "Clear the query" button */
+.DocSearch-Input {
+  padding-right: 65px !important;
+}
+
 //GitHub icon
 .header-github-link:hover {
   opacity: 0.6;
