@@ -27,6 +27,12 @@ For any change touching 50+ files (e.g. terminology migrations, frontmatter audi
 5. **Never revert from memory.** If reverting, validate against actual file content — do not trust "the original had X."
 6. **Never commit helper/detection scripts** to the repo. Run them ephemerally.
 
+## Doc Reviews
+
+When reviewing any PR or doc, always check existing docs of the same type in the same directory before flagging issues. A pattern consistent with neighboring docs is not a bug — it is the established convention. Only flag it if it's a deviation from the pattern or a net-new problem introduced by the PR.
+
+Some directories have conventions that differ significantly from standard docs. For example, `docs/platform-services/automation-service/app-central/integrations/` intentionally uses `description: ''`, omits `id`, opens with a logo image, and includes a `***Version / Updated***` block — all correct for that directory. When in doubt, read two or three neighboring files before forming an opinion.
+
 ## Pull Requests
 **CRITICAL REQUIREMENT**: Before creating ANY PR, MUST read `.github/PULL_REQUEST_TEMPLATE.md` and use EXACT checkbox labels from that file.
 
