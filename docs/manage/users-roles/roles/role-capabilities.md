@@ -100,20 +100,20 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| Task View | See tasks in [playbooks](/docs/platform-services/automation-service/playbooks/). | `cloudSoarIncidentTaskView` |
+| Task View | View tasks in [playbooks](/docs/platform-services/automation-service/playbooks/) in read-only mode. | `cloudSoarIncidentTaskView` |
 | Task Access | Access your tasks in playbooks. | `cloudSoarIncidentTaskAccess` |
 | Task Access All| Access all user tasks in playbooks. | `cloudSoarIncidentTaskAccessAll` |
-| Task Edit| Configure tasks in playbooks. | `cloudSoarIncidentTaskEdit` |
-| Task Reassign | Assign tasks in playbooks to users. | `cloudSoarIncidentTaskReassign` |
-| App Central Access | View [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `cloudSoarAppCentralAccess` |
-| App Central Export | Export integrations and playbooks from App Central. | `cloudSoarAppCentralExport` |
-| Integrations Access | View [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `cloudSoarIntegrationsAccess` |
-| Integrations Configure| Create and edit integrations. | `cloudSoarIntegrationsConfigure` |
-| Playbooks Access | View playbooks. | `cloudSoarPlaybooksAccess` |
-| Playbooks Configure| Create and edit playbooks. | `cloudSoarPlaybooksConfigure` |
+| Task Edit| Create, edit and close tasks in playbooks. | `cloudSoarIncidentTaskEdit` |
+| Task Reassign | Reassign tasks in playbooks to users. | `cloudSoarIncidentTaskReassign` |
+| App Central Access | View and install packages from [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `cloudSoarAppCentralAccess` |
+| App Central Export | Export integrations, playbooks, rules, actions and templates from App Central. | `cloudSoarAppCentralExport` |
+| Integrations Access | View and test [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `cloudSoarIntegrationsAccess` |
+| Integrations Configure| Create, edit, and manage integrations. | `cloudSoarIntegrationsConfigure` |
+| Playbooks Access | View and export playbooks. | `cloudSoarPlaybooksAccess` |
+| Playbooks Configure| Create, edit, and manage playbooks, including import, duplicate, and execute. | `cloudSoarPlaybooksConfigure` |
 | Bridge Monitoring Access |Monitor Bridge operations. | `cloudSoarBridgeMonitoringAccess` |
-| Observability Access | Access automation in the SaaS Log UI. | `cloudSoarObservabilityAccess` |
-| Observability Configure | Create and edit automation in the Sumo Logic SaaS Log Analytics Platform. | `cloudSoarObservabilityManagement` |
+| Observability Access | Access and monitor playbook executions in the Automation Service. | `cloudSoarObservabilityAccess` |
+| Observability Configure | Interact with running automations and perform manual actions during playbook execution. | `cloudSoarObservabilityManagement` |
 
 ## Alerting
 
