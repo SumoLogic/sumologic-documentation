@@ -28,8 +28,8 @@ Updated the UI design of checkbox and switch components to ensure consistency ac
 
 #### Integrations
 
-- **Azure AD**. Resolved an issue in the Reset User Password and Remove Member From Group actions that caused errors while processing responses.
-- **Microsoft Defender ATP**. Fixed the List Machine Actions issue where the machine name filter was not applied correctly.
+- **Azure AD**. Resolved an issue in the Reset User Password and Remove Member From Group actions that caused errors while processing responses. [Learn more](/docs/platform-services/automation-service/app-central/integrations/azure-ad/).
+- **Microsoft Defender ATP**. Fixed the List Machine Actions issue where the machine name filter was not applied correctly. [Learn more](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/).
 
 #### Playbooks
 
