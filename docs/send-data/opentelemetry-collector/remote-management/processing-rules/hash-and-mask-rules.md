@@ -1,5 +1,5 @@
 ---
-id: mask-rules
+id: hash-and-mask-rules
 title: OpenTelemetry Remote Management Hash and Mask Rules
 sidebar_label: Hash and Mask Rules
 description: Use hash and mask processing rules to replace an expression with the respective hash and mask strings.

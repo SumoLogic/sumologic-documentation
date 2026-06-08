@@ -33,7 +33,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules')}><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Rules icon" width="40"/><h4>OTRM Hash and Mask Rules</h4></a>
+  <a href={useBaseUrl('docs/send-data/opentelemetry-collector/remote-management/processing-rules/hash-and-mask-rules')}><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Rules icon" width="40"/><h4>OTRM Hash and Mask Rules</h4></a>
   <p>Create an OTRM hash and mask rule to replace an expression with the respective hash and mask string.</p>
   </div>
 </div>
