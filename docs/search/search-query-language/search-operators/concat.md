@@ -2,6 +2,7 @@
 id: concat
 title: concat Search Operator
 sidebar_label: concat
+description: Use the concat operator to join multiple strings, numbers, and fields into a single user-defined field.
 ---
 
 The `concat` operator allows you to concatenate or join multiple strings, numbers, and fields into a single user-defined field. It concatenates strings end-to-end and joins them into a new string that you define. For example, to concatenate the words "foot" and "ball" would give you "football". You can also use punctuation and spaces in quotes to concatenate strings in a readable way.

@@ -143,6 +143,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/claude-compliance')}><img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance.png')} alt="Claude Compliance icon" width="90"/><h4>Claude Compliance</h4></a>
+  <p>Monitor Claude platform activities, security events, and compliance governance.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/cloudflare')}><img src={useBaseUrl('img/integrations/saas-cloud/cloudflare.png')} alt="Cloudflare icon" width="40"/><h4>Cloudflare</h4></a>
   <p>Analyze logs, events, and trends from your websites and apps on the Cloudflare network.</p>
   </div>
@@ -181,6 +187,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/cyberark-audit')}><img src={useBaseUrl('img/send-data/cyberark.png')} alt="CyberArk icon" width="50"/><h4>CyberArk Audit</h4></a>
   <p>Gather information about your organization's cybersecurity practices to strengthen security.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+    <a href={useBaseUrl('docs/integrations/saas-cloud/cyberark-epm')}><img src={useBaseUrl('img/send-data/cyberark.png')} alt="CyberArk icon" width="50"/><h4>CyberArk EPM</h4></a>
+    <p>Gain comprehensive visibility into endpoint privilege management, policy enforcement, script activity, and user and endpoint risk with the CyberArk EPM app for Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -287,6 +299,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/litellm')}><img src={useBaseUrl('img/send-data/litellm-icon.png')} alt="LastPass icon" width="60" /><h4>LiteLLM</h4></a>
+  <p>Gain visibility into LLM usage, cost, latency, and performance across OpenAI, Bedrock, Groq, and other providers.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/microsoft-azure-ad-inventory')}><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="Active Directory icon" width="70" /><h4>Microsoft Azure AD Inventory</h4></a>
   <p>Identify security threats by analyzing users and devices logs.</p>
   </div>
@@ -377,14 +395,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <p>Analyze messages and clicks of malicious URLs to improve your security posture.</p>
   </div>
 </div>
-<!--
   <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/proofpoint-trap')}><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Proofpoint icon" width="120"/><h4>Proofpoint TRAP</h4></a>
   <p>Gain visibility into email threats detected and remediated by Proofpoint TRAP.</p>
   </div>
 </div>
--->
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/qualys-vmdr')}><img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="Qualys icon" width="120"/><h4>Qualys VMDR</h4></a>

@@ -34,6 +34,15 @@ module.exports = {
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
   headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'llms-txt',
+        href: '/llms.txt',
+        type: 'text/plain',
+        title: 'LLM Documentation Index',
+      },
+    },
     // Intellimize
     {
       tagName: 'style',
@@ -351,6 +360,7 @@ module.exports = {
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '628' },
       { property: 'og:image:alt', content: 'Sumo Logic Docs' },
+      { property: 'og:type', content: 'article' },
     ],
     announcementBar: {
       id: 'domain',

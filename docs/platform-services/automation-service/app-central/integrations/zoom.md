@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zoom.png')} alt="zoom" width="60"/>
 
-***Version: 2.1  
-Updated: Jun 22, 2023***
+***Version: 2.2  
+Updated: April 30, 2026***
 
 Monitor and respond to incidents involving Zoom video conferencing.
 
@@ -99,3 +99,4 @@ Messaging
 		- Update User
 		- Update User Settings
 * June 22, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v2.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

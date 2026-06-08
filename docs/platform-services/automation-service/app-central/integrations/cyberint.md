@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cyberint.png')} alt="cyberint" width="90"/>
 
-***Version: 1.1  
-Updated: June 17, 2024***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Cyberint offers to proactively monitor and positively impact external risk exposure and mitigation.
 
@@ -93,3 +93,4 @@ The execution result displays a message **Alerts is closed successfully**. This 
 
 * May 16, 2024 - First upload
 * June 17, 2024 - Improve documentation
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

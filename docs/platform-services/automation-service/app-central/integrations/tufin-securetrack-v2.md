@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/tufin-securetrack-v2.png')} alt="Tufin SecureTrack icon" width="100"/>
 
-***Version: 1.0  
-Updated: Apr 07, 2023***
+***Version: 1.1  
+Updated: April 30, 2026***
 
 Tufin SecureTrack is a security policy management solution that provides visibility, analysis and reporting capabilities for security policies.
 
@@ -49,3 +49,4 @@ For information about Tufin SecureTrack, see [Tufin SecureTrack documentation](h
 ## Change Log
 
 * April 7, 2023 (v1.0) - First upload
+* April 30, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

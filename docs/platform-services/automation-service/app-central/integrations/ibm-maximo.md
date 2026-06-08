@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ibm-maximo.png')} alt="IBM Maximo icon" width="60"/>
 
-***Version: 1.3  
-Updated: Jul 07, 2023***
+***Version: 1.4  
+Updated: April 29, 2026***
 
 The IBM Maximo is a single, integrated cloud-based platform that uses AI, IoT and analytics to optimize performance, extend asset lifecycles, and reduce operational downtime and costs.
 
@@ -58,3 +58,4 @@ For information about IBM Maximo, see [IBM Maximo documentation](https://www.ibm
 * July 7, 2023 (v1.3) - Changed action type to Notification for:
 	+ Create Ticket
 	+ Update Ticket
+* April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
