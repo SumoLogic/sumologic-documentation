@@ -44,7 +44,7 @@ When you run a dashboard that includes [sections (collapsible panels)](/docs/das
 If all sections have a default state of **Expanded** and the dashboard is fully expanded, the **Collapsed Panels** scan estimate does not appear. Similarly, if all sections have a default state of **Collapsed** and the dashboard is fully collapsed, the **Expanded Panels** scan estimate does not appear.
 :::
 
-## Monitors 
+## Monitors
 
 When [creating or modifying a monitor](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), you can view the Average scan, Daily scan, and Yearly scan data information based on the selected alert frequency by clicking the meter icon <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="Meter icon" width="25" /> on top of the **Monitor** right side panel. <br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/monitors_1.png')} alt="Monitors in right side panel" style={{border:'1px solid gray'}} width="450" /> 
 
