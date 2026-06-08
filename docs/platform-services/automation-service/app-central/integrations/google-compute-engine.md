@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
 ***Version: 1.0  
-Updated: June 5, 2026***
+Updated: June 8, 2026***
 
 Google Compute Engine is a scalable, high-performance virtual machine infrastructure service on Google Cloud that lets you create and manage VMs, persistent disks, and related compute resources programmatically.
 
@@ -106,4 +106,4 @@ For information about Google Compute Engine, see [Google Compute Engine document
 
 ## Change Log
 
-* June 5, 2026 (v1.0) - First upload
+* June 8, 2026 (v1.0) - First upload
