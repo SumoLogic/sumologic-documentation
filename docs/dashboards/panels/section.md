@@ -25,7 +25,7 @@ To add a section to your dashboard, follow the below steps:
 
 ## How to set a section as default
 
-To save the current state of a section as its default, click the three-dot kebab menu icon in the upper-right corner of the section and select **Set as Default**. This sets the section's default state to match how it is currently displayed.<br/><img src={useBaseUrl('img/dashboards/section/dashboard_section_set_as_default.png')} alt="dashboard_section_edit" style={{border: '1px solid gray'}} width="800"/>
+To save the current state of a section as its default, click the three-dot kebab menu icon in the upper-right corner of the section and select **Set as Default**. This sets the section's default state to match how it is currently displayed.<br/><img src={useBaseUrl('img/dashboards/section/dashboard_section_set_as_default.png')} alt="Set as Default option in the section kebab menu" style={{border: '1px solid gray'}} width="800"/>
     
 :::note
 The **Set as Default** option is greyed out when the section is in a collapsed state and its default state is already set to **Collapsed** in the edit window. Expand the section first to make the option clickable.
