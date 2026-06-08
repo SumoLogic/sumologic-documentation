@@ -5130,6 +5130,7 @@
   "/docs/send-data/installed-collectors/collector-installation-reference/downloadcollector-from-static-url": "/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url",
   "/docs/send-data/installed-collectors/sources/netflow-source": "/docs/send-data/installed-collectors",
   "/docs/send-data/opentelemetry-collector/remote-management/processing-rules/hash-rules": "/docs/send-data/opentelemetry-collector/remote-management",
+  "/docs/dashboards/section": "/docs/dashboards/panels/section",
   "/Default.htm": "/docs/get-started",
   "/Search_Examples_Cheat_Sheet.htm": "/docs/search/search-query-language",
   "/docs/cli": "/docs/get-started",
