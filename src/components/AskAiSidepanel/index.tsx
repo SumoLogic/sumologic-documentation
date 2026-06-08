@@ -159,8 +159,7 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
     return null;
   }
 
-  const { assistantId, suggestedQuestions } = algoliaConfig.askAi;
-  const { appId, apiKey, indexName } = algoliaConfig;
+  const { assistantId, indexName, appId, apiKey, suggestedQuestions } = algoliaConfig.askAi;
 
   const handleAlgoliaClose = () => {
     if (!isResizingRef.current) onClose();
@@ -177,7 +176,6 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
           apiKey={apiKey}
           indexName={indexName}
           assistantId={assistantId}
-          agentStudio={true}
           isOpen={isOpen}
           onOpen={() => {}}
           onClose={handleAlgoliaClose}

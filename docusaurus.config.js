@@ -387,10 +387,11 @@ module.exports = {
       contextualSearch: false,
       searchPagePath: 'docs-search', // Default value is 'search'; renamed to 'docs-search' so it doesn't conflict with '/Search' redirect
       insights: true,
-      agentStudio: true,
       askAi: {
-        assistantId: '1920b662-740d-46e1-9c69-ee6332433380',
-        suggestedQuestions: true,
+        assistantId: 'T7pp7iENesuU',
+        indexName: 'crawler_sumodocs',
+        apiKey: 'fb2f4e1fb40f962900631121cb365549',
+        appId: '2SJPGMLW1Q',
       },
       insightsConfig: {
         useCookie: true, // alt to useCookie: true,
