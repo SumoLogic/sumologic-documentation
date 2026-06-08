@@ -576,18 +576,18 @@ Sumo Logic uses exporter-side batching instead of the batch processor. If you pr
 #### Queue Size
 When an exporter is preceded by a batch processor, `sending_queue.queue_size` represents the number of batches produced by the batch processor. With exporter-side batching, the batch processor is removed, so `sending_queue.queue_size` instead represents the number of individual records. As a result, if the queue size is not adjusted accordingly, the queue may fill up more quickly and potentially lead to data loss.
 
-To avoid this, it is recommended to increase `sending_queue.queue_size` by a factor equal to the batch processor’s `send_batch_size`.
+To avoid this, we recommend increasing `sending_queue.queue_size` by a factor equal to the batch processor’s `send_batch_size`.
 
 ##### Example configuration
-Assuming we have a batch processor with config
+If you have a batch processor configured as follows:
 ```yaml
 batch:
-  send_batch_size: 1_024
+  send_batch_size: 1024
   timeout: 1s
-  send_batch_max_size: 2_048
+  send_batch_max_size: 2048
 ```
 
-We have the `sending_queue.queue_size` configured as,
+And the `sending_queue.queue_size` configured as:
 ```yaml
 metadata:
   logs:
@@ -599,7 +599,7 @@ metadata:
               queue_size: 1000
 ```
 
-The new config should be,
+You'd need to update to the following configuration:
 ```yaml
 metadata:
   logs:
@@ -611,7 +611,7 @@ metadata:
               queue_size: 1024000 ## = 1000 * 1024
 ```
 #### Batch Size
-The batching logic is moved from processor to exporter so if you have custom configured the batch size like,
+If your batch processor has custom batch size settings like the example below:
 ```yaml
 metadata:
   logs:
@@ -624,7 +624,7 @@ metadata:
             send_batch_max_size: 10000
 ```
 
-The new config should be,
+You'd need to migrate them to the exporter configuration as follows:
 ```yaml
 metadata:
   logs:
