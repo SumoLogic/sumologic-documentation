@@ -4,6 +4,10 @@ title: Doc (Generic) Template
 description: Use this generic template to create a Sumo Logic doc.
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 Use this generic template to create a new doc. Copy and paste this into your new .md file and refer to the [Style Guide](/docs/contributing/style-guide).
 
 ```md
@@ -13,10 +17,6 @@ id: doc
 title: Doc Title
 description: Use this generic template to create a Sumo Logic doc.
 ---
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

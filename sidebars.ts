@@ -125,6 +125,7 @@ module.exports = {
                 'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-traces',
+                'send-data/opentelemetry-collector/data-source-configurations/windows-active-directory-inventory',
                 'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
               ]
             },
@@ -2670,6 +2671,7 @@ integrations: [
           'integrations/saas-cloud/crowdstrike-fdr-host-inventory',
           'integrations/saas-cloud/crowdstrike-spotlight',
           'integrations/saas-cloud/cyberark-audit',
+          'integrations/saas-cloud/cyberark-epm',
           'integrations/saas-cloud/databricks-audit',
           'integrations/saas-cloud/datadog',
           'integrations/saas-cloud/digital-guardian-arc',
