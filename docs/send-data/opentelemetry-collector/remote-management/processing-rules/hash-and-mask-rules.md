@@ -14,7 +14,7 @@ The hash algorithm used is **SHA-256**.
 Ingestion volume is calculated after the hash filter is applied. If the hash reduces the log size, the smaller size will be measured against ingestion limits.
 
 :::note
-Currently available for Local File ST only.
+Currently available for all standard STs, except Windows and Syslog.
 :::
 
 ### How it works
