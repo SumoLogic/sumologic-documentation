@@ -5,6 +5,13 @@ sidebar_label: Changelog
 description: Changelog for Mac source template for OpenTelemetry.
 ---
 
+## [7.0.0] - 2026-06-11
+### Added
+- Hashing functionality
+- Validation for field table
+### Removed
+- Removed batch processor in favour of batching through sumologic exporter
+
 ## [6.0.0] - 2025-11-07
 ### Added
 - Validation for regular expression

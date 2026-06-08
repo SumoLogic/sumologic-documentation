@@ -5,6 +5,13 @@ sidebar_label: Changelog
 description: Changelog for Elasticsearch source template for OpenTelemetry.
 ---
 
+## [3.0.0] - 2026-06-11
+### Added
+- Hashing functionality
+- Validation for field table
+### Removed
+- Removed batch processor in favour of batching through sumologic exporter
+
 ## [2.0.0] - 2025-11-07
 ### Added
 - Validation for endpoint and regular expression

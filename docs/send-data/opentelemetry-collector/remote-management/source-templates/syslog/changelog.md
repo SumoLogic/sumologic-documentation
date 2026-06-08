@@ -5,6 +5,12 @@ sidebar_label: Changelog
 description: Changelog for Syslog source template for OpenTelemetry.
 ---
 
+## [4.0.0] - 2026-06-11
+### Added
+- Validation for field table
+### Removed
+- Removed batch processor in favour of batching through sumologic exporter
+
 ## [3.0.0] - 2025-11-07
 ### Added
 - Validation for regular expression
