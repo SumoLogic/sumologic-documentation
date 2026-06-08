@@ -96,7 +96,6 @@ If you use `_dataTier` to specify a tier other than Continuous in a query of sch
 
 ### API support with rate limiting
 
-The rate limits described in [Rate limit throttling](/docs/api/search-job/#rate-limit-throttling) apply to cross-tier searches with these concurrent active job limits: 
+The rate limits described in [Rate limit throttling](/docs/api/search-job/#rate-limit-throttling) applies to 200 active concurrent search jobs to your organization for the Continuous Tier (`_dataTier=Continuous`), Frequent Tier (`_dataTier=Frequent`), Infrequent Tier (`_dataTier=Infrequent`), and All Tiers (`_dataTier=All`)
 
-* A limit of 200 active concurrent search jobs applies to your organization for the Continuous Tier (`_dataTier=Continuous`), the Infrequent Tier (`_dataTier=Infrequent`), and All Tiers (`_dataTier=All`).
-* When searching only the Frequent Tier (`_dataTier=Frequent`), a rate limit of 20 concurrent search jobs applies to your organization.
+
