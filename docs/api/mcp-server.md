@@ -1,7 +1,7 @@
 ---
 id: mcp-server
 title: Sumo Logic MCP Server
-description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents using Claude Code CLI.
+description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents using Claude Code CLI or the Claude desktop app.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -25,7 +25,7 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
 ## Prerequisites
 
 * **Sumo Logic Administrator role**. You'll need this to create OAuth clients. If you're unsure whether you have this role, check your [Preferences](/docs/get-started/onboarding-checklists/).
-* **Sumo Logic OAuth client credentials**. The MCP client uses [OAuth client credentials](/docs/manage/security/oauth) to authenticate with Sumo Logic. For Claude Code CLI, you'll create them during the setup steps below.
+* **Sumo Logic OAuth client credentials**. The MCP client uses [OAuth client credentials](/docs/manage/security/oauth) to authenticate with Sumo Logic. You'll create them during the setup steps below.
 * **MCP server URL for your deployment**. OAuth tokens are deployment-bound, so you must use the correct URL for your Sumo Logic deployment:
    | Deployment | MCP Server URL |
    | :--- | :--- |
@@ -39,12 +39,18 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
    | US East (N. Virginia) | `https://mcp.sumologic.com/mcp` |
    | US East (N. Virginia) - FedRAMP | `https://mcp.fed.sumologic.com/mcp` |
    | US West (Oregon) | `https://mcp.us2.sumologic.com/mcp` |
-* **An MCP-compatible client that supports OAuth 2.0 Authorization Code flow**. Any MCP client that supports OAuth 2.0 Authorization Code flow with a client ID and secret will work.
-   * We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or Anthropic Console account).
+* **A supported MCP client**. Setup instructions are provided below for:
+   * [Claude Code CLI](https://code.claude.com/docs/en/quickstart) — requires a paid Claude subscription or Anthropic Console account.
+   * [Claude desktop app (Cowork)](/docs/get-started/cowork) — requires a Claude Teams or Enterprise account.
+
+:::note Teams and Enterprise accounts
+For Claude Teams and Enterprise accounts, your organization admin must allow MCP servers before members can connect them. Admins can manage this in **Admin settings > Capabilities**. If you cannot complete the setup steps below, contact your org admin to confirm MCP access is enabled.
+:::
 
 ## Known limitations
 
 * **VS Code**. Recent VS Code releases do not work with the authorization code flow when an explicit client ID and secret are provided.
+* **MCP config directories**. There is no shared org-level MCP directory that Claude reads automatically. MCPs must be registered per-client using the methods documented below.
 
 :::note
 If you have questions about client compatibility, [contact Sumo Logic Support](https://support.sumologic.com/support/s).
@@ -94,6 +100,58 @@ Claude Code CLI uses OAuth 2.0 Authorization Code flow for authentication. Brows
 1. Claude Code will open a browser window to authenticate with Sumo Logic. Log in to complete the OAuth flow.
 1. Verify the connection with `/mcp` to confirm the server is connected.<br/><img src={useBaseUrl('img/api/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
+
+## Configure in Claude Desktop App (Cowork)
+
+The Claude desktop app (including Cowork) uses a JSON configuration file rather than CLI commands to register MCP servers.
+
+### Authentication
+
+The desktop app uses OAuth 2.0 Authorization Code flow. A browser window opens on first use to complete authentication with Sumo Logic. Token refresh is handled automatically.
+
+### Setup
+
+1. In Sumo Logic, create an OAuth client:
+   1. Go to **Administration** > **Security** > **OAuth Clients**.
+   1. Click **+ Add Client**.
+   1. For **Type**, select **Authorization Code**.
+   1. Enter a **Name** and optional **Description**.
+   1. For **Redirect URI**, enter:
+      ```
+      http://localhost:8888/callback
+      ```
+   1. Click **Save**.
+   1. Copy the **Client ID** and **Client Secret**.
+   For more details, see [OAuth Client Setup](/docs/manage/security/oauth#authorization-code-flow).
+1. Open your Claude desktop app configuration file in a text editor:
+   * **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+   * **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+   If the file doesn't exist yet, create it.
+1. Add the Sumo Logic MCP server under `mcpServers`. Replace `<client-id>`, `<client-secret>`, and `<MCP-server-URL>` with your values from the steps above:
+   ```json
+   {
+     "mcpServers": {
+       "sumo-logic": {
+         "type": "http",
+         "url": "<MCP-server-URL>",
+         "oauth": {
+           "clientId": "<client-id>",
+           "clientSecret": "<client-secret>",
+           "callbackPort": 8888
+         }
+       }
+     }
+   }
+   ```
+   If you have existing entries in `mcpServers`, add the `sumo-logic` block alongside them.
+1. Save the file and **restart the Claude desktop app** for the change to take effect.
+1. On first use, the app will open a browser window to authenticate with Sumo Logic. Log in to complete the OAuth flow.
+1. To verify the connection, start a new conversation and ask Claude to `List my available MCP tools`.
+
+:::note
+The `mcpServers` config is per-machine and per-user. Each team member needs to add the config to their own `claude_desktop_config.json`. There is no shared org-level config file.
+:::
 
 ## Available MCP tools
 
@@ -360,3 +418,9 @@ For bulk data retrieval or model training, the [Search Job API](/docs/api/search
 ### Where does my agent run?
 
 Agents connected via MCP run in your own environment, not within Sumo Logic infrastructure.
+
+### Can I share my MCP configuration with my whole team at once?
+
+No. MCP servers must be registered individually on each team member's machine — either via `claude mcp add` (Claude Code CLI) or by editing `claude_desktop_config.json` (Claude desktop app). There is no shared org-level config directory that Claude reads automatically.
+
+For Teams and Enterprise accounts, your org admin must first enable MCP access under **Admin settings > Capabilities**.
