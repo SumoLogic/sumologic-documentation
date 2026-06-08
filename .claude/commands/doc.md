@@ -1,18 +1,6 @@
 # Create New Doc
 
-Automates the creation of general Sumo Logic documentation for features, how-tos, concepts, reference pages, and troubleshooting guides.
-
-## What this command does
-
-When you invoke `doc`, Claude will guide you through:
-
-1. **Determine doc type**. Feature, how-to, concept, reference, or troubleshooting.
-2. **Gather information**. Title, description, file path, and keywords.
-3. **Create markdown file**. Generate file with proper frontmatter and basic structure.
-4. **Add to navigation**. Guide on adding to sidebars.ts.
-5. **Add to hub page**. Suggest adding card to parent index page.
-6. **Create CID mapping**. Add permanent URL if needed for UI links.
-7. **Validate and preview**. Check structure and provide next steps.
+Use this command to create a new feature doc, how-to, concept, reference, or troubleshooting guide — it scaffolds the file, frontmatter, structure, and sidebar entry.
 
 ## When to use this command
 

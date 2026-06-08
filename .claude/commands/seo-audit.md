@@ -1,6 +1,6 @@
 # SEO/AEO/GEO Audit — Search and AI Discoverability Check
 
-Audits documentation for search engine optimization (SEO), answer engine optimization (AEO), and generative engine optimization (GEO) signals. Produces a prioritized report and offers to apply fixes.
+Use this command to audit a doc for SEO, AEO, and GEO signals — run it before any PR on new or updated content, even if you're not focused on search optimization.
 
 ## Signal definitions
 
@@ -45,9 +45,12 @@ Use the Read tool to read the complete file content including frontmatter.
 
 * [ ] First paragraph (after frontmatter) is substantive — tells the reader what the doc covers, why it matters, and who it is for — **Warning** if it is thin (under 50 words) or just restates the title
 * [ ] Page has at least one internal link to a related doc — **Warning** if none
+* [ ] Internal link anchor text is descriptive (not "click here" or "here") — **Warning** if bare
+* [ ] No bare external URLs — wrap in markdown link syntax — **Warning** if present
 
 **Images**
 
+* [ ] All images have non-empty `alt` text — **Critical** if missing
 * [ ] Alt text describes the image content, not just "screenshot" or the filename — **Warning** if generic
 
 ### Step 4: Run AEO checks
@@ -129,7 +132,11 @@ Do not modify files without explicit user approval.
 
 | Issue | Why it matters |
 |-------|---------------|
+| Missing `description` | Search engines cannot generate a preview snippet; AI tools have no summary to cite |
+| Missing `title` | Page cannot be indexed or linked properly |
 | `title` over 60 chars | Truncated in search results; first 60 chars carry the most weight |
+| H1 in body | Duplicate H1 confuses search engines and breaks page structure |
+| Missing image alt text | Accessibility failure; images are invisible to search crawlers |
 | `slug` on regular page | Overrides URL derived from file path; breaks sidebar linking |
 
 ### Warnings

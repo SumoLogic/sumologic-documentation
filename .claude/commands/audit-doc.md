@@ -1,18 +1,12 @@
 # Audit Doc — Documentation Quality Check
 
-Performs comprehensive quality checks on documentation files to ensure adherence to Sumo Logic style guidelines, proper structure, and completeness.
+Use this command to audit a doc for style, structure, links, and frontmatter compliance — run it before submitting any PR, after creating a new doc, or when reviewing community contributions.
 
-## What this command does
+## Gotchas
 
-When you invoke `/audit-doc`, Claude will:
-
-1. **Read and analyze the specified doc file**
-2. **Check frontmatter**. Validate required fields and format
-3. **Review content structure**. Check headings, sections, and organization
-4. **Validate links and images**. Check paths, alt text, and references
-5. **Check style adherence**. Apply Sumo Logic style guide rules
-6. **Report findings**. Provide detailed feedback with specific line numbers
-7. **Suggest fixes**. Offer actionable recommendations
+- H1 headings and the `title` frontmatter field use **Title Case**. H2, H3, H4 use **sentence case** (only first word and proper nouns capitalized).
+- Skip warnings for legacy docs with an established style, docs tagged `noindex` (temporary drafts), or third-party content not meant to be modified.
+- `/audit-doc` does not check SEO/AEO/GEO signals — run `/seo-audit` separately for discoverability.
 
 ## When to use this command
 
@@ -20,7 +14,6 @@ When you invoke `/audit-doc`, Claude will:
 * After creating a new doc to validate structure
 * When updating existing docs to ensure consistency
 * To identify broken links or missing images
-* To verify adherence to Sumo Logic style guidelines
 * When reviewing community contributions
 
 ## Workflow
@@ -67,7 +60,7 @@ Check for required fields and proper formatting:
 * [ ] Only one H1 heading (the title in frontmatter)
 * [ ] H2 sections used for main sections
 * [ ] No skipped heading levels (H2 → H4 without H3)
-* [ ] Headings use sentence case (only first word and proper nouns capitalized)
+* [ ] H1 uses Title Case; H2, H3, H4 use sentence case (only first word and proper nouns capitalized)
 
 **Required sections (by doc type):**
 
