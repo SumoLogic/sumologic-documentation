@@ -41,7 +41,7 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
    | US West (Oregon) | `https://mcp.us2.sumologic.com/mcp` |
 * **A supported MCP client**. Setup instructions are provided below for:
    * [Claude Code CLI](https://code.claude.com/docs/en/quickstart) — requires a paid Claude subscription or Anthropic Console account.
-   * [Claude desktop app (Cowork)](/docs/get-started/cowork) — requires a Claude Teams or Enterprise account.
+   * [Claude desktop app (Cowork)](https://code.claude.com/docs/en/desktop) — requires a Claude Teams or Enterprise account.
 
 :::note Teams and Enterprise accounts
 For Claude Teams and Enterprise accounts, your organization admin must allow MCP servers before members can connect them. Admins can manage this in **Admin settings > Capabilities**. If you cannot complete the setup steps below, contact your org admin to confirm MCP access is enabled.
@@ -50,7 +50,7 @@ For Claude Teams and Enterprise accounts, your organization admin must allow MCP
 ## Known limitations
 
 * **VS Code**. Recent VS Code releases do not work with the authorization code flow when an explicit client ID and secret are provided.
-* **MCP config directories**. There is no shared org-level MCP directory that Claude reads automatically. MCPs must be registered per-client using the methods documented below.
+* **MCP config directories**. There is no shared org-level MCP directory that Claude reads automatically. MCPs must be registered per-user using the methods documented below.
 
 :::note
 If you have questions about client compatibility, [contact Sumo Logic Support](https://support.sumologic.com/support/s).
@@ -103,11 +103,15 @@ Claude Code CLI uses OAuth 2.0 Authorization Code flow for authentication. Brows
 
 ## Configure in Claude Desktop App (Cowork)
 
-The Claude desktop app (including Cowork) uses a JSON configuration file rather than CLI commands to register MCP servers.
+The Claude desktop app (including the Cowork tab) shares MCP configuration with Claude Code. The recommended setup path is the same `claude mcp add` terminal command used for the CLI — it registers the server at user scope in `~/.claude.json`, making it available across all Claude surfaces on your machine.
+
+:::note
+`claude_desktop_config.json` is for the separate Claude Desktop chat app and is **not** read by the Claude Code desktop app or Cowork. Do not edit that file for this setup.
+:::
 
 ### Authentication
 
-The desktop app uses OAuth 2.0 Authorization Code flow. A browser window opens on first use to complete authentication with Sumo Logic. Token refresh is handled automatically.
+OAuth 2.0 Authorization Code flow is used. A browser window opens on first use to authenticate with Sumo Logic. Token refresh is handled automatically.
 
 ### Setup
 
@@ -123,34 +127,56 @@ The desktop app uses OAuth 2.0 Authorization Code flow. A browser window opens o
    1. Click **Save**.
    1. Copy the **Client ID** and **Client Secret**.
    For more details, see [OAuth Client Setup](/docs/manage/security/oauth#authorization-code-flow).
-1. Open your Claude desktop app configuration file in a text editor:
-   * **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-   * **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
-
-   If the file doesn't exist yet, create it.
-1. Add the Sumo Logic MCP server under `mcpServers`. Replace `<client-id>`, `<client-secret>`, and `<MCP-server-URL>` with your values from the steps above:
-   ```json
-   {
-     "mcpServers": {
-       "sumo-logic": {
-         "type": "http",
-         "url": "<MCP-server-URL>",
-         "oauth": {
-           "clientId": "<client-id>",
-           "clientSecret": "<client-secret>",
-           "callbackPort": 8888
-         }
-       }
-     }
-   }
+1. Open a Terminal window and run the following command. Replace `<client-id>` and `<MCP-server-URL>` with your values. When prompted, enter your **Client Secret** — it is stored securely in your system keychain, not in any config file.
+   ```bash
+   claude mcp add --transport http \
+     --scope user \
+     --client-id "<client-id>" --client-secret --callback-port 8888 \
+     sumo-logic "<MCP-server-URL>"
    ```
-   If you have existing entries in `mcpServers`, add the `sumo-logic` block alongside them.
-1. Save the file and **restart the Claude desktop app** for the change to take effect.
-1. On first use, the app will open a browser window to authenticate with Sumo Logic. Log in to complete the OAuth flow.
-1. To verify the connection, start a new conversation and ask Claude to `List my available MCP tools`.
+1. Open or restart the Claude desktop app. The server is now registered at user scope and will be available in both the Code and Cowork tabs.
+1. To authenticate, open a session and run `/mcp`, select **sumo-logic**, then **Authenticate**. A browser window will open to complete the OAuth login.
+1. To verify the connection, ask Claude to `List my available MCP tools`.
+
+### Alternative: Connectors UI
+
+If you have the **Code tab** available in your Claude desktop app, you can add the server through the Connectors UI instead of the terminal:
+
+1. In the Code tab, open **Settings** and navigate to **Connectors**.
+1. Click **Add custom connector** and enter your deployment's MCP server URL.
+1. Complete the OAuth authentication in the browser.
+
+The Connectors UI does not support entering a pre-registered client ID and secret directly. If the server returns an authentication error, use the terminal method above instead.
+
+### Advanced: Edit `~/.claude.json` directly
+
+For scripted or automated setup, you can write the server entry directly to `~/.claude.json` under the top-level `mcpServers` key. The client secret must be provided separately via `--client-secret` (it is stored in the keychain, not in the file):
+
+```bash
+claude mcp add-json sumo-logic \
+  '{"type":"http","url":"<MCP-server-URL>","oauth":{"clientId":"<client-id>","callbackPort":8888}}' \
+  --client-secret
+```
+
+The JSON structure for reference:
+
+```json
+{
+  "mcpServers": {
+    "sumo-logic": {
+      "type": "http",
+      "url": "<MCP-server-URL>",
+      "oauth": {
+        "clientId": "<client-id>",
+        "callbackPort": 8888
+      }
+    }
+  }
+}
+```
 
 :::note
-The `mcpServers` config is per-machine and per-user. Each team member needs to add the config to their own `claude_desktop_config.json`. There is no shared org-level config file.
+The `mcpServers` config in `~/.claude.json` is per-machine and per-user. Each team member must register the server on their own machine. There is no shared org-level config directory.
 :::
 
 ## Available MCP tools
@@ -421,6 +447,10 @@ Agents connected via MCP run in your own environment, not within Sumo Logic infr
 
 ### Can I share my MCP configuration with my whole team at once?
 
-No. MCP servers must be registered individually on each team member's machine — either via `claude mcp add` (Claude Code CLI) or by editing `claude_desktop_config.json` (Claude desktop app). There is no shared org-level config directory that Claude reads automatically.
+No. MCP servers must be registered individually on each team member's machine via `claude mcp add`. There is no shared org-level config directory that Claude reads automatically. For project-scoped sharing, you can commit `.mcp.json` to your repository — teammates will be prompted to approve it when they open the project.
 
 For Teams and Enterprise accounts, your org admin must first enable MCP access under **Admin settings > Capabilities**.
+
+### Why doesn't editing `claude_desktop_config.json` work?
+
+That file is for the separate **Claude Desktop chat app** and is not read by the Claude Code desktop app or the Cowork tab. For Cowork and Claude Code desktop, use `claude mcp add` from your terminal or edit `~/.claude.json` directly.
