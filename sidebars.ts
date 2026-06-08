@@ -125,6 +125,7 @@ module.exports = {
                 'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-traces',
+                'send-data/opentelemetry-collector/data-source-configurations/windows-active-directory-inventory',
                 'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
               ]
             },
@@ -1332,6 +1333,7 @@ module.exports = {
             'dashboards/panels/pie-charts',
             'dashboards/panels/sankey-charts',
             'dashboards/panels/scatter-charts',
+            'dashboards/panels/section',
             'dashboards/panels/single-value-charts',
             'dashboards/panels/table-charts',
           ],
