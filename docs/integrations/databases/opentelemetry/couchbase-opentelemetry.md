@@ -86,9 +86,9 @@ The files are typically located in folder `/opt/couchbase/var/lib/couchbase/logs
 You can add any custom fields which you want to tag along with the data ingested in Sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
-:::note
-The latest version of the App includes a downloadable configuration YAML compatible with Sumo Logic OTel Collector v0.153 and above.
-:::
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-YAML.png' style={{border:'1px solid gray'}} alt="Configuration" />
 
