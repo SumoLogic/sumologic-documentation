@@ -111,13 +111,19 @@ exporters:
 ```
 
 :::note
+The [Batch processor][batchprocessor] from upstream is in plan for deprecation over the exporter batching. [Ref](https://github.com/open-telemetry/opentelemetry-collector/pull/15273)
+:::
+
+:::note
 If you are utilizing the [Sumo Logic exporter][sumologicexporter] to send data in a format **other than** OTLP, it is possible to explicitly restrict the size of the requests in bytes by utilizing the configuration option `max_request_body_size`.
 :::
 
 Learn more about these processors:
-* [exporterbatching]
 * [memorylimiterprocessor]
 * [filterprocessor]
+
+Learn more above these exporters
+* [exporterbatching]
 * [sumologicexporter]
 
 ## Data Tagging Recommendations
@@ -186,6 +192,7 @@ Refer to the [Fields](/docs/manage/fields/) documentation for more information o
 :::
 
 [exporterbatching]: https://github.com/open-telemetry/opentelemetry-collector/blob/main/exporter/exporterhelper/README.md#sending-queue-batch-settings
+[batchprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/batchprocessor
 [memorylimiterprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor
 [filterprocessor]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/filterprocessor
 [sumologicexporter]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/exporter/sumologicexporter
