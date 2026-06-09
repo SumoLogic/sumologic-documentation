@@ -1334,6 +1334,7 @@ module.exports = {
             'dashboards/panels/pie-charts',
             'dashboards/panels/sankey-charts',
             'dashboards/panels/scatter-charts',
+            'dashboards/panels/section',
             'dashboards/panels/single-value-charts',
             'dashboards/panels/table-charts',
           ],
