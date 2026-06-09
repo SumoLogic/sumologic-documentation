@@ -23,7 +23,7 @@ This feature is in Private Preview. For more information, contact your Sumo Logi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Views page provides a unified interface to discover, filter, and manage all your views and their associated data sources in one place. It replaces the previous Scheduled Views page and consolidates all view types, including scheduled views, scheduled searches, and adhoc searches, into a single listing under Data Management.
+The **Views** page provides a unified interface to discover, filter, and manage all your views and their associated data sources in one place. It replaces the previous **Scheduled Views** page and consolidates all view types, including scheduled views, scheduled searches, and ad hoc searches, into a single listing under **Data Management**.
 
 ## What are views?
 
