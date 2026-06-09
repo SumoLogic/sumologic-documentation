@@ -25,7 +25,7 @@ Google Cloud Armor helps you protect your applications and websites against deni
 The following table lists the required IAM roles for each action:
 
 | Action | Required Role | Permission |
-|--------|--------------|------------|
+|:--------|:--------------|:------------|
 | Get Rule | Security Admin (`roles/iam.securityAdmin`) | `compute.securityPolicies.getRule` |
 | Get Rule Hits Daemon | Security Admin (`roles/iam.securityAdmin`) | `compute.securityPolicies.get` |
 | Get Security Policy | Security Admin (`roles/iam.securityAdmin`) | `compute.securityPolicies.get` |
