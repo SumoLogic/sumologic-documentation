@@ -570,6 +570,87 @@ The above, in connection with PVC monitoring, can lead to constant alerts (e.g.,
 [filling_up_alert]: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubepersistentvolumefillingup/
 [sumo-otelcol-batching-doc]: ../../opentelemetry-collector/data-source-configurations/additional-configurations-reference/#using-batch-processor-to-batch-data
 
+### Configuring Exporter-Side Batching
+Sumo Logic uses exporter-side batching instead of the batch processor. If you previously configured the batch processor, update your settings as follows. For more details, see [OpenTelemetry Collector issue #8122](https://github.com/open-telemetry/opentelemetry-collector/issues/8122).
+
+#### Queue Size
+When an exporter is preceded by a batch processor, `sending_queue.queue_size` represents the number of batches produced by the batch processor. With exporter-side batching, the batch processor is removed, so `sending_queue.queue_size` instead represents the number of individual records. As a result, if the queue size is not adjusted accordingly, the queue may fill up more quickly and potentially lead to data loss.
+
+To avoid this, we recommend increasing `sending_queue.queue_size` by a factor equal to the batch processor’s `send_batch_size`.
+
+##### Example configuration
+If you have a batch processor configured as follows:
+```yaml
+batch:
+  send_batch_size: 1024
+  timeout: 1s
+  send_batch_max_size: 2048
+```
+
+And the `sending_queue.queue_size` configured as:
+```yaml
+metadata:
+  logs:
+    config:
+      merge:
+        exporters:
+          otlphttp:
+            sending_queue:
+              queue_size: 1000
+```
+
+You'd need to update to the following configuration:
+```yaml
+metadata:
+  logs:
+    config:
+      merge:
+        exporters:
+          otlphttp:
+            sending_queue:
+              queue_size: 1024000 ## = 1000 * 1024
+```
+#### Batch Size
+If your batch processor has custom batch size settings like the example below:
+```yaml
+metadata:
+  logs:
+    config:
+      merge:
+        processors:
+          batch:
+            timeout: 5s
+            send_batch_size: 5000
+            send_batch_max_size: 10000
+```
+
+You'd need to migrate them to the exporter configuration as follows:
+```yaml
+metadata:
+  logs:
+    config:
+      merge:
+        exporters:
+          sumologic: ## for each exporter
+            sending_queue:
+              ## If you had the old queue value as x 
+              ## the new queue_size should x * 5000
+              queue_size: 5000000
+              batch:
+                min_size: 5000
+                max_size: 10000
+                flush_timeout: 5s
+```
+For exporter batch config details, see [Sending Queue Batch Settings](https://github.com/open-telemetry/opentelemetry-collector/blob/main/exporter/exporterhelper/README.md#sending-queue-batch-settings).
+
+
+If you have completed the configuration changes and want to proceed with the installation, set this flag to `true` to acknowledge that you understand the changes and their impact.
+
+```yaml
+sumologic:
+  customBatchingConfigured: true
+```
+
 ### Compaction
 
 The OpenTelemetry Collector doesn't have a compaction mechanism. Local storage can only grow - it can reuse disk space that has already been allocated, but not free it. This leads to a situation where the database file can grow a lot (due to a spike in data traffic) but after some time only small piece of the file will be used for data storage (until next spike).
