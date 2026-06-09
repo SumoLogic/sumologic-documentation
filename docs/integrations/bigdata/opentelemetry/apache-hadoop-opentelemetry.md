@@ -116,6 +116,10 @@ Below are the inputs required for configuration:
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click the **Download YAML File** button to get the YAML file.
 
+:::note
+The latest version of the App includes a downloadable configuration YAML compatible with Sumo Logic OTel Collector v0.153 and above.
+:::
+
 import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
 
 <EnvVarOpt/>

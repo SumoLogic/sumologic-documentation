@@ -64,6 +64,10 @@ You can add any custom fields that you want to tag along with the data ingested 
 
 Click on the **Download YAML File** button to get the YAML file.
 
+:::note
+The latest version of the App includes a downloadable configuration YAML compatible with Sumo Logic OTel Collector v0.153 and above.
+:::
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic

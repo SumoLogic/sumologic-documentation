@@ -157,6 +157,10 @@ Path of the log file configured to capture puppet access logs and puppet report 
 
 Click on the **Download YAML File** button to get the yaml file.
 
+:::note
+The latest version of the App includes a downloadable configuration YAML compatible with Sumo Logic OTel Collector v0.153 and above.
+:::
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
