@@ -68,7 +68,6 @@ Use Custom configuration to customize the collection of your logs, metrics and t
 There are some processors provided in `sumologic.yaml` that are intended to be used in every pipeline.
 
 * **Memory limiter processor**. It is used to prevent out-of-memory situations on the collector. It should be always first on the processor's list. For more information, refer to the [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor#memory-limiter-processor).
-* **Batch processor**. It accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information.
 * **ResourceDetection/System processor**. [It can be used](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/resourcedetectionprocessor/) to detect resource information from the host in a format that conforms to the [OpenTelemetry resource semantic conventions](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/resource/semantic_conventions/), and append or override the resource value in telemetry data with this information. You can also tag labels like `host.name`, `host.id`, `os.type`.
 
 We also expect the Sumo Logic exporter to be included in the `exporters` section.
@@ -83,28 +82,32 @@ service:
         - otlp
       processors:
         - memory_limiter
-        - batch
       exporters:
         - sumologic
 ```
 
-## Using Batch processor to batch data
+## Using Exporter Batching to batch data
 
-The [Batch processor][batchprocessor] can be utilized to convert the processed data into batches that are larger than a specified size or time interval. This can aid in compressing the data more effectively and minimizing the number of requests sent by the exporters.
+The [Exporter Batching][exporterbatching] can be utilized to convert the processed data into batches that are larger than a specified size or time interval. This can aid in compressing the data more effectively and minimizing the number of requests sent by the exporters.
 
-It is highly recommended to use this processor in every pipeline. It should be defined after [memory limiter processor][memorylimiterprocessor] and any processors that drop the data, such as [filter processor][filterprocessor].
+It is highly recommended to use this configuration in every pipeline. It should be defined under individual exporters.
 
 In addition to setting a lower batch size, it is also possible to set a maximal batch size.
 
-We highly recommend setting that limit to avoid sudden increases in request sizes in case more data is temporarily received. The value we recommend to set is `2 * send_batch_size`.
+We highly recommend setting that limit to avoid sudden increases in request sizes in case more data is temporarily received. The value we recommend to set is `2 * min_size`.
 
 Overall, we recommend the following default configuration for this processor.
 
 ```yaml
-batch:
-  send_batch_size: 1_024
-  timeout: 1s
-  send_batch_max_size: 2_048 ## = 2 * 1024
+exporters:
+  sumologic:
+    metric_format: prometheus
+    sending_queue:
+      queue_size: 1024000
+      batch:
+        flush_timeout: 1s
+        min_size: 1024
+        max_size: 2048 ## = 2 * 1024
 ```
 
 :::note
@@ -112,7 +115,7 @@ If you are utilizing the [Sumo Logic exporter][sumologicexporter] to send data i
 :::
 
 Learn more about these processors:
-* [batchprocessor]
+* [exporterbatching]
 * [memorylimiterprocessor]
 * [filterprocessor]
 * [sumologicexporter]
@@ -182,7 +185,7 @@ Tags are useful for building the queries and helps to correlate the different si
 Refer to the [Fields](/docs/manage/fields/) documentation for more information on fields and how to use them.
 :::
 
-[batchprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/batchprocessor
+[exporterbatching]: https://github.com/open-telemetry/opentelemetry-collector/blob/main/exporter/exporterhelper/README.md#sending-queue-batch-settings
 [memorylimiterprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor
 [filterprocessor]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/filterprocessor
 [sumologicexporter]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/exporter/sumologicexporter
