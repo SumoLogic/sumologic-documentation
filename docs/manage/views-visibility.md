@@ -1,7 +1,6 @@
 ---
 id: views-visibility
 title: Views Visibility
-sidebar_label: Views Visibility
 description: Learn how to use the unified Views page in Sumo Logic to discover, filter, and manage all your views and their data sources from a single interface.
 keywords:
   - views
