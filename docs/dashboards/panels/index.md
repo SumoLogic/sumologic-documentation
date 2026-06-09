@@ -14,6 +14,7 @@ Related topics:
 
 * [Modify a Chart](modify-chart.md)
 * [Markdown Syntax](markdown-syntax.md)
+* [Group Panels into Sections](section.md)
 * [Warning and Critical Thresholds](/docs/metrics/metrics-queries/metrics-explorer/#set-warning-and-critical-thresholds)
 
 ## Time Series Panel 
