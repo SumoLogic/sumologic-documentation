@@ -6,7 +6,7 @@ keywords:
   - views
   - views visibility
   - scheduled views
-  - adhoc views
+  - ad hoc views
   - data management
 ---
 
@@ -26,10 +26,10 @@ The **Views** page provides a unified interface to discover, filter, and manage 
 
 ## What are views?
 
-A view is a named index that stores the results of queries over time. A single view can have multiple data sources contributing to it. The unified Views page gives you complete visibility into what is writing to each view and which data sources are associated with it.
+A view is a named index that stores the results of queries over time. A single view can have multiple data sources contributing to it. The unified **Views** page gives you complete visibility into what is writing to each view and which data sources are associated with it.
 
 :::note
-Partitions are not included in the Views page. They are managed separately through the [Partitions](/docs/manage/partitions/) page.
+Partitions are not included in the **Views** page. They are managed separately through the [Partitions](/docs/manage/partitions/) page.
 :::
 
 ## Key capabilities
@@ -37,20 +37,19 @@ Partitions are not included in the Views page. They are managed separately throu
 - Visibility of all indexes is based on admin-created roles and permissions.
 - You can delete or decommission user-created indexes.
 - You can view the schema of each view and see views in search autocomplete based on your access.
-- You can save a query and reuse it later by adding `| save as <view name>` at the end of your query.
 - As an administrator, you can view existing system limits for each type and the amount of consumed quota.
 - Only administrators can define access control on indexes.
 - Only scheduled searches with the **Save to Index** alert type are visible in Views.
 
 ## Data source types
 
-The Views page tracks three types of data sources:
+The **Views** page tracks three types of data sources:
 
 | Data Source | Description |
 |:--|:--|
-| **Scheduled Views** | Predefined views that run on a schedule and store aggregated query results to an index. This is the default selection when you open the Views page. |
-| **Scheduled Searches** | Saved searches configured to run at a specified frequency and save results to a view via notifications. |
-| **Adhoc Searches** | Arbitrary queries run using the `save` view operator that write results to a view. Tracking for adhoc searches is available from April 2026 onwards. Data written before this date may not be fully traceable. |
+| [**Scheduled Views**](/docs/manage/views/scheduled-views/) | Predefined views that run on a schedule and store aggregated query results to an index. This is the default selection when you open the **Views** page. |
+| [**Scheduled Searches**](/docs/alerts/scheduled-searches/) | Saved searches configured to run at a specified frequency and save results to a view via notifications. |
+| **Ad Hoc Searches** | Arbitrary queries run using the `save` view operator that write results to a view. Tracking for ad hoc searches is available from April 2026 onwards. Data written before this date may not be fully traceable. |
 
 ## How to access the Views page
 
@@ -62,11 +61,11 @@ The page opens with **Scheduled Views** selected as the default data source.
 
 ## How to use the Views page
 
-The Views page lists all views in your organization. For each view, you can see the associated data sources and their types.
+The **Views** page lists all views in your organization. For each view, you can see the associated data sources and their types.
 
 To explore data sources for a view:
 
-1. Select a data source type from the top of the page: **Scheduled Views**, **Scheduled Searches**, or **Adhoc Searches**.
+1. Select a data source type from the top of the page: **Scheduled Views**, **Scheduled Searches**, or **Ad Hoc Searches**.
 1. The listing updates to show views associated with the selected data source type.
 1. Click a view to see its details, including all data sources contributing to it.
 
@@ -107,7 +106,7 @@ Ensure you have **View Scheduled Views** [role capability](/docs/manage/users-ro
 :::
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Views**. You can also click the **Go To...** menu at the top of the screen and select **Views**.
-    * **Add a Filter**. To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section. The filter options are similar to the functionality available in the previous Scheduled Views page. You can use the filter bar to narrow results by view name, data source type, or other available attributes.
+    * **Add a Filter**. To refine the table results, use the **Add a filter** section located above the table. *AND* logic is applied when filtering between different sections, while *OR* logic is applied when filtering within the same section. The filter options are similar to the functionality available in the previous **Scheduled Views** page. You can use the filter bar to narrow results by view name, data source type, or other available attributes.
     * **Status**. Indicates whether the view is currently Completed, Failed, Not Started, Filling, or Paused.
     * **View Name**. The name assigned to the view.
     * **Storage Consumed**. The total volume of uncompressed data ingested across the duration of the retention period.
@@ -137,7 +136,7 @@ Ensure you have **View Scheduled Views** [role capability](/docs/manage/users-ro
         * **Timerange**. Displays the time range for your scheduled search.
         * **Last Run**. Displays the last run date for your scheduled search.
         * **Scheduled Search**. Click **Open in Search** to open the scheduled search in log search. <br/><img src={useBaseUrl('/img/views/scheduled-search-details.png')} style={{border: '1px solid gray'}} alt="sched-search-details" width="400"/>
-    * **Data Sources - Adhoc Searches**. Displays the arbitrary queries that ran using the `save` view operator that write results to a view. Click the **View Details** button to navigate to the log search page for deeper insights on this query.<br/><img src={useBaseUrl('/img/views/adhoc-details.png')} style={{border: '1px solid gray'}} alt="adhoc-details" width="600"/>
+    * **Data Sources - Ad Hoc Searches**. Displays the arbitrary queries that ran using the `save` view operator that write results to a view. Click the **View Details** button to navigate to the log search page for deeper insights on this query.<br/><img src={useBaseUrl('/img/views/adhoc-details.png')} style={{border: '1px solid gray'}} alt="adhoc-details" width="600"/>
     * **Data scanned to fill this scheduled view**. Provides trend information about the data scanned over time and displays the total data scanned for the selected time to run the query.
     * **Retention Period**. The period of time data in the scheduled view is retained.
     * **Data Model**. Type of tier or flex.
@@ -147,8 +146,8 @@ Ensure you have **View Scheduled Views** [role capability](/docs/manage/users-ro
 
 ## Limitations
 
-- **Adhoc search tracking**. Tracking for adhoc searches is approximate for data written before April 2026. The system may show **Could have contributed** or **Did not contribute** indicators when historical data cannot be confirmed.
-- **Partitions excluded**. Partitions do not appear on the Views page. Use the [Partitions](/docs/manage/partitions/) page to manage them.
+- **Ad hoc search tracking**. Tracking for ad hoc searches is approximate for data written before April 2026. The system may show **Could have contributed** or **Did not contribute** indicators when historical data cannot be confirmed.
+- **Partitions excluded**. Partitions do not appear on the **Views** page. Use the [Partitions](/docs/manage/partitions/) page to manage them.
 - **Partitions and scheduled views**. A partition and a scheduled view cannot share the same view name and cannot coexist under the same view.
 - **Views per organization**. Each organization can have a maximum of 1,000 views across all types.
 - **Scheduled Views per organization**. Each organization can have a maximum of 500 scheduled views.
@@ -158,15 +157,11 @@ Ensure you have **View Scheduled Views** [role capability](/docs/manage/users-ro
 
 ### What is the difference between the Views page and the Scheduled Views page?
 
-The Views page replaces the Scheduled Views page and provides a unified interface that consolidates all view types, including scheduled views, scheduled searches, and adhoc searches, into a single listing. The previous Scheduled Views page only showed scheduled views, requiring you to switch between pages to manage different view types. The new Views page removes that context switching by bringing everything into one place.
+The **Views** page replaces the **Scheduled Views** page and provides a unified interface that consolidates all view types, including scheduled views, scheduled searches, and ad hoc searches, into a single listing. The previous **Scheduled Views** page only showed scheduled views, requiring you to switch between pages to manage different view types. The new **Views** page removes that context switching by bringing everything into one place.
 
 ### What data source types are visible on the Views page?
 
-The Views page displays three data source types: **Scheduled Views**, **Scheduled Searches**, and **Adhoc Searches**. Scheduled Views is the default selection when you open the page. A single view can have multiple data sources contributing to it, and all contributing sources are visible in the right-side details pane when you click a view.
-
-### How to save a query to a view in Sumo Logic?
-
-To save a query to a view, add `| save as <view name>` at the end of your search query. This creates an adhoc search that writes results to the specified view. You can then reuse the view name in future queries to reference the saved data.
+The **Views** page displays three data source types: **Scheduled Views**, **Scheduled Searches**, and **Ad Hoc Searches**. Scheduled Views is the default selection when you open the page. A single view can have multiple data sources contributing to it, and all contributing sources are visible in the right-side details pane when you click a view.
 
 ### How to control who can see which views?
 
@@ -174,12 +169,12 @@ Visibility of all indexes is based on roles and permissions defined by your admi
 
 ### How to check the system limits for views in your organization?
 
-Administrators can view existing system limits for each view type and the amount of consumed quota directly from the Views page. The default limits are 1,000 views per organization across all types, 500 scheduled views, and 50 for all other view types. To request a limit increase, contact your Sumo Logic account representative.
+Administrators can view existing system limits for each view type and the amount of consumed quota directly from the **Views** page. The default limits are 1,000 views per organization across all types, 500 scheduled views, and 50 for all other view types. To request a limit increase, contact your Sumo Logic account representative.
 
-### How to identify why adhoc search data is missing or approximate?
+### How to identify why ad hoc search data is missing or approximate?
 
-Tracking for adhoc searches is available from April 2026 onwards. For data written before this date, the system may display **Could have contributed** or **Did not contribute** indicators because historical tracking data is not fully available. This is expected behavior and does not indicate an error with the view or the query.
+Tracking for ad hoc searches is available from April 2026 onwards. For data written before this date, the system may display **Could have contributed** or **Did not contribute** indicators because historical tracking data is not fully available. This is expected behavior and does not indicate an error with the view or the query.
 
 ### What scheduled searches appear on the Views page?
 
-Only scheduled searches configured with the **Save to Index** alert type appear on the Views page. Scheduled searches using other alert types, such as email notifications or webhook alerts, are not included in the Views page listing.
+Only scheduled searches configured with the **Save to Index** alert type appear on the **Views** page. Scheduled searches using other alert types, such as email notifications or webhook alerts, are not included in the **Views** page listing.
