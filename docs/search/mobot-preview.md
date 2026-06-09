@@ -162,6 +162,9 @@ Mobot is in Extended Preview and has the following known limitations.
 * Only works with data that has been ingested and is still within your retention period.
 * Large time ranges (30 or more days) or deeply nested queries may be slow, time out, or hit platform limits.
 
+**Rate limits**
+* Each user is limited to 10 prompts per session. If you have a critical need that exceeds this limit, contact your account team.
+
 **Experience**
 * Performance and latency may vary depending on query complexity.
 * Responses may not always be fully accurate or complete.
