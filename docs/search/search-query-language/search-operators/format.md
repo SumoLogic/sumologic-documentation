@@ -2,6 +2,7 @@
 id: format
 title: format Search Operator
 sidebar_label: format
+description: Use the format operator to format and combine data from parsed fields into user-defined strings.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
