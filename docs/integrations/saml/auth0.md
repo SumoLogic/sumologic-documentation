@@ -187,30 +187,59 @@ Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_
 
 ## Sample queries
 
-```sumo title="Logins by Client per Day"
-_collector="productionappauth0Logs_Collector"
-| json "client_name"
-| where client_name != ""
-| timeslice by 1d
-| count by _timeslice, client_name
-| transpose row _timeslice column client_name
+```sumo title="Total Events"
+_sourceCategory={{Logsdatasource}} log_id
+| json "data", "log_id", "detail.data", "detail.log_id" as data, log_id, data2, log_id2 nodrop
+| if (!isEmpty(data), data, data2) as data
+| if (!isEmpty(log_id), log_id, log_id2) as log_id
+| json field=data "type", "user_name", "client_name", "connection", "ip" as type, user_name, client_name, connection, ip nodrop
+
+// global filters
+| where type matches "{{type}}" and user_name matches "{{user_name}}" and client_name matches "{{client_name}}" and connection matches "{{connection}}" and ip matches "{{ip}}" 
+
+// panel specific
+| count by log_id
+| count
 ```
 
-```sumo title="Client Version Usage"
-_collector="productionappauth0Logs_Collector"
-| json "auth0_client.name", "auth0_client.version"
-| concat(%auth0_client.name, " ", %auth0_client.version) as auth0_client_version
+```sumo title="Login Status Over Time"
+_sourceCategory={{Logsdatasource}} log_id type ("s" OR "fp" OR "fu")
+| json "data", "log_id", "detail.data", "detail.log_id" as data, log_id, data2, log_id2 nodrop
+| if (!isEmpty(data), data, data2) as data
+| if (!isEmpty(log_id), log_id, log_id2) as log_id
+| json field=data "type", "user_name", "client_name", "connection", "ip" as type, user_name, client_name, connection, ip nodrop
+
+// global filters
+| where type matches "*" and ip matches "*" 
+| where if ("{{user_name}}" = "*", true, user_name matches "{{user_name}}")
+| where if ("{{client_name}}" = "*", true, client_name matches "{{client_name}}")
+
+// panel specific
+| where !isBlank(type) and type in ("s", "fp", "fu")
+| if(type = "s", "success", "failure") as login_result
 | timeslice 1h
-| count by _timeslice, auth0_client_version
-| transpose row _timeslice column auth0_client_version
+| count by log_id, _timeslice, login_result
+| count by _timeslice, login_result
+| fillmissing timeslice, values all in login_result
+| transpose row _timeslice column login_result
 ```
 
-```sumo title="Top 10 Recent Errors"
-_collector="productionappauth0Logs_Collector"
-| json "type", "connection", "description", "client_name"
-| where type != "slo"
-| count client_name, connection, description
-| top 10 client_name, connection, description by _count
+```sumo title="Top User Agents"
+_sourceCategory={{Logsdatasource}} user_agent
+| json "data", "log_id", "detail.data", "detail.log_id" as data, log_id, data2, log_id2 nodrop
+| if (!isEmpty(data), data, data2) as data
+| if (!isEmpty(log_id), log_id, log_id2) as log_id
+| json field=data "type", "user_name", "user_agent" as type, user_name, user_agent nodrop
+
+// Global filter
+| where if("{{type}}" = "*", true, type matches "{{type}}")
+| where if("{{user_name}}" = "*", true, org_uuid matches "{{user_name}}")
+
+// Panel specific
+| where !isBlank(user_agent)
+| count by log_id, user_agent
+| count as frequency by user_agent
+| sort by frequency, user_agent asc
 ```
 
 
@@ -243,3 +272,29 @@ The **Auth0 - Security Analysis** dashboard delivers security focused analysis o
 The **Auth0 - User Agent Analysis** dashboard analyzes the user agents, categorizing traffic by browser, operating system, platform, and automated versus human origin. It tracks user-agent activity trends, surfaces the top agents associated with failed activities, and highlights HTTP errors encountered by different client types. Category trend analysis helps teams identify unusual or unauthorized client tooling over time. Use this dashboard to detect bot activity, investigate suspicious client behaviour, and ensure that only approved tools and platforms access your environment.
 
 <img src={useBaseUrl('img/integrations/saml/Auth0-User-Agent-Analysis.png')} alt="Auth0 User Agent Analysis Dashboard" />
+
+## Create monitors for Auth0 app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Auth0 alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `Auth0 - Events from Embargoed Locations` | Alerts on logins or actions from embargoed locations, suggesting potential unauthorized access. Investigate to confirm legitimacy or block malicious actors. | Critical | Count > 0 |
+| `Auth0 - Multiple Failed Authentication From Single User` | Monitors and highlights multiple failed authentications from single user in short period of time. | Critical | Count > 3 | 
+| `Auth0 - Untrusted IP Detected` | Monitors and highlights untrusted detected IP which are in the deny list. | Critical | Count > 0 |
+
+## Upgrading the Auth0 app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Auth0 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
