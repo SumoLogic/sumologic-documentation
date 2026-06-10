@@ -1711,6 +1711,7 @@
   "/cid/10123": "/docs/integrations/security-threat-detection/vmware-carbon-black",
   "/cid/1013": "/docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors",
   "/cid/10132": "/docs/manage/partitions/data-tiers",
+  "/cid/1157": "/docs/dashboards/panels/section/",
   "/cid/10133": "/docs/manage/partitions/data-tiers/searching-data-tiers",
   "/cid/10134": "/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source",
   "/cid/10189": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source",
