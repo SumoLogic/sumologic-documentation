@@ -132,7 +132,7 @@ Enter a parse expression to create an `account` field that maps to the alias you
 
 ## Collect Container Insights performance log events for Task and Container
 
-Container Insights collects data asperformance log events using [embedded metric format](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Embedded_Metric_Format.html). More details [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html).
+Container Insights collects data as performance log events using [embedded metric format](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Embedded_Metric_Format.html). More details [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html).
 
 In this step, you'll create a source to collect Task and Container level performance events, which are not converted as CloudWatch metrics.
 
@@ -160,7 +160,7 @@ For more information, see [Create a custom Fluent Bit image](/docs/send-data/col
 
 ## Collect Traces for Amazon ECS
 
-To set upcollection for traces:
+To set up collection for traces:
 
 1. Create a HTTP Traces source by referring to the [docs](/docs/apm/traces/get-started-transaction-tracing/http-traces-source).
 2. Install OpenTelemetry Collector by referring to the [docs](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments).
@@ -429,7 +429,7 @@ To set upcollection for traces:
 
 </details>
 
-### Samplequery
+### Sample query
 
 ```sumo title="Deleted Resources Over Time"
 _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInstance or DeregisterTaskDefinition or StopTask) and !(InternalFailure)
@@ -445,7 +445,7 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 
 ## Installing the Amazon ECS app
 
-Now that you have set up acollectionfor Amazon ECS with Container Insights and CloudWatch, install the Sumo Logic app for Amazon ECS with Container Insights and CloudWatch to use the pre-configured searches anddashboardsthat provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for Amazon ECS with Container Insights and CloudWatch, install the Sumo Logic app for Amazon ECS with Container Insights and CloudWatch to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
@@ -462,7 +462,7 @@ Use this dashboard to:
 - Monitor the memory and CPU utilization of your cluster.
 - View abnormal read-write activity and network incoming-outgoing bytes.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Overview.png' alt="Amazon ECS - Cluster Overviewdashboard" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Overview.png' alt="Amazon ECS - Cluster Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Cluster Performance Monitoring
 

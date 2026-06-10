@@ -731,10 +731,10 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `AWS API Gateway - High Client-Side Errors` | This alert fires where there are too many API requests (>5%) with client-side errors within 5 minutes. | Count > = 0.05 | Count < 0.05 |
 | `AWS API Gateway - High Integration Latency` | This alert fires when we detect the high integration latency for the API requests in a stage within 5 minutes. | Count > = 2000 | Count < 2000 |
 | `AWS API Gateway - High Latency` | This alert fires when we detect the high latency in a stage within 5 minutes for REST and HTTP API. | Count > = 2500 | Count < 2500 |
-| `AWS API Gateway - Low Traffic API` | This alert fires where there is low message traffic volume for the API within 5 minutes. | Count < = 1 | Count > 1 |
-| `AWS API Gateway - High Authorizer Errors` | This alert fires where there are too many API requests (>5%) with authorizer errors within 5 minutes. | Count > 5 | Count < = 5 |
-| `AWS API Gateway - High Integration Errors` | This alert fires where there are too many API requests (>5%) with integration errors within 5 minutes. | Count > 5 | Count < = 5 |
-| `AWS API Gateway - High WAF Errors` | This alert fires where there are too many API requests (>5%) with WAF errors within 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS API Gateway - Low Traffic API` | This alert fires when there is low message traffic volume for the API within 5 minutes. | Count < = 1 | Count > 1 |
+| `AWS API Gateway - High Authorizer Errors` | This alert fires when there are too many API requests (>5%) with authorizer errors within 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS API Gateway - High Integration Errors` | This alert fires when there are too many API requests (>5%) with integration errors within 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS API Gateway - High WAF Errors` | This alert fires when there are too many API requests (>5%) with WAF errors within 5 minutes. | Count > 5 | Count < = 5 |
 | `AWS API Gateway - High WAF Latency` | This alert fires when we detect the high WAF latency for the REST and WebSocket API requests in a stage within 5 minutes. | Count > 1000 | Count < = 1000 |
 
 ## Upgrade/Downgrade the AWS API Gateway app (Optional)

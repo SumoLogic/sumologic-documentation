@@ -270,8 +270,8 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 |:-----|:------------|:----------------|:--|
 | `AWS Classic Load Balancer - Access from Highly Malicious Sources` | This alert fires when the classic load balancer is accessed from highly malicious IP addresses within last 5 minutes. | Count > 0 | Count < = 0 |
 | `AWS Classic Load Balancer - Deletion Alert` | This alert fires when we detect greater than or equal to 2 application load balancers are deleted over a 5 minute time-period. | Count > = 2 | Count < 2 |
-| `AWS Classic Load Balancer - High 4XX Errors` | This alert fires where there are too many HTTP requests (>5%) with a response status of 4xx within an interval of 5 minutes. | Count > = 5 | Count < 5 |
-| `AWS Classic Load Balancer - High 5XX Errors` | This alert fires where there are too many HTTP requests (>5%) with a response status of 5xx within an interval of 5 minutes. | Count > = 5 | Count < 5 |
+| `AWS Classic Load Balancer - High 4XX Errors` | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx within an interval of 5 minutes. | Count > = 5 | Count < 5 |
+| `AWS Classic Load Balancer - High 5XX Errors` | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx within an interval of 5 minutes. | Count > = 5 | Count < 5 |
 | `AWS Classic Load Balancer - High Latency` | This alert fires when we detect that the average latency for a given classic load balancer within a time interval of 5 minutes is greater than or equal to three seconds. | Count > = 3000 | Count < 3000 |
 | `AWS Classic Load Balancer - Targets Deregistered` | This alert fires when we detect greater than or equal to 1 target is de-registered over a 5 minute time-period. | Count > = 1 | Count < 1 |
 
