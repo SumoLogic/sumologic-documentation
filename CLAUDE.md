@@ -43,6 +43,8 @@ For detailed examples and implementation guidance, see `.claude/skills/pr-templa
 ## Git Rules
 **CRITICAL**: Never commit, merge, or push changes without explicit user approval — even if "accept edits" is enabled. Always ask first.
 
+**Branch naming**: Branch names must always be the Jira ticket number only (e.g., `DOCS-1697`). No additional description.
+
 Before merging any PR, provide the user with the commit description and wait for explicit approval.
 
 Before pushing any commit that changes docs content:
