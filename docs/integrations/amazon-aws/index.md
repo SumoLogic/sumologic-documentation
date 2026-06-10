@@ -74,6 +74,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/cloudtrail-security.png')} alt="Amazon CloudTrail - Cloud Security Monitoring and Analytics icon" width="55"/>
+  <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail')}>Amazon CloudTrail</a></h4>
+  <p>A guide to the Sumo Logic app for Amazon CloudTrail - Cloud Security Monitoring and Analytics</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/amazon-cognito-logo.png')} alt="Amazon Cognito icon" width="55"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/amazon-cognito')}>Amazon Cognito</a></h4>
   <p>Learn about the collection process for the Amazon Cognito service.</p>
@@ -98,13 +105,6 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
   <img src={useBaseUrl('img/integrations/amazon-aws/amazon-documentdb-logo.png')} alt="Amazon DocumentDB icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/amazon-documentdb')}>Amazon DocumentDB</a></h4>
   <p>Learn about the collection process for the Amazon DocumentDB service.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/dynamodb.png')} alt="DynamoDB icon" width="50"/>
-  <h4><a href={useBaseUrl('docs/integrations/amazon-aws/dynamodb')}>Amazon DynamoDB</a></h4>
-  <p>A guide to the Sumo Logic app for Amazon DynamoDB.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -136,17 +136,17 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
   </div>
 </div>
 <div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/ecs.png')} alt="ECS icon" width="50"/>
+  <h4><a href={useBaseUrl('docs/integrations/amazon-aws/elastic-container-service-container-insights-cloudwatch')}>Amazon Elastic Container Service (ECS) with Container Insights and CloudWatch</a></h4>
+  <p>A guide to our app for Amazon ECS CloudWatch.</p>
+    </div>
+</div>
+<div className="box smallbox card">
     <div className="container">
     <img src={useBaseUrl('img/integrations/amazon-aws/ecs.png')} alt="ECS icon" width="50"/>
     <h4><a href={useBaseUrl('docs/integrations/amazon-aws/elastic-container-service')}>Amazon ECS without Container Insights and Traces</a></h4>
     <p>A guide to our app for Amazon Elastic Container Service.</p>
-    </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/ecs.png')} alt="ECS icon" width="50"/>
-  <h4><a href={useBaseUrl('docs/integrations/amazon-aws/elastic-container-service-container-insights-cloudwatch')}>Amazon Elastic Container Service (ECS) using Container Insights and CloudWatch</a></h4>
-  <p>A guide to our app for Amazon ECS CloudWatch.</p>
     </div>
 </div>
 <div className="box smallbox card">
@@ -213,6 +213,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         </div>
       </div>
       <div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/guardduty.png')} alt="GuardDuty icon" width="50"/>
+  <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/amazon-guardduty/')}>Amazon GuardDuty - Cloud Security Monitoring and Analytics</a></h4>
+  <p>A guide to Amazon GuardDuty Cloud Security Monitoring and Analytics.</p>
+  </div>
+</div>
+      <div className="box smallbox card">
         <div className="container">
         <img src={useBaseUrl('img/integrations/amazon-aws/amazon-inspector.png')} alt="Amazon Inspector icon" width="50"/>
         <h4><a href={useBaseUrl('docs/integrations/amazon-aws/inspector')}>Amazon Inspector</a></h4>
@@ -238,13 +245,6 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         <img src={useBaseUrl('img/integrations/amazon-aws/amazon-opensearch-service-logo.png')} alt="Amazon OpenSearch Service icon" width="50"/>
         <h4><a href={useBaseUrl('docs/integrations/amazon-aws/amazon-opensearch')}>Amazon OpenSearch</a></h4>
         <p>Learn about the collection process for the Amazon OpenSearch Service.</p>
-        </div>
-      </div>
-      <div className="box smallbox card">
-        <div className="container">
-        <img src={useBaseUrl('img/integrations/amazon-aws/amazon-sagemaker-logo.png')} alt="Amazon SageMaker icon" width="50"/>
-        <h4><a href={useBaseUrl('docs/integrations/amazon-aws/amazon-sagemaker')}>Amazon SageMaker</a></h4>
-        <p>Get insights into CloudTrail, CloudWatch Logs, and performance metrics for your Amazon SageMaker service.</p>
         </div>
       </div>
       <div className="box smallbox card">
@@ -277,6 +277,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <img src={useBaseUrl('img/integrations/amazon-aws/amazon-sagemaker-logo.png')} alt="Amazon SageMaker icon" width="50"/>
+        <h4><a href={useBaseUrl('docs/integrations/amazon-aws/amazon-sagemaker')}>Amazon SageMaker</a></h4>
+        <p>Get insights into CloudTrail, CloudWatch Logs, and performance metrics for your Amazon SageMaker service.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <img src={useBaseUrl('img/integrations/amazon-aws/security-qs.png')} alt="Security QS icon" width="50"/>
         <h4><a href={useBaseUrl('docs/integrations/amazon-aws/security-quickstart')}>Amazon Security QuickStart</a></h4>
         <p>A guide to our Security QuickStart app.</p>
@@ -303,6 +310,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
           <p>A guide to the Sumo Logic app for Amazon SQS.</p>
           </div>
         </div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_AWS_VPCFlow.png')} alt="Secmon Aws Vpcflow icon" width="50"/>
+  <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/amazon-vpc-flow')}>Amazon VPC Flow - Cloud Security Monitoring and Analytics</a></h4>
+  <p>A guide to the Sumo Logic app for Amazon VPC Flow.</p>
+  </div>
+</div>
         <div className="box smallbox card">
           <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/vpcflowlogs.png')} alt="VPC Flow Logs icon" width="50"/>
@@ -445,6 +459,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/dynamodb.png')} alt="DynamoDB icon" width="50"/>
+  <h4><a href={useBaseUrl('docs/integrations/amazon-aws/dynamodb')}>AWS DynamoDB</a></h4>
+  <p>A guide to the Sumo Logic app for Amazon DynamoDB.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/AWS_EC2_CW_Metrics.png')} alt="AWS ECS CW Metrics icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/ec2-cloudwatch-metrics')}>AWS EC2 CW Metrics</a></h4>
   <p>A guide to our app for AWS EC2 CW Metrics.</p>
@@ -487,6 +508,12 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/aws-iam-users')}><img src={useBaseUrl('img/integrations/misc/aws-iam-logo.png')} alt="Aws iam users logo" width="60" /><h4>AWS IAM Users</h4></a>
+  <p>Gain insights into AWS IAM Users events to enhance user activity and security within your AWS environment.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/lambda.png')} alt="Lambda icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/lambda')}>AWS Lambda</a></h4>
   <p>A guide to the Sumo Logic app for AWS Lambda.</p>
@@ -508,6 +535,12 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/observability/aws')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="35"/><h4>AWS Observability</h4></a>
+  <p>Simplify monitoring and troubleshooting of your AWS Cloud infrastructure.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/aws-private-certificate-authority-logo.png')} alt="AWS Private Certificate Authority icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/aws-private-certificate-authority')}>AWS Private Certificate Authority</a></h4>
   <p>A guide to the Sumo Logic integration for AWS Private Certificate Authority.</p>
@@ -518,6 +551,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
   <img src={useBaseUrl('img/integrations/amazon-aws/security-qs.png')} alt="Security QS icon" width="50"/>
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/security-hub')}>AWS Security Hub CSPM</a></h4>
   <p>A guide to the Sumo Logic app for AWS Security Hub CSPM.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+   <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/security-qs.png')} alt="Security QS icon" width="50"/>
+  <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/aws-security-hub')}>AWS Security Hub - Cloud Security Monitoring and Analytics</a></h4>
+  <p>A guide to the Sumo Logic app for AWS Security Hub.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -540,6 +580,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
   <h4><a href={useBaseUrl('docs/integrations/amazon-aws/waf')}>AWS WAF</a></h4>
   <p>A guide to the Sumo Logic app for AWS WAF.</p>
   </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/waf.png')} alt="WAF icon" width="50"/>
+  <h4><a href={useBaseUrl('docs/integrations/cloud-security-monitoring-analytics/aws-waf')}>AWS WAF - Cloud Security Monitoring and Analytics</a></h4>
+  <p>A guide to the Sumo Logic app for AWS WAF Security Analytics.</p>
+      </div>
 </div>
 <div className="box smallbox card">
   <div className="container">

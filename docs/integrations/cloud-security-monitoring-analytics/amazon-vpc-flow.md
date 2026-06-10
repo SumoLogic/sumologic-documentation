@@ -1,7 +1,7 @@
 ---
 id: amazon-vpc-flow
 title: Amazon VPC Flow Cloud Security Monitoring and Analytics
-sidebar_label: Amazon VPC Flow
+sidebar_label: Amazon VPC Flow - Cloud Security Monitoring and Analytics
 description: The Amazon VPC (Virtual Private Cloud) Flow - Cloud Security Monitoring and Analytics app thoroughly assess Amazon VPC Flow logs to gain a better understanding of your environment and associated traffic patterns.
 ---
 
