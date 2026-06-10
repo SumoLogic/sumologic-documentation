@@ -159,9 +159,9 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 Now that you have set up a collection for **Amazon DynamoDB**, install the Sumo Logic app to use the pre-configured [dashboards](#viewing-amazon-dynamodb-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 
 ## Viewing Amazon DynamoDB dashboards
