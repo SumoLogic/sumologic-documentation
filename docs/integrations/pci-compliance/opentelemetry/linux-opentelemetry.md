@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="PCI icon" width="90"/>
+<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
 
 The PCI Compliance for Linux - OpenTelemetry is a unified log app that sends Linux log data to Sumo Logic via OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). The app's preconfigured dashboards help you to monitor system, account, and user activity to ensure that login activity and privileged users are within the expected ranges.
 
@@ -17,7 +17,7 @@ The PCI Compliance for Linux - OpenTelemetry is a unified log app that sends Lin
 The PCI Compliance for Linux app covers PCI requirements 02, 07, 08, and 10.
 :::
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Schematics.png' alt="Linux Schematics" style={{border: '1px solid gray'}} />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Schematics.png' alt="Linux-Schematics" style={{border: '1px solid gray'}} />
 
 ## Fields created in Sumo Logic for Linux PCI Compliance
 
@@ -53,32 +53,107 @@ import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prer
 ## Collection configuration and app installation
 
 :::note
-You can skip this section if you have already set up the logs collection through [Linux](/docs/integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry/) or [Linux - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry/) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
+You can skip this section if you have already set up the logs collection through [Linux](/docs/integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry/) or [Linux - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
 
-### Step 1: Set up remotely managed OpenTelemetry collector
+<ConfigAppInstall/>
 
-import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
+### Step 1: Set up Collector
+
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Collector.png' alt="Linux-Collector" style={{border: '1px solid gray'}} />
+
+### Step 2: Configure integration
+
+In this step, you will configure the yaml required for Linux Collection. The app requires path for system log file based on the Linux version used.
+
+#### Required Logs for Ubuntu
+
+The following logs, located in the `/var/log` folder, are required for using the Sumo Logic app for PCI compliance for Linux with Ubuntu.
+
+- auth.log
+- syslog
+- daemon.log
+- dpkg.log
+- kern.log
+
+#### Required Logs for CentOS, Amazon Linux, and Red Hat
+
+The following logs, located in the `/var/log` folder, are required for using the Sumo Logic app for PCI compliance for Linux with CentOS, Amazon Linux, and Red Hat.
+
+- audit/audit.log
+- secure
+- Messages
+- yum.log
+
+Click on the **Download YAML File** button to get the yaml file.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Linux-YAML.png' alt="Linux-YAML.png" style={{border: '1px solid gray'}}/>
 
 :::note
-If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
+By default, the path for Linux log files required for all the distros are pre-populated in the UI. (Optional) Unwanted file paths can be removed from the list if the files are not available on your Linux distribution. The collection will work even if not all the files are present in your system.
 :::
 
-<OtelCollectorInstallation/>
+### Step 3: Send logs to Sumo Logic
 
-### Step 2: Configure the source template
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
-import LinuxConfigureSourceTemplate from '../../../reuse/send-data/linux-configure-source-template.md';
+<LogsIntro/>
 
-<LinuxConfigureSourceTemplate/>
+<Tabs
+  className="unique-tabs"
+  defaultValue="Linux"
+  values={[
+    {label: 'Linux', value: 'Linux'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
+  ]}>
 
-### Step 3: Push the source template to the desired remotely managed collectors
+<TabItem value="Linux">
 
-import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
+1.  Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the Linux instance which needs to be monitored.
+2.  Restart the collector using:
+    ```sh
+    sudo systemctl restart otelcol-sumo
+    ```
 
-<DataConfiguration/>
+</TabItem>
+
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
+
+</Tabs>
+
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 ## Sample log messages
 
@@ -88,7 +163,7 @@ Jun 28 07:46:03 bruno-supercomputer useradd[1602]: new account added - account=r
 
 ## Sample queries
 
-```sumo
+```sql
 sumo.datasource=linux deployment.environment=* host.group=* host.name=* "useradd" and ("new user" or "new account")
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s+(?<_sourceHost>\S+)\s+\w*" nodrop
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s+(?<dest_host>\S*)\s+(?<process>\w*)(?:\[\d+\]:|:)\s*(?<msg>.+)$" nodrop
