@@ -432,7 +432,10 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 ### Field Extraction Rule(s)
 
-The FER `AwsObservabilityRdsCloudTrailLogsFER` to extract fields `region`, `namespace`, `dBInstanceIdentifier`, `dBClusterIdentifier`, `dbidentifier`, `proxyname`, and `accountid` will be created as a part of app installation.
+The FER **AwsObservabilityRdsCloudTrailLogsFER** to extract fields `region`, `namespace`, `dBInstanceIdentifier`, `dBClusterIdentifier`, `dbidentifier`, `proxyname`, and `accountid` will be created as a part of app installation.
+
+The FER **AwsObservabilityRDSCloudWatchLogsFER** to extract fields `namespace`, `dbidentifier`, and `proxyname` will be created as a part of app installation.
+
 
 ### Centralized AWS CloudTrail log collection
 
@@ -472,6 +475,17 @@ Now that you have set up a collection for **Amazon RDS**, install the Sumo Logic
 import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for Amazon RDS service is aws/rds.
+- `dbidentifier` The RDS database instance identifier.
+- `dBInstanceIdentifier` The identifier of the RDS DB instance.
+- `dBClusterIdentifier` The identifier of the RDS DB cluster.
+- `proxyname` The name of the RDS Proxy.
 
 ## Viewing the RDS dashboards  
 
@@ -855,3 +869,35 @@ Use this dashboard to:
 * Troubleshoot proxy operations effectively using log insights.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Log-Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+
+## Create monitors for Amazon RDS app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon RDS alerts
+
+These alerts are available for the Amazon RDS app.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Amazon RDS - High CPU Utilization` | This alert fires when we detect that the average CPU utilization for a database is high (>=85%) for an interval of 5 minutes. | Percentage >= 85% | Percentage < 85% |
+| `Amazon RDS - High Disk Queue Depth` | This alert fires when the average disk queue depth for a database is high (>=5) for an interval of 5 minutes. Higher this value, higher will be the number of outstanding I/Os (read/write requests) waiting to access the disk, which will impact the performance of your application. | Count >= 5 | Count < 5 |
+| `Amazon RDS - High Read Latency` | This alert fires when the average read latency of a database within a 5 minutes time interval is high (>=5 seconds). High read latency will affect the performance of your application. | Seconds >= 5 | Seconds < 5 |
+| `Amazon RDS - High Write Latency` | This alert fires when the average write latency of a database within a 5 minute interval is high (>=5 seconds). High write latencies will affect the performance of your application. | Seconds >= 5 | Seconds < 5 |
+| `Amazon RDS - Low Aurora Buffer Cache Hit Ratio` | This alert fires when the average RDS Aurora buffer cache hit ratio within a 5 minute interval is low (&lt;= 50%). This indicates that a lower percentage of requests were served by the buffer cache, which could further indicate a degradation in application performance. | Percentage &lt;= 50% | Percentage > 50% |
+| `Amazon RDS - Low Burst Balance` | This alert fires when we observe a low burst balance (&lt;= 50%) for a given database. A low burst balance indicates you won't be able to scale up as fast for burstable database workloads on gp2 volumes. | Percentage &lt;= 50% | Percentage > 50% |
+| `Amazon RDS - Low Free Storage` | This alert fires when the average free storage space of a RDS instance is low (< 512MB) for an interval of 15 minutes. | MB < 512 | MB >= 512 |
+| `Amazon RDS - Low Freeable Memory` | This alert fires when the average Freeable memory of an RDS instance is &lt; 128 MB for an interval of 15 minutes. If this value is lower you may need to scale up to a larger instance class. | MB &lt;= 128 | MB > 128 |
+| `Amazon RDS MSSQL - Authentication failures from the same client IP on multiple databases` | This alert fires when we detect a specific client IP attempting authentication failures on more than or equal to 10 databases over a 15 minute time-period. | Count >= 1 | Count < 1 |
+| `Amazon RDS MSSQL - Database observing authentication failures from multiple client IPs` | This alert fires when we detect more than or equal to 10 client IPs attempting authentication failures on the database over a 15-minute period. | Count >= 1 | Count < 1 |
+| `Amazon RDS MySQL - Excessive Slow Query Detected` | This alert fires when we detect the average time to execute a query is more than 5 seconds over last 10 minutes. | Count >= 1 | Count < 1 |
+| `Amazon RDS MySQL - High Authentication Failure` | This alert fires when we detect more than 10 authentication failures over a 5 minute time-period. | Count > 10 | Count &lt;= 10 |
+| `Amazon RDS - Oracle Logs - DB Crash` | This alert fires when we detect greater than or equal to 1 Oracle DB crash over a 5 minute time-period. | Count >= 1 | Count < 1 |
+| `Amazon RDS - Oracle Logs - Failed Connection Attempts` | This alert fires when we detect greater than or equal to 25 failed connection attempts over a 5 minute time-period. | Count >= 25 | Count < 25 |
+| `Amazon RDS PostgreSQL - Excessive Slow Query Detected` | This alert fires when we detect the average time to execute a query is more than 5 seconds over a 10 minutes. | Count > 0 | Count &lt;= 0 |
+| `Amazon RDS PostgreSQL - High Authentication Failure` | This alert fires when we detect more than 10 authentication failures in Postgres logs over a 5 minute time-period. | Count > 10 | Count &lt;= 10 |
+| `Amazon RDS PostgreSQL - High Errors` | This alert fires when we detect high number (>10) of error/fatal logs in Postgres logs over a 5 minutes time period. | Count > 10 | Count &lt;= 10 |
+| `Amazon RDS PostgreSQL - Statement Timeouts` | This alert fires when we detect Postgres logs show statement timeouts. | Count > 0 | Count &lt;= 0 |
+| `Amazon RDS - Unencrypted RDS resources created` | This alert fires when an rds:CreateDBCluster or rds:CreateDBInstance CloudTrail event is detected where StorageEncrypted is not set to true, indicating an unencrypted RDS resource was created. | Count >= 1 | Count < 1 |

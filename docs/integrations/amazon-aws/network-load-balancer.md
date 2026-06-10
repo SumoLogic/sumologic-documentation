@@ -58,12 +58,12 @@ Namespace for AWS Network Load Balancer Service is AWS/NetworkELB.
 
 ## Field Extraction Rule(s)
 
-The FER `AwsObservabilityNLBCloudTrailLogsFER` to extract fields `region`, `namespace`, `networkloadbalancer`, and `accountid` will be created as a part of app installation.
+The FER **AwsObservabilityNLBCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `networkloadbalancer` will be created as a part of app installation.
 
 
-## Metric rules
+## Metric rule(s)
 
-The Metric Rule `AwsObservabilityNLBMetricsAddonEntityRule` for the AWS/NetworkELB namespace will be created as a part of app installation.
+The Metric Rule **AwsObservabilityNLBMetricsAddonEntityRule** for the AWS/NetworkELB namespace will be created as a part of app installation.
 
 ## Installing the AWS Network Load Balancer app
 
@@ -73,6 +73,14 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for AWS Network Load Balancer Service is AWS/NetworkELB.
+- `networkloadbalancer` Network Load Balancer name.
+
 ## Viewing AWS Network Load Balancer dashboards
 
 import FilterDashboards from '../../reuse/filter-dashboards.md';
@@ -81,7 +89,7 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 
 ### Overview
 
-The **The AWS Network Load Balancer - Overview** dashboard provides detailed insights into a view of network utilization and performance. The dashboard provides information about the errors, health, and traffic handled by the load balancer.
+The **AWS Network Load Balancer - Overview** dashboard provides detailed insights into a view of network utilization and performance. The dashboard provides information about the errors, health, and traffic handled by the load balancer.
 
 Use this dashboard to:
 * Get an at-a-glance view of the number of errors and status of backend hosts.
@@ -157,3 +165,20 @@ Use this dashboard to:
 * Identify the most common error types and the users experiencing highest failure rates, facilitating targeted improvements and user support.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Network-Load-Balancer-CloudTrail-Audit.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+
+## Create monitors for AWS Network Load Balancer app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS Network Load Balancer alerts
+
+These alerts are available for the AWS Network Load Balancer app.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `AWS Network Load Balancer - Deletion Alert` | This alert fires when we detect greater than or equal to 2 network load balancers are deleted over a 5 minute time-period. | Count >= 2 | Count < 2 |
+| `AWS Network Load Balancer - High TLS Negotiation Errors` | This alert fires when we detect that there are too many TLS Negotiation Errors (>=10%) within an interval of 5 minutes for a given network load balancer. | Percentage >= 10% | Percentage < 10% |
+| `AWS Network Load Balancer - High Unhealthy Hosts` | This alert fires when we detect that there are too many unhealthy hosts (>=10%) within an interval of 5 minutes for a given network load balancer. | Percentage >= 10% | Percentage < 10% |
+| `AWS Network Load Balancer - Targets Deregistered` | This alert fires when we detect greater than or equal to 1 target is de-registered over a 5 minute time-period. | Count >= 1 | Count < 1 |

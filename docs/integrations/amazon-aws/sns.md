@@ -111,7 +111,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 
 ### Field Extraction Rule(s)
 
-The FER `AwsObservabilitySNSCloudTrailLogsFER` to extract fields `region`, `namespace`, `topicname`, and `accountid` will be created as a part of app installation.
+The FER **AwsObservabilitySNSCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `topicname` will be created as a part of app installation.
 
 ## Centralized AWS CloudTrail Log Collection
 In case, you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following **Field Extraction Rule** to map a proper AWS account(s) friendly name/alias. Create it if not already present or update it as required.
@@ -137,6 +137,14 @@ Now that you have set up collection for Amazon SNS, install the Sumo Logic app t
 import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for Amazon SNS service is aws/sns.
+- `topicname` Amazon SNS a Topic Name.
 
 ## Viewing Amazon SNS dashboards
 
@@ -200,3 +208,21 @@ Use this dashboard to:
 * Get details of all read only and non read only events.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Audit-Events-Details.png')} alt="Amazon SNS" />
+
+## Create monitors for AWS SNS app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS SNS alerts
+
+These alerts are available for the AWS SNS app.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `AWS SNS - Access from Highly Malicious Sources` | This alert fires when an Application AWS - SNS is accessed from highly malicious IP addresses within last 5 minutes. | Count > 0 | Count &lt;= 0 |
+| `AWS SNS - Failed Events` | This alert fires when an SNS app has high number of failed events (>5) within last 5 minutes. | Count > 5 | Count &lt;= 5 |
+| `AWS SNS - Failed Notifications` | This alert fires where there are many failed notifications (>=5) within an interval of 5 minutes. | Count > 2 | Count &lt;= 2 |
+| `AWS SNS - Notification to DLQ` | This alert fires when an SNS topic messages are moved to a dead-letter queue. | Count > 0 | Count &lt;= 0 |
+| `AWS SNS - Notification to DLQ Failure` | This alert fires when an SNS topic messages that couldn't be moved to a dead-letter queue. | Count > 0 | Count &lt;= 0 |

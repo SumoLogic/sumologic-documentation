@@ -142,7 +142,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 
 ### Field Extraction Rule(s)
 
-The FER `AwsObservabilityElastiCacheCloudTrailLogsFER` to extract fields `eventSource`, `region`, `req_cacheClusterId`, `res_cacheClusterId`, and `accountid` will be created as a part of app installation.
+The FER **AwsObservabilityElastiCacheCloudTrailLogsFER** to extract fields `eventSource`, `region`, `req_cacheClusterId`, `res_cacheClusterId`, and `accountid` will be created as a part of app installation.
 
 ### Centralized AWS CloudTrail Log Collection
 
@@ -176,6 +176,14 @@ Now that you have set up a collection for **Amazon ElastiCache**, install the Su
 import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for Amazon ElastiCache service is AWS/ElastiCache.
+- `cacheclusterid` A cache cluster ID is a user-supplied, unique name used to identify and manage an Amazon ElastiCache cluster.
 
 ## Viewing Amazon ElastiCache dashboards  
 

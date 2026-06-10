@@ -134,7 +134,7 @@ Sumo Logic supports collecting metrics using two source types:
 
 ## Field Extraction Rule(s)
 
-The FER `AwsObservabilitySQSCloudTrailLogsFER` to extract fields `region`, `namespace`, `queuename`, and `accountid` will be created as a part of app installation.
+The FER **AwsObservabilitySQSCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `queuename` will be created as a part of app installation.
 
 ## Centralized AWS CloudTrail Log Collection
 
@@ -160,7 +160,15 @@ Now that you have set up collection for Amazon SQS, install the Sumo Logic app t
 
 import AppInstall from '../../reuse/apps/app-install.md';
 
-<AppInstall/>
+<AppInstallV2/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for Amazon SQS Service is AWS/SQS.
+- `queuename` Amazon SQS Service Queue Name.
 
 ## Viewing Amazon SQS dashboards
 
@@ -225,3 +233,20 @@ Use this dashboard to:
 * Identify message staleness risks by tracking the age of the oldest message per queue.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-PerformanceTrends.png' alt="1. Amazon SQS - Performance Trends" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for AWS SQS app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS SQS alerts
+
+These alerts are available for the AWS SQS app.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `AWS SQS - Access from Highly Malicious Sources` | This alert fires when an Application AWS - SQS is accessed from highly malicious IP addresses within last 5 minutes. | Count > 0 | Count &lt;= 0 |
+| `AWS SQS - Message processing not fast enough` | This alert fires when we detect message processing is not fast enough. That is, the average approximate age of the oldest non-deleted message in the queue is more than 5 seconds for an interval of 5 minutes. | Seconds > 5 | Seconds &lt;= 5 |
+| `AWS SQS - Messages not processed` | This alert fires when we detect messages that have been received by a consumer, but have not been processed (deleted/failed). That is, the average number of messages that are in flight are >=20 for an interval of 5 minutes. | Count >= 20 | Count &lt; 20 |
+| `AWS SQS - Queue has stopped receiving messages` | This alert fires when we detect that the queue has stopped receiving messages. That is, the average number of messages received in the queue &lt;1 for an interval of 30 minutes. | Count &lt; 1 | Count >= 1 |
