@@ -274,6 +274,8 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `AWS Classic Load Balancer - High 5XX Errors` | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx within an interval of 5 minutes. | Count > = 5 | Count < 5 |
 | `AWS Classic Load Balancer - High Latency` | This alert fires when we detect that the average latency for a given classic load balancer within a time interval of 5 minutes is greater than or equal to three seconds. | Count > = 3000 | Count < 3000 |
 | `AWS Classic Load Balancer - Targets Deregistered` | This alert fires when we detect greater than or equal to 1 target is de-registered over a 5 minute time-period. | Count > = 1 | Count < 1 |
+| `AWS Classic Load Balancer - Spillover Count` | This alert fires when a Classic load balancer spillover count is greater than 0 within a 5 minute interval, indicating that the surge queue is full and new connections are being rejected. | Count > 0 | Count < = 0 |
+| `AWS Classic Load Balancer - High Unhealthy Host Count` | This alert fires when the unhealthy host percentage for a Classic load balancer is greater than or equal to 50% within a 5 minute interval. | Count > = 50 | Count < 50 |
 
 ## Upgrade/Downgrade the AWS Classic Load Balancer app (Optional)
 

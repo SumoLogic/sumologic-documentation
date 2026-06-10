@@ -243,6 +243,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `AWS DynamoDB - High Write Throttle` | This alert fires when we detect that the total write throttle events for a DynamoDB table is high (>5) for a time interval of 5 minutes. | Count > 5 | Count < = 5 |
 | `AWS DynamoDB - Multiple Tables deleted` | This alert fires when five or more tables are deleted within 15 minutes. | Count > = 5 | Count < 5 |
 | `AWS DynamoDB - System Errors` | This alert fires when we detect system errors for a DynamoDB table is high (>10) for a time interval of 5 minutes. | Count > 10 | Count < = 10 |
+| `AWS DynamoDB - High Request Latency` | This alert fires when we detect that the average successful request latency for a DynamoDB table is high (>20ms) for a time interval of 5 minutes. High latency indicates potential issues such as hot partitions, oversized items, or degraded table performance. | Count > 20 | Count < = 20 |
 
 ## Upgrade/Downgrade the Amazon DynamoDB app (Optional)
 

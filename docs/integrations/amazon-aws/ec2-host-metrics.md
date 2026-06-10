@@ -208,6 +208,43 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-TCP-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
 
+### AWS EC2 - Status Checks (Host Metrics)
+
+The **AWS EC2 Metrics - Status Checks** dashboard provides details about EC2 instance health status checks, EBS attachment health, and performance limit violations.
+
+Use this dashboard to:
+
+* Monitor instances with failed instance, system, or attached EBS status checks.
+* Track status check failure trends over time to identify recurring issues.
+* Identify Nitro instances exceeding EBS IOPS or throughput performance limits.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-Status-Checks-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
+
+### AWS EC2 - EBS Performance (Host Metrics)
+
+The **AWS EC2 Metrics - EBS Performance** dashboard provides details about EBS read/write IOPS, throughput, burst balance, and CloudWatch disk I/O for EC2 instances.
+
+Use this dashboard to:
+
+* Monitor EBS read and write IOPS rates and throughput across your EC2 instances.
+* Track EBS IO and byte burst balance percentages to prevent performance throttling on gp2, st1, and sc1 volumes.
+* Monitor CloudWatch disk read and write operation rates for overall disk performance.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-EBS-Performance-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
+
+### AWS EC2 - CPU Credits and Security (Host Metrics)
+
+The **AWS EC2 Metrics - CPU Credits and Security** dashboard provides details about T2/T3 burstable instance CPU credit balance and usage, CloudWatch CPU utilization, IMDS security access patterns, and Dedicated Host CPU utilization.
+
+Use this dashboard to:
+
+* Monitor CPU credit balance and usage for T2/T3 burstable instances to avoid performance degradation.
+* Track surplus credit charges to understand billing impact of T2/T3 Unlimited instances.
+* Monitor IMDS security by identifying instances still using IMDSv1 (requests without token) or instances where IMDSv1 has been blocked.
+* Monitor CloudWatch CPU utilization and Dedicated Host CPU utilization.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-CPU-Credits-Security-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
+
 ## Create monitors for Host Metrics (EC2) app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
@@ -222,6 +259,8 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `AWS EC2 - High Total CPU Utilization` | This alert fires when the average total CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
 | `AWS EC2 - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
 | `AWS EC2 - High Disk Utilization` | This alert fires when the average disk utilization within a 5 minute time interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
+| `AWS EC2 - High CPU IO Wait` | This alert fires when the average CPU IO wait time within a 5 minute interval for an EC2 instance is high (>=20%), indicating disk I/O bottlenecks causing CPU stalls. | Count > = 20 | Count < 20 |
+| `AWS EC2 - High CPU Steal Time` | This alert fires when the average CPU steal time within a 5 minute interval for an EC2 instance is high (>=10%), indicating hypervisor contention or noisy neighbor issues. | Count > = 10 | Count < 10 |
 
 ## Upgrade/Downgrade the Host Metrics (EC2) app (Optional)
 
