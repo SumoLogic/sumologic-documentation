@@ -407,3 +407,16 @@ Use this dashboard to:
 
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AmazonECS-Without-Container-Insights-and-Traces/Amazon-ECS-Resource-Reservation.png' alt="Amazon ECS - Resource Reservation" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for Amazon ECS app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon ECS alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:-----|:------------|:----------------|:--|
+| `Amazon ECS - High CPU Utilization` | This alert fires when the average CPU utilization within a 5 minute interval for a service within a cluster is high (>=85%). | Count > = 85 | Count < 85 |
+| `Amazon ECS - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for a service within a cluster is high (>=85%). | Count > = 85 | Count < 85 |

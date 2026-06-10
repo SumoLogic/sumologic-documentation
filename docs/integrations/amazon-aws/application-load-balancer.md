@@ -275,6 +275,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `AWS Application Load Balancer - High 5XX Errors`                      | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx within an interval of 5 minutes.                                         | Count > = 5       | Count < 5         |
 | `AWS Application Load Balancer - High Latency`                         | This alert fires when we detect that the average latency for a given application load balancer within a time interval of 5 minutes is greater than or equal to three seconds. | Count > = 3000    | Count < 3000      |
 | `AWS Application Load Balancer - Targets Deregistered`                 | This alert fires when targets are deregistered from an application load balancer within last 5 minutes.                                                              | Count > = 1       | Count < 1         |
+| `AWS Application Load Balancer - High Unhealthy Host Count`            | This alert fires when we detect that the number of unhealthy hosts for a given Application load balancer within a time interval of 5 minutes is greater than or equal to one. | Count > = 1       | Count < 1         |
 
 ## Upgrade/Downgrade the AWS Application Load Balancer app (Optional)
 
