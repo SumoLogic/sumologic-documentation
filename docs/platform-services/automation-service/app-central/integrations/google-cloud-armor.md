@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
 ***Version: 1.0  
-Updated: Jun 12, 2026***
+Updated: Jun 11, 2026***
 
 Google Cloud Armor helps you protect your applications and websites against denial of service and web attacks.
 
@@ -114,4 +114,4 @@ For information about Google Cloud Armor, see [Google Cloud Armor documentation]
 
 ## Change Log
 
-* June 12, 2026 (v1.0) - First upload
+* June 11, 2026 (v1.0) - First upload
