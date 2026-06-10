@@ -330,14 +330,14 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:-----|:------------|:----------------|:--|
-| `AWS EC2 CW - High CPU Utilization` | This alert fires when the average CPU utilization based on cloud watch metrics, within a 5 minute interval for an EC2 instance is high (>=85%). | Count > 85 | Count < = 85 |
-| `AWS EC2 CW - Status Check Failed` | This alert fires when there is a status check failures within a 5 minute interval for an EC2 instance. | Count > 0 | Count < = 0 |
-| `AWS EC2 - High Disk Utilization` | This alert fires when the average disk utilization within a 5 minute time interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
-| `AWS EC2 - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
-| `AWS EC2 - High System CPU Utilization` | This alert fires when the average system CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
-| `AWS EC2 - High Total CPU Utilization` | This alert fires when the average total CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
-| `AWS EC2 CW - Low EBS IO Credit Balance` | This alert fires when the average EBS IO Balance percentage within a 5 minute interval for an EC2 instance is low (<=10%), indicating the instance is close to being throttled on EBS IOPS. | Count < = 10 | Count > 10 |
-| `AWS EC2 CW - Low CPU Credit Balance` | This alert fires when the average CPU Credit Balance within a 30 minute interval for an EC2 instance is low (<=5), indicating a burstable instance is close to losing burst capability and will be limited to baseline performance. | Count < = 5 | Count > 5 |
+| `AWS EC2 CW - High CPU Utilization` | This alert fires when the average CPU utilization based on cloud watch metrics, within a 5 minute interval for an EC2 instance is high (>=85%). | Count > 85 | Count &lt;= 85 |
+| `AWS EC2 CW - Status Check Failed` | This alert fires when there is a status check failures within a 5 minute interval for an EC2 instance. | Count > 0 | Count &lt;= 0 |
+| `AWS EC2 - High Disk Utilization` | This alert fires when the average disk utilization within a 5 minute time interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 - High System CPU Utilization` | This alert fires when the average system CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 - High Total CPU Utilization` | This alert fires when the average total CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 CW - Low EBS IO Credit Balance` | This alert fires when the average EBS IO Balance percentage within a 5 minute interval for an EC2 instance is low (&lt;=10%), indicating the instance is close to being throttled on EBS IOPS. | Count &lt;= 10 | Count > 10 |
+| `AWS EC2 CW - Low CPU Credit Balance` | This alert fires when the average CPU Credit Balance within a 30 minute interval for an EC2 instance is low (&lt;=5), indicating a burstable instance is close to losing burst capability and will be limited to baseline performance. | Count &lt;= 5 | Count > 5 |
 
 ## Upgrade/Downgrade the AWS EC2 app (Optional)
 
