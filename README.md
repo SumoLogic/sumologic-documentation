@@ -13,6 +13,7 @@
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white)](https://github.com/features/actions)
 [![Algolia](https://img.shields.io/badge/Algolia-003DFF?style=flat&logo=algolia&logoColor=white)](https://www.algolia.com)
 [![Pantheon](https://img.shields.io/badge/Pantheon-FFDC28?style=flat&logo=pantheon&logoColor=black)](https://pantheon.io)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-CC785C?style=flat&logo=anthropic&logoColor=white)](https://claude.ai/code)
 
 Sumo Docs is the open-source documentation site for Sumo Logic, an AI-powered security operations platform providing Cloud SIEM and security analytics to help teams automate, detect, and investigate threats. Sumo Logic empowers users to monitor, troubleshoot, and defend their environments using AI insights powered by log analytics. Learn more at [sumologic.com](https://www.sumologic.com).
 
