@@ -102,7 +102,6 @@ The latest release of the Sumo Logic Collector targets the Java 17 runtime. Java
 | Windows 32 | https://download-collector.de.sumologic.com/rest/download/windows |
 | Windows 64 | https://download-collector.de.sumologic.com/rest/download/win64 |
 
-
 ### EU Collector
 
 | Binaries | Download URL |
@@ -117,7 +116,6 @@ The latest release of the Sumo Logic Collector targets the Java 17 runtime. Java
 | Tarball | https://download-collector.eu.sumologic.com/rest/download/tar |
 | Windows 32 | https://download-collector.eu.sumologic.com/rest/download/windows |
 | Windows 64 | https://download-collector.eu.sumologic.com/rest/download/win64 |
-
 
 ### FED Collector
 
@@ -149,21 +147,6 @@ The latest release of the Sumo Logic Collector targets the Java 17 runtime. Java
 | Windows 32 | https://download-collector.jp.sumologic.com/rest/download/windows |
 | Windows 64 | https://download-collector.jp.sumologic.com/rest/download/win64 |
 
-### KR Collector
-
-| Binaries | Download URL |
-| :-- | :-- |
-| Linux 64 | https://download-collector.kr.sumologic.com/rest/download/linux/64 |
-| Linux Aarch 64 | https://download-collector.kr.sumologic.com/rest/download/linux/aarch/64 |
-| Linux Debian | https://download-collector.kr.sumologic.com/rest/download/deb/64 |
-| Linux Aarch Debian | https://download-collector.kr.sumologic.com/rest/download/deb/aarch/64 |
-| Linux RPM | https://download-collector.kr.sumologic.com/rest/download/rpm/64 |
-| Linux Aarch RPM | https://download-collector.kr.sumologic.com/rest/download/rpm/aarch/64 |
-| macOS | https://download-collector.kr.sumologic.com/rest/download/macos |
-| Tarball | https://download-collector.kr.sumologic.com/rest/download/tar |
-| Windows 32 | https://download-collector.kr.sumologic.com/rest/download/windows |
-| Windows 64 | https://download-collector.kr.sumologic.com/rest/download/win64 |
-
 ### US1 Collector
 
 | Binaries | Download URL |
@@ -178,7 +161,6 @@ The latest release of the Sumo Logic Collector targets the Java 17 runtime. Java
 | Tarball | https://download-collector.sumologic.com/rest/download/tar |
 | Windows 32 | https://download-collector.sumologic.com/rest/download/windows |
 | Windows 64 | https://download-collector.sumologic.com/rest/download/win64 |
-
 
 ### US2 Collector
 
