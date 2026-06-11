@@ -66,6 +66,7 @@ To configure a ChatGPT Compliance Source, follow the steps below:
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Workspace ID**. Name of the workspace ID collected from the [ChatGPT platform](#vendor-configuration).
 1. **API Key**. Enter the API Key generated from the [ChatGPT platform](#vendor-configuration).
+1. **Event Types**. Select the event types to collect. Currently, only **Conversation** is supported. Additional event types will be available in future releases.
 1. **Polling Interval**. The polling interval is set for 1 hour by default and can be configured to a maximum of 24 hours. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. When you are finished configuring the Source, click **Save**.
 
@@ -93,7 +94,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.| `{"_siemForward": false, "fieldA": "valueA"}` |
 | workspaceId | String | Yes | `null` | Name of your workspace ID. | ABCD-SAMPLE-WORKSPACE-ID |
 | apiKey | String | Yes | `null` | API Key of the account. | sk-proj-XXXXXXXXXXXXXXX |
-| pollingInterval | Integer | Yes | `1 hour` | Time interval (in hours) after which the source will check for new data. | 1h |
+| enabledEventType | Array | Yes | `null` | List of event types to collect. Currently, only `CONVERSATION` is supported. Additional event types will be available in future releases. | `["CONVERSATION"]` |
+| pollingIntervalHour | String | Yes | `1h` | Time interval (in hours) after which the source will check for new data. | `1h` |
 
 ### JSON example
 
