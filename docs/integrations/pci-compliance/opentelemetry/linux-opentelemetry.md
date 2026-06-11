@@ -52,10 +52,6 @@ import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prer
 
 ## Collection configuration and app installation
 
-import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
-
-<CollectorVersionNote/>
-
 :::note
 You can skip this section if you have already set up the logs collection through [Linux](/docs/integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry/) or [Linux - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry/) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
@@ -69,6 +65,10 @@ import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-co
 :::note
 If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
 :::
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <OtelCollectorInstallation/>
 
