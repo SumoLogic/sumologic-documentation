@@ -4,6 +4,10 @@ title: Partner App Template
 description: Use this template to create a Sumo Logic Partner app doc (/docs/integrations/partner-ecosystem-apps).
 ---
 
+<head>
+  <meta name="robots" content="noindex"/>
+</head>
+
 Use this template to create a [Sumo Logic Partner app](/docs/integrations/partner-ecosystem-apps) doc. Copy and paste this into your new .md file. Refer to the [Style Guide](/docs/contributing/style-guide) if needed.
 
 
@@ -16,10 +20,6 @@ description: Short description.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<head>
-  <meta name="robots" content="noindex"/>
-</head>
 
 `<img src={useBaseUrl('path-to-your-icon.png')} alt="Thumbnail icon" width="45"/>`
 
