@@ -198,10 +198,7 @@
   padding: 10px 12px !important;
   min-height: 48px !important;
   display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 12px !important;
+  flex-direction: column !important;
   position: relative !important;
 }
 
@@ -222,19 +219,16 @@
   color: var(--ifm-font-color-base) !important;
   font-size: 0.875rem !important;
   font-family: 'Lab Grotesque', sans-serif !important;
-  padding: 0 !important;
+  padding: 0 36px 0 0 !important;
   margin: 0 !important;
   line-height: 1.5rem !important;
-  height: 1.5rem !important;
   min-height: 1.5rem !important;
   max-height: 200px !important;
-  flex: 1 1 auto !important;
+  width: 100% !important;
   resize: none !important;
-  align-self: center !important;
   border: none !important;
   outline: none !important;
   background: transparent !important;
-  overflow: hidden !important;
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--textarea::placeholder {
@@ -242,19 +236,19 @@
 }
 
 [data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--textarea::placeholder {
-  color: #bdc1c6 !important;
+  color: #7f8497 !important;
 }
 
-/* Override the absolutely positioned actions wrapper */
+/* Submit button wrapper — absolutely positioned inside the form at bottom-right */
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--actions {
-  position: static !important;
-  bottom: auto !important;
-  right: auto !important;
+  position: absolute !important;
+  bottom: 10px !important;
+  right: 12px !important;
   height: 28px !important;
+  width: 28px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  flex-shrink: 0 !important;
 }
 
 /* Submit button styling - Default to grey */
@@ -265,7 +259,6 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  flex-shrink: 0 !important;
   margin: 0 !important;
   width: 28px !important;
   height: 28px !important;
@@ -274,9 +267,6 @@
   max-width: 28px !important;
   max-height: 28px !important;
   padding: 0 !important;
-  align-self: center !important;
-  position: relative !important;
-  top: 0 !important;
   border: none !important;
 }
 
@@ -486,7 +476,7 @@
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-NewConversationScreen .DocSearch-Sidepanel-Screen--introduction::before {
-  font-size: 0.875rem !important;
+  font-size: 0.85rem !important;
   line-height: 1.25rem !important;
   content: 'I can help you find information about Sumo Logic features, integrations, troubleshooting guides, APIs, and best practices across our documentation.';
   display: block;

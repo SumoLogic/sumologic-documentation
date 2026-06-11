@@ -129,11 +129,23 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
       }
     };
 
+    const autoResize = (el: HTMLTextAreaElement) => {
+      el.style.height = '0';
+      el.style.height = Math.min(el.scrollHeight, 200) + 'px';
+      el.style.overflowY = el.scrollHeight > 200 ? 'auto' : 'hidden';
+    };
+
+    const handleInput = (e: Event) => {
+      updateButtonState();
+      autoResize(e.target as HTMLTextAreaElement);
+    };
+
     const checkInterval = setInterval(() => {
       const textarea = document.querySelector('.DocSearch-Sidepanel-Prompt--textarea') as HTMLTextAreaElement;
       if (textarea) {
         updateButtonState();
-        textarea.addEventListener('input', updateButtonState);
+        autoResize(textarea);
+        textarea.addEventListener('input', handleInput);
         textarea.focus();
         clearInterval(checkInterval);
       }
@@ -143,7 +155,7 @@ export default function AskAiSidepanel({ isOpen, onClose }: AskAiSidepanelProps)
       clearInterval(checkInterval);
       const textarea = document.querySelector('.DocSearch-Sidepanel-Prompt--textarea');
       if (textarea) {
-        textarea.removeEventListener('input', updateButtonState);
+        textarea.removeEventListener('input', handleInput);
       }
     };
   }, [isOpen]);
