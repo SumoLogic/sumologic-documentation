@@ -65,42 +65,121 @@ Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_
 
 ## Sample log messages
 
-```json title="Example 1"
+```json title="Example"
 {
-   "date": "2016-02-23T19:57:29.532Z",
-   "type": "sapi",
-   "client_id": "AaiyAPdpYdesoKnqjj8HJqRn4T5titww",
-   "client_name": "My application Name",
-   "ip": "190.257.209.19",
-   "location_info": {},
-   "details": {},
-   "user_id": "auth0|56c75c4e42b6359e98374bc2"
-}
-```
-
-
-```json title="Example 2"
-{
-   "date": "2016-11-14T21:50:33.473Z",
-   "type": "fp",
-   "description": "Wrong email or password.",
-   "connection": "Username-Password-Authentication",
-   "connection_id": "con_ABCDEF",
-   "client_id": "123987LKJsdfmnb",
-   "client_name": "www.sumologic.com",
-   "ip": "198.0.217.157",
-   "user_agent": "Other 0.0.0 / Other 0.0.0",
-   "details": {
-      "error": {
-         "message": "Wrong email or password."
-      }
-   },
-   "user_id": "auth0|123ASD987",
-   "user_name": "no-one@sumologic.com",
-   "strategy": "auth0",
-   "strategy_type": "database",
-   "_id": "321654987654321654987654321",
-   "isMobile": false
+   "log_id": "17809212622791780921262279178092126227917809212622794542",
+   "data": {
+      "date": "2026-06-08T17:51:02.279Z",
+      "type": "s",
+      "connection": "enterprise-db",
+      "connection_id": "con_nD3XkfFNuYUPnmbp",
+      "client_id": "7RyK6txXYPZTQGOAwwln6Eoie0gVZ2cu",
+      "client_name": "CloudSync Platform",
+      "ip": "fd64:3716:2209:2708::2273",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.132.236.84 Safari/537.36",
+      "details": {
+         "prompts": [
+            {
+               "name": "prompt-authenticate",
+               "completedAt": 1780921262279,
+               "connection": "enterprise-db",
+               "connection_id": "con_nD3XkfFNuYUPnmbp",
+               "strategy": "auth0",
+               "identity": 99716766,
+               "stats": {
+                  "loginsCount": 42
+               },
+               "elapsedTime": null
+            },
+            {
+               "name": "login",
+               "flow": "universal-login",
+               "initiatedAt": 1780921262279,
+               "completedAt": 1780921262279,
+               "user_id": "auth0|31148744",
+               "user_name": "system_proc",
+               "timers": {
+                  "rules": 70
+               },
+               "elapsedTime": 5864
+            }
+         ],
+         "initiatedAt": 1780921262279,
+         "completedAt": 1780921262279,
+         "elapsedTime": 6110,
+         "actions": {
+            "executions": [
+               "jp8LFtSdXIVcIeKjcTXnTNJ75zZ3h7kBftk1n1Vu8BD2LTbzx7JZqh4u"
+            ]
+         },
+         "session_id": "95W6HDLrCRBtqevKPcQlvkphsqHoTh6w",
+         "riskAssessment": {
+            "confidence": "high",
+            "version": "1",
+            "assessments": {
+               "UntrustedIP": {
+                  "confidence": "high",
+                  "code": "not_found_on_deny_list"
+               },
+               "NewDevice": {
+                  "confidence": "high",
+                  "code": "match",
+                  "details": {
+                        "device": "known",
+                        "useragent": "known"
+                  }
+               },
+               "ImpossibleTravel": {
+                  "confidence": "high",
+                  "code": "location_history_not_found"
+               },
+               "PhoneNumber": {
+                  "confidence": "neutral",
+                  "code": "phone_number_not_provided"
+               }
+            }
+         },
+         "transaction_id": "vTQ7fuKBzA1709dk1J50WcGZotESeIlr",
+         "session": {
+            "cookie": {
+               "mode": "persistent"
+            }
+         },
+         "form": {
+            "ulp-rememberUsername": "on"
+         },
+         "stats": {
+            "loginsCount": 42
+         }
+      },
+      "security_context": {
+         "ja3": "a1ffa339ba0853d979d34a96ac9e4b6b",
+         "ja4": "ca390ac92e1f55546a8faaacc6d553bcd190"
+      },
+      "hostname": "auth.acmecorp.com",
+      "user_id": "auth0|31148744",
+      "user_name": "system_proc",
+      "strategy": "auth0",
+      "strategy_type": "database",
+      "location_info": {
+         "latitude": 32.6713,
+         "longitude": -111.5766,
+         "country_code": "US",
+         "country_name": "United States",
+         "city_name": "Tucson",
+         "subdivision_code": "AZ",
+         "subdivision_name": "Arizona",
+         "continent_code": "NA",
+         "time_zone": "America/Phoenix",
+         "country_code3": "USA"
+      },
+      "$event_schema": {
+         "version": "1.0.0"
+      },
+      "environment_name": "env-region-4",
+      "log_id": "17809212622791780921262279178092126227917809212622794542",
+      "tenant_name": "nova-prod02"
+   }
 }
 ```
 
@@ -147,36 +226,20 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ### Overview
 
-**Login Event by Location.** Performs a geo lookup operation and displays user logins based on IP address on a map of the world for the last 24 hours.
+The **Auth0 - Overview** dashboard provides insights into authentication activity, tracking login geo locations on a world map and visualizing login attempts per hour over the last seven days. It highlights the top users by successful and failed logins, as well as the most frequent source IPs for failed logins, helping to identify potential security threats.
 
-**Logins per Hour.** Displays a line chart on a timeline showing the number of failed and successful logins per hour, over the last seven days.
+<img src={useBaseUrl('img/integrations/saml/Auth0-Overview.png')} alt="Auth0 Overview Dashboard" />
 
-**Top 10 Users by Successful Login.** Shows a table chart with the top ten users with the most successful logins, including user name and count for the last 24 hours.
 
-**Top 10 Users by Failed Login.** Provides a table chart with the top ten users with the most failed logins, including user name and count for the last 24 hours.
+### Security Analysis
 
-**Top 10 Source IPs by Failed Login.** Displays a table chart with a list of ten source IP addresses causing the most failed logins, including IP and count, for the last 24 hours.
+The **Auth0 - Security Analysis** dashboard delivers security focused analysis of Auth0 authentication events including risk assessments, new device detection, impossible travel indicators, and login performance for identifying compromised accounts and suspicious access patterns.
 
-**Top 10 User Agents.** Displays the top ten most popular user agents in a pie chart from all connections for the last seven days.
+<img src={useBaseUrl('img/integrations/saml/Auth0-Security-Analysis.png')} alt="Auth0 Security Analysis Dashboard" />
 
-**Top 10 Operating Systems.** Shows the top ten most popular operating systems based on user agent in a pie chart for the last seven days.
 
-**Guardian MFA Activity.** Displays a line chart on a timeline showing the number of each Guardian MFA event per hour for the last seven days.
+### User Agent Analysis
 
-<img src={useBaseUrl('img/integrations/saml/auth0-app-overview-dashboard.png')} alt="Auth0 app overview dashboard" />
+The **Auth0 - User Agent Analysis** dashboard analyzes the user agents, categorizing traffic by browser, operating system, platform, and automated versus human origin. It tracks user-agent activity trends, surfaces the top agents associated with failed activities, and highlights HTTP errors encountered by different client types. Category trend analysis helps teams identify unusual or unauthorized client tooling over time. Use this dashboard to detect bot activity, investigate suspicious client behaviour, and ensure that only approved tools and platforms access your environment.
 
-### Connections and Clients
-
-**Logins by Client and Country.** Displays a stacked bar chart showing the number of successful logins for the last 24 hours, grouped by both client and country name. This visualizes the relative popularity of each client overall, as well as in a given country.
-
-**Logins by Client per Day.** Shows a stacked bar chart on a timeline showing the number of successful logins for the last seven days, grouped by client per day. This shows the popularity of each client over the past week, and the relative popularity among clients.
-
-**Connection Types per Hour.** Provides a line chart on a timeline of the connection types used for the past seven days.
-
-**Client Version Usage.** Displays a line chart on a timeline of the Auth0 library version being used by all clients for the past seven days. This is useful to detect outdated clients, as well as to track upgrades.
-
-**Top 10 Clients.** Shows a table chart that lists the ten most popular clients, including client name and count for the past 24 hours.
-
-**Top 10 Recent Errors.** Provides a table chart with a list of the ten most frequent errors, including details on client name, connection, description and count for the last 24 hours. This is useful for discovering and troubleshooting operational issues.
-
-<img src={useBaseUrl('img/integrations/saml/auth0-app-overview-dashboard-mapbox.png')} alt="Auth0 app-overview-dashboard-mapbox" />
+<img src={useBaseUrl('img/integrations/saml/Auth0-User-Agent-Analysis.png')} alt="Auth0 User Agent Analysis Dashboard" />
