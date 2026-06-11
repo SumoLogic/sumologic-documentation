@@ -166,7 +166,7 @@ This section has instructions for installing the Sumo Logic app for **Amazon Ela
 
 Now that you have set up a collection for **Amazon ElastiCache**, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 

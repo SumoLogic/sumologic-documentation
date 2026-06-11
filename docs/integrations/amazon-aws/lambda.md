@@ -244,7 +244,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
