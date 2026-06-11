@@ -122,9 +122,9 @@ The FER **AwsObservabilityCLBCloudTrailLogsFER** to extract fields `region`, `na
 
 Now that you have set up a collection for AWS Classic Load Balancer, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall2/>
+<AppInstall/>
 
 As part of the app installation process, the following fields will be created by default:
 

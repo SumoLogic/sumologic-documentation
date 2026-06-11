@@ -326,7 +326,7 @@ This section has instructions for collecting logs and metrics for the Amazon ECS
 
 Now that you have set up collection for Amazon ECS, install the Sumo Logic app for Amazon ECS to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
@@ -413,3 +413,15 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 |:-----|:------------|:----------------|:--|
 | `Amazon ECS - High CPU Utilization` | This alert fires when the average CPU utilization within a 5 minute interval for a service within a cluster is high (>=85%). | Count > = 85 | Count < 85 |
 | `Amazon ECS - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for a service within a cluster is high (>=85%). | Count > = 85 | Count < 85 |
+
+## Upgrade/Downgrade the AWS EC2 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS EC2 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
