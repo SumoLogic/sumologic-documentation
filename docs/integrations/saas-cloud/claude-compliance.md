@@ -207,7 +207,7 @@ If you do not see the Compliance access keys section, it means that either you a
      |:--|:--|
      | **Logs JPath** | `$.data[*]` |
      | **Timestamp JPath** | `$.created_at` |
-     | **Timestamp Format** | `2006-01-02T15:04:05.000000Z` |
+     | **Timestamp Format** | `2006-01-02T15:04:05Z` |
         <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-response-configuration.png')} alt="Universal Connector - HTTP Response Log Ingest Configuration" width="400" style={{border: '1px solid gray'}} />
 1. Configure the **Pagination Configuration**:
    - **Type**. Select **Continuation Token**.

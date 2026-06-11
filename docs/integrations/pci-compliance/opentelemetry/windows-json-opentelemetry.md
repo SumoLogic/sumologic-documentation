@@ -17,7 +17,7 @@ The PCI Compliance for Windows JSON - OpenTelemetry is a log app that sends Wind
 The PCI Compliance for Windows JSON app covers PCI requirements 02, 06, 08, and 10.
 :::
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-WIndows-JSON-Schematics.png' alt="PCI Windows JSON Schematics" style={{border: '1px solid gray'}} />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-WIndows-JSON-Schematics.png' alt="PCI-Windows-JSON-Schematics" style={{border: '1px solid gray'}} />
 
 ## Fields created in Sumo Logic for PCI Compliance Windows JSON App
 
@@ -42,35 +42,94 @@ Standard Windows event channels include:
 You can skip this section if you have already set up the logs collection through [Windows](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry), [Windows - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry), or [Active Directory](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
 
-### Step 1: Set up remotely managed OpenTelemetry collector
+<ConfigAppInstall/>
 
-import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
+### Step 1: Set up Collector
 
 :::note
-If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
+If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
 :::
 
-<OtelCollectorInstallation/>
+To create a new Collector:
+1. Select the **Add a new Collector** option.
+2. Select the platform where you want to install the Sumo Logic OpenTelemetry Collector.
 
-### Step 2: Configure the source template
+This will generate a command that you can execute in the machine environment you need to monitor. Once executed, it will install the Sumo Logic OpenTelemetry Collector.
 
-import WindowsConfigureSourceTemplate from '../../../reuse/send-data/windows-configure-source-template.md';
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-Collector.png" style={{border:'1px solid gray'}} alt="collector"/>
 
-<WindowsConfigureSourceTemplate/>
+### Step 2: Configure integration
 
-### Step 3: Push the source template to the desired remotely managed collectors
+In this step, you will configure the yaml file required for Windows event logs collection.
 
-import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
+Any custom fields can be tagged along with the data in this step.
 
-<DataConfiguration/>
+Once the details are filled in, click on the **Download YAML File** button to get the yaml file.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
+
+### Step 3: Send logs to Sumo Logic
+
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Windows"
+  values={[
+    {label: 'Windows', value: 'Windows'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
+  ]}>
+
+<TabItem value="Windows">
+
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+2. Restart the collector using:
+  ```sh
+  Restart-Service -Name OtelcolSumo
+  ```
+
+</TabItem>
+
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
+</Tabs>
+
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 ## Sample queries
 
 This sample log query is from the **Windows - PCI Req 02, 08, 10 - Account, User, System Monitoring** dashboard > **User Account Created** panel.
 
-```sumo title="Log Query String"
+```sql title="Log Query String"
 sumo.datasource=windows deployment.environment={{deployment.environment}} host.group={{host.group}} "\"channel\":\"Security\"" 4720
 | json "event_id.id", "computer", "message", "event_data.SubjectUserName",  "event_data.SubjectDomainName", "event_data.TargetUserName", "event_data.TargetDomainName" as event_id, host, msg_summary, src_user, src_domain, dest_user, dest_domain nodrop
 | if(isBlank(src_user), "Unknown", src_user) as src_user
