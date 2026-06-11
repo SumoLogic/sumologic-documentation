@@ -112,47 +112,11 @@ Before you can begin to use the AWS Classic Load Balancing (ELB) App, complete t
 Namespace for **AWS Classic Load Balancer** Service is **AWS/ELB**.
 :::
 
-## Field in field schema
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the **loadbalancername** field. 
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
-
 ## Field Extraction Rule(s)
 
-Create a Field Extraction Rule for AWS Classic Load Balancer access logs and Cloudtrail logs. Learn how to create Field Extraction Rules [here](/docs/manage/field-extractions/create-field-extraction-rule).
+The FER **AwsObservabilityClbAccessLogsFER** to extract fields `loadbalancername` and `namespace` from access logs will be created as a part of app installation.
 
-**AWS Classic Load Balancer access logs**
-
-```sql 
-Rule Name: AwsObservabilityElbAccessLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/logs
-```
-```sumo title="Parse Expression"
-| parse "* * * * * * * * * * * \"*\" \"*\" * *" as datetime, loadbalancername, client, backend, request_processing_time, backend_processing_time, response_processing_time, elb_status_code, backend_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol
-| parse regex field=datetime "(?<datetimevalue>\d{0,4}-\d{0,2}-\d{0,2}T\d{0,2}:\d{0,2}:\d{0,2}\.\d+Z)"
-| where !isBlank(loadbalancername) and !isBlank(datetimevalue)
-| "aws/elb" as namespace
-| tolowercase(loadbalancername) as loadbalancername
-| fields loadbalancername, namespace
-```
-
-**AWS Classic Load Balancer CloudTrail Logs**
-
-```sql
-Rule Name: AwsObservabilityCLBCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.amazonaws.com" "2012-06-01"
-```
-
-```sumo title="Parse Expression"
-json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.loadBalancerName" as event_source, region, accountid, loadbalancername nodrop 
-| where event_source = "elasticloadbalancing.amazonaws.com"
-| toLowerCase(loadbalancername) as loadbalancername 
-| "aws/elb" as namespace 
-| fields region, namespace, loadbalancername, accountid
-```
+The FER **AwsObservabilityCLBCloudTrailLogsFER** to extract fields `region`, `namespace`, `loadbalancername`, and `accountid` from CloudTrail logs will be created as a part of app installation.
 
 ## Installing the AWS Classic Load Balancer app
 
@@ -161,6 +125,14 @@ Now that you have set up a collection for AWS Classic Load Balancer, install the
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for AWS Classic Load Balancer Service is AWS/ELB.
+- `loadbalancername` Classic Load Balancer name.
 
 ## Viewing the AWS Classic Load Balancer dashboards
 

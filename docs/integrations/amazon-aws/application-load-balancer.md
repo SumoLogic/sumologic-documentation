@@ -110,49 +110,11 @@ Before you begin to use the AWS Elastic Load Balancing (ELB) Application app, co
 Namespace for AWS Application Load Balancer Service is AWS/ApplicationELB.
 :::
 
-## Field in field schema
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the `loadbalancer` field.
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
-
 ## Field Extraction Rule(s)
 
-Create Field Extraction Rule (FER) for AWS Application Load Balancer access logs and Cloudtrail logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
+The FER **AwsObservabilityAlbAccessLogFER** to extract the `loadbalancer` field from access logs will be created as a part of app installation.
 
-**AWS Application Load Balancer access logs**
-
-```sql
-Rule Name: AwsObservabilityAlbAccessLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* region=* (http or https or h2 or grpcs or ws or wss)
-```
-
-```sumo title="Parse Expression"
-parse "* * * * * * * * * * * * \"*\" \"*\" * * * \"*\"" as Type, DateTime, loadbalancer, Client, Target, RequestProcessingTime, TargetProcessingTime, ResponseProcessingTime, ElbStatusCode, TargetStatusCode, ReceivedBytes, SentBytes, Request, UserAgent, SslCipher, SslProtocol, TargetGroupArn, TraceId | tolowercase(loadbalancer) as loadbalancer | fields loadbalancer
-```
-
-**AWS Application Load Balancer CloudTrail logs**
-
-```sql
-Rule Name: AwsObservabilityALBCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.amazonaws.com" "2015-12-01"
-```
-
-```sumo title="Parse Expression"
-json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name", "requestParameters.type", "requestParameters.loadBalancerArn", "requestParameters.listenerArn", "apiVersion" as event_source, region, accountid, loadbalancer, loadbalancertype, loadbalancerarn, listenerarn, api_version nodrop
-| where event_source = "elasticloadbalancing.amazonaws.com" and api_version matches "2015-12-01" 
-| "" as namespace 
-| parse field=loadbalancerarn ":loadbalancer/*/*/*" as balancertype1, loadbalancer1, f1 nodrop
-| parse field=listenerarn ":listener/*/*/*/*" as balancertype2, loadbalancer2, f1, f2 nodrop
-| if(loadbalancertype matches "network", "aws/networkelb", if(balancertype1 matches "net", "aws/networkelb", if(balancertype2 matches "net", "aws/networkelb", namespace))) as namespace 
-| if(loadbalancertype matches "application", "aws/applicationelb", if(balancertype1 matches "app", "aws/applicationelb", if(balancertype2 matches "app", "aws/applicationelb", namespace))) as namespace
-| where namespace="aws/applicationelb" or isEmpty(namespace) 
-| if (!isEmpty(loadbalancer), loadbalancer, if (!isEmpty(loadbalancer1), loadbalancer1, loadbalancer2)) as loadbalancer
-| toLowerCase(loadbalancer) as loadbalancer 
-| fields region, namespace, loadbalancer, accountid
-```
+The FER **AwsObservabilityALBCloudTrailLogFER** to extract fields `region`, `namespace`, `loadbalancer`, and `accountid` from CloudTrail logs will be created as a part of app installation.
 
 ## Installing the AWS Application Load Balancer app
 
@@ -161,6 +123,14 @@ Now that you have set up collection for AWS Application Load Balancer, install t
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for AWS Application Load Balancer Service is AWS/ApplicationELB.
+- `loadbalancer` Application Load Balancer name.
 
 ## Viewing AWS Application Load Balancer dashboards
 

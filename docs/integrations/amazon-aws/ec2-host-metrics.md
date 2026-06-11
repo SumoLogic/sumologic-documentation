@@ -37,15 +37,6 @@ _sourceCategory=Labs/AWS/Host/Metrics metric=CPU_Total account=* region=* namesp
 The Host Metrics (EC2) app relies upon an Installed Collector with a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source) on each of your AWS EC2 hosts. This page describes the data sources for the Host Metrics (EC2) app and has instructions for setting up metric collection.
 
 
-### Field in Field Schema
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the `instanceid` field. 
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
-
-<img src={useBaseUrl('img/integrations/amazon-aws/Fields_schema.png')} alt="Fields Schema" />
-
-
 ### Configure Host Metrics sources  
 
 Follow the instructions in this section to configure the Sumo Logic Installed Collector and a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source) on each of your **AWS EC2** hosts. You will assign **account** and **namespace** metadata [fields](/docs/manage/fields) to the sources so that incoming logs and metrics will be appropriately tagged.
@@ -124,6 +115,10 @@ Now that you have set up the collection for Host Metrics (EC2) metrics, install 
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `instanceid` EC2 instance id.
 
 ## Viewing EC2 Host Metrics Dashboards
 

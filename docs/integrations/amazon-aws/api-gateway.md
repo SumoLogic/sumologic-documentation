@@ -162,86 +162,17 @@ account=dev region=us-east-1 namespace=aws/apigateway apiname=* apiid stage doma
 
 ## Collecting logs and metrics for AWS API Gateway
 
-### Fields in field schema
+### Field Extraction Rule(s)
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the below fields:
-    * `apiname`
-    * `account`
-    * `namespace`
-    * `region`
-    * `accountid`
-1. If not present, create it. To learn how to create and manage fields, see [Fields](/docs/manage/fields.md#manage-fields).
+The FER **AwsObservabilityApiGatewayCloudTrailLogsFER** to extract fields `region`, `namespace`, `apiname`, and `accountid` from CloudTrail logs will be created as a part of app installation.
 
-### Field extraction rules
+The FER **AwsObservabilityApiGatewayAccessLogsFER** to extract fields `apiname`, `namespace`, and `apiid` from access logs will be created as a part of app installation.
 
-To learn how to create field extraction rules, [Create a Field Extraction Rules](/docs/manage/field-extractions/create-field-extraction-rule).
+The FER **AwsObservabilityApiGatewayCloudWatchLogsFER** to extract fields `namespace`, `apiid`, and `apiname` from CloudWatch logs will be created as a part of app installation.
 
-Create a field extraction rule for cloudTrail logs:
+### Metric Rule(s)
 
-```sumo
-Rule Name: AwsObservabilityApiGatewayCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* eventname eventsource "apigateway.amazonaws.com"
-Parse Expression:
-| json "eventSource", "awsRegion", "responseElements", "recipientAccountId" as eventSource, region, responseElements, accountid nodrop
-| where eventSource = "apigateway.amazonaws.com"
-| "aws/apigateway" as namespace
-| json field=responseElements "name" as ApiName nodrop
-| tolowercase(ApiName) as apiname
-| fields region, namespace, apiname, accountid
-```
-
-Create a field extraction rule for access logs:
-
-```sumo
-Rule Name: AwsObservabilityApiGatewayAccessLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* region=* apiId domainName stage requestId status
-Parse Expression:
-json "apiId", "domainName", "stage" as apiId, domainName, stage
-| "aws/apigateway" as namespace
-| apiId as apiName
-| fields apiName, namespace, apiId
-```
-
-Create/Update field extraction rule(s) for cloudwatch logs:
-
-```sumo
-Rule Name: AwsObservabilityGenericCloudWatchLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* region=* (_sourceHost=/aws/* or _sourceHost=API*Gateway*Execution*Logs*)
-Parse Expression:
-if (isEmpty(namespace),"unknown",namespace) as namespace
-| if (_sourceHost matches "/aws/lambda/*", "aws/lambda", namespace) as namespace
-| if (_sourceHost matches "/aws/rds/*", "aws/rds", namespace) as namespace
-| if (_sourceHost matches "/aws/ecs/containerinsights/*", "aws/ecs", namespace) as namespace
-| if (_sourceHost matches "/aws/kinesisfirehose/*", "aws/firehose", namespace) as namespace
-| if (_sourceHost matches "/aws/apigateway/*", "aws/apigateway", namespace) as namespace
-| if (_sourceHost matches "API-Gateway-Execution-Logs*", "aws/apigateway", namespace) as namespace
-| parse field=_sourceHost "/aws/lambda/*" as functionname nodrop | tolowercase(functionname) as functionname
-| parse field=_sourceHost "/aws/rds/*/*/" as f1, dbidentifier nodrop
-| parse field=_sourceHost "/aws/apigateway/*/*" as apiid, stage nodrop
-| parse field=_sourceHost "API-Gateway-Execution-Logs_*/*" as apiid, stage nodrop
-| apiid as apiName
-| tolowercase(dbidentifier) as dbidentifier
-| fields namespace, functionname, dbidentifier, apiid, apiName
-```
-
-### Metrics rules
-
-Create the following metrics rule for the AWS API Gateway app, if not already created. To learn how to create a metrics rule, see [Metrics Rules Editor](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
-
-```sql
-Rule name: AwsObservabilityApiGatewayApiNameMetricsEntityRule
-Metric match expression: Namespace=AWS/ApiGateway apiid=*
-Variable name: apiname
-Tag sequence: $apiid._1
-Save it
-```
+The Metric Rule **AwsObservabilityApiGatewayApiNameMetricsEntityRule** for the AWS/ApiGateway namespace will be created as a part of app installation.
 
 ### Configure Hosted Collector
 
@@ -569,6 +500,15 @@ Now that you have set up a collection for the **AWS API gateway**, install the S
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for AWS API Gateway Service is AWS/ApiGateway.
+- `apiname` API Gateway API name.
+- `apiid` API Gateway API id.
 
 ## Viewing AWS API Gateway dashboards
 

@@ -108,29 +108,9 @@ Namespace for **Amazon DynamoDB** Service is **AWS/DynamoDB**.
 2. Click **Save**.
 
 
-### Field in Field Schema
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the “**tablename**” field.
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
-
-
 ### Field Extraction Rule(s)
 
-Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
-
-```sql
-Rule Name: AwsObservabilityDynamoDBCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* eventname eventsource "dynamodb.amazonaws.com"
-Parse Expression:
-| json "eventSource", "awsRegion", "requestParameters.tableName", "recipientAccountId" as eventSource, region, tablename, accountid nodrop
-| where eventSource = "dynamodb.amazonaws.com"
-| "aws/dynamodb" as namespace
-| tolowercase(tablename) as tablename
-| fields region, namespace, tablename, accountid
-```
+The FER **AwsObservabilityDynamoDBCloudTrailLogsFER** to extract fields `region`, `namespace`, `tablename`, and `accountid` will be created as a part of app installation.
 
 
 ### Centralized AWS CloudTrail Log Collection
@@ -163,6 +143,13 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for Amazon DynamoDB Service is AWS/DynamoDB.
+- `tablename` DynamoDB table name.
 
 ## Viewing Amazon DynamoDB dashboards
 
