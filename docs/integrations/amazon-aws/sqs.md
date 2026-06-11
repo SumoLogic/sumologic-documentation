@@ -244,3 +244,16 @@ These alerts are available for the AWS SQS app.
 | `AWS SQS - Message processing not fast enough` | This alert fires when we detect message processing is not fast enough. That is, the average approximate age of the oldest non-deleted message in the queue is more than 5 seconds for an interval of 5 minutes. | Seconds > 5 | Seconds &lt;= 5 |
 | `AWS SQS - Messages not processed` | This alert fires when we detect messages that have been received by a consumer, but have not been processed (deleted/failed). That is, the average number of messages that are in flight are >=20 for an interval of 5 minutes. | Count >= 20 | Count &lt; 20 |
 | `AWS SQS - Queue has stopped receiving messages` | This alert fires when we detect that the queue has stopped receiving messages. That is, the average number of messages received in the queue &lt;1 for an interval of 30 minutes. | Count &lt; 1 | Count >= 1 |
+
+
+## Upgrade/Downgrade the AWS API Gateway app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS API Gateway app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

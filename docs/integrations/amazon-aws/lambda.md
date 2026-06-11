@@ -369,3 +369,31 @@ Use this dashboard to:
 * Monitor the malicious confidence level for all incoming malicious IP address threats.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Threat-Intel.png')} alt="AWS Lambda" />
+
+
+## Create monitors for AWS Lambda app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS Lambda alerts
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `AWS Lambda - High Memory Utilization` | This alert fires when we detect a Lambda execution with memory usage of more than 85% within an interval of 10 minutes. | Count &gt; 0 | Count &lt;= 0 |
+| `AWS Lambda - High Percentage of Failed Requests` | This alert fires when we detect a large number of failed Lambda requests (&gt;5%) within an interval of 5 minutes. | Count &gt;= 5 | Count &lt; 5 |
+| `AWS Lambda - Low Provisioned Concurrency Utilization` | This alert fires when the average provisioned concurrency utilization for 5 minutes is low (&lt;= 50%). This indicates low provisioned concurrency utilization efficiency. | Count &lt;= 50 | Count &gt; 50 |
+| `AWS Lambda - Throttling` | This alert fires when we detect a Lambda running into throttling within an interval of 10 minutes. | Count &gt; 0 | Count &lt;= 0 |
+
+## Upgrade/Downgrade the AWS API Gateway app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS API Gateway app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

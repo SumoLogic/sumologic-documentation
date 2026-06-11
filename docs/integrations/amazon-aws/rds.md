@@ -891,3 +891,15 @@ These alerts are available for the Amazon RDS app.
 | `Amazon RDS PostgreSQL - High Errors` | This alert fires when we detect high number (>10) of error/fatal logs in Postgres logs over a 5 minutes time period. | Count > 10 | Count &lt;= 10 |
 | `Amazon RDS PostgreSQL - Statement Timeouts` | This alert fires when we detect Postgres logs show statement timeouts. | Count > 0 | Count &lt;= 0 |
 | `Amazon RDS - Unencrypted RDS resources created` | This alert fires when an rds:CreateDBCluster or rds:CreateDBInstance CloudTrail event is detected where StorageEncrypted is not set to true, indicating an unencrypted RDS resource was created. | Count >= 1 | Count < 1 |
+
+## Upgrade/Downgrade the AWS API Gateway app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS API Gateway app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

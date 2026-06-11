@@ -176,3 +176,16 @@ These alerts are available for the AWS Network Load Balancer app.
 | `AWS Network Load Balancer - High TLS Negotiation Errors` | This alert fires when we detect that there are too many TLS Negotiation Errors (>=10%) within an interval of 5 minutes for a given network load balancer. | Percentage >= 10% | Percentage < 10% |
 | `AWS Network Load Balancer - High Unhealthy Hosts` | This alert fires when we detect that there are too many unhealthy hosts (>=10%) within an interval of 5 minutes for a given network load balancer. | Percentage >= 10% | Percentage < 10% |
 | `AWS Network Load Balancer - Targets Deregistered` | This alert fires when we detect greater than or equal to 1 target is de-registered over a 5 minute time-period. | Count >= 1 | Count < 1 |
+
+
+## Upgrade/Downgrade the AWS API Gateway app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS API Gateway app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -264,3 +264,32 @@ Use this dashboard to:
 If high latency commands are not being processed frequently, you will want to look into monitoring and potentially allocating more CPU resources.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Redis-Command-Stats.png')} alt="Amazon ElastiCache" />
+
+## Create monitors for Amazon ElastiCache app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon ElastiCache alerts
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Amazon Elasticache - High CPU Utilization` | This alert fires when the average CPU utilization within a 5 minute interval for a host is high (&gt;=90%). The CPUUtilization metric includes total CPU utilization across application, operating system and management processes. We highly recommend monitoring CPU utilization for hosts with two vCPUs or less. | Count &gt;= 90 | Count &lt; 90 |
+| `Amazon Elasticache - High Engine CPU Utilization` | This alert fires when the average CPU utilization for the Redis engine process within a 5 minute interval is high (&gt;=90%). For larger node types with four vCPUs or more, use the EngineCPUUtilization metric to monitor and set thresholds for scaling. | Count &gt;= 90 | Count &lt; 90 |
+| `Amazon Elasticache - High Redis Database Memory Usage` | This alert fires when the average database memory usage within a 5 minute interval for the Redis engine is high (&gt;=95%). When the value reaches 100%, eviction may happen or write operations may fail based on ElastiCache policies thereby impacting application performance. | Count &gt;= 95 | Count &lt; 95 |
+| `Amazon Elasticache - High Redis Memory Fragmentation Ratio` | This alert fires when the average Redis memory fragmentation ratio within a 5 minute interval is high (&gt;=1.5). Value equal to or greater than 1.5 indicates significant memory fragmentation. | Count &gt;= 1.5 | Count &lt; 1.5 |
+| `Amazon Elasticache - Low Redis Cache Hit Rate` | This alert fires when the average cache hit rate for Redis within a 5 minute interval is low (&lt;=80%). This indicates low efficiency of the Redis instance. If cache ratio is lower than 80%, that indicates a significant amount of keys are either evicted, expired, or don't exist. | Count &lt;= 80 | Count &gt; 80 |
+| `Amazon Elasticache - Multiple Failed Operations` | This alert fires when we detect multiple failed operations within a 15 minute interval for an ElastiCache service. | Count &gt;= 10 | Count &lt; 10 |
+
+## Upgrade/Downgrade the AWS API Gateway app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS API Gateway app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

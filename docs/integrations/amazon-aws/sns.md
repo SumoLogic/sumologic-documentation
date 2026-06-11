@@ -220,3 +220,16 @@ These alerts are available for the AWS SNS app.
 | `AWS SNS - Failed Notifications` | This alert fires where there are many failed notifications (>=5) within an interval of 5 minutes. | Count > 2 | Count &lt;= 2 |
 | `AWS SNS - Notification to DLQ` | This alert fires when an SNS topic messages are moved to a dead-letter queue. | Count > 0 | Count &lt;= 0 |
 | `AWS SNS - Notification to DLQ Failure` | This alert fires when an SNS topic messages that couldn't be moved to a dead-letter queue. | Count > 0 | Count &lt;= 0 |
+
+
+## Upgrade/Downgrade the AWS API Gateway app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS API Gateway app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
