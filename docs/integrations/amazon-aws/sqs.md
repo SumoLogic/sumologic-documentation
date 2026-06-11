@@ -154,7 +154,7 @@ Now that you have set up collection for Amazon SQS, install the Sumo Logic app t
 
 import AppInstall from '../../reuse/apps/app-install.md';
 
-<AppInstallV2/>
+<AppInstall/>
 
 As part of the app installation process, the following fields will be created by default:
 

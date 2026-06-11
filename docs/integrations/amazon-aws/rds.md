@@ -454,13 +454,9 @@ Enter a parse expression to create an “account” field that maps to the alias
 | fields account
 ```
 
-#### Create/Update Field Extraction Rule(s) for RDS CloudWatch logs
-
-The FER `AwsObservabilityGenericCloudWatchLogsFER` to extract fields `namespace`, `functionname`, `proxyname`, `dbidentifier`, `apiid`, and `apiName` will be created as a part of app installation.
-
 ### Metric Rules
 
-The Metric Rules `AwsObservabilityRDSClusterMetricsEntityRule` and `AwsObservabilityRDSInstanceMetricsEntityRule` for the aws/rds namespace will be created as a part of app installation.
+The Metric Rules **AwsObservabilityRDSClusterMetricsEntityRule** and **AwsObservabilityRDSInstanceMetricsEntityRule** for the aws/rds namespace will be created as a part of app installation.
 
 ## Installing the RDS app  
 
