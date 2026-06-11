@@ -187,17 +187,9 @@ Enter a parse expression to create an “account” field that maps to the alias
 Now that you have set up collection for AWS EC2 metrics install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
-
-As part of the app installation process, the following fields will be created by default:
-
-- `account` Name / alias to the AWS account.
-- `accountid` AWS account id.
-- `region` The region to which the resource name belongs to.
-- `namespace` Namespace for Amazon EC2 Service is AWS/EC2.
-- `instanceid` EC2 instance id.
+<AppInstall2/>
 
 ## Viewing AWS EC2 dashboards
 
@@ -308,12 +300,12 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 |:-----|:------------|:----------------|:--|
 | `AWS EC2 CW - High CPU Utilization` | This alert fires when the average CPU utilization based on cloud watch metrics, within a 5 minute interval for an EC2 instance is high (>=85%). | Count > 85 | Count &lt;= 85 |
 | `AWS EC2 CW - Status Check Failed` | This alert fires when there is a status check failures within a 5 minute interval for an EC2 instance. | Count > 0 | Count &lt;= 0 |
-| `AWS EC2 - High Disk Utilization` | This alert fires when the average disk utilization within a 5 minute time interval for an EC2 instance is high (>=85%). | Count >= 85 | Count &lt; 85 |
-| `AWS EC2 - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count >= 85 | Count &lt; 85 |
-| `AWS EC2 - High System CPU Utilization` | This alert fires when the average system CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count >= 85 | Count &lt; 85 |
-| `AWS EC2 - High Total CPU Utilization` | This alert fires when the average total CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count >= 85 | Count &lt; 85 |
-| `AWS EC2 CW - Low EBS IO Credit Balance` | This alert fires when the average EBS IO Balance percentage within a 5 minute interval for an EC2 instance is low (&lt;=10%), indicating the instance is close to being throttled on EBS IOPS. | Count &lt; = 10 | Count > 10 |
-| `AWS EC2 CW - Low CPU Credit Balance` | This alert fires when the average CPU Credit Balance within a 30 minute interval for an EC2 instance is low (&lt;=5), indicating a burstable instance is close to losing burst capability and will be limited to baseline performance. | Count &lt; = 5 | Count > 5 |
+| `AWS EC2 - High Disk Utilization` | This alert fires when the average disk utilization within a 5 minute time interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 - High System CPU Utilization` | This alert fires when the average system CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 - High Total CPU Utilization` | This alert fires when the average total CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 CW - Low EBS IO Credit Balance` | This alert fires when the average EBS IO Balance percentage within a 5 minute interval for an EC2 instance is low (&lt;=10%), indicating the instance is close to being throttled on EBS IOPS. | Count &lt;= 10 | Count > 10 |
+| `AWS EC2 CW - Low CPU Credit Balance` | This alert fires when the average CPU Credit Balance within a 30 minute interval for an EC2 instance is low (&lt;=5), indicating a burstable instance is close to losing burst capability and will be limited to baseline performance. | Count &lt;= 5 | Count > 5 |
 
 ## Upgrade/Downgrade the AWS EC2 app (Optional)
 
