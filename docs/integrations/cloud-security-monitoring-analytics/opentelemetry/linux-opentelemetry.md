@@ -87,6 +87,10 @@ The following logs, located in the `/var/log` folder, are required for using the
 
 Click on the **Download YAML File** button to get the YAML file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Linux-YAML.png' style={{border:'1px solid gray'}} alt="Linux-YAML.png" style={{border: '1px solid gray'}}/>
 
 :::note
