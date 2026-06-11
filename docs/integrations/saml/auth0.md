@@ -2,18 +2,19 @@
 id: auth0
 title: Auth0
 sidebar_label: Auth0
-description: The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs, and provides insight into security and operational issues.
+description: The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs and provides insight into security and operational issues.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saml/auth0.png')} alt="Auth0 icon" width="50"/>
 
-Auth0 is a cloud-based, extensible identity provider for applications. The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs, and provides insight into security and operational issues.
+Auth0 is a cloud-based, extensible identity provider for applications. The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs and provides insight into security and operational issues.
 
-For more information, see [Use Auth0 App for Sumo Logic](https://auth0.com/docs/customize/log-streams/sumo-logic-dashboard) in Auth0 documentation.
+For more information, see [Use Auth0 App for Sumo Logic](https://auth0.com/docs/customize/log-streams/sumo-logic-dashboard) in the Auth0 documentation.
 
 ## Collecting logs for Auth0
+
 This procedure explains how to collect error logs from Auth0.
 
 Sumo Logic collects the following log types:
@@ -29,22 +30,21 @@ Sumo Logic collects the following log types:
 * Rate limiting events
 * Other operational events and errors
 
-For more information about Auth0 logs, see [Search Log Events](https://auth0.com/docs/api/management/v2#!/Logs/get_logs) in Auth0 documentation.
-
+For more information about Auth0 logs, see [Search Log Events](https://auth0.com/docs/api/management/v2#!/Logs/get_logs) in the Auth0 documentation.
 
 ### Prerequisites
 
-Use the Auth0 Management Portal to configure the extension. For more information, see [Sumo Logic](https://marketplace.auth0.com/integrations/sumo-logic-log-streaming) in Auth0 documentation.
+Use the Auth0 Management Portal to configure the extension. For more information, see [Sumo Logic](https://marketplace.auth0.com/integrations/sumo-logic-log-streaming) in the Auth0 documentation.
 
 ### Configure a collector
 
 Configure a hosted collector. Follow the directions in [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector/).
 
-### Configure a Source
+### Configure a source
 
 Configure a source on the collector. Follow the directions in [Configure an HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 
-Fill out the following:
+Provide the required details in the fields below:
 * **Name**
 * **Source Category**
 * Select **Forward to SIEM** if you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM. If you select **Forward to SIEM**, also click the **+Add** link and add a field whose name is `_parser` with value */Parsers/System/Auth0/Auth0*.
@@ -61,7 +61,6 @@ Fill out the following:
 ### Use Field Extraction Rules
 
 Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_id"`
-
 
 ## Sample log messages
 
@@ -183,8 +182,6 @@ Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_
 }
 ```
 
-
-
 ## Sample queries
 
 ```sumo title="Total Events"
@@ -242,7 +239,6 @@ _sourceCategory={{Logsdatasource}} user_agent
 | sort by frequency, user_agent asc
 ```
 
-
 ## Installing the Auth0 App
 
 Now that you have set up collection for Auth0, install the Sumo Logic App for Auth0 to use the preconfigured searches and dashboards that provide insight into your data.
@@ -251,27 +247,23 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing Auth0 Dashboards
+## Viewing the Auth0 dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
-The **Auth0 - Overview** dashboard provides insights into authentication activity, tracking login geo locations on a world map and visualizing login attempts per hour over the last seven days. It highlights the top users by successful and failed logins, as well as the most frequent source IPs for failed logins, helping to identify potential security threats.
-
-<img src={useBaseUrl('img/integrations/saml/Auth0-Overview.png')} alt="Auth0 Overview Dashboard" />
-
+The **Auth0 - Overview** dashboard provides insights into authentication activity, tracking login geo locations on a world map and visualizing login attempts per hour over the last seven days. It highlights the top users by successful and failed logins, as well as the most frequent source IPs for failed logins, helping to identify potential security threats.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Auth0/Auth0-Overview.png' alt="Auth0-Overview" />
 
 ### Security Analysis
 
-The **Auth0 - Security Analysis** dashboard delivers security focused analysis of Auth0 authentication events including risk assessments, new device detection, impossible travel indicators, and login performance for identifying compromised accounts and suspicious access patterns.
-
-<img src={useBaseUrl('img/integrations/saml/Auth0-Security-Analysis.png')} alt="Auth0 Security Analysis Dashboard" />
-
+The **Auth0 - Security Analysis** dashboard delivers security-focused analysis of Auth0 authentication events, including risk assessments, new device detection, impossible travel indicators, and login performance, to identify compromised accounts and suspicious access patterns.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Auth0/Auth0-Security-Analysis.png' alt="Auth0-Security-Analysis" />
 
 ### User Agent Analysis
 
-The **Auth0 - User Agent Analysis** dashboard analyzes the user agents, categorizing traffic by browser, operating system, platform, and automated versus human origin. It tracks user-agent activity trends, surfaces the top agents associated with failed activities, and highlights HTTP errors encountered by different client types. Category trend analysis helps teams identify unusual or unauthorized client tooling over time. Use this dashboard to detect bot activity, investigate suspicious client behaviour, and ensure that only approved tools and platforms access your environment.
-
-<img src={useBaseUrl('img/integrations/saml/Auth0-User-Agent-Analysis.png')} alt="Auth0 User Agent Analysis Dashboard" />
+The **Auth0 - User Agent Analysis** dashboard analyzes user agents, categorizing traffic by browser, operating system, platform, and whether it is automated or human-generated. It tracks user-agent activity trends, surfaces the top agents associated with failed activities, and highlights HTTP errors encountered by different client types. Category trend analysis helps teams identify unusual or unauthorized client tooling over time. Use this dashboard to detect bot activity, investigate suspicious client behaviour, and ensure that only approved tools and platforms access your environment.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Auth0/Auth0-User-Agent-Analysis.png' alt="Auth0-User-Agent-Analysis" />
 
 ## Create monitors for Auth0 app
 
@@ -283,9 +275,9 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Auth0 - Events from Embargoed Locations` | Alerts on logins or actions from embargoed locations, suggesting potential unauthorized access. Investigate to confirm legitimacy or block malicious actors. | Critical | Count > 0 |
-| `Auth0 - Multiple Failed Authentication From Single User` | Monitors and highlights multiple failed authentications from single user in short period of time. | Critical | Count > 3 | 
-| `Auth0 - Untrusted IP Detected` | Monitors and highlights untrusted detected IP which are in the deny list. | Critical | Count > 0 |
+| `Auth0 - Events from Embargoed Locations` | This alert is triggered when a login attempt or user action originates from an embargoed location, potentially indicating unauthorized access. Investigate the activity to verify its legitimacy and take appropriate action if malicious behavior is suspected. | Critical | Count > 0 |
+| `Auth0 - Multiple Failed Authentication From Single User` | This alert is triggered when multiple authentication failures are detected for a single user within a short time frame, which may indicate a brute-force attack, credential misuse, or user login issues. | Critical | Count > 3 | 
+| `Auth0 - Untrusted IP Detected` | This alert is triggered when activity is observed from an untrusted IP address that is present on the configured deny list, indicating a potentially malicious or unauthorized source. | Critical | Count > 0 |
 
 ## Upgrading the Auth0 app (optional)
 
