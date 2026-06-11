@@ -111,7 +111,7 @@ exporters:
 ```
 
 :::note
-The [Batch processor][batchprocessor] from upstream is in plan for deprecation over the exporter batching. [Ref](https://github.com/open-telemetry/opentelemetry-collector/pull/15273)
+The [Batch processor][batchprocessor] from upstream is planned for deprecation in favor of exporter-level batching. [Ref](https://github.com/open-telemetry/opentelemetry-collector/pull/15273)
 :::
 
 :::note
@@ -122,7 +122,7 @@ Learn more about these processors:
 * [memorylimiterprocessor]
 * [filterprocessor]
 
-Learn more above these exporters
+Learn more about these exporters
 * [exporterbatching]
 * [sumologicexporter]
 

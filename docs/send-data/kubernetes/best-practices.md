@@ -239,7 +239,7 @@ metadata:
           protocol: TCP
 ```
 
-In the example above, one of the internally defined processor were used in metadata pipeline:
+In the example above, one of the internally defined processors was used in metadata pipeline:
 [memory limiter](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.90.1/processor/memorylimiterprocessor). If you need to change the parameters of these processors in any way, you can define your own and use them in this pipeline.
 
 ## Removing attributes from systemd logs
@@ -556,7 +556,6 @@ The above, in connection with PVC monitoring, can lead to constant alerts (e.g.,
 
 [sumologic_exporter]: https://github.com/SumoLogic/sumologic-otel-collector/tree/v0.50.0-sumo-0/pkg/exporter/sumologicexporter#sumo-logic-exporter
 [filling_up_alert]: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubepersistentvolumefillingup/
-[sumo-otelcol-batching-doc]: ../../opentelemetry-collector/data-source-configurations/additional-configurations-reference/#using-batch-processor-to-batch-data
 
 ### Configuring Exporter-Side Batching
 Sumo Logic uses exporter-side batching instead of the batch processor. If you previously configured the batch processor, update your settings as follows. For more details, see [OpenTelemetry Collector issue #8122](https://github.com/open-telemetry/opentelemetry-collector/issues/8122).
