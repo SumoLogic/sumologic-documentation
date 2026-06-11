@@ -41,7 +41,7 @@ summarizes this behavior.
 
 You can view tags on the details pages of insights, signals, entities, or rules. 
 
-Following is the details view of an insight showing multiple schema key tags attached to the insight:<br/><img src={useBaseUrl('img/cse/insight-list-tags.png')} alt="Insight list tags" style={{border: '1px solid gray'}} width="300"/>
+Following is the details view of an insight showing multiple schema key tags attached to the insight:<br/><img src={useBaseUrl('img/cse/insight-list-tags.png')} alt="Insight list tags" style={{border: '1px solid gray'}} width="800"/>
 
 ## Tag actions
 
@@ -60,14 +60,14 @@ difference is where you do the tagging. 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
 1. Navigate to a custom rule.
 1. The UI for tagging is at the bottom of the **Then Create a Signal** area of the **Rule Editor**.
-1. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag). <br/><img src={useBaseUrl('img/cse/tag-a-rule.png')} alt="Tag a rule" style={{border: '1px solid gray'}} width="350"/>
+1. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).
 
 ### UI for tagging an entity
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen.  
 1. Navigate to the entity to which you want to attach a tag.
 1. The UI for tagging is at the bottom of the **Details** pane.
-2. To add a tag, follow the instructions in [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/tag-an-entity.png')} alt="Tag an entity" style={{border: '1px solid gray'}} width="350"/>
+2. To add a tag, follow the instructions in [Add a keyword tag](#apply-a-keyword-tag).
 
 ### UI for tagging a Cloud SIEM-generated insight
 
@@ -76,13 +76,13 @@ Note that in addition to tags that you manually assign to an insight, an insight
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Insights**. You can also click the **Go To...** menu at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Insights** at the top of the screen. 
 1. Navigate to the insight to which you want to attach a tag.
 1. The UI for tagging is at the bottom of the **Details** pane.
-1. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/tag-an-insight.png')} alt="Tag an insight" style={{border: '1px solid gray'}} width="350"/>
+1. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).
 
 ### UI for tagging a custom insight
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Custom Insights**. 
 1. Navigate to a custom insight and select it.
-1. The UI for tagging is at the bottom of the **Then Create a Signal** area of the insight editor. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Tag a custom insight" style={{border: '1px solid gray'}} width="600"/>
+1. The UI for tagging is at the bottom of the **Then Create a Signal** area of the insight editor. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).
 
 ## Apply a schema key tag
 
