@@ -442,4 +442,6 @@ sumo.hostedcollector.subtype: K8s
 These fields are added to support the new Kubernetes Collection feature, which will be released soon on Sumo Logic. These new fields are static and do not
 impact the user's storage/ingest budget. Since the new fields are static, they also do not impact the cardinality of the metric timeseries.
 
-**Note:** These fields are required to support the new Kubernetes Collection page. If users decide to remove these fields, they will not be able to view the content on the new Kubernetes Collection page (upcoming feature).
+:::note 
+These fields are required to support the new Kubernetes Collection page. If users decide to remove these fields, they will not be able to view the content on the new Kubernetes Collection page (upcoming feature).
+:::
