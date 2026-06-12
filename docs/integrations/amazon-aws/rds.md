@@ -426,7 +426,7 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
 ### Field Extraction Rule(s)
 
-The FER **AwsObservabilityRdsCloudTrailLogsFER** to extract fields `region`, `namespace`, `dBInstanceIdentifier`, `dBClusterIdentifier`, `dbidentifier`, `proxyname`, and `accountid` will be created as a part of app installation.
+The FER **AwsObservabilityRDSCloudTrailLogsFER** to extract fields `region`, `namespace`, `dBInstanceIdentifier`, `dBClusterIdentifier`, `dbidentifier`, `proxyname`, and `accountid` will be created as a part of app installation.
 
 The FER **AwsObservabilityRDSCloudWatchLogsFER** to extract fields `namespace`, `dbidentifier`, and `proxyname` will be created as a part of app installation.
 
