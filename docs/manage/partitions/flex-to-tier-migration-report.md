@@ -54,6 +54,6 @@ The **Is Included** column indicates whether a partition is part of the [default
 
 Monitors and SLOs that rely on a partition excluded from Tiered storage may stop functioning correctly after migration. The report lists the affected monitor and SLO names in the **Unsupported Monitor** and **Unsupported SLO** columns so you can take action before migration.
 
-### What should you do if my partition has SIEM Forwarding enabled?
+### What should I do if my partition has SIEM Forwarding enabled?
 
 If SIEM Forwarding is enabled and the partition is currently excluded from the migration scope, the recommendation is to switch it to Included (Continuous). SIEM Forwarding does not work correctly on excluded partitions, and leaving it excluded can result in data not being forwarded after migration.
