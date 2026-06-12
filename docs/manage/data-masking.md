@@ -70,6 +70,7 @@ You can create an data masking rule of your own from scratch by following the in
 | **Scheduled Search (Save to Lookup/Index)** | Results are masked or unmasked depending on the `View Unmasked Data` role capability of the user who created the scheduled search. |
 | **Field names** | Masking applies to field values only, not field names. For example, when using the `transpose` operator, values that become field names are not masked. |
 | **Timestamp** | The following timestamp fields are not eligible for data masking: `_messageTime`, `_receiptTime`, and `_searchableTime`. |
+| **Metadata fields** | The following system metadata fields are not eligible for data masking: `_size`, `_collectorid`, `_orgid`, and `_sourceid`. |
 | **Lookup UI page** | Results displayed on the Lookup UI page are always shown unmasked. |
 | **Cloud SIEM (CSE) pages** | Data masking is not applied to any Cloud SIEM pages. |
 | **Internal system queries** | Data masking is not applied to queries running under internal caller modules or system user contexts. |
@@ -106,6 +107,27 @@ Follow the below steps to delete the data masking rule:
 1. In the right-pane panel, click **More Actions** and select **Delete** from the dropdown.<br/><img src={useBaseUrl('img/manage/data-masking-rule/delete-data-masking-rule-2.png')} alt="Delete data masking rule" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Delete** in the confirmation dialog to confirm.<br/><img src={useBaseUrl('img/manage/data-masking-rule/delete-rule-confirmation-dialog.png')} alt="Delete Rule Confirmation Dialog" style={{border: '1px solid gray'}} width="400"/>
 
+## Audit data masking events
+
+The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) records detailed JSON logs for all data masking activity. Sumo Logic captures two categories of audit events:
+
+- **Rule management events**. Recorded whenever a data masking rule is created, updated, or deleted. Use these to track who changed masking rules and when.
+- **Search results masking events**. Recorded each time a search query returns results where data was masked. Use these to audit when and how often sensitive data was hidden from query results.
+
+Because these events are stored under different metadata in the audit index, you need separate queries to retrieve each category.
+
+**To audit rule management activity** (create, update, delete), run:
+
+```sumo
+_index="sumologic_audit_events" _sourceCategory=datamasking
+```
+
+**To audit search results masking activity**, run:
+
+```sumo
+_index="sumologic_audit_events" _sourcename=SearchResultsMasked
+```
+
 ## FAQs
 
 ### What is Data Masking in Sumo Logic?
@@ -136,3 +158,6 @@ Yes. An organization can have a maximum of **50 data masking rules**. To add a n
 
 Data masking rules are applied as the final step during query processing. Logs are stored in their original form, and masking is applied dynamically when a query runs. If you want to mask logs during ingestion itself, use [Mask Rules](/docs/send-data/collection/processing-rules/mask-rules/) within Processing Rules instead.
 
+### Can we manage data masking rules programmatically?
+
+Yes. Use the [Data Masking Management APIs](/docs/api/data-masking) to create, update, and manage data masking rules programmatically.
