@@ -29,7 +29,7 @@ Google Cloud Composer is a fully managed workflow orchestration service built on
 The following table lists the required IAM roles for each action:
 
 | Action | Required Role | Permission |
-|:--------|:--------------|:------------|
+|:--|:--|:--|
 | Add Member to IAM Role | Project IAM Admin (`roles/resourcemanager.projectIamAdmin`) | `resourcemanager.projects.setIamPolicy` |
 | Get DAG | Composer User (`roles/composer.user`) | `composer.dags.get` |
 | Get Environment | Composer User (`roles/composer.user`) | `composer.environments.get` |
@@ -46,7 +46,11 @@ For read-only actions (Get DAG, Get Environment, List DAGs, List Environments), 
 
 ## Google Cloud Composer configuration
 
-The Google Cloud Composer integration supports two types of authentication: Service Account and WIF (Workload Identity Federation). We recommend using WIF since it is more secure and easier to manage. For more information, see [Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation).
+The Google Cloud Composer integration supports two types of authentication:
+- **Service Account**
+- **WIF (Workload Identity Federation)**
+
+We recommend using WIF since it is more secure and easier to manage. For more information, see [Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation).
 
 ## Required AWS details from Sumo Logic
 
@@ -57,46 +61,45 @@ To configure the Google Cloud Composer integration using WIF authentication, you
 * Sumo Logic AWS Lambda function: `<deployment_name>-csoar-automation-gcpcomposer`
 * Full ARN: `arn:aws:sts::926226587429:assumed-role/<deployment_name>-csoar-automation-gcpcomposer/<deployment_name>-csoar-automation-gcpcomposer`
 
-
 ### Workload Identity Federation (WIF) authentication
 
-To [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-federation) in Google Workspace needed to configure the Google Cloud Composer integration, follow these steps:
+Follow the steps below to [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-federation) in Google Workspace, which are required to configure the Google Cloud Composer integration:
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
-3. Go to the **API&Services**.
-4. In the same page click on **ENABLED API AND SERVICES** and search for Cloud Composer API, Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API and enable them all.
-5. Go to the **IAM & Admin** > **Service Accounts** page.
+3. Navigate to **API & Services**.
+4. On the same page, click **ENABLED API AND SERVICES** and search for Cloud Composer API, Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API, and enable them all.
+5. Navigate to **IAM & Admin** > **Service Accounts** page.
 6. Click **CREATE SERVICE ACCOUNT**. A [Service Account](https://cloud.google.com/iam/docs/service-accounts-create) is required to access Google Cloud Composer.
-7. While creating the service account, in **Permissions** add the role **Service Account Token Creator** and click on **DONE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-11.png')} style={{border:'1px solid gray'}} alt="Service Account Token Creator" width="800"/>
-8. Go to the **IAM & Admin** > **Workload Identity Federation** page. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-4.png')} style={{border:'1px solid gray'}} alt="Workload Identity Federation" width="800"/>
-9. Click **CREATE POOL**, provide the details, and click on **CONTINUE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-5.png')} style={{border:'1px solid gray'}} alt="Create pool" width="800"/>
-10. Add **Provider details**. Select **AWS** as the provider type and provide the details of the AWS Account ID which is provided by Sumo Logic. Click on **CONTINUE** and **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-6.png')} style={{border:'1px solid gray'}} alt="Provider details" width="800"/>
+7. While creating the service account, under **Permissions**, set the role as **Service Account Token Creator** and then click **DONE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-11.png')} style={{border:'1px solid gray'}} alt="Service Account Token Creator" width="800"/>
+8. Navigate to **IAM & Admin** > **Workload Identity Federation**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-4.png')} style={{border:'1px solid gray'}} alt="Workload Identity Federation" width="800"/>
+9. Click **CREATE POOL**, provide the details, and click **CONTINUE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-5.png')} style={{border:'1px solid gray'}} alt="Create pool" width="800"/>
+10. Add the **Provider details**. Select **AWS** as the provider type and enter the AWS Account ID provided by Sumo Logic. Click **CONTINUE** and **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-6.png')} style={{border:'1px solid gray'}} alt="Provider details" width="800"/>
 11. Now you will see the created pool and provider. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-8.png')} style={{border:'1px solid gray'}} alt="Created pool and provider" width="800"/>
-12. Now we have to build a principal name to configure in Sumo Logic. The format of the principal name is: `principalSet://iam.googleapis.com/projects/{YourProjectID}/locations/global/workloadIdentityPools/{YourPoolName}/attribute.aws_role/arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}/{SumoAWSLambdaFunction}`. 
-13. Go to the **IAM & Admin** > **IAM** page and click on **Grant Access** to add a new principal. 
-14. In the **New principals** field, provide the above principal name and select the role **Workload Identity User**. Click on **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-12.png')} style={{border:'1px solid gray'}} alt="Workload Identity User" width="800"/>
-15. Go to the **IAM & Admin** > **Workload Identity Federation** page and select the pool which was created above. 
-16. Click on **Grant Access** > **Grant access using service account impersonation**. 
-17. Select the service account which created above, select the principle as aws_role and provide the arn `arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}` and click on **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-10.png')} style={{border:'1px solid gray'}} alt="Provide ARN" width="800"/>
-18. Again go to **Grant Access** > **Grant access using service account impersonation**. Select the service account which was created above. Select the principle as `aws_role` and provide the arn `arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}/{SumoAWSLambdaFunction}`. Click on **SAVE**. 
-19. Download the WIF `conf.json` file. Make sure you save it in a safe place. Use the JSON content to configure the Google Cloud Composer integration to use WIF authentication in Automation Service and Cloud SOAR. 
-
+12. Build a principal name to configure in Sumo Logic. The format of the principal name is: `principalSet://iam.googleapis.com/projects/{YourProjectID}/locations/global/workloadIdentityPools/{YourPoolName}/attribute.aws_role/arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}/{SumoAWSLambdaFunction}`. 
+13. Navigate to **IAM & Admin** > **IAM** and click **Grant Access** to add a new principal. 
+14. In the **New principals** field, provide the above principal name and select the role as **Workload Identity User**. Click **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-12.png')} style={{border:'1px solid gray'}} alt="Workload Identity User" width="800"/>
+15. Go to the **IAM & Admin** > **Workload Identity Federation** and select the pool created in step 11. 
+16. Click **Grant Access** > **Grant access using service account impersonation**. 
+17. Select the service account created in the previous step. Set the principal type as `aws_role` and the ARN as `arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}` and then click **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-10.png')} style={{border:'1px solid gray'}} alt="Provide ARN" width="800"/>
+18. Navigate to **Grant Access** > **Grant access using service account impersonation**. Select the service account that was created above. Select the principal as `aws_role` and provide the ARN as `arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}/{SumoAWSLambdaFunction}`. Click **SAVE**. 
+19. Download the WIF `conf.json` file. Ensure you save it in a safe place. Use the JSON content to configure the Google Cloud Composer integration to use WIF authentication in Automation Service and Cloud SOAR. 
 
 ### Service Account authentication
-To [create service account credentials](https://developers.google.com/workspace/guides/create-credentials) in Google Workspace needed to configure the Google Cloud Composer integration, follow these steps:
+
+To [create service account credentials](https://developers.google.com/workspace/guides/create-credentials) in Google Workspace, needed to configure the Google Cloud Composer integration, follow these steps:
 
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
-3. Go to the **API&Services** > **Credentials** page.
-4. In the same page click on **ENABLED API AND SERVICES** and search for Cloud Composer API, Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API and enable them.
+3. Navigate to **API & Services** > **Credentials**.
+4. On the same page, click **ENABLED API AND SERVICES** and search for Cloud Composer API, Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API, and enable them.
 5. Click **CREATE CREDENTIALS** and select **Service Account**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-1.png')} style={{border:'1px solid gray'}} alt="Create credentials" width="800"/>
 6. Enter a service account name to display in the Google Cloud console. The Google Cloud console generates a service account ID based on this name.
 7. (Optional) Enter a description of the service account.
 8. Skip two optional grant permissions steps and click **Done** to complete the service account creation.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-2.png')} style={{border:'1px solid gray'}} alt="Complete service account creation" width="800"/>
-9. Click on the generated service account to open the details.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-3.png')} style={{border:'1px solid gray'}} alt="Generated service details" width="800"/>
-10. Under the **KEYS** tab, click **ADD KEY** and choose **Create new key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-4.png')} style={{border:'1px solid gray'}} alt="Create new key" width="800"/>
-11. Click on **CREATE** (make sure **JSON** is selected).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-5.png')} style={{border:'1px solid gray'}} alt="Click on create" width="400"/>
-12. The JSON file is downloaded. Make sure you save it in a safe place.
+9. Click the generated service account to open the details.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-3.png')} style={{border:'1px solid gray'}} alt="Generated service details" width="800"/>
+10. Under the **KEYS** tab, click **ADD KEY** and select **Create new key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-4.png')} style={{border:'1px solid gray'}} alt="Create new key" width="800"/>
+11. Click **CREATE** (make sure **JSON** is selected).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-5.png')} style={{border:'1px solid gray'}} alt="Click on create" width="400"/>
+12. The JSON file is downloaded. Ensure you save it in a safe place.
 
 ## Configure Google Cloud Composer in Automation Service and Cloud SOAR
 
@@ -110,14 +113,14 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 <IntegrationsAuth/>
 * <IntegrationLabel/>
 * **Authentication Type**. Select the authentication type: **Service Account Private Key Json** or **Workload Identity Federation Private Key Json** and provide the selected type JSON content.
-* **Scopes**. Default scope is already added as `https://www.googleapis.com/auth/cloud-platform`, if not then add this scope.
+* **Scopes**. Default scope is `https://www.googleapis.com/auth/cloud-platform`. If not already present, add this scope.
 * **Project ID**. Provide the Google Cloud Project ID where the Composer environments are located.
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/google-cloud-composer-configuration.png')} style={{border:'1px solid gray'}} alt="Google Cloud composer configuration" width="400"/>
 
-For information about Google Cloud Composer, see [Google Cloud Composer documentation](https://cloud.google.com/composer/docs).
+For more information on Google Cloud Composer, see [Google Cloud Composer documentation](https://cloud.google.com/composer/docs).
 
 ## Change Log
 
