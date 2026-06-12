@@ -12,7 +12,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Flex to Tier Migration Report shows your partitions and their readiness for migration from a flex licensing model for log ingestion to a tiered licensing model for log ingestion. It includes recommendation messages and the status of any unsupported features that may be affected by migration.
+The Flex to Tier Migration Report shows your partitions and their readiness for migration from a flex licensing model to a tiered licensing model for log ingestion. It includes recommendation messages and the status of any unsupported features that may be affected by migration.
 
 ## Column definitions
 
