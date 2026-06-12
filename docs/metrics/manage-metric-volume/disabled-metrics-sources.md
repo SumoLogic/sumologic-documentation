@@ -43,9 +43,7 @@ Following is an example of the message written to the system event index:
 
 ### Sources are disabled when you reach the global limits
 
-When you reach the global limits, Sumo Logic starts disabling your metric sources based on cardinality growth. Rather than targeting the sources with the highest current cardinality, Sumo Logic compares each source's cardinality over the most recent 7-day period against the prior 7-day period, and pauses sources in descending order of cardinality increase. Sources that have recently grown and contributed to the breach are paused first, while stable high-volume sources are left unaffected.
-
-Sumo Logic continues disabling metric sources until your metric ingestion drops below the global limit.
+When you reach the global limits, Sumo Logic starts disabling your metric sources, starting with the one that is ingesting metrics with the highest cardinality, and continues disabled metric sources in that order, until your metric ingestion is reduced to a volume that is lower than the limit.
 
 For each source it disabled, Sumo Logic generates a health event and writes a message with level “error” to the [system event index](/docs/manage/security/audit-indexes/system-event-index/). Enter a query to `_index=sumologic_system_events` to see events in the system event index.
 
