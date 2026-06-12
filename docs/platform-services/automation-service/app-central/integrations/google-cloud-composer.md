@@ -40,10 +40,6 @@ The following table lists the required IAM roles for each action:
 | Unpause DAG | Composer Admin (`roles/composer.admin`) | `composer.dags.update` |
 | Update Project IAM Policy | Project IAM Admin (`roles/resourcemanager.projectIamAdmin`) | `resourcemanager.projects.setIamPolicy` |
 
-:::note
-For read-only actions (Get DAG, Get Environment, List DAGs, List Environments), the **Composer User** role is sufficient. For DAG management actions (Pause DAG, Unpause DAG), the **Composer Admin** role is required. For IAM management actions (Add Member to IAM Role, Remove Member from IAM Role, Update Project IAM Policy), the **Project IAM Admin** role is required.
-:::
-
 ## Google Cloud Composer configuration
 
 The Google Cloud Composer integration supports two types of authentication:
