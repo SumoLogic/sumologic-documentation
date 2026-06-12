@@ -4,21 +4,9 @@ title: Source and Collector Wise Cardinality
 sidebar_label: Source and Collector Wise Cardinality
 description: Identify and analyze source and collector-level cardinality using audit logs to pinpoint high-cardinality sources.
 ---
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<head>
- <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
-
-:::info
-This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
-:::
-
 This document explains how to identify and analyze cardinality ingested per source and collector, helping you pinpoint high-cardinality sources and manage ingestion limits more effectively.
 
-Previously, there was no direct visibility into the contribution of cardinality from individual sources. When limits were exceeded, there was limited control over which sources were paused. As a result, [sources that were not significant contributors could be paused](/docs/metrics/manage-metric-volume/disabled-metrics-sources/), while the actual high-cardinality sources remained active. This lack of source-level visibility made it difficult to accurately identify and address the root cause of high cardinality.
+Previously, there was no direct visibility into the contribution of cardinality from individual sources. When limits were exceeded, [sources were paused based on total cardinality](/docs/metrics/manage-metric-volume/disabled-metrics-sources/), which could affect stable high-volume sources that were not responsible for the breach. This lack of source-level visibility made it difficult to accurately identify and address the root cause of high cardinality.
 
 To address this, you can now run a query to identify total cardinality and cardinality at the source level and analyze which sources contribute the most within a given collector. This enables more targeted actions and helps avoid unnecessary impact on other sources.
 
