@@ -14,6 +14,7 @@ Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic sty
 - .claude/skills/sumo-style/SKILL.md — Sumo Logic writing conventions. Claude fetches the live style guide and applies it automatically when writing or editing docs.
 - .claude/skills/docusaurus/SKILL.md — Docusaurus 3 syntax, frontmatter templates, and sidebar config patterns.
 - .claude/skills/pr-template-guide/SKILL.md — PR template structure, formatting examples, and best practices.
+- .claude/skills/geo-guide/SKILL.md — GEO principles and patterns. Reference guide for applying Generative Engine Optimization to Sumo Logic docs.
 
 ## Pull Requests
 **CRITICAL REQUIREMENT**: ALL pull requests MUST use the official template from `.github/PULL_REQUEST_TEMPLATE.md`. No exceptions.
