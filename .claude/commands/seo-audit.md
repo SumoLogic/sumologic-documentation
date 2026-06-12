@@ -1,26 +1,6 @@
 # SEO/AEO/GEO Audit — Search and AI Discoverability Check
 
-Audits documentation for search engine optimization (SEO), answer engine optimization (AEO), and generative engine optimization (GEO) signals. Produces a prioritized report and offers to apply fixes.
-
-## What this command does
-
-When you invoke `/seo-audit`, Claude will:
-
-1. **Read the specified file or directory**
-2. **Check SEO signals**. Title length, meta description, keywords, heading structure
-3. **Check AEO signals**. Question-format headings, direct answers, featured snippet readiness
-4. **Check GEO signals**. Authoritative statements, structured facts, LLM citation patterns
-5. **Check internal linking**. Presence of links, descriptive anchor text
-6. **Generate a prioritized report**. Issues ranked by impact
-7. **Offer to fix issues**. Apply improvements with user approval
-
-## When to use this command
-
-* Before submitting a PR for new or updated content
-* Auditing a section or category for discoverability gaps
-* Preparing docs for a product launch or announcement
-* Quarterly content health checks
-* After rewriting or restructuring a doc
+Use this command to audit a doc for SEO, AEO, and GEO signals — run it before any PR on new or updated content, even if you're not focused on search optimization.
 
 ## Signal definitions
 
@@ -48,10 +28,8 @@ Use the Read tool to read the complete file content including frontmatter.
 
 **Frontmatter**
 
-* [ ] `title` present
-* [ ] `title` is under 60 characters — **Critical** if missing or over 60
+* [ ] `title` is under 60 characters — **Critical** if over 60
 * [ ] `title` includes the primary keyword or product/feature name
-* [ ] `description` present — **Critical** if missing
 * [ ] `description` is 140–160 characters — **Warning** if shorter than 100 or longer than 160
 * [ ] `description` leads with an action verb or product name (not "This page" or "This doc")
 * [ ] `keywords` field present with 3–5 relevant terms — **Suggestion** if missing
@@ -59,8 +37,6 @@ Use the Read tool to read the complete file content including frontmatter.
 
 **Headings**
 
-* [ ] No H1 in body — title frontmatter generates H1; a second H1 breaks SEO — **Critical** if present
-* [ ] H2 used for main sections; no skipped heading levels (H2 → H4 without H3) — **Warning** if skipped
 * [ ] At least 2 H2 headings for pages over 500 words — **Suggestion** if none
 * [ ] No duplicate headings at the same level — **Warning** if duplicated
 * [ ] Headings are under 60 characters — **Suggestion** if over
@@ -161,6 +137,7 @@ Do not modify files without explicit user approval.
 | `title` over 60 chars | Truncated in search results; first 60 chars carry the most weight |
 | H1 in body | Duplicate H1 confuses search engines and breaks page structure |
 | Missing image alt text | Accessibility failure; images are invisible to search crawlers |
+| `slug` on regular page | Overrides URL derived from file path; breaks sidebar linking |
 
 ### Warnings
 
@@ -202,10 +179,8 @@ Then ask if the user wants to drill into any specific file.
 
 ## Tips
 
-* Run this before `/audit-doc` to prioritize discoverability fixes first
 * Run this after `/geo-optimize` to verify improvements were applied
 * For batch fixes on description length, `/seo-audit` + `/geo-optimize` together cover most GEO gaps
-* Pair with `/tone-check` for comprehensive pre-PR review
 
 ---
 
@@ -215,4 +190,3 @@ Then ask if the user wants to drill into any specific file.
 
 * **`/audit-doc`** — structure, required sections, broken links, frontmatter completeness, style guide
 * **`/geo-optimize`** — apply GEO improvements after this audit identifies gaps
-* **`/tone-check`** — voice and tone check (standalone; not covered here)

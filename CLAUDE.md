@@ -15,6 +15,18 @@ Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic sty
 - .claude/skills/docusaurus/SKILL.md — Docusaurus 3 syntax, frontmatter templates, and sidebar config patterns.
 - .claude/skills/pr-template-guide/SKILL.md — PR template structure, formatting examples, and best practices.
 
+## Bulk Changes
+For any change touching 50+ files (e.g. terminology migrations, frontmatter audits, link updates, admonition format changes), follow these rules:
+
+**Enter plan mode** (`/plan`) at the start of any bulk change. Present scope, file count, directory breakdown, and before/after samples — then wait for explicit approval before touching any files.
+
+1. **Define scope first, get sign-off.** State the exact pattern, included paths, excluded paths, and known edge cases before touching files.
+2. **Dry-run before writing.** Report total file count, per-directory breakdown, and ~10 before/after samples. Wait for confirmation.
+3. **Apply in batches by directory**, not all at once. Show `git diff --stat` and a few spot-checks after each batch.
+4. **One commit per batch/category** — never bundle multiple directories into one commit. Atomic commits stay revertable.
+5. **Never revert from memory.** If reverting, validate against actual file content — do not trust "the original had X."
+6. **Never commit helper/detection scripts** to the repo. Run them ephemerally.
+
 ## Pull Requests
 **CRITICAL REQUIREMENT**: ALL pull requests MUST use the official template from `.github/PULL_REQUEST_TEMPLATE.md`. No exceptions.
 
@@ -30,6 +42,8 @@ For detailed examples and implementation guidance, see `.claude/skills/pr-templa
 
 ## Git Rules
 **CRITICAL**: Never commit, merge, or push changes without explicit user approval — even if "accept edits" is enabled. Always ask first.
+
+**Branch naming**: Branch names must always be the Jira ticket number only (e.g., `DOCS-1697`). No additional description.
 
 Before merging any PR, provide the user with the commit description and wait for explicit approval.
 
@@ -85,10 +99,6 @@ When a user asks "what can I do", "what commands are available", or similar, sha
 | `/audit-doc` | Full quality audit: structure, style, links, frontmatter, completeness |
 | `/seo-audit` | Discoverability audit: SEO, AEO, and GEO signals — run this before a PR |
 | `/geo-optimize` | Rewrite a doc to improve AI citation and generative engine visibility |
-| `/tone-check` | Check voice and tone against Sumo Logic style rules |
-| `/rewrite-intro` | Rewrite a doc's opening paragraph |
-| `/simplify` | Simplify overly complex content |
-| `/review` | Review a pull request |
 
 **Jira**
 
