@@ -160,4 +160,4 @@ Data masking rules are applied as the final step during query processing. Logs a
 
 ### Can we manage data masking rules programmatically?
 
-Yes. Use the [Data Masking Management APIs](/docs/api/data-masking-management) to create, update, and manage data masking rules programmatically.
+Yes. Use the [Data Masking Management APIs](/docs/api/data-masking) to create, update, and manage data masking rules programmatically.
