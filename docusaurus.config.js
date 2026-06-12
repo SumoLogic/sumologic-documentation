@@ -387,6 +387,12 @@ module.exports = {
       contextualSearch: false,
       searchPagePath: 'docs-search', // Default value is 'search'; renamed to 'docs-search' so it doesn't conflict with '/Search' redirect
       insights: true,
+      askAi: {
+        assistantId: 'T7pp7iENesuU',
+        indexName: 'crawler_sumodocs',
+        apiKey: 'fb2f4e1fb40f962900631121cb365549',
+        appId: '2SJPGMLW1Q',
+      },
       insightsConfig: {
         useCookie: true, // alt to useCookie: true,
       },
@@ -547,6 +553,12 @@ module.exports = {
           {
             type: 'search',
             position: 'left',
+          },
+          {
+            type: 'html',
+            position: 'left',
+            className: 'navbar-ask-ai-item',
+            value: '<div id="navbar-ask-ai-button"></div>',
           },
         ],
       },
