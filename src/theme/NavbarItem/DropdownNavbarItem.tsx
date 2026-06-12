@@ -66,8 +66,15 @@ according to the selected dropdown item
 function getDropdownProps(props, items, localPathname) {
   const activeItem = items.filter((item) => isItemActive(item, localPathname));
   if (activeItem.length) {
+    const { icon: _icon, ...activeItemWithoutIcon } = activeItem[0];
+    if (activeItem[0].hideParentLabel) {
+      return {
+        ...activeItemWithoutIcon,
+        label: activeItem[0].label,
+      };
+    }
     return {
-      ...activeItem[0],
+      ...activeItemWithoutIcon,
       label: props.label + ' > ' + activeItem[0].label,
     };
   }

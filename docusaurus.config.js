@@ -222,6 +222,54 @@ module.exports = {
         },
       }),
     ],
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            id: 'sumo-api',
+            spec: 'static/sumologic-api.yaml',
+            route: '/docs/api-reference/',
+            layout: {
+              title: 'API Reference',
+              noFooter: true,
+            },
+          },
+        ],
+        theme: {
+          primaryColor: '#0055b3',
+          options: {
+            lazyRendering: true,
+          },
+          theme: {
+            typography: {
+              fontFamily: '"Lab Grotesque", sans-serif',
+              fontSize: '16px',
+              fontWeightRegular: '400',
+              fontWeightBold: '700',
+              headings: {
+                fontFamily: '"Lab Grotesque", "Segoe UI"',
+                fontWeight: '400',
+              },
+              code: {
+                fontSize: '13px',
+                fontFamily: 'Source Code Pro, monospace',
+              },
+            },
+            codeBlock: {
+              backgroundColor: '#1e1e1e',
+            },
+            rightPanel: {
+              backgroundColor: '#263238',
+              textColor: '#ffffff',
+            },
+            codeSample: {
+              backgroundColor: '#1e1e1e',
+            },
+          },
+        },
+      },
+    ],
   ],
   plugins: [
     'docusaurus-plugin-sass',
@@ -489,7 +537,6 @@ module.exports = {
           {
             label: 'API',
             position: 'left',
-            to: '#',
             type: 'dropdown',
             items:[
               {
@@ -500,8 +547,9 @@ module.exports = {
               },
               {
                 label: 'API Reference',
-                href: 'https://api.sumologic.com/docs/',
+                to: '/docs/api-reference/',
                 icon: 'code',
+                hideParentLabel: true,
               },
             ]
           },
