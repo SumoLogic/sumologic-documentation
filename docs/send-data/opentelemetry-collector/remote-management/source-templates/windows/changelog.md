@@ -5,6 +5,12 @@ sidebar_label: Changelog
 description: Changelog for Windows source template for OpenTelemetry.
 ---
 
+## [10.0.0] - 2026-06-11
+### Added
+- Validation for field table
+### Removed
+- Removed batch processor in favour of batching through sumologic exporter
+
 ## [9.1.0] - 2026-01-19
 ### Added
 - Default `_parser` tagging for logs forwarded to Cloud SIEM.
