@@ -1,7 +1,6 @@
 ---
 id: flex-to-tier-migration-report
 title: Flex to Tier Migration Report
-sidebar_label: Flex to Tier Migration Report
 description: Learn how to use the Flex to Tier Migration Report to assess partition readiness, understand column definitions, and act on migration recommendations.
 keywords:
   - flex
