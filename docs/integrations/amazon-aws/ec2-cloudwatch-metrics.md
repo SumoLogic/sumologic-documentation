@@ -152,41 +152,9 @@ To configure a CloudTrail Source, perform these steps:
 12. **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 13. Click **Save**.
 
-### Field in Field Schema
+### Field Extraction Rule(s)
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**.
-1. Search for the “**instanceid**” field.
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
-
-
-### CloudTrail Field Extraction Rule
-
-```sql
-Rule Name: AwsObservabilityEC2CloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventname eventsource "ec2.amazonaws.com"
-```
-
-
-**Parse Expression**
-
-```sumo
-| json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as eventSource, region, requestParameters, responseElements, accountid nodrop
-| where eventSource = "ec2.amazonaws.com"
-| "aws/ec2" as namespace
-| json field=requestParameters "instanceType", "instancesSet", "instanceId", "DescribeInstanceCreditSpecificationsRequest.InstanceId.content" as req_instancetype, req_instancesSet, req_instanceid_1, req_instanceid_2 nodrop
-| json field=req_instancesSet "item", "items" as req_instancesSet_item, req_instancesSet_items nodrop
-| parse regex field=req_instancesSet_item "\"instanceId\":\s*\"(?<req_instanceid_3>.*?)\"" nodrop
-| parse regex field=req_instancesSet_items "\"instanceId\":\s*\"(?<req_instanceid_4>.*?)\"" nodrop
-| json field=responseElements "instancesSet.items" as res_responseElements_items nodrop
-| parse regex field=res_responseElements_items "\"instanceType\":\s*\"(?<res_instanceType>.*?)\"" nodrop
-| parse regex field=res_responseElements_items "\"instanceId\":\s*\"(?<res_instanceid>.*?)\"" nodrop
-| if (!isBlank(req_instanceid_1), req_instanceid_1,  if (!isBlank(req_instanceid_2), req_instanceid_2, if (!isBlank(req_instanceid_3), req_instanceid_3, if (!isBlank(req_instanceid_4), req_instanceid_4, "")))) as req_instanceid
-| if (!isBlank(req_instanceid), req_instanceid, res_instanceid) as instanceid
-| if (!isBlank(req_instancetype), req_instancetype, res_instancetype) as instanceType
-| tolowercase(instanceid) as instanceid
-| fields region, namespace, accountid, instanceid
-```
+The FER **AwsObservabilityEC2CloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `instanceid` will be created as a part of app installation.
 
 
 ### Centralized AWS CloudTrail log collection
@@ -219,7 +187,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 Now that you have set up collection for AWS EC2 metrics install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
@@ -319,3 +287,34 @@ Use this dashboard to:
 * Monitor if an instance has passed the system status check at last minute
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/6.1.-AWS-EC2-Status-Check-CloudWatch-Metrics.png' alt="AWS EC2 Status Check (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for AWS EC2 app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS EC2 alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:-----|:------------|:----------------|:--|
+| `AWS EC2 CW - High CPU Utilization` | This alert fires when the average CPU utilization based on cloud watch metrics, within a 5 minute interval for an EC2 instance is high (>=85%). | Count > 85 | Count &lt;= 85 |
+| `AWS EC2 CW - Status Check Failed` | This alert fires when there is a status check failures within a 5 minute interval for an EC2 instance. | Count > 0 | Count &lt;= 0 |
+| `AWS EC2 - High Disk Utilization` | This alert fires when the average disk utilization within a 5 minute time interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 - High System CPU Utilization` | This alert fires when the average system CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 - High Total CPU Utilization` | This alert fires when the average total CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 CW - Low EBS IO Credit Balance` | This alert fires when the average EBS IO Balance percentage within a 5 minute interval for an EC2 instance is low (&lt;=10%), indicating the instance is close to being throttled on EBS IOPS. | Count &lt;= 10 | Count > 10 |
+| `AWS EC2 CW - Low CPU Credit Balance` | This alert fires when the average CPU Credit Balance within a 30 minute interval for an EC2 instance is low (&lt;=5), indicating a burstable instance is close to losing burst capability and will be limited to baseline performance. | Count &lt;= 5 | Count > 5 |
+
+## Upgrade/Downgrade the AWS EC2 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS EC2 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

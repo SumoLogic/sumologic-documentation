@@ -288,26 +288,11 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 | count by resource_type, _timeslice
 | transpose row _timeslice column resource_type
 ```
-## Creating Fields in Field Schema
+## Field Extraction Rule(s)
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the following fields: `account`, `namespace`, `region` field.
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields).
+The FER **AwsObservabilityECSCloudTrailLogsFER** to extract fields `region`, `namespace`, `clustername`, and `accountid` will be created as a part of app installation.
 
-## Creating Field Extraction Rule(s)
-
-Create a Field Extraction Rule for CloudTrail Logs ([learn more](/docs/manage/field-extractions/create-field-extraction-rule)).
-```sql
-Rule Name: AwsObservabilityECSCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* eventname eventsource "ecs.amazonaws.com"
-Parse Expression:
-| json "eventSource", "awsRegion", "requestParameters.tableName", "recipientAccountId" as eventSource, region, tablename, accountid nodrop
-| where eventSource = "ecs.amazonaws.com"
-| "aws/ecs" as namespace
-| fields region, namespace, accountid
-```
+The FER **AwsObservabilityECSCloudWatchLogsFER** to extract the `namespace` field will be created as a part of app installation.
 ## Collect Logs and Metrics for Amazon ECS
 
 This section has instructions for collecting logs and metrics for the Amazon ECS app.
@@ -341,9 +326,17 @@ This section has instructions for collecting logs and metrics for the Amazon ECS
 
 Now that you have set up collection for Amazon ECS, install the Sumo Logic app for Amazon ECS to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for Amazon ECS Service is AWS/ECS.
+- `clustername` The name of the ECS cluster.
 
 ## Viewing the Amazon ECS app dashboards
 
@@ -407,3 +400,28 @@ Use this dashboard to:
 
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AmazonECS-Without-Container-Insights-and-Traces/Amazon-ECS-Resource-Reservation.png' alt="Amazon ECS - Resource Reservation" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for Amazon ECS app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon ECS alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:-----|:------------|:----------------|:--|
+| `Amazon ECS - High CPU Utilization` | This alert fires when the average CPU utilization within a 5 minute interval for a service within a cluster is high (>=85%). | Count > = 85 | Count < 85 |
+| `Amazon ECS - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for a service within a cluster is high (>=85%). | Count > = 85 | Count < 85 |
+
+## Upgrade/Downgrade the AWS EC2 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS EC2 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

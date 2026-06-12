@@ -1,6 +1,7 @@
 ---
 id: dynamodb
 title: Amazon DynamoDB
+sidebar_label: Amazon DynamoDB
 description: The Sumo Logic app for DynamoDB provides operational insight into your database environment and Dashboards displaying the events, errors, latency, and capacity of your DynamoDB environment.
 ---
 
@@ -107,29 +108,9 @@ Namespace for **Amazon DynamoDB** Service is **AWS/DynamoDB**.
 2. Click **Save**.
 
 
-### Field in Field Schema
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the “**tablename**” field.
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
-
-
 ### Field Extraction Rule(s)
 
-Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
-
-```sql
-Rule Name: AwsObservabilityDynamoDBCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* eventname eventsource "dynamodb.amazonaws.com"
-Parse Expression:
-| json "eventSource", "awsRegion", "requestParameters.tableName", "recipientAccountId" as eventSource, region, tablename, accountid nodrop
-| where eventSource = "dynamodb.amazonaws.com"
-| "aws/dynamodb" as namespace
-| tolowercase(tablename) as tablename
-| fields region, namespace, tablename, accountid
-```
+The FER **AwsObservabilityDynamoDBCloudTrailLogsFER** to extract fields `region`, `namespace`, `tablename`, and `accountid` will be created as a part of app installation.
 
 
 ### Centralized AWS CloudTrail Log Collection
@@ -158,10 +139,17 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 Now that you have set up a collection for **Amazon DynamoDB**, install the Sumo Logic app to use the pre-configured [dashboards](#viewing-amazon-dynamodb-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for Amazon DynamoDB Service is AWS/DynamoDB.
+- `tablename` DynamoDB table name.
 
 ## Viewing Amazon DynamoDB dashboards
 
@@ -223,3 +211,35 @@ Use this dashboard to:
 * Identify malicious IPs performing operations on DynamoDB tables using Sumo Logic Threat Intel.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Threat-Intel.png')} alt="Amazon DynamoDB" />
+
+## Create monitors for Amazon DynamoDB app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon DynamoDB alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:-----|:------------|:----------------|:--|
+| `AWS DynamoDB - High Account Provisioned Read Capacity` | This alert fires when we detect that the average read capacity provisioned for an account for a time interval of 5 minutes is greater than or equal to 80%. | Count > = 80 | Count < 80 |
+| `AWS DynamoDB - High Account Provisioned Write Capacity` | This alert fires when we detect that the average write capacity provisioned for an account for a time interval of 5 minutes is greater than or equal to 80%. | Count > = 80 | Count < 80 |
+| `AWS DynamoDB - High Max Provisioned Table Read Capacity` | This alert fires when we detect that the average percentage of read provisioned capacity used by the highest read provisioned table of an account for a time interval of 5 minutes is greater than or equal to 80%. | Count > = 80 | Count < 80 |
+| `AWS DynamoDB - High Max Provisioned Table Write Capacity` | This alert fires when we detect that the average percentage of write provisioned capacity used by the highest write provisioned table of an account for a time interval of 5 minutes is greater than or equal to 80%. | Count > = 80 | Count < 80 |
+| `AWS DynamoDB - High Read Throttle` | This alert fires when we detect that the total read throttle events for a DynamoDB table is high (>5) for a time interval of 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS DynamoDB - High Write Throttle` | This alert fires when we detect that the total write throttle events for a DynamoDB table is high (>5) for a time interval of 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS DynamoDB - Multiple Tables deleted` | This alert fires when five or more tables are deleted within 15 minutes. | Count > = 5 | Count < 5 |
+| `AWS DynamoDB - System Errors` | This alert fires when we detect system errors for a DynamoDB table is high (>10) for a time interval of 5 minutes. | Count > 10 | Count < = 10 |
+| `AWS DynamoDB - High Request Latency` | This alert fires when we detect that the average successful request latency for a DynamoDB table is high (>20ms) for a time interval of 5 minutes. High latency indicates potential issues such as hot partitions, oversized items, or degraded table performance. | Count > 20 | Count < = 20 |
+
+## Upgrade/Downgrade the Amazon DynamoDB app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon DynamoDB app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

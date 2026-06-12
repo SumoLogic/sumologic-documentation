@@ -1,6 +1,7 @@
 ---
 id: classic-load-balancer
 title: AWS Classic Load Balancer
+sidebar_label: AWS Classic Load Balancer
 description: The Sumo Logic app for AWS Elastic Load Balancing Classic is a unified logs and metrics (ULM) app which helps you monitor the classic load balancer.
 ---
 
@@ -111,55 +112,27 @@ Before you can begin to use the AWS Classic Load Balancing (ELB) App, complete t
 Namespace for **AWS Classic Load Balancer** Service is **AWS/ELB**.
 :::
 
-## Field in field schema
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the **loadbalancername** field. 
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
-
 ## Field Extraction Rule(s)
 
-Create a Field Extraction Rule for AWS Classic Load Balancer access logs and Cloudtrail logs. Learn how to create Field Extraction Rules [here](/docs/manage/field-extractions/create-field-extraction-rule).
+The FER **AwsObservabilityClbAccessLogsFER** to extract fields `loadbalancername` and `namespace` from access logs will be created as a part of app installation.
 
-**AWS Classic Load Balancer access logs**
+The FER **AwsObservabilityCLBCloudTrailLogsFER** to extract fields `region`, `namespace`, `loadbalancername`, and `accountid` from CloudTrail logs will be created as a part of app installation.
 
-```sql 
-Rule Name: AwsObservabilityElbAccessLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/logs
-```
-```sumo title="Parse Expression"
-| parse "* * * * * * * * * * * \"*\" \"*\" * *" as datetime, loadbalancername, client, backend, request_processing_time, backend_processing_time, response_processing_time, elb_status_code, backend_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol
-| parse regex field=datetime "(?<datetimevalue>\d{0,4}-\d{0,2}-\d{0,2}T\d{0,2}:\d{0,2}:\d{0,2}\.\d+Z)"
-| where !isBlank(loadbalancername) and !isBlank(datetimevalue)
-| "aws/elb" as namespace
-| tolowercase(loadbalancername) as loadbalancername
-| fields loadbalancername, namespace
-```
-
-**AWS Classic Load Balancer CloudTrail Logs**
-
-```sql
-Rule Name: AwsObservabilityCLBCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.amazonaws.com" "2012-06-01"
-```
-
-```sumo title="Parse Expression"
-json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.loadBalancerName" as event_source, region, accountid, loadbalancername nodrop 
-| where event_source = "elasticloadbalancing.amazonaws.com"
-| toLowerCase(loadbalancername) as loadbalancername 
-| "aws/elb" as namespace 
-| fields region, namespace, loadbalancername, accountid
-```
-
-## Install the AWS Classic Load Balancer app
+## Installing the AWS Classic Load Balancer app
 
 Now that you have set up a collection for AWS Classic Load Balancer, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for AWS Classic Load Balancer Service is AWS/ELB.
+- `loadbalancername` Classic Load Balancer name.
 
 ## Viewing the AWS Classic Load Balancer dashboards
 
@@ -256,3 +229,34 @@ Use this dashboard to:
 * Identify the most common error types and the users experiencing highest failure rates, facilitating targeted improvements and user support.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-CloudTrail-Audit.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for AWS Classic Load Balancer app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS Classic Load Balancer alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:-----|:------------|:----------------|:--|
+| `AWS Classic Load Balancer - Access from Highly Malicious Sources` | This alert fires when the classic load balancer is accessed from highly malicious IP addresses within last 5 minutes. | Count > 0 | Count < = 0 |
+| `AWS Classic Load Balancer - Deletion Alert` | This alert fires when we detect greater than or equal to 2 application load balancers are deleted over a 5 minute time-period. | Count > = 2 | Count < 2 |
+| `AWS Classic Load Balancer - High 4XX Errors` | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx within an interval of 5 minutes. | Count > = 5 | Count < 5 |
+| `AWS Classic Load Balancer - High 5XX Errors` | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx within an interval of 5 minutes. | Count > = 5 | Count < 5 |
+| `AWS Classic Load Balancer - High Latency` | This alert fires when we detect that the average latency for a given classic load balancer within a time interval of 5 minutes is greater than or equal to three seconds. | Count > = 3000 | Count < 3000 |
+| `AWS Classic Load Balancer - Targets Deregistered` | This alert fires when we detect greater than or equal to 1 target is de-registered over a 5 minute time-period. | Count > = 1 | Count < 1 |
+| `AWS Classic Load Balancer - Spillover Count` | This alert fires when a Classic load balancer spillover count is greater than 0 within a 5 minute interval, indicating that the surge queue is full and new connections are being rejected. | Count > 0 | Count < = 0 |
+| `AWS Classic Load Balancer - High Unhealthy Host Count` | This alert fires when the unhealthy host percentage for a Classic load balancer is greater than or equal to 50% within a 5 minute interval. | Count > = 50 | Count < 50 |
+
+## Upgrade/Downgrade the AWS Classic Load Balancer app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS Classic Load Balancer app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
