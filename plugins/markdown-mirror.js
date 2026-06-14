@@ -45,6 +45,16 @@ module.exports = function markdownMirrorPlugin(context) {
       // Write index for easy discovery
       fs.writeFileSync(path.join(mirrorDir, 'index.txt'), index.join('\n') + '\n');
       console.log(`[markdown-mirror] ${relPaths.length} files mirrored to /llm/docs/`);
+
+      // Update "Last updated" date in the built llms.txt
+      const llmsTxtPath = path.join(outDir, 'llms.txt');
+      if (fs.existsSync(llmsTxtPath)) {
+        const today = new Date().toISOString().slice(0, 10);
+        const updated = fs.readFileSync(llmsTxtPath, 'utf8')
+          .replace(/^- Last updated: .+$/m, `- Last updated: ${today}`);
+        fs.writeFileSync(llmsTxtPath, updated);
+        console.log(`[markdown-mirror] llms.txt Last updated set to ${today}`);
+      }
     },
   };
 };
