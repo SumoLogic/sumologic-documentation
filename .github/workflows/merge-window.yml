@@ -1,0 +1,122 @@
+name: Merge Window Check
+
+# Blocks merges to main outside of operating hours:
+#   Allowed: Sunday 8pm PT through Friday 2pm PT
+#   Blocked: Friday 2pm PT through Sunday 8pm PT (weekend freeze)
+#
+# Emergency override: apply the 'emergency-merge' label to a PR to bypass the window.
+#
+# Setup required (one-time):
+#   1. Create a label named 'emergency-merge' in this repo (Settings > Labels)
+#   2. Add 'Merge Window Check' as a required status check in branch protection for main
+#      (Settings > Branches > Branch protection rules > main > Require status checks to pass
+#       before merging > add "Merge Window / check")
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, labeled, unlabeled]
+    branches:
+      - main
+  schedule:
+    # Re-evaluate all open PRs every 30 minutes so the window is enforced
+    # even when no new commits are pushed to a PR.
+    - cron: '*/30 * * * *'
+
+permissions:
+  pull-requests: read
+  statuses: write
+
+jobs:
+  check:
+    name: Merge Window / check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Evaluate merge window
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const STATUS_CONTEXT = 'Merge Window / check';
+            const OVERRIDE_LABEL = 'emergency-merge';
+
+            // Returns true when the repo is in the weekend freeze window:
+            //   Friday 14:00 PT → Sunday 20:00 PT
+            function isBlocked() {
+              const formatter = new Intl.DateTimeFormat('en-US', {
+                timeZone: 'America/Los_Angeles',
+                weekday: 'long',
+                hour: 'numeric',
+                hour12: false,
+              });
+              const parts = Object.fromEntries(
+                formatter.formatToParts(new Date()).map(({ type, value }) => [type, value])
+              );
+              const day   = parts.weekday;
+              const hour  = parseInt(parts.hour, 10);
+
+              if (day === 'Friday'   && hour >= 14) return true;
+              if (day === 'Saturday')               return true;
+              if (day === 'Sunday'   && hour < 20)  return true;
+              return false;
+            }
+
+            function hasOverride(labels) {
+              return labels.some(l => (l.name ?? l) === OVERRIDE_LABEL);
+            }
+
+            async function stamp(sha, state, description) {
+              await github.rest.repos.createCommitStatus({
+                owner:   context.repo.owner,
+                repo:    context.repo.repo,
+                sha,
+                state,
+                description,
+                context: STATUS_CONTEXT,
+              });
+            }
+
+            const blocked = isBlocked();
+
+            // ── pull_request event ────────────────────────────────────────────
+            if (context.eventName === 'pull_request') {
+              const pr     = context.payload.pull_request;
+              const sha    = pr.head.sha;
+              const labels = pr.labels ?? [];
+
+              if (!blocked) {
+                await stamp(sha, 'success', 'Merge window open — merging is allowed');
+              } else if (hasOverride(labels)) {
+                await stamp(sha, 'success', 'Emergency override active — merge window bypassed');
+              } else {
+                await stamp(sha, 'failure',
+                  'Outside merge window (Fri 2pm – Sun 8pm PT). Apply the emergency-merge label to override.');
+                core.setFailed(
+                  'Merge blocked: outside operating hours (Fri 2 pm – Sun 8 pm PT). ' +
+                  'Apply the emergency-merge label to bypass.'
+                );
+              }
+
+            // ── schedule event ────────────────────────────────────────────────
+            } else {
+              const { data: prs } = await github.rest.pulls.list({
+                owner:    context.repo.owner,
+                repo:     context.repo.repo,
+                state:    'open',
+                base:     'main',
+                per_page: 100,
+              });
+
+              core.info(`Evaluating ${prs.length} open PR(s) — window ${blocked ? 'BLOCKED' : 'OPEN'}`);
+
+              for (const pr of prs) {
+                const override = hasOverride(pr.labels);
+
+                if (!blocked) {
+                  await stamp(pr.head.sha, 'success', 'Merge window open — merging is allowed');
+                } else if (override) {
+                  await stamp(pr.head.sha, 'success', 'Emergency override active — merge window bypassed');
+                } else {
+                  await stamp(pr.head.sha, 'failure',
+                    'Outside merge window (Fri 2pm – Sun 8pm PT). Apply the emergency-merge label to override.');
+                }
+              }
+            }
