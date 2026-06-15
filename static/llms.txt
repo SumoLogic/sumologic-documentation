@@ -113,4 +113,4 @@ The following are not product documentation and should not be used as primary so
 - Documentation questions: documentation@sumologic.com
 - Documentation issues: Use the feedback widget on any documentation page
 - Source code: https://github.com/SumoLogic/sumologic-documentation
-- Last updated: 2026-06-05
+- Last updated: 2026-06-15
