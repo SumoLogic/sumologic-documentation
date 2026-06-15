@@ -31,7 +31,7 @@ Create a public or private channel, Send messages or Files to channels or Users 
 * **Rename Channel** *(Notification)* - Renames a conversation.
 * **Search into Conversations** *(Notification)* - Searches for messages and files matching a query.
 * **Send File** *(Notification)* - Sends a file to a channel or direct user.
-* **Send Message** *(Notification)* - Sends a message to a channel or direct message. Includes an **Unfurl Links** option to control whether Slack displays link previews in the message.
+* **Send Message** *(Notification)* - Sends a message to a channel or direct message.
 
 ## Slack configuration
 
@@ -47,7 +47,6 @@ Create a public or private channel, Send messages or Files to channels or Users 
         * User tokens allow you to work directly on behalf of users, based on the OAuth scopes that installing users awards to your app.
     * Actions <br/>All the Actions required scopes depend on the type of channel-like object you're working with. To use the Actions, you'll need at least one of the `channels:`, `groups:`, `im:` or `mpim:` scopes corresponding to the conversation type you're working with.
         * Send Message Action <br/>BOT users cannot post to a direct message conversation between two users using Send Message Action. If your app was involved in the conversation, then it would be a multi-person direct message instead. Apps can post to direct message conversations between users when a shortcut or slash command belonging to that app is used in the conversation.
-            * **Unfurl Links**. When enabled (default), Slack automatically generates a preview for any URL included in the message. Set this option to **false** to disable link previews and keep messages compact with plain-text links.
         * Get User Action <br/>This Action returns information about a member of a workspace. If you want to search for users, it's possible to manage it with an Exact match or without an Exact match. Also, this action will return on the field name users\_ids in JSON, which you can use in Playbook, if you want to invite many users to the channel.
         * Delete Action <br/>When used with a typical user token, may only delete messages posted by that user. When used with a bot user's token, may delete only messages posted by that bot user.
         * Invite To Channel Action <br/>This action invites 1–1000 users to a public or private channel. The calling user must be a member of the channel. And also the invites must not be the owner of the channel.
@@ -154,4 +153,4 @@ For information about Slack, see [Slack documentation](https://slack.com/help).
     * Updated action: Send Message (Added blocks support to enhance message formatting and interactivity).
 * April 30, 2026 (v1.14) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 * June 15, 2026 (v1.15)
-    * Updated action: Send Message (Added **Unfurl Links** option to control whether Slack displays link previews in messages).
+    * Updated action: Send Message (Added **Disable Link Previews** option to control whether Slack displays link previews in messages).
