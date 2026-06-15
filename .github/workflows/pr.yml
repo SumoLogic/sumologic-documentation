@@ -140,9 +140,13 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            // Allowed: Mon–Fri, 8:00 am IST (India team start) through 2:00 pm PT, non-holidays.
+            // Two-tier merge window policy:
+            //   Site changes: hard block — 7:00 am–2:00 pm PT, Mon–Fri, no US/global holidays.
+            //     (US-only window; India is not staffed for outage response.)
+            //   Article changes: soft warning — outside India AND US business hours.
+            //     (India: Mon–Fri 8:00 am IST+; US: same PT window as site changes.)
             // Override: apply the 'active-incident' label for active service incidents only.
-            // Update holiday lists annually using the Sumo Logic Holiday Calendar.
+            // Update holiday lists annually (see DOCS-1703).
 
             const OVERRIDE_LABEL = 'active-incident';
 
@@ -194,22 +198,22 @@ jobs:
               return;
             }
 
-            let blockedReason = null;
-            if      (!WEEKDAYS.has(pt.weekday))  blockedReason = 'weekend';
-            else if (pt.hour >= 14)              blockedReason = 'after 2:00 pm PT';
-            else if (!WEEKDAYS.has(ist.weekday)) blockedReason = 'weekend in India';
-            else if (ist.hour < 8)               blockedReason = 'before 8:00 am IST — India team has not started yet';
-            else if (PT_HOLIDAYS.has(pt.date))   blockedReason = `Sumo holiday (${pt.date} PT)`;
-            else if (IST_HOLIDAYS.has(ist.date)) blockedReason = `Sumo holiday (${ist.date} IST)`;
+            // Site change window: 7:00 am–2:00 pm PT, Mon–Fri, no US/global holidays.
+            let siteBlockedReason = null;
+            if      (!WEEKDAYS.has(pt.weekday)) siteBlockedReason = 'weekend';
+            else if (pt.hour < 7)              siteBlockedReason = 'before 7:00 am PT';
+            else if (pt.hour >= 14)            siteBlockedReason = 'after 2:00 pm PT';
+            else if (PT_HOLIDAYS.has(pt.date)) siteBlockedReason = `Sumo holiday (${pt.date} PT)`;
 
-            if (!blockedReason) {
+            if (!siteBlockedReason) {
               core.info(`Merge window open — PT: ${pt.weekday} ${pt.hour}:xx, IST: ${ist.weekday} ${ist.hour}:xx`);
               return;
             }
 
+            // Check override label before fetching files.
             const labels = context.payload.pull_request?.labels ?? [];
             if (labels.some(l => l.name === OVERRIDE_LABEL)) {
-              core.warning(`active-incident override active. Bypassed: ${blockedReason}`);
+              core.warning(`active-incident override active. Bypassed: ${siteBlockedReason}`);
               return;
             }
 
@@ -235,15 +239,21 @@ jobs:
 
             if (hasSiteChange) {
               core.setFailed(
-                `Merge blocked: ${blockedReason}. ` +
-                'This PR contains site changes (config, workflows, src, etc.), which require the merge window: ' +
-                'Mon–Fri, 8:00 am IST – 2:00 pm PT, non-holidays. ' +
+                `Merge blocked: ${siteBlockedReason}. ` +
+                'Site changes require the merge window: Mon–Fri, 7:00 am–2:00 pm PT, non-holidays. ' +
                 'Active service incident? Apply the active-incident label and re-run this check.'
               );
-            } else {
+              return;
+            }
+
+            // Article-only PR — warn if outside India business hours too.
+            const inIndiaHours = WEEKDAYS.has(ist.weekday) && ist.hour >= 8 && !IST_HOLIDAYS.has(ist.date);
+            if (!inIndiaHours) {
               core.warning(
-                `Outside recommended merge hours (${blockedReason}). ` +
+                `Outside recommended merge hours (${siteBlockedReason}, and before 8:00 am IST). ` +
                 'Article-only PRs should generally merge during India or US business hours. ' +
                 'Proceeding — no action needed unless this is outside a prior arrangement.'
               );
+            } else {
+              core.info(`Article-only PR — India team is active (${ist.weekday} ${ist.hour}:xx IST). Merge allowed.`);
             }
