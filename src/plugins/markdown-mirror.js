@@ -6,9 +6,9 @@
  * URLs like /help/llm/docs/search/get-started-with-search.md
  *
  * Also generates /llm/docs/index.txt listing every mirrored path, stamps the
- * Last updated date in llms.txt, and injects <link rel="alternate"
- * type="text/markdown"> into every docs HTML page so crawlers can discover
- * the mirror automatically.
+ * Last updated date in llms.txt, injects <link rel="alternate"
+ * type="text/markdown"> into every docs HTML page, and adds canonical/slug
+ * fields to each mirrored file's frontmatter so LLMs can find the live page.
  */
 
 const fs = require('fs');
@@ -26,6 +26,55 @@ function walkDocs(dir, base = dir, files = []) {
   return files;
 }
 
+// Extract the slug field from frontmatter if present.
+function parseFrontmatterSlug(content) {
+  if (!content.startsWith('---')) return null;
+  const end = content.indexOf('\n---', 3);
+  if (end === -1) return null;
+  const fm = content.slice(3, end);
+  const m = fm.match(/^slug:\s*(.+)$/m);
+  return m ? m[1].trim().replace(/^['"]|['"]$/g, '') : null;
+}
+
+// Derive the canonical URL and slug for a mirrored file.
+function deriveCanonical(rel, content, siteUrl, baseUrl) {
+  const existingSlug = parseFrontmatterSlug(content);
+  const base = baseUrl.replace(/\/$/, ''); // strip trailing slash
+
+  let urlPath;
+  if (existingSlug) {
+    // Docusaurus slug is relative to the docs route root
+    urlPath = base + '/docs' + (existingSlug.startsWith('/') ? existingSlug : '/' + existingSlug);
+  } else {
+    const normalized = rel.replace(/\\/g, '/').replace(/\.mdx?$/, '');
+    const docPath = normalized.endsWith('/index')
+      ? normalized.slice(0, -'/index'.length)
+      : normalized;
+    urlPath = base + '/docs/' + docPath;
+  }
+
+  return {
+    canonical: siteUrl + urlPath + '/',
+    slug: urlPath + '/',
+    hasExistingSlug: !!existingSlug,
+  };
+}
+
+// Inject canonical (and slug if not already present) into the mirrored file's frontmatter.
+function injectCanonicalFields(content, canonical, slug, hasExistingSlug) {
+  const toInject = hasExistingSlug
+    ? `canonical: ${canonical}`
+    : `slug: ${slug}\ncanonical: ${canonical}`;
+
+  if (content.startsWith('---')) {
+    const end = content.indexOf('\n---', 3);
+    if (end !== -1) {
+      return content.slice(0, end) + '\n' + toInject + content.slice(end);
+    }
+  }
+  return `---\n${toInject}\n---\n\n${content}`;
+}
+
 module.exports = function markdownMirrorPlugin(context) {
   const docsDir = path.join(context.siteDir, 'docs');
 
@@ -34,6 +83,8 @@ module.exports = function markdownMirrorPlugin(context) {
 
     async postBuild({ outDir }) {
       const mirrorDir = path.join(outDir, 'llm', 'docs');
+      const siteUrl = context.siteConfig.url;
+      const baseUrl = context.siteConfig.baseUrl; // e.g. /help/ or /
       const relPaths = walkDocs(docsDir);
       const index = [];
 
@@ -41,7 +92,12 @@ module.exports = function markdownMirrorPlugin(context) {
         const src = path.join(docsDir, rel);
         const dest = path.join(mirrorDir, rel);
         fs.mkdirSync(path.dirname(dest), { recursive: true });
-        fs.copyFileSync(src, dest);
+
+        const source = fs.readFileSync(src, 'utf8');
+        const { canonical, slug, hasExistingSlug } = deriveCanonical(rel, source, siteUrl, baseUrl);
+        const mirrored = injectCanonicalFields(source, canonical, slug, hasExistingSlug);
+        fs.writeFileSync(dest, mirrored);
+
         index.push(`/llm/docs/${rel.replace(/\\/g, '/')}`);
       }
 
