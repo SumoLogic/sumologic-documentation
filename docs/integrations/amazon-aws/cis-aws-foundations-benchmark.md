@@ -6,7 +6,7 @@ description: Gain operational visibility into your AWS security posture using th
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cisaws.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/cisaws.png')} alt="CIS AWS icon" width="50"/>
 
 The Center for Internet Security (CIS) is a 501(c)(3) organization dedicated to enhancing the cyber-security readiness and response among public and private sector entities. Utilizing its strong industry and government partnerships, CIS combats evolving cyber-security challenges on a global scale and helps organizations adopt key best practices to achieve immediate and effective defenses against cyber attacks.  
 
@@ -34,9 +34,9 @@ The CIS AWS Foundation Benchmark App ingests [AWS CloudTrail](/docs/integrations
 
 Now that you have configured CIS AWS Foundation Benchmark, install the Sumo Logic App for CIS AWS Foundation Benchmark to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 For context regarding the CIS AWS Foundation Benchmark App, check out this [blog](https://www.sumologic.com/blog/cis-aws-foundations-benchmark-monitoring/) where we describe the monitoring controls.
 

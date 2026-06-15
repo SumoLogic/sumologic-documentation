@@ -7,7 +7,7 @@ description: The Sumo Logic app for Miro offers functionality for monitoring and
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="icon" width="40" />
+<img src={useBaseUrl('img/send-data/miro-logo.png')} alt="Miro icon" width="40" />
 
 The Sumo Logic app for Miro provides visibility into Miro audit logs to ensure the security and compliance of your Miro environment. The app leverages the [Miro cloud-to-cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source) to collect audit log data and provides pre-built dashboards and visualizations to enable security teams to easily monitor and investigate potential security threats.
 
@@ -56,7 +56,7 @@ This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://develop
 ```
 ## Sample queries
 
-```sql title="Total Phishing Security Tests"
+```sumo title="Total Phishing Security Tests"
 _sourceCategory=miro
 | json "id", "type", "context.team.name", "context.organization.name", "context.ip", "createdAt", "event", "createdBy.name", "createdBy.email" as id, type, team_name, organization_name, ip, createdAt, event, user_name, user_email nodrop
 | where organization_name matches "{{organization}}"
@@ -65,15 +65,33 @@ _sourceCategory=miro
 | count_distinct (id)
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-Follow the instructions for setting up [Cloud-to-Cloud Integration for Miro](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source/) source and use the same source category while installing the app.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Miro app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Miro](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Miro app is properly integrated and configured to collect and analyze your Miro data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Miro dashboards​
 
@@ -87,7 +105,7 @@ The **Miro - Overview** dashboard provides a comprehensive overview of events re
 
 The widgets allow you to track and analyze event-related information, including the total number of events, their distribution, team-wise breakdown, creation and opening of boards over time, and their geographical locations. The Recent File Event Summary and Recent Event Summary widgets provide a summary of the latest events for quick reference. A dashboard is a useful tool for monitoring and improving event management by providing quick access to relevant information.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Overview.png' alt="Miro-Overview.png" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Overview.png' alt="Miro - Overview dashboard" />
 
 ### Security Events
 
@@ -95,9 +113,9 @@ The **Miro - Security Events** dashboard provides a comprehensive overview of yo
 
 The widgets allow you to track and analyze your security events, including the number of sign-in security events, account creation, deletion, deactivation, and reactivation. The Distribution of Sign-in Security Events widget provides an overview of sign-in patterns across different events, while the Sign-in over time by Authentication Methods widget offers a breakdown of sign-ins by the authentication method. The Sign-in from Risky Geo-Locations widget helps you to identify geographic locations that pose a higher risk to your security. A dashboard is a useful tool for monitoring and improving your security by providing quick access to relevant information.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Security-Events.png' alt="Miro-Security-Events.png" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Security-Events.png' alt="Miro - Security Events dashboard" />
 
-## Upgrading the Miro app (Optional)
+## Upgrade/Downgrade the Miro app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

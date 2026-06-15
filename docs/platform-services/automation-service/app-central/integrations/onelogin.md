@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/onelogin.png')} alt="onelogin" width="100"/>
 
-***Version: 1.4  
-Updated: Mar 7, 2024***
+***Version: 1.5  
+Updated: April 30, 2026***
 
 OneLogin streamlines identity management, enabling secure and audited access to critical systems.  
 This integration enables user management and secure app access with MFA and event monitoring.
@@ -26,6 +26,31 @@ This integration enables user management and secure app access with MFA and even
 * **Remove a Factor** _(Containment)_ - Remove an enrolled factor from a user.
 * **Update User** _(Containment)_ - Update the attributes of a user in OneLogin.
 
+## Configure OneLogin in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your [OneLogin URL](https://support.onelogin.com/kb/4266967/onelogin-domains-and-ip-addresses).
+
+* **Client ID**. Enter a OneLogin [client ID](https://developers.onelogin.com/api-docs/1/getting-started/working-with-api-credentials).
+
+* **Client Secret**. Enter the secret corresponding to the client ID.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/onelogin-configuration.png')} style={{border:'1px solid gray'}} alt="OneLogin configuration" width="400"/>
+
+For information about OneLogin, see [OneLogin documentation](https://developers.onelogin.com/quickstart).
+
 ## Change Log
 
 * March 1, 2021 - First upload
@@ -37,3 +62,4 @@ This integration enables user management and secure app access with MFA and even
         * Update User
     * Renamed action List Groups
     * Other minor improvements and fixes
+* April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

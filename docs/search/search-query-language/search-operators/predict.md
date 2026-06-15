@@ -2,7 +2,10 @@
 id: predict
 title: predict Search Operator
 sidebar_label: predict
+description: Use the predict operator to forecast future values based on time-series numerical data.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Uses a series of time-stamped numerical values to `predict` future values. The predict operator can be useful in the following cases:
 
@@ -15,7 +18,7 @@ For example, you'd use `predict` to take your current disk space capacity number
 The `predict` operator supports two predictive models:
 
 * Auto-regressive. Uses an advanced auto-regressive (AR) algorithm to learn patterns in the data. It automatically detects the cyclical patterns in the data and uses the cycles in its prediction.   
-* Linear regression. Uses existing data over the query time range as a training set to generate a [linear model](http://en.wikipedia.org/wiki/Linear_regression), and then extrapolates future values using this model.
+* Linear regression. Uses existing data over the query time range as a training set to generate a [linear model](https://en.wikipedia.org/wiki/Linear_regression), and then extrapolates future values using this model.
 
 :::note
 If a missing data point is encountered in the generated time series, Sumo uses a zero value and issues a warning to alert you. If you'd like to use customized values, you can do so with the [fillmissing](fillmissing.md) operator.   
@@ -33,9 +36,7 @@ The syntax for **`predict`** varies depending on whether you use the linear regr
 
 For the linear regression model:
 
-```sql
-... | timeslice 1m | count by _timeslice | predict _count by 1m
-```
+`... | timeslice 1m | count by _timeslice | predict _count by 1m`
 
 The linear regression algorithm produces the following fields in the
 output:  
@@ -46,9 +47,7 @@ output:  
 
 ## Syntax for the auto-regressive model
 
-```sql
-... | timeslice 1m | count by _timeslice | predict _count by 1m model=ar, ar.window=n, forecast=n
-```
+`... | timeslice 1m | count by _timeslice | predict _count by 1m model=ar, ar.window=n, forecast=n`
 
 The table below defines the parameters for running `predict` using the AR model.
 
@@ -60,9 +59,7 @@ The table below defines the parameters for running `predict` using the AR model.
 
 In the following query, the first three lines count the number of messages that contain an error term for every half minute. The last line uses the auto-regressive model to predict 100 data points in the future, based on 50 data points.
 
-```sql
-_sourceCategory=taskmanager jobState=InQueue error | timeslice 30s | count by _timeslice | predict _count by 30s model=ar,ar.window=50,forecast=100
-```
+`_sourceCategory=taskmanager jobState=InQueue error | timeslice 30s | count by _timeslice | predict _count by 30s model=ar,ar.window=50,forecast=100`
 
 The auto-regressive algorithm produces the following fields in the
 output:
@@ -87,11 +84,9 @@ If there are cyclical patterns that fit within the `ar.window`, the auto-regress
 
 For example, if there is an hourly cyclical pattern, the following query will learn that cycle:
 
-```sql
-... | timeslice 5m
-| <aggregate function> by _timeslice as _val  
-| predict _val by 5m model=ar, ar.window=15
-```
+`... | timeslice 5m
+| <aggregate function> by _timeslice as _val
+| predict _val by 5m model=ar, ar.window=15`
 
 In this query, the window size (15 consecutive data points) covers more than 1 hour (15 data points \* 5m interval = 75 minutes). So if there are cyclical patterns with a period of less than 75 minutes, the model will discover them.
 
@@ -101,34 +96,30 @@ In this query, the window size (15 consecutive data points) covers more than 1 h
 
 This query predicts the count of 404 errors per minute using linear regression.
 
-```sql
-_sourceCategory=Labs/Apache/Access status_code=404 | timeslice 1m | count(status_code) as error_count by _timeslice | predict error_count by 1m
-```
+`_sourceCategory=Labs/Apache/Access status_code=404 | timeslice 1m | count(status_code) as error_count by _timeslice | predict error_count by 1m`
 
 The query returns an aggregation table with columns for `error_count`, `error_count_predicted`, and `error_count_error`.
 
-![agg-table-predict-linear.png](/img/search/searchquerylanguage/search-operators/agg-table-predict-linear.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/agg-table-predict-linear.png')} alt="Agg table predict linear" style={{border: '1px solid gray'}} width="600" />
 
 From here, you can select the **Line Chart** icon, and automatically create a Combo Chart that represents the `error_count_error` as a column chart, and the `error_count` and `error_count_predicted` mapped on top of that with separate lines. Note that the `(absolute value)_count_error` series is toggled off by default. Click it in the legend to display the column chart.
 
-![combo-chart-predict-linear.png](/img/search/searchquerylanguage/search-operators/combo-chart-predict-linear.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/combo-chart-predict-linear.png')} alt="Combo chart predict linear" style={{border: '1px solid gray'}} width="800" />
 
 ### predict using auto-regressive model
 
 This query predicts the count of 404 errors per minute using the auto-regressive model.
 
-```sql
-_sourceCategory=Labs/Apache/Access status_code=404 | timeslice 1m | count(status_code) as error_count by _timeslice | predict error_count by 1m model=ar
-```
+`_sourceCategory=Labs/Apache/Access status_code=404 | timeslice 1m | count(status_code) as error_count by _timeslice | predict error_count by 1m model=ar`
 
 The query returns an aggregation table with columns for `error_count`, `error_count_predicted`, `error_count_linear`, and `_error_count_error`.
 
-![agg-table-predict-ar.png](/img/search/searchquerylanguage/search-operators/agg-table-predict-ar.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/agg-table-predict-ar.png')} alt="Agg table predict" style={{border: '1px solid gray'}} width="800" />
 
 From here, you can select the **Line Chart** icon, and automatically create a Combo Chart that represents the `error_count_error` as a column chart, and the `error_count` and `error_count_predicted` mapped on top of that with separate lines. Note that the `(absolute value)_count_error` series is toggled off by default. Click it in the legend to display the column chart.
 
-![combo-chart-predict-ar.png](/img/search/searchquerylanguage/search-operators/combo-chart-predict-ar.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/combo-chart-predict-ar.png')} alt="Combo chart predict ar" style={{border: '1px solid gray'}} width="800" />
 
 Note that, if desired, you can display the `_count_linear` series, to see the value predicted by the simple linear regression model by clicking it in the legend.
 
-![combo-chart-predict-ar-with-linear.png](/img/search/searchquerylanguage/search-operators/combo-chart-predict-ar-with-linear.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/combo-chart-predict-ar-with-linear.png')} alt="Combo chart predict ar with linear" style={{border: '1px solid gray'}} width="800" />

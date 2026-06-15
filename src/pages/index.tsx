@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
 import { Box, Button, Container, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
 import { TabContext, TabPanel } from '@mui/lab';
-import bgImage from '../../static/img/hero-secondary-background.webp';
-import heroImage from '../../static/img/hero-secondary-graphic.webp';
-import SumoLogicDocsLogo from '../../static/img/sumo-logic-docs.svg';
+import bgImage from '../../static/img/reuse/hero-secondary-background.webp';
+import heroImage from '../../static/img/reuse/hero-secondary-graphic.webp';
+import SumoLogicDocsLogo from '../../static/img/reuse/sumo-logic-docs.svg';
 import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
-import ErrorBoundary from '../components/ErrorBoundary'; // Import the ErrorBoundary component
+import ErrorBoundary from '../components/ErrorBoundary';
+import GoogleTranslateNavbarItem from '../theme/NavbarItem/GoogleTranslateNavbarItem';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
@@ -15,11 +17,28 @@ export const Home = () => {
   return (
     <ErrorBoundary>
       <Layout
-        description='Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.'
+        description='Sumo Logic documentation for log analytics, cloud monitoring, security, observability, and AI-powered troubleshooting. Get started guides, API references, and release notes.'
         title='Home'
       >
+      {/* H1 hidden, but visible to crawlers */}
+      <Typography
+        component='h1'
+        sx={{
+          position: 'absolute',
+          width: 1,
+          height: 1,
+          p: 0,
+          m: -1,
+          overflow: 'hidden',
+          clip: 'rect(0 0 0 0)',
+          border: 0,
+        }}
+      >
+        Sumo Logic Documentation
+      </Typography>
         {/* Header */}
         <Typography
+          component="div"
           bgcolor='#0045BE'
           color='#e3e3e3'
           fontFamily='Lab Grotesque'
@@ -36,7 +55,6 @@ export const Home = () => {
           <Box
             component={SumoLogicDocsLogo}
             alt="Sumo Logic Docs logo"
-            role="<img>"
             aria-hidden="true"
             height={{
               md: 36,
@@ -44,6 +62,7 @@ export const Home = () => {
             }}
             width='100%'
           />
+        <GoogleTranslateNavbarItem/>
         </Typography>
 
         {/* Hero */}
@@ -51,7 +70,6 @@ export const Home = () => {
           sx={{
             bgcolor: 'white',
             backgroundImage: `url(${bgImage})`,
-            alt: 'hero image',
             backgroundPosition: {
               md: 'top',
               xs: 'left center',
@@ -83,10 +101,7 @@ export const Home = () => {
               }}
               height='100%'
             >
-              <Grid
-                item
-                md={6}
-              >
+              <Grid item md={6}>
                 <Stack
                   alignItems={{
                     md: 'flex-start',
@@ -111,62 +126,61 @@ export const Home = () => {
                     textAlign='left'
                     variant='p'
                   >
-                    Get started quickly with our search, visualization, analytics, and security capabilities.
+                    Get started quickly with log analytics, AI-powered troubleshooting, observability, and security.
                   </Typography>
                   {[
                     {
+                      children: 'Start a free trial',
+                      description: 'Sign up for a Sumo Logic free trial',
+                      href: 'https://www.sumologic.com/sign-up/',
+                    },
+                    {
                       children: '1. Set up collector and source',
                       description: 'Set up a Sumo Logic collector and source',
-                      href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-1-get-your-data-into-sumo',
+                      to: '/docs/get-started/quickstart#step-1-get-your-data-into-sumo',
                     },
                     {
                       children: '2. Explore your data insights',
                       description: 'Explore your insights',
-                      href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-2-search-and-analyze-your-data',
+                      to: '/docs/get-started/quickstart#step-2-search-and-analyze-your-data',
                     },
                     {
                       children: '3. Monitor and secure your environment',
                       description: 'Monitor, troubleshoot, and secure your environment',
-                      href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-3-monitor-and-troubleshoot-your-environment',
+                      to: '/docs/get-started/quickstart#step-3-monitor-and-troubleshoot-your-environment',
                     },
-                  ].map(({ children, ...rest }) => (
-                    <Button
-                      key={rest.href}
-                      sx={{
-                        bgcolor: 'transparent',
-                        border: '.5px solid',
-                        borderColor: '#e3e3e3',
-                        borderRadius: 2,
-                        fontFamily: 'Lab Grotesque',
-                        textTransform: 'none',
-                        width: {
-                          md: 'auto',
-                          xs: '100%',
-                        },
-                        '&:hover': {
-                          bgcolor: '#0045BE',
-                          borderColor: '#0045BE',
-                          color: '#e3e3e3',
-                        },
-                      }}
-                      variant='contained'
-                      {...rest}
-                    >
-                      {children}
-                    </Button>
+                  ].map(({ children, to, href }) => (
+                    <Link key={to || href} to={to} href={href} style={{ textDecoration: 'none' }}>
+                      <Button
+                        sx={{
+                          bgcolor: 'transparent',
+                          border: '.5px solid',
+                          borderColor: '#e3e3e3',
+                          borderRadius: 2,
+                          fontFamily: 'Lab Grotesque',
+                          textTransform: 'none',
+                          width: {
+                            md: 'auto',
+                            xs: '100%',
+                          },
+                          '&:hover': {
+                            bgcolor: '#0045BE',
+                            borderColor: '#0045BE',
+                            color: '#e3e3e3',
+                          },
+                        }}
+                        variant='contained'
+                      >
+                        {children}
+                      </Button>
+                    </Link>
                   ))}
                 </Stack>
               </Grid>
-              <Grid
-                item
-                md={6}
-                pl={{
-                  md: 13,
-                }}
-              >
+              <Grid item md={6} pl={{ md: 13 }}>
                 <Box
                   component='img'
-                  alt='hero background image'
+                  alt=''
                   loading='lazy'
                   aria-hidden='true'
                   src={heroImage}
@@ -181,10 +195,8 @@ export const Home = () => {
           </Container>
         </Stack>
 
-        {/* Main */}
+        {/* Product Guides */}
         <Container maxWidth='xl'>
-
-          {/* Product Guides */}
           <Stack
             alignItems='center'
             pb={5}
@@ -195,11 +207,7 @@ export const Home = () => {
               component='h2'
               fontFamily='Lab Grotesque'
               fontWeight={900}
-              mb={{
-                md: 'inherit',
-                sm: 4,
-                xs: 4,
-              }}
+              mb={4}
               textAlign='center'
               variant='h4'
             >
@@ -212,7 +220,7 @@ export const Home = () => {
               textAlign='center'
               variant='subtitle1'
             >
-              Ensure app reliability and security with modern cloud-native monitoring and observability.
+              Monitor, troubleshoot, and secure your environment with log analytics, observability, and AI-powered insights.
             </Typography>
 
             <TabContext value={tab}>
@@ -221,46 +229,20 @@ export const Home = () => {
                 onChange={(_, newTab) => setTab(newTab)}
                 sx={{
                   '& .MuiTabs-flexContainer': {
-                    flexWrap: {
-                      sm: 'wrap',
-                      xs: 'wrap',
-                    },
-                    justifyContent: {
-                      sm: 'center',
-                      xs: 'center',
-                    }
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
                   },
                 }}
-                TabIndicatorProps={{
-                  sx: {
-                    display: {
-                      sm: 'none',
-                      xs: 'none',
-                    },
-                  },
-                }}
+                TabIndicatorProps={{ sx: { display: 'none' } }}
                 value={tab}
               >
                 {[
-                  {
-                    label: 'Data Types',
-                  },
-                  {
-                    label: 'Infrastructure Monitoring',
-                  },
-                  {
-                    label: 'Multi-Cloud',
-                  },
-                  {
-                    label: 'Security and Incidents',
-                  },
-                  {
-                    label: 'Tools',
-                  },
-                  {
-                    label: 'Other Solutions',
-                  },
-                ].map(({ label, ...rest }, index) => (
+                  'Security',
+                  'Log Search',
+                  'Dojo AI',
+                  'Observability',
+                  'Alerts, Apps, Dashboards',
+                ].map((label, index) => (
                   <Tab
                     key={label}
                     label={label}
@@ -270,22 +252,19 @@ export const Home = () => {
                       fontWeight: 'bold',
                     }}
                     value={String(index)}
-                    {...rest}
                   />
                 ))}
               </Tabs>
-              {features.map((feature, index) => tab === String(index) && (
+              {features.map((featureGroup, index) => (
                 <Grid
                   component={TabPanel}
                   container
-                  direction='row'
                   justifyContent='center'
                   key={index}
-                  py={6}
                   spacing={4}
                   value={String(index)}
                 >
-                  {feature.map((config) => (
+                  {featureGroup.map((config) => (
                     <Grid
                       item
                       key={config.link}
@@ -294,7 +273,7 @@ export const Home = () => {
                       xs={12}
                     >
                       <Feature
-                        length={feature.length}
+                        length={featureGroup.length}
                         {...config}
                       />
                     </Grid>

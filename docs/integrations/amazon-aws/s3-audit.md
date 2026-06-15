@@ -6,13 +6,13 @@ description: Provides a simple web services interface that can be used to store 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="S3 Audit icon" width="50"/>
 
 Amazon Simple Storage Service (S3) provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web. The Sumo Logic App for Amazon S3 Audit presents details from access logs that contain information about the request type, the average response time, and the inbound and outbound data volume.
 
 ## Log types
 
-Amazon S3 Audit uses Server Access Logs (activity logs). For more information, see [Amazon S3 server access log format](http://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html).
+Amazon S3 Audit uses Server Access Logs (activity logs). For more information, see [Amazon S3 server access log format](https://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html).
 
 ### Sample log messages
 
@@ -24,7 +24,7 @@ The server access log files consist of a sequence of new-line delimited log reco
 
 ### Sample queries
 
-```sql
+```sumo
 | parse "* * [*] * * * * * \"* HTTP/1.1\" * * * * * * * \"*\" *" as bucket_owner, bucket, time, remoteIP, requester, request_ID, operation, key, request_URI, status_code, error_code, bytes_sent, object_size, total_time, turn_time, referrer, user_agent, version_ID
 | parse regex field=operation "[A-Z]+\.(?<operation>[\w.]+)"
 | count by operation
@@ -36,7 +36,7 @@ Amazon Simple Storage Service (S3) provides a simple web services interface that
 
 This topic details how to collect logs for Amazon S3 Audit and ingest them into Sumo Logic.
 
-Once you begin uploading data, your daily data usage will increase. It's a good idea to check the Account page in  Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-legacy-account.md) at any time.
+Once you begin uploading data, your daily data usage will increase. It's a good idea to check the Account page in  Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account) at any time.
 
 ### Prerequisites
 
@@ -64,7 +64,7 @@ Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automati
 
 Use the following Parse Expression:
 
-```sql
+```sumo
 parse "* * [*] * * * * * \"* HTTP/1.1\" * * * * * * * \"*\" *" as bucket_owner, bucket, time, remoteIP, requester, request_ID, operation, key, request_URI, status_code, error_code, bytes_sent, object_size, total_time, turn_time, referrer, user_agent, version_ID
 ```
 
@@ -122,7 +122,7 @@ This dashboard provides high-level views of threats throughout your S3 Service. 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/S3-Threat-Intel.png')} alt="S3 Audit dashboards" />
 
-## Upgrading the Amazon S3 Audit app (Optional)
+## Upgrade/Downgrade the Amazon S3 Audit app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -2,19 +2,16 @@
 id: base64decode
 title: base64Decode Search Operator
 sidebar_label: base64Decode
+description: Use the base64Decode operator to convert base64-encoded strings into readable ASCII or non-ASCII text in your log data.
 ---
 
 The `base64Decode` operator takes a base64 string and converts it to ASCII or non-ASCII string. Input must be a valid base64 string. Invalid input is returned unaltered.
 
 ## Syntax
 
-```sql
-base64Decode("<string>"[, "<encoding>"]) as <field>
-```
+`base64Decode("<string>"[, "<encoding>"]) as <field>`
 
-```sql
-base64Decode(<string_field>[, "<encoding>"]) as <field>
-```
+`base64Decode(<string_field>[, "<encoding>"]) as <field>`
 
 ### Supported encodings
 

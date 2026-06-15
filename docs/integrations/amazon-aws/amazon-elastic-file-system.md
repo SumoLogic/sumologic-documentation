@@ -6,7 +6,7 @@ description: Learn about the collection process for the Amazon Elastic File Syst
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-elastic-file-system-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon-elastic-file-system-logo.png')} alt="Amazon Elastic File System icon" width="50"/>
 
 Amazon Elastic File System (Amazon EFS) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance. Amazon EFS is built to scale on demand to petabytes without disrupting applications, growing and shrinking automatically as you add and remove files. Because Amazon EFS has a simple web services interface, you can create and configure file systems quickly and easily. The service manages all the file storage infrastructure for you, meaning that you can avoid the complexity of deploying, patching, and maintaining complex file system configurations. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html).
 

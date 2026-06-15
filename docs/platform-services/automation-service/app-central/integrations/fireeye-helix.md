@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-helix.png')} alt="fireeye-helix" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-helix.png')} alt="FireEye Helix icon" width="100"/>
 
-***Version: 1.2  
-Updated: Jul 13, 2023***
+***Version: 1.3  
+Updated: April 29, 2026***
 
 Query FireEye Helix to gather enrichment data during an incident investigation.
 
@@ -31,9 +31,35 @@ Query FireEye Helix to gather enrichment data during an incident investigation.
 * **Close Alert Helix** (*Notification*) - Close an existing Helix alert.
 * **FireEye Helix Alerts Daemon** (*Daemon*) - Automatically gather Helix alerts.
 
+## Configure FireEye Helix in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Endpoint**. Enter the FireEye Helix endpoint URL.
+
+* **API Key**. Enter a FireEye Helix [API key](https://docs.trellix.com/bundle/helix_pg/page/UUID-76e07a89-b6c5-6fb0-3201-34fe0b1eb717.html).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* **FireEye Helix Timezone (Daemon)**. Select your timezone.
+
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fireeye-helix-configuration.png')} style={{border:'1px solid gray'}} alt="FireEye Helix configuration" width="400"/>
+
+For information about Trellix Helix (formerly FireEye Helix), see [Trellix Helix documentation](https://docs.trellix.com/bundle/fe-helix-enterprise-landing/page/UUID-004fd1b5-25d2-27d6-7578-ad0197c248aa.html).
+
 ## Change Log
 
 * January 23, 2020 - First upload
 * July 13, 2023 (v1.1)
 	+ Updated the integration with Environmental Variables
 	+ Changed fields visibility
+* April 29, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

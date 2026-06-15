@@ -2,6 +2,7 @@
 id: contains
 title: contains Search Operator
 sidebar_label: contains
+description: Use the contains operator to compare string values of two parsed fields and check if one field's value exists within another.
 ---
 
 The `contains` operator compares string values of two [parsed](/docs/search/search-query-language/parse-operators) fields and returns a boolean result based on whether the second field's value exists in the first.
@@ -9,21 +10,13 @@ The `contains` operator compares string values of two [parsed](/docs/search/sear
 
 ## Syntax
 
-```sql
-contains(<field1>, <field2>) as <field>
-```
+`contains(<field1>, <field2>) as <field>`
 
-```sql
-<field1> contains <field2> as <field>
-```
+`<field1> contains <field2> as <field>`
 
-```sql
-| where <field1> contains <field2>
-```
+`| where <field1> contains <field2>`
 
-```sql
-| where contains(<field1>, <field2>)
-```
+`| where contains(<field1>, <field2>)`
 
 ## Rules
 
@@ -43,6 +36,6 @@ instance of alertNotification{ EventIdentifier = 100; Address = 123 Main Street,
 
 Parsing the log so the fields are `city` with the value "San Francisco" and `address` with the value "123 Main Street, San Francisco, California" you'd use the contains operator to return the log if the value of `city` is found in the value of `address`.
 
-```sql
+```sumo
 | where contains(address, city)
 ```

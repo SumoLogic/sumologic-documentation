@@ -119,10 +119,6 @@
     "message": "Manage Users",
     "description": "The label for category Manage Users in sidebar manage"
   },
-  "sidebar.dashboards.category.Dashboards (New)": {
-    "message": "Dashboards (New)",
-    "description": "The label for category Dashboards (New) in sidebar dashboards"
-  },
   "sidebar.dashboards.category.Panels": {
     "message": "Panels",
     "description": "The label for category Panels in sidebar dashboards"

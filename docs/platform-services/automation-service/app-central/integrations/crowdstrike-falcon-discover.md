@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon-discover.png')} alt="crowdstrike-falcon-intelligence" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon-discover.png')} alt="CrowdStrike Falcon Intelligence icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 03, 2023***
+***Version: 1.2  
+Updated: March 31, 2026***
 
 **CrowdStrike Falcon Discover** allows to quickly identify and eliminate malicious or noncompliant activity by providing unmatched real-time visibility into the devices, users, and applications in your network.
 * **Search Logins** *(Enrichment)* - Search for logins in your environment.
@@ -19,19 +19,30 @@ Updated: Jul 03, 2023***
 * **Get Applications** *(Containment)* - Get details on applications.
 * **Get Assets** *(Containment)* - Get details on assets.
 
-## CrowdStrike Falcon Discover in Automation Service and Cloud SOAR
+## Configure CrowdStrike Falcon Discover in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-discover/crowdstrike-falcon-discover-3.png')} style={{border:'1px solid gray'}} alt="crowdstrike-falcon-discover" width="600"/>
-1. Populate all the required fields (\*) and then click **Save**.
-   * **Label**. The desired name for the resource.
-   * **API URL**. `https://api.crowdstrike.com`.
-   * **Client ID**. The unique identifier of the API client.
-   * **Client Secret**. A secret code for an API client.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-discover/crowdstrike-falcon-discover-4.png')} style={{border:'1px solid gray'}} alt="crowdstrike-falcon-discover" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-discover/crowdstrike-falcon-discover-5.png')} style={{border:'1px solid gray'}} alt="crowdstrike-falcon-discover" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-discover/crowdstrike-falcon-discover-6.png')} style={{border:'1px solid gray'}} alt="crowdstrike-falcon-discover" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-discover/crowdstrike-falcon-discover-7.png')} style={{border:'1px solid gray'}} alt="crowdstrike-falcon-discover" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter the CrowdStrike Falcon Discover API URL, for example, `https://api.crowdstrike.com`
+
+* **Client ID**. Enter the unique identifier of the CrowdStrike Falcon Discover API client.
+
+* **Client Secret**. Enter the secret code for an API client.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/crowdstrike-falcon-discover-configuration.png')} style={{border:'1px solid gray'}} alt="CrowdStrike Falcon Discover configuration" width="400"/>
+
+For information about CrowdStrike Falcon Discover, see [CrowdStrike documentation](https://www.crowdstrike.com/en-us/resources/guides/?lang=1).
 
 ## Note
 
@@ -41,3 +52,4 @@ Refer to [Falcon documentation](https://falcon.crowdstrike.com/documentation/45/
 
 * March 16, 2023 (v1.0) - First upload
 * July 3, 2023 (v1.1) - Removed leading/trailing spaces
+* March 31, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
