@@ -162,6 +162,9 @@ jobs:
               '2026-11-06', '2026-12-25', '2027-01-01',
             ]);
 
+            // Fail loudly if the holiday list has expired so merges don't silently slip through.
+            const HOLIDAYS_VALID_THROUGH_YEAR = 2026;
+
             function getTimeInfo(timeZone) {
               const parts = Object.fromEntries(
                 new Intl.DateTimeFormat('en-US', {
@@ -172,6 +175,7 @@ jobs:
               );
               return {
                 date:    `${parts.year}-${parts.month}-${parts.day}`,
+                year:    parseInt(parts.year, 10),
                 weekday: parts.weekday,
                 hour:    parseInt(parts.hour, 10),
               };
@@ -180,6 +184,15 @@ jobs:
             const WEEKDAYS = new Set(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']);
             const pt  = getTimeInfo('America/Los_Angeles');
             const ist = getTimeInfo('Asia/Kolkata');
+
+            if (pt.year > HOLIDAYS_VALID_THROUGH_YEAR) {
+              core.setFailed(
+                `Holiday list expired — only covers through ${HOLIDAYS_VALID_THROUGH_YEAR}. ` +
+                'Update PT_HOLIDAYS and IST_HOLIDAYS in .github/workflows/pr.yml with ' +
+                'the new year\'s dates from the Sumo Logic Holiday Calendar, then bump HOLIDAYS_VALID_THROUGH_YEAR.'
+              );
+              return;
+            }
 
             let blockedReason = null;
             if      (!WEEKDAYS.has(pt.weekday))  blockedReason = 'weekend';
