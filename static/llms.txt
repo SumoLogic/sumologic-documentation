@@ -1,6 +1,21 @@
 # Sumo Logic Documentation
 
-> Documentation for Sumo Logic's cloud-native log analytics, metrics, security (Cloud SIEM), observability, and automation platform. Use this file to discover the most important pages before exploring further.
+> Sumo Logic is a cloud-native platform for log analytics, metrics, distributed tracing, security (Cloud SIEM), and observability. It is used by DevOps, SecOps, and platform engineering teams to monitor infrastructure, investigate incidents, detect threats, and meet SLO targets, all without managing on-premise infrastructure. Use this file as the canonical entry point for discovering Sumo Logic documentation. Pages are listed by product area in priority order. Start here, then follow links into deeper content.
+
+## What makes Sumo Logic distinctive
+
+- **Multi-tenant SaaS:** no infrastructure to deploy, patch, or manage
+- **Unified platform:** logs, metrics, traces, and Cloud SIEM in a single product — no stitching together separate tools
+- **Cloud SIEM with automated threat detection:** raw logs are normalized into records, correlated into signals, and surfaced as insights without manual triage
+- **Native OpenTelemetry support:** ingest OTel-formatted logs, metrics, and traces directly via the OpenTelemetry Collector
+- **Built-in SOAR:** the Automation Service provides playbook-driven response without a separate SOAR product
+- **Petabyte-scale ingest:** designed for high-volume, multi-cloud environments with no capacity planning required
+
+## Primary audiences
+
+- **Platform and DevOps engineers**: log collection, OpenTelemetry, Kubernetes monitoring, dashboards, and alerting
+- **Security analysts (SecOps)**: Cloud SIEM, detection rules, signals, entities, insights, and automation playbooks
+- **SREs**: SLOs, distributed traces, Real User Monitoring (RUM), monitors, and incident investigation
 
 ## Site information
 
@@ -8,7 +23,8 @@
 - Sitemap: https://www.sumologic.com/help/sitemap.xml
 - LLM guidance (this file): https://www.sumologic.com/help/llms.txt
 - All page URLs end with a trailing slash
-- Pages are HTML; raw markdown versions are not available
+- Raw Markdown mirror: every documentation page is available as source Markdown at `/help/llm/docs/{path}.md` (e.g. `https://www.sumologic.com/help/llm/docs/search/get-started-with-search.md`)
+- Mirror index: `https://www.sumologic.com/help/llm/docs/index.txt` — lists every mirrored path, one per line
 
 ## Content usage
 
@@ -97,4 +113,4 @@ The following are not product documentation and should not be used as primary so
 - Documentation questions: documentation@sumologic.com
 - Documentation issues: Use the feedback widget on any documentation page
 - Source code: https://github.com/SumoLogic/sumologic-documentation
-- Last updated: 2026-04-17
+- Last updated: 2026-06-05

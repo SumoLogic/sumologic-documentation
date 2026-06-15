@@ -34,10 +34,10 @@ Sumo Logic supports two OAuth 2.0 authentication flows:
 
 ## How permissions work
 
-For both flows, effective permissions are the intersection of the OAuth client's scopes and the caller's roles. This prevents privilege escalation — no OAuth client can grant more access than the caller already has.
+Effective permissions are always the intersection of the OAuth client's configured scopes and the caller's roles. No OAuth client can grant more access than the caller already has.
 
-* **Authorization Code flow**. Intersection of the authenticated user's roles, the OAuth client's scopes, and the scopes requested in the authorization request.
-* **Client Credentials flow**. Intersection of the service account's roles and the OAuth client's scopes.
+* **Authorization Code flow**. Effective permissions are the intersection of the authenticated user's roles and the OAuth client's configured scopes. When specific scopes are requested during authorization, effective permissions are further limited to those requested scopes.
+* **Client Credentials flow**. Effective permissions are the intersection of the service account's roles, the OAuth client's configured scopes, and any scopes explicitly requested when obtaining a token.
 
 ## Authorization Code flow
 
