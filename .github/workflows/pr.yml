@@ -132,7 +132,7 @@ jobs:
           skip: "*.svg,*.js,*.map,*.css,*.scss"
           ignore_words_list: "aks,atleast,cros,ddress,delink,fiel,ist,nd,ot,pullrequest,ser,shttp,wast,fo,seldomly,delt,cruzer,plack,secur,te,nginx,Nginx,notin"
   check-merge-window:
-    name: Merge window
+    name: merge window
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
     steps:
