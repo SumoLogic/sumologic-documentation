@@ -213,8 +213,37 @@ jobs:
               return;
             }
 
-            core.setFailed(
-              `Merge blocked: ${blockedReason}. ` +
-              'Window: Mon–Fri, 8:00 am IST – 2:00 pm PT, non-holidays. ' +
-              'Active service incident? Apply the active-incident label and re-run this check.'
+            // Classify the PR's changed files to determine enforcement level.
+            // Article paths (docs, blog posts, images) → soft warning only.
+            // Everything else (workflows, config, src, etc.) → hard block.
+            const ARTICLE_PATTERNS = [
+              /^docs\//,
+              /^blog-/,
+              /^static\/img\//,
+            ];
+
+            const { data: files } = await github.rest.pulls.listFiles({
+              owner:       context.repo.owner,
+              repo:        context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              per_page:    100,
+            });
+
+            const hasSiteChange = files.some(
+              f => !ARTICLE_PATTERNS.some(p => p.test(f.filename))
             );
+
+            if (hasSiteChange) {
+              core.setFailed(
+                `Merge blocked: ${blockedReason}. ` +
+                'This PR contains site changes (config, workflows, src, etc.), which require the merge window: ' +
+                'Mon–Fri, 8:00 am IST – 2:00 pm PT, non-holidays. ' +
+                'Active service incident? Apply the active-incident label and re-run this check.'
+              );
+            } else {
+              core.warning(
+                `Outside recommended merge hours (${blockedReason}). ` +
+                'Article-only PRs should generally merge during India or US business hours. ' +
+                'Proceeding — no action needed unless this is outside a prior arrangement.'
+              );
+            }
