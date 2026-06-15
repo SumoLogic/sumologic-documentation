@@ -141,10 +141,11 @@ jobs:
         with:
           script: |
             // Two-tier merge window policy:
-            //   Site changes: hard block — 7:00 am–2:00 pm PT, Mon–Fri, no US/global holidays.
-            //     (US-only window; India is not staffed for outage response.)
-            //   Article changes: soft warning — outside India AND US business hours.
-            //     (India: Mon–Fri 8:00 am IST+; US: same PT window as site changes.)
+            //   Backend site changes (workflows, config, src, etc.): hard block outside
+            //     7:00 am–2:00 pm PT, Mon–Fri, non-holidays. US-only window; India is not
+            //     staffed for outage response.
+            //   Docs and release notes (docs/, blog-*, images): soft warning only — should
+            //     generally merge during India or US business hours, but not hard-blocked.
             // Override: apply the 'active-incident' label for active service incidents only.
             // Update holiday lists annually (see DOCS-1703).
 
@@ -198,7 +199,7 @@ jobs:
               return;
             }
 
-            // Site change window: 7:00 am–2:00 pm PT, Mon–Fri, no US/global holidays.
+            // Backend site change window: 7:00 am–2:00 pm PT, Mon–Fri, no US/global holidays.
             let siteBlockedReason = null;
             if      (!WEEKDAYS.has(pt.weekday)) siteBlockedReason = 'weekend';
             else if (pt.hour < 7)              siteBlockedReason = 'before 7:00 am PT';
@@ -218,8 +219,8 @@ jobs:
             }
 
             // Classify the PR's changed files to determine enforcement level.
-            // Article paths (docs, blog posts, images) → soft warning only.
-            // Everything else (workflows, config, src, etc.) → hard block.
+            // Docs and release notes (docs/, blog-*, images) → soft warning only.
+            // Everything else (backend site changes) → hard block.
             const ARTICLE_PATTERNS = [
               /^docs\//,
               /^blog-/,
@@ -240,20 +241,20 @@ jobs:
             if (hasSiteChange) {
               core.setFailed(
                 `Merge blocked: ${siteBlockedReason}. ` +
-                'Site changes require the merge window: Mon–Fri, 7:00 am–2:00 pm PT, non-holidays. ' +
+                'Backend site changes require the merge window: Mon–Fri, 7:00 am–2:00 pm PT, non-holidays. ' +
                 'Active service incident? Apply the active-incident label and re-run this check.'
               );
               return;
             }
 
-            // Article-only PR — warn if outside India business hours too.
+            // Docs/release note PR — warn if outside India business hours too.
             const inIndiaHours = WEEKDAYS.has(ist.weekday) && ist.hour >= 8 && !IST_HOLIDAYS.has(ist.date);
             if (!inIndiaHours) {
               core.warning(
                 `Outside recommended merge hours (${siteBlockedReason}, and before 8:00 am IST). ` +
-                'Article-only PRs should generally merge during India or US business hours. ' +
+                'Docs and release note PRs should generally merge during India or US business hours. ' +
                 'Proceeding — no action needed unless this is outside a prior arrangement.'
               );
             } else {
-              core.info(`Article-only PR — India team is active (${ist.weekday} ${ist.hour}:xx IST). Merge allowed.`);
+              core.info(`Docs/release note PR — India team is active (${ist.weekday} ${ist.hour}:xx IST). Merge allowed.`);
             }
