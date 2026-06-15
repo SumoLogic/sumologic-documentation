@@ -430,9 +430,6 @@ processors:
   memory_limiter:
     check_interval: 1s
     limit_mib: 512
-  batch:
-    send_batch_size: 2048
-    timeout: 5s
   resourcedetection/system:
     detectors: ["system"]
     system:
@@ -461,13 +458,18 @@ processors:
 exporters:
   sumologic:
     metric_format: prometheus
+    sending_queue:
+      queue_size: 2048000
+      batch:
+        flush_timeout: 5s
+        min_size: 2048
 
 service:
   extensions: [sumologic]
   pipelines:
     metrics:
       receivers: [prometheus]
-      processors: [memory_limiter, batch, resourcedetection/system, resource/common, resource/sumologic]
+      processors: [memory_limiter, resourcedetection/system, resource/common, resource/sumologic]
       exporters: [sumologic]
 ```
 
