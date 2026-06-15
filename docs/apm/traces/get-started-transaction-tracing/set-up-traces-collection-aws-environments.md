@@ -159,24 +159,22 @@ receivers:
         endpoint: 0.0.0.0:4317
       http:
         endpoint: 0.0.0.0:4318
-processors:
-  batch/traces:
-    timeout: 5s
-    send_batch_size: 256
-  batch/metrics:
-    timeout: 60s
 exporters:
   otlphttp:
     endpoint: SUMO_OTLP_HTTP_ENDPOINT_URL
+    sending_queue:
+      queue_size: 10000
+      batch:
+        flush_timeout: 5s
+        min_size: 256
+        max_size: 512
 service:
   extensions: [health_check]
   pipelines:
     traces:
-      receivers: [otlp,awsxray]
-      processors: [batch/traces]
+      receivers: [otlp]
       exporters: [otlphttp]
     metrics:
       receivers: [otlp]
-      processors: [batch/metrics]
       exporters: [otlphttp]
 ```
