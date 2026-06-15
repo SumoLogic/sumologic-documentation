@@ -23,7 +23,7 @@
 - Sitemap: https://www.sumologic.com/help/sitemap.xml
 - LLM guidance (this file): https://www.sumologic.com/help/llms.txt
 - All page URLs end with a trailing slash
-- Raw Markdown mirror: every documentation page is available as source Markdown at `/help/llm/docs/{path}.md` (e.g. `https://www.sumologic.com/help/llm/docs/search/get-started-with-search.md`)
+- Raw Markdown mirror: every documentation page is available as source Markdown at `/help/llm/docs/{path}` (e.g. `https://www.sumologic.com/help/llm/docs/alerts/difference-from-scheduled-searches.md` for a single page, or `https://www.sumologic.com/help/llm/docs/alerts/monitors/index.md` for a section index page)
 - Mirror index: `https://www.sumologic.com/help/llm/docs/index.txt` — lists every mirrored path, one per line
 
 ## Content usage
