@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/slack.png')} alt="slack" width="80"/>
 
 ***Version: 1.15  
-Updated: Jun 15, 2026***
+Updated: Jun 17, 2026***
 
 Create a public or private channel, Send messages or Files to channels or Users directly. This Slack integration keeps teams connected. Organize conversations, and quickly find what you need to get work done.
 
@@ -152,5 +152,5 @@ For information about Slack, see [Slack documentation](https://slack.com/help).
 * Dec 18, 2025 (v1.13)
     * Updated action: Send Message (Added blocks support to enhance message formatting and interactivity).
 * April 30, 2026 (v1.14) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-* June 15, 2026 (v1.15)
+* June 17, 2026 (v1.15)
     * Updated action: Send Message (Added **Disable Link Previews** option to control whether Slack displays link previews in messages).
