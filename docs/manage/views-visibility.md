@@ -53,7 +53,7 @@ The **Views** page tracks three types of data sources:
 
 ## How to access the Views page
 
-[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Data Management**, then under **Logs** select **Views**. You can also click the **Go To...** menu at the top of the screen and select **Views**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Views**.<br/><img src={useBaseUrl('/img/views/views-page.png')} style={{border: '1px solid gray'}} alt="views-page" width="800"/>
+[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Data Management**, then under **Logs**, select **Views**. You can also click the **Go To...** menu at the top of the screen and select **Views**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Views**.<br/><img src={useBaseUrl('/img/views/views-page.png')} style={{border: '1px solid gray'}} alt="views-page" width="800"/>
 
 :::note
 The page opens with **Scheduled Views** selected as the default data source.
