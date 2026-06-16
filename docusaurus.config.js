@@ -4,21 +4,23 @@
 
 // Documentation page id for open source: sumo-logic-open-source-projects
 
-const fs = require('fs')
+const fs = require('fs');
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 const lightCodeTheme = prismThemes.github;
 const darkCodeTheme = prismThemes.dracula;
 
-const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString())
+const cidRedirects = JSON.parse(
+  fs.readFileSync('cid-redirects.json').toString()
+);
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Sumo Logic Docs',
   tagline: 'Documentation, guides, and API references for Sumo Logic',
-  url: process.env.HOSTNAME || "http://localhost:3000",
+  url: process.env.HOSTNAME || 'http://localhost:3000',
   trailingSlash: true,
-  baseUrl: process.env.BASE_URL || "/",
+  baseUrl: process.env.BASE_URL || '/',
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'throw',
   onDuplicateRoutes: 'throw',
@@ -30,9 +32,7 @@ module.exports = {
   favicon: 'https://www.sumologic.com/favicon.ico',
   organizationName: 'sumologic', // Usually your GitHub org/user name.
   projectName: 'sumologic-documentation', // Usually your repo name.
-  stylesheets: [
-    'https://fonts.googleapis.com/css?family=Material+Icons',
-  ],
+  stylesheets: ['https://fonts.googleapis.com/css?family=Material+Icons'],
   headTags: [
     {
       tagName: 'link',
@@ -75,14 +75,14 @@ module.exports = {
       attributes: {
         rel: 'preconnect',
         href: 'https://api.intellimize.co',
-        crossorigin: 'anonymous'
+        crossorigin: 'anonymous',
       },
     },
     {
       tagName: 'link',
       attributes: {
         rel: 'preconnect',
-        href: 'https://117845498.intellimizeio.com'
+        href: 'https://117845498.intellimizeio.com',
       },
     },
     {
@@ -90,7 +90,7 @@ module.exports = {
       attributes: {
         rel: 'preconnect',
         href: 'https://log.intellimize.co',
-        crossorigin: 'anonymous'
+        crossorigin: 'anonymous',
       },
     },
     // Sumo Logic RUM
@@ -147,10 +147,11 @@ module.exports = {
   presets: [
     [
       '@docusaurus/preset-classic',
-      ({
+      {
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
-          editUrl: 'https://github.com/SumoLogic/sumologic-documentation/edit/main/',
+          editUrl:
+            'https://github.com/SumoLogic/sumologic-documentation/edit/main/',
           //sidebarCollapsible: true,
           //sidebarCollapsed: false,
           remarkPlugins: [
@@ -176,10 +177,7 @@ module.exports = {
               'training',
             ],
           },
-          exclude: [
-            '**/reuse/**',
-            '**/ja/**',
-          ],
+          exclude: ['**/reuse/**', '**/ja/**'],
         },
         sitemap: {
           lastmod: 'date',
@@ -191,7 +189,7 @@ module.exports = {
             '/files/**',
             '/release-notes-*/archive/**',
             '/release-notes-*/2021/**',
-            '/tags/**'
+            '/tags/**',
           ],
           filename: 'sitemap.xml',
         },
@@ -201,7 +199,8 @@ module.exports = {
           routeBasePath: 'release-notes-service',
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
-          blogDescription: 'Latest features and bug fixes for Sumo Logic log analytics, AI and automation, observability, alerts, sources, and more.',
+          blogDescription:
+            'Latest features and bug fixes for Sumo Logic log analytics, AI and automation, observability, alerts, sources, and more.',
           postsPerPage: 'ALL',
           showReadingTime: false,
           onUntruncatedBlogPosts: 'ignore',
@@ -211,152 +210,191 @@ module.exports = {
             type: 'rss',
             xslt: true,
             title: 'Sumo Logic Service Release Notes',
-            description: 'Latest features and bug fixes for Sumo Logic log analytics, AI and automation, observability, alerts, sources, and more.',
+            description:
+              'Latest features and bug fixes for Sumo Logic log analytics, AI and automation, observability, alerts, sources, and more.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
           },
         },
         theme: {
-          customCss: [
-            require.resolve('./src/css/sumo.scss'),
-          ],
+          customCss: [require.resolve('./src/css/sumo.scss')],
         },
-      }),
+      },
     ],
   ],
   plugins: [
     'docusaurus-plugin-sass',
     //Embed code file from GitHub repo
     '@saucelabs/theme-github-codeblock',
-    ['@docusaurus/plugin-google-tag-manager',
+    [
+      '@docusaurus/plugin-google-tag-manager',
       {
         containerId: 'GTM-58ZK7D',
       },
     ],
-    ['@docusaurus/plugin-google-gtag',
+    [
+      '@docusaurus/plugin-google-gtag',
       {
         trackingID: ['G-CVH19TBVSL', 'G-9FTQ9KJJBY'],
       },
     ],
-    ['@docusaurus/plugin-content-blog',
+    [
+      '@docusaurus/plugin-content-blog',
       {
-         id: 'blog-cse',
-         routeBasePath: 'release-notes-cse',
-         path: './blog-cse',
-         archiveBasePath: 'archive',
-         blogTitle: 'Sumo Logic Cloud SIEM Release Notes',
-         blogSidebarTitle: 'All posts',
-         blogSidebarCount: 'ALL',
-         postsPerPage: 'ALL',
-         blogDescription: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
-         showReadingTime: false,
-         onUntruncatedBlogPosts: 'ignore',
-         onInlineTags: 'ignore',
-         onInlineAuthors: 'ignore',
-         feedOptions: {
-           type: 'rss',
-           xslt: true,
-           title: 'Sumo Logic Cloud SIEM Release Notes',
-           description: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
-           copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
-         },
-      },
-    ],
-    ['@docusaurus/plugin-content-blog',
-      {
-         id: 'blog-csoar',
-         routeBasePath: 'release-notes-csoar',
-         path: './blog-csoar',
-         archiveBasePath: 'archive',
-         blogTitle: 'Sumo Logic Cloud SOAR Release Notes',
-         blogSidebarTitle: 'All posts',
-         blogSidebarCount: 'ALL',
-         postsPerPage: 'ALL',
-         blogDescription: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
-         showReadingTime: false,
-         onUntruncatedBlogPosts: 'ignore',
-         onInlineTags: 'ignore',
-         onInlineAuthors: 'ignore',
-         feedOptions: {
-           type: 'rss',
-           xslt: true,
-           title: 'Sumo Logic Cloud SOAR Release Notes',
-           description: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
-           copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
-         },
-      },
-    ],
-    ['@docusaurus/plugin-content-blog',
-       {
-          id: 'blog-developer',
-          routeBasePath: 'release-notes-developer',
-          path: './blog-developer',
-          archiveBasePath: 'archive',
-          blogTitle: 'Sumo Logic Developer Release Notes',
-          blogDescription: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
-          blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
-          postsPerPage: 'ALL',
-          showReadingTime: false,
-          onUntruncatedBlogPosts: 'ignore',
-          onInlineTags: 'ignore',
-          onInlineAuthors: 'ignore',
-          feedOptions: {
-            type: 'rss',
-            xslt: true,
-            title: 'Sumo Logic Developer Release Notes',
-            description: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
-         },
-       },
-    ],
-    ['@docusaurus/plugin-content-blog',
-       {
-          id: 'blog-collector',
-          routeBasePath: 'release-notes-collector',
-          path: './blog-collector',
-          archiveBasePath: 'archive',
-          blogTitle: 'Sumo Logic Collector Release Notes',
-          blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
-          postsPerPage: 'ALL',
-          blogDescription: 'Latest features, improvements, and fixes for the Sumo Logic Installed Collector and OpenTelemetry Collector.',
-          showReadingTime: false,
-          onUntruncatedBlogPosts: 'ignore',
-          onInlineTags: 'ignore',
-          onInlineAuthors: 'ignore',
-          feedOptions: {
-            type: 'rss',
-            xslt: true,
-            title: 'Sumo Logic Collector Release Notes',
-            description: 'Latest features, improvements, and fixes for the Sumo Logic Installed Collector and OpenTelemetry Collector.',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
-          },
+        id: 'blog-cse',
+        routeBasePath: 'release-notes-cse',
+        path: './blog-cse',
+        archiveBasePath: 'archive',
+        blogTitle: 'Sumo Logic Cloud SIEM Release Notes',
+        blogSidebarTitle: 'All posts',
+        blogSidebarCount: 'ALL',
+        postsPerPage: 'ALL',
+        blogDescription:
+          'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
+        showReadingTime: false,
+        onUntruncatedBlogPosts: 'ignore',
+        onInlineTags: 'ignore',
+        onInlineAuthors: 'ignore',
+        feedOptions: {
+          type: 'rss',
+          xslt: true,
+          title: 'Sumo Logic Cloud SIEM Release Notes',
+          description:
+            'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
+          copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
         },
+      },
     ],
-    ['@docusaurus/plugin-client-redirects',
+    [
+      '@docusaurus/plugin-content-blog',
       {
-        redirects: Object.entries(cidRedirects).map(
-          ([key, value]) => ({ from: key, to: value })
-        )
+        id: 'blog-csoar',
+        routeBasePath: 'release-notes-csoar',
+        path: './blog-csoar',
+        archiveBasePath: 'archive',
+        blogTitle: 'Sumo Logic Cloud SOAR Release Notes',
+        blogSidebarTitle: 'All posts',
+        blogSidebarCount: 'ALL',
+        postsPerPage: 'ALL',
+        blogDescription:
+          'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
+        showReadingTime: false,
+        onUntruncatedBlogPosts: 'ignore',
+        onInlineTags: 'ignore',
+        onInlineAuthors: 'ignore',
+        feedOptions: {
+          type: 'rss',
+          xslt: true,
+          title: 'Sumo Logic Cloud SOAR Release Notes',
+          description:
+            'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
+          copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+        },
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'blog-developer',
+        routeBasePath: 'release-notes-developer',
+        path: './blog-developer',
+        archiveBasePath: 'archive',
+        blogTitle: 'Sumo Logic Developer Release Notes',
+        blogDescription:
+          'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
+        blogSidebarTitle: 'All posts',
+        blogSidebarCount: 'ALL',
+        postsPerPage: 'ALL',
+        showReadingTime: false,
+        onUntruncatedBlogPosts: 'ignore',
+        onInlineTags: 'ignore',
+        onInlineAuthors: 'ignore',
+        feedOptions: {
+          type: 'rss',
+          xslt: true,
+          title: 'Sumo Logic Developer Release Notes',
+          description:
+            'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
+          copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+        },
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'blog-collector',
+        routeBasePath: 'release-notes-collector',
+        path: './blog-collector',
+        archiveBasePath: 'archive',
+        blogTitle: 'Sumo Logic Collector Release Notes',
+        blogSidebarTitle: 'All posts',
+        blogSidebarCount: 'ALL',
+        postsPerPage: 'ALL',
+        blogDescription:
+          'Latest features, improvements, and fixes for the Sumo Logic Installed Collector and OpenTelemetry Collector.',
+        showReadingTime: false,
+        onUntruncatedBlogPosts: 'ignore',
+        onInlineTags: 'ignore',
+        onInlineAuthors: 'ignore',
+        feedOptions: {
+          type: 'rss',
+          xslt: true,
+          title: 'Sumo Logic Collector Release Notes',
+          description:
+            'Latest features, improvements, and fixes for the Sumo Logic Installed Collector and OpenTelemetry Collector.',
+          copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+        },
+      },
+    ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: Object.entries(cidRedirects).map(([key, value]) => ({
+          from: key,
+          to: value,
+        })),
       },
     ],
   ],
-  themeConfig:
-    ({
-      docs: {
-        sidebar: {
-          hideable: true,
-          autoCollapseCategories: true,
-        },
+  customFields: {
+    askAi: {
+      assistantId: 'T7pp7iENesuU',
+      indexName: 'crawler_sumodocs',
+      apiKey: 'fb2f4e1fb40f962900631121cb365549',
+      appId: '2SJPGMLW1Q',
+      suggestedQuestions: true,
+    },
+  },
+  themeConfig: {
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
       },
+    },
     // SEO Global Metadata
     metadata: [
-      { name: 'keywords', content: 'sumo logic, documentation, log management, observability, cloud siem, monitoring, API, tutorials' },
+      {
+        name: 'keywords',
+        content:
+          'sumo logic, documentation, log management, observability, cloud siem, monitoring, API, tutorials',
+      },
       { name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586' },
-      { name: 'description', content: 'Sumo Logic documentation for log analytics, cloud monitoring, security, observability, and AI-powered troubleshooting. Get started guides, API references, and release notes.' },
+      {
+        name: 'description',
+        content:
+          'Sumo Logic documentation for log analytics, cloud monitoring, security, observability, and AI-powered troubleshooting. Get started guides, API references, and release notes.',
+      },
       { property: 'og:site_name', content: 'Sumo Logic Docs' },
-      { property: 'og:description', content: 'Sumo Logic documentation for log analytics, cloud monitoring, security, observability, and AI-powered troubleshooting. Get started guides, API references, and release notes.' },
-      { property: 'og:image', content: 'https://www.sumologic.com/wp-content/uploads/meta-HomePage_1200x628-1.png' },
+      {
+        property: 'og:description',
+        content:
+          'Sumo Logic documentation for log analytics, cloud monitoring, security, observability, and AI-powered troubleshooting. Get started guides, API references, and release notes.',
+      },
+      {
+        property: 'og:image',
+        content:
+          'https://www.sumologic.com/wp-content/uploads/meta-HomePage_1200x628-1.png',
+      },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '628' },
       { property: 'og:image:alt', content: 'Sumo Logic Docs' },
@@ -364,7 +402,8 @@ module.exports = {
     ],
     announcementBar: {
       id: 'domain',
-      content: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/><path d="M19 14l.75 2.75L22.5 17.5l-2.75.75L19 21l-.75-2.75L15.5 17.5l2.75-.75L19 14z"/></svg>Check out <a href="https://www.sumologic.com/help/docs/search/mobot/">Mobot</a>, your conversational interface for Sumo Logic. Search logs using natural language, troubleshoot faster, and get how-to guidance.<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/><path d="M19 14l.75 2.75L22.5 17.5l-2.75.75L19 21l-.75-2.75L15.5 17.5l2.75-.75L19 14z"/></svg>',
+      content:
+        '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/><path d="M19 14l.75 2.75L22.5 17.5l-2.75.75L19 21l-.75-2.75L15.5 17.5l2.75-.75L19 14z"/></svg>Check out <a href="https://www.sumologic.com/help/docs/search/mobot/">Mobot</a>, your conversational interface for Sumo Logic. Search logs using natural language, troubleshoot faster, and get how-to guidance.<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/><path d="M19 14l.75 2.75L22.5 17.5l-2.75.75L19 21l-.75-2.75L15.5 17.5l2.75-.75L19 14z"/></svg>',
       backgroundColor: '#000',
       textColor: '#000',
     },
@@ -392,231 +431,244 @@ module.exports = {
         indexName: 'crawler_sumodocs',
         apiKey: 'fb2f4e1fb40f962900631121cb365549',
         appId: '2SJPGMLW1Q',
+        suggestedQuestions: true,
       },
       insightsConfig: {
         useCookie: true, // alt to useCookie: true,
       },
-      useCookie: true,  // alt to insightsConfig: {useCookie: true,},
+      useCookie: true, // alt to insightsConfig: {useCookie: true,},
     },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json', `sql`, `sumo`],
+      additionalLanguages: [
+        'csharp',
+        'powershell',
+        'java',
+        'markdown',
+        'scala',
+        'bash',
+        'diff',
+        'json',
+        `sql`,
+        `sumo`,
+      ],
     },
-      navbar: {
-        logo: {
-          alt: 'Sumo Logic logo',
-          srcDark: 'img/reuse/sumo-logo.svg',
-          src: 'img/reuse/sumo-logo-dark.svg',
-        },
-        items: [
+    navbar: {
+      logo: {
+        alt: 'Sumo Logic logo',
+        srcDark: 'img/reuse/sumo-logo.svg',
+        src: 'img/reuse/sumo-logo-dark.svg',
+      },
+      items: [
         // activeregex controls the top nav content
         // icon uses Google Material name code https://fonts.google.com/icons?query=material
-          {
-            label: 'Guides',
-            position: 'left',
-            to: '#',
-            type: 'dropdown',
-            items:[
-              {
-                type: 'docSidebar',
-                sidebarId: 'getstarted',
-                label: 'Get Started',
-                icon: 'rocket',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'senddata',
-                label: 'Collectors, Sources',
-                icon: 'settings',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'searchlogs',
-                label: 'Log Search',
-                icon: 'article',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'integrations',
-                label: 'Apps and Integrations',
-                icon: 'grid_view',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'security',
-                label: 'Security',
-                icon: 'security',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'manage',
-                label: 'Manage Account',
-                icon: 'manage_accounts',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'dashboards',
-                label: 'Dashboards',
-                icon: 'dashboard',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'alerts',
-                label: 'Alerts',
-                icon: 'notifications',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'metricslogs',
-                label: 'Metrics',
-                icon: 'stacked_line_chart',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'observability',
-                label: 'Observability',
-                icon: 'speed',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'platformservices',
-                label: 'Platform Services',
-                icon: 'settings_suggest',
-              },
-              {
-                type: 'docSidebar',
-                sidebarId: 'apm',
-                label: 'Traces, RUM, APM',
-                icon: 'account_tree',
-              },
-            ]
-          },
-          {
-            label: 'API',
-            position: 'left',
-            to: '#',
-            type: 'dropdown',
-            items:[
-              {
-                type: 'docSidebar',
-                sidebarId: 'api',
-                label: 'API Docs',
-                icon: 'hub',
-              },
-              {
-                label: 'API Reference',
-                href: 'https://api.sumologic.com/docs/',
-                icon: 'code',
-              },
-            ]
-          },
-          {
-            label: 'Release Notes',
-            position: 'left',
-            to: '/docs/release-notes',
-          },
-          {
-            label: 'Support',
-            position: 'left',
-            to: '#',
-            type: 'dropdown',
-            items: [
-              {
-                label: 'Contact Support',
-                to: 'https://support.sumologic.com/support/s',
-                icon: 'support',
-              },
-              {
-                label: 'Request a Demo',
-                href: 'https://www.sumologic.com/demo',
-                icon: 'co_present',
-              },
-              {
-                label: 'Submit Feedback',
-                to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
-                icon: 'thumbs_up_down',
-              },
-              {
-                label: 'Contribute to Docs',
-                to: 'docs/contributing',
-                icon: 'edit_note',
-              },
-            ],
-          },
+        {
+          label: 'Guides',
+          position: 'left',
+          to: '#',
+          type: 'dropdown',
+          items: [
+            {
+              type: 'docSidebar',
+              sidebarId: 'getstarted',
+              label: 'Get Started',
+              icon: 'rocket',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'senddata',
+              label: 'Collectors, Sources',
+              icon: 'settings',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'searchlogs',
+              label: 'Log Search',
+              icon: 'article',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'integrations',
+              label: 'Apps and Integrations',
+              icon: 'grid_view',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'security',
+              label: 'Security',
+              icon: 'security',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'manage',
+              label: 'Manage Account',
+              icon: 'manage_accounts',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'dashboards',
+              label: 'Dashboards',
+              icon: 'dashboard',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'alerts',
+              label: 'Alerts',
+              icon: 'notifications',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'metricslogs',
+              label: 'Metrics',
+              icon: 'stacked_line_chart',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'observability',
+              label: 'Observability',
+              icon: 'speed',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'platformservices',
+              label: 'Platform Services',
+              icon: 'settings_suggest',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'apm',
+              label: 'Traces, RUM, APM',
+              icon: 'account_tree',
+            },
+          ],
+        },
+        {
+          label: 'API',
+          position: 'left',
+          to: '#',
+          type: 'dropdown',
+          items: [
+            {
+              type: 'docSidebar',
+              sidebarId: 'api',
+              label: 'API Docs',
+              icon: 'hub',
+            },
+            {
+              label: 'API Reference',
+              href: 'https://api.sumologic.com/docs/',
+              icon: 'code',
+            },
+          ],
+        },
+        {
+          label: 'Release Notes',
+          position: 'left',
+          to: '/docs/release-notes',
+        },
+        {
+          label: 'Support',
+          position: 'left',
+          to: '#',
+          type: 'dropdown',
+          items: [
+            {
+              label: 'Contact Support',
+              to: 'https://support.sumologic.com/support/s',
+              icon: 'support',
+            },
+            {
+              label: 'Request a Demo',
+              href: 'https://www.sumologic.com/demo',
+              icon: 'co_present',
+            },
+            {
+              label: 'Submit Feedback',
+              to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
+              icon: 'thumbs_up_down',
+            },
+            {
+              label: 'Contribute to Docs',
+              to: 'docs/contributing',
+              icon: 'edit_note',
+            },
+          ],
+        },
         //{
-          //className: 'header-github-link',
-          //to: 'https://github.com/SumoLogic/sumologic-documentation',
-          //position: 'right',
-          //alt: 'Link to Sumo Logic Docs GitHub repository',
+        //className: 'header-github-link',
+        //to: 'https://github.com/SumoLogic/sumologic-documentation',
+        //position: 'right',
+        //alt: 'Link to Sumo Logic Docs GitHub repository',
         //},
-          {
-            type: 'search',
-            position: 'left',
-          },
-          {
-            type: 'html',
-            position: 'left',
-            className: 'navbar-ask-ai-item',
-            value: '<div id="navbar-ask-ai-button"></div>',
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Help',
-            items: [
-              {
-                label: 'Contact support',
-                href: 'https://support.sumologic.com/support/s'
-              },
-              {
-                label: 'Community forum',
-                href: 'https://support.sumologic.com/support/s/topiccatalog' },
-              {
-                label: 'Dojo Slack community',
-                href: 'https://sumodojo.slack.com'
-              },
-            ],
-          },
-          {
-            title: 'Learn',
-            items: [
-              {
-                label: 'Training and certifications',
-                href: 'https://www.sumologic.com/learn/training'
-              },
-              {
-                label: 'Webinars and events',
-                href: 'https://www.sumologic.com/events'
-              },
-              {
-                label: 'Sumo Logic blog',
-                href: 'https://www.sumologic.com/blog'
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Start Free Trial',
-                href: 'https://www.sumologic.com/sign-up/'
-              },
-              {
-                label: 'Request a demo',
-                href: 'https://www.sumologic.com/request-demo'
-              },
-              {
-                label: 'Status page',
-                href: 'https://status.sumologic.com'
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
-      },
-    }),
+        {
+          type: 'search',
+          position: 'left',
+        },
+        {
+          type: 'html',
+          position: 'left',
+          className: 'navbar-ask-ai-item',
+          value: '<div id="navbar-ask-ai-button"></div>',
+        },
+      ],
+    },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Help',
+          items: [
+            {
+              label: 'Contact support',
+              href: 'https://support.sumologic.com/support/s',
+            },
+            {
+              label: 'Community forum',
+              href: 'https://support.sumologic.com/support/s/topiccatalog',
+            },
+            {
+              label: 'Dojo Slack community',
+              href: 'https://sumodojo.slack.com',
+            },
+          ],
+        },
+        {
+          title: 'Learn',
+          items: [
+            {
+              label: 'Training and certifications',
+              href: 'https://www.sumologic.com/learn/training',
+            },
+            {
+              label: 'Webinars and events',
+              href: 'https://www.sumologic.com/events',
+            },
+            {
+              label: 'Sumo Logic blog',
+              href: 'https://www.sumologic.com/blog',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'Start Free Trial',
+              href: 'https://www.sumologic.com/sign-up/',
+            },
+            {
+              label: 'Request a demo',
+              href: 'https://www.sumologic.com/request-demo',
+            },
+            {
+              label: 'Status page',
+              href: 'https://status.sumologic.com',
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
+    },
+  },
 };
