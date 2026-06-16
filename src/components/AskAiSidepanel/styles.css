@@ -57,10 +57,8 @@
   transform: none !important;
   opacity: 1 !important;
   border-radius: 0 !important;
-  box-shadow:
-    -1px 0 0 0 rgba(0, 0, 0, 0.05),
-    -8px 0 32px -4px rgba(0, 0, 0, 0.12),
-    -16px 0 64px -8px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: -1px 0 0 0 rgba(0, 0, 0, 0.05),
+    -8px 0 32px -4px rgba(0, 0, 0, 0.12), -16px 0 64px -8px rgba(0, 0, 0, 0.08) !important;
   animation: slideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex !important;
   visibility: visible !important;
@@ -88,10 +86,8 @@
 }
 
 [data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Container {
-  box-shadow:
-    -1px 0 0 0 rgba(255, 255, 255, 0.08),
-    -8px 0 32px -4px rgba(0, 0, 0, 0.4),
-    -16px 0 64px -8px rgba(0, 0, 0, 0.32) !important;
+  box-shadow: -1px 0 0 0 rgba(255, 255, 255, 0.08),
+    -8px 0 32px -4px rgba(0, 0, 0, 0.4), -16px 0 64px -8px rgba(0, 0, 0, 0.32) !important;
 }
 
 /* Main sidepanel - integrate with Docusaurus theme */
@@ -115,24 +111,108 @@
 .ask-ai-sidepanel .DocSearch-Sidepanel-Header {
   background-color: var(--ifm-navbar-background-color) !important;
   border-bottom: 1px solid var(--ifm-color-emphasis-200) !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  gap: 0.75rem !important;
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Header--center {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
+  flex: 1 1 auto !important;
   gap: 0.5rem !important;
+  min-width: 0 !important;
+  position: static !important;
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Header-TitleIcon {
   display: block !important;
+  flex: 0 0 auto !important;
   margin: 0 !important;
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Title {
   color: var(--ifm-font-color-base) !important;
+  overflow: hidden !important;
   font-weight: 600 !important;
   margin: 0 !important;
+  min-width: 0 !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.ask-ai-sidepanel .DocSearch-Sidepanel-Header--right {
+  flex: 0 0 auto !important;
+  gap: 0.35rem !important;
+  margin-left: auto !important;
+  position: static !important;
+}
+
+.ask-ai-sidepanel .DocSearch-Sidepanel-Action-menu {
+  display: none !important;
+}
+
+.ask-ai-sidepanel
+  .DocSearch-Sidepanel-Header--left
+  button[title='Start a new conversation'],
+.ask-ai-sidepanel
+  .DocSearch-Sidepanel-Header--left
+  button[title='Conversation history'] {
+  display: none !important;
+}
+
+.ask-ai-header-shortcuts {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-right: 0.15rem;
+  order: -1;
+}
+
+.ask-ai-shortcut-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  font-family: 'Lab Grotesque', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ask-ai-shortcut-button svg {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+}
+
+.ask-ai-shortcut-button span {
+  display: none;
+}
+
+.ask-ai-shortcut-button:hover,
+.ask-ai-shortcut-button:focus-visible {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-primary);
+  outline: none;
+}
+
+[data-theme='dark'] .ask-ai-shortcut-button {
+  background: transparent;
+}
+
+[data-theme='dark'] .ask-ai-shortcut-button:hover,
+[data-theme='dark'] .ask-ai-shortcut-button:focus-visible {
+  background: rgba(76, 134, 255, 0.14);
 }
 
 /* ===================================================================
@@ -211,7 +291,9 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
 }
 
-[data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--form:focus-within {
+[data-theme='dark']
+  .ask-ai-sidepanel
+  .DocSearch-Sidepanel-Prompt--form:focus-within {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -235,7 +317,9 @@
   color: var(--ifm-color-emphasis-600) !important;
 }
 
-[data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--textarea::placeholder {
+[data-theme='dark']
+  .ask-ai-sidepanel
+  .DocSearch-Sidepanel-Prompt--textarea::placeholder {
   color: #7f8497 !important;
 }
 
@@ -431,7 +515,9 @@
   border-color: rgba(255, 255, 255, 0.15) !important;
 }
 
-[data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-SuggestedQuestion:hover {
+[data-theme='dark']
+  .ask-ai-sidepanel
+  .DocSearch-Sidepanel-SuggestedQuestion:hover {
   background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
@@ -440,7 +526,9 @@
   color: var(--ifm-color-emphasis-700) !important;
 }
 
-[data-theme='light'] .ask-ai-sidepanel .DocSearch-Sidepanel-SuggestedQuestion:hover {
+[data-theme='light']
+  .ask-ai-sidepanel
+  .DocSearch-Sidepanel-SuggestedQuestion:hover {
   border-color: var(--ifm-color-emphasis-300) !important;
 }
 
@@ -453,12 +541,16 @@
 }
 
 /* Hide original title and show custom text */
-.ask-ai-sidepanel .DocSearch-Sidepanel-NewConversationScreen .DocSearch-Sidepanel-Screen--title {
+.ask-ai-sidepanel
+  .DocSearch-Sidepanel-NewConversationScreen
+  .DocSearch-Sidepanel-Screen--title {
   font-size: 0 !important;
   line-height: 0 !important;
 }
 
-.ask-ai-sidepanel .DocSearch-Sidepanel-NewConversationScreen .DocSearch-Sidepanel-Screen--title::before {
+.ask-ai-sidepanel
+  .DocSearch-Sidepanel-NewConversationScreen
+  .DocSearch-Sidepanel-Screen--title::before {
   font-size: 1.625rem !important;
   line-height: 2rem !important;
   content: 'How can I help you today?';
@@ -470,12 +562,16 @@
 }
 
 /* Hide original introduction and show custom text */
-.ask-ai-sidepanel .DocSearch-Sidepanel-NewConversationScreen .DocSearch-Sidepanel-Screen--introduction {
+.ask-ai-sidepanel
+  .DocSearch-Sidepanel-NewConversationScreen
+  .DocSearch-Sidepanel-Screen--introduction {
   font-size: 0 !important;
   line-height: 0 !important;
 }
 
-.ask-ai-sidepanel .DocSearch-Sidepanel-NewConversationScreen .DocSearch-Sidepanel-Screen--introduction::before {
+.ask-ai-sidepanel
+  .DocSearch-Sidepanel-NewConversationScreen
+  .DocSearch-Sidepanel-Screen--introduction::before {
   font-size: 0.85rem !important;
   line-height: 1.25rem !important;
   content: 'I can help you find information about Sumo Logic features, integrations, troubleshooting guides, APIs, and best practices across our documentation.';
@@ -488,12 +584,3 @@
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--disclaimer {
   display: none !important;
 }
-
-/* ===================================================================
-   Related Sources — hidden; all sources appear as inline links in the
-   answer body with better context than the chips provide
-   =================================================================== */
-.ask-ai-sidepanel .DocSearch-AskAiScreen-RelatedSources {
-  display: none !important;
-}
-

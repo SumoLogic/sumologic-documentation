@@ -392,6 +392,7 @@ module.exports = {
         indexName: 'crawler_sumodocs',
         apiKey: 'fb2f4e1fb40f962900631121cb365549',
         appId: '2SJPGMLW1Q',
+        suggestedQuestions: true,
       },
       insightsConfig: {
         useCookie: true, // alt to useCookie: true,
