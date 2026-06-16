@@ -200,14 +200,30 @@ export default function Root({ children }: RootProps) {
       }
     };
 
+    const routeSearchEnterToAskAi = (event: KeyboardEvent) => {
+      if (event.key !== 'Enter') return;
+      const target = event.target as HTMLElement | null;
+      if (!target?.closest('.DocSearch-Container .DocSearch-Input')) return;
+
+      const query = getDocSearchQuery();
+      if (!query) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+      openAskAiFromSearch(query);
+    };
+
     document.addEventListener('input', updateSearchHandoff, true);
     document.addEventListener('click', routeModalAskAiClick, true);
+    document.addEventListener('keydown', routeSearchEnterToAskAi, true);
     const observer = new MutationObserver(updateSearchHandoff);
     observer.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       document.removeEventListener('input', updateSearchHandoff, true);
       document.removeEventListener('click', routeModalAskAiClick, true);
+      document.removeEventListener('keydown', routeSearchEnterToAskAi, true);
       observer.disconnect();
     };
   }, []);
