@@ -72,10 +72,10 @@ To explore data sources for a view:
 ## How to add a Scheduled View
 
 :::important
-To create a Scheduled View you must be an admin or have the Manage Scheduled Views [role capability](/docs/manage/users-roles/roles/role-capabilities/).
+To create a scheduled view, you must be an admin or have the Manage Scheduled Views [role capability](/docs/manage/users-roles/roles/role-capabilities/).
 :::
 
-For Scheduled View query requirements, see [Scheduled Views Best Practices and Examples](/docs/manage/views/scheduled-views/best-practices).
+For scheduled view query requirements, see [Scheduled Views Best Practices and Examples](/docs/manage/views/scheduled-views/best-practices).
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**.
 1. Click **+ Add View**. <br/><img src={useBaseUrl('/img/views/view-page-add-new.png')} alt="view-page" style={{border:'1px solid gray'}} width="800"/>
@@ -163,15 +163,15 @@ The **Views** page replaces the **Scheduled Views** page and provides a unified 
 
 The **Views** page displays three data source types: **Scheduled Views**, **Scheduled Searches**, and **Ad Hoc Searches**. Scheduled Views is the default selection when you open the page. A single view can have multiple data sources contributing to it, and all contributing sources are visible in the right-side details pane when you click a view.
 
-### How to control who can see which views?
+### How do I control who can see which views?
 
 Visibility of all indexes is based on roles and permissions defined by your administrator. Only administrators can define access control on indexes. Contact your Sumo Logic administrator to request access to specific views or to update role capabilities.
 
-### How to check the system limits for views in your organization?
+### How do I check the system limits for views in my organization?
 
 Administrators can view existing system limits for each view type and the amount of consumed quota directly from the **Views** page. The default limits are 1,000 views per organization across all types, 500 scheduled views, and 50 for all other view types. To request a limit increase, contact your Sumo Logic account representative.
 
-### How to identify why ad hoc search data is missing or approximate?
+### How do I identify why ad hoc search data is missing or approximate?
 
 Tracking for ad hoc searches is available from April 2026 onwards. For data written before this date, the system may display **Could have contributed** or **Did not contribute** indicators because historical tracking data is not fully available. This is expected behavior and does not indicate an error with the view or the query.
 
