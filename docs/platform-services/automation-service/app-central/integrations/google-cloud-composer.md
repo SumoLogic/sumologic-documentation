@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
-***Version: 1.0  
-Updated: Jun 12, 2026***
+***Version: 1.2  
+Updated: Jun 16, 2026***
 
 Google Cloud Composer is a fully managed workflow orchestration service built on Apache Airflow that helps you author, schedule, and monitor pipelines spanning hybrid and multi-cloud environments.
 
@@ -120,4 +120,4 @@ For more information on Google Cloud Composer, see [Google Cloud Composer docume
 
 ## Change Log
 
-* June 12, 2026 (v1.0) - First upload
+* June 16, 2026 (v1.2) - First upload

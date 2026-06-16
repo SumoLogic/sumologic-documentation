@@ -340,6 +340,7 @@ module.exports = {
         )
       },
     ],
+    require('./src/plugins/markdown-mirror'),
   ],
   themeConfig:
     ({

@@ -23,6 +23,7 @@ To access our API documentation, navigate to the appropriate link based on your 
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/   |
 | CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/  |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/  |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/  |
 | JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/   |
@@ -96,6 +97,7 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
 | CA | [service.ca.sumologic.com](https://service.ca.sumologic.com) | `api.ca.sumologic.com/api/` | `collectors.ca.sumologic.com` | `syslog.collection.ca.sumologic.com` | `open-collectors.ca.sumologic.com` |
 | CH | [service.ch.sumologic.com](https://service.ch.sumologic.com) | `api.ch.sumologic.com/api/` | `collectors.ch.sumologic.com`<br/>`endpoint1-9.collection.ch.sumologic.com` | `syslog.collection.ch.sumologic.com` | `open-collectors.ch.sumologic.com` |
 | DE | [service.de.sumologic.com](https://service.de.sumologic.com) | `api.de.sumologic.com/api/` | `collectors.de.sumologic.com` | `syslog.collection.de.sumologic.com` | `open-collectors.de.sumologic.com` |
+| ESC | [service.esc.sumologic.com](https://service.esc.sumologic.com) | `api.esc.sumologic.com/api/` | `collectors.esc.sumologic.com` | `syslog.collection.esc.sumologic.com` | `open-collectors.esc.sumologic.com` |
 | EU | [service.eu.sumologic.com](https://service.eu.sumologic.com) | `api.eu.sumologic.com/api/` | `collectors.eu.sumologic.com`<br/>`endpoint1.collection.eu.sumologic.com` | `syslog.collection.eu.sumologic.com` | `open-collectors.eu.sumologic.com` |
 | FED | [service.fed.sumologic.com](https://service.fed.sumologic.com) | `api.fed.sumologic.com/api/` | `collectors.fed.sumologic.com` | `syslog.collection.fed.sumologic.com` | `open-collectors.fed.sumologic.com` |
 | JP | [service.jp.sumologic.com](https://service.jp.sumologic.com) | `api.jp.sumologic.com/api/` | `collectors.jp.sumologic.com` | `syslog.collection.jp.sumologic.com` | `open-collectors.jp.sumologic.com` |
@@ -107,7 +109,7 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
 
 ### Which endpoint should I should use?
 
-To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `ca`, `kr`, `ch`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
+To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `ca`, `kr`, `ch`, `esc`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
 
 The specific collection endpoint will vary per account. The general format is: `endpoint[N].collection.[deploymentID].sumologic.com`.
 
