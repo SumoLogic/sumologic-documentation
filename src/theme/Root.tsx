@@ -52,13 +52,7 @@ export default function Root({ children }: RootProps) {
   }, [placeholder]);
 
   useEffect(() => {
-    const openAskAiFromSearch = (query: string) => {
-      const trimmedQuery = query.trim();
-      if (!trimmedQuery) return;
-
-      setInitialAskAiMessage({ query: trimmedQuery });
-      setIsAskAiOpen(true);
-
+    const closeDocSearchModal = () => {
       const closeButton = document.querySelector<HTMLButtonElement>(
         [
           '.DocSearch-Container button[aria-label="Close"]',
@@ -67,9 +61,34 @@ export default function Root({ children }: RootProps) {
         ].join(',')
       );
       closeButton?.click();
+
+      document.dispatchEvent(
+        new KeyboardEvent('keydown', {
+          bubbles: true,
+          cancelable: true,
+          code: 'Escape',
+          key: 'Escape',
+        })
+      );
+
+      requestAnimationFrame(() => {
+        document.querySelectorAll('.DocSearch-Container').forEach((modal) => {
+          modal.remove();
+        });
+        document.body.classList.remove('DocSearch--active');
+      });
     };
 
-    const getDocSearchQuery = () => {
+    const openAskAiThread = (query: string) => {
+      const trimmedQuery = query.trim();
+      if (!trimmedQuery) return;
+
+      setInitialAskAiMessage({ query: trimmedQuery });
+      setIsAskAiOpen(true);
+      closeDocSearchModal();
+    };
+
+    const getModalQuery = () => {
       return (
         document
           .querySelector<HTMLInputElement>(
@@ -79,67 +98,16 @@ export default function Root({ children }: RootProps) {
       );
     };
 
-    const routeModalAskAiClick = (event: MouseEvent) => {
-      const target = event.target as HTMLElement | null;
-      const container = target?.closest('.DocSearch-Container');
-      if (!target || !container) return;
-
-      if (target.closest('.ask-ai-search-sidepanel-button')) {
-        const query = getDocSearchQuery();
-        if (!query) return;
-
-        event.preventDefault();
-        event.stopPropagation();
-        event.stopImmediatePropagation();
-        openAskAiFromSearch(query);
-        return;
-      }
-
-      const clickable = target.closest<HTMLElement>(
-        [
-          'button',
-          'a',
-          '[role="button"]',
-          '.DocSearch-Hit',
-          '.DocSearch-Menu-item',
-        ].join(',')
-      );
-      if (!clickable) return;
-
-      const actionText = [
-        clickable.textContent,
-        clickable.getAttribute('aria-label'),
-        clickable.getAttribute('title'),
-        clickable.getAttribute('class'),
-      ]
-        .filter(Boolean)
-        .join(' ')
-        .toLowerCase();
-
-      if (!actionText.includes('ask ai')) return;
-
-      const query = getDocSearchQuery();
-      if (!query) return;
-
-      event.preventDefault();
-      event.stopPropagation();
-      event.stopImmediatePropagation();
-      openAskAiFromSearch(query);
+    const isAskAiAssistantOption = (element: HTMLElement) => {
+      const text = element.textContent?.replace(/\s+/g, ' ').trim() || '';
+      return /^Ask AI(?: Assistant)?\b/i.test(text);
     };
 
-    const updateSearchHandoff = () => {
-      const container = document.querySelector('.DocSearch-Container');
-      const dropdown = container?.querySelector('.DocSearch-Dropdown');
-      const input =
-        container?.querySelector<HTMLInputElement>('.DocSearch-Input');
+    const routeAskAiOptionClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null;
+      if (!target?.closest('.DocSearch-Container .DocSearch-Dropdown')) return;
 
-      if (!container || !dropdown || !input) return;
-
-      const query = input.value.trim();
-      const existingButton = dropdown.querySelector<HTMLButtonElement>(
-        '.ask-ai-search-sidepanel-button'
-      );
-      const nativeAskAiOptions = dropdown.querySelectorAll<HTMLElement>(
+      const option = target.closest<HTMLElement>(
         [
           '.DocSearch-Hit',
           '.DocSearch-Menu-item',
@@ -149,82 +117,50 @@ export default function Root({ children }: RootProps) {
           '[role="option"]',
         ].join(',')
       );
+      if (!option || !isAskAiAssistantOption(option)) return;
 
-      nativeAskAiOptions.forEach((option) => {
-        if (option.closest('.ask-ai-search-sidepanel-button')) return;
-
-        const text = option.textContent?.replace(/\s+/g, ' ').trim() || '';
-        if (/^Ask AI\s*:/i.test(text)) {
-          option.classList.add('ask-ai-native-modal-option-hidden');
-        }
-      });
-
-      if (!query) {
-        existingButton?.remove();
-        return;
-      }
-
-      const button = existingButton || document.createElement('button');
-
-      if (!existingButton) {
-        button.type = 'button';
-        button.className = 'ask-ai-search-sidepanel-button';
-        button.innerHTML = `
-          <span class="ask-ai-search-sidepanel-button-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18">
-              <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
-            </svg>
-          </span>
-          <span class="ask-ai-search-sidepanel-button-label">Ask AI in sidepanel</span>
-          <span class="ask-ai-search-sidepanel-button-query"></span>
-        `;
-        button.onclick = () => openAskAiFromSearch(input.value);
-      }
-
-      if (button.dataset.query === query) {
-        return;
-      }
-
-      button.dataset.query = query;
-      button.setAttribute('aria-label', `Ask AI in sidepanel for ${query}`);
-
-      const queryEl = button.querySelector(
-        '.ask-ai-search-sidepanel-button-query'
-      );
-      if (queryEl) {
-        queryEl.textContent = query;
-      }
-
-      if (!existingButton) {
-        dropdown.prepend(button);
-      }
-    };
-
-    const routeSearchEnterToAskAi = (event: KeyboardEvent) => {
-      if (event.key !== 'Enter') return;
-      const target = event.target as HTMLElement | null;
-      if (!target?.closest('.DocSearch-Container .DocSearch-Input')) return;
-
-      const query = getDocSearchQuery();
+      const query = getModalQuery();
       if (!query) return;
 
       event.preventDefault();
       event.stopPropagation();
       event.stopImmediatePropagation();
-      openAskAiFromSearch(query);
+      openAskAiThread(query);
     };
 
-    document.addEventListener('input', updateSearchHandoff, true);
-    document.addEventListener('click', routeModalAskAiClick, true);
-    document.addEventListener('keydown', routeSearchEnterToAskAi, true);
-    const observer = new MutationObserver(updateSearchHandoff);
-    observer.observe(document.body, { childList: true, subtree: true });
+    const routeAskAiOptionEnter = (event: KeyboardEvent) => {
+      if (event.key !== 'Enter') return;
+      const input = event.target as HTMLInputElement | null;
+      if (!input?.closest('.DocSearch-Container .DocSearch-Input')) return;
+
+      const activeId = input.getAttribute('aria-activedescendant');
+      const activeOption = activeId
+        ? document.getElementById(activeId)
+        : document.querySelector<HTMLElement>(
+            [
+              '.DocSearch-Dropdown [aria-selected="true"]',
+              '.DocSearch-Dropdown [aria-current="true"]',
+              '.DocSearch-Dropdown .DocSearch-Hit[aria-selected="true"]',
+              '.DocSearch-Dropdown .DocSearch-Hit[aria-current="true"]',
+            ].join(',')
+          );
+      if (!activeOption || !isAskAiAssistantOption(activeOption)) return;
+
+      const query = getModalQuery();
+      if (!query) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+      openAskAiThread(query);
+    };
+
+    document.addEventListener('click', routeAskAiOptionClick, true);
+    document.addEventListener('keydown', routeAskAiOptionEnter, true);
 
     return () => {
-      document.removeEventListener('input', updateSearchHandoff, true);
-      document.removeEventListener('click', routeModalAskAiClick, true);
-      document.removeEventListener('keydown', routeSearchEnterToAskAi, true);
-      observer.disconnect();
+      document.removeEventListener('click', routeAskAiOptionClick, true);
+      document.removeEventListener('keydown', routeAskAiOptionEnter, true);
     };
   }, []);
 
