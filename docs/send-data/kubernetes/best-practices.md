@@ -231,7 +231,6 @@ metadata:
               receivers: [otlp/extrafiles]
               processors:
                 - memory_limiter
-                - batch
               exporters: [sumologic]
     statefulset:
       extraPorts:
@@ -240,8 +239,8 @@ metadata:
           protocol: TCP
 ```
 
-In the example above, two internally defined processors were used in metadata pipeline:
-[batch](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.90.1/processor/batchprocessor) and [memory limiter](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.90.1/processor/memorylimiterprocessor). If you need to change the parameters of these processors in any way, you can define your own and use them in this pipeline.
+In the example above, one of the internally defined processors was used in metadata pipeline:
+[memory limiter](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.90.1/processor/memorylimiterprocessor). If you need to change the parameters of these processors in any way, you can define your own and use them in this pipeline.
 
 ## Removing attributes from systemd logs
 
@@ -541,16 +540,6 @@ metadata:
 
 OpenTelemetry comes with several parameters related to queue management.
 
-For [batch processor][batch_processor]:
-
-- `send_batch_size` defines the number of items (logs, metrics, traces) in one batch before it's sent further down the pipeline.
-- `timeout` defines time after which the batch is sent regardless of the size (can be lower than `send_batch_size`).
-- `send_batch_max_size` is an upper limit of the batch size.
-
-_We could say that `send_batch_size` is a soft limit and `send_batch_max_size` is a hard limit of the batch size._
-
-In Helm Chart's default configuration, `send_batch_max_size` is set to `2 * send_batch_size`. It is necessary to consider changing the value of `send_batch_max_size` whenever `send_batch_size` is changed. More information can be found in [sumologic-otel-collector's documentation][sumo-otelcol-batching-doc].
-
 For [sumologic exporter][sumologic_exporter]:
 
 - `max_request_body_size` defines maximum size of requests to sumologic before compression.
@@ -565,10 +554,8 @@ As the effective value of `sending_queue.queue_size` depends on current traffic,
 The above, in connection with PVC monitoring, can lead to constant alerts (e.g., [KubePersistentVolumeFillingUp][filling_up_alert]), because once filled in PVC never reduces its fill.
 :::
 
-[batch_processor]: https://github.com/open-telemetry/opentelemetry-collector/tree/v0.47.0/processor/batchprocessor#batch-processor
 [sumologic_exporter]: https://github.com/SumoLogic/sumologic-otel-collector/tree/v0.50.0-sumo-0/pkg/exporter/sumologicexporter#sumo-logic-exporter
 [filling_up_alert]: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubepersistentvolumefillingup/
-[sumo-otelcol-batching-doc]: ../../opentelemetry-collector/data-source-configurations/additional-configurations-reference/#using-batch-processor-to-batch-data
 
 ### Configuring Exporter-Side Batching
 Sumo Logic uses exporter-side batching instead of the batch processor. If you previously configured the batch processor, update your settings as follows. For more details, see [OpenTelemetry Collector issue #8122](https://github.com/open-telemetry/opentelemetry-collector/issues/8122).
