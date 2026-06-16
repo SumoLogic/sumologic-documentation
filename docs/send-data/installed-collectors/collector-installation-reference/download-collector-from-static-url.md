@@ -102,6 +102,21 @@ The latest release of the Sumo Logic Collector targets the Java 17 runtime. Java
 | Windows 32 | https://download-collector.de.sumologic.com/rest/download/windows |
 | Windows 64 | https://download-collector.de.sumologic.com/rest/download/win64 |
 
+### ESC Collector
+
+| Binaries | Download URL |
+| :-- | :-- |
+| Linux x86_64 | https://download-collector.esc.sumologic.com/rest/download/linux/64 |
+| Linux AArch64 | https://download-collector.esc.sumologic.com/rest/download/linux/aarch/64 |
+| Linux x86_64 Debian | https://download-collector.esc.sumologic.com/rest/download/deb/64 |
+| Linux AArch64 Debian | https://download-collector.esc.sumologic.com/rest/download/deb/aarch/64 |
+| Linux x86_64 RPM | https://download-collector.esc.sumologic.com/rest/download/rpm/64 |
+| Linux AArch64 RPM | https://download-collector.esc.sumologic.com/rest/download/rpm/aarch/64 |
+| macOS | https://download-collector.esc.sumologic.com/rest/download/macos |
+| Tarball | https://download-collector.esc.sumologic.com/rest/download/tar |
+| Windows 32 | https://download-collector.esc.sumologic.com/rest/download/windows |
+| Windows 64 | https://download-collector.esc.sumologic.com/rest/download/win64 |
+
 ### EU Collector
 
 | Binaries | Download URL |
