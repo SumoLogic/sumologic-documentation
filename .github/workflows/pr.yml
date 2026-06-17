@@ -219,12 +219,13 @@ jobs:
             }
 
             // Classify the PR's changed files to determine enforcement level.
-            // Docs and release notes (docs/, blog-*, images) → soft warning only.
+            // Docs and release notes (docs/, blog-*, images, root markdown) → soft warning only.
             // Everything else (backend site changes) → hard block.
             const ARTICLE_PATTERNS = [
               /^docs\//,
               /^blog-/,
               /^static\/img\//,
+              /^[^/]+\.mdx?$/,  // Root-level markdown (README.md, CONTRIBUTING.md, etc.)
             ];
 
             const { data: files } = await github.rest.pulls.listFiles({
