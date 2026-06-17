@@ -1824,6 +1824,7 @@ module.exports = {
         'metrics/manage-metric-volume/disabled-metrics-sources',
         'metrics/manage-metric-volume/metric-ingestion-and-storage',
         'metrics/manage-metric-volume/metric-throttling',
+        'metrics/source-and-collector-cardinality',
       ],
     },
     'metrics/metric-rules-editor',
