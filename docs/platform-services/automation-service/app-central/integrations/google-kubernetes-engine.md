@@ -35,7 +35,7 @@ We recommend using WIF since it is more secure and easier to manage. For more in
 
 ## Required AWS details from Sumo Logic
 
-To configure the Google Kubernetes Engine integration using WIF authentication, you need the following AWS details from Sumo Logic. These details are essential for setting up the Workload Identity Federation (WIF) credentials in Google Cloud Platform (GCP):
+To configure the Google Kubernetes Engine integration using WIF authentication, you need the following AWS details from Sumo Logic. These details are essential for setting up the Workload Identity Federation (WIF) credentials in Google Cloud:
 * Deployment name is the unique name of your Sumo Logic [deployment](/docs/api/about-apis/getting-started/#documentation), for example, `dub`, `fra`, etc. 
 * Sumo Logic AWS account ID: `926226587429`
 * Sumo Logic AWS role: `<deployment_name>-csoar-automation-gcpgke`
@@ -44,14 +44,27 @@ To configure the Google Kubernetes Engine integration using WIF authentication, 
 
 ### Workload Identity Federation (WIF) authentication
 
-Follow the steps below to [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-federation) in GCP, which are required to configure the Google Kubernetes Engine integration:
+Follow the steps below to [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-federation) in Google Cloud, which are required to configure the Google Kubernetes Engine integration:
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
 3. Navigate to **API & Services**.
 4. On the same page, click **ENABLED API AND SERVICES** and search for Kubernetes Engine API, Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API, and enable them all.
 5. Navigate to **IAM & Admin** > **Service Accounts** page.
 6. Click **CREATE SERVICE ACCOUNT**. A [Service Account](https://cloud.google.com/iam/docs/service-accounts-create) is required to access Google Kubernetes Engine.
-7. While creating the service account, in **Permissions** add the roles **Service Account Token Creator** and **Kubernetes Engine Admin**, then click **DONE**. If your organization prefers least-privilege access, you can create a custom role with only the following permissions instead of Kubernetes Engine Admin: `container.clusters.get`, `container.clusters.list`, `container.deployments.get`, `container.deployments.list`, `container.deployments.delete`, `container.deployments.update`, `container.clusterRoleBindings.list`, `container.clusterRoleBindings.create`, `container.clusterRoleBindings.delete`, `container.pods.list`, and `container.events.list`. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-11.png')} style={{border:'1px solid gray'}} alt="Service Account Token Creator and Kubernetes Engine Admin" width="800"/>
+7. While creating the service account, in **Permissions** add the roles **Service Account Token Creator** and **Kubernetes Engine Admin**, then click **DONE**. If your organization prefers least-privilege access, you can create a custom role with only the following permissions instead of Kubernetes Engine Admin:
+   - `container.clusters.get`
+   - `container.clusters.list`
+   - `container.deployments.get`
+   - `container.deployments.list`
+   - `container.deployments.delete`
+   - `container.deployments.update`
+   - `container.clusterRoleBindings.list`
+   - `container.clusterRoleBindings.create`
+   - `container.clusterRoleBindings.delete`
+   - `container.pods.list`
+   - `container.events.list`
+
+   <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-11.png')} style={{border:'1px solid gray'}} alt="Service Account Token Creator and Kubernetes Engine Admin" width="800"/>
 8. Navigate to **IAM & Admin** > **Workload Identity Federation**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-4.png')} style={{border:'1px solid gray'}} alt="Workload Identity Federation" width="800"/>
 9. Click **CREATE POOL**, provide the details, and click **CONTINUE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-5.png')} style={{border:'1px solid gray'}} alt="Create pool" width="800"/>
 10. Add the **Provider details**. Select **AWS** as the provider type and enter the AWS Account ID provided by Sumo Logic. Click **CONTINUE** and **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-6.png')} style={{border:'1px solid gray'}} alt="Provider details" width="800"/>
@@ -76,7 +89,20 @@ To [create service account credentials](https://developers.google.com/workspace/
 5. Click **CREATE CREDENTIALS** and select **Service Account**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-1.png')} style={{border:'1px solid gray'}} alt="Create credentials" width="800"/>
 6. Enter a service account name to display in the Google Cloud console. The Google Cloud console generates a service account ID based on this name.
 7. (Optional) Enter a description of the service account.
-8. In the **Grant this service account access to project** step, add the role **Kubernetes Engine Admin**, then click **DONE** to complete the service account creation. If your organization prefers least-privilege access, you can create a custom role with only the following permissions instead of Kubernetes Engine Admin: `container.clusters.get`, `container.clusters.list`, `container.deployments.get`, `container.deployments.list`, `container.deployments.delete`, `container.deployments.update`, `container.clusterRoleBindings.list`, `container.clusterRoleBindings.create`, `container.clusterRoleBindings.delete`, `container.pods.list`, and `container.events.list`.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-2.png')} style={{border:'1px solid gray'}} alt="Complete service account creation" width="800"/>
+8. In the **Grant this service account access to project** step, add the role **Kubernetes Engine Admin**, then click **DONE** to complete the service account creation. If your organization prefers least-privilege access, you can create a custom role with only the following permissions instead of Kubernetes Engine Admin:
+   - `container.clusters.get`
+   - `container.clusters.list`
+   - `container.deployments.get`
+   - `container.deployments.list`
+   - `container.deployments.delete`
+   - `container.deployments.update`
+   - `container.clusterRoleBindings.list`
+   - `container.clusterRoleBindings.create`
+   - `container.clusterRoleBindings.delete`
+   - `container.pods.list`
+   - `container.events.list`
+
+   <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-2.png')} style={{border:'1px solid gray'}} alt="Complete service account creation" width="800"/>
 9. Click the generated service account to open the details.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-3.png')} style={{border:'1px solid gray'}} alt="Generated service details" width="800"/>
 10. Under the **KEYS** tab, click **ADD KEY** and select **Create new key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-4.png')} style={{border:'1px solid gray'}} alt="Create new key" width="800"/>
 11. Click **CREATE** (make sure **JSON** is selected).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-5.png')} style={{border:'1px solid gray'}} alt="Click on create" width="400"/>
