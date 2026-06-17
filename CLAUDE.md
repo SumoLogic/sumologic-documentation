@@ -103,6 +103,13 @@ When a user asks "what can I do", "what commands are available", or similar, sha
 |---------|-------------|
 | `/remove-doc` | Safely deprecate or move a doc with redirects |
 
+**Staging**
+
+| Command | What it does |
+|---------|-------------|
+| `/stage-deploy` | Deploy a PR branch to the shared Pantheon staging environment for external review |
+| `/stage-teardown` | Delete a staging branch and free the shared staging slot |
+
 ### Which audit command to use
 
 Run both for a thorough pre-PR check — they cover different things:
