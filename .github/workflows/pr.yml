@@ -257,13 +257,16 @@ jobs:
             }
 
             // Classify the PR's changed files to determine enforcement level.
-            // Docs, release notes, images, and CID redirects → soft warning only.
+            // Docs, release notes, images, CID redirects, and repo meta files → soft warning only.
             // Everything else (backend site changes) → hard block.
             const ARTICLE_PATTERNS = [
               /^docs\//,
               /^blog-/,
               /^static\/img\//,
               /^cid-redirects\.json$/,
+              /^README\.md$/,
+              /^\.clabot$/,
+              /^CONTRIBUTING\.md$/,
             ];
 
             const files = await github.paginate(github.rest.pulls.listFiles, {
