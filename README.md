@@ -1,19 +1,18 @@
 # Sumo Docs
 
-[![Build](https://img.shields.io/github/actions/workflow/status/SumoLogic/sumologic-documentation/workflow_deploy-to-pantheon-prod.yml?style=flat&label=build)](https://github.com/SumoLogic/sumologic-documentation/actions/workflows/workflow_deploy-to-pantheon-prod.yml)
+[![Deploy](https://img.shields.io/github/actions/workflow/status/SumoLogic/sumologic-documentation/workflow_deploy-to-pantheon-prod.yml?branch=main&style=flat&label=deploy)](https://github.com/SumoLogic/sumologic-documentation/actions/workflows/workflow_deploy-to-pantheon-prod.yml?query=branch%3Amain)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://www.sumologic.com/help/docs/contributing)
 [![License](https://img.shields.io/github/license/SumoLogic/sumologic-documentation?style=flat&colorB=ff0000)](LICENSE)
-[![Twitter Follow](https://img.shields.io/twitter/follow/sumologic.svg?style=social)](https://x.com/SumoLogic)
-[![RSS](https://img.shields.io/badge/RSS-FFA500?style=flat&logo=rss&logoColor=white)](https://www.sumologic.com/help/docs/release-notes/#subscribe-via-rss)
+[![RSS](https://img.shields.io/static/v1?label=&message=RSS&color=FFA500&style=flat&logo=rss&logoColor=white)](https://www.sumologic.com/help/docs/release-notes/#subscribe-via-rss)
 
-[![Docusaurus](https://img.shields.io/badge/Docusaurus-3ECC5F?style=flat&logo=docusaurus&logoColor=white)](https://docusaurus.io)
-[![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)](https://nodejs.org)
-[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white)](https://github.com/features/actions)
-[![Algolia](https://img.shields.io/badge/Algolia-003DFF?style=flat&logo=algolia&logoColor=white)](https://www.algolia.com)
-[![Pantheon](https://img.shields.io/badge/Pantheon-FFDC28?style=flat&logo=pantheon&logoColor=black)](https://pantheon.io)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-CC785C?style=flat&logo=anthropic&logoColor=white)](https://claude.ai/code)
+[![Docusaurus](https://img.shields.io/static/v1?label=&message=Docusaurus&color=3ECC5F&style=flat&logo=docusaurus&logoColor=white)](https://docusaurus.io)
+[![React](https://img.shields.io/static/v1?label=&message=React&color=20232A&style=flat&logo=react&logoColor=61DAFB)](https://react.dev)
+[![TypeScript](https://img.shields.io/static/v1?label=&message=TypeScript&color=007ACC&style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Node.js](https://img.shields.io/static/v1?label=&message=Node.js&color=339933&style=flat&logo=nodedotjs&logoColor=white)](https://nodejs.org)
+[![GitHub Actions](https://img.shields.io/static/v1?label=&message=GitHub%20Actions&color=2088FF&style=flat&logo=githubactions&logoColor=white)](https://github.com/features/actions)
+[![Algolia](https://img.shields.io/static/v1?label=&message=Algolia&color=003DFF&style=flat&logo=algolia&logoColor=white)](https://www.algolia.com)
+[![Pantheon](https://img.shields.io/static/v1?label=&message=Pantheon&color=FFDC28&style=flat&logo=pantheon&logoColor=black)](https://pantheon.io)
+[![Claude Code](https://img.shields.io/static/v1?label=&message=Claude%20Code&color=CC785C&style=flat&logo=anthropic&logoColor=white)](https://claude.ai/code)
 
 Sumo Docs is the open-source documentation site for Sumo Logic, an AI-powered security operations platform providing Cloud SIEM and security analytics to help teams automate, detect, and investigate threats. Sumo Logic empowers users to monitor, troubleshoot, and defend their environments using AI insights powered by log analytics. Learn more at [sumologic.com](https://www.sumologic.com).
 
@@ -94,4 +93,4 @@ PRs that mix content and back-end files follow the back-end rules.
 
 ## License
 
-This project is licensed under the [Apache 2.0 License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
