@@ -22,7 +22,7 @@ env:
   NODE_OPTIONS: "--max-old-space-size=8192 --max-http-header-size=8192"
 
 jobs:
-  build-and-deploy:
+  run-build-checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -242,6 +242,24 @@ jobs:
             }
 
             if (context.eventName === 'merge_group') {
+              // merge_group payloads don't include PR labels — extract PR number from head ref
+              // (e.g. refs/heads/gh-readonly-queue/main/pr-1234-abc...) and fetch via API.
+              const headRef = context.payload.merge_group?.head_ref ?? '';
+              const prMatch = headRef.match(/\/pr-(\d+)-/);
+              let hasOverride = false;
+              if (prMatch) {
+                const prNumber = parseInt(prMatch[1], 10);
+                const { data: pr } = await github.rest.pulls.get({
+                  owner:       context.repo.owner,
+                  repo:        context.repo.repo,
+                  pull_number: prNumber,
+                });
+                hasOverride = pr.labels.some(l => l.name === OVERRIDE_LABEL);
+              }
+              if (hasOverride) {
+                core.warning(`active-incident override active — merge queue bypassed: ${siteBlockedReason}`);
+                return;
+              }
               core.setFailed(
                 `Merge blocked: ${siteBlockedReason}. ` +
                 'Merge queue validation requires the merge window: Mon–Fri, 7:00 am–2:00 pm PT, non-holidays.'
