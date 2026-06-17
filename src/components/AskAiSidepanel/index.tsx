@@ -167,6 +167,51 @@ export default function AskAiSidepanel({
     button?.click();
   }, []);
 
+  const focusPromptTextarea = React.useCallback(() => {
+    let attempts = 0;
+    const maxAttempts = 12;
+
+    const focus = () => {
+      const textarea = document.querySelector(
+        '.DocSearch-Sidepanel-Prompt--textarea'
+      ) as HTMLTextAreaElement | null;
+
+      if (textarea) {
+        textarea.focus();
+        const length = textarea.value.length;
+        textarea.setSelectionRange(length, length);
+        return;
+      }
+
+      attempts += 1;
+      if (attempts < maxAttempts) {
+        window.setTimeout(focus, 50);
+      }
+    };
+
+    focus();
+  }, []);
+
+  const handleNewConversation = React.useCallback(() => {
+    triggerHeaderAction('Start a new conversation');
+    focusPromptTextarea();
+  }, [focusPromptTextarea, triggerHeaderAction]);
+
+  const handleConversationHistory = React.useCallback(() => {
+    const sidepanel = document.querySelector('.DocSearch-Sidepanel');
+    const isHistoryOpen = sidepanel?.classList.contains('conversation-history');
+
+    if (isHistoryOpen) {
+      const backButton = document.querySelector<HTMLButtonElement>(
+        '.DocSearch-Sidepanel-Action-back:not(.mobile)'
+      );
+      backButton?.click();
+      return;
+    }
+
+    triggerHeaderAction('Conversation history');
+  }, [triggerHeaderAction]);
+
   const copyTextWithTextarea = React.useCallback((text: string) => {
     const textarea = document.createElement('textarea');
     textarea.value = text;
@@ -418,7 +463,7 @@ export default function AskAiSidepanel({
               className="ask-ai-shortcut-button"
               aria-label="Start a new conversation"
               title="Start a new conversation"
-              onClick={() => triggerHeaderAction('Start a new conversation')}
+              onClick={handleNewConversation}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -442,7 +487,7 @@ export default function AskAiSidepanel({
               className="ask-ai-shortcut-button"
               aria-label="Conversation history"
               title="Conversation history"
-              onClick={() => triggerHeaderAction('Conversation history')}
+              onClick={handleConversationHistory}
             >
               <svg
                 viewBox="0 0 18 18"
