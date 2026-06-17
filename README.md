@@ -3,16 +3,9 @@
 [![Deploy](https://img.shields.io/github/actions/workflow/status/SumoLogic/sumologic-documentation/workflow_deploy-to-pantheon-prod.yml?branch=main&style=flat&label=deploy)](https://github.com/SumoLogic/sumologic-documentation/actions/workflows/workflow_deploy-to-pantheon-prod.yml?query=branch%3Amain)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://www.sumologic.com/help/docs/contributing)
 [![License](https://img.shields.io/github/license/SumoLogic/sumologic-documentation?style=flat&colorB=ff0000)](LICENSE)
-[![RSS](https://img.shields.io/static/v1?label=&message=RSS&color=FFA500&style=flat&logo=rss&logoColor=white)](https://www.sumologic.com/help/docs/release-notes/#subscribe-via-rss)
-
 [![Docusaurus](https://img.shields.io/static/v1?label=&message=Docusaurus&color=3ECC5F&style=flat&logo=docusaurus&logoColor=white)](https://docusaurus.io)
-[![React](https://img.shields.io/static/v1?label=&message=React&color=20232A&style=flat&logo=react&logoColor=61DAFB)](https://react.dev)
-[![TypeScript](https://img.shields.io/static/v1?label=&message=TypeScript&color=007ACC&style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Node.js](https://img.shields.io/static/v1?label=&message=Node.js&color=339933&style=flat&logo=nodedotjs&logoColor=white)](https://nodejs.org)
-[![GitHub Actions](https://img.shields.io/static/v1?label=&message=GitHub%20Actions&color=2088FF&style=flat&logo=githubactions&logoColor=white)](https://github.com/features/actions)
-[![Algolia](https://img.shields.io/static/v1?label=&message=Algolia&color=003DFF&style=flat&logo=algolia&logoColor=white)](https://www.algolia.com)
-[![Pantheon](https://img.shields.io/static/v1?label=&message=Pantheon&color=FFDC28&style=flat&logo=pantheon&logoColor=black)](https://pantheon.io)
-[![Claude Code](https://img.shields.io/static/v1?label=&message=Claude%20Code&color=CC785C&style=flat&logo=anthropic&logoColor=white)](https://claude.ai/code)
+[![Node.js >=20](https://img.shields.io/static/v1?label=Node.js&message=%3E%3D20&color=339933&style=flat&logo=nodedotjs&logoColor=white)](https://nodejs.org)
+[![Yarn v1](https://img.shields.io/static/v1?label=Yarn&message=v1&color=2C8EBB&style=flat&logo=yarn&logoColor=white)](https://yarnpkg.com)
 
 Sumo Docs is the open-source documentation site for Sumo Logic, an AI-powered security operations platform providing Cloud SIEM and security analytics to help teams automate, detect, and investigate threats. Sumo Logic empowers users to monitor, troubleshoot, and defend their environments using AI insights powered by log analytics. Learn more at [sumologic.com](https://www.sumologic.com).
 
