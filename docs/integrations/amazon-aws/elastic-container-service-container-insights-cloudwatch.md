@@ -473,7 +473,7 @@ Use this dashboard to:
 - Identify patterns and outliers over time.
 - Monitor the performance of your cluster and use linked dashboards to drill down further into the root cause.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Performance-Monitoring.png' alt="Amazon ECS - Cluster Performance Monitoringdashboard" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Performance-Monitoring.png' alt="Amazon ECS - Cluster Performance Monitoring dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Cluster Resource Reservation
 
@@ -509,14 +509,14 @@ Use this dashboard to:
 
 ### EC2 LaunchType
 
-The **Amazon ECS - EC2LaunchType** dashboard provides a high-level view of the health of the cluster along with details on the utilized resources for EC2 launch types.
+The **Amazon ECS - EC2 LaunchType** dashboard provides a high-level view of the health of the cluster along with details on the utilized resources for EC2 launch types.
 
 Use this dashboard to:
 
 - Monitor CPU and memory utilization of clusters with EC2 launch type.
 - View the number of clusters and tasks with EC2 launch type.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-EC2-LaunchType.png' alt="Amazon ECS - EC2LaunchTypedashboard" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-EC2-LaunchType.png' alt="Amazon ECS - EC2 LaunchType dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Service Overview
 
@@ -527,7 +527,7 @@ Use this dashboard to:
 - Monitor the number of running, desired, and pending tasks.
 - Identify services with abnormal CPU, network, memory, and disk activity.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Service-Overview.png' alt="Amazon ECS - Service Overviewdashboard" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Service-Overview.png' alt="Amazon ECS - Service Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Service Performance Monitoring
 
@@ -539,7 +539,7 @@ Use this dashboard to:
 - Track the running, pending, and desired tasks trend.
 - Monitor the performance of your services and use linked dashboards to drill down further into the root cause.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Service-Performance-Monitoring.png' alt="Amazon ECS - Service Performance Monitoringdashboard" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Service-Performance-Monitoring.png' alt="Amazon ECS - Service Performance Monitoring dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Tasks Definition Family Overview
 
@@ -550,7 +550,7 @@ Use this dashboard to:
 - View the number of tasks running with a single task definition family.
 - Monitor CPU and memory usage by task definition family.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Definition-Family-Overview.png' alt="Amazon ECS - Tasks Definition Family Overviewdashboard" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Definition-Family-Overview.png' alt="Amazon ECS - Tasks Definition Family Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Tasks Overview
 
@@ -562,7 +562,7 @@ Use this dashboard to:
 - Track Network Errors and Dropped Packets
 - Monitor CPU, memory, disk, and network performance by task instances.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Overview.png' alt="Amazon ECS - Tasks Overviewdashboard" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Overview.png' alt="Amazon ECS - Tasks Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Tasks Definition Family Performance Monitoring
 
@@ -571,9 +571,9 @@ The **Amazon ECS - Tasks Definition Family Performance Monitoring** dashboard pr
 Use this dashboard to:
 
 - Identify patterns and outliers over time for each of the resource metrics like CPU, memory, network, and disk.
-- Monitor the performance of your tasksand use linked dashboards to drill down further into the root cause.
+- Monitor the performance of your tasks and use linked dashboards to drill down further into the root cause.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Definition-Family-Performance-Monitoring.png' alt="Amazon ECS - Tasks Definition Family Performance Monitoringdashboard" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Definition-Family-Performance-Monitoring.png' alt="Amazon ECS - Tasks Definition Family Performance Monitoring dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Task Definition Family Resource Reservation
 
@@ -583,7 +583,7 @@ Use this dashboard to:
 
 - Identify the right limits for CPU and memory reservations.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Task-Definition-Family-Resource-Reservation.png' alt="Amazon ECS - Task Definition Family Resource Reservationdashboard" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Task-Definition-Family-Resource-Reservation.png' alt="Amazon ECS - Task Definition Family Resource Reservation dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Fargate LaunchType
 
@@ -594,7 +594,7 @@ Use this dashboard to:
 - Monitor network activity of your clusters with Fargate launch type.
 - View the number of clusters and tasks with Fargate launch type.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Fargate-LaunchType.png' alt="Amazon ECS - Fargate LaunchTypedashboard" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Fargate-LaunchType.png' alt="Amazon ECS - Fargate LaunchType dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Audit Events
 
@@ -603,10 +603,10 @@ The **Amazon ECS - Audit Events** dashboard gives information on the type of req
 Use this dashboard to:
 
 - View audit trail of actions taken by a user, role, or AWS service in Amazon ECS.
-- Monitor container registration/deregistrationevents.
+- Monitor container registration/deregistration events.
 - Identify location, IP address from where the request was made, and resource crud events over time.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Audit-Events.png' alt="Amazon ECS - Audit Eventsdashboard" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Audit-Events.png' alt="Amazon ECS - Audit Events dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for Amazon ECS app
 
