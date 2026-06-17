@@ -108,11 +108,6 @@ Namespace for **Amazon DynamoDB** Service is **AWS/DynamoDB**.
 2. Click **Save**.
 
 
-### Field Extraction Rule(s)
-
-The FER **AwsObservabilityDynamoDBCloudTrailLogsFER** to extract fields `region`, `namespace`, `tablename`, and `accountid` will be created as a part of app installation.
-
-
 ### Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of CloudTraillogs and are ingesting them from all accounts into a single Sumo Logic CloudTraillog source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
@@ -150,6 +145,10 @@ As part of the app installation process, the following fields will be created by
 - `region` The region to which the resource name belongs to.
 - `namespace` Namespace for Amazon DynamoDB Service is AWS/DynamoDB.
 - `tablename` DynamoDB table name.
+
+### Field Extraction Rule(s)
+
+The FER **AwsObservabilityDynamoDBCloudTrailLogsFER** to extract fields `region`, `namespace`, `tablename`, and `accountid` will be created as a part of app installation.
 
 ## Viewing Amazon DynamoDB dashboards
 

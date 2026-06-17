@@ -112,12 +112,6 @@ Before you can begin to use the AWS Classic Load Balancing (ELB) App, complete t
 Namespace for **AWS Classic Load Balancer** Service is **AWS/ELB**.
 :::
 
-## Field Extraction Rule(s)
-
-The FER **AwsObservabilityClbAccessLogsFER** to extract fields `loadbalancername` and `namespace` from access logs will be created as a part of app installation.
-
-The FER **AwsObservabilityCLBCloudTrailLogsFER** to extract fields `region`, `namespace`, `loadbalancername`, and `accountid` from CloudTrail logs will be created as a part of app installation.
-
 ## Installing the AWS Classic Load Balancer app
 
 Now that you have set up a collection for AWS Classic Load Balancer, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
@@ -133,6 +127,12 @@ As part of the app installation process, the following fields will be created by
 - `region` The region to which the resource name belongs to.
 - `namespace` Namespace for AWS Classic Load Balancer Service is AWS/ELB.
 - `loadbalancername` Classic Load Balancer name.
+
+## Field Extraction Rule(s)
+
+The FER **AwsObservabilityCLBAccessLogsFER** to extract fields `loadbalancername` and `namespace` from access logs will be created as a part of app installation.
+
+The FER **AwsObservabilityCLBCloudTrailLogsFER** to extract fields `region`, `namespace`, `loadbalancername`, and `accountid` from CloudTrail logs will be created as a part of app installation.
 
 ## Viewing the AWS Classic Load Balancer dashboards
 

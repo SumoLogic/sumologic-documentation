@@ -424,13 +424,6 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
    <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" />   
 
-### Field Extraction Rule(s)
-
-The FER **AwsObservabilityRDSCloudTrailLogsFER** to extract fields `region`, `namespace`, `dBInstanceIdentifier`, `dBClusterIdentifier`, `dbidentifier`, `proxyname`, and `accountid` will be created as a part of app installation.
-
-The FER **AwsObservabilityRDSCloudWatchLogsFER** to extract fields `namespace`, `dbidentifier`, and `proxyname` will be created as a part of app installation.
-
-
 ### Centralized AWS CloudTrail log collection
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
@@ -454,10 +447,6 @@ Enter a parse expression to create an “account” field that maps to the alias
 | fields account
 ```
 
-### Metric Rules
-
-The Metric Rules **AwsObservabilityRDSClusterMetricsRule** and **AwsObservabilityRDSInstanceMetricsRule** for the aws/rds namespace will be created as a part of app installation.
-
 ## Installing the RDS app  
 
 Now that you have set up a collection for **Amazon RDS**, install the Sumo Logic app to use the pre-configured [dashboards](#viewing-the-rds-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
@@ -476,6 +465,16 @@ As part of the app installation process, the following fields will be created by
 - `dBInstanceIdentifier` The identifier of the RDS DB instance.
 - `dBClusterIdentifier` The identifier of the RDS DB cluster.
 - `proxyname` The name of the RDS Proxy.
+
+### Field Extraction Rule(s)
+
+The FER **AwsObservabilityRDSCloudTrailLogsFER** to extract fields `region`, `namespace`, `dBInstanceIdentifier`, `dBClusterIdentifier`, `dbidentifier`, `proxyname`, and `accountid` will be created as a part of app installation.
+
+The FER **AwsObservabilityRDSCloudWatchLogsFER** to extract fields `namespace`, `dbidentifier`, and `proxyname` will be created as a part of app installation.
+
+### Metric Rules
+
+The Metric Rules **AwsObservabilityRDSClusterMetricsRule** and **AwsObservabilityRDSInstanceMetricsRule** for the aws/rds namespace will be created as a part of app installation.
 
 ## Viewing the RDS dashboards  
 

@@ -126,10 +126,6 @@ Sumo Logic supports collecting metrics using two source types:
     * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 2. Click **Save**.
 
-## Field Extraction Rule(s)
-
-The FER **AwsObservabilitySQSCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `queuename` will be created as a part of app installation.
-
 ## Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following **Field Extraction Rule** to map a proper AWS account(s) friendly name/alias. Create it if not already present/update it as required.
@@ -163,6 +159,10 @@ As part of the app installation process, the following fields will be created by
 - `region` The region to which the resource name belongs to.
 - `namespace` Namespace for Amazon SQS Service is AWS/SQS.
 - `queuename` Amazon SQS Service Queue Name.
+
+## Field Extraction Rule(s)
+
+The FER **AwsObservabilitySQSCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `queuename` will be created as a part of app installation.
 
 ## Viewing Amazon SQS dashboards
 

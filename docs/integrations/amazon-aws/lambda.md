@@ -211,12 +211,6 @@ These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metri
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Search-Provisioned-Concurrency-Metrics.png')} alt="Search Provisioned Concurrency Metrics" />
 
-### Field Extraction Rule(s)
-
-The FER **AwsObservabilityLambdaCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `functionname` will be created as a part of app installation.
-
-The FER **AwsObservabilityLambdaCloudWatchLogsFER** to extract fields `functionname` and `namespace` will be created as a part of app installation.
-
 ### Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map the proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
@@ -255,6 +249,12 @@ As part of the app installation process, the following fields will be created by
 - `region` The region to which the resource name belongs to.
 - `namespace` Namespace for Amazon Lambda Service is AWS/Lambda.
 - `functionname` Lambda resource function name.
+
+### Field Extraction Rule(s)
+
+The FER **AwsObservabilityLambdaCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `functionname` will be created as a part of app installation.
+
+The FER **AwsObservabilityLambdaCloudWatchLogsFER** to extract fields `functionname` and `namespace` will be created as a part of app installation.
 
 ## Viewing AWS Lambda dashboards
 

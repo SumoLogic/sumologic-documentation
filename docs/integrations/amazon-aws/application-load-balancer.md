@@ -110,12 +110,6 @@ Before you begin to use the AWS Elastic Load Balancing (ELB) Application app, co
 Namespace for AWS Application Load Balancer Service is AWS/ApplicationELB.
 :::
 
-## Field Extraction Rule(s)
-
-The FER **AwsObservabilityAlbAccessLogFER** to extract the `loadbalancer` field from access logs will be created as a part of app installation.
-
-The FER **AwsObservabilityALBCloudTrailLogFER** to extract fields `region`, `namespace`, `loadbalancer`, and `accountid` from CloudTrail logs will be created as a part of app installation.
-
 ## Installing the AWS Application Load Balancer app
 
 Now that you have set up collection for AWS Application Load Balancer, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
@@ -131,6 +125,12 @@ As part of the app installation process, the following fields will be created by
 - `region` The region to which the resource name belongs to.
 - `namespace` Namespace for AWS Application Load Balancer Service is AWS/ApplicationELB.
 - `loadbalancer` Application Load Balancer name.
+
+## Field Extraction Rule(s)
+
+The FER **AwsObservabilityALBAccessLogsFER** to extract fields `loadbalancer` and `namespace` from access logs will be created as a part of app installation.
+
+The FER **AwsObservabilityALBCloudTrailLogsFER** to extract fields `accountid`, `namespace`, `region`, and `loadbalancer` from CloudTrail logs will be created as a part of app installation.
 
 ## Viewing AWS Application Load Balancer dashboards
 

@@ -152,11 +152,6 @@ To configure a CloudTrail Source, perform these steps:
 12. **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 13. Click **Save**.
 
-### Field Extraction Rule(s)
-
-The FER **AwsObservabilityEC2CloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `instanceid` will be created as a part of app installation.
-
-
 ### Centralized AWS CloudTrail log collection
 
 If you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
@@ -198,6 +193,10 @@ As part of the app installation process, the following fields will be created by
 - `region` The region to which the resource name belongs.
 - `namespace` Namespace for EC2 CW Metrics Service is (blank).
 - `instanceid` EC2 Instance Id.
+
+### Field Extraction Rule(s)
+
+The FER **AwsObservabilityEC2CloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `instanceid` will be created as a part of app installation.
 
 ## Viewing AWS EC2 dashboards
 

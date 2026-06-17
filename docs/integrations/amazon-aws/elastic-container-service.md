@@ -288,11 +288,6 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 | count by resource_type, _timeslice
 | transpose row _timeslice column resource_type
 ```
-## Field Extraction Rule(s)
-
-The FER **AwsObservabilityECSCloudTrailLogsFER** to extract fields `region`, `namespace`, `clustername`, and `accountid` will be created as a part of app installation.
-
-The FER **AwsObservabilityECSCloudWatchLogsFER** to extract the `namespace` field will be created as a part of app installation.
 ## Collect Logs and Metrics for Amazon ECS
 
 This section has instructions for collecting logs and metrics for the Amazon ECS app.
@@ -337,6 +332,12 @@ As part of the app installation process, the following fields will be created by
 - `region` The region to which the resource name belongs to.
 - `namespace` Namespace for Amazon ECS Service is AWS/ECS.
 - `clustername` The name of the ECS cluster.
+
+## Field Extraction Rule(s)
+
+The FER **AwsObservabilityECSCloudTrailLogsFER** to extract fields `region`, `namespace`, `clustername`, and `accountid` will be created as a part of app installation.
+
+The FER **AwsObservabilityECSCloudWatchLogsFER** to extract the `namespace` field will be created as a part of app installation.
 
 ## Viewing the Amazon ECS app dashboards
 

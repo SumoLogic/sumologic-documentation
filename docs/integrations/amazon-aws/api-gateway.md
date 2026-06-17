@@ -162,18 +162,6 @@ account=dev region=us-east-1 namespace=aws/apigateway apiname=* apiid stage doma
 
 ## Collecting logs and metrics for AWS API Gateway
 
-### Field Extraction Rule(s)
-
-The FER **AwsObservabilityApiGatewayCloudTrailLogsFER** to extract fields `region`, `namespace`, `apiname`, and `accountid` from CloudTrail logs will be created as a part of app installation.
-
-The FER **AwsObservabilityApiGatewayAccessLogsFER** to extract fields `apiname`, `namespace`, and `apiid` from access logs will be created as a part of app installation.
-
-The FER **AwsObservabilityApiGatewayCloudWatchLogsFER** to extract fields `namespace`, `apiid`, and `apiname` from CloudWatch logs will be created as a part of app installation.
-
-### Metric Rule(s)
-
-The Metric Rule **AwsObservabilityApiGatewayApiNameMetricsEntityRule** for the AWS/ApiGateway namespace will be created as a part of app installation.
-
 ### Configure Hosted Collector
 
 In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).
@@ -509,6 +497,18 @@ As part of the app installation process, the following fields will be created by
 - `namespace` Namespace for AWS API Gateway Service is AWS/ApiGateway.
 - `apiname` API Gateway API name.
 - `apiid` API Gateway API id.
+
+### Field Extraction Rule(s)
+
+The FER **AwsObservabilityAPIGatewayCloudTrailLogsFER** to extract fields `accountid`, `namespace`, `region`, and `apiname` from CloudTrail logs will be created as a part of app installation.
+
+The FER **AwsObservabilityAPIGatewayAccessLogsFER** to extract fields `namespace`, `apiid`, and `apiname` from access logs will be created as a part of app installation.
+
+The FER **AwsObservabilityAPIGatewayCloudWatchLogsFER** to extract fields `namespace`, `apiid`, and `apiname` from CloudWatch logs will be created as a part of app installation.
+
+### Metric Rule(s)
+
+The Metric Rule **AwsObservabilityAPIGatewayMetricsRule** for the AWS/ApiGateway namespace will be created as a part of app installation.
 
 ## Viewing AWS API Gateway dashboards
 

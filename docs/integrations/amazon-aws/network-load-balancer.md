@@ -50,15 +50,6 @@ When you create an AWS Source, you'll need to identify the Hosted Collector you 
 Namespace for AWS Network Load Balancer Service is AWS/NetworkELB.
 :::
 
-## Field Extraction Rule(s)
-
-The FER **AwsObservabilityNLBCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `networkloadbalancer` will be created as a part of app installation.
-
-
-## Metric rule(s)
-
-The Metric Rule **AwsObservabilityNLBMetricsRule** for the AWS/NetworkELB namespace will be created as a part of app installation.
-
 ## Installing the AWS Network Load Balancer app
 
 Now that you have set up a collection for **AWS Network Load Balancer**, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
@@ -74,6 +65,14 @@ As part of the app installation process, the following fields will be created by
 - `region` The region to which the resource name belongs to.
 - `namespace` Namespace for AWS Network Load Balancer Service is AWS/NetworkELB.
 - `networkloadbalancer` Network Load Balancer name.
+
+## Field Extraction Rule(s)
+
+The FER **AwsObservabilityNLBCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `networkloadbalancer` will be created as a part of app installation.
+
+## Metric rule(s)
+
+The Metric Rule **AwsObservabilityNLBMetricsRule** for the AWS/NetworkELB namespace will be created as a part of app installation.
 
 ## Viewing AWS Network Load Balancer dashboards
 
