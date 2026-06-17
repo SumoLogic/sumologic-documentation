@@ -35,7 +35,7 @@ We recommend using WIF since it is more secure and easier to manage. For more in
 
 ## Required AWS details from Sumo Logic
 
-To configure the Google Kubernetes Engine integration using WIF authentication, you need the following AWS details from Sumo Logic. These details are essential for setting up the Workload Identity Federation (WIF) credentials in Google Workspace:
+To configure the Google Kubernetes Engine integration using WIF authentication, you need the following AWS details from Sumo Logic. These details are essential for setting up the Workload Identity Federation (WIF) credentials in Google Cloud Platform (GCP):
 * Deployment name is the unique name of your Sumo Logic [deployment](/docs/api/about-apis/getting-started/#documentation), for example, `dub`, `fra`, etc. 
 * Sumo Logic AWS account ID: `926226587429`
 * Sumo Logic AWS role: `<deployment_name>-csoar-automation-gcpgke`
@@ -44,7 +44,7 @@ To configure the Google Kubernetes Engine integration using WIF authentication, 
 
 ### Workload Identity Federation (WIF) authentication
 
-Follow the steps below to [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-federation) in Google Workspace, which are required to configure the Google Kubernetes Engine integration:
+Follow the steps below to [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-federation) in GCP, which are required to configure the Google Kubernetes Engine integration:
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
 3. Navigate to **API & Services**.
@@ -67,7 +67,7 @@ Follow the steps below to [create WIF credentials](https://cloud.google.com/iam/
 
 ### Service Account authentication
 
-To [create service account credentials](https://developers.google.com/workspace/guides/create-credentials) in Google Workspace, needed to configure the Google Kubernetes Engine integration, follow these steps:
+To [create service account credentials](https://developers.google.com/workspace/guides/create-credentials) in GCP, needed to configure the Google Kubernetes Engine integration, follow these steps:
 
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
