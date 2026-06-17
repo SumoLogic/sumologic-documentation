@@ -456,7 +456,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 ### Metric Rules
 
-The Metric Rules **AwsObservabilityRDSClusterMetricsEntityRule** and **AwsObservabilityRDSInstanceMetricsEntityRule** for the aws/rds namespace will be created as a part of app installation.
+The Metric Rules **AwsObservabilityRDSClusterMetricsRule** and **AwsObservabilityRDSInstanceMetricsRule** for the aws/rds namespace will be created as a part of app installation.
 
 ## Installing the RDS app  
 
