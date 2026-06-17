@@ -14,6 +14,9 @@ on:
       - ready_for_review
       - labeled
       - unlabeled
+  merge_group:
+    types:
+      - checks_requested
   workflow_dispatch:
 
 jobs:
@@ -34,9 +37,11 @@ jobs:
             // Override: apply the 'active-incident' label for active service incidents only.
             // Update holiday lists annually (see DOCS-1703).
             //
-            // This workflow fires on PR open/reopen/ready_for_review/label changes only —
-            // not on every push — to avoid failure emails on routine commits outside business
-            // hours. Re-run manually from the Actions tab before merging a backend PR.
+            // Triggers:
+            //   pull_request (opened/reopened/ready_for_review/labeled/unlabeled) — not on
+            //     every push, so no failure email spam for commits outside business hours.
+            //   merge_group — runs at actual merge time for real enforcement.
+            //   workflow_dispatch — manual re-run before merging a backend PR.
 
             const OVERRIDE_LABEL = 'active-incident';
 
@@ -100,9 +105,27 @@ jobs:
               return;
             }
 
+            // Resolve PR number and labels from either event type.
+            // merge_group ref format: refs/heads/gh-readonly-queue/{base}/pr-{number}-{sha}
+            let prNumber = context.payload.pull_request?.number ?? null;
+            let prLabels = context.payload.pull_request?.labels ?? [];
+
+            if (context.eventName === 'merge_group') {
+              const headRef = context.payload.merge_group.head_ref ?? '';
+              const match = headRef.match(/\/pr-(\d+)-/);
+              if (match) {
+                prNumber = parseInt(match[1], 10);
+                const { data: pr } = await github.rest.pulls.get({
+                  owner:       context.repo.owner,
+                  repo:        context.repo.repo,
+                  pull_number: prNumber,
+                });
+                prLabels = pr.labels;
+              }
+            }
+
             // Check override label before fetching files.
-            const labels = context.payload.pull_request?.labels ?? [];
-            if (labels.some(l => l.name === OVERRIDE_LABEL)) {
+            if (prLabels.some(l => l.name === OVERRIDE_LABEL)) {
               core.warning(`active-incident override active. Bypassed: ${siteBlockedReason}`);
               return;
             }
@@ -116,15 +139,28 @@ jobs:
               /^static\/img\//,
             ];
 
-            const { data: files } = await github.rest.pulls.listFiles({
-              owner:       context.repo.owner,
-              repo:        context.repo.repo,
-              pull_number: context.payload.pull_request.number,
-              per_page:    100,
-            });
+            let filenames = [];
+            if (prNumber) {
+              const { data: files } = await github.rest.pulls.listFiles({
+                owner:       context.repo.owner,
+                repo:        context.repo.repo,
+                pull_number: prNumber,
+                per_page:    100,
+              });
+              filenames = files.map(f => f.filename);
+            } else if (context.eventName === 'merge_group') {
+              // Fallback: compare base and head SHAs directly.
+              const { data: compare } = await github.rest.repos.compareCommits({
+                owner: context.repo.owner,
+                repo:  context.repo.repo,
+                base:  context.payload.merge_group.base_sha,
+                head:  context.payload.merge_group.head_sha,
+              });
+              filenames = (compare.files ?? []).map(f => f.filename);
+            }
 
-            const hasSiteChange = files.some(
-              f => !ARTICLE_PATTERNS.some(p => p.test(f.filename))
+            const hasSiteChange = filenames.some(
+              f => !ARTICLE_PATTERNS.some(p => p.test(f))
             );
 
             if (hasSiteChange) {
