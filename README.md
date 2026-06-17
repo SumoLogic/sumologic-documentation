@@ -2,7 +2,7 @@
 
 [![Build](https://img.shields.io/github/actions/workflow/status/SumoLogic/sumologic-documentation/workflow_deploy-to-pantheon-prod.yml?style=flat&label=build)](https://github.com/SumoLogic/sumologic-documentation/actions/workflows/workflow_deploy-to-pantheon-prod.yml)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://www.sumologic.com/help/docs/contributing)
-[![License](https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?style=flat&colorB=ff0000)](LICENSE)
+[![License](https://img.shields.io/github/license/SumoLogic/sumologic-documentation?style=flat&colorB=ff0000)](LICENSE)
 [![Twitter Follow](https://img.shields.io/twitter/follow/sumologic.svg?style=social)](https://x.com/SumoLogic)
 [![RSS](https://img.shields.io/badge/RSS-FFA500?style=flat&logo=rss&logoColor=white)](https://www.sumologic.com/help/docs/release-notes/#subscribe-via-rss)
 
