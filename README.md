@@ -2,7 +2,7 @@
 
 [![Deploy](https://img.shields.io/github/actions/workflow/status/SumoLogic/sumologic-documentation/workflow_deploy-to-pantheon-prod.yml?branch=main&style=flat&label=deploy)](https://github.com/SumoLogic/sumologic-documentation/actions/workflows/workflow_deploy-to-pantheon-prod.yml?query=branch%3Amain)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://www.sumologic.com/help/docs/contributing)
-[![License](https://img.shields.io/github/license/SumoLogic/sumologic-documentation?style=flat&colorB=ff0000)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-red.svg?style=flat)](LICENSE)
 [![Docusaurus](https://img.shields.io/static/v1?label=&message=Docusaurus&color=3ECC5F&style=flat&logo=docusaurus&logoColor=white)](https://docusaurus.io)
 [![Node.js >=20](https://img.shields.io/static/v1?label=Node.js&message=%3E%3D20&color=339933&style=flat&logo=nodedotjs&logoColor=white)](https://nodejs.org)
 [![Yarn v1](https://img.shields.io/static/v1?label=Yarn&message=v1&color=2C8EBB&style=flat&logo=yarn&logoColor=white)](https://yarnpkg.com)
