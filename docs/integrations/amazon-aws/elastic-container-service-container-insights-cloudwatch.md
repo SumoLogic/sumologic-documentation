@@ -505,7 +505,7 @@ Use this dashboard to:
 - Track the container status and identify the container details like its task definition, image, account, etc.
 - Monitor CPU, memory, disk, and network activity of your container.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Container-Overview.png' alt="Amazon ECS - Container Overviewdashboard" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Container-Overview.png' alt="Amazon ECS - Container Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### EC2 LaunchType
 
