@@ -66,4 +66,4 @@ Identity and Access Management
 
 * **Mar 17, 2026** - First Upload.
 * **April 8, 2026** (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-* **June 18, 2026** (v1.3) - Updated the integration to allows 1Password to identify API calls from the Sumo Logic integration in their logs for easier tracking and troubleshooting.
+* **June 18, 2026** (v1.3) - Updated the integration to allow 1Password to identify API calls from the Sumo Logic integration in their logs for easier tracking and troubleshooting.
