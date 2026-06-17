@@ -57,6 +57,10 @@ Any custom fields can be tagged along with the data in this step.
 
 Once the details are filled in, click on the **Download YAML File** button to get the yaml file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-YAML.png' style={{border: '1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic

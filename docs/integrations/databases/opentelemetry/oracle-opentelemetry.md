@@ -198,6 +198,10 @@ You can add any custom fields which you want to tag along with the data ingested
 
 Once the details are filled, click on the **Download YAML File** button to get the yaml file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
 
 <EnvVar/>
