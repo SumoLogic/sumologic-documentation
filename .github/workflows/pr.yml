@@ -79,8 +79,8 @@ jobs:
           while IFS= read -r -d '' file; do
             FILES+=("$file")
           done < <(
-            git diff --name-only -z origin/main...HEAD -- docs |
-            grep -zE '^docs/.*\.mdx?$' || true
+            git diff --name-only -z origin/main...HEAD |
+            grep -zE '\.mdx?$' || true
           )
           if [ "${#FILES[@]}" -eq 0 ]; then
             echo "No changed Markdown/MDX docs files found; skipping link check."
