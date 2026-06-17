@@ -5,6 +5,9 @@
         "name": "ChatGPT Compliance",
         "workspaceID": "ABCD-SAMPLE-WORKSPACE-ID",
         "apiKey": "sk-proj-XXXXXXXXX",
+        "enabledEventType": [
+          "CONVERSATION"
+        ],
         "pollingIntervalHour": "1h"
       },
       "schemaRef": {
