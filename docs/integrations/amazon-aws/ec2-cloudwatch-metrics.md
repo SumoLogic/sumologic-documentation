@@ -191,6 +191,14 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name/alias to the AWS account.
+- `accountid` AWS account ID.
+- `region` The region to which the resource name belongs.
+- `namespace` Namespace for EC2 CW Metrics Service is (blank).
+- `instanceid` (blank).
+
 ## Viewing AWS EC2 dashboards
 
 ### Overview (CloudWatch Metrics)
