@@ -13,6 +13,5 @@
 /docs/send-data/opentelemetry-collector/ @SumoLogic/open-source-collection-team @kimsauce @mafsumo @JV0812 @amee-sumo
 
 # Owners of all files in /.github and /.claude directories.
-/.github/ @kimsauce @vfalconisumo
-/.github/workflows/ @kimsauce @vfalconisumo
-/.claude/ @kimsauce @vfalconisumo
+/.github/ @kimsauce @vfalconisumo @JV0812 @mafsumo @amee-sumo
+/.claude/ @kimsauce @vfalconisumo @JV0812 @mafsumo @amee-sumo
