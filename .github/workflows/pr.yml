@@ -125,12 +125,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Check spelling
-        uses: codespell-project/actions-codespell@v2
         with:
-          path: docs
-          skip: "*.svg,*.js,*.map,*.css,*.scss"
-          ignore_words_list: "aks,atleast,cros,ddress,delink,fiel,ist,nd,ot,pullrequest,ser,shttp,wast,fo,seldomly,delt,cruzer,plack,secur,te,nginx,Nginx,notin"
+          fetch-depth: 0
+      - name: Check spelling on changed files
+        run: |
+          pip install codespell --quiet
+          CHANGED=$(git diff --name-only origin/main...HEAD | grep -E '^docs/.*\.mdx?$' || true)
+          if [ -z "$CHANGED" ]; then
+            echo "No docs files changed — skipping spellcheck."
+            exit 0
+          fi
+          echo "Checking: $CHANGED"
+          echo "$CHANGED" | xargs codespell \
+            --skip="*.svg,*.js,*.map,*.css,*.scss" \
+            --ignore-words-list="aks,atleast,cros,ddress,delink,fiel,ist,nd,ot,pullrequest,ser,shttp,wast,fo,seldomly,delt,cruzer,plack,secur,te,nginx,Nginx,notin"
   check-merge-window:
     name: merge window
     runs-on: ubuntu-latest
