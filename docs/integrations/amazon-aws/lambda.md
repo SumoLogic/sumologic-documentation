@@ -281,7 +281,7 @@ Use this dashboard to:
 * Identify and validate the top IAM Users and AWS services that invoke AWS Lambda functions.
 * Monitor cold start duration for Lambda functions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Overview.png')} alt="AWS Lambda" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSLambda/1.-AWS-Lambda-Overview.png' alt="AWS Lambda - Overview" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Request Analysis
@@ -295,7 +295,7 @@ Use this dashboard to:
 * Troubleshoot and investigate individual function requests.
 * Monitor cold start duration and key operations for Lambda functions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Request-Analysis.png')} alt="AWS Lambda" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSLambda/1.-AWS-Lambda-Request-Analysis.png' alt="AWS Lambda - Request Analysis" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Usage Analysis
@@ -314,7 +314,7 @@ Use this dashboard to:
 * Identify top callers, top caller types.
 * Monitor the invocation of an AWS Lambda function.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Usage-Analysis.png')} alt="AWS Lambda" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSLambda/2.-AWS-Lambda-Usage-Analysis.png' alt="AWS Lambda - Usage Analysis" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Error Analysis
@@ -331,7 +331,7 @@ Use this dashboard to:
 * Monitor the trend for recursive invocation drops. This measures the number of recursive invocation attempts that were dropped to prevent potential infinite loops and unbounded recursion within Lambda functions.
 * Monitor the trend for destination delivery failures. This tracks the number of times Lambda failed to deliver an asynchronous invocation result to a configured destination, such as an SNS topic, SQS queue, or EventBridge.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Error-Analysis.png')} alt="AWS Lambda" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSLambda/3.-AWS-Lambda-Error-Analysis.png' alt="AWS Lambda - Error Analysis" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Resource Usage
@@ -344,7 +344,7 @@ Use this dashboard to:
 * Monitor the compute usage by function.
 * Monitor claimed account concurrency at the account level, segmented by region.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Resource-Usage.png')} alt="AWS Lambda" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSLambda/4.-AWS-Lambda-Resource-Usage.png' alt="AWS Lambda - Resource Usage" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Performance Trends
@@ -357,7 +357,7 @@ Use this dashboard to:
 * Monitor memory used by AWS Lambda functions.
 * Monitor compute usage trends and predictions by AWS Lambda function in GB-Seconds.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Performance-Trends.png')} alt="AWS Lambda" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSLambda/5.-AWS-Lambda-Performance-Trends.png' alt="AWS Lambda - Performance Trends" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Threat Intel
@@ -368,7 +368,7 @@ Use this dashboard to:
 * Identify known malicious IPs that are accessing your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward
 * Monitor the malicious confidence level for all incoming malicious IP address threats.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Threat-Intel.png')} alt="AWS Lambda" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSLambda/6.-AWS-Lambda-Threat-Intel.png' alt="AWS Lambda - Threat Intel" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Create monitors for AWS Lambda app

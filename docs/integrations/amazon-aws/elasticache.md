@@ -190,7 +190,7 @@ Use this dashboard to:
 * CPU, memory or swap space on host and swap usage.
 * Monitor network traffic utilization and compare today’s trends of incoming and outgoing bytes and packets vs. yesterday
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Host-Performance.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/1.-Amazon-ElastiCache-Host-Performance-Overview.png' alt="Amazon ElastiCache - Host Performance Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Audit Event Overview
 
@@ -202,7 +202,7 @@ Use this dashboard to:
 * Quickly identify top error codes to diagnose any outages
 * Monitor trends around failed events to identify potential service disruptions that could warrant deeper investigation
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-AuditEvent.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/2.-Amazon-ElastiCache-Audit-Event-Overview.png' alt="Amazon ElastiCache - Audit Event Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Redis Performance Overview
 
@@ -211,7 +211,7 @@ Use this dashboard to:
 Use this dashboard to:
 * Quickly determine if your Redis database is performing as expected
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Redis-Performance.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/3.-Amazon-ElastiCache-Redis-Performance-Overview.png' alt="Amazon ElastiCache - Redis Performance Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Audit Event Details
 
@@ -221,7 +221,7 @@ Use this dashboard to:
 * Quickly determine changes made to your ElastiCache clusters while troubleshooting production outages
 * Determine if any nodes hosting your ElastiCache clusters were rebooted
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Audit-Event.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/4.-Amazon-ElastiCache-Audit-Event-Details.png' alt="Amazon ElastiCache - Audit Event Details" style={{border: '1px solid gray'}} width="800" />
 
 ### Host Performance Details
 
@@ -231,7 +231,7 @@ Use this dashboard to:
 * Get an at-a-glance view of the performance of all nodes within a given ElastiCache cluster
 * Determine if CPU, memory, swap memory or network resources need to be scaled up or down for a given cluster or service based on utilization trends
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Host-Performance-details.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/1.-Amazon-ElastiCache-Host-Performance-Details.png' alt="Amazon ElastiCache - Host Performance Details" style={{border: '1px solid gray'}} width="800" />
 
 ### Redis Performance Details
 
@@ -242,7 +242,7 @@ Use this dashboard to:
 * Review trends around defragmentation, replication lag and bytes replicated to determine optimizations
 * Quickly determine any authentication and authorization failures and grant or revoke privileges accordingly
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Redis-Performance-details.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/2.-Amazon-ElastiCache-Redis-Performance-Details.png' alt="Amazon ElastiCache - Redis Performance Details" style={{border: '1px solid gray'}} width="800" />
 
 ### Redis Command Latency
 
@@ -251,7 +251,7 @@ The **Amazon ElastiCache - Redis Command Latency** dashboard provides detailed i
 Use this dashboard to:
 * To optimize performance of your Redis clusters by monitoring latency observed across get/set operations. Latency can be high due to high CPU usage, swapping or removing cached items. Performance optimizations can therefore be made either via resource allocation or by optimizing on caching.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Redis-Command.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/3.-Amazon-ElastiCache-Redis-Command-Latency.png' alt="Amazon ElastiCache - Redis Command Latency" style={{border: '1px solid gray'}} width="800" />
 
 ### Redis Command Stats
 
@@ -263,7 +263,7 @@ Use this dashboard to:
 
 If high latency commands are not being processed frequently, you will want to look into monitoring and potentially allocating more CPU resources.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Redis-Command-Stats.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/4.-Amazon-ElastiCache-Redis-Command-Stats.png' alt="Amazon ElastiCache - Redis Command Stats" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for Amazon ElastiCache app
 

@@ -356,7 +356,7 @@ Use this dashboard to:
 * Identify clusters or services with unusually high or low resource usage or reservation percentages.
 * View details of individual clusters and services, including their regions and associated accounts.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AmazonECS-Without-Container-Insights-and-Traces/Amazon-ECS-Overview.png' alt="Amazon ECS - Overview" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonECSWithoutContainerInsightsandTraces/Amazon-ECS-Overview.png' alt="Amazon ECS - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Audit Events
 
@@ -369,7 +369,7 @@ Use this dashboard to:
 * Examine details and trends for created, updated and deleted ECS resources.
 * Investigate specific container registration and deregistration events in different regions and clusters.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AmazonECS-Without-Container-Insights-and-Traces/Amazon-ECS-Audit-Events.png' alt="Amazon ECS - Audit Events" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonECSWithoutContainerInsightsandTraces/Amazon-ECS-Audit-Events.png' alt="Amazon ECS - Audit Events" style={{border: '1px solid gray'}} width="800" />
 
 ### Resource Utilization
 
@@ -384,7 +384,7 @@ Use this dashboard to:
 * Identify performance bottlenecks or underutilized resources in your ECS environment.
 * Compare utilization patterns between clusters and individual services to optimize resource allocation.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AmazonECS-Without-Container-Insights-and-Traces/Amazon-ECS-Resource-Utilization.png' alt="Amazon ECS - Resource Utilization" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonECSWithoutContainerInsightsandTraces/Amazon-ECS-Resource-Utilization.png' alt="Amazon ECS - Resource Utilization" style={{border: '1px solid gray'}} width="800" />
 
 ### Resource Reservation
 
@@ -400,7 +400,7 @@ Use this dashboard to:
 * Compare reservation patterns between different types of resources (CPU, memory, GPU) over time.
 
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AmazonECS-Without-Container-Insights-and-Traces/Amazon-ECS-Resource-Reservation.png' alt="Amazon ECS - Resource Reservation" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonECSWithoutContainerInsightsandTraces/Amazon-ECS-Resource-Reservation.png' alt="Amazon ECS - Resource Reservation" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for Amazon ECS app
 

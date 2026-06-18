@@ -152,7 +152,7 @@ The **Amazon SNS - Overview** dashboard provides insights across CloudTrail even
 * Monitor number of messages and messages by publish size.
 * Monitor delivered and failed notifications.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Overview.png')} alt="Amazon SNS" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSNS/1.-Amazon-SNS-Overview.png' alt="Amazon SNS - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Amazon SNS - Audit Events  
 
@@ -165,7 +165,7 @@ Use this dashboard to:
 * Monitor successful and error events with error code in detail.
 * Get details of active topic names and users of both successful and error events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Audit-Events.png')} alt="Amazon SNS" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSNS/2.-Amazon-SNS-Audit-Events.png' alt="Amazon SNS - Audit Events" style={{border: '1px solid gray'}} width="800" />
 
 ### Amazon SNS - Messages, Notifications  
 
@@ -179,7 +179,7 @@ Use this dashboard to:
 * Compare messages published and message size by today, yesterday, last week.  
 * Compare notifications delivered and failed by today, yesterday, last week.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Messages-Notifications.png')} alt="Amazon SNS" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSNS/1.-Amazon-SNS-Messages-Notifications.png' alt="Amazon SNS - Messages, Notifications" style={{border: '1px solid gray'}} width="800" />
 
 ### Amazon SNS - Threat Intel  
 
@@ -190,7 +190,7 @@ The **Amazon SNS - Threat Intel** dashboard provides insights across threat loca
 * Get details of threats by malicious confidence and malicious IPs.
 * Get details of all threats by IPs.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Threat-Intel.png')} alt="Amazon SNS" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSNS/3.-Amazon-SNS-Threat-Intel.png' alt="Amazon SNS - Threat Intel" style={{border: '1px solid gray'}} width="800" />
 
 ### Amazon SNS - Audit Events Details
 
@@ -201,7 +201,7 @@ Use this dashboard to:
 * Get all details of all subscription events.
 * Get details of all read only and non read only events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Audit-Events-Details.png')} alt="Amazon SNS" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSNS/4.-Amazon-SNS-Audit-Events-Details.png' alt="Amazon SNS - Audit Events Details" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for AWS SNS app
 

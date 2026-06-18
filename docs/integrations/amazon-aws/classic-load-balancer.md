@@ -145,7 +145,7 @@ Use this dashboard to:
 * Monitor trends for load balancers errors, 4xx and 5xx errors, as well as healthy and unhealthy hosts.
 * Monitor the current state across all load balancers via active connections, new connections, backend connection errors, and rejected connections.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Overview.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/1.-AWS-Classic-Load-Balancer-Overview.png' alt="AWS Classic Load Balancer - Overview" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Response Analysis
@@ -156,7 +156,7 @@ Use this dashboard to:
 * Monitor incoming client locations for all 5XX, 4XX, and 3XX error responses.
 * Quickly correlate error responses using load balancer access logs and AWS CloudWatch metrics to determine the possible cause for failures and decide corrective actions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Response-Analysis.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/1.-AWS-Classic-Load-Balancer-Response-Analysis.png' alt="AWS Classic Load Balancer - Response Analysis" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Backend Response Analysis
@@ -167,7 +167,7 @@ Use this dashboard to:
 * Monitor trends of all response codes for your backend servers by LoadBalancer and availability zones.
 * Correlate response code trends across load balancer access logs and CloudWatch metrics to determine the root cause for failures.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Backend-Response-Analysis.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/2.-AWS-Classic-Load-Balancer-Backend-Response-Analysis.png' alt="AWS Classic Load Balancer - Backend Response Analysis" style={{border: '1px solid gray'}} width="800" />
 
 ### Latency Overview
 
@@ -177,7 +177,7 @@ Use this dashboard to:
 * Monitor response times by load balancer, and availability zone.
 * Monitor client latency and processing times for backend servers.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Latency-Overview.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/3.-AWS-Classic-Load-Balancer-Latency-Overview.png' alt="AWS Classic Load Balancer - Latency Overview" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Latency Details  
@@ -186,7 +186,7 @@ The **The AWS Classic Load Balancer - Latency Details** dashboard provides insig
 
 Use this dashboard to troubleshoot load balancer performance via detailed views across client, request processing, and response time latencies.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Latency-Details.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/4.-AWS-Classic-Load-Balancer-Latency-Details.png' alt="AWS Classic Load Balancer - Latency Details" style={{border: '1px solid gray'}} width="800" />
 
 ### Connection and Host Status
 
@@ -196,7 +196,7 @@ Use this dashboard to:
 * Monitor active connections, new connections, rejected connections, and connection errors for load balancers.
 * Monitor healthy and unhealthy host counts by the load balancer and availability zone across your infrastructure.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Connection-and-Host-Status.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/5.-AWS-Classic-Load-Balancer-Connections-and-Host-Status.png' alt="AWS Classic Load Balancer - Connections and Host Status" style={{border: '1px solid gray'}} width="800" />
 
 ### Requests and Processed Bytes  
 
@@ -206,7 +206,7 @@ Use this dashboard to:
 * Monitor client request load, network traffic, and processed bytes to determine how to configure load balancers for optimal performance best.
 * Determine how to allocate best backend resources based on load.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Requests-and-Processed-Bytes.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/6.-AWS-Classic-Load-Balancer-Requests-and-Processed-Bytes.png' alt="AWS Classic Load Balancer - Requests and Processed Bytes" style={{border: '1px solid gray'}} width="800" />
 
 ### Threat Intel
 
@@ -216,7 +216,7 @@ Use this dashboard to:
 * Identify known malicious IPs that are accessing your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward.
 * Monitor malicious confidence level for all incoming malicious IP addresses posing the threats.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Threat-Intel.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/7.-AWS-Classic-Load-Balancer-Threat-Intel.png' alt="AWS Classic Load Balancer - Threat Intel" style={{border: '1px solid gray'}} width="800" />
 
 ### CloudTrail Audit
 
@@ -228,7 +228,7 @@ Use this dashboard to:
 * Investigate specific error events, including their details, frequency, and associated users, enabling faster troubleshooting and resolution of issues.
 * Identify the most common error types and the users experiencing highest failure rates, facilitating targeted improvements and user support.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-CloudTrail-Audit.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/8.-AWS-Classic-Load-Balancer-CloudTrail-Audit.png' alt="AWS Classic Load Balancer - CloudTrail Audit" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for AWS Classic Load Balancer app
 

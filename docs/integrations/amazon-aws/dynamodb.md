@@ -165,7 +165,7 @@ Use this dashboard to:
 * Monitor average read and write capacity percentages for DynamoDB instances
 * Quickly identify system errors, user errors, transaction conflicts, and conditional check fail requests for DynamoDB Monitor overall resource utilization of your DynamoDB instances
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Overview.png')} alt="Amazon DynamoDB" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSDynamoDB/1.-AWS-DynamoDB-Overview.png' alt="AWS DynamoDB - Overview" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Capacity Planning
@@ -177,7 +177,7 @@ Use this dashboard to:
 * Monitor AWS account level maximum allocations across reading and writing capacities.
 * Monitor resource utilization using trend panels for reading and write capacity, throttled read and write requests, as well as read and write throttle events for DynamoDB throughout your infrastructure.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Capacity-Planning.png')} alt="Amazon DynamoDB" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSDynamoDB/1.-AWS-DynamoDB-Capacity-Planning.png' alt="AWS DynamoDB - Capacity Planning" style={{border: '1px solid gray'}} width="800" />
 
 ### Latency and Errors
 
@@ -188,7 +188,7 @@ Use this dashboard to:
 * Quickly identify the number of conditional checks that fail, and transaction conflicts for DynamoDB
 * Monitor resource utilization using trend panels for latencies and errors for DynamoDB
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Latency-and-Errors.png')} alt="Amazon DynamoDB" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSDynamoDB/2.-AWS-DynamoDB-Latency-and-Errors.png' alt="AWS DynamoDB - Latency and Errors" style={{border: '1px solid gray'}} width="800" />
 
 ### Events
 
@@ -199,7 +199,7 @@ Use this dashboard to:
 * Monitor DynamoDB activities and ensure they are in line with expectations.
 * Monitor different types of table events, such as create, update, and describe tables.
 * Quickly identify the top DynamoDB related errors
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Events.png')} alt="Amazon DynamoDB" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSDynamoDB/3.-AWS-DynamoDB-Events.png' alt="AWS DynamoDB - Events" style={{border: '1px solid gray'}} width="800" />
 
 ### Threat Intel
 
@@ -209,7 +209,7 @@ Use this dashboard to:
 
 * Identify malicious IPs performing operations on DynamoDB tables using Sumo Logic Threat Intel.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Threat-Intel.png')} alt="Amazon DynamoDB" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSDynamoDB/4.-AWS-DynamoDB-Threat-Intel.png' alt="AWS DynamoDB - Threat Intel" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for Amazon DynamoDB app
 

@@ -37,6 +37,15 @@ _sourceCategory=Labs/AWS/Host/Metrics metric=CPU_Total account=* region=* namesp
 The Host Metrics (EC2) app relies upon an Installed Collector with a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source) on each of your AWS EC2 hosts. This page describes the data sources for the Host Metrics (EC2) app and has instructions for setting up metric collection.
 
 
+### Field in Field Schema
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
+1. Search for the `instanceid` field. 
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Fields_schema.png')} alt="Fields Schema" />
+
+
 ### Configure Host Metrics sources  
 
 Follow the instructions in this section to configure the Sumo Logic Installed Collector and a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source) on each of your **AWS EC2** hosts. You will assign **account** and **namespace** metadata [fields](/docs/manage/fields) to the sources so that incoming logs and metrics will be appropriately tagged.
@@ -108,17 +117,13 @@ You can also build your EC2 AMI machine image with these fields and settings. Fo
 Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics. Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source).
 
 
-## Installing the Host Metrics (EC2) app
+## Install the Host Metrics (EC2) App
 
 Now that you have set up the collection for Host Metrics (EC2) metrics, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
-
-As part of the app installation process, the following fields will be created by default:
-
-- `instanceid` EC2 instance id.
 
 ## Viewing EC2 Host Metrics Dashboards
 
@@ -133,7 +138,7 @@ Use this dashboard to:
 * Identify trends and deviations in resource usage across instance types, based upon which you can identify which instance types need to be resized.
 * Monitor average CPU utilization by instance type.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-Overview-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/1.-AWS-EC2-Metrics-Overview-Host-Metrics.png' alt="Host Metrics (EC2) - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### AWS EC2 - Summary (Host OS Metrics)
 
@@ -145,7 +150,7 @@ Use this dashboard to:
 * Determine if an instance needs to be resized based on utilization.
 * Identify potential infrastructure issues by identifying deviations in trends and monitoring.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-Summary-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/1.-AWS-EC2-Metrics-Summary-Host-Metrics.png' alt="Host Metrics (EC2) - Summary" style={{border: '1px solid gray'}} width="800" />
 
 
 ### AWS EC2 - CPU
@@ -156,7 +161,7 @@ Use this dashboard to:
 * Quickly identify if high CPU utilization for an EC2 instance is potentially causing a production issue.
 * Determine how CPU cycles are being spent across  CPU user time, system time, and  IO wait time.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-CPU-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/2.-AWS-EC2-Metrics-CPU-Host-Metrics.png' alt="Host Metrics (EC2) - CPU" style={{border: '1px solid gray'}} width="800" />
 
 
 ### AWS EC2 - Memory (Host OS Metrics)
@@ -167,7 +172,7 @@ Use this dashboard to:
 * Quickly identify if high memory utilization for an EC2 instance is potentially causing a production issue
 * Determine how memory is being used across buffers and cache memory.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-Memory-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/3.-AWS-EC2-Metrics-Memory-Host-Metrics.png' alt="Host Metrics (EC2) - Memory" style={{border: '1px solid gray'}} width="800" />
 
 
 ### AWS EC2 - Disk (Host OS Metrics)
@@ -179,7 +184,7 @@ Use this dashboard to:
 * Determine which directories have the most disk usage.
 * Determine the performance of your storage by monitoring disk read/write rates.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-Disk-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/4.-AWS-EC2-Metrics-Disk-Host-Metrics.png' alt="Host Metrics (EC2) - Disk" style={{border: '1px solid gray'}} width="800" />
 
 
 ### AWS EC2 - Network (Host OS Metrics)
@@ -190,7 +195,7 @@ Use this dashboard to:
 * Quickly identify if traffic sent and received rates for an EC2 instance is potentially causing a production issue.
 * Determine if any improvements need to be made to your AWS networking infrastructure for optimal performance.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-Network-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/5.-AWS-EC2-Metrics-Network-Host-Metrics.png' alt="Host Metrics (EC2) - Network" style={{border: '1px solid gray'}} width="800" />
 
 
 ### AWS EC2 - TCP (Host OS Metrics)
@@ -201,70 +206,4 @@ Use this dashboard to:
 * Quickly identify if TCP traffic for an EC2 instance is potentially causing a production issue.
 * Identify if any improvements need to be made to optimize TCP traffic by analyzing various TCP connection states.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-TCP-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
-
-### AWS EC2 - Status Checks (Host Metrics)
-
-The **AWS EC2 Metrics - Status Checks** dashboard provides details about EC2 instance health status checks, EBS attachment health, and performance limit violations.
-
-Use this dashboard to:
-
-* Monitor instances with failed instance, system, or attached EBS status checks.
-* Track status check failure trends over time to identify recurring issues.
-* Identify Nitro instances exceeding EBS IOPS or throughput performance limits.
-
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-Status-Checks-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
-
-### AWS EC2 - EBS Performance (Host Metrics)
-
-The **AWS EC2 Metrics - EBS Performance** dashboard provides details about EBS read/write IOPS, throughput, burst balance, and CloudWatch disk I/O for EC2 instances.
-
-Use this dashboard to:
-
-* Monitor EBS read and write IOPS rates and throughput across your EC2 instances.
-* Track EBS IO and byte burst balance percentages to prevent performance throttling on gp2, st1, and sc1 volumes.
-* Monitor CloudWatch disk read and write operation rates for overall disk performance.
-
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-EBS-Performance-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
-
-### AWS EC2 - CPU Credits and Security (Host Metrics)
-
-The **AWS EC2 Metrics - CPU Credits and Security** dashboard provides details about T2/T3 burstable instance CPU credit balance and usage, CloudWatch CPU utilization, IMDS security access patterns, and Dedicated Host CPU utilization.
-
-Use this dashboard to:
-
-* Monitor CPU credit balance and usage for T2/T3 burstable instances to avoid performance degradation.
-* Track surplus credit charges to understand billing impact of T2/T3 Unlimited instances.
-* Monitor IMDS security by identifying instances still using IMDSv1 (requests without token) or instances where IMDSv1 has been blocked.
-* Monitor CloudWatch CPU utilization and Dedicated Host CPU utilization.
-
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-CPU-Credits-Security-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
-
-## Create monitors for Host Metrics (EC2) app
-
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
-
-<CreateMonitors/>
-
-### Host Metrics (EC2) alerts
-
-| Name | Description | Alert Condition | Recover Condition |
-|:-----|:------------|:----------------|:--|
-| `AWS EC2 - High System CPU Utilization` | This alert fires when the average system CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
-| `AWS EC2 - High Total CPU Utilization` | This alert fires when the average total CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
-| `AWS EC2 - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
-| `AWS EC2 - High Disk Utilization` | This alert fires when the average disk utilization within a 5 minute time interval for an EC2 instance is high (>=85%). | Count > = 85 | Count < 85 |
-| `AWS EC2 - High CPU IO Wait` | This alert fires when the average CPU IO wait time within a 5 minute interval for an EC2 instance is high (>=20%), indicating disk I/O bottlenecks causing CPU stalls. | Count > = 20 | Count < 20 |
-| `AWS EC2 - High CPU Steal Time` | This alert fires when the average CPU steal time within a 5 minute interval for an EC2 instance is high (>=10%), indicating hypervisor contention or noisy neighbor issues. | Count > = 10 | Count < 10 |
-
-## Upgrade/Downgrade the Host Metrics (EC2) app (Optional)
-
-import AppUpdate from '../../reuse/apps/app-update.md';
-
-<AppUpdate/>
-
-## Uninstalling the Host Metrics (EC2) app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/6.-AWS-EC2-Metrics-TCP-Host-Metrics.png' alt="Host Metrics (EC2) - TCP" style={{border: '1px solid gray'}} width="800" />

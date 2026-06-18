@@ -59,7 +59,7 @@ Use this dashboard to:
 * Track messaging service health for SNS and SQS.
 * Monitor API Gateway requests and errors.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Overview-AWS-Account-Overview.png')} alt="Amazon Overview - AWS Account Overview" style={{border: '1px solid gray'}} />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonOverview/1.-AWS-Account-Overview.png' alt="Amazon Overview - AWS Account Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### AWS Region Overview
 
@@ -71,4 +71,10 @@ Use this dashboard to:
 * Identify region-specific issues with load balancers, compute, databases, or messaging services.
 * Monitor regional resource utilization trends.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Overview-AWS-Region-Overview.png')} alt="Amazon Overview - AWS Region Overview" style={{border: '1px solid gray'}} />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonOverview/1.-AWS-Region-Overview.png' alt="Amazon Overview - AWS Region Overview" style={{border: '1px solid gray'}} width="800" />
+
+## Uninstalling the Amazon Overview app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

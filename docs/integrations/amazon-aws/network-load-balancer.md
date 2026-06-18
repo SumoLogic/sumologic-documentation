@@ -89,14 +89,14 @@ Use this dashboard to:
 * Identify load balancers with the most number of unhealthy hosts.
 * Monitor trends around active connections, bytes processed, and reset packets to ensure load balancers are operating as expected.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-Overview.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/1.-AWS-Network-Load-Balancer-Overview.png' alt="AWS Network Load Balancer - Overview" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Active and New Flows
 
 The **AWS Network Load Balancer - Active and New Flows** dashboard provides detailed insights for new flows, and active flows for TCP, TLS, and UDP traffic. Use this dashboard to to monitor trends around active and new flows (connections) to make sure they line up with expectations, then use this information to scale up/scale down backend hosts.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-Flows.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/1.-AWS-Network-Load-Balancer-Active-and-New-Flows.png' alt="AWS Network Load Balancer - Active and New Flows" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Host Health Status
@@ -108,7 +108,7 @@ Use this dashboard to:
 * Get a quick overview of the number of healthy and unhealthy hosts.
 * Monitor trends around the number of unhealthy hosts to spot potential service disruptions that could warrant deeper investigation.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-health.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/2.-AWS-Network-Load-Balancer-Host-Health-Status.png' alt="AWS Network Load Balancer - Host Health Status" style={{border: '1px solid gray'}} width="800" />
 
 ### Errors
 
@@ -118,7 +118,7 @@ Use this dashboard to:
 * Monitor TLS handshake errors during negotiation between a client and a TLS listener, which could happen if clients are sending an incorrect cipher or are using incorrect protocols not matching the one specified in the security policy. It’s recommended to use the most recent AWS CLI client version.
 * Monitor TLS handshake errors during negotiation between a TLS listener and a target. Possible causes for this error include a mismatch of ciphers or protocols.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-errors.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/3.-AWS-Network-Load-Balancer-Errors.png' alt="AWS Network Load Balancer - Errors" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Reset (RST) Packets
@@ -127,14 +127,14 @@ The **AWS Network Load Balancer - Reset (RST) Packets** dashboard provides detai
 
 Use this dashboard to monitor the number of RST packets. A high number of reset packets could indicate connections are getting dropped and could mean a disruption in service.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-rst.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/4.-AWS-Network-Load-Balancer-Reset-RST-Packets.png' alt="AWS Network Load Balancer - Reset (RST) Packets" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Processed Bytes
 
 The **AWS Network Load Balancer - Processed Bytes** dashboard provides detailed insights into the amount of bytes processed by the load balancer for total, UDP, TCP and TLS traffic. Use this dashboard to monitor trends around processed bytes to make sure they line up with expectations and then use that information to scale up or scale down backend hosts.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-bytes.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/5.-AWS-Network-Load-Balancer-Processed-Bytes.png' alt="AWS Network Load Balancer - Processed Bytes" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Consumed LCUs
@@ -145,7 +145,7 @@ The **AWS Network Load Balancer - Consumed LCUs** dashboard shows you the total 
 You pay for the number of LCUs that you use per hour.
 :::
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-LCUs.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/6.-AWS-Network-Load-Balancer-Consumed-LCUs.png' alt="AWS Network Load Balancer - Consumed LCUs" style={{border: '1px solid gray'}} width="800" />
 
 ### CloudTrail Audit
 
@@ -157,7 +157,7 @@ Use this dashboard to:
 * Investigate specific error events, including their details, frequency, and associated users, enabling faster troubleshooting and resolution of issues.
 * Identify the most common error types and the users experiencing highest failure rates, facilitating targeted improvements and user support.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Network-Load-Balancer-CloudTrail-Audit.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/7.-AWS-Network-Load-Balancer-CloudTrail-Audit.png' alt="AWS Network Load Balancer - CloudTrail Audit" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for AWS Network Load Balancer app
 
