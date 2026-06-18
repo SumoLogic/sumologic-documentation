@@ -191,7 +191,7 @@ As part of the app installation process, the following fields will be created by
 - `account` Name/alias to the AWS account.
 - `accountid` AWS account ID.
 - `region` The region to which the resource name belongs.
-- `namespace` Namespace for EC2 CW Metrics Service is (blank).
+- `namespace` Namespace for EC2 CW Metrics Service.
 - `instanceid` EC2 Instance Id.
 
 ### Field Extraction Rule(s)
