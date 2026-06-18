@@ -305,8 +305,9 @@ module.exports = {
                   collapsed: true,
                   link: {type: 'doc', id: 'send-data/opentelemetry-collector/remote-management/processing-rules/index'},
                   items:[
+                    'send-data/opentelemetry-collector/remote-management/processing-rules/overview',
                     'send-data/opentelemetry-collector/remote-management/processing-rules/include-and-exclude-rules',
-                    'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules',
+                    'send-data/opentelemetry-collector/remote-management/processing-rules/hash-and-mask-rules',
                     'send-data/opentelemetry-collector/remote-management/processing-rules/mask-rules-windows',
                   ],
                 },
@@ -2153,6 +2154,7 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'integrations/amazon-aws/index'},
       items: [
+        'integrations/amazon-aws/amazon-overview',
         'integrations/amazon-aws/amazon-appflow',
         'integrations/amazon-aws/amazon-appstream2',
         'integrations/amazon-aws/amazon-athena',
