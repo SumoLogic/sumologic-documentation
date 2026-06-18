@@ -415,13 +415,13 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `Amazon ECS - High CPU Utilization` | This alert fires when the average CPU utilization within a 5 minute interval for a service within a cluster is high (>=85%). | Count > = 85 | Count < 85 |
 | `Amazon ECS - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for a service within a cluster is high (>=85%). | Count > = 85 | Count < 85 |
 
-## Upgrade/Downgrade the AWS EC2 app (Optional)
+## Upgrade/Downgrade the Amazon ECS (Without Container Insights and Traces) app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the AWS EC2 app (Optional)
+## Uninstalling the Amazon ECS (Without Container Insights and Traces) app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 

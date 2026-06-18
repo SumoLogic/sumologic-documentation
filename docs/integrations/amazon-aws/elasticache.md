@@ -282,13 +282,13 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `Amazon Elasticache - Low Redis Cache Hit Rate` | This alert fires when the average cache hit rate for Redis within a 5 minute interval is low (&lt;=80%). This indicates low efficiency of the Redis instance. If cache ratio is lower than 80%, that indicates a significant amount of keys are either evicted, expired, or don't exist. | Count &lt;= 80 | Count &gt; 80 |
 | `Amazon Elasticache - Multiple Failed Operations` | This alert fires when we detect multiple failed operations within a 15 minute interval for an ElastiCache service. | Count &gt;= 10 | Count &lt; 10 |
 
-## Upgrade/Downgrade the AWS API Gateway app (Optional)
+## Upgrade/Downgrade the Amazon ElastiCache app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the AWS API Gateway app (Optional)
+## Uninstalling the Amazon ElastiCache app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
