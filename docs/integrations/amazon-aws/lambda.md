@@ -386,13 +386,13 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 | `AWS Lambda - Low Provisioned Concurrency Utilization` | This alert fires when the average provisioned concurrency utilization for 5 minutes is low (&lt;= 50%). This indicates low provisioned concurrency utilization efficiency. | Count &lt;= 50 | Count &gt; 50 |
 | `AWS Lambda - Throttling` | This alert fires when we detect a Lambda running into throttling within an interval of 10 minutes. | Count &gt; 0 | Count &lt;= 0 |
 
-## Upgrade/Downgrade the AWS API Gateway app (Optional)
+## Upgrade/Downgrade the AWS Lambda app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the AWS API Gateway app (Optional)
+## Uninstalling the AWS Lambda app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 

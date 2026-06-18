@@ -207,3 +207,15 @@ Use this dashboard to:
 * Identify if any improvements need to be made to optimize TCP traffic by analyzing various TCP connection states.
 
 <img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/6.-AWS-EC2-Metrics-TCP-Host-Metrics.png' alt="Host Metrics (EC2) - TCP" style={{border: '1px solid gray'}} width="800" />
+
+## Upgrade/Downgrade the Host Metrics (EC2) app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Host Metrics (EC2) app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

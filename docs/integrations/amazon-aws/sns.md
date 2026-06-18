@@ -222,13 +222,13 @@ These alerts are available for the AWS SNS app.
 | `AWS SNS - Notification to DLQ Failure` | This alert fires when an SNS topic messages that couldn't be moved to a dead-letter queue. | Count > 0 | Count &lt;= 0 |
 
 
-## Upgrade/Downgrade the AWS API Gateway app (Optional)
+## Upgrade/Downgrade the Amazon SNS app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the AWS API Gateway app (Optional)
+## Uninstalling the Amazon SNS app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 

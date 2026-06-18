@@ -246,13 +246,13 @@ These alerts are available for the AWS SQS app.
 | `AWS SQS - Queue has stopped receiving messages` | This alert fires when we detect that the queue has stopped receiving messages. That is, the average number of messages received in the queue &lt;1 for an interval of 30 minutes. | Count &lt; 1 | Count >= 1 |
 
 
-## Upgrade/Downgrade the AWS API Gateway app (Optional)
+## Upgrade/Downgrade the Amazon SQS app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the AWS API Gateway app (Optional)
+## Uninstalling the Amazon SQS app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
