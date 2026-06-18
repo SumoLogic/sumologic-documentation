@@ -126,34 +126,6 @@ Sumo Logic supports collecting metrics using two source types:
     * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 2. Click **Save**.
 
-## Field in Field Schema
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the `queuename` field. 
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
-
-## Field Extraction Rule(s)
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
-
-* **Rule Name**: AwsObservabilitySQSCloudTrailLogsFER
-* **Applied at**: Ingest Time
-* **Scope (Specific Data)**: account=* eventname eventsource "sqs.amazonaws.com"
-* **Parse Expression**:
-
-```sumo
-json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements", "sourceIPAddress" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements, src_ip  nodrop
-| json field=userIdentity "accountId", "type", "arn", "userName" as accountid, type, arn, username nodrop
-| json field=requestParameters "queueUrl" as queueUrlReq nodrop
-| json field=responseElements "queueUrl" as queueUrlRes nodrop
-| where event_source="sqs.amazonaws.com"
-| if(event_name="CreateQueue", queueUrlRes, queueUrlReq) as queueUrl
-| parse regex field=queueUrl "(?<queueName>[^\/]*$)"
-| if (isBlank(recipient_account_id), accountid, recipient_account_id) as accountid
-|! toLowerCase(queuename) as queuename
-| "aws/sqs" as namespace
-| fields region, namespace, queuename, accountid
-```
-
 ## Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following **Field Extraction Rule** to map a proper AWS account(s) friendly name/alias. Create it if not already present/update it as required.
@@ -176,9 +148,21 @@ In case you have a centralized collection of CloudTrail logs and are ingesting t
 
 Now that you have set up collection for Amazon SQS, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for Amazon SQS Service is AWS/SQS.
+- `queuename` Amazon SQS Service Queue Name.
+
+## Field Extraction Rule(s)
+
+The FER **AwsObservabilitySQSCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `queuename` will be created as a part of app installation.
 
 ## Viewing Amazon SQS dashboards
 
@@ -231,3 +215,45 @@ Use this dashboard to:
 * Get details of all threats by IPs.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-ThreatIntel.png' alt="3. Amazon SQS - Threat Intel" style={{border: '1px solid gray'}} width="800" />
+
+### Performance Trends
+
+The **1. Amazon SQS - Performance Trends** dashboard provides derived performance insights including true consumer lag, empty receive rate trends, and cross-queue rankings by backlog and message staleness.
+
+Use this dashboard to:
+* Monitor true consumer lag by tracking combined visible and delayed messages in the backlog.
+* Identify queues with high empty receive rates to optimize polling behavior and reduce costs.
+* Rank queues by consumer backlog size to prioritize capacity planning.
+* Identify message staleness risks by tracking the age of the oldest message per queue.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-PerformanceTrends.png' alt="1. Amazon SQS - Performance Trends" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for AWS SQS app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS SQS alerts
+
+These alerts are available for the AWS SQS app.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `AWS SQS - Access from Highly Malicious Sources` | This alert fires when an Application AWS - SQS is accessed from highly malicious IP addresses within last 5 minutes. | Count > 0 | Count &lt;= 0 |
+| `AWS SQS - Message processing not fast enough` | This alert fires when we detect message processing is not fast enough. That is, the average approximate age of the oldest non-deleted message in the queue is more than 5 seconds for an interval of 5 minutes. | Seconds > 5 | Seconds &lt;= 5 |
+| `AWS SQS - Messages not processed` | This alert fires when we detect messages that have been received by a consumer, but have not been processed (deleted/failed). That is, the average number of messages that are in flight are >=20 for an interval of 5 minutes. | Count >= 20 | Count &lt; 20 |
+| `AWS SQS - Queue has stopped receiving messages` | This alert fires when we detect that the queue has stopped receiving messages. That is, the average number of messages received in the queue &lt;1 for an interval of 30 minutes. | Count &lt; 1 | Count >= 1 |
+
+
+## Upgrade/Downgrade the AWS API Gateway app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS API Gateway app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

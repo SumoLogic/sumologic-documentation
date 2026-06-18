@@ -211,38 +211,6 @@ These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metri
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Search-Provisioned-Concurrency-Metrics.png')} alt="Search Provisioned Concurrency Metrics" />
 
-### Field in Field Schema
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the “**functionname**” field.
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
-
-
-### Field Extraction Rule(s)
-
-Create a Field Extraction Rule for AWS Lambda. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
-
-
-### Cloud Trail FER
-
-```sql
-Rule Name: AwsObservabilityFieldExtractionRule
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventname eventsource "lambda.amazonaws.com"
-```
-
-```sumo title="Parse Expression"
-| json "eventSource", "awsRegion", "requestParameters", "recipientAccountId" as eventSource, region, requestParameters, accountid nodrop
-| where eventSource = "lambda.amazonaws.com"
-| json field=requestParameters "functionName", "resource" as functionname, resource nodrop
-| parse regex field=functionname "\w+:\w+:\S+:[\w-]+:\S+:\S+:(?<functionname>[\S]+)$" nodrop
-| parse field=resource "arn:aws:lambda:*:function:*" as f1, functionname2 nodrop
-| if (isEmpty(functionname), functionname2, functionname) as functionname
-| "aws/lambda" as namespace
-| tolowercase(functionname) as functionname
-| fields region, namespace, functionname, accountid
-```
-
 ### Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map the proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
@@ -266,26 +234,27 @@ Enter a parse expression to create an “account” field that maps to the alias
 | fields account
 ```
 
-### Cloud Watch FER
-
-```yml
-Rule Name: AwsObservabilityLambdaCloudWatchLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* region* _sourceHost=/aws/lambda/*
-Parse Expression:
-| parse field=_sourceHost "/aws/lambda/*" as functionname
-| tolowercase(functionname) as functionname
-| "aws/lambda" as namespace
-| fields functionname, namespace
-```
-
 ## Installing the AWS Lambda App
 
 Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for Amazon Lambda Service is AWS/Lambda.
+- `functionname` Lambda resource function name.
+
+### Field Extraction Rule(s)
+
+The FER **AwsObservabilityLambdaCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `functionname` will be created as a part of app installation.
+
+The FER **AwsObservabilityLambdaCloudWatchLogsFER** to extract fields `functionname` and `namespace` will be created as a part of app installation.
 
 ## Viewing AWS Lambda dashboards
 
@@ -312,12 +281,12 @@ Use this dashboard to:
 * Identify and validate the top IAM Users and AWS services that invoke AWS Lambda functions.
 * Monitor cold start duration for Lambda functions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Overview.png')} alt="AWS Lambda" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSLambda/1.-AWS-Lambda-Overview.png' alt="AWS Lambda - Overview" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Request Analysis
 
-**The AWS Lambda - Request Analysis** dashboard provides deeper insights into the invocations, operations, and performance of your AWS Lambda functions.
+The **AWS Lambda - Request Analysis** dashboard provides deeper insights into the invocations, operations, and performance of your AWS Lambda functions.
 
 Use this dashboard to:
 * Monitor the invocation of an AWS Lambda function against all other functions.
@@ -326,12 +295,12 @@ Use this dashboard to:
 * Troubleshoot and investigate individual function requests.
 * Monitor cold start duration and key operations for Lambda functions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Request-Analysis.png')} alt="AWS Lambda" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSLambda/1.-AWS-Lambda-Request-Analysis.png' alt="AWS Lambda - Request Analysis" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Usage Analysis
 
-**AWS Lambda - Usage Analysis** dashboard offers insights into function usage, including invocations, calling AWS services, user agents, IAM users, and detailed information about function callers.
+The **AWS Lambda - Usage Analysis** dashboard offers insights into function usage, including invocations, calling AWS services, user agents, IAM users, and detailed information about function callers.
 
 :::note
 This dashboard provides analysis of AWS CloudTrail Data Events. By default, AWS CloudTrail does not log data events. To enable AWS CloudTrail data events, refer to [AWS Lambda Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#logging-data-events-console)
@@ -345,7 +314,7 @@ Use this dashboard to:
 * Identify top callers, top caller types.
 * Monitor the invocation of an AWS Lambda function.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Usage-Analysis.png')} alt="AWS Lambda" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSLambda/2.-AWS-Lambda-Usage-Analysis.png' alt="AWS Lambda - Usage Analysis" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Error Analysis
@@ -362,12 +331,12 @@ Use this dashboard to:
 * Monitor the trend for recursive invocation drops. This measures the number of recursive invocation attempts that were dropped to prevent potential infinite loops and unbounded recursion within Lambda functions.
 * Monitor the trend for destination delivery failures. This tracks the number of times Lambda failed to deliver an asynchronous invocation result to a configured destination, such as an SNS topic, SQS queue, or EventBridge.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Error-Analysis.png')} alt="AWS Lambda" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSLambda/3.-AWS-Lambda-Error-Analysis.png' alt="AWS Lambda - Error Analysis" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Resource Usage
 
-**AWS Lambda - Resource Usage** dashboard provides insights on recent AWS Lambda request details, memory usage trends, function duration, claimed concurrency, and compute usage.
+The **AWS Lambda - Resource Usage** dashboard provides insights on recent AWS Lambda request details, memory usage trends, function duration, claimed concurrency, and compute usage.
 
 Use this dashboard to:
 * Monitor the memory usage pattern of a Lambda function during its execution.
@@ -375,12 +344,12 @@ Use this dashboard to:
 * Monitor the compute usage by function.
 * Monitor claimed account concurrency at the account level, segmented by region.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Resource-Usage.png')} alt="AWS Lambda" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSLambda/4.-AWS-Lambda-Resource-Usage.png' alt="AWS Lambda - Resource Usage" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Performance Trends
 
-**AWS Lambda - Performance Trends** dashboard displays log data analytics to provide insights on memory usage, function duration, recent request details, and compute usage.
+The **AWS Lambda - Performance Trends** dashboard displays log data analytics to provide insights on memory usage, function duration, recent request details, and compute usage.
 
 Use this dashboard to:
 * Monitor concurrent executions of an AWS Lambda function and understand trends over time.
@@ -388,15 +357,43 @@ Use this dashboard to:
 * Monitor memory used by AWS Lambda functions.
 * Monitor compute usage trends and predictions by AWS Lambda function in GB-Seconds.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Performance-Trends.png')} alt="AWS Lambda" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSLambda/5.-AWS-Lambda-Performance-Trends.png' alt="AWS Lambda - Performance Trends" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Threat Intel
 
-**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via Sumo Logic [threat intelligence](/docs/security/threat-intelligence/). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
+The **AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via Sumo Logic [threat intelligence](/docs/security/threat-intelligence/). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
 Use this dashboard to:
 * Identify known malicious IPs that are accessing your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward
 * Monitor the malicious confidence level for all incoming malicious IP address threats.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Threat-Intel.png')} alt="AWS Lambda" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSLambda/6.-AWS-Lambda-Threat-Intel.png' alt="AWS Lambda - Threat Intel" style={{border: '1px solid gray'}} width="800" />
+
+
+## Create monitors for AWS Lambda app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS Lambda alerts
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `AWS Lambda - High Memory Utilization` | This alert fires when we detect a Lambda execution with memory usage of more than 85% within an interval of 10 minutes. | Count &gt; 0 | Count &lt;= 0 |
+| `AWS Lambda - High Percentage of Failed Requests` | This alert fires when we detect a large number of failed Lambda requests (&gt;5%) within an interval of 5 minutes. | Count &gt;= 5 | Count &lt; 5 |
+| `AWS Lambda - Low Provisioned Concurrency Utilization` | This alert fires when the average provisioned concurrency utilization for 5 minutes is low (&lt;= 50%). This indicates low provisioned concurrency utilization efficiency. | Count &lt;= 50 | Count &gt; 50 |
+| `AWS Lambda - Throttling` | This alert fires when we detect a Lambda running into throttling within an interval of 10 minutes. | Count &gt; 0 | Count &lt;= 0 |
+
+## Upgrade/Downgrade the AWS API Gateway app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS API Gateway app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

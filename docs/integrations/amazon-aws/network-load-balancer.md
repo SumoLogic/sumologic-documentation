@@ -50,56 +50,29 @@ When you create an AWS Source, you'll need to identify the Hosted Collector you 
 Namespace for AWS Network Load Balancer Service is AWS/NetworkELB.
 :::
 
-## Field in field schema
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the “**networkloadbalancer**” field. 
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
-
-## Field Extraction Rule(s)
-
-Create a Field Extraction Rule for AWS Network Load Balancer Cloudtrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
-
-**AWS Network Load Balancer CloudTrail Logs**
-```sql
-Rule Name: AwsObservabilityNLBCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.amazonaws.com" "2015-12-01"
-```
-
-```sumo title="Parse Expression"
-json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.name", "requestParameters.type", "requestParameters.loadBalancerArn", "requestParameters.listenerArn", "apiVersion" as event_source, region, accountid, networkloadbalancer, loadbalancertype, loadbalancerarn, listenerarn, api_version nodrop
-| where event_source = "elasticloadbalancing.amazonaws.com" and api_version matches "2015-12-01" 
-| "" as namespace
-| parse field=loadbalancerarn ":loadbalancer/*/*/*" as balancertype1, networkloadbalancer1, f1 nodrop
-| parse field=listenerarn ":listener/*/*/*/*" as balancertype2, networkloadbalancer2, f1, f2 nodrop
-| if(loadbalancertype matches "network", "aws/networkelb", if(balancertype1 matches "net", "aws/networkelb", if(balancertype2 matches "net", "aws/networkelb", namespace))) as namespace 
-| if(loadbalancertype matches "application", "aws/applicationelb", if(balancertype1 matches "app", "aws/applicationelb", if(balancertype2 matches "app", "aws/applicationelb", namespace))) as namespace
-| where namespace="aws/networkelb" or isEmpty(namespace)  
-| if (!isEmpty(networkloadbalancer), networkloadbalancer, if (!isEmpty(networkloadbalancer1), networkloadbalancer1, networkloadbalancer2)) as networkloadbalancer
-| toLowerCase(networkloadbalancer) as networkloadbalancer 
-| fields region, namespace, networkloadbalancer, accountid
-```
-
-## Metric rules
-
-Create the following Metric Rule for the AWS/NetworkELB namespace if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
-
-```sql title="Rule 1*"
-Rule name: AwsObservabilityNLBMetricsAddonEntityRule
-Metric match expression: Namespace=AWS/NetworkELB LoadBalancer=*
-Variable name: networkloadbalancer
-Tag sequence: $LoadBalancer._1
-Save it
-```
-
 ## Installing the AWS Network Load Balancer app
 
 Now that you have set up a collection for **AWS Network Load Balancer**, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for AWS Network Load Balancer Service is AWS/NetworkELB.
+- `networkloadbalancer` Network Load Balancer name.
+
+## Field Extraction Rule(s)
+
+The FER **AwsObservabilityNLBCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `networkloadbalancer` will be created as a part of app installation.
+
+## Metric rule(s)
+
+The Metric Rule **AwsObservabilityNLBMetricsRule** for the AWS/NetworkELB namespace will be created as a part of app installation.
 
 ## Viewing AWS Network Load Balancer dashboards
 
@@ -109,21 +82,21 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 
 ### Overview
 
-The **The AWS Network Load Balancer - Overview** dashboard provides detailed insights into a view of network utilization and performance. The dashboard provides information about the errors, health, and traffic handled by the load balancer.
+The **AWS Network Load Balancer - Overview** dashboard provides detailed insights into a view of network utilization and performance. The dashboard provides information about the errors, health, and traffic handled by the load balancer.
 
 Use this dashboard to:
 * Get an at-a-glance view of the number of errors and status of backend hosts.
 * Identify load balancers with the most number of unhealthy hosts.
 * Monitor trends around active connections, bytes processed, and reset packets to ensure load balancers are operating as expected.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-Overview.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/1.-AWS-Network-Load-Balancer-Overview.png' alt="AWS Network Load Balancer - Overview" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Active and New Flows
 
 The **AWS Network Load Balancer - Active and New Flows** dashboard provides detailed insights for new flows, and active flows for TCP, TLS, and UDP traffic. Use this dashboard to to monitor trends around active and new flows (connections) to make sure they line up with expectations, then use this information to scale up/scale down backend hosts.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-Flows.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/1.-AWS-Network-Load-Balancer-Active-and-New-Flows.png' alt="AWS Network Load Balancer - Active and New Flows" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Host Health Status
@@ -135,7 +108,7 @@ Use this dashboard to:
 * Get a quick overview of the number of healthy and unhealthy hosts.
 * Monitor trends around the number of unhealthy hosts to spot potential service disruptions that could warrant deeper investigation.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-health.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/2.-AWS-Network-Load-Balancer-Host-Health-Status.png' alt="AWS Network Load Balancer - Host Health Status" style={{border: '1px solid gray'}} width="800" />
 
 ### Errors
 
@@ -145,7 +118,7 @@ Use this dashboard to:
 * Monitor TLS handshake errors during negotiation between a client and a TLS listener, which could happen if clients are sending an incorrect cipher or are using incorrect protocols not matching the one specified in the security policy. It’s recommended to use the most recent AWS CLI client version.
 * Monitor TLS handshake errors during negotiation between a TLS listener and a target. Possible causes for this error include a mismatch of ciphers or protocols.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-errors.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/3.-AWS-Network-Load-Balancer-Errors.png' alt="AWS Network Load Balancer - Errors" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Reset (RST) Packets
@@ -154,14 +127,14 @@ The **AWS Network Load Balancer - Reset (RST) Packets** dashboard provides detai
 
 Use this dashboard to monitor the number of RST packets. A high number of reset packets could indicate connections are getting dropped and could mean a disruption in service.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-rst.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/4.-AWS-Network-Load-Balancer-Reset-RST-Packets.png' alt="AWS Network Load Balancer - Reset (RST) Packets" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Processed Bytes
 
 The **AWS Network Load Balancer - Processed Bytes** dashboard provides detailed insights into the amount of bytes processed by the load balancer for total, UDP, TCP and TLS traffic. Use this dashboard to monitor trends around processed bytes to make sure they line up with expectations and then use that information to scale up or scale down backend hosts.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-bytes.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/5.-AWS-Network-Load-Balancer-Processed-Bytes.png' alt="AWS Network Load Balancer - Processed Bytes" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Consumed LCUs
@@ -172,7 +145,7 @@ The **AWS Network Load Balancer - Consumed LCUs** dashboard shows you the total 
 You pay for the number of LCUs that you use per hour.
 :::
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-NLB-LCUs.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/6.-AWS-Network-Load-Balancer-Consumed-LCUs.png' alt="AWS Network Load Balancer - Consumed LCUs" style={{border: '1px solid gray'}} width="800" />
 
 ### CloudTrail Audit
 
@@ -184,4 +157,34 @@ Use this dashboard to:
 * Investigate specific error events, including their details, frequency, and associated users, enabling faster troubleshooting and resolution of issues.
 * Identify the most common error types and the users experiencing highest failure rates, facilitating targeted improvements and user support.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Network-Load-Balancer-CloudTrail-Audit.png')} alt="AWS Network Load Balancer dashboards" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSNetworkLoadBalancer/7.-AWS-Network-Load-Balancer-CloudTrail-Audit.png' alt="AWS Network Load Balancer - CloudTrail Audit" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for AWS Network Load Balancer app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS Network Load Balancer alerts
+
+These alerts are available for the AWS Network Load Balancer app.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `AWS Network Load Balancer - Deletion Alert` | This alert fires when we detect greater than or equal to 2 network load balancers are deleted over a 5 minute time-period. | Count >= 2 | Count < 2 |
+| `AWS Network Load Balancer - High TLS Negotiation Errors` | This alert fires when we detect that there are too many TLS Negotiation Errors (>=10%) within an interval of 5 minutes for a given network load balancer. | Percentage >= 10% | Percentage < 10% |
+| `AWS Network Load Balancer - High Unhealthy Hosts` | This alert fires when we detect that there are too many unhealthy hosts (>=10%) within an interval of 5 minutes for a given network load balancer. | Percentage >= 10% | Percentage < 10% |
+| `AWS Network Load Balancer - Targets Deregistered` | This alert fires when we detect greater than or equal to 1 target is de-registered over a 5 minute time-period. | Count >= 1 | Count < 1 |
+
+
+## Upgrade/Downgrade the AWS API Gateway app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS API Gateway app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

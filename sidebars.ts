@@ -2153,6 +2153,7 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'integrations/amazon-aws/index'},
       items: [
+        'integrations/amazon-aws/amazon-overview',
         'integrations/amazon-aws/amazon-appflow',
         'integrations/amazon-aws/amazon-appstream2',
         'integrations/amazon-aws/amazon-athena',
