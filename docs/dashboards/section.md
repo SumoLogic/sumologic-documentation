@@ -44,7 +44,7 @@ To delete a section in your dashboard, follow the below steps:
 
 To view the scan estimate for a section, click the <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter icon" width="25"/> adjacent to the three-dot kebab menu icon on the section header. The scan estimate displays the projected data scan in GB for all panels within that section.<br/><img src={useBaseUrl('img/dashboards/section/scan-estimate.png')} alt="Section scan estimate popup showing projected GB for panels in that section" style={{border: '1px solid gray'}} width="800"/>
 
-To view the scan estimate for the entire dashboard broken down by expanded and collapsed sections, see [Dashboard-level scan estimates](/docs/manage/partitions/estimate-scan-data/#dashboard-level-scan-estimates).
+To view the scan estimate for the entire dashboard broken down by active and collapsed sections, see [Dashboard-level scan estimates](/docs/manage/partitions/estimate-scan-data/#dashboard-level-scan-estimates).
 
 ## Sharing a dashboard with sections
 
