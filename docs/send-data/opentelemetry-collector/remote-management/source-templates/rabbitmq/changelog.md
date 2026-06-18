@@ -5,7 +5,7 @@ sidebar_label: Changelog
 description: Changelog for RabbitMQ source template for OpenTelemetry.
 ---
 
-## [5.0.0] - 2026-06-11
+## [5.0.0] - 2026-06-18
 ### Added
 - Hashing functionality
 - Validation for field table

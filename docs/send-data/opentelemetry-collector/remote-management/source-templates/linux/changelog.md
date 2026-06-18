@@ -5,7 +5,7 @@ sidebar_label: Changelog
 description: Changelog for Linux source template for OpenTelemetry.
 ---
 
-## [7.0.0] - 2026-06-11
+## [7.0.0] - 2026-06-18
 ### Added
 - Hashing functionality
 - Validation for field table

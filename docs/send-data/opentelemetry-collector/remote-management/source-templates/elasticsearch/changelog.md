@@ -5,7 +5,7 @@ sidebar_label: Changelog
 description: Changelog for Elasticsearch source template for OpenTelemetry.
 ---
 
-## [3.0.0] - 2026-06-11
+## [3.0.0] - 2026-06-18
 ### Added
 - Hashing functionality
 - Validation for field table

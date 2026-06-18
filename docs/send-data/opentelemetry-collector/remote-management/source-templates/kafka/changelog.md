@@ -5,7 +5,7 @@ sidebar_label: Changelog
 description: Changelog for Kafka source template for OpenTelemetry.
 ---
 
-## [4.0.0] - 2026-06-11
+## [4.0.0] - 2026-06-18
 ### Added
 - Hashing functionality
 - Validation for field table
