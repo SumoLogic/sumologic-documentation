@@ -248,7 +248,6 @@ service:
         - httpcheck/my-public-sites
       processors:
         - memory_limiter
-        - batch
       exporters:
         - sumologic
 ```
