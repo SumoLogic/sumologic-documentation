@@ -157,7 +157,3 @@ Yes. An organization can have a maximum of **50 data masking rules**. To add a n
 ### At what point is a data masking rule applied?
 
 Data masking rules are applied as the final step during query processing. Logs are stored in their original form, and masking is applied dynamically when a query runs. If you want to mask logs during ingestion itself, use [Mask Rules](/docs/send-data/collection/processing-rules/mask-rules/) within Processing Rules instead.
-
-### Can we manage data masking rules programmatically?
-
-Yes. Use the [Data Masking Management APIs](/docs/api/data-masking) to create, update, and manage data masking rules programmatically.
