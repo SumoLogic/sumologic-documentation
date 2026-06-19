@@ -133,34 +133,6 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 2. Click **Save**.
 
 
-### Field in Field Schema
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the “**cacheclusterid**” field. 
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
-
-
-### Field Extraction Rule(s)
-
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
-
-```sql
-Rule Name: AwsObservabilityElastiCacheCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.com"
-```
-
-**Parse Expression**
-
-```sumo
-| json "eventSource", "awsRegion", "requestParameters.cacheClusterId", "responseElements.cacheClusterId", "recipientAccountId" as eventSource, region, req_cacheClusterId, res_cacheClusterId, accountid nodrop
-| where eventSource = "elasticache.amazonaws.com"
-| if (!isEmpty(req_cacheClusterId), req_cacheClusterId, res_cacheClusterId) as cacheclusterid
-| "aws/elasticache" as namespace
-| tolowercase(cacheclusterid) as cacheclusterid
-| fields region, namespace, cacheclusterid, accountid
-```
-
 ### Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
@@ -190,9 +162,21 @@ This section has instructions for installing the Sumo Logic app for **Amazon Ela
 
 Now that you have set up a collection for **Amazon ElastiCache**, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for Amazon ElastiCache service is AWS/ElastiCache.
+- `cacheclusterid` A cache cluster ID is a user-supplied, unique name used to identify and manage an Amazon ElastiCache cluster.
+
+### Field Extraction Rule(s)
+
+The FER **AwsObservabilityElastiCacheCloudTrailLogsFER** to extract fields `accountid`, `namespace`, `region`, and `cacheclusterid` will be created as a part of app installation.
 
 ## Viewing Amazon ElastiCache dashboards  
 
@@ -206,7 +190,7 @@ Use this dashboard to:
 * CPU, memory or swap space on host and swap usage.
 * Monitor network traffic utilization and compare today’s trends of incoming and outgoing bytes and packets vs. yesterday
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Host-Performance.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/1.-Amazon-ElastiCache-Host-Performance-Overview.png' alt="Amazon ElastiCache - Host Performance Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Audit Event Overview
 
@@ -218,7 +202,7 @@ Use this dashboard to:
 * Quickly identify top error codes to diagnose any outages
 * Monitor trends around failed events to identify potential service disruptions that could warrant deeper investigation
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-AuditEvent.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/2.-Amazon-ElastiCache-Audit-Event-Overview.png' alt="Amazon ElastiCache - Audit Event Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Redis Performance Overview
 
@@ -227,7 +211,7 @@ Use this dashboard to:
 Use this dashboard to:
 * Quickly determine if your Redis database is performing as expected
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Redis-Performance.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/3.-Amazon-ElastiCache-Redis-Performance-Overview.png' alt="Amazon ElastiCache - Redis Performance Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Audit Event Details
 
@@ -237,7 +221,7 @@ Use this dashboard to:
 * Quickly determine changes made to your ElastiCache clusters while troubleshooting production outages
 * Determine if any nodes hosting your ElastiCache clusters were rebooted
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Audit-Event.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/4.-Amazon-ElastiCache-Audit-Event-Details.png' alt="Amazon ElastiCache - Audit Event Details" style={{border: '1px solid gray'}} width="800" />
 
 ### Host Performance Details
 
@@ -247,7 +231,7 @@ Use this dashboard to:
 * Get an at-a-glance view of the performance of all nodes within a given ElastiCache cluster
 * Determine if CPU, memory, swap memory or network resources need to be scaled up or down for a given cluster or service based on utilization trends
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Host-Performance-details.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/1.-Amazon-ElastiCache-Host-Performance-Details.png' alt="Amazon ElastiCache - Host Performance Details" style={{border: '1px solid gray'}} width="800" />
 
 ### Redis Performance Details
 
@@ -258,7 +242,7 @@ Use this dashboard to:
 * Review trends around defragmentation, replication lag and bytes replicated to determine optimizations
 * Quickly determine any authentication and authorization failures and grant or revoke privileges accordingly
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Redis-Performance-details.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/2.-Amazon-ElastiCache-Redis-Performance-Details.png' alt="Amazon ElastiCache - Redis Performance Details" style={{border: '1px solid gray'}} width="800" />
 
 ### Redis Command Latency
 
@@ -267,7 +251,7 @@ The **Amazon ElastiCache - Redis Command Latency** dashboard provides detailed i
 Use this dashboard to:
 * To optimize performance of your Redis clusters by monitoring latency observed across get/set operations. Latency can be high due to high CPU usage, swapping or removing cached items. Performance optimizations can therefore be made either via resource allocation or by optimizing on caching.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Redis-Command.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/3.-Amazon-ElastiCache-Redis-Command-Latency.png' alt="Amazon ElastiCache - Redis Command Latency" style={{border: '1px solid gray'}} width="800" />
 
 ### Redis Command Stats
 
@@ -279,4 +263,33 @@ Use this dashboard to:
 
 If high latency commands are not being processed frequently, you will want to look into monitoring and potentially allocating more CPU resources.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Redis-Command-Stats.png')} alt="Amazon ElastiCache" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonElastiCache/4.-Amazon-ElastiCache-Redis-Command-Stats.png' alt="Amazon ElastiCache - Redis Command Stats" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for Amazon ElastiCache app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon ElastiCache alerts
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Amazon Elasticache - High CPU Utilization` | This alert fires when the average CPU utilization within a 5 minute interval for a host is high (&gt;=90%). The CPUUtilization metric includes total CPU utilization across application, operating system and management processes. We highly recommend monitoring CPU utilization for hosts with two vCPUs or less. | Count &gt;= 90 | Count &lt; 90 |
+| `Amazon Elasticache - High Engine CPU Utilization` | This alert fires when the average CPU utilization for the Redis engine process within a 5 minute interval is high (&gt;=90%). For larger node types with four vCPUs or more, use the EngineCPUUtilization metric to monitor and set thresholds for scaling. | Count &gt;= 90 | Count &lt; 90 |
+| `Amazon Elasticache - High Redis Database Memory Usage` | This alert fires when the average database memory usage within a 5 minute interval for the Redis engine is high (&gt;=95%). When the value reaches 100%, eviction may happen or write operations may fail based on ElastiCache policies thereby impacting application performance. | Count &gt;= 95 | Count &lt; 95 |
+| `Amazon Elasticache - High Redis Memory Fragmentation Ratio` | This alert fires when the average Redis memory fragmentation ratio within a 5 minute interval is high (&gt;=1.5). Value equal to or greater than 1.5 indicates significant memory fragmentation. | Count &gt;= 1.5 | Count &lt; 1.5 |
+| `Amazon Elasticache - Low Redis Cache Hit Rate` | This alert fires when the average cache hit rate for Redis within a 5 minute interval is low (&lt;=80%). This indicates low efficiency of the Redis instance. If cache ratio is lower than 80%, that indicates a significant amount of keys are either evicted, expired, or don't exist. | Count &lt;= 80 | Count &gt; 80 |
+| `Amazon Elasticache - Multiple Failed Operations` | This alert fires when we detect multiple failed operations within a 15 minute interval for an ElastiCache service. | Count &gt;= 10 | Count &lt; 10 |
+
+## Upgrade/Downgrade the Amazon ElastiCache app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon ElastiCache app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
