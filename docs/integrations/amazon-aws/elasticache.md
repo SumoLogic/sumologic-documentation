@@ -105,16 +105,28 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 | sort by _timeslice
 ```
 
-## Collect Logs and Metrics for Amazon ElastiCache
+## Collecting logs and metrics for Amazon ElastiCache
 
-* Sumo Logic supports collecting metrics using two source types:
-    * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
-    * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
-    * Namespace for **Amazon ElastiCache** service is **AWS/ElastiCache**
-    * **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. Metrics can be queried via the “account field”.
+This section provides instructions for setting up log and metric collection.
+
+### Collect Amazon CloudWatch metrics
+
+Sumo Logic supports collecting metrics using two source types:
+
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended)
+	or
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+
+:::note
+Namespace for **Amazon Lambda** Service is **AWS/Lambda**.
+:::
+
+**Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. The **account** field allows you to query metrics.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
 
 
-### Collect Amazon ElastiCache CloudTrail Logs
+### Collect Amazon ElastiCache CloudTrail logs
 
 1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md).
    * **Name**. Enter a name to display for the new Source.
@@ -132,8 +144,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
    * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 2. Click **Save**.
 
-
-### Centralized AWS CloudTrail Log Collection
+### Centralized AWS CloudTrail Log collection
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
 
@@ -154,7 +165,6 @@ Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 | if (recipientAccountId = "567680881046",  "prod", account) as account
 | fields account
 ```
-
 
 ## Installing the Amazon ElastiCache app
 
@@ -179,7 +189,6 @@ As part of the app installation process, the following fields will be created by
 The FER **AwsObservabilityElastiCacheCloudTrailLogsFER** to extract fields `accountid`, `namespace`, `region`, and `cacheclusterid` will be created as a part of app installation.
 
 ## Viewing Amazon ElastiCache dashboards  
-
 
 ### Host Performance Overview
 

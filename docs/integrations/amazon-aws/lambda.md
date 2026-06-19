@@ -12,7 +12,7 @@ AWS Lambda allows you to run code without the burden of provisioning or managing
 
 The Sumo Logic AWS Lambda App uses the Lambda logs via CloudWatch, CloudWatch Metrics, and the CloudTrail Lambda Data Events to visualize the operational and performance trends in all the Lambda functions in your account. The preconfigured dashboards provide insights into executions, memory, and duration (including cold start) usage by function versions or aliases, errors, billed duration, function callers, IAM users, and threat details.
 
-## Log and Metric Types
+## Log and metric types
 
 This section describes the data sources for the AWS Lambda app and how the app leverages these data sources to provide insight into AWS Lambda.
 
@@ -21,7 +21,7 @@ The AWS Lambda app uses the following logs and metrics:
 * [CloudTrail Lambda Data Events](https://docs.aws.amazon.com/lambda/latest/dg/logging-using-cloudtrail.html#cloudtrail-data-events)
 * [AWS Lambda metrics](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-metrics.html)
 
-### AWS CloudWatch Logs
+### AWS CloudWatch logs
 
 AWS Lambda monitors Lambda functions and reports metrics through Amazon CloudWatch. Lambda then logs all requests handled by your function and stores logs through [AWS CloudWatch Logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-logs.html).
 
@@ -29,7 +29,7 @@ The Sumo Logic AWS Lambda App uses the Lambda logs via CloudWatch, CloudWatch Me
 
 <img src={useBaseUrl('img/integrations/amazon-aws/aws_lambda_app_diagram.png')} alt="AWS Lambda" />
 
-### CloudTrail Lambda Data Events
+### CloudTrail Lambda data events
 
 [CloudTrail Lambda Data Events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events) allow you to continuously monitor the execution activity of your Lambda functions and to record details on when and by whom an Invoke API call was made.
 
@@ -37,7 +37,7 @@ The Sumo Logic App for AWS Lambda provide insights into the Lambda Functions inv
 
 <img src={useBaseUrl('img/integrations/amazon-aws/CTDE-Flow.png')} alt="AWS Lambda" />
 
-### AWS Lambda CloudWatch Metrics
+### AWS Lambda CloudWatch metrics
 
 AWS Lambda automatically monitors functions on your behalf, reporting [AWS Lambda metrics](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-metrics.html) through Amazon CloudWatch. These metrics are collected by our Hosted Collector by configuring the Amazon CloudWatch source.
 
@@ -99,7 +99,6 @@ This section provides sample Amazon CloudWatch Logs and CloudTrail Lambda Data E
 }
 ```
 
-
 ### Sample queries
 
 ```sumo title="Requests by Function Versions (Based on CloudWatch logs)"
@@ -137,11 +136,11 @@ account={{account}} region={{region}} Namespace={{namespace}}
 namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | sum
 ```
 
-## Collecting logs for the AWS Lambda App
+## Collecting logs for the AWS Lambda app
 
 This section provides instructions for setting up log and metric collection.
 
-### Collect Amazon CloudWatch Logs
+### Collect Amazon CloudWatch logs
 
 Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch. You can choose any of them to collect logs.
 - **AWS Kinesis Firehose for Logs**. Configure an [AWS Kinesis Firehose for Logs](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource) (Recommended).
@@ -154,7 +153,7 @@ Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" />
 
-### Collect CloudTrail Lambda Data Events
+### Collect CloudTrail Lambda data events
 
 To configure a CloudTrail Source, perform these steps:
 
@@ -167,8 +166,7 @@ To configure a CloudTrail Source, perform these steps:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Fields.png')} alt="Fields" />
 
-
-### Collect Amazon CloudWatch Metrics
+### Collect Amazon CloudWatch metrics
 
 Sumo Logic supports collecting metrics using two source types:
 
@@ -211,7 +209,7 @@ These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metri
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Search-Provisioned-Concurrency-Metrics.png')} alt="Search Provisioned Concurrency Metrics" />
 
-### Centralized AWS CloudTrail Log Collection
+### Centralized AWS CloudTrail Log collection
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map the proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 
@@ -234,7 +232,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 | fields account
 ```
 
-## Installing the AWS Lambda App
+## Installing the AWS Lambda app
 
 Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
