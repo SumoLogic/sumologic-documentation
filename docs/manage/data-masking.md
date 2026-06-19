@@ -61,7 +61,8 @@ You can create an data masking rule of your own from scratch by following the in
     1. (Optional) **Description**. An optional summary of what the rule masks and why. 
     1. **Regex Locator**. A regular expression pattern used to identify the segment of log data to mask. Sumo Logic evaluates this pattern against incoming log messages and applies masking to every match. Ensure your regex targets only the sensitive portion to avoid unintended masking.
     1. (Optional) **Mask String**. The replacement text that substitutes any content matched by the Regex Locator. If left blank, Sumo Logic replaces matched content with a default mask.
-1. Click **Save** to activate the rule.
+    1. **Test Rule**. Paste a sample log message into the text area to validate your masking rule. Click **Run Test** to verify that masking is applied as expected to the log message.
+1. Once satisfied, click **Save** to activate the rule.
 
 ## What are the limitations of data masking?
 

@@ -12,16 +12,22 @@ on:
     types:
       - checks_requested
 
+concurrency:
+  group: pr-checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 env:
   CI: true
   NODE_ENV: production
   NODE_OPTIONS: "--max-old-space-size=8192 --max-http-header-size=8192"
 
 jobs:
-  build-and-deploy:
+  run-build-checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
@@ -69,11 +75,20 @@ jobs:
       - name: Check Markdown/MDX links for disallowed characters
         shell: bash
         run: |
-          FILES="$(git ls-files '*.md' '*.mdx' 2>/dev/null || true)"
-          if [ -z "$FILES" ]; then
-            echo "No Markdown/MDX files found; skipping link check."
+          FILES=()
+          while IFS= read -r -d '' file; do
+            FILES+=("$file")
+          done < <(
+            git diff --name-only -z origin/main...HEAD |
+            grep -zE '\.mdx?$' || true
+          )
+          if [ "${#FILES[@]}" -eq 0 ]; then
+            echo "No changed Markdown/MDX docs files found; skipping link check."
             exit 0
           fi
+          echo "Checking changed docs files:"
+          printf '%s\n' "${FILES[@]}"
+
           BAD_LINKS=$(
             awk '
               BEGIN { in_code=0 }
@@ -107,7 +122,7 @@ jobs:
                   line=substr(line, RSTART+RLENGTH)
                 }
               }
-            ' $FILES
+            ' "${FILES[@]}"
           )
 
           if [ -n "$BAD_LINKS" ]; then
@@ -125,9 +140,181 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Check spelling
-        uses: codespell-project/actions-codespell@v2
         with:
-          path: docs
-          skip: "*.svg,*.js,*.map,*.css,*.scss"
-          ignore_words_list: "aks,atleast,cros,ddress,delink,fiel,ist,nd,ot,pullrequest,ser,shttp,wast,fo,seldomly,delt,cruzer,plack,secur,te,nginx,Nginx,notin"
+          fetch-depth: 0
+      - name: Check spelling on changed files
+        shell: bash
+        run: |
+          pip install codespell --quiet
+          FILES=()
+          while IFS= read -r -d '' file; do
+            FILES+=("$file")
+          done < <(
+            git diff --name-only -z origin/main...HEAD -- docs |
+            grep -zE '^docs/.*\.mdx?$' || true
+          )
+          if [ "${#FILES[@]}" -eq 0 ]; then
+            echo "No docs files changed — skipping spellcheck."
+            exit 0
+          fi
+          echo "Checking changed docs files:"
+          printf '%s\n' "${FILES[@]}"
+          printf '%s\0' "${FILES[@]}" | xargs -0 codespell \
+            --skip="*.svg,*.js,*.map,*.css,*.scss" \
+            --ignore-words-list="aks,atleast,cros,ddress,delink,fiel,ist,nd,ot,pullrequest,ser,shttp,wast,fo,seldomly,delt,cruzer,plack,secur,te,nginx,Nginx,notin"
+  check-merge-window:
+    name: merge window
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check merge window
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Two-tier merge window policy:
+            //   Backend site changes (workflows, config, src, etc.): hard block outside
+            //     7:00 am–2:00 pm PT, Mon–Fri, non-holidays. US-only window; India is not
+            //     staffed for outage response.
+            //   Docs and release notes (docs/, blog-*, images): soft warning only — should
+            //     generally merge during India or US business hours, but not hard-blocked.
+            // Override: apply the 'active-incident' label for active service incidents only.
+            // Update holiday lists annually (see DOCS-1703).
+
+            const OVERRIDE_LABEL = 'active-incident';
+
+            // USA + Global Quarterly Wellness Days — checked against the PT calendar date.
+            const PT_HOLIDAYS = new Set([
+              '2026-03-13', '2026-06-22', '2026-09-04', '2026-12-11', // Global QWDs
+              '2026-01-01', '2026-01-19', '2026-05-25', '2026-06-19', // USA
+              '2026-07-03', '2026-09-07', '2026-11-26', '2026-11-27',
+              '2026-12-24', '2026-12-25', '2026-12-31',
+            ]);
+
+            // India + Global Quarterly Wellness Days — checked against the IST calendar date.
+            const IST_HOLIDAYS = new Set([
+              '2026-03-13', '2026-06-22', '2026-09-04', '2026-12-11', // Global QWDs
+              '2026-01-01', '2026-01-14', '2026-01-26', '2026-05-01', // India
+              '2026-05-27', '2026-09-14', '2026-10-02', '2026-10-20',
+              '2026-11-06', '2026-12-25',
+            ]);
+
+            // Fail loudly if the holiday list has expired so merges don't silently slip through.
+            const HOLIDAYS_VALID_THROUGH_YEAR = 2026;
+
+            function getTimeInfo(timeZone) {
+              const parts = Object.fromEntries(
+                new Intl.DateTimeFormat('en-US', {
+                  timeZone,
+                  year: 'numeric', month: '2-digit', day: '2-digit',
+                  weekday: 'long', hour: '2-digit', hourCycle: 'h23',
+                }).formatToParts(new Date()).map(({ type, value }) => [type, value])
+              );
+              return {
+                date:    `${parts.year}-${parts.month}-${parts.day}`,
+                year:    parseInt(parts.year, 10),
+                weekday: parts.weekday,
+                hour:    parseInt(parts.hour, 10),
+              };
+            }
+
+            const WEEKDAYS = new Set(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']);
+            const pt  = getTimeInfo('America/Los_Angeles');
+            const ist = getTimeInfo('Asia/Kolkata');
+
+            if (pt.year > HOLIDAYS_VALID_THROUGH_YEAR) {
+              core.setFailed(
+                `Holiday list expired — only covers through ${HOLIDAYS_VALID_THROUGH_YEAR}. ` +
+                'Update PT_HOLIDAYS and IST_HOLIDAYS in .github/workflows/pr.yml with ' +
+                'the new year\'s dates from the Sumo Logic Holiday Calendar, then bump HOLIDAYS_VALID_THROUGH_YEAR.'
+              );
+              return;
+            }
+
+            // Backend site change window: 7:00 am–2:00 pm PT, Mon–Fri, no US/global holidays.
+            let siteBlockedReason = null;
+            if      (!WEEKDAYS.has(pt.weekday)) siteBlockedReason = 'weekend';
+            else if (pt.hour < 7)              siteBlockedReason = 'before 7:00 am PT';
+            else if (pt.hour >= 14)            siteBlockedReason = 'after 2:00 pm PT';
+            else if (PT_HOLIDAYS.has(pt.date)) siteBlockedReason = `Sumo holiday (${pt.date} PT)`;
+
+            if (!siteBlockedReason) {
+              core.info(`Merge window open — PT: ${pt.weekday} ${pt.hour}:xx, IST: ${ist.weekday} ${ist.hour}:xx`);
+              return;
+            }
+
+            if (context.eventName === 'merge_group') {
+              // merge_group payloads don't include PR labels — extract PR number from head ref
+              // (e.g. refs/heads/gh-readonly-queue/main/pr-1234-abc...) and fetch via API.
+              const headRef = context.payload.merge_group?.head_ref ?? '';
+              const prMatch = headRef.match(/\/pr-(\d+)-/);
+              let hasOverride = false;
+              if (prMatch) {
+                const prNumber = parseInt(prMatch[1], 10);
+                const { data: pr } = await github.rest.pulls.get({
+                  owner:       context.repo.owner,
+                  repo:        context.repo.repo,
+                  pull_number: prNumber,
+                });
+                hasOverride = pr.labels.some(l => l.name === OVERRIDE_LABEL);
+              }
+              if (hasOverride) {
+                core.warning(`active-incident override active — merge queue bypassed: ${siteBlockedReason}`);
+                return;
+              }
+              core.setFailed(
+                `Merge blocked: ${siteBlockedReason}. ` +
+                'Merge queue validation requires the merge window: Mon–Fri, 7:00 am–2:00 pm PT, non-holidays.'
+              );
+              return;
+            }
+
+            // Check override label before fetching files.
+            const labels = context.payload.pull_request?.labels ?? [];
+            if (labels.some(l => l.name === OVERRIDE_LABEL)) {
+              core.warning(`active-incident override active. Bypassed: ${siteBlockedReason}`);
+              return;
+            }
+
+            // Classify the PR's changed files to determine enforcement level.
+            // Docs, release notes, images, CID redirects, and repo meta files → soft warning only.
+            // Everything else (backend site changes) → hard block.
+            const ARTICLE_PATTERNS = [
+              /^docs\//,
+              /^blog-/,
+              /^static\/img\//,
+              /^cid-redirects\.json$/,
+              /^README\.md$/,
+              /^\.clabot$/,
+              /^CONTRIBUTING\.md$/,
+            ];
+
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner:       context.repo.owner,
+              repo:        context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              per_page:    100,
+            });
+
+            const hasSiteChange = files.some(
+              f => !ARTICLE_PATTERNS.some(p => p.test(f.filename))
+            );
+
+            if (hasSiteChange) {
+              core.setFailed(
+                `Merge blocked: ${siteBlockedReason}. ` +
+                'Backend site changes require the merge window: Mon–Fri, 7:00 am–2:00 pm PT, non-holidays. ' +
+                'Active service incident? Apply the active-incident label and re-run this check.'
+              );
+              return;
+            }
+
+            // Docs/release note PR — warn if outside India business hours too.
+            const inIndiaHours = WEEKDAYS.has(ist.weekday) && ist.hour >= 8 && !IST_HOLIDAYS.has(ist.date);
+            if (!inIndiaHours) {
+              core.warning(
+                `Outside recommended merge hours (${siteBlockedReason}, and before 8:00 am IST). ` +
+                'Docs and release note PRs should generally merge during India or US business hours. ' +
+                'Proceeding — no action needed unless this is outside a prior arrangement.'
+              );
+            } else {
+              core.info(`Docs/release note PR — India team is active (${ist.weekday} ${ist.hour}:xx IST). Merge allowed.`);
+            }
