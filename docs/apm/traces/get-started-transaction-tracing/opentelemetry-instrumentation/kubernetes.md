@@ -204,11 +204,13 @@ Make sure supported auto-instrumentation images are used:
 * `nodejs` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.74.0
 * `python` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.48b0
 
-## Logs Ingestion via Auto-Instrumentation
+## Logs ingestion via auto-instrumentation
 
 By default, the Sumo Logic Kubernetes Collection chart collects container logs by scraping log files from `/var/log/pods/` on each node (via the logs collector DaemonSet). You can alternatively ingest application logs directly via OpenTelemetry auto-instrumentation, where the OTel SDK inside the application sends structured log records over OTLP to the `otelcol-instrumentation` StatefulSet.
 
-**Key difference:** File-based collection captures everything written to stdout/stderr. Auto-instrumentation log export captures structured log records emitted through the application's logging framework (e.g., SLF4J, Python logging, Bunyan), with full semantic context including trace IDs, span IDs, severity, and attributes.
+:::tip Key difference
+File-based collection captures everything written to stdout/stderr. Auto-instrumentation log export captures structured log records emitted through the application's logging framework (for example, SLF4J, Python logging, Bunyan). Log records include full semantic context — trace IDs, span IDs, severity, and attributes.
+:::
 
 ### Enable the logs pipeline on otelcol-instrumentation
 
@@ -295,7 +297,7 @@ instrumentation:
         value: otlp
 ```
 
-The Java agent automatically bridges Logback and Log4j2 when `OTEL_LOGS_EXPORTER=otlp` is set. No application code changes are needed. Log records include trace context (trace_id, span_id) automatically.
+The Java agent automatically bridges Logback and Log4j2 when `OTEL_LOGS_EXPORTER=otlp` is set. No application code changes are needed. Log records include trace context (`trace_id`, `span_id`) automatically.
 
 #### Python
 
@@ -313,7 +315,9 @@ instrumentation:
         value: "true"
 ```
 
-Setting `OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true` enables automatic bridging of Python's standard `logging` module to OpenTelemetry. All `logging.getLogger()` calls will emit OTel log records with trace context when emitted within an active span.
+:::note
+Setting `OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true` enables automatic bridging of Python's standard `logging` module to OpenTelemetry. All `logging.getLogger()` calls emit OTel log records with trace context when emitted within an active span.
+:::
 
 #### Node.js
 
@@ -331,7 +335,9 @@ instrumentation:
         value: "bunyan,pino,winston"
 ```
 
-Node.js auto-instrumentation supports Bunyan, Pino, and Winston logging libraries. Set `OTEL_NODE_ENABLED_INSTRUMENTATIONS` to include the specific logging library your application uses. Note that `console.log` is NOT captured — only structured logging frameworks are supported.
+:::note
+Node.js auto-instrumentation supports Bunyan, Pino, and Winston logging libraries. Set `OTEL_NODE_ENABLED_INSTRUMENTATIONS` to include the specific logging library your application uses. `console.log` is **not** captured — only structured logging frameworks are supported.
+:::
 
 #### .NET
 
@@ -399,7 +405,7 @@ otelcolInstrumentation:
       targetMemoryUtilizationPercentage: 70
 ```
 
-**Rule of thumb:** Start with 2-4GB memory per replica, 3 replicas, and HPA enabled. Monitor `container_memory_working_set_bytes` and adjust based on actual usage.
+**Recommendation:** Start with 2-4GB memory per replica, 3 replicas, and HPA enabled. Monitor `container_memory_working_set_bytes` and adjust based on actual usage.
 
 ### Avoiding duplicate logs
 
