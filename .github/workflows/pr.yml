@@ -12,16 +12,22 @@ on:
     types:
       - checks_requested
 
+concurrency:
+  group: pr-checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 env:
   CI: true
   NODE_ENV: production
   NODE_OPTIONS: "--max-old-space-size=8192 --max-http-header-size=8192"
 
 jobs:
-  build-and-deploy:
+  run-build-checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
@@ -69,11 +75,20 @@ jobs:
       - name: Check Markdown/MDX links for disallowed characters
         shell: bash
         run: |
-          FILES="$(git ls-files '*.md' '*.mdx' 2>/dev/null || true)"
-          if [ -z "$FILES" ]; then
-            echo "No Markdown/MDX files found; skipping link check."
+          FILES=()
+          while IFS= read -r -d '' file; do
+            FILES+=("$file")
+          done < <(
+            git diff --name-only -z origin/main...HEAD |
+            grep -zE '\.mdx?$' || true
+          )
+          if [ "${#FILES[@]}" -eq 0 ]; then
+            echo "No changed Markdown/MDX docs files found; skipping link check."
             exit 0
           fi
+          echo "Checking changed docs files:"
+          printf '%s\n' "${FILES[@]}"
+
           BAD_LINKS=$(
             awk '
               BEGIN { in_code=0 }
@@ -107,7 +122,7 @@ jobs:
                   line=substr(line, RSTART+RLENGTH)
                 }
               }
-            ' $FILES
+            ' "${FILES[@]}"
           )
 
           if [ -n "$BAD_LINKS" ]; then
@@ -125,16 +140,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Check spelling
-        uses: codespell-project/actions-codespell@v2
         with:
-          path: docs
-          skip: "*.svg,*.js,*.map,*.css,*.scss"
-          ignore_words_list: "aks,atleast,cros,ddress,delink,fiel,ist,nd,ot,pullrequest,ser,shttp,wast,fo,seldomly,delt,cruzer,plack,secur,te,nginx,Nginx,notin"
+          fetch-depth: 0
+      - name: Check spelling on changed files
+        shell: bash
+        run: |
+          pip install codespell --quiet
+          FILES=()
+          while IFS= read -r -d '' file; do
+            FILES+=("$file")
+          done < <(
+            git diff --name-only -z origin/main...HEAD -- docs |
+            grep -zE '^docs/.*\.mdx?$' || true
+          )
+          if [ "${#FILES[@]}" -eq 0 ]; then
+            echo "No docs files changed — skipping spellcheck."
+            exit 0
+          fi
+          echo "Checking changed docs files:"
+          printf '%s\n' "${FILES[@]}"
+          printf '%s\0' "${FILES[@]}" | xargs -0 codespell \
+            --skip="*.svg,*.js,*.map,*.css,*.scss" \
+            --ignore-words-list="aks,atleast,cros,ddress,delink,fiel,ist,nd,ot,pullrequest,ser,shttp,wast,fo,seldomly,delt,cruzer,plack,secur,te,nginx,Nginx,notin"
   check-merge-window:
     name: merge window
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     steps:
       - name: Check merge window
         uses: actions/github-script@v7
@@ -211,6 +241,32 @@ jobs:
               return;
             }
 
+            if (context.eventName === 'merge_group') {
+              // merge_group payloads don't include PR labels — extract PR number from head ref
+              // (e.g. refs/heads/gh-readonly-queue/main/pr-1234-abc...) and fetch via API.
+              const headRef = context.payload.merge_group?.head_ref ?? '';
+              const prMatch = headRef.match(/\/pr-(\d+)-/);
+              let hasOverride = false;
+              if (prMatch) {
+                const prNumber = parseInt(prMatch[1], 10);
+                const { data: pr } = await github.rest.pulls.get({
+                  owner:       context.repo.owner,
+                  repo:        context.repo.repo,
+                  pull_number: prNumber,
+                });
+                hasOverride = pr.labels.some(l => l.name === OVERRIDE_LABEL);
+              }
+              if (hasOverride) {
+                core.warning(`active-incident override active — merge queue bypassed: ${siteBlockedReason}`);
+                return;
+              }
+              core.setFailed(
+                `Merge blocked: ${siteBlockedReason}. ` +
+                'Merge queue validation requires the merge window: Mon–Fri, 7:00 am–2:00 pm PT, non-holidays.'
+              );
+              return;
+            }
+
             // Check override label before fetching files.
             const labels = context.payload.pull_request?.labels ?? [];
             if (labels.some(l => l.name === OVERRIDE_LABEL)) {
@@ -219,15 +275,19 @@ jobs:
             }
 
             // Classify the PR's changed files to determine enforcement level.
-            // Docs and release notes (docs/, blog-*, images) → soft warning only.
+            // Docs, release notes, images, CID redirects, and repo meta files → soft warning only.
             // Everything else (backend site changes) → hard block.
             const ARTICLE_PATTERNS = [
               /^docs\//,
               /^blog-/,
               /^static\/img\//,
+              /^cid-redirects\.json$/,
+              /^README\.md$/,
+              /^\.clabot$/,
+              /^CONTRIBUTING\.md$/,
             ];
 
-            const { data: files } = await github.rest.pulls.listFiles({
+            const files = await github.paginate(github.rest.pulls.listFiles, {
               owner:       context.repo.owner,
               repo:        context.repo.repo,
               pull_number: context.payload.pull_request.number,
