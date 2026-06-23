@@ -118,7 +118,7 @@ Sumo Logic supports collecting metrics using two source types:
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
 :::note
-Namespace for **Amazon Lambda** Service is **AWS/Lambda**.
+Namespace for **Amazon ElastiCache** Service is **AWS/ElastiCache**.
 :::
 
 **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. The **account** field allows you to query metrics.
