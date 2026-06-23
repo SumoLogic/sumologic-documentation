@@ -240,7 +240,7 @@ otelcolInstrumentation:
           endpoint: ${SUMO_ENDPOINT_DEFAULT_OTLP_LOGS_SOURCE}
           log_format: otlp
           compression: gzip
-          max_request_body_size: 1_048_576
+          max_request_body_size: 1048576
           sending_queue:
             enabled: true
             num_consumers: 10
@@ -320,6 +320,8 @@ Setting `OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true` enables automati
 ```yaml
 instrumentation:
   nodejs:
+    traces:
+      enabled: true
     metrics:
       enabled: true
     extraEnvVars:
@@ -477,7 +479,7 @@ otelcolInstrumentation:
           endpoint: ${SUMO_ENDPOINT_DEFAULT_OTLP_LOGS_SOURCE}
           log_format: otlp
           compression: gzip
-          max_request_body_size: 1_048_576
+          max_request_body_size: 1048576
           sending_queue:
             enabled: true
             num_consumers: 10
