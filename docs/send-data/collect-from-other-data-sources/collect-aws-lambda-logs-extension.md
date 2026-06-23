@@ -21,26 +21,29 @@ To learn more please see the following links:
 To review and submit enhancements for this extension, please visit the [Sumo Logic GitHub repository](https://github.com/SumoLogic/sumologic-lambda-extensions).
 
 ## SumoLogic Lambda Extension AWS region availability
+
 SumoLogic Lambda Extension is available in the following AWS regions:
-us-east-1 (N. Virginia)
-us-east-2 (Ohio)
-eu-north-1 (Stockholm)
-eu-west-3 (Paris)
-eu-west-2 (London)
-eu-south-1 (Milan)
-eu-west-1 (Ireland)
-ap-northeast-2 (Seoul)
-me-south-1 (Bahrain)
-ap-northeast-1 (Tokyo)
-sa-east-1 (São Paulo)
-ca-central-1 (Canada Central)
-ap-east-1 (Hong Kong)
-ap-southeast-1 (Singapore)
-ap-southeast-2 (Sydney)
-eu-central-1 (Frankfurt)
-us-west-1 (N. California)
-us-west-2 (Oregon)
-ca-west-1 (Calgary)
+
+- us-east-1 (N. Virginia)
+- us-east-2 (Ohio)
+- eu-north-1 (Stockholm)
+- eu-west-3 (Paris)
+- eu-west-2 (London)
+- eu-south-1 (Milan)
+- eu-west-1 (Ireland)
+- ap-northeast-2 (Seoul)
+- me-south-1 (Bahrain)
+- ap-northeast-1 (Tokyo)
+- sa-east-1 (São Paulo)
+- ca-central-1 (Canada Central)
+- ap-east-1 (Hong Kong)
+- ap-southeast-1 (Singapore)
+- ap-southeast-2 (Sydney)
+- eu-central-1 (Frankfurt)
+- us-west-1 (N. California)
+- us-west-2 (Oregon)
+- ca-west-1 (Calgary)
+- eusc-de-east-1 (Germany)
 
 ## AWS Lambda Supported Runtimes
 
@@ -84,7 +87,7 @@ To add the Sumo Logic Lambda Extension to your AWS Lambda function, please follo
    * For **x86_64 architecture**, enter the following ARN:
 
     ```
-    <AWS_REGION>:956882708938:layer:sumologic-extension-amd64:<VERSION>
+    arn:aws:lambda:<AWS_REGION>:956882708938:layer:sumologic-extension-amd64:<VERSION>
     ```
 
      * **AWS_REGION.** Replace with the AWS Region of your Lambda function
@@ -95,13 +98,20 @@ To add the Sumo Logic Lambda Extension to your AWS Lambda function, please follo
    * For **arm64 architecture,** enter the following ARN:
 
     ```
-    <AWS_REGION>:956882708938:layer:sumologic-extension-arm64:<VERSION>
+    arn:aws:lambda:<AWS_REGION>:956882708938:layer:sumologic-extension-arm64:<VERSION>
     ```
 
      * **AWS_REGION.** Replace with the AWS Region of your Lambda function
      * **VERSION.** The latest version of the Sumo Logic Extension.
 
     <img src={useBaseUrl('img/send-data/arm64.png')} alt="arm64" style={{border: '1px solid gray'}} width="800" />
+
+:::note
+For the **eusc-de-east-1** region, the Lambda layer ARNs use the `aws-eusc` partition and a different account ID. Use the following ARNs instead:
+
+- **x86_64 (amd64)**: `arn:aws-eusc:lambda:eusc-de-east-1:052162193518:layer:sumologic-extension-amd64:<VERSION>`
+- **arm64**: `arn:aws-eusc:lambda:eusc-de-east-1:052162193518:layer:sumologic-extension-arm64:<VERSION>`
+:::
 
 ### AWS Lambda Functions Created Container Images
 
