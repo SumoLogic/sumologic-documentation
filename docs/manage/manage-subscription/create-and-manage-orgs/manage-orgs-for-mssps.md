@@ -33,8 +33,8 @@ As an MSSP administrator, you can manage feature availability for your child org
 
 Features available for self-service management are controlled by Sumo Logic. Only features that have been made available for your enablement appear in the **Manage Features** list. Features may be:
 
-- **Opt-in**. Disabled by default. You can explicitly enable them for one or more child organizations.
-- **Opt-out**. Enabled by default. You can disable them for child organizations that do not require them.
+- **Opt-in**. You can explicitly enable them for one or more child organizations.
+- **Opt-out**. You can disable them for child organizations that do not require them.
 
 Some features include sub-features. You can expand a top-level feature to manage its sub-features individually.
 
@@ -45,18 +45,18 @@ You can apply changes to multiple child organizations in a single action.
 ### Opt in a child organization to a feature
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**.
-1. Click the child organization you want to manage. A details pane opens on the left.
+1. Click the child organization you want to manage. A details pane opens on the right.
 1. In the details pane, click the **More Actions** dropdown and select **Manage Features**.
-1. In the **Manage Features** panel, select the checkbox next to the feature you want to enable.
+1. In the **Manage Features** panel, select the toggle next to the feature you want to enable.
    - To manage sub-features, click the feature name to expand it and select the desired sub-features.
 1. Click **Add Features** to apply your changes.
 
 ### Opt out a child organization from a feature
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**.
-1. Click the child organization you want to manage. A details pane opens on the left.
+1. Click the child organization you want to manage. A details pane opens on the right.
 1. In the details pane, click the **More Actions** dropdown and select **Manage Features**.
-1. In the **Manage Features** panel, deselect the checkbox next to the feature you want to disable.
+1. In the **Manage Features** panel, deselect the toggle next to the feature you want to disable.
 1. Click **Add Features** to apply your changes.
 
 ## Manage content
