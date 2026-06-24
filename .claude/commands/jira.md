@@ -84,7 +84,7 @@ Use these keywords and file path patterns to suggest the most relevant Technical
 - **Dojo AI**: Dojo, AI assistant, AI features
 - **Getting Started**: onboarding, quick start, tutorial, getting started
 - **Log Search**: search, query, log query, LogReduce
-- **Logs for Security**: security logs, log analytics for security
+- **Logs for Security**: security logs, log analytics for security, security data lake, infrastructure security
 - **Manage**: admin, user management, role, permission, account, billing, partition, field extraction
 - **Metrics**: metric, time series, prometheus, graphite
 - **Observability**: AWS Observability, Azure, Kubernetes, SLO, service level, tracing
