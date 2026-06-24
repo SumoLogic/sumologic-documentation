@@ -20,7 +20,7 @@ Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic sty
 
 **Non-negotiable rules:**
 1. **Read template first** - Get current checkbox labels from `.github/PULL_REQUEST_TEMPLATE.md` (never guess or use old labels)
-2. **Use exact text** - Copy checkbox labels verbatim. Current labels are: "Minor Changes", "Update Content", "New Content", "Site and Tools".
+2. **Use exact text** - Copy checkbox labels verbatim from the template file. Example current labels: "Minor Changes", "Update Content", "New Content", "Site and Tools" — but always read the file, these may be outdated.
 3. **Keep all checkboxes** - Pre-check one box, leave all four in the list
 4. **PR title format**: `TICKET - Description` (e.g., `DOCS-1234 - Add PostgreSQL app`)
 5. **Ask for ticket number** - Always ask for a Jira ticket before creating a PR. If the user doesn't have one, offer to create it using the Atlassian Jira MCP (optional for quick typo fixes).
