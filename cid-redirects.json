@@ -3022,7 +3022,7 @@
   "/cid/1153": "/docs/send-data/opentelemetry-collector/install-collector/docker",
   "/cid/1170": "/docs/integrations/amazon-aws/amazon-overview",
   "/cid/1154": "/docs/send-data/hosted-collectors/krutrim-object-storage",
-  "/cid/1156": "/docs/send-data/opentelemetry-collector/data-source-configurations/windows-active-directory-inventory",
+  "/cid/1158": "/docs/send-data/opentelemetry-collector/data-source-configurations/windows-active-directory-inventory",
   "/release-notes-collector/2026/04/11/hosted/": "/release-notes-collector/2026/05/11/hosted/",
   "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-source",
   "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source/": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-metrics-source/",
