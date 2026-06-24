@@ -18,6 +18,8 @@ export default function AskAiSidepanel({
   const { siteConfig } = useDocusaurusContext();
   const [SidepanelComponent, setSidepanelComponent] = useState<any>(null);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+  const [shortcutHint, setShortcutHint] = useState('Ctrl + I');
   const [headerActionsEl, setHeaderActionsEl] = useState<HTMLElement | null>(
     null
   );
@@ -31,6 +33,34 @@ export default function AskAiSidepanel({
       });
     }
   }, [isOpen, SidepanelComponent]);
+
+  useEffect(() => {
+    if (typeof navigator === 'undefined') return;
+
+    if (/(Mac|iPhone|iPad|iPod)/i.test(navigator.platform)) {
+      setShortcutHint('\u2318 + I');
+    } else {
+      setShortcutHint('Ctrl + I');
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const tipText = `Tip: Start a new chat with ${shortcutHint}`;
+    const checkInterval = setInterval(() => {
+      const intro = document.querySelector(
+        '.DocSearch-Sidepanel-NewConversationScreen .DocSearch-Sidepanel-Screen--introduction'
+      ) as HTMLElement | null;
+
+      if (intro) {
+        intro.setAttribute('data-shortcut-tip', tipText);
+        clearInterval(checkInterval);
+      }
+    }, 100);
+
+    return () => clearInterval(checkInterval);
+  }, [isOpen, shortcutHint]);
 
   // Track resize so we can suppress Algolia's resize-triggered onClose
   useEffect(() => {
@@ -53,6 +83,7 @@ export default function AskAiSidepanel({
   useEffect(() => {
     if (!isOpen) {
       setIsExpanded(false);
+      setIsHistoryOpen(false);
     }
   }, [isOpen]);
 
@@ -85,6 +116,25 @@ export default function AskAiSidepanel({
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const syncHistoryState = () => {
+      const sidepanel = document.querySelector('.DocSearch-Sidepanel');
+      const historyOpen =
+        sidepanel?.classList.contains('conversation-history') ?? false;
+
+      setIsHistoryOpen((prev) => (prev === historyOpen ? prev : historyOpen));
+    };
+
+    syncHistoryState();
+    const syncInterval = setInterval(syncHistoryState, 150);
+
+    return () => {
+      clearInterval(syncInterval);
+    };
   }, [isOpen]);
 
   // Hook into existing expand button
@@ -430,7 +480,9 @@ export default function AskAiSidepanel({
   const sidepanel = (
     <>
       <div
-        className={`ask-ai-sidepanel ${isExpanded ? 'is-expanded' : ''}`}
+        className={`ask-ai-sidepanel ${isExpanded ? 'is-expanded' : ''} ${
+          isHistoryOpen ? 'is-history-open' : ''
+        }`}
         style={isOpen ? undefined : { display: 'none' }}
         onClickCapture={handleCopyCapture}
       >
@@ -460,7 +512,9 @@ export default function AskAiSidepanel({
           <div className="ask-ai-header-shortcuts">
             <button
               type="button"
-              className="ask-ai-shortcut-button"
+              className={`ask-ai-shortcut-button ${
+                !isHistoryOpen ? 'is-active' : ''
+              }`}
               aria-label="Start a new conversation"
               title="Start a new conversation"
               onClick={handleNewConversation}
@@ -484,7 +538,9 @@ export default function AskAiSidepanel({
             </button>
             <button
               type="button"
-              className="ask-ai-shortcut-button"
+              className={`ask-ai-shortcut-button ${
+                isHistoryOpen ? 'is-active' : ''
+              }`}
               aria-label="Conversation history"
               title="Conversation history"
               onClick={handleConversationHistory}
