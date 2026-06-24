@@ -20,7 +20,7 @@ This feature is in Extended Preview. For more information, contact your Sumo Log
 
 The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo Logic to query logs, investigate security insights, manage alerts and dashboards, and more. Use natural language to bring Sumo Logic search, evidence, and platform context into the AI tools you already use, such as developer IDEs, security workflows, and enterprise AI platforms.
 
-<!-- Before production enablement: quality testing and security review need to be completed. When MCP goes GA: mention it can work with Dojo AI agents, add endpoints to API doc. -->
+<!-- when MCP goes GA: mention it can work with Dojo AI agents, add endpoints to API doc-->
 
 ## Prerequisites
 
