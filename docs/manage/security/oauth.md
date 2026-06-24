@@ -285,7 +285,7 @@ Use **Client Credentials flow** for server-to-server authentication, automated w
 
 ### How long do access tokens last?
 
-* **Authorization Code flow**. Access tokens expire after 5 minutes, but are automatically renewed by your OAuth client - this is transparent to users.
+* **Authorization Code flow**. Access tokens expire after 5 minutes, but are automatically renewed by your OAuth client — this is transparent to users.
 * **Client Credentials flow**. Access tokens expire after 12 hours. Generate a new token when the current one expires.
 
 ### Can I revoke OAuth access?
