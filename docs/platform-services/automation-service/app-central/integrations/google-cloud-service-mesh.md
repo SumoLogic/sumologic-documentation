@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
 ***Version: 1.0  
-Updated: Jun 22, 2026***
+Updated: Jun 25, 2026***
 
 Google Cloud Service Mesh provides a managed service mesh that helps you secure, manage, and observe communication between your microservices running on Google Kubernetes Engine (GKE) and other platforms.
 
@@ -26,9 +26,9 @@ The following table lists the required IAM roles for each action:
 
 | Action | Required Role | Permission |
 |:--------|:--------------|:------------|
-| Get Authorization Policy | Mesh Admin (`roles/meshconfig.admin`) | `meshconfig.authorizationPolicies.get` |
+| Get Authorization Policy | Mesh Viewer (`roles/meshconfig.viewer`) | `meshconfig.authorizationPolicies.get` |
 | Get Mesh Metrics | Monitoring Viewer (`roles/monitoring.viewer`) | `monitoring.timeSeries.list` |
-| List Authorization Policies | Mesh Admin (`roles/meshconfig.admin`) | `meshconfig.authorizationPolicies.list` |
+| List Authorization Policies | Mesh Viewer (`roles/meshconfig.viewer`) | `meshconfig.authorizationPolicies.list` |
 | Restrict Network Flow | Mesh Admin (`roles/meshconfig.admin`) | `meshconfig.authorizationPolicies.create`, `meshconfig.authorizationPolicies.update` |
 | Update Authorization Policy | Mesh Admin (`roles/meshconfig.admin`) | `meshconfig.authorizationPolicies.update` |
 
@@ -44,7 +44,7 @@ Additional permissions required:
 | `meshconfig.meshes.list` | List mesh configurations |
 
 :::note
-For read-only actions (Get Authorization Policy, Get Mesh Metrics, List Authorization Policies), the **Mesh Admin** and **Monitoring Viewer** roles are sufficient. For write actions (Restrict Network Flow, Update Authorization Policy), the **Mesh Admin** role with full permissions is required.
+For read-only actions (Get Authorization Policy, List Authorization Policies), the **Mesh Viewer** role provides the minimum required access. The **Mesh Admin** role grants broader permissions including create, update, and delete capabilities, and is only required for write actions (Restrict Network Flow, Update Authorization Policy). For monitoring actions (Get Mesh Metrics), the **Monitoring Viewer** role is sufficient.
 :::
 
 ## Google Cloud Service Mesh configuration
@@ -63,10 +63,10 @@ To configure the Google Cloud Service Mesh integration using WIF authentication,
 
 ### Workload Identity Federation (WIF) authentication
 
-To [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-federation) in Google Workspace needed to configure the Google Cloud Service Mesh integration, follow these steps:
+To [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-federation) in Google Cloud needed to configure the Google Cloud Service Mesh integration, follow these steps:
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
-3. Go to the **API&Services**.
+3. Go to **APIs & Services**.
 4. In the same page click on **ENABLED API AND SERVICES** and search for Mesh API, Kubernetes Engine API, Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API, Cloud Monitoring API and enable them all.
 5. Go to the **IAM & Admin** > **Service Accounts** page.
 6. Click **CREATE SERVICE ACCOUNT**. A [Service Account](https://cloud.google.com/iam/docs/service-accounts-create) is required to access Google Cloud Service Mesh.
@@ -80,17 +80,17 @@ To [create WIF credentials](https://cloud.google.com/iam/docs/workload-identity-
 14. In the **New principals** field, provide the above principal name and select the role **Workload Identity User**. Click on **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-12.png')} style={{border:'1px solid gray'}} alt="Workload Identity User" width="800"/>
 15. Go to the **IAM & Admin** > **Workload Identity Federation** page and select the pool which was created above. 
 16. Click on **Grant Access** > **Grant access using service account impersonation**. 
-17. Select the service account which created above, select the principle as aws_role and provide the arn `arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}` and click on **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-10.png')} style={{border:'1px solid gray'}} alt="Provide ARN" width="800"/>
+17. Select the service account which was created above, select the principle as aws_role and provide the arn `arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}` and click on **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-chat/google-chat-10.png')} style={{border:'1px solid gray'}} alt="Provide ARN" width="800"/>
 18. Again go to **Grant Access** > **Grant access using service account impersonation**. Select the service account which was created above. Select the principle as `aws_role` and provide the arn `arn:aws:sts::{SumoAWSAccountID}:assumed-role/{SumoAWSRole}/{SumoAWSLambdaFunction}`. Click on **SAVE**. 
 19. Download the WIF `conf.json` file. Make sure you save it in a safe place. Use the JSON content to configure the Google Cloud Service Mesh integration to use WIF authentication in Automation Service and Cloud SOAR. 
 
 
 ### Service Account authentication
-To [create service account credentials](https://developers.google.com/workspace/guides/create-credentials) in Google Workspace needed to configure the Google Cloud Service Mesh integration, follow these steps:
+To [create service account credentials](https://developers.google.com/workspace/guides/create-credentials) in Google Cloud needed to configure the Google Cloud Service Mesh integration, follow these steps:
 
 1. Log in to the [Google Cloud](https://console.cloud.google.com) portal.
 2. Select a Google Cloud project (or create a new one).
-3. Go to the **API&Services** > **Credentials** page.
+3. Go to the **APIs & Services** > **Credentials** page.
 4. In the same page click on **ENABLED API AND SERVICES** and search for Mesh API, Kubernetes Engine API, Cloud Resource Manager API, IAM Service Account Credentials API, Identity and Access Management (IAM) API, Security Token Service API, Cloud Monitoring API and enable them.
 5. Click **CREATE CREDENTIALS** and select **Service Account**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/google-drive/google-drive-1.png')} style={{border:'1px solid gray'}} alt="Create credentials" width="800"/>
 6. Enter a service account name to display in the Google Cloud console. The Google Cloud console generates a service account ID based on this name.
@@ -124,4 +124,4 @@ For information about Google Cloud Service Mesh, see [Google Cloud Service Mesh 
 
 ## Change Log
 
-* June 22, 2026 (v1.0) - First upload
+* June 25, 2026 (v1.0) - First upload
