@@ -164,9 +164,9 @@ account=dev region=us-east-1 namespace=aws/apigateway apiname=* apiid stage doma
 
 ### Configure Hosted Collector
 
-In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).
+When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-### Collect metrics for AWS API Gateway
+### Collect AWS API Gateway metrics
 
 Sumo Logic supports collecting metrics using two source types:
 
@@ -174,10 +174,17 @@ Sumo Logic supports collecting metrics using two source types:
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
 :::note
-Namespace for **AWS API Gateway** Service is **AWS/ApiGateway**.
+Namespace for **AWS API Gateway** service is **AWS/ApiGateway**.
 :::
 
-For **Metadata**, add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). Metrics can be queried via the “account” field.
+Follow the steps below to add custom metadata [fields](/docs/manage/fields) with your metrics:
+1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which metrics are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and metrics can be queried using the `account` field.<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+1. After adding fields, check their status indicators:
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+      * You will have the option to automatically add or enable the field.
+      * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
 
 #### Enable cache metrics
 
@@ -446,7 +453,7 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
 
 To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) using the instructions below.
 
-#### Collect CloudTrail Lambda data events
+#### Collect CloudTrail API Gateway data events
 
 To configure a CloudTrail Source, perform these steps:
 
