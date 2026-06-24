@@ -125,7 +125,13 @@ This will generate a command you can execute on the machine that you need to mon
 
 4. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic.
 
-5. Click on the **Download YAML File** button to get the yaml file.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
+5. Click on the **Download YAML File** button to get the yaml file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
+<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
 
