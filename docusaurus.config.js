@@ -364,10 +364,10 @@ module.exports = {
       { property: 'og:type', content: 'article' },
     ],
     announcementBar: {
-      id: 'domain',
-      content: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/><path d="M19 14l.75 2.75L22.5 17.5l-2.75.75L19 21l-.75-2.75L15.5 17.5l2.75-.75L19 14z"/></svg>Check out <a href="https://www.sumologic.com/help/docs/search/mobot/">Mobot</a>, your conversational interface for Sumo Logic. Search logs using natural language, troubleshoot faster, and get how-to guidance.<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/><path d="M19 14l.75 2.75L22.5 17.5l-2.75.75L19 21l-.75-2.75L15.5 17.5l2.75-.75L19 14z"/></svg>',
-      backgroundColor: '#000',
-      textColor: '#000',
+      id: 'mobot-banner-v2',
+      content: '<img src="https://cdn-service.us2.sumologic.com/ui/images/app/mobot-welcome.png?v=2" height="24" style="vertical-align:middle;margin-right:10px" alt="Mobot"/>Meet <a href="https://www.sumologic.com/help/docs/search/mobot/"><strong>Mobot</strong></a> &#8212; the AI assistant for Sumo Logic. Search logs and get how-to guidance in plain English.',
+      backgroundColor: '#0055B7',
+      textColor: '#fff',
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
