@@ -2,6 +2,7 @@
 id: tourl
 title: tourl Search Operator
 sidebar_label: tourl
+description: Use the tourl operator to assign short descriptive names to URLs, similar to creating href links with readable labels.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
