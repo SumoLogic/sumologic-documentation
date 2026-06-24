@@ -46,9 +46,9 @@ This flow uses interactive browser-based authentication. Users authorize an exte
 ### Step 1: Create an OAuth client
 
 1. Log in to Sumo Logic as an Administrator.
-1. Go to **Administration** > **Security** > **OAuth Clients**.
-1. Click **+ Add Client**.
-1. For **Type**, select **Authorization Code**.
+1. Go to **Administration** > **Account Security Settings** > **OAuth Clients**.
+1. Click **+ Add OAuth Client**.
+1. For **Client Type**, select **Authorization Code**.
 1. Enter a **Name** and optional **Description** for your application.
 1. Set the **Redirect URI** to match your application's callback URL. This is where Sumo Logic will send the authorization code after the user approves access.
    :::note
@@ -72,7 +72,7 @@ Create a Sumo Logic service account to represent your application or service. Yo
 1. Log in to Sumo Logic as an Administrator.
 1. [Create a service account](/docs/manage/security/service-accounts/#create-a-service-account) with the appropriate roles for your use case.
 1. Get the service account ID. You'll use this ID in the next step.
-   * **Via UI**. Go to **Administration** > **Security** > **Service Accounts**, click on your service account, and copy the ID from the browser URL (appears as `selectedId=00000000076D28F9`).
+   * **In the UI**. Go to **Administration** > **Account Security Settings** > **Service Accounts**, click your service account, and copy the ID from the browser URL (appears as `selectedId=00000000076D28F9`).
    * **Via API**. Alternatively, [get a list of all service accounts](https://api.sumologic.com/docs/#operation/listServiceAccounts) and find the `id` field in the response.
      <details>
      <summary>Example API request for listing service accounts</summary>
@@ -120,9 +120,9 @@ Create a Sumo Logic service account to represent your application or service. Yo
 Create an OAuth client under your service account. This generates the credentials your application will use to authenticate.
 
 1. Log in to Sumo Logic as an Administrator.
-1. Go to **Administration** > **Security** > **OAuth Clients**.
-1. Click **+ Add Client**.
-1. For **Type**, select **Client Credentials**.
+1. Go to **Administration** > **Account Security Settings** > **OAuth Clients**.
+1. Click **+ Add OAuth Client**.
+1. For **Client Type**, select **Client Credentials**.
 1. Enter a **Name** and optional **Description** for your application.
 1. Select the **Service Account** this OAuth client will run as (created in the previous step).
 1. Select the **Scopes** your OAuth client needs. The scopes you request must already be included in your service account's effective permissions. [Learn how permissions work](#how-permissions-work).
@@ -209,7 +209,7 @@ Copy the `clientId` and `clientSecret` from the response. These are your OAuth c
 
 ### Step 3: Generate an access token
 
-Request an OAuth access token from the token endpoint using your client credentials. Replace `<token-endpoint-URL>` with your deployment's token endpoint — see [How do I find the authorization or token endpoint?](#how-do-i-find-the-authorization-or-token-endpoint-for-my-deployment).
+Request an OAuth access token from the token endpoint using your client credentials. Replace `<token-endpoint-URL>` with your deployment's token endpoint. See [How do I find the authorization or token endpoint?](#how-do-i-find-the-authorization-or-token-endpoint-for-my-deployment).
 
 **Option A: Request all available permissions**
 
@@ -258,7 +258,7 @@ Access tokens generated with Client Credentials flow expire after 12 hours. When
 
 ## Security best practices
 
-* **Protect client secrets**. For Client Credentials flow, store client secrets securely using environment variables, secrets management systems, or encrypted configuration files — never commit them to version control. In Authorization Code flow, the `clientSecret` is not directly exposed in the token exchange and carries less risk, but should still be stored securely.
+* **Protect client secrets**. For Client Credentials flow, store client secrets securely using environment variables, secrets management systems, or encrypted configuration files. Do not commit them to version control. In Authorization Code flow, the `clientSecret` is not directly exposed in the token exchange and carries less risk, but should still be stored securely.
 * **Use least privilege**. Request only the OAuth scopes your application needs. For Client Credentials flow, assign service accounts the minimum roles required.
 * **Rotate credentials regularly**. Create new OAuth clients periodically and deactivate old ones. Update service account credentials on a regular schedule.
 * **Monitor OAuth usage**. Review audit logs for OAuth client activity. Watch for unexpected patterns like unusual request volumes or access to sensitive resources.
@@ -285,14 +285,14 @@ Use **Client Credentials flow** for server-to-server authentication, automated w
 
 ### How long do access tokens last?
 
-* **Authorization Code flow**. Access tokens expire after 5 minutes, but are automatically renewed by your OAuth client — this is transparent to users.
+* **Authorization Code flow**. Access tokens expire after 5 minutes, but are automatically renewed by your OAuth client. This is transparent to users.
 * **Client Credentials flow**. Access tokens expire after 12 hours. Generate a new token when the current one expires.
 
 ### Can I revoke OAuth access?
 
 Yes. To revoke access for an OAuth client:
 
-1. Go to **Administration** > **Security** > **OAuth Clients**.
+1. Go to **Administration** > **Account Security Settings** > **OAuth Clients**.
 1. Find the OAuth client you want to revoke.
 1. Click **Delete** or **Deactivate** (depending on UI options available).
 
