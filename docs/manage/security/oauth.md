@@ -72,7 +72,7 @@ Create a Sumo Logic service account to represent your application or service. Yo
 1. Log in to Sumo Logic as an Administrator.
 1. [Create a service account](/docs/manage/security/service-accounts/#create-a-service-account) with the appropriate roles for your use case.
 1. Get the service account ID. You'll use this ID in the next step.
-   * **In the UI**. Go to **Administration** > **Account Security Settings** > **Service Accounts**, click your service account, and copy the ID from the browser URL (appears as `selectedId=00000000076D28F9`).
+   * **Via UI**. Go to **Administration** > **Account Security Settings** > **Service Accounts**, click your service account, and copy the ID from the browser URL (appears as `selectedId=00000000076D28F9`).
    * **Via API**. Alternatively, [get a list of all service accounts](https://api.sumologic.com/docs/#operation/listServiceAccounts) and find the `id` field in the response.
      <details>
      <summary>Example API request for listing service accounts</summary>
@@ -209,7 +209,7 @@ Copy the `clientId` and `clientSecret` from the response. These are your OAuth c
 
 ### Step 3: Generate an access token
 
-Request an OAuth access token from the token endpoint using your client credentials. Replace `<token-endpoint-URL>` with your deployment's token endpoint. See [How do I find the authorization or token endpoint?](#how-do-i-find-the-authorization-or-token-endpoint-for-my-deployment).
+Request an OAuth access token from the token endpoint using your client credentials. Replace `<token-endpoint-URL>` with your deployment's token endpoint — see [How do I find the authorization or token endpoint?](#how-do-i-find-the-authorization-or-token-endpoint-for-my-deployment).
 
 **Option A: Request all available permissions**
 
@@ -258,7 +258,7 @@ Access tokens generated with Client Credentials flow expire after 12 hours. When
 
 ## Security best practices
 
-* **Protect client secrets**. For Client Credentials flow, store client secrets securely using environment variables, secrets management systems, or encrypted configuration files. Do not commit them to version control. In Authorization Code flow, the `clientSecret` is not directly exposed in the token exchange and carries less risk, but should still be stored securely.
+* **Protect client secrets**. For Client Credentials flow, store client secrets securely using environment variables, secrets management systems, or encrypted configuration files — never commit them to version control. In Authorization Code flow, the `clientSecret` is not directly exposed in the token exchange and carries less risk, but should still be stored securely.
 * **Use least privilege**. Request only the OAuth scopes your application needs. For Client Credentials flow, assign service accounts the minimum roles required.
 * **Rotate credentials regularly**. Create new OAuth clients periodically and deactivate old ones. Update service account credentials on a regular schedule.
 * **Monitor OAuth usage**. Review audit logs for OAuth client activity. Watch for unexpected patterns like unusual request volumes or access to sensitive resources.
@@ -285,7 +285,7 @@ Use **Client Credentials flow** for server-to-server authentication, automated w
 
 ### How long do access tokens last?
 
-* **Authorization Code flow**. Access tokens expire after 5 minutes, but are automatically renewed by your OAuth client. This is transparent to users.
+* **Authorization Code flow**. Access tokens expire after 5 minutes, but are automatically renewed by your OAuth client - this is transparent to users.
 * **Client Credentials flow**. Access tokens expire after 12 hours. Generate a new token when the current one expires.
 
 ### Can I revoke OAuth access?
