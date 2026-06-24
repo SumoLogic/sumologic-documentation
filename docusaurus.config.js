@@ -365,7 +365,7 @@ module.exports = {
     ],
     announcementBar: {
       id: 'mobot-banner-v2',
-      content: '<img src="https://cdn-service.us2.sumologic.com/ui/images/app/mobot-welcome.png?v=2" height="24" style="vertical-align:middle;margin-right:10px" alt="Mobot"/>Meet <a href="https://www.sumologic.com/help/docs/search/mobot/"><strong>Mobot</strong></a> &#8212; the AI assistant for Sumo Logic. Search logs and get how-to guidance in plain English.',
+      content: '<img src="https://cdn-service.us2.sumologic.com/ui/images/app/mobot-welcome.png?v=2" height="24" style="vertical-align:middle;margin-right:5px" alt="Mobot"/>Meet <a href="https://www.sumologic.com/help/docs/search/mobot/"><strong>Mobot</strong></a>, our AI assistant that turns plain-language questions into log queries to accelerate investigations and simplify security workflows.',
       backgroundColor: '#0055B7',
       textColor: '#fff',
     },
