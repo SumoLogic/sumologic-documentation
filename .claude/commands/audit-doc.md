@@ -1,6 +1,6 @@
 # Audit Doc — Documentation Quality Check
 
-Use this command to audit a doc for style, structure, links, and frontmatter compliance — run it before submitting any PR, after creating a new doc, or when reviewing community contributions.
+Use this command to audit a doc for Sumo Logic style, structure, links, and frontmatter compliance — run it before submitting any PR, after creating a new doc, or when reviewing community contributions.
 
 ## Gotchas
 
@@ -368,8 +368,7 @@ Track common issues across multiple audits to identify systemic problems.
 
 ## Related commands
 
-`/audit-doc` covers structure, style, links, frontmatter, and required sections. It does not
-check SEO/AEO/GEO signals. For discoverability, run both:
+`/audit-doc` covers structure, style, links, frontmatter, and required sections. It does not check SEO/AEO/GEO signals. For discoverability, run both:
 
 * **`/seo-audit`** — checks title length, description quality, question headings, GEO patterns
 * **`/geo-optimize`** — rewrites content to improve AI citation and search visibility
