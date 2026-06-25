@@ -75,7 +75,7 @@ To explore data sources for a view:
 To create a scheduled view, you must be an admin or have the Manage Views [role capability](/docs/manage/users-roles/roles/role-capabilities/).
 :::
 
-For scheduled view query requirements, see [Scheduled Views Best Practices and Examples](/docs/manage/views/scheduled-views/best-practices).
+For scheduled view query requirements, see [Scheduled Views Best Practices and Examples](/docs/manage/scheduled-views/scheduled-views-best-practices/).
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**.
 1. Click **+ Add View**. <br/><img src={useBaseUrl('/img/views/view-page-add-new.png')} alt="view-page" style={{border:'1px solid gray'}} width="800"/>
