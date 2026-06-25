@@ -53,6 +53,47 @@ To obtain a Netskope REST API v2 auth token, do the following:
 1. Click "New Token", provide the token name and expiration duration, then add the following endpoints with READ privilege, depending on the events that you want to collect from: `/api/v2/events/dataexport/events/alert`, `/api/v2/events/dataexport/events/page`, `/api/v2/events/dataexport/events/infrastructure`, `/api/v2/events/dataexport/events/application`, `/api/v2/events/dataexport/events/network`, `/api/v2/events/dataexport/events/audit`, `/api/v2/events/dataexport/events/connection`, `/api/v2/events/dataexport/events/incident`, `/api/v2/events/dataexport/events/endpoint`, and `/api/v2/events/data/alert`.
 1. Copy the token in the next dialog box and save it somewhere as it won't be visible after.
 
+#### Netskope REST API v2 with RBAC v3
+
+If your Netskope tenant uses RBAC v3, you need to create a custom role and Service Account to generate a REST API v2 token for the Sumo Logic Netskope Source. The legacy token workflow described above does not apply to RBAC v3 tenants.
+
+##### Step 1: Create a custom role
+
+1. Log in to the Netskope Admin Console.
+1. Navigate to **Settings** > **Administration** > **Administrators & Roles** > **Roles** tab.
+1. Click **New**.
+1. Enter a **Name** for the role (for example, *SumoLogic-Collector*).
+1. Select the following functional areas and assign **View** permission to each. These permissions provide access to the REST API v2 endpoints used by the Sumo Logic Netskope Source (`/api/v2/events/data/{eventType}` and `/api/v2/events/dataexport/events/{eventType}`).
+   * Under **Administration**:
+      * **Audit Log**. Enables collection of audit events.
+   * Under **DLP**:
+      * **Incidents**. Enables collection of incident events.
+   * Under **Infrastructure**:
+      * **Infrastructure Log and On-Premises**. Enables collection of infrastructure events.
+   * Under **Skope IT**:
+      * **Alerts**. Enables collection of alert events.
+      * **Application Events**. Enables collection of application events.
+      * **Endpoint Events**. Enables collection of endpoint events.
+      * **Network Events**. Enables collection of network events.
+      * **Page Events**. Enables collection of page and connection events.
+1. Click **Save**.
+
+:::note
+You only need to enable View permissions for the event types you intend to collect. At minimum, enable **Alerts** unless you set **Disable Alerts** to `true` in the Source configuration, because the integration performs a health check against the alerts endpoint on startup.
+:::
+
+##### Step 2: Create a Service Account
+
+1. Navigate to **Settings** > **Administration** > **Administrators & Roles** > **Administrators** tab.
+1. Click **Service Account**.
+1. Assign the role you created in Step 1.
+1. Click **Create**. A REST API v2 token is automatically generated.
+1. Copy the token. This is the **API Token** value required for the Sumo Logic Source configuration.
+
+:::important
+Store the token securely. It is not displayed again after you close the dialog.
+:::
+
 #### Netskope REST API v1 (Deprecated)
 
 :::warning Deprecated
