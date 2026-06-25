@@ -5166,5 +5166,9 @@
   "/release-notes-service/2025/12/02/search": "/release-notes-service/2025/12/31/#december-02-2025-search",
   "/release-notes-service/2025/12/03/manage": "/release-notes-service/2025/12/31/#december-03-2025-manage",
   "/release-notes-service/2026/03/16/search": "/release-notes-service/2026/03/16/manage/",
-  "/docs/integrations/amazon-aws/lambda/#collecting-logs-for-the-aws-lambda-app": "/docs/integrations/amazon-aws/lambda/#collecting-logs-and-metrics-for-aws-lambda-app"
+  "/docs/integrations/amazon-aws/api-gateway/#collect-metrics-for-aws-api-gateway": "/docs/integrations/amazon-aws/api-gateway/#collect-aws-api-gateway-metrics",
+  "/docs/integrations/amazon-aws/network-load-balancer/#collecting-logs-and-metrics-for-the-aws-network-load-balancer":"/docs/integrations/amazon-aws/network-load-balancer/#collecting-logs-and-metrics-for-aws-network-load-balancer",
+  "/docs/integrations/amazon-aws/network-load-balancer/#collect-metrics": "/docs/integrations/amazon-aws/network-load-balancer#collect-aws-network-load-balancer-metrics",
+  "/docs/integrations/amazon-aws/network-load-balancer/#collect-cloudtrail-logs": "/docs/integrations/amazon-aws/network-load-balancer/#collect-aws-network-load-balancer-cloudtrail-logs",
+  "/docs/integrations/amazon-aws/lambda/#collecting-logs-for-the-aws-lambda-app": "/docs/integrations/amazon-aws/lambda/#collecting-logs-and-metrics-for-aws-lambda"
 }

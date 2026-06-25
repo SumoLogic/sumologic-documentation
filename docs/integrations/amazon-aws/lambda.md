@@ -136,7 +136,7 @@ account={{account}} region={{region}} Namespace={{namespace}}
 namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | sum
 ```
 
-## Collecting logs and metrics for AWS Lambda app
+## Collecting logs and metrics for AWS Lambda
 
 ### Configure Hosted Collector
 
