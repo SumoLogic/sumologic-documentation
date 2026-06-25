@@ -25,8 +25,7 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
 ## Prerequisites
 
 * **Sumo Logic Administrator role**. You'll need this to create OAuth clients. If you're unsure whether you have this role, check your [Preferences](/docs/get-started/onboarding-checklists/).
-
-* **Sumo Logic OAuth client credentials**. The MCP client uses [OAuth client credentials](/docs/manage/security/oauth) to authenticate with Sumo Logic. For Claude Code CLI, you'll create them during the setup steps below.
+* **Sumo Logic OAuth credentials**. The MCP client uses [OAuth credentials](/docs/manage/security/oauth) to authenticate with Sumo Logic. For Claude Code CLI, you'll create them during the setup steps below.
 * **MCP server URL for your deployment**. OAuth tokens are deployment-bound, so you must use the correct URL for your Sumo Logic deployment:
    | Deployment | MCP Server URL |
    | :--- | :--- |
@@ -45,9 +44,6 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
 
 ## Known limitations
 
-
-
-* **Cursor**. Cursor requires redirect URLs starting with `cursor://`, which is not yet supported by the Sumo Logic authorization server.
 * **VS Code**. Recent VS Code releases do not work with the authorization code flow when an explicit client ID and secret are provided.
 
 :::note
