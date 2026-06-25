@@ -5170,7 +5170,6 @@
   "/Manage/Search-Optimization-Tools/Manage-Scheduled-Views/Scheduled-Views-Best-Practices-and-Examples": "/docs/manage/scheduled-views/scheduled-views-best-practices",
   "/Search/Search_Query_Language/Parse_Operators/Parse_Operator": "/docs/search/search-query-language/parse-operators",
   "/Search/Search_Query_Language/Search_Operators/Geo_Lookup_(Map)": "/docs/search/search-query-language/search-operators/geo-lookup-map",
-  "/Send_Data/Sources/Script_Source/Advanced:_Using_a_CRON_Expression": "/docs/send-data/installed-collectors/sources/script-source/use-cron-expression",
   "/Start_Here/Quick_Start_Tutorial/01_Sumo_Logic_Quick_Start_Tutorial": "/docs/get-started/quickstart",
   "/Using_sumo.conf.htm": "/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors",
   "/Visualizations-and-Alerts/Alerts/03-Create-a-Real-Time-Alert": "/docs/alerts/scheduled-searches/create-real-time-alert",
